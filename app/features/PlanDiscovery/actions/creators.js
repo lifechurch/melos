@@ -129,6 +129,7 @@ const ActionCreators = {
 			const promises = [
 				dispatch(ActionCreators.readingplanView({ id, language_tag })),
 				dispatch(ActionCreators.calendar({ id, language_tag })),
+				dispatch(BibleActionCreator.bibleVersion({ id: version })),
 				dispatch(ActionCreators.allQueueItems(auth))
 			]
 

@@ -93,18 +93,10 @@ export default function reducer(state = {}, action) {
 							if (additional_content.completed) {
 								dayObj = dayObj.set('completed', true)
 							}
-						} else {
-							// if there are no refs then if the devo is complete, than so is the day
-							dayObj = dayObj.set('completed', additional_content.completed)
 						}
-
-						// // whether or not we have refs, we'll match the devo content with the
-						// // api response (default is true even if there is no devo content)
-						// dayObj = dayObj.setIn(['additional_content', 'completed'], additional_content.completed)
-						//
-						// return Immutable.fromJS(state).setIn(
-						// 	[id, 'calendar', day - 1], dayObj.toJS()
-						// ).toJS()
+					} else {
+					// if there are no refs then if the devo is complete, than so is the day
+						dayObj = dayObj.set('completed', additional_content.completed)
 					}
 
 					// whether or not we have refs, we'll match the devo content with the

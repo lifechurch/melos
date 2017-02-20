@@ -127,7 +127,7 @@ class PlanReader extends Component {
 				<div />
 			)
 		}
-		console.log(plan)
+
 		this.dayNum = parseInt(day, 10)
 		this.contentIndex = parseInt(content, 10)
 		this.dayObj = plan.calendar[this.dayNum - 1]
