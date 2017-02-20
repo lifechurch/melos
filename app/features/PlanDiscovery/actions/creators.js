@@ -149,7 +149,7 @@ const ActionCreators = {
 		}
 	},
 
-	planReferences(params) {
+	planReferences(params, auth) {
 		return dispatch => {
 			return new Promise((resolve) => {
 				const { references, version, id, currentDay } = params

@@ -22,11 +22,11 @@ class PlanReferenceItem extends Component {
 	}
 
 	render() {
-		const { reference, day, link, bibleLink, completedRefs, iconStyle, mode } = this.props
+		const { reference, day, content, link, bibleLink, completedRefs, iconStyle, mode } = this.props
 		const { usfm, human } = reference
 		const refString = usfm.join('+')
 		const isComplete = completedRefs.indexOf(refString) !== -1
-		const itemLink = { pathname: `${link}/ref`, query: { day } }
+		const itemLink = { pathname: `${link}/ref`, query: { day, content } }
 
 		let itemBibleLink
 		if (mode === 'sample') {

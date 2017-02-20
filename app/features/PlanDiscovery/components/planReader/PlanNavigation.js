@@ -111,7 +111,7 @@ class PlanNavigation extends Component {
 PlanNavigation.propTypes = {
 	planImgUrl: PropTypes.string.isRequired,
 	planName: PropTypes.string.isRequired,
-	day: PropTypes.oneOfType(['string', 'number']).isRequired,
+	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	next: PropTypes.string,
 	previous: PropTypes.string,
 	dayBasePath: PropTypes.string,

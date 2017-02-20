@@ -83,8 +83,8 @@ export default function reducer(state = {}, action) {
 							}
 						})
 						dayObj = dayObj
-						.set('references_completed', completedRefs)
-						.set('references_remaining', remainingRefs)
+							.set('references_completed', completedRefs)
+							.set('references_remaining', remainingRefs)
 
 						// now check if all refs are completed
 						if (completedRefs.length === references.length) {
@@ -98,13 +98,13 @@ export default function reducer(state = {}, action) {
 							dayObj = dayObj.set('completed', additional_content.completed)
 						}
 
-						// whether or not we have refs, we'll match the devo content with the
-						// api response (default is true even if there is no devo content)
-						dayObj = dayObj.setIn(['additional_content', 'completed'], additional_content.completed)
-
-						return Immutable.fromJS(state).setIn(
-							['_SELECTED', 'calendar', day - 1], dayObj.toJS()
-						).toJS()
+						// // whether or not we have refs, we'll match the devo content with the
+						// // api response (default is true even if there is no devo content)
+						// dayObj = dayObj.setIn(['additional_content', 'completed'], additional_content.completed)
+						//
+						// return Immutable.fromJS(state).setIn(
+						// 	[id, 'calendar', day - 1], dayObj.toJS()
+						// ).toJS()
 					}
 
 					// whether or not we have refs, we'll match the devo content with the
@@ -115,7 +115,7 @@ export default function reducer(state = {}, action) {
 				}
 
 				return state
-			})
+			}())
 
 		default:
 			return state
