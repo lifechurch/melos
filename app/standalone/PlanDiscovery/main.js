@@ -234,12 +234,12 @@ function requireSubscribedPlan(a, b, c, d) {
 
 	const currentState = store.getState()
 	const version = cookie.load('version') || '1'
-	const { params, location } = nextState
+	const { params } = nextState
 	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
 	const id = parseInt(params.id.toString().split('-')[0], 10)
 	const plan = fullPlans[id] || { id }
 
-	let currentDay = location.query.day
+	let currentDay = params.day
 	if (!currentDay || isNaN(currentDay)) {
 		const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
 		if (isNaN(calculatedDay)) {

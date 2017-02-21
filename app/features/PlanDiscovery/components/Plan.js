@@ -87,10 +87,10 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { plan, dispatch, children, dayBaseLink, params, auth, location, localizedLink, serverLanguageTag } = this.props
+		const { plan, dispatch, children, params, auth, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const version = cookie.load('version') || '1'
-		const aboutLink = dayBaseLink || localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
+		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
 		const myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
 		const bibleLink = localizedLink(`/bible/${version}`)
 		const isSaved = !!plan.saved === true
@@ -98,56 +98,38 @@ class Plan extends Component {
 		// This component can be reached two ways, Plan Subscription and Plan Sample
 		//  Depending on how we get here, we need to parse the initial variable values
 		//  differently.
-		let day, mode, metaTitle, metaDesc, subscriptionLink
 
-		if ('day' in params) {
-			// Got Here via Plan Sample
-			mode = 'sample'
-			metaTitle = `${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`
-			metaDesc = `${plan.about.text[language_tag] || plan.about.text.default}`
-			day = parseInt(params.day.toString(), 10)
-			subscriptionLink = aboutLink
+		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
+		console.log(params)
 
-		} else {
-			// Got Here via Plan Subscription
-			mode = 'subscription'
-			subscriptionLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}`)
-			day = parseInt(location.query.day, 10)
-
-			// if day is not valid, calculate based on start_dt
-			if (!day || isNaN(day)) {
-				const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
-				if (isNaN(calculatedDay)) {
-					day = 1
-				} else if (calculatedDay > plan.total_days) {
-					day = plan.total_days
-				} else {
-					day = calculatedDay
-				}
+		let day = parseInt(params.day, 10)
+		// if day is not valid, calculate based on start_dt
+		if (!day || isNaN(day)) {
+			const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
+			if (isNaN(calculatedDay)) {
+				day = 1
+			} else if (calculatedDay > plan.total_days) {
+				day = plan.total_days
+			} else {
+				day = calculatedDay
 			}
 		}
 
+		const subscriptionLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}/day/${day}`)
+		const dayBaseLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}`)
 		const dayData = plan.calendar[day - 1]
-		const devoCompleted = (mode === 'subscription') ? dayData.additional_content.completed === true : false
+		const devoCompleted = dayData.additional_content.completed
 		const hasDevo = dayHasDevo(dayData.additional_content)
 
 		let startLink = ''
-		if (mode === 'subscription') {
-			if (hasDevo) {
-				startLink = { pathname: `${subscriptionLink}/devo`, query: { day } }
-			} else {
-				startLink = { pathname: `${subscriptionLink}/ref`, query: { day, content: 0 } }
-			}
+		if (hasDevo) {
+			startLink = `${subscriptionLink}/devo`
+		} else {
+			startLink = `${subscriptionLink}/ref/0`
 		}
 
 		return (
 			<div className="subscription-show">
-				<Helmet
-					title={metaTitle}
-					meta={[
-						{ name: 'description', content: metaDesc }
-					]}
-				/>
 				<div className="plan-overview">
 					<div className="row">
 						<div className="header columns large-8 medium-8 medium-centered">
@@ -157,22 +139,13 @@ class Plan extends Component {
 										<FormattedHTMLMessage id="plans.plans back" />
 									</Link>
 								</div>
-
-								<div className="columns medium-4 text-center" style={{ fontSize: 11 }}>
-									{mode === 'sample'
-										? <FormattedMessage id="plans.sample" />
-										: <span>&nbsp;</span>
-									}
-								</div>
 								<div className="columns medium-4 text-right">
 									<div><ShareWidget /></div>
-									{(mode === 'subscription') &&
-										<PlanMenu
-											subscriptionLink={subscriptionLink}
-											aboutLink={aboutLink}
-											onCatchUp={this.handleCatchUp}
-										/>
-									}
+									<PlanMenu
+										subscriptionLink={subscriptionLink}
+										aboutLink={aboutLink}
+										onCatchUp={this.handleCatchUp}
+									/>
 								</div>
 							</div>
 						</div>
@@ -192,12 +165,14 @@ class Plan extends Component {
 						plan,
 						dispatch,
 						auth,
-						mode,
 						day,
 						dayData,
+						actionsNode: <div />,
+						isSubscribed: ('subscription_id' in plan),
 						calendar: plan.calendar,
 						totalDays: plan.total_days,
 						subscriptionLink,
+						dayBaseLink,
 						aboutLink,
 						startLink,
 						bibleLink,

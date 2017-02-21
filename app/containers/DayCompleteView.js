@@ -37,8 +37,8 @@ class DayCompleteView extends Component {
 		}
 
 		const nextLink = 	(parseInt(day, 10) + 1) <= plan.total_days ?
-								`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}?day=${parseInt(day, 10) + 1}` :
-								`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}?day=${1}`
+								`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}/day/${parseInt(day, 10) + 1}` :
+								`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}/day/1`
 		return (
 			<div className='rp-completed-view'>
 				<div className='completed-header'>

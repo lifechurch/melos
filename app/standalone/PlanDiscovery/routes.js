@@ -10,6 +10,7 @@ import MySavedPlans from '../../containers/MySavedPlans'
 import MyCompletedPlans from '../../containers/MyCompletedPlans'
 
 import Plan from '../../containers/Plan'
+import UnsubbedPlan from '../../containers/UnsubbedPlan'
 import PlanDay from '../../containers/PlanDay'
 import PlanSettings from '../../containers/PlanSettings'
 import PlanCalendar from '../../containers/PlanCalendar'
@@ -61,7 +62,7 @@ export default function (
 				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
 				<Route path=":id(-:slug)">
 					<IndexRoute component={AboutPlanView} onEnter={requirePlanData} />
-					<Route path="day/:day" component={Plan} onEnter={requireSamplePlan} >
+					<Route path="day/:day" component={UnsubbedPlan} onEnter={requireSamplePlan} >
 						<IndexRoute component={PlanDay} />
 					</Route>
 				</Route>
@@ -82,12 +83,13 @@ export default function (
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onChange={requireSubscribedPlan} onEnter={requireSubscribedPlan}>
 				<IndexRoute component={PlanDay} />
+				<Route path="day/:day" component={PlanDay} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={PlanReader}>
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/day/:day" component={PlanReader}>
 				<Route path="devo" component={PlanDevo} />
-				<Route path="ref" component={PlanRef} />
+				<Route path="ref/:content" component={PlanRef} />
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} onEnter={requirePlanView} />
 			{/* this is also day complete, but an unauthed page with the user id in the url as params */}

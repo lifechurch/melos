@@ -4,15 +4,13 @@ import { Link } from 'react-router'
 import Slider from 'react-slick'
 import { FormattedMessage } from 'react-intl'
 
-import RevManifest from '../../../../app/lib/revManifest'
 
 function PlanDaySlider(props) {
 	const {
 		calendar,
-		subscriptionLink,
-		aboutLink,
+		dayBaseLink,
 		day,
-		mode
+		showDate,
 	} = props
 
 	const settings = {
@@ -64,9 +62,7 @@ function PlanDaySlider(props) {
 			? 'check-background'
 			: ''
 
-		const to = (mode === 'subscription')
-			? { pathname: subscriptionLink, query: { day: d.day } }
-			: `${aboutLink}/day/${d.day}`
+		const to = `${dayBaseLink}/day/${d.day}`
 
 		return (
 			<Link key={d.day} to={to}>
@@ -75,7 +71,7 @@ function PlanDaySlider(props) {
 					<div className="day-bottom">
 						<h1>{d.day}</h1>
 						<h4>
-							{(mode === 'subscription')
+							{(showDate)
 								? date
 								: <FormattedMessage id="plans.day number" values={{ day: d.day }} />
 							}
@@ -95,10 +91,13 @@ function PlanDaySlider(props) {
 
 PlanDaySlider.propTypes = {
 	calendar: PropTypes.array.isRequired,
-	subscriptionLink: PropTypes.string.isRequired,
-	aboutLink: PropTypes.string.isRequired,
+	dayBaseLink: PropTypes.string.isRequired,
 	day: PropTypes.number.isRequired,
-	mode: PropTypes.string.isRequired
+	showDate: PropTypes.bool,
+}
+
+PlanDaySlider.defaultProps = {
+	showDate: true,
 }
 
 export default PlanDaySlider
