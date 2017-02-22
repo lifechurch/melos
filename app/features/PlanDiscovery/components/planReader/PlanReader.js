@@ -75,43 +75,44 @@ class PlanReader extends Component {
 
 	buildNavLinks() {
 		const { location: { pathname } } = this.props
-		const basePath = `${pathname.replace('/devo', '').replace('/ref', '')}`
-		const dayBasePath = `/${basePath}?day=${this.dayNum}`
+		console.log(pathname)
+		const dayBasePath = `${pathname.replace('/devo', '').replace(`/ref/${this.contentIndex}`, '')}`
+		console.log(dayBasePath)
+		// const dayBasePath = `/${basePath}?day=${this.dayNum}`
 		let previous, next = null
 		// figure out nav links for previous
 		if (this.isCheckingDevo) {
-			// nothing previous if on devo
 			previous = dayBasePath
 		} else if (this.contentIndex === 0) {
 			// if on first ref, then devo is previous
 			if (this.hasDevo) {
-				previous = `/${basePath}/devo?day=${this.dayNum}`
+				previous = `${dayBasePath}/devo`
 			} else {
 				previous = dayBasePath
 			}
 		} else {
 			// previous content
-			previous = `/${basePath}/ref?day=${this.dayNum}&content=${this.contentIndex - 1}`
+			previous = `${dayBasePath}/ref/${this.contentIndex - 1}`
 		}
 
 		// figure out nav links for next
 		if (this.isFinalReadingForDay) {
 			if (this.isFinalPlanDay) {
 				// plan complete
-				next = `/${basePath}/completed`
+				next = `${dayBasePath.replace(`/day/${this.dayNum}`, '')}/completed`
 			} else {
 				// day complete
-				next = `/${basePath}/day/${this.dayNum}/completed`
+				next = `${dayBasePath}/completed`
 			}
 		} else if (this.contentIndex + 1 === this.numRefs) {
 			// overview page if not last remaining ref, and is last ref in order
-			next = `/${basePath}?day=${this.dayNum}`
+			next = dayBasePath
 		} else if (this.isCheckingDevo) {
 			// if on devo, next is content 0
-			next = `/${basePath}/ref?day=${this.dayNum}&content=0`
+			next = `${dayBasePath}/ref/0`
 		} else {
 			// next content
-			next = `/${basePath}/ref?day=${this.dayNum}&content=${this.contentIndex + 1}`
+			next = `${dayBasePath}/ref/${this.contentIndex + 1}`
 		}
 
 		return { previous, next, dayBasePath }
@@ -119,9 +120,9 @@ class PlanReader extends Component {
 
 
 	render() {
-		const { plan, location: { query: { day, content } }, bible, hosts, auth, dispatch } = this.props
+		const { plan, params, bible, hosts, auth, dispatch } = this.props
 		const { audioPlaying } = this.state
-
+		const { day, content } = params
 		if (Object.keys(plan).length === 0 || !day) {
 			return (
 				<div />

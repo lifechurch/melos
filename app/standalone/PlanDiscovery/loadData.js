@@ -25,14 +25,17 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isSavedPlans = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/saved-reading-plans')
 			const isCompletedPlans = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/completed-reading-plans')
 
-			const isReadingPlanRef = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/ref')
-			const isReadingPlanDevo = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo')
+			const isReadingPlanRef = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/day\/[0-9]+\/ref\/[0-9]+')
+			const isReadingPlanDevo = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/day\/[0-9]+\/devo')
 			const isReadingPlanSample = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+-[^\r\n\t\f\/ ]+\/day/[0-9]+')
 			const isReadingPlanSettings = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+-[^\r\n\t\f\/ ]+\/edit')
-			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+')
+			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+(\/day\/[0-9]+)*')
 
 			const isDayComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
 			const isSharedDayComplete = new RegExp('^\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
+
+			const isLookinside = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+')
+			const isLookinsideSample = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+\/read\/day/[0-9]+')
 
 			let auth = false
 			if (sessionData.email && sessionData.password) {
@@ -108,6 +111,24 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
 			} else if (isCompletedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
+
+			} else if (isLookinsideSample.test(params.url)) {
+				console.log('SAMPLELOOKINSIE')
+				const version = params.version || cookie.load('version') || '1'
+				store.dispatch(ActionCreator.sampleAll({
+					id: params.id,
+					language_tag: Locale.planLocale,
+					day: params.day,
+					version,
+				}, auth)).then(() => { resolve() })
+
+			} else if (isLookinside.test(params.url)) {
+				console.log('LOOKINSIDE', params)
+				store.dispatch(ActionCreator.readingplanView({
+					id: params.id,
+					language_tag: Locale.planLocale,
+				}, auth)).then((d) => { resolve() })
+
 
 			} else if (params.id) {
 				if (isCollection.test(params.url)) {

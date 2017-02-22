@@ -142,6 +142,7 @@ function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
 	const idNum = parseInt(params.id.toString().split('-')[0], 10)
 	const currentState = store.getState()
+
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
 		callback()
 	} else if (idNum > 0) {
@@ -233,12 +234,12 @@ function requireSubscribedPlan(a, b, c, d) {
 
 	const currentState = store.getState()
 	const version = cookie.load('version') || '1'
-	const { params, location } = nextState
+	const { params } = nextState
 	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
 	const id = parseInt(params.id.toString().split('-')[0], 10)
 	const plan = fullPlans[id] || { id }
 
-	let currentDay = location.query.day
+	let currentDay = params.day
 	if (!currentDay || isNaN(currentDay)) {
 		const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
 		if (isNaN(calculatedDay)) {
@@ -283,6 +284,8 @@ function requireSubscribedPlan(a, b, c, d) {
 }
 
 function requireSamplePlan(nextState, replace, callback) {
+	console.log('clientSide params', nextState.params)
+
 	const currentState = store.getState()
 	const version = cookie.load('version') || '1'
 	const { auth: { isLoggedIn }, readingPlans: { fullPlans } } = currentState
@@ -290,8 +293,7 @@ function requireSamplePlan(nextState, replace, callback) {
 	let { params: { id, day } } = nextState
 
 	id = id.toString().split('-')[0]
-	day = parseInt(day.toString(), 10)
-
+	day = day ? parseInt(day.toString(), 10) : 1
 	if (typeof fullPlans === 'object'
 		&& imFullPlans.hasIn([id, 'calendar', day - 1, 'hasReferences'])) {
 		store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
@@ -384,8 +386,8 @@ function requirePlanView(nextState, replace, callback) {
 	const { params } = nextState
 	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
 	const id = parseInt(params.id.toString().split('-')[0], 10)
-
-	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined' && 'subscription_id' in fullPlans[id]) {
+// && 'subscription_id' in fullPlans[id]
+	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
 		callback()
 	} else {
 		store.dispatch(PlanDiscoveryActionCreators.readingplanView({

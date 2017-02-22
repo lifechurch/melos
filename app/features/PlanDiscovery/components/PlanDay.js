@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
-
+import { FormattedHTMLMessage, FormattedMessage } from 'react-intl'
 import PlanDayStatus from './PlanDayStatus'
 import PlanDaySlider from './PlanDaySlider'
 import PlanDayStartButton from './PlanDayStartButton'
@@ -9,99 +8,99 @@ import PlanActionButtons from './PlanActionButtons'
 
 function PlanDay(props) {
 	const {
-		mode,
 		plan,
 		day,
 		dayData,
 		calendar,
+		planLinkNode,
+		dayBaseLink,
 		totalDays,
 		aboutLink,
+		isSubscribed,
+		actionsNode,
+		refListNode,
 		subscriptionLink,
 		startLink,
-		bibleLink,
 		isSaved,
 		devoCompleted,
 		hasDevo,
 		handleCompleteRef,
 	} = props
 
-	const style = `
-	.devotional p,
-	.devotional blockquote,
-	.devotional h1,
-	.devotional h2,
-	.devotional .video-container {
-	    margin-bottom: 20px;
-			font-size: 16px;
+	// parent overwrite a few things if desired
+	let refsDiv, actionsDiv
+	if (actionsNode) {
+		actionsDiv = actionsNode
+	} else {
+		actionsDiv = (
+			<PlanActionButtons
+				id={plan.id}
+				subscriptionLink={subscriptionLink}
+				planLinkNode={planLinkNode}
+				isSubscribed={isSubscribed}
+				isSaved={isSaved}
+			/>
+		)
 	}
-	`
+	if (refListNode) {
+		refsDiv = refListNode
+	} else {
+		refsDiv = (
+			<PlanReferences
+				day={day}
+				devoCompleted={devoCompleted}
+				completedRefs={dayData.references_completed}
+				references={dayData.reference_content}
+				link={subscriptionLink}
+				hasDevo={hasDevo}
+				handleCompleteRef={handleCompleteRef}
+			/>
+		)
+	}
+
 	return (
 		<div>
-			{(mode === 'sample') &&
-				<div className="row">
-					<div className="columns medium-8 large-8 medium-centered text-center">
-						<PlanActionButtons
-							id={plan.id}
-							aboutLink={aboutLink}
-							subscriptionLink={subscriptionLink}
-							mode={mode}
-							isSubscribed={'subscription_id' in plan}
-							isSaved={isSaved}
-						/>
-					</div>
+			<div className="row">
+				<div className="columns medium-8 large-8 medium-centered text-center">
+					{ actionsDiv }
 				</div>
-			}
+			</div>
 			<div className="row days-container collapse">
 				<div className="columns large-8 medium-8 medium-centered">
 					<PlanDaySlider
-						mode={mode}
 						day={day}
 						calendar={calendar}
-						subscriptionLink={subscriptionLink}
-						aboutLink={aboutLink}
+						dayBaseLink={dayBaseLink}
+						showDate={isSubscribed}
 					/>
 				</div>
 			</div>
 			<div className="row">
 				<div className="columns large-8 medium-8 medium-centered">
 					<div className="start-reading">
-						{(mode === 'subscription') &&
-							<PlanDayStartButton
-								dayData={dayData}
-								link={startLink}
-							/>
-						}
+						{
+								isSubscribed ?
+									<p>
+										<PlanDayStartButton
+											dayData={dayData}
+											link={startLink}
+										/>
+										<PlanDayStatus
+											day={day}
+											calendar={calendar}
+											total={totalDays}
+										/>
+									</p> :
+									<p>
+										<FormattedHTMLMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
+										&nbsp;&bull;&nbsp;
+										<FormattedMessage id="plans.read today" />
+									</p>
+							}
 					</div>
-					<PlanDayStatus
-						mode={mode}
-						day={day}
-						calendar={calendar}
-						total={totalDays}
-					/>
-					<PlanReferences
-						mode={mode}
-						day={day}
-						devoCompleted={devoCompleted}
-						completedRefs={dayData.references_completed}
-						references={dayData.reference_content}
-						link={subscriptionLink}
-						bibleLink={bibleLink}
-						hasDevo={hasDevo}
-						handleCompleteRef={handleCompleteRef}
-					/>
+					{ refsDiv }
 				</div>
 			</div>
-			{(mode === 'sample' && hasDevo) &&
-				<div className="row devo-content">
-					<style dangerouslySetInnerHTML={{ __html: style }} />
-					<div className="columns large-8 medium-8 medium-centered">
-						<div className="devo-header">
-							<FormattedMessage id="plans.devotional" />
-						</div>
-						<div className="devotional" dangerouslySetInnerHTML={{ __html: dayData.additional_content.html.default || dayData.additional_content.text.default }} />
-					</div>
-				</div>
-			}
 		</div>
 	)
 }
@@ -114,17 +113,21 @@ PlanDay.propTypes = {
 	subscriptionLink: PropTypes.string.isRequired,
 	aboutLink: PropTypes.string.isRequired,
 	startLink: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-	bibleLink: PropTypes.string.isRequired,
 	devoCompleted: PropTypes.bool.isRequired,
 	hasDevo: PropTypes.bool.isRequired,
 	isSaved: PropTypes.bool.isRequired,
-	handleCompleteRef: PropTypes.func.isRequired,
+	handleCompleteRef: PropTypes.func,
 	plan: PropTypes.object.isRequired,
-	mode: PropTypes.oneOf(['sample', 'subscription', 'about']).isRequired
+	actionsNode: PropTypes.node,
+	planLinkNode: PropTypes.node,
+	isSubscribed: PropTypes.bool.isRequired,
 }
 
 PlanDay.defaultProps = {
-	mode: 'subscription'
+	actionsNode: null,
+	handleCompleteRef: () => {},
+	planLinkNode: null,
+
 }
 
 export default PlanDay

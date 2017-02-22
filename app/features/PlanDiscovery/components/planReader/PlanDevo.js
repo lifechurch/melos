@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { FormattedMessage } from 'react-intl'
 
 function PlanDevo(props) {
 	const { devoContent } = props
@@ -10,12 +11,13 @@ function PlanDevo(props) {
 	}
 	return (
 		<div className='row devo-content'>
-			<div className='columns large-6 medium-8 medium-centered'>
-				<div
-					className='devotional'
-					dangerouslySetInnerHTML={{ __html: devoContent }}
-				/>
+			<div className="devo-header">
+				<FormattedMessage id="plans.devotional" />
 			</div>
+			<div
+				className='devotional'
+				dangerouslySetInnerHTML={{ __html: devoContent }}
+			/>
 		</div>
 	)
 }
