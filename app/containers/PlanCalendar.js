@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class PlanCalendar extends Component {
-	render() {
-		return (
-			<p>Plan Calendar</p>
-		)
-	}
+import PlanCalendarComponent from '../features/PlanDiscovery/components/PlanCalendar'
+
+function PlanCalendar(props) {
+	return (
+		<PlanCalendarComponent {...props} />
+	)
 }
 
 function mapStateToProps(state) {
 	return {
-		discover: state.plansDiscovery
+		plan: state.readingPlans.fullPlans._SELECTED
 	}
 }
 

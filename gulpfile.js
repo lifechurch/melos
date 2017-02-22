@@ -422,7 +422,8 @@ function smartlingAuth() {
 		const req = https.request(options)
 
 		req.on('response', (response) => {
-			let body = '';
+			/* eslint-disable no-var */
+			var body = '';
 
 			response.on('data', (chunk) => {
 				body += chunk;
@@ -469,7 +470,8 @@ function smartlingFetchAvailableLocales(token) {
 		const req = https.request(options)
 
 		req.on('response', (response) => {
-			let body = '';
+			/* eslint-disable no-var */
+			var body = '';
 
 			response.on('data', (chunk) => {
 				body += chunk;
@@ -516,7 +518,8 @@ function smartlingFetchLocaleFile(locale, token) {
 		const req = https.request(options)
 
 		req.on('response', (response) => {
-			let body = '';
+			/* eslint-disable no-var */
+			var body = '';
 
 			response.on('data', (chunk) => {
 				body += chunk;
