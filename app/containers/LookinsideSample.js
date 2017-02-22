@@ -1,62 +1,51 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import Plan from '../features/PlanDiscovery/components/Plan'
-import Sample from '../features/PlanDiscovery/components/PlanDay'
+import UnsubbedPlan from '../features/PlanDiscovery/components/UnsubbedPlan'
+
+const COPY = {
+	plans_description: 'Sometimes called Reading Plans or Devotionals, we call them “Bible Plans” because they give you daily portions of Scripture paired with devotional, audio, or video selections.',
+	account_blurb: 'We hope this Plan is helping you engage with the Bible. If you’d like to keep track of which days you’ve completed, you’ll need a free account — and it IS completely free, with no ads, no strings attached. Your free account simply gives you one convenient storage place for your YouVersion Bible activity. '
+}
 
 class LookinsideSample extends Component {
 
 	render() {
-		const { plan, dispatch, auth, params } = this.props
+		const { plan, dispatch, auth, params, children } = this.props
 
 		if (!plan) {
 			return (
 				<div />
 			)
 		}
-
-		if (false) {
-			return <div />
-		} else {
-			// overwrite actions div in sample view to show the landing page copy
-			const actionsNode = (
-				<div>
-					<div>Some copy</div>
-					<Link to={'/sign-up'}>
-						<button className='solid-button green padded'>
-						Create My Free Account
-					</button>
-					</Link>
-				</div>
+		// overwrite actions div in sample view to show the landing page copy
+		const actionsNode = (
+			<div className='lookinside-actions'>
+				<div className='copy'>{ COPY.account_blurb }</div>
+				<Link to={'/sign-up'}>
+					<button className='solid-button green padded'>
+					Create My Free Account
+				</button>
+				</Link>
+			</div>
 		)
-			return (
-				<div className='row'>
-					<Plan
-						dispatch={dispatch}
-						plan={plan}
-						params={params}
-						auth={auth}
-						dayBaseLink={`/lookinside/${plan.id}-${plan.slug}/read`}
-					>
-						<Sample
-							// plan={plan}
-							// day={dayNum}
-							// dayData={dayContent}
-							// calendar={plan.calendar}
-							// totalDays={plan.total_days}
-							// aboutLink={}
-							// subscriptionLink={`/lookinside/${plan.id}-${plan.slug}/read`}
-							actionsNode={actionsNode}
-							// startLink={''}
-							// bibleLink={'/bible'}
-							// isSaved={false}
-							// devoCompleted={dayContent.additional_content.completed}
-							// hasDevo={!!(dayContent.additional_content.html || dayContent.additional_content.text)}
-						/>
-					</Plan>
-				</div>
-			)
-		}
+		console.log(params)
+
+		return (
+			<div className='row'>
+				<UnsubbedPlan
+					{...this.props}
+					dispatch={dispatch}
+					plan={plan}
+					params={params}
+					auth={auth}
+					actionsNode={actionsNode}
+					dayBasePath={`/lookinside/${plan.id}-${plan.slug}/read`}
+				>
+					{ children }
+				</UnsubbedPlan>
+			</div>
+		)
 	}
 }
 

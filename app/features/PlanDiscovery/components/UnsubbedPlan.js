@@ -22,7 +22,7 @@ function dayHasDevo(devoContent) {
 class UnsubbedPlan extends Component {
 
 	render() {
-		const { plan, dispatch, children, dayBasePath, params, auth, localizedLink, serverLanguageTag } = this.props
+		const { plan, dispatch, children, dayBasePath, actionsNode, params, auth, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const version = cookie.load('version') || '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
@@ -63,7 +63,6 @@ class UnsubbedPlan extends Component {
 				{referenceLinks}
 			</ul>
 		)
-
 
 		return (
 			<div className="subscription-show">
@@ -110,6 +109,7 @@ class UnsubbedPlan extends Component {
 						day,
 						dayData,
 						planLinkNode,
+						actionsNode,
 						refListNode: refList,
 						calendar: plan.calendar,
 						totalDays: plan.total_days,
@@ -126,11 +126,13 @@ class UnsubbedPlan extends Component {
 						emailDelivery: plan.email_delivery,
 						handleCompleteRef: this.handleCompleteRef
 					})}
-					<PlanDevo
-						devoContent={dayData.additional_content.html ?
-							dayData.additional_content.html.default :
-							dayData.additional_content.text.default}
-					/>
+					<div className='columns large-8 medium-centered' style={{ marginTop: '100px' }}>
+						<PlanDevo
+							devoContent={dayData.additional_content.html ?
+								dayData.additional_content.html.default :
+								dayData.additional_content.text.default}
+						/>
+					</div>
 				</div>
 			</div>
 		)

@@ -27,8 +27,6 @@ function PlanDay(props) {
 		handleCompleteRef,
 	} = props
 
-	console.log(isSubscribed)
-
 	// parent overwrite a few things if desired
 	let refsDiv, actionsDiv
 	if (actionsNode) {

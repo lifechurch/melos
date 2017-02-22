@@ -284,6 +284,8 @@ function requireSubscribedPlan(a, b, c, d) {
 }
 
 function requireSamplePlan(nextState, replace, callback) {
+	console.log('clientSide params', nextState.params)
+
 	const currentState = store.getState()
 	const version = cookie.load('version') || '1'
 	const { auth: { isLoggedIn }, readingPlans: { fullPlans } } = currentState
@@ -292,7 +294,6 @@ function requireSamplePlan(nextState, replace, callback) {
 
 	id = id.toString().split('-')[0]
 	day = day ? parseInt(day.toString(), 10) : 1
-	console.log(nextState.params)
 	if (typeof fullPlans === 'object'
 		&& imFullPlans.hasIn([id, 'calendar', day - 1, 'hasReferences'])) {
 		store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
