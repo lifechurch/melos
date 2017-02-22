@@ -12,6 +12,14 @@ class RedirectsController < ApplicationController
   #             only: [:legacy_references]
 
 
+  def devo
+    redirect_to(plan_devo_url(username: params[:username], id: params[:id], day: params[:day]))
+  end
+
+  def ref
+    redirect_to(plan_ref_url(username: params[:username], id: params[:id], day: params[:day], content: params[:content]))
+  end
+
   def bookmarks
     redirect_to(bookmarks_user_url(current_user.username, label: params[:label]))
   end
