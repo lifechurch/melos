@@ -286,7 +286,24 @@ class SubscriptionsController < ApplicationController
   end
 
   def calendar
-    default_presenters
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.fullpath,
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   # for marking day complete from subscription email
