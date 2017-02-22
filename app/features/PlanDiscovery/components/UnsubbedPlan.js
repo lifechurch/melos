@@ -81,7 +81,6 @@ class UnsubbedPlan extends Component {
 										<FormattedHTMLMessage id="plans.plans back" />
 									</Link>
 								</div>
-
 								<div className="columns medium-4 text-center" style={{ fontSize: 11 }}>
 									<FormattedMessage id="plans.sample" />
 								</div>

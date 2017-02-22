@@ -63,7 +63,7 @@ function PlanDaySlider(props) {
 			: ''
 
 		const to = `${dayBaseLink}/day/${d.day}`
-		console.log(to)
+
 		return (
 			<Link key={d.day} to={to}>
 				<div className={`day ${active}`} style={{ backgroundColor: 'white' }}>
