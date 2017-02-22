@@ -70,6 +70,9 @@ YouversionWeb::Application.routes.draw do
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"
 
+  # get "/users/:username/reading-plans/:id", to: "redirects#show"
+  get "/users/:username/reading-plans/:id/devo", to: "redirects#devo"
+  get "/users/:username/reading-plans/:id/ref", to: "redirects#ref"
 
   match "/app(/:store)", to: AppStoreController.action(:index)
   get "/search(/:category)",to: "search#category", as: "search"
@@ -208,6 +211,10 @@ YouversionWeb::Application.routes.draw do
   match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
   match '/users/:username/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
 
+  get '/users/:username/reading-plans/:id/day/:day' => 'subscriptions#show', as: "plan_show"
+  get '/users/:username/reading-plans/:id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"
+  get '/users/:username/reading-plans/:id/day/:day/ref/:content' => 'subscriptions#ref', as: "plan_ref"
+
   get '/reading-plans-collection/:id' => 'plans#plan_collection'
   get '/recommended-plans-collection/:id' => 'plans#plan_collection'
   get '/saved-plans-collection' => 'plans#plan_collection'
@@ -215,7 +222,7 @@ YouversionWeb::Application.routes.draw do
 
   # LOOKINSIDE READING PLAN LANDING PAGES
   get '/lookinside/:id' => 'plans#lookinside_view'
-  get '/lookinside/:id/read' => 'plans#lookinside_sample'
+  get '/lookinside/:id/read/day/:day' => 'plans#lookinside_sample'
 
 
   # Reading Plans
