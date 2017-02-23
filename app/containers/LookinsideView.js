@@ -44,7 +44,7 @@ class Lookinside extends Component {
 		const metaDesc = `${plan.about.text[language_tag] || plan.about.text.default}`
 
 		return (
-			<div className='row lookinside'>
+			<div className='lookinside'>
 				<Helmet
 					title={metaTitle}
 					meta={[

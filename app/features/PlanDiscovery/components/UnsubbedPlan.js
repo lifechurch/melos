@@ -92,7 +92,7 @@ class UnsubbedPlan extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="medium-centered text-center">
+						<div className="medium-centered text-center columns">
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>

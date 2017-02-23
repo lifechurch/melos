@@ -57,7 +57,12 @@
 	}
 
 	.buttons {
-		justify-content: center;
+		@media @medium-up {
+			justify-content: center;
+		}
+		@media @small-only {
+			justify-content: space-around;
+		}
 		width: 100%;
 		margin-top: 40px;
 		.plans {

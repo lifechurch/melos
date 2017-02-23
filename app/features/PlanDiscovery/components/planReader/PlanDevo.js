@@ -10,7 +10,7 @@ function PlanDevo(props) {
 		)
 	}
 	return (
-		<div className='row devo-content'>
+		<div className='devo-content'>
 			<div className="devo-header">
 				<FormattedMessage id="plans.devotional" />
 			</div>

@@ -87,5 +87,12 @@
 }
 
 .start-reading {
-	float: right;
+	@media @medium-up {
+		float: right;
+	}
+	@media @small-only {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 20px;
+	}
 }

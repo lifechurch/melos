@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import moment from 'moment'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import { routeActions } from 'react-router-redux'
 import cookie from 'react-cookie'
 import Immutable from 'immutable'
 
@@ -10,6 +11,7 @@ import Image from '../../../components/Carousel/Image'
 import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
 import ActionCreators from '../actions/creators'
+import isFinalReadingForDay, { isFinalPlanDay } from '../../../lib/readingPlanUtils'
 
 function dayHasDevo(devoContent) {
 	return (typeof devoContent.html !== 'undefined' && devoContent.html !== null) ||
@@ -53,7 +55,7 @@ class Plan extends Component {
 	}
 
 	handleCompleteRef(day, ref, complete) {
-		const { dispatch, plan: { calendar, id } } = this.props
+		const { dispatch, plan: { calendar, id, total_days, slug }, localizedLink } = this.props
 		const dayData = calendar[day - 1]
 		const references = Immutable.fromJS(dayData.references_completed).toJS()
 		const hasDevo = dayHasDevo(dayData.additional_content)
@@ -84,6 +86,15 @@ class Plan extends Component {
 			references,
 			devotional: completeDevo,
 		}, true))
+
+		// push day complete/plan complete
+		if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
+			if (isFinalPlanDay(day, calendar, total_days)) {
+				dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
+			} else {
+				dispatch(routeActions.push(`${window.location.pathname}/completed`))
+			}
+		}
 	}
 
 	render() {
@@ -94,10 +105,6 @@ class Plan extends Component {
 		const myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
 		const bibleLink = localizedLink(`/bible/${version}`)
 		const isSaved = !!plan.saved === true
-
-		// This component can be reached two ways, Plan Subscription and Plan Sample
-		//  Depending on how we get here, we need to parse the initial variable values
-		//  differently.
 
 		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
 
@@ -127,8 +134,17 @@ class Plan extends Component {
 			startLink = `${subscriptionLink}/ref/0`
 		}
 
+		const metaTitle = `${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`
+		const metaDesc = `${plan.about.text[language_tag] || plan.about.text.default}`
+
 		return (
 			<div className="subscription-show">
+				<Helmet
+					title={metaTitle}
+					meta={[
+						{ name: 'description', content: metaDesc }
+					]}
+				/>
 				<div className="plan-overview">
 					<div className="row">
 						<div className="header columns large-8 medium-8 medium-centered">
@@ -155,7 +171,7 @@ class Plan extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="medium-centered text-center">
+						<div className="medium-centered text-center columns">
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>
