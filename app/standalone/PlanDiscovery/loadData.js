@@ -101,7 +101,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					user_id: sessionData.userid,
 					day: params.day,
 					version,
-				}, auth)).then((d) => { resolve() })
+				}, auth)).then(() => { resolve() })
 
 			} else if (isSubscribedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
@@ -125,8 +125,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.readingplanView({
 					id: params.id,
 					language_tag: Locale.planLocale,
-				}, auth)).then((d) => { resolve() })
-
+				}, auth)).then(() => { resolve() })
 
 			} else if (params.id) {
 				if (isCollection.test(params.url)) {
