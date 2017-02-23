@@ -4,7 +4,7 @@ import type from '../actions/constants'
 export default function reducer(state = {}, action) {
 	switch (action.type) {
 		case type('recommendationsItemsRequest'):
-			return { loading: true }
+			return { loading: true, [action.params.id]: {} }
 
 		case type('recommendationsItemsFailure'):
 			return state
@@ -20,8 +20,7 @@ export default function reducer(state = {}, action) {
 
 					return p.toJS()
 				})
-
-				return Immutable.fromJS(state).set('items', reading_plans).set('loading', false).toJS()
+				return Immutable.fromJS(state).setIn([params.id, 'items'], reading_plans).set('loading', false).toJS()
 			} else {
 				return state
 			}

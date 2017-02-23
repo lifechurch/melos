@@ -143,17 +143,44 @@ function requirePlanData(nextState, replace, callback) {
 	const idNum = parseInt(params.id.toString().split('-')[0], 10)
 	const currentState = store.getState()
 
+	let getPlanView = true
+	let getStats = true
+	let getSavedPlans = true
+	let getRecommendedPlans = true
+
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
+		getPlanView = false
+		if (currentState.plansDiscovery.plans.stats) {
+			getStats = false
+		}
+	}
+	if (currentState.readingPlans.recommendedPlans[idNum]) {
+		getRecommendedPlans = false
+	}
+	if (currentState.readingPlans.savedPlans.items) {
+		getSavedPlans = false
+	}
+
+	if (!getPlanView && !getStats && !getRecommendedPlans && !getSavedPlans) {
 		callback()
-	} else if (idNum > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.planLocale }, store.getState().auth.isLoggedIn)).then(() => {
+	} else {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({
+			getPlanView,
+			getStats,
+			getRecommendedPlans,
+			getSavedPlans,
+			id: idNum,
+			language_tag: window.__LOCALE__.planLocale
+		},
+			store.getState().auth.isLoggedIn)
+		).then(() => {
 			callback()
 		}, () => {
 			callback()
 		})
-	} else {
-		callback()
 	}
+
+
 }
 
 /**
@@ -284,7 +311,6 @@ function requireSubscribedPlan(a, b, c, d) {
 }
 
 function requireSamplePlan(nextState, replace, callback) {
-	console.log('clientSide params', nextState.params)
 
 	const currentState = store.getState()
 	const version = cookie.load('version') || '1'

@@ -78,7 +78,7 @@ class Plan extends Component {
 		}
 
 		// make api call
-		dispatch(ActionCreators.updateCompletion({
+		dispatch(ActionCreators.updatePlanDay({
 			id,
 			day,
 			references,
@@ -100,7 +100,6 @@ class Plan extends Component {
 		//  differently.
 
 		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
-		console.log(params)
 
 		let day = parseInt(params.day, 10)
 		// if day is not valid, calculate based on start_dt
@@ -115,7 +114,7 @@ class Plan extends Component {
 			}
 		}
 
-		const subscriptionLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}/day/${day}`)
+		const subscriptionLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}`)
 		const dayBaseLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}`)
 		const dayData = plan.calendar[day - 1]
 		const devoCompleted = dayData.additional_content.completed
@@ -168,6 +167,7 @@ class Plan extends Component {
 						day,
 						dayData,
 						actionsNode: <div />,
+						planLinkNode,
 						isSubscribed: ('subscription_id' in plan),
 						calendar: plan.calendar,
 						totalDays: plan.total_days,

@@ -1,16 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
-import moment from 'moment'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import cookie from 'react-cookie'
-import Immutable from 'immutable'
 
 import { getSelectionString } from '../../../lib/usfmUtils'
 import Image from '../../../components/Carousel/Image'
-import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
-import ActionCreators from '../actions/creators'
 import PlanDevo from './planReader/PlanDevo'
 
 
