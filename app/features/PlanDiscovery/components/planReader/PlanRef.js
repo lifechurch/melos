@@ -148,7 +148,7 @@ class PlanRef extends Component {
 		}
 
 		return (
-			<div className='plan-ref columns large-6 medium-8 medium-centered'>
+			<div className='plan-ref'>
 				{ planRefHeading }
 				<Chapter
 					{...this.props}

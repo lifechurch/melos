@@ -77,27 +77,27 @@ function PlanDay(props) {
 			</div>
 			<div className="row">
 				<div className="columns large-8 medium-8 medium-centered">
-					<div className="start-reading">
-						{
+					{
 								isSubscribed ?
-									<p>
-										<PlanDayStartButton
-											dayData={dayData}
-											link={startLink}
-										/>
+									<div>
+										<div className="start-reading">
+											<PlanDayStartButton
+												dayData={dayData}
+												link={startLink}
+											/>
+										</div>
 										<PlanDayStatus
 											day={day}
 											calendar={calendar}
 											total={totalDays}
 										/>
-									</p> :
+									</div> :
 									<p>
 										<FormattedHTMLMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
 										&nbsp;&bull;&nbsp;
 										<FormattedMessage id="plans.read today" />
 									</p>
 							}
-					</div>
 					{ refsDiv }
 				</div>
 			</div>

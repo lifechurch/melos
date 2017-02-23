@@ -75,9 +75,7 @@ class PlanReader extends Component {
 
 	buildNavLinks() {
 		const { location: { pathname } } = this.props
-		console.log(pathname)
 		const dayBasePath = `${pathname.replace('/devo', '').replace(`/ref/${this.contentIndex}`, '')}`
-		console.log(dayBasePath)
 		// const dayBasePath = `/${basePath}?day=${this.dayNum}`
 		let previous, next = null
 		// figure out nav links for previous
@@ -205,32 +203,34 @@ class PlanReader extends Component {
 					// update the arrow positioning
 					updateStyle={!showChapterButton}
 				/>
-				<div className='plan-reader-content'>
-					{
-						// render the devo or ref component (child of PlanReaderView based on route)
-						React.cloneElement(this.props.children, {
-							devoContent,
-							bibleReferences: bible.verses.references,
-							bibleVerses: bible.verses.verses,
-							bibleChapterLink,
-							content: referenceContent,
-							refHeading,
-							showChapterButton,
-							audio,
-							audioStart: audioTiming ? audioTiming.startTime : null,
-							audioStop: audioTiming ? audioTiming.endTime : null,
-							audioPlaying,
-							onAudioComplete: this.onAudioComplete,
-							version: bible.version,
-							verseColors: bible.verseColors,
-							highlightColors: bible.highlightColors,
-							momentsLabels: bible.momentsLabels,
-							getChapter: this.getChapter,
-							auth,
-							hosts,
-							dispatch
-						})
-					}
+				<div className='row plan-reader-content'>
+					<div className='columns large-6 medium-8 medium-centered'>
+						{
+							// render the devo or ref component (child of PlanReaderView based on route)
+							React.cloneElement(this.props.children, {
+								devoContent,
+								bibleReferences: bible.verses.references,
+								bibleVerses: bible.verses.verses,
+								bibleChapterLink,
+								content: referenceContent,
+								refHeading,
+								showChapterButton,
+								audio,
+								audioStart: audioTiming ? audioTiming.startTime : null,
+								audioStop: audioTiming ? audioTiming.endTime : null,
+								audioPlaying,
+								onAudioComplete: this.onAudioComplete,
+								version: bible.version,
+								verseColors: bible.verseColors,
+								highlightColors: bible.highlightColors,
+								momentsLabels: bible.momentsLabels,
+								getChapter: this.getChapter,
+								auth,
+								hosts,
+								dispatch
+							})
+						}
+					</div>
 				</div>
 			</div>
 		)
