@@ -28,6 +28,11 @@ class LookinsideSample extends Component {
 				</a>
 			</div>
 		)
+		const allplansNode = (
+			<a href={'/reading-plans'}>
+				All Plans
+			</a>
+		)
 
 		return (
 			<div className='row'>
@@ -38,6 +43,7 @@ class LookinsideSample extends Component {
 					params={params}
 					auth={auth}
 					actionsNode={actionsNode}
+					allplansNode={allplansNode}
 					dayBasePath={`/lookinside/${plan.id}-${plan.slug}/read`}
 				>
 					{ children }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
-import { Link } from 'react-router'
 import Card from '../components/Card'
 
 const PLANS_DATA = {
@@ -64,16 +63,16 @@ class Lookinside extends Component {
 								<div className='description'>{ plan.about.html.default || plan.about.text.default }</div>
 							</div>
 							<div className='buttons'>
-								<Link to='/reading-plans'>
+								<a href='/reading-plans'>
 									<button className='plans'>
 										BROWSE ALL PLANS
 									</button>
-								</Link>
-								<Link to={`/lookinside/${plan.id}-${plan.slug}/read/day/1`}>
+								</a>
+								<a href={`/lookinside/${plan.id}-${plan.slug}/read/day/1`}>
 									<button className='read'>
 										READ THIS PLAN
 									</button>
-								</Link>
+								</a>
 							</div>
 						</Card>
 					</div>

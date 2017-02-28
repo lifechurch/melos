@@ -122,6 +122,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				}, auth)).then(() => { resolve() })
 
 			} else if (isLookinside.test(params.url)) {
+				// figure out referrer and fire off lookinside analytics
 				store.dispatch(ActionCreator.readingplanView({
 					id: params.id,
 					language_tag: Locale.planLocale,

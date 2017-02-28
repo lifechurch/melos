@@ -97,9 +97,9 @@ export default function (
 			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
 
 			{/* ABS LOOKINSIDE */}
-			<Route path="lookinside/:id(:slug)">
+			<Route path="lookinside/:id(:slug)" >
 				<IndexRoute component={LookinsideView} onEnter={requirePlanView} />
-				<Route path="read/day/:day" component={LookinsideSample} onEnter={requireSamplePlan} onChange={() => { console.log('laekrbgkjaehrbglae') }}>
+				<Route path="read/day/:day" component={LookinsideSample} onEnter={requireSamplePlan}>
 					<IndexRoute component={PlanDay} />
 				</Route>
 			</Route>
