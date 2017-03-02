@@ -11,7 +11,7 @@
 	}, 4) %>;
 
 	// lookinside
-<%if (referrer.indexOf('lookinside.bible') !== -1) { %>
+<%if (referrer && referrer.indexOf('lookinside.bible') !== -1) { %>
 	var utag_data = {
 		site_environment: "youversion",
 	};
