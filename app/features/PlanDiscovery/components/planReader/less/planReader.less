@@ -90,10 +90,14 @@
 		font-weight: bolder;
 		display: inline-flex;
 		align-items: center;
+		flex-wrap: wrap;
+
+		>span {
+			margin-right: 10px;
+		}
 	}
 
 	.pill-heading {
-		margin-left: 10px;
 		font-size: 10px;
 		font-weight: normal;
 		color: @font-grey;
@@ -101,9 +105,10 @@
 	}
 	.trigger-button {
 		z-index: 0;
-		position: absolute;
-		top: -6px;
-		right: 50px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
 	}
 	.open {
 		border: none;

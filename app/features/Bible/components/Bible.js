@@ -331,12 +331,12 @@ class Bible extends Component {
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
 					<div className='row buttons'>
-						<div className='solid-button' onClick={this.chapterPickerInstance ? this.chapterPickerInstance.handleDropDownClick : () => {}}>
+						<button className='solid-button' onClick={this.chapterPickerInstance ? this.chapterPickerInstance.handleDropDownClick : () => {}}>
 							<FormattedMessage id="Reader.chapterpicker.chapter label" />
-						</div>
-						<div className='solid-button' onClick={this.versionPickerInstance ? this.versionPickerInstance.handleDropDownClick : () => {}}>
+						</button>
+						<button className='solid-button' onClick={this.versionPickerInstance ? this.versionPickerInstance.handleDropDownClick : () => {}}>
 							<FormattedMessage id="Reader.versionpicker.version label" />
-						</div>
+						</button>
 					</div>
 				</div>
 			)
@@ -356,7 +356,7 @@ class Bible extends Component {
 						ref={(chapter) => { this.chapter = chapter }}
 					/>
 					<ChapterCopyright
-						copyright={bible.copyright}
+						copyright={bible.chapter.copyright}
 						versionId={bible.chapter.reference.version_id}
 					/>
 					<NavArrows

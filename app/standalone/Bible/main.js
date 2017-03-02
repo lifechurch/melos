@@ -20,13 +20,13 @@ import ReactGA from 'react-ga'
 
 let initialState = defaultState
 
-let browserHistory = useRouterHistory(createHistory)({
+const browserHistory = useRouterHistory(createHistory)({
 	basename: '/'
 })
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
 	initialState = window.__INITIAL_STATE__
-	ReactGA.initialize("UA-3571547-76")
+	ReactGA.initialize('UA-3571547-76')
 }
 
 let logger = null
@@ -44,9 +44,9 @@ function requireChapterData(nextState, replace, callback) {
 
 	const {
 		params: {
-			version:nextVersion,
-			book:nextBook,
-			chapter:nextChapter,
+			version: nextVersion,
+			book: nextBook,
+			chapter: nextChapter,
 		}
 	} = nextState
 
@@ -61,13 +61,13 @@ function requireChapterData(nextState, replace, callback) {
 			bibleReader: {
 				chapter: {
 					reference: {
-						usfm:currentUsfm,
-						version_id:currentVersion
+						usfm: currentUsfm,
+						version_id: currentVersion
 					}
 				}
 			}
 		} = currentState)
-	} catch(ex) {
+	} catch (ex) {
 		isInitialLoad = true
 	}
 
@@ -101,8 +101,14 @@ function requireChapterData(nextState, replace, callback) {
 			callback()
 		},
 			(error) => {
+				callback()
 				console.log('main error')
-				store.dispatch(BibleActionCreator.handleInvalidReference(isLoggedIn)).then(() => {
+				store.dispatch(BibleActionCreator.handleInvalidReference({
+					language_tag: window.__LOCALE__.locale3,
+					version: nextVersion,
+					reference: nextUsfm,
+					params: nextState.params
+				}, isLoggedIn)).then(() => {
 					console.log('CALLL IT BACK')
 					callback()
 				})
@@ -116,10 +122,10 @@ function requireVerseData(nextState, replace, callback) {
 
 	const {
 		params: {
-			version:nextVersion,
-			book:nextBook,
-			chapter:nextChapter,
-			verse:nextVerse
+			version: nextVersion,
+			book: nextBook,
+			chapter: nextChapter,
+			verse: nextVerse
 		}
 	} = nextState
 
@@ -131,8 +137,8 @@ function requireVerseData(nextState, replace, callback) {
 		},
 		passage: {
 			verses: {
-				current_verse:currentUsfm,
-				primaryVersion:currentVersion
+				current_verse: currentUsfm,
+				primaryVersion: currentVersion
 			}
 		}
 	} = currentState
@@ -158,8 +164,8 @@ function requireVerseData(nextState, replace, callback) {
 				passage: nextUsfm
 			}, isLoggedIn))
 		.then(
-			() => callback(),
-			(error) => callback()
+			() => { return callback() },
+			(error) => { return callback() }
 		)
 	}
 }
@@ -169,7 +175,7 @@ const routes = getRoutes(requireChapterData, requireVerseData)
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} onUpdate={() => window.scrollTo(0, 0)} />
+			<Router routes={routes} history={browserHistory} onUpdate={() => { return window.scrollTo(0, 0) }} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')

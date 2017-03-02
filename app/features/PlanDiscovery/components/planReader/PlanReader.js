@@ -3,7 +3,7 @@ import { routeActions } from 'react-router-redux'
 import ActionCreators from '../../actions/creators'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import PlanNavigation from './PlanNavigation'
-import isFinalReadingForDay, { isFinalPlanDay } from '../../../../lib/readingPlanUtils'
+import isFinalReadingForDay, { isFinalPlanDay, dayHasDevo, handleRefUpdate } from '../../../../lib/readingPlanUtils'
 import { getVerseAudioTiming } from '../../../../lib/readerUtils'
 
 class PlanReader extends Component {
@@ -50,27 +50,20 @@ class PlanReader extends Component {
 
 	handleComplete = () => {
 		const { dispatch, plan } = this.props
-		let completeDevo = true
-		const references = this.dayObj.references_completed
-		// devotional is true by default if there is no devotional
-		// otherwise this will overwrite with the correct value
-		if (this.hasDevo) {
-			completeDevo =
-				this.isCheckingDevo ||
-				plan.calendar[this.dayNum - 1].additional_content.completed
+
+		if (!this.dayObj.completed) {
+			handleRefUpdate(
+				this.dayObj.references_completed,
+				this.isCheckingDevo,
+				this.hasDevo,
+				this.dayObj.additional_content.completed,
+				this.reference,
+				true,
+				plan.id,
+				this.dayNum,
+				dispatch
+			)
 		}
-		// if we have a reference, that we're reading through,
-		// add it to the list of completedRefs
-		if (this.reference) {
-			references.push(this.reference)
-		}
-		// make api call
-		dispatch(ActionCreators.updatePlanDay({
-			id: plan.id,
-			day: this.dayNum,
-			references,
-			devotional: completeDevo,
-		}, true))
 	}
 
 	buildNavLinks() {
@@ -132,10 +125,9 @@ class PlanReader extends Component {
 		this.dayObj = plan.calendar[this.dayNum - 1]
 		this.numRefs = this.dayObj.references.length
 		this.reference = this.dayObj.references[this.contentIndex]
-		// if no content was passed in the url, we know that devo is being rendered
-		this.hasDevo = 	(!!this.dayObj.additional_content.html) ||
-										(!!this.dayObj.additional_content.text)
+		this.hasDevo = 	dayHasDevo(this.dayObj.additional_content)
 		this.totalContentsNum = this.hasDevo ? (this.numRefs + 1) : this.numRefs
+		// if no content was passed in the url, we know that devo is being rendered
 		this.isCheckingDevo = isNaN(this.contentIndex) && this.hasDevo
 		this.isFinalReadingForDay = isFinalReadingForDay(
 			this.dayObj,

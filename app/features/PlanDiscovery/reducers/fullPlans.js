@@ -90,6 +90,7 @@ export default function reducer(state = {}, action) {
 						if (completedRefs.length === references.length) {
 							// if devo and all refs are completed, then the day is complete
 							// or there is no devo, but it still defaults to complete
+							dayObj = dayObj.set('refs_completed', true)
 							if (additional_content.completed) {
 								dayObj = dayObj.set('completed', true)
 							}

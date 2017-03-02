@@ -11,12 +11,8 @@ import Image from '../../../components/Carousel/Image'
 import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
 import ActionCreators from '../actions/creators'
-import isFinalReadingForDay, { isFinalPlanDay } from '../../../lib/readingPlanUtils'
+import isFinalReadingForDay, { isFinalPlanDay, dayHasDevo, handleRefUpdate } from '../../../lib/readingPlanUtils'
 
-function dayHasDevo(devoContent) {
-	return (typeof devoContent.html !== 'undefined' && devoContent.html !== null) ||
-		(typeof devoContent.text !== 'undefined' && devoContent.text !== null)
-}
 
 class Plan extends Component {
 	constructor(props) {
@@ -55,44 +51,32 @@ class Plan extends Component {
 	}
 
 	handleCompleteRef(day, ref, complete) {
-		const { dispatch, plan: { calendar, id, total_days, slug }, localizedLink } = this.props
+		const { dispatch, plan: { calendar, id, total_days } } = this.props
 		const dayData = calendar[day - 1]
 		const references = Immutable.fromJS(dayData.references_completed).toJS()
 		const hasDevo = dayHasDevo(dayData.additional_content)
 
-		// devotional is true by default if there is no devotional
-		// otherwise this will overwrite with the correct value
-		let completeDevo = true
-		if (ref === 'devo') {
-			completeDevo = complete
-		} else if (hasDevo) {
-			completeDevo = dayData.additional_content.completed
-		}
-
-		// if we have a reference, that we're reading through,
-		// add it to the list of completedRefs
-		if (ref && ref !== 'devo') {
-			if (complete === true) {
-				references.push(ref)
-			} else {
-				references.splice(references.indexOf(ref), 1)
-			}
-		}
-
-		// make api call
-		dispatch(ActionCreators.updatePlanDay({
+		handleRefUpdate(
+			references,
+			ref === 'devo',
+			hasDevo,
+			ref === 'devo' ? complete : dayData.additional_content.completed,
+			ref !== 'devo' ? ref : null,
+			complete,
 			id,
 			day,
-			references,
-			devotional: completeDevo,
-		}, true))
+			dispatch
+		)
 
 		// push day complete/plan complete
-		if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
-			if (isFinalPlanDay(day, calendar, total_days)) {
-				dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
-			} else {
-				dispatch(routeActions.push(`${window.location.pathname}/completed`))
+		if (complete) {
+			if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
+				console.log(complete);
+				if (isFinalPlanDay(day, calendar, total_days)) {
+					dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
+				} else {
+					dispatch(routeActions.push(`${window.location.pathname}/completed`))
+				}
 			}
 		}
 	}
@@ -129,9 +113,9 @@ class Plan extends Component {
 
 		let startLink = ''
 		if (hasDevo) {
-			startLink = `${subscriptionLink}/devo`
+			startLink = `${subscriptionLink}/day/${day}/devo`
 		} else {
-			startLink = `${subscriptionLink}/ref/0`
+			startLink = `${subscriptionLink}/day/${day}/ref/0`
 		}
 
 		const metaTitle = `${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`

@@ -4,12 +4,16 @@ import type from './constants'
 const ActionCreators = {
 
 
-	handleInvalidReference() {
+	handleInvalidReference(params, auth) {
+		const { language_tag, version, reference } = params
+
+
+		// ActionCreators.bibleVersion({ id: version })
 		const newParams = {
-		 	isInitialLoad: false,
-		 	hasVersionChanged: true,
-		 	hasChapterChanged: true,
-		 	language_tag: 'en',
+			isInitialLoad: false,
+			hasVersionChanged: false,
+			hasChapterChanged: true,
+			language_tag: 'en',
 			version: '1',
 			reference: 'JHN.1',
 			showError: true,
@@ -40,12 +44,12 @@ const ActionCreators = {
 			if (isInitialLoad || hasVersionChanged) {
 				promises.push(
 					new Promise((resolve, reject) => {
-						dispatch(ActionCreators.bibleVersion({ id: version })).then((version) => {
-							if ('errors' in version) {
-								reject(version.errors)
+						dispatch(ActionCreators.bibleVersion({ id: version })).then((newVersion) => {
+							if ('errors' in newVersion) {
+								reject(newVersion.errors)
 							} else {
 								resolve(
-									dispatch(ActionCreators.bibleVersions({ language_tag: version.language.language_tag, type: 'all' }))
+									dispatch(ActionCreators.bibleVersions({ language_tag: newVersion.language.language_tag, type: 'all' }))
 								)
 							}
 						})

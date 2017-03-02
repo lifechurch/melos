@@ -394,7 +394,7 @@ function requirePlanCompleteData(nextState, replace, callback) {
 		getSavedPlans = false
 		getRecommendedPlans = false
 	}
-
+	console.log('welkgjbwkrjgber')
 	store.dispatch(PlanDiscoveryActionCreators.planComplete({
 		id,
 		language_tag: window.__LOCALE__.planLocale,
