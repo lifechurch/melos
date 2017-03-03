@@ -395,6 +395,12 @@
     display: inline;
     margin-bottom: 0;
   }
+  /* hide introdcution titles */
+  .vid111 .imt1, .vid111 .imt {
+    display: none;
+  }
+
+
   //Certain headlines should be centered in NABRE
   .vid463 div.s2 {
     text-align: center;
@@ -412,6 +418,9 @@
   /* Bulgarian Orthodox Bible 2006 */
   .vid1558 .sls {
     font-style: normal;
+  }
+  .vid1558 .add {
+    font-style: italic;
   }
 
   // hide cross references in

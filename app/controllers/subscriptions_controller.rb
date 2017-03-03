@@ -6,7 +6,8 @@ class SubscriptionsController < ApplicationController
   before_filter :force_login
   before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
   before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
-  before_filter :get_plan_counts, only: [:index,:completed,:saved]
+  before_filter :get_plan_counts, only: [:index,:saved]
+
 
 
   rescue_from NotAChapterError, with: :ref_not_found
@@ -76,7 +77,9 @@ class SubscriptionsController < ApplicationController
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
-        "url" => request.path,
+        "url" => request.fullpath,
+        "id" => params[:id].split("-")[0],
+        "day" => params[:day],
         "cache_for" => YV::Caching::a_very_long_time
     }
 
@@ -97,7 +100,9 @@ class SubscriptionsController < ApplicationController
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
-        "url" => request.path,
+        "url" => request.fullpath,
+        "id" => params[:id].split("-")[0],
+        "day" => params[:day],
         "cache_for" => YV::Caching::a_very_long_time
     }
 
@@ -118,7 +123,9 @@ class SubscriptionsController < ApplicationController
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
-        "url" => request.path,
+        "url" => request.fullpath,
+        "id" => params[:id].split("-")[0],
+        "day" => params[:day],
         "cache_for" => YV::Caching::a_very_long_time
     }
 
@@ -258,11 +265,45 @@ class SubscriptionsController < ApplicationController
   end
 
   def edit
-    default_presenters
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.fullpath,
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   def calendar
-    default_presenters
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.fullpath,
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   # for marking day complete from subscription email

@@ -130,7 +130,7 @@ function inPathNotFirst(segment, path) {
 }
 
 function init() {
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
@@ -157,6 +157,8 @@ var isPlanCollection    = isFirst("reading-plans-collection");
 var isSignUp            = isFirst("sign-up");
 var isSignIn            = isFirst("sign-in");
 var isPassage           = isFirst("passage");
+
+var isLookInside        = isFirst("lookinside");
 
 var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
 var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");

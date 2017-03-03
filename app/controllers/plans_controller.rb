@@ -132,36 +132,74 @@ class PlansController < ApplicationController
   end
 
   def sample
-    respond_to do |format|
-      format.json { return render nothing: true }
-      format.any {
-        @plan = Plan.find(params[:id])
-        @referrer = request.referrer
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "day" => params[:day],
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
 
-        # render 404 unless day param is a valid day for the plan
-        return handle_404 if @plan.errors.present?
-        return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
 
-        # always defer to version_id of plan, if specified, when rendering sample view
-        params[:initial] = true
-
-        if current_auth && current_user.subscribed_to?(@plan)
-          redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param) and return
-        end
-
-        @presenter = Presenter::Subscription.new( @plan , params, self)
-        self.sidebar_presenter = Presenter::Sidebar::PlanSample.new(@plan,params,self)
-
-        return render
-      }
+    if (fromNode['error'].present?)
+      return render_404
     end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
+    # respond_to do |format|
+    #   format.json { return render nothing: true }
+    #   format.any {
+    #     @plan = Plan.find(params[:id])
+    #     @referrer = request.referrer
+    #
+    #     # render 404 unless day param is a valid day for the plan
+    #     return handle_404 if @plan.errors.present?
+    #     return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
+    #
+    #     # always defer to version_id of plan, if specified, when rendering sample view
+    #     params[:initial] = true
+    #
+    #     if current_auth && current_user.subscribed_to?(@plan)
+    #       redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param) and return
+    #     end
+    #
+    #     @presenter = Presenter::Subscription.new( @plan , params, self)
+    #     self.sidebar_presenter = Presenter::Sidebar::PlanSample.new(@plan,params,self)
+    #
+    #     return render
+    #   }
+    # end
   end
 
   def day_complete
-    @plan = Plan.find(params[:id])
-    @user = User.find(params[:user_id])
-    @day = params[:day]
-    render 'subscriptions/day_complete'
+    # @plan = Plan.find(params[:id])
+    # @user = User.find(params[:user_id])
+    # @day = params[:day]
+    # render 'subscriptions/day_complete'
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "id" => params[:id].split("-")[0],
+        "user_id" => params[:user_id],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   def ref_not_found
@@ -183,6 +221,51 @@ class PlansController < ApplicationController
       return render nothing: true
     end
   end
+
+
+  # ABS LOOKINSIDE
+  def lookinside_view
+    # what plans are we allowing for this view?
+    whitelist = [2614, 2217, 3400]
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "referrer" => request.referrer,
+        "id" => params[:id].split("-")[0],
+        "day" => params[:day],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
+
+    # check to make sure we allow the plan
+    # otherwise redirect to plan discovery page
+    redirect = true
+    for planid in whitelist
+      if (p["id"].to_s == planid.to_s)
+        redirect = false
+      end
+    end
+
+    if (redirect)
+      redirect_to plans_path() and return
+    end
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
+  end
+  def lookinside_sample
+    return lookinside_view
+  end
+
+
 
   # Actions needed to capture legacy links sent via email to our users. DO NOT remove
   # ---------------------------------------------------------------------------------
