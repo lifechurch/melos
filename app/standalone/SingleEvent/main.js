@@ -10,6 +10,8 @@ import moment from 'moment'
 
 require('moment/min/locales')
 
+Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704').install()
+
 let initialState = defaultState
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
@@ -26,7 +28,7 @@ addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
 render(
-	<IntlProvider locale={window.__LOCALE__.locale2 == "mn" ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+	<IntlProvider locale={window.__LOCALE__.locale2 == 'mn' ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
 			<EventView />
 		</Provider>

@@ -1,3 +1,5 @@
+Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704').install()
+
 import 'babel-polyfill'
 import React from 'react'
 import { Router } from 'react-router'
@@ -14,7 +16,7 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
 import ga from 'react-ga'
 
-ga.initialize('UA-3571547-125', {'language': window.__LOCALE__.locale});
+ga.initialize('UA-3571547-125', { language: window.__LOCALE__.locale });
 
 if (typeof window !== 'undefined') {
 	window.__GA__ = ga;
@@ -37,9 +39,9 @@ const store = configureStore(initialState, browserHistory, logger)
 
 function requireAuth(nextState, replace) {
 	const state = store.getState()
-	if (!state.auth.isLoggedIn && nextState.location.pathname !== '/' + window.__LOCALE__.locale + '/login') {
+	if (!state.auth.isLoggedIn && nextState.location.pathname !== `/${window.__LOCALE__.locale}/login`) {
 		replace({
-			pathname: '/' + window.__LOCALE__.locale + '/login',
+			pathname: `/${window.__LOCALE__.locale}/login`,
 			state: { nextPathname: nextState.location.pathname }
 		})
 	}
@@ -47,7 +49,7 @@ function requireAuth(nextState, replace) {
 
 function requireEvent(nextState, replace, callback) {
 	const { params } = nextState
-	if (params.hasOwnProperty("id") && params.id > 0) {
+	if (params.hasOwnProperty('id') && params.id > 0) {
 		store.dispatch(EventActionCreators.view(params.id, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
@@ -60,7 +62,7 @@ function requireEvent(nextState, replace, callback) {
 }
 
 function requirePlanDiscoveryData(nextState, replace, callback) {
-	store.dispatch(PlanDiscoveryActionCreators.discoverAll({language_tag: window.__LOCALE__.locale2}, store.getState().auth.isLoggedIn)).then((event) => {
+	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
 		callback()
 	}, (error) => {
 		callback()
@@ -69,7 +71,7 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 
 function requirePlanCollectionData(nextState, replace, callback) {
 	const { params } = nextState
-	if (params.hasOwnProperty("id") && params.id > 0) {
+	if (params.hasOwnProperty('id') && params.id > 0) {
 		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
@@ -82,8 +84,8 @@ function requirePlanCollectionData(nextState, replace, callback) {
 
 function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
-	var idNum = params.id.split("-")
-	if (params.hasOwnProperty("id") && idNum[0] > 0) {
+	const idNum = params.id.split('-')
+	if (params.hasOwnProperty('id') && idNum[0] > 0) {
 		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum[0], language_tag: window.__LOCALE__.locale2, user_id: store.getState().auth.userData.userid }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
@@ -97,7 +99,7 @@ function requirePlanData(nextState, replace, callback) {
 function logPageView() {
 	if (typeof window !== 'undefined') {
   	window.__GA__.pageview(window.location.pathname);
-  }
+	}
 }
 
 const routes = getRoutes(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData)
@@ -106,9 +108,9 @@ moment.locale(window.__LOCALE__.momentLocale)
 window.__LOCALE__.momentLocaleData = moment.localeData()
 
 render(
-	<IntlProvider locale={window.__LOCALE__.locale2 == "mn" ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+	<IntlProvider locale={window.__LOCALE__.locale2 == 'mn' ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory}  onUpdate={logPageView} />
+			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')

@@ -9,47 +9,45 @@ import { Link } from 'react-router'
 class VerseCard extends Component {
 
 	render() {
-		const { verseContent, verseHeading, deleteVerse, intl, isLink } = this.props
+		const { verseContent, verseHeading, deleteVerse, intl, isLink, localizedLink } = this.props
 
-		let verses = []
+		const verses = []
 		let cardFooter = null
 
 		if (verseContent && Object.keys(verseContent).length > 0) {
 			Object.keys(verseContent).forEach((key) => {
-				let verse = verseContent[key]
-				let heading = verseHeading ? verseHeading : <h2 className='heading'>{ `${ verse.heading }` }</h2>
+				const verse = verseContent[key]
+				const heading = verseHeading || <h2 className='heading'>{ `${verse.heading}` }</h2>
 
 				if (deleteVerse) {
-					verses.push (
+					verses.push(
 						<div key={key}>
 							<div className='verse small-11'>
 								{ heading }
-								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
+								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }} />
 							</div>
-							<div className='delete small-1'><XMark width={18} height={18} onClick={deleteVerse.bind(this, key)}/></div>
+							<div className='delete small-1'><XMark width={18} height={18} onClick={deleteVerse.bind(this, key)} /></div>
 						</div>
 					)
+				} else if (isLink) {
+					verses.push(
+						<div key={key} className='verse'>
+							{ heading }
+							<Link
+								to={localizedLink(`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`)}
+								title={`${intl.formatMessage({ id: 'Reader.read reference' }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
+							>
+								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }} />
+							</Link>
+						</div>
+						)
 				} else {
-					if (isLink) {
-						verses.push (
-							<div key={key} className='verse'>
-								{ heading }
-								<Link
-									to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`}
-									title={`${intl.formatMessage({ id: "Reader.read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
-								>
-									<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
-								</Link>
-							</div>
+					verses.push(
+						<div key={key} className='verse'>
+							{ heading }
+							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }} />
+						</div>
 						)
-					} else {
-						verses.push (
-							<div key={key} className='verse'>
-								{ heading }
-								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
-							</div>
-						)
-					}
 				}
 			})
 		}

@@ -2,25 +2,17 @@ import 'babel-polyfill'
 import express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import { match, RouterContext } from 'react-router'
 import Helmet from 'react-helmet'
-import configureStore from './app/store/configureStore'
-import defaultState from './app/defaultState'
-import createNodeLogger from 'redux-node-logger'
-import { createMemoryHistory } from 'react-router'
+import { match, createMemoryHistory } from 'react-router'
 import { Provider } from 'react-redux'
-import cookieParser from 'cookie-parser'
 import reactCookie from 'react-cookie'
-import { fetchToken } from '@youversion/token-storage'
-import { tokenAuth } from '@youversion/js-api'
-import revManifest from './rev-manifest.json'
 import bodyParser from 'body-parser'
-import { getClient } from '@youversion/js-api'
-import { addLocaleData, IntlProvider } from 'react-intl'
-import getRoutes from './app/routes.js'
-import createLogger from 'redux-node-logger'
-import planLocales from './locales/config/planLocales.json'
+import { tokenAuth } from '@youversion/js-api'
+import { IntlProvider } from 'react-intl'
 import moment from 'moment'
+
+import planLocales from './locales/config/planLocales.json'
+import revManifest from './rev-manifest.json'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -151,7 +143,7 @@ function mapStateToParams(feature, state, params) {
 		const fn = require(`./app/standalone/${feature}/mapParamsToState`).default
 		return fn(state, params)
 	} catch (ex) {
-	 	return state
+		return state
 	}
 }
 
@@ -205,7 +197,7 @@ function getLocale(languageTag) {
 }
 
 function getRenderProps(feature, url) {
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 		let getRoutes = null
 		try {
 			getRoutes = require(`./app/standalone/${feature}/routes.js`).default
@@ -244,25 +236,13 @@ router.post('/', urlencodedParser, (req, res) => {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
-				if (typeof action === 'function') {
-					store.dispatch(action).then(() => {
-						finish()
-					}, (err) => {
-						finish()
-					})
-				} else if (typeof action === 'object') {
-					store.dispatch(action);
-					finish();
-				} else {
-					finish()
-				}
-
+				console.log(store.getState().passage.verses.verses)
 				function finish() {
 					const RootComponent = getRootComponent(feature)
 					getRenderProps(feature, params.url).then((renderProps) => {
 						let html = null
 						try {
-							html = renderToString(<IntlProvider locale={ (Locale.locale2 == 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
+							html = renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch (ex) {
 							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
@@ -283,9 +263,23 @@ router.post('/', urlencodedParser, (req, res) => {
 						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost }, (err, html) => {
 							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/javascripts/${getAssetPath(`${feature}.js`)}` })
 						})
+
+						return null
 					})
 				}
 
+				if (typeof action === 'function') {
+					store.dispatch(action).then(() => {
+						finish()
+					}, () => {
+						finish()
+					})
+				} else if (typeof action === 'object') {
+					store.dispatch(action);
+					finish();
+				} else {
+					finish()
+				}
 			}, (error) => {
 				console.log(404, error)
 				res.status(404).send(error)

@@ -1,32 +1,31 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router } from 'react-router'
+import { Router, useRouterHistory } from 'react-router'
 import { Provider } from 'react-redux'
-import configureStore from './store'
-import defaultState from './defaultState'
-import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
-// import moment from 'moment'
-import { useRouterHistory } from 'react-router'
+import ReactGA from 'react-ga'
 import { createHistory } from 'history'
+import createLogger from 'redux-logger'
+
+import configureStore from './store'
 import getRoutes from './routes'
-import cookie from 'react-cookie';
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
+import defaultState from './defaultState'
 
-import ReactGA from 'react-ga'
+Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704').install()
 
 // require('moment/min/locales')
 
 let initialState = defaultState
 
-let browserHistory = useRouterHistory(createHistory)({
+const browserHistory = useRouterHistory(createHistory)({
 	basename: '/'
 })
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
 	initialState = window.__INITIAL_STATE__
-	ReactGA.initialize("UA-3571547-76")
+	ReactGA.initialize('UA-3571547-76')
 }
 
 let logger = null
@@ -38,15 +37,14 @@ const store = configureStore(initialState, browserHistory, logger)
 addLocaleData(window.__LOCALE__.data)
 // moment.locale(window.__LOCALE__.locale)
 
-
 function requireChapterData(nextState, replace, callback) {
 	const currentState = store.getState()
 
 	const {
 		params: {
-			version:nextVersion,
-			book:nextBook,
-			chapter:nextChapter,
+			version: nextVersion,
+			book: nextBook,
+			chapter: nextChapter,
 		}
 	} = nextState
 
@@ -61,13 +59,13 @@ function requireChapterData(nextState, replace, callback) {
 			bibleReader: {
 				chapter: {
 					reference: {
-						usfm:currentUsfm,
-						version_id:currentVersion
+						usfm: currentUsfm,
+						version_id: currentVersion
 					}
 				}
 			}
 		} = currentState)
-	} catch(ex) {
+	} catch (ex) {
 		isInitialLoad = true
 	}
 
@@ -97,13 +95,10 @@ function requireChapterData(nextState, replace, callback) {
 				params: nextState.params
 			}, isLoggedIn))
 		.then(() => {
-			console.log('main success')
 			callback()
 		},
-			(error) => {
-				console.log('main error')
+			() => {
 				store.dispatch(BibleActionCreator.handleInvalidReference(isLoggedIn)).then(() => {
-					console.log('CALLL IT BACK')
 					callback()
 				})
 			}
@@ -112,14 +107,15 @@ function requireChapterData(nextState, replace, callback) {
 }
 
 function requireVerseData(nextState, replace, callback) {
+	console.log('RVD!!')
 	const currentState = store.getState()
 
 	const {
 		params: {
-			version:nextVersion,
-			book:nextBook,
-			chapter:nextChapter,
-			verse:nextVerse
+			version: nextVersion,
+			book: nextBook,
+			chapter: nextChapter,
+			verse: nextVerse
 		}
 	} = nextState
 
@@ -131,8 +127,10 @@ function requireVerseData(nextState, replace, callback) {
 		},
 		passage: {
 			verses: {
-				current_verse:currentUsfm,
-				primaryVersion:currentVersion
+				primaryVersion: {
+					version: currentVersion,
+					passage: currentUsfm
+				}
 			}
 		}
 	} = currentState
@@ -141,6 +139,8 @@ function requireVerseData(nextState, replace, callback) {
 	const hasVersionChanged = nextVersion.toString() !== currentVersion.toString()
 	const hasVerseChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
 
+	console.log('HVnC', hasVersionChanged)
+	console.log('HVsC', hasVerseChanged)
 	if (!hasVersionChanged && !hasVerseChanged) {
 		callback()
 	} else {
@@ -154,12 +154,12 @@ function requireVerseData(nextState, replace, callback) {
 				hasVersionChanged,
 				hasVerseChanged,
 				language_tag: window.__LOCALE__.planLocale,
-				versions: [ parseInt(nextVersion), ...altVersions[serverLanguageTag].text ],
+				versions: [ parseInt(nextVersion, 10), ...altVersions[serverLanguageTag].text ],
 				passage: nextUsfm
-			}, isLoggedIn))
-		.then(
-			() => callback(),
-			(error) => callback()
+			}, isLoggedIn)
+		).then(
+			() => { console.log("ZZZ I'm done"); callback() },
+			() => { callback() }
 		)
 	}
 }
@@ -169,7 +169,7 @@ const routes = getRoutes(requireChapterData, requireVerseData)
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} onUpdate={() => window.scrollTo(0, 0)} />
+			<Router routes={routes} history={browserHistory} onUpdate={() => { return window.scrollTo(0, 0) }} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')
