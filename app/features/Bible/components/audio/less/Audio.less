@@ -38,7 +38,12 @@
 
 	.audio-popup-modal {
 		background-color: white;
-		width: 350px;
+		@media @small-only {
+			width: 320px;
+		}
+		@media @medium-up {
+			width: 350px;
+		}
 		border-radius: @default-radius @default-radius 0px 0px;
 		border: @thin-grey-border;
 
@@ -49,6 +54,19 @@
 			max-height: 30px;
 			border-radius: @default-radius @default-radius 0px 0px;
 			font-size: 11px;
+			text-align: center;
+
+			.cancel {
+				position: absolute;
+				left: 5px;
+				color: @font-grey;
+				@media @medium-up {
+					display: none;
+				}
+				@media @small-only {
+					display: inline-block;
+				}
+			}
 		}
 
 		.body {

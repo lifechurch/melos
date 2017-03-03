@@ -132,20 +132,16 @@ class Plan extends Component {
 				<div className="plan-overview">
 					<div className="row">
 						<div className="header columns large-8 medium-8 medium-centered">
-							<div className="row">
-								<div className="columns medium-4">
-									<Link to={`/users/${auth.userData.username}/reading-plans`}>
-										<FormattedHTMLMessage id="plans.plans back" />
-									</Link>
-								</div>
-								<div className="columns medium-4 text-right">
-									<div><ShareWidget /></div>
-									<PlanMenu
-										subscriptionLink={subscriptionLink}
-										aboutLink={aboutLink}
-										onCatchUp={this.handleCatchUp}
-									/>
-								</div>
+							<Link to={`/users/${auth.userData.username}/reading-plans`}>
+								<FormattedHTMLMessage id="plans.plans back" />
+							</Link>
+							<div className="actions">
+								<PlanMenu
+									subscriptionLink={subscriptionLink}
+									aboutLink={aboutLink}
+									onCatchUp={this.handleCatchUp}
+								/>
+								<div><ShareWidget /></div>
 							</div>
 						</div>
 					</div>

@@ -59,7 +59,12 @@
 }
 
 .plan-reader-content {
-	margin-top: 60px;
+	@media @medium-up {
+		margin-top: 60px;
+	}
+	@media @small-only {
+		margin-top: 30px;
+	}
 
 	@media @small-only {
 		.buttons {
@@ -83,7 +88,9 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	margin: 0px 0 25px 0;
+	@media @medium-up {
+		margin-bottom: 25px;
+	}
 
 	.ref-heading {
 		color: @font-grey;
@@ -187,15 +194,9 @@
 .no-bullets {
 	list-style: none;
 }
-
-// body.modal-open {
-// 	background-color: @background-grey;
-// }
-// body {
-// 	background-color: transparent;
-//    -webkit-transition: background 0.1s ease-in-out;
-//    -moz-transition: background 0.1s ease-in-out;
-//    -ms-transition: background 0.1s ease-in-out;
-//    -o-transition: background 0.1s ease-in-out;
-//    transition: background 0.1s ease-in-out;
-// }
+.plan-pieces {
+	margin-left: 0;
+	li, li * {
+		color: black !important;
+	}
+}
