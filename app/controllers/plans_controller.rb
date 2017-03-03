@@ -227,11 +227,12 @@ class PlansController < ApplicationController
   def lookinside_view
     # what plans are we allowing for this view?
     whitelist = [2614, 2217, 3400]
-
+#TODO MAKE sure to change the referrer to request.referrer
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
+        "referrer" => "lookinside.bible",
         "id" => params[:id].split("-")[0],
         "day" => params[:day],
         "cache_for" => YV::Caching::a_very_long_time
