@@ -285,8 +285,8 @@
 	},
 	{
 		"locale": "xc-MN",
-		"locale2": null,
-		"locale3": null,
+		"locale2": "mn",
+		"locale3": "mon",
 		"displayName": "XC-MN"
 	},
 	{

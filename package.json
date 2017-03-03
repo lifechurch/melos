@@ -70,7 +70,7 @@
     "react-ga": "^1.4.1",
     "react-google-maps": "^4.7.2",
     "react-helmet": "^2.2.0",
-    "react-intl": "^2.0.1",
+    "react-intl": "^2.2.3",
     "react-mixin": "^2.0.2",
     "react-modal": "^0.6.1",
     "react-quill": "^0.4.0",
