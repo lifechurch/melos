@@ -24,8 +24,8 @@ class ReferencesController < ApplicationController
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
         "cache_for" => YV::Caching::a_very_long_time,
-        "version" => self.presenter.reference.version,
-        "ref" => params[:reference],
+        "version" => ((!params.nil? and params[:version]) ? params[:version] : nil),
+        "ref" => ((!params.nil? and params[:reference]) ? params[:reference] : nil),
         "altVersions" => DEFAULT_VERSIONS
     }
 
@@ -192,8 +192,9 @@ class ReferencesController < ApplicationController
       if request.xhr?
         return render json: "error", status: 400
       else
-        return render :invalid_ref, status: 404, locals: {presenter: pres}
+        return show
+        # return render :invalid_ref, status: 404, locals: {presenter: pres}
       end
-      
+
     end
 end
