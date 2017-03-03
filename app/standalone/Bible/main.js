@@ -97,19 +97,15 @@ function requireChapterData(nextState, replace, callback) {
 				params: nextState.params
 			}, isLoggedIn))
 		.then(() => {
-			console.log('main success')
 			callback()
 		},
 			(error) => {
-				callback()
-				console.log('main error')
 				store.dispatch(BibleActionCreator.handleInvalidReference({
 					language_tag: window.__LOCALE__.locale3,
 					version: nextVersion,
 					reference: nextUsfm,
 					params: nextState.params
 				}, isLoggedIn)).then(() => {
-					console.log('CALLL IT BACK')
 					callback()
 				})
 			}
@@ -160,7 +156,7 @@ function requireVerseData(nextState, replace, callback) {
 				hasVersionChanged,
 				hasVerseChanged,
 				language_tag: window.__LOCALE__.planLocale,
-				versions: [ parseInt(nextVersion), ...altVersions[serverLanguageTag].text ],
+				versions: [ parseInt(nextVersion, 10), ...altVersions[serverLanguageTag].text ],
 				passage: nextUsfm
 			}, isLoggedIn))
 		.then(

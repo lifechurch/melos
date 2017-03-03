@@ -63,6 +63,7 @@ class PlanNavigation extends Component {
 			totalContentsNum,
 			isFinalContent,
 			onHandleComplete,
+			isRtl,
 			localizedLink
 		} = this.props
 		const { bottomPos } = this.state
@@ -99,6 +100,7 @@ class PlanNavigation extends Component {
 				</Header>
 				<NavArrows
 					localizedLink={localizedLink}
+					isRtl={isRtl}
 					nextURL={next}
 					previousURL={previous}
 					customNext={customNext}
@@ -116,6 +118,7 @@ PlanNavigation.propTypes = {
 	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	next: PropTypes.string,
 	previous: PropTypes.string,
+	isRtl: PropTypes.bool.isRequired,
 	dayBasePath: PropTypes.string,
 	whichContent: PropTypes.number.isRequired,
 	totalContentsNum: PropTypes.number.isRequired,

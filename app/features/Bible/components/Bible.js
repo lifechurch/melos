@@ -33,24 +33,23 @@ class Bible extends Component {
 
 		const { bible } = props
 
-		this.chapterError = bible.chapter.showError
-		if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm) {
-			this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
-			this.selectedChapter = bible.chapter.reference.usfm
-			this.selectedVersion = bible.chapter.reference.version_id
-			this.inputValue = bible.chapter.reference.human
-			this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
-		}
+		// if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm) {
+		// 	this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
+		// 	this.selectedChapter = bible.chapter.reference.usfm
+		// 	this.selectedVersion = bible.chapter.reference.version_id
+		// 	this.inputValue = bible.chapter.reference.human
+		// 	this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
+		// }
 
 		const showFootnoes = LocalStore.getIn('reader.settings.showFootnotes')
 		const showVerseNumbers = LocalStore.getIn('reader.settings.showVerseNumbers')
 
 		this.state = {
-			selectedBook: this.selectedBook,
-			selectedChapter: this.selectedChapter,
-			selectedVersion: this.selectedVersion,
+			selectedBook: bible.chapter.reference.usfm.split('.')[0],
+			selectedChapter: bible.chapter.reference.usfm,
+			selectedVersion: bible.chapter.reference.version_id,
 			selectedLanguage: bible.versions.selectedLanguage,
-			chapterError: this.chapterError,
+			chapterError: bible.chapter.showError,
 			recentVersions: {},
 			dbReady: false,
 			chapDropDownCancel: false,
@@ -66,6 +65,7 @@ class Bible extends Component {
 			verseSelection: {},
 			deletableColors: []
 		}
+		this.chapters = bible.books.all[bible.books.map[this.state.selectedBook]].chapters
 
 		this.header = null
 		this.content = null
@@ -255,28 +255,28 @@ class Bible extends Component {
 
 		// check for cookie written from reading plans telling
 		// bible to open with the chapterpicker modal open
-		if (LocalStore.get('showPickerOnLoad')) {
+		if (LocalStore.get('showPickerOnLoad') || chapterError || bible.chapter.showError) {
 			this.chapterPickerInstance.openDropdown()
 			LocalStore.delete('showPickerOnLoad')
 		}
 
 		this.recentVersions = new RecentVersions()
-
+		this.recentVersions.syncVersions(bible.settings)
+		this.updateRecentVersions()
 		this.recentVersions.onUpdate((settings) => {
 			dispatch(ActionCreators.usersUpdateSettings(auth.isLoggedIn, settings))
 		})
-
-		this.recentVersions.syncVersions(bible.settings)
-		this.updateRecentVersions()
-		this.viewportUtils = new ViewportUtils()
-		this.updateMobileStyling()
-		this.viewportUtils.registerListener('resize', this.updateMobileStyling)
+		if (!chapterError && !bible.chapter.showError) {
+			this.viewportUtils = new ViewportUtils()
+			this.updateMobileStyling()
+			this.viewportUtils.registerListener('resize', this.updateMobileStyling)
+		}
 	}
 
 
 
 	render() {
-		const { bible, settings, hosts, params, intl } = this.props
+		const { bible, settings, hosts, params, intl, isRtl } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
@@ -294,7 +294,7 @@ class Bible extends Component {
 						initialBook={this.state.selectedBook}
 						initialChapter={this.state.selectedChapter}
 						versionID={this.state.selectedVersion}
-						initialInput={this.inputValue}
+						initialInput={bible.chapter.reference.human}
 						initialChapters={this.chapters}
 						cancelDropDown={this.state.chapDropDownCancel}
 						ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
@@ -324,20 +324,20 @@ class Bible extends Component {
 			)
 		}
 
-		if (this.state.chapterError) {
+		if (this.state.chapterError || bible.chapter.showError) {
 			this.content = (
 				<div className='row reader-center reader-content-error'>
 					<div className='content'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					<div className='row buttons'>
-						<button className='solid-button' onClick={this.chapterPickerInstance ? this.chapterPickerInstance.handleDropDownClick : () => {}}>
+					{/* <div className='row buttons'>
+						<button className='chapter-button solid-button' onClick={this.chapterPickerInstance ? this.chapterPickerInstance.handleDropDownClick : () => {}}>
 							<FormattedMessage id="Reader.chapterpicker.chapter label" />
 						</button>
-						<button className='solid-button' onClick={this.versionPickerInstance ? this.versionPickerInstance.handleDropDownClick : () => {}}>
+						<button className='chapter-button solid-button' onClick={this.versionPickerInstance ? this.versionPickerInstance.handleDropDownClick : () => {}}>
 							<FormattedMessage id="Reader.versionpicker.version label" />
 						</button>
-					</div>
+					</div> */}
 				</div>
 			)
 		} else if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm && bible.version && bible.version.language && bible.chapter.content) {
@@ -361,6 +361,7 @@ class Bible extends Component {
 					/>
 					<NavArrows
 						{...this.props}
+						isRtl={isRtl()}
 						previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
 						nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
 					/>

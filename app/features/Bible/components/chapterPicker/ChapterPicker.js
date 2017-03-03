@@ -142,7 +142,7 @@ class ChapterPicker extends Component {
 			} else {
 				this.setState({
 					books,
-					chapters: books[bookMap[selectedBook]].chapters,
+					chapters: books[bookMap[(selectedBook || chapter.reference.usfm.split('.')[0] || books[0].usfm)]].chapters,
 					inputValue: chapter.reference.human,
 				})
 			}

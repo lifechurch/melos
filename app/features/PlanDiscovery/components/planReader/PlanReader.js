@@ -111,7 +111,7 @@ class PlanReader extends Component {
 
 
 	render() {
-		const { plan, params, bible, hosts, auth, dispatch } = this.props
+		const { plan, params, bible, hosts, auth, dispatch, isRtl } = this.props
 		const { audioPlaying } = this.state
 		const { day, content } = params
 		if (Object.keys(plan).length === 0 || !day) {
@@ -191,6 +191,7 @@ class PlanReader extends Component {
 					totalContentsNum={this.totalContentsNum}
 					isFinalContent={this.isFinalReadingForDay}
 					onHandleComplete={this.handleComplete}
+					isRtl={isRtl()}
 					// if we're rendering the full chapter from button click, let's
 					// update the arrow positioning
 					updateStyle={!showChapterButton}

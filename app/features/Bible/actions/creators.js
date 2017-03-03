@@ -7,18 +7,32 @@ const ActionCreators = {
 	handleInvalidReference(params, auth) {
 		const { language_tag, version, reference } = params
 
-
-		// ActionCreators.bibleVersion({ id: version })
-		const newParams = {
+		const fallbackParams = {
 			isInitialLoad: false,
-			hasVersionChanged: false,
+			hasVersionChanged: true,
 			hasChapterChanged: true,
 			language_tag: 'en',
 			version: '1',
 			reference: 'JHN.1',
 			showError: true,
 		}
-		return ActionCreators.readerLoad(newParams, false)
+
+		// if we're handling a reference error, let's grab the first valid
+		// chapter from the new version and set the bible up that way
+		return dispatch => {
+			return new Promise((resolve, reject) => {
+				dispatch(ActionCreators.bibleVersion({ id: version })).then((newVersion) => {
+					const newRef = newVersion.books[0].chapters[0].usfm
+					dispatch(ActionCreators.readerLoad(Object.assign({}, params, { hasVersionChanged: true, hasChapterChanged: true, reference: newRef, showError: true }), auth)).then(() => {
+						resolve()
+					})
+				}, (error) => {
+					resolve(
+						dispatch(ActionCreators.readerLoad(fallbackParams, auth))
+					)
+				})
+			})
+		}
 	},
 
 	/**
@@ -32,6 +46,7 @@ const ActionCreators = {
 		return dispatch => {
 			const { isInitialLoad, hasVersionChanged, hasChapterChanged, version, reference, language_tag } = params
 			const showError = params.showError || false
+
 			const promises = []
 
 			if (isInitialLoad) {
