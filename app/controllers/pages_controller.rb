@@ -15,6 +15,12 @@ class PagesController < ApplicationController
   def requests;end
   def intro;end
 
+  def press
+    if I18n.locale == :en
+      redirect_to('https://www.youversion.com/press')
+    end
+  end
+
   def home
     @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
 
