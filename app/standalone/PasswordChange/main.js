@@ -7,8 +7,6 @@ import createLogger from 'redux-logger'
 import PasswordChange from '../../features/PasswordChange/components/PasswordChange'
 import { addLocaleData, IntlProvider } from 'react-intl'
 
-Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704').install()
-
 let initialState = defaultState
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {

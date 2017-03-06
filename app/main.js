@@ -1,5 +1,3 @@
-Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704').install()
-
 import 'babel-polyfill'
 import React from 'react'
 import { Router } from 'react-router'

@@ -13,8 +13,6 @@ import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 import defaultState from './defaultState'
 
-Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704').install()
-
 // require('moment/min/locales')
 
 let initialState = defaultState
