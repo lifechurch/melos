@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
 import UnsubbedPlan from '../features/PlanDiscovery/components/UnsubbedPlan'
 
 const COPY = {
@@ -22,12 +21,17 @@ class LookinsideSample extends Component {
 		const actionsNode = (
 			<div className='lookinside-actions'>
 				<div className='copy'>{ COPY.account_blurb }</div>
-				<Link to={'/sign-up'}>
+				<a href='/sign-up'>
 					<button className='solid-button green padded'>
-					Create My Free Account
-				</button>
-				</Link>
+						Create My Free Account
+					</button>
+				</a>
 			</div>
+		)
+		const allplansNode = (
+			<a href={'/reading-plans'}>
+				All Plans
+			</a>
 		)
 
 		return (
@@ -39,6 +43,7 @@ class LookinsideSample extends Component {
 					params={params}
 					auth={auth}
 					actionsNode={actionsNode}
+					allplansNode={allplansNode}
 					dayBasePath={`/lookinside/${plan.id}-${plan.slug}/read`}
 				>
 					{ children }

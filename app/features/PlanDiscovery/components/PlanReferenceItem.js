@@ -22,7 +22,7 @@ class PlanReferenceItem extends Component {
 	}
 
 	render() {
-		const { reference, day, content, link, completedRefs, iconStyle } = this.props
+		const { reference, content, link, day, completedRefs, iconStyle } = this.props
 		const { usfm, human } = reference
 		const refString = usfm.join('+')
 		const isComplete = completedRefs.indexOf(refString) !== -1

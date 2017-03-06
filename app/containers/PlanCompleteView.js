@@ -40,6 +40,7 @@ class PlanCompleteView extends Component {
 		} = this.props
 
 		const plan = plans[id.split('-')[0]]
+		const recommended = recommendedPlans[id.split('-')[0]]
 		if (!plan) return <div />
 
 		let savedDiv = null
@@ -50,10 +51,10 @@ class PlanCompleteView extends Component {
 				<CarouselStandard carouselContent={savedPlans} context='saved' imageConfig={imageConfig} localizedLink={this.localizedLink} isRtl={this.isRtl} />
 			)
 		}
-		if (recommendedPlans && recommendedPlans.items && recommendedPlans.items.length > 0) {
-			recommendedPlans.id = plan.id
+		if (recommended && recommended.items && recommended.items.length > 0) {
+			recommended.id = plan.id
 			recommendedDiv = (
-				<CarouselStandard carouselContent={recommendedPlans} context='recommended' imageConfig={imageConfig} localizedLink={this.localizedLink} isRtl={this.isRtl} />
+				<CarouselStandard carouselContent={recommended} context='recommended' imageConfig={imageConfig} localizedLink={this.localizedLink} isRtl={this.isRtl} />
 			)
 		}
 		const backImgStyle = {

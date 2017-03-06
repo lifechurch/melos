@@ -24,7 +24,12 @@
 		}
 
 		.single-verse {
-			font-size: 22px;
+			@media @medium-up {
+				font-size: 22px;
+			}
+			@media @small-only {
+				font-size: 17px;
+			}
 			text-align: left;
 			h2 {
 				display: inline-flex;

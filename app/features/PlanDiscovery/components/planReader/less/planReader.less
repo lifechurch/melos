@@ -17,7 +17,12 @@
 	.plan-info {
 		display: inline-flex;
 		flex-wrap: wrap;
-		width: 100%;
+		@media @medium-up {
+			width: 100%;
+		}
+		@media @small-only {
+			width: 80%;
+		}
 
 		.nav-length {
 			width: 100%;
@@ -30,10 +35,10 @@
 			width: 100%;
 			color: initial;
 	    font-size: 0.78571rem;
-	    white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
 	    text-align: left;
+		}
+		a, .nav-title {
+			.yv-text-ellipsis;
 		}
 	}
 }
@@ -174,6 +179,9 @@
 	}
 }
 
+.no-bullets {
+	list-style: none;
+}
 
 // body.modal-open {
 // 	background-color: @background-grey;

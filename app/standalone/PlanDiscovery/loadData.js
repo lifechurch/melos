@@ -101,7 +101,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					user_id: sessionData.userid,
 					day: params.day,
 					version,
-				}, auth)).then((d) => { resolve() })
+				}, auth)).then(() => { resolve() })
 
 			} else if (isSubscribedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
@@ -122,17 +122,28 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				}, auth)).then(() => { resolve() })
 
 			} else if (isLookinside.test(params.url)) {
+				// figure out referrer and fire off lookinside analytics
 				store.dispatch(ActionCreator.readingplanView({
 					id: params.id,
 					language_tag: Locale.planLocale,
-				}, auth)).then((d) => { resolve() })
-
+				}, auth)).then(() => { resolve() })
 
 			} else if (params.id) {
 				if (isCollection.test(params.url)) {
 					store.dispatch(ActionCreator.collectionAll({ id: params.id })).then(() => { resolve() })
 				} else if (isPlan.test(params.url)) {
-					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
+					const getPlanView = true
+					const getStats = true
+					const getSavedPlans = true
+					const getRecommendedPlans = true
+					store.dispatch(ActionCreator.readingplanInfo({
+						getPlanView,
+						getStats,
+						getSavedPlans,
+						getRecommendedPlans,
+						id: params.id,
+						language_tag: Locale.planLocale
+					}, auth)).then((d) => { resolve() })
 				} else if (isRecommended.test(params.url)) {
 					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
 				} else {

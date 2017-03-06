@@ -204,7 +204,9 @@ const ActionCreators = {
 		return dispatch => {
 			return new Promise((resolve, reject) => {
 				dispatch(ActionCreators.updateCompletion(params, auth)).then(() => {
-					resolve(dispatch(ActionCreators.planSelect({ id: params.id })))
+					resolve(
+						dispatch(ActionCreators.planSelect({ id: params.id }))
+					)
 				})
 			})
 		}
@@ -302,23 +304,48 @@ const ActionCreators = {
 
 	readingplanInfo(params, auth) {
 		return dispatch => {
+			const {
+				getPlanView,
+				getRecommendedPlans,
+				getSavedPlans,
+				getStats,
+				id,
+				language_tag,
+				user_id
+			} = params
 			const p = Immutable.fromJS(params).set('id', parseInt(params.id.toString().split('-')[0], 10)).toJS()
 			// tell the reducer to populate the recommendations in state.collection.plans.related
 			const planParams = Object.assign({}, p, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user
-			const savedplanParams = Object.assign({}, p, { savedplanCheck: true })
-
-			const promises = [
-				dispatch(ActionCreators.configuration()),
-				dispatch(ActionCreators.readingplanView(params, auth)),
-				new Promise((resolve) => {
-					dispatch(ActionCreators.recommendations(planParams)).then(resolve, resolve)
-				}),
-				dispatch(ActionCreators.readingplanStats(params, auth))
-			]
-
-			if (auth) {
-				promises.push(dispatch(ActionCreators.savedItems(savedplanParams, auth)))
+			const savedplanParams = Object.assign({}, p, { savedplanCheck: true, page: 1 })
+			console.log(params)
+			const promises = []
+			if (!getSavedPlans && !getRecommendedPlans) {
+				promises.push(
+					dispatch(ActionCreators.configuration())
+				)
+			}
+			if (getPlanView) {
+				promises.push(
+					dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth))
+				)
+			}
+			if (getRecommendedPlans) {
+				promises.push(
+					new Promise((resolve) => {
+						dispatch(ActionCreators.recommendedPlansInfo(planParams)).then(() => { resolve() })
+					})
+				)
+			}
+			if (getSavedPlans && auth) {
+				promises.push(
+					dispatch(ActionCreators.savedPlanInfo(savedplanParams, auth))
+				)
+			}
+			if (getStats) {
+				promises.push(
+					dispatch(ActionCreators.readingplanStats(params, auth))
+				)
 			}
 
 			return Promise.all(promises)

@@ -51,7 +51,7 @@ function PlanDay(props) {
 				devoCompleted={devoCompleted}
 				completedRefs={dayData.references_completed}
 				references={dayData.reference_content}
-				link={subscriptionLink}
+				link={`${subscriptionLink}/day/${day}`}
 				hasDevo={hasDevo}
 				handleCompleteRef={handleCompleteRef}
 			/>

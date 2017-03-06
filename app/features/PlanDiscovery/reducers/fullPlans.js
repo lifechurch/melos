@@ -104,9 +104,10 @@ export default function reducer(state = {}, action) {
 					dayObj = dayObj.setIn(['additional_content', 'completed'], additional_content.completed)
 					const plan = Immutable.fromJS(state[id]).setIn(['calendar', day - 1], dayObj.toJS()).toJS()
 					return Immutable.fromJS(state).set(plan.id, plan).toJS()
+				} else {
+					return state
 				}
 
-				return state
 			}())
 
 		default:

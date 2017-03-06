@@ -108,6 +108,7 @@ export default function plansDiscovery(state = {}, action) {
 
 					return p.toJS()
 				})
+				console.log(state.plans)
 				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { related: { items: reading_plans, id: action.params.id } } }).toJS()
 
 			} else if (action.params.savedplanCheck) {

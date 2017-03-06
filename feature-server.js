@@ -257,9 +257,13 @@ router.post('/', urlencodedParser, (req, res) => {
 							title: head.title.toString(),
 							script: head.script.toString()
 						}
-
+						// for lookinside stuff
+						let referrer = null
+						if (params.referrer) {
+							referrer = params.referrer
+						}
 						res.setHeader('Cache-Control', 'public')
-						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost }, (err, html) => {
+						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, (err, html) => {
 							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/javascripts/${getAssetPath(`${feature}.js`)}` })
 						})
 

@@ -1,16 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
-import moment from 'moment'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import cookie from 'react-cookie'
-import Immutable from 'immutable'
 
 import { getSelectionString } from '../../../lib/usfmUtils'
 import Image from '../../../components/Carousel/Image'
-import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
-import ActionCreators from '../actions/creators'
 import PlanDevo from './planReader/PlanDevo'
 
 
@@ -22,7 +18,7 @@ function dayHasDevo(devoContent) {
 class UnsubbedPlan extends Component {
 
 	render() {
-		const { plan, dispatch, children, dayBasePath, actionsNode, params, auth, localizedLink, serverLanguageTag } = this.props
+		const { plan, dispatch, children, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const version = cookie.load('version') || '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
@@ -77,9 +73,12 @@ class UnsubbedPlan extends Component {
 						<div className="header columns large-8 medium-8 medium-centered">
 							<div className="row">
 								<div className="columns medium-4">
-									<Link to={'/reading-plans'}>
-										<FormattedHTMLMessage id="plans.plans back" />
-									</Link>
+									{
+										allplansNode ||
+										<Link to={'/reading-plans'}>
+											<FormattedHTMLMessage id="plans.plans back" />
+										</Link>
+									}
 								</div>
 								<div className="columns medium-4 text-center" style={{ fontSize: 11 }}>
 									<FormattedMessage id="plans.sample" />
@@ -96,7 +95,7 @@ class UnsubbedPlan extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="medium-centered text-center">
+						<div className="medium-centered text-center columns">
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>

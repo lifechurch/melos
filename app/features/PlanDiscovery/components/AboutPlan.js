@@ -22,45 +22,25 @@ class AboutPlan extends Component {
 	}
 
 	render() {
-		const { readingPlan, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
+		const { readingPlan, recommendedPlans, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
 		const aboutLink = localizedLink(`/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
 
-		if (!(readingPlan && readingPlan.stats)) {
+		if (!readingPlan) {
 			return (
 				<div />
 			)
 		}
-
+		const recommended = (recommendedPlans && recommendedPlans[readingPlan.id]) ? recommendedPlans[readingPlan.id] : null
 		let friendsReading, friendsCompleted, readingList, completedList, relatedCarousel = null
 		const publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher' /></a> : null
 
 		const languageTag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 
-		if (readingPlan.related) {
+		if (recommended) {
 			relatedCarousel = (
 				<div className='row collapse'>
-					<CarouselStandard carouselContent={readingPlan.related} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
-				</div>
-			)
-		}
-
-		if ((readingPlan.stats.friends !== null) && (readingList = readingPlan.stats.friends.subscribed)) {
-			const readingText = (readingList.length === 1) ? <FormattedMessage id='plans.stats.friends reading.one' values={{ count: readingPlan.stats.friends.subscribed.length }} /> : <FormattedMessage id='plans.stats.friends reading.other' values={{ count: readingPlan.stats.friends.subscribed.length }} />
-			friendsReading = (
-				<div>
-					<p className='friends_completed'>{ readingText }</p>
-					<AvatarList avatarList={readingList} />
-				</div>
-			)
-		}
-
-		if ((readingPlan.stats.friends !== null) && (completedList = readingPlan.stats.friends.completed)) {
-			const completedText = (completedList.length === 1) ? <FormattedMessage id='plans.stats.friends completed.one' values={{ count: readingPlan.stats.friends.completed.length }} /> : <FormattedMessage id='plans.stats.friends completed.other' values={{ count: readingPlan.stats.friends.completed.length }} />
-			friendsCompleted = (
-				<div>
-					<p className='friends_completed'>{ completedText }</p>
-					<AvatarList avatarList={completedList} />
+					<CarouselStandard carouselContent={recommended} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
 				</div>
 			)
 		}
@@ -68,11 +48,34 @@ class AboutPlan extends Component {
 		const milestones = [0, 1000, 2500, 5000, 7500, 10000, 25000, 50000, 75000, 100000, 250000, 500000, 750000]
 		let completedMilestone = 0
 
-		milestones.forEach((milestone) => {
-			if (readingPlan.stats.total_completed > milestone && milestone > completedMilestone) {
-				completedMilestone = milestone
+		if (readingPlan.stats) {
+			if ((readingPlan.stats.friends !== null) && (readingList = readingPlan.stats.friends.subscribed)) {
+				const readingText = (readingList.length === 1) ? <FormattedMessage id='plans.stats.friends reading.one' values={{ count: readingPlan.stats.friends.subscribed.length }} /> : <FormattedMessage id='plans.stats.friends reading.other' values={{ count: readingPlan.stats.friends.subscribed.length }} />
+				friendsReading = (
+					<div>
+						<p className='friends_completed'>{ readingText }</p>
+						<AvatarList avatarList={readingList} />
+					</div>
+				)
 			}
-		})
+
+			if ((readingPlan.stats.friends !== null) && (completedList = readingPlan.stats.friends.completed)) {
+				const completedText = (completedList.length === 1) ? <FormattedMessage id='plans.stats.friends completed.one' values={{ count: readingPlan.stats.friends.completed.length }} /> : <FormattedMessage id='plans.stats.friends completed.other' values={{ count: readingPlan.stats.friends.completed.length }} />
+				friendsCompleted = (
+					<div>
+						<p className='friends_completed'>{ completedText }</p>
+						<AvatarList avatarList={completedList} />
+					</div>
+				)
+			}
+
+
+			milestones.forEach((milestone) => {
+				if (readingPlan.stats.total_completed > milestone && milestone > completedMilestone) {
+					completedMilestone = milestone
+				}
+			})
+		}
 
 
 		const readingPlansStats = (completedMilestone !== 0) ?
@@ -81,6 +84,7 @@ class AboutPlan extends Component {
 
 		const selectedImage = imageUtil(360, 640, false, 'about_plan', readingPlan, false)
 		const url = `https://www.bible.com/reading-plans/${readingPlan.id}-${readingPlan.slug}`
+		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
 
 		return (
 			<div className='row collapse about-plan horizontal-center'>
@@ -128,7 +132,7 @@ class AboutPlan extends Component {
 										id={readingPlan.id}
 										aboutLink={aboutLink}
 										subscriptionLink={subscriptionLink}
-										mode="about"
+										planLinkNode={planLinkNode}
 										isSubscribed={'subscription_id' in readingPlan}
 										isSaved={readingPlan.saved}
 									/>
@@ -152,6 +156,7 @@ class AboutPlan extends Component {
 
 AboutPlan.propTypes = {
 	readingPlan: PropTypes.object,
+	recommendedPlans: PropTypes.object,
 	imageConfig: PropTypes.object,
 	auth: PropTypes.object,
 	localizedLink: PropTypes.func,
