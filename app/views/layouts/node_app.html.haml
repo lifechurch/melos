@@ -12,7 +12,7 @@
     %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %base{href: "/"}
-    %script{src:"https://cdn.ravenjs.com/3.11.0/raven.min.js", crossorigin: "anonymous"}
+    -#%script{src:"https://cdn.ravenjs.com/3.11.0/raven.min.js", crossorigin: "anonymous"}
     = csrf_meta_tags
     = render '/shared/head'
     = render '/shared/javascripts'

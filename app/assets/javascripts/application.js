@@ -142,9 +142,6 @@ function init() {
         })
     }
 
-    if (typeof Raven !== 'undefined') {
-        Raven.config('https://279a665f62af433bbb4136e1edb1b216@sentry.io/6470').install()
-    }
 }
 
 var isEvents            = isFirst("events");
