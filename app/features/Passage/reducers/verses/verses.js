@@ -8,10 +8,9 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersesSuccess'):
 			return (function bibleVersesSuccess() {
 				let versesToMerge = Immutable.fromJS({})
+
 				const {
-					response: {
-						verses
-					},
+					response: { verses },
 					params: {
 						passage
 					}
@@ -32,37 +31,22 @@ export default function reducer(state = {}, action) {
 							}
 						} = innerVerse
 
-						versesToMerge = versesToMerge.mergeDeepIn([`${passage}`, `${version}`], {
-							content,
-							chapUsfm: usfm.split('.').slice(0, 2).join('.'),
-							heading: '',
-							human,
-							usfm,
-							version,
-							text: ''
+						versesToMerge = versesToMerge.mergeDeep({
+							[`${passage}`]: {
+								[`${version}`]: {
+									content,
+									chapUsfm: usfm.split('.').slice(0, 2).join('.'),
+									human,
+									usfm,
+									version
+								}
+							}
 						})
 					})
 					return Immutable.fromJS(state).mergeDeep(versesToMerge.toJS()).toJS()
 				}
 
 				return state
-			}())
-
-		case type('bibleVersionSuccess'):
-			return (function bibleVersionSuccess() {
-				const { response: { id, local_abbreviation, local_title, copyright_short }, params: { passage } } = action
-				return Immutable.fromJS(state).mergeDeep({
-					[`${passage}`]: {
-						[`${id}`]: {
-							versionInfo: {
-								id,
-								local_abbreviation,
-								local_title,
-								copyright_short
-							}
-						}
-					}
-				}).toJS()
 			}())
 
 		default:

@@ -10,55 +10,79 @@ import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Image from '../../../components/Carousel/Image'
 
 function Passage(props) {
-	const { passage, localizedLink, intl, params } = props
-
 	let mainVerse, metaContent, metaTitle, chapterLink, relatedPlansLink = null
 
+	const {
+		passage,
+		localizedLink,
+		intl,
+		params: {
+			book,
+			chapter,
+			verse: verseNumber,
+			vabbr
+		}
+	} = props
+
+	const {
+		verses: {
+			verses,
+			primaryVersion,
+			versions: {
+				versions
+			}
+		}
+	} = passage
+
+	const verseKey = `${book}.${chapter}.${verseNumber}`.toUpperCase()
+
 	// main verse and verse cards
-	const verses = []
-	if (passage && passage.verses && passage.verses.verses) {
-		const mainVersionID = passage.verses.primaryVersion.version
-		Object.keys(passage.verses.verses['JHN.3.27']).forEach((key, index) => {
-			const verse = passage.verses.verses['JHN.3.27'][key]
+	const verseCards = []
+	if (typeof verses === 'object') {
+		Object.keys(verses[verseKey]).forEach((versionKey, index) => {
+			const verse = verses[verseKey][versionKey]
+			const version = versions[verse.version]
+			verse.versionInfo = version
 
 			// if we've found a main version, then let's set the maine verse
 			// to that, otherwise, the main verse is just the first one
-			if (mainVersionID ? verse.versionInfo.id === mainVersionID : index === 0) {
+			if (primaryVersion.version ? verse.version === primaryVersion.version : index === 0) {
 				mainVerse = (
-					<div key={key} className='verse'>
-						<a href={`/versions/${verse.versionInfo.id}`}>
+					<div key={versionKey} className='verse'>
+						<a href={`/versions/${verse.version}`}>
 							<h2>
-								<div className='heading'>{ verse.versionInfo.local_abbreviation.toLocaleUpperCase() }</div>
-								<div className='name'>{ verse.versionInfo.local_title }</div>
+								<div className='heading'>{ version.local_abbreviation.toLocaleUpperCase() }</div>
+								<div className='name'>{ version.local_title }</div>
 							</h2>
 						</a>
 						<Link
-							to={localizedLink(`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation}`)}
-							title={`${intl.formatMessage({ id: 'Reader.read reference' }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation.toLocaleUpperCase()}`}
+							to={localizedLink(`/bible/${verse.version}/${verse.usfm}.${version.local_abbreviation}`)}
+							title={`${intl.formatMessage({ id: 'Reader.read reference' }, { reference: `${verse.human}` })} ${version.local_abbreviation.toLocaleUpperCase()}`}
 							className='verse-content'
 							dangerouslySetInnerHTML={{ __html: verse.content }}
 						/>
-						<div className='copyright'>{ verse.versionInfo.copyright_short.text }</div>
+						<div className='copyright'>{ version.copyright_short.text }</div>
 					</div>
 				)
-				metaTitle = `${passage.verses.primaryVersion.title}; ${verse.text}`
-				metaContent = `${verse.text}`
-				chapterLink = localizedLink(`/bible/${verse.versionInfo.id}/${verse.chapUsfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`)
-				relatedPlansLink = localizedLink(`/bible/${verse.versionInfo.id}/${verse.usfm}.${params.vabbr}#related-plans`)
+				metaTitle = `${primaryVersion.human}; ${primaryVersion.text}`
+				metaContent = `${primaryVersion.text}`
+				chapterLink = localizedLink(`/bible/${verse.version}/${verse.chapUsfm}.${version.local_abbreviation.toLowerCase()}`)
+				relatedPlansLink = localizedLink(`/bible/${verse.version}/${verse.usfm}.${vabbr}#related-plans`)
 			} else {
 				const heading = (
-					<a href={localizedLink(`/versions/${verse.versionInfo.id}`)}>
+					<a href={localizedLink(`/versions/${verse.version}`)}>
 						<h2>
-							<div className='heading'>{ verse.versionInfo.local_abbreviation.toLocaleUpperCase() }</div>
-							<div className='name'>{ verse.versionInfo.local_title }</div>
+							<div className='heading'>{ version.local_abbreviation.toLocaleUpperCase() }</div>
+							<div className='name'>{ version.local_title }</div>
 						</h2>
 					</a>
 				)
-				verses.push(
-					<li className='verse-container' key={key}>
+
+				verseCards.push(
+					<li className='verse-container' key={versionKey}>
 						<VerseCard
 							localizedLink={localizedLink}
-							verseContent={{ [key]: passage.verses.verses['JHN.3.27'][key] }}
+							verseContent={{ [verseKey]: verses[verseKey][versionKey] }}
 							verseHeading={heading}
 							isLink={true}
 						/>
@@ -102,7 +126,7 @@ function Passage(props) {
 							{slide}
 						</a>
 					</li>
-					)
+				)
 			}
 		})
 	}
@@ -113,7 +137,7 @@ function Passage(props) {
 			<div className='related-plans collections-view'>
 				<h2 id='related-plans' className='heading'>
 					<div className='plans-title'>
-						<FormattedMessage id='Reader.plan title ref' values={{ reference: passage.verses.primaryVersion.title }} />
+						<FormattedMessage id='Reader.plan title ref' values={{ reference: primaryVersion.human }} />
 					</div>
 					<br />
 					<div className='plans-subtitle'>
@@ -132,10 +156,10 @@ function Passage(props) {
 	// previous verse and next verse
 	let prevArrow, nextArrow = null
 
-	if (passage.verses && passage.verses.primaryVersion && passage.verses.primaryVersion.previousVerse) {
+	if (passage.verses && primaryVersion && primaryVersion.previousVerse) {
 		prevArrow = (
 			<Link
-				to={localizedLink(`/bible/${params.version}/${passage.verses.primaryVersion.previousVerse}.${params.vabbr.toLowerCase()}`)}
+				to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.previousVerse}.${vabbr.toLowerCase()}`)}
 				title={''}
 			>
 				<CarouselArrow width={23} height={23} dir='left' fill='gray' />
@@ -143,10 +167,10 @@ function Passage(props) {
 		)
 	}
 
-	if (passage.verses && passage.verses.primaryVersion && passage.verses.primaryVersion.nextVerse) {
+	if (passage.verses && primaryVersion && primaryVersion.nextVerse) {
 		nextArrow = (
 			<Link
-				to={localizedLink(`/bible/${params.version}/${passage.verses.primaryVersion.nextVerse}.${params.vabbr.toLowerCase()}`)}
+				to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.nextVerse}.${vabbr.toLowerCase()}`)}
 				title={''}
 			>
 				<CarouselArrow width={23} height={23} dir='right' fill='gray' />
@@ -164,7 +188,7 @@ function Passage(props) {
 				<div className='title-heading'>
 					{ prevArrow }
 					<h1 className='title'>
-						{ passage.verses && passage.verses.primaryVersion ? passage.verses.primaryVersion.human : null }
+						{ passage.verses && primaryVersion ? primaryVersion.human : null }
 					</h1>
 					{ nextArrow }
 				</div>
@@ -183,7 +207,7 @@ function Passage(props) {
 			</div>
 			<div className='row verses small-12'>
 				<ul className='list'>
-					{ verses }
+					{ verseCards }
 				</ul>
 			</div>
 			{ plansDiv }

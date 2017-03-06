@@ -29,7 +29,6 @@ class LookinsideSample extends Component {
 				</Link>
 			</div>
 		)
-		console.log(params)
 
 		return (
 			<div className='row'>

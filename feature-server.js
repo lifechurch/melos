@@ -236,7 +236,6 @@ router.post('/', urlencodedParser, (req, res) => {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
-				console.log(store.getState().passage.verses.verses)
 				function finish() {
 					const RootComponent = getRootComponent(feature)
 					getRenderProps(feature, params.url).then((renderProps) => {

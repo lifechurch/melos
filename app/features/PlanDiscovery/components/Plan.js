@@ -100,7 +100,6 @@ class Plan extends Component {
 		//  differently.
 
 		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
-		console.log(params)
 
 		let day = parseInt(params.day, 10)
 		// if day is not valid, calculate based on start_dt

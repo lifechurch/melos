@@ -107,7 +107,6 @@ function requireChapterData(nextState, replace, callback) {
 }
 
 function requireVerseData(nextState, replace, callback) {
-	console.log('RVD!!')
 	const currentState = store.getState()
 
 	const {
@@ -137,10 +136,8 @@ function requireVerseData(nextState, replace, callback) {
 
 	const nextUsfm = `${nextBook}.${nextChapter}.${nextVerse}`
 	const hasVersionChanged = nextVersion.toString() !== currentVersion.toString()
-	const hasVerseChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
+	const hasVerseChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase())
 
-	console.log('HVnC', hasVersionChanged)
-	console.log('HVsC', hasVerseChanged)
 	if (!hasVersionChanged && !hasVerseChanged) {
 		callback()
 	} else {
@@ -158,7 +155,7 @@ function requireVerseData(nextState, replace, callback) {
 				passage: nextUsfm
 			}, isLoggedIn)
 		).then(
-			() => { console.log("ZZZ I'm done"); callback() },
+			() => { callback() },
 			() => { callback() }
 		)
 	}

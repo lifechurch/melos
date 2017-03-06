@@ -286,8 +286,6 @@ function requireSubscribedPlan(a, b, c, d) {
 }
 
 function requireSamplePlan(nextState, replace, callback) {
-	console.log('clientSide params', nextState.params)
-
 	const currentState = store.getState()
 	const version = cookie.load('version') || '1'
 	const { auth: { isLoggedIn }, readingPlans: { fullPlans } } = currentState

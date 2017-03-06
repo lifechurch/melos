@@ -292,7 +292,6 @@ const ActionCreators = {
 				language_tag,
 				user_id,
 			} = params
-			console.log(params)
 			const planID = parseInt(id, 10)
 			return Promise.all([
 				dispatch(UsersActionCreator.usersView({ id: user_id }, false)),
