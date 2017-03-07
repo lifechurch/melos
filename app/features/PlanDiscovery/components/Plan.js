@@ -71,7 +71,6 @@ class Plan extends Component {
 		// push day complete/plan complete
 		if (complete) {
 			if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
-				console.log(complete);
 				if (isFinalPlanDay(day, calendar, total_days)) {
 					dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
 				} else {

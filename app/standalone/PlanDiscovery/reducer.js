@@ -20,6 +20,7 @@ import { routeReducer } from 'react-router-redux'
 import bibleReader from '../../features/Bible/reducers'
 import passage from '../../features/Passage/reducers'
 import plansDiscovery from '../../features/PlanDiscovery/reducers'
+import readingPlans from '../../features/PlanDiscovery/reducers/readingPlans'
 
 const rootReducer = combineReducers({
 	auth: (state = {}, action) => { return state },
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
 	loc: (state = {}, action) => { return state },
 	locations: (state = {}, action) => { return state },
 	plans: (state = {}, action) => { return state },
+	readingPlans,
 	plansDiscovery,
 	configuration: (state = {}, action) => { return state },
 	references: (state = {}, action) => { return state },
