@@ -14,7 +14,7 @@ import defaultState from './defaultState'
 import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
 
-require('moment/min/locales')
+// require('moment/min/locales')
 
 let initialState = defaultState
 
