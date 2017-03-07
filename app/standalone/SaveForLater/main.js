@@ -28,7 +28,7 @@ moment.locale(window.__LOCALE__.locale)
 
 
 render(
-	<IntlProvider locale={window.__LOCALE__.locale2 == "mn" ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+	<IntlProvider locale={window.__LOCALE__.locale2 == 'mn' ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
 			<SaveForLaterView />
 		</Provider>

@@ -80,33 +80,6 @@ const constants = {
 	versionSelectorFilterVersions: 'READER_VERSION_SELECTOR_FILTER_VERSIONS',
 	versionSelectorCancelFilter: 'READER_VERSION_SELECTOR_CANCEL_FILTER',
 	versionSelectorFilterVersionSelect: 'READER_VERSION_SELECTOR_FILTER_VERSION_SELECT',
-
-	/* Audio */
-	audioOpen: 'READER_AUDIO_OPEN',
-	audioClose: 'READER_AUDIO_CLOSE',
-	audioLoaded: 'READER_AUDIO_LOADED',
-	audioPlay: 'READER_AUDIO_PLAY',
-	audioSeek: 'READER_AUDIO_SEEK',
-	audioSpeed: 'READER_AUDIO_CHANGE_SPEED',
-	audioNewWindow: 'READER_AUDIO_NEW_WINDOW',
-
-	/* Settings */
-	fontChangeSize: 'READER_SETTINGS_FONT_CHANGE_SIZE',
-	fontChangeFamily: 'READER_SETTINGS_FONT_CHANGE_FAMILY',
-	footnotesToggle: 'READER_SETTINGS_FOOTNOTES_TOGGLE',
-	numbersAndTitlesToggle: 'READER_SETTINGS_NUMBERS_AND_TITLES_TOGGLE',
-
-	/* Verse Action */
-	verseActionOpen: 'READER_VERSE_ACTION_OPEN',
-	verseActionClose: 'READER_VERSE_ACTION_CLOSE',
-	verseActionShareOpen: 'READER_VERSE_ACTION_SHARE_OPEN',
-	verseActionShareClose: 'READER_VERSE_ACTION_SHARE_CLOSE',
-	verseActionCopyOpen: 'READER_VERSE_ACTION_COPY_OPEN',
-	verseActionCopyClose: 'READER_VERSE_ACTION_COPY_CLOSE',
-	verseActionBookmarkOpen: 'READER_VERSE_ACTION_BOOKMARK_OPEN',
-	verseActionBookmarkClose: 'READER_VERSE_ACTION_BOOKMARK_CLOSE',
-	verseActionNoteOpen: 'READER_VERSE_ACTION_NOTE_OPEN',
-	verseActionNoteClose: 'READER_VERSE_ACTION_NOTE_CLOSE'
 }
 
 export default function (key) {

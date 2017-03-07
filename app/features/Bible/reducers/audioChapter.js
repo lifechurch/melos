@@ -8,7 +8,6 @@ export default function reducer(state = {}, action) {
 			return { loading: true, readyToPlay: false }
 
 		case type('audiobibleChapterSuccess'):
-			console.log(action.response.chapter);
 			if (typeof action.response.chapter !== 'undefined') {
 				const audio = action.response.chapter[0]
 				return Immutable.fromJS(state).merge({ [action.params.reference]: audio }).toJS()

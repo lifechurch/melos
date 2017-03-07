@@ -1,4 +1,5 @@
 import cookie from 'react-cookie';
+
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 
@@ -13,8 +14,8 @@ import PassageActionCreator from '../../features/Passage/actions/creators'
  * @return     {Promise}  { description_of_the_return_value }
  */
 export default function loadData(params, startingState, sessionData, store, Locale) {
-	return new Promise((resolve, reject) => {
-		if (typeof store !== 'undefined' && params.hasOwnProperty('url') && params.hasOwnProperty('languageTag')) {
+	return new Promise((resolve) => {
+		if (typeof store !== 'undefined' && ('url' in params) && ('languageTag' in params)) {
 			const BIBLE 						= new RegExp('^\/bible$') // /bible
 			const CHAPTER_NOTV 			= new RegExp('^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]+$') 																// /bible/1/mat.1
 			const VERSE_NOTV 				= new RegExp('^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9\-,]+$') 									// /bible/1/mat.1.1
@@ -58,8 +59,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			} else if (CHAPTER_NOTV.test(params.url)
 				|| CHAPTER.test(params.url)
 				|| CHAPTER_NOTV_CV.test(params.url)
-				|| CHAPTER_CV.test(params.url)
-			) {
+				|| CHAPTER_CV.test(params.url)) {
 				reference = reference.split('.').slice(0, 2).join('.')
 				loadChapter({
 					isInitialLoad: true,

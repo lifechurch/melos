@@ -1,20 +1,17 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router } from 'react-router'
+import { Router, useRouterHistory } from 'react-router'
 import { Provider } from 'react-redux'
-import configureStore from './store'
-import defaultState from './defaultState'
-import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
-// import moment from 'moment'
-import { useRouterHistory } from 'react-router'
+import ReactGA from 'react-ga'
 import { createHistory } from 'history'
+import createLogger from 'redux-logger'
+
+import configureStore from './store'
 import getRoutes from './routes'
-import cookie from 'react-cookie';
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
-
-import ReactGA from 'react-ga'
+import defaultState from './defaultState'
 
 // require('moment/min/locales')
 
@@ -37,7 +34,6 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 const store = configureStore(initialState, browserHistory, logger)
 addLocaleData(window.__LOCALE__.data)
 // moment.locale(window.__LOCALE__.locale)
-
 
 function requireChapterData(nextState, replace, callback) {
 	const currentState = store.getState()
@@ -133,15 +129,17 @@ function requireVerseData(nextState, replace, callback) {
 		},
 		passage: {
 			verses: {
-				current_verse: currentUsfm,
-				primaryVersion: currentVersion
+				primaryVersion: {
+					version: currentVersion,
+					passage: currentUsfm
+				}
 			}
 		}
 	} = currentState
 
 	const nextUsfm = `${nextBook}.${nextChapter}.${nextVerse}`
 	const hasVersionChanged = nextVersion.toString() !== currentVersion.toString()
-	const hasVerseChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
+	const hasVerseChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase())
 
 	if (!hasVersionChanged && !hasVerseChanged) {
 		callback()
@@ -158,10 +156,10 @@ function requireVerseData(nextState, replace, callback) {
 				language_tag: window.__LOCALE__.planLocale,
 				versions: [ parseInt(nextVersion, 10), ...altVersions[serverLanguageTag].text ],
 				passage: nextUsfm
-			}, isLoggedIn))
-		.then(
-			() => { return callback() },
-			(error) => { return callback() }
+			}, isLoggedIn)
+		).then(
+			() => { callback() },
+			() => { callback() }
 		)
 	}
 }

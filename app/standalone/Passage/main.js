@@ -1,12 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router } from 'react-router'
 import { Provider } from 'react-redux'
-import configureStore from './store'
-import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
+
+import configureStore from './store'
+import defaultState from './defaultState'
 import PassageView from '../../containers/PassageView'
 
 require('moment/min/locales')
