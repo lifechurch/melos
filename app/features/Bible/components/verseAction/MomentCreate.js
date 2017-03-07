@@ -185,11 +185,11 @@ class MomentCreate extends Component {
 
 		if (!isLoggedIn) {
 			let message = ''
-			if (kind == 'highlight') {
+			if (kind === 'highlight') {
 				message = <FormattedMessage id='Auth.highlight blurb' />
-			} else if (kind == 'note') {
+			} else if (kind === 'note') {
 				message = <FormattedMessage id='Auth.note blurb' />
-			} else if (kind == 'bookmark') {
+			} else if (kind === 'bookmark') {
 				message = <FormattedMessage id='Auth.bookmark blurb' />
 			}
 
@@ -229,7 +229,7 @@ class MomentCreate extends Component {
 			}
 
 			// display Bookmark create
-			if (kind == 'bookmark' && localVerses) {
+			if (kind === 'bookmark' && localVerses) {
 				createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
 				contentDiv = (
 					<div className='bookmark-create'>
@@ -248,7 +248,7 @@ class MomentCreate extends Component {
 						</VerseCard>
 					</div>
 				)
-			} else if (kind == 'note' && localVerses) {
+			} else if (kind === 'note' && localVerses) {
 				createHeader = <FormattedMessage id='Reader.verse action.note' />
 				contentDiv = (
 					<div className='note-create'>
@@ -269,7 +269,7 @@ class MomentCreate extends Component {
 		return (
 			<div className='verse-action-create'>
 				<CustomScroll allowOutsideScroll={false}>
-					<div className='content row large-6'>
+					<div className='content large-6 medium-10 small-12'>
 						<div className='heading vertical-center'>
 							<div className='columns medium-4 cancel' onClick={this.handleClose}><XMark width={18} height={18} /></div>
 							<div className='columns medium-4 title'>{ createHeader }</div>
