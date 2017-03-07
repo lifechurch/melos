@@ -13,6 +13,7 @@ import configureStore from './store'
 import defaultState from './defaultState'
 import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
+import { getDefaultVersion } from '../../lib/readingPlanUtils'
 
 // require('moment/min/locales')
 
@@ -34,6 +35,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 const store = configureStore(initialState, browserHistory, logger)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
+
 
 
 /**
@@ -294,21 +296,36 @@ function requireSubscribedPlan(a, b, c, d) {
 	const planHasRefs = planIsInState
 		&& Immutable.fromJS(currentState).hasIn([ ...dayKey, 'reference_content' ])
 
+
+
 	if (planHasRefs) {
 		store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
 		callback()
 	} else if (planIsInState && !planHasRefs) {
 		const references = Immutable.fromJS(currentState).getIn([ ...dayKey, 'references' ]).toJS()
-		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay })).then(() => {
+		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay })).then((refd) => {
 			store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
 			callback()
+		}, (error) => {
+			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
+			store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version: defaultVersion, id, currentDay })).then((refd) => {
+				store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
+				callback()
+			}, (error) => { callback() })
 		})
 	} else {
 		store.dispatch(PlanDiscoveryActionCreators.subscriptionAll({ id, language_tag: window.__LOCALE__.planLocale, user_id: userid, version }, true)).then(() => {
 			callback()
+		}, (error) => {
+			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
+			store.dispatch(PlanDiscoveryActionCreators.subscriptionAll({ id, language_tag: window.__LOCALE__.planLocale, user_id: userid, version: defaultVersion }, true)).then(() => {
+				callback()
+			}, (error) => { callback() })
 		})
 	}
 }
+
+
 
 function requireSamplePlan(nextState, replace, callback) {
 
@@ -394,7 +411,7 @@ function requirePlanCompleteData(nextState, replace, callback) {
 		getSavedPlans = false
 		getRecommendedPlans = false
 	}
-
+	console.log('welkgjbwkrjgber')
 	store.dispatch(PlanDiscoveryActionCreators.planComplete({
 		id,
 		language_tag: window.__LOCALE__.planLocale,

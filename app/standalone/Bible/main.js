@@ -95,8 +95,13 @@ function requireChapterData(nextState, replace, callback) {
 		.then(() => {
 			callback()
 		},
-			() => {
-				store.dispatch(BibleActionCreator.handleInvalidReference(isLoggedIn)).then(() => {
+			(error) => {
+				store.dispatch(BibleActionCreator.handleInvalidReference({
+					language_tag: window.__LOCALE__.locale3,
+					version: nextVersion,
+					reference: nextUsfm,
+					params: nextState.params
+				}, isLoggedIn)).then(() => {
 					callback()
 				})
 			}

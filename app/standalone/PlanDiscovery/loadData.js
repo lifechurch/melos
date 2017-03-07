@@ -1,6 +1,7 @@
 import cookie from 'react-cookie'
 
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
+import { getDefaultVersion } from '../../lib/readingPlanUtils'
 
 /**
  * Loads a data.
@@ -60,7 +61,20 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					day: params.day ? parseInt(params.day, 10) : null,
 					version,
 					content
-				}, auth)).then(() => { resolve() })
+				}, auth))
+					.then(() => {
+						resolve()
+					}, (error) => {
+						store.dispatch(ActionCreator.subscriptionAll({
+							id: params.id,
+							language_tag: Locale.planLocale,
+							user_id: sessionData.userid,
+							day: params.day,
+							version: getDefaultVersion(store, Locale.locale3),
+						}, auth)).then(() => {
+							resolve()
+						}, () => { resolve() })
+					})
 
 			} else if (isDayComplete.test(params.url)) {
 				store.dispatch(ActionCreator.readingplanView({
@@ -101,7 +115,20 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					user_id: sessionData.userid,
 					day: params.day,
 					version,
-				}, auth)).then(() => { resolve() })
+				}, auth))
+					.then(() => {
+						resolve()
+					}, (error) => {
+						store.dispatch(ActionCreator.subscriptionAll({
+							id: params.id,
+							language_tag: Locale.planLocale,
+							user_id: sessionData.userid,
+							day: params.day,
+							version: getDefaultVersion(store, Locale.locale3),
+						}, auth)).then(() => {
+							resolve()
+						}, () => { resolve() })
+					})
 
 			} else if (isSubscribedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })

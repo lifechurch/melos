@@ -1,9 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 import { FormattedMessage } from 'react-intl'
 
 function ChapterCopyright({ copyright, versionId }) {
 	let copyrightElement = null
-
 	if (typeof copyright !== 'undefined') {
 		if (typeof copyright.html !== 'undefined') {
 			const innerContent = { __html: copyright.html }

@@ -40,6 +40,7 @@
 		a, .nav-title {
 			.yv-text-ellipsis;
 		}
+
 	}
 }
 
@@ -59,7 +60,12 @@
 }
 
 .plan-reader-content {
-	margin-top: 60px;
+	@media @medium-up {
+		margin-top: 60px;
+	}
+	@media @small-only {
+		margin-top: 30px;
+	}
 
 	@media @small-only {
 		.buttons {
@@ -83,17 +89,23 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	margin: 0px 0 25px 0;
+	@media @medium-up {
+		margin-bottom: 25px;
+	}
 
 	.ref-heading {
 		color: @font-grey;
 		font-weight: bolder;
 		display: inline-flex;
 		align-items: center;
+		flex-wrap: wrap;
+
+		>span {
+			margin-right: 10px;
+		}
 	}
 
 	.pill-heading {
-		margin-left: 10px;
 		font-size: 10px;
 		font-weight: normal;
 		color: @font-grey;
@@ -101,9 +113,10 @@
 	}
 	.trigger-button {
 		z-index: 0;
-		position: absolute;
-		top: -6px;
-		right: 50px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
 	}
 	.open {
 		border: none;
@@ -182,15 +195,9 @@
 .no-bullets {
 	list-style: none;
 }
-
-// body.modal-open {
-// 	background-color: @background-grey;
-// }
-// body {
-// 	background-color: transparent;
-//    -webkit-transition: background 0.1s ease-in-out;
-//    -moz-transition: background 0.1s ease-in-out;
-//    -ms-transition: background 0.1s ease-in-out;
-//    -o-transition: background 0.1s ease-in-out;
-//    transition: background 0.1s ease-in-out;
-// }
+.plan-pieces {
+	margin-left: 0;
+	li, li * {
+		color: black !important;
+	}
+}

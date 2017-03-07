@@ -7,6 +7,7 @@ function NavArrows(props) {
 	const {
 		previousURL,
 		nextURL,
+		isRtl,
 		customPrevious,
 		customNext,
 		bottomPos,
@@ -36,7 +37,7 @@ function NavArrows(props) {
 		previousIcon = (
 			<CarouselArrow
 				key='left'
-				dir='left'
+				dir={isRtl ? 'right' : 'left'}
 				fill='#888888'
 				containerClass='circle-buttons'
 				arrowClass='reader-arrow'
@@ -51,7 +52,7 @@ function NavArrows(props) {
 		nextIcon = (
 			<CarouselArrow
 				key='right'
-				dir='right'
+				dir={isRtl ? 'left' : 'right'}
 				fill='#888888'
 				containerClass='circle-buttons'
 				arrowClass='reader-arrow'
@@ -62,27 +63,51 @@ function NavArrows(props) {
 	}
 
 	if (previousURL) {
-		left = (
-			<Link
-				to={localizedLink(`${previousURL}`)}
-				onClick={onPrevClick}
-				className={leftClass}
-			>
-				{ previousIcon }
-			</Link>
-		)
+		if (isRtl) {
+			right = (
+				<Link
+					to={localizedLink(`${previousURL}`)}
+					onClick={onPrevClick}
+					className={rightClass}
+				>
+					{ previousIcon }
+				</Link>
+			)
+		} else {
+			left = (
+				<Link
+					to={localizedLink(`${previousURL}`)}
+					onClick={onPrevClick}
+					className={leftClass}
+				>
+					{ previousIcon }
+				</Link>
+				)
+		}
 	}
 
 	if (nextURL) {
-		right = (
-			<Link
-				to={localizedLink(`${nextURL}`)}
-				onClick={onNextClick}
-				className={rightClass}
-			>
-				{ nextIcon }
-			</Link>
-		)
+		if (isRtl) {
+			left = (
+				<Link
+					to={localizedLink(`${nextURL}`)}
+					onClick={onNextClick}
+					className={leftClass}
+				>
+					{ nextIcon }
+				</Link>
+			)
+		} else {
+			right = (
+				<Link
+					to={localizedLink(`${nextURL}`)}
+					onClick={onNextClick}
+					className={rightClass}
+				>
+					{ nextIcon }
+				</Link>
+			)
+		}
 	}
 
 	return (
@@ -103,6 +128,7 @@ function NavArrows(props) {
 NavArrows.propTypes = {
 	previousURL: PropTypes.string,
 	nextURL: PropTypes.string,
+	isRtl: PropTypes.bool.isRequired,
 	customPrevious: PropTypes.node,
 	customNext: PropTypes.node,
 	onNextClick: PropTypes.func,

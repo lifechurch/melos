@@ -41,8 +41,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const loadChapter = (finalParams) => {
 				store.dispatch(BibleActionCreator.readerLoad(finalParams, auth)).then(() => {
 					resolve()
-				}, () => {
-					store.dispatch(BibleActionCreator.handleInvalidReference()).then(() => {
+				}, (err) => {
+					store.dispatch(BibleActionCreator.handleInvalidReference(finalParams, auth)).then((d) => {
 						resolve()
 					})
 				})

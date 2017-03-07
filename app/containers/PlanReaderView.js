@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import rtlDetect from 'rtl-detect'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 
 class PlanReaderView extends Component {

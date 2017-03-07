@@ -1,3 +1,6 @@
+import ActionCreators from '../features/PlanDiscovery/actions/creators'
+import BibleActionCreators from '../features/Bible/actions/creators'
+
 /**
  * Determines if final reading content for a
  * specific reading plan day.
@@ -17,10 +20,11 @@ export default function isFinalReadingForDay(planDay, currentRef, isCheckingDevo
 	} else {
 		isDevoCompleted = planDay.additional_content.completed
 	}
-
-	// either all refs are already completed, or this current ref
+	// either we have no refs, all refs are already completed, or this current ref
 	// is the last remaining to be completed
-	if (planDay.refs_completed) {
+	if (planDay.references.length < 1) {
+		isFinalRef = true
+	} else if (planDay.refs_completed) {
 		isFinalRef = true
 	} else if (currentRef) {
 		for (let i = 0; i < planDay.references_remaining.length; i++) {
@@ -31,11 +35,11 @@ export default function isFinalReadingForDay(planDay, currentRef, isCheckingDevo
 			}
 		}
 	}
-
 	// if the devo is already complete (or we're checking devo), and this is the last
 	// incomplete ref (or refs are all complete), then this is the last content for the day
 	return (isDevoCompleted && isFinalRef)
 }
+
 
 export function isFinalPlanDay(day, calendar, total_days) {
 	const dayNum = parseInt(day, 10)
@@ -61,4 +65,69 @@ export function isFinalPlanDay(day, calendar, total_days) {
 
 	// if we've passed all these checks, then this must be the last uncompleted plan day!
 	return true
+}
+
+
+export function dayHasDevo(additional_content) {
+	return 	(!!additional_content.html) ||
+					(!!additional_content.text)
+}
+
+
+export function handleRefUpdate(
+	completedRefs,
+	isDevo,
+	hasDevo,
+	devoCompleted,
+	currentRef,
+	complete,
+	planId,
+	dayNum,
+	dispatch
+) {
+	const references = completedRefs
+	let completeDevo = true
+	// devotional is true by default if there is no devotional
+	// otherwise this will overwrite with the correct value
+	if (hasDevo) {
+		completeDevo = (isDevo && complete) || devoCompleted
+	}
+	// if we have a reference, that we're reading through,
+	// add it to the list of completedRefs
+	if (currentRef && complete) {
+		references.push(currentRef)
+	} else if (currentRef) {
+		references.splice(references.indexOf(currentRef), 1)
+	}
+
+	// make api call
+	dispatch(ActionCreators.updatePlanDay({
+		id: planId,
+		day: dayNum,
+		references,
+		devotional: completeDevo,
+	}, true))
+}
+
+
+/**
+ * get default version for a language
+ * the store is used to check current state and dipatch the bible config action
+ * if the language list isn't already in state
+ */
+export function getDefaultVersion(store, locale) {
+	const currentState = store.getState()
+	const language_tag = locale ? locale.toString() : 'eng'
+	let defaultVersion = 1
+	if (currentState.bibleReader.languages.map && currentState.bibleReader.languages.map[language_tag]) {
+		defaultVersion = currentState.bibleReader.languages.all[currentState.bibleReader.languages.map[language_tag]].id
+	} else {
+		store.dispatch(BibleActionCreators.bibleConfiguration()).then((d) => {
+			const langs = store.getState().bibleReader.languages
+			if (language_tag in langs.map) {
+				defaultVersion = langs.all[langs.map[language_tag]].id
+			}
+		})
+	}
+	return defaultVersion
 }
