@@ -1,13 +1,12 @@
 import express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import { match, RouterContext } from 'react-router'
+import { match, RouterContext, createMemoryHistory } from 'react-router'
 import getRoutes from './app/routes.js'
 import Helmet from 'react-helmet'
 import configureStore from './app/store/configureStore'
 import defaultState from './app/defaultState'
 import createNodeLogger from 'redux-node-logger'
-import { createMemoryHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import cookieParser from 'cookie-parser'
 import reactCookie from 'react-cookie'
@@ -15,7 +14,6 @@ import { fetchToken } from '@youversion/token-storage'
 import { tokenAuth } from '@youversion/js-api'
 import revManifest from './rev-manifest.json'
 import { IntlProvider } from 'react-intl'
-import moment from 'moment'
 import rtlDetect from 'rtl-detect'
 
 const router = express.Router()
@@ -27,9 +25,9 @@ function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';
 	if (IS_PROD) {
 		return revManifest[path];
-	} else {
-		return path;
 	}
+	return path;
+
 }
 
 /**
@@ -40,6 +38,7 @@ function getAssetPath(path) {
  *  - prefix: this is the language portion of a locale, ISO 639-2
  *  - weight: some browsers associate a weight value to a locale between 0 and 1
  * @param {Object} req - the Express request object
+ * @return
  */
 function getLocalesFromHeader(req) {
 	if (req && req.headers && req.headers['accept-language']) {
@@ -49,9 +48,9 @@ function getLocalesFromHeader(req) {
 			var prefix = locale[0].split('-')[0];
 			return { locale: locale[0], prefix: prefix, weight: weight };
 		});
-	} else {
-		return []
 	}
+	return []
+
 }
 
 /**
@@ -65,6 +64,7 @@ function getLocalesFromHeader(req) {
  *
  * @param {Object} req - the Express request object
  * @param {string} profileLanguageTag - the ISO 639-1 language code from the User's profile
+ * @return
  */
 function getLocale(req, profileLanguageTag) {
 	var defaultLocale = availableLocales['en-US'];
@@ -106,16 +106,6 @@ function getLocale(req, profileLanguageTag) {
 		}
 	}
 
-	// Get the appropriate react-intl locale data for this locale
-	var localeData = require('react-intl/locale-data/' + final.locale.split('-')[0]);
-	final.data = localeData;
-
-	// Get the appropriate set of localized strings for this locale
-	final.messages = require('./locales/' + final.locale + '.json');
-
-	// Add the list of preferred locales based on browser configuration to this response
-	final.preferredLocales = localesFromHeader;
-
 	// Loop Through Locale List and Get More Info
 	for (const lc of localeList) {
 		if (lc.locale === final.locale) {
@@ -124,6 +114,16 @@ function getLocale(req, profileLanguageTag) {
 			final.momentLocale = lc.momentLocale
 		}
 	}
+	// Get the appropriate react-intl locale data for this locale
+	var localeData = require('react-intl/locale-data/' + final.locale2);
+	final.data = localeData;
+
+	// Get the appropriate set of localized strings for this locale
+	final.messages = require('./locales/' + final.locale + '.json');
+
+	// Add the list of preferred locales based on browser configuration to this response
+	final.preferredLocales = localesFromHeader;
+	console.log('final', final)
 
 	return final;
 }
@@ -131,6 +131,7 @@ function getLocale(req, profileLanguageTag) {
 /**
  * Gets the User State from the JSON Web Token
  * that's plugged into react-cookie
+ * @return
  */
 function getStateFromToken() {
 	let sessionData = {}
@@ -152,7 +153,7 @@ function getStateFromToken() {
 				password: null
 			}
 		}
-	}})
+	} })
 }
 
 /**
@@ -175,7 +176,7 @@ router.get('/*', cookieParser(), function(req, res) {
 			let startingState = defaultState
 			try {
 				startingState = getStateFromToken()
-			} catch(err) {
+			} catch (err) {
 
 			}
 
@@ -194,7 +195,7 @@ router.get('/*', cookieParser(), function(req, res) {
 			// This was a route with no language tag
 			} else if (req.Locale.source !== 'url') {
 
-				//Try to be smart... did the user intend this to include a language in URL?
+				// Try to be smart... did the user intend this to include a language in URL?
 				const firstPathSegment = req.params[0].split('/')[0]
 				const pathWithoutFirstSegment = req.params[0].split('/').slice(1)
 				let newUrl = null
@@ -213,12 +214,12 @@ router.get('/*', cookieParser(), function(req, res) {
 				const logger = createNodeLogger()
 				const history = createMemoryHistory()
 				const store = configureStore(startingState, history, logger)
-				const html = renderToString(<IntlProvider locale={req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
+				const html = renderToString(<IntlProvider locale={req.Locale.locale2 === 'mn' ? req.Locale.locale2 : req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
 				const initialState = store.getState()
 				const rtl = rtlDetect.isRtlLang(req.Locale.locale)
 				res.setHeader('Cache-Control', 'public');
-				res.render('index', {appString: html, rtl: rtl, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
-			} catch(ex) {
+				res.render('index', { appString: html, rtl: rtl, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
+			} catch (ex) {
 				console.log('ex', ex);
 				res.status(500).send()
 			}
@@ -227,7 +228,7 @@ router.get('/*', cookieParser(), function(req, res) {
 			res.status(404).send('Not found');
 
 		}
-	 });
+	});
 });
 
 module.exports = router;
