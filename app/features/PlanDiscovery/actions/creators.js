@@ -96,8 +96,9 @@ const ActionCreators = {
 				dispatch(ActionCreators.allQueueItems(auth))
 			]
 
-			return new Promise((resolve) => {
+			return new Promise((resolve, reject) => {
 				Promise.all(promises).then((d) => {
+					console.log(d)
 					const [ plan, { calendar } ] = d
 					let currentDay = day
 					if (!day) {
@@ -115,9 +116,15 @@ const ActionCreators = {
 						version,
 						id,
 						currentDay
-					}, auth)).then(() => {
-						resolve(dispatch(ActionCreators.planSelect({ id })))
-					})
+					}, auth))
+						.then(() => {
+							resolve(
+								dispatch(ActionCreators.planSelect({ id }))
+							)
+						}, (error) => {
+							console.log('reject creator')
+							reject(error)
+						})
 				})
 			})
 		}
@@ -152,7 +159,7 @@ const ActionCreators = {
 
 	planReferences(params, auth) {
 		return dispatch => {
-			return new Promise((resolve) => {
+			return new Promise((resolve, reject) => {
 				const { references, version, id, currentDay } = params
 				const innerPromises = []
 
@@ -166,23 +173,45 @@ const ActionCreators = {
 						})))
 					}
 					if (isFullChapter) {
-						innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
-							reference: ref,
-							id: version,
-							format: 'html',
-							plan_id: id,
-							plan_day: currentDay,
-							plan_content: i
-						})))
+						innerPromises.push(
+							new Promise((resolve2, reject2) => {
+								dispatch(BibleActionCreator.bibleChapter({
+									reference: ref,
+									id: version,
+									format: 'html',
+									plan_id: id,
+									plan_day: currentDay,
+									plan_content: i
+								}))
+									.then((d) => {
+										if ('errors' in d) {
+											reject2(d.errors)
+										} else {
+											resolve2()
+										}
+									})
+							})
+						)
 					} else {
-						innerPromises.push(dispatch(BibleActionCreator.bibleVerses({
-							references: [ref],
-							id: version,
-							format: 'html',
-							plan_id: id,
-							plan_day: currentDay,
-							plan_content: i
-						})))
+						innerPromises.push(
+							new Promise((resolve3, reject3) => {
+								dispatch(BibleActionCreator.bibleVerses({
+									references: [ref],
+									id: version,
+									format: 'html',
+									plan_id: id,
+									plan_day: currentDay,
+									plan_content: i
+								}))
+									.then((d) => {
+										if ('errors' in d) {
+											reject3(d.errors)
+										} else {
+											resolve3()
+										}
+									})
+							})
+						)
 
 						innerPromises.push(dispatch(BibleActionCreator.audioBibleChapter({
 							reference: ref.split('.').slice(0, 2).join('.'),
@@ -192,7 +221,11 @@ const ActionCreators = {
 				})
 
 				if (innerPromises.length > 0) {
-					Promise.all(innerPromises).then(() => { resolve() })
+					Promise.all(innerPromises).then((d) => {
+						resolve()
+					}, (error) => {
+						reject(error)
+					})
 				} else {
 					resolve()
 				}
