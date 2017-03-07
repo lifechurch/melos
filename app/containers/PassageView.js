@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
 import rtlDetect from 'rtl-detect'
 import Passage from '../features/Passage/components/Passage'
 
 class PassageView extends Component {
 
 	localizedLink(link) {
-		const { params, serverLanguageTag } = this.props
+		const { serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || 'en'
 
 		if (['en', 'en-US'].indexOf(languageTag) > -1) {
@@ -18,7 +17,7 @@ class PassageView extends Component {
 	}
 
 	isRtl() {
-		const { params, serverLanguageTag } = this.props
+		const { serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || 'en'
 		return rtlDetect.isRtlLang(languageTag)
 	}

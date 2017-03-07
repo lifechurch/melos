@@ -1,9 +1,9 @@
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import { Route } from 'react-router'
 import BibleView from '../../containers/Bible'
 import PassageView from '../../containers/PassageView'
 
-export default function(requireChapterData, requireVerseData) {
+export default function (requireChapterData, requireVerseData) {
 	return (
 		<Route path="/">
 			<Route path="(:lang/)bible(/:version)">

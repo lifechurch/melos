@@ -6,10 +6,10 @@ const ActionCreators = {
 
 	handleInvalidReference() {
 		const newParams = {
-		 	isInitialLoad: false,
-		 	hasVersionChanged: true,
-		 	hasChapterChanged: true,
-		 	language_tag: 'en',
+			isInitialLoad: false,
+			hasVersionChanged: true,
+			hasChapterChanged: true,
+			language_tag: 'en',
 			version: '1',
 			reference: 'JHN.1',
 			showError: true,
@@ -40,12 +40,12 @@ const ActionCreators = {
 			if (isInitialLoad || hasVersionChanged) {
 				promises.push(
 					new Promise((resolve, reject) => {
-						dispatch(ActionCreators.bibleVersion({ id: version })).then((version) => {
-							if ('errors' in version) {
-								reject(version.errors)
+						dispatch(ActionCreators.bibleVersion({ id: version })).then((v) => {
+							if ('errors' in v) {
+								reject(v.errors)
 							} else {
 								resolve(
-									dispatch(ActionCreators.bibleVersions({ language_tag: version.language.language_tag, type: 'all' }))
+									dispatch(ActionCreators.bibleVersions({ language_tag: v.language.language_tag, type: 'all' }))
 								)
 							}
 						})
@@ -92,7 +92,7 @@ const ActionCreators = {
 	 */
 	loadVersionAndChapter(params) {
 		return dispatch => {
-			const { id, reference, format } = params
+			const { id, reference } = params
 			return Promise.all([
 				dispatch(ActionCreators.bibleVersion({ id })),
 				dispatch(ActionCreators.bibleChapter({ id, reference: reference.toUpperCase(), format: 'html' }))
@@ -338,257 +338,6 @@ const ActionCreators = {
 				http_method: 'post',
 				types: [ type('hideVerseColorsRequest'), type('hideVerseColorsSuccess'), type('hideVerseColorsFailure') ]
 			}
-		}
-	},
-
-
-	bookSelectorOpen() {
-		return {
-			type: type('bookSelectorOpen')
-		}
-	},
-
-	bookSelectorClose() {
-		return {
-			type: type('bookSelectorClose')
-		}
-	},
-
-	bookSelectorSelectBook(params) {
-		return {
-			type: type('bookSelectorSelectBook'),
-			params
-		}
-	},
-
-	bookSelectorSelectChapter(params) {
-		return {
-			type: type('bookSelectorSelectChapter'),
-			params
-		}
-	},
-
-	bookSelectorFilterBooks(params) {
-		return {
-			type: type('bookSelectorFilterBooks'),
-			params
-		}
-	},
-
-	bookSelectorCancelFilter() {
-		return {
-			type: type('bookSelectorCancelFilter')
-		}
-	},
-
-	bookSelectorFilterBookSelect(params) {
-		return {
-			type: type('bookSelectorFilterBookSelect'),
-			params
-		}
-	},
-
-	bookSelectorFilterChapterSelect(params) {
-		return {
-			type: type('bookSelectorFilterChapterSelect'),
-			params
-		}
-	},
-
-	versionSelectorOpen() {
-		return {
-			type: type('versionSelectorOpen')
-		}
-	},
-
-	versionSelectorClose() {
-		return {
-			type: type('versionSelectorClose')
-		}
-	},
-
-	versionSelectorSelectLanguage(params) {
-		return {
-			type: type('versionSelectorSelectLanguage'),
-			params
-		}
-	},
-
-	versionSelectorSelectVersion(params) {
-		return {
-			type: type('versionSelectorSelectVersion'),
-			params
-		}
-	},
-
-	versionSelectorFilterLanguages(params) {
-		return {
-			type: type('versionSelectorFilterLanguages'),
-			params
-		}
-	},
-
-	versionSelectorFilterVersions(params) {
-		return {
-			type: type('versionSelectorFilterVersions'),
-			params
-		}
-	},
-
-	versionSelectorCancelFilter() {
-		return {
-			type: type('versionSelectorCancelFilter')
-		}
-	},
-
-	versionSelectorFilterVersionSelect(params) {
-		return {
-			type: type('versionSelectorFilterVersionSelect'),
-			params
-		}
-	},
-
-	audioOpen() {
-		return {
-			type: type('audioOpen')
-		}
-	},
-
-	audioClose() {
-		return {
-			type: type('audioClose')
-		}
-	},
-
-	audioLoaded(params) {
-		return {
-			type: type('audioLoaded'),
-			params
-		}
-	},
-
-	audioPlay(params) {
-		return {
-			type: type('audioPlay')
-		}
-	},
-
-	audioSeek(params) {
-		return {
-			type: type('audioPlay'),
-			params
-		}
-	},
-
-	audioSpeed(params) {
-		return {
-			type: type('audioSpeed'),
-			params
-		}
-	},
-
-	audioNewWindow(params) {
-		return {
-			type: type('audioNewWindow'),
-			params
-		}
-	},
-
-	fontChangeSize(params) {
-		return {
-			type: type('fontChangeSize'),
-			params
-		}
-	},
-
-	fontChangeFamily(params) {
-		return {
-			type: type('fontChangeFamily'),
-			params
-		}
-	},
-
-	footnotesToggle(params) {
-		return {
-			type: type('footnotesToggle'),
-			params
-		}
-	},
-
-	numbersAndTitlesToggle(params) {
-		return {
-			type: type('numbersAndTitlesToggle'),
-			params
-		}
-	},
-
-	verseActionOpen(params) {
-		return {
-			type: type('verseActionOpen'),
-			params
-		}
-	},
-
-	verseActionClose(params) {
-		return {
-			type: type('verseActionClose'),
-			params
-		}
-	},
-
-	verseActionShareOpen(params) {
-		return {
-			type: type('verseActionShareOpen'),
-			params
-		}
-	},
-
-	verseActionShareClose(params) {
-		return {
-			type: type('verseActionShareClose'),
-			params
-		}
-	},
-
-	verseActionCopyOpen(params) {
-		return {
-			type: type('verseActionCopyOpen'),
-			params
-		}
-	},
-
-	verseActionCopyClose(params) {
-		return {
-			type: type('verseActionCopyClose'),
-			params
-		}
-	},
-
-	verseActionBookmarkOpen(params) {
-		return {
-			type: type('verseActionBookmarkOpen'),
-			params
-		}
-	},
-
-	verseActionBookmarkClose(params) {
-		return {
-			type: type('verseActionBookmarkClose'),
-			params
-		}
-	},
-
-	verseActionNoteOpen(params) {
-		return {
-			type: type('verseActionNoteOpen'),
-			params
-		}
-	},
-
-	verseActionNoteClose(params) {
-		return {
-			type: type('verseActionNoteClose'),
-			params
 		}
 	}
 }
