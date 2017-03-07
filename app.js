@@ -36,7 +36,11 @@ var sslExcludedPaths = [
 ];
 
 var forceSsl = function(req, res, next) {
-	if (req.headers['x-forwarded-proto'] !== 'https' && req.get('Host').indexOf('localhost') === -1 && sslExcludedPaths.indexOf(req.url) === -1) {
+	if (req.headers['x-forwarded-proto'] !== 'https' &&
+		req.get('Host').indexOf('localhost') === -1 &&
+		req.get('Host').indexOf('127.0.0.1') === -1 &&
+		sslExcludedPaths.indexOf(req.url) === -1
+	) {
 		var host = req.get('Host');
 		return res.redirect(['https://', host, req.url].join(''));
 	}
@@ -44,7 +48,7 @@ var forceSsl = function(req, res, next) {
 };
 
 app.use(forceSsl);
-app.use(cors({origin: true}));
+app.use(cors({ origin: true }));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -54,7 +58,7 @@ app.use('/authenticate', auth.expressAuthRouteHandler);
 app.use('/', ping);
 app.use('/', api.expressRouter);
 
-//entry point for rails apps
+// entry point for rails apps
 app.use('/featureImport', featureServer);
 
 // primary route handle for react-router
@@ -83,7 +87,7 @@ if (app.get('env') === 'development') {
 
 app.use(function(err, req, res, next) {
 	if (err.name === 'UnauthorizedError') {
-		res.status(401).send({status: 401, message: 'Invalid Token' });
+		res.status(401).send({ status: 401, message: 'Invalid Token' });
 	}
 });
 
