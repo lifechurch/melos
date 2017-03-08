@@ -9,8 +9,17 @@ import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Image from '../../../components/Carousel/Image'
 
+
+function scrollToRelatedPlans() {
+	const relatedPlansElement = document.getElementById('related-plans')
+	if (typeof relatedPlansElement !== 'undefined') {
+		const scrollPos = relatedPlansElement.offsetTop - relatedPlansElement.scrollHeight
+		window.scrollTo(0, scrollPos)
+	}
+}
+
 function Passage(props) {
-	let mainVerse, metaContent, metaTitle, chapterLink, relatedPlansLink = null
+	let mainVerse, metaContent, metaTitle, chapterLink = null
 
 	const {
 		passage,
@@ -71,7 +80,6 @@ function Passage(props) {
 				metaTitle = `${primaryVersion.human}; ${primaryVersion.text}`
 				metaContent = `${primaryVersion.text}`
 				chapterLink = localizedLink(`/bible/${verse.version}/${verse.chapUsfm}.${version.local_abbreviation.toLowerCase()}`)
-				relatedPlansLink = localizedLink(`/bible/${verse.version}/${verse.usfm}.${vabbr}#related-plans`)
 			} else {
 				const heading = (
 					<a href={localizedLink(`/versions/${verse.version}`)}>
@@ -138,7 +146,7 @@ function Passage(props) {
 	let plansDiv = null
 	if (items.length > 0) {
 		plansDiv = (
-			<div className='related-plans collections-view'>
+			<div className='related-plans collections-view' >
 				<h2 id='related-plans' className='heading'>
 					<div className='plans-title'>
 						<FormattedMessage id='Reader.plan title ref' values={{ reference: primaryVersion.human }} />
@@ -201,7 +209,7 @@ function Passage(props) {
 				</div>
 				<div className='buttons'>
 					<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
-					<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
+					<a tabIndex={0} onClick={scrollToRelatedPlans} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
 					<Share
 						button={
 							<a className='chapter-button solid-button'><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>
