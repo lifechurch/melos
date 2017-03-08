@@ -74,12 +74,67 @@ class Bible extends Component {
 		this.versionPicker = null
 	}
 
+	componentDidMount() {
+		const { dispatch, bible, auth } = this.props
+		const { chapterError } = this.state
+
+		// check for cookie written from reading plans telling
+		// bible to open with the chapterpicker modal open
+		if (LocalStore.get('showPickerOnLoad') || chapterError || bible.chapter.showError) {
+			this.chapterPickerInstance.openDropdown()
+			LocalStore.delete('showPickerOnLoad')
+		}
+
+		this.recentVersions = new RecentVersions()
+		this.recentVersions.syncVersions(bible.settings)
+		this.updateRecentVersions()
+		this.recentVersions.onUpdate((settings) => {
+			dispatch(ActionCreators.usersUpdateSettings(auth.isLoggedIn, settings))
+		})
+		if (!chapterError && !bible.chapter.showError) {
+			this.viewportUtils = new ViewportUtils()
+			this.updateMobileStyling()
+			this.viewportUtils.registerListener('resize', this.updateMobileStyling)
+		}
+	}
+
+	componentDidUpdate(prevProps) {
+		const { bible } = this.props
+
+		// send error down to pickers
+		if (bible.chapter && prevProps.bible.chapter && bible.chapter.reference.usfm !== prevProps.bible.chapter.reference.usfm) {
+			if (bible.chapter.errors) {
+				this.setState({ chapterError: true })
+			} else if (bible.chapter.reference && bible.chapter.reference.usfm) {
+				this.setState({
+					chapterError: false,
+					selectedChapter: bible.chapter.reference.usfm,
+					selectedVersion: bible.chapter.reference.version_id,
+				})
+
+				LocalStore.set('last_read', bible.chapter.reference.usfm)
+				this.handleVerseSelectionClear()
+			}
+		}
+
+		// update version for the chapter picker if a new version has been selected
+		if (bible.version && bible.version.id && bible.books && bible.books.all && prevProps.bible.version && prevProps.bible.version.id && bible.version.id !== prevProps.bible.version.id) {
+			this.recentVersions.addVersion(bible.version)
+
+			this.setState({
+				selectedVersion: bible.version.id,
+			})
+			this.updateRecentVersions()
+			Filter.clear('BooksStore')
+			Filter.add('BooksStore', bible.books.all)
+			LocalStore.set('version', bible.version.id)
+		}
+
+	}
+
 	getVersions = (languageTag) => {
 		const { dispatch } = this.props
-		const comp = this
-
 		this.setState({ selectedLanguage: languageTag })
-
 		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
 			Filter.clear('VersionStore')
 			Filter.add('VersionStore', versions.versions)
@@ -96,7 +151,7 @@ class Bible extends Component {
 		const deletableColors = []
 		verseSelection.verses.forEach((selectedVerse) => {
 			verseColors.forEach((colorVerse) => {
-				if (selectedVerse == colorVerse[0]) {
+				if (selectedVerse === colorVerse[0]) {
 					deletableColors.push(colorVerse[1])
 				}
 			})
@@ -140,41 +195,6 @@ class Bible extends Component {
 			this.chapter.clearSelection()
 		}
 		this.setState({ verseSelection: {}, deletableColors: [] })
-	}
-
-
-	componentDidUpdate(prevProps, prevState) {
-		const { bible } = this.props
-
-		// send error down to pickers
-		if (bible.chapter && prevProps.bible.chapter && bible.chapter.reference.usfm !== prevProps.bible.chapter.reference.usfm) {
-			if (bible.chapter.errors) {
-				this.setState({ chapterError: true })
-			} else if (bible.chapter.reference && bible.chapter.reference.usfm) {
-				this.setState({
-					chapterError: false,
-					selectedChapter: bible.chapter.reference.usfm,
-					selectedVersion: bible.chapter.reference.version_id,
-				})
-
-				LocalStore.set('last_read', bible.chapter.reference.usfm)
-				this.handleVerseSelectionClear()
-			}
-		}
-
-		// update version for the chapter picker if a new version has been selected
-		if (bible.version && bible.version.id && bible.books && bible.books.all && prevProps.bible.version && prevProps.bible.version.id && bible.version.id !== prevProps.bible.version.id) {
-			this.recentVersions.addVersion(bible.version)
-
-			this.setState({
-				selectedVersion: bible.version.id,
-			})
-			this.updateRecentVersions()
-			Filter.clear('BooksStore')
-			Filter.add('BooksStore', bible.books.all)
-			LocalStore.set('version', bible.version.id)
-		}
-
 	}
 
 	updateRecentVersions = () => {
@@ -249,35 +269,9 @@ class Bible extends Component {
 
 	}
 
-	componentDidMount() {
-		const { dispatch, bible, auth } = this.props
-		const { chapterError } = this.state
-
-		// check for cookie written from reading plans telling
-		// bible to open with the chapterpicker modal open
-		if (LocalStore.get('showPickerOnLoad') || chapterError || bible.chapter.showError) {
-			this.chapterPickerInstance.openDropdown()
-			LocalStore.delete('showPickerOnLoad')
-		}
-
-		this.recentVersions = new RecentVersions()
-		this.recentVersions.syncVersions(bible.settings)
-		this.updateRecentVersions()
-		this.recentVersions.onUpdate((settings) => {
-			dispatch(ActionCreators.usersUpdateSettings(auth.isLoggedIn, settings))
-		})
-		if (!chapterError && !bible.chapter.showError) {
-			this.viewportUtils = new ViewportUtils()
-			this.updateMobileStyling()
-			this.viewportUtils.registerListener('resize', this.updateMobileStyling)
-		}
-	}
-
-
-
 	render() {
-		const { bible, settings, hosts, params, intl, isRtl } = this.props
-		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
+		const { bible, hosts, params, intl, isRtl } = this.props
+		const { fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
@@ -421,6 +415,11 @@ class Bible extends Component {
 Bible.propTypes = {
 	bible: PropTypes.object.isRequired,
 	hosts: PropTypes.object.isRequired,
+	intl: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	isRtl: PropTypes.oneOfType([ PropTypes.func, PropTypes.bool ]).isRequired,
+	auth: PropTypes.object.isRequired,
+	params: PropTypes.object.isRequired
 }
 
 Bible.defaultProps = {

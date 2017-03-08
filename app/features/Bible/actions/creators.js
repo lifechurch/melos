@@ -1,8 +1,6 @@
 import type from './constants'
 
-
 const ActionCreators = {
-
 
 	handleInvalidReference(params, auth) {
 		const { version } = params

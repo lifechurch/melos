@@ -95,7 +95,7 @@ function requireChapterData(nextState, replace, callback) {
 		.then(() => {
 			callback()
 		},
-			(error) => {
+			() => {
 				store.dispatch(BibleActionCreator.handleInvalidReference({
 					language_tag: window.__LOCALE__.locale3,
 					version: nextVersion,
