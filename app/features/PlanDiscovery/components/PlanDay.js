@@ -19,6 +19,8 @@ function PlanDay(props) {
 		isSubscribed,
 		actionsNode,
 		refListNode,
+		language_tag,
+		isRtl,
 		subscriptionLink,
 		startLink,
 		isSaved,
@@ -72,6 +74,8 @@ function PlanDay(props) {
 						calendar={calendar}
 						dayBaseLink={dayBaseLink}
 						showDate={isSubscribed}
+						language_tag={language_tag}
+						isRtl={isRtl()}
 					/>
 				</div>
 			</div>
@@ -116,6 +120,7 @@ PlanDay.propTypes = {
 	devoCompleted: PropTypes.bool.isRequired,
 	hasDevo: PropTypes.bool.isRequired,
 	isSaved: PropTypes.bool.isRequired,
+	isRtl: PropTypes.func,
 	handleCompleteRef: PropTypes.func,
 	plan: PropTypes.object.isRequired,
 	actionsNode: PropTypes.node,
@@ -126,8 +131,8 @@ PlanDay.propTypes = {
 PlanDay.defaultProps = {
 	actionsNode: null,
 	handleCompleteRef: () => {},
+	isRtl: () => { return false },
 	planLinkNode: null,
-
 }
 
 export default PlanDay

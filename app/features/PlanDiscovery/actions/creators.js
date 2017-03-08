@@ -98,7 +98,6 @@ const ActionCreators = {
 
 			return new Promise((resolve, reject) => {
 				Promise.all(promises).then((d) => {
-					console.log(d)
 					const [ plan, { calendar } ] = d
 					let currentDay = day
 					if (!day) {
@@ -122,7 +121,6 @@ const ActionCreators = {
 								dispatch(ActionCreators.planSelect({ id }))
 							)
 						}, (error) => {
-							console.log('reject creator')
 							reject(error)
 						})
 				})
@@ -140,7 +138,7 @@ const ActionCreators = {
 				dispatch(ActionCreators.allQueueItems(auth))
 			]
 
-			return new Promise((resolve) => {
+			return new Promise((resolve, reject) => {
 				Promise.all(promises).then((d) => {
 					const [ , { calendar }, ] = d
 					const dayData = calendar[currentDay - 1]
@@ -151,6 +149,8 @@ const ActionCreators = {
 						currentDay
 					})).then(() => {
 						resolve(dispatch(ActionCreators.planSelect({ id })))
+					}, (error) => {
+						reject(error)
 					})
 				})
 			})
@@ -351,7 +351,6 @@ const ActionCreators = {
 			const planParams = Object.assign({}, p, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user
 			const savedplanParams = Object.assign({}, p, { savedplanCheck: true, page: 1 })
-			console.log(params)
 			const promises = []
 			if (!getSavedPlans && !getRecommendedPlans) {
 				promises.push(

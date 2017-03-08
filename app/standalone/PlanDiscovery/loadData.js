@@ -96,7 +96,19 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					language_tag: Locale.planLocale,
 					day: params.day,
 					version,
-				}, auth)).then(() => { resolve() })
+				}, auth))
+					.then(() => {
+						resolve()
+					}, () => {
+						store.dispatch(ActionCreator.sampleAll({
+							id: params.id,
+							language_tag: Locale.planLocale,
+							day: params.day,
+							version: getDefaultVersion(store, Locale.locale3),
+						}, auth)).then(() => {
+							resolve()
+						}, () => { resolve() })
+					})
 
 			} else if (isReadingPlanSettings.test(params.url)) {
 				const version = params.version || cookie.load('version') || '1'
@@ -146,8 +158,19 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					language_tag: Locale.planLocale,
 					day: params.day,
 					version,
-				}, auth)).then(() => { resolve() })
-
+				}, auth))
+				.then(() => {
+					resolve()
+				}, () => {
+					store.dispatch(ActionCreator.sampleAll({
+						id: params.id,
+						language_tag: Locale.planLocale,
+						day: params.day,
+						version: getDefaultVersion(store, Locale.locale3),
+					}, auth)).then(() => {
+						resolve()
+					}, () => { resolve() })
+				})
 			} else if (isLookinside.test(params.url)) {
 				// figure out referrer and fire off lookinside analytics
 				store.dispatch(ActionCreator.readingplanView({

@@ -136,6 +136,7 @@ NavArrows.propTypes = {
 	leftClass: PropTypes.string,
 	rightClass: PropTypes.string,
 	bottomPos: PropTypes.string,
+	localizedLink: PropTypes.func,
 }
 
 NavArrows.defaultProps = {
@@ -148,6 +149,7 @@ NavArrows.defaultProps = {
 	leftClass: null,
 	rightClass: null,
 	bottomPos: null,
+	localizedLink: (link) => { return link },
 }
 
 export default NavArrows
