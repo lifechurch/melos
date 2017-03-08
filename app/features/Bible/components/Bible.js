@@ -370,11 +370,8 @@ class Bible extends Component {
 
 			// overwrite meta with bible stuff
 			metaTitle = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) | ${intl.formatMessage({ id: 'Reader.chapter' })} ${bible.chapter.reference.usfm.split('.').pop()} | ${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
-
-			if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
-				metaContent = `
-					${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()})  ${bible.verses.verses[Object.keys(bible.verses.verses)[0]].content.substring(0, 170)}`
-			}
+			const strippedChapterText = bible.chapter.content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim()
+			metaContent = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) ${strippedChapterText.substring(0, 170)}`
 		}
 
 		return (
