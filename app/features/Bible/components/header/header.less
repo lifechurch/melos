@@ -94,7 +94,6 @@
 	.version-picker-container, .chapter-picker-container {
 		margin-right: 35px;
 	}
-
 }
 @media @small-only {
 	.reader-settings {
@@ -141,5 +140,20 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+}
+
+html[dir="rtl"] {
+	@media @large-up {
+		.version-picker-container, .chapter-picker-container {
+			margin-left: 45px;
+			margin-right: 0 !important;
+		}
+	}
+	@media @medium-only {
+		.version-picker-container, .chapter-picker-container {
+			margin-left: 35px;
+			margin-right: 0 !important;
+		}
 	}
 }

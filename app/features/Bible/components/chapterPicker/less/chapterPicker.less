@@ -210,12 +210,31 @@ input {
 
 
 .chapter-picker-container {
-
-
 	.modal {
 		top: 52px;
 		// because of the overflow hidden, we need to allow padding and compensate
 		// for the drop shadows
 		margin-left: -20px;
+	}
+}
+
+
+html[dir="rtl"] {
+	.book-list {
+		margin-left: -1px !important;
+		margin-right: 0;
+		li {
+			padding: 4px 15px 4px 0px !important;
+		}
+	}
+
+	.chapter-container {
+		margin-right: 0px !important;
+		margin-left: -5px !important;
+		border-left: none;
+		border-right: @thin-grey-border;
+		.chapter-list {
+			margin-right: 0 !important;
+		}
 	}
 }

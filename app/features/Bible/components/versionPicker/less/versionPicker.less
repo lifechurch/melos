@@ -250,7 +250,21 @@
 	z-index: 20;
 }
 
+html[dir="rtl"] {
+	.version-list, .language-list {
+		// max height for mobile is handled by the bible component with viewport utils
 
+		.version-header, .language-header {
+			padding-left: 0px !important;
+			padding-right: 20px !important;
+		}
 
+		ul {
+			margin-right: 0 !important;
+		}
 
-
+		li {
+			padding: 6px 20px 6px 0px !important;
+		}
+	}
+}
