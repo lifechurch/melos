@@ -44,7 +44,20 @@ function PlanDay(props) {
 			/>
 		)
 	}
-	if (refListNode) {
+
+	// show no content message and mark day as complete if there is no
+	// content
+	if (dayData.references.length === 0 && !hasDevo) {
+		refsDiv = <FormattedMessage id="plans.no content" />
+		if (!dayData.completed && typeof handleCompleteRef === 'function') {
+			handleCompleteRef(
+				day,
+				null,
+				true,
+				false
+			)
+		}
+	} else if (refListNode) {
 		refsDiv = refListNode
 	} else {
 		refsDiv = (

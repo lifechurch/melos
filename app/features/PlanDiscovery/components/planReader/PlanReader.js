@@ -180,7 +180,7 @@ class PlanReader extends Component {
 				<PlanNavigation
 					localizedLink={this.props.localizedLink}
 					planName={plan.name.default}
-					planImgUrl={plan.images[2].url}
+					planImgUrl={plan.images ? plan.images[2].url : 'https://s3.amazonaws.com/yvplans-staging/default/720x405.jpg'}
 					day={this.dayNum}
 					previous={this.navLinks.previous}
 					next={this.navLinks.next}
