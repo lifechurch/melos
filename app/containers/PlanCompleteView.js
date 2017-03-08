@@ -58,7 +58,7 @@ class PlanCompleteView extends Component {
 			)
 		}
 		const backImgStyle = {
-			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${plan.images[4].url})`
+			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${plan.images ? plan.images[4].url : 'https://s3.amazonaws.com/yvplans-staging/default/720x405.jpg'})`
 		}
 
 		return (
@@ -80,7 +80,7 @@ class PlanCompleteView extends Component {
 							</Link>
 						</div>
 						<div className='row horizontal-center vertical-center'>
-							<img alt='reading plan' src={plan.images[7].url} height={160} width={310} />
+							<img alt='reading plan' src={plan.images ? plan.images[7].url : 'https://s3.amazonaws.com/yvplans-staging/default/720x405.jpg'} height={160} width={310} />
 						</div>
 						<div className='row horizontal-center vertical-center'>
 							<ProgressBar
