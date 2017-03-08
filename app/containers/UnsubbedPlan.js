@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import rtlDetect from 'rtl-detect'
 import UnsubbedPlanComponent from '../features/PlanDiscovery/components/UnsubbedPlan'
 
 class Plan extends Component {
@@ -40,6 +41,7 @@ function mapStateToProps(state) {
 		serverLanguageTag: state.serverLanguageTag,
 		plan: state.readingPlans.fullPlans._SELECTED,
 		savedPlans: state.readingPlans && state.readingPlans.savedPlans ? state.readingPlans.savedPlans : null,
+		version: state.bibleReader.version,
 		hosts: state.hosts
 	}
 }

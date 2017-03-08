@@ -61,7 +61,12 @@ class DayCompleteView extends Component {
 							<img alt='reading plan' src={plan.images[7].url} height={160} width={310} />
 						</div>
 						<div className='row horizontal-center vertical-center'>
-							<ProgressBar percentComplete={plan.completion_percentage} width={'250px'} height={'10px'} />
+							<ProgressBar
+								percentComplete={plan.completion_percentage}
+								width={'250px'}
+								height={'10px'}
+								isRtl={this.isRtl()}
+							/>
 						</div>
 					</div>
 				</StackedContainer>

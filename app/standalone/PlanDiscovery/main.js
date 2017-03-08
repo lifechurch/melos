@@ -360,10 +360,21 @@ function requireSamplePlan(nextState, replace, callback) {
 		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay: day })).then(() => {
 			store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
 			callback()
+		}, (error) => {
+			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
+			store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version: defaultVersion, id, currentDay: day })).then((refd) => {
+				store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
+				callback()
+			}, (error) => { callback() })
 		})
 	} else {
 		store.dispatch(PlanDiscoveryActionCreators.sampleAll({ id, language_tag: window.__LOCALE__.planLocale, version, day }, isLoggedIn)).then(() => {
 			callback()
+		}, (err) => {
+			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
+			store.dispatch(PlanDiscoveryActionCreators.sampleAll({ id, language_tag: window.__LOCALE__.planLocale, version: defaultVersion, day }, isLoggedIn)).then(() => {
+				callback()
+			}, (err) => { callback() })
 		})
 	}
 }

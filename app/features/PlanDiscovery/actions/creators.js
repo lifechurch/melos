@@ -141,7 +141,7 @@ const ActionCreators = {
 				dispatch(ActionCreators.allQueueItems(auth))
 			]
 
-			return new Promise((resolve) => {
+			return new Promise((resolve, reject) => {
 				Promise.all(promises).then((d) => {
 					const [ , { calendar }, ] = d
 					const dayData = calendar[currentDay - 1]
@@ -152,6 +152,8 @@ const ActionCreators = {
 						currentDay
 					})).then(() => {
 						resolve(dispatch(ActionCreators.planSelect({ id })))
+					}, (error) => {
+						reject(error)
 					})
 				})
 			})

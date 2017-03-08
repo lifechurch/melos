@@ -14,7 +14,7 @@ class CarouselStandard extends Component {
 
 		const carouselTitle = (carouselContent.title) ? carouselContent.title : <FormattedMessage id='plans.related plans' />
 		// for a dynamic collection we need to build, the header link will be different
-		const carouselLink = (context == 'recommended') ? `/recommended-plans-collection/${carouselContent.id}` : (context == 'saved') ? '/saved-plans-collection' : `/reading-plans-collection/${carouselContent.id}`
+		const carouselLink = (context === 'recommended') ? `/recommended-plans-collection/${carouselContent.id}` : (context === 'saved') ? '/saved-plans-collection' : `/reading-plans-collection/${carouselContent.id}`
 
 		const slideStyle = isRtl() ? { display: 'inline-block' } : {}
 		let slider = null
@@ -36,14 +36,14 @@ class CarouselStandard extends Component {
 
 		if (carouselContent.items && carouselContent.items.length > 0) {
 	    // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
-	    const slides = carouselContent.items.map((slide, index) => {
+	    const slides = carouselContent.items.map((slide) => {
 
 	    	const slug = slide.slug ? `-${slide.slug}` : ''
-	    	const slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}${slug}`) : localizedLink(`/reading-plans/${slide.id}${slug}`)
+	    	const slideLink = (slide.type === 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}${slug}`) : localizedLink(`/reading-plans/${slide.id}${slug}`)
 
-	    	if (slide.image_id) {
+		if (slide.image_id) {
 			return (
-				<div className='radius-5' key={index} style={slideStyle}>
+				<div className='radius-5' key={slide.id} style={slideStyle}>
 					<Link to={slideLink}>
 						<CarouselSlideImage title={slide.title}>
 							<Image width={320} height={180} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
@@ -53,7 +53,7 @@ class CarouselStandard extends Component {
 			)
 		} else if (slide.gradient) {
 			return (
-				<div className='radius-5' style={slideStyle}>
+				<div className='radius-5' key={slide.id} tyle={slideStyle}>
 					<Link to={slideLink}>
 						<CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title} />
 					</Link>
@@ -61,7 +61,7 @@ class CarouselStandard extends Component {
 			)
 		} else {
 			return (
-				<div className='radius-5' key={index} style={slideStyle}>
+				<div className='radius-5' key={slide.id} style={slideStyle}>
 					<Link to={slideLink}>
 						<CarouselSlideImage title={slide.title} >
 							<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />

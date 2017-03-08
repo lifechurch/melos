@@ -81,7 +81,7 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { plan, savedPlans, dispatch, children, params, auth, localizedLink, serverLanguageTag } = this.props
+		const { plan, savedPlans, dispatch, children, params, auth, localizedLink, isRtl, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const version = cookie.load('version') || '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
@@ -104,8 +104,8 @@ class Plan extends Component {
 			}
 		}
 
-		const subscriptionLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}`)
-		const dayBaseLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}`)
+		const subscriptionLink = `${myPlansLink}/${plan.id}-${plan.slug}`
+		const dayBaseLink = `${myPlansLink}/${plan.id}-${plan.slug}`
 		const dayData = plan.calendar[day - 1]
 		const devoCompleted = dayData.additional_content.completed
 		const hasDevo = dayHasDevo(dayData.additional_content)
@@ -173,6 +173,8 @@ class Plan extends Component {
 						bibleLink,
 						myPlansLink,
 						devoCompleted,
+						language_tag: serverLanguageTag,
+						isRtl,
 						hasDevo,
 						isSaved,
 						isPrivate: plan.private,

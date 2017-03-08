@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import rtlDetect from 'rtl-detect'
 import PlanComponent from '../features/PlanDiscovery/components/Plan'
 
 class Plan extends Component {
