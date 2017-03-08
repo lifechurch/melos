@@ -18,13 +18,13 @@ function dayHasDevo(devoContent) {
 class UnsubbedPlan extends Component {
 
 	render() {
-		const { plan, dispatch, children, version, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
+		const { plan, savedPlans, dispatch, children, version, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const versionID = version ? version.id : '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
 		const myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
 		const bibleLink = localizedLink(`/bible/${versionID}`)
-		const isSaved = !!plan.saved === true
+		const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(plan.id) !== -1))
 		const daySliderBasePath = dayBasePath || localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
 
 		const metaTitle = `${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`

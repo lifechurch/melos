@@ -22,10 +22,10 @@ class AboutPlan extends Component {
 	}
 
 	render() {
-		const { readingPlan, recommendedPlans, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
+		const { readingPlan, savedPlans, recommendedPlans, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
 		const aboutLink = localizedLink(`/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
-
+		const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(readingPlan.id) !== -1))
 		if (!readingPlan) {
 			return (
 				<div />
@@ -134,7 +134,7 @@ class AboutPlan extends Component {
 										subscriptionLink={subscriptionLink}
 										planLinkNode={planLinkNode}
 										isSubscribed={'subscription_id' in readingPlan}
-										isSaved={readingPlan.saved}
+										isSaved={isSaved}
 									/>
 									<hr />
 									<div className='widget'>
@@ -162,7 +162,8 @@ AboutPlan.propTypes = {
 	localizedLink: PropTypes.func,
 	isRtl: PropTypes.func,
 	params: PropTypes.object,
-	serverLanguageTag: PropTypes.string
+	serverLanguageTag: PropTypes.string,
+	savedPlans: PropTypes.object
 }
 
 export default injectIntl(AboutPlan)
