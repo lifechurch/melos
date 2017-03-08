@@ -83,7 +83,7 @@ class AudioPlayer extends Component {
 		}
 	}
 
-	componentDidUpdate(prevProps, prevState) {
+	componentDidUpdate(prevProps) {
 		const { audio, startTime, stopTime } = this.props
 		const { playing } = this.state
 		const prevaudioRef = 	prevProps.audio && 'download_urls' in prevProps.audio ?
@@ -93,7 +93,7 @@ class AudioPlayer extends Component {
 											audio.download_urls[Object.keys(audio.download_urls)[0]]
 											: null
 
-		if (audioRef !== prevaudioRef) {
+		if (audioRef !== prevaudioRef && audioRef !== null && typeof audioRef !== 'undefined') {
 			this.handlePlayerSrcLoad(audioRef, playing)
 		}
 		if (startTime !== prevProps.startTime) {
@@ -146,7 +146,7 @@ class AudioPlayer extends Component {
 		}
 	}
 
-	handlePlayerError(e) {
+	handlePlayerError() {
 		this.setState({ hasError: true })
 	}
 
@@ -240,7 +240,7 @@ class AudioPlayer extends Component {
 						return this.handleYieldToOrigin()
 
 					default:
-
+						return null
 				}
 			} else {
 				switch (e.data.name) {
@@ -248,19 +248,20 @@ class AudioPlayer extends Component {
 						if (typeof e.data.value === 'number' && typeof this.player !== 'undefined') {
 							this.handlePlayerSeekToRequest(e.data.value)
 						}
-						return
+						return null
 
 					case POST_MESSAGE_EVENTS.STANDALONE_SPEED_CHANGE:
 						if (typeof e.data.value === 'object' && typeof this.player !== 'undefined') {
 							this.handleSpeedChangeRequest(e.data.value)
 						}
-
+						return null
 
 					default:
-
+						return null
 				}
 			}
 		}
+		return null
 	}
 
 	handleYieldToStandalone() {
@@ -297,13 +298,16 @@ class AudioPlayer extends Component {
 
 	render() {
 		const { audio } = this.props
-		const { initialized, playing, buffering, paused, hasError, playbackRate, currentTime, duration, percentComplete, hasStandalone } = this.state
+		const { playing, playbackRate, currentTime, duration, percentComplete, hasStandalone } = this.state
 
 		if (typeof audio === 'undefined' || typeof audio.download_urls !== 'object') {
 			return null
 		}	else {
 			const audioSources = Object.keys(audio.download_urls).map((fileType) => {
-				return (<source key={fileType} src={audio.download_urls[fileType]} />)
+				if (audio.download_urls[fileType] !== null && typeof audio.download_urls[fileType] !== 'undefined') {
+					return (<source key={fileType} src={audio.download_urls[fileType]} />)
+				}
+				return null
 			})
 
 			const button = playing ? (<PauseButton onClick={this.handlePlayerPauseRequest} />) : (<PlayButton onClick={this.handlePlayerPlayRequest} />)
@@ -311,7 +315,7 @@ class AudioPlayer extends Component {
 			const overlay = hasStandalone ? (
 				<div className='audio-player-overlay'>
 					<p className='caption'>Bible audio is playing in another window.</p>
-					<a className='solid-button green padded' onClick={this.handleResumeFromStandalone}>Resume</a>
+					<a className='solid-button green padded' tabIndex={0} onClick={this.handleResumeFromStandalone}>Resume</a>
 				</div>
 			) : null
 
