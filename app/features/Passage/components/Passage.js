@@ -20,14 +20,14 @@ function Passage(props) {
 			book,
 			chapter,
 			verse: verseNumber,
-			vabbr
+			vabbr,
+			version: primaryVersionId
 		}
 	} = props
 
 	const {
 		verses: {
 			verses,
-			primaryVersion,
 			versions: {
 				versions
 			}
@@ -36,17 +36,21 @@ function Passage(props) {
 
 	const verseKey = `${book}.${chapter}.${verseNumber}`.toUpperCase()
 
+	let primaryVersion = {}
+
 	// main verse and verse cards
 	const verseCards = []
 	if (typeof verses === 'object') {
-		Object.keys(verses[verseKey]).forEach((versionKey, index) => {
+		Object.keys(verses[verseKey]).forEach((versionKey) => {
 			const verse = verses[verseKey][versionKey]
 			const version = versions[verse.version]
+
 			verse.versionInfo = version
 
 			// if we've found a main version, then let's set the maine verse
 			// to that, otherwise, the main verse is just the first one
-			if (primaryVersion.version ? verse.version === primaryVersion.version : index === 0) {
+			if (verse.version === parseInt(primaryVersionId, 10)) {
+				primaryVersion = verse
 				mainVerse = (
 					<div key={versionKey} className='verse'>
 						<a href={`/versions/${verse.version}`}>
@@ -215,10 +219,6 @@ function Passage(props) {
 	)
 }
 
-
-/**
- *
- */
 Passage.propTypes = {
 	localizedLink: PropTypes.func.isRequired,
 	passage: PropTypes.object.isRequired,

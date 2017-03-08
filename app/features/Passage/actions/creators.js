@@ -10,7 +10,7 @@ const ActionCreators = {
 	passageLoad(params) {
 		return dispatch => {
 			return new Promise((resolve) => {
-				const { isInitialLoad, hasVerseChanged, hasVersionChanged, passage, versions, language_tag } = params
+				const { isInitialLoad, hasVerseChanged, passage, versions, language_tag } = params
 				const refArray = passage.split('.')
 				const chapUSFM = refArray.slice(0, 2).join('.')
 				const verseORVerseRange = refArray.pop()
@@ -49,12 +49,6 @@ const ActionCreators = {
 					})
 				}
 
-				if (isInitialLoad || (hasVerseChanged || hasVersionChanged)) {
-					promises.push(
-						dispatch(ActionCreators.bibleVerses({ id: versions[0], references: versesArray, format: 'text', passage }))
-					)
-				}
-
 				if (isInitialLoad || hasVerseChanged) {
 					promises.push(
 						dispatch(ActionCreators.readingPlansByReference({ usfm: passage, language_tag })),
@@ -68,6 +62,13 @@ const ActionCreators = {
 					resolve()
 				})
 			})
+		}
+	},
+
+	selectPrimaryVersion(version) {
+		return {
+			type: type('selectPrimaryVersion'),
+			version
 		}
 	},
 

@@ -16,11 +16,14 @@ export default function reducer(state = {}, action) {
 					}
 				} = action
 
+
 				if (Array.isArray(verses) && 'verses' in verses[0]) {
 					verses.forEach((verse) => {
 						const {
 							id: version,
-							verses: [ innerVerse ]
+							next_verse,
+							previous_verse,
+							verses: [ innerVerse ],
 						} = verse
 
 						const {
@@ -38,7 +41,11 @@ export default function reducer(state = {}, action) {
 									chapUsfm: usfm.split('.').slice(0, 2).join('.'),
 									human,
 									usfm,
-									version
+									version,
+									passage,
+									nextVerse: next_verse,
+									previousVerse: previous_verse,
+									text: content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim()
 								}
 							}
 						})

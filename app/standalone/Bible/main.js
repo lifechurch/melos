@@ -139,9 +139,12 @@ function requireVerseData(nextState, replace, callback) {
 
 	const nextUsfm = `${nextBook}.${nextChapter}.${nextVerse}`
 	const hasVersionChanged = nextVersion.toString() !== currentVersion.toString()
-	const hasVerseChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase())
+	const hasVerseChanged = nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()
 
 	if (!hasVersionChanged && !hasVerseChanged) {
+		callback()
+	} else if (hasVersionChanged && !hasVerseChanged) {
+		store.dispatch(PassageActionCreator.selectPrimaryVersion(nextVersion))
 		callback()
 	} else {
 		if (window.location.hostname === 'www.bible.com') {
