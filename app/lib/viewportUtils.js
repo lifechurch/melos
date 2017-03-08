@@ -55,12 +55,12 @@ export default class viewportUtils {
 	 * @return     {Object}  The viewport height and width
 	 */
 	getViewport() {
-		if (typeof window == 'undefined') {
+		if (typeof window === 'undefined') {
 			return null
 		}
 
-		let viewportWidth = window.innerWidth
-		let viewportHeight = window.innerHeight
+		const viewportWidth = window.innerWidth
+		const viewportHeight = window.innerHeight
 
 		return { height: viewportHeight, width: viewportWidth }
 	}
@@ -72,7 +72,7 @@ export default class viewportUtils {
 	 * @return     {Object}  The element's dimenstions/position
 	 */
 	getElement(element) {
-		if (typeof window == 'undefined') {
+		if (typeof window === 'undefined') {
 			return null
 		}
 

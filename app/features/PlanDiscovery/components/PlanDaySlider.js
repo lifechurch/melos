@@ -11,6 +11,8 @@ function PlanDaySlider(props) {
 		dayBaseLink,
 		day,
 		showDate,
+		isRtl,
+		language_tag,
 	} = props
 
 	const settings = {
@@ -19,12 +21,11 @@ function PlanDaySlider(props) {
 		infinite: false,
 		variableWidth: true,
 		initialSlide: day - 1,
-		slickGoTo: day - 1,
 		slidesToScroll: 8,
 		slidesToShow: 8,
 		autoPlay: false,
-		rtl: false,
-		dir: 'ltr',
+		rtl: isRtl,
+		dir: isRtl ? 'rtl' : 'ltr',
 		responsive: [
 			{
 				breakpoint: 436,
@@ -51,6 +52,7 @@ function PlanDaySlider(props) {
 		]
 	}
 
+	moment.locale(language_tag)
 	const slides = calendar.map((d) => {
 		const date = moment(d.date).format('l')
 
@@ -82,9 +84,30 @@ function PlanDaySlider(props) {
 		)
 	})
 
+	let slider
+	if (isRtl) {
+		const outerStyle = {
+			width: '100%',
+			overflowX: 'scroll'
+		}
+		const innerStyle = {
+			width: `${(80 * calendar.length) + 30}px`
+		}
+
+		slider = (
+			<div className='rtl-faux-slider' style={outerStyle}>
+				<div className='plan-day-slider' style={innerStyle}>
+					{ slides }
+				</div>
+			</div>
+		)
+	} else {
+		slider = <Slider {...settings}>{ slides }</Slider>
+	}
+
 	return (
 		<div>
-			<Slider {...settings}>{slides}</Slider>
+			{ slider }
 		</div>
 	)
 }
@@ -94,10 +117,14 @@ PlanDaySlider.propTypes = {
 	dayBaseLink: PropTypes.string.isRequired,
 	day: PropTypes.number.isRequired,
 	showDate: PropTypes.bool,
+	language_tag: PropTypes.string,
+	isRtl: PropTypes.bool,
 }
 
 PlanDaySlider.defaultProps = {
 	showDate: true,
+	language_tag: 'en',
+	isRtl: false,
 }
 
 export default PlanDaySlider

@@ -15,7 +15,7 @@ import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
 
-// require('moment/min/locales')
+require('moment/min/locales')
 
 let initialState = defaultState
 
@@ -346,10 +346,21 @@ function requireSamplePlan(nextState, replace, callback) {
 		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay: day })).then(() => {
 			store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
 			callback()
+		}, (error) => {
+			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
+			store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version: defaultVersion, id, currentDay: day })).then((refd) => {
+				store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
+				callback()
+			}, (error) => { callback() })
 		})
 	} else {
 		store.dispatch(PlanDiscoveryActionCreators.sampleAll({ id, language_tag: window.__LOCALE__.planLocale, version, day }, isLoggedIn)).then(() => {
 			callback()
+		}, (err) => {
+			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
+			store.dispatch(PlanDiscoveryActionCreators.sampleAll({ id, language_tag: window.__LOCALE__.planLocale, version: defaultVersion, day }, isLoggedIn)).then(() => {
+				callback()
+			}, (err) => { callback() })
 		})
 	}
 }
@@ -411,7 +422,7 @@ function requirePlanCompleteData(nextState, replace, callback) {
 		getSavedPlans = false
 		getRecommendedPlans = false
 	}
-	console.log('welkgjbwkrjgber')
+
 	store.dispatch(PlanDiscoveryActionCreators.planComplete({
 		id,
 		language_tag: window.__LOCALE__.planLocale,

@@ -18,12 +18,12 @@ function dayHasDevo(devoContent) {
 class UnsubbedPlan extends Component {
 
 	render() {
-		const { plan, dispatch, children, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
+		const { plan, dispatch, children, version, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
-		const version = cookie.load('version') || '1'
+		const versionID = version ? version.id : '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
 		const myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
-		const bibleLink = localizedLink(`/bible/${version}`)
+		const bibleLink = localizedLink(`/bible/${versionID}`)
 		const isSaved = !!plan.saved === true
 		const daySliderBasePath = dayBasePath || localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
 
@@ -55,7 +55,7 @@ class UnsubbedPlan extends Component {
 			)
 		})
 		const refList = (
-			<ul className="plan-pieces">
+			<ul className="">
 				{referenceLinks}
 			</ul>
 		)
@@ -124,13 +124,16 @@ class UnsubbedPlan extends Component {
 						emailDelivery: plan.email_delivery,
 						handleCompleteRef: this.handleCompleteRef
 					})}
-					<div className='columns large-8 medium-centered' style={{ marginTop: '100px' }}>
-						<PlanDevo
-							devoContent={dayData.additional_content.html ?
-								dayData.additional_content.html.default :
-								dayData.additional_content.text.default}
-						/>
-					</div>
+					{
+						hasDevo &&
+						<div className='columns large-8 medium-centered' style={{ marginTop: '100px' }}>
+							<PlanDevo
+								devoContent={dayData.additional_content.html ?
+									dayData.additional_content.html.default :
+									dayData.additional_content.text.default}
+							/>
+						</div>
+					}
 				</div>
 			</div>
 		)

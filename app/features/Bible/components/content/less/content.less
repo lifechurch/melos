@@ -165,3 +165,19 @@
 	background: whitesmoke;
 	border: solid 1px whitesmoke;
 }
+
+
+html[dir="rtl"] {
+	.prev-arrow .circle-buttons {
+		background-color: @green !important;
+		polygon {
+			fill: white !important;
+		}
+	}
+	.next-arrow .circle-buttons {
+		background-color: white !important;
+		polygon {
+			fill: @font-grey !important;
+		}
+	}
+}

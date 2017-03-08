@@ -108,7 +108,6 @@ export default function plansDiscovery(state = {}, action) {
 
 					return p.toJS()
 				})
-				console.log(state.plans)
 				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { related: { items: reading_plans, id: action.params.id } } }).toJS()
 
 			} else if (action.params.savedplanCheck) {
@@ -135,8 +134,7 @@ export default function plansDiscovery(state = {}, action) {
 				var { reading_plans } = action.response
 				var items = state.items.slice(0)
 				// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
-				const discoveryIndex = Array.isArray(state.map) ? state.map[action.params.id] : null
-
+				const discoveryIndex = state.map[action.params.id]
 				var reading_plans = action.response.reading_plans.map((plan) => {
 					let p = Immutable.fromJS(plan)
 

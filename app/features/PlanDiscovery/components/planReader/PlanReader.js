@@ -69,7 +69,6 @@ class PlanReader extends Component {
 	buildNavLinks() {
 		const { location: { pathname } } = this.props
 		const dayBasePath = `${pathname.replace('/devo', '').replace(`/ref/${this.contentIndex}`, '')}`
-		// const dayBasePath = `/${basePath}?day=${this.dayNum}`
 		let previous, next = null
 		// figure out nav links for previous
 		if (this.isCheckingDevo) {
@@ -119,7 +118,6 @@ class PlanReader extends Component {
 				<div />
 			)
 		}
-
 		this.dayNum = parseInt(day, 10)
 		this.contentIndex = parseInt(content, 10)
 		this.dayObj = plan.calendar[this.dayNum - 1]

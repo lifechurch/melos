@@ -27,8 +27,13 @@ class ProgressBar extends Component {
 		classes,
 		color,
 		transitionSpeed,
+		isRtl,
 	} = this.props
 		const { percentComplete } = this.state
+
+		const progressTransform = isRtl ?
+			`translate(${(100 - percentComplete)}%, 0)` :
+			`translate(${-1 * (100 - percentComplete)}%, 0)`
 
 		const progressBarStyle = {
 			height: `${height}`,
@@ -42,7 +47,7 @@ class ProgressBar extends Component {
 			height: '100%',
 			borderRadius: '5px 0 0 5px',
 			width: '100%',
-			transform: `translate(${-1 * (100 - percentComplete)}%, 0)`,
+			transform: progressTransform,
 			transition: `transform ${transitionSpeed}s cubic-bezier(0.42,1,.16,.93)`,
 		}
 
@@ -64,6 +69,7 @@ ProgressBar.propTypes = {
 	classes: PropTypes.string,
 	transitionSpeed: PropTypes.number,
 	percentComplete: PropTypes.number,
+	isRtl: PropTypes.bool,
 }
 
 ProgressBar.defaultProps = {
@@ -73,6 +79,7 @@ ProgressBar.defaultProps = {
 	classes: '',
 	transitionSpeed: 1.5,
 	percentComplete: 0,
+	isRtl: false,
 }
 
 export default ProgressBar
