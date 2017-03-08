@@ -15,13 +15,12 @@ import defaultState from './defaultState'
 
 if (typeof window !== 'undefined') {
 	ga.initialize('UA-3571547-76', { language: window.__LOCALE__.locale });
-	window.__GA__ = ga;
 }
 
 function logPageView() {
-	if (typeof window !== 'undefined' && window.location.hostname === 'www.bible.com' && window.__GA__) {
-		window.__GA__.set({ page: window.location.pathname })
-		window.__GA__.pageview(window.location.pathname);
+	if (typeof window !== 'undefined' && window.location.hostname === 'www.bible.com') {
+		ga.set({ page: window.location.pathname, location: window.location.href })
+		ga.pageview(window.location.pathname);
 	}
 	return window.scrollTo(0, 0)
 }
