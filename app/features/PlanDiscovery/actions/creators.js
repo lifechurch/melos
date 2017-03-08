@@ -35,7 +35,10 @@ const ActionCreators = {
 
 						// if we have saved plans, let's get 'em
 						if (hasSaved === true) {
-							promises.push(dispatch(ActionCreators.savedItems({ id: 'saved' }, auth)))
+							promises.push(
+								dispatch(ActionCreators.savedItems({ id: 'saved' }, auth)),
+								dispatch(ActionCreators.allQueueItems(auth))
+							)
 						}
 
 						// if we have recommendations, let's get recommended
@@ -98,7 +101,6 @@ const ActionCreators = {
 
 			return new Promise((resolve, reject) => {
 				Promise.all(promises).then((d) => {
-					console.log(d)
 					const [ plan, { calendar } ] = d
 					let currentDay = day
 					if (!day) {
@@ -122,7 +124,6 @@ const ActionCreators = {
 								dispatch(ActionCreators.planSelect({ id }))
 							)
 						}, (error) => {
-							console.log('reject creator')
 							reject(error)
 						})
 				})
@@ -221,7 +222,7 @@ const ActionCreators = {
 				})
 
 				if (innerPromises.length > 0) {
-					Promise.all(innerPromises).then((d) => {
+					Promise.all(innerPromises).then(() => {
 						resolve()
 					}, (error) => {
 						reject(error)
@@ -235,7 +236,7 @@ const ActionCreators = {
 
 	updatePlanDay(params, auth) {
 		return dispatch => {
-			return new Promise((resolve, reject) => {
+			return new Promise((resolve) => {
 				dispatch(ActionCreators.updateCompletion(params, auth)).then(() => {
 					resolve(
 						dispatch(ActionCreators.planSelect({ id: params.id }))
@@ -277,7 +278,8 @@ const ActionCreators = {
 			const saveParams = Object.assign({}, params, { dynamicCollection: true })
 			return Promise.all([
 				dispatch(ActionCreators.configuration()),
-				dispatch(ActionCreators.savedItems(saveParams, auth))
+				dispatch(ActionCreators.savedItems(saveParams, auth)),
+				dispatch(ActionCreators.allQueueItems(auth))
 			])
 		}
 	},
@@ -320,7 +322,7 @@ const ActionCreators = {
 		}
 	},
 
-	sharedDayComplete(params, auth) {
+	sharedDayComplete(params) {
 		return dispatch => {
 			const {
 				id,
@@ -351,8 +353,7 @@ const ActionCreators = {
 			const planParams = Object.assign({}, p, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user
 			const savedplanParams = Object.assign({}, p, { savedplanCheck: true, page: 1 })
-			console.log(params)
-			const promises = []
+			const promises = [ dispatch(ActionCreators.allQueueItems(auth)) ]
 			if (!getSavedPlans && !getRecommendedPlans) {
 				promises.push(
 					dispatch(ActionCreators.configuration())
@@ -380,7 +381,6 @@ const ActionCreators = {
 					dispatch(ActionCreators.readingplanStats(params, auth))
 				)
 			}
-
 			return Promise.all(promises)
 		}
 	},

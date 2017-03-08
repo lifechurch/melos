@@ -34,6 +34,7 @@ function mapStateToProps(state) {
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,
 		plan: state.readingPlans.fullPlans._SELECTED,
+		savedPlans: state.readingPlans && state.readingPlans.savedPlans ? state.readingPlans.savedPlans : null,
 		hosts: state.hosts
 	}
 }
