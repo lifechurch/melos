@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Router, useRouterHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { addLocaleData, IntlProvider } from 'react-intl'
-import ReactGA from 'react-ga'
+import ga from 'react-ga'
 import { createHistory } from 'history'
 import createLogger from 'redux-logger'
 
@@ -12,6 +12,19 @@ import getRoutes from './routes'
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 import defaultState from './defaultState'
+
+if (typeof window !== 'undefined') {
+	ga.initialize('UA-3571547-76', { language: window.__LOCALE__.locale });
+	window.__GA__ = ga;
+}
+
+function logPageView() {
+	if (typeof window !== 'undefined' && window.location.hostname === 'www.bible.com' && window.__GA__) {
+		window.__GA__.set({ page: window.location.pathname })
+		window.__GA__.pageview(window.location.pathname);
+	}
+	return window.scrollTo(0, 0)
+}
 
 // require('moment/min/locales')
 
@@ -23,7 +36,6 @@ const browserHistory = useRouterHistory(createHistory)({
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
 	initialState = window.__INITIAL_STATE__
-	ReactGA.initialize('UA-3571547-76')
 }
 
 let logger = null
@@ -74,13 +86,6 @@ function requireChapterData(nextState, replace, callback) {
 	if (!hasVersionChanged && !hasChapterChanged) {
 		callback()
 	} else {
-
-		// Record page view with Google Analytics
-		if (window.location.hostname === 'www.bible.com') {
-			ReactGA.set({ page: `/${nextState.location.pathname}` })
-			ReactGA.pageview(`/${nextState.location.pathname}`)
-		}
-
     // Load data
 		store.dispatch(
 			BibleActionCreator.readerLoad({
@@ -147,10 +152,6 @@ function requireVerseData(nextState, replace, callback) {
 		store.dispatch(PassageActionCreator.selectPrimaryVersion(nextVersion))
 		callback()
 	} else {
-		if (window.location.hostname === 'www.bible.com') {
-			ReactGA.set({ page: `/${nextState.location.pathname}` })
-			ReactGA.pageview(`/${nextState.location.pathname}`)
-		}
 		store.dispatch(
 			PassageActionCreator.passageLoad({
 				isInitialLoad: false,
@@ -172,7 +173,7 @@ const routes = getRoutes(requireChapterData, requireVerseData)
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} onUpdate={() => { return window.scrollTo(0, 0) }} />
+			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')
