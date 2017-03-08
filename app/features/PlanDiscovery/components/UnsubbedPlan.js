@@ -60,15 +60,6 @@ class UnsubbedPlan extends Component {
 			</ul>
 		)
 
-		let devoContent
-		if (dayData && 'additional_content' in dayData) {
-			if ('html' in dayData.additional_content) {
-				devoContent = dayData.additional_content.html
-			} else if ('text' in dayData.additional_content) {
-				devoContent = dayData.additional_content.text
-			}
-		}
-
 		return (
 			<div className="subscription-show">
 				<Helmet
