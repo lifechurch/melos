@@ -4,37 +4,24 @@ import type from '../../actions/constants'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
-		case type('bibleVersesSuccess'):
-			return (function bibleVersesSuccess() {
-				const {
-					params: {
-						id: version,
-						passage
-					},
-					response: {
-						verses,
-						next_verse,
-						previous_verse
-					}
-				} = action
+		case type('selectPrimaryVersion'):
+			return (function selectPrimaryVersion() {
+				return Immutable
+						.fromJS(state)
+						.set('version', action.version)
+						.toJS()
+			}())
 
-				if (typeof version !== 'undefined') {
-					let text, human = null
-					if (Array.isArray(verses)) {
-						text = verses[0].content
-						human = verses[0].reference.human
-					}
-
-					return Immutable.fromJS(state).mergeDeep({
-						version,
-						passage,
-						text,
-						human,
-						nextVerse: next_verse,
-						previousVerse: previous_verse
-					}).toJS()
+		case type('bibleVersesRequest'):
+			return (function bibleVersesRequest() {
+				const { params: { ids, passage } } = action
+				if (Array.isArray(ids) && ids.length > 0) {
+					return Immutable
+						.fromJS(state)
+						.set('version', ids[0])
+						.set('passage', passage)
+						.toJS()
 				}
-
 				return state
 			}())
 

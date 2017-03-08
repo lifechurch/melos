@@ -4,6 +4,7 @@ import { Router, useRouterHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import createLogger from 'redux-logger'
 import moment from 'moment'
+import ga from 'react-ga'
 import { createHistory } from 'history'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import Immutable from 'immutable'
@@ -16,6 +17,19 @@ import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/cr
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
 
 require('moment/min/locales')
+
+if (typeof window !== 'undefined') {
+	ga.initialize('UA-3571547-76', { language: window.__LOCALE__.locale });
+}
+
+function logPageView() {
+	if (typeof window !== 'undefined' && window.location.hostname === 'www.bible.com') {
+		ga.set({ page: window.location.pathname, location: window.location.href })
+		ga.pageview(window.location.pathname);
+	}
+	return window.scrollTo(0, 0)
+}
+
 
 let initialState = defaultState
 
@@ -303,24 +317,24 @@ function requireSubscribedPlan(a, b, c, d) {
 		callback()
 	} else if (planIsInState && !planHasRefs) {
 		const references = Immutable.fromJS(currentState).getIn([ ...dayKey, 'references' ]).toJS()
-		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay })).then((refd) => {
+		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay })).then(() => {
 			store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
 			callback()
-		}, (error) => {
+		}, () => {
 			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
-			store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version: defaultVersion, id, currentDay })).then((refd) => {
+			store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version: defaultVersion, id, currentDay })).then(() => {
 				store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
 				callback()
-			}, (error) => { callback() })
+			}, () => { callback() })
 		})
 	} else {
 		store.dispatch(PlanDiscoveryActionCreators.subscriptionAll({ id, language_tag: window.__LOCALE__.planLocale, user_id: userid, version }, true)).then(() => {
 			callback()
-		}, (error) => {
+		}, () => {
 			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
 			store.dispatch(PlanDiscoveryActionCreators.subscriptionAll({ id, language_tag: window.__LOCALE__.planLocale, user_id: userid, version: defaultVersion }, true)).then(() => {
 				callback()
-			}, (error) => { callback() })
+			}, () => { callback() })
 		})
 	}
 }
@@ -411,17 +425,18 @@ function requirePlanCompleteData(nextState, replace, callback) {
 	const id = parseInt(params.id.toString().split('-')[0], 10)
 
 	let getPlanView = true
-	let getSavedPlans = true
-	let getRecommendedPlans = true
+	const getSavedPlans = true
+	const getRecommendedPlans = true
 
 	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
 		getPlanView = false
 	}
+
 	// TODO: figure out where these are in state
-	if (false) {
-		getSavedPlans = false
-		getRecommendedPlans = false
-	}
+	// if (false) {
+	// 	getSavedPlans = false
+	// 	getRecommendedPlans = false
+	// }
 
 	store.dispatch(PlanDiscoveryActionCreators.planComplete({
 		id,
@@ -474,7 +489,7 @@ const routes = getRoutes(
 render(
 	<IntlProvider locale={window.__LOCALE__.locale2 === 'mn' ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} onUpdate={() => { window.scrollTo(0, 0) }} />
+			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')
