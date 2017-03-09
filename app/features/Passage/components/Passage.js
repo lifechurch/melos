@@ -25,6 +25,7 @@ function Passage(props) {
 		passage,
 		localizedLink,
 		intl,
+		isRtl,
 		params: {
 			book,
 			chapter,
@@ -167,27 +168,48 @@ function Passage(props) {
 
 	// previous verse and next verse
 	let prevArrow, nextArrow = null
-
 	if (passage.verses && primaryVersion && primaryVersion.previousVerse) {
-		prevArrow = (
-			<Link
-				to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.previousVerse}.${vabbr.toLowerCase()}`)}
-				title={''}
-			>
-				<CarouselArrow width={23} height={23} dir='left' fill='gray' />
-			</Link>
-		)
+		if (isRtl()) {
+			nextArrow = (
+				<Link
+					to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.previousVerse}.${vabbr.toLowerCase()}`)}
+					title={''}
+				>
+					<CarouselArrow width={23} height={23} dir='left' fill='gray' />
+				</Link>
+			)
+		} else {
+			prevArrow = (
+				<Link
+					to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.previousVerse}.${vabbr.toLowerCase()}`)}
+					title={''}
+				>
+					<CarouselArrow width={23} height={23} dir='left' fill='gray' />
+				</Link>
+			)
+		}
 	}
 
 	if (passage.verses && primaryVersion && primaryVersion.nextVerse) {
-		nextArrow = (
-			<Link
-				to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.nextVerse}.${vabbr.toLowerCase()}`)}
-				title={''}
-			>
-				<CarouselArrow width={23} height={23} dir='right' fill='gray' />
-			</Link>
-		)
+		if (isRtl()) {
+			prevArrow = (
+				<Link
+					to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.nextVerse}.${vabbr.toLowerCase()}`)}
+					title={''}
+				>
+					<CarouselArrow width={23} height={23} dir='right' fill='gray' />
+				</Link>
+			)
+		} else {
+			nextArrow = (
+				<Link
+					to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.nextVerse}.${vabbr.toLowerCase()}`)}
+					title={''}
+				>
+					<CarouselArrow width={23} height={23} dir='right' fill='gray' />
+				</Link>
+			)
+		}
 	}
 
 	return (
