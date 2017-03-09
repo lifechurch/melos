@@ -209,7 +209,10 @@ function Passage(props) {
 				</div>
 				<div className='buttons'>
 					<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
-					<a tabIndex={0} onClick={scrollToRelatedPlans} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
+					{
+						(items.length > 0) &&
+						<a tabIndex={0} onClick={scrollToRelatedPlans} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
+					}
 					<Share
 						button={
 							<a className='chapter-button solid-button'><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>

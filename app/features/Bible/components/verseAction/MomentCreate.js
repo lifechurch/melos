@@ -192,7 +192,6 @@ class MomentCreate extends Component {
 			} else if (kind === 'bookmark') {
 				message = <FormattedMessage id='Auth.bookmark blurb' />
 			}
-
 			contentDiv = (
 				<div className='sign-in-required'>
 					<Card>
@@ -309,6 +308,11 @@ MomentCreate.propTypes = {
 	labels: React.PropTypes.object,
 	colors: React.PropTypes.array,
 	onClose: React.PropTypes.func,
+	isRtl: PropTypes.bool,
+}
+
+MomentCreate.defaultProps = {
+	isRtl: false,
 }
 
 export default injectIntl(MomentCreate)

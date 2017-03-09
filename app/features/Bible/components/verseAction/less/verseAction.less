@@ -166,11 +166,14 @@
 		align-items: center;
 		width: 100%;
 	}
-	.slider, .rtl-faux-slider div div {
+	.slider {
 		display: inline-block;
 	}
 	.rtl-faux-slider {
 		margin-top: 45px;
+		div div {
+			float: left;
+		}
 	}
 	.buttons {
 		display: inline-flex;
@@ -240,6 +243,10 @@
 	.color-list {
 		padding: 20px 0px 20px 0px;
 		margin: 0 auto 15px auto;
+
+		.rtl-faux-slider {
+			margin-top: 0 !important;
+		}
 	}
 	.colors-div {
     width: 100%;
@@ -417,7 +424,7 @@
 
 
 html[dir="rtl"] {
-	.verse-action-create {		
+	.verse-action-create {
 		.heading {
 			.cancel {
 				text-align: right;

@@ -55,7 +55,7 @@ class ColorList extends Component {
 	 */
 	handleScreenChange = () => {
 		this.setState({
-			screen: this.state.screen == 'carousel' ? 'picker' : 'carousel',
+			screen: this.state.screen === 'carousel' ? 'picker' : 'carousel',
 		})
 	}
 
@@ -73,7 +73,7 @@ class ColorList extends Component {
 			prevArrow: <CarouselArrow dir='left' fill='gray' width={15} height={15} />,
 			nextArrow: <CarouselArrow dir='right' fill='gray' width={15} height={15} />,
 			responsive: [ {
-      	breakpoint: 524, settings: { arrows: false, slidesToShow: 1 }
+				breakpoint: 524, settings: { arrows: false, slidesToShow: 1 }
 			} ]
 		}
 
