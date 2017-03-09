@@ -134,7 +134,7 @@ export default function plansDiscovery(state = {}, action) {
 				var { reading_plans } = action.response
 				var items = state.items.slice(0)
 				// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
-				const discoveryIndex = state.map[action.params.id]
+				const discoveryIndex = state.map ? state.map[action.params.id] : null
 				var reading_plans = action.response.reading_plans.map((plan) => {
 					let p = Immutable.fromJS(plan)
 

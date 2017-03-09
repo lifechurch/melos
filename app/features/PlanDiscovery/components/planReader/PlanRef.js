@@ -126,7 +126,7 @@ class PlanRef extends Component {
 				<AudioPopup
 					audio={audio}
 					hosts={hosts}
-					enabled={audio && 'id' in audio}
+					enabled={typeof audio !== 'undefined' && audio && 'id' in audio}
 					onAudioComplete={onAudioComplete}
 					// if we're not rendering the entire chapter, the audio should start
 					// at the verse start, otherwise, it starts at the beginning of the chapter
