@@ -63,7 +63,7 @@ export default function reducer(state = {}, action) {
 				if (state.pages) {
 					const pages = Immutable.fromJS(state.pages).toJS()
 					if (typeof pages[action.params.page] === 'undefined') {
-						const all = Immutable.fromJS(state.all).toJS()
+						const all = Array.isArray(state.all) ? Immutable.fromJS(state.all).toJS() : []
 						pages[action.params.page] = true
 						const reading_plans = action.response.reading_plans.map((plan) => {
 							let p = Immutable
