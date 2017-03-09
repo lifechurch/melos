@@ -32,11 +32,11 @@ class SubscribeUserAction extends Component {
 			<div>
 				{isSubscribed
 					?
-						<button className='solid-button green padded' onClick={this.handleGoToPlan}>
+						<button style={{ width: '100%', maxWidth: 300 }} className='solid-button green' onClick={this.handleGoToPlan}>
 							<FormattedMessage id="plans.read today" />
 						</button>
 					:
-						<button className='solid-button green padded' onClick={this.handleClick}>
+						<button style={{ width: '100%', maxWidth: 300 }} className='solid-button green' onClick={this.handleClick}>
 							<FormattedMessage id="plans.start" />
 						</button>
 				}
