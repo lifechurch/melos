@@ -256,7 +256,8 @@ Passage.propTypes = {
 	localizedLink: PropTypes.func.isRequired,
 	passage: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired,
-	intl: PropTypes.object.isRequired
+	intl: PropTypes.object.isRequired,
+	isRtl: PropTypes.func.isRequired,
 }
 
 export default injectIntl(Passage)
