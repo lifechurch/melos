@@ -156,7 +156,8 @@ class VerseAction extends Component {
 			references,
 			momentsLabels,
 			highlightColors,
-			auth
+			auth,
+			isRtl,
 		} = this.props
 		const { copied, momentContainerOpen, momentKind } = this.state
 
@@ -192,6 +193,7 @@ class VerseAction extends Component {
 					onClick={this.handleHighlight}
 					deletableColors={deletableColors}
 					deleteColor={this.deleteColor}
+					isRtl={isRtl}
 				/>
 			)
 		}
@@ -217,6 +219,7 @@ class VerseAction extends Component {
 						labels={momentsLabels}
 						colors={highlightColors}
 						onClose={this.handleMomentContainerClose}
+						isRtl={isRtl}
 					/>
 				</DropdownTransition>
 			</div>

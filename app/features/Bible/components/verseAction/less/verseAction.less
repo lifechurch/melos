@@ -166,8 +166,11 @@
 		align-items: center;
 		width: 100%;
 	}
-	.slider {
+	.slider, .rtl-faux-slider div div {
 		display: inline-block;
+	}
+	.rtl-faux-slider {
+		margin-top: 45px;
 	}
 	.buttons {
 		display: inline-flex;
@@ -410,4 +413,18 @@
 
 .xmark-container:hover {
 	cursor: pointer;
+}
+
+
+html[dir="rtl"] {
+	.verse-action-create {		
+		.heading {
+			.cancel {
+				text-align: right;
+			}
+			.save {
+				text-align: left;
+			}
+		}
+	}
 }

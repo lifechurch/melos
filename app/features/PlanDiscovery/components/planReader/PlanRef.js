@@ -87,6 +87,7 @@ class PlanRef extends Component {
 			verseColors,
 			highlightColors,
 			momentsLabels,
+			isRtl,
 			content,
 			version,
 			refHeading,
@@ -168,6 +169,7 @@ class PlanRef extends Component {
 					// props
 					{...this.props}
 					version={version}
+					isRtl={isRtl}
 					highlightColors={highlightColors}
 					verseColors={verseColors}
 					momentsLabels={momentsLabels}

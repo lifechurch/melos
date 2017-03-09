@@ -394,6 +394,7 @@ class Bible extends Component {
 				</div>
 				<VerseAction
 					{...this.props}
+					isRtl={isRtl()}
 					selection={verseSelection}
 					onClose={this.handleVerseSelectionClear}
 					deletableColors={this.state.deletableColors}

@@ -178,7 +178,7 @@ class MomentCreate extends Component {
 
 
 	render() {
-		const { labels, colors, kind, intl, isLoggedIn } = this.props
+		const { labels, colors, kind, intl, isLoggedIn, isRtl } = this.props
 		const { localVerses, dropdown, selectedColor, content } = this.state
 
 		let labelsDiv, colorsDiv, contentDiv, createHeader = null
@@ -220,7 +220,7 @@ class MomentCreate extends Component {
 						</div>
 						<DropdownTransition show={dropdown} hideDir='up' onOutsideClick={this.handleDropdownClose} exemptClass='color-trigger-button'>
 							<div className='labels-modal'>
-								<ColorList list={colors} onClick={this.addColor} />
+								<ColorList list={colors} onClick={this.addColor} isRtl={isRtl} />
 								<a onClick={this.handleDropdownClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
 							</div>
 						</DropdownTransition>

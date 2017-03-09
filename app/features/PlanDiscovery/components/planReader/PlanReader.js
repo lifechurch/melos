@@ -207,6 +207,7 @@ class PlanReader extends Component {
 								refHeading,
 								showChapterButton,
 								audio,
+								isRtl: isRtl(),
 								audioStart: audioTiming ? audioTiming.startTime : null,
 								audioStop: audioTiming ? audioTiming.endTime : null,
 								audioPlaying,
