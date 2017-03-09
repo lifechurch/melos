@@ -18,11 +18,13 @@ if (typeof window !== 'undefined') {
 }
 
 function logPageView() {
-	if (typeof window !== 'undefined' && window.location.hostname === 'www.bible.com') {
-		ga.set({ page: window.location.pathname, location: window.location.href })
-		ga.pageview(window.location.pathname);
+	if (typeof window !== 'undefined') {
+		if (window.location.hostname === 'www.bible.com') {
+			ga.set({ page: window.location.pathname, location: window.location.href })
+			ga.pageview(window.location.pathname);
+		}
+		window.scrollTo(0, 0)
 	}
-	return window.scrollTo(0, 0)
 }
 
 // require('moment/min/locales')

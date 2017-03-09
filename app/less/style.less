@@ -2317,9 +2317,7 @@ html[dir="rtl"] {
 		}
 	}
 }
-html, body {
-	overflow-x: hidden;
-}
+
 @media @small-only, @medium-only {
 	html, body {
 		height: 100%;
@@ -2361,4 +2359,10 @@ html, body {
 		color: @font-grey;
 		margin-right: 15px;
 	}
+}
+
+/* Fix Google Auth iFrame inline style of left: -9999px */
+#ssIFrame_google {
+ left: 0 !important;
+ visibility: hidden !important ;
 }
