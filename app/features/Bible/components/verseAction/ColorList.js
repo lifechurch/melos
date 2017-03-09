@@ -113,7 +113,6 @@ class ColorList extends Component {
 
 		if (screen === 'carousel') {
 			let slider
-			console.log(isRtl)
 			if (isRtl) {
 				const outerStyle = {
 					width: '100%',
