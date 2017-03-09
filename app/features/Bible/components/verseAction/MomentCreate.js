@@ -192,7 +192,6 @@ class MomentCreate extends Component {
 			} else if (kind === 'bookmark') {
 				message = <FormattedMessage id='Auth.bookmark blurb' />
 			}
-
 			contentDiv = (
 				<div className='sign-in-required'>
 					<Card>
