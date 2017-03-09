@@ -38,9 +38,13 @@ const sslExcludedPaths = [
 	'/ping'
 ];
 
-const forceSsl = function (req, res, next) {
-	if (req.headers['x-forwarded-proto'] !== 'https' && req.get('Host').indexOf('localhost') === -1 && sslExcludedPaths.indexOf(req.url) === -1) {
-		const host = req.get('Host');
+var forceSsl = function(req, res, next) {
+	if (req.headers['x-forwarded-proto'] !== 'https' &&
+		req.get('Host').indexOf('localhost') === -1 &&
+		req.get('Host').indexOf('127.0.0.1') === -1 &&
+		sslExcludedPaths.indexOf(req.url) === -1
+	) {
+		var host = req.get('Host');
 		return res.redirect(['https://', host, req.url].join(''));
 	}
 	return next();
