@@ -26,9 +26,6 @@
 //= require_tree ./friendships
 //= require_tree ./search
 //= require vendor/angular-cache/angular-cache
-//= require vendor/angular-tooltips/angular-tooltips.min.js
-//= require vendor/md-color-picker/tinycolor-min.js
-//= require vendor/md-color-picker/mdColorPicker.js
 //= require vendor/jstimezone/dist/jstz.min.js
 
 var TEMPLATE_FROM_RAILS = {};
