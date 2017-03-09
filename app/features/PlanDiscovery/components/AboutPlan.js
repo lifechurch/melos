@@ -145,7 +145,7 @@ class AboutPlan extends Component {
 								</div>
 							</div>
 						</div>
-						<hr />
+						<hr className="hide-for-small" />
 						{ relatedCarousel }
 					</article>
 				</div>
