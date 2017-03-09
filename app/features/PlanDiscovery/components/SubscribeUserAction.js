@@ -1,60 +1,62 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import ActionCreators from '../actions/creators'
-import { Link } from 'react-router'
+import { routeActions } from 'react-router-redux'
+import { connect } from 'react-redux'
+
 import SubscribeUserDialog from './SubscribeUserDialog'
 
 class SubscribeUserAction extends Component {
-
 	constructor(props) {
 		super(props)
 		this.state = { dialogOpen: false }
+
+		this.handleGoToPlan = this.handleGoToPlan.bind(this)
+		this.handleClick = this.handleClick.bind(this)
 	}
 
 	handleClick() {
-		this.setState({ dialogOpen: !this.state.dialogOpen })
+		this.setState((nextState) => {
+			return { dialogOpen: !nextState.dialogOpen }
+		})
 	}
 
-	goToPlan() {
-		const { readingPlan } = this.props
-		// redirect to plan
-		window.location.replace(`/users/${readingPlan.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
+	handleGoToPlan() {
+		const { dispatch, subscriptionLink } = this.props
+		dispatch(routeActions.push(subscriptionLink))
 	}
-
 
 	render() {
-		const { readingPlan } = this.props
-
-		// subscribe user or go to plan day if already subscribed
-		if (readingPlan.subscription_id) {
-			var button = (
-				<div className='solid-button green padded' onClick={::this.goToPlan}>
-					<FormattedMessage id="plans.read today" />
-				</div>
-			)
-		} else {
-			var button = (
-				<div className='solid-button green padded' onClick={::this.handleClick}>
-					<FormattedMessage id="plans.start"/>
-				</div>
-			)
-		}
-
-		// toggle subscribe box
-		if (this.state.dialogOpen) {
-			var dialogBox = <SubscribeUserDialog {...this.props} />
-		} else {
-			var dialogBox = null
-		}
-
-
+		const { id, isSubscribed, subscriptionLink } = this.props
+		const { dialogOpen } = this.state
 		return (
 			<div>
-				{ button }
-				{ dialogBox }
+				{isSubscribed
+					?
+						<button style={{ width: '100%', maxWidth: 300 }} className='solid-button green' onClick={this.handleGoToPlan}>
+							<FormattedMessage id="plans.read today" />
+						</button>
+					:
+						<button style={{ width: '100%', maxWidth: 300 }} className='solid-button green' onClick={this.handleClick}>
+							<FormattedMessage id="plans.start" />
+						</button>
+				}
+				{!!dialogOpen &&
+					<SubscribeUserDialog
+						id={id}
+						isSubscribed={isSubscribed}
+						subscriptionLink={subscriptionLink}
+					/>
+				}
 			</div>
 		)
 	}
 }
 
-export default SubscribeUserAction
+SubscribeUserAction.propTypes = {
+	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	dispatch: PropTypes.func.isRequired,
+	isSubscribed: PropTypes.bool.isRequired,
+	subscriptionLink: PropTypes.string.isRequired
+}
+
+export default connect()(SubscribeUserAction)

@@ -1,0 +1,185 @@
+.bible-reader {
+	margin-top: 15px;
+	// why does microsoft make phones?
+	-ms-user-select: none;
+
+	.note {
+		display: inherit;
+		position: relative;
+
+		.body {
+			pointer-events: none;
+			display: inline-block;
+			position: absolute;
+			padding: 5px 10px 5px 10px;
+			font-size: 14px;
+			border: solid 1px #ddd;
+			border-radius: 5px;
+			background-color: #eee;
+			transform: scale(1, 0.85);
+    	box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
+			color: #777;
+			opacity: 0;
+			left: 5px;
+			top: 17px;
+			width: 200px;
+			line-height: 22px;
+			text-indent: 0px;
+			-webkit-transition: transform 0.5s cubic-bezier(0.42,1,.16,.93), opacity 0.5s cubic-bezier(0.42,1,.16,.93);
+			-moz-transition: 		transform 0.5s cubic-bezier(0.42,1,.16,.93), opacity 0.5s cubic-bezier(0.42,1,.16,.93);
+			-ms-transition: 		transform 0.5s cubic-bezier(0.42,1,.16,.93), opacity 0.5s cubic-bezier(0.42,1,.16,.93);
+			transition: 				transform 0.5s cubic-bezier(0.42,1,.16,.93), opacity 0.5s cubic-bezier(0.42,1,.16,.93);
+		}
+
+		.label {
+			display: none;
+		}
+
+		&.show {
+			.body {
+				transform: scale(1, 1);
+				opacity: 1;
+			}
+		}
+	}
+
+	.verse {
+		-webkit-transition: background-color 0.75s cubic-bezier(0.42,1,.16,.93);
+		-moz-transition: 		background-color 0.75s cubic-bezier(0.42,1,.16,.93);
+		-ms-transition: 		background-color 0.75s cubic-bezier(0.42,1,.16,.93);
+		transition: 				background-color 0.75s cubic-bezier(0.42,1,.16,.93);
+	}
+}
+
+.version-copyright {
+	font-size: 14px;
+	line-height: 1.6;
+	color: #777;
+	margin-top: 1.42857rem;
+}
+
+.reader-content-error {
+	.content {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		font-size: 20px;
+	}
+	.buttons {
+		width: 100%;
+		display: inline-flex;
+		justify-content: center;
+		div {
+			border: @thin-grey-border;
+			padding: 10px 15px 10px 15px;
+			background-color: white;
+			margin: 10px;
+		}
+	}
+}
+
+.reader-arrows:hover {
+	cursor: pointer;
+}
+
+.reader-arrows {
+	.reader-arrow {
+		margin: auto;
+	}
+	@media @large-up {
+		.next-arrow, .prev-arrow {
+			bottom: 45%;
+		}
+		.next-arrow {
+			right: 17%;
+		}
+		.prev-arrow {
+			left: 17%;
+		}
+	}
+	@media @medium-only {
+		.next-arrow, .prev-arrow {
+			bottom: 45%;
+		}
+		.next-arrow {
+			right: 15px;
+		}
+		.prev-arrow {
+			left: 15px;
+		}
+	}
+	@media @small-only {
+		.next-arrow, .prev-arrow {
+			bottom: 60px !important;
+			transform: scale(0.9);
+		}
+		.next-arrow {
+			right: 10px;
+		}
+		.prev-arrow {
+			left: 10px;
+		}
+	}
+	.next-arrow, .prev-arrow {
+		position: fixed;
+		padding-bottom: 2px;
+		z-index: 1;
+	}
+
+	.next-arrow {
+		.circle-buttons {
+			padding-left: 2px;
+		}
+	}
+	.prev-arrow {
+		.circle-buttons {
+			padding-right: 2px;
+		}
+	}
+
+}
+.plan-nav {
+	.circle-buttons.checkmark {
+		background-color: @green !important;
+		padding-top: 2px;
+	}
+	.next-arrow .circle-buttons {
+		background-color: @green !important;
+		polygon {
+			fill: white !important;
+		}
+	}
+}
+.circle-buttons {
+	background-color: white;
+	z-index: 5;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	border: @thin-grey-border;
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.23);
+}
+.circle-buttons:active {
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+	background: whitesmoke;
+	border: solid 1px whitesmoke;
+}
+
+
+html[dir="rtl"] {
+	.plan-nav {
+		.prev-arrow .circle-buttons {
+			background-color: @green !important;
+			polygon {
+				fill: white !important;
+			}
+		}
+		.next-arrow .circle-buttons {
+			background-color: white !important;
+			polygon {
+				fill: @font-grey !important;
+			}
+		}
+	}
+}

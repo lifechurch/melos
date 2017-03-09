@@ -1,0 +1,239 @@
+// on mobile hide chapter until book is selected, then hide book when selecting chapter
+@media @small-only {
+	.hide-chaps {
+		.book-container {
+			display: block;
+		}
+		.chapter-container {
+			display: none;
+		}
+	}
+	.hide-books {
+		.book-container {
+			display: none;
+		}
+		.chapter-container {
+			display: block;
+		}
+	}
+}
+@media @medium-up {
+	.chapter-picker-modal {
+		max-height: 490px;
+	}
+}
+.chapter-picker-modal {
+
+	background-color: white;
+	display: inline-flex;
+	border-radius: @default-radius @default-radius 0px 0px;
+	border: @thin-grey-border;
+
+	.header {
+		width: inherit;
+		background-color: @light-grey;
+		border-bottom: @thin-grey-border;
+		max-height: 30px;
+
+		.prev {
+			display: none;
+		}
+		.cancel {
+			display: none;
+		}
+		@media @small-only {
+			.prev {
+				display: block;
+				text-align: @default-float;
+				padding: @default-padding;
+				color: @font-grey;
+			}
+			.cancel {
+				display: block;
+				text-align: @opposite-direction;
+				padding: @default-padding;
+				color: @font-grey;
+				font-size: 13px;
+			}
+		}
+
+	}
+
+
+	// books *******************************************
+	.book-container {
+		min-width: 247px;
+
+		@media @small-only {
+			width: 320px;
+		}
+
+		.book-list {
+			font-size: @list-font-size;
+			margin-left: 0;
+			margin-right: -1px;
+
+			li {
+				padding: 4px 0px 4px 15px;
+				a {
+					color: black;
+				}
+			}
+
+		}
+	}
+
+
+	// chapters *****************************************
+	.picker-error {
+		pointer-events: none;
+		position: absolute;
+		width: 314px;
+		height: 60px;
+		opacity: 0;
+
+		display: flex;
+		.yv-flex-center-all;
+
+		.picker-error;
+
+	}
+	.picker-alert {
+		.picker-error {
+			opacity: 1;
+		}
+		.chapter-list {
+			.dropdown-transform;
+
+		  -webkit-transform: translate(0, 60px);
+		     -moz-transform: translate(0, 60px);
+		      -ms-transform: translate(0, 60px);
+		          transform: translate(0, 60px);
+		}
+	}
+
+	.chapter-container {
+		@media @small-only {
+			width: 322px;
+		}
+		@media @medium-up {
+			width: 320px;
+		}
+		border-left: @thin-grey-border;
+		margin-right: -5px;
+
+		.header {
+			width: 314px;
+		}
+
+		.chapter-list {
+			font-size: @list-font-size;
+			display: inline-flex;
+			flex-wrap: wrap;
+			margin-left: 0;
+
+
+			li {
+				width: 64px;
+				height: 64px;
+				border: @thin-grey-border;
+				/* these margins are so the touching borders don't look bold */
+				margin-top: -1px;
+				margin-left: -1px;
+				display: flex;
+				.yv-flex-center-all;
+				font-weight: bold;
+				color: @font-grey;
+				background-color: white;
+				// text ellipsis wouldn't work with
+				// text being directly in flex item
+				// so we put it in a div
+				div {
+					.yv-text-ellipsis;
+				}
+
+			}
+		}
+	}
+
+}
+
+@media @medium-up {
+	.book-list, .chapter-list {
+		// max height for mobile is handled by the bible component with viewport utils
+		max-height: 460px;
+
+		li:hover {
+			.yv-hover !important;
+		}
+		.focus {
+			.yv-hover !important;
+		}
+	}
+}
+
+.book-list, .chapter-list {
+	.active {
+		.yv-active !important;
+	}
+}
+
+
+// label
+
+input {
+	border: none;
+	.yv-text-ellipsis;
+}
+.picker-label {
+	display: inline-flex;
+	border-bottom: @thin-grey-border;
+}
+.dropdown-arrow-container {
+	width: 38px;
+	height: 37px;
+	.dropdown-arrow {
+		height: 100%;
+		display: flex;
+		.yv-flex-center-all;
+	}
+}
+.dropdown-arrow-container:hover {
+	cursor: pointer;
+}
+.open {
+	background-color: @light-grey;
+	border: @thin-grey-border;
+	border-bottom: none;
+	z-index: 20;
+}
+
+
+.chapter-picker-container {
+	.modal {
+		top: 52px;
+		margin-left: 15px;
+		.absolute-horizontal-center;
+	}
+}
+
+
+html[dir="rtl"] {
+	.book-list {
+		margin-left: -1px !important;
+		margin-right: 0;
+		li {
+			padding: 4px 15px 4px 0px !important;
+		}
+	}
+
+	.chapter-container {
+		margin-right: 0px !important;
+		margin-left: -5px !important;
+		border-left: none;
+		border-right: @thin-grey-border;
+		.chapter-list {
+			margin-right: 0 !important;
+		}
+	}
+}

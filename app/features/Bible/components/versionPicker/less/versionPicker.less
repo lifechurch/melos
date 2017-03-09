@@ -1,0 +1,270 @@
+
+.hide-langs {
+	.version-container {
+		display: block;
+	}
+	.language-container {
+		display: none;
+	}
+}
+.hide-versions {
+	.version-container {
+		display: none;
+	}
+	.language-container {
+		display: block;
+	}
+}
+@media @medium-up {
+	.version-picker-modal {
+		max-height: 490px;
+	}
+}
+.version-picker-modal {
+	display: inline-flex;
+	border-radius: @default-radius @default-radius 0px 0px;
+	border: @thin-grey-border;
+	background-color: white;
+
+
+	.yv-drop-shadow;
+	.yv-scroll-bar;
+
+	.header {
+		width: inherit;
+		background-color: @light-grey;
+		border-bottom: @thin-grey-border;
+		height: 30px;
+		padding: 0 5px 0 5px;
+
+
+		.prev {
+			display: block;
+			text-align: @default-float;
+			padding: @default-padding;
+			color: @font-grey;
+		}
+		.cancel {
+			display: block;
+			text-align: @opposite-direction;
+			padding: @default-padding;
+			color: @font-grey;
+			font-size: 13px;
+		}
+		span {
+			font-size: 11px;
+			line-height: 1;
+		}
+		p {
+			text-align: center;
+		}
+
+	}
+
+
+	.version-list, .language-list {
+		// max height for mobile is handled by the bible component with viewport utils
+		@media @medium-up {
+			max-height: 420px;
+		}
+
+		font-size: @list-font-size;
+		background-color: white;
+
+		.version-header, .language-header {
+			padding-left: 20px;
+			padding-top: 10px;
+			padding-bottom: 5px;
+			font-weight: bold;
+			color: black;
+			font-size: @list-font-size;
+		}
+
+		ul {
+			width: 100%;
+			list-style: none;
+			font-size: @list-font-size;
+			margin-left: 0;
+		}
+
+		li {
+			padding: 6px 0px 6px 20px;
+			display: block;
+			.yv-text-ellipsis;
+			color: black;
+
+			small {
+				display: block;
+				margin-top: -3px;
+				color: @font-grey;
+			}
+
+		}
+
+		@media @medium-up {
+			li:hover {
+				.yv-hover;
+			}
+			.focus {
+				.yv-hover;
+			}
+		}
+
+		.active {
+			.yv-active;
+		}
+	}
+
+	.version-list {
+		li * {
+			display: inline-block;
+			.yv-text-ellipsis;
+		}
+		.small-2 {
+			padding-left: 6px;
+			padding-bottom: 2px;
+		}
+	}
+
+
+	// languages *******************************************
+	.language-container {
+		width: 320px;
+
+		.filter-langs {
+			display: flex;
+			.yv-flex-center-all;
+			padding-left: 10px;
+			padding-right: 10px;
+			height: 40px;
+
+			input {
+				width: 100%;
+				border-bottom: @thin-grey-border;
+			}
+		}
+
+	}
+
+
+	// versions *****************************************
+	.version-container {
+
+		width: 320px;
+		border-left: @thin-grey-border;
+		overflow: hidden;
+		// margin-right: -5px;
+
+		.language-selector {
+			display: block;
+		}
+
+		.version-list {
+			min-height: 55px;
+		}
+
+		.change-language {
+			display: inline-flex;
+
+			justify-content: space-between;
+			width: 100%;
+			padding: 15px 10px 10px 15px;
+			border-bottom: @thin-grey-border;
+
+			.language-name {
+				display: block;
+				small {
+					display: block;
+					color: @font-grey;
+					margin-bottom: -5px;
+					margin-top: -5px;
+				}
+			}
+			.language-button {
+				.yv-green-link;
+				display: flex;
+				.yv-flex-center-all;
+				font-size: 10px;
+			}
+		}
+
+	}
+
+
+}
+
+
+.picker-error {
+	pointer-events: none;
+	position: absolute;
+	width: 314px;
+	height: 60px;
+	opacity: 0;
+
+	display: flex;
+	.yv-flex-center-all;
+	.picker-error;
+
+}
+.picker-alert {
+	.picker-error {
+		opacity: 1;
+	}
+	.version-list {
+		.dropdown-transform;
+
+	  -webkit-transform: translate(0, 60px);
+	     -moz-transform: translate(0, 60px);
+	      -ms-transform: translate(0, 60px);
+	          transform: translate(0, 60px);
+	}
+}
+
+
+
+.version-picker-container {
+	.modal {
+		top: 52px;
+		margin-left: 15px;
+		.absolute-horizontal-center;
+	}
+}
+.dropdown-arrow-container:hover {
+	cursor: pointer;
+}
+.dropdown-arrow-container {
+	width: 38px;
+	height: 37px;
+	.dropdown-arrow {
+		height: 100%;
+		display: flex;
+		.yv-flex-center-all;
+	}
+
+
+}
+.open {
+	background-color: @light-grey;
+	border: @thin-grey-border;
+	border-bottom: none;
+	z-index: 20;
+}
+
+html[dir="rtl"] {
+	.version-list, .language-list {
+		// max height for mobile is handled by the bible component with viewport utils
+
+		.version-header, .language-header {
+			padding-left: 0px !important;
+			padding-right: 20px !important;
+		}
+
+		ul {
+			margin-right: 0 !important;
+		}
+
+		li {
+			padding: 6px 20px 6px 0px !important;
+		}
+	}
+}

@@ -1,44 +1,67 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { connect } from 'react-redux'
+import { routeActions } from 'react-router-redux'
+
 import ActionCreators from '../actions/creators'
-import { Link } from 'react-router'
 
 class SubscribeUserDialog extends Component {
+	constructor(props) {
+		super(props)
+		this.handleSubscribeUser = this.handleSubscribeUser.bind(this)
+	}
 
-	subscribeUser(privacy) {
-		const { dispatch, readingPlan, auth } = this.props
-		if (!auth.isLoggedIn) window.location.replace(`/sign-in`)
-		// if user isn't subscribed, then subscribe!
-		if (!readingPlan.subscription_id) {
-			dispatch(ActionCreators.readingplanSubscribeUser({ id: readingPlan.id , private: privacy }, auth.isLoggedIn)).then(() => {
-				// redirect to plan
-				this.goToPlan()
+	handleSubscribeUser(privacy) {
+		const { dispatch, id, isLoggedIn, isSubscribed, subscriptionLink } = this.props
+		if (!isLoggedIn) window.location.replace('/sign-in')
+		if (!isSubscribed) {
+			dispatch(ActionCreators.readingplanSubscribeUser({ id, private: privacy }, isLoggedIn)).then(() => {
+				dispatch(routeActions.push(subscriptionLink))
 			})
 		} else {
-			// user already subscribed
-			this.goToPlan()
+			dispatch(routeActions.push(subscriptionLink))
 		}
 	}
 
-	goToPlan() {
-		const { readingPlan } = this.props
-		// redirect to plan
-		window.location.replace(`/users/${readingPlan.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
-	}
-
-
 	render() {
-
 		return (
 			<div className='plan-privacy-buttons text-center'>
-				<p className='detail-text'><FormattedMessage id="plans.privacy.visible to friends?" /></p>
+				<p className='detail-text'>
+					<FormattedMessage id="plans.privacy.visible to friends?" />
+				</p>
 				<div className='yes-no-buttons'>
-					<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, false)}><FormattedMessage id="ui.yes button"/></a>
-					<a className='no solid-button gray' onClick={this.subscribeUser.bind(this, true)}><FormattedMessage id="ui.no button" /></a>
+					<a
+						tabIndex={0}
+						className='yes solid-button green'
+						onClick={() => { this.handleSubscribeUser(false) }}
+					>
+						<FormattedMessage id="ui.yes button" />
+					</a>
+					<a
+						tabIndex={0}
+						className='no solid-button gray'
+						onClick={() => { this.handleSubscribeUser(true) }}
+					>
+						<FormattedMessage id="ui.no button" />
+					</a>
 				</div>
 			</div>
 		)
 	}
 }
 
-export default SubscribeUserDialog
+SubscribeUserDialog.propTypes = {
+	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	dispatch: PropTypes.func.isRequired,
+	isSubscribed: PropTypes.bool.isRequired,
+	isLoggedIn: PropTypes.bool.isRequired,
+	subscriptionLink: PropTypes.string.isRequired
+}
+
+function mapStateToProps(state) {
+	return {
+		isLoggedIn: state.auth.isLoggedIn,
+	}
+}
+
+export default connect(mapStateToProps)(SubscribeUserDialog)

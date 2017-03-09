@@ -1,0 +1,65 @@
+{
+  "exclude": [
+    "^(node_modules|bower_components|\\.imdone|target|build|dist|logs)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
+  ],
+  "watcher": true,
+  "keepEmptyPriority": false,
+  "code": {
+    "include_lists": [
+      "TODO",
+      "DOING",
+      "DONE",
+      "PLANNING",
+      "FIXME",
+      "ARCHIVE",
+      "HACK",
+      "CHANGED",
+      "XXX",
+      "IDEA",
+      "NOTE",
+      "REVIEW"
+    ]
+  },
+  "lists": [
+    {
+      "name": "checks",
+      "hidden": false
+    },
+    {
+      "name": "TODO",
+      "hidden": false
+    },
+    {
+      "name": "BiblePlan",
+      "hidden": true
+    },
+    {
+      "name": "BibelPlan",
+      "hidden": true
+    },
+    {
+      "name": "BibliaTerv",
+      "hidden": true
+    },
+    {
+      "name": "Bijbelplan",
+      "hidden": true
+    },
+    {
+      "name": "Bibelleseplan",
+      "hidden": true
+    },
+    {
+      "name": "PlanoBiblico",
+      "hidden": true
+    }
+  ],
+  "marked": {
+    "gfm": true,
+    "tables": true,
+    "breaks": false,
+    "pedantic": false,
+    "smartLists": true,
+    "langPrefix": "language-"
+  }
+}

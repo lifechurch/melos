@@ -1,0 +1,42 @@
+.toggle {
+
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	cursor: pointer;
+
+	.toggle-button {
+		height: 18px;
+		width: 16px;
+		margin-right: 10px;
+
+		.toggle-circle {
+			width: 16px;
+			height: 16px;
+		}
+
+		.toggle-check {
+	    width: 11px;
+	    height: 13px;
+	    opacity: 0;
+	    transition: opacity 0.25s cubic-bezier(0.42, 1, 0.16, 0.93);
+	    position: relative;
+	    left: 3px;
+	    top: -15px;
+		}
+	}
+
+	.toggle-label {
+
+	}
+
+	&.selected {
+		.toggle-button {
+			.toggle-check {
+				opacity: 1;
+			}
+		}
+	}
+}

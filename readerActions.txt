@@ -1,0 +1,136 @@
+firstLoad:
+	- called on server load
+	- called on route entry if client side
+	> bible/version { id: VERSION_ID }
+	> bible/chapter { id: VERSION_ID, reference: USFM, format: html/text }
+
+loadChapter:
+	- called on navigate to new chapter within same version
+	> bible/chapter { id: VERSION_ID, reference: USFM, format: html/text }
+
+loadVersion:
+  - called on navigate to new version
+	> bible/version { id: VERSION_ID }
+	> bible/chapter { id: VERSION_ID, reference: USFM, format: html/text }
+
+openBookSelector
+	- called when arrow by book name is clicked
+
+closeBookSelector
+	- called when mouse down outside book selector
+
+openVersionSelector
+	- called when arrow by version abbr is clicked
+
+closeVersionSelector
+	- called when mouse down outside version selector
+
+openAudio
+	- called when audio icon is clicked
+
+closeAudio
+	- called when audio button is clicked again
+
+audioLoaded
+	- called when audio file has finished loading and is ready to play
+	- should populate audio length into state
+
+audioPlay
+	- called when play button clicked
+
+audioSeek
+	- called when +30 -30 buttons are clicked
+	- called when audio track is clicked or dragged
+
+audioChangeSpeed
+	- called when audio speed buttons are clicked
+
+audioNewWindow
+	- called when "new window" button on audio panel is clicked
+
+selectBook
+	- called when book is clicked from full book selector
+
+selectLanguage
+	- called when language is clicked from full version selector
+
+selectVersion
+	- called when version is clicked from full version selector
+
+selectChapter
+	- called when chapter is clicked from full book selector
+
+filterBooks
+	- called when user starts typing in book label in header
+
+filterBooksCancel
+	- called when mouse down outside book filter
+
+filterSelectBook
+	- called book name clicked from book filter
+
+filterSelectChapter
+	- called when chapter clicked from book filter
+
+filterLanguages
+	- called when user starts typing in language filter within full version selector
+
+filterVersions
+	- called when user starts typing in version label in header
+
+filterSelectVersion
+	- called when version is clicked from within version filter
+
+filterVersionsCancel
+	- called when mouse down outside version filter
+
+loadVersions
+	- called when new version is selected anywhere (filter, version selector)
+	> bible/versions { language_tag, type }
+
+changeFontSize
+	- called when new font size (S,M,L) is clicked from settings panel
+
+changeFontFamily
+	- called when new font family is clicked from settings panel
+
+toggleFootnotes
+	- called when footnotes checkmark is toggled in settings panel
+
+toggleNumbersAndTitles
+	- called when numbersandtitles checkmark is toggled in settings panel
+
+openVerseAction
+	- called when verse is clicked
+	- subsequent verses added to selection do not re-trigger event
+
+closeVerseAction
+	- called when last select verse is toggled to not-selected
+	- called when close button in verse action is clicked
+
+openVerseActionShare
+	- called when "share" is clicked from verse action
+
+closeVerseActionShare
+	- called when "close" is clicked on vaShare panel
+
+openVerseActionCopy
+	- called when "copy" is clicked from verse action
+
+closeVerseActionCopy
+	- called when "close" is clicked from vaCopy panel
+
+openVerseActionBookmark
+	- called when "bookmark" is clicked from verse action
+
+closeVerseActionBookmark
+	- called when "close" is clicked from vaBookmark panel
+
+openVerseActionNote
+	- called when "note" is clicked from verse action
+
+closeVerseActionNote
+	- called when "close" is clicked from vaNote panel
+
+verseActionHighlight
+	- called when highlight color is clicked in verse action

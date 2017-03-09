@@ -1,27 +1,41 @@
-import React, { Component, PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
-import ActionCreators from '../actions/creators'
-import { Link } from 'react-router'
-import CheckMark from '../../../components/CheckMark'
+import React, { PropTypes } from 'react'
+
 import SubscribeUserAction from './SubscribeUserAction'
 import SaveForLaterAction from './SaveForLaterAction'
 
-class PlanActionButtons extends Component {
-
-	render() {
-		const { readingPlan, auth, dispatch } = this.props
-
-		return (
-			<div className='rp-subscription-info'>
-				<SubscribeUserAction readingPlan={readingPlan} isButton={true} auth={auth} dispatch={dispatch}/>
-				<div className='text-center'>
-					<SaveForLaterAction readingPlan={readingPlan} auth={auth} dispatch={dispatch}/>
-					&bull;
-					<a href={`/reading-plans/${readingPlan.id}-${readingPlan.slug}/day/1`}> <FormattedMessage id="plans.sample" /></a>
+function PlanActionButtons({ id, planLinkNode, subscriptionLink, isSubscribed, isSaved }) {
+	return (
+		<div style={{ marginTop: 30, fontSize: 12 }}>
+			<div className="row collapse text-center">
+				<div className="columns small-12">
+					<SubscribeUserAction
+						id={id}
+						isSubscribed={isSubscribed}
+						subscriptionLink={subscriptionLink}
+						style={{ display: 'inline-block' }}
+					/>
 				</div>
 			</div>
-		)
-	}
+			<div className="row collapse text-center">
+				<div className="columns small-12">
+					<SaveForLaterAction
+						id={id}
+						isSaved={isSaved}
+					/>
+					&nbsp;&bull;&nbsp;
+					{ planLinkNode }
+				</div>
+			</div>
+		</div>
+	)
+}
+
+PlanActionButtons.propTypes = {
+	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	planLinkNode: PropTypes.node.isRequired,
+	subscriptionLink: PropTypes.string.isRequired,
+	isSubscribed: PropTypes.bool.isRequired,
+	isSaved: PropTypes.bool.isRequired,
 }
 
 export default PlanActionButtons

@@ -1,15 +1,35 @@
+<script src="https://cdn.ravenjs.com/3.11.0/raven.min.js" crossorigin="anonymous"></script>
+
 <%if (config.linkCss) { %>
 	<link rel="stylesheet" href="<%=assetPrefix%>/stylesheets/<%= getAssetPath('style.css') %>" />
 <% } %>
 <div id="react-app"><%- appString %></div>
 <script type="application/javascript">
+	if (typeof Raven !== 'undefined') {
+		Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704').install()
+	}
+
 	window.__LOCALE__ = <%- JSON.stringify(locale, function(key, val) {
 		if (typeof val === 'function') {
 			return val + '';
 		}
 		return val;
 	}, 4) %>;
+
+	// lookinside
+<%if (referrer && referrer.indexOf('lookinside.bible') !== -1) { %>
+	var utag_data = {
+		site_environment: "youversion",
+	};
+	(function(a,b,c,d){
+	a='//tags.tiqcdn.com/utag/lookinside/main/prod/utag.js';
+	b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+	a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+	})();
+<% } %>
 	window.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
 	window.__ENV__ = "<%- environment %>";
+	window.__RAILS_HOST__ = "<%- railsHost %>";
+	window.__NODE_HOST__ = "<%- nodeHost %>";
 </script>
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en"></script>

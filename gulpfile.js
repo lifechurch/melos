@@ -1,193 +1,259 @@
-var gulp = require('gulp');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var uglify = require('gulp-uglify');
-var livereload = require('gulp-livereload');
-var less = require('gulp-less');
-var cssnano = require('gulp-cssnano');
-var concat 	= require('gulp-concat');
-var rev = require('gulp-rev');
-var del = require('del');
-var runSequence = require('run-sequence');
-var envify = require('loose-envify');
-var https = require('https');
-var querystring = require('querystring');
-var yaml = require('js-yaml');
-var fs = require('fs');
-var async = require('async');
-var langmap = require('langmap');
-var langs = require('langs');
+const gulp = require('gulp');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const uglify = require('gulp-uglify');
+const livereload = require('gulp-livereload');
+const less = require('gulp-less');
+const cssnano = require('gulp-cssnano');
+const concat 	= require('gulp-concat');
+const rev = require('gulp-rev');
+const del = require('del');
+const runSequence = require('run-sequence');
+const envify = require('loose-envify');
+const https = require('https');
+const querystring = require('querystring');
+const yaml = require('js-yaml');
+const fs = require('fs');
+const async = require('async');
+const langmap = require('langmap');
+const langs = require('langs');
+// var sourcemaps = require("gulp-sourcemaps");
+// var gutil = require("gulp-util");
 
 // Just set this to something because @youversion/js-api expects a value and will crash without it
-process.env['YOUVERSION_TOKEN_PHRASE'] = 'just-a-test';
+process.env.YOUVERSION_TOKEN_PHRASE = 'just-a-test';
 
-var GetClient = require('@youversion/js-api').getClient;
+const GetClient = require('@youversion/js-api').getClient;
 
-var smartlingCredentials = {
-	userIdentifier:"bpmknlysfearpoukuoydwwhduxoidv",
-	userSecret:"7vmbf0a699o0jlrpsbiaq3cbq8He-uv57mks52dpsl3lirnasso7usp"
+const smartlingCredentials = {
+	userIdentifier: 'bpmknlysfearpoukuoydwwhduxoidv',
+	userSecret: '7vmbf0a699o0jlrpsbiaq3cbq8He-uv57mks52dpsl3lirnasso7usp'
 };
 
-var smartlingProjectId = 'b13fafcf3';
+const smartlingProjectId = 'b13fafcf3';
 
-var IS_PROD = process.env.NODE_ENV === 'production';
+const IS_PROD = process.env.NODE_ENV === 'production';
 
-gulp.task('javascript:prod', function() {
-	return browserify("app/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:prod', () => {
+	return browserify('app/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('app.js'))
 		.pipe(buffer())
 		.pipe(uglify())
 		.pipe(rev())
-		.pipe(gulp.dest("./public/javascripts/"))
-		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('./public/javascripts/'))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
 		.pipe(gulp.dest('build/assets'));
 });
 
 
-gulp.task('javascript:prod:event', function() {
-	return browserify("app/standalone/SingleEvent/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:prod:event', () => {
+	return browserify('app/standalone/SingleEvent/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('SingleEvent.js'))
 		.pipe(buffer())
 		.pipe(uglify())
 		.pipe(rev())
-		.pipe(gulp.dest("./public/javascripts/"))
-		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('./public/javascripts/'))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
 		.pipe(gulp.dest('build/assets'));
 });
 
-gulp.task('javascript:prod:passwordChange', function() {
-	return browserify("app/standalone/PasswordChange/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:prod:passwordChange', () => {
+	return browserify('app/standalone/PasswordChange/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('PasswordChange.js'))
 		.pipe(buffer())
 		.pipe(uglify())
 		.pipe(rev())
-		.pipe(gulp.dest("./public/javascripts/"))
-		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('./public/javascripts/'))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
 		.pipe(gulp.dest('build/assets'));
 });
 
-gulp.task('javascript:prod:planDiscovery', function() {
-	return browserify("app/standalone/PlanDiscovery/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:prod:planDiscovery', () => {
+	return browserify('app/standalone/PlanDiscovery/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('PlanDiscovery.js'))
 		.pipe(buffer())
 		.pipe(uglify())
 		.pipe(rev())
-		.pipe(gulp.dest("./public/javascripts/"))
-		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('./public/javascripts/'))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
 		.pipe(gulp.dest('build/assets'));
 });
 
-gulp.task('javascript:prod:subscribeUser', function() {
-	return browserify("app/standalone/SubscribeUser/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+// Leaving here for a how-to on doing sourceMaps to inspect package size
+// gulp.task('javascript:prod:Bible', function() {
+// 	return browserify({ entries: "app/standalone/Bible/main.js", debug: false })
+// 		.transform("babelify", { presets: [ "es2015", "stage-0", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+// 		.transform('loose-envify', { NODE_ENV: 'staging' })
+// 		.bundle()
+// 		.pipe(source('Bible.js'))
+// 		.pipe(buffer())
+// 		.pipe(sourcemaps.init({ loadMaps:true }))
+// 		.pipe(uglify())
+// 		.on('error', gutil.log)
+// 		//.pipe(rev())
+// 		.pipe(sourcemaps.write())
+// 		.pipe(gulp.dest("./public/javascripts/"))
+// 		//.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+// 		//.pipe(gulp.dest('build/assets'));
+// });
+
+gulp.task('javascript:prod:Bible', () => {
+	return browserify('app/standalone/Bible/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
+		.transform('loose-envify', { NODE_ENV: 'production' })
+		.bundle()
+		.pipe(source('Bible.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(rev())
+		.pipe(gulp.dest('./public/javascripts/'))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
+		.pipe(gulp.dest('build/assets'));
+});
+
+gulp.task('javascript:prod:subscribeUser', () => {
+	return browserify('app/standalone/SubscribeUser/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('SubscribeUser.js'))
 		.pipe(buffer())
 		.pipe(uglify())
 		.pipe(rev())
-		.pipe(gulp.dest("./public/javascripts/"))
-		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('./public/javascripts/'))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
 		.pipe(gulp.dest('build/assets'));
 });
 
-gulp.task('javascript:dev', function() {
-	return browserify("app/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:prod:passage', () => {
+	return browserify('app/standalone/Passage/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
+		.transform('loose-envify', { NODE_ENV: 'production' })
+		.bundle()
+		.pipe(source('Passage.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(rev())
+		.pipe(gulp.dest('./public/javascripts/'))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
+		.pipe(gulp.dest('build/assets'));
+});
+
+gulp.task('javascript:dev', () => {
+	return browserify('app/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.bundle()
 		.pipe(source('app.js'))
 		.pipe(buffer())
-		.pipe(gulp.dest("./public/javascripts/"));
+		.pipe(gulp.dest('./public/javascripts/'));
 });
 
-gulp.task('javascript:dev:event', function() {
-	return browserify("app/standalone/SingleEvent/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:dev:event', () => {
+	return browserify('app/standalone/SingleEvent/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.bundle()
 		.pipe(source('SingleEvent.js'))
 		.pipe(buffer())
-		.pipe(gulp.dest("./public/javascripts/"));
+		.pipe(gulp.dest('./public/javascripts/'));
 });
 
-gulp.task('javascript:dev:passwordChange', function() {
-	return browserify("app/standalone/PasswordChange/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:dev:passwordChange', () => {
+	return browserify('app/standalone/PasswordChange/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.bundle()
 		.pipe(source('PasswordChange.js'))
 		.pipe(buffer())
-		.pipe(gulp.dest("./public/javascripts/"));
+		.pipe(gulp.dest('./public/javascripts/'));
 });
 
-gulp.task('javascript:dev:planDiscovery', function() {
-	return browserify("app/standalone/PlanDiscovery/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:dev:planDiscovery', () => {
+	return browserify('app/standalone/PlanDiscovery/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.bundle()
 		.pipe(source('PlanDiscovery.js'))
 		.pipe(buffer())
-		.pipe(gulp.dest("./public/javascripts/"));
+		.pipe(gulp.dest('./public/javascripts/'));
 });
 
-gulp.task('javascript:dev:subscribeUser', function() {
-	return browserify("app/standalone/SubscribeUser/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+gulp.task('javascript:dev:Bible', () => {
+	return browserify('app/standalone/Bible/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
+		.bundle()
+		.pipe(source('Bible.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest('./public/javascripts/'));
+});
+
+gulp.task('javascript:dev:subscribeUser', () => {
+	return browserify('app/standalone/SubscribeUser/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
 		.bundle()
 		.pipe(source('SubscribeUser.js'))
 		.pipe(buffer())
-		.pipe(gulp.dest("./public/javascripts/"));
+		.pipe(gulp.dest('./public/javascripts/'));
 });
 
-gulp.task('javascript:clean', function() {
+gulp.task('javascript:dev:passage', () => {
+	return browserify('app/standalone/Passage/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ 'es2015', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
+		.bundle()
+		.pipe(source('Passage.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest('./public/javascripts/'));
+});
+
+gulp.task('javascript:clean', () => {
 	return del([ 'public/javascripts/*.js' ]);
 });
 
-gulp.task('css:clean', function() {
+gulp.task('css:clean', () => {
 	return del([ 'public/stylesheets/*.css' ]);
 });
 
-gulp.task('images:clean', function() {
+gulp.task('images:clean', () => {
 	return del([ 'public/images/**/*' ]);
 });
 
-gulp.task('javascript', function(callback) {
+gulp.task('javascript', (callback) => {
 	if (IS_PROD) {
-		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:subscribeUser', callback);
+		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', 'javascript:prod:passage', callback);
 	} else {
-		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
+		runSequence('javascript:clean', [/* 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange',*/ 'javascript:dev:planDiscovery', 'javascript:dev:Bible'/* , 'javascript:dev:subscribeUser', 'javascript:dev:passage'*/], callback);
 	}
 });
 
-gulp.task('css:prod', function() {
+gulp.task('css:prod', () => {
 	return gulp.src(['./app/less/style.less'])
 		.pipe(concat('style.css'))
     .pipe(less())
 		.pipe(cssnano())
 		.pipe(rev())
   	.pipe(gulp.dest('./public/stylesheets'))
-		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
 		.pipe(gulp.dest('build/assets'));
 });
 
-gulp.task('css:dev', function() {
+gulp.task('css:dev', () => {
 	return gulp.src(['./app/less/style.less'])
 		.pipe(concat('style.css'))
     .pipe(less())
 		.pipe(gulp.dest('./public/stylesheets'));
 });
 
-gulp.task('css', function(callback) {
+gulp.task('css', (callback) => {
 	if (IS_PROD) {
 		runSequence('css:clean', 'css:prod', callback);
 	} else {
@@ -195,7 +261,7 @@ gulp.task('css', function(callback) {
 	}
 });
 
-gulp.task('images', function(callback) {
+gulp.task('images', (callback) => {
 	if (IS_PROD) {
 		runSequence('images:clean', 'images:prod', callback);
 	} else {
@@ -203,68 +269,68 @@ gulp.task('images', function(callback) {
 	}
 });
 
-gulp.task('images:prod', function() {
+gulp.task('images:prod', () => {
 	return gulp.src(['./images/**/*'])
 		.pipe(rev())
 		.pipe(gulp.dest('./public/images'))
-		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
 		.pipe(gulp.dest('build/assets'));
 });
 
-gulp.task('images:dev', function() {
+gulp.task('images:dev', () => {
 	return gulp.src(['./images/**/*'])
 		.pipe(gulp.dest('./public/images'));
 });
 
 gulp.task('build', ['images', 'css', 'javascript']);
 
-gulp.task('build:production', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:subscribeUser', callback);
+gulp.task('build:production', (callback) => {
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', 'javascript:prod:passage', callback);
 });
 
-gulp.task('build:staging', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
+gulp.task('build:staging', (callback) => {
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
 });
 
-gulp.task('build:review', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
+gulp.task('build:review', (callback) => {
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
 });
 
-gulp.task('watch', ['images', 'css', 'javascript'], function() {
+gulp.task('watch', ['images', 'css', 'javascript'], () => {
 	livereload.listen();
-	gulp.watch( ["./images/**/*.js"], ['images'] );
-	gulp.watch( ["./app/**/*.js"], ['javascript'] );
-	gulp.watch( ["./app/**/*.less"], ['css'] );
+	gulp.watch(['./images/**/*.js'], ['images']);
+	gulp.watch(['./app/**/*.js'], ['javascript']);
+	gulp.watch(['./app/**/*.less'], ['css']);
 });
 
-gulp.task('smartling', function(callback) {
-	return smartlingAuth().then(function(response) {
-		var token = response.response.data.accessToken;
-		return smartlingFetchAvailableLocales(token).then(function(response) {
+gulp.task('smartling', (callback) => {
+	return smartlingAuth().then((response) => {
+		const token = response.response.data.accessToken;
+		return smartlingFetchAvailableLocales(token).then((response) => {
+			console.log(response)
+			const locales = response.response.data.items;
 
-			var locales = response.response.data.items;
-
-			var queue = async.queue(function(task, callback) {
-					smartlingFetchLocaleFile(task.locale, token).then(function(data) {
-						callback(task, data, null);
-					}, function(error) {
-						callback(null, null, error);
-					})
+			const queue = async.queue((task, callback) => {
+				smartlingFetchLocaleFile(task.locale, token).then((data) => {
+					callback(task, data, null);
+				}, (error) => {
+					callback(null, null, error);
+				})
 			}, 10);
 
-			var localeList = locales.map(function(item) {
-				var lang_country = item.localeId.split('-');
-				var country = lang_country[1] || "";
-				var lang = langs.where("1", lang_country[0]);
-				var locale3 = lang ? lang["3"] : null;
-				var locale2 = lang ? lang["1"] : null;
-				var final = Object.assign(
+			const localeList = locales.map((item) => {
+				const lang_country = item.localeId.split('-');
+				const country = lang_country[1] || '';
+				const lang = langs.where('1', lang_country[0]);
+				const locale3 = lang ? lang['3'] : null;
+				const locale2 = lang ? lang['1'] : null;
+				const final = Object.assign(
 					{},
 					langmap[item.localeId],
 					{
 						locale: item.localeId,
-						locale2: locale2,
-						locale3: locale3
+						locale2,
+						locale3
 					}
 				);
 
@@ -273,105 +339,106 @@ gulp.task('smartling', function(callback) {
 			});
 
 			localeList.push({
-				"nativeName": "English (US)",
-				"englishName": "English (US)",
-				"locale": "en-US",
-				"locale2": "en",
-				"locale3": "eng",
-				"displayName": "English (US)"
+				nativeName: 'English (US)',
+				englishName: 'English (US)',
+				locale: 'en-US',
+				locale2: 'en',
+				locale3: 'eng',
+				displayName: 'English (US)'
 			});
 
 			localeList.sort((a, b) => {
 				return a.displayName.localeCompare(b.displayName);
 			});
 
-			fs.writeFileSync('./locales/config/_localeList.json', JSON.stringify(localeList, null, "\t"));
+			fs.writeFileSync('./locales/config/_localeList.json', JSON.stringify(localeList, null, '\t'));
 
-			var tasks = locales.map(function(item) {
+			const tasks = locales.map((item) => {
 				return { locale: item.localeId, prefix: item.localeId.split('-')[0] }
 			});
 
 			tasks.push({ locale: 'en-US', prefix: 'en' });
 
-			var availableLocales = {};
-			tasks.forEach(function(t) {
+			const availableLocales = {};
+			tasks.forEach((t) => {
 				availableLocales[t.locale] = t.locale;
 				availableLocales[t.prefix] = t.locale;
 				availableLocales[t.locale.replace('-', '_')] = t.locale
 			});
 
-			fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, "\t"));
+			fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, '\t'));
 
-			queue.push(tasks, function(task, data, err) {
+			queue.push(tasks, (task, data, err) => {
 				console.log('Task:', task);
-				fs.writeFileSync('./locales/' + task.locale + '.json', JSON.stringify(flattenObject(data[task.prefix].EventsAdmin), null, '\t').replace(/\%\{/g, '{'));
+				fs.writeFileSync(`./locales/${task.locale}.json`, JSON.stringify(flattenObject(data[task.prefix].EventsAdmin), null, '\t').replace(/\%\{/g, '{'));
 			});
 
 			const client = GetClient('reading-plans')
 				.call('configuration')
 				.setVersion('3.1')
-				.get().then(function(data) {
-					var planLocales = {}
-					data.available_language_tags.forEach(function(l) {
+				.get().then((data) => {
+					const planLocales = {}
+					data.available_language_tags.forEach((l) => {
 
-						var plan_prefix = l.split('_')[0];
+						const plan_prefix = l.split('_')[0];
 
-						Object.keys(availableLocales).forEach(function(a) {
-							var av_prefix = a.split('-')[0].split('_')[0];
+						Object.keys(availableLocales).forEach((a) => {
+							const av_prefix = a.split('-')[0].split('_')[0];
 
 							if (l === a || plan_prefix === av_prefix) {
-								planLocales[a]  = l;
+								planLocales[a] = l;
 							}
 
 						});
 
 					});
-					fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, "\t") );
-				}, function(error) {
+					fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, '\t'));
+				}, (error) => {
 					console.log(error);
 				});
 
-			//queue.drain = callback;
+			// queue.drain = callback;
 
-		}, function(error) {
+		}, (error) => {
 			console.log(error);
 		});
-	}, function(error) {
+	}, (error) => {
 		console.log(error);
 	});
 });
 
 function smartlingAuth() {
-	return new Promise(function(resolve, reject) {
-		var options = {
+	return new Promise((resolve, reject) => {
+		const options = {
 			hostname: 'api.smartling.com',
 			port: 443,
 			path: '/auth-api/v2/authenticate',
 			method: 'POST',
 			headers: {
-				"Content-Type": "application/json"
+				'Content-Type': 'application/json'
 			}
 		}
 
-		var req = https.request(options)
+		const req = https.request(options)
 
-		req.on("response", function(response) {
-			var body = "";
+		req.on('response', (response) => {
+			/* eslint-disable no-var */
+			var body = '';
 
-			response.on('data', function(chunk) {
+			response.on('data', (chunk) => {
 				body += chunk;
 			});
 
-			response.on("end", function() {
+			response.on('end', () => {
 				try {
 					resolve(JSON.parse(body));
-				} catch(ex) {
+				} catch (ex) {
 					reject(ex);
 				}
 			});
 		});
 
-		req.on('error', function(e) {
+		req.on('error', (e) => {
 			reject(e);
 		});
 
@@ -382,43 +449,44 @@ function smartlingAuth() {
 }
 
 function smartlingFetchAvailableLocales(token) {
-	return new Promise(function(resolve, reject) {
-		var query = querystring.stringify({
+	return new Promise((resolve, reject) => {
+		const query = querystring.stringify({
 			fileUri: '/files/en.yml'
 		})
 
-		var options = {
+		const options = {
 			hostname: 'api.smartling.com',
 			port: 443,
-			path: '/files-api/v2/projects/' + smartlingProjectId + '/file/status?' + query,
+			path: `/files-api/v2/projects/${smartlingProjectId}/file/status?${query}`,
 			method: 'GET',
 			headers: {
-				Authorization: 'Bearer ' + token,
-				"Content-Type": "application/json"
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json'
 			}
 		}
 
-		//console.log("OP", options);
+		// console.log("OP", options);
 
-		var req = https.request(options)
+		const req = https.request(options)
 
-		req.on("response", function(response) {
-			var body = "";
+		req.on('response', (response) => {
+			/* eslint-disable no-var */
+			var body = '';
 
-			response.on('data', function(chunk) {
+			response.on('data', (chunk) => {
 				body += chunk;
 			});
 
-			response.on("end", function() {
+			response.on('end', () => {
 				try {
 					resolve(JSON.parse(body));
-				} catch(ex) {
+				} catch (ex) {
 					reject(ex);
 				}
 			});
 		});
 
-		req.on('error', function(e) {
+		req.on('error', (e) => {
 			reject(e);
 		});
 
@@ -429,44 +497,45 @@ function smartlingFetchAvailableLocales(token) {
 }
 
 function smartlingFetchLocaleFile(locale, token) {
-	return new Promise(function(resolve, reject) {
-		var query = querystring.stringify({
+	return new Promise((resolve, reject) => {
+		const query = querystring.stringify({
 			fileUri: '/files/en.yml'
 		})
 
-		var options = {
+		const options = {
 			hostname: 'api.smartling.com',
 			port: 443,
-			path: '/files-api/v2/projects/' + smartlingProjectId + '/locales/' + locale + '/file?' + query,
+			path: `/files-api/v2/projects/${smartlingProjectId}/locales/${locale}/file?${query}`,
 			method: 'GET',
 			headers: {
-				Authorization: 'Bearer ' + token,
-				"Content-Type": "application/json"
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json'
 			}
 		}
 
-		//console.log("OP", options);
+		// console.log("OP", options);
 
-		var req = https.request(options)
+		const req = https.request(options)
 
-		req.on("response", function(response) {
-			var body = "";
+		req.on('response', (response) => {
+			/* eslint-disable no-var */
+			var body = '';
 
-			response.on('data', function(chunk) {
+			response.on('data', (chunk) => {
 				body += chunk;
 			});
 
-			response.on("end", function() {
+			response.on('end', () => {
 				try {
-					//console.log("BD", body);
-					resolve(yaml.safeLoad(body, {json:true}));
-				} catch(ex) {
+					// console.log("BD", body);
+					resolve(yaml.safeLoad(body, { json: true }));
+				} catch (ex) {
 					reject(ex);
 				}
 			});
 		});
 
-		req.on('error', function(e) {
+		req.on('error', (e) => {
 			reject(e);
 		});
 
@@ -477,23 +546,21 @@ function smartlingFetchLocaleFile(locale, token) {
 }
 
 function flattenObject(ob) {
-	var toReturn = {};
+	const toReturn = {};
 
-	for (var i in ob) {
+	for (const i in ob) {
 		if (!ob.hasOwnProperty(i)) continue;
 
-		if ((typeof ob[i]) == 'object') {
-			var flatObject = flattenObject(ob[i]);
-			for (var x in flatObject) {
+		if ((typeof ob[i]) === 'object') {
+			const flatObject = flattenObject(ob[i]);
+			for (const x in flatObject) {
 				if (!flatObject.hasOwnProperty(x)) continue;
 
-				toReturn[i + '.' + x] = flatObject[x];
+				toReturn[`${i}.${x}`] = flatObject[x];
 			}
 		} else {
 			toReturn[i] = ob[i];
 		}
 	}
 	return toReturn;
-};
-
-
+}

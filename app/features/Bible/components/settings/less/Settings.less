@@ -1,0 +1,64 @@
+.reader-settings {
+
+	.modal {
+			top: 53px;
+			margin-left: -255px;
+	}
+
+	.reader-settings-modal {
+		background-color: white;
+		width: 310px;
+		border-radius: @default-radius @default-radius 0px 0px;
+		border: @thin-grey-border;
+
+		.header {
+			width: 100%;
+			background-color: @light-grey;
+			border-bottom: @thin-grey-border;
+			max-height: 30px;
+			border-radius: @default-radius @default-radius 0px 0px;
+			font-size: 11px;
+		}
+
+		.body {
+			padding: 15px;
+			display: inline-flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: stretch;
+			height: 295px;
+
+			div.button-bar, div.toggle {
+				margin-bottom: 15px;
+			}
+
+			div.toggle {
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+html[dir="rtl"] {
+	.reader-settings {
+		.modal {
+			margin-left: 0;
+			margin-right: -255px;
+		}
+		.body {
+			div.toggle {
+				margin-left: 0;
+				margin-right: 5px;
+			}
+			.toggle-button {
+				margin-left: 10px;
+				margin-right: 0;
+			}
+		}
+	}
+	.toggle-check {
+		left: 0;
+		right: 2.5px;
+	}
+}

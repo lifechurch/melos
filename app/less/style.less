@@ -1,21 +1,42 @@
 @import (inline) "../../node_modules/react-datepicker/dist/react-datepicker.css";
 @import (inline) "../../node_modules/quill/dist/quill.base.css";
 @import (inline) "../../node_modules/quill/dist/quill.snow.css";
-@import "colors";
+@import (inline) "../../node_modules/react-custom-scroll/src/main/customScroll.css";
+@import "constants";
 @import "typography";
 
 
+@import "../features/Bible/components/chapterPicker/less/chapterPicker.less";
+@import "../features/Bible/components/versionPicker/less/versionPicker.less";
+@import "../features/Bible/components/verseAction/less/verseAction.less";
+@import "../features/Bible/components/verseAction/bookmark/less/bookmark.less";
+@import "../features/Bible/components/content/less/content.less";
+@import "../features/Bible/components/header/header.less";
 
-/*@small: only screen and (max-width: 479px);
-@medium: only screen and (min-width: 768px) and (max-width: 959px);
-@large: only screen and (min-width: 960px);*/
+@import "../features/Passage/components/passage.less";
 
-/*@small-range: (0em, 37.438em);
-@medium-range: (37.5em, 63.938em);
-@large-range: (64em, 90em);
-@xlarge-range: (90.063em, 120em);
-@xxlarge-range: (120.063em, 99999999em);*/
+@import "../features/PlanDiscovery/components/planReader/less/planReader.less";
+@import "../features/PlanDiscovery/components/less/PlanDaySlider.less";
+@import "../features/PlanDiscovery/components/less/PlanSettings.less";
+@import "../features/PlanDiscovery/components/less/PlanCalendar.less";
 
+@import "../components/less/ButtonBar.less";
+@import "../components/less/Toggle.less";
+@import "../components/less/PopupMenu.less";
+@import "../components/less/TriggerButton.less";
+@import "../components/less/card.less";
+@import "../components/less/DropdownTransition.less";
+@import "../components/less/Select.less";
+@import "../components/less/stackedContainer.less";
+
+@import "../features/Bible/components/settings/less/Settings.less";
+@import "../features/Bible/components/audio/less/Audio.less";
+
+@import "../features/Lookinside/components/lookinside.less";
+
+.hdr-nav label {
+	margin: inherit !important;
+}
 
 .img-box {
 	position: relative;
@@ -897,7 +918,7 @@ form.locationForm {
 	}
 
 	.content-type {
-		// TODO: Refactor; React generates spans all over the place.
+		// TODO:10 Refactor; React generates spans all over the place.
 		// Some of these styles should only apply to specific elements.
 		margin-top:30px;
 		font-size: 12px;
@@ -2170,7 +2191,7 @@ ul.language-selector li {
 			margin-top: 15px;
 		}
 		.slide, img {
-			height: 100%;
+			/*height: 100%;*/
 		}
 		.collection-title {
 			margin-top: 20px;
@@ -2194,7 +2215,7 @@ ul.language-selector li {
 			margin-top: 20px;
 		}
 		.slide, img {
-			height: 100%;
+			/*height: 100%;*/
 		}
 		.collection-title {
 			margin-top: 40px;
@@ -2246,14 +2267,93 @@ ul.language-selector li {
 
 /* ABOUT PLAN VIEW */
 .about-plan {
-
 	.plan-image {
 		img {
 			width: 100%;
 		}
 	}
-
 }
 
 
 
+
+.plan-overview {
+	.header {
+		.actions {
+			min-width: 100px;
+		}
+		.actions, .actions div {
+			float: right;
+		}
+	}
+}
+
+
+
+
+
+
+
+/*********************************************************************************
+				BIBLE
+				READER
+**********************************************************************************/
+
+body.c_references.a_show {
+	width: 100%;
+}
+.custom-scroll {
+	.inner-container {
+		-webkit-overflow-scrolling: touch;
+	}
+	.inner-handle {
+		background-color: @background-grey;
+	}
+}
+
+html[dir="rtl"] {
+	.custom-scroll {
+		.custom-scrollbar {
+			opacity: 0 !important;
+		}
+	}
+}
+
+@media @small-only, @medium-only {
+	html, body {
+		height: 100%;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	// center all the modals horizontally when small or medium viewport
+	.modal {
+		margin: 0 !important;
+		.absolute-horizontal-center;
+	}
+	.note.f {
+		.body {
+			.absolute-horizontal-center !important;
+		}
+	}
+
+}
+.buttons {
+	display: inline-flex;
+	flex-wrap: wrap;
+	margin-top: 30px;
+	.chapter-button {
+		border: @thin-grey-border;
+		background-color: white;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: @font-grey;
+		margin-right: 15px;
+	}
+}
+
+/* Fix Google Auth iFrame inline style of left: -9999px */
+#ssIFrame_google {
+ left: 0 !important;
+ visibility: hidden !important ;
+}

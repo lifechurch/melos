@@ -1,0 +1,35 @@
+.select-field {
+	display: inline-block;
+
+	.select-heading {
+		display: inline-flex;
+		.selected {
+			padding-top: 6px;
+			font-size: @list-font-size;
+			.yv-text-ellipsis;
+		}
+		.dropdown-arrow-container {
+			cursor: pointer;
+			display: inline-flex;
+			justify-content: center;
+		}
+	}
+
+	ul {
+		width: 100%;
+		list-style: none;
+		font-size: @list-font-size;
+		margin-left: 0;
+	}
+
+	li {
+		padding: 6px 10px 6px 10px;
+		display: block;
+		.yv-text-ellipsis;
+		color: black;
+		cursor: pointer;
+	}
+	.modal {
+		position: relative;
+	}
+}
