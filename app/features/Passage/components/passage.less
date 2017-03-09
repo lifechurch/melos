@@ -1,7 +1,5 @@
 .passage {
 
-
-
 	.main-content {
 		padding: 0px 35px 0px 35px;
 
@@ -175,8 +173,8 @@
 		  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 		}
 		.card:hover {
-		  -webkit-transform: scale(1.06, 1.06);
-		  transform: scale(1.06, 1.06);
+		  -webkit-transform: scale(1.05, 1.05);
+		  transform: scale(1.05, 1.05);
 		}
 		.card:hover::after {
 			opacity: 1 !important;
@@ -276,8 +274,21 @@
 		.verse-content {
 			display: inline-block !important;
 			margin-top: 15px;
+
+			.verse {
+				-webkit-font-smoothing: subpixel-antialiased;
+			}
 		}
 	}
 
 
+}
+
+html[dir="rtl"] {
+	.verse {
+		.heading {
+			margin-right: 0 !important;
+			margin-left: 10px !important;
+		}
+	}
 }
