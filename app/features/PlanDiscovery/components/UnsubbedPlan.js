@@ -126,12 +126,14 @@ class UnsubbedPlan extends Component {
 					})}
 					{
 						hasDevo &&
-						<div className='columns large-8 medium-centered' style={{ marginTop: '100px' }}>
-							<PlanDevo
-								devoContent={dayData.additional_content.html ?
-									dayData.additional_content.html.default :
-									dayData.additional_content.text.default}
-							/>
+						<div className="row">
+							<div className='columns large-8 medium-8 medium-centered' style={{ marginTop: '100px' }}>
+								<PlanDevo
+									devoContent={dayData.additional_content.html ?
+										dayData.additional_content.html.default :
+										dayData.additional_content.text.default}
+								/>
+							</div>
 						</div>
 					}
 				</div>
