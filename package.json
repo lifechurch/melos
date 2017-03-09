@@ -97,11 +97,11 @@
     "serve-favicon": "~2.3.0",
     "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "babel-preset-stage-0": "^6.16.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "babel-preset-stage-0": "^6.16.0",
     "eslint": "^3.14.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-config-google": "^0.6.0",
