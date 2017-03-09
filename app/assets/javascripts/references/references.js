@@ -19,8 +19,6 @@ angular.module('yv.reader', [
 	'api.notes',
 	'api.bible',
 	'api.subscriptions',
-	'720kb.tooltips',
-    'mdColorPicker'
 ])
 
 .config([ '$stateProvider', function($stateProvider) {

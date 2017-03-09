@@ -36,6 +36,9 @@
       - if a_locale.to_s.eql?("en")
         %link{href: href, rel: "alternate", hreflang: "x-default"}
 
+
   - unless canonicalHref.nil?
     %link{rel: "canonical", href: canonicalHref}
-
+    - if @render_rails_meta
+      %meta{property: "og:url",         content: canonicalHref }
+      %meta{property: "twitter:url",    content: canonicalHref }

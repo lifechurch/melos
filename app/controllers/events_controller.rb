@@ -9,7 +9,7 @@ class EventsController < ApplicationController
         "strings" => {}
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('SingleEvent', p, cookies, current_auth, current_user)
+    fromNode = YV::Nodestack::Fetcher.get('SingleEvent', p, cookies, current_auth, current_user, request)
 
     if (fromNode['error'].present?)
       return render_404

@@ -58,10 +58,17 @@ development:
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
+
   event_import_url: "http://localhost:3000/featureImport/"
-  #event_import_url: "https://events-staging.bible.com/featureImport/"
   event_api_host: "localhost"
   event_api_port: "3000"
+
+  #event_import_url: "https://events-staging.bible.com/featureImport/"
+  #event_api_host: "events-staging.bible.com"
+
+  #event_import_url: "https://events-review.bible.com/featureImport/"
+  #event_api_host: "events-review.bible.com"
+
 
 staging:
   api_root: youversionapistaging.com
@@ -79,6 +86,24 @@ staging:
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
   event_import_url: "https://events-staging.bible.com/featureImport/"
   event_api_host: "events-staging.bible.com"
+
+review01:
+  api_root: youversionapi.com
+  api_referer: web.youversionapi.com
+  api_version: "3.1"
+#  api_root: youversionapi.com
+#  api_referer: web.youversionapi.com
+#  api_version: "3.1"
+  memcache_server: memcache.youversion.com
+  api_default_timeout: 15
+  rack_execution_timeout: 15
+  twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
+  twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
+  facebook_app_id: 105030176203924
+  facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
+  branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
+  event_import_url: "https://events-review.bible.com/featureImport/"
+  event_api_host: "events-review.bible.com"
 
 test:
   api_root: youversionapistaging.com

@@ -15,6 +15,7 @@ module YV
         hash["bible.com"]                 = Bible
         hash["dev.bible.com"]             = Bible
         hash["staging.bible.com"]         = Bible
+        hash["review01.bible.com"]        = Bible
         hash["lvh.me"]                    = Bible
         hash["www.lvh.me"]                = Bible
         hash

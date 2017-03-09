@@ -11,10 +11,12 @@ module YV
       INVALID_TOKEN_ERROR = 1
 
       class << self
-        def get(feature, params, cookies, current_auth, current_user)
+        def get(feature, params, cookies, current_auth, current_user, request)
+
 
           started_at = Time.now.to_f
           can_cache  = true
+          cookieStr = cookies.map{|k,v| "#{k}=#{v}"}.join(';')
           if cookies.has_key?(CookieName)
             auth = auth_from_cookie(cookies)
             can_cache = false
@@ -26,6 +28,7 @@ module YV
           end
 
           params['languageTag'] = I18n.locale
+          params['railsHost'] = "#{request.protocol}#{request.host_with_port}"
 
           resource_url = Cfg.event_import_url
           curb_get = lambda do
@@ -35,6 +38,7 @@ module YV
               curl = Curl::Easy.http_post(resource_url, post_body.to_json ) do |c|
                 c.headers['Accept'] = 'application/json'
                 c.headers['Content-Type'] = 'application/json'
+                c.headers['Cookie'] = cookieStr
                 c.timeout = Cfg.api_default_timeout.to_f
                 c.encoding = ''
                 if auth[:token].present?

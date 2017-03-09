@@ -26,9 +26,6 @@
 //= require_tree ./friendships
 //= require_tree ./search
 //= require vendor/angular-cache/angular-cache
-//= require vendor/angular-tooltips/angular-tooltips.min.js
-//= require vendor/md-color-picker/tinycolor-min.js
-//= require vendor/md-color-picker/mdColorPicker.js
 //= require vendor/jstimezone/dist/jstz.min.js
 
 var TEMPLATE_FROM_RAILS = {};
@@ -54,7 +51,7 @@ function parseReaderVars() {
         next_link = angular.element(document.getElementById("reader_next")).attr("href").split("/");
     }
 
-	TEMPLATE_FROM_RAILS[window.location.pathname] = { 
+	TEMPLATE_FROM_RAILS[window.location.pathname] = {
 		reader_book: angular.element(document.getElementById("reader_book")).text(),
 		reader_chapter: angular.element(document.getElementById("reader_chapter")).text(),
 		reader_version: angular.element(document.getElementById("reader_version")).text(),
@@ -75,7 +72,7 @@ function parseReaderVars() {
 		next_chapter_hash: {
 			version_id: next_link[version_pos],
 			usfm: [ next_link[usfm_pos] ]
-		} 
+		}
 	};
 }
 
@@ -130,12 +127,7 @@ function inPathNotFirst(segment, path) {
 }
 
 function init() {
-
-    if (isReader || isReadingPlanSample || isReaderPlanUser) {
-        parseReaderVars();
-    }
-
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
@@ -146,6 +138,7 @@ function init() {
             gapi.auth2.init();
         })
     }
+
 }
 
 var isEvents            = isFirst("events");
@@ -157,6 +150,9 @@ var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
 var isSignUp            = isFirst("sign-up");
 var isSignIn            = isFirst("sign-in");
+var isPassage           = isFirst("passage");
+
+var isLookInside        = isFirst("lookinside");
 
 var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
 var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");
@@ -164,5 +160,6 @@ var isBookmarksFeed		= isFirst("users") && inPathNotFirst("bookmarks");
 var isHighlightsFeed	= isFirst("users") && inPathNotFirst("highlights");
 var isImagesFeed		= isFirst("users") && inPathNotFirst("images");
 var isBadgesFeed		= isFirst("users") && inPathNotFirst("badges");
-var isReaderPlanUser	= isFirst("users") && inPathNotFirst("reading-plans") && inPathNotFirst("ref");
+
+var isUserReadingPlan   = isFirst("users") && (inPathNotFirst("reading-plans") || inPathNotFirst("saved-reading-plans") || inPathNotFirst("completed-reading-plans"));
 var isUserProfile 		= isFirst("users") && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;

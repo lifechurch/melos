@@ -12,7 +12,7 @@ if Rails.env.development? || Rails.env.test?
     class Zeus::Rails
       def console
         Pry.start
-      end 
+      end
     end
   end
 
