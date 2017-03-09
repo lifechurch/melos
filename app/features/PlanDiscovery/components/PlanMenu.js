@@ -2,14 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 
-import XMark from '../../../components/XMark'
 import PopupMenu from '../../../components/PopupMenu'
 
 class PlanMenu extends Component {
 
 	handleCatchUp = () => {
 		const { onCatchUp } = this.props
-		this.handleToggle()
 		if (typeof onCatchUp === 'function') {
 			onCatchUp()
 		}

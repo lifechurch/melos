@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { routeActions } from 'react-router-redux'
-import ActionCreators from '../../actions/creators'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import PlanNavigation from './PlanNavigation'
 import isFinalReadingForDay, { isFinalPlanDay, dayHasDevo, handleRefUpdate } from '../../../../lib/readingPlanUtils'
