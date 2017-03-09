@@ -6,7 +6,7 @@ import SaveForLaterAction from './SaveForLaterAction'
 function PlanActionButtons({ id, planLinkNode, subscriptionLink, isSubscribed, isSaved }) {
 	return (
 		<div style={{ marginTop: 30, fontSize: 12 }}>
-			<div className="row collapse">
+			<div className="row collapse text-center">
 				<div className="columns small-12">
 					<SubscribeUserAction
 						id={id}
@@ -16,16 +16,14 @@ function PlanActionButtons({ id, planLinkNode, subscriptionLink, isSubscribed, i
 					/>
 				</div>
 			</div>
-			<div className='text-center'>
-				<div className="row collapse">
-					<div className="columns small-12">
-						<SaveForLaterAction
-							id={id}
-							isSaved={isSaved}
-						/>
-						&nbsp;&bull;&nbsp;
-						{ planLinkNode }
-					</div>
+			<div className="row collapse text-center">
+				<div className="columns small-12">
+					<SaveForLaterAction
+						id={id}
+						isSaved={isSaved}
+					/>
+					&nbsp;&bull;&nbsp;
+					{ planLinkNode }
 				</div>
 			</div>
 		</div>
