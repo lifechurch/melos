@@ -137,12 +137,19 @@ class ChapterPicker extends Component {
 
 		// update books and chapters for a new version
 		if (chapter.reference.version_id !== prevProps.chapter.reference.version_id) {
+			const book = (
+				((selectedBook && typeof selectedBook !== 'undefined' && selectedBook in bookMap) ? selectedBook : null) ||
+				((chapter.reference && chapter.reference.usfm) ? chapter.reference.usfm.split('.')[0] : null) ||
+				((books.length > 0) ? books[0].usfm : null) ||
+				'JHN'
+			)
+
 			if (chapter.errors) {
 				this.setState({ listErrorAlert: true })
 			} else {
 				this.setState({
 					books,
-					chapters: books[bookMap[(selectedBook || chapter.reference.usfm.split('.')[0] || books[0].usfm)]].chapters,
+					chapters: books[bookMap[book]].chapters,
 					inputValue: chapter.reference.human,
 				})
 			}
