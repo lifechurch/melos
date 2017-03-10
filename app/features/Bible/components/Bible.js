@@ -16,6 +16,7 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
+import { deepLinkPath } from '../../../lib/readerUtils'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -32,14 +33,6 @@ class Bible extends Component {
 		super(props)
 
 		const { bible } = props
-
-		// if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm) {
-		// 	this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
-		// 	this.selectedChapter = bible.chapter.reference.usfm
-		// 	this.selectedVersion = bible.chapter.reference.version_id
-		// 	this.inputValue = bible.chapter.reference.human
-		// 	this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
-		// }
 
 		const showFootnoes = LocalStore.getIn('reader.settings.showFootnotes')
 		const showVerseNumbers = LocalStore.getIn('reader.settings.showVerseNumbers')
@@ -275,6 +268,9 @@ class Bible extends Component {
 
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
+		let androidDeepLink = null
+		let iosDeepLink = null
+		let deeplink = null
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation) {
 			this.header = (
@@ -366,6 +362,10 @@ class Bible extends Component {
 			metaTitle = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) | ${intl.formatMessage({ id: 'Reader.chapter' })} ${bible.chapter.reference.usfm.split('.').pop()} | ${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 			const strippedChapterText = bible.chapter.content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim()
 			metaContent = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) ${strippedChapterText.substring(0, 170)}`
+			const { android, ios, native } = deepLinkPath(bible.chapter.reference.usfm, bible.version.id, bible.version.local_abbreviation)
+			androidDeepLink = android ? { rel: 'alternate', href: `android-app://com.sirma.mobile.bible.android/youversion/${android}` } : null
+			iosDeepLink = ios ? { rel: 'alternate', href: `ios-app://282935706/youversion/${ios}` } : null
+			deeplink = ios
 		}
 
 		return (
@@ -384,6 +384,17 @@ class Bible extends Component {
 						{ name: 'twitter:title', content: metaTitle },
 						{ name: 'twitter:description', content: `${metaContent.substring(0, 200)}...` },
 						{ name: 'twitter:site', content: '@YouVersion' },
+						androidDeepLink,
+						iosDeepLink,
+						{ name: 'twitter:app:name:iphone', content: 'Bible' },
+						{ name: 'twitter:app:id:iphone', content: '282935706' },
+						{ name: 'twitter:app:name:ipad', content: 'Bible' },
+						{ name: 'twitter:app:id:ipad', content: '282935706' },
+						{ name: 'twitter:app:name:googleplay', content: 'Bible' },
+						{ name: 'twitter:app:id:googleplay', content: 'com.sirma.mobile.bible.android' },
+						{ name: 'twitter:app:url:iphone', content: `youversion://${deeplink}` },
+						{ name: 'twitter:app:url:ipad', content: `youversion://${deeplink}` },
+						{ name: 'twitter:app:url:googleplay', content: `youversion://${deeplink}` },
 					]}
 				/>
 				{ this.header }

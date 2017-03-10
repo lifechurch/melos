@@ -6,7 +6,7 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import ga from 'react-ga'
 import { createHistory } from 'history'
 import createLogger from 'redux-logger'
-
+import cookie from 'react-cookie';
 import configureStore from './store'
 import getRoutes from './routes'
 import BibleActionCreator from '../../features/Bible/actions/creators'
@@ -51,7 +51,7 @@ addLocaleData(window.__LOCALE__.data)
 function requireChapterData(nextState, replace, callback) {
 	const currentState = store.getState()
 
-	const {
+	let {
 		params: {
 			version: nextVersion,
 			book: nextBook,
@@ -80,7 +80,12 @@ function requireChapterData(nextState, replace, callback) {
 		isInitialLoad = true
 	}
 
-	const nextUsfm = `${nextBook}.${nextChapter}`
+	let nextUsfm = `${nextBook}.${nextChapter}`
+	if (!nextVersion) { nextVersion = cookie.load('version') || '1' }
+	if (!nextChapter) {
+		nextUsfm = cookie.load('last_read') || 'JHN.1'
+	}
+
 	const hasVersionChanged = isInitialLoad || (currentVersion ? (nextVersion.toString() !== currentVersion.toString()) : true)
 	const hasChapterChanged = isInitialLoad || hasVersionChanged || (nextUsfm ? (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) : true)
 
