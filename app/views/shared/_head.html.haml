@@ -28,29 +28,29 @@
   %meta{property: "og:image", content: url_for(image_path(localized_bible_icon(200)))}
   = render '/shared/hreflang'
   -# render legacy deeplink for reader separate from the one further down
-  - ref_deep_link = "#{@presenter.reference.deep_link_path}"
-  - deep_link = "youversion://#{ref_deep_link}" if ref_deep_link.present?
+  -#- ref_deep_link = "#{@presenter.reference.deep_link_path}"
+  -#- deep_link = "youversion://#{ref_deep_link}" if ref_deep_link.present?
 
-  - if ref_deep_link.present?
-    %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{ref_deep_link.gsub('version_id','version')}"}
-    %link{rel: "alternate", href: "ios-app://282935706/youversion/#{ref_deep_link}"}
+  -#- if ref_deep_link and ref_deep_link.present?
+  -#  %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{ref_deep_link.gsub('version_id','version')}"}
+  -#  %link{rel: "alternate", href: "ios-app://282935706/youversion/#{ref_deep_link}"}
 
-  - if @presenter.verses.present?
-    -#- meta_description = truncate(get_verse_content(presenter.content), length: 170, separator: " ")
-    -#%title = truncate("#{@presenter.reference.human}, #{@presenter.version} #{meta_description}", length: 200, separator: " ")
-    - @subtitle = ''  # we don't want subtitle appended to single verse title so the verse gets more text space
-    %meta{name: "twitter:card",             content: "summary"}
+  -#- if @presenter.present? and @presenter.verses.present?
+  -#  -#- meta_description = truncate(get_verse_content(presenter.content), length: 170, separator: " ")
+  -#  -#%title = truncate("#{@presenter.reference.human}, #{@presenter.version} #{meta_description}", length: 200, separator: " ")
+  -#  - @subtitle = ''  # we don't want subtitle appended to single verse title so the verse gets more text space
+  -#  %meta{name: "twitter:card",             content: "summary"}
 
-    - if deep_link.present?
-      %meta{name: "twitter:app:name:iphone",  content:"Bible"}
-      %meta{name: "twitter:app:id:iphone",    content:"282935706"}
-      %meta{name: "twitter:app:url:iphone",   content: deep_link}
-      %meta{name: "twitter:app:name:ipad",    content:"Bible"}
-      %meta{name: "twitter:app:id:ipad",      content:"282935706"}
-      %meta{name: "twitter:app:url:ipad",     content: deep_link}
-      %meta{name: "twitter:app:name:googleplay",  content:"Bible"}
-      %meta{name: "twitter:app:id:googleplay",    content:"com.sirma.mobile.bible.android"}
-      %meta{name: "twitter:app:url:googleplay",   content: deep_link }
+    -#- if deep_link and deep_link.present?
+    -#  %meta{name: "twitter:app:name:iphone",  content:"Bible"}
+    -#  %meta{name: "twitter:app:id:iphone",    content:"282935706"}
+    -#  %meta{name: "twitter:app:url:iphone",   content: deep_link}
+    -#  %meta{name: "twitter:app:name:ipad",    content:"Bible"}
+    -#  %meta{name: "twitter:app:id:ipad",      content:"282935706"}
+    -#  %meta{name: "twitter:app:url:ipad",     content: deep_link}
+    -#  %meta{name: "twitter:app:name:googleplay",  content:"Bible"}
+    -#  %meta{name: "twitter:app:id:googleplay",    content:"com.sirma.mobile.bible.android"}
+    -#  %meta{name: "twitter:app:url:googleplay",   content: deep_link }
 
 
 
