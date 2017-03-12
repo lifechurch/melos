@@ -181,13 +181,16 @@
 
 // label
 
-input {
-	border: none;
-	.yv-text-ellipsis;
-}
 .picker-label {
 	display: inline-flex;
 	border-bottom: @thin-grey-border;
+	input {
+		border: 1px solid white;
+		.yv-text-ellipsis;
+	}
+	input:hover {
+		border: @thin-grey-border;
+	}
 }
 .dropdown-arrow-container {
 	width: 38px;
@@ -212,7 +215,7 @@ input {
 .chapter-picker-container {
 	.modal {
 		top: 52px;
-		margin-left: 15px;
+		margin-left: -60px;
 		.absolute-horizontal-center;
 	}
 }
