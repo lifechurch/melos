@@ -79,7 +79,6 @@ staging:
   api_root: youversionapi.com
   api_referer: web.youversionapi.com
   api_version: "3.1"
-  memcache_server: memcache.yv.local
   api_default_timeout: 15
   rack_execution_timeout: 15
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
@@ -87,10 +86,10 @@ staging:
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-  event_import_url: "https://events-staging.bible.com/featureImport/"
-  event_api_host: "events-staging.bible.com"
-#  event_import_url: "https://events.bible.com/featureImport/"
-#  event_api_host: "events.bible.com"
+#  event_import_url: "https://events-staging.bible.com/featureImport/"
+#  event_api_host: "events-staging.bible.com"
+  event_import_url: "https://events.bible.com/featureImport/"
+  event_api_host: "events.bible.com"
 
 review01:
   api_root: youversionapi.com
