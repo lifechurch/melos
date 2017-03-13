@@ -16,7 +16,7 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
-import { deepLinkPath } from '../../../lib/readerUtils'
+import { deepLinkPath, buildMeta } from '../../../lib/readerUtils'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -272,6 +272,8 @@ class Bible extends Component {
 		let iosDeepLink = null
 		let deeplink = null
 
+		const meta = buildMeta({ hosts, version: bible.version, usfm: bible.chapter.reference.usfm })
+
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation) {
 			this.header = (
 				<Header sticky={true} classes={'reader-header horizontal-center'}>
@@ -387,6 +389,10 @@ class Bible extends Component {
 						{ name: 'twitter:app:url:iphone', content: `youversion://${deeplink}` },
 						{ name: 'twitter:app:url:ipad', content: `youversion://${deeplink}` },
 						{ name: 'twitter:app:url:googleplay', content: `youversion://${deeplink}` },
+						...meta.meta
+					]}
+					link={[
+						...meta.link
 					]}
 				/>
 				{ this.header }

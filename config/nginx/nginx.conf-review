@@ -45,7 +45,8 @@ http {
       passenger_app_type node;
       passenger_app_env development;
       passenger_startup_file bin/www;
-
+      passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
+			
       location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
           gzip_static on;
           expires     max;

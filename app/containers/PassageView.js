@@ -33,6 +33,7 @@ function mapStateToProps(state) {
 	return {
 		passage: (state.passage) ? state.passage : {},
 		auth: (state.auth),
+		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag,
 		altVersions: state.altVersions
 	}
