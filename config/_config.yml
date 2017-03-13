@@ -69,6 +69,8 @@ development:
   #event_import_url: "https://events-review.bible.com/featureImport/"
   #event_api_host: "events-review.bible.com"
 
+#  event_import_url: "https://events.bible.com/featureImport/"
+#  event_api_host: "events.bible.com"
 
 staging:
   api_root: youversionapistaging.com
@@ -86,6 +88,8 @@ staging:
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
   event_import_url: "https://events-staging.bible.com/featureImport/"
   event_api_host: "events-staging.bible.com"
+#  event_import_url: "https://events.bible.com/featureImport/"
+#  event_api_host: "events.bible.com"
 
 review01:
   api_root: youversionapi.com
