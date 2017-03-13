@@ -128,7 +128,7 @@ class Bible extends Component {
 	getVersions = (languageTag) => {
 		const { dispatch } = this.props
 		this.setState({ selectedLanguage: languageTag })
-		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag })).then((versions) => {
+		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
 			Filter.clear('VersionStore')
 			Filter.add('VersionStore', versions.versions)
 		})

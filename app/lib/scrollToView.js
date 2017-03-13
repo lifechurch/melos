@@ -23,9 +23,7 @@ export default function scrollList(elementToView, elementContainer, listElement)
 		listItem = parseInt(listElement.querySelector('li:first-of-type').offsetHeight, 10)
 		// actually do the scrolling now
 		// scroll the top of the list to show the elementToView on the bottom
-		console.log('element nums', (topPos - (containerHeight - listItem)))
 		listElement.scrollTop = (topPos - (containerHeight - listItem))
-		console.log('scrolltio is', listElement.scrollTop)
 	}
 
 	return null

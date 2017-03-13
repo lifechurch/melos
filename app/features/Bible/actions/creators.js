@@ -62,7 +62,7 @@ const ActionCreators = {
 								reject(newVersion.errors)
 							} else {
 								resolve(
-									dispatch(ActionCreators.bibleVersions({ language_tag: newVersion.language.language_tag }))
+									dispatch(ActionCreators.bibleVersions({ language_tag: newVersion.language.language_tag, type: 'all' }))
 								)
 							}
 						})
