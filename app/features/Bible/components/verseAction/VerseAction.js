@@ -39,8 +39,7 @@ class VerseAction extends Component {
 						id,
 						references: verses,
 						format: 'html',
-						local_abbreviation
-					}))
+					}, { local_abbreviation }))
 					this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
 					// hide the modal on moment create
 					this.closeMe()

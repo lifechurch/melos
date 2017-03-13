@@ -62,7 +62,7 @@ const ActionCreators = {
 								reject(newVersion.errors)
 							} else {
 								resolve(
-									dispatch(ActionCreators.bibleVersions({ language_tag: newVersion.language.language_tag, type: 'all' }))
+									dispatch(ActionCreators.bibleVersions({ language_tag: newVersion.language.language_tag }))
 								)
 							}
 						})
@@ -215,9 +215,10 @@ const ActionCreators = {
 	 * @references		verse, or range of verses to get
 	 * @format				html by default, or text
 	 */
-	bibleVerses(params) {
+	bibleVerses(params, extras) {
 		return {
 			params,
+			extras,
 			api_call: {
 				endpoint: 'bible',
 				method: 'verses',

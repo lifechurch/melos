@@ -113,7 +113,7 @@
 .chapter-picker-container, .version-picker-container {
 	display: inline-flex;
 	.picker-label { flex: 0 1 auto; }
-	input { width: 100%; }
+	@media @small-only { input { width: 100%; } }
 }
 .version-picker-container {
 	.picker-label input {

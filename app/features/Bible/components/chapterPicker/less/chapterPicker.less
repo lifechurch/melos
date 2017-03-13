@@ -180,17 +180,18 @@
 
 
 // label
-
+input {
+	border: none;
+	.yv-text-ellipsis;
+}
 .picker-label {
 	display: inline-flex;
 	border-bottom: @thin-grey-border;
-	input {
-		border: 1px solid white;
-		.yv-text-ellipsis;
-	}
-	input:hover {
-		border: @thin-grey-border;
-	}
+	transition: box-shadow 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.picker-label:hover {
+	border-bottom: 1px solid @green;
+	// box-shadow: 0 2px 2px 0 rgba(0,0,0,0.13), 0 0 0 1px rgba(0,0,0,0.05);
 }
 .dropdown-arrow-container {
 	width: 38px;
@@ -215,7 +216,7 @@
 .chapter-picker-container {
 	.modal {
 		top: 52px;
-		margin-left: -60px;
+		margin-left: -70px;
 		.absolute-horizontal-center;
 	}
 }

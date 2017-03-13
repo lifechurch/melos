@@ -128,7 +128,7 @@ class Bible extends Component {
 	getVersions = (languageTag) => {
 		const { dispatch } = this.props
 		this.setState({ selectedLanguage: languageTag })
-		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
+		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag })).then((versions) => {
 			Filter.clear('VersionStore')
 			Filter.add('VersionStore', versions.versions)
 		})
@@ -165,8 +165,8 @@ class Bible extends Component {
 				id,
 				references: verseSelection.verses,
 				format: 'text',
-				local_abbreviation
-			})).then((response) => {
+			}, { local_abbreviation }
+			)).then((response) => {
 				this.setState({
 					verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
 						text: response.verses.reduce((acc, curr, index) => {
@@ -320,14 +320,6 @@ class Bible extends Component {
 					<div className='content'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					{/* <div className='row buttons'>
-						<button className='chapter-button solid-button' onClick={this.chapterPickerInstance ? this.chapterPickerInstance.handleDropDownClick : () => {}}>
-							<FormattedMessage id="Reader.chapterpicker.chapter label" />
-						</button>
-						<button className='chapter-button solid-button' onClick={this.versionPickerInstance ? this.versionPickerInstance.handleDropDownClick : () => {}}>
-							<FormattedMessage id="Reader.versionpicker.version label" />
-						</button>
-					</div> */}
 				</div>
 			)
 		} else if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm && bible.version && bible.version.language && bible.chapter.content) {

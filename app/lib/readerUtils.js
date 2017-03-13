@@ -55,8 +55,8 @@ export function handleVerseSelect(
 			id,
 			references: verseSelection.verses,
 			format: 'text',
-			local_abbreviation
-		})).then((response) => {
+		}, { local_abbreviation }))
+		.then((response) => {
 			refToThis.setState({
 				verseSelection: Immutable.fromJS(refToThis.state.verseSelection).merge({
 					text: response.verses.reduce((acc, curr, index) => {

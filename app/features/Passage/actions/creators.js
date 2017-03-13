@@ -11,6 +11,7 @@ const ActionCreators = {
 		return dispatch => {
 			return new Promise((resolve) => {
 				const { isInitialLoad, hasVerseChanged, passage, versions, language_tag } = params
+
 				const refArray = passage.split('.')
 				const chapUSFM = refArray.slice(0, 2).join('.')
 				const verseORVerseRange = refArray.pop()
@@ -44,7 +45,7 @@ const ActionCreators = {
 
 					versions.forEach((id) => {
 						promises.push(
-							dispatch(ActionCreators.bibleVersion({ id, passage }))
+							dispatch(ActionCreators.bibleVersion({ id }))
 						)
 					})
 				}
@@ -52,7 +53,7 @@ const ActionCreators = {
 				if (isInitialLoad || hasVerseChanged) {
 					promises.push(
 						dispatch(ActionCreators.readingPlansByReference({ usfm: passage, language_tag })),
-						dispatch(ActionCreators.bibleVerses({ ids: versions, references: versesArray, format: 'html', passage }))
+						dispatch(ActionCreators.bibleVerses({ ids: versions, references: versesArray }, { passage }))
 					)
 				}
 
@@ -77,9 +78,10 @@ const ActionCreators = {
 	 * @references		verse, or range of verses to get
 	 * @format				html by default, or text
 	 */
-	bibleVerses(params) {
+	bibleVerses(params, extras) {
 		return {
 			params,
+			extras,
 			api_call: {
 				endpoint: 'bible',
 				method: 'verses',
