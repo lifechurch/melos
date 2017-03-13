@@ -12,7 +12,6 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersesSuccess'):
 			const content = {}
 			const references = []
-			console.log(action)
 			if (typeof action.response.verses === 'undefined') {
 				return state
 			}
