@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import CustomScroll from 'react-custom-scroll'
 import Books from './Books'
 import Chapters from './Chapters'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import CustomScroll from 'react-custom-scroll'
 
 class ChapterPickerModal extends Component {
 
@@ -28,7 +27,7 @@ class ChapterPickerModal extends Component {
 		let books, chapters = null
 
 		// apply the correct mobile class from the click handlers passed down
-		let classNames = (classes) ? `chapter-picker-modal ${classes}` : 'chapter-picker-modal'
+		const classNames = (classes) ? `chapter-picker-modal ${classes}` : 'chapter-picker-modal'
 
 		/**
 		 * 	3 scenarios of rendering:
@@ -68,7 +67,7 @@ class ChapterPickerModal extends Component {
 				<div className='book-container'>
 					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
 					<CustomScroll allowOuterScroll={false}>
-						<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver}/>
+						<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver} />
 					</CustomScroll>
 				</div>
 			)
@@ -148,18 +147,18 @@ class ChapterPickerModal extends Component {
  *
  */
 ChapterPickerModal.propTypes = {
-	bookList: React.PropTypes.array,
-	chapterList: React.PropTypes.object,
-	selectedBook: React.PropTypes.string,
-	selectedChapter: React.PropTypes.string,
-	getBook: React.PropTypes.func,
-	versionID: React.PropTypes.number,
-	classes: React.PropTypes.string,
-	toggle: React.PropTypes.func,
-	booklistSelectionIndex: React.PropTypes.number,
-	chapterlistSelectionIndex: React.PropTypes.number,
-	onMouseOver: React.PropTypes.func,
-	alert: React.PropTypes.bool
+	bookList: PropTypes.array,
+	chapterList: PropTypes.object,
+	selectedBook: PropTypes.string,
+	selectedChapter: PropTypes.string,
+	getBook: PropTypes.func,
+	versionID: PropTypes.number,
+	classes: PropTypes.string,
+	toggle: PropTypes.func,
+	booklistSelectionIndex: PropTypes.number,
+	chapterlistSelectionIndex: PropTypes.number,
+	onMouseOver: PropTypes.func,
+	alert: PropTypes.bool
 }
 
 export default ChapterPickerModal

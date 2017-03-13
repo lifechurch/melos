@@ -12,18 +12,19 @@ export default function scrollList(elementToView, elementContainer, listElement)
 
 	if (typeof window !== 'undefined' && elementToView && elementContainer && listElement) {
 		temp = window.getComputedStyle(elementContainer, null).getPropertyValue('padding-top')
-		temp = parseInt(temp) + parseInt(window.getComputedStyle(elementContainer, null).getPropertyValue('padding-bottom'))
+		temp = parseInt(temp, 10) + parseInt(window.getComputedStyle(elementContainer, null).getPropertyValue('padding-bottom'), 10)
 		// temp holds the top and bottom padding
 		// usable space is the offsetHeight - padding
-		containerHeight = elementContainer.offsetHeight - temp
+		containerHeight = parseInt(elementContainer.offsetHeight - temp, 10)
 		// amount of pixels away from the top of the container
-		topPos = elementToView.offsetTop
-		if (!containerHeight || !topPos) return false
+		topPos = parseInt(elementToView.offsetTop, 10)
+		if (!containerHeight || !topPos || Number.isNaN(containerHeight) || Number.isNaN(topPos)) return null
 		// get the height of the the first list item in the list to scroll
-		listItem = listElement.querySelector('li:first-of-type').offsetHeight
+		listItem = parseInt(listElement.querySelector('li:first-of-type').offsetHeight, 10)
 		// actually do the scrolling now
 		// scroll the top of the list to show the elementToView on the bottom
 		listElement.scrollTop = (topPos - (containerHeight - listItem))
 	}
 
+	return null
 }

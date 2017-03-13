@@ -55,8 +55,8 @@ export function handleVerseSelect(
 			id,
 			references: verseSelection.verses,
 			format: 'text',
-			local_abbreviation
-		})).then((response) => {
+		}, { local_abbreviation }))
+		.then((response) => {
 			refToThis.setState({
 				verseSelection: Immutable.fromJS(refToThis.state.verseSelection).merge({
 					text: response.verses.reduce((acc, curr, index) => {
@@ -104,4 +104,26 @@ export function getVerseAudioTiming(startRef, endRef, timing) {
 	}
 
 	return { startTime, endTime }
+}
+
+
+export function deepLinkPath(chapUsfm, versionID, versionAbbr, verseNum = null) {
+	if (!chapUsfm) { return null }
+	let android, ios, native
+
+	if (verseNum && versionID) {
+		ios = `bible?reference=${chapUsfm}.${verseNum}&version_id=${versionID}`
+		android = `bible?reference=${chapUsfm}.${verseNum}&version=${versionID}`
+		native = `bible?reference=${chapUsfm}.${verseNum}.${versionAbbr}&version=${versionID}`
+	} else if (versionID) {
+		ios = `bible?reference=${chapUsfm}&version_id=${versionID}`
+		android = `bible?reference=${chapUsfm}&version=${versionID}`
+		native = `bible?reference=${chapUsfm}.${versionAbbr}&version=${versionID}`
+	} else {
+		ios = `bible?reference=${chapUsfm}`
+		android = `bible?reference=${chapUsfm}`
+		native = `bible?reference=${chapUsfm}`
+	}
+
+	return { android, ios, native }
 }
