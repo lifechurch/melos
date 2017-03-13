@@ -48,6 +48,7 @@ http {
       passenger_startup_file bin/www;
       passenger_min_instances 16;
       passenger_max_instances 16;
+      passenger_env_var MEMCACHE_SERVERS memcache.yv.local:11211;
 
       location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
           gzip_static on;
