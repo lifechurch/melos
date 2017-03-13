@@ -14,7 +14,7 @@ export default function reducer(state = {}, action) {
 
 		case type('bibleVersesRequest'):
 			return (function bibleVersesRequest() {
-				const { params: { ids, passage } } = action
+				const { params: { ids }, extras: { passage } } = action
 				if (Array.isArray(ids) && ids.length > 0) {
 					return Immutable
 						.fromJS(state)

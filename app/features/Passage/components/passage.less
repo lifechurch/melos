@@ -173,8 +173,8 @@
 		  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 		}
 		.card:hover {
-		  -webkit-transform: scale(1.05, 1.05);
-		  transform: scale(1.05, 1.05);
+		  -webkit-transform: scale(1.03, 1.03);
+		  transform: scale(1.03, 1.03);
 		}
 		.card:hover::after {
 			opacity: 1 !important;
@@ -274,13 +274,12 @@
 		.verse-content {
 			display: inline-block !important;
 			margin-top: 15px;
-
-			.verse {
-				-webkit-font-smoothing: subpixel-antialiased;
-			}
 		}
 	}
 
+	.verse, .verse * {
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
 
 }
 

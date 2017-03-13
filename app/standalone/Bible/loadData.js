@@ -17,8 +17,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 	return new Promise((resolve) => {
 		if (typeof store !== 'undefined' && ('url' in params) && ('languageTag' in params)) {
 			const BIBLE 						= new RegExp('^\/bible$') // /bible
-			const CHAPTER_NOTV 			= new RegExp('^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9a-zA-Z]+$') 																// /bible/1/mat.1
-			const VERSE_NOTV 				= new RegExp('^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9a-zA-Z]+\.[0-9\-,]+$') 									// /bible/1/mat.1.1
+			const CHAPTER_NOTV 			= new RegExp('^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9a-zA-Z]+$') 																					// /bible/1/mat.1
+			const VERSE_NOTV 				= new RegExp('^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9a-zA-Z]+\.[0-9\-,]+$') 																// /bible/1/mat.1.1
 			const CHAPTER  					= new RegExp('^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9a-zA-Z]+\.[a-zA-z]{1}[a-zA-Z0-9]+$') 									// /bible/1/mat.1.kjv
 			const VERSE  						= new RegExp('^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9a-zA-Z]+\.[0-9\-,]+\.[a-zA-z]{1}[a-zA-Z0-9]+$') 			// /bible/1/mat.1.1-4,6.kjv
 			const CHAPTER_NOTV_CV  	= new RegExp('^\/bible\/[a-zA-z]{1}[a-zA-Z0-9]+\/[0-9a-zA-Z]{3}\.[0-9a-zA-Z]+$') 													// /bible/kjv/mat.1

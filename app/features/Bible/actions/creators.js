@@ -73,7 +73,7 @@ const ActionCreators = {
 			if (isInitialLoad || hasChapterChanged) {
 				promises.push(
 					new Promise((resolve, reject) => {
-						dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase(), format: 'html', language_tag, showError })).then((data) => {
+						dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase() }, { showError })).then((data) => {
 							if ('errors' in data) {
 								reject(data.errors)
 							} else {
@@ -111,7 +111,7 @@ const ActionCreators = {
 			const { id, reference } = params
 			return Promise.all([
 				dispatch(ActionCreators.bibleVersion({ id })),
-				dispatch(ActionCreators.bibleChapter({ id, reference: reference.toUpperCase(), format: 'html' }))
+				dispatch(ActionCreators.bibleChapter({ id, reference: reference.toUpperCase() }))
 			])
 		}
 	},
@@ -175,9 +175,10 @@ const ActionCreators = {
    * @reference: USFM
    * @format: html/text
 	 */
-	bibleChapter(params) {
+	bibleChapter(params, extras) {
 		return {
 			params,
+			extras,
 			api_call: {
 				endpoint: 'bible',
 				method: 'chapter',
@@ -214,9 +215,10 @@ const ActionCreators = {
 	 * @references		verse, or range of verses to get
 	 * @format				html by default, or text
 	 */
-	bibleVerses(params) {
+	bibleVerses(params, extras) {
 		return {
 			params,
+			extras,
 			api_call: {
 				endpoint: 'bible',
 				method: 'verses',

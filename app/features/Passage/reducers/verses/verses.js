@@ -11,7 +11,7 @@ export default function reducer(state = {}, action) {
 
 				const {
 					response: { verses },
-					params: {
+					extras: {
 						passage
 					}
 				} = action

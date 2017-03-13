@@ -1,11 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
 import { routeActions } from 'react-router-redux'
-import ActionCreators from '../../actions/creators'
 import Filter from '../../../../lib/filter'
 import scrollList from '../../../../lib/scrollToView'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import cookie from 'react-cookie';
 import ChapterPickerModal from './ChapterPickerModal'
 import Label from './Label'
 import DropdownTransition from '../../../../components/DropdownTransition'
@@ -137,12 +133,19 @@ class ChapterPicker extends Component {
 
 		// update books and chapters for a new version
 		if (chapter.reference.version_id !== prevProps.chapter.reference.version_id) {
+			const book = (
+				((selectedBook && typeof selectedBook !== 'undefined' && selectedBook in bookMap) ? selectedBook : null) ||
+				((chapter.reference && chapter.reference.usfm) ? chapter.reference.usfm.split('.')[0] : null) ||
+				((books.length > 0) ? books[0].usfm : null) ||
+				'JHN'
+			)
+
 			if (chapter.errors) {
 				this.setState({ listErrorAlert: true })
 			} else {
 				this.setState({
 					books,
-					chapters: books[bookMap[(selectedBook || chapter.reference.usfm.split('.')[0] || books[0].usfm)]].chapters,
+					chapters: books[bookMap[book]].chapters,
 					inputValue: chapter.reference.human,
 				})
 			}
@@ -179,7 +182,7 @@ class ChapterPicker extends Component {
 	// this handles the class toggling for book and chapter clicks on mobile
 	toggleChapterPickerList() {
 		const { classes } = this.state
-		classes == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
+		classes === 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
 	}
 
 
@@ -198,7 +201,7 @@ class ChapterPicker extends Component {
 		this.setState({ inputValue, listErrorAlert: false, filtering: true })
 
 		// if the input already matches a book exactly, let's filter chapters
-		if (results.length > 0 && `${results[0].human} ` == inputValue) {
+		if (results.length > 0 && `${results[0].human} ` === inputValue) {
 			// getBook will set state appropriately
 			this.getBook(results[0], true)
 
@@ -208,7 +211,7 @@ class ChapterPicker extends Component {
 			const chapterSplit = inputValue.split(' ')
 			const chapterNum = parseInt(chapterSplit[chapterSplit.length - 1], 10)
 
-			if (chapterNum == 'undefined') {
+			if (Number.isNaN(chapterNum)) {
 				this.setState({
 					chapterlistSelectionIndex: 0
 				})
@@ -223,7 +226,7 @@ class ChapterPicker extends Component {
 		} else if (results.length > 0) {
 			this.setState({ books: results, chapters: null, dropdown: true, booklistSelectionIndex: 0 })
 			// show books if we weren't already on mobile
-			if (classes == 'hide-books') {
+			if (classes === 'hide-books') {
 				this.toggleChapterPickerList()
 			}
 		}
@@ -302,9 +305,9 @@ class ChapterPicker extends Component {
 	 * @param      {number}  index    The index of the book or chapter being hovered over
 	 */
 	handleListHover(context, index) {
-		if (context == 'books') {
+		if (context === 'books') {
 			this.setState({ booklistSelectionIndex: index })
-		} else if (context == 'chapters') {
+		} else if (context === 'chapters') {
 			this.setState({ chapterlistSelectionIndex: index })
 		}
 	}
@@ -335,7 +338,7 @@ class ChapterPicker extends Component {
 		if (this.state.books && !this.state.chapters) {
 			this.setState({ chapterlistSelectionIndex: 0 })
 
-			if (keyEventName == 'ArrowUp') {
+			if (keyEventName === 'ArrowUp') {
 				event.preventDefault()
 
 				if (booklistSelectionIndex > 0) {
@@ -344,7 +347,7 @@ class ChapterPicker extends Component {
 					this.setState({ booklistSelectionIndex: this.state.books.length - 1 })
 				}
 			}
-			if (keyEventName == 'ArrowDown') {
+			if (keyEventName === 'ArrowDown') {
 				event.preventDefault()
 
 				if (booklistSelectionIndex < this.state.books.length - 1) {
@@ -353,7 +356,7 @@ class ChapterPicker extends Component {
 					this.setState({ booklistSelectionIndex: 0 })
 				}
 			}
-			if (keyEventName == 'Enter' || keyEventName == 'ArrowRight') {
+			if (keyEventName === 'Enter' || keyEventName === 'ArrowRight') {
 				event.preventDefault()
 				//
 				this.getBook(this.state.books[booklistSelectionIndex], true)
@@ -365,7 +368,7 @@ class ChapterPicker extends Component {
 			this.setState({ booklistSelectionIndex: 0 })
 			const chapterKeys = Object.keys(books[bookMap[selectedBook]].chapters)
 
-			if (keyEventName == 'ArrowUp') {
+			if (keyEventName === 'ArrowUp') {
 				event.preventDefault()
 
 				if (chapterlistSelectionIndex > 4) {
@@ -374,7 +377,7 @@ class ChapterPicker extends Component {
 					this.setState({ chapterlistSelectionIndex: 0 })
 				}
 			}
-			if (keyEventName == 'ArrowDown') {
+			if (keyEventName === 'ArrowDown') {
 				event.preventDefault()
 
 				if (chapterlistSelectionIndex < chapterKeys.length - 6) {
@@ -383,7 +386,7 @@ class ChapterPicker extends Component {
 					this.setState({ chapterlistSelectionIndex: chapterKeys.length - 1 })
 				}
 			}
-			if (keyEventName == 'ArrowLeft') {
+			if (keyEventName === 'ArrowLeft') {
 				event.preventDefault()
 
 				if (chapterlistSelectionIndex > 0) {
@@ -392,7 +395,7 @@ class ChapterPicker extends Component {
 					this.setState({ chapterlistSelectionIndex: chapterKeys.length - 1 })
 				}
 			}
-			if (keyEventName == 'ArrowRight') {
+			if (keyEventName === 'ArrowRight') {
 				event.preventDefault()
 
 				if (chapterlistSelectionIndex < chapterKeys.length - 1) {
@@ -401,7 +404,7 @@ class ChapterPicker extends Component {
 					this.setState({ chapterlistSelectionIndex: 0 })
 				}
 			}
-			if (keyEventName == 'Enter') {
+			if (keyEventName === 'Enter') {
 				const chapIndex = chapterKeys[chapterlistSelectionIndex]
 				const chapURL = this.props.localizedLink(`/bible/${versionID}/${(books[bookMap[selectedBook]].chapters)[chapIndex].usfm}.${this.props.params.vabbr}`)
 				dispatch(routeActions.push(chapURL))
