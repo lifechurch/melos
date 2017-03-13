@@ -16,13 +16,142 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
-
+import LocaleList from '../../../../locales/config/localeList.json'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
 	fontSize: 18,
 	showFootnotes: true,
 	showVerseNumbers: true
+}
+
+// From Rails - Refactored
+function getBibleLink(reference) {
+	const {
+		verses, // array
+		book, // string
+		chapter, // string
+		version_string, // string
+		version, // number
+	} = reference
+
+	let refPath
+
+	if (Array.isArray(verses) && !!verses.length) {
+		if (verses.length > 1) {
+			refPath = `${version}/${book.downcase}.${chapter}.${verses.first}-${verses.last}.${version_string.downcase}`
+		}
+
+		if (verses.length === 1) {
+			refPath = `${version}/${book.downcase}.${chapter}.${verses.first}.${version_string.downcase}`
+		}
+	} else {
+		refPath = `${version}/${book.downcase}.${chapter}.${version_string.downcase}`
+	}
+
+	return `/bible/${refPath}`
+}
+
+// From Rails - Refactored
+function buildMeta() {
+	const { localizedLink } = this.props
+
+	let canonicalHref
+	let defaultHref
+	let showCanonical
+
+	const link = []
+	const meta = []
+
+	// we need this
+	const I18n = {
+		locale: 'en'
+	}
+
+	// we need this too!
+	const version = {
+		language: {
+			language_tag: 'en'
+		}
+	}
+
+	// need this also
+	const request = {
+		protocol: 'https',
+		host_with_port: 'www.bible.com'
+	}
+
+	// need this too
+	const reference = {
+		verses: [],
+		book: '',
+		chapter: '',
+		version_string: '',
+		version: 1
+	}
+
+	LocaleList.forEach((locale) => {
+		const fullPath = localizedLink(getBibleLink(reference))
+		const href = `${request.protocol}${request.host_with_port}${fullPath}`
+
+		if (reference) {
+
+		}
+
+		if (showCanonical) {
+
+			if (locale.locale2 === 'en' && typeof canonicalHref === 'undefined') {
+				canonicalHref = href // used for all versions not currently localized
+				defaultHref = href
+			}
+
+			if (version.language.language_tag === (locale.locale2 === 'pt' ? 'pt-BR' : locale.locale2)) {  // so that pt-BR versions will match
+				canonicalHref = href // used for versions that are localized (eg.  Afrikaans versions canonical url is af)
+
+				if ((I18n.locale === 'en' && locale.locale2 !== 'en') || (I18n.locale !== 'en' && locale.locale2 === I18n.locale)) {
+					link.push({ href: defaultHref, rel: 'alternate', hreflang: 'en' })
+					link.push({ href: defaultHref, rel: 'alternate', hreflang: 'x-default' })
+					link.push({ href, rel: 'alternate', hreflang: `${locale.locale2.downcase}` })
+
+					if (locale.locale2 === 'zh-TW') {
+						link.push({ href, rel: 'alternate', hreflang: 'zh-hk' })
+					}
+
+					if (locale.locale2 === 'es') {
+						link.push({ href, rel: 'alternate', hreflang: 'es-419' })
+						link.push({ href, rel: 'alternate', hreflang: 'es-us' })
+					}
+
+				}
+			}
+
+		} else {
+
+			link.push({ href, rel: 'alternate', hreflang: `${locale.locale2.downcase}` })
+
+			if (locale.locale2 === 'zh-TW') {
+				link.push({ href, rel: 'alternate', hreflang: 'zh-hk' })
+			}
+
+			if (locale.locale2 === 'es') {
+				link.push({ href, rel: 'alternate', hreflang: 'es-419' })
+				link.push({ href, rel: 'alternate', hreflang: 'es-us' })
+			}
+
+			if (locale.locale2 === 'en') {
+				link.push({ href, rel: 'alternate', hreflang: 'x-default' })
+			}
+
+		}
+	})
+
+	if (canonicalHref !== null && typeof canonicalHref !== 'undefined') {
+		link.push({ rel: 'canonical', href: canonicalHref })
+		meta.push({ property: 'og:url', content: canonicalHref })
+		meta.push({ property: 'twitter:url', content: canonicalHref })
+	}
+
+	return { link, meta }
 }
 
 
@@ -276,6 +405,8 @@ class Bible extends Component {
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
 
+		const meta = buildMeta()
+
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation) {
 			this.header = (
 				<Header sticky={true} classes={'reader-header horizontal-center'}>
@@ -384,6 +515,10 @@ class Bible extends Component {
 						{ name: 'twitter:title', content: metaTitle },
 						{ name: 'twitter:description', content: `${metaContent.substring(0, 200)}...` },
 						{ name: 'twitter:site', content: '@YouVersion' },
+						...meta.meta
+					]}
+					link={[
+						...meta.link
 					]}
 				/>
 				{ this.header }
