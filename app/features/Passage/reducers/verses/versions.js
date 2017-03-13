@@ -20,7 +20,8 @@ export default function reducer(state = {}, action) {
 						id,
 						local_abbreviation,
 						local_title,
-						copyright_short
+						copyright_short,
+						language
 					},
 					params: {
 						passage
@@ -33,7 +34,8 @@ export default function reducer(state = {}, action) {
 							id,
 							local_abbreviation,
 							local_title,
-							copyright_short
+							copyright_short,
+							language
 						}
 					}
 				}).toJS()

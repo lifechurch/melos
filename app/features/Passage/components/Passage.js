@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
-
+import { buildMeta } from '../../../lib/readerUtils'
 import VerseCard from '../../Bible/components/verseAction/bookmark/VerseCard'
 import Share from '../../Bible/components/verseAction/share/Share'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
@@ -19,13 +19,14 @@ function scrollToRelatedPlans() {
 }
 
 function Passage(props) {
-	let mainVerse, metaContent, metaTitle, chapterLink = null
+	let mainVerse, metaContent, metaTitle, metaLink, chapterLink = null
 
 	const {
 		passage,
 		localizedLink,
 		intl,
 		isRtl,
+		hosts,
 		params: {
 			book,
 			chapter,
@@ -47,7 +48,6 @@ function Passage(props) {
 	const verseKey = `${book}.${chapter}.${verseNumber}`.toUpperCase()
 
 	let primaryVersion = {}
-
 	// main verse and verse cards
 	const verseCards = []
 	if (typeof verses === 'object') {
@@ -70,7 +70,7 @@ function Passage(props) {
 							</h2>
 						</a>
 						<Link
-							to={localizedLink(`/bible/${verse.version}/${verse.usfm}.${version.local_abbreviation}`)}
+							to={localizedLink(`/bible/${verse.version}/${primaryVersion.passage}.${version.local_abbreviation}`)}
 							title={`${intl.formatMessage({ id: 'Reader.read reference' }, { reference: `${verse.human}` })} ${version.local_abbreviation.toLocaleUpperCase()}`}
 							className='verse-content'
 							dangerouslySetInnerHTML={{ __html: verse.content }}
@@ -80,6 +80,7 @@ function Passage(props) {
 				)
 				metaTitle = `${primaryVersion.human}; ${primaryVersion.text}`
 				metaContent = `${primaryVersion.text}`
+				metaLink = buildMeta({ hosts, version, usfm: primaryVersion.passage }).link
 				chapterLink = localizedLink(`/bible/${verse.version}/${verse.chapUsfm}.${version.local_abbreviation.toLowerCase()}`)
 			} else {
 				const heading = (
@@ -217,6 +218,7 @@ function Passage(props) {
 			<Helmet
 				title={`${metaTitle}`}
 				meta={[ { name: 'description', content: `${metaContent}` } ]}
+				link={[ ...metaLink ]}
 			/>
 			<div className='row main-content small-12 medium-8'>
 				<div className='title-heading'>

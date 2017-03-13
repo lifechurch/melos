@@ -16,142 +16,13 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
-import LocaleList from '../../../../locales/config/localeList.json'
+import { buildMeta } from '../../../lib/readerUtils'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
 	fontSize: 18,
 	showFootnotes: true,
 	showVerseNumbers: true
-}
-
-// From Rails - Refactored
-function getBibleLink(reference) {
-	const {
-		verses, // array
-		book, // string
-		chapter, // string
-		version_string, // string
-		version, // number
-	} = reference
-
-	let refPath
-
-	if (Array.isArray(verses) && !!verses.length) {
-		if (verses.length > 1) {
-			refPath = `${version}/${book.downcase}.${chapter}.${verses.first}-${verses.last}.${version_string.downcase}`
-		}
-
-		if (verses.length === 1) {
-			refPath = `${version}/${book.downcase}.${chapter}.${verses.first}.${version_string.downcase}`
-		}
-	} else {
-		refPath = `${version}/${book.downcase}.${chapter}.${version_string.downcase}`
-	}
-
-	return `/bible/${refPath}`
-}
-
-// From Rails - Refactored
-function buildMeta() {
-	const { localizedLink } = this.props
-
-	let canonicalHref
-	let defaultHref
-	let showCanonical
-
-	const link = []
-	const meta = []
-
-	// we need this
-	const I18n = {
-		locale: 'en'
-	}
-
-	// we need this too!
-	const version = {
-		language: {
-			language_tag: 'en'
-		}
-	}
-
-	// need this also
-	const request = {
-		protocol: 'https',
-		host_with_port: 'www.bible.com'
-	}
-
-	// need this too
-	const reference = {
-		verses: [],
-		book: '',
-		chapter: '',
-		version_string: '',
-		version: 1
-	}
-
-	LocaleList.forEach((locale) => {
-		const fullPath = localizedLink(getBibleLink(reference))
-		const href = `${request.protocol}${request.host_with_port}${fullPath}`
-
-		if (reference) {
-
-		}
-
-		if (showCanonical) {
-
-			if (locale.locale2 === 'en' && typeof canonicalHref === 'undefined') {
-				canonicalHref = href // used for all versions not currently localized
-				defaultHref = href
-			}
-
-			if (version.language.language_tag === (locale.locale2 === 'pt' ? 'pt-BR' : locale.locale2)) {  // so that pt-BR versions will match
-				canonicalHref = href // used for versions that are localized (eg.  Afrikaans versions canonical url is af)
-
-				if ((I18n.locale === 'en' && locale.locale2 !== 'en') || (I18n.locale !== 'en' && locale.locale2 === I18n.locale)) {
-					link.push({ href: defaultHref, rel: 'alternate', hreflang: 'en' })
-					link.push({ href: defaultHref, rel: 'alternate', hreflang: 'x-default' })
-					link.push({ href, rel: 'alternate', hreflang: `${locale.locale2.downcase}` })
-
-					if (locale.locale2 === 'zh-TW') {
-						link.push({ href, rel: 'alternate', hreflang: 'zh-hk' })
-					}
-
-					if (locale.locale2 === 'es') {
-						link.push({ href, rel: 'alternate', hreflang: 'es-419' })
-						link.push({ href, rel: 'alternate', hreflang: 'es-us' })
-					}
-
-				}
-			}
-
-		} else {
-
-			link.push({ href, rel: 'alternate', hreflang: `${locale.locale2.downcase}` })
-
-			if (locale.locale2 === 'zh-TW') {
-				link.push({ href, rel: 'alternate', hreflang: 'zh-hk' })
-			}
-
-			if (locale.locale2 === 'es') {
-				link.push({ href, rel: 'alternate', hreflang: 'es-419' })
-				link.push({ href, rel: 'alternate', hreflang: 'es-us' })
-			}
-
-			if (locale.locale2 === 'en') {
-				link.push({ href, rel: 'alternate', hreflang: 'x-default' })
-			}
-
-		}
-	})
-
-	if (canonicalHref !== null && typeof canonicalHref !== 'undefined') {
-		link.push({ rel: 'canonical', href: canonicalHref })
-		meta.push({ property: 'og:url', content: canonicalHref })
-		meta.push({ property: 'twitter:url', content: canonicalHref })
-	}
-
-	return { link, meta }
 }
 
 
@@ -161,14 +32,6 @@ class Bible extends Component {
 		super(props)
 
 		const { bible } = props
-
-		// if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm) {
-		// 	this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
-		// 	this.selectedChapter = bible.chapter.reference.usfm
-		// 	this.selectedVersion = bible.chapter.reference.version_id
-		// 	this.inputValue = bible.chapter.reference.human
-		// 	this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
-		// }
 
 		const showFootnoes = LocalStore.getIn('reader.settings.showFootnotes')
 		const showVerseNumbers = LocalStore.getIn('reader.settings.showVerseNumbers')
@@ -405,7 +268,7 @@ class Bible extends Component {
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
 
-		const meta = buildMeta()
+		const meta = buildMeta({ hosts, version: bible.version, usfm: bible.chapter.reference.usfm })
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation) {
 			this.header = (
@@ -455,14 +318,6 @@ class Bible extends Component {
 					<div className='content'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					{/* <div className='row buttons'>
-						<button className='chapter-button solid-button' onClick={this.chapterPickerInstance ? this.chapterPickerInstance.handleDropDownClick : () => {}}>
-							<FormattedMessage id="Reader.chapterpicker.chapter label" />
-						</button>
-						<button className='chapter-button solid-button' onClick={this.versionPickerInstance ? this.versionPickerInstance.handleDropDownClick : () => {}}>
-							<FormattedMessage id="Reader.versionpicker.version label" />
-						</button>
-					</div> */}
 				</div>
 			)
 		} else if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm && bible.version && bible.version.language && bible.chapter.content) {

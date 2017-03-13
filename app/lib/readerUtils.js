@@ -1,5 +1,6 @@
 import Immutable from 'immutable'
 import ActionCreators from '../features/Bible/actions/creators'
+import LocaleList from '../../locales/config/localeList.json'
 import LocalStore from './localStore'
 
 // default settings to build user settings below
@@ -104,4 +105,65 @@ export function getVerseAudioTiming(startRef, endRef, timing) {
 	}
 
 	return { startTime, endTime }
+}
+
+// From Rails - Refactored
+function getBibleLink(reference, locale) {
+	const {
+		usfm,
+		version_string, // string
+		version, // number
+	} = reference
+
+	const refPath = `${version}/${usfm}.${version_string}`
+
+	return locale === 'en' ? `/bible/${refPath}`.toLowerCase() : `/bible/${locale}/${refPath}`.toLowerCase()
+}
+
+// From Rails - Refactored
+export function buildMeta(props) {
+	const { version, usfm, hosts } = props
+
+	let canonicalHref
+	let showCanonical
+
+	const link = []
+	const meta = []
+
+	const reference = {
+		usfm,
+		version_string: version.local_abbreviation,
+		version: version.id,
+	}
+
+	if (version && version.id && usfm) {
+		showCanonical = true
+	}
+
+	let fullPath = null
+	let href = null
+
+	LocaleList.forEach((locale) => {
+		if (version.language.iso_639_1 === locale.locale2) {
+			fullPath = getBibleLink(reference, locale.locale2)
+			href = `${hosts.railsHost}${fullPath}`
+		}
+	})
+
+	if (showCanonical) {
+		// didn't match a localized locale, set to english
+		if (!href) {
+			canonicalHref = `${hosts.railsHost}${getBibleLink(reference, 'en')}`
+		} else {
+			canonicalHref = href
+		}
+	}
+
+	if (canonicalHref !== null && typeof canonicalHref !== 'undefined') {
+		link.push({ rel: 'canonical', href: canonicalHref })
+		meta.push({ property: 'og:url', content: canonicalHref })
+		meta.push({ property: 'twitter:url', content: canonicalHref })
+	}
+
+	return { link, meta }
 }
