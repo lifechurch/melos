@@ -50,7 +50,7 @@ function Passage(props) {
 	let primaryVersion = {}
 	// main verse and verse cards
 	const verseCards = []
-	if (typeof verses === 'object') {
+	if (typeof verses === 'object' && verseKey in verses) {
 		Object.keys(verses[verseKey]).forEach((versionKey) => {
 			const verse = verses[verseKey][versionKey]
 			const version = versions[verse.version]
