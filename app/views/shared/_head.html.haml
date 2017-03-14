@@ -26,7 +26,7 @@
 -if @render_rails_meta
   %meta{name: "twitter:image", content: url_for(image_path(localized_bible_icon(121)))}
   %meta{property: "og:image", content: url_for(image_path(localized_bible_icon(200)))}
-  = render '/shared/hreflang'
+  -#= render '/shared/hreflang'
   -# render legacy deeplink for reader separate from the one further down
   -#- ref_deep_link = "#{@presenter.reference.deep_link_path}"
   -#- deep_link = "youversion://#{ref_deep_link}" if ref_deep_link.present?
