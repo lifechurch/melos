@@ -99,10 +99,11 @@ app.use((err, req, res, next) => {
 // production error handler
 // no stacktraces leaked to user
 app.use((err, req, res, next) => {
+	console.error(err.stack)
 	res.status(err.status || 500);
 	res.render('error', {
 		message: err.message,
-		error: err
+		error: {}
 	});
 });
 
