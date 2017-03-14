@@ -19,7 +19,8 @@ function scrollToRelatedPlans() {
 }
 
 function Passage(props) {
-	let mainVerse, metaContent, metaTitle, metaLink, chapterLink = null
+	let mainVerse, metaContent, metaTitle, chapterLink = null
+	let metaLink = {}
 
 	const {
 		passage,
@@ -215,11 +216,14 @@ function Passage(props) {
 
 	return (
 		<div className='passage reader'>
-			<Helmet
-				title={`${metaTitle}`}
-				meta={[ { name: 'description', content: `${metaContent}` } ]}
-				link={[ ...metaLink ]}
-			/>
+			{
+				mainVerse &&
+				<Helmet
+					title={`${metaTitle}`}
+					meta={[ { name: 'description', content: `${metaContent}` } ]}
+					link={[ ...metaLink ]}
+				/>
+			}
 			<div className='row main-content small-12 medium-8'>
 				<div className='title-heading'>
 					{ prevArrow }

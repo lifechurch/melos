@@ -60,7 +60,7 @@ export default function reducer(state = {}, action) {
 
 		case type('savedItemsSuccess'):
 			return (function savedItemsSuccess() {
-				if (state.pages) {
+				if (state.pages && action.response.reading_plans) {
 					const pages = Immutable.fromJS(state.pages).toJS()
 					if (typeof pages[action.params.page] === 'undefined') {
 						const all = Array.isArray(state.all) ? Immutable.fromJS(state.all).toJS() : []

@@ -268,11 +268,10 @@ class Bible extends Component {
 
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
-		let androidDeepLink = null
-		let iosDeepLink = null
-		let deeplink = null
-
-		const meta = buildMeta({ hosts, version: bible.version, usfm: bible.chapter.reference.usfm })
+		let androidDeepLink = {}
+		let iosDeepLink = {}
+		let deeplink = {}
+		let meta = { link: {}, meta: {} }
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation) {
 			this.header = (
@@ -360,41 +359,45 @@ class Bible extends Component {
 			androidDeepLink = android ? { rel: 'alternate', href: `android-app://com.sirma.mobile.bible.android/youversion/${android}` } : null
 			iosDeepLink = ios ? { rel: 'alternate', href: `ios-app://282935706/youversion/${ios}` } : null
 			deeplink = ios
+			meta = buildMeta({ hosts, version: bible.version, usfm: bible.chapter.reference.usfm })
 		}
 
 		return (
 			<div>
-				<Helmet
-					title={metaTitle}
-					meta={[
-						{ name: 'description', content: `${metaContent.substring(0, 200)}...` },
-						{ name: 'og:title', content: metaTitle },
-						{ name: 'og:description', content: `${metaContent.substring(0, 200)}...` },
-						// hacky meta rendering on rails side
-						// { name: 'og:image', content: `` },
-						// { name: 'og:url', content: '' },
-						// { name: 'twitter:image', content: `` },
-						// { name: 'twitter:url', content: `` },
-						{ name: 'twitter:title', content: metaTitle },
-						{ name: 'twitter:description', content: `${metaContent.substring(0, 200)}...` },
-						{ name: 'twitter:site', content: '@YouVersion' },
-						androidDeepLink,
-						iosDeepLink,
-						{ name: 'twitter:app:name:iphone', content: 'Bible' },
-						{ name: 'twitter:app:id:iphone', content: '282935706' },
-						{ name: 'twitter:app:name:ipad', content: 'Bible' },
-						{ name: 'twitter:app:id:ipad', content: '282935706' },
-						{ name: 'twitter:app:name:googleplay', content: 'Bible' },
-						{ name: 'twitter:app:id:googleplay', content: 'com.sirma.mobile.bible.android' },
-						{ name: 'twitter:app:url:iphone', content: `youversion://${deeplink}` },
-						{ name: 'twitter:app:url:ipad', content: `youversion://${deeplink}` },
-						{ name: 'twitter:app:url:googleplay', content: `youversion://${deeplink}` },
-						...meta.meta
-					]}
-					link={[
-						...meta.link
-					]}
-				/>
+				{
+					bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm && bible.version && bible.version.language && bible.chapter.content &&
+					<Helmet
+						title={metaTitle}
+						meta={[
+							{ name: 'description', content: `${metaContent.substring(0, 200)}...` },
+							{ name: 'og:title', content: metaTitle },
+							{ name: 'og:description', content: `${metaContent.substring(0, 200)}...` },
+							// hacky meta rendering on rails side
+							// { name: 'og:image', content: `` },
+							// { name: 'og:url', content: '' },
+							// { name: 'twitter:image', content: `` },
+							// { name: 'twitter:url', content: `` },
+							{ name: 'twitter:title', content: metaTitle },
+							{ name: 'twitter:description', content: `${metaContent.substring(0, 200)}...` },
+							{ name: 'twitter:site', content: '@YouVersion' },
+							androidDeepLink,
+							iosDeepLink,
+							{ name: 'twitter:app:name:iphone', content: 'Bible' },
+							{ name: 'twitter:app:id:iphone', content: '282935706' },
+							{ name: 'twitter:app:name:ipad', content: 'Bible' },
+							{ name: 'twitter:app:id:ipad', content: '282935706' },
+							{ name: 'twitter:app:name:googleplay', content: 'Bible' },
+							{ name: 'twitter:app:id:googleplay', content: 'com.sirma.mobile.bible.android' },
+							{ name: 'twitter:app:url:iphone', content: `youversion://${deeplink}` },
+							{ name: 'twitter:app:url:ipad', content: `youversion://${deeplink}` },
+							{ name: 'twitter:app:url:googleplay', content: `youversion://${deeplink}` },
+							...meta.meta
+						]}
+						link={[
+							...meta.link
+						]}
+					/>
+				}
 				{ this.header }
 				<div className="row">
 					<div className="columns large-6 medium-10 medium-centered">
