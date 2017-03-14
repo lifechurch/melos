@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV === 'production') {
 	require('newrelic');
 }
-const Raven = require('raven');
+// const Raven = require('raven');
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -13,7 +13,7 @@ const auth = api.tokenAuth;
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-Raven.config('https://488eeabd899a452783e997c6558e0852:14c79298cb364716a7877e9ace89a69e@sentry.io/129704').install()
+// Raven.config('https://488eeabd899a452783e997c6558e0852:14c79298cb364716a7877e9ace89a69e@sentry.io/129704').install()
 
 require('babel-register')({ presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] });
 
@@ -21,7 +21,7 @@ const reactServer = require('./react-server');
 const featureServer = require('./feature-server');
 
 const app = express();
-app.use(Raven.requestHandler());
+// app.use(Raven.requestHandler());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -76,7 +76,7 @@ app.use((req, res, next) => {
 
 // error handlers
 
-app.use(Raven.errorHandler());
+// app.use(Raven.errorHandler());
 
 // development error handler
 // will print stacktrace
@@ -99,9 +99,9 @@ app.use((err, req, res, next) => {
 // production error handler
 // no stacktraces leaked to user
 app.use((err, req, res, next) => {
-  console.error("HIT DEFAULT PROD HANDLER")
-  console.error(err.status)
-  console.error(err.message)
+	console.error('HIT DEFAULT PROD HANDLER')
+	console.error(err.status)
+	console.error(err.message)
 	console.error(err.stack)
 	res.status(err.status || 500);
 	res.render('error', {
