@@ -99,6 +99,9 @@ app.use((err, req, res, next) => {
 // production error handler
 // no stacktraces leaked to user
 app.use((err, req, res, next) => {
+  console.error("HIT DEFAULT PROD HANDLER")
+  console.error(err.status)
+  console.error(err.message)
 	console.error(err.stack)
 	res.status(err.status || 500);
 	res.render('error', {
