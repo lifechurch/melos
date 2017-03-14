@@ -288,6 +288,7 @@ router.post('/', urlencodedParser, (req, res) => {
 				res.status(404).send(error)
 			})
 		} catch (ex) {
+			console.log("HIT DEFAULT PROD HANDLER FEATURE-SERVER")
 			console.log(500, ex)
 			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
 		}
