@@ -243,7 +243,8 @@ router.post('/', urlencodedParser, (req, res) => {
 						try {
 							html = renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch (ex) {
-							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
+							throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
+							// return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 
 						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
@@ -285,12 +286,13 @@ router.post('/', urlencodedParser, (req, res) => {
 				}
 			}, (error) => {
 				console.log(404, error)
-				res.status(404).send(error)
+				throw new Error(`LoadData Error - Could Not Render ${feature} view`, error)
+				// res.status(404).send(error)
 			})
 		} catch (ex) {
-			console.log("HIT DEFAULT PROD HANDLER FEATURE-SERVER")
 			console.log(500, ex)
-			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
+			throw new Error(`Error: 2 - Could Not Render ${feature} view`, ex)
+			// res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
 		}
 	}, (authError) => {
 		return res.status(403).send(authError)

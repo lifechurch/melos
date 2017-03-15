@@ -42,11 +42,11 @@ function getAssetPath(path) {
  */
 function getLocalesFromHeader(req) {
 	if (req && req.headers && req.headers['accept-language']) {
-		return req.headers['accept-language'].split(',').map(function(l) {
-			var locale = l.split(';');
-			var weight = (locale.length > 1) ? parseFloat(locale[1].split('=')[1]) : 1;
-			var prefix = locale[0].split('-')[0];
-			return { locale: locale[0], prefix: prefix, weight: weight };
+		return req.headers['accept-language'].split(',').map((l) => {
+			const locale = l.split(';');
+			const weight = (locale.length > 1) ? parseFloat(locale[1].split('=')[1]) : 1;
+			const prefix = locale[0].split('-')[0];
+			return { locale: locale[0], prefix, weight };
 		});
 	}
 	return []
@@ -67,10 +67,10 @@ function getLocalesFromHeader(req) {
  * @return
  */
 function getLocale(req, profileLanguageTag) {
-	var defaultLocale = availableLocales['en-US'];
-	var final = { locale: defaultLocale, source: 'default' }
-	var urlLocale = req.params[0].split('/')[0];
-	var localesFromHeader = getLocalesFromHeader(req);
+	const defaultLocale = availableLocales['en-US'];
+	let final = { locale: defaultLocale, source: 'default' }
+	const urlLocale = req.params[0].split('/')[0];
+	const localesFromHeader = getLocalesFromHeader(req);
 
 	// 1: Try URL First
 	if (typeof availableLocales[urlLocale] !== 'undefined') {
@@ -86,10 +86,10 @@ function getLocale(req, profileLanguageTag) {
 
 	// 3: Try accept-language Header Third
 	} else {
-		var lastWeight = 0;
-		var bestLocale;
+		let lastWeight = 0;
+		let bestLocale;
 
-		localesFromHeader.forEach(function(l) {
+		localesFromHeader.forEach((l) => {
 			if (l.weight > lastWeight) {
 				if (typeof availableLocales[l.locale] !== 'undefined') {
 					bestLocale = availableLocales[l.locale];
@@ -115,11 +115,11 @@ function getLocale(req, profileLanguageTag) {
 		}
 	}
 	// Get the appropriate react-intl locale data for this locale
-	var localeData = require('react-intl/locale-data/' + final.locale2);
+	const localeData = require(`react-intl/locale-data/${final.locale2}`);
 	final.data = localeData;
 
 	// Get the appropriate set of localized strings for this locale
-	final.messages = require('./locales/' + final.locale + '.json');
+	final.messages = require(`./locales/${final.locale}.json`);
 
 	// Add the list of preferred locales based on browser configuration to this response
 	final.preferredLocales = localesFromHeader;
@@ -159,13 +159,13 @@ function getStateFromToken() {
 /**
  * Entry point for handling React app URLs
  */
-router.get('/*', cookieParser(), function(req, res) {
+router.get('/*', cookieParser(), (req, res) => {
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
 
 		if (error) {
-      console.log("HIT DEFAULT PROD HANDLER REACT-SERVER")
-			console.log("ERROR", error);
-			res.status(500).send(error.message);
+			console.log('ERROR', error);
+			throw new Error(error)
+			// res.status(500).send(error.message);
 
 		} else if (redirectLocation) {
 			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
@@ -190,8 +190,8 @@ router.get('/*', cookieParser(), function(req, res) {
 			req.Locale = getLocale(req, profileLanguageTag);
 
 			// We are not authenticated
-			if (!startingState.auth.isLoggedIn && req.path !== '/' + req.Locale.locale + '/login') {
-				return res.redirect('/' + req.Locale.locale + '/login');
+			if (!startingState.auth.isLoggedIn && req.path !== `/${req.Locale.locale}/login`) {
+				return res.redirect(`/${req.Locale.locale}/login`);
 
 			// This was a route with no language tag
 			} else if (req.Locale.source !== 'url') {
@@ -202,9 +202,9 @@ router.get('/*', cookieParser(), function(req, res) {
 				let newUrl = null
 
 				if (/^[a-zA-Z]{2}(?:[-_][a-zA-Z]{2})?$/.test(firstPathSegment)) {
-					newUrl = '/' + req.Locale.locale + '/' + pathWithoutFirstSegment
+					newUrl = `/${req.Locale.locale}/${pathWithoutFirstSegment}`
 				} else {
-					newUrl = '/' + req.Locale.locale + '/' + req.params[0]
+					newUrl = `/${req.Locale.locale}/${req.params[0]}`
 				}
 
 				return res.redirect(302, newUrl);
@@ -219,14 +219,16 @@ router.get('/*', cookieParser(), function(req, res) {
 				const initialState = store.getState()
 				const rtl = rtlDetect.isRtlLang(req.Locale.locale)
 				res.setHeader('Cache-Control', 'public');
-				res.render('index', { appString: html, rtl: rtl, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
+				res.render('index', { appString: html, rtl, locale: req.Locale, head: Helmet.rewind(), initialState, environment: process.env.NODE_ENV, getAssetPath })
 			} catch (ex) {
 				console.log('ex', ex);
-				res.status(500).send()
+				throw new Error(ex)
+				// res.status(500).send()
 			}
 
 		} else {
-			res.status(404).send('Not found');
+			throw new Error('Not Found 404')
+			// res.status(404).send('Not found');
 
 		}
 	});
