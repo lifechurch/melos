@@ -19,6 +19,10 @@ const router = express.Router()
 const availableLocales = require('./locales/config/availableLocales.json');
 const localeList = require('./locales/config/localeList.json');
 
+const Raven = require('raven');
+
+Raven.config('https://488eeabd899a452783e997c6558e0852:14c79298cb364716a7877e9ace89a69e@sentry.io/129704').install()
+
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';
 	if (IS_PROD) {
@@ -243,8 +247,9 @@ router.post('/', urlencodedParser, (req, res) => {
 						try {
 							html = renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch (ex) {
-							throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
-							// return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
+							// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
+							Raven.captureException(ex)
+							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 
 						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
@@ -286,13 +291,15 @@ router.post('/', urlencodedParser, (req, res) => {
 				}
 			}, (error) => {
 				console.log(404, error)
-				throw new Error(`LoadData Error - Could Not Render ${feature} view`, error)
-				// res.status(404).send(error)
+				// throw new Error(`LoadData Error - Could Not Render ${feature} view`, error)
+				Raven.captureException(error)
+				res.status(404).send(error)
 			})
 		} catch (ex) {
 			console.log(500, ex)
-			throw new Error(`Error: 2 - Could Not Render ${feature} view`, ex)
-			// res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
+			// throw new Error(`Error: 2 - Could Not Render ${feature} view`, ex)
+			Raven.captureException(ex)
+			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
 		}
 	}, (authError) => {
 		return res.status(403).send(authError)

@@ -21,6 +21,10 @@ const routes = getRoutes(null)
 const availableLocales = require('./locales/config/availableLocales.json');
 const localeList = require('./locales/config/localeList.json');
 
+const Raven = require('raven');
+
+Raven.config('https://488eeabd899a452783e997c6558e0852:14c79298cb364716a7877e9ace89a69e@sentry.io/129704').install()
+
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';
 	if (IS_PROD) {
@@ -164,8 +168,9 @@ router.get('/*', cookieParser(), (req, res) => {
 
 		if (error) {
 			console.log('ERROR', error);
-			throw new Error(error)
-			// res.status(500).send(error.message);
+			// throw new Error(error)
+			Raven.captureException(error)
+			res.status(500).send(error.message);
 
 		} else if (redirectLocation) {
 			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
@@ -222,13 +227,14 @@ router.get('/*', cookieParser(), (req, res) => {
 				res.render('index', { appString: html, rtl, locale: req.Locale, head: Helmet.rewind(), initialState, environment: process.env.NODE_ENV, getAssetPath })
 			} catch (ex) {
 				console.log('ex', ex);
-				throw new Error(ex)
-				// res.status(500).send()
+				// throw new Error(ex)
+				Raven.captureException(ex)
+				res.status(500).send()
 			}
 
 		} else {
-			throw new Error('Not Found 404')
-			// res.status(404).send('Not found');
+			// throw new Error('Not Found 404')
+			res.status(404).send('Not found');
 
 		}
 	});
