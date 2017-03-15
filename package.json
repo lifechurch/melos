@@ -8,6 +8,7 @@
   "dependencies": {
     "@youversion/js-api": "^0.0.90",
     "@youversion/token-storage": "^0.0.36",
+    "@newrelic/native-metrics": "^2.1.0",
     "async": "^2.0.0-rc.3",
     "babel-plugin-react-intl": "^2.1.2",
     "babel-plugin-syntax-function-bind": "^6.3.13",
