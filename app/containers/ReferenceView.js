@@ -26,14 +26,11 @@ class ReferenceView extends Component {
 
 
 	render() {
-		const { params } = this.props
-		const usfm = params.splat
-		const { isVerse, isChapter } = isVerseOrChapter(usfm)
+		const { params: { splat } } = this.props
 
-		console.log(params, isVerse, isChapter)
+		const { isVerse, isChapter } = isVerseOrChapter(splat)
 
 		let referenceComponent = <Bible {...this.props} localizedLink={::this.localizedLink} isRtl={::this.isRtl} />
-
 		if (isVerse) {
 			referenceComponent = <Passage {...this.props} isRtl={::this.isRtl} localizedLink={::this.localizedLink} />
 		}

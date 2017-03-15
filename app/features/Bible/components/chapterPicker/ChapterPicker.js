@@ -321,7 +321,8 @@ class ChapterPicker extends Component {
 	 * @param      {number}  keyEventCode  Code value of key event
 	 */
 	handleLabelKeyDown(event, keyEventName, keyEventCode) {
-		const { books, bookMap, versionID, dispatch } = this.props
+		const { books, bookMap, versionID, versionAbbr, dispatch } = this.props
+
 		const {
 			inputValue,
 			booklistSelectionIndex,
@@ -406,7 +407,7 @@ class ChapterPicker extends Component {
 			}
 			if (keyEventName === 'Enter') {
 				const chapIndex = chapterKeys[chapterlistSelectionIndex]
-				const chapURL = this.props.localizedLink(`/bible/${versionID}/${(books[bookMap[selectedBook]].chapters)[chapIndex].usfm}.${this.props.params.vabbr}`)
+				const chapURL = this.props.localizedLink(`/bible/${versionID}/${(books[bookMap[selectedBook]].chapters)[chapIndex].usfm}.${versionAbbr}`)
 				dispatch(routeActions.push(chapURL))
 			}
 		}

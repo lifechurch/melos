@@ -285,6 +285,7 @@ class Bible extends Component {
 						initialBook={this.state.selectedBook}
 						initialChapter={this.state.selectedChapter}
 						versionID={this.state.selectedVersion}
+						versionAbbr={bible.version.local_abbreviation}
 						initialInput={bible.chapter.reference.human}
 						initialChapters={this.chapters}
 						cancelDropDown={this.state.chapDropDownCancel}

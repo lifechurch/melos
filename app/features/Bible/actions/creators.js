@@ -42,7 +42,7 @@ const ActionCreators = {
 	 */
 	readerLoad(params, auth) {
 		return dispatch => {
-			const { isInitialLoad, hasVersionChanged, hasChapterChanged, version, reference, language_tag } = params
+			const { isInitialLoad, hasVersionChanged, hasChapterChanged, version, reference } = params
 			const showError = params.showError || false
 
 			const promises = []
