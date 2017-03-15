@@ -12,6 +12,7 @@ import getRoutes from './routes'
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 import defaultState from './defaultState'
+import { isVerseOrChapter } from '../../lib/readerUtils'
 
 if (typeof window !== 'undefined') {
 	ga.initialize('UA-3571547-76', { language: window.__LOCALE__.locale });
@@ -174,7 +175,44 @@ function requireVerseData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requireChapterData, requireVerseData)
+function setupReference(nextState, replace, callback) {
+	const { params: { splat, version } } = nextState
+
+	const { isVerse, isChapter } = isVerseOrChapter(splat)
+
+	if (isChapter) {
+		const newNextState = {
+			params: {
+				version,
+				book: splat.split('.')[0],
+				chapter: splat.split('.')[1],
+			}
+		}
+		requireChapterData(newNextState, replace, callback)
+	} else if (isVerse) {
+		const newNextState = {
+			params: {
+				version,
+				book: splat.split('.')[0],
+				chapter: splat.split('.')[1],
+				verse: splat.split('.')[2]
+			}
+		}
+		requireVerseData(newNextState, replace, callback)
+	} else {
+		const newNextState = {
+			params: {
+				version: 1,
+				book: 'JHN',
+				chapter: 1,
+			}
+		}
+		requireChapterData(newNextState, replace, callback)
+	}
+
+}
+
+const routes = getRoutes(requireChapterData, requireVerseData, setupReference)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>

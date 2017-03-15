@@ -19,7 +19,10 @@ function scrollToRelatedPlans() {
 }
 
 function Passage(props) {
-	let mainVerse, metaContent, metaTitle, chapterLink = null
+	let mainVerse, metaContent, metaTitle = null
+	let chapterLink = ''
+	let nextLink = ''
+	let prevLink = ''
 	let metaLink = {}
 
 	const {
@@ -29,10 +32,7 @@ function Passage(props) {
 		isRtl,
 		hosts,
 		params: {
-			book,
-			chapter,
-			verse: verseNumber,
-			vabbr,
+			splat,
 			version: primaryVersionId
 		}
 	} = props
@@ -46,12 +46,12 @@ function Passage(props) {
 		}
 	} = passage
 
-	const verseKey = `${book}.${chapter}.${verseNumber}`.toUpperCase()
+	const verseKey = `${splat.split('.').slice(0, 3).join('.')}`.toUpperCase()
 
 	let primaryVersion = {}
 	// main verse and verse cards
 	const verseCards = []
-	if (typeof verses === 'object' && verseKey in verses) {
+	if (typeof verses === 'object' && (verseKey in verses)) {
 		Object.keys(verses[verseKey]).forEach((versionKey) => {
 			const verse = verses[verseKey][versionKey]
 			const version = versions[verse.version]
@@ -83,6 +83,8 @@ function Passage(props) {
 				metaContent = `${primaryVersion.text}`
 				metaLink = buildMeta({ hosts, version, usfm: primaryVersion.passage }).link
 				chapterLink = localizedLink(`/bible/${verse.version}/${verse.chapUsfm}.${version.local_abbreviation.toLowerCase()}`)
+				nextLink = localizedLink(`/bible/${verse.version}/${primaryVersion.nextVerse}.${version.local_abbreviation.toLowerCase()}`)
+				prevLink = localizedLink(`/bible/${verse.version}/${primaryVersion.previousVerse}.${version.local_abbreviation.toLowerCase()}`)
 			} else {
 				const heading = (
 					<a href={localizedLink(`/versions/${verse.version}`)}>
@@ -174,7 +176,7 @@ function Passage(props) {
 		if (isRtl()) {
 			nextArrow = (
 				<Link
-					to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.previousVerse}.${vabbr.toLowerCase()}`)}
+					to={localizedLink(prevLink)}
 					title={''}
 				>
 					<CarouselArrow width={23} height={23} dir='left' fill='gray' />
@@ -183,7 +185,7 @@ function Passage(props) {
 		} else {
 			prevArrow = (
 				<Link
-					to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.previousVerse}.${vabbr.toLowerCase()}`)}
+					to={localizedLink(prevLink)}
 					title={''}
 				>
 					<CarouselArrow width={23} height={23} dir='left' fill='gray' />
@@ -196,7 +198,7 @@ function Passage(props) {
 		if (isRtl()) {
 			prevArrow = (
 				<Link
-					to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.nextVerse}.${vabbr.toLowerCase()}`)}
+					to={localizedLink(nextLink)}
 					title={''}
 				>
 					<CarouselArrow width={23} height={23} dir='right' fill='gray' />
@@ -205,7 +207,7 @@ function Passage(props) {
 		} else {
 			nextArrow = (
 				<Link
-					to={localizedLink(`/bible/${primaryVersion.version}/${primaryVersion.nextVerse}.${vabbr.toLowerCase()}`)}
+					to={localizedLink(nextLink)}
 					title={''}
 				>
 					<CarouselArrow width={23} height={23} dir='right' fill='gray' />
