@@ -19,13 +19,57 @@ class ReferencesController < ApplicationController
     # end
     # versions = DEFAULT_VERSIONS.key?(I18n.locale.to_s) ? DEFAULT_VERSIONS[I18n.locale.to_s] : DEFAULT_VERSIONS["en"]
 
+    ref = params[:reference].split('.') unless params[:reference].nil?
+    book = ref[0] unless ref.nil?
+    reference = params[:reference]
+    version = params[:version]
+
+    # if the following hash lookup changes the params, let's redirect with the new params
+    # so the node main and load data match up
+    redirect = false
+
+    if book.is_a? String
+      # leave it if it's already a USFM code
+      _book = Cfg.osis_usfm_hash[:books][book.downcase]
+      # try to parse from known values
+      # _book ||= Cfg.osis_usfm_hash[:books][@hash[:book].downcase]
+
+      if _book.nil?
+        reference = nil
+      else
+        if ref.length === 1
+          reference = "#{_book}.1"
+        else
+          reference = "#{_book}#{reference.gsub(book, '')}"
+        end
+      end
+
+      redirect = true if reference != params[:reference]
+    end
+
+    # if there is a version it needs to be API3 id or match our known versions
+    if version.present?
+      # leave it if it's already an API3 id (positive #)
+      _ver = version if version.is_a?(Fixnum) || (version.match(/\A\d*\z/)&& version.to_i > 0)
+      # try to parse from known values
+      _ver ||= Cfg.osis_usfm_hash[:versions][version.downcase] if version.is_a? String
+
+      version = _ver unless _ver.blank?
+
+      redirect = true if version != params[:version]
+    end
+
+    if redirect
+      return redirect_to reference_path(version: version, reference: reference)
+    end
+
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
         "cache_for" => YV::Caching::a_very_long_time,
-        "version" => ((!params.nil? and params[:version]) ? params[:version] : nil),
-        "ref" => ((!params.nil? and params[:reference]) ? params[:reference] : nil),
+        "version" => ((version and !version.nil?) ? version : nil),
+        "ref" => ((reference and !reference.nil?) ? reference : nil),
         "altVersions" => DEFAULT_VERSIONS
     }
 
