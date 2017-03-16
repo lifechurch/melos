@@ -47,12 +47,12 @@ common:
   facebook_signin_app_secret: "8cc85686e4ff71fe0ee8de801dd5d7f3"
 
 development:
-  api_root: youversionapi.com
-  api_referer: web.youversionapi.com
-  api_version: "3.1"
-#  api_root: youversionapistaging.com
-#  api_referer: web-dev-local.youversionapistaging.com
+#  api_root: youversionapi.com
+#  api_referer: web.youversionapi.com
 #  api_version: "3.1"
+  api_root: youversionapistaging.com
+  api_referer: web-dev-local.youversionapistaging.com
+  api_version: "3.1"
   api_default_timeout: 15000
   rack_execution_timeout: 15000
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"

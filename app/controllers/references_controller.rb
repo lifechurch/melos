@@ -6,23 +6,58 @@ class ReferencesController < ApplicationController
   before_filter :check_site_requirements,       only: [:show]
   before_filter :fix_invalid_reference,         only: [:show]
   before_filter :strip_format,                  only: [:show]
-  before_filter :setup_presenters,              only: [:show]
+  # before_filter :setup_presenters,              only: [:show]
 
   rescue_from InvalidReferenceError, with: :ref_not_found
 
   def show
-    # now_reading(self.presenter.reference)
-    # respond_to do |format|
-    #   format.html
-    #   format.xml  { render nothing: true }
-    #   format.json { render "show.json.rabl" }
-    # end
-    # versions = DEFAULT_VERSIONS.key?(I18n.locale.to_s) ? DEFAULT_VERSIONS[I18n.locale.to_s] : DEFAULT_VERSIONS["en"]
+    now_reading(self.presenter.reference)
+    respond_to do |format|
+      format.html
+      format.xml  { render nothing: true }
+      format.json { render "show.json.rabl" }
+    end
+  end
+
+
+  def reader
+
+    # if we're trying to just load reference content for moments items then go to show
+    # otherwise we're going to render the node reader
+    if params[:reference].try(:"end_with?", '.json')
+      setup_presenters
+      return show
+    end
+
 
     ref = params[:reference].split('.') unless params[:reference].nil?
     book = ref[0] unless ref.nil?
     reference = params[:reference]
     version = params[:version]
+
+
+    # HACK (km): sometimes the url can have invalid utf-8 characters
+    # /bible/46/rom.8.15.cunp-%E7%A5%EF
+    # so strip those out before attempting to parse as a reference
+    if reference
+      reference = reference.encode('UTF-16le', invalid: :replace, replace: '')
+      reference = reference.encode('UTF-8')
+      # hack to get rid of those characters from version abbr
+      if 'cunp'.in? reference.downcase
+        reference = reference.gsub!(/cunp.*/i, 'cunp')
+      end
+      # fix param references where reference only has the book
+      # coming in as /bible/nasb/gen or /bible/nkjv/gen etc  - from campus.316networks.com
+      if /^[a-zA-Z0-9]{3,}$/.match(reference)
+        reference = "#{reference}.1"
+      end
+
+      if reference.try(:"end_with?", '.json')
+        reference.gsub!('.json', '')
+        request.format = :json
+      end
+    end
+
 
     # if the following hash lookup changes the params, let's redirect with the new params
     # so the node main and load data match up
@@ -37,11 +72,7 @@ class ReferencesController < ApplicationController
       if _book.nil?
         reference = nil
       else
-        if ref.length === 1
-          reference = "#{_book}.1"
-        else
-          reference = "#{_book}#{reference.gsub(book, '')}"
-        end
+        reference = "#{_book}#{reference.gsub(book, '')}"
       end
 
       redirect = true if reference != params[:reference]
@@ -58,6 +89,7 @@ class ReferencesController < ApplicationController
 
       redirect = true if version != params[:version]
     end
+
 
     if redirect
       return redirect_to reference_path(version: version, reference: reference)
@@ -83,7 +115,7 @@ class ReferencesController < ApplicationController
     @node_meta_tags = fromNode['head']['meta']
     @render_rails_meta = true
 
-    render layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
+    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   # def passage
@@ -120,40 +152,40 @@ class ReferencesController < ApplicationController
   protected
 
     def setup_presenters
-      # ref = params[:reference] || last_read.try(:to_param) || default_reference.try(:to_param)
-      #
-      # # override the version in the reference param with the explicit version in the URL (or current_version in the case of /bible)
-      # # this is a temporary hack until Version/Reference class clean-up
-      # ref_string  = YV::ReferenceString.new(ref, overrides: {version: params[:version] || current_version})
-      # ref_hash    = ref_string.to_hash
-      # tmp_ref_string  = YV::ReferenceString.new(ref)
-      # tmp_ref_hash = tmp_ref_string.to_hash
-      #
-      # # If somebody visits just /bible
-      # if params[:version].blank? && ref_hash[:chapter].present? # url
-      #   ref_hash[:version] ||= current_version
-      #   ref_hash[:chapter] ||= "1"
-      #   flash.keep
-      #   reference = Reference.new(ref_hash)
-      #   return redirect_to reference_path(version: reference.version, reference: reference.to_param)
-      # elsif !tmp_ref_hash[:version].present?
-      #   ref_hash[:version] ||= current_version
-      #   ref_hash[:chapter] ||= "1"
-      #   flash.keep
-      #   reference = Reference.new(ref_hash)
-      #   return redirect_to reference_path(version: reference.version, reference: reference.to_param)
-      # end
-      #
-      # self.presenter = Presenter::Reference.new(ref_string, params, self)
-      # self.sidebar_presenter = Presenter::Sidebar::Reference.new(ref_string, params ,self)
-      #
-      # unless presenter.valid_reference?
-      #   if request.xhr?
-      #     return render json: "error", status: 400
-      #   else
-      #     return render_404
-      #   end
-      # end
+      ref = params[:reference] || last_read.try(:to_param) || default_reference.try(:to_param)
+
+      # override the version in the reference param with the explicit version in the URL (or current_version in the case of /bible)
+      # this is a temporary hack until Version/Reference class clean-up
+      ref_string  = YV::ReferenceString.new(ref, overrides: {version: params[:version] || current_version})
+      ref_hash    = ref_string.to_hash
+      tmp_ref_string  = YV::ReferenceString.new(ref)
+      tmp_ref_hash = tmp_ref_string.to_hash
+
+      # If somebody visits just /bible
+      if params[:version].blank? && ref_hash[:chapter].present? # url
+        ref_hash[:version] ||= current_version
+        ref_hash[:chapter] ||= "1"
+        flash.keep
+        reference = Reference.new(ref_hash)
+        return redirect_to reference_path(version: reference.version, reference: reference.to_param)
+      elsif !tmp_ref_hash[:version].present?
+        ref_hash[:version] ||= current_version
+        ref_hash[:chapter] ||= "1"
+        flash.keep
+        reference = Reference.new(ref_hash)
+        return redirect_to reference_path(version: reference.version, reference: reference.to_param)
+      end
+
+      self.presenter = Presenter::Reference.new(ref_string, params, self)
+      self.sidebar_presenter = Presenter::Sidebar::Reference.new(ref_string, params ,self)
+
+      unless presenter.valid_reference?
+        if request.xhr?
+          return render json: "error", status: 400
+        else
+          return render_404
+        end
+      end
       
     end
 

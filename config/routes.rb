@@ -97,7 +97,9 @@ YouversionWeb::Application.routes.draw do
   end
 
   # Bible
-  match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
+  # NOTE: change this to not use the show method for rendering to node
+  match 'bible(/:version/:reference)' => 'references#reader', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
+  # match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'notes#sidebar', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible-chapters/:version/:reference' => 'references#chapters', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
 
