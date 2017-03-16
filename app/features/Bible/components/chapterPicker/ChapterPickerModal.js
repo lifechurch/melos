@@ -22,6 +22,7 @@ class ChapterPickerModal extends Component {
 			alert,
 			cancel,
 			versionID,
+			versionAbbr
 		} = this.props
 
 		let books, chapters = null
@@ -106,6 +107,7 @@ class ChapterPickerModal extends Component {
 							onMouseOver={onMouseOver}
 							alert={alert}
 							versionID={versionID}
+							versionAbbr={versionAbbr}
 						/>
 					</CustomScroll>
 				</div>

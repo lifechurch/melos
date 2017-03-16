@@ -1,17 +1,22 @@
-import type from '../actions/constants'
 import Immutable from 'immutable'
+import type from '../actions/constants'
 
 export default function reducer(state = [], action) {
 	switch (action.type) {
-		case type("momentsVerseColorsRequest"):
+		case type('momentsVerseColorsRequest'):
 			return []
 
-		case type("momentsVerseColorsSuccess"):
-			return Immutable.fromJS(action.response.verse_colors).toJS()
+		case type('momentsVerseColorsSuccess'):
+			const { response: { verse_colors } } = action
+			if (verse_colors) {
+				return Immutable.fromJS(action.response.verse_colors).toJS()
+			} else {
+				return state
+			}
 
-		case type("momentsCreateSuccess"):
+		case type('momentsCreateSuccess'):
 			const { extras: { color, references } } = action.response
-			let verseColors = []
+			const verseColors = []
 
 			if (color && references && references.length > 0) {
 				references.forEach((ref) => {

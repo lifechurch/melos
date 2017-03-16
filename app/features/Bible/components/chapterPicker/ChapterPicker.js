@@ -472,7 +472,7 @@ class ChapterPicker extends Component {
 	}
 
 	render() {
-		const { bookMap, chapter, versionID } = this.props
+		const { bookMap, chapter, versionID, versionAbbr } = this.props
 		const {
 			books,
 			chapters,
@@ -506,6 +506,7 @@ class ChapterPicker extends Component {
 							params={this.props.params}
 							localizedLink={this.props.localizedLink}
 							versionID={versionID}
+							versionAbbr={versionAbbr}
 							classes={classes}
 							bookList={books}
 							chapterList={chapters}

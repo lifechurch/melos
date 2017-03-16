@@ -263,7 +263,7 @@ class Bible extends Component {
 	}
 
 	render() {
-		const { bible, hosts, params, intl, isRtl } = this.props
+		const { bible, hosts, intl, isRtl } = this.props
 		const { fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`

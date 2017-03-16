@@ -9,29 +9,30 @@ class Chapters extends Component {
 			focus,
 			versionID,
 			listSelectionIndex,
+			versionAbbr,
 			onMouseOver,
 			selectedChapter,
 			localizedLink,
 			params
 		} = this.props
 
-		let chapters = []
+		const chapters = []
 
 		if (list) {
-			Object.keys(list).forEach((usfm, index) =>  {
-				let chapter = list[usfm]
+			Object.keys(list).forEach((usfm, index) => {
+				const chapter = list[usfm]
 
-				let active = (usfm == selectedChapter) ? 'active' : ''
+				const active = (usfm == selectedChapter) ? 'active' : ''
 				if (focus) {
-					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
+					const focusClass = (index == listSelectionIndex) ? 'focus' : ''
 					chapters.push(
-						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}.${params.vabbr}`)} >
-							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "chapters", index)} ><div>{ chapter.human }</div></li>
+						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}.${versionAbbr}`)} >
+							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, 'chapters', index)} ><div>{ chapter.human }</div></li>
 						</Link>
 					)
 				} else {
 					chapters.push(
-						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}.${params.vabbr}`)} >
+						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}.${versionAbbr}`)} >
 							<li className={`${active}`}><div>{ chapter.human }</div></li>
 						</Link>
 					)
