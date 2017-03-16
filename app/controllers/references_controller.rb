@@ -56,6 +56,10 @@ class ReferencesController < ApplicationController
         reference.gsub!('.json', '')
         request.format = :json
       end
+
+      if reference.try(:"end_with?", '.')
+        reference.gsub!(/\.$/, '')
+      end
     end
 
 
