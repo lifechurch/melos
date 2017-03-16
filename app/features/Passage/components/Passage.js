@@ -176,7 +176,7 @@ function Passage(props) {
 		if (isRtl()) {
 			nextArrow = (
 				<Link
-					to={localizedLink(prevLink)}
+					to={prevLink}
 					title={''}
 				>
 					<CarouselArrow width={23} height={23} dir='left' fill='gray' />
@@ -185,7 +185,7 @@ function Passage(props) {
 		} else {
 			prevArrow = (
 				<Link
-					to={localizedLink(prevLink)}
+					to={prevLink}
 					title={''}
 				>
 					<CarouselArrow width={23} height={23} dir='left' fill='gray' />
@@ -198,7 +198,7 @@ function Passage(props) {
 		if (isRtl()) {
 			prevArrow = (
 				<Link
-					to={localizedLink(nextLink)}
+					to={nextLink}
 					title={''}
 				>
 					<CarouselArrow width={23} height={23} dir='right' fill='gray' />
@@ -207,7 +207,7 @@ function Passage(props) {
 		} else {
 			nextArrow = (
 				<Link
-					to={localizedLink(nextLink)}
+					to={nextLink}
 					title={''}
 				>
 					<CarouselArrow width={23} height={23} dir='right' fill='gray' />

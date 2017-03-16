@@ -84,7 +84,7 @@ function requireChapterData(nextState, replace, callback) {
 	let nextUsfm = `${nextBook}.${nextChapter}`
 	if (!nextVersion) { nextVersion = cookie.load('version') || '1' }
 	if (!nextChapter) {
-		nextUsfm = cookie.load('last_read') || 'JHN.1'
+		nextUsfm = (cookie.load('last_read') || 'JHN.1').split('.').slice(0, 2).join('.')
 	}
 
 	const hasVersionChanged = isInitialLoad || (currentVersion ? (nextVersion.toString() !== currentVersion.toString()) : true)

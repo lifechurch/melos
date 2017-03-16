@@ -346,8 +346,8 @@ class Bible extends Component {
 					<NavArrows
 						{...this.props}
 						isRtl={isRtl()}
-						previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${bible.version.local_abbreviation}` : null}
-						nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${bible.version.local_abbreviation}` : null}
+						previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${bible.version.local_abbreviation ? bible.version.local_abbreviation.split('-')[0] : ''}` : null}
+						nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${bible.version.local_abbreviation ? bible.version.local_abbreviation.split('-')[0] : ''}` : null}
 					/>
 				</div>
 			)

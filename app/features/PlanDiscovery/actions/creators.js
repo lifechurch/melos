@@ -181,7 +181,7 @@ const ActionCreators = {
 								dispatch(BibleActionCreator.bibleChapter({
 									reference: ref,
 									id: version,
-									format: 'html',
+								}, {
 									plan_id: id,
 									plan_day: currentDay,
 									plan_content: i
@@ -201,7 +201,7 @@ const ActionCreators = {
 								dispatch(BibleActionCreator.bibleVerses({
 									references: [ref],
 									id: version,
-									format: 'html',
+								}, {
 									plan_id: id,
 									plan_day: currentDay,
 									plan_content: i

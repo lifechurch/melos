@@ -27,7 +27,7 @@ export default function reducer(state = {}, action) {
 
 		case bibleType('bibleVersesSuccess'):
 			return (function bibleVersesSuccess() {
-				const { params: { plan_id, plan_content, plan_day }, response: verse } = action
+				const { extras: { plan_id, plan_content, plan_day }, response: verse } = action
 				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id]) {
 					const plan = Immutable
 						.fromJS(state[plan_id])
@@ -41,7 +41,7 @@ export default function reducer(state = {}, action) {
 
 		case bibleType('bibleChapterSuccess'):
 			return (function bibleChapterSuccess() {
-				const { params: { plan_id, plan_content, plan_day, id }, response: verse } = action
+				const { extras: { plan_id, plan_content, plan_day, id }, response: verse } = action
 				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id]) {
 					const plan = Immutable
 						.fromJS(state[plan_id])

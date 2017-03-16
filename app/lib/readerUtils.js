@@ -195,12 +195,12 @@ export function isVerseOrChapter(usfm) {
 
 	const CHAPTER_NOTV 			= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+$') 																											// /bible/1/mat.1
 	const VERSE_NOTV 				= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+$') 																						// /bible/1/mat.1.1
-	const CHAPTER  					= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[a-zA-z]{1}[a-zA-Z0-9]+$') 															// /bible/1/mat.1.kjv
-	const VERSE  						= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+\.[a-zA-z]{1}[a-zA-Z0-9]+$') 									// /bible/1/mat.1.1-4,6.kjv
+	const CHAPTER  					= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[a-zA-z]{1}[a-zA-Z0-9-]+$') 															// /bible/1/mat.1.kjv
+	const VERSE  						= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+\.[a-zA-z]{1}[a-zA-Z0-9-]+$') 									// /bible/1/mat.1.1-4,6.kjv
 	const CHAPTER_NOTV_CV  	= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+$') 																			// /bible/kjv/mat.1
 	const VERSE_NOTV_CV  		= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+$') 													// /bible/kjv/mat.1.1-3,5
-	const CHAPTER_CV  			= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[a-zA-z]{1}[a-zA-Z0-9]+$') 						// /bible/kjv/mat.1.kjv
-	const VERSE_CV 					= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+\.[a-zA-z]{1}[a-zA-Z0-9]+$') 	// /bible/kjv/mat.1.1.kjv
+	const CHAPTER_CV  			= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[a-zA-z]{1}[a-zA-Z0-9-]+$') 						// /bible/kjv/mat.1.kjv
+	const VERSE_CV 					= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+\.[a-zA-z]{1}[a-zA-Z0-9-]+$') 	// /bible/kjv/mat.1.1.kjv
 
 	const isVerse = false
 	const isChapter = false
