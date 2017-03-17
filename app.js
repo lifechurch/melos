@@ -13,7 +13,7 @@ const auth = api.tokenAuth;
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-Raven.config('https://488eeabd899a452783e997c6558e0852:14c79298cb364716a7877e9ace89a69e@sentry.io/129704').install()
+Raven.config('https://cc7248185fe54b72a7419782feb9f483:dd4bdec0c223479cbc7ba5231d89507f@sentry.io/149323').install()
 
 require('babel-register')({ presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] });
 
