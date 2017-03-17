@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { FormattedHTMLMessage, FormattedMessage } from 'react-intl'
 import moment from 'moment'
+import { dayHasDevo } from '../../../lib/readingPlanUtils'
 
 function PlanDayStatus(props) {
 	const { calendar, total, day } = props
@@ -10,12 +11,20 @@ function PlanDayStatus(props) {
 
 	calendar.forEach((d) => {
 		const curDate = moment(d.date)
-
-		if (!d.completed && (curDate.isBefore(today, 'day'))) {
+		const hasContent = (d.references.length > 0 || dayHasDevo(d.additional_content))
+		// 'rest days' don't count towards progress
+		if (
+				hasContent &&
+				!d.completed &&
+				curDate.isBefore(today, 'day')
+			) {
 			missedDays++
 		}
-
-		if (d.completed && (curDate.isAfter(today, 'day'))) {
+		if (
+				hasContent &&
+				d.completed &&
+				curDate.isAfter(today, 'day')
+			) {
 			aheadDays++
 		}
 	})

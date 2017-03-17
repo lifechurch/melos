@@ -50,7 +50,7 @@ class Plan extends Component {
 		}
 	}
 
-	handleCompleteRef(day, ref, complete, pushView = true) {
+	handleCompleteRef(day, ref, complete) {
 		const { dispatch, plan: { calendar, id, total_days } } = this.props
 		const dayData = calendar[day - 1]
 		const references = Immutable.fromJS(dayData.references_completed).toJS()
@@ -69,7 +69,7 @@ class Plan extends Component {
 		)
 
 		// push day complete/plan complete
-		if (complete && pushView) {
+		if (complete) {
 			if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
 				if (isFinalPlanDay(day, calendar, total_days)) {
 					dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))

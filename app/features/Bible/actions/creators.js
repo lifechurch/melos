@@ -20,8 +20,18 @@ const ActionCreators = {
 		return dispatch => {
 			return new Promise((resolve) => {
 				dispatch(ActionCreators.bibleVersion({ id: version })).then((newVersion) => {
-					const newRef = newVersion.books[0].chapters[0].usfm
-					dispatch(ActionCreators.readerLoad(Object.assign({}, params, { hasVersionChanged: true, hasChapterChanged: true, reference: newRef, showError: true }), auth)).then(() => {
+					let newRef, newReaderVersion
+					// if this version call fails, then it's probably just a bad version, so don't
+					// try to make the new reader call with the same version
+					if (newVersion && newVersion.books && newVersion.books[0] && newVersion.books[0].chapters && newVersion.books[0].chapters[0]) {
+						newRef = newVersion.books[0].chapters[0].usfm
+						newReaderVersion = version
+					} else {
+						newRef = fallbackParams.reference
+						newReaderVersion = fallbackParams.version
+					}
+
+					dispatch(ActionCreators.readerLoad(Object.assign({}, params, { hasVersionChanged: true, hasChapterChanged: true, reference: newRef, version: newReaderVersion, showError: true }), auth)).then(() => {
 						resolve()
 					})
 				}, () => {

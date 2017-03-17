@@ -2,6 +2,7 @@ import Immutable from 'immutable'
 
 import type from '../actions/constants'
 import bibleType from '../../Bible/actions/constants'
+import { dayHasDevo } from '../../../lib/readingPlanUtils'
 
 
 export default function reducer(state = {}, action) {
@@ -21,7 +22,14 @@ export default function reducer(state = {}, action) {
 			return (function calendarSuccess() {
 				const inStatePlan = state[action.params.id] || { id: action.params.id }
 				const calendar = action.response
-				const plan = Immutable.fromJS(inStatePlan).mergeDeep({ calendar: calendar.calendar }).toJS()
+				// lets go through and mark all days with no content as completed like the apps do
+				const updatedCal = calendar.calendar.map((day) => {
+					if (day.references.length === 0 && !dayHasDevo(day.additional_content)) {
+						day.completed = true
+					}
+					return day
+				})
+				const plan = Immutable.fromJS(inStatePlan).mergeDeep({ calendar: updatedCal }).toJS()
 				return Immutable.fromJS(state).mergeDeep({ [action.params.id]: plan }).toJS()
 			}())
 

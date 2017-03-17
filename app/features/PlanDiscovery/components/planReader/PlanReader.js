@@ -28,7 +28,6 @@ class PlanReader extends Component {
 		dispatch(BibleActionCreator.bibleChapter({
 			id,
 			reference: this.chapReference,
-			format: 'html'
 		}))
 	}
 
