@@ -13,9 +13,11 @@ export default function reducer(state = {}, action) {
 
 		case type('readingplansPlansByReferenceSuccess'):
 			return (function readingplansPlansByReferenceSuccess() {
-				const plans = action.response.plans.map((plan) => {
+				let plans = action.response.plans.map((plan) => {
 					return Immutable.fromJS(plan).set('image_id', plan.id).set('type', 'reading_plan').toJS()
 				})
+				// for quicker load times, let's just show 6 plans
+				plans = plans.slice(0, 6)
 				return Immutable
 					.fromJS(action.response)
 					.merge({ items: plans, type: false })
