@@ -55,14 +55,14 @@ app.use(cors({ origin: true }));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { maxage: '1y' }));
 
 app.use('/authenticate', auth.expressAuthRouteHandler);
 app.use('/', ping);
 app.use('/', api.expressRouter);
 
 // entry point for rails apps
-app.use('/featureImport', featureServer);
+app.use(featureServer);
 
 // primary route handle for react-router
 app.use(reactServer);
@@ -99,12 +99,10 @@ app.use((err, req, res, next) => {
 // production error handler
 // no stacktraces leaked to user
 app.use((err, req, res, next) => {
-	res.status(err.status || 500);
-	res.render('error', {
+	res.status(err.status || 500).render('error', {
 		message: err.message,
 		error: {}
 	});
 });
-
 
 module.exports = app;

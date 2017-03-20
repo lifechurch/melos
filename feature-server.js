@@ -214,16 +214,20 @@ function getRenderProps(feature, url) {
 				}
 			})
 		} catch (ex) {
-			console.log('Rendering Error:', ex)
+			Raven.captureException(ex)
+			// console.log('Rendering Error:', ex)
 			resolve({})
 		}
 	})
 }
 
-router.post('/', urlencodedParser, (req, res) => {
+router.post('/featureImport/*', urlencodedParser, (req, res) => {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
+
+	Raven.setContext({ user: auth, tags: { feature, url: params.url }, extra: { params } })
+	Raven.captureException(new Error('Testing Sentry Exception Capturing'))
 
 	reactCookie.plugToRequest(req, res)
 
