@@ -22,9 +22,6 @@ export default function reducer(state = {}, action) {
 						local_title,
 						copyright_short,
 						language
-					},
-					params: {
-						passage
 					}
 				} = action
 

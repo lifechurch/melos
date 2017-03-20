@@ -40,13 +40,13 @@ export default function reducer(state = {}, action) {
 				let plan_content = null
 				let plan_day = null
 				if (typeof action.extras !== 'undefined') {
-					plan_id = action.extras.plan_id
-					plan_content = action.extras.plan_content
-					plan_day = action.extras.plan_day
+					plan_id = parseInt(action.extras.plan_id, 10)
+					plan_content = parseInt(action.extras.plan_content, 10)
+					plan_day = parseInt(action.extras.plan_day, 10)
 				}
 
 				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id] &&
-					plan_content && plan_day
+					!Number.isNaN(plan_content) && !Number.isNaN(plan_day)
 				) {
 					const plan = Immutable
 						.fromJS(state[plan_id])
@@ -65,13 +65,13 @@ export default function reducer(state = {}, action) {
 				let plan_content = null
 				let plan_day = null
 				if (typeof action.extras !== 'undefined') {
-					plan_id = action.extras.plan_id
-					plan_content = action.extras.plan_content
-					plan_day = action.extras.plan_day
+					plan_id = parseInt(action.extras.plan_id, 10)
+					plan_content = parseInt(action.extras.plan_content, 10)
+					plan_day = parseInt(action.extras.plan_day, 10)
 				}
 
 				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id] &&
-					plan_content && plan_day
+					!Number.isNaN(plan_content) && !Number.isNaN(plan_day)
 				) {
 					const plan = Immutable
 						.fromJS(state[plan_id])
