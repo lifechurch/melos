@@ -9,6 +9,10 @@ function PlanDevo(props) {
 			<div />
 		)
 	}
+
+	// make sure devo content in text has correct line breaks
+	const formattedText = devoContent.replace(/(?:\r\n|\r|\n)/g, '<br />')
+
 	return (
 		<div className='devo-content'>
 			<div className="devo-header">
@@ -16,7 +20,7 @@ function PlanDevo(props) {
 			</div>
 			<div
 				className='devotional'
-				dangerouslySetInnerHTML={{ __html: devoContent }}
+				dangerouslySetInnerHTML={{ __html: formattedText }}
 			/>
 		</div>
 	)
