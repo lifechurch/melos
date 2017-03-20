@@ -30,7 +30,7 @@ module YV
           params['languageTag'] = I18n.locale
           params['railsHost'] = "#{request.protocol}#{request.host_with_port}"
 
-          resource_url = Cfg.event_import_url
+          resource_url = "#{Cfg.event_import_url}/#{feature}"
           curb_get = lambda do
             begin
               post_body = { feature: feature, params: params, auth: auth }
