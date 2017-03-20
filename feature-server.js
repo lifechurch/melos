@@ -227,7 +227,6 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 	const Locale = getLocale(params.languageTag)
 
 	Raven.setContext({ user: auth, tags: { feature, url: params.url }, extra: { params } })
-	Raven.captureException(new Error('Testing Sentry Exception Capturing'))
 
 	reactCookie.plugToRequest(req, res)
 
