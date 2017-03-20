@@ -44,10 +44,6 @@ class ReferencesController < ApplicationController
       reference = reference.encode('UTF-16le', invalid: :replace, replace: '')
       reference = reference.encode('UTF-8')
 
-      # # hack to get rid of those characters from version abbr
-      # if 'cunp'.in? reference.downcase
-      #   reference = reference.gsub!(/cunp.*/i, 'cunp')
-      # end
       # fix param references where reference only has the book
       # coming in as /bible/nasb/gen or /bible/nkjv/gen etc  - from campus.316networks.com
       if /^[a-zA-Z0-9]{3,}$/.match(reference)
