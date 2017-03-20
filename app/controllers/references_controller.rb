@@ -34,7 +34,8 @@ class ReferencesController < ApplicationController
     book = ref[0] unless ref.nil?
     reference = params[:reference]
     version = params[:version]
-
+    url = request.path
+    spliturl = url.split('/')
 
     # HACK (km): sometimes the url can have invalid utf-8 characters
     # /bible/46/rom.8.15.cunp-%E7%A5%EF
@@ -42,10 +43,11 @@ class ReferencesController < ApplicationController
     if reference
       reference = reference.encode('UTF-16le', invalid: :replace, replace: '')
       reference = reference.encode('UTF-8')
-      # hack to get rid of those characters from version abbr
-      if 'cunp'.in? reference.downcase
-        reference = reference.gsub!(/cunp.*/i, 'cunp')
-      end
+
+      # # hack to get rid of those characters from version abbr
+      # if 'cunp'.in? reference.downcase
+      #   reference = reference.gsub!(/cunp.*/i, 'cunp')
+      # end
       # fix param references where reference only has the book
       # coming in as /bible/nasb/gen or /bible/nkjv/gen etc  - from campus.316networks.com
       if /^[a-zA-Z0-9]{3,}$/.match(reference)
@@ -60,6 +62,7 @@ class ReferencesController < ApplicationController
       if reference.try(:"end_with?", '.')
         reference.gsub!(/\.$/, '')
       end
+
     end
 
 
@@ -99,10 +102,14 @@ class ReferencesController < ApplicationController
       return redirect_to reference_path(version: version, reference: reference)
     end
 
+    if reference
+      url = "/#{spliturl[1]}/#{spliturl[2]}/#{reference}"
+    end
+
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
-        "url" => request.path,
+        "url" => url,
         "cache_for" => YV::Caching::a_very_long_time,
         "version" => ((version and !version.nil?) ? version : nil),
         "ref" => ((reference and !reference.nil?) ? reference : nil),
