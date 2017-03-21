@@ -181,12 +181,18 @@ class PlanReader extends Component {
 			} else {
 				referenceContent = this.dayObj.reference_content[this.contentIndex].content
 				refHeading = this.dayObj.reference_content[this.contentIndex].reference.human
-				const startRef = this.reference.split('+')[0]
-				const endRef = this.reference.split('+').pop()
+				const splitRefs = this.reference.split('+')
 				if (audio && audio.timing) {
+					const startRef = splitRefs[0]
+					const endRef = splitRefs.pop()
 					audioTiming = getVerseAudioTiming(startRef, endRef, audio.timing)
 				}
-				showChapterButton = true
+				// don't show the button unless we're rendering verses (not full chapter)
+				if (splitRefs[0].split('.').length === 3) {
+					showChapterButton = true
+				} else {
+					showChapterButton = false
+				}
 			}
 		}
 
