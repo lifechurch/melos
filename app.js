@@ -1,6 +1,5 @@
-if (process.env.NODE_ENV === 'production') {
-	require('newrelic');
-}
+require('newrelic');
+
 const Raven = require('raven');
 const express = require('express');
 const path = require('path');
@@ -9,6 +8,7 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const api = require('@youversion/js-api');
 const ping = require('./ping');
+
 const auth = api.tokenAuth;
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
