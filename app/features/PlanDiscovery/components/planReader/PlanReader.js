@@ -173,7 +173,7 @@ class PlanReader extends Component {
 			// chapter. note this does not cover when the actual plan reference is a full chapter, if
 			// that is the case, then the ref content is just going to be the full chapter where verse content is
 			// stored in calendar
-			if (showFullChapter) {
+			if (showFullChapter && bible.chapter && bible.chapter.reference) {
 				referenceContent = bible.chapter.content
 				refHeading = bible.chapter.reference.human
 				audio = bible.audio
