@@ -24,7 +24,7 @@ const Raven = require('raven');
 
 Raven.config('https://cc7248185fe54b72a7419782feb9f483:dd4bdec0c223479cbc7ba5231d89507f@sentry.io/149323').install()
 
-const getAssetPath = nr.createTracer('featureImport::fnGetAssetPath', (path) => {
+const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 	const IS_PROD = process.env.NODE_ENV === 'production';
 	if (IS_PROD) {
 		return revManifest[path];
@@ -33,7 +33,7 @@ const getAssetPath = nr.createTracer('featureImport::fnGetAssetPath', (path) => 
 	}
 })
 
-const checkAuth = nr.createTracer('featureImport::fnCheckAuth', (auth) => {
+const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 	return new Promise((resolve, reject) => {
 		if (typeof auth === 'object' && typeof auth.token === 'string') {
 			// We have a token
@@ -101,7 +101,7 @@ const checkAuth = nr.createTracer('featureImport::fnCheckAuth', (auth) => {
 	})
 })
 
-const getAssetPrefix = nr.createTracer('featureImport::fnGetAssetPrefix', (req) => {
+const getAssetPrefix = nr.createTracer('fnGetAssetPrefix', (req) => {
 	if (req.get('Host').indexOf('localhost') === -1) {
 		return ['https://', req.get('Host')].join('')
 	} else {
@@ -109,11 +109,11 @@ const getAssetPrefix = nr.createTracer('featureImport::fnGetAssetPrefix', (req) 
 	}
 })
 
-const getNodeHost = nr.createTracer('featureImport::fnGetNodeHost', (req) => {
+const getNodeHost = nr.createTracer('fnGetNodeHost', (req) => {
 	return [req.protocol, '://', req.get('Host')].join('')
 })
 
-const getDefaultState = nr.createTracer('featureImport::fnGetDefaultState', (feature) => {
+const getDefaultState = nr.createTracer('fnGetDefaultState', (feature) => {
 	let defaultState = {}
 	try {
 		defaultState = require(`./app/standalone/${feature}/defaultState`).default
@@ -123,7 +123,7 @@ const getDefaultState = nr.createTracer('featureImport::fnGetDefaultState', (fea
 	return defaultState
 })
 
-const getStore = nr.createTracer('featureImport::fnGetStore', (feature, startingState, history, logger) => {
+const getStore = nr.createTracer('fnGetStore', (feature, startingState, history, logger) => {
 	let configureStore = {}
 	try {
 		configureStore = require(`./app/standalone/${feature}/store`).default
@@ -133,7 +133,7 @@ const getStore = nr.createTracer('featureImport::fnGetStore', (feature, starting
 	return configureStore(startingState, history, logger)
 })
 
-const getRootComponent = nr.createTracer('featureImport::fnGetRootComponent', (feature) => {
+const getRootComponent = nr.createTracer('fnGetRootComponent', (feature) => {
 	let rootComponent = {}
 	try {
 		rootComponent = require(`./app/standalone/${feature}/rootComponent`).default
@@ -143,7 +143,7 @@ const getRootComponent = nr.createTracer('featureImport::fnGetRootComponent', (f
 	return rootComponent
 })
 
-const mapStateToParams = nr.createTracer('featureImport::fnMapStateToParams', (feature, state, params) => {
+const mapStateToParams = nr.createTracer('fnMapStateToParams', (feature, state, params) => {
 	try {
 		const fn = require(`./app/standalone/${feature}/mapParamsToState`).default
 		return fn(state, params)
@@ -152,7 +152,7 @@ const mapStateToParams = nr.createTracer('featureImport::fnMapStateToParams', (f
 	}
 })
 
-const getConfig = nr.createTracer('featureImport::fnGetConfig', (feature) => {
+const getConfig = nr.createTracer('fnGetConfig', (feature) => {
 	const defaultConfig = { linkCss: true }
 	let config = {}
 	try {
@@ -161,8 +161,8 @@ const getConfig = nr.createTracer('featureImport::fnGetConfig', (feature) => {
 	return Object.assign({}, defaultConfig, config)
 })
 
-const loadData = nr.createTracer('featureImport::fnLoadData', (feature, params, startingState, sessionData, store, Locale) => {
-	return new Promise(nr.createTracer('featureImport::fnLoadData::promise', (resolve) => {
+const loadData = nr.createTracer('fnLoadData', (feature, params, startingState, sessionData, store, Locale) => {
+	return new Promise(nr.createTracer('fnLoadData::promise', (resolve) => {
 		let fn = null
 		try {
 			fn = require(`./app/standalone/${feature}/loadData`).default
@@ -173,7 +173,7 @@ const loadData = nr.createTracer('featureImport::fnLoadData', (feature, params, 
 	}))
 })
 
-const getLocale = nr.createTracer('featureImport::fnGetLocale', (languageTag) => {
+const getLocale = nr.createTracer('fnGetLocale', (languageTag) => {
 	let final = {}
 
 	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || typeof availableLocales[languageTag] === 'undefined') {
@@ -201,8 +201,8 @@ const getLocale = nr.createTracer('featureImport::fnGetLocale', (languageTag) =>
 	return final;
 })
 
-const getRenderProps = nr.createTracer('featureImport::fnGetRenderProps', (feature, url) => {
-	return new Promise(nr.createTracer('featureImport::fnGetRenderProps::promsie', (resolve) => {
+const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
+	return new Promise(nr.createTracer('fnGetRenderProps::promsie', (resolve) => {
 		if (url !== null && typeof url === 'string' && url.length > 0) {
 			let getRoutes = null
 			try {
@@ -226,14 +226,14 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
 
-	nr.setTransactionName(`/featureImport/${feature}`)
+	nr.setTransactionName(`featureImport/${feature}`)
 
 	Raven.setContext({ user: auth, tags: { feature, url: params.url }, extra: { params } })
 
 	reactCookie.plugToRequest(req, res)
 
 	let verifiedAuth = null
-	checkAuth(auth).then(nr.createTracer('featureImport::checkingAuth', (authResult) => {
+	checkAuth(auth).then(nr.createTracer('checkingAuth', (authResult) => {
 		const sessionData = Object.assign({}, authResult.userData)
 		authResult.userData.password = null
 		verifiedAuth = authResult
@@ -244,10 +244,10 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 		try {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)
-			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('featureImport::loadData', (action) => {
-				const finish = nr.createTracer('featureImport::finish', () => {
+			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('loadData', (action) => {
+				const finish = nr.createTracer('finish', () => {
 					const RootComponent = getRootComponent(feature)
-					getRenderProps(feature, params.url).then(nr.createTracer('featureImport::getRenderProps', (renderProps) => {
+					getRenderProps(feature, params.url).then(nr.createTracer('getRenderProps', (renderProps) => {
 						let html = null
 						try {
 							html = renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
@@ -277,7 +277,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						}
 
 						res.setHeader('Cache-Control', 'public')
-						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, nr.createTracer('featureImport::render', (err, html) => {
+						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, nr.createTracer('render', (err, html) => {
 							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/javascripts/${getAssetPath(`${feature}.js`)}` })
 							nr.endTransaction()
 						}))
@@ -287,9 +287,9 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 				})
 
 				if (typeof action === 'function') {
-					store.dispatch(action).then(nr.createTracer('featureImport::actionIsFn::success', () => {
+					store.dispatch(action).then(nr.createTracer('actionIsFn::success', () => {
 						finish()
-					}), nr.createTracer('featureImport::actionIsFn::failure', () => {
+					}), nr.createTracer('actionIsFn::failure', () => {
 						finish()
 					}))
 				} else if (typeof action === 'object') {
@@ -298,7 +298,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 				} else {
 					finish()
 				}
-			}), nr.createTracer('featureImport::loadDataFailed', (error) => {
+			}), nr.createTracer('loadDataFailed', (error) => {
 					// throw new Error(`LoadData Error - Could Not Render ${feature} view`, error)
 				Raven.captureException(error)
 				res.status(404).send(error)
@@ -310,7 +310,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
 			nr.endTransaction()
 		}
-	}), nr.createTracer('featureImport::authFailed', (authError) => {
+	}), nr.createTracer('authFailed', (authError) => {
 		res.status(403).send(authError)
 		nr.endTransaction()
 	}))
