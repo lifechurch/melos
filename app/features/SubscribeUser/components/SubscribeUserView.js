@@ -9,26 +9,35 @@ class SubscribeUserView extends Component {
 	render() {
 		const { readingPlan, auth } = this.props
 
+		if (!readingPlan || !readingPlan.id) {
+			return <div />
+		}
 		return (
 			<div className='row horizontal-center'>
 				<div className='columns large-8 text-center'>
 
-					<h6><FormattedMessage id='plans.start'/></h6>
+					<h6><FormattedMessage id='plans.start' /></h6>
 
 					<a href={readingPlan.short_url}>
 						<Image width={320} height={180} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
 					</a>
 
-					<br/>
+					<br />
 
-					<div style={ {"marginTop": '15px'} }>
+					<div style={ { marginTop: '15px' } }>
 						<h3>
 							<a href={readingPlan.short_url}>{ readingPlan.name[auth.userData.language_tag] || readingPlan.name.default }</a>
 						</h3>
 
-						<hr/>
+						<hr />
 
-						<SubscribeUserDialog {...this.props} />
+						<SubscribeUserDialog
+							{...this.props}
+							useRouter={false}
+							id={readingPlan.id}
+							isSubscribed={!!readingPlan.subscription_id}
+							subscriptionLink={readingPlan.short_url}
+						/>
 					</div>
 
 				</div>
