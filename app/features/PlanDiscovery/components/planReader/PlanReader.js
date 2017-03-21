@@ -223,8 +223,9 @@ class PlanReader extends Component {
 								showChapterButton,
 								audio,
 								isRtl: isRtl(),
-								audioStart: audioTiming ? audioTiming.startTime : null,
-								audioStop: audioTiming ? audioTiming.endTime : null,
+								// we only care about timing when we're not showing a full chapter
+								audioStart: (audioTiming && !showFullChapter) ? audioTiming.startTime : null,
+								audioStop: (audioTiming && !showFullChapter) ? audioTiming.endTime : null,
 								audioPlaying,
 								onAudioComplete: this.onAudioComplete,
 								version: bible.version,

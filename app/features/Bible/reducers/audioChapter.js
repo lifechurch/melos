@@ -12,17 +12,16 @@ export default function reducer(state = {}, action) {
 		case type('bibleChapterSuccess'):
 			return (function bibleChapterPullAudioSuccess() {
 				const { response: { audio }, params: { reference } } = action
-				console.log('pls get audio', audio)
-				if (audio && typeof audio !== 'undefined' && 'id' in audio[0]) {
-					return Immutable.fromJS(state).merge({ [reference]: audio[0] }).toJS()
+				if (audio && typeof audio !== 'undefined' && typeof audio[0] !== 'undefined' && 'id' in audio[0]) {
+					return Immutable.fromJS(state).mergeDeep({ [reference]: audio[0] }).toJS()
 				}
 				return state
 			}())
 		case type('audiobibleChapterSuccess'):
 			return (function audiobibleChapterSuccess() {
 				const { response: { chapter }, params: { reference } } = action
-				if (typeof chapter !== 'undefined') {
-					return Immutable.fromJS(state).merge({ [reference]: chapter[0] }).toJS()
+				if (typeof chapter !== 'undefined' && typeof chapter[0] !== 'undefined') {
+					return Immutable.fromJS(state).mergeDeep({ [reference]: chapter[0] }).toJS()
 				} else {
 					return { loading: false }
 				}
