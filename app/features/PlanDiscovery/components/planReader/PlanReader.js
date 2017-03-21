@@ -11,6 +11,18 @@ class PlanReader extends Component {
 		super(props)
 		this.state = {
 			audioPlaying: false,
+			showFullChapter: false,
+		}
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		const { params: { content } } = this.props
+		// reset the reader to not show the full chapter on a new reference
+		if (typeof content !== 'undefined' &&
+			typeof prevProps.params.content !== 'undefined' &&
+			content !== prevProps.params.content
+		) {
+			this.setState({ showFullChapter: false })
 		}
 	}
 
@@ -29,6 +41,7 @@ class PlanReader extends Component {
 			id,
 			reference: this.chapReference,
 		}))
+		this.setState({ showFullChapter: true })
 	}
 
 	getWhichContentNum() {
@@ -109,7 +122,7 @@ class PlanReader extends Component {
 
 	render() {
 		const { plan, params, bible, hosts, auth, dispatch, isRtl } = this.props
-		const { audioPlaying } = this.state
+		const { audioPlaying, showFullChapter } = this.state
 		const { day, content } = params
 		if (Object.keys(plan).length === 0 || !day) {
 			return (
@@ -153,9 +166,14 @@ class PlanReader extends Component {
 			if (typeof window !== 'undefined') {
 				bibleChapterLink = `${window.location.origin}/bible/${bible.version.id}/${this.chapReference}`
 			}
+			// if every case, either chapter call, or bibleaudio call, we're gonna put the audio
+			// into audioChapter keyed by reference
+			audio = bible.audioChapter[this.chapReference]
 			// render the full chapter content if the user clicked the button for read full
-			// chapter. this checks to make sure the chapter matches the rendered ref
-			if ('content' in bible.chapter && bible.chapter.reference.usfm === this.reference.split('.').splice(0, 2).join('.')) {
+			// chapter. note this does not cover when the actual plan reference is a full chapter, if
+			// that is the case, then the ref content is just going to be the full chapter where verse content is
+			// stored in calendar
+			if (showFullChapter && bible.chapter && bible.chapter.reference) {
 				referenceContent = bible.chapter.content
 				refHeading = bible.chapter.reference.human
 				audio = bible.audio
@@ -163,13 +181,18 @@ class PlanReader extends Component {
 			} else {
 				referenceContent = this.dayObj.reference_content[this.contentIndex].content
 				refHeading = this.dayObj.reference_content[this.contentIndex].reference.human
-				audio = bible.audioChapter[this.chapReference]
-				const startRef = this.reference.split('+')[0]
-				const endRef = this.reference.split('+').pop()
-				if (audio) {
+				const splitRefs = this.reference.split('+')
+				if (audio && audio.timing) {
+					const startRef = splitRefs[0]
+					const endRef = splitRefs.pop()
 					audioTiming = getVerseAudioTiming(startRef, endRef, audio.timing)
 				}
-				showChapterButton = true
+				// don't show the button unless we're rendering verses (not full chapter)
+				if (splitRefs[0].split('.').length === 3) {
+					showChapterButton = true
+				} else {
+					showChapterButton = false
+				}
 			}
 		}
 
@@ -206,8 +229,9 @@ class PlanReader extends Component {
 								showChapterButton,
 								audio,
 								isRtl: isRtl(),
-								audioStart: audioTiming ? audioTiming.startTime : null,
-								audioStop: audioTiming ? audioTiming.endTime : null,
+								// we only care about timing when we're not showing a full chapter
+								audioStart: (audioTiming && !showFullChapter) ? audioTiming.startTime : null,
+								audioStop: (audioTiming && !showFullChapter) ? audioTiming.endTime : null,
 								audioPlaying,
 								onAudioComplete: this.onAudioComplete,
 								version: bible.version,
