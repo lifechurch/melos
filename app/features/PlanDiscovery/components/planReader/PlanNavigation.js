@@ -31,6 +31,7 @@ class PlanNavigation extends Component {
 
 	styleArrows = () => {
 		if (document && typeof window !== 'undefined') {
+			window.scrollTo(0, 0)
 			const content = document.getElementsByClassName('plan-reader-content')[0]
 			if (content) {
 				const contentPos = this.viewport.getElement(content)
