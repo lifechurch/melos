@@ -1,3 +1,4 @@
+import nr from 'newrelic'
 import 'babel-polyfill'
 import express from 'express'
 import React from 'react'
@@ -23,16 +24,16 @@ const Raven = require('raven');
 
 Raven.config('https://cc7248185fe54b72a7419782feb9f483:dd4bdec0c223479cbc7ba5231d89507f@sentry.io/149323').install()
 
-function getAssetPath(path) {
+const getAssetPath = nr.createTracer('featureImport::fnGetAssetPath', (path) => {
 	const IS_PROD = process.env.NODE_ENV === 'production';
 	if (IS_PROD) {
 		return revManifest[path];
 	} else {
 		return path;
 	}
-}
+})
 
-function checkAuth(auth) {
+const checkAuth = nr.createTracer('featureImport::fnCheckAuth', (auth) => {
 	return new Promise((resolve, reject) => {
 		if (typeof auth === 'object' && typeof auth.token === 'string') {
 			// We have a token
@@ -98,21 +99,21 @@ function checkAuth(auth) {
 			})
 		}
 	})
-}
+})
 
-function getAssetPrefix(req) {
+const getAssetPrefix = nr.createTracer('featureImport::fnGetAssetPrefix', (req) => {
 	if (req.get('Host').indexOf('localhost') === -1) {
 		return ['https://', req.get('Host')].join('')
 	} else {
 		return ['http://', req.get('Host')].join('')
 	}
-}
+})
 
-function getNodeHost(req) {
+const getNodeHost = nr.createTracer('featureImport::fnGetNodeHost', (req) => {
 	return [req.protocol, '://', req.get('Host')].join('')
-}
+})
 
-function getDefaultState(feature) {
+const getDefaultState = nr.createTracer('featureImport::fnGetDefaultState', (feature) => {
 	let defaultState = {}
 	try {
 		defaultState = require(`./app/standalone/${feature}/defaultState`).default
@@ -120,9 +121,9 @@ function getDefaultState(feature) {
 		defaultState = require('./app/defaultState').default
 	}
 	return defaultState
-}
+})
 
-function getStore(feature, startingState, history, logger) {
+const getStore = nr.createTracer('featureImport::fnGetStore', (feature, startingState, history, logger) => {
 	let configureStore = {}
 	try {
 		configureStore = require(`./app/standalone/${feature}/store`).default
@@ -130,9 +131,9 @@ function getStore(feature, startingState, history, logger) {
 		configureStore = require('./app/store/configureStore').default
 	}
 	return configureStore(startingState, history, logger)
-}
+})
 
-function getRootComponent(feature) {
+const getRootComponent = nr.createTracer('featureImport::fnGetRootComponent', (feature) => {
 	let rootComponent = {}
 	try {
 		rootComponent = require(`./app/standalone/${feature}/rootComponent`).default
@@ -140,28 +141,28 @@ function getRootComponent(feature) {
 		throw new Error('No root component defined')
 	}
 	return rootComponent
-}
+})
 
-function mapStateToParams(feature, state, params) {
+const mapStateToParams = nr.createTracer('featureImport::fnMapStateToParams', (feature, state, params) => {
 	try {
 		const fn = require(`./app/standalone/${feature}/mapParamsToState`).default
 		return fn(state, params)
 	} catch (ex) {
 		return state
 	}
-}
+})
 
-function getConfig(feature) {
+const getConfig = nr.createTracer('featureImport::fnGetConfig', (feature) => {
 	const defaultConfig = { linkCss: true }
 	let config = {}
 	try {
 		config = require(`./app/standalone/${feature}/config`).default
 	} catch (ex) { }
 	return Object.assign({}, defaultConfig, config)
-}
+})
 
-function loadData(feature, params, startingState, sessionData, store, Locale) {
-	return new Promise((resolve) => {
+const loadData = nr.createTracer('featureImport::fnLoadData', (feature, params, startingState, sessionData, store, Locale) => {
+	return new Promise(nr.createTracer('featureImport::fnLoadData::promise', (resolve) => {
 		let fn = null
 		try {
 			fn = require(`./app/standalone/${feature}/loadData`).default
@@ -169,10 +170,10 @@ function loadData(feature, params, startingState, sessionData, store, Locale) {
 		} catch (ex) {
 			resolve()
 		}
-	})
-}
+	}))
+})
 
-function getLocale(languageTag) {
+const getLocale = nr.createTracer('featureImport::fnGetLocale', (languageTag) => {
 	let final = {}
 
 	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || typeof availableLocales[languageTag] === 'undefined') {
@@ -198,40 +199,41 @@ function getLocale(languageTag) {
 
 	moment.locale(final.momentLocale)
 	return final;
-}
+})
 
-function getRenderProps(feature, url) {
-	return new Promise((resolve) => {
-		let getRoutes = null
-		try {
-			getRoutes = require(`./app/standalone/${feature}/routes.js`).default
-			const routes = getRoutes(null)
-			match({ routes, location: url }, (error, redirectLocation, renderProps) => {
-				if (!error && !redirectLocation && renderProps) {
-					resolve(renderProps)
-				} else {
-					resolve({})
-				}
-			})
-		} catch (ex) {
-			Raven.captureException(ex)
-			// console.log('Rendering Error:', ex)
-			resolve({})
+const getRenderProps = nr.createTracer('featureImport::fnGetRenderProps', (feature, url) => {
+	return new Promise(nr.createTracer('featureImport::fnGetRenderProps::promsie', (resolve) => {
+		if (url !== null && typeof url === 'string' && url.length > 0) {
+			let getRoutes = null
+			try {
+				getRoutes = require(`./app/standalone/${feature}/routes.js`).default
+				const routes = getRoutes(null)
+				match({ routes, location: url }, (error, redirectLocation, renderProps) => {
+					if (!error && !redirectLocation && renderProps) {
+						resolve(renderProps)
+					}
+				})
+			} catch (ex) {
+				Raven.captureException(ex)
+			}
 		}
-	})
-}
+		return resolve({})
+	}))
+})
 
 router.post('/featureImport/*', urlencodedParser, (req, res) => {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
 
+	nr.setTransactionName(`/featureImport/${feature}`)
+
 	Raven.setContext({ user: auth, tags: { feature, url: params.url }, extra: { params } })
 
 	reactCookie.plugToRequest(req, res)
 
 	let verifiedAuth = null
-	checkAuth(auth).then((authResult) => {
+	checkAuth(auth).then(nr.createTracer('featureImport::checkingAuth', (authResult) => {
 		const sessionData = Object.assign({}, authResult.userData)
 		authResult.userData.password = null
 		verifiedAuth = authResult
@@ -242,17 +244,18 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 		try {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)
-			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
-				function finish() {
+			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('featureImport::loadData', (action) => {
+				const finish = nr.createTracer('featureImport::finish', () => {
 					const RootComponent = getRootComponent(feature)
-					getRenderProps(feature, params.url).then((renderProps) => {
+					getRenderProps(feature, params.url).then(nr.createTracer('featureImport::getRenderProps', (renderProps) => {
 						let html = null
 						try {
 							html = renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch (ex) {
-							// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
+								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
 							Raven.captureException(ex)
-							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
+							res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
+							nr.endTransaction()
 						}
 
 						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
@@ -266,47 +269,51 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 							title: head.title.toString(),
 							script: head.script.toString()
 						}
-						// for lookinside stuff
+
+							// for lookinside stuff
 						let referrer = null
 						if (params.referrer) {
 							referrer = params.referrer
 						}
+
 						res.setHeader('Cache-Control', 'public')
-						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, (err, html) => {
+						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, nr.createTracer('featureImport::render', (err, html) => {
 							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/javascripts/${getAssetPath(`${feature}.js`)}` })
-						})
+							nr.endTransaction()
+						}))
 
 						return null
-					})
-				}
+					}))
+				})
 
 				if (typeof action === 'function') {
-					store.dispatch(action).then(() => {
+					store.dispatch(action).then(nr.createTracer('featureImport::actionIsFn::success', () => {
 						finish()
-					}, () => {
+					}), nr.createTracer('featureImport::actionIsFn::failure', () => {
 						finish()
-					})
+					}))
 				} else if (typeof action === 'object') {
 					store.dispatch(action);
 					finish();
 				} else {
 					finish()
 				}
-			}, (error) => {
-				console.log(404, error)
-				// throw new Error(`LoadData Error - Could Not Render ${feature} view`, error)
+			}), nr.createTracer('featureImport::loadDataFailed', (error) => {
+					// throw new Error(`LoadData Error - Could Not Render ${feature} view`, error)
 				Raven.captureException(error)
 				res.status(404).send(error)
-			})
+				nr.endTransaction()
+			}))
 		} catch (ex) {
-			console.log(500, ex)
-			// throw new Error(`Error: 2 - Could Not Render ${feature} view`, ex)
+				// throw new Error(`Error: 2 - Could Not Render ${feature} view`, ex)
 			Raven.captureException(ex)
 			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
+			nr.endTransaction()
 		}
-	}, (authError) => {
-		return res.status(403).send(authError)
-	})
+	}), nr.createTracer('featureImport::authFailed', (authError) => {
+		res.status(403).send(authError)
+		nr.endTransaction()
+	}))
 })
 
 module.exports = router;

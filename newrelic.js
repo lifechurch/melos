@@ -7,6 +7,9 @@
 exports.config = {
   /**
    * Array of application names.
+	 * The ENV var NEW_RELIC_APP_NAME takes precendence
+	 *  and it is set in the nginx config, but it will
+	 *  default to this value if that is not set
    */
 	app_name: ['events.bible.com'],
   /**
