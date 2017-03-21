@@ -12,14 +12,20 @@ class SubscribeUserDialog extends Component {
 	}
 
 	handleSubscribeUser(privacy) {
-		const { dispatch, id, isLoggedIn, isSubscribed, subscriptionLink } = this.props
+		const { dispatch, id, isLoggedIn, isSubscribed, subscriptionLink, useRouter } = this.props
 		if (!isLoggedIn) window.location.replace('/sign-in')
 		if (!isSubscribed) {
 			dispatch(ActionCreators.readingplanSubscribeUser({ id, private: privacy }, isLoggedIn)).then(() => {
-				dispatch(routeActions.push(subscriptionLink))
+				if (useRouter) {
+					dispatch(routeActions.push(subscriptionLink))
+				} else {
+					window.location.replace(subscriptionLink)
+				}
 			})
-		} else {
+		} else if (useRouter) {
 			dispatch(routeActions.push(subscriptionLink))
+		} else {
+			window.location.replace(subscriptionLink)
 		}
 	}
 
@@ -55,7 +61,12 @@ SubscribeUserDialog.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 	isSubscribed: PropTypes.bool.isRequired,
 	isLoggedIn: PropTypes.bool.isRequired,
-	subscriptionLink: PropTypes.string.isRequired
+	subscriptionLink: PropTypes.string.isRequired,
+	useRouter: PropTypes.bool
+}
+
+SubscribeUserDialog.defaultProps = {
+	useRouter: true,
 }
 
 function mapStateToProps(state) {
