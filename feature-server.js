@@ -134,11 +134,11 @@ const getStore = nr.createTracer('fnGetStore', (feature, startingState, history,
 })
 
 const getRootComponent = nr.createTracer('fnGetRootComponent', (feature) => {
-	let rootComponent = {}
+	let rootComponent = null
 	try {
 		rootComponent = require(`./app/standalone/${feature}/rootComponent`).default
 	} catch (ex) {
-		throw new Error('No root component defined')
+		Raven.captureException(ex)
 	}
 	return rootComponent
 })
@@ -247,6 +247,12 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('loadData', (action) => {
 				const finish = nr.createTracer('finish', () => {
 					const RootComponent = getRootComponent(feature)
+
+					if (RootComponent === null) {
+						res.status(500).send({ error: 4, message: `No root component defined for this feature: ${feature}` })
+						nr.endTransaction()
+					}
+
 					getRenderProps(feature, params.url).then(nr.createTracer('getRenderProps', (renderProps) => {
 						let html = null
 						try {
