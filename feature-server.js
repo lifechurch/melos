@@ -214,7 +214,11 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 					}
 				})
 			} catch (ex) {
-				Raven.captureException(ex)
+				// We expect MODULE_NOT_FOUND errors because some features don't use routing
+				//  but we want to capture any other exceptions here
+				if (e.code !== 'MODULE_NOT_FOUND') {
+					Raven.captureException(ex)
+				}
 			}
 		}
 		return resolve({})
@@ -304,10 +308,10 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 				} else {
 					finish()
 				}
-			}), nr.createTracer('loadDataFailed', (error) => {
-					// throw new Error(`LoadData Error - Could Not Render ${feature} view`, error)
-				Raven.captureException(error)
-				res.status(404).send(error)
+			}), nr.createTracer('loadDataFailed', (errorDetail) => {
+				Raven.setContext({ extra: { errorDetail } })
+				Raven.captureException(new Error(`LoadData Error - Could Not Render ${feature} view`))
+				res.status(404).send(errorDetail)
 				nr.endTransaction()
 			}))
 		} catch (ex) {
