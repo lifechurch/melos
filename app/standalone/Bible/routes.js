@@ -9,9 +9,6 @@ export default function (requireChapterData, requireVerseData, setupReference) {
 		<Route path="/">
 			<Route path="(:lang/)bible(/:version)">
 				<IndexRoute component={BibleView} onEnter={requireChapterData} />
-				{/* <Route path="(:book).(:chapter).(:verse).:vabbr" component={PassageView} onEnter={requireVerseData} />
-				<Route path="(:book).(:chapter).(:vabbr)" component={BibleView} onEnter={requireChapterData} />
-				<Route path="(:book).(:chapter)" component={BibleView} onEnter={requireChapterData} /> */}
 
 				{/* if we attempt to match beyond /bible/ we're gonna setupReference */}
 				<Route path="*" component={ReferenceView} onEnter={setupReference} />

@@ -192,33 +192,27 @@ export function buildMeta(props) {
 
 
 export function isVerseOrChapter(usfm) {
+	const IS_BOOK = /^\d?[a-zA-Z]{2,3}$/
+	const ONLY_NUMBERS = /^[0-9]*$/
+	const FALLBACK_VALUE = { isVerse: false, isChapter: false }
+	if (typeof usfm !== 'string' || usfm.length === 0) {
+		return FALLBACK_VALUE
+	}
 
-	const CHAPTER_NOTV 			= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+$') 																				// /bible/1/mat.1
-	const VERSE_NOTV 				= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+$') 														// /bible/1/mat.1.1
-	const CHAPTER  					= /^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.([^\u0000-\u007F]|\w|[0-9-])+$/							// /bible/1/mat.1.kjv
-	const VERSE  						= /^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+\.([^\u0000-\u007F]|\w|[0-9-])+$/ 	// /bible/1/mat.1.1-4,6.kjv
-	const CHAPTER_NOTV_CV  	= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+$') 																				// /bible/kjv/mat.1
-	const VERSE_NOTV_CV  		= new RegExp('^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+$') 														// /bible/kjv/mat.1.1-3,5
-	const CHAPTER_CV  			= /^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.([^\u0000-\u007F]|\w|[0-9-])+$/ 							// /bible/kjv/mat.1.kjv
-	const VERSE_CV 					= /^[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9\-,]+\.([^\u0000-\u007F]|\w|[0-9-])+$/ 	// /bible/kjv/mat.1.1.kjv
+	const usfmParts = usfm.split('.')
 
-	const isVerse = false
-	const isChapter = false
+	let isVerse = usfmParts.length >= 4
+	let isChapter = usfmParts.length === 2
 
 	if (
-		CHAPTER_NOTV.test(usfm) ||
-		CHAPTER.test(usfm) ||
-		CHAPTER_NOTV_CV.test(usfm) ||
-		CHAPTER_CV.test(usfm)
+		usfm.length === 0 ||
+		!IS_BOOK.test(usfmParts[0]) ||
+		!ONLY_NUMBERS.test(usfmParts[1])
 	) {
-		return { isVerse, isChapter: true }
-	} else if (
-		VERSE_NOTV.test(usfm) ||
-		VERSE.test(usfm) ||
-		VERSE_NOTV_CV.test(usfm) ||
-		VERSE_CV.test(usfm)
-	) {
-		return { isVerse: true, isChapter }
+		return FALLBACK_VALUE
+	} else if (usfmParts.length === 3) {
+		isVerse = ONLY_NUMBERS.test(usfmParts[2])
+		isChapter = !isVerse
 	}
 
 	return { isVerse, isChapter }
