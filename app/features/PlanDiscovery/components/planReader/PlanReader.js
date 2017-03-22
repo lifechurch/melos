@@ -182,13 +182,14 @@ class PlanReader extends Component {
 				referenceContent = this.dayObj.reference_content[this.contentIndex].content
 				refHeading = this.dayObj.reference_content[this.contentIndex].reference.human
 				const splitRefs = this.reference.split('+')
+				const isVerse = (splitRefs[0].split('.').length === 3)
 				if (audio && audio.timing) {
 					const startRef = splitRefs[0]
 					const endRef = splitRefs.pop()
 					audioTiming = getVerseAudioTiming(startRef, endRef, audio.timing)
 				}
 				// don't show the button unless we're rendering verses (not full chapter)
-				if (splitRefs[0].split('.').length === 3) {
+				if (isVerse) {
 					showChapterButton = true
 				} else {
 					showChapterButton = false
