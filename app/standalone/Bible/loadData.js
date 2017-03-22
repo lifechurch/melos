@@ -52,17 +52,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				loadChapter({ isInitialLoad: true, hasVersionChanged: true, hasChapterChanged: true, language_tag, version, reference })
 			} else if (BIBLE_WITH_REF.test(params.url)) {
 				const { isVerse, isChapter } = isVerseOrChapter(reference)
-				if (isChapter) {
-					reference = reference.split('.').slice(0, 2).join('.')
-					loadChapter({
-						isInitialLoad: true,
-						hasVersionChanged: true,
-						hasChapterChanged: true,
-						language_tag,
-						version,
-						reference
-					})
-				} else if (isVerse) {
+				if (isVerse) {
 					reference = reference.split('.').slice(0, 3).join('.')
 					loadVerse({
 						isInitialLoad: true,
@@ -73,7 +63,15 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						passage: reference
 					})
 				} else {
-					resolve()
+					reference = reference.split('.').slice(0, 2).join('.')
+					loadChapter({
+						isInitialLoad: true,
+						hasVersionChanged: true,
+						hasChapterChanged: true,
+						language_tag,
+						version,
+						reference
+					})
 				}
 			} else {
 				resolve()
