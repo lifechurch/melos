@@ -29,10 +29,17 @@ class ReferencesController < ApplicationController
       return show
     end
 
-
-    ref = params[:reference].split('.') unless params[:reference].nil?
-    book = ref[0] unless ref.nil?
+    # if the following hash lookup changes the params, let's redirect with the new params
+    # so the node main and load data match up
+    redirect = false
+    # replace any colon with a .
     reference = params[:reference]
+    if reference.include?(":")
+      redirect = true
+    end
+    reference.gsub!(/:/, '.') unless reference.nil?
+    ref = reference.split('.') unless reference.nil?
+    book = ref[0] unless ref.nil?
     version = params[:version]
     url = request.path
     spliturl = url.split('/')
@@ -62,9 +69,7 @@ class ReferencesController < ApplicationController
     end
 
 
-    # if the following hash lookup changes the params, let's redirect with the new params
-    # so the node main and load data match up
-    redirect = false
+
 
     if book.is_a? String
       # leave it if it's already a USFM code
