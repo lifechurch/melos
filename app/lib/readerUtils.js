@@ -193,7 +193,7 @@ export function buildMeta(props) {
 
 export function isVerseOrChapter(usfm) {
 	const IS_BOOK = /^\d?[a-zA-Z]{2,3}$/
-	const ONLY_NUMBERS = /^[0-9]*$/
+	const ONLY_NUMBERS = /^[0-9-]*$/
 	const FALLBACK_VALUE = { isVerse: false, isChapter: false }
 	if (typeof usfm !== 'string' || usfm.length === 0) {
 		return FALLBACK_VALUE
