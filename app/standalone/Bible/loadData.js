@@ -62,7 +62,23 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						language_tag: Locale.planLocale,
 						passage: reference
 					})
+				} else if (isChapter) {
+					reference = reference.split('.').slice(0, 2).join('.')
+					loadChapter({
+						isInitialLoad: true,
+						hasVersionChanged: true,
+						hasChapterChanged: true,
+						language_tag,
+						version,
+						reference
+					})
+
+				// We found a bad USFM before making an API call,
+				// let's be more efficient by falling back to our
+				// last_read cookie or JHN.1 prior to making API
+				// call.
 				} else {
+					reference = cookie.load('last_read') || 'JHN.1'
 					reference = reference.split('.').slice(0, 2).join('.')
 					loadChapter({
 						isInitialLoad: true,
