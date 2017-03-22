@@ -34,7 +34,7 @@ class ReferencesController < ApplicationController
     redirect = false
     # replace any colon with a .
     reference = params[:reference]
-    if reference.include?(":")
+    if !reference.nil? and reference.include?(":")
       redirect = true
     end
     reference.gsub!(/:/, '.') unless reference.nil?
