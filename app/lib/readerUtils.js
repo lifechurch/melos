@@ -210,7 +210,7 @@ export function isVerseOrChapter(usfm) {
 		!ONLY_NUMBERS.test(usfmParts[1])
 	) {
 		return FALLBACK_VALUE
-	} else if (usfmParts.length === 3) {
+	} else if (usfmParts.length >= 3) {
 		isVerse = ONLY_NUMBERS.test(usfmParts[2])
 		isChapter = !isVerse
 	}
