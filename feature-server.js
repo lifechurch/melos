@@ -309,7 +309,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 					finish()
 				}
 			}), nr.createTracer('loadDataFailed', (errorDetail) => {
-				Raven.setContext({ extra: { errorDetail } })
+				Raven.mergeContext({ extra: { errorDetail } })
 				Raven.captureException(new Error(`LoadData Error - Could Not Render ${feature} view`))
 				res.status(404).send(errorDetail)
 				nr.endTransaction()
