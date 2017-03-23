@@ -18,6 +18,7 @@ import { routeReducer } from 'react-router-redux'
 // import configuration from '../features/EventFeedMine/reducers/configuration'
 // import plansDiscovery from '../features/PlanDiscovery/reducers'
 import bibleReader from '../../features/Bible/reducers'
+import users from '../../features/Users/reducers'
 import passage from '../../features/Passage/reducers'
 import plansDiscovery from '../../features/PlanDiscovery/reducers'
 import readingPlans from '../../features/PlanDiscovery/reducers/readingPlans'
@@ -40,6 +41,7 @@ const rootReducer = combineReducers({
 	serverLanguageTag: (state = {}, action) => { return state },
 	altVersions: (state = {}, action) => { return state },
 	hosts: (state = {}, action) => { return state },
+	users,
 	passage
 })
 

@@ -10,7 +10,7 @@ export default function reducer(state = {}, action) {
 			return state
 
 		case type('usersViewSuccess'):
-			const { params, response } = action
+			const { response } = action
 			if (response && response.id) {
 				return Immutable.fromJS(state)
 				.set([response.id], response)
