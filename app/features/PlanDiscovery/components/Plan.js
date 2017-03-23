@@ -106,14 +106,23 @@ class Plan extends Component {
 
 		const subscriptionLink = `${myPlansLink}/${plan.id}-${plan.slug}`
 		const dayBaseLink = `${myPlansLink}/${plan.id}-${plan.slug}`
-		const dayData = plan.calendar[day - 1]
-		const devoCompleted = dayData.additional_content.completed
-		const hasDevo = dayHasDevo(dayData.additional_content)
+
+		const dayData = Array.isArray(plan.calendar) && plan.calendar.length >= (day - 1)
+			? plan.calendar[day - 1]
+			: {}
+
+		const devoCompleted = 'additional_content' in dayData
+			? dayData.additional_content.completed
+			: false
+
+		const hasDevo = 'additional_content' in dayData
+			? dayHasDevo(dayData.additional_content)
+			: false
 
 		let startLink = ''
 		if (hasDevo) {
 			startLink = `${subscriptionLink}/day/${day}/devo`
-		} else if (!hasDevo && dayData.references.length === 0) {
+		} else if (!hasDevo && ('references' in dayData) && dayData.references.length === 0) {
 			startLink = `${subscriptionLink}/day/${day}`
 		} else {
 			startLink = `${subscriptionLink}/day/${day}/ref/0`
@@ -166,7 +175,7 @@ class Plan extends Component {
 						actionsNode: <div />,
 						planLinkNode,
 						isSubscribed: ('subscription_id' in plan),
-						calendar: plan.calendar,
+						calendar: Array.isArray(plan.calendar) ? plan.calendar : [],
 						totalDays: plan.total_days,
 						subscriptionLink,
 						dayBaseLink,

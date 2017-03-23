@@ -49,7 +49,11 @@ class AboutPlan extends Component {
 		let completedMilestone = 0
 
 		if (readingPlan.stats) {
-			if ((readingPlan.stats.friends !== null) && (readingList = readingPlan.stats.friends.subscribed)) {
+			if (
+				(typeof readingPlan.stats.friends !== 'undefined') &&
+				(readingPlan.stats.friends !== null) &&
+				(readingList = readingPlan.stats.friends.subscribed)
+			) {
 				const readingText = (readingList.length === 1) ? <FormattedMessage id='plans.stats.friends reading.one' values={{ count: readingPlan.stats.friends.subscribed.length }} /> : <FormattedMessage id='plans.stats.friends reading.other' values={{ count: readingPlan.stats.friends.subscribed.length }} />
 				friendsReading = (
 					<div>
