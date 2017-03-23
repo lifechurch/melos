@@ -32,17 +32,14 @@ class SharedDayCompleteView extends Component {
 		let plan = null
 		let userData = null
 
-		try {
-			plan = plans[id.split('-')[0]]
-		} catch (ex) {
+		plan = plans[id.split('-')[0]]
+		if (!plan || typeof plan === 'undefined') {
 			return <div />
 		}
 		// if for some reason the user view call failed, let's just display without name
 		try {
 			userData = users[Object.keys(users)[0]]
-		} catch (ex) {
-
-		}
+		} catch (ex) {}
 
 		const backImgStyle = {
 			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${plan.images ? plan.images[4].url : 'https://s3.amazonaws.com/yvplans-staging/default/720x405.jpg'})`
