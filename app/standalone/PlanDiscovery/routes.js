@@ -91,13 +91,13 @@ export default function (
 				<Route path="devo" component={PlanDevo} />
 				<Route path="ref/:content" component={PlanRef} />
 			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} onEnter={requirePlanView} />
-			{/* this is also day complete, but an unauthed page with the user id in the url as params */}
-			<Route path="(:lang/)reading-plans/:id(:slug)/day/:day/completed" component={SharedDayCompleteView} />
-			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/day/:day/completed" component={DayCompleteView} onEnter={requirePlanView} />
+			{/* this is also day complete, but an unauthed page with the user id in the url as params, only loaded from the server */}
+			<Route path="(:lang/)reading-plans/:id(-:slug)/day/:day/completed" component={SharedDayCompleteView} />
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
 
 			{/* ABS LOOKINSIDE */}
-			<Route path="lookinside/:id(:slug)" >
+			<Route path="lookinside/:id(-:slug)" >
 				<IndexRoute component={LookinsideView} onEnter={requirePlanView} />
 				<Route path="read/day/:day" component={LookinsideSample} onEnter={requireSamplePlan}>
 					<IndexRoute component={PlanDay} />

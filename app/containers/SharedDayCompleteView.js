@@ -32,10 +32,16 @@ class SharedDayCompleteView extends Component {
 		let plan = null
 		let userData = null
 
-		plan = plans[id.split('-')[0]]
-		userData = users[Object.keys(users)[0]]
-		if (!plan || !userData) {
+		try {
+			plan = plans[id.split('-')[0]]
+		} catch (ex) {
 			return <div />
+		}
+		// if for some reason the user view call failed, let's just display without name
+		try {
+			userData = users[Object.keys(users)[0]]
+		} catch (ex) {
+
 		}
 
 		const backImgStyle = {
@@ -46,7 +52,7 @@ class SharedDayCompleteView extends Component {
 			<div className='rp-completed-view'>
 				<div className='completed-header'>
 					<h6 className='horizontal-center'>
-						<FormattedHTMLMessage id="plans.day_completed" values={{ username: userData.name, day, plan_title: plan.name.default }} />
+						<FormattedHTMLMessage id="plans.day_completed" values={{ username: userData ? userData.name : '', day, plan_title: plan.name.default }} />
 					</h6>
 					<div className='plan-length-header horizontal-center'>
 						<FormattedMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
