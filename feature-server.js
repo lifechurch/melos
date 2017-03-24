@@ -253,8 +253,8 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 					const RootComponent = getRootComponent(feature)
 
 					if (RootComponent === null) {
-						res.status(500).send({ error: 4, message: `No root component defined for this feature: ${feature}` })
 						nr.endTransaction()
+						res.status(500).send({ error: 4, message: `No root component defined for this feature: ${feature}` })
 					}
 
 					getRenderProps(feature, params.url).then(nr.createTracer('getRenderProps', (renderProps) => {
@@ -264,8 +264,8 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						} catch (ex) {
 								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
 							Raven.captureException(ex)
-							res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 							nr.endTransaction()
+							res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 
 						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
@@ -288,8 +288,8 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 
 						res.setHeader('Cache-Control', 'public')
 						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, nr.createTracer('render', (err, html) => {
-							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/javascripts/${getAssetPath(`${feature}.js`)}` })
 							nr.endTransaction()
+							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/javascripts/${getAssetPath(`${feature}.js`)}` })
 						}))
 
 						return null
@@ -309,20 +309,19 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 					finish()
 				}
 			}), nr.createTracer('loadDataFailed', (errorDetail) => {
-				Raven.mergeContext({ extra: { errorDetail } })
+				Raven.mergeContext({ extra: { errorDetail, params } })
 				Raven.captureException(new Error(`LoadData Error - Could Not Render ${feature} view`))
-				res.status(404).send(errorDetail)
 				nr.endTransaction()
+				res.status(404).send(errorDetail)
 			}))
 		} catch (ex) {
-				// throw new Error(`Error: 2 - Could Not Render ${feature} view`, ex)
 			Raven.captureException(ex)
-			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
 			nr.endTransaction()
+			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
 		}
 	}), nr.createTracer('authFailed', (authError) => {
-		res.status(403).send(authError)
 		nr.endTransaction()
+		res.status(403).send(authError)
 	}))
 })
 

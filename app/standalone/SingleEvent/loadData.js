@@ -10,7 +10,7 @@ export default function loadData(params, startingState, sessionData) {
 
 		if (startingState.auth.isLoggedIn === true) {
 			if (typeof sessionData.email !== 'undefined') {
-				client.auth(sessionData.email , sessionData.password)
+				client.auth(sessionData.email, sessionData.password)
 			} else {
 				client.auth(sessionData.tp_token)
 			}
@@ -18,11 +18,11 @@ export default function loadData(params, startingState, sessionData) {
 
 		client.get().then((response) => {
 			if (typeof response.errors !== 'undefined') {
-				return reject({error:4, message: 'Could not load data.'})
+				return reject({ error: 4, message: 'Could not load data.', apiErrors: response.errors })
 			}
 			return resolve({ type: 'EVENT_VIEW_SUCCESS', response })
 		}, (error) => {
-			return reject({error:99, message: 'Unknown Error', full: error})
+			return reject({ error: 99, message: 'Unknown Error', full: error })
 		})
 	})
 }
