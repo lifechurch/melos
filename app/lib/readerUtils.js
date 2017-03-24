@@ -86,7 +86,7 @@ export function getVerseAudioTiming(startRef, endRef, timing) {
 	let endTime = null
 
 	if (!Array.isArray(timing)) {
-		console.warn('invalid param: timing must be an array')
+		// console.warn('invalid param: timing must be an array')
 		return null
 	}
 
@@ -193,7 +193,8 @@ export function buildMeta(props) {
 
 export function isVerseOrChapter(usfm) {
 	const IS_BOOK = /^\d?[a-zA-Z]{2,3}$/
-	const ONLY_NUMBERS = /^[0-9-,]*$/
+	const IS_CHAPTER = /^(INTRO)?[0-9-,_]*$/
+	const IS_VERSE = /^[0-9-,_]$/
 	const FALLBACK_VALUE = { isVerse: false, isChapter: false }
 	if (typeof usfm !== 'string' || usfm.length === 0) {
 		return FALLBACK_VALUE
@@ -207,11 +208,11 @@ export function isVerseOrChapter(usfm) {
 	if (
 		usfm.length === 0 ||
 		!IS_BOOK.test(usfmParts[0]) ||
-		!ONLY_NUMBERS.test(usfmParts[1])
+		!IS_CHAPTER.test(usfmParts[1])
 	) {
 		return FALLBACK_VALUE
 	} else if (usfmParts.length >= 3) {
-		isVerse = ONLY_NUMBERS.test(usfmParts[2])
+		isVerse = IS_VERSE.test(usfmParts[2])
 		isChapter = !isVerse
 	}
 
