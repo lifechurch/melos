@@ -93,8 +93,13 @@ class ReferencesController < ApplicationController
       # try to parse from known values
       _ver ||= Cfg.osis_usfm_hash[:versions][version.downcase] if version.is_a? String
 
-      version = _ver unless _ver.blank?
+      # if the version isn't a positive number, nor a string that matches the lookup,
+      # let's render a 404 instead of rendering an error in node
+      if _ver.blank?
+        return render_404
+      end
 
+      version = _ver
       redirect = true if version != params[:version]
     end
 
