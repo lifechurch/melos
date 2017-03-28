@@ -423,27 +423,35 @@ function requirePlanReferences(prevState, nextState, replace, callback) {
 function requirePlanCompleteData(nextState, replace, callback) {
 	const currentState = store.getState()
 	const { params } = nextState
-	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
+	const {
+		readingPlans: { fullPlans, recommendedPlans, savedPlans }
+	} = currentState
 	const id = parseInt(params.id.toString().split('-')[0], 10)
 
 	let getPlanView = true
-	const getSavedPlans = true
-	const getRecommendedPlans = true
+	let getSavedPlans = true
+	let getRecommendedPlans = true
 
 	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
 		getPlanView = false
 	}
-
-	// TODO: figure out where these are in state
-	// if (false) {
-	// 	getSavedPlans = false
-	// 	getRecommendedPlans = false
-	// }
+	if (typeof recommendedPlans === 'object' &&
+		typeof recommendedPlans[id] !== 'undefined' &&
+		typeof recommendedPlans[id].items !== 'undefined' &&
+		recommendedPlans[id].items.length > 0
+	) {
+		getRecommendedPlans = false
+	}
+	if (typeof savedPlans === 'object' &&
+		typeof savedPlans.items !== 'undefined' &&
+		(savedPlans.items.length > 0 || savedPlans.all.length > 0)
+	) {
+		getSavedPlans = false
+	}
 
 	store.dispatch(PlanDiscoveryActionCreators.planComplete({
 		id,
 		language_tag: window.__LOCALE__.planLocale,
-		user_id: userid,
 		getPlanView,
 		getSavedPlans,
 		getRecommendedPlans,
