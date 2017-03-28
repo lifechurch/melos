@@ -166,9 +166,11 @@ export default function plansDiscovery(state = {}, action) {
 				} else {
 					newState = Immutable
 						.fromJS(state)
-						.set('plans', action.response)
-						.set('hasErrors', false)
-						.set('errors', [])
+						.mergeDeep({
+							plans: action.response,
+							hasErrors: false,
+							errors: []
+						})
 						.toJS()
 				}
 				return newState

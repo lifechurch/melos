@@ -350,39 +350,50 @@ const ActionCreators = {
 				language_tag,
 				user_id
 			} = params
+
 			const p = Immutable.fromJS(params).set('id', parseInt(params.id.toString().split('-')[0], 10)).toJS()
-			// tell the reducer to populate the recommendations in state.collection.plans.related
-			const planParams = Object.assign({}, p, { readingplanInfo: true })
-			// now check if requested reading plan view is a saved plan for the user
+			const promises = []
 			const savedplanParams = Object.assign({}, p, { savedplanCheck: true, page: 1 })
-			const promises = [ dispatch(ActionCreators.allQueueItems(auth)) ]
+
 			if (!getSavedPlans && !getRecommendedPlans) {
 				promises.push(
 					dispatch(ActionCreators.configuration())
 				)
 			}
+
 			if (getPlanView) {
 				promises.push(
 					dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth))
 				)
 			}
+
 			if (getRecommendedPlans) {
+				const planParams = Object.assign({}, p, { readingplanInfo: true })
 				promises.push(
 					new Promise((resolve) => {
 						dispatch(ActionCreators.recommendedPlansInfo(planParams)).then(() => { resolve() })
 					})
 				)
 			}
+
+			if (auth && !getSavedPlans) {
+				promises.push(
+					dispatch(ActionCreators.allQueueItems(auth))
+				)
+			}
+
 			if (getSavedPlans && auth) {
 				promises.push(
 					dispatch(ActionCreators.savedPlanInfo(savedplanParams, auth))
 				)
 			}
+
 			if (getStats) {
 				promises.push(
 					dispatch(ActionCreators.readingplanStats(params, auth))
 				)
 			}
+
 			return Promise.all(promises)
 		}
 	},
