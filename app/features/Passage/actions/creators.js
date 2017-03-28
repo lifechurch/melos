@@ -17,13 +17,15 @@ const ActionCreators = {
 				const verseORVerseRange = refArray.pop()
 				let versesArray = []
 				const promises = []
+				const cleanedVersions = []
 
-				// first, remove any duplicate versions and maintain ordering
-				let cleanedVersions = Array.from(new Set(versions))
-				// product wants it to look good, so make sure there are 4 versions (not one on the next row)
-				if (cleanedVersions.length > 4) {
-					cleanedVersions = cleanedVersions.slice(0, 4)
-				}
+				cleanedVersions.push(versions[0])
+				// // first, remove any duplicate versions and maintain ordering
+				// let cleanedVersions = Array.from(new Set(versions))
+				// // product wants it to look good, so make sure there are 4 versions (not one on the next row)
+				// if (cleanedVersions.length > 4) {
+				// 	cleanedVersions = cleanedVersions.slice(0, 4)
+				// }
 
 				// break up the verses into single verse, or verse range
 				versesArray = verseORVerseRange.split(',').map((verseNum) => {
