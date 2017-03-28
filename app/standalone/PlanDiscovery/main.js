@@ -160,6 +160,7 @@ function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
 	const idNum = parseInt(params.id.toString().split('-')[0], 10)
 	const currentState = store.getState()
+	const isLoggedIn = currentState.auth.isLoggedIn
 
 	let getPlanView = true
 	let getStats = true
@@ -175,7 +176,7 @@ function requirePlanData(nextState, replace, callback) {
 	if (currentState.readingPlans.recommendedPlans[idNum]) {
 		getRecommendedPlans = false
 	}
-	if (currentState.readingPlans.savedPlans.items) {
+	if (!isLoggedIn || currentState.readingPlans.savedPlans.items) {
 		getSavedPlans = false
 	}
 
@@ -189,9 +190,8 @@ function requirePlanData(nextState, replace, callback) {
 			getSavedPlans,
 			id: idNum,
 			language_tag: window.__LOCALE__.planLocale
-		},
-			store.getState().auth.isLoggedIn)
-		).then(() => {
+		}, isLoggedIn))
+		.then(() => {
 			callback()
 		}, () => {
 			callback()
