@@ -34,6 +34,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
 			const isDayComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
 			const isSharedDayComplete = new RegExp('^\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
+			const isPlanComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/completed')
 
 			const isLookinside = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+')
 			const isLookinsideSample = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+\/read\/day/[0-9]+')
@@ -75,6 +76,16 @@ export default function loadData(params, startingState, sessionData, store, Loca
 							resolve()
 						}, () => { resolve() })
 					})
+
+			} else if (isPlanComplete.test(params.url)) {
+				store.dispatch(ActionCreator.planComplete({
+					id: params.id,
+					language_tag: Locale.planLocale,
+					user_id: sessionData.userid,
+					getPlanView: true,
+					getSavedPlans: true,
+					getRecommendedPlans: true,
+				}, auth)).then((d) => { resolve() })
 
 			} else if (isDayComplete.test(params.url)) {
 				store.dispatch(ActionCreator.readingplanView({

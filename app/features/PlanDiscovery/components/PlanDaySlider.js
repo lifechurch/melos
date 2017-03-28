@@ -39,7 +39,7 @@ class PlanDaySlider extends Component {
 			infinite: false,
 			variableWidth: true,
 			slidesToScroll: 6,
-			slidesToShow: 8,
+			slidesToShow: 1,
 			autoPlay: false,
 			rtl: isRtl,
 			dir: isRtl ? 'rtl' : 'ltr',
@@ -48,21 +48,18 @@ class PlanDaySlider extends Component {
 					breakpoint: 600,
 					settings: {
 						arrows: false,
-						slidesToShow: 5,
 						slidesToScroll: 4
 					}
 				}, {
 					breakpoint: 376,
 					settings: {
 						arrows: false,
-						slidesToShow: 4,
 						slidesToScroll: 4
 					}
 				}, {
 					breakpoint: 321,
 					settings: {
 						arrows: false,
-						slidesToShow: 3,
 						slidesToScroll: 3
 					}
 				}

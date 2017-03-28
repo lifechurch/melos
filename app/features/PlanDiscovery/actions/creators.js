@@ -294,20 +294,13 @@ const ActionCreators = {
 				getSavedPlans,
 				id,
 				language_tag,
-				user_id
 			} = params
 
 			const promises = []
 
-			if (getSavedPlans || getRecommendedPlans) {
-				promises.push(
-					dispatch(ActionCreators.configuration())
-				)
-			}
-
 			if (getPlanView) {
 				promises.push(
-					dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth))
+					dispatch(ActionCreators.readingplanView({ id, language_tag }, auth))
 				)
 			}
 			if (getRecommendedPlans) {
