@@ -75,13 +75,6 @@ class PlanRef extends Component {
 		handleVerseSelectionClear(this.refToThis, refToChapter)
 	}
 
-	handleChangeReader = () => {
-		// this will tell the bible component to render
-		// with the chapter picker open, because the user
-		// clicked change reference/version
-		LocalStore.set('showPickerOnLoad', true)
-	}
-
 	render() {
 		const {
 			verseColors,
@@ -115,13 +108,6 @@ class PlanRef extends Component {
 			<div className='plan-reader-heading'>
 				<div className='ref-heading'>
 					{`${refHeading} ${version.local_abbreviation.toUpperCase()}`}
-					<a
-						href={bibleChapterLink}
-						className='pill-heading'
-						onClick={this.handleChangeReader}
-					>
-						<FormattedMessage id='change' />
-					</a>
 				</div>
 				<AudioPopup
 					audio={audio}
