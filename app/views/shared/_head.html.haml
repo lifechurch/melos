@@ -5,7 +5,7 @@
   title << (@subtitle || " | #{t('meta.mobile.title')} | #{@site.title}").to_s
 
   referrer = @_request.env["HTTP_REFERER"]
-  isReturningFromLookinside = cookies[:referred_from_lookinside] and cookies[:referred_from_lookinside].present?
+  isReturningFromLookinside = cookies[:referred_from_lookinside].present?
 
 
 - if @title_tag.present?
