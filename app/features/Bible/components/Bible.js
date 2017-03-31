@@ -71,13 +71,6 @@ class Bible extends Component {
 		const { dispatch, bible, auth } = this.props
 		const { chapterError } = this.state
 
-		// check for cookie written from reading plans telling
-		// bible to open with the chapterpicker modal open
-		if (LocalStore.get('showPickerOnLoad') || chapterError || bible.chapter.showError) {
-			this.chapterPickerInstance.openDropdown()
-			LocalStore.delete('showPickerOnLoad')
-		}
-
 		this.recentVersions = new RecentVersions()
 		this.recentVersions.syncVersions(bible.settings)
 		this.updateRecentVersions()
