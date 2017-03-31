@@ -16,7 +16,8 @@ class SearchController < ApplicationController
     {
       page: @page,
       version_id: params[:version_id].to_i,
-      locale: locale
+      locale: locale,
+      language_tag: params[:category] == 'plans' ? locale.to_s : nil
     }
   end
 
