@@ -71,6 +71,10 @@ class Bible extends Component {
 		const { dispatch, bible, auth } = this.props
 		const { chapterError } = this.state
 
+		if (chapterError || bible.chapter.showError) {
+			this.chapterPickerInstance.openDropdown()
+		}
+
 		this.recentVersions = new RecentVersions()
 		this.recentVersions.syncVersions(bible.settings)
 		this.updateRecentVersions()
