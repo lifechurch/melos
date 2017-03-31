@@ -16,17 +16,6 @@
 		return val;
 	}, 4) %>;
 
-	// lookinside
-<%if (referrer && referrer.indexOf('lookinside.bible') !== -1) { %>
-	var utag_data = {
-		site_environment: "youversion",
-	};
-	(function(a,b,c,d){
-	a='//tags.tiqcdn.com/utag/lookinside/main/prod/utag.js';
-	b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-	a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-	})();
-<% } %>
 	window.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
 	window.__ENV__ = "<%- environment %>";
 	window.__RAILS_HOST__ = "<%- railsHost %>";
