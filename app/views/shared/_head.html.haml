@@ -141,6 +141,7 @@
     var now = +new Date;
     var fourteenDaysish = 1200000000;
     document.cookie = [
+      'path=/',
       'referred_from_lookinside=true',
       'expires=' + new Date(now + fourteenDaysish).toUTCString()
     ].join('; ');
