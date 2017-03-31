@@ -10,6 +10,8 @@ class PlansController < ApplicationController
 
   # TODO - this needs serious refactoring controller, model, service object and template - A MESS.
   def index
+    # response.headers['Access-Control-Allow-Origin'] = '*'
+
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
