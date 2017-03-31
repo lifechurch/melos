@@ -4,6 +4,10 @@
   title << " | " if @subtitle.present?
   title << (@subtitle || " | #{t('meta.mobile.title')} | #{@site.title}").to_s
 
+  referrer = @_request.env["HTTP_REFERER"]
+  isReturningFromLookinside = cookies[:referred_from_lookinside].present?
+
+
 - if @title_tag.present?
   != @title_tag
 - else
@@ -126,3 +130,25 @@
   -#      });
   -#      window.location = nativeUrl;
   -#    }());
+
+
+
+
+
+
+- if (referrer and referrer.include?('lookinside.bible')) or isReturningFromLookinside
+  :javascript
+    var now = +new Date;
+    var fourteenDaysish = 1200000000;
+    document.cookie = [
+      'referred_from_lookinside=true',
+      'expires=' + new Date(now + fourteenDaysish).toUTCString()
+    ].join('; ');
+    var utag_data = {
+      site_environment: "youversion",
+    };
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/lookinside/main/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
