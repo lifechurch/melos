@@ -48,7 +48,7 @@ http {
       passenger_env_var LOG_LEVEL warn;
       passenger_env_var TREADSTONE_SECRET 6Ag54rcIa7pS3DRs6jkzVRtceSUuGaqfU2Lxi57bZDozpTVcIYVZeRCXpmzmdJw;
       rails_env staging;
-      large_client_header_buffers 4 16k;
+      large_client_header_buffers 4 10k;
 
     location /apple-app-site-association {
         root /var/www/youversion-web/current;
