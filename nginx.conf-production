@@ -40,7 +40,8 @@ http {
       passenger_env_var MEMCACHE_SERVERS 10.36.123.121:11211,10.36.123.80:11211;
       passenger_env_var LOG_LEVEL warn;
       passenger_env_var TREADSTONE_SECRET 6Ag54rcIa7pS3DRs6jkzVRtceSUuGaqfU2Lxi57bZDozpTVcIYVZeRCXpmzmdJw;
-
+      large_client_header_buffers 4 16k;
+      
     location /apple-app-site-association {
         root /var/www/youversion-web/current;
         try_files $uri =404;

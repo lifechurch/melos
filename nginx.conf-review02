@@ -39,6 +39,7 @@ http {
       root /var/www/youversion-web/current/public;
       passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
       rails_env development;
+      large_client_header_buffers 4 16k;
 
     location /apple-app-site-association {
         root /var/www/youversion-web/current;
