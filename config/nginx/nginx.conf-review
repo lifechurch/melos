@@ -47,7 +47,8 @@ http {
       passenger_startup_file bin/www;
       passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
       passenger_env_var NEW_RELIC_APP_NAME nodejs-review.bible.com;
-
+			large_client_header_buffers 4 10k;
+			
       location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
           gzip_static on;
           expires     max;
