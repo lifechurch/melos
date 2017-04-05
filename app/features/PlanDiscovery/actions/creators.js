@@ -2,6 +2,7 @@ import Immutable from 'immutable'
 import moment from 'moment'
 
 import type from './constants'
+import Validators from './validators'
 import BibleActionCreator from '../../Bible/actions/creators'
 import UsersActionCreator from '../../Users/actions/creators'
 
@@ -616,7 +617,8 @@ const ActionCreators = {
 				auth,
 				params,
 				http_method: 'get',
-				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ]
+				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ],
+				validator: Validators.plan
 			}
 		}
 	},

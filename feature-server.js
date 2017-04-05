@@ -11,6 +11,7 @@ import bodyParser from 'body-parser'
 import { tokenAuth } from '@youversion/js-api'
 import { IntlProvider } from 'react-intl'
 import moment from 'moment'
+import Raven from 'raven'
 
 import planLocales from './locales/config/planLocales.json'
 import revManifest from './rev-manifest.json'
@@ -19,10 +20,6 @@ const urlencodedParser = bodyParser.json()
 const router = express.Router()
 const availableLocales = require('./locales/config/availableLocales.json');
 const localeList = require('./locales/config/localeList.json');
-
-const Raven = require('raven');
-
-Raven.config('https://cc7248185fe54b72a7419782feb9f483:dd4bdec0c223479cbc7ba5231d89507f@sentry.io/149323').install()
 
 const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 	const IS_PROD = process.env.NODE_ENV === 'production';

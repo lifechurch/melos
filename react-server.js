@@ -15,15 +15,12 @@ import { tokenAuth } from '@youversion/js-api'
 import revManifest from './rev-manifest.json'
 import { IntlProvider } from 'react-intl'
 import rtlDetect from 'rtl-detect'
+import Raven from 'raven'
 
 const router = express.Router()
 const routes = getRoutes(null)
 const availableLocales = require('./locales/config/availableLocales.json');
 const localeList = require('./locales/config/localeList.json');
-
-const Raven = require('raven');
-
-Raven.config('https://cc7248185fe54b72a7419782feb9f483:dd4bdec0c223479cbc7ba5231d89507f@sentry.io/149323').install()
 
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';

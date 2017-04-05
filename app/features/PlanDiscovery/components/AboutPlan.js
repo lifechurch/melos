@@ -23,18 +23,19 @@ class AboutPlan extends Component {
 
 	render() {
 		const { readingPlan, savedPlans, recommendedPlans, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
-		const aboutLink = localizedLink(`/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
-		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
-		const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(readingPlan.id) !== -1))
-		if (!readingPlan) {
+
+		if (typeof readingPlan !== 'object' || (readingPlan.__validation && !readingPlan.__validation.isValid)) {
 			return (
 				<div />
 			)
 		}
+
+		const aboutLink = localizedLink(`/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
+		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
+		const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(readingPlan.id) !== -1))
 		const recommended = (recommendedPlans && recommendedPlans[readingPlan.id]) ? recommendedPlans[readingPlan.id] : null
 		let friendsReading, friendsCompleted, readingList, completedList, relatedCarousel = null
 		const publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher' /></a> : null
-
 		const languageTag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 
 		if (recommended) {
@@ -63,7 +64,7 @@ class AboutPlan extends Component {
 				)
 			}
 
-			if ((readingPlan.stats.friends !== null) && (completedList = readingPlan.stats.friends.completed)) {
+			if (readingPlan.stats.friends && (completedList = readingPlan.stats.friends.completed)) {
 				const completedText = (completedList.length === 1) ? <FormattedMessage id='plans.stats.friends completed.one' values={{ count: readingPlan.stats.friends.completed.length }} /> : <FormattedMessage id='plans.stats.friends completed.other' values={{ count: readingPlan.stats.friends.completed.length }} />
 				friendsCompleted = (
 					<div>
