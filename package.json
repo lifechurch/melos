@@ -111,6 +111,7 @@
     "eslint-plugin-react": "^6.9.0"
   },
   "browser": {
-    "stream-browserify": false
+    "stream-browserify": false,
+    "raven": false
   }
 }

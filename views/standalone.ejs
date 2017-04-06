@@ -1,12 +1,12 @@
-<script src="https://cdn.ravenjs.com/3.11.0/raven.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.ravenjs.com/3.14.0/raven.min.js" crossorigin="anonymous"></script>
 
 <%if (config.linkCss) { %>
 	<link rel="stylesheet" href="<%=assetPrefix%>/stylesheets/<%= getAssetPath('style.css') %>" />
 <% } %>
 <div id="react-app"><%- appString %></div>
 <script type="application/javascript">
-	if (typeof Raven !== 'undefined') {
-		Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704').install()
+	if (typeof Raven !== 'undefined' && !Raven.isSetup()) {
+		Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704', { sampleRate: 0.5 }).install()
 	}
 
 	window.__LOCALE__ = <%- JSON.stringify(locale, function(key, val) {

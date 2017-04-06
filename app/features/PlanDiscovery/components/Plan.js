@@ -82,6 +82,13 @@ class Plan extends Component {
 
 	render() {
 		const { plan, savedPlans, dispatch, children, params, auth, localizedLink, isRtl, serverLanguageTag } = this.props
+
+		if (typeof plan !== 'object' || (plan.__validation && !plan.__validation.isValid)) {
+			return (
+				<div />
+			)
+		}
+
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const version = cookie.load('version') || '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)

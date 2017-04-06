@@ -21,17 +21,21 @@ class PlanList extends Component {
 		const { plans, title, listType, serverLanguageTag, params, auth, localizedLink } = this.props
 
 		const items = plans.items.map((plan) => {
-			return (
-				<PlanListItem
-					serverLanguageTag={serverLanguageTag}
-					listType={listType}
-					key={plan.id}
-					plan={plan}
-					params={params}
-					auth={auth}
-					localizedLink={localizedLink}
-				/>
-			)
+			if (typeof plan === 'object') {
+				return (
+					<PlanListItem
+						serverLanguageTag={serverLanguageTag}
+						listType={listType}
+						key={plan.id}
+						plan={plan}
+						params={params}
+						auth={auth}
+						localizedLink={localizedLink}
+					/>
+				)
+			} else {
+				return null
+			}
 		})
 
 		let backButton = <span>&nbsp;</span>

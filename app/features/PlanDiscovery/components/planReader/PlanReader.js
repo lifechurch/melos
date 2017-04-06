@@ -162,10 +162,14 @@ class PlanReader extends Component {
 
 		let referenceContent, refHeading, showChapterButton, audio, audioTiming, bibleChapterLink
 		if (!isNaN(this.contentIndex)) {
-			this.chapReference = this.reference.split('.').splice(0, 2).join('.')
+			this.chapReference = typeof this.reference === 'string'
+				? this.reference.split('.').splice(0, 2).join('.')
+				: ''
+
 			if (typeof window !== 'undefined') {
 				bibleChapterLink = `${window.location.origin}/bible/${bible.version.id}/${this.chapReference}`
 			}
+
 			// if every case, either chapter call, or bibleaudio call, we're gonna put the audio
 			// into audioChapter keyed by reference
 			audio = bible.audioChapter[this.chapReference]
