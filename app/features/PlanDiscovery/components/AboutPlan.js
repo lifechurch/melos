@@ -24,7 +24,7 @@ class AboutPlan extends Component {
 	render() {
 		const { readingPlan, savedPlans, recommendedPlans, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
 
-		if (typeof readingPlan !== 'object' || (readingPlan.__validation && !readingPlan.__validation.isValid)) {
+		if (!readingPlan || (typeof readingPlan === 'object' && readingPlan.__validation && !readingPlan.__validation.isValid)) {
 			return (
 				<div />
 			)
