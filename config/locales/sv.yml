@@ -1414,6 +1414,7 @@ sv:
             just now: "Precis nu"
         verses selected: "verser valda"
     EventsAdmin: 
+        change: "Ändra"
         ui: 
             yes button: "Ja"
             no button: "Nej"

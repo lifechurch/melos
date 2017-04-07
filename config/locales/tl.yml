@@ -1414,6 +1414,7 @@ tl:
             just now: "ngayon lamang"
         verses selected: "mga napiling taludtod"
     EventsAdmin: 
+        change: "Baguhin"
         ui: 
             yes button: "Oo"
             no button: "Hindi"

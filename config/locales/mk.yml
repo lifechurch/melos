@@ -1414,6 +1414,7 @@ mk:
             just now: "Токму сега"
         verses selected: "одбрани стихови"
     EventsAdmin: 
+        change: "Промени"
         ui: 
             yes button: "Да"
             no button: "Не"

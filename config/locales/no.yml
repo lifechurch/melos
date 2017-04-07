@@ -1414,6 +1414,7 @@
             just now: "akkurat nå"
         verses selected: "vers valgt"
     EventsAdmin: 
+        change: "Endre"
         ui: 
             yes button: "Ja"
             no button: "Nei"

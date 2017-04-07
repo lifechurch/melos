@@ -1414,6 +1414,7 @@ tr:
             just now: "biraz önce"
         verses selected: "ayetler seçildi"
     EventsAdmin: 
+        change: "Değiştir"
         ui: 
             yes button: "Evet"
             no button: "Hayır"

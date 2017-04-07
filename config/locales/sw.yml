@@ -1414,6 +1414,7 @@ sw:
             just now: "sasa hivi"
         verses selected: "Mistari imechaguliwa"
     EventsAdmin: 
+        change: "Badilisha"
         ui: 
             yes button: "Ndio"
             no button: "Apana"

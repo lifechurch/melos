@@ -954,6 +954,14 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://www.bible.com/zh-HK/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/sv/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://www.bible.com/ko/kids</loc>
     <priority>1</priority>
   </url>

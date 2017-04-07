@@ -177,7 +177,7 @@ fi:
         feature 5: "Lapsiystävällinen navigointi"
         share: 
             tell friends: "Kerro ystävillesi Lasten Raamattusovelluksesta."
-            facebook name: "Raamattusovellus lapsille"
+            facebook name: "Lasten Raamattusovellus"
             facebook description: "Lasten Raamattusovellus on täällä! Lataa ilmainen sovellus iOSille ja Androidille tänään: vuorovaikutteisia Raamatun kertomuksia, joiden avulla lapsesi oppii pelamaan, leikkimään ja kasvamaan Jumalan sanan äärellä. www.bible.com/lapset"
             facebook link: "http://www.bible.com/lapset"
             facebook redirect: "http://www.bible.com/lapset"
@@ -1414,6 +1414,7 @@ fi:
             just now: "juuri nyt"
         verses selected: "jaetta valittu"
     EventsAdmin: 
+        change: "Muuta"
         ui: 
             yes button: "Kyllä"
             no button: "Ei"

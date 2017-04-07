@@ -1399,6 +1399,7 @@ id:
             just now: "baru saja"
         verses selected: "ayat terpilih"
     EventsAdmin: 
+        change: "Ubah"
         ui: 
             yes button: "Ya"
             no button: "Tidak"

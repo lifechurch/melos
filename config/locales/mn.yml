@@ -1414,6 +1414,7 @@ mn:
             just now: "дѳнгѳж сая"
         verses selected: "эшлэлүүдийг сонгосон"
     EventsAdmin: 
+        change: "Солих"
         ui: 
             yes button: "Тийм"
             no button: "Үгүй"

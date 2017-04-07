@@ -1414,6 +1414,7 @@ af:
             just now: "nou net"
         verses selected: "verse gekies"
     EventsAdmin: 
+        change: "Verander"
         ui: 
             yes button: "Ja"
             no button: "Nee"

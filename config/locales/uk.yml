@@ -1444,6 +1444,7 @@ uk:
             just now: "щойно"
         verses selected: "Обрані вірші"
     EventsAdmin: 
+        change: "Змінити"
         ui: 
             yes button: "Так"
             no button: "Ні"

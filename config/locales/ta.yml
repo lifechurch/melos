@@ -1414,6 +1414,7 @@ ta:
             just now: "இப்பொழுதுதான்"
         verses selected: "தேர்ந்தெடுக்கப்பட்ட வசனங்கள்"
     EventsAdmin: 
+        change: "மாற்று"
         ui: 
             yes button: "ஆம்"
             no button: "இல்லை"

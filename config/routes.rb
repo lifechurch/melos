@@ -62,6 +62,7 @@ YouversionWeb::Application.routes.draw do
   get "/dzieci",        to: "redirects#dzieci"
   get "/bibliadzieci",        to: "redirects#dzieci"
   get "/copii",        to: "redirects#copii"
+  get "/barn",        to: "redirects#barn"
 
   get "/trending-bible-verses", to: "pages#trending"
   get "/verse-of-the-day", to: "pages#votd"

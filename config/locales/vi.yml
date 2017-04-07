@@ -1399,6 +1399,7 @@ vi:
             just now: "mới đây"
         verses selected: "Đã chọn câu"
     EventsAdmin: 
+        change: "Thay đổi"
         ui: 
             yes button: "Có"
             no button: "Không"

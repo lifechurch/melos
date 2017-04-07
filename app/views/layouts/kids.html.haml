@@ -155,11 +155,17 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/ro/kids"
     facebook_locale = "ro"
     youtube_url = ""
-  elsif I18n.locale.to_s.eql?("hk") then
-    i18n_css_class = "hk"
-    i18n_image_dir = "/hk"
-    meta_url = "#{request.protocol}#{request.host_with_port}/hk/kids"
-    facebook_locale = "hk"
+  elsif (I18n.locale.to_s.eql?("zh-HK")) then
+    i18n_css_class = "zh-HK"
+    i18n_image_dir = "/zh-HK"
+    meta_url = "#{request.protocol}#{request.host_with_port}/zh-HK/kids"
+    facebook_locale = "zh_HK"
+    youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("sv")) then
+    i18n_css_class = "sv"
+    i18n_image_dir = "/sv"
+    meta_url = "#{request.protocol}#{request.host_with_port}/sv/kids"
+    facebook_locale = "sv_SE"
     youtube_url = ""
   end
 
@@ -205,6 +211,7 @@
     %meta{property: "og:locale:alternate", content: "pl_PL"}
     %meta{property: "og:locale:alternate", content: "ro_RO"}
     %meta{property: "og:locale:alternate", content: "zh_HK"}
+    %meta{property: "og:locale:alternate", content: "sv_SE"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -241,7 +248,8 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/hi/kids",:rel=>"alternate",:hreflang=>"hi"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/pl/kids",:rel=>"alternate",:hreflang=>"pl"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ro/kids",:rel=>"alternate",:hreflang=>"ro"}
-    %link{:href=> "#{request.protocol}#{request.host_with_port}/hk/kids",:rel=>"alternate",:hreflang=>"hk"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/hk/kids",:rel=>"alternate",:hreflang=>"zh-hk"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/sv/kids",:rel=>"alternate",:hreflang=>"sv"}
 
     - if I18n.locale.to_s.eql?("vi") then
       %link{:href=> "https://fonts.googleapis.com/css?family=Open+Sans", :rel=>"stylesheet"}
@@ -262,7 +270,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro")  or I18n.locale.to_s.eql?("hk"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro")  or I18n.locale.to_s.eql?("zh-HK")   or I18n.locale.to_s.eql?("sv"))
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids

@@ -1429,6 +1429,7 @@ lv:
             just now: "tikai tagad"
         verses selected: "izvēlēti panti"
     EventsAdmin: 
+        change: "Izmainīt"
         ui: 
             yes button: "Jā"
             no button: "Nē"
