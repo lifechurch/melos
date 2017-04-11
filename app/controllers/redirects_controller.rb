@@ -20,6 +20,10 @@ class RedirectsController < ApplicationController
     redirect_to(plan_ref_url(username: params[:username], id: params[:id], day: params[:day], content: params[:content]))
   end
 
+  def votd
+    redirect_to(votd_url())
+  end
+
   def bookmarks
     redirect_to(bookmarks_user_url(current_user.username, label: params[:label]))
   end
