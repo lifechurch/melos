@@ -1414,6 +1414,7 @@ el:
             just now: "μόλις τώρα"
         verses selected: "επιλεγμένα εδάφια"
     EventsAdmin: 
+        change: "Αλλαγή"
         ui: 
             yes button: "Ναι"
             no button: "Όχι"

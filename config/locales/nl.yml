@@ -1414,6 +1414,7 @@ nl:
             just now: "Zojuist"
         verses selected: "geselecteerde verzen"
     EventsAdmin: 
+        change: "Veranderen"
         ui: 
             yes button: "Ja"
             no button: "Nee"

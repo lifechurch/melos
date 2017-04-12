@@ -1399,6 +1399,7 @@ ko:
             just now: "지금"
         verses selected: "선택된 구절"
     EventsAdmin: 
+        change: "변경"
         ui: 
             yes button: "예"
             no button: "아니요"

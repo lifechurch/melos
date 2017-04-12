@@ -1414,6 +1414,7 @@ hu:
             just now: "épp most"
         verses selected: "kijelölt versek"
     EventsAdmin: 
+        change: "Változtat"
         ui: 
             yes button: "Igen"
             no button: "Nem"

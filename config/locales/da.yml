@@ -1414,6 +1414,7 @@ da:
             just now: "lige nu"
         verses selected: "vers valgt"
     EventsAdmin: 
+        change: "Ret"
         ui: 
             yes button: "Ja"
             no button: "Nej"

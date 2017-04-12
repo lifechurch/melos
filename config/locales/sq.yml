@@ -1414,6 +1414,7 @@ sq:
             just now: "pikërisht tani"
         verses selected: "vargje të përzgjedhura"
     EventsAdmin: 
+        change: "Ndrysho"
         ui: 
             yes button: "Po"
             no button: "Jo"

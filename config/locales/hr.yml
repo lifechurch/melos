@@ -1444,6 +1444,7 @@ hr:
             just now: "Upravo sad"
         verses selected: "označeni stihovi"
     EventsAdmin: 
+        change: "Izmjena"
         ui: 
             yes button: "Da"
             no button: "Ne"

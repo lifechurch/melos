@@ -1399,6 +1399,7 @@ ja:
             just now: "たった今"
         verses selected: "選択した聖句"
     EventsAdmin: 
+        change: "変更"
         ui: 
             yes button: "はい"
             no button: "いいえ"

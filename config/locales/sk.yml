@@ -1429,6 +1429,7 @@ sk:
             just now: "práve teraz"
         verses selected: "vybraté verše"
     EventsAdmin: 
+        change: "Zmeniť"
         ui: 
             yes button: "Áno"
             no button: "Nie"

@@ -1399,6 +1399,7 @@ th:
             just now: "เมื่อครู่นี้"
         verses selected: "ฃ้อพระคัมภีร์ที่เลือกไว้"
     EventsAdmin: 
+        change: "เปลี่ยน"
         ui: 
             yes button: "ใช่"
             no button: "ไม่"

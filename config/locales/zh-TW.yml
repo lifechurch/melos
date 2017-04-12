@@ -1399,6 +1399,7 @@ zh-TW:
             just now: "剛才"
         verses selected: "已選擇的經文"
     EventsAdmin: 
+        change: "更改"
         ui: 
             yes button: "是"
             no button: "否"

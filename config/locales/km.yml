@@ -1399,6 +1399,7 @@ km:
             just now: "ទើប​តែ​ឥឡូវ​នេះ"
         verses selected: "ឃ្លាត្រូវបានជ្រើស"
     EventsAdmin: 
+        change: "ផ្លាស់​ប្ដូរ"
         ui: 
             yes button: "បាទ/ចា៎"
             no button: "ទេ"
