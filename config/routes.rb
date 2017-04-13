@@ -64,8 +64,8 @@ YouversionWeb::Application.routes.draw do
   get "/copii",        to: "redirects#copii"
 
   get "/trending-bible-verses", to: "pages#trending"
-  get "/verse-of-the-day", to: "pages#votd"
-  get "/bible-verse-of-the-day", to: "pages#votd", as: "votd"
+  get "/verse-of-the-day", to: "pages#votd", as: "votd"
+  get "/bible-verse-of-the-day", to: "redirects#votd"
   get "/wmf",           to: "redirects#wmf"
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"
