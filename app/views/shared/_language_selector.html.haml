@@ -10,7 +10,7 @@
           %select{ id: 'choose_language', name: 'choose_language'}
             %option{value: 'en', selected: 'en'.eql?(current_locale.to_s)} English
             - sorted_locales.each do |k, v|
-              - next if k.eql?('en')
+              - next if k.eql?('en') or k.eql?('ur') or k.eql?('zh-HK')
               - case k
               - when 'ar'
                 %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.arabic')})"
