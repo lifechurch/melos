@@ -18,7 +18,7 @@ module YV
 
       def force_login(opts = {})
         if current_auth.nil?
-          opts[:redirect] = request.path
+          opts[:redirect] = request.fullpath
           return redirect_to sign_in_path(opts)
         end
         if current_user.invalid?
