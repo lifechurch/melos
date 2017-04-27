@@ -134,7 +134,7 @@ class Bible extends Component {
 // TODO: use readerUtils for this
 	handleVerseSelect = (verseSelection) => {
 		const { hosts, bible: { version: { id, local_abbreviation }, chapter: { reference: { human, usfm } }, verseColors }, dispatch } = this.props
-		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
+		const refUrl = `${hosts.railsHost}/bible/${id}/${usfm}.${verseSelection.human}`
 
 		// get the verses that are both selected and already have a highlight
 		// color associated with them, so we can allow the user to delete them
