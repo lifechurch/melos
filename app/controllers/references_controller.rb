@@ -132,7 +132,7 @@ class ReferencesController < ApplicationController
     @node_meta_tags = fromNode['head']['meta']
     @render_rails_meta = true
 
-    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
+    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'], version: version, reference: reference }
   end
 
   # def passage
