@@ -144,7 +144,15 @@
 
   = render partial: 'shared/header/js_templates'
 
-  = render '/shared/app_banner'
+  -if ['references','plans'].include? controller_name
+    - if controller_name == 'plans' and (action_name == 'show' or action_name == 'sample')
+      -@branch_deeplink = "youversion://reading_plan_detail?id=#{@deeplink_plan_id}"
+    - elsif controller_name == 'plans' and action_name == 'index'
+      -@branch_deeplink = "youversion://reading_plans"
+    - elsif controller_name == 'references'
+      - @branch_deeplink = "bible?reference=#{@deeplink_reference}&version=#{@deeplink_version}"
+    = render '/shared/app_banner'
+
 
 -#
   /     .header-user

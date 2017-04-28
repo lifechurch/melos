@@ -75,7 +75,7 @@ class PlansController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
-
+    @deeplink_plan_id = p['id']
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
@@ -101,7 +101,6 @@ class PlansController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
-
     render 'save_for_later_action', locals: { html: fromNode['html'] }
   end
 
@@ -149,7 +148,7 @@ class PlansController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
-
+    @deeplink_plan_id = p['id']
     render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
     # respond_to do |format|
     #   format.json { return render nothing: true }

@@ -131,8 +131,9 @@ class ReferencesController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
     @render_rails_meta = true
-
-    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'], version: version, reference: reference }
+    @deeplink_version = version
+    @deeplink_reference = reference
+    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   # def passage
