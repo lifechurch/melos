@@ -191,9 +191,9 @@ sv:
             in partnership: "i samarbete med"
             one hope: "One Hope: Extraordinärt bibelmaterial för barn"
         links: 
-            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
-            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
+            apple: "https://itunes.apple.com/sv/app/bible-for-kids/id668692393?mt=8"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=sv"
+            amazon: "https://www.amazon.co.uk/Life-Church-Bible-for-Kids/dp/B00GURLC40"
     now: "Nu"
     select dropdown: "--Välj--"
     celebrating 50MM: "Firar 50 miljoner installationer!"
@@ -1414,6 +1414,7 @@ sv:
             just now: "Precis nu"
         verses selected: "verser valda"
     EventsAdmin: 
+        change: "Ändra"
         ui: 
             yes button: "Ja"
             no button: "Nej"

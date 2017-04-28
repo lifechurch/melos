@@ -147,6 +147,10 @@ class PagesController < ApplicationController
           source: 'youversion'
       }
 
+      if params[:campaign].present?
+        ts_payload[:campaign] = params[:campaign]
+      end
+
       ts_signature = Licenses::Request.sign( ts_payload , ENV["TREADSTONE_SECRET"] ) unless ENV["TREADSTONE_SECRET"].nil?
       ts_payload[:signature] = ts_signature
       @ts_url = Cfg.treadstone_base_url + "?" + ts_payload.to_query

@@ -1429,6 +1429,7 @@ ro:
             just now: "chiar acum"
         verses selected: "versete selectate"
     EventsAdmin: 
+        change: "Schimbă"
         ui: 
             yes button: "Da"
             no button: "Nu"

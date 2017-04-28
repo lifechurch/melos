@@ -1399,6 +1399,7 @@ ms:
             just now: "baru sahaja"
         verses selected: "ayat-ayat yang dipilih"
     EventsAdmin: 
+        change: "Tukar"
         ui: 
             yes button: "Ya"
             no button: "Tidak"
@@ -1595,7 +1596,7 @@ ms:
                     archived: "Diarkibkan"
                 unpublish: "Batal pemberitaan"
                 saving: "Simpan..."
-                saveAsDraft: "Selamatkan sebagai Draf"
+                saveAsDraft: "Simpan sebagai Draf"
                 myEvents: "Acara Saya"
                 eventBuilder: "PEMBINA ACARA"
                 signOut: "Log Keluar"

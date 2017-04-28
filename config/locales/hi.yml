@@ -1414,6 +1414,7 @@ hi:
             just now: "अभी अभी"
         verses selected: "चयनित पद"
     EventsAdmin: 
+        change: "बदले"
         ui: 
             yes button: "हाँ"
             no button: "नहीं"

@@ -1414,6 +1414,7 @@ fr:
             just now: "à l'instant"
         verses selected: "versets sélectionnés"
     EventsAdmin: 
+        change: "Changer"
         ui: 
             yes button: "Oui"
             no button: "Non"

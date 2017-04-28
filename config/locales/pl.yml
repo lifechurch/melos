@@ -1444,6 +1444,7 @@ pl:
             just now: "właśnie teraz"
         verses selected: "fragmenty wybrane"
     EventsAdmin: 
+        change: "Zmień"
         ui: 
             yes button: "Tak"
             no button: "Nie"
