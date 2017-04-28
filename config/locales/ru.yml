@@ -1444,6 +1444,7 @@ ru:
             just now: "только что"
         verses selected: "стихи выбраны"
     EventsAdmin: 
+        change: "Изменить"
         ui: 
             yes button: "Да"
             no button: "Нет"

@@ -1399,6 +1399,7 @@ my:
             just now: "ယခု"
         verses selected: "ရွေးထားသောကျမ်းပိုဒ်"
     EventsAdmin: 
+        change: "ပြောင်းရန်"
         ui: 
             yes button: "ဟုတ်"
             no button: "မဟုတ်"

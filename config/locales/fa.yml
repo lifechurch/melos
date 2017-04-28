@@ -1399,6 +1399,7 @@ fa:
             just now: "فقط الآن"
         verses selected: "آیات انتخاب شده"
     EventsAdmin: 
+        change: "تغییر"
         ui: 
             yes button: "بله"
             no button: "نه"

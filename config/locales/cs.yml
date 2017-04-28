@@ -1174,7 +1174,7 @@ cs:
     download ad: 
         title: "Stáhněte si bezplatnou aplikaci Bible"
         description copy: "%{language_count} různých jazyků se stovkami překladů Biblí - Bible, která je s vámi kdekoliv."
-        meta copy title: "Stáhněte si bezplatnou aplikaci Bible"
+        meta copy title: "Stáhnout si bezplatnou aplikaci Bible"
         meta copy versions: "Dostupných překladů: %{language_count} + rozdílné jazyky"
         line 1: "Stovky překladů ve více než"
         line 2: "100 různých jazycích - Bible,"
@@ -1231,7 +1231,7 @@ cs:
         h3 sub: "K dispozici ve více než %{language_count} světových jazycích."
         main: "Desítky milionů lidí používají aplikaci Bible™, aby z Bible udělali součást svého každodenního života. Stáhněte si bezplatnou aplikaci a získejte přístup k vašim záložkám, poznámkám a plánům čtení odkudkoli. Užívejte si stovky překladů včetně audio verzí, a to vše na vašem mobilním zařízení."
         button h4: "Přejí na stránku Bible.com/app<br>v mobilním zařízení"
-        download now: "Stáhněte si aplikaci Bible ihned"
+        download now: "Stáhněte si aplikaci Bible"
         what people: "Co lidé říkají o bezplatné aplikaci Bible..."
         t1: "Vždycky mám Slovo."
         t1 copy: "Zazáložkoval jsem si pasáže, které jsou pro mě důležité. Dokonce jsem přečetl celou Bibli během jednoho roku díky plánům čtení."
@@ -1276,30 +1276,30 @@ cs:
             explanation: "Něco se pokazilo! Můžete zkusit obnovit stránku, omlouváme se za toto nedopatření!"
             our action: "Byli jsme o tomto problému upozorněni a vrhneme se na něj co nejdřív, jak jen to bude možné."
         home: 
-            heading: "Pro Váš chytrý telefon, tablet či počítač získejte Bibli zdarma."
-            cta: "Okamžitě číst Bibli"
+            heading: "Bible zdarma pro váš telefon, tablet i počítač."
+            cta: "Číst Bibli"
             experience: 
-                title: "Zakuste ji kdekoliv"
-                body: "Na svém zařízení (počítač, telefon nebo tablet) si vyberte z více než 1200 překladů v celkem 900 jazycích - mnohé z nich jsou dostupné také v audio zpracování."
+                title: "Dostupná"
+                body: "Na počítači, telefonu či tabletu si můžete vybrat z více než 1200 překladů v celkem 900 jazycích. Mnoho z nich je dostupných také v audio verzi."
                 action: "Zobrazit překlady Bible"
             make_yours: 
-                title: "Pracujte s biblí"
-                body: "Vyznačte nebo si založte oblíbené verše. Vytvořte si obrázky veršů, které můžete sdílet. K jednotlivým pasážím si můžete také připojovat veřejné či soukromé poznámky."
-                action: "Vytvoření bezplatného účtu"
+                title: "Osobní"
+                body: "Oblíbené verše si můžete zvýraznit, uložit, nebo z nich vytvářet obrázky ke sdílení. K jednotlivým pasážím lze také přidávat veřejné či soukromé poznámky."
+                action: "Vytvořit bezplatný účet"
             install_now: 
-                title: "Instalujte aplikaci hned"
-                body: "Aplikace Bible je zcela zdarma. Bez reklam a žádných vynucených plateb. K dnešnímu dni má aplikace Bible celkem unikátních instalací:"
-                action: "Stáhněte si bezplatnou aplikaci Bible"
+                title: "Aplikace"
+                body: "Aplikace Bible je zcela zdarma. Bez reklam či  plateb v rámci aplikace. Počet instalací k dnešnímu dni:"
+                action: "Stáhnout si bezplatnou aplikaci Bible"
             free_plans: 
                 title: "Bezplatné plány čtení a výkladové poznámky"
-                body: "Plány vám pomohou se zapojit do Božího slova každý den - stačí si jen udělat trochu času."
-            browse_plans: "Prohlédnout si všechny Plány čtení"
-            read_listen: "Čtěte, poslouchejte, dívejte se, sdílejte"
+                body: "Plány vám pomohou se čtením Bible na každý den - stačí si jen udělat trochu času."
+            browse_plans: "Prohlédnout si všechny plány čtení"
+            read_listen: "Čtěte, poslouchejte, sledujte, sdílejte"
             start_now: "Jdu do toho!"
             votd: 
                 title: "Verš dne"
-                highlight_bookmark: "Zvýrazněte, založte či sdílejte tento verš"
-                subscribe: "Odebírejte pravidelně Verš dne"
+                highlight_bookmark: "Zvýraznit, uložit nebo sdílet tento verš"
+                subscribe: "Odebírat verš dne"
             hero: 
                 heading: "Bible zdarma na váš telefon, tablet a počítač."
                 description: "YouVersion je jednoduchá aplikace bez reklam, která vám přináší Boží Slovo do vašeho každodenního života."
@@ -1429,6 +1429,7 @@ cs:
             just now: "právě teď"
         verses selected: "verše vybrány"
     EventsAdmin: 
+        change: "Změnit"
         ui: 
             yes button: "Ano"
             no button: "Ne"
@@ -1881,7 +1882,7 @@ cs:
                                     desc: "Červená značka ŽIVĚ se zobrazí v přednastavený čas."
                                 remove: 
                                     title: "Odstranění:"
-                                    desc: "Vaše Událost nebude po datu ukončení dále dostupná Návštěvníci, kteří kliknou na \"Uložit Událost\" ve chvíli, kdy je vaše událost dostupná, budou mít stále přístup k její archivní verzi. Tato událost bude také dále zjistitelná prostřednictvím přímého odkazu."
+                                    desc: "Vaše událost nebude po datu ukončení dále dostupná Návštěvníci, kteří kliknou na \"Uložit událost\" ve chvíli, kdy je vaše událost dostupná, budou mít stále přístup k její archivní verzi. Tato událost bude také dále zjistitelná prostřednictvím přímého odkazu."
                             PreviewTypeAnnouncement: 
                                 expand: "Rozbalit"
                             PreviewTypePlan: 

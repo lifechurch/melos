@@ -1474,6 +1474,7 @@ cy:
             just now: "nawr"
         verses selected: "adnodau ddewiswyd"
     EventsAdmin: 
+        change: "Newid"
         ui: 
             yes button: "Ie"
             no button: "Na"

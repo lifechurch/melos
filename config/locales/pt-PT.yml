@@ -137,8 +137,8 @@ pt-PT:
         best kids app: "Melhor app para crianças!"
         best educational app: "Melhor app educativa"
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "A App da Bíblia para crianças"
+            description: "A App da Bíblia para a crianças é uma ótima maneira dos seus filhos aprenderem as histórias bíblicas sobre Jesus, o nosso dom da vida eterna e as muitas lições que Deus nos ensina. Nesta experiência interativa, as crianças tomam contacto com a Palavra de Deus através de imagens apelativas, ao mesmo tempo que ganham pontos por ler e colecionam tesouros."
         100million: 
             title: "Tem Início nos 100 Milhões"
             description: "A App da Bíblia já foi instalada quase 100 milhões de vezes - um marco incrível! Mas estamos apenas a começar. Descarregue a App da Bíblia grátis - e depois partilhe-a com os seus amigos. Vamos fazer história juntos."
@@ -155,7 +155,7 @@ pt-PT:
     kids: 
         bible app: "A App da Bíblia"
         for: "for"
-        kids: "kids"
+        kids: "Crianças"
         by youversion: "by YouVersion"
         help your kids: "Help your kids fall in love with God’s Word."
         free download: "Download for free!"
@@ -1414,6 +1414,7 @@ pt-PT:
             just now: "agora"
         verses selected: "versículos selecionados"
     EventsAdmin: 
+        change: "Alterar"
         ui: 
             yes button: "Sim"
             no button: "Não"

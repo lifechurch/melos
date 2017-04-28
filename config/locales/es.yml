@@ -1414,6 +1414,7 @@ es:
             just now: "Justo ahora"
         verses selected: "versículos seleccionados"
     EventsAdmin: 
+        change: "Cambiar"
         ui: 
             yes button: "Si"
             no button: "No"

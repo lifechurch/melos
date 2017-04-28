@@ -1414,6 +1414,7 @@ bg:
             just now: "току-що"
         verses selected: "избрани стихове"
     EventsAdmin: 
+        change: "Промяна"
         ui: 
             yes button: "Да"
             no button: "Не"

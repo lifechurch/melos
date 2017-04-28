@@ -1414,6 +1414,7 @@ ca:
             just now: "ara mateix"
         verses selected: "versets seleccionats"
     EventsAdmin: 
+        change: "Canvia"
         ui: 
             yes button: "Sí"
             no button: "No"

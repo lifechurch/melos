@@ -1474,6 +1474,7 @@ ar:
             just now: "الآن"
         verses selected: "الآيات المختارة"
     EventsAdmin: 
+        change: "تغيير"
         ui: 
             yes button: "نعم"
             no button: "لا"
