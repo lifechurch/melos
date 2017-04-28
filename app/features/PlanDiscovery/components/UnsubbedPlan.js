@@ -51,7 +51,7 @@ class UnsubbedPlan extends Component {
 				let itemBibleLink
 				if (reference.usfm[0].split('.').length === 2) {
 					// Two pieces indicates full chapter
-					itemBibleLink = reference.usfm[0]
+					itemBibleLink = `${bibleLink}/${reference.usfm[0]}`
 				} else {
 					// Three pieces indicates verses
 					itemBibleLink = `${bibleLink}/${reference.usfm[0].split('.').slice(0, 2).join('.')}.${getSelectionString(reference.usfm)}`
