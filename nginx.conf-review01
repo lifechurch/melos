@@ -41,7 +41,9 @@ http {
       passenger_enabled on;
       root /var/www/youversion-web/current/public;
       passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
+      passenger_env_var NO_AUTH true;
       rails_env review01;
+      large_client_header_buffers 4 10k;
 
     location /apple-app-site-association {
         root /var/www/youversion-web/current;

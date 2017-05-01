@@ -323,12 +323,11 @@ class SubscriptionsController < ApplicationController
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
     if @subscription.completed?
-      @featured_plans = Plan.featured(language_tag: current_locale)
-      @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
-      return render "subscriptions/plan_complete"
-    else
-      return render "subscriptions/day_complete"
+      return redirect_to plan_complete_plan_path(username: current_user.username, id: params[:id])
     end
+
+    return redirect_to day_complete_plan_path(username: current_user.username, id: params[:id], day: params[:day])
+
   end
 
   private

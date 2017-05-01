@@ -10,8 +10,6 @@ class PlansController < ApplicationController
 
   # TODO - this needs serious refactoring controller, model, service object and template - A MESS.
   def index
-    # response.headers['Access-Control-Allow-Origin'] = '*'
-
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
@@ -77,7 +75,7 @@ class PlansController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
-
+    @deeplink_plan_id = p['id']
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
@@ -103,7 +101,6 @@ class PlansController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
-
     render 'save_for_later_action', locals: { html: fromNode['html'] }
   end
 
@@ -151,7 +148,7 @@ class PlansController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
-
+    @deeplink_plan_id = p['id']
     render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
     # respond_to do |format|
     #   format.json { return render nothing: true }

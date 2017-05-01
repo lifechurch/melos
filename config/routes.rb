@@ -66,8 +66,8 @@ YouversionWeb::Application.routes.draw do
   get "/hk/kids",     to: "redirects#hk_kids"
 
   get "/trending-bible-verses", to: "pages#trending"
-  get "/verse-of-the-day", to: "pages#votd"
-  get "/bible-verse-of-the-day", to: "pages#votd", as: "votd"
+  get "/verse-of-the-day", to: "pages#votd", as: "votd"
+  get "/bible-verse-of-the-day", to: "redirects#votd"
   get "/wmf",           to: "redirects#wmf"
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"
@@ -174,11 +174,11 @@ YouversionWeb::Application.routes.draw do
   # Necessary as we don't want subscriptions routes to be shallow
   scope "/users/:user_id" do
     resources :subscriptions, path: '/reading-plans', :user_id => /([^\/])+?/ do
-      get   :calendar,    on: :member
-      get   :devo,   on: :member
-      get   :ref,    on: :member
+      get   :calendar,      on: :member
+      get   :devo,          on: :member
+      get   :ref,           on: :member
       get   :plan_complete, on: :member
-      get   :day_complete, on: :member
+      get   :day_complete,  on: :member
       get   :mark_complete, on: :member
     end
   end
@@ -214,6 +214,7 @@ YouversionWeb::Application.routes.draw do
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
   match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
   match '/users/:username/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
+  match '/users/:username/reading-plans/:id/completed' => 'plans#day_complete', as: "plan_complete_plan", via: :get
 
   get '/users/:username/reading-plans/:id/day/:day' => 'subscriptions#show', as: "plan_show"
   get '/users/:username/reading-plans/:id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"

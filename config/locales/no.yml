@@ -137,8 +137,8 @@
         best kids app: "Beste barneapp!"
         best educational app: "Beste læringsapp!"
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "Bibel-appen for barn"
+            description: "Bible App for Kids er en flott måte for barna dine å lære historier fra Bibelen om Jesus, det evige livet som en gave til oss og mange andre historier fra Gud til oss. Med denne interaktive opplevelsen vil barna bli engasjert i Guds ord med flotte bilder, mens de jakter poeng for lesing og for å finne skatter. Tilgjengelig kun på engelsk"
         100million: 
             title: "Det begynner med 100 millioner"
             description: "Bibel-appen har blitt installert nesten 100 millioner ganger - en utrolig milepæl! Men vi er bare så vidt kommet igang. Last ned Bibel-appen gratis idag - og del den så med vennene dine. Bli med å skape historie."
@@ -155,11 +155,11 @@
     kids: 
         bible app: "Bibel-appen"
         for: "for"
-        kids: "kids"
+        kids: "barn"
         by youversion: "by YouVersion"
-        help your kids: "Help your kids fall in love with God’s Word."
-        free download: "Download for free!"
-        app store: "Available on the App store"
+        help your kids: "Hjelp barna dine å bli glade i Guds ord."
+        free download: "Last ned gratis!"
+        app store: "Tilgjengelig i App store"
         google play: "Get it on Google Play"
         amazon: "Available at Amazon Appstore for Android"
         app icon: "App icon for The Bible App for Kids"
@@ -1170,8 +1170,8 @@
         banner open: "Åpne"
     download bafk ad: 
         title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        description copy: "Bible App for Kids er en fin måte for barna dine å lære bibelhistorier om Jesus."
+        download: "Last ned nå"
     about page: 
         relevancy: "Relevans"
         relevancy copy: "Tidligere generesjoner hadde begrenset tilgang til Bibelen. Dette er ikke noe problem i dag. Selv om mange har tilgang til en bibel, synes de ikke at innholdet angår livene deres. Samtidig er det andre som tror det er en sammenheng mellom Bibelen og hverdagslivet deres."
