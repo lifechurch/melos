@@ -120,7 +120,7 @@ function Passage(props) {
 				if (item.image_id) {
 					slide = (
 						<div className='radius-5' >
-							<CarouselSlideImage title={item.title}>
+							<CarouselSlideImage title={item.name}>
 								<Image width={720} height={405} thumbnail={false} imageId={item.image_id} type={item.type} config={passage.configuration.images} />
 							</CarouselSlideImage>
 						</div>
@@ -128,7 +128,7 @@ function Passage(props) {
 				} else {
 					slide = (
 						<div className='radius-5' >
-							<CarouselSlideImage title={item.title}>
+							<CarouselSlideImage title={item.name}>
 								<Image width={720} height={405} thumbnail={false} imageId='default' type={item.type} config={passage.configuration.images} />
 							</CarouselSlideImage>
 						</div>
@@ -138,7 +138,7 @@ function Passage(props) {
 					<li className="collection-item" key={`item-${item.id}`}>
 						<a
 							href={slideLink}
-							title={`${intl.formatMessage({ id: 'plans.about this plan' })}: ${item.title}`}
+							title={`${intl.formatMessage({ id: 'plans.about this plan' })}: ${item.name}`}
 						>
 							{slide}
 						</a>
