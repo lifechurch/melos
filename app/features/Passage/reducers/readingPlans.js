@@ -13,7 +13,7 @@ export default function reducer(state = {}, action) {
 
 		case type('readingplansPlansByReferenceSuccess'):
 			return (function readingplansPlansByReferenceSuccess() {
-				let plans = action.response.plans.map((plan) => {
+				let plans = action.response.reading_plans.map((plan) => {
 					return Immutable.fromJS(plan).set('image_id', plan.id).set('type', 'reading_plan').toJS()
 				})
 				// for quicker load times, let's just show 6 plans
