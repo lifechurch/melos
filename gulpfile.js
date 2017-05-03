@@ -307,7 +307,7 @@ gulp.task('smartling', (callback) => {
 	return smartlingAuth().then((response) => {
 		const token = response.response.data.accessToken;
 		return smartlingFetchAvailableLocales(token).then((response) => {
-			console.log(response)
+			// console.log('Smartling Available Locales', response)
 			const locales = response.response.data.items;
 
 			const queue = async.queue((task, callback) => {
@@ -369,28 +369,43 @@ gulp.task('smartling', (callback) => {
 			fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, '\t'));
 
 			queue.push(tasks, (task, data, err) => {
-				console.log('Task:', task);
+				// console.log(`./locales/${task.locale}.json`, flattenObject(data[task.prefix].EventsAdmin));
 				fs.writeFileSync(`./locales/${task.locale}.json`, JSON.stringify(flattenObject(data[task.prefix].EventsAdmin), null, '\t').replace(/\%\{/g, '{'));
 			});
 
 			const client = GetClient('reading-plans')
 				.call('configuration')
 				.setVersion('3.1')
-				.get().then((data) => {
+				.get()
+				.then((data) => {
 					const planLocales = {}
+
+					const isFullMatch = (locale, planLocale) => {
+						return locale.replace('-', '_') === planLocale.replace('-', '_')
+					}
+
+					const isOverride = (locale, planLocale) => {
+						return (isFullMatch('pt-PT', locale) && isFullMatch('pt', planLocale)) ||
+							(isFullMatch('es-ES', locale) && isFullMatch('es', planLocale))
+					}
+
+
+					const isPrefixMatch = (locale, planLocale) => {
+						return planLocale.length === 2 &&
+							!isOverride(locale, planLocale) &&
+							(locale.split('-')[0].split('_')[0] === planLocale.split('-')[0].split('_')[0])
+					}
+
+					const mergeLocale = (final, locale, planLocale) => {
+						if (isFullMatch(locale, planLocale) || isPrefixMatch(locale, planLocale)) {
+							final[locale] = planLocale
+						}
+					}
+
 					data.available_language_tags.forEach((l) => {
-
-						const plan_prefix = l.split('_')[0];
-
 						Object.keys(availableLocales).forEach((a) => {
-							const av_prefix = a.split('-')[0].split('_')[0];
-
-							if (l === a || plan_prefix === av_prefix) {
-								planLocales[a] = l;
-							}
-
+							mergeLocale(planLocales, a, l)
 						});
-
 					});
 					fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, '\t'));
 				}, (error) => {
@@ -546,15 +561,15 @@ function smartlingFetchLocaleFile(locale, token) {
 }
 
 function flattenObject(ob) {
-	const toReturn = {};
-
-	for (const i in ob) {
-		if (!ob.hasOwnProperty(i)) continue;
+	// console.log(ob)
+	var toReturn = {};
+	for (var i of Object.keys(ob)) {
+		// if (!ob.hasOwnProperty(i)) continue;
 
 		if ((typeof ob[i]) === 'object') {
-			const flatObject = flattenObject(ob[i]);
-			for (const x in flatObject) {
-				if (!flatObject.hasOwnProperty(x)) continue;
+			var flatObject = flattenObject(ob[i]);
+			for (var x in flatObject) {
+				// if (!flatObject.hasOwnProperty(x)) continue;
 
 				toReturn[`${i}.${x}`] = flatObject[x];
 			}

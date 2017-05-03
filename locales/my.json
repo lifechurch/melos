@@ -1,5 +1,5 @@
 {
-	"change": "Change",
+	"change": "ပြောင်းရန်",
 	"ui.yes button": "ဟုတ်",
 	"ui.no button": "မဟုတ်",
 	"plans.plans": "အစီအစဉ်",
@@ -233,7 +233,7 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.types": "အချက်အလက်အမျိုးအစား",
 	"features.EventEdit.features.content.components.ContentHelpModal.learn": "ထူးကဲသောအစီအစဉ်ဖန်တီးနည်းကို<br>လေ့လာပါ",
 	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "စာသားပုံစံ",
-	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "အကြမ်းဖျင်းဖော်ပြချက်များ၊ အဓိကအချက်များ၊ ဆွေးနွေးချက်မေးခွန်းများ၊ လက်ရှိဖြစ်နေသည့်သင်၏သတင်းစကားနဲ့အတူ သင်၏ပုံမှန်တက်ရောက်သူများကို ကူညီမည့်စာသားအခ���ေခံထားသည့်အထွေထွေမာတိကာတခုခုကို ဝေမျှပါ။ သင်၏စာသားမော်ဂျူးသည် မည်မျှရှည်ရှည် ဖြစ်နိုင်၍ ကြွယ်ဝသောစာသားပုံစံအချိုးအစား ပါဝင်စေနိုင်သည်။",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "အကြမ်းဖျင်းဖော်ပြချက်များ၊ အဓိကအချက်များ၊ ဆွေးနွေးချက်မေးခွန်းများ၊ လက်ရှိဖြစ်နေသည့်သင်၏သတင်းစကားနဲ့အတူ သင်၏ပုံမှန်တက်ရောက်သူများကို ကူညီမည့်စာသားအခြေခံထားသည့်အထွေထွေမာတိကာတခုခုကို ဝေမျှပါ။ သင်၏စာသားမော်ဂျူးသည် မည်မျှရှည်ရှည် ဖြစ်နိုင်၍ ကြွယ်ဝသောစာသားပုံစံအချိုးအစား ပါဝင်စေနိုင်သည်။",
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "ကျမ်းညွှန်းပုံစံ",
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "YouVersion တွင်ပါရှိသည့် ကျမ်းစာဗားရှင်းပေါင်း ၁၂၀၀ ကျော်နှင့် ဘာသာစကား ၉၀၀ ကျော်ထဲမှ ကြိုက်နှစ်သက်သည့် ကျမ်းပိုဒ်နှင့်ကျမ်းချက်တို့ကိုရွေးချယ်ပြီး တိုက်ရိုက်ချိတ်ဆက်ပေးလိုက်ပါ။ သင်၏လှုပ်ရှားမှုအစီအစဉ်ကို ကြည့်ရှုနေသောသူတို့သည် ကျမ်းညွှန်းကိုနှိပ်ပြီး ကျမ်းစာအက်ပ်ဖတ်စာမျက်နှ���တွင် ၎င်းကိုဖတ်ရှုနိုင်ပြီး မှတ်သားထားခြင်း၊ အရောင်မုတ်ထားခြင်းစသည်တို့ကိုပြုနိုင်ပါသည်။",
 	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "ဖတ်ရှုခြင်းအစီစဉ်ပုံစံ",

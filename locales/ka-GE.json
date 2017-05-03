@@ -1,5 +1,5 @@
 {
-	"change": "更改",
+	"change": "Change",
 	"ui.yes button": "Yes",
 	"ui.no button": "No",
 	"plans.plans": "Plans",
@@ -387,8 +387,8 @@
 	"Reader.read reference": "Read {reference}",
 	"Reader.read chapter": "Read full chapter",
 	"Reader.plan title": "Free Reading Plans and Devotionals",
-	"Reader.plan title ref": "與 {reference} 相關的免費讀經計劃和靈修短文",
-	"Reader.plan subtitle": "讀經計劃將你的聖經���讀以每日容易完成的定量來分配。【計劃】通常包含了輔助性的靈修短文、音訊或視訊精選。無論你怎樣稱呼它，讀經計劃是經過證實能讓聖經自然而然地融入你日常生活的途徑。",
+	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
+	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
 	"Reader.meta.mobile.title": "The Bible App",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Parallel",

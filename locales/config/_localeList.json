@@ -285,8 +285,8 @@
 	},
 	{
 		"locale": "xc-MN",
-		"locale2": "mn",
-		"locale3": "mon",
+		"locale2": null,
+		"locale3": null,
 		"displayName": "XC-MN"
 	},
 	{
@@ -338,6 +338,14 @@
 		"displayName": "Українська"
 	},
 	{
+		"nativeName": "ქართული",
+		"englishName": "Georgian",
+		"locale": "ka-GE",
+		"locale2": "ka",
+		"locale3": "kat",
+		"displayName": "ქართული"
+	},
+	{
 		"nativeName": "اردو",
 		"englishName": "Urdu",
 		"locale": "ur",
@@ -360,6 +368,14 @@
 		"locale2": "fa",
 		"locale3": "fas",
 		"displayName": "فارسی"
+	},
+	{
+		"nativeName": "नेपाली",
+		"englishName": "Nepali",
+		"locale": "ne-NP",
+		"locale2": "ne",
+		"locale3": "nep",
+		"displayName": "नेपाली"
 	},
 	{
 		"nativeName": "हिन्दी",
