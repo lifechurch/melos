@@ -307,9 +307,7 @@ gulp.task('smartling', (callback) => {
 	return smartlingAuth().then((response) => {
 		const token = response.response.data.accessToken;
 		return smartlingFetchAvailableLocales(token).then((response) => {
-			// console.log('Smartling Available Locales', response)
 			const locales = response.response.data.items;
-
 			const queue = async.queue((task, callback) => {
 				smartlingFetchLocaleFile(task.locale, token).then((data) => {
 					callback(task, data, null);
@@ -369,7 +367,6 @@ gulp.task('smartling', (callback) => {
 			fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, '\t'));
 
 			queue.push(tasks, (task, data, err) => {
-				// console.log(`./locales/${task.locale}.json`, flattenObject(data[task.prefix].EventsAdmin));
 				fs.writeFileSync(`./locales/${task.locale}.json`, JSON.stringify(flattenObject(data[task.prefix].EventsAdmin), null, '\t').replace(/\%\{/g, '{'));
 			});
 
@@ -480,8 +477,6 @@ function smartlingFetchAvailableLocales(token) {
 			}
 		}
 
-		// console.log("OP", options);
-
 		const req = https.request(options)
 
 		req.on('response', (response) => {
@@ -528,8 +523,6 @@ function smartlingFetchLocaleFile(locale, token) {
 			}
 		}
 
-		// console.log("OP", options);
-
 		const req = https.request(options)
 
 		req.on('response', (response) => {
@@ -542,7 +535,6 @@ function smartlingFetchLocaleFile(locale, token) {
 
 			response.on('end', () => {
 				try {
-					// console.log("BD", body);
 					resolve(yaml.safeLoad(body, { json: true }));
 				} catch (ex) {
 					reject(ex);
@@ -561,16 +553,11 @@ function smartlingFetchLocaleFile(locale, token) {
 }
 
 function flattenObject(ob) {
-	// console.log(ob)
 	var toReturn = {};
 	for (var i of Object.keys(ob)) {
-		// if (!ob.hasOwnProperty(i)) continue;
-
 		if ((typeof ob[i]) === 'object') {
 			var flatObject = flattenObject(ob[i]);
 			for (var x in flatObject) {
-				// if (!flatObject.hasOwnProperty(x)) continue;
-
 				toReturn[`${i}.${x}`] = flatObject[x];
 			}
 		} else {
