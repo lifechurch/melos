@@ -552,6 +552,7 @@ function smartlingFetchLocaleFile(locale, token) {
 	})
 }
 
+/*eslint-disable */
 function flattenObject(ob) {
 	var toReturn = {};
 	for (var i of Object.keys(ob)) {
@@ -566,3 +567,4 @@ function flattenObject(ob) {
 	}
 	return toReturn;
 }
+/*eslint-enable*/
