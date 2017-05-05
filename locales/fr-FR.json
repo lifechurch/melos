@@ -1,5 +1,5 @@
 {
-	"change": "Change",
+	"change": "Changer",
 	"ui.yes button": "Oui",
 	"ui.no button": "Non",
 	"plans.plans": "Plans",
@@ -168,7 +168,7 @@
 	"components.EventHeader.saving": "Enregistrement en cours...",
 	"components.EventHeader.saveAsDraft": "Enregistrer en tant que brouillon",
 	"components.EventHeader.myEvents": "Mes Événements",
-	"components.EventHeader.eventBuilder": "CONSOLE D’ÉVÉNEMENTS",
+	"components.EventHeader.eventBuilder": "CONSOLE D’ÉV��NEMENTS",
 	"components.EventHeader.signOut": "Déconnexion",
 	"components.EventHeader.createAccount": "Créer un compte",
 	"components.HtmlEditor.text": "Texte",

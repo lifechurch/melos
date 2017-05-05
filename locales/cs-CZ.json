@@ -1,5 +1,5 @@
 {
-	"change": "Change",
+	"change": "Změnit",
 	"ui.yes button": "Ano",
 	"ui.no button": "Ne",
 	"plans.plans": "Plány",
@@ -354,7 +354,7 @@
 	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "Stav poznámky:",
 	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "Červená značka ŽIVĚ se zobrazí v přednastavený čas.",
 	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Odstranění:",
-	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Vaše Událost nebude po datu ukončení dále dostupná Návštěvníci, kteří kliknou na \"Uložit Událost\" ve chvíli, kdy je vaše událost dostupná, budou mít stále přístup k její archivní verzi. Tato událost bude také dále zjistitelná prostřednictvím přímého odkazu.",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Vaše událost nebude po datu ukončení dále dostupná Návštěvníci, kteří kliknou na \"Uložit událost\" ve chvíli, kdy je vaše událost dostupná, budou mít stále přístup k její archivní verzi. Tato událost bude také dále zjistitelná prostřednictvím přímého odkazu.",
 	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Rozbalit",
 	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "Číst",
 	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "Info o plánu",

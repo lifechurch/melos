@@ -1,5 +1,5 @@
 {
-	"change": "Change",
+	"change": "Zmeniť",
 	"ui.yes button": "Áno",
 	"ui.no button": "Nie",
 	"plans.plans": "Plány",
@@ -413,7 +413,7 @@
 	"Reader.header.plans": "Plány",
 	"Reader.header.videos": "Videá",
 	"Reader.header.me": "Ja",
-	"Reader.header.recent versions": "Nedávno použit��",
+	"Reader.header.recent versions": "Nedávno použité",
 	"Reader.chapterpicker.book label": "Kniha",
 	"Reader.chapterpicker.chapter label": "Kapitola",
 	"Reader.chapterpicker.chapter unavailable": "Táto kapitola nie je k dispozícii v tejto verzii. Prosím, vyberte inú kapitolu alebo verziu.",

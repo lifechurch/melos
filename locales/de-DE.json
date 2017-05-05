@@ -1,5 +1,5 @@
 {
-	"change": "Change",
+	"change": "Ändern",
 	"ui.yes button": "Ja",
 	"ui.no button": "Nein",
 	"plans.plans": "Lesepläne",
@@ -401,7 +401,7 @@
 	"Reader.header.audio label": "Audio",
 	"Reader.header.audio window": "In neuem Fenster öffnen",
 	"Reader.header.font label": "Einstellungen der Leseansicht",
-	"Reader.header.notifications label": "Benachrichtigungen",
+	"Reader.header.notifications label": "Mitteilungen",
 	"Reader.header.more label": "Mehr",
 	"Reader.header.search input": "Bibelstelle oder Schlagwort...",
 	"Reader.header.home": "Home",

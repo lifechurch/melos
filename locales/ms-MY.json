@@ -1,5 +1,5 @@
 {
-	"change": "Change",
+	"change": "Tukar",
 	"ui.yes button": "Ya",
 	"ui.no button": "Tidak",
 	"plans.plans": "Pelan",
@@ -162,7 +162,7 @@
 	"components.EventHeader.status.archived": "Diarkibkan",
 	"components.EventHeader.unpublish": "Batal pemberitaan",
 	"components.EventHeader.saving": "Simpan...",
-	"components.EventHeader.saveAsDraft": "Selamatkan sebagai Draf",
+	"components.EventHeader.saveAsDraft": "Simpan sebagai Draf",
 	"components.EventHeader.myEvents": "Acara Saya",
 	"components.EventHeader.eventBuilder": "PEMBINA ACARA",
 	"components.EventHeader.signOut": "Log Keluar",
