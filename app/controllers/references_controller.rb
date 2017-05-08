@@ -119,8 +119,7 @@ class ReferencesController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time,
         "version" => ((version and !version.nil?) ? version : nil),
         "ref" => ((reference and !reference.nil?) ? reference : nil),
-        "altVersions" => DEFAULT_VERSIONS,
-        "parallelVersion" => params.parallel
+        "altVersions" => DEFAULT_VERSIONS
     }
 
     fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request)
