@@ -120,7 +120,7 @@ class ReferencesController < ApplicationController
         "version" => ((version and !version.nil?) ? version : nil),
         "ref" => ((reference and !reference.nil?) ? reference : nil),
         "altVersions" => DEFAULT_VERSIONS,
-        "parallelVersion" => params.parallel
+        "parallelVersion" => params["parallel"]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request)
