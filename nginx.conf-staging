@@ -47,6 +47,7 @@ http {
       passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
       passenger_env_var LOG_LEVEL warn;
       passenger_env_var TREADSTONE_SECRET 6Ag54rcIa7pS3DRs6jkzVRtceSUuGaqfU2Lxi57bZDozpTVcIYVZeRCXpmzmdJw;
+      passenger_env_var NO_AUTH true;
       rails_env staging;
       large_client_header_buffers 4 10k;
 

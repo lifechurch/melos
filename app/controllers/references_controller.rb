@@ -119,7 +119,8 @@ class ReferencesController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time,
         "version" => ((version and !version.nil?) ? version : nil),
         "ref" => ((reference and !reference.nil?) ? reference : nil),
-        "altVersions" => DEFAULT_VERSIONS
+        "altVersions" => DEFAULT_VERSIONS,
+        "parallelVersion" => params.parallel
     }
 
     fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request)
@@ -131,7 +132,8 @@ class ReferencesController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
     @render_rails_meta = true
-
+    @deeplink_version = version
+    @deeplink_reference = reference
     render 'show', layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 

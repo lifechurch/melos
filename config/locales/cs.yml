@@ -1284,11 +1284,11 @@ cs:
                 action: "Zobrazit překlady Bible"
             make_yours: 
                 title: "Osobní"
-                body: "Oblíbené verše si můžete zvýraznit, uložit, nebo z&nbsp;nich vytvářet obrázky ke sdílení. K jednotlivým pasážím lze také přidávat veřejné či soukromé poznámky."
+                body: "Oblíbené verše si můžete zvýraznit, uložit, nebo z nich vytvářet obrázky ke sdílení. K jednotlivým pasážím lze také přidávat veřejné či soukromé poznámky."
                 action: "Vytvořit bezplatný účet"
             install_now: 
                 title: "Aplikace"
-                body: "Aplikace Bible je zcela zdarma. Bez reklam či &nbsp;plateb v&nbsp;rámci aplikace. Počet instalací k dnešnímu dni:"
+                body: "Aplikace Bible je zcela zdarma. Bez reklam či  plateb v rámci aplikace. Počet instalací k dnešnímu dni:"
                 action: "Stáhnout si bezplatnou aplikaci Bible"
             free_plans: 
                 title: "Bezplatné plány čtení a výkladové poznámky"

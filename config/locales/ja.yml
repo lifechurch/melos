@@ -1239,7 +1239,7 @@ ja:
         sms success: "完了！ご利用のデバイスからリンクをご覧ください。"
         sms info: "ダウンロード用のリンクがSMSで携帯に届きます。"
         sms download: "クリックして聖書アプリをダウンロード:"
-        sms default country: "JA"
+        sms default country: "JP"
     pages: 
         generic_error: 
             title: "申し訳ありません。"

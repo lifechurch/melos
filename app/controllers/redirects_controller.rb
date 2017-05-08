@@ -1,6 +1,6 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder, :enfants, :ar_kids, :wmf, :anak, :cocuk, :kodomo, :er_tong, :kinderbybel, :pambatang, :thaibafk, :thieunhi, :ragazzi, :dzieci, :copii, :lasten]
+  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder, :enfants, :ar_kids, :wmf, :anak, :cocuk, :kodomo, :er_tong, :kinderbybel, :pambatang, :thaibafk, :thieunhi, :ragazzi, :dzieci, :copii, :votd, :barn, :hk_kids, :lasten]
 
   prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
   # skip_filter :set_page,
@@ -18,6 +18,10 @@ class RedirectsController < ApplicationController
 
   def ref
     redirect_to(plan_ref_url(username: params[:username], id: params[:id], day: params[:day], content: params[:content]))
+  end
+
+  def votd
+    redirect_to(votd_url())
   end
 
   def bookmarks
@@ -183,5 +187,13 @@ class RedirectsController < ApplicationController
 
   def lasten
     redirect_to('/fi/kids')
+  end
+
+  def barn
+    redirect_to('/sv/kids')
+  end
+
+  def hk_kids
+    redirect_to('/zh-HK/kids')
   end
 end
