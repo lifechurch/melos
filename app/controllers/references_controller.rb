@@ -112,6 +112,10 @@ class ReferencesController < ApplicationController
       url = "/#{spliturl[1]}/#{spliturl[2]}/#{reference}"
     end
 
+    if params["parallel"].present?
+      url = "#{url}?parallel=#{params['parallel']}"
+    end
+
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
