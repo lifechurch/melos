@@ -1965,6 +1965,7 @@ en:
         plans:                                  "Plans"
       version:
         learn more:                             "Learn More"
+        courtesy of:                            "%{abbreviation} brought to you by %{publisher}"
       verse action:
         copy:                                   "Copy"
         bookmark:                               "Bookmark"
