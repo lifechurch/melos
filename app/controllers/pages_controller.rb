@@ -163,7 +163,8 @@ class PagesController < ApplicationController
   end
 
   def apple_app_site_association
-    send_file 'apple-app-site-association', :type => 'application/pkcs7-mime'
+    # send_file 'apple-app-site-association', :type => 'application/pkcs7-mime'
+    send_file 'apple-app-site-association', :type => 'application/json'
   end
 
 end
