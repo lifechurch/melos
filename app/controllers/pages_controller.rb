@@ -163,8 +163,11 @@ class PagesController < ApplicationController
   end
 
   def apple_app_site_association
-    # send_file 'apple-app-site-association', :type => 'application/pkcs7-mime'
-    send_file 'apple-app-site-association', :type => :json
+    if Rails.env.downcase == 'production'
+      send_file 'apple-app-site-association-prod', :filename => 'apple-app-site-association', :type => 'application/pkcs7-mime'
+    else
+      send_file 'apple-app-site-association-staging', :filename => 'apple-app-site-association', :type => :json
+    end
   end
 
 end
