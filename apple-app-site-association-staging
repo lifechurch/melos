@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "Y2D8F475WQ.tv.lifechurch.bible.staging",
+                "paths": [ "*" ]
+            }
+        ]
+    }
+}
