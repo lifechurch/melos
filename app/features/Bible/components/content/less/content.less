@@ -49,6 +49,14 @@
 		-ms-transition: 		background-color 0.75s cubic-bezier(0.42,1,.16,.93);
 		transition: 				background-color 0.75s cubic-bezier(0.42,1,.16,.93);
 	}
+
+	&.not-selectable {
+		.verse {
+			.content {
+				cursor: default !important;
+			}
+		}
+	}
 }
 
 .version-copyright {
@@ -75,6 +83,12 @@
 			margin: 10px;
 		}
 	}
+	span {
+		font-size: 14px;
+		margin-left: 25px;
+		display: block;
+		line-height: 1.5;
+	}
 }
 
 .reader-arrows:hover {
@@ -85,6 +99,18 @@
 	.reader-arrow {
 		margin: auto;
 	}
+
+	&.parallel {
+		@media @large-up {
+			.next-arrow {
+				right: 10%;
+			}
+			.prev-arrow {
+				left: 10%;
+			}
+		}
+	}
+
 	@media @large-up {
 		.next-arrow, .prev-arrow {
 			bottom: 45%;

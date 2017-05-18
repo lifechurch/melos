@@ -16,6 +16,8 @@ function NavArrows(props) {
 		leftClass,
 		rightClass,
 		localizedLink,
+		extraClassNames,
+		parallelVersion
 	} = props
 
 	if (!previousURL && !nextURL) return (<div />)
@@ -67,6 +69,7 @@ function NavArrows(props) {
 			right = (
 				<Link
 					to={localizedLink(`${previousURL}`)}
+					query={parallelVersion ? { parallel: parallelVersion } : null}
 					onClick={onPrevClick}
 					className={rightClass}
 				>
@@ -77,6 +80,7 @@ function NavArrows(props) {
 			left = (
 				<Link
 					to={localizedLink(`${previousURL}`)}
+					query={parallelVersion ? { parallel: parallelVersion } : null}
 					onClick={onPrevClick}
 					className={leftClass}
 				>
@@ -91,6 +95,7 @@ function NavArrows(props) {
 			left = (
 				<Link
 					to={localizedLink(`${nextURL}`)}
+					query={parallelVersion ? { parallel: parallelVersion } : null}
 					onClick={onNextClick}
 					className={leftClass}
 				>
@@ -101,6 +106,7 @@ function NavArrows(props) {
 			right = (
 				<Link
 					to={localizedLink(`${nextURL}`)}
+					query={parallelVersion ? { parallel: parallelVersion } : null}
 					onClick={onNextClick}
 					className={rightClass}
 				>
@@ -111,7 +117,7 @@ function NavArrows(props) {
 	}
 
 	return (
-		<div className='reader-arrows'>
+		<div className={`reader-arrows ${extraClassNames}`}>
 			<div className='prev-arrow' style={style}>{ left }</div>
 			<div className='next-arrow' style={style}>{ right }</div>
 		</div>
@@ -137,6 +143,8 @@ NavArrows.propTypes = {
 	rightClass: PropTypes.string,
 	bottomPos: PropTypes.string,
 	localizedLink: PropTypes.func,
+	extraClassNames: PropTypes.string,
+	parallelVersion: PropTypes.number
 }
 
 NavArrows.defaultProps = {
@@ -150,6 +158,8 @@ NavArrows.defaultProps = {
 	rightClass: null,
 	bottomPos: null,
 	localizedLink: (link) => { return link },
+	extraClassNames: null,
+	parallelVersion: null
 }
 
 export default NavArrows

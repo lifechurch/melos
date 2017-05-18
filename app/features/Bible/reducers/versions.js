@@ -1,5 +1,5 @@
-import type from '../actions/constants'
 import Immutable from 'immutable'
+import type from '../actions/constants'
 import arrayToObject from '../../../lib/arrayToObject'
 
 export default function reducer(state = {}, action) {
@@ -13,7 +13,7 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersionsSuccess'):
 			if (typeof action.response.versions !== 'undefined') {
 				const versions = arrayToObject(action.response.versions, 'id')
-				const map = action.response.versions.map(version => version.id)
+				const map = action.response.versions.map(version => { return version.id })
 
 				return Immutable.fromJS(state).mergeDeep({
 					selectedLanguage: action.params.language_tag,

@@ -6,15 +6,16 @@ export default function reducer(state = [], action) {
 		case type('momentsVerseColorsRequest'):
 			return []
 
-		case type('momentsVerseColorsSuccess'):
+		case type('momentsVerseColorsSuccess'): {
 			const { response: { verse_colors } } = action
 			if (verse_colors) {
 				return Immutable.fromJS(action.response.verse_colors).toJS()
 			} else {
 				return state
 			}
+		}
 
-		case type('momentsCreateSuccess'):
+		case type('momentsCreateSuccess'): {
 			const { extras: { color, references } } = action.response
 			const verseColors = []
 
@@ -32,8 +33,10 @@ export default function reducer(state = [], action) {
 			} else {
 				return state
 			}
+		}
 
-		default:
+		default: {
 			return state
+		}
 	}
 }

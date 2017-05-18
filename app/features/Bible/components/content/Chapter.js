@@ -1,13 +1,18 @@
 import React, { Component, PropTypes } from 'react'
-import { getSelectionString, getSelectionText } from '../../../../lib/usfmUtils'
+import { getSelectionString } from '../../../../lib/usfmUtils'
 
 const DEFAULT_STATE = { selection: null, selectedClasses: null, selectedText: null }
+
+function handleFootnoteClick(footnoteNode) {
+	footnoteNode.classList.toggle('show')
+}
 
 class Chapter extends Component {
 	constructor(props) {
 		super(props)
 		this.state = Object.assign({}, DEFAULT_STATE)
 		this.clearSelection = ::this.clearSelection
+		this.handleClick = ::this.handleClick
 	}
 
 	clearSelection() {
@@ -15,7 +20,7 @@ class Chapter extends Component {
 	}
 
 	handleVerseClick(verseNode) {
-		const { onSelect } = this.props
+		const { onSelect, className } = this.props
 		let { selection, selectedClasses } = this.state
 
 		if (selection === null) {
@@ -35,7 +40,7 @@ class Chapter extends Component {
 				newClasses.splice(remIndex, 1)
 			}
 			newClasses.forEach((newClass) => {
-				const newClassString = `.bible-reader .${newClass}`
+				const newClassString = `.bible-reader.${className} .${newClass}`
 				if (typeof selectedClasses[newClassString] === 'undefined') {
 					const isVerseSelector = new RegExp('^v[0-9]+$')
 					if (typeof newClassString !== 'undefined' && isVerseSelector.test(newClass)) {
@@ -71,11 +76,10 @@ class Chapter extends Component {
 		}
 	}
 
-	handleFootnoteClick(footnoteNode) {
-		footnoteNode.classList.toggle('show')
-	}
-
 	handleClick(e) {
+		const { showFootnotes, onSelect } = this.props
+		const isSelectable = typeof onSelect === 'function'
+
 		e.preventDefault()
 
 		let node = e.target
@@ -84,10 +88,10 @@ class Chapter extends Component {
 		}
 
 		if (typeof node !== 'undefined' && typeof node.classList !== 'undefined') {
-			if (node.classList.contains('verse')) {
+			if (isSelectable && node.classList.contains('verse')) {
 				::this.handleVerseClick(node)
-			} else if (node.classList.contains('note')) {
-				::this.handleFootnoteClick(node)
+			} else if (showFootnotes && node.classList.contains('note')) {
+				handleFootnoteClick(node)
 			}
 		}
 	}
@@ -101,7 +105,9 @@ class Chapter extends Component {
 			textDirection,
 			showFootnotes,
 			showVerseNumbers,
-			verseColors
+			verseColors,
+			onSelect,
+			className
 		} = this.props
 
 
@@ -118,11 +124,10 @@ class Chapter extends Component {
 
 		let highlightedStyles = ''
 		if (Array.isArray(verseColors) && verseColors.length > 0) {
-			const selectors = []
 			verseColors.forEach((verseColor) => {
 				const [ usfm, color ] = verseColor
 				if (typeof usfm === 'string' && typeof color === 'string') {
-					highlightedStyles += ` .v${usfm.split('.')[2]} { background-color: #${color}; } `
+					highlightedStyles += `.bible-reader.${className} .v${usfm.split('.')[2]} { background-color: #${color}; } `
 				}
 			})
 		}
@@ -136,18 +141,21 @@ class Chapter extends Component {
 
 		let footnoteStyles = ''
 		if (showFootnotes) {
-			footnoteStyles = ".bible-reader .note::before { display: inline-block; width: 12px; height: 12px; content: ''; background-image: url(/assets/footnote.png); background-size: contain; background-repeat: no-repeat; background-size: 12px; margin: 5px; cursor: pointer; cursor: context-menu; }"
+			footnoteStyles = `.bible-reader.${className} .note::before { display: inline-block; width: 12px; height: 12px; content: ''; background-image: url(/assets/footnote.png); background-size: contain; background-repeat: no-repeat; background-size: 12px; margin: 5px; cursor: pointer; cursor: context-menu; }`
 		} else {
-			footnoteStyles = '.bible-reader .note { display: none !important }'
+			footnoteStyles = `.bible-reader.${className} .note { display: none !important }`
 		}
 
-		const verseNumberStyles = `.bible-reader .label { display: ${showVerseNumbers ? 'inherit' : 'none'} }`
+		const verseNumberStyles = `.bible-reader.${className} .label { display: ${showVerseNumbers ? 'inherit' : 'none'} }`
 
 		const innerStyle = { __html: [selectedStyles, footnoteStyles, verseNumberStyles, highlightedStyles].join(' ') }
 
+		const isSelectable = typeof onSelect === 'function'
+
+		/* eslint-disable react/no-danger */
 		return (
 			<div
-				className="bible-reader"
+				className={`bible-reader ${className} ${!isSelectable ? 'not-selectable' : ''}`}
 				dir={textDirection}
 			>
 
@@ -155,12 +163,13 @@ class Chapter extends Component {
 
 				<div
 					className="reader"
-					onClick={::this.handleClick}
+					onClick={isSelectable || showFootnotes ? this.handleClick : null}
 					dangerouslySetInnerHTML={innerContent}
 					style={style}
 				/>
 			</div>
 		)
+		/* eslint-enable react/no-danger */
 	}
 }
 
@@ -172,7 +181,20 @@ Chapter.propTypes = {
 	fontFamily: PropTypes.string,
 	showFootnotes: PropTypes.bool,
 	showVerseNumbers: PropTypes.bool,
-	verseColors: PropTypes.array
+	verseColors: PropTypes.array,
+	className: PropTypes.string
+}
+
+Chapter.defaultProps = {
+	className: null,
+	content: null,
+	onSelect: null,
+	textDirection: null,
+	fontSize: null,
+	fontFamily: null,
+	showFootnotes: true,
+	showVerseNumbers: true,
+	verseColors: []
 }
 
 export default Chapter

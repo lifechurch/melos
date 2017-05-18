@@ -6,7 +6,7 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import ga from 'react-ga'
 import { createHistory } from 'history'
 import createLogger from 'redux-logger'
-import cookie from 'react-cookie';
+import cookie from 'react-cookie'
 import configureStore from './store'
 import getRoutes from './routes'
 import BibleActionCreator from '../../features/Bible/actions/creators'
@@ -28,8 +28,6 @@ function logPageView() {
 	}
 }
 
-// require('moment/min/locales')
-
 let initialState = defaultState
 
 const browserHistory = useRouterHistory(createHistory)({
@@ -47,9 +45,8 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 
 const store = configureStore(initialState, browserHistory, logger)
 addLocaleData(window.__LOCALE__.data)
-// moment.locale(window.__LOCALE__.locale)
 
-function requireChapterData(nextState, replace, callback) {
+function requireChapterData(nextState, replace, callback, force = false) {
 	const currentState = store.getState()
 
 	let {
@@ -60,7 +57,8 @@ function requireChapterData(nextState, replace, callback) {
 		}
 	} = nextState
 
-	let isLoggedIn, currentUsfm, currentVersion
+	let isLoggedIn, currentUsfm, currentVersion, currentParallelVersionId
+	let query = {}
 	let isInitialLoad = false
 
 	try {
@@ -74,6 +72,14 @@ function requireChapterData(nextState, replace, callback) {
 						usfm: currentUsfm,
 						version_id: currentVersion
 					}
+				},
+				parallelVersion: {
+					id: currentParallelVersionId
+				}
+			},
+			routing: {
+				location: {
+					query
 				}
 			}
 		} = currentState)
@@ -87,22 +93,33 @@ function requireChapterData(nextState, replace, callback) {
 		nextUsfm = (cookie.load('last_read') || 'JHN.1').split('.').slice(0, 2).join('.')
 	}
 
+	let parallelVersion
+	window.location.search.replace('?', '').split('&').forEach((kvPair) => {
+		const [ key, value ] = kvPair.split('=')
+		if (key.toLowerCase() === 'parallel') {
+			parallelVersion = parseInt(value.toString(), 10)
+		}
+	})
+
 	const hasVersionChanged = isInitialLoad || (currentVersion ? (nextVersion.toString() !== currentVersion.toString()) : true)
 	const hasChapterChanged = isInitialLoad || hasVersionChanged || (nextUsfm ? (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) : true)
+	const hasParallelVersionChanged = isInitialLoad || ('parallel' in query && !!parallelVersion && (parallelVersion !== currentParallelVersionId))
 
-	if (!hasVersionChanged && !hasChapterChanged) {
+	if (!hasVersionChanged && !hasChapterChanged && !hasParallelVersionChanged && !force) {
 		callback()
 	} else {
     // Load data
 		store.dispatch(
 			BibleActionCreator.readerLoad({
 				isInitialLoad,
-				hasVersionChanged,
-				hasChapterChanged,
+				hasVersionChanged: hasVersionChanged || force,
+				hasChapterChanged: hasChapterChanged || force,
+				hasParallelVersionChanged: hasParallelVersionChanged || force,
 				language_tag: window.__LOCALE__.locale3,
 				version: nextVersion,
 				reference: nextUsfm,
-				params: nextState.params
+				params: nextState.params,
+				parallelVersion,
 			}, isLoggedIn))
 		.then(() => {
 			callback()
@@ -177,7 +194,6 @@ function requireVerseData(nextState, replace, callback) {
 
 function setupReference(nextState, replace, callback) {
 	const { params: { splat, version } } = nextState
-
 	const { isVerse, isChapter } = isVerseOrChapter(splat)
 
 	if (isChapter) {
@@ -212,7 +228,11 @@ function setupReference(nextState, replace, callback) {
 
 }
 
-const routes = getRoutes(requireChapterData, requireVerseData, setupReference)
+function handleParallelVersionChange(prevState, nextState, replace, callback) {
+	requireChapterData(nextState, replace, callback, true)
+}
+
+const routes = getRoutes(requireChapterData, requireVerseData, setupReference, handleParallelVersionChange)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
