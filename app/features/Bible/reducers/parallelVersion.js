@@ -5,7 +5,7 @@ export default function reducer(state = {}, action) {
 	switch (action.type) {
 		case type('bibleVersionRequest'): {
 			const { isParallel } = action.extras
-			if (!isParallel) {
+			if (isParallel) {
 				return Immutable.fromJS(state).merge({ loading: true }).toJS()
 			}
 			return state
@@ -13,7 +13,7 @@ export default function reducer(state = {}, action) {
 
 		case type('bibleVersionFailure'): {
 			const { isParallel } = action.extras
-			if (!isParallel) {
+			if (isParallel) {
 				return { loading: false }
 			}
 			return state
@@ -21,7 +21,7 @@ export default function reducer(state = {}, action) {
 
 		case type('bibleVersionSuccess'): {
 			const { isParallel } = action.extras
-			if (!isParallel) {
+			if (isParallel) {
 				return Immutable.fromJS(action.response).set('loading', false).delete('books').toJS()
 			}
 			return state

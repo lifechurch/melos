@@ -25,8 +25,8 @@ class SeekButton extends Component {
 				<g fill="none">
 					<g transform="translate(-813 -250)translate(585 136)translate(228 115)">
 						<g style={transform}>
-							<path fill={color} d="M24 16.3L12.5 16.3 12.5 4.6C6.1 4.6 1 9.8 1 16.3 1 22.7 6.1 28 12.5 28 18.9 28 24 22.7 24 16.3ZM12.5 16.3L25 16.3C25 23.3 19.4 29 12.5 29 5.6 29 0 23.3 0 16.3 0 9.3 5.6 3.6 12.5 3.6L12.5 16.3Z"/>
-							<polygon transform="scale(-1 1)" points="24.5 3.6 18 0 18 3.6 12 0 12 7.6 18 4.1 18 7.6" stroke={color} />
+							<path fill={color} d="M24 16.3L12.5 16.3 12.5 4.6C6.1 4.6 1 9.8 1 16.3 1 22.7 6.1 28 12.5 28 18.9 28 24 22.7 24 16.3ZM12.5 16.3L25 16.3C25 23.3 19.4 29 12.5 29 5.6 29 0 23.3 0 16.3 0 9.3 5.6 3.6 12.5 3.6L12.5 16.3Z" />
+							<polygon points="24.5 3.6 18 0 18 3.6 12 0 12 7.6 18 4.1 18 7.6" stroke={color} />
 						</g>
 						<text fontFamily="Arial,Helvetica" fontSize="12" fill={color}>
 							<tspan x="6" y="21.7">{Math.abs(increment)}</tspan>

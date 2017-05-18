@@ -1,28 +1,25 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 
-function ChapterCopyright({ copyright, versionId }) {
-	let copyrightElement = null
-	if (typeof copyright !== 'undefined') {
-		if (typeof copyright.html !== 'undefined') {
-			const innerContent = { __html: copyright.html }
-			copyrightElement = (<div dangerouslySetInnerHTML={innerContent} />)
-		} else if (typeof copyright.text !== 'undefined') {
-			copyrightElement = (<div>{copyright.text}</div>)
-		}
-	}
-
+function ChapterCopyright({ content, link, openInNewTab }) {
 	return (
 		<div className="version-copyright">
-			{ copyrightElement }
-			<a href={`/versions/${versionId}`}><FormattedMessage id="Reader.version.learn more" /></a>
+			{ content }
+			<a target={openInNewTab ? '_blank' : null} href={link}><FormattedMessage id="Reader.version.learn more" /></a>
 		</div>
 	)
 }
 
 ChapterCopyright.propTypes = {
-	copyright: React.PropTypes.object.isRequired,
-	versionId: React.PropTypes.number.isRequired
+	content: PropTypes.object.isRequired,
+	link: PropTypes.string.isRequired,
+	openInNewTab: PropTypes.bool
+}
+
+ChapterCopyright.defaultProps = {
+	content: null,
+	link: null,
+	openInNewTab: false
 }
 
 export default ChapterCopyright

@@ -1,5 +1,5 @@
-import type from '../actions/constants'
 import Immutable from 'immutable'
+import type from '../actions/constants'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
@@ -9,7 +9,7 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersesFailure'):
 			return Immutable.fromJS(action).set('loading', false).toJS()
 
-		case type('bibleVersesSuccess'):
+		case type('bibleVersesSuccess'): {
 			const content = {}
 			const references = []
 			if (typeof action.response.verses === 'undefined') {
@@ -34,6 +34,7 @@ export default function reducer(state = {}, action) {
 			})
 			// return Immutable.fromJS(state).merge({ verses: content, references }).delete('loading').toJS()
 			return { verses: content, references }
+		}
 
 		default:
 			return state

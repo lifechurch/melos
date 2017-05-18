@@ -52,11 +52,9 @@ const ActionCreators = {
 	 */
 	readerLoad(params, auth) {
 		return dispatch => {
-			const { isInitialLoad, hasVersionChanged, hasChapterChanged, version, reference } = params
+			const { isInitialLoad, hasVersionChanged, hasChapterChanged, hasParallelVersionChanged, version, reference, parallelVersion } = params
 			const showError = params.showError || false
-
 			const promises = []
-
 			if (isInitialLoad) {
 				promises.push(
 					dispatch(ActionCreators.bibleConfiguration()),
@@ -80,6 +78,20 @@ const ActionCreators = {
 				)
 			}
 
+			if (hasParallelVersionChanged && !!parallelVersion) {
+				promises.push(
+					new Promise((resolve, reject) => {
+						dispatch(ActionCreators.bibleVersion({ id: parallelVersion }, { isParallel: true })).then((newVersion) => {
+							if ('errors' in newVersion) {
+								reject(newVersion.errors)
+							} else {
+								resolve()
+							}
+						})
+					})
+				)
+			}
+
 			if (isInitialLoad || hasChapterChanged) {
 				promises.push(
 					new Promise((resolve, reject) => {
@@ -90,7 +102,21 @@ const ActionCreators = {
 								resolve()
 							}
 						})
-					}),
+					})
+				)
+			}
+
+			if ((hasChapterChanged || hasParallelVersionChanged) && !!parallelVersion) {
+				promises.push(
+					new Promise((resolve) => {
+						dispatch(ActionCreators.bibleChapter({ id: parallelVersion, reference: reference.toUpperCase() }, { showError, isParallel: true })).then((data) => {
+							if ('errors' in data) {
+								resolve(data)
+							} else {
+								resolve()
+							}
+						})
+					})
 				)
 			}
 
@@ -149,9 +175,10 @@ const ActionCreators = {
 	/**
 	 * @id: VERSION_ID
 	 */
-	bibleVersion(params) {
+	bibleVersion(params, extras = {}) {
 		return {
 			params,
+			extras,
 			api_call: {
 				endpoint: 'bible',
 				method: 'version',
@@ -185,7 +212,7 @@ const ActionCreators = {
    * @reference: USFM
    * @format: html/text
 	 */
-	bibleChapter(params, extras) {
+	bibleChapter(params, extras = {}) {
 		return {
 			params,
 			extras,

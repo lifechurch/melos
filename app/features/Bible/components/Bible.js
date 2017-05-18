@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
 import Helmet from 'react-helmet'
+import { Link } from 'react-router'
 import VerseAction from './verseAction/VerseAction'
 import ActionCreators from '../actions/creators'
 import Filter from '../../../lib/filter'
@@ -16,8 +17,9 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
-import { deepLinkPath, buildMeta } from '../../../lib/readerUtils'
-
+import PlusButton from '../../../components/PlusButton'
+import XMark from '../../../components/XMark'
+import { deepLinkPath, buildMeta, buildCopyright } from '../../../lib/readerUtils'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
@@ -26,13 +28,26 @@ const DEFAULT_READER_SETTINGS = {
 	showVerseNumbers: true
 }
 
+function buildBibleLink(version, usfm, abbr) {
+	const finalAbbr = abbr ? abbr.split('-')[0] : ''
+	return `/bible/${version}/${usfm}.${finalAbbr}`
+}
+
+const ChapterError = (
+	<div className='row reader-center reader-content-error'>
+		<div className='content'>
+			<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
+		</div>
+	</div>
+)
+
 
 class Bible extends Component {
 
 	constructor(props) {
 		super(props)
 
-		const { bible } = props
+		const { bible, hasParallel } = props
 
 		const showFootnoes = LocalStore.getIn('reader.settings.showFootnotes')
 		const showVerseNumbers = LocalStore.getIn('reader.settings.showVerseNumbers')
@@ -42,11 +57,14 @@ class Bible extends Component {
 			selectedChapter: bible.chapter.reference.usfm,
 			selectedVersion: bible.chapter.reference.version_id,
 			selectedLanguage: bible.versions.selectedLanguage,
+			parallelSelectedChapter: hasParallel && bible.parallelChapter.reference.usfm,
+			parallelSelectedVersion: hasParallel && bible.parallelChapter.reference.version_id,
 			chapterError: bible.chapter.showError,
 			recentVersions: {},
 			dbReady: false,
 			chapDropDownCancel: false,
 			versionDropDownCancel: false,
+			parallelDropDownCancel: false,
 			db: null,
 			results: [],
 			versions: [],
@@ -58,20 +76,36 @@ class Bible extends Component {
 			verseSelection: {},
 			deletableColors: []
 		}
+
 		this.chapters = bible.books.all[bible.books.map[this.state.selectedBook]].chapters
 
 		this.header = null
 		this.content = null
+		this.parallelContent = null
 		this.extraStyle = null
 		this.chapterPicker = null
 		this.versionPicker = null
 	}
 
 	componentDidMount() {
-		const { dispatch, bible, auth } = this.props
+		const {
+			dispatch,
+			bible,
+			auth,
+			location: {
+				query: {
+					openPicker
+				}
+			}
+		} = this.props
+
 		const { chapterError } = this.state
 
-		if (chapterError || bible.chapter.showError) {
+		if (openPicker === 'version') {
+			this.versionPickerInstance.openDropdown()
+		} else if (openPicker === 'parallelVersion' && this.parallelVersionPickerInstance) {
+			this.parallelVersionPickerInstance.openDropdown()
+		} else if (openPicker === 'chapter' || chapterError || bible.chapter.showError) {
 			this.chapterPickerInstance.openDropdown()
 		}
 
@@ -120,6 +154,15 @@ class Bible extends Component {
 			LocalStore.set('version', bible.version.id)
 		}
 
+		if (bible.parallelVersion && bible.parallelVersion.id && bible.books && bible.books.all && prevProps.bible.parallelVersion && prevProps.bible.parallelVersion.id && bible.parallelVersion.id !== prevProps.bible.parallelVersion.id) {
+			this.recentVersions.addVersion(bible.parallelVersion)
+
+			this.setState({
+				parallelSelectedVersion: bible.parallelVersion.id,
+			})
+			this.updateRecentVersions()
+			LocalStore.set('parallelVersion', bible.parallelVersion.id)
+		}
 	}
 
 	getVersions = (languageTag) => {
@@ -260,8 +303,21 @@ class Bible extends Component {
 	}
 
 	render() {
-		const { bible, hosts, intl, isRtl } = this.props
-		const { fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
+		const {
+			bible,
+			hosts,
+			intl,
+			isRtl,
+			hasParallel
+		} = this.props
+
+		const {
+			fontSize,
+			fontFamily,
+			showFootnotes,
+			showVerseNumbers,
+			verseSelection
+		} = this.state
 
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
@@ -270,7 +326,13 @@ class Bible extends Component {
 		let deeplink = {}
 		let meta = { link: {}, meta: {} }
 
-		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation) {
+		if (
+			Array.isArray(bible.books.all)
+			&& bible.books.map && bible.chapter
+			&& Array.isArray(bible.languages.all)
+			&& bible.languages.map
+			&& bible.version.abbreviation
+		) {
 			this.header = (
 				<Header sticky={true} classes={'reader-header horizontal-center'}>
 					<ChapterPicker
@@ -287,6 +349,9 @@ class Bible extends Component {
 						initialChapters={this.chapters}
 						cancelDropDown={this.state.chapDropDownCancel}
 						ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
+						linkBuilder={(version, usfm, abbr) => {
+							return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
+						}}
 					/>
 					<VersionPicker
 						{...this.props}
@@ -299,8 +364,64 @@ class Bible extends Component {
 						alert={this.state.chapterError}
 						getVersions={this.getVersions}
 						cancelDropDown={this.state.versionDropDownCancel}
+						extraClassNames="main-version-picker-container"
 						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
+						linkBuilder={(version, usfm, abbr) => {
+							return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
+						}}
 					/>
+
+					{!hasParallel &&
+						<Link
+							to={buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation)}
+							query={{ parallel: LocalStore.get('parallelVersion') || bible.version.id }}
+							className="hide-for-small"
+							style={{
+								display: 'flex',
+								flexDirection: 'row',
+								alignItems: 'center',
+								marginRight: 8,
+								lineHeight: 1
+							}}
+						>
+							<PlusButton
+								className="circle-border"
+								height={13}
+								width={13}
+							/>
+							<span
+								style={{
+									fontSize: 12,
+									color: '#979797',
+									paddingLeft: 5,
+									paddingTop: 2
+								}}
+							>
+								<FormattedMessage id="Reader.header.parallel" />
+							</span>
+						</Link>
+					}
+
+					{hasParallel &&
+						<VersionPicker
+							{...this.props}
+							version={bible.parallelVersion}
+							languages={bible.languages.all}
+							versions={bible.versions}
+							recentVersions={this.state.recentVersions}
+							languageMap={bible.languages.map}
+							selectedChapter={this.state.selectedChapter}
+							alert={this.state.chapterError}
+							getVersions={this.getVersions}
+							cancelDropDown={this.state.parallelDropDownCancel}
+							extraClassNames="hide-for-small parallel-version-picker-container"
+							ref={(vpicker) => { this.parallelVersionPickerInstance = vpicker }}
+							linkBuilder={(version, usfm, abbr) => {
+								return `${buildBibleLink(bible.version.id, usfm, abbr)}?parallel=${version}`
+							}}
+						/>
+					}
+
 					<AudioPopup audio={bible.audio} hosts={hosts} enabled={typeof bible.audio.id !== 'undefined'} />
 					<Settings
 						onChange={this.handleSettingsChange}
@@ -309,19 +430,50 @@ class Bible extends Component {
 						initialShowFootnotes={showFootnotes}
 						initialShowVerseNumbers={showVerseNumbers}
 					/>
+
+					{hasParallel &&
+						<Link
+							to={buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation)}
+							className="hide-for-small"
+							style={{
+								display: 'flex',
+								flexDirection: 'row',
+								alignItems: 'center',
+								marginLeft: 15,
+								lineHeight: 1
+							}}
+						>
+							<XMark
+								className="circle-border"
+								height={13}
+								width={13}
+							/>
+							<span
+								style={{
+									fontSize: 12,
+									color: '#979797',
+									paddingLeft: 5,
+									paddingTop: 2
+								}}
+							>
+								<FormattedMessage id="Reader.header.parallel exit" />
+							</span>
+						</Link>
+					}
 				</Header>
 			)
 		}
 
 		if (this.state.chapterError || bible.chapter.showError) {
-			this.content = (
-				<div className='row reader-center reader-content-error'>
-					<div className='content'>
-						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
-					</div>
-				</div>
-			)
-		} else if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm && bible.version && bible.version.language && bible.chapter.content) {
+			this.content = ChapterError
+		} else if (
+			bible.chapter
+			&& bible.chapter.reference
+			&& bible.chapter.reference.usfm
+			&& bible.version
+			&& bible.version.language
+			&& bible.chapter.content
+		) {
 			this.content = (
 				<div>
 					<Chapter
@@ -335,16 +487,16 @@ class Bible extends Component {
 						showFootnotes={showFootnotes}
 						showVerseNumbers={showVerseNumbers}
 						ref={(chapter) => { this.chapter = chapter }}
+						className="primary-chapter"
 					/>
-					<ChapterCopyright
-						copyright={bible.chapter.copyright}
-						versionId={bible.chapter.reference.version_id}
-					/>
+					<ChapterCopyright {...buildCopyright(intl.formatMessage, bible.version)} />
 					<NavArrows
 						{...this.props}
 						isRtl={isRtl()}
-						previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${bible.version.local_abbreviation ? bible.version.local_abbreviation.split('-')[0] : ''}` : null}
-						nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${bible.version.local_abbreviation ? bible.version.local_abbreviation.split('-')[0] : ''}` : null}
+						parallelVersion={hasParallel ? bible.parallelVersion.id : null}
+						previousURL={bible.chapter.previous ? buildBibleLink(this.state.selectedVersion, bible.chapter.previous.usfm, bible.version.local_abbreviation) : null}
+						nextURL={bible.chapter.next ? buildBibleLink(this.state.selectedVersion, bible.chapter.next.usfm, bible.version.local_abbreviation) : null}
+						extraClassNames={hasParallel ? 'parallel' : ''}
 					/>
 				</div>
 			)
@@ -353,11 +505,42 @@ class Bible extends Component {
 			metaTitle = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) | ${intl.formatMessage({ id: 'Reader.chapter' })} ${bible.chapter.reference.usfm.split('.').pop()} | ${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 			const strippedChapterText = bible.chapter.content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim()
 			metaContent = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) ${strippedChapterText.substring(0, 170)}`
-			const { android, ios, native } = deepLinkPath(bible.chapter.reference.usfm, bible.version.id, bible.version.local_abbreviation)
+			const { android, ios } = deepLinkPath(bible.chapter.reference.usfm, bible.version.id, bible.version.local_abbreviation)
 			androidDeepLink = android ? { rel: 'alternate', href: `android-app://com.sirma.mobile.bible.android/youversion/${android}` } : null
 			iosDeepLink = ios ? { rel: 'alternate', href: `ios-app://282935706/youversion/${ios}` } : null
 			deeplink = ios
 			meta = buildMeta({ hosts, version: bible.version, usfm: bible.chapter.reference.usfm })
+		}
+
+		if (bible.parallelChapter && bible.parallelChapter.errors) {
+			this.parallelContent = ChapterError
+		} else if (
+			hasParallel
+			&& bible.parallelChapter
+			&& bible.parallelChapter.reference
+			&& bible.parallelChapter.reference.usfm
+			&& bible.parallelVersion
+			&& bible.parallelVersion.language
+			&& bible.parallelChapter.content
+		) {
+			this.parallelContent = (
+				<div>
+					<Chapter
+						{...this.props}
+						content={bible.parallelChapter.content}
+						// verseColors={bible.verseColors}
+						fontSize={fontSize}
+						fontFamily={fontFamily}
+						// onSelect={this.handleVerseSelect}
+						textDirection={bible.parallelVersion.language.text_direction}
+						showFootnotes={showFootnotes}
+						showVerseNumbers={showVerseNumbers}
+						ref={(chapter) => { this.parallelChapter = chapter }}
+						className="parallel-chapter"
+					/>
+					<ChapterCopyright {...buildCopyright(intl.formatMessage, bible.parallelVersion)} />
+				</div>
+			)
 		}
 
 		return (
@@ -397,11 +580,26 @@ class Bible extends Component {
 					/>
 				}
 				{ this.header }
-				<div className="row">
-					<div className="columns large-6 medium-10 medium-centered">
-						{ this.content }
-					</div>
-				</div>
+				{ hasParallel
+
+					? (<div className="row">
+						<div className="columns medium-1">&nbsp;</div>
+						<div className="columns medium-5">
+							{ this.content }
+						</div>
+						<div className="columns medium-5">
+							{ this.parallelContent }
+						</div>
+						<div className="columns medium-1">&nbsp;</div>
+					</div>)
+
+					: (<div className="row">
+						<div className="columns large-6 medium-10 medium-centered">
+							{ this.content }
+						</div>
+					</div>)
+				}
+
 				<VerseAction
 					{...this.props}
 					isRtl={isRtl()}
@@ -430,11 +628,11 @@ Bible.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 	isRtl: PropTypes.oneOfType([ PropTypes.func, PropTypes.bool ]).isRequired,
 	auth: PropTypes.object.isRequired,
-	params: PropTypes.object.isRequired
+	hasParallel: PropTypes.bool
 }
 
 Bible.defaultProps = {
-
+	hasParallel: false
 }
 
 export default injectIntl(Bible)

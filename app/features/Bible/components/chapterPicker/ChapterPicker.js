@@ -12,9 +12,7 @@ class ChapterPicker extends Component {
 	constructor(props) {
 		super(props)
 		const {
-			chapter,
 			books,
-			bookMap,
 			initialChapters,
 			initialBook,
 			initialInput,
@@ -42,7 +40,7 @@ class ChapterPicker extends Component {
 		this.handleDropDownClick = ::this.handleDropDownClick
 		this.handleLabelChange = ::this.handleLabelChange
 		this.handleLabelKeyDown = ::this.handleLabelKeyDown
-		this.onBlur = ::this.onBlur
+		this.handleBlur = ::this.handleBlur
 		this.getBook = ::this.getBook
 		this.toggleChapterPickerList = ::this.toggleChapterPickerList
 		this.handleListHover = ::this.handleListHover
@@ -179,10 +177,50 @@ class ChapterPicker extends Component {
 		}
 	}
 
+	/**
+	 * handles clicking out of the ChapterPicker label/input
+	 *
+	 * if the blur target is a book or chapter, we need to do the right thing and get
+	 * what was clicked, otherwise we're going to close the modal and reset the state of
+	 * the dropdown items
+	 */
+	handleBlur() {
+		const { books } = this.props
+		const dat = this
+
+		// when we click out of the input, we need to wait and check if either
+		// the dropdown or a book/chapter has been clicked
+		// otherwise let's close and reset
+		setTimeout(() => {
+
+			// cancel blur is only true when dropdown or book/chapter is clicked
+			if (dat.state.cancelBlur) {
+				dat.setState({ cancelBlur: false })
+			} else {
+				dat.setState({
+					dropdown: false,
+					inputValue: dat.state.inputValue
+				})
+
+				const dis = dat
+				setTimeout(() => {
+					// delay the restoration of the full modal so the closing transition
+					// doesn't look weird
+					dis.setState({
+						books,
+						chapters: dis.state.chapters,
+						listErrorAlert: false
+					})
+				}, 700)
+			}
+
+		}, 300)
+	}
+
 	// this handles the class toggling for book and chapter clicks on mobile
 	toggleChapterPickerList() {
 		const { classes } = this.state
-		classes === 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
+		this.setState({ classes: (classes === 'hide-chaps') ? 'hide-books' : 'hide-chaps' })
 	}
 
 
@@ -230,6 +268,8 @@ class ChapterPicker extends Component {
 				this.toggleChapterPickerList()
 			}
 		}
+
+		return true
 	}
 
 	/**
@@ -238,7 +278,6 @@ class ChapterPicker extends Component {
 	 */
 	handleDropDownClick() {
 		const { books, bookMap, chapter, cancelDropDown } = this.props
-		const { selectedBook } = this.state
 
 		// don't close the dropdown modal when losing focus of the input,
 		// because we're clicking the dropdown (not some other random place)
@@ -320,11 +359,18 @@ class ChapterPicker extends Component {
 	 * @param      {string}  keyEventName  Name of key event used for all except space bar
 	 * @param      {number}  keyEventCode  Code value of key event
 	 */
-	handleLabelKeyDown(event, keyEventName, keyEventCode) {
-		const { books, bookMap, versionID, versionAbbr, dispatch } = this.props
+	handleLabelKeyDown(event, keyEventName) {
+		const {
+			books,
+			bookMap,
+			versionID,
+			versionAbbr,
+			dispatch,
+			localizedLink,
+			linkBuilder
+		} = this.props
 
 		const {
-			inputValue,
 			booklistSelectionIndex,
 			chapterlistSelectionIndex,
 			selectedBook,
@@ -407,51 +453,12 @@ class ChapterPicker extends Component {
 			}
 			if (keyEventName === 'Enter') {
 				const chapIndex = chapterKeys[chapterlistSelectionIndex]
-				const chapURL = this.props.localizedLink(`/bible/${versionID}/${(books[bookMap[selectedBook]].chapters)[chapIndex].usfm}.${versionAbbr}`)
+				const chapURL = localizedLink(linkBuilder(versionID, (books[bookMap[selectedBook]].chapters)[chapIndex].usfm, versionAbbr))
 				dispatch(routeActions.push(chapURL))
 			}
 		}
-	}
 
-
-	/**
-	 * handles clicking out of the ChapterPicker label/input
-	 *
-	 * if the blur target is a book or chapter, we need to do the right thing and get
-	 * what was clicked, otherwise we're going to close the modal and reset the state of
-	 * the dropdown items
-	 */
-	onBlur() {
-		const { books, bookMap } = this.props
-		const dat = this
-
-		// when we click out of the input, we need to wait and check if either
-		// the dropdown or a book/chapter has been clicked
-		// otherwise let's close and reset
-		setTimeout(() => {
-
-			// cancel blur is only true when dropdown or book/chapter is clicked
-			if (dat.state.cancelBlur) {
-				dat.setState({ cancelBlur: false })
-			} else {
-				dat.setState({
-					dropdown: false,
-					inputValue: dat.state.inputValue
-				})
-
-				const dis = dat
-				setTimeout(() => {
-					// delay the restoration of the full modal so the closing transition
-					// doesn't look weird
-					dis.setState({
-						books,
-						chapters: dis.state.chapters,
-						listErrorAlert: false
-					})
-				}, 700)
-			}
-
-		}, 300)
+		return true
 	}
 
 	openDropdown = () => {
@@ -459,20 +466,28 @@ class ChapterPicker extends Component {
 			dropdown: true,
 		})
 	}
-	closeDropdown = () => {
+
+	handleOutsideClick = () => {
 		this.setState({
 			dropdown: false,
 		})
 	}
 
-	cancelBlur = () => {
+	handleCancelBlur = () => {
 		this.setState({
 			cancelBlur: true,
 		})
 	}
 
 	render() {
-		const { bookMap, chapter, versionID, versionAbbr } = this.props
+		const {
+			versionID,
+			versionAbbr,
+			linkBuilder,
+			localizedLink,
+			params
+		} = this.props
+
 		const {
 			books,
 			chapters,
@@ -497,14 +512,14 @@ class ChapterPicker extends Component {
 					onKeyDown={this.handleLabelKeyDown}
 					dropdown={dropdown}
 					filtering={filtering}
-					onBlur={this.onBlur}
+					onBlur={this.handleBlur}
 					disabled={inputDisabled}
 				/>
-				<DropdownTransition show={dropdown} exemptSelector='.chapter-picker-container .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
-					<div onClick={this.cancelBlur}>
+				<DropdownTransition show={dropdown} exemptSelector='.chapter-picker-container .dropdown-arrow-container' onOutsideClick={this.handleOutsideClick}>
+					<div onClick={this.handleCancelBlur}>
 						<ChapterPickerModal
-							params={this.props.params}
-							localizedLink={this.props.localizedLink}
+							params={params}
+							localizedLink={localizedLink}
 							versionID={versionID}
 							versionAbbr={versionAbbr}
 							classes={classes}
@@ -518,7 +533,8 @@ class ChapterPicker extends Component {
 							chapterlistSelectionIndex={chapterlistSelectionIndex}
 							onMouseOver={this.handleListHover}
 							alert={listErrorAlert}
-							cancel={this.closeDropdown}
+							onCancel={this.handleOutsideClick}
+							linkBuilder={linkBuilder}
 						/>
 					</div>
 				</DropdownTransition>
@@ -527,20 +543,58 @@ class ChapterPicker extends Component {
 	}
 }
 
-
 /**
- *	@books: 							array of books for preselected version/language
- *	@bookMap: 						object relating book usfm to array index
- *	@chapter: 						rendered chapter object
+ * Component Contract
+ *
+ * @param books {array}		array of books for preselected version/language
+ * @param bookMap {object}	object relating book usfm to array index
+ * @param chapter {object}	rendered chapter object
+ * @param initialChapters {object}
+ * @param initialBook {string}
+ * @param initialInput {string}
+ * @param initialChapter {string}
+ * @param linkBuilder {function}
+ * @param versionID {number}
+ * @param cancelDropDown {function}
+ * @param params {object}
+ * @param localizedLink {function}
+ * @param versionAbbr {string}
+ * @param dispatch {function}
  */
 ChapterPicker.propTypes = {
-	books: React.PropTypes.array,
-	bookMap: React.PropTypes.object,
-	chapter: React.PropTypes.object,
-	initialChapters: React.PropTypes.object,
-	initialBook: React.PropTypes.string,
-	initialInput: React.PropTypes.string,
-	initialChapter: React.PropTypes.string,
+	books: PropTypes.array,
+	bookMap: PropTypes.object,
+	chapter: PropTypes.object,
+	initialChapters: PropTypes.object,
+	initialBook: PropTypes.string,
+	initialInput: PropTypes.string,
+	initialChapter: PropTypes.string,
+	linkBuilder: PropTypes.func,
+	versionID: PropTypes.number,
+	cancelDropDown: PropTypes.bool,
+	params: PropTypes.object,
+	localizedLink: PropTypes.func,
+	versionAbbr: PropTypes.string,
+	dispatch: PropTypes.func
+}
+
+ChapterPicker.defaultProps = {
+	books: [],
+	bookMap: {},
+	chapter: {},
+	initialChapters: {},
+	initialBook: null,
+	initialInput: null,
+	initialChapter: null,
+	versionID: null,
+	cancelDropDown: null,
+	params: {},
+	localizedLink: null,
+	versionAbbr: null,
+	dispatch: null,
+	linkBuilder: (version, usfm, abbr) => {
+		return `/bible/${version}/${usfm}.${abbr}`
+	}
 }
 
 export default ChapterPicker

@@ -68,9 +68,11 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						isInitialLoad: true,
 						hasVersionChanged: true,
 						hasChapterChanged: true,
+						hasParallelVersionChanged: !!params.parallelVersion,
 						language_tag,
 						version,
-						reference
+						reference,
+						parallelVersion: params.parallelVersion
 					})
 
 				// We found a bad USFM before making an API call,

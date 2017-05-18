@@ -1,3 +1,4 @@
+import React from 'react'
 import Immutable from 'immutable'
 import ActionCreators from '../features/Bible/actions/creators'
 import LocaleList from '../../locales/config/localeList.json'
@@ -217,4 +218,30 @@ export function isVerseOrChapter(usfm) {
 	}
 
 	return { isVerse, isChapter }
+}
+
+export function buildCopyright(formatMessage, version) {
+	let content = ''
+	const {
+		reader_footer,
+		reader_footer_url,
+		local_abbreviation,
+		publisher
+	} = version
+
+	if (reader_footer && (reader_footer.html || reader_footer.text)) {
+		content += formatMessage({ id: 'Reader.version.courtesy of' }, { abbreviation: local_abbreviation, publisher: publisher.name })
+		content += '<br />'
+		content += reader_footer.html ? reader_footer.html : reader_footer.text
+	} else {
+		content += (version && version.copyright_short && version.copyright_short.html) ? version.copyright_short.html : version.copyright_short.text
+	}
+
+	/* eslint-disable react/no-danger */
+	return {
+		content: (<div dangerouslySetInnerHTML={{ __html: content }} />),
+		link: (reader_footer_url) || `/versions/${version.id}`,
+		openInNewTab: !!reader_footer_url
+	}
+	/* eslint-enable react/no-danger */
 }

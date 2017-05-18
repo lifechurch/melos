@@ -60,25 +60,28 @@ export default function reducer(state = {}, action) {
 
 		case bibleType('bibleChapterSuccess'):
 			return (function bibleChapterSuccess() {
-				const { response: verse } = action
-				let plan_id = null
-				let plan_content = null
-				let plan_day = null
-				if (typeof action.extras !== 'undefined') {
-					plan_id = parseInt(action.extras.plan_id, 10)
-					plan_content = parseInt(action.extras.plan_content, 10)
-					plan_day = parseInt(action.extras.plan_day, 10)
-				}
+				const { isParallel } = action.extras
+				if (!isParallel) {
+					const { response: verse } = action
+					let plan_id = null
+					let plan_content = null
+					let plan_day = null
+					if (typeof action.extras !== 'undefined') {
+						plan_id = parseInt(action.extras.plan_id, 10)
+						plan_content = parseInt(action.extras.plan_content, 10)
+						plan_day = parseInt(action.extras.plan_day, 10)
+					}
 
-				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id] &&
-					!Number.isNaN(plan_content) && !Number.isNaN(plan_day)
-				) {
-					const plan = Immutable
-						.fromJS(state[plan_id])
-						.mergeDeepIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse)
-						.mergeDeepIn(['calendar', plan_day - 1], { hasReferences: true })
-						.toJS()
-					return Immutable.fromJS(state).mergeDeep({ [plan.id]: plan }).toJS()
+					if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id] &&
+						!Number.isNaN(plan_content) && !Number.isNaN(plan_day)
+					) {
+						const plan = Immutable
+							.fromJS(state[plan_id])
+							.mergeDeepIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse)
+							.mergeDeepIn(['calendar', plan_day - 1], { hasReferences: true })
+							.toJS()
+						return Immutable.fromJS(state).mergeDeep({ [plan.id]: plan }).toJS()
+					}
 				}
 				return state
 			}())

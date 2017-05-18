@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import LocalStore from '../../../../lib/localStore'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import Chapter from '../../../Bible/components/content/Chapter'
@@ -9,7 +9,8 @@ import VerseAction from '../../../Bible/components/verseAction/VerseAction'
 import {
 	handleVerseSelect,
 	handleVerseSelectionClear,
-	USER_READER_SETTINGS
+	USER_READER_SETTINGS,
+	buildCopyright
 } from '../../../../lib/readerUtils'
 
 
@@ -95,6 +96,7 @@ class PlanRef extends Component {
 			audioStop,
 			audioPlaying,
 			hosts,
+			intl
 		} = this.props
 
 		// these state variables are set and maintained by the
@@ -149,7 +151,7 @@ class PlanRef extends Component {
 					textDirection={textDirection}
 					ref={(chapter) => { this.chapterInstance = chapter }}
 				/>
-				<ChapterCopyright copyright={version.copyright_short} versionId={version.id} />
+				<ChapterCopyright {...buildCopyright(intl.formatMessage, version)} />
 				{ fullChapButton }
 				<VerseAction
 					// props
@@ -213,4 +215,4 @@ PlanRef.defaultProps = {
 	hosts: null,
 }
 
-export default PlanRef
+export default injectIntl(PlanRef)

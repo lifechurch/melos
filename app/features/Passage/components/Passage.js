@@ -19,7 +19,7 @@ function scrollToRelatedPlans() {
 }
 
 function Passage(props) {
-	let mainVerse, metaContent, metaTitle = null
+	let mainVerse, metaContent, metaTitle, verseError = null
 	let chapterLink = ''
 	let nextLink = ''
 	let prevLink = ''
@@ -107,6 +107,22 @@ function Passage(props) {
 				)
 			}
 		})
+	} else {
+		const {
+			verses: {
+				primaryVersion: {
+					passage: invalidPassage,
+					version: invalidVersion
+				}
+			}
+		} = passage
+
+		let invalidChapter = invalidPassage.split('.')
+		invalidChapter.splice(2, 1)
+		invalidChapter = invalidChapter.join('.')
+
+		verseError = <FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
+		chapterLink = localizedLink(`/bible/${invalidVersion}/${invalidChapter}`)
 	}
 
 	// reading plans
@@ -218,36 +234,51 @@ function Passage(props) {
 
 	return (
 		<div className='passage reader'>
-			{
-				mainVerse &&
+			{ mainVerse &&
 				<Helmet
 					title={`${metaTitle}`}
 					meta={[ { name: 'description', content: `${metaContent}` } ]}
 					link={[ ...metaLink ]}
 				/>
 			}
+			{ verseError &&
+				<Helmet
+					title={intl.formatMessage({ id: 'Reader.chapterpicker.chapter unavailable' })}
+				/>
+			}
 			<div className='row main-content small-12 medium-8'>
-				<div className='title-heading'>
-					{ prevArrow }
-					<h1 className='title'>
-						{ passage.verses && primaryVersion ? primaryVersion.human : null }
-					</h1>
-					{ nextArrow }
-				</div>
+				{ mainVerse &&
+					<div className='title-heading'>
+						{ prevArrow }
+						<h1 className='title'>
+							{ passage.verses && primaryVersion ? primaryVersion.human : null }
+						</h1>
+						{ nextArrow }
+					</div>
+				}
 				<div className='single-verse'>
-					{ mainVerse }
+					{ mainVerse || verseError }
 				</div>
 				<div className='buttons'>
-					<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
-					{
-						(items.length > 0) &&
+					{ mainVerse &&
+						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
+					}
+					{(mainVerse && (items.length > 0)) &&
 						<a tabIndex={0} onClick={scrollToRelatedPlans} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
 					}
-					<Share
-						button={
-							<a className='chapter-button solid-button'><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>
-						}
-					/>
+					{ verseError &&
+						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.chapterpicker.choose chapter' /></Link>
+					}
+					{ verseError &&
+						<Link to={{ pathname: chapterLink, query: { openPicker: 'version' } }} className='chapter-button solid-button'><FormattedMessage id='Reader.versionpicker.choose version' /></Link>
+					}
+					{ mainVerse &&
+						<Share
+							button={
+								<a className='chapter-button solid-button'><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>
+							}
+						/>
+					}
 				</div>
 			</div>
 			<div className='row verses small-12'>

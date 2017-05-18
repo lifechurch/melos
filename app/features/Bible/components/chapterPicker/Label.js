@@ -5,28 +5,28 @@ class Label extends Component {
 
 	handleChange(changeEvent) {
 		const { onChange } = this.props
-		if (typeof onChange == 'function') {
+		if (typeof onChange === 'function') {
 			onChange(changeEvent.target.value)
 		}
 	}
 
 	handleKeyDown(keyEvent) {
 		const { onKeyDown } = this.props
-		if (typeof onKeyDown == 'function') {
+		if (typeof onKeyDown === 'function') {
 			onKeyDown(keyEvent, keyEvent.key, keyEvent.keyCode)
 		}
 	}
 
 	handleClick() {
 		const { onClick } = this.props
-		if (typeof onClick == 'function') {
+		if (typeof onClick === 'function') {
 			onClick()
 		}
 	}
 
 	handleBlur() {
 		const { onBlur } = this.props
-		if (typeof onBlur == 'function') {
+		if (typeof onBlur === 'function') {
 			onBlur()
 		}
 	}
@@ -36,10 +36,10 @@ class Label extends Component {
 
 		let classes, dir = ''
 		if (dropdown && !filtering) {
-			classes = `open dropdown-arrow-container`
+			classes = 'open dropdown-arrow-container'
 			dir = 'up'
 		} else {
-			classes = `dropdown-arrow-container`
+			classes = 'dropdown-arrow-container'
 			dir = 'down'
 		}
 		return (
