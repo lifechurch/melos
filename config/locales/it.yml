@@ -284,7 +284,7 @@ it:
     find friends: "Trova Amici"
     search placeholder: "Ricerca..."
     search: "Cerca"
-    more: "Ancora"
+    more: "Altro"
     book: "Libro"
     filter book: "Filtro Libri..."
     old testament: "Antico Testamento"
@@ -1426,6 +1426,7 @@ it:
             discover: "Scopri"
             my_plans: "I Miei Piani"
             day_completed: "<b>%{username}</b> ha completato <b>Giorno %{day}</b> del Piano di Lettura: <b>%{plan_title}</b>"
+            which reading: "%{current} di %{total}"
             status: 
                 on track: "Secondo la Tabella di Marcia!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ it:
                 book label: "LIBRO"
                 chapter label: "CAPITOLO"
                 chapter unavailable: "Il capitolo non è disponibile in questa versione. Scegli per favore un altro capitolo o versione."
+                choose chapter: "Scegli Capitolo"
             versionpicker: 
                 language label: "LINGUE BIBBIA"
                 language sub-label: "Lingua Bibbia"
                 change language: "Cambia Lingua"
                 filter languages: "Lingue Filtro..."
                 version label: "VERSIONI"
+                choose version: "Scegli Versione"
             reader settings: 
                 footnotes: "Note a piè di pagina"
                 numbers: "Numeri e Titoli"
@@ -1961,6 +1964,7 @@ it:
                 plans: "Piani"
             version: 
                 learn more: "Per Saperne di Più"
+                courtesy of: "%{abbreviation} reso disponibile da %{publisher}"
             verse action: 
                 copy: "Copia"
                 bookmark: "Segnalibro"

@@ -1426,6 +1426,7 @@ hi:
             discover: "खोजें"
             my_plans: "मेरी योजनाएँ"
             day_completed: "<b>%{username} ने</b> बाइबल योजना का  <b>%{day} दिन पूरा किया:</b><b>%{plan_title}</b>"
+            which reading: "%{total} में से%{current}"
             status: 
                 on track: "ट्रैक पर!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ hi:
                 book label: "ग्रन्थ"
                 chapter label: "अध्याय"
                 chapter unavailable: "यह अध्याय इस अध्याय मे नहीं उपलब्ध हैं। कृप्या दूसरा अध्याय या संस्करण चुनाव करिये।"
+                choose chapter: "अध्याय चुनिए "
             versionpicker: 
                 language label: "बाइबिल भाषाएँ "
                 language sub-label: "बाइबिल भाषाएँ "
                 change language: "भाषा बदले"
                 filter languages: "भाशे छानो..."
                 version label: "संस्करण"
+                choose version: "संस्करण चुनिए"
             reader settings: 
                 footnotes: "पद नोट "
                 numbers: "संख्याएं और शीर्षक"
@@ -1961,6 +1964,7 @@ hi:
                 plans: "योजनाएँ"
             version: 
                 learn more: "और अधिक जानकारी"
+                courtesy of: "%{abbreviation} %{publisher}के द्वारा प्रस्तुत किया गया"
             verse action: 
                 copy: "कॉपी"
                 bookmark: "बुकमार्क"

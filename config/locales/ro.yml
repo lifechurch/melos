@@ -1441,6 +1441,7 @@ ro:
             discover: "Descoperă"
             my_plans: "Planurile mele"
             day_completed: "<b>%{username}</b> a completat <b> ziua %{day}</b> a planului: <b>%{plan_title}</b>"
+            which reading: "%{current} din %{total}"
             status: 
                 on track: "La zi!"
                 days ahead: 
@@ -1962,12 +1963,14 @@ ro:
                 book label: "CARTE"
                 chapter label: "CAPITOL"
                 chapter unavailable: "Capitol indisponibil în această versiune.  Alege alt capitol sau altă versiune."
+                choose chapter: "Alege capitolul"
             versionpicker: 
                 language label: "LIMBI ALE BIBLIEI"
                 language sub-label: "Limba Bibliei"
                 change language: "Schimbare limbă"
                 filter languages: "Filtrează limbi..."
                 version label: "VERSIUNI"
+                choose version: "Alege versiunea"
             reader settings: 
                 footnotes: "Note de subsol"
                 numbers: "Numere și titluri"
@@ -1980,6 +1983,7 @@ ro:
                 plans: "Planuri de citire"
             version: 
                 learn more: "Află mai mult"
+                courtesy of: "%{abbreviation} îţi este oferit(ă) de %{publisher}"
             verse action: 
                 copy: "Copiază"
                 bookmark: "Marcaj"

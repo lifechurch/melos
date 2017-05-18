@@ -1411,6 +1411,7 @@ zh-HK:
             discover: "Discover"
             my_plans: "My Plans"
             day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            which reading: "%{current} of %{total}"
             status: 
                 on track: "On Track!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ zh-HK:
                 book label: "BOOK"
                 chapter label: "CHAPTER"
                 chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                choose chapter: "Choose chapter"
             versionpicker: 
                 language label: "BIBLE LANGUAGES"
                 language sub-label: "Bible Language"
                 change language: "Change Language"
                 filter languages: "Filter Languages..."
                 version label: "VERSIONS"
+                choose version: "Choose version"
             reader settings: 
                 footnotes: "Footnotes"
                 numbers: "Numbers and Titles"
@@ -1942,6 +1945,7 @@ zh-HK:
                 plans: "Plans"
             version: 
                 learn more: "Learn More"
+                courtesy of: "%{abbreviation} brought to you by %{publisher}"
             verse action: 
                 copy: "Copy"
                 bookmark: "Bookmark"

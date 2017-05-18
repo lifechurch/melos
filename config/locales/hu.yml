@@ -1426,6 +1426,7 @@ hu:
             discover: "Felfedezés"
             my_plans: "Terveim"
             day_completed: "<b>%{username}</b> befejezte a(z) <b>%{plan_title}</b> című olvasási terv <b>%{day}. napját.</b>"
+            which reading: "%{current}/%{total}"
             status: 
                 on track: "Terv szerint!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ hu:
                 book label: "Könyv"
                 chapter label: "Fejezet"
                 chapter unavailable: "Ez a fejezet nem érhető el ebben a fordításban. Válassz másik fejezetet vagy fordítást."
+                choose chapter: "Fejezet kiválasztása"
             versionpicker: 
                 language label: "Biblia nyelvek"
                 language sub-label: "Biblia nyelve"
                 change language: "Nyelv kiválasztása"
                 filter languages: "Nyelvek szűrése..."
                 version label: "Fordítások"
+                choose version: "Válassz fordítást"
             reader settings: 
                 footnotes: "Lábjegyzetek"
                 numbers: "Számok és címek"
@@ -1961,6 +1964,7 @@ hu:
                 plans: "Tervek"
             version: 
                 learn more: "Tudj meg többet"
+                courtesy of: "%{abbreviation} %{publisher}-től származik."
             verse action: 
                 copy: "Másolás"
                 bookmark: "Könyvjelző"

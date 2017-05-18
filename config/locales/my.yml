@@ -1411,6 +1411,7 @@ my:
             discover: "ရှာဖွေရန်"
             my_plans: "ကျွန်တော်၏အစီအစဉ်"
             day_completed: "<b>%{username}​ သည်</b><b>%{plan_title}</b> ကျမ်းစာဖတ်ခြင်းအစီအစဉ်ထဲမှ <b>%{day} ရက်မြောက်ကို</b> ဖတ်ပြီးခဲ့ပြီ။"
+            which reading: "%{total}ထဲမှ%{current}"
             status: 
                 on track: "အမီလိုက်နေသည်။"
                 days ahead: 
@@ -1924,12 +1925,14 @@ my:
                 book label: "ကျမ်း"
                 chapter label: "အခန်းကြီး"
                 chapter unavailable: "ဤဗားရှင်းတွင် ဤအခန်းကြီးမရှိပါ။ အခြားဗားရှင်း (သို့) အခန်းကြီးကိုရွေးပါ။"
+                choose chapter: "အခန်းကြီးရွေးချယ်ရန်"
             versionpicker: 
                 language label: "ကျမ်းစာသုံးဘာသာစကား"
                 language sub-label: "ကျမ်းစာအတွက်ဘာသာစကား"
                 change language: "ဘာသာစကားပြောင်းရန်"
                 filter languages: "ဘာသာစကားကိုစစ်ရွေးရန်"
                 version label: "ဗားရှင်း"
+                choose version: "ဗားရှင်းရွေးချယ်ရန်"
             reader settings: 
                 footnotes: "အောက်ခြေမှတ်စု"
                 numbers: "နံပါတ်နှင့်ခေါင်းစဉ်များ"
@@ -1942,6 +1945,7 @@ my:
                 plans: "အစီအစဉ်"
             version: 
                 learn more: "ပို၍လေ့လာရန်"
+                courtesy of: "%{publisher}ကသင့်ထံ%{abbreviation}ကိုဆောင်ကြဉ်းပေးခဲ့ပြီ။"
             verse action: 
                 copy: "ကူးယူ"
                 bookmark: "မှတ်ချက်တင်ရန်"

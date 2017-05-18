@@ -170,22 +170,22 @@ fi:
         story text 3: "Joosef, Maria ja Jeesus-lapsi seimessä."
         story text 4: "Enkelit ilmestyvät paimenille kertoakseen heille Jeesuksen syntymästä"
         story text 5: "Jeesus parantaa halvaantuneen"
-        feature 1: "Ilmainen Raamattu-elämys lapsillesi"
-        feature 2: "Kuvitettu kertomussovellus älypuhelimille ja tableteille"
+        feature 1: "Ilmainen raamattuelämys lapsillesi"
+        feature 2: "Kuvitetut kertomukset – älypuhelimille ja tableteille"
         feature 3: "Värikäs kuvitus ja kosketuksella toimivat piirrosanimaatiot"
         feature 4: "Pelit ja leikit auttavat lapsia muistamaan oppimansa"
         feature 5: "Lapsiystävällinen navigointi"
         share: 
             tell friends: "Kerro ystävillesi Lasten Raamattusovelluksesta."
             facebook name: "Lasten Raamattusovellus"
-            facebook description: "Lasten Raamattusovellus on täällä! Lataa ilmainen sovellus iOSille ja Androidille tänään: vuorovaikutteisia Raamatun kertomuksia, joiden avulla lapsesi oppii pelamaan, leikkimään ja kasvamaan Jumalan sanan äärellä. www.bible.com/lapset"
+            facebook description: "Lasten Raamattusovellus nyt suomeksi! Lataa heti ilmainen sovellus iOSille ja Androidille: interaktiivisia raamatunkertomuksia, joiden avulla lapsi oppii leikin varjolla tuntemaan Jumalan sanaa yhä paremmin. www.bible.com/lapset"
             facebook link: "http://www.bible.com/lapset"
             facebook redirect: "http://www.bible.com/lapset"
             twitter description: "YouVersionin Lasten Raamattusovellus on täällä! Se on hauska ja täysin ilmainen. Lataa: bible.com/lapset"
             twitter hashtags: "lastenraamattu"
             email: "Sähköposti"
             email subject: "Lasten Raamatusovellus on täällä!"
-            email body: "Loistavia uutisia: Lasten Raamattusovellus on täällä! Se on täysin ilmainen ja saatavilla seuraaville laitteille: iPhone, iPad, iPod touch ja Android. Sovelluksessa on koko ajan kasvava kokoelma Raamatun kertomuksia, joiden piirrosanimaatiot ja opettavaiset pelit toimivat kosketuksella. Mahtava tapa oppia Raamatun suuret kertomukset! Klikkaa osoitetta bible.com/lapset mobiililaitteellasi ja lataa se tänään."
+            email body: "Loistavia uutisia: Lasten Raamattusovellus on täällä! Se on täysin ilmainen ja saatavilla seuraaville laitteille: iPhone, iPad, iPod touch ja Android. Sovelluksen piirrosanimaatiot ja pelit toimivat kosketuksella ja tutustuttavat tärkeimpiin raamatunkertomuksiin hauskalla tavalla! Klikkaa osoitetta bible.com/lapset mobiililaitteellasi ja lataa se tänään."
         partner: 
             youversion: "YouVersion: maailman suosituin Raamattusovellus"
             in partnership: "yhteistyössä "
@@ -1426,6 +1426,7 @@ fi:
             discover: "Löydä"
             my_plans: "Omat suunnitelmat"
             day_completed: "<b>%{username}</b> suoritti päivän <b>%{day}</b> Raamatun lukusuunnitelmasta: <b>%{plan_title}</b>"
+            which reading: "%{current} / %{total} suunnitelmasta"
             status: 
                 on track: "Aikataulussa!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ fi:
                 book label: "Kirja"
                 chapter label: "Luku"
                 chapter unavailable: "Tämä luku puuttuu valitusta käännöksestä. Valitse jokin muu luku tai eri käännös."
+                choose chapter: "Valitse luku"
             versionpicker: 
                 language label: "Kielet"
                 language sub-label: "Kieli"
                 change language: "Vaihda kieltä"
                 filter languages: "Suodata kieliä..."
                 version label: "Käännökset"
+                choose version: "Valitse käännös"
             reader settings: 
                 footnotes: "Alaviitteet:"
                 numbers: "Numerot ja otsikot"
@@ -1961,6 +1964,7 @@ fi:
                 plans: "Suunnitelmat"
             version: 
                 learn more: "Lisätietoja"
+                courtesy of: "%{abbreviation} käännöksen tarjoaa %{publisher}"
             verse action: 
                 copy: "Kopio"
                 bookmark: "Kirjanmerkki"

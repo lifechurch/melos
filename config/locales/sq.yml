@@ -1426,6 +1426,7 @@ sq:
             discover: "Zbulo"
             my_plans: "Planet e mia"
             day_completed: "<b>%{username}</b> e përfundoi <b>Ditën %{day}</b> të planit të Biblës: <b>%{plan_title}</b>"
+            which reading: "%{current} nga %{total}"
             status: 
                 on track: "Në harmoni!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ sq:
                 book label: "LIBRI"
                 chapter label: "KAPITULLI"
                 chapter unavailable: "Ky kapitull nuk është i disponueshëm në këtë version. Ju lutemi zgjidhni një kapitull ose version tjetër."
+                choose chapter: "Zgjidh kapitullin"
             versionpicker: 
                 language label: "GJUHËT E BIBLËS"
                 language sub-label: "Gjuhët e Biblës"
                 change language: "Ndrysho gjuhën"
                 filter languages: "Filtro gjuhët..."
                 version label: "VERSIONET"
+                choose version: "Zgjidh versionin"
             reader settings: 
                 footnotes: "Poshtëshënime"
                 numbers: "Numra dhe tituj"
@@ -1961,6 +1964,7 @@ sq:
                 plans: "Plane"
             version: 
                 learn more: "Mëso më shumë"
+                courtesy of: "%{abbreviation} është sjellë te ju nga %{publisher}"
             verse action: 
                 copy: "Kopjo"
                 bookmark: "Shëno"

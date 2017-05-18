@@ -1426,6 +1426,7 @@ fr:
             discover: "Découvrir"
             my_plans: "Mes plans"
             day_completed: "<b>%{username}</b> a terminé <b>le jour %{day}</b> du plan de lecture : <b>%{plan_title}</b>"
+            which reading: "%{current} de %{total}"
             status: 
                 on track: "À jour !"
                 days ahead: 
@@ -1943,12 +1944,14 @@ fr:
                 book label: "Livre"
                 chapter label: "Chapitre"
                 chapter unavailable: "Ce chapitre n'est pas disponible dans cette version. Veuillez choisir un autre chapitre ou une autre version."
+                choose chapter: "Choisir un chapitre"
             versionpicker: 
                 language label: "Langues pour la Bible"
                 language sub-label: "Langue pour la Bible"
                 change language: "Changer la langue"
                 filter languages: "Filtrer les langues..."
                 version label: "Versions"
+                choose version: "Choisir une traduction"
             reader settings: 
                 footnotes: "Notes de bas de page"
                 numbers: "Nombres et Titres"
@@ -1961,6 +1964,7 @@ fr:
                 plans: "Plans"
             version: 
                 learn more: "En savoir plus"
+                courtesy of: "%{abbreviation} mise à disposition par %{publisher}"
             verse action: 
                 copy: "Copier"
                 bookmark: "Signet"

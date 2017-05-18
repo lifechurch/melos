@@ -1426,6 +1426,7 @@ nl:
             discover: "Ontdek"
             my_plans: "Mijn Leesplannen"
             day_completed: "<b>%{username}</b> voltooide <b>dag %{day}</b> van het Leesplan: <b>%{plan_title}</b>"
+            which reading: "%{current} van %{total}"
             status: 
                 on track: "Op schema!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ nl:
                 book label: "Boek"
                 chapter label: "Hoofdstuk"
                 chapter unavailable: "Dit hoofdstuk is niet beschikbaar in deze vertaling. Kies alsjeblieft een ander hoofdstuk of vertaling."
+                choose chapter: "Kies hoofdstuk"
             versionpicker: 
                 language label: "Bijbeltalen"
                 language sub-label: "Bijbeltaal"
                 change language: "Wijzig Taal"
                 filter languages: "Filter Talen..."
                 version label: "Vertalingen"
+                choose version: "Kies vertaling"
             reader settings: 
                 footnotes: "Voetnoten"
                 numbers: "Nummers en Titels"
@@ -1961,6 +1964,7 @@ nl:
                 plans: "Leesplannen"
             version: 
                 learn more: "meer weten"
+                courtesy of: "%{abbreviation} naar jou toe gebracht door %{publisher}"
             verse action: 
                 copy: "Kopiëren"
                 bookmark: "Bladwijzer"

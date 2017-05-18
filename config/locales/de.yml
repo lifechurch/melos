@@ -1426,6 +1426,7 @@ de:
             discover: "Entdecken"
             my_plans: "Meine Lesepläne"
             day_completed: "<b>%{username} hat Tag</b><b> %{day} </b><b>des Leseplanes: %{plan_title}abgeschlossen</b>"
+            which reading: "%{current} von %{total}"
             status: 
                 on track: "Prima!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ de:
                 book label: "Buch"
                 chapter label: "Kapitel"
                 chapter unavailable: "Dieses Kapitel ist in dieser Bibelübersetzung nicht vorhanden. Wähle bitte ein anderes Kapitel oder eine andere Bibelübersetzung."
+                choose chapter: "Kapitel auswählen"
             versionpicker: 
                 language label: "Bibelsprachen"
                 language sub-label: "Bibelsprache"
                 change language: "Sprache ändern"
                 filter languages: "Spachen filtern..."
                 version label: "Übersetzungen"
+                choose version: "Übersetzung auswählen"
             reader settings: 
                 footnotes: "Fußnoten"
                 numbers: "Zahlen und Titel"
@@ -1961,6 +1964,7 @@ de:
                 plans: "Lesepläne"
             version: 
                 learn more: "Weitere Infos"
+                courtesy of: "%{abbreviation} von %{publisher}"
             verse action: 
                 copy: "Kopieren"
                 bookmark: "Lesezeichen"

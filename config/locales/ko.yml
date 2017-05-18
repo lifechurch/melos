@@ -1411,6 +1411,7 @@ ko:
             discover: "찾기"
             my_plans: "내 묵상 계획"
             day_completed: "<b>%{username}</b>님이 <b>%{plan_title}</b>묵상 계획<b> %{day}일 분량을</b>마치셨습니다."
+            which reading: "%{total} 중 %{current}"
             status: 
                 on track: "순조롭게 진행 중!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ ko:
                 book label: "성경"
                 chapter label: "장"
                 chapter unavailable: "이 장은 이 번역본에서 찾을 수 없습니다. 다른 장이나 다른 번역본을 선택하세요."
+                choose chapter: "장 선택"
             versionpicker: 
                 language label: "성경 언어"
                 language sub-label: "성경 언어"
                 change language: "언어 바꾸기"
                 filter languages: "언어 검색필터"
                 version label: "번역본"
+                choose version: "번역본 선택"
             reader settings: 
                 footnotes: "각주"
                 numbers: "번호 및 제목"
@@ -1942,6 +1945,7 @@ ko:
                 plans: "묵상"
             version: 
                 learn more: "더 알아보기"
+                courtesy of: "%{abbreviation} 번역본은 %{publisher} 제공입니다."
             verse action: 
                 copy: "복사"
                 bookmark: "책갈피"

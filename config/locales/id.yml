@@ -1411,6 +1411,7 @@ id:
             discover: "Temukan"
             my_plans: "Rencana Saya"
             day_completed: "<b>%{username}</b> menyelesaikan <b>Hari ke-%{day}</b> dari Rencana Alkitab: <b>%{plan_title}</b>"
+            which reading: "%{current} dari %{total}"
             status: 
                 on track: "Sesuai Jadwal!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ id:
                 book label: "Kitab"
                 chapter label: "Pasal"
                 chapter unavailable: "Pasal ini tidak tersedia dalam versi ini. Silakan pilih pasal atau versi yang berbeda."
+                choose chapter: "Pilih Pasal"
             versionpicker: 
                 language label: "Bahasa Alkitab"
                 language sub-label: "Bahasa Alkitab"
                 change language: "Ubah Bahasa"
                 filter languages: "Saring Bahasa..."
                 version label: "Versi"
+                choose version: "Pilih Versi"
             reader settings: 
                 footnotes: "Catatan kaki"
                 numbers: "Nomor dan Judul"
@@ -1942,6 +1945,7 @@ id:
                 plans: "Rencana"
             version: 
                 learn more: "Pelajari Lebih Lanjut"
+                courtesy of: "%{abbreviation} dipersembahkan oleh %{publisher}"
             verse action: 
                 copy: "Salin"
                 bookmark: "Markah"

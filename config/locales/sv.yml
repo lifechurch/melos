@@ -1426,6 +1426,7 @@ sv:
             discover: "Upptäck"
             my_plans: "Mina planer"
             day_completed: "<b>%{username}</b> fullföljde <b>dag %{day}</b> av bibelplanen <b>%{plan_title}</b>"
+            which reading: "%{current} av %{total}"
             status: 
                 on track: "Enligt plan!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ sv:
                 book label: "BOK"
                 chapter label: "KAPITEL"
                 chapter unavailable: "Det här kapitlet är inte tillgängligt i denna översättningen. Vänligen välj ett annat kapitel eller en annan översättning."
+                choose chapter: "Välj Kapitel"
             versionpicker: 
                 language label: "BIBELSPRÅK"
                 language sub-label: "Bibelspråk"
                 change language: "Byt språk"
                 filter languages: "Filtrera språk..."
                 version label: "ÖVERSÄTTNINGAR"
+                choose version: "Välj översättning"
             reader settings: 
                 footnotes: "Fotnoter"
                 numbers: "Nummer och rubriker"
@@ -1961,6 +1964,7 @@ sv:
                 plans: "Läsplaner"
             version: 
                 learn more: "Läs mer"
+                courtesy of: "%{abbreviation} tillhandahållen av %{publisher}"
             verse action: 
                 copy: "Kopiera"
                 bookmark: "Bokmärke"

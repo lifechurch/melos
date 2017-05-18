@@ -1426,6 +1426,7 @@ ca:
             discover: "Descobreix"
             my_plans: "Els meus plans"
             day_completed: "<b>%{username}</b> ha complertat <b>el dia %{day}</b> del Pla de lectura: <b>%{plan_title}</b>"
+            which reading: "%{current} de %{total}"
             status: 
                 on track: "Al dia!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ ca:
                 book label: "LLIBRE"
                 chapter label: "CAPÍTOL"
                 chapter unavailable: "Aquest capítol no es troba disponible en aquesta versió. Si us plau, escull un altre capítol o una altra versió."
+                choose chapter: "Choose chapter"
             versionpicker: 
                 language label: "LLENGÜES DE LA BÍBLIA"
                 language sub-label: "Llengua de la Bíblia"
                 change language: "Canvia de llengua"
                 filter languages: "Filtra per llengües…"
                 version label: "VERSIONS"
+                choose version: "Choose version"
             reader settings: 
                 footnotes: "Notes a peu de pàgina"
                 numbers: "Nombres i títols"
@@ -1961,6 +1964,7 @@ ca:
                 plans: "Plans"
             version: 
                 learn more: "Llegeix-ne més"
+                courtesy of: "%{abbreviation} proporcionada per %{publisher}"
             verse action: 
                 copy: "Copia"
                 bookmark: "Marcador"

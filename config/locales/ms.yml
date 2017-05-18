@@ -1411,6 +1411,7 @@ ms:
             discover: "Menerokai"
             my_plans: "Pelan Saya"
             day_completed: "<b>%{username}</b> menyelesaikan <b>Hari %{day}</b> daripada Pelan Bible: <b>%{plan_title}</b>"
+            which reading: "%{current} dari %{total}"
             status: 
                 on track: "Dalam Landasan!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ ms:
                 book label: "KITAB"
                 chapter label: "BAB"
                 chapter unavailable: "Bab ini tidak tersedia dalam versi ini. Sila pilih bab atau versi yang berlainan."
+                choose chapter: "Pilih Bab"
             versionpicker: 
                 language label: "BAHASA ALKITAB"
                 language sub-label: "Bahasa Alkitab"
                 change language: "Tukar Bahasa"
                 filter languages: "Menapis Bahasa..."
                 version label: "VERSI"
+                choose version: "Pilih Versi"
             reader settings: 
                 footnotes: "Footnotes"
                 numbers: "Nombor dan Tajuk"
@@ -1942,6 +1945,7 @@ ms:
                 plans: "Pelan"
             version: 
                 learn more: "Ketahui Lebih Lanjut"
+                courtesy of: "%{abbreviation} dibawakan untuk anda daripada %{publisher}"
             verse action: 
                 copy: "Salin"
                 bookmark: "Bookmark"

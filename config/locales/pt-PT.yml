@@ -1426,6 +1426,7 @@ pt-PT:
             discover: "Descubra"
             my_plans: "Os meus planos"
             day_completed: "<b>%{username}</b> completou <b>o dia %{day}</b> do plano da Bíblia: <b>%{plan_title}</b>"
+            which reading: "%{current} de %{total}"
             status: 
                 on track: "Em dia!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ pt-PT:
                 book label: "Livro"
                 chapter label: "Capítulo"
                 chapter unavailable: "Este capitulo não está disponivel nesta versão. Por favor escolha um diferente capitulo ou versão"
+                choose chapter: "Escolher Capítulo"
             versionpicker: 
                 language label: "Idiomas do Texto da Bíblia"
                 language sub-label: "Idioma da Bíblia"
                 change language: "Alterar o Idioma"
                 filter languages: "Flitrar Linguas "
                 version label: "Versões"
+                choose version: "Escolha a versão"
             reader settings: 
                 footnotes: "Notas de Rodapé"
                 numbers: "Números e Títulos"
@@ -1961,6 +1964,7 @@ pt-PT:
                 plans: "Planos"
             version: 
                 learn more: "Saiba mais"
+                courtesy of: "%{abbreviation} trazido até si por %{publisher}"
             verse action: 
                 copy: "Copiar"
                 bookmark: "Marcador"

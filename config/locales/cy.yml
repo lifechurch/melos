@@ -1486,6 +1486,7 @@ cy:
             discover: "Darganfod"
             my_plans: "Fy Nghynlluniau"
             day_completed: "<b>Cwblhaodd %{username} ddiwrnod %{day} o Gynllun Beibl %{plan_title}</b><b></b><b></b>"
+            which reading: "%{current}o %{total}"
             status: 
                 on track: "Ar y trywydd iawn!"
                 days ahead: 
@@ -2019,12 +2020,14 @@ cy:
                 book label: "Llyfr"
                 chapter label: "Pennod"
                 chapter unavailable: "Dydy’r bennod ddim yn bodoli yn y fersiwn yma. Dewis bennod neu fersiwn gwahanol."
+                choose chapter: "Dewisa Bennod"
             versionpicker: 
                 language label: "Ieithoedd y Beibl"
                 language sub-label: "Iaith y Beibl"
                 change language: "Newid Iaith"
                 filter languages: "Didoli ieithoedd"
                 version label: "Fersiynau"
+                choose version: "Dewiswch Fersiwn"
             reader settings: 
                 footnotes: "Troednodiadau"
                 numbers: "Niferoedd a Theitlau"
@@ -2037,6 +2040,7 @@ cy:
                 plans: "Cynlluniau"
             version: 
                 learn more: "Dysgu Mwy"
+                courtesy of: "%{publisher} yn dod â %{abbreviation} i ti."
             verse action: 
                 copy: "Copi"
                 bookmark: "Nod tudalen"

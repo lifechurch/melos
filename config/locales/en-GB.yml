@@ -1426,6 +1426,7 @@ en-GB:
             discover: "Discover"
             my_plans: "My plans"
             day_completed: "<b>%{username}</b> completed <b>day %{day}</b> of the Bible plan: <b>%{plan_title}</b>"
+            which reading: "%{current} of %{total}"
             status: 
                 on track: "On track!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ en-GB:
                 book label: "Book"
                 chapter label: "Chapter"
                 chapter unavailable: "This chapter is not available in this translation. Please choose a different chapter or translation."
+                choose chapter: "Choose chapter"
             versionpicker: 
                 language label: "Bible Languages"
                 language sub-label: "Bible Language"
                 change language: "Change language"
                 filter languages: "Filter languages..."
                 version label: "Versions"
+                choose version: "Choose version"
             reader settings: 
                 footnotes: "Footnotes"
                 numbers: "Numbers and Titles"
@@ -1961,6 +1964,7 @@ en-GB:
                 plans: "Plans"
             version: 
                 learn more: "Learn more"
+                courtesy of: "%{abbreviation} brought to you by %{publisher}"
             verse action: 
                 copy: "Copy"
                 bookmark: "Bookmark"

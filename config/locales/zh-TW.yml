@@ -1411,6 +1411,7 @@ zh-TW:
             discover: "發掘"
             my_plans: "我的計劃"
             day_completed: "<b>%{username}</b> 完成了讀經計劃：<b> %{plan_title}</b><b> 中的第 %{day} 天</b>"
+            which reading: "%{total}段中的第%{current}段"
             status: 
                 on track: "如期進行！"
                 days ahead: 
@@ -1924,12 +1925,14 @@ zh-TW:
                 book label: "書卷"
                 chapter label: "章節"
                 chapter unavailable: "此譯本沒有提供此章經節。請選擇不同章節或譯本。"
+                choose chapter: "選擇章節"
             versionpicker: 
                 language label: "譯本語言"
                 language sub-label: "譯本語言"
                 change language: "變換語言"
                 filter languages: "篩選語言......"
                 version label: "譯本"
+                choose version: "選擇譯本"
             reader settings: 
                 footnotes: "註腳"
                 numbers: "數字和標題"
@@ -1942,6 +1945,7 @@ zh-TW:
                 plans: "計劃"
             version: 
                 learn more: "暸解更多"
+                courtesy of: "%{publisher} 為你帶來 %{abbreviation}"
             verse action: 
                 copy: "複製"
                 bookmark: "書籤"

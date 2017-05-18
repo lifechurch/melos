@@ -1426,6 +1426,7 @@ es-ES:
             discover: "Descubre"
             my_plans: "Mis planes"
             day_completed: "<b>%{username}</b> completó <b>el día %{day}</b> del plan de lectura: <b>%{plan_title}</b>"
+            which reading: "%{current} de%{total}"
             status: 
                 on track: "¡En marcha!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ es-ES:
                 book label: "LIBRO"
                 chapter label: "CAPÍTULO"
                 chapter unavailable: "Este capítulo no está disponible en esta versión. Por favor, elige otro capítulo o versión."
+                choose chapter: "Escoger capítulo"
             versionpicker: 
                 language label: "IDIOMAS"
                 language sub-label: "Idioma"
                 change language: "Cambiar idioma"
                 filter languages: "Filtrar idiomas"
                 version label: "VERSIONES"
+                choose version: "Elegir versión"
             reader settings: 
                 footnotes: "Notas pie de página"
                 numbers: "Números y Títulos"
@@ -1961,6 +1964,7 @@ es-ES:
                 plans: "Planes"
             version: 
                 learn more: "Conocer más"
+                courtesy of: "%{abbreviation} presentada por %{publisher}"
             verse action: 
                 copy: "Copiar"
                 bookmark: "Marcador"

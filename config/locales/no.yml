@@ -1426,6 +1426,7 @@
             discover: "Oppdag"
             my_plans: "Mine leseplaner"
             day_completed: "<b>%{username}fullførte dag %{day}av bibelleseplanen: %{plan_title}</b><b></b><b></b>"
+            which reading: "%{current} av %{total}"
             status: 
                 on track: "I rute!"
                 days ahead: 
@@ -1943,12 +1944,14 @@
                 book label: "Bok"
                 chapter label: "Kapittel"
                 chapter unavailable: "Dette kapitlet er ikke tilgjengelig i denne versjonen. Vennligst velg et annet kapittel eller en annen versjon."
+                choose chapter: "Velg kapittel"
             versionpicker: 
                 language label: "Bibelspråk"
                 language sub-label: "Bibelspråk"
                 change language: "Endre språk"
                 filter languages: "Filtrer språk..."
                 version label: "Versjoner"
+                choose version: "Velg oversettelse"
             reader settings: 
                 footnotes: "Fotnoter"
                 numbers: "Nummer og titler"
@@ -1961,6 +1964,7 @@
                 plans: "Leseplaner"
             version: 
                 learn more: "Lær mer"
+                courtesy of: "%{abbreviation} fra %{publisher}"
             verse action: 
                 copy: "Kopier"
                 bookmark: "Bokmerke"

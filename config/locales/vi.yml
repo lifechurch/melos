@@ -1411,6 +1411,7 @@ vi:
             discover: "Khám phá"
             my_plans: "Kế hoạch của tôi"
             day_completed: "<b>%{username}</b> đã hoàn tất <b>ngày %{day}</b> của kế hoạch Kinh Thánh <b>&quot;%{plan_title}&quot;</b>"
+            which reading: "%{current} trong %{total}"
             status: 
                 on track: "Đọc đủ ngày!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ vi:
                 book label: "SÁCH"
                 chapter label: "ĐOẠN"
                 chapter unavailable: "Đoạn này không có trong bản Kinh Thánh. Vui lòng chọn một đoạn hoặc phiên bản khác."
+                choose chapter: "Chọn đoạn"
             versionpicker: 
                 language label: "NGÔN NGỮ KINH THÁNH"
                 language sub-label: "Ngôn ngữ Kinh Thánh"
                 change language: "Thay đổi ngôn ngữ"
                 filter languages: "Chọn Ngôn Ngữ..."
                 version label: "BẢN DỊCH"
+                choose version: "Chọn bản dịch"
             reader settings: 
                 footnotes: "Chú thích"
                 numbers: "Số và tựa đề"
@@ -1942,6 +1945,7 @@ vi:
                 plans: "Kế hoạch"
             version: 
                 learn more: "Tìm hiểu thêm"
+                courtesy of: "%{abbreviation} được cung cấp bởi %{publisher}"
             verse action: 
                 copy: "Sao chép"
                 bookmark: "Đánh dấu"

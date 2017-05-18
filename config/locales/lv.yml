@@ -1441,6 +1441,7 @@ lv:
             discover: "Atklāj"
             my_plans: "Mans plāns"
             day_completed: "<b>%{username}</b> pabeidza <b>%{day}. dienu</b> no Bībeles lasīšanas plāna: <b>%{plan_title}</b>"
+            which reading: "%{current} no %{total}"
             status: 
                 on track: "Tieši laikā!"
                 days ahead: 
@@ -1962,12 +1963,14 @@ lv:
                 book label: "Grāmata"
                 chapter label: "Nodaļa"
                 chapter unavailable: "Šajā versijā šī nodaļa nav pieejama. Lūdzu izvēlies citu nodaļu vai versiju."
+                choose chapter: "Izvēlēties nodaļu"
             versionpicker: 
                 language label: "Bībeles valodas"
                 language sub-label: "Bībeles valoda"
                 change language: "Mainīt valodu"
                 filter languages: "Filtrēt valodas..."
                 version label: "Tulkojumu veidi"
+                choose version: "Izvēlēties tulkojumu"
             reader settings: 
                 footnotes: "Kājenes"
                 numbers: "Skaitļi un virsraksti"
@@ -1980,6 +1983,7 @@ lv:
                 plans: "Plāns"
             version: 
                 learn more: "Iemācieties vairāk"
+                courtesy of: "%{publisher} piegādājis jums %{abbreviation}"
             verse action: 
                 copy: "Kopēt"
                 bookmark: "Grāmatzīme"

@@ -1426,6 +1426,7 @@ el:
             discover: "Ανακαλύψτε"
             my_plans: "Τα Σχέδιά μου"
             day_completed: "<b>Ο/Η %{username} </b> ολοκλήρωσε <b>την ημέρα %{day}</b> του σχεδίου μελέτης: <b>%{plan_title}</b>"
+            which reading: "%{current} από %{total}"
             status: 
                 on track: "Σε καλό δρόμο!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ el:
                 book label: "ΒΙΒΛΙΟ"
                 chapter label: "ΚΕΦΑΛΑΙΟ"
                 chapter unavailable: "Αυτό το κεφάλαιο δεν είναι διαθέσιμο σε αυτή την έκδοση. Επιλέξτε άλλο κεφάλαιο ή έκδοση."
+                choose chapter: "Επιλογή κεφαλαίου"
             versionpicker: 
                 language label: "ΓΛΩΣΣΕΣ ΚΕΙΜΕΝΟΥ ΑΓΙΑΣ ΓΡΑΦΗΣ"
                 language sub-label: "Γλώσσα κειμένου Αγίας Γραφής"
                 change language: "Αλλαγή γλώσσας"
                 filter languages: "Φιλτράρισμα γλωσσών..."
                 version label: "ΕΚΔΟΣΕΙΣ"
+                choose version: "Επιλέξτε Έκδοση"
             reader settings: 
                 footnotes: "Υποσημειώσεις"
                 numbers: "Αριθμοί και τίτλοι"
@@ -1961,6 +1964,7 @@ el:
                 plans: "Σχέδια "
             version: 
                 learn more: "Περισσότερα"
+                courtesy of: "%{abbreviation}προσφέρεται από %{publisher}"
             verse action: 
                 copy: "Αντιγραφή"
                 bookmark: "Σελιδοδείκτης"

@@ -1456,6 +1456,7 @@ uk:
             discover: "Пізнавайте"
             my_plans: "Мої плани"
             day_completed: "<b>%{username}</b> завершив(ла) <b>день %{day}</b> плану: <b>%{plan_title}</b>"
+            which reading: "%{current} з %{total}"
             status: 
                 on track: "так тримати!"
                 days ahead: 
@@ -1981,12 +1982,14 @@ uk:
                 book label: "КНИГА"
                 chapter label: "РОЗДІЛ"
                 chapter unavailable: "Цей розділ не доступний у цій версії Оберіть інший розділ або версію"
+                choose chapter: "Обрати розділ"
             versionpicker: 
                 language label: "МОВИ БІБЛІЇ"
                 language sub-label: "Мова Біблії"
                 change language: "Змінити мову"
                 filter languages: "Фільтрувати мови..."
                 version label: "ВЕРСІЇ"
+                choose version: "Оберіть версію"
             reader settings: 
                 footnotes: "Примітки"
                 numbers: "Числа та Заголовки"
@@ -1999,6 +2002,7 @@ uk:
                 plans: "Плани читання"
             version: 
                 learn more: "Дізнатись більше"
+                courtesy of: "%{abbreviation} надано вам %{publisher}"
             verse action: 
                 copy: "Копіювати"
                 bookmark: "Закладка"

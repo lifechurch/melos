@@ -1426,6 +1426,7 @@ bg:
             discover: "Открий"
             my_plans: "Моите планове"
             day_completed: "<b>%{username}</b> завърши <b>ден %{day}</b> от плана за прочит на Библията: <b>%{plan_title}</b>"
+            which reading: "%{current} от общо %{total}"
             status: 
                 on track: "Точно по график!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ bg:
                 book label: "Книга"
                 chapter label: "Глава"
                 chapter unavailable: "Тази глава не е налична в тази версия. Моля изберете друга глава или версия."
+                choose chapter: "Избор на глава"
             versionpicker: 
                 language label: "Езици за текста на Библията"
                 language sub-label: "Език за текста на Библията"
                 change language: "Сменете езика"
                 filter languages: "Филтрирай езици..."
                 version label: "Версии"
+                choose version: "Избор на версия"
             reader settings: 
                 footnotes: "Бележки под линия"
                 numbers: "Номериране и заглавия"
@@ -1961,6 +1964,7 @@ bg:
                 plans: "Планове"
             version: 
                 learn more: "Повече информация"
+                courtesy of: "%{abbreviation} достига до Вас с помощта на %{publisher}"
             verse action: 
                 copy: "Копиране"
                 bookmark: "Отбелязване"
