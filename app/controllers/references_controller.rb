@@ -112,6 +112,10 @@ class ReferencesController < ApplicationController
       url = "/#{spliturl[1]}/#{spliturl[2]}/#{reference}"
     end
 
+    if params["parallel"].present?
+      url = "#{url}?parallel=#{params['parallel']}"
+    end
+
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
@@ -120,7 +124,7 @@ class ReferencesController < ApplicationController
         "version" => ((version and !version.nil?) ? version : nil),
         "ref" => ((reference and !reference.nil?) ? reference : nil),
         "altVersions" => DEFAULT_VERSIONS,
-        "parallelVersion" => params.parallel
+        "parallelVersion" => params["parallel"]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request)
