@@ -23,7 +23,7 @@ class VOD < YV::Resource
     def day(day,opts={})
       every_votd = all(opts)
       # for every votd, let's add an alternate votd reference in case the first doesn't exist for the version
-      every_votd.each {|vod| vod.references << alternate_votd(Date.today.mday, returnFlag: true)}
+      every_votd.each {|vod| vod.references << alternate_votd(Date.today.mday)}
       the_one = every_votd.detect {|votd| votd.day == day}
 
       # We build these dates assuming that Date.today.year-DOY is always valid.
@@ -50,12 +50,7 @@ class VOD < YV::Resource
 
     def alternate_votd(dayOfMonth, opts={})
       altVerse = ["MAT.18.4","LUK.11.13","JHN.10.11","MAT.24.14","MRK.2.17","JHN.3.3","MAT.16.24","JHN.13.34","MAT.5.44","MAT.5.3","MRK.3.35","MAT.12.50","JHN.8.12","MAT.11.28","LUK.15.7","JHN.11.25","MAT.7.7","LUK.6.35","MRK.16.15","MAT.22.37","LUK.12.28","MAT.13.44","MAT.10.39","MAT.6.21","LUK.19.10","JHN.1.14","MAT.9.38","JHN.6.35","MAT.6.33","MRK.10.45","MAT.24.35"]
-      altVerse[dayOfMonth - 1]
-
-      # give option to return the alternate reference (used in the day call)
-      if(opts[:returnFlag] == true)
-          return altVerse[dayOfMonth - 1]
-      end
+      return altVerse[dayOfMonth - 1]
     end
 
     def editable?; false; end
