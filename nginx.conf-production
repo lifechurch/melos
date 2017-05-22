@@ -44,12 +44,12 @@ http {
 
     location /apple-app-site-association {
         root /var/www/youversion-web/current;
-        try_files $uri =404;
+        try_files /apple-app-site-association-prod =404;
     }
 
     location /.well_known/apple-app-site-association {
         root /var/www/youversion-web/current;
-        try_files $uri /apple-app-site-association =404;
+        try_files /apple-app-site-association-prod =404;
     }
 
   location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
