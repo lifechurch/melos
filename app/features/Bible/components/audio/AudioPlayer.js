@@ -300,7 +300,7 @@ class AudioPlayer extends Component {
 		const { audio } = this.props
 		const { playing, playbackRate, currentTime, duration, percentComplete, hasStandalone } = this.state
 
-		if (typeof audio === 'undefined' || typeof audio.download_urls !== 'object') {
+		if (audio === null || typeof audio === 'undefined' || typeof audio.download_urls !== 'object') {
 			return null
 		}	else {
 			const audioSources = Object.keys(audio.download_urls).map((fileType) => {
