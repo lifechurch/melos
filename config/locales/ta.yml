@@ -1944,14 +1944,14 @@ ta:
                 book label: "புத்தகம்"
                 chapter label: "அதிகாரம்"
                 chapter unavailable: "இந்த அதிகாரம் இப்பதிப்பில் இல்லை. தயவுசெய்து வேறு அதிகாரம் அல்லது வேறு பதிப்பை தெரிவு செய்யவும்."
-                choose chapter: "அதிகாரத்தை தேர்வுசெய்"
+                choose chapter: "அதிகாரத்தை தேர்வுசெய்."
             versionpicker: 
                 language label: "வேதாகம மொழிகள்"
                 language sub-label: "வேதாகம மொழி"
                 change language: "மொழியை மாற்று"
                 filter languages: "வடிகட்டி மொழிகள்..."
                 version label: "பதிப்புகள்"
-                choose version: "மொழியாக்கத்தைத் தெரிந்தெடுக்கவும்"
+                choose version: "பதிப்பைத் தேர்வுசெய்."
             reader settings: 
                 footnotes: "அடிக்குறிப்புகள்"
                 numbers: "எண்களும் தலைப்புகளும்"

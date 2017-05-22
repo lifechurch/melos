@@ -2020,14 +2020,14 @@ cy:
                 book label: "Llyfr"
                 chapter label: "Pennod"
                 chapter unavailable: "Dydy’r bennod ddim yn bodoli yn y fersiwn yma. Dewis bennod neu fersiwn gwahanol."
-                choose chapter: "Dewisa Bennod"
+                choose chapter: "Dewisa bennod"
             versionpicker: 
                 language label: "Ieithoedd y Beibl"
                 language sub-label: "Iaith y Beibl"
                 change language: "Newid Iaith"
                 filter languages: "Didoli ieithoedd"
                 version label: "Fersiynau"
-                choose version: "Dewiswch Fersiwn"
+                choose version: "Dewisa fersiwn"
             reader settings: 
                 footnotes: "Troednodiadau"
                 numbers: "Niferoedd a Theitlau"

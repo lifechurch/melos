@@ -1951,7 +1951,7 @@ mk:
                 change language: "Промени јазик"
                 filter languages: "Филтрирај јазици..."
                 version label: "Верзии"
-                choose version: "Избери верзија"
+                choose version: "Одбери верзија"
             reader settings: 
                 footnotes: "Фусноти"
                 numbers: "Броеви и наслови"

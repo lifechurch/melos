@@ -1925,7 +1925,7 @@ ja:
                 book label: "書物"
                 chapter label: "章"
                 chapter unavailable: "ご利用の聖書訳に該当する章がありません。別の章または聖書訳を選んでください。"
-                choose chapter: "章を選ぶ"
+                choose chapter: "章を選択"
             versionpicker: 
                 language label: "聖書の言語"
                 language sub-label: "聖書の言語"

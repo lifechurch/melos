@@ -2027,7 +2027,7 @@ ar:
                 change language: "غير اللغه"
                 filter languages: "فلترة اللغات"
                 version label: "ترجمات"
-                choose version: "اختار الاصدار"
+                choose version: "اختر الترجمه"
             reader settings: 
                 footnotes: "الحواشي"
                 numbers: "أرقام وعناوين"

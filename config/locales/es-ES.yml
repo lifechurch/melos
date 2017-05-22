@@ -1944,7 +1944,7 @@ es-ES:
                 book label: "LIBRO"
                 chapter label: "CAPÍTULO"
                 chapter unavailable: "Este capítulo no está disponible en esta versión. Por favor, elige otro capítulo o versión."
-                choose chapter: "Escoger capítulo"
+                choose chapter: "Elegir capítulo"
             versionpicker: 
                 language label: "IDIOMAS"
                 language sub-label: "Idioma"

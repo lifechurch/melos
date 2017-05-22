@@ -1982,7 +1982,7 @@ ru:
                 book label: "Книга"
                 chapter label: "Глава"
                 chapter unavailable: "В данном варианте перевода запрашиваемая глава не существует. Пожалуйста, выберите другую главу или вариант перевода."
-                choose chapter: "Выбрать главу"
+                choose chapter: "Выберите главу"
             versionpicker: 
                 language label: "Языки текста Библии"
                 language sub-label: "Язык Библии"

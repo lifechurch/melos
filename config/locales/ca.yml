@@ -1944,14 +1944,14 @@ ca:
                 book label: "LLIBRE"
                 chapter label: "CAPÍTOL"
                 chapter unavailable: "Aquest capítol no es troba disponible en aquesta versió. Si us plau, escull un altre capítol o una altra versió."
-                choose chapter: "Choose chapter"
+                choose chapter: "Tria el capítol"
             versionpicker: 
                 language label: "LLENGÜES DE LA BÍBLIA"
                 language sub-label: "Llengua de la Bíblia"
                 change language: "Canvia de llengua"
                 filter languages: "Filtra per llengües…"
                 version label: "VERSIONS"
-                choose version: "Choose version"
+                choose version: "Tria una versió"
             reader settings: 
                 footnotes: "Notes a peu de pàgina"
                 numbers: "Nombres i títols"

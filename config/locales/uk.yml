@@ -1989,7 +1989,7 @@ uk:
                 change language: "Змінити мову"
                 filter languages: "Фільтрувати мови..."
                 version label: "ВЕРСІЇ"
-                choose version: "Оберіть версію"
+                choose version: "Обрати версію"
             reader settings: 
                 footnotes: "Примітки"
                 numbers: "Числа та Заголовки"

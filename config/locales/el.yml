@@ -1951,7 +1951,7 @@ el:
                 change language: "Αλλαγή γλώσσας"
                 filter languages: "Φιλτράρισμα γλωσσών..."
                 version label: "ΕΚΔΟΣΕΙΣ"
-                choose version: "Επιλέξτε Έκδοση"
+                choose version: "Επιλογή έκδοσης"
             reader settings: 
                 footnotes: "Υποσημειώσεις"
                 numbers: "Αριθμοί και τίτλοι"
