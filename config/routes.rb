@@ -62,7 +62,7 @@ YouversionWeb::Application.routes.draw do
   get "/dzieci",        to: "redirects#dzieci"
   get "/bibliadzieci",        to: "redirects#dzieci"
   get "/copii",        to: "redirects#copii"
-  get "/lasten",    to: "redirects#lasten"
+  get "/lapset",    to: "redirects#lasten"
   get "/fi/lapset", to: "redirects#lasten"
   get "/barn",        to: "redirects#barn"
   get "/hk/kids",     to: "redirects#hk_kids"
