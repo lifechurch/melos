@@ -1456,6 +1456,7 @@ ru:
             discover: "Узнавайте"
             my_plans: "Мои планы чтения"
             day_completed: "<b>%{username}</b> завершил <b>день %{day}</b> из плана чтения Библии: <b>%{plan_title}</b>"
+            which reading: "%{current} из %{total}"
             status: 
                 on track: "Всё по плану!"
                 days ahead: 
@@ -1981,12 +1982,14 @@ ru:
                 book label: "Книга"
                 chapter label: "Глава"
                 chapter unavailable: "В данном варианте перевода запрашиваемая глава не существует. Пожалуйста, выберите другую главу или вариант перевода."
+                choose chapter: "Выберите главу"
             versionpicker: 
                 language label: "Языки текста Библии"
                 language sub-label: "Язык Библии"
                 change language: "Изменить язык"
                 filter languages: "Отфильтровать языки..."
                 version label: "Переводы"
+                choose version: "Выберите перевод"
             reader settings: 
                 footnotes: "Сноски"
                 numbers: "Числа и Заголовки"
@@ -1999,6 +2002,7 @@ ru:
                 plans: "Планы чтения"
             version: 
                 learn more: "Подробнее"
+                courtesy of: "%{abbreviation} подготовлено для Вас %{publisher}"
             verse action: 
                 copy: "Копировать"
                 bookmark: "Закладка"

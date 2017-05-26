@@ -1456,6 +1456,7 @@ pl:
             discover: "Odkryj"
             my_plans: "Moje plany"
             day_completed: "<b>%{username}</b> zakończony <b>Dzień %{day}</b> Planu Biblii <b>%{plan_title}</b>"
+            which reading: "%{current} z %{total}"
             status: 
                 on track: "Jesteś na bieżąco!"
                 days ahead: 
@@ -1981,12 +1982,14 @@ pl:
                 book label: "Księga"
                 chapter label: "Rozdział"
                 chapter unavailable: "Ten rozdział nie jest dostępny w tym przekładzie.  Proszę wybierz inny rozdział lub inny przekład."
+                choose chapter: "Wybierz rozdział"
             versionpicker: 
                 language label: "Języki Biblii"
                 language sub-label: "Język Biblii"
                 change language: "Zmień język"
                 filter languages: "Filtru Języki..."
                 version label: "Wersje"
+                choose version: "Wybierz wersję"
             reader settings: 
                 footnotes: "Stopki"
                 numbers: "Numery i tytuły"
@@ -1999,6 +2002,7 @@ pl:
                 plans: "Plany czytania"
             version: 
                 learn more: "Dowiedz się więcej"
+                courtesy of: "%{abbreviation} dzięki %{publisher}"
             verse action: 
                 copy: "Kopiuj"
                 bookmark: "Zakładka"

@@ -1426,6 +1426,7 @@ tl:
             discover: "Tuklasin"
             my_plans: "Mga Plano Ko"
             day_completed: "<b>Si %{username} ay natapos ang ika-%{day} Araw ng Babasahin na: %{plan_title}</b><b></b><b></b>"
+            which reading: "%{current} ng %{total}"
             status: 
                 on track: "Nakakasunod!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ tl:
                 book label: "AKLAT"
                 chapter label: "KABANATA"
                 chapter unavailable: "Ang kabanatang ito ay wala sa napiling salin. Pumili ng ibang kabanata o salin."
+                choose chapter: "Piliin ang kabanata"
             versionpicker: 
                 language label: "MGA WIKA NG BIBLIA"
                 language sub-label: "Wika ng Biblia"
                 change language: "Baguhin"
                 filter languages: "Salain ang mga Wika..."
                 version label: "MGA SALIN"
+                choose version: "Pumili ng salin"
             reader settings: 
                 footnotes: "Talababa"
                 numbers: "Mga Bilang at Pamagat"
@@ -1961,6 +1964,7 @@ tl:
                 plans: "Mga Babasahin"
             version: 
                 learn more: "Higit na Impormasyon"
+                courtesy of: "%{abbreviation} mula sa %{publisher}"
             verse action: 
                 copy: "Kopyahin"
                 bookmark: "Pananda"

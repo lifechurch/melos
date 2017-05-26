@@ -1411,6 +1411,7 @@ fa:
             discover: "مطالب تازه را کشف کنید"
             my_plans: "برنامه‌های مطالعۀ من"
             day_completed: "<b>%{username}</b><b>روز %{day}</b>را از برنامه مطالعه %{plan_title}تمام کرده است.<b></b>"
+            which reading: "%{current}  از  %{total}"
             status: 
                 on track: "مطالعه طبق برنامه است!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ fa:
                 book label: "كتاب"
                 chapter label: "باب"
                 chapter unavailable: "این باب در این ترجمه موجود نیست. لطفاً باب، یا ترجمۀ دیگری انتخاب کنید."
+                choose chapter: "انتخاب باب"
             versionpicker: 
                 language label: "ترجمه‌های موجود کتاب‌مقس"
                 language sub-label: "زبان‌های موجود"
                 change language: "تغییر زبان "
                 filter languages: "فیلترکردن زبان"
                 version label: "ترجمه‌های کتاب‌مقدس"
+                choose version: "انتخاب ترجمه"
             reader settings: 
                 footnotes: "پاورقی"
                 numbers: "عناوین و شماره‌ها"
@@ -1942,6 +1945,7 @@ fa:
                 plans: "برنامه‌های مطالعه"
             version: 
                 learn more: "بیشتر بخوانید"
+                courtesy of: "%{abbreviation} توسط %{publisher} ارائه شده است"
             verse action: 
                 copy: "کپی"
                 bookmark: "نشانه"

@@ -1426,6 +1426,7 @@ da:
             discover: "Opdag"
             my_plans: "Mine planer"
             day_completed: "<b>%{username}</b> færdiggjorde <b>%{day}</b> af Bibel Planen <b>%{plan_title}</b>"
+            which reading: "%{current} af %{total}"
             status: 
                 on track: "På sporet!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ da:
                 book label: "BOG"
                 chapter label: "KAPITEL"
                 chapter unavailable: "Dette kapitel er ikke tilgængeligt i denne version. Vælg venligst et andet kapitel eller version."
+                choose chapter: "Vælg kapitel"
             versionpicker: 
                 language label: "BIBEL SPROG"
                 language sub-label: "Bibel sprog"
                 change language: "Ret sprog"
                 filter languages: "Filtrer sprog..."
                 version label: "VERSIONER"
+                choose version: "Vælg version"
             reader settings: 
                 footnotes: "Fodnoter"
                 numbers: "Nummer og Titel"
@@ -1961,6 +1964,7 @@ da:
                 plans: "Planer"
             version: 
                 learn more: "Se mere"
+                courtesy of: "%{abbreviation} givet til dig af %{publisher}"
             verse action: 
                 copy: "Kopi"
                 bookmark: "Bogmærke"

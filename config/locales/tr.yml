@@ -1426,6 +1426,7 @@ tr:
             discover: "Keşfedin"
             my_plans: "Planlarım"
             day_completed: "<b>%{username}</b> tamamladı <b>%{day} Gün</b> Kutsal Kitap Planı: <b>%{plan_title}</b>"
+            which reading: "%{current} / %{total}"
             status: 
                 on track: "Zamanında!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ tr:
                 book label: "KİTAP"
                 chapter label: "BÖLÜM"
                 chapter unavailable: "Bu versiyonda bu bölüm bulunmamaktadır. Lütfen farklı bir bölüm ya da versiyon seçiniz."
+                choose chapter: "Bölümü Seç"
             versionpicker: 
                 language label: "KUTSAL KİTAP DİLLERİ"
                 language sub-label: "Kutsal Kitap Dili"
                 change language: "Dili Değiştir"
                 filter languages: "Dilleri filtrele..."
                 version label: "VERSİYONLAR"
+                choose version: "Çeviri Seçimi"
             reader settings: 
                 footnotes: "Dipnotlar"
                 numbers: "Numaralar ve Başlıklar"
@@ -1961,6 +1964,7 @@ tr:
                 plans: "Okuma Planları"
             version: 
                 learn more: "Daha Bilgi"
+                courtesy of: "%{abbreviation} %{publisher} tarafından sunulmaktadır"
             verse action: 
                 copy: "Kopyala"
                 bookmark: "Yer İmi"

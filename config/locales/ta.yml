@@ -1426,6 +1426,7 @@ ta:
             discover: "கண்டறிக"
             my_plans: "என்னுடைய திட்டங்கள்"
             day_completed: "<b>%{plan_title} பைபிள் திட்டத்தினை %{username} %{day} அன்று நிறைவு செய்துள்ளார்.</b><b></b><b></b>"
+            which reading: "%{current} இன் %{total}"
             status: 
                 on track: "சரியான தடத்தில்!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ ta:
                 book label: "புத்தகம்"
                 chapter label: "அதிகாரம்"
                 chapter unavailable: "இந்த அதிகாரம் இப்பதிப்பில் இல்லை. தயவுசெய்து வேறு அதிகாரம் அல்லது வேறு பதிப்பை தெரிவு செய்யவும்."
+                choose chapter: "அதிகாரத்தை தேர்வுசெய்."
             versionpicker: 
                 language label: "வேதாகம மொழிகள்"
                 language sub-label: "வேதாகம மொழி"
                 change language: "மொழியை மாற்று"
                 filter languages: "வடிகட்டி மொழிகள்..."
                 version label: "பதிப்புகள்"
+                choose version: "பதிப்பைத் தேர்வுசெய்."
             reader settings: 
                 footnotes: "அடிக்குறிப்புகள்"
                 numbers: "எண்களும் தலைப்புகளும்"
@@ -1961,6 +1964,7 @@ ta:
                 plans: "வாசிப்பு திட்டங்கள்"
             version: 
                 learn more: "மேலும் அறிய"
+                courtesy of: "%{abbreviation} உங்களுக்கு வழங்குபவர் %{publisher}"
             verse action: 
                 copy: "நகல்"
                 bookmark: "புத்தக அடையாள குறி"

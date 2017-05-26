@@ -1411,6 +1411,7 @@ zh-CN:
             discover: "发掘"
             my_plans: "我的读经计划"
             day_completed: "<b>%{username}</b>完成了读经计划<b>%{plan_title}</b>中的<b>第%{day}天</b>"
+            which reading: "%{total}段中的第%{current}段"
             status: 
                 on track: "如期进展！"
                 days ahead: 
@@ -1924,12 +1925,14 @@ zh-CN:
                 book label: "书卷"
                 chapter label: "章"
                 chapter unavailable: "此译本没有这一章。请选择另一章或别的译本。"
+                choose chapter: "选择章节"
             versionpicker: 
                 language label: "译本语言"
                 language sub-label: "译本语言"
                 change language: "切换语言"
                 filter languages: "筛选语言......"
                 version label: "译本"
+                choose version: "选择译本"
             reader settings: 
                 footnotes: "脚注"
                 numbers: "数字和标题"
@@ -1942,6 +1945,7 @@ zh-CN:
                 plans: "计划"
             version: 
                 learn more: "获取更多信息"
+                courtesy of: "%{publisher} 为你带来 %{abbreviation}"
             verse action: 
                 copy: "复制"
                 bookmark: "书签"

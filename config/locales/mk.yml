@@ -1426,6 +1426,7 @@ mk:
             discover: "Откриј"
             my_plans: "Мои планови"
             day_completed: "<b>%{username}</b> го заврши <b>%{day} ден</b> од Библискиот план: <b>%{plan_title}</b>"
+            which reading: "%{current} од %{total}"
             status: 
                 on track: "На добар пат си!"
                 days ahead: 
@@ -1943,12 +1944,14 @@ mk:
                 book label: "Книга"
                 chapter label: "Глава"
                 chapter unavailable: "Ова поглавје не е достапно во оваа верзија. Одберете друго поглавје или верзија."
+                choose chapter: "Одбери поглавје"
             versionpicker: 
                 language label: "Јазик на Библискиот текст"
                 language sub-label: "Јазик на Библискиот текст"
                 change language: "Промени јазик"
                 filter languages: "Филтрирај јазици..."
                 version label: "Верзии"
+                choose version: "Одбери верзија"
             reader settings: 
                 footnotes: "Фусноти"
                 numbers: "Броеви и наслови"
@@ -1961,6 +1964,7 @@ mk:
                 plans: "Планови"
             version: 
                 learn more: "Дознај повеќе"
+                courtesy of: "%{publisher} благодарение на %{abbreviation}"
             verse action: 
                 copy: "Копирај"
                 bookmark: "Бележник"

@@ -1441,6 +1441,7 @@ sk:
             discover: "Objaviť"
             my_plans: "Moje plány"
             day_completed: "<b>%{username}</b> ukončený <b>Deň%{day}</b> Plánu Biblie: <b>%{plan_title}</b>"
+            which reading: "%{current} z %{total}"
             status: 
                 on track: "Na dobrej ceste!"
                 days ahead: 
@@ -1962,12 +1963,14 @@ sk:
                 book label: "Kniha"
                 chapter label: "Kapitola"
                 chapter unavailable: "Táto kapitola nie je k dispozícii v tejto verzii. Prosím, vyberte inú kapitolu alebo verziu."
+                choose chapter: "Vybrať kapitolu"
             versionpicker: 
                 language label: "Jazyky Biblie"
                 language sub-label: "Jazyk Biblie"
                 change language: "Zmeniť jazyk"
                 filter languages: "Filtrovať jazyky..."
                 version label: "Preklady"
+                choose version: "Zvoliť preklad"
             reader settings: 
                 footnotes: "Poznámky"
                 numbers: "Čísla a nadpisy"
@@ -1980,6 +1983,7 @@ sk:
                 plans: "Plány"
             version: 
                 learn more: "Zistiť viac"
+                courtesy of: "%{abbreviation} Vám prináša %{publisher}"
             verse action: 
                 copy: "Kopírovať"
                 bookmark: "Pridať záložku"

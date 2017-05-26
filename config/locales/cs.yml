@@ -1441,6 +1441,7 @@ cs:
             discover: "Objevujte"
             my_plans: "Moje plány"
             day_completed: "<b>%{username} </b> ukončil <b>Den %{day}</b> v Plánu studia Bible: <b>%{plan_title}</b>"
+            which reading: "%{current} z %{total}"
             status: 
                 on track: "Podle plánu!"
                 days ahead: 
@@ -1962,12 +1963,14 @@ cs:
                 book label: "KNIHA"
                 chapter label: "KAPITOLA"
                 chapter unavailable: "Tato kapitole není dostupná ve zvoleném překladu. Prosím vyberte si jinou kapitolu nebo překlad."
+                choose chapter: "Vybrat kapitolu"
             versionpicker: 
                 language label: "JAZYKY BIBLE"
                 language sub-label: "Jazyk Bible"
                 change language: "Zvolit jazyk"
                 filter languages: "Filtr jazyků..."
                 version label: "PŘEKLADY"
+                choose version: "Vybrat překlad"
             reader settings: 
                 footnotes: "Poznámky pod čarou"
                 numbers: "Čísla a nadpisy"
@@ -1980,6 +1983,7 @@ cs:
                 plans: "Plány"
             version: 
                 learn more: "Zjistit více"
+                courtesy of: "%{abbreviation} Vám přináší %{publisher}"
             verse action: 
                 copy: "Kopírovat"
                 bookmark: "Záložka"

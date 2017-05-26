@@ -1411,6 +1411,7 @@ km:
             discover: "រុក​រក"
             my_plans: "គំរោង​របស់​ខ្ញុំ"
             day_completed: "<b>%{username}​បាន​បញ្ចប់​ការ​អាន​នៅ​ថ្ងៃទី​%{day}នៃ​គំរោង​អាន​ព្រះ​គម្ពីរ​៖ %{plan_title}</b><b></b><b></b>"
+            which reading: "%{current} នៃ %{total}"
             status: 
                 on track: "កំពុងដំណើរការ!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ km:
                 book label: "សៀវភៅ"
                 chapter label: "ជំពូក"
                 chapter unavailable: "ជំពូក​នេះ​មិន​មាន​នៅ​ក្នុង​ជំនាន់​នេះ​ទេ។ សូម​ជ្រើស​រើស​ជំពូក​ផ្សេង ឬ​ជំនាន់​ផ្សេង។"
+                choose chapter: "ជ្រើស​រើស​ជំពូក"
             versionpicker: 
                 language label: "ភាសា​ព្រះ​គម្ពីរ"
                 language sub-label: "ភាសា​ព្រះគម្ពីរ"
                 change language: "ប្ដូរភាសា"
                 filter languages: "ជម្រើស​ភាសា..."
                 version label: "ជំនាន់"
+                choose version: "ជ្រើស​រើស​ជំនាន់"
             reader settings: 
                 footnotes: "កំណត់ចំណាំ"
                 numbers: "លេខ និងចំណងជើង"
@@ -1942,6 +1945,7 @@ km:
                 plans: "គំរោង​ច្រើន"
             version: 
                 learn more: "រៀន​ថែម​ទៀត"
+                courtesy of: "%{abbreviation} នាំ​មកជូនលោកអ្នកដោយ %{publisher}"
             verse action: 
                 copy: "ចម្លង"
                 bookmark: "កត់​ចំណាំ"

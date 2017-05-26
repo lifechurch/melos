@@ -1456,6 +1456,7 @@ hr:
             discover: "Otkrij"
             my_plans: "Moji planovi"
             day_completed: "<b>Korisnik %{username} završio je %{day}. dan biblijskoga plana %{plan_title}.</b><b></b><b></b>"
+            which reading: "%{current} od %{total}"
             status: 
                 on track: "U toku!"
                 days ahead: 
@@ -1981,12 +1982,14 @@ hr:
                 book label: "Knjiga"
                 chapter label: "Poglavlje"
                 chapter unavailable: "Ovo poglavlje nije dostupno u ovoj verziji. Odaberi neko drugo poglavlje ili verziju."
+                choose chapter: "Odaberi poglavlje"
             versionpicker: 
                 language label: "Prijevodi Biblija"
                 language sub-label: "Prijevod Biblije"
                 change language: "Promijeni jezik"
                 filter languages: "Filtriraj jezike..."
                 version label: "Inačice"
+                choose version: "Odaberi prijevod"
             reader settings: 
                 footnotes: "Fusnote"
                 numbers: "Brojevi i naslovi"
@@ -1999,6 +2002,7 @@ hr:
                 plans: "Planovi"
             version: 
                 learn more: "Saznaj više"
+                courtesy of: "%{abbreviation} ti je omogućio %{publisher}"
             verse action: 
                 copy: "Kopiraj"
                 bookmark: "Oznaka"

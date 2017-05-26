@@ -1411,6 +1411,7 @@ th:
             discover: "ค้นหา"
             my_plans: "แผนฯของฉัน"
             day_completed: "<b>%{username}</b> ได้อ่านจบวันที่ <b>%{day}</b> ของแผนการอ่าน <b>%{plan_title}</b>"
+            which reading: "%{current} ของ %{total}"
             status: 
                 on track: "เป็นไปตามแผน!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ th:
                 book label: "พระธรรม"
                 chapter label: "บทที่"
                 chapter unavailable: "บทนี้ไม่ปรากฎในเวอร์ชั่นนี้ โปรดเลือกบท หรือฉบับอื่น ๆ "
+                choose chapter: "เลือกบทอื่น"
             versionpicker: 
                 language label: "ภาษาของพระคัมภีร์"
                 language sub-label: "ภาษาของพระคัมภีร์"
                 change language: "เปลี่ยนภาษา"
                 filter languages: "คัดกรองภาษาต่าง ๆ..."
                 version label: "ฉบับต่าง ๆ "
+                choose version: "เลือกพระคัมภีร์"
             reader settings: 
                 footnotes: "เชิงอรรถ"
                 numbers: "หมายเลข และชื่อเรื่อง"
@@ -1942,6 +1945,7 @@ th:
                 plans: "แผนการอ่าน"
             version: 
                 learn more: "เรียนรู้เพิ่มเติม"
+                courtesy of: "%{abbreviation} สนับสนุนโดย %{publisher}"
             verse action: 
                 copy: "คัดลอก"
                 bookmark: "ที่คั่นหน้า"

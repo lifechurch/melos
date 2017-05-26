@@ -1486,6 +1486,7 @@ ar:
             discover: "اكتشف"
             my_plans: "خططي"
             day_completed: "<b>%{username}</b> اكمل <b>%{day} يوم</b> من خطه القراءه: <b>%{plan_title}</b>"
+            which reading: "%{current} من %{total}"
             status: 
                 on track: "ملتزم بالخطه!"
                 days ahead: 
@@ -2019,12 +2020,14 @@ ar:
                 book label: "سفر"
                 chapter label: "إصحاح"
                 chapter unavailable: "هذا الإصحاح غير متاح في هذه الترجمة. رجاء إختيار إصحاح مختلف أو ترجمة مختلفه."
+                choose chapter: "إختر الأصحاح"
             versionpicker: 
                 language label: "لغات الكتاب المقدس"
                 language sub-label: "لغات الكتاب المقدس"
                 change language: "غير اللغه"
                 filter languages: "فلترة اللغات"
                 version label: "ترجمات"
+                choose version: "اختر الترجمه"
             reader settings: 
                 footnotes: "الحواشي"
                 numbers: "أرقام وعناوين"
@@ -2037,6 +2040,7 @@ ar:
                 plans: "خطط"
             version: 
                 learn more: "تعلم المزيد"
+                courtesy of: "%{abbreviation} قدم لكم من قبل %{publisher}"
             verse action: 
                 copy: "نسخ"
                 bookmark: "إشارة مرجعية"

@@ -1239,7 +1239,7 @@ ja:
         sms success: "完了！ご利用のデバイスからリンクをご覧ください。"
         sms info: "ダウンロード用のリンクがSMSで携帯に届きます。"
         sms download: "クリックして聖書アプリをダウンロード:"
-        sms default country: "JA"
+        sms default country: "JP"
     pages: 
         generic_error: 
             title: "申し訳ありません。"
@@ -1411,6 +1411,7 @@ ja:
             discover: "発見"
             my_plans: "自分のプラン"
             day_completed: "<b>%{username}さんが</b>読書プラン<b>「%{plan_title}」の</b><b>%{day}日目を</b>読み終えました。"
+            which reading: "%{total} 箇所中の%{current} 箇所"
             status: 
                 on track: "予定通り!"
                 days ahead: 
@@ -1924,12 +1925,14 @@ ja:
                 book label: "書物"
                 chapter label: "章"
                 chapter unavailable: "ご利用の聖書訳に該当する章がありません。別の章または聖書訳を選んでください。"
+                choose chapter: "章を選択"
             versionpicker: 
                 language label: "聖書の言語"
                 language sub-label: "聖書の言語"
                 change language: "言語を変更"
                 filter languages: "言語を絞り込む"
                 version label: "聖書訳"
+                choose version: "聖書訳を選択"
             reader settings: 
                 footnotes: "脚注"
                 numbers: "数字とタイトル"
@@ -1942,6 +1945,7 @@ ja:
                 plans: "プラン"
             version: 
                 learn more: "詳細"
+                courtesy of: "%{publisher}より%{abbreviation} をお届けします"
             verse action: 
                 copy: "コピー"
                 bookmark: "ブックマーク"
