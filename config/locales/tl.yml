@@ -1944,14 +1944,14 @@ tl:
                 book label: "AKLAT"
                 chapter label: "KABANATA"
                 chapter unavailable: "Ang kabanatang ito ay wala sa napiling salin. Pumili ng ibang kabanata o salin."
-                choose chapter: "Piliin ang Kabanata"
+                choose chapter: "Piliin ang kabanata"
             versionpicker: 
                 language label: "MGA WIKA NG BIBLIA"
                 language sub-label: "Wika ng Biblia"
                 change language: "Baguhin"
                 filter languages: "Salain ang mga Wika..."
                 version label: "MGA SALIN"
-                choose version: "Pumili ng Salin"
+                choose version: "Pumili ng salin"
             reader settings: 
                 footnotes: "Talababa"
                 numbers: "Mga Bilang at Pamagat"
