@@ -39,7 +39,7 @@ class VideosController < ApplicationController
   private
 
   def check_locale
-    unless Video.available_locales.include? I18n.locale
+    unless Video.available_locales.include? I18n.locale or Video.available_locales.include? I18n.locale.split('_')[0]
       render_404
     end
   end
