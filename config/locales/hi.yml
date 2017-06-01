@@ -1703,7 +1703,7 @@ hi:
                                 reorder: "Reorder Content"
                                 doneReordering: "Done Reordering"
                             ContentHeader: 
-                                text: "Text"
+                                text: "पाठ "
                                 reference: "बाइबिल सन्दर्भ"
                                 plan: "योजनाऍ"
                                 image: "छवि"
@@ -1745,7 +1745,7 @@ hi:
                             ContentTypeImage: 
                                 errors: 
                                     wrongSize: "ज़रूरी है कि चित्र की परिमाण%{requiredWidth} x %{requiredHeight} हैं। आप की परिमाण%{yourWidth} x %{yourHeight} हैं।"
-                                    wrongType: "Invalid filetype. Must be JPG."
+                                    wrongType: "अमान्य फाइल प्रकार   - JPG होना अनिवार्य "
                                 caption: "Add caption"
                                 prompt: "Drag and Drop an Image"
                                 onlyJpg: "[सिर्फ JPG]"
