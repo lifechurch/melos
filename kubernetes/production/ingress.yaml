@@ -12,14 +12,19 @@ spec:
   tls:
   - hosts:
     - $CI_ENVIRONMENT_HOSTNAME
+    - www.$CI_ENVIRONMENT_HOSTNAME
     - nodejs.$CI_ENVIRONMENT_HOSTNAME
     - events.$CI_ENVIRONMENT_HOSTNAME
-    - nodejs-$CI_ENVIRONMENT_HOSTNAME
-    - events-$CI_ENVIRONMENT_HOSTNAME
-    - nodejs.bible.com
     secretName: ssl
   rules:
   - host: $CI_ENVIRONMENT_HOSTNAME
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: $CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+  - host: www.$CI_ENVIRONMENT_HOSTNAME
     http:
       paths:
       - path: /
@@ -34,27 +39,6 @@ spec:
           serviceName: $CI_ENVIRONMENT_SLUG
           servicePort: $PORT
   - host: events.$CI_ENVIRONMENT_HOSTNAME
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: $CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-  - host: nodejs-$CI_ENVIRONMENT_HOSTNAME
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: $CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-  - host: events-$CI_ENVIRONMENT_HOSTNAME
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: $CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-  - host: nodejs.bible.com
     http:
       paths:
       - path: /
