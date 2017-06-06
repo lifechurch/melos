@@ -25,7 +25,7 @@ production:
   stage: production
   variables:
     CI_ENVIRONMENT_URL: http://test-production.$KUBE_DOMAIN
-    PRODUCTION_SECURE_HOSTNAME: $CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
+    PRODUCTION_SECURE_HOSTNAME: $CI_ENVIRONMENT_URL
   script:
     - command deploy
   environment:
@@ -39,7 +39,7 @@ staging:
   stage: staging
   variables:
     CI_ENVIRONMENT_URL: http://test-staging.$KUBE_DOMAIN
-    STAGING_SECURE_HOSTNAME: $CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
+    STAGING_SECURE_HOSTNAME: test-staging.$KUBE_DOMAIN
   script:
     - command deploy
   environment:
