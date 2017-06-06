@@ -54,7 +54,7 @@ review:
     CI_ENVIRONMENT_URL: http://$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
     REVIEW_SECURE_HOSTNAME: nodejs-$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
   script:
-    - export SHORT=$(echo $CI_ENVIRONMENT_SLUG| cut -c-14)
+    - export SHORT=$(echo $CI_COMMIT_REF_SLUG | cut -c-14)
     - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211 
     - command deploy
     - helm list | grep $SHORT || helm install --name $SHORT --set memcached.verbosity=v --set memcached.maxItemMemory=100 stable/memcached --version 0.4.1 --namespace $KUBE_NAMESPACE --replace
