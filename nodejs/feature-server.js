@@ -22,12 +22,7 @@ const availableLocales = require('./locales/config/availableLocales.json');
 const localeList = require('./locales/config/localeList.json');
 
 const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
-	const IS_PROD = process.env.NODE_ENV === 'production';
-	if (IS_PROD) {
-		return revManifest[path];
-	} else {
-		return path;
-	}
+	return revManifest[path];
 })
 
 const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
