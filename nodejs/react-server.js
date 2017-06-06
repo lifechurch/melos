@@ -23,12 +23,7 @@ const availableLocales = require('./locales/config/availableLocales.json');
 const localeList = require('./locales/config/localeList.json');
 
 function getAssetPath(path) {
-	const IS_PROD = process.env.NODE_ENV === 'production';
-	if (IS_PROD) {
-		return revManifest[path];
-	}
-	return path;
-
+	return revManifest[path];
 }
 
 /**
