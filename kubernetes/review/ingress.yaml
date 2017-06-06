@@ -37,3 +37,4 @@ spec:
         backend:
           serviceName: $CI_ENVIRONMENT_SLUG
           servicePort: $PORT
+
