@@ -1,0 +1,76 @@
+user yvdep;
+worker_processes 8;
+pid /run/nginx.pid;
+
+env JUSTATEST;
+env NEW_RELIC_LICENSE_KEY;
+env YOUVERSION_TOKEN_PHRASE;
+
+events {
+	worker_connections 768;
+	# multi_accept on;
+}
+
+http {
+	sendfile on;
+	tcp_nopush on;
+	tcp_nodelay on;
+	keepalive_timeout 65;
+	types_hash_max_size 2048;
+
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	gzip on;
+	gzip_disable "msie6";
+
+  passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
+  passenger_max_pool_size 8;
+  passenger_resist_deployment_errors on;
+
+  server {
+      server_name events-staging.bible.com;
+      listen 80;
+			listen *:443 ssl;
+			ssl_certificate /etc/nginx/certs/star_bible_com.crt;
+			ssl_certificate_key /etc/nginx/certs/star_bible_com.key;
+			ssl_buffer_size 8k;
+			ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH AES128-SHA DHE-DSS-DES-CBC3-SHA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS";
+			ssl_prefer_server_ciphers on;
+			ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+      root /var/www/youversion-events/current/public;
+      passenger_enabled on;
+      passenger_app_type node;
+      passenger_app_env staging;
+      passenger_startup_file bin/www;
+      passenger_min_instances 8;
+      passenger_max_instances 8;
+      passenger_env_var MEMCACHE_SERVERS memcache.yv.local:11211;
+      passenger_env_var NEW_RELIC_APP_NAME nodejs-staging.bible.com;
+			large_client_header_buffers 4 10k;
+			
+      location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
+          gzip_static on;
+          expires     max;
+          add_header  Cache-Control public;
+          add_header  Last-Modified "";
+          add_header  ETag "";
+          gzip on;
+          gzip_vary on;
+          gzip_proxied any;
+          gzip_min_length 1100;
+          gzip_buffers 16 8k;
+          gzip_disable "MSIE [1-6]\.";
+          gzip_comp_level 6;
+          gzip_types application/javascript text/css text/html;
+      }
+
+      location /k2k-server-status {
+        stub_status on;
+        access_log off;
+      }
+  }
+}

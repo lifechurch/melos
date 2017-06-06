@@ -1,0 +1,237 @@
+
+// media queries **************************************************************
+@small-min: 0em;
+@small-max: 37.438em;
+@medium-min: 37.5em;
+@medium-max: 63.938em;
+// @medium-small-range: (em-calc(641), em-calc(754));
+@large-min: 64em;
+@large-max: 90em;
+@xlarge-min: 90.063em;
+@xlarge-max: 120em;
+@xxlarge-min: 120.063em;
+@xxlarge-max: 99999999em;
+
+@screen: ~"only screen";
+
+@landscape: ~"@screen and (orientation: landscape)";
+@portrait: ~"@screen and (orientation: portrait)";
+
+@small-up: screen;
+@small-only: ~"@{screen} and (max-width: @{small-max})";
+
+@medium-up: ~"@{screen} and (min-width: @{medium-min})";
+@medium-only: ~"@{screen} and (min-width: @{medium-min}) and (max-width: @{medium-max})";
+
+@large-up: ~"@{screen} and (min-width: @{large-min})";
+@large-only: ~"@{screen} and (min-width: @{large-min}) and (max-width: @{large-max})";
+
+@xlarge-up: ~"@{screen} and (min-width: @{xlarge-min})";
+@xlarge-only: ~"@{screen} and (min-width: @{xlarge-min}) and (max-width: @{xlarge-max})";
+
+@xxlarge-up: ~"@{screen} and (min-width: @{xxlarge-min})";
+@xxlarge-only: ~"@{screen} and (min-width: @{xxlarge-min}) and (max-width: @{xxlarge-max})";
+
+
+
+// RTL ***********************************************************************
+@text-direction: ltr;
+//!default;
+@opposite-direction: right;
+//!default;
+@default-float: left;
+//!default;
+
+
+
+// colors ********************************************************************
+@green: #6ab750;
+@red: #CC0000;
+@blue: #0099CC;
+@light-grey: #F4F4F4;
+@color-muted: #979797;
+@font-grey: #888888;
+@background-grey: #D4D4D4;
+@dark_grey: #616161;
+@error-grey: #444444;
+@brown: #824F2B;
+
+
+// font **********************************************************************
+@small-font-size: 0.85714rem;
+
+
+// mixins ********************************************************************
+
+.small-font {
+	font-size: @small-font-size;
+}
+
+.yv-drop-shadow {
+  box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
+  -moz-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
+  -webkit-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
+}
+
+// scroll bar styling for safari, chrome
+.yv-scroll-bar {
+	::-webkit-scrollbar {
+	  width: 6px;
+	  margin-right: 1px;
+	}
+	::-webkit-scrollbar-thumb {
+	  background: @background-grey;
+	  border: 0px solid @background-grey;
+	  border-radius: 60px;
+	}
+	::-webkit-scrollbar-track {
+	  background: transparent;
+	}
+}
+
+.yv-active {
+	background-color: @green;
+	color: white;
+}
+.yv-hover {
+	background-color: @background-grey;
+	color: white;
+	cursor: pointer;
+}
+.yv-green-link {
+	color: @green;
+	cursor: pointer;
+}
+.yv-gray-link {
+	color: @font-grey;
+	cursor: pointer;
+}
+.yv-flex-center-all {
+	justify-content: center;
+	align-items: center;
+}
+
+.yv-text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.picker-error {
+	background-color: @error-grey;
+	color: white;
+	z-index: 10;
+	font-size: 12px;
+	padding: 15px 15px 15px 15px;
+}
+
+.absolute-horizontal-center {
+	left: 50%;
+	transform: 				translate(-50%, 0%);
+	-webkit-transform:translate(-50%, 0%);
+	-moz-transform:   translate(-50%, 0%);
+	-ms-transform:    translate(-50%, 0%);
+  -o-transform:     translate(-50%, 0%);
+	transition:       translate(-50%, 0%);
+}
+
+.dropdown-transform {
+	/* only transition on transform properties which are hardware accelerated = way better performances */
+	-webkit-transition:-webkit-transform .7s cubic-bezier(0.42,1,.16,.93);
+	-moz-transition:   -moz-transform .7s cubic-bezier(0.42,1,.16,.93);
+	-ms-transition:    -ms-transform .7s cubic-bezier(0.42,1,.16,.93);
+	transition:        transform .7s cubic-bezier(0.42,1,.16,.93);
+}
+.dropdown-opacity-transform {
+	transition: opacity .15s ease-in-out;
+	-moz-transition: opacity .15s ease-in-out;
+	-webkit-transition: opacity .15s ease-in-out;
+	-ms-transition: opacity .15s ease-in-out;
+}
+
+.dropdown-opacity-show {
+	.dropdown-opacity-transform;
+	opacity: 1;
+}
+
+.dropdown-show {
+  -webkit-transform: translate(0, 0%);
+     -moz-transform: translate(0, 0%);
+      -ms-transform: translate(0, 0%);
+          transform: translate(0, 0%);
+}
+.dropdown-hide-up {
+  -webkit-transform: translate(0, -125%) !important;
+     -moz-transform: translate(0, -125%) !important;
+      -ms-transform: translate(0, -125%) !important;
+          transform: translate(0, -125%) !important;
+}
+.dropdown-hide-down {
+  -webkit-transform: translate(0, 125%) !important;
+     -moz-transform: translate(0, 125%) !important;
+      -ms-transform: translate(0, 125%) !important;
+          transform: translate(0, 125%) !important;
+}
+.dropdown-hide-right {
+  -webkit-transform: translate(125%, 0) !important;
+     -moz-transform: translate(125%, 0) !important;
+      -ms-transform: translate(125%, 0) !important;
+          transform: translate(125%, 0) !important;
+}
+.dropdown-hide-left {
+  -webkit-transform: translate(-125%, 0) !important;
+     -moz-transform: translate(-125%, 0) !important;
+      -ms-transform: translate(-125%, 0) !important;
+          transform: translate(-125%, 0) !important;
+}
+
+
+.dropdown-transform-show {
+	.dropdown-transform;
+	.dropdown-show;
+}
+.dropdown-transform-hide-up {
+	.dropdown-transform;
+  .dropdown-hide-up;
+}
+.dropdown-transform-hide-down {
+	.dropdown-transform;
+  .dropdown-hide-down;
+}
+.dropdown-transform-hide-right {
+	.dropdown-transform;
+  .dropdown-hide-right;
+}
+.dropdown-transform-hide-left {
+	.dropdown-transform;
+	.dropdown-hide-left;
+}
+
+.parallax-back-img {
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-attachment: fixed;
+	-webkit-filter: blur(12px);
+	-moz-filter: blur(12px);
+	-o-filter: blur(12px);
+	-ms-filter: blur(12px);
+	filter: blur(12px);
+}
+
+#background-overlay {
+	position:fixed;
+	top:0;
+	left:0;
+	background:rgba(0,0,0,0.6);
+	z-index:5;
+	width:100%;
+	height:100%;
+	display:none;
+}
+
+//  **************************************************************************
+@default-radius: 5px;
+@default-padding: 5px;
+@thin-grey-border: 1px solid @background-grey;
+@list-font-size: 15px;

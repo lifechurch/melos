@@ -1,0 +1,128 @@
+@dayWidth: unit((1 / 7) * 100, %);
+
+.plan-calendar-collection {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: space-around;
+
+  &.single {
+    justify-content: center;
+  }
+
+  .plan-calendar-container {
+    flex-basis: 50%;
+    padding: 20px;
+    border: solid 1px #eee;
+  }
+}
+
+.plan-calendar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+	border-radius: 10px;
+
+	.day {
+		flex-grow: 1;
+		flex-basis: @dayWidth;
+
+		.content {
+			width: 100%;
+			height: 100%;
+			border: solid 1px #777;
+			text-align: center;
+			padding: 10px;
+		}
+
+		.streak-day {
+			position: relative;
+			max-height: 37px;
+			margin-top: 5px;
+
+			.streak-bar {
+				background-color: @green;
+				height: 4px;
+				position: absolute;
+				margin-top: 17px;
+
+				&.sd-Beginning {
+					width: 50%;
+					left: 50%;
+				}
+
+				&.sd-Middle {
+					width: 100%;
+				}
+
+				&.sd-End {
+					width: 50%;
+					left: 0;
+				}
+
+				&.sd-None {
+					background: none;
+				}
+			}
+
+			.sd-content {
+				color: #bbb;
+				border-radius: 50%;
+				text-align: center;
+				font-size: 14px;
+				padding: 5px;
+				max-width: 37px;
+				margin: auto;
+				position: relative;
+
+				&.sd-Complete {
+					border: solid 2px @green;
+					background-color: @green;
+					color: white;
+				}
+
+				&.sd-Partial {
+					border: solid 2px @green;
+					background-color: white;
+					color: black;
+				}
+
+				&.sd-Incomplete {
+          border: solid 2px @red;
+          color: @red;
+				}
+
+        &.sd-Future {
+          border: solid 2px @light-grey;
+          color: black;
+        }
+
+        &.sd-None {
+
+        }
+			}
+		}
+
+		@from: 1;
+		@to: 7;
+
+		.loop(@index) when(@index =< @to) {
+			&.suffix-day-@{index} {
+				margin-right: unit(@dayWidth * (@index - 1), %);
+			}
+
+			&.prefix-day-@{index} {
+				margin-left: unit(@dayWidth * @index, %);
+			}
+
+			.loop(@index + 1);
+		}
+
+		.loop(@from);
+	}
+}

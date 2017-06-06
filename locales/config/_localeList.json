@@ -1,0 +1,468 @@
+[
+	{
+		"nativeName": "Afrikaans (South Africa)",
+		"englishName": "Afrikaans (South Africa)",
+		"locale": "af-ZA",
+		"locale2": "af",
+		"locale3": "afr",
+		"displayName": "Afrikaans (South Africa)"
+	},
+	{
+		"nativeName": "Bahasa Indonesia",
+		"englishName": "Indonesian",
+		"locale": "id-ID",
+		"locale2": "id",
+		"locale3": "ind",
+		"displayName": "Bahasa Indonesia"
+	},
+	{
+		"nativeName": "Bahasa Melayu",
+		"englishName": "Malay",
+		"locale": "ms-MY",
+		"locale2": "ms",
+		"locale3": "msa",
+		"displayName": "Bahasa Melayu"
+	},
+	{
+		"nativeName": "Català",
+		"englishName": "Catalan",
+		"locale": "ca-ES",
+		"locale2": "ca",
+		"locale3": "cat",
+		"displayName": "Català"
+	},
+	{
+		"nativeName": "Čeština",
+		"englishName": "Czech",
+		"locale": "cs-CZ",
+		"locale2": "cs",
+		"locale3": "ces",
+		"displayName": "Čeština"
+	},
+	{
+		"nativeName": "Cymraeg",
+		"englishName": "Welsh",
+		"locale": "cy-GB",
+		"locale2": "cy",
+		"locale3": "cym",
+		"displayName": "Cymraeg"
+	},
+	{
+		"nativeName": "Dansk",
+		"englishName": "Danish",
+		"locale": "da-DK",
+		"locale2": "da",
+		"locale3": "dan",
+		"displayName": "Dansk"
+	},
+	{
+		"nativeName": "Deutsch (Deutschland)",
+		"englishName": "German (Germany)",
+		"locale": "de-DE",
+		"locale2": "de",
+		"locale3": "deu",
+		"displayName": "Deutsch (Deutschland)"
+	},
+	{
+		"nativeName": "Eesti (Estonia)",
+		"englishName": "Estonian (Estonia)",
+		"locale": "et-EE",
+		"locale2": "et",
+		"locale3": "est",
+		"displayName": "Eesti (Estonia)"
+	},
+	{
+		"nativeName": "English (Canada)",
+		"englishName": "English (Canada)",
+		"locale": "en-CA",
+		"locale2": "en",
+		"locale3": "eng",
+		"displayName": "English (Canada)"
+	},
+	{
+		"nativeName": "English (UK)",
+		"englishName": "English (UK)",
+		"locale": "en-GB",
+		"locale2": "en",
+		"locale3": "eng",
+		"displayName": "English (UK)"
+	},
+	{
+		"nativeName": "English (US)",
+		"englishName": "English (US)",
+		"locale": "en-US",
+		"locale2": "en",
+		"locale3": "eng",
+		"displayName": "English (US)"
+	},
+	{
+		"nativeName": "Español",
+		"englishName": "Spanish (Latin)",
+		"locale": "es-LA",
+		"locale2": "es",
+		"locale3": "spa",
+		"displayName": "Español"
+	},
+	{
+		"nativeName": "Español (España)",
+		"englishName": "Spanish (Spain)",
+		"locale": "es-ES",
+		"locale2": "es",
+		"locale3": "spa",
+		"displayName": "Español (España)"
+	},
+	{
+		"nativeName": "Filipino",
+		"englishName": "Filipino",
+		"locale": "tl-PH",
+		"locale2": "tl",
+		"locale3": "tgl",
+		"displayName": "Filipino"
+	},
+	{
+		"nativeName": "Français (France)",
+		"englishName": "French (France)",
+		"locale": "fr-FR",
+		"locale2": "fr",
+		"locale3": "fra",
+		"displayName": "Français (France)"
+	},
+	{
+		"nativeName": "Hrvatski",
+		"englishName": "Croatian",
+		"locale": "hr-HR",
+		"locale2": "hr",
+		"locale3": "hrv",
+		"displayName": "Hrvatski"
+	},
+	{
+		"nativeName": "isiZulu",
+		"englishName": "Zulu",
+		"locale": "zu-ZA",
+		"locale2": "zu",
+		"locale3": "zul",
+		"displayName": "isiZulu"
+	},
+	{
+		"nativeName": "Italiano",
+		"englishName": "Italian",
+		"locale": "it-IT",
+		"locale2": "it",
+		"locale3": "ita",
+		"displayName": "Italiano"
+	},
+	{
+		"nativeName": "Kiswahili",
+		"englishName": "Swahili",
+		"locale": "sw",
+		"locale2": "sw",
+		"locale3": "swa",
+		"displayName": "Kiswahili"
+	},
+	{
+		"nativeName": "Latviešu",
+		"englishName": "Latvian",
+		"locale": "lv-LV",
+		"locale2": "lv",
+		"locale3": "lav",
+		"displayName": "Latviešu"
+	},
+	{
+		"nativeName": "Lietuvių",
+		"englishName": "Lithuanian",
+		"locale": "lt-LT",
+		"locale2": "lt",
+		"locale3": "lit",
+		"displayName": "Lietuvių"
+	},
+	{
+		"nativeName": "Magyar",
+		"englishName": "Hungarian",
+		"locale": "hu-HU",
+		"locale2": "hu",
+		"locale3": "hun",
+		"displayName": "Magyar"
+	},
+	{
+		"nativeName": "Nederlands (Nederland)",
+		"englishName": "Dutch (Netherlands)",
+		"locale": "nl-NL",
+		"locale2": "nl",
+		"locale3": "nld",
+		"displayName": "Nederlands (Nederland)"
+	},
+	{
+		"locale": "no-NO",
+		"locale2": "no",
+		"locale3": "nor",
+		"displayName": "NO-NO"
+	},
+	{
+		"nativeName": "Polski",
+		"englishName": "Polish",
+		"locale": "pl-PL",
+		"locale2": "pl",
+		"locale3": "pol",
+		"displayName": "Polski"
+	},
+	{
+		"nativeName": "Português (Brasil)",
+		"englishName": "Portuguese (Brazil)",
+		"locale": "pt-BR",
+		"locale2": "pt",
+		"locale3": "por",
+		"displayName": "Português (Brasil)"
+	},
+	{
+		"nativeName": "Português (Portugal)",
+		"englishName": "Portuguese (Portugal)",
+		"locale": "pt-PT",
+		"locale2": "pt",
+		"locale3": "por",
+		"displayName": "Português (Portugal)"
+	},
+	{
+		"nativeName": "Română",
+		"englishName": "Romanian",
+		"locale": "ro-RO",
+		"locale2": "ro",
+		"locale3": "ron",
+		"displayName": "Română"
+	},
+	{
+		"nativeName": "Shqip",
+		"englishName": "Albanian",
+		"locale": "sq-AL",
+		"locale2": "sq",
+		"locale3": "sqi",
+		"displayName": "Shqip"
+	},
+	{
+		"nativeName": "Slovenčina (Slovakia)",
+		"englishName": "Slovak (Slovakia)",
+		"locale": "sk-SK",
+		"locale2": "sk",
+		"locale3": "slk",
+		"displayName": "Slovenčina (Slovakia)"
+	},
+	{
+		"locale": "sn",
+		"locale2": "sn",
+		"locale3": "sna",
+		"displayName": "SN"
+	},
+	{
+		"nativeName": "Suomi",
+		"englishName": "Finnish",
+		"locale": "fi-FI",
+		"locale2": "fi",
+		"locale3": "fin",
+		"displayName": "Suomi"
+	},
+	{
+		"nativeName": "Svenska",
+		"englishName": "Swedish",
+		"locale": "sv-SE",
+		"locale2": "sv",
+		"locale3": "swe",
+		"displayName": "Svenska"
+	},
+	{
+		"nativeName": "Tiếng Việt",
+		"englishName": "Vietnamese",
+		"locale": "vi-VN",
+		"locale2": "vi",
+		"locale3": "vie",
+		"displayName": "Tiếng Việt"
+	},
+	{
+		"nativeName": "Türkçe",
+		"englishName": "Turkish",
+		"locale": "tr-TR",
+		"locale2": "tr",
+		"locale3": "tur",
+		"displayName": "Türkçe"
+	},
+	{
+		"locale": "xc-MN",
+		"locale2": null,
+		"locale3": null,
+		"displayName": "XC-MN"
+	},
+	{
+		"nativeName": "Ελληνικά",
+		"englishName": "Greek (Greece)",
+		"locale": "el-GR",
+		"locale2": "el",
+		"locale3": "ell",
+		"displayName": "Ελληνικά"
+	},
+	{
+		"nativeName": "Беларуская",
+		"englishName": "Belarusian",
+		"locale": "be-BY",
+		"locale2": "be",
+		"locale3": "bel",
+		"displayName": "Беларуская"
+	},
+	{
+		"nativeName": "Български",
+		"englishName": "Bulgarian",
+		"locale": "bg-BG",
+		"locale2": "bg",
+		"locale3": "bul",
+		"displayName": "Български"
+	},
+	{
+		"nativeName": "Македонски (Македонски)",
+		"englishName": "Macedonian (Macedonian)",
+		"locale": "mk-MK",
+		"locale2": "mk",
+		"locale3": "mkd",
+		"displayName": "Македонски (Македонски)"
+	},
+	{
+		"nativeName": "Русский",
+		"englishName": "Russian",
+		"locale": "ru-RU",
+		"locale2": "ru",
+		"locale3": "rus",
+		"displayName": "Русский"
+	},
+	{
+		"nativeName": "Українська",
+		"englishName": "Ukrainian",
+		"locale": "uk-UA",
+		"locale2": "uk",
+		"locale3": "ukr",
+		"displayName": "Українська"
+	},
+	{
+		"nativeName": "ქართული",
+		"englishName": "Georgian",
+		"locale": "ka-GE",
+		"locale2": "ka",
+		"locale3": "kat",
+		"displayName": "ქართული"
+	},
+	{
+		"nativeName": "اردو",
+		"englishName": "Urdu",
+		"locale": "ur",
+		"locale2": "ur",
+		"locale3": "urd",
+		"displayName": "اردو"
+	},
+	{
+		"nativeName": "العربية",
+		"englishName": "Arabic",
+		"locale": "ar",
+		"locale2": "ar",
+		"locale3": "ara",
+		"displayName": "العربية"
+	},
+	{
+		"nativeName": "فارسی",
+		"englishName": "Persian",
+		"locale": "fa-IR",
+		"locale2": "fa",
+		"locale3": "fas",
+		"displayName": "فارسی"
+	},
+	{
+		"nativeName": "नेपाली",
+		"englishName": "Nepali",
+		"locale": "ne-NP",
+		"locale2": "ne",
+		"locale3": "nep",
+		"displayName": "नेपाली"
+	},
+	{
+		"nativeName": "हिन्दी",
+		"englishName": "Hindi",
+		"locale": "hi-IN",
+		"locale2": "hi",
+		"locale3": "hin",
+		"displayName": "हिन्दी"
+	},
+	{
+		"nativeName": "বাংলা (ভারত)",
+		"englishName": "Bengali (India)",
+		"locale": "bn-IN",
+		"locale2": "bn",
+		"locale3": "ben",
+		"displayName": "বাংলা (ভারত)"
+	},
+	{
+		"nativeName": "தமிழ்",
+		"englishName": "Tamil",
+		"locale": "ta-IN",
+		"locale2": "ta",
+		"locale3": "tam",
+		"displayName": "தமிழ்"
+	},
+	{
+		"nativeName": "ภาษาไทย (ประเทศไทย)",
+		"englishName": "Thai (Thailand)",
+		"locale": "th-TH",
+		"locale2": "th",
+		"locale3": "tha",
+		"displayName": "ภาษาไทย (ประเทศไทย)"
+	},
+	{
+		"nativeName": "ဗမာစကာ",
+		"englishName": "Burmese",
+		"locale": "my",
+		"locale2": "my",
+		"locale3": "mya",
+		"displayName": "ဗမာစကာ"
+	},
+	{
+		"nativeName": "ភាសាខ្មែរ",
+		"englishName": "Khmer",
+		"locale": "km-KH",
+		"locale2": "km",
+		"locale3": "khm",
+		"displayName": "ភាសាខ្មែរ"
+	},
+	{
+		"nativeName": "한국어 (韩国)",
+		"englishName": "Korean (Korea)",
+		"locale": "ko-KR",
+		"locale2": "ko",
+		"locale3": "kor",
+		"displayName": "한국어 (韩国)"
+	},
+	{
+		"nativeName": "中文（中国）",
+		"englishName": "Chinese Simplified (China)",
+		"locale": "zh-CN",
+		"locale2": "zh",
+		"locale3": "zho",
+		"displayName": "中文（中国）"
+	},
+	{
+		"nativeName": "中文（台灣）",
+		"englishName": "Chinese Traditional (Taiwan)",
+		"locale": "zh-TW",
+		"locale2": "zh",
+		"locale3": "zho",
+		"displayName": "中文（台灣）"
+	},
+	{
+		"nativeName": "中文（香港）",
+		"englishName": "Chinese Traditional (Hong Kong)",
+		"locale": "zh-HK",
+		"locale2": "zh",
+		"locale3": "zho",
+		"displayName": "中文（香港）"
+	},
+	{
+		"nativeName": "日本語",
+		"englishName": "Japanese",
+		"locale": "ja-JP",
+		"locale2": "ja",
+		"locale3": "jpn",
+		"displayName": "日本語"
+	}
+]
