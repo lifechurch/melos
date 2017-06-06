@@ -20,6 +20,7 @@ RUN cd /home/app/nodejs && npm install
 COPY ruby/ /home/app/ruby/
 RUN cd /home/app/ruby && bundle exec rake assets:precompile
 
+ENV NODE_ENV production
 COPY nodejs/ /home/app/nodejs/
 RUN cd /home/app/nodejs && npm install -g gulp
 RUN cd /home/app/nodejs && gulp build:production
