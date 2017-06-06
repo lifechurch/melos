@@ -1,0 +1,12 @@
+- @title = "Unknown Error"
+- @reader_menus = false
+- @sidebar = false
+
+%article
+  %h1= t('.title')
+  %hr
+  %div{style:"margin-top: 50px"}
+    %p= t('.explanation')
+    %p= t('.our action')
+    %br
+    %p.small.mute= "#{@error.class}"

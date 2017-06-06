@@ -1,0 +1,55 @@
+@import "variables.sass"
+
+// !Basic HTML
+//----------------------------------------------------------------------------------------------------
+
+body
+  font: 15px/1.8 $body_font
+
+html[data-locale="fa"] body
+  font: 14px/1.8 $fa_body_font
+
+
+// !Headings
+//----------------------------------------------------------------------------------------------------
+
+h1,
+h2
+  -webkit-font-smoothing: subpixel-antialiased
+  font:
+    weight: normal
+    weight: 100
+
+h1
+  font:
+    size: 30px
+
+h2
+  font:
+    size: 20px
+  letter-spacing: -.02em
+
+h3
+  font-size: 18px
+
+h4
+  font-size: 17px
+
+
+// !Other
+//----------------------------------------------------------------------------------------------------
+
+
+.wordsofchrist
+  color: $red
+
+#main article p
+  font-size: 15px
+
+article > h1, article .inner > h1
+  display: none
+
+article h1.keep
+  font-size: 24px
+  display: block
+  margin-top: .75em

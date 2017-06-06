@@ -1,0 +1,11 @@
+- @title = "Plan Calendar and Progress"
+- subscription = @presenter.subscription
+
+.row
+  .columns
+    =render partial: "editHeader"
+    .row.pad-row
+      .columns
+        = render partial: 'subscriptions/calendar', locals: { subscription: @subscription, showAll: true }
+  -# .columns.medium-4
+  -#  = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}

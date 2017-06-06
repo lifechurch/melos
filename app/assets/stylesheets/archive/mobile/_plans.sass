@@ -1,0 +1,256 @@
+#plan-index
+  .sidebar
+    .search
+      margin-top: 25px
+      margin-left: 10px
+      form
+        margin-bottom: 20px
+
+        select.language, input.field, input.submit
+          width: 200px
+          margin-left: 0
+
+        input.submit
+          margin-top: 20px
+          line-height: 2em
+          padding: 4px 15px
+
+  #filter-message
+    text-align: center
+    margin: 20px
+
+.resource_list
+  .subscription
+    overflow: hidden
+    padding: 15px 0
+
+    .subscription-info
+      overflow: hidden
+      position: relative
+      margin: 0 0 10px 0
+
+    .search_thumbnail,
+    .subscription-title,
+    .subscription-privacy
+      display: block
+
+    .search_thumbnail,
+    .subscription-title
+      float: left
+      box-sizing: border-box
+
+    .search_thumbnail
+
+      img
+        width: 50px
+        margin: 0 15px 10px 0
+        +border-radius(5px)
+
+    .subscription-title
+      width: 80%
+
+      h3
+        line-height: 1.3em
+        margin: 0
+
+    .subscription-privacy
+      clear: both
+      font-size: 13px
+
+      a
+        color: #aaa
+        text-decoration: underline
+
+    .progress_wrap
+      margin-bottom: 0
+
+
+// For plan index page
+
+.resource_list
+  .plan
+    .length
+      display: block
+      margin-bottom: 10px
+      line-height: 1.5em
+
+#sidebar .hd
+
+  a,
+  span
+    box-sizing: border-box
+    display: block
+
+  .search_thumbnail
+    border-radius: 5px
+    margin: 0 8px 0 0
+    overflow: hidden
+    display: block
+    float: left
+
+    img
+      width: 30px
+      height: 30px
+
+  a
+    line-height: 16px
+    min-height: 28px
+
+
+// Plan about page
+
+#main article.reading_plan_index
+  padding: 0
+
+  a,
+  p,
+  span,
+  div
+    box-sizing: border-box
+
+  .rp-hero-img
+    width: 100%
+
+  h1.keep
+    padding: 20px 15px 20px
+    margin: 0
+    border-bottom: 1px solid #dedddb
+    font-size: 30px
+
+  p
+    padding: 15px 30px
+
+  .rp-plan-info
+    background: image-url("icon_calendar@2x.png") no-repeat 15px center
+    background-size: 13px 15px
+    border-bottom: 1px solid #dedddb
+    padding: 5px 40px
+
+    p
+      margin: 0
+      padding: 0
+
+  .rp-plan-about
+    padding: 20px 15px
+    border-bottom: 1px solid #dedddb
+
+    .rp-plan-about-buttons
+      overflow: hidden
+
+    .action_button_green
+      margin: 0 0 10px 0
+
+    p
+      padding: 0
+      margin: 10px 0 0
+      clear: both
+
+
+#main article.reading_plan_index
+
+  .plan-privacy-buttons
+    display: none
+    background: #fff
+    overflow: auto
+
+    .detail-text
+      font-size: 15px
+      text-align: center
+      margin-bottom: 15px
+      font-weight: bold
+      line-height: 1.4em
+
+    .button-public,
+    .button-private
+      display: block
+      margin-bottom: 10px
+
+  .mobile
+    padding: 0 0 15px
+
+    p
+      margin: 0
+
+    a
+      padding: 0 30px 20px
+
+
+// Plan day view
+
+#sidebar
+  .rp-subscription-info
+    padding: 15px 20px 0
+
+    div,
+    a,
+    span
+      box-sizing: border-box
+
+    .action_button_green
+      margin: 0 0 15px
+
+    .action_button_dark_grey,
+    .plan-privacy-buttons
+      display: none
+
+    .plan-privacy-buttons
+      overflow: hidden
+
+    .detail-text
+      font-size: 15px
+      font-weight: bold
+      text-align: center
+      padding: 0 15px
+      line-height: 1.4em
+      margin-bottom: 10px
+
+    .button-public,
+    .button-private
+      float: left
+      width: 47%
+      margin: 0 0 10px
+
+    .button-public
+      margin: 0 6% 0 0
+
+
+// Plan search results (in RP section and global)
+
+.resource_list
+  .plan
+
+    .search_thumbnail
+      overflow: hidden
+      border-radius: 5px
+      display: block
+      float: left
+      margin: 0 15px 10px 0
+
+      img
+        width: 100px
+
+    p
+      margin: -7px 0 10px
+
+// Plan sample day
+.sample_devotional
+  background-color: white
+  border-radius: 5px
+  padding: 20px 20px 50px 20px
+
+  .video-container
+    width: 300px
+
+  .rp-subscription-info
+    margin-bottom: 20px
+
+  .action_button_dark_grey
+    display: none
+
+  .scripture-links
+    margin: 20px 0
+
+  li
+    list-style: square outside none
+    padding: 7px 0
+    margin: 0 30px

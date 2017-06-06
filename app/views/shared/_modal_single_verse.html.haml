@@ -1,0 +1,50 @@
+- verse = modal_verse
+- twitter_text = truncate(strip_tags(verse.content.gsub(/<span class="label">\d+<\/span>/, '')), :length => 80)
+
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=105030176203924";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+#modal_single_verse.modal{itemscope: true, itemtype: 'http://schema.org/Article'}
+  #modal_overlay.overlay &nbsp;
+  #modal_window.window
+
+    %header
+      %a#modal_logo
+      %div#modal_download.mobile{href:"http://www.bible.com/mobile", target: "_self"}
+        %span.icon
+        %a.action_button_blue{href:"http://www.bible.com/mobile", target: "_self"}
+          = t('mobile page.download now')
+
+      %span#modal_ref= verse.human
+      - if version
+        %span.separator |
+        %span#modal_version
+          = version
+
+      %a.close{} Close
+    %section
+      %p.big{itemprop:'description'}
+        = verse.content.html_safe
+      %p#read_chapter
+        %a.action_button_blue{href: bible_path(reference)}
+          = t("read reference", reference: reference.human)
+
+    %aside
+      %div
+        %a{href: "http://twitter.com/share", class: "twitter-share-button", "data-url" => verse.short_link, "data-counturl" => request.url, "data-text" => twitter_text, via: "YouVersion", "data-count" => "horizontal", "data-related" => "youversion"} Tweet
+        %script{type: "text/javascript", src: "https://platform.twitter.com/widgets.js"}
+
+      %div.fb-like{"data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-send" => "false", "data-layout" => "button_count", "data-width" => "450", "data-show-faces" => "false"}
+
+      %div.gplus
+        %g:plusone{size: "medium"}
+        :javascript
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);

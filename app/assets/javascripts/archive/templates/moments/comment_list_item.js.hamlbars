@@ -1,0 +1,11 @@
+%li.moment-comments-list-comment
+  %span.moment-comments-list-avatar
+    %a{href: "/users/{{user.username}}"}
+      %img.round-avatar{height: "48", src: "{{user.avatars.collection.1.url}}", width: "48"}/
+  %p.moment-comments-list-text
+    %a{href: "/users/{{user.username}}"}
+      {{user.name}}
+    {{content}}
+    %span.moment-comment-dt
+      {{fromNow created_dt}}
+  %a.moment-comment-delete{"data-comment-id" => "{{id}}", href: "#"} x

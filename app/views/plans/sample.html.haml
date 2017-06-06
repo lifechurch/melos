@@ -1,0 +1,136 @@
+- @title = "#{@plan.title}: #{t('plans.day number', day: @presenter.day)} | #{t('plans.title')}"
+- @meta_title = "#{@plan.title}: #{t('plans.day number', day: @presenter.day)}"
+- tw_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 120, version_id: @plan.version_id)))
+- fb_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 200, version_id: @plan.version_id)))
+
+- content_for :meta_description do
+  = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}.."
+
+- content_for :additional_meta do
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
+  - @meta_url = "https://#{request.host_with_port}#{locale_dir}/reading-plans/#{@plan.to_param}/day/#{@presenter.day}"
+  %link{rel: "canonical", href: canonicalHref}
+  %meta{property: "og:title",       content: @meta_title }
+  %meta{property: "og:url",         content: @meta_url}
+  %meta{property: "og:description", content: @plan.about }
+  %meta{name: "twitter:card",             content: "summary"}
+  %meta{name: "twitter:url",              content: @meta_url}
+  %meta{name: "twitter:title" ,           content: @meta_title}
+  %meta{name: "twitter:description",      content: @plan.about}
+  %meta{name: "twitter:site",             content: "@YouVersion"}
+
+- content_for :twitter_meta do
+  %meta{name: "twitter:image", content: tw_image_url}
+
+- content_for :facebook_meta do
+  %meta{property: "og:image", content: fb_image_url}
+
+
+
+
+
+
+.subscription-show
+  - day           = (params[:day] || 1).to_i
+  - content_page  = (params[:content] || 0).to_i
+  - reading       = @plan.day(day)
+  - references    = reading.references(version_id: @presenter.version)
+  .plan-overview
+    .row
+      .header.columns.large-8.medium-8.medium-centered
+        .back
+          = link_to(plans_path, target: "_self") do
+            - if is_rtl?
+              != "&rarr; #{t('pages.home.browse_plans')}"
+            - else
+              != "&larr; #{t('pages.home.browse_plans')}"
+
+        .sample-text= t("plans.sample")
+
+    .row.small-collapse
+      .columns.medium-centered.text-center.img
+        - if @plan.hero_image.present?
+          = image_tag @plan.hero_image.url, class: 'rp-hero-img'
+        - else
+          %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+
+    .row
+      .medium-centered.text-center
+        %h3.plan-title= @plan.name
+
+
+  -# _button code tailored to this page. may want to explore just editing the _button partial if it won't ruin other instances of use
+  .row
+    .columns.medium-8.large-8.medium-centered.text-center
+      - unique_id = rand(100)
+      .rp-subscription-info.buttons-text
+        - if logged_in?
+          -if current_user.subscribed_to?(@plan)
+            = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param, id: @plan.to_param), id: "subscription-read", class: 'solid-button green padded', target: "_self")
+          - else
+            = link_to("#", id: "subscription-start", class: 'solid-button green padded', "ng-click" => "showSubscribeButtons = true", "ng-disabled" => "subscribing") do
+              %span{"ng-hide" => "subscribing"}
+                = t('plans.subscribe to plan')
+              %span.ng-hide{"ng-show" => "subscribing"}
+                = t('ui.loading indicator text')
+
+            .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
+              .text-center
+                %p.detail-text
+                  = t("plans.privacy.visible to friends?")
+                .yes-no-buttons
+                  - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: @plan.to_param, privacy: private_bool) }
+                  %a{"class" => "yes solid-button green", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{@plan.to_param}', false)"}
+                    =t('ui.yes button')
+                  %a{"class" => "no solid-button gray", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{@plan.to_param}', true)"}
+                    =t('ui.no button')
+            .text-center
+              %a{"save-for-later" => true, "save-label" => "#{t('plans.save for later')}", "remove-label" => "#{t('plans.saved for later')}", "saved" => "#{@is_saved}", "base-path" => "#{subscriptions_path(user_id: current_user.to_param)}", "plan-id" => "#{@plan.to_param}",  "check-icon-path" => "#{image_path('icon-plans-checkmark.svg')}" }= t('plans.save for later')
+              != "&bull;"
+              =link_to(t("plans.about this plan"), plan_path(@plan.to_param, locale: I18n.locale), target: "_self")
+
+
+        - else
+          = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(@plan)), class: "solid-button green padded", target: "_self")
+          - if (action_name != 'sample')
+            = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
+
+
+
+  .row.days-container.small-collapse
+    .columns.large-8.medium-8.medium-centered
+      .day-slider.ng-hide{"carousel" => "", "center-mode" => "false", "slides-to-scroll" => "8", "slides-to-show" => "8", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}", "responsive" => "[{ breakpoint: 436, settings: { arrows: false, slidesToShow: 5, slidesToScroll: 5 } },{ breakpoint: 376, settings: { arrows: false, slidesToShow: 4, slidesToScroll: 4 } },{ breakpoint: 321, settings: { arrows: false, slidesToShow: 3, slidesToScroll: 3 } }]"}
+        - (1..@plan.total_days).each do |i|
+          - is_active = i.equal? @presenter.day
+          = link_to(sample_plan_path(@plan.to_param, day: i), {target: "_self"}) do
+            .day{class: "#{is_active ? 'active' : ''}"}
+              .day-top
+
+              .day-bottom
+                %h1.text-center= i
+                %h4.text-center= t("plans.day number", {day: i})
+
+
+  .row
+    .columns.large-8.medium-8.medium-centered
+      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: @plan.total_days).html_safe} &bull; #{t("plans.read today")}"
+
+      %ul.no-bullets.plan-pieces
+        -if presenter.reading.devotional
+          %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
+            = t("plans.devotional")
+        - unless references.empty?
+          - references.each_with_index do |ref|
+            %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
+              - ref_text = ref.reference.safe_human
+              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), { target: "_self" }
+
+
+
+.row.devo-content
+  .columns.large-8.medium-8.medium-centered
+    - if !@presenter.subscription.day(@presenter.day).devotional.nil?
+      %div.devo-header= t("plans.devotional")
+      .devotional
+        = @presenter.subscription.day(@presenter.day).devotional.html_safe

@@ -1,0 +1,76 @@
+// Local parameters
+// version:
+// reference:
+// alt_version:
+// presenter:
+
+:ruby
+  direction = 'rtl' if version.try(:rtl?)
+  reference_without_version = reference.to_s.rpartition(' ').first
+
+- invalid_ref = defined?(invalid) and invalid == true
+
+.fixed.after-header
+  .row.full.b-border.white.collapse.reader-header
+    .medium-12.columns.medium-text-center
+      .bcv-button-box
+
+        -#=reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(!inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+        -#=reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader-locale({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+        -#
+        -#%h1{"ng-hide" => "devotionalActive"}
+        -#  %a.book{:id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks'); focusInput=true;", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').first
+        -#  %a.chapter{:id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').last
+        -#  %a.version{:id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions'); focusInput=true;"}= version.human
+        -#  %a.version.ng-hide{:id => "parallel_reader_version", "ng-bind" => "parallel_reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions', true)", "ng-show" => "isParallelMode"}
+        -#  %span.ng-hide{:id => "copyright_text"}= t("versions.courtesy of", abbreviation: "[abbreviation]", publisher: "[publisher]")
+        -#  %span.ng-hide{:id => "learn_more"}= t("versions.learn more")
+        -#%h1.ng-hide{"ng-show" => "devotionalActive"}
+        -#  %a.devotional
+        -#    =t('plans.devotional')
+        -#
+        -#=reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "(!inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
+        -#=reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "(inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader-locale({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
+
+      - if (controller_name == 'references')
+        %a.icon.parallel-link{"ng-click" => "toggleParallelMode()"}
+          %svg{"enable-background" => "new -322.2 298.5 726.6 612", :viewBox => "-322.2 298.5 726.6 612", :xmlns => "http://www.w3.org/2000/svg"}
+            %path{:d => "M60.2,298.5H22h-344.2v612H22h38.2h344.2v-612H60.2z M22,872.2h-306V336.8H22C22,336.8,22,872.2,22,872.2z\n\t M366.2,872.2h-306V336.8h306V872.2z"}
+      %a.icon.settings-audio.ng-hide{:title => t("ref.listen"), "ng-click" => "togglePanel('showReaderAudio')", "ng-class" => "{ 'active': showReaderAudio }", "ng-show" => "reader_audio.title && !devotionalActive"}
+        %svg{"enable-background" => "new -282 373 47 48", :viewBox => "-282 373 47 48", :xmlns => "http://www.w3.org/2000/svg"}
+          %path{:d => "M-250 421l-1.6-3.4s12.8-5.4 12.8-20.6c0-15.3-12.8-20.5-12.8-20.5l1.6-3.5s15 6.5 15 24-15 24-15 24zm2.7-24c0 9-8.2 12.6-8.2 12.6l-1.6-3.5s5.9-2.4 5.9-9.1c0-7.3-5.8-9.4-5.8-9.4l2.1-3.4c.1 0 7.6 3.6 7.6 12.8zm-32.8 5.6c-1.2 0-1.9-.5-1.9-1.9v-6.5c0-1.1.8-1.8 1.9-1.8h5.3l10.4-10.5v31.1l-10.3-10.4h-5.4z"}
+      %a.icon.settings-font{:title => t("ref.settings"), "ng-click" => "togglePanel('showReaderFont')", "ng-class" => "{ 'active': showReaderFont }"}
+        %svg{"enable-background" => "new -295 390 20 13", :viewBox => "-295 390 20 13", :xmlns => "http://www.w3.org/2000/svg"}
+          %path{:d => "M-290.3 390h1.9l4.6 12.7h-1.9l-1.3-3.8h-5l-1.4 3.8h-1.8l4.9-12.7zm2.9 7.5l-1.9-5.6-2 5.6h3.9zm9.1-.4c.4 0 .6-.2.7-.4.1-.1.1-.3.1-.6 0-.5-.2-.9-.6-1.2-.4-.2-.9-.4-1.6-.4-.8 0-1.4.2-1.7.7-.2.2-.3.6-.4 1.1h-1.4c0-1.1.4-1.9 1.1-2.4s1.5-.7 2.5-.7c1.1 0 2 .2 2.6.6.7.4 1 1.1 1 1.9v5.3c0 .2 0 .3.1.4.1.1.2.1.4.1h.5v1.1c-.2.1-.4.1-.5.1h-.5c-.5 0-.9-.2-1.2-.6-.1-.2-.2-.5-.3-.9-.3.4-.8.8-1.4 1.1-.6.3-1.2.5-1.9.5-.9 0-1.5-.3-2.1-.8-.5-.5-.8-1.2-.8-2 0-.9.3-1.5.8-2s1.2-.8 2.1-.9h2.5zm-3.3 4.2c.3.3.7.4 1.2.4s1.1-.1 1.6-.4c.9-.4 1.3-1.1 1.3-2.1v-1.2c-.2.1-.4.2-.7.3s-.6.1-.9.2l-.9.1c-.6.1-1 .2-1.3.4-.5.3-.7.7-.7 1.3-.1.4.1.7.4 1z"}
+
+
+      %div{"reader-text-settings-panel" => true, "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "show-footnotes" => "showFootnotes", "show-cross-references" => "showCrossReferences", "show-numbers-and-titles" => "showNumbersAndTitles", "ng-show" => "showReaderFont", "toggle-panel" => "togglePanel" }
+      %div{"reader-audio-panel" => true, "ng-show" => "showReaderAudio", "audio-data" => "reader_audio" }
+
+
+    .after-header.stack-content.medium-text-center.medium-center
+      .bcv-button-box.medium-text-center.medium-center
+
+        =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(!inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+        =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader-locale({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+
+        %h1{"ng-hide" => "devotionalActive"}
+          %a.book{:id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks'); focusInput=true;", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').first
+          %a.chapter{:id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').last
+          %a.version{:id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions'); focusInput=true;"}= version.human
+          %a.version.ng-hide{:id => "parallel_reader_version", "ng-bind" => "parallel_reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions', true)", "ng-show" => "isParallelMode"}
+          %span.ng-hide{:id => "copyright_text"}= t("versions.courtesy of", abbreviation: "[abbreviation]", publisher: "[publisher]")
+          %span.ng-hide{:id => "learn_more"}= t("versions.learn more")
+        %h1.ng-hide{"ng-show" => "devotionalActive"}
+          %a.devotional
+            =t('plans.devotional')
+
+        =reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "(!inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
+        =reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "(inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader-locale({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
+
+
+
+%md-progress-linear.ng-hide.reader-progress{"md-mode" => "indeterminate", "ng-show" => "working"}
+
+=render partial: 'shared/book_selector', locals: {presenter: presenter}
+=render partial: 'shared/version_selector/display', locals: {presenter: presenter}

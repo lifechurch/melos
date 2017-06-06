@@ -1,0 +1,1042 @@
+@import compass/css3
+@import reset
+
+// !Body and other global stuff
+
+body
+  background: #EAE7DA image-url("campaigns/kids/body-bg.png") no-repeat center -123px
+
+p
+  font-family: "english", georgia, serif
+  color: #5A4133
+
+
+.kids
+  width: 980px
+  margin: 0 auto
+  padding: 70px 0 0
+  background: image-url("campaigns/kids/yv-logo-sm.png") no-repeat 46% 44px
+
+// !Logo and intro copy
+
+.intro-icon
+  //height: 152px
+  //width: 152px
+  //margin: -90px 0 15px 39.5%
+  display: none
+
+.intro-bible
+  font:
+    family: "proxima-nova", "Helvetica Neue light", Arial, sans-serif
+    size: 56px
+    weight: normal
+  letter-spacing: -.05em
+  color: #525261
+  margin: 0 0 0 307px
+
+.intro-forkids
+  margin: -5px 0 0 435px
+
+.intro-for,
+.intro-kids
+  font:
+    family: "chauncy-pro", sans-serif
+    size: 30px
+  text-transform: uppercase
+  display: inline
+
+.intro-for
+  color: #66AE2B
+  text-align: right
+
+.intro-kids
+  color: #3A8AC6
+  text-align: left
+  font-size: 32px
+
+.intro-yv
+  display: none
+
+.intro-help
+  margin: 20px 0 0 333px
+  font-size: 26px
+  width: 260px
+  text-align: center
+
+.intro-img
+  margin: -238px auto 0
+
+.intro-coming
+  background: image-url("campaigns/kids/coming-bg.png") no-repeat center top
+  width: 300px
+  font-size: 26px
+  padding: 10px 0 30px
+  text-align: center
+  margin: -190px 0 170px 313px
+
+
+// !Notify chunk
+
+.notify
+  text-align: center
+
+.notify-copy
+  font-size: 32px
+
+.notify-note
+  margin-top: 10px
+  margin-bottom: 10px
+
+.notify-box
+  display: table
+  width: 400px
+  margin: 30px auto 0
+
+.notify-box-btn,
+.notify-box-input
+  display: table-cell
+  vertical-align: middle
+
+.notify-box-input
+  width: 300px
+  background: #fff
+  +border-radius(4px 0 0 4px)
+
+.notify-box-btn
+  width: 100px
+  +border-radius(0 4px 4px 0)
+  background-color: #59B200
+
+.notify-input
+  height: 50px
+  font-size: 32px
+  padding: 0 10px
+  border: 0
+
+.notify-button
+  height: 50px
+  padding: 0 15px
+  font-size: 21px
+  background-color: #59B200
+  color: #fff
+  border: 0
+
+.kids-errors p
+  font-size: 22px
+
+
+// !iPad hero screenshot
+
+.hero
+  position: relative
+  background: image-url("campaigns/kids/hero-ipad.png") no-repeat center top
+  width: 980px
+  height: 755px
+  margin-top: 40px
+
+.hero-screen
+  margin: 73px 0 0 88px
+
+.hero-copy
+  padding: 10px
+  background-color: #6D4F3D
+  width: 600px
+  text-align: center
+  margin: 50px auto 0
+  color: #fff
+  font-size: 22px
+
+.alt-hero
+  width: 100%
+  text-align: center
+
+.youtube-embed
+  position: absolute
+  left: 88px
+  top: 73px
+
+.youtube-mobile
+  display: none
+
+// !Screens
+
+.screens
+  margin-top: 50px
+  width: 980px
+
+  img
+    margin: 0 0 16px 16px
+    border: 2px solid #fff
+    +box-shadow(rgba(0,0,0,.15) 0 1px 0)
+    width: 460px
+
+
+// !Features list
+
+.features
+  position: relative
+  width: 947px
+  height: 480px
+  margin: 20px auto 0
+  background: image-url("campaigns/kids/features-bg.png") no-repeat center top
+
+.features-1,
+.features-2,
+.features-3,
+.features-4,
+.features-5
+  font-size: 22px
+  text-align: center
+
+body.body-de
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 21px
+
+body.body-tl
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+  .features-1
+    padding-top: 20px
+  .features-2
+    padding-top: 13px
+  .features-3
+    padding-top: 5px
+  .features-4
+    padding-top: 0px
+  .features-5
+    margin-top: 5px
+
+
+body.body-af
+  .intro-bible img
+    width: 280px
+    margin-top: 28px
+
+body.body-sv
+  .intro-bible img
+    width: 280px
+    
+  .features-2,
+  .features-3
+    font-size: 19px
+
+body.body-hi
+  .features-2
+    padding-top: 10px
+body.body-hi
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 20px
+body.body-pl
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 20px
+body.body-ro
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 20px
+  .features-4
+    padding-top: 5px
+
+body.body-vi
+  p
+    font-family: 'Open Sans', sans-serif
+  .hero-copy
+    font-size: 20px
+
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 16px
+  .features-1
+    padding-top: 12px
+  .features-2
+    padding-top: 17px
+  .features-3
+    padding-top: 5px
+  .features-4
+    padding-top: 21px
+  .features-5
+    font-size: 14px
+    margin-top: 5px
+
+body.body-it
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+  .features-1
+    padding-top: 12px
+  .features-2
+    padding-top: 17px
+  .features-3
+    padding-top: 5px
+  .features-4
+    padding-top: 21px
+  .features-5
+    margin-top: 5px
+
+body.body-th
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 16px
+  .features-1
+    padding-top: 20px
+  .features-2
+    padding-top: 13px
+  .features-3
+    padding-top: 5px
+  .features-4
+    padding-top: 17px
+  .features-5
+    margin-top: 5px
+
+body.body-fr
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 20px
+  .intro-coming
+    font-size: 24px
+  .features-1
+    padding-top: 5px
+  .features-2
+    padding-top: 13px
+  .features-3
+    padding-top: 5px
+  .features-4
+    padding-top: 8px
+  .features-5
+    margin-top: 5px
+
+body.body-es
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    text-align: center
+
+  .features-1
+    padding-top: 10px
+  .features-2
+    padding-top: 5px
+  .features-3
+    padding-top: 10px
+  .features-5
+    margin-top: -5px
+    width: 200px
+    margin-left: 50px
+
+body.body-tr
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 20px
+    text-align: center
+
+  .features-1
+    padding-top: 5px
+  .features-2
+    padding-top: 5px
+  .features-4
+    padding-top: 5px
+  .tr-copy
+    display: inline-block
+
+body.body-ko
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    text-align: center
+
+  .features-1
+    padding-top: 25px
+  .features-2
+    padding-top: 20px
+  .features-3
+    padding-top: 10px
+  .features-4
+    padding-top: 20px
+    font-size: 22px
+  .features-5
+    margin-top: 5px
+
+body.body-zh-CN
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    text-align: center
+
+  .features-1
+    padding-top: 25px
+  .features-2
+    padding-top: 20px
+  .features-3
+    padding-top: 20px
+  .features-4
+    padding-top: 25px
+  .features-5
+    margin-top: 5px
+  .intro-help
+    font-size: 21px
+
+body.body-pt-BR
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    text-align: center
+
+  .features-1
+    padding-top: 10px
+  .features-2
+    padding-top: 10px
+  .features-3
+    padding-top: 5px
+  .features-4
+    padding-top: 10px
+  .features-5
+    margin-top: 5px
+  .intro-help
+    font-size: 21px    
+
+body.body-ru
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    text-align: center
+
+  .features-1
+    padding-top: 20px
+  .features-2
+    padding-top: 5px
+  .features-3
+    padding-top: 5px
+  .features-4
+    padding-top: 9px
+  .features-5
+    margin-top: 3px
+
+body.body-nl
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    text-align: center
+
+  .features-1
+    padding-top: 9px
+  .features-2
+    padding-top: 5px
+  .features-5
+    margin-top: 3px
+
+body.body-id
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 20px
+    text-align: center
+
+  .features-1
+    padding-top: 5px
+  .features-2
+    padding-top: 5px
+  .features-3
+    padding-top: 5px
+  .features-4
+    margin-top: -5px
+  .features-5
+    padding-top: 5px
+
+body.body-ja
+  .features-2
+    padding-top: 10px
+  .features-3
+    width: 270px
+  .features-4
+    padding-top: 10px
+
+body.body-zh-TW
+  .features-1
+    padding-top: 15px
+  .features-2
+    padding-top: 15px
+  .features-3
+    width: 270px
+  .features-4
+    padding-top: 15px
+
+body.body-ar,
+body.body-ur,
+body.body-fa
+  .hero-screen
+    margin: 73px 88px 0 0
+  .intro-bible
+    margin: 0 307px 0 0
+  .intro-help
+    margin: 20px 333px 0 0
+  .intro-coming
+    margin: -190px 313px 170px 0
+  .share-fb,
+  .share-tw,
+  .share-em
+    margin-left: 0px
+    margin-right: 20px
+    padding-left: 0px
+    padding-right: 44px
+
+body.body-fi
+  .features-2
+    font-size: 19px
+    margin-top: 15px
+    margin-left: 3px
+  .features-3
+    font-size: 20px
+    top: 175px
+  .share-fb,
+  .share-tw,
+  .share-em
+    margin-left: 0px
+    margin-right: 20px
+    padding-left: 0px
+    padding-right: 44px
+  .share-fb
+    margin-left: 0
+    background: #3A5998 image-url("campaigns/kids/share-sprite.png") no-repeat 200px 10px
+
+  .share-tw
+    background: #00ACED image-url("campaigns/kids/share-sprite.png") no-repeat 200px -63px
+
+  .share-em
+    background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 210px -137px
+
+  .download-ios
+    margin-right: 0
+    margin-left: 20px
+
+.features-1
+  position: absolute
+  left: 405px
+  top: 30px
+  width: 160px
+
+.features-2
+  position: absolute
+  left: 665px
+  top: 40px
+  width: 220px
+
+.features-3
+  position: absolute
+  left: 373px
+  top: 173px
+  width: 260px
+
+.features-4
+  position: absolute
+  left: 700px
+  top: 235px
+  width: 225px
+
+.features-5
+  position: absolute
+  left: 478px
+  top: 375px
+  width: 300px
+
+// !Download chunk
+
+.download
+  text-align: center
+  margin: 40px 0 60px
+
+.download-ios,
+.download-play,
+.download-amazon,
+.download-apk
+  margin-left: 20px
+  width: 256px
+  height: 50px
+  line-height: 49px
+  display: inline-block
+  +border-radius(4px)
+  font-size: 21px
+  color: #fff
+  text-decoration: none
+  padding-left: 44px
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+
+.download-copy
+  font-size: 32px
+  margin: 30px 0
+
+.download-apk
+  margin-left: -5px
+  margin-top: 20px
+  background-size: 164px 28px
+
+.download-ios
+  margin-left: 0
+
+br.desktop-only
+  display: inline
+
+// !Share chunk
+
+.share
+  text-align: center
+
+.share-fb,
+.share-tw,
+.share-em
+  margin-left: 20px
+  width: 256px
+  height: 50px
+  line-height: 49px
+  display: inline-block
+  +border-radius(4px)
+  font-size: 21px
+  color: #fff
+  text-decoration: none
+  padding-left: 44px
+
+.share-copy
+  font-size: 30px
+  margin: 30px 0
+
+.share-fb
+  margin-left: 0
+  background: #3A5998 image-url("campaigns/kids/share-sprite.png") no-repeat 88px 10px
+
+.share-tw
+  background: #00ACED image-url("campaigns/kids/share-sprite.png") no-repeat 96px -63px
+
+.share-em
+  background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 98px -137px
+
+body.body-es .share-em
+  background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 46px -137px
+
+body.body-ko .share-em
+  background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 92px -137px
+
+body.body-zh-CN .share-em,
+body.body-zh-TW .share-em,
+body.body-zh-HK .share-em
+  background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 85px -137px
+
+body.body-zh-CN .intro-bible
+  margin: 10px 0 0 347px
+
+.body-tl .intro-bible
+  margin: 20px 0 0 307px
+
+// !Logos
+
+.logos
+  background-color: #333
+  margin-top: 60px
+  padding: 30px 10%
+
+.logos-yv
+  margin-left: 5px
+
+.logos-box
+  margin: 0 auto
+  text-align: center
+
+.logos-copy
+  color: #fff
+  font-size: 22px
+  display: inline-block
+  padding: 0 20px 0 5px
+
+.tr-copy
+  display: none
+  color: #fff
+  font-size: 22px
+  padding: 0 20px
+
+// !Retina stuff for hi-res dee-vices
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+
+  .kids
+    background: image-url("campaigns/kids/yv-logo-sm@2x.png") no-repeat 46% 44px
+    background-size: 142px 20px
+
+  .intro-coming
+    background: image-url("campaigns/kids/coming-bg@2x.png") no-repeat center top
+    background-size: 299px 57px
+
+  .features
+    background: image-url("campaigns/kids/features-bg@2x.png") no-repeat center top
+    background-size: 947px 479px
+
+  .share-fb
+    background: #3A5998 image-url("campaigns/kids/share-sprite.png") no-repeat 88px 10px
+    background-size: 34px 200px
+
+  .share-tw
+    background: #00ACED image-url("campaigns/kids/share-sprite.png") no-repeat 96px -63px
+    background-size: 34px 200px
+
+  .share-em
+    background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 98px -137px
+    background-size: 34px 200px
+
+  .body-es .share-em
+    background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 46px -137px
+    background-size: 34px 200px
+
+  .body-ko .share-em
+    background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 92px -137px
+
+  .body-zh-CN .share-em
+    background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 85px -137px
+
+  .body-zh-CN .intro-bible
+    margin: 10px 0 0 347px
+
+// !------- Mobile --------
+
+
+// !Media queries for mobile dee-vices
+
+@media only screen and (max-width : 568px)
+
+  body
+    background: image-url("campaigns/kids/jesus.png") no-repeat center 105px #EAE7DA
+    background-image: none
+
+  .kids
+    width: auto
+    margin: 0
+    padding: 15px
+    background-position: center 10px
+
+  // !Logo and intro copy
+
+  .intro-bible
+    font:
+      size: 44px
+    letter-spacing: -.05em
+    margin: 5% 0 0
+    text-align: center
+
+  body.body-zh-CN .intro-bible
+    margin: 5% 0 0
+
+  body.body-tl .intro-bible
+    margin: 40px 0 0 0px
+
+  .intro-forkids
+    margin: -2% 0 0 35%
+
+  .intro-for,
+  .intro-kids
+    font-size: 30px
+
+  .intro-help
+    font-size: 24px
+    margin: 0
+    padding: 0 0
+    text-align: center
+    width: auto
+
+  .intro-img
+    display: none
+
+  .intro-coming
+    width: auto
+    font-size: 24px
+    margin: 10px 0 30px
+    height: 60px
+    line-height: 55px
+    padding: 0
+
+  .intro-icon
+    margin: 25px auto 25px
+    display: block
+
+  // Arabic
+  body.body-ar
+    .hero-screen
+      //margin: 73px 88px 0 0
+    .intro-bible
+      margin: 20px 50px 0 0
+    .intro-forkids
+      display: none
+    .intro-icon
+      margin: 0px auto 25px
+    .intro-help
+      margin: 0
+    .intro-coming
+      margin: 10px 0 30px
+    .share-fb,
+    .share-tw,
+    .share-em
+      margin-left: 0px
+      margin-right: 0px
+      padding-left: 0px
+      padding-right: 0px
+
+    .share-fb
+      background: #3A5998 image-url("campaigns/kids/share-sprite.png") no-repeat 280px 10px
+
+    .share-tw
+      background: #00ACED image-url("campaigns/kids/share-sprite.png") no-repeat 280px -63px
+
+    .share-em
+      background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 280px -137px
+
+    .download-ios
+      margin-left: 0
+
+  body.body-tr
+    .tr-copy
+      display: block
+      margin: 20px 0
+      font-size: 18px
+
+  // !Download chunk
+
+  .download
+    text-align: center
+    margin: 40px 0 40px
+
+  .download-ios,
+  .download-play,
+  .download-amazon,
+  .download-apk
+    margin: 0 0 5px
+    width: auto
+    display: block
+    padding-left: 44px
+
+  .download-copy
+    font-size: 32px
+    margin: 0
+
+  .download-apk
+    margin-left: 0
+    margin-top: 0px
+    background-size: 164px 28px
+
+  .download-ios
+    margin-left: 0
+
+  br.desktop-only
+    display: none
+
+  // !iPad hero screenshot
+
+  .hero
+    background: none
+    width: auto
+    height: auto
+    margin-top: 20px
+
+  .hero-screen
+    display: none
+
+  .hero-copy
+    width: auto
+    margin: 0 auto
+    font-size: 15px
+
+  .alt-hero img
+    width: 80%
+    margin-bottom: 40px
+
+  .alt-hero
+    text-align: center
+
+  .youtube-embed
+    display: none!important
+
+  .youtube-mobile
+    display: block!important
+    width: auto
+    position: relative
+    padding-bottom: 56.25%
+    padding-top: 30px
+    height: 0
+    margin: 20px 0
+    overflow: hidden
+
+  .youtube-mobile iframe,
+  .youtube-mobile object,
+  .youtube-mobile embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  // !Screens
+
+  .screens
+    margin-top: 0
+    width: auto
+
+    img
+      margin: 0 0 10px
+      border: 0
+      +box-shadow(none)
+      width: 100%
+
+
+  // !Features list
+
+  .features
+    position: static
+    width: auto
+    margin: 20px auto 0
+    background: none
+    height: auto
+
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    margin: 0 auto 10px
+    padding-bottom: 10px
+    border-bottom: 1px dotted #D7B880
+
+  .features-1
+    position: static
+    width: 90%
+
+  .features-2
+    position: static
+    width: 90%
+
+  .features-3
+    position: static
+    width: 90%
+
+  .features-4
+    position: static
+    width: 90%
+
+  .features-5
+    position: static
+    width: 90%
+
+
+  // !Share chunk
+
+  .share-fb,
+  .share-tw,
+  .share-em
+    margin: 0 auto 5px
+    width: 100%
+    display: block
+    font-size: 21px
+    color: #fff
+    padding-left: 0
+    line-height: 52px
+
+  .share-copy
+    font-size: 24px
+    margin: 30px auto 14px
+    width: 90%
+
+  .share-fb
+    background-image: none
+
+  .share-tw
+    background-image: none
+
+  .share-em, .body-es .share-em
+    background-image: none  !important
+
+  .share-em, .body-ko .share-em
+    background-image: none  !important
+
+  .share-em, .body-zh-CN .share-em
+    background-image: none  !important
+
+
+  // !Logos
+
+  .logos
+    margin-top: 30px
+    padding: 20px 0
+    overflow: hidden
+    min-width: 0
+
+  .logos-box
+    margin: 0
+    text-align: center
+    width: auto
+
+  .logos-copy
+    font-size: 18px
+    display: block
+    margin: 20px 0
+
+  // !Retina stuff for hi-res dee-vices
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+
+    body
+      background: image-url("campaigns/kids/jesus@2x.png") no-repeat center 105px #EAE7DA
+      background-image: none
+      background-size: 480px 190px
+
+@media only screen and (max-width: 568px) and (min-width: 400px)
+
+  .intro-forkids
+    margin: -2% 0 0 45%

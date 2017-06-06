@@ -1,0 +1,28 @@
+- # sub template should define a @setting_selected variable with allowed values of:
+- # :edit, :notifications, :email, :password, :devices, :account, :vod_subscriptions
+- # found in users/_mobile_menu partial
+- current_user ||= @current_user
+
+- content_for :title do
+  = t('users.settings')
+
+- content_for :sidebar do
+  = render partial: "widgets/settings", locals: {current_user: current_user} if current_user.present?
+
+-content_for :secondary_header do
+  = render partial: "users/header", locals: { user: @current_user } if @current_user.present?
+
+= render layout: "layouts/base" do
+  -#
+    %div.settings-header
+      - if current_user.present?
+        %img.settings-header-avatar{src: current_user.user_avatar_url["px_128x128"]}
+        %h1.settings-header-name
+          = current_user.name
+        %a{href: user_path(current_user.username)} 
+          = t('users.go to your profile')
+
+  .row
+    .columns.medium-12
+      -# = render partial: "users/mobile_menu", locals: {selected: @setting_selected} if current_user.present?
+      = yield

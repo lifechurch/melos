@@ -1,0 +1,420 @@
+- t = Proc.new do |key, options={}|
+  - I18n.t(key, options.merge(:locale => @locale))
+:ruby
+  meta_title        = t.call("meta.kids_app.title")
+  meta_description  = t.call("meta.kids_app.description")
+  meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  i18n_image_dir  = ""
+  i18n_css_class = "en"
+  prelaunch = false
+  youtube_url = "//www.youtube.com/embed/qNH48cWVoos?rel=0"
+  dir = "ltr"
+  facebook_locale = "en_US"
+  if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
+    i18n_css_class = "es"
+    i18n_image_dir = "/es"
+    meta_url = "#{request.protocol}#{request.host_with_port}/es/kids"
+    facebook_locale = "es_ES"
+    youtube_url = "//www.youtube.com/embed/2iWQlDXReYI?rel=0"
+    # prelaunch = true
+  elsif (I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN")) then
+    i18n_css_class = "zh-CN"
+    i18n_image_dir = "/zh-CN"
+    meta_url = "#{request.protocol}#{request.host_with_port}/zh-CN/kids"
+    facebook_locale = "zh_CN"
+    youtube_url = ""
+    # prelaunch = true
+  elsif (I18n.locale.to_s.eql?("zh-TW")) then
+    i18n_css_class = "zh-TW"
+    i18n_image_dir = "/zh-TW"
+    meta_url = "#{request.protocol}#{request.host_with_port}/zh-TW/kids"
+    facebook_locale = "zh_TW"
+    youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("ko")) then
+    i18n_css_class = "ko"
+    i18n_image_dir = "/ko"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ko/kids"
+    facebook_locale = "ko_KR"
+    youtube_url = ""
+    # prelaunch = true
+  elsif (I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR")) then
+    i18n_css_class = "pt-BR"
+    i18n_image_dir = "/pt-BR"
+    meta_url = "#{request.protocol}#{request.host_with_port}/pt-BR/kids"
+    facebook_locale = "pt_BR"
+    youtube_url = ""
+    # prelaunch = true
+  elsif I18n.locale.to_s.eql?("nl") then
+    i18n_css_class = "nl"
+    i18n_image_dir = "/nl"
+    meta_url = "#{request.protocol}#{request.host_with_port}/nl/kids"
+    facebook_locale = "nl"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("de") then
+    i18n_css_class = "de"
+    i18n_image_dir = "/de"
+    meta_url = "#{request.protocol}#{request.host_with_port}/de/kids"
+    facebook_locale = "de"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("af") then
+    i18n_css_class = "af"
+    i18n_image_dir = "/af"
+    meta_url = "#{request.protocol}#{request.host_with_port}/af/kids"
+    facebook_locale = "af"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("th") then
+    i18n_css_class = "th"
+    i18n_image_dir = "/th"
+    meta_url = "#{request.protocol}#{request.host_with_port}/th/kids"
+    facebook_locale = "th"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("tl") then
+    i18n_css_class = "tl"
+    i18n_image_dir = "/tl"
+    meta_url = "#{request.protocol}#{request.host_with_port}/tl/kids"
+    facebook_locale = "tl"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("fr") then
+    i18n_css_class = "fr"
+    i18n_image_dir = "/fr"
+    meta_url = "#{request.protocol}#{request.host_with_port}/fr/kids"
+    facebook_locale = "fr"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("ru") then
+    i18n_css_class = "ru"
+    i18n_image_dir = "/ru"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ru/kids"
+    facebook_locale = "ru"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("id") then
+    i18n_css_class = "id"
+    i18n_image_dir = "/id"
+    meta_url = "#{request.protocol}#{request.host_with_port}/id/kids"
+    facebook_locale = "id"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("it") then
+    i18n_css_class = "it"
+    i18n_image_dir = "/it"
+    meta_url = "#{request.protocol}#{request.host_with_port}/it/kids"
+    facebook_locale = "it"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("tr") then
+    i18n_css_class = "tr"
+    i18n_image_dir = "/tr"
+    meta_url = "#{request.protocol}#{request.host_with_port}/tr/kids"
+    facebook_locale = "tr"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("ja") then
+    i18n_css_class = "ja"
+    i18n_image_dir = "/ja"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ja/kids"
+    facebook_locale = "ja"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("ar") then
+    i18n_css_class = "ar"
+    i18n_image_dir = "/ar"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ar/kids"
+    facebook_locale = "ar"
+    youtube_url = ""
+    dir = "rtl"
+  elsif I18n.locale.to_s.eql?("fa") then
+    i18n_css_class = "fa"
+    i18n_image_dir = "/fa"
+    meta_url = "#{request.protocol}#{request.host_with_port}/fa/kids"
+    facebook_locale = "fa"
+    youtube_url = ""
+    dir = "rtl"
+  elsif I18n.locale.to_s.eql?("ur") then
+    i18n_css_class = "ur"
+    i18n_image_dir = "/ur"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ur/kids"
+    facebook_locale = "ur"
+    youtube_url = ""
+    dir = "rtl"
+  elsif I18n.locale.to_s.eql?("vi") then
+    i18n_css_class = "vi"
+    i18n_image_dir = "/vi"
+    meta_url = "#{request.protocol}#{request.host_with_port}/vi/kids"
+    facebook_locale = "vi"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("hi") then
+    i18n_css_class = "hi"
+    i18n_image_dir = "/hi"
+    meta_url = "#{request.protocol}#{request.host_with_port}/hi/kids"
+    facebook_locale = "hi"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("pl") then
+    i18n_css_class = "pl"
+    i18n_image_dir = "/pl"
+    meta_url = "#{request.protocol}#{request.host_with_port}/pl/kids"
+    facebook_locale = "pl"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("ro") then
+    i18n_css_class = "ro"
+    i18n_image_dir = "/ro"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ro/kids"
+    facebook_locale = "ro"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("fi") then
+    i18n_css_class = "fi"
+    i18n_image_dir = "/fi"
+    meta_url = "#{request.protocol}#{request.host_with_port}/fi/kids"
+    facebook_locale = "fi_FI"
+    youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("zh-HK")) then
+    i18n_css_class = "zh-HK"
+    i18n_image_dir = "/zh-HK"
+    meta_url = "#{request.protocol}#{request.host_with_port}/zh-HK/kids"
+    facebook_locale = "zh_HK"
+    youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("sv")) then
+    i18n_css_class = "sv"
+    i18n_image_dir = "/sv"
+    meta_url = "#{request.protocol}#{request.host_with_port}/sv/kids"
+    facebook_locale = "sv_SE"
+    youtube_url = ""
+  end
+
+
+!!! 5
+%html{dir: dir}
+  %head
+    %title= "#{t.call("meta.kids_app.title")} - #{t.call("meta.best kids app")} #{t.call('kids.free download')} | #{t.call('kids.feature 2')} | Android, iPhone, iPad, Android tablets"
+    %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %meta{charset:"utf-8"}
+    %meta{'http-equiv' => 'content-language', :content => I18n.locale.downcase}
+    %meta{name: "viewport",       content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
+    %meta{name: "description",    content: meta_description}
+    %meta{name: "url",            content: meta_url}
+    %meta{property: "og:title",       content: meta_title }
+    %meta{property: "og:url",         content: meta_url }
+    %meta{property: "og:description", content: meta_description }
+    %meta{property: "og:image", content: "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}"}
+    %meta{property: "og:image", content: "#{url_for(asset_path('/campaign/kids/hero.png'))}"}
+    %meta{property: "og:locale", content: facebook_locale}
+    %meta{property: "og:locale:alternate", content: "en_US"}
+    %meta{property: "og:locale:alternate", content: "es_ES"}
+    %meta{property: "og:locale:alternate", content: "ko_KR"}
+    %meta{property: "og:locale:alternate", content: "zh_CN"}
+    %meta{property: "og:locale:alternate", content: "zh_TW"}
+    %meta{property: "og:locale:alternate", content: "pt_BR"}
+    %meta{property: "og:locale:alternate", content: "ru_RU"}
+    %meta{property: "og:locale:alternate", content: "nl_NL"}
+    %meta{property: "og:locale:alternate", content: "de_DE"}
+    %meta{property: "og:locale:alternate", content: "af_ZA"}
+    %meta{property: "og:locale:alternate", content: "tl_PH"}
+    %meta{property: "og:locale:alternate", content: "fr_FR"}
+    %meta{property: "og:locale:alternate", content: "ar_AR"}
+    %meta{property: "og:locale:alternate", content: "id_ID"}
+    %meta{property: "og:locale:alternate", content: "it_IT"}
+    %meta{property: "og:locale:alternate", content: "th_TH"}
+    %meta{property: "og:locale:alternate", content: "tr_TR"}
+    %meta{property: "og:locale:alternate", content: "fa_IR"}
+    %meta{property: "og:locale:alternate", content: "ur_PK"}
+    %meta{property: "og:locale:alternate", content: "ja_JP"}
+    %meta{property: "og:locale:alternate", content: "vi_VN"}
+    %meta{property: "og:locale:alternate", content: "hi_IN"}
+    %meta{property: "og:locale:alternate", content: "pl_PL"}
+    %meta{property: "og:locale:alternate", content: "ro_RO"}
+    %meta{property: "og:locale:alternate", content: "fi_FI"}
+    %meta{property: "og:locale:alternate", content: "zh_HK"}
+    %meta{property: "og:locale:alternate", content: "sv_SE"}
+    %meta{name: "twitter:card",             content: "app"}
+    %meta{name: "twitter:site",             content: "@BibleAppForKids"}
+    %meta{name: "twitter:description",      content: meta_description}
+    %meta{name: "twitter:app:name:iphone", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:iphone", content: "668692393"}
+    %meta{name: "twitter:app:name:ipad", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:ipad", content: "668692393"}
+    %meta{name: "twitter:app:name:googleplay", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:googleplay", content: "com.bible.kids"}
+    %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
+    %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en-gb"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ko/kids",:rel=>"alternate",:hreflang=>"ko"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-TW/kids",:rel=>"alternate",:hreflang=>"zh-tw"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/kids",:rel=>"alternate",:hreflang=>"pt-br"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ru/kids",:rel=>"alternate",:hreflang=>"ru"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/nl/kids",:rel=>"alternate",:hreflang=>"nl"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/de/kids",:rel=>"alternate",:hreflang=>"de"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/af/kids",:rel=>"alternate",:hreflang=>"af"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/th/kids",:rel=>"alternate",:hreflang=>"th"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/tl/kids",:rel=>"alternate",:hreflang=>"tl"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/fr/kids",:rel=>"alternate",:hreflang=>"fr"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ar/kids",:rel=>"alternate",:hreflang=>"ar"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/id/kids",:rel=>"alternate",:hreflang=>"id"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/it/kids",:rel=>"alternate",:hreflang=>"it"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/tr/kids",:rel=>"alternate",:hreflang=>"tr"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/fa/kids",:rel=>"alternate",:hreflang=>"fa"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ur/kids",:rel=>"alternate",:hreflang=>"ur"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ja/kids",:rel=>"alternate",:hreflang=>"ja"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/vi/kids",:rel=>"alternate",:hreflang=>"vi"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/hi/kids",:rel=>"alternate",:hreflang=>"hi"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/pl/kids",:rel=>"alternate",:hreflang=>"pl"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ro/kids",:rel=>"alternate",:hreflang=>"ro"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/fi/kids",:rel=>"alternate",:hreflang=>"fi"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/hk/kids",:rel=>"alternate",:hreflang=>"zh-hk"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/sv/kids",:rel=>"alternate",:hreflang=>"sv"}
+
+    - if I18n.locale.to_s.eql?("vi") then
+      %link{:href=> "https://fonts.googleapis.com/css?family=Open+Sans", :rel=>"stylesheet"}
+
+    - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/kids"}
+
+    = stylesheet_link_tag "campaigns/kids"
+    = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
+
+    :javascript
+      try{Typekit.load();}catch(e){}
+
+  %body{:class => "body-" + i18n_css_class}
+    = render '/shared/google_analytics'
+
+    .kids
+
+      -# !Logo and intro copy
+      -# This is way too hackish, but it works for now I suppose
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro") or I18n.locale.to_s.eql?("fi") or I18n.locale.to_s.eql?("zh-HK")   or I18n.locale.to_s.eql?("sv"))
+        %h1.intro-bible
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
+        .intro-forkids
+          %h2.intro-for
+            &nbsp;
+          %h2.intro-kids
+            &nbsp;
+      - else
+        %h1.intro-bible
+          = t.call('kids.bible app')
+        .intro-forkids
+          %h2.intro-for
+            = t.call('kids.for')
+          %h2.intro-kids
+            = t.call('kids.kids')
+
+      %h3.intro-yv
+        = t.call('kids.by youversion')
+
+      %img.intro-icon{ src: "/assets/campaigns/kids/app-icon.png", alt: t.call('kids.app icon')}
+
+      %p.intro-help
+        = raw t.call('kids.help your kids')
+
+      %img.intro-img{ src: "/assets/campaigns/kids/hdr-jesus.png", alt: t.call('kids.jesus and friends')}
+
+      %p.intro-coming
+        = t.call('kids.free download')
+
+      -# !App store buttons
+      - if not prelaunch
+        .download
+          %a.download-ios{href: t.call('kids.links.apple'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
+            = t.call('kids.app store')
+          %a.download-play{href: t.call('kids.links.google'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
+            = t.call('kids.google play')
+          -if I18n.locale.to_s.eql?("zh-CN")
+            %br.desktop-only
+            %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
+              = t.call('kids.free download')
+          -if I18n.locale.to_s.eql?("ru")
+            %br.desktop-only
+            %a.download-apk{href: "https://store.yandex.ru/", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px"}
+              = t.call('kids.free download')
+
+          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
+            = t.call('kids.amazon')
+
+
+      -# !iPad hero screenshot
+      -#- if not i18n_image_dir.present?
+      .hero
+        = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "hero-screen", alt: t.call('kids.story text 1')
+        - if youtube_url.present?
+          .youtube-embed
+            %iframe{width:"805", height:"607", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
+
+        %p.hero-copy
+          = t.call('kids.interact text')
+
+      - if youtube_url.present?
+        .youtube-mobile
+          %iframe{width:"100%", height:"auto", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
+
+      -#- else
+      -#  .alt-hero
+      -#    = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t.call('kids.bible app')
+      -#    %p.hero-copy
+      -#      = t.call('kids.interact text')
+
+      -# !Smaller screenshots
+
+      .screens
+        = image_tag "campaigns/kids/screens-1.jpg", alt: t.call('kids.story text 2')
+        = image_tag "campaigns/kids/screens-2.jpg", alt: t.call('kids.story text 3')
+        = image_tag "campaigns/kids/screens-3.jpg", alt: t.call('kids.story text 4')
+        = image_tag "campaigns/kids/screens-4.jpg", alt: t.call('kids.story text 5')
+
+      -# !Features list
+
+      .features
+        %p.features-1
+          != t.call('kids.feature 1')
+        %p.features-2
+          != t.call('kids.feature 2')
+        %p.features-3
+          != t.call('kids.feature 3')
+        %p.features-4
+          != t.call('kids.feature 4')
+        %p.features-5
+          != t.call('kids.feature 5')
+
+      / -# !App store buttons
+      / .download
+      /   %a.download-ios{href: "#"}
+      /     Available on the App store
+      /   %a.download-play{href: "#"}
+      /     Get it on Google Play
+      /   %a.download-amazon{href: "#"}
+      /     Available at Amazon Appstore for Android
+
+
+      -# !Share chunk
+
+      = render "campaigns/kids/share"
+
+    -# !Brought to you by
+
+    .logos
+      .logos-box
+        %a{href: "http://bible.com"}
+          = image_tag url_for(image_path(localized_bible_icon(58))), class: "logos-yv", alt: t.call('kids.partner.youversion')
+        %a{href: "http://bible.com"}
+          = image_tag "campaigns/kids/logos-yv.png", class: "logos-yv", alt: t.call('kids.partner.youversion')
+        %p.logos-copy
+          = t.call('kids.partner.in partnership')
+        %a{href: "http://onehope.net", id: "oh-logo"}
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-oh.png", class: "logos-oh", alt: t.call('kids.partner.one hope')
+        %p.hide.tr-copy
+          ortaklığıyla
+
+    %script{type: "application/ld+json"}
+      {
+      "@context": "http://schema.org/",
+      "@type": "MobileApplication",
+      "name": "#{t.call('meta.kids_app.title')}",
+      "image": "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}",
+      "description": "#{t.call('meta.kids_app.description')}",
+      "aggregateRating":{
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "73,085"
+      },
+      "offers":{
+      "@type": "Offer",
+      "price": "0"
+      },
+      "operatingSystem": "Android, iPhone, iPad"
+      }

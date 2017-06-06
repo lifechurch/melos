@@ -1,0 +1,25 @@
+-# Used in 
+-# shared/version_selector/display
+-# shared/version_selector/all_versions
+
+-# Local variables
+-# presenter  (required)
+-# versions   (required)
+
+- ref_str = presenter.reference_string
+- book, chapter = ref_str.book, ref_str.chapter
+- verses = ref_str['verses']
+- locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+- versions.each do |v|
+  - version = v.abbreviation.downcase
+  - version_id = v.id
+  - version_meta = v.to_meta
+  - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{version}"
+  - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{verses.to_s}.#{version}" if verses.present?
+
+  %li{"data-version" => version_id, "data-abbrev" => version, "data-meta" => version_meta, "data-title" => v.title}
+    %a{href: url }= v.human
+
+    -#%td{class: v.audio_version? ? "audio" : ""}
+    -#  %a{href: url}
+    -#    %div= v.title

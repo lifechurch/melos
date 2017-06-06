@@ -1,0 +1,33 @@
+:ruby
+  subscription = @presenter.subscription
+  @referrer = request.referrer
+
+.row.plan-settings-header
+  - if @referrer.present?
+    %div
+      = link_to(@referrer, class: '', target: "_self") do
+        - if is_rtl?
+          != "&rarr; #{t('plans.back')}"
+        - else
+          != "&larr; #{t('plans.back')}"
+  %div.text-center
+    - if subscription.list_image.present?
+      = image_tag subscription.list_image.url
+    - else
+      %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+
+  %div.text-center
+    %h3.plan-title= subscription.name
+
+.row.rp-settings-nav.b-border
+  .columns
+    - settings_href = edit_subscription_path(user_id: current_user.to_param, id: subscription)
+    - cal_href = calendar_subscription_path(user_id: current_user.to_param, id: subscription)
+    - about_href = subscriptions_path(user_id: current_user.to_param)
+
+    - is_settings = action_name == 'edit'
+    - is_cal = action_name == 'calendar'
+
+    = link_to t("plans.settings"), settings_href, {class: "icon plan-settings" + (is_settings ? ' active' : ''), target: "_self"}
+    = link_to t("plans.month"), cal_href, {class: "icon plan-calendar" + (is_cal ? ' active' : ''), target: "_self"}
+    = link_to t("plans.about this plan"), about_href, {class: "icon plan-about", target: "_self"}

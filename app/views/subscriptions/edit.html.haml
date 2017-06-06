@@ -1,0 +1,75 @@
+:ruby
+  @title = t("plans.plan settings")
+  subscription = @presenter.subscription
+  html_attributes(id: "subscriptions-edit")
+
+.row
+  .columns.large-8.large-centered.plan-settings
+    =render partial: "editHeader"
+    .row.pad-row.plan-settings-privacy-box.b-border
+      .columns.medium-8
+        %h3
+          = t("plans.privacy title")
+        -if subscription.public?
+          %p= t("plans.privacy description.public")
+        -else
+          %p= t("plans.privacy description.private")
+
+      .columns.medium-4
+        -if subscription.public?
+          = button_to(t('plans.make private'), subscription_path(user_id: current_user.to_param, id: subscription,make_private: "true"), method: :put, class: 'solid-button green')
+        -else
+          = button_to(t('plans.make public'), subscription_path(user_id: current_user.to_param, id: subscription,make_public: "true"), method: :put, class: 'solid-button green')
+
+
+    .row.pad-row.plan-settings-email-box.b-border
+      .columns.medium-8
+        %h3
+          = t("plans.email delivery")
+        %p
+          = t("plans.email delivery text")
+
+      .columns.medium-4
+        = button_to(subscription.delivered_by_email? ? t('plans.email_off') : t('plans.email_on'),  subscription_path(user_id: current_user.to_param, id: subscription, email_delivery: (!subscription.delivered_by_email?).to_s), method: :put, class: 'solid-button green')
+        -if subscription.delivered_by_email?
+          %p
+            = subscription.user.email
+            = link_to(t("plans.email edit"), user_email_path(current_user), target: "_self")
+
+          = form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
+            %h4.info.text-left= t("plans.delivery time")
+            %select{onChange: "this.form.submit()", name: "email_delivery"}
+              - ["morning","afternoon","evening"].each do |time|
+                %option{value: time, selected: time == subscription.email_delivery_time_range}= t("plan.#{time}")
+            %h4.info.text-left= t("plans.delivery version")
+            %select{onChange: "this.form.submit()", name: "version"}
+              - Version.all_by_language.each do |k, v|
+                %optgroup{label: Version.languages[k]}
+                - v.each do |v|
+                  %option{value: v.id, selected: v.id == subscription.email_delivery_version_id}= v
+    .row.pad-row.plan-settings-catchup-box.b-border
+      .columns.medium-8
+        %h3
+          = t("plans.are you behind")
+        - catch_up_text = subscription.last_completed_date ? t("plans.catch up text", last_completed_day: subscription.last_completed_day) : t("plans.catch up description only")
+        %p
+          = catch_up_text
+      .columns.medium-4
+        = button_to(t('plans.catch me up'), subscription_path(user_id: current_user.to_param, id: subscription,catch_up: "true"), method: :put, class: 'solid-button green')
+
+    .row.pad-row.plan-settings-doover-box.b-border
+      .columns.medium-8
+        %h3
+          = t("plans.do you want to reset")
+        %p
+          = t("plans.restart description")
+      .columns.medium-4
+        = button_to(t('plans.restart'), subscription_path(user_id: current_user.to_param, id: subscription,restart: "true"), method: :put, class: 'solid-button green', "data-confirm-text" => t("confirm danger"))
+
+    .row.pad-row.plan-settings-stop-box
+      .columns.small-12
+        = button_to(t('plans.stop reading'),subscription_path(user_id: current_user.to_param,id: subscription, stop: "true"), method: :put, id: "subscription-destroy", class: 'text-red', "data-confirm-text" => t("confirm danger"))
+
+  -#
+    .columns.medium-4
+      = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}

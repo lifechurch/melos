@@ -1,0 +1,79 @@
+:ruby
+  # Locals params
+  #  friends: array of Friend instances
+  #  user: a User instance of who's friends are being displayed
+- if current_user_is? @user
+  %h1
+    =t("friendships.requests title")
+  - if @friendships.incoming.present?
+    .friend-card-list
+      - @friendships.incoming.each do |user|
+        - avatar = user.avatars.lg_avatar
+        - friend_id = user.id
+        .friend-card-box
+          = image_tag avatar.url, class: "friend-card-img"
+          = link_to(user.name, user_path(user.to_param), target:"_self", class: "friend-card-name", title: t("users.profile.visit friend", friend: user.name))
+          .friend-card-status
+            = form_tag friendships_url(user_id: user.id) do
+              = button_tag t("friendships.form.accept button"), class: 'green'
+            != "&nbsp;/&nbsp;"
+            = form_tag friendship_url(user.id), method: "DELETE" do
+              = button_tag t("friendships.form.ignore button"), class: 'red'
+  - else
+    .blank-slate-friend-requests
+      %p= t("friendships.requests none")
+
+.friend-search
+  %form{action: search_path(category: 'users'), method: "GET"}
+    %input{type: 'search', name:"q", placeholder: t("friendships.search by name")}
+    %input.postfix.solid-button.green{type: 'submit', value: "#{t('friendships.find friends title')}"}
+
+- if @friends.present?
+  %h1
+    =t("friendships.status.friends")
+  .friend-card-list
+    - friends.each do |friend|
+      - avatar = friend.avatars.lg_avatar
+      - friend_id = friend.id
+      - unless current_auth.user_id == friend_id # This is the current user, for now don't display this user.
+        .friend-card-box
+          = image_tag avatar.url, class: "friend-card-img"
+          = link_to(friend.name, user_path(friend.to_param), target: "_self", class: "friend-card-name", title: t("users.profile.visit friend", friend: friend.name))
+          .friend-card-status
+            - if current_user_is? user # This is a list of my friends, show a delete friend link
+              = link_to(t("friendships.status.friends"), friend_path(friend.id), method: :delete, confirm: "Are you sure?", class: "friend-card-delete", title: t("friendships.form.remove friend button title"), target: "_self", "hover-link" => true, "link-text" => "#{t("friendships.status.friends")}", "hover-text" => "#{t("friendships.form.remove friend button")}")
+
+            - else # This is a list of another users friends, show friendship status and/or display a link to friend them
+              - if current_user.friends_with? friend.id
+                %span.friend-detail-status You're friends!
+              - elsif current_user.enable_friendships?
+                = link_to(t("friendships.form.add friend button"), offer_friendships_path(user_id: friend.id) , method: :post, class: "friend-card-add", title: "Send this person a friend request", target: "_self")
+  .load-more-link
+    = link_to(t("moments.action.load more"),"#", id: "load-more", class: "dark", "data-next-url" => "#{_list_user_friends_path(user_id: @user.to_param, page: friends.next_page)}") if friends.next_page
+
+- else # I don't have friends
+  %p.friends-none
+    = t("friends.none me")
+    - #%a{href: "#", class: "friends-count-find action_button_blue"}
+    - #  = t("friends.find friends")
+
+:javascript
+  $('#load-more').click(function (ev) {
+      ev.preventDefault();
+
+      var clicked = $("#load-more");
+          clicked.text("Loading...")
+      var target  = clicked.parent();
+
+      $.ajax({
+        type: "GET",
+        dataType: "html",
+
+        url: clicked.data("next-url"),
+
+        success: function (data) {
+          clicked.remove();
+          target.append(data);
+        }
+    });
+  });

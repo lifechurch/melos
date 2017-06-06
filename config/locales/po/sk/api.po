@@ -1,0 +1,381 @@
+# Slovak translations for Backend (YouVersion).
+# Copyright (C) 2017 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:19-0609\n"
+"PO-Revision-Date: 2017-01-03 11:19-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: sk\n"
+"Language-Team: sk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: sk\n"
+"Language-Team: sk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: sk\n"
+"Language-Team: sk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Získali ste odznak <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "Používateľ {name} získal odznak <b>{title}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Stiahli ste si preklad, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "Používateľ {name} si stiahol preklad, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Pridali ste si <b> {reference_human} {version_abbreviation}</b> medzi svoje záložky"
+
+msgid "moment.bookmark.title"
+msgstr "Používateľ {name} pridal {reference_human} {version_abbreviation} medzi svoje záložky <b> </b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Pripravte sa na Vianoce s adventným plánom čítania Biblie"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Obnovte svoju vieru s novými plánmi čítania."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Každý deň hľadajte Boha v Jeho Slove."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Pripravte svoje srdce na toto obdobie."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Objavte Božiu lásku v Jeho Slove."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Váš najlepší rok sa začína teraz."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Oslavujte slobodu v Kristovi."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Hľadajte Boha v Jeho Slove."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Objavte nádej a obnovu v Slove Božom."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Denne sa venujte Jeho Slovu."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Objavte vďačnosť v Božích prisľúbeniach."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Božia múdrosť začína v Slove Božom."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Božie Slovo robí všetko novým."
+
+msgid "moment.friendship.self.title"
+msgstr "Odteraz ste priateľom s používateľom <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} je odteraz priateľom s používateľom <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Zvýraznili ste si <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "Používateľ {name} si zvýraznil <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Vytvorili ste obrázok verša <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} vytvorili ste obrázok verša <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Pridali ste poznámku"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "Používateľ {name} pridal poznámku"
+
+msgid "moment.note.reference.self.title"
+msgstr "Pridali ste poznámku k <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name}pridal poznámku k <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Pridali ste poznámku, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "Používateľ {name} pridal poznámku, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Dokončili ste plán čítania"
+
+msgid "moment.plan_completion.title"
+msgstr "Používateľ {name} dokončil plán čítania"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Dokončili ste svoj plán, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} dokončil plán čítania, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Deň {segment} z {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Dokončili ste <b>{segment}.</b> deň z plánu čítania <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "Používateľ {name} dokončil <b>{segment}.</b> deň z plánu čítania <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Začali ste plán čítania"
+
+msgid "moment.plan_subscription.title"
+msgstr "Používateľ {name} začal plán čítania"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Začali ste nový plán čítania, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} začal nový plán, <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Pozrite si <i>Biblické príbehy</i> ešte dnes!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Biblické príbehy</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Zdieľajte dobrú zvesť: narodil sa Spasiteľ!"
+
+msgid "moment.system.find_friends.title"
+msgstr "Aplikácia Biblia je oveľa lepšia s priateľmi. Nájdite priateľov medzi svojimi kontaktmi."
+
+msgid "moment.video.watched.self.title"
+msgstr "Sledovali ste <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "Používateľ {name} sledoval <b>{title}</b>"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "Používateľ {name} pridal komentár k vašej záložke: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "Používateľ {name} pridal komentár k vášmu novému priateľstvu s používateľom {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name}pridal komentár k tvojmu novému Priateľstvu:“{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "Používateľ {name} pridal komentár k vášmu zvýrazneniu: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} okomentoval/a váš obrázok verša: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "Používateľ {name} pridal komentár k vašej poznámke: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "Používateľ {name} pridal komentár k vášmu plánu čítania: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "Používateľ {name} pridal komentár k vášmu plánu čítania Biblie: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k záložke používateľa {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k novému priateľstvu používateľa {moment_owner_name} s používateľom {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}tiež pridal komentár k tvojmu novému Priateľstvu s{moment_owner_name}:“{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}tiež pridal komentár k novému Priateľstvu s{moment_owner_name}:“{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k zvýrazneniu používateľa {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} tiež komentoval obrázok verša používateľa {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k poznámke používateľa {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojej záložke: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k jeho novému priateľstvu s používateľom {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}tiež pridal komentár k novému Priateľstvu s tebou:{comment}"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojmu zvýrazneniu: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} tiež okomentoval/a svoj obrázok verša: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojej poznámke: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojmu plánu čítania: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojmu plánu čítania Biblie: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k plánu čítania používateľa {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k plánu čítania Biblie používateľa {moment_owner_name}: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "Používateľ {name} prijal vašu žiadosť o priateľstvo"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "Používateľ {name} je teraz vašim priateľom"
+
+msgid "notifications.friendships.offer"
+msgstr "Používateľ {name} chce byť vašim priateľom na YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Máte žiadosti o priateľstvo čakajúce v Aplikácii Biblia"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Chcete byť s používateľom {name} priateľom na YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "Požívateľovi {name} sa páči vaša záložka, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "Používateľovi {name} sa páči vaše nove priateľstvo s používateľom {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "Požívateľovi {name} sa páči vaše zvýraznenie, {reference_human}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "Používateľovi {name}sa páči váš obrázok verša {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "Požívateľovi {name} sa páči vaša poznámka"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "Požívateľovi {name} sa páči vaša poznámka o {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "Požívateľovi {name} sa páči vaša poznámka, \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "Používateľovi {name} sa páči vaša aktivita v pláne čítania"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "Používateľovi {name} sa páči vaša aktivita v pláne čítania Biblie"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "Používateľ {name} pridal {reference_human} medzi svoje záložky"
+
+msgid "notifications.moments.create.highlight"
+msgstr "Používateľ {name} si zvýraznil {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} vytvoril obrázok verša {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "Používateľ {name} pridal poznámku"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "Používateľ {name} pridal poznámku k {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "Používateľ {name} pridal poznámku, \"{title}\""
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "Používateľ {name} dokončil svoj plán čítania, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "Používateľ {name} dokončil svoj plán čítania Biblie, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "Používateľ {name} začal nový plán čítania, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "Používateľ {name} začal nový plán čítania Biblie, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "Používateľ {name} sa práve pripojil na YouVersion. Ťuknutím si ho pridáte k priateľom."
+
+msgid "notifications.system.test"
+msgstr "Stiahnite si Aplikáciu Biblia pre deti!!!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Ahoj!</p><p>Používam aplikáciu Biblia od YouVersion a chcel by som ju odporučiť aj tebe. Ak si o nej ešte nepočul, je to jednoduchý spôsob ako priniesť krásu a pravdu Biblie do každodenného života. </p><p><strong>Stiahni si aplikáciu Biblia:</strong> čítaj, pozeraj, počúvaj a zdieľaj na tvojom smartfóne či tablete a online na Bible.com</p><p><strong>Nastav si svoj účet:</strong> začni používať plány čítania Biblie a pristupuj k záložkám, zvýrazneniam a poznámkam na všetkých zariadeniach</p><p><strong>Pridaj si priateľov (napríklad mňa!):</strong> skúmaj a diskutuj o Biblii s ľuďmi, na ktorých ti záleží</p><p>To všetko nájdeš v aplikácii Biblia—začni tu: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Ahoj!\n"
+"\n"
+"Používam aplikáciu Biblia od YouVersion a chcel by som ju odporučiť aj tebe. Ak si o nej ešte nepočul, je to jednoduchý spôsob ako priniesť krásu a pravdu Biblie do každodenného života.\n"
+"\n"
+"Stiahni si aplikáciu Biblia: čítaj, pozeraj, počúvaj a zdieľaj na tvojom smartfóne či tablete a online na Bible.com\n"
+"\n"
+"Nastav si svoj účet: začni používať plány čítania Biblie a pristupuj k záložkám, zvýrazneniam a poznámkam na všetkých zariadeniach.\n"
+"\n"
+"Pridaj si priateľov (napríklad mňa!): skúmaj a diskutuj o Biblii s ľuďmi, na ktorých ti záleží.\n"
+"\n"
+"To všetko nájdeš v aplikácii Biblia—začni tu: "
+
+msgid "share.invite_email_subject"
+msgstr "Pridaj sa ku mne a začni používať aplikáciu Biblia!"
+
+msgid "share.invite_facebook"
+msgstr "Veľmi rád používam aplikáciu Biblia! Naozaj mi pomohla spraviť Bibliu každodennou súčasťou môjho života. Môžem si v nej zvýrazniť verše, počúvať audio nahrávky Biblie, robiť si poznámky, čítať podľa pripravených plánov...dokonca aj pozerať videá! Stiahni si ju aj ty (je to zadarmo):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Máš aplikáciu Biblia? Ja ju rád používam a myslím, že tebe sa bude tiež páčiť. Tu je odkaz:"
+
+msgid "share.invite_sms"
+msgstr "Myslím si, že aplikácia YouVersion Bible je skvelá. Vyskúšaj ju:"
+
+msgid "share.invite_sms_prefix"
+msgstr "Od {name}:"
+
+msgid "share.invite_twitter"
+msgstr "Aplikáciu Biblia od @YouVersion mám na domovskej obrazovke. Čítaj, sleduj, počúvaj a zdieľaj...zadarmo v aplikácii:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Máš aplikáciu Biblia od @YouVersion? Ja ju rád používam a myslím, že sa ti bude tiež páčiť. Tu je odkaz:"

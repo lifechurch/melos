@@ -1,0 +1,31 @@
+%ul
+  {{#each requests.incoming}}
+  %li
+    .list-item
+      .item-content
+        %img.round-avatar{height: "48", src: "{{avatars.collection.1.url}}", width: "48"}/
+        %p
+          %a.text-link{href: "/users/{{username}}"} {{name}}
+          {{../i18n.wants_friendship}}
+      .item-actions
+        %form{"accept-charset" => "UTF-8", action: "/friendships?user_id={{id}}", method: "post"}
+          %input{name: "utf8", type: "hidden", value: "✓"}/
+          %input{name: "authenticity_token", type: "hidden", value: "\#{form_authenticity_token}"}/
+          %button.action_button_green.action-add{type: "submit"}
+            {{../i18n.accept}}
+        %form{"accept-charset" => "UTF-8", action: "/friendships/{{id}}", method: "post"}
+          %input{name: "utf8", type: "hidden", value: "✓"}/
+          %input{name: "_method", type: "hidden", value: "DELETE"}/
+          %input{name: "authenticity_token", type: "hidden", value: "\#{form_authenticity_token}"}/
+          %button.action_button_grey.action-add{type: "submit"}
+            {{../i18n.ignore}}
+  {{else}}
+  %li.list-item.none
+    %p
+      {{../i18n.no_requests}}
+  {{/each}}
+.view-all
+  {{#if requests.incoming}}
+  %a.text-link.wide{href: "/friendships/requests"}
+    {{../i18n.view_all}}
+  {{/if}}

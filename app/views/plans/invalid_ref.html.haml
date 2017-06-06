@@ -1,0 +1,14 @@
+#reader_header
+  %header
+    %ul.float_left
+      %li
+        %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_version_trigger", title: t("ref.choose version")}
+          %b
+            = @presenter.version.human
+          %span
+            =t("ref.choose version")
+  = render partial: 'shared/version_selector/display', locals: {presenter: @presenter}
+%article
+  .wrap
+    .align_center
+      = t('plans.invalid reference', support_url: external_url(:support)).html_safe

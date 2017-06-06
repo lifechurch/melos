@@ -1,0 +1,141 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -ms-transition:     all 0.2s ease;
+  -o-transition:      all 0.2s ease;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+header {
+  background: #f1f1f1;
+  padding: 30px;
+}
+
+.logo {
+  width: 200px;
+}
+
+.logo ~ p {
+  line-height: 1.2em;
+  margin: 15px 0 0;
+  width: 600px;
+}
+
+.main {
+  padding: 0 30px 30px;
+}
+
+.section {
+  font: 60px "proxima-nova", arial, sans-serif;
+  letter-spacing: -.05em;
+  display: block;
+  padding: 0 0 20px;
+  border-bottom: 1px solid #ddd;
+  margin: 30px 0 20px;
+  color: #4EAE50;
+}
+
+.typography p {
+  margin: 0 0 10px;
+  color: #fff;
+  background-color: #BBB;
+  padding: 2px 10px;
+  font-size: 12px;
+  display: inline-block;
+  -webkit-border-radius:  5px 5px 5px 5px;
+  border-radius:          5px 5px 5px 5px;
+}
+
+.colors ul {
+  overflow: hidden;
+  margin: 0 0 30px;
+}
+
+.colors li span {
+  display: block;
+  height: 100px;
+  -webkit-border-radius:  5px 5px 5px 5px;
+  border-radius:          5px 5px 5px 5px;
+  margin: 0 0 10px;
+}
+
+.colors li {
+  text-align: center;
+  width: 200px;
+  list-style: none;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.colors .green span {
+  background-color: #4EAE50;
+}
+
+.colors .blue span {
+  background-color: #0084C8;
+}
+
+.colors .black span {
+  background-color: #444;
+}
+
+.colors .brown span {
+  background-color: #824F2B;
+}
+
+.colors .red span {
+  background-color: #CC0000;
+}
+
+.colors .dark-grey span {
+  background-color: #666;
+}
+
+.colors .darkgrey span {
+  background-color: #777;
+}
+
+.colors .gray span {
+  background-color: #888;
+}
+
+.colors .borders {
+  padding: 20px 0 0;
+  width: 400px;
+  border-top: 1px solid #DDD;
+}
+
+.buttons div {
+  margin: 0 0 20px;
+}
+
+.buttons div p {
+  margin: 0 0 10px 10px;
+  color: #fff;
+  background-color: #BBB;
+  padding: 2px 10px;
+  font-size: 12px;
+  display: inline-block;
+  -webkit-border-radius:  5px 5px 5px 5px;
+  border-radius:          5px 5px 5px 5px;
+}
+
+.buttons a {
+  margin: 0 !important;
+  display: inline-block;
+}
+
+
+.forms input,
+.forms textarea {
+  margin: 0;
+  width: 300px;
+}
+
+.forms p {
+  margin: 5px 0 20px;
+}

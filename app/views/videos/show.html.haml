@@ -1,0 +1,80 @@
+- html_attributes(id:"video-show",classes:"videos")
+- publisher = @video.publisher
+- @sidebar = false
+- @title = "#{strip_tags(@video.title)} - #{@video.credits} | #{t('videos.title')}"
+- meta_title = strip_tags(@video.title)
+- meta_description = @title
+- meta_description = @video.description.html_safe if @video.description.present?
+- videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
+
+- content_for :meta_description do
+  = @title
+
+- content_for :additional_meta do
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://www.bible.com#{locale_dir}/videos/#{@video.to_param}"
+  %link{rel: "canonical", href: canonicalHref}
+  %meta{property: "og:title",       content: meta_title }
+  %meta{property: "og:url",         content: canonicalHref }
+  %meta{property: "og:description", content: meta_description }
+  %meta{property: "og:image", content: "https:#{@video.poster_image.url}"}
+  %meta{name: "twitter:card",             content: "summary"}
+  %meta{name: "twitter:url",              content: canonicalHref}
+  %meta{name: "twitter:title" ,           content: meta_title}
+  %meta{name: "twitter:description",      content: meta_description}
+  %meta{name: "twitter:image",            content: "https:#{@video.poster_image.url}"}
+  %meta{name: "twitter:site",             content: "@YouVersion"}
+  %link{href:"//vjs.zencdn.net/4.11/video-js.css", rel:"stylesheet"}
+  %script{src:"//vjs.zencdn.net/4.11/video.js"}
+
+-# legacy google analytics is used to send events to Jesus Film's legacy google analytics implementation
+-# all other bible.com google analytics code is transitioned to use Google Tag Manager
+- if publisher.id.eql?(1)
+  = render '/shared/google_analytics_jesus_film'
+
+.row
+  .columns
+    %article
+      %div{itemprop: "video", itemtype:"http://schema.org/VideoObject", itemscope: ""}
+        .row
+          .columns.medium-8
+            #title-bar
+              %h1
+                %span{itemprop: "name"}= @video.title
+
+              %h2.publisher
+                =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
+          .columns.medium-4.show-for-medium-up
+            = render partial: "videos/share", locals: {video: @video}
+
+        %meta{itemprop: "thumbnail", content: "https:#{@video.poster_image.url}"}
+        #player-container
+          %video{ id:"video", class: "video-js vjs-default-skin vjs-big-play-centered", controls: "controls", preload: "auto", width: "100%", height: "100%",
+            "poster" => "https:#{@video.poster_image.url}",
+            "publisher-id" => "#{publisher.id}",
+            "publisher-ga-tracking-id" => "#{publisher.ga_tracking_id}",
+            "video-ref-id" => "#{videoRefId}",
+            "video-player" => true }
+
+            %source{src: "#{@video.webm.url}", type:'video/webm'}
+            %source{src: "#{@video.hls.url}", type:'video/mp4'}
+            %p.vjs-no-js
+              To view this video please enable JavaScript, and consider upgrading to a web browser that
+              =link_to("supports HTML5 video", "http://videojs.com/html5-video-support/", target: "_blank")
+
+        .row
+          #details.columns.medium-8
+            %div.refs
+              - if @video.references
+                %span= t("videos.related scripture")
+
+                %ul
+                  - @video.references.each do |ref|
+                    %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)), { target: "_self" })
+            %p.description
+              %span{itemprop: "description"}= @video.description.html_safe if @video.description.present?
+
+          #other.columns.medium-4
+            - video_series = client_settings.video_series
+            = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "solid-button green full", target: "_self" )
+            = render partial: "videos/publisher_banner", locals: {publisher: publisher}

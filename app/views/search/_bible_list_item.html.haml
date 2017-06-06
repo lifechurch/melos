@@ -1,0 +1,10 @@
+- item = bible_list_item
+
+%li.reference
+  - if item.usfm.present?
+    %h3
+      = link_to "#{item.human} (#{item.version_local_abbreviation.upcase})", reference_path(reference: item.usfm.first.downcase, version: item.version_id), { target: '_self' }
+
+  - if item.highlight.present? || item.content.present?
+    %p
+      = item.highlight ? item.highlight.html_safe : item.content

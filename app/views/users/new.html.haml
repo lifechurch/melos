@@ -1,0 +1,52 @@
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+  %link{rel: "canonical", href: "https://#{request.host_with_port}/sign-up"}
+
+- @title = "#{t("users.sign up for an account")} | #{t('pages.home.features.study heading')} | #{t('pages.home.features.subscribe heading')} | #{t('pages.home.features.read heading')}"
+
+:ruby
+  @blurb = if params[:source] && params[:source] != "licenses"
+    if ["benefits", "plan", "bookmark", "friends", "share", "highlight", "note"].include? params[:source]
+      t("registration.#{params[:source]} blurb")
+    end
+  elsif params[:redirect] && params[:redirect].match(/reading\-plans/)
+    t("registration.plan blurb")
+  end
+
+  licensing_flow = params[:source] && params[:source] == "licenses"
+  if licensing_flow
+    @main_nav = false
+    content_for :header do
+      render partial: "shared/header/basic"
+    end
+  end
+
+.row
+  .medium-1.large-1.columns
+    !="&nbsp;"
+  .medium-5.large-5.columns
+    %article
+      %h1.hd= t("users.sign up for an account")
+
+      -if licensing_flow
+        %p#license-notice= t("licenses.auth.signup notice", login:t("licenses.auth.login link text")).html_safe
+
+      - else # show blurb and facebook registration only if we're not in licensing flow.
+        -if @blurb
+          %hr
+          %p= @blurb
+          %hr
+          -#%p= link_to t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
+
+      = render partial: 'shared/facebook_signin', locals: { form_id: "user_create_form", form_action: sign_up_path(source: params[:source], redirect: params[:redirect]), is_continue: false }
+      = render partial: 'shared/google_signin', locals: { form_id: "user_create_form", form_action: sign_up_path(source: params[:source], redirect: params[:redirect]), is_continue: false }
+
+
+      %hr{ width: "75%" }
+
+      = render partial: 'users/create_form'
+
+  .medium-5.large-5.columns.show-for-medium-up
+    =render partial: "/sidebars/users/new"
+  .medium-1.large-1.columns
+    !="&nbsp;"

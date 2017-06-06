@@ -1,0 +1,585 @@
+// ------------------------ Desktop styles
+
+body
+  background: #252A30
+  color: #fff
+  margin: 0
+  padding: 0
+  font: normal 15px arial, sans-serif
+
+p
+  margin: 0
+
+article
+  width: 960px
+  margin: 0 auto
+
+
+a
+  color: #fecc0d
+
+
+// ---- Intro
+
+.intro-logo,
+.intro-starts,
+.intro-starts em
+  margin: 0
+
+.intro-logo
+  overflow: hidden
+  white-space: nowrap
+  height: 50px
+  margin-top: 20px
+
+  .wrap
+    display: block
+    background: image-url("campaigns/100m/logo.png") no-repeat center top
+    width: 304px
+    height: 48px
+    margin: 0 auto
+
+    span
+      display: block
+      text-indent: -9999px
+
+.intro-starts
+  color: #FECC0E
+  text-transform: uppercase
+  letter-spacing: .85em
+  padding-left: .85em
+  font-size: 26px
+  font-weight: normal
+  text-align: center
+  margin-top: 35px
+  position: relative
+  z-index: 9999
+
+.intro-starts em
+  letter-spacing: normal
+  display: block
+  color: #435971
+  text-align: center
+  font:
+    size: 140px
+    family: "gnuolane",sans-serif
+    style: normal
+  line-height: 1em
+
+.intro-title
+  width: 90%
+  margin: 0 5%
+
+.intro-copy
+  font-size: 20px
+  text-align: center
+  display: block
+  width: 500px
+  margin: 0 auto 0
+
+.world-map
+  width: 100%
+  position: relative
+  z-index: 1
+  margin-top: -50px
+
+// ---- Share buttons
+
+.share-copy
+  color: #FECC0D
+  text-transform: uppercase
+  font-size: 21px
+  letter-spacing: .7em
+  display: block
+  text-align: center
+  margin-top: 40px
+  padding-left: .7em
+
+.share-btns
+  overflow: hidden
+  margin-bottom: 50px
+
+.share-fb, .share-tw, .share-em
+  float: left
+  margin: 30px 0 0 20px
+  display: block
+  padding: 14px 0
+  text-align: center
+  color: #fff
+  text-decoration: none
+  font-size: 21px
+  text-shadow: 0px -2px 0px rgba(0, 0, 0, .3)
+  -webkit-border-radius: 5px
+  border-radius: 5px
+  -webkit-box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, .3), inset 0px 3px 0px 0px rgba(255, 255, 255, .4)
+  box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, .3), inset 0px 3px 0px 0px rgba(255, 255, 255, .4)
+  font-weight: bold
+
+.share-fb
+  margin-left: 0
+  background: #3A5998 image-url("campaigns/100m/fb.png") no-repeat 70px 10px
+  padding-left: 30px
+  width: 278px
+
+.share-tw
+  background: #00ACED image-url("campaigns/100m/twitter.png") no-repeat 85px 12px
+  padding-left: 30px
+  width: 273px
+
+.share-em
+  background: #AAAAAA image-url("campaigns/100m/email.png") no-repeat 84px 12px
+  padding-left: 30px
+  width: 278px
+
+
+// ---- Ticker
+
+#counter
+  margin: 50px 0
+  overflow: hidden
+  background: image-url("campaigns/100m/ticker-commas.png") no-repeat center 100px
+
+  .separator
+    display: none
+
+  .part
+    width: 290px
+    float: left
+    margin-left: 45px
+    display: block
+    overflow: hidden
+
+  .part0
+    margin-left: 0
+
+  .digit
+    width: 90px
+    font-size: 120px
+    text-align: center
+    background: image-url("campaigns/100m/ticker-boxes.png") no-repeat center 4px
+    display: block
+    float: left
+    margin-left: 10px
+
+  .part .digit:first-child
+    margin-left: 0
+
+#counter-divider
+  margin: -132px 0 100px 0
+
+
+// ---- Counter
+
+#date_countdown
+  clear: both
+  margin: 100px auto 80px auto
+  overflow: hidden
+  width: 663px
+  color: #96999D
+
+  .countdown_section
+    float: left
+    width: 165px
+    display: block
+    border-left: 1px solid #435971
+    padding: 0
+    text-align: center
+    text-transform: uppercase
+
+  .countdown_section:first-child
+    border-left: none
+
+  .countdown_amount
+    font-size: 84px
+
+
+// ---- Video
+
+.video
+  margin-top: 10px
+  clear: both
+  overflow: hidden
+
+.video-box
+  float: left
+  width: 640px
+
+.video-copy
+  width: 290px
+  padding-left: 30px
+  font-size: 17px
+  float: left
+
+  p
+    margin-bottom: 14px
+    line-height: 1.8em
+
+
+// ---- Footer
+
+footer
+  margin: 30px 0 10px 0
+  padding: 20px 0px
+  overflow: hidden
+
+.ad-title,
+.ad-copy
+  display: block
+  background-color: #435971
+  color: #dedede
+
+.ad-title
+  padding: 15px 10px 3px 85px
+  font-size: 18px
+  font-weight: bold
+  border-radius: 5px 5px 0 0
+
+.ad-copy
+  padding: 2px 10px 15px 85px
+  font-size: 15px
+  border-radius: 0 0 5px 5px
+
+  a
+    color: #00BFFF
+    text-decoration: none
+
+.ad-img
+  display: block
+  margin: 12px 15px
+  float: left
+
+
+#languages
+  float: right
+  margin-bottom: 20px
+
+.select_wrap
+  margin-top: 5px
+
+// ------------------------- Mobile styles
+
+@media only screen and (max-width: 600px)
+
+  body
+    background-image: none
+
+  article
+    width: auto
+    margin: 0
+
+  // ---- Intro
+
+  .intro-logo
+    background-image: cover
+
+  .intro-starts
+    letter-spacing: 2px
+    padding-left: .85em
+    font-size: 26px
+    margin-top: 2%
+
+    em
+      font-size: 75px
+      margin-bottom: 20px
+
+  .intro-title
+    width: 90%
+    margin: 0 5%
+
+  .intro-copy
+    font-size: 20px
+    width: 80%
+
+
+  // ---- Share buttons
+
+  .share-copy
+    font-size: 21px
+    margin-top: 3%
+    padding-left: .7em
+    letter-spacing: .1em
+
+  .share-btns
+    margin-top: 1em
+
+  .share-fb, .share-tw, .share-em
+    float: none
+    margin: 3% 0 0 5%
+    padding: 1% 0
+    font-size: 21px
+    text-shadow: 0px -2px 0px rgba(0, 0, 0, .3)
+
+  .share-fb
+    background: #3A5998 image-url("campaigns/100m/fb.png") no-repeat 70px 10px
+    padding-left: 10%
+    width: 50%
+
+  .share-tw
+    background: #00ACED image-url("campaigns/100m/twitter.png") no-repeat 85px 12px
+    padding-left: 10%
+    width: 50%
+
+  .share-em
+    background: #AAAAAA image-url("campaigns/100m/email.png") no-repeat 84px 12px
+    padding-left: 10%
+    width: 50%
+
+
+  .share-fb,
+  .share-tw,
+  .share-em
+    width: 53%
+    margin: 0 auto 20px
+    padding: 8px 0px 8px 34%
+    background-position: 32% center !important
+    text-align: left
+
+
+
+  #date_countdown
+    clear: both
+    margin: 20px auto 20px
+    overflow: hidden
+    width: 100%
+    color: #96999D
+
+    .countdown_section
+      float: left
+      width: 24%
+      display: block
+      border-left: 1px solid #435971
+      padding: 0
+      text-align: center
+      text-transform: uppercase
+
+    .countdown_section:first-child
+      border-left: none
+
+    .countdown_amount
+      font-size: 34px
+
+
+
+  // ---- Ticker
+
+  .ticker
+    margin-top: 6%
+    background: image-url("campaigns/100m/ticker-commas.png") no-repeat center 100px
+
+  .ticker-group-1,
+  .ticker-group-2,
+  .ticker-group-3
+    width: 30%
+    margin-left: 5%
+
+  .ticker-1,
+  .ticker-2,
+  .ticker-3,
+  .ticker-4,
+  .ticker-5,
+  .ticker-6,
+  .ticker-7,
+  .ticker-8,
+  .ticker-9
+    width: 33%
+    font-size: 20px
+    background: image-url("campaigns/100m/ticker-boxes.png") no-repeat center 4px
+    margin-left: .5%
+
+  .ticker-divider
+    margin-top: -10%
+
+  // ---- Counter
+
+  #counter
+    background-position: 0px 30px
+    background-size: 100%
+    margin: 20px auto
+
+    .part
+      margin-left: 4%
+      width: 30%
+
+    .part0
+      margin-left: 1%
+
+    .digit
+      font-size: 58px
+      width: auto !important
+      margin-left: 4%
+      padding: 0 4%
+      background-position: center 2px
+      border-radius: 7px
+
+
+  #counter-divider
+    display: none
+
+  .counter
+    clear: both
+    margin: 15% auto 0
+    width: 70%
+
+  .counter-days,
+  .counter-hrs,
+  .counter-min,
+  .counter-sec
+    width: 25%
+
+  .counter-days
+    border-left: 0
+
+  .counter-bigtxt
+    font-size: 24px
+
+  // ---- Video
+
+  .video
+    margin-top: 7%
+
+  .video-box
+    float: none
+    width: auto
+
+  .video-copy
+    width: auto
+    padding-left: 3%
+    font-size: 17px
+    float: none
+
+    p
+      margin-bottom: 1%
+      line-height: 1.8em
+
+  // ---- Footer
+
+  footer
+    margin: 1% 0
+
+
+/* Smartphones (portrait) ----------- */
+
+@media only screen and (max-width : 320px)
+
+  .intro-logo .wrap
+    width: 228px
+    background-size: 100%
+
+  .intro-logo .wrap img
+    width: 38px
+    height: 38px
+
+  .intro-starts
+    letter-spacing: 0
+    font-size: 16px
+    padding-left: 0px
+    line-height: 14px
+
+    em
+      font-size: 55px
+      margin-bottom: 20px
+
+    span
+      width: 95%
+      display: block
+      text-align: center
+      margin: 0 auto
+      padding-left: 5%
+
+  .world-map
+    margin-top: -30px
+
+  .intro-copy
+    padding: 0px 20px
+    font-size: 16px
+    margin-top: 10px
+
+  .share-copy
+    margin: 25px 0px 15px
+    letter-spacing: 0
+    font-size: 16px
+
+
+  .share-fb,
+  .share-tw,
+  .share-em
+    width: 53%
+    margin: 0 auto 20px
+    padding: 8px 0px 8px 34%
+    background-position: 26% center !important
+    text-align: left
+
+  // ---- Counter
+
+  #counter
+    background-position: 0px 30px
+    background-size: 100%
+    width: auto
+
+    .part
+      margin-left: 4%
+      width: 30%
+
+    .part0
+      margin-left: 1%
+
+    .digit
+      font-size: 35px
+      width: auto !important
+      margin-left: 4%
+      padding: 0 4%
+      background-position: center 2px
+      border-radius: 7px
+
+  #counter-divider
+    display: none
+
+  #date_countdown
+    font-size: 11px
+
+  // ---- Video
+
+  .video-box
+    iframe
+      height: 280px
+      width: 90%
+      margin-left: 5%
+
+  .video-copy
+    width: 90%
+    font-size: 14px
+    float: none
+    padding: 5% 5%
+
+    p
+      line-height: 1.5em
+      margin-bottom: 5%
+
+  // ---- Footer
+
+  footer
+    width: 80%
+    padding: 0 5%
+    margin: 0px 5% 20px
+    background-color: #435971
+    border-radius: 5px
+    overflow: hidden
+
+    .ad-img
+      float: left
+      margin: 20px 0 0 0
+      width: 24%
+
+    .ad-title
+      padding: 15px 0px 6px 75px
+      background-color: none
+
+    .ad-copy
+      padding: 10px 10px 15px 1px
+      background-color: none
+
+  #languages
+    width: 90%
+    margin: 0px 5% 10px 5%
+    text-align: right
+

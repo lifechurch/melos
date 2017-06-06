@@ -1,0 +1,32 @@
+// Local parameters
+// presenter: Presenter::Sidebar::Plan
+- plan = presenter.plan
+
+-#
+  :javascript
+    $(document).ready(function() {
+      $('.rp-view-all a').click(function() {
+        $(this).parent().prev().toggleClass('open', 250);
+        $(this).parent().children('a').toggleClass('hidden');
+      });
+    });
+
+.widget
+  - if @friends_reading.present? and @friends_reading.length > 0
+    %p.friends_completed= t("plans.stats.friends reading", count: @friends_reading.length)
+    .text-center.avatar-container
+      - @friends_reading.each do |friend|
+        - if friend["avatar"].present?
+          %a{href: user_path(friend["username"]), title: friend["name"], target: "_self"}
+            = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max{|a| a[:width] }["url"], { class: "avatar" }
+
+- if @friends_completed.present? and @friends_completed.length > 0
+  %p.friends_completed= t("plans.stats.friends completed", count: @friends_completed.length)
+  .text-center.avatar-container
+    - @friends_completed.each do |friend|
+      - if friend["avatar"].present?
+        %a{href: user_path(friend["username"]), title: friend["name"], target: "_self"}
+          = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max{|a| a[:width] }["url"], { class: "avatar" }
+
+- if plan.total_completions >= 1000
+  %p.friends_completed= t("plans.stats.total completions", count: plan.total_completions)

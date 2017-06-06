@@ -1,0 +1,11 @@
+:ruby
+  # Used in references/show
+
+  # Local Variables
+  # reference  (required)
+
+#widget-notes.widget{"data-reference" => "#{reference_path(version: reference.version, reference: reference.to_usfm)}"}
+  %div.hd
+    %span= t("notes.community notes")
+  %div.bd
+    %p= t('notes.loading community')

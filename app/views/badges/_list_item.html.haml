@@ -1,0 +1,29 @@
+.moment
+  .moment-top
+    .moment-top-avatar
+      %img.avatar{src: (user.user_avatar_url["px_48x48"] if user.user_avatar_url)}    
+    .moment-divider
+      = list_item.description
+    .moment-ago
+      = api_dt_time_ago(list_item.earned_dt)
+  .moment-content
+    %img{src: list_item.image_url.px_48x48, width: 48, height: 48, class: 'friend-image'}
+    %h2.moment-bdg-text.text-center
+      = list_item.name
+
+  .moment-bottom
+    .moment-actions
+      &nbsp;
+
+-#
+    .moment-bdg
+      %span.moment-icon
+        &nbsp;
+      %div{id: list_item.id}
+        %a{href: "#"}
+
+        %div
+          %span.moment-time
+
+          %p.moment-bdg-info
+            

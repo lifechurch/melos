@@ -1,0 +1,215 @@
+#nav_primary
+  -webkit-font-smoothing: subpixel-antialiased
+  background-color: #232324
+  padding-top: 12px
+  white-space: nowrap
+  width: 60px
+  position: fixed
+  top: 82px
+  margin-left: -70px
+  z-index: 5
+  +border-radius(4px)
+
+  nav
+    padding-bottom: 11px
+
+  ul
+    margin: 0
+
+  li
+    margin: 0
+    list-style: none
+    position: relative
+
+  .highlighted
+    background-color: #111
+    background-repeat: no-repeat
+
+  a.icon
+    background:
+      repeat: no-repeat
+    border-top: 1px solid rgba(#fff, 0.15)
+    display: block
+    font-size: 11px
+    line-height: 1
+    height: 0
+    overflow: hidden
+    text-align: center
+    padding-top: 50px
+    padding-bottom: 4px
+
+  a.icon
+    display: block
+    text-decoration: none
+
+  a.icon:hover
+    color: #fff
+
+#nav_primary_home a.icon
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -87px
+
+#nav_primary_bible a.icon
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -278px
+
+#nav_primary_plans a.icon
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -470px
+
+#nav_primary_friends a.icon
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -1819px
+
+#nav_primary_live a.icon
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -1238px
+
+#nav_primary_mobile a.icon
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -1622px
+
+#nav_primary_videos a.icon
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -565px
+
+#nav_primary_bookmarks a.icon
+  border-top: 3px solid #dedddb
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -852px
+
+#nav_primary_notes a.icon
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -1045px
+
+#nav_primary_highlights a.icon
+  border-bottom: 1px solid rgba(#fff, 0.15)
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -2004px
+
+// !Hover
+
+#nav_primary_home a.icon:hover
+  background:
+    position: center 9px
+
+#nav_primary_bible a.icon:hover
+  background:
+    position: center -182px
+
+#nav_primary_plans a.icon:hover
+  background:
+    position: center -374px
+
+#nav_primary_friends a.icon:hover
+  background:
+    position: center -1723px
+
+#nav_primary_live a.icon:hover
+  background:
+    position: center -1142px
+
+#nav_primary_mobile a.icon:hover
+  background:
+    position: center -1526px
+
+#nav_primary_videos a.icon:hover
+  background:
+    position: center -661px
+
+#nav_primary_bookmarks a.icon:hover
+  background:
+    position: center -756px
+
+#nav_primary_notes a.icon:hover
+  background:
+    position: center -949px
+
+#nav_primary_highlights a.icon:hover
+  background:
+    position: center -1908px
+
+
+// !Highlighted
+
+.highlighted#nav_primary_home a.icon
+  background:
+    position: center 9px
+
+.highlighted#nav_primary_bible a.icon
+  background:
+    position: center -182px
+
+.highlighted#nav_primary_plans a.icon
+  background:
+    position: center -374px
+
+.highlighted#nav_primary_friends a.icon
+  background:
+    position: center -1723px
+
+.highlighted#nav_primary_live a.icon
+  background:
+    position: center -1142px
+
+.highlighted#nav_primary_mobile a.icon
+  background:
+    position: center -1526px
+
+.highlighted#nav_primary_videos a.icon
+  background:
+    position: center -661px
+
+.highlighted#nav_primary_bookmarks a.icon
+  background:
+    position: center -757px
+
+.highlighted#nav_primary_notes a.icon
+  background:
+    position: center -950px
+
+.highlighted#nav_primary_highlights a.icon
+  background:
+    position: center -1908px
+
+
+// !Tooltips
+
+#nav_primary
+
+  a.tooltip
+    display: block
+    width: auto
+    height: 31px
+    padding-left: 9px
+    margin-left: -9px
+    background: image-url("bg-menu-tooltip.png") no-repeat left top
+    position: absolute
+    left: 56px
+    top: 13px
+    z-index: 9
+    cursor: pointer
+
+  a.tooltip:link
+    text-decoration: none
+
+  a.tooltip span
+    display: block
+    line-height: 31px
+    height: 31px
+    padding: 0 14px 0 10px
+    color: white
+    font-weight: bold
+    text-shadow: 0 1px 1px #000
+    background: image-url("bg-menu-tooltip.png") no-repeat right bottom
+

@@ -1,0 +1,384 @@
+# Greek translations for Backend (YouVersion).
+# Copyright (C) 2017 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: el\n"
+"Language-Team: el <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: el\n"
+"Language-Team: el <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:17-0609\n"
+"PO-Revision-Date: 2017-01-03 11:17-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: el\n"
+"Language-Team: el <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Κέρδισες την <b>διάκριση</b> {title}"
+
+msgid "moment.badge.earned.title"
+msgstr "Ο/Η {name} κέρδισε τη <b>διάκριση</b> {title}"
+
+msgid "moment.bible.download.self.title"
+msgstr "Κατέβασες την έκδοση, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "Ο/Η {name} κατέβασε την έκδοση: <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Σημειώσατε <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "Ο/Η {name} σημείωσε <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Ετοιμάσου για τα Χριστούγεννα με ένα Προ-Χριστουγεννιάτικο Πρόγραμμα Ανάγνωσης της Αγίας Γραφής"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Ανανέωσε την πίστη σου με καινούργια Πλάνα ανάγνωσης."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Αναζητήστε τον Θεό στον Λόγο Του καθημερινά."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Προετοιμάστε την καρδιά σας αυτή τη σεζόν."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Βρείτε την αγάπη του Θεού στον Λόγο Του."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Η καλύτερη χρονιά σας ξεκινάει τώρα."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Γιορτάστε την Ελευθερία εν Χριστώ."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Αναζητήστε τον Θεό στον Λόγο Του."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Βρείτε ελπίδα και ανανέωση στον Λόγο του Θεού."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Αφιερωθείτε καθημερινά στον Λόγο Του."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr " Ανακαλύψτε ευγνωμοσύνη στις υποσχέσεις του Θεού."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Η σοφία του Θεού ξεκινά στον Λόγο Του."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Ο Λόγος του Θεού κάνει τα πάντα νέα."
+
+msgid "moment.friendship.self.title"
+msgstr "Είστε πλέον φίλοι με τον χρήστη <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "Ο/Η {user_name} είναι τώρα φίλοι με τον/την <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Επισημάνατε <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "Ο/Η {name} επισήμανε <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Δημιουργήσατε ένα εικονοποιημένο εδάφιο για <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "Ο/Η {name} δημιούργησε ένα εικονοποιημένο εδάφιο για <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Προσθέσατε σημείωση"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "Ο {name}πρόσθεσε μια σημείωση"
+
+msgid "moment.note.reference.self.title"
+msgstr "Προσθέσατε σημείωση στο <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "Ο/Η {name} πρόσθεσε σημείωση στο <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Πρόσθεσες μια σημείωση, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "Ο/Η {name} πρόσθεσε μια σημείωση, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Ολοκληρώσατε το σχέδιο μελέτης σας"
+
+msgid "moment.plan_completion.title"
+msgstr "Ο/Η {name} ολοκλήρωσε ένα σχέδιο μελέτης"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Ολοκληρώσατε το σχέδιο: <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "Ο/Η {name} ολοκκλήρωσε το σχέδιο: <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Ημέρα {segment} από {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Ολοκληρώσατε την ημέρα <b>{segment}</b> του σχεδίου μελέτης <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "Ο/Η {name} ολοκλήρωσε την ημέρα <b>{segment}</b> του σχεδίου μελέτης: <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Ξεκινήσατε ένα νέο σχέδιο μελέτης"
+
+msgid "moment.plan_subscription.title"
+msgstr "Ο/Η {name} ξεκίνησε ένα καινούργιο σχέδιο μελέτης"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Ξεκινήσατε το σχέδιο: <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "Ο.Η {name} ξεκίνησε το σχέδιο: <b>{title}</b>"
+
+msgid "moment.system.bafk.title"
+msgstr "Βοήθησε τα παιδιά σου να αγαπήσουν τον Λόγο του Θεού."
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Παρακολούθησε <i>τη Σειρά της Αγίας Γραφής</i> απόψε!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Σειρά της Αγίας Γραφής</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Μοιράσου τα καλά νέα: γεννήθηκε ο Σωτήρας!"
+
+msgid "moment.system.find_friends.title"
+msgstr "Η εφαρμογή Αγία Γραφή γίνεται ακόμα καλύτερη με φίλους. Ψάξτε στις επαφές σας για να βρείτε φίλους"
+
+msgid "moment.video.watched.self.title"
+msgstr "Παρακολούθησες <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "Ο/Η {name} παρακολούθησε <b>{title}</b>"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "Ο/Η {name} σχολίασε το σελιδοδείκτη σου: {comment}"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "Ο/Η {name}σχολίασε τη νέα σου φιλία με τον/την {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "Ο/Η {name} σχολίασε τη νέα φιλία σας: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "Ο/Η {name} σχολίασε την επισήμανσή σου: {comment}"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "Ο/Η {name} σχολίασε το εικονοποιημένο εδάφιό σου: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "Ο/Η {name} σχολίασε τη σημείωσή σου: {comment}"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "Ο/Η {name} σχολίασε το σχέδιο μελέτης σου: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "Ο/Η {name} σχολίασε το σχέδιο μελέτης σου: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης το σελιδοδείκτη του/της {moment_owner_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης τη νέα φιλία του/της {moment_owner_name} με τον/την {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης τη νέα φιλία σας με τον/την {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης τη νέα σας φιλία με τον/την {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης την επισήμανση του/της {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης το εικονοποιημένο εδάφιο του/της {moment_owner_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης την σημείωση του/της {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης το σελιδοδείκτη του/της: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης τη νέα του φιλία με τον/την {friend_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης τη νέα φιλία σας: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης την επισήμανσή του/της:{comment}"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης το εικονοποιημένο εδάφιό του/της: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης τη σημείωσή του/της: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης το σχέδιο μελέτης τους: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης σχέδιο μελέτης τους: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης το σχέδιο μελέτης του/της {moment_owner_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης το σχέδιο μελέτης του/της {moment_owner_name}: {comment}"
+
+msgid "notifications.friendships.accept"
+msgstr "Ο/Η {name} αποδέχθηκε το αίτημα φιλίας σου"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "Ο/Η {name} είναι τώρα φίλος σου"
+
+msgid "notifications.friendships.offer"
+msgstr "Ο/Η {name} θέλει να γίνετε φίλοι στην YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Έχετε αιτήματα φιλίας στην εφαρμογή Αγία Γραφή "
+
+msgid "notifications.friendships.suggestion"
+msgstr "Θέλεις να γίνετε φίλοι με τον χρήστη {name} στο YouVersion;"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "Στον χρήστη {name} αρέσει ο σελιδοδείκτης σου, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "Στον χρήστη {name}αρέσει η νέα σου φιλία με τον χρήστη {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "Στον χρήστη {name} αρέσει η επισήμανσή στου, {reference_human}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "Στον χρήστη {name} αρέσει το εικονοποιημένο εδάφιό σου για {reference_human} "
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "Στον χρήστη {name}αρέσει η σημείωσή σου"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "Στον χρήστη {name}αρέσει η σημείωσή σου στο {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "Στον χρήστη {name}αρέσει η σημείωσή σου, “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "Στον χρήστη {name} αρέσει η δραστηριότητά σου στο Πρόγραμμα Ανάγνωσης"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "Στον χρήστη {name}αρέσει η δραστηριότητά σου στο Πρόγραμμα Ανάγνωσης της Αγίας Γραφής"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "Ο/Η {name} σημείωσε {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "Ο/Η {name} επισήμανε {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "Ο/Η {name} δημιούργησε ένα εικονοποιημένο εδάφιο για {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "Ο/Η {name} πρόσθεσε μια σημείωση"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "Ο/Η {name} πρόσθεσε μια σημείωση στο {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "Ο/Η {name} πρόσθεσε μια σημείωση, “{title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "Ο/Η {name} ολοκλήρωσε το σχέδιο μελέτης: {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "Ο/Η {name} ολοκλήρωσε το σχέδιο μελέτης: {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "Ο/Η {name} ξεκίνησε ένα καινούργιο σχέδιο μελέτης, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "Ο/Η {name}ξεκίνησε ένα καινούργιο σχ'εδιο μελέτης: {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "Ο/Η {name} μόλις συνδέθηκε με την YouVersion. Πάτα για να τον/την προσθέσεις στους φίλους"
+
+msgid "notifications.system.test"
+msgstr "Κατεβάστε τώρα το εφαρμογή Αγία Γραφή για παιδιά!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Γειά σου</p><p>Χρησιμοποιώ την εφαρμογή Αγία Γραφή της YouVersion και θέλω να το μοιραστώ μαζί σας. Αν είστε καινούργιος στην εφαρμογή, είναι ένας απλός τρόπος να φέρετε την ομορφιά και την αλήθεια της Αγίας Γραφής στην καθημερινή σας ζωή. </p><p><strong>Κατεβάστε την εφαρμογή Αγία Γραφή:</strong> διαβάστε, παρακολουθήστε, ακούστε, και μοιραστείτε στο smartphone ή το tablet, και διαδικτυακά στο Bible.com</p><p><strong>Δημιουργήστε το λογαριασμό σας: </strong> εγγραφείτε στα σχέδια μελέτης της Αγίας Γραφής και θα έχετε πρόσβαση σε σελιδοδείκτες, επισημάνσεις, και σημειώσεις σε όλες σας τις συσκευές</p><p><strong>Προσθέστε φίλους (και εμένα!):</strong> εξερευνήστε και συζητήστε για την Αγία Γραφή με ανθρώπους για τους οποίους νοιάζεστε</p><p>Είναι όλα στην εφαρμογή Αγία Γραφή - Ξεκινήστε από εδώ: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Γειά σου\n"
+"\n"
+"Χρησιμοποιώ το Bible App του YouVersion και θέλω να το συμμεριστώ μαζί σου. Αν είσαι νέος στην εφαρμογή, είναι ένας απλός τρόπος που φέρνει την ομορφιά και την αλήθεια της Αγίας Γραφής στην καθημερινή ζωή.\n"
+"\n"
+"Κατέβασε το Bible App: διάβασε, παρακολούθησε, άκουσε, και συμμερίσου το στο smartphone ή το tablet, και στο διαδίκτυο στο Bible.com.\n"
+"\n"
+"Δημιούργησε τον λογαριασμό σου: Κάνε εγγραφή στα Προγράμματα Ανάγνωσης της Αγίας Γραφής και θα έχεις πρόσβαση σε σελιδοδείκτες, επισημάνσεις, και σημειώσεις σε όλες σου τις συσκευές.\n"
+"\n"
+"Πρόσθεσε φίλους (και μένα!): εξερεύνησε και συζήτησε για την Αγία Γραφή με ανθρώπους για τους οποίους ενδιαφέρεσαι,\n"
+"\n"
+"Όλα βρίσκονται στο Bible App - ξεκίνα από εδώ: "
+
+msgid "share.invite_email_subject"
+msgstr "Ακολουθήστε με στην εφαρμογή Αγία Γραφή!"
+
+msgid "share.invite_facebook"
+msgstr "Λατρεύω την εφαρμογή Αγία Γραφή! Με βοήθησε πράγματι να κάνω την Αγία Γραφή μέρος της καθημερινής μου ζωής. Μπορώ να επισημαίνω, να ακούω την Αγία Γραφή, να κρατώ σημειώσεις, να ακολουθώ σχέδια μελέτης... ακόμα και να παρακολουθώ βίντεο! Κατεβάστε την τώρα (είναι δωρεάν):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Έχετε την εφαρμογή Αγία Γραφή; Εμένα μου αρέσει, και νομίζω ότι θα αρέσει και σε εσάς. Αυτός είναι ο σύνδεσμος:"
+
+msgid "share.invite_sms"
+msgstr "Λατρεύω την εφαρμογή Αγία Γραφή της YouVersion. Θα αρέσει και σε εσάς"
+
+msgid "share.invite_sms_prefix"
+msgstr "Από {name}:"
+
+msgid "share.invite_twitter"
+msgstr "Η εφαρμογή Αγία Γραφή της YouVersion έχει ένα μόνιμο σημείο στην αρχική μου οθόνη Διαβάστε, παρακολουθήστε, ακούστε, και μοιραστείτε... όλα σε μια εφαρμογή που είναι δωρεάν:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Έχετε την εφαρμογή Αγία Γραφή της YouVersion; Εμένα μου αρέσει, και νομίζω ότι θα αρέσει και σε εσάς. Αυτός είναι ο σύνδεσμος:"

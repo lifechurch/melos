@@ -1,0 +1,12 @@
+- plan = plans_list_item
+%li.plan
+  = link_to plan_path(plan), { target: '_self' } do
+    %h3
+      =plan.name
+  %span.length.clearfix
+    = plan.formatted_length
+  - if plan.search_thumbnail_image.present?
+    %span.search_thumbnail.left
+      = image_tag plan.search_thumbnail_image.url
+  %p.clearfix
+    = plan.about

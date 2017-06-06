@@ -1,0 +1,10 @@
+-#= render "widgets/sign_up"
+- if params[:source] == "licenses"
+  .widget
+    %h3.hd
+      = t("registration.benefits title")
+    %div.bd
+      = t("registration.benefits blurb")
+- else
+  = render 'widgets/download_app'
+  = render 'widgets/bible_app_for_kids'

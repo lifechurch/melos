@@ -1,0 +1,17 @@
+- @sidebar = false
+
+
+- if current_user_is? @user
+  - content_for :mobile_right_nav do
+    %a.settings_btn{:href => settings_profile_path, target: "_self"}
+
+- content_for :lower_js_templates do
+  = render partial: "moments/js_templates"
+
+- content_for :main do
+  = render partial: "users/header", locals: { user: @user }
+  .row.pad-row
+    .columns.medium-12
+      = content_for?(:user_main) ? yield(:user_main) : yield
+
+= render template: 'layouts/application'

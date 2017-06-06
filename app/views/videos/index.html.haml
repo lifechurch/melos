@@ -1,0 +1,20 @@
+- html_attributes(id:"videos-index")
+- @sidebar = false
+- @title = "#{t('videos.watch videos')}"
+
+- content_for :meta_description do
+  = @title
+
+%article
+  .row
+    .medium-12.columns
+      %h1= t("videos.title")
+
+  .row.resource_list
+    - @videos.each do |v|
+      %div.medium-6.columns.end
+        %div.video
+          =link_to( series_video_path(id:v.id), { target: "_self" }) do
+            = image_tag( v.thumbnails.second.url )
+          %h2.info
+            =link_to(v.credits, publisher_video_path(id: v.id), {class: "publisher", target: "_self"})

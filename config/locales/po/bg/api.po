@@ -1,0 +1,351 @@
+# Bulgarian translations for Backend (YouVersion).
+# Copyright (C) 2017 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: bg\n"
+"Language-Team: bg <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Вие спечелихте <b>{title}</b> значката"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} спечели <b>{title}</b> значката"
+
+msgid "moment.bible.download.self.title"
+msgstr "Вие изтеглихте версията <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} изтегли версията <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Вие отбелязахте <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} отбеляза <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Освежете вярата си с нови планове."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Търсете Бог в Словото Му всеки ден."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Подгответе сърцето си този сезон."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Намерете Божията любов в Неговото Слово."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Най-хубавата година от живота Ви започва сега."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Празнувайте свободата в Христос."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Потърсете Бог в Неговото Слово."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Намерете надежда и обновление в Божието Слово."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Посвещавайте себе си ежедневно на Неговото Слово."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Открийте благодарност в Божиите обещания."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Божествената мъдрост започва в Божието Слово."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Божието Слово прави всичко ново."
+
+msgid "moment.friendship.self.title"
+msgstr "Вече сте приятели с <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} сега е приятел с <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Вие маркирахте <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} маркира <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Вие създадохте стих в снимка за <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} създаде стих в снимка за <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Вие добавихте бележа"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} добави бележка"
+
+msgid "moment.note.reference.self.title"
+msgstr "Вие добавихте бележка за <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name} добави бележка за <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Вие добавихте бележка <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} добави бележка <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Вие завършихте Вашия план"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} завърши план"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Вие завършихте своя план <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} завърши плана <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Ден {segment} от {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Вие изпълнихте ден <b>{segment}</b> от плана <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} изпълни ден <b>{segment}</b> от плана <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Вие започнахте нов план"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} започна нов план"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Вие започнахте нов план: <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} започна нов план: <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Гледайте <i>поредицата \"Библията\"</i> довечера!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Поредица \"Библията\"</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Сподели благата вест: Спасител се роди!"
+
+msgid "moment.system.find_friends.title"
+msgstr "Приложение Библията е дори още по-добро с приятели. Потърсете сред Вашите контакти, за да намерите приятели."
+
+msgid "moment.video.watched.self.title"
+msgstr "Вие гледахте <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} гледа <b>{title}</b>"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} коментира Вашето отбелязване: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} коментира Вашето ново приятелство с {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} коментира Вашето ново приятелство: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} коментира Вашата маркировка: “{comment}”"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} коментира Вашия стих в снимка: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} коментира Вашата бележка: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} коментира Вашия план: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} коментира Вашия план за прочит на Библията: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} също коментира отбелязването на {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} също коментира новото приятелство на {moment_owner_name} с {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} също коментира Вашето ново приятелство с {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} също коментира своето ново приятелство с {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} също коментира маркировката на {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} също коментира стиха в снимка на {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} също коментира бележката на {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} също коментира своето отбелязване: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} също коментира своето ново приятелство с {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} също коментира своето ново приятелство с Вас: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} също коментира своята маркировка: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} също коментира своя стих в снимка: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} също коментира своята бележка: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} също коментира своя план: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} също коментира своя план за прочит на Библията: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} също коментира плана на {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} също коментира плана за прочит на Библията на {moment_owner_name}: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} прие поканата Ви за приятелство"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} сега е Ваш приятел"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} иска да Ви бъде приятел в YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Имате покани за приятелство в приложение Библията, които очакват отговор"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Искате ли да бъдете приятели с {name} в YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} харесва Вашето отбелязване {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} харесва Вашето ново приятелство с {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} харесва Вашата маркировка {reference_human}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} харесва Вашия стих в снимка за {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} харесва Вашата бележка"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} харесва Вашата бележка за {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} харесва Вашата бележка “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} харесва дейността Ви по плана за прочит"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} харесва дейността Ви по плана за прочит на Библията"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} отбеляза {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} маркира {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} създаде стих в снимка за {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} добави бележка"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} добави бележка за {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} добави бележка “{title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} завърши своя план {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} завърши своя план за прочит на Библията {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} започна нов план: {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} започна нов план за прочит на Библията: {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} току-що се присъедини към YouVersion. Докоснете, за да го/я добавите като приятел."
+
+msgid "notifications.system.test"
+msgstr "Изтеглете нашето приложение Библията за деца сега!!!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Привет!</p><p>Използвам приложение Библията на YouVersion и исках да го споделя с вас. Ако не сте се сблъсквали с приложението преди, то е един лесен начин да внесете красотата и истината на Библията във всекидневието си. </p><p><strong>Сдобийте се с приложение Библията:</strong> четете, гледайте, слушайте и споделяйте от вашия смартфон или таблет, както и онлайн на Bible.com.</p><p><strong>Настройте профила си:</strong> абонирайте се за планове за прочит на Библията, достъпвайте отбелязвания, маркировки и бележки на няколко вида устройства.</p><p><strong>Добавете приятели (като мен!):</strong> изучавайте и обсъждайте Библията с хора, на които държите.</p><p>Всичко това е в приложение Библията—започнете оттук: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Привет!\n"
+"\n"
+"Използвам приложение Библията на YouVersion и исках да го споделя с вас. Ако не сте се сблъсквали с приложението преди, то е един прост начин да внесете красотата и истината на Библията във всекидневието си.\n"
+"\n"
+"Сдобийте се с приложение Библията: четете, гледайте, слушайте и споделяйте на вашия смартфон или таблет или онлайн на Bible.com.\n"
+"\n"
+"Настройте профила си: абонирайте се за планове за прочит на Библията и достъпвайте отбелязвания, маркировки и бележки на няколко вида устройства.\n"
+"\n"
+"Добавете приятели (като мен!): изследвайте и обсъждайте Библията с хора, на които държите.\n"
+"\n"
+"Всичко това - в приложение Библията - започнете оттук: "
+
+msgid "share.invite_email_subject"
+msgstr "Присъединете се към мен в приложение Библията!"
+
+msgid "share.invite_facebook"
+msgstr "Много ми харесва приложение Библията! Много ми помогна да направя Библията част от ежедневието си. Мога да маркирам стихове, да слушам аудио Библии, да си водя бележки, да следвам планове за прочит... дори да гледам видеа! Свалете си я сега (безплатна е):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Имате ли приложение Библията? На мен много ми харесва и смятам, че и вие ще я харесате. Ето линк:"
+
+msgid "share.invite_sms"
+msgstr "Обичам приложение Библията на YouVersion. Мисля, че и вие бихте го харесали:"
+
+msgid "share.invite_sms_prefix"
+msgstr "От {name}:"
+
+msgid "share.invite_twitter"
+msgstr "Приложение Библията на @YouVersion си има запазено място на началния екран на мобилното ми устройство. Четете, гледайте, слушайте и споделяйте...всичко в това безплатно приложение:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Имате ли приложение Библията от @YouVersion? На мен ми харесва много и смятам, че и на вас ще ви хареса. Ето линк:"

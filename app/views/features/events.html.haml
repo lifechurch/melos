@@ -1,0 +1,289 @@
+
+:ruby
+  puts case I18n.locale.to_s
+  when "fr", "ru", "zh-TW", "ko", "de", "nl"
+    image_dir = I18n.locale
+  when "pt", "pt-BR"
+    image_dir = "pt-BR"
+  when "es", "es-ES"
+    image_dir = "es"
+  when "zh", "zh-CN"
+    image_dir = "zh-CN"
+  else image_dir = "en"
+  end
+
+- events_link = "https://events.bible.com/#{image_dir}/"
+
+
+.MobileDropdown
+  .close-dropdown-btn-mobile
+    %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/close.svg"), :style => "width:26px;"}/
+  %ul.mobile-menu
+    %li
+      %a.features-btn{:href => '/features/events'}=t('events.menu.features')
+    %li
+      %a{:href => '/features/events-faq'}=t('events.menu.faq')
+    %li
+      %a{:href => '/features/events-resources'}=t('events.menu.resources')
+.homepage-wrap
+  .header-wrap.fixed-header
+    .header
+      .mobile-menu-btn.show-mobile
+        %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/menu-icon.svg"), :style => "width:19px;"}/
+      %a.logo{:href => "/features/events"}
+        %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-white.svg")}/
+        %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-gray.svg")}/
+      %ul.main-nav
+        %li
+          %a.features-btn{:href => '/features/events'}=t('events.menu.features')
+        %li
+          %a{:href => '/features/events-faq'}=t('events.menu.faq')
+        %li
+          %a{:href => '/features/events-resources'}=t('events.menu.resources')
+        %li.btn2
+          %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}=t('events.menu.tell your church')
+        %li.btn2
+          %a{:href => events_link}=t('events.menu.create an event')
+      .clearfix
+    / //header
+  / //header-wrap
+  #section-menu
+    %ul#myMenu
+      %li{"data-menuanchor" => "section1"}
+        %a{:href => "#section1"} section1
+      %li{"data-menuanchor" => "section2"}
+        %a{:href => "#section2"} section2
+      %li{"data-menuanchor" => "section3"}
+        %a{:href => "#section3"} section3
+      %li{"data-menuanchor" => "section4"}
+        %a{:href => "#section4"} section4
+      %li{"data-menuanchor" => "section5"}
+        %a.features-btn{:href => "#features"} section5
+  .BgBox
+    #section1-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg1-big.jpg')"}
+    #section2-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg2-big.jpg')"}
+    #section3-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg3-big.jpg')"}
+    #section4-bg.sectionBg{style: "background-image: url('/assets/features/events/home-bg4-big.jpg')"}
+  #fullpage-wrap
+    #section11.section
+      #section1-bg
+      .home-section-inner-wrap
+        .home-text-wrap1
+          .icon-row
+            = image_tag_with_at2x "features/events/#{image_dir}/bible-app-icon-1024.png", :alt => "bible icon"
+          %h1=t('events.section 1 title')
+          %p=t('events.section 1 text')
+          %a.movedown-btn
+            = image_tag_with_at2x "features/events/chevron-down.png", :alt => "move down"
+    #section21.section
+      #section2-bg
+      .home-section-inner-wrap
+        .home-text-wrap2
+          %h1=t('events.section 2 title')
+          %p=t('events.section 2 text')
+          %a.movedown-btn
+            = image_tag_with_at2x "features/events/chevron-down.png", :alt => "move down"
+    #section31.section
+      #section3-bg
+      .home-section-inner-wrap
+        .home-text-wrap3
+          %h1=t('events.section 3 title')
+          %p=t('events.section 3 text')
+          %a.movedown-btn
+            = image_tag_with_at2x "features/events/chevron-down.png", :alt => "move down"
+    #section41.section
+      #section4-bg
+      #section-iphone
+      .home-section-inner-wrap
+        .home-text-wrap4
+          %h1=t('events.section 4 title')
+          %p=t('events.section 4 text')
+          %a.movedown-btn2{:href => "#features"}
+            = image_tag_with_at2x "features/events/chevron-down.png", :alt => "move down"
+    .iphone-hand-wrap
+      .iphone-hand-inner
+        .iphone-hand
+          .iphone-screen-wrap
+            .screen-head
+              = image_tag_with_at2x "features/events/#{image_dir}/screen-header.jpg", :alt => ""
+            .iphone-screen
+              = image_tag "features/events/#{image_dir}/iphone-screen.jpg", :alt => ""
+            .screen-footer
+              = image_tag_with_at2x "features/events/#{image_dir}/screen-footer.jpg", :alt => ""
+    / //iphone-hand-wrap
+    #features.section.fp-auto-height
+      .admin-bg
+        .wrap
+          .admin-feature-content
+            .slider-wrap
+              -#%span.arrow-up.moveup-btn
+              %h1=t('events.slide demo title')
+              %p=t('events.slide demo text')
+              .laptop-bg
+                .admin-banner-flexslider.flexslider
+                  %ul.slides
+                    %li
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-1.jpg")}/
+                    %li
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-2.jpg")}/
+                    %li
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-3.jpg")}/
+                    %li
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-4.jpg")}/
+            / //slider-wrap
+            .content-two
+              %h1=t('events.building blocks title')
+              %p.intro=t('events.building blocks text')
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/text-module-icon.png", :alt => "Text Module"
+                  %span.text=t('events.module 1 title')
+                %p=t('events.module 1 text')
+              / //each-box
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/bible-references-icon.png", :alt => "Bible References"
+                  %span.text=t('events.module 2 title')
+                %p=t('events.module 2 text', version_count: '1200', language_count: '900')
+              / //each-box
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/reading-plans-icon.png", :alt => "Reading Plans Module"
+                  %span.text=t('events.module 3 title')
+                %p=t('events.module 3 text')
+              / //each-box
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/external-links-icon.png", :alt => "External Links"
+                  %span.text=t('events.module 4 title')
+                %p=t('events.module 4 text')
+              / //each-box
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/image-module-icon.png", :alt => "Image Module"
+                  %span.text=t('events.module 5 title')
+                %p=t('events.module 5 text')
+              / //each-box
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/announcement-module-icon.png", :alt => "Announcement Module"
+                  %span.text=t('events.module 6 title')
+                %p=t('events.module 6 text')
+              / //each-box
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/multiple-locations-icon.png", :alt => "Multiple Locations"
+                  %span.text=t('events.module 7 title')
+                %p=t('events.module 7 text')
+              / //each-box
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/duplicate-events-icon.png", :alt => "Duplicate Events"
+                  %span.text=t('events.module 8 title')
+                %p=t('events.module 8 text')
+              / //each-box
+              .each-box
+                .title
+                  %span.icon
+                    = image_tag_with_at2x "features/events/cost-savings-icon.png", :alt => "Cost Savings"
+                  %span.text=t('events.module 9 title')
+                %p=t('events.module 9 text')
+            / //content-two
+            .content-three
+              .imagebox
+                = image_tag_with_at2x "features/events/piggy-bank-image.png", :alt => "piggy-bank-image"
+              .text=t('events.cost savings').html_safe
+            / //content-three
+            .content-testimonial
+              %h1=t('events.testimonials')
+              .each-testi
+                .thumbnail
+                  = image_tag_with_at2x "features/events/bill_white.png", :alt => "Bill White"
+                %p=t('events.testimonial 1 text')
+                %p.name
+                  %b Pastor Bill White
+                  %br Christ Journey Church
+              / //each-testi
+              .each-testi
+                .thumbnail
+                  = image_tag_with_at2x "features/events/herbert.png", :alt => "Herbert"
+                %p=t('events.testimonial 2 text')
+                %p.name
+                  %b Pastor Herbert Cooper
+                  %br People’s Church
+              / //each-testi
+              .each-testi
+                .thumbnail
+                  = image_tag_with_at2x "features/events/cindy_beall.png", :alt => "Cindy Beall"
+                %p=t('events.testimonial 3 text')
+                %p.name
+                  %b Cindy Beall
+                  %br
+                    Leading and Loving It
+                    %br Director of Equip
+            .content-app
+              .icon-row
+                = image_tag_with_at2x "features/events/#{image_dir}/bible-app-icon-1024.png", :alt => "bible icon"
+              .inner-wrap
+                %h1=t('events.all new title')
+                %p=t('events.all new text', install_count: '220').html_safe
+                %ul.app-icons
+                  %li
+                    %a{:href => "https://appsto.re/ph/Agu3q.i", :target => "_blank"}
+                      = image_tag_with_at2x "features/events/#{image_dir}/app-store-icon.png", :alt => "app store"
+                  %li
+                    %a{:href => "https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android&hl=en", :target => "_blank"}
+                      = image_tag_with_at2x "features/events/#{image_dir}/google-play-icon.png", :alt => "google playstore"
+  #last-section-bg.get-started-today
+    .inner-wrap
+      .intro-text
+        %h1=t('events.get started title')
+        %p=t('events.get started text')
+      %a.create-btn{:href => events_link, :target => "blank"}=t('events.create an event')
+      .two-cols
+        .each-col
+          %a.title{:href => "/features/events-resources"}
+            %span.icon
+              = image_tag_with_at2x "features/events/market-your-event-icon.png", :alt => "market your event"
+            %span.text=t('events.resources')
+          %p
+            %a{:href => "/features/events-resources"}=t('events.resources text')
+        .separator
+        .each-col
+          %a.title{:href => "/features/events-faq"}
+            %span.icon
+              = image_tag_with_at2x "features/events/have-questions-icon.png", :alt => "market your event"
+            %span.text.text2
+              =t('events.frequently asked questions').html_safe
+          %p
+            %a{:href => "/features/events-faq"}=t('events.frequently asked questions text')
+        .clearfix
+      %ul.footer-social-icons
+        %li
+          %a{:href => "https://www.facebook.com/sharer/sharer.php?u=http://www.bible.com/#{image_dir}/events", :target => "_blank"}
+            %span.icon.facebook
+            =t('events.share')
+        %li
+          %a{:href => "https://twitter.com/intent/tweet?text=#{t('events.tweet text')}", :target => "_blank"}
+            %span.icon.twitter
+            =t('events.share')
+        %li
+          %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}
+            %span.icon.email
+            =t('events.email')
+  %script{:defer => "", :src => "/assets/features/events/jquery.flexslider.js", :type => "text/javascript"}
+  :javascript
+    $(document).ready(function() {
+      $('.admin-banner-flexslider').flexslider({
+        animation: "slide",
+        slideshow: false
+      });
+    });

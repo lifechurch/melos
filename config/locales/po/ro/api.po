@@ -1,0 +1,354 @@
+# Romanian translations for Backend (YouVersion).
+# Copyright (C) 2017 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ro\n"
+"Language-Team: ro <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Ai câștigat insigna <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} a câștigat insigna <b>{title}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Ai descărcat versiunea, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} a descărcat versiunea, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Ai marcat <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} a marcat <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Pregătește-te de Crăciun cu un plan de citire potrivit pentru perioada Adventului."
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Înviorează-ți credința cu planuri noi."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Caută-L pe Dumnezeu în Cuvântul Lui în fiecare zi."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Pregătește-ți inima în perioada aceasta."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Găsește dragostea lui Dumnezeu în Cuvântul Său."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Cel mai bun an al tău începe acum."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Celebrează libertatea în Hristos."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Caută-L pe Dumnezeu în Cuvântul Lui."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Găsește speranță și reînnoire în Cuvântul lui Dumnezeu."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Dedică-te zilnic Cuvântului Lui."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Descoperă mulțumirea în promisiunile lui Dumnezeu."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Înțelepciunea Dumnezeiască începe în Cuvântul lui Dumnezeu."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Cuvântul lui Dumnezeu face totul nou."
+
+msgid "moment.friendship.self.title"
+msgstr "Acum ești prieten cu <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} este acum prieten cu <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Ai evidențiat <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} a evidențiat <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Ai creat un verset ilustrat pentru <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} a creat un verset ilustrat pentru <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Ai adăugat o notiță"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} a adăugat o notiță"
+
+msgid "moment.note.reference.self.title"
+msgstr "Ai adăugat o notiță la {reference_human} <b></b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name} a adăugat o notiță la {reference_human} <b></b>"
+
+msgid "moment.note.self.title"
+msgstr "Ai adăugat o notiță, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} a adăugat o notiță, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Am completat un plan"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} a completat un plan"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Ai completat planul de citire <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} a completat un plan de citire, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Ziua {segment} din {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Ai completat ziua <b>{segment}</b> din planul <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} a completat ziua <b>{segment}</b> a planului, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Am început un plan"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} a început un plan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr " Ai început un nou plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} a început un nou plan, <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Vizionează <i>Serialul Biblia</i> deseară!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Serialul Biblia</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Dă vestea bună: s-a născut Mântuitorul!"
+
+msgid "moment.system.find_friends.title"
+msgstr "Aplicația Biblia este chiar mai bună cu Prieteni. Caută în Contactele tale pentru a găsi Prieteni."
+
+msgid "moment.video.watched.self.title"
+msgstr "Ai urmărit <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} a urmărit <b>{title}</b>"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} a comentat la marcajul tău: „{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} a comentat asupra prieteniei tale cu {friend_name}: „{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} a comentat asupra prieteniei tale: „{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} a comentat la evidențierea ta: „{comment}”"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} a comentat la versetul tău ilustrat: „{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} a comentat la notița ta: „{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} a comentat asupra planului tău: „{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} a comentat asupra planului tău biblic: „{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} a comentat de asemenea la marcajul lui {moment_owner_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} a comentat de asemenea asupra prieteniei lui {moment_owner_name} cu {friend_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} a comentat de asemenea asupra noii tale prietenii cu {moment_owner_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} a comentat de asemenea asupra noii sale prietenii cu {moment_owner_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} a comentat de asemenea la evidențierea lui {moment_owner_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} a comentat deasemenea: „{comment}” la versetul ilustrat al lui {moment_owner_name}"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} a comentat de asemenea la notița lui {moment_owner_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} a comentat de asemenea la marcajul său: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} a comentat de asemenea asupra noii prietenii cu {friend_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} a comentat de asemenea asupra noii lor prietenii cu tine: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} a comentat de asemenea la evidențierea lor: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} a comentat la propriul verset ilustrat: „{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} a comentat de asemenea la notița lor: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} a comentat de asemenea asupra planului său: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} a comentat de asemenea asupra planului său biblic: „{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} a comentat de asemenea asupra planului lui {moment_owner_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} a comentat de asemenea asupra planului biblic al lui {moment_owner_name}: „{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} ți-a acceptat cererea de prietenie"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} este acum prietenul tău"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} vrea să fie prietenul tău pe YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Ai cereri de prietenie în așteptare în Aplicația Biblia"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Vrei sa te împrietenești cu {name} pe YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} apreciază marcajul tău, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} apreciază prietenia ta cu {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} apreciază evidențiere ta, {reference_human}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} apreciază versetul tău ilustrat: {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} apreciază notița ta"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} apreciază notița ta despre {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} apreciază notița ta, “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} apreciază activitatea din planurile tale"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} apreciază activitatea din planurile tale biblice"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} a marcat {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} a evidențiat {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} a creat un verset ilustrat pentru {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} a adăugat o notiță"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} a adăugat o notiță la {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} a adăugat o notiță, „{title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} și-a completat planul, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} și-a completat planul biblic, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} a început un nou plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} a început un nou plan biblic, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} tocmai s-au înscris pe YouVersion. Apasă pentru adăugare la Prieteni."
+
+msgid "notifications.system.test"
+msgstr "Descarcă aplicația noastră Biblia pentru copii acum!!!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Bună!</p><p>Eu folosesc aplicația Biblia de la YouVersion și am vrut să împărtășesc cu tine acest lucru. Dacă ești un nou utilizator al aplicației, acesta este un mod simplu de a aduce frumusețea și adevărul Bibliei în viața de zi cu zi. </p><p><strong>Descarcă aplicația Biblia:</strong> citește, privește, ascultă și distribuie folosind un smartphone sau o tabletă, dar și pe site-ul Bible.com</p><p><strong>Configurează-ți contul:</strong> abonează-te la Planuri biblice și accesează marcaje, evidențieri și notițe de pe mai multe dispozitive.</p><p><strong>Adaugă Prieteni (ca mine!):</strong> explorează și discută Biblia împreună cu oamenii de care îți pasă</p><p>Totul în cadrul aplicației Biblia—începe de aici: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Salutare!\n"
+"\n"
+"Eu folosesc Aplicația Biblia de la YouVersion și voiam să-ți spun și ție. Este o modalitate simplă prin care poți aduce frumusețea și adevărul Cuvântului lui Dumnezeu în viața ta de zi cu zi.\n"
+"\n"
+"Instalează Aplicația Biblia: citește, vizionează, ascultă și împărtășește pe telefonul sau tableta ta, precum și online pe Bible.com,\n"
+"\n"
+"Configurează-ți contul: abonează-te la planuri de citire și accesează semne de carte, evidențieri și notițe de pe diverse dispozitive.\n"
+"\n"
+"Adaugă prieteni (ca mine!): explorează și citește Biblia cu persoane care sunt importante pentru tine.\n"
+"\n"
+"Găsești totul în aplicația Biblia—pornește de aci: "
+
+msgid "share.invite_email_subject"
+msgstr "Vino alături în Aplicația Biblia!"
+
+msgid "share.invite_facebook"
+msgstr "Iubesc Aplicația Biblia! M-a ajutat cu adevărat să fac Biblia parte din viața de zi cu zi. Pot face evidențieri, pot asculta Biblii audio, pot crea notițe, pot urma planuri devoționale... și pot viziona chiar și videoclipuri! Descarc-o acum (este gratuită):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Ai aplicația Biblia? Mie îmi place foarte mult și cred că ți-ar place și ție. Iată legătura:"
+
+msgid "share.invite_sms"
+msgstr "Iubesc aplicația Biblia de la YouVersion. Cred că ți-ar plăcea și ție:"
+
+msgid "share.invite_sms_prefix"
+msgstr "De la {name}:"
+
+msgid "share.invite_twitter"
+msgstr "Aplicația Biblia de la @YouVersion are un loc permanent pe ecranul meu de pornire. Citesc, vizionez, ascult și partajez...toate acestea cu o aplicație gratuită:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Ai aplicația Biblia de la @YouVersion? Mie îmi place foarte mult și cred că ți-ar place și ție. Iată legătura:"

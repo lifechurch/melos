@@ -1,0 +1,69 @@
+class window.Branch
+
+  constructor: -> 
+
+    branch.init '<%= Cfg.branch_key %>', (err, data) ->
+      # callback to handle err or data
+      # console.log(err) if err
+      return
+
+  android_url: ->
+    'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
+
+  banner: (options) ->
+    branch.banner {
+      icon: $('html').data('app-icon')
+      title: options.title
+      description: ''
+      openAppButtonText: options.open # Text to show on button if the user has the app installed
+      downloadAppButtonText: options.action # Text to show on button if the user does not have the app installed
+      iframe: true # Show banner in an iframe, recomended to isolate Branch banner CSS
+      showiOS: true # Should the banner be shown on iOS devices?
+      showAndroid: true # Should the banner be shown on Android devices?
+      showDesktop: false # Should the banner be shown on desktop devices?
+      disableHide: false # Should the user have the ability to hide the banner? (show's X on left side)
+      forgetHide: false # Should we remember or forget whether the user hid the banner?
+      position: 'bottom'
+      make_new_link: false # Should the banner create a new link, even if a link already exists?
+    }, {
+      channel: 'Bible.com'
+      feature: 'banner'
+      stage: 'new user'
+      type: 1
+      data:
+        referring_url: window.location.origin
+        '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706'
+        '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706'
+        '$android_url': Branch.prototype.android_url()
+        '$fire_url': 'http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2'
+        '$blackberry_url': 'http://appworld.blackberry.com/webstore/content/1222/'
+        '$windows_phone_url': 'http://www.windowsphone.com/en-us/store/app/bible/57f524fa-93e3-df11-a844-00237de2db9e'
+        '$deeplink_path': options.deeplink
+        # we can also include options like 
+        # "$always_deeplink" : 'true',
+    }, (err, link) ->
+      #console.log(err, link) if err
+      return false
+
+  sms: (phone, sms_text) ->
+    sms_text = sms_text + ' {{ link }}'
+    branch.sendSMS phone,
+      {
+        channel: 'Bible.com'
+        feature: 'sms'
+        stage: 'new user'
+        type: 1
+        data: {
+            referring_url: window.location.origin
+            '$custom_sms_text': sms_text
+            '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706'
+            '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706'
+            '$android_url': Branch.prototype.android_url()
+            '$blackberry_url': 'http://appworld.blackberry.com/webstore/content/1222/'
+            '$windows_phone_url': 'http://www.windowsphone.com/en-us/store/app/bible/57f524fa-93e3-df11-a844-00237de2db9e'
+        }
+      },
+      make_new_link: false # Default: false. If set to true, sendSMS will generate a new link even if one already exists.
+      (err) ->
+        # console.log(err) if err
+        return false

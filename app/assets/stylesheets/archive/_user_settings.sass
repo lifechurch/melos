@@ -1,0 +1,107 @@
+// `Font Family
+//----------------------------------------------------------------------------------------------------
+
+.user_setting_font_helvetica,
+*[data-setting-font="user_setting_font_helvetica"]
+  font-family: $body_font
+
+.user_setting_font_georgia,
+*[data-setting-font="user_setting_font_georgia"]
+  font-family: Georgia, 'Times New Roman', Times, serif
+
+.user_setting_font_baskerville,
+*[data-setting-font="user_setting_font_baskerville"]
+  font-family: Baskerville, 'Times New Roman', Times, serif
+  -webkit-font-smoothing: subpixel-antialiased
+
+.user_setting_font_verdana,
+*[data-setting-font="user_setting_font_verdana"]
+  font-family: Verdana, sans-serif
+
+// `Text Size
+//----------------------------------------------------------------------------------------------------
+
+.user_setting_size_small,
+*[data-setting-size="user_setting_size_small"]
+  font-size: $text_size
+
+.user_setting_size_medium,
+*[data-setting-size="user_setting_size_medium"]
+  font-size: 17px
+
+.user_setting_size_large,
+*[data-setting-size="user_setting_size_large"]
+  font-size: 20px
+
+// `Dynamic Menu
+//----------------------------------------------------------------------------------------------------
+
+.dynamic_menu label[class^="user_setting_font_"]
+  font-size: 15px
+
+.vod_title
+  padding-bottom: .75em
+  border-bottom: 1px solid #CCC
+
+.push_notifications_header
+  padding-top: 1em
+  margin-top: 1em
+  border-top: 1px solid #CCC
+
+.vod_form, .vod_form_delete
+  display: inline
+  select
+    background: url(image_url("select_arrows.png")) no-repeat 96% center
+.version
+  margin-top: 1em
+  p
+    margin-top: 1em
+
+#version_id
+  margin-left: 0px
+  width: 100%
+
+.time
+  margin-bottom: 1em
+
+
+// !User settings - connected devices
+
+.facebook-connect,
+.twitter-connect
+  display: block
+  width: 100px
+  height: 100px
+  border: 1px solid #dedddb
+  text-align: center
+  +border-radius(5px)
+  position: relative
+  float: left
+  margin: 0 15px 0 0
+  line-height: 99px
+
+  img
+    width: 64px
+    margin: 0 auto
+    &.connected
+      opacity: 0.25
+
+  a
+    display: block
+    text-indent: 100%
+    overflow: hidden
+    white-space: nowrap
+    height: 24px
+    width: 24px
+    +border-radius(3px)
+    position: absolute
+    top: -5px
+    right: -5px
+
+  a.connect-add
+    background: #6AB750 image-url("svg/icon-add.svg") no-repeat center center
+    background-size: 12px 12px
+
+  a.connect-delete
+    background: #FF0000 image-url("svg/icon-delete.svg") no-repeat center center
+    background-size: 12px 12px

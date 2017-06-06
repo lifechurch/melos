@@ -1,0 +1,23 @@
+.moment{"data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}", "data-str-delete-confirm" => "{{I18n 'moments.action.delete confirm'}}", "data-uuid" => "{{uuid}}"}
+  .moment-top
+    .moment-rp
+      %span.moment-icon
+      %span.moment-avatar
+        %a{href: "{{user.path}}"}
+          %img{src: "{{avatar}}"}/
+      %span.moment-time
+        {{created_dt}}
+      %h2.moment-rp-text
+        %a.moment-title-link{href: "{{path}}"}
+          {{{moment_title}}}
+      .moment-rp-details
+        {{> moments/_plan_start}}
+        %a{href: "{{action_url}}"}
+          {{{body_text}}}
+        {{#unless subscribed}}
+        %a.moment-rp-start.moment-action-start-plan.sm_action_button_grey{href: "#"}
+          {{I18n 'moments.action.start plan'}}
+        {{/unless}}
+  .moment-btm
+    {{> moments/_actions_bar}}
+    {{> moments/_comments}}

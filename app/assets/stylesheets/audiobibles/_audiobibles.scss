@@ -1,0 +1,28 @@
+body.c_audiobibles.a_index {
+  article {
+    li.item {
+      margin-left: 1.42857rem;
+    }
+  }
+}
+
+body.c_audiobibles.a_show {
+  h2 {
+    span.icon_listen {
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 21px;
+      margin-right: 5px;
+      display: inline-block;
+      background-position: 0 5 px !important;
+    }
+  }
+}
+
+html[dir="rtl"] body.c_audiobibles.a_index {
+  article {
+    li.item {
+      margin-right: 1.42857rem;
+    }
+  }
+}

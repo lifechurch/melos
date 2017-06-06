@@ -1,0 +1,29 @@
+- @title = "#{t('download ad.description copy', language_count: 900)} #{t('meta.mobile.download or read')} - Android, iPhone, iPad, Android tablet, Blackberry - #{t('meta.mobile.title')}"
+- @subtitle = ''
+
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+
+- content_for :meta_description do
+  = "#{t('meta.mobile.download or read')} #{t('download ad.description copy', language_count: 900)}"
+
+.row
+  .medium-8.columns
+    %article
+      %h1
+        = "#{t('bible versions')}"
+
+      = cache "versions_bylang_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+        %ul.no-bullet
+          - @versions_by_lang.each do |lang, versions|
+            - if versions.present?
+              %li
+                - meta_language = versions.first.attributes.language.local_name
+                - meta_language = "#{meta_language} | #{versions.first.attributes.language.name}" if (versions.first.attributes.language.name.present? and not (meta_language.eql?(versions.first.attributes.language.name)))
+                = link_to(t("versions.language and count", language_name: "#{meta_language}",  language_count: versions.count), language_path(versions.first.language.id), target: '_self', class: 'lang_title')
+                %ul.no_bullet
+                  - versions.each do |version|
+                    %li
+                      = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version), {target: "_self"}
+  .medium-4.columns.show-for-medium-up.l-border
+    = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}

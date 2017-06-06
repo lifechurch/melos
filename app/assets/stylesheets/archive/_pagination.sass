@@ -1,0 +1,34 @@
+#main
+  .pagination
+    border-top: 1px solid #ccc
+    clear: both
+    font:
+      size: 13px
+      weight: bold
+    margin-bottom: 20px
+    padding-top: 15px
+
+    li
+      background: none
+      margin: 0
+      padding: 0
+      float: left
+      padding: 1px
+      margin: 0 5px 0 0
+
+    .action_button
+      font-size: 12px
+
+
+  .pagination.labels
+    float: right
+    border-top: none
+    margin: 0
+    padding: 0
+    .pagination_pages
+      line-height: 25px
+
+// Hack for Firefox.
+@-moz-document url-prefix()
+  #main .pagination a
+    line-height: 29px

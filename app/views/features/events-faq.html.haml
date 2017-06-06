@@ -1,0 +1,117 @@
+
+:ruby
+  puts case I18n.locale.to_s
+  when "fr", "ru", "zh-TW", "ko", "de", "nl"
+    image_dir = I18n.locale
+  when "pt", "pt-BR"
+    image_dir = "pt-BR"
+  when "es", "es-ES"
+    image_dir = "es"
+  when "zh", "zh-CN"
+    image_dir = "zh-CN"
+  else image_dir = "en"
+  end
+
+- events_link = "https://events.bible.com/#{image_dir}/"
+
+.MobileDropdown
+  .close-dropdown-btn-mobile
+    %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/close.svg"), :style => "width:26px;"}/
+  %ul.mobile-menu
+    %li
+      %a.features-btn{:href => '/features/events'}=t('events.menu.features')
+    %li
+      %a{:href => '/features/events-faq'}=t('events.menu.faq')
+    %li
+      %a{:href => '/features/events-resources'}=t('events.menu.resources')
+.wrap
+  .header-wrap.fixed-header
+    .header
+      .mobile-menu-btn.show-mobile
+        %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/menu-icon.svg"), :style => "width:19px;"}/
+      %a.logo{:href => "/features/events"}
+        %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-white.svg")}/
+        %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-gray.svg")}/
+      %ul.main-nav
+        %li
+          %a.features-btn{:href => '/features/events'}=t('events.menu.features')
+        %li
+          %a{:href => '/features/events-faq'}=t('events.menu.faq')
+        %li
+          %a{:href => '/features/events-resources'}=t('events.menu.resources')
+        %li.btn2
+          %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}=t('events.menu.tell your church')
+        %li.btn2
+          %a{:href => events_link}=t('events.menu.create an event')
+      .clearfix
+    / //header
+  / //header-wrap
+  .sub-content
+    #accordion.faq-panel
+      .accordion-panel
+        .accordion-title
+          =t('events.faq question 1')
+        .accordion-content
+          %p=t('events.faq answer 1')
+        .accordion-title
+          =t('events.faq question 2')
+        .accordion-content
+          %p=t('events.faq answer 2')
+        .accordion-title
+          =t('events.faq question 3')
+        .accordion-content
+          %p=t('events.faq answer 3')
+        .accordion-title
+          =t('events.faq question 4')
+        .accordion-content
+          %p=t('events.faq answer 4').html_safe
+        .accordion-title
+          =t('events.faq question 5')
+        .accordion-content
+          %p=t('events.faq answer 5')
+        .accordion-title
+          =t('events.faq question 6')
+        .accordion-content
+          %p=t('events.faq answer 6')
+        .accordion-title
+          =t('events.faq question 7')
+        .accordion-content
+          %p=t('events.faq answer 7')
+        .accordion-title
+          =t('events.faq question 8')
+        .accordion-content
+          %p=t('events.faq answer 8')
+  %ul.footer-social-icons
+    %li
+      %a{:href => "https://www.facebook.com/sharer/sharer.php?u=http://www.bible.com/features/events", :target => "_blank"}
+        %span.icon.facebook
+        =t('events.share')
+    %li
+      %a{:href => "https://twitter.com/intent/tweet?text=#{t('events.tweet text')}", :target => "_blank"}
+        %span.icon.twitter
+        Tweet
+    %li
+      %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}
+        %span.icon.email
+        =t('events.email')
+/ //wrap
+:javascript
+  jQuery(function($){
+  	
+  	if($('.accordion-title').length) {
+  		$('.accordion-title').click(function(){	
+  		  var sibs = $(this).next('.accordion-content');
+  		  $(".accordion-content").not(sibs).slideUp(300);	
+  		  sibs.slideToggle(300)		;
+  		  $(this).parent('.accordion-panel').siblings('.accordion-panel').removeClass('active');		
+  
+  		  $(this).parent('.accordion-panel').toggleClass('active');
+  		  $('.accordion-title').not(this).removeClass('active');	
+  		  $(this).toggleClass('active');	
+  		});
+  	  }
+  
+  });
+%script{:src => "/assets/features/events/classie.js", :type => "text/javascript"}
+:javascript
+  var cbpAnimatedHeader=(function(){var b=document.documentElement,g=document.querySelector(".header-wrap"),e=false,a=200;function f(){window.addEventListener("scroll",function(h){if(!e){e=true;setTimeout(d,50)}},false)}function d(){var h=c();if(h>=a){classie.add(g,"smaller")}else{classie.remove(g,"smaller")}e=false}function c(){return window.pageYOffset||b.scrollTop}f()})();

@@ -1,0 +1,25 @@
+- @title = t('donate.donate now')
+- @sidebar = false
+
+-# Specific stylesheet for Donate page:
+- content_for :stylesheets do
+  = stylesheet_link_tag "donate"
+
+- content_for :title do
+  = image_tag(@site.logo_image, id: "yv-logo")
+
+%article.donate
+  %h1= t('donate.headline')
+
+  %hr
+
+  %div.donate_action
+    %a{type:"submit", class: "paypal-button action_button_green", id: "submit-donate", href:@ts_url}
+      = t("donate.donate now button")
+
+  %div.donate_paypal_logo
+    %img{src: "https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg", alt: "PayPal Acceptance Mark"}
+
+  %div.donate_copy
+    %p.callout= t('donate.subhead')
+    %p= t('donate.copy').html_safe

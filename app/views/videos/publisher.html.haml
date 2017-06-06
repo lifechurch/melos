@@ -1,0 +1,15 @@
+- html_attributes(id:"video-publisher")
+- @title = "#{t('videos.title')}: #{strip_tags @publisher.name.html_safe if @publisher.present? and @publisher.name.present?}"
+
+- content_for :meta_description do
+  = @title
+
+.row
+  .medium-8.columns
+    %article.videos-publisher
+      %h1= @publisher.name.html_safe if @publisher.present? and @publisher.name.present?
+
+      %p.video-info= @publisher.description.html_safe if @publisher.present? and @publisher.description.present?
+
+  .medium-4.columns.show-for-medium-up.l-border
+    = render partial: "sidebars/videos/publisher", locals: {video: @video, publisher: @publisher} if @publisher.present?

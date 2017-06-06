@@ -1,0 +1,415 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.web-test.yvdev.com:80/2.3/bookmarks/view.json?id=21699565
+    body: !!null 
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:35 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":404,"data":{"errors":["not_found"]},"buildtime":"2011-11-22T07:44:35+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.web-test.yvdev.com:80/2.3/bookmarks/view.json?id=0
+    body: !!null 
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:36 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":404,"data":{"errors":["not_found"]},"buildtime":"2011-11-22T07:44:36+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.web-test.yvdev.com:80/2.3/bookmarks/create.json
+    body: version=esv&reference=Matt.19.1&title=UpdateMe&username=testuser&token=615ad51b71049e299842f5af14c70cad
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:41 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"65","user_id":"1","version":"esv","created":"2011-11-22
+      01:44:39.840361-06","username":"testuser","labels":null,"highlight_color":null,"title":"UpdateMe","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"reference":{"human":"Matthew
+      19:1","osis":"Matt.19.1"},"reference_chapter":{"human":"Matthew 19","osis":"Matt.19"},"references":[{"osis":"Matt.19.1","human":"Matthew
+      19:1"}]},"buildtime":"2011-11-22T07:44:41+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.web-test.yvdev.com:80/2.3/bookmarks/update.json
+    body: version=esv&reference=matt.19.1.esv&title=New%20Title&username=testuser&id=65&labels=cats%2Cdogs&token=615ad51b71049e299842f5af14c70cad
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 500
+      message: Internal Server Error
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:42 GMT
+      content-type:
+      - text/html; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body: ! '{"response":{"data":{"errors":{"key":"unknown","error":"An error was
+      detected which prevented the loading of this page. If this problem persists,
+      please contact the website administrator."},"stack_trace":"/var/www/youversion.com/modules/core/libraries/Postgres_Lite.php
+      [268]:pg_query( Resource id #3, INSERT INTO bookmark_group_labels (id, bookmark_group_id,
+      label, reference, human, user_id, username) VALUES (&#039;1&#039;, 65, &#039;cats&#039;,
+      &#039;Matt.19.1&#039;, &#039;Matthew 19:1&#039;, 1, &#039;testuser&#039;),(&#039;2&#039;,
+      65, &#039;dogs&#039;, &#039;Matt.19.1&#039;, &#039;Matthew 19:1&#039;, 1, &#039;testuser&#039;)
+      )     /var/www/youversion.com/modules/youversion_api/models/bookmarks_2_3.php
+      [642]:Postgres_Lite_Core->query( INSERT INTO bookmark_group_labels (id, bookmark_group_id,
+      label, reference, human, user_id, username) VALUES (&#039;1&#039;, 65, &#039;cats&#039;,
+      &#039;Matt.19.1&#039;, &#039;Matthew 19:1&#039;, 1, &#039;testuser&#039;),(&#039;2&#039;,
+      65, &#039;dogs&#039;, &#039;Matt.19.1&#039;, &#039;Matthew 19:1&#039;, 1, &#039;testuser&#039;)
+      )     /var/www/youversion.com/applications/api/controllers/bookmarks_2_0.php
+      [28]:Bookmarks_2_3_Model->update( Array     (         [version] =&gt; esv         [reference]
+      =&gt; matt.19.1.esv         [title] =&gt; New Title         [username] =&gt;
+      testuser         [id] =&gt; 65         [labels] =&gt; cats,dogs         [token]
+      =&gt; 615ad51b71049e299842f5af14c70cad         [auth_user_id] =&gt; 1         [auth_username]
+      =&gt; testuser     )      )     Bookmarks_2_0_Controller->update(  )     /var/www/youversion.com/system/core/Kohana.php
+      [270]:ReflectionMethod->invokeArgs( Bookmarks_2_3_Controller Object     (         [output:protected]
+      =&gt; json         [user_id:protected] =&gt; 1         [username:protected]
+      =&gt; testuser         [password:protected] =&gt; tenders         [uri] =&gt;
+      URI Object             (             )              [input] =&gt; Input Object             (                 [use_xss_clean:protected]
+      =&gt; 1                 [magic_quotes_gpc:protected] =&gt;                  [ip_address]
+      =&gt;              )              [model] =&gt; Bookmarks_2_3_Model Object             (                 [db]
+      =&gt; Postgres_Lite Object                     (                         [config:protected]
+      =&gt; Array                             (                                 [benchmark]
+      =&gt; 1                                 [persistent] =&gt;                                  [connection]
+      =&gt; Array                                     (                                         [type]
+      =&gt; pgsql                                         [user] =&gt; dev                                         [pass]
+      =&gt;                                          [host] =&gt; 127.0.0.1                                         [port]
+      =&gt; 5432                                         [socket] =&gt;                                          [database]
+      =&gt; youversiondev                                     )                                      [character_set]
+      =&gt; utf8                                 [table_prefix] =&gt;                                  [object]
+      =&gt;                                  [escape] =&gt; 1                             )                              [link:protected]
+      =&gt; Resource id #3                         [set:protected] =&gt; Array                             (                             )                              [where:protected]
+      =&gt; Array                             (                             )                              [last_query:protected]
+      =&gt; INSERT INTO bookmark_group_labels (id, bookmark_group_id, label, reference,
+      human, user_id, username) VALUES (&#039;1&#039;, 65, &#039;cats&#039;, &#039;Matt.19.1&#039;,
+      &#039;Matthew 19:1&#039;, 1, &#039;testuser&#039;),(&#039;2&#039;, 65, &#039;dogs&#039;,
+      &#039;Matt.19.1&#039;, &#039;Matthew 19:1&#039;, 1, &#039;testuser&#039;)                         [from]
+      =&gt; Array                             (                             )                          )                      [mongo]
+      =&gt;                  [db_bible] =&gt; Postgres_Lite Object                     (                         [config:protected]
+      =&gt; Array                             (                                 [benchmark]
+      =&gt; 1                                 [persistent] =&gt;                                  [connection]
+      =&gt; Array                                     (                                         [type]
+      =&gt; pgsql                                         [user] =&gt; dev                                         [pass]
+      =&gt;                                          [host] =&gt; 127.0.0.1                                         [port]
+      =&gt; 5432                                         [socket] =&gt;                                          [database]
+      =&gt; bibletext                                     )                                      [character_set]
+      =&gt; utf8                                 [table_prefix] =&gt;                                  [object]
+      =&gt;                                  [escape] =&gt; 1                             )                              [link:protected]
+      =&gt;                          [set:protected] =&gt; Array                             (                             )                              [where:protected]
+      =&gt; Array                             (                             )                              [last_query:protected]
+      =&gt;                      )                      [cache_expire_search] =&gt;
+      1                 [cache_expire_error] =&gt; 1             )          )      )     Kohana::instance(  )     /var/www/youversion.com/system/core/Event.php
+      [209]:call_user_func( Array     (         [0] =&gt; Kohana         [1] =&gt;
+      instance     )      )     /var/www/youversion.com/system/core/Bootstrap.php
+      [55]:Event::run( system.execute )     index.php [100]:require( /var/www/youversion.com/system/core/Bootstrap.php
+      )","buildtime":"2011-11-22T07:44:42+00:00"}}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.web-test.yvdev.com:80/2.3/bookmarks/create.json
+    body: version=esv&reference=Matt.19.1&title=DeleteMe&username=testuser&token=615ad51b71049e299842f5af14c70cad
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:43 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"66","user_id":"1","version":"esv","created":"2011-11-22
+      01:44:43.197398-06","username":"testuser","labels":null,"highlight_color":null,"title":"DeleteMe","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"reference":{"human":"Matthew
+      19:1","osis":"Matt.19.1"},"reference_chapter":{"human":"Matthew 19","osis":"Matt.19"},"references":[{"osis":"Matt.19.1","human":"Matthew
+      19:1"}]},"buildtime":"2011-11-22T07:44:43+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.web-test.yvdev.com:80/2.3/bookmarks/delete.json
+    body: ids=66
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:43 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":"OK","buildtime":"2011-11-22T07:44:43+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://api.web-test.yvdev.com:443/2.3/users/create.json
+    body: email=testuser23%40youversion.com&username=testuser23&password=tenders&verified=true&agree=true&token=305a2d2c702fc416693e43139ce819a4
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:43 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":400,"data":{"errors":[{"key":"users.email.not_available","error":"An
+      account is already registered with that email"},{"key":"users.username.not_available","error":"An
+      account is already registered with that username"}]},"buildtime":"2011-11-22T07:44:43+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.web-test.yvdev.com:80/2.3/bookmarks/items.json?page=1&user_id=0
+    body: !!null 
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:44 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":404,"data":{"errors":[{"key":"bookmarks.bookmarks.not_found","error":"Bookmarks
+      not found"}]},"buildtime":"2011-11-22T07:44:44+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.web-test.yvdev.com:80/2.3/bookmarks/items.json?page=1&user_id=99
+    body: !!null 
+    headers:
+      referer:
+      - http://web-testing.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Tue, 22 Nov 2011 07:44:44 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"total":157,"bookmarks":[{"id":"28964575","user_id":"99","version":"niv84","created":"2010-09-20
+      23:06:46.055816-05","username":"jeffreyhundley","labels":"discipleship-day-3","highlight_color":null,"title":"Romans
+      6:23","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Romans
+      6:23","osis":"Rom.6.23"},"reference_chapter":{"human":"Romans 6","osis":"Rom.6"},"references":[{"osis":"Rom.6.23","human":"Romans
+      6:23"}]},{"id":"28964574","user_id":"99","version":"niv84","created":"2010-09-20
+      23:06:46.045733-05","username":"jeffreyhundley","labels":"discipleship-day-3","highlight_color":null,"title":"Romans
+      3:23","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Romans
+      3:23","osis":"Rom.3.23"},"reference_chapter":{"human":"Romans 3","osis":"Rom.3"},"references":[{"osis":"Rom.3.23","human":"Romans
+      3:23"}]},{"id":"28964573","user_id":"99","version":"niv84","created":"2010-09-20
+      23:06:46.035798-05","username":"jeffreyhundley","labels":"discipleship-day-3","highlight_color":null,"title":"Isaiah
+      59:1","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Isaiah
+      59:1","osis":"Isa.59.1"},"reference_chapter":{"human":"Isaiah 59","osis":"Isa.59"},"references":[{"osis":"Isa.59.1","human":"Isaiah
+      59:1"}]},{"id":"28964572","user_id":"99","version":"niv84","created":"2010-09-20
+      23:06:46.027911-05","username":"jeffreyhundley","labels":"discipleship-day-3","highlight_color":null,"title":"2
+      Corinthians 5:17","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"2
+      Corinthians 5:17","osis":"2Cor.5.17"},"reference_chapter":{"human":"2 Corinthians
+      5","osis":"2Cor.5"},"references":[{"osis":"2Cor.5.17","human":"2 Corinthians
+      5:17"}]},{"id":"1115562","user_id":"99","version":"niv84","created":"2010-09-20
+      23:06:26.530543-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Isaiah
+      59:1","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Isaiah
+      59:1","osis":"Isa.59.1"},"reference_chapter":{"human":"Isaiah 59","osis":"Isa.59"},"references":[{"osis":"Isa.59.1","human":"Isaiah
+      59:1"}]},{"id":"1115563","user_id":"99","version":"niv84","created":"2010-09-20
+      23:06:26.530543-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Romans
+      3:23","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Romans
+      3:23","osis":"Rom.3.23"},"reference_chapter":{"human":"Romans 3","osis":"Rom.3"},"references":[{"osis":"Rom.3.23","human":"Romans
+      3:23"}]},{"id":"1115565","user_id":"99","version":"niv84","created":"2010-09-20
+      23:06:26.530543-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"2
+      Corinthians 5:17","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"2
+      Corinthians 5:17","osis":"2Cor.5.17"},"reference_chapter":{"human":"2 Corinthians
+      5","osis":"2Cor.5"},"references":[{"osis":"2Cor.5.17","human":"2 Corinthians
+      5:17"}]},{"id":"1115564","user_id":"99","version":"niv84","created":"2010-09-20
+      23:06:26.530543-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Romans
+      6:23","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Romans
+      6:23","osis":"Rom.6.23"},"reference_chapter":{"human":"Romans 6","osis":"Rom.6"},"references":[{"osis":"Rom.6.23","human":"Romans
+      6:23"}]},{"id":"234981","user_id":"99","version":"niv84","created":"2010-08-25
+      22:42:24.818503-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"2
+      Timothy 2:2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"2
+      Timothy 2:2","osis":"2Tim.2.2"},"reference_chapter":{"human":"2 Timothy 2","osis":"2Tim.2"},"references":[{"osis":"2Tim.2.2","human":"2
+      Timothy 2:2"}]},{"id":"234980","user_id":"99","version":"niv84","created":"2010-08-25
+      22:42:24.818503-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Mark
+      1:17","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Mark
+      1:17","osis":"Mark.1.17"},"reference_chapter":{"human":"Mark 1","osis":"Mark.1"},"references":[{"osis":"Mark.1.17","human":"Mark
+      1:17"}]},{"id":"227457","user_id":"99","version":"niv84","created":"2010-08-17
+      23:04:30.305613-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      12:14","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      12:14","osis":"Eccl.12.14"},"reference_chapter":{"human":"Ecclesiastes 12","osis":"Eccl.12"},"references":[{"osis":"Eccl.12.14","human":"Ecclesiastes
+      12:14"}]},{"id":"227456","user_id":"99","version":"niv84","created":"2010-08-17
+      23:04:30.151361-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      12:13","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      12:13","osis":"Eccl.12.13"},"reference_chapter":{"human":"Ecclesiastes 12","osis":"Eccl.12"},"references":[{"osis":"Eccl.12.13","human":"Ecclesiastes
+      12:13"}]},{"id":"227455","user_id":"99","version":"niv84","created":"2010-08-17
+      23:04:29.836509-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      12:1","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      12:1","osis":"Eccl.12.1"},"reference_chapter":{"human":"Ecclesiastes 12","osis":"Eccl.12"},"references":[{"osis":"Eccl.12.1","human":"Ecclesiastes
+      12:1"}]},{"id":"226419","user_id":"99","version":"niv84","created":"2010-08-16
+      22:52:24.909207-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      11:5","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      11:5","osis":"Eccl.11.5"},"reference_chapter":{"human":"Ecclesiastes 11","osis":"Eccl.11"},"references":[{"osis":"Eccl.11.5","human":"Ecclesiastes
+      11:5"}]},{"id":"226418","user_id":"99","version":"niv84","created":"2010-08-16
+      22:52:24.61814-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      11:4","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      11:4","osis":"Eccl.11.4"},"reference_chapter":{"human":"Ecclesiastes 11","osis":"Eccl.11"},"references":[{"osis":"Eccl.11.4","human":"Ecclesiastes
+      11:4"}]},{"id":"223500","user_id":"99","version":"niv84","created":"2010-08-12
+      23:13:05.595766-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      10:14","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      10:14","osis":"Eccl.10.14"},"reference_chapter":{"human":"Ecclesiastes 10","osis":"Eccl.10"},"references":[{"osis":"Eccl.10.14","human":"Ecclesiastes
+      10:14"}]},{"id":"223499","user_id":"99","version":"niv84","created":"2010-08-12
+      23:13:05.452339-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      10:13","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      10:13","osis":"Eccl.10.13"},"reference_chapter":{"human":"Ecclesiastes 10","osis":"Eccl.10"},"references":[{"osis":"Eccl.10.13","human":"Ecclesiastes
+      10:13"}]},{"id":"223498","user_id":"99","version":"niv84","created":"2010-08-12
+      23:13:05.309055-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      10:12","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      10:12","osis":"Eccl.10.12"},"reference_chapter":{"human":"Ecclesiastes 10","osis":"Eccl.10"},"references":[{"osis":"Eccl.10.12","human":"Ecclesiastes
+      10:12"}]},{"id":"223497","user_id":"99","version":"niv84","created":"2010-08-12
+      23:13:05.10331-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      10:3","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      10:3","osis":"Eccl.10.3"},"reference_chapter":{"human":"Ecclesiastes 10","osis":"Eccl.10"},"references":[{"osis":"Eccl.10.3","human":"Ecclesiastes
+      10:3"}]},{"id":"222177","user_id":"99","version":"niv84","created":"2010-08-10
+      22:58:05.756268-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      9:10","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      9:10","osis":"Eccl.9.10"},"reference_chapter":{"human":"Ecclesiastes 9","osis":"Eccl.9"},"references":[{"osis":"Eccl.9.10","human":"Ecclesiastes
+      9:10"}]},{"id":"222176","user_id":"99","version":"niv84","created":"2010-08-10
+      22:58:05.606808-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      9:9","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      9:9","osis":"Eccl.9.9"},"reference_chapter":{"human":"Ecclesiastes 9","osis":"Eccl.9"},"references":[{"osis":"Eccl.9.9","human":"Ecclesiastes
+      9:9"}]},{"id":"222175","user_id":"99","version":"niv84","created":"2010-08-10
+      22:58:05.421436-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      9:8","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      9:8","osis":"Eccl.9.8"},"reference_chapter":{"human":"Ecclesiastes 9","osis":"Eccl.9"},"references":[{"osis":"Eccl.9.8","human":"Ecclesiastes
+      9:8"}]},{"id":"222174","user_id":"99","version":"niv84","created":"2010-08-10
+      22:58:05.171464-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      9:7","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      9:7","osis":"Eccl.9.7"},"reference_chapter":{"human":"Ecclesiastes 9","osis":"Eccl.9"},"references":[{"osis":"Eccl.9.7","human":"Ecclesiastes
+      9:7"}]},{"id":"219998","user_id":"99","version":"niv84","created":"2010-08-08
+      23:20:48.704732-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      8:17","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      8:17","osis":"Eccl.8.17"},"reference_chapter":{"human":"Ecclesiastes 8","osis":"Eccl.8"},"references":[{"osis":"Eccl.8.17","human":"Ecclesiastes
+      8:17"}]},{"id":"219997","user_id":"99","version":"niv84","created":"2010-08-08
+      23:20:48.558286-05","username":"jeffreyhundley","labels":null,"highlight_color":null,"title":"Ecclesiastes
+      8:15","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/6efeee12cfe5496d45447945affdabe3_512x512.png"},"reference":{"human":"Ecclesiastes
+      8:15","osis":"Eccl.8.15"},"reference_chapter":{"human":"Ecclesiastes 8","osis":"Eccl.8"},"references":[{"osis":"Eccl.8.15","human":"Ecclesiastes
+      8:15"}]}]},"buildtime":"2011-11-22T07:44:44+00:00"}}'
+    http_version: '1.1'

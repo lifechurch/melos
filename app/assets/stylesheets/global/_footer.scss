@@ -1,0 +1,128 @@
+#site-footer {
+  margin-bottom: 30px;
+  padding: 40px 0 0;
+  background: image-url("hr.svg") repeat-x left 53px;
+  background-size: 1px 1px;
+
+  .footer-icon {
+    margin-right: 10px;
+  }
+  .side-nav.floated li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .side-nav.floated.last li a {
+    color: #a9a9a9;
+    font-size: small;
+    margin-top: 10px;
+  }
+
+  .footer-logo {
+    display: block;
+    background-color: #fff;
+    padding: 0 15px;
+    margin: 0 auto 30px;
+    width: 200px;
+    height: 24px;
+  }
+
+  #languages label {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+
+  .floating-icon {
+    width: 200px;
+    margin-top: -51px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
+
+  @media #{$small-up} {
+    .footer-label {
+      padding: 0 0 5px;
+      text-transform: uppercase;
+      font-size: 0.688em;
+      font-weight: bold;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .container {
+      text-align: center;
+      padding-bottom: 40px;
+    }
+  }
+  @media #{$medium-up} {
+    .side-nav.floated li.spacer {
+      display: none;
+    }
+  }
+
+  @media #{$large-up} {
+    .footer-label {
+      border-bottom: 1px solid #ddd;
+    }
+    #choose_language {
+      width: 100%;
+    }
+    .container {
+      text-align: left;
+    }
+  }
+
+  @media #{$medium-only} {
+    #choose_language {
+      width: 33%;
+    }
+  }
+
+  @media #{$small-only} {
+    div.columns {
+      margin: 0 0 15px;
+    }
+
+    a {
+      padding: 0;
+    }
+    #choose_language {
+      width: 66%;
+    }
+    .side-nav.floated {
+      margin-bottom: 30px;
+    }
+    .side-nav.floated li {
+      margin-bottom: 0;
+    }
+
+    .side-nav.floated li.spacer {
+      display: block;
+    }
+  }
+
+  li a {
+    padding: 0;
+  }
+}
+
+html[lang=ru] {
+  #site-footer {
+    .side-nav.floated li {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    @media #{$medium-up} {
+      .side-nav.floated li.spacer {
+        display: none;
+      }
+    }
+    @media #{$small-only} {
+      .side-nav.floated li.spacer {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+- @sidebar = true
+
+%article.notifications
+  %h1
+    = t('notifications.title')
+  = render partial: "notifications/list", locals: {notifications: @notifications}

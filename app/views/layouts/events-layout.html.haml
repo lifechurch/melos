@@ -1,0 +1,238 @@
+:ruby
+  meta_title        = t('events.all new title')
+  meta_description  = t('events.section 1 title')
+  meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  prelaunch = false
+  youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
+  dir = "ltr"
+
+  puts case loc = I18n.locale.to_s
+  when "fr", "ru", "zh-TW", "ko", "de", "nl", "pt", "pt-BR", "es", "es-ES", "zh", "zh-CN"
+    meta_url = "#{request.protocol}#{request.host_with_port}/#{loc}/events"
+    facebook_locale = loc
+    i18n_css_class = loc
+  when "es", "es-ES"
+    facebook_locale = "es_ES"
+  when "zh", "zh-CN"
+    facebook_locale = "zh_CN"
+  when "ko"
+    facebook_locale = "ko_KR"
+  when "pt", "pt-BR"
+    facebook_locale = "pt_BR"
+  else
+    meta_url = "#{request.protocol}#{request.host_with_port}/en/events"
+    facebook_locale = "en_US"
+    i18n_css_class = "en"
+  end
+
+
+
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", class: (@html_classes.join(' ') if @html_classes), "data-locale" => I18n.locale, "data-default-locale" => I18n.default_locale, id: @html_id, "data-logged-in" => logged_in?.to_s, "data-user-id" => logged_in? ? current_auth.user_id : nil, "data-user-name" => logged_in? ? current_auth.username : nil, "data-user-avatar" => logged_in? ? current_user.user_avatar_url["px_48x48"] : nil, "data-app-icon" => asset_path(localized_bible_icon(200)), "dir" => is_rtl? ? 'rtl' : 'ltr', "lang" => I18n.locale }
+
+  %head{lang: I18n.locale}
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
+    %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
+
+    / Open Graph Markup for Facebook
+    / (Refer to https://developers.facebook.com/docs/sharing/webmasters)
+    %meta{:content => "105030176203924", :property => "fb:app_id"}/
+    %meta{:content => "Bible.com", :property => "og:site_name"}/
+    %meta{:content => "website", :property => "og:type"}/
+    -#%meta{:content => "Get YouVersion Events", :property => "og:title"}/
+    -#%meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :property => "og:description"}/
+    %meta{:content => url_for(image_path(localized_bible_icon(200))), :property => "og:image"}/
+    %meta{:content => "200", :property => "og:image:width"}/
+    %meta{:content => "200", :property => "og:image:height"}/
+
+    / Summary Card Markup for Twitter
+    / (Refer to https://dev.twitter.com/cards/types/summary)
+    %meta{:content => "summary", :name => "twitter:card"}/
+    %meta{:content => "@youversion", :name => "twitter:site"}/
+    -#%meta{:content => "Get YouVersion Events", :name => "twitter:title"}/
+    -#%meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :name => "twitter:description"}/
+    %meta{property: "twitter:title",       content: meta_title }
+    %meta{property: "twitter:description", content: meta_description }
+    %meta{:content => url_for(image_path(localized_bible_icon(200))), :name => "twitter:image"}/
+
+
+    %meta{name: "description",    content: meta_description}
+    %meta{name: "url",            content: meta_url}
+    %meta{property: "og:title",       content: meta_title }
+    %meta{property: "og:url",         content: meta_url }
+    %meta{property: "og:description", content: meta_description }
+    %meta{property: "og:locale", content: facebook_locale}
+    %meta{property: "og:locale:alternate", content: "en_GB"}
+    %meta{property: "og:locale:alternate", content: "es_ES"}
+    %meta{property: "og:locale:alternate", content: "ko_KR"}
+    %meta{property: "og:locale:alternate", content: "zh_CN"}
+    %meta{property: "og:locale:alternate", content: "zh_TW"}
+    %meta{property: "og:locale:alternate", content: "pt_BR"}
+    %meta{property: "og:locale:alternate", content: "ru_RU"}
+    %meta{property: "og:locale:alternate", content: "de_DE"}
+    %meta{property: "og:locale:alternate", content: "fr_FR"}
+
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/events",:rel=>"alternate",:hreflang=>"en"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/events",:rel=>"alternate",:hreflang=>"en-gb"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/es/events",:rel=>"alternate",:hreflang=>"es"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ko/events",:rel=>"alternate",:hreflang=>"ko"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/events",:rel=>"alternate",:hreflang=>"zh-cn"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-TW/events",:rel=>"alternate",:hreflang=>"zh-tw"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/events",:rel=>"alternate",:hreflang=>"pt-br"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ru/events",:rel=>"alternate",:hreflang=>"ru"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/de/events",:rel=>"alternate",:hreflang=>"de"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/fr/events",:rel=>"alternate",:hreflang=>"fr"}
+
+    - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/events"}
+
+    %title YouVersion Events
+    %link{:href => "/assets/features/events/flexslider.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/features/events/jquery.fullPage.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/features/events/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/features/events/responsive.css", :rel => "stylesheet", :type => "text/css"}/
+
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "/assets/features/events/global.js", :type => "text/javascript"}
+    %script{:src => "/assets/features/events/attrchange.js", :type => "text/javascript"}
+    %script{:src => "/assets/features/events/jquery.fullPage.js", :type => "text/javascript"}
+    %script{:src => "/assets/features/events/jquery.lazy.min.js", :type => "text/javascript"}
+    %script{:src => "/assets/features/events/jquery.smooth-scroll.js", :type => "text/javascript"}
+    %script{:src => "/assets/features/events/retina.min.js", :type => "text/javascript"}
+
+    %script{:src => "https://use.typekit.net/egx8aog.js"}
+    :javascript
+      try{Typekit.load({ async: true });}catch(e){}
+    %script{:src => "/assets/features/events/jquery.lazy.min.js", :type => "text/javascript"}
+    :javascript
+      $(function() {
+          $("img.lazy").Lazy();
+      });
+
+    - if params[:action].to_s.eql?("events")
+      -#this js is only for the main events page   bible.com/features/events
+      :javascript
+        $(document).ready(function() {
+            $('body').smoothScroll({
+                    delegateSelector: '.movedown-btn2'
+            });
+            $('body').smoothScroll({
+                    delegateSelector: '.features-btn'
+            });
+
+        });
+      :javascript
+        $(document).ready(function() {
+
+            $(window).resize(function () {
+                //$.fn.fullpage.reBuild();
+            });
+
+            $('#fullpage-wrap').fullpage({
+                menu: '#myMenu',
+
+                anchors: ['section1', 'section2', 'section3', 'section4', 'section5'],
+                normalScrollElements: '#features',
+                normalScrollElementTouchThreshold: 10,
+                scrollBar: true,
+                fitToSection: false,
+                autoScrolling: false,
+
+                scrollingSpeed: 900,
+                //responsiveHeight: 568,
+                continuousVertical: false,
+                verticalCentered: false,
+                resize: false,
+
+
+                onLeave: function(index, nextIndex, direction){
+                    //console.log('leave index: '+index);
+                    //console.log(direction);
+                    //console.log(nextIndex);
+                    $('body').attr('data-index', index);
+                    $('body').attr('data-next', nextIndex);
+                    $('body').removeClass('up').removeClass('down');
+                    $('body').addClass(direction);
+                    if(nextIndex == 1){
+                        //$('.iphone-hand').fadeIn(500);
+                        //$.fn.fullpage.setFitToSection(true);
+
+                        $('.iphone-hand .iphone-screen').animate({top: '0px'}, 350);
+
+                    }
+                    if(nextIndex == 2){
+                        //$('.iphone-hand').fadeIn(500);
+                        //$.fn.fullpage.setFitToSection(true);
+
+                        if ($(window).width() > 861) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-275px'}, 350);
+                        }
+                        if ($(window).width() < 860) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-190px'}, 350);
+                        }
+                        if ($(window).width() < 413) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-173px'}, 350);
+                        }
+
+
+                    }
+                    if(nextIndex == 3){
+                        //$('.iphone-hand').fadeIn(500);
+                        //$.fn.fullpage.setFitToSection(true);
+
+
+                        if ($(window).width() > 861) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-550px'}, 350);
+                        }
+                        if ($(window).width() < 860) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-380px'}, 350);
+                        }
+                        if ($(window).width() < 413) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-346px'}, 350);
+                        }
+
+                    }
+                    if(nextIndex == 4){
+                        //$('.iphone-hand').fadeIn(500);
+                        //$.fn.fullpage.setFitToSection(true);
+
+                        if ($(window).width() > 861) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-825px'}, 350);
+                        }
+                        if ($(window).width() < 860) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-570px'}, 350);
+                        }
+                        if ($(window).width() < 413) {
+                           $('.iphone-hand .iphone-screen').animate({top: '-519px'}, 350);
+                        }
+
+                    }
+
+
+                     if(nextIndex == 5){
+
+                        //$.fn.fullpage.setFitToSection(false);
+                     }
+
+                }, afterResize: function(){
+
+                }
+            });
+        });
+
+
+        $(document).on('click', '.movedown-btn', function(){
+          $.fn.fullpage.moveSectionDown();
+        });
+        $(document).on('click', '.moveup-btn', function(){
+          $.fn.fullpage.moveSectionUp();
+        });
+
+
+
+
+  %body{class: "c_#{params[:controller]} a_#{params[:action]} body-#{i18n_css_class}"}
+    = render '/shared/google_analytics'
+    = content_for?(:main) ? yield(:main) : yield

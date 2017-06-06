@@ -1,0 +1,71 @@
+- @sidebar = false
+- @main_nav = false
+- I18n.locale = :en
+-# Specific stylesheet for Status page:
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "status"
+
+:ruby
+  chart_width = 835 - 56 + 70
+  chart_height = 250
+
+%article
+  -if params[:p] == "yv123"
+    %hr
+    %section
+      %h3 End User Performance
+      .content
+        %iframe{src: "https://heroku.newrelic.com/public/charts/2Arj4WHkQjz", width: "#{chart_width - 11}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+    %section
+      %h3 Appliction Performance
+      .content
+        %iframe{src: "https://heroku.newrelic.com/public/charts/DOmdRVI7Ul", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 1px"}
+    %section
+      %h3 Throughput
+      .content
+        %iframe{src: "https://heroku.newrelic.com/public/charts/dkVpeFQ0WCw", width: "#{chart_width - 20}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 1px"}
+    %section
+      %h3 API Performance
+      .content
+        %iframe{src: "https://heroku.newrelic.com/public/charts/id0y42XZr2A", width: "#{chart_width + 10}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
+        %iframe{src: "https://heroku.newrelic.com/public/charts/gvf2t0V1TO", width: "#{chart_width + 3}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
+        %h6{style: "margin-left: 30px"} Bible API Performance
+        %iframe{src: "https://heroku.newrelic.com/public/charts/hREc5tcSRzS", width: "#{chart_width + 50}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-right: 0px"}
+    %section
+      %h3 Instance Debug Info (This Dyno)
+      .content
+        %p
+          %b Log Level:
+          %span.mute= "#{%w(debug info warn error fatal)[Rails.logger.level]}(#{Rails.logger.level})"
+        %p
+          %b Memory Usage:
+          %span.mute= number_to_human_size(`ps -o rss= -p #{Process.pid}`.to_i * 1024)
+    %section
+      %h3 ObjectSpace
+      .content
+        %p
+          %b Total objects:
+          =  ObjectSpace.each_object(Class){}
+
+          :ruby
+            objects = Hash.new(0)
+            ObjectSpace.each_object{|obj| objects[obj.class] += 1 }
+
+            strs = Hash.new(0)
+            ObjectSpace.each_object(String).each{|str| strs[str] += 1}
+
+          %p= pp objects.sort_by{|k,v| -v}
+          - strs.sort_by {|k,v| -v}[0..100].each do |str|
+            %p= pp str
+  - else
+    %section
+      %h3 User Info
+      .content
+        %p
+          %b UA String
+          %p.mute= request.env["HTTP_USER_AGENT"]
+          %b X_MOBILE_DEVICE String
+          %p.mute= request.env["X_MOBILE_DEVICE"] || (null)
+
+

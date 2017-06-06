@@ -1,0 +1,105 @@
+#footer
+  clear: both
+  color: #888
+  font-size: 11px
+  padding: 20px 0 10px 70px
+  position: relative
+
+
+  p.links
+    overflow: auto
+    line-height: 1em
+    float: left
+    max-width: 680px
+
+    a
+      display: block
+      margin: 0 2px 4px 0
+      float: left
+      padding: 5px 8px 7px
+      color: #fff
+      background-color: #bbb
+      +border-radius(4px)
+      text-decoration: none
+      font-weight: bold
+
+    a:hover
+      background-color: #ccc
+
+  p.social-links
+    clear: both
+    float: left
+    display: block
+    margin-top: -5px
+
+    a
+      display: block
+      float: left
+      color: #888
+      padding: 0 14px 0 16px
+
+    a.blog
+      background: image-url("social/blog-grey.svg") left center no-repeat
+      background-size: 10px 10px
+    a.fb
+      background: image-url("social/facebook-grey.svg") left center no-repeat
+      background-size: 14px 14px
+    a.tw
+      background: image-url("social/twitter-grey.svg") left center no-repeat
+      background-size: 15px 15px
+    a.pn
+      background: image-url("social/pinterest-grey.svg") left center no-repeat
+      background-size: 14px 14px
+    a.ig
+      background: image-url("social/instagram-grey.svg") left center no-repeat
+      background-size: 12px 12px
+    a.yt
+      background: image-url("social/youtube-grey.svg") left center no-repeat
+      background-size: 12px 12px
+
+  #languages
+    float: right
+
+    label
+      padding-right: 5px
+
+  .environment
+    position: absolute
+    right: 75px
+    bottom: -5px
+
+  .copyright
+    float: right
+    clear: right
+
+#footer.no_primary_nav
+  padding-left: 0
+
+// mobile class is added to html element for mobile pages
+html.mobile-client
+
+  #footer
+    min-height: 120px
+    margin-top: 19px
+
+    #languages
+      float: none
+      position: absolute
+      top: 20px
+
+    .copyright
+      float: none
+      position: absolute
+      bottom: 0
+
+    p.links
+      float: none
+      position: absolute
+      bottom: 15px
+
+    p.links a
+      font-size: 13px
+
+    p.links a:first-child
+      border-left: 1px solid #ccc
+      padding-left: 10px

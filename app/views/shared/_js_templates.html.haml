@@ -1,0 +1,397 @@
+- if is_reader_page? && presenter.present?
+
+  -#
+  -# Reader Text Settings Panel
+  -#
+  %script{'type' => 'text/ng-template', 'id' => '/reader-text-settings-panel.tpl.html'}
+    #reader-font-dropdown.large-3.medium-6.reader-panel.right
+      .font-sizes
+        %label
+          = t("shared.menu_settings.font size")
+        %table{cellpadding: "0", cellspacing: "0"}
+          %tr
+            %td{"ng-class" => "{ activeFont: fontSize == 14 }", "ng-click" => "fontSize = 14"}
+              %a{href: "#"}
+                = t("shared.menu_settings.small")
+            %td{"ng-class" => "{ activeFont: fontSize == 18 }", "ng-click" => "fontSize = 18"}
+              %a{href: "#"}
+                = t("shared.menu_settings.medium")
+            %td{"ng-class" => "{ activeFont: fontSize == 22 }", "ng-click" => "fontSize = 22"}
+              %a{href: "#"}
+                = t("shared.menu_settings.large")
+      .font-family
+        %label
+          = t("shared.menu_settings.font")
+        %table.font-selector{"style" => "width: 100%", cellpadding: "0", cellspacing: "0"}
+          %tr
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Arial Unicode MS,Arial Unicode,Arial' }"}
+              %input#reader_font_arial.hidden{:type => "radio", :value => "Arial Unicode MS,Arial Unicode,Arial", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_arial", "style" => "font-family:'Arial Unicode MS,Arial Unicode,Arial'"} Arial
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Avenir' }"}
+              %input#reader_font_avenir.hidden{:type => "radio", :value => "Avenir", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_avenir", "style" => "font-family:'Avenir'"} Avenir
+          %tr
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Tisa Pro' }"}
+              %input#reader_font_tisapro.hidden{:type => "radio", :value => "Tisa Pro", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_tisapro", "style" => "font-family:'Tisa Pro'"} Tisa Pro
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Helvetica' }"}
+              %input#reader_font_helvetica.hidden{:type => "radio", :value => "Helvetica", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_helvetica", "style" => "font-family:'Helvetica'"} Helvetica
+          %tr
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Baskerville' }"}
+              %input#reader_font_baskerville.hidden{:type => "radio", :value => "Baskerville", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_baskerville", "style" => "font-family:'Baskerville'"} Baskerville
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Verdana' }"}
+              %input#reader_font_verdana.hidden{:type => "radio", :value => "Verdana", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_verdana", "style" => "font-family:'Verdana'"} Verdana
+      .font-extras
+        %label
+          = t("shared.menu_settings.extras")
+        %div
+          %input#reader_show_footnotes{:type => "checkbox", "ng-model" => "showFootnotes"}
+          %label{:for => "reader_show_footnotes"}
+            = t("shared.menu_settings.translation notes")
+        %div
+          %input#reader_show_numbers_and_titles{:type => "checkbox", "ng-model" => "showNumbersAndTitles"}
+          %label{:for => "reader_show_numbers_and_titles"}
+            = t("shared.menu_settings.numbers and titles")
+        %div
+          %button.solid-button.green{"ng-click" => "save()"}
+            =t(".save")
+          != "&nbsp;"
+          %a{"ng-click" => "cancel()"}= t('cancel')
+
+
+  -#
+  -# Reader Audio Panel
+  -#
+  %script{'type' => 'text/ng-template', 'id' => '/reader-audio-panel.tpl.html'}
+    #reader-audio-panel
+      .large-3.medium-6.reader-panel.right
+        - if presenter.reference.present? && presenter.reference.audio.present?
+          %h3#reader_audio_title{"ng-bind" => "audioData.title"}
+            = presenter.reference.audio.title
+          %p#reader_audio_copyright_short.blue-text{"ng-bind" => "audioData.copyright_short.text"}
+            = presenter.reference.audio.copyright_short.text
+          %audio#reader_audio_player{src:presenter.reference.audio.url, "ng-src" => '{{audioData.trustedUrl}}', :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+            ="Your browser does not support the audio element."
+          %div.copyright_long
+            %p
+              = raw presenter.reference.audio.copyright_long.html
+            %a.action_button_blue{:href => presenter.reference.audio.publisher_link, :target => "_blank"}
+              = t("audio.publisher website")
+  #reader-audio-panel.ng-hide
+    .large-3.medium-6.reader-panel.right
+      - if presenter.reference.present? && presenter.reference.audio.present?
+        %h3#reader_audio_title{"ng-bind" => "audioData.title"}
+          = presenter.reference.audio.title
+        %p#reader_audio_copyright_short.blue-text{"ng-bind" => "audioData.copyright_short.text"}
+          = presenter.reference.audio.copyright_short.text
+        %audio#reader_audio_player{src:presenter.reference.audio.url, "ng-src" => '{{audioData.trustedUrl}}', :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+          ="Your browser does not support the audio element."
+
+
+  -#
+  -# Reader Text
+  -#
+  %script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
+    %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}"}
+      %span{"ng-html-compile"=>"content"}
+      .copyright
+        %p{ "ng-html-compile" => "copyright" }
+
+
+  -#
+  -# Verse Action
+  -#
+  %script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
+    %md-fab-speed-dial.ng-hide{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'", "ng-show" => "selection.length"}
+      %md-fab-trigger
+        %md-button.md-fab.md-raised.md-mini{"aria-label" => "+"}
+          %span{"ng-show" => "isOpen"}
+            %svg{:xmlns => "http://www.w3.org/2000/svg", :viewBox => "0 0 18.5 18.5", "enable-background" => "new 0 0 18.5 18.5"}
+              %path{:class => "st0", :d => "M18.5 1.5l-7.7 7.8 7.7 7.7-1.5 1.5-7.7-7.7-7.8 7.7-1.5-1.5 7.7-7.7-7.7-7.8 1.5-1.5 7.8 7.7 7.7-7.7z"}
+          %span{"ng-hide" => "isOpen"}
+            %svg{:xmlns => "http://www.w3.org/2000/svg", :viewBox => "0 0 24 24", "enable-background" => "new 0 0 24 24;"}
+              %polygon{:class => "st0", :points => "13.1,0 13.1,10.9 24,10.9 24,13.1 13.1,13.1 13.1,24 10.9,24 10.9,13.1 0,13.1 0,10.9 10.9,10.9 10.9,0"}
+      %md-fab-actions
+        %md-button.md-fab.md-raised.md-mini.highlight-button{"aria-label" => "Highlight", "ng-click" => "toggleSidePanel('showReaderHighlight')" }
+          %md-tooltip{"md-direction" => "left"} Highlight
+          %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
+        %md-button.md-fab.md-raised.md-mini.bookmark-button{"aria-label" => "Bookmark", "ng-click" => "toggleSidePanel('showReaderBookmark')"}
+          %md-tooltip{"md-direction" => "left"} Bookmark
+          %md-icon{"md-svg-src" => "/assets/bookmark-solid.svg"}
+        %md-button.md-fab.md-raised.md-mini.note-button{"aria-label" => "Note", "ng-click" => "toggleSidePanel('showReaderNote')"}
+          %md-tooltip{"md-direction" => "left"} Note
+          %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
+        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share", "ng-click" => "toggleSidePanel('showReaderShare')"}
+          %md-tooltip{"md-direction" => "left"} Share
+          %md-icon{"md-svg-src" => "/assets/icon-share.svg"}
+
+  -#
+  -# Reader Share Panel
+  -#
+  %script{type:"text/ng-template", id: "/reader-share-panel.tpl.html"}
+    %div.ng-hide{"ng-show" => "selection.length"}
+      .ng-hide{"ng-show"=>"success"}
+        %span.success= t("highlights.create success")
+      %div{"ng-hide"=>"success"}
+        %label
+          =t("social.share")
+        %div.addthis_sharing_toolbox{"data-url" => "", "data-title" => ""}
+        %a{"ng-click" => "cancel()", title: "Cancel"}
+          =t("cancel")
+
+  -#
+  -# Reader Highlight Panel
+  -#
+  %script{type:"text/ng-template", id: "/reader-highlight-panel.tpl.html"}
+    .reader-verseaction-loggedout{"ng-if" => "!isLoggedIn && selection.length"}
+      %p.highlight
+        = t('registration.highlight blurb');
+      %span.fb
+        = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
+      %span.or
+        = t("or.upper")
+      %span.email
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email"})
+    %div{"ng-if" => "isLoggedIn && selection.length"}
+      .ng-hide{"ng-show"=>"success"}
+        %span.success= t("highlights.create success")
+        -#%span.success
+          %a.solid-button.green{}= t("social.add comment")
+      %form{"ng-hide"=>"success"}
+        %input.selected-color{"ng-model" => "highlight.color", :type => "hidden"}
+        .reader-highlight-swatches
+          .colorButton.vertical-middle.text-center{"ng-class" => "{active: highlight.color == color}", "ng-click" => "highlight.color = color", "ng-repeat" => "color in ::colors", "ng-style" => "{'background-color': '#' + color}"}
+            -#%span{"ng-if" => "highlight.color == color"} X
+          %div.colorButton.vertical-middle.text-center{"md-color-picker" => true, "value" => "highlight.color"}
+        .reader-highlight-save
+          %button.solid-button.green{"ng-click" => "submit(highlight)", :type => "submit", :value => "submit"}= t('highlights.form.save button')
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
+
+
+  -#
+  -# Reader Bookmark Panel
+  -#
+  %script{type:"text/ng-template", id: "/reader-bookmark-panel.tpl.html"}
+    .reader-verseaction-loggedout{"ng-if" => "!isLoggedIn && selection.length"}
+      %p.bookmark
+        = t('registration.bookmark blurb');
+      %span.fb
+        = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
+      %span.or
+        = t("or.upper")
+      %span.email
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email"})
+    %div{"ng-if" => "isLoggedIn && selection.length"}
+      .ng-hide{"ng-show"=>"success"}
+        %span.success= t("bookmarks.create success")
+        %span.success
+          %a.solid-button.green{}= t("social.add comment")
+      %form{"ng-hide"=>"success"}
+        %input.selected-color{"ng-model" => "bookmark.color", :type => "hidden"}
+        .reader-bookmark-swatches
+          .colorButton.vertical-middle.text-center{"ng-class" => "{active: bookmark.color == color}", "ng-click" => "bookmark.color = color", "ng-repeat" => "color in ::colors", "ng-style" => "{'background-color': '#' + color}"}
+            -# %span{"ng-if" => "bookmark.color == color"} X
+          %div.colorButton.vertical-middle.text-center{"md-color-picker" => true, "value" => "bookmark.color"}
+            ="+"
+        .reader-bookmark-inputs
+          %label
+            =t("bookmarks.title field")
+          %input.selected-color{"ng-model" => "bookmark.title", :type => "text"}
+          %label
+            =t("bookmarks.labels")
+          %md-chips{"ng-model"=> "labels", "placeholder" => "#{t('bookmarks.labels')}", "readonly" => "false", "delete-button-label" => "#{t('bookmarks.remove label')}"}
+        .reader-bookmark-save
+          %button.solid-button.green{"ng-click" => "submit(bookmark, labels)", :type => "submit", :value => "submit"}= t('bookmarks.form.save button')
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
+
+  -#
+  -# Reader Note Panel
+  -#
+  %script{type:"text/ng-template", id: "/reader-note-panel.tpl.html"}
+    .reader-verseaction-loggedout{"ng-if" => "!isLoggedIn && selection.length"}
+      %p.note
+        = t('registration.note blurb');
+      %span.fb
+        = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
+      %span.or
+        = t("or.upper")
+      %span.email
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email"})
+    %div{"ng-if" => "isLoggedIn && selection.length"}
+      .ng-hide{"ng-show"=>"success"}
+        %span.success= t("notes.create success")
+        %span.success
+          %a.solid-button.green{}= t("social.add comment")
+      %form{"ng-hide"=>"success"}
+        %input.selected-color{"ng-model" => "note.color", :type => "hidden"}
+        .reader-note-swatches
+          .colorButton.vertical-middle.text-center{"ng-class" => "{active: note.color == color}", "ng-click" => "note.color = color", "ng-repeat" => "color in ::colors", "ng-style" => "{'background-color': '#' + color}"}
+            -#%span{"ng-if" => "note.color == color"} X
+          %div.colorButton.vertical-middle.text-center{"md-color-picker" => true, "value" => "note.color"}
+        .reader-note-inputs
+          %label
+            = t("notes.title field")
+          %input.selected-color{"ng-model" => "note.title", :type => "text"}
+          %label
+            = t("notes.form.content field")
+          %textarea{"ng-model"=>"note.content"}
+        .reader-note-save
+          %button.solid-button.green{"ng-click" => "submit(note)", :type => "submit", :value => "submit"}= t('notes.form.save button')
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
+
+  -#
+  -#
+  -#
+    %script#pane-bookmark-tmpl{type:"text/ng-template"}
+      :plain
+        <div class="tab-panel bookmark-pane" id="bookmark-pane">
+          <div class="pane">
+            <span class="verse-actions-success-message success" style="display:none;">
+              #{t("bookmarks.create success")}
+              <div class="post-verse-action-add-comment">
+                <a href="#" class="verse-actions-success-link">
+                  #{t("social.add comment")}
+                </a>
+              </div>
+            </span>
+            <form action="/bookmarks" method="post">
+              <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
+              <input type="hidden" name="bookmark[version_id]" value="#{presenter.version.id}" />
+              <input type="hidden" name="bookmark[usfm_references]" class="references verses_selected_input" />
+              <input type="hidden" name="bookmark[color]" class="selected-color" />
+              <p>
+                <label for="bookmark_title">
+                  #{t("bookmarks.form.title field")}
+                </label>
+                <br />
+                <input type="text" id="bookmark_title" name="bookmark[title]" />
+              </p>
+              <p>
+                <label for="bookmark_labels">
+                  #{t("bookmarks.form.labels field")}
+                </label>
+                <br />
+                <input type="text" id="bookmark_labels" name="bookmark[labels]" placeholder="#{t("bookmarks.labels placeholder")}" />
+              </p>
+
+              <label>
+                #{t("bookmarks.form.highlight field")}
+              </label>
+              <div class="color_picker_list">
+                <div class="color_picker"></div>
+              </div>
+              <div>
+                <button type="submit" name="bookmark[submit]" value="submit" class="action_button_green">
+                  #{t('bookmarks.form.save button')}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+    -#
+    -#
+    -#
+    %script#pane-note-tmpl{type:"text/ng-template"}
+      #note-pane.tab-panel
+        .pane
+          %p.verse-actions-success-message.success{style: "display: none;"}
+            = t("notes.create success")
+
+          - note = presenter.note
+          = form_for note, url: (logged_in? ? notes_path : sign_up_path), method: "post" do |f|
+            = f.hidden_field :version_id
+            = f.hidden_field :usfm_references, class: "verses_selected_input"
+            = f.hidden_field :color, class:"selected-color"
+            %div.title
+              = f.label :title, t("notes.form.title field")
+              = f.text_field :title
+            %div.status
+              = f.label :user_status, t("notes.form.status field")
+              = f.select :user_status, options_for_select(object_status, note.user_status)
+            %div
+              = f.text_area :content, rows: 4, cols: 68
+
+            %div
+              %label
+                = t('notes.form.highlight field')
+              .color_picker_list
+                .color_picker
+
+            %div.save
+              %button.action_button_green
+                = t('notes.form.save button')
+
+
+    -#
+    -#
+    -#
+    %script#pane-share-tmpl{type:"text/ng-template"}
+      #share-pane.tab-panel
+        .pane
+          %span#short_link
+          %div.addthis_sharing_toolbox{"data-url" => "", "data-title" => ""}
+
+
+    -#
+    -#
+    -#
+    %script#pane-link-tmpl{type:"text/ng-template"}
+      :plain
+        <div class="tab-panel" id="link-pane">
+          <div class="pane">
+            <span class="text_field_embed">
+              <input id="copy_link_input" value="" type="text" />
+              <div id="copy_link_container">
+                <button id="copy_link" data-confirm-text="#{t("copy confirmed")}">
+                  #{t("copy")}
+                </button>
+              </div>
+            </span>
+          </div>
+        </div>
+
+
+    -#
+    -#
+    -#
+    %script#pane-register-tmpl{type:"text/ng-template"}
+      .account.hide.tab-trigger
+        = t("registration.with email")
+      #need-account.tab-panel
+        .pane
+          .blurbs
+            %p.highlight= t('registration.highlight blurb');
+            %p.bookmark= t('registration.bookmark blurb');
+            %p.share= t('registration.share blurb');
+            %p.note= t('registration.note blurb');
+          %h4= t("pages.home.get started")
+          #get-started-buttons
+            %span.fb
+              = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: 'action_button_blue')
+            %span.or
+              = t("or.upper")
+            %span.email
+              = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})
+
+    -#
+    -#
+    -#
+    %script#moment-share-layer-tmpl{type:"text/ng-template"}
+      %div.moment-actions-share-box
+        %span.moment-actions-share-arrow
+          &nbsp;
+        %div
+          %span
+            %a{href:"#", target: "_blank", title: "Share this on Facebook", class: "facebook moment-actions-share-facebook"}
+              Facebook
+          %span
+            %a{href:"#", target: "_blank", title: "Share this on Twitter", class: "twitter moment-actions-share-twitter"}
+              Twitter

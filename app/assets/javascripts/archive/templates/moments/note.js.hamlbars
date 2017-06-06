@@ -1,0 +1,23 @@
+.moment{"data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}", "data-str-delete-confirm" => "{{I18n 'moments.action.delete confirm'}}", "data-uuid" => "{{uuid}}"}
+  .moment-top
+    .moment-no
+      %span.moment-icon
+      %span.moment-avatar
+        %a{href: "{{user.path}}"}
+          %img{src: "{{avatar}}"}/
+      %span.moment-time
+        {{status}} •
+        {{created_dt}}
+      %h2.moment-no-text
+        %a.moment-title-link{href: "{{path}}"}
+          {{{moment_title}}}
+        {{#each references}}
+        %a.reference-link{href: "/bible/{{version_id}}/{{usfmJoin usfm}}"}
+          {{human}}
+        {{/each}}
+      .moment-no-note
+        %p.moment-no-note-title {{title}}
+        %p.moment-no-note-text {{{content}}}
+  .moment-btm
+    {{> moments/_actions_bar}}
+    {{> moments/_comments}}

@@ -1,0 +1,388 @@
+// Switching this to .scss because .sass won't allow the formatting needed to target devices other than Apple's
+
+// !Retina images
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+  // !Primary nav
+
+  #nav_mobile_home a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px 5px;
+  }
+
+  #nav_mobile_bible a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -167px;
+  }
+
+  #nav_mobile_plans a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -340px;
+  }
+
+  #nav_mobile_friends a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1556px;
+  }
+
+  #nav_mobile_live a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1035px;
+  }
+
+  #nav_mobile_mobile a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1470px;
+  }
+
+  #nav_mobile_profile a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1210px;
+  }
+
+  #nav_mobile_videos a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -600px;
+  }
+
+  #nav_mobile_home a.icon,
+  #nav_mobile_bible a.icon,
+  #nav_mobile_plans a.icon,
+  #nav_mobile_friends a.icon,
+  #nav_mobile_live a.icon,
+  #nav_mobile_mobile a.icon,
+  #nav_mobile_profile a.icon,
+  #nav_mobile_videos a.icon {
+    background-size: 32px 1900px;
+  }
+
+  // !verse action menu
+
+  #menu_verse_actions .tab-trigger {
+    background: #0084c8 image-url("mobile/verse_action_sprite_2x.png") no-repeat;
+    background-size: 16px 300px;
+  }
+
+  #menu_verse_actions .tab-trigger.bookmark {
+    background-position: center -50px;
+  }
+
+  #menu_verse_actions .tab-trigger.comments {
+    background-position: -45px -40px;
+  }
+
+  #menu_verse_actions .tab-trigger.highlight {
+    background-position: center -6px;
+  }
+
+  #menu_verse_actions .tab-trigger.note {
+    background-position: center -94px;
+  }
+
+  #menu_verse_actions .tab-trigger.related {
+    background-position: center -227px;
+  }
+
+  #menu_verse_actions .tab-trigger.share {
+    background-position: center -138px;
+  }
+
+  // !Header
+
+  #header .friend-requests-btn,
+  #header .notifications-btn {
+    background: image-url("header-sprite@2x.png") no-repeat;
+    background-size: 28px 550px;
+  }
+
+  #header .friend-requests-btn {
+    background-position: 0px 9px;
+  }
+
+  #header .notifications-btn {
+    background-position: 0px -45px;
+  }
+
+
+  // !Profile
+
+  .top_section {
+    .profile-tabs-activity,
+    .profile-tabs-friends,
+    .profile-tabs-notes,
+    .profile-tabs-bookmarks,
+    .profile-tabs-highlights,
+    .profile-tabs-badges {
+      background: #EEEDEB image-url("mobile/profile-tabs-sprite@2x.png") no-repeat center top;
+      background-size: 32px 798px;
+    }
+
+    .profile-tabs-activity {
+      background-position: center 12px;
+    }
+
+    .profile-tabs-friends {
+      background-position: center -116px;
+    }
+
+    .profile-tabs-notes {
+      background-position: center -243px;
+    }
+
+    .profile-tabs-bookmarks {
+      background-position: center -371px;
+    }
+
+    .profile-tabs-highlights {
+      background-position: center -498px;
+    }
+
+    .profile-tabs-badges {
+      background-position: center -626px;
+    }
+
+    .profile-tabs-activity.highlight {
+      background-position: center 10px;
+    }
+
+    .profile-tabs-friends.highlight {
+      background-position: center -118px;
+    }
+
+    .profile-tabs-notes.highlight {
+      background-position: center -245px;
+    }
+
+    .profile-tabs-bookmarks.highlight {
+      background-position: center -373px;
+    }
+
+    .profile-tabs-highlights.highlight {
+      background-position: center -500px;
+    }
+
+    .profile-tabs-badges.highlight {
+      background-position: center -628px;
+    }
+  }
+
+
+  // !Friends tab
+  .friends-none {
+    background: image-url("social-psa-profiles@2x.png") no-repeat center 40px;
+    background-size: 280px 48px;
+  }
+
+
+  // !Profile settings
+
+  h3.hd {
+    background: #E1E1E1 image-url("mobile/dropdown-arrow@2x.png") no-repeat 96% center;
+    background-size: 10px 17px;
+  }
+
+
+  // !Blank slate pages
+
+  #main {
+
+    .slate-bookmarks {
+      background: #fff image-url("icon-bookmark-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-highlights {
+      background: #fff image-url("icon-highlight-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-notes {
+      background: #fff image-url("icon-notes-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-badges {
+      background: #fff image-url("icon-badge-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-activity {
+      background: #fff image-url("icon-activity-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-friends {
+      background: #fff image-url("icon-group-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+  }
+
+  // !Home
+
+  .moment-actions-share a,
+  .moment-actions-comment a,
+  .moment-actions-like a {
+    background: image-url("social-actions-sprite@2x.png") no-repeat;
+    background-size: 20px 800px;
+  }
+
+  .moment-actions-share a {
+    background-position: 10px 10px;
+  }
+
+  .moment-actions-comment a {
+    background-position: 10px -129px;
+  }
+
+  .moment-actions-like a {
+    background-position: 10px -36px;
+  }
+
+  .moment-actions-like a.liked {
+    background-position: 10px -82px;
+  }
+
+  .moment-no-note-title {
+    background: image-url("moment-no-note-title-bg@2x.png") repeat-y left top;
+    background-size: 23px 1px;
+  }
+
+  .moment-no-note-text {
+    background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top;
+    background-size: 600px 17px;
+  }
+
+  .moment-vod-calendar {
+    background: image-url("social-vod-icon@2x.png") no-repeat left center;
+    background-size: 48px 48px;
+  }
+
+  .moment-hi .moment-icon,
+  .moment-bm .moment-icon,
+  .moment-rp .moment-icon,
+  .moment-grp .moment-icon,
+  .moment-dl .moment-icon,
+  .moment-bdg .moment-icon,
+  .moment-vid .moment-icon,
+  .moment-no .moment-icon,
+  .moment-vod .moment-icon,
+  .moment-sys .moment-icon,
+  .moment-fr .moment-icon,
+  .moment-vimg .moment-icon {
+    background: image-url("moment-icon-sprite@2x.png") no-repeat;
+    background-size: 572px 52px;
+  }
+
+
+ // !Moments
+
+  .moment-hi .moment-icon {
+    background-position: -259px 0;
+  }
+
+  .moment-bm .moment-icon {
+    background-position: -102px 0;
+  }
+
+  .moment-rp .moment-icon {
+    background-position: -363px 0;
+  }
+
+  .moment-grp .moment-icon {
+    background-position: -207px 0;
+  }
+
+  .moment-dl .moment-icon {
+    background-position: -155px 0;
+  }
+
+  .moment-bdg .moment-icon {
+    background-position: 51px 0;
+  }
+
+  .moment-vid .moment-icon {
+    background-position: -467px 0;
+  }
+
+  .moment-no .moment-icon {
+    background-position: -311px 0;
+  }
+
+  .moment-vod .moment-icon {
+    background-position: 3px 0;
+  }
+
+  .moment-sys .moment-icon {
+    background-position: -416px 0;
+  }
+
+  .moment-fr .moment-icon {
+    background-position: -207px 0;
+  }
+
+  .moment-vimg .moment-icon {
+    background-position: -520px 0;
+  }
+
+  .moment-comment-delete {
+    background: image-url("social-actions-sprite@2x.png") no-repeat center -417px;
+    background-size: 20px 800px;
+  }
+
+  .moment-comment-delete:hover {
+    background: image-url("social-actions-sprite.png") no-repeat center -471px;
+    background-size: 20px 800px;
+  }
+
+
+
+  // Reader
+
+  .color span {
+    background: image-url("menu_color_selected@2x.png") no-repeat center 3px;
+    background-size: 17px 41px;
+  }
+
+
+  // !Widgets
+
+  .featured-plans h3.hd,
+  .my-plans h3.hd {
+    background: image-url("widgets-sprite@2x.png") no-repeat 15px -69px;
+    background-size: 16px 120px;
+  }
+
+  .widget-find-friends h3.hd {
+    background: image-url("widgets-sprite@2x.png") no-repeat 15px -27px;
+    background-size: 16px 120px;
+  }
+
+  #widget-notes .hd span {
+    background: image-url("widgets-sprite@2x.png") no-repeat 0 1px;
+    background-size: 16px 120px;
+  }
+
+  .reference_tokens > li a {
+    background: #0093d0 image-url("close_reference_token@2x.png") no-repeat right 5px;
+    background-size: 24px 41px;
+  }
+
+  #menu_verse_actions #share-pane .share_logo_fb {
+    background: image-url("reader-share-sprite@2x.png") no-repeat 0 0;
+    background-size: 32px 150px;
+  }
+
+  #menu_verse_actions #share-pane .share_logo_twitter {
+    background: image-url("reader-share-sprite@2x.png") no-repeat 0 -43px;
+    background-size: 32px 150px;
+  }
+
+}

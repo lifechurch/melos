@@ -1,0 +1,137 @@
+:ruby
+  meta_title        = t("meta.100million.title")
+  meta_description  = t("meta.100million.description")
+  meta_url          = "http://bible.com/100million"
+
+!!! 5
+%html
+  %head
+    %title= strip_tags(meta_title)
+    %link{href: "http://fonts.googleapis.com/css?family=Fjalla+One&subset=latin,cyrillic-ext,cyrillic,greek-ext,vietnamese,latin-ext", rel: "stylesheet", type: "text/css"}
+    %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %meta{charset:"utf-8"}
+    %meta{name: "viewport",       content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
+    %meta{name: "description",    content: meta_description}
+    %meta{name: "url",            content: meta_url}
+    %meta{name: "og:title",       content: meta_title }
+    %meta{name: "og:url",         content: meta_url }
+    %meta{name: "og:description", content: meta_description }
+    = stylesheet_link_tag "campaigns/100m"
+    = javascript_include_tag "application"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    = javascript_include_tag "campaigns/100m/jquery.counter.js"
+    = javascript_include_tag "campaigns/100m/jquery.countdown.min.js"
+    = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
+    :javascript
+      try{Typekit.load();}catch(e){}
+
+  %body
+    = render '/shared/google_analytics'
+    %article
+      -# BA headline and logo
+      .intro
+        .intro-logo
+          .wrap
+            = image_tag localized_bible_icon
+            %span
+              = t("campaigns.100m.logo")
+        %h1.intro-starts
+          = t("campaigns.100m.tagline").html_safe
+        %img.world-map{ src: "/assets/campaigns/100m/bg.jpg", alt: "Map of the world"}
+        %p.intro-copy
+          = t("campaigns.100m.after")
+
+
+
+      -# App ticker
+      #counter
+      #counter-divider
+        = image_tag "campaigns/100m/ticker-divider.png"
+
+      :javascript
+
+        function commas(nStr) {
+          nStr += '';
+          var rgx = /(\d+)(\d{3})/;
+          while (rgx.test(nStr)) { nStr = nStr.replace(rgx, '$1' + ',' + '$2');}
+          return nStr;
+        }
+
+
+        function installs_data(data) {
+          STATS = data;
+
+          var start_count = STATS.start_count;
+          var start_date = STATS.start_date;
+          var average_per_day = STATS.average_per_day;
+          var single_pace = 1/(average_per_day/24/60/60)*1000;
+          var today_date = Math.round((new Date()).getTime() / 1000);
+          var date_difference_seconds = Math.abs(today_date - start_date);
+          var date_difference_days_not_round = (date_difference_seconds / 86400);
+          var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
+
+          $("#counter").counter({
+            direction: "up",
+            format: "999:999:999",
+            stop: "9:999:999:999",
+            initial: commas(corrected_total_downloads_not_round)
+          });
+
+        }
+
+        (function() {
+          $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
+        })();
+
+
+      -# Share buttons
+      .share
+        %p.share-copy
+          = t("campaigns.100m.share.with friends")
+
+        .share-btns
+          - fb_app_id   = Cfg.facebook_app_id
+          - fb_name     = t("campaigns.100m.share.fb.dialog name")
+          - fb_desc     = t("campaigns.100m.share.fb.dialog desc")
+          - fb_link     = "http://www.bible.com/app"
+          - fb_redirect = "http://www.bible.com/100million"
+          %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
+            = t("social.facebook.name")
+
+          - twitter     = t("campaigns.100m.share.tw.tweet")
+          %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
+            = t("social.twitter.name")
+
+          - subject     = t("campaigns.100m.share.em.subject")
+          - body        = t("campaigns.100m.share.em.body")
+          %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
+            = t("social.email.name")
+
+
+
+      -# Video
+      .video
+        .video-box
+          %iframe{width:"640",height:"360",src:"http://www.youtube.com/embed/gGclEW8E7GU?list=PL0429142BE6C7A21B", frameborder:"0", allowfullscreen:"true"}
+        .video-copy
+          %p= t("campaigns.100m.body.after p1").html_safe
+          %p= t("campaigns.100m.body.after p2").html_safe
+
+      %footer
+        = image_tag localized_bible_icon, class: "ad-img"
+
+        %p.ad-title
+          = t("campaigns.100m.ad.title")
+
+        %p.ad-copy
+          = t("campaigns.100m.ad.copy").html_safe
+
+
+      = render partial: "shared/language_selector"
+
+      :javascript
+        var choose_language  = "#choose_language";
+        if($(choose_language).length) {
+          var language_menu   = new LanguageMenu(choose_language);
+        }
+

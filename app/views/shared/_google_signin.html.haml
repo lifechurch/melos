@@ -1,0 +1,67 @@
+:ruby
+  google_signin_button_id = "googleSigninButton"
+
+-content_for :javascripts do
+
+  :javascript
+      var googleUser = {};
+
+      function gapiStartApp() {
+        gapi.load('auth2', gapiInitAuth2);
+      }
+
+      function gapiInitAuth2() {
+        auth2 = gapi.auth2.init({
+          client_id: "#{Cfg.google_signin_client_id}",
+          cookiepolicy: 'single_host_origin',
+          scope: "#{Cfg.google_signin_scope}"
+        });
+        gapiAttachSignin(document.getElementById("#{google_signin_button_id}"))
+      }
+
+      function gapiAttachSignin(element) {
+        auth2.attachClickHandler(element, {},
+          gapiOnSignInSuccess,
+          gapiOnSignInError
+        );
+      }
+
+      function gapiOnSignInSuccess(googleUser) {
+        var userCreateForm = document.getElementById("#{form_id}")
+        if (userCreateForm !== null) {
+          var inputs = userCreateForm.getElementsByTagName('input')
+          for (x = 0; x < inputs.length; x++) {
+            inputs[x].disabled = true;
+          }
+        }
+
+        var profile = googleUser.getBasicProfile()
+        if (profile && googleUser) {
+          document.getElementById("google-sign-in-token").value = googleUser.getAuthResponse().id_token;
+          document.getElementById("google-sign-in-id").value = profile.getId();
+          //document.getElementById("google-sign-in-given-name").value = profile.getGivenName();
+          //document.getElementById("google-sign-in-family-name").value = profile.getFamilyName();
+          document.getElementById("google-sign-in-form").submit();
+        }
+      }
+
+      function gapiOnSignInError(error) {
+        try {
+          console.error("error", error);
+        } catch(ex) {}
+      }
+
+.tpAuthSigninButton{ "id" =>  "#{google_signin_button_id}" }
+  %span.icon
+  %span.buttonText
+    -if is_continue
+      =t('users.continue google')
+    -else
+      =t('users.sign up google')
+
+%form#google-sign-in-form{ action: "#{form_action}", method: "POST" }
+  %input#google-sign-in-token{ type: "hidden", name: "tp_token" }
+  %input#google-sign-in-id{ type: "hidden", name: "tp_id" }
+  %input{ type: "hidden", name: "tp_source", value: "GoogleJWT" }
+  -#%input#google-sign-in-given-name{ type: "hidden", name: "google_given_name" }
+  -#%input#google-sign-in-family-name{ type: "hidden", name: "google_family_name" }

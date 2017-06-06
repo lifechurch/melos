@@ -1,0 +1,19 @@
+- @title = @me ? t('users.my badges') : t('badges.user badges', user: @user.name || @user.username)
+- content_for :title do
+  = @title
+
+- if @badges.present?
+  .row
+    .columns.medium-8.medium-offset-2
+      .profile-badges-list
+        = render partial: "badges/list_item", collection: @badges, locals: {display: :icon, user: @user}
+      = render partial: 'shared/pagination', locals: {resource_list: @badges}
+
+- else
+  .profile-blank-slate.slate-badges
+    - if current_user_is? @user
+      %h2
+        = t("badges.none me")
+    - else
+      %h2
+        = t("badges.none user", username: @user.name)

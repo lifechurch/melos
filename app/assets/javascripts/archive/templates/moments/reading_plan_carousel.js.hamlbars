@@ -1,0 +1,20 @@
+.moment{"data-uuid" => "{{uuid}}"}
+  .moment-top
+    .moment-featured-rp
+      .featured-rp-title
+        %span.moment-avatar
+          %a{href: "/reading-plans?category={{category}}"}
+            %img{src: "{{avatar}}"}
+        %h2.moment-rp-text{"title" => "{{created_dt}}"}
+          %a{href: "/reading-plans?category={{category}}"}
+            {{moment_title}}
+      .featured-rp-box
+        {{#each plans}}
+        .featured-rp-box-plan
+          %a{href: "{{path}}"}
+            %img{src: "{{image_url}}"}
+            %p
+              {{name}}
+            .length
+              {{formatted_length}}
+        {{/each}}

@@ -1,0 +1,26 @@
+.moment{"data-uuid" => "{{uuid}}"}
+  .moment-vod{"data-references" => "{{usfm_references}}"}
+    %span.moment-icon &nbsp;
+    .moment-vod-calendar
+      .moment-vod-calendar-date
+        {{week_day}}
+      .moment-vod-calendar-img
+        {{{calendar_img}}}
+    %span.moment-time{"title" => "{{created_dt}}"}
+      {{created_dt}}
+    .moment-vod-title
+      {{{title}}}
+
+    .moment-verse-stuff
+      {{#unless vod_subscribed}}
+      {{> moments/_vod_subscribe}}
+      {{/unless}}
+
+      {{{verse_html}}}
+
+      %ul.moment-vod-list
+        {{#each recent_versions}}
+        %li.btn{"data-version-id" => "{{id}}"} {{abbrev}}
+        {{/each}}
+      {{> moments/_actions_layer}}
+

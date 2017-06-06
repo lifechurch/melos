@@ -1,0 +1,42 @@
+.widget
+  %h3= t('press page.support')
+  =link_to "support.youversion.com", external_url(:support)
+
+  %br
+  %br
+  %br
+
+  %h3.hd
+    = t('press page.contact header 2')
+
+  %ul.menu
+    %li
+      %p
+        %strong= t('press page.blog')
+        %br
+        =link_to "blog.youversion.com", "http://blog.youversion.com"
+    %li
+      %p
+        %strong= t('press page.facebook')
+        %br
+        =link_to "facebook.com/youversion", "http://facebook.com/youversion"
+    %li
+      %p
+        %strong= t('press page.twitter')
+        %br
+        =link_to "twitter.com/youversion", "http://twitter.com/youversion"
+
+  %br
+  %br
+
+  %h3.hd
+    = t('press page.contact header')
+  %ul.menu
+    -# %li
+      %p
+        %strong= t('press page.phone')
+        405.216.2332
+    %li
+      %p
+        %strong= t('press page.email')
+        rachel.leonard@life.church

@@ -1,0 +1,66 @@
+- @subtitle = '' # keeps end of title clean
+- @meta_url = "https://#{request.host_with_port}#{request.fullpath}"
+- bible_in_lang = ''
+- @title    = "#{t('languages.download language', language_name: @language_name)}. #{t('meta.mobile.download or read')} #{t('mobile page.free overlay')}"
+
+- content_for :meta_description do
+  = "#{t('download ad.description copy', language_count: 900)} #{t('download ad.meta copy title')}"
+
+- content_for :additional_meta do
+  - bible_in_lang = "#{t('languages.bible in', language_name: @language_name)}"
+  %meta{property: "og:title",       content: "#{bible_in_lang}" }
+  %meta{property: "og:url",         content: @meta_url }
+  %meta{property: "og:description", content: "#{t('download ad.description copy', language_count: 900)} #{t('meta.mobile.download or read')}" }
+- content_for :facebook_meta do
+  %meta{property: "og:image", content: "#{url_for(asset_path('lang_share.png'))}"}
+
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
+  - locale_dir = '/pt' if I18n.locale.to_s.eql?('pt-PT')
+  - canonicalHref = "https://www.bible.com#{locale_dir}/languages/#{@language}"
+  %link{rel: "canonical", href: canonicalHref}
+  %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/language?id=#{@language}"}
+
+.row
+  .medium-8.columns
+    = cache "single_lang_#{@language}_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+      %article
+        %div#svp_share.addthis_sharing_toolbox{"data-url" => "#{@meta_url}", "style" => "float: right;"}
+        %ul.no-bullet
+          %li
+            - versions = @versions_by_lang[@language.to_s]
+            - meta_language = versions.first.attributes.language.local_name
+            - meta_language = "#{meta_language} - #{versions.first.attributes.language.name}" if (versions.first.attributes.language.name.present? and not (meta_language.eql?(versions.first.attributes.language.name)))
+            %h1
+              = bible_in_lang
+            %ul.no_bullet
+            - versions.each do |version|
+              %li
+                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version), {target: "_self"}
+
+  .medium-4.columns.show-for-medium-up.l-border
+    = render partial: 'widgets/download_app', :locals => {show_sms: true}
+
+- @branch_deeplink = "language?id=#{@language}"
+= render '/shared/app_banner'
+
+
+%script{type: "application/ld+json"}
+  {
+  "@context": "http://schema.org/",
+  "@type": "MobileApplication",
+  "name": "#{t('bible')}",
+  "image": "#{url_for(image_path(localized_bible_icon(120)))}",
+  "description": "#{t("meta.mobile.description")}",
+  "operatingSystem": "Android, iOS, BlackBerry, Windows Phone 8",
+  "applicationCategory": "Reference",
+  "aggregateRating":{
+  "@type": "AggregateRating",
+  "ratingValue": "4.7",
+  "ratingCount": "1,786,398"
+  },
+  "offers":{
+  "@type": "Offer",
+  "price": "0"
+  }
+  }

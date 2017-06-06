@@ -1,0 +1,40 @@
+
+body.c_pages.a_votd {
+  #current-ui-view {
+    @media #{$small-only} {
+      padding-top: 0;
+    }
+  }
+
+  h1.heading {
+    font-family: $font-family-sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 3.9px;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    @media #{$small-only} {
+      margin-top:25px;
+    }
+  }
+
+  h2.heading {
+    margin-top: 50px;
+    padding: 0 30px;
+    a {
+      font-family: $title-font-family;
+      font-size: 45.71px;
+      color: #353535;
+      line-height: 54px;
+      font-size: 36px;
+      margin: 30px 0;
+      font-weight: bold;
+      display: block;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: -0.03571rem;
+    }
+  }
+}

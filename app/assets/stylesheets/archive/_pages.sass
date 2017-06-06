@@ -1,0 +1,303 @@
+@import "variables.sass"
+
+
+// ------------------About page
+
+.b-logo
+  height: 60px
+  display: block
+  margin-bottom: 30px
+
+.about_content
+  padding-right: 520px
+  background: image-url("bg-about.png") no-repeat top right
+
+.partners_content
+  overflow: hidden
+
+.partners_content .partners_box
+  float: left
+  width: 235px
+  margin: 0 45px 30px 0
+
+.partners_content .partners_box div
+  height: 146px
+  margin: 0
+  padding: 0
+
+.partners_content .partners_box div img
+  border: 1px solid #F4F4F4
+  width: 235px
+
+.partners_content .partners_box div:last-child
+  width: auto
+  height: auto
+  background: none
+  margin-top: 5px
+  text-align: center
+
+#main article .partner
+  width: 50%
+  float: left
+  margin: 0
+  margin-bottom: 1em
+  padding: 0
+
+.partner h4
+  margin-bottom: 0
+
+// ------------------Press page
+
+#main article.press
+  ul.press_resources
+    list-style: none
+    li
+      list-style: none
+      margin: 0
+      padding: 0
+      background: none
+      margin-bottom: 20px
+      a
+        float: right
+      h4
+        line-height: 35px
+        margin-bottom: 0px
+
+// ------------------ mobile apps page
+
+#main article.mobileapps
+  background: image-url("mobile_feature.jpg") top center no-repeat #fff
+  padding-top: 350px
+  font-size: 13px
+  line-height: 1.7
+
+  .app-free-overlay
+    position: absolute
+    z-index: 1
+    left: 258px
+    top: 86px
+    +transform(rotate(-30deg))
+    width: 140px
+    text-align: center
+
+    h2
+      font-size: 15px
+      font-weight: bold
+      color: #fff
+      line-height: 25px
+      margin-bottom: 0
+
+  #mobile_content
+    width: 50%
+    float: left
+
+  .multi
+    background: image-url("mobile_multilingual.png") top center no-repeat #fff
+    width: 160px
+    height: 97px
+
+#mobile_content h2
+  font-weight: 200
+  font-size: 40px
+  line-height: 1.18em
+
+#mobile_content .main
+  float: right
+  width: 60%
+
+#mobile_content .multilingual
+  width: 40%
+  float: left
+
+.multilingual p
+  font-size: 13px
+  line-height: 1.4
+
+.multilingual h3
+  font-size: 12px
+  margin: 0 0 5px 0
+
+#mobile_downloads
+  width: 43%
+  border-left: 1px #e1e1e1 solid
+  padding: 2% 0 0 3%
+  float: right
+
+  h1
+    font-size: 15px
+    font-weight: bold
+
+  ul
+    list-style: none
+
+    li
+      margin: 10px 0
+      padding-left: 30px
+
+    li h2
+      margin-bottom: 0
+      -webkit-font-smoothing: antialiased
+      line-height: 1
+      a
+        font-weight: bold
+        font-size: 13px
+        color: $green
+
+  .left_column
+    float: left
+    width: 50%
+
+  .right_column
+    width: 50%
+    float: right
+
+#mobile_downloads
+  a.cta
+    background: $green image-url("mobile_download.png") no-repeat 15px center
+    background-size: 54px 51px
+    display: block
+    padding: 18px 15px 15px 80px
+    clear: both
+    border-radius: 5px
+    box-shadow: inset 0px -2px 0px rgba(#000, .3)
+
+    h4
+      margin: 0px
+      padding: 0px
+      font-size: 16px
+      color: #fff
+      line-height: 1.2
+
+    span
+      margin: 0px
+      padding: 0px
+      font-size: 13px
+      color: #fff
+
+#dl_iphone
+  background: image-url("mobile_dl_icons.png") 0px 0px no-repeat !important
+
+#dl_android
+  background: image-url("mobile_dl_icons.png") 0px -50px no-repeat !important
+
+#dl_blackberry
+  background: image-url("mobile_dl_icons.png") 0px -100px no-repeat !important
+
+#dl_windows
+  background: image-url("mobile_dl_icons.png") 0px -150px no-repeat !important
+
+#dl_windows8
+  background: image-url("mobile_dl_icons.png") 0px -150px no-repeat !important
+
+#dl_hppalm
+  background: image-url("mobile_dl_icons.png") 0px -200px no-repeat !important
+
+#dl_java
+  background: image-url("mobile_dl_icons.png") 0px -250px no-repeat !important
+
+#dl_symbian
+  background: image-url("mobile_dl_icons.png") 0px -300px no-repeat !important
+
+#dl_mobile
+  background: image-url("mobile_dl_icons.png") 0px -350px no-repeat !important
+
+#dl_amazon
+  background: image-url("mobile_dl_icons.png") 0px -400px no-repeat !important
+
+#main .lower-content
+  margin-top: 50px
+
+#main .version-list
+  float: left
+  width: 250px
+  margin-left: 25px
+
+  h2 a
+    text-decoration: none
+    color: #444
+
+#main section.testimonials
+  float: left
+  width: 300px
+
+#main section.testimonials .review-carousel
+  width: 300px
+  height: 200px
+
+  div
+    width: 300px
+
+#main section#mobile_content h2
+  padding: 0
+  margin-bottom: 15px
+  font-family: "Helvetica Neue", Helvetica, Sans-serif
+
+#main section.testimonials
+  h2.title
+    font-size: 18px
+    padding: 0px 0 15px 0
+    font-family: "Helvetica Neue", Helvetica, Sans-serif
+
+  h3
+    font-size: 17px
+    margin: 0 0 10px 0
+    padding: 0
+
+// ----------Profile page
+
+#main .profile_header form button
+  border-radius: 4px
+  padding: 4px 20px !important
+  font-size: 15px
+  text-shadow: none
+
+// -----------404 page
+
+#main article.error
+  text-align: center
+  h2
+    font-size: 32px
+    letter-spacing: -.04em
+    margin-top: 30px
+    margin-bottom: 50px
+  p
+    width: 490px
+    font-size: 16px
+    margin-left: 180px
+    margin-top: 40px
+    margin-bottom: 30px
+
+// Versions#show
+
+.copyright
+  h1, h2, h3, h4, h5, h6
+    // override heading styles, since some publishers
+    // have headings here where we dont want them
+    font-family: $body_font
+    font-weight: bold !important
+    color: $body_text
+  h1
+    font-size: 25px !important
+  h2
+    font-size: 18px !important
+  h3, h4, h5, h6
+    font-size: $text_size !important
+
+  br + br
+    display: none
+
+h2
+  span.icon_listen
+    background-repeat: no-repeat
+    width: 16px
+    height: 21px
+    margin-right: 5px
+    display: inline-block
+    background-position: 0 5px !important
+
+// Trending verses
+article#trending-verses
+  h2
+    float: left
+    width: 270px
+    font-size: 18px

@@ -1,0 +1,540 @@
+/* !Profile header */
+
+.profile-user-box {
+  margin: 100px 0 0;
+
+  @media #{$medium-only} {
+    margin: 64px 0 0;
+  }
+
+  @media #{$small-only} {
+    margin: 0;
+  }
+}
+
+#current-ui-view .profile-user-box {
+  margin: 0;
+}
+
+.profile-user {
+  overflow: hidden;
+
+  div {
+    float: $default-float;
+    width: 77%;
+
+    @media #{$medium-only} {
+      width: auto;
+      float: none;
+      text-align: center;
+    }
+
+    @media #{$small-only} {
+      float: none;
+      width: auto;
+    }
+
+    &:first-child {
+      width: 23%;
+
+      @media #{$medium-only} {
+        width: auto;
+      }
+
+      @media #{$small-only} {
+        width: auto;
+        text-align: center;
+        padding: 20px 0 0;
+      }
+    }
+  }
+}
+
+.avatar_huge {
+  -webkit-border-radius:  64px;
+  -moz-border-radius:     64px;
+  border-radius:          64px;
+	float: $default-float;
+
+	@media #{$medium-only} {
+	  float: none;
+	}
+
+  @media #{$small-only} {
+    float: none;
+    width: 64px;
+    -webkit-border-radius:  32px;
+    -moz-border-radius:     32px;
+    border-radius:          32px;
+  }
+}
+
+.profile-hdr-name {
+	margin: 15px 0;
+	font-size: 3em;
+
+	@media #{$small-only} {
+	  text-align: center;
+	  font-size: 1.875em;
+	}
+}
+
+.profile-hdr-info li {
+  @media #{$medium-only} {
+    float: none
+  }
+
+  @media #{$small-only} {
+    float: none;
+  }
+}
+
+li.profile-hdr-info-user {
+	background: url("../assets/me-solid.svg") no-repeat left;
+	background-size: 16px;
+	padding-left: 22px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    display: none;
+  }
+
+	@media #{$small-only} {
+	  display: none;
+	}
+}
+
+li.profile-hdr-info-location {
+	background: url("../assets/icon-profile-location.svg") no-repeat left;
+	background-size: 10px;
+	padding-left: 14px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    background: none;
+    padding: 0;
+  }
+
+	@media #{$small-only} {
+	  background: none;
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+li.profile-hdr-info-link {
+	background: url("../assets/icon-profile-link.svg") no-repeat left;
+	background-size: 15px;
+	padding-left: 18px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    background: none;
+    padding: 0;
+  }
+
+	@media #{$small-only} {
+	  background: none;
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+.profile-hdr-info-about {
+	margin: 0 0 30px;
+	font-size: $text-size;
+
+	@media #{$medium-only} {
+	  width: 80%;
+	  margin: 0 auto;
+	}
+
+	@media #{$small-only} {
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+.profile-hdr-btn {
+	margin: 0 !important;
+}
+
+.profile-hdr-action {
+  float: $opposite-direction;
+	margin: 85px 20px 0 20px;
+}
+
+.profile-hdr-friend {
+  display: block;
+  background: image-url("icon-checkmark.svg") no-repeat left center;
+  background-size: 24px 24px;
+  padding: 0 0 0 30px;
+}
+
+
+/* !Profile nav */
+
+.profile-nav-box {
+
+  @media #{$large-only} {
+    a.icon:first-child {
+      margin: 0 1% 0 15%;
+    }
+
+    a.icon:nth-child(8) {
+      float: $opposite-direction;
+    }
+  }
+
+  @media #{$small-only} {
+    padding: 0;
+
+    a {
+      display: block;
+      float: $default-float;
+      width: 50%;
+      margin: 0;
+      border-bottom: 1px solid #ddd;
+      line-height: 43px;
+      font-size: 0.938em;
+      padding: 0 40px;
+    }
+
+    a:first-child,
+    a:last-child {
+      display: none;
+    }
+
+    a.icon.active {
+      border-bottom: 0;
+      background-color: #e4e4e4;
+    }
+
+    a:nth-child(n+2) {
+      border-right: 1px solid #ddd;
+    }
+
+    a:nth-child(2) {
+      background: image-url("me-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(3) {
+      background: image-url("notes-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(4) {
+      background: image-url("bookmark-outline.svg") no-repeat 10px center;
+      background-size: 16px;
+    }
+
+    a:nth-child(5) {
+      background: image-url("highlight-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(6) {
+      background: image-url("icon-images.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(7) {
+      background: image-url("icon-badges.svg") no-repeat 10px center;
+      background-size: 16px;
+    }
+  }
+}
+
+
+/* !Friends */
+
+.friends-count {
+  display: none;
+}
+
+.blank-slate-friend-requests {
+  padding: 0 0 30px;
+}
+
+.friend-search {
+  width: 500px;
+  padding: 0 0 30px;
+
+  input {
+    display: inline-block;
+    width: 39%;
+    margin: 0;
+  }
+
+  input[type="search"] {
+    width: 60%;
+    margin: 0 -5px 0 0;
+    border-right: 0;
+  }
+
+  input[type="submit"] {
+    -webkit-border-radius:  0 5px 5px 0;
+    -moz-border-radius:     0 5px 5px 0;
+    border-radius:          0 5px 5px 0;
+  }
+
+  @media #{$small-only} {
+    width: auto;
+    padding: 0 2% 30px;
+
+    input {
+      display: block;
+      width: 100%;
+    }
+
+    input[type="search"] {
+      width: 100%;
+      margin: 0 0 5px;
+      border-right: 1px solid $lightGray;
+    }
+
+    input[type="submit"] {
+      -webkit-border-radius:  5px;
+      -moz-border-radius:     5px;
+      border-radius:          5px;
+    }
+  }
+}
+
+.friend-card-list {
+  overflow: hidden;
+  padding: 15px 0 0;
+}
+
+.friend-card-box {
+  border: 1px solid #ddd;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
+  width: 26%;
+  height: 70px;
+  margin: 0 3% 30px 35px;
+  float: left;
+  position: relative;
+}
+
+.friend-card-img {
+  width: 70px;
+  -webkit-border-radius:  35px;
+  -moz-border-radius:     35px;
+  border-radius:          35px;
+  margin: 0 0 0 -35px;
+}
+
+.friend-card-name {
+  display: block;
+  position: absolute;
+  left: 55px;
+  top: 13px;
+  font-size: 19px;
+}
+
+.friend-card-status {
+  position: absolute;
+  left: 55px;
+  bottom: 10px;
+  font-size: 13px;
+}
+
+.friend-card-status a {
+  color: #888;
+}
+
+.friend-card-status:hover a {
+  display: inline-block;
+  color: #ff0000;
+}
+
+.friend-card-request {
+  display: block;
+  position: absolute;
+  left: 55px;
+  bottom: 10px;
+}
+
+.friend-card-accept,
+.friend-card-decline,
+.friend-card-box span  {
+  font-size: 13px;
+}
+
+.friend-card-accept {
+  color: #6AB750;
+}
+
+.friend-card-decline {
+  color: #ff0000;
+}
+
+.friends-count-have {
+	font-size: $text-size;
+	display: inline;
+}
+
+.friends-count-canhave {
+	font-size: $text-size;
+	display: inline;
+}
+
+.friends-count-help {
+	font-size: $text-size;
+	display: block;
+	width: 550px;
+	padding: 0 0 15px;
+
+	@media #{$small-only} {
+	  width: auto;
+	}
+}
+
+ul.inline-list {
+	li {
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.relative {
+	position: relative;
+}
+
+.network-logo {
+	width: 30px;
+	height: 30px;
+}
+
+.network-row {
+	padding-bottom: 20px;
+}
+
+.settings-group {
+  @media #{$medium-only} {
+    text-align: center;
+  }
+
+	input {
+		height: inherit !important;
+
+		@media #{$medium-only} {
+		  display: block;
+		}
+	}
+
+	input[type="checkbox"] {
+		margin: 0;
+
+		@media #{$medium-only} {
+		  margin: 0 auto;
+		}
+	}
+}
+
+.img-email {
+  margin: 30px 0;
+}
+
+body.c_users.a_resend_confirmation,
+body.c_users.a_confirm_email {
+  article.centered {
+    text-align: center;
+  }
+  hr {
+    margin: 20px auto;
+    width: 15%;
+    padding: 0 auto;
+  }
+  #email {
+    width: 250px;
+  }
+}
+
+
+/* Profile settings */
+
+.c_users.a_edit #main {
+  input[type="text"],
+  textarea,
+  select {
+    margin: 5px 0 20px;
+
+    @media #{$large-only} {
+      width: 50%;
+    }
+  }
+
+  #user_postal_code {
+    width: 20%;
+
+    @media #{$large-only} {
+      width: 12%;
+    }
+  }
+}
+
+.c_emails.a_show #main {
+  input {
+    margin: 5px 0 20px;
+
+    @media #{$large-only} {
+      width: 50%;
+    }
+  }
+}
+
+.c_passwords.a_show #main {
+  label {
+    margin: 0 0 5px;
+  }
+
+  input {
+    @media #{$large-only} {
+      width: 40%;
+    }
+  }
+}
+
+.c_vod_subscriptions.a_index #main {
+  label {
+    margin: 0 0 5px;
+  }
+
+  select {
+    width: auto;
+  }
+
+  .votd-time select {
+    width: 60px;
+  }
+}
+
+.c_users.a_delete_account #main {
+  h2 ~ p {
+    @media #{$large-only} {
+      width: 80%;
+    }
+  }
+
+  label {
+    margin: 20px 0 5px;
+  }
+
+  #password {
+    @media #{$large-only} {
+      width: 40%;
+    }
+  }
+
+  .solid-button.red {
+    margin: 10px 0 0;
+  }
+}

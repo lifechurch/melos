@@ -1,0 +1,97 @@
+:ruby
+  @title            = "#{t('pages.home.votd.title')} - #{@vodRef.to_s}"
+  @meta_description = t("meta.mobile.description")
+  @meta_url         = "#{request.protocol}#{request.host_with_port}#{request.fullpath.split("?")[0]}?ref=#{@vodRef.usfm.to_param}&day=#{@vodImage.day}"
+  @vod_img_url       = @showVerseImage ? "https:#{@vodImage.image_url}" : url_for(image_path(localized_bible_icon(200)))
+
+- @main_nav = false
+- @sidebar = false
+
+- content_for :typekit_javascripts do
+  = javascript_include_tag '//use.typekit.net/mgk8ovf.js'
+  :javascript
+    try{Typekit.load();}catch(e){}
+
+- content_for :facebook_meta do
+  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:url",         content: @meta_url }
+  %meta{property: "og:description", content: @vodContent }
+  %meta{property: "og:image",       content: @vod_img_url }
+  %meta{property: "og:image:width",       content: '640' }
+  %meta{property: "og:image:height",       content: '640' }
+
+- content_for :twitter_meta do
+  %meta{name: "twitter:card",         content: "summary_large_image"}
+  %meta{name: "twitter:url",          content: @meta_url}
+  %meta{name: "twitter:title" ,       content: @title}
+  %meta{name: "twitter:description",  content: @vodContent}
+  %meta{name: "twitter:image",        content: @vod_img_url}
+  %meta{name: "twitter:site",         content: "@YouVersion"}
+
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
+  %link{rel: "canonical", href: canonicalHref}
+  %meta{name: "url",      content: @meta_url}
+
+- content_for :meta_description do
+  = "#{@vodContent}"
+
+= cache "votd_#{I18n.locale}_#{@vodImage.day}", expires_in: YV::Caching.a_very_long_time do
+
+  .votd-row
+    .row
+      .columns.medium-11.medium-centered
+        .row.collapse{class: @showVerseImage ? 'inner-row' : ''}
+          -if @showVerseImage
+            .columns.medium-5
+              %img.votd-image{src: "#{@vodImage.image_url}"}
+          .columns.medium-7{class: @showVerseImage ? '' : 'inner-row medium-centered'}
+            .votd-content
+              .right.text-right.votd-share-button
+                -#%a{ "ng-click" => "showShare = !showShare", "href" => "#" }
+                -#  %span{"ng-hide" => "showShare"}
+                -#    != t("moments.action.share")
+                -#  %span.ng-hide{"ng-show" => "showShare"}
+                -#    != t("ui.cancel")
+                %div.share-panel
+                  %div.video.addthis_sharing_toolbox{:data => {:url => "#{@meta_url}", :title => "#{@title}", :description => "#{@vodContent}"}}
+              %h1.heading
+                %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
+                =t('pages.home.votd.title')
+              %p.votd-verse
+                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do
+                  =@vodContent
+
+              %p.votd-ref
+                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do
+                  =@vodRef.to_s
+
+              - if @current_user.present?
+                - highlight_link = reference_path(version: @vodRef.version, reference: @vodRef.usfm)
+              - else
+                - highlight_link = sign_up_path(redirect: reference_path(version: @vodRef.version, reference: @vodRef.usfm))
+              =link_to(highlight_link, {class:'votd-link', target: "_self" }) do
+                %img.highlight-icon{src: "#{image_path('share.png')}"}
+                =t("pages.home.votd.highlight_bookmark")
+
+              %br
+              - if @current_user.present?
+                - subscribe_link = settings_vod_subscriptions_path
+              - else
+                - subscribe_link = sign_up_path(redirect: settings_vod_subscriptions_path)
+              =link_to(subscribe_link, {class:'votd-link', target: "_self"}) do
+                %img.subscribe-icon{src: "#{image_path('mail.png')}"}
+                =t("pages.home.votd.subscribe")
+
+  .row
+    .columns.large-7.medium-8.text-center.medium-centered
+      %h2.heading
+        %img.home-bible-icon{src: "#{image_path(localized_bible_icon(120))}"}
+        =link_to(t("pages.home.heading"), app_page_path, { class: "heading", target: "_self" })
+
+      =link_to(t("mobile page.download now"), app_page_path, class: 'solid-button green padded mobile-full', target: "_self")
+
+  - @branch_deeplink = "moments"
+  = render '/shared/app_banner'

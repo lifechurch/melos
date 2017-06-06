@@ -1,0 +1,82 @@
+- popular_languages = ['arb','afr','amh','azb','ben','bul','cat','ceb','ces','ckb','zho','dan','deu','ell','eng','fin','fra','fuv','hau','heb','hil','hin','hrv','hun','hye','ibo','ilo','ind','ita','jav','jpn','khm','kik','kin','kmr','kor','mai','mya','nld','nno','nso','nya','pes','plt','pol','por','prs','ron','rus','slk','sna','snd','som','sot','spa','srp','swe','swh','tam','tgk','tgl','tha','tsn','tur','uig','ukr','urd','vie','xho','yor','zul','zho_tw','urd_dv','por_pt','hin_ro','spa_es']
+- @title = "#{t('languages.title')} - #{t('meta.mobile.download or read')}  #{t('meta.mobile.title')}"
+- @subtitle = ''
+- content_for :meta_description do
+  = "#{t('download ad.description copy', language_count: 900)}  #{t('download ad.meta copy title')}. #{t('meta.mobile.download or read')}"
+
+- content_for :additional_meta do
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
+  - locale_dir = '/pt' if I18n.locale.to_s.eql?('pt-PT')
+  - canonicalHref = "https://www.bible.com#{locale_dir}/languages/"
+  %link{rel: "canonical", href: canonicalHref}
+  %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/languages"}
+
+.row
+  .medium-8.columns
+    %article
+      %h1
+        = t('languages.title')
+      %h2
+        = t('languages.most popular')
+      = cache "language_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+        %ul.no-bullet
+          - @versions_by_lang.each do |lang, versions|
+            - if versions.present?
+              - show_title = true
+              - versions.each do |version|
+                - if show_title
+                  - show_title = false
+                  - language_title = versions.first.language.human
+                  - language_title = "#{language_title} - #{version.attributes.language.name}" if (version.attributes.language.name.present? and not (language_title.eql?(version.attributes.language.name)))
+                  - popular = ""
+                  - if popular_languages.include?(version.language.id)
+                    - popular = "pop"
+                    %li
+                      %div{class: popular}
+                        %span.lang_code= "#{version.language.id}"
+                        %span.lang
+                          = "- "
+                          = link_to "#{language_title}" , language_path(version.language.id), target: '_self'
+          %br
+          %h2
+            = t('languages.additional')
+          - @versions_by_lang.each do |lang, versions|
+            - if versions.present?
+              - show_title = true
+              - versions.each do |version|
+                - if show_title
+                  - show_title = false
+                  - language_title = versions.first.language.human
+                  - language_title = "#{language_title} - #{version.attributes.language.name}" if (version.attributes.language.name.present? and not (language_title.eql?(version.attributes.language.name)))
+                  - popular = ""
+                  - if not popular_languages.include?(version.language.id)
+                    %li
+                      %div{class: popular}
+                        %span.lang_code= "#{version.language.id}"
+                        %span.lang
+                          = "- "
+                          = link_to "#{language_title}" , language_path(version.language.id), target: '_self'
+
+  .medium-4.columns.show-for-medium-up.l-border
+    = render partial: 'widgets/download_app', :locals => {show_sms: true}
+
+%script{type: "application/ld+json"}
+  {
+  "@context": "http://schema.org/",
+  "@type": "MobileApplication",
+  "name": "#{t('bible')}",
+  "image": "#{url_for(image_path(localized_bible_icon(120)))}",
+  "description": "#{t("meta.mobile.description")}",
+  "operatingSystem": "Android, iOS, BlackBerry, Windows Phone 8",
+  "applicationCategory": "Reference",
+  "aggregateRating":{
+  "@type": "AggregateRating",
+  "ratingValue": "4.7",
+  "ratingCount": "1,786,398"
+  },
+  "offers":{
+  "@type": "Offer",
+  "price": "0"
+  }
+  }

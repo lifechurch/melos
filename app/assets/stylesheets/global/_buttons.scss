@@ -1,0 +1,166 @@
+$button-radius: $radius;
+
+.hollow-button,
+button.hollow-button,
+input[type="submit"].hollow-button {
+  @include button(
+    // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
+    $padding: rem-calc(2),
+    // Background color. We can set $bg:false for a transparent background. Default: $primary-color.
+    $bg: false,
+    // If true, set to button radius which is $global-radius or explicitly set radius amount in px (ex. $radius:10px). Default:false.
+    $radius: true,
+    // We can set $full-width:true to remove side padding extend width. Default:false
+    $full-width: false,
+    // We can set $disabled:true to create a disabled transparent button. Default:false
+    $disabled: false
+  );
+
+  font-size: rem-calc(13);
+  padding: rem-calc(4 15 6);
+
+  @media #{$large-up} {
+    margin-right: rem-calc(20) !important;
+  }
+
+  @media #{$medium-only} {
+    margin-right: rem-calc(10) !important;
+  }
+
+  &.green {
+    border: 1px solid $green;
+    color: $green;
+
+    &:hover,
+    &:focus {
+      background-color: $green;
+      color: #ffffff;
+    }
+  }
+
+  &.blue {
+    border: 1px solid $blue;
+    color: $blue;
+
+    &:hover,
+    &:focus {
+      background-color: $blue;
+      color: #ffffff;
+    }
+  }
+
+  &.gray {
+    border: 1px solid $gray;
+    background-color: $white;
+    color: $gray;
+
+    &:hover,
+    &:focus {
+      background-color: $gray;
+      color: #ffffff;
+    }
+  }
+
+  &.red {
+    border: 1px solid $red;
+    color: $red;
+
+    &:hover,
+    &:focus {
+      background-color: $red;
+      color: #ffffff;
+    }
+  }
+}
+
+.solid-button,
+button.solid-button,
+input[type="submit"].solid-button {
+  @include button(
+    // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
+    $padding: rem-calc(2),
+    // Background color. We can set $bg:false for a transparent background. Default: $primary-color.
+    $bg: false,
+    // If true, set to button radius which is $global-radius or explicitly set radius amount in px (ex. $radius:10px). Default:false.
+    $radius: true,
+    // We can set $full-width:true to remove side padding extend width. Default:false
+    $full-width: false,
+    // We can set $disabled:true to create a disabled transparent button. Default:false
+    $disabled: false
+  );
+
+  font-size: rem-calc(13);
+  padding: rem-calc(6 15 8);
+  border: none;
+
+  &.full {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  &.padded {
+    min-width: 225px;
+  }
+
+  &.mobile-full {
+    @media #{$small-only} {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+
+  &.caps {
+    text-transform: uppercase;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $primary-color !important;
+    color: #ffffff !important;
+  }
+
+  &.green {
+    background-color: $green !important;
+    color: #ffffff !important;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($green, 15%) !important;
+      color: darken(#ffffff, 5%) !important;
+    }
+  }
+
+  &.gray {
+    background-color: $gray !important;
+    color: #ffffff !important;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($gray, 15%) !important;
+      color: darken(#ffffff, 5%) !important;
+    }
+  }
+
+  &.blue {
+    background-color: $blue !important;
+    color: #ffffff !important;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($blue, 15%) !important;
+      color: darken(#ffffff, 5%) !important;
+    }
+  }
+
+  &.red {
+    background-color: $red !important;
+    color: #ffffff !important;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($red, 15%) !important;
+      color: darken(#ffffff, 5%) !important;
+    }
+  }
+}

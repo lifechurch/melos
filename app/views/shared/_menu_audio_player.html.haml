@@ -1,0 +1,34 @@
+// Local Parameters
+// Required:
+// - reference
+
+
+/ - force_style ||= nil
+/ #menu_audio_player.dynamic_menu{style: force_style}
+/   %span.menu_arrow
+/     &nbsp;
+/   - if reference.audio
+/     %dl{class: "audio", itemtype:"http://schema.org/AudioObject", itemscope: ""}
+/       %dt
+/         %a.close.no_style{:href => '#'}= t("audio.close player menu")
+/         %h2
+/           %span{itemprop: "name"}
+/             = "#{presenter.reference.human} - #{reference.audio.title} "
+/           %meta{itemprop: "encodingFormat", content: "mp3"}
+/           %meta{itemprop: "contentUrl", content: "https:#{reference.audio.url}"}
+/       %dd
+/         %audio#audio_player{:src => reference.audio.url, :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+/       %dt
+/         .copy{itemprop: "copyrightHolder", itemtype: "http://schema.org/Organization", itemscope: ""}
+/           %span{itemprop: "name"}
+/             = reference.audio.copyright_short.html
+/         .copy.audio_close_btn
+/           = raw reference.audio.copyright_long.html
+/         %a.action_button_blue{:href => reference.audio.publisher_link, :target => "_blank"}
+/           = t("audio.publisher website")
+/   .mobile
+/     %div.close_tab
+/       %span.first
+/       %div.mid
+/         %a.menu_close.audio_close_btn
+/       %span.last

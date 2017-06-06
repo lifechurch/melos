@@ -1,0 +1,216 @@
+- t = Proc.new do |key, options={}|
+  - I18n.t(key, options.merge(:locale => @locale))
+- locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+- show_end_summary = true
+
+.main.container_12
+  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com#{locale_dir}/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker.png&name=#{t("campaigns.christmas.tracker title")}&caption=bible.com%20%20%23ChristmasTracker&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com#{locale_dir}/christmas", :target => "_blank"}
+    = image_tag "svg/facebook-logo.svg"
+  %a#twitter.twitter{:href => "https://twitter.com/intent/tweet?source=webclient&text=#{t('campaigns.christmas.twitter text')}&hashtags=ChristmasTracker", :target => "_blank"}
+    = image_tag "svg/twitter-logo.svg"
+
+  - if show_end_summary
+    .finished-copy
+      %p
+        = t('campaigns.christmas.summary').gsub('2014', '2015')
+
+  .grid_3
+    %a#logo{:href => "https://www.bible.com/app"}
+      = image_tag "campaigns/christmas/logo.svg", alt: "YouVersion logo"
+  .grid_3.star
+  .title.grid_6
+    %h1
+      = t('campaigns.christmas.tracker title')
+  #map-bkg{class: show_end_summary}
+  #map.grid_12
+    .figures.grid_4.hidden
+      %h2
+        = t('campaigns.christmas.read about')
+      - if show_end_summary
+        %h3
+          = t('campaigns.christmas.totals during').gsub('2014', '2015')
+        .chapter_requests.figure
+          46,110,909
+      - else
+        %h3
+          = t('campaigns.christmas.totals since').gsub('2014', '2015')
+        .chapter_requests.figure
+
+  .copy
+    %p
+      = t('campaigns.christmas.verse').html_safe
+    - version_id = Version.default_for(I18n.locale.to_s.eql?('en-GB') ? "en" : I18n.locale)
+    - localized_link = "/bible/#{version_id}/luk.2"
+    %p
+      %a{:href => localized_link}
+        = t('campaigns.christmas.read more').html_safe
+.hills
+  .container_12
+    .little_sheep.grid_3
+    .shepherds.prefix_4.grid_5
+.footer
+  .container_12
+    .flurry.grid_8
+      .verse.hidden
+        %span.installs
+        %p
+          = t('campaigns.christmas.total installs')
+      .action
+    .grid_3.prefix_1.download{style: "background: url('#{image_path(localized_bible_icon)}') no-repeat 25px 5px;"}
+      %a{:href => "https://www.bible.com/app?ref=christmas"}
+        %h3
+          = t('campaigns.christmas.download')
+        %span
+          = t('campaigns.christmas.versions', version_count: "1200", language_count: "900+")
+          %br
+          = t('campaigns.christmas.tagline')
+
+%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+= javascript_include_tag "campaigns/christmas/polymaps.min.js"
+= javascript_include_tag "campaigns/christmas/plugins.js"
+
+:javascript
+      try{Typekit.load();}catch(e){}
+
+:javascript
+  var infographic = {};
+  var last_modified = {};
+  var po = org.polymaps;
+  var map;
+  var points;
+  var currentPoint = 0;
+  var minDuration = 180;
+  var maxDuration = 180;
+  var starInterval;
+
+  function addCommas(nStr)
+  {
+      nStr += '';
+      x = nStr.split('.');
+      x1 = x[0];
+      x2 = x.length > 1 ? '.' + x[1] : '';
+      var rgx = /(\d+)(\d{3})/;
+      while (rgx.test(x1)) {
+          x1 = x1.replace(rgx, '$1' + ',' + '$2');
+      }
+      return x1 + x2;
+  }
+
+  function tickInfographic() {
+      for (var i in infographic) {
+          var start_count = infographic[i].total;
+          var start_date = last_modified[i];
+          var average_per_day = infographic[i].daily;
+          var single_pace = 1/(average_per_day/24/60/60)*1000;
+          var today_date = Math.round((new Date()).getTime() / 1000);
+          var date_difference_seconds = Math.abs(today_date - start_date);
+          var date_difference_days_not_round = (date_difference_seconds / 86400);
+          var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
+          tick_format = "#{t("campaigns.christmas.chapter counter format")}";
+          if (corrected_total_downloads_not_round >= 10000000 ) {
+            tick_format = "9" + tick_format
+          }
+          $("." + i).counter({
+              direction: "up",
+              format: tick_format,
+              initial: addCommas(corrected_total_downloads_not_round),
+              interval: single_pace
+          });
+      }
+  }
+
+  function overlay(tile, proj) {
+      proj = proj(tile);
+      var point = points[currentPoint];
+      var tl = proj.locationPoint({lon: parseFloat(point.longitude), lat: parseFloat(point.latitude)}),
+      image = tile.element = po.svg("image");
+
+      image.setAttribute("x", tl.x - 6);
+      image.setAttribute("y", tl.y - 6);
+      image.setAttribute("width", 10);
+      image.setAttribute("height", 10);
+      image.setAttribute("class", "point");
+      image.setAttributeNS("http://www.w3.org/1999/xlink", "href", "/assets/campaigns/christmas/small_star.png");
+      currentPoint++;
+      if (currentPoint >= points.length) currentPoint = 0;
+
+      var duration = (Math.floor(Math.random() * (maxDuration - minDuration)) * 1000)
+          + (minDuration * 1000);
+      $(image).fadeIn().animate({ opacity: 0}, duration, function() {
+          $(this).remove();
+      });
+  }
+
+  function addPoint() {
+      map.add(po.layer(overlay).tile(false));
+  }
+
+  function runIt(data) {
+      points = data;
+      clearInterval(starInterval);
+
+      var pointsPerSecond = data.length / (30 * 60);
+      starFrequency = 1000 / pointsPerSecond; // How many seconds between stars
+
+      currentPoint = Math.floor(Math.random() * data.length);
+      starInterval = setInterval(addPoint, starFrequency);
+  }
+
+  function christmas_map(data) {
+      runIt(data);
+  }
+
+  function christmas_chapters(data) {
+      if (data.resultset && data.resultset[0]) {
+          var item = data.resultset[0];
+          infographic['chapter_requests'] = { total: item[0], daily: item[1] };
+          last_modified['chapter_requests'] = item[2];
+
+          $(".figures").delay(2000).removeClass('hidden').hide().fadeIn('slow');
+          tickInfographic();
+      }
+  }
+
+  function installs_data(STATS) {
+      var start_count = STATS.start_count;
+      var start_date = STATS.start_date;
+      var average_per_day = STATS.average_per_day;
+      var single_pace = 1/(average_per_day/24/60/60)*1000;
+      var today_date = Math.round((new Date()).getTime() / 1000);
+      var date_difference_seconds = Math.abs(today_date - start_date);
+      var date_difference_days_not_round = (date_difference_seconds / 86400);
+      var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
+
+      $('.verse').hide().removeClass('hidden').fadeIn('slow');
+      $(".installs").counter({
+          direction: "up",
+          format: "#{t("counter.format")}",
+          initial: addCommas(corrected_total_downloads_not_round),
+          interval: single_pace
+      });
+  }
+
+  $(document).ready(function() {
+      showEndSummary = $('.finished-copy').length;
+
+      if (showEndSummary) {
+        $(".figures").delay(2000).removeClass('hidden').hide().fadeIn('slow');
+        //$.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/map_data.js");
+        $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js");
+      } else {
+        $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_chapter_calls_jsonp.js");
+        $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js");
+        $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_map_jsonp.js");
+        setInterval(function() {
+            $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_map_jsonp.js");
+        }, 30 * 60 * 1000); // Fetch a new dataset every 30 minutes
+      }
+
+      $(window).load(function(){
+          map = po.map()
+              .container(document.getElementById("map").appendChild(po.svg("svg")))
+              .center({lat: 44, lon: 12})
+              .zoomRange([2, 2])
+              .zoom(2);
+      });
+  });

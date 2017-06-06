@@ -1,0 +1,24 @@
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+  %link{rel: "canonical", href: "https://#{request.host_with_port}/sign-in"}
+
+- @title = "#{t('pages.home.features.study heading')} #{t('pages.home.features.subscribe heading')} #{t("sign in to youversion")}"
+
+
+:ruby
+  licensing_flow = params[:source] && params[:source] == "licenses"
+  if licensing_flow
+    @main_nav = false
+    content_for :header do
+      render partial: "shared/header/basic"
+    end
+  end
+
+.row
+  .medium-8.large-5.medium-centered.columns
+    %article
+      %h1= t("sign in to youversion")
+      - if licensing_flow
+        %p#license-notice= t("licenses.auth.login notice", signup:t("licenses.auth.signup link text")).html_safe
+      = render partial: "sessions/signin"
+

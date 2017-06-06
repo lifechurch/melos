@@ -1,0 +1,18 @@
+// Local parameters
+// presenter: Presenter::Sidebar::Versions
+- versions = presenter.versions
+
+.widget
+  %h3.hd
+    = t('versions.index title')
+  %ul.menu
+    %li
+      %p
+        %b= t("versions.number of versions field")
+        = versions.values.flatten.count
+    %li
+      %p
+        %b= t("versions.number of languages field")
+        = versions.count
+
+= render 'widgets/download_app'

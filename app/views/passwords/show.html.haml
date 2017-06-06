@@ -1,0 +1,23 @@
+:ruby
+  @title = t('users.edit password')
+  @setting_selected = :password
+
+%h2
+  = @title
+
+= form_for :user, url: user_password_path(@user), method: :put do |f|
+  = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.edit password errors")}
+  %div
+    = f.label :old_password do
+      = t('users.profile.current password')
+    = f.password_field :old_password, :maxlength=>"32"
+  %div
+    = f.label :password do
+      = t('users.profile.new password')
+    = f.password_field :password, :maxlength=>"32"
+  %div
+    = f.label :confirm_password do
+      = t('users.profile.confirm password')
+    = f.password_field :confirm_password, :maxlength=>"32"
+  %div
+    = button_tag t('users.my password') , {class: "solid-button green"}

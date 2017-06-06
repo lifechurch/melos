@@ -1,0 +1,49 @@
+- t = Proc.new do |key, options={}|
+  - I18n.t(key, options.merge(:locale => @locale))
+:ruby
+  meta_title        = t("campaigns.christmas.tracker title")
+  meta_description  = t("campaigns.christmas.facebook text")
+  locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+  meta_url          = "#{request.protocol}#{request.host_with_port}#{locale_dir}#{request.fullpath}"
+  i18n_css_class = I18n.locale.to_s
+  facebook_locale = "en_US"
+
+!!! 5
+%html
+  %head
+    %title= strip_tags(meta_title)
+    %link{rel: "canonical", href: meta_url}
+    %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
+    %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
+    %meta{charset:"utf-8"}
+    %meta{'http-equiv' => 'content-language', :content => I18n.locale.downcase}
+    %meta{name: "description",    content: meta_description}
+    %meta{name: "url",            content: meta_url}
+    %meta{name: "viewport",       content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
+    %meta{property: "og:title",       content: meta_title }
+    %meta{property: "og:url",         content: meta_url }
+    %meta{property: "og:description", content: meta_description }
+    %meta{property: "og:image", content: "#{url_for(asset_path('/assets/campaigns/christmas/christmas-tracker2.png'))}"}
+    -#%meta{property: "og:locale", content: facebook_locale}
+    -#%meta{property: "og:locale:alternate", content: "en_US"}
+    -#%meta{property: "og:locale:alternate", content: "es_ES"}
+    -#%meta{property: "og:locale:alternate", content: "ko_KR"}
+    -#%meta{property: "og:locale:alternate", content: "zh_CN"}
+    %meta{name: "twitter:card",             content: "summary"}
+    %meta{name: "twitter:url",              content: meta_url}
+    %meta{name: "twitter:title" ,           content: meta_title}
+    %meta{name: "twitter:description",      content: t("campaigns.christmas.twitter text")}
+    %meta{name: "twitter:image",            content: "#{url_for(asset_path('/assets/campaigns/christmas/christmas-tracker2.png'))}"}
+    %meta{name: "twitter:site",             content: "@YouVersion"}
+
+    = stylesheet_link_tag "campaigns/christmas"
+    = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
+
+    :javascript
+      try{Typekit.load();}catch(e){}
+
+  %body{:class => "body-" + i18n_css_class}
+    = render '/shared/google_analytics'
+
+    = yield

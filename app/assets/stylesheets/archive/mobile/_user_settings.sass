@@ -1,0 +1,158 @@
+// `Font Family
+//----------------------------------------------------------------------------------------------------
+
+.user_setting_font_helvetica,
+*[data-setting-font="user_setting_font_helvetica"]
+  font-family: $body_font
+
+.user_setting_font_georgia,
+*[data-setting-font="user_setting_font_georgia"]
+  font-family: Georgia, 'Times New Roman', Times, serif
+
+.user_setting_font_baskerville,
+*[data-setting-font="user_setting_font_baskerville"]
+  font-family: Baskerville, 'Times New Roman', Times, serif
+  -webkit-font-smoothing: subpixel-antialiased
+
+.user_setting_font_verdana,
+*[data-setting-font="user_setting_font_verdana"]
+  font-family: Verdana, sans-serif
+
+// `Text Size
+//----------------------------------------------------------------------------------------------------
+
+.user_setting_size_small,
+*[data-setting-size="user_setting_size_small"]
+  font-size: $text_size
+
+.user_setting_size_medium,
+*[data-setting-size="user_setting_size_medium"]
+  font-size: 17px
+
+.user_setting_size_large,
+*[data-setting-size="user_setting_size_large"]
+  font-size: 20px
+
+// `Dynamic Menu
+//----------------------------------------------------------------------------------------------------
+
+.dynamic_menu label[class^="user_setting_font_"]
+  font-size: 15px
+
+.inner_content
+  padding: 16px
+
+
+// Version Settings Tab
+//----------------------------------------------------------------------------------------------------
+
+#version select
+  width: 100%
+
+
+// Layout Settings Tab
+//----------------------------------------------------------------------------------------------------
+
+#layout form
+  overflow: hidden
+
+#layout form fieldset
+  width: 50%
+
+#layout form label.top_label
+  position: relative
+  top: -25px
+  left: -24px
+  padding: 1px 5px
+
+#layout form label.top_label.light
+  background: #fff
+  color: #000
+  border-radius: 3px
+
+#layout form label.top_label.dark
+  background: #000
+  color: #fff
+  border-radius: 3px
+
+#layout form label.top_label.small
+  font-size: 13px
+
+#layout form label.top_label.medium
+  font-size: 16px
+
+
+#layout form label.top_label.large
+  font-size: 19px
+  top: -28px
+
+#layout form label.faux_radio[for="user_setting_size_medium"]
+  left: 1px
+
+#layout form label.faux_radio[for="user_setting_size_large"]
+  top: -7px
+  left: 2px
+
+
+*[data-setting-theme="user_setting_theme_light"]
+  background: #fff !important
+  color: #444
+
+*[data-setting-theme="user_setting_theme_dark"]
+  background: #000 !important
+  color: #eee
+
+// Font Settings Tab
+//----------------------------------------------------------------------------------------------------
+
+#font form label.faux_radio
+  margin-top: 2px
+
+.vod_form
+  select#version_id
+    margin-left: 0
+
+  select#hour, select#minute, select#meridian
+    width: 70px
+
+
+// !User settings - connected devices
+
+.facebook-connect,
+.twitter-connect
+  display: block
+  width: 100px
+  height: 100px
+  border: 1px solid #dedddb
+  text-align: center
+  +border-radius(5px)
+  position: relative
+  float: left
+  margin: 0 15px 0 0
+  line-height: 99px
+
+  img
+    width: 64px
+    margin: 0 auto
+    &.connected
+      opacity: 0.25
+
+  a
+    display: block
+    text-indent: 100%
+    overflow: hidden
+    white-space: nowrap
+    height: 24px
+    width: 24px
+    +border-radius(3px)
+    position: absolute
+    top: -5px
+    right: -5px
+
+  a.connect-add
+    background: #6AB750 image-url("svg/icon-add.svg") no-repeat center center
+    background-size: 12px 12px
+
+  a.connect-delete
+    background: #FF0000 image-url("svg/icon-delete.svg") no-repeat center center
+    background-size: 12px 12px

@@ -1,0 +1,220 @@
+-#
+-# Moment Feed
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-feed.tpl.html'}
+  .row.moments-feed
+    .medium-10.large-7.columns.small-centered
+      %div{"ng-repeat" => "moment in moments"}
+        %moment{:data => "moment", "social-enabled" => "true", "ng-if" => "moment.kind"}
+      %div{:layout => "row", "layout-align" => "space-around", "layout-sm" => "column", "ng-if" => "loading"}
+        %md-progress-circular{"md-mode" => "indeterminate"}
+      %button.solid-button.green.full.ng-hide{"ng-click" => "loadMore()", "ng-show" => "!loading && !pagingFinished"}
+        = t('moments.action.load more')
+
+
+-#
+-# Single Moment Feed
+-#
+%script{'type' => 'text/ng-template', 'id' => '/single-moment-feed.tpl.html'}
+  .row.moments-feed
+    .medium-10.large-7.columns.small-centered
+      %moment{:data => "moment", "social-enabled" => "true"}
+
+
+-#
+-# Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment.tpl.html'}
+  .moment.moment-vod{"ng-hide" => "deleted"}
+    .moment-top{"ng-click" => "goSingle()", "ng-class" => "{ hasLink: !single && data.object.id }"}
+      .moment-top-avatar
+        %img.avatar{"ng-src" => "{{data.object.avatar}}"}
+      .moment-divider{"ng-bind-html" => "data.object.title", "ng-if" => "data.object.title && !data.object.moment_title"}
+      .moment-divider{"ng-bind-html" => "data.object.moment_title", "ng-if" => "data.object.moment_title"}
+      .moment-ago{"am-time-ago" => "data.object.created_dt"} {{data.object.time_ago}}
+    .moment-content
+      %div{"ng-if" => "data.kind == 'votd'", "moment-votd" => ""}
+      %div{"ng-if" => "data.kind == 'plan_subscription'", "moment-plan-start" => ""}
+      %div{"ng-if" => "data.kind == 'plan_completion'", "moment-plan-complete" => ""}
+      %div{"ng-if" => "data.kind == 'plan_segment_completion'", "moment-plan-segment-complete" => ""}
+      %div{"ng-if" => "data.kind == 'highlight'", "moment-highlight" => ""}
+      %div{"ng-if" => "data.kind == 'bookmark'", "moment-bookmark" => ""}
+      %div{"ng-if" => "data.kind == 'friendship'", "moment-friendship" => ""}
+      %div{"ng-if" => "data.kind == 'image'", "moment-image" => ""}
+      %div{"ng-if" => "data.kind == 'note'", "moment-note" => ""}
+      %div{"ng-if" => "data.kind == 'reading_plan_carousel'", "moment-plan-carousel" => ""}
+    .moment-bottom
+      .moment-actions
+        %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}", "ng-disabled" => "!socialEnabled"} #{t("moments.action.like")}
+        .moment-actions-more
+          %md-menu{"ng-if" => "data.object.actions.subscribable || data.object.actions.edit_subscription"}
+            %a{"md-menu-origin" => true, title: t("users.subscribe"), "ng-click" => "openMenu($mdOpenMenu, $event)"}
+              %span{"ng-if" => "data.object.actions.subscribable"}
+                =t("users.subscribe")
+              %span{"ng-if" => "data.object.actions.edit_subscription"}
+                =t("moments.action.edit subscription").to_s.camelize
+            %md-menu-content{:width => "4"}
+              .subscribe-menu{"subscribe-menu" => true, "moment" => "data"}
+          %md-menu{"ng-if" => "needsMoreMenu()"}
+            %a{"md-menu-origin" => true, title: t("moments.action.more"), "ng-click" => "openMenu($mdOpenMenu, $event)"}
+              =t("moments.action.more")
+            %md-menu-content{:width => "4"}
+              .more-menu{"more-menu" => true, "moment" => "data", "delete" => "delete"}
+      .moment-likes{"ng-if" => "data.object.likes.enabled && data.object.likes.count && socialEnabled"}
+        .moment-likes-count
+          %a{:href => "#", "ng-if" => "data.object.likes.count == 1"} {{data.object.likes.count}} #{t("moments.like")}
+          %a{:href => "#", "ng-if" => "data.object.likes.count > 1"} {{data.object.likes.count}} #{t("moments.likes")}
+        .moment-likes-avatars
+          %a{:href => "#", "ng-repeat" => "like in data.object.likes.all"}
+            %img{:alt => "", "ng-src" => "{{like.user.avatar}}"}
+      .moment-comments{"ng-if" => "data.object.comments.enabled && socialEnabled"}
+        %ul.moment-comments-list
+          %li.moment-comments-list-comment{"ng-repeat" => "comment in data.object.comments.all"}
+            .moment-comments-list-avatar
+              %a{"ng-href" => "{{comment.user.path}}", target: "_self"}
+                %img{:alt => "", "ng-src" => "{{comment.user.avatar}}"}
+            .moment-comments-list-text
+              %p
+                %a{"ng-href" => "{{comment.user.path}}", target: "_self"} {{comment.user.name}}
+                {{comment.content}}
+              %span.moment-comment-dt{:title => "{{comment.created_dt}}"}
+                {{comment.time_ago}}
+                %a{"ng-click"=>"deleteComment(comment)", "ng-if" => "comment.owned_by_me || data.object.owned_by_me"}
+                  =t("moments.action.delete")
+
+        .moment-comments-self-box
+          .moment-comments-self-avatar
+            %img{:alt => "", :src => (current_user.user_avatar_url["px_48x48"] if current_user.present? && current_user.user_avatar_url.present?) }
+          .moment-comments-self-input
+            %form
+              %textarea{:placeholder => "#{t('moments.action.comment')}", "ng-model"=>"newComment.content", "ng-keypress" => "comment($event, newComment.content);"}
+
+-#
+-# Bookmark Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-bookmark.tpl.html'}
+  %div
+    %p.binding{"ng-bind-html" => "verseContent"}
+    %p.binding.ng-hide{"ng-show" => "verseHumanRef"}
+      %a.hollow-button.gray{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(usfm, data.object.references[0].version_id)}}", "target" => "_self"}
+-#
+-# Highlight Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-highlight.tpl.html'}
+  %div
+    %p.binding{"ng-bind-html" => "verseContent"}
+    %p.binding.ng-hide{"ng-show" => "verseHumanRef"}
+      %a.hollow-button.gray{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(usfm, data.object.references[0].version_id)}}", "target" => "_self"}
+
+-#
+-# VOTD Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-votd.tpl.html'}
+  %div
+    %p.binding{"ng-bind-html" => "verseContent"}
+    %p.binding.ng-hide{"ng-show" => "verseHumanRef"}
+      %a.hollow-button.gray{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(usfm, data.object.recent_versions[0].id)}}", "target" => "_self"}
+
+
+-#
+-# Friendship Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-friendship.tpl.html'}
+  %div
+    %img.friend-image{"ng-src" => "{{data.object.friend_avatar}}"}
+    %div.text-center.pad-row-top
+      %a.solid-button.green{"ng-disabled" => "working", "ng-click" => "offerFriendship(data.object.friendship_offer_path, '#{form_authenticity_token}')", "ng-show" => "data.object.friendship_offer_path && !offeredFriendship && !working"}
+        =t('moments.action.add friend button')
+      %span{"ng-show" => "offeredFriendship"}
+        =t('friendships.offer success')
+      %span{"ng-show" => "offerError"}
+        =t('friendships.offer failure')
+
+-#
+-# Image Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-image.tpl.html'}
+  %img{"ng-src" => "{{data.object.body_image}}"}
+
+-#
+-# Note Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-note.tpl.html'}
+  %p.moment-no-note-text {{data.object.content}}
+
+-#
+-# Plan Complete Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-plan-complete.tpl.html'}
+  %img{"ng-src" => "{{data.object.body_images[2].url}}"}
+
+-#
+-# Plan Start Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-plan-start.tpl.html'}
+  %img{"ng-src" => "{{data.object.body_images[2].url}}"}
+
+-#
+-# Plan Segment Complete Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-plan-segment-complete.tpl.html'}
+  .moment-pc-progress
+    .moment-pc-progress-img
+      %img.plan-icon{"ng-src" => "{{data.object.body_images[2].url}}"}
+    .moment-pc-progress-bar
+      %md-progress-linear{"md-mode" => "determinate", :value => "{{data.object.percent_complete}}"}
+      %span.moment-plan-progress
+        Day {{data.object.segment}} of {{data.object.total_segments}}
+
+-#
+-# Subscribe Menu
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-subscribe-menu.tpl.html' }
+  .moment-subscribe-menu
+    .subscribe-version
+      %h3
+        =t("moments.vod.get daily email")
+      %label
+        =t("moments.vod.version")
+      %select{"ng-model" => "subscription.version_id", "ng-options" => "version.id as version.title for version in versions"}
+    .subscribe-time
+      %label
+        =t("moments.vod.time")
+      %select{"ng-model" => "subscription.hour", "ng-options" => "hour for hour in allowedHours"}
+      %select{"ng-model" => "subscription.minute", "ng-options" => "minute for minute in allowedMinutes"}
+      %select{"ng-model" => "subscription.meridian", "ng-options" => "meridian for meridian in allowedMeridians"}
+
+    .subscribe-button
+      %a.solid-button.green{"ng-click" => "save(subscription, $event)"}
+        %span{"ng-if" => "!isSubscribed"}
+          = t("moments.vod.subscribe")
+        %span{"ng-if" => "isSubscribed"}
+          = t("moments.vod.update")
+      %a.solid-button.red{"href" => "#{vod_subscriptions_path}", "ng-if" => "isSubscribed", target: "_self"}
+        = t("moments.vod.unsubscribe")
+      %a{"ng-click" => "cancel()"}
+        = t("moments.action.cancel")
+
+
+-#
+-# Moment More Menu
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-more-menu.tpl.html' }
+  %md-menu-item{"ng-if" => "moment.object.references.length"}
+    %md-button{"ng-href" => "{{getReadLink('#{reference_path}')}}", target: "_self"}
+      =t("moments.action.read in bible")
+  %md-menu-item{"ng-if" => "moment.object.actions.read_plan || (moment.object.actions.start_plan && moment.object.subscribed)"}
+    %md-button{"ng-href" => "#{subscriptions_path(user_id: current_user.to_param)}/{{moment.object.plan_id}}{{moment.object.segment ? '?day=' + moment.object.segment : ''}}", target: "_self"}
+      =t("moments.action.read plan")
+  %md-menu-item{"ng-if" => "moment.object.actions.about_plan"}
+    %md-button{"ng-href" => "{{moment.object.action_url}}", target: "_self"}
+      =t("EventsAdmin.features.EventEdit.features.preview.components.PreviewTypePlan.info")
+  %md-menu-item{"ng-if" => "moment.object.actions.deletable"}
+    %md-button{"ng-click" => "delete()"}
+      =t("moments.action.delete")
+  %md-menu-item{"ng-if" => "moment.object.actions.start_plan && !moment.object.subscribed"}
+    %md-button{"ng-click" => "startPlan('#{t('ui.plans.privacy')}', '#{t('ui.yes button')}', '#{t('ui.no button')}', '#{t('ui.cancel')}', '#{t('moments.action.start plan')}', '#{subscriptions_path(user_id: current_user.to_param)}', '#{form_authenticity_token}', $event)"}
+      =t("moments.action.start plan")
+  %md-menu-item{"ng-if" => "moment.object.actions.start_plan && !moment.object.subscribed"}
+    %md-button
+      %a{"save-for-later" => true, "save-label" => "#{t('plans.save for later')}", "remove-label" => "#{t('plans.saved for later')}", "saved" => "moment.object.saved", "base-path" => "#{subscriptions_path(user_id: current_user.to_param)}", "plan-id" => "moment.object.plan_id",  "check-icon-path" => "#{image_path('icon-plans-checkmark.svg')}" }= t('plans.save for later')

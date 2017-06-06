@@ -1,0 +1,11 @@
+// Locals
+// plan - instance of Plan
+
+.widget
+  %h3.hd
+    =t("plans.publisher")
+  %div.bd
+    %p= plan.copyright.html_safe if plan.copyright.present?
+  - if plan.publisher_url.present?
+    %div.ft.link
+      = link_to(t("plans.about publisher"), plan.publisher_url, { target: "_self" } )

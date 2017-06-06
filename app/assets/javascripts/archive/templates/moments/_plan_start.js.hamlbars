@@ -1,0 +1,9 @@
+.moment-rp-layer.rp-layer.hide
+.moment-plan-start.rp-layer.hide
+  .plan-privacy-buttons
+    %p.detail-text
+      {{I18n 'ui.plans.privacy'}}
+    .button-wrap
+      %a.action_button_blue.button-public{href: "{{subscribe_path}}&privacy=false", title: "{{I18n 'ui.yes button'}}"} {{I18n 'ui.yes button'}}
+      %a.action_button_grey.button-private{href: "{{subscribe_path}}&privacy=true", title: "{{I18n 'ui.no button'}}"} {{I18n 'ui.no button'}}
+    %a.button-plan-cancel{href: "#", title: ""} {{I18n 'ui.cancel'}}

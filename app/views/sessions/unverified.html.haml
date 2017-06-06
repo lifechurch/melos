@@ -1,0 +1,8 @@
+- @main_nav = true
+- @sidebar = false
+- @title = t('users.unverified heading')
+
+%article.error
+  %h2= t('users.unverified heading')
+  %hr
+  %p= t('users.unverified message', resend_path: resend_confirmation_path(email: params[:email])).html_safe

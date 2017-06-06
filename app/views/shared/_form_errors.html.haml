@@ -1,0 +1,9 @@
+- if errors.present?
+  .form_errors
+
+    - if defined?(heading)
+      %h4=heading
+
+    %ul.no-bullet.error
+      - errors.full_messages.each do |e|
+        %li.error= e

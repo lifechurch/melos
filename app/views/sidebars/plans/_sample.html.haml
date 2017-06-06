@@ -1,0 +1,82 @@
+// Local parameters
+// presenter: Presenter::Sidebar::PlanSample
+- plan          = presenter.plan
+- day           = (params[:day] || 1).to_i
+- content_page  = (params[:content] || 0).to_i
+- reading       = plan.day(day)
+- references    = reading.references(version_id: @presenter.version)
+
+
+.mobile#mobile-sb-subscription
+  .reader_modal_header
+    %nav
+      %a.close_btn.subscription_close_btn
+
+= render partial: "/plans/button", locals: {plan: plan}
+
+
+#widget-plan-controls.widget
+  %h1.small-title
+    = link_to plan.name, plan_path(plan)
+
+  #calendar.bd.nopad.rp-sample
+    - cal_text = t("plans.calendar")
+
+    .calendar-prev
+      - prev_text = t("plans.previous day") # used in 3 places below
+      - if day > 1
+        = link_to(sample_plan_path(plan.to_param, day: (day - 1)), {class: "prev", target: "_self", title: prev_text}) do
+          = prev_text
+      - else
+        = link_to("#", class: "disabled prev") do
+          = prev_text
+
+    .calendar-day
+      %h4
+        = t("plans.which day in plan", day: day.to_s, total: plan.total_days)
+
+    .calendar-next
+      - next_text = t("plans.next day") # used in 3 places below
+      - if day <= plan.total_days - 1
+        = link_to(sample_plan_path(plan.to_param, day: (day + 1)), {class: "next", target: "_self", title: next_text}) do
+          = next_text
+      - else
+        = link_to("#", class: "disabled next") do
+          = next_text
+
+-# Links to scripture
+.widget.scripture-links
+  %h3.hd
+    = t("plans.read today")
+  %ul.menu.basic
+    - unless references.empty?
+      - references.each_with_index do |ref,index|
+        %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
+          - ref_text = ref.reference.safe_human
+          - if content_page == index
+            - if current_auth
+              %span= ref_text
+            - else
+              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param)
+          - else
+            - if current_auth
+              %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version]), target: "_self"}
+                = ref_text
+            - else
+              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), target: "_self"
+
+- if current_auth
+  - if reading.devotional
+    #widget-devotional.widget.ng-hide
+      %h3.hd= t("plans.devotional")
+      #widget-devotional-body.bd= reading.devotional.html_safe
+- else
+  .widget
+    %h3.hd
+      =t("plans.publisher")
+    %div.bd
+      %p= plan.copyright.html_safe
+    - unless plan.publisher_url.nil?
+      %div.ft.link
+        = link_to(t("plans.about publisher"), plan.publisher_url)
+

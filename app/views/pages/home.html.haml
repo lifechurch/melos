@@ -1,0 +1,171 @@
+:ruby
+  @title            = "#{t('pages.home.features.read heading')} #{t(".hero.heading")}"
+  @meta_description = t("meta.mobile.description")
+  @meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  version_id = Version.default_for(I18n.locale.to_s.eql?('en-GB') ? "en" : I18n.locale)
+
+- @main_nav = false
+- @sidebar = false
+- rtl_class = is_rtl? ? "rtl" : ""
+
+- content_for :javascripts do
+  = javascript_include_tag "campaigns/100m/jquery.counter.js"
+
+- content_for :typekit_javascripts do
+  = javascript_include_tag '//use.typekit.net/mgk8ovf.js'
+  :javascript
+    try{Typekit.load();}catch(e){}
+
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}"
+  %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/bible?reference=JHN.1&version=#{version_id}"}
+  %link{rel: "alternate", href: "ios-app://282935706/youversion/bible?reference=JHN.1&version_id=#{version_id}"}
+  %link{rel: "canonical", href: canonicalHref}
+  %meta{name: "url",            content: @meta_url}
+  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:url",         content: @meta_url }
+  %meta{property: "og:description", content: @meta_description }
+  %meta{name: "twitter:card",             content: "summary"}
+  %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
+  %meta{name: "twitter:title" ,           content: @title}
+  %meta{name: "twitter:description",      content: @meta_description}
+  %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(121)))}
+  %meta{name: "twitter:site",             content: "@YouVersion"}
+
+.row.full.show-for-medium-up
+  .columns.medium-12.text-right
+    %form
+      %div{"skip-home" => true, "set-cookie" => "setCookie", "delete-cookie" => "deleteCookie", "now-skipped-text" => "#{html_escape(t(".hero.now skipped"))}", "future-skip-text" => "#{html_escape(t(".hero.skip in future"))}"}
+        %a.setting-skip-home
+          =t(".hero.skip in future")
+
+.row
+  .columns.large-7.medium-8.text-center.medium-centered
+    %h1.heading
+      %img.home-bible-icon{src: "#{image_path(localized_bible_icon(120))}"}
+      =link_to(t("pages.home.heading"), app_page_path, { class: "heading", target: "_self" })
+
+    =link_to(t("pages.home.cta"), bible_path, class: 'solid-button green padded mobile-full', target: "_self")
+
+.row.full.show-for-small-only
+  .columns.medium-12.text-center
+    %form
+      %div{"skip-home" => true, "set-cookie" => "setCookie", "delete-cookie" => "deleteCookie", "now-skipped-text" => "#{html_escape(t(".hero.now skipped"))}", "future-skip-text" => "#{html_escape(t(".hero.skip in future"))}"}
+        %a.setting-skip-home
+          =t(".hero.skip in future")
+
+.row.text-center
+  .columns.medium-4
+    %img.heading{src: "#{image_path('read-stroked.png')}"}
+    %h2.heading
+      =t("pages.home.experience.title")
+    %p.body-text.padded
+      =t("pages.home.experience.body")
+    =link_to(t("pages.home.experience.action"), versions_path, { class: "heading", target: "_self" })
+
+  .columns.medium-4
+    %img.heading{src: "#{image_path('highlight-stroked.png')}"}
+    %h2.heading
+      =t("pages.home.make_yours.title")
+    %p.body-text.padded
+      =t("pages.home.make_yours.body")
+    =link_to(t("pages.home.make_yours.action"), sign_up_path, { class: "heading", target: "_self" })
+
+  .columns.medium-4
+    %img.heading{src: "#{image_path('smartphone-stroked.png')}"}
+    %h2.heading
+      =t("pages.home.install_now.title")
+    %p.body-text.padded
+      =t("pages.home.install_now.body")
+    %p#counter{ "install-counter" => true, "format" => "#{t("counter.format").gsub(" ", "&nbsp;")}" }
+    =link_to(t("pages.home.install_now.action"), app_page_path, { class: "heading", target: "_self" })
+
+.votd-row
+  .row
+    .columns.medium-11.medium-centered
+      .row.collapse{class: @showVerseImage ? 'inner-row' : ''}
+        -if @showVerseImage
+          .columns.medium-5
+            %img.votd-image{src: "#{@vodImage.image_url}"}
+        .columns.medium-7{class: @showVerseImage ? '' : 'inner-row medium-centered'}
+          .votd-content
+            .right.text-right.votd-share-button
+              -#%a{ "ng-click" => "showShare = !showShare", "href" => "#" }
+              -#  %span{"ng-hide" => "showShare"}
+              -#    != t("moments.action.share")
+              -#  %span.ng-hide{"ng-show" => "showShare"}
+              -#    != t("ui.cancel")
+              %div.share-panel
+                -#{"ng-show" => "showShare"}
+                %div.video.addthis_sharing_toolbox{:data => {:url => "#{votd_url(ref: @vodRef.usfm.to_param, day: @vodImage.day.to_i)}", :title => "#{t('pages.home.votd.title')} - #{@vodRef.to_s}", :description => "#{@vodContent}" }}
+            %h2.heading
+              %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
+              =link_to(votd_path, { target: "_self" }) do
+                =t('pages.home.votd.title')
+            %p.votd-verse
+              =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do
+                =@vodContent
+
+            %p.votd-ref
+              =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do
+                =@vodRef.to_s
+
+            - if @current_user.present?
+              - highlight_link = reference_path(version: @vodRef.version, reference: @vodRef.usfm)
+            - else
+              - highlight_link = sign_up_path(redirect: reference_path(version: @vodRef.version, reference: @vodRef.usfm))
+            =link_to(highlight_link, {class:'votd-link', target: "_self" }) do
+              %img.highlight-icon{src: "#{image_path('share.png')}"}
+              =t("pages.home.votd.highlight_bookmark")
+
+            %br
+            - if @current_user.present?
+              - subscribe_link = settings_vod_subscriptions_path
+            - else
+              - subscribe_link = sign_up_path(redirect: settings_vod_subscriptions_path)
+            =link_to(subscribe_link, {class:'votd-link', target: "_self"}) do
+              %img.subscribe-icon{src: "#{image_path('mail.png')}"}
+              =t("pages.home.votd.subscribe")
+
+.row
+  .columns.medium-6.medium-centered.text-center
+    %img.heading{src: "#{image_path('plans-stroked.png')}"}
+    %h2.heading
+      =t("pages.home.free_plans.title")
+    %p.body-text
+      =t("pages.home.free_plans.body")
+
+.row.featured-plans-row
+  .columns.medium-9.text-center.medium-centered
+    %ul{class: "#{@block_grid_size}"}
+      - if(@featured_plans.present?)
+        - @featured_plans.each do |plan|
+          %li
+            - if plan.list_image.present?
+              = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
+                = image_tag plan.list_image.url, class: ''
+            %p.fp-title
+              = link_to(plan.name, plan_path(plan, locale: I18n.locale), {target: "_self" })
+            %div.fp-details
+              %span.fp-length
+                = plan.length
+              %div.dot
+              = link_to(t('moments.action.start plan'), plan_path(plan, locale: I18n.locale), { class: 'fp-link', target: "_self" })
+    =link_to(t("pages.home.browse_plans"), plans_path, { class: 'browse-plans-link', target: "_self" })
+
+%hr
+
+.row.start-now-row
+  .columns.medium-7.text-center.medium-centered
+    %h2.heading
+      =t("pages.home.read_listen")
+    - if @current_user.present?
+      - start_link = bible_path
+    - else
+      - start_link = sign_up_path
+    =link_to(t("pages.home.start_now"), start_link, { class: 'solid-button green padded start-now-link', target: "_self" })
+
+- @branch_deeplink = "bible?reference=JHN.1&version=#{version_id}"
+= render '/shared/app_banner'

@@ -1,0 +1,1097 @@
+// !Main
+//----------------------------------------------------------------------------------------------------
+
+#main
+  margin: 47px 0 0 0
+
+#main article
+  @extend .clearfix
+  background:
+    color: #fff
+    repeat: repeat-x
+  border: 0
+  position: relative
+  min-height: 368px
+  padding: 16px 16px 16px
+  overflow: hidden
+  +border-radius(0)
+
+  .no_sidebar &:after
+    width: 908px
+    display: block
+
+#main.main_reader article
+  padding: 90px 24px 16px
+
+#main header + article,
+#reader_header + article,
+#main .header_tabs + article,
+#main .top_section + article
+  +round_top_none
+
+  &:after
+    content: none
+
+#main .top_section + header
+  +round_top_none
+
+// !Main > Headers
+//----------------------------------------------------------------------------------------------------
+
+
+#main header,
+#main footer,
+.header_tabs,
+.top_section
+  @extend .clearfix
+  +box-shadow(inset #fff 0 1px 0 0)
+  background-color: #EEEDEB
+  border: 0
+
+
+
+#main header
+  font:
+    size: 14px
+    weight: bold
+  line-height: 23px
+  padding: 5px 20px
+
+#main header,
+.header_tabs
+  +round_top
+  border-bottom: 0
+
+#main header ul
+  margin: 0
+  list-style: none
+
+#main header li
+  float: left
+  margin-left: 5px
+  height: 23px
+
+#main header li:first-child
+  margin-left: 0
+
+#main header li.separator
+  background: image-url("separator.png") repeat-y
+  margin-left: 10px
+  padding-left: 11px
+
+#main .top_section + header
+  padding-left: 30px
+  position: relative
+
+.header_arrow
+  background: image-url("header_arrow.png") no-repeat
+  color: transparent
+  font-size: 0
+  overflow: hidden
+  text-indent: -99999px
+  width: 9px
+  height: 6px
+  position: absolute
+  left: 28px
+  bottom: -6px
+
+#main header,
+#main footer
+  border-top: 1px solid #cbc9cf
+  border-bottom: 1px solid #cbc9cf
+
+
+// !Reader Header
+//----------------------------------------------------------------------------------------------------
+
+#reader_header
+  display: none !important
+
+#reader_header:after
+  content: ''
+  font-size: 0
+  line-height: 0
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  height: 5px
+  pointer-events: none
+
+#reader_header + article
+  background-image: none
+  margin-top: 0px
+
+.header-options-settings,
+.header-options-audio,
+.header-options-full,
+.header-options-parallel,
+.header-options-version,
+.header-options-settings:hover,
+.header-options-audio:hover,
+.header-options-full:hover,
+.header-options-parallel:hover,
+.header-options-version:hover
+  background: none
+
+.audio_toolbar
+  height: 91px
+  position: absolute
+  background: #2c2b2b
+  top: -190px
+  left: 0px
+  z-index: 194
+  color: #fff
+  padding: 10px 0px 10px
+
+  div.mejs-audio, dl, dt
+    //width: 95%
+    margin: 0 auto
+
+  div.mejs-audio
+    margin-bottom: 10px
+
+  .info_btn
+    display: block
+    float: right
+    height: 44px
+    width: 44px
+    background: image-url("nav_icons_mobile.png") 14px -122px no-repeat
+    text-indent: -99999px
+    font-size: 0.1em
+    position: relative
+    top: -5px
+    right: -20px
+
+div.close_tab
+  width: 80px
+  margin: 0 auto
+
+  span.first
+    background: image-url("reader_tab_l.png") no-repeat
+    width: 18px
+    height: 46px
+    display: block
+    float: left
+
+  div.mid
+    background: image-url("reader_tab_mid.png") repeat-x
+    height: 44px
+    width: 44px
+    float: left
+
+    a
+      display: block
+      height: 44px
+      width: 44px
+      float: left
+      background: image-url("nav_icons_mobile.png") 14px -346px no-repeat
+
+  span.last
+    background: image-url("reader_tab_r.png") no-repeat
+    width: 18px
+    height: 46px
+    display: block
+    float: left
+
+.reference_toolbar, .version_toolbar
+  position: absolute
+  left: 0px
+  top: -46px
+  width: 100%
+  display: none
+  color: #fff
+  z-index: 10000
+  background: #2b2b2b
+  overflow: y-scroll
+
+  nav
+    background: #202020
+    overflow: hidden
+
+.verse_toolbar
+  height: 86px
+  position: fixed
+  top: -88px
+  left: 0px
+  width: 100%
+  background: url("mobile/verse_toolbar_bg.gif") repeat-x
+  z-index: 193
+  margin-top: 47px
+  display: none
+
+.share_toolbar
+  height: 46px
+  position: fixed
+  top: 0px
+  left: 0px
+  width: 100%
+  display: none
+  background: url("mobile/verse_toolbar_bg.gif") repeat-x
+  z-index: 192
+  margin-top: 47px
+
+.color_toolbar
+  height: auto
+  position: fixed
+  top: -329px
+  left: 0px
+  width: 100%
+  z-index: 192
+  margin-top: 47px
+
+.color_toolbar nav
+  background: #2b2b2c
+  padding: 20px 10px
+
+
+.color_toolbar .color_picker_list button.color
+  margin: 10px
+  height: 51px
+  width: 51px
+
+.color
+  background: none
+
+.color_toolbar button[type="submit"]
+  background: none
+  background-image: none
+
+#menu_settings
+  background: transparent
+  border: 0px
+  border-radius: 0px
+  -webkit-box-shadow: none !important
+  box-shadow: none !important
+  width: 100%
+  position: fixed
+  z-index: 191
+  padding: 0px
+  overflow: hidden
+  color: #fff
+  display: none
+  left: 0px
+  top: -171px
+
+#menu_settings header,
+#menu_settings .menu_arrow,
+#menu_settings form p
+  display: none
+
+#menu_settings form
+  background: url("mobile/toolbar.png") repeat !important
+  border: 0px
+
+#menu_settings form fieldset
+  background: transparent
+  box-shadow: none
+  border: 0px
+
+#menu_book,
+#menu_chapter
+  width: 100%
+
+#menu_book .scroll,
+#menu_chapter .scroll
+  height: 100%
+  border: 0px
+
+  #chapter_selector
+    background: #fff
+
+#menu_book header,
+#menu_chapter header,
+#menu_settings header
+  display: none
+
+#menu_book .scroll ul,
+#menu_chapter .scroll ul
+  width: 100% !important
+
+#menu_book .scroll,
+#menu_chapter .scroll
+  ul li a
+    padding: 10px 15px
+    color: #444
+    text-shadow: none
+    border-top: 1px solid #e1e1e1
+    border-bottom: 0
+    background: #fff image-url("mobile/menu-arrow.png") no-repeat 95% center
+    background-size: 22px 22px
+
+#menu_book .scroll ol,
+#menu_chapter .scroll ol
+  background-image: none
+  width: 100%
+
+#menu_book .scroll ol li,
+#menu_chapter .scroll ol li
+  width: auto
+  height: auto
+
+#menu_book .scroll,
+#menu_chapter .scroll
+  ol li a
+    background: #eee
+    padding: 10px
+    width: 31px
+    text-align: center
+    border: 1px solid #fff
+    color: #444
+    text-shadow: none
+
+.audio_toolbar .inner_content
+  background: #2c2b2b !important
+  padding: 0px 0px 32px
+
+.settings_toolbar .inner_content
+  background: #2c2b2b !important
+  padding: 10px 20px 20px 20px
+
+.reference_toolbar .inner_content, .version_toolbar .inner_content
+  background: #2c2b2b !important
+  padding: 0px
+
+.reference_toolbar .inner_content ul li, .version_toolbar .inner_content ul li
+  width: 100%
+  padding: 10px
+  border-bottom: 1px solid #202020
+
+.reference_toolbar .inner_content ul li a, .version_toolbar .inner_content ul li a
+  width: 100%
+  display: block
+  padding: 0px 10px
+  text-decoration: none
+
+.reference_toolbar .inner_content ol li
+  margin: 0px
+  padding: 0px
+
+.reference_toolbar .inner_content ol li a, .version_toolbar .inner_content ol li a
+  display: block
+  padding: 10px 20px
+  text-decoration: none
+  border-right: 1px solid #101010
+  border-bottom: 1px solid #101010
+  text-align: center
+
+
+// .verse_toolbar nav
+//  margin-left: 10px
+.verse_toolbar nav
+  text-align: center
+  height: 44px
+
+.verse_toolbar nav, .share_toolbar nav, .settings_toolbar nav
+  overflow: hidden
+
+.verse_toolbar nav a, .share_toolbar nav a
+  margin: 5px 1% 0
+  text-indent: -99999px
+  overflow: hidden
+  display: inline-block
+  height: 30px
+  width: 20%
+  padding: 0px
+  +border-radius(4px)
+  border-bottom: 2px solid #000
+
+.settings_toolbar nav a
+  float: right
+  margin-right: 10px
+  text-indent: -99999px
+  overflow: hidden
+  display: block
+  height: 26px
+  width: 40px
+  float: left
+  padding: 8px 0px
+
+.verse_toolbar nav a.close_btn
+  background: image-url("mobile/close_btn.png") no-repeat
+  background-position: 2px 8px
+  float: right
+  margin-right: 0px
+
+.verse_toolbar nav a.submenu_btn
+  background: #0084c8 image-url("mobile/verse_action_sprite.png") no-repeat
+
+.verse_toolbar nav a.bookmark_btn
+  background-position: center -50px
+
+.verse_toolbar nav a.comment_btn
+  background-position: -45px -40px
+
+.verse_toolbar nav a.highlight_btn
+  background-position: center -6px
+
+.verse_toolbar nav a.note_btn
+  background-position: center -94px
+
+.verse_toolbar nav a.related_btn
+  background-position: center -225px
+
+.verse_toolbar nav a.share_btn
+  background-position: center -138px
+
+.share_toolbar nav a.tertiary_btn
+  //background: image-url("mobile/share_sprite.png") no-repeat
+
+.settings_tab, .tab
+  background: none !important
+  margin: 0px !important
+
+
+.tab_navigation
+  display: block
+  width: 100%
+
+  .inner_wrapper
+    width: 101%
+    overflow: hidden
+
+    a
+      display: block
+      float: left
+      width: 33.33333333%
+      height: 44px
+      margin: 0px
+      text-align: center
+      line-height: 43px
+      color: #fff
+      font-weight: bold
+      font-size: 15px
+      text-decoration: none
+      text-shadow: none
+      background: #aaa
+
+    a.selected
+      background: #fff
+      color: #444
+
+.tab_navigation.plan_settings,
+.tab_navigation.ref
+  width: 100%
+  left: 0px
+  top: -5px
+  display: block
+  height: 44px
+
+  .inner_wrapper
+    width: 101%
+    overflow: hidden
+
+    a
+      width: 49.99%
+      line-height: 48px
+
+.reader-nav.audio-disabled
+  width: 170px
+
+  ul
+    width: 132px
+
+    li.audio-disabled
+      display: none
+
+article .reader-nav,
+.search
+  display: none
+
+.reader-nav
+  width: 212px
+  height: 46px
+  margin: 0 auto
+  position: relative !important
+  z-index: 194
+  top: 0px
+
+  span.first
+    background: image-url("reader_tab_l.png") no-repeat
+    width: 18px
+    height: 46px
+    display: block
+    float: left
+
+  span.last
+    background: image-url("reader_tab_r.png") no-repeat
+    width: 18px
+    height: 46px
+    display: block
+    float: left
+
+  ul
+    background: image-url("reader_tab_mid.png") repeat-x
+    list-style: none
+    margin: 0 auto
+    width: 176px
+    float: left
+
+    li
+      padding: 0px
+      margin: 0px
+      display: block
+      float: left
+
+    a
+      text-indent: 100%
+      overflow: hidden
+      white-space: nowrap
+      height: 44px
+      width: 44px
+      display: block
+      float: left
+      background-color: none
+      border: none
+      box-shadow: none
+
+    a:hover, a:link, a:visited
+      background-color: none
+      border: none
+      box-shadow: none
+
+    a.audio_btn
+      background: image-url("icon_listen.png") center -36px no-repeat
+      background-size: auto
+      text-indent: 100%
+      overflow: hidden
+      white-space: nowrap
+      font-size: 0px
+
+      span.icon_listen
+        background: none
+
+    a.reader_settings_btn
+      background: image-url("icon_reader_settings.png") center -38px no-repeat
+      background-size: auto
+      text-indent: 100%
+      overflow: hidden
+      white-space: nowrap
+      font-size: 0px
+
+      span.icon_reader_settings
+        background: none
+
+    a.audio_btn.disabled, a.audio_btn.disabled:hover
+      background:
+        position: center -110px !important
+      cursor: default
+      background-color: transparent !important
+      box-shadow: none !important
+
+      span
+        display: none
+    a.prev
+      background: image-url("mobile/prev_arrow.png") 14px 13px no-repeat
+    a.next
+      background: image-url("mobile/next_arrow.png") 22px 13px no-repeat
+
+
+// !Article Top Section
+//----------------------------------------------------------------------------------------------------
+
+.top_section
+  @extend .clearfix
+  background-color: #e9e9e9
+  font-size: 12px
+  padding: 0px
+  position: relative
+  min-height: 170px
+  +border-radius(0)
+  +background-image(none)
+  border: 0
+    bottom: 0
+
+.top_section + .header_tabs
+  +round_top_none
+  +background-image(linear-gradient(#e9e9e9, #d7d6da))
+  +box-shadow(none)
+  background-color: #e9e9e9
+  border-top: 0
+
+.top_section + .header_tabs .highlighted span
+  border-top: 1px solid #cbc9cf
+  margin-top: -1px
+
+.top_section h1
+  margin-bottom: 10px
+
+.top_section ul
+  margin-bottom: 15px
+
+.top_section ul,
+.top_section li
+  margin-top: 0
+  margin-left: 0
+  padding: 0
+  list-style: none
+
+
+// !Main > Footers
+//----------------------------------------------------------------------------------------------------
+
+#main footer
+  font-size: 11px
+  padding: 5px 20px 25px
+  margin: 0 auto -20px
+  border-radius: 0
+  border:
+    left: 0
+    right: 0
+
+  .as_table,
+  .vcenter
+    display: block
+
+  .vcenter
+    a.button
+      float: none
+      width: auto
+      margin: 10px 0 0
+
+  a
+    text-decoration: none
+  a.button
+    background: none
+    background-color: none
+    padding: 0
+    margin: 0 0 4px 0
+    border-radius: 0
+    border: none
+    box-shadow: none
+    float: none
+    line-height: normal
+    color: #0084c8
+    height: auto
+
+#main article + footer
+  margin: 0
+  position: relative
+  padding: 10px 20px 15px
+  border-bottom: 0
+
+#main footer p
+  margin: 0
+  padding-top: 5px
+
+#main header b,
+#main footer b
+  font-size: 13px
+
+#main footer input[type="submit"],
+#main footer a.button
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ededed))
+  background:
+    image: image-url('blue-arrow@2x.png')
+    position: right
+    size: 36px 36px
+    repeat: no-repeat
+  margin: 5px 0 0 20px
+  display: block
+  padding: 0 40px 0 15px
+  height: 36px
+  line-height: 36px
+  border-radius: 6px
+  text-align: left
+  text-decoration: none
+  font-weight: bold
+  font-size: 15px
+  font-family: "helvetica neue", sans-serif
+  color: #404040
+  border: #c7c5c5 solid 1px
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset
+  float: right
+  min-width: 170px
+
+#main footer input[type="submit"]:active,
+#main footer a.button:active
+  box-shadow : 0 3px 3px rgba(0, 0, 0, 0.1) inset
+
+footer .publisher > .courtesy
+  font-size: 13px
+
+// blurb/copyright with no courtesty heading
+footer .publisher .blurb
+  color: $mute
+
+// blurb with a courtesy of heading override
+footer .publisher .courtesy + .blurb
+  font-weight: normal
+
+// !Main > Verses
+//----------------------------------------------------------------------------------------------------
+
+#verses_selected_form
+  display: block
+  overflow: hidden
+  width: 0
+  height: 0
+
+.verse.selected .content
+  border-bottom: 1px
+  border-bottom-style: dotted
+
+.verse:hover
+  cursor: pointer
+
+.verse + .verse
+  margin-left: 3px
+
+.verse > .label
+  color: #777
+  font:
+    family: $body_font
+    weight: normal
+    size: 14px
+  line-height: 1
+  margin:
+    top: 2px
+    right: 4px
+
+.rtl > .version .verse > .label
+  margin:
+    right: 0px
+    left: 4px
+
+article .verse > .label,
+article[data-setting-size="user_setting_size_small"] .verse > .label
+  margin-top: 0.5em
+
+article[data-setting-size="user_setting_size_medium"] .verse > .label
+  margin-top: 0.9em
+
+article[data-setting-size="user_setting_size_large"] .verse > .label
+  margin-top: 1.2em
+
+.note
+  cursor: default
+
+.note .body
+  display: none
+
+article[data-setting-trans-notes="true"] .note.f .outer_container .body,
+article[data-setting-trans-notes="true"] .note.f > .label,
+article[data-setting-cross-refs="true"] .note.x  .outer_container .body,
+article[data-setting-cross-refs="true"] .note.x > .label
+  display: inline-block !important
+
+.note > .label
+  text-indent: -99999px
+  display: none
+  background: image-url('trans-note-light@2x.png') no-repeat
+    size: 10px 10px
+  height: 10px
+  width: 10px
+  margin-right: 4px
+  margin-left: 2px
+
+.outer_container
+  position: absolute
+  opacity: 0
+  display: none
+
+.inner_container
+  left: 0
+  display: block
+  position: relative
+  // half the width of the reader
+  max-width: 229px
+
+.note > .outer_container > .inner_container >.body
+  +round
+  +background-image(linear-gradient(#f7f7f7, #e8e8e8))
+  background-color: #eee
+  border: 1px solid #ccc
+  font:
+    family: $body_font
+    size: inherit
+  text-indent: 0px
+  line-height: 1.3
+  margin:
+    top: 4px
+    right: 2px
+    bottom: 5px
+  padding: 4px 8px 6px
+
+article[data-setting-show-highlights="true"] .verse.highlighted.dark_bg,
+article[data-setting-show-highlights="true"] .verse.highlighted.dark_bg > .label
+  color: $gray_light
+
+article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg
+  color: $body_text
+
+article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .label
+  color: $label_text
+
+// !Main > headers and paragraphs
+//----------------------------------------------------------------------------------------------------
+
+.p
+  text-indent: 1em
+
+.chapter > .label
+  display: none
+
+// first paragraph after a chapter label
+.chapter > .label + .p
+  text-indent: 0
+
+// !Nav Arrows
+//----------------------------------------------------------------------------------------------------
+.reader-prev,
+.reader-next
+  background:
+    image: image-url("arrow_sprite_thin.png")
+    repeat: no-repeat
+  color: transparent
+  font-size: 0
+  margin-top: -20px
+  overflow: hidden
+  text-indent: -99999px
+  width: 44px
+  position: fixed
+  border-radius: 4px
+
+.reader-prev,
+.reader-next.rtl
+  background-position: 10px 48%
+  margin-left: -55px
+
+.reader-next,
+.reader-prev.rtl
+  margin-left: 473px
+  background-position: -58px 48%
+
+.reader-prev:hover,
+.reader-next:hover
+  background-color: #f1f1f1
+
+.snap
+  position: absolute
+  bottom: 30px
+
+// !Misc Classes
+//----------------------------------------------------------------------------------------------------
+
+.check_count
+  background: image-url("icon_check_green.png") no-repeat 0 7px
+  color: #72a32c
+  float: right
+  font-weight: bold
+  padding-left: 20px
+
+.icon_share_light
+  background: image-url("icon_share_light.png") no-repeat left center
+  padding: 5px 0 5px 22px
+
+#main article .separator
+  color: transparent
+  background: image-url("separator.png") repeat-y center bottom
+  display: inline-block
+  height: 14px
+  margin: 0 10px
+  overflow: hidden
+  text-indent: -99999px
+  vertical-align: middle
+  width: 1px
+  zoom: 1
+
+.callout_blue,
+.callout_green
+  color: $body_text
+  padding: 5px 10px
+  text-decoration: none
+
+.callout_blue:hover,
+.callout_green:hover
+  color: $body_text
+  text-decoration: underline
+
+.callout_blue
+  background: #d9edf8
+
+.callout_green
+  background: #ddfad5
+
+#read_chapter
+  letter-spacing: 0.01em
+
+#download
+  span.icon
+    width: 60px
+    height: 65px
+    display: block
+    position: absolute
+    top: -30px
+    left: 15px
+    background:
+      image: image-url("ad_bible_app.png")
+      position: -50px 0px
+
+// !Type
+//---------------------------------------------------------------------------------------
+
+#main h2
+  font-weight: bold
+  font-size: 1.5em
+  line-height: 1.5em
+
+#main dl.audio h2
+  font-size: 12px
+  margin-bottom: 0
+
+
+// !Book-chap-verse select table
+//---------------------------------------------------------------------------------------
+
+.book_select
+  width: 100%
+
+  th, td
+    text-align: center
+    vertical-align: middle
+    height: 44px
+    width: 50%
+
+  th
+    font-weight: bold
+    border-bottom: 1px solid #e5e5e5
+
+  tr
+    th:first-child, td:first-child
+      border-right: 1px solid #e5e5e5
+
+.verse_select
+  width: 100%
+  td
+    width: 14.2%
+    height: 44px
+    border-bottom: 1px solid #e5e5e5
+    border-right: 1px solid #e5e5e5
+    vertical-align: middle
+    text-align: center
+  tr
+    td:last-child
+      width: 14.8%
+      border-right: 0
+
+// Verse task pages (highlight, notes, etc)
+//---------------------------------------------------------------------------------------
+
+.inner_content
+  background-color: #efefef
+  padding: 20px
+  ul.social
+    margin-top: 8px
+  li
+    float: left
+    list-style: none
+    margin: 0
+    padding: 5px
+  li:first-child
+    margin-left: 0
+  ul.social
+    margin-bottom: 0
+    li
+      border: 1px solid #dedede
+      +box-shadow(#fff 0 1px 0 0, inset #fff 0 1px 0 0)
+      +border-radius(5px)
+      margin-left: 8px
+    li:first-child
+      margin-left: 0
+  div.divider
+    text-align: center
+    background: image-url("divider.gif") center center repeat-x
+    margin: 8px 0
+    span
+      strong
+        color: #999
+      margin: 0 auto
+      background-color: #efefef
+      padding: 0 8px
+      text-shadow: #fff 0 1px 0
+      font-size: 13px
+  textarea
+    height: 100px
+  .help_txt
+    margin-top: 8px
+    font-size: 12
+    color: #999
+
+  label ~ input
+    display: block
+
+  input, textarea
+    margin-bottom: 8px
+
+  strong
+    padding-right: 8px
+
+// Audio player
+//---------------------------------------------------------------------------------------
+
+#menu_audio_player
+  -webkit-font-smoothing: subpixel-antialiased
+  background:
+    color: transparent
+  display: none
+  font-size: 13px
+  color: #FFF
+  border-radius: 0px
+  border: 0px
+  width: 100%
+  padding: 0px
+  position: fixed
+  top: -208px
+  box-shadow: none
+  z-index: 291
+
+  .menu_arrow
+    display: none
+
+  dl
+    margin-bottom: 0
+    background:
+      image: none
+      color: #2C2B2B
+    border: 0px !important
+    text-shadow: none
+    padding: 10px 0px 10px
+
+    dt
+      background: none
+      border-top: 0px !important
+      box-shadow: none
+
+      a.action_button_blue
+        margin-bottom: 0
+
+    dd
+      box-shadow: none
+      border: 0px
+
+  .copy
+    margin: 0 0 10px
+
+    p
+      line-height: 1.5em
+
+  a.close
+    display: none
+
+#version_secondary
+  display: none
+
+// KM: temporary HACK to remove the share button for initial launch until
+// it can be implemented properly
+.verse_toolbar nav a.share_btn
+  display: none
+
+
+// !Single verse page
+
+#main article.reader.verse-view
+
+  .verse
+    display: block
+    margin: 0 0 20px

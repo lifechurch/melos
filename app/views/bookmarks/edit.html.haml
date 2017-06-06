@@ -1,0 +1,11 @@
+- @bookmark = @resource
+
+- content_for :mobile_left_nav do
+  %a.back_btn{:href => '/bookmarks'}= t('cancel')
+
+- content_for :title do
+  = t('bookmarks.edit bookmark')
+
+%article
+  %h1= t("bookmarks.edit bookmark")
+  = render partial: 'form', locals: {bookmark: @moment}

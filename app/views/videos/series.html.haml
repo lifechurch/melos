@@ -1,0 +1,62 @@
+- html_attributes(id: "video-series",classes:"videos")
+- publisher  = @video.publisher
+- @sidebar = false
+- @title = "#{strip_tags(@video.title)} - #{@video.credits} | #{t('videos.title')}"
+- meta_title = strip_tags(@video.title)
+- meta_description = @title
+- meta_description = "#{truncate(strip_tags(@video.description.html_safe), length: 180, separator: " ", omission: '')}..." if @video.description.present?
+
+- content_for :meta_description do
+  = @title
+
+- content_for :additional_meta do
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
+  %link{rel: "canonical", href: canonicalHref}
+  %meta{property: "og:title",       content: meta_title }
+  %meta{property: "og:url",         content: canonicalHref }
+  %meta{property: "og:description", content: meta_description }
+  - if @video.hero_image.present?
+    %meta{property: "og:image",     content: "https:#{@video.hero_image.url}"}
+    %meta{name: "twitter:image",    content: "https:#{@video.hero_image.url}"}
+
+  %meta{name: "twitter:card",             content: "summary"}
+  %meta{name: "twitter:url",              content: canonicalHref}
+  %meta{name: "twitter:title" ,           content: meta_title}
+  %meta{name: "twitter:description",      content: meta_description}
+  %meta{name: "twitter:site",             content: "@YouVersion"}
+
+.row
+  %div.hero.show-for-medium-up{ style: "background: #fff url('#{@video.hero_image.url if @video.hero_image.present?}') no-repeat center top; background-size: cover;"}
+    #title-bar
+      %h1= @video.title.html_safe
+      %h2.publisher
+        =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
+      = render partial: "videos/share", locals: {video: @video}
+  %div.mobile-hero.show-for-small-only
+    %h1= @video.title.html_safe
+    %h2.publisher
+      =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
+
+  .row
+    #episodes
+      - @video.videos.each do |vid|
+        - thumb = vid.small_image
+        %div.medium-6.large-4.columns.end
+          =link_to(video_path(vid), class: "video-name", title: vid.title, target: "_self" ) do
+            = image_tag(thumb.url)
+            .info
+              %h3.title= vid.title
+              %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")
+
+
+  -#.inner
+  -#  %ul#episodes
+  -#    - @video.videos.each do |vid|
+  -#      - thumb = vid.small_image
+  -#      %li
+  -#        =link_to(video_path(vid), class: "video-name", title: vid.title) do
+  -#          = image_tag(thumb.url)
+  -#          .info
+  -#            %h3.title= vid.title
+  -#            %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")

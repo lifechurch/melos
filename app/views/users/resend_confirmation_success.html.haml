@@ -1,0 +1,10 @@
+- @main_nav = false
+
+- content_for :sidebar do
+  = render "widgets/download_app"
+
+.row
+  .columns
+    %article.centered
+      = image_tag("email.png", :class => "img-email")
+      %p= t('users.resend success')

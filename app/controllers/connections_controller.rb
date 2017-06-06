@@ -1,0 +1,76 @@
+class ConnectionsController < ApplicationController
+
+  prepend_before_filter :mobile_redirect, only: [:index]
+  before_filter :force_login
+  before_filter :authorize, only: [:index]
+  layout 'settings'
+
+  # GET Display users connections
+  # bible.com/users/:id/connections => connections#index
+  # TODO: proper refactor
+  # get friends in an asynchronous front end call because these calls can take an amt of time depending
+  # on how many connections/friends a user has.
+  def index
+    @selected = :connections
+    @networks = [:facebook, :twitter]
+
+    user_id   = params[:id]
+              # Avoid a User.find API call if the current_user is the same as the params[:id] is requesting.
+              # Could/should refactor into a helper method or cleaner call in general
+    @user     = (user_id.to_s.downcase == current_user.try(:username).to_s.downcase) ? current_user : User.find(user_id)
+    @me       = true if (@user.id == current_user.try(:id))
+
+    # Find friends in networks. Keeping code here for now, but will eventually move somewhere else.
+    # if @user.connections[@network]
+    #   begin
+    #     # TODO: Move this into an async front end request as the api request to get friends
+    #     # can be slow or can timeout causing an app error.
+    #     # Ajax + connections/friends mini api would be appropriate.
+    #     # @friends = @user.connections[@network].find_friends(page: params[:page] || 1)
+
+    #   rescue Koala::Facebook::AuthenticationError
+    #     @error = t('social.facebook.errors.expired access')
+    #     @friends = []
+
+    #   rescue
+    #     @error = t('social.errors.reset connection')
+    #     @friends = []
+    #   end
+    # end
+    
+  end
+
+  # GET request to fireoff an omniauth connection request for specified :provider (Twitter,Facebook)
+  def new
+    redirect_to auth_connect_path(provider_param, redirect: create_connection_path(provider_param))
+  end
+
+  def create
+    info = ActiveSupport::JSON.decode(cookies.signed["#{provider_param}_auth"]).symbolize_keys
+    info[:auth] = current_auth
+    connection = "#{provider_param.capitalize}Connection".constantize.new(info)
+    result = connection.save
+    cookies.signed[:f] = nil if connection.is_a? FacebookConnection
+    redirect_to connections_user_path(current_user.username)
+  end
+
+  def destroy
+    connection = current_user.connections[provider_param.to_s]
+    cookies.signed[:f] = nil if connection.is_a? FacebookConnection
+    result = connection.delete
+    if result.valid?
+      redirect_to connections_user_path(current_user.username), notice: t('deleted connection', connection: t("social.#{provider_param}.name"))
+    else
+      redirect_to connections_user_path(current_user.username), error: t('deleted connection error', connection: t("social.#{provider_param}.name"))
+    end
+  end
+
+  private
+
+  def provider_param
+    unless ["twitter","facebook"].include?(params[:provider])
+      raise "Invalid provider parameter"
+    end
+    return params[:provider]
+  end
+end

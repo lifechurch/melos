@@ -1,0 +1,27 @@
+-#-# Variables necessary for templates and partials to render properly
+-#:ruby
+-#  version        = @presenter.version
+-#  reference      = @presenter.reference
+-#  modal_verse    = @presenter.modal_verse
+-#  @title = "#{reference.human}, #{version} | #{t("chapter")} #{reference.chapter}"
+-#  @meta_title = "#{reference.human}, #{version}"
+-#
+-#- content_for :additional_meta do
+-#  %link{href: "//fonts.googleapis.com/css?family=Fjalla+One&subset=latin,cyrillic-ext,cyrillic,greek-ext,vietnamese,latin-ext", rel: "stylesheet", type: "text/css"}
+-#
+-#  - if version.attributes.font
+-#    %style
+-#      = "@font-face { font-family: '#{version.attributes.font.title}'; src: url('#{version.attributes.font.url}#{version.attributes.font.name}.eot?') format('eot'), url('#{version.attributes.font.url}#{version.attributes.font.name}.woff') format('woff'), url('#{version.attributes.font.url}#{version.attributes.font.name}.ttf') format('truetype'); }"
+-#      = ".reader { font-family: '#{version.attributes.font.title}','Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif }"
+-#
+-#= render partial: 'reader', locals: {presenter: @presenter}
+
+!= html
+
+- content_for :lower_javascript do
+  %script{type:'text/javascript'}
+    !='window.YV_API_HOST = "' + Cfg.event_api_host + '"'
+    = if Cfg.event_api_port.present?
+      != 'window.YV_API_PORT = "' + Cfg.event_api_port + '"'
+
+  = javascript_include_tag js

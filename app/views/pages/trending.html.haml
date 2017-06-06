@@ -1,0 +1,22 @@
+- @title = "#{t('pages.trending verses.title')} | #{t('pages.trending verses.headline')}"
+
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+
+- content_for :meta_description do
+  = t('pages.trending verses.headline')
+
+= cache "trending_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
+  .row
+    .medium-8.columns
+      %h1= t('pages.trending verses.title')
+      - rank = 0
+      %p= t('pages.trending verses.headline')
+      - @trending_verses.each do |verse|
+        - rank = rank + 1
+        %h2= link_to "#{rank}. #{verse.human}", reference_path(version: verse.version, reference: verse.to_param), target: '_self'
+
+    .medium-4.columns.show-for-medium-up.l-border
+      = render partial: 'widgets/download_app', :locals => {show_sms: true}
+      = render partial: 'widgets/bible_app_for_kids'
+
