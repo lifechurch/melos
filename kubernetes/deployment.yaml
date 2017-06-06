@@ -83,5 +83,10 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: SECURE_TRAFFIC
+          - name: SECURE_HOSTNAME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: SECURE_HOSTNAME
       imagePullSecrets:
         - name: gitlab-registry

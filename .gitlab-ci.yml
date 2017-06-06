@@ -25,6 +25,7 @@ production:
   stage: production
   variables:
     CI_ENVIRONMENT_URL: http://test-production.$KUBE_DOMAIN
+    PRODUCTION_SECURE_HOSTNAME: nodejs-test-production.$KUBE_DOMAIN
   script:
     - command deploy
   environment:
@@ -38,6 +39,7 @@ staging:
   stage: staging
   variables:
     CI_ENVIRONMENT_URL: http://test-staging.$KUBE_DOMAIN
+    STAGING_SECURE_HOSTNAME: nodejs-test-staging.$KUBE_DOMAIN
   script:
     - command deploy
   environment:
@@ -50,6 +52,7 @@ review:
   stage: review
   variables:
     CI_ENVIRONMENT_URL: http://$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
+    REVIEW_SECURE_HOSTNAME: nodejs-$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
   script:
     - export SHORT=$(echo review-$CI_COMMIT_SHA | cut -c-14)
     - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211 

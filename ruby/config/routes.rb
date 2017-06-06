@@ -7,6 +7,7 @@ YouversionWeb::Application.routes.draw do
   get "/",          to: redirect("http://american.bible/?utm_source=com"), constraints: { subdomain: 'american' }
 
   get "/ping",          to: "ping#ping"
+  get "/ping_all",      to: "ping#ping_all"
   get "/running",       to: "ping#running"
   get "/terms",         to: "pages#terms"
   get "/privacy",       to: "pages#privacy"
