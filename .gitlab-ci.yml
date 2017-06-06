@@ -38,13 +38,13 @@ production:
 staging:
   stage: staging
   variables:
-    CI_ENVIRONMENT_URL: http://test-staging.$KUBE_DOMAIN
-    STAGING_SECURE_HOSTNAME: nodejs-test-staging.$KUBE_DOMAIN
+    CI_ENVIRONMENT_URL: http://staging.$KUBE_DOMAIN
+    STAGING_SECURE_HOSTNAME: nodejs-staging.$KUBE_DOMAIN
   script:
     - command deploy
   environment:
     name: staging
-    url: http://test-staging.$KUBE_DOMAIN
+    url: http://staging.$KUBE_DOMAIN
   only:
     - master
 
