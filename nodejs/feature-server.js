@@ -99,11 +99,9 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 })
 
 const getAssetPrefix = nr.createTracer('fnGetAssetPrefix', (req) => {
-	if (req.get('Host').indexOf('localhost') === -1) {
-		return ['https://', req.get('Host')].join('')
-	} else {
-		return ['http://', req.get('Host')].join('')
-	}
+	var ssl = !!process.env.SECURE_TRAFFIC || false
+	var hostName = process.env.SECURE_HOSTNAME || req.get('Host')
+	return `${ssl ? 'https' : 'http'}://${hostName}`
 })
 
 const getNodeHost = nr.createTracer('fnGetNodeHost', (req) => {
