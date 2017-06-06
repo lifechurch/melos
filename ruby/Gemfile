@@ -1,14 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.5'
 gem 'rails', '3.2.13'
 
 gem 'awesome_print',          '~> 1.0.2'
-gem 'capistrano',             '~> 3.4.0'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
-gem 'capistrano-rvm'
-gem 'capistrano-passenger'
 gem 'hipchat'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.6.3'

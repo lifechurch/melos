@@ -1,0 +1,87 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: $CI_ENVIRONMENT_SLUG
+  namespace: $KUBE_NAMESPACE
+  labels:
+    app: $CI_ENVIRONMENT_SLUG
+    pipeline_id: "$CI_PIPELINE_ID"
+    build_id: "$CI_JOB_ID"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: $CI_ENVIRONMENT_SLUG
+        app: $CI_ENVIRONMENT_SLUG
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+      - name: app
+        image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        imagePullPolicy: Always
+        ports:
+          - containerPort: $PORT
+        resources:
+          limits:
+            cpu: "4"
+            memory: 4096Mi
+        env:
+          - name: YOUVERSION_TOKEN_PHRASE
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: YOUVERSION_TOKEN_PHRASE
+          - name: TREADSTONE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: TREADSTONE_SECRET
+          - name: NEW_RELIC_LICENSE_KEY
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: NEW_RELIC_LICENSE_KEY
+          - name: NEW_RELIC_APP_NAME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: NEW_RELIC_APP_NAME
+          - name: NEW_RELIC_LOG_LEVEL
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: NEW_RELIC_LOG_LEVEL     
+          - name: RAILS_ENV
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: RAILS_ENV
+          - name: RACK_ENV
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: RACK_ENV
+          - name: NODE_ENV
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: NODE_ENV
+          - name: MEMCACHE_SERVERS
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: MEMCACHE_SERVERS
+          - name: LOG_LEVEL
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: LOG_LEVEL 
+          - name: SECURE_TRAFFIC
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: SECURE_TRAFFIC
+      imagePullSecrets:
+        - name: gitlab-registry

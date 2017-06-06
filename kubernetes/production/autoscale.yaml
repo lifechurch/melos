@@ -1,0 +1,15 @@
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  labels:
+    app: bible
+  name: bible
+  namespace: bible
+spec:
+  maxReplicas: 4
+  minReplicas: 2
+  scaleTargetRef:
+    kind: Deployment
+    name: production
+  targetCPUUtilizationPercentage: 70
