@@ -22,7 +22,7 @@ common:
   # Sandbox
   # smartling_api_key: 'b3f15261-40d8-4ed3-9a6b-07c5b1ba476a'
   # smartling_project_id: 'a46acf1f4'
-  # 
+  #
   # Timeouts: all times are in seconds
   api_default_timeout: 10
   rack_execution_timeout: 1000
@@ -40,6 +40,8 @@ common:
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
   nodejs_import_url: "http://localhost:3000/featureImport"
   nodejs_api_host: "nodejs-staging.bible.com"
+  nodejs_ping_host: "localhost"
+  nodejs_ping_port: "3000"
   google_signin_client_id: "201895780642-ln00r1cev5fp6u3eqpq07olmi2dabmkl.apps.googleusercontent.com"
   google_signin_scope: "profile email"
   facebook_signin_scope: "public_profile,email"
