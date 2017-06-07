@@ -36,7 +36,7 @@ spec:
             httpHeaders:
               - name: Host
                 value: 127.0.0.1
-          initialDelaySeconds: 40
+          initialDelaySeconds: 70
           timeoutSeconds: 2
           periodSeconds: 3
         livenessProbe:
@@ -47,7 +47,7 @@ spec:
             httpHeaders:
               - name: Host
                 value: 127.0.0.1
-          initialDelaySeconds: 60
+          initialDelaySeconds: 90
           timeoutSeconds: 2
           periodSeconds: 3
           failureThreshold: 4    
