@@ -5,10 +5,10 @@ class PingController < ApplicationController
   end
 
   def ping_all
-    nodejsHost = "http://#{Cfg.nodejs_api_host}"
+    nodejsHost = "http://#{Cfg.nodejs_ping_host}"
 
-    if Cfg.nodejs_api_port.present?
-      nodejsHost = "#{nodejsHost}:#{Cfg.nodejs_api_port}"
+    if Cfg.nodejs_ping_port.present?
+      nodejsHost = "#{nodejsHost}:#{Cfg.nodejs_ping_port}"
     end
 
     begin
@@ -31,5 +31,5 @@ class PingController < ApplicationController
       render :nothing => true, :status => 200
     end
   end
-  
+
 end
