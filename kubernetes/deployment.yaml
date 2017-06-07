@@ -15,6 +15,7 @@ spec:
       labels:
         name: $CI_ENVIRONMENT_SLUG
         app: $CI_ENVIRONMENT_SLUG
+        space: $KUBE_NAMESPACE
     spec:
       terminationGracePeriodSeconds: 60
       containers:
@@ -27,6 +28,29 @@ spec:
           limits:
             cpu: "4"
             memory: 4096Mi
+        readinessProbe:
+          httpGet:
+            path: /ping_all
+            port: 80
+            scheme: HTTP
+            httpHeaders:
+              - name: Host
+                value: 127.0.0.1
+          initialDelaySeconds: 40
+          timeoutSeconds: 2
+          periodSeconds: 3
+        livenessProbe:
+          httpGet:
+            path: /ping_all
+            port: 80
+            scheme: HTTP
+            httpHeaders:
+              - name: Host
+                value: 127.0.0.1
+          initialDelaySeconds: 60
+          timeoutSeconds: 2
+          periodSeconds: 3
+          failureThreshold: 4    
         env:
           - name: YOUVERSION_TOKEN_PHRASE
             valueFrom:
