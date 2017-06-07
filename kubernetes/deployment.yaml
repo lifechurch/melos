@@ -9,6 +9,15 @@ metadata:
     pipeline_id: "$CI_PIPELINE_ID"
     build_id: "$CI_JOB_ID"
 spec:
+  selector:
+    matchLabels:
+      app: $CI_ENVIRONMENT_SLUG
+      name: $CI_ENVIRONMENT_SLUG
+      space: $KUBE_NAMESPACE
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
   template:
     metadata:
       labels:
