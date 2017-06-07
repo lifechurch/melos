@@ -47,18 +47,6 @@ spec:
           initialDelaySeconds: 70
           timeoutSeconds: 2
           periodSeconds: 3
-        livenessProbe:
-          httpGet:
-            path: /ping_all
-            port: 80
-            scheme: HTTP
-            httpHeaders:
-              - name: Host
-                value: 127.0.0.1
-          initialDelaySeconds: 90
-          timeoutSeconds: 2
-          periodSeconds: 3
-          failureThreshold: 4    
         env:
           - name: YOUVERSION_TOKEN_PHRASE
             valueFrom:
