@@ -24,13 +24,13 @@ build:
 production:
   stage: production
   variables:
-    CI_ENVIRONMENT_URL: http://test-production.$KUBE_DOMAIN
-    PRODUCTION_SECURE_HOSTNAME: nodejs-test-production.$KUBE_DOMAIN
+    CI_ENVIRONMENT_URL: http://$KUBE_DOMAIN
+    PRODUCTION_SECURE_HOSTNAME: nodejs.$KUBE_DOMAIN
   script:
     - command deploy
   environment:
     name: production
-    url: http://test-production.$KUBE_DOMAIN
+    url: http://www.$KUBE_DOMAIN
   when: manual
   only:
     - master
@@ -73,7 +73,7 @@ stop_review:
     GIT_STRATEGY: none
   script:
     - command destroy
-    - export SHORT=$(echo review-$CI_COMMIT_SHA | cut -c-14)
+    - export SHORT=$(echo $CI_COMMIT_REF_SLUG | cut -c-14)
     - helm delete $SHORT
   environment:
     name: review/$CI_COMMIT_REF_NAME
