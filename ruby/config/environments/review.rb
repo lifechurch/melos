@@ -2,7 +2,12 @@
 YouversionWeb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   unless ENV['NO_AUTH']
-    config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Review") do |u, p|
+    config.middleware.insert_after(
+        ::Rack::Lock,
+        "::Rack::Auth::Basic",
+        "Review",
+        except_hosts: ['127.0.0.1', 'local.bible.com']
+    ) do |u, p|
       [u, p] == ['youversion', 'yv123']
     end
   end
