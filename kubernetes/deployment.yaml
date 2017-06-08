@@ -29,13 +29,12 @@ spec:
       containers:
       - name: app
         image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
           - containerPort: $PORT
         resources:
           limits:
-            cpu: "4"
-            memory: 4096Mi
+            cpu: "24"
         readinessProbe:
           httpGet:
             path: /ping_all
