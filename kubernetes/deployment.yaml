@@ -27,14 +27,14 @@ spec:
     spec:
       terminationGracePeriodSeconds: 60
       containers:
-      - name: app
+      - name: $KUBE_NAMESPACE-$CI_ENVIRONMENT_SLUG
         image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: $PORT
         resources:
           limits:
-            cpu: "24"
+            cpu: "4"
         readinessProbe:
           httpGet:
             path: /ping_all

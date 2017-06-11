@@ -7,9 +7,9 @@ metadata:
   name: bible
   namespace: bible
 spec:
-  maxReplicas: 2
-  minReplicas: 2
+  maxReplicas: 8
+  minReplicas: 4
   scaleTargetRef:
     kind: Deployment
     name: production
-  targetCPUUtilizationPercentage: 70
+  targetCPUUtilizationPercentage: 60
