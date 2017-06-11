@@ -31,7 +31,8 @@ RUN echo deb https://download:$DOWNLOAD_TOKEN@www.phusionpassenger.com/enterpris
 RUN apt-get update && apt-get install -y -o Dpkg::Options::="--force-confold" passenger-enterprise nginx-extras
 
 # NGINX Config
-RUN rm -f /etc/service/nginx/down
+RUN rm -f /etc/service/nginx/down && rm -f /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/ruby.conf /etc/nginx/sites-enabled/ruby.conf
 COPY nginx/nodejs.conf /etc/nginx/sites-enabled/nodejs.conf
 COPY nginx/env.conf /etc/nginx/main.d/env.conf
