@@ -3,6 +3,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: $CI_ENVIRONMENT_SLUG
+  annotations:
+    nginx.org/large-client-header-buffers: "4 15k"
   namespace: $KUBE_NAMESPACE
   labels:
     app: $CI_ENVIRONMENT_SLUG
