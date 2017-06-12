@@ -4,7 +4,8 @@ kind: Ingress
 metadata:
   name: $CI_ENVIRONMENT_SLUG
   annotations:
-    nginx.org/large-client-header-buffers: "4 15k"
+    nginx.org/proxy-buffer-size: "128k"
+    nginx.org/proxy-buffers: "4 256k"
   namespace: $KUBE_NAMESPACE
   labels:
     app: $CI_ENVIRONMENT_SLUG
