@@ -9,6 +9,8 @@ import configureStore from './store'
 import defaultState from './defaultState'
 import PassageView from '../../containers/PassageView'
 
+import "../../less/style.less"
+
 require('moment/min/locales')
 
 let initialState = defaultState

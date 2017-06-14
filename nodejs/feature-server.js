@@ -14,7 +14,6 @@ import moment from 'moment'
 import Raven from 'raven'
 
 import planLocales from './locales/config/planLocales.json'
-import revManifest from './rev-manifest.json'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -22,7 +21,16 @@ const availableLocales = require('./locales/config/availableLocales.json');
 const localeList = require('./locales/config/localeList.json');
 
 const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
-	return revManifest[path];
+	if (process.env.DEBUG) {
+		return path
+	} else {
+		try {
+			const Manifest = require('./public/assets/manifest.json')
+			return Manifest[path];
+		} catch (ex) {
+			return path
+		}
+	}
 })
 
 const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
@@ -94,8 +102,8 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 })
 
 const getAssetPrefix = nr.createTracer('fnGetAssetPrefix', (req) => {
-	var ssl = !!process.env.SECURE_TRAFFIC || false
-	var hostName = process.env.SECURE_HOSTNAME || req.get('Host')
+	const ssl = !!process.env.SECURE_TRAFFIC || false
+	const hostName = process.env.SECURE_HOSTNAME || req.get('Host')
 	return `${ssl ? 'https' : 'http'}://${hostName}`
 })
 
@@ -279,7 +287,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						res.setHeader('Cache-Control', 'public')
 						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, nr.createTracer('render', (err, html) => {
 							nr.endTransaction()
-							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/javascripts/${getAssetPath(`${feature}.js`)}` })
+							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/assets/${getAssetPath(`${feature}.js`)}` })
 						}))
 
 						return null

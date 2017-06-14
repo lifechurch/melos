@@ -60,8 +60,7 @@ development:
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-
-  nodejs_import_url: "http://localhost:3000/featureImport/"
+  nodejs_import_url: "http://localhost:3000/featureImport"
   nodejs_api_host: "localhost"
   nodejs_api_port: "3000"
 

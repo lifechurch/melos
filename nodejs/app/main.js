@@ -13,6 +13,7 @@ import PlanDiscoveryActionCreators from './features/PlanDiscovery/actions/creato
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
 import ga from 'react-ga'
+import './less/style.less'
 
 ga.initialize('UA-3571547-125', { language: window.__LOCALE__.locale });
 
@@ -111,5 +112,5 @@ render(
 			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+	document.getElementById('react-app')
 )

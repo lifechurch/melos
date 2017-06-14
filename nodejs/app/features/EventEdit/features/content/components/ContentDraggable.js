@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Row from '../../../../../../app/components/Row'
 import { DragSource, DropTarget } from 'react-dnd'
 import { findDOMNode } from 'react-dom'
-import RevManifest from '../../../../../../app/lib/revManifest'
+import ReorderGrayImage from '../../../../../../images/reorder-gray.png'
 
 const contentSource = {
 	beginDrag(props) {
@@ -23,7 +23,7 @@ const contentTarget = {
 		}
 
 		const hoverBoundingRect = findDOMNode(component).getBoundingClientRect()
-		const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top)  / 2
+		const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
 		const clientOffset = monitor.getClientOffset()
 		const hoverClientY = clientOffset.y - hoverBoundingRect.top
 
@@ -41,81 +41,85 @@ const contentTarget = {
 }
 
 class ContentDraggable extends Component {
-		render() {
-			const { contentIndex, content, connectDragSource, connectDropTarget, isDragging, intl } = this.props
+	render() {
+		const { contentIndex, content, connectDragSource, connectDropTarget, isDragging, intl } = this.props
 
-			let style = {}
-			if (isDragging) {
-				style = {
-					opacity: 0
-				}
+		let style = {}
+		if (isDragging) {
+			style = {
+				opacity: 0
 			}
-
-			let previewText = ''
-			switch(content.type) {
-				case 'text':
-					previewText = content.data.body.replace(/(<([^>]+)>)/ig,"").substr(0, 80)
-					break;
-
-				case 'announcement':
-					previewText = content.data.title.substr(0, 80)
-					break;
-
-				case 'reference':
-					previewText = content.data.human
-					break;
-
-				case 'plan':
-					previewText = content.data.title
-					break;
-
-				case 'url':
-					previewText = content.data.url
-					break;
-
-				case 'image':
-					previewText = content.data.url
-					break;
-			}
-
-			let contentTypeLabel = null
-			if (content.type === 'url') {
-				if (content.hasOwnProperty('iamagivinglink') && content.iamagivinglink) {
-					contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.giving" })
-				} else {
-					contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.link" })
-				}
-				contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.link" })
-			} else {
-				contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader." + content.type.toLowerCase() })
-			}
-
-			return connectDragSource(connectDropTarget(
-				<div className='content-draggable' style={style}>
-					<Row>
-						<div className='medium-12'>
-							<div className='sort'>
-								{contentIndex + 1}
-							</div>
-							<div className='body'>
-								<div className='type'>
-									{contentTypeLabel}
-								</div>
-								<div className='preview'>
-									{previewText}
-								</div>
-								<img className='dragHandle' src={`/images/${RevManifest('reorder-gray.png')}`} />
-							</div>
-						</div>
-					</Row>
-				</div>
-			))
 		}
+
+		let previewText = ''
+		switch (content.type) {
+			case 'text':
+				previewText = content.data.body.replace(/(<([^>]+)>)/ig, '').substr(0, 80)
+				break;
+
+			case 'announcement':
+				previewText = content.data.title.substr(0, 80)
+				break;
+
+			case 'reference':
+				previewText = content.data.human
+				break;
+
+			case 'plan':
+				previewText = content.data.title
+				break;
+
+			case 'url':
+				previewText = content.data.url
+				break;
+
+			case 'image':
+				previewText = content.data.url
+				break;
+		}
+
+		let contentTypeLabel = null
+		if (content.type === 'url') {
+			if (content.hasOwnProperty('iamagivinglink') && content.iamagivinglink) {
+				contentTypeLabel = intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentHeader.giving' })
+			} else {
+				contentTypeLabel = intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentHeader.link' })
+			}
+			contentTypeLabel = intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentHeader.link' })
+		} else {
+			contentTypeLabel = intl.formatMessage({ id: `features.EventEdit.features.content.components.ContentHeader.${content.type.toLowerCase()}` })
+		}
+
+		return connectDragSource(connectDropTarget(
+			<div className='content-draggable' style={style}>
+				<Row>
+					<div className='medium-12'>
+						<div className='sort'>
+							{contentIndex + 1}
+						</div>
+						<div className='body'>
+							<div className='type'>
+								{contentTypeLabel}
+							</div>
+							<div className='preview'>
+								{previewText}
+							</div>
+							<img className='dragHandle' src={ReorderGrayImage} />
+						</div>
+					</div>
+				</Row>
+			</div>
+			))
+	}
 }
 
-export default DropTarget('content', contentTarget, connect => ({
-	connectDropTarget: connect.dropTarget()
-}))(DragSource('content', contentSource, (connect, monitor) => ({
-	connectDragSource: connect.dragSource(),
-	isDragging: monitor.isDragging()
-}))(ContentDraggable))
+export default DropTarget('content', contentTarget, connect => {
+	return ({
+		connectDropTarget: connect.dropTarget()
+	})
+})(DragSource('content', contentSource, (connect, monitor) => {
+	return ({
+		connectDragSource: connect.dragSource(),
+		isDragging: monitor.isDragging()
+	})
+})(ContentDraggable))

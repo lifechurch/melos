@@ -22,8 +22,9 @@ RUN cd /home/app/ruby && bundle exec rake assets:precompile
 
 ENV NODE_ENV production
 COPY nodejs/ /home/app/nodejs/
-RUN cd /home/app/nodejs && npm install -g gulp
-RUN cd /home/app/nodejs && gulp build:production
+# RUN cd /home/app/nodejs && npm install -g gulp
+# RUN cd /home/app/nodejs && gulp build:production
+RUN cd /home/app/nodejs && npm run build:production
 
 # Passenger Enterprise
 COPY nginx/passenger-enterprise-license /etc/passenger-enterprise-license

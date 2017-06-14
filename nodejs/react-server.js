@@ -12,7 +12,6 @@ import cookieParser from 'cookie-parser'
 import reactCookie from 'react-cookie'
 import { fetchToken } from '@youversion/token-storage'
 import { tokenAuth } from '@youversion/js-api'
-import revManifest from './rev-manifest.json'
 import { IntlProvider } from 'react-intl'
 import rtlDetect from 'rtl-detect'
 import Raven from 'raven'
@@ -23,7 +22,16 @@ const availableLocales = require('./locales/config/availableLocales.json');
 const localeList = require('./locales/config/localeList.json');
 
 function getAssetPath(path) {
-	return revManifest[path];
+	if (process.env.DEBUG) {
+		return path
+	} else {
+		try {
+			const Manifest = require('./public/assets/manifest.json')
+			return Manifest[path];
+		} catch (ex) {
+			return path
+		}
+	}
 }
 
 /**
@@ -123,6 +131,7 @@ function getLocale(req, profileLanguageTag) {
 	return final;
 }
 
+
 /**
  * Gets the User State from the JSON Web Token
  * that's plugged into react-cookie
@@ -156,7 +165,6 @@ function getStateFromToken() {
  */
 router.get('/*', cookieParser(), (req, res) => {
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
-
 		if (error) {
 			// throw new Error(error)
 			Raven.captureException(error)
@@ -166,8 +174,6 @@ router.get('/*', cookieParser(), (req, res) => {
 			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
 
 		} else if (renderProps) {
-
-			/**/
 			reactCookie.plugToRequest(req, res)
 			let startingState = defaultState
 			try {
@@ -204,7 +210,6 @@ router.get('/*', cookieParser(), (req, res) => {
 
 				return res.redirect(302, newUrl);
 			}
-			/**/
 
 			try {
 				const logger = createNodeLogger()
@@ -213,8 +218,17 @@ router.get('/*', cookieParser(), (req, res) => {
 				const html = renderToString(<IntlProvider locale={req.Locale.locale2 === 'mn' ? req.Locale.locale2 : req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
 				const initialState = store.getState()
 				const rtl = rtlDetect.isRtlLang(req.Locale.locale)
-				res.setHeader('Cache-Control', 'public');
-				res.render('index', { appString: html, rtl, locale: req.Locale, head: Helmet.rewind(), initialState, environment: process.env.NODE_ENV, getAssetPath })
+				const renderParams = {
+					appString: html,
+					rtl,
+					locale: req.Locale,
+					head: Helmet.rewind(),
+					initialState,
+					environment: process.env.NODE_ENV,
+					getAssetPath
+				}
+				res.setHeader('Cache-Control', 'private');
+				res.render('index', renderParams)
 			} catch (ex) {
 				// throw new Error(ex)
 				Raven.captureException(ex)
@@ -224,7 +238,6 @@ router.get('/*', cookieParser(), (req, res) => {
 		} else {
 			// throw new Error('Not Found 404')
 			res.status(404).send('Not found');
-
 		}
 	});
 });

@@ -16,6 +16,8 @@ import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
 
+import "../../less/style.less"
+
 require('moment/min/locales')
 
 if (typeof window !== 'undefined') {

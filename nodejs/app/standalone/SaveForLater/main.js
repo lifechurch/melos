@@ -9,6 +9,8 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
 import SaveForLaterView from '../../features/SaveForLater/components/SaveForLaterView'
 
+import "../../less/style.less"
+
 require('moment/min/locales')
 
 let initialState = defaultState

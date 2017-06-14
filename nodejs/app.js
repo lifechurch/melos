@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const api = require('@youversion/js-api');
 const ping = require('./ping');
+const httpProxy = require('http-proxy');
 
 const auth = api.tokenAuth;
 const cors = require('cors');
@@ -15,7 +16,7 @@ const cookieParser = require('cookie-parser');
 
 Raven.config('https://cc7248185fe54b72a7419782feb9f483:dd4bdec0c223479cbc7ba5231d89507f@sentry.io/149323').install()
 
-require('babel-register')({ presets: [ 'es2015', 'stage-0', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] });
+require('babel-register')({ presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] });
 
 const reactServer = require('./react-server');
 const featureServer = require('./feature-server');
@@ -55,7 +56,23 @@ app.use(cors({ origin: true }));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+if (process.env.DEBUG) {
+	const proxy = httpProxy.createProxyServer({});
+	app.use((req, res, next) => {
+		if (req.url.match(new RegExp('^\/assets\/'))) {
+			console.log('proxying request for: ', req.url)
+			proxy.web(req, res, { target: 'http://localhost:9000' })
+		} else {
+			next();
+		}
+	})
+} else {
+	console.log('No Debug')
+}
+
 app.use(express.static(path.join(__dirname, 'public'), { maxage: '1y' }));
+
 
 app.use('/authenticate', auth.expressAuthRouteHandler);
 app.use('/', ping);

@@ -1,7 +1,6 @@
 {
 	"presets": [
-		"es2015",
-		"stage-0",
+		"env",
 		"react"
 	],
   "plugins": [
@@ -10,9 +9,10 @@
 	        "messagesDir": "./locales",
 	        "enforceDescriptions": true
 	    },
-			"transform-object-rest-spread",
-			"transform-function-bind",
-			"transform-object-assign"
-    ]
+		],
+		"transform-object-rest-spread",
+		"transform-function-bind",
+		"transform-object-assign",
+		"transform-class-properties"
   ]
 }

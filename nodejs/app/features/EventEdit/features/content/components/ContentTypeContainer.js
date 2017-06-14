@@ -8,9 +8,9 @@ import ContentInsertionPoint from './ContentInsertionPoint'
 import ContentTypePlan from './ContentTypePlan'
 import ContentTypeImage from './ContentTypeImage'
 import ContentTypeLink from './ContentTypeLink'
-import RevManifest from '../../../../../../app/lib/revManifest'
 import ErrorMessage from '../../../../../../app/components/ErrorMessage'
 import { FormattedMessage } from 'react-intl'
+import ThinXImage from '../../../../../../images/thin-x.png'
 
 const AUTO_SAVE_TIMEOUT = 3000
 
@@ -80,26 +80,28 @@ class ContentTypeContainer extends Component {
 
 			case 'reference':
 				InnerContainer = (<ContentTypeReference
-									dispatch={dispatch}
-									autoSave={::this.autoSave}
-									handleRemove={::this.handleRemove}
-									handleChange={::this.handleChange}
-									references={references}
-									contentIndex={contentIndex}
-									isFetching={content.isFetching}
-									contentData={content.data}
-									intl={intl} />)
+					dispatch={dispatch}
+					autoSave={::this.autoSave}
+					handleRemove={::this.handleRemove}
+					handleChange={::this.handleChange}
+					references={references}
+					contentIndex={contentIndex}
+					isFetching={content.isFetching}
+					contentData={content.data}
+					intl={intl}
+				/>)
 				break
 
 			case 'plan':
 				InnerContainer = (<ContentTypePlan
-									dispatch={dispatch}
-									handleChange={::this.handleChange}
-									contentData={content.data}
-									contentIndex={contentIndex}
-									plans={plans}
-									autoSave={::this.autoSave}
-									intl={intl} />)
+					dispatch={dispatch}
+					handleChange={::this.handleChange}
+					contentData={content.data}
+					contentIndex={contentIndex}
+					plans={plans}
+					autoSave={::this.autoSave}
+					intl={intl}
+				/>)
 				break
 
 			case 'url':
@@ -108,42 +110,43 @@ class ContentTypeContainer extends Component {
 
 			case 'image':
 				InnerContainer = (<ContentTypeImage
-									dispatch={dispatch}
-									handleChange={::this.handleChange}
-									contentData={content.data}
-									contentIndex={contentIndex}
-									intl={intl} />)
+					dispatch={dispatch}
+					handleChange={::this.handleChange}
+					contentData={content.data}
+					contentIndex={contentIndex}
+					intl={intl}
+				/>)
 				break
 			default:
 				break
 		}
 
-		let classNames = 'content-type content-' + content.type
+		const classNames = `content-type content-${content.type}`
 
 		let contentTypeLabel = null
 		if (content.type === 'url') {
 			if (content.hasOwnProperty('iamagivinglink') && content.iamagivinglink) {
-				contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.giving" })
+				contentTypeLabel = intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentHeader.giving' })
 			} else {
-				contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.link" })
+				contentTypeLabel = intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentHeader.link' })
 			}
-			contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.link" })
+			contentTypeLabel = intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentHeader.link' })
 		} else {
-			contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader." + content.type.toLowerCase() })
+			contentTypeLabel = intl.formatMessage({ id: `features.EventEdit.features.content.components.ContentHeader.${content.type.toLowerCase()}` })
 		}
 
 		return (
 			<div className={classNames} id={`content-${contentIndex}`}>
 				<Row>
 					<div className='medium-12'>
-						{contentTypeLabel} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
+						{contentTypeLabel} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={ThinXImage} /></a>
 						<div className='form-body'>
 							<ErrorMessage hasError={Boolean(content.errors && Object.keys(content.errors).length)} errors={content.errors} scope={content.type} />
 							{InnerContainer}
 							<span className='content-status'>
 								{ (content.isDirty && !content.isSaving && !content.hasError) ? (<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.dirty" />) : null }
 								{ (content.hasError && !content.isSaving) ? (<span className='error-text'><FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.failed" /> <a onClick={::this.handleUpdateClick}><FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.tryAgain" /></a></span>) : null }
-								{ (content.isSaved && !content.isSaving && !content.hasError && !content.isDirty) ? (<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.lastSaved" values={{when: content.lastSaved.fromNow()}} />) : null }
+								{ (content.isSaved && !content.isSaving && !content.hasError && !content.isDirty) ? (<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.lastSaved" values={{ when: content.lastSaved.fromNow() }} />) : null }
 								{ content.isSaving ? (<FormattedMessage id="components.EventHeader.saving" />) : null }
 							</span>
 						</div>
