@@ -28,6 +28,10 @@ const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 			const Manifest = require('./public/assets/manifest.json')
 			return Manifest[path];
 		} catch (ex) {
+			console.log(ex)
+			if (__dirname) {
+				console.log('CWD', __dirname)
+			}
 			return path
 		}
 	}
