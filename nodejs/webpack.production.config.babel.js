@@ -114,14 +114,15 @@ const clientConfig = {
 		/* Extract all Vendor Javascript to separate bundle */
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
-			minChunks(module) {
-				return module.context && module.context.indexOf('node_modules') !== -1;
+			minChunks(module, count) {
+				return module.context && module.context.indexOf('node_modules') !== -1 && count > 1;
 			}
 		}),
 
 		/* Create manifest.json file with name to fingerprint mappings */
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'manifest'
+			name: 'manifest',
+			minChunks: Infinity
 		}),
 
 		/* Don't Uglify JS on Staging */
@@ -159,7 +160,10 @@ const clientConfig = {
 				test: /\.less$/,
 				use: extractLess.extract({
 					use: [{
-						loader: 'css-loader'
+						loader: 'css-loader',
+						options: {
+							minimize: true
+						}
 					}, {
 						loader: 'less-loader'
 					}],
