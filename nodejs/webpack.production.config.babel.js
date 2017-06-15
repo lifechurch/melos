@@ -78,7 +78,10 @@ const serverConfig = {
 	},
 
 	/* Exclude external dependencies from bundle */
-	externals: [nodeExternals()]
+	externals: [
+		'./public/assets/manifest.json',
+		nodeExternals()
+	]
 };
 
 const clientConfig = {
