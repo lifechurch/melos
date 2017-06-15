@@ -3,10 +3,10 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const nodeExternals = require('webpack-node-externals');
+const ImageMinPlugin = require('imagemin-webpack-plugin').default;
 
 const extractLess = new ExtractTextPlugin({
-	filename: 'style.[name].[contenthash].css',
-	disable: process.env.NODE_ENV === 'development'
+	filename: 'style.[name].[contenthash].css'
 });
 
 const serverConfig = {
@@ -140,7 +140,14 @@ const clientConfig = {
 		extractLess,
 
 		/* Used for generating manifest.json */
-		new ManifestPlugin()
+		new ManifestPlugin(),
+
+		/* Run images through ImageMin */
+		new ImageMinPlugin({
+			pngquant: {
+				quality: '65-80'
+			}
+		})
 	],
 
 	module: {

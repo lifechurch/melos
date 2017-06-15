@@ -119,6 +119,7 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "http-proxy": "^1.16.2",
+    "imagemin-webpack-plugin": "^1.4.4",
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "nodemon": "^1.11.0",
