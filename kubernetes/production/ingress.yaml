@@ -3,6 +3,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: $CI_ENVIRONMENT_SLUG
+  annotations:
+    ingress.kubernetes.io/proxy-buffer-size: "128k"
+    ingress.kubernetes.io/proxy-buffers: "4 256k"
   namespace: $KUBE_NAMESPACE
   labels:
     app: $CI_ENVIRONMENT_SLUG
