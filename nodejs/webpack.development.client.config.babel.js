@@ -20,12 +20,13 @@ const clientConfig = {
 		publicPath: '/assets/',
 		headers: {
 			'X-From-Webpack-Dev-Server': 'true'
-		}
+		},
+		watchOptions: {
+			aggregateTimeout: 4000,
+			ignored: /node_modules/
+		},
 	},
 
-	watchOptions: {
-		ignored: /node_modules/
-	},
 
 	/* Main Entry Points for Client */
 	entry: {
