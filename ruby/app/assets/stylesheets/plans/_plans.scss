@@ -119,7 +119,7 @@ html[dir="rtl"] body.c_subscriptions {
     .progress_wrap {
       border: solid 1px $gray;
       border-radius: 10px;
-      height: 10px;
+      height: 8px;
       width: 30px;
       overflow: hidden;
       float: left;
@@ -548,20 +548,20 @@ ul.plan-results {
       float: $opposite-direction;
     }
 
-    .img {
-      display:block;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    img {
-      min-width: 360px;
-      margin-bottom: 25px;
-
-      @media #{$small-only} {
-        margin-top: 10px;
-        min-width: 280px;
-      }
-    }
+    //.img {
+    //  display:block;
+    //  margin-left:auto;
+    //  margin-right:auto;
+    //}
+    //img {
+    //  min-width: 360px;
+    //  margin-bottom: 25px;
+    //
+    //  @media #{$small-only} {
+    //    margin-top: 10px;
+    //    min-width: 280px;
+    //  }
+    //}
 
     .header {
       height: 17px;
@@ -1129,137 +1129,137 @@ ul.plan-results {
   }
 }
 
-.calendar-container {
-  margin: 20px 0 0;
-
-  * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  @media #{$small-only} {
-    display: none;
-  }
-}
-
-.calendar-container {
-  table {
-    width: 100%;
-  }
-
-  caption {
-    font-weight: normal;
-    font-size: 14px;
-    padding: 5px;
-    border: solid 1px $lightGray;
-    border-bottom: 0;
-
-    a {
-      display: inline-block;
-      width: 10%;
-    }
-
-    a:first-child {
-      background: url("icon-reader-arrow.svg") no-repeat center center;
-      background-size: 8px;
-      text-indent: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      -webkit-transform:  rotate(-180deg);
-      -moz-transform:     rotate(-180deg);
-      -ms-transform:      rotate(-180deg);
-      -o-transform:       rotate(-180deg);
-      transform:          rotate(-180deg);
-      float: $default-float;
-    }
-
-    a:last-child {
-      background: url("icon-reader-arrow.svg") no-repeat center center;
-      background-size: 8px;
-      text-indent: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      float: $opposite-direction;
-    }
-
-    span {
-      display: inline-block;
-      width: 80%;
-    }
-  }
-
-  th, td {
-    font-size: 14px;
-  }
-
-  th {
-    font-weight: normal;
-    padding: 0;
-    text-align: center;
-    height: 30px;
-    border-top: 0;
-    border-right: 1px solid $lightGray;
-
-    &:nth-child(7) {
-      border-right: 0;
-    }
-  }
-
-  td {
-    font-weight: normal;
-    padding: 3px 0 0;
-    height: 47px;
-    text-align: center;
-    border-right: 1px solid $lightGray;
-    border-top: 1px solid $lightGray;
-    vertical-align: top;
-    color: $gray;
-
-    &:nth-child(7) {
-      border-right: 0;
-    }
-
-    &.active-day {
-      background-color: $white;
-    }
-
-    &.inactive-day {
-      background-color: $white;
-    }
-
-    &.disabled {
-      background-color: #ededed;
-    }
-
-    .calendar-day-icon {
-      width: 10px;
-      height: 16px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    &.today {
-      font-weight: bold;
-      a {
-        color: $green;
-
-        &:hover {
-          color: $green;
-        }
-      }
-    }
-
-    a {
-      color: $darkGray;
-    }
-
-    a:hover,
-    a:focus {
-      color: $black;
-    }
-  }
-}
+//.calendar-container {
+//  margin: 20px 0 0;
+//
+//  * {
+//    -webkit-box-sizing: border-box;
+//    -moz-box-sizing: border-box;
+//    box-sizing: border-box;
+//  }
+//
+//  @media #{$small-only} {
+//    display: none;
+//  }
+//}
+//
+//.calendar-container {
+//  table {
+//    width: 100%;
+//  }
+//
+//  caption {
+//    font-weight: normal;
+//    font-size: 14px;
+//    padding: 5px;
+//    border: solid 1px $lightGray;
+//    border-bottom: 0;
+//
+//    a {
+//      display: inline-block;
+//      width: 10%;
+//    }
+//
+//    a:first-child {
+//      background: url("icon-reader-arrow.svg") no-repeat center center;
+//      background-size: 8px;
+//      text-indent: 100%;
+//      white-space: nowrap;
+//      overflow: hidden;
+//      -webkit-transform:  rotate(-180deg);
+//      -moz-transform:     rotate(-180deg);
+//      -ms-transform:      rotate(-180deg);
+//      -o-transform:       rotate(-180deg);
+//      transform:          rotate(-180deg);
+//      float: $default-float;
+//    }
+//
+//    a:last-child {
+//      background: url("icon-reader-arrow.svg") no-repeat center center;
+//      background-size: 8px;
+//      text-indent: 100%;
+//      white-space: nowrap;
+//      overflow: hidden;
+//      float: $opposite-direction;
+//    }
+//
+//    span {
+//      display: inline-block;
+//      width: 80%;
+//    }
+//  }
+//
+//  th, td {
+//    font-size: 14px;
+//  }
+//
+//  th {
+//    font-weight: normal;
+//    padding: 0;
+//    text-align: center;
+//    height: 30px;
+//    border-top: 0;
+//    border-right: 1px solid $lightGray;
+//
+//    &:nth-child(7) {
+//      border-right: 0;
+//    }
+//  }
+//
+//  td {
+//    font-weight: normal;
+//    padding: 3px 0 0;
+//    height: 47px;
+//    text-align: center;
+//    border-right: 1px solid $lightGray;
+//    border-top: 1px solid $lightGray;
+//    vertical-align: top;
+//    color: $gray;
+//
+//    &:nth-child(7) {
+//      border-right: 0;
+//    }
+//
+//    &.active-day {
+//      background-color: $white;
+//    }
+//
+//    &.inactive-day {
+//      background-color: $white;
+//    }
+//
+//    &.disabled {
+//      background-color: #ededed;
+//    }
+//
+//    .calendar-day-icon {
+//      width: 10px;
+//      height: 16px;
+//      display: block;
+//      margin: 0 auto;
+//    }
+//
+//    &.today {
+//      font-weight: bold;
+//      a {
+//        color: $green;
+//
+//        &:hover {
+//          color: $green;
+//        }
+//      }
+//    }
+//
+//    a {
+//      color: $darkGray;
+//    }
+//
+//    a:hover,
+//    a:focus {
+//      color: $black;
+//    }
+//  }
+//}
 
 .plan-day-verse-list {
   list-style: decimal-leading-zero;
@@ -1959,7 +1959,7 @@ html[dir="rtl"] {
 
   p {
     font-size: 13px;
-    //color: $gray;
+    color: $gray;
   }
 
   .day-slider {

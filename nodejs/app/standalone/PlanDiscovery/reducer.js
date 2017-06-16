@@ -17,12 +17,12 @@ import { routeReducer } from 'react-router-redux'
 // import plans from './plans'
 // import configuration from '../features/EventFeedMine/reducers/configuration'
 // import plansDiscovery from '../features/PlanDiscovery/reducers'
+import plansAPI from '@youversion/api-redux/src/endpoints/plans'
 import bibleReader from '../../features/Bible/reducers'
 import passage from '../../features/Passage/reducers'
 import plansDiscovery from '../../features/PlanDiscovery/reducers'
 import readingPlans from '../../features/PlanDiscovery/reducers/readingPlans'
 import api from '../../features/PlanDiscovery/reducers/api'
-import plansAPI from '../../../../youversion-api-redux/src/endpoints/plans'
 
 
 const rootReducer = combineReducers({

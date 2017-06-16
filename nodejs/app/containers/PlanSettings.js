@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
 // actions
-import plansAPI from '../../../youversion-api-redux/src/endpoints/plans'
+import plansAPI from '@youversion/api-redux/src/endpoints/plans'
 // components
 import PlanSettingsComponent from '../features/PlanDiscovery/components/PlanSettings'
 import Modal from '../components/Modal'

@@ -82,7 +82,7 @@ YouversionWeb::Application.routes.draw do
   match "/app(/:store)", to: AppStoreController.action(:index)
   get "/search(/:category)",to: "search#category", as: "search"
 
-  
+
   resources :comments,  only: [:create,:destroy]
   resources :likes,     only: [:create,:destroy]
 
@@ -90,7 +90,7 @@ YouversionWeb::Application.routes.draw do
     get :requests, on: :collection
     post :offer, on: :collection
   end
-  
+
   resource :notifications, only: [:show, :edit, :update, :destroy]
   resources :vod_subscriptions, only: [:index, :create, :destroy]
 
@@ -118,14 +118,14 @@ YouversionWeb::Application.routes.draw do
   resources "versions",   only:   [:index, :show]
   resources "audiobibles", :path => '/audio-bible-app-versions', only: [:index, :show]
   resources "languages",   only:   [:index, :show]
-  
+
 
   resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do
     get :authorize, on: :collection
   end
 
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
-  
+
 
   # Metal controller
   # This is our second highest throughput action
@@ -155,7 +155,7 @@ YouversionWeb::Application.routes.draw do
     resource :avatar,   only: [:show,:update],  path: "picture"
     resources :devices, only: [:index,:destroy]
 
-    # bible.com/users/:id/connections => connections#index    
+    # bible.com/users/:id/connections => connections#index
     get :connections, on: :member, to: "connections#index", as: 'connections'
 
     get :delete_account, on: :member
@@ -219,13 +219,20 @@ YouversionWeb::Application.routes.draw do
   match '/users/:username/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
   match '/users/:username/reading-plans/:id/completed' => 'plans#day_complete', as: "plan_complete_plan", via: :get
 
-  get '/users/:username/reading-plans/:id/day/:day' => 'subscriptions#show', as: "plan_show"
-  get '/users/:username/reading-plans/:id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"
-  get '/users/:username/reading-plans/:id/day/:day/ref/:content' => 'subscriptions#ref', as: "plan_ref"
+	get '/users/:username/reading-plans/:id/subscription/:subscription_id' => 'subscriptions#show'
+  get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day' => 'subscriptions#show', as: "plan_show"
+  get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"
+  get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/ref/:content' => 'subscriptions#ref', as: "plan_ref"
 
   get '/reading-plans-collection/:id' => 'plans#plan_collection'
   get '/recommended-plans-collection/:id' => 'plans#plan_collection'
   get '/saved-plans-collection' => 'plans#plan_collection'
+
+  # PWF
+  get '/reading-plans/:id/together/:together_id/invitation' => 'subscriptions#show', as: "pwf_invitation"
+  get '/users/:username/reading-plans/:id/together/create' => 'subscriptions#show', as: "pwf_create"
+  get '/users/:username/reading-plans/:id/together/:together_id/invite' => 'subscriptions#show', as: "pwf_invite"
+  get '/users/:username/reading-plans/:id/together/:together_id/participants' => 'subscriptions#show', as: "participants"
 
 
   # LOOKINSIDE READING PLAN LANDING PAGES
@@ -271,22 +278,22 @@ YouversionWeb::Application.routes.draw do
   get  "/sign-in",                         to: "sessions#new",               as: "sign_in"
   post "/sign-in",                         to: "sessions#create",            as: "sign_in"
   get  "/sign-out",                        to: "sessions#destroy",           as: "sign_out"
-  get  "/api-test",                        to: "api_test#index"  
-  
-  # connections 
+  get  "/api-test",                        to: "api_test#index"
+
+  # connections
   get "/auth/:provider/callback",          to: "auth#callback",              as: "auth_callback"
   get "/auth/:provider/connect",           to: "auth#connect",               as: "auth_connect"
   get "/connections/:provider/new",        to: "connections#new",            as: "new_connection"
   get "/connections/:provider/create",     to: "connections#create",         as: "create_connection"
   delete "/connections/:provider/delete",  to: "connections#destroy",        as: "delete_connection"
-   
+
   # Legacy routes, many used in transactional emails
   get "/friends",                          to: "redirects#friends"
   get "/bookmarks",                        to: "redirects#bookmarks"
   get "/highlights",                       to: "redirects#highlights"
   get "/notes",                            to: "redirects#notes"
   get "/badges",                           to: "redirects#badges"
-  get "/profile",                          to: "redirects#profile"  
+  get "/profile",                          to: "redirects#profile"
   get "/settings",                         to: "redirects#settings"
   get "/settings/profile",                 to: "redirects#settings"
   get "/settings/update_email",            to: "redirects#settings_email"

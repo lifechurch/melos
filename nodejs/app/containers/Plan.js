@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import rtlDetect from 'rtl-detect'
 // actions
-import subscriptionDay from '../../../youversion-api-redux/src/batchedActions/subscriptionDay'
-import bibleReferences from '../../../youversion-api-redux/src/batchedActions/bibleReferences'
+import subscriptionDay from '@youversion/api-redux/src/batchedActions/subscriptionDay'
+import bibleReferences from '@youversion/api-redux/src/batchedActions/bibleReferences'
 // models
-import getSubscriptionModel from '../../../youversion-api-redux/src/models/subscriptions'
-import getPlansModel from '../../../youversion-api-redux/src/models/readingPlans'
-import getBibleModel from '../../../youversion-api-redux/src/models/bible'
+import getSubscriptionModel from '@youversion/api-redux/src/models/subscriptions'
+import getPlansModel from '@youversion/api-redux/src/models/readingPlans'
+import getBibleModel from '@youversion/api-redux/src/models/bible'
 // selectors
 // utils
 import { calcCurrentPlanDay } from '../lib/readingPlanUtils'

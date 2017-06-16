@@ -2,11 +2,11 @@ class SubscriptionsController < ApplicationController
 
   respond_to :html, :json
   prepend_before_filter :mobile_redirect, only: [:show]
-  before_filter :check_existing_subscription, only: [:create]
-  before_filter :force_login
-  before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
-  before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
-  before_filter :get_plan_counts, only: [:index,:saved]
+  # before_filter :check_existing_subscription, only: [:create]
+  # before_filter :force_login
+  # before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
+  # before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
+  # before_filter :get_plan_counts, only: [:index,:saved]
 
 
 
@@ -37,7 +37,7 @@ class SubscriptionsController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
-        "cache_for" => YV::Caching::a_very_long_time
+        "cache_for" => YV::Cacexporthing::a_very_long_time
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)

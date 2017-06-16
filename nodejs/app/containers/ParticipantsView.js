@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
 import { selectImageFromList } from '../lib/imageUtil'
 import Participants from '../features/PlanDiscovery/components/Participants'
-import participantsView from '../../../youversion-api-redux/src/batchedActions/participantsUsersView'
-import { getParticipantsUsersByTogetherId } from '../../../youversion-api-redux/src/models'
-import { getPlanById } from '../../../youversion-api-redux/src/endpoints/readingPlans/reducer'
-import readingPlansAction from '../../../youversion-api-redux/src/endpoints/readingPlans/action'
+import participantsView from '@youversion/api-redux/src/batchedActions/participantsUsersView'
+import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/src/models'
+import { getPlanById } from '@youversion/api-redux/src/endpoints/readingPlans/reducer'
+import readingPlansAction from '@youversion/api-redux/src/endpoints/readingPlans/action'
 
 class ParticipantsView extends Component {
 	componentDidMount() {

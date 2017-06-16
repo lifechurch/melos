@@ -2,9 +2,9 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 // actions
-import participantsView from '../../../youversion-api-redux/src/batchedActions/participantsUsersView'
+import participantsView from '@youversion/api-redux/src/batchedActions/participantsUsersView'
 // selectors
-import { getParticipantsUsersByTogetherId } from '../../../youversion-api-redux/src/models'
+import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/src/models'
 // components
 import User from '../components/User'
 
