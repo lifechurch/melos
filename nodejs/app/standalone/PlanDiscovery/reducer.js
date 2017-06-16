@@ -18,10 +18,12 @@ import { routeReducer } from 'react-router-redux'
 // import configuration from '../features/EventFeedMine/reducers/configuration'
 // import plansDiscovery from '../features/PlanDiscovery/reducers'
 import bibleReader from '../../features/Bible/reducers'
-import users from '../../features/Users/reducers'
 import passage from '../../features/Passage/reducers'
 import plansDiscovery from '../../features/PlanDiscovery/reducers'
 import readingPlans from '../../features/PlanDiscovery/reducers/readingPlans'
+import api from '../../features/PlanDiscovery/reducers/api'
+import plansAPI from '../../../../youversion-api-redux/src/endpoints/plans'
+
 
 const rootReducer = combineReducers({
 	auth: (state = {}, action) => { return state },
@@ -32,7 +34,6 @@ const rootReducer = combineReducers({
 	modals: (state = {}, action) => { return state },
 	loc: (state = {}, action) => { return state },
 	locations: (state = {}, action) => { return state },
-	plans: (state = {}, action) => { return state },
 	readingPlans,
 	plansDiscovery,
 	configuration: (state = {}, action) => { return state },
@@ -41,8 +42,11 @@ const rootReducer = combineReducers({
 	serverLanguageTag: (state = {}, action) => { return state },
 	altVersions: (state = {}, action) => { return state },
 	hosts: (state = {}, action) => { return state },
-	users,
-	passage
+	passage,
+	// for all the reducers being autopopulated by the api actions
+	api,
+	plans: combineReducers(plansAPI.reducers),
+
 })
 
 export default rootReducer

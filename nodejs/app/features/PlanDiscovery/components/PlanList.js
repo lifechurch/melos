@@ -1,16 +1,12 @@
 import React, { Component, PropTypes } from 'react'
-import PlanListItem from './PlanListItem'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import Waypoint from 'react-waypoint'
 import { Link } from 'react-router'
+import PlanListItem from './PlanListItem'
 
 class PlanList extends Component {
-	constructor(props) {
-		super(props)
-		this.loadMore = ::this.loadMore
-	}
 
-	loadMore() {
+	handleLoadMore = () => {
 		const { plans: { nextPage }, loadMore } = this.props
 		if (nextPage !== null && typeof loadMore === 'function') {
 			loadMore(nextPage)
@@ -21,21 +17,17 @@ class PlanList extends Component {
 		const { plans, title, listType, serverLanguageTag, params, auth, localizedLink } = this.props
 
 		const items = plans.items.map((plan) => {
-			if (typeof plan === 'object') {
-				return (
-					<PlanListItem
-						serverLanguageTag={serverLanguageTag}
-						listType={listType}
-						key={plan.id}
-						plan={plan}
-						params={params}
-						auth={auth}
-						localizedLink={localizedLink}
-					/>
-				)
-			} else {
-				return null
-			}
+			return (
+				<PlanListItem
+					serverLanguageTag={serverLanguageTag}
+					listType={listType}
+					key={plan.id}
+					plan={plan}
+					params={params}
+					auth={auth}
+					localizedLink={localizedLink}
+				/>
+			)
 		})
 
 		let backButton = <span>&nbsp;</span>
@@ -75,7 +67,7 @@ class PlanList extends Component {
 					<div className="row collapse">
 						<div className="columns large-8 medium-8 medium-centered subscription-list">
 							{items}
-							<div><Waypoint onEnter={this.loadMore} /></div>
+							<div><Waypoint onEnter={this.handleLoadMore} /></div>
 						</div>
 					</div>
 					<div className="row collapse">

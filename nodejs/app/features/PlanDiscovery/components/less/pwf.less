@@ -1,0 +1,155 @@
+.pwf-create {
+
+	.plan-calendar-container {
+		margin-top: 40px;
+		max-width: 500px;
+
+		.centered;
+		h2 {
+			text-align: center;
+			color: @font-grey;
+		}
+		.calendar-day {
+			border-color: @font-grey;
+		}
+		.calendar-day.disabled {
+			color: @font-grey;
+		}
+	}
+	@media @medium-up {
+		.calendar-day {
+			height: 64px;
+		}
+	}
+	@media @small-only {
+		.calendar-day {
+			height: 50px;
+		}
+	}
+	.nav {
+		position: relative;
+		top: 34px;
+		width: 100%;
+    display: inline-flex;
+		justify-content: center;
+		>div {
+			width: 300px;
+			display: inline-flex;
+			justify-content: space-between;
+		}
+	}
+}
+
+.pwf-invite {
+	.button-bar {
+		.button-bar-button {
+			.button-bar-button-content {
+				padding: 5px;
+			}
+		}
+	}
+	.search {
+		padding: 10px 15px;
+		background: white;
+		input {
+			font-size: 18px;
+		}
+	}
+	.search, .search:hover {
+		border: none;
+		border-bottom: @thin-grey-border;
+	}
+	.search.open {
+		.searchicon-container {
+			border: none;
+		}
+	}
+	.search-results {
+		position: absolute;
+		width: 100%;
+		background: white;
+		z-index: 2;
+	}
+	.friend-list {
+		padding-left: 20px;
+		margin-bottom: 15px;
+		max-height: 500px;
+		a {
+			color: initial;
+		}
+		.item {
+			border-bottom: @thin-grey-border;
+			padding: 10px 15px 10px 0;
+			margin: 8px 0;
+			.heading {
+				font-size: 18px;
+			}
+		}
+	}
+	.users {
+		background-color: white;
+		margin-top: 20px;
+	}
+	.selected-number {
+		background: @green;
+		border-radius: 100%;
+		color: white;
+		.vertical-center;
+		.horizontal-center;
+		width: 25px;
+		height: 25px;
+		display: inline-flex;
+		margin: 0 10px;
+	}
+	.va-share-panel-wrapper {
+		left: -270px;
+		bottom: 30px;
+		.va-share-panel {
+			padding: 10px;
+			.va-share-header {
+				display: none;
+			}
+		}
+	}
+}
+
+.pwf-flow {
+	.content {
+		padding: 30px 0 50px 0;
+	}
+	.share-link {
+		.default-border;
+		border-radius: @default-radius;
+		padding: 5px 45px;
+		font-size: 18px;
+		margin: 25px;
+	}
+	.gray-heading {
+		color: @font-grey;
+		font-size: 18px;
+	}
+}
+
+.invitation {
+	.invitation-actions {
+		width: 100%;
+		flex-wrap: wrap;
+		a {
+			.card-button;
+		}
+	}
+}
+
+.card-buttons {
+	width: 100%;
+	display: inline-flex;
+	flex-wrap: wrap;
+	background: white;
+}
+.card-button {
+	width: 100%;
+	text-align: center;
+	border-top: 1px solid @light-grey;
+	border-bottom: 1px solid @light-grey;
+	padding: 15px 0;
+}

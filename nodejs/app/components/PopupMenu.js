@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import XMark from './XMark'
+import Menu from './Menu'
 
 class PopupMenu extends Component {
 
@@ -17,23 +18,38 @@ class PopupMenu extends Component {
 	}
 
 	render() {
-		const { triggerButton, closeButton } = this.props
+		const { triggerButton, closeButton, children, header, footer } = this.props
 		const { show } = this.state
-		let menu, trigger
+		let trigger = null
 
+		// if we're wanting to show two different trigger buttons
+		// toggle between them, if not than we always render triggerButton prop
 		if (show) {
 			if (closeButton) {
 				trigger = closeButton
 			}
-			menu = this.props.children
 		} else if (triggerButton) {
 			trigger = triggerButton
 		}
 
 		return (
-			<div className='popup-menu' style={{ marginLeft: 15, marginTop: 1, display: 'inline-block', float: 'right' }}>
-				<a tabIndex={0} onClick={this.handleToggle}><div className="trigger">{ trigger }</div></a>
-				<div onClick={this.handleToggle}>{ menu }</div>
+			<div className='popup-menu-container'>
+				<a tabIndex={0} onClick={this.handleToggle}>
+					<div className='trigger'>
+						{ trigger }
+					</div>
+				</a>
+				{
+					show &&
+					<Menu
+						customClass='popup-menu'
+						header={header}
+						footer={footer}
+						onClick={this.handleToggle}
+					>
+						{ children }
+					</Menu>
+				}
 			</div>
 		)
 	}
@@ -42,12 +58,16 @@ class PopupMenu extends Component {
 PopupMenu.propTypes = {
 	triggerButton: PropTypes.node,
 	closeButton: PropTypes.node,
+	header: PropTypes.node,
+	footer: PropTypes.node,
 	children: PropTypes.node.isRequired
 }
 
 PopupMenu.defaultProps = {
 	triggerButton: '•••',
 	closeButton: <XMark width={14.4} height={13.7} />,
+	header: null,
+	footer: null,
 }
 
 export default PopupMenu

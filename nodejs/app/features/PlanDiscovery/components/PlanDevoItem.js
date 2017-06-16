@@ -51,7 +51,13 @@ PlanDevoItem.propTypes = {
 }
 
 PlanDevoItem.defaultProps = {
-	iconStyle: {}
+	iconStyle: {
+		padding: '1px 2px 3px 0',
+		verticalAlign: 'middle',
+		height: 18,
+		width: 23,
+		cursor: 'pointer'
+	}
 }
 
 export default PlanDevoItem

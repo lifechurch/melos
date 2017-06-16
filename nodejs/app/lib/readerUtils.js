@@ -1,5 +1,6 @@
 import React from 'react'
 import Immutable from 'immutable'
+import cookie from 'react-cookie'
 import ActionCreators from '../features/Bible/actions/creators'
 import LocaleList from '../../locales/config/localeList.json'
 import LocalStore from './localStore'
@@ -244,4 +245,8 @@ export function buildCopyright(formatMessage, version) {
 		openInNewTab: !!reader_footer_url
 	}
 	/* eslint-enable react/no-danger */
+}
+
+export function getBibleVersionFromStorage() {
+	return cookie.load('version') || cookie.load('alt_version') || 1
 }

@@ -1,0 +1,50 @@
+
+.subscribe-actions {
+	position: relative;
+	.yv-drop-shadow;
+	top: -90px;
+	margin-bottom: -60px;
+	@media @medium-up {
+		left: -50px;
+		width: 300px;
+	}
+
+	li {
+		padding: 20px 10px 20px 20px !important;
+		border-bottom: @thin-grey-border;
+		.option {
+			width: 80%;
+		}
+		.action-title {
+			color: black;
+			font-weight: bold;
+			font-size: 14px;
+		}
+		.action-description {
+			font-size: 12px;
+			font-color: @font-grey;
+		}
+	}
+	h6 {
+		border-bottom: @thin-grey-border;
+		padding: 15px 50px;
+		margin: 0;
+	}
+
+	.arrow {
+		flex-grow: 1;
+		justify-content: flex-end;
+	}
+}
+.cancel-button:hover {
+	background: white;
+	color: @green;
+}
+.cancel-button {
+	width: 100%;
+	background: white;
+	margin: 0;
+	color: @green;
+	font-size: 12px;
+	padding: 15px;
+}

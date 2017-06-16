@@ -1,56 +1,29 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import Helmet from 'react-helmet'
 import moment from 'moment'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { routeActions } from 'react-router-redux'
-import cookie from 'react-cookie'
 import Immutable from 'immutable'
+// actions
 
-import Image from '../../../components/Carousel/Image'
+// components
+import LazyImage from '../../../components/LazyImage'
 import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
-import ActionCreators from '../actions/creators'
-import isFinalReadingForDay, { isFinalPlanDay, dayHasDevo, handleRefUpdate } from '../../../lib/readingPlanUtils'
+// utils
+import isFinalReadingForDay, {
+	isFinalPlanDay,
+	dayHasDevo,
+	handleRefUpdate
+} from '../../../lib/readingPlanUtils'
+import { getBibleVersionFromStorage } from '../../../lib/readerUtils'
+import { PLAN_DEFAULT, selectImageFromList } from '../../../lib/imageUtil'
+import Routes from '../../../lib/routes'
 
 
 class Plan extends Component {
-	constructor(props) {
-		super(props)
 
-		this.handleCatchUp = this.handleCatchUp.bind(this)
-		this.handleCompleteRef = this.handleCompleteRef.bind(this)
-	}
-
-	handleCatchUp() {
-		const {
-			dispatch,
-			params,
-			plan: {
-				id
-			},
-			serverLanguageTag,
-			auth: {
-				userData: {
-					userid: user_id,
-					language_tag: userLanguageTag
-				}
-			},
-			location: {
-				query
-			}
-		} = this.props
-
-		const day = parseInt(query.day, 10)
-		const language_tag = serverLanguageTag || params.lang || userLanguageTag || 'en'
-		const version = cookie.load('version') || '1'
-
-		if (id) {
-			dispatch(ActionCreators.resetSubscriptionAll({ id, language_tag, user_id, day, version }, true))
-		}
-	}
-
-	handleCompleteRef(day, ref, complete) {
+	handleCompleteRef = (day, ref, complete) => {
 		const { dispatch, plan: { calendar, id, total_days } } = this.props
 		const dayData = calendar[day - 1]
 		const references = Immutable.fromJS(dayData.references_completed).toJS()
@@ -81,125 +54,140 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { plan, savedPlans, dispatch, children, params, auth, localizedLink, isRtl, serverLanguageTag } = this.props
-
-		if (typeof plan !== 'object' || (plan.__validation && !plan.__validation.isValid)) {
-			return (
-				<div />
-			)
-		}
+		const {
+			plan,
+			day,
+			start_dt,
+			progressDays,
+			references,
+			savedPlans,
+			dispatch,
+			children,
+			params,
+			auth,
+			localizedLink,
+			isRtl,
+			serverLanguageTag,
+			together_id,
+			subscription_id,
+			handleCatchUp,
+		} = this.props
 
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
-		const version = cookie.load('version') || '1'
-		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
-		const myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
-		const bibleLink = localizedLink(`/bible/${version}`)
 		const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(plan.id) !== -1))
 
-		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
+		let aboutLink,
+			myPlansLink,
+			bibleLink,
+			planLinkNode,
+			subscriptionLink,
+			startLink,
+			planTitle,
+			planImgSrc,
+			isPrivate,
+			isEmailDeliveryOn,
+			emailDelivery,
+			plan_id,
+			totalDays
 
-		let day = parseInt(params.day, 10)
-		// if day is not valid, calculate based on start_dt
-		if (!day || isNaN(day)) {
-			const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
-			if (isNaN(calculatedDay)) {
-				day = 1
-			} else if (calculatedDay > plan.total_days) {
-				day = plan.total_days
-			} else {
-				day = calculatedDay
-			}
+		if (plan && plan.id) {
+			// build some links
+			aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
+			myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
+			bibleLink = localizedLink(`/bible/${getBibleVersionFromStorage()}`)
+			planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id='plans.sample' /></Link>
+			subscriptionLink = Routes.subscription({
+				username: auth.userData.username,
+				plan_id: plan.id,
+				slug: plan.slug,
+				subscription_id,
+			})
+			startLink = Routes.subscriptionRef({
+				username: auth.userData.username,
+				plan_id: plan.id,
+				slug: plan.slug,
+				subscription_id,
+				day,
+				content: 0,
+			})
+
+			// get other plan info
+			planTitle = plan.name[language_tag] || plan.name.default
+			planImgSrc = selectImageFromList({
+				images: plan.images,
+				width: 640,
+				height: 320
+			}).url
+			plan_id = plan.id
+			totalDays = plan.total_days
+			isPrivate = plan.private
+			isEmailDeliveryOn = (typeof plan.email_delivery === 'string')
+			emailDelivery = plan.email_delivery
 		}
 
-		const subscriptionLink = `${myPlansLink}/${plan.id}-${plan.slug}`
-		const dayBaseLink = `${myPlansLink}/${plan.id}-${plan.slug}`
-
-		const dayData = Array.isArray(plan.calendar) && plan.calendar.length >= (day - 1)
-			? plan.calendar[day - 1]
-			: {}
-
-		const devoCompleted = 'additional_content' in dayData
-			? dayData.additional_content.completed
-			: false
-
-		const hasDevo = 'additional_content' in dayData
-			? dayHasDevo(dayData.additional_content)
-			: false
-
-		let startLink = ''
-		if (hasDevo) {
-			startLink = `${subscriptionLink}/day/${day}/devo`
-		} else if (!hasDevo && ('references' in dayData) && dayData.references.length === 0) {
-			startLink = `${subscriptionLink}/day/${day}`
-		} else {
-			startLink = `${subscriptionLink}/day/${day}/ref/0`
-		}
-
-		const metaTitle = `${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`
-		const metaDesc = `${plan.about.text[language_tag] || plan.about.text.default}`
 
 		return (
-			<div className="subscription-show">
-				<Helmet
-					title={metaTitle}
-					meta={[
-						{ name: 'description', content: metaDesc }
-					]}
-				/>
-				<div className="plan-overview">
-					<div className="row">
-						<div className="header columns large-8 medium-8 medium-centered">
+			<div className='subscription-show'>
+				<div className='plan-overview'>
+					<div className='row'>
+						<div className='header columns large-8 medium-8 medium-centered'>
 							<Link to={`/users/${auth.userData.username}/reading-plans`}>
-								<FormattedHTMLMessage id="plans.plans back" />
+								<FormattedHTMLMessage id='plans.plans back' />
 							</Link>
-							<div className="actions">
+							<div className='actions'>
 								<PlanMenu
 									subscriptionLink={subscriptionLink}
 									aboutLink={aboutLink}
-									onCatchUp={this.handleCatchUp}
+									onCatchUp={handleCatchUp}
 								/>
 								<div><ShareWidget /></div>
 							</div>
 						</div>
 					</div>
-					<div className="row collapse">
-						<div className="columns medium-centered text-center img">
-							<Image className="rp-hero-img" width={640} height={360} thumbnail={false} imageId="false" type="about_plan" config={plan} />
+					<div className='row collapse'>
+						<div className='horizontal-center' style={{ height: '170', marginBottom: '30px' }}>
+							<LazyImage
+								alt='plan-image'
+								src={planImgSrc}
+								width={300}
+								height={170}
+								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
+							/>
 						</div>
 					</div>
-					<div className="row">
-						<div className="medium-centered text-center columns">
-							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
+					<div className='row'>
+						<div className='medium-centered text-center columns'>
+							<h3 className='plan-title'>{ planTitle }</h3>
 						</div>
 					</div>
-					{children && React.cloneElement(children, {
-						id: plan.id,
-						plan,
-						dispatch,
-						auth,
-						day,
-						dayData,
-						actionsNode: <div />,
-						planLinkNode,
-						isSubscribed: ('subscription_id' in plan),
-						calendar: Array.isArray(plan.calendar) ? plan.calendar : [],
-						totalDays: plan.total_days,
-						subscriptionLink,
-						dayBaseLink,
-						aboutLink,
-						startLink,
-						bibleLink,
-						myPlansLink,
-						devoCompleted,
-						language_tag: serverLanguageTag,
-						isRtl,
-						hasDevo,
-						isSaved,
-						isPrivate: plan.private,
-						isEmailDeliveryOn: (typeof plan.email_delivery === 'string'),
-						emailDelivery: plan.email_delivery,
-						handleCompleteRef: this.handleCompleteRef
-					})}
+					{
+						children &&
+						React.cloneElement(children, {
+							id: plan_id,
+							plan,
+							dispatch,
+							auth,
+							day,
+							progressDays,
+							actionsNode: <div />,
+							planLinkNode,
+							isSubscribed: !!subscription_id,
+							totalDays,
+							subscriptionLink,
+							aboutLink,
+							startLink,
+							bibleLink,
+							myPlansLink,
+							language_tag: serverLanguageTag,
+							isRtl,
+							isSaved,
+							isPrivate,
+							isEmailDeliveryOn,
+							emailDelivery,
+							together_id,
+							handleCompleteRef: this.handleCompleteRef
+						})
+					}
 				</div>
 			</div>
 		)
@@ -212,7 +200,6 @@ Plan.propTypes = {
 	params: PropTypes.object,
 	children: PropTypes.object,
 	auth: PropTypes.object,
-	location: PropTypes.object,
 	localizedLink: PropTypes.func,
 	serverLanguageTag: PropTypes.string,
 	savedPlans: PropTypes.object.isRequired

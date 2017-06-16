@@ -1,106 +1,82 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
 import moment from 'moment'
-import Immutable from 'immutable'
 
-import Day from './StreakDay'
+import CarouselArrow from '../../../components/Carousel/CarouselArrow'
+import CalendarMonth from './CalendarMonth'
 
-function getDaysInMonth(month, year, fullWeeks = true, direction = 1, startDate = null, limit = null) {
-	const lastDayOfMonth = new Date(year, month + 1, 0)
-	const d = (startDate !== null) ? startDate : new Date(year, month, 1)
-	let days = []
 
-	while (d.getMonth() === month && (limit === null || days.length < limit)) {
-		// First Day not Sunday
-		if (fullWeeks && startDate === null && d.getDate() === 1 && d.getDay() !== 0) {
-			days = days.concat(getDaysInMonth(month - 1, year, true, -1, moment(d).subtract(1, 'days').toDate(), d.getDay()))
+class Calendar extends Component {
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			activeMoment: moment(new Date())
 		}
-
-		days.push(new Date(d))
-
-		// Last Day not Saturday
-		if (fullWeeks && startDate === null && d.getDate() === lastDayOfMonth.getDate() && d.getDay() !== 6) {
-			days = days.concat(getDaysInMonth(month + 1, year, true, 1, moment(d).add(1, 'days').toDate(), (6 - d.getDay())))
-		}
-
-		d.setDate(d.getDate() + direction)
 	}
 
-	if (direction === -1) {
-		days.sort((a, b) => {
-			if (a.getTime() < b.getTime()) {
-				return -1;
-			} else if (a.getTime() > b.getTime()) {
-				return 1;
-			} else {
-				return 0;
-			}
+	incrementMonth = () => {
+		this.setState((prevState) => {
+			prevState.activeMoment.add('1', 'month')
 		})
 	}
-	return days
-}
 
-function Calendar(props) {
-	const { monthNumber, yearNumber, showFullWeeks, data } = props
-	const date = moment(new Date(yearNumber, monthNumber - 1, 1))
+	decrementMonth = () => {
+		this.setState((prevState) => {
+			prevState.activeMoment.subtract('1', 'month')
+		})
+	}
 
-	const monthDays = getDaysInMonth(monthNumber - 1, yearNumber, showFullWeeks).map((day, index, days) => {
-		const classNames = []
 
-		if (!showFullWeeks) {
-			// First Day of Month not Sunday
-			if (index === 0 && day.getDay() !== 0) {
-				classNames.push(`prefix-day-${day.getDay()}`)
-			}
+	render() {
 
-			// Last Day of Month not Saturday
-			if (index === (days.length - 1) && day.getDay !== 7) {
-				classNames.push(`suffix-day-${7 - day.getDay()}`)
-			}
-		}
+		const { showFullWeeks, data, children } = this.props
+		const { activeMoment } = this.state
 
-		let dayData = {}
-		const m = moment(day)
-		const iData = Immutable.fromJS(data)
-		const key = [
-			m.year().toString(),
-			(m.month() + 1).toString(),
-			m.date().toString()
-		]
-
-		if (iData.hasIn(key)) {
-			dayData = iData.getIn(key).toJS()
-		}
+		const monthIndex = activeMoment.month()
+		const year = activeMoment.year()
 
 		return (
-			<div key={day.toString()} className={`day ${classNames.join(' ')}`}>
-				<Day date={day} streak={dayData.streak} complete={dayData.complete} link={dayData.link} />
+			<div className='calendar-container'>
+				<div className='nav'>
+					<div>
+						<CarouselArrow
+							onClick={this.decrementMonth}
+							dir='left'
+							containerClass='arrow'
+							fill='gray'
+							width={15}
+							height={15}
+						/>
+						<CarouselArrow
+							onClick={this.incrementMonth}
+							dir='right'
+							containerClass='arrow'
+							fill='gray'
+							width={15}
+							height={15}
+						/>
+					</div>
+				</div>
+				<CalendarMonth
+					monthNumber={monthIndex + 1}
+					yearNumber={year}
+					showFullWeeks={showFullWeeks}
+					data={data}
+				>
+					{ children }
+				</CalendarMonth>
 			</div>
 		)
-	})
-
-	return (
-		<div className='plan-calendar-container'>
-			<h2>
-				<span className='month'>{date.format('MMMM')}</span> &nbsp;
-				<span className='year'>{date.format('YYYY')}</span>
-			</h2>
-			<div className='plan-calendar'>
-				{monthDays}
-			</div>
-		</div>
-	)
+	}
 }
 
 Calendar.propTypes = {
-	monthNumber: PropTypes.number.isRequired,
-	yearNumber: PropTypes.number.isRequired,
+	children: PropTypes.func.isRequired,
 	showFullWeeks: PropTypes.bool,
 	data: PropTypes.object
 }
 
 Calendar.defaultProps = {
-	monthNumber: new Date().getMonth(),
-	yearNumber: new Date().getYear(),
 	showFullWeeks: true,
 	data: {}
 }

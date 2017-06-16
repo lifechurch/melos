@@ -3,7 +3,10 @@ import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
 
-import ActionCreators from '../actions/creators'
+import getCreatedDT from '../../../lib/getCreatedDT'
+import plansAPI from '../../../../../youversion-api-redux/src/endpoints/plans'
+import Menu from '../../../components/Menu'
+import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 
 class SubscribeUserDialog extends Component {
 	constructor(props) {
@@ -11,47 +14,84 @@ class SubscribeUserDialog extends Component {
 		this.handleSubscribeUser = this.handleSubscribeUser.bind(this)
 	}
 
-	handleSubscribeUser(privacy) {
+	handleSubscribeUser(subscribeContext) {
 		const { dispatch, id, isLoggedIn, isSubscribed, subscriptionLink, useRouter } = this.props
 		if (!isLoggedIn) window.location.replace('/sign-in')
-		if (!isSubscribed) {
-			dispatch(ActionCreators.readingplanSubscribeUser({ id, private: privacy }, isLoggedIn)).then(() => {
-				if (useRouter) {
+
+		switch (subscribeContext) {
+			case 'together':
+				dispatch(routeActions.push(`${subscriptionLink}/together/create`))
+				break
+			case 'public':
+			case 'private':
+				if (!isSubscribed) {
+					dispatch(plansAPI.actions.subscriptions.post({}, {
+						body: {
+							created_dt: getCreatedDT(),
+							plan_id: id,
+							privacy: subscribeContext,
+						},
+						auth: isLoggedIn
+					})).then(() => {
+						if (useRouter) {
+							dispatch(routeActions.push(subscriptionLink))
+						} else {
+							window.location.replace(subscriptionLink)
+						}
+					})
+				} else if (useRouter) {
 					dispatch(routeActions.push(subscriptionLink))
 				} else {
 					window.location.replace(subscriptionLink)
 				}
-			})
-		} else if (useRouter) {
-			dispatch(routeActions.push(subscriptionLink))
-		} else {
-			window.location.replace(subscriptionLink)
+				break
+			default:
+				break
 		}
+
 	}
 
 	render() {
+		const { footer } = this.props
+		const heading = (
+			<h6>How do you want to read this plan?</h6>
+		)
 		return (
-			<div className='plan-privacy-buttons text-center'>
-				<p className='detail-text'>
-					<FormattedMessage id="plans.privacy.visible to friends?" />
-				</p>
-				<div className='yes-no-buttons'>
-					<a
-						tabIndex={0}
-						className='yes solid-button green'
-						onClick={() => { this.handleSubscribeUser(false) }}
-					>
-						<FormattedMessage id="ui.yes button" />
-					</a>
-					<a
-						tabIndex={0}
-						className='no solid-button gray'
-						onClick={() => { this.handleSubscribeUser(true) }}
-					>
-						<FormattedMessage id="ui.no button" />
-					</a>
-				</div>
-			</div>
+			<Menu
+				customClass='subscribe-actions'
+				heading={heading}
+				footer={footer}
+			>
+				<ul>
+					<li className='vertical-center'>
+						<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'public')}>
+							<div className='option'>
+								<div className='action-title'>By Myself</div>
+								<div className='action-description'>Plan Activity is visible by Friends.</div>
+							</div>
+						</a>
+						<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
+					</li>
+					<li className='vertical-center'>
+						<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'private')}>
+							<div className='option'>
+								<div className='action-title'>Private</div>
+								<div className='action-description'>Plan Activity is hidden by Friends.</div>
+							</div>
+						</a>
+						<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
+					</li>
+					<li className='vertical-center'>
+						<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'together')}>
+							<div className='option'>
+								<div className='action-title'>With Friends</div>
+								<div className='action-description'>Invite some peeps yall.</div>
+							</div>
+						</a>
+						<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
+					</li>
+				</ul>
+			</Menu>
 		)
 	}
 }

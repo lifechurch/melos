@@ -1,17 +1,22 @@
 import React, { PropTypes } from 'react'
 import { FormattedHTMLMessage, FormattedMessage } from 'react-intl'
+import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import PlanDayStatus from './PlanDayStatus'
 import PlanDaySlider from './PlanDaySlider'
 import PlanDayStartButton from './PlanDayStartButton'
-import PlanReferences from './PlanReferences'
+import PlanContentListItem from './PlanContentListItem'
 import PlanActionButtons from './PlanActionButtons'
+
 
 function PlanDay(props) {
 	const {
+		id,
 		plan,
 		day,
-		dayData,
-		calendar,
+		start_dt,
+		daySegments,
+		progressDays,
+		references,
 		planLinkNode,
 		dayBaseLink,
 		totalDays,
@@ -27,85 +32,114 @@ function PlanDay(props) {
 		devoCompleted,
 		hasDevo,
 		handleCompleteRef,
+		together_id
 	} = props
 
-	// parent overwrite a few things if desired
-	let refsDiv, actionsDiv
-	if (actionsNode) {
-		actionsDiv = actionsNode
-	} else {
-		actionsDiv = (
-			<PlanActionButtons
-				id={plan.id}
-				subscriptionLink={subscriptionLink}
-				planLinkNode={planLinkNode}
-				isSubscribed={isSubscribed}
-				isSaved={isSaved}
-			/>
-		)
-	}
-
+	let refsDiv = null
+	const dayProgress = progressDays && progressDays[day - 1] ?
+											progressDays[day - 1] :
+											null
 	// show no content message if there is no content
-	if (dayData.references.length === 0 && !hasDevo) {
-		refsDiv = <FormattedMessage id="plans.no content" />
+	if (!dayProgress || dayProgress.complete === null) {
+		refsDiv = <FormattedMessage id='plans.no content' />
 	} else if (refListNode) {
 		refsDiv = refListNode
 	} else {
 		refsDiv = (
-			<PlanReferences
-				day={day}
-				devoCompleted={devoCompleted}
-				completedRefs={dayData.references_completed}
-				references={dayData.reference_content}
-				link={`${subscriptionLink}/day/${day}`}
-				hasDevo={hasDevo}
-				handleCompleteRef={handleCompleteRef}
-			/>
+			<ul className='no-bullets plan-pieces'>
+				{
+					daySegments &&
+					daySegments.map((segment, i) => {
+						let title
+						let key = segment.kind
+						const link = `${dayBaseLink}/content/${i}`
+						const complete = dayProgress &&
+															(dayProgress.complete ||
+															dayProgress.partial[i])
+
+						if (segment.kind === 'devotional') {
+							title = <FormattedMessage id='plans.devotional' />
+						} else if (segment.kind === 'reference') {
+							const usfm = segment.content
+							const reference = references[usfm]
+							title = reference.verses.reference.human
+							key = usfm
+						} else if (segment.kind === 'talk-it-over') {
+							title = <FormattedMessage id='plans.talk it over' />
+						}
+
+						return (
+							<PlanContentListItem
+								key={key}
+								title={title}
+								isComplete={complete}
+								handleIconClick={null}
+								link={link}
+							/>
+						)
+					})
+				}
+			</ul>
 		)
 	}
 
 	return (
 		<div>
-			<div className="row">
-				<div className="columns medium-8 large-8 medium-centered text-center">
-					{ actionsDiv }
-				</div>
-			</div>
-			<div className="row days-container collapse">
-				<div className="columns large-8 medium-8 medium-centered">
-					<PlanDaySlider
-						day={day}
-						calendar={calendar}
-						dayBaseLink={dayBaseLink}
-						showDate={isSubscribed}
-						language_tag={language_tag}
-						isRtl={isRtl()}
-					/>
-				</div>
-			</div>
-			<div className="row">
-				<div className="columns large-8 medium-8 medium-centered">
+			<div className='row'>
+				<div className='columns medium-8 large-8 medium-centered text-center'>
 					{
-								isSubscribed ?
-									<div>
-										<div className="start-reading">
-											<PlanDayStartButton
-												dayData={dayData}
-												link={startLink}
-											/>
-										</div>
-										<PlanDayStatus
-											day={day}
-											calendar={calendar}
-											total={totalDays}
+						actionsNode ||
+						<PlanActionButtons
+							id={id}
+							subscriptionLink={subscriptionLink}
+							planLinkNode={planLinkNode}
+							isSubscribed={isSubscribed}
+							isSaved={isSaved}
+						/>
+					}
+				</div>
+			</div>
+			<div className='row days-container collapse'>
+				<div className='columns large-8 medium-8 medium-centered'>
+					{
+						totalDays &&
+						<PlanDaySlider
+							day={day}
+							totalDays={totalDays}
+							progressDays={progressDays}
+							start_dt={start_dt}
+							dayBaseLink={subscriptionLink}
+							showDate={isSubscribed}
+							language_tag={language_tag}
+							isRtl={isRtl()}
+						/>
+					}
+				</div>
+			</div>
+			<div className='row'>
+				<div className='columns large-8 medium-8 medium-centered'>
+					{
+						together_id &&
+						<div style={{ marginBottom: '25px' }}>
+							<ParticipantsAvatarList together_id={together_id} avatarWidth={46} />
+						</div>
+					}
+					{
+							isSubscribed ?
+								<div>
+									<div className='start-reading'>
+										<PlanDayStartButton
+											link={startLink}
 										/>
-									</div> :
-									<p>
-										<FormattedHTMLMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
-										&nbsp;&bull;&nbsp;
-										<FormattedMessage id="plans.read today" />
-									</p>
-							}
+									</div>
+									<div>This progress status is going to be pulled from the new progress api call</div>
+								</div> :
+								<p>
+									<FormattedHTMLMessage id='plans.which day in plan' values={{ day, total: totalDays }} />
+									&nbsp;&bull;&nbsp;
+									<FormattedMessage id='plans.read today' />
+								</p>
+						}
 					{ refsDiv }
 				</div>
 			</div>
@@ -115,8 +149,6 @@ function PlanDay(props) {
 
 PlanDay.propTypes = {
 	day: PropTypes.number.isRequired,
-	dayData: PropTypes.object.isRequired,
-	calendar: PropTypes.array.isRequired,
 	totalDays: PropTypes.number.isRequired,
 	subscriptionLink: PropTypes.string.isRequired,
 	aboutLink: PropTypes.string.isRequired,
@@ -126,7 +158,7 @@ PlanDay.propTypes = {
 	isSaved: PropTypes.bool.isRequired,
 	isRtl: PropTypes.func,
 	handleCompleteRef: PropTypes.func,
-	plan: PropTypes.object.isRequired,
+	id: PropTypes.number.isRequired,
 	actionsNode: PropTypes.node,
 	planLinkNode: PropTypes.node,
 	isSubscribed: PropTypes.bool.isRequired,

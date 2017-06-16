@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 import rtlDetect from 'rtl-detect'
 
 class PlansView extends Component {
-	localizedLink(link) {
+	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || params.lang || 'en'
 
@@ -16,20 +16,16 @@ class PlansView extends Component {
 		}
 	}
 
-	isRtl() {
+	isRtl = () => {
 		const { params, serverLanguageTag } = this.props
 		const languageTag = params.lang || serverLanguageTag || 'en'
 		return rtlDetect.isRtlLang(languageTag)
 	}
 
 	render() {
-		const { children, auth } = this.props
+		const { children, auth, serverLanguageTag, route: { view } } = this.props
 
-		let isMyPlans = false
-		try {
-			 isMyPlans = (['MySubscribedPlans', 'MyCompletedPlans', 'MySavedPlans'].indexOf(children.type.WrappedComponent.name) > -1)
-		} catch (e) {}
-
+		const isMyPlans = (view && typeof view === 'string')
 		const myPlansLink = auth.isLoggedIn && auth.userData && auth.userData.username ?
 			(<Link className='solid-button green' to={`/users/${auth.userData.username}/reading-plans`}><FormattedMessage id="plans.my_plans" /></Link>) :
 			(<a className='solid-button green' href='/sign-in'><FormattedMessage id="plans.my_plans" /></a>)
@@ -42,7 +38,15 @@ class PlansView extends Component {
 						<li className={isMyPlans ? '' : 'inactive' }>{ myPlansLink }</li>
 					</ul>
 				</div>
-				{children && React.cloneElement(children, { localizedLink: ::this.localizedLink, isRtl: ::this.isRtl })}
+				{
+					children &&
+					React.cloneElement(children, {
+						localizedLink: this.localizedLink,
+						isRtl: this.isRtl,
+						auth,
+						serverLanguageTag,
+					})
+				}
 			</div>
 		)
 	}

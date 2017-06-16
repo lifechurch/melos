@@ -4,36 +4,38 @@ import PlanReferenceItem from './PlanReferenceItem'
 import PlanDevoItem from './PlanDevoItem'
 
 function PlanReferences(props) {
-	const { references, hasDevo } = props
+	const { references, hasDevo, dayProgress } = props
 
-	const iconStyle = {
-		padding: '1px 2px 3px 0',
-		verticalAlign: 'middle',
-		height: 18,
-		width: 23,
-		cursor: 'pointer'
+	const referenceLinks = []
+
+	if (hasDevo) {
+		referenceLinks.push(<PlanDevoItem key='devo' {...props} />)
 	}
-	let referenceLinks = []
+
 	if (references) {
-		referenceLinks = Object.keys(references).map((refIndex) => {
+		Object.keys(references).forEach((refIndex, i) => {
 			const reference = references[refIndex].reference
-			return <PlanReferenceItem {...props} content={refIndex} reference={reference} key={refIndex} iconStyle={iconStyle} />
+			referenceLinks.push(
+				<PlanReferenceItem
+					key={refIndex}
+					human={reference.human}
+					isComplete={dayProgress.complete || dayProgress.partial[i]}
+				/>
+			)
 		})
 	}
 
-	if (hasDevo) {
-		referenceLinks.unshift(<PlanDevoItem key="devo" {...props} iconStyle={iconStyle} />)
-	}
 
 	return (
-		<ul className="no-bullets plan-pieces">
-			{referenceLinks}
+		<ul className='no-bullets plan-pieces'>
+			{ referenceLinks }
 		</ul>
 	)
 }
 
 PlanReferences.propTypes = {
 	references: PropTypes.object.isRequired,
+	dayProgress: PropTypes.object.isRequired,
 	hasDevo: PropTypes.bool,
 }
 

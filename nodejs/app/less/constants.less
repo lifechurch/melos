@@ -56,6 +56,22 @@
 @error-grey: #444444;
 @brown: #824F2B;
 
+.green {
+	color: @green;
+}
+.red {
+	color: @red;
+}
+.blue {
+	color: @blue;
+}
+.font-grey {
+	color: @font-grey;
+}
+.dark-gray {
+	color: @dark_grey;
+} 
+
 
 // font **********************************************************************
 @small-font-size: 0.85714rem;
@@ -66,13 +82,22 @@
 .small-font {
 	font-size: @small-font-size;
 }
-
+.content-white {
+	border: 1px solid white;
+	color: white;
+}
+.content-gray {
+	border: 1px solid @font-grey;
+	color: @font-grey;
+}
 .yv-drop-shadow {
   box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
   -moz-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
   -webkit-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
 }
-
+.pointer:hover {
+	cursor: pointer;
+}
 // scroll bar styling for safari, chrome
 .yv-scroll-bar {
 	::-webkit-scrollbar {
@@ -91,7 +116,8 @@
 
 .yv-active {
 	background-color: @green;
-	color: white;
+	color: white !important;
+	* { color: white !important; }
 }
 .yv-hover {
 	background-color: @background-grey;
@@ -106,6 +132,10 @@
 	color: @font-grey;
 	cursor: pointer;
 }
+.disabled-link, .disabled-link:hover {
+	color: @color-muted;
+	cursor: not-allowed;
+}
 .yv-flex-center-all {
 	justify-content: center;
 	align-items: center;
@@ -116,7 +146,13 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-
+.gray-background {
+	background-color: @background-grey;
+}
+.row-reverse {
+	display: inline-flex;
+	flex-direction: row-reverse;
+}
 .picker-error {
 	background-color: @error-grey;
 	color: white;
@@ -124,7 +160,9 @@
 	font-size: 12px;
 	padding: 15px 15px 15px 15px;
 }
-
+.default-border {
+	border: @thin-grey-border;
+}
 .absolute-horizontal-center {
 	left: 50%;
 	transform: 				translate(-50%, 0%);
@@ -134,7 +172,9 @@
   -o-transform:     translate(-50%, 0%);
 	transition:       translate(-50%, 0%);
 }
-
+.centered {
+	margin: auto;
+}
 .dropdown-transform {
 	/* only transition on transform properties which are hardware accelerated = way better performances */
 	-webkit-transition:-webkit-transform .7s cubic-bezier(0.42,1,.16,.93);

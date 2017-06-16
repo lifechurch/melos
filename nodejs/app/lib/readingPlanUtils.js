@@ -1,3 +1,4 @@
+import moment from 'moment'
 import ActionCreators from '../features/PlanDiscovery/actions/creators'
 import BibleActionCreators from '../features/Bible/actions/creators'
 
@@ -130,4 +131,27 @@ export function getDefaultVersion(store, locale) {
 		})
 	}
 	return defaultVersion
+}
+
+/**
+ * if no day is passed to a subscription then we want to figure out
+ * what day to start on based on the date and the start date of the plan
+ * @param  {[number]} total_days [total days in plan]
+ * @param  {[string]} start_dt   [start date of plan]
+ * @return {[number]}            [current day of plan]
+ */
+export function calcCurrentPlanDay({ total_days, start_dt }) {
+	const calculatedDay = moment().diff(moment(start_dt, 'YYYY-MM-DD'), 'days') + 1
+	let currentDay
+	if (calculatedDay > total_days) {
+		currentDay = total_days
+	} else {
+		currentDay = calculatedDay
+	}
+
+	if (Number.isNaN(currentDay)) {
+		return 1
+	} else {
+		return currentDay
+	}
 }

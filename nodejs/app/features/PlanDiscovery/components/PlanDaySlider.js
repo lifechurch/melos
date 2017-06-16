@@ -25,20 +25,22 @@ class PlanDaySlider extends Component {
 
 	render() {
 		const {
-		calendar,
-		dayBaseLink,
-		day,
-		showDate,
-		isRtl,
-		language_tag,
-	} = this.props
+			totalDays,
+			progressDays,
+			start_dt,
+			dayBaseLink,
+			day,
+			showDate,
+			isRtl,
+			language_tag,
+		} = this.props
 
 		const settings = {
 			className: 'plan-day-slider',
 			centerMode: false,
 			infinite: false,
 			variableWidth: true,
-			slidesToScroll: 6,
+			slidesToScroll: 5,
 			slidesToShow: 1,
 			autoPlay: false,
 			rtl: isRtl,
@@ -67,36 +69,45 @@ class PlanDaySlider extends Component {
 		}
 
 		moment.locale(language_tag)
-		const slides = calendar.map((d) => {
-			const date = moment(d.date).format('l')
+		const slides = []
+		if (totalDays) {
+			for (let i = 0; i < totalDays; i++) {
+				let completed = ''
+				let active = ''
+				const progressDay = progressDays ? progressDays[i] : null
+				const date = start_dt ? moment(start_dt).add(i, 'day').format('l') : null
+				if (progressDay) {
+					if (progressDay.day === day) {
+						active = 'active'
+					}
+					if (progressDay.complete) {
+						completed = 'check-background'
+					}
+				}
+				const to = `${dayBaseLink}/day/${i + 1}`
 
-			const active = (d.day === day)
-			? 'active'
-			: ''
-
-			const completed = d.completed
-			? 'check-background'
-			: ''
-
-			const to = `${dayBaseLink}/day/${d.day}`
-
-			return (
-				<Link key={d.day} to={to}>
-					<div className={`day ${active}`} style={{ backgroundColor: 'white' }}>
-						<div className={`day-top ${completed}`} />
-						<div className="day-bottom">
-							<h1>{d.day}</h1>
-							<h4>
-								{(showDate)
-								? date
-								: <FormattedMessage id="plans.day number" values={{ day: d.day }} />
-							}
-							</h4>
+				slides.push(
+					<Link key={i + 1} to={to}>
+						<div className={`day ${active}`} style={{ backgroundColor: 'white' }}>
+							<div className={`day-top ${completed}`} />
+							<div className='day-bottom'>
+								<h1>{i + 1}</h1>
+								<h4>
+									{
+										showDate && date ?
+										date :
+										<FormattedMessage
+											id='plans.day number'
+											values={{ day: i + 1 }}
+										/>
+									}
+								</h4>
+							</div>
 						</div>
-					</div>
-				</Link>
-			)
-		})
+					</Link>
+				)
+			}
+		}
 
 		let slider
 		if (isRtl) {
@@ -105,7 +116,7 @@ class PlanDaySlider extends Component {
 				overflowX: 'scroll'
 			}
 			const innerStyle = {
-				width: `${(80 * calendar.length) + 30}px`
+				width: `${(80 * progressDays.length) + 30}px`
 			}
 
 			slider = (
@@ -132,8 +143,10 @@ class PlanDaySlider extends Component {
 }
 
 PlanDaySlider.propTypes = {
-	calendar: PropTypes.array.isRequired,
+	totalDays: PropTypes.number.isRequired,
+	progressDays: PropTypes.array,
 	dayBaseLink: PropTypes.string.isRequired,
+	start_dt: PropTypes.string.isRequired,
 	day: PropTypes.number.isRequired,
 	showDate: PropTypes.bool,
 	language_tag: PropTypes.string,
@@ -144,6 +157,7 @@ PlanDaySlider.defaultProps = {
 	showDate: true,
 	language_tag: 'en',
 	isRtl: false,
+	progressDays: null,
 }
 
 export default PlanDaySlider

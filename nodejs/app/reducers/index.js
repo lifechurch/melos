@@ -12,7 +12,6 @@ import plans from './plans'
 import configuration from '../features/EventFeedMine/reducers/configuration'
 import plansDiscovery from '../features/PlanDiscovery/reducers'
 import bibleReader from '../features/Bible/reducers'
-import users from '../features/Users/reducers'
 import passage from '../features/Passage/reducers'
 import readingPlans from '../features/PlanDiscovery/reducers/readingPlans'
 
@@ -31,7 +30,6 @@ const rootReducer = combineReducers({
 	configuration,
 	references,
 	readingPlans,
-	users,
 	routing: routeReducer,
 	serverLanguageTag: (state = {}, action) => { return state },
 	hosts: (state = {}, action) => { return state }

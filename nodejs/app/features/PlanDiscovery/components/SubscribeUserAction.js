@@ -28,23 +28,38 @@ class SubscribeUserAction extends Component {
 	render() {
 		const { id, isSubscribed, subscriptionLink } = this.props
 		const { dialogOpen } = this.state
+
+		const triggerButton = (
+			isSubscribed ?
+				(
+					<button style={{ width: '100%', maxWidth: 300 }} className='solid-button green' onClick={this.handleGoToPlan}>
+						<FormattedMessage id="plans.read today" />
+					</button>
+				)
+				:
+				(
+					<button style={{ width: '100%', maxWidth: 300 }} className='solid-button green' onClick={this.handleClick}>
+						<FormattedMessage id="plans.start" />
+					</button>
+				)
+		)
+		const footer = (
+			<button
+				className='cancel-button'
+				onClick={this.handleClick}
+			>
+				Cancel
+			</button>
+		)
 		return (
 			<div>
-				{isSubscribed
-					?
-						<button style={{ width: '100%', maxWidth: 300 }} className='solid-button green' onClick={this.handleGoToPlan}>
-							<FormattedMessage id="plans.read today" />
-						</button>
-					:
-						<button style={{ width: '100%', maxWidth: 300 }} className='solid-button green' onClick={this.handleClick}>
-							<FormattedMessage id="plans.start" />
-						</button>
-				}
+				{ triggerButton }
 				{!!dialogOpen &&
 					<SubscribeUserDialog
 						id={id}
 						isSubscribed={isSubscribed}
 						subscriptionLink={subscriptionLink}
+						footer={footer}
 					/>
 				}
 			</div>

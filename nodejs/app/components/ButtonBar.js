@@ -95,10 +95,10 @@ class ButtonBar extends Component {
 }
 
 ButtonBar.propTypes = {
-	items: React.PropTypes.array.isRequired,
-	onClick: React.PropTypes.func,
-	cols: React.PropTypes.oneOf(VALID_COLUMN_COUNTS),
-	initialValue: React.PropTypes.any
+	items: PropTypes.array.isRequired,
+	onClick: PropTypes.func,
+	cols: PropTypes.oneOf(VALID_COLUMN_COUNTS),
+	initialValue: PropTypes.any
 }
 
 export default ButtonBar

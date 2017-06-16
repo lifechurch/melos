@@ -19,6 +19,9 @@
 @import "../features/PlanDiscovery/components/less/PlanDaySlider.less";
 @import "../features/PlanDiscovery/components/less/PlanSettings.less";
 @import "../features/PlanDiscovery/components/less/PlanCalendar.less";
+@import "../features/PlanDiscovery/components/less/SubscribeUserDialog.less";
+
+@import "../features/PlanDiscovery/components/less/pwf.less";
 
 @import "../components/less/ButtonBar.less";
 @import "../components/less/Toggle.less";
@@ -28,6 +31,10 @@
 @import "../components/less/DropdownTransition.less";
 @import "../components/less/Select.less";
 @import "../components/less/stackedContainer.less";
+@import "../components/less/Search.less";
+@import "../components/less/User.less";
+@import "../components/less/LazyImage.less";
+@import "../components/less/Modal.less";
 
 @import "../features/Bible/components/settings/less/Settings.less";
 @import "../features/Bible/components/audio/less/Audio.less";
@@ -1150,7 +1157,7 @@ form.locationForm {
 }
 
 .right {
-	float: right;
+	float: right !important;
 }
 
 #preview-container {
@@ -2323,7 +2330,6 @@ html[dir="rtl"] {
 	html, body {
 		height: 100%;
 		overflow: scroll;
-		overflow-x: hidden;
 		-webkit-overflow-scrolling: touch;
 	}
 
@@ -2357,15 +2363,4 @@ html[dir="rtl"] {
 #ssIFrame_google {
  left: 0 !important;
  visibility: hidden !important ;
-}
-
-.circle-border {
-	border: solid 1px @color-muted;
-	border-radius: 50%;
-
-	svg.xmark {
-		padding: 2px;
-    width: 11px;
-    height: 11px;
-	}
 }

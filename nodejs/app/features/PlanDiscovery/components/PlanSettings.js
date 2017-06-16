@@ -1,27 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { routeActions } from 'react-router-redux'
 
 import ActionCreators from '../actions/creators'
 
 class PlanSettings extends Component {
-	constructor(props) {
-		super(props)
-		this.handleCatchUp = this.handleCatchUp.bind(this)
-		this.handleEmailDeliveryChange = this.handleEmailDeliveryChange.bind(this)
-		this.handlePrivacyChange = this.handlePrivacyChange.bind(this)
-		this.handleRestart = this.handleRestart.bind(this)
-		this.handleStop = this.handleStop.bind(this)
-		this.handleSelectPlan = this.handleSelectPlan.bind(this)
-		this.handleReloadCalendar = this.handleReloadCalendar.bind(this)
-	}
 
 	handleSelectPlan() {
 		const { dispatch, id } = this.props
 		dispatch(ActionCreators.planSelect({ id }))
 	}
 
-	handleReloadCalendar() {
+	handleReloadCalendar = () => {
 		const { dispatch, id, params, serverLanguageTag, auth: { userData: { userid } } } = this.props
 		const language_tag = serverLanguageTag || params.lang || 'en'
 		return dispatch(ActionCreators.calendar({ id, language_tag, user_id: userid })).then(() => {
@@ -29,14 +18,14 @@ class PlanSettings extends Component {
 		})
 	}
 
-	handlePrivacyChange() {
+	handlePrivacyChange = () => {
 		const { dispatch, id, isPrivate } = this.props
 		dispatch(ActionCreators.updateSubscribeUser({ id, private: !isPrivate }, true)).then(() => {
 			this.handleSelectPlan()
 		})
 	}
 
-	handleEmailDeliveryChange() {
+	handleEmailDeliveryChange = () => {
 		const { dispatch, id, isEmailDeliveryOn } = this.props
 		const email_delivery = isEmailDeliveryOn ? false : '08:00:00'
 		const email_delivery_version_id = isEmailDeliveryOn ? null : 1
@@ -45,31 +34,18 @@ class PlanSettings extends Component {
 		})
 	}
 
-	handleCatchUp() {
-		const { dispatch, id, subscriptionLink } = this.props
-		dispatch(ActionCreators.resetSubscription({ id }, true)).then(() => {
-			this.handleReloadCalendar().then(() => {
-				dispatch(routeActions.push(subscriptionLink))
-			})
-		})
+	handleCatchUp = () => {
+		const { onCatchUp } = this.props
+		if (onCatchUp && typeof onCatchUp === 'function') {
+			onCatchUp()
+		}
 	}
 
-	handleRestart() {
-		const { dispatch, id, subscriptionLink } = this.props
-		dispatch(ActionCreators.restartSubscription({ id }, true)).then(() => {
-			this.handleReloadCalendar().then(() => {
-				dispatch(routeActions.push(subscriptionLink))
-			})
-		})
-	}
-
-	handleStop() {
-		const { dispatch, id, myPlansLink, auth: { userData: { userid } } } = this.props
-		dispatch(ActionCreators.unsubscribeUser({ id }, true)).then(() => {
-			dispatch(ActionCreators.items({ user_id: userid, page: 1 }, true)).then(() => {
-				dispatch(routeActions.push(myPlansLink))
-			})
-		})
+	handleStop = () => {
+		const { onStopPlan } = this.props
+		if (onStopPlan && typeof onStopPlan === 'function') {
+			onStopPlan()
+		}
 	}
 
 	render() {
@@ -85,75 +61,66 @@ class PlanSettings extends Component {
 			textAlign: 'right'
 		}
 
+
 		return (
-			<div className="row" style={{ marginTop: 30 }}>
-				<div className="columns large-8 large-centered">
-					<div className="row" style={rowStyle}>
-						<div className="columns medium-8">
-							<h3><FormattedMessage id="plans.privacy title" /></h3>
+			<div className='row' style={{ marginTop: 30 }}>
+				<div className='columns large-8 large-centered'>
+					<div className='row' style={rowStyle}>
+						<div className='columns medium-8'>
+							<h3><FormattedMessage id='plans.privacy title' /></h3>
 							<p>
-								{isPrivate
-                ? <FormattedMessage id="plans.privacy description.private" />
-                : <FormattedMessage id="plans.privacy description.public" />
-              }
+								{
+									isPrivate ?
+										<FormattedMessage id='plans.privacy description.private' /> :
+										<FormattedMessage id='plans.privacy description.public' />
+								}
 							</p>
 						</div>
-						<div className="columns medium-4" style={rightCellStyle}>
-							<button className="solid-button green" onClick={this.handlePrivacyChange}>
-								{isPrivate
-                ? <FormattedMessage id="plans.make public" />
-                : <FormattedMessage id="plans.make private" />
-              }
+						<div className='columns medium-4' style={rightCellStyle}>
+							<button className='solid-button green' onClick={this.handlePrivacyChange}>
+								{
+									isPrivate ?
+										<FormattedMessage id='plans.make public' /> :
+										<FormattedMessage id='plans.make private' />
+								}
 							</button>
 						</div>
 					</div>
-					<div className="row" style={rowStyle}>
-						<div className="columns medium-8">
-							<h3><FormattedMessage id="plans.email delivery" /></h3>
+					<div className='row' style={rowStyle}>
+						<div className='columns medium-8'>
+							<h3><FormattedMessage id='plans.email delivery' /></h3>
 							<p>
-								<FormattedMessage id="plans.email delivery text" />
+								<FormattedMessage id='plans.email delivery text' />
 							</p>
 						</div>
-						<div className="columns medium-4" style={rightCellStyle}>
-							<button className="solid-button green" onClick={this.handleEmailDeliveryChange}>
-								{isEmailDeliveryOn
-                ? <FormattedMessage id="plans.email_off" />
-                : <FormattedMessage id="plans.email_on" />
-              }
+						<div className='columns medium-4' style={rightCellStyle}>
+							<button className='solid-button green' onClick={this.handleEmailDeliveryChange}>
+								{
+									isEmailDeliveryOn ?
+										<FormattedMessage id='plans.email_off' /> :
+										<FormattedMessage id='plans.email_on' />
+								}
 							</button>
-							<div>{emailDelivery}</div>
+							<div>{ emailDelivery }</div>
 						</div>
 					</div>
-					<div className="row" style={rowStyle}>
-						<div className="columns medium-8">
-							<h3><FormattedMessage id="plans.are you behind" /></h3>
+					<div className='row' style={rowStyle}>
+						<div className='columns medium-8'>
+							<h3><FormattedMessage id='plans.are you behind' /></h3>
 							<p>
-								<FormattedMessage id="plans.catch up description only" />
+								<FormattedMessage id='plans.catch up description only' />
 							</p>
 						</div>
-						<div className="columns medium-4" style={rightCellStyle}>
-							<button className="solid-button green" onClick={this.handleCatchUp}>
-								<FormattedMessage id="plans.catch me up" />
-							</button>
-						</div>
-					</div>
-					<div className="row" style={rowStyle}>
-						<div className="columns medium-8">
-							<h3><FormattedMessage id="plans.do you want to reset" /></h3>
-							<p>
-								<FormattedMessage id="plans.restart description" />
-							</p>
-						</div>
-						<div className="columns medium-4" style={rightCellStyle}>
-							<button className="solid-button green" onClick={this.handleRestart}>
-								<FormattedMessage id="plans.restart" />
+						<div className='columns medium-4' style={rightCellStyle}>
+							<button className='solid-button green' onClick={this.handleCatchUp}>
+								<FormattedMessage id='plans.catch me up' />
 							</button>
 						</div>
 					</div>
-					<div className="row" style={rowStyle}>
-						<div className="columns small-12">
-							<a tabIndex={0} onClick={this.handleStop} className="warning-text">
-								<FormattedMessage id="plans.stop reading" />
+					<div className='row' style={rowStyle}>
+						<div className='columns small-12'>
+							<a tabIndex={0} onClick={this.handleStop} className='warning-text'>
+								<FormattedMessage id='plans.stop reading' />
 							</a>
 						</div>
 					</div>
@@ -165,19 +132,20 @@ class PlanSettings extends Component {
 
 PlanSettings.propTypes = {
 	id: PropTypes.number.isRequired,
-	isPrivate: PropTypes.bool.isRequired,
+	isPrivate: PropTypes.bool,
 	isEmailDeliveryOn: PropTypes.bool.isRequired,
-	subscriptionLink: PropTypes.string.isRequired,
 	emailDelivery: PropTypes.object,
 	dispatch: PropTypes.func.isRequired,
-	myPlansLink: PropTypes.string.isRequired,
+	onStopPlan: PropTypes.func.isRequired,
+	onCatchUp: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	auth: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired
 }
 
 PlanSettings.defaultProps = {
-	emailDelivery: {}
+	emailDelivery: null,
+	isPrivate: false,
 }
 
 export default PlanSettings
