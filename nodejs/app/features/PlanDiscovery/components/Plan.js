@@ -88,7 +88,8 @@ class Plan extends Component {
 			isEmailDeliveryOn,
 			emailDelivery,
 			plan_id,
-			totalDays
+			totalDays,
+			daySegments
 
 		if (plan && plan.id) {
 			// build some links
@@ -120,6 +121,11 @@ class Plan extends Component {
 			}).url
 			plan_id = plan.id
 			totalDays = plan.total_days
+			console.log('DAYSEGS', day, plan.days)
+			daySegments = plan.days && plan.days[day - 1] ?
+										plan.days[day - 1].segments :
+										null
+
 			isPrivate = plan.private
 			isEmailDeliveryOn = (typeof plan.email_delivery === 'string')
 			emailDelivery = plan.email_delivery
@@ -168,6 +174,7 @@ class Plan extends Component {
 							dispatch,
 							auth,
 							day,
+							daySegments,
 							progressDays,
 							actionsNode: <div />,
 							planLinkNode,

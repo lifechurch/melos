@@ -4,6 +4,7 @@ import rtlDetect from 'rtl-detect'
 // actions
 import subscriptionDay from '@youversion/api-redux/src/batchedActions/subscriptionDay'
 import bibleReferences from '@youversion/api-redux/src/batchedActions/bibleReferences'
+import plansAPI from '@youversion/api-redux/src/endpoints/plans'
 // models
 import getSubscriptionModel from '@youversion/api-redux/src/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/src/models/readingPlans'
@@ -44,7 +45,7 @@ class Plan extends Component {
 										plan.days[currentDay - 1].references :
 										null
 			if (refs && (bible && bible.references && !(refs[0] in bible.references))) {
-				dispatch(bibleReferences({ refs }))
+				// dispatch(bibleReferences({ refs }))
 			}
 		}
 	}
@@ -73,11 +74,6 @@ class Plan extends Component {
 
 	render() {
 		const { children, subscription, plan, params: { day }, bible } = this.props
-		console.log(`
-			-------------------------------------------------
-			PROPS
-			-------------------------------------------------
-		`, this.props)
 
 		let currentDay = null
 		let progressDays = null
@@ -126,6 +122,7 @@ function mapStateToProps(state, props) {
 	const { params: { id, subscription_id } } = props
 	const plan_id = id.split('-')[0]
 	console.log('SUBSMODEL', getSubscriptionModel(state))
+	console.log('PLANSMODEL', getPlansModel(state))
 	return {
 		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId ?
 					getPlansModel(state).byId[plan_id] :

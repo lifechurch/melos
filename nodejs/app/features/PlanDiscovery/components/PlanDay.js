@@ -51,19 +51,19 @@ function PlanDay(props) {
 					daySegments &&
 					daySegments.map((segment, i) => {
 						let title
-						let key = segment.kind
+						const key = segment.kind
 						const link = `${dayBaseLink}/content/${i}`
 						const complete = dayProgress &&
 															(dayProgress.complete ||
-															dayProgress.partial[i])
+															(dayProgress.partial && dayProgress.partial[i]))
 
 						if (segment.kind === 'devotional') {
 							title = <FormattedMessage id='plans.devotional' />
 						} else if (segment.kind === 'reference') {
-							const usfm = segment.content
-							const reference = references[usfm]
-							title = reference.verses.reference.human
-							key = usfm
+							// const usfm = segment.content
+							// const reference = references[usfm]
+							// title = reference.verses.reference.human
+							// key = usfm
 						} else if (segment.kind === 'talk-it-over') {
 							title = <FormattedMessage id='plans.talk it over' />
 						}

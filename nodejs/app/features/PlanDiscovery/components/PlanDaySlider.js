@@ -73,17 +73,15 @@ class PlanDaySlider extends Component {
 		if (totalDays) {
 			for (let i = 0; i < totalDays; i++) {
 				let completed = ''
-				let active = ''
+				const isActiveDay = (i + 1 === parseInt(10, day))
+				const active = isActiveDay ? 'active' : ''
 				const progressDay = progressDays ? progressDays[i] : null
 				const date = start_dt ? moment(start_dt).add(i, 'day').format('l') : null
-				if (progressDay) {
-					if (progressDay.day === day) {
-						active = 'active'
-					}
-					if (progressDay.complete) {
-						completed = 'check-background'
-					}
+
+				if (progressDay && progressDay.complete) {
+					completed = 'check-background'
 				}
+
 				const to = `${dayBaseLink}/day/${i + 1}`
 
 				slides.push(

@@ -36,15 +36,15 @@ class PlanSettings extends Component {
 			id: subscription_id
 		}, {
 			auth: auth.isLoggedIn
-		}, (err) => {
-			if (!err) {
+		})).then((data) => {
+			if (data.data && data.data.status && data.data.status === 403) {
+				this.setState({ showError: true })
+			} else {
 				dispatch(routeActions.push(Routes.subscriptions({
 					username: auth.userData.username
 				})))
-			} else if (err.code === 403) {
-				this.setState({ showError: true })
 			}
-		}))
+		})
 	}
 
 	render() {
@@ -55,7 +55,7 @@ class PlanSettings extends Component {
 					onStopPlan={this.handleStopPlan}
 				/>
 				<Modal ref={(ref) => { this.modal = ref }}>
-					<div>OH NO!!!!</div>
+					<div>Nuh uh gurl. You know whatchu tryin 2do</div>
 				</Modal>
 			</div>
 		)
