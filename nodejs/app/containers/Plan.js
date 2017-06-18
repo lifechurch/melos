@@ -138,4 +138,8 @@ function mapStateToProps(state, props) {
 	}
 }
 
+Plan.propTypes = {
+
+}
+
 export default connect(mapStateToProps, null)(Plan)
