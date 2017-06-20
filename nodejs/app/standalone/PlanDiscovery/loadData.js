@@ -39,9 +39,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			}
 
 			if (isIndex.test(params.url)) {
-				// store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
-				console.log('INDEX')
-				resolve()
+				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
 			} else if (isSaved.test(params.url)) {
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => { resolve() })
 

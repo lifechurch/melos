@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import moment from 'moment'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { routeActions } from 'react-router-redux'
 import Immutable from 'immutable'
@@ -10,6 +9,7 @@ import Immutable from 'immutable'
 import LazyImage from '../../../components/LazyImage'
 import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
+import PlanContentListItem from './PlanContentListItem'
 // utils
 import isFinalReadingForDay, {
 	isFinalPlanDay,
@@ -59,7 +59,6 @@ class Plan extends Component {
 			day,
 			start_dt,
 			progressDays,
-			references,
 			savedPlans,
 			dispatch,
 			children,
@@ -89,7 +88,9 @@ class Plan extends Component {
 			emailDelivery,
 			plan_id,
 			totalDays,
-			daySegments
+			daySegments,
+			refsDiv,
+			dayProgress
 
 		if (plan && plan.id) {
 			// build some links
@@ -125,10 +126,57 @@ class Plan extends Component {
 			daySegments = plan.days && plan.days[day - 1] ?
 										plan.days[day - 1].segments :
 										null
+			dayProgress = progressDays && progressDays[day - 1] ?
+													progressDays[day - 1] :
+													null
+
+			refsDiv = (
+				<ul className='no-bullets plan-pieces'>
+					{
+							daySegments &&
+							daySegments.map((segment, i) => {
+								let title
+								let key = segment.kind
+								const link = Routes.subscriptionRef({
+									username: auth.userData.username,
+									plan_id: plan.id,
+									slug: plan.slug,
+									subscription_id,
+									day,
+									content: i,
+								})
+								const complete = dayProgress &&
+																	(dayProgress.complete ||
+																	(dayProgress.partial && dayProgress.partial[i]))
+
+								if (segment.kind === 'devotional') {
+									title = <FormattedMessage id='plans.devotional' />
+								} else if (segment.kind === 'reference') {
+									const usfm = segment.content
+									title = usfm
+									key = usfm
+								} else if (segment.kind === 'talk-it-over') {
+									title = <FormattedMessage id='plans.talk it over' />
+								}
+
+								return (
+									<PlanContentListItem
+										key={key}
+										title={title}
+										isComplete={complete}
+										handleIconClick={null}
+										link={link}
+									/>
+								)
+							})
+						}
+				</ul>
+			)
 
 			isPrivate = plan.private
 			isEmailDeliveryOn = (typeof plan.email_delivery === 'string')
 			emailDelivery = plan.email_delivery
+
 		}
 
 
@@ -173,6 +221,7 @@ class Plan extends Component {
 							plan,
 							dispatch,
 							auth,
+							refsDiv,
 							day,
 							daySegments,
 							progressDays,

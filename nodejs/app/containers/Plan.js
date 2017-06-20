@@ -8,7 +8,6 @@ import plansAPI from '@youversion/api-redux/src/endpoints/plans'
 // models
 import getSubscriptionModel from '@youversion/api-redux/src/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/src/models/readingPlans'
-import getBibleModel from '@youversion/api-redux/src/models/bible'
 // selectors
 // utils
 import { calcCurrentPlanDay } from '../lib/readingPlanUtils'
@@ -28,25 +27,6 @@ class Plan extends Component {
 				language_tag: serverLanguageTag,
 				day,
 			}))
-		}
-	}
-
-	componentDidUpdate(prevProps, prevState) {
-		const { dispatch, params: { day }, plan, subscription, bible } = this.props
-		// we need to get the references for the current day
-		if (plan && 'id' in plan && subscription && 'id' in subscription && day !== prevProps.day) {
-			const currentDay = day ||
-			calcCurrentPlanDay({
-				total_days: plan.total_days,
-				start_dt: subscription.start_dt
-			})
-			// make the refs call if we don't already have them in state
-			const refs = plan.days && plan.days[currentDay - 1] ?
-										plan.days[currentDay - 1].references :
-										null
-			if (refs && (bible && bible.references && !(refs[0] in bible.references))) {
-				// dispatch(bibleReferences({ refs }))
-			}
 		}
 	}
 
@@ -73,7 +53,7 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { children, subscription, plan, params: { day }, bible } = this.props
+		const { children, subscription, plan, params: { day } } = this.props
 
 		let currentDay = null
 		let progressDays = null
@@ -130,7 +110,6 @@ function mapStateToProps(state, props) {
 		subscription: getSubscriptionModel(state) && subscription_id in getSubscriptionModel(state).byId ?
 									getSubscriptionModel(state).byId[subscription_id] :
 									null,
-		bible: getBibleModel(state),
 		savedPlans: state.readingPlans && state.readingPlans.savedPlans ? state.readingPlans.savedPlans : null,
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,
