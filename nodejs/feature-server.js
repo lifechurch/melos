@@ -228,6 +228,7 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 })
 
 router.post('/featureImport/*', urlencodedParser, (req, res) => {
+	console.log('FEATUREIMPORT', req.body, res)
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
@@ -251,6 +252,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('loadData', (action) => {
+				console.log('ACTION', action)
 				const finish = nr.createTracer('finish', () => {
 					const RootComponent = getRootComponent(feature)
 
@@ -264,6 +266,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						try {
 							html = renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch (ex) {
+							console.log('ERROR', ex, feature, params.url, renderProps)
 								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
 							Raven.captureException(ex)
 							nr.endTransaction()

@@ -83,6 +83,7 @@ app.use(featureServer);
 
 // primary route handle for react-router
 app.use(reactServer);
+console.log('made it')
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -99,6 +100,7 @@ app.use(Raven.errorHandler());
 // will print stacktrace
 if (app.get('env') === 'development') {
 	app.use((err, req, res, next) => {
+		console.log('APP', err, req, res, next)
 		res.status(err.status || 500);
 		res.render('error', {
 			message: err.message,

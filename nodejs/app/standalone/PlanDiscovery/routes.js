@@ -61,7 +61,8 @@ export default function (
 	) {
 	return (
 		<Route path="/">
-			<Route path="(:lang/)reading-plans" component={PlansView}>
+			{/* <Route path="(:lang/)reading-plans" component={PlansView}> */}
+			<Route path="reading-plans" component={() => { return <div>TEST</div> }} >
 				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
 				<Route path=":id(-:slug)">
 					<IndexRoute component={AboutPlanView} onEnter={requirePlanData} />

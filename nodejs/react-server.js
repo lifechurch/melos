@@ -163,7 +163,9 @@ function getStateFromToken() {
 /**
  * Entry point for handling React app URLs
  */
+console.log('BUT REALLY', router)
 router.get('/*', cookieParser(), (req, res) => {
+	console.log('REACT-SERVER', req)
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
 		if (error) {
 			// throw new Error(error)
