@@ -6,10 +6,11 @@ import ActionCreators from '../features/EventEdit/features/details/actions/creat
 import PreviewActionCreators from '../features/EventEdit/features/preview/actions/creators'
 import AuthActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
-import RevManifest from '../../app/lib/revManifest'
 import EventStatus from '../features/EventEdit/eventStatus.js'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
+import CheckGrayImage from '../../images/check-gray.png'
+import YouVersionImage from '../../images/YouVersion.png'
 
 class EventHeader extends Component {
 	handleCancel() {
@@ -42,7 +43,7 @@ class EventHeader extends Component {
 				return (
 					<div className='text-right right'>
 						<span className="publishedLabel">
-							<img src={`/images/${RevManifest('check-gray.png')}`} className="publishedButtonCheckmark"/>
+							<img src={CheckGrayImage} className="publishedButtonCheckmark" />
 							<FormattedMessage id="components.EventHeader.status.published" />
 						</span>&nbsp;
 						<a className='solid-button gray' onClick={::this.unpublishEvent}>
@@ -62,7 +63,7 @@ class EventHeader extends Component {
 			default:
 				return (
 					<div className='text-right right'>
-						<a className='solid-button red' disabled={true}>{intl.formatMessage({id:'components.EventHeader.status.' + item.status.toLowerCase() })}</a>
+						<a className='solid-button red' disabled={true}>{intl.formatMessage({ id: `components.EventHeader.status.${item.status.toLowerCase()}` })}</a>
 					</div>
 				)
 		}
@@ -72,16 +73,16 @@ class EventHeader extends Component {
 	render() {
 		const { event, auth, params } = this.props
 
-		var ContentNav = null
+		let ContentNav = null
 		if (event) {
 			const { isSaving, errors } = event
-			ContentNav = <Row>
-						<div className='text-left left'>
-							<EventEditNav {...this.props} />
-						</div>
+			ContentNav = (<Row>
+				<div className='text-left left'>
+					<EventEditNav {...this.props} />
+				</div>
 
-						{::this.getPublishSection()}
-					</Row>
+				{::this.getPublishSection()}
+			</Row>)
 		}
 
 		return (
@@ -89,7 +90,7 @@ class EventHeader extends Component {
 				<Row>
 					<Column s='medium-4'>{event ?
 						<a onClick={::this.handleCancel}>&larr; <FormattedMessage id="components.EventHeader.myEvents" /></a> :
-						<span className="yv-title"><img src={`/images/${RevManifest('YouVersion.png')}`} /></span>
+						<span className="yv-title"><img src={YouVersionImage} /></span>
 					}</Column>
 
 					<Column s='medium-4' a='center'>

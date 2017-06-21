@@ -5,25 +5,25 @@ import Column from '../../../components/Column'
 import Image from '../../../components/Image'
 import ActionCreators from '../actions/creators'
 import moment from 'moment'
-import RevManifest from '../../../lib/revManifest'
 import { FormattedMessage } from 'react-intl'
+import ShareImage from '../../../../images/share.png'
 
 class EventViewDetails extends Component {
 	saveEvent() {
 		const { dispatch, event } = this.props
-		dispatch(ActionCreators.saveNote({id: event.item.id}))
+		dispatch(ActionCreators.saveNote({ id: event.item.id }))
 	}
 
 	toggleLocations(e) {
 		const { intl } = this.props
-		var loc = e.currentTarget.childNodes
-		loc[1].text = loc[1].text==intl.formatMessage({id:"features.EventView.components.EventViewDetails.expand"}) ? intl.formatMessage({id:"features.EventView.components.EventViewDetails.collapse"}) : intl.formatMessage({id:"features.EventView.components.EventViewDetails.expand"})
+		const loc = e.currentTarget.childNodes
+		loc[1].text = loc[1].text == intl.formatMessage({ id: 'features.EventView.components.EventViewDetails.expand' }) ? intl.formatMessage({ id: 'features.EventView.components.EventViewDetails.collapse' }) : intl.formatMessage({ id: 'features.EventView.components.EventViewDetails.expand' })
 		loc[2].classList.toggle('show')
 	}
 
 	handleShare(e) {
 		// http://www.addthis.com/academy/what-is-address-bar-sharing-analytics/
-		var addthis_config = addthis_config||{}
+		var addthis_config = addthis_config || {}
 		addthis_config.data_track_addressbar = false
 
 		e.currentTarget.nextSibling.classList.toggle('show')
@@ -38,14 +38,14 @@ class EventViewDetails extends Component {
 			var action = <div className="right"><a className="solid-button gray"><FormattedMessage id="features.EventView.components.EventViewDetails.saved" /></a></div>
 		}
 
-		var locationList = Object.keys(locations).map((l) => {
-			var name = locations[l].name ? <div className='location name'>{locations[l].name}</div> : null
-			var address = <div className='location address'>{locations[l].formatted_address}</div>
+		const locationList = Object.keys(locations).map((l) => {
+			const name = locations[l].name ? <div className='location name'>{locations[l].name}</div> : null
+			const address = <div className='location address'>{locations[l].formatted_address}</div>
 			return (
 				<li key={l}>
 					{name}
 					{address}
-					<div className="times">{locations[l].times.map((t) => {return moment.tz(t.start_dt, locations[l].timezone).format('dddd h:mm A')}).join(', ')}</div>
+					<div className="times">{locations[l].times.map((t) => { return moment.tz(t.start_dt, locations[l].timezone).format('dddd h:mm A') }).join(', ')}</div>
 				</li>
 			)
 		})
@@ -54,8 +54,8 @@ class EventViewDetails extends Component {
 			<div className="details">
 				<div className="org-bar">
 					<div className="right">
-						<a className="share-icon" onClick={::this.handleShare}><img src='https://events-staging.bible.com/images/share.png' /></a>
-						<div className="addthis_sharing_toolbox" data-url={event.item.short_url} data-title={event.item.title}></div>
+						<a className="share-icon" onClick={::this.handleShare}><img src={ShareImage} /></a>
+						<div className="addthis_sharing_toolbox" data-url={event.item.short_url} data-title={event.item.title} />
 					</div>
 					<div className="org">{org_name}</div>
 				</div>
@@ -67,8 +67,8 @@ class EventViewDetails extends Component {
 				<div className="desc">{description}</div>
 				<div className="type no-meta">
 					<div className="content locations" onClick={::this.toggleLocations}>
-						<div className='title left'>{intl.formatMessage({id:"features.EventEdit.components.EventEditNav.locations"})}</div>
-						<a ref="toggle" className='toggle right'>{intl.formatMessage({id:"features.EventView.components.EventViewDetails.expand"})}</a>
+						<div className='title left'>{intl.formatMessage({ id: 'features.EventEdit.components.EventEditNav.locations' })}</div>
+						<a ref="toggle" className='toggle right'>{intl.formatMessage({ id: 'features.EventView.components.EventViewDetails.expand' })}</a>
 						<div className="caption">
 							<ul>{locationList}</ul>
 						</div>

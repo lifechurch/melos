@@ -2,21 +2,21 @@ import React, { Component, PropTypes } from 'react'
 import DatePicker from 'react-datepicker'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
-//import moment from 'moment'
+// import moment from 'moment'
 import TimePicker from 'react-time-picker'
-import RevManifest from '../../../../../../app/lib/revManifest'
+import ThinXImage from '../../../../../../images/thin-x.png'
 import moment from 'moment-timezone'
 
-//Polyfill for isInteger
-Number.isInteger = Number.isInteger || function(value) {
-  return typeof value === "number" &&
+// Polyfill for isInteger
+Number.isInteger = Number.isInteger || function (value) {
+	return typeof value === 'number' &&
     isFinite(value) &&
     Math.floor(value) === value;
 };
 
 function changeTime(dt, t, tz) {
 	var t = t.replace(/ /, ':').split(':')
-	let new_dt = moment.tz(dt, tz)
+	const new_dt = moment.tz(dt, tz)
 
 	if (t.length > 2 && t[0] != 12 && t[2].toLowerCase() == 'pm') {
 		t[0] = parseInt(t[0]) + 12
@@ -55,22 +55,22 @@ function getDurationAndInterval(start_dt, end_dt) {
 }
 
 function getEndDate(start_dt, start_time, duration, interval, tz) {
-	var end_dt = changeTime(start_dt, start_time, tz)
+	const end_dt = changeTime(start_dt, start_time, tz)
 	end_dt.add(duration, interval)
 	return end_dt
 }
 
 function getState(start_dt, start_time, duration, interval, props) {
 	const { handleTimeChange, timeIndex } = props
-	var new_start_dt = changeTime(start_dt, start_time, props.tz)
-	var new_end_dt = getEndDate(new_start_dt, start_time, duration, interval, props.tz)
+	const new_start_dt = changeTime(start_dt, start_time, props.tz)
+	const new_end_dt = getEndDate(new_start_dt, start_time, duration, interval, props.tz)
 	handleTimeChange(timeIndex, new_start_dt, new_end_dt)
 	return {
 		start_dt: new_start_dt,
 		start_time: new_start_dt.format(window.__LOCALE__.momentLocaleData.longDateFormat('LT')),
-		duration: duration,
+		duration,
 		end_dt: new_end_dt,
-		interval: interval
+		interval
 	}
 }
 
@@ -113,7 +113,7 @@ class LocationAddTime extends Component {
 			<form className="event-edit-location-form event-edit-time-form">
 				<Row>
 					<div className='small-1 columns'>
-						<a className='removeTime' onClick={handleRemoveTime.bind(this, timeIndex)}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
+						<a className='removeTime' onClick={handleRemoveTime.bind(this, timeIndex)}><img src={ThinXImage} /></a>
 					</div>
 
 					<div className='small-3 columns textField'>
@@ -131,9 +131,9 @@ class LocationAddTime extends Component {
 							</Column>
 							<Column s='small-6'>
 								<select className='small' name='interval' onChange={::this.handleIntervalChange} value={interval}>
-									<option value='m'>{intl.formatMessage({id:"features.EventEdit.features.location.components.LocationAddTime.minutes"})}</option>
-									<option value='h'>{intl.formatMessage({id:"features.EventEdit.features.location.components.LocationAddTime.hours"})}</option>
-									<option value='d'>{intl.formatMessage({id:"features.EventEdit.features.location.components.LocationAddTime.days"})}</option>
+									<option value='m'>{intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationAddTime.minutes' })}</option>
+									<option value='h'>{intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationAddTime.hours' })}</option>
+									<option value='d'>{intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationAddTime.days' })}</option>
 								</select>
 							</Column>
 						</Row>

@@ -6,6 +6,7 @@ import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import PasswordChange from '../../features/PasswordChange/components/PasswordChange'
 import { addLocaleData, IntlProvider } from 'react-intl'
+import "../../less/style.less"
 
 let initialState = defaultState
 

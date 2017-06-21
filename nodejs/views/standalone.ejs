@@ -1,8 +1,10 @@
 <script src="https://cdn.ravenjs.com/3.14.0/raven.min.js" crossorigin="anonymous"></script>
 
 <%if (config.linkCss) { %>
-	<link rel="stylesheet" href="<%=assetPrefix%>/stylesheets/<%= getAssetPath('style.css') %>" />
+	<link rel="stylesheet" href="<%=assetPrefix%>/assets/<%= getAssetPath('main.css') %>" />
 <% } %>
+<script src="<%=assetPrefix%>/assets/<%= getAssetPath('manifest.js') %>"></script>
+<script src="<%=assetPrefix%>/assets/<%= getAssetPath('vendor.js') %>"></script>
 <div id="react-app"><%- appString %></div>
 <script type="application/javascript">
 	if (typeof Raven !== 'undefined' && !Raven.isSetup()) {

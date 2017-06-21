@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import ActionCreators from '../actions/creators'
-import RevManifest from '../../../../../../app/lib/revManifest'
 import { FormattedMessage } from 'react-intl'
+import CheckImage from '../../../../../../images/check.png'
+import ThinPlusImage from '../../../../../../images/thin-plus.png'
 
 class ContentInsertionPoint extends Component {
 	constructor(props) {
@@ -12,13 +13,13 @@ class ContentInsertionPoint extends Component {
 
 	handleMouseEnter(mouseEvent) {
 		if (!this.state.on) {
-			this.setState({ show:true })
+			this.setState({ show: true })
 		}
 	}
 
 	handleMouseLeave(mouseEvent) {
 		if (!this.state.on) {
-			this.setState({ show:false })
+			this.setState({ show: false })
 		}
 	}
 
@@ -40,18 +41,18 @@ class ContentInsertionPoint extends Component {
 		if (this.state.show) {
 			if (this.state.on) {
 				insertionPoint = (<div>
-					<div className='content-insertion-line'></div>
+					<div className='content-insertion-line' />
 					<a className='solid-button green' onClick={::this.handleClick}>
-						<img src={`/images/${RevManifest('check.png')}`} />
+						<img src={CheckImage} />
 						<FormattedMessage id="features.EventEdit.features.content.components.ContentInsertionPoint.title" />
-			 		</a>
-		 		</div>)
+					</a>
+				</div>)
 
 			} else {
 				insertionPoint = (<div>
-					<div className='content-insertion-line'></div>
+					<div className='content-insertion-line' />
 					<a className='hollow-button green' onClick={::this.handleClick}>
-						<img src={`/images/${RevManifest('thin-plus.png')}`} />
+						<img src={ThinPlusImage} />
 						<FormattedMessage id="features.EventEdit.features.content.components.ContentInsertionPoint.title" />
 					</a>
 				</div>)

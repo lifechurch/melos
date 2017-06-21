@@ -13,6 +13,7 @@ import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 import defaultState from './defaultState'
 import { isVerseOrChapter } from '../../lib/readerUtils'
+import "../../less/style.less"
 
 if (typeof window !== 'undefined') {
 	ga.initialize('UA-3571547-76', { language: window.__LOCALE__.locale });

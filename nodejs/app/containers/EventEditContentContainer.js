@@ -6,11 +6,11 @@ import { Link } from 'react-router'
 import ContentHeader from '../features/EventEdit/features/content/components/ContentHeader'
 import ContentFeed from '../features/EventEdit/features/content/components/ContentFeed'
 import ActionCreators from '../features/EventEdit/features/content/actions/creators'
-import RevManifest from '../../app/lib/revManifest'
 import { ActionCreators as ModalActionCreators } from '../actions/modals'
 import LiveWarningModal from '../features/EventEdit/features/content/components/LiveWarningModal'
 import cookie from 'react-cookie'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import UpArrowThinImage from '../../images/up-arrow-thin.png'
 
 let smoothScroll = {}
 if (typeof window !== 'undefined') {
@@ -26,7 +26,7 @@ function createBaseContentObject(event, type, insertionPoint) {
 
 	return {
 		id: event.item.id,
-		type: type,
+		type,
 		sort: (newSort * 100) - 50,
 		index: newSort
 	}
@@ -49,7 +49,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
+		setTimeout(() => { smoothScroll.animateScroll(`#content-${newContent.index.toString()}`) }, 250)
 	}
 
 	handleAddAnnouncement() {
@@ -64,7 +64,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
+		setTimeout(() => { smoothScroll.animateScroll(`#content-${newContent.index.toString()}`) }, 250)
 	}
 
 	handleAddReference() {
@@ -77,13 +77,13 @@ class EventEditContentContainer extends Component {
 			if (typeof lastBibleVersion !== 'undefined') {
   			lastBibleVersion = parseInt(lastBibleVersion)
 			}
-		} catch(e) {}
+		} catch (e) {}
 
-		const newContent =Object.assign({},
+		const newContent = Object.assign({},
 			createBaseContentObject(event, 'reference', _content.insertionPoint),
 			{
 				data: {
-					version_id:  (typeof lastBibleVersion === 'undefined') ? null : lastBibleVersion,
+					version_id: (typeof lastBibleVersion === 'undefined') ? null : lastBibleVersion,
 					chapter: '',
 					human: ' ',
 					usfm: [(typeof lastBibleBook === 'undefined') ? '' : lastBibleBook],
@@ -92,7 +92,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
+		setTimeout(() => { smoothScroll.animateScroll(`#content-${newContent.index.toString()}`) }, 250)
 	}
 
 	handleAddPlan() {
@@ -111,7 +111,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
+		setTimeout(() => { smoothScroll.animateScroll(`#content-${newContent.index.toString()}`) }, 250)
 	}
 
 	handleAddImage() {
@@ -126,7 +126,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
+		setTimeout(() => { smoothScroll.animateScroll(`#content-${newContent.index.toString()}`) }, 250)
 	}
 
 	handleAddLink() {
@@ -143,7 +143,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
+		setTimeout(() => { smoothScroll.animateScroll(`#content-${newContent.index.toString()}`) }, 250)
 	}
 
 	handleAddGiving() {
@@ -160,7 +160,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
+		setTimeout(() => { smoothScroll.animateScroll(`#content-${newContent.index.toString()}`) }, 250)
 	}
 
 	handleUpdate(index, params) {
@@ -205,7 +205,7 @@ class EventEditContentContainer extends Component {
 
 	handleMove(fromIndex, toIndex) {
 		const { dispatch } = this.props
-		dispatch(ActionCreators.move({fromIndex, toIndex}))
+		dispatch(ActionCreators.move({ fromIndex, toIndex }))
 	}
 
 	handleStartReorder() {
@@ -215,10 +215,10 @@ class EventEditContentContainer extends Component {
 
 	handleReorder() {
 		const { dispatch, event } = this.props
-		const content_ids = event.item.content.map((c,i) => {
+		const content_ids = event.item.content.map((c, i) => {
 			return c.content_id
 		})
-		dispatch(ActionCreators.reorder({id: event.item.id, content_ids}))
+		dispatch(ActionCreators.reorder({ id: event.item.id, content_ids }))
 	}
 
 	render() {
@@ -228,7 +228,7 @@ class EventEditContentContainer extends Component {
 		if (typeof event !== 'object' || !Array.isArray(event.item.content) || event.item.content.length === 0) {
 			contentFeed = (
 				<div className='no-content-prompt text-center'>
-					<img src={`/images/${RevManifest('up-arrow-thin.png')}`} />
+					<img src={UpArrowThinImage} />
 					<FormattedMessage tagName="p" id="containers.EventEditContentContainer.choose" />
 					<a target="_blank" href="http://help.youversion.com"><FormattedMessage id="containers.EventEditContentContainer.needHelp" /></a>
 				</div>
@@ -254,7 +254,7 @@ class EventEditContentContainer extends Component {
 
 		return (
 			<div>
-				<Helmet title={intl.formatMessage({ id: "containers.EventEditContentContainer.title" })} />
+				<Helmet title={intl.formatMessage({ id: 'containers.EventEditContentContainer.title' })} />
 				<ContentHeader
 					handleAddText={::this.handleAddText}
 					handleAddReference={::this.handleAddReference}
