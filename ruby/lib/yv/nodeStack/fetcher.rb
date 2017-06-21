@@ -57,7 +57,7 @@ module YV
 
               if (response['error'] == INVALID_TOKEN_ERROR)
                 cookies.delete CookieName
-                return get(feature, params, cookies, current_auth, current_user)
+                return get(feature, params, cookies, current_auth, current_user, request)
               end
 
               if (!cookies.has_key?(CookieName) || cookies[CookieName] != response['token']) && response['token']

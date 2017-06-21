@@ -8,6 +8,8 @@ import EventView from '../../containers/EventView'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
 
+import "../../less/style.less"
+
 require('moment/min/locales')
 
 let initialState = defaultState

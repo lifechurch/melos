@@ -1,6 +1,9 @@
 public/javascripts/*.*
 public/stylesheets/*.*
 public/images/*.*
+public/assets/*.*
+**/**/*.compiled.js
+**/**/*.compiled.js.map
 
 # Logs
 logs
