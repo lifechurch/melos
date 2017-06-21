@@ -73,7 +73,7 @@ class PlanDaySlider extends Component {
 		if (totalDays) {
 			for (let i = 0; i < totalDays; i++) {
 				let completed = ''
-				const isActiveDay = (i + 1 === parseInt(10, day))
+				const isActiveDay = ((i + 1) === parseInt(day, 10))
 				const active = isActiveDay ? 'active' : ''
 				const progressDay = progressDays ? progressDays[i] : null
 				const date = start_dt ? moment(start_dt).add(i, 'day').format('l') : null

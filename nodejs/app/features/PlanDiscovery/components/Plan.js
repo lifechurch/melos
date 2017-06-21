@@ -23,35 +23,35 @@ import Routes from '../../../lib/routes'
 
 class Plan extends Component {
 
-	handleCompleteRef = (day, ref, complete) => {
-		const { dispatch, plan: { calendar, id, total_days } } = this.props
-		const dayData = calendar[day - 1]
-		const references = Immutable.fromJS(dayData.references_completed).toJS()
-		const hasDevo = dayHasDevo(dayData.additional_content)
-
-		handleRefUpdate(
-			references,
-			ref === 'devo',
-			hasDevo,
-			ref === 'devo' ? complete : dayData.additional_content.completed,
-			ref !== 'devo' ? ref : null,
-			complete,
-			id,
-			day,
-			dispatch
-		)
-
-		// push day complete/plan complete
-		if (complete) {
-			if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
-				if (isFinalPlanDay(day, calendar, total_days)) {
-					dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
-				} else {
-					dispatch(routeActions.push(`${window.location.pathname}/completed`))
-				}
-			}
-		}
-	}
+	// handleCompleteRef = (day, ref, complete) => {
+	// 	const { dispatch, plan: { calendar, id, total_days } } = this.props
+	// 	const dayData = calendar[day - 1]
+	// 	const references = Immutable.fromJS(dayData.references_completed).toJS()
+	// 	const hasDevo = dayHasDevo(dayData.additional_content)
+	//
+	// 	handleRefUpdate(
+	// 		references,
+	// 		ref === 'devo',
+	// 		hasDevo,
+	// 		ref === 'devo' ? complete : dayData.additional_content.completed,
+	// 		ref !== 'devo' ? ref : null,
+	// 		complete,
+	// 		id,
+	// 		day,
+	// 		dispatch
+	// 	)
+	//
+	// 	// push day complete/plan complete
+	// 	if (complete) {
+	// 		if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
+	// 			if (isFinalPlanDay(day, calendar, total_days)) {
+	// 				dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
+	// 			} else {
+	// 				dispatch(routeActions.push(`${window.location.pathname}/completed`))
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	render() {
 		const {
@@ -104,7 +104,7 @@ class Plan extends Component {
 				slug: plan.slug,
 				subscription_id,
 			})
-			startLink = Routes.subscriptionRef({
+			startLink = Routes.subscriptionContent({
 				username: auth.userData.username,
 				plan_id: plan.id,
 				slug: plan.slug,
@@ -122,7 +122,6 @@ class Plan extends Component {
 			}).url
 			plan_id = plan.id
 			totalDays = plan.total_days
-			console.log('DAYSEGS', day, plan.days)
 			daySegments = plan.days && plan.days[day - 1] ?
 										plan.days[day - 1].segments :
 										null
@@ -137,7 +136,7 @@ class Plan extends Component {
 							daySegments.map((segment, i) => {
 								let title
 								let key = segment.kind
-								const link = Routes.subscriptionRef({
+								const link = Routes.subscriptionContent({
 									username: auth.userData.username,
 									plan_id: plan.id,
 									slug: plan.slug,
@@ -165,7 +164,7 @@ class Plan extends Component {
 										title={title}
 										isComplete={complete}
 										handleIconClick={null}
-										link={link}
+										link={null}
 									/>
 								)
 							})
@@ -221,7 +220,7 @@ class Plan extends Component {
 							plan,
 							dispatch,
 							auth,
-							refsDiv,
+							refListNode: refsDiv,
 							day,
 							daySegments,
 							progressDays,

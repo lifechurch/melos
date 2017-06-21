@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import rtlDetect from 'rtl-detect'
 // actions
 import subscriptionDay from '@youversion/api-redux/src/batchedActions/subscriptionDay'
-import bibleReferences from '@youversion/api-redux/src/batchedActions/bibleReferences'
 import plansAPI from '@youversion/api-redux/src/endpoints/plans'
 // models
 import getSubscriptionModel from '@youversion/api-redux/src/models/subscriptions'
@@ -71,7 +70,6 @@ class Plan extends Component {
 											subscription.days :
 											null
 		}
-
 		return (
 			<PlanComponent
 				{...this.props}
@@ -122,3 +120,4 @@ Plan.propTypes = {
 }
 
 export default connect(mapStateToProps, null)(Plan)
+// export default Plan

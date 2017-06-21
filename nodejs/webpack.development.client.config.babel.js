@@ -16,6 +16,7 @@ const clientConfig = {
 
 	devServer: {
 		compress: true,
+		overlay: true,
 		port: 9000,
 		publicPath: '/assets/',
 		headers: {

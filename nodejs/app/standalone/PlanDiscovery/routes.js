@@ -13,8 +13,6 @@ import PlanSettings from '../../containers/PlanSettings'
 import PlanCalendar from '../../containers/PlanCalendar'
 
 import PlanReader from '../../containers/PlanReaderView'
-import PlanDevo from '../../features/PlanDiscovery/components/planReader/PlanDevo'
-import PlanRef from '../../features/PlanDiscovery/components/planReader/PlanRef'
 
 import DayCompleteView from '../../containers/DayCompleteView'
 import SharedDayCompleteView from '../../containers/SharedDayCompleteView'
@@ -61,8 +59,8 @@ export default function (
 	) {
 	return (
 		<Route path="/">
+			{/* <Route path="reading-plans" component={() => { return <div>TEST</div> }} /> */}
 			<Route path="(:lang/)reading-plans" component={PlansView}>
-				{/* <Route path="reading-plans" component={() => { return <div>TEST</div> }} > */}
 				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
 				<Route path=":id(-:slug)">
 					<IndexRoute component={AboutPlanView} onEnter={requirePlanData} />

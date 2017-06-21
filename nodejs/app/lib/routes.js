@@ -99,19 +99,10 @@ const Routes = {
 
 		return route.get()
 	},
-	subscriptionDevo: ({ username, plan_id, slug, day, subscription_id, query = null }) => {
+	subscriptionContent: ({ username, plan_id, slug, day, content, subscription_id, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}/devo`,
-			query,
-		})
-
-		return route.get()
-	},
-	subscriptionRef: ({ username, plan_id, slug, day, content, subscription_id, query = null }) => {
-
-		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}/ref/${content}`,
+			path: `/users/${username}/reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}/segment/${content}`,
 			query,
 		})
 

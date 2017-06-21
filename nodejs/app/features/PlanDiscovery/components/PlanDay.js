@@ -83,7 +83,7 @@ function PlanDay(props) {
 									&nbsp;&bull;&nbsp;
 									<FormattedMessage id='plans.read today' />
 								</p>
-						}
+					}
 					{
 						refListNode ||
 						<FormattedMessage id='plans.no content' />
