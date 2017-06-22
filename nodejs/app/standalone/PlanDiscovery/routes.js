@@ -93,6 +93,10 @@ export default function (
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
 			<Route
+				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/segment/:content"
+				component={PlanReader}
+			/>
+			<Route
 				path="(:lang/)reading-plans/:id(-:slug)/together/:together_id/invitation"
 				component={InvitationView}
 			/>
@@ -107,10 +111,6 @@ export default function (
 			<Route
 				path="(:lang/)users/:username/reading-plans/:id(-:slug)/together/:together_id/participants"
 				component={ParticipantsView}
-			/>
-			<Route
-				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day(/segment/:content)"
-				component={PlanReader}
 			/>
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/day/:day/completed" component={DayCompleteView} onEnter={requirePlanView} />
 			{/* this is also day complete, but an unauthed page with the user id in the url as params, only loaded from the server */}

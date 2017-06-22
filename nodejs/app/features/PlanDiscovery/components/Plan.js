@@ -23,42 +23,15 @@ import Routes from '../../../lib/routes'
 
 class Plan extends Component {
 
-	// handleCompleteRef = (day, ref, complete) => {
-	// 	const { dispatch, plan: { calendar, id, total_days } } = this.props
-	// 	const dayData = calendar[day - 1]
-	// 	const references = Immutable.fromJS(dayData.references_completed).toJS()
-	// 	const hasDevo = dayHasDevo(dayData.additional_content)
-	//
-	// 	handleRefUpdate(
-	// 		references,
-	// 		ref === 'devo',
-	// 		hasDevo,
-	// 		ref === 'devo' ? complete : dayData.additional_content.completed,
-	// 		ref !== 'devo' ? ref : null,
-	// 		complete,
-	// 		id,
-	// 		day,
-	// 		dispatch
-	// 	)
-	//
-	// 	// push day complete/plan complete
-	// 	if (complete) {
-	// 		if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
-	// 			if (isFinalPlanDay(day, calendar, total_days)) {
-	// 				dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
-	// 			} else {
-	// 				dispatch(routeActions.push(`${window.location.pathname}/completed`))
-	// 			}
-	// 		}
-	// 	}
-	// }
-
 	render() {
 		const {
 			plan,
 			day,
 			start_dt,
+			dayProgress,
+			daySegments,
 			progressDays,
+			progressString,
 			savedPlans,
 			dispatch,
 			children,
@@ -69,6 +42,7 @@ class Plan extends Component {
 			serverLanguageTag,
 			together_id,
 			subscription_id,
+			handleContentCheck,
 			handleCatchUp,
 		} = this.props
 
@@ -88,9 +62,7 @@ class Plan extends Component {
 			emailDelivery,
 			plan_id,
 			totalDays,
-			daySegments,
-			refsDiv,
-			dayProgress
+			refsDiv
 
 		if (plan && plan.id) {
 			// build some links
@@ -122,12 +94,7 @@ class Plan extends Component {
 			}).url
 			plan_id = plan.id
 			totalDays = plan.total_days
-			daySegments = plan.days && plan.days[day - 1] ?
-										plan.days[day - 1].segments :
-										null
-			dayProgress = progressDays && progressDays[day - 1] ?
-													progressDays[day - 1] :
-													null
+
 
 			refsDiv = (
 				<ul className='no-bullets plan-pieces'>
@@ -163,7 +130,10 @@ class Plan extends Component {
 										key={key}
 										title={title}
 										isComplete={complete}
-										handleIconClick={null}
+										handleIconClick={handleContentCheck.bind(this, {
+											contentIndex: i,
+											complete: !complete
+										})}
 										link={null}
 									/>
 								)
@@ -224,6 +194,7 @@ class Plan extends Component {
 							day,
 							daySegments,
 							progressDays,
+							progressString,
 							actionsNode: <div />,
 							planLinkNode,
 							isSubscribed: !!subscription_id,

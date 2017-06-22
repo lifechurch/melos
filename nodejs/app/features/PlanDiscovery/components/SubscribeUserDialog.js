@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
 
-import getCreatedDT from '../../../lib/getCreatedDT'
+import getCurrentDT from '../../../lib/getCurrentDT'
 import plansAPI from '@youversion/api-redux/src/endpoints/plans'
 import Menu from '../../../components/Menu'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
@@ -27,7 +27,7 @@ class SubscribeUserDialog extends Component {
 				if (!isSubscribed) {
 					dispatch(plansAPI.actions.subscriptions.post({}, {
 						body: {
-							created_dt: getCreatedDT(),
+							created_dt: getCurrentDT(),
 							plan_id: id,
 							privacy: subscribeContext,
 						},

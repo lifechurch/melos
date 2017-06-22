@@ -12,6 +12,7 @@ function PlanDay(props) {
 		day,
 		start_dt,
 		progressDays,
+		progressString,
 		planLinkNode,
 		totalDays,
 		isSubscribed,
@@ -76,7 +77,11 @@ function PlanDay(props) {
 											link={startLink}
 										/>
 									</div>
-									<div>This progress status is going to be pulled from the new progress api call</div>
+									<p>
+										<FormattedHTMLMessage id='plans.which day in plan' values={{ day, total: totalDays }} />
+										&nbsp;&bull;&nbsp;
+										{ progressString }
+									</p>
 								</div> :
 								<p>
 									<FormattedHTMLMessage id='plans.which day in plan' values={{ day, total: totalDays }} />
