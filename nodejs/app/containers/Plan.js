@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import rtlDetect from 'rtl-detect'
 import Immutable from 'immutable'
 // actions
-import subscriptionDay from '@youversion/api-redux/src/batchedActions/subscriptionDay'
-import plansAPI from '@youversion/api-redux/src/endpoints/plans'
+import subscriptionDay from '@youversion/api-redux/lib/batchedActions/subscriptionDay'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // models
-import getSubscriptionModel from '@youversion/api-redux/src/models/subscriptions'
-import getPlansModel from '@youversion/api-redux/src/models/readingPlans'
+import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
+import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 // selectors
 // utils
 import { calcCurrentPlanDay, isDayComplete } from '../lib/readingPlanUtils'

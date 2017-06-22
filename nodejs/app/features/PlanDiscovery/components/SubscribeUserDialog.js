@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
 
 import getCurrentDT from '../../../lib/getCurrentDT'
-import plansAPI from '@youversion/api-redux/src/endpoints/plans'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import Menu from '../../../components/Menu'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 

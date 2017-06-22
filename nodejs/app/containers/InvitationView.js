@@ -4,13 +4,13 @@ import { routeActions } from 'react-router-redux'
 import moment from 'moment'
 import { FormattedMessage } from 'react-intl'
 // actions
-import readingPlansAction from '@youversion/api-redux/src/endpoints/readingPlans/action'
-import participantsView from '@youversion/api-redux/src/batchedActions/participantsUsersView'
-import plansAPI, { getTogether } from '@youversion/api-redux/src/endpoints/plans'
+import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
+import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
 // models
-import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/src/models'
+import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
 // selectors
-import { getPlanById } from '@youversion/api-redux/src/endpoints/readingPlans/reducer'
+import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 // utils
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'

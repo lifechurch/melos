@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
-import { getAuth } from '@youversion/api-redux/src/models'
-import plansAPI from '@youversion/api-redux/src/endpoints/plans'
+import { getAuth } from '@youversion/api-redux/lib/models'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 
 class TogetherInvitationActions extends Component {
 

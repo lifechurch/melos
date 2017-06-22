@@ -3,7 +3,7 @@ import moment from 'moment'
 
 import type from './constants'
 import BibleActionCreator from '../../Bible/actions/creators'
-import UsersActionCreator from '@youversion/api-redux/src/endpoints/users/action'
+import UsersActionCreator from '@youversion/api-redux/lib/endpoints/users/action'
 
 const ActionCreators = {
 
