@@ -109,16 +109,16 @@ class Plan extends Component {
 			progressDays = subscription.days ?
 											subscription.days :
 											null
-			this.dayProgress = progressDays && progressDays[day - 1] ?
-													progressDays[day - 1] :
+			this.dayProgress = progressDays && progressDays[this.currentDay - 1] ?
+													progressDays[this.currentDay - 1] :
 													null
 			progressString = subscription.overall ?
 												subscription.overall.progress_string :
 												null
 		}
 		if (plan && plan.days) {
-			this.daySegments = plan.days && plan.days[day - 1] ?
-													plan.days[day - 1].segments :
+			this.daySegments = plan.days && plan.days[this.currentDay - 1] ?
+													plan.days[this.currentDay - 1].segments :
 													null
 		}
 
