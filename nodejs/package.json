@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/api-redux": "^0.2.0",
+    "@youversion/api-redux": "^0.2.1",
     "@youversion/js-api": "^0.0.94",
     "@youversion/token-storage": "^0.0.36",
     "async": "^2.0.0-rc.3",
