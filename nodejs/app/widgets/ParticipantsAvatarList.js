@@ -45,7 +45,7 @@ class ParticipantsAvatarList extends Component {
 						<div className='vertical-center item' key={participant.id} style={{ marginRight: '10px' }}>
 							<User
 								avatarLetter={participant.first_name ? participant.first_name.charAt(0) : null}
-								src={avatarSrc}
+								src={participant && participant.has_avatar ? avatarSrc : null}
 								width={avatarWidth}
 							/>
 						</div>
