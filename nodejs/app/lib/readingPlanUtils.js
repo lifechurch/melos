@@ -5,7 +5,7 @@ import BibleActionCreators from '../features/Bible/actions/creators'
 
 /**
  * Determines if final reading content for a
- * specific reading plan day.
+ * specific reading plan day based on the list of bools for segment progress.
  *
  * @return     {boolean}  True if final reading content, False otherwise.
  */

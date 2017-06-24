@@ -3,6 +3,13 @@ import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 import moment from 'moment'
+import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
+import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
+import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
+import getTogetherModel from '@youversion/api-redux/lib/models/together'
+import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 import List from '../components/List'
@@ -11,13 +18,7 @@ import TogetherInvitationActions from '../widgets/TogetherInvitationActions'
 import ProgressBar from '../components/ProgressBar'
 import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'
 import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
-import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
-import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
-import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
-import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
-import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
-import getTogetherModel from '@youversion/api-redux/lib/models/together'
-import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
+
 
 function loadPlanItems({ plan_id, together_id, auth, dispatch }) {
 	dispatch(readingPlansAction({
@@ -95,7 +96,7 @@ class PlanListView extends Component {
 
 		let link, src, subContent, dayString
 		if (start_dt && plan && 'id' in plan) {
-			src = selectImageFromList({ images: plan.images, width: 160, height: 160 }).url
+			src = plan.images ? selectImageFromList({ images: plan.images, width: 160, height: 160 }).url : null
 			// plans together have different day strings
 			if (together_id) {
 				if (invitations.indexOf(together_id) > -1) {
@@ -139,7 +140,7 @@ class PlanListView extends Component {
 
 		return (
 			<PlanListItem
-				key={`${plan_id}.${start_dt}`}
+				key={`${plan_id}.${subscription_id}`}
 				src={src}
 				name={(plan && 'name' in plan) ? (plan.name[language_tag] || plan.name.default) : null}
 				link={link}

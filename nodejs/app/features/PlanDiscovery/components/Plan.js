@@ -87,11 +87,13 @@ class Plan extends Component {
 
 			// get other plan info
 			planTitle = plan.name[language_tag] || plan.name.default
-			planImgSrc = selectImageFromList({
+			planImgSrc = plan.images ?
+			selectImageFromList({
 				images: plan.images,
 				width: 640,
 				height: 320
-			}).url
+			}).url :
+			null
 			plan_id = plan.id
 			totalDays = plan.total_days
 
