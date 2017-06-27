@@ -108,6 +108,24 @@ const Routes = {
 
 		return route.get()
 	},
+	subscriptionDayComplete: ({ username, plan_id, slug, day, subscription_id, query = null }) => {
+
+		const route = new Route({
+			path: `/users/${username}/reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}/completed`,
+			query,
+		})
+
+		return route.get()
+	},
+	sharedDayComplete: ({ plan_id, slug, day, subscription_id, query = null }) => {
+
+		const route = new Route({
+			path: `reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}/completed`,
+			query,
+		})
+
+		return route.get()
+	},
 
 	// plans ---------------------------------------------------------------------
 	plans: ({ query = null }) => {

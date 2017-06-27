@@ -4,6 +4,7 @@ import rtlDetect from 'rtl-detect'
 import Immutable from 'immutable'
 // actions
 import subscriptionDay from '@youversion/api-redux/lib/batchedActions/subscriptionDay'
+import subscriptionDayUpdate from '@youversion/api-redux/lib/batchedActions/subscriptionDayUpdate'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // models
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
@@ -54,37 +55,15 @@ class Plan extends Component {
 	}
 
 	OnContentCheck = ({ contentIndex, complete }) => {
-		const { dispatch, params: { subscription_id } } = this.props
-		let partial
-		// if we already have a completion list, set the new complete val
-		if (this.dayProgress.partial) {
-			partial = Immutable
-			.fromJS(this.dayProgress.partial)
-			.set(contentIndex, complete)
-			.toJS()
-		} else {
-		// otherwise, we need to build out the list based off of the daysegments and
-		// set the new complete val
-			partial = this.daySegments.map((seg, i) => {
-				// set the other segments to whether or not the day was complete
-				// (if it was complete and now we're unchecking a seg, then we want
-				// the other segs to be true, and vice versa)
-				return contentIndex === i ?
-								complete :
-								this.dayProgress.complete
-			})
-		}
+		const { params: { day, subscription_id }, dispatch } = this.props
 
-		dispatch(plansAPI.actions.progressDay.put({
-			id: subscription_id,
-			day: this.currentDay,
-		}, {
-			body: {
-				partial,
-				complete: isDayComplete(partial),
-				updated_dt: getCurrentDT(),
-			},
-			auth: true,
+		dispatch(subscriptionDayUpdate({
+			contentIndex,
+			complete,
+			daySegments: this.daySegments,
+			dayProgress: this.dayProgress,
+			subscription_id,
+			day
 		}))
 	}
 
@@ -116,11 +95,9 @@ class Plan extends Component {
 												subscription.overall.progress_string :
 												null
 		}
-		if (plan && plan.days) {
-			this.daySegments = plan.days && plan.days[this.currentDay - 1] ?
-													plan.days[this.currentDay - 1].segments :
-													null
-		}
+		this.daySegments = plan && plan.days && plan.days[this.currentDay - 1] ?
+												plan.days[this.currentDay - 1].segments :
+												null
 
 		return (
 			<PlanComponent
@@ -176,4 +153,3 @@ Plan.propTypes = {
 }
 
 export default connect(mapStateToProps, null)(Plan)
-// export default Plan

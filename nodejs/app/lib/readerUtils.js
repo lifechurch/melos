@@ -248,5 +248,5 @@ export function buildCopyright(formatMessage, version) {
 }
 
 export function getBibleVersionFromStorage() {
-	return cookie.load('version') || cookie.load('alt_version') || 1
+	return cookie.load('version') || cookie.load('alt_version') || 59
 }

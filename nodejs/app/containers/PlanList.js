@@ -42,6 +42,13 @@ class PlanListView extends Component {
 		const { dispatch, auth } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 		// get any invites we have
+		this.getInvitations()
+		// get actual subscriptions
+		this.getSubs()
+	}
+
+	getInvitations = () => {
+		const { dispatch, auth } = this.props
 		dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
@@ -53,8 +60,6 @@ class PlanListView extends Component {
 				}
 			}
 		})
-		// get actual subscriptions
-		this.getSubs()
 	}
 
 	getSubs = () => {
@@ -151,7 +156,7 @@ class PlanListView extends Component {
 
 	render() {
 		const { subscriptions, together, invitations, auth, route: { view }, localizedLink } = this.props
-		console.log('invitations>>>>', invitations);
+
 		let backButton = null
 		const plansList = []
 		switch (view) {
@@ -160,8 +165,7 @@ class PlanListView extends Component {
 				if (invitations && together && together.allIds.length > 0) {
 					invitations.forEach((id) => {
 						const resource = together.byId[id]
-						console.log('invitation id', id, together.byId, resource);
-						if (resource) {
+						if (resource && resource.plan_id) {
 							plansList.push(
 								<div key={`${id}.${resource.plan_id}`}>
 									{
@@ -171,7 +175,13 @@ class PlanListView extends Component {
 											start_dt: resource.start_dt,
 										})
 									}
-									<TogetherInvitationActions together_id={id} handleActionComplete={this.getSubs} />
+									<TogetherInvitationActions
+										together_id={id}
+										handleActionComplete={() => {
+											this.getInvitations()
+											this.getSubs()
+										}}
+									/>
 								</div>
 							)
 						}
@@ -181,7 +191,7 @@ class PlanListView extends Component {
 				if (subscriptions && subscriptions.allIds.length > 0) {
 					subscriptions.allIds.forEach((id) => {
 						const sub = subscriptions.byId[id]
-						if (sub) {
+						if (sub && sub.plan_id) {
 							plansList.push(this.renderListItem({
 								plan_id: sub.plan_id,
 								together_id: sub.together_id,
@@ -269,10 +279,18 @@ function mapStateToProps(state) {
 }
 
 PlanListView.propTypes = {
+	subscriptions: PropTypes.object.isRequired,
+	readingPlans: PropTypes.object.isRequired,
+	together: PropTypes.object.isRequired,
+	invitations: PropTypes.array,
 	auth: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
+}
+
+PlanListView.defaultProps = {
+	invitations: null,
 }
 
 export default connect(mapStateToProps, null)(PlanListView)

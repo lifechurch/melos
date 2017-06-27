@@ -48,7 +48,7 @@ class ProgressBar extends Component {
 			borderRadius: '5px 0 0 5px',
 			width: '100%',
 			transform: progressTransform,
-			transition: `transform ${transitionSpeed}s cubic-bezier(0.42,1,.16,.93)`,
+			transition: `transform ${transitionSpeed}s cubic-bezier(0.42, 1, .16, .93)`,
 		}
 
 		return (

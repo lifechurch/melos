@@ -1,6 +1,5 @@
 import moment from 'moment'
 import Immutable from 'immutable'
-import ActionCreators from '../features/PlanDiscovery/actions/creators'
 import BibleActionCreators from '../features/Bible/actions/creators'
 
 /**
@@ -15,10 +14,25 @@ export function isDayComplete(dayProgress) {
 	return !(Immutable.List(dayProgress).includes(false))
 }
 
-export function isPlanComplete(day, progressDays, total_days) {
+export function isFinalSegment(segIndex, dayProgress) {
+	if (!dayProgress) return false
+	let isFinal = true
+	dayProgress.forEach((segComplete, i) => {
+		// if any of the segments we're not currently on is not complete, than this
+		// seg is not the final reading for the day
+		if (i !== parseInt(segIndex, 10) && !segComplete) {
+			isFinal = false
+		}
+	})
+	return isFinal
+}
+
+export function isFinalPlanDay(day, progressDays) {
+	if (!day || !progressDays) return false
+
 	const dayNum = parseInt(day, 10)
 	const planDay = progressDays[dayNum - 1]
-	const totalDays = parseInt(total_days, 10)
+	const totalDays = parseInt(progressDays.length, 10)
 
 	// if the day we're on is already completed, and the plan isn't completed yet
 	// then this isn't the last uncompleted day in the plan
@@ -41,42 +55,6 @@ export function isPlanComplete(day, progressDays, total_days) {
 	return true
 }
 
-
-
-export function handleRefUpdate(
-	completedRefs,
-	isDevo,
-	hasDevo,
-	devoCompleted,
-	currentRef,
-	complete,
-	planId,
-	dayNum,
-	dispatch
-) {
-	const references = completedRefs
-	let completeDevo = true
-	// devotional is true by default if there is no devotional
-	// otherwise this will overwrite with the correct value
-	if (hasDevo) {
-		completeDevo = (isDevo && complete) || devoCompleted
-	}
-	// if we have a reference, that we're reading through,
-	// add it to the list of completedRefs
-	if (currentRef && complete) {
-		references.push(currentRef)
-	} else if (currentRef) {
-		references.splice(references.indexOf(currentRef), 1)
-	}
-
-	// make api call
-	dispatch(ActionCreators.updatePlanDay({
-		id: planId,
-		day: dayNum,
-		references,
-		devotional: completeDevo,
-	}, true))
-}
 
 
 /**

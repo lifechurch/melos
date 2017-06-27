@@ -40,7 +40,7 @@ class PlanDaySlider extends Component {
 			centerMode: false,
 			infinite: false,
 			variableWidth: true,
-			slidesToScroll: 5,
+			slidesToScroll: 4,
 			slidesToShow: 1,
 			autoPlay: false,
 			rtl: isRtl,

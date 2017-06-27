@@ -1,14 +1,40 @@
-import React, { Component } from 'react'
+import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import rtlDetect from 'rtl-detect'
+import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import plansAPI, { getProgressById } from '@youversion/api-redux/lib/endpoints/plans'
+import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
+import Routes from '../lib/routes'
+import { selectImageFromList, PLAN_DEFAULT } from '../lib/imageUtil'
+import LazyImage from '../components/LazyImage'
 import StackedContainer from '../components/StackedContainer'
 import CheckMark from '../components/CheckMark'
 import ProgressBar from '../components/ProgressBar'
 import Share from '../features/Bible/components/verseAction/share/Share'
 
+
 class DayCompleteView extends Component {
+	componentDidMount() {
+		const { dispatch, params: { id, subscription_id }, plan } = this.props
+
+		if (!plan) {
+			dispatch(readingPlansAction({
+				method: 'view',
+				params: {
+					id: id.split('-')[0],
+				},
+			}))
+		}
+
+		dispatch(plansAPI.actions.progress.get({
+			id: subscription_id,
+			fields: 'overall'
+		}, {
+			auth: true
+		}))
+	}
 
 	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
@@ -28,17 +54,47 @@ class DayCompleteView extends Component {
 	}
 
 	render() {
-		const { params: { id, day }, plans, auth } = this.props
-		const plan = plans[id.split('-')[0]]
-		if (!plan) return <div />
+		const { params: { id, day, subscription_id }, plan, progress, auth } = this.props
 
 		const backImgStyle = {
-			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${plan.images ? plan.images[4].url : 'https://s3.amazonaws.com/yvplans-staging/default/720x405.jpg'})`
+			backgroundImage: `
+				linear-gradient(
+					rgba(0, 0, 0, 0.5),
+					rgba(0, 0, 0, 0.5)),
+					url(${
+						plan && plan.images ?
+							selectImageFromList({
+								images: plan.images,
+								width: 720,
+								height: 405
+							}).url :
+							null
+					})`
 		}
 
-		const nextLink = 	(parseInt(day, 10) + 1) <= plan.total_days ?
-								`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}/day/${parseInt(day, 10) + 1}` :
-								`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}/day/1`
+		const username = auth && auth.userData ? auth.userData.username : null
+		const userid = auth && auth.userData ? auth.userData.userid : null
+		const plan_id = id.split('-')[0]
+		const slug = id.split('-')[1]
+		const dayNum = parseInt(day, 10)
+		const totalDays = plan ? plan.total_days : null
+		const nextLink = 	(dayNum + 1) <= totalDays ?
+												Routes.subscriptionDay({
+													username,
+													plan_id,
+													slug,
+													subscription_id,
+													day: dayNum + 1
+												}) :
+												Routes.subscriptionDay({
+													username,
+													plan_id,
+													slug,
+													subscription_id,
+													day: 1
+												})
+
+
 		return (
 			<div className='rp-completed-view'>
 				<div className='completed-header'>
@@ -46,7 +102,7 @@ class DayCompleteView extends Component {
 						<FormattedMessage id="plans.day complete" />
 					</h6>
 					<div className='plan-length-header horizontal-center'>
-						<FormattedMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
+						<FormattedMessage id="plans.which day in plan" values={{ day, total: totalDays }} />
 					</div>
 				</div>
 				<StackedContainer width={'100%'} height={'380px'}>
@@ -58,11 +114,25 @@ class DayCompleteView extends Component {
 							</Link>
 						</div>
 						<div className='row horizontal-center vertical-center'>
-							<img alt='reading plan' src={plan.images ? plan.images[7].url : 'https://s3.amazonaws.com/yvplans-staging/default/720x405.jpg'} height={160} width={310} />
+							<LazyImage
+								alt='plan-image'
+								src={
+									plan && plan.images ?
+									selectImageFromList({
+										images: plan.images,
+										width: 310,
+										height: 160
+									}).url :
+									null
+								}
+								width={310}
+								height={160}
+								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
+							/>
 						</div>
 						<div className='row horizontal-center vertical-center'>
 							<ProgressBar
-								percentComplete={plan.completion_percentage}
+								percentComplete={progress ? progress.completion_percentage * 100 : null}
 								width={'250px'}
 								height={'10px'}
 								isRtl={this.isRtl()}
@@ -74,8 +144,17 @@ class DayCompleteView extends Component {
 					{
 						typeof window !== 'undefined' ?
 							<Share
-								text={plan.name.default}
-								url={this.localizedLink(`${window.location.origin}/reading-plans/${plan.id}-${plan.slug}/day/${day}/completed?user_id=${auth.userData.userid}`)}
+								text={plan && plan.name ? plan.name.default : null}
+								url={this.localizedLink(
+									Routes.sharedDayComplete({
+										username,
+										plan_id,
+										slug,
+										query: {
+											userid
+										}
+									})
+								)}
 								button={
 									<button className='solid-button share-button'>
 										<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
@@ -86,7 +165,7 @@ class DayCompleteView extends Component {
 					}
 				</div>
 				<div className='row horizontal-center vertical-center'>
-					<Link to={this.localizedLink(`/users/${auth.userData.username}/reading-plans`)} className='small-font'>
+					<Link to={this.localizedLink(Routes.subscriptions({ username }))} className='small-font'>
 						<FormattedMessage id="plans.widget.view my plans" />
 					</Link>
 					&nbsp;
@@ -102,13 +181,29 @@ class DayCompleteView extends Component {
 	}
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, props) {
+	const { params: { id, subscription_id } } = props
+	const plan_id = id.split('-')[0]
+
 	return {
-		plans: state.readingPlans && state.readingPlans.fullPlans && state.readingPlans.fullPlans ? state.readingPlans.fullPlans : null,
+		plan: getPlanById(state, plan_id),
+		progress: getProgressById(state, subscription_id) ?
+							getProgressById(state, subscription_id).data.overall :
+							null,
 		auth: state.auth,
 		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag
 	}
 }
+
+DayCompleteView.propTypes = {
+	plan: PropTypes.object.isRequired,
+	progress: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	params: PropTypes.object.isRequired,
+	auth: PropTypes.object.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
+}
+
 
 export default connect(mapStateToProps, null)(DayCompleteView)
