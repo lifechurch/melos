@@ -182,7 +182,7 @@ class InvitePWF extends Component {
 						</div>
 					</div>
 				</div>
-				<div className='gray-background content'>
+				<div className='gray-background content' style={{ minHeight: '450px' }}>
 					<div className='columns medium-5 small-12 small-centered '>
 						{/* <div className='horizontal-center' style={{ marginBottom: '20px' }}>
 							<ButtonBar
@@ -232,8 +232,8 @@ class InvitePWF extends Component {
 				<div className='columns medium-8 small-12 small-centered' style={{ padding: '25px 0' }}>
 					<div className='text-center'>Or, use this link yall</div>
 					<div className='vertical-center horizontal-center'>
-						<CopyToClipboard className='pointer' text={shareLink}>
-							<div className='share-link yv-text-ellipsis'>{ shareLink }</div>
+						<CopyToClipboard className='pointer share-link yv-text-ellipsis' text={shareLink}>
+							<div onClick={() => { alert('copied!') }}>{ shareLink }</div>
 						</CopyToClipboard>
 						<a>
 							<Share

@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import rtlDetect from 'rtl-detect'
-import Immutable from 'immutable'
+import { routeActions } from 'react-router-redux'
 // actions
 import subscriptionDay from '@youversion/api-redux/lib/batchedActions/subscriptionDay'
 import subscriptionDayUpdate from '@youversion/api-redux/lib/batchedActions/subscriptionDayUpdate'
-import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // models
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 // selectors
 // utils
-import { calcCurrentPlanDay, isDayComplete } from '../lib/readingPlanUtils'
-import getCurrentDT from '../lib/getCurrentDT'
+import { calcCurrentPlanDay, isFinalSegment } from '../lib/readingPlanUtils'
+import Routes from '../lib/routes'
 // components
 import PlanComponent from '../features/PlanDiscovery/components/Plan'
 
@@ -55,7 +54,7 @@ class Plan extends Component {
 	}
 
 	OnContentCheck = ({ contentIndex, complete }) => {
-		const { params: { day, subscription_id }, dispatch } = this.props
+		const { params: { day, subscription_id, id }, dispatch, auth } = this.props
 
 		dispatch(subscriptionDayUpdate({
 			contentIndex,
@@ -65,6 +64,16 @@ class Plan extends Component {
 			subscription_id,
 			day
 		}))
+
+		if (isFinalSegment(contentIndex, this.dayProgress.partial)) {
+			dispatch(routeActions.push(Routes.subscriptionDayComplete({
+				username: auth.userData.username,
+				plan_id: id.split('-')[0],
+				slug: id.split('-')[1],
+				subscription_id,
+				day,
+			})))
+		}
 	}
 
 	render() {
