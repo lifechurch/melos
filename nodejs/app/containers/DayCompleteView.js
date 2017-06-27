@@ -56,20 +56,19 @@ class DayCompleteView extends Component {
 	render() {
 		const { params: { id, day, subscription_id }, plan, progress, auth } = this.props
 
+		const imgSrc = plan && plan.images ?
+								selectImageFromList({
+									images: plan.images,
+									width: 720,
+									height: 405
+								}).url :
+								null
 		const backImgStyle = {
 			backgroundImage: `
 				linear-gradient(
 					rgba(0, 0, 0, 0.5),
 					rgba(0, 0, 0, 0.5)),
-					url(${
-						plan && plan.images ?
-							selectImageFromList({
-								images: plan.images,
-								width: 720,
-								height: 405
-							}).url :
-							null
-					})`
+					url(${imgSrc})`
 		}
 
 		const username = auth && auth.userData ? auth.userData.username : null
@@ -116,15 +115,7 @@ class DayCompleteView extends Component {
 						<div className='row horizontal-center vertical-center'>
 							<LazyImage
 								alt='plan-image'
-								src={
-									plan && plan.images ?
-									selectImageFromList({
-										images: plan.images,
-										width: 310,
-										height: 160
-									}).url :
-									null
-								}
+								src={imgSrc}
 								width={310}
 								height={160}
 								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
@@ -134,7 +125,7 @@ class DayCompleteView extends Component {
 							<ProgressBar
 								percentComplete={progress ? progress.completion_percentage * 100 : null}
 								width={'250px'}
-								height={'10px'}
+								height={'9px'}
 								isRtl={this.isRtl()}
 							/>
 						</div>

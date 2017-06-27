@@ -1,10 +1,10 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
-import CreatePWF from '../features/PlanDiscovery/components/CreatePWF'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
+import CreatePWF from '../features/PlanDiscovery/components/CreatePWF'
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 
@@ -54,7 +54,13 @@ class CreatePWFView extends Component {
 	render() {
 		const { plan } = this.props
 
-		const src = plan ? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url : ''
+		const src = plan && plan.images ?
+									selectImageFromList({
+										images: plan.images,
+										width: 720,
+										height: 405
+									}).url :
+									null
 
 		return (
 			<CreatePWF
@@ -70,7 +76,7 @@ class CreatePWFView extends Component {
 function mapStateToProps(state, props) {
 	const { params: { id } } = props
 	return {
-		plan: getPlanById(state, id),
+		plan: getPlanById(state, id.split('-')[0]),
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag
 	}

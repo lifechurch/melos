@@ -180,6 +180,7 @@ function Plan({
 						React.cloneElement(children, {
 							id: plan_id,
 							plan,
+							start_dt,
 							dispatch,
 							auth,
 							refListNode: refsDiv,

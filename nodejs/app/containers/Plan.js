@@ -119,6 +119,7 @@ class Plan extends Component {
 				dayProgress={this.dayProgress}
 				daySegments={this.daySegments}
 				progressString={progressString}
+				start_dt={subscription ? subscription.start_dt : null}
 				subscription_id={subscription ? subscription.id : null}
 				handleContentCheck={this.OnContentCheck}
 			>

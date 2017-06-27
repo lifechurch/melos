@@ -115,13 +115,13 @@ class PlanReaderView extends Component {
 			subscription_id,
 		})
 
-		const contentNum = parseInt(content, 10)
+		this.contentNum = parseInt(content, 10)
 		// figure out nav links for previous
-		if (contentNum === 0) {
+		if (this.contentNum === 0) {
 			previous = subDayLink
 		} else {
 			// previous content
-			previous = `${subDayLink}/segment/${contentNum - 1}`
+			previous = `${subDayLink}/segment/${this.contentNum - 1}`
 		}
 
 		// figure out nav links for next
@@ -133,12 +133,12 @@ class PlanReaderView extends Component {
 				// day complete
 				next = `${subDayLink}/completed`
 			}
-		} else if (this.daySegments && contentNum + 1 === this.daySegments.length) {
+		} else if (this.daySegments && this.contentNum + 1 === this.daySegments.length) {
 			// overview page if not last remaining ref, and is last ref in order
 			next = subDayLink
 		} else {
 			// next content
-			next = `${subDayLink}/segment/${contentNum + 1}`
+			next = `${subDayLink}/segment/${this.contentNum + 1}`
 		}
 
 		return { previous, next, subLink }
@@ -203,6 +203,9 @@ class PlanReaderView extends Component {
 					previousPath={previous}
 					nextPath={next}
 					subLink={subLink}
+					day={day}
+					contentNum={this.contentNum + 1}
+					totalSegments={this.daySegments ? this.daySegments.length : null}
 					handleContentCheck={this.onComplete}
 					showCheckmark={this.isFinalSegment}
 					localizedLink={this.localizedLink}
