@@ -14,7 +14,7 @@ class CreatePWFView extends Component {
 		dispatch(readingPlansAction({
 			method: 'view',
 			params: {
-				id,
+				id: id.split('-')[0],
 			},
 		}))
 	}
