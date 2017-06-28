@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react'
+import { FormattedMessage } from 'react-intl'
 import AudioTriggerImage from './AudioTriggerImage'
 import TriggerButton from '../../../../components/TriggerButton'
 import AudioPlayer from './AudioPlayer'
-import { FormattedMessage } from 'react-intl'
-import LocalStore from '../../../../lib/localStore'
 import DropdownTransition from '../../../../components/DropdownTransition'
 
 class AudioPopup extends Component {
@@ -46,20 +45,20 @@ class AudioPopup extends Component {
 
 
 	render() {
-		const { percentComplete, hasStandalone, isOpen } = this.state
 		const { enabled } = this.props
+		const { percentComplete, hasStandalone, isOpen } = this.state
 		// <a onClick={this.openInNewWindow}><FormattedMessage id="Reader.header.audio label" /></a>
 		return (
 			<div className='audio-popup'>
 				<TriggerButton isOpen={isOpen} enabled={enabled} image={<AudioTriggerImage percentComplete={percentComplete} width={35} height={35} />} onClick={this.triggerClick} />
 				<DropdownTransition show={isOpen} classes={'audio-popup-modal'} onOutsideClick={this.closeDropdown} exemptClass='audio-popup'>
-					<div className="header">
+					<div className='header'>
 						<a className='cancel' onClick={this.closeDropdown}>
-							<FormattedMessage id="Reader.header.cancel" />
+							<FormattedMessage id='Reader.header.cancel' />
 						</a>
-						<FormattedMessage id="Reader.header.audio label" />
+						<FormattedMessage id='Reader.header.audio label' />
 					</div>
-					<div className="body">
+					<div className='body'>
 						<AudioPlayer {...this.props} onTimeChange={this.handleTimeChange} hasStandalone={hasStandalone} onResumeFromStandalone={this.handleResumeFromStandalone} />
 					</div>
 				</DropdownTransition>
@@ -69,8 +68,9 @@ class AudioPopup extends Component {
 }
 
 AudioPopup.propTypes = {
-	audio: React.PropTypes.object.isRequired,
-	hosts: React.PropTypes.object.isRequired
+	audio: PropTypes.object.isRequired,
+	hosts: PropTypes.object.isRequired,
+	enabled: PropTypes.bool.isRequired,
 }
 
 AudioPopup.defaultProps = {

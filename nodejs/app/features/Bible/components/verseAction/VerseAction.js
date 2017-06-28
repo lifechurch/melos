@@ -1,14 +1,13 @@
 import React, { Component, PropTypes } from 'react'
-import ColorList from './ColorList'
 import { FormattedMessage, injectIntl } from 'react-intl'
+import CopyToClipboard from 'react-copy-to-clipboard'
+import ColorList from './ColorList'
 import ButtonBar from '../../../../components/ButtonBar'
 import DropdownTransition from '../../../../components/DropdownTransition'
-import TriggerButton from '../../../../components/TriggerButton'
 import ShareWidget from './share/Share'
-import CopyToClipboard from 'react-copy-to-clipboard'
 import ActionCreators from '../../actions/creators'
-import CustomScroll from 'react-custom-scroll'
 import MomentCreate from './MomentCreate'
+
 
 class VerseAction extends Component {
 	constructor(props) {
@@ -21,32 +20,51 @@ class VerseAction extends Component {
 		this.closeMe = ::this.closeMe
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const { selection: { human } } = nextProps
+		if (!(typeof human === 'string' && human.length > 0)) {
+			setTimeout(this.closeMe, 100)
+			setTimeout(() => { this.forceUpdate() }, 1000)
+		}
+	}
+
+	shouldComponentUpdate(nextProps) {
+		const { selection: { human: nextHuman } } = nextProps
+		const { selection: { human: currHuman } } = this.props
+
+		const shouldIUpdate = nextHuman !== currHuman && typeof nextHuman !== 'undefined' && nextHuman.length > 0
+
+		if (shouldIUpdate && (typeof currHuman === 'undefined' || currHuman.length === 0)) {
+			setTimeout(() => { this.openMe() }, 100)
+			setTimeout(() => { this.forceUpdate() }, 1000)
+			return false
+		} else if (typeof nextHuman === 'undefined' || nextHuman.length === 0) {
+			return false
+		} else {
+			return true
+		}
+	}
+
 	handleActionClick(e) {
 		const { dispatch, auth, selection: { verses }, version: { id, local_abbreviation } } = this.props
-
+		const isMoment = (e.value === 'note' || e.value === 'bookmark')
 		// if we're not logged in and try to make an auth'd moment
-		if (!auth.isLoggedIn && (e.value == 'note' || e.value == 'bookmark')) {
+		if (!(auth && auth.isLoggedIn) && isMoment) {
 			this.setState({
 				momentContainerOpen: !this.state.momentContainerOpen,
 				momentKind: e.value,
 			})
 			this.closeMe()
-		} else {
-			switch (e.value) {
-				case 'note':
-				case 'bookmark':
-					dispatch(ActionCreators.bibleVerses({
-						id,
-						references: verses,
-						format: 'html',
-					}, { local_abbreviation }))
-					this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
-					// hide the modal on moment create
-					this.closeMe()
-
-			}
+		} else if (isMoment) {
+			dispatch(ActionCreators.bibleVerses({
+				id,
+				references: verses,
+				format: 'html',
+			}, { local_abbreviation }))
+			this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
+			// hide the modal on moment create
+			this.closeMe()
 		}
-
 	}
 
 	handleMomentContainerClose = (closeVerseAction = false) => {
@@ -82,7 +100,7 @@ class VerseAction extends Component {
 
 		// tell the moment create what kind of message to display for having a user
 		// log in, if they aren't already
-		if (!auth.isLoggedIn) {
+		if (!(auth && auth.isLoggedIn)) {
 			this.setState({ momentKind: 'highlight', momentContainerOpen: !this.state.momentContainerOpen })
 			this.closeMe()
 		} else {
@@ -103,7 +121,7 @@ class VerseAction extends Component {
 		// only the verses that match the color x that was clicked
 		verses.forEach((selectedVerse) => {
 			verseColors.forEach((colorVerse) => {
-				if (selectedVerse == colorVerse[0] && colorVerse[1] == color) {
+				if (selectedVerse === colorVerse[0] && colorVerse[1] === color) {
 					versesToDelete.push(selectedVerse)
 				}
 			})
@@ -120,30 +138,7 @@ class VerseAction extends Component {
 		})
 	}
 
-	componentWillReceiveProps(nextProps) {
-		const { selection: { human } } = nextProps
-		if (!(typeof human === 'string' && human.length > 0)) {
-			setTimeout(this.closeMe, 100)
-			setTimeout(() => { this.forceUpdate() }, 1000)
-		}
-	}
 
-	shouldComponentUpdate(nextProps) {
-		const { selection: { human: nextHuman } } = nextProps
-		const { selection: { human: currHuman } } = this.props
-
-		const shouldIUpdate = nextHuman !== currHuman && typeof nextHuman !== 'undefined' && nextHuman.length > 0
-
-		if (shouldIUpdate && (typeof currHuman === 'undefined' || currHuman.length === 0)) {
-			setTimeout(() => { this.openMe() }, 100)
-			setTimeout(() => { this.forceUpdate() }, 1000)
-			return false
-		} else if (typeof nextHuman === 'undefined' || nextHuman.length === 0) {
-			return false
-		} else {
-			return true
-		}
-	}
 
 	render() {
 		const {
@@ -211,7 +206,7 @@ class VerseAction extends Component {
 						// changing the key will cause a rerender for all children
 						// resetting all local state
 						key={momentContainerOpen}
-						isLoggedIn={auth.isLoggedIn}
+						isLoggedIn={auth && auth.isLoggedIn}
 						kind={momentKind}
 						verses={verses}
 						references={references}

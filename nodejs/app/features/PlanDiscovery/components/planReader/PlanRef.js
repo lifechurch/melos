@@ -109,7 +109,7 @@ class PlanRef extends Component {
 		const planRefHeading = (
 			<div className='plan-reader-heading'>
 				<div className='ref-heading'>
-					{`${refHeading} ${version.local_abbreviation.toUpperCase()}`}
+					{`${refHeading} ${version ? version.local_abbreviation.toUpperCase() : ''}`}
 				</div>
 				<AudioPopup
 					audio={audio}
@@ -151,7 +151,10 @@ class PlanRef extends Component {
 					textDirection={textDirection}
 					ref={(chapter) => { this.chapterInstance = chapter }}
 				/>
-				<ChapterCopyright {...buildCopyright(intl.formatMessage, version)} />
+				{
+					version &&
+					<ChapterCopyright {...buildCopyright(intl.formatMessage, version)} />
+				}
 				{ fullChapButton }
 				<VerseAction
 					// props
