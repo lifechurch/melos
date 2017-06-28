@@ -196,6 +196,11 @@
     //line-height: 1.5em
     line-height: $reader_line_height;
   }
+  .iq4, .q4, .qm4 {
+    padding-left: 3.5em;
+    //line-height: 1.5em
+    line-height: $reader_line_height;
+  }
   .lb, .b {
     line-height: $reader_line_height;
     height: 1em;
@@ -249,6 +254,9 @@
   }
   .q2, .q3 {
     text-indent: 2em;
+  }
+  .q4 {
+    text-indent: 3em;
   }
   //Footnote additional paragraph
   .fp {
