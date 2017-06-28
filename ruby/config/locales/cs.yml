@@ -1280,12 +1280,12 @@ cs:
             cta: "Číst Bibli"
             experience: 
                 title: "Dostupná"
-                body: "Na počítači, telefonu či tabletu si můžete vybrat z více než 1200 překladů v celkem 900 jazycích. Mnoho z nich je dostupných také v audio verzi."
+                body: "Na počítači, telefonu či tabletu si můžete vybrat z více než 1200 překladů v celkem 900 jazycích. Mnoho z nich je dostupných také v audio verzi."
                 action: "Zobrazit překlady Bible"
             make_yours: 
                 title: "Osobní"
                 body: "Oblíbené verše si můžete zvýraznit, uložit, nebo z nich vytvářet obrázky ke sdílení. K jednotlivým pasážím lze také přidávat veřejné či soukromé poznámky."
-                action: "Vytvořit bezplatný účet"
+                action: "Vytvořit si bezplatný účet"
             install_now: 
                 title: "Aplikace"
                 body: "Aplikace Bible je zcela zdarma. Bez reklam či  plateb v rámci aplikace. Počet instalací k dnešnímu dni:"
@@ -1429,6 +1429,28 @@ cs:
             just now: "právě teď"
         verses selected: "verše vybrány"
     EventsAdmin: 
+        unsubscribe: 
+            links: 
+                manage: "Manage Email Notifications"
+                unsub all: "Unsubscribe from all emails"
+            success: 
+                all: "You successfully unsubscribed from <b>all YouVersion emails</b>"
+                badges: "You successfully unsubscribed from <b>Badges</b>"
+                comments: "You successfully unsubscribed from <b>Comments</b>"
+                friendships: "You successfully unsubscribed from <b>Friendships</b>"
+                likes: "You successfully unsubscribed from <b>Likes</b>"
+                moments: "You successfully unsubscribed from <b>Moments</b>"
+                newsletter: "You successfully unsubscribed from <b>Newsletter</b>"
+                reading_plans: "You successfully unsubscribed from <b>Reading Plans</b>"
+                rp_daily: "You successfully unsubscribed from <b>Reading Plans Daily</b>"
+                votd: "You successfully unsubscribed from <b>Verse of the Day</b>"
+                votd_image: "You successfully unsubscribed from <b>Verse of the Day Image</b>"
+            error: 
+                token: "Invalid token, please sign in to edit your notification settings."
+                type: "Invalid notification type. Manage Email Notifications instead?"
+                one: "Something else went wrong. Manage Email Notifications instead?"
+                few: "Something else went wrong. Manage Email Notifications instead?"
+                other: "Something else went wrong. Manage Email Notifications instead?"
         change: "Změnit"
         ui: 
             yes button: "Ano"

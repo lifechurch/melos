@@ -1399,6 +1399,26 @@ id:
             just now: "baru saja"
         verses selected: "ayat terpilih"
     EventsAdmin: 
+        unsubscribe: 
+            links: 
+                manage: "Manage Email Notifications"
+                unsub all: "Unsubscribe from all emails"
+            success: 
+                all: "You successfully unsubscribed from <b>all YouVersion emails</b>"
+                badges: "You successfully unsubscribed from <b>Badges</b>"
+                comments: "You successfully unsubscribed from <b>Comments</b>"
+                friendships: "You successfully unsubscribed from <b>Friendships</b>"
+                likes: "You successfully unsubscribed from <b>Likes</b>"
+                moments: "You successfully unsubscribed from <b>Moments</b>"
+                newsletter: "You successfully unsubscribed from <b>Newsletter</b>"
+                reading_plans: "You successfully unsubscribed from <b>Reading Plans</b>"
+                rp_daily: "You successfully unsubscribed from <b>Reading Plans Daily</b>"
+                votd: "You successfully unsubscribed from <b>Verse of the Day</b>"
+                votd_image: "You successfully unsubscribed from <b>Verse of the Day Image</b>"
+            error: 
+                token: "Invalid token, please sign in to edit your notification settings."
+                type: "Invalid notification type. Manage Email Notifications instead?"
+                other: "Something else went wrong. Manage Email Notifications instead?"
         change: "Ubah"
         ui: 
             yes button: "Ya"
