@@ -12,6 +12,7 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 // components
+import BibleContent from './BibleContent'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
 import PlanRef from '../features/PlanDiscovery/components/planReader/PlanRef'
@@ -57,30 +58,14 @@ class PlanReaderView extends Component {
 
 
 	componentDidUpdate(prevProps, prevState) {
-		const { params: { content }, dispatch, bible } = this.props
-		// if new content or plan loaded to grab ref for initial load
-		if (
-				(typeof content !== 'undefined' &&
-				typeof prevProps.params.content !== 'undefined' &&
-				content !== prevProps.params.content)
-				||
-				// let's check for the ref we need in bible and make sure it's not
-				// loading
-				(
-					(this.segment &&
-						this.segment.kind === 'reference' &&
-						!this.ref) ||
-					(this.ref &&
-						!this.ref.content &&
-						!this.ref.loading)
-					)
-			) {
+		const { params: { content }, dispatch } = this.props
+
+		const isNewContent = (typeof content !== 'undefined' &&
+													typeof prevProps.params.content !== 'undefined' &&
+													content !== prevProps.params.content)
+
+		if (isNewContent) {
 			this.buildData()
-			if (this.segment.kind === 'reference') {
-				dispatch(bibleReference(this.segment.content))
-				// reset the reader to not show the full chapter on a new reference
-				this.setState({ showFullChapter: false })
-			}
 		}
 	}
 
@@ -91,16 +76,6 @@ class PlanReaderView extends Component {
 		dispatch(routeActions.push())
 			// if audio has completed a ref then keep it playing for the next one
 		this.setState({ audioPlaying: true })
-	}
-
-
-	getReference = (ref) => {
-		const { bible, dispatch } = this.props
-
-		if (!(bible && Immutable.fromJS(bible).hasIn(['references', ref]))) {
-			// dispatch(bibleReference(ref))
-			this.setState({ showFullChapter: true })
-		}
 	}
 
 	onComplete = () => {
@@ -165,7 +140,7 @@ class PlanReaderView extends Component {
 	}
 
 	buildData() {
-		const { params: { day, content }, plan, subscription, bible: { references } } = this.props
+		const { params: { day, content }, plan, subscription } = this.props
 
 		this.daySegments = plan && plan.days && plan.days[day - 1] ?
 												plan.days[day - 1].segments :
@@ -186,13 +161,6 @@ class PlanReaderView extends Component {
 														)
 		}
 		this.isFinalPlanDay = isFinalPlanDay(day, this.progressDays)
-
-		const usfmObj = references && this.segment && this.segment.content in references ?
-										references[this.segment.content] :
-										null
-		this.ref = usfmObj ?
-								usfmObj[Object.keys(usfmObj)[0]] :
-								null
 	}
 
 
@@ -215,7 +183,7 @@ class PlanReaderView extends Component {
 
 				case 'reference':
 					readerContent = (
-						<PlanRef content={this.ref && this.ref.content ? this.ref.content : null} />
+						<BibleContent usfm={this.segment.content} />
 					)
 					break
 
@@ -255,7 +223,6 @@ function mapStateToProps(state, props) {
 	const { params: { id, subscription_id } } = props
 	const plan_id = id.split('-')[0]
 	console.log('PLANS', getPlansModel(state))
-	console.log('BIBLE', getBibleModel(state))
 	return {
 		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId ?
 					getPlansModel(state).byId[plan_id] :
@@ -263,7 +230,6 @@ function mapStateToProps(state, props) {
 		subscription: getSubscriptionModel(state) && subscription_id in getSubscriptionModel(state).byId ?
 									getSubscriptionModel(state).byId[subscription_id] :
 									null,
-		bible: getBibleModel(state),
 		auth: state.auth,
 		hosts: state.hosts,
 	}

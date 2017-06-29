@@ -192,6 +192,11 @@ export function buildMeta(props) {
 	return { link, meta }
 }
 
+export function chapterifyUsfm(usfm) {
+	if (!usfm) return null
+	const usfmParts = usfm.split('.')
+	return usfmParts.slice(0, 2).join('.')
+}
 
 export function isVerseOrChapter(usfm) {
 	const IS_BOOK = /^\d?[a-zA-Z]{2,3}$/

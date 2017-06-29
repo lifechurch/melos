@@ -45,21 +45,43 @@ class AudioPopup extends Component {
 
 
 	render() {
-		const { enabled } = this.props
+		const { enabled, audio, hosts } = this.props
 		const { percentComplete, hasStandalone, isOpen } = this.state
 		// <a onClick={this.openInNewWindow}><FormattedMessage id="Reader.header.audio label" /></a>
 		return (
 			<div className='audio-popup'>
-				<TriggerButton isOpen={isOpen} enabled={enabled} image={<AudioTriggerImage percentComplete={percentComplete} width={35} height={35} />} onClick={this.triggerClick} />
-				<DropdownTransition show={isOpen} classes={'audio-popup-modal'} onOutsideClick={this.closeDropdown} exemptClass='audio-popup'>
+				<TriggerButton
+					isOpen={isOpen}
+					enabled={enabled}
+					image={
+						<AudioTriggerImage
+							percentComplete={percentComplete}
+							width={35}
+							height={35}
+						/>
+					}
+					onClick={this.triggerClick}
+				/>
+				<DropdownTransition
+					classes='audio-popup-modal'
+					exemptClass='audio-popup'
+					show={isOpen}
+					onOutsideClick={this.closeDropdown}
+				>
 					<div className='header'>
-						<a className='cancel' onClick={this.closeDropdown}>
+						<a tabIndex={0} className='cancel' onClick={this.closeDropdown}>
 							<FormattedMessage id='Reader.header.cancel' />
 						</a>
 						<FormattedMessage id='Reader.header.audio label' />
 					</div>
 					<div className='body'>
-						<AudioPlayer {...this.props} onTimeChange={this.handleTimeChange} hasStandalone={hasStandalone} onResumeFromStandalone={this.handleResumeFromStandalone} />
+						<AudioPlayer
+							audio={audio}
+							hosts={hosts}
+							onTimeChange={this.handleTimeChange}
+							hasStandalone={hasStandalone}
+							onResumeFromStandalone={this.handleResumeFromStandalone}
+						/>
 					</div>
 				</DropdownTransition>
 			</div>

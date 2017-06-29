@@ -106,48 +106,30 @@ class PlanRef extends Component {
 			deletableColors,
 		} = this.state
 
-		const planRefHeading = (
-			<div className='plan-reader-heading'>
-				<div className='ref-heading'>
-					{`${refHeading} ${version ? version.local_abbreviation.toUpperCase() : ''}`}
-				</div>
-				<AudioPopup
-					audio={audio}
-					hosts={hosts}
-					enabled={typeof audio !== 'undefined' && audio && 'id' in audio}
-					onAudioComplete={onAudioComplete}
-					// if we're not rendering the entire chapter, the audio should start
-					// at the verse start, otherwise, it starts at the beginning of the chapter
-					startTime={showChapterButton ? audioStart : 0}
-					stopTime={showChapterButton ? audioStop : null}
-					playing={audioPlaying}
-				/>
-			</div>
-		)
-
-		let fullChapButton = null
-		if (showChapterButton) {
-			fullChapButton = (
-				<div className='buttons'>
-					<button className='chapter-button solid-button' onClick={this.handleGetChapter}>
-						<FormattedMessage id='Reader.read chapter' />
-					</button>
-				</div>
-			)
-		}
 
 		return (
 			<div className='plan-ref'>
-				{ planRefHeading }
+				<div className='plan-reader-heading'>
+					<div className='ref-heading'>
+						{`${refHeading} ${version ? version.local_abbreviation.toUpperCase() : ''}`}
+					</div>
+					<AudioPopup
+						audio={audio}
+						hosts={hosts}
+						enabled={typeof audio !== 'undefined' && audio && 'id' in audio}
+						onAudioComplete={onAudioComplete}
+						// if we're not rendering the entire chapter, the audio should start
+						// at the verse start, otherwise, it starts at the beginning of the chapter
+						startTime={showChapterButton ? audioStart : 0}
+						stopTime={showChapterButton ? audioStop : null}
+						playing={audioPlaying}
+					/>
+				</div>
 				<Chapter
 					{...this.props}
 					content={content}
 					verseColors={verseColors}
-					fontSize={USER_READER_SETTINGS.fontSize}
-					fontFamily={USER_READER_SETTINGS.fontFamily}
 					onSelect={this.handleOnVerseSelect}
-					showFootnotes={USER_READER_SETTINGS.showFootnotes}
-					showVerseNumbers={USER_READER_SETTINGS.showVerseNumbers}
 					textDirection={textDirection}
 					ref={(chapter) => { this.chapterInstance = chapter }}
 				/>
@@ -155,7 +137,14 @@ class PlanRef extends Component {
 					version &&
 					<ChapterCopyright {...buildCopyright(intl.formatMessage, version)} />
 				}
-				{ fullChapButton }
+				{
+					showChapterButton &&
+					<div className='buttons'>
+						<button className='chapter-button solid-button' onClick={this.handleGetChapter}>
+							<FormattedMessage id='Reader.read chapter' />
+						</button>
+					</div>
+				}
 				<VerseAction
 					// props
 					{...this.props}

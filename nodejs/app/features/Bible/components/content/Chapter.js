@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { getSelectionString } from '../../../../lib/usfmUtils'
+import {
+	USER_READER_SETTINGS,
+} from '../../../../lib/readerUtils'
 
 const DEFAULT_STATE = { selection: null, selectedClasses: null, selectedText: null }
 
@@ -162,7 +165,7 @@ class Chapter extends Component {
 				<style dangerouslySetInnerHTML={innerStyle} />
 
 				<div
-					className="reader"
+					className='reader'
 					onClick={isSelectable || showFootnotes ? this.handleClick : null}
 					dangerouslySetInnerHTML={innerContent}
 					style={style}
@@ -190,10 +193,18 @@ Chapter.defaultProps = {
 	content: null,
 	onSelect: null,
 	textDirection: null,
-	fontSize: null,
-	fontFamily: null,
-	showFootnotes: true,
-	showVerseNumbers: true,
+	fontSize: USER_READER_SETTINGS ?
+						USER_READER_SETTINGS.fontSize :
+						null,
+	fontFamily: USER_READER_SETTINGS ?
+							USER_READER_SETTINGS.fontFamily :
+							null,
+	showFootnotes: USER_READER_SETTINGS ?
+									USER_READER_SETTINGS.showFootnotes :
+									null,
+	showVerseNumbers: USER_READER_SETTINGS ?
+										USER_READER_SETTINGS.showVerseNumbers :
+										null,
 	verseColors: []
 }
 
