@@ -45,6 +45,11 @@ class PlanListView extends Component {
 		this.getInvitations()
 		// get actual subscriptions
 		this.getSubs()
+		// get completed plans
+		dispatch(readingPlansAction({
+			method: 'completed_all_items',
+			auth: true,
+		}))
 	}
 
 	getInvitations = () => {
@@ -77,13 +82,6 @@ class PlanListView extends Component {
 		})
 	}
 
-	handleLoadMore = () => {
-		const { subscriptions: { nextPage }, loadMore } = this.props
-		if (nextPage !== null && typeof loadMore === 'function') {
-			loadMore(nextPage)
-		}
-	}
-
 	renderListItem = ({ plan_id, together_id, start_dt, subscription_id = null }) => {
 		const {
 			serverLanguageTag,
@@ -101,7 +99,9 @@ class PlanListView extends Component {
 
 		let link, src, subContent, dayString
 		if (start_dt && plan && 'id' in plan) {
-			src = plan.images ? selectImageFromList({ images: plan.images, width: 160, height: 160 }).url : null
+			src = plan.images ?
+						selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
+						null
 			// plans together have different day strings
 			if (together_id) {
 				if (invitations.indexOf(together_id) > -1) {
@@ -112,7 +112,12 @@ class PlanListView extends Component {
 				if (day > plan.total_days) {
 					day = plan.total_days
 				}
-				dayString = <FormattedMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
+				dayString = (
+					<FormattedMessage
+						id='plans.which day in plan'
+						values={{ day, total: plan.total_days }}
+					/>
+				)
 			}
 
 			link = localizedLink(Routes.plans({}))
@@ -152,6 +157,14 @@ class PlanListView extends Component {
 				subContent={subContent}
 			/>
 		)
+	}
+
+
+	handleLoadMore = () => {
+		const { subscriptions: { nextPage }, loadMore } = this.props
+		if (nextPage !== null && typeof loadMore === 'function') {
+			loadMore(nextPage)
+		}
 	}
 
 	render() {
@@ -208,7 +221,7 @@ class PlanListView extends Component {
 				backButton = (
 					<Link to={localizedLink(Routes.subscriptions({ username: this.username }))}>
 						&larr;
-						<FormattedMessage id="plans.back" />
+						<FormattedMessage id='plans.back' />
 					</Link>
 				)
 
@@ -218,7 +231,7 @@ class PlanListView extends Component {
 				backButton = (
 					<Link to={localizedLink(Routes.subscriptions({ username: this.username }))}>
 						&larr;
-						<FormattedMessage id="plans.back" />
+						<FormattedMessage id='plans.back' />
 					</Link>
 				)
 
@@ -270,6 +283,7 @@ class PlanListView extends Component {
 }
 
 function mapStateToProps(state) {
+	console.log('PLANS', getPlansModel(state));
 	return {
 		subscriptions: getSubscriptionsModel(state),
 		readingPlans: getPlansModel(state),

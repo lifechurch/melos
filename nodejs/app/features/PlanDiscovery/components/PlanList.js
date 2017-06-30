@@ -2,7 +2,23 @@ import React, { Component, PropTypes } from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import Waypoint from 'react-waypoint'
 import { Link } from 'react-router'
+import moment from 'moment'
+import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
+import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
+import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
+import getTogetherModel from '@youversion/api-redux/lib/models/together'
+import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
+import { selectImageFromList } from '../../../lib/imageUtil'
+import Routes from '../../../lib/routes'
+import List from '../../../components/List'
+import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
+import TogetherInvitationActions from '../../../widgets/TogetherInvitationActions'
+import ProgressBar from '../../../components/ProgressBar'
+import PlanStartString from '../components/PlanStartString'
 import PlanListItem from './PlanListItem'
+
 
 class PlanList extends Component {
 
@@ -11,91 +27,34 @@ class PlanList extends Component {
 		if (nextPage !== null && typeof loadMore === 'function') {
 			loadMore(nextPage)
 		}
- 	}
+	}
+
+
 
 	render() {
-		const { plans, title, listType, serverLanguageTag, params, auth, localizedLink } = this.props
+		const { planIds, localizedLink } = this.props
 
-		const items = plans.items.map((plan) => {
-			return (
-				<PlanListItem
-					serverLanguageTag={serverLanguageTag}
-					listType={listType}
-					key={plan.id}
-					plan={plan}
-					params={params}
-					auth={auth}
-					localizedLink={localizedLink}
-				/>
-			)
-		})
-
-		let backButton = <span>&nbsp;</span>
-		if (listType !== 'Subscribed') {
-			backButton = <Link to={localizedLink(`/users/${auth.userData.username}/reading-plans`)}>&larr; <FormattedMessage id="plans.back" /></Link>
-		}
-
-		let savedLink
-		if (listType !== 'Saved') {
-			savedLink = <Link to={localizedLink(`/users/${auth.userData.username}/saved-reading-plans`)}><FormattedMessage id="plans.saved plans" /></Link>
-		} else {
-			savedLink = <FormattedMessage id="plans.saved plans" />
-		}
-
-		let completedLink = <span>&nbsp;</span>
-		if (listType !== 'Completed') {
-			completedLink = <Link to={localizedLink(`/users/${auth.userData.username}/completed-reading-plans`)}><FormattedMessage id="plans.completed plans" /></Link>
-		} else {
-			completedLink = <FormattedMessage id="plans.completed plans" />
-		}
 
 		return (
-			<div>
-				<div className="row collapse">
-					<div className="columns large-8 medium-8 medium-centered">
-						<div className="row collapse plan-title-row">
-							<div className="columns small-2">
-								{backButton}
-							</div>
-							<div className="column small-8 end text-center">
-								<div className="plan-saved-title">{title}</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<article>
-					<div className="row collapse">
-						<div className="columns large-8 medium-8 medium-centered subscription-list">
-							{items}
-							<div><Waypoint onEnter={this.handleLoadMore} /></div>
-						</div>
-					</div>
-					<div className="row collapse">
-						<div className="columns large-8 medium-8 medium-centered subscription-actions">
-							<div className="left">
-								{savedLink}
-							</div>
-							<div className="right">
-								{completedLink}
-							</div>
-						</div>
-					</div>
-				</article>
-			</div>
+			<List>
+				{
+					planIds.map((id) => {
+
+					})
+				}
+			</List>
 		)
 	}
 }
 
 PlanList.propTypes = {
-	plans: PropTypes.object.isRequired,
+	plans: PropTypes.array.isRequired,
 	loadMore: PropTypes.func,
-	listType: PropTypes.oneOf(['Subscribed', 'Saved', 'Completed']),
 	title: PropTypes.node
 }
 
 PlanList.defaultProps = {
 	plans: [],
-	listType: 'Subscribed'
 }
 
 export default injectIntl(PlanList)

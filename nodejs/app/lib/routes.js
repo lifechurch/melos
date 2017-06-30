@@ -66,7 +66,7 @@ const Routes = {
 	subscriptionsSaved: ({ username, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/saved-reading-plans`,
+			path: `/users/${username}/saved-reading-plans`,
 			query,
 		})
 
@@ -75,7 +75,7 @@ const Routes = {
 	subscriptionsCompleted: ({ username, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/completed-reading-plans`,
+			path: `/users/${username}/completed-reading-plans`,
 			query,
 		})
 

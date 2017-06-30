@@ -25,61 +25,9 @@ class PlanReader extends Component {
 			dispatch,
 			isRtl,
 			showFullChapter,
+			updateStyle,
 			children
 		} = this.props
-		// const { audioPlaying, showFullChapter } = this.state
-
-		// this.isFinalReadingForDay = isFinalReadingForDay(
-		// 	this.dayObj,
-		// 	this.reference,
-		// 	this.isCheckingDevo
-		// )
-		// this.isFinalPlanDay = isFinalPlanDay(
-		// 	this.dayNum,
-		// 	plan.calendar,
-		// 	plan.total_days
-		// )
-
-		let referenceContent, refHeading, showChapterButton, audio, audioTiming, bibleChapterLink
-		// if (!isNaN(this.contentIndex)) {
-		// 	this.chapReference = typeof this.reference === 'string'
-		// 		? this.reference.split('.').splice(0, 2).join('.')
-		// 		: ''
-		//
-		// 	if (typeof window !== 'undefined') {
-		// 		bibleChapterLink = `${window.location.origin}/bible/${bible.version.id}/${this.chapReference}`
-		// 	}
-		//
-		// 	// if every case, either chapter call, or bibleaudio call, we're gonna put the audio
-		// 	// into audioChapter keyed by reference
-		// 	audio = bible.audioChapter[this.chapReference]
-		// 	// render the full chapter content if the user clicked the button for read full
-		// 	// chapter. note this does not cover when the actual plan reference is a full chapter, if
-		// 	// that is the case, then the ref content is just going to be the full chapter where verse content is
-		// 	// stored in calendar
-		// 	if (showFullChapter && bible.chapter && bible.chapter.reference) {
-		// 		referenceContent = bible.chapter.content
-		// 		refHeading = bible.chapter.reference.human
-		// 		audio = bible.audio
-		// 		showChapterButton = false
-		// 	} else {
-		// 		referenceContent = this.dayObj.reference_content[this.contentIndex].content
-		// 		refHeading = this.dayObj.reference_content[this.contentIndex].reference.human
-		// 		const splitRefs = this.reference.split('+')
-		// 		const isVerse = (splitRefs[0].split('.').length === 3)
-		// 		if (audio && audio.timing) {
-		// 			const startRef = splitRefs[0]
-		// 			const endRef = splitRefs.pop()
-		// 			audioTiming = getVerseAudioTiming(startRef, endRef, audio.timing)
-		// 		}
-		// 		// don't show the button unless we're rendering verses (not full chapter)
-		// 		if (isVerse) {
-		// 			showChapterButton = true
-		// 		} else {
-		// 			showChapterButton = false
-		// 		}
-		// 	}
-		// }
 
 		return (
 			<div>
@@ -104,7 +52,7 @@ class PlanReader extends Component {
 					isRtl={isRtl()}
 					// if we're rendering the full chapter from button click, let's
 					// update the arrow positioning
-					updateStyle={!showChapterButton}
+					updateStyle={updateStyle}
 				/>
 				<div className='row plan-reader-content'>
 					<div className='columns large-6 medium-8 medium-centered'>

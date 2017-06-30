@@ -1,12 +1,15 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import ColorList from './ColorList'
 import ButtonBar from '../../../../components/ButtonBar'
 import DropdownTransition from '../../../../components/DropdownTransition'
 import ShareWidget from './share/Share'
 import ActionCreators from '../../actions/creators'
 import MomentCreate from './MomentCreate'
+import getCurrentDT from '../../../../lib/getCurrentDT'
+import { chapterifyUsfm } from '../../../../lib/readerUtils'
 
 
 class VerseAction extends Component {
@@ -94,7 +97,7 @@ class VerseAction extends Component {
 		}
 	}
 
-	handleHighlight(color, deleteHighlight = false) {
+	handleHighlight(color) {
 		const { selection: { verses, version }, dispatch, auth } = this.props
 		const references = [{ usfm: verses, version_id: version }]
 
@@ -104,13 +107,26 @@ class VerseAction extends Component {
 			this.setState({ momentKind: 'highlight', momentContainerOpen: !this.state.momentContainerOpen })
 			this.closeMe()
 		} else {
-			dispatch(ActionCreators.momentsCreate(true, {
-				kind: 'highlight',
-				references,
-				color: color.replace('#', ''),
-				created_dt: `${new Date().toISOString().split('.')[0]}+00:00`
-			}))
-			this.handleClose({})
+			dispatch(momentsAction({
+				method: 'create',
+				params: {
+					kind: 'highlight',
+					references,
+					color: color.replace('#', ''),
+					created_dt: getCurrentDT()
+				},
+				auth: true,
+			})).then(() => {
+				dispatch(momentsAction({
+					method: 'verse_colors',
+					params: {
+						usfm: chapterifyUsfm(verses[0]),
+						version_id: version
+					},
+					auth: true,
+				}))
+				this.handleClose()
+			})
 		}
 	}
 
@@ -131,10 +147,15 @@ class VerseAction extends Component {
 			usfm: versesToDelete,
 			version_id: version,
 		})).then(() => {
-			dispatch(ActionCreators.momentsVerseColors(true, { usfm: verses[0].split('.').slice(0, 2).join('.'), version_id: version })).then((newVerseColors) => {
-				this.handleClose()
-			})
-
+			dispatch(momentsAction({
+				method: 'verse_colors',
+				params: {
+					usfm: chapterifyUsfm(verses[0]),
+					version_id: version
+				},
+				auth: true,
+			}))
+			this.handleClose()
 		})
 	}
 
@@ -145,7 +166,7 @@ class VerseAction extends Component {
 			selection: { chapter, human, text, url, verses: selectedReferences },
 			deletableColors,
 			intl,
-			bible,
+			version,
 			verses,
 			references,
 			momentsLabels,
@@ -157,7 +178,7 @@ class VerseAction extends Component {
 
 		const copyAction = (
 			<CopyToClipboard
-				text={`"${text}"\n\n${chapter}:${human}\n${url}`}
+				text={`'${text}'\n\n${chapter}:${human}\n${url}`}
 				onCopy={() => {
 					this.setState({ copied: true })
 					setTimeout(() => {
@@ -165,7 +186,7 @@ class VerseAction extends Component {
 					}, 10000)
 				}}
 			>
-				<span className="yv-green-link">{copied ?
+				<span className='yv-green-link'>{copied ?
 					intl.formatMessage({ id: 'features.EventView.components.EventViewContent.copied' }) :
 					intl.formatMessage({ id: 'Reader.verse action.copy' }) }
 				</span>
@@ -175,8 +196,8 @@ class VerseAction extends Component {
 		const actions = [
 			{ value: 'share', label: <ShareWidget label={`${chapter}:${human}`} url={url} text={text} /> },
 			{ value: 'copy', label: copyAction },
-			{ value: 'bookmark', label: <span className="yv-green-link">{intl.formatMessage({ id: 'Reader.verse action.bookmark' })}</span> },
-			{ value: 'note', label: <span className="yv-green-link">{intl.formatMessage({ id: 'Reader.verse action.note' })}</span> }
+			{ value: 'bookmark', label: <span className='yv-green-link'>{intl.formatMessage({ id: 'Reader.verse action.bookmark' })}</span> },
+			{ value: 'note', label: <span className='yv-green-link'>{intl.formatMessage({ id: 'Reader.verse action.note' })}</span> }
 		]
 
 		let colorList
@@ -195,8 +216,8 @@ class VerseAction extends Component {
 		return (
 			<div className='verse-action'>
 				<div className={'verse-action-footer'} ref={(c) => { this.container = c }}>
-					<a onClick={this.handleClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
-					<span className="verse-selection" style={{ opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
+					<a onClick={this.handleClose} className='close-button yv-gray-link'><FormattedMessage id='plans.stats.close' /></a>
+					<span className='verse-selection' style={{ opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
 					<ButtonBar items={actions} onClick={this.handleActionClick} />
 					{ colorList }
 				</div>
@@ -210,6 +231,8 @@ class VerseAction extends Component {
 						kind={momentKind}
 						verses={verses}
 						references={references}
+						versionID={version ? version.id : null}
+						local_abbreviation={version ? version.local_abbreviation : null}
 						labels={momentsLabels}
 						colors={highlightColors}
 						onClose={this.handleMomentContainerClose}

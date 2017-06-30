@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { injectIntl } from 'react-intl'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import rtlDetect from 'rtl-detect'
 import { routeActions } from 'react-router-redux'
 import Immutable from 'immutable'
@@ -19,7 +19,7 @@ import VerseAction from '../features/Bible/components/verseAction/VerseAction'
 import ChapterCopyright from '../features/Bible/components/content/ChapterCopyright'
 import AudioPopup from '../features/Bible/components/audio/AudioPopup'
 // utils
-import { getBibleVersionFromStorage, chapterifyUsfm, buildCopyright } from '../lib/readerUtils'
+import { getBibleVersionFromStorage, chapterifyUsfm, buildCopyright, isVerseOrChapter } from '../lib/readerUtils'
 import Routes from '../lib/routes'
 
 
@@ -27,19 +27,22 @@ class BibleContent extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+			usfm: props.usfm,
 			audioPlaying: false,
 			showFullChapter: false,
+			verseSelection: {},
+			deletableColors: [],
 		}
 	}
 
 	componentDidMount() {
-		const { bible, moments, dispatch, usfm, versionID, audio } = this.props
+		const { bible, moments, dispatch, versionID, audio } = this.props
+		const { usfm } = this.state
 
 		this.version_id = versionID || getBibleVersionFromStorage()
 
-		if (usfm && !(bible && bible.pullRef(usfm, versionID))) {
-			dispatch(bibleReference(usfm))
-		}
+		this.getReference(usfm, this.version_id)
+
 		if (!(bible && Immutable.fromJS(bible).hasIn(['versions', this.version_id]))) {
 			dispatch(bibleAction({
 				method: 'version',
@@ -58,6 +61,12 @@ class BibleContent extends Component {
 				auth: true,
 			}))
 		}
+		if (usfm && !(moments && Immutable.fromJS(moments).hasIn(['colors', usfm]))) {
+			dispatch(momentsAction({
+				method: 'colors',
+				auth: true,
+			}))
+		}
 		if (usfm && !(audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm)]))) {
 			dispatch(audioAction({
 				method: 'chapter',
@@ -69,21 +78,103 @@ class BibleContent extends Component {
 		}
 	}
 
+	getReference = (usfm, versionID = null) => {
+		const { bible, dispatch } = this.props
+		// if we don't already have it in state,
+		// let's get it
+		if (usfm && !(bible && bible.pullRef(usfm, versionID))) {
+			dispatch(bibleReference(usfm))
+			this.setState({ usfm })
+		}
+	}
+
+	handleVerseSelect = (verseSelection) => {
+		const { hosts, usfm, dispatch, moments, bible } = this.props
+		const refUrl = `${hosts.railsHost}/bible/${this.version_id}/${usfm}.${verseSelection.human}`
+
+		const ref = bible ?
+								bible.pullRef(usfm, this.version_id) :
+								null
+		// get the verses that are both selected and already have a highlight
+		// color associated with them, so we can allow the user to delete them
+		const deletableColors = []
+		verseSelection.verses.forEach((selectedVerse) => {
+			if (moments.verseColors) {
+				moments.verseColors.forEach((colorVerse) => {
+					if (selectedVerse === colorVerse[0]) {
+						deletableColors.push(colorVerse[1])
+					}
+				})
+			}
+		})
+		this.setState({
+			deletableColors,
+			verseSelection: Immutable.fromJS(verseSelection).merge({
+				chapter: ref ? ref.reference.human : '',
+				url: refUrl,
+				version: this.version_id
+			}).toJS()
+		})
+
+		// now merge in the text for the verses for actions like copy and share
+		// we're setting state with all the other verseAction before so this api call doesn't slow anything down
+		if (verseSelection.verses && verseSelection.verses.length > 0) {
+			dispatch(bibleAction({
+				method: 'verses',
+				params: {
+					id: this.version_id,
+					references: verseSelection.verses,
+					format: 'text',
+				}
+			}))
+			// dispatch(ActionCreators.bibleVerses({
+			// 	id,
+			// 	references: verseSelection.verses,
+			// 	format: 'text',
+			// }, { local_abbreviation }
+			// ))
+			.then((response) => {
+				this.setState({
+					verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
+						text: response.verses.reduce((acc, curr, index) => {
+							// don't put a space in front of the first string
+							if (index !== 0) {
+								return `${acc} ${curr.content}`
+							} else {
+								return acc + curr.content
+							}
+						}, '')
+					}).toJS()
+				})
+			})
+		}
+	}
+
+	handleVerseClear = () => {
+		if (typeof this.chapterInstance !== 'undefined' && this.chapterInstance) {
+			this.chapterInstance.clearSelection()
+		}
+		this.setState({ verseSelection: {}, deletableColors: [] })
+	}
+
 	render() {
 		const {
-			usfm,
 			versionID,
 			bible,
 			moments,
 			audio,
 			showContent,
+			showGetChapter,
 			showAudio,
 			showVerseAction,
 			showChapterPicker,
 			showVersionPicker,
+			auth,
 			hosts,
+			dispatch,
 			intl
 		} = this.props
+		const { usfm, verseSelection, deletableColors } = this.state
 
 		const ref = bible && bible.pullRef(usfm, versionID) ?
 								bible.pullRef(usfm, versionID) :
@@ -97,6 +188,8 @@ class BibleContent extends Component {
 			<div>
 				<div className='plan-ref'>
 					<div className='plan-reader-heading'>
+						{/* NOTE: let's create a readerheader component that will render all
+						the reader header components and grab the right state */}
 						{/* <div className='ref-heading'>
 							{`${refHeading} ${version ? version.local_abbreviation.toUpperCase() : ''}`}
 						</div> */}
@@ -117,36 +210,46 @@ class BibleContent extends Component {
 						<Chapter
 							content={ref ? ref.content : null}
 							verseColors={moments ? moments.verseColors : null}
-							// onSelect={this.handleOnVerseSelect}
+							onSelect={this.handleVerseSelect}
 							// textDirection={textDirection}
 							ref={(chapter) => { this.chapterInstance = chapter }}
 						/>
 					}
 					{
 						version &&
+						'id' in version &&
 						<ChapterCopyright {...buildCopyright(intl.formatMessage, version)} />
 					}
-					{/* {
-						showChapterButton &&
+					{
+						showGetChapter &&
+						usfm &&
+						isVerseOrChapter(usfm.split('+')[0]).isVerse &&
 						<div className='buttons'>
-							<button className='chapter-button solid-button' onClick={this.handleGetChapter}>
+							<button
+								className='chapter-button solid-button'
+								onClick={() => {
+									this.getReference(chapterifyUsfm(usfm))
+								}}
+							>
 								<FormattedMessage id='Reader.read chapter' />
 							</button>
 						</div>
-					} */}
+					}
 					<VerseAction
 						// props
 						version={version}
 						verseColors={moments ? moments.verseColors : null}
 						// isRtl={isRtl}
-						// highlightColors={highlightColors}
-						// momentsLabels={momentsLabels}
-						// verses={bibleVerses}
-						// references={bibleReferences}
+						highlightColors={moments ? moments.colors : null}
+						momentsLabels={moments ? moments.labels : null}
+						verses={null}
+						references={verseSelection ? verseSelection.verses : null}
+						auth={auth}
+						dispatch={dispatch}
 						// // state
-						// selection={verseSelection}
-						// deletableColors={deletableColors}
-						// onClose={this.handleOnVerseClear}
+						selection={verseSelection}
+						deletableColors={deletableColors}
+						onClose={this.handleVerseClear}
 					/>
 				</div>
 			</div>
@@ -156,6 +259,7 @@ class BibleContent extends Component {
 
 BibleContent.propTypes = {
 	showContent: PropTypes.bool,
+	showGetChapter: PropTypes.bool,
 	showAudio: PropTypes.bool,
 	showVerseAction: PropTypes.bool,
 	showChapterPicker: PropTypes.bool,
@@ -164,6 +268,7 @@ BibleContent.propTypes = {
 
 BibleContent.defaultProps = {
 	showContent: true,
+	showGetChapter: true,
 	showAudio: true,
 	showVerseAction: true,
 	showChapterPicker: true,

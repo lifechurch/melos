@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
-import ActionCreators from '../../actions/creators'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import Immutable from 'immutable'
+import CustomScroll from 'react-custom-scroll'
+import ActionCreators from '../../actions/creators'
 import XMark from '../../../../components/XMark'
 import DropdownTransition from '../../../../components/DropdownTransition'
 import VerseCard from './bookmark/VerseCard'
@@ -11,7 +12,6 @@ import NoteEditor from './note/NoteEditor'
 import Select from '../../../../components/Select'
 import ColorList from './ColorList'
 import Color from './Color'
-import CustomScroll from 'react-custom-scroll'
 
 class MomentCreate extends Component {
 
@@ -56,6 +56,17 @@ class MomentCreate extends Component {
 	}
 
 	/**
+	 * note content on keypress
+	 *
+	 * @param      {string}  content  keypress value
+	 */
+	onNoteKeyPress = (content) => {
+		this.setState({
+			content,
+		})
+	}
+
+	/**
 	 * handle color picker modal show/hide
 	 *
 	 */
@@ -93,7 +104,7 @@ class MomentCreate extends Component {
 			})
 			// delete from references as well
 			localRefs.forEach((ref, index) => {
-				if (localVerses[key].usfm[0] == ref.usfm[0]) {
+				if (localVerses[key].usfm[0] === ref.usfm[0]) {
 					this.setState({
 						localRefs: Immutable.fromJS(localRefs).delete(index).toJS(),
 					})
@@ -102,16 +113,7 @@ class MomentCreate extends Component {
 		}
 	}
 
-	/**
-	 * note content on keypress
-	 *
-	 * @param      {string}  content  keypress value
-	 */
-	onNoteKeyPress = (content) => {
-		this.setState({
-			content,
-		})
-	}
+
 
 	/**
 	 * on Select component change, for selecting privacy options on note
@@ -166,20 +168,18 @@ class MomentCreate extends Component {
 			user_status,
 			color: selectedColor ? selectedColor.replace('#', '') : null,
 		}))
-			.then(data => {
+			.then(() => {
 				if (typeof onClose === 'function') {
 					onClose(true)
 				}
-			}, error => {
-
 			}
 		)
 	}
 
 
 	render() {
-		const { labels, colors, kind, intl, isLoggedIn, isRtl } = this.props
-		const { localVerses, dropdown, selectedColor, content } = this.state
+		const { labels, colors, kind, intl, isLoggedIn, isRtl, versionID, local_abbreviation } = this.props
+		const { localVerses, dropdown, selectedColor } = this.state
 
 		let labelsDiv, colorsDiv, contentDiv, createHeader = null
 
@@ -232,11 +232,15 @@ class MomentCreate extends Component {
 				createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
 				contentDiv = (
 					<div className='bookmark-create'>
-						<VerseCard verseContent={localVerses}>
+						<VerseCard
+							verseContent={localVerses}
+							versionID={versionID}
+							local_abbreviation={local_abbreviation}
+						>
 							<div className='small-10'>
 								<LabelSelector
-									byAlphabetical={labels.byAlphabetical}
-									byCount={labels.byCount}
+									byAlphabetical={labels ? labels.byAlphabetical : null}
+									byCount={labels ? labels.byCount : null}
 									updateLabels={this.updateLabels}
 									intl={intl}
 								/>
@@ -251,7 +255,12 @@ class MomentCreate extends Component {
 				createHeader = <FormattedMessage id='Reader.verse action.note' />
 				contentDiv = (
 					<div className='note-create'>
-						<VerseCard verseContent={localVerses} deleteVerse={this.deleteVerse}>
+						<VerseCard
+							verseContent={localVerses}
+							deleteVerse={this.deleteVerse}
+							versionID={versionID}
+							local_abbreviation={local_abbreviation}
+						>
 							{ colorsDiv }
 						</VerseCard>
 						<div className='user-status-dropdown'>
