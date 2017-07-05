@@ -10,6 +10,7 @@ import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscription
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
+import SubscriptionList from './SubscriptionList'
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 import List from '../components/List'
@@ -20,23 +21,7 @@ import PlanStartString from '../features/PlanDiscovery/components/PlanStartStrin
 import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 
 
-function loadPlanItems({ plan_id, together_id, auth, dispatch }) {
-	dispatch(readingPlansAction({
-		method: 'view',
-		params: {
-			id: plan_id,
-		},
-	}))
-	if (together_id) {
-		dispatch(participantsView({
-			together_id,
-			auth,
-		}))
-	}
-}
-
-
-class PlanListView extends Component {
+class PlansList extends Component {
 
 	componentDidMount() {
 		const { dispatch, auth } = this.props
@@ -46,175 +31,38 @@ class PlanListView extends Component {
 		// get actual subscriptions
 		this.getSubs()
 		// get completed plans
-		dispatch(readingPlansAction({
-			method: 'completed_all_items',
-			auth: true,
-		}))
+		dispatch(plansAPI.actions.subscriptions.get({ status: 'completed' }, { auth: true }))
 	}
 
-	getInvitations = () => {
-		const { dispatch, auth } = this.props
-		dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
-			if (subs && subs.data) {
-				const ids = Object.keys(subs.data)
-				if (ids.length > 0) {
-					ids.forEach((id) => {
-						const sub = subs.data[id]
-						loadPlanItems({ plan_id: sub.plan_id, together_id: id, auth: auth.isLoggedIn, dispatch })
-					})
-				}
-			}
-		})
-	}
-
-	getSubs = () => {
-		const { dispatch, auth } = this.props
-		dispatch(plansAPI.actions.subscriptions.get({}, { auth: auth.isLoggedIn })).then((subs) => {
-			if (subs && subs.data) {
-				const ids = Object.keys(subs.data)
-				if (ids.length > 0) {
-					ids.forEach((id) => {
-						const sub = subs.data[id]
-						loadPlanItems({ plan_id: sub.plan_id, together_id: sub.together_id, auth: auth.isLoggedIn, dispatch })
-					})
-				}
-			}
-		})
-	}
-
-	renderListItem = ({ plan_id, together_id, start_dt, subscription_id = null }) => {
-		const {
-			serverLanguageTag,
-			readingPlans,
-			invitations,
-			params,
-			auth,
-			route: {
-				view
-			},
-			localizedLink
-		} = this.props
-		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
-		const plan = (plan_id && plan_id in readingPlans.byId) ? readingPlans.byId[plan_id] : null
-
-		let link, src, subContent, dayString
-		if (start_dt && plan && 'id' in plan) {
-			src = plan.images ?
-						selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
-						null
-			// plans together have different day strings
-			if (together_id) {
-				if (invitations.indexOf(together_id) > -1) {
-					dayString = <PlanStartString start_dt={start_dt} />
-				}
-			} else {
-				let day = moment().diff(moment(start_dt, 'YYYY-MM-DD'), 'days') + 1
-				if (day > plan.total_days) {
-					day = plan.total_days
-				}
-				dayString = (
-					<FormattedMessage
-						id='plans.which day in plan'
-						values={{ day, total: plan.total_days }}
-					/>
-				)
-			}
-
-			link = localizedLink(Routes.plans({}))
-			// if this is a subscription, link to it
-			if (subscription_id) {
-				link = localizedLink(
-					Routes.subscription({
-						username: this.username,
-						plan_id: plan.id,
-						slug: plan.slug,
-						subscription_id,
-					}))
-			// otherwise it's an invitation where we want more info
-			} else {
-				link = localizedLink(
-					Routes.plan({
-						plan_id: plan.id,
-						slug: plan.slug
-					}))
-			}
-
-			subContent = (
-				<div>
-					<ParticipantsAvatarList together_id={together_id} showMoreLink={''} />
-					<ProgressBar percentComplete={0} />
-					{ dayString }
-				</div>
-			)
+	loadPlanItems = ({ plan_id, together_id }) => {
+		const { dispatch, readingPlans } = this.props
+		if (!(readingPlans && plan_id in readingPlans.byId)) {
+			dispatch(readingPlansAction({
+				method: 'view',
+				params: {
+					id: plan_id,
+				},
+			}))
 		}
-
-		return (
-			<PlanListItem
-				key={`${plan_id}.${subscription_id}`}
-				src={src}
-				name={(plan && 'name' in plan) ? (plan.name[language_tag] || plan.name.default) : null}
-				link={link}
-				subContent={subContent}
-			/>
-		)
-	}
-
-
-	handleLoadMore = () => {
-		const { subscriptions: { nextPage }, loadMore } = this.props
-		if (nextPage !== null && typeof loadMore === 'function') {
-			loadMore(nextPage)
+		if (together_id) {
+			dispatch(participantsView({
+				together_id,
+				auth: true,
+			}))
 		}
 	}
 
 	render() {
-		const { subscriptions, together, invitations, auth, route: { view }, localizedLink } = this.props
+		const { subscriptions, together, invitations, readingPlans, route: { view }, localizedLink, children } = this.props
 
+		let component = null
+		const title = ''
 		let backButton = null
-		const plansList = []
 		switch (view) {
 			case 'subscribed': {
-				// build list of invitations
-				if (invitations && together && together.allIds.length > 0) {
-					invitations.forEach((id) => {
-						const resource = together.byId[id]
-						if (resource && resource.plan_id) {
-							plansList.push(
-								<div key={`${id}.${resource.plan_id}`}>
-									{
-										this.renderListItem({
-											plan_id: resource.plan_id,
-											together_id: id,
-											start_dt: resource.start_dt,
-										})
-									}
-									<TogetherInvitationActions
-										together_id={id}
-										handleActionComplete={() => {
-											this.getInvitations()
-											this.getSubs()
-										}}
-									/>
-								</div>
-							)
-						}
-					})
-				}
-				// build list of subscriptions
-				if (subscriptions && subscriptions.allIds.length > 0) {
-					subscriptions.allIds.forEach((id) => {
-						const sub = subscriptions.byId[id]
-						if (sub && sub.plan_id) {
-							plansList.push(this.renderListItem({
-								plan_id: sub.plan_id,
-								together_id: sub.together_id,
-								start_dt: sub.start_dt,
-								subscription_id: id,
-							}))
-						}
-						return null
-					})
-				}
+				component = (
+					<SubscriptionList />
+				)
 				break
 			}
 			case 'saved': {
@@ -228,6 +76,7 @@ class PlanListView extends Component {
 				break
 			}
 			case 'completed': {
+
 				backButton = (
 					<Link to={localizedLink(Routes.subscriptions({ username: this.username }))}>
 						&larr;
@@ -251,16 +100,14 @@ class PlanListView extends Component {
 								{ backButton }
 							</div>
 							<div className='column small-8 end text-center'>
-								<div className='plan-saved-title'>{}</div>
+								<div className='plan-saved-title'>{ title }</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div className='row collapse'>
 					<div className='columns large-8 medium-8 medium-centered subscription-list'>
-						<List>
-							{ plansList }
-						</List>
+						{ component }
 					</div>
 				</div>
 				<div className='row collapse'>
@@ -292,19 +139,17 @@ function mapStateToProps(state) {
 	}
 }
 
-PlanListView.propTypes = {
+PlansList.propTypes = {
 	subscriptions: PropTypes.object.isRequired,
 	readingPlans: PropTypes.object.isRequired,
 	together: PropTypes.object.isRequired,
 	invitations: PropTypes.array,
 	auth: PropTypes.object.isRequired,
-	params: PropTypes.object.isRequired,
-	serverLanguageTag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
 }
 
-PlanListView.defaultProps = {
+PlansList.defaultProps = {
 	invitations: null,
 }
 
-export default connect(mapStateToProps, null)(PlanListView)
+export default connect(mapStateToProps, null)(PlansList)

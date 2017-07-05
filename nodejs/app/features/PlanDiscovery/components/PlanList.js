@@ -29,7 +29,82 @@ class PlanList extends Component {
 		}
 	}
 
+	renderListItem = ({ plan_id, together_id, start_dt, subscription_id = null }) => {
+		const {
+			serverLanguageTag,
+			readingPlans,
+			invitations,
+			params,
+			auth,
+			route: {
+				view
+			},
+			localizedLink
+		} = this.props
+		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
+		const plan = (plan_id && plan_id in readingPlans.byId) ? readingPlans.byId[plan_id] : null
 
+		let link, src, subContent, dayString
+		if (start_dt && plan && 'id' in plan) {
+			src = plan.images ?
+						selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
+						null
+			// plans together have different day strings
+			if (together_id) {
+				if (invitations.indexOf(together_id) > -1) {
+					dayString = <PlanStartString start_dt={start_dt} />
+				}
+			} else {
+				let day = moment().diff(moment(start_dt, 'YYYY-MM-DD'), 'days') + 1
+				if (day > plan.total_days) {
+					day = plan.total_days
+				}
+				dayString = (
+					<FormattedMessage
+						id='plans.which day in plan'
+						values={{ day, total: plan.total_days }}
+					/>
+				)
+			}
+
+			link = localizedLink(Routes.plans({}))
+			// if this is a subscription, link to it
+			if (subscription_id) {
+				link = localizedLink(
+					Routes.subscription({
+						username: this.username,
+						plan_id: plan.id,
+						slug: plan.slug,
+						subscription_id,
+					}))
+			// otherwise it's an invitation where we want more info
+			} else {
+				link = localizedLink(
+					Routes.plan({
+						plan_id: plan.id,
+						slug: plan.slug
+					}))
+			}
+
+			subContent = (
+				<div>
+					<ParticipantsAvatarList together_id={together_id} showMoreLink={''} />
+					<ProgressBar percentComplete={0} />
+					{ dayString }
+				</div>
+			)
+		}
+
+		return (
+			<PlanListItem
+				key={`${plan_id}.${subscription_id}`}
+				src={src}
+				name={(plan && 'name' in plan) ? (plan.name[language_tag] || plan.name.default) : null}
+				link={link}
+				subContent={subContent}
+			/>
+		)
+	}
 
 	render() {
 		const { planIds, localizedLink } = this.props
