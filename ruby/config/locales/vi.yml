@@ -1400,6 +1400,10 @@ vi:
         verses selected: "Đã chọn câu"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Quản lý thông báo đến email của bạn"
                 unsub all: "Hủy đăng ký từ tất cả các email"
@@ -1415,6 +1419,16 @@ vi:
                 rp_daily: "Bạn đã hủy thành công các đăng ký từ<b>Email kế hoạch đọc mỗi ngày</b>từ %{plan_title}."
                 votd: "Bạn đã hủy thành công các đăng ký từ<b>Câu Kinh Thánh của ngày</b>email."
                 votd_image: "Bạn đã hủy thành công các đăng ký từ<b>Câu Kinh Thánh bằng hình ảnh của ngày</b>email."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Xin lỗi, bạn cần đăng nhập trước khi bạn muốn thay đổi cài đặt thông báo:"
                 other_type: "Xin lỗi, điều này không đáp ứng được những gì chúng tôi mong đợi. Bạn có muốn cập nhật các thông báo của bạn?"

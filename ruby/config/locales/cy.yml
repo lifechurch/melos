@@ -1475,6 +1475,10 @@ cy:
         verses selected: "adnodau ddewiswyd"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Rheoli dy Hysbysiadau e-bost"
                 unsub all: "Dad-danysgrifio o'r holl e-byst"
@@ -1490,6 +1494,16 @@ cy:
                 rp_daily: "Rwyt wedi llwyddo i ddad-danysgrifio o <b>e-byst dyddiol Cynlluniau Darllen</b> o %{plan_title}"
                 votd: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Adnod y Dydd</b>"
                 votd_image: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Lluniau Adnod y Dydd</b>"
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Sori ond mae'n rhaid i ti fewngofnodi i newid dy Osodiadau Hysbysiadau:"
                 other_type: "Sori roedd hynny'n annisgwyl. A fyddet ti'n hoffi diweddaru dy Hysbysiadau?"

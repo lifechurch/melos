@@ -1400,6 +1400,10 @@ id:
         verses selected: "ayat terpilih"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Mengatur Notifikasi Email Anda"
                 unsub all: "Berhenti berlangganan dari semua email"
@@ -1415,6 +1419,16 @@ id:
                 rp_daily: "Anda berhasil berhenti berlangganan dari <b>Email Harian Rencana Bacaan</b> dari %{plan_title}."
                 votd: "Anda berhasil berhenti berlangganan dari email <b>Ayat Hari Ini</b>."
                 votd_image: "Anda berhasil berhenti berlangganan dari email <b>Gambar Ayat Hari Ini</b>."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Maaf, Anda harus Masuk sebelum Anda dapat mengubah pengaturan Notifikasi Anda:"
                 other_type: "Maaf, hal tersebut tidak sesuai dengan yang kami harapkan. Apakah Anda ingin memperbarui Notifikasi Anda?"

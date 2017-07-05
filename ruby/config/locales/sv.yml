@@ -1415,6 +1415,10 @@ sv:
         verses selected: "verser valda"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Hantera notifikationer via e-post"
                 unsub all: "Avsluta prenumeration på all e-post"
@@ -1430,6 +1434,16 @@ sv:
                 rp_daily: "Du har avslutat din prenumeration på <b>daglig e-post angående Läsplaner</b> från %{plan_title}."
                 votd: "Du har avslutat din prenumeration på e-post angående <b>Dagens Vers</b>."
                 votd_image: "Du har avslutat din prenumeration på e-post angående <b>Dagens Vers-bild</b>."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Tyvärr, du behöver Logga In innan du kan ändra dina notifikations-inställningar:"
                 other_type: "Förlåt, det där gick inte som vi förväntade oss. Skulle du vilja uppdatera dina Notifikationer?"

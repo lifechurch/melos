@@ -1400,6 +1400,10 @@ ms:
         verses selected: "ayat-ayat yang dipilih"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Uruskan Notifikasi Emel Anda"
                 unsub all: "Hentikan langganan semua emel"
@@ -1415,6 +1419,16 @@ ms:
                 rp_daily: "Anda telah berjaya menghentikan langganan <b> emel Pelan Bacaan Harian</b> daripada %{plan_title}."
                 votd: "Anda telah berjaya menghentikan langganan emel <b>Firman Hari Ini</b>."
                 votd_image: "Anda telah berjaya menghentikan langganan emel <b>Gambar Firman Hari Ini</b>."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Harap maaf, anda perlu Log Masuk sebelum anda boleh mengubah seting Notifikasi:"
                 other_type: "Harap maaf, itu tidak berhasil. Adakah anda ingin mengemas kini Notifikasi anda?"

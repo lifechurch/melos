@@ -1415,6 +1415,10 @@ bg:
         verses selected: "избрани стихове"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Управлявайте Вашите имейл известия"
                 unsub all: "Отписване от всички имейли"
@@ -1430,6 +1434,16 @@ bg:
                 rp_daily: "Вие успешно се отписахте от <b>ежедневни имейли</b> от плана за прочит %{plan_title}."
                 votd: "Вие успешно се отписахте от имейли за <b>стиха за деня</b>."
                 votd_image: "Вие успешно се отписахте от имейли за <b>изображението за стиха за деня</b>."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Извинете, но трябва да влезете в профила си, преди да можете да промените Вашите настройки за известяване:"
                 other_type: "Извинете, но не се получи това, което очаквахме. Бихте ли желали да актуализирате Вашите известия?"

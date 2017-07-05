@@ -1415,6 +1415,10 @@ es-ES:
         verses selected: "versículos seleccionados"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Administrar notificaciones"
                 unsub all: "Darse de baja de todos los correos electrónicos"
@@ -1430,6 +1434,16 @@ es-ES:
                 rp_daily: "Te has dado de baja correctamente de <b>los mensajes diarios</b> sobre el plan de lectura %{plan_title}."
                 votd: "Te has dado de baja correctamente de los mensaje sobre <b>el versículo del día</b>."
                 votd_image: "Te has dado de baja correctamente de los mensaje sobre<b>la imagen del versículo del día</b>."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Lo sentimos, necesitas iniciar sesión para poder cambiar la configuración de tus notificaciones:"
                 other_type: "Lo sentimos, no ha pasado lo que esperábamos. ¿Quieres actualizar tus notificaciones?"

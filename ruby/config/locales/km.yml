@@ -1400,6 +1400,10 @@ km:
         verses selected: "ឃ្លាត្រូវបានជ្រើស"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Manage Your Email Notifications"
                 unsub all: "Unsubscribe from all emails"
@@ -1415,6 +1419,16 @@ km:
                 rp_daily: "You successfully unsubscribed from <b>Reading Plans Daily emails</b> from %{plan_title}."
                 votd: "You successfully unsubscribed from <b>Verse of the Day</b> emails."
                 votd_image: "You successfully unsubscribed from <b>Verse of the Day Image</b> emails."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Sorry, you need to Sign In before you can change your Notification settings:"
                 other_type: "Sorry, that didn’t do what we expected. Would you like to update your Notifications?"

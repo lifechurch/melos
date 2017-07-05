@@ -1400,6 +1400,10 @@ ja:
         verses selected: "選択した聖句"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "メール通知設定"
                 unsub all: "すべてのメールの登録解除"
@@ -1415,6 +1419,16 @@ ja:
                 rp_daily: "「%{plan_title}」の<b>読書プラン</b>に関するメールからの登録解除が完了しました。"
                 votd: "<b>今日の聖句</b>に関するメールからの登録解除が完了しました。"
                 votd_image: "<b>今日の聖画像</b>に関するメールからの登録解除が完了しました。"
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "通知の設定の変更するためには、ログインが必要です。"
                 other_type: "予期せぬエラーが発生しました。通知をアップデートしますか？"
