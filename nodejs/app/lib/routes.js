@@ -166,10 +166,19 @@ const Routes = {
 
 		return route.get()
 	},
-	togetherParticipants: ({ username, plan_id, slug, together_id, query = null }) => {
+	togetherInvitation: ({ plan_id, slug, together_id, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/together/${together_id}/participants`,
+			path: `/reading-plans/${plan_id}-${slug}/together/${together_id}/invitation`,
+			query,
+		})
+
+		return route.get()
+	},
+	togetherParticipants: ({ plan_id, slug, together_id, query = null }) => {
+
+		const route = new Route({
+			path: `/reading-plans/${plan_id}-${slug}/together/${together_id}/participants`,
 			query,
 		})
 

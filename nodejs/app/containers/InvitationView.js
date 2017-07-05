@@ -4,8 +4,7 @@ import { routeActions } from 'react-router-redux'
 import moment from 'moment'
 import { FormattedMessage } from 'react-intl'
 // actions
-import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
-import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
+import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
 // models
 import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
@@ -23,21 +22,15 @@ class InvitationView extends Component {
 		const { dispatch, params: { id, together_id }, auth, location: { query } } = this.props
 		// join token will allow us to see the participants and together unauthed
 		const token = query && query.token ? query.token : null
-		dispatch(readingPlansAction({
-			method: 'view',
-			params: {
-				id,
-			},
+		dispatch(planView({
+			plan_id: id.split('-')[0],
+			together_id,
+			token
 		}))
 		dispatch(plansAPI.actions.together.get({
 			id: together_id,
 			token
 		}, { auth: auth && auth.isLoggedIn }))
-		dispatch(participantsView({
-			together_id,
-			auth: auth && auth.isLoggedIn,
-			token
-		}))
 	}
 
 	localizedLink = (link) => {

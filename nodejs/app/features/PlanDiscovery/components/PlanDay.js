@@ -66,7 +66,11 @@ function PlanDay(props) {
 					{
 						together_id &&
 						<div style={{ marginBottom: '25px' }}>
-							<ParticipantsAvatarList together_id={together_id} avatarWidth={46} />
+							<ParticipantsAvatarList
+								together_id={together_id}
+								day={day}
+								avatarWidth={46}
+							/>
 						</div>
 					}
 					{

@@ -11,6 +11,7 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
 import SubscriptionList from './SubscriptionList'
+import CompletedList from './CompletedList'
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 import List from '../components/List'
@@ -26,12 +27,17 @@ class PlansList extends Component {
 	componentDidMount() {
 		const { dispatch, auth } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
-		// get any invites we have
-		this.getInvitations()
-		// get actual subscriptions
-		this.getSubs()
-		// get completed plans
-		dispatch(plansAPI.actions.subscriptions.get({ status: 'completed' }, { auth: true }))
+	}
+
+	localizedLink = (link) => {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = serverLanguageTag || params.lang || 'en'
+
+		if (['en', 'en-US'].indexOf(languageTag) > -1) {
+			return link
+		} else {
+			return `/${languageTag}${link}`
+		}
 	}
 
 	loadPlanItems = ({ plan_id, together_id }) => {
@@ -53,7 +59,18 @@ class PlansList extends Component {
 	}
 
 	render() {
-		const { subscriptions, together, invitations, readingPlans, route: { view }, localizedLink, children } = this.props
+		const {
+			subscriptions,
+			together,
+			invitations,
+			readingPlans,
+			route: { view },
+			auth,
+			params,
+			serverLanguageTag
+		} = this.props
+
+		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 
 		let component = null
 		const title = ''
@@ -61,13 +78,16 @@ class PlansList extends Component {
 		switch (view) {
 			case 'subscribed': {
 				component = (
-					<SubscriptionList />
+					<SubscriptionList
+						localizedLink={this.localizedLink}
+						language_tag={language_tag}
+					/>
 				)
 				break
 			}
 			case 'saved': {
 				backButton = (
-					<Link to={localizedLink(Routes.subscriptions({ username: this.username }))}>
+					<Link to={this.localizedLink(Routes.subscriptions({ username: this.username }))}>
 						&larr;
 						<FormattedMessage id='plans.back' />
 					</Link>
@@ -76,9 +96,14 @@ class PlansList extends Component {
 				break
 			}
 			case 'completed': {
-
+				component = (
+					<CompletedList
+						localizedLink={this.localizedLink}
+						language_tag={language_tag}
+					/>
+				)
 				backButton = (
-					<Link to={localizedLink(Routes.subscriptions({ username: this.username }))}>
+					<Link to={this.localizedLink(Routes.subscriptions({ username: this.username }))}>
 						&larr;
 						<FormattedMessage id='plans.back' />
 					</Link>
@@ -89,6 +114,7 @@ class PlansList extends Component {
 
 			default: return null
 		}
+
 
 
 		return (
@@ -106,19 +132,19 @@ class PlansList extends Component {
 					</div>
 				</div>
 				<div className='row collapse'>
-					<div className='columns large-8 medium-8 medium-centered subscription-list'>
+					<div className='columns large-8 medium-8 medium-centered'>
 						{ component }
 					</div>
 				</div>
 				<div className='row collapse'>
 					<div className='columns large-8 medium-8 medium-centered subscription-actions'>
 						<div className='left'>
-							<Link to={this.username ? localizedLink(Routes.subscriptionsSaved({ username: this.username })) : null}>
+							<Link to={this.username ? this.localizedLink(Routes.subscriptionsSaved({ username: this.username })) : null}>
 								<FormattedMessage id='plans.saved plans' />
 							</Link>
 						</div>
 						<div className='right'>
-							<Link to={this.username ? localizedLink(Routes.subscriptionsCompleted({ username: this.username })) : null}>
+							<Link to={this.username ? this.localizedLink(Routes.subscriptionsCompleted({ username: this.username })) : null}>
 								<FormattedMessage id='plans.completed plans' />
 							</Link>
 						</div>
@@ -136,6 +162,7 @@ function mapStateToProps(state) {
 		readingPlans: getPlansModel(state),
 		together: getTogetherModel(state),
 		invitations: getTogetherInvitations(state),
+		auth: state.auth,
 	}
 }
 

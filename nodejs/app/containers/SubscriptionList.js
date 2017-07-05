@@ -1,11 +1,9 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
-import { Link } from 'react-router'
 import moment from 'moment'
-import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
-import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
+import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
@@ -20,7 +18,7 @@ import PlanStartString from '../features/PlanDiscovery/components/PlanStartStrin
 import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 
 
-class PlanListView extends Component {
+class SubscriptionList extends Component {
 
 	componentDidMount() {
 		const { auth } = this.props
@@ -32,14 +30,17 @@ class PlanListView extends Component {
 	}
 
 	getSubs = () => {
-		const { dispatch, auth } = this.props
-		dispatch(plansAPI.actions.subscriptions.get({}, { auth: auth.isLoggedIn })).then((subs) => {
+		const { dispatch } = this.props
+		dispatch(plansAPI.actions.subscriptions.get({}, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						this.loadPlanItems({ plan_id: sub.plan_id, together_id: sub.together_id, auth: auth.isLoggedIn, dispatch })
+						dispatch(planView({
+							plan_id: sub.plan_id,
+							together_id: sub.together_id,
+						}))
 					})
 				}
 			}
@@ -47,52 +48,31 @@ class PlanListView extends Component {
 	}
 
 	getInvitations = () => {
-		const { dispatch, auth } = this.props
+		const { dispatch } = this.props
 		dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						this.loadPlanItems({ plan_id: sub.plan_id, together_id: id, auth: auth.isLoggedIn, dispatch })
+						dispatch(planView({
+							plan_id: sub.plan_id,
+							together_id: id,
+						}))
 					})
 				}
 			}
 		})
 	}
 
-	loadPlanItems = ({ plan_id, together_id, auth }) => {
-		const { dispatch, readingPlans } = this.props
-		if (!(readingPlans && plan_id in readingPlans.byId)) {
-			dispatch(readingPlansAction({
-				method: 'view',
-				params: {
-					id: plan_id,
-				},
-			}))
-		}
-		if (together_id) {
-			dispatch(participantsView({
-				together_id,
-				auth,
-			}))
-		}
-	}
-
 
 	renderListItem = ({ plan_id, together_id, start_dt, subscription_id = null }) => {
 		const {
-			serverLanguageTag,
+			language_tag,
 			readingPlans,
 			invitations,
-			params,
-			auth,
-			route: {
-				view
-			},
 			localizedLink
 		} = this.props
-		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const plan = (plan_id && plan_id in readingPlans.byId) ? readingPlans.byId[plan_id] : null
 
 		let link, src, subContent, dayString
@@ -131,15 +111,16 @@ class PlanListView extends Component {
 			// otherwise it's an invitation where we want more info
 			} else {
 				link = localizedLink(
-					Routes.plan({
+					Routes.togetherInvitation({
 						plan_id: plan.id,
-						slug: plan.slug
+						slug: plan.slug,
+						together_id,
 					}))
 			}
 
 			subContent = (
 				<div>
-					<ParticipantsAvatarList together_id={together_id} showMoreLink={''} />
+					<ParticipantsAvatarList together_id={together_id} />
 					<ProgressBar percentComplete={0} />
 					{ dayString }
 				</div>
@@ -159,7 +140,7 @@ class PlanListView extends Component {
 
 
 	render() {
-		const { subscriptions, together, invitations, readingPlans, route: { view }, localizedLink, children } = this.props
+		const { subscriptions, together, invitations } = this.props
 
 		const plansList = []
 		// build list of invitations
@@ -205,13 +186,9 @@ class PlanListView extends Component {
 		}
 
 		return (
-			<div>
-				<div className='columns large-8 medium-8 medium-centered subscription-list'>
-					<List>
-						{ plansList }
-					</List>
-				</div>
-			</div>
+			<List customClass='subscription-list'>
+				{ plansList }
+			</List>
 		)
 	}
 }
@@ -223,22 +200,24 @@ function mapStateToProps(state) {
 		readingPlans: getPlansModel(state),
 		together: getTogetherModel(state),
 		invitations: getTogetherInvitations(state),
+		auth: state.auth,
+
 	}
 }
 
-PlanListView.propTypes = {
+SubscriptionList.propTypes = {
 	subscriptions: PropTypes.object.isRequired,
 	readingPlans: PropTypes.object.isRequired,
 	together: PropTypes.object.isRequired,
 	invitations: PropTypes.array,
 	auth: PropTypes.object.isRequired,
-	params: PropTypes.object.isRequired,
-	serverLanguageTag: PropTypes.string.isRequired,
+	language_tag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
+	localizedLink: PropTypes.func.isRequired,
 }
 
-PlanListView.defaultProps = {
+SubscriptionList.defaultProps = {
 	invitations: null,
 }
 
-export default connect(mapStateToProps, null)(PlanListView)
+export default connect(mapStateToProps, null)(SubscriptionList)

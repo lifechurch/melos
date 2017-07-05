@@ -37,7 +37,7 @@ class SubscriptionsController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
-        "cache_for" => YV::Cacexporthing::a_very_long_time
+        "cache_for" => YV::Caching::a_very_long_time
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)

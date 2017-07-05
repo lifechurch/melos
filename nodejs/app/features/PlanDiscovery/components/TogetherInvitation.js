@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { Link } from 'react-router'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../../../widgets/TogetherInvitationActions'
 import Card from '../../../components/Card'
@@ -39,7 +38,7 @@ function Invitation({
 							statusFilter='host'
 						/>
 						<div style={{ margin: '20px 0' }}>{ invitationString }</div>
-						<Link to={planLink}>
+						<a href={planLink}>
 							<div className='horizontal-center' style={{ height: '150px', marginBottom: '10px' }}>
 								<LazyImage
 									alt='plan-image'
@@ -52,7 +51,7 @@ function Invitation({
 							<div className='dark-gray' style={{ marginBottom: '30px', fontSize: '14px' }}>
 								{ planTitle }
 							</div>
-						</Link>
+						</a>
 						<div style={{ marginTop: '40px' }}>
 							<div className='font-grey' style={{ fontSize: '14px', marginBottom: '10px' }}>
 								{ participantsString }

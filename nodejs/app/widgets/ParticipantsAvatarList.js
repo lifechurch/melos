@@ -3,22 +3,50 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 // actions
 import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // selectors
 import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
+import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // components
 import User from '../components/User'
 
 
 class ParticipantsAvatarList extends Component {
 	componentDidMount() {
-		const { together_id, dispatch, isLoggedIn, joinToken, participants } = this.props
+		const { together_id, dispatch, joinToken, participants, day, auth } = this.props
+		if (day) {
+			this.getDayCompletes()
+		}
 		if (!participants) {
 			dispatch(participantsView({
 				together_id,
-				auth: isLoggedIn,
-				token: joinToken
+				auth: auth && auth.isLoggedIn,
+				token: joinToken,
+				day
 			}))
 		}
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		const { day } = this.props
+
+		if (day && prevProps.day !== day) {
+			this.getDayCompletes()
+		}
+	}
+
+	getDayCompletes = () => {
+		const { day, together_id, auth, dispatch } = this.props
+		dispatch(plansAPI.actions.activities.get({
+			id: together_id,
+			day,
+			kind: 'complete',
+			fields: 'user_id',
+			page: '*'
+		},
+			{
+				auth: auth && auth.isLoggedIn
+			}))
 	}
 
 	render() {
@@ -52,19 +80,19 @@ class ParticipantsAvatarList extends Component {
 					)
 				} else if (showMoreLink) {
 					link = (
-						<Link to={showMoreLink}>
-							<div>{ userIds.length - avatarList.length } More</div>
-						</Link>
-						)
+						<div>{ userIds.length - avatarList.length } More</div>
+					)
 				}
 			})
 		}
 
 		return (
-			<div className={`participants-list vertical-center ${customClass}`}>
-				{ avatarList }
-				{ link }
-			</div>
+			<Link to={showMoreLink}>
+				<div className={`participants-list vertical-center ${customClass}`}>
+					{ avatarList }
+					{ link }
+				</div>
+			</Link>
 		)
 	}
 }
@@ -73,6 +101,12 @@ function mapStateToProps(state, props) {
 	const { together_id } = props
 	return {
 		participants: getParticipantsUsersByTogetherId(state, together_id),
+		activities: getTogetherModel(state) &&
+								together_id in getTogetherModel(state).byId &&
+								getTogetherModel(state).byId[together_id].activities ?
+								getTogetherModel(state).byId[together_id].activities :
+								null,
+		auth: state.auth,
 	}
 }
 
@@ -83,18 +117,21 @@ ParticipantsAvatarList.propTypes = {
 	showMoreLink: PropTypes.string,
 	statusFilter: PropTypes.string,
 	avatarWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-	isLoggedIn: PropTypes.bool,
+	auth: PropTypes.object,
 	joinToken: PropTypes.string,
+	day: PropTypes.string,
 	dispatch: PropTypes.func.isRequired,
 }
 
 ParticipantsAvatarList.defaultProps = {
 	showMoreLink: null,
+	auth: null,
 	statusFilter: null,
 	avatarWidth: 24,
 	customClass: '',
 	isLoggedIn: false,
 	joinToken: null,
+	day: null,
 }
 
 export default connect(mapStateToProps, null)(ParticipantsAvatarList)
