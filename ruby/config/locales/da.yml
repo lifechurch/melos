@@ -1415,6 +1415,10 @@ da:
         verses selected: "vers valgt"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Administrer dine e-mail notifikationer"
                 unsub all: "Afmeld alle e-mails"
@@ -1430,6 +1434,16 @@ da:
                 rp_daily: "Du har med succes afmeldt alle Læse Plans e-mails fra %{plan_title}."
                 votd: "Du har med succes afmeldt alle e-mails vedr. Dagens Vers."
                 votd_image: "Du har med succes afmeldt Dagens Billede e-mails."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Beklager, du skal logge ind før du kan ændre Notifikations indstillinger:"
                 other_type: "Beklager, der skete ikke det vi forventede. Vil du opdatere dine Notifikationer?"

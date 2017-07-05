@@ -1445,6 +1445,10 @@ uk:
         verses selected: "Обрані вірші"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Керувати сповіщеннями через електронну пошту"
                 unsub all: "Відмовитись від отримання сповіщень"
@@ -1460,6 +1464,16 @@ uk:
                 rp_daily: "Ви щойно відписались від <b>щоденної розсилки Планів Читання</b> з %{plan_title}."
                 votd: "Ви щойно відписались від отримання <b>Віршів дня</b>через електронну адресу."
                 votd_image: "Ви щойно відписались від<b>Малюнку з віршем дня</b> через електронну адресу."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Вам необхідно увійти, перш ніж ви зможете змінити ваші налаштування сповіщень:"
                 other_type: "Сталась неочікувана помилка. Чи хотіли б ви оновити ваші сповіщення?"

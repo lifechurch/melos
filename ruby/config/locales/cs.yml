@@ -1430,6 +1430,10 @@ cs:
         verses selected: "verše vybrány"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Správa emailová oznámení"
                 unsub all: "Odhlásit odběr všech oznámení"
@@ -1445,6 +1449,16 @@ cs:
                 rp_daily: "Úspěšně jste odhlásili odběr emailů <b>plánu čtení Bible:</b> %{plan_title}."
                 votd: "Úspěšně jste odhlásili odběr emailů <b>veršů dne</b>."
                 votd_image: "Úspěšně jste odhlásili odběr emailů <b>obrázkového verše dne</b>."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Omlouváme se, ale pro změnu nastavení je nutné přihlášení:"
                 other_type: "Je nám líto, že vám emailové notifikace neposloužili. Přejete si aktualizovat nastavení oznámení?"

@@ -1415,6 +1415,10 @@ sq:
         verses selected: "vargje të përzgjedhura"
     EventsAdmin: 
         unsubscribe: 
+            about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
+            email: "Email"
+            not me: "This is not me"
+            saved: "Saved!"
             links: 
                 manage: "Kontrollo njoftimet me e-postë"
                 unsub all: "Çregjistrohu nga të gjitha e-postat"
@@ -1430,6 +1434,16 @@ sq:
                 rp_daily: "Ju jeni çregjistruar me sukses nga <b>e-postat e Planeve të Përditshme të Leximit</b> nga %{plan_title}."
                 votd: "Ju jeni çregjistruar me sukses nga e-postat e <b>Vargut të Ditës</b>."
                 votd_image: "Ju jeni çregjistruar me sukses nga e-posat e <b>Figurës së Vargut të Ditës</b>."
+            labels: 
+                badges: "When I earn a badge"
+                comments: "Comments on my activity"
+                friendships: "Friend requests"
+                likes: "Likes on my activity"
+                moments: "Friends' activity"
+                newsletter: "News from YouVersion"
+                reading_plans: "About my Bible Plans"
+                votd: "Verse of the Day Text"
+                votd_image: "Verse of the Day Image"
             error: 
                 token: "Na falni, por duhet të kyçeni përpara se të ndryshoni cilësimet për Njoftimet tuaja:"
                 other_type: "Na falni, por kjo nuk bëri atë që ne prisnim. A dëshironi të ndryshoni Njoftimet tuaja?"
