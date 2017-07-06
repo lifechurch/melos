@@ -31,7 +31,7 @@ class SubscriptionList extends Component {
 
 	getSubs = () => {
 		const { dispatch } = this.props
-		dispatch(plansAPI.actions.subscriptions.get({}, { auth: true })).then((subs) => {
+		dispatch(plansAPI.actions.subscriptions.get({ order: 'desc' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
@@ -120,7 +120,12 @@ class SubscriptionList extends Component {
 
 			subContent = (
 				<div>
-					<ParticipantsAvatarList together_id={together_id} />
+					<ParticipantsAvatarList
+						together_id={together_id}
+						// if it's an invitation, we want to show all participants
+						// otherwise, let's just show accetped and host
+						statusFilter={subscription_id ? ['accepted', 'host'] : null}
+					/>
 					<ProgressBar percentComplete={0} />
 					{ dayString }
 				</div>
@@ -194,7 +199,7 @@ class SubscriptionList extends Component {
 }
 
 function mapStateToProps(state) {
-	console.log('PLANS', getPlansModel(state));
+	console.log('SUB', getSubscriptionsModel(state));
 	return {
 		subscriptions: getSubscriptionsModel(state),
 		readingPlans: getPlansModel(state),

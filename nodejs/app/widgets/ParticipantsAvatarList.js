@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import Immutable from 'immutable'
 // actions
 import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
@@ -9,6 +10,7 @@ import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/mode
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // components
 import User from '../components/User'
+import CheckMark from '../components/CheckMark'
 
 
 class ParticipantsAvatarList extends Component {
@@ -27,11 +29,13 @@ class ParticipantsAvatarList extends Component {
 		}
 	}
 
-	componentDidUpdate(prevProps, prevState) {
-		const { day } = this.props
+	componentDidUpdate(prevProps) {
+		const { day, activities } = this.props
 
 		if (day && prevProps.day !== day) {
-			this.getDayCompletes()
+			if (!(activities && Immutable.fromJS(activities).hasIn(day))) {
+				this.getDayCompletes()
+			}
 		}
 	}
 
@@ -52,30 +56,58 @@ class ParticipantsAvatarList extends Component {
 	render() {
 		const {
 			participants,
+			activities,
+			day,
 			together_id,
 			showMoreLink,
 			statusFilter,
 			customClass,
-			avatarWidth
+			avatarWidth,
 		} = this.props
 
 		const avatarList = []
 		let link = null
 		if (participants && together_id) {
 			const userIds = Object.keys(participants)
-			userIds.forEach((userID, index) => {
+			userIds.forEach((userID) => {
 				const participant = participants[userID]
 				const avatarSrc = participant && participant.user_avatar_url ? participant.user_avatar_url.px_48x48 : ''
+
+				const filterMatch = Array.isArray(statusFilter) ?
+														Immutable.fromJS(statusFilter).includes(participant.status) :
+														statusFilter === participant.status
 				// truncate amount to show, and then render more link to go to participants
 				// also allow filtering on status
-				if (index < 6 && (!statusFilter || statusFilter === participant.status)) {
+				if (avatarList.length < 6 && (!statusFilter || filterMatch)) {
+					// if we're showing participants for a specific day, we want to show the check
+					// if they've completed the day
+					let check = null
+					if (day && activities) {
+						const completions = activities[day] ? activities[day].data : null
+						if (completions && completions.length > 0) {
+							completions.forEach((completion) => {
+								if (parseInt(completion.user_id, 10) === parseInt(userID, 10)) {
+									check = <CheckMark width={15} fill='black' />
+								}
+							})
+						}
+					}
 					avatarList.push(
-						<div className='vertical-center item' key={participant.id} style={{ marginRight: '10px' }}>
+						<div
+							className='item'
+							key={participant.id}
+							style={{
+								marginRight: '10px',
+								display: 'flex',
+								alignItems: 'flex-start'
+							}}
+						>
 							<User
 								avatarLetter={participant.first_name ? participant.first_name.charAt(0) : null}
 								src={participant && participant.has_avatar ? avatarSrc : null}
 								width={avatarWidth}
 							/>
+							{ check }
 						</div>
 					)
 				} else if (showMoreLink) {
@@ -112,10 +144,11 @@ function mapStateToProps(state, props) {
 
 ParticipantsAvatarList.propTypes = {
 	participants: PropTypes.object.isRequired,
+	activities: PropTypes.object,
 	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	customClass: PropTypes.string,
 	showMoreLink: PropTypes.string,
-	statusFilter: PropTypes.string,
+	statusFilter: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 	avatarWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	auth: PropTypes.object,
 	joinToken: PropTypes.string,
@@ -126,6 +159,7 @@ ParticipantsAvatarList.propTypes = {
 ParticipantsAvatarList.defaultProps = {
 	showMoreLink: null,
 	auth: null,
+	activities: null,
 	statusFilter: null,
 	avatarWidth: 24,
 	customClass: '',

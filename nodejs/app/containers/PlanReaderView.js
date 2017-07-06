@@ -13,6 +13,7 @@ import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 // components
 import BibleContent from './BibleContent'
+import TalkItOver from './TalkItOver'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
 import PlanRef from '../features/PlanDiscovery/components/planReader/PlanRef'
@@ -166,7 +167,7 @@ class PlanReaderView extends Component {
 
 
 	render() {
-		const { params: { day, content }, plan, subscription } = this.props
+		const { params: { day } } = this.props
 
 
 		const { previous, next, subLink } = this.buildNavLinks()
@@ -189,7 +190,7 @@ class PlanReaderView extends Component {
 
 				case 'talk-it-over':
 					readerContent = (
-						this.segment.content
+						<TalkItOver content={this.segment.content} day={day} />
 					)
 					break
 

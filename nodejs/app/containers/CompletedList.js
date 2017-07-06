@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
+import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
@@ -101,7 +102,11 @@ class CompletedList extends Component {
 
 		return (
 			<List customClass='subscription-list'>
-				{ plansList }
+				{
+					plansList.length > 0 ?
+					plansList :
+					<FormattedMessage id='no completed plans' />
+				}
 			</List>
 		)
 	}

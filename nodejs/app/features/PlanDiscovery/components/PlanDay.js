@@ -23,7 +23,6 @@ function PlanDay(props) {
 		subscriptionLink,
 		startLink,
 		isSaved,
-		handleCompleteRef,
 		together_id
 	} = props
 
@@ -69,6 +68,7 @@ function PlanDay(props) {
 							<ParticipantsAvatarList
 								together_id={together_id}
 								day={day}
+								statusFilter={['accepted', 'host']}
 								avatarWidth={46}
 							/>
 						</div>
@@ -105,23 +105,32 @@ function PlanDay(props) {
 
 PlanDay.propTypes = {
 	day: PropTypes.number.isRequired,
+	together_id: PropTypes.number,
 	totalDays: PropTypes.number.isRequired,
+	progressDays: PropTypes.array,
+	progressString: PropTypes.node,
 	subscriptionLink: PropTypes.string.isRequired,
-	startLink: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+	start_dt: PropTypes.string,
+	startLink: PropTypes.string.isRequired,
 	isSaved: PropTypes.bool.isRequired,
 	isRtl: PropTypes.func,
-	handleCompleteRef: PropTypes.func,
+	language_tag: PropTypes.string.isRequired,
 	id: PropTypes.number.isRequired,
 	actionsNode: PropTypes.node,
+	refListNode: PropTypes.node,
 	planLinkNode: PropTypes.node,
 	isSubscribed: PropTypes.bool.isRequired,
 }
 
 PlanDay.defaultProps = {
 	actionsNode: null,
-	handleCompleteRef: () => {},
+	progressDays: null,
+	together_id: null,
+	start_dt: null,
 	isRtl: () => { return false },
 	planLinkNode: null,
+	refListNode: null,
+	progressString: null,
 }
 
 export default PlanDay
