@@ -19,13 +19,9 @@ class PlanReader extends Component {
 			subLink,
 			showCheckmark,
 			handleContentCheck,
-			bible,
-			hosts,
-			auth,
-			dispatch,
 			isRtl,
-			showFullChapter,
 			updateStyle,
+			customClass,
 			children
 		} = this.props
 
@@ -54,7 +50,7 @@ class PlanReader extends Component {
 					// update the arrow positioning
 					updateStyle={updateStyle}
 				/>
-				<div className='row plan-reader-content'>
+				<div className={`row plan-reader-content ${customClass}`}>
 					<div className='columns large-6 medium-8 medium-centered'>
 						{ children }
 					</div>
@@ -66,16 +62,13 @@ class PlanReader extends Component {
 
 PlanReader.propTypes = {
 	plan: PropTypes.object.isRequired,
-	bible: PropTypes.object.isRequired,
-	showFullChapter: PropTypes.bool,
-	dispatch: PropTypes.func.isRequired,
-	hosts: PropTypes.object.isRequired,
-	auth: PropTypes.object.isRequired,
 	children: PropTypes.node.isRequired,
+	customClass: PropTypes.string,
 }
 
 PlanReader.defaultProps = {
-	showFullChapter: false
+	showFullChapter: false,
+	customClass: null,
 }
 
 export default PlanReader

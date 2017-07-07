@@ -167,12 +167,12 @@ class PlanReaderView extends Component {
 
 
 	render() {
-		const { params: { day } } = this.props
-
+		const { params: { day }, dispatch, plan, subscription } = this.props
 
 		const { previous, next, subLink } = this.buildNavLinks()
 		this.buildData()
 
+		let customClass = null
 		let readerContent = null
 		if (this.segment) {
 			switch (this.segment.kind) {
@@ -189,8 +189,13 @@ class PlanReaderView extends Component {
 					break
 
 				case 'talk-it-over':
+					customClass = 'gray-background'
 					readerContent = (
-						<TalkItOver content={this.segment.content} day={day} />
+						<TalkItOver
+							together_id={subscription ? subscription.together_id : null}
+							content={this.segment.content}
+							day={day}
+						/>
 					)
 					break
 
@@ -201,7 +206,7 @@ class PlanReaderView extends Component {
 		return (
 			<div>
 				<PlanReader
-					{...this.props}
+					customClass={customClass}
 					previousPath={previous}
 					nextPath={next}
 					subLink={subLink}
@@ -212,6 +217,8 @@ class PlanReaderView extends Component {
 					showCheckmark={this.isFinalSegment}
 					localizedLink={this.localizedLink}
 					isRtl={this.isRtl}
+					plan={plan}
+					dispatch={dispatch}
 				>
 					{ readerContent }
 				</PlanReader>
@@ -224,6 +231,7 @@ function mapStateToProps(state, props) {
 	const { params: { id, subscription_id } } = props
 	const plan_id = id.split('-')[0]
 	console.log('PLANS', getPlansModel(state))
+	console.log('SUB', getSubscriptionModel(state))
 	return {
 		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId ?
 					getPlansModel(state).byId[plan_id] :

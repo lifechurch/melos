@@ -1,19 +1,40 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 
-class Card extends Component {
+function Card(props) {
+	const {
+    children,
+		customClass,
+		footer,
+  } = props
 
-	render() {
-
-		return (
-			<div className='card'>
-				{ this.props.children }
+	return (
+		<div className='card-container'>
+			<div
+				{...props}
+				className={`card ${customClass}`}
+			>
+				{ children }
 			</div>
-		)
-	}
+			{
+				footer &&
+				<div className='card-footer'>
+					{ footer }
+				</div>
+			}
+		</div>
+	)
 }
 
 Card.propTypes = {
+	children: PropTypes.node,
+	customClass: PropTypes.string,
+	footer: PropTypes.node,
+}
 
+Card.defaultProps = {
+	children: null,
+	customClass: null,
+	footer: null,
 }
 
 export default Card

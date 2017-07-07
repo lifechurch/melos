@@ -15,11 +15,11 @@ import CheckMark from '../components/CheckMark'
 
 class ParticipantsAvatarList extends Component {
 	componentDidMount() {
-		const { together_id, dispatch, joinToken, participants, day, auth } = this.props
-		if (day) {
+		const { together_id, dispatch, joinToken, participants, day, auth, activities } = this.props
+		if (day && !activities) {
 			this.getDayCompletes()
 		}
-		if (!participants) {
+		if (!participants && together_id) {
 			dispatch(participantsView({
 				together_id,
 				auth: auth && auth.isLoggedIn,
@@ -132,7 +132,7 @@ class ParticipantsAvatarList extends Component {
 function mapStateToProps(state, props) {
 	const { together_id } = props
 	return {
-		participants: getParticipantsUsersByTogetherId(state, together_id),
+		participants: together_id ? getParticipantsUsersByTogetherId(state, together_id) : null,
 		activities: getTogetherModel(state) &&
 								together_id in getTogetherModel(state).byId &&
 								getTogetherModel(state).byId[together_id].activities ?

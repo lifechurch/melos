@@ -38,7 +38,7 @@ Avatar.propTypes = {
 	placeholderText: PropTypes.string,
 	customClass: PropTypes.string,
 	src: PropTypes.string.isRequired,
-	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	link: PropTypes.string,
 }
@@ -46,6 +46,7 @@ Avatar.propTypes = {
 Avatar.defaultProps = {
 	placeholderText: '',
 	customClass: '',
+	width: 48,
 	height: null,
 	link: null,
 }

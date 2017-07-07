@@ -18,15 +18,15 @@ class Input extends Component {
 	}
 
 	sendChange = () => {
-		const { value, onChange } = this.props
-		const el = this.refs.inputElement;
+		const { onChange } = this.props
+		const { stateValue } = this.state
 
-		if (typeof el === 'object' && (el.value !== value)) {
-			onChange({ target: el, currentTarget: el })
+		if (onChange) {
+			onChange(stateValue)
 		}
 	}
 
-	handleChange(changeEvent) {
+	handleChange = (changeEvent) => {
 		const { debounce } = this.props
 
 		this.setState({ stateValue: changeEvent.target.value });
@@ -54,10 +54,8 @@ class Input extends Component {
 
 		return (
 			<input
-				{...this.props}
-				ref='inputElement'
 				className={customClass || size}
-				onChange={::this.handleChange}
+				onChange={this.handleChange}
 				onKeyUp={this.handleKeyUp}
 				value={stateValue}
 				name={name}
@@ -69,10 +67,10 @@ class Input extends Component {
 }
 
 Input.propTypes = {
+	onChange: PropTypes.func.isRequired,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 	placeholder: PropTypes.string,
-	name: PropTypes.string.isRequired,
-	onChange: PropTypes.func.isRequired,
+	name: PropTypes.string,
 	onKeyUp: PropTypes.func,
 	value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
 	type: PropTypes.oneOf(['text', 'password', 'search']),
@@ -84,6 +82,7 @@ Input.defaultProps = {
 	size: 'medium',
 	placeholder: '',
 	value: '',
+	name: 'input',
 	customClass: null,
 	type: 'text',
 	onKeyUp: null,
