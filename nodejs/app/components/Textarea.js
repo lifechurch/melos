@@ -13,7 +13,7 @@ class Textarea extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.value !== this.props.value) {
+		if (nextProps.value !== this.state.value) {
 			this.setState({ stateValue: nextProps.value })
 		}
 	}
@@ -52,12 +52,16 @@ class Textarea extends Component {
 	}
 
 	render() {
+		const { size, placeholder, name } = this.props
 		const { stateValue } = this.state
 
 		return (
 			<textarea
 				{...this.props}
 				ref='textareaElement'
+				name={name}
+				size={size}
+				placeholder={placeholder}
 				onChange={this.handleChange}
 				value={stateValue}
 			/>
@@ -71,6 +75,12 @@ Textarea.propTypes = {
 	name: PropTypes.string.isRequired,
 	onChange: PropTypes.func.isRequired,
 	value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])
+}
+
+Textarea.defaultProps = {
+	size: 'medium',
+	placeholder: null,
+	value: null
 }
 
 export default Textarea

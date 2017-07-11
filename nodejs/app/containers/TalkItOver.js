@@ -41,6 +41,7 @@ class TalkItOver extends Component {
 			id: together_id,
 			day,
 			page,
+			order: 'desc'
 		},
 			{
 				auth: true
@@ -63,7 +64,7 @@ class TalkItOver extends Component {
 					},
 					auth: true
 				})).then(() => {
-					this.setState({ comment: null })
+					this.setState({ comment: '' })
 					this.getActivities({ page: 1 })
 				})
 		}
@@ -105,22 +106,25 @@ class TalkItOver extends Component {
 
 		return (
 			<div className='talk-it-over'>
-				{
-					dayActivities &&
-					<ParticipantsAvatarList
-						together_id={together_id}
-						day={day}
-						statusFilter={['accepted', 'host']}
-						avatarWidth={46}
-					/>
-				}
-				<h5>{ content }</h5>
+				<div style={{ width: '80%', textAlign: 'center', margin: 'auto', marginBottom: '10px' }}>
+					{
+						dayActivities &&
+						<ParticipantsAvatarList
+							together_id={together_id}
+							day={day}
+							statusFilter={['accepted', 'host']}
+							avatarWidth={46}
+						/>
+					}
+					<h5 style={{ margin: '30px 0' }}>{ content }</h5>
+				</div>
 				<List>
 					<Card
-						footer={
+						customClass='moment-card'
+						extension={
 							<a
 								tabIndex={0}
-								className='green'
+								className='green flex-end'
 								onClick={this.handleComment}
 							>
 								<FormattedMessage id='moments.comments.form.save button' />
@@ -135,9 +139,9 @@ class TalkItOver extends Component {
 							/>
 						</div>
 						<Textarea
-							ref={(ref) => { this.textarea = ref }}
+							style={{ flex: 1, padding: '10px 0' }}
 							className='yv-textarea'
-							placeholder={intl.formatMessage({ id: 'type response' })}
+							placeholder={intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt' })}
 							onChange={(val) => { this.setState({ comment: val.target.value }) }}
 							value={comment}
 						/>

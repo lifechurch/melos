@@ -60,8 +60,8 @@ class Moment extends Component {
 
 
 		return (
-			<Card customClass='moment'>
-				<div className='aside-col' style={{ marginRight: '15px' }}>
+			<Card customClass='moment-card'>
+				<div className='aside-col'>
 					{
 						userid &&
 							<Avatar

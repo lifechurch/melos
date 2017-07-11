@@ -4,7 +4,7 @@ function Card(props) {
 	const {
     children,
 		customClass,
-		footer,
+		extension,
   } = props
 
 	return (
@@ -16,9 +16,9 @@ function Card(props) {
 				{ children }
 			</div>
 			{
-				footer &&
-				<div className='card-footer'>
-					{ footer }
+				extension &&
+				<div className='card-extension'>
+					{ extension }
 				</div>
 			}
 		</div>
@@ -28,13 +28,13 @@ function Card(props) {
 Card.propTypes = {
 	children: PropTypes.node,
 	customClass: PropTypes.string,
-	footer: PropTypes.node,
+	extension: PropTypes.node,
 }
 
 Card.defaultProps = {
 	children: null,
 	customClass: null,
-	footer: null,
+	extension: null,
 }
 
 export default Card
