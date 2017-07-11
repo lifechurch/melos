@@ -21,6 +21,8 @@ import List from '../../../components/List'
 import Card from '../../../components/Card'
 import Textarea from '../../../components/Textarea'
 import Avatar from '../../../components/Avatar'
+import MomentHeader from './MomentHeader'
+import MomentFooter from './MomentFooter'
 
 
 class Moment extends Component {
@@ -72,27 +74,19 @@ class Moment extends Component {
 					}
 				</div>
 				<div className='main-col'>
-					<div className='moment-header'>
-						<div className='title'>
-							{/* if we don't pass a title and do pass a userid, use the name */}
-							{
-								title ||
-								(
-									user &&
-									user.name
-								)
-							}
-						</div>
-						{
-							dt &&
-							<div className='dt'>
-								{ moment(dt).fromNow() }
-							</div>
-						}
-					</div>
+					{/* if we don't pass a title and do pass a userid, use the name */}
+					<MomentHeader
+						title={title || (user ? user.name : null)}
+						dt={dt}
+					/>
 					<div className='content'>
 						{ content }
 					</div>
+					<MomentFooter
+						handleLike={null}
+						handleReply={null}
+						handleDelete={null}
+					/>
 				</div>
 			</Card>
 		)
