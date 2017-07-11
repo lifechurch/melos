@@ -106,7 +106,7 @@ class TalkItOver extends Component {
 
 		return (
 			<div className='talk-it-over'>
-				<div style={{ width: '80%', textAlign: 'center', margin: 'auto', marginBottom: '10px' }}>
+				<div style={{ width: '80%', textAlign: 'center', margin: 'auto', marginBottom: '50px' }}>
 					{
 						dayActivities &&
 						<ParticipantsAvatarList

@@ -50,7 +50,7 @@ class PlanReader extends Component {
 					// update the arrow positioning
 					updateStyle={updateStyle}
 				/>
-				<div className={`row plan-reader-content ${customClass}`}>
+				<div className={`plan-reader-content ${customClass}`}>
 					<div className='columns large-6 medium-8 medium-centered'>
 						{ children }
 					</div>

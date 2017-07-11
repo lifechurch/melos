@@ -48,9 +48,9 @@ class Moment extends Component {
 		} = this.props
 
 		const user = 	userid &&
-												userid in users ?
-												users[userid] :
-												null
+										userid in users ?
+										users[userid] :
+										null
 
 		const avatarSrc = user &&
 											user.has_avatar &&
@@ -74,7 +74,14 @@ class Moment extends Component {
 				<div className='main-col'>
 					<div className='moment-header'>
 						<div className='title'>
-							{ title }
+							{/* if we don't pass a title and do pass a userid, use the name */}
+							{
+								title ||
+								(
+									user &&
+									user.name
+								)
+							}
 						</div>
 						{
 							dt &&
