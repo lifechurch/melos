@@ -28,7 +28,7 @@ class PlanReader extends Component {
 		return (
 			<div>
 				<PlanNavigation
-					planName={plan ? plan.name.default : null}
+					planName={plan && plan.name ? plan.name.default : null}
 					planImgUrl={plan && plan.images ?
 						selectImageFromList({
 							images: plan.images,

@@ -142,6 +142,7 @@ class Plan extends Component {
 function mapStateToProps(state, props) {
 	const { params: { id, subscription_id } } = props
 	const plan_id = id.split('-')[0]
+	console.log('SUB', getSubscriptionModel(state));
 	return {
 		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId ?
 					getPlansModel(state).byId[plan_id] :

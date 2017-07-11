@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Card from '../../../../../components/Card'
 import Textarea from '../../../../../components/Textarea'
-import LabelSelector from '../bookmark/LabelSelector'
 
 class NoteEditor extends Component {
 
@@ -12,12 +11,12 @@ class NoteEditor extends Component {
 		}
 	}
 
-	onChange = (e) => {
+	handleChange = (e) => {
 		const { updateNote } = this.props
 
-   	if (typeof updateNote == 'function') {
-   		updateNote(e.target.value)
-   	}
+		if (typeof updateNote === 'function') {
+			updateNote(e.target.value)
+		}
 	}
 
 	render() {
@@ -26,8 +25,12 @@ class NoteEditor extends Component {
 		return (
 			<Card>
 				<Textarea
-					onChange={this.onChange}
-					placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt" })}
+					onChange={this.handleChange}
+					placeholder={
+						intl ?
+						intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt' }) :
+						null
+					}
 					name='note-text'
 					autofocus
 					required
@@ -43,7 +46,7 @@ class NoteEditor extends Component {
  * @updateNote 		{function} 		callback to update text value
  */
 NoteEditor.propTypes = {
-	updateNote: React.PropTypes.func,
+	updateNote: PropTypes.func.isRequired,
 }
 
 export default NoteEditor

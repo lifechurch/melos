@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 // actions
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
@@ -18,8 +18,9 @@ import getCurrentDT from '../lib/getCurrentDT'
 import ParticipantsAvatarList from '../widgets/ParticipantsAvatarList'
 import List from '../components/List'
 import Card from '../components/Card'
-import Input from '../components/Input'
+import Textarea from '../components/Textarea'
 import Avatar from '../components/Avatar'
+import Moment from '../features/Moments/components/Moment'
 
 
 class TalkItOver extends Component {
@@ -56,25 +57,33 @@ class TalkItOver extends Component {
 				{
 					body: {
 						kind: 'comment',
-						day,
+						day: parseInt(day, 10),
 						created_dt: getCurrentDT(),
 						content: comment,
 					},
 					auth: true
-				}))
+				})).then(() => {
+					this.setState({ comment: null })
+					this.getActivities({ page: 1 })
+				})
 		}
 	}
 
 	renderMoment = (moment) => {
+		console.log('MOMENT', moment);
 		return (
-			<div>
-				{ moment.id }
-			</div>
+			<Moment
+				userid={moment.user_id}
+				content={moment.content}
+				title={null}
+				dt={moment.created_dt}
+			/>
 		)
 	}
 
 	render() {
-		const { content, day, together_id, activities, auth, users } = this.props
+		const { content, day, together_id, activities, auth, users, intl } = this.props
+		const { comment } = this.state
 
 		const authedUser = auth &&
 												auth.userData &&
@@ -88,16 +97,16 @@ class TalkItOver extends Component {
 											authedUser.user_avatar_url ?
 											authedUser.user_avatar_url.px_48x48 :
 											null
-		console.log(authedUser, users);
-		const activitiesList = activities &&
-														activities[day] &&
-														activities[day].data ?
-														activities[day].data :
+
+		const dayActivities = activities &&
+														activities[day] ?
+														activities[day] :
 														null
+
 		return (
-			<div>
+			<div className='talk-it-over'>
 				{
-					activitiesList &&
+					dayActivities &&
 					<ParticipantsAvatarList
 						together_id={together_id}
 						day={day}
@@ -118,15 +127,31 @@ class TalkItOver extends Component {
 							</a>
 						}
 					>
-						<Avatar src={avatarSrc} />
-						<Input onChange={(val) => { this.setState({ comment: val }) }} />
+						<div style={{ display: 'inline-flex', alignItems: 'flex-start' }}>
+							<Avatar
+								src={avatarSrc}
+								width={38}
+								placeholderText={authedUser && authedUser.first_name ? authedUser.first_name.charAt(0) : null}
+							/>
+						</div>
+						<Textarea
+							ref={(ref) => { this.textarea = ref }}
+							className='yv-textarea'
+							placeholder={intl.formatMessage({ id: 'type response' })}
+							onChange={(val) => { this.setState({ comment: val.target.value }) }}
+							value={comment}
+						/>
 					</Card>
 					{
-							activitiesList &&
-							activitiesList.map((moment) => {
-								if (moment && moment.id) {
+							dayActivities &&
+							dayActivities.map &&
+							dayActivities.map.map((id) => {
+								const moment = dayActivities.data[id]
+								// we don't render a separate moment for a child activity,
+								// nor day complete
+								if (moment && moment.id && !moment.parent_id && moment.kind === 'comment') {
 									return (
-										<li key={moment.id} className='no-bullets'>
+										<li key={moment.id} className='no-bullets' style={{ marginTop: '20px' }}>
 											{ this.renderMoment(moment) }
 										</li>
 									)
@@ -163,4 +188,4 @@ TalkItOver.defaultProps = {
 	location: {},
 }
 
-export default connect(mapStateToProps, null)(TalkItOver)
+export default connect(mapStateToProps, null)(injectIntl(TalkItOver))

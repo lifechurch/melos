@@ -1,11 +1,6 @@
 .user-container {
 	display: inline-flex;
-	.avatar-container {
-		.vertical-center;
-	}
-	.avatar {
-		border-radius: 100%;
-	}
+
 	.content {
 		.vertical-center;
 		flex-wrap: wrap;
@@ -27,7 +22,16 @@
 	}
 }
 
-.avatar-placeholder {
-	border-radius: 100%;
-	background: white;
+.avatar-container {
+	display: inline-flex;
+	align-items: center;
+
+	.avatar {
+		border-radius: 100%;
+		.avatar-placeholder {
+			border-radius: 100%;
+			background: white;
+		}
+	}
+	.avatar.placeholder { background: white; }
 }

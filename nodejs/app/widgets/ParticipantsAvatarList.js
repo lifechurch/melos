@@ -45,7 +45,7 @@ class ParticipantsAvatarList extends Component {
 			id: together_id,
 			day,
 			kind: 'complete',
-			fields: 'user_id',
+			fields: 'user_id,id',
 			page: '*'
 		},
 			{
@@ -83,9 +83,10 @@ class ParticipantsAvatarList extends Component {
 					// if they've completed the day
 					let check = null
 					if (day && activities) {
-						const completions = activities[day] ? activities[day].data : null
+						const completions = activities[day] ? activities[day].map : null
 						if (completions && completions.length > 0) {
-							completions.forEach((completion) => {
+							completions.forEach((id) => {
+								const completion = activities[day].data[id]
 								if (parseInt(completion.user_id, 10) === parseInt(userID, 10)) {
 									check = <CheckMark width={15} fill='black' />
 								}
@@ -132,7 +133,10 @@ class ParticipantsAvatarList extends Component {
 function mapStateToProps(state, props) {
 	const { together_id } = props
 	return {
-		participants: together_id ? getParticipantsUsersByTogetherId(state, together_id) : null,
+		participants: together_id &&
+									getParticipantsUsersByTogetherId(state, together_id) ?
+									getParticipantsUsersByTogetherId(state, together_id) :
+									null,
 		activities: getTogetherModel(state) &&
 								together_id in getTogetherModel(state).byId &&
 								getTogetherModel(state).byId[together_id].activities ?

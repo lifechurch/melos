@@ -11,7 +11,7 @@ function Card(props) {
 		<div className='card-container'>
 			<div
 				{...props}
-				className={`card ${customClass}`}
+				className={`card ${customClass || ''}`}
 			>
 				{ children }
 			</div>
