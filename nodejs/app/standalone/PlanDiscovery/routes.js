@@ -79,7 +79,7 @@ export default function (
 				<Route path=":id(-:slug)" component={PlanCollectionView} onEnter={requireRecommendedPlanData} />
 			</Route>
 			<Route path="(:lang/)users/:username" component={PlansView}>
-				<Route path="saved-reading-plans" component={PlansList} view='saved' />
+				<Route path="saved-reading-plans" component={PlansList} view='saved' onEnter={requireSavedPlans} />
 				<Route path="completed-reading-plans" component={PlansList} view='completed' />
 				<Route path="reading-plans" component={PlansList} view='subscribed' />
 			</Route>

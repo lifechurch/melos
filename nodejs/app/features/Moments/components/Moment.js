@@ -44,6 +44,7 @@ class Moment extends Component {
 			title,
 			dt,
 			content,
+			onLike,
 			users,
 			auth,
 			intl
@@ -83,7 +84,7 @@ class Moment extends Component {
 						{ content }
 					</div>
 					<MomentFooter
-						handleLike={null}
+						onLike={onLike}
 						handleReply={null}
 						handleDelete={null}
 					/>
@@ -105,12 +106,14 @@ Moment.propTypes = {
 	title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 	dt: PropTypes.string,
 	content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+	onLike: PropTypes.func,
 }
 
 Moment.defaultProps = {
 	title: null,
 	dt: null,
 	content: null,
+	onLike: null,
 }
 
 export default connect(mapStateToProps, null)(injectIntl(Moment))

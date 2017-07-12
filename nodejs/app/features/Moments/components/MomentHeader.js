@@ -14,7 +14,7 @@ function MomentHeader(props) {
 			</div>
 			{
 				dt &&
-				<div className='dt'>
+				<div className='dt margin-left-auto'>
 					{ moment(dt).fromNow() }
 				</div>
 			}

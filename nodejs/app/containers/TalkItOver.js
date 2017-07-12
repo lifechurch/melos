@@ -48,7 +48,9 @@ class TalkItOver extends Component {
 			}))
 	}
 
-	handleComment = () => {
+	// if we pass a parent_id than this is a reply, otherwise it's a top
+	// level comment
+	handleComment = ({ parent_id = null }) => {
 		const { day, together_id, dispatch } = this.props
 		const { comment } = this.state
 		if (comment) {
@@ -61,12 +63,30 @@ class TalkItOver extends Component {
 						day: parseInt(day, 10),
 						created_dt: getCurrentDT(),
 						content: comment,
+						parent_id,
 					},
 					auth: true
 				})).then(() => {
 					this.setState({ comment: '' })
-					this.getActivities({ page: 1 })
 				})
+		}
+	}
+
+	handleLike = ({ parent_id }) => {
+		const { day, together_id, dispatch } = this.props
+		if (parent_id) {
+			dispatch(plansAPI.actions.activities.post({
+				id: together_id,
+			},
+				{
+					body: {
+						kind: 'like',
+						day: parseInt(day, 10),
+						created_dt: getCurrentDT(),
+						parent_id,
+					},
+					auth: true
+				}))
 		}
 	}
 
@@ -76,8 +96,9 @@ class TalkItOver extends Component {
 			<Moment
 				userid={moment.user_id}
 				content={moment.content}
-				title={null}
 				dt={moment.created_dt}
+				onReply={this.handleComment.bind(this, { parent_id: moment.id })}
+				onLike={this.handleLike.bind(this, { parent_id: moment.id })}
 			/>
 		)
 	}

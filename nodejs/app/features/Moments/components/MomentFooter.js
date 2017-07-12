@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import HeartIcon from '../../../components/Icons/Heart'
 
 class MomentFooter extends Component {
 	constructor(props) {
@@ -17,10 +18,17 @@ class MomentFooter extends Component {
 	}
 
 	render() {
-		// const {  } = this.props
+		const { onLike } = this.props
 
 		return (
-			<div />
+			<div className='moment-footer'>
+				{
+					onLike &&
+					<a tabIndex={0} className='margin-left-auto' onClick={onLike}>
+						<HeartIcon />
+					</a>
+				}
+			</div>
 		)
 	}
 }
