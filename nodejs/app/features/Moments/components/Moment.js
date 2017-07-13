@@ -44,6 +44,8 @@ class Moment extends Component {
 			title,
 			dt,
 			content,
+			likes,
+			filledLike,
 			onLike,
 			users,
 			auth,
@@ -84,6 +86,8 @@ class Moment extends Component {
 						{ content }
 					</div>
 					<MomentFooter
+						likes={likes}
+						filledLike={filledLike}
 						onLike={onLike}
 						handleReply={null}
 						handleDelete={null}

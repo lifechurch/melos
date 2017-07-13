@@ -23,6 +23,16 @@ import Avatar from '../components/Avatar'
 import Moment from '../features/Moments/components/Moment'
 
 
+function authedUserHasLiked(momentLikes, userLikes) {
+	// check if the any of the likes on the moment match any likes from the
+	// authed user
+	return momentLikes &&
+					momentLikes.some((id) => {
+						return userLikes &&
+										userLikes.includes(id)
+					})
+}
+
 class TalkItOver extends Component {
 	constructor(props) {
 		super(props)
@@ -75,28 +85,50 @@ class TalkItOver extends Component {
 	handleLike = ({ parent_id }) => {
 		const { day, together_id, dispatch } = this.props
 		if (parent_id) {
-			dispatch(plansAPI.actions.activities.post({
-				id: together_id,
-			},
-				{
-					body: {
-						kind: 'like',
-						day: parseInt(day, 10),
-						created_dt: getCurrentDT(),
-						parent_id,
-					},
-					auth: true
-				}))
+			const moment = this.dayActivities.data[parent_id]
+			// if the user has already liked the moment then we want to unlike it
+			const alreadyLiked = moment.likes & this.dayActivities.authedUser.likes
+			console.log('ALRE', moment.likes & [], alreadyLiked)
+			if (alreadyLiked) {
+				dispatch(plansAPI.actions.activity.delete({
+					id: together_id,
+					activity_id: alreadyLiked
+				},
+					{
+						auth: true
+					}))
+			} else {
+				dispatch(plansAPI.actions.activities.post({
+					id: together_id,
+				},
+					{
+						body: {
+							kind: 'like',
+							day: parseInt(day, 10),
+							created_dt: getCurrentDT(),
+							parent_id,
+						},
+						auth: true
+					}))
+			}
 		}
 	}
 
 	renderMoment = (moment) => {
 		console.log('MOMENT', moment);
+		// fill the heart if the user has liked this moment
+		const authedLike = authedUserHasLiked(
+												moment.likes,
+												this.dayActivities.authedUser.likes
+											)
+
 		return (
 			<Moment
 				userid={moment.user_id}
 				content={moment.content}
 				dt={moment.created_dt}
+				filledLike={authedLike}
+				likes={moment.likes ? moment.likes.length : null}
 				onReply={this.handleComment.bind(this, { parent_id: moment.id })}
 				onLike={this.handleLike.bind(this, { parent_id: moment.id })}
 			/>
@@ -107,20 +139,20 @@ class TalkItOver extends Component {
 		const { content, day, together_id, activities, auth, users, intl } = this.props
 		const { comment } = this.state
 
-		const authedUser = auth &&
+		this.authedUser = auth &&
 												auth.userData &&
 												auth.userData.userid &&
 												auth.userData.userid in users ?
 												users[auth.userData.userid] :
 												null
 
-		const avatarSrc = authedUser &&
-											authedUser.has_avatar &&
-											authedUser.user_avatar_url ?
-											authedUser.user_avatar_url.px_48x48 :
+		const avatarSrc = this.authedUser &&
+											this.authedUser.has_avatar &&
+											this.authedUser.user_avatar_url ?
+											this.authedUser.user_avatar_url.px_48x48 :
 											null
 
-		const dayActivities = activities &&
+		this.dayActivities = activities &&
 														activities[day] ?
 														activities[day] :
 														null
@@ -129,7 +161,7 @@ class TalkItOver extends Component {
 			<div className='talk-it-over'>
 				<div style={{ width: '80%', textAlign: 'center', margin: 'auto', marginBottom: '50px' }}>
 					{
-						dayActivities &&
+						this.dayActivities &&
 						<ParticipantsAvatarList
 							together_id={together_id}
 							day={day}
@@ -156,7 +188,7 @@ class TalkItOver extends Component {
 							<Avatar
 								src={avatarSrc}
 								width={38}
-								placeholderText={authedUser && authedUser.first_name ? authedUser.first_name.charAt(0) : null}
+								placeholderText={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
 							/>
 						</div>
 						<Textarea
@@ -168,10 +200,10 @@ class TalkItOver extends Component {
 						/>
 					</Card>
 					{
-							dayActivities &&
-							dayActivities.map &&
-							dayActivities.map.map((id) => {
-								const moment = dayActivities.data[id]
+							this.dayActivities &&
+							this.dayActivities.map &&
+							this.dayActivities.map.map((id) => {
+								const moment = this.dayActivities.data[id]
 								// we don't render a separate moment for a child activity,
 								// nor day complete
 								if (moment && moment.id && !moment.parent_id && moment.kind === 'comment') {

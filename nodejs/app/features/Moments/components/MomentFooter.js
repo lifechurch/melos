@@ -18,15 +18,23 @@ class MomentFooter extends Component {
 	}
 
 	render() {
-		const { onLike } = this.props
+		const { onLike, filledLike, likes } = this.props
 
 		return (
 			<div className='moment-footer'>
 				{
 					onLike &&
-					<a tabIndex={0} className='margin-left-auto' onClick={onLike}>
-						<HeartIcon />
-					</a>
+					<div className='margin-left-auto vertical-center'>
+						{
+							likes &&
+							<a className='font-grey' style={{ marginRight: '5px' }}>
+								{ likes }
+							</a>
+						}
+						<a tabIndex={0} onClick={onLike}>
+							<HeartIcon fill={filledLike ? '#DA1000' : '#979797'} />
+						</a>
+					</div>
 				}
 			</div>
 		)
