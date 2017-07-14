@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import { routeActions } from 'react-router-redux'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 // actions
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
@@ -28,15 +28,17 @@ import MomentFooter from './MomentFooter'
 class Moment extends Component {
 	constructor(props) {
 		super(props)
+		const { userid, auth } = props
 		this.state = {
 
 		}
+
+		this.isAuthedMoment = userid &&
+														auth &&
+														auth.userData &&
+														userid === auth.userData.userid
 	}
 
-	// like or comment on this moment
-	createChildMoment = () => {
-
-	}
 
 	render() {
 		const {
@@ -47,9 +49,9 @@ class Moment extends Component {
 			likes,
 			filledLike,
 			onLike,
+			onDelete,
+			onEdit,
 			users,
-			auth,
-			intl
 		} = this.props
 
 		const user = 	userid &&
@@ -89,8 +91,9 @@ class Moment extends Component {
 						likes={likes}
 						filledLike={filledLike}
 						onLike={onLike}
-						handleReply={null}
-						handleDelete={null}
+						onReply={null}
+						onEdit={this.isAuthedMoment ? onEdit : null}
+						onDelete={this.isAuthedMoment ? onDelete : null}
 					/>
 				</div>
 			</Card>
@@ -99,7 +102,7 @@ class Moment extends Component {
 }
 
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state) {
 	return {
 		users: getUsers(state),
 		auth: state.auth,
@@ -111,6 +114,13 @@ Moment.propTypes = {
 	dt: PropTypes.string,
 	content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 	onLike: PropTypes.func,
+	onDelete: PropTypes.func,
+	userid: PropTypes.number,
+	likes: PropTypes.number,
+	filledLike: PropTypes.bool,
+	onEdit: PropTypes.func,
+	users: PropTypes.object,
+	auth: PropTypes.object,
 }
 
 Moment.defaultProps = {
@@ -118,6 +128,13 @@ Moment.defaultProps = {
 	dt: null,
 	content: null,
 	onLike: null,
+	onDelete: null,
+	userid: null,
+	likes: null,
+	filledLike: null,
+	onEdit: null,
+	users: null,
+	auth: null,
 }
 
-export default connect(mapStateToProps, null)(injectIntl(Moment))
+export default connect(mapStateToProps, null)(Moment)

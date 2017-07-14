@@ -30,12 +30,12 @@ class Modal extends Component {
 					<div className={`modal-background ${show ? '' : 'hide-modal'}`} />
 				}
 				<ClickTarget handleOutsideClick={this.handleClose}>
-					<div className={`modal ${show ? '' : 'hide-modal'} ${customClass}` }>
+					<div className={`modal ${show ? '' : 'hide-modal'} ${customClass || ''}` }>
 						<div className='modal-heading'>
 							{ heading }
-							<div onClick={this.handleClose}>
+							<a tabIndex={0} className='margin-left-auto' onClick={this.handleClose}>
 								<XMark width={12} />
-							</div>
+							</a>
 						</div>
 						<div className='modal-content'>
 							{ children }
@@ -53,7 +53,8 @@ class Modal extends Component {
 Modal.propTypes = {
 	customClass: PropTypes.string,
 	showBackground: PropTypes.bool,
-	heading: PropTypes.oneOfType([PropTypes.node, PropTypes.string])
+	heading: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+	children: PropTypes.node.isRequired,
 }
 
 Modal.defaultProps = {

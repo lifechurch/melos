@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 // actions
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
@@ -20,24 +20,29 @@ import List from '../components/List'
 import Card from '../components/Card'
 import Textarea from '../components/Textarea'
 import Avatar from '../components/Avatar'
+import Modal from '../components/Modal'
 import Moment from '../features/Moments/components/Moment'
+import CommentCreate from '../features/Moments/components/CommentCreate'
 
 
-function authedUserHasLiked(momentLikes, userLikes) {
+function getAuthedLikeOnMoment(momentLikes, userLikes) {
 	// check if the any of the likes on the moment match any likes from the
-	// authed user
-	return momentLikes &&
-					momentLikes.some((id) => {
-						return userLikes &&
-										userLikes.includes(id)
-					})
+	// authed user and return the activity id that matches
+	let val = null
+	if (momentLikes && userLikes) {
+		val = momentLikes.filter((id) => {
+			return userLikes.includes(id)
+		})
+	}
+	return val ? val[0] : val
 }
 
 class TalkItOver extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			comment: null
+			comment: null,
+			editingMoment: null,
 		}
 	}
 
@@ -87,16 +92,9 @@ class TalkItOver extends Component {
 		if (parent_id) {
 			const moment = this.dayActivities.data[parent_id]
 			// if the user has already liked the moment then we want to unlike it
-			const alreadyLiked = moment.likes & this.dayActivities.authedUser.likes
-			console.log('ALRE', moment.likes & [], alreadyLiked)
+			const alreadyLiked = getAuthedLikeOnMoment(moment.likes, this.dayActivities.authedUser.likes)
 			if (alreadyLiked) {
-				dispatch(plansAPI.actions.activity.delete({
-					id: together_id,
-					activity_id: alreadyLiked
-				},
-					{
-						auth: true
-					}))
+				this.handleDelete(alreadyLiked)
 			} else {
 				dispatch(plansAPI.actions.activities.post({
 					id: together_id,
@@ -114,10 +112,52 @@ class TalkItOver extends Component {
 		}
 	}
 
+	handleDelete = (activity_id) => {
+		const { day, together_id, dispatch } = this.props
+		if (activity_id) {
+			dispatch(plansAPI.actions.activity.delete({
+				id: together_id,
+				activity_id
+			},
+				{
+					auth: true,
+				// this isn't used by the api, but we use it to delete the activity
+				// from state
+					day,
+				}))
+		}
+	}
+
+	handleEdit = (moment) => {
+		this.modal.handleOpen()
+		// let the modal know how to populate the comment creator
+		this.setState({ editingMoment: moment, editingComment: moment.content })
+	}
+
+	handleSaveEdit = () => {
+		const { together_id, dispatch } = this.props
+		const { editingMoment, editingComment } = this.state
+		if (editingMoment) {
+			dispatch(plansAPI.actions.activity.put({
+				id: together_id,
+				activity_id: editingMoment.id
+			},
+				{
+					body: {
+						updated_dt: getCurrentDT(),
+						content: editingComment,
+					},
+					auth: true
+				})).then(() => {
+					this.modal.handleClose()
+					this.setState({ editingComment: '' })
+				})
+		}
+	}
+
 	renderMoment = (moment) => {
-		console.log('MOMENT', moment);
 		// fill the heart if the user has liked this moment
-		const authedLike = authedUserHasLiked(
+		const authedLike = getAuthedLikeOnMoment(
 												moment.likes,
 												this.dayActivities.authedUser.likes
 											)
@@ -126,18 +166,20 @@ class TalkItOver extends Component {
 			<Moment
 				userid={moment.user_id}
 				content={moment.content}
-				dt={moment.created_dt}
-				filledLike={authedLike}
+				dt={moment.updated_dt || moment.created_dt}
+				filledLike={!!authedLike}
 				likes={moment.likes ? moment.likes.length : null}
 				onReply={this.handleComment.bind(this, { parent_id: moment.id })}
 				onLike={this.handleLike.bind(this, { parent_id: moment.id })}
+				onDelete={this.handleDelete.bind(this, moment.id)}
+				onEdit={this.handleEdit.bind(this, moment)}
 			/>
 		)
 	}
 
 	render() {
-		const { content, day, together_id, activities, auth, users, intl } = this.props
-		const { comment } = this.state
+		const { content, day, together_id, activities, auth, users } = this.props
+		const { comment, editingMoment, editingComment } = this.state
 
 		this.authedUser = auth &&
 												auth.userData &&
@@ -172,33 +214,13 @@ class TalkItOver extends Component {
 					<h5 style={{ margin: '30px 0' }}>{ content }</h5>
 				</div>
 				<List>
-					<Card
-						customClass='moment-card'
-						extension={
-							<a
-								tabIndex={0}
-								className='green flex-end'
-								onClick={this.handleComment}
-							>
-								<FormattedMessage id='moments.comments.form.save button' />
-							</a>
-						}
-					>
-						<div style={{ display: 'inline-flex', alignItems: 'flex-start' }}>
-							<Avatar
-								src={avatarSrc}
-								width={38}
-								placeholderText={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
-							/>
-						</div>
-						<Textarea
-							style={{ flex: 1, padding: '10px 0' }}
-							className='yv-textarea'
-							placeholder={intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt' })}
-							onChange={(val) => { this.setState({ comment: val.target.value }) }}
-							value={comment}
-						/>
-					</Card>
+					<CommentCreate
+						avatarSrc={avatarSrc}
+						avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
+						onChange={(val) => { this.setState({ comment: val }) }}
+						value={comment}
+						onComment={this.handleComment}
+					/>
 					{
 							this.dayActivities &&
 							this.dayActivities.map &&
@@ -208,7 +230,7 @@ class TalkItOver extends Component {
 								// nor day complete
 								if (moment && moment.id && !moment.parent_id && moment.kind === 'comment') {
 									return (
-										<li key={moment.id} className='no-bullets' style={{ marginTop: '20px' }}>
+										<li key={moment.id} style={{ marginTop: '20px' }}>
 											{ this.renderMoment(moment) }
 										</li>
 									)
@@ -217,6 +239,19 @@ class TalkItOver extends Component {
 							})
 						}
 				</List>
+				<Modal ref={(ref) => { this.modal = ref }} customClass='large-5 medium-8'>
+					{
+						editingMoment &&
+						'content' in editingMoment &&
+						<CommentCreate
+							avatarSrc={avatarSrc}
+							avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
+							onChange={(val) => { this.setState({ editingComment: val }) }}
+							value={editingComment}
+							onComment={this.handleSaveEdit}
+						/>
+					}
+				</Modal>
 			</div>
 		)
 	}
@@ -238,11 +273,18 @@ function mapStateToProps(state, props) {
 }
 
 TalkItOver.propTypes = {
-
+	content: PropTypes.string.isRequired,
+	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	activities: PropTypes.object,
+	users: PropTypes.object,
+	auth: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 TalkItOver.defaultProps = {
-	location: {},
+	activities: null,
+	users: null,
 }
 
-export default connect(mapStateToProps, null)(injectIntl(TalkItOver))
+export default connect(mapStateToProps, null)(TalkItOver)
