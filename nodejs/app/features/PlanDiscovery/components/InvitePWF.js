@@ -3,11 +3,10 @@ import { Link } from 'react-router'
 import { routeActions } from 'react-router-redux'
 import CustomScroll from 'react-custom-scroll'
 import Immutable from 'immutable'
+import { FormattedMessage } from 'react-intl'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import ButtonBar from '../../../components/ButtonBar'
+import Footer from '../../../components/Footer'
 import ShareIcon from '../../../components/Icons/ShareIcon'
-import BubblesIcon from '../../../components/Icons/BubblesIcon'
-import ListIcon from '../../../components/Icons/ListIcon'
 import Search from '../../../components/Search'
 import User from '../../../components/User'
 import CheckMark from '../../../components/CheckMark'
@@ -178,8 +177,8 @@ class InvitePWF extends Component {
 							&larr;
 						</Link>
 						<h4 className='text-center columns medium-4'>Invite Friends</h4>
-						<div className='columns medium-4 text-right'>
-							<a tabIndex={0} className='solid-button green' onClick={this.handleInvite}>Do stuff</a>
+						<div className='columns medium-4 text-right green'>
+							<FormattedMessage id='next' />
 						</div>
 					</div>
 				</div>
@@ -246,6 +245,16 @@ class InvitePWF extends Component {
 						</a>
 					</div>
 				</div>
+				<Footer>
+					<a
+						tabIndex={0}
+						className='solid-button green margin-left-auto'
+						onClick={this.handleInvite}
+						style={{ marginBottom: 0 }}
+					>
+						<FormattedMessage id='continue' />
+					</a>
+				</Footer>
 			</div>
 		)
 	}

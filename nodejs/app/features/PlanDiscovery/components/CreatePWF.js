@@ -1,9 +1,11 @@
 import React, { PropTypes, Component } from 'react'
 import { Link } from 'react-router'
-
+import { FormattedMessage } from 'react-intl'
+import moment from 'moment'
 import Calendar from './Calendar'
 import CalendarDay from './CalendarDay'
 import LazyImage from '../../../components/LazyImage'
+import Footer from '../../../components/Footer'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
 
@@ -11,7 +13,7 @@ class CreatePWF extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			selectedDay: null
+			selectedDay: new Date()
 		}
 	}
 
@@ -34,11 +36,14 @@ class CreatePWF extends Component {
 
 	renderDay = ({ day }) => {
 		const { selectedDay } = this.state
-		const isInPast = (day < new Date())
+		const isInPast = (moment(day).dayOfYear() < moment(new Date()).dayOfYear())
 
 		return (
 			<CalendarDay
-				customClass={`${(selectedDay && (selectedDay.getDate() === day.getDate())) ? 'yv-active' : ''}`}
+				customClass={`${(selectedDay &&
+					(moment(selectedDay).dayOfYear() === moment(day).dayOfYear())) ?
+					'yv-active' : ''}`
+				}
 				date={day.getDate()}
 				disabled={isInPast}
 				handleClick={this.handleDaySelect.bind(this, day)}
@@ -61,23 +66,19 @@ class CreatePWF extends Component {
 							&larr;
 						</Link>
 						<h4 className='text-center columns medium-4'>Select Start Date</h4>
-						<div className='columns medium-4 text-right'>
-							<a
-								tabIndex={0}
-								className={`solid-button ${selectedDay ? 'green' : 'disabled-link'}`}
-								onClick={this.handleCreateSubscription}
-							>Do stuff</a>
+						<div className='columns medium-4 text-right green'>
+							<FormattedMessage id='next' />
 						</div>
 					</div>
 				</div>
 				<div className='gray-background content text-center'>
 					<div className='columns medium-8 small-12 small-centered'>
-						<div className='horizontal-center' style={{ height: '250px', marginBottom: '30px' }}>
+						<div className='horizontal-center' style={{ height: '150px', marginBottom: '30px' }}>
 							<LazyImage
 								alt='plan-image'
 								src={planImgSrc}
-								width={400}
-								height={250}
+								width={250}
+								height={150}
 								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
 							/>
 						</div>
@@ -86,6 +87,17 @@ class CreatePWF extends Component {
 						</Calendar>
 					</div>
 				</div>
+				<Footer>
+					<div>{ selectedDay ? moment(selectedDay).format('dddd, MMMM Do YYYY') : null }</div>
+					<a
+						tabIndex={0}
+						className='solid-button green margin-left-auto'
+						onClick={this.handleCreateSubscription}
+						style={{ marginBottom: 0 }}
+					>
+						<FormattedMessage id='continue' />
+					</a>
+				</Footer>
 			</div>
 		)
 	}

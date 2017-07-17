@@ -60,7 +60,26 @@ class TalkItOver extends Component {
 		},
 			{
 				auth: true
-			}))
+			})).then((data) => {
+				console.log('DATA', data)
+				if (data && data.data && data.data[together_id][day]) {
+					data.data[together_id][day].map.forEach((id) => {
+						const activity = data.data[together_id][day].data[id]
+						if (activity && activity.id) {
+							dispatch(plansAPI.actions.activities.get({
+								id: together_id,
+								day,
+								page,
+								order: 'desc',
+								parent_id: id,
+							},
+								{
+									auth: true
+								}))
+						}
+					})
+				}
+			})
 	}
 
 	// if we pass a parent_id than this is a reply, otherwise it's a top
