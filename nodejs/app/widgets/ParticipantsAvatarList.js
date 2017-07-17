@@ -87,7 +87,10 @@ class ParticipantsAvatarList extends Component {
 						if (completions && completions.length > 0) {
 							completions.forEach((id) => {
 								const completion = activities[day].data[id]
-								if (parseInt(completion.user_id, 10) === parseInt(userID, 10)) {
+								if (
+									completion.kind === 'complete' &&
+									parseInt(completion.user_id, 10) === parseInt(userID, 10)
+								) {
 									check = <CheckMark width={15} fill='black' />
 								}
 							})

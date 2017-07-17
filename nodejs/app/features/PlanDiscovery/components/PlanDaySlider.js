@@ -3,6 +3,7 @@ import moment from 'moment'
 import { Link } from 'react-router'
 import Slider from 'react-slick'
 import { FormattedMessage } from 'react-intl'
+import CheckMark from '../../../components/CheckMark'
 
 
 class PlanDaySlider extends Component {
@@ -72,14 +73,14 @@ class PlanDaySlider extends Component {
 		const slides = []
 		if (totalDays) {
 			for (let i = 0; i < totalDays; i++) {
-				let completed = ''
+				let checkmark = null
 				const isActiveDay = ((i + 1) === parseInt(day, 10))
 				const active = isActiveDay ? 'active' : ''
 				const progressDay = progressDays ? progressDays[i] : null
 				const date = start_dt ? moment(start_dt).add(i, 'day').format('l') : null
 
 				if (progressDay && progressDay.complete) {
-					completed = 'check-background'
+					checkmark = <CheckMark fill='black' />
 				}
 
 				const to = `${dayBaseLink}/day/${i + 1}`
@@ -87,7 +88,9 @@ class PlanDaySlider extends Component {
 				slides.push(
 					<Link key={i + 1} to={to}>
 						<div className={`day ${active}`} style={{ backgroundColor: 'white' }}>
-							<div className={`day-top ${completed}`} />
+							<div className='day-top flex-end'>
+								{ checkmark }
+							</div>
 							<div className='day-bottom'>
 								<h1>{i + 1}</h1>
 								<h4>
