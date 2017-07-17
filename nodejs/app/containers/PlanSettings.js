@@ -37,7 +37,11 @@ class PlanSettings extends Component {
 		}, {
 			auth: auth.isLoggedIn
 		})).then((data) => {
-			if (data.data && data.data.status && data.data.status === 403) {
+			if (
+				data.data &&
+				data.data.status &&
+				data.data.status === 403
+			) {
 				this.setState({ showError: true })
 			} else {
 				dispatch(routeActions.push(Routes.subscriptions({

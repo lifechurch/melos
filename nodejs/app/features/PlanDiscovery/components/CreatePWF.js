@@ -51,7 +51,7 @@ class CreatePWF extends Component {
 		const { selectedDay } = this.state
 
 		return (
-			<div className='pwf-flow pwf-create row'>
+			<div className='pwf-flow pwf-create'>
 				<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
 					<div className='row'>
 						<Link

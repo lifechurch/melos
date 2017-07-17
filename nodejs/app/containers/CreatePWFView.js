@@ -31,7 +31,7 @@ class CreatePWFView extends Component {
 	}
 
 	handleSubscribe = (selectedDay) => {
-		const { dispatch, auth, params: { id } } = this.props
+		const { dispatch, auth, params: { id }, serverLanguageTag } = this.props
 		const plan_id = id ? id.split('-')[0] : null
 		// make api call and render new view
 		dispatch(plansAPI.actions.subscriptions.post({}, {
@@ -39,15 +39,18 @@ class CreatePWFView extends Component {
 				created_dt: selectedDay,
 				plan_id,
 				together: true,
+				language_tag: serverLanguageTag,
 			},
 			auth: auth.isLoggedIn,
 		})).then((data) => {
-			dispatch(routeActions.push(Routes.togetherInvite({
-				username: auth.userData.username,
-				plan_id,
-				slug: id.split('-')[1],
-				together_id: data.together_id
-			})))
+			if (data && 'id' in data) {
+				dispatch(routeActions.push(Routes.togetherInvite({
+					username: auth.userData.username,
+					plan_id,
+					slug: id.split('-')[1],
+					together_id: data.together_id
+				})))
+			}
 		})
 	}
 

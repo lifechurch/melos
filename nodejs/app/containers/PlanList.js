@@ -31,24 +31,6 @@ class PlansList extends Component {
 		}
 	}
 
-	loadPlanItems = ({ plan_id, together_id }) => {
-		const { dispatch, readingPlans } = this.props
-		if (!(readingPlans && plan_id in readingPlans.byId)) {
-			dispatch(readingPlansAction({
-				method: 'view',
-				params: {
-					id: plan_id,
-				},
-			}))
-		}
-		if (together_id) {
-			dispatch(participantsView({
-				together_id,
-				auth: true,
-			}))
-		}
-	}
-
 	render() {
 		const {
 			subscriptions,

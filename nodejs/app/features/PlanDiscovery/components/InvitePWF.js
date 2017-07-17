@@ -60,12 +60,13 @@ class InvitePWF extends Component {
 
 	handleSearch = (query) => {
 		const { handleSearch } = this.props
-		this.setState({
-			query,
-			showSearchResults: true,
-		})
-		handleSearch(query)
-
+		if (query) {
+			this.setState({
+				query,
+				showSearchResults: true,
+			})
+			handleSearch(query)
+		}
 	}
 
 	selectFriend = (user) => {
@@ -167,7 +168,7 @@ class InvitePWF extends Component {
 		}
 
 		return (
-			<div className='pwf-flow pwf-invite row'>
+			<div className='pwf-flow pwf-invite'>
 				<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
 					<div className='row'>
 						<Link

@@ -6,7 +6,7 @@ import SearchIcon from './Icons/SearchIcon'
 class Search extends Component {
 	constructor(props) {
 		super(props)
-		const { showInput, value, showIcon, } = props
+		const { showInput, value, showIcon } = props
 		this.state = {
 			showIcon,
 			showInput,
@@ -22,10 +22,12 @@ class Search extends Component {
 		}
 	}
 
-	handleChange = (e) => {
-		this.setState({
-			value: e.target.value,
-		})
+	handleChange = (val) => {
+		if (val) {
+			this.setState({
+				value: val,
+			})
+		}
 	}
 
 	handleKeyUp = (e) => {

@@ -21,17 +21,21 @@ import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 class SubscriptionList extends Component {
 
 	componentDidMount() {
-		const { auth } = this.props
+		const { auth, invitations, subscriptions } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 		// get any invites we have
-		this.getInvitations()
+		if (!invitations) {
+			this.getInvitations()
+		}
 		// get actual subscriptions
-		this.getSubs()
+		if (!(subscriptions && subscriptions.map && subscriptions.map.length > 0)) {
+			this.getSubs({ page: 1 })
+		}
 	}
 
-	getSubs = () => {
+	getSubs = ({ page = null }) => {
 		const { dispatch } = this.props
-		dispatch(plansAPI.actions.subscriptions.get({ order: 'desc' }, { auth: true })).then((subs) => {
+		dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
@@ -65,6 +69,12 @@ class SubscriptionList extends Component {
 		})
 	}
 
+	loadMore = () => {
+		const { subscriptions } = this.props
+		if (subscriptions && subscriptions.next_page) {
+			this.getSubs({ page: subscriptions.next_page })
+		}
+	}
 
 	renderListItem = ({ plan_id, together_id, start_dt, subscription_id = null }) => {
 		const {
@@ -191,7 +201,7 @@ class SubscriptionList extends Component {
 		}
 
 		return (
-			<List customClass='subscription-list'>
+			<List customClass='subscription-list' loadMore={this.loadMore}>
 				{ plansList }
 			</List>
 		)
