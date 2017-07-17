@@ -1421,6 +1421,8 @@ en:
       email:                                     "Email"
       not me:                                    "This is not me"
       saved:                                     "Saved!"
+      plan delivery:                             "PLAN DELIVERY"
+      sign-in:                                   "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
       links:
         manage:                                  "Manage Your Email Notifications"
         unsub all:                               "Unsubscribe from all emails"
