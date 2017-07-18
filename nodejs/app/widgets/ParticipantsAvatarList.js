@@ -168,7 +168,7 @@ ParticipantsAvatarList.defaultProps = {
 	auth: null,
 	activities: null,
 	statusFilter: null,
-	avatarWidth: 24,
+	avatarWidth: 36,
 	customClass: '',
 	isLoggedIn: false,
 	joinToken: null,

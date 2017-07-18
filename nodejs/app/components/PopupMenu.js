@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import XMark from './XMark'
 import Menu from './Menu'
+import ClickTarget from './ClickTarget'
+
 
 class PopupMenu extends Component {
 
@@ -9,6 +11,10 @@ class PopupMenu extends Component {
 		this.state = {
 			show: false,
 		}
+	}
+
+	onClose = () => {
+		this.setState({ show: false })
 	}
 
 	handleToggle = () => {
@@ -41,14 +47,17 @@ class PopupMenu extends Component {
 				</a>
 				{
 					show &&
-					<Menu
-						customClass='popup-menu'
-						header={header}
-						footer={footer}
-						onClick={this.handleToggle}
-					>
-						{ children }
-					</Menu>
+					<ClickTarget handleOutsideClick={this.onClose}>
+						<Menu
+							customClass='popup-menu'
+							header={header}
+							footer={footer}
+						>
+							<div role='presentation' onClick={this.handleToggle}>
+								{ children }
+							</div>
+						</Menu>
+					</ClickTarget>
 				}
 			</div>
 		)

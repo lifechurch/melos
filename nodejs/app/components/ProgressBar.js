@@ -27,6 +27,8 @@ class ProgressBar extends Component {
 		classes,
 		color,
 		transitionSpeed,
+		backgroundColor,
+		borderColor,
 		isRtl,
 	} = this.props
 		const { percentComplete } = this.state
@@ -40,12 +42,13 @@ class ProgressBar extends Component {
 			width: `${width}`,
 			borderRadius: '5px',
 			overflow: 'hidden',
-			border: `solid 1px ${color}`,
+			border: `solid 1px ${borderColor || color}`,
+			backgroundColor: `${backgroundColor}`
 		}
 		const progressStyle = {
 			backgroundColor: `${color}`,
 			height: '100%',
-			borderRadius: '5px 0 0 5px',
+			borderRadius: '5px',
 			width: '100%',
 			transform: progressTransform,
 			transition: `transform ${transitionSpeed}s cubic-bezier(0.42, 1, .16, .93)`,
@@ -64,6 +67,8 @@ class ProgressBar extends Component {
 
 ProgressBar.propTypes = {
 	color: PropTypes.string,
+	backgroundColor: PropTypes.string,
+	borderColor: PropTypes.string,
 	height: PropTypes.string,
 	width: PropTypes.string,
 	classes: PropTypes.string,
@@ -74,6 +79,8 @@ ProgressBar.propTypes = {
 
 ProgressBar.defaultProps = {
 	color: 'white',
+	backgroundColor: 'white',
+	borderColor: null,
 	height: '7px',
 	width: '100%',
 	classes: '',

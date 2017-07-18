@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { FormattedHTMLMessage } from 'react-intl'
 import rtlDetect from 'rtl-detect'
+import moment from 'moment'
 import { routeActions } from 'react-router-redux'
 // actions
 import subscriptionDay from '@youversion/api-redux/lib/batchedActions/subscriptionDay'
@@ -31,7 +33,7 @@ class Plan extends Component {
 		}
 	}
 
-	localizedLink(link) {
+	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || params.lang || 'en'
 
@@ -42,7 +44,7 @@ class Plan extends Component {
 		}
 	}
 
-	isRtl() {
+	isRtl = () => {
 		const { params, serverLanguageTag } = this.props
 		const languageTag = params.lang || serverLanguageTag || 'en'
 		return rtlDetect.isRtlLang(languageTag)
@@ -84,6 +86,9 @@ class Plan extends Component {
 		this.dayProgress = null
 		let progressDays = null
 		let progressString = null
+		let dayOfString = null
+		let startString = null
+		let endString = null
 		let subscription_id = null
 		const together_id = subscription && 'together_id' in subscription ?
 												subscription.together_id : null
@@ -94,6 +99,22 @@ class Plan extends Component {
 											total_days: plan.total_days,
 											start_dt: subscription.start_dt
 										})
+			dayOfString = (
+				<FormattedHTMLMessage
+					id='plans.which day in plan'
+					values={{
+						day: calcCurrentPlanDay({
+							total_days: plan.total_days,
+							start_dt: subscription.start_dt
+						}),
+						total: plan.total_days
+					}}
+				/>
+			)
+			startString = moment(subscription.start_dt).format('dddd, MMMM Do YYYY')
+			endString = moment(subscription.start_dt)
+				.add(plan.total_days, 'days')
+				.format('dddd, MMMM Do YYYY')
 			progressDays = subscription.days ?
 											subscription.days :
 											null
@@ -126,12 +147,19 @@ class Plan extends Component {
 				{
 					children &&
 					React.cloneElement(children, {
-						localizedLink: ::this.localizedLink,
-						isRtl: ::this.isRtl,
+						localizedLink: this.localizedLink,
+						isRtl: this.isRtl,
 						together_id,
 						day: this.currentDay,
 						progressDays,
+						progressPercentage: subscription
+							&& subscription.overall
+							? (subscription.overall.completion_percentage * 100)
+							: null,
 						subscription_id,
+						dayOfString,
+						startString,
+						endString,
 					})
 				}
 			</PlanComponent>
