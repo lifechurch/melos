@@ -1,12 +1,13 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
-import { selectImageFromList } from '../lib/imageUtil'
-import Participants from '../features/PlanDiscovery/components/Participants'
 import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
 import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import { selectImageFromList } from '../lib/imageUtil'
+import Participants from '../features/PlanDiscovery/components/Participants'
+
 
 class ParticipantsView extends Component {
 	componentDidMount() {
@@ -15,7 +16,7 @@ class ParticipantsView extends Component {
 		dispatch(readingPlansAction({
 			method: 'view',
 			params: {
-				id,
+				id: id.split('-')[0],
 			},
 		}))
 		dispatch(participantsView({ together_id, auth: auth.isLoggedIn }))
@@ -55,8 +56,9 @@ class ParticipantsView extends Component {
 
 function mapStateToProps(state, props) {
 	const { params: { id, together_id } } = props
+	const plan_id = id ? id.split('-')[0] : null
 	return {
-		plan: getPlanById(state, id),
+		plan: getPlanById(state, plan_id),
 		participantsUsers: getParticipantsUsersByTogetherId(state, together_id),
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,

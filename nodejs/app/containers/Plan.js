@@ -152,10 +152,6 @@ class Plan extends Component {
 						together_id,
 						day: this.currentDay,
 						progressDays,
-						progressPercentage: subscription
-							&& subscription.overall
-							? (subscription.overall.completion_percentage * 100)
-							: null,
 						subscription_id,
 						dayOfString,
 						startString,

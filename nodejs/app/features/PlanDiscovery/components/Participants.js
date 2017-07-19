@@ -29,7 +29,7 @@ function Participants({ planImg, users }) {
 	})
 
 	return (
-		<div className='pwf-flow pwf-invite row'>
+		<div className='pwf-flow pwf-invite'>
 			<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
 				<div className='row text-center' style={{ fontSize: '18px' }}>
 					Participants

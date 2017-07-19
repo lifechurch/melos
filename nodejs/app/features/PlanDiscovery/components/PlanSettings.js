@@ -1,16 +1,48 @@
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
+import moment from 'moment'
 import Toggle from 'react-toggle-button'
+import TimePicker from 'rc-time-picker'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import ProgressBar from '../../../components/ProgressBar'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import ActionCreators from '../actions/creators'
+import { getBibleVersionFromStorage } from '../../../lib/readerUtils'
 
 
 class PlanSettings extends Component {
 
-	handleSelectPlan() {
-		const { dispatch, id } = this.props
-		dispatch(ActionCreators.planSelect({ id }))
+	constructor(props) {
+		super(props)
+		const { subscription } = props
+		this.state = {
+			emailTime: subscription.email_delivery
+				? moment()
+						.hour(subscription.email_delivery.time.split(':')[0])
+						.minute(subscription.email_delivery.time.split(':')[1])
+				: moment()
+						.hour(0)
+						.minute(0),
+			emailDeliveryOn: !!(subscription.email_delivery)
+		}
+	}
+
+	componentDidMount() {
+		const { subSettings, subscription_id, subscription, dispatch } = this.props
+		console.log(plansAPI.actions)
+		dispatch(plansAPI.actions.settings.get({
+			id: subscription_id,
+			kind: 'activity_notifications'
+		}, { auth: true }))
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		const { emailTime } = this.state
+		if (emailTime && emailTime !== prevState.emailTime) {
+			this.handleEmailDeliveryChange(true)
+		}
 	}
 
 	handleReloadCalendar = () => {
@@ -28,13 +60,22 @@ class PlanSettings extends Component {
 		})
 	}
 
-	handleEmailDeliveryChange = () => {
-		const { dispatch, id, isEmailDeliveryOn } = this.props
-		const email_delivery = isEmailDeliveryOn ? false : '08:00:00'
-		const email_delivery_version_id = isEmailDeliveryOn ? null : 1
-		dispatch(ActionCreators.updateSubscribeUser({ id, email_delivery, email_delivery_version_id }, true)).then(() => {
-			this.handleSelectPlan()
-		})
+	handleEmailDeliveryChange = (emailDeliveryOn) => {
+		const { dispatch, subscription_id } = this.props
+		const { emailTime } = this.state
+		dispatch(plansAPI.actions.subscription.put({
+			id: subscription_id,
+		}, {
+			body: {
+				email_delivery: emailDeliveryOn
+					? {
+						time: `${emailTime.format('HH:mm')}+00:00`,
+						version_id: getBibleVersionFromStorage(),
+					}
+					: null
+			},
+			auth: true
+		}))
 	}
 
 	handleCatchUp = () => {
@@ -53,22 +94,20 @@ class PlanSettings extends Component {
 
 	render() {
 		const {
-			isPrivate,
-			isEmailDeliveryOn,
-			emailDelivery,
 			together_id,
 			dayOfString,
-			progressPercentage,
-			progressString,
 			startString,
 			endString,
+			subscription,
 		} = this.props
+		const { emailDeliveryOn, emailTime } = this.state
 
 		const rowStyle = {
 			paddingTop: 20,
 			paddingBottom: 20,
 			borderTop: '1px solid #ddd',
 			display: 'flex',
+			flexWrap: 'wrap',
 		}
 		const switchColors = {
 			active: {
@@ -87,13 +126,24 @@ class PlanSettings extends Component {
 			height: 27,
 		}
 
+		let isPrivate = false
+		let progressPercentage = 0
+		let progressString = ''
+		if (subscription) {
+			isPrivate = subscription.privacy === 'private'
+			if (subscription.overall) {
+				progressPercentage = Math.round(subscription.overall.completion_percentage * 100)
+				progressString = subscription.overall.progress_string
+			}
+		}
+
 		return (
 			<div className='row' style={{ marginTop: 30 }}>
 				<div className='columns large-8 large-centered'>
 					<div style={{ padding: '20px 0 35px 0' }}>
 						<div style={{ marginBottom: '10px' }}>
 							{ dayOfString }
-							{` (${progressPercentage ? Math.round(progressPercentage) : 0}%)`}
+							{` (${progressPercentage}%)`}
 							&nbsp;&bull;&nbsp;
 							{ progressString }
 						</div>
@@ -168,15 +218,31 @@ class PlanSettings extends Component {
 						</div>
 						<div className='columns medium-4 flex-end' style={{ margin: 'auto' }}>
 							<Toggle
-								value={isEmailDeliveryOn}
+								value={emailDeliveryOn}
+								onToggle={(val) => {
+									this.setState({ emailDeliveryOn: !val })
+									this.handleEmailDeliveryChange(!val)
+								}}
 								activeLabel=''
 								inactiveLabel=''
 								colors={switchColors}
 								trackStyle={trackStyle}
 								thumbStyle={thumbStyle}
 							/>
-							<div>{ emailDelivery }</div>
 						</div>
+						{
+							emailDeliveryOn &&
+							<div className='vertical-center' style={{ marginTop: '20px', paddingLeft: '40px' }}>
+								<TimePicker
+									showSecond={false}
+									defaultValue={emailTime}
+									onChange={(value) => {
+										this.setState({ emailTime: value })
+									}}
+									use12Hours={true}
+								/>
+							</div>
+						}
 					</div>
 					{
 						// can't catch up on a pwf
@@ -208,6 +274,19 @@ class PlanSettings extends Component {
 	}
 }
 
+
+function mapStateToProps(state, props) {
+	const { subscription_id } = props
+	console.log(getSubscriptionModel(state))
+	return {
+		// subSettings: getSubscriptionSettings(state),
+		subscription: getSubscriptionModel(state) &&
+								subscription_id in getSubscriptionModel(state).byId
+								? getSubscriptionModel(state).byId[subscription_id]
+								: null,
+	}
+}
+
 PlanSettings.propTypes = {
 	id: PropTypes.number.isRequired,
 	isPrivate: PropTypes.bool,
@@ -226,4 +305,4 @@ PlanSettings.defaultProps = {
 	isPrivate: false,
 }
 
-export default PlanSettings
+export default connect(mapStateToProps, null)(PlanSettings)

@@ -56,7 +56,7 @@ class Moment extends Component {
 
 		const user = 	userid &&
 										userid in users ?
-										users[userid] :
+										users[userid].response :
 										null
 
 		const avatarSrc = user &&

@@ -47,9 +47,6 @@ function Plan({
 		startLink,
 		planTitle,
 		planImgSrc,
-		isPrivate,
-		isEmailDeliveryOn,
-		emailDelivery,
 		plan_id,
 		totalDays,
 		refsDiv
@@ -134,10 +131,6 @@ function Plan({
 			</ul>
 			)
 
-		isPrivate = plan.private
-		isEmailDeliveryOn = (typeof plan.email_delivery === 'string')
-		emailDelivery = plan.email_delivery
-
 	}
 
 
@@ -200,9 +193,6 @@ function Plan({
 							language_tag: serverLanguageTag,
 							isRtl,
 							isSaved,
-							isPrivate,
-							isEmailDeliveryOn,
-							emailDelivery,
 							together_id,
 							handleCompleteRef: handleContentCheck
 						})

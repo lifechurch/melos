@@ -25,18 +25,6 @@ import Moment from '../features/Moments/components/Moment'
 import CommentCreate from '../features/Moments/components/CommentCreate'
 
 
-function getAuthedLikeOnMoment(momentLikes, userLikes) {
-	// check if the any of the likes on the moment match any likes from the
-	// authed user and return the activity id that matches
-	let val = null
-	if (momentLikes && userLikes) {
-		val = momentLikes.filter((id) => {
-			return userLikes.includes(id)
-		})
-	}
-	return val ? val[0] : val
-}
-
 class TalkItOver extends Component {
 	constructor(props) {
 		super(props)
@@ -111,9 +99,8 @@ class TalkItOver extends Component {
 		if (parent_id) {
 			const moment = this.dayActivities.data[parent_id]
 			// if the user has already liked the moment then we want to unlike it
-			const alreadyLiked = getAuthedLikeOnMoment(moment.likes, this.dayActivities.authedUser.likes)
-			if (alreadyLiked) {
-				this.handleDelete(alreadyLiked)
+			if (moment.my_like_id) {
+				this.handleDelete(moment.my_like_id, parent_id)
 			} else {
 				dispatch(plansAPI.actions.activities.post({
 					id: together_id,
@@ -126,12 +113,19 @@ class TalkItOver extends Component {
 							parent_id,
 						},
 						auth: true
-					}))
+					})).then(() => {
+						dispatch(plansAPI.actions.activity.get({
+							id: together_id,
+							activity_id: parent_id,
+						}, {
+							auth: true
+						}))
+					})
 			}
 		}
 	}
 
-	handleDelete = (activity_id) => {
+	handleDelete = (activity_id, parent_id = null) => {
 		const { day, together_id, dispatch } = this.props
 		if (activity_id) {
 			dispatch(plansAPI.actions.activity.delete({
@@ -143,7 +137,17 @@ class TalkItOver extends Component {
 				// this isn't used by the api, but we use it to delete the activity
 				// from state
 					day,
-				}))
+				})).then(() => {
+					// if we just deleted a like or a reply, let's refresh the parent data
+					if (parent_id) {
+						dispatch(plansAPI.actions.activity.get({
+							id: together_id,
+							activity_id: parent_id,
+						}, {
+							auth: true
+						}))
+					}
+				})
 		}
 	}
 
@@ -175,22 +179,16 @@ class TalkItOver extends Component {
 	}
 
 	renderMoment = (moment) => {
-		// fill the heart if the user has liked this moment
-		const authedLike = getAuthedLikeOnMoment(
-												moment.likes,
-												this.dayActivities.authedUser.likes
-											)
-
 		return (
 			<Moment
 				userid={moment.user_id}
 				content={moment.content}
 				dt={moment.updated_dt || moment.created_dt}
-				filledLike={!!authedLike}
-				likes={moment.likes ? moment.likes.length : null}
+				filledLike={!!moment.my_like_id}
+				likes={moment.likes > 0 ? moment.likes : null}
 				onReply={this.handleComment.bind(this, { parent_id: moment.id })}
 				onLike={this.handleLike.bind(this, { parent_id: moment.id })}
-				onDelete={this.handleDelete.bind(this, moment.id)}
+				onDelete={this.handleDelete.bind(this, moment.id, moment.parent_id)}
 				onEdit={this.handleEdit.bind(this, moment)}
 			/>
 		)
@@ -204,7 +202,7 @@ class TalkItOver extends Component {
 												auth.userData &&
 												auth.userData.userid &&
 												auth.userData.userid in users ?
-												users[auth.userData.userid] :
+												users[auth.userData.userid].response :
 												null
 
 		const avatarSrc = this.authedUser &&
