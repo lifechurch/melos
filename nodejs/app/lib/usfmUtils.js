@@ -134,11 +134,23 @@ export function getSelectionString(selectionObject, returnText = false) {
  * @return {[string]}          [description]
  */
 export function getReferencesTitle({ bookList, usfmList, isRtl = false }) {
+	if (bookList.length < 1 || usfmList.length < 1) return null
 
 	const bookUsfm = usfmList[0].split('.')[0]
+	const chapNum = usfmList[0].split('.')[1]
 	const bookObj = bookList.filter((book) => {
 		return book.usfm.toLowerCase() === bookUsfm.toLowerCase()
 	})[0]
 	const bookName = bookObj.human
 
+	// let's build the verse string
+	let usfms = []
+	usfmList.forEach((usfmString) => {
+		usfms = usfms.concat(usfmString.split('+'))
+	})
+	const verseString = usfms.length > 1
+		? getSelectionString(usfms)
+		: usfmList[0].split('.')[2]
+
+	return `${bookName} ${chapNum}${verseString ? `:${verseString}` : ''}`
 }

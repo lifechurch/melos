@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Immutable from 'immutable'
 import { FormattedHTMLMessage } from 'react-intl'
 import rtlDetect from 'rtl-detect'
 import moment from 'moment'
@@ -7,13 +8,16 @@ import { routeActions } from 'react-router-redux'
 // actions
 import subscriptionDay from '@youversion/api-redux/lib/batchedActions/subscriptionDay'
 import subscriptionDayUpdate from '@youversion/api-redux/lib/batchedActions/subscriptionDayUpdate'
+import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 // models
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
+import getBibleModel from '@youversion/api-redux/lib/models/bible'
 // selectors
 // utils
 import { calcCurrentPlanDay, isFinalSegment } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
+import { getBibleVersionFromStorage } from '../lib/readerUtils'
 // components
 import PlanComponent from '../features/PlanDiscovery/components/Plan'
 
@@ -29,6 +33,13 @@ class Plan extends Component {
 				subscription_id,
 				language_tag: serverLanguageTag,
 				day,
+			}))
+			// get bible version for building reference strings
+			dispatch(bibleAction({
+				method: 'version',
+				params: {
+					id: getBibleVersionFromStorage(),
+				}
 			}))
 		}
 	}
@@ -79,7 +90,7 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { children, subscription, plan, params: { day } } = this.props
+		const { children, subscription, plan, bible, params: { day } } = this.props
 
 		this.daySegments = null
 		this.currentDay = null
@@ -125,11 +136,16 @@ class Plan extends Component {
 				? subscription.overall.progress_string
 				: null
 		}
+
 		this.daySegments = plan
 			&& plan.days
 			&& plan.days[this.currentDay - 1]
 			? plan.days[this.currentDay - 1].segments
 			: null
+
+		const bookList = Immutable
+			.fromJS(bible)
+			.getIn(['versions', getBibleVersionFromStorage(), 'response', 'books'])
 
 		return (
 			<PlanComponent
@@ -142,6 +158,7 @@ class Plan extends Component {
 				dayProgress={this.dayProgress}
 				daySegments={this.daySegments}
 				progressString={progressString}
+				bookList={bookList ? bookList.toJS() : null}
 				start_dt={subscription ? subscription.start_dt : null}
 				subscription_id={subscription ? subscription.id : null}
 				handleContentCheck={this.OnContentCheck}
@@ -176,6 +193,7 @@ function mapStateToProps(state, props) {
 		subscription: getSubscriptionModel(state) && subscription_id in getSubscriptionModel(state).byId ?
 									getSubscriptionModel(state).byId[subscription_id] :
 									null,
+		bible: getBibleModel(state),
 		savedPlans: state.readingPlans && state.readingPlans.savedPlans ? state.readingPlans.savedPlans : null,
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,

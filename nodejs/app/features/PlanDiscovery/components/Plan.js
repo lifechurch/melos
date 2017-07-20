@@ -10,6 +10,7 @@ import ShareWidget from './ShareWidget'
 import PlanContentListItem from './PlanContentListItem'
 // utils
 import { getBibleVersionFromStorage } from '../../../lib/readerUtils'
+import { getReferencesTitle } from '../../../lib/usfmUtils'
 import { PLAN_DEFAULT, selectImageFromList } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
 
@@ -22,6 +23,7 @@ function Plan({
 	daySegments,
 	progressDays,
 	progressString,
+	bookList,
 	savedPlans,
 	dispatch,
 	children,
@@ -107,8 +109,8 @@ function Plan({
 								if (segment.kind === 'devotional') {
 									title = <FormattedMessage id='plans.devotional' />
 								} else if (segment.kind === 'reference') {
-									const usfm = segment.content
-									title = usfm
+									const usfm = [segment.content]
+									title = getReferencesTitle({ bookList, usfmList: usfm })
 									key = usfm
 								} else if (segment.kind === 'talk-it-over') {
 									title = <FormattedMessage id='plans.talk it over' />
