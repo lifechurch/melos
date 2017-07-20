@@ -34,9 +34,9 @@ class Moment extends Component {
 		}
 
 		this.isAuthedMoment = userid &&
-														auth &&
-														auth.userData &&
-														userid === auth.userData.userid
+			auth &&
+			auth.userData &&
+			userid === auth.userData.userid
 	}
 
 
@@ -55,15 +55,15 @@ class Moment extends Component {
 		} = this.props
 
 		const user = 	userid &&
-										userid in users ?
-										users[userid].response :
-										null
+			userid in users ?
+			users[userid].response :
+			null
 
 		const avatarSrc = user &&
-											user.has_avatar &&
-											user.user_avatar_url ?
-											user.user_avatar_url.px_48x48 :
-											null
+			user.has_avatar &&
+			user.user_avatar_url ?
+			user.user_avatar_url.px_48x48 :
+			null
 
 
 		return (
