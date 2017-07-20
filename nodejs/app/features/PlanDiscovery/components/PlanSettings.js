@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
+import Immutable from 'immutable'
 import moment from 'moment'
 import Toggle from 'react-toggle-button'
 import TimePicker from 'rc-time-picker'
-import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import plansAPI, { getSettings } from '@youversion/api-redux/lib/endpoints/plans'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import ProgressBar from '../../../components/ProgressBar'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
@@ -16,8 +17,9 @@ class PlanSettings extends Component {
 
 	constructor(props) {
 		super(props)
-		const { subscription } = props
+		const { subscription, together_id } = props
 		this.state = {
+			emailDeliveryOn: !!(subscription.email_delivery),
 			emailTime: subscription.email_delivery
 				? moment()
 						.hour(subscription.email_delivery.time.split(':')[0])
@@ -25,13 +27,14 @@ class PlanSettings extends Component {
 				: moment()
 						.hour(0)
 						.minute(0),
-			emailDeliveryOn: !!(subscription.email_delivery)
+			activityNotificationsOn: together_id
+				&& subscription.settings
+				&& subscription.settings.activity_notifications.email,
 		}
 	}
 
 	componentDidMount() {
 		const { subSettings, subscription_id, subscription, dispatch } = this.props
-		console.log(plansAPI.actions)
 		dispatch(plansAPI.actions.settings.get({
 			id: subscription_id,
 			kind: 'activity_notifications'
@@ -39,9 +42,19 @@ class PlanSettings extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		const { emailTime } = this.state
+		const { subscription } = this.props
+		const { emailTime, activityNotificationsOn } = this.state
 		if (emailTime && emailTime !== prevState.emailTime) {
 			this.handleEmailDeliveryChange(true)
+		}
+		if (
+			subscription.settings
+			&& subscription.settings.activity_notifications
+			&& subscription.settings.activity_notifications.email !== activityNotificationsOn
+		) {
+			this.setState({
+				activityNotificationsOn: subscription.settings.activity_notifications.email
+			})
 		}
 	}
 
@@ -58,6 +71,22 @@ class PlanSettings extends Component {
 		dispatch(ActionCreators.updateSubscribeUser({ id, private: !isPrivate }, true)).then(() => {
 			this.handleSelectPlan()
 		})
+	}
+
+	handleTogetherNotifications = (notificationsOn) => {
+		const { subscription, subscription_id, dispatch } = this.props
+		dispatch(plansAPI.actions.settings.put({
+			id: subscription_id,
+			kind: 'activity_notifications',
+		}, {
+			auth: true,
+			body: {
+				setting: Immutable
+					.fromJS(subscription.settings.activity_notifications)
+					.setIn(['email'], notificationsOn)
+					.toJS()
+			}
+		}))
 	}
 
 	handleEmailDeliveryChange = (emailDeliveryOn) => {
@@ -100,7 +129,7 @@ class PlanSettings extends Component {
 			endString,
 			subscription,
 		} = this.props
-		const { emailDeliveryOn, emailTime } = this.state
+		const { emailDeliveryOn, emailTime, activityNotificationsOn } = this.state
 
 		const rowStyle = {
 			paddingTop: 20,
@@ -125,6 +154,7 @@ class PlanSettings extends Component {
 			width: 27,
 			height: 27,
 		}
+		const thumbAnimateRange = [1, 25]
 
 		let isPrivate = false
 		let progressPercentage = 0
@@ -173,12 +203,17 @@ class PlanSettings extends Component {
 							</div>
 							<div className='columns medium-4 flex-end' style={{ margin: 'auto' }}>
 								<Toggle
-									value={false}
+									value={activityNotificationsOn}
+									onToggle={(val) => {
+										this.setState({ activityNotificationsOn: !val })
+										this.handleTogetherNotifications(!val)
+									}}
 									activeLabel=''
 									inactiveLabel=''
 									colors={switchColors}
 									trackStyle={trackStyle}
 									thumbStyle={thumbStyle}
+									thumbAnimateRange={thumbAnimateRange}
 								/>
 							</div>
 						</div>
@@ -205,6 +240,7 @@ class PlanSettings extends Component {
 									colors={switchColors}
 									trackStyle={trackStyle}
 									thumbStyle={thumbStyle}
+									thumbAnimateRange={thumbAnimateRange}
 								/>
 							</div>
 						</div>
@@ -228,6 +264,7 @@ class PlanSettings extends Component {
 								colors={switchColors}
 								trackStyle={trackStyle}
 								thumbStyle={thumbStyle}
+								thumbAnimateRange={thumbAnimateRange}
 							/>
 						</div>
 						{
@@ -279,19 +316,16 @@ function mapStateToProps(state, props) {
 	const { subscription_id } = props
 	console.log(getSubscriptionModel(state))
 	return {
-		// subSettings: getSubscriptionSettings(state),
+		subSettings: getSettings(state),
 		subscription: getSubscriptionModel(state) &&
-								subscription_id in getSubscriptionModel(state).byId
-								? getSubscriptionModel(state).byId[subscription_id]
-								: null,
+			subscription_id in getSubscriptionModel(state).byId
+			? getSubscriptionModel(state).byId[subscription_id]
+			: null,
 	}
 }
 
 PlanSettings.propTypes = {
 	id: PropTypes.number.isRequired,
-	isPrivate: PropTypes.bool,
-	isEmailDeliveryOn: PropTypes.bool.isRequired,
-	emailDelivery: PropTypes.object,
 	dispatch: PropTypes.func.isRequired,
 	onStopPlan: PropTypes.func.isRequired,
 	onCatchUp: PropTypes.func.isRequired,
@@ -301,8 +335,7 @@ PlanSettings.propTypes = {
 }
 
 PlanSettings.defaultProps = {
-	emailDelivery: null,
-	isPrivate: false,
+
 }
 
 export default connect(mapStateToProps, null)(PlanSettings)
