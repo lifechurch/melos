@@ -95,10 +95,10 @@ class Plan extends Component {
 		if (plan && subscription && subscription.start_dt) {
 			subscription_id = subscription.id
 			this.currentDay = day ||
-										calcCurrentPlanDay({
-											total_days: plan.total_days,
-											start_dt: subscription.start_dt
-										})
+				calcCurrentPlanDay({
+					total_days: plan.total_days,
+					start_dt: subscription.start_dt
+				})
 			dayOfString = (
 				<FormattedHTMLMessage
 					id='plans.which day in plan'
@@ -115,19 +115,21 @@ class Plan extends Component {
 			endString = moment(subscription.start_dt)
 				.add(plan.total_days, 'days')
 				.format('dddd, MMMM Do YYYY')
-			progressDays = subscription.days ?
-											subscription.days :
-											null
-			this.dayProgress = progressDays && progressDays[this.currentDay - 1] ?
-													progressDays[this.currentDay - 1] :
-													null
-			progressString = subscription.overall ?
-												subscription.overall.progress_string :
-												null
+			progressDays = subscription.days
+				? subscription.days
+				: null
+			this.dayProgress = progressDays && progressDays[this.currentDay - 1]
+				? progressDays[this.currentDay - 1]
+				: null
+			progressString = subscription.overall
+				? subscription.overall.progress_string
+				: null
 		}
-		this.daySegments = plan && plan.days && plan.days[this.currentDay - 1] ?
-												plan.days[this.currentDay - 1].segments :
-												null
+		this.daySegments = plan
+			&& plan.days
+			&& plan.days[this.currentDay - 1]
+			? plan.days[this.currentDay - 1].segments
+			: null
 
 		return (
 			<PlanComponent

@@ -37,7 +37,7 @@ function Plan({
 }) {
 
 	const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
-	const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(plan.id) !== -1))
+	const isSaved = plan && plan.id && !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(plan.id) !== -1))
 
 	let aboutLink,
 		myPlansLink,
@@ -101,8 +101,8 @@ function Plan({
 									content: i,
 								})
 								const complete = dayProgress &&
-																	(dayProgress.complete ||
-																	(dayProgress.partial && dayProgress.partial[i]))
+									(dayProgress.complete ||
+									(dayProgress.partial && dayProgress.partial[i]))
 
 								if (segment.kind === 'devotional') {
 									title = <FormattedMessage id='plans.devotional' />

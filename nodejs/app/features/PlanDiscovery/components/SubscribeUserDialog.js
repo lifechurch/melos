@@ -3,8 +3,8 @@ import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
 
-import getCurrentDT from '../../../lib/getCurrentDT'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import getCurrentDT from '../../../lib/getCurrentDT'
 import Menu from '../../../components/Menu'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 
@@ -15,12 +15,12 @@ class SubscribeUserDialog extends Component {
 	}
 
 	handleSubscribeUser(subscribeContext) {
-		const { dispatch, id, isLoggedIn, isSubscribed, subscriptionLink, useRouter } = this.props
+		const { dispatch, id, isLoggedIn, isSubscribed, subLinkBase, useRouter, serverLanguageTag } = this.props
 		if (!isLoggedIn) window.location.replace('/sign-in')
 
 		switch (subscribeContext) {
 			case 'together':
-				dispatch(routeActions.push(`${subscriptionLink}/together/create`))
+				dispatch(routeActions.push(`${subLinkBase}/together/create`))
 				break
 			case 'public':
 			case 'private':
@@ -30,19 +30,20 @@ class SubscribeUserDialog extends Component {
 							created_dt: getCurrentDT(),
 							plan_id: id,
 							privacy: subscribeContext,
+							language_tag: serverLanguageTag,
 						},
 						auth: isLoggedIn
-					})).then(() => {
+					})).then((data) => {
 						if (useRouter) {
-							dispatch(routeActions.push(subscriptionLink))
+							dispatch(routeActions.push(`${subLinkBase}/subscription/${data.id}`))
 						} else {
-							window.location.replace(subscriptionLink)
+							window.location.replace(`${subLinkBase}/subscription/${data.id}`)
 						}
 					})
 				} else if (useRouter) {
-					dispatch(routeActions.push(subscriptionLink))
+					dispatch(routeActions.push(subLinkBase))
 				} else {
-					window.location.replace(subscriptionLink)
+					window.location.replace(subLinkBase)
 				}
 				break
 			default:
@@ -101,7 +102,7 @@ SubscribeUserDialog.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 	isSubscribed: PropTypes.bool.isRequired,
 	isLoggedIn: PropTypes.bool.isRequired,
-	subscriptionLink: PropTypes.string.isRequired,
+	subLinkBase: PropTypes.string.isRequired,
 	useRouter: PropTypes.bool
 }
 
@@ -112,6 +113,7 @@ SubscribeUserDialog.defaultProps = {
 function mapStateToProps(state) {
 	return {
 		isLoggedIn: state.auth.isLoggedIn,
+		serverLanguageTag: state.serverLanguageTag,
 	}
 }
 

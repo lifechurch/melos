@@ -9,9 +9,10 @@ import PlanActionButtons from './PlanActionButtons'
 import AvatarList from '../../../components/AvatarList'
 import ShareWidget from './ShareWidget'
 import imageUtil from '../../../lib/imageUtil'
+import Routes from '../../../lib/routes'
+
 
 class AboutPlan extends Component {
-
 	constructor(props) {
 		super(props)
 		this.state = { dialogOpen: false }
@@ -31,7 +32,7 @@ class AboutPlan extends Component {
 		}
 
 		const aboutLink = localizedLink(`/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
-		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
+		const subLinkBase = localizedLink(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
 		const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(readingPlan.id) !== -1))
 		const recommended = (recommendedPlans && recommendedPlans[readingPlan.id]) ? recommendedPlans[readingPlan.id] : null
 		let friendsReading, friendsCompleted, readingList, completedList, relatedCarousel = null
@@ -136,7 +137,7 @@ class AboutPlan extends Component {
 									<PlanActionButtons
 										id={readingPlan.id}
 										aboutLink={aboutLink}
-										subscriptionLink={subscriptionLink}
+										subLinkBase={subLinkBase}
 										planLinkNode={planLinkNode}
 										isSubscribed={'subscription_id' in readingPlan}
 										isSaved={isSaved}

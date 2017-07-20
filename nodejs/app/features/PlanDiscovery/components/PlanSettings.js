@@ -44,17 +44,19 @@ class PlanSettings extends Component {
 	componentDidUpdate(prevProps, prevState) {
 		const { subscription } = this.props
 		const { emailTime, activityNotificationsOn } = this.state
-		if (emailTime && emailTime !== prevState.emailTime) {
-			this.handleEmailDeliveryChange(true)
-		}
-		if (
-			subscription.settings
-			&& subscription.settings.activity_notifications
-			&& subscription.settings.activity_notifications.email !== activityNotificationsOn
-		) {
-			this.setState({
-				activityNotificationsOn: subscription.settings.activity_notifications.email
-			})
+		if (subscription) {
+			if (emailTime && emailTime !== prevState.emailTime) {
+				this.handleEmailDeliveryChange(true)
+			}
+			if (
+				subscription.settings
+				&& subscription.settings.activity_notifications
+				&& subscription.settings.activity_notifications.email !== activityNotificationsOn
+			) {
+				this.setState({
+					activityNotificationsOn: subscription.settings.activity_notifications.email
+				})
+			}
 		}
 	}
 

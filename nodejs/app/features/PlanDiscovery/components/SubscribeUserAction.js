@@ -21,12 +21,12 @@ class SubscribeUserAction extends Component {
 	}
 
 	handleGoToPlan() {
-		const { dispatch, subscriptionLink } = this.props
-		dispatch(routeActions.push(subscriptionLink))
+		const { dispatch, subLinkBase } = this.props
+		dispatch(routeActions.push(subLinkBase))
 	}
 
 	render() {
-		const { id, isSubscribed, subscriptionLink } = this.props
+		const { id, isSubscribed, subLinkBase } = this.props
 		const { dialogOpen } = this.state
 
 		const triggerButton = (
@@ -58,7 +58,7 @@ class SubscribeUserAction extends Component {
 					<SubscribeUserDialog
 						id={id}
 						isSubscribed={isSubscribed}
-						subscriptionLink={subscriptionLink}
+						subLinkBase={subLinkBase}
 						footer={footer}
 					/>
 				}
@@ -71,7 +71,7 @@ SubscribeUserAction.propTypes = {
 	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	dispatch: PropTypes.func.isRequired,
 	isSubscribed: PropTypes.bool.isRequired,
-	subscriptionLink: PropTypes.string.isRequired
+	subLinkBase: PropTypes.string.isRequired
 }
 
 export default connect()(SubscribeUserAction)
