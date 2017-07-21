@@ -34,7 +34,7 @@ class SubscriptionList extends Component {
 	}
 
 	getSubs = ({ page = null }) => {
-		const { dispatch } = this.props
+		const { dispatch, auth, serverLanguageTag } = this.props
 		dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
@@ -44,6 +44,8 @@ class SubscriptionList extends Component {
 						dispatch(planView({
 							plan_id: sub.plan_id,
 							together_id: sub.together_id,
+							user_id: auth && auth.isLoggedIn && auth.userData.userid,
+							language_tag: serverLanguageTag,
 						}))
 					})
 				}
@@ -52,7 +54,7 @@ class SubscriptionList extends Component {
 	}
 
 	getInvitations = () => {
-		const { dispatch } = this.props
+		const { dispatch, auth, serverLanguageTag } = this.props
 		dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
@@ -62,6 +64,8 @@ class SubscriptionList extends Component {
 						dispatch(planView({
 							plan_id: sub.plan_id,
 							together_id: id,
+							user_id: auth && auth.isLoggedIn && auth.userData.userid,
+							language_tag: serverLanguageTag,
 						}))
 					})
 				}
@@ -216,7 +220,7 @@ function mapStateToProps(state) {
 		together: getTogetherModel(state),
 		invitations: getTogetherInvitations(state),
 		auth: state.auth,
-
+		serverLanguageTag: state.serverLanguageTag,
 	}
 }
 
