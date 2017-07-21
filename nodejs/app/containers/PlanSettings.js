@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
 // actions
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+// models
+import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 // components
 import PlanSettingsComponent from '../features/PlanDiscovery/components/PlanSettings'
 import Modal from '../components/Modal'
@@ -66,8 +68,13 @@ class PlanSettings extends Component {
 	}
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, props) {
+	const { subscription_id } = props
 	return {
+		subscription: getSubscriptionModel(state) &&
+			subscription_id in getSubscriptionModel(state).byId
+			? getSubscriptionModel(state).byId[subscription_id]
+			: null,
 		serverLanguageTag: state.serverLanguageTag,
 		auth: state.auth
 	}

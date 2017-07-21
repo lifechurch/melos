@@ -134,7 +134,12 @@ export function getSelectionString(selectionObject, returnText = false) {
  * @return {[string]}          [description]
  */
 export function getReferencesTitle({ bookList, usfmList, isRtl = false }) {
-	if (bookList.length < 1 || usfmList.length < 1) return null
+	if (
+		!bookList
+		|| !usfmList
+		|| bookList.length < 1
+		|| usfmList.length < 1
+	) return null
 
 	const bookUsfm = usfmList[0].split('.')[0]
 	const chapNum = usfmList[0].split('.')[1]

@@ -11,7 +11,7 @@ import Participants from '../features/PlanDiscovery/components/Participants'
 
 class ParticipantsView extends Component {
 	componentDidMount() {
-		const { dispatch, auth, params: { id, together_id } } = this.props
+		const { dispatch, auth, params: { id, together_id, token }, serverLanguageTag } = this.props
 
 		dispatch(readingPlansAction({
 			method: 'view',
@@ -19,7 +19,12 @@ class ParticipantsView extends Component {
 				id: id.split('-')[0],
 			},
 		}))
-		dispatch(participantsView({ together_id, auth: auth.isLoggedIn }))
+		dispatch(participantsView({
+			together_id,
+			user_id: auth && auth.userData && auth.userData.userid,
+			language_tag: serverLanguageTag,
+			token,
+		}))
 	}
 
 	localizedLink = (link) => {

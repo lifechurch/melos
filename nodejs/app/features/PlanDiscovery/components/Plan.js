@@ -196,7 +196,8 @@ function Plan({
 							isRtl,
 							isSaved,
 							together_id,
-							handleCompleteRef: handleContentCheck
+							handleCompleteRef: handleContentCheck,
+							handleCatchUp,
 						})
 					}
 			</div>

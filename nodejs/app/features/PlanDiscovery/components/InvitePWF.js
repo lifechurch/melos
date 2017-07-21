@@ -143,7 +143,12 @@ class InvitePWF extends Component {
 				<ClickTarget handleOutsideClick={this.hideSearchResults}>
 					<div className='search-results'>
 						<CustomScroll allowOutsideScroll={false}>
-							<div className='friend-list'>
+							<div
+								className='friend-list' style={{
+									minHeight: '350px',
+									maxHeight: '350px'
+								}}
+							>
 								{
 									search.map((user) => {
 										return this.renderUser(user)
@@ -216,7 +221,12 @@ class InvitePWF extends Component {
 									{
 										!friends ?
 											<div>Loading...</div> :
-											<div className='friend-list'>
+											<div
+												className='friend-list' style={{
+													minHeight: '350px',
+													maxHeight: '350px'
+												}}
+											>
 												{
 													mergedUsers.map((user) => {
 														return this.renderUser(user)

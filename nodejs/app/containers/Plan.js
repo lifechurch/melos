@@ -6,6 +6,7 @@ import rtlDetect from 'rtl-detect'
 import moment from 'moment'
 import { routeActions } from 'react-router-redux'
 // actions
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import subscriptionDay from '@youversion/api-redux/lib/batchedActions/subscriptionDay'
 import subscriptionDayUpdate from '@youversion/api-redux/lib/batchedActions/subscriptionDayUpdate'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
@@ -61,9 +62,38 @@ class Plan extends Component {
 		return rtlDetect.isRtlLang(languageTag)
 	}
 
-	handleCatchUp = () => {
-		const { dispatch, start_dt, subscription } = this.props
-		return null
+	onCatchUp = () => {
+		const { dispatch, auth, subscription } = this.props
+		if (subscription) {
+			// calculate last completed day to set the new start date
+			let newStartDt = null
+			subscription.days.some((progressDay, i) => {
+				// start plan however many days are completed away from today
+				// i.e. we have 2 days completed and we're behind, let's start the plan
+				// 2 days ago
+				newStartDt = moment().subtract(i, 'days').toISOString()
+				return !progressDay.complete
+			})
+			if (newStartDt) {
+				dispatch(plansAPI.actions.subscription.put({
+					id: subscription.id
+				}, {
+					auth: auth.isLoggedIn,
+					body: {
+						start_dt: newStartDt
+					}
+				})).then(() => {
+					// refresh progress
+					dispatch(plansAPI.default.actions.progress.get({
+						id: subscription.id,
+						page: '*',
+						fields: 'days,overall'
+					}, {
+						auth: true
+					}))
+				})
+			}
+		}
 	}
 
 	OnContentCheck = ({ contentIndex, complete }) => {
@@ -162,6 +192,7 @@ class Plan extends Component {
 				start_dt={subscription ? subscription.start_dt : null}
 				subscription_id={subscription ? subscription.id : null}
 				handleContentCheck={this.OnContentCheck}
+				handleCatchUp={this.onCatchUp}
 			>
 				{
 					children &&
