@@ -1,22 +1,23 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
-import moment from 'moment'
-
+import { createHistory } from 'history'
+import createLogger from 'redux-logger'
+import Footer from '../../features/Footer/components/Footer'
 import configureStore from './store'
+
+
 import defaultState from './defaultState'
-import PassageView from '../../containers/PassageView'
-
-import "../../less/style.less"
-
-require('moment/min/locales')
 
 let initialState = defaultState
 
-if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.__INITIAL_STATE__
+const browserHistory = createHistory({
+	basename: '/'
+})
+
+if (typeof window !== 'undefined' && typeof window.Footer.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.Footer.__INITIAL_STATE__
 }
 
 let logger = null
@@ -24,16 +25,15 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, null, logger)
+const store = configureStore(initialState, browserHistory, logger)
 addLocaleData(window.__LOCALE__.data)
-moment.locale(window.__LOCALE__.locale)
 
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<PassageView />
+			<Footer />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app-Passage')
+  document.getElementById('react-app-Footer')
 )

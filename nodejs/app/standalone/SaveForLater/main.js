@@ -35,5 +35,5 @@ render(
 			<SaveForLaterView />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+  document.getElementById('react-app-SaveForLater')
 )

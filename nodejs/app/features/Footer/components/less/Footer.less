@@ -1,0 +1,69 @@
+.yv-footer {
+	padding: 30px 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	border-top: 1px solid #DDD;
+
+	>.left {
+		width: 25%;
+		text-align: left;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	>.center {
+		width: 50%;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	>.right {
+		width: 25%;
+		text-align: right;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.bible-icon {
+		height: 48px;
+	}
+
+	.green-links {
+		a {
+			color: @green;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.gray-links {
+		margin-top: 5px;
+		a {
+			color: #BBB;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		font-size: 14px;
+
+		li {
+			margin-right: 12px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

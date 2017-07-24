@@ -13,7 +13,7 @@ import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 import defaultState from './defaultState'
 import { isVerseOrChapter } from '../../lib/readerUtils'
-import "../../less/style.less"
+import '../../less/style.less'
 
 if (typeof window !== 'undefined') {
 	ga.initialize('UA-3571547-76', { language: window.__LOCALE__.locale });
@@ -35,8 +35,8 @@ const browserHistory = useRouterHistory(createHistory)({
 	basename: '/'
 })
 
-if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.Bible.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.Bible.__INITIAL_STATE__
 }
 
 let logger = null
@@ -241,5 +241,5 @@ render(
 			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+  document.getElementById('react-app-Bible')
 )

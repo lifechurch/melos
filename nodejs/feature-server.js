@@ -286,11 +286,36 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						}
 
 						res.setHeader('Cache-Control', 'public')
-						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, nr.createTracer('render', (err, html) => {
+						res.render('standalone', {
+							appString: html,
+							initialState,
+							environment: process.env.NODE_ENV,
+							getAssetPath,
+							assetPrefix,
+							config: getConfig(feature),
+							locale: Locale,
+							nodeHost: getNodeHost(req),
+							railsHost: params.railsHost,
+							referrer,
+							appContainerSuffix: feature
+						}, nr.createTracer('render', (err, html) => {
 							nr.endTransaction()
-							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/assets/${getAssetPath(`${feature}.js`)}` })
+							res.send({
+								html,
+								head,
+								token: initialState.auth.token,
+								js: [
+									{ name: 'polyfill', src: 'https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Number.isNaN,Promise' },
+									{ name: 'raven', src: 'https://cdn.ravenjs.com/3.14.0/raven.min.js', crossOrigin: true },
+									{ name: 'manifest', src: `${assetPrefix}/assets/${getAssetPath('manifest.js')}` },
+									{ name: 'vendor', src: `${assetPrefix}/assets/${getAssetPath('vendor.js')}` },
+									{ name: 'feature', src: `${assetPrefix}/assets/${getAssetPath(`${feature}.js`)}` }
+								],
+								css: [
+									{ name: 'main', src: `${assetPrefix}/assets/${getAssetPath('main.css')}` }
+								]
+							})
 						}))
-
 						return null
 					}))
 				})
