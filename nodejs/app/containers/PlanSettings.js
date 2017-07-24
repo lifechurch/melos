@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
 // actions
-import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // models
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 // components
 import PlanSettingsComponent from '../features/PlanDiscovery/components/PlanSettings'
 import Modal from '../components/Modal'
 // utils
-import Routes from '../lib/routes'
 
 class PlanSettings extends Component {
 	constructor() {
@@ -30,27 +27,6 @@ class PlanSettings extends Component {
 				}
 			}
 		}
-	}
-
-	handleStopPlan = () => {
-		const { dispatch, auth, subscription_id } = this.props
-		dispatch(plansAPI.actions.subscription.delete({
-			id: subscription_id
-		}, {
-			auth: auth.isLoggedIn
-		})).then((data) => {
-			if (
-				data.data &&
-				data.data.status &&
-				data.data.status === 403
-			) {
-				this.setState({ showError: true })
-			} else {
-				dispatch(routeActions.push(Routes.subscriptions({
-					username: auth.userData.username
-				})))
-			}
-		})
 	}
 
 	render() {

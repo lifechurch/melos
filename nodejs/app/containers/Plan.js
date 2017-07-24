@@ -84,7 +84,7 @@ class Plan extends Component {
 					}
 				})).then(() => {
 					// refresh progress
-					dispatch(plansAPI.default.actions.progress.get({
+					dispatch(plansAPI.actions.progress.get({
 						id: subscription.id,
 						page: '*',
 						fields: 'days,overall'

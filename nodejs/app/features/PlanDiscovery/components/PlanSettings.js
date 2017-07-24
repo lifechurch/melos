@@ -5,12 +5,14 @@ import Immutable from 'immutable'
 import moment from 'moment'
 import Toggle from 'react-toggle-button'
 import TimePicker from 'rc-time-picker'
+import { routeActions } from 'react-router-redux'
 import plansAPI, { getSettings } from '@youversion/api-redux/lib/endpoints/plans'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import ProgressBar from '../../../components/ProgressBar'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import ActionCreators from '../actions/creators'
 import { getBibleVersionFromStorage } from '../../../lib/readerUtils'
+import Routes from '../../../lib/routes'
 
 
 class PlanSettings extends Component {
@@ -19,7 +21,6 @@ class PlanSettings extends Component {
 		super(props)
 		const { subscription, together_id } = props
 		this.state = {
-			emailDeliveryOn: !!(subscription.email_delivery),
 			emailTime: subscription.email_delivery
 				? moment()
 						.hour(subscription.email_delivery.time.split(':')[0])
@@ -27,9 +28,6 @@ class PlanSettings extends Component {
 				: moment()
 						.hour(0)
 						.minute(0),
-			activityNotificationsOn: together_id
-				&& subscription.settings
-				&& subscription.settings.activity_notifications.email,
 		}
 	}
 
@@ -41,25 +39,6 @@ class PlanSettings extends Component {
 		}, { auth: true }))
 	}
 
-	componentDidUpdate(prevProps, prevState) {
-		const { subscription } = this.props
-		const { emailTime, activityNotificationsOn } = this.state
-		if (subscription) {
-			if (emailTime && emailTime !== prevState.emailTime) {
-				this.handleEmailDeliveryChange(true)
-			}
-			if (
-				subscription.settings
-				&& subscription.settings.activity_notifications
-				&& subscription.settings.activity_notifications.email !== activityNotificationsOn
-			) {
-				this.setState({
-					activityNotificationsOn: subscription.settings.activity_notifications.email
-				})
-			}
-		}
-	}
-
 	handleReloadCalendar = () => {
 		const { dispatch, id, params, serverLanguageTag, auth: { userData: { userid } } } = this.props
 		const language_tag = serverLanguageTag || params.lang || 'en'
@@ -68,11 +47,18 @@ class PlanSettings extends Component {
 		})
 	}
 
-	handlePrivacyChange = () => {
-		const { dispatch, id, isPrivate } = this.props
-		dispatch(ActionCreators.updateSubscribeUser({ id, private: !isPrivate }, true)).then(() => {
-			this.handleSelectPlan()
-		})
+	handlePrivacyChange = (isPrivate) => {
+		const { dispatch, subscription } = this.props
+		dispatch(plansAPI.actions.subscription.put({
+			id: subscription.id
+		}, {
+			auth: true,
+			body: {
+				privacy: isPrivate
+					? 'private'
+					: 'public'
+			}
+		}))
 	}
 
 	handleTogetherNotifications = (notificationsOn) => {
@@ -117,11 +103,26 @@ class PlanSettings extends Component {
 	}
 
 	handleStop = () => {
-		const { onStopPlan } = this.props
-		if (onStopPlan && typeof onStopPlan === 'function') {
-			onStopPlan()
-		}
+		const { dispatch, auth, subscription_id } = this.props
+		dispatch(plansAPI.actions.subscription.delete({
+			id: subscription_id
+		}, {
+			auth: auth.isLoggedIn
+		})).then((data) => {
+			if (
+				data.data &&
+				data.data.status &&
+				data.data.status === 403
+			) {
+				this.setState({ showError: true })
+			} else {
+				dispatch(routeActions.push(Routes.subscriptions({
+					username: auth.userData.username
+				})))
+			}
+		})
 	}
+
 
 	render() {
 		const {
@@ -131,7 +132,9 @@ class PlanSettings extends Component {
 			endString,
 			subscription,
 		} = this.props
-		const { emailDeliveryOn, emailTime, activityNotificationsOn } = this.state
+		const {
+			emailTime,
+		} = this.state
 
 		const rowStyle = {
 			paddingTop: 20,
@@ -159,10 +162,16 @@ class PlanSettings extends Component {
 		const thumbAnimateRange = [1, 25]
 
 		let isPrivate = false
+		let emailDeliveryOn = false
+		let activityNotificationsOn = false
 		let progressPercentage = 0
 		let progressString = ''
 		if (subscription) {
 			isPrivate = subscription.privacy === 'private'
+			emailDeliveryOn = !!(subscription.email_delivery)
+			activityNotificationsOn = together_id
+				&& subscription.settings
+				&& subscription.settings.activity_notifications.email
 			if (subscription.overall) {
 				progressPercentage = Math.round(subscription.overall.completion_percentage * 100)
 				progressString = subscription.overall.progress_string
@@ -207,7 +216,6 @@ class PlanSettings extends Component {
 								<Toggle
 									value={activityNotificationsOn}
 									onToggle={(val) => {
-										this.setState({ activityNotificationsOn: !val })
 										this.handleTogetherNotifications(!val)
 									}}
 									activeLabel=''
@@ -237,6 +245,9 @@ class PlanSettings extends Component {
 							<div className='columns medium-4 flex-end' style={{ margin: 'auto' }}>
 								<Toggle
 									value={isPrivate}
+									onToggle={(val) => {
+										this.handlePrivacyChange(!val)
+									}}
 									activeLabel=''
 									inactiveLabel=''
 									colors={switchColors}
@@ -258,7 +269,6 @@ class PlanSettings extends Component {
 							<Toggle
 								value={emailDeliveryOn}
 								onToggle={(val) => {
-									this.setState({ emailDeliveryOn: !val })
 									this.handleEmailDeliveryChange(!val)
 								}}
 								activeLabel=''
@@ -277,6 +287,7 @@ class PlanSettings extends Component {
 									defaultValue={emailTime}
 									onChange={(value) => {
 										this.setState({ emailTime: value })
+										this.handleEmailDeliveryChange(true)
 									}}
 									use12Hours={true}
 								/>
@@ -329,7 +340,6 @@ function mapStateToProps(state, props) {
 PlanSettings.propTypes = {
 	id: PropTypes.number.isRequired,
 	dispatch: PropTypes.func.isRequired,
-	onStopPlan: PropTypes.func.isRequired,
 	onCatchUp: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	auth: PropTypes.object.isRequired,
