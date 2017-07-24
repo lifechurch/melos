@@ -1,68 +1,92 @@
 .yv-footer {
-	padding: 30px 20px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+	overflow: hidden;
 
-	border-top: 1px solid #DDD;
-
-	>.left {
-		width: 25%;
-		text-align: left;
+	.yv-footer-wrapper {
+		padding: 12.5px 15px;
 		display: flex;
-		justify-content: flex-start;
-	}
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		border-top: 1px solid #DDD;
+		background-color: white;
+		transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+		z-index: 1;
 
-	>.center {
-		width: 50%;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+		&.yv-footer-fixed {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			transform: translateY(0);
+		}
 
-	>.right {
-		width: 25%;
-		text-align: right;
-		display: flex;
-		justify-content: flex-end;
-	}
+		&.yv-footer-hidden {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			transform: translateY(110%);
+		}
 
-	.bible-icon {
-		height: 48px;
-	}
+		>.left {
+			width: 25%;
+			text-align: left;
+			display: flex;
+			justify-content: flex-start;
+		}
 
-	.green-links {
-		a {
-			color: @green;
-			&:hover {
-				text-decoration: underline;
+		>.center {
+			width: 50%;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		>.right {
+			width: 25%;
+			text-align: right;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		.bible-icon {
+			height: 48px;
+		}
+
+		.green-links {
+			a {
+				color: @green;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
-	}
 
-	.gray-links {
-		margin-top: 5px;
-		a {
-			color: #BBB;
-			&:hover {
-				text-decoration: underline;
+		.gray-links {
+			margin-top: 5px;
+			a {
+				color: #BBB;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
-	}
 
-	ul {
-		list-style: none;
-		display: flex;
-		justify-content: center;
-		font-size: 14px;
+		ul {
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			font-size: 14px;
 
-		li {
-			margin-right: 12px;
+			li {
+				margin-right: 12px;
 
-			&:last-child {
-				margin-right: 0;
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 		}
 	}

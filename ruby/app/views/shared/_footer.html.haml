@@ -1,29 +1,7 @@
-:ruby
-  #Footer
-  footer_params = {
-    "strings" => {},
-    "languageTag" => I18n.locale.to_s,
-    "url" => request.path,
-    "cache_for" => YV::Caching::a_very_long_time
-  }
+!= @footer_from_node['html']
 
-  footer_from_node = YV::Nodestack::Fetcher.get('Footer', footer_params, cookies, current_auth, current_user, request)
-
-= cache "#{@site}_footer_#{current_locale}", expires_in: YV::Caching.a_long_time do
-  != footer_from_node['html']
-
-  - content_for :lower_javascript do
-    %script{type:'text/javascript'}
-      !='window.YV_API_HOST = "' + ENV['SECURE_HOSTNAME'] + '"'
-      = if Cfg.nodejs_api_port.present?
-        != 'window.YV_API_PORT = "' + Cfg.nodejs_api_port + '"'
-
-  - content_for :lower_javascript do
-    - footer_from_node['js'].each do |s|
-      = javascript_include_tag s['src']
-
-  - unless ENV['RACK_ENV'] =~ /production/i
-    .row.full
-      .medium-12.columns.text-right
-        %small.environment
-          ="Non-production deployment, pointing at: #{Cfg.try :api_root}"
+- unless ENV['RACK_ENV'] =~ /production/i
+  .row.full
+    .medium-12.columns.text-right
+      %small.environment
+        ="Non-production deployment, pointing at: #{Cfg.try :api_root}"

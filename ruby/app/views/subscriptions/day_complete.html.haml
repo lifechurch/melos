@@ -9,7 +9,7 @@
   - js.each do |s|
     = javascript_include_tag s['src']
 
-- content_for :lower_javascript do
+- content_for :stylesheets do
   - css.each do |s|
     = stylesheet_link_tag s['src']
 

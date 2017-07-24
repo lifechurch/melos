@@ -15,6 +15,7 @@
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %base{href: "/"}
     = csrf_meta_tags
+    = render '/shared/footer_head'
     = render '/shared/head'
     = render '/shared/javascripts'
 
