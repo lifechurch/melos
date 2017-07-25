@@ -1,0 +1,80 @@
+.yv-async-check {
+	display: flex;
+  flex-direction: row;
+	margin-bottom: 20px;
+	align-items: center;
+	font-size: 13px;
+	text-align: left;
+
+	span {
+		line-height: 18px;
+	}
+
+	.check-thumbnail {
+		width: 48px;
+		min-width: 48px;
+		height: 48px;
+		margin-right: 15px;
+	}
+
+	.check-box {
+		border: 2px solid #757575;
+		border-radius: 1px;
+		height: 18px;
+		width: 18px;
+		display: flex;
+		margin-right: 15px;
+		cursor: pointer;
+		justify-content: center;
+	  align-items: center;
+		background-color: transparent;
+
+		&:focus {
+			outline: 0;
+		}
+
+		.checkmark-container {
+			margin: auto;
+			svg {
+				fill: #FFF;
+			}
+
+			.checkmark-right {
+				padding-right: 0;
+			}
+		}
+	}
+
+	.success-message {
+		font-size: 11px;
+		color: #979797;
+		margin-left: 5px;
+		opacity: 1;
+		transition: opacity 0.2s ease-in-out !important;
+
+		&.hidden {
+			opacity: 0;
+			transition: opacity 1s ease-in-out !important;
+		}
+	}
+
+	&.checked {
+		.check-box {
+			background-color: #6ab750;
+			border-color: #6ab750;
+		}
+	}
+
+	&.not-checked {
+		.check-box {
+		}
+	}
+
+	&.disabled {
+		color: #ccc;
+		.check-box {
+			cursor: not-allowed;
+			border-color: #ccc;
+		}
+	}
+}

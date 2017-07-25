@@ -10,7 +10,7 @@ const concat 	= require('gulp-concat');
 const rev = require('gulp-rev');
 const del = require('del');
 const runSequence = require('run-sequence');
-const envify = require('loose-envify');
+// const envify = require('loose-envify');
 const https = require('https');
 const querystring = require('querystring');
 const yaml = require('js-yaml');
@@ -92,6 +92,20 @@ gulp.task('javascript:prod:planDiscovery', () => {
 		.pipe(gulp.dest('build/assets'));
 });
 
+gulp.task('javascript:prod:unsubscribe', () => {
+	return browserify('app/standalone/Unsubscribe/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ [ 'env', { debug: false } ], 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
+		.transform('loose-envify', { NODE_ENV: 'production' })
+		.bundle()
+		.pipe(source('Unsubscribe.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(rev())
+		.pipe(gulp.dest('./public/javascripts/'))
+		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
+		.pipe(gulp.dest('build/assets'));
+});
+
 // Leaving here for a how-to on doing sourceMaps to inspect package size
 // gulp.task('javascript:prod:Bible', function() {
 // 	return browserify({ entries: "app/standalone/Bible/main.js", debug: false })
@@ -140,7 +154,7 @@ gulp.task('javascript:prod:subscribeUser', () => {
 
 gulp.task('javascript:prod:passage', () => {
 	return browserify('app/standalone/Passage/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'es2015', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
+		.transform('babelify', { presets: [ 'es2015', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('Passage.js'))
@@ -188,6 +202,15 @@ gulp.task('javascript:dev:planDiscovery', () => {
 		.pipe(gulp.dest('./public/javascripts/'));
 });
 
+gulp.task('javascript:dev:unsubscribe', () => {
+	return browserify('app/standalone/Unsubscribe/main.js', { debug: !IS_PROD })
+		.transform('babelify', { presets: [ [ 'env', { debug: false } ], 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
+		.bundle()
+		.pipe(source('Unsubscribe.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest('./public/javascripts/'));
+});
+
 gulp.task('javascript:dev:Bible', () => {
 	return browserify('app/standalone/Bible/main.js', { debug: !IS_PROD })
 		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
@@ -208,7 +231,7 @@ gulp.task('javascript:dev:subscribeUser', () => {
 
 gulp.task('javascript:dev:passage', () => {
 	return browserify('app/standalone/Passage/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'es2015', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign' ] })
+		.transform('babelify', { presets: [ 'es2015', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
 		.bundle()
 		.pipe(source('Passage.js'))
 		.pipe(buffer())
@@ -229,9 +252,9 @@ gulp.task('images:clean', () => {
 
 gulp.task('javascript', (callback) => {
 	if (IS_PROD) {
-		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', 'javascript:prod:passage', callback);
+		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:unsubscribe', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', 'javascript:prod:passage', callback);
 	} else {
-		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
+		runSequence('javascript:clean', [ /* 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', */ 'javascript:dev:unsubscribe' /* , 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage' */], callback);
 	}
 });
 
@@ -241,7 +264,7 @@ gulp.task('css:prod', () => {
     .pipe(less())
 		.pipe(cssnano())
 		.pipe(rev())
-  	.pipe(gulp.dest('./public/stylesheets'))
+		.pipe(gulp.dest('./public/stylesheets'))
 		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
 		.pipe(gulp.dest('build/assets'));
 });
@@ -285,15 +308,15 @@ gulp.task('images:dev', () => {
 gulp.task('build', ['images', 'css', 'javascript']);
 
 gulp.task('build:production', (callback) => {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', 'javascript:prod:passage', callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:unsubscribe', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', 'javascript:prod:passage', callback);
 });
 
 gulp.task('build:staging', (callback) => {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:unsubscribe', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
 });
 
 gulp.task('build:review', (callback) => {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:unsubscribe', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
 });
 
 gulp.task('watch', ['images', 'css', 'javascript'], () => {

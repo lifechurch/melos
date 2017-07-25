@@ -1419,6 +1419,8 @@ en-GB:
             email: "Email"
             not me: "This is not me"
             saved: "Saved!"
+            plan delivery: "PLAN DELIVERY"
+            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Manage Your Email Notifications"
                 unsub all: "Unsubscribe from all emails"
@@ -1441,9 +1443,9 @@ en-GB:
                 likes: "Likes on my activity"
                 moments: "Friends' activity"
                 newsletter: "News from YouVersion"
-                reading_plans: "About my Bible Plans"
+                reading_plans: "About my Bible plans"
                 votd: "Verse of the Day Text"
-                votd_image: "Verse of the Day Image"
+                votd_image: "Verse of the day image"
             error: 
                 token: "Sorry, you need to Sign In before you can change your Notification settings:"
                 other_type: "Sorry, that didn’t do what we expected. Would you like to update your Notifications?"

@@ -68,6 +68,9 @@ YouversionWeb::Application.routes.draw do
   get "/barn",        to: "redirects#barn"
   get "/hk/kids",     to: "redirects#hk_kids"
 
+	get "/unsubscribe", to: "notifications#unsubscribe"
+	get "/unsubscribe/manage", to: "notifications#unsubscribe"
+
   get "/trending-bible-verses", to: "pages#trending"
   get "/verse-of-the-day", to: "pages#votd", as: "votd"
   get "/bible-verse-of-the-day", to: "redirects#votd"
@@ -82,7 +85,7 @@ YouversionWeb::Application.routes.draw do
   match "/app(/:store)", to: AppStoreController.action(:index)
   get "/search(/:category)",to: "search#category", as: "search"
 
-  
+
   resources :comments,  only: [:create,:destroy]
   resources :likes,     only: [:create,:destroy]
 
@@ -90,7 +93,7 @@ YouversionWeb::Application.routes.draw do
     get :requests, on: :collection
     post :offer, on: :collection
   end
-  
+
   resource :notifications, only: [:show, :edit, :update, :destroy]
   resources :vod_subscriptions, only: [:index, :create, :destroy]
 
@@ -118,14 +121,14 @@ YouversionWeb::Application.routes.draw do
   resources "versions",   only:   [:index, :show]
   resources "audiobibles", :path => '/audio-bible-app-versions', only: [:index, :show]
   resources "languages",   only:   [:index, :show]
-  
+
 
   resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do
     get :authorize, on: :collection
   end
 
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
-  
+
 
   # Metal controller
   # This is our second highest throughput action
@@ -155,7 +158,7 @@ YouversionWeb::Application.routes.draw do
     resource :avatar,   only: [:show,:update],  path: "picture"
     resources :devices, only: [:index,:destroy]
 
-    # bible.com/users/:id/connections => connections#index    
+    # bible.com/users/:id/connections => connections#index
     get :connections, on: :member, to: "connections#index", as: 'connections'
 
     get :delete_account, on: :member
@@ -271,22 +274,22 @@ YouversionWeb::Application.routes.draw do
   get  "/sign-in",                         to: "sessions#new",               as: "sign_in"
   post "/sign-in",                         to: "sessions#create",            as: "sign_in"
   get  "/sign-out",                        to: "sessions#destroy",           as: "sign_out"
-  get  "/api-test",                        to: "api_test#index"  
-  
-  # connections 
+  get  "/api-test",                        to: "api_test#index"
+
+  # connections
   get "/auth/:provider/callback",          to: "auth#callback",              as: "auth_callback"
   get "/auth/:provider/connect",           to: "auth#connect",               as: "auth_connect"
   get "/connections/:provider/new",        to: "connections#new",            as: "new_connection"
   get "/connections/:provider/create",     to: "connections#create",         as: "create_connection"
   delete "/connections/:provider/delete",  to: "connections#destroy",        as: "delete_connection"
-   
+
   # Legacy routes, many used in transactional emails
   get "/friends",                          to: "redirects#friends"
   get "/bookmarks",                        to: "redirects#bookmarks"
   get "/highlights",                       to: "redirects#highlights"
   get "/notes",                            to: "redirects#notes"
   get "/badges",                           to: "redirects#badges"
-  get "/profile",                          to: "redirects#profile"  
+  get "/profile",                          to: "redirects#profile"
   get "/settings",                         to: "redirects#settings"
   get "/settings/profile",                 to: "redirects#settings"
   get "/settings/update_email",            to: "redirects#settings_email"
