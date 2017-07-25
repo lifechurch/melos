@@ -173,7 +173,7 @@ class PlanSettings extends Component {
 				&& subscription.settings
 				&& subscription.settings.activity_notifications.email
 			if (subscription.overall) {
-				progressPercentage = Math.round(subscription.overall.completion_percentage * 100)
+				progressPercentage = subscription.overall.completion_percentage
 				progressString = subscription.overall.progress_string
 			}
 		}

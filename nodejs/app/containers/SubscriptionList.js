@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
+import customGet from '@youversion/api-redux/lib/customHelpers/get'
 import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
@@ -28,13 +29,14 @@ class SubscriptionList extends Component {
 			this.getInvitations()
 		}
 		// get actual subscriptions
-		if (!(subscriptions && subscriptions.map && subscriptions.map.length > 0)) {
+		if (!(subscriptions && subscriptions.allIds && subscriptions.allIds.length > 0)) {
+			console.log('GET SUVS AGAIN');
 			this.getSubs({ page: 1 })
 		}
 	}
 
 	getSubs = ({ page = null }) => {
-		const { dispatch, auth, serverLanguageTag } = this.props
+		const { dispatch, auth } = this.props
 		dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
@@ -44,9 +46,23 @@ class SubscriptionList extends Component {
 						dispatch(planView({
 							plan_id: sub.plan_id,
 							together_id: sub.together_id,
-							user_id: auth && auth.isLoggedIn && auth.userData.userid,
-							language_tag: serverLanguageTag,
+							auth,
 						}))
+						// get progress for progress bar
+						customGet({
+							actionName: 'progress',
+							pathvars: {
+								id,
+								page: '*',
+								fields: 'days,overall'
+							},
+							params: {
+								auth: true,
+							},
+							dispatch,
+							actions: plansAPI.actions,
+							auth,
+						})
 					})
 				}
 			}
@@ -54,7 +70,7 @@ class SubscriptionList extends Component {
 	}
 
 	getInvitations = () => {
-		const { dispatch, auth, serverLanguageTag } = this.props
+		const { dispatch, auth } = this.props
 		dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
@@ -64,8 +80,7 @@ class SubscriptionList extends Component {
 						dispatch(planView({
 							plan_id: sub.plan_id,
 							together_id: id,
-							user_id: auth && auth.isLoggedIn && auth.userData.userid,
-							language_tag: serverLanguageTag,
+							auth,
 						}))
 					})
 				}
@@ -85,15 +100,17 @@ class SubscriptionList extends Component {
 			language_tag,
 			readingPlans,
 			invitations,
+			subscriptions,
 			localizedLink
 		} = this.props
 		const plan = (plan_id && plan_id in readingPlans.byId) ? readingPlans.byId[plan_id] : null
+		const sub = (subscription_id && subscription_id in subscriptions.byId) ? subscriptions.byId[subscription_id] : null
 
-		let link, src, subContent, dayString
+		let link, src, subContent, dayString, progress
 		if (start_dt && plan && 'id' in plan) {
 			src = plan.images ?
-						selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
-						null
+				selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
+				null
 			// plans together have different day strings
 			if (together_id) {
 				if (invitations.indexOf(together_id) > -1) {
@@ -111,6 +128,17 @@ class SubscriptionList extends Component {
 					/>
 				)
 			}
+
+			progress = (
+				<ProgressBar
+					percentComplete={
+						sub.overall
+						? sub.overall.completion_percentage
+						: 0
+					}
+					color='gray'
+				/>
+			)
 
 			link = localizedLink(Routes.plans({}))
 			// if this is a subscription, link to it
@@ -136,11 +164,12 @@ class SubscriptionList extends Component {
 				<div>
 					<ParticipantsAvatarList
 						together_id={together_id}
+						avatarWidth={28}
 						// if it's an invitation, we want to show all participants
 						// otherwise, let's just show accetped and host
 						statusFilter={subscription_id ? ['accepted', 'host'] : null}
 					/>
-					<ProgressBar percentComplete={0} />
+					{ sub && progress }
 					{ dayString }
 				</div>
 			)

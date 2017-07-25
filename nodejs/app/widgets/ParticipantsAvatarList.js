@@ -22,9 +22,8 @@ class ParticipantsAvatarList extends Component {
 		if (!participants && together_id) {
 			dispatch(participantsView({
 				together_id,
-				user_id: auth && auth.isLoggedIn && auth.userData.userid,
-				language_tag: auth && auth.isLoggedIn && auth.userData.language_tag,
 				token: joinToken,
+				auth,
 				day
 			}))
 		}

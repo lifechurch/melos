@@ -25,14 +25,14 @@ import PlanComponent from '../features/PlanDiscovery/components/Plan'
 
 class Plan extends Component {
 	componentDidMount() {
-		const { dispatch, params: { id, subscription_id, day }, serverLanguageTag } = this.props
+		const { dispatch, params: { id, subscription_id, day }, auth, serverLanguageTag } = this.props
 		if (subscription_id) {
 			const plan_id = id.split('-')[0]
 			// get sub data
 			dispatch(subscriptionDay({
 				plan_id,
 				subscription_id,
-				language_tag: serverLanguageTag,
+				auth,
 				day,
 			}))
 			// get bible version for building reference strings

@@ -16,7 +16,7 @@ import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
 
-import "../../less/style.less"
+import '../../less/style.less'
 
 require('moment/min/locales')
 
@@ -51,6 +51,8 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 }
 
 const store = configureStore(initialState, browserHistory, logger)
+// export getState
+export const getState = store.getState
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
