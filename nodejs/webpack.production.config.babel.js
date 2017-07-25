@@ -102,7 +102,8 @@ const clientConfig = {
 		PlanDiscovery: './app/standalone/PlanDiscovery/main.js',
 		Bible: './app/standalone/Bible/main.js',
 		SubscribeUser: './app/standalone/SubscribeUser/main.js',
-		Passage: './app/standalone/Passage/main.js'
+		Passage: './app/standalone/Passage/main.js',
+		Unsubscribe: './app/standalone/Unsubscribe/main.js'
 	},
 
 	output: {
@@ -116,7 +117,7 @@ const clientConfig = {
 	plugins: [
 		/* 3.0 Scope-Hoisting */
 		new webpack.optimize.ModuleConcatenationPlugin(),
-		
+
 		/* Extract all Vendor Javascript to separate bundle */
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',

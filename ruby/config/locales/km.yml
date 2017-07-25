@@ -1401,9 +1401,11 @@ km:
     EventsAdmin: 
         unsubscribe: 
             about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
-            email: "Email"
+            email: "អ៊ីម៉ែល"
             not me: "This is not me"
             saved: "Saved!"
+            plan delivery: "PLAN DELIVERY"
+            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Manage Your Email Notifications"
                 unsub all: "Unsubscribe from all emails"
@@ -1420,15 +1422,15 @@ km:
                 votd: "You successfully unsubscribed from <b>Verse of the Day</b> emails."
                 votd_image: "You successfully unsubscribed from <b>Verse of the Day Image</b> emails."
             labels: 
-                badges: "When I earn a badge"
-                comments: "Comments on my activity"
-                friendships: "Friend requests"
-                likes: "Likes on my activity"
-                moments: "Friends' activity"
-                newsletter: "News from YouVersion"
-                reading_plans: "About my Bible Plans"
+                badges: "ពេល​ខ្ញុំ​ទទួលបានផ្លាក"
+                comments: "ការ​បញ្ចេញ​មតិ​លើ​សកម្ម​ភាព​របស់​ខ្ញុំ"
+                friendships: "រក​សំណើរ"
+                likes: "ចូល​ចិត្ត​លើ​សកម្ម​ភាព​របស់​ខ្ញុំ"
+                moments: "សកម្ម​ភាព​របស់​មិត្ត​ភក្តិ"
+                newsletter: "ដំណឹង​ពី YouVersion"
+                reading_plans: "អំពី​គំរោង​អាន​ព្រះ​គម្ពីរ​របស់​ខ្ញុំ"
                 votd: "Verse of the Day Text"
-                votd_image: "Verse of the Day Image"
+                votd_image: "រូបភាព​ខគម្ពីរ​ប្រចាំថ្ងៃ"
             error: 
                 token: "Sorry, you need to Sign In before you can change your Notification settings:"
                 other_type: "Sorry, that didn’t do what we expected. Would you like to update your Notifications?"

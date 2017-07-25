@@ -253,7 +253,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 
 					if (RootComponent === null) {
 						nr.endTransaction()
-						res.status(500).send({ error: 4, message: `No root component defined for this feature: ${feature}` })
+						return res.status(500).send({ error: 4, message: `No root component defined for this feature: ${feature}` })
 					}
 
 					getRenderProps(feature, params.url).then(nr.createTracer('getRenderProps', (renderProps) => {
@@ -264,7 +264,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
 							Raven.captureException(ex)
 							nr.endTransaction()
-							res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
+							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 
 						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
@@ -288,7 +288,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						res.setHeader('Cache-Control', 'public')
 						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, nr.createTracer('render', (err, html) => {
 							nr.endTransaction()
-							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/assets/${getAssetPath(`${feature}.js`)}` })
+							return res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/assets/${getAssetPath(`${feature}.js`)}` })
 						}))
 
 						return null

@@ -42,6 +42,26 @@ class NotificationsController < ApplicationController
     end
   end
 
+	def unsubscribe
+		p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "cache_for" => YV::Caching::a_very_long_time
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('Unsubscribe', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'unsubscribe', locals: { html: fromNode['html'], js: fromNode['js'] }, layout: 'node_only'
+	end
+
   def destroy
     # This method is for clearing (marking as read) notifications
     # Rather than shoehorning this into update (messy), or separating controllers (probably the best option, but most complex)
