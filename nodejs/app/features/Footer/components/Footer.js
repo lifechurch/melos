@@ -10,7 +10,7 @@ class Footer extends Component {
 		super(props)
 		this.didScroll = false
 		this.state = {
-			state: 'hidden',
+			state: 'block',
 			lastScrollTop: 0
 		}
 	}
@@ -31,13 +31,16 @@ class Footer extends Component {
 	handleScroll = () => {
 		const { lastScrollTop } = this.state
 		const scrollTop = (window.pageYOffset || document.documentElement.scrollTop)
+		const atBottom = ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.scrollHeight - 105)
 		let state
-		if (lastScrollTop < scrollTop) {
-			// scroll down
+		if (atBottom) {
 			state = 'fixed'
+		} else if (lastScrollTop < scrollTop) {
+			// scroll down
+			state = 'hidden'
 		} else {
 			// scroll up
-			state = 'hidden'
+			state = 'fixed'
 		}
 
 		this.setState(() => {
@@ -61,31 +64,33 @@ class Footer extends Component {
 		} = bibleConfiguration
 
 		return (
-			<div className="yv-footer">
-				<div className={`yv-footer-wrapper yv-footer-${state}`}>
-					<div className="left">
-						<YouVersion width={100} height={14} />
-					</div>
-					<div className="center">
-						<ul className="green-links">
-							<li><a href="#">Events</a></li>
-							<li><a href="#">Versions ({versions.toLocaleString()})</a></li>
-							<li><a href="#">Languages ({languages.toLocaleString()})</a></li>
-							<li><a href="#">Help</a></li>
-							<li><a href="#">Social</a></li>
-							<li><a href="#">Donate</a></li>
-						</ul>
-						<ul className="gray-links">
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Jobs</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Press</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Terms</a></li>
-						</ul>
-					</div>
-					<div className="right">
-						<img className="bible-icon" src={`/assets/icons/bible/58/${serverLanguageTag}.png`} />
+			<div className="yv-faux-footer">
+				<div className="yv-footer">
+					<div className={`yv-footer-wrapper yv-footer-${state}`}>
+						<div className="left">
+							<YouVersion width={100} height={14} />
+						</div>
+						<div className="center">
+							<ul className="green-links">
+								<li><a href="#">Events</a></li>
+								<li><a href="#">Versions ({versions.toLocaleString()})</a></li>
+								<li><a href="#">Languages ({languages.toLocaleString()})</a></li>
+								<li><a href="#">Help</a></li>
+								<li><a href="#">Social</a></li>
+								<li><a href="#">Donate</a></li>
+							</ul>
+							<ul className="gray-links">
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Jobs</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">Press</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Terms</a></li>
+							</ul>
+						</div>
+						<div className="right">
+							<img className="bible-icon" src={`/assets/icons/bible/58/${serverLanguageTag}.png`} />
+						</div>
 					</div>
 				</div>
 			</div>
