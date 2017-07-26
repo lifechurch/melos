@@ -12,6 +12,7 @@ import { tokenAuth } from '@youversion/js-api'
 import { IntlProvider } from 'react-intl'
 import moment from 'moment'
 import Raven from 'raven'
+import { getLocale } from './app/lib/langUtils'
 
 import planLocales from './locales/config/planLocales.json'
 
@@ -171,34 +172,34 @@ const loadData = nr.createTracer('fnLoadData', (feature, params, startingState, 
 		}
 	}))
 })
-
-const getLocale = nr.createTracer('fnGetLocale', (languageTag) => {
-	let final = {}
-
-	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || typeof availableLocales[languageTag] === 'undefined') {
-		final = { locale: availableLocales['en-US'], source: 'default' }
-	} else {
-		final = { locale: availableLocales[languageTag], source: 'param' }
-	}
-
-	// Get the appropriate set of localized strings for this locale
-	final.messages = require(`./locales/${final.locale}.json`);
-
-	for (const lc of localeList) {
-		if (lc.locale === final.locale) {
-			final.locale2 = lc.locale2
-			final.locale3 = lc.locale3
-			final.momentLocale = lc.momentLocale
-			final.planLocale = planLocales[lc.locale]
-		}
-	}
-	// Get the appropriate react-intl locale data for this locale
-	const localeData = require(`react-intl/locale-data/${final.locale2}`);
-	final.data = localeData;
-
-	moment.locale(final.momentLocale)
-	return final;
-})
+//
+// function getLocale(languageTag) {
+// 	let final = {}
+//
+// 	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || typeof availableLocales[languageTag] === 'undefined') {
+// 		final = { locale: availableLocales['en-US'], source: 'default' }
+// 	} else {
+// 		final = { locale: availableLocales[languageTag], source: 'param' }
+// 	}
+//
+// 	// Get the appropriate set of localized strings for this locale
+// 	final.messages = require(`./locales/${final.locale}.json`);
+//
+// 	for (const lc of localeList) {
+// 		if (lc.locale === final.locale) {
+// 			final.locale2 = lc.locale2
+// 			final.locale3 = lc.locale3
+// 			final.momentLocale = lc.momentLocale
+// 			final.planLocale = planLocales[lc.locale]
+// 		}
+// 	}
+// 	// Get the appropriate react-intl locale data for this locale
+// 	const localeData = require(`react-intl/locale-data/${final.locale2}`);
+// 	final.data = localeData;
+//
+// 	moment.locale(final.momentLocale)
+// 	return final;
+// }
 
 const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 	return new Promise(nr.createTracer('fnGetRenderProps::promsie', (resolve) => {
@@ -227,7 +228,8 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 router.post('/featureImport/*', urlencodedParser, (req, res) => {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
-	const Locale = getLocale(params.languageTag)
+	// const Locale = getLocale(params.languageTag)
+
 
 	nr.setTransactionName(`featureImport/${feature}`)
 
@@ -243,6 +245,15 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 		const defaultState = getDefaultState(feature)
 		let startingState = Object.assign({}, defaultState, { auth: verifiedAuth })
 		startingState = mapStateToParams(feature, startingState, params)
+
+		const Locale = getLocale({
+			localeFromUrl: params.languageTag,
+			localeFromCookie: params.cookiesLocale,
+			localeFromUser: authResult && authResult.userData && authResult.userData.language_tag ? authResult.userData.language_tag : null,
+			acceptLangHeaders: params.acceptLangHeader
+		})
+
+		moment.locale(Locale.momentLocale)
 
 		try {
 			const history = createMemoryHistory()
