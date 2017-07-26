@@ -7,8 +7,9 @@ const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const api = require('@youversion/js-api');
-const ping = require('./ping');
 const httpProxy = require('http-proxy');
+const ping = require('./ping');
+const oauth = require('./oauth');
 
 const auth = api.tokenAuth;
 const cors = require('cors');
@@ -73,7 +74,8 @@ if (process.env.DEBUG) {
 
 app.use(express.static(path.join(__dirname, 'public'), { maxage: '1y' }));
 
-
+// oauth authentication
+app.use('/oauth', oauth);
 app.use('/authenticate', auth.expressAuthRouteHandler);
 app.use('/', ping);
 app.use('/', api.expressRouter);
