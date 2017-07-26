@@ -130,14 +130,16 @@ class SubscriptionList extends Component {
 			}
 
 			progress = (
-				<ProgressBar
-					percentComplete={
-						sub.overall
-						? sub.overall.completion_percentage
-						: 0
-					}
-					color='gray'
-				/>
+				<div style={{ padding: '5px 0', width: '50px' }}>
+					<ProgressBar
+						percentComplete={
+							sub.overall
+							? sub.overall.completion_percentage
+							: 0
+						}
+						color='gray'
+					/>
+				</div>
 			)
 
 			link = localizedLink(Routes.plans({}))
@@ -162,15 +164,17 @@ class SubscriptionList extends Component {
 
 			subContent = (
 				<div>
-					<ParticipantsAvatarList
-						together_id={together_id}
-						avatarWidth={28}
-						// if it's an invitation, we want to show all participants
-						// otherwise, let's just show accetped and host
-						statusFilter={subscription_id ? ['accepted', 'host'] : null}
-					/>
 					{ sub && progress }
 					{ dayString }
+					<div style={{ padding: '5px 0' }}>
+						<ParticipantsAvatarList
+							together_id={together_id}
+							avatarWidth={28}
+							// if it's an invitation, we want to show all participants
+							// otherwise, let's just show accetped and host
+							statusFilter={subscription_id ? ['accepted', 'host'] : null}
+						/>
+					</div>
 				</div>
 			)
 		}

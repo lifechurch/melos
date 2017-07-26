@@ -23,7 +23,7 @@ function PlanListItem(props) {
 						</div>
 					</Link>
 				</div>
-				<div className='subscription-info'>
+				<div className='subscription-info' style={{ marginTop: 0 }}>
 					<Link to={link} className='subscription-title'>
 						<h3 className='plan-title'>{ name }</h3>
 					</Link>
@@ -37,11 +37,17 @@ function PlanListItem(props) {
 }
 
 PlanListItem.propTypes = {
-
+	name: PropTypes.string,
+	link: PropTypes.string,
+	src: PropTypes.string,
+	subContent: PropTypes.node,
 }
 
 PlanListItem.defaultProps = {
-
+	name: null,
+	link: null,
+	src: null,
+	subContent: null,
 }
 
 export default PlanListItem
