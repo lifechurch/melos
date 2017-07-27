@@ -12,7 +12,7 @@ import { tokenAuth } from '@youversion/js-api'
 import { IntlProvider } from 'react-intl'
 import moment from 'moment'
 import Raven from 'raven'
-
+import { getToken } from './oauth'
 import planLocales from './locales/config/planLocales.json'
 
 const urlencodedParser = bodyParser.json()
@@ -39,41 +39,22 @@ const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 
 const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 	return new Promise((resolve, reject) => {
-		// while we're checking auth for this feature
-		// do we need to get an oauth token?
-		if (typeof auth === 'object' && !auth.oauthToken) {
 
-
-			if (typeof auth === 'object' && typeof auth.token === 'string') {
+		if (typeof auth === 'object' && typeof auth.token === 'string') {
 				// We have a token
-				try {
-					const token = auth.token
-					const tokenData = tokenAuth.decodeToken(token)
-					const sessionData = tokenAuth.decryptToken(tokenData.token)
+			try {
+				const token = auth.token
+				const tokenData = tokenAuth.decodeToken(token)
+				const sessionData = tokenAuth.decryptToken(tokenData.token)
 
-					resolve({
-						token,
-						isLoggedIn: true,
-						isWorking: false,
-						userData: sessionData,
-						user: sessionData.email,
-						password: null,
-						errors: {
-							api: null,
-							fields: {
-								user: null,
-								password: null
-							}
-						}
+					// while we're checking auth for this feature
+					// do we need to get an oauth token?
+				if (!auth.oauthToken) {
+					getToken(sessionData).then((data) => {
+						console.log('OAUTH', data)
 					})
-				} catch (err) {
-					reject({ error: 1, message: 'Invalid or Expired Token' })
 				}
 
-			} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
-				// No token, but we have enough info to create one
-				const sessionData = auth
-				const token = tokenAuth.token(sessionData)
 				resolve({
 					token,
 					isLoggedIn: true,
@@ -89,24 +70,46 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 						}
 					}
 				})
-
-			} else {
-				resolve({
-					token: null,
-					isLoggedIn: false,
-					isWorking: false,
-					userData: {},
-					user: null,
-					password: null,
-					errors: {
-						api: null,
-						fields: {
-							user: null,
-							password: null
-						}
-					}
-				})
+			} catch (err) {
+				reject({ error: 1, message: 'Invalid or Expired Token' })
 			}
+
+		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
+				// No token, but we have enough info to create one
+			const sessionData = auth
+			const token = tokenAuth.token(sessionData)
+			resolve({
+				token,
+				isLoggedIn: true,
+				isWorking: false,
+				userData: sessionData,
+				user: sessionData.email,
+				password: null,
+				errors: {
+					api: null,
+					fields: {
+						user: null,
+						password: null
+					}
+				}
+			})
+
+		} else {
+			resolve({
+				token: null,
+				isLoggedIn: false,
+				isWorking: false,
+				userData: {},
+				user: null,
+				password: null,
+				errors: {
+					api: null,
+					fields: {
+						user: null,
+						password: null
+					}
+				}
+			})
 		}
 
 	})
@@ -235,7 +238,6 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 })
 
 router.post('/featureImport/*', urlencodedParser, (req, res) => {
-	console.log('FEATUREIMPORT', req.body, res)
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
@@ -259,7 +261,6 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('loadData', (action) => {
-				console.log('ACTION', action)
 				const finish = nr.createTracer('finish', () => {
 					const RootComponent = getRootComponent(feature)
 

@@ -9,7 +9,7 @@ const compression = require('compression');
 const api = require('@youversion/js-api');
 const httpProxy = require('http-proxy');
 const ping = require('./ping');
-const oauth = require('./oauth');
+const oauth = require('./oauth').default;
 
 const auth = api.tokenAuth;
 const cors = require('cors');

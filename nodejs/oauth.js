@@ -6,7 +6,7 @@ const router = express.Router()
 const jsonParser = bodyParser.json()
 
 
-function getToken({
+export function getToken({
 	username = null,
 	password = null,
 	facebook = null,
@@ -27,10 +27,19 @@ function getToken({
 		params = Object.assign({}, params, { google })
 	}
 
+	// convert query: { redirect: true } to route?redirect=true
+	const queryParams = Object.keys(params).reduce((acc, key) => {
+		const val = params[key]
+		return `${acc}${key}=${val}&`
+	}, '')
+
+
 	return getClient('auth')
 		.call('token')
-		.params(params)
+		// .params('client_id=28edb8be359c01567cb8c30b6db672d5&client_secret=b7921f3afdffa373e29814a2ce70b40c&grant_type=password&username=JacobAllenwood&password=Ninjasrus')
+		.params('client_id=1f14150f46cd3afd775f25b6e8f38388&client_secret=57ab16ce722551da397a12d9d60f01cc&grant_type=password&username=cv01&password=password')
 		.setVersion(false)
+		.setExtension(false)
 		.post()
 }
 
@@ -62,5 +71,6 @@ router.post('/token', jsonParser, (req, res) => {
 	})
 })
 
+export default router
 
-module.exports = router
+// module.exports = router
