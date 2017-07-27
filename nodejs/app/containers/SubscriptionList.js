@@ -25,14 +25,9 @@ class SubscriptionList extends Component {
 		const { auth, invitations, subscriptions } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 		// get any invites we have
-		if (!invitations) {
-			this.getInvitations()
-		}
+		this.getInvitations()
 		// get actual subscriptions
-		if (!(subscriptions && subscriptions.allIds && subscriptions.allIds.length > 0)) {
-			console.log('GET SUVS AGAIN');
-			this.getSubs({ page: 1 })
-		}
+		this.getSubs({ page: 1 })
 	}
 
 	getSubs = ({ page = null }) => {
@@ -111,6 +106,18 @@ class SubscriptionList extends Component {
 			src = plan.images ?
 				selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
 				null
+			progress = (
+				<div style={{ padding: '5px 0', width: '50px' }}>
+					<ProgressBar
+						percentComplete={
+							sub && sub.overall
+							? sub.overall.completion_percentage
+							: 0
+						}
+						color='gray'
+					/>
+				</div>
+			)
 			// plans together have different day strings
 			if (together_id) {
 				if (invitations.indexOf(together_id) > -1) {
@@ -129,18 +136,6 @@ class SubscriptionList extends Component {
 				)
 			}
 
-			progress = (
-				<div style={{ padding: '5px 0', width: '50px' }}>
-					<ProgressBar
-						percentComplete={
-							sub.overall
-							? sub.overall.completion_percentage
-							: 0
-						}
-						color='gray'
-					/>
-				</div>
-			)
 
 			link = localizedLink(Routes.plans({}))
 			// if this is a subscription, link to it
@@ -213,7 +208,6 @@ class SubscriptionList extends Component {
 								together_id={id}
 								handleActionComplete={() => {
 									this.getInvitations()
-									this.getSubs({ page: 1 })
 								}}
 							/>
 						</div>
