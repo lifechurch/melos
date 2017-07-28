@@ -7,8 +7,7 @@ import moment from 'moment'
 import { routeActions } from 'react-router-redux'
 // actions
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
-import subscriptionDays from '@youversion/api-redux/lib/batchedActions/subscriptionDays'
-import subscriptionDay from '@youversion/api-redux/lib/batchedActions/subscriptionDay'
+import subscriptionData from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 import subscriptionDayUpdate from '@youversion/api-redux/lib/batchedActions/subscriptionDayUpdate'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 // models
@@ -28,28 +27,14 @@ class Plan extends Component {
 	componentDidMount() {
 		const { dispatch, params: { id, subscription_id, day }, auth, serverLanguageTag } = this.props
 		if (subscription_id) {
-			dispatch(plansAPI.actions.subscription.get({ id: subscription_id }, { auth: true }))
-			.then((data) => {
-				const together_id = data.together_id
-				const plan_id = id.split('-')[0]
-				dispatch(subscriptionDays({ plan_id, isTogether: !!together_id }))
-				// get sub data
-				dispatch(subscriptionDay({
-					plan_id,
-					subscription_id,
-					auth,
-					together_id,
-					day,
-				}))
-				// get bible version for building reference strings
-				dispatch(bibleAction({
-					method: 'version',
-					params: {
-						id: getBibleVersionFromStorage(),
-					}
-				}))
-			})
-
+			dispatch(subscriptionData({ subscription_id, auth }))
+			// get bible version for building reference strings
+			dispatch(bibleAction({
+				method: 'version',
+				params: {
+					id: getBibleVersionFromStorage(),
+				}
+			}))
 		}
 	}
 

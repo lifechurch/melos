@@ -4,9 +4,8 @@ import rtlDetect from 'rtl-detect'
 import { routeActions } from 'react-router-redux'
 import Immutable from 'immutable'
 // actions
-import subscriptionDayUpdate from '@youversion/api-redux/lib/batchedActions/subscriptionDayUpdate'
+import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 import bibleReference from '@youversion/api-redux/lib/batchedActions/bibleReference'
-import subscriptionDay from '@youversion/api-redux/lib/batchedActions/subscriptionDay'
 // models
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
@@ -33,9 +32,9 @@ class PlanReaderView extends Component {
 	}
 
 	componentDidMount() {
-		const { bible, plan, params: { id, subscription_id }, dispatch } = this.props
+		const { bible, plan, params: { id, subscription_id }, dispatch, auth } = this.props
 		if (!plan) {
-			dispatch(subscriptionDay({ plan_id: id.split('-')[0], subscription_id }))
+			dispatch(subscriptionData({ subscription_id, auth }))
 		}
 		this.buildData()
 	}
