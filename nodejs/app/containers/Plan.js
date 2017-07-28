@@ -173,8 +173,8 @@ class Plan extends Component {
 		return (
 			<PlanComponent
 				{...this.props}
-				localizedLink={::this.localizedLink}
-				isRtl={::this.isRtl}
+				localizedLink={this.localizedLink}
+				isRtl={this.isRtl}
 				together_id={together_id}
 				day={this.currentDay}
 				progressDays={progressDays}
