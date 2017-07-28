@@ -32,7 +32,7 @@ class Plan extends Component {
 			.then((data) => {
 				const together_id = data.together_id
 				const plan_id = id.split('-')[0]
-				dispatch(subscriptionDays({ plan_id, isTogether: !!together_id, page: 1 }))
+				dispatch(subscriptionDays({ plan_id, isTogether: !!together_id }))
 				// get sub data
 				dispatch(subscriptionDay({
 					plan_id,
