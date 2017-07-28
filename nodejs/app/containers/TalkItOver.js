@@ -44,34 +44,15 @@ class TalkItOver extends Component {
 			id: together_id,
 			day,
 			page,
-			order: 'desc'
+			order: 'asc'
 		},
 			{
 				auth: true
 			})).then((data) => {
-				console.log('DATA', data)
-				if (data && data.data && data.data[together_id][day]) {
-					data.data[together_id][day].map.forEach((id) => {
-						const activity = data.data[together_id][day].data[id]
-						if (activity && activity.id) {
-							dispatch(plansAPI.actions.activities.get({
-								id: together_id,
-								day,
-								page,
-								order: 'desc',
-								parent_id: id,
-							},
-								{
-									auth: true
-								}))
-						}
-					})
-				}
+
 			})
 	}
 
-	// if we pass a parent_id than this is a reply, otherwise it's a top
-	// level comment
 	handleComment = ({ parent_id = null }) => {
 		const { day, together_id, dispatch } = this.props
 		const { comment } = this.state
@@ -186,7 +167,6 @@ class TalkItOver extends Component {
 				dt={moment.updated_dt || moment.created_dt}
 				filledLike={!!moment.my_like_id}
 				likes={moment.likes > 0 ? moment.likes : null}
-				onReply={this.handleComment.bind(this, { parent_id: moment.id })}
 				onLike={this.handleLike.bind(this, { parent_id: moment.id })}
 				onDelete={this.handleDelete.bind(this, moment.id, moment.parent_id)}
 				onEdit={this.handleEdit.bind(this, moment)}
@@ -198,23 +178,23 @@ class TalkItOver extends Component {
 		const { content, day, together_id, activities, auth, users } = this.props
 		const { comment, editingMoment, editingComment } = this.state
 
-		this.authedUser = auth &&
-												auth.userData &&
-												auth.userData.userid &&
-												auth.userData.userid in users ?
-												users[auth.userData.userid].response :
-												null
+		this.authedUser = auth
+			&& auth.userData
+			&& auth.userData.userid
+			&& auth.userData.userid in users
+			? users[auth.userData.userid].response
+			: null
 
-		const avatarSrc = this.authedUser &&
-											this.authedUser.has_avatar &&
-											this.authedUser.user_avatar_url ?
-											this.authedUser.user_avatar_url.px_48x48 :
-											null
+		const avatarSrc = this.authedUser
+			&& this.authedUser.has_avatar
+			&& this.authedUser.user_avatar_url
+			? this.authedUser.user_avatar_url.px_48x48
+			: null
 
-		this.dayActivities = activities &&
-														activities[day] ?
-														activities[day] :
-														null
+		this.dayActivities = activities
+			&& activities[day]
+			? activities[day]
+			: null
 
 		return (
 			<div className='talk-it-over'>
@@ -231,6 +211,23 @@ class TalkItOver extends Component {
 					<h5 style={{ margin: '30px 0' }}>{ content }</h5>
 				</div>
 				<List>
+					{
+						this.dayActivities &&
+						this.dayActivities.map &&
+						this.dayActivities.map.map((id) => {
+							const moment = this.dayActivities.data[id]
+							// we don't render a separate moment for a child activity,
+							// nor day complete
+							if (moment && moment.id && !moment.parent_id && moment.kind === 'comment') {
+								return (
+									<li key={moment.id} style={{ marginBottom: '20px' }}>
+										{ this.renderMoment(moment) }
+									</li>
+								)
+							}
+							return null
+						})
+					}
 					<CommentCreate
 						avatarSrc={avatarSrc}
 						avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
@@ -238,23 +235,6 @@ class TalkItOver extends Component {
 						value={comment}
 						onComment={this.handleComment}
 					/>
-					{
-							this.dayActivities &&
-							this.dayActivities.map &&
-							this.dayActivities.map.map((id) => {
-								const moment = this.dayActivities.data[id]
-								// we don't render a separate moment for a child activity,
-								// nor day complete
-								if (moment && moment.id && !moment.parent_id && moment.kind === 'comment') {
-									return (
-										<li key={moment.id} style={{ marginTop: '20px' }}>
-											{ this.renderMoment(moment) }
-										</li>
-									)
-								}
-								return null
-							})
-						}
 				</List>
 				<Modal ref={(ref) => { this.modal = ref }} customClass='large-5 medium-8'>
 					{
