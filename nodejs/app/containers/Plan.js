@@ -168,7 +168,7 @@ class Plan extends Component {
 
 		const bookList = Immutable
 			.fromJS(bible)
-			.getIn(['versions', getBibleVersionFromStorage(), 'response', 'books'])
+			.getIn(['versions', `${getBibleVersionFromStorage()}`, 'response', 'books'], null)
 
 		return (
 			<PlanComponent
