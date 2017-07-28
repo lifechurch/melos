@@ -60,12 +60,13 @@ class PlanReaderView extends Component {
 	componentDidUpdate(prevProps, prevState) {
 		const { params: { content }, dispatch } = this.props
 
-		const isNewContent = (typeof content !== 'undefined' &&
-													typeof prevProps.params.content !== 'undefined' &&
-													content !== prevProps.params.content)
+		const isNewContent = typeof content !== 'undefined'
+			&& typeof prevProps.params.content !== 'undefined'
+			&& content !== prevProps.params.content
 
 		if (isNewContent) {
 			this.buildData()
+			this.buildNavLinks()
 		}
 	}
 
@@ -128,7 +129,7 @@ class PlanReaderView extends Component {
 				// day complete
 				next = `${subDayLink}/completed`
 			}
-		} else if (this.daySegments && this.contentNum + 1 === this.daySegments.length) {
+		} else if (this.daySegments && this.contentNum + 1 >= this.daySegments.length) {
 			// overview page if not last remaining ref, and is last ref in order
 			next = subDayLink
 		} else {
