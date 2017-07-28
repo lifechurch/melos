@@ -1,3 +1,11 @@
+export const queryifyParamsObj = (params) => {
+	// convert query: { redirect: true } to route?redirect=true
+	return Object.keys(params).reduce((acc, key) => {
+		const val = params[key]
+		return `${acc}${key}=${val}&`
+	}, '').replace(/&\s*$/, '') // strip trailing &
+}
+
 class Route {
 	constructor({ path, query }) {
 		this.route = path
@@ -7,10 +15,7 @@ class Route {
 	queryify() {
 		if (this.query && typeof this.query === 'object') {
 			// convert query: { redirect: true } to route?redirect=true
-			const queryParams = Object.keys(this.query).reduce((acc, key) => {
-				const val = this.query[key]
-				return `${acc}${key}=${val}&`
-			}, '')
+			const queryParams = queryifyParamsObj(this.query)
 			return `${this.route}?${queryParams}`
 		}
 		return this.route
