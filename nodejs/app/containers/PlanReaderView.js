@@ -66,7 +66,6 @@ class PlanReaderView extends Component {
 
 		if (isNewContent) {
 			this.buildData()
-			this.buildNavLinks()
 		}
 	}
 
@@ -169,8 +168,8 @@ class PlanReaderView extends Component {
 	render() {
 		const { params: { day }, dispatch, plan, subscription } = this.props
 
-		const { previous, next, subLink } = this.buildNavLinks()
 		this.buildData()
+		const { previous, next, subLink } = this.buildNavLinks()
 
 		let customClass = null
 		let readerContent = null
