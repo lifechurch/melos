@@ -90,7 +90,7 @@ class Plan extends Component {
 	}
 
 	OnContentCheck = ({ contentIndex, complete }) => {
-		const { params: { day, subscription_id, id }, dispatch, auth } = this.props
+		const { params: { subscription_id, id }, dispatch, auth } = this.props
 
 		dispatch(subscriptionDayUpdate({
 			contentIndex,
@@ -98,7 +98,7 @@ class Plan extends Component {
 			daySegments: this.daySegments,
 			dayProgress: this.dayProgress,
 			subscription_id,
-			day
+			day: this.currentDay,
 		}))
 
 		if (isFinalSegment(contentIndex, this.dayProgress.partial)) {
@@ -107,7 +107,7 @@ class Plan extends Component {
 				plan_id: id.split('-')[0],
 				slug: id.split('-')[1],
 				subscription_id,
-				day,
+				day: this.currentDay,
 			})))
 		}
 	}

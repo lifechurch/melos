@@ -48,7 +48,7 @@ class ProgressBar extends Component {
 		const progressStyle = {
 			backgroundColor: `${color}`,
 			height: '100%',
-			borderRadius: '5px',
+			borderRadius: '2px',
 			width: '100%',
 			transform: progressTransform,
 			transition: `transform ${transitionSpeed}s cubic-bezier(0.42, 1, .16, .93)`,
@@ -79,7 +79,7 @@ ProgressBar.propTypes = {
 
 ProgressBar.defaultProps = {
 	color: 'white',
-	backgroundColor: 'white',
+	backgroundColor: 'transparent',
 	borderColor: null,
 	height: '7px',
 	width: '100%',
