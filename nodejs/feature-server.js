@@ -47,13 +47,13 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 				const tokenData = tokenAuth.decodeToken(token)
 				const sessionData = tokenAuth.decryptToken(tokenData.token)
 
-					// while we're checking auth for this feature
-					// do we need to get an oauth token?
-				if (!auth.oauthToken) {
-					getToken(sessionData).then((data) => {
-						console.log('OAUTH', data)
-					})
-				}
+				// 	// while we're checking auth for this feature
+				// 	// do we need to get an oauth token?
+				// if (!auth.oauthToken) {
+				// 	getToken(sessionData).then((data) => {
+				// 		console.log('OAUTH', data)
+				// 	})
+				// }
 
 				resolve({
 					token,

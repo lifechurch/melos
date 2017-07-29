@@ -23,9 +23,8 @@ class PlansView extends Component {
 	}
 
 	render() {
-		const { children, auth, serverLanguageTag, route: { view } } = this.props
+		const { children, auth, serverLanguageTag, route: { isMyPlans } } = this.props
 
-		const isMyPlans = (view && typeof view === 'string')
 		const myPlansLink = auth.isLoggedIn && auth.userData && auth.userData.username ?
 			(<Link className='solid-button green' to={`/users/${auth.userData.username}/reading-plans`}><FormattedMessage id="plans.my_plans" /></Link>) :
 			(<a className='solid-button green' href='/sign-in'><FormattedMessage id="plans.my_plans" /></a>)
@@ -34,8 +33,8 @@ class PlansView extends Component {
 			<div>
 				<div className='row horizontal-center discover-buttons'>
 					<ul className='button-group primary-toggle'>
-						<li className={isMyPlans ? 'inactive' : ''}><Link to='/reading-plans' className='solid-button green'><FormattedMessage id="plans.discover" /></Link></li>
 						<li className={isMyPlans ? '' : 'inactive' }>{ myPlansLink }</li>
+						<li className={isMyPlans ? 'inactive' : ''}><Link to='/reading-plans' className='solid-button green'><FormattedMessage id="plans.discover" /></Link></li>
 					</ul>
 				</div>
 				{

@@ -59,7 +59,6 @@ export default function (
 	) {
 	return (
 		<Route path="/">
-			{/* <Route path="reading-plans" component={() => { return <div>TEST</div> }} /> */}
 			<Route path="(:lang/)reading-plans" component={PlansView}>
 				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
 				<Route path=":id(-:slug)">
@@ -78,7 +77,7 @@ export default function (
 			<Route path="(:lang/)recommended-plans-collection" component={PlansView}>
 				<Route path=":id(-:slug)" component={PlanCollectionView} onEnter={requireRecommendedPlanData} />
 			</Route>
-			<Route path="(:lang/)users/:username" component={PlansView}>
+			<Route path="(:lang/)users/:username" component={PlansView} isMyPlans>
 				<Route path="saved-reading-plans" component={PlansList} view='saved' onEnter={requireSavedPlans} />
 				<Route path="completed-reading-plans" component={PlansList} view='completed' />
 				<Route path="reading-plans" component={PlansList} view='subscribed' />
