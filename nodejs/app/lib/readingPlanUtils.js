@@ -36,7 +36,7 @@ export function isFinalPlanDay(day, progressDays) {
 
 	// if the day we're on is already completed, and the plan isn't completed yet
 	// then this isn't the last uncompleted day in the plan
-	if (planDay.completed) {
+	if (planDay.complete) {
 		return false
 	}
 
@@ -46,7 +46,7 @@ export function isFinalPlanDay(day, progressDays) {
 		const dayObj = progressDays[i]
 			// if we find a day that is not complete, and it's not the day that we're currently
 			// on, then we have more days to go
-		if (dayObj.day !== dayNum && !dayObj.completed) {
+		if (dayObj.day !== dayNum && !dayObj.complete) {
 			return false
 		}
 	}

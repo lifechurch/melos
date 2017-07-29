@@ -96,17 +96,19 @@ class PlanReaderView extends Component {
 
 		let previous, next, subLink = null
 		const username = auth && auth.userData ? auth.userData.username : null
+		const plan_id = id ? id.split('-')[0] : null
+		const slug = id ? id.split('-')[1] : null
 		const subDayLink = Routes.subscriptionDay({
 			username,
-			plan_id: id ? id.split('-')[0] : null,
-			slug: id ? id.split('-')[1] : null,
+			plan_id,
+			slug,
 			subscription_id,
 			day
 		})
 		subLink = Routes.subscription({
 			username,
-			plan_id: id ? id.split('-')[0] : null,
-			slug: id ? id.split('-')[1] : null,
+			plan_id,
+			slug,
 			subscription_id,
 		})
 
@@ -123,7 +125,11 @@ class PlanReaderView extends Component {
 		if (this.isFinalSegment) {
 			if (this.isFinalPlanDay) {
 				// plan complete
-				next = `${subLink}/completed`
+				next = Routes.subscriptionComplete({
+					username,
+					plan_id,
+					slug,
+				})
 			} else {
 				// day complete
 				next = `${subDayLink}/completed`

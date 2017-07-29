@@ -7,8 +7,7 @@ import moment from 'moment'
 import { routeActions } from 'react-router-redux'
 // actions
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
-import subscriptionData from '@youversion/api-redux/lib/batchedActions/subscriptionData'
-import subscriptionDayUpdate from '@youversion/api-redux/lib/batchedActions/subscriptionDayUpdate'
+import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 // models
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
@@ -16,7 +15,7 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 // selectors
 // utils
-import { calcCurrentPlanDay, isFinalSegment } from '../lib/readingPlanUtils'
+import { calcCurrentPlanDay, isFinalSegment, isFinalPlanDay } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
 // components
@@ -102,13 +101,21 @@ class Plan extends Component {
 		}))
 
 		if (isFinalSegment(contentIndex, this.dayProgress.partial)) {
-			dispatch(routeActions.push(Routes.subscriptionDayComplete({
-				username: auth.userData.username,
-				plan_id: id.split('-')[0],
-				slug: id.split('-')[1],
-				subscription_id,
-				day: this.currentDay,
-			})))
+			if (isFinalPlanDay(this.currentDay, this.progressDays)) {
+				dispatch(routeActions.push(Routes.subscriptionComplete({
+					username: auth.userData.username,
+					plan_id: id.split('-')[0],
+					slug: id.split('-')[1],
+				})))
+			} else {
+				dispatch(routeActions.push(Routes.subscriptionDayComplete({
+					username: auth.userData.username,
+					plan_id: id.split('-')[0],
+					slug: id.split('-')[1],
+					subscription_id,
+					day: this.currentDay,
+				})))
+			}
 		}
 	}
 
@@ -118,7 +125,7 @@ class Plan extends Component {
 		this.daySegments = null
 		this.currentDay = null
 		this.dayProgress = null
-		let progressDays = null
+		this.progressDays = null
 		let progressString = null
 		let dayOfString = null
 		let startString = null
@@ -149,11 +156,11 @@ class Plan extends Component {
 			endString = moment(subscription.start_dt)
 				.add(plan.total_days, 'days')
 				.format('dddd, MMMM Do YYYY')
-			progressDays = subscription.days
+			this.progressDays = subscription.days
 				? subscription.days
 				: null
-			this.dayProgress = progressDays && progressDays[this.currentDay - 1]
-				? progressDays[this.currentDay - 1]
+			this.dayProgress = this.progressDays && this.progressDays[this.currentDay - 1]
+				? this.progressDays[this.currentDay - 1]
 				: null
 			progressString = subscription.overall
 				? subscription.overall.progress_string
@@ -177,7 +184,7 @@ class Plan extends Component {
 				isRtl={this.isRtl}
 				together_id={together_id}
 				day={this.currentDay}
-				progressDays={progressDays}
+				progressDays={this.progressDays}
 				dayProgress={this.dayProgress}
 				daySegments={this.daySegments}
 				progressString={progressString}
@@ -194,7 +201,7 @@ class Plan extends Component {
 						isRtl: this.isRtl,
 						together_id,
 						day: this.currentDay,
-						progressDays,
+						progressDays: this.progressDays,
 						subscription_id,
 						dayOfString,
 						startString,

@@ -131,6 +131,15 @@ const Routes = {
 
 		return route.get()
 	},
+	subscriptionComplete: ({ username, plan_id, slug, query = null }) => {
+
+		const route = new Route({
+			path: `/users/${username}/reading-plans/${plan_id}-${slug}/completed`,
+			query,
+		})
+
+		return route.get()
+	},
 
 	// plans ---------------------------------------------------------------------
 	plans: ({ query = null }) => {
