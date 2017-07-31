@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../../../widgets/TogetherInvitationActions'
+import InvitationString from '../../../widgets/InvitationString'
 import Card from '../../../components/Card'
 import LazyImage from '../../../components/LazyImage'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
@@ -12,7 +13,6 @@ function Invitation({
 	planTitle,
 	planLink,
 	participantsString,
-	invitationString,
 	startDate,
 	together_id,
 	showDecline,
@@ -37,7 +37,9 @@ function Invitation({
 							together_id={together_id}
 							statusFilter='host'
 						/>
-						<div style={{ margin: '20px 0' }}>{ invitationString }</div>
+						<div style={{ margin: '20px 0' }}>
+							<InvitationString together_id={together_id} />
+						</div>
 						<a href={planLink}>
 							<div className='horizontal-center' style={{ height: '150px', marginBottom: '10px' }}>
 								<LazyImage
@@ -88,7 +90,6 @@ Invitation.propTypes = {
 	planImg: PropTypes.string.isRequired,
 	planTitle: PropTypes.node.isRequired,
 	participantsString: PropTypes.node.isRequired,
-	invitationString: PropTypes.node.isRequired,
 	startDate: PropTypes.node.isRequired,
 	together_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 	planLink: PropTypes.string.isRequired,

@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
-import moment from 'moment'
 import { FormattedMessage } from 'react-intl'
 // actions
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
@@ -15,6 +14,7 @@ import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 // components
 import TogetherInvitation from '../features/PlanDiscovery/components/TogetherInvitation'
+import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'
 
 
 class InvitationView extends Component {
@@ -25,7 +25,8 @@ class InvitationView extends Component {
 		dispatch(planView({
 			plan_id: id.split('-')[0],
 			together_id,
-			token
+			token,
+			auth,
 		}))
 		dispatch(plansAPI.actions.together.get({
 			id: together_id,
@@ -71,13 +72,6 @@ class InvitationView extends Component {
 					''
 		const planTitle = plan ? plan.name.default : null
 		const planLink = plan ? plan.short_url : null
-		const hostName = together && participantsUsers && together.host_user_id in participantsUsers ?
-					participantsUsers[together.host_user_id].first_name :
-					null
-		const others = participantsUsers ?
-					Object.keys(participantsUsers).length :
-					null
-		const startDate = together ? moment(together.start_dt) : null
 		let invitedNum = 0
 		let acceptedNum = 0
 		if (participantsUsers) {
@@ -94,7 +88,6 @@ class InvitationView extends Component {
 				planImg={planImg}
 				planTitle={planTitle}
 				planLink={planLink}
-				invitationString={<FormattedMessage id='Together.invitation' values={{ host: hostName, others }} />}
 				participantsString={
 					<div>
 						<FormattedMessage id='Together.invited' values={{ number: invitedNum }} />
@@ -104,7 +97,7 @@ class InvitationView extends Component {
 						<FormattedMessage id='Together.accepted' values={{ number: acceptedNum }} />
 					</div>
 				}
-				startDate={`${moment().to(startDate)} (${startDate.format('MMM D')})`}
+				startDate={<PlanStartString start_dt={together.start_dt} dateOnly />}
 				joinToken={joinToken}
 				showDecline={!joinToken}
 				handleActionComplete={this.OnActionComplete}

@@ -12,7 +12,7 @@
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
     "@youversion/api-redux": "^0.3.23",
-    "@youversion/js-api": "^0.0.98",
+    "@youversion/js-api": "^1.0.6",
     "@youversion/token-storage": "^0.0.36",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",

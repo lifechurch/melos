@@ -2,18 +2,23 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
+// actions
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import customGet from '@youversion/api-redux/lib/customHelpers/get'
+// models / selectors
 import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
+// utils
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
+// components
 import List from '../components/List'
 import ParticipantsAvatarList from '../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../widgets/TogetherInvitationActions'
+import InvitationString from '../widgets/InvitationString'
 import ProgressBar from '../components/ProgressBar'
 import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'
 import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
@@ -22,7 +27,7 @@ import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 class SubscriptionList extends Component {
 
 	componentDidMount() {
-		const { auth, invitations, subscriptions } = this.props
+		const { auth } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 		// get any invites we have
 		this.getInvitations()
@@ -101,7 +106,7 @@ class SubscriptionList extends Component {
 		const plan = (plan_id && plan_id in readingPlans.byId) ? readingPlans.byId[plan_id] : null
 		const sub = (subscription_id && subscription_id in subscriptions.byId) ? subscriptions.byId[subscription_id] : null
 
-		let link, src, subContent, dayString, progress
+		let link, src, subContent, dayString, progress, titleString
 		if (start_dt && plan && 'id' in plan) {
 			src = plan.images ?
 				selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
@@ -111,16 +116,20 @@ class SubscriptionList extends Component {
 					<ProgressBar
 						percentComplete={
 							sub && sub.overall
-							? sub.overall.completion_percentage
-							: 0
+								? sub.overall.completion_percentage
+								: 0
 						}
 						color='gray'
 					/>
 				</div>
 			)
-			// plans together have different day strings
+
+			titleString = plan.name[language_tag] || plan.name.default
+
+			// plans together have different strings
 			if (together_id) {
 				if (invitations.indexOf(together_id) > -1) {
+					titleString = <InvitationString together_id={together_id} />
 					dayString = <PlanStartString start_dt={start_dt} />
 				}
 			} else {
@@ -160,16 +169,16 @@ class SubscriptionList extends Component {
 			subContent = (
 				<div>
 					{ sub && progress }
-					{ dayString }
 					<div style={{ padding: '5px 0' }}>
 						<ParticipantsAvatarList
 							together_id={together_id}
-							avatarWidth={28}
+							avatarWidth={26}
 							// if it's an invitation, we want to show all participants
 							// otherwise, let's just show accetped and host
 							statusFilter={subscription_id ? ['accepted', 'host'] : null}
 						/>
 					</div>
+					{ dayString }
 				</div>
 			)
 		}
@@ -178,7 +187,7 @@ class SubscriptionList extends Component {
 			<PlanListItem
 				key={`${plan_id}.${subscription_id}`}
 				src={src}
-				name={(plan && 'name' in plan) ? (plan.name[language_tag] || plan.name.default) : null}
+				name={titleString}
 				link={link}
 				subContent={subContent}
 			/>
