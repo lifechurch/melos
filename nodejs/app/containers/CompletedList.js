@@ -27,6 +27,7 @@ class CompletedList extends Component {
 						dispatch(planView({
 							plan_id: sub.plan_id,
 							together_id: sub.together_id,
+							auth,
 						}))
 					})
 				}
@@ -55,7 +56,11 @@ class CompletedList extends Component {
 
 			subContent = (
 				<div>
-					<ParticipantsAvatarList together_id={together_id} showMoreLink={''} />
+					<ParticipantsAvatarList
+						together_id={together_id}
+						showMoreLink={''}
+						avatarWidth={26}
+					/>
 					<div className='plan-length'>
 						{
 							plan.formatted_length[language_tag] ||
