@@ -227,7 +227,7 @@ class TalkItOver extends Component {
 						onComment={this.handleComment}
 					/>
 				</List>
-				<Modal ref={(ref) => { this.modal = ref }} customClass='large-5 medium-8'>
+				<Modal ref={(ref) => { this.modal = ref }} customClass='large-6 medium-8 small-12'>
 					{
 						editingMoment &&
 						'content' in editingMoment &&

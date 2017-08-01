@@ -12,7 +12,7 @@ function MomentFooter(props) {
 		<div className='moment-footer'>
 			{
 				onLike &&
-				<div className='margin-right-auto vertical-center' style={{ marginLeft: '8px' }}>
+				<div className='margin-right-auto vertical-center' style={{ marginLeft: '10px' }}>
 					<a tabIndex={0} onClick={onLike}>
 						<HeartIcon fill={filledLike ? '#DA1000' : '#979797'} />
 					</a>

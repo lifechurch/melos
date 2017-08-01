@@ -51,7 +51,7 @@ class Moment extends Component {
 
 		const cardFooter = likedIds && likedIds.length > 0 ?
 			(
-				<div className='flex-wrap' style={{ width: '100%', padding: '0 15px' }}>
+				<div className='flex-wrap' style={{ width: '100%', padding: '0 17px' }}>
 					<AvatarList userids={likedIds} avatarWidth={26} />
 					{
 						likedIds && likedIds.length > 0 &&
@@ -66,24 +66,26 @@ class Moment extends Component {
 
 		return (
 			<Card customClass='moment-card' extension={cardFooter}>
-				<div className='aside-col'>
-					{
-						userid &&
+				<div style={{ display: 'flex', width: '100%' }}>
+					<div className='aside-col'>
+						{
+							userid &&
 							<Avatar
 								src={avatarSrc}
 								width={38}
 								placeholderText={user && user.first_name ? user.first_name.charAt(0) : null}
 							/>
-					}
-				</div>
-				<div className='main-col'>
-					{/* if we don't pass a title and do pass a userid, use the name */}
-					<MomentHeader
-						title={title || (user ? user.name : null)}
-						dt={dt}
-					/>
-					<div className='content'>
-						{ content }
+						}
+					</div>
+					<div className='main-col'>
+						{/* if we don't pass a title and do pass a userid, use the name */}
+						<MomentHeader
+							title={title || (user ? user.name : null)}
+							dt={dt}
+						/>
+						<div className='content'>
+							{ content }
+						</div>
 					</div>
 				</div>
 				<MomentFooter

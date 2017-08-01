@@ -24,24 +24,26 @@ class Modal extends Component {
 		const { show } = this.state
 
 		return (
-			<div>
+			<div className='yv-modal-container'>
 				{
 					showBackground &&
-					<div className={`modal-background ${show ? '' : 'hide-modal'}`} />
+					<div className={`yv-modal-background ${show ? '' : 'hide-modal'}`} />
 				}
-				<ClickTarget handleOutsideClick={this.handleClose}>
-					<div className={`modal ${show ? '' : 'hide-modal'} ${customClass || ''}` }>
-						<div className='modal-heading'>
-							{ heading }
-							<a tabIndex={0} className='margin-left-auto' onClick={this.handleClose}>
-								<XMark width={12} />
-							</a>
-						</div>
-						<div className='modal-content'>
-							{ children }
-						</div>
+				<div className={`yv-modal ${show ? '' : 'hide-modal'}` }>
+					<div className={customClass}>
+						<ClickTarget handleOutsideClick={this.handleClose}>
+							<div className='modal-heading'>
+								{ heading }
+								<a tabIndex={0} className='margin-left-auto' onClick={this.handleClose}>
+									<XMark width={20} height={20} fill='white' />
+								</a>
+							</div>
+							<div className='modal-content'>
+								{ children }
+							</div>
+						</ClickTarget>
 					</div>
-				</ClickTarget>
+				</div>
 			</div>
 		)
 	}
