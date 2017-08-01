@@ -1,26 +1,14 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import moment from 'moment'
-import { routeActions } from 'react-router-redux'
-import { FormattedMessage } from 'react-intl'
 // actions
-import planView from '@youversion/api-redux/lib/batchedActions/planView'
-import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
 // models
-import getTogetherModel from '@youversion/api-redux/lib/models/together'
-import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
 // selectors
 import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
-// utils
-import { selectImageFromList } from '../../../lib/imageUtil'
-import Routes from '../../../lib/routes'
-import getCurrentDT from '../../../lib/getCurrentDT'
+
 // components
-import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
-import List from '../../../components/List'
 import Card from '../../../components/Card'
-import Textarea from '../../../components/Textarea'
 import Avatar from '../../../components/Avatar'
+import AvatarList from '../../../widgets/AvatarList'
 import MomentHeader from './MomentHeader'
 import MomentFooter from './MomentFooter'
 
@@ -39,35 +27,45 @@ class Moment extends Component {
 			userid === auth.userData.userid
 	}
 
-
 	render() {
 		const {
 			userid,
 			title,
 			dt,
 			content,
-			likes,
-			filledLike,
+			likedIds,
 			onLike,
 			onDelete,
 			onEdit,
 			users,
+			auth,
 		} = this.props
 
-		const user = 	userid &&
-			userid in users ?
-			users[userid].response :
-			null
+		const user = 	userid && userid in users
+			? users[userid].response
+			: null
 
-		const avatarSrc = user &&
-			user.has_avatar &&
-			user.user_avatar_url ?
-			user.user_avatar_url.px_48x48 :
+		const avatarSrc = user && user.has_avatar && user.user_avatar_url
+			? user.user_avatar_url.px_48x48
+			: null
+
+		const cardFooter = likedIds && likedIds.length > 0 ?
+			(
+				<div className='flex-wrap' style={{ width: '100%', padding: '0 15px' }}>
+					<AvatarList userids={likedIds} avatarWidth={26} />
+					{
+						likedIds && likedIds.length > 0 &&
+						<a className='font-grey margin-left-auto'>
+							{ likedIds.length }
+						</a>
+					}
+				</div>
+			) :
 			null
 
 
 		return (
-			<Card customClass='moment-card'>
+			<Card customClass='moment-card' extension={cardFooter}>
 				<div className='aside-col'>
 					{
 						userid &&
@@ -89,10 +87,8 @@ class Moment extends Component {
 					</div>
 				</div>
 				<MomentFooter
-					likes={likes}
-					filledLike={filledLike}
+					filledLike={likedIds && auth.userData && likedIds.includes(auth.userData.userid)}
 					onLike={onLike}
-					onReply={null}
 					onEdit={this.isAuthedMoment ? onEdit : null}
 					onDelete={this.isAuthedMoment ? onDelete : null}
 				/>
@@ -116,8 +112,7 @@ Moment.propTypes = {
 	onLike: PropTypes.func,
 	onDelete: PropTypes.func,
 	userid: PropTypes.number,
-	likes: PropTypes.number,
-	filledLike: PropTypes.bool,
+	likedIds: PropTypes.array,
 	onEdit: PropTypes.func,
 	users: PropTypes.object,
 	auth: PropTypes.object,
@@ -130,7 +125,7 @@ Moment.defaultProps = {
 	onLike: null,
 	onDelete: null,
 	userid: null,
-	likes: null,
+	likedIds: null,
 	filledLike: null,
 	onEdit: null,
 	users: null,

@@ -73,9 +73,9 @@ class ParticipantsAvatarList extends Component {
 				const participant = participants[userID]
 				const avatarSrc = participant && participant.user_avatar_url ? participant.user_avatar_url.px_48x48 : ''
 
-				const filterMatch = Array.isArray(statusFilter) ?
-														Immutable.fromJS(statusFilter).includes(participant.status) :
-														statusFilter === participant.status
+				const filterMatch = Array.isArray(statusFilter)
+					? Immutable.fromJS(statusFilter).includes(participant.status)
+					: statusFilter === participant.status
 				// truncate amount to show, and then render more link to go to participants
 				// also allow filtering on status
 				if (avatarList.length < 6 && (!statusFilter || filterMatch)) {
@@ -136,15 +136,13 @@ class ParticipantsAvatarList extends Component {
 function mapStateToProps(state, props) {
 	const { together_id } = props
 	return {
-		participants: together_id &&
-									getParticipantsUsersByTogetherId(state, together_id) ?
-									getParticipantsUsersByTogetherId(state, together_id) :
-									null,
-		activities: getTogetherModel(state) &&
-								together_id in getTogetherModel(state).byId &&
-								getTogetherModel(state).byId[together_id].activities ?
-								getTogetherModel(state).byId[together_id].activities :
-								null,
+		participants: together_id && getParticipantsUsersByTogetherId(state, together_id)
+			? getParticipantsUsersByTogetherId(state, together_id)
+			: null,
+		activities: getTogetherModel(state) && together_id in getTogetherModel(state).byId
+			&& getTogetherModel(state).byId[together_id].activities
+			? getTogetherModel(state).byId[together_id].activities
+			: null,
 		auth: state.auth,
 	}
 }

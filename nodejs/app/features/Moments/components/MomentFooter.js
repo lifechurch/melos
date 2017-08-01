@@ -1,67 +1,44 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import PopupMenu from '../../../components/PopupMenu'
 import HeartIcon from '../../../components/Icons/Heart'
 
 
-class MomentFooter extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
+function MomentFooter(props) {
 
-		}
-	}
+	const { onLike, onDelete, onEdit, filledLike } = props
 
-	componentDidMount() {
-
-	}
-
-	componentDidUpdate(prevProps, prevState) {
-
-	}
-
-	render() {
-		const { onLike, onDelete, onEdit, filledLike, likes } = this.props
-
-		return (
-			<div className='moment-footer'>
-				{
-					onLike &&
-					<div className='margin-right-auto vertical-center' style={{ marginLeft: '5px' }}>
-						<a tabIndex={0} onClick={onLike}>
-							<HeartIcon fill={filledLike ? '#DA1000' : '#979797'} />
-						</a>
+	return (
+		<div className='moment-footer'>
+			{
+				onLike &&
+				<div className='margin-right-auto vertical-center' style={{ marginLeft: '8px' }}>
+					<a tabIndex={0} onClick={onLike}>
+						<HeartIcon fill={filledLike ? '#DA1000' : '#979797'} />
+					</a>
+				</div>
+			}
+			{
+				(onEdit || onDelete) &&
+				<PopupMenu closeButton={null} >
+					<ul>
 						{
-							likes &&
-							<a className='font-grey' style={{ marginLeft: '5px' }}>
-								{ likes }
+							onEdit &&
+							<a tabIndex={0} className='font-grey' onClick={onEdit}>
+								<li><FormattedMessage id='edit' /></li>
 							</a>
 						}
-					</div>
-				}
-				{
-					(onEdit || onDelete) &&
-					<PopupMenu closeButton={null} >
-						<ul>
-							{
-								onEdit &&
-								<a tabIndex={0} className='font-grey' onClick={onEdit}>
-									<li><FormattedMessage id='edit' /></li>
-								</a>
-							}
-							{
-								onDelete &&
-								<a tabIndex={0} className='font-grey' onClick={onDelete}>
-									<li><FormattedMessage id='delete' /></li>
-								</a>
-							}
-						</ul>
-					</PopupMenu>
-				}
-
-			</div>
-		)
-	}
+						{
+							onDelete &&
+							<a tabIndex={0} className='font-grey' onClick={onDelete}>
+								<li><FormattedMessage id='delete' /></li>
+							</a>
+						}
+					</ul>
+				</PopupMenu>
+			}
+		</div>
+	)
 }
 
 MomentFooter.propTypes = {
@@ -69,7 +46,6 @@ MomentFooter.propTypes = {
 	onDelete: PropTypes.func,
 	onEdit: PropTypes.func,
 	filledLike: PropTypes.bool,
-	likes: PropTypes.number,
 }
 
 MomentFooter.defaultProps = {
@@ -77,7 +53,6 @@ MomentFooter.defaultProps = {
 	onDelete: null,
 	onEdit: null,
 	filledLike: null,
-	likes: null,
 }
 
 export default MomentFooter

@@ -156,8 +156,7 @@ class TalkItOver extends Component {
 				userid={moment.user_id}
 				content={moment.content}
 				dt={moment.updated_dt || moment.created_dt}
-				filledLike={this.hasLiked(moment.likes)}
-				likes={moment.likes && moment.likes.length > 0 ? moment.likes.length : null}
+				likedIds={moment.likes}
 				onLike={this.handleLike.bind(this, moment.id)}
 				onDelete={this.handleDelete.bind(this, moment.id)}
 				onEdit={this.handleEdit.bind(this, moment)}
@@ -170,6 +169,7 @@ class TalkItOver extends Component {
 		const { comment, editingMoment, editingComment } = this.state
 
 		this.authedUser = auth
+			&& users
 			&& auth.userData
 			&& auth.userData.userid
 			&& auth.userData.userid in users
