@@ -36,10 +36,35 @@ class BibleContent extends Component {
 	}
 
 	componentDidMount() {
-		const { bible, moments, dispatch, versionID, audio } = this.props
+		const { dispatch, versionID } = this.props
 		const { usfm } = this.state
 
 		this.version_id = versionID || getBibleVersionFromStorage()
+		this.getBibleData(usfm)
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { usfm } = this.state
+		// if we're updating the usfm from props then let's get it
+		if (usfm && nextProps.usfm && this.props.usfm !== nextProps.usfm && usfm !== nextProps.usfm) {
+			this.getBibleData(nextProps.usfm)
+		}
+	}
+
+	getReference = (usfm, versionID = null) => {
+		const { bible, dispatch } = this.props
+		if (usfm) {
+			this.setState({ usfm })
+			// if we don't already have it in app state,
+			// let's get it
+			if (!(bible && bible.pullRef(usfm, versionID))) {
+				dispatch(bibleReference(usfm))
+			}
+		}
+	}
+
+	getBibleData = (usfm) => {
+		const { bible, moments, dispatch, versionID, audio } = this.props
 
 		this.getReference(usfm, this.version_id)
 
@@ -78,23 +103,13 @@ class BibleContent extends Component {
 		}
 	}
 
-	getReference = (usfm, versionID = null) => {
-		const { bible, dispatch } = this.props
-		// if we don't already have it in state,
-		// let's get it
-		if (usfm && !(bible && bible.pullRef(usfm, versionID))) {
-			dispatch(bibleReference(usfm))
-			this.setState({ usfm })
-		}
-	}
-
 	handleVerseSelect = (verseSelection) => {
 		const { hosts, usfm, dispatch, moments, bible } = this.props
 		const refUrl = `${hosts.railsHost}/bible/${this.version_id}/${usfm}.${verseSelection.human}`
 
-		const ref = bible ?
-								bible.pullRef(usfm, this.version_id) :
-								null
+		const ref = bible
+			? bible.pullRef(usfm, this.version_id)
+			: null
 		// get the verses that are both selected and already have a highlight
 		// color associated with them, so we can allow the user to delete them
 		const deletableColors = []
@@ -176,12 +191,12 @@ class BibleContent extends Component {
 		} = this.props
 		const { usfm, verseSelection, deletableColors } = this.state
 
-		const ref = bible && bible.pullRef(usfm, versionID) ?
-								bible.pullRef(usfm, versionID) :
-								null
-		const version = bible && Immutable.fromJS(bible).hasIn(['versions', this.version_id]) ?
-										Immutable.fromJS(bible).getIn(['versions', this.version_id]).toJS() :
-										null
+		const ref = bible && bible.pullRef(usfm, versionID)
+			? bible.pullRef(usfm, versionID)
+			: null
+		const version = bible && Immutable.fromJS(bible).hasIn(['versions', this.version_id])
+			? Immutable.fromJS(bible).getIn(['versions', this.version_id]).toJS()
+			: null
 		const hasAudio = audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm)])
 
 		return (
