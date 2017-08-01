@@ -14,7 +14,7 @@ export function isDayComplete(dayProgress) {
 	return !(Immutable.List(dayProgress).includes(false))
 }
 
-export function isFinalSegment(segIndex, dayProgress) {
+export function isFinalSegmentToComplete(segIndex, dayProgress) {
 	if (!dayProgress) return false
 	let isFinal = true
 	dayProgress.forEach((segComplete, i) => {

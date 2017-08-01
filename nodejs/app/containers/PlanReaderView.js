@@ -18,7 +18,7 @@ import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
 import PlanRef from '../features/PlanDiscovery/components/planReader/PlanRef'
 // utils
 import { isVerseOrChapter, getBibleVersionFromStorage } from '../lib/readerUtils'
-import { isFinalSegment, isFinalPlanDay } from '../lib/readingPlanUtils'
+import { isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 
 
@@ -122,21 +122,26 @@ class PlanReaderView extends Component {
 		}
 
 		// figure out nav links for next
-		if (this.isFinalSegment) {
-			if (this.isFinalPlanDay) {
+		// if this is the last segment, do we go to day complete, plan complete or
+		// just the overview page?
+		if (this.isLastSegment) {
+			// completed days' reading for first time
+			if (this.isFinalSegmentToComplete && !this.dayProgress.complete) {
 				// plan complete
-				next = Routes.subscriptionComplete({
-					username,
-					plan_id,
-					slug,
-				})
+				if (this.isFinalPlanDay) {
+					next = Routes.subscriptionComplete({
+						username,
+						plan_id,
+						slug,
+					})
+				} else {
+					// day complete
+					next = `${subDayLink}/completed`
+				}
+			// overview page if already completed
 			} else {
-				// day complete
-				next = `${subDayLink}/completed`
+				next = subDayLink
 			}
-		} else if (this.daySegments && this.contentNum + 1 >= this.daySegments.length) {
-			// overview page if not last remaining ref, and is last ref in order
-			next = subDayLink
 		} else {
 			// next content
 			next = `${subDayLink}/segment/${this.contentNum + 1}`
@@ -160,12 +165,10 @@ class PlanReaderView extends Component {
 												this.progressDays[day - 1] :
 												null
 		if (this.dayProgress) {
-			this.isFinalSegment = this.dayProgress.complete ||
-														(
-															this.dayProgress.partial &&
-															isFinalSegment(content, this.dayProgress.partial)
-														)
+			this.isFinalSegmentToComplete = this.dayProgress.partial &&
+				isFinalSegmentToComplete(content, this.dayProgress.partial)
 		}
+		this.isLastSegment = this.daySegments && this.contentNum + 1 >= this.daySegments.length
 		this.isFinalPlanDay = isFinalPlanDay(day, this.progressDays)
 	}
 
@@ -219,7 +222,7 @@ class PlanReaderView extends Component {
 					contentNum={this.contentNum + 1}
 					totalSegments={this.daySegments ? this.daySegments.length : null}
 					handleContentCheck={this.onComplete}
-					showCheckmark={this.isFinalSegment}
+					showCheckmark={this.isLastSegment && this.isFinalSegmentToComplete}
 					localizedLink={this.localizedLink}
 					isRtl={this.isRtl}
 					plan={plan}

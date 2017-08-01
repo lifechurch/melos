@@ -15,7 +15,7 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 // selectors
 // utils
-import { calcCurrentPlanDay, isFinalSegment, isFinalPlanDay } from '../lib/readingPlanUtils'
+import { calcCurrentPlanDay, isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
 // components
@@ -100,7 +100,7 @@ class Plan extends Component {
 			day: this.currentDay,
 		}))
 
-		if (isFinalSegment(contentIndex, this.dayProgress.partial)) {
+		if (isFinalSegmentToComplete(contentIndex, this.dayProgress.partial)) {
 			if (isFinalPlanDay(this.currentDay, this.progressDays)) {
 				dispatch(routeActions.push(Routes.subscriptionComplete({
 					username: auth.userData.username,
