@@ -87,15 +87,15 @@ class Moment extends Component {
 					<div className='content'>
 						{ content }
 					</div>
-					<MomentFooter
-						likes={likes}
-						filledLike={filledLike}
-						onLike={onLike}
-						onReply={null}
-						onEdit={this.isAuthedMoment ? onEdit : null}
-						onDelete={this.isAuthedMoment ? onDelete : null}
-					/>
 				</div>
+				<MomentFooter
+					likes={likes}
+					filledLike={filledLike}
+					onLike={onLike}
+					onReply={null}
+					onEdit={this.isAuthedMoment ? onEdit : null}
+					onDelete={this.isAuthedMoment ? onDelete : null}
+				/>
 			</Card>
 		)
 	}

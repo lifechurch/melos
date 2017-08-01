@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import PopupMenu from '../../../components/PopupMenu'
 import HeartIcon from '../../../components/Icons/Heart'
 
 
@@ -25,33 +26,39 @@ class MomentFooter extends Component {
 		return (
 			<div className='moment-footer'>
 				{
-					onDelete &&
-					<div className='margin-right-auto'>
-						{
-							onEdit &&
-							<a tabIndex={0} className='font-grey' onClick={onEdit} style={{ marginRight: '10px' }}>
-								<FormattedMessage id='edit' />
-							</a>
-						}
-						<a tabIndex={0} className='font-grey' onClick={onDelete}>
-							<FormattedMessage id='delete' />
-						</a>
-					</div>
-				}
-				{
 					onLike &&
-					<div className='margin-left-auto vertical-center'>
-						{
-							likes &&
-							<a className='font-grey' style={{ marginRight: '5px' }}>
-								{ likes }
-							</a>
-						}
+					<div className='margin-right-auto vertical-center' style={{ marginLeft: '5px' }}>
 						<a tabIndex={0} onClick={onLike}>
 							<HeartIcon fill={filledLike ? '#DA1000' : '#979797'} />
 						</a>
+						{
+							likes &&
+							<a className='font-grey' style={{ marginLeft: '5px' }}>
+								{ likes }
+							</a>
+						}
 					</div>
 				}
+				{
+					(onEdit || onDelete) &&
+					<PopupMenu closeButton={null} >
+						<ul>
+							{
+								onEdit &&
+								<a tabIndex={0} className='font-grey' onClick={onEdit}>
+									<li><FormattedMessage id='edit' /></li>
+								</a>
+							}
+							{
+								onDelete &&
+								<a tabIndex={0} className='font-grey' onClick={onDelete}>
+									<li><FormattedMessage id='delete' /></li>
+								</a>
+							}
+						</ul>
+					</PopupMenu>
+				}
+
 			</div>
 		)
 	}

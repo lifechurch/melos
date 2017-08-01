@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import XMark from './XMark'
+import EllipsisMoreIcon from './EllipsisMoreIcon'
 import Menu from './Menu'
 import ClickTarget from './ClickTarget'
 
@@ -73,7 +74,7 @@ PopupMenu.propTypes = {
 }
 
 PopupMenu.defaultProps = {
-	triggerButton: '•••',
+	triggerButton: <EllipsisMoreIcon />,
 	closeButton: <XMark width={14.4} height={13.7} />,
 	header: null,
 	footer: null,

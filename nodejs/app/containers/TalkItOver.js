@@ -48,9 +48,7 @@ class TalkItOver extends Component {
 		},
 			{
 				auth: true
-			})).then((data) => {
-
-			})
+			}))
 	}
 
 	handleComment = ({ parent_id = null }) => {
@@ -75,38 +73,36 @@ class TalkItOver extends Component {
 		}
 	}
 
-	handleLike = ({ parent_id }) => {
-		const { day, together_id, dispatch } = this.props
-		if (parent_id) {
-			const moment = this.dayActivities.data[parent_id]
+	handleLike = (activity_id) => {
+		const { together_id, dispatch } = this.props
+		if (activity_id) {
+			const moment = this.dayActivities.data[activity_id]
 			// if the user has already liked the moment then we want to unlike it
-			if (moment.my_like_id) {
-				this.handleDelete(moment.my_like_id, parent_id)
+			if (this.hasLiked(moment.likes)) {
+				this.handleUnlike(activity_id)
 			} else {
-				dispatch(plansAPI.actions.activities.post({
+				dispatch(plansAPI.actions.activityLike.post({
 					id: together_id,
+					activity_id,
 				},
 					{
-						body: {
-							kind: 'like',
-							day: parseInt(day, 10),
-							created_dt: getCurrentDT(),
-							parent_id,
-						},
-						auth: true
-					})).then(() => {
-						dispatch(plansAPI.actions.activity.get({
-							id: together_id,
-							activity_id: parent_id,
-						}, {
-							auth: true
-						}))
-					})
+						auth: true,
+					}))
 			}
 		}
 	}
 
-	handleDelete = (activity_id, parent_id = null) => {
+	handleUnlike = (activity_id) => {
+		const { together_id, dispatch } = this.props
+		if (activity_id) {
+			dispatch(plansAPI.actions.activityLike.delete({
+				id: together_id,
+				activity_id
+			}, { auth: true }))
+		}
+	}
+
+	handleDelete = (activity_id) => {
 		const { day, together_id, dispatch } = this.props
 		if (activity_id) {
 			dispatch(plansAPI.actions.activity.delete({
@@ -115,20 +111,10 @@ class TalkItOver extends Component {
 			},
 				{
 					auth: true,
-				// this isn't used by the api, but we use it to delete the activity
-				// from state
+					// this isn't used by the api, but we use it to delete the activity
+					// from state because there is no data that comes back from a comment delete
 					day,
-				})).then(() => {
-					// if we just deleted a like or a reply, let's refresh the parent data
-					if (parent_id) {
-						dispatch(plansAPI.actions.activity.get({
-							id: together_id,
-							activity_id: parent_id,
-						}, {
-							auth: true
-						}))
-					}
-				})
+				}))
 		}
 	}
 
@@ -159,16 +145,21 @@ class TalkItOver extends Component {
 		}
 	}
 
+	hasLiked = (momentLikes) => {
+		return momentLikes && this.authedUser && momentLikes.includes(this.authedUser.id)
+	}
+
 	renderMoment = (moment) => {
+
 		return (
 			<Moment
 				userid={moment.user_id}
 				content={moment.content}
 				dt={moment.updated_dt || moment.created_dt}
-				filledLike={!!moment.my_like_id}
-				likes={moment.likes > 0 ? moment.likes : null}
-				onLike={this.handleLike.bind(this, { parent_id: moment.id })}
-				onDelete={this.handleDelete.bind(this, moment.id, moment.parent_id)}
+				filledLike={this.hasLiked(moment.likes)}
+				likes={moment.likes && moment.likes.length > 0 ? moment.likes.length : null}
+				onLike={this.handleLike.bind(this, moment.id)}
+				onDelete={this.handleDelete.bind(this, moment.id)}
 				onEdit={this.handleEdit.bind(this, moment)}
 			/>
 		)
