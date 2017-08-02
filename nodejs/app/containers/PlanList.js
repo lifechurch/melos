@@ -89,36 +89,30 @@ class PlansList extends Component {
 
 
 		return (
-			<div>
+			<div className='large-6 medium-8 small-11 centered'>
 				<div className='row collapse'>
-					<div className='columns large-8 medium-8 medium-centered'>
-						<div className='row collapse plan-title-row'>
-							<div className='columns small-2'>
-								{ backButton }
-							</div>
-							<div className='column small-8 end text-center'>
-								<div className='plan-saved-title'>{ title }</div>
-							</div>
+					<div className='row collapse plan-title-row'>
+						<div className='columns small-2'>
+							{ backButton }
+						</div>
+						<div className='column small-8 end text-center'>
+							<div className='plan-saved-title'>{ title }</div>
 						</div>
 					</div>
 				</div>
 				<div className='row collapse'>
-					<div className='columns large-8 medium-8 medium-centered'>
-						{ component }
-					</div>
+					{ component }
 				</div>
 				<div className='row collapse'>
-					<div className='columns large-8 medium-8 medium-centered subscription-actions'>
-						<div className='left'>
-							<Link to={this.username ? this.localizedLink(Routes.subscriptionsSaved({ username: this.username })) : null}>
-								<FormattedMessage id='plans.saved plans' />
-							</Link>
-						</div>
-						<div className='right'>
-							<Link to={this.username ? this.localizedLink(Routes.subscriptionsCompleted({ username: this.username })) : null}>
-								<FormattedMessage id='plans.completed plans' />
-							</Link>
-						</div>
+					<div className='left'>
+						<Link to={this.username ? this.localizedLink(Routes.subscriptionsSaved({ username: this.username })) : null}>
+							<FormattedMessage id='plans.saved plans' />
+						</Link>
+					</div>
+					<div className='right'>
+						<Link to={this.username ? this.localizedLink(Routes.subscriptionsCompleted({ username: this.username })) : null}>
+							<FormattedMessage id='plans.completed plans' />
+						</Link>
 					</div>
 				</div>
 			</div>
