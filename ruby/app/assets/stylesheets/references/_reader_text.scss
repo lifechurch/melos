@@ -246,8 +246,9 @@
     padding-left: 4em;
   }
   .qs, .lit {
-    float: right;
+    text-align: right;
     font-style: italic;
+    display: block;
   }
   .q, .q1 {
     text-indent: 1em;
@@ -397,7 +398,7 @@
     display: inline;
     margin-bottom: 0;
   }
-  /* hide introdcution titles */
+  /* hide introduction titles */
   .vid111 .imt1, .vid111 .imt {
     display: none;
   }
