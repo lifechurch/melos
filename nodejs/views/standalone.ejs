@@ -24,12 +24,5 @@
 	window.__NODE_HOST__ = "<%- nodeHost %>";
 
 </script>
-<%if (environment !== 'production') { %>
-	<script src='https://s3.amazonaws.com/instabug-pro/sdk_releases/instabugsdk-1.1.2-beta.min.js'></script>
-	<script>
-		ibgSdk.init({
-			token: 'e69b983402cdcb5b1b0dd6d3d9dcfae8'
-		});
-	</script>
-<% } %>
+
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Number.isNaN,Promise"></script>

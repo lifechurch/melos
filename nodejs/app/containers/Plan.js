@@ -24,9 +24,15 @@ import PlanComponent from '../features/PlanDiscovery/components/Plan'
 
 class Plan extends Component {
 	componentDidMount() {
-		const { dispatch, params: { subscription_id }, auth, subscription } = this.props
+		const { dispatch, params: { subscription_id }, auth, subscription, plan } = this.props
 		if (subscription_id) {
-			if (!(subscription && Immutable.fromJS(subscription).getIn(['days'], false))) {
+			if (
+				!(
+					subscription
+					&& Immutable.fromJS(subscription).getIn(['days'], false)
+					&& Immutable.fromJS(plan).getIn(['days'], false)
+				)
+			) {
 				dispatch(subscriptionData({ subscription_id, auth }))
 			}
 			// get bible version for building reference strings
