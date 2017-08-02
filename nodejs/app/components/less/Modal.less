@@ -41,12 +41,13 @@
 
 .yv-modal-background {
 	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
+	// this positioning makes sure there's no 'frosted edges'
+	top: -5%;
+	left: -5%;
+	height: 110%;
+	width: 110%;
 	background: black;
-	opacity: 0.5;
+	opacity: 0.6;
 	z-index: 100;
 
 	transform: translate(0px, 0px, 0px);
