@@ -13,16 +13,14 @@ import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
 // utils
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
+import ViewportUtils from '../lib/viewportUtils'
 import getCurrentDT from '../lib/getCurrentDT'
 // components
-import ParticipantsAvatarList from '../widgets/ParticipantsAvatarList'
 import List from '../components/List'
-import Card from '../components/Card'
-import Textarea from '../components/Textarea'
-import Avatar from '../components/Avatar'
 import Modal from '../components/Modal'
 import Moment from '../features/Moments/components/Moment'
 import CommentCreate from '../features/Moments/components/CommentCreate'
+import TalkItOverInfo from '../features/PlanDiscovery/components/TalkItOverInfo'
 
 
 class TalkItOver extends Component {
@@ -36,6 +34,7 @@ class TalkItOver extends Component {
 
 	componentDidMount() {
 		this.getActivities({ page: 1 })
+		this.viewportUtils = new ViewportUtils()
 	}
 
 	getActivities = ({ page }) => {
@@ -124,6 +123,15 @@ class TalkItOver extends Component {
 		this.setState({ editingMoment: moment, editingComment: moment.content })
 	}
 
+	handleHeaderModal = () => {
+		const viewport = this.viewportUtils.getViewport()
+		// only open modal on mobile
+		if (parseInt(viewport.width, 10) <= 599) {
+			this.modal.handleOpen()
+			this.setState({ headerModalOpen: true })
+		}
+	}
+
 	handleSaveEdit = () => {
 		const { together_id, dispatch } = this.props
 		const { editingMoment, editingComment } = this.state
@@ -166,7 +174,7 @@ class TalkItOver extends Component {
 
 	render() {
 		const { content, day, together_id, activities, auth, users } = this.props
-		const { comment, editingMoment, editingComment } = this.state
+		const { comment, editingMoment, editingComment, headerModalOpen } = this.state
 
 		this.authedUser = auth
 			&& users
@@ -187,20 +195,44 @@ class TalkItOver extends Component {
 			? activities[day]
 			: null
 
+		let modalContent = null
+		if (editingMoment && 'content' in editingMoment) {
+			modalContent = (
+				<CommentCreate
+					avatarSrc={avatarSrc}
+					avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
+					onChange={(val) => { this.setState({ editingComment: val }) }}
+					value={editingComment}
+					onComment={this.handleSaveEdit}
+				/>
+			)
+		} else if (headerModalOpen) {
+			modalContent = (
+				<TalkItOverInfo
+					customClass='talk-it-over-modal'
+					together_id={together_id}
+					day={day}
+					questionContent={content}
+				/>
+			)
+		}
+
 		return (
 			<div className='talk-it-over'>
-				<div style={{ width: '80%', textAlign: 'center', margin: 'auto', marginBottom: '50px' }}>
-					{
-						this.dayActivities &&
-						<ParticipantsAvatarList
+				{
+					// we want to wait to render the info because the participants list
+					// will try and grab the day completes if it doesn't see the activities
+					// already for today
+					this.dayActivities &&
+					<div role='button' tabIndex={0} onClick={this.handleHeaderModal}>
+						<TalkItOverInfo
+							customClass='talk-it-over-header'
 							together_id={together_id}
 							day={day}
-							statusFilter={['accepted', 'host']}
-							avatarWidth={46}
+							questionContent={content}
 						/>
-					}
-					<h5 style={{ margin: '30px 0' }}>{ content }</h5>
-				</div>
+					</div>
+				}
 				<List>
 					{
 						this.dayActivities &&
@@ -227,18 +259,18 @@ class TalkItOver extends Component {
 						onComment={this.handleComment}
 					/>
 				</List>
-				<Modal ref={(ref) => { this.modal = ref }} customClass='large-6 medium-8 small-12'>
-					{
-						editingMoment &&
-						'content' in editingMoment &&
-						<CommentCreate
-							avatarSrc={avatarSrc}
-							avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
-							onChange={(val) => { this.setState({ editingComment: val }) }}
-							value={editingComment}
-							onComment={this.handleSaveEdit}
-						/>
-					}
+				{/*
+					this modal is opened in two ways, either by editing a comment or showing the
+					talk it over header on mobile
+				*/}
+				<Modal
+					ref={(ref) => { this.modal = ref }}
+					handleCloseCallback={() => {
+						this.setState({ editingMoment: false, headerModalOpen: false, })
+					}}
+					customClass='large-6 medium-8 small-12'
+				>
+					{ modalContent }
 				</Modal>
 			</div>
 		)

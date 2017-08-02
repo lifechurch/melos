@@ -179,6 +179,14 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+.click-for-small {
+	@media @large-up {
+		pointer-events: none;
+	}
+	@media @medium-only {
+		pointer-events: none;
+	}
+}
 .gray-background {
 	background-color: @light-grey;
 }

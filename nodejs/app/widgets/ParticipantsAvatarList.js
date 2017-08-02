@@ -11,6 +11,8 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // components
 import User from '../components/User'
 import CheckMark from '../components/CheckMark'
+// utils
+import Routes from '../lib/routes'
 
 
 class ParticipantsAvatarList extends Component {
@@ -56,7 +58,7 @@ class ParticipantsAvatarList extends Component {
 	render() {
 		const {
 			participants,
-			activities,
+			together,
 			day,
 			together_id,
 			showMoreLink,
@@ -65,6 +67,7 @@ class ParticipantsAvatarList extends Component {
 			avatarWidth,
 		} = this.props
 
+		const activities = together && together.activities
 		const avatarList = []
 		let link = null
 		if (participants && together_id) {
@@ -114,16 +117,28 @@ class ParticipantsAvatarList extends Component {
 							{ check }
 						</div>
 					)
-				} else if (showMoreLink) {
+				} else {
 					link = (
-						<div>{ userIds.length - avatarList.length } More</div>
+						<div>{`+ ${userIds.length - avatarList.length}`}</div>
 					)
 				}
 			})
 		}
 
+		let participantsLink = null
+		if (showMoreLink) {
+			participantsLink = showMoreLink
+		} else {
+			participantsLink = Routes.togetherParticipants({
+				plan_id: together && together.plan_id,
+				slug: '',
+				together_id,
+				query: day ? { day } : null,
+			})
+		}
+
 		return (
-			<Link to={showMoreLink}>
+			<Link to={participantsLink}>
 				<div className={`participants-list vertical-center ${customClass}`}>
 					{ avatarList }
 					{ link }
@@ -139,9 +154,8 @@ function mapStateToProps(state, props) {
 		participants: together_id && getParticipantsUsersByTogetherId(state, together_id)
 			? getParticipantsUsersByTogetherId(state, together_id)
 			: null,
-		activities: getTogetherModel(state) && together_id in getTogetherModel(state).byId
-			&& getTogetherModel(state).byId[together_id].activities
-			? getTogetherModel(state).byId[together_id].activities
+		together: getTogetherModel(state) && together_id in getTogetherModel(state).byId
+			? getTogetherModel(state).byId[together_id]
 			: null,
 		auth: state.auth,
 	}
@@ -149,7 +163,7 @@ function mapStateToProps(state, props) {
 
 ParticipantsAvatarList.propTypes = {
 	participants: PropTypes.object.isRequired,
-	activities: PropTypes.object,
+	together: PropTypes.object,
 	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	customClass: PropTypes.string,
 	showMoreLink: PropTypes.string,
@@ -164,7 +178,7 @@ ParticipantsAvatarList.propTypes = {
 ParticipantsAvatarList.defaultProps = {
 	showMoreLink: null,
 	auth: null,
-	activities: null,
+	together: null,
 	statusFilter: null,
 	avatarWidth: 36,
 	customClass: '',

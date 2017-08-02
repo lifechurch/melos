@@ -22,15 +22,9 @@ class Route {
 	}
 
 	get() {
-		const route = this.query ?
-									this.queryify() :
-									this.route
-		if (!route ||
-				route.includes('null') ||
-				route.includes('undefined')
-			) {
-			return null
-		}
+		const route = this.query
+			? this.queryify()
+			: this.route
 
 		return route
 	}

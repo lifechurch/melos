@@ -13,6 +13,11 @@ class Modal extends Component {
 	}
 
 	handleClose = () => {
+		const { handleCloseCallback } = this.props
+		// if we've been passed a callback to fire on close
+		if (handleCloseCallback && typeof handleCloseCallback === 'function') {
+			handleCloseCallback()
+		}
 		this.setState({ show: false })
 	}
 	handleOpen = () => {
@@ -57,12 +62,14 @@ Modal.propTypes = {
 	showBackground: PropTypes.bool,
 	heading: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	children: PropTypes.node.isRequired,
+	handleCloseCallback: PropTypes.func,
 }
 
 Modal.defaultProps = {
 	showBackground: true,
 	customClass: '',
 	heading: null,
+	handleCloseCallback: null,
 }
 
 export default Modal

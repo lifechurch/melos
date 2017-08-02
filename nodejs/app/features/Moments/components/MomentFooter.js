@@ -20,17 +20,17 @@ function MomentFooter(props) {
 			}
 			{
 				(onEdit || onDelete) &&
-				<PopupMenu closeButton={null} >
+				<PopupMenu >
 					<ul>
 						{
 							onEdit &&
-							<a tabIndex={0} className='font-grey' onClick={onEdit}>
+							<a tabIndex={0} className='font-grey text-center' onClick={onEdit}>
 								<li><FormattedMessage id='edit' /></li>
 							</a>
 						}
 						{
 							onDelete &&
-							<a tabIndex={0} className='font-grey' onClick={onDelete}>
+							<a tabIndex={0} className='font-grey text-center' onClick={onDelete}>
 								<li><FormattedMessage id='delete' /></li>
 							</a>
 						}

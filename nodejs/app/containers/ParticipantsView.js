@@ -21,7 +21,7 @@ class ParticipantsView extends Component {
 		}))
 		dispatch(participantsView({
 			together_id,
-			user_id: auth && auth.userData && auth.userData.userid,
+			auth,
 			language_tag: serverLanguageTag,
 			token,
 		}))
@@ -47,7 +47,7 @@ class ParticipantsView extends Component {
 				return user
 			})
 		}
-		const src = plan ? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url : ''
+		const src = plan && plan.images ? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url : ''
 
 		return (
 			<Participants

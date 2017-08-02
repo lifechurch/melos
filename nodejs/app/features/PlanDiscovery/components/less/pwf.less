@@ -168,4 +168,58 @@
 .talk-it-over {
 	min-height: 500px;
 	.card { padding: 20px; }
+
+	@media @large-up {
+		padding-top: 120px;
+	}
+	@media @medium-only {
+		padding-top: 120px;
+	}
+	@media @small-only {
+		padding-top: 50px;
+	}
+
+	.participants-list { .horizontal-center; }
+
+	.talk-it-over-header {
+		position: fixed;
+    background: white;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+		display: flex;
+		border-bottom: @thin-grey-border;
+		padding: 5px 15px;
+
+		@media @large-up {
+			top: 140px;
+		}
+		@media @medium-only {
+			top: 113px;
+		}
+		@media @small-only {
+			top: 70px;
+			.participants-list { display: none; }
+			h5 { display: none; }
+			h6 {
+				.yv-text-ellipsis;
+			}
+		}
+
+		.participants-list {
+			margin: 6px 0;
+		}
+	}
+
+	.talk-it-over-modal {
+		background: white;
+		width: 85%;
+		padding: 50px 25px;
+		.participants-list {
+			margin: 30px 0 20px 0;
+		}
+		h6 {
+			font-size: 1.2rem;
+		}
+	}
 }
