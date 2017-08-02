@@ -208,6 +208,7 @@ class TalkItOver extends Component {
 			)
 		} else if (headerModalOpen) {
 			modalContent = (
+				this.dayActivities &&
 				<TalkItOverInfo
 					customClass='talk-it-over-modal'
 					together_id={together_id}
@@ -239,9 +240,7 @@ class TalkItOver extends Component {
 						this.dayActivities.map &&
 						this.dayActivities.map.map((id) => {
 							const moment = this.dayActivities.data[id]
-							// we don't render a separate moment for a child activity,
-							// nor day complete
-							if (moment && moment.id && !moment.parent_id && moment.kind === 'comment') {
+							if (moment && moment.id && moment.kind === 'comment') {
 								return (
 									<li key={moment.id} style={{ marginBottom: '20px' }}>
 										{ this.renderMoment(moment) }

@@ -52,6 +52,15 @@ const Routes = {
 
 		return route.get()
 	},
+	// users ---------------------------------------------------------------------
+	user: ({ username, query = null }) => {
+		const route = new Route({
+			path: `/users/${username}`,
+			query,
+		})
+
+		return route.get()
+	},
 	// subscriptions -------------------------------------------------------------
 	subscriptions: ({ username, query = null }) => {
 

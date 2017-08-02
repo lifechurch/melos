@@ -6,6 +6,8 @@ import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
 import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
 // components
 import User from '../components/User'
+// utils
+import Routes from '../lib/routes'
 
 
 class AvatarList extends Component {
@@ -39,7 +41,9 @@ class AvatarList extends Component {
 			userids.forEach((userID) => {
 				const user = users[userID].response
 				const avatarSrc = user && user.user_avatar_url ? user.user_avatar_url.px_48x48 : ''
-
+				const userLink = Routes.user({
+					username: user && user.username,
+				})
 				avatarList.push(
 					<div
 						className='item'
@@ -55,7 +59,7 @@ class AvatarList extends Component {
 							avatarLetter={user.first_name ? user.first_name.charAt(0) : null}
 							src={user && user.has_avatar ? avatarSrc : null}
 							width={avatarWidth}
-							link={null}
+							link={userLink}
 						/>
 					</div>
 				)

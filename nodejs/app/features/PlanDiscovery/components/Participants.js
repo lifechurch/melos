@@ -1,11 +1,16 @@
 import React, { PropTypes } from 'react'
 import CustomScroll from 'react-custom-scroll'
+import { FormattedMessage } from 'react-intl'
 import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
+import Routes from '../../../lib/routes'
 
 function renderUser(friend) {
 	const src = friend && friend.user_avatar_url ? friend.user_avatar_url.px_48x48 : ''
+	const userLink = Routes.user({
+		username: friend && friend.username,
+	})
 	return (
 		<div className='vertical-center item' key={friend.id}>
 			<User
@@ -14,6 +19,7 @@ function renderUser(friend) {
 				width={36}
 				heading={friend.name ? friend.name : null}
 				subheading={friend.source ? friend.source : null}
+				link={userLink}
 			/>
 		</div>
 	)
@@ -32,7 +38,7 @@ function Participants({ planImg, users }) {
 		<div className='pwf-flow pwf-invite'>
 			<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
 				<div className='row text-center' style={{ fontSize: '18px' }}>
-					Participants
+					<FormattedMessage id='participants' />
 				</div>
 			</div>
 			<div className='gray-background content'>

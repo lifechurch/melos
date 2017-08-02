@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 // models
 // selectors
 import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
-
+// utils
+import Routes from '../../../lib/routes'
 // components
 import Card from '../../../components/Card'
 import Avatar from '../../../components/Avatar'
@@ -44,11 +45,12 @@ class Moment extends Component {
 		const user = 	userid && userid in users
 			? users[userid].response
 			: null
-
 		const avatarSrc = user && user.has_avatar && user.user_avatar_url
 			? user.user_avatar_url.px_48x48
 			: null
-
+		const userLink = Routes.user({
+			username: user && user.username,
+		})
 		const cardFooter = likedIds && likedIds.length > 0 ?
 			(
 				<div className='flex-wrap' style={{ width: '100%', padding: '0 17px' }}>
@@ -74,6 +76,7 @@ class Moment extends Component {
 								src={avatarSrc}
 								width={38}
 								placeholderText={user && user.first_name ? user.first_name.charAt(0) : null}
+								link={userLink}
 							/>
 						}
 					</div>
