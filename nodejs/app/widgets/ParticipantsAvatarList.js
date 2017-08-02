@@ -18,7 +18,7 @@ import Routes from '../lib/routes'
 class ParticipantsAvatarList extends Component {
 	componentDidMount() {
 		const { together_id, dispatch, joinToken, participants, day, auth, together } = this.props
-		if (day && !together.activities) {
+		if (day && !(together && together.activities)) {
 			this.getDayCompletes()
 		}
 		if (!participants && together_id) {
@@ -35,7 +35,7 @@ class ParticipantsAvatarList extends Component {
 		const { day, together } = this.props
 
 		if (day && prevProps.day !== day) {
-			if (!(together.activities && Immutable.fromJS(together.activities).hasIn(day))) {
+			if (!(together && together.activities && Immutable.fromJS(together.activities).hasIn(day))) {
 				this.getDayCompletes()
 			}
 		}
