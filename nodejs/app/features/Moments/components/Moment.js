@@ -57,9 +57,9 @@ class Moment extends Component {
 					<AvatarList userids={likedIds} avatarWidth={26} />
 					{
 						likedIds && likedIds.length > 0 &&
-						<a className='font-grey margin-left-auto'>
+						<div className='font-grey margin-left-auto'>
 							{ likedIds.length }
-						</a>
+						</div>
 					}
 				</div>
 			) :
