@@ -79,10 +79,10 @@ class PlanReaderView extends Component {
 	}
 
 	onComplete = () => {
-		const { params: { day, subscription_id, content }, dispatch } = this.props
+		const { params: { day, subscription_id }, dispatch } = this.props
 
 		dispatch(subscriptionDayUpdate({
-			contentIndex: parseInt(content, 10),
+			contentIndex: this.contentNum,
 			complete: true,
 			daySegments: this.daySegments,
 			dayProgress: this.dayProgress,
@@ -112,7 +112,6 @@ class PlanReaderView extends Component {
 			subscription_id,
 		})
 
-		this.contentNum = parseInt(content, 10)
 		// figure out nav links for previous
 		if (this.contentNum === 0) {
 			previous = subDayLink
@@ -153,6 +152,8 @@ class PlanReaderView extends Component {
 	buildData() {
 		const { params: { day, content }, plan, subscription } = this.props
 
+		this.contentNum = parseInt(content, 10)
+
 		this.daySegments = plan && plan.days && plan.days[day - 1] ?
 												plan.days[day - 1].segments :
 												null
@@ -168,7 +169,8 @@ class PlanReaderView extends Component {
 			this.isFinalSegmentToComplete = this.dayProgress.partial &&
 				isFinalSegmentToComplete(content, this.dayProgress.partial)
 		}
-		this.isLastSegment = this.daySegments && this.contentNum + 1 >= this.daySegments.length
+
+		this.isLastSegment = this.daySegments && (this.contentNum + 1 >= this.daySegments.length)
 		this.isFinalPlanDay = isFinalPlanDay(day, this.progressDays)
 	}
 

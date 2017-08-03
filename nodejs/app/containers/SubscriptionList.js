@@ -172,6 +172,7 @@ class SubscriptionList extends Component {
 					<div style={{ padding: '5px 0' }}>
 						<ParticipantsAvatarList
 							together_id={together_id}
+							plan_id={plan_id}
 							avatarWidth={26}
 							// if it's an invitation, we want to show all participants
 							// otherwise, let's just show accetped and host

@@ -61,6 +61,7 @@ class ParticipantsAvatarList extends Component {
 			together,
 			day,
 			together_id,
+			plan_id,
 			showMoreLink,
 			statusFilter,
 			customClass,
@@ -69,7 +70,7 @@ class ParticipantsAvatarList extends Component {
 
 		const activities = together && together.activities
 		const avatarList = []
-		let link = null
+		const usersToShow = []
 		if (participants && together_id) {
 			const userIds = Object.keys(participants)
 			userIds.forEach((userID) => {
@@ -79,9 +80,17 @@ class ParticipantsAvatarList extends Component {
 				const filterMatch = Array.isArray(statusFilter)
 					? Immutable.fromJS(statusFilter).includes(participant.status)
 					: statusFilter === participant.status
+
+				// if we have no filter or if the user matches the filter
+				const showUser = !statusFilter || filterMatch
+				// let's count how many users we want to show if we weren't truncatating
+				if (showUser) {
+					usersToShow.push(userID)
+				}
+
 				// truncate amount to show, and then render more link to go to participants
 				// also allow filtering on status
-				if (avatarList.length < 6 && (!statusFilter || filterMatch)) {
+				if (avatarList.length < 6 && showUser) {
 					// if we're showing participants for a specific day, we want to show the check
 					// if they've completed the day
 					let check = null
@@ -94,7 +103,7 @@ class ParticipantsAvatarList extends Component {
 									completion.kind === 'complete' &&
 									parseInt(completion.user_id, 10) === parseInt(userID, 10)
 								) {
-									check = <CheckMark width={15} fill='black' />
+									check = <CheckMark width={13} fill='black' />
 								}
 							})
 						}
@@ -117,10 +126,6 @@ class ParticipantsAvatarList extends Component {
 							{ check }
 						</div>
 					)
-				} else {
-					link = (
-						<div>{`+ ${userIds.length - avatarList.length}`}</div>
-					)
 				}
 			})
 		}
@@ -130,7 +135,7 @@ class ParticipantsAvatarList extends Component {
 			participantsLink = showMoreLink
 		} else {
 			participantsLink = Routes.togetherParticipants({
-				plan_id: together && together.plan_id,
+				plan_id: plan_id || (together && together.plan_id),
 				slug: '',
 				together_id,
 				query: day ? { day } : null,
@@ -141,7 +146,12 @@ class ParticipantsAvatarList extends Component {
 			<Link to={participantsLink}>
 				<div className={`participants-list vertical-center ${customClass}`}>
 					{ avatarList }
-					{ link }
+					{
+						// if we want to show more users than is allowed, show the link
+						usersToShow &&
+						usersToShow.length > avatarList.length &&
+						<div className='green-link'>{`+ ${usersToShow.length - avatarList.length}`}</div>
+					}
 				</div>
 			</Link>
 		)
@@ -165,6 +175,7 @@ ParticipantsAvatarList.propTypes = {
 	participants: PropTypes.object.isRequired,
 	together: PropTypes.object,
 	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	plan_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	customClass: PropTypes.string,
 	showMoreLink: PropTypes.string,
 	statusFilter: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
@@ -179,6 +190,7 @@ ParticipantsAvatarList.defaultProps = {
 	showMoreLink: null,
 	auth: null,
 	together: null,
+	plan_id: null,
 	statusFilter: null,
 	avatarWidth: 36,
 	customClass: '',
