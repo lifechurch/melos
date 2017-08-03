@@ -112,8 +112,9 @@ class ParticipantsAvatarList extends Component {
 						<div
 							className='item'
 							key={participant.id}
+							// set the margin as a ratio of the width
 							style={{
-								marginRight: '10px',
+								marginRight: `${avatarWidth * 0.37}px`,
 								display: 'flex',
 								alignItems: 'flex-start'
 							}}

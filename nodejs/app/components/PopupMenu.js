@@ -46,20 +46,22 @@ class PopupMenu extends Component {
 						{ trigger }
 					</div>
 				</a>
-				{
-					show &&
-					<ClickTarget handleOutsideClick={this.onClose}>
-						<Menu
-							customClass='popup-menu'
-							header={header}
-							footer={footer}
-						>
-							<div role='presentation' onClick={this.handleToggle}>
-								{ children }
-							</div>
-						</Menu>
-					</ClickTarget>
-				}
+				<div>
+					{
+						show &&
+						<ClickTarget handleOutsideClick={this.onClose}>
+							<Menu
+								customClass='popup-menu'
+								header={header}
+								footer={footer}
+							>
+								<div role='presentation' onClick={this.handleToggle}>
+									{ children }
+								</div>
+							</Menu>
+						</ClickTarget>
+					}
+				</div>
 			</div>
 		)
 	}

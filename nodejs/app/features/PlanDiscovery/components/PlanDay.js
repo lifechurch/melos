@@ -69,7 +69,7 @@ function PlanDay(props) {
 								together_id={together_id}
 								day={day}
 								statusFilter={['accepted', 'host']}
-								avatarWidth={46}
+								avatarWidth={42}
 							/>
 						</div>
 					}

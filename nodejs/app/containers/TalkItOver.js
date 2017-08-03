@@ -251,6 +251,8 @@ class TalkItOver extends Component {
 						})
 					}
 					<CommentCreate
+						// scroll to the bottom of talk it over
+						ref={() => { if (document) { document.getElementsByClassName('plan-reader-content')[0].scrollIntoView(false) } }}
 						avatarSrc={avatarSrc}
 						avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
 						onChange={(val) => { this.setState({ comment: val }) }}

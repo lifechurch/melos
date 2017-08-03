@@ -140,17 +140,17 @@ function Plan({
 		<div className='subscription-show'>
 			<div className='plan-overview'>
 				<div className='row'>
-					<div className='header columns large-8 medium-8 medium-centered'>
+					<div className='header medium-8 centered vertical-center'>
 						<Link to={`/users/${auth.userData.username}/reading-plans`}>
 							<FormattedHTMLMessage id='plans.plans back' />
 						</Link>
-						<div className='actions'>
+						<div className='margin-left-auto vertical-center'>
+							<ShareWidget />
 							<PlanMenu
 								subscriptionLink={subscriptionLink}
 								aboutLink={aboutLink}
 								onCatchUp={handleCatchUp}
 							/>
-							<div><ShareWidget /></div>
 						</div>
 					</div>
 				</div>
