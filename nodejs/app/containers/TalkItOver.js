@@ -47,7 +47,16 @@ class TalkItOver extends Component {
 		},
 			{
 				auth: true
-			}))
+			})).then(() => {
+				// when we load first time, scroll to bottom for comment creator
+				if (page === 1) {
+					setTimeout(() => {
+						document
+							.getElementsByClassName('plan-reader-content')[0]
+							.scrollIntoView(false)
+					}, 500)
+				}
+			})
 	}
 
 	handleComment = ({ parent_id = null }) => {
@@ -251,8 +260,6 @@ class TalkItOver extends Component {
 						})
 					}
 					<CommentCreate
-						// scroll to the bottom of talk it over
-						ref={() => { if (document) { document.getElementsByClassName('plan-reader-content')[0].scrollIntoView(false) } }}
 						avatarSrc={avatarSrc}
 						avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
 						onChange={(val) => { this.setState({ comment: val }) }}

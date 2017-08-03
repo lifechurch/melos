@@ -56,7 +56,7 @@ class AvatarList extends Component {
 						}}
 					>
 						<User
-							avatarLetter={user.first_name ? user.first_name.charAt(0) : null}
+							avatarLetter={user && user.first_name ? user.first_name.charAt(0) : null}
 							src={user && user.has_avatar ? avatarSrc : null}
 							width={avatarWidth}
 							link={userLink}
