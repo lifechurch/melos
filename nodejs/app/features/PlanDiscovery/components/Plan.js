@@ -140,7 +140,7 @@ function Plan({
 		<div className='subscription-show'>
 			<div className='plan-overview'>
 				<div className='row'>
-					<div className='header medium-8 centered vertical-center'>
+					<div className='header medium-8 small-11 centered vertical-center'>
 						<Link to={`/users/${auth.userData.username}/reading-plans`}>
 							<FormattedHTMLMessage id='plans.plans back' />
 						</Link>

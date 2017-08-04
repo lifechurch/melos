@@ -51,7 +51,7 @@ class PlanReader extends Component {
 					updateStyle={updateStyle}
 				/>
 				<div className={`plan-reader-content ${customClass}`}>
-					<div className='columns large-6 medium-8 medium-centered'>
+					<div className='large-6 medium-8 small-11 centered'>
 						{ children }
 					</div>
 				</div>

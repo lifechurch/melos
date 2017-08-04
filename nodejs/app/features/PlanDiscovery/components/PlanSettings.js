@@ -140,7 +140,7 @@ class PlanSettings extends Component {
 			paddingBottom: 20,
 			borderTop: '1px solid #ddd',
 			display: 'flex',
-			flexWrap: 'wrap',
+			alignItems: 'center',
 		}
 		const switchColors = {
 			active: {
@@ -178,97 +178,43 @@ class PlanSettings extends Component {
 		}
 
 		return (
-			<div className='row' style={{ marginTop: 30 }}>
-				<div className='columns large-8 large-centered'>
-					<div style={{ padding: '20px 0 35px 0' }}>
-						<div style={{ marginBottom: '10px' }}>
-							{ dayOfString }
-							{` (${progressPercentage}%)`}
-							&nbsp;&bull;&nbsp;
-							{ progressString }
-						</div>
-						<ProgressBar
-							percentComplete={progressPercentage}
-							height='6px'
-							color='#6ab750'
-							borderColor='white'
-							backgroundColor='#F4F4F4'
-						/>
-						<div className='space-between' style={{ marginTop: '5px' }}>
-							<p>{ startString }</p>
-							<p>{ endString }</p>
-						</div>
+			<div className='row large-6 medium-8 small-11' style={{ marginTop: 30 }}>
+				<div style={{ padding: '20px 0 35px 0' }}>
+					<div style={{ marginBottom: '10px' }}>
+						{ dayOfString }
+						{` (${progressPercentage}%)`}
+						&nbsp;&bull;&nbsp;
+						{ progressString }
 					</div>
-					{
-						this.together_id &&
-						<div className='row' style={rowStyle}>
-							<div className='columns medium-8'>
-								<h3><FormattedMessage id='notifications.together title' /></h3>
-								<ParticipantsAvatarList
-									together_id={this.together_id}
-								/>
-								<p style={{ marginTop: '0.5rem' }}>
-									<FormattedMessage id='notifications.together description' />
-								</p>
-							</div>
-							<div className='columns medium-4 flex-end' style={{ margin: 'auto' }}>
-								<Toggle
-									value={activityNotificationsOn}
-									onToggle={(val) => {
-										this.handleTogetherNotifications(!val)
-									}}
-									activeLabel=''
-									inactiveLabel=''
-									colors={switchColors}
-									trackStyle={trackStyle}
-									thumbStyle={thumbStyle}
-									thumbAnimateRange={thumbAnimateRange}
-								/>
-							</div>
-						</div>
-					}
-					{
-						// privacy can't be changed with a pwf
-						!this.together_id &&
-						<div className='row' style={rowStyle}>
-							<div className='columns medium-8'>
-								<h3><FormattedMessage id='plans.privacy title' /></h3>
-								<p>
-									{
-										isPrivate
-											? <FormattedMessage id='plans.privacy description.private' />
-											: <FormattedMessage id='plans.privacy description.public' />
-									}
-								</p>
-							</div>
-							<div className='columns medium-4 flex-end' style={{ margin: 'auto' }}>
-								<Toggle
-									value={isPrivate}
-									onToggle={(val) => {
-										this.handlePrivacyChange(!val)
-									}}
-									activeLabel=''
-									inactiveLabel=''
-									colors={switchColors}
-									trackStyle={trackStyle}
-									thumbStyle={thumbStyle}
-									thumbAnimateRange={thumbAnimateRange}
-								/>
-							</div>
-						</div>
-					}
-					<div className='row' style={rowStyle}>
-						<div className='columns medium-8'>
-							<h3><FormattedMessage id='plans.email delivery' /></h3>
-							<p>
-								<FormattedMessage id='plans.email delivery text' />
+					<ProgressBar
+						percentComplete={progressPercentage}
+						height='6px'
+						color='#6ab750'
+						borderColor='white'
+						backgroundColor='#F4F4F4'
+					/>
+					<div className='space-between' style={{ marginTop: '5px' }}>
+						<p>{ startString }</p>
+						<p>{ endString }</p>
+					</div>
+				</div>
+				{
+					this.together_id &&
+					<div style={rowStyle}>
+						<div style={{ flex: 1, paddingRight: '40px' }}>
+							<h3><FormattedMessage id='notifications.together title' /></h3>
+							<ParticipantsAvatarList
+								together_id={this.together_id}
+							/>
+							<p style={{ marginTop: '0.5rem' }}>
+								<FormattedMessage id='notifications.together description' />
 							</p>
 						</div>
-						<div className='columns medium-4 flex-end' style={{ margin: 'auto' }}>
+						<div>
 							<Toggle
-								value={emailDeliveryOn}
+								value={activityNotificationsOn}
 								onToggle={(val) => {
-									this.handleEmailDeliveryChange(!val)
+									this.handleTogetherNotifications(!val)
 								}}
 								activeLabel=''
 								inactiveLabel=''
@@ -278,44 +224,94 @@ class PlanSettings extends Component {
 								thumbAnimateRange={thumbAnimateRange}
 							/>
 						</div>
-						{
-							emailDeliveryOn &&
-							<div className='vertical-center' style={{ marginTop: '20px', paddingLeft: '40px' }}>
-								<TimePicker
-									showSecond={false}
-									defaultValue={emailTime}
-									onChange={(value) => {
-										this.setState({ emailTime: value })
-										this.handleEmailDeliveryChange(true)
-									}}
-									use12Hours={true}
-								/>
-							</div>
-						}
+					</div>
+				}
+				{
+					// privacy can't be changed with a pwf
+					!this.together_id &&
+					<div style={rowStyle}>
+						<div style={{ flex: 1, paddingRight: '40px' }}>
+							<h3><FormattedMessage id='plans.privacy title' /></h3>
+							<p>
+								{
+									isPrivate
+										? <FormattedMessage id='plans.privacy description.private' />
+										: <FormattedMessage id='plans.privacy description.public' />
+								}
+							</p>
+						</div>
+						<div>
+							<Toggle
+								value={isPrivate}
+								onToggle={(val) => {
+									this.handlePrivacyChange(!val)
+								}}
+								activeLabel=''
+								inactiveLabel=''
+								colors={switchColors}
+								trackStyle={trackStyle}
+								thumbStyle={thumbStyle}
+								thumbAnimateRange={thumbAnimateRange}
+							/>
+						</div>
+					</div>
+				}
+				<div style={rowStyle}>
+					<div style={{ flex: 1, paddingRight: '40px' }}>
+						<h3><FormattedMessage id='plans.email delivery' /></h3>
+						<p>
+							<FormattedMessage id='plans.email delivery text' />
+						</p>
+					</div>
+					<div>
+						<Toggle
+							value={emailDeliveryOn}
+							onToggle={(val) => {
+								this.handleEmailDeliveryChange(!val)
+							}}
+							activeLabel=''
+							inactiveLabel=''
+							colors={switchColors}
+							trackStyle={trackStyle}
+							thumbStyle={thumbStyle}
+							thumbAnimateRange={thumbAnimateRange}
+						/>
 					</div>
 					{
-						// can't catch up on a pwf
-						!this.together_id &&
-						<div className='row' style={rowStyle}>
-							<div className='columns medium-8'>
-								<h3><FormattedMessage id='plans.are you behind' /></h3>
-								<p>
-									<FormattedMessage id='plans.catch up description only' />
-								</p>
-							</div>
-							<div className='columns medium-4 flex-end' style={{ margin: 'auto' }}>
-								<button className='solid-button green' onClick={this.handleCatchUp}>
-									<FormattedMessage id='plans.catch me up' />
-								</button>
-							</div>
+						emailDeliveryOn &&
+						<div className='vertical-center' style={{ marginTop: '20px', paddingLeft: '40px' }}>
+							<TimePicker
+								showSecond={false}
+								defaultValue={emailTime}
+								onChange={(value) => {
+									this.setState({ emailTime: value })
+									this.handleEmailDeliveryChange(true)
+								}}
+								use12Hours={true}
+							/>
 						</div>
 					}
-					<div className='row' style={rowStyle}>
-						<div className='columns small-12'>
-							<a tabIndex={0} onClick={this.handleStop} className='warning-text'>
-								<FormattedMessage id='plans.stop reading' />
-							</a>
+				</div>
+				{
+					// can't catch up on a pwf
+					!this.together_id &&
+					<div style={rowStyle}>
+						<div style={{ flex: 1, paddingRight: '40px' }}>
+							<h3><FormattedMessage id='plans.are you behind' /></h3>
+							<p>
+								<FormattedMessage id='plans.catch up description only' />
+							</p>
 						</div>
+						<button className='solid-button green' onClick={this.handleCatchUp}>
+							<FormattedMessage id='plans.catch me up' />
+						</button>
+					</div>
+				}
+				<div style={rowStyle}>
+					<div style={{ flex: 1, paddingRight: '40px' }}>
+						<a tabIndex={0} onClick={this.handleStop} className='warning-text'>
+							<FormattedMessage id='plans.stop reading' />
+						</a>
 					</div>
 				</div>
 			</div>
@@ -324,12 +320,10 @@ class PlanSettings extends Component {
 }
 
 PlanSettings.propTypes = {
-	id: PropTypes.number.isRequired,
+	subscription: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	onCatchUp: PropTypes.func.isRequired,
-	serverLanguageTag: PropTypes.string.isRequired,
 	auth: PropTypes.object.isRequired,
-	params: PropTypes.object.isRequired
 }
 
 PlanSettings.defaultProps = {
