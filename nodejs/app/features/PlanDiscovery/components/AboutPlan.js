@@ -42,7 +42,7 @@ class AboutPlan extends Component {
 		if (recommended) {
 			relatedCarousel = (
 				<div className='row collapse'>
-					<CarouselStandard carouselContent={recommended} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
+					<CarouselStandard carouselContent={recommended} context='recommended' imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
 				</div>
 			)
 		}
@@ -90,7 +90,7 @@ class AboutPlan extends Component {
 
 		const selectedImage = imageUtil(360, 640, false, 'about_plan', readingPlan, false)
 		const url = `https://www.bible.com/reading-plans/${readingPlan.id}-${readingPlan.slug}`
-		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
+		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id='plans.sample' /></Link>
 
 		return (
 			<div className='row collapse about-plan horizontal-center'>
@@ -112,7 +112,7 @@ class AboutPlan extends Component {
 						{ name: 'og:image:height', content: selectedImage.height }
 					]}
 				/>
-				<div className='columns large-8 medium-8'>
+				<div className='large-8 medium-8 small-11'>
 					<div className='reading_plan_index_header'>
 						<Link className='plans' to={localizedLink('/reading-plans')}>&larr;<FormattedMessage id='plans.plans' /></Link>
 						<div className='right'>
@@ -121,7 +121,7 @@ class AboutPlan extends Component {
 					</div>
 					<article className='reading_plan_index'>
 						<div className='plan-image'>
-							<Image className="rp-hero-img" width={720} height={400} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
+							<Image className='rp-hero-img' width={720} height={400} thumbnail={false} imageId='false' type='about_plan' config={readingPlan} />
 						</div>
 						<div className='row collapse'>
 							<div className='columns large-8 medium-8'>
@@ -151,7 +151,7 @@ class AboutPlan extends Component {
 								</div>
 							</div>
 						</div>
-						<hr className="hide-for-small" />
+						<hr className='hide-for-small' />
 						{ relatedCarousel }
 					</article>
 				</div>

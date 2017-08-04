@@ -36,33 +36,37 @@ class SubscriptionList extends Component {
 	}
 
 	getSubs = ({ page = null }) => {
-		const { dispatch, auth } = this.props
+		const { dispatch, auth, subscriptions, readingPlans } = this.props
 		dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						dispatch(planView({
-							plan_id: sub.plan_id,
-							together_id: sub.together_id,
-							auth,
-						}))
-						// get progress for progress bar
-						customGet({
-							actionName: 'progress',
-							pathvars: {
-								id,
-								page: '*',
-								fields: 'days,overall'
-							},
-							params: {
-								auth: true,
-							},
-							dispatch,
-							actions: plansAPI.actions,
-							auth,
-						})
+						if (!(sub.plan_id in readingPlans.byId)) {
+							dispatch(planView({
+								plan_id: sub.plan_id,
+								together_id: sub.together_id,
+								auth,
+							}))
+						}
+						if (!(id in subscriptions.byId && 'overall' in subscriptions.byId[id])) {
+							// get progress for progress bar
+							customGet({
+								actionName: 'progress',
+								pathvars: {
+									id,
+									page: '*',
+									fields: 'days,overall'
+								},
+								params: {
+									auth: true,
+								},
+								dispatch,
+								actions: plansAPI.actions,
+								auth,
+							})
+						}
 					})
 				}
 			}
@@ -70,18 +74,20 @@ class SubscriptionList extends Component {
 	}
 
 	getInvitations = () => {
-		const { dispatch, auth } = this.props
+		const { dispatch, auth, readingPlans } = this.props
 		dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						dispatch(planView({
-							plan_id: sub.plan_id,
-							together_id: id,
-							auth,
-						}))
+						if (!(sub.plan_id in readingPlans.byId)) {
+							dispatch(planView({
+								plan_id: sub.plan_id,
+								together_id: sub.together_id,
+								auth,
+							}))
+						}
 					})
 				}
 			}

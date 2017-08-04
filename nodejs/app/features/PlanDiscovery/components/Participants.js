@@ -53,7 +53,7 @@ function Participants({ planImg, users }) {
 						/>
 					</div>
 					<div className='users'>
-						<CustomScroll>
+						<CustomScroll allowOuterScroll>
 							{
 								!users ?
 									<div>Loading...</div> :
