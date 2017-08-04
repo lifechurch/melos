@@ -31,14 +31,7 @@ export function isFinalPlanDay(day, progressDays) {
 	if (!day || !progressDays) return false
 
 	const dayNum = parseInt(day, 10)
-	const planDay = progressDays[dayNum - 1]
 	const totalDays = parseInt(progressDays.length, 10)
-
-	// if the day we're on is already completed, and the plan isn't completed yet
-	// then this isn't the last uncompleted day in the plan
-	if (planDay.complete) {
-		return false
-	}
 
 	// start at the end of the progressDays and check for an uncomplete day that's not
 	// the current one

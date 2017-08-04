@@ -15,7 +15,7 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 // selectors
 // utils
-import { calcCurrentPlanDay, isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
+import { calcCurrentPlanDay, isDayComplete, isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
 // components
@@ -29,6 +29,7 @@ class Plan extends Component {
 			if (
 				!(
 					subscription
+					&& plan
 					&& Immutable.fromJS(subscription).getIn(['days'], false)
 					&& Immutable.fromJS(plan).getIn(['days'], false)
 				)
@@ -99,6 +100,11 @@ class Plan extends Component {
 	OnContentCheck = ({ contentIndex, complete }) => {
 		const { params: { subscription_id, id }, dispatch, auth } = this.props
 
+		const isFinalDay = isFinalPlanDay(this.currentDay, this.progressDays)
+		const isPlanComplete = complete
+			&& isFinalDay
+			&& isFinalSegmentToComplete(contentIndex, this.dayProgress.partial)
+
 		dispatch(subscriptionDayUpdate({
 			contentIndex,
 			complete,
@@ -106,25 +112,29 @@ class Plan extends Component {
 			dayProgress: this.dayProgress,
 			subscription_id,
 			day: this.currentDay,
-		}))
-
-		if (isFinalSegmentToComplete(contentIndex, this.dayProgress.partial)) {
-			if (isFinalPlanDay(this.currentDay, this.progressDays)) {
-				dispatch(routeActions.push(Routes.subscriptionComplete({
-					username: auth.userData.username,
-					plan_id: id.split('-')[0],
-					slug: id.split('-')[1],
-				})))
-			} else {
-				dispatch(routeActions.push(Routes.subscriptionDayComplete({
-					username: auth.userData.username,
-					plan_id: id.split('-')[0],
-					slug: id.split('-')[1],
-					subscription_id,
-					day: this.currentDay,
-				})))
+			isPlanComplete,
+		})).then(() => {
+			// either we're completing a day or just completed the plan and deleted it from
+			// state
+			if (isPlanComplete || (this.dayProgress.complete)) {
+				if (isPlanComplete) {
+					dispatch(routeActions.push(Routes.subscriptionComplete({
+						username: auth.userData.username,
+						plan_id: id.split('-')[0],
+						slug: id.split('-')[1],
+					})))
+				} else {
+					dispatch(routeActions.push(Routes.subscriptionDayComplete({
+						username: auth.userData.username,
+						plan_id: id.split('-')[0],
+						slug: id.split('-')[1],
+						subscription_id,
+						day: this.currentDay,
+					})))
+				}
 			}
-		}
+		})
+
 	}
 
 	render() {
@@ -226,12 +236,12 @@ function mapStateToProps(state, props) {
 	const plan_id = id.split('-')[0]
 	console.log('SUB', getSubscriptionModel(state));
 	return {
-		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId ?
-					getPlansModel(state).byId[plan_id] :
-					null,
-		subscription: getSubscriptionModel(state) && subscription_id in getSubscriptionModel(state).byId ?
-									getSubscriptionModel(state).byId[subscription_id] :
-									null,
+		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId
+			? getPlansModel(state).byId[plan_id]
+			: null,
+		subscription: getSubscriptionModel(state) && subscription_id in getSubscriptionModel(state).byId
+			? getSubscriptionModel(state).byId[subscription_id]
+			: null,
 		bible: getBibleModel(state),
 		savedPlans: state.readingPlans && state.readingPlans.savedPlans ? state.readingPlans.savedPlans : null,
 		auth: state.auth,

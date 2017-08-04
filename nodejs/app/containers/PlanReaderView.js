@@ -81,13 +81,16 @@ class PlanReaderView extends Component {
 	onComplete = () => {
 		const { params: { day, subscription_id }, dispatch } = this.props
 
+		const isPlanComplete = this.isFinalSegmentToComplete && this.isFinalPlanDay
+
 		dispatch(subscriptionDayUpdate({
 			contentIndex: this.contentNum,
 			complete: true,
 			daySegments: this.daySegments,
 			dayProgress: this.dayProgress,
 			subscription_id,
-			day
+			day,
+			isPlanComplete,
 		}))
 	}
 
