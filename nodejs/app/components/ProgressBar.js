@@ -17,7 +17,14 @@ class ProgressBar extends Component {
 			this.setState({
 				percentComplete,
 			})
-		}, 600)
+		}, 500)
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { percentComplete } = this.state
+		if (nextProps.percentComplete !== percentComplete) {
+			this.setState({ percentComplete: nextProps.percentComplete })
+		}
 	}
 
 	render() {

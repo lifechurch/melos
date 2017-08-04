@@ -3,23 +3,23 @@ import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
 import moment from 'moment'
+import { routeActions } from 'react-router-redux'
 import Toggle from 'react-toggle-button'
 import TimePicker from 'rc-time-picker'
-import { routeActions } from 'react-router-redux'
-import plansAPI, { getSettings } from '@youversion/api-redux/lib/endpoints/plans'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import ProgressBar from '../../../components/ProgressBar'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
-import ActionCreators from '../actions/creators'
 import { getBibleVersionFromStorage } from '../../../lib/readerUtils'
 import Routes from '../../../lib/routes'
+
 
 
 class PlanSettings extends Component {
 
 	constructor(props) {
 		super(props)
-		const { subscription, together_id } = props
+		const { subscription } = props
 		this.state = {
 			emailTime: subscription.email_delivery
 				? moment()
@@ -32,19 +32,11 @@ class PlanSettings extends Component {
 	}
 
 	componentDidMount() {
-		const { subSettings, subscription_id, subscription, dispatch } = this.props
+		const { subSettings, subscription, dispatch } = this.props
 		dispatch(plansAPI.actions.settings.get({
-			id: subscription_id,
+			id: this.subscription_id,
 			kind: 'activity_notifications'
 		}, { auth: true }))
-	}
-
-	handleReloadCalendar = () => {
-		const { dispatch, id, params, serverLanguageTag, auth: { userData: { userid } } } = this.props
-		const language_tag = serverLanguageTag || params.lang || 'en'
-		return dispatch(ActionCreators.calendar({ id, language_tag, user_id: userid })).then(() => {
-			this.handleSelectPlan()
-		})
 	}
 
 	handlePrivacyChange = (isPrivate) => {
@@ -62,9 +54,9 @@ class PlanSettings extends Component {
 	}
 
 	handleTogetherNotifications = (notificationsOn) => {
-		const { subscription, subscription_id, dispatch } = this.props
+		const { subscription, dispatch } = this.props
 		dispatch(plansAPI.actions.settings.put({
-			id: subscription_id,
+			id: this.subscription_id,
 			kind: 'activity_notifications',
 		}, {
 			auth: true,
@@ -78,10 +70,10 @@ class PlanSettings extends Component {
 	}
 
 	handleEmailDeliveryChange = (emailDeliveryOn) => {
-		const { dispatch, subscription_id } = this.props
+		const { dispatch } = this.props
 		const { emailTime } = this.state
 		dispatch(plansAPI.actions.subscription.put({
-			id: subscription_id,
+			id: this.subscription_id,
 		}, {
 			body: {
 				email_delivery: emailDeliveryOn
@@ -103,30 +95,30 @@ class PlanSettings extends Component {
 	}
 
 	handleStop = () => {
-		const { dispatch, auth, subscription_id } = this.props
-		dispatch(plansAPI.actions.subscription.delete({
-			id: subscription_id
-		}, {
-			auth: auth.isLoggedIn
-		})).then((data) => {
-			if (
-				data.data &&
-				data.data.status &&
-				data.data.status === 403
-			) {
-				this.setState({ showError: true })
-			} else {
+		const { dispatch, auth } = this.props
+		if (this.together_id) {
+			dispatch(plansAPI.actions.participant.delete({
+				id: this.subscription_id,
+				userid: auth && auth.userData && auth.userData.userid
+			}, {
+				auth: auth.isLoggedIn
+			}))
+		} else {
+			dispatch(plansAPI.actions.subscription.delete({
+				id: this.subscription_id
+			}, {
+				auth: auth.isLoggedIn
+			})).then(() => {
 				dispatch(routeActions.push(Routes.subscriptions({
 					username: auth.userData.username
 				})))
-			}
-		})
+			})
+		}
 	}
 
 
 	render() {
 		const {
-			together_id,
 			dayOfString,
 			startString,
 			endString,
@@ -135,6 +127,13 @@ class PlanSettings extends Component {
 		const {
 			emailTime,
 		} = this.state
+
+		this.together_id = subscription && subscription.together_id
+			? subscription.together_id
+			: null
+		this.subscription_id = subscription && subscription.id
+			? subscription.id
+			: null
 
 		const rowStyle = {
 			paddingTop: 20,
@@ -169,7 +168,7 @@ class PlanSettings extends Component {
 		if (subscription) {
 			isPrivate = subscription.privacy === 'private'
 			emailDeliveryOn = !!(subscription.email_delivery)
-			activityNotificationsOn = together_id
+			activityNotificationsOn = this.together_id
 				&& subscription.settings
 				&& subscription.settings.activity_notifications.email
 			if (subscription.overall) {
@@ -201,12 +200,12 @@ class PlanSettings extends Component {
 						</div>
 					</div>
 					{
-						together_id &&
+						this.together_id &&
 						<div className='row' style={rowStyle}>
 							<div className='columns medium-8'>
 								<h3><FormattedMessage id='notifications.together title' /></h3>
 								<ParticipantsAvatarList
-									together_id={together_id}
+									together_id={this.together_id}
 								/>
 								<p style={{ marginTop: '0.5rem' }}>
 									<FormattedMessage id='notifications.together description' />
@@ -230,7 +229,7 @@ class PlanSettings extends Component {
 					}
 					{
 						// privacy can't be changed with a pwf
-						!together_id &&
+						!this.together_id &&
 						<div className='row' style={rowStyle}>
 							<div className='columns medium-8'>
 								<h3><FormattedMessage id='plans.privacy title' /></h3>
@@ -296,7 +295,7 @@ class PlanSettings extends Component {
 					</div>
 					{
 						// can't catch up on a pwf
-						!together_id &&
+						!this.together_id &&
 						<div className='row' style={rowStyle}>
 							<div className='columns medium-8'>
 								<h3><FormattedMessage id='plans.are you behind' /></h3>
@@ -324,19 +323,6 @@ class PlanSettings extends Component {
 	}
 }
 
-
-function mapStateToProps(state, props) {
-	const { subscription_id } = props
-	console.log(getSubscriptionModel(state))
-	return {
-		subSettings: getSettings(state),
-		subscription: getSubscriptionModel(state) &&
-			subscription_id in getSubscriptionModel(state).byId
-			? getSubscriptionModel(state).byId[subscription_id]
-			: null,
-	}
-}
-
 PlanSettings.propTypes = {
 	id: PropTypes.number.isRequired,
 	dispatch: PropTypes.func.isRequired,
@@ -350,4 +336,4 @@ PlanSettings.defaultProps = {
 
 }
 
-export default connect(mapStateToProps, null)(PlanSettings)
+export default PlanSettings
