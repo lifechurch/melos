@@ -178,8 +178,8 @@ class BibleContent extends Component {
 			? bible.pullRef(usfm, versionID)
 			: null
 		this.version_id = versionID || getBibleVersionFromStorage()
-		this.version = bible && Immutable.fromJS(bible).hasIn(['versions', this.version_id, 'response'])
-			? Immutable.fromJS(bible).getIn(['versions', this.version_id, 'response']).toJS()
+		this.version = bible && Immutable.fromJS(bible).hasIn(['versions', `${this.version_id}`, 'response'])
+			? Immutable.fromJS(bible).getIn(['versions', `${this.version_id}`, 'response']).toJS()
 			: null
 		const hasAudio = audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm)])
 
