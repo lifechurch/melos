@@ -112,8 +112,14 @@ class BibleContent extends Component {
 		const { hosts, moments } = this.props
 
 		if (verses) {
-			const { title, usfm } = getReferencesTitle({ bookList: this.version.books, usfmList: verses })
-			const { html, text } = parseVerseFromContent({ usfms: verses, fullContent: this.ref.content })
+			const { title, usfm } = getReferencesTitle({
+				bookList: this.version ? this.version.books : null,
+				usfmList: verses
+			})
+			const { html, text } = parseVerseFromContent({
+				usfms: verses,
+				fullContent: this.ref ? this.ref.content : null
+			})
 			const refUrl = `${hosts.railsHost}/bible/${this.version_id}/${usfm}`
 
 			// get the verses that are both selected and already have a highlight
