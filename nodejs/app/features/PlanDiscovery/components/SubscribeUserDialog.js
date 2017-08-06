@@ -64,33 +64,33 @@ class SubscribeUserDialog extends Component {
 				footer={footer}
 			>
 				<ul>
-					<li className='vertical-center'>
-						<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'public')}>
+					<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'public')}>
+						<li className='vertical-center'>
 							<div className='option'>
 								<div className='action-title'>By Myself</div>
 								<div className='action-description'>Plan Activity is visible by Friends.</div>
 							</div>
-						</a>
-						<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
-					</li>
-					<li className='vertical-center'>
-						<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'private')}>
+							<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
+						</li>
+					</a>
+					<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'private')}>
+						<li className='vertical-center'>
 							<div className='option'>
 								<div className='action-title'>Private</div>
 								<div className='action-description'>Plan Activity is hidden by Friends.</div>
 							</div>
-						</a>
-						<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
-					</li>
-					<li className='vertical-center'>
-						<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'together')}>
+							<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
+						</li>
+					</a>
+					<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'together')}>
+						<li className='vertical-center'>
 							<div className='option'>
 								<div className='action-title'>With Friends</div>
 								<div className='action-description'>Invite some peeps yall.</div>
 							</div>
-						</a>
-						<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
-					</li>
+							<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
+						</li>
+					</a>
 				</ul>
 			</Menu>
 		)

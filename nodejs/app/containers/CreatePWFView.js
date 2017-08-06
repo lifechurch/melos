@@ -57,13 +57,13 @@ class CreatePWFView extends Component {
 	render() {
 		const { plan } = this.props
 
-		const src = plan && plan.images ?
-									selectImageFromList({
-										images: plan.images,
-										width: 720,
-										height: 405
-									}).url :
-									null
+		const src = plan && plan.images
+			? selectImageFromList({
+				images: plan.images,
+				width: 720,
+				height: 405
+			}).url
+			: null
 
 		return (
 			<CreatePWF

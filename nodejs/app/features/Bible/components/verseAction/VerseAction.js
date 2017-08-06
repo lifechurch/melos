@@ -89,8 +89,8 @@ class VerseAction extends Component {
 	}
 
 	handleHighlight(color) {
-		const { selection: { usfm, version }, dispatch, auth } = this.props
-		const references = [{ usfm, version_id: version }]
+		const { selection: { verses, version }, dispatch, auth } = this.props
+		const references = [{ usfm: verses, version_id: version }]
 
 		// tell the moment create what kind of message to display for having a user
 		// log in, if they aren't already
@@ -111,7 +111,7 @@ class VerseAction extends Component {
 				dispatch(momentsAction({
 					method: 'verse_colors',
 					params: {
-						usfm: chapterifyUsfm(usfm[0]),
+						usfm: chapterifyUsfm(verses[0]),
 						version_id: version
 					},
 					auth: true,
@@ -122,11 +122,11 @@ class VerseAction extends Component {
 	}
 
 	deleteColor = (color) => {
-		const { selection: { usfm, version }, dispatch, verseColors } = this.props
+		const { selection: { verses, version }, dispatch, verseColors } = this.props
 		const versesToDelete = []
 		// don't delete colors from every verse selected,
 		// only the verses that match the color x that was clicked
-		usfm.forEach((selectedVerse) => {
+		verses.forEach((selectedVerse) => {
 			verseColors.forEach((colorVerse) => {
 				if (selectedVerse === colorVerse[0] && colorVerse[1] === color) {
 					versesToDelete.push(selectedVerse)
@@ -141,7 +141,7 @@ class VerseAction extends Component {
 			dispatch(momentsAction({
 				method: 'verse_colors',
 				params: {
-					usfm: chapterifyUsfm(usfm[0]),
+					usfm: chapterifyUsfm(verses[0]),
 					version_id: version
 				},
 				auth: true,

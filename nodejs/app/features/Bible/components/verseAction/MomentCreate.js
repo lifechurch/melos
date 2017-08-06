@@ -111,9 +111,7 @@ class MomentCreate extends Component {
 		const { addedLabels, content, user_status, selectedColor } = this.state
 
 		const refs = (Array.isArray(references) && references.length > 0)
-			? references.map((ref) => {
-				return { usfm: [ref], version_id }
-			})
+			? [{ usfm: references, version_id }]
 			: []
 
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {

@@ -94,18 +94,6 @@ class InvitePWF extends Component {
 		}
 	}
 
-	handleListToggle = (view) => {
-		// const { showCircleView } = this.state
-		//
-		// const updateCircleView = (view.value === 'circle')
-		// // don't bother updating state if we're showing the same thing
-		// if (showCircleView !== (updateCircleView)) {
-		// 	this.setState({
-		// 		showCircleView: updateCircleView,
-		// 	})
-		// }
-	}
-
 	renderUser = (friend) => {
 		const { selectedFriends } = this.state
 		const img = selectImageFromList({ images: friend.avatar.renditions, width: 50 })
@@ -133,7 +121,7 @@ class InvitePWF extends Component {
 
 	render() {
 		const { search, friends, shareLink } = this.props
-		const { query, showSearchResults, selectedFriends } = this.state
+		const { showSearchResults, selectedFriends } = this.state
 
 		const selectedUsers = selectedFriends.toJS()
 
@@ -174,31 +162,25 @@ class InvitePWF extends Component {
 		return (
 			<div className='pwf-flow pwf-invite'>
 				<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
-					<div className='row'>
+					<div className='row vertical-center'>
 						<Link
-							className='plans vertical-center columns medium-4'
+							className='plans vertical-center'
 							to={backLink}
 						>
 							&larr;
 						</Link>
-						<h4 className='text-center columns medium-4'>Invite Friends</h4>
-						<div className='columns medium-4 text-right green'>
+						<h4 className='text-center' style={{ flex: 1 }}>Invite Friends</h4>
+						<a
+							tabIndex={0}
+							className='text-right green'
+							onClick={this.handleInvite}
+						>
 							<FormattedMessage id='next' />
-						</div>
+						</a>
 					</div>
 				</div>
 				<div className='gray-background content' style={{ minHeight: '450px' }}>
 					<div className='columns medium-5 small-12 small-centered '>
-						{/* <div className='horizontal-center' style={{ marginBottom: '20px' }}>
-							<ButtonBar
-								items={[
-									{ value: 'circle', label: <BubblesIcon /> },
-									{ value: 'list', label: <ListIcon /> },
-								]}
-								initialValue='list'
-								onClick={this.handleListToggle}
-							/>
-						</div> */}
 						<div className='horizontal-center vertical-center'>
 							<div className='selected-number'>{ selectedUsers.length }</div>
 							Selected
@@ -222,7 +204,8 @@ class InvitePWF extends Component {
 										!friends ?
 											<div>Loading...</div> :
 											<div
-												className='friend-list' style={{
+												className='friend-list'
+												style={{
 													minHeight: '350px',
 													maxHeight: '350px'
 												}}
@@ -262,7 +245,7 @@ class InvitePWF extends Component {
 						onClick={this.handleInvite}
 						style={{ marginBottom: 0 }}
 					>
-						<FormattedMessage id='continue' />
+						<FormattedMessage id='next' />
 					</a>
 				</Footer>
 			</div>

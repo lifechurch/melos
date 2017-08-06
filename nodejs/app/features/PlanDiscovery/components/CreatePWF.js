@@ -58,17 +58,21 @@ class CreatePWF extends Component {
 		return (
 			<div className='pwf-flow pwf-create'>
 				<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
-					<div className='row'>
+					<div className='row vertical-center'>
 						<Link
-							className='plans vertical-center columns medium-4'
+							className='plans vertical-center'
 							to={backPath}
 						>
 							&larr;
 						</Link>
-						<h4 className='text-center columns medium-4'>Select Start Date</h4>
-						<div className='columns medium-4 text-right green'>
+						<h4 className='text-center' style={{ flex: 1 }}>Select Start Date</h4>
+						<a
+							tabIndex={0}
+							className='text-right green'
+							onClick={this.handleCreateSubscription}
+						>
 							<FormattedMessage id='next' />
-						</div>
+						</a>
 					</div>
 				</div>
 				<div className='gray-background content text-center'>
@@ -95,7 +99,7 @@ class CreatePWF extends Component {
 						onClick={this.handleCreateSubscription}
 						style={{ marginBottom: 0 }}
 					>
-						<FormattedMessage id='continue' />
+						<FormattedMessage id='next' />
 					</a>
 				</Footer>
 			</div>
