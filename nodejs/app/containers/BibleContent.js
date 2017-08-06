@@ -164,6 +164,7 @@ class BibleContent extends Component {
 			showContent,
 			showGetChapter,
 			showAudio,
+			showCopyright,
 			showVerseAction,
 			showChapterPicker,
 			showVersionPicker,
@@ -184,66 +185,59 @@ class BibleContent extends Component {
 		const hasAudio = audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm)])
 
 		return (
-			<div>
-				<div className='plan-ref'>
-					<div className='plan-reader-heading'>
-						<AudioPopup
-							audio={hasAudio ? Immutable.fromJS(audio).getIn(['chapter', chapterifyUsfm(usfm)]).toJS() : null}
-							hosts={hosts}
-							enabled={hasAudio}
-							// onAudioComplete={onAudioComplete}
-							// // if we're not rendering the entire chapter, the audio should start
-							// // at the verse start, otherwise, it starts at the beginning of the chapter
-							// startTime={showChapterButton ? audioStart : 0}
-							// stopTime={showChapterButton ? audioStop : null}
-							// playing={audioPlaying}
-						/>
-					</div>
-					{
-						showContent &&
-						<Chapter
-							content={this.ref ? this.ref.content : null}
-							verseColors={moments ? moments.verseColors : null}
-							onSelect={this.handleVerseSelect}
-							// textDirection={textDirection}
-							ref={(chapter) => { this.chapterInstance = chapter }}
-						/>
-					}
-					{
-						this.version &&
-						'id' in this.version &&
-						<ChapterCopyright {...buildCopyright(intl.formatMessage, this.version)} />
-					}
-					{
-						showGetChapter &&
-						usfm &&
-						isVerseOrChapter(usfm.split('+')[0]).isVerse &&
-						<div className='buttons'>
-							<button
-								className='chapter-button solid-button'
-								onClick={() => {
-									this.getReference(chapterifyUsfm(usfm))
-								}}
-							>
-								<FormattedMessage id='Reader.read chapter' />
-							</button>
-						</div>
-					}
-					<VerseAction
-						// props
-						version={this.version}
-						verseColors={moments ? moments.verseColors : null}
-						// isRtl={isRtl}
-						highlightColors={moments ? moments.colors : null}
-						momentsLabels={moments ? moments.labels : null}
-						auth={auth}
-						dispatch={dispatch}
-						// state
-						selection={verseSelection}
-						deletableColors={deletableColors}
-						onClose={this.handleVerseClear}
+			<div className='bible-content'>
+				<div className='plan-reader-heading'>
+					<AudioPopup
+						audio={hasAudio ? Immutable.fromJS(audio).getIn(['chapter', chapterifyUsfm(usfm)]).toJS() : null}
+						hosts={hosts}
+						enabled={hasAudio}
 					/>
 				</div>
+				{
+					showContent &&
+					<Chapter
+						content={this.ref ? this.ref.content : null}
+						verseColors={moments ? moments.verseColors : null}
+						onSelect={this.handleVerseSelect}
+						// textDirection={textDirection}
+						ref={(chapter) => { this.chapterInstance = chapter }}
+					/>
+				}
+				{
+					showCopyright &&
+					this.version &&
+					'id' in this.version &&
+					<ChapterCopyright {...buildCopyright(intl.formatMessage, this.version)} />
+				}
+				{
+					showGetChapter &&
+					usfm &&
+					isVerseOrChapter(usfm.split('+')[0]).isVerse &&
+					<div className='buttons'>
+						<button
+							className='chapter-button solid-button'
+							onClick={() => {
+								this.getReference(chapterifyUsfm(usfm))
+							}}
+						>
+							<FormattedMessage id='Reader.read chapter' />
+						</button>
+					</div>
+				}
+				<VerseAction
+						// props
+					version={this.version}
+					verseColors={moments ? moments.verseColors : null}
+						// isRtl={isRtl}
+					highlightColors={moments ? moments.colors : null}
+					momentsLabels={moments ? moments.labels : null}
+					auth={auth}
+					dispatch={dispatch}
+						// state
+					selection={verseSelection}
+					deletableColors={deletableColors}
+					onClose={this.handleVerseClear}
+				/>
 			</div>
 		)
 	}
@@ -251,6 +245,7 @@ class BibleContent extends Component {
 
 BibleContent.propTypes = {
 	showContent: PropTypes.bool,
+	showCopyright: PropTypes.bool,
 	showGetChapter: PropTypes.bool,
 	showAudio: PropTypes.bool,
 	showVerseAction: PropTypes.bool,
@@ -260,6 +255,7 @@ BibleContent.propTypes = {
 
 BibleContent.defaultProps = {
 	showContent: true,
+	showCopyright: true,
 	showGetChapter: true,
 	showAudio: true,
 	showVerseAction: true,

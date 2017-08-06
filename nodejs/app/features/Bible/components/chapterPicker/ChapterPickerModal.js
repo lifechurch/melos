@@ -22,7 +22,8 @@ function ChapterPickerModal(props) {
 		versionAbbr,
 		linkBuilder,
 		params,
-		localizedLink
+		localizedLink,
+		onRefSelect
 	} = props
 
 	let books, chapters = null
@@ -109,6 +110,7 @@ function ChapterPickerModal(props) {
 						alert={alert}
 						versionID={versionID}
 						versionAbbr={versionAbbr}
+						onRefSelect={onRefSelect}
 					/>
 				</CustomScroll>
 			</div>
@@ -164,7 +166,8 @@ ChapterPickerModal.propTypes = {
 	onCancel: PropTypes.func,
 	versionAbbr: PropTypes.string,
 	params: PropTypes.object,
-	localizedLink: PropTypes.func
+	localizedLink: PropTypes.func,
+	onRefSelect: PropTypes.func
 }
 
 ChapterPickerModal.defaultProps = {
@@ -183,7 +186,8 @@ ChapterPickerModal.defaultProps = {
 	onCancel: null,
 	versionAbbr: null,
 	params: null,
-	localizedLink: null
+	localizedLink: null,
+	onRefSelect: null
 }
 
 export default ChapterPickerModal

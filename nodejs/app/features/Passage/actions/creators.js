@@ -1,3 +1,6 @@
+import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
+import { chapterifyUsfm } from '../../../lib/readerUtils'
+
 import type from './constants'
 
 const ActionCreators = {
@@ -65,6 +68,20 @@ const ActionCreators = {
 						dispatch(ActionCreators.bibleVerses({ ids: cleanedVersions, references: versesArray }, { passage }))
 					)
 				}
+
+
+
+
+// try getting chapters to see if we can pull the text out
+				// versions.forEach((id) => {
+				// 	dispatch(bibleAction({
+				// 		method: 'chapter',
+				// 		params: {
+				// 			id,
+				// 			reference: chapterifyUsfm(passage),
+				// 		},
+				// 	}))
+				// })
 
 				Promise.all(promises).then(() => {
 					resolve()

@@ -19,7 +19,8 @@ import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
 import PlusButton from '../../../components/PlusButton'
 import XMark from '../../../components/XMark'
-import { deepLinkPath, buildMeta, buildCopyright } from '../../../lib/readerUtils'
+import { deepLinkPath, buildMeta, buildCopyright, getBibleVersionFromStorage, chapterifyUsfm, isVerseOrChapter, parseVerseFromContent } from '../../../lib/readerUtils'
+import { getReferencesTitle } from '../../../lib/usfmUtils'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
@@ -174,51 +175,43 @@ class Bible extends Component {
 		})
 	}
 
-// TODO: use readerUtils for this
-	handleVerseSelect = (verseSelection) => {
-		const { hosts, bible: { version: { id, local_abbreviation }, chapter: { reference: { human, usfm } }, verseColors }, dispatch } = this.props
-		const refUrl = `${hosts.railsHost}/bible/${id}/${usfm}.${verseSelection.human}`
+	handleVerseSelect = ({ verses }) => {
+		const { hosts, bible: { verseColors, chapter, books } } = this.props
+		const { selectedVersion } = this.state
 
-		// get the verses that are both selected and already have a highlight
-		// color associated with them, so we can allow the user to delete them
-		const deletableColors = []
-		verseSelection.verses.forEach((selectedVerse) => {
-			verseColors.forEach((colorVerse) => {
-				if (selectedVerse === colorVerse[0]) {
-					deletableColors.push(colorVerse[1])
+		if (verses) {
+			const { title, usfm } = getReferencesTitle({
+				bookList: books.all,
+				usfmList: verses
+			})
+			const { html, text } = parseVerseFromContent({
+				usfms: verses,
+				fullContent: chapter ? chapter.content : null
+			})
+			const refUrl = `${hosts.railsHost}/bible/${selectedVersion}/${usfm}`
+
+			// get the verses that are both selected and already have a highlight
+			// color associated with them, so we can allow the user to delete them
+			const deletableColors = []
+			verses.forEach((selectedVerse) => {
+				if (verseColors) {
+					verseColors.forEach((colorVerse) => {
+						if (selectedVerse === colorVerse[0]) {
+							deletableColors.push(colorVerse[1])
+						}
+					})
 				}
 			})
-		})
-		this.setState({
-			deletableColors,
-			verseSelection: Immutable.fromJS(verseSelection).merge({
-				chapter: human,
-				url: refUrl,
-				version: id
-			}).toJS()
-		})
-
-		// now merge in the text for the verses for actions like copy and share
-		// we're setting state with all the other verseAction before so this api call doesn't slow anything down
-		if (verseSelection.verses && verseSelection.verses.length > 0) {
-			dispatch(ActionCreators.bibleVerses({
-				id,
-				references: verseSelection.verses,
-				format: 'text',
-			}, { local_abbreviation }
-			)).then((response) => {
-				this.setState({
-					verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
-						text: response.verses.reduce((acc, curr, index) => {
-							// don't put a space in front of the first string
-							if (index !== 0) {
-								return `${acc} ${curr.content}`
-							} else {
-								return acc + curr.content
-							}
-						}, '')
-					}).toJS()
-				})
+			this.setState({
+				deletableColors,
+				verseSelection: Immutable.fromJS({}).merge({
+					human: title,
+					url: refUrl,
+					text,
+					verseContent: html,
+					verses,
+					version: selectedVersion
+				}).toJS()
 			})
 		}
 	}
