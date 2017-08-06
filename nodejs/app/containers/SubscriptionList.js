@@ -10,7 +10,7 @@ import customGet from '@youversion/api-redux/lib/customHelpers/get'
 import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
-import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
+import { getTogetherInvitations, getParticipantsUsers } from '@youversion/api-redux/lib/models'
 // utils
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
@@ -36,14 +36,14 @@ class SubscriptionList extends Component {
 	}
 
 	getSubs = ({ page = null }) => {
-		const { dispatch, auth, subscriptions, readingPlans } = this.props
+		const { dispatch, auth, subscriptions, readingPlans, participants } = this.props
 		dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						if (!(sub.plan_id in readingPlans.byId)) {
+						if (!(sub.plan_id in readingPlans.byId && id in participants)) {
 							dispatch(planView({
 								plan_id: sub.plan_id,
 								together_id: sub.together_id,
@@ -74,17 +74,17 @@ class SubscriptionList extends Component {
 	}
 
 	getInvitations = () => {
-		const { dispatch, auth, readingPlans } = this.props
+		const { dispatch, auth, readingPlans, participants } = this.props
 		dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
-				const ids = Object.keys(subs.data)
+				const ids = subs.map
 				if (ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						if (!(sub.plan_id in readingPlans.byId)) {
+						if (!(sub.plan_id in readingPlans.byId && id in participants)) {
 							dispatch(planView({
 								plan_id: sub.plan_id,
-								together_id: sub.together_id,
+								together_id: id,
 								auth,
 							}))
 						}
@@ -257,11 +257,13 @@ class SubscriptionList extends Component {
 
 function mapStateToProps(state) {
 	console.log('SUB', getSubscriptionsModel(state));
+	console.log('TOGETHER', getTogetherModel(state));
 	return {
 		subscriptions: getSubscriptionsModel(state),
 		readingPlans: getPlansModel(state),
 		together: getTogetherModel(state),
 		invitations: getTogetherInvitations(state),
+		participants: getParticipantsUsers(state),
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,
 	}
