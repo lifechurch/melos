@@ -139,7 +139,13 @@ export function getReferencesTitle({ bookList, usfmList, isRtl = false }) {
 		|| !usfmList
 		|| bookList.length < 1
 		|| usfmList.length < 1
-	) return null
+	) {
+		return {
+			title: '',
+			book: '',
+			num: '',
+		}
+	}
 
 	const bookUsfm = usfmList[0].split('.')[0]
 	const chapNum = usfmList[0].split('.')[1]
@@ -157,5 +163,9 @@ export function getReferencesTitle({ bookList, usfmList, isRtl = false }) {
 		? getSelectionString(usfms)
 		: usfmList[0].split('.')[2]
 
-	return `${bookName} ${chapNum}${verseString ? `:${verseString}` : ''}`
+	return {
+		usfm: `${bookUsfm}.${chapNum}${verseString ? `.${verseString}` : ''}`,
+		book: bookName,
+		title: `${bookName} ${chapNum}${verseString ? `:${verseString}` : ''}`,
+	}
 }

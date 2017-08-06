@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
-import { getSelectionString } from '../../../../lib/usfmUtils'
 import {
 	USER_READER_SETTINGS,
 } from '../../../../lib/readerUtils'
+
 
 const DEFAULT_STATE = { selection: null, selectedClasses: null, selectedText: null }
 
@@ -14,15 +14,13 @@ class Chapter extends Component {
 	constructor(props) {
 		super(props)
 		this.state = Object.assign({}, DEFAULT_STATE)
-		this.clearSelection = ::this.clearSelection
-		this.handleClick = ::this.handleClick
 	}
 
-	clearSelection() {
+	clearSelection = () => {
 		this.setState(Object.assign({}, DEFAULT_STATE))
 	}
 
-	handleVerseClick(verseNode) {
+	handleVerseClick = (verseNode) => {
 		const { onSelect, className } = this.props
 		let { selection, selectedClasses } = this.state
 
@@ -72,21 +70,23 @@ class Chapter extends Component {
 		}
 
 		if (typeof onSelect === 'function') {
-			onSelect({
-				verses: Object.keys(selection),
-				human: getSelectionString(selection),
-			})
+			onSelect({ verses: Object.keys(selection) })
 		}
 	}
 
-	handleClick(e) {
+	handleClick = (e) => {
 		const { showFootnotes, onSelect } = this.props
 		const isSelectable = typeof onSelect === 'function'
 
 		e.preventDefault()
 
 		let node = e.target
-		while (typeof node !== 'undefined' && typeof node.classList !== 'undefined' && !node.classList.contains('verse') && !node.classList.contains('note')) {
+		while (
+			typeof node !== 'undefined'
+			&& typeof node.classList !== 'undefined'
+			&& !node.classList.contains('verse')
+			&& !node.classList.contains('note')
+		) {
 			node = node.parentNode
 		}
 
@@ -118,12 +118,12 @@ class Chapter extends Component {
 			selectedClasses = {}
 		}
 
-		const innerContent = { __html: content }
-
 		const style = {
 			fontSize,
 			fontFamily
 		}
+
+		const innerContent = { __html: content }
 
 		let highlightedStyles = ''
 		if (Array.isArray(verseColors) && verseColors.length > 0) {
@@ -135,12 +135,10 @@ class Chapter extends Component {
 			})
 		}
 
-
 		let selectedStyles = ''
 		if (Object.keys(selectedClasses).length > 0) {
 			selectedStyles = `${Object.keys(selectedClasses).join(',')} { border-bottom: dotted 1px #777; }`
 		}
-
 
 		let footnoteStyles = ''
 		if (showFootnotes) {
@@ -150,7 +148,6 @@ class Chapter extends Component {
 		}
 
 		const verseNumberStyles = `.bible-reader.${className} .label { display: ${showVerseNumbers ? 'inherit' : 'none'} }`
-
 		const innerStyle = { __html: [selectedStyles, footnoteStyles, verseNumberStyles, highlightedStyles].join(' ') }
 
 		const isSelectable = typeof onSelect === 'function'
@@ -161,12 +158,10 @@ class Chapter extends Component {
 				className={`bible-reader ${className} ${!isSelectable ? 'not-selectable' : ''}`}
 				dir={textDirection}
 			>
-
 				<style dangerouslySetInnerHTML={innerStyle} />
-
 				<div
 					className='reader'
-					onClick={isSelectable || showFootnotes ? this.handleClick : null}
+					onClick={(isSelectable || showFootnotes) ? this.handleClick : null}
 					dangerouslySetInnerHTML={innerContent}
 					style={style}
 				/>
@@ -192,19 +187,19 @@ Chapter.defaultProps = {
 	className: null,
 	content: null,
 	onSelect: null,
-	textDirection: null,
-	fontSize: USER_READER_SETTINGS ?
-						USER_READER_SETTINGS.fontSize :
-						null,
-	fontFamily: USER_READER_SETTINGS ?
-							USER_READER_SETTINGS.fontFamily :
-							null,
-	showFootnotes: USER_READER_SETTINGS ?
-									USER_READER_SETTINGS.showFootnotes :
-									null,
-	showVerseNumbers: USER_READER_SETTINGS ?
-										USER_READER_SETTINGS.showVerseNumbers :
-										null,
+	textDirection: 'ltr',
+	fontSize: USER_READER_SETTINGS
+		? USER_READER_SETTINGS.fontSize
+		: null,
+	fontFamily: USER_READER_SETTINGS
+		? USER_READER_SETTINGS.fontFamily
+		: null,
+	showFootnotes: USER_READER_SETTINGS
+		? USER_READER_SETTINGS.showFootnotes
+		: null,
+	showVerseNumbers: USER_READER_SETTINGS
+		? USER_READER_SETTINGS.showVerseNumbers
+		: null,
 	verseColors: []
 }
 

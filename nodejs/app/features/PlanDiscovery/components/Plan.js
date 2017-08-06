@@ -110,7 +110,7 @@ function Plan({
 									title = <FormattedMessage id='plans.devotional' />
 								} else if (segment.kind === 'reference') {
 									const usfm = [segment.content]
-									title = getReferencesTitle({ bookList, usfmList: usfm })
+									title = getReferencesTitle({ bookList, usfmList: usfm }).title
 									key = usfm
 								} else if (segment.kind === 'talk-it-over') {
 									title = <FormattedMessage id='plans.talk it over' />

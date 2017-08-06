@@ -255,3 +255,42 @@ export function buildCopyright(formatMessage, version) {
 export function getBibleVersionFromStorage() {
 	return cookie.load('version') || cookie.load('alt_version') || 59
 }
+
+
+export function parseVerseFromContent({ usfms, fullContent }) {
+	const textOutput = []
+	const htmlOutput = []
+
+	if (usfms && fullContent) {
+		const doc = new DOMParser().parseFromString(fullContent, 'text/html')
+		const usfmList = Array.isArray(usfms)
+		? usfms
+		: [usfms]
+
+		usfmList.forEach((usfm) => {
+			const htmlXpath = `//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+${usfm}+')]`
+			const textXpath = `${htmlXpath}/node()[not(contains(concat(\' \',@class,\' \'),\' note \'))][not(contains(concat(\' \',@class,\' \'),\' label \'))]`
+
+			const html = doc.evaluate(htmlXpath, doc, null, XPathResult.ANY_TYPE, null)
+			const text = doc.evaluate(textXpath, doc, null, XPathResult.ANY_TYPE, null)
+
+			// text
+			let nextText = text.iterateNext()
+			while (nextText) {
+				textOutput.push(nextText.textContent)
+				nextText = text.iterateNext()
+			}
+			// html
+			let nextHtml = html.iterateNext()
+			while (nextHtml) {
+				htmlOutput.push(nextHtml.outerHTML)
+				nextHtml = html.iterateNext()
+			}
+		})
+	}
+
+	return {
+		text: textOutput.join(' '),
+		html: htmlOutput.join('')
+	}
+}

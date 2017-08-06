@@ -19,7 +19,8 @@ import VerseAction from '../features/Bible/components/verseAction/VerseAction'
 import ChapterCopyright from '../features/Bible/components/content/ChapterCopyright'
 import AudioPopup from '../features/Bible/components/audio/AudioPopup'
 // utils
-import { getBibleVersionFromStorage, chapterifyUsfm, buildCopyright, isVerseOrChapter } from '../lib/readerUtils'
+import { getBibleVersionFromStorage, chapterifyUsfm, buildCopyright, isVerseOrChapter, parseVerseFromContent } from '../lib/readerUtils'
+import { getReferencesTitle } from '../lib/usfmUtils'
 import Routes from '../lib/routes'
 
 
@@ -36,10 +37,8 @@ class BibleContent extends Component {
 	}
 
 	componentDidMount() {
-		const { dispatch, versionID } = this.props
 		const { usfm } = this.state
 
-		this.version_id = versionID || getBibleVersionFromStorage()
 		this.getBibleData(usfm)
 	}
 
@@ -76,7 +75,7 @@ class BibleContent extends Component {
 				}
 			}))
 		}
-		if (usfm && !(moments && Immutable.fromJS(moments).hasIn(['verse-colors', usfm]))) {
+		if (usfm && !(moments && Immutable.fromJS(moments).hasIn(['verse-colors', chapterifyUsfm(usfm)]))) {
 			dispatch(momentsAction({
 				method: 'verse_colors',
 				params: {
@@ -86,7 +85,13 @@ class BibleContent extends Component {
 				auth: true,
 			}))
 		}
-		if (usfm && !(moments && Immutable.fromJS(moments).hasIn(['colors', usfm]))) {
+		if (usfm && !(moments && Immutable.fromJS(moments).hasIn(['labels']))) {
+			dispatch(momentsAction({
+				method: 'labels',
+				auth: true,
+			}))
+		}
+		if (usfm && !(moments && Immutable.fromJS(moments).hasIn(['colors']))) {
 			dispatch(momentsAction({
 				method: 'colors',
 				auth: true,
@@ -103,64 +108,36 @@ class BibleContent extends Component {
 		}
 	}
 
-	handleVerseSelect = (verseSelection) => {
-		const { hosts, usfm, dispatch, moments, bible } = this.props
-		const refUrl = `${hosts.railsHost}/bible/${this.version_id}/${usfm}.${verseSelection.human}`
+	handleVerseSelect = ({ verses }) => {
+		const { hosts, moments } = this.props
 
-		const ref = bible
-			? bible.pullRef(usfm, this.version_id)
-			: null
-		// get the verses that are both selected and already have a highlight
-		// color associated with them, so we can allow the user to delete them
-		const deletableColors = []
-		verseSelection.verses.forEach((selectedVerse) => {
-			if (moments.verseColors) {
-				moments.verseColors.forEach((colorVerse) => {
-					if (selectedVerse === colorVerse[0]) {
-						deletableColors.push(colorVerse[1])
-					}
-				})
-			}
-		})
-		this.setState({
-			deletableColors,
-			verseSelection: Immutable.fromJS(verseSelection).merge({
-				chapter: ref ? ref.reference.human : '',
-				url: refUrl,
-				version: this.version_id
-			}).toJS()
-		})
+		if (verses) {
+			const { title, usfm } = getReferencesTitle({ bookList: this.version.books, usfmList: verses })
+			const { html, text } = parseVerseFromContent({ usfms: verses, fullContent: this.ref.content })
+			const refUrl = `${hosts.railsHost}/bible/${this.version_id}/${usfm}`
 
-		// now merge in the text for the verses for actions like copy and share
-		// we're setting state with all the other verseAction before so this api call doesn't slow anything down
-		if (verseSelection.verses && verseSelection.verses.length > 0) {
-			dispatch(bibleAction({
-				method: 'verses',
-				params: {
-					id: this.version_id,
-					references: verseSelection.verses,
-					format: 'text',
+			// get the verses that are both selected and already have a highlight
+			// color associated with them, so we can allow the user to delete them
+			const deletableColors = []
+			verses.forEach((selectedVerse) => {
+				if (moments.verseColors) {
+					moments.verseColors.forEach((colorVerse) => {
+						if (selectedVerse === colorVerse[0]) {
+							deletableColors.push(colorVerse[1])
+						}
+					})
 				}
-			}))
-			// dispatch(ActionCreators.bibleVerses({
-			// 	id,
-			// 	references: verseSelection.verses,
-			// 	format: 'text',
-			// }, { local_abbreviation }
-			// ))
-			.then((response) => {
-				this.setState({
-					verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
-						text: response.verses.reduce((acc, curr, index) => {
-							// don't put a space in front of the first string
-							if (index !== 0) {
-								return `${acc} ${curr.content}`
-							} else {
-								return acc + curr.content
-							}
-						}, '')
-					}).toJS()
-				})
+			})
+			this.setState({
+				deletableColors,
+				verseSelection: Immutable.fromJS({}).merge({
+					human: title,
+					url: refUrl,
+					text,
+					verseContent: html,
+					verses,
+					version: this.version_id
+				}).toJS()
 			})
 		}
 	}
@@ -191,11 +168,12 @@ class BibleContent extends Component {
 		} = this.props
 		const { usfm, verseSelection, deletableColors } = this.state
 
-		const ref = bible && bible.pullRef(usfm, versionID)
+		this.ref = bible && bible.pullRef(usfm, versionID)
 			? bible.pullRef(usfm, versionID)
 			: null
-		const version = bible && Immutable.fromJS(bible).hasIn(['versions', this.version_id])
-			? Immutable.fromJS(bible).getIn(['versions', this.version_id]).toJS()
+		this.version_id = versionID || getBibleVersionFromStorage()
+		this.version = bible && Immutable.fromJS(bible).hasIn(['versions', this.version_id, 'response'])
+			? Immutable.fromJS(bible).getIn(['versions', this.version_id, 'response']).toJS()
 			: null
 		const hasAudio = audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm)])
 
@@ -203,11 +181,6 @@ class BibleContent extends Component {
 			<div>
 				<div className='plan-ref'>
 					<div className='plan-reader-heading'>
-						{/* NOTE: let's create a readerheader component that will render all
-						the reader header components and grab the right state */}
-						{/* <div className='ref-heading'>
-							{`${refHeading} ${version ? version.local_abbreviation.toUpperCase() : ''}`}
-						</div> */}
 						<AudioPopup
 							audio={hasAudio ? Immutable.fromJS(audio).getIn(['chapter', chapterifyUsfm(usfm)]).toJS() : null}
 							hosts={hosts}
@@ -223,7 +196,7 @@ class BibleContent extends Component {
 					{
 						showContent &&
 						<Chapter
-							content={ref ? ref.content : null}
+							content={this.ref ? this.ref.content : null}
 							verseColors={moments ? moments.verseColors : null}
 							onSelect={this.handleVerseSelect}
 							// textDirection={textDirection}
@@ -231,9 +204,9 @@ class BibleContent extends Component {
 						/>
 					}
 					{
-						version &&
-						'id' in version &&
-						<ChapterCopyright {...buildCopyright(intl.formatMessage, version)} />
+						this.version &&
+						'id' in this.version &&
+						<ChapterCopyright {...buildCopyright(intl.formatMessage, this.version)} />
 					}
 					{
 						showGetChapter &&
@@ -252,16 +225,14 @@ class BibleContent extends Component {
 					}
 					<VerseAction
 						// props
-						version={version}
+						version={this.version}
 						verseColors={moments ? moments.verseColors : null}
 						// isRtl={isRtl}
 						highlightColors={moments ? moments.colors : null}
 						momentsLabels={moments ? moments.labels : null}
-						verses={null}
-						references={verseSelection ? verseSelection.verses : null}
 						auth={auth}
 						dispatch={dispatch}
-						// // state
+						// state
 						selection={verseSelection}
 						deletableColors={deletableColors}
 						onClose={this.handleVerseClear}

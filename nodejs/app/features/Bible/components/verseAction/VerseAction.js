@@ -49,23 +49,14 @@ class VerseAction extends Component {
 	}
 
 	handleActionClick(e) {
-		const { dispatch, auth, selection: { verses }, version: { id, local_abbreviation } } = this.props
+		const { dispatch, auth, selection: { usfm }, version: { id, local_abbreviation } } = this.props
 		const isMoment = (e.value === 'note' || e.value === 'bookmark')
-		// if we're not logged in and try to make an auth'd moment
-		if (!(auth && auth.isLoggedIn) && isMoment) {
+
+		if (isMoment) {
 			this.setState({
 				momentContainerOpen: !this.state.momentContainerOpen,
 				momentKind: e.value,
 			})
-			this.closeMe()
-		} else if (isMoment) {
-			dispatch(ActionCreators.bibleVerses({
-				id,
-				references: verses,
-				format: 'html',
-			}, { local_abbreviation }))
-			this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
-			// hide the modal on moment create
 			this.closeMe()
 		}
 	}
@@ -98,8 +89,8 @@ class VerseAction extends Component {
 	}
 
 	handleHighlight(color) {
-		const { selection: { verses, version }, dispatch, auth } = this.props
-		const references = [{ usfm: verses, version_id: version }]
+		const { selection: { usfm, version }, dispatch, auth } = this.props
+		const references = [{ usfm, version_id: version }]
 
 		// tell the moment create what kind of message to display for having a user
 		// log in, if they aren't already
@@ -120,7 +111,7 @@ class VerseAction extends Component {
 				dispatch(momentsAction({
 					method: 'verse_colors',
 					params: {
-						usfm: chapterifyUsfm(verses[0]),
+						usfm: chapterifyUsfm(usfm[0]),
 						version_id: version
 					},
 					auth: true,
@@ -131,11 +122,11 @@ class VerseAction extends Component {
 	}
 
 	deleteColor = (color) => {
-		const { selection: { verses, version }, dispatch, verseColors } = this.props
+		const { selection: { usfm, version }, dispatch, verseColors } = this.props
 		const versesToDelete = []
 		// don't delete colors from every verse selected,
 		// only the verses that match the color x that was clicked
-		verses.forEach((selectedVerse) => {
+		usfm.forEach((selectedVerse) => {
 			verseColors.forEach((colorVerse) => {
 				if (selectedVerse === colorVerse[0] && colorVerse[1] === color) {
 					versesToDelete.push(selectedVerse)
@@ -150,7 +141,7 @@ class VerseAction extends Component {
 			dispatch(momentsAction({
 				method: 'verse_colors',
 				params: {
-					usfm: chapterifyUsfm(verses[0]),
+					usfm: chapterifyUsfm(usfm[0]),
 					version_id: version
 				},
 				auth: true,
@@ -163,12 +154,10 @@ class VerseAction extends Component {
 
 	render() {
 		const {
-			selection: { chapter, human, text, url, verses: selectedReferences },
+			selection: { human, text, url, verses: selectedReferences, verseContent },
 			deletableColors,
 			intl,
 			version,
-			verses,
-			references,
 			momentsLabels,
 			highlightColors,
 			auth,
@@ -178,7 +167,7 @@ class VerseAction extends Component {
 
 		const copyAction = (
 			<CopyToClipboard
-				text={`'${text}'\n\n${chapter}:${human}\n${url}`}
+				text={`'${text}'\n\n${human}\n${url}`}
 				onCopy={() => {
 					this.setState({ copied: true })
 					setTimeout(() => {
@@ -194,7 +183,7 @@ class VerseAction extends Component {
 		)
 
 		const actions = [
-			{ value: 'share', label: <ShareWidget label={`${chapter}:${human}`} url={url} text={text} /> },
+			{ value: 'share', label: <ShareWidget label={human} url={url} text={text} /> },
 			{ value: 'copy', label: copyAction },
 			{ value: 'bookmark', label: <span className='yv-green-link'>{intl.formatMessage({ id: 'Reader.verse action.bookmark' })}</span> },
 			{ value: 'note', label: <span className='yv-green-link'>{intl.formatMessage({ id: 'Reader.verse action.note' })}</span> }
@@ -215,9 +204,9 @@ class VerseAction extends Component {
 
 		return (
 			<div className='verse-action'>
-				<div className={'verse-action-footer'} ref={(c) => { this.container = c }}>
-					<a onClick={this.handleClose} className='close-button yv-gray-link'><FormattedMessage id='plans.stats.close' /></a>
-					<span className='verse-selection' style={{ opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
+				<div className='verse-action-footer' ref={(c) => { this.container = c }}>
+					<a tabIndex={0} onClick={this.handleClose} className='close-button yv-gray-link'><FormattedMessage id='plans.stats.close' /></a>
+					<span className='verse-selection' style={{ opacity: (human && human.length) ? 1 : 0 }}>{ human }</span>
 					<ButtonBar items={actions} onClick={this.handleActionClick} />
 					{ colorList }
 				</div>
@@ -229,9 +218,10 @@ class VerseAction extends Component {
 						key={momentContainerOpen}
 						isLoggedIn={auth && auth.isLoggedIn}
 						kind={momentKind}
-						verses={verses}
-						references={references}
-						versionID={version ? version.id : null}
+						human={human}
+						verseContent={verseContent}
+						references={selectedReferences}
+						version_id={version ? version.id : null}
 						local_abbreviation={version ? version.local_abbreviation : null}
 						labels={momentsLabels}
 						colors={highlightColors}
@@ -245,7 +235,7 @@ class VerseAction extends Component {
 }
 
 VerseAction.propTypes = {
-	selection: PropTypes.any,
+	selection: PropTypes.object.isRequired,
 	highlightColors: PropTypes.array.isRequired,
 	onClose: PropTypes.func.isRequired,
 }
