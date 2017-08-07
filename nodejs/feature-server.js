@@ -47,28 +47,26 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 				const tokenData = tokenAuth.decodeToken(token)
 				const sessionData = tokenAuth.decryptToken(tokenData.token)
 
-				// 	// while we're checking auth for this feature
-				// 	// do we need to get an oauth token?
-				// if (!auth.oauthToken) {
-				// 	getToken(sessionData).then((data) => {
-				// 		console.log('OAUTH', data)
-				// 	})
-				// }
-
-				resolve({
-					token,
-					isLoggedIn: true,
-					isWorking: false,
-					userData: sessionData,
-					user: sessionData.email,
-					password: null,
-					errors: {
-						api: null,
-						fields: {
-							user: null,
-							password: null
+				// while we're checking auth for this feature get an oauth token
+				getToken(sessionData).then((oauth) => {
+					resolve({
+						token,
+						isLoggedIn: true,
+						isWorking: false,
+						userData: sessionData,
+						user: sessionData.email,
+						password: null,
+						oauth: Object.assign(
+							oauth, { valid_until: moment().add(oauth.expires_in, 'seconds') }
+						),
+						errors: {
+							api: null,
+							fields: {
+								user: null,
+								password: null
+							}
 						}
-					}
+					})
 				})
 			} catch (err) {
 				reject({ error: 1, message: 'Invalid or Expired Token' })
@@ -78,22 +76,27 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 				// No token, but we have enough info to create one
 			const sessionData = auth
 			const token = tokenAuth.token(sessionData)
-			resolve({
-				token,
-				isLoggedIn: true,
-				isWorking: false,
-				userData: sessionData,
-				user: sessionData.email,
-				password: null,
-				errors: {
-					api: null,
-					fields: {
-						user: null,
-						password: null
+			// while we're checking auth for this feature get an oauth token
+			getToken(sessionData).then((oauth) => {
+				resolve({
+					token,
+					isLoggedIn: true,
+					isWorking: false,
+					userData: sessionData,
+					user: sessionData.email,
+					password: null,
+					oauth: Object.assign(
+						oauth, { valid_until: moment().add(oauth.expires_in, 'seconds') }
+					),
+					errors: {
+						api: null,
+						fields: {
+							user: null,
+							password: null
+						}
 					}
-				}
+				})
 			})
-
 		} else {
 			resolve({
 				token: null,
@@ -101,6 +104,7 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 				isWorking: false,
 				userData: {},
 				user: null,
+				oauth: {},
 				password: null,
 				errors: {
 					api: null,

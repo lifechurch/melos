@@ -8,7 +8,6 @@ import { combineReducers } from 'redux'
 import { routeReducer } from 'react-router-redux'
 // import { eventFeeds } from './eventFeeds'
 // import { modals } from './modals'
-// import auth from '../../features/Auth/reducers/auth'
 // import loc from '../features/EventEdit/features/location/reducers/location'
 // import locations from '../features/EventEdit/features/location/reducers/locations'
 // import event from '../features/EventEdit/features/details/reducers/event'
@@ -18,6 +17,7 @@ import { routeReducer } from 'react-router-redux'
 // import configuration from '../features/EventFeedMine/reducers/configuration'
 // import plansDiscovery from '../features/PlanDiscovery/reducers'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import auth from '../../features/Auth/reducers/auth'
 import bibleReader from '../../features/Bible/reducers'
 import passage from '../../features/Passage/reducers'
 import plansDiscovery from '../../features/PlanDiscovery/reducers'
@@ -26,7 +26,8 @@ import api from '../../features/PlanDiscovery/reducers/api'
 
 
 const rootReducer = combineReducers({
-	auth: (state = {}, action) => { return state },
+	auth,
+	// auth: (state = {}, action) => { return state },
 	bibleReader,
 	eventFeeds: (state = {}, action) => { return state },
 	content: (state = {}, action) => { return state },
