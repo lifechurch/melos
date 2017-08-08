@@ -27,6 +27,13 @@ module YV
             auth = {}
           end
 
+					# merge in oauth for the feature import
+					if cookies.has_key?(:OAUTH)
+						puts '**************************'
+						auth[:oauth] = eval(cookies[:OAUTH])
+						puts auth
+					end
+
           params['languageTag'] = I18n.locale
           params['railsHost'] = "#{request.protocol}#{request.host_with_port}"
 
@@ -63,6 +70,10 @@ module YV
               if (!cookies.has_key?(CookieName) || cookies[CookieName] != response['token']) && response['token']
                 cookies[CookieName] = { value: response['token'], expires: 24.hour.from_now }
               end
+
+							if (!cookies.has_key?('OAUTH') || cookies['OAUTH'] != response['oauth']) && response['oauth']
+								cookies[:OAUTH] = { value: response['oauth'] }
+							end
 
               return response
 
@@ -126,7 +137,7 @@ module YV
         def auth_from_credentials(current_auth, current_user)
           return { userid: current_auth.user_id, tp_token: current_auth.tp_token, tp_id: current_auth.tp_id, email: current_user.email, password: current_auth.password, first_name: current_user.first_name, last_name: current_user.last_name, username: current_user.username, language_tag: I18n.locale.to_s, timezone: current_user.timezone }
         end
-        
+
       end
     end
   end

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
 // actions
-import oauthAPI from '@youversion/api-redux/lib/endpoints/oauth'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import customGet from '@youversion/api-redux/lib/customHelpers/get'
@@ -28,18 +27,12 @@ import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 class SubscriptionList extends Component {
 
 	componentDidMount() {
-		const { auth, dispatch } = this.props
+		const { auth } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 		// get any invites we have
 		this.getInvitations()
 		// get actual subscriptions
 		this.getSubs({ page: 1 })
-
-		dispatch(oauthAPI.actions.refresh.post({}, {
-			body: {
-				refresh_token: auth.oauth.refresh_token
-			}
-		}))
 	}
 
 	getSubs = ({ page = null }) => {

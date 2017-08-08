@@ -12,8 +12,9 @@ import { tokenAuth } from '@youversion/js-api'
 import { IntlProvider } from 'react-intl'
 import moment from 'moment'
 import Raven from 'raven'
-import { getToken } from './oauth'
+import { getToken, refreshToken } from './oauth'
 import planLocales from './locales/config/planLocales.json'
+import isTimestampExpired from './app/lib/isTimestampExpired'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -37,83 +38,141 @@ const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 	}
 })
 
+function massageSessionToOauth(sessionData) {
+	const { tp_token, username, password } = sessionData
+	const oauth = { username, password }
+	if (tp_token) {
+		if (tp_token.includes('Facebook')) {
+			oauth.facebook = tp_token.replace('Facebook ', '')
+		} else if (tp_token.includes('GoogleJWT')) {
+			oauth.googlejwt = tp_token.replace('GoogleJWT ', '')
+		}
+	}
+	return oauth
+}
+
+function buildAuth(auth, oauth) {
+	return Object.assign(
+		{},
+		auth,
+		{
+			oauth: Object.assign(
+				oauth,
+				!('error' in oauth) ?
+					{ valid_until: moment().add(oauth.expires_in, 'seconds').unix() } :
+					null
+			)
+		}
+	)
+}
+
+function oauthIsValid(response) {
+	if ('error' in response) {
+		return false
+	} else return true
+}
+
 const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 	return new Promise((resolve, reject) => {
 
-		if (typeof auth === 'object' && typeof auth.token === 'string') {
-				// We have a token
-			try {
-				const token = auth.token
-				const tokenData = tokenAuth.decodeToken(token)
-				const sessionData = tokenAuth.decryptToken(tokenData.token)
+		let authData = {
+			token: null,
+			isLoggedIn: false,
+			isWorking: false,
+			userData: {},
+			user: null,
+			oauth: {},
+			password: null,
+			errors: {
+				api: null,
+				fields: {
+					user: null,
+					password: null
+				}
+			}
+		}
 
-				// while we're checking auth for this feature get an oauth token
-				getToken(sessionData).then((oauth) => {
-					resolve({
+		let token
+		let tokenData
+		let sessionData
+		let hasAuth = false
+
+		// We have a token
+		if (typeof auth === 'object' && typeof auth.token === 'string') {
+			try {
+				hasAuth = true
+				token = auth.token
+				tokenData = tokenAuth.decodeToken(token)
+				sessionData = tokenAuth.decryptToken(tokenData.token)
+
+				authData = Object.assign(
+					{},
+					authData,
+					{
 						token,
 						isLoggedIn: true,
-						isWorking: false,
 						userData: sessionData,
 						user: sessionData.email,
-						password: null,
-						oauth: Object.assign(
-							oauth, { valid_until: moment().add(oauth.expires_in, 'seconds') }
-						),
-						errors: {
-							api: null,
-							fields: {
-								user: null,
-								password: null
-							}
-						}
-					})
-				})
+					}
+				)
 			} catch (err) {
 				reject({ error: 1, message: 'Invalid or Expired Token' })
 			}
 
+		// No token, but we have enough info to create one
 		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
-				// No token, but we have enough info to create one
-			const sessionData = auth
-			const token = tokenAuth.token(sessionData)
-			// while we're checking auth for this feature get an oauth token
-			getToken(sessionData).then((oauth) => {
-				resolve({
+			hasAuth = true
+			sessionData = auth
+			token = tokenAuth.token(sessionData)
+
+			authData = Object.assign(
+				{},
+				authData,
+				{
 					token,
 					isLoggedIn: true,
-					isWorking: false,
 					userData: sessionData,
 					user: sessionData.email,
-					password: null,
-					oauth: Object.assign(
-						oauth, { valid_until: moment().add(oauth.expires_in, 'seconds') }
-					),
-					errors: {
-						api: null,
-						fields: {
-							user: null,
-							password: null
+				}
+			)
+		}
+
+
+		if (hasAuth) {
+			// figure out if we need to get a new oauth token
+			// we have oauth data from rails cookie
+			if (auth.oauth && 'access_token' in auth.oauth) {
+				// but it has expired
+				if (isTimestampExpired(auth.oauth.valid_until)) {
+					console.log('EXPIRED: REFRESH OAUTH')
+					refreshToken({ refresh_token: auth.oauth.refresh_token }).then((oauth) => {
+						if (oauthIsValid(oauth)) {
+							resolve(buildAuth(authData, oauth))
+						} else {
+							reject(oauth)
 						}
+					})
+				// hasn't expired yet, we can reuse the data from cookies
+				} else {
+					console.log('NOT EXPIRED: USE OAUTH FROM COOKIES')
+					resolve(buildAuth(authData, auth.oauth))
+				}
+			// we have no oauth data from rails so we need a new token from scratch
+			} else {
+				console.log('NO TOKEN: GET NEW OAUTH')
+				getToken(massageSessionToOauth(sessionData)).then((oauth) => {
+					if (oauthIsValid(oauth)) {
+						resolve(buildAuth(authData, oauth))
+					} else {
+						console.log('ERROR', oauth)
+						reject(oauth)
 					}
 				})
-			})
+			}
+		// no auth at all
 		} else {
-			resolve({
-				token: null,
-				isLoggedIn: false,
-				isWorking: false,
-				userData: {},
-				user: null,
-				oauth: {},
-				password: null,
-				errors: {
-					api: null,
-					fields: {
-						user: null,
-						password: null
-					}
-				}
-			})
+			console.log('NO AUTH')
+			resolve(authData)
 		}
 
 	})
@@ -260,7 +319,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 		const defaultState = getDefaultState(feature)
 		let startingState = Object.assign({}, defaultState, { auth: verifiedAuth })
 		startingState = mapStateToParams(feature, startingState, params)
-
+		console.log('verifiedAuth', verifiedAuth)
 		try {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)
@@ -306,7 +365,13 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						res.setHeader('Cache-Control', 'public')
 						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost, referrer }, nr.createTracer('render', (err, html) => {
 							nr.endTransaction()
-							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/assets/${getAssetPath(`${feature}.js`)}` })
+							res.send({
+								html,
+								head,
+								token: initialState.auth.token,
+								js: `${assetPrefix}/assets/${getAssetPath(`${feature}.js`)}`,
+								oauth: verifiedAuth.oauth,
+							})
 						}))
 
 						return null

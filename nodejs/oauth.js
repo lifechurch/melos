@@ -7,7 +7,7 @@ const router = express.Router()
 const jsonParser = bodyParser.json()
 
 // pull client secrets from env used for all oauth calls
-const clientParams = {
+const secretParams = {
 	client_id: process.env.OAUTH_CLIENT_ID,
 	client_secret: process.env.OAUTH_CLIENT_SECRET,
 }
@@ -33,17 +33,17 @@ function oauthClientCall(params) {
  * @param  {[string]} [username=null] [description]
  * @param  {[string]} [password=null] [description]
  * @param  {[string]} [facebook=null] [description]
- * @param  {[string]} [google=null]   [description]
+ * @param  {[string]} [googlejwt=null]   [description]
  * @return {[promise]}                 [description]
  */
-export function getToken({ username = null, password = null, facebook = null, google = null }) {
+export function getToken({ username = null, password = null, facebook = null, googlejwt = null }) {
 	let params
 	if (username && password) {
-		params = Object.assign({ grant_type: 'password' }, clientParams, { username, password })
+		params = Object.assign({ grant_type: 'password' }, secretParams, { username, password })
 	} else if (facebook) {
-		params = Object.assign({ grant_type: 'password' }, clientParams, { facebook })
-	} else if (google) {
-		params = Object.assign({ grant_type: 'password' }, clientParams, { google })
+		params = Object.assign({ grant_type: 'password' }, secretParams, { facebook })
+	} else if (googlejwt) {
+		params = Object.assign({ grant_type: 'password' }, secretParams, { googlejwt })
 	}
 
 	return oauthClientCall(params)
@@ -56,7 +56,7 @@ export function getToken({ username = null, password = null, facebook = null, go
  */
 export function refreshToken({ refresh_token }) {
 	return oauthClientCall(
-		Object.assign({ grant_type: 'refresh_token' }, clientParams, { refresh_token })
+		Object.assign({ grant_type: 'refresh_token' }, secretParams, { refresh_token })
 	)
 }
 
@@ -79,9 +79,9 @@ export function refreshToken({ refresh_token }) {
 	&facebook=<facebook token>
  */
 router.post('/token', jsonParser, (req, res) => {
-	const { username, password, facebook, google } = req.body
+	const { username, password, facebook, googlejwt } = req.body
 
-	getToken({ username, password, facebook, google }).then((authResponse) => {
+	getToken({ username, password, facebook, googlejwt }).then((authResponse) => {
 		res.send(authResponse)
 	}, (authError) => {
 		res.status(401).send(authError)
