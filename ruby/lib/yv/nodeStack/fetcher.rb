@@ -29,9 +29,7 @@ module YV
 
 					# merge in oauth for the feature import
 					if cookies.has_key?(:OAUTH)
-						puts '**************************'
-						auth[:oauth] = eval(cookies[:OAUTH])
-						puts auth
+						auth[:oauth] = JSON.parse cookies[:OAUTH]
 					end
 
           params['languageTag'] = I18n.locale
@@ -72,7 +70,7 @@ module YV
               end
 
 							if (!cookies.has_key?('OAUTH') || cookies['OAUTH'] != response['oauth']) && response['oauth']
-								cookies[:OAUTH] = { value: response['oauth'] }
+								cookies[:OAUTH] = { value: JSON.generate(response['oauth']), expires: 24.hour.from_now }
 							end
 
               return response

@@ -319,7 +319,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 		const defaultState = getDefaultState(feature)
 		let startingState = Object.assign({}, defaultState, { auth: verifiedAuth })
 		startingState = mapStateToParams(feature, startingState, params)
-		console.log('verifiedAuth', verifiedAuth)
+
 		try {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)

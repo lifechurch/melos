@@ -7,7 +7,7 @@ const ActionCreators = {
 	logout(locale) {
 		return dispatch => {
 			deleteToken()
-			cookie.delete('OAUTH')
+			cookie.remove('OAUTH', { path: '/' })
 			dispatch({ type: type('logout') })
 			dispatch(routeActions.push(`/${locale}/login`))
 		}
