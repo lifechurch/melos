@@ -13,18 +13,12 @@ export default function configureStore(initialState, history, logger) {
 	const reduxRouterMiddleware = syncHistory(history)
 
 	let finalCreateStore = null
-	// let's use redux tools in dev
-	const composeEnhancers = typeof window === 'object'
-		&& window.__ENV__ !== 'production'
-		&& window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-		? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-		: compose
 	if (logger !== null) {
-		finalCreateStore = composeEnhancers(
+		finalCreateStore = compose(
 			applyMiddleware(thunk, youversionApi, youversionAuth, reduxRouterMiddleware, logger)
 		)(createStore)
 	} else {
-		finalCreateStore = composeEnhancers(
+		finalCreateStore = compose(
 			applyMiddleware(thunk, youversionApi, youversionAuth, reduxRouterMiddleware)
 		)(createStore)
 	}

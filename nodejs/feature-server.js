@@ -152,10 +152,16 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 							reject(oauth)
 						}
 					})
-				// hasn't expired yet, we can reuse the data from cookies
+				// hasn't expired yet, we can reuse the data from cookies after making
+				// sure the cookie has no error in it
 				} else {
 					console.log('NOT EXPIRED: USE OAUTH FROM COOKIES')
-					resolve(buildAuth(authData, auth.oauth))
+					if (oauthIsValid(auth.oauth)) {
+						resolve(buildAuth(authData, auth.oauth))
+					} else {
+						console.log('ERROR', auth.oauth)
+						reject(auth.oauth)
+					}
 				}
 			// we have no oauth data from rails so we need a new token from scratch
 			} else {
