@@ -151,7 +151,7 @@ class ParticipantsAvatarList extends Component {
 						// if we want to show more users than is allowed, show the link
 						usersToShow &&
 						usersToShow.length > avatarList.length &&
-						<div className='green-link'>{`+ ${usersToShow.length - avatarList.length}`}</div>
+						<div className='yv-green-link'>{`+ ${usersToShow.length - avatarList.length}`}</div>
 					}
 				</div>
 			</Link>

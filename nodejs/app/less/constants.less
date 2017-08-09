@@ -311,6 +311,34 @@
 	display:none;
 }
 
+.animate-away {
+		position: absolute;
+		background: white;
+    animation-name: animate-away;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+		transition: opacity 3s ease-in-out;
+}
+
+@keyframes animate-away {
+    0% {
+			transform: translate(0,  0px);
+			opacity: 0.8;
+		}
+    100% {
+			transform: translate(0, -100px);
+			opacity: 0;
+		}
+}
+
+.copied {
+	background: white;
+	padding: 5px;
+	border: @thin-grey-border;
+	border-radius: 5px;
+}
+
 //  **************************************************************************
 @default-radius: 5px;
 @default-padding: 5px;

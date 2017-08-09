@@ -4,14 +4,12 @@ import { routeActions } from 'react-router-redux'
 import CustomScroll from 'react-custom-scroll'
 import Immutable from 'immutable'
 import { FormattedMessage } from 'react-intl'
-import CopyToClipboard from 'react-copy-to-clipboard'
 import Footer from '../../../components/Footer'
-import ShareIcon from '../../../components/Icons/ShareIcon'
+import ShareLink from '../../../components/ShareLink'
 import Search from '../../../components/Search'
 import User from '../../../components/User'
 import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
-import Share from '../../../features/Bible/components/verseAction/share/Share'
 import Routes from '../../../lib/routes'
 import { selectImageFromList } from '../../../lib/imageUtil'
 
@@ -222,22 +220,7 @@ class InvitePWF extends Component {
 						</div>
 					</div>
 				</div>
-				<div className='columns medium-8 small-12 small-centered' style={{ padding: '25px 0' }}>
-					<div className='text-center'>Or, use this link yall</div>
-					<div className='vertical-center horizontal-center'>
-						<CopyToClipboard className='pointer share-link yv-text-ellipsis' text={shareLink}>
-							<div onClick={() => { alert('copied!') }}>{ shareLink }</div>
-						</CopyToClipboard>
-						<a>
-							<Share
-								url={shareLink}
-								button={
-									<ShareIcon />
-								}
-							/>
-						</a>
-					</div>
-				</div>
+				<ShareLink link={shareLink} description={<FormattedMessage id='use share link' />} />
 				<Footer>
 					<a
 						tabIndex={0}

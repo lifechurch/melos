@@ -2,12 +2,13 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
 import { routeActions } from 'react-router-redux'
-import InvitePWF from '../features/PlanDiscovery/components/InvitePWF'
 import friendsAction from '@youversion/api-redux/lib/endpoints/friends/action'
 import { getFriends } from '@youversion/api-redux/lib/endpoints/friends/reducer'
 import searchAction from '@youversion/api-redux/lib/endpoints/search/action'
 import { getSearchUsers } from '@youversion/api-redux/lib/endpoints/search/reducer'
-import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import getTogetherModel from '@youversion/api-redux/lib/models/together'
+import InvitePWF from '../features/PlanDiscovery/components/InvitePWF'
 import Routes from '../lib/routes'
 
 class InvitePWFView extends Component {
@@ -73,13 +74,17 @@ class InvitePWFView extends Component {
 }
 
 
-function mapStateToProps(state) {
+function mapStateToProps(state, props) {
+	const { params: { together_id } } = props
+	console.log('TOG', getTogetherModel(state))
 	return {
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,
 		search: getSearchUsers(state),
 		friends: getFriends(state),
-		together: getTogether(state),
+		together: getTogetherModel(state) && together_id in getTogetherModel(state).byId
+			? getTogetherModel(state).byId[together_id]
+			: null,
 	}
 }
 

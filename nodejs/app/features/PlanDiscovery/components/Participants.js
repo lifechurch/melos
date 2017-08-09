@@ -3,6 +3,7 @@ import CustomScroll from 'react-custom-scroll'
 import { FormattedMessage } from 'react-intl'
 import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
+import ShareLink from '../../../components/ShareLink'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
 
@@ -25,7 +26,7 @@ function renderUser(friend) {
 	)
 }
 
-function Participants({ planImg, users }) {
+function Participants({ planImg, users, shareLink }) {
 	const accepted = []
 	const invited = []
 	// build accepted and not accepted lists
@@ -90,12 +91,14 @@ function Participants({ planImg, users }) {
 					</div>
 				</div>
 			</div>
+			<ShareLink link={shareLink} description={<FormattedMessage id='use share link' />} />
 		</div>
 	)
 }
 
 Participants.propTypes = {
 	planImg: PropTypes.string,
+	shareLink: PropTypes.string,
 	users: PropTypes.array,
 }
 
