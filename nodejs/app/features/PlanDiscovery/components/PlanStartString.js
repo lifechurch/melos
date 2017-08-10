@@ -13,7 +13,7 @@ function PlanStartString({ start_dt, dateOnly }) {
 			{
 				!dateOnly &&
 				(
-					diff > 0
+					diff >= 0
 						? <FormattedMessage id='started' />
 						: <FormattedMessage id='starts in' />
 				)

@@ -1,13 +1,15 @@
 import React, { PropTypes } from 'react'
 import CustomScroll from 'react-custom-scroll'
 import { FormattedMessage } from 'react-intl'
+import XMark from '../../../components/XMark'
 import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
 
-function renderUser(friend) {
+
+function renderUser(friend, handleDelete = null) {
 	const src = friend && friend.user_avatar_url ? friend.user_avatar_url.px_48x48 : ''
 	const userLink = Routes.user({
 		username: friend && friend.username,
@@ -22,11 +24,17 @@ function renderUser(friend) {
 				subheading={friend.source ? friend.source : null}
 				link={userLink}
 			/>
+			{
+				handleDelete &&
+				<a tabIndex={0} onClick={handleDelete.bind(this, friend.id)}>
+					<XMark />
+				</a>
+			}
 		</div>
 	)
 }
 
-function Participants({ planImg, users, shareLink }) {
+function Participants({ planImg, users, shareLink, handleDelete }) {
 	const accepted = []
 	const invited = []
 	// build accepted and not accepted lists
@@ -68,7 +76,7 @@ function Participants({ planImg, users, shareLink }) {
 											}
 											{
 												accepted.map((user) => {
-													return renderUser(user)
+													return renderUser(user, handleDelete)
 												})
 											}
 										</div>
@@ -100,6 +108,7 @@ Participants.propTypes = {
 	planImg: PropTypes.string,
 	shareLink: PropTypes.string,
 	users: PropTypes.array,
+	handleDelete: PropTypes.func,
 }
 
 export default Participants

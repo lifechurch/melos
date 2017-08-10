@@ -224,6 +224,7 @@ class SubscriptionList extends Component {
 								together_id={id}
 								handleActionComplete={() => {
 									this.getInvitations()
+									this.getSubs()
 								}}
 							/>
 						</div>

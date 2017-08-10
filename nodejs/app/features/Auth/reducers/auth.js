@@ -1,3 +1,4 @@
+import oauthAPI from '@youversion/api-redux/lib/endpoints/oauth'
 import type from '../actions/constants'
 import defaultState from '../../../defaultState'
 
@@ -58,7 +59,7 @@ export default function login(state = {}, action) {
 			})
 
 		// overwrite oauth state with refresh response
-		case 'OAUTH_REFRESH':
+		case oauthAPI.events.refresh.actionSuccess:
 			return Object.assign({}, state, {
 				oauth: action.data
 			})

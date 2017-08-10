@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import Immutable from 'immutable'
 import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
@@ -12,20 +13,32 @@ import Participants from '../features/PlanDiscovery/components/Participants'
 
 class ParticipantsView extends Component {
 	componentDidMount() {
-		const { dispatch, auth, params: { id, together_id }, location: { query } } = this.props
+		const {
+			dispatch,
+			auth,
+			params: { id, together_id },
+			location: { query },
+			plan,
+			participantsUsers,
+			together,
+		} = this.props
 
 		// join token will allow us to see the participants and together unauthed
 		const token = query && query.token ? query.token : null
-		dispatch(planView({
-			plan_id: id.split('-')[0],
-			together_id,
-			token,
-			auth,
-		}))
-		dispatch(plansAPI.actions.together.get({
-			id: together_id,
-			token
-		}, { auth: auth && auth.isLoggedIn }))
+		if (!(plan && 'id' in plan && participantsUsers)) {
+			dispatch(planView({
+				plan_id: id.split('-')[0],
+				together_id,
+				token,
+				auth,
+			}))
+		}
+		if (!(together && 'id' in together)) {
+			dispatch(plansAPI.actions.together.get({
+				id: together_id,
+				token
+			}, { auth: auth && auth.isLoggedIn }))
+		}
 	}
 
 	localizedLink = (link) => {
@@ -52,7 +65,7 @@ class ParticipantsView extends Component {
 	}
 
 	render() {
-		const { plan, participantsUsers, together } = this.props
+		const { plan, participantsUsers, together, auth } = this.props
 		let userList = null
 		if (participantsUsers) {
 			userList = Object.keys(participantsUsers).map((userid) => {
@@ -61,12 +74,20 @@ class ParticipantsView extends Component {
 			})
 		}
 		const src = plan && plan.images ? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url : ''
+		const isAuthHost = together
+			&& together.host_user_id
+			&& auth
+			&& Immutable
+				.fromJS(auth)
+				.getIn(['userData', 'userid'], null) === together.host_user_id
 
 		return (
 			<Participants
 				planImg={src}
 				users={userList}
 				shareLink={together && together.public_share ? together.public_share : null}
+				// only allow participant deletes if the authed user is the host of pwf
+				handleDelete={isAuthHost && this.handleDelete}
 			/>
 		)
 	}

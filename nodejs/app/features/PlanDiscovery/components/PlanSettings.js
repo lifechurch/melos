@@ -98,11 +98,16 @@ class PlanSettings extends Component {
 		const { dispatch, auth } = this.props
 		if (this.together_id) {
 			dispatch(plansAPI.actions.participant.delete({
-				id: this.subscription_id,
+				id: this.together_id,
 				userid: auth && auth.userData && auth.userData.userid
 			}, {
 				auth: auth.isLoggedIn
-			}))
+			})).then(() => {
+				dispatch({ type: 'DELETE_SUB_FROM_STATE', data: { id: this.subscription_id } })
+				dispatch(routeActions.push(Routes.subscriptions({
+					username: auth.userData.username
+				})))
+			})
 		} else {
 			dispatch(plansAPI.actions.subscription.delete({
 				id: this.subscription_id
