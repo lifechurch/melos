@@ -1,88 +1,88 @@
 ---
-cs: 
-    time: 
-        formats: 
+cs:
+    time:
+        formats:
             votd: "%-d. %B %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
+    datetime:
+        time_ago_in_words:
+            about_x_hours:
                 one: "před %{count} hodinou"
                 few: "před %{count} hodinami"
                 other: "před %{count} hodinami"
-            about_x_months: 
+            about_x_months:
                 one: "před %{count} měsícem"
                 few: "před %{count} měsíci"
                 other: "před %{count} měsíci"
-            about_x_years: 
+            about_x_years:
                 one: "před %{count} rokem"
                 few: "před %{count} roky"
                 other: "před %{count} roky"
-            almost_x_years: 
+            almost_x_years:
                 one: "téměř před %{count} rokem"
                 few: "téměř před %{count} roky"
                 other: "téměř před %{count} roky"
             half_a_minute: "před minutou"
-            less_than_x_minutes: 
+            less_than_x_minutes:
                 one: "před %{count} minutou"
                 few: "před %{count} minutami"
                 other: "před %{count} minutami"
-            less_than_x_seconds: 
+            less_than_x_seconds:
                 one: "před %{count} sekudnou"
                 few: "před %{count} sekundami"
                 other: "před %{count} sekudami"
-            over_x_years: 
+            over_x_years:
                 one: "starší než %{count} rok"
                 few: "starší %{count} let"
                 other: "starší %{count} let"
-            x_days: 
+            x_days:
                 one: "před %{count} dnem"
                 few: "před %{count} dny"
                 other: "před %{count} dny"
-            x_minutes: 
+            x_minutes:
                 one: "před %{count} minutou"
                 few: "před %{count} minutami"
                 other: "před %{count} minutami"
-            x_months: 
+            x_months:
                 one: "před %{count} měsícem"
                 few: "před %{count} měsíci"
                 other: "před %{count} měsíci"
-            x_seconds: 
+            x_seconds:
                 one: "před %{count} sekundou"
                 few: "před %{count} sekundami"
                 other: "před %{count} sekundami"
-    counter: 
+    counter:
         format: "999 999 999"
-    social: 
-        intro page: 
+    social:
+        intro page:
             main heading: "Diskuze & Objevování"
             main description: "Nový způsob poznávání Bible s blízkými přáteli"
-            moment: 
+            moment:
                 user aaron: "Adam Novotný"
                 user andy: "Jiří Kovář"
                 timestamp: "Před 5 dny"
                 title: "přidal záložku - Žalmy 31,7"
                 verse: "Jásat a radovat se budu z tvé lásky, že jsi pohlédl na mé trápení, žes poznal mou duši uprostřed úzkosti."
                 reference: "Žalmy 31,7"
-                discover: 
+                discover:
                     copy: "Objevujte Bibli s přáteli, zvýrazňujte verše a přidávejte záložky nebo poznámky."
                     button: "Jak začít?"
-                share: 
+                share:
                     copy: "Diskutujte a přemýšlejte nad Písmem společně"
                     button: "Začněte vyhledáním svých přátel."
-                likes: 
+                likes:
                     info: "a 4 další"
-                comments: 
-                    first: 
+                comments:
+                    first:
                         text: "Přesně tohle jsem dnes potřeboval slyšet, díky. Ještě si napíšeme!"
                         time: "před 3 hodinami"
-                    second: 
+                    second:
                         text: "Amen, já taky. Právě ti posílám mail."
                         time: "před 27 minutami"
                     field placeholder: "Přidat komentář..."
-        widget: 
+        widget:
             timeline: "Timeline"
             no activity yet: "Zatím zde nebyla žádná aktivita."
-        moment: 
+        moment:
             read all: "Zobrazit vše"
             read less: "Zobrazit méně"
         share: "Sdílet"
@@ -91,18 +91,18 @@ cs:
         connected as: "Jste připojen/a ke službě %{connection} jako %{username}"
         remove connection: "Odstranit toto propojení"
         connection friends: "Zde jsou někteří YouVersion uživatelé, se kterými jste ve spojení přes %{connection}:"
-        errors: 
+        errors:
             no friends: "Žádný z vašich %{connection} přátel ještě není zaregistrovaný na YouVersion."
             reset connection: "Promiňte, vyskytla se chyba. Prosím deaktivujte toto připojení a znovu ho připojte."
-        email: 
+        email:
             name: "E-mail"
-        twitter: 
+        twitter:
             name: "Twitter"
-        facebook: 
+        facebook:
             name: "Facebook"
-            errors: 
+            errors:
                 expired access: "Vaše přihlášení přes Facebook vypršelo. Prosím odstraňte připojení a připojte se znovu na Facebook."
-    language names: 
+    language names:
         arabic: "Arabic"
         bulgarian: "Bulgarian"
         czech: "Czech"
@@ -121,7 +121,7 @@ cs:
         ukrainian: "Ukrainian"
         simplified chinese: "Simplified Chinese"
         traditional chinese: "Traditional Chinese"
-    api: 
+    api:
         users agree bool: "Pro vytvoření účtu musíte souhlasit se všeobecnými podmínkami."
         users confirm password matches: "Zadaná nová hesla nesouhlasí."
         users email email: "Tato e-mailová adresa je neplatná."
@@ -144,26 +144,26 @@ cs:
         users last name required: "Musíte zadat příjmení."
         moments content required: "Obsah nemůže být prázdný."
         users auth password required: "Zde musíte zadat heslo."
-    meta: 
+    meta:
         best kids app: "Nejlepší aplikace pro děti!"
         best educational app: "Nejlepší výuková aplikace"
-        kids_app: 
+        kids_app:
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
-        100million: 
+        100million:
             title: "Začíná to se 100 milióny"
             description: "Aplikace Bible byla již nainstalována skoro 100 milionkrát -  je to neuvěřitelný historický milník. A to jsme ještě ani pořádně nezačali. Již dnes si stáhněte aplikaci Bible, která je zdarma - a pak sdílejte aplikaci se svými přáteli. Začněme společné tvořit dějiny."
-        mobile: 
+        mobile:
             title: "Aplikace Bible"
             description: "Čtěte Boží slovo kdykoliv a kdekoliv prostřednictvím YouVersion aplikace Bible. Sdílejte texty s přáteli, zvýrazňujte a ukládejte si záložky. Vytvořte si každodenní návyk díky plánům čtení. Dostupné pro iOS, Android, Blackberry, Windows Phone a další."
             download or read: "Stáhnout teď nebo číst online"
-        site: 
+        site:
             title: "Bible.com"
             description: "Vneste krásu a biblické pravdy do vašeho každodenního života.  S aplikací YouVersion Bible můžete písmo číst, sledovat, poslouchat a sdílet na svém chytrém telefonu nebo tabletu a také online na Bible.com"
-        connections: 
-            index: 
+        connections:
+            index:
                 title: "Připojené účty"
-    kids: 
+    kids:
         bible app: "Aplikace Bible"
         for: "for"
         kids: "kids"
@@ -186,7 +186,7 @@ cs:
         feature 3: "Vivid illustrations with touch-activated animations"
         feature 4: "Games and activities help kids remember what they learn"
         feature 5: "Kid-friendly navigation"
-        share: 
+        share:
             tell friends: "Tell your friends about the Bible App for Kids."
             facebook name: "The Bible App for Kids"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
@@ -197,11 +197,11 @@ cs:
             email: "Email"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
-        partner: 
+        partner:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
-        links: 
+        links:
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
@@ -226,8 +226,8 @@ cs:
     new note: "Nová poznámka"
     share success: "Vaše zpráva byla sdílena."
     share error: "Omlouváme, ve vaší zprávě se vyskytla chyba. Prosíme zkuste to znovu."
-    share: 
-        request: 
+    share:
+        request:
             no_twitter_connection: "Nejste připojeni k účtu Twitter. Na stránce nastavení se prosím připojte."
             no_facebook_connection: "Nejste připojeni k účtu Facebook. Na stránce nastavení se prosím připojte."
     google plus: "Google+"
@@ -322,9 +322,9 @@ cs:
     groups: "Skupiny"
     mobile: "Mobilní aplikace"
     live: "Live"
-    events: 
+    events:
         events: "Akce"
-        menu: 
+        menu:
             features: "Features"
             faq: "FAQ"
             resources: "Resources"
@@ -417,16 +417,16 @@ cs:
     traditional: "Tradiční"
     alphabetic: "Abecedně"
     versions title: "Překlady"
-    languages: 
+    languages:
         title: "Jazyky Bible a překlady"
         most popular: "Nejoblíbenější jazyky"
         additional: "Další jazyky"
         download language: "Stáhnout Bibli v %{language_name}"
         bible in: "Bible v %{language_name}"
-    or: 
+    or:
         lower: "nebo"
         upper: "NEBO"
-    moments: 
+    moments:
         scripture unavailable: "Překlad nedostupný."
         could not load: "Nelze načíst"
         could not load verse: "Nelze načíst verš"
@@ -440,8 +440,8 @@ cs:
         users like this: "%{last_liker_link} a %{more_link} se toto líbí"
         like: "To se mi líbí"
         likes: "Líbí se mi"
-        more than one like: 
-        vod: 
+        more than one like:
+        vod:
             title: "Verš dne"
             get daily email: "Zasílat denně email"
             subscribe: "Odebírat"
@@ -451,16 +451,16 @@ cs:
             view more: "Zobrazit více"
             time: "Čas"
             blurb: "Přihlásit odběr Verše dne Získejte denně email nebo oznámení pro vaše přenosné zařízení."
-        friendship: 
+        friendship:
             now friends: "Nyní se přátelíte s"
-        cta: 
+        cta:
             profile update text: "Pomozte svým přátelům vás najít."
             profile update button: "Aktualizovat profil"
             sharing text: "Sdílet verše na sociálních sítích"
             sharing button: "Zapnout sdílení"
             friends text: "Přečíst si v Bibli aktivitu vašich přátel"
             friends button: "Najít přátele"
-        action: 
+        action:
             go to scripture: "Přejít k Písmu"
             add friend button: "Přidat přítele"
             load more: "Načíst více"
@@ -488,41 +488,41 @@ cs:
             read plan: "Číst"
             about plan: "O plánu"
             start plan: "Začít plán"
-    notifications: 
+    notifications:
         title: "Oznámení"
         none: "Nemáte žádná oznámení"
         no new: "Žádná nová oznámení"
         view all: "Zobrazit všechna oznámení"
-    likes: 
+    likes:
         create success: "Povedlo se! Vaše akce byla uložena"
         create failure: "Vaši akci se nepodařilo uložit"
         destroy success: "Už se vám to nelíbí"
         destroy failure: "Vaši akci se nepodařilo uložit"
-    comments: 
+    comments:
         view all N: "Zobrazit %{count} komentáře"
         post comment: "Přidat komentář"
         create success: "Povedlo se! Přidali jste komentář."
         create failure: "Komentář se nepodařilo zveřejnit"
         destroy success: "Komentář smazán"
         destroy failure: "Komentář nemohl být smazán"
-        form: 
+        form:
             save button: "Přidat"
-    friends: 
+    friends:
         you have N friends: "Máte %{count} přátel"
         none me: "Sdílejte vaše chvíle nad Biblí prostřednictvím záložek, zvýraznění a poznámek s vašimi nejbližšími přáteli a rodinou."
         find friends: "Najít přátele"
-        blank slate: 
+        blank slate:
             heading: "Zatím nejste přátelé"
             description: "Pro zobrazení přátel tohoto uživatele se musíte nejprve stát jeho přítelem."
         limit notice: "Můžete mít nanejvýš 150 přátel"
         limit description: "Omezení vašich přátelství v aplikaci Bible na lidi, které znáte, vytváří prostředí pro upřímné konverzace a společné objevování s blízkými přáteli."
-    friendships: 
+    friendships:
         blurb: "Soustředně pozornost kolem Bible. Sdílejte co potřebujete, kdykoliv s vašimi blízkými přáteli."
         name required: "Abyste mohli poznávat Bibli společně s vašimi přáteli, přidejte si na váš Profil křestní jméno a příjmení."
         find friends title: "Najít přátele"
         search by name: "Hledat podle jména"
         search button: "Přejít"
-        widget: 
+        widget:
             find friends title: "Najít přátele"
             search by name: "Hledat podle jména"
             search button: "Přejít"
@@ -536,12 +536,12 @@ cs:
         requests view all: "Všechny žádosti o přátelství"
         requests none: "Nemáte žádnou žádost o přátelství"
         requests no new: "Žádné nové žádosti"
-        status: 
+        status:
             pending: "Čekající žádost"
             friends: "Přátelé"
         user wants friendship: "%{user} chce být váš přítel"
         user wants friendship partial: "chce být vaším přítelem"
-        form: 
+        form:
             remove friend button: "Odstranit přítele"
             remove friend button title: "Odstranit tuto osobu ze seznamu přátel"
             add friend button: "Přidat přítele"
@@ -551,24 +551,24 @@ cs:
             accept request button: "Přijmout žádost"
             ignore button: "Odmítnout"
             ignore request button: "Odmítnout žádost"
-    images: 
+    images:
         none user: "%{username} zatím nevytvořil žádné obrázky."
-        blank slate: 
+        blank slate:
             heading: "Zatím nemáte žádné obrázky"
             description: "Použijte aplikaci YouVersion a vytvořte obrázky s verši."
-    notes: 
+    notes:
         none user: "%{username} zatím neudělal žádnou poznámku."
-        blank slate: 
+        blank slate:
             heading: "Nemáte zatím žádné poznámky"
             description: "Během čtení Bible je možné, že uslyšíte tichý Boží hlas, který k vám mluví. Své myšlenky si zde můžete rychle napsat. Vaše poznámky jsou automaticky označeny jako <em>soukromé</em>. Pokud byste je chtěli sdílet s přáteli, jednoduše stačí otevřít a změnit nastavení na <em>veřejné</em>."
-        form: 
+        form:
             title field: "Nadpis:"
             content field: "Obsah:"
             highlight field: "Zvýraznit: (volitelné)"
             reference field: "Odkaz(y):"
             status field: "Status:"
             save button: "Uložit"
-        status: 
+        status:
             private: "Soukromé"
             public: "Veřejné"
             friends: "Pouze přátelé"
@@ -607,7 +607,7 @@ cs:
         destroy success: "Poznámka smazána"
         destroy failure: "Chyba během mazání poznámky"
         update success: "Poznámka aktualizována"
-    ref: 
+    ref:
         loading secondary: "Načítají se odkazy v sekundárním překladu..."
         clear verses: "Zrušit označení veršů"
         choose book and chapter: "Zvolit knihu + kapitolu"
@@ -629,7 +629,7 @@ cs:
         no secondary version text: "Jazyk %{language_name} má k dispozici pouze jeden překlad, proto jsme nemohli zvolit vedlejší překlad. Prosím, zvolte váš vedlejší překlad pro paralelní porovnávání."
         select another chapter: "Vybrat jinou kapitolu"
         view in reader: "Zobrazit %{reference}"
-    users: 
+    users:
         unverified heading: "Jste téměř u konce!"
         unverified message: "Vypadá to, že se snažíte přihlásit do účtu, u kterého ještě nebylo provedeno úplné nastavení. Máte před sebou už jen jeden krok: Jednoduše klikněte na ověřovací odkaz, který Vám byl zaslán v potvrzovacím e-mailu z YouVersion. Nemůžete jej najít? Podívejte se do Vaší nevyžádané pošty (spamu) a nebo si nechte znovu poslat <a href='%{resend_path}' target='_self'>potvrzovací e-mail</a>."
         settings: "Nastavení"
@@ -733,7 +733,7 @@ cs:
         resend confirmation title: "Nedostali jste váš potvrzovací e-mail?"
         resend confirmation copy: "Vložte zde níže e-mailovou adresu, kterou jste použili k registrování a my vám zašleme jiný potvrzující e-mail."
         resend confirmation button: "Znovu zaslat potvrzení"
-        privacy: 
+        privacy:
             policy: "Ochrana soukromí %{youversion}"
             intro: "YouVersion, webové stránky i aplikace vlastněné a provozované společností Life.Church jsou si vědomy toho, že máte zájem vědět, jaké informace jsou o vašich zařízeních a účtech používány a shromažďovány. Doufáme, že následující prohlášení vám pomůže pochopit jak bude YouVersion shromažďovat, používat a chránit informace vámi poskytnuté na našich stránkách nebo v aplikaci."
             translation disclaimer: "Podmínky ochrany osobních údajů byly přeloženy do vašeho jazyka, pro vaše pohodlí. Avšak Life.Church nebere žádnou odpovědnost za přesnost totoho překladu. V případě jakýchkoli nesrovnalostí mezi překladem a anglickým originálem, vždy má originál vyšší prioritu."
@@ -762,7 +762,7 @@ cs:
             enforcement text: "Life.Church pravidelně kontroluje dodržování těchto zásad ochrany soukromí. Po obdržení formální písemné stížnosti týkající se otázky ochrany soukromí, budeme kontaktovat dotčené uživatele ve vztahu k jeho nebo jejím obavám. Budeme spolupracovat s příslušnými regulačními orgány, včetně místních orgánů pro ochranu údajů, a řešit případné stížnosti týkající se předávání osobních údajů, které není možno vyřešit mezi Life.Church a jednotlivci."
             questions title: "Dotazy"
             questions text: "Jakékoliv dotazy týkající se ochrany soukromí můžete směrovat na: legal@youversion.com"
-        terms: 
+        terms:
             title: "Podmínky užití"
             translation disclaimer: "Podmínky používání byly přeloženy do vašeho jazyka, pro vaše pohodlí. Avšak Life.Church nebere žádnou odpovědnost za přesnost totoho překladu. V případě jakýchkoli nesrovnalostí mezi překladem a anglickým originálem, vždy má originál vyšší prioritu."
             acceptance title: "Souhlas s podmínkami"
@@ -811,8 +811,8 @@ cs:
             copyright text: "Life.Church uznává duševní vlastnictví ostatních. Žádáme své uživatele, aby konali také tak, především ve věcech týkajících se používání YouVersion. Life.Church může, za příslušných okolností a dle svého uvážení, zakázat nebo ukončit účty uživatelů, kteří opakovaně porušují pravidla. Pokud si myslíte, že vaše dílo bylo zkopírováno způsobem, který představuje porušení autorských práv, nebo byla vaše práva duševního vlastnictví jinak porušena, napište nám následující informace na legal@youversion.com:<ul type='none'><li>Elektronický nebo fyzický podpis osoby oprávněné jednat v zastoupení vlastníka autorských práv nebo jiného duševního vlastnictví v dané věci.</li><li>Popis díla, na nějž se vztahuje autorské právo nebo jiné duševní vlastnictví, jež bylo podle vás porušeno.</li><li>Popis, kde na YouVersion je umístěný obsah, který je podle vás zneužit.</li><li>Vaši adresu, telefonní číslo a e-mailovou adresu (vše platné);</li><li>Vaše prohlášení, že máte dobrou víru, že sporné použití není povoleno vlastníkem autorských práv, jeho zástupcem nebo zákonem.</li><li>Vaše prohlášení, vytvořené s vědomím možného trestu křivé výpovědi, že výše uvedené informace ve vašem oznámení jsou přesné a že jste vlastníkem autorských práv, nebo jeho zástupcem, nebo že jste oprávněn jednat v zastoupení vlastníka díla. Life.Church jednatel jednající ve věcech porušení autorských práv nebo jiného duševního vlastnictví je dostupný:%{newline}Na adrese: Life.Church c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Telefon: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "Obecné informace"
             general text: "Celá smlouva. Tyto PODMÍNKY POUŽITÍ představují úplnou dohodu mezi vámi a společností Life.Church a řídí vaše využívání YouVersion. Nahrazuje veškeré předchozí dohody mezi vámi a Life.Church s ohledem na YouVersion. Také mohou být zavazující další požadavky a smluvní podmínky.<br><br>Volba práva a soudu. Způsoby a podmínky použití a vztah mezi vámi a společností Life.Church se řídí zákony státu Oklahoma bez ohledu na konflikt s ustanoveními zákonů. Vy a společnost Life.Church souhlasí s osobní a výhradní jurisdikci soudů v kraji Oklahoma County, Oklahoma.<br><br>Vzdání se a oddělitelnost podmínek. Selhání Life.Church v použití nebo vymáhání jakéhokoliv práva či ustanovení těchto PODMÍNEK VYUŽITÍ nepředstavuje zřeknutí se tohoto práva nebo ustanovení. Jestliže je některé ustanovení těchto PODMÍNEK POUŽÍVANÍ shledáno soudem příslušné jurisdikce za neplatné, obě strany s tím přesto souhlasí, měl by se soud snažit, aby nabylo účinku záměrů stran jak je uvedeno v tomto ustanovení, a ostatní ustanovení těchto PODMÍNEK POUŽITÍ zůstávají v úplné platnosti a účinnosti.<br><br>Žádné právo přenositelnosti. Souhlasíte s tím, že váš Life.Church účet je nepřenositelný, a jakákoli práva na vaší Life.Church ID nebo obsah v rámci vašeho účtu zaniká vaší smrtí. Po obdržení kopie úmrtního listu, může Life.Church ukončit váš účet a trvale odstranit veškerý obsah v něm.<br><br>Promlčecí lhůta. Berete na vědomí a souhlasíte s tím, že bez ohledu na jakýkoli zákon nebo protiprávní zákon, žádosti a nároky nebo spory vzniklé z/nebo v souvislosti s užíváním YouVersion nebo těchto PODMÍNEK POUŽITÍ musí být podány do jednoho (1) roku po takovém nároku nebo příčině vzniku, nebo navždy promlčeny.<br><br>Názvy oddílů v rámci těchto PODMÍNEK POUŽITÍ jsou určeny pouze pro pohodlí a nemá žádnou právní nebo smluvní platnost."
-        profile: 
-            blank slate: 
+        profile:
+            blank slate:
                 heading: "Pokračujte, není tu nic k vidění (zatím)"
                 description: "Začněte pracovat s Biblí, anebo komunikovat s přáteli a na této stránce se vám zobrazí historie toho, co již máte za sebou."
             visit friend: "Zobrazit profil uživatele %{friend}"
@@ -852,11 +852,11 @@ cs:
             edit: "Upravit"
             bio: "Životopis"
             complete_first_last: "Dokončete nastavení profilu vyplněním křestního jména a příjmení"
-        password: 
+        password:
             updated: "Úspěšně jste aktualizovali vaše heslo!"
             error: "Omlouváme se, vyskytla se chyba během změny vašeho hesla."
             old was invalid: "Omlouváme se, musíte zadat své staré heslo, abyste mohli změnit vaše heslo."
-        notifications: 
+        notifications:
             badges: "Upozornit mě na odznaky, které jsem získal/a."
             follower: "Upozornit mě na to, když mě někdo následuje."
             newsletter: "Zasílat YouVersion oznámení."
@@ -869,7 +869,7 @@ cs:
             moments: "Upozorňovat o aktivitě přátel"
             comments: "Upozorňovat o komentářích u mojí aktivity"
             likes: "Upozorňovat, když si někdo oblíbí moji aktivitu"
-    bookmarks: 
+    bookmarks:
         new: "Nová záložka"
         edit: "Upravit"
         delete: "Smazat tuto záložku"
@@ -900,10 +900,10 @@ cs:
         color: "Barva:"
         version field: "Překlad:"
         none user: "%{username} nemá záložky"
-        blank slate: 
+        blank slate:
             heading: "Založte si své oblíbené verše"
             description: "Během čtení Bible můžete označovat verše a vytvářet z nich záložky. Zde můžete záložky kdykoliv prohlížet, upravovat nebo mazat."
-        form: 
+        form:
             title field: "Nadpis:"
             reference field: "Odkaz:"
             labels field: "Štítky (oddělené čárkou):"
@@ -911,28 +911,28 @@ cs:
             colors field: "Barva:"
             update button: "Aktualizovat záložku"
             save button: "Uložit záložku"
-    badges: 
+    badges:
         earned a badge: "Získán odznak"
         user badges: "Odznaky uživatele %{user}"
         earned date: "Získáno uživatelem %{username} před %{ago}"
         none me: "Zatím jste nezískali žádné odznaky."
         none user: "%{username} zatím nezískal žádné odznaky."
-    plans: 
+    plans:
         see all: "Zobrazit vše"
         day_completed: "<b>%{username} </b> ukončil <b>Den %{day}</b> v Plánu studia Bible: <b>%{plan_title}</b>"
-        status: 
+        status:
             on track: "Podle plánu!"
-            days ahead: 
+            days ahead:
                 one: "%{count} den napřed"
                 few: "%{count} dny napřed"
                 other: "%{count} dnů napřed"
-            missed days: 
+            missed days:
                 one: "%{count} zmeškaný den"
                 few: "%{count} zmeškané dny"
                 other: "%{count} zmeškaných dnů"
         bible plan language: "Jazyk plánu čtení Bible"
         share plan: "Prohlédněte si tento @YouVersion #Plán čtení: %{plan_title}"
-        widget: 
+        widget:
             my plans: "Moje plány"
             start reading: "Začít číst"
             view my plans: "Zobrazit moje plány"
@@ -941,12 +941,12 @@ cs:
             reading: "čtení"
             readings: "čtení"
             readings 5 or more: "čtení"
-        stats: 
-            friends reading: 
+        stats:
+            friends reading:
                 one: "%{count} přítel odebírá tento plán"
                 few: "%{count} přátelé odebírají tento plán"
                 other: "%{count} přátel odebírá tento plán"
-            friends completed: 
+            friends completed:
                 one: "%{count} přítel dokončil tento plán"
                 few: "%{count} přátelé dokončili tento plán"
                 other: "%{count} přátel dokončilo tento plán"
@@ -954,7 +954,7 @@ cs:
             view all: "Zobrazit vše"
             close: "Zavřít"
         settings: "Nastavení"
-        privacy: 
+        privacy:
             visible to friends?: "Přejete si, aby mohli vaši přátelé zobrazovat vaši aktivitu u Plánů čtení?"
             private: "Soukromé"
             public: "Veřejné"
@@ -1024,7 +1024,7 @@ cs:
         catch me up: "Dohnat plán"
         restart description: "Můžete restartovat váš plán. Celá historie čtení a postupu bude vymazána a začnete od začátku."
         restart: "Restartovat plán"
-        privacy description: 
+        privacy description:
             private: "Váš plán čtení je soukromý. Změňte nastavení na Pouze přátelé a sdílejte tak váš plán s přáteli."
             public: "Váš plán čtení je veřejný. Přepněte nastavení na Soukromý plán a váš plán budete vidět pouze vy."
         make private: "Nastavit jako soukromý"
@@ -1074,32 +1074,32 @@ cs:
         completed notice: "Gratulujeme! Dokončili jste váš plán čtení."
         exit: "Konec"
         loading sidebar content: "Načítání obsahu postranní lišty..."
-    videos: 
+    videos:
         title: "Videa"
         watch videos: "Sledovat filmy o Bibli"
         all: "Všechna videa"
         related scripture: "Související verše"
         share video: "Sleduji %{video_title} na @YouVersion."
-    licenses: 
-        authorized: 
+    licenses:
+        authorized:
             heading: "Váš obsah byl autorizován"
             description: "Nyní můžete <a href='%{content_link}' target='_self'>procházet váš zakoupený obsah</a> od %{vendor} na YouVersion!"
         has errors: "Během zpracování vašeho požadavku se vyskytly chyby:"
-        confirm: 
+        confirm:
             email: "K autorizování vašeho video obsahu, který jste zakoupili, prosím, zkontrolujte si vaši e-mailovou schránku a klikněte na odkaz, který vám přišel z YouVersion a potvrďte vaši registraci."
-        request: 
+        request:
             invalid_vendor_signature: "Ověření licence selhalo: Neplatný podpis poskytovatele"
             invalid_vendor_id: "Ověření licence selhalo: Neplatné ID poskytovatele"
             invalid_item_ids: "Ověření licence selhalo: Neplatné položky"
-        vendor_transaction_id: 
+        vendor_transaction_id:
             duplicate: "ID transakce: ID této transakce již bylo jednou zaregistrováno"
-        auth: 
+        auth:
             login notice: "Abysme mohli ověřit váš zakoupený obsah, prosíme, přihlášte se přes váš YouVersion účet níže nebo <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
             signup notice: "Abysme mohli ověřit váš zakoupený obsah, vytvořte si zdarma YouVersion účet níže nebo klikněte na <a href='/sign-in?source=licenses' target='_self'>%{login}</a> jestliže již účet máte."
             signup link text: "vytvořte si zdarma účet"
             login link text: "přihlásit se"
-    registration: 
-        placeholder: 
+    registration:
+        placeholder:
             email: "Zadejte vaši e-mailovou adresu"
             username: "Zadejte vaše uživatelské jméno"
             password: "Zadejte své heslo"
@@ -1113,14 +1113,14 @@ cs:
         share blurb: "Zdá se, že chcete sdílet verše. Skvěle! Budete moci sdílet verše přes Facebook nebo Twitter. Přihlašte se nebo si založte účet viz níže a můžete začít!"
         highlight blurb: "Zdá se, že chcete zvýraznit nějaké verše. Výborně! Zvýraznění vám pomáhají organizovat a udržovat přehled o vašich oblíbených verších. Přihlašte se, nebo si založte účet a můžete začít."
         note blurb: "Vypadá to, že chcete vytvořit poznámku o verši. Dobrý nápad! Poznámky vám pomůžou organizovat a zapamatovat pravdy, které objevíte v Božím Slově. Přihlašte se nebo se zaregistrujte a můžete začít!"
-    audio: 
+    audio:
         none: "Omlouváme se, audio není k tomuto překladu k dispozici."
         chapter only: "Omlouváme se, ale audio funkce není dostupná pro jednotlivé verše. Začněte číst kapitolu od začátku a tato funkce vám bude nabídnuta."
         close player menu: "Zavřít"
         publisher website: "Webové stránky vydavatele"
-    highlights: 
+    highlights:
         title: "Zvýraznění"
-        blank slate: 
+        blank slate:
             heading: "Zvýrazňujte vaše oblíbené verše"
             description: "Během čtení Bible si můžete vybrané verše zvýraznit. Zde můžete svá zvýraznění kdykoliv prohlížet, editovat nebo mazat."
         none user: "%{username} nemá žádné zvýraznění"
@@ -1131,9 +1131,9 @@ cs:
         destroy failure: "Chyba při odstraňování zvýraznění"
         creation error: "Omlouváme se, nepodařilo se zvýraznění."
         delete error: "Omlouváme se, nepodařilo se odstranit zvýraznění."
-        form: 
+        form:
             save button: "Uložit zvýraznění"
-    searching: 
+    searching:
         bible: "Bible"
         plans: "Plány"
         users: "Uživatelé"
@@ -1142,7 +1142,7 @@ cs:
         suggestion html: "Mysleli jste %{suggestion_link}?"
         all versions: "Všechny překlady v jazyce: %{language_name}"
         results for: "Výsledky vyhledávání: "
-    donate: 
+    donate:
         donate now: "Darovat nyní"
         donate now intl: "nebo darujte mezinárodně"
         enter amount: "Výše částky."
@@ -1171,7 +1171,7 @@ cs:
         state: "Stát"
         zip: "PSČ"
         creation form errors: "Následující chyby neumožnily odeslat finanční dar:"
-    download ad: 
+    download ad:
         title: "Stáhněte si bezplatnou aplikaci Bible"
         description copy: "%{language_count} různých jazyků se stovkami překladů Biblí - Bible, která je s vámi kdekoliv."
         meta copy title: "Stáhnout si bezplatnou aplikaci Bible"
@@ -1183,11 +1183,11 @@ cs:
         banner title: "Aplikace Bible"
         banner action: "Stáhnout"
         banner open: "Otevřít"
-    download bafk ad: 
+    download bafk ad:
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
         download: "Download Now"
-    about page: 
+    about page:
         relevancy: "Význam"
         relevancy copy: "V dřívějších generacích měli lidé k Bibli velmi omezený přístup. Dnes to již neplatí. Nicméně, mnoho lidí, kteří mají přístup k Bibli, si myslí, že její poselství se nedá aplikovat na jejich životy. V tu samou dobu jsou tu další lidé, kteří věří, že existuje propojení mezi Biblí a jejich každodenními zkušenostmi."
         information revolution: "Informační revoluce"
@@ -1198,7 +1198,7 @@ cs:
         partners text: "Bez štedrých partnerů, kteří vydávají Bible, by zkrátka YouVersion nedokázalo poskytovat naší celosvětové komunitě takto velké množství překladů Bible. Mnoho z vás se nás ptalo, jakým způsobem je možné poděkovat těmto podporovatelům YouVersion? Více se o nich samotných, jejich projektech a způsobech jak je můžete podporovat dozvíte níže na uvedených odkazech."
         translation title: "Naše překladatelské týmy"
         learn more: "Zjistit více"
-    press page: 
+    press page:
         title: "Informace pro tisk"
         contact header: "Kontaktní informace pro tisk"
         contact header 2: "Na webu"
@@ -1211,13 +1211,13 @@ cs:
         lead copy: "Aplikace Bible je bezplatná přenosná Bible založená na Bibli z Bible.com a může být instalována na téměř všechny mobilní telefony. Aplikace Bible umožňuje uživatelům číst Bibli, sdílet verše na vlastní sociální síti, založit si oblíbené pasáže, a více. Vše ve formátu, který drží krok se stále mobilnějším životním stylem."
         resources title: "Zdroje pro tisk"
         now title: "Dnes v komunitě YouVersion"
-        resources: 
+        resources:
             now: "Okamžitý pohled na používání a na poslední data"
             about: "O YouVersion a aplikaci Bible"
             history: "Historie a statistiky YouVersion"
             manual: "Brand manual YouVersion"
         images title: "Loga a obrázky YouVersion"
-        images: 
+        images:
             logos: "Složka s logy YouVersion"
             icons: "Ikony aplikace Bible"
             infographic: "Infografika: Statistiky a používání aplikace Bible"
@@ -1225,7 +1225,7 @@ cs:
             lifestyle: "Sbírka obrázků: Lifestyle"
             screencast: "Ilustrační video o YouVersion"
         links title: "Média o YouVersion"
-    mobile page: 
+    mobile page:
         h2: "Boží slovo je s vámi."
         h3: "YouVersion funguje globálně"
         h3 sub: "K dispozici ve více než %{language_count} světových jazycích."
@@ -1270,44 +1270,44 @@ cs:
         sms info: "Obdržíte jednorázovou SMS s odkazem ke stažení aplikace Bible"
         sms download: "Klikněte ke stažení aplikace Bible:"
         sms default country: "CZ"
-    pages: 
-        generic_error: 
+    pages:
+        generic_error:
             title: "Ups!"
             explanation: "Něco se pokazilo! Můžete zkusit obnovit stránku, omlouváme se za toto nedopatření!"
             our action: "Byli jsme o tomto problému upozorněni a vrhneme se na něj co nejdřív, jak jen to bude možné."
-        home: 
+        home:
             heading: "Bible zdarma pro váš telefon, tablet i počítač."
             cta: "Číst Bibli"
-            experience: 
+            experience:
                 title: "Dostupná"
                 body: "Na počítači, telefonu či tabletu si můžete vybrat z více než 1200 překladů v celkem 900 jazycích. Mnoho z nich je dostupných také v audio verzi."
                 action: "Zobrazit překlady Bible"
-            make_yours: 
+            make_yours:
                 title: "Osobní"
                 body: "Oblíbené verše si můžete zvýraznit, uložit, nebo z nich vytvářet obrázky ke sdílení. K jednotlivým pasážím lze také přidávat veřejné či soukromé poznámky."
                 action: "Vytvořit si bezplatný účet"
-            install_now: 
+            install_now:
                 title: "Aplikace"
                 body: "Aplikace Bible je zcela zdarma. Bez reklam či  plateb v rámci aplikace. Počet instalací k dnešnímu dni:"
                 action: "Stáhnout si bezplatnou aplikaci Bible"
-            free_plans: 
+            free_plans:
                 title: "Bezplatné plány čtení a výkladové poznámky"
                 body: "Plány vám pomohou se čtením Bible na každý den - stačí si jen udělat trochu času."
             browse_plans: "Prohlédnout si všechny plány čtení"
             read_listen: "Čtěte, poslouchejte, sledujte, sdílejte"
             start_now: "Jdu do toho!"
-            votd: 
+            votd:
                 title: "Verš dne"
                 highlight_bookmark: "Zvýraznit, uložit nebo sdílet tento verš"
                 subscribe: "Odebírat verš dne"
-            hero: 
+            hero:
                 heading: "Bible zdarma na váš telefon, tablet a počítač."
                 description: "YouVersion je jednoduchá aplikace bez reklam, která vám přináší Boží Slovo do vašeho každodenního života."
                 learn more: "zjistěte víc níže"
                 start reading: "Začněte číst"
                 skip in future: "Přeskakovat v budoucnu tuto stránku"
                 now skipped: "Tato stránka bude přeskočena."
-            features: 
+            features:
                 read heading: "Čtěte Bibli."
                 read description: "Vyberte si ze <a href='%{versions_path}' target='_self'>stovek jazyků a překladů Bible</a>. Porovnávejte dva překlady vedle sebe. Můžete si také zvolit font a velikost písma. Uzpůsobte si váš online zážitek s Biblí tak, jak vám to vyhovuje."
                 study heading: "Studujte Bibli."
@@ -1321,11 +1321,11 @@ cs:
             download action: "Stáhněte si aplikaci Bible"
             download description: "Stáhněte si bezplatnou aplikaci Bible na vaše mobilní zařízení a budete mít vaši Bibli vždy s sebou, ať půjdete kamkoli."
             world installs: "Instalací po celém světě"
-        trending verses: 
+        trending verses:
             title: "Trendy biblických veršů"
             headline: "Aktuální biblické verše, které mají vzestupný trend v aplikaci a na Bible.com"
-    shared: 
-        menu_settings: 
+    shared:
+        menu_settings:
             title: "Nastavení zobrazení"
             close: "Zavřít"
             font: "Font:"
@@ -1345,7 +1345,7 @@ cs:
             translation notes: "Poznámky pod čarou"
             cross references: "Křížové odkazy"
             numbers and titles: "Čísla a nadpisy"
-    app errors: 
+    app errors:
         404 plans explanation: "Nehledali jste náhodou plán <a href='%{plan_path}' target='_self'>%{title}</a>?"
         404 contact support: "Máte potíže? Kontaktujte naši <a href='%{support_url}' target='_self'>podporu</a>."
         404 explanation: "Možná zkuste začít znovu na <a href='%{reader_path}' target='_self'>úvodní stránce</a>. Stále máte potíže? Kontaktujte náš <a href='%{support_url}' target='_self'>tým podpory</a>."
@@ -1353,7 +1353,7 @@ cs:
         408 message: "Omlouváme se, ale naše servery naneštěstí neodpověděly včas."
         408 explanation: "Obdrželi jsme chybové hlášení a každý přetrvávající problém budeme co nejrychleji řešit. Pojďme se podívat jestli vás budeme schopni vrátit zpět ke čtení Bible!"
         try again: "Zkuste to znovu"
-    versions: 
+    versions:
         filter: "Začněte psát jméno překladu (nebo jazyka)..."
         see all: "Vidět všechny překlady"
         courtesy of: "%{abbreviation} Vám přináší %{publisher}"
@@ -1369,8 +1369,8 @@ cs:
         public domain: "Veřejná doména"
         loading: "Načítání více překladů..."
         load error: "Omlouváme se, nepodařilo se načíst více překladů. Zavřete toto menu a otevřte jej znovu."
-    campaigns: 
-        christmas: 
+    campaigns:
+        christmas:
             tracker title: "Po stopách vánočního příběhu"
             twitter text: "Sledujte svět, který čte příběh o narození Ježíše. Sdílejte \"Po stopách vánočního příběhu\" na @YouVersion: https://www.bible.com/christmas"
             facebook text: "Rozdělte se s vánočním příběhem o narození Ježíše, aby si jej lidé na celém světe mohli přečíst.  Ve společenství věřících nebo doma, s blízkými milými lidmi nebo během ztišení o samotě, se nyní zastavme nad zázrakem lásky, kterou nám projevil Bůh."
@@ -1385,61 +1385,61 @@ cs:
             versions: "Přes %{version_count} překladů v %{language_count} jazicích"
             tagline: "Bible, která je stále s vámi"
             chapter counter format: "9 999 999"
-        100m: 
+        100m:
             logo: "YouVersion: Aplikace Bible"
             tagline: "Začíná to se <em>100 milióny</em>"
             intro: "Dokáže aplikace Bible dosáhnout 100 miliónů instalací před naším 5. výročím, které je 10. července? Pouze s tvou pomocí!"
             after: "Aplikace Bible dosáhla díky vám 100 miliónů instalací před naším výročím 5 let, které je 10. července. Děkujeme!"
-            share: 
+            share:
                 with friends: "Sdílej se svými přáteli"
-                fb: 
+                fb:
                     dialog name: "Máš už aplikaci Bible?"
                     dialog desc: "Mám moc rád aplikaci Bible! Pomohla mi k tomu, aby se Bible stala každodenní součástí mého života. Můžu tam zvýraznit verše, poslechnout si audio Bible, udělat si poznámky, číst podle plánu... dokonce sledovat videa! Určitě si ji můžeš hned stáhnout (je zdarma): http://www.bible.com/app"
-                tw: 
+                tw:
                     tweet: "Aplikaci Bible od @YouVersion mám na hlavní obrazovce. Čtení, sledování, poslech a sdílení...vše ve free aplikaci: bible.com/app"
-                em: 
+                em:
                     subject: "Máš aplikaci Bible?"
                     body: "Velice se mi líbí aplikace Bible od YouVersion a myslím si, že by se líbila i Tobě. Otevírám teď Bibli mnohem častěji, protože číst si ji, dívat se na videa, poslouchat ji a sdílet ji je velice jednoduché. Obsahuje dokonce i Plány, které mají vybrané pasáže Bible a čekají na přečtení každý den. \n\nMůžeš si ji také stáhnout (zdarma!) do téměř jakéhokoliv mobilního zařízení: \nhttp://www.bible.com/app"
-            body: 
+            body:
                 p1: "10. červen bude velkým dnem. Ne jenom, že je to 5. výročím spuštění aplikace Bible, ale taky je to už 5 let od té doby, co se aplikace Bible objevila na iTunes Store."
                 p2: "Dokonce ještě větší? S Tvojí pomocí dosáhne aplikace Bible 100 miliónů stažení."
                 p3: "Naučili jsme se, že Bůh rád používá milníky, aby podnítil ještě větší růst."
                 p4: "Staňme se těmi, kteří budou psát dějiny."
                 after p1: "YouVersion představuje celosvětové sdružení lidí nadšených pomoct druhým poznávat Boží Slovo. Všem z Biblických společností a vydavatelství, církvím, kazatelům a dobrovolníkům: děkujeme Vám za Vaši štědrost!"
                 after p2: "Ten nejvíc vzrušující fakt, který reprezentuje tento důležitý historický moment je: že právě dnes mnoho lidí používá Bibli v takovém měřítku, o kterém se nám ještě nikdy ani nezdálo. Je to nadmíru inspirující vidět to, co Bůh právě teď dělá. A my věříme, že je to stále jen začátek. <em>Začíná to se 100 milióny</em>."
-            ad: 
+            ad:
                 title: "Aplikace Bible je zcela zdarma a je skvělým způsobem, jak prozkoumávat Bibli."
                 copy: "Čtěte, poslouchejte, sledujte a sdílejte. Stáhněte si aplikaci Bible do smartphonu nebo tabletu: <a href='http://bible.com/app' target='_self'>Ihned stáhnout</a>"
-            sidebar: 
+            sidebar:
                 tagline: "Buďme těmi, kteří tvoří dějiny."
                 button: "Sdílej aplikaci Bible"
-    ui: 
+    ui:
         characters remaining: "zbývá znaků"
         yes button: "Ano"
         no button: "Ne"
         cancel: "Zrušit"
-        plans: 
+        plans:
             privacy: "Chcete, aby se vaše aktivita v tomto plánu zobrazovala vašim přátelům?"
         loading indicator text: "Načítání..."
         loading: "Načítání"
-        pagination: 
+        pagination:
             next page: "Další stránka"
             previous page: "Předchozí stránka"
-        datetime: 
+        datetime:
             just now: "právě teď"
         verses selected: "verše vybrány"
-    EventsAdmin: 
-        unsubscribe: 
+    EventsAdmin:
+        unsubscribe:
             about: "Nastavení emailových oznámení z YouVersion. Můžete si změnit nastavení oznámení z mobilní aplikace."
             email: "E-mail"
             not me: "To nejsem já"
             saved: "Uloženo!"
             plan delivery: "Odběr plánů"
             sign-in: "Pro změnu nastavení, <a href='{sign_in_path}'>se prosím přihlaste k účtu</a>."
-            links: 
+            links:
                 manage: "Správa emailová oznámení"
                 unsub all: "Odhlásit odběr všech oznámení"
-            success: 
+            success:
                 all: "Úspěšně jste odhlásili odběr <b>všech emailů z YouVersion</b>."
                 badges: "Úspěšně jste odhlásili odběr emailů <b>odznaků</b>."
                 comments: "Úspěšně jste odhlásili odběr emailů <b>komentářů</b>."
@@ -1451,7 +1451,7 @@ cs:
                 rp_daily: "Úspěšně jste odhlásili odběr emailů <b>plánu čtení Bible:</b> %{plan_title}."
                 votd: "Úspěšně jste odhlásili odběr emailů <b>veršů dne</b>."
                 votd_image: "Úspěšně jste odhlásili odběr emailů <b>obrázkového verše dne</b>."
-            labels: 
+            labels:
                 badges: "Když získám odznak"
                 comments: "Komentáře o mojí aktivitě"
                 friendships: "Žádosti přátel"
@@ -1461,14 +1461,14 @@ cs:
                 reading_plans: "O mých plánech čtení"
                 votd: "Textový verš dne"
                 votd_image: "Obrázkový verš dne"
-            error: 
+            error:
                 token: "Omlouváme se, ale pro změnu nastavení je nutné přihlášení:"
                 other_type: "Je nám líto, že vám emailové notifikace neposloužili. Přejete si aktualizovat nastavení oznámení?"
         change: "Změnit"
-        ui: 
+        ui:
             yes button: "Ano"
             no button: "Ne"
-        plans: 
+        plans:
             plans: "Plány"
             plans back: "← Plány čtení"
             related plans: "Podobné plány"
@@ -1477,19 +1477,19 @@ cs:
             my_plans: "Moje plány"
             day_completed: "<b>%{username} </b> ukončil <b>Den %{day}</b> v Plánu studia Bible: <b>%{plan_title}</b>"
             which reading: "%{current} z %{total}"
-            status: 
+            status:
                 on track: "Podle plánu!"
-                days ahead: 
+                days ahead:
                     one: "%{count} den napřed"
                     few: "%{count} dny napřed"
                     other: "%{count} dnů napřed"
-                missed days: 
+                missed days:
                     one: "%{count} zmeškaný den"
                     few: "%{count} zmeškané dny"
                     other: "%{count} zmeškaných dnů"
             bible plan language: "Jazyk plánu čtení Bible"
             share plan: "Prohlédněte si tento @YouVersion #Plán čtení: %{plan_title}"
-            widget: 
+            widget:
                 my plans: "Moje plány"
                 start reading: "Začněte číst"
                 view my plans: "Zobrazit moje plány"
@@ -1498,12 +1498,12 @@ cs:
                 reading: "čtení"
                 readings: "čtení"
                 readings 5 or more: "čtení"
-            stats: 
-                friends reading: 
+            stats:
+                friends reading:
                     one: "%{count} přítel odebírá tento plán"
                     few: "%{count} přátelé odebírají tento plán"
                     other: "%{count} přátel odebírá tento plán"
-                friends completed: 
+                friends completed:
                     one: "%{count} přítel dokončil tento plán"
                     few: "%{count} přátelé dokončili tento plán"
                     other: "%{count} přátel dokončilo tento plán"
@@ -1511,7 +1511,7 @@ cs:
                 view all: "Zobrazit vše"
                 close: "Zavřít"
             settings: "Nastavení"
-            privacy: 
+            privacy:
                 visible to friends?: "Přejete si, aby mohli vaši přátelé zobrazovat vaši aktivitu u Plánů čtení?"
                 private: "Soukromé"
                 public: "Veřejné"
@@ -1581,7 +1581,7 @@ cs:
             catch me up: "Dohnat plán"
             restart description: "Můžete restartovat váš plán. Celá historie čtení a postupu bude vymazána a začnete od začátku."
             restart: "Restartovat plán"
-            privacy description: 
+            privacy description:
                 private: "Váš plán čtení je soukromý. Změňte nastavení na Pouze přátelé a sdílejte tak váš plán s přáteli."
                 public: "Váš plán čtení je veřejný. Přepněte nastavení na Soukromý plán a váš plán budete vidět pouze vy."
             make private: "Nastavit jako soukromý"
@@ -1631,39 +1631,39 @@ cs:
             completed notice: "Gratulujeme! Dokončili jste váš plán čtení."
             exit: "Konec"
             loading sidebar content: "Načítání obsahu postranní lišty..."
-        components: 
-            ErrorMessage: 
+        components:
+            ErrorMessage:
                 genericError: "Nastala chyba"
-                announcement: 
-                    events: 
-                        title: 
+                announcement:
+                    events:
+                        title:
                             required: "Je požadován název oznámení."
-                default: 
-                    bible: 
-                        reference: 
+                default:
+                    bible:
+                        reference:
                             not_found: "Odkaz Bible není platný."
-                    events: 
-                        google_place_id: 
+                    events:
+                        google_place_id:
                             required: "Z mapy musíte vybrat polohu."
-                        latitude: 
+                        latitude:
                             required: "Na mapě musí být vybrána lokalita."
-                        times: 
-                            start_dt: 
+                        times:
+                            start_dt:
                                 must_be_a_future_date: "Čas zahájení nemůže být v minulosti."
-                        timezone: 
+                        timezone:
                             required: "Je požadováno časové pásmo."
-                reference: 
-                    events: 
-                        usfm: 
+                reference:
+                    events:
+                        usfm:
                             invalid: "Biblický odkaz není platný."
-                url: 
-                    events: 
-                        url: 
+                url:
+                    events:
+                        url:
                             required: "Je nutné zadat URL."
-                        title: 
+                        title:
                             required: "Je požadována URL."
-            EventHeader: 
-                status: 
+            EventHeader:
+                status:
                     published: "Publikováno"
                     draft: "Koncept/y"
                     live: "Live"
@@ -1675,36 +1675,36 @@ cs:
                 eventBuilder: "VYTVÁŘENÍ UDÁLOSTÍ"
                 signOut: "Odhlásit se"
                 createAccount: "Vytvoření účtu"
-            HtmlEditor: 
+            HtmlEditor:
                 text: "Text"
                 bold: "tučné"
                 italic: "kurzíva"
-        containers: 
-            Auth: 
+        containers:
+            Auth:
                 title: "Přihlásit se do události"
                 signIn: "Přihlásit se"
                 subHead1: "Pokud jste uživatel aplikace BibleApp a máte již založený účet na YouVersion, můžete se přihlásit pomocí svých přihlašovacích údajů.<br/><br/>Ještě nemáte účet na YouVersion?<br/><a href='%{url}'>Přihlašte se nyní na Bible.com</a> a začněte vytvářet události."
                 email: "E-mail"
                 password: "Heslo"
                 forgotPassword: "Zapomenuté heslo"
-            EventEdit: 
+            EventEdit:
                 event: "Událost"
-            EventEditContentContainer: 
+            EventEditContentContainer:
                 choose: "Pro zahájení zvolte jednu z možností."
                 needHelp: "Potřebuje pomoc?"
                 title: "Obsah události"
                 previous: "← Předchozí: Místo a čas"
                 next: "Další: Náhled →"
-            EventEditDetails: 
+            EventEditDetails:
                 title: "Detaily Události"
-            EventEditLocationContainer: 
+            EventEditLocationContainer:
                 title: "Místo události"
                 previous: "← Předchozí: Detaily"
                 next: "Další: Přidat obsah →"
-            EventEditPreview: 
+            EventEditPreview:
                 title: "Náhled události"
                 previous: "← Předchozí: Obsah"
-            EventEditShare: 
+            EventEditShare:
                 title: "Sdílet událost"
                 subTitle: "Tvoje událost byla zveřejněna:"
                 edit: "Edituj Událost"
@@ -1713,10 +1713,10 @@ cs:
                 copy: "Kopírovat"
                 copied: "Odkaz byl zkopírován do schránky"
                 previous: "← Předchozí: Náhled"
-            EventFeedDiscover: 
+            EventFeedDiscover:
                 title: "Objevte události"
                 discover: "Objevujte"
-            EventFeedMine: 
+            EventFeedMine:
                 title: "Moje události"
                 previous: "← Předchozí"
                 next: "Další →"
@@ -1725,38 +1725,38 @@ cs:
                 subTitle: "UDÁLOST VYTVOŘENA"
                 newFirst: "Vytvořte svojí první událost"
                 learn: "Návod jak vytvořit skvělou událost"
-            EventFeedSaved: 
+            EventFeedSaved:
                 title: "Uložené události"
-            EventView: 
+            EventView:
                 title: "YouVersion Událost"
-            SelectLanguage: 
+            SelectLanguage:
                 choose: "Zvolit jazyk"
-        features: 
-            Auth: 
-                errors: 
+        features:
+            Auth:
+                errors:
                     sessionExpired: "Relace vypršela. Prosím, znovu se přihlašte."
                     invalidEmail: "Neplatná emailová adresa nebo heslo."
-            EventEdit: 
-                errors: 
+            EventEdit:
+                errors:
                     locationMustHaveTime: "Všechna místa musí mít alespoň jeden čas."
                     locationRequired: "Není možné publikovat událost bez zadaného místa."
                     contentRequired: "Bez obsahu není možné publikovat událost."
                     planSearchFailed: "Nebyl nalezen žádný dokument"
                     noMatchingPlans: "Nebyly nalezeny odpovídající plány"
-                components: 
-                    EventEditNav: 
+                components:
+                    EventEditNav:
                         details: "Detail"
                         locations: "Místo a čas"
                         content: "Obsah"
                         preview: "Náhled a zveřejnit"
                         share: "Sdílet"
-                features: 
-                    content: 
-                        components: 
-                            ContentFeed: 
+                features:
+                    content:
+                        components:
+                            ContentFeed:
                                 reorder: "Změnit pořadí"
                                 doneReordering: "Změna pořadí dokončena"
-                            ContentHeader: 
+                            ContentHeader:
                                 text: "Text"
                                 reference: "Biblické odkazy"
                                 plan: "Plán"
@@ -1764,40 +1764,40 @@ cs:
                                 link: "Externí odkaz"
                                 giving: "Dary"
                                 announcement: "Oznámení"
-                            ContentHelpModal: 
+                            ContentHelpModal:
                                 types: "Typy obsahu"
                                 learn: "Naučte se vytvářet <br>skvělé události"
-                                text: 
+                                text:
                                     title: "Textový modul"
                                     desc: "Přehled, klíčové body, otázky diskuze… Sdílejte jakýkoliv obecný obsah, který návštěvníkům napomůže vysledovat vaši novou zprávu. Textové moduly mohou být jakkoliv dlouhé a mohou zahrnovat různé textové formáty."
-                                reference: 
+                                reference:
                                     title: "Modul biblického odkazu"
                                     desc: "Vyberte biblický verš nebo pasáž, jež jsou přímo propojeny s více než 1200 YouVersion verši, ve více než 900 jazycích. Lidé, kteří si prohlížejí vaše události, mohou vidět vaše odkazy ve aplikaci Bible, kde si je mohou založit, zvýraznit, atd. "
-                                plan: 
+                                plan:
                                     title: "Plánovací modul"
                                     desc: "Propojení s Plány čtení a výklady, které se vztahují k vašim vyučujícím článkům. Napomáhají posluchačům vytrvat ve spojení s Božím Slovem po celý týden."
-                                image: 
+                                image:
                                     title: "Obrázkový modul"
                                     desc: "Ozdobte vaši událost různými podporujícími formáty: uměním, fotografiemi, obrázkovými verši atd. Návštěvníci tak budou moci snadněji sdílet vaši událost na sociálních sítích."
-                                link: 
+                                link:
                                     title: "Modul externího odkazu"
                                     desc: "Vytvořte si uvnitř vaší události tlačítko, které bude propojeno s externí webovou stránkou. Vaši posluchači tak budou pouhý jeden klik od možnosti dobrovolných darů, dobrovolnické akce nebo stránek církve."
-                                announcement: 
+                                announcement:
                                     title: "Modul oznamů"
                                     desc: "Zprávy o církvi, kalendář událostí, programy, vyučovací hodiny, dobrovolnické a misijní příležitosti... Oznamovací moduly jsou skvělé úložiště pro sdílení informací, které jsou aktuální a důležité, a přitom je nechcete oddělit od svých hlavních událostí. Každý oznamovací modul se objeví na svém listu v události. Může dokonce zahrnovat i formátovaný obsah (jako fonty tučně nebo italic)."
-                            ContentInsertionPoint: 
+                            ContentInsertionPoint:
                                 title: "Zde vložte další modul"
-                            ContentTypeAnnouncement: 
+                            ContentTypeAnnouncement:
                                 title: "Název"
                                 prompt: "Zde pište..."
                                 caption: "Ze tvé události bude viditelný pouze název. Když uživatel klikne na tvůj titulek, obsah se zobrazí na zvláštní obrazovce."
-                            ContentTypeContainer: 
+                            ContentTypeContainer:
                                 dirty: "Obsah bude automaticky uložen pár vteřin po skončení psaní."
                                 failed: "Nelze uložit."
                                 tryAgain: "Zkusit znovu."
                                 lastSaved: "Naposledy uloženo %{when}"
-                            ContentTypeImage: 
-                                errors: 
+                            ContentTypeImage:
+                                errors:
                                     wrongSize: "Velikost obrázku musí být %{requiredWidth}x%{requiredHeight}. Váš obrázek je %{yourWidth}x%{yourHeight}."
                                     wrongType: "Neplatný typ souboru. Soubor musí být JPG."
                                 caption: "Přidat titulek"
@@ -1805,32 +1805,32 @@ cs:
                                 onlyJpg: "[pouze JPG]"
                                 sizePrompt: "%{requiredWidth}px šířka x %{requiredHeight}px výška"
                                 select: "Vyberte obrázek"
-                            ContentTypeLink: 
+                            ContentTypeLink:
                                 kindrid: "Pokud hledáte chytrou a jednoduchou platformu, <a href='%{url}'>zkuste Kindrid</a>."
                                 label: "Text odkazu"
                                 prompt: "Pište zde..."
                                 url: "URL"
-                            ContentTypePlan: 
+                            ContentTypePlan:
                                 replace: "Nahradit"
                                 search: "Hledat plán čtení"
-                            ContentTypeReference: 
+                            ContentTypeReference:
                                 language: "Jazyk"
                                 version: "Překlad"
                                 book: "Kniha"
                                 chapterVerse: "Kapitola: Verš"
-                            ContentTypeText: 
+                            ContentTypeText:
                                 prompt: "Pište zde..."
-                            LiveWarningModal: 
+                            LiveWarningModal:
                                 title: "Nelze smazat, pokud je událost ve stavu ŽIVĚ"
                                 desc: "Pokud je událost ve statusu ŽIVĚ, nelze mazat moduly Text, Biblické odkazy a Obrázky z důvodu přidaných soukromých poznámek ostatních uživatelů. Nicméně je možné tyto moduly editovat."
                                 ok: "OK"
-                    details: 
-                        errors: 
+                    details:
+                        errors:
                             generic: "Došlo k potížím při nahrávání události."
                             invalidTimes: "Samotný bohoslužba nemůže být delší než 12 hodin. Maximální časové rozpětí v události nemůže být více než 8 dnů. Prosím upravte časy a zkuste znovu."
-                        components: 
-                            DetailsEdit: 
-                                errors: 
+                        components:
+                            DetailsEdit:
+                                errors:
                                     wrongSize: "Velikost obrázku musí být %{requiredWidth}x%{requiredHeight}. Váš obrázek je %{yourWidth}x%{yourHeight}."
                                     wrongType: "Neplatný typ souboru. Musí být pouze v JPG."
                                 changeImage: "Změnit obrázek"
@@ -1844,29 +1844,29 @@ cs:
                                 desc: "Popis události"
                                 next: "Další: Přidat místo a čas →"
                                 blank: "%{field} nemůže být prázdné."
-                    location: 
-                        components: 
-                            Location: 
+                    location:
+                        components:
+                            Location:
                                 oneRequired: "Přidat alespoň jednou."
                                 use: "POUŽÍT TUTO POLOHU"
                                 edit: "Editace polohy"
                                 delete: "Vymazat polohu"
-                            LocationAddButtons: 
+                            LocationAddButtons:
                                 addPhysical: "Přidat skutečnou polohu"
                                 promptPhysical: "Můžete přidat více míst."
                                 addVirtual: "Přidat smyšlenou polohu"
                                 churchOnline: "Víte že? Můžete mít k dispozici online shromáždění prostřednictvím <a className='button-caption' href='%{url}'>Online platformy pro církve a společenství</a>."
-                            LocationAddTime: 
+                            LocationAddTime:
                                 minutes: "MINUT"
                                 hours: "HODIN"
                                 days: "dnů"
-                            LocationDeleteModal: 
+                            LocationDeleteModal:
                                 sure: "Jste si jistí?"
                                 selected: "Pro smazání jste vybrali následující polohu:"
                                 warn: "Tímto bude poloha odstraněna ze všech minulých i stávajících událostí. Tuto polohu nebudete moci opětovně použít."
                                 cancel: "Zrušit"
                                 delete: "Odstranit"
-                            LocationEdit: 
+                            LocationEdit:
                                 prompt: "Zadejte adresu..."
                                 country: "Země"
                                 timezone: "Časové pásmo"
@@ -1877,7 +1877,7 @@ cs:
                                 cancel: "Zrušit"
                                 save: "Uložit toto místo"
                                 virtualPrompt: "Zadejte město pro časové pásmo"
-                            LocationTimeShifter: 
+                            LocationTimeShifter:
                                 shift: "Posun data zahájení"
                                 forward: "Dále"
                                 backward: "dozadu"
@@ -1892,17 +1892,17 @@ cs:
                                 hours: "HODIN"
                                 update: "Aktualizovat"
                                 shiftButton: "Posunout všechny datumy a časy najednou"
-                            UnpublishModal: 
+                            UnpublishModal:
                                 cancel: "Zrušit"
                                 title: "Nepublikovat, provádíme změny"
                                 desc: "Přidat, editovat nebo smazat místo a čas, událost dočasně nepublikovat. Během této doby nebude událost ve výsledcích hledání viditelná. Nezapomeňte událost opět publikovat."
                                 unpublish: "Nezveřejňovat"
-                    preview: 
-                        notes: 
+                    preview:
+                        notes:
                             prompt: "Přidat osobní poznámky..."
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Přihlašte se</span> pro přidání osobních poznámek...</a>"
-                        components: 
-                            PreviewFeed: 
+                        components:
+                            PreviewFeed:
                                 review: "Zobrazit náhled události před publikováním"
                                 previewUrl: "Náhled odkazu:"
                                 share: "Sdílet událost"
@@ -1910,23 +1910,23 @@ cs:
                                 publish: "Zveřejnit"
                                 unpublish: "Nezveřejňovat"
                                 locations: "Místo:"
-                                discoverable: 
+                                discoverable:
                                     title: "Dostupné:"
                                     desc: "Vaše událost bude viditelná a aplikaci Bible pod heslem Místo události. Vyhledávání informací o události bude zpřístupněné pět dní před zahájením."
-                                status: 
+                                status:
                                     title: "Stav poznámky:"
                                     desc: "Červená značka ŽIVĚ se zobrazí v přednastavený čas."
-                                remove: 
+                                remove:
                                     title: "Odstranění:"
                                     desc: "Vaše událost nebude po datu ukončení dále dostupná Návštěvníci, kteří kliknou na \"Uložit událost\" ve chvíli, kdy je vaše událost dostupná, budou mít stále přístup k její archivní verzi. Tato událost bude také dále zjistitelná prostřednictvím přímého odkazu."
-                            PreviewTypeAnnouncement: 
+                            PreviewTypeAnnouncement:
                                 expand: "Rozbalit"
-                            PreviewTypePlan: 
+                            PreviewTypePlan:
                                 read: "Číst"
                                 info: "Info o plánu"
-            EventFeedMine: 
-                components: 
-                    EventListItem: 
+            EventFeedMine:
+                components:
+                    EventListItem:
                         duplicate: "Duplikovat"
                         share: "Sdílet"
                         delete: "Odstranit"
@@ -1934,24 +1934,24 @@ cs:
                         edit: "Upravit"
                         view: "Zobrazit"
                         fail: "Událost není možné smazat"
-            EventView: 
-                components: 
-                    EventViewContent: 
+            EventView:
+                components:
+                    EventViewContent:
                         copy: "Kopírovat"
                         copied: "Zkopírováno"
                         share: "Sdílet"
                         read: "Číst"
                         readPlan: "Číst plán"
-                    EventViewContentAnnouncement: 
+                    EventViewContentAnnouncement:
                         expand: "Rozbalit"
                         collapse: "Sbalit"
-                    EventViewDetails: 
+                    EventViewDetails:
                         expand: "Rozbalit"
                         collapse: "Sbalit"
                         save: "Uložit událost"
                         signIn: "Přihlásit se k uložení události"
                         saved: "Událost byla uložena"
-        Auth: 
+        Auth:
             sign up: "Zaregistrovat se"
             sign in: "Přihlásit se"
             sign up google: "Registrovat přes Google+"
@@ -1966,19 +1966,19 @@ cs:
             share blurb: "Zdá se, že chcete sdílet verše. Skvěle! Budete moci sdílet verše přes Facebook nebo Twitter. Přihlašte se nebo si založte účet viz níže a můžete začít!"
             highlight blurb: "Zdá se, že chcete zvýraznit nějaké verše. Výborně! Zvýraznění vám pomáhají organizovat a udržovat přehled o vašich oblíbených verších. Přihlašte se, nebo si založte účet a můžete začít."
             note blurb: "Vypadá to, že chcete vytvořit poznámku o verši. Dobrý nápad! Poznámky vám pomůžou organizovat a zapamatovat pravdy, které objevíte v Božím Slově. Přihlašte se nebo se zaregistrujte a můžete začít!"
-        Reader: 
+        Reader:
             chapter: "Kapitola"
             read reference: "Číst %{reference}"
             read chapter: "Číst celou kapitolu"
             plan title: "Bezplatné plány čtení a výkladové poznámky"
             plan title ref: "Bezplatné plány čtení Bible a zamyšlení souvísející s %{reference}"
             plan subtitle: "Plány čtení Bible dělí vaše čtení Písma na části, které lze za den zvládnout. Plány čtení často obsahují výběr povzbuzujících výkladů, nahrávek nebo videí. Jakkoliv je nazýváte: plány čtení, biblické plány, zamyšlení, vždy se jedná o prověřenou cestu jak zajistit, aby Bible byla přirozenou součástí vašeho každého dne."
-            meta: 
-                mobile: 
+            meta:
+                mobile:
                     title: "Aplikace Bible"
-                site: 
+                site:
                     title: "Bible.com"
-            header: 
+            header:
                 parallel: "Paralelní"
                 parallel exit: "Ukončit paralelní mód"
                 cancel: "Zrušit"
@@ -1994,32 +1994,32 @@ cs:
                 videos: "Videa"
                 me: "Já"
                 recent versions: "Naposledy používané"
-            chapterpicker: 
+            chapterpicker:
                 book label: "KNIHA"
                 chapter label: "KAPITOLA"
                 chapter unavailable: "Tato kapitole není dostupná ve zvoleném překladu. Prosím vyberte si jinou kapitolu nebo překlad."
                 choose chapter: "Vybrat kapitolu"
-            versionpicker: 
+            versionpicker:
                 language label: "JAZYKY BIBLE"
                 language sub-label: "Jazyk Bible"
                 change language: "Zvolit jazyk"
                 filter languages: "Filtr jazyků..."
                 version label: "PŘEKLADY"
                 choose version: "Vybrat překlad"
-            reader settings: 
+            reader settings:
                 footnotes: "Poznámky pod čarou"
                 numbers: "Čísla a nadpisy"
-            more: 
+            more:
                 events: "Akce"
                 settings: "Nastavení"
-            search: 
+            search:
                 bible: "Bible"
                 users: "Uživatelé"
                 plans: "Plány"
-            version: 
+            version:
                 learn more: "Zjistit více"
                 courtesy of: "%{abbreviation} Vám přináší %{publisher}"
-            verse action: 
+            verse action:
                 copy: "Kopírovat"
                 bookmark: "Záložka"
                 note: "Poznámka"

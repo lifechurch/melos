@@ -1451,6 +1451,7 @@ en:
         rp_daily:                                "You successfully unsubscribed from <b>Reading Plans Daily emails</b> from %{plan_title}."
         votd:                                    "You successfully unsubscribed from <b>Verse of the Day</b> emails."
         votd_image:                              "You successfully unsubscribed from <b>Verse of the Day Image</b> emails."
+        contact_joins:                           "You successfully unsubscribed from <b>Contacts</b> emails."
       labels:
         badges:                                  "When I earn a badge"
         comments:                                "Comments on my activity"
@@ -1461,6 +1462,7 @@ en:
         reading_plans:                           "About my Bible Plans"
         votd:                                    "Verse of the Day Text"
         votd_image:                              "Verse of the Day Image"
+        contact_joins:                           "When a Contact joins"
       error:
         token:                                   "Sorry, you need to Sign In before you can change your Notification settings:"
         other_type:                              "Sorry, that didn’t do what we expected. Would you like to update your Notifications?"

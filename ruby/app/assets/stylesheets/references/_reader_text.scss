@@ -149,7 +149,6 @@
     font-size: 1.03em;
     font-weight: bold;
     line-height: 1.2em;
-    display: inline-block;
     margin: 0;
     -webkit-font-smoothing: subpixel-antialiased;
   }
@@ -246,8 +245,9 @@
     padding-left: 4em;
   }
   .qs, .lit {
-    float: right;
+    text-align: right;
     font-style: italic;
+    display: block;
   }
   .q, .q1 {
     text-indent: 1em;
@@ -397,7 +397,7 @@
     display: inline;
     margin-bottom: 0;
   }
-  /* hide introdcution titles */
+  /* hide introduction titles */
   .vid111 .imt1, .vid111 .imt {
     display: none;
   }
