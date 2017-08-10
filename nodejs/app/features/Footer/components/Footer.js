@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
 import YouVersion from '../../../components/YVLogo'
 
-// import './Footer.less'
-
 class Footer extends Component {
 	constructor(props) {
 		super(props)

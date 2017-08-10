@@ -132,7 +132,7 @@ export function getLocale({ localeFromUrl, localeFromCookie, localeFromUser, acc
 	final.data = require(`react-intl/locale-data/${final.locale2}`);
 
 	// Get the appropriate set of localized strings for this locale
-	final.messages = require(`./locales/${final.locale}.json`);
+	final.messages = require(`../../locales/${final.locale}.json`);
 
 	// Add the list of preferred locales based on browser configuration to this response
 	final.preferredLocales = localesFromHeader;
