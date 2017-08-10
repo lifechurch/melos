@@ -39,6 +39,18 @@ class ParticipantsView extends Component {
 		}
 	}
 
+	handleDelete = (userid) => {
+		const { dispatch, params: { together_id } } = this.props
+		dispatch(plansAPI.actions.participant.delete(
+			{
+				id: together_id,
+				userid,
+			}, {
+				auth: true,
+			}
+		))
+	}
+
 	render() {
 		const { plan, participantsUsers, together } = this.props
 		let userList = null

@@ -18,6 +18,7 @@ const secretParams = {
  * @return {[type]}        [description]
  */
 function oauthClientCall(params) {
+	console.log('SERVER OAUTH CLIENT CALL', process.env)
 	return getClient('auth')
 		.call('token')
 		.params(queryifyParamsObj(params))

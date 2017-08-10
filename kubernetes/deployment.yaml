@@ -72,7 +72,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: NEW_RELIC_LOG_LEVEL     
+                key: NEW_RELIC_LOG_LEVEL
           - name: PASSENGER_APP_ENV
             valueFrom:
               secretKeyRef:
@@ -87,12 +87,22 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: LOG_LEVEL 
+                key: LOG_LEVEL
           - name: SECURE_TRAFFIC
             valueFrom:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: SECURE_TRAFFIC
+          - name: OAUTH_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: OAUTH_CLIENT_ID
+          - name: OAUTH_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: OAUTH_CLIENT_SECRET
           - name: SECURE_HOSTNAME
             valueFrom:
               secretKeyRef:
