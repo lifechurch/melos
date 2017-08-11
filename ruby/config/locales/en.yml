@@ -1416,6 +1416,19 @@ en:
       just now:                                 "just now"
     verses selected:                            "verses selected"
   EventsAdmin:
+    footer:
+      events:                                    "Events"
+      versions:                                  "Versions %{count}"
+      languages:                                 "Languages %{count}"
+      help:                                      "Help"
+      social:                                    "Social"
+      donate:                                    "Donate"
+      about:                                     "About"
+      jobs:                                      "Jobs"
+      blog:                                      "Blog"
+      press:                                     "Press"
+      privacy:                                   "Privacy Policy"
+      terms:                                     "Terms"
     unsubscribe:
       about:                                     "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
       email:                                     "Email"
