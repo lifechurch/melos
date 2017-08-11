@@ -13,6 +13,7 @@ import User from '../components/User'
 import CheckMark from '../components/CheckMark'
 // utils
 import Routes from '../lib/routes'
+import { hasUserCompletedActivity } from '../lib/readingPlanUtils'
 
 
 class ParticipantsAvatarList extends Component {
@@ -95,17 +96,9 @@ class ParticipantsAvatarList extends Component {
 					// if they've completed the day
 					let check = null
 					if (day && activities) {
-						const completions = activities[day] ? activities[day].map : null
-						if (completions && completions.length > 0) {
-							completions.forEach((id) => {
-								const completion = activities[day].data[id]
-								if (
-									completion.kind === 'complete' &&
-									parseInt(completion.user_id, 10) === parseInt(userID, 10)
-								) {
-									check = <CheckMark width={13} fill='black' />
-								}
-							})
+						const completions = activities[day] ? activities[day].data : null
+						if (hasUserCompletedActivity(completions, userID)) {
+							check = <CheckMark width={13} fill='black' />
 						}
 					}
 					avatarList.push(

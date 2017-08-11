@@ -92,7 +92,7 @@ const Routes = {
 	subscription: ({ username, plan_id, slug, subscription_id, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/subscription/${subscription_id}`,
+			path: `/users/${username}/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/subscription/${subscription_id}`,
 			query,
 		})
 
@@ -101,7 +101,7 @@ const Routes = {
 	subscriptionDay: ({ username, plan_id, slug, day, subscription_id, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}`,
+			path: `/users/${username}/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/subscription/${subscription_id}/day/${day}`,
 			query,
 		})
 
@@ -110,7 +110,7 @@ const Routes = {
 	subscriptionContent: ({ username, plan_id, slug, day, content, subscription_id, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}/segment/${content}`,
+			path: `/users/${username}/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/subscription/${subscription_id}/day/${day}/segment/${content}`,
 			query,
 		})
 
@@ -119,7 +119,7 @@ const Routes = {
 	subscriptionDayComplete: ({ username, plan_id, slug, day, subscription_id, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}/completed`,
+			path: `/users/${username}/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/subscription/${subscription_id}/day/${day}/completed`,
 			query,
 		})
 
@@ -128,7 +128,7 @@ const Routes = {
 	sharedDayComplete: ({ plan_id, slug, day, subscription_id, query = null }) => {
 
 		const route = new Route({
-			path: `reading-plans/${plan_id}-${slug}/subscription/${subscription_id}/day/${day}/completed`,
+			path: `reading-plans/${plan_id}${slug ? `-${slug}` : ''}/subscription/${subscription_id}/day/${day}/completed`,
 			query,
 		})
 
@@ -137,7 +137,7 @@ const Routes = {
 	subscriptionComplete: ({ username, plan_id, slug, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/completed`,
+			path: `/users/${username}/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/completed`,
 			query,
 		})
 
@@ -157,7 +157,7 @@ const Routes = {
 	plan: ({ plan_id, slug, query = null }) => {
 
 		const route = new Route({
-			path: `/reading-plans/${plan_id}-${slug}`,
+			path: `/reading-plans/${plan_id}${slug ? `-${slug}` : ''}`,
 			query,
 		})
 
@@ -168,7 +168,7 @@ const Routes = {
 	togetherCreate: ({ username, plan_id, slug, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/together/create`,
+			path: `/users/${username}/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/together/create`,
 			query,
 		})
 
@@ -177,7 +177,7 @@ const Routes = {
 	togetherInvite: ({ username, plan_id, slug, together_id, query = null }) => {
 
 		const route = new Route({
-			path: `/users/${username}/reading-plans/${plan_id}-${slug}/together/${together_id}/invite`,
+			path: `/users/${username}/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/together/${together_id}/invite`,
 			query,
 		})
 
@@ -186,7 +186,7 @@ const Routes = {
 	togetherInvitation: ({ plan_id, slug, together_id, query = null }) => {
 
 		const route = new Route({
-			path: `/reading-plans/${plan_id}-${slug}/together/${together_id}/invitation`,
+			path: `/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/together/${together_id}/invitation`,
 			query,
 		})
 
@@ -195,7 +195,7 @@ const Routes = {
 	togetherParticipants: ({ plan_id, slug, together_id, query = null }) => {
 
 		const route = new Route({
-			path: `/reading-plans/${plan_id}-${slug}/together/${together_id}/participants`,
+			path: `/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/together/${together_id}/participants`,
 			query,
 		})
 

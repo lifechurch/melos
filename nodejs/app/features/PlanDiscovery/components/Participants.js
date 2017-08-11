@@ -2,14 +2,16 @@ import React, { PropTypes } from 'react'
 import CustomScroll from 'react-custom-scroll'
 import { FormattedMessage } from 'react-intl'
 import XMark from '../../../components/XMark'
+import CheckMark from '../../../components/CheckMark'
 import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
+import { hasUserCompletedActivity } from '../../../lib/readingPlanUtils'
 
 
-function renderUser(friend, handleDelete = null) {
+function renderUser(friend, handleDelete = null, complete = null) {
 	const src = friend && friend.user_avatar_url ? friend.user_avatar_url.px_48x48 : ''
 	const userLink = Routes.user({
 		username: friend && friend.username,
@@ -25,16 +27,20 @@ function renderUser(friend, handleDelete = null) {
 				link={userLink}
 			/>
 			{
+				complete &&
+				<CheckMark fill='black' width={13} />
+			}
+			{
 				handleDelete &&
 				<a tabIndex={0} onClick={handleDelete.bind(this, friend.id)}>
-					<XMark />
+					<XMark width={13} height={13} />
 				</a>
 			}
 		</div>
 	)
 }
 
-function Participants({ planImg, users, shareLink, handleDelete }) {
+function Participants({ planImg, users, shareLink, handleDelete, activities = null }) {
 	const accepted = []
 	const invited = []
 	// build accepted and not accepted lists
@@ -76,7 +82,11 @@ function Participants({ planImg, users, shareLink, handleDelete }) {
 											}
 											{
 												accepted.map((user) => {
-													return renderUser(user, handleDelete)
+													return renderUser(
+														user,
+														handleDelete,
+														hasUserCompletedActivity(activities, user.id)
+													)
 												})
 											}
 										</div>
@@ -89,7 +99,7 @@ function Participants({ planImg, users, shareLink, handleDelete }) {
 											}
 											{
 												invited.map((user) => {
-													return renderUser(user)
+													return renderUser(user, handleDelete)
 												})
 											}
 										</div>
@@ -106,6 +116,7 @@ function Participants({ planImg, users, shareLink, handleDelete }) {
 
 Participants.propTypes = {
 	planImg: PropTypes.string,
+	activities: PropTypes.object,
 	shareLink: PropTypes.string,
 	users: PropTypes.array,
 	handleDelete: PropTypes.func,

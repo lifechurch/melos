@@ -8,6 +8,7 @@ import { routeActions } from 'react-router-redux'
 // actions
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
+import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 // models
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
@@ -24,25 +25,50 @@ import PlanComponent from '../features/PlanDiscovery/components/Plan'
 
 class Plan extends Component {
 	componentDidMount() {
-		const { dispatch, params: { subscription_id }, auth, subscription, plan } = this.props
+		const { dispatch, params: { subscription_id, day, id }, auth, subscription, plan } = this.props
 		if (subscription_id) {
 			if (
 				!(
 					subscription
 					&& plan
+					&& Immutable.fromJS(plan).getIn(['days', `${day}`], false)
 					&& Immutable.fromJS(subscription).getIn(['days'], false)
-					&& Immutable.fromJS(plan).getIn(['days'], false)
 				)
 			) {
-				dispatch(subscriptionData({ subscription_id, auth }))
+				dispatch(subscriptionData({ subscription_id, auth, day }))
 			}
-			// get bible version for building reference strings
-			dispatch(bibleAction({
-				method: 'version',
-				params: {
-					id: getBibleVersionFromStorage(),
-				}
+		} else {
+			dispatch(planView({
+				plan_id: id.split('-')[0],
 			}))
+		}
+		// get bible version for building reference strings
+		dispatch(bibleAction({
+			method: 'version',
+			params: {
+				id: getBibleVersionFromStorage(),
+			}
+		}))
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { dispatch, params: { day, id }, plan, subscription } = this.props
+		// either new day from url or no day in url and we calculated the right day
+		const dayToCheck = this.currentDay || day
+		const newDay = dayToCheck
+			&& nextProps.params.day
+			&& dayToCheck !== nextProps.params.day
+		const calcDay = !newDay
+			&& (!(plan && Immutable.fromJS(plan).getIn(['days', `${dayToCheck}`], false)))
+
+		if (newDay || calcDay) {
+			if (plan && 'id' in plan) {
+				dispatch(plansAPI.actions.day.get({
+					id: plan.id,
+					day: parseInt(nextProps.params.day, 10) || this.currentDay,
+					together: !!(subscription && subscription.together_id),
+				}, {}))
+			}
 		}
 	}
 
@@ -149,6 +175,7 @@ class Plan extends Component {
 		let startString = null
 		let endString = null
 		let subscription_id = null
+
 		const together_id = subscription && 'together_id' in subscription ?
 												subscription.together_id : null
 		if (plan && subscription && subscription.start_dt) {
@@ -177,8 +204,8 @@ class Plan extends Component {
 			this.progressDays = subscription.days
 				? subscription.days
 				: null
-			this.dayProgress = this.progressDays && this.progressDays[this.currentDay - 1]
-				? this.progressDays[this.currentDay - 1]
+			this.dayProgress = this.progressDays && this.progressDays[this.currentDay]
+				? this.progressDays[this.currentDay]
 				: null
 			progressString = subscription.overall
 				? subscription.overall.progress_string
@@ -187,8 +214,8 @@ class Plan extends Component {
 
 		this.daySegments = plan
 			&& plan.days
-			&& plan.days[this.currentDay - 1]
-			? plan.days[this.currentDay - 1].segments
+			&& plan.days[this.currentDay]
+			? plan.days[this.currentDay].segments
 			: null
 
 		const bookList = Immutable

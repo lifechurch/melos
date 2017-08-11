@@ -32,9 +32,9 @@ class PlanReaderView extends Component {
 	}
 
 	componentDidMount() {
-		const { bible, plan, params: { id, subscription_id }, dispatch, auth } = this.props
+		const { bible, plan, params: { subscription_id, day }, dispatch, auth } = this.props
 		if (!plan) {
-			dispatch(subscriptionData({ subscription_id, auth }))
+			dispatch(subscriptionData({ subscription_id, auth, day }))
 		}
 		this.buildData()
 	}
@@ -157,17 +157,20 @@ class PlanReaderView extends Component {
 
 		this.contentNum = parseInt(content, 10)
 
-		this.daySegments = plan && plan.days && plan.days[day - 1] ?
-												plan.days[day - 1].segments :
-												null
-		this.segment = this.daySegments ?
-										this.daySegments[content] :
-										null
+		this.daySegments = plan
+			&& plan.days
+			&& plan.days[day]
+			? plan.days[day].segments
+			: null
+		this.segment = this.daySegments
+			? this.daySegments[this.contentNum]
+			: null
 
 		this.progressDays = subscription && subscription.days ? subscription.days : null
-		this.dayProgress = this.progressDays && this.progressDays[day - 1] ?
-												this.progressDays[day - 1] :
-												null
+		this.dayProgress = this.progressDays
+			&& this.progressDays[day]
+			? this.progressDays[day]
+			: null
 		if (this.dayProgress) {
 			this.isFinalSegmentToComplete = this.dayProgress.partial &&
 				isFinalSegmentToComplete(content, this.dayProgress.partial)
