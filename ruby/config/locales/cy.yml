@@ -1474,13 +1474,26 @@ cy:
             just now: "nawr"
         verses selected: "adnodau ddewiswyd"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Dewisa pa e-byst rwyt am eu derbyn gan YouVersion. Rwyt yn gallu rheoli dy hysbysiadau yn yr ap ffôn symudol."
             email: "Ebost"
             not me: "Nid fi ydy hwn."
             saved: "Wedi'i gadw!"
             plan delivery: "DERBYN CYNLLUNIAU"
-            sign-in: "I olygu gosodiadau eraill, <a href='{sign_in_path}'>mewngofnoda i'th gyfrif</a>."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Rheoli dy Hysbysiadau e-bost"
                 unsub all: "Dad-danysgrifio o'r holl e-byst"
@@ -1496,6 +1509,7 @@ cy:
                 rp_daily: "Rwyt wedi llwyddo i ddad-danysgrifio o <b>e-byst dyddiol Cynlluniau Darllen</b> o %{plan_title}"
                 votd: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Adnod y Dydd</b>"
                 votd_image: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Lluniau Adnod y Dydd</b>"
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "Pan rwy'n ennill bathodyn"
                 comments: "Sylwadau ar fy ngweithgaredd"
@@ -1506,6 +1520,7 @@ cy:
                 reading_plans: "Am fy Nghynlluniau"
                 votd: "Testun Adnod y Dydd"
                 votd_image: "Darlun adnod y dydd"
+                contact_joins: "Pan mae Cyswllt yn ymuno"
             error: 
                 token: "Sori ond mae'n rhaid i ti fewngofnodi i newid dy Osodiadau Hysbysiadau:"
                 other_type: "Sori roedd hynny'n annisgwyl. A fyddet ti'n hoffi diweddaru dy Hysbysiadau?"

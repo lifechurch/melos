@@ -1444,13 +1444,26 @@ ru:
             just now: "только что"
         verses selected: "стихи выбраны"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Управляйте рассылками от YouVersion. Вы можете изменять мобильные уведомления в вашем мобильном приложении."
             email: "Email"
             not me: "Это не я."
             saved: "Сохранено!"
-            plan delivery: "PLAN DELIVERY"
-            sign-in: "Чтобы изменить другие настройки, <a href='{sign_in_path}'>войдите в свою учетную запись</a>."
+            plan delivery: "РАССЫЛКА ПЛАНОВ"
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Настройте свои е-мейл уведомления."
                 unsub all: "Отписаться от всех е-мейл уведомлений."
@@ -1466,6 +1479,7 @@ ru:
                 rp_daily: "Вы успешно отписались от <b>ежедневных е-мейлов плана чтения</b> %{plan_title}."
                 votd: "Вы успешно отписались от е-мейл - уведомлений <b>стиха дня</b>."
                 votd_image: "Вы успешно отписались от е-мейл - уведомлений <b>фото-стиха дня</b>."
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "Когда я зарабатываю значки"
                 comments: "Оставить комментарий к моим действиям"
@@ -1476,6 +1490,7 @@ ru:
                 reading_plans: "О моих планах чтения"
                 votd: "Текст стиха дня."
                 votd_image: "Фото-стих дня"
+                contact_joins: "Когда присоединяется друг"
             error: 
                 token: "Извините, но требуется войти в систему, чтобы изменить настройки уведомлений:"
                 other_type: "Извините, что-то пошло не так. Вы хотите обновить ваши уведомления?"

@@ -1399,13 +1399,26 @@ ja:
             just now: "たった今"
         verses selected: "選択した聖句"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "YouVersionから受け取るメールを管理する。アプリから通知に関する編集ができます。"
             email: "メール"
             not me: "これは私ではありません。"
             saved: "保存されました！"
             plan delivery: "通知：読書プラン"
-            sign-in: "設定を変更するには<a href='{sign_in_path}'>アカウントにログインしてください</a>。"
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "メール通知設定"
                 unsub all: "すべてのメールの登録解除"
@@ -1421,6 +1434,7 @@ ja:
                 rp_daily: "「%{plan_title}」の<b>読書プラン</b>に関するメールからの登録解除が完了しました。"
                 votd: "<b>今日の聖句</b>に関するメールからの登録解除が完了しました。"
                 votd_image: "<b>今日の聖画像</b>に関するメールからの登録解除が完了しました。"
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "バッジを獲得した時"
                 comments: "アクティビティへのコメント"
@@ -1431,6 +1445,7 @@ ja:
                 reading_plans: "自分のプランについて"
                 votd: "今日の聖句のメール"
                 votd_image: "今日の聖句　イメージ"
+                contact_joins: "連絡先が参加した場合"
             error: 
                 token: "通知の設定の変更するためには、ログインが必要です。"
                 other_type: "予期せぬエラーが発生しました。通知をアップデートしますか？"

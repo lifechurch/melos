@@ -1414,13 +1414,26 @@ de:
             just now: "gerade eben"
         verses selected: " Bibelverse ausgewählt"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Lege fest, welche E-Mails du von YouVersion bekommst. Du kannst die Mitteilungen auch auf deiner App anpassen."
             email: "E-Mail"
             not me: "Das bin nicht ich."
             saved: "Gespeichert!"
             plan delivery: "E-Mail-Versand"
-            sign-in: "Zum Ändern anderer Einstellungen bitte anmelden."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Verwalte deine E-Mail-Benachrichtigungen."
                 unsub all: "Bestelle alle E-Mails ab."
@@ -1436,6 +1449,7 @@ de:
                 rp_daily: "Du hast erfolgreich alle <b>E-Mails für tägliche Lesepläne</b> von %{plan_title} abbestellt."
                 votd: "Du hast erfolgreich alle E-Mails zum <b>Vers des Tages</b> abbestellt."
                 votd_image: "Du hast erfolgreich alle E-Mails mit dem <b>Bild für den Vers des Tages</b> abbestellt."
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "Wenn ich eine Auszeichnung bekomme"
                 comments: "Kommentare zu meiner Aktivität"
@@ -1446,6 +1460,7 @@ de:
                 reading_plans: "Über meine Bibellesepläne"
                 votd: "Text vom Vers des Tages"
                 votd_image: "Bild für den Vers des Tages"
+                contact_joins: "Wenn ein Kontakt YV beitritt"
             error: 
                 token: "Sorry, du musst dich anmelden, um deine Einstellungen für Benachrichtigungen anzupassen."
                 other_type: "Sorry, das hat nicht wie geplant funktioniert. Willst du deine Benachrichtigungen anpassen?"

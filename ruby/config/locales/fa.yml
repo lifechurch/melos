@@ -1399,13 +1399,26 @@ fa:
             just now: "فقط الآن"
         verses selected: "آیات انتخاب شده"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "کنترل ای‌میلهای دریافتی از طرف YouVersion شما امکان ویرایش اعلانات دستگاه‌ همراه از داخل همان دستگاه را دارید."
             email: "ای‌میل"
             not me: "این پروفایل من نیست"
             saved: "ذخیره شد!"
-            plan delivery: "PLAN DELIVERY"
-            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
+            plan delivery: "تحویل برنامۀ مطالعه"
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "تنظیم دریافت اعلانات از طریق ای‌میل"
                 unsub all: "لغو عضویت از دریافت تمامی اعلانات از طریق ای‌میل"
@@ -1421,6 +1434,7 @@ fa:
                 rp_daily: "لغو عضویت از دریافت <b>ای‌میل روزانه</b> از برنامۀ مطالعۀ %{plan_title}با موفقیت انجام شد."
                 votd: "لغو عضویت از دریافت ای‌میل مرتبت با <b>آیۀ روز</b> با موفقیت انجام شد."
                 votd_image: "لغو عضویت از دریافت ای‌میل مرتبت با <b>آیۀ تصویریِ روزانه</b> با موفقیت انجام شد."
+                contact_joins: "لغو عضویت از دریافت ای‌میل‌های <b> فهرست دوستان</b> با موفقیت انجام شد."
             labels: 
                 badges: "وقتی نشانی دریافت می‌کنم"
                 comments: "نظرات مربوط به فعالیت‌های من"
@@ -1431,6 +1445,7 @@ fa:
                 reading_plans: "دربارهٔ برنامه‌های مطالعهٔ من"
                 votd: "متن آیه روز"
                 votd_image: "تصویر آیۀ منتخب روز"
+                contact_joins: "وقتی یکی از افراد لیست تماس (به برنامۀ مطالعه) ملحق می‌شود"
             error: 
                 token: "برای تغییر اعلانات، ورود با حساب کاربری الزامی است!"
                 other_type: "با عرض پوزش، عمل مورد نظر انجام نشد! آیا مایلید تنظیم اعلانات خود را به‌روزرسانی کنید؟"

@@ -1399,13 +1399,26 @@ zh-TW:
             just now: "剛才"
         verses selected: "已選擇的經文"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "選擇你想收到 YouVersion 的電郵類別。 你可以透過手機程式來編輯手機通知。"
             email: "電子郵件"
             not me: "這不是我"
             saved: "已儲存！"
             plan delivery: "傳送讀經計劃"
-            sign-in: "要編輯其他設定，請<a href='{sign_in_path}'>登入你的帳戶</a>。"
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "管理電郵通知。"
                 unsub all: "取消訂閱所有電郵。"
@@ -1421,6 +1434,7 @@ zh-TW:
                 rp_daily: "你已成功取消訂閱%{plan_title}的<b>讀經計劃每日電郵</b>。"
                 votd: "你已成功取消訂閱<b>今日經文</b>的電郵。"
                 votd_image: "你已成功取消訂閱<b>今日經文圖</b>的電郵。"
+                contact_joins: "你已成功取消訂閱有關<b>聯絡人</b>的電郵。"
             labels: 
                 badges: "當我獲得一枚徽章時"
                 comments: "有關我的活動的評論"
@@ -1431,6 +1445,7 @@ zh-TW:
                 reading_plans: "有關我的讀經計劃"
                 votd: "今日經文文本"
                 votd_image: "今日經文圖"
+                contact_joins: "有聯絡人參加的時候"
             error: 
                 token: "很抱歉，你需要登錄才可以更改通知設定。"
                 other_type: "很抱歉，出現了錯誤。你想更新你的通知設定嗎？"

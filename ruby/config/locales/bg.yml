@@ -1414,13 +1414,26 @@ bg:
             just now: "току-що"
         verses selected: "избрани стихове"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Контролирайте какви имейли да получавате от YouVersion. Можете да редактирате абонамента си за известяване от приложението на мобилното Ви устройство."
             email: "Имейл"
             not me: "Това не съм аз"
             saved: "Запазено!"
             plan delivery: "ИЗПРАЩАНЕ НА ПЛАНОВЕ"
-            sign-in: "За промяна на други настройки <a href='{sign_in_path}'>влезте във Вашия профил</a>."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Управлявайте Вашите имейл известия"
                 unsub all: "Отписване от всички имейли"
@@ -1436,6 +1449,7 @@ bg:
                 rp_daily: "Вие успешно се отписахте от <b>ежедневни имейли</b> от плана за прочит %{plan_title}."
                 votd: "Вие успешно се отписахте от имейли за <b>стиха за деня</b>."
                 votd_image: "Вие успешно се отписахте от имейли за <b>изображението за стиха за деня</b>."
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "Когато получа значка"
                 comments: "Коментари на моята дейност"
@@ -1446,6 +1460,7 @@ bg:
                 reading_plans: "За моите планове за прочит на Библията"
                 votd: "Текст за стиха за деня"
                 votd_image: "Изображение за стиха на деня"
+                contact_joins: "Когато някой от контактите Ви се присъедини"
             error: 
                 token: "Извинете, но трябва да влезете в профила си, преди да можете да промените Вашите настройки за известяване:"
                 other_type: "Извинете, но не се получи това, което очаквахме. Бихте ли желали да актуализирате Вашите известия?"

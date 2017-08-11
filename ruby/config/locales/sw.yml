@@ -1,77 +1,77 @@
 ---
-sw:
-    time:
-        formats:
+sw: 
+    time: 
+        formats: 
             votd: "%M %-d, %M"
-    datetime:
-        time_ago_in_words:
-            about_x_hours:
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
                 one: "yapata saa %{count} lililopita"
                 other: "yapata masaa %{count} yaliyopita"
-            about_x_months:
+            about_x_months: 
                 one: "yapata mwezi %{count} uliopita"
                 other: "yapata miezi %{count} iliyopita"
-            about_x_years:
+            about_x_years: 
                 one: "yapata mwaka %{count} uliopita"
                 other: "yapata miaka %{count} iliyopita"
-            almost_x_years:
+            almost_x_years: 
                 one: "karibu mwaka %{count} umepita"
                 other: "karibu miaka %{count} iliyopita"
             half_a_minute: "nusu dakika iliyopita"
-            less_than_x_minutes:
+            less_than_x_minutes: 
                 one: "chini ya dakika %{count} iliyopita"
                 other: "chini ya dakika %{count} zilizopita"
-            less_than_x_seconds:
+            less_than_x_seconds: 
                 one: "chini ya sekunde %{count} iliyopita"
                 other: "chini ya sekunde %{count} zilizopita"
-            over_x_years:
+            over_x_years: 
                 one: "zaidi ya mwaka %{count} uliopita"
                 other: "zaidi ya miaka %{count} iliyopita"
-            x_days:
+            x_days: 
                 one: "siku %{count} iliyopita"
                 other: "siku %{count} zilizopita"
-            x_minutes:
+            x_minutes: 
                 one: "dakika %{count} iliyopita"
                 other: "dakika %{count} zilizopita"
-            x_months:
+            x_months: 
                 one: "mwezi %{count} uliopita"
                 other: "miezi %{count} iliyopita"
-            x_seconds:
+            x_seconds: 
                 one: "sekunde %{count} iliyopita"
                 other: "sekunde %{count} zilizopita"
-    counter:
+    counter: 
         format: "999,999,999"
-    social:
-        intro page:
+    social: 
+        intro page: 
             main heading: "Mazungumzo & Ungunduzi"
             main description: "Njia mpya ya kuchunguza Biblia na marafiki unaowaamini"
-            moment:
+            moment: 
                 user aaron: "Haruni Chuma"
                 user andy: "Andi Askari"
                 timestamp: "siku 5 zilizopita"
                 title: "Zaburi 31:7 imealamishwa"
                 verse: "Na nishangilie, nizifurahie fadhili zako, Kwa kuwa umeyaona mateso yangu. Umeijua nafsi yangu taabuni."
                 reference: "Zaburi 31:7"
-                discover:
+                discover: 
                     copy: "Zindua na jifunze na marafiki zako wakiwa wanaongeza maalamisho, maonyesho, na maelezo."
                     button: "Nitaanza wapi?"
-                share:
+                share: 
                     copy: "Shirikisha mazungumzo ya uaminifu kuhusu maandiko."
                     button: "Anza kwa kutafuta marafiki."
-                likes:
+                likes: 
                     info: "na 4 zaidi wameipenda hii"
-                comments:
-                    first:
+                comments: 
+                    first: 
                         text: "Kweli nilihitaji kusikia hili leo, asante. Tuongee hivi karibuni!"
                         time: "Kama masaa 3 yaliyopita"
-                    second:
+                    second: 
                         text: "Amina, mimi pia. Nakutumia barua pepe yangu sasa hivi."
                         time: "kama dakika 27 zilizopita"
                     field placeholder: "Andika maoni..."
-        widget:
+        widget: 
             timeline: "Ratiba"
             no activity yet: "Hakuna shughuli yeyote."
-        moment:
+        moment: 
             read all: "Soma yote"
             read less: "Soma kidogo"
         share: "husisha wengine/jumuisha"
@@ -80,18 +80,18 @@ sw:
         connected as: "Umeunganishwa na %{connection} kama %{username}."
         remove connection: "Toa uhusiano huu"
         connection friends: "hapa kuna baadhi ya watumiaji wa YouVersion ambao mmeshikamana nao kwa %{connection}:"
-        errors:
+        errors: 
             no friends: "Hakuna %{connection} marafiki zako waliopo katika YouVersion."
             reset connection: "Samahani, hitilafu imetokea. Tafadhali funga na kisha unganisha tena uhusiano huu."
-        email:
+        email: 
             name: "Barua pepe"
-        twitter:
+        twitter: 
             name: "twitter"
-        facebook:
+        facebook: 
             name: "Facebook"
-            errors:
+            errors: 
                 expired access: "Muda wa ishara yako na Facebook umekwisha. Tafadhali funga uhusiano wako na kisha unganisha tena kwa Facebook."
-    language names:
+    language names: 
         arabic: "Arabic"
         bulgarian: "Bulgarian"
         czech: "Czech"
@@ -110,7 +110,7 @@ sw:
         ukrainian: "Ukrainian"
         simplified chinese: "Simplified Chinese"
         traditional chinese: "Traditional Chinese"
-    api:
+    api: 
         users agree bool: "Lazima ukubali sheria na masharti ili utengeneze akaunti"
         users confirm password matches: "Neno la siri mpya haijalingana"
         users email email: "Barua pepe hiyo si sawa"
@@ -133,26 +133,26 @@ sw:
         users last name required: "Lazima uingize jina la mwisho."
         moments content required: "Maudhui haiwezi kuachwa tupu"
         users auth password required: "Lazima uweke neno la siri"
-    meta:
+    meta: 
         best kids app: "Programu bora kwa watoto!"
         best educational app: "Programu bora inayoelimisha!"
-        kids_app:
+        kids_app: 
             title: "Apu ya Biblia ya watoto"
             description: "Apu ya Biblia ya watoto ni njia nzuri ya watoto wako kujifunza hadithi za Bibilia kuhusu Yesu, zawadi yetu ya uzima wa milele na mafunzo mengi kutoka kwa Mungu. Kutoko uzoefu huu, watoto wanapata fursa ya kushiriki na neno la Mungu kwa kutumia maonyesho ya kupendeza na hata kupata mapoto kutoka kusoma na kukusanya hazina."
-        100million:
+        100million: 
             title: "Inaanza na milioni 100"
             description: "App ya Biblia imewekwa karibia mara milioni 100 - ni hatua ua ajabu! Lakini ndio kwanza tumeanza. Download bure App yaBiblia leo -  na washirikisha marafiki zako. Tutengeneze ukumbusho pamoja."
-        mobile:
+        mobile: 
             title: "App ya Biblia"
             description: "Soma neno la Mungu wakati wowote na pahali popote kwa kutumia YouVersion Bible App.Shirikisha bibilia na rafiki, alamisha vifungu na tengeneza tabia ya kila siku ya kusoma bibilia kwa kutumia Mipango ya masomo.Inapatikana katika rununu za iOS, Android,Blackberry,Windows Phone na mengineo."
             download or read: "Download sasa au kusoma online."
-        site:
+        site: 
             title: "Bible.com"
             description: "Tunaleta uzuri na ukweli wa bibilia katika maisha yako ya kila siku. Kwa kutumia YouVersion Bible App unaweza kusoma, tazama na shirikisha masomo katika rununu yako au kwenye tarakilishi kwa kupitia Bible.com"
-        connections:
-            index:
+        connections: 
+            index: 
                 title: "akaunti zilizounganishwa"
-    kids:
+    kids: 
         bible app: "Programu ya Biblia"
         for: "for"
         kids: "Watoto"
@@ -175,7 +175,7 @@ sw:
         feature 3: "Vielelezo vilivyo na picha za kugusa"
         feature 4: "Michezo na shughuli huwasaidia watoto kukumbuka walichojifunza"
         feature 5: "Urambazaji rahisi kwa watoto"
-        share:
+        share: 
             tell friends: "Waambie mafiki zako kuhusu apu ya Biblia ya watoto"
             facebook name: "The Bible App for Kids"
             facebook description: "Bible App ya watoto iko hapa. Ipakue bure katika rununu yako ya iOS au Android leo: pata hadithi za Bibilia ambazo zitasaidia mtoto wako kujifunza, kucheza na kukua katika neno la Mungu. www.bible.com/kids"
@@ -186,11 +186,11 @@ sw:
             email: "Email"
             email subject: "Apu ya Biblia ya watoto iko hapa!"
             email body: "Habari Njema - Apu ya Biblia ya watoto iko hapa! Ni bure na unaweza ipata katika rununu za iPhone, iPad, iPod touch, na Android. Hii apu ni mkusanyiko wa hadithi za Bibilia zinazoendelea kuongezeka. Apu ina michoro na mazoezi ambayo itawasaidia watoto kujifunza hadithi muhimu za Bibilia. Tembelea bible.com/kids katika rununu yako uweze kuipata leo."
-        partner:
+        partner: 
             youversion: "YouVersion: Apu maarufu sana duniani ya Bibilia"
             in partnership: "kwa kushirikiana na"
             one hope: "One Hope: Maudhui muhimu zaida ya Bibilia kwa watoto"
-        links:
+        links: 
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
@@ -215,8 +215,8 @@ sw:
     new note: "noti mpya"
     share success: "Ujumbe wako umesambazwa."
     share error: "Samahani, kulikuwa na hitilafu katika usambazaji wa ujumbe wako. Tafadhali jaribu tena."
-    share:
-        request:
+    share: 
+        request: 
             no_twitter_connection: "Huna akaunti ya twitter iliyounganishwa. Tafadhari unganisha akaunti katika ukurasa wa mipangilio."
             no_facebook_connection: "Huna akaunti ya Facebook iliyounganishwa. Tafadhali unganisha akaunti yako kwenye ukurasa wa mipangilio."
     google plus: "Google+"
@@ -311,9 +311,9 @@ sw:
     groups: "makundi"
     mobile: "Apu za simu za mkononi"
     live: "mojakwamoja"
-    events:
+    events: 
         events: "Matukio"
-        menu:
+        menu: 
             features: "Features"
             faq: "FAQ"
             resources: "Resources"
@@ -406,16 +406,16 @@ sw:
     traditional: "Kialisi"
     alphabetic: "Kwa herufi"
     versions title: "Matoleo"
-    languages:
+    languages: 
         title: " lugha za biblia na tafasili"
         most popular: "Lugha nyingi maarufu"
         additional: "lugha ya ziada"
         download language: "Pakua programu ya bure ya Biblia"
         bible in: "Biblia katika %{language_name}"
-    or:
+    or: 
         lower: "au"
         upper: "AU"
-    moments:
+    moments: 
         scripture unavailable: "Andiko halipatikani"
         could not load: "Haikuweza kupakia"
         could not load verse: "Haikuweza kupakia fungu"
@@ -429,8 +429,8 @@ sw:
         users like this: "%{last_liker_link} na %{more_link} penda hii"
         like: "penda"
         likes: "nivipendavyo"
-        more than one like:
-        vod:
+        more than one like: 
+        vod: 
             title: "Fungu la siku"
             get daily email: "Pata barua pepe kila siku"
             subscribe: "Jiunge"
@@ -440,16 +440,16 @@ sw:
             view more: "Angalia zaidi"
             time: "Saa"
             blurb: "Jiunge kwenye Fungu la Leo Pata taarifa kila siku aina ya kusukumwa kwenye simu yako"
-        friendship:
+        friendship: 
             now friends: "Wewe sasa ni marafiki na"
-        cta:
+        cta: 
             profile update text: "Saidia marafiki zako kukupata"
             profile update button: "wezesha profaili yako"
             sharing text: "Shirikisha mafungu na mitandao ya kijamii"
             sharing button: "wezesha kushirikiana"
             friends text: "Angalia mambo yanayomjiri rafiki yako katika Biblia."
             friends button: "Tafuta marafiki"
-        action:
+        action: 
             go to scripture: "Nenda kwenye maandiko"
             add friend button: "Ongeza rafiki"
             load more: "ongeza zaidi"
@@ -477,41 +477,41 @@ sw:
             read plan: "Soma"
             about plan: "Kuhusu mpango"
             start plan: "Anza mpango"
-    notifications:
+    notifications: 
         title: "Taarifa"
         none: "Huna taarifa yoyote"
         no new: "Hakuna taarifa mpya"
         view all: "Onyesha taarifa zote"
-    likes:
+    likes: 
         create success: "Umefanikiwa! kupenda kwako kumehifadhiwa"
         create failure: "kupenda kwako haikuweza kuhifadhiwa"
         destroy success: "kupenda kwako kumefutwa"
         destroy failure: "kupenda kwako hakukuweza kufutwa"
-    comments:
+    comments: 
         view all N: "Ona zote%{count} maoni"
         post comment: "Andika maoni"
         create success: "Umefanikiwa! Maoni yako yametumwa."
         create failure: "Maoni haya kuweza kutumwa"
         destroy success: "Oni lako limefutwa"
         destroy failure: "Oni lako halikuweza kufutwa"
-        form:
+        form: 
             save button: "Tuma"
-    friends:
+    friends: 
         you have N friends: "unamarafiki %{count}"
         none me: "Shirikisha wakati wako katika Biblia kama vile maalamisho, mambo muhimu, na maelezo kwa marafiki zako wa karibu na familia."
         find friends: "Tafuta marafiki"
-        blank slate:
+        blank slate: 
             heading: "Kwa sasa sio marafiki"
             description: "Lazima uwe rafiki na mtu huyu ili kuona marafiki zao."
         limit notice: "Unaweza kawa na marafiki wengi kama 150"
         limit description: "Kuwa na kiwango cha marafiki kwenye Apu ya Biblia kwa watu unaowajua vizuri inajenga mazingira yenye mazungumzo waaminifu na uvumbuzi pamoja na marafiki unaowaamini."
-    friendships:
+    friendships: 
         blurb: " Elekeza urafiki wako katika Bibilia Kushirikisha unachotaka,wakati unaotaka,ndani ya mahusiano salama yanayo aminiwa."
         name required: "Ili upate kuzoea biblia na marafiki zako, wezesha profaili yako kwa kuandika jina lako la kwanza na la mwisho."
         find friends title: "Tafuta marafiki"
         search by name: "Tafuta kwa jina"
         search button: "Nenda"
-        widget:
+        widget: 
             find friends title: "Tafuta marafiki"
             search by name: "Tafuta kwa jina"
             search button: "Nenda"
@@ -525,12 +525,12 @@ sw:
         requests view all: "Onyesha maombi yote ya urafiki"
         requests none: "Huna ombi lolote la urafiki"
         requests no new: "Hana maombi mapya"
-        status:
+        status: 
             pending: "Ombi linasubiri jibu"
             friends: "Marafiki"
         user wants friendship: "%{user} anataka kuwa rafiki yako"
         user wants friendship partial: "anataka kuwa rafiki yako"
-        form:
+        form: 
             remove friend button: "Ondoa rafiki"
             remove friend button title: "Muondoe huyu mtu kwenye orodha yangu ya marafiki"
             add friend button: "Ongeza rafiki"
@@ -540,24 +540,24 @@ sw:
             accept request button: "Kubali ombi"
             ignore button: "Kataa"
             ignore request button: "Kanusha ombi"
-    images:
+    images: 
         none user: "%{username} bado hajaunda picha yoyote."
-        blank slate:
+        blank slate: 
             heading: "Bado huna picha yoyote"
             description: "Tumia programu ya YouVersion ya mkononi kutengeneza picha za aya."
-    notes:
+    notes: 
         none user: "%{username} hana maelezo yoyote."
-        blank slate:
+        blank slate: 
             heading: "Huna maelezo yoyote"
             description: "Unaposoma Biblia, wakati unaposikia sauti ndogo , ya Mungu akizungumza unaweza kwa haraka kuongeza mawazo hayo hapa. Maelezo yako yata alamamishwa kama <em> binafsi &lt;/ em&gt; na default. Kama ukipenda kushirikisha maelezo yako kwa marafiki zako,  kufungua na badili kwa <em> jamii &lt;/ em&gt;."
-        form:
+        form: 
             title field: "kichwa cha habari:"
             content field: "maudhui:"
             highlight field: "Maonyesho: (sio lazima)"
             reference field: "kumbukumbu"
             status field: "Hali:"
             save button: "hifadhi/okoa"
-        status:
+        status: 
             private: "Binafsi"
             public: "Umma"
             friends: "Marafiki pekee"
@@ -596,7 +596,7 @@ sw:
         destroy success: "Elezo limeondolewa"
         destroy failure: "Hitilafu kuondoa elezo"
         update success: "Elezo limewezeshwa"
-    ref:
+    ref: 
         loading secondary: "Marejeo yanatolewa katika Toleo Sekondari ..."
         clear verses: "Ondoa mistari iliyochaguliwa"
         choose book and chapter: "chagua kitabu + kurasa"
@@ -618,7 +618,7 @@ sw:
         no secondary version text: "%{language_name} ina toleo moja tu, kwa hivyo hatungeweza kukuchagulia toleo ya pili. Tafadhali chagua toleo lako la pili kwa kulinganisha kisambamba."
         select another chapter: "chagua ukurasa mwingine"
         view in reader: "Tazama %{reference} kwa somo"
-    users:
+    users: 
         unverified heading: "Karibu kumaliza"
         unverified message: "Inaonekana unajaribu kuingia katika akaunti ambayo haijasajilishwa kikamilifu. Tafadhali bonyeza kiungo cha ukaguzi kilicho katika barua pepe iliyotumwa kutoka YouVersion. Kama huwezi kuipata angalia ndani ya spam folder ama <a href='%{resend_path}' target='_self'>tuma barua pepe ya kuthibitisha tena</a>."
         settings: "mipangilio"
@@ -722,7 +722,7 @@ sw:
         resend confirmation title: "Haujapokea barua pepe ya Uthibitisho?"
         resend confirmation copy: "Andika anuani ya barua pepe uliyotumia kusajiri hapa chini na tutakutumia barua pepe nyingine ya uthibitisho."
         resend confirmation button: "Tuma tena Uthibitisho."
-        privacy:
+        privacy: 
             policy: "%{youversion} sera ya faragha"
             intro: "YouVersion,tovuti na Maombi inayomilikiwa na kuendeshwa na Life.Church,unajua wewe jinsi habari na huduma kuhusu wewe ni kutumika na kushirikiana.Ni matumaini yetu kauli ifuatayo itakusaidia kuelewa jinsi YouVersion inakusanya,kutumia na kulinda habari kutoka kwetu kwenye tovuti yetu au programu."
             translation disclaimer: "Sera ya faragha imetafsiriwa ili iwerahisi kwako, hata hivyo, Life.Church  haijapeana dhamana au uwakilishi kwa usahihi wa tafsiri. Kama hitilafu yoyote itapatikana kati ya Kiingereza na toleo ya kutafsiriwa, toleo ya Kiingereza itatawala."
@@ -751,7 +751,7 @@ sw:
             enforcement text: "Life.Church mara kwa mara hufanya mapitio ya utekelezaji wake kwa Sera ya Siri.Baada ya sisi kupokea yameandikwa malalamiko rasmi kuhusu masuala ya faragha,ni sera yetu kuwasiliana kulalamika mtumiaji kuhusu masuala yake.Sisi kwa kushirikiana na mamlaka dhibiti husika,ikiwa ni pamoja na mamlaka ya kulinda taarifa,ili kutatua malalamiko yoyote kuhusiana na uhamishaji wa taarifa binafsi ambayo hayawezi kutatuliwa kati ya Life.Church na mtu binafsi."
             questions title: "maswali"
             questions text: "Maswali yoyote kuhusu sera binafsi zinaweza kuelekezwa kwa: legal@youversion.com<a href='mailto:legal@youversion.com'>legal@youversion.com</a>"
-        terms:
+        terms: 
             title: "Masharti ya matumizi"
             translation disclaimer: "Masharti ya matumizi yametafsiriwa kwa niaba yako, hata hivyo, Life.Church hakuna dhamana au uwakilishi na heshima kwa usahihi wa tafsiri hii. Kama hitilafu yoyote hupatikana kati ya Kiingereza na toleo iliyotafsiriwa, toleo ya Kiingereza itatawala."
             acceptance title: "Kukubalika kwa masharti"
@@ -800,8 +800,8 @@ sw:
             copyright text: "Life.Church inaheshimu kazi ya ufahamu ya watu wengine. Tunaomba watumiaji pia kufanya hivyo, zaidi sana wakati ambapo inahusu mambo ya YouVerson. LifeChuch.tv inaweza, kwatukio fulani na kwa namna ya upekee, kufunga na/ama kuondoa akaunti za watumiaji ambao hawaheshimu kii kanuni. Ikiwa kama unauhakika kama kuna mtu ambaye amenakala kaziyako ambayo inaenda kinyume cha sheria ya hati miliki, ama haki ya kazi yako ya ufahamu imeibwa, thafadhali julisha maramoja kwa barua pepe hii legal@youversion.com:<ul type='none'><li>Saini pepe ama kibinafsi ya mtu aliyaruhusiwa kutenda kwa niaba ya mwenyeji wa hati miliki ama mwenyeji wa kazi ya ufahamu ikihusika;</li><br><li>Maelezo iloandikwa ya hati miliki ama mali ya ufahamu ambayo unahusika nayo ikiwa imetumiwa;</li><br><li>Maelezo ilio andikwa ya mahali ambapo kazi yako imeandikwa bila ruhusa yako kwa YouVersion;</li><br><li>Anuani yako, namba za simu, pia barua pepe (yote ambayo yanahitajika);</li><br><li>Kauli ambayo imeandikwa na wewe ya kwamba unauhakikisho kabisa ya kwamba kazi fulani haina ruhusa ya mwenyeji, kibinafsi ama ya kisheria;</li><br><li>Kauli iliyo andikwa na wewe, chini ya sheria ya makosa, yakwamba maelezo haya ndani ya ilani ni haki na kama una haki miliki ama ni kazi yako ya ufahamu, ama unaruhusa ya kutenda kwa niaba ya wenyeji wa haki miliki ama mwenyeji wa kazi ya ufahamu. Mtu wa Life.Church anaye husika na Ilani ya madai ya haki miliki ama kazi ya ufahamu ikitumiwa kinyeme cha sheria unaeza ongea naye kupitia:%{newline} Kwa barua pepe: Life.Church c/o - Contracts Coordinator %{newline}4600 E. 2nd Street Edmond,OK 73034%{newline} Phone:(405) 680-5433%{newline} Fax:(405) 844-3002%{newline} Barua pepe:%{mailto_link}</li></ul>"
             general title: "habari kwa ujumla"
             general text: "Mkataba nzima.Haya Masharti ya matumizi unashirikisha mkataba baina yako na Life.Church na kutawala matumizi yako ya YouVersion,ukichukua mikataba ya awali kati yako na Life.Church kwa heshima na YouVersion. Wewe pia inaweza kuwa chini ya sheria na masharti.<br><br> Uchaguzi wa Sheria na Forum.Masharti ya matumizi na uhusiano kati ya wewe na Life.Church utaongozwa na sheria za Jimbo la Oklahoma bila ya kujali migogoro ya utoaji wa sheria.Wewe na Life.Church kukubaliana na kuwasilisha kwa mamlaka binafsi na ya kipekee ya mahakama ziko ndani ya kata ya Oklahoma County, Oklahoma.<br><br> Msamaha na balim ya Masharti. Kushindwa kwa Life.Church kwa zoezi au kutekeleza haki yoyote au utoaji wa Masharti haya YA MATUMIZI wala kuanzisha msamaha wa haki au riziki.Kama masharti yoyote ya Masharti haya YA MATUMIZI ni kupatikana kwa mahakama ya mamlaka husika kuwa batili, lakini vyama kukubaliana kwamba mahakama inapaswa hujitahidi kutoa athari kwa nia ya vyama kama yalijitokeza katika utoaji, na masharti mengine ya haya MASHARTI YA MATUMIZI kubaki katika kikosi kamili na athari.<br><br> Hakuna Haki ya survivorship na zisizo za transferability.Unakubali kwamba akaunti yako Life.Church ni yasiyo ya kuhamishwa, na haki yoyote kwa Life.Church ID yako au yaliyomo ndani ya akaunti yako ya kusitisha juu ya kifo yako. Baada ya kupokea nakala ya cheti cha kifo, Life.Church inaweza kusitisha akaunti yako na kufuta yaliyomo yote humo.<br><br> Mkataba wa Upungufu. Unaelewa na kukubali kwamba bila kujali amri au sheria yoyote kinyume, madai yoyote au sababu ya hatua unaojitokeza au kuhusiana na matumizi ya YouVersion au MASHARTI haya YA MATUMIZI lazima filed ndani ya moja (1) ya mwaka baada ya madai kama hayo au chanzo cha hatua akaondoka au BARRED milele.<br><br> Vyeo sehemu ndani ya MASHARTI haya YA MATUMIZI ni kwa urahisi tu na kuwa na athari za kisheria au mikataba."
-        profile:
-            blank slate:
+        profile: 
+            blank slate: 
                 heading: "Endelea kwenda, hakuna chochote cha kuona hapa (bado)"
                 description: "Anza kujihusisha na Biblia, au marafiki zako, na ukurasa huu utaonyesha historia ya kinachoendelea."
             visit friend: "Tembelea profaili ya ma %{friend}"
@@ -841,11 +841,11 @@ sw:
             edit: "Hariri"
             bio: "Wasifu"
             complete_first_last: "Kamilisha profaili yako kwa kujaza jina lako ya kwanza na la mwisho"
-        password:
+        password: 
             updated: "Mafanikio! umewezesha kitambulisho chako cha siri."
             error: "Samahani, kulikuwa na hitilafu katika kubadili kitambulisho chako cha siri."
             old was invalid: "Samahani,itakubidi uingize kitambulisho chako cha siri cha zamani kwa usahihi ili kubadili kitambulisho cha siri."
-        notifications:
+        notifications: 
             badges: "nijulishe kuhusu beji nilizopata."
             follower: "nijulishe mtu atakapo nifuata."
             newsletter: "Nijulishe na matangazo ya YouVersion."
@@ -858,7 +858,7 @@ sw:
             moments: "Nijulishe kuhusu shughuli za marafiki"
             comments: "Nijulishe kuhusu maoni juu ya shughuli zangu"
             likes: "Nijulishe juu ya shughuli zangu zilizopendwa"
-    bookmarks:
+    bookmarks: 
         new: "Alamisho mpya"
         edit: "Hariri"
         delete: "Futa alama hii"
@@ -889,10 +889,10 @@ sw:
         color: "Rangi:"
         version field: "Toleo:"
         none user: "%{username} hana maalamisho"
-        blank slate:
+        blank slate: 
             heading: "Alamamisha mafungu yenye maana"
             description: "Wakati wa kusoma Biblia, kuchagua fungu na lialamishe. Rudi hapa kuona, hariri, au kufuta alama yako."
-        form:
+        form: 
             title field: "kichwa cha habari:"
             reference field: "rejea"
             labels field: "Lebo(koma_tenganisha):"
@@ -900,26 +900,26 @@ sw:
             colors field: "Rangi:"
             update button: "Alamisha upya"
             save button: "Hifadhi alama"
-    badges:
+    badges: 
         earned a badge: "beji ulizopata"
         user badges: "%{user} beji"
         earned date: "Zimepatwa na %{username} %{ago} mda uliyopita"
         none me: "Haujapata beji zozote."
         none user: "%{username} hajapata beji zozote."
-    plans:
+    plans: 
         see all: "Ona zote"
         day_completed: "<b>Amekamilisha siku%{username} ya mpango,%{day}</b> %{day}%{plan_title}%{username} Amekamilisha mpango wa biblia siku ya kwanza <b>%{day}%{username}amekamilisha siku ya kwanza%{day}ya mpango wa biblia</b> %{username}amekamilisha siuk ya kwanza ya mpango wa biblia%{day}%{plan_title} <b>%{plan_title}%{username}amekamilisha siku ya kwanza ya mpango wa biblia%{day}</b>"
-        status:
+        status: 
             on track: "On Track!"
-            days ahead:
+            days ahead: 
                 one: "siku %{count} iliyopita"
                 other: "siku %{count} zilizopita"
-            missed days:
+            missed days: 
                 one: "%{count} Angalia siku zilizokosa"
                 other: "%{count} Angalia siku zilizokosa"
         bible plan language: "Chagua mipango kulingana na lugha"
         share plan: "Tazama hii kwenye @YouVersion #BiblePlan: %{plan_title}"
-        widget:
+        widget: 
             my plans: "mipango yangu"
             start reading: "Anza kusoma"
             view my plans: "Angalia Mipango Yango"
@@ -928,18 +928,18 @@ sw:
             reading: "kusoma"
             readings: "masomo"
             readings 5 or more: "masomo"
-        stats:
-            friends reading:
+        stats: 
+            friends reading: 
                 one: "{0} rafiki ambaye amejiunga kwa mpango huu"
                 other: "%{count}rafiki ambao wamejiunga kwa mpango huu"
-            friends completed:
+            friends completed: 
                 one: "{0} rafiki ambaye amemaliza hii mpango"
                 other: "%{count} rafiki ambao wamemaliza hii mpango"
             total completions: "Zaidi ya %{count} wamemaliza"
             view all: "Tazama zote"
             close: "Funga"
         settings: "mipangilio"
-        privacy:
+        privacy: 
             visible to friends?: "Unataka marafiki zako waone shughuli za mpango wako?"
             private: "Binafsi"
             public: "Umma"
@@ -1009,7 +1009,7 @@ sw:
         catch me up: "Nisaidie kufikia nilipokuwa"
         restart description: "Unaweza anza mpango wako tena. Historia yote ya mpango huu na maendeleo yako yote yatatolewa na utaanza mwanzo tena."
         restart: "Anza mpango huu tena"
-        privacy description:
+        privacy description: 
             private: "Mpango wako ni wa binafsi. Badili mazingira yako kwenda Marafiki Tu ili kuweza kushirikisha shughuli za Mpango wako kwa marafiki."
             public: "Mpango wako unaonekana na marafiki. Badili kwenda Binafsi ili kufanya shughuli za Mpango wako kuwa wa binafsi."
         make private: "Fanya Binafsi"
@@ -1059,32 +1059,32 @@ sw:
         completed notice: "Hongera! Umekamilisha mpango wako wa kusoma"
         exit: "Kutoka"
         loading sidebar content: "Inapakia maudhui ya upau wa kando.."
-    videos:
+    videos: 
         title: "Video"
         watch videos: "Tazama video hizi kuhusu Bibilia"
         all: "Video zote"
         related scripture: "Neno linalohusiana"
         share video: "Niko natazama%{video_title} kwenye @YouVersion."
-    licenses:
-        authorized:
+    licenses: 
+        authorized: 
             heading: "Maudhui yako imeidhinishwa"
             description: "Sasa unaweza <a href='%{content_link}' target='_self'>ona maudhui uliyonunua</a> kutoka %{vendor} kwenye YouVersion!"
         has errors: "Kulikuwa na hitilafu na ombi lako"
-        confirm:
+        confirm: 
             email: "Kuidhinisha maudhui ya video ulionunuwa, tafadhali angalia  Inbox ya barua pepe yako utapata barua pepe ya uthibitisho kutoka YouVersion na bonyeza kiungo ndani ili kuthibitisha usajili wako."
-        request:
+        request: 
             invalid_vendor_signature: "Tulishindwa kuthibitisha leseni :  saini ya muuzaji ni batili"
             invalid_vendor_id: "Tulishindwa kuthibitisha leseni : Kitambulisho cha muuzaji ni batili"
             invalid_item_ids: "Tulishindwa kuthibitisha leseni :  masharti ni batili"
-        vendor_transaction_id:
+        vendor_transaction_id: 
             duplicate: "Kitambulisho cha manunuzi: Kitambulisho cha manunuzi hii tayari imesajiliwa"
-        auth:
+        auth: 
             login notice: "Kuhalalisha maudhui uliyonunua,tafadhali ingia kwa akaunti yako ya YouVersion hapa chini au %{signup} <a href='/sign-up?source=licenses' target='_self'>Kuhalalisha maudhui uliyoyaona tafadhali ingia kwa kutumia akaunti yako ya youversion hapa chini au </a>"
             signup notice: "Kuhalalisha maudhui uliyonunua, tafadhalijisajili kupate akaunti yako ya YouVersion bure hapa chini au %{login} <a href='/sign-in?source=licenses' target='_self'></a>"
             signup link text: "Jisajili kupata akaunti ya bure"
             login link text: "Ingia"
-    registration:
-        placeholder:
+    registration: 
+        placeholder: 
             email: "Andika barua pepe yako"
             username: "andika jina unayotumia"
             password: "weka kitambulisho cha siri"
@@ -1098,14 +1098,14 @@ sw:
         share blurb: "Inaonekana kama unataka kushirikisha maandiko. Vizuri! Wewe utakuwa na uwezo wa kushirikisha andiko kupitia Facebook au Twitter. Ingia au jisajili akaunti yako hapa chini kisha uanze!"
         highlight blurb: "Inaonekana unataka kubainisha neno. Vizuri! Kubainisha maandishi hukusaidia kujipanga na kuweka rekodi ya mistari inayokupendeza zaidi. Ingia kwenye akaunti yako au utengeneze akaunti hapo chini ili uwezekuendelea."
         note blurb: "Inaonekana unataka kuandika dondoo ya andiko la bibilia.Vyema! Maelezo yanaweza kukusaidia kukubuka na kuandaa ukweli utakayoipata katika neno la Mungu. Ingia katika akauti yako au jisajilishe kama hauna akaunti ili uwanze kutumia YouVersion."
-    audio:
+    audio: 
         none: "Samahani sauti haipo kwenye toleo hili"
         chapter only: "Samahani, sauti haipo kwenye mistari hii. Soma kwa msomo ili upate sauti ya mlango."
         close player menu: "funga"
         publisher website: "Mtandao wa mchapishaji"
-    highlights:
+    highlights: 
         title: "Mambo muhimu:"
-        blank slate:
+        blank slate: 
             heading: "Onyesha mafungu yenye maana"
             description: "Wakati wa kusoma Biblia, kuchagua fungu na lionyeshe kwa rangi. Rudi hapa kuona, hariri, au kufuta onyesha lako."
         none user: "%{username} hana maonyesho"
@@ -1116,9 +1116,9 @@ sw:
         destroy failure: "Hitilafu katika kufuta onyesho"
         creation error: "Samahani, haikuwezekana kubainisha maandishi hayo."
         delete error: "Samahani, haikuwezekana kuondoa ubainisho huo"
-        form:
+        form: 
             save button: "Hifadhi mambo muhimu"
-    searching:
+    searching: 
         bible: "biblia"
         plans: "Mipango"
         users: "watumiaji"
@@ -1127,7 +1127,7 @@ sw:
         suggestion html: "Ulimaanisha %{suggestion_link}?"
         all versions: "Yote %{language_name} matoleo"
         results for: "Tafuta matokeo ya: "
-    donate:
+    donate: 
         donate now: "Changia Sasa"
         donate now intl: "au saidia/kuchangia kimataifa"
         enter amount: "Weka kiasi unachotaka"
@@ -1156,7 +1156,7 @@ sw:
         state: "Mkoa"
         zip: "Zip"
         creation form errors: "Makosa  yafuatayo(s) yalikuzuia kufanya mchango:"
-    download ad:
+    download ad: 
         title: "Pata programu ya bure ya Bibilia"
         description copy: "Mamia ya matoleo kwenye %{language_count}+ lugha tofauti - Biblia inayoeda na wewe kokote"
         meta copy title: "Pata programu ya bure ya Bibilia"
@@ -1168,11 +1168,11 @@ sw:
         banner title: "App ya Biblia"
         banner action: "pata"
         banner open: "Fungua"
-    download bafk ad:
+    download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "Apu ya Biblia ya watoto ni njia bora zaidi ya watoto kujifunza kumhusu Yesu Kristo kupitia Biblia"
         download: "Ipakue sasa"
-    about page:
+    about page: 
         relevancy: "Umuhimu"
         relevancy copy: "Katika kipindi cha vizazi vilivyopita, watu kupata Biblia ilikuwa nadra mno. Leo, hii kesi imebadilika. Hata hivyo, watu wengi ambao wanapata Biblia wanafikiri ujumbe wake hauwahusu maishani mwao. Wakati huo huo, kuna wengine ambao wanaamini kuwa kuna uhusiano kati ya Biblia na uzoefu wao kila siku."
         information revolution: "Mapinduzi ya habari"
@@ -1183,7 +1183,7 @@ sw:
         partners text: "Bila ya ukarimu wa washirika wa kuchapisha Biblia, YouVersion tu haingekuwa na uwezo wa kupea jamii ya dunia Biblia nyingi . Wengi wenu mmeuliza jinsi unaweza kuwashukuru wafuasi hawa muhimu wa YouVersion. Unaweza kujifunza zaidi juu yao, ziara zao, na njia unaweza kuwasaidia kwa njia ya viungo hapa chini."
         translation title: "Timu zetu za utafsiri"
         learn more: "Jifunze zaidi"
-    press page:
+    press page: 
         title: "Eneo la vyombo vya habari"
         contact header: "Njia ya kuwasiliana ya vyombo vya habari"
         contact header 2: "Katika mitandao"
@@ -1196,13 +1196,13 @@ sw:
         lead copy: "Kulingana na Biblia ya mtandao, Bible.com, Apu ya Biblia ni Biblia ya bure ya simu za mkononi inayoweza kuwekwa kwenye simu karibia yoyote Apu ya Biblia inaruhusu watumiaji kusoma Biblia, kushirikisha mafungu kwenye mitandao yao ya jamii, kualamisha mafungu wayapendayo, na mengi -yote huwekwa kwenye mtindo unaoendana na shughuli zasimu za mkononi."
         resources title: "Rasilimali za wanahabari"
         now title: "Leo katika Jamii yako ya YouVersion"
-        resources:
+        resources: 
             now: "Kuangalia kwa makini uhusiano na takwimu za hivi karibuni"
             about: "Kuhusu YouVersion na App ya Biblia"
             history: "Historia na mambo ya YouVersion"
             manual: "Muongozo wa YouVersioin"
         images title: "Logos na picha za YouVersion"
-        images:
+        images: 
             logos: "Pakiti ya Alama ya YouVersion"
             icons: "Picha za programu ya Bibilia"
             infographic: "Infographic: Takwimu na Matumizi za App ya Bibilia"
@@ -1210,7 +1210,7 @@ sw:
             lifestyle: "Ukusanyaji wa picha: Mfumo wa Maisha"
             screencast: "YouVersion Screencast"
         links title: "Kiungo cha vyombo vya habari"
-    mobile page:
+    mobile page: 
         h2: "Neno la Mungu lipo nawe."
         h3: "YouVersion ni ya kimataifa"
         h3 sub: "Inapatikana kwenywe lugha zaidi ya %{language_count}duniani kote."
@@ -1255,44 +1255,44 @@ sw:
         sms info: "Utapokea Ujupe mfupi wa mara moja kuweza kupakua programu"
         sms download: "Gonga hapa kupaukua Programu ya Bibilia:"
         sms default country: "KE"
-    pages:
-        generic_error:
+    pages: 
+        generic_error: 
             title: "Ala!"
             explanation: "Samahani kuna kosa iliyo fanyika! Unaweza jaribu tena kwa kufungua kurasa hili upya, tunasikitika sana kukusumbua."
             our action: "Tumejulishwa kuhusu jambo hili na tutarekebisha haraka iwezekanavyo"
-        home:
+        home: 
             heading: "Pata Biblilia bure kwenye simu yako,tarakilishi na tablet"
             cta: "Soma bibilia sasa"
-            experience:
+            experience: 
                 title: "Uzoefu popote"
                 body: "Chagua kutoka matoleo zaidi ya 1,200 Biblia katika lugha zaidi ya 900 kwenye kompyuta yako,simu,au kibao - na nyingi inapatikana kama Biblia ya kusikiliza."
                 action: "Angalia Mpango wa Bibilia"
-            make_yours:
+            make_yours: 
                 title: "Ifanye iwe Yako"
                 body: "Kuonyesha au Kwanza mistari yako favorite, kufanya Fungu Picha uweze kushiriki na masharti Notes umma au binafsi kwa vifungu vya Biblia."
                 action: "Fungua akaunti bure"
-            install_now:
+            install_now: 
                 title: "Kufunga App Sasa"
                 body: "Programu ya Biblia ni bure kabisa,na hakuna matangazo na hakuna programu ya manunuzi. Imekuwa imewekwa kwenye hivi vifaa kipekee (hadi sasa):"
                 action: "Pata programu ya bure ya Bibilia"
-            free_plans:
+            free_plans: 
                 title: "Mipango ya usomaji bure na Ibada"
                 body: "Mipango ya biblia hukusaidia kujihushisha na neno la Mungu kila siku,kidogo kidogo."
             browse_plans: "Angalia mipango yote"
             read_listen: "Soma,sikiliza,tazama,shirikisha"
             start_now: "Anza sasa"
-            votd:
+            votd: 
                 title: "Fungu la Siku"
                 highlight_bookmark: "Kuonyesha,au kushiriki aya hii"
                 subscribe: "Jiunge kwenye Fungu la Leo"
-            hero:
+            hero: 
                 heading: "Biblilia bure kwenye simu yako, tarakilishi na tablet"
                 description: "YouVersion ni Biblia rahisi isiyo na matangazo ambayo huleta Neno la Mungu ndani ya maisha yako ya kila siku."
                 learn more: "Jua zaidi hapa chini"
                 start reading: "Anza kusoma"
                 skip in future: "Ruka kurasa hii wakati ujao"
                 now skipped: "Kurasa hili sasa litarukwa"
-            features:
+            features: 
                 read heading: "Soma bibilia"
                 read description: "Chugua kutoka mamia <a href='%{versions_path}' target='_self'> ya matoleo ya Biblia na lugha </a>. Linganisha matoleo mawili upande kwa upande. Unaweza hata kuchagua font yako na ukubwa wa kuonyesha. Fanya utumizi wako wa Biblia iliyo wenye tuvuti iwe tu unavyopenda."
                 study heading: "Jifunze bibilia"
@@ -1306,11 +1306,11 @@ sw:
             download action: "Download App ya Bibilia"
             download description: "Download App ya Bibilia ya YouVersion bure  kwenye kifaa chako cha mkononi na utakuwa na  Biblia yako popote uendapo."
             world installs: "Sakinisho duniani kote"
-        trending verses:
+        trending verses: 
             title: "Maelekeo ya mishairi ya Bibilia"
             headline: "Mishairi ya Bibilia ambayo ina maelekeo ndani ya programu ya Bibilia YouVersion na Bible.com"
-    shared:
-        menu_settings:
+    shared: 
+        menu_settings: 
             title: "mipangilio yako"
             close: "funga"
             font: "Fonti"
@@ -1330,7 +1330,7 @@ sw:
             translation notes: "tanbihi"
             cross references: "Vukisha marejeleo"
             numbers and titles: "Hesabu na wadhifa"
-    app errors:
+    app errors: 
         404 plans explanation: "Unatafuta mpango wa <a href='%{plan_path}' target='_self'>%{title}</a> ?"
         404 contact support: "Unasumbuka? Zungumzia <a href='%{support_url}' target='_self'>timu yetu ya kusaidia</a>."
         404 explanation: "Unaweze kujaribu kuanza kutoka <a href='%{reader_path}' target='_self'>home page</a>. Bado unaona shida? Ongea na <a href='%{support_url}' target='_self'>Timu ya wasaidiaji</a>."
@@ -1338,7 +1338,7 @@ sw:
         408 message: "Samahani, mashine yetu haijajibu kwa wakati unaofaa."
         408 explanation: "Tumeelezwa na tutazingatia masuala yanayozidi kwa haraka iwezekanavyo. Wacha tuone kama tunaweza kukurudisha kwa Bibilia."
         try again: "Jaribu Tena"
-    versions:
+    versions: 
         filter: "Kuanza kuandika Version jina (au lugha) ..."
         see all: "Ona toleo zote"
         courtesy of: "%{abbreviation} umeletewa na %{publisher}"
@@ -1354,8 +1354,8 @@ sw:
         public domain: "Uwanja wa Umma"
         loading: "Inatafuta toleo zingine"
         load error: "Samahani, kulikuwa na tatizo kutafuta matoleo zaidi. Funga menyu hii kisha jaribu tena."
-    campaigns:
-        christmas:
+    campaigns: 
+        christmas: 
             tracker title: "Fuatilio la hadithi za krismasi"
             twitter text: "Tazama ulimwengu ukisoma kuhusu kuzaliwa kwa Yesu. Shirikisha fuatilio la hadithi za Krismasi @YouVersion: https://www.bible.com/christmas"
             facebook text: "Shirikisha fuatilio la hadithi za Krismasi kwa watu wengi soma kuhusu kuzaliwa kwa Yesu.  Kanisani au nyumbani, karibu na watu tuwapendao au wakati tulivu pekeyako, tunatulia kutafakari juu ya maajabu ya upendo wa Mungu kwetu."
@@ -1370,61 +1370,74 @@ sw:
             versions: "Juu %{version_count}matoleo katika lugha %{language_count}"
             tagline: "Biblia inayoenda nawe kokote"
             chapter counter format: "9,999,999"
-        100m:
+        100m: 
             logo: "YouVersion: App ya Biblia"
             tagline: "Inaanza na <em>milioni 100</em>"
             intro: "Je App ya Biblia inaweza kufikisha kuwekwa mara milioni 100 kabla ya aaadhimisho la 5 siku ya Julai 10? Kwa msaada wako tu!"
             after: "Kwa sababu yako, Apu ya Biblia imeweza kuwekwa mara milioni 100 mnamo wa maadhimisho yetu  ya miaka 5 siku ya Julai 10. Asante!"
-            share:
+            share: 
                 with friends: "Shiriki na marafiki zako"
-                fb:
+                fb: 
                     dialog name: "Je una App ya Biblia?"
                     dialog desc: "Naipenda App ya Biblia! Imenisaidia sana kufanya Biblia iwe sehemu ya maisha yangu ya kila siku. Inaniruhusu kualamisha, kusikiliza Biblia iliyorekodiwa, kuweka nakala, kufwatilia mipango ya ibada... hata kuangalia video! Nenda downlodi sasa(ni bure): http://www.bible.com/app"
-                tw:
+                tw: 
                     tweet: "App ya Biblia ya @YouVersion inanafasi ya kudumu kwenye kiingilizi. Sonma, angalia, sikiliza, na shirikisha...yote kwenye app moja:bible.com/app"
-                em:
+                em: 
                     subject: "Je una App ya biblia?"
                     body: "Nimekuwa nikifurahia App ya biblia kutoka YouVersion na nafikiri utaipenda pia. Naifungua biblia mara kwa mara siku hizi kwa sababu ni rahisi sana kusoma, kuangalia, kusikiliza, na kushirikisha. Ina mipango pia, ambayo ina sehemu za Biblia zilizichaguliwa na kunisubiri kila siku.\n\nUnaweza kuipata (bure!) kwa kutumia karibia simu ya aina yoyote hapa: http://www.bible.com/app"
-            body:
+            body: 
                 p1: "Julai 10 itakuwa siku kubwa sana. Sio kwamba ni maadhimisho ya miaka 5 ya App ya Biblia tu, pia ni imefikisha miaka 5 tangu uzinduzi wa Apple's iTunes store."
                 p2: "Lakini Kubwa zaidi? Kwa msaada wako, ni siku ambayo App ya Biblia itafikisha downloads milioni 100."
                 p3: "Tumejifunza kuwa Mungu anatumia mawe kama haya kujaza mafuta na kukuza."
                 p4: "Tutengeneze historia pamoja."
                 after p1: "YouVersion inawakilisha muungano wa kimataifa wa watu wenye shauku kubwa kuhusu kuwasaidia wengine kujihusisha na neno la Mungu. Wote wa Vyama vya Biblia na wachapishaji Biblia, makanisa, wachungaji, na kujitolea: asante kwa ukarimu wako!"
                 after p2: "Cha kusisimua zaidi kuhusu hatua hii ni nini inawakilisha: leo watu wanajishirikisha na Biblia kwa kipimo cha juu kamwe hatujawahi kushuhudiwa . Ni khofu-msukumo wa kuona kile Mungu anachofanya. Na tunaamini huu ni mwanzo tu. <em> Inaanza na milioni 100 </em>."
-            ad:
+            ad: 
                 title: "App ya Biblia ni bure kabisa na ni njia nzuri ya kuichunguza Biblia."
                 copy: "Soma, sikiliza, angalia, shirikisha. Pata App ya Biblia kwenye Smartphone au tablet yako: <a href='http://bible.com/app' target='_self'>Download Sasa</a>"
-            sidebar:
+            sidebar: 
                 tagline: "Tutengeneze ukumbusho pamoja."
                 button: "Shirikisha App ya Biblia"
-    ui:
+    ui: 
         characters remaining: "herufi zilizobakia"
         yes button: "Ndio"
         no button: "Apana"
         cancel: "Ondoa"
-        plans:
+        plans: 
             privacy: "Ungependa shughuli yako wa  mpango huu wa kuonekana na marafiki wako?"
         loading indicator text: "inatafuta.."
         loading: "inapakia"
-        pagination:
+        pagination: 
             next page: "Kurasa inayofuata"
             previous page: "Kurasa iliyopita"
-        datetime:
+        datetime: 
             just now: "sasa hivi"
         verses selected: "Mistari imechaguliwa"
-    EventsAdmin:
-        unsubscribe:
+    EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
+        unsubscribe: 
             about: "Dhibiti ni barua pepe zipi utapokea kutoka YouVersion. Unaweza kuhariri taarifa zako za simu kupitia apu yako ya simu."
             email: "Barua pepe"
             not me: "Huyu sio mimi"
             saved: "Imehifadhiwa!"
             plan delivery: "Utoaji wa Mipangilio"
-            sign-in: "Kuhariri mipangilio mingine, &lt;a href='{{sign_in_path}}'&gt; ingia kwenye akaunti yako &lt;/a&gt;."
-            links:
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
+            links: 
                 manage: "Simamia Taarifa zako za Barua Pepe"
                 unsub all: "kujitoa kutoka barua pepe zote"
-            success:
+            success: 
                 all: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe zote za YouVersion</b>."
                 badges: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> Beji."
                 comments: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> maoni."
@@ -1436,7 +1449,8 @@ sw:
                 rp_daily: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za Mipango ya Kusoma ya Kila Siku</b> Kutoka kwa %{plan_title}."
                 votd: "Umejitoa kwa mafanikio kutoka kwa <b>Barua pepe za</b> Mistari ya Biblia."
                 votd_image: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> picha ya mstari wa siku wa Biblia ."
-            labels:
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
+            labels: 
                 badges: "Nitakapo pata beji"
                 comments: "Maoni ya shughuli zangu"
                 friendships: "Maombi ya urafiki"
@@ -1446,14 +1460,15 @@ sw:
                 reading_plans: "Kuhusu Mipango yangu ya Biblia"
                 votd: "Maandishi ya mstari wa siku wa Biblia"
                 votd_image: "Picha ya Neno la Siku"
-            error:
+                contact_joins: "Mtu mnayewasiliana nae atakapo jiunga"
+            error: 
                 token: "Samahani, unahitajika kuingia kabla ya kubadilisha mipangilio yako ya taarifa:"
                 other_type: "Samahani, haikufanyika vile tulivyotarajia. Je, ungependa kuboresha taarifa zako?"
         change: "Badilisha"
-        ui:
+        ui: 
             yes button: "Ndio"
             no button: "Apana"
-        plans:
+        plans: 
             plans: "Mipango ya bibilia"
             plans back: "← Mipango"
             related plans: "Mipangilio yanayo husiana"
@@ -1462,17 +1477,17 @@ sw:
             my_plans: "mipango yangu"
             day_completed: "<b>Amekamilisha siku%{username} ya mpango,%{day}</b> %{day}%{plan_title}%{username} Amekamilisha mpango wa biblia siku ya kwanza <b>%{day}%{username}amekamilisha siku ya kwanza%{day}ya mpango wa biblia</b> %{username}amekamilisha siuk ya kwanza ya mpango wa biblia%{day}%{plan_title} <b>%{plan_title}%{username}amekamilisha siku ya kwanza ya mpango wa biblia%{day}</b>"
             which reading: "%{current} ya %{total}"
-            status:
+            status: 
                 on track: "On Track!"
-                days ahead:
+                days ahead: 
                     one: "siku %{count} iliyopita"
                     other: "siku %{count} zilizopita"
-                missed days:
+                missed days: 
                     one: "%{count} Angalia siku zilizokosa"
                     other: "%{count} Angalia siku zilizokosa"
             bible plan language: "Chagua mipango kulingana na lugha"
             share plan: "Tazama hii kwenye @YouVersion #BiblePlan: %{plan_title}"
-            widget:
+            widget: 
                 my plans: "mipango yangu"
                 start reading: "Anza kusoma"
                 view my plans: "Angalia Mipango Yango"
@@ -1481,18 +1496,18 @@ sw:
                 reading: "kusoma"
                 readings: "masomo"
                 readings 5 or more: "masomo"
-            stats:
-                friends reading:
+            stats: 
+                friends reading: 
                     one: "{0} rafiki ambaye amejiunga kwa mpango huu"
                     other: "%{count}rafiki ambao wamejiunga kwa mpango huu"
-                friends completed:
+                friends completed: 
                     one: "{0} rafiki ambaye amemaliza hii mpango"
                     other: "%{count} rafiki ambao wamemaliza hii mpango"
                 total completions: "Zaidi ya %{count} wamemaliza"
                 view all: "Tazama zote"
                 close: "Funga"
             settings: "mipangilio/marekebisho"
-            privacy:
+            privacy: 
                 visible to friends?: "Unataka marafiki zako waone shughuli za mpango wako?"
                 private: "Binafsi"
                 public: "Umma"
@@ -1562,7 +1577,7 @@ sw:
             catch me up: "Nisaidie kufikia nilipokuwa"
             restart description: "Unaweza anza mpango wako tena. Historia yote ya mpango huu na maendeleo yako yote yatatolewa na utaanza mwanzo tena."
             restart: "Anza mpango huu tena"
-            privacy description:
+            privacy description: 
                 private: "Mpango wako ni wa binafsi. Badili mazingira yako kwenda Marafiki Tu ili kuweza kushirikisha shughuli za Mpango wako kwa marafiki."
                 public: "Mpango wako unaonekana na marafiki. Badili kwenda Binafsi ili kufanya shughuli za Mpango wako kuwa wa binafsi."
             make private: "Fanya Binafsi"
@@ -1612,39 +1627,39 @@ sw:
             completed notice: "Hongera! Umekamilisha mpango wako wa kusoma"
             exit: "Kutoka"
             loading sidebar content: "Inapakia maudhui ya upau wa kando.."
-        components:
-            ErrorMessage:
+        components: 
+            ErrorMessage: 
                 genericError: "Ni kosa ilitokea"
-                announcement:
-                    events:
-                        title:
+                announcement: 
+                    events: 
+                        title: 
                             required: "Kichwa cha Tangazo kinahitajika."
-                default:
-                    bible:
-                        reference:
+                default: 
+                    bible: 
+                        reference: 
                             not_found: "Kumbukumbu za biblia hazipotei"
-                    events:
-                        google_place_id:
+                    events: 
+                        google_place_id: 
                             required: "Lazima kuchagua eneo kutoka ramani."
-                        latitude:
+                        latitude: 
                             required: "Lazima kuchagua eneo kutoka ramani."
-                        times:
-                            start_dt:
+                        times: 
+                            start_dt: 
                                 must_be_a_future_date: " Muda wa kuanza hauwezi kuwa katika siku za nyuma."
-                        timezone:
+                        timezone: 
                             required: "Ujumbe inahitajika"
-                reference:
-                    events:
-                        usfm:
+                reference: 
+                    events: 
+                        usfm: 
                             invalid: "Kumbukumbu za biblia hazipotei"
-                url:
-                    events:
-                        url:
+                url: 
+                    events: 
+                        url: 
                             required: "URL Label inahitajika."
-                        title:
+                        title: 
                             required: "URL Label inahitajika."
-            EventHeader:
-                status:
+            EventHeader: 
+                status: 
                     published: "Imechapishwa"
                     draft: "Rasimu"
                     live: "mojakwamoja"
@@ -1656,36 +1671,36 @@ sw:
                 eventBuilder: "Mjenzi wa tukio"
                 signOut: "toka/ondoka"
                 createAccount: "Fungua Akaunti Mpya"
-            HtmlEditor:
+            HtmlEditor: 
                 text: "Nakala"
                 bold: "Koleza"
                 italic: "Italic"
-        containers:
-            Auth:
+        containers: 
+            Auth: 
                 title: "Yaliyomo"
                 signIn: "Ingia"
                 subHead1: "Kama wewe ni mtumiaji wa Biblia App na tayari una akaunti YouVersion, unaweza kuingia kwa kutumia yako sifa sawa. Futa akaunti yangu ya YouVersion<a href='%{url}'> Ishara hadi sasa katika Bible.com </a> kuanza kujenga Matukio."
                 email: "Barua pepe"
                 password: "kitambulisho cha siri"
                 forgotPassword: "Umekisahau kitambulisho cha siri"
-            EventEdit:
+            EventEdit: 
                 event: "Matukio"
-            EventEditContentContainer:
+            EventEditContentContainer: 
                 choose: "Chagua baadhi ya maudhui ya kupata kuanza."
                 needHelp: "Unahitaji msaada?"
                 title: "Yaliyomo"
                 previous: "Maeneo na muda"
                 next: "Inayofuata angalia"
-            EventEditDetails:
+            EventEditDetails: 
                 title: "Maelezo ya tukio"
-            EventEditLocationContainer:
+            EventEditLocationContainer: 
                 title: "Maelezo ya tukio"
                 previous: "← Kabla: Maelezo"
                 next: "Maandishi ya elezo"
-            EventEditPreview:
+            EventEditPreview: 
                 title: "Uhakiki wa tukio"
                 previous: "Kurasa iliyopita"
-            EventEditShare:
+            EventEditShare: 
                 title: "Yaliyomo"
                 subTitle: "Tukio lako Sasa limechapishwa:"
                 edit: "Hariri Tukio"
@@ -1694,10 +1709,10 @@ sw:
                 copy: "Nakili"
                 copied: "shortlink ilipelekwa kwenye clipboard yako"
                 previous: "Kurasa iliyopita"
-            EventFeedDiscover:
+            EventFeedDiscover: 
                 title: "Gundua mipango"
                 discover: "Gundua"
-            EventFeedMine:
+            EventFeedMine: 
                 title: "Matukio yangu"
                 previous: "Iliopita"
                 next: "Inayofuata"
@@ -1706,38 +1721,38 @@ sw:
                 subTitle: "MATUKIO iliyoundwa na mimi"
                 newFirst: "Tengeneza tukio lako la kwanza"
                 learn: "Jifunze jinsi ya kufanya Tukio kubwa"
-            EventFeedSaved:
+            EventFeedSaved: 
                 title: "Matukio yaliyotunzwa"
-            EventView:
+            EventView: 
                 title: "Tukio la YouVersion"
-            SelectLanguage:
+            SelectLanguage: 
                 choose: "chagua lugha yako:"
-        features:
-            Auth:
-                errors:
+        features: 
+            Auth: 
+                errors: 
                     sessionExpired: "kikao chako muda umeisha. Tafadhali ingia tena."
                     invalidEmail: "jina la mtumiaji au kitambulisho cha siri ni batili"
-            EventEdit:
-                errors:
+            EventEdit: 
+                errors: 
                     locationMustHaveTime: "maeneo yote lazima uwe na angalau mara moja."
                     locationRequired: "Huwezi kuchapisha Tukio bila maudhui."
                     contentRequired: "Huwezi kuchapisha Tukio na hakuna maudhui."
                     planSearchFailed: "Tafuta hakuwa na hati yoyote ya kufanana"
                     noMatchingPlans: "Hakuna Mipango vinavyolingana"
-                components:
-                    EventEditNav:
+                components: 
+                    EventEditNav: 
                         details: "Maelezo"
                         locations: "Maeneo na muda"
                         content: "Yaliyomo"
                         preview: "Angalia & Chapisha"
                         share: "husisha wengine"
-                features:
-                    content:
-                        components:
-                            ContentFeed:
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
                                 reorder: "Maudhui ya ibada"
                                 doneReordering: "amefanya kuagiza tena"
-                            ContentHeader:
+                            ContentHeader: 
                                 text: "Nakala"
                                 reference: "Kumbukumbu za biblia"
                                 plan: "Mpango"
@@ -1745,40 +1760,40 @@ sw:
                                 link: "Kiunganishi cha nje"
                                 giving: "Kiunganishi cha utoaji"
                                 announcement: "Tangazo"
-                            ContentHelpModal:
+                            ContentHelpModal: 
                                 types: "Aina maudhui"
                                 learn: "Jifunze jinsi ya kufanya<br> Tukio kubwa"
-                                text:
+                                text: 
                                     title: "Unene wa usomi"
                                     desc: "Unaonyesha, pointi muhimu, maswali ya majadiliano ... Kushiriki yoyote yaliyomo ya jumla Nakala makao ambayo itasaidia attenders yako kufuata pamoja na ujumbe wako kama kinatokea. modules wako wa maandishi inaweza kuwa yeyote urefu na inaweza ni pamoja na tajiri Nakala formatting."
-                                reference:
+                                reference: 
                                     title: "Kumbukumbu za biblia"
                                     desc: "Kuchagua aya yoyote Biblia au kifungu, wanaohusishwa moja kwa moja na yoyote ya YouVersion ya 1,200+ matoleo, katika lugha 900 +. Watu kuangalia Tukio yako unaweza bomba kumbukumbu yako kuona hivyo katika Biblia yao App msomaji, ambapo wanaweza Kwanza hilo, Highlight, na zaidi."
-                                plan:
+                                plan: 
                                     title: "mpango Module"
                                     desc: "Unganisha kwa Mipango ya Biblia na maungamo ambayo yanahusiana na pointi za mafundisho yako, kusaidia watazamaji wako kuendelea kushiriki na Neno la Mungu kwa wiki nzima."
-                                image:
+                                image: 
                                     title: "mpango Module"
                                     desc: "Kuleta Tukio lako la maisha na aina yoyote ya kusaidia michoro: mfululizo sanaa, picha, Fungu la picha nk wahudhuriaji wataweza kushiriki kwa urahisi Tukio picha yako kwa vyombo vya habari yao ya kijamii, kuchukua ujumbe wako virusi."
-                                link:
+                                link: 
                                     title: "Kiunganishi cha nje"
                                     desc: "Inajenga kifungo ndani Tukio yako kwamba viungo na tovuti yoyote ya nje. Kuweka watazamaji wako bomba moja tu mbali na online kutoa, kujitolea kujisajili, au kurasa kanisa nyumbani."
-                                announcement:
+                                announcement: 
                                     title: "Tangazo"
                                     desc: "Church habari, matukio ya kalenda, mipango, madarasa, kujitolea na ujumbe fursa ... Tangazo modules ni chombo kamili kwa ajili ya kubadilishana habari hiyo ni wakati na muhimu, lakini kwamba wewe hawataki kuvuruga ujumbe msingi Tukio chako. Kila moduli tangazo inaonekana kwenye ukurasa wake mwenyewe katika Tukio yako, na wanaweza hata ni pamoja tajiri Nakala maudhui (kama vile ujasiri na italics)."
-                            ContentInsertionPoint:
+                            ContentInsertionPoint: 
                                 title: "Kuingiza moduli ijayo hapa"
-                            ContentTypeAnnouncement:
+                            ContentTypeAnnouncement: 
                                 title: "Kichwa cha habari"
                                 prompt: "Samahani,Kitu fulani kimeenda vibaya. "
                                 caption: "Katika Tukio lako, cheo chako tu (hapo juu) kitaonekana. Wakati mtumiaji mabomba kwenye cheo chako, Mwili (chini) maonyesho kwenye kioo tofauti."
-                            ContentTypeContainer:
+                            ContentTypeContainer: 
                                 dirty: "Maudhui moja kwa moja kuokoa sekunde chache baada ya kuacha kuandika."
                                 failed: "Imeshindikana kuhifadhi aina ya malipo."
                                 tryAgain: "Jaribu Tena"
                                 lastSaved: "Ilirekebishwa mwisho %{when}"
-                            ContentTypeImage:
-                                errors:
+                            ContentTypeImage: 
+                                errors: 
                                     wrongSize: "Image ukubwa lazima %{requiredWidth} x %{requiredHeight} . picha yako ni %{yourWidth} x %{yourHeight} ."
                                     wrongType: "Aina ya file batili Lazima kuwa JPG."
                                 caption: "kuongeza maelezo"
@@ -1786,32 +1801,32 @@ sw:
                                 onlyJpg: "[JPG tu]"
                                 sizePrompt: "%{requiredWidth} px upana x %{requiredHeight} px urefu"
                                 select: "Chagua Picha"
-                            ContentTypeLink:
+                            ContentTypeLink: 
                                 kindrid: "Kama wewe ni kuangalia kwa smart, rahisi kutoa jukwaa, <a href='%{url}'> kujaribu Kindrid </a> ."
                                 label: "Onyesha kwa Lebo"
                                 prompt: "Samahani,Kitu fulani kimeenda vibaya. "
                                 url: "URL"
-                            ContentTypePlan:
+                            ContentTypePlan: 
                                 replace: "nafasi"
                                 search: "Tafuta kwa ajili ya Mpango wa kusoma"
-                            ContentTypeReference:
+                            ContentTypeReference: 
                                 language: "lugha"
                                 version: "Tolea"
                                 book: "kitabu"
                                 chapterVerse: "Sura"
-                            ContentTypeText:
+                            ContentTypeText: 
                                 prompt: "Samahani,Kitu fulani kimeenda vibaya. "
-                            LiveWarningModal:
+                            LiveWarningModal: 
                                 title: "Hawezi Futa Wakati Tukio ni kuishi"
                                 desc: "Mara baada ya Tukio amekwenda kuishi, huwezi kufuta Nakala, Kumbukumbu Biblia, na modules Image kutoka humo kwa sababu watumiaji wanaweza kuwa tayari aliongeza maelezo yao binafsi kwao. Unaweza, hata hivyo, hariri modules hizi."
                                 ok: "Sawa"
-                    details:
-                        errors:
+                    details: 
+                        errors: 
                             generic: "Kulikuwa na tatizo wakati wa kuchapisha Tukio yako."
                             invalidTimes: "huduma moja hawezi kuwa zaidi ya saa 12, na tofauti kati ya mwanzo muda wa kuanza na karibuni wakati wa mwisho juu ya Tukio hawezi kuwa zaidi ya siku 8. Tafadhali kurekebisha mara yako Tukio na jaribu tena."
-                        components:
-                            DetailsEdit:
-                                errors:
+                        components: 
+                            DetailsEdit: 
+                                errors: 
                                     wrongSize: "Image ukubwa lazima %{requiredWidth} x %{requiredHeight} . picha yako ni %{yourWidth} x %{yourHeight} ."
                                     wrongType: "Aina ya file batili Lazima kuwa JPG."
                                 changeImage: "Badilisha picha"
@@ -1825,29 +1840,29 @@ sw:
                                 desc: "Maelezo ya tukio"
                                 next: "Inayofuatat: ongeza Mahali & Muda →"
                                 blank: "%{field} Haiwezi kuwa wazi"
-                    location:
-                        components:
-                            Location:
+                    location: 
+                        components: 
+                            Location: 
                                 oneRequired: "Kuongeza angalau mara moja."
                                 use: "TUMIA SEHEMU HII"
                                 edit: "Badili mahali"
                                 delete: "Futa mahali"
-                            LocationAddButtons:
+                            LocationAddButtons: 
                                 addPhysical: "Kuongeza Mahali halisi"
                                 promptPhysical: "Unaweza kuongeza maeneo mbalimbali."
                                 addVirtual: "Kuongeza Mahali halisi"
                                 churchOnline: "Ulimaanisha %{url}? Unaweza kuzindua huduma online kwa ajili ya bure kwa kutumia <a className='button-caption' href='%{url}'> Church Online Baraza </a> ."
-                            LocationAddTime:
+                            LocationAddTime: 
                                 minutes: "DAKIKA"
                                 hours: "MASAA"
                                 days: "SIKU"
-                            LocationDeleteModal:
+                            LocationDeleteModal: 
                                 sure: "Unahuakika?"
                                 selected: "Una kuchaguliwa eneo zifuatazo ifutwe:"
                                 warn: "Hii kuondoa eneo kutokana na matukio yote ya zamani na sasa. Huwezi kuwa na uwezo wa kutumia tena eneo hili kwa matukio ya baadaye."
                                 cancel: "Ondoa"
                                 delete: "Ondoa"
-                            LocationEdit:
+                            LocationEdit: 
                                 prompt: "Andika barua pepe yako"
                                 country: "Nchi"
                                 timezone: "wakati wa eneo"
@@ -1858,7 +1873,7 @@ sw:
                                 cancel: "Ondoa"
                                 save: "Hifadhi hii Mahali"
                                 virtualPrompt: "Ingiza mji ili kutega majira ya saa"
-                            LocationTimeShifter:
+                            LocationTimeShifter: 
                                 shift: "Peleka siku ya kuanza na kumaliza mbele. "
                                 forward: "Mbele"
                                 backward: "nyuma"
@@ -1873,17 +1888,17 @@ sw:
                                 hours: "MASAA"
                                 update: "Wezesha"
                                 shiftButton: "Kuhama tarehe yote na nyakati kwa mara moja"
-                            UnpublishModal:
+                            UnpublishModal: 
                                 cancel: "Ondoa"
                                 title: "Batilisha uchapishaji na kufanya Mabadiliko"
                                 desc: "Kuongeza, hariri, au kufuta mahali na nyakati, kwa muda kubatilisha uchapishaji tukio hilo. Wakati huo, tukio yako hawataonekana katika matokeo ya utafutaji. Usisahau kuchapisha tukio yako tena."
                                 unpublish: "Haikuchapishwa"
-                    preview:
-                        notes:
+                    preview: 
+                        notes: 
                             prompt: "Ongeza maelezo yako binafisi"
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Ongeza maelezo yako binafisi</span></a>"
-                        components:
-                            PreviewFeed:
+                        components: 
+                            PreviewFeed: 
                                 review: "Pitia Tukio lako Kabla ya kuchapisha"
                                 previewUrl: "Hakiki URL"
                                 share: "Shirikisha tukio"
@@ -1891,23 +1906,23 @@ sw:
                                 publish: "Kuweka hadharani"
                                 unpublish: "Haikuchapishwa"
                                 locations: "Mahali:"
-                                discoverable:
+                                discoverable: 
                                     title: "Inagundulika"
                                     desc: "tukio lako litaonekana katika Biblia App Tukio eneo na tafuta matokeo siku 5 kabla ya kuanza kwenu wa wakati wa mwanzo."
-                                status:
+                                status: 
                                     title: "Hadhi ya dondoo:"
                                     desc: "nyekundu LIVE beji itakuwa inaonyesha wakati wa kuanza kwenu wakati kuanza."
-                                remove:
+                                remove: 
                                     title: "ondoa"
                                     desc: "Tukio yako tena kuwa ndogo iweze baada ya muda wake wa mwisho mwisho. Attenders ambaye tapped \"Save Tukio\" wakati Tukio wako ulikuwa iweze bado wanapata toleo lililohifadhiwa la hayo, Tukio Hii pia kuendelea kuwa kupatikana kwa njia ya viungo moja kwa moja inbound."
-                            PreviewTypeAnnouncement:
+                            PreviewTypeAnnouncement: 
                                 expand: "Kupanua"
-                            PreviewTypePlan:
+                            PreviewTypePlan: 
                                 read: "Soma"
                                 info: "Maelezo ya mpango"
-            EventFeedMine:
-                components:
-                    EventListItem:
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
                         duplicate: "Chapisha"
                         share: "husisha wengine"
                         delete: "Ondoa"
@@ -1915,24 +1930,24 @@ sw:
                         edit: "Hariri"
                         view: "Tazama"
                         fail: "Haiwezi kufuta Tukio"
-            EventView:
-                components:
-                    EventViewContent:
+            EventView: 
+                components: 
+                    EventViewContent: 
                         copy: "Nakili"
                         copied: "Imenakiliwa"
                         share: "husisha wengine"
                         read: "Soma"
                         readPlan: "Soma Mipango"
-                    EventViewContentAnnouncement:
+                    EventViewContentAnnouncement: 
                         expand: "Kupanua"
                         collapse: "kuanguka kwa"
-                    EventViewDetails:
+                    EventViewDetails: 
                         expand: "Kupanua"
                         collapse: "kuanguka kwa"
                         save: "TunzaTukio"
                         signIn: "Ingia ili kutunza Tukio"
                         saved: "tukio limetunzwa"
-        Auth:
+        Auth: 
             sign up: "Jiandikishe"
             sign in: "Ingia"
             sign up google: "Weka saini na Google"
@@ -1947,19 +1962,19 @@ sw:
             share blurb: "Inaonekana kama unataka kushirikisha maandiko. Vizuri! Wewe utakuwa na uwezo wa kushirikisha andiko kupitia Facebook au Twitter. Ingia au jisajili akaunti yako hapa chini kisha uanze!"
             highlight blurb: "Inaonekana unataka kubainisha neno. Vizuri! Kubainisha maandishi hukusaidia kujipanga na kuweka rekodi ya mistari inayokupendeza zaidi. Ingia kwenye akaunti yako au utengeneze akaunti hapo chini ili uwezekuendelea."
             note blurb: "Inaonekana unataka kuandika dondoo ya andiko la bibilia.Vyema! Maelezo yanaweza kukusaidia kukubuka na kuandaa ukweli utakayoipata katika neno la Mungu. Ingia katika akauti yako au jisajilishe kama hauna akaunti ili uwanze kutumia YouVersion."
-        Reader:
+        Reader: 
             chapter: "Sura"
             read reference: "Soma %{reference}"
             read chapter: "Soma sura nzima"
             plan title: "Mipango ya usomaji bure na Ibada"
             plan title ref: "Mipango ya Masomo na ibada za bure zinazohusiana na %{reference}"
             plan subtitle: "Mipango za Biblia zinagawanisha usomaji wako wa maandiko katika sehemu zinazoweza kudhibitiwa kila siku. Mipango mara nyingi hushirikisha ibada, redio au video saidizi. Iwapo utaziita Mipango za Biblia, Mipango za Kusoma au Ibada, Mipango zimedhibitishwa kuwa njia ya kufanya Biblia kuwa sehemu asilia ya maisha yako ya kila siku."
-            meta:
-                mobile:
+            meta: 
+                mobile: 
                     title: "Programu ya Biblia"
-                site:
+                site: 
                     title: "Bible.com"
-            header:
+            header: 
                 parallel: "sambamba na"
                 parallel exit: "Ondoka kwa muundo sambamba"
                 cancel: "Ondoa"
@@ -1975,32 +1990,32 @@ sw:
                 videos: "Video"
                 me: "mimi"
                 recent versions: "Zilizotumiwa hivi karibuni"
-            chapterpicker:
+            chapterpicker: 
                 book label: "kitabu"
                 chapter label: "Sura"
                 chapter unavailable: "Sura hii haipatikani katika toleo hili. Tafadhali chagua sura ama tafsiri tofauti."
                 choose chapter: "Chagua Sura"
-            versionpicker:
+            versionpicker: 
                 language label: "Lugha za biblia"
                 language sub-label: "Luhga za biblia"
                 change language: "lugha"
                 filter languages: "Chuja Lugha"
                 version label: "Matoleo"
                 choose version: "chagua toleo"
-            reader settings:
+            reader settings: 
                 footnotes: "tanbihi"
                 numbers: "Hesabu na wadhifa"
-            more:
+            more: 
                 events: "Matukio"
                 settings: "mipangilio/marekebisho"
-            search:
+            search: 
                 bible: "Bibilia"
                 users: "watumiaji"
                 plans: "Mipango ya bibilia"
-            version:
+            version: 
                 learn more: "Jifunze zaidi"
                 courtesy of: "%{abbreviation} umeletewa na %{publisher}"
-            verse action:
+            verse action: 
                 copy: "Nakili"
                 bookmark: "Alamisha"
                 note: "Elezo"

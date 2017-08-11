@@ -1414,13 +1414,26 @@ mn:
             just now: "дѳнгѳж сая"
         verses selected: "эшлэлүүдийг сонгосон"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "YouVersion-с ямар и-мэйл хүлээн авахаа хянадаг байх. Хөдөлгөөнт хэрэгслийн апп дээрээс та хөдөлгөөнт хэрэгслийнхээ мэдэгдлүүдийг засах боломжтой."
             email: "И-мэйл"
             not me: "Энэ би бишээ."
             saved: "Хадгалчихсан!"
             plan delivery: "УНШЛАГЫН ТӨЛӨВЛӨГӨӨНИЙ МЭДЭГДЭЛ"
-            sign-in: "Бусад тохиргоонуудыг засахын тулд, <a href='{sign_in_path}'>данс руугаа нэвтэр</a>."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "И-мэйл Мэдэгдлүүдээ засах"
                 unsub all: "Бүх и-мэйлүүдийн бүртгэлийг цуцлах"
@@ -1436,6 +1449,7 @@ mn:
                 rp_daily: "%{plan_title}-с илгээдэг <b>Уншлагын төлөвлөгөөний өдөр бүрийн и-мэйлүүдээс</b>та амжилттай бүртгэлээ цуцласан."
                 votd: "<b>Өнөөдрийн эшлэл</b>и-мэйлүүдээс та амжилттай бүртгэлээ цуцласан."
                 votd_image: "<b>Өнөөдрийн эшлэлийн зураг</b>и-мэйлүүдээс та амжилттай бүртгэлээ цуцласан."
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "Шагнал Авахад"
                 comments: "Үйл ажиллагааны маань тайлбарууд"
@@ -1446,6 +1460,7 @@ mn:
                 reading_plans: "Миний Библийн төлөвлөгөөнүүдийн тухай"
                 votd: "Ѳдрийн эшлэлийн текст"
                 votd_image: "Өнөөдрийн эшлэлийн зураг"
+                contact_joins: "Харилцагчид дансаа бүртгүүлэх үед"
             error: 
                 token: "Уучлаарай, Мэдэгдлийн тохиргоонуудыг өөрчлөхийн тулд та нэвтрэх шаардлагатай."
                 other_type: "Уучлаарай, таны нэвтрэх амжилтгүй боллоо. Мэдэгдлүүдээ та шинэчлэхийг хүсч байна уу?"

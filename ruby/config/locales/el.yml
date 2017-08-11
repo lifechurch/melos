@@ -1414,13 +1414,26 @@ el:
             just now: "μόλις τώρα"
         verses selected: "επιλεγμένα εδάφια"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Ελέγξετε τι μηνύματα ηλεκτρονικού ταχυδρομείου λαμβάνετε από την YouVersion. Μπορείτε να επεξεργαστείτε τις ειδοποιήσεις με την εφαρμογή στο κινητό σας."
             email: "Email"
             not me: "Αυτός/η δεν είναι εγώ"
             saved: "Αποθηκεύτηκε!"
             plan delivery: "ΠΑΡΑΛΑΒΗ ΣΧΕΔΙΩΝ"
-            sign-in: "Για επεξεργασία άλλων ρυθμίσεων, <a href='{sign_in_path}'>συνδεθείτε στο λογαριασμό σας</a>."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Διαχείριση ειδοποιήσεων με ηλεκτρονικό μήνυμα"
                 unsub all: "Διαγραφή από όλες τις ειδοποιήσεις"
@@ -1436,6 +1449,7 @@ el:
                 rp_daily: "Επιτυχία διαγραφής από τις <b>Καθημερινές ειδοποιήσεις σχεδίων μελέτης</b> από %{plan_title}."
                 votd: "Επιτυχία διαγραφής από τις ειδοποιήσεις <b>Εδάφιο της ημέρας</b>."
                 votd_image: "Επιτυχία διαγραφής από τις ειδοποιήσεις <b>Εδάφιο της ημέρας με εικόνα</b>."
+                contact_joins: "Επιτυχία διαγραφής από τα μηνύματα email των <b>Επαφών</b>."
             labels: 
                 badges: "Πότε μπορώ να κερδίσω μια διάκριση"
                 comments: "Σχόλια για τη δραστηριότητά μου"
@@ -1446,6 +1460,7 @@ el:
                 reading_plans: "Περί των πλάνων μου"
                 votd: "Κείμενο εδαφίου ημέρας"
                 votd_image: "Εικόνα εδάφιου της ημέρας"
+                contact_joins: "Όταν μια επαφή συμμετέχει"
             error: 
                 token: "Συγνώμη, πρέπει να συνδεθείτε προτού μπορέσετε να αλλάξετε τις ρυθμίσεις ειδοποιήσεων:"
                 other_type: "Συγνώμη, που δεν έκανε ό, τι περιμέναμε. Θα θέλατε να ενημερώσετε τις ειδοποιήσεις σας;"

@@ -1399,13 +1399,26 @@ id:
             just now: "baru saja"
         verses selected: "ayat terpilih"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Kontrol email yang Anda terima dari YouVersion. Anda dapat mengedit notifikasi seluler dari aplikasi seluler Anda."
             email: "Email"
             not me: "Ini bukan saya"
             saved: "Tersimpan!"
             plan delivery: "PENGIRIMAN RENCANA"
-            sign-in: "Untuk mengedit pengaturan lain, <a href='{sign_in_path}'>masuk ke akun Anda</a>."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Mengatur Notifikasi Email Anda"
                 unsub all: "Berhenti berlangganan dari semua email"
@@ -1421,6 +1434,7 @@ id:
                 rp_daily: "Anda berhasil berhenti berlangganan dari <b>Email Harian Rencana Bacaan</b> dari %{plan_title}."
                 votd: "Anda berhasil berhenti berlangganan dari email <b>Ayat Hari Ini</b>."
                 votd_image: "Anda berhasil berhenti berlangganan dari email <b>Gambar Ayat Hari Ini</b>."
+                contact_joins: "Anda berhasil berhenti berlangganan dari email <b>Kontak</b>."
             labels: 
                 badges: "Saat saya mendapatkan lencana"
                 comments: "Komentari aktivitas saya"
@@ -1431,6 +1445,7 @@ id:
                 reading_plans: "Tentang Rencana Alkitab saya"
                 votd: "Teks Ayat Hari Ini"
                 votd_image: "Gambar Ayat Hari Ini"
+                contact_joins: "Saat Kontak bergabung"
             error: 
                 token: "Maaf, Anda harus Masuk sebelum Anda dapat mengubah pengaturan Notifikasi Anda:"
                 other_type: "Maaf, hal tersebut tidak sesuai dengan yang kami harapkan. Apakah Anda ingin memperbarui Notifikasi Anda?"

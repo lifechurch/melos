@@ -1414,13 +1414,26 @@ sv:
             just now: "Precis nu"
         verses selected: "verser valda"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Bestäm vad för e-post du får från YouVersion. Du kan ändra dina mobil-notifikationer från din mobilapp."
             email: "E-post"
             not me: "Detta är inte jag"
             saved: "Sparat!"
             plan delivery: "LEVERANS AV LÄSPLAN"
-            sign-in: "För att ändra andra inställningar, <a href='{sign_in_path}'>logga in på ditt konto</a>."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Hantera notifikationer via e-post"
                 unsub all: "Avsluta prenumeration på all e-post"
@@ -1436,6 +1449,7 @@ sv:
                 rp_daily: "Du har avslutat din prenumeration på <b>daglig e-post angående Läsplaner</b> från %{plan_title}."
                 votd: "Du har avslutat din prenumeration på e-post angående <b>Dagens Vers</b>."
                 votd_image: "Du har avslutat din prenumeration på e-post angående <b>Dagens Vers-bild</b>."
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "När jag får ett emblem"
                 comments: "Kommentarer på mina aktiviteter"
@@ -1446,6 +1460,7 @@ sv:
                 reading_plans: "Om mina bibelplaner"
                 votd: "Text till Dagens bibelord"
                 votd_image: "Bild till dagens vers"
+                contact_joins: "När en kontakt registrerar sig"
             error: 
                 token: "Tyvärr, du behöver Logga In innan du kan ändra dina notifikations-inställningar:"
                 other_type: "Förlåt, det där gick inte som vi förväntade oss. Skulle du vilja uppdatera dina Notifikationer?"

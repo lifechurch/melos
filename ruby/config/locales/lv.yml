@@ -1429,13 +1429,26 @@ lv:
             just now: "tikai tagad"
         verses selected: "izvēlēti panti"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy Policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Kontrolē kurus e-pastu saņemsi no YouVersion. Vari mainīt savus mobilos paziņojumus no savas mobilās aplikācijas."
             email: "e-pasts"
             not me: "Tas neesmu es"
             saved: "Saglabāts!"
             plan delivery: "LASĪŠANAS PLĀNU PIEGĀDE"
-            sign-in: "Lai mainītu citus iestatījumus, <a href='{sign_in_path}'>pieraksties savā kontā</a>."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Pārvaldīt e-pasta paziņojumus"
                 unsub all: "Atteikties no visiem e-pastiem"
@@ -1451,6 +1464,7 @@ lv:
                 rp_daily: "Esi veiksmīgi atteicies no %{plan_title}<b>Lasīšanas plānu ikdienas epastiem</b>."
                 votd: "Esi veiksmīgi atteicies no <b>Dienas Rakstu vietas</b> e-pastiem."
                 votd_image: "Esi veiksmīgi atteicies no <b>Dienas Rakstu vietas attēla</b> e-pastiem."
+                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "Kad es nopelnu piespraudi"
                 comments: "Komentāri par manu aktivitāti"
@@ -1461,6 +1475,7 @@ lv:
                 reading_plans: "Par maniem Bībeles lasīšanas plāniem"
                 votd: "Dienas rakstuvietas teksts"
                 votd_image: "Dienas panta attēls"
+                contact_joins: "Kad pievienojas jauna kontaktpersona"
             error: 
                 token: "Atvaino, lai mainītu Paziņojumu iestatījumus, tev vispirms jāpierakstās."
                 other_type: "Atvaino, neizdevās. Vai vēlies atjaunināt savus Paziņojumus?"
