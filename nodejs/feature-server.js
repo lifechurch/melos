@@ -96,6 +96,7 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		let tokenData
 		let sessionData
 		let hasAuth = false
+		const oauthFromRails = auth && typeof auth === 'object' && auth.oauth
 
 		// We have a token
 		if (typeof auth === 'object' && typeof auth.token === 'string') {
@@ -123,6 +124,8 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
 			hasAuth = true
 			sessionData = auth
+			// remove oauth from userData because it's top level
+			if ('oauth' in sessionData) delete sessionData.oauth
 			token = tokenAuth.token(sessionData)
 
 			authData = Object.assign(
@@ -141,11 +144,11 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		if (hasAuth) {
 			// figure out if we need to get a new oauth token
 			// we have oauth data from rails cookie
-			if (auth.oauth && 'access_token' in auth.oauth) {
+			if (oauthFromRails && 'access_token' in oauthFromRails) {
 				// but it has expired
-				if (isTimestampExpired(auth.oauth.valid_until)) {
+				if (isTimestampExpired(oauthFromRails.valid_until)) {
 					console.log('EXPIRED: REFRESH OAUTH')
-					refreshToken({ refresh_token: auth.oauth.refresh_token }).then((oauth) => {
+					refreshToken({ refresh_token: oauthFromRails.refresh_token }).then((oauth) => {
 						if (oauthIsValid(oauth)) {
 							resolve(buildAuth(authData, oauth))
 						} else {
@@ -156,11 +159,11 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 				// sure the cookie has no error in it
 				} else {
 					console.log('NOT EXPIRED: USE OAUTH FROM COOKIES')
-					if (oauthIsValid(auth.oauth)) {
-						resolve(buildAuth(authData, auth.oauth))
+					if (oauthIsValid(oauthFromRails)) {
+						resolve(buildAuth(authData, oauthFromRails))
 					} else {
-						console.log('ERROR', auth.oauth)
-						reject(auth.oauth)
+						console.log('ERROR', oauthFromRails)
+						reject(oauthFromRails)
 					}
 				}
 			// we have no oauth data from rails so we need a new token from scratch
