@@ -2,7 +2,8 @@ import React, { PropTypes, Component } from 'react'
 import Immutable from 'immutable'
 import { connect } from 'react-redux'
 import { routeActions } from 'react-router-redux'
-import { injectIntl } from 'react-intl'
+import { Link } from 'react-router'
+import { FormattedMessage } from 'react-intl'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
@@ -38,7 +39,6 @@ class ParticipantsView extends Component {
 
 		// join token will allow us to see the participants and together unauthed
 		const token = query && query.token ? query.token : null
-		this.day = query && query.day ? parseInt(query.day, 10) : null
 		if (!(plan && 'id' in plan && participantsUsers)) {
 			dispatch(planView({
 				plan_id: id.split('-')[0],
@@ -101,9 +101,10 @@ class ParticipantsView extends Component {
 	}
 
 	render() {
-		const { plan, participantsUsers, together, auth } = this.props
+		const { plan, participantsUsers, together, auth, location: { query } } = this.props
 		const { userToDelete } = this.state
 
+		const day = query && query.day ? parseInt(query.day, 10) : null
 		let userList = null
 		if (participantsUsers) {
 			userList = Object.keys(participantsUsers).map((userid) => {
@@ -121,6 +122,19 @@ class ParticipantsView extends Component {
 			&& Immutable
 					.fromJS(auth)
 					.getIn(['userData', 'userid'], null) === together.host_user_id
+		const backLink = (
+			auth.isLoggedIn
+				? (
+					<Link to={Routes.subscriptions({ username: auth.userData.username })} className='yv-gray-link'>
+						<FormattedMessage id='plans.my_plans' />
+					</Link>
+				)
+				: (
+					<Link to={Routes.plan({ plan_id: plan && plan.id })} className='yv-gray-link'>
+						<FormattedMessage id='plans.about this plan' />
+					</Link>
+				)
+		)
 
 		return (
 			<div>
@@ -134,12 +148,13 @@ class ParticipantsView extends Component {
 					activities={
 						together
 						&& together.activities
-						&& this.day
+						&& day
 						&& Immutable
 								.fromJS(together)
-								.getIn(['activities', `${this.day}`, 'data'])
+								.getIn(['activities', `${day}`, 'data'])
 								.toJS()
 					}
+					backLink={backLink}
 				/>
 				<Modal
 					ref={(ref) => { this.modal = ref }}
@@ -196,4 +211,4 @@ ParticipantsView.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 }
 
-export default connect(mapStateToProps, null)(injectIntl(ParticipantsView))
+export default connect(mapStateToProps, null)(ParticipantsView)

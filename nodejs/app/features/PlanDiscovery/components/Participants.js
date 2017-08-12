@@ -28,7 +28,7 @@ function renderUser(friend, handleDelete = null, complete = null) {
 			/>
 			{
 				complete &&
-				<CheckMark fill='black' width={13} />
+				<CheckMark fill='black' />
 			}
 			{
 				handleDelete &&
@@ -40,7 +40,7 @@ function renderUser(friend, handleDelete = null, complete = null) {
 	)
 }
 
-function Participants({ planImg, users, shareLink, handleDelete, activities = null }) {
+function Participants({ planImg, users, shareLink, handleDelete, backLink, activities }) {
 	const accepted = []
 	const invited = []
 	// build accepted and not accepted lists
@@ -51,10 +51,22 @@ function Participants({ planImg, users, shareLink, handleDelete, activities = nu
 
 	return (
 		<div className='pwf-flow pwf-invite'>
-			<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
-				<div className='row text-center' style={{ fontSize: '18px' }}>
+			<div className='reading_plan_index_header medium-8 small-12 centered vertical-center'>
+				{ backLink }
+				<div className='text-center' style={{ fontSize: '18px', flex: 1 }}>
 					<FormattedMessage id='participants' />
 				</div>
+				<a
+					tabIndex={0}
+					className='yv-gray-link'
+					onClick={
+						() => {
+							document.getElementById('share-link').scrollIntoView(false)
+						}
+					}
+				>
+					<FormattedMessage id='invite others' />
+				</a>
 			</div>
 			<div className='gray-background content'>
 				<div className='columns medium-5 small-12 small-centered white' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
@@ -68,48 +80,56 @@ function Participants({ planImg, users, shareLink, handleDelete, activities = nu
 						/>
 					</div>
 					<div className='users'>
-						<CustomScroll allowOuterScroll>
-							{
-								!users ?
-									<div>Loading...</div> :
+						{
+							!users
+								? (
+									<div className='friend-list'>
+										<FormattedMessage id='loading' />
+									</div>
+								)
+								: (
 									<div>
 										<div className='friend-list' style={{ marginBottom: '30px' }}>
 											{
-												accepted.length > 0 &&
-												<div className='gray-heading'>
-													Accepted ({ accepted.length })
-												</div>
-											}
+											accepted.length > 0 &&
+											<div className='gray-heading'>
+												<FormattedMessage id='accepted' />
+												{` (${accepted.length}) `}
+											</div>
+										}
 											{
-												accepted.map((user) => {
-													return renderUser(
-														user,
-														handleDelete,
-														hasUserCompletedActivity(activities, user.id)
-													)
-												})
-											}
+											accepted.map((user) => {
+												return renderUser(
+													user,
+													handleDelete,
+													hasUserCompletedActivity(activities, user.id)
+												)
+											})
+										}
 										</div>
 										<div className='friend-list'>
 											{
-												invited.length > 0 &&
-												<div className='gray-heading'>
-													Not Accepted ({ invited.length })
-												</div>
-											}
+											invited.length > 0 &&
+											<div className='gray-heading'>
+												<FormattedMessage id='pending' />
+												{` (${invited.length}) `}
+											</div>
+										}
 											{
-												invited.map((user) => {
-													return renderUser(user, handleDelete)
-												})
-											}
+											invited.map((user) => {
+												return renderUser(user, handleDelete)
+											})
+										}
 										</div>
 									</div>
-							}
-						</CustomScroll>
+								)
+						}
 					</div>
 				</div>
 			</div>
-			<ShareLink link={shareLink} description={<FormattedMessage id='use share link' />} />
+			<div id='share-link'>
+				<ShareLink link={shareLink} description={<FormattedMessage id='use share link' />} />
+			</div>
 		</div>
 	)
 }
@@ -118,6 +138,7 @@ Participants.propTypes = {
 	planImg: PropTypes.string,
 	activities: PropTypes.object,
 	shareLink: PropTypes.string,
+	backLink: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 	users: PropTypes.array,
 	handleDelete: PropTypes.func,
 }
