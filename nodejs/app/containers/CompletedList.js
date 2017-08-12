@@ -108,9 +108,9 @@ class CompletedList extends Component {
 		return (
 			<List customClass='subscription-list'>
 				{
-					plansList.length > 0 ?
-					plansList :
-					<FormattedMessage id='no completed plans' />
+					plansList.length > 0
+						? plansList
+						: <FormattedMessage id='features.EventEdit.errors.noMatchingPlans' />
 				}
 			</List>
 		)

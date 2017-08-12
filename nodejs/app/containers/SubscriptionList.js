@@ -236,7 +236,7 @@ class SubscriptionList extends Component {
 		if (subscriptions && subscriptions.allIds.length > 0) {
 			subscriptions.allIds.forEach((id) => {
 				const sub = subscriptions.byId[id]
-				if (sub && sub.plan_id) {
+				if (sub && sub.plan_id && !sub.completed_dt) {
 					plansList.push(this.renderListItem({
 						plan_id: sub.plan_id,
 						together_id: sub.together_id,
@@ -250,7 +250,11 @@ class SubscriptionList extends Component {
 
 		return (
 			<List customClass='subscription-list' loadMore={this.loadMore}>
-				{ plansList }
+				{
+					plansList.length > 0
+						? plansList
+						: <FormattedMessage id='plans.you have no plans' />
+				}
 			</List>
 		)
 	}

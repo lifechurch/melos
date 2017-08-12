@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
-import CustomScroll from 'react-custom-scroll'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import XMark from '../../../components/XMark'
 import CheckMark from '../../../components/CheckMark'
 import LazyImage from '../../../components/LazyImage'
@@ -40,7 +39,7 @@ function renderUser(friend, handleDelete = null, complete = null) {
 	)
 }
 
-function Participants({ planImg, users, shareLink, handleDelete, backLink, activities }) {
+function Participants({ planImg, users, shareLink, handleDelete, backLink, activities, intl }) {
 	const accepted = []
 	const invited = []
 	// build accepted and not accepted lists
@@ -128,7 +127,11 @@ function Participants({ planImg, users, shareLink, handleDelete, backLink, activ
 				</div>
 			</div>
 			<div id='share-link'>
-				<ShareLink link={shareLink} description={<FormattedMessage id='use share link' />} />
+				<ShareLink
+					link={shareLink}
+					text={intl.formatMessage({ id: 'join together' })}
+					description={<FormattedMessage id='use share link' />}
+				/>
 			</div>
 		</div>
 	)
@@ -143,4 +146,4 @@ Participants.propTypes = {
 	handleDelete: PropTypes.func,
 }
 
-export default Participants
+export default injectIntl(Participants)

@@ -8,6 +8,7 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
 import SubscriptionList from './SubscriptionList'
 import CompletedList from './CompletedList'
+import SavedList from './SavedList'
 import Routes from '../lib/routes'
 
 
@@ -57,6 +58,12 @@ class PlansList extends Component {
 				break
 			}
 			case 'saved': {
+				component = (
+					<SavedList
+						localizedLink={this.localizedLink}
+						language_tag={language_tag}
+					/>
+				)
 				backButton = (
 					<Link to={this.localizedLink(Routes.subscriptions({ username: this.username }))}>
 						&larr;
@@ -103,7 +110,7 @@ class PlansList extends Component {
 				<div className='row collapse'>
 					{ component }
 				</div>
-				<div className='row collapse'>
+				<div className='row collapse subscription-actions'>
 					<div className='left'>
 						<Link to={this.username ? this.localizedLink(Routes.subscriptionsSaved({ username: this.username })) : null}>
 							<FormattedMessage id='plans.saved plans' />
