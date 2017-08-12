@@ -276,7 +276,7 @@ class TalkItOver extends Component {
 					handleCloseCallback={() => {
 						this.setState({ editingMoment: false, headerModalOpen: false, })
 					}}
-					customClass='large-6 medium-8 small-10'
+					customClass='large-6 medium-8 small-11'
 				>
 					{ modalContent }
 				</Modal>

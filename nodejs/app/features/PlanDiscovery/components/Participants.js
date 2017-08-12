@@ -51,7 +51,7 @@ function Participants({ planImg, users, shareLink, handleDelete, backLink, activ
 
 	return (
 		<div className='pwf-flow pwf-invite'>
-			<div className='reading_plan_index_header medium-8 small-12 centered vertical-center'>
+			<div className='reading_plan_index_header medium-8 small-11 centered vertical-center'>
 				{ backLink }
 				<div className='text-center' style={{ fontSize: '18px', flex: 1 }}>
 					<FormattedMessage id='participants' />

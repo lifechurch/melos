@@ -15,7 +15,7 @@ function TalkItOverInfo(props) {
 				together_id={together_id}
 				day={day}
 				statusFilter={['accepted', 'host']}
-				avatarWidth={32}
+				avatarWidth={30}
 			/>
 			<h6 style={{ width: '100%' }}>{ questionContent }</h6>
 		</div>

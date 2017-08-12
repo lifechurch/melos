@@ -4,9 +4,10 @@ import { routeActions } from 'react-router-redux'
 import { FormattedMessage } from 'react-intl'
 // actions
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
-import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // models
 import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
+import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 // utils
@@ -97,7 +98,7 @@ class InvitationView extends Component {
 						<FormattedMessage id='Together.accepted' values={{ number: acceptedNum }} />
 					</div>
 				}
-				startDate={<PlanStartString start_dt={together.start_dt} dateOnly />}
+				startDate={<PlanStartString start_dt={together && together.start_dt} dateOnly />}
 				joinToken={joinToken}
 				showDecline={!joinToken}
 				handleActionComplete={this.OnActionComplete}
@@ -114,7 +115,9 @@ function mapStateToProps(state, props) {
 	return {
 		plan: getPlanById(state, plan_id),
 		participantsUsers: getParticipantsUsersByTogetherId(state, together_id),
-		together: getTogether(state),
+		together: getTogetherModel(state) && together_id in getTogetherModel(state).byId
+			? getTogetherModel(state).byId[together_id]
+			: null,
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag
 	}
