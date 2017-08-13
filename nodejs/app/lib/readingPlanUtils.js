@@ -31,11 +31,12 @@ export function isFinalPlanDay(day, progressDays) {
 	if (!day || !progressDays) return false
 
 	const dayNum = parseInt(day, 10)
-	const totalDays = parseInt(progressDays.length, 10)
+	const days = Object.keys(progressDays)
+	const totalDays = parseInt(days.length, 10)
 
-	// start at the end of the progressDays and check for an uncomplete day that's not
+	// start at the end of the progressDays and check for an incomplete day that's not
 	// the current one
-	for (let i = totalDays - 1; i >= 0; i--) {
+	for (let i = totalDays; i > 0; i--) {
 		const dayObj = progressDays[i]
 			// if we find a day that is not complete, and it's not the day that we're currently
 			// on, then we have more days to go
@@ -82,13 +83,13 @@ export function getDefaultVersion(store, locale) {
 export function calcCurrentPlanDay({ total_days, start_dt }) {
 	const calculatedDay = moment().diff(moment(start_dt, 'YYYY-MM-DD'), 'days') + 1
 	let currentDay
-	if (calculatedDay > total_days) {
+	if (parseInt(calculatedDay, 10) > parseInt(total_days, 10)) {
 		currentDay = total_days
 	} else {
 		currentDay = calculatedDay
 	}
 
-	if (Number.isNaN(currentDay)) {
+	if (Number.isNaN(currentDay) || currentDay < 1) {
 		return 1
 	} else {
 		return currentDay
