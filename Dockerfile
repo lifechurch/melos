@@ -22,11 +22,6 @@ RUN cd /home/app/ruby && bundle exec rake assets:precompile
 
 ENV NODE_ENV production
 COPY nodejs/ /home/app/nodejs/
-<<<<<<< HEAD
-# RUN cd /home/app/nodejs && npm install -g gulp
-# RUN cd /home/app/nodejs && gulp build:production
-=======
->>>>>>> 9ee4a7d9390d67021b549737f2b6132c1c669e4e
 RUN cd /home/app/nodejs && npm run build:production
 
 # Passenger Enterprise
