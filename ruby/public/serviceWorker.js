@@ -2,6 +2,7 @@ const cacheName = 'youversion-bible-v1'
 
 self.addEventListener('install', function() {
 	console.log('[ServiceWorker] Install')
+	// what kind of assets do we want to cache here?
 })
 
 self.addEventListener('activate', function() {
@@ -10,11 +11,17 @@ self.addEventListener('activate', function() {
 
 self.addEventListener('fetch', function(e) {
 	console.log('[ServiceWorker] Fetch', e.request.url)
+	const request = e.request
+	const headers = request.headers
+	// determine what's cacheable
+	// no authorization
+	// get request
+	// http url (not chrome-extension:// .etc)
+	const isCacheable = !(headers.has('authorization'))
+		&& request.method === 'GET'
+		&& request.url.includes('http')
 
-	// Is this a Bible API call?
-	const apiBible = /^.*\/api\/bible.*$/g
-	if (apiBible.test(e.request.url)) {
-		console.log('[ServiceWorker] This is a Bible API call')
+	if (isCacheable) {
 		return e.respondWith(
 			caches.match(e.request.url).then(function(cacheResponse) {
 				// Found it in the cache
@@ -40,5 +47,10 @@ self.addEventListener('fetch', function(e) {
 
 
 	// Bypass cache and continue with HTTP request
-	return e.respondWith(fetch(e.request))
+	return e.respondWith(
+		fetch(e.request).catch((err) => {
+			console.log('fetch failed: do offline stuff?', err)
+			return e.request
+		})
+	)
 })

@@ -10,7 +10,6 @@ const api = require('@youversion/js-api');
 const httpProxy = require('http-proxy');
 const ping = require('./ping');
 const oauth = require('./oauth').default;
-const httpProxy = require('http-proxy');
 
 const auth = api.tokenAuth;
 const cors = require('cors');

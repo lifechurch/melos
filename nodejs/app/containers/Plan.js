@@ -61,7 +61,7 @@ class Plan extends Component {
 		const calcDay = !newDay
 			&& (!(plan && Immutable.fromJS(plan).getIn(['days', `${dayToCheck}`], false)))
 
-		if (newDay || calcDay) {
+		if ((newDay || calcDay) && (this.currentDay || nextProps.params.day)) {
 			if (plan && 'id' in plan) {
 				dispatch(plansAPI.actions.day.get({
 					id: plan.id,

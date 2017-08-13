@@ -13,11 +13,7 @@
 		"transform-object-rest-spread",
 		"transform-function-bind",
 		"transform-object-assign",
-<<<<<<< HEAD
-		"transform-class-properties"
-=======
 		"transform-class-properties",
 		"syntax-dynamic-import"
->>>>>>> 9ee4a7d9390d67021b549737f2b6132c1c669e4e
   ]
 }

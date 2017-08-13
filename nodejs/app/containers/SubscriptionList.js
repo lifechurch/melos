@@ -43,7 +43,7 @@ class SubscriptionList extends Component {
 				if (ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						if (!(sub.plan_id in readingPlans.byId && id in participants)) {
+						if (!(sub.plan_id in readingPlans.byId)) {
 							dispatch(planView({
 								plan_id: sub.plan_id,
 								together_id: sub.together_id,
