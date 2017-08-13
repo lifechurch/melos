@@ -139,6 +139,15 @@ function init() {
         })
     }
 
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker
+				.register('/serviceWorker.js')
+				.then(function() {
+					console.log('Service Worker Registered');
+				})
+		} else {
+			console.log('Browser doesn\'t support service worker.')
+		}
 }
 
 var isEvents            = isFirst("events");

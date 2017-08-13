@@ -88,6 +88,9 @@ const clientConfig = {
 	/* Build Target is Client/Browser */
 	target: 'web',
 
+	/* Create Source Maps */
+	devtool: 'source-map',
+
 	/* Main Entry Points for Client */
 	entry: {
 		/* Events Admin */
@@ -111,10 +114,23 @@ const clientConfig = {
 	},
 
 	plugins: [
+		/* 3.0 Scope-Hoisting */
+		new webpack.optimize.ModuleConcatenationPlugin(),
+
 		/* Extract all Vendor Javascript to separate bundle */
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
 			minChunks(module, count) {
+
+				/* Exclude Specific Modules */
+				if (module.context && module.context.indexOf('moment-timezone') !== -1) {
+					return false;
+				}
+
+				if (module.context && module.context.indexOf('quill') !== -1) {
+					return false;
+				}
+
 				return module.context && module.context.indexOf('node_modules') !== -1 && count > 1;
 			}
 		}),

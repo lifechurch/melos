@@ -29,6 +29,7 @@ function getAssetPath(path) {
 			const Manifest = require('./public/assets/manifest.json')
 			return Manifest[path];
 		} catch (ex) {
+			Raven.captureException(ex)
 			return path
 		}
 	}

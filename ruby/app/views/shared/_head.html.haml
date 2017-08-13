@@ -132,11 +132,15 @@
   -#    }());
 
 
+:ruby
+  referrer = @_request.env["HTTP_REFERER"]
+  @isLookinsideReferrer = false
+  if ((referrer and referrer.include?('lookinside.bible')) or (params["cid"] and params["cid"] === 'LookInsideReferrer'))
+    @isLookinsideReferrer = true
+  end
 
 
-
-
-- if (referrer and referrer.include?('lookinside.bible')) or isReturningFromLookinside
+- if @isLookinsideReferrer or cookies[:referred_from_lookinside].present?
   :javascript
     var now = +new Date;
     var fourteenDaysish = 1200000000;
