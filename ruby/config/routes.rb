@@ -233,7 +233,7 @@ YouversionWeb::Application.routes.draw do
   get '/users/:username/reading-plans/:id/together/create' => 'subscriptions#show', as: "pwf_create"
   get '/users/:username/reading-plans/:id/together/:together_id/invite' => 'subscriptions#show', as: "pwf_invite"
   get '/reading-plans/:id/together/:together_id/participants' => 'subscriptions#show', as: "participants"
-
+	get '/subscription/:subscription_id/day/:day/talk-it-over/:content' => 'plans#index'
 
   # LOOKINSIDE READING PLAN LANDING PAGES
   get '/lookinside/:id' => 'plans#lookinside_view'

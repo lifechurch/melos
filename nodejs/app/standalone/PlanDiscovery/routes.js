@@ -25,6 +25,7 @@ import CreatePWFView from '../../containers/CreatePWFView'
 import InvitePWFView from '../../containers/InvitePWFView'
 import ParticipantsView from '../../containers/ParticipantsView'
 import InvitationView from '../../containers/InvitationView'
+import TalkItOverRedirect from '../../containers/TalkItOverRedirect'
 
 
 /**
@@ -94,6 +95,10 @@ export default function (
 			<Route
 				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/segment/:content"
 				component={PlanReader}
+			/>
+			<Route
+				path="(:lang/)subscription/:subscription_id/day/:day/talk-it-over/:content"
+				component={TalkItOverRedirect}
 			/>
 			<Route
 				path="(:lang/)reading-plans/:id(-:slug)/together/:together_id/invitation"
