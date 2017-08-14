@@ -1,0 +1,63 @@
+.absolute-horizontal-center {
+	left: 50%;
+	transform: 				translate(-50%, 0%);
+	-webkit-transform:translate(-50%, 0%);
+	-moz-transform:   translate(-50%, 0%);
+	-ms-transform:    translate(-50%, 0%);
+  -o-transform:     translate(-50%, 0%);
+	transition:       translate(-50%, 0%);
+}
+
+.hide-modal {
+	display: none !important;
+}
+
+.yv-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: transparent;
+	overflow: hidden;
+	padding: 5px;
+	z-index: 101;
+	margin: 0 !important;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+	.modal-heading {
+		display: flex;
+		.xmark-container:hover {
+			cursor: pointer;
+		}
+	}
+	.modal-content {
+		.horizontal-center;
+	}
+}
+
+.yv-modal-background {
+	position: fixed;
+	// this positioning makes sure there's no 'frosted edges'
+	top: -10%;
+	left: -10%;
+	height: 130%;
+	width: 130%;
+	background: black;
+	opacity: 0.6;
+	z-index: 100;
+
+	transform: translate(0px, 0px, 0px);
+	background-image: -webkit-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+	background-image: -moz-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+	background-image: -o-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+	background-image: linear-gradient(to top right, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+
+	/* blur filters */
+	-webkit-filter: blur(20px);
+	-o-filter: blur(20px);
+	filter: blur(20px);
+}
