@@ -1,4 +1,4 @@
-const cacheName = 'youversion-bible-v1'
+const cacheName = 'youversion-bible-v2'
 
 self.addEventListener('install', function() {
 	console.log('[ServiceWorker] Install')
@@ -15,16 +15,14 @@ self.addEventListener('fetch', function(e) {
 	const headers = request.headers
 
 	// determine what's cacheable
-	// no authorization
+	// api call from youversion
+	// no authorization in header or does but is not going to send auth to server
 	// get request
-	// http protocol (not chrome-extension:// .etc)
-	const whiteListed = /\.youversionapi/.test(request.url)
-		|| /\/api\//.test(request.url)
-	const isCacheable = !(headers.has('authorization'))
+	const isCacheable = headers.has('X-YouVersion-Client')
+		&& (!(headers.has('authorization')) || headers.has('X-ServiceWorker-Cacheable'))
 		&& request.method === 'GET'
-		&& /^http/.test(request.url)
-		&& whiteListed
-
+	console.log('[ServiceWorker] isCacheable', isCacheable)
+	
 	if (isCacheable) {
 		return e.respondWith(
 			caches.match(request.url).then(function(cacheResponse) {
@@ -39,6 +37,7 @@ self.addEventListener('fetch', function(e) {
 						console.log('[ServiceWorker] Fetched from API', fetchResponse)
 						// don't cache errors
 						if (!(fetchResponse && fetchResponse.status === 200)) {
+							console.log('[ServiceWorker] Fetch error, no cache')
 							return fetchResponse
 						}
 						return caches.open(cacheName).then(function(cache) {

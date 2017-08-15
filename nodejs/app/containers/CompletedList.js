@@ -18,7 +18,7 @@ class CompletedList extends Component {
 	componentDidMount() {
 		const { auth, dispatch } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
-		dispatch(plansAPI.actions.subscriptions.get({ status: 'completed' }, { auth: true })).then((subs) => {
+		dispatch(plansAPI.actions.subscriptions.get({ status: 'completed', order: 'desc' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {

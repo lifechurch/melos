@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { FormattedMessage } from 'react-intl'
+import { Link } from 'react-router'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import moment from 'moment'
 // actions
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
@@ -14,8 +15,11 @@ import { getTogetherInvitations, getParticipantsUsers } from '@youversion/api-re
 // utils
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
+import calcTodayVsStartDt from '../lib/calcTodayVsStartDt'
 // components
 import List from '../components/List'
+import Modal from '../components/Modal'
+import ShareLink from '../components/ShareLink'
 import ParticipantsAvatarList from '../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../widgets/TogetherInvitationActions'
 import InvitationString from '../widgets/InvitationString'
@@ -25,19 +29,29 @@ import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 
 
 class SubscriptionList extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			inviteId: null
+		}
+	}
 
 	componentDidMount() {
-		const { auth } = this.props
+		const { auth, dispatch } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 		// get any invites we have
-		this.getInvitations()
+		this.getInvitations().then(() => {
+			// get togethers that we are a host of so we can show the invite and change data actions
+			// for plans in the future
+			dispatch(plansAPI.actions.togethers.get({ status: 'host' }, { auth: true }))
+		})
 		// get actual subscriptions
 		this.getSubs({ page: 1 })
 	}
 
 	getSubs = ({ page = null }) => {
-		const { dispatch, auth, subscriptions, readingPlans, participants } = this.props
-		dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
+		const { dispatch, auth, subscriptions, readingPlans } = this.props
+		return dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
@@ -75,7 +89,7 @@ class SubscriptionList extends Component {
 
 	getInvitations = () => {
 		const { dispatch, auth, readingPlans, participants } = this.props
-		dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
+		return dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = subs.map
 				if (ids.length > 0) {
@@ -112,8 +126,10 @@ class SubscriptionList extends Component {
 		const plan = (plan_id && plan_id in readingPlans.byId) ? readingPlans.byId[plan_id] : null
 		const sub = (subscription_id && subscription_id in subscriptions.byId) ? subscriptions.byId[subscription_id] : null
 
-		let link, src, subContent, dayString, progress, titleString
+		let link, src, subContent, dayString, progress, titleString, isInFuture
 		if (start_dt && plan && 'id' in plan) {
+			isInFuture = calcTodayVsStartDt(start_dt).isInFuture
+
 			src = plan.images ?
 				selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
 				null
@@ -135,7 +151,10 @@ class SubscriptionList extends Component {
 			// plans together have different strings
 			if (together_id) {
 				if (invitations.indexOf(together_id) > -1) {
+					dayString = <PlanStartString start_dt={start_dt} />
 					titleString = <InvitationString together_id={together_id} />
+				}
+				if (isInFuture) {
 					dayString = <PlanStartString start_dt={start_dt} />
 				}
 			} else {
@@ -174,7 +193,7 @@ class SubscriptionList extends Component {
 
 			subContent = (
 				<div>
-					{ sub && progress }
+					{ sub && !isInFuture && progress }
 					<div style={{ padding: '5px 0' }}>
 						<ParticipantsAvatarList
 							together_id={together_id}
@@ -191,19 +210,23 @@ class SubscriptionList extends Component {
 		}
 
 		return (
-			<PlanListItem
-				key={`${plan_id}.${subscription_id}`}
-				src={src}
-				name={titleString}
-				link={link}
-				subContent={subContent}
-			/>
+			<div>
+				<PlanListItem
+					key={`${plan_id}.${subscription_id}`}
+					src={src}
+					name={titleString}
+					link={link}
+					subContent={subContent}
+				/>
+
+			</div>
 		)
 	}
 
 
 	render() {
-		const { subscriptions, together, invitations } = this.props
+		const { subscriptions, together, invitations, auth, intl } = this.props
+		const { inviteId } = this.state
 
 		const plansList = []
 		// build list of invitations
@@ -224,7 +247,7 @@ class SubscriptionList extends Component {
 								together_id={id}
 								handleActionComplete={() => {
 									this.getInvitations()
-									this.getSubs()
+									this.getSubs({ page: 1 })
 								}}
 							/>
 						</div>
@@ -237,25 +260,91 @@ class SubscriptionList extends Component {
 			subscriptions.allIds.forEach((id) => {
 				const sub = subscriptions.byId[id]
 				if (sub && sub.plan_id && !sub.completed_dt) {
-					plansList.push(this.renderListItem({
-						plan_id: sub.plan_id,
-						together_id: sub.together_id,
-						start_dt: sub.start_dt,
-						subscription_id: id,
-					}))
+					plansList.push(
+						<div key={id}>
+							{
+								this.renderListItem({
+									plan_id: sub.plan_id,
+									together_id: sub.together_id,
+									start_dt: sub.start_dt,
+									subscription_id: id,
+								})
+							}
+							{
+								// show host actions on a together that starts in the future
+								sub.together_id
+									&& auth && auth.userData && auth.userData.userid
+									&& sub.together_id in together.byId
+									&& auth.userData.userid === together.byId[sub.together_id].host_user_id
+									&& calcTodayVsStartDt(sub.start_dt).isInFuture
+									&& (
+										<div className='invitation-actions vertical-center'>
+											<a
+												tabIndex={0}
+												className='yv-green-link'
+												onClick={() => {
+													this.setState({ inviteId: sub.together_id })
+													this.modal.handleOpen()
+												}}
+											>
+												<FormattedMessage id='invite others' />
+											</a>
+											<Link
+												to={Routes.togetherCreate({
+													username: auth && auth.userData && auth.userData.username,
+													plan_id: sub.plan_id,
+													query: {
+														subscription_id: id,
+													}
+												})}
+												className='yv-gray-link'
+											>
+												<FormattedMessage id='change date' />
+											</Link>
+										</div>
+									)
+							}
+						</div>
+					)
 				}
 				return null
 			})
 		}
 
+		let shareLink = null
+		if (inviteId && together && together.byId[inviteId]) {
+			shareLink = together.byId[inviteId].public_share
+		}
+
 		return (
-			<List customClass='subscription-list' loadMore={this.loadMore}>
-				{
-					plansList.length > 0
-						? plansList
-						: <FormattedMessage id='plans.you have no plans' />
-				}
-			</List>
+			<div>
+				<List customClass='subscription-list' loadMore={this.loadMore}>
+					{
+						plansList.length > 0
+							? plansList
+							: <FormattedMessage id='plans.you have no plans' />
+					}
+				</List>
+				<Modal
+					ref={(ref) => { this.modal = ref }}
+					customClass='large-5 medium-8 small-11'
+					handleCloseCallback={() => {
+						this.setState({ inviteId: null })
+					}}
+				>
+					{
+						inviteId
+							&& shareLink
+							&& (
+								<ShareLink
+									link={shareLink}
+									text={intl.formatMessage({ id: 'join together' })}
+									description={<FormattedMessage id='use share link' />}
+								/>
+							)
+					}
+				</Modal>
+			</div>
 		)
 	}
 }
@@ -289,4 +378,4 @@ SubscriptionList.defaultProps = {
 	invitations: null,
 }
 
-export default connect(mapStateToProps, null)(SubscriptionList)
+export default connect(mapStateToProps, null)(injectIntl(SubscriptionList))

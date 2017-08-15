@@ -13,7 +13,7 @@ class CreatePWF extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			selectedDay: new Date()
+			selectedDay: props.initialDay || new Date()
 		}
 	}
 
@@ -40,9 +40,13 @@ class CreatePWF extends Component {
 
 		return (
 			<CalendarDay
-				customClass={`${(selectedDay &&
-					(moment(selectedDay).dayOfYear() === moment(day).dayOfYear())) ?
-					'yv-active' : ''}`
+				customClass={
+					`${
+						selectedDay
+							&& (moment(selectedDay).dayOfYear() === moment(day).dayOfYear())
+							? 'yv-active'
+							: ''
+						}`
 				}
 				date={day.getDate()}
 				disabled={isInPast}
@@ -52,7 +56,7 @@ class CreatePWF extends Component {
 	}
 
 	render() {
-		const { planImgSrc, backPath } = this.props
+		const { planImgSrc, backPath, isEditingDate } = this.props
 		const { selectedDay } = this.state
 
 		return (
@@ -65,13 +69,23 @@ class CreatePWF extends Component {
 						>
 							&larr;
 						</Link>
-						<h4 className='text-center' style={{ flex: 1 }}>Select Start Date</h4>
+						<h4 className='text-center' style={{ flex: 1 }}>
+							{
+								isEditingDate
+									? <FormattedMessage id='edit' />
+									: <FormattedMessage id='select start date' />
+							}
+						</h4>
 						<a
 							tabIndex={0}
 							className='text-right green'
 							onClick={this.handleCreateSubscription}
 						>
-							<FormattedMessage id='next' />
+							{
+								isEditingDate
+									? <FormattedMessage id='done' />
+									: <FormattedMessage id='next' />
+							}
 						</a>
 					</div>
 				</div>
@@ -99,7 +113,11 @@ class CreatePWF extends Component {
 						onClick={this.handleCreateSubscription}
 						style={{ marginBottom: 0 }}
 					>
-						<FormattedMessage id='next' />
+						{
+							isEditingDate
+								? <FormattedMessage id='done' />
+								: <FormattedMessage id='next' />
+						}
 					</a>
 				</Footer>
 			</div>
@@ -111,11 +129,13 @@ CreatePWF.propTypes = {
 	planImgSrc: PropTypes.string,
 	backPath: PropTypes.string,
 	onHandleSubscribe: PropTypes.func.isRequired,
+	isEditingDate: PropTypes.bool,
 }
 
 CreatePWF.defaultProps = {
 	planImgSrc: null,
 	backPath: null,
+	isEditingDate: false,
 }
 
 export default CreatePWF

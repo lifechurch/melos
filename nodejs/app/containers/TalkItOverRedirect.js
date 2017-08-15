@@ -1,16 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import Immutable from 'immutable'
 import { FormattedMessage } from 'react-intl'
-import rtlDetect from 'rtl-detect'
-import moment from 'moment'
-import { Link } from 'react-router'
 import { routeActions } from 'react-router-redux'
 // actions
-import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
-import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
-import planView from '@youversion/api-redux/lib/batchedActions/planView'
-import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
+import subscriptionData from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 // models
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'

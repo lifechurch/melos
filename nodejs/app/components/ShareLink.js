@@ -6,7 +6,7 @@ import Share from '../features/Bible/components/verseAction/share/Share'
 function ShareLink({ link, description, text }) {
 
 	return (
-		<div className='centered' style={{ padding: '25px 0' }}>
+		<div className='centered share-link-container' style={{ padding: '25px 0' }}>
 			<div className='text-center'>
 				{ description }
 			</div>
