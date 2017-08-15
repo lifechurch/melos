@@ -75,12 +75,12 @@ class CreatePWFView extends Component {
 				},
 				auth: auth.isLoggedIn,
 			})).then((data) => {
-				if (data && 'id' in data) {
+				if (data) {
+					const sub = data.data[data.map[0]]
 					dispatch(routeActions.push(Routes.togetherInvite({
 						username: auth.userData.username,
 						plan_id,
-						slug: id.split('-')[1],
-						together_id: data.together_id
+						together_id: sub.together_id
 					})))
 				}
 			})

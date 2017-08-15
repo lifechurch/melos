@@ -34,10 +34,13 @@ class SubscribeUserDialog extends Component {
 						},
 						auth: isLoggedIn
 					})).then((data) => {
-						if (useRouter) {
-							dispatch(routeActions.push(`${subLinkBase}/subscription/${data.id}`))
-						} else {
-							window.location.replace(`${subLinkBase}/subscription/${data.id}`)
+						if (data) {
+							const subId = data.map[0]
+							if (useRouter) {
+								dispatch(routeActions.push(`${subLinkBase}/subscription/${subId}`))
+							} else {
+								window.location.replace(`${subLinkBase}/subscription/${subId}`)
+							}
 						}
 					})
 				} else if (useRouter) {

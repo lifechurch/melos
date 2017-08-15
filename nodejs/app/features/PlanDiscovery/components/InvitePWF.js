@@ -118,7 +118,7 @@ class InvitePWF extends Component {
 	}
 
 	render() {
-		const { search, friends, shareLink } = this.props
+		const { search, friends, shareLink, backLink } = this.props
 		const { showSearchResults, selectedFriends } = this.state
 
 		const selectedUsers = selectedFriends.toJS()
@@ -152,21 +152,16 @@ class InvitePWF extends Component {
 		// from search to the friends list. the set will remove duplicates
 		const mergedUsers = Array.from(new Set(friendsList.concat(selectedUsers)))
 
-		let backLink = ''
-		if (typeof window !== 'undefined') {
-			backLink = `${window.location.pathname.replace('invite', 'create')}`
-		}
-
 		return (
 			<div className='pwf-flow pwf-invite'>
 				<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
 					<div className='row vertical-center'>
-						<Link
+						{/* <Link
 							className='plans vertical-center'
 							to={backLink}
 						>
 							&larr;
-						</Link>
+						</Link> */}
 						<h4 className='text-center' style={{ flex: 1 }}>Invite Friends</h4>
 						<a
 							tabIndex={0}

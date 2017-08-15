@@ -92,7 +92,7 @@ class SubscriptionList extends Component {
 		return dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = subs.map
-				if (ids.length > 0) {
+				if (ids && ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
 						if (!(sub.plan_id in readingPlans.byId && id in participants)) {
@@ -174,13 +174,23 @@ class SubscriptionList extends Component {
 			link = localizedLink(Routes.plans({}))
 			// if this is a subscription, link to it
 			if (subscription_id) {
-				link = localizedLink(
-					Routes.subscription({
-						username: this.username,
-						plan_id: plan.id,
-						slug: plan.slug,
-						subscription_id,
-					}))
+				if (isInFuture) {
+					link = localizedLink(
+						Routes.plan({
+							plan_id: plan.id,
+							slug: plan.slug,
+						})
+					)
+				} else {
+					link = localizedLink(
+						Routes.subscription({
+							username: this.username,
+							plan_id: plan.id,
+							slug: plan.slug,
+							subscription_id,
+						})
+					)
+				}
 			// otherwise it's an invitation where we want more info
 			} else {
 				link = localizedLink(
@@ -210,16 +220,13 @@ class SubscriptionList extends Component {
 		}
 
 		return (
-			<div>
-				<PlanListItem
-					key={`${plan_id}.${subscription_id}`}
-					src={src}
-					name={titleString}
-					link={link}
-					subContent={subContent}
-				/>
-
-			</div>
+			<PlanListItem
+				key={`${plan_id}.${subscription_id}`}
+				src={src}
+				name={titleString}
+				link={link}
+				subContent={subContent}
+			/>
 		)
 	}
 
@@ -246,7 +253,6 @@ class SubscriptionList extends Component {
 							<TogetherInvitationActions
 								together_id={id}
 								handleActionComplete={() => {
-									this.getInvitations()
 									this.getSubs({ page: 1 })
 								}}
 							/>
@@ -367,11 +373,13 @@ SubscriptionList.propTypes = {
 	subscriptions: PropTypes.object.isRequired,
 	readingPlans: PropTypes.object.isRequired,
 	together: PropTypes.object.isRequired,
+	participants: PropTypes.object.isRequired,
 	invitations: PropTypes.array,
 	auth: PropTypes.object.isRequired,
 	language_tag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	localizedLink: PropTypes.func.isRequired,
+	intl: PropTypes.func.isRequired,
 }
 
 SubscriptionList.defaultProps = {
