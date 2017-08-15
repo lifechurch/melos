@@ -230,7 +230,6 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 	const assetPrefix = getAssetPrefix(req)
 	// const Locale = getLocale(params.languageTag)
 
-
 	nr.setTransactionName(`featureImport/${feature}`)
 
 	Raven.setContext({ user: auth, tags: { feature, url: params.url }, extra: { params } })
@@ -250,7 +249,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 			localeFromUrl: params.languageTag,
 			localeFromCookie: params.cookiesLocale,
 			localeFromUser: authResult && authResult.userData && authResult.userData.language_tag ? authResult.userData.language_tag : null,
-			acceptLangHeaders: params.acceptLangHeader
+			acceptLangHeader: params.acceptLangHeader
 		})
 
 		moment.locale(Locale.momentLocale)

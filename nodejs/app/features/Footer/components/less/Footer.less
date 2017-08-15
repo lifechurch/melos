@@ -3,8 +3,59 @@
 	margin-top: 30px;
 }
 
+.yv-lang-toggle {
+  color: #444;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
 .yv-footer {
 	overflow: hidden;
+
+	.yv-modal {
+		z-index: 50;
+		transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+		align-items: flex-end;
+		transform: translateY(0);
+
+		&.hide-modal {
+			display: flex !important;
+			transform: translateY(250px);
+		}
+
+		.footer-modal {
+			margin-bottom: 80px;
+		}
+
+		.modal-heading {
+			position: absolute;
+			justify-content: flex-end;
+			width: 530px;
+			margin-top: 10px;
+			svg polygon {
+				fill: black;
+			}
+		}
+	}
+
+	.yv-social-card {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		width: 450px;
+		a {
+			font-size: 14px;
+			color: #BBB;
+			display: flex;
+	    flex-direction: column;
+	    justify-content: flex-end;
+	    align-items: center;
+
+			svg {
+				margin-bottom: 10px;
+			}
+		}
+	}
 
 	.yv-footer-wrapper {
 		padding: 12.5px 16px;
@@ -56,6 +107,7 @@
 			text-align: right;
 			display: flex;
 			justify-content: flex-end;
+			align-items: center;
 		}
 
 		.bible-icon {

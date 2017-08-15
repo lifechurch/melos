@@ -20,7 +20,6 @@ function TwitterLogo({ width, height, fill, className }) {
 			viewBox="0 0 24 19"
 			version="1.1"
 			xmlns="http://www.w3.org/2000/svg"
-			xlink="http://www.w3.org/1999/xlink"
 		>
 			<g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
 				<g transform="translate(-687.000000, -110.000000)" fill={fill}>
