@@ -1419,13 +1419,13 @@ af:
             email: "E-pos"
             not me: "Dis nie ek nie"
             saved: "Gestoor!"
-            plan delivery: "LEESPLAN AFLEWERING"
+            plan delivery: "LEESPLAN LEWERING"
             sign-in: "<a href='{sign_in_path}'>Teken in op jou rekening</a> om ander instellings te redigeer."
             links: 
                 manage: "Bestuur Jou E-pos Kennisgewings"
-                unsub all: "Kanselleer jou intekening op alle YouVersion e-pos"
+                unsub all: "Kanselleer jou intekening op alle e-posse"
             success: 
-                all: "Jou intekening op <b>alle YouVersion e-posse</b> is suksesvol gekanselleer."
+                all: "Jou intekening op <b>alle YouVersion e-posse</b> is suksesvol gekanselleer"
                 badges: "Jou intekening op <b>Kentekens</b> e-posse is suksesvol gekanselleer."
                 comments: "Jou intekening op <b>Opmerkings</b> e-posse is suksesvol gekanselleer."
                 friendships: "Jou intekening op <b>Vriendskap</b> e-posse is suksesvol gekanselleer."
@@ -1434,8 +1434,8 @@ af:
                 newsletter: "Jou intekening op <b>Nuusbrief</b> e-posse is suksesvol gekanselleer."
                 reading_plans: "Jou intekening op <b>Leesplan</b> e-posse is suksesvol gekanselleer."
                 rp_daily: "Jou intekening op <b>Daaglike Leesplan e-posse</b> vir %{plan_title} is suksesvol gekanselleer."
-                votd: "Jou intekening op <b>Vers van die Dag</b> is suksesvol gekanselleer."
-                votd_image: "Jou intekening op <b>Vers van die Dag Prent</b> is suksesvol gekanselleer."
+                votd: "Jou intekening op <b>Vers van die Dag</b> e-posse is suksesvol gekanselleer."
+                votd_image: "Jou intekening op <b>Vers van die Dag Prent</b> e-posse is suksesvol gekanselleer."
             labels: 
                 badges: "As ek 'n kenteken verdien"
                 comments: "Opmerkings oor my aktiwiteite"
@@ -1444,7 +1444,7 @@ af:
                 moments: "Vriende se aktiwiteite"
                 newsletter: "Nuus van YouVersion"
                 reading_plans: "Oor my Bybelplanne"
-                votd: "Teksvers van die dag"
+                votd: "Vers van die dag Teks"
                 votd_image: "Vers van die Dag Prent"
             error: 
                 token: "Jammer, jy moet Inteken voordat jy jou Kennisgewing instellings kan wysig:"
@@ -1979,14 +1979,14 @@ af:
                 book label: "BOEK"
                 chapter label: "HOOFSTUK"
                 chapter unavailable: "Hierdie hoofstuk is nie in hierdie weergawe beskikbaar nie. Kies asseblief 'n ander hoofstuk of weergawe."
-                choose chapter: "Kies Hoofstuk"
+                choose chapter: "Kies hoofstuk"
             versionpicker: 
                 language label: "BYBEL TALE"
                 language sub-label: "Bybel Tale"
                 change language: "Verander Taal"
                 filter languages: "Filtreer Tale"
                 version label: "WEERGAWES"
-                choose version: "Kies Weergawe"
+                choose version: "Kies weergawe"
             reader settings: 
                 footnotes: "Voetnotas"
                 numbers: "Nommers en Titels"

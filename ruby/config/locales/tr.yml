@@ -1419,8 +1419,8 @@ tr:
             email: "e-Posta"
             not me: "Bu ben değilim"
             saved: "Kaydedildi!"
-            plan delivery: "PLAN DELIVERY"
-            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
+            plan delivery: "PLAN GÖNDERİMİ"
+            sign-in: "Diğer ayarları düzenlemek için <a href='{sign_in_path}'>hesabınıza giriş yapın</a>."
             links: 
                 manage: "E-posta bildirimleri yönet"
                 unsub all: "Tüm e-postalardan aboneliği kaldır"

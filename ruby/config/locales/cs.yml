@@ -1434,8 +1434,8 @@ cs:
             email: "E-mail"
             not me: "To nejsem já"
             saved: "Uloženo!"
-            plan delivery: "PLAN DELIVERY"
-            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
+            plan delivery: "Odběr plánů"
+            sign-in: "Pro změnu nastavení, <a href='{sign_in_path}'>se prosím přihlaste k účtu</a>."
             links: 
                 manage: "Správa emailová oznámení"
                 unsub all: "Odhlásit odběr všech oznámení"

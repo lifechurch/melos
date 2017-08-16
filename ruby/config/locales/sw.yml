@@ -137,8 +137,8 @@ sw:
         best kids app: "Programu bora kwa watoto!"
         best educational app: "Programu bora inayoelimisha!"
         kids_app: 
-            title: "Apu ya Biblia kwa watoto"
-            description: "Apu ya Biblia kwa watoto ni njia nzuri ya watoto wako kujifunza hadithi za Bibilia kuhusu Yesu, zawadi yetu ya uzima wa milele na mafunzo mengi kutoka kwa Mungu. Kutoko uzoefu huu, watoto wanapata fursa ya kushiriki na neno la Mungu kwa kutumia maonyesho ya kupendeza na hata kupata mapoto kutoka kusoma na kukusanya hazina."
+            title: "Apu ya Biblia ya watoto"
+            description: "Apu ya Biblia ya watoto ni njia nzuri ya watoto wako kujifunza hadithi za Bibilia kuhusu Yesu, zawadi yetu ya uzima wa milele na mafunzo mengi kutoka kwa Mungu. Kutoko uzoefu huu, watoto wanapata fursa ya kushiriki na neno la Mungu kwa kutumia maonyesho ya kupendeza na hata kupata mapoto kutoka kusoma na kukusanya hazina."
         100million: 
             title: "Inaanza na milioni 100"
             description: "App ya Biblia imewekwa karibia mara milioni 100 - ni hatua ua ajabu! Lakini ndio kwanza tumeanza. Download bure App yaBiblia leo -  na washirikisha marafiki zako. Tutengeneze ukumbusho pamoja."
@@ -176,7 +176,7 @@ sw:
         feature 4: "Michezo na shughuli huwasaidia watoto kukumbuka walichojifunza"
         feature 5: "Urambazaji rahisi kwa watoto"
         share: 
-            tell friends: "Waambie mafiki zako kuhusu apu ya Biblia kwa watoto"
+            tell friends: "Waambie mafiki zako kuhusu apu ya Biblia ya watoto"
             facebook name: "The Bible App for Kids"
             facebook description: "Bible App ya watoto iko hapa. Ipakue bure katika rununu yako ya iOS au Android leo: pata hadithi za Bibilia ambazo zitasaidia mtoto wako kujifunza, kucheza na kukua katika neno la Mungu. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
@@ -184,7 +184,7 @@ sw:
             twitter description: "Bible App ya watoto kutoka @YouVersion iko hapa. Inaleta burudani na ni bure. Ipakue hapa: bible.com/kids"
             twitter hashtags: "Bibilia ya watoto"
             email: "Email"
-            email subject: "Apu ya Biblia kwa watoto iko hapa!"
+            email subject: "Apu ya Biblia ya watoto iko hapa!"
             email body: "Habari Njema - Apu ya Biblia ya watoto iko hapa! Ni bure na unaweza ipata katika rununu za iPhone, iPad, iPod touch, na Android. Hii apu ni mkusanyiko wa hadithi za Bibilia zinazoendelea kuongezeka. Apu ina michoro na mazoezi ambayo itawasaidia watoto kujifunza hadithi muhimu za Bibilia. Tembelea bible.com/kids katika rununu yako uweze kuipata leo."
         partner: 
             youversion: "YouVersion: Apu maarufu sana duniani ya Bibilia"
@@ -1170,7 +1170,7 @@ sw:
         banner open: "Fungua"
     download bafk ad: 
         title: "Download the Bible App for Kids"
-        description copy: "Apu ya Biblia kwa watoto ni njia bora zaidi kwa watoto kujifunza kumhusu Yesu Kristo kupitia Biblia"
+        description copy: "Apu ya Biblia ya watoto ni njia bora zaidi ya watoto kujifunza kumhusu Yesu Kristo kupitia Biblia"
         download: "Ipakue sasa"
     about page: 
         relevancy: "Umuhimu"

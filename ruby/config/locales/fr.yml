@@ -1419,8 +1419,8 @@ fr:
             email: "Email"
             not me: "Ce n'est pas moi"
             saved: "Enregistré!"
-            plan delivery: "PLAN DELIVERY"
-            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
+            plan delivery: "NOTIFICATIONS PAR EMAIL"
+            sign-in: "Pour modifier d'autres paramètres, <a href='{sign_in_path}'> identifiez-vous avec votre compte."
             links: 
                 manage: "Gérer vos notifications email"
                 unsub all: "Se désinscrire de tous les emails"
