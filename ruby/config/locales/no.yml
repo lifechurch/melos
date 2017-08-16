@@ -1419,8 +1419,8 @@
             email: "E-post"
             not me: "Dette er ikke meg"
             saved: "Lagret!"
-            plan delivery: "PLAN DELIVERY"
-            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
+            plan delivery: "PLANLEGGE LEVERING"
+            sign-in: "Hvis du vil redigere andre innstillinger, kan du logge på kontoen din."
             links: 
                 manage: "Administrere din beskjeder"
                 unsub all: "Motta alle e-poster"

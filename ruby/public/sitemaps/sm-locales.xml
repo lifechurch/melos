@@ -1021,4 +1021,8 @@
     <loc>https://www.bible.com/fi/kids</loc>
     <priority>1</priority>
   </url>
+	<url>
+    <loc>https://www.bible.com/uk/kids</loc>
+    <priority>1</priority>
+  </url>
 </urlset>

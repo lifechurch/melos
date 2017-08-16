@@ -67,6 +67,7 @@ YouversionWeb::Application.routes.draw do
   get "/fi/lapset", to: "redirects#lasten"
   get "/barn",        to: "redirects#barn"
   get "/hk/kids",     to: "redirects#hk_kids"
+  get "/ua/kids",     to: "redirects#ua_kids"
 
 	get "/unsubscribe", to: "notifications#unsubscribe"
 	get "/unsubscribe/manage", to: "notifications#unsubscribe"
