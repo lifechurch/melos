@@ -1,12 +1,13 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
 // actions
 import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // selectors
-import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
+import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // components
 import User from '../components/User'
@@ -16,13 +17,15 @@ import Routes from '../lib/routes'
 import { hasUserCompletedActivity } from '../lib/readingPlanUtils'
 
 
+const MAX_AVATARS = 5
+
 class ParticipantsAvatarList extends Component {
 	componentDidMount() {
 		const { together_id, dispatch, joinToken, participants, day, auth, together } = this.props
 		if (day && !(together && together.activities)) {
 			this.getDayCompletes()
 		}
-		if (!participants && together_id) {
+		if (together_id && !(participants && together_id in participants.byTogetherId)) {
 			dispatch(participantsView({
 				together_id,
 				token: joinToken,
@@ -71,33 +74,25 @@ class ParticipantsAvatarList extends Component {
 
 		const activities = together && together.activities
 		const avatarList = []
-		const usersToShow = []
-		if (participants && together_id) {
-			const userIds = Object.keys(participants)
-			userIds.forEach((userID) => {
-				const participant = participants[userID]
+		const usersToShow = participants
+			&& together_id
+			&& participants.filter({
+				together_id,
+				statusFilter,
+			})
+		if (participants && together_id && usersToShow) {
+			Object.keys(usersToShow).forEach((id) => {
+				const participant = usersToShow[id]
 				const avatarSrc = participant && participant.user_avatar_url ? participant.user_avatar_url.px_48x48 : ''
 
-				const filterMatch = Array.isArray(statusFilter)
-					? Immutable.fromJS(statusFilter).includes(participant.status)
-					: statusFilter === participant.status
-
-				// if we have no filter or if the user matches the filter
-				const showUser = !statusFilter || filterMatch
-				// let's count how many users we want to show if we weren't truncatating
-				if (showUser) {
-					usersToShow.push(userID)
-				}
-
 				// truncate amount to show, and then render more link to go to participants
-				// also allow filtering on status
-				if (avatarList.length < 6 && showUser) {
+				if (avatarList.length < MAX_AVATARS) {
 					// if we're showing participants for a specific day, we want to show the check
 					// if they've completed the day
 					let check = null
 					if (day && activities) {
 						const completions = activities[day] ? activities[day].data : null
-						if (hasUserCompletedActivity(completions, userID)) {
+						if (hasUserCompletedActivity(completions, participant.id)) {
 							check = <CheckMark width={13} fill='black' />
 						}
 					}
@@ -142,9 +137,18 @@ class ParticipantsAvatarList extends Component {
 					{ avatarList }
 					{
 						// if we want to show more users than is allowed, show the link
-						usersToShow &&
-						usersToShow.length > avatarList.length &&
-						<div className='yv-green-link'>{`+ ${usersToShow.length - avatarList.length}`}</div>
+						usersToShow
+							&& Object.keys(usersToShow).length > avatarList.length
+							? (
+								<div className='yv-green-link'>
+									{`+ ${Object.keys(usersToShow).length - avatarList.length}`}
+								</div>
+							)
+							: (
+								<div className='yv-green-link'>
+									<FormattedMessage id='x participants' values={{ number: avatarList.length }} />
+								</div>
+							)
 					}
 				</div>
 			</Link>
@@ -155,9 +159,7 @@ class ParticipantsAvatarList extends Component {
 function mapStateToProps(state, props) {
 	const { together_id } = props
 	return {
-		participants: together_id && getParticipantsUsersByTogetherId(state, together_id)
-			? getParticipantsUsersByTogetherId(state, together_id)
-			: null,
+		participants: getParticipantsUsers(state),
 		together: getTogetherModel(state) && together_id in getTogetherModel(state).byId
 			? getTogetherModel(state).byId[together_id]
 			: null,
@@ -186,7 +188,7 @@ ParticipantsAvatarList.defaultProps = {
 	together: null,
 	plan_id: null,
 	statusFilter: null,
-	avatarWidth: 36,
+	avatarWidth: 32,
 	customClass: '',
 	isLoggedIn: false,
 	joinToken: null,

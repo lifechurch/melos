@@ -39,14 +39,7 @@ function renderUser(friend, handleDelete = null, complete = null) {
 	)
 }
 
-function Participants({ planImg, users, shareLink, handleDelete, backLink, activities, intl }) {
-	const accepted = []
-	const invited = []
-	// build accepted and not accepted lists
-	users.forEach((user) => {
-		if (user.status === 'accepted' || user.status === 'host') accepted.push(user)
-		if (user.status === 'invited') invited.push(user)
-	})
+function Participants({ planImg, accepted, pending, shareLink, handleDelete, backLink, activities, intl }) {
 
 	return (
 		<div className='pwf-flow pwf-invite'>
@@ -80,7 +73,7 @@ function Participants({ planImg, users, shareLink, handleDelete, backLink, activ
 					</div>
 					<div className='users'>
 						{
-							!users
+							!(accepted || pending)
 								? (
 									<div className='friend-list'>
 										<FormattedMessage id='loading' />
@@ -90,35 +83,37 @@ function Participants({ planImg, users, shareLink, handleDelete, backLink, activ
 									<div>
 										<div className='friend-list' style={{ marginBottom: '30px' }}>
 											{
-											accepted.length > 0 &&
-											<div className='gray-heading'>
-												<FormattedMessage id='accepted' />
-												{` (${accepted.length}) `}
-											</div>
-										}
+												accepted && accepted.length > 0 &&
+												<div className='gray-heading'>
+													<FormattedMessage id='accepted' />
+													{` (${accepted.length}) `}
+												</div>
+											}
 											{
-											accepted.map((user) => {
-												return renderUser(
-													user,
-													handleDelete,
-													hasUserCompletedActivity(activities, user.id)
-												)
-											})
-										}
+												accepted && accepted.length > 0 &&
+												accepted.map((user) => {
+													return renderUser(
+														user,
+														handleDelete,
+														hasUserCompletedActivity(activities, user.id)
+													)
+												})
+											}
 										</div>
 										<div className='friend-list'>
 											{
-											invited.length > 0 &&
-											<div className='gray-heading'>
-												<FormattedMessage id='pending' />
-												{` (${invited.length}) `}
-											</div>
-										}
+												pending && pending.length > 0 &&
+												<div className='gray-heading'>
+													<FormattedMessage id='pending' />
+													{` (${pending.length}) `}
+												</div>
+											}
 											{
-											invited.map((user) => {
-												return renderUser(user, handleDelete)
-											})
-										}
+												pending && pending.length > 0 &&
+												pending.map((user) => {
+													return renderUser(user, handleDelete)
+												})
+											}
 										</div>
 									</div>
 								)
@@ -127,11 +122,14 @@ function Participants({ planImg, users, shareLink, handleDelete, backLink, activ
 				</div>
 			</div>
 			<div id='share-link'>
-				<ShareLink
-					link={shareLink}
-					text={intl.formatMessage({ id: 'join together' })}
-					description={<FormattedMessage id='use share link' />}
-				/>
+				{
+					shareLink &&
+					<ShareLink
+						link={shareLink}
+						text={intl.formatMessage({ id: 'join together' })}
+						description={<FormattedMessage id='use share link' />}
+					/>
+				}
 			</div>
 		</div>
 	)
@@ -142,8 +140,10 @@ Participants.propTypes = {
 	activities: PropTypes.object,
 	shareLink: PropTypes.string,
 	backLink: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-	users: PropTypes.array,
+	accepted: PropTypes.array,
+	pending: PropTypes.array,
 	handleDelete: PropTypes.func,
+	intl: PropTypes.object.isRequired,
 }
 
 export default injectIntl(Participants)

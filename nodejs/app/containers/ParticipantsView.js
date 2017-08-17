@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
-import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
+import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
@@ -33,13 +33,13 @@ class ParticipantsView extends Component {
 			params: { id, together_id },
 			location: { query },
 			plan,
-			participantsUsers,
+			participants,
 			together,
 		} = this.props
 
 		// join token will allow us to see the participants and together unauthed
 		const token = query && query.token ? query.token : null
-		if (!(plan && 'id' in plan && participantsUsers)) {
+		if (!(plan && 'id' in plan && participants && together_id in participants.byTogetherId)) {
 			dispatch(planView({
 				plan_id: id.split('-')[0],
 				together_id,
@@ -101,27 +101,19 @@ class ParticipantsView extends Component {
 	}
 
 	render() {
-		const { plan, participantsUsers, together, auth, location: { query } } = this.props
+		const { plan, participants, together, auth, location: { query } } = this.props
 		const { userToDelete } = this.state
 
 		const day = query && query.day ? parseInt(query.day, 10) : null
-		let userList = null
-		if (participantsUsers) {
-			userList = Object.keys(participantsUsers).map((userid) => {
-				const user = participantsUsers[userid]
-				return user
-			})
-		}
-		const deleteUserData = participantsUsers
+		const acceptedParticipants = participants
+			&& participants.filter({ together_id: together && together.id, statusFilter: ['host', 'accepted'] })
+		const pendingParticipants = participants
+			&& participants.filter({ together_id: together && together.id, statusFilter: ['invited'] })
+		const deleteUserData = participants
 			&& userToDelete
-			&& participantsUsers[userToDelete]
+			&& acceptedParticipants[userToDelete]
 		const src = plan && plan.images ? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url : ''
-		this.isAuthHost = together
-			&& together.host_user_id
-			&& auth
-			&& Immutable
-					.fromJS(auth)
-					.getIn(['userData', 'userid'], null) === together.host_user_id
+		this.isAuthHost = participants.isAuthHost(together && together.id)
 		const backLink = (
 			auth.isLoggedIn
 				? (
@@ -140,7 +132,22 @@ class ParticipantsView extends Component {
 			<div>
 				<Participants
 					planImg={src}
-					users={userList}
+					accepted={
+						acceptedParticipants
+						&& Object.keys(acceptedParticipants)
+						&& Object.keys(acceptedParticipants).length > 0
+						&& Object.keys(acceptedParticipants).map((id) => {
+							return acceptedParticipants[id]
+						})
+					}
+					pending={
+						pendingParticipants
+						&& Object.keys(pendingParticipants)
+						&& Object.keys(pendingParticipants).length > 0
+						&& Object.keys(pendingParticipants).map((id) => {
+							return pendingParticipants[id]
+						})
+					}
 					shareLink={together && together.public_share ? together.public_share : null}
 					// only allow participant deletes if the authed user is the host of pwf
 					handleDelete={this.isAuthHost && this.openDelete}
@@ -191,7 +198,7 @@ function mapStateToProps(state, props) {
 	console.log('TOG', getTogetherModel(state))
 	return {
 		plan: getPlanById(state, plan_id),
-		participantsUsers: getParticipantsUsersByTogetherId(state, together_id),
+		participants: getParticipantsUsers(state),
 		together: getTogetherModel(state) && together_id in getTogetherModel(state).byId
 			? getTogetherModel(state).byId[together_id]
 			: null,
@@ -206,7 +213,7 @@ ParticipantsView.propTypes = {
 	together: PropTypes.object.isRequired,
 	auth: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired,
-	participantsUsers: PropTypes.object.isRequired,
+	participants: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
 }

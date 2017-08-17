@@ -37,32 +37,49 @@ class SubscriptionList extends Component {
 	}
 
 	componentDidMount() {
-		const { auth, dispatch } = this.props
+		const { auth } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 		// get any invites we have
-		this.getInvitations().then(() => {
-			// get togethers that we are a host of so we can show the invite and change data actions
-			// for plans in the future
-			dispatch(plansAPI.actions.togethers.get({ status: 'host' }, { auth: true }))
-		})
+		this.getInvitations()
 		// get actual subscriptions
 		this.getSubs({ page: 1 })
 	}
 
 	getSubs = ({ page = null }) => {
-		const { dispatch, auth, subscriptions, readingPlans } = this.props
+		const { dispatch, auth, subscriptions, readingPlans, participants } = this.props
 		return dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
 				if (ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						if (!(sub.plan_id in readingPlans.byId)) {
+						if (
+							!(
+								sub.plan_id in readingPlans.byId
+								&& participants
+								&& participants.filter({ together_id: sub.together_id }).length > 0
+							)
+						) {
 							dispatch(planView({
 								plan_id: sub.plan_id,
 								together_id: sub.together_id,
 								auth,
 							}))
+						}
+						// get share link for a plan that starts in the future
+						if (sub.together_id && calcTodayVsStartDt(sub.start_dt).isInFuture) {
+							customGet({
+								actionName: 'together',
+								pathvars: {
+									id: sub.together_id,
+								},
+								params: {
+									auth: true,
+								},
+								dispatch,
+								actions: plansAPI.actions,
+								auth,
+							})
 						}
 						if (!(id in subscriptions.byId && 'overall' in subscriptions.byId[id])) {
 							// get progress for progress bar
@@ -95,7 +112,7 @@ class SubscriptionList extends Component {
 				if (ids && ids.length > 0) {
 					ids.forEach((id) => {
 						const sub = subs.data[id]
-						if (!(sub.plan_id in readingPlans.byId && id in participants)) {
+						if (!(sub.plan_id in readingPlans.byId && id in participants.byTogetherId)) {
 							dispatch(planView({
 								plan_id: sub.plan_id,
 								together_id: id,
@@ -205,14 +222,17 @@ class SubscriptionList extends Component {
 				<div>
 					{ sub && !isInFuture && progress }
 					<div style={{ padding: '5px 0' }}>
-						<ParticipantsAvatarList
-							together_id={together_id}
-							plan_id={plan_id}
-							avatarWidth={26}
-							// if it's an invitation, we want to show all participants
-							// otherwise, let's just show accetped and host
-							statusFilter={subscription_id ? ['accepted', 'host'] : null}
-						/>
+						{
+							together_id
+								&& (
+									<ParticipantsAvatarList
+										together_id={together_id}
+										plan_id={plan_id}
+										avatarWidth={26}
+										statusFilter={['accepted', 'host']}
+									/>
+								)
+						}
 					</div>
 					{ dayString }
 				</div>
@@ -232,7 +252,7 @@ class SubscriptionList extends Component {
 
 
 	render() {
-		const { subscriptions, together, invitations, auth, intl } = this.props
+		const { subscriptions, together, invitations, auth, participants, intl } = this.props
 		const { inviteId } = this.state
 
 		const plansList = []
@@ -266,6 +286,10 @@ class SubscriptionList extends Component {
 			subscriptions.allIds.forEach((id) => {
 				const sub = subscriptions.byId[id]
 				if (sub && sub.plan_id && !sub.completed_dt) {
+					const authIsHost = participants.isAuthHost(sub.together_id)
+					const isInFuture = sub.together_id
+						&& calcTodayVsStartDt(sub.start_dt).isInFuture
+
 					plansList.push(
 						<div key={id}>
 							{
@@ -276,15 +300,12 @@ class SubscriptionList extends Component {
 									subscription_id: id,
 								})
 							}
-							{
-								// show host actions on a together that starts in the future
-								sub.together_id
-									&& auth && auth.userData && auth.userData.userid
-									&& sub.together_id in together.byId
-									&& auth.userData.userid === together.byId[sub.together_id].host_user_id
-									&& calcTodayVsStartDt(sub.start_dt).isInFuture
-									&& (
-										<div className='invitation-actions vertical-center'>
+							<div className='invitation-actions vertical-center'>
+								{
+									// show host actions on a together that starts in the future
+									isInFuture
+										&& authIsHost
+										&& (
 											<a
 												tabIndex={0}
 												className='yv-green-link'
@@ -295,21 +316,24 @@ class SubscriptionList extends Component {
 											>
 												<FormattedMessage id='invite others' />
 											</a>
+										)
+								}
+								{
+									isInFuture
+										&& (
 											<Link
-												to={Routes.togetherCreate({
+												to={Routes.subscriptionSettings({
 													username: auth && auth.userData && auth.userData.username,
 													plan_id: sub.plan_id,
-													query: {
-														subscription_id: id,
-													}
+													subscription_id: id,
 												})}
-												className='yv-gray-link'
+												className='yv-gray-link margin-left-auto'
 											>
-												<FormattedMessage id='change date' />
+												<FormattedMessage id='settings' />
 											</Link>
-										</div>
-									)
-							}
+										)
+								}
+							</div>
 						</div>
 					)
 				}

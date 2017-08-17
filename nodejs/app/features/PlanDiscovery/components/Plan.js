@@ -13,6 +13,7 @@ import { getBibleVersionFromStorage } from '../../../lib/readerUtils'
 import { getReferencesTitle } from '../../../lib/usfmUtils'
 import { PLAN_DEFAULT, selectImageFromList } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
+import calcTodayVsStartDt from '../../../lib/calcTodayVsStartDt'
 
 
 function Plan({
@@ -40,6 +41,7 @@ function Plan({
 
 	const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 	const isSaved = plan && plan.id && !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(plan.id) !== -1))
+	const isInFuture = start_dt && calcTodayVsStartDt(start_dt).isInFuture
 
 	let aboutLink,
 		myPlansLink,
@@ -86,7 +88,6 @@ function Plan({
 		plan_id = plan.id
 		totalDays = plan.total_days
 
-
 		refsDiv = (
 			<ul className='no-bullets plan-pieces'>
 				{
@@ -132,7 +133,6 @@ function Plan({
 						}
 			</ul>
 			)
-
 	}
 
 
@@ -147,9 +147,18 @@ function Plan({
 						<div className='margin-left-auto vertical-center'>
 							<ShareWidget />
 							<PlanMenu
-								subscriptionLink={subscriptionLink}
 								aboutLink={aboutLink}
-								onCatchUp={handleCatchUp}
+								// don't allow user to see subscription if it starts in the future
+								subscriptionLink={!isInFuture && subscriptionLink}
+								// no catchup for together
+								onCatchUp={!isInFuture && !together_id && handleCatchUp}
+								participantsLink={
+									together_id
+										&& Routes.togetherParticipants({
+											plan_id,
+											together_id
+										})
+								}
 							/>
 						</div>
 					</div>

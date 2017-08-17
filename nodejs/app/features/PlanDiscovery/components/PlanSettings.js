@@ -1,41 +1,25 @@
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
-import moment from 'moment'
 import { routeActions } from 'react-router-redux'
 import Toggle from 'react-toggle-button'
-import TimePicker from 'rc-time-picker'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
-import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import ProgressBar from '../../../components/ProgressBar'
+import PlanStartString from './PlanStartString'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
-import { getBibleVersionFromStorage } from '../../../lib/readerUtils'
 import Routes from '../../../lib/routes'
+import calcTodayVsStartDt from '../../../lib/calcTodayVsStartDt'
+import getCurrentDT from '../../../lib/getCurrentDT'
 
 
 
 class PlanSettings extends Component {
 
-	constructor(props) {
-		super(props)
-		const { subscription } = props
-		this.state = {
-			emailTime: subscription.email_delivery
-				? moment()
-						.hour(subscription.email_delivery.time.split(':')[0])
-						.minute(subscription.email_delivery.time.split(':')[1])
-				: moment()
-						.hour(0)
-						.minute(0),
-		}
-	}
-
 	componentDidMount() {
-		const { subSettings, subscription, dispatch } = this.props
+		const { dispatch } = this.props
 		dispatch(plansAPI.actions.settings.get({
 			id: this.subscription_id,
-			kind: 'activity_notifications'
 		}, { auth: true }))
 	}
 
@@ -53,37 +37,20 @@ class PlanSettings extends Component {
 		}))
 	}
 
-	handleTogetherNotifications = (notificationsOn) => {
+	handleTogetherNotifications = (notificationsOn, kind) => {
 		const { subscription, dispatch } = this.props
-		dispatch(plansAPI.actions.settings.put({
+		dispatch(plansAPI.actions.setting.put({
 			id: this.subscription_id,
-			kind: 'activity_notifications',
+			kind,
 		}, {
 			auth: true,
 			body: {
 				setting: Immutable
-					.fromJS(subscription.settings.activity_notifications)
+					.fromJS(subscription.settings[kind])
 					.setIn(['email'], notificationsOn)
-					.toJS()
+					.toJS(),
+				updated_dt: getCurrentDT(),
 			}
-		}))
-	}
-
-	handleEmailDeliveryChange = (emailDeliveryOn) => {
-		const { dispatch } = this.props
-		const { emailTime } = this.state
-		dispatch(plansAPI.actions.subscription.put({
-			id: this.subscription_id,
-		}, {
-			body: {
-				email_delivery: emailDeliveryOn
-					? {
-						time: `${emailTime.format('HH:mm')}+00:00`,
-						version_id: getBibleVersionFromStorage(),
-					}
-					: null
-			},
-			auth: true
 		}))
 	}
 
@@ -128,10 +95,10 @@ class PlanSettings extends Component {
 			startString,
 			endString,
 			subscription,
+			shareLink,
+			isAuthHost,
+			auth,
 		} = this.props
-		const {
-			emailTime,
-		} = this.state
 
 		this.together_id = subscription && subscription.together_id
 			? subscription.together_id
@@ -166,16 +133,22 @@ class PlanSettings extends Component {
 		const thumbAnimateRange = [1, 25]
 
 		let isPrivate = false
-		let emailDeliveryOn = false
-		let activityNotificationsOn = false
+		let commentNotificationsOn = false
+		let acceptNotificationsOn = false
+		let startsInFuture = false
 		let progressPercentage = 0
 		let progressString = ''
 		if (subscription) {
+			startsInFuture = calcTodayVsStartDt(subscription.start_dt).isInFuture
 			isPrivate = subscription.privacy === 'private'
-			emailDeliveryOn = !!(subscription.email_delivery)
-			activityNotificationsOn = this.together_id
+			commentNotificationsOn = this.together_id
 				&& subscription.settings
-				&& subscription.settings.activity_notifications.email
+				&& subscription.settings.comment_notifications
+				&& subscription.settings.comment_notifications.email
+			acceptNotificationsOn = this.together_id
+				&& subscription.settings
+				&& subscription.settings.accept_notifications
+				&& subscription.settings.accept_notifications.email
 			if (subscription.overall) {
 				progressPercentage = subscription.overall.completion_percentage
 				progressString = subscription.overall.progress_string
@@ -185,41 +158,79 @@ class PlanSettings extends Component {
 		return (
 			<div className='row large-6 medium-8 small-11' style={{ marginTop: 30 }}>
 				<div style={{ padding: '20px 0 35px 0' }}>
-					<div style={{ marginBottom: '10px' }}>
-						{ dayOfString }
-						{` (${progressPercentage}%)`}
-						&nbsp;&bull;&nbsp;
-						{ progressString }
-					</div>
-					<ProgressBar
-						percentComplete={progressPercentage}
-						height='6px'
-						color='#6ab750'
-						borderColor='white'
-						backgroundColor='#F4F4F4'
-					/>
-					<div className='space-between' style={{ marginTop: '5px' }}>
-						<p>{ startString }</p>
-						<p>{ endString }</p>
-					</div>
+					{
+						startsInFuture
+							?	(
+								<div className='vertical-center invitation-actions'>
+									<h4>
+										<PlanStartString start_dt={subscription && subscription.start_dt} />
+									</h4>
+									{
+										isAuthHost
+											&& (
+												<Link
+													to={Routes.togetherCreate({
+														username: auth && auth.userData && auth.userData.username,
+														plan_id: subscription && subscription.plan_id,
+														query: {
+															subscription_id: this.subscription_id,
+														}
+													})}
+													className='yv-gray-link'
+												>
+													<FormattedMessage id='change date' />
+												</Link>
+											)
+									}
+								</div>
+							)
+							: (
+								<div>
+									<div style={{ marginBottom: '10px' }}>
+										{ dayOfString }
+										{` (${progressPercentage}%)`}
+										&nbsp;&bull;&nbsp;
+										{ progressString }
+									</div>
+									<ProgressBar
+										percentComplete={progressPercentage}
+										height='6px'
+										color='#6ab750'
+										borderColor='white'
+										backgroundColor='#F4F4F4'
+									/>
+									<div className='space-between' style={{ marginTop: '5px' }}>
+										<p>{ startString }</p>
+										<p>{ endString }</p>
+									</div>
+								</div>
+							)
+					}
 				</div>
 				{
 					this.together_id &&
+					<div className='text-center flex-wrap horizontal-center' style={rowStyle}>
+						<div style={{ marginBottom: '15px', width: '100%' }}>
+							<FormattedMessage id='participants' />
+						</div>
+						<ParticipantsAvatarList
+							together_id={this.together_id}
+							statusFilter={['host', 'accepted']}
+						/>
+					</div>
+				}
+				{
+					this.together_id &&
+					isAuthHost &&
 					<div style={rowStyle}>
 						<div style={{ flex: 1, paddingRight: '40px' }}>
-							<h3><FormattedMessage id='notifications.together title' /></h3>
-							<ParticipantsAvatarList
-								together_id={this.together_id}
-							/>
-							<p style={{ marginTop: '0.5rem' }}>
-								<FormattedMessage id='notifications.together description' />
-							</p>
+							<h3><FormattedMessage id='notifications.participant accept' /></h3>
 						</div>
 						<div>
 							<Toggle
-								value={activityNotificationsOn}
+								value={acceptNotificationsOn}
 								onToggle={(val) => {
-									this.handleTogetherNotifications(!val)
+									this.handleTogetherNotifications(!val, 'accept_notifications')
 								}}
 								activeLabel=''
 								inactiveLabel=''
@@ -230,6 +241,33 @@ class PlanSettings extends Component {
 							/>
 						</div>
 					</div>
+				}
+				{
+					this.together_id &&
+					<div style={rowStyle}>
+						<div style={{ flex: 1, paddingRight: '40px' }}>
+							<h3><FormattedMessage id='notifications.participant comment' /></h3>
+						</div>
+						<div>
+							<Toggle
+								value={commentNotificationsOn}
+								onToggle={(val) => {
+									this.handleTogetherNotifications(!val, 'comment_notifications')
+								}}
+								activeLabel=''
+								inactiveLabel=''
+								colors={switchColors}
+								trackStyle={trackStyle}
+								thumbStyle={thumbStyle}
+								thumbAnimateRange={thumbAnimateRange}
+							/>
+						</div>
+					</div>
+				}
+				{
+					this.together_id
+						&& isAuthHost
+						&& shareLink
 				}
 				{
 					// privacy can't be changed with a pwf
@@ -261,42 +299,6 @@ class PlanSettings extends Component {
 						</div>
 					</div>
 				}
-				<div style={rowStyle}>
-					<div style={{ flex: 1, paddingRight: '40px' }}>
-						<h3><FormattedMessage id='plans.email delivery' /></h3>
-						<p>
-							<FormattedMessage id='plans.email delivery text' />
-						</p>
-					</div>
-					<div>
-						<Toggle
-							value={emailDeliveryOn}
-							onToggle={(val) => {
-								this.handleEmailDeliveryChange(!val)
-							}}
-							activeLabel=''
-							inactiveLabel=''
-							colors={switchColors}
-							trackStyle={trackStyle}
-							thumbStyle={thumbStyle}
-							thumbAnimateRange={thumbAnimateRange}
-						/>
-					</div>
-					{
-						emailDeliveryOn &&
-						<div className='vertical-center' style={{ marginTop: '20px', paddingLeft: '40px' }}>
-							<TimePicker
-								showSecond={false}
-								defaultValue={emailTime}
-								onChange={(value) => {
-									this.setState({ emailTime: value })
-									this.handleEmailDeliveryChange(true)
-								}}
-								use12Hours={true}
-							/>
-						</div>
-					}
-				</div>
 				{
 					// can't catch up on a pwf
 					!this.together_id &&
@@ -329,10 +331,18 @@ PlanSettings.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 	onCatchUp: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired,
+	isAuthHost: PropTypes.boolean.isRequired,
+	shareLink: PropTypes.node,
+	dayOfString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+	startString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+	endString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 }
 
 PlanSettings.defaultProps = {
-
+	shareLink: null,
+	dayOfString: null,
+	startString: null,
+	endString: null,
 }
 
 export default PlanSettings

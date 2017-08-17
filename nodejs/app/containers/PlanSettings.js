@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { getSettings } from '@youversion/api-redux/lib/endpoints/plans'
 // models
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
+import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
 // components
 import PlanSettingsComponent from '../features/PlanDiscovery/components/PlanSettings'
 // utils
@@ -13,10 +14,16 @@ import PlanSettingsComponent from '../features/PlanDiscovery/components/PlanSett
 class PlanSettings extends Component {
 
 	render() {
+		const { subscription, participants, auth } = this.props
+		const isAuthHost = participants.isAuthHost(
+			subscription
+			&& subscription.together_id
+		)
 		return (
 			<PlanSettingsComponent
 				{...this.props}
 				onStopPlan={this.handleStopPlan}
+				isAuthHost={isAuthHost}
 			/>
 		)
 	}
@@ -29,8 +36,9 @@ function mapStateToProps(state, props) {
 			subscription_id in getSubscriptionModel(state).byId
 			? getSubscriptionModel(state).byId[subscription_id]
 			: null,
-		serverLanguageTag: state.serverLanguageTag,
+		participants: getParticipantsUsers(state),
 		subSettings: getSettings(state),
+		serverLanguageTag: state.serverLanguageTag,
 		auth: state.auth
 	}
 }

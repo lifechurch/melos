@@ -98,6 +98,15 @@ const Routes = {
 
 		return route.get()
 	},
+	subscriptionSettings: ({ username, plan_id, slug, subscription_id, query = null }) => {
+
+		const route = new Route({
+			path: `/users/${username}/reading-plans/${plan_id}${slug ? `-${slug}` : ''}/subscription/${subscription_id}/edit`,
+			query,
+		})
+
+		return route.get()
+	},
 	subscriptionDay: ({ username, plan_id, slug, day, subscription_id, query = null }) => {
 
 		const route = new Route({

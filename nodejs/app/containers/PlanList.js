@@ -15,7 +15,7 @@ import Routes from '../lib/routes'
 class PlansList extends Component {
 
 	componentDidMount() {
-		const { dispatch, auth } = this.props
+		const { auth } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 	}
 
@@ -144,7 +144,6 @@ PlansList.propTypes = {
 	together: PropTypes.object.isRequired,
 	invitations: PropTypes.array,
 	auth: PropTypes.object.isRequired,
-	dispatch: PropTypes.func.isRequired,
 }
 
 PlansList.defaultProps = {
