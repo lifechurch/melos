@@ -105,13 +105,15 @@ class ParticipantsView extends Component {
 		const { userToDelete } = this.state
 
 		const day = query && query.day ? parseInt(query.day, 10) : null
+		const together_id = together && together.id
 		const acceptedParticipants = participants
-			&& participants.filter({ together_id: together && together.id, statusFilter: ['host', 'accepted'] })
+			&& participants.filter({ together_id, statusFilter: ['host', 'accepted'] })
 		const pendingParticipants = participants
-			&& participants.filter({ together_id: together && together.id, statusFilter: ['invited'] })
+			&& participants.filter({ together_id, statusFilter: ['invited'] })
 		const deleteUserData = participants
 			&& userToDelete
-			&& acceptedParticipants[userToDelete]
+			&& participants.filter({ together_id })
+			&& participants.filter({ together_id })[userToDelete]
 		const src = plan && plan.images ? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url : ''
 		this.isAuthHost = participants.isAuthHost(together && together.id)
 		const backLink = (
@@ -162,6 +164,7 @@ class ParticipantsView extends Component {
 								.toJS()
 					}
 					backLink={backLink}
+					day={day}
 				/>
 				<Modal
 					ref={(ref) => { this.modal = ref }}

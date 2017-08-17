@@ -31,7 +31,11 @@ function renderUser(friend, handleDelete = null, complete = null) {
 			}
 			{
 				handleDelete &&
-				<a tabIndex={0} onClick={handleDelete.bind(this, friend.id)}>
+				<a
+					tabIndex={0}
+					onClick={handleDelete.bind(this, friend.id)}
+					style={{ marginLeft: '10px' }}
+				>
 					<XMark width={13} height={13} />
 				</a>
 			}
@@ -39,7 +43,17 @@ function renderUser(friend, handleDelete = null, complete = null) {
 	)
 }
 
-function Participants({ planImg, accepted, pending, shareLink, handleDelete, backLink, activities, intl }) {
+function Participants({
+	planImg,
+	accepted,
+	pending,
+	shareLink,
+	handleDelete,
+	backLink,
+	activities,
+	day,
+	intl
+}) {
 
 	return (
 		<div className='pwf-flow pwf-invite'>
@@ -71,6 +85,12 @@ function Participants({ planImg, accepted, pending, shareLink, handleDelete, bac
 							placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
 						/>
 					</div>
+					{
+						day &&
+						<div className='text-center' style={{ width: '100%', margin: '10px 0' }}>
+							<FormattedMessage id='plans.day number' values={{ day }} />
+						</div>
+					}
 					<div className='users'>
 						{
 							!(accepted || pending)
@@ -140,6 +160,7 @@ Participants.propTypes = {
 	activities: PropTypes.object,
 	shareLink: PropTypes.string,
 	backLink: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	accepted: PropTypes.array,
 	pending: PropTypes.array,
 	handleDelete: PropTypes.func,

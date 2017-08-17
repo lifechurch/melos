@@ -286,7 +286,7 @@ const getLocale = nr.createTracer('fnGetLocale', (languageTag) => {
 })
 
 const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
-	return new Promise(nr.createTracer('fnGetRenderProps::promsie', (resolve) => {
+	return new Promise(nr.createTracer('fnGetRenderProps::promsie', (resolve, reject) => {
 		if (url !== null && typeof url === 'string' && url.length > 0) {
 			let getRoutes = null
 			try {
@@ -303,6 +303,7 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 				if (ex.code !== 'MODULE_NOT_FOUND') {
 					Raven.captureException(ex)
 				}
+				reject(ex)
 			}
 		}
 		return resolve({})
@@ -384,7 +385,9 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						}))
 
 						return null
-					}))
+					}), (err) => {
+						console.log('Render props error', err)
+					})
 				})
 
 				if (typeof action === 'function') {

@@ -6,6 +6,7 @@ import { routeActions } from 'react-router-redux'
 import Toggle from 'react-toggle-button'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import ProgressBar from '../../../components/ProgressBar'
+import ShareLink from '../../../components/ShareLink'
 import PlanStartString from './PlanStartString'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import Routes from '../../../lib/routes'
@@ -98,6 +99,7 @@ class PlanSettings extends Component {
 			shareLink,
 			isAuthHost,
 			auth,
+			intl,
 		} = this.props
 
 		this.together_id = subscription && subscription.together_id
@@ -156,7 +158,7 @@ class PlanSettings extends Component {
 		}
 
 		return (
-			<div className='row large-6 medium-8 small-11' style={{ marginTop: 30 }}>
+			<div className='row large-6 medium-8 small-11 plan-settings' style={{ marginTop: 30 }}>
 				<div style={{ padding: '20px 0 35px 0' }}>
 					{
 						startsInFuture
@@ -220,6 +222,22 @@ class PlanSettings extends Component {
 					</div>
 				}
 				{
+					this.together_id
+						&& isAuthHost
+						&& shareLink
+						&& (
+							<div className='text-center flex-wrap horizontal-center' style={rowStyle}>
+								<div style={{ width: '100%' }}>
+									<FormattedMessage id='invite others' />
+								</div>
+								<ShareLink
+									link={shareLink}
+									text={intl.formatMessage({ id: 'join together' })}
+								/>
+							</div>
+						)
+				}
+				{
 					this.together_id &&
 					isAuthHost &&
 					<div style={rowStyle}>
@@ -263,11 +281,6 @@ class PlanSettings extends Component {
 							/>
 						</div>
 					</div>
-				}
-				{
-					this.together_id
-						&& isAuthHost
-						&& shareLink
 				}
 				{
 					// privacy can't be changed with a pwf
@@ -331,11 +344,12 @@ PlanSettings.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 	onCatchUp: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired,
-	isAuthHost: PropTypes.boolean.isRequired,
+	isAuthHost: PropTypes.bool.isRequired,
 	shareLink: PropTypes.node,
 	dayOfString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	startString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	endString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+	intl: PropTypes.object.isRequired,
 }
 
 PlanSettings.defaultProps = {
