@@ -9,6 +9,7 @@ import Routes from '../../../lib/routes'
 // components
 import Card from '../../../components/Card'
 import Avatar from '../../../components/Avatar'
+import FormattedText from '../../../components/FormattedText'
 import AvatarList from '../../../widgets/AvatarList'
 import MomentHeader from './MomentHeader'
 import MomentFooter from './MomentFooter'
@@ -18,9 +19,6 @@ class Moment extends Component {
 	constructor(props) {
 		super(props)
 		const { userid, auth } = props
-		this.state = {
-
-		}
 
 		this.isAuthedMoment = userid &&
 			auth &&
@@ -51,8 +49,9 @@ class Moment extends Component {
 		const userLink = Routes.user({
 			username: user && user.username,
 		})
-		const cardFooter = likedIds && likedIds.length > 0 ?
-			(
+		const cardFooter = likedIds
+			&& likedIds.length > 0
+			? (
 				<div className='flex-wrap' style={{ width: '100%', padding: '0 17px' }}>
 					<AvatarList userids={likedIds} avatarWidth={26} />
 					{
@@ -62,8 +61,8 @@ class Moment extends Component {
 						</div>
 					}
 				</div>
-			) :
-			null
+			)
+			: null
 
 
 		return (
@@ -87,7 +86,12 @@ class Moment extends Component {
 							dt={dt}
 						/>
 						<div className='content'>
-							{ content }
+							{
+								content
+									&& typeof content === 'string'
+									? <FormattedText text={content} />
+									: content
+							}
 						</div>
 					</div>
 				</div>

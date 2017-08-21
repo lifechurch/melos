@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { routeActions } from 'react-router-redux'
-
+import { injectIntl } from 'react-intl'
 import Filter from '../../../../lib/filter'
 import VersionPickerModal from './VersionPickerModal'
 import Label from '../chapterPicker/Label'
@@ -19,11 +19,13 @@ class VersionPicker extends Component {
 		} = props
 
 		this.state = {
-			selectedLanguage: versions.selectedLanguage,
-			selectedVersion: version.id,
+			selectedLanguage: versions && versions.selectedLanguage,
+			selectedVersion: version && version.id,
 			languages,
-			versions: versions.byLang[versions.selectedLanguage].versions,
-			inputValue: version.local_abbreviation.toUpperCase(),
+			versions: versions
+				&& versions.selectedLanguage
+				&& versions.byLang[versions.selectedLanguage].versions,
+			inputValue: version && version.local_abbreviation.toUpperCase(),
 			langInputValue: null,
 			languagelistSelectionIndex: 0,
 			versionlistSelectionIndex: 0,
@@ -49,11 +51,29 @@ class VersionPicker extends Component {
 		const { languages, versions } = this.props
 		// build languages and versions index client side when the component renders
 		Filter.build('LanguageStore', [ 'name', 'local_name' ])
-		Filter.add('LanguageStore', languages)
 		Filter.build('VersionStore', [ 'title', 'local_title', 'local_abbreviation' ])
-		// versions.byLang["lang_tag"] is an object, so we need to pass as array for filter
-		const versionsObj = versions.byLang[versions.selectedLanguage].versions
-		Filter.add('VersionStore', Object.keys(versionsObj).map(key => { return versionsObj[key] }))
+		if (languages) {
+			Filter.add('LanguageStore', languages)
+		}
+		if (versions && versions.selectedLanguage) {
+			// versions.byLang["lang_tag"] is an object, so we need to pass as array for filter
+			const versionsObj = versions.byLang[versions.selectedLanguage].versions
+			Filter.add('VersionStore', Object.keys(versionsObj).map(key => { return versionsObj[key] }))
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { versions, languages } = this.props
+		// if languages and versions weren't available when componentDidMount
+		// then let's handle adding the filter
+		if (!languages && nextProps.languages) {
+			Filter.add('LanguageStore', nextProps.languages)
+		}
+		if (!versions && nextProps.versions) {
+			// versions.byLang["lang_tag"] is an object, so we need to pass as array for filter
+			const versionsObj = nextProps.versions.byLang[versions.selectedLanguage].versions
+			Filter.add('VersionStore', Object.keys(versionsObj).map(key => { return versionsObj[key] }))
+		}
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -83,7 +103,7 @@ class VersionPicker extends Component {
 				this.setState({
 					inputDisabled: false,
 					langInputValue: null,
-					inputValue: version.local_abbreviation.toUpperCase(),
+					inputValue: version && version.local_abbreviation.toUpperCase(),
 				})
 				// always reset to show versions when the modal is closing
 				if (classes === 'hide-versions') {
@@ -94,7 +114,14 @@ class VersionPicker extends Component {
 		}
 
 		// if the new version call is successful, let's close the modal
-		if (version.id !== prevProps.version.id && !alert && !listErrorAlert) {
+		if (version
+			&& (
+				!prevProps.version
+				|| version.id !== prevProps.version.id
+			)
+			&& !alert
+			&& !listErrorAlert
+		) {
 			// force the input to lose focus after successful load
 			if (document.activeElement !== document.body) document.activeElement.blur();
 
@@ -107,7 +134,12 @@ class VersionPicker extends Component {
 		}
 
 		// if we've changed languages, let's update the versions list
-		if ((versions.selectedLanguage !== prevProps.versions.selectedLanguage)) {
+		if (versions
+			&& (
+				!prevProps.versions
+				|| versions.selectedLanguage !== prevProps.versions.selectedLanguage
+			)
+		) {
 			this.setState({
 				versions: versions.byLang[versions.selectedLanguage].versions,
 			})
@@ -274,13 +306,14 @@ class VersionPicker extends Component {
 			selectedChapter,
 			dispatch,
 			localizedLink,
-			linkBuilder
+			linkBuilder,
+			onClick,
 		} = this.props
 
 		const {
 			versionlistSelectionIndex,
 			versionFiltering,
-			versions
+			versions,
 		} = this.state
 
 		const versionKeys = typeof versions === 'object' ? Object.keys(versions) : []
@@ -311,8 +344,12 @@ class VersionPicker extends Component {
 
 			if (keyEventName === 'Enter') {
 				event.preventDefault()
-				const chapURL = localizedLink(linkBuilder(versions[versionKeys[versionlistSelectionIndex]].id, selectedChapter.toLowerCase(), versions[versionKeys[versionlistSelectionIndex]].local_abbreviation.toLowerCase()))
-				dispatch(routeActions.push(chapURL))
+				if (onClick) {
+					onClick({ id: versions[versionKeys[versionlistSelectionIndex]].id })
+				} else {
+					const chapURL = localizedLink(linkBuilder(versions[versionKeys[versionlistSelectionIndex]].id, selectedChapter.toLowerCase(), versions[versionKeys[versionlistSelectionIndex]].local_abbreviation.toLowerCase()))
+					dispatch(routeActions.push(chapURL))
+				}
 			}
 
 		}
@@ -345,7 +382,8 @@ class VersionPicker extends Component {
 			recentVersions,
 			onClick,
 			extraClassNames,
-			linkBuilder
+			linkBuilder,
+			localizedLink
 		} = this.props
 
 		const {
@@ -382,7 +420,11 @@ class VersionPicker extends Component {
 							classes={classes}
 							languageList={languages}
 							versionList={versions}
-							versionsMap={(!this.props.versions.loading && selectedLanguage in this.props.versions.byLang) ? this.props.versions.byLang[selectedLanguage].map : []}
+							versionsMap={(!this.props.versions.loading
+								&& selectedLanguage in this.props.versions.byLang)
+								? this.props.versions.byLang[selectedLanguage].map
+								: []
+							}
 							recentVersions={recentVersions}
 							selectedLanguage={selectedLanguage}
 							selectedVersion={selectedVersion}
@@ -394,13 +436,21 @@ class VersionPicker extends Component {
 							versionlistSelectionIndex={versionlistSelectionIndex}
 							onMouseOver={this.handleListHover}
 							alert={listErrorAlert}
-							versionsLanguageName={this.props.languages[languageMap[selectedLanguage]].name}
+							versionsLanguageName={this.props.languages
+								&& selectedLanguage
+								&& languageMap
+								&& languageMap[selectedLanguage]
+								&& this.props.languages[languageMap[selectedLanguage]]
+								&& this.props.languages[languageMap[selectedLanguage]].name
+							}
 							versionFiltering={versionFiltering}
 							intl={intl}
 							cancel={this.handleCloseDropdown}
 							inputValue={langInputValue}
 							onClick={onClick}
 							linkBuilder={linkBuilder}
+							intl={intl}
+							localizedLink={localizedLink}
 						/>
 					</div>
 				</DropdownTransition>
@@ -456,4 +506,4 @@ VersionPicker.defaultProps = {
 	}
 }
 
-export default VersionPicker
+export default injectIntl(VersionPicker)

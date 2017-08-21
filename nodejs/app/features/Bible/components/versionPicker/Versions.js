@@ -69,8 +69,12 @@ function Versions(props) {
 								version.audio
 									?
 										<li className={`${active} ${focusClass}`}>
-											<div className={'small-10'} onMouseOver={handleMouseOver}>{ `${abbr} ${name}` }</div>
-											<div className={'small-2'}><AudioIcon color={(id === initialSelection) ? 'white' : 'gray'} /></div>
+											<div className={'small-10'} onMouseOver={handleMouseOver}>
+												{ `${abbr} ${name}` }
+											</div>
+											<div className={'small-2'}>
+												<AudioIcon color={(id === initialSelection) ? 'white' : 'gray'} />
+											</div>
 										</li>
 
 									:
@@ -88,14 +92,18 @@ function Versions(props) {
 							onClick={handleClick}
 						>
 							{
-									// show audio icon next to name
-									version.audio ?
-										<li className={`${active}`}>
-											<div className={'small-10'} >{ `${abbr} ${name}` }</div>
-											<div className={'small-2'}><AudioIcon color={(id === initialSelection) ? 'white' : 'gray'} /></div>
-										</li>
+								// show audio icon next to name
+								version.audio
+									?
+									<li className={`${active}`}>
+										<div className={'small-10'}>
+											{ `${abbr} ${name}` }</div>
+										<div className={'small-2'}>
+											<AudioIcon color={(id === initialSelection) ? 'white' : 'gray'} />
+										</div>
+									</li>
 									:
-										<li className={`${active}`} >{ `${abbr} ${name}` }</li>
+									<li className={`${active}`} >{ `${abbr} ${name}` }</li>
 								}
 						</Link>
 						)

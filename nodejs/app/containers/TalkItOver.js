@@ -167,7 +167,6 @@ class TalkItOver extends Component {
 	}
 
 	renderMoment = (moment) => {
-
 		return (
 			<Moment
 				userid={moment.user_id}

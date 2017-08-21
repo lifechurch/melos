@@ -17,7 +17,6 @@ import getAudioModel from '@youversion/api-redux/lib/models/audio'
 import Chapter from '../features/Bible/components/content/Chapter'
 import VerseAction from '../features/Bible/components/verseAction/VerseAction'
 import ChapterCopyright from '../features/Bible/components/content/ChapterCopyright'
-import AudioPopup from '../features/Bible/components/audio/AudioPopup'
 // utils
 import { getBibleVersionFromStorage, chapterifyUsfm, buildCopyright, isVerseOrChapter, parseVerseFromContent } from '../lib/readerUtils'
 import { getReferencesTitle } from '../lib/usfmUtils'
@@ -29,7 +28,7 @@ class BibleContent extends Component {
 		super(props)
 		this.state = {
 			usfm: props.usfm,
-			audioPlaying: false,
+			version_id: props.version_id || getBibleVersionFromStorage(),
 			showFullChapter: false,
 			verseSelection: {},
 			deletableColors: [],
@@ -37,41 +36,45 @@ class BibleContent extends Component {
 	}
 
 	componentDidMount() {
-		const { usfm } = this.state
-
-		this.getBibleData(usfm)
+		const { usfm, version_id } = this.state
+		this.getBibleData(usfm, version_id)
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const { usfm } = this.state
+		const { usfm, version_id } = this.state
 		// if we're updating the usfm from props then let's get it
 		if (usfm && nextProps.usfm && this.props.usfm !== nextProps.usfm && usfm !== nextProps.usfm) {
-			this.getBibleData(nextProps.usfm)
+			this.getBibleData(nextProps.usfm, version_id)
+		}
+		// if we're updating the version from props then let's get it
+		if (version_id && nextProps.version_id && this.props.version_id !== nextProps.version_id && version_id !== nextProps.version_id) {
+			this.getBibleData(usfm, nextProps.version_id)
 		}
 	}
 
-	getReference = (usfm, versionID = null) => {
-		const { bible, dispatch } = this.props
+	getReference = (usfm, version_id = null) => {
+		const { bible, onUpdateVersion, onUpdateUsfm, dispatch } = this.props
 		if (usfm) {
-			this.setState({ usfm })
+			this.setState({ usfm, version_id })
+			onUpdateUsfm(usfm)
 			// if we don't already have it in app state,
 			// let's get it
-			if (!(bible && bible.pullRef(usfm, versionID))) {
-				dispatch(bibleReference(usfm))
+			if (!(bible && bible.pullRef(usfm, version_id))) {
+				dispatch(bibleReference(usfm, version_id))
 			}
 		}
 	}
 
-	getBibleData = (usfm) => {
-		const { bible, moments, dispatch, versionID, audio } = this.props
+	getBibleData = (usfm, version_id) => {
+		const { bible, moments, dispatch, audio } = this.props
 
-		this.getReference(usfm, this.version_id)
+		this.getReference(usfm, version_id)
 
-		if (!(bible && Immutable.fromJS(bible).hasIn(['versions', this.version_id]))) {
+		if (!(bible && Immutable.fromJS(bible).hasIn(['versions', 'byId', version_id]))) {
 			dispatch(bibleAction({
 				method: 'version',
 				params: {
-					id: this.version_id,
+					id: version_id,
 				}
 			}))
 		}
@@ -80,7 +83,7 @@ class BibleContent extends Component {
 				method: 'verse_colors',
 				params: {
 					usfm: chapterifyUsfm(usfm),
-					version_id: this.version_id
+					version_id
 				},
 				auth: true,
 			}))
@@ -97,19 +100,11 @@ class BibleContent extends Component {
 				auth: true,
 			}))
 		}
-		if (usfm && !(audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm)]))) {
-			dispatch(audioAction({
-				method: 'chapter',
-				params: {
-					reference: chapterifyUsfm(usfm),
-					version_id: this.version_id
-				},
-			}))
-		}
 	}
 
 	handleVerseSelect = ({ verses }) => {
 		const { hosts, moments } = this.props
+		const { version_id } = this.state
 
 		if (verses) {
 			const { title, usfm } = getReferencesTitle({
@@ -120,7 +115,7 @@ class BibleContent extends Component {
 				usfms: verses,
 				fullContent: this.ref ? this.ref.content : null
 			})
-			const refUrl = `${hosts.railsHost}/bible/${this.version_id}/${usfm}`
+			const refUrl = `${hosts.railsHost}/bible/${version_id}/${usfm}`
 
 			// get the verses that are both selected and already have a highlight
 			// color associated with them, so we can allow the user to delete them
@@ -136,14 +131,14 @@ class BibleContent extends Component {
 			})
 			this.setState({
 				deletableColors,
-				verseSelection: Immutable.fromJS({}).merge({
+				verseSelection: {
 					human: title,
 					url: refUrl,
 					text,
 					verseContent: html,
 					verses,
-					version: this.version_id
-				}).toJS()
+					version: version_id
+				}
 			})
 		}
 	}
@@ -157,7 +152,6 @@ class BibleContent extends Component {
 
 	render() {
 		const {
-			versionID,
 			bible,
 			moments,
 			audio,
@@ -173,26 +167,17 @@ class BibleContent extends Component {
 			dispatch,
 			intl
 		} = this.props
-		const { usfm, verseSelection, deletableColors } = this.state
+		const { usfm, version_id, verseSelection, deletableColors } = this.state
 
-		this.ref = bible && bible.pullRef(usfm, versionID)
-			? bible.pullRef(usfm, versionID)
+		this.ref = bible && bible.pullRef(usfm, version_id)
+			? bible.pullRef(usfm, version_id)
 			: null
-		this.version_id = versionID || getBibleVersionFromStorage()
-		this.version = bible && Immutable.fromJS(bible).hasIn(['versions', `${this.version_id}`, 'response'])
-			? Immutable.fromJS(bible).getIn(['versions', `${this.version_id}`, 'response']).toJS()
+		this.version = bible && Immutable.fromJS(bible).hasIn(['versions', 'byId', `${version_id}`, 'response'])
+			? Immutable.fromJS(bible).getIn(['versions', 'byId', `${version_id}`, 'response']).toJS()
 			: null
-		const hasAudio = audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm)])
 
 		return (
 			<div className='bible-content'>
-				<div className='plan-reader-heading'>
-					<AudioPopup
-						audio={hasAudio ? Immutable.fromJS(audio).getIn(['chapter', chapterifyUsfm(usfm)]).toJS() : null}
-						hosts={hosts}
-						enabled={hasAudio}
-					/>
-				</div>
 				{
 					showContent &&
 					<Chapter

@@ -11,13 +11,13 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 // components
-import BibleContent from './BibleContent'
+import BibleWidget from './BibleWidget'
 import TalkItOver from './TalkItOver'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
 import PlanRef from '../features/PlanDiscovery/components/planReader/PlanRef'
 // utils
-import { isVerseOrChapter, getBibleVersionFromStorage } from '../lib/readerUtils'
+import { isVerseOrChapter, getBibleVersionFromStorage, getReferencesTitle } from '../lib/readerUtils'
 import { isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 
@@ -200,7 +200,10 @@ class PlanReaderView extends Component {
 
 				case 'reference':
 					readerContent = (
-						<BibleContent usfm={this.segment.content} />
+						<BibleWidget
+							customHeaderClass='plan-reader-heading'
+							usfm={this.segment.content}
+						/>
 					)
 					break
 

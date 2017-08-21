@@ -99,7 +99,7 @@ class ParticipantsAvatarList extends Component {
 					avatarList.push(
 						<div
 							className='item'
-							key={participant.id}
+							key={`${together_id}-${participant.id}`}
 							// set the margin as a ratio of the width
 							style={{
 								marginRight: `${avatarWidth * 0.37}px`,
@@ -140,12 +140,12 @@ class ParticipantsAvatarList extends Component {
 						usersToShow
 							&& Object.keys(usersToShow).length > avatarList.length
 							? (
-								<div className='yv-green-link'>
+								<div className='yv-green-link' style={{ fontSize: `${avatarWidth * 0.43}px` }}>
 									{`+ ${Object.keys(usersToShow).length - avatarList.length}`}
 								</div>
 							)
 							: (
-								<div className='yv-green-link'>
+								<div className='yv-green-link' style={{ fontSize: `${avatarWidth * 0.43}px` }}>
 									<FormattedMessage id='x participants' values={{ number: avatarList.length }} />
 								</div>
 							)

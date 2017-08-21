@@ -45,7 +45,7 @@ class AudioPopup extends Component {
 
 
 	render() {
-		const { enabled, audio, hosts } = this.props
+		const { enabled, audio, hosts, startTime, stopTime } = this.props
 		const { percentComplete, hasStandalone, isOpen } = this.state
 		// <a onClick={this.openInNewWindow}><FormattedMessage id="Reader.header.audio label" /></a>
 		return (
@@ -78,6 +78,8 @@ class AudioPopup extends Component {
 						<AudioPlayer
 							audio={audio}
 							hosts={hosts}
+							startTime={startTime}
+							stopTime={stopTime}
 							onTimeChange={this.handleTimeChange}
 							hasStandalone={hasStandalone}
 							onResumeFromStandalone={this.handleResumeFromStandalone}
@@ -93,11 +95,15 @@ AudioPopup.propTypes = {
 	audio: PropTypes.object.isRequired,
 	hosts: PropTypes.object.isRequired,
 	enabled: PropTypes.bool.isRequired,
+	startTime: PropTypes.number,
+	stopTime: PropTypes.number,
 }
 
 AudioPopup.defaultProps = {
 	audio: {},
-	hosts: {}
+	hosts: {},
+	startTime: 0,
+	stopTime: null,
 }
 
 export default AudioPopup

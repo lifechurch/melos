@@ -10,10 +10,8 @@ self.addEventListener('activate', function() {
 })
 
 self.addEventListener('fetch', function(e) {
-	console.log('[ServiceWorker] Fetch', e.request.url)
 	const request = e.request
 	const headers = request.headers
-
 	// determine what's cacheable
 	// api call from youversion
 	// no authorization in header or does but is not going to send auth to server
@@ -21,7 +19,6 @@ self.addEventListener('fetch', function(e) {
 	const isCacheable = headers.has('X-YouVersion-Client')
 		&& (!(headers.has('authorization')) || headers.has('X-ServiceWorker-Cacheable'))
 		&& request.method === 'GET'
-	console.log('[ServiceWorker] isCacheable', isCacheable)
 	
 	if (isCacheable) {
 		return e.respondWith(

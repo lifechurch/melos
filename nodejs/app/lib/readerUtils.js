@@ -84,29 +84,30 @@ export function handleVerseSelectionClear(refToThis, refToChapter) {
 }
 
 export function getVerseAudioTiming(startRef, endRef, timing) {
-	let startTime = null
-	let endTime = null
+	const audioTiming = {
+		startTime: null,
+		endTime: null
+	}
 
 	if (!Array.isArray(timing)) {
-		// console.warn('invalid param: timing must be an array')
-		return null
+		return audioTiming
 	}
 
 	for (let i = 0; i < timing.length; i++) {
 		const ref = timing[i]
-		if (startRef.toString() === ref.usfm.toString()) {
-			startTime = ref.start
+		if (startRef.toString().toLowerCase() === ref.usfm.toString().toLowerCase()) {
+			audioTiming.startTime = ref.start
 		}
-		if (endRef.toString() === ref.usfm.toString()) {
-			endTime = ref.end
+		if (endRef.toString().toLowerCase() === ref.usfm.toString().toLowerCase()) {
+			audioTiming.endTime = ref.end
 		}
 
-		if (startTime && endTime) {
-			return { startTime, endTime }
+		if (audioTiming.startTime && audioTiming.endTime) {
+			return audioTiming
 		}
 	}
 
-	return { startTime, endTime }
+	return audioTiming
 }
 
 
@@ -207,7 +208,7 @@ export function isVerseOrChapter(usfm) {
 		return FALLBACK_VALUE
 	}
 
-	const usfmParts = usfm.split('.')
+	const usfmParts = usfm.split('+')[0].split('.')
 
 	let isVerse = usfmParts.length >= 4
 	let isChapter = usfmParts.length === 2

@@ -87,19 +87,18 @@
 	z-index: 0;
 	display: inline-flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 	width: 100%;
+	position: static;
 	@media @medium-up {
 		margin-bottom: 25px;
 	}
-
+	.audio-popup {
+		margin-left: auto;
+	}
 	.ref-heading {
-		color: @font-grey;
 		font-weight: bolder;
-
-		>span {
-			margin-right: 10px;
-		}
+		margin-right: 20px;
 	}
 
 	.trigger-button {
