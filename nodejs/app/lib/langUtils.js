@@ -64,34 +64,6 @@ export function getCurrentUserLocale({ localeFromUrl, localeFromCookie, localeFr
 	return final
 }
 
-// function getLocale(languageTag) {
-// 	let final = {}
-//
-// 	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || typeof availableLocales[languageTag] === 'undefined') {
-// 		final = { locale: availableLocales['en-US'], source: 'default' }
-// 	} else {
-// 		final = { locale: availableLocales[languageTag], source: 'param' }
-// 	}
-//
-// 	// Get the appropriate set of localized strings for this locale
-// 	final.messages = require(`./locales/${final.locale}.json`);
-//
-// 	for (const lc of localeList) {
-// 		if (lc.locale === final.locale) {
-// 			final.locale2 = lc.locale2
-// 			final.locale3 = lc.locale3
-// 			final.momentLocale = lc.momentLocale
-// 			final.planLocale = planLocales[lc.locale]
-// 		}
-// 	}
-// 	// Get the appropriate react-intl locale data for this locale
-// 	const localeData = require(`react-intl/locale-data/${final.locale2}`);
-// 	final.data = localeData;
-//
-// 	moment.locale(final.momentLocale)
-// 	return final;
-// }
-
 /**
  * Gets the Locale of the User by checking the
  * following places in order:
@@ -105,16 +77,6 @@ export function getCurrentUserLocale({ localeFromUrl, localeFromCookie, localeFr
  * @param {string} localeFromUser - the ISO 639-1 language code from the User's profile
  * @return
  */
-
- // languageTag
- //  fromCookie
- //  fromProfile
- //  fromUrl = req.params[0].split('/')[0];
- // acceptLangHeader = req.headers['accept-language']
- // { cookie, user, url }
- //
- // moment.locale(final.momentLocale)
- //
 export function getLocale({ localeFromUrl, localeFromCookie, localeFromUser, acceptLangHeader }) {
 	const localesFromHeader = getLocalesFromHeader(acceptLangHeader)
 	const final = getCurrentUserLocale({ localeFromUrl, localeFromCookie, localeFromUser, localesFromHeader })
