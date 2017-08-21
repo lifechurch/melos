@@ -11,15 +11,13 @@
 }
 
 .yv-lang-toggle {
-  color: #444;
+  color: #BBB;
   font-size: 11px;
-  margin-right: 10px;
-	border: solid 1px #444;
+	border: solid 1px #DDD;
 	padding: 3px 10px;
 	border-radius: 5px;
 
 	@media @medium-only, @small-only {
-		margin-right: 0 !important;
 		margin-bottom: 20px;
 	}
 }
@@ -65,7 +63,6 @@
 		justify-content: space-between;
 		align-items: center;
 		border-top: 1px solid #DDD;
-		box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
 		background-color: white;
 		transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 		z-index: 51;
@@ -155,8 +152,10 @@
 			width: 48px;
 
 			&.first-icon {
+				margin: 0 7px;
+
 				@media @medium-only, @small-only {
-					margin-right: 10px;
+					margin: 0 10px 0 0;
 				}
 			}
 		}

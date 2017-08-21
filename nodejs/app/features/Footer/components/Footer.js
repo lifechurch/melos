@@ -158,13 +158,10 @@ class Footer extends Component {
 						<div className="right">
 							<a className="yv-lang-toggle" target="_self" onClick={this.handleLangClick}>
 								{locale.nativeName}
-								&nbsp;
-								<DropDownArrow height={10} dir={langSelectorOpen ? 'up' : 'down' } />
+								<DropDownArrow fill="#DDDDDD" height={10} dir={langSelectorOpen ? 'up' : 'down' } />
 							</a>
 							<div className="show-for-medium-down" style={{ width: '100%' }} />
-
 							<a target="_self" href={localizedLink('/app', serverLanguageTag)}><img className="bible-icon first-icon" src={`/assets/icons/bible/58/${serverLanguageTag}.png`} /></a>
-							&nbsp;
 							<a target="_self" href={localizedLink('/kids', serverLanguageTag)}><img className="bible-icon" src="/assets/BibleAppForKids-icon-48x48.png" /></a>
 						</div>
 					</div>

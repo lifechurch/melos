@@ -25,8 +25,12 @@ function isValidLocale(locale) {
 	return false
 }
 
-function getLocalePath(locale) {
+function getLocalePath(locale, redirectToRoot) {
 	const pathParts = window.location.pathname.split('/')
+	if (redirectToRoot) {
+		return `/${locale}/`
+	}
+
 	if (pathParts.length > 1 && isValidLocale(pathParts[1])) {
 		pathParts[1] = locale
 	} else {
@@ -47,15 +51,25 @@ class LangSelector extends Component {
 	handleLanguageChange = (locale) => {
 		return () => {
 			const apiLocale = getAPILocale(locale)
-			const { dispatch, auth } = this.props
-			dispatch(ActionCreators.changeLanguage({
-				user_id: auth.userData.userid,
-				language_tag: locale.locale2,
-				locale: apiLocale,
-				redirect: false
-			})).then(() => {
-				window.location.pathname = getLocalePath(apiLocale)
-			})
+
+			const {
+				dispatch,
+				auth,
+				redirectToRoot
+			} = this.props
+
+			if (typeof auth !== 'undefined' && typeof auth.userData !== 'undefined' && typeof auth.userData.userid !== 'undefined') {
+				dispatch(ActionCreators.changeLanguage({
+					user_id: auth.userData.userid,
+					language_tag: locale.locale2,
+					locale: apiLocale,
+					redirect: false
+				})).then(() => {
+					window.location.pathname = getLocalePath(apiLocale, redirectToRoot)
+				})
+			} else {
+				window.location.pathname = getLocalePath(apiLocale, redirectToRoot)
+			}
 		}
 	}
 
@@ -121,11 +135,14 @@ class LangSelector extends Component {
 }
 
 LangSelector.propTypes = {
-
+	dispatch: PropTypes.func.isRequired,
+	auth: PropTypes.object,
+	redirectToRoot: PropTypes.bool
 }
 
 LangSelector.defaultProps = {
-
+	auth: {},
+	redirectToRoot: false
 }
 
 export default LangSelector
