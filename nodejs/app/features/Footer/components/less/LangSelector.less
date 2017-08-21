@@ -3,10 +3,8 @@ body.modal-open {
 }
 
 .yv-lang-selector {
-	overflow: hidden;
-	height: 100%;
+	margin-top:30px;
 	width: 100%;
-	max-width: 71.42857rem;
 
 	h2 {
 		color: #444;
@@ -17,54 +15,6 @@ body.modal-open {
 	}
 
 	.card {
-		height: 100%;
-		overflow: scroll;
 		padding-bottom: 85px;
-	}
-}
-
-.lang-modal-container {
-	overflow: hidden;
-
-	.yv-modal {
-		z-index: 50;
-		transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-		align-items: flex-start;
-		transform: translateY(0);
-		padding-top: 70px !important;
-		padding-bottom: 80px !important;
-		width: 100%;
-		height: 100%;
-		background-color: #f4f4f4;
-		overflow: hidden;
-
-		&.hide-modal {
-			display: flex !important;
-			transform: translateY(100%);
-		}
-
-		.lang-modal {
-			width: 100%;
-			height: 100%;
-			margin-bottom: 0px;
-			overflow: hidden;
-		}
-
-		.modal-heading {
-	    display: flex;
-	    justify-content: flex-end;
-	    max-width: 71.42857rem;
-	    margin-left: auto;
-	    margin-right: auto;
-	    padding-right: 10px;
-	    padding-top: 10px;
-			width: auto;
-			margin-top: 0;
-			position: static;
-
-			svg polygon {
-				fill: black;
-			}
-		}
 	}
 }

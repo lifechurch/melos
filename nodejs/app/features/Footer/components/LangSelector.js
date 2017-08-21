@@ -104,7 +104,7 @@ class LangSelector extends Component {
 		return (
 			<div className="yv-lang-selector">
 				<div className="row">
-					<div className="medium-6 medium-centered column">
+					<div className="medium-8 large-6 medium-centered column">
 						<h2 className="title"><FormattedMessage id="containers.SelectLanguage.choose" /></h2>
 						<Card>
 							<ul className='side-nav language-selector'>

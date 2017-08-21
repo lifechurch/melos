@@ -1,7 +1,1 @@
 != @footer_from_node['html']
-
-- unless ENV['RACK_ENV'] =~ /production/i
-  .row.full
-    .medium-12.columns.text-right
-      %small.environment
-        ="Non-production deployment, pointing at: #{Cfg.try :api_root}"

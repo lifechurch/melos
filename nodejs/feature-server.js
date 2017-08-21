@@ -252,6 +252,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 			acceptLangHeader: params.acceptLangHeader
 		})
 
+		startingState.locale = { nativeName: Locale.nativeName }
 		moment.locale(Locale.momentLocale)
 
 		try {

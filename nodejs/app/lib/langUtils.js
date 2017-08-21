@@ -125,6 +125,7 @@ export function getLocale({ localeFromUrl, localeFromCookie, localeFromUser, acc
 			final.locale2 = lc.locale2
 			final.locale3 = lc.locale3
 			final.momentLocale = lc.momentLocale
+			final.nativeName = lc.nativeName
 		}
 	})
 

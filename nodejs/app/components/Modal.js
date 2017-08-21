@@ -20,6 +20,7 @@ class Modal extends Component {
 		}
 		this.setState({ show: false })
 	}
+
 	handleOpen = () => {
 		this.setState({ show: true })
 	}
@@ -32,11 +33,11 @@ class Modal extends Component {
 			<div className='yv-modal-container'>
 				{
 					showBackground &&
-					<div className={`yv-modal-background ${show ? '' : 'hide-modal'}`} />
+					<div className={`yv-modal-background ${show ? '' : 'yv-hide-modal'}`} />
 				}
-				<div className={`yv-modal ${show ? '' : 'hide-modal'}` }>
+				<div className={`yv-modal ${show ? '' : 'yv-hide-modal'}` }>
 					<div className={customClass}>
-						<ClickTarget handleOutsideClick={this.handleClose}>
+						<ClickTarget handleOutsideClick={show && this.handleClose}>
 							<div className='modal-heading'>
 								{ heading }
 								<a tabIndex={0} className='margin-left-auto' onClick={this.handleClose}>

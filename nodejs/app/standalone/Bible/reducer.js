@@ -34,7 +34,8 @@ const rootReducer = combineReducers({
 	serverLanguageTag: (state = {}, action) => { return state },
 	altVersions: (state = {}, action) => { return state },
 	hosts: (state = {}, action) => { return state },
-	passage: passage
+	locale: (state = {}, action) => { return state },
+	passage
 })
 
 export default rootReducer

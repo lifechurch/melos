@@ -3,46 +3,43 @@
 	margin-top: 30px;
 }
 
+.yv-close-x {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 15px !important;
+}
+
 .yv-lang-toggle {
   color: #444;
-  font-size: 14px;
+  font-size: 11px;
   margin-right: 10px;
+	border: solid 1px #444;
+	padding: 3px 10px;
+	border-radius: 5px;
+
+	@media @medium-only, @small-only {
+		margin-right: 0 !important;
+		margin-bottom: 20px;
+	}
 }
 
 .yv-footer {
 	overflow: hidden;
-
-	.yv-modal {
-		z-index: 50;
-		transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-		align-items: flex-end;
-		transform: translateY(0);
-
-		&.hide-modal {
-			display: flex !important;
-			transform: translateY(250px);
-		}
-
-		.footer-modal {
-			margin-bottom: 80px;
-		}
-
-		.modal-heading {
-			position: absolute;
-			justify-content: flex-end;
-			width: 530px;
-			margin-top: 10px;
-			svg polygon {
-				fill: black;
-			}
-		}
-	}
 
 	.yv-social-card {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 		width: 450px;
+
+		@media @medium-only, @small-only {
+			width: 100%;
+			max-width:500px;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+
 		a {
 			font-size: 14px;
 			color: #BBB;
@@ -53,6 +50,10 @@
 
 			svg {
 				margin-bottom: 10px;
+
+				@media @medium-only, @small-only {
+					margin-top: 10px;
+				}
 			}
 		}
 	}
@@ -69,6 +70,14 @@
 		transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 		z-index: 51;
 
+		@media @medium-only, @small-only {
+			flex-wrap: wrap;
+		}
+
+		@media @small-only {
+			padding-bottom: 65px;
+		}
+
 		&.yv-footer-fixed {
 			position: fixed;
 			bottom: 0;
@@ -76,6 +85,12 @@
 			right: 0;
 			width: 100%;
 			transform: translateY(0);
+
+			@media @medium-only, @small-only {
+				transform: none;
+				position: static;
+				bottom: auto;
+			}
 		}
 
 		&.yv-footer-hidden {
@@ -85,33 +100,65 @@
 			right: 0;
 			width: 100%;
 			transform: translateY(110%);
+
+			@media @medium-only, @small-only {
+				transform: none;
+				position: static;
+				bottom: auto;
+			}
 		}
 
 		>.left {
-			width: 25%;
+			width: 27%;
 			text-align: left;
 			display: flex;
 			justify-content: flex-start;
+
+			@media @medium-only, @small-only {
+				width: 100%;
+				justify-content: center;
+				text-align: center;
+				padding: 20px 0;
+			}
 		}
 
 		>.center {
-			width: 50%;
+			width: 46%;
 			text-align: center;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+
+			@media @medium-only, @small-only {
+				width: 100%;
+			}
 		}
 
 		>.right {
-			width: 25%;
+			width: 27%;
 			text-align: right;
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
+
+			@media @medium-only, @small-only {
+				justify-content: center;
+				text-align: center;
+				width: 100%;
+				padding-top: 20px;
+				flex-wrap: wrap;
+			}
 		}
 
 		.bible-icon {
 			height: 48px;
+			width: 48px;
+
+			&.first-icon {
+				@media @medium-only, @small-only {
+					margin-right: 10px;
+				}
+			}
 		}
 
 		.green-links {
@@ -119,6 +166,10 @@
 				color: @green;
 				&:hover {
 					text-decoration: underline;
+				}
+
+				@media @medium-only, @small-only {
+					padding: 5px 5px;
 				}
 			}
 		}
@@ -138,6 +189,10 @@
 			display: flex;
 			justify-content: center;
 			font-size: 14px;
+
+			@media @medium-only, @small-only {
+				flex-wrap: wrap;
+			}
 
 			li {
 				margin-right: 12px;

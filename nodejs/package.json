@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/api-redux": "^0.3.10",
+    "@youversion/api-redux": "^0.3.45",
     "@youversion/token-storage": "^0.0.36",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
@@ -92,7 +92,7 @@
     "rtl-detect": "^1.0.0",
     "run-sequence": "^1.1.5",
     "serve-favicon": "~2.3.0",
-    "smooth-scroll": "github:cferdinandi/smooth-scroll",
+    "smooth-scroll": "^11.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },

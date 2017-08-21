@@ -27,3 +27,37 @@
 		.dropdown-show;
 	}
 }
+
+.yv-fullscreen-modal-container > .modal {
+	position: fixed;
+	width: 100%;
+	@media @large-up {
+		top: 70px !important;
+		left: 0;
+	}
+	@media @medium-only {
+		top: 44px !important;
+	}
+	@media @small-only {
+		top: 0px !important;
+	}
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.yv-fullscreen-modal-content {
+	background-color: #f4f4f4;
+	height: 100%;
+	overflow: scroll;
+}
+
+.yv-popup-modal-container > .modal {
+	transform: translate(-50%, -123%) !important;
+	padding: 25px 25px 10px 25px;
+
+	@media @medium-only, @small-only {
+		width: 100%;
+		max-width: 500px;
+	}
+}

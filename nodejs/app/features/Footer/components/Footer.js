@@ -3,13 +3,15 @@ import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
 import YouVersion from '../../../components/YVLogo'
-import Modal from '../../../components/Modal'
+import DropdownTransition from '../../../components/DropdownTransition'
 import Card from '../../../components/Card'
 import FacebookLogo from '../../../components/FacebookLogo'
 import TwitterLogo from '../../../components/TwitterLogo'
 import InstagramLogo from '../../../components/InstagramLogo'
 import YouTubeLogo from '../../../components/YouTubeLogo'
 import PinterestLogo from '../../../components/PinterestLogo'
+import DropDownArrow from '../../../components/DropDownArrow'
+import XMark from '../../../components/XMark'
 import { localizedLink } from '../../../lib/routeUtils'
 import LangSelector from './LangSelector'
 
@@ -19,7 +21,9 @@ class Footer extends Component {
 		this.didScroll = false
 		this.state = {
 			state: 'fixed',
-			lastScrollTop: 0
+			lastScrollTop: 0,
+			langSelectorOpen: false,
+			socialOpen: false
 		}
 	}
 
@@ -36,26 +40,24 @@ class Footer extends Component {
 		}, 250)
 	}
 
-	handleSocialClick = () => {
-		this.modal.handleOpen()
+	handleLangClick = () => {
+		this.setState((state) => {
+			return { langSelectorOpen: !state.langSelectorOpen }
+		})
 	}
 
-	handleLangClick = () => {
-		try {
-			document.getElementsByTagName('body')[0].classList.add('modal-open')
-		} catch (ex) {
-			// ignore
-		}
-
-		this.langModal.handleOpen()
+	handleSocialClick = () => {
+		this.setState((state) => {
+			return { socialOpen: !state.socialOpen }
+		})
 	}
 
 	handleLangClose = () => {
-		try {
-			document.getElementsByTagName('body')[0].classList.remove('modal-open')
-		} catch (ex) {
-			// ignore
-		}
+		this.setState({ langSelectorOpen: false })
+	}
+
+	handleSocialClose = () => {
+		this.setState({ socialOpen: false })
 	}
 
 	handleScroll = () => {
@@ -68,7 +70,7 @@ class Footer extends Component {
 		} else if (lastScrollTop < scrollTop) {
 			// scroll down
 			state = 'hidden'
-			this.modal.handleClose()
+			this.handleSocialClose()
 		} else {
 			// scroll up
 			state = 'fixed'
@@ -83,8 +85,18 @@ class Footer extends Component {
 	}
 
 	render() {
-		const { serverLanguageTag, bibleConfiguration } = this.props
-		const { state } = this.state
+		const {
+			serverLanguageTag,
+			bibleConfiguration,
+			locale
+		} = this.props
+
+		const {
+			state,
+			langSelectorOpen,
+			socialOpen
+		} = this.state
+
 		const {
 			response: {
 				totals: {
@@ -103,11 +115,35 @@ class Footer extends Component {
 						</div>
 						<div className="center">
 							<ul className="green-links">
-								<li><a target="_self" href={localizedLink('/features/events', serverLanguageTag)}><FormattedMessage id="footer.events" /></a></li>
 								<li><a target="_self" href={localizedLink('/versions', serverLanguageTag)}><FormattedHTMLMessage id="footer.versions" values={{ count: versions.toLocaleString() }} /></a></li>
 								<li><a target="_self" href={localizedLink('/languages', serverLanguageTag)}><FormattedHTMLMessage id="footer.languages" values={{ count: languages.toLocaleString() }} /></a></li>
+								<li className="show-for-medium-down" style={{ width: '100%', height: 0 }}>&nbsp;</li>
 								<li><a target="_self" href="https://help.youversion.com"><FormattedMessage id="footer.help" /></a></li>
-								<li><a target="_self" onClick={this.handleSocialClick}><FormattedMessage id="footer.social" /></a></li>
+								<li><a target="_self" href={localizedLink('/features/events', serverLanguageTag)}><FormattedMessage id="footer.events" /></a></li>
+								<li>
+									<a target="_self" className="yv-social-toggle" onClick={this.handleSocialClick}><FormattedMessage id="footer.social" /></a>
+									<div className="yv-popup-modal-container">
+										<DropdownTransition
+											show={socialOpen}
+											hideDir="down"
+											transition={true}
+											onOutsideClick={this.handleSocialClose}
+											exemptClass="yv-social-toggle"
+											classes="yv-popup-modal-content"
+										>
+											<Card>
+												<div className="yv-social-card">
+													<a className="yv-close-x" onClick={this.handleSocialClose}><XMark width={15} height={15} fill="#444444" /></a>
+													<a target="_self" href="http://www.facebook.com/YouVersion"><FacebookLogo height={20} />Facebook</a>
+													<a target="_self" href="http://www.twitter.com/youversion"><TwitterLogo height={20} />Twitter</a>
+													<a target="_self" href="http://www.instagram.com/youversion"><InstagramLogo height={20} />Instagram</a>
+													<a target="_self" href="http://www.youtube.com/youversion"><YouTubeLogo height={20} />YouTube</a>
+													<a target="_self" href="http://www.pinterest.com/youversion/"><PinterestLogo height={20} />Pinterest</a>
+												</div>
+											</Card>
+										</DropdownTransition>
+									</div>
+								</li>
 								<li><a target="_self" href={localizedLink('/donate', serverLanguageTag)}><FormattedMessage id="footer.donate" /></a></li>
 							</ul>
 							<ul className="gray-links">
@@ -120,36 +156,31 @@ class Footer extends Component {
 							</ul>
 						</div>
 						<div className="right">
-							<a className="yv-lang-toggle" target="_self" onClick={this.handleLangClick}><FormattedMessage id="features.EventEdit.features.content.components.ContentTypeReference.language" /></a>
-							<img className="bible-icon" src={`/assets/icons/bible/58/${serverLanguageTag}.png`} />
+							<a className="yv-lang-toggle" target="_self" onClick={this.handleLangClick}>
+								{locale.nativeName}
+								&nbsp;
+								<DropDownArrow height={10} dir={langSelectorOpen ? 'up' : 'down' } />
+							</a>
+							<div className="show-for-medium-down" style={{ width: '100%' }} />
+
+							<a target="_self" href={localizedLink('/app', serverLanguageTag)}><img className="bible-icon first-icon" src={`/assets/icons/bible/58/${serverLanguageTag}.png`} /></a>
+							&nbsp;
+							<a target="_self" href={localizedLink('/kids', serverLanguageTag)}><img className="bible-icon" src="/assets/BibleAppForKids-icon-48x48.png" /></a>
 						</div>
 					</div>
-					<div className="lang-modal-container">
-						<Modal
-							ref={(ref) => { this.langModal = ref }}
-							customClass="lang-modal"
-							showBackground={false}
-							handleCloseCallback={this.handleLangClose}
+					<div className="yv-fullscreen-modal-container">
+						<DropdownTransition
+							show={langSelectorOpen}
+							hideDir="down"
+							transition={true}
+							onOutsideClick={this.handleLangClose}
+							exemptClass="yv-lang-toggle"
+							classes="yv-fullscreen-modal-content"
 						>
+							<a className="yv-close-x" onClick={this.handleLangClose}><XMark width={15} height={15} fill="#444444" /></a>
 							<LangSelector {...this.props} />
-						</Modal>
+						</DropdownTransition>
 					</div>
-
-					<Modal
-						ref={(ref) => { this.modal = ref }}
-						customClass="footer-modal"
-						showBackground={false}
-					>
-						<Card>
-							<div className="yv-social-card">
-								<a target="_self" href="http://www.facebook.com/YouVersion"><FacebookLogo height={20} />Facebook</a>
-								<a target="_self" href="http://www.twitter.com/youversion"><TwitterLogo height={20} />Twitter</a>
-								<a target="_self" href="http://www.instagram.com/youversion"><InstagramLogo height={20} />Instagram</a>
-								<a target="_self" href="http://www.youtube.com/youversion"><YouTubeLogo height={20} />YouTube</a>
-								<a target="_self" href="http://www.pinterest.com/youversion/"><PinterestLogo height={20} />Pinterest</a>
-							</div>
-						</Card>
-					</Modal>
 				</div>
 			</div>
 		)
@@ -158,19 +189,24 @@ class Footer extends Component {
 
 Footer.propTypes = {
 	serverLanguageTag: PropTypes.string,
-	bibleConfiguration: PropTypes.object
+	bibleConfiguration: PropTypes.object,
+	auth: PropTypes.object,
+	locale: PropTypes.object
 }
 
 Footer.defaultProps = {
 	serverLanguageTag: 'en',
-	bibleConfiguration: {}
+	bibleConfiguration: {},
+	auth: {},
+	locale: {}
 }
 
 function mapStateToProps(state) {
 	return {
 		bibleConfiguration: getConfiguration(state),
 		serverLanguageTag: state.serverLanguageTag,
-		auth: state.auth
+		auth: state.auth,
+		locale: state.locale
 	}
 }
 
