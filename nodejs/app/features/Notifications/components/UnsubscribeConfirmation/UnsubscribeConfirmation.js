@@ -104,6 +104,7 @@ UnsubscribeConfirmation.propTypes = {
 		'rp_daily',
 		'votd',
 		'votd_image',
+		'contact_joins',
 		'all'
 	]),
 	token: PropTypes.string,
