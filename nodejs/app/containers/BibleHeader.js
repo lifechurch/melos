@@ -44,6 +44,7 @@ class BibleHeader extends Component {
 			language_tag: props.language_tag
 				|| (window && window.__LOCALE__ && window.__LOCALE__.locale3),
 			audioPlaying: false,
+			mobileStyle: '',
 		}
 		this.viewportUtils = new ViewportUtils()
 	}
@@ -75,12 +76,10 @@ class BibleHeader extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		const { dispatch } = this.props
+		const { dispatch, bible } = this.props
 		const { version_id } = this.state
-		if (
-			version_id !== prevState.version_id
-			&& !this.ref
-		) {
+
+		if (version_id !== prevState.version_id) {
 			dispatch(bibleAction({
 				method: 'version',
 				params: {
@@ -89,6 +88,10 @@ class BibleHeader extends Component {
 			})).then((response) => {
 				this.updateRecentVersions(response)
 			})
+		}
+
+		if (bible.versions !== prevProps.bible.versions && this.versionPickerInstance) {
+			this.updateMobileStyling()
 		}
 	}
 
@@ -206,7 +209,7 @@ class BibleHeader extends Component {
 			}
 
 			this.setState({
-				extraStyle: `
+				mobileStyle: `
 					@media only screen and (max-width: 37.438em) {
 						.book-list, .chapter-list {
 							max-height: ${viewport.height - (modalPos.top + bookOffset + footerModal.height)}px !important;
@@ -233,7 +236,6 @@ class BibleHeader extends Component {
 			audio,
 			hosts,
 			sticky,
-			title,
 			showChapterPicker,
 			showVersionPicker,
 			showAudio,
@@ -243,7 +245,7 @@ class BibleHeader extends Component {
 			localizedLink,
 			dispatch,
 		} = this.props
-		const { usfm, version_id, audioPlaying, recentVersions } = this.state
+		const { usfm, version_id, audioPlaying, recentVersions, mobileStyle } = this.state
 
 		const hasAudio = audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm), `${version_id}`])
 		const isChapter = usfm && isVerseOrChapter(usfm).isChapter
@@ -328,11 +330,8 @@ class BibleHeader extends Component {
 									: null
 							}
 							// cancelDropDown={this.state.versionDropDownCancel}
+							ref={(v) => { this.versionPickerInstance = v }}
 							localizedLink={localizedLink}
-							ref={(vpicker) => {
-								this.updateMobileStyling()
-								this.versionPickerInstance = vpicker
-							}}
 							dispatch={dispatch}
 						/>
 				}
@@ -439,6 +438,9 @@ class BibleHeader extends Component {
 							</span>
 						</Link>
 				} */}
+				<style>
+					{ mobileStyle }
+				</style>
 			</Header>
 		)
 	}
