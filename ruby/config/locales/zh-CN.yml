@@ -1399,13 +1399,26 @@ zh-CN:
             just now: "刚才"
         verses selected: "选中的经文"
     EventsAdmin: 
+        footer: 
+            events: "互动"
+            versions: "译本（%{count}）"
+            languages: "语言（%{count}）"
+            help: "帮助"
+            social: "社交"
+            donate: "乐意捐赠"
+            about: "关于"
+            jobs: "工作机会"
+            blog: "博客"
+            press: "新闻室"
+            privacy: "隐私政策"
+            terms: "使用条款"
         unsubscribe: 
             about: "管理你从 YouVersion 接收的电邮。你能在手机应用里更改手机的提醒设置。"
             email: "电子邮件"
             not me: "不是我"
             saved: "已保存！"
             plan delivery: "传送计划"
-            sign-in: "要编辑其他设置，请<a href='{sign_in_path}'>登录账户</a>。"
+            sign-in: "要编辑其他设置，请<a href='%{sign_in_path}'>登录账户</a>。"
             links: 
                 manage: "管理你的电邮通知"
                 unsub all: "退订所有电子邮件"
@@ -1421,6 +1434,7 @@ zh-CN:
                 rp_daily: "你已成功退订“%{plan_title}”的<b>读经计划每日电邮</b>。"
                 votd: "你已成功退订<b>今日经文</b>的电邮。"
                 votd_image: "你已成功退订<b>今日经文图</b>的电邮。"
+                contact_joins: "你已成功退订<b>联系人</b>的电邮。"
             labels: 
                 badges: "当我赢得一枚徽章"
                 comments: "我的活动带来的评论"
@@ -1431,6 +1445,7 @@ zh-CN:
                 reading_plans: "关于我的读经计划的"
                 votd: "今日经文文字"
                 votd_image: "今日经文图"
+                contact_joins: "有联系人参加的时候"
             error: 
                 token: "抱歉，你需要先登录才能修改【提醒设置】。"
                 other_type: "抱歉，好像出现了错误。你想更新【提醒设置】吗？"

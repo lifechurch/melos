@@ -16,7 +16,7 @@ import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
 
-import "../../less/style.less"
+import '../../less/style.less'
 
 require('moment/min/locales')
 
@@ -41,8 +41,8 @@ const browserHistory = useRouterHistory(createHistory)({
 	basename: '/'
 })
 
-if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.PlanDiscovery.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.PlanDiscovery.__INITIAL_STATE__
 }
 
 let logger = null
@@ -504,5 +504,5 @@ render(
 			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+  document.getElementById('react-app-PlanDiscovery')
 )

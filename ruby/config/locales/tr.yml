@@ -1414,13 +1414,26 @@ tr:
             just now: "biraz önce"
         verses selected: "ayetler seçildi"
     EventsAdmin: 
+        footer: 
+            events: "Olaylar"
+            versions: "Sürümler (%{count})"
+            languages: "Diller (%{count})"
+            help: "Yardım"
+            social: "Sosyal"
+            donate: "Bağışta Bulunun"
+            about: "Hakkında"
+            jobs: "Çalışma İmkânları"
+            blog: "Blog"
+            press: "Basın"
+            privacy: "Gizlilik Politikası"
+            terms: "Koşullar"
         unsubscribe: 
             about: "YouVersion'dan hangi e-postaları aldığını kontrol et. Mobil uygulamasından mobil bildirimlerini düzenleyebilirsin."
             email: "e-Posta"
             not me: "Bu ben değilim"
             saved: "Kaydedildi!"
             plan delivery: "PLAN GÖNDERİMİ"
-            sign-in: "Diğer ayarları düzenlemek için <a href='{sign_in_path}'>hesabınıza giriş yapın</a>."
+            sign-in: "Diğer ayarları düzenlemek için <a href='%{sign_in_path}'>hesabınızla giriş yapın</a>."
             links: 
                 manage: "E-posta bildirimleri yönet"
                 unsub all: "Tüm e-postalardan aboneliği kaldır"
@@ -1436,6 +1449,7 @@ tr:
                 rp_daily: "Başarılı bir şekilde okuma planlar günlük e-posta üzerinden kayıt silindi %{plan_title}."
                 votd: "Günün Ayeti e-postalarından başarıyla kaydın silindi."
                 votd_image: "Günün Ayeti Resmi e-postalarından başarıyla kaydın silindi."
+                contact_joins: "<b>iletişim ve E-posta</b>aboneliğiniz başarıyla sonlandırıldı."
             labels: 
                 badges: "Rozet kazandığımda"
                 comments: "Paylaşımlarıma yapılan yorumlar"
@@ -1446,6 +1460,7 @@ tr:
                 reading_plans: "Kutsal Kitap Okuma Planlarım Hakkında"
                 votd: "Günün Ayeti Metni"
                 votd_image: "Günün Ayeti Görseli"
+                contact_joins: "Arkadaşlarımdan biri uygulamayı yüklediğinde"
             error: 
                 token: "Üzgünüz, bildirim ayarlarınızı değiştirebilmek için önce giriş yapmanız gerekiyor:"
                 other_type: "Üzgünüz, bu beklediğimiz şeyi yapmadı. Bildirimlerinizi güncellemek istiyor musunuz?"

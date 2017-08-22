@@ -29,7 +29,7 @@ module YV
 
           params['languageTag'] = I18n.locale
           params['railsHost'] = "#{request.protocol}#{request.host_with_port}"
-
+					params['acceptLangHeader'] = request.env['HTTP_ACCEPT_LANGUAGE']
           resource_url = "#{Cfg.nodejs_import_url}/#{feature}"
           curb_get = lambda do
             begin
@@ -94,7 +94,7 @@ module YV
           opts.delete('cache_for')
           opts.delete('url')
 
-          key = [params['url'], opts.sort_by{|k,v| k.to_s}].flatten.join("_")
+          key = [feature, params['url'], opts.sort_by{|k,v| k.to_s}].flatten.join("_")
           return data_from_cache_or_api(key, curb_get, can_cache, params)
           #return curb_get.call
         end
@@ -126,7 +126,7 @@ module YV
         def auth_from_credentials(current_auth, current_user)
           return { userid: current_auth.user_id, tp_token: current_auth.tp_token, tp_id: current_auth.tp_id, email: current_user.email, password: current_auth.password, first_name: current_user.first_name, last_name: current_user.last_name, username: current_user.username, language_tag: I18n.locale.to_s, timezone: current_user.timezone }
         end
-        
+
       end
     end
   end

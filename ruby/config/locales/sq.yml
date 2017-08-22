@@ -1414,13 +1414,26 @@ sq:
             just now: "pikërisht tani"
         verses selected: "vargje të përzgjedhura"
     EventsAdmin: 
+        footer: 
+            events: "Ngjarje"
+            versions: "Versione (%{count})"
+            languages: "Gjuhë (%{count})"
+            help: "Ndihmë"
+            social: "Sociale"
+            donate: "Dhuro"
+            about: "Rreth nesh"
+            jobs: "Vende pune"
+            blog: "Blogu"
+            press: "Shtypi"
+            privacy: "Politika e privatësisë"
+            terms: "Kushtet"
         unsubscribe: 
             about: "Kontrolloni cilat e-posta merrni nga YouVersion. Ju mund të ndryshoni njoftimet për pajisje të lëvizshme nga aplikacioni i pajisjes suaj."
             email: "E-postë"
             not me: "Ky nuk jam unë"
             saved: "U ruajtën!"
             plan delivery: "DORËZIMI I PLANIT"
-            sign-in: "Për të ndryshuar cilësime të tjera, <a href='{sign_in_path}'>hyni në llogarinë tuaj</a>."
+            sign-in: "Për të ndryshuar cilësime të tjera, <a href='%{sign_in_path}'>hyni në llogarinë tuaj</a>."
             links: 
                 manage: "Kontrollo njoftimet me e-postë"
                 unsub all: "Çregjistrohu nga të gjitha e-postat"
@@ -1436,6 +1449,7 @@ sq:
                 rp_daily: "Ju jeni çregjistruar me sukses nga <b>e-postat e Planeve të Përditshme të Leximit</b> nga %{plan_title}."
                 votd: "Ju jeni çregjistruar me sukses nga e-postat e <b>Vargut të Ditës</b>."
                 votd_image: "Ju jeni çregjistruar me sukses nga e-posat e <b>Figurës së Vargut të Ditës</b>."
+                contact_joins: "Ju jeni çregjistruar me sukses nga e-postat e <b>Kontakteve</b>."
             labels: 
                 badges: "Kur fitoj një emblemë"
                 comments: "Komente rreth aktivitetit tim"
@@ -1446,6 +1460,7 @@ sq:
                 reading_plans: "Rreth planeve të mia të Biblës"
                 votd: "Teksti i Vargut të Ditës"
                 votd_image: "Figura e Vargut të Ditës"
+                contact_joins: "Kur një nga kontaktet i bashkohet YouVersion"
             error: 
                 token: "Na falni, por duhet të kyçeni përpara se të ndryshoni cilësimet për Njoftimet tuaja:"
                 other_type: "Na falni, por kjo nuk bëri atë që ne prisnim. A dëshironi të ndryshoni Njoftimet tuaja?"

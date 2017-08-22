@@ -35,5 +35,5 @@ render(
 			<PassageView />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+  document.getElementById('react-app-Passage')
 )

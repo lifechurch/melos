@@ -1414,13 +1414,26 @@ ca:
             just now: "ara mateix"
         verses selected: "versets seleccionats"
     EventsAdmin: 
+        footer: 
+            events: "Esdeveniments"
+            versions: "Versions (%{count})"
+            languages: "Llenguatges (%{count})"
+            help: "Ajuda"
+            social: "Xarxes socials"
+            donate: "Fes una donació"
+            about: "Sobre"
+            jobs: "Feines"
+            blog: "Bloc"
+            press: "Premsa"
+            privacy: "Política de privadesa"
+            terms: "Condicions d'ús"
         unsubscribe: 
             about: "Controlar el que els missatges que rep dels YouVersion. Podeu editar les notificacions de mòbils de l'aplicació mòbil."
             email: "Correu electrònic"
             not me: "Això no és m"
             saved: "Salvat!"
             plan delivery: "LLIUREMENT DE PLANS"
-            sign-in: "Per editar altres configuracions, <a href='{sign_in_path}'>accedeix al teu compte</a>."
+            sign-in: "Per editar altres configuracions, <a href='%{sign_in_path}'>accedeix al teu compte</a>."
             links: 
                 manage: "Gestiona les notificacions de correu electrònic"
                 unsub all: "Dona't de baixa de tots els correus electrònics"
@@ -1436,6 +1449,7 @@ ca:
                 rp_daily: "T'has donat de baixa correctament dels <b>correus electrònics del pla de lectura</b> %{plan_title}."
                 votd: "T'has donat de baixa correctament dels correus electrònics del <b>Verset del dia</b>."
                 votd_image: "T'has donat de baixa correctament dels correus electrònics de la <b>Imatge del Verset del dia</b>."
+                contact_joins: "Has aconseguit donar-te de baixa correctament dels correus electrònics de <b>Contactes</b>."
             labels: 
                 badges: "Quan aconsegueixi una insígnia"
                 comments: "Comentaris a la meva activitat"
@@ -1446,6 +1460,7 @@ ca:
                 reading_plans: "Sobre els meus plans de lectura de la Bíblia"
                 votd: "Vers del dia Text"
                 votd_image: "Imatge del verset del dia"
+                contact_joins: "Quan un contacte es doni d'alta"
             error: 
                 token: "Ho sentim, has d'Accedir per a poder canviar la configuració de les teves Notificacions:"
                 other_type: "Ho sentim, això no ha fet el que esperàvem. Vols actualitzar les teves Notificacions?"

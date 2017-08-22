@@ -1,23 +1,50 @@
-import React, { Component } from 'react'
+import React, { PropTypes } from 'react'
+import getProportionalSize from '../lib/imageProportions'
 
-class DropDownArrow extends Component {
-	render() {
-		const width = this.props.width || 40
-		const height = this.props.height || 40
-		const fill = this.props.fill || 'grey'
-		const dir = this.props.dir || 'down'
-		const rotation = (dir == 'down') ? 0 : 180
+function DropDownArrow({ width, height, fill, className, dir }) {
+	const {
+		height: finalHeight,
+		width: finalWidth
+	} = getProportionalSize({
+		defaultHeight: DropDownArrow.defaultProps.height,
+		defaultWidth: DropDownArrow.defaultProps.width,
+		newHeight: height,
+		newWidth: width
+	})
 
-		let classes = `dropdown-arrow`
+	const rotation = (dir === 'down') ? 0 : 180
 
-    return (
-    	<div className={classes} onmouseover="">
-      	<svg width={width} height={height} viewBox="189 13 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-			    <polygon stroke="none" fill={fill} fill-rule="evenodd" transform={`translate(195.000000, 17.000000) rotate(${rotation}) translate(-195.000000, -17.000000)`} points="189 14 195 20 201 14"></polygon>
-				</svg>
-      </div>
-    );
-  }
+	const classes = ''
+
+	return (
+		<svg
+			className={className}
+			width={finalWidth}
+			height={finalHeight}
+			viewBox="189 13 12 7"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			fillRule="evenodd"
+		>
+			<polygon stroke="none" fill={fill} fillRule="evenodd" transform={`translate(195.000000, 17.000000) rotate(${rotation}) translate(-195.000000, -17.000000)`} points="189 14 195 20 201 14" />
+		</svg>
+	)
+}
+
+DropDownArrow.propTypes = {
+	width: PropTypes.number,
+	height: PropTypes.number,
+	fill: PropTypes.string,
+	className: PropTypes.string,
+	dir: PropTypes.oneOf(['up', 'down'])
+}
+
+DropDownArrow.defaultProps = {
+	width: 40,
+	height: 40,
+	fill: '#444444',
+	className: 'dropdown-arrow',
+	dir: 'down'
 }
 
 export default DropDownArrow

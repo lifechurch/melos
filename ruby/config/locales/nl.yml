@@ -1414,13 +1414,26 @@ nl:
             just now: "Zojuist"
         verses selected: "geselecteerde verzen"
     EventsAdmin: 
+        footer: 
+            events: "Bijeenkomsten"
+            versions: "Vertalingen (%{count})"
+            languages: "Talen (%{count})"
+            help: "Help"
+            social: "Sociaal"
+            donate: "Doneer"
+            about: "Over"
+            jobs: "Vacatures"
+            blog: "Blog"
+            press: "Pers"
+            privacy: "Privacybeleid"
+            terms: "Voorwaarden"
         unsubscribe: 
             about: "Bepaal welke e-mails u van YouVersion ontvangt. Je kunt de instellingen voor berichten op je mobiel wijzigen in je mobiele app."
             email: "E-mail"
             not me: "Dit ben ik niet"
             saved: "Opgeslagen!"
             plan delivery: "Leesplan meldingen"
-            sign-in: "Om andere instellingen te wijzigen, <a href='{sign_in_path}'>meld je aan</a>."
+            sign-in: "Om andere instellingen te wijzigen, <a href='%{sign_in_path}'>meld je aan</a>."
             links: 
                 manage: "Beheer je email meldingen"
                 unsub all: "Meldt je af van alle emails"
@@ -1436,6 +1449,7 @@ nl:
                 rp_daily: "Je bent succesvol afgemeld voor emails van <b>Leesplan dagelijkse emails</b> van %{plan_title}."
                 votd: "Je bent succesvol afgemeld voor emails van <b>Vers van de dag</b>."
                 votd_image: "Je bent succesvol afgemeld voor emails van <b>Vers van de dag afbeeldingen</b>"
+                contact_joins: "Je bent succesvol afgemeld voor emails van <b>contactpersonen</b>."
             labels: 
                 badges: "Als ik een medaille verdiend heb"
                 comments: "Reacties op mijn activiteit"
@@ -1446,6 +1460,7 @@ nl:
                 reading_plans: "Over mijn Leesplan"
                 votd: "Tekst van de Dag"
                 votd_image: "Tekst van de Dag Afbeelding"
+                contact_joins: "Als een contact zich aanmeldt"
             error: 
                 token: "Sorry, je dient in te loggen voordat je jouw instellingen voor meldingen kunt wijzigen:"
                 other_type: "Sorry, dat deed niet wat we hadden verwacht. Wilt je jouw meldingen bijwerken?"

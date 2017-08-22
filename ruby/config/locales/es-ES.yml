@@ -1414,13 +1414,26 @@ es-ES:
             just now: "ahora mismo"
         verses selected: "versículos seleccionados"
     EventsAdmin: 
+        footer: 
+            events: "Eventos"
+            versions: "Versiones (%{count})"
+            languages: "Idiomas (%{count})"
+            help: "Ayuda"
+            social: "Redes sociales"
+            donate: "Donar"
+            about: "Acerca de"
+            jobs: "Trabajos"
+            blog: "Blog"
+            press: "Pulsar"
+            privacy: "Políticas de privacidad"
+            terms: "Términos"
         unsubscribe: 
             about: "Controla los mensajes de correo electrónico que recibes de YouVersion. Puedes editar tus notificaciones para móviles desde tu aplicación para dispositivos móviles."
             email: "Correo electrónico"
             not me: "Este no soy yo"
             saved: "¡Guardado!"
             plan delivery: "ENTREGA DE PLANES"
-            sign-in: "Para modificar otros ajustes, <a href='{sign_in_path}'>inicia sesión en tu cuenta</a>."
+            sign-in: "Para modificar otros ajustes, <a href='%{sign_in_path}'>inicia sesión en tu cuenta</a>."
             links: 
                 manage: "Administrar notificaciones"
                 unsub all: "Darse de baja de todos los correos electrónicos"
@@ -1436,6 +1449,7 @@ es-ES:
                 rp_daily: "Te has dado de baja correctamente de <b>los mensajes diarios</b> sobre el plan de lectura %{plan_title}."
                 votd: "Te has dado de baja correctamente de los mensaje sobre <b>el versículo del día</b>."
                 votd_image: "Te has dado de baja correctamente de los mensaje sobre<b>la imagen del versículo del día</b>."
+                contact_joins: "Te has dado de baja correctamente de los mensaje sobre <b>contactos</b>."
             labels: 
                 badges: "Cuando consiga una insignia"
                 comments: "Comentarios sobre mi actividad"
@@ -1446,6 +1460,7 @@ es-ES:
                 reading_plans: "Sobre mis planes de lectura bíblica"
                 votd: "Texto del versículo del día"
                 votd_image: "Imagen del versículo del día"
+                contact_joins: "Cuando un contacto se une"
             error: 
                 token: "Lo sentimos, necesitas iniciar sesión para poder cambiar la configuración de tus notificaciones:"
                 other_type: "Lo sentimos, no ha pasado lo que esperábamos. ¿Quieres actualizar tus notificaciones?"

@@ -1414,13 +1414,26 @@ pt:
             just now: "agora mesmo"
         verses selected: "versículos selecionados"
     EventsAdmin: 
+        footer: 
+            events: "Eventos"
+            versions: "Versões (%{count})"
+            languages: "Idiomas (%{count})"
+            help: "Ajuda"
+            social: "Redes sociais"
+            donate: "Doar"
+            about: "Sobre"
+            jobs: "Empregos"
+            blog: "Blog"
+            press: "Imprensa"
+            privacy: "Política de Privacidade"
+            terms: "Termos e Condições"
         unsubscribe: 
             about: "Controle quais e-mails você recebe da YouVersion. Você pode editar as notificações móveis do seu aplicativo móvel."
             email: "E-mail"
             not me: "Esse não sou eu"
             saved: "Salvo!"
             plan delivery: "ENTREGA DO PLANO"
-            sign-in: "Para editar outras configurações, <a href='{sign_in_path}'>acesse sua conta</a>."
+            sign-in: "Para editar outras configurações, <a href='%{sign_in_path}'>acesse sua conta</a>."
             links: 
                 manage: "Gerenciar as Notificações de E-mail"
                 unsub all: "Cancelar recebimento de todos os e-mails"
@@ -1436,6 +1449,7 @@ pt:
                 rp_daily: "Você cancelou o recebimento de <b> e-mails Diários de Planos de Leitura</b> do Plano %{plan_title}."
                 votd: "Você cancelou o recebimento de e-mails do <b>Versículo do Dia</b> com sucesso."
                 votd_image: "Você cancelou o recebimento de e-mails de <b>Imagem do Versículo do Dia</b> com sucesso."
+                contact_joins: "Você cancelou o recebimento de notificações de e-mails de <b>Contatos</b> com sucesso."
             labels: 
                 badges: "Quando eu ganho uma medalha"
                 comments: "Comentários sobre minhas atividades"
@@ -1446,6 +1460,7 @@ pt:
                 reading_plans: "Sobre meus Planos Bíblicos"
                 votd: "Texto com o Versículo do Dia"
                 votd_image: "Imagem do Versículo do Dia"
+                contact_joins: "Quando um Contato se junta ao YouVersion"
             error: 
                 token: "Desculpe, você precisa logar antes de alterar as configurações de Notificação:"
                 other_type: "Desculpe, esta ação não foi concluída. Você gostaria de atualizar as opções de Notificações?"

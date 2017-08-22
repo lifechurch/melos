@@ -1399,13 +1399,26 @@ zh-HK:
             just now: "just now"
         verses selected: "verses selected"
     EventsAdmin: 
+        footer: 
+            events: "互動"
+            versions: "譯本（%{count}）"
+            languages: "語言（%{count}）"
+            help: "幫助"
+            social: "社交"
+            donate: "捐獻"
+            about: "關於"
+            jobs: "工作機會"
+            blog: "部落格"
+            press: "新聞室"
+            privacy: "私隱政策"
+            terms: "條款"
         unsubscribe: 
             about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
             email: "Email"
             not me: "This is not me"
             saved: "Saved!"
             plan delivery: "PLAN DELIVERY"
-            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
+            sign-in: "要編輯其他設定，請<a href='%{sign_in_path}'>登入你的帳戶</a>。"
             links: 
                 manage: "Manage Your Email Notifications"
                 unsub all: "Unsubscribe from all emails"
@@ -1421,6 +1434,7 @@ zh-HK:
                 rp_daily: "You successfully unsubscribed from <b>Reading Plans Daily emails</b> from %{plan_title}."
                 votd: "You successfully unsubscribed from <b>Verse of the Day</b> emails."
                 votd_image: "You successfully unsubscribed from <b>Verse of the Day Image</b> emails."
+                contact_joins: "你已成功取消訂閱有關<b>聯絡人</b>的電郵。"
             labels: 
                 badges: "When I earn a badge"
                 comments: "Comments on my activity"
@@ -1431,6 +1445,7 @@ zh-HK:
                 reading_plans: "About my Bible Plans"
                 votd: "Verse of the Day Text"
                 votd_image: "Verse of the Day Image"
+                contact_joins: "有聯絡人參加的時候"
             error: 
                 token: "Sorry, you need to Sign In before you can change your Notification settings:"
                 other_type: "Sorry, that didn’t do what we expected. Would you like to update your Notifications?"

@@ -33,5 +33,5 @@ render(
 			<EventView />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+  document.getElementById('react-app-SingleEvent')
 )

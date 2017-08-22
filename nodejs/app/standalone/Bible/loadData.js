@@ -1,8 +1,9 @@
 import cookie from 'react-cookie';
-
+import Immutable from 'immutable';
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 import { isVerseOrChapter } from '../../lib/readerUtils'
+import localeVersions from '../../../locales/config/localeVersions.json'
 
 /**
  * Loads a data.
@@ -20,7 +21,15 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const BIBLE 						= new RegExp('^\/bible$') // /bible
 			const BIBLE_WITH_REF		= /^\/bible\/[0-9]+/ // /bible/1/***
 			const language_tag = Locale.locale3
-			const version = params.version || cookie.load('version') || '1'
+
+			const localeVersionList = Immutable.fromJS(localeVersions).getIn([ Locale.locale2, 'text' ]).toJS()
+				|| Immutable.fromJS(localeVersions).getIn([ Locale.locale3, 'text' ]).toJS()
+
+			const version = params.version
+				|| cookie.load('version')
+				|| (Array.isArray(localeVersionList)) ? localeVersionList[0] : false
+				|| '1'
+
 			let reference = params.ref || cookie.load('last_read') || 'JHN.1'
 			reference = reference.toUpperCase()
 

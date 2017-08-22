@@ -1429,13 +1429,26 @@ cs:
             just now: "právě teď"
         verses selected: "verše vybrány"
     EventsAdmin: 
+        footer: 
+            events: "Akce"
+            versions: "Překlady (%{count})"
+            languages: "Jazyky (%{count})"
+            help: "Pomoc"
+            social: "Sociální sítě"
+            donate: "Prispieť"
+            about: "Informace"
+            jobs: "Zaměstnání"
+            blog: "Blog"
+            press: "Noviny"
+            privacy: "Ochrana soukromí"
+            terms: "Podmínky"
         unsubscribe: 
             about: "Nastavení emailových oznámení z YouVersion. Můžete si změnit nastavení oznámení z mobilní aplikace."
             email: "E-mail"
             not me: "To nejsem já"
             saved: "Uloženo!"
             plan delivery: "Odběr plánů"
-            sign-in: "Pro změnu nastavení, <a href='{sign_in_path}'>se prosím přihlaste k účtu</a>."
+            sign-in: "Pro změnu nastavení, <a href='%{sign_in_path}'>se prosím přihlaste k účtu</a>."
             links: 
                 manage: "Správa emailová oznámení"
                 unsub all: "Odhlásit odběr všech oznámení"
@@ -1451,6 +1464,7 @@ cs:
                 rp_daily: "Úspěšně jste odhlásili odběr emailů <b>plánu čtení Bible:</b> %{plan_title}."
                 votd: "Úspěšně jste odhlásili odběr emailů <b>veršů dne</b>."
                 votd_image: "Úspěšně jste odhlásili odběr emailů <b>obrázkového verše dne</b>."
+                contact_joins: "Úspěšně jste odhlásili odběr z <b>Kontaktů</b> emailů."
             labels: 
                 badges: "Když získám odznak"
                 comments: "Komentáře o mojí aktivitě"
@@ -1461,6 +1475,7 @@ cs:
                 reading_plans: "O mých plánech čtení"
                 votd: "Textový verš dne"
                 votd_image: "Obrázkový verš dne"
+                contact_joins: "Když se zaregistruje váš kontakt"
             error: 
                 token: "Omlouváme se, ale pro změnu nastavení je nutné přihlášení:"
                 other_type: "Je nám líto, že vám emailové notifikace neposloužili. Přejete si aktualizovat nastavení oznámení?"

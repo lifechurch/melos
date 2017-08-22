@@ -178,10 +178,10 @@ sw:
         share: 
             tell friends: "Waambie mafiki zako kuhusu apu ya Biblia ya watoto"
             facebook name: "The Bible App for Kids"
-            facebook description: "Bible App ya watoto iko hapa. Ipakue bure katika rununu yako ya iOS au Android leo: pata hadithi za Bibilia ambazo zitasaidia mtoto wako kujifunza, kucheza na kukua katika neno la Mungu. www.bible.com/kids"
+            facebook description: "Apu ya Biblia ya watoto iko hapa. Ipakue bure katika rununu yako ya iOS au Android leo: pata hadithi za Bibilia ambazo zitasaidia mtoto wako kujifunza, kucheza na kukua katika neno la Mungu. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
-            twitter description: "Bible App ya watoto kutoka @YouVersion iko hapa. Inaleta burudani na ni bure. Ipakue hapa: bible.com/kids"
+            twitter description: "Apu ya Biblia ya watoto kutoka @YouVersion iko hapa. Inaleta burudani na ni bure. Ipakue hapa: bible.com/kids"
             twitter hashtags: "Bibilia ya watoto"
             email: "Email"
             email subject: "Apu ya Biblia ya watoto iko hapa!"
@@ -1414,13 +1414,26 @@ sw:
             just now: "sasa hivi"
         verses selected: "Mistari imechaguliwa"
     EventsAdmin: 
+        footer: 
+            events: "Matukio"
+            versions: "Matoleo%{count}"
+            languages: "Lugha%{count}"
+            help: "Msaada"
+            social: "Kijamii"
+            donate: "Changia"
+            about: "kuhusu"
+            jobs: "kazi"
+            blog: "Blog"
+            press: "Vyombo vya habari"
+            privacy: "Sera za usiri"
+            terms: "Masharti"
         unsubscribe: 
             about: "Dhibiti ni barua pepe zipi utapokea kutoka YouVersion. Unaweza kuhariri taarifa zako za simu kupitia apu yako ya simu."
             email: "Barua pepe"
             not me: "Huyu sio mimi"
             saved: "Imehifadhiwa!"
             plan delivery: "Utoaji wa Mipangilio"
-            sign-in: "Kuhariri mipangilio mingine, &lt;a href='{{sign_in_path}}'&gt; ingia kwenye akaunti yako &lt;/a&gt;."
+            sign-in: "Kuhariri mipangilio mingine, <a href='%{sign_in_path}'></a>ingia kwenye akaunti yako &lt;/a&gt;."
             links: 
                 manage: "Simamia Taarifa zako za Barua Pepe"
                 unsub all: "kujitoa kutoka barua pepe zote"
@@ -1436,6 +1449,7 @@ sw:
                 rp_daily: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za Mipango ya Kusoma ya Kila Siku</b> Kutoka kwa %{plan_title}."
                 votd: "Umejitoa kwa mafanikio kutoka kwa <b>Barua pepe za</b> Mistari ya Biblia."
                 votd_image: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> picha ya mstari wa siku wa Biblia ."
+                contact_joins: "Umefaulu kujiondoa <b></b>Majina &lt;/ b&gt; barua pepe"
             labels: 
                 badges: "Nitakapo pata beji"
                 comments: "Maoni ya shughuli zangu"
@@ -1446,6 +1460,7 @@ sw:
                 reading_plans: "Kuhusu Mipango yangu ya Biblia"
                 votd: "Maandishi ya mstari wa siku wa Biblia"
                 votd_image: "Picha ya Neno la Siku"
+                contact_joins: "Mtu mnayewasiliana nae atakapo jiunga"
             error: 
                 token: "Samahani, unahitajika kuingia kabla ya kubadilisha mipangilio yako ya taarifa:"
                 other_type: "Samahani, haikufanyika vile tulivyotarajia. Je, ungependa kuboresha taarifa zako?"

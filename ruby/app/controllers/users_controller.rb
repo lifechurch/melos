@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         else
           @subscriptions = @subscriptions.map! { |s| s.id }
         end
-      end      
+      end
       render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
     else
       render 'pages/generic_error'
@@ -40,9 +40,9 @@ class UsersController < ApplicationController
 
   def bookmarks
     @labels = Bookmark.labels(auth: current_auth)
-    @label ||= params[:label] 
+    @label ||= params[:label]
   end
-  
+
   def _bookmarks
     @label ||= params[:label]
     @next_cursor ||= params[:next_cursor]
@@ -139,7 +139,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.email = facebook_auth["info"]["email"]
     @user.verified = @user.agree = true
-    
+
     if @user.save
       # Get the real thing
       user = User.authenticate(params[:user][:username], params[:user][:password])
@@ -208,7 +208,7 @@ class UsersController < ApplicationController
       flash.now[:error] = t("invalid password")
       return render "delete_account", layout: "settings"
     end
-    
+
   end
 
 
@@ -290,7 +290,7 @@ class UsersController < ApplicationController
     end
 
     @title = t('users.my password')
-    render layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
+    render layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
   end
 
 private

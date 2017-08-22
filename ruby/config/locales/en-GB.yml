@@ -1414,13 +1414,26 @@ en-GB:
             just now: "just now"
         verses selected: "verses selected"
     EventsAdmin: 
+        footer: 
+            events: "Events"
+            versions: "Versions (%{count})"
+            languages: "Languages (%{count})"
+            help: "Help"
+            social: "Social"
+            donate: "Donate"
+            about: "About"
+            jobs: "Jobs"
+            blog: "Blog"
+            press: "Press"
+            privacy: "Privacy policy"
+            terms: "Terms"
         unsubscribe: 
             about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
             email: "Email"
             not me: "This is not me"
             saved: "Saved!"
             plan delivery: "PLAN DELIVERY"
-            sign-in: "To edit other settings, <a href='{sign_in_path}'>sign in to your account</a>."
+            sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
             links: 
                 manage: "Manage Your Email Notifications"
                 unsub all: "Unsubscribe from all emails"
@@ -1436,6 +1449,7 @@ en-GB:
                 rp_daily: "You successfully unsubscribed from <b>Reading Plans Daily emails</b> from %{plan_title}."
                 votd: "You successfully unsubscribed from <b>Verse of the Day</b> emails."
                 votd_image: "You successfully unsubscribed from <b>Verse of the Day Image</b> emails."
+                contact_joins: "You have successfully unsubscribed from <b>Contacts</b> emails."
             labels: 
                 badges: "When I earn a badge"
                 comments: "Comments on my activity"
@@ -1446,6 +1460,7 @@ en-GB:
                 reading_plans: "About my Bible plans"
                 votd: "Verse of the Day Text"
                 votd_image: "Verse of the day image"
+                contact_joins: "When a contact joins"
             error: 
                 token: "Sorry, you need to Sign In before you can change your Notification settings:"
                 other_type: "Sorry, that didn’t do what we expected. Would you like to update your Notifications?"

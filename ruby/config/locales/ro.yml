@@ -1429,13 +1429,26 @@ ro:
             just now: "chiar acum"
         verses selected: "versete selectate"
     EventsAdmin: 
+        footer: 
+            events: "Evenimente"
+            versions: "Versiuni (%{count})"
+            languages: "Limbi (%{count})"
+            help: "Ajutor"
+            social: "Sociale"
+            donate: "Donează"
+            about: "Despre"
+            jobs: "Angajări"
+            blog: "Blog"
+            press: "Presă"
+            privacy: "Politică de confidențialitate"
+            terms: "Termeni și condiții"
         unsubscribe: 
             about: "Ai control asupra email-urilor pe care le primești de la YouVersion Poți edita notificările pe dispozitivele mobile din aplicația mobilă."
             email: "e-mail"
             not me: "Nu sunt eu"
             saved: "Salvat!"
             plan delivery: "Planul de citire pentru azi"
-            sign-in: "Pentru a modifica alte opțiuni, <a href='{sign_in_path}'>autentifică-te în contul tău</a>."
+            sign-in: "Pentru a modifica alte opțiuni, <a href='%{sign_in_path}'>autentifică-te în contul tău</a>."
             links: 
                 manage: "Gestionează notificările prin email"
                 unsub all: "Dezabonare de la toate email-urile"
@@ -1451,6 +1464,7 @@ ro:
                 rp_daily: "Te-ai dezabonat cu succes de la <b>email-urile cu planul de citire zilnică</b> de la %{plan_title}."
                 votd: "Te-ai dezabonat cu succes de la email-urile cu <b>Versetul zilei</b>."
                 votd_image: "Te-ai dezabonat cu succes de la email-urile cu <b>Imaginea versetului zilei</b>."
+                contact_joins: "Te-ai dezabonat cu succes de la email-urile primite de la <b>Contacte</b>"
             labels: 
                 badges: "Când câștig o insignă"
                 comments: "Comentarii legate de activitatea mea"
@@ -1461,6 +1475,7 @@ ro:
                 reading_plans: "Despre planurile mele biblice"
                 votd: "Textul Versetului zilei"
                 votd_image: "Imaginea pentru versetul zilei"
+                contact_joins: "Când cineva din lista de contacte se alătură"
             error: 
                 token: "Ne pare rău; trebuie să te autentifici pentru a putea modifica configurările notificărilor:"
                 other_type: "Ne pare rău, acțiunea nu s-a realizat. Dorești să-ți actualizezi notificările?"

@@ -1414,13 +1414,26 @@ fi:
             just now: "juuri nyt"
         verses selected: "jaetta valittu"
     EventsAdmin: 
+        footer: 
+            events: "Tapahtumat"
+            versions: "Käännöksiä (%{count})"
+            languages: "Kieliä (%{count})"
+            help: "Apua"
+            social: "Sosiaalinen"
+            donate: "Lahjoita"
+            about: "Taustaa"
+            jobs: "Töihin"
+            blog: "Blogi"
+            press: "Viestintä"
+            privacy: "Tietosuojakäytäntö"
+            terms: "Käyttöehdot"
         unsubscribe: 
             about: "Valitse, mitä sähköposteja haluat saada YouVersionilta. Voit hallita mobiili-ilmoituksia mobiilisovelluksessa."
             email: "Sähköposti"
             not me: "Et sinä?"
             saved: "Tallennettu!"
             plan delivery: "Suunnitelman lähetysasetukset"
-            sign-in: "Jos haluat muokata muita asetuksia, <a href='{sign_in_path}'>kirjaudu sisään</a>."
+            sign-in: "Jos haluat muokata muita asetuksia, <a href='%{sign_in_path}'>kirjaudu sisään</a>."
             links: 
                 manage: "Hallitse sähköposti-ilmoituksiasi"
                 unsub all: "Peruuta kaikki sähköpostitilaukset"
@@ -1436,6 +1449,7 @@ fi:
                 rp_daily: "Peruit onnistuneesti <b> Lukusuunnitelman päivittäiset sähköpostit </b> suunnitelmasta %{plan_title}."
                 votd: "Peruit onnistuneesti <b> Päivän jae </b> -sähköpostien tilauksen."
                 votd_image: "Peruit onnistuneesti <b> Päivän jae -huoneentaulu </b> -sähköpostien tilauksen."
+                contact_joins: "Peruutit onnistuneesti <b>Kontaktit</b>-sähköpostien tilauksen."
             labels: 
                 badges: "Ansaitessani ansiomerkin"
                 comments: "Kommentit toiminnalleni"
@@ -1446,6 +1460,7 @@ fi:
                 reading_plans: "Tietoa suunnitelmistani"
                 votd: "Päivän jakeen teksti"
                 votd_image: "Päivän raamatunkohta"
+                contact_joins: "Kun joku yhteystiedoista liittyy"
             error: 
                 token: "Sinun täytyy kirjautua sisään ennen ilmoitusasetusten muuttamista:"
                 other_type: "Valitsemasi toiminto ei onnistunut odotetusti. Haluatko muuttaa ilmoitusasetuksia?"

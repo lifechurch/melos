@@ -1414,13 +1414,26 @@ it:
             just now: "proprio adesso"
         verses selected: "versetti selezionati"
     EventsAdmin: 
+        footer: 
+            events: "Eventi"
+            versions: "Versioni (%{count})"
+            languages: "Lingue (%{count})"
+            help: "Aiuto"
+            social: "Social"
+            donate: "Donare"
+            about: "A Proposito Di"
+            jobs: "Lavori"
+            blog: "Blog"
+            press: "Notizie"
+            privacy: "Politica di Privacy"
+            terms: "Condizioni"
         unsubscribe: 
             about: "Gestisci quali e-mail riceverai da YouVersion. Puoi modificare le tue notifiche mobili dalla tua app mobile."
             email: "E-mail"
             not me: "Questo non sono io"
             saved: "Salvato!"
             plan delivery: "INVIO PIANI"
-            sign-in: "Per modificare altre impostazioni, <a href='{sign_in_path}'>accedi al tuo account</a>."
+            sign-in: "Per modificare altre impostazioni, <a href='%{sign_in_path}'>accedi al tuo account</a>."
             links: 
                 manage: "Gestisci Le Tue Notifiche E-Mail"
                 unsub all: "Annullare l'iscrizione a tutte le email"
@@ -1436,6 +1449,7 @@ it:
                 rp_daily: "Hai annullato l'iscrizione a <b>email Quotidiane Piani di Lettura</b> da %{plan_title}."
                 votd: "Hai annullato l'iscrizione a <b>email Versetto del Giorno</b>"
                 votd_image: "Hai annullato l'iscrizione a <b>email Immagine Versetto del Giorno</b>"
+                contact_joins: "Hai annullato l'iscrizione a e-mail <b>Contatti</b>."
             labels: 
                 badges: "Quando guadagno un distintivo"
                 comments: "Commenti sulla mia attività"
@@ -1446,6 +1460,7 @@ it:
                 reading_plans: "Riguardo i Miei Piani"
                 votd: "Testo del Versetto del Giorno"
                 votd_image: "Immagine Versetto del Giorno"
+                contact_joins: "Quando un Contatto s'iscrive"
             error: 
                 token: "Ci dispiace: devi Accedere prima di poter cambiare le tue impostazioni di Notifiche:"
                 other_type: "Ci dispiace, l'esito non è quello che ci aspettavamo. Vuoi aggiornare le tue Notifiche?"

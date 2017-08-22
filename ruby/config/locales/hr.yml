@@ -1444,13 +1444,26 @@ hr:
             just now: "Upravo sad"
         verses selected: "označeni stihovi"
     EventsAdmin: 
+        footer: 
+            events: "Događaji"
+            versions: "Verzije (%{count})"
+            languages: "Jezici (%{count})"
+            help: "Pomoć"
+            social: "Društvene mreže"
+            donate: "Doniraj"
+            about: "O nama"
+            jobs: "Poslovi"
+            blog: "Blog"
+            press: "Tisak"
+            privacy: "Pravila o privatnosti"
+            terms: "Uvjeti"
         unsubscribe: 
             about: "Kontroliraj koju e-poštu dobivaš od Youversion-a. Obavijesti koje primaš na mobilni uređaj možeš uređivati preko mobilne aplikacije."
             email: "Email"
             not me: "Ovo nisam ja."
             saved: "Spremljeno!"
             plan delivery: "ISPORUKA PLANOVA"
-            sign-in: "Za izmjenu ostalih postavki, <a href='{sign_in_path}'>prijavi se sa svojim korisničkim računom</a>."
+            sign-in: "Za izmjenu ostalih postavki, <a href='%{sign_in_path}'>prijavi se sa svojim korisničkim računom</a>."
             links: 
                 manage: "Upravljaj e-mail obavijestima"
                 unsub all: "Odjavi se sa svih e-mailova"
@@ -1466,6 +1479,7 @@ hr:
                 rp_daily: "Uspješna odjava s email liste <b>Dnevni mailovi planova čitanja</b>iz %{plan_title}."
                 votd: "Uspješna odjava s email liste <b>Stihova dana</b>."
                 votd_image: "Uspješna odjava s email liste <b>Slika Stihova dana</b>."
+                contact_joins: "Uspješna je isključeno primanje mailova od <b>kontakata</b> iz aplikacije Biblija."
             labels: 
                 badges: "Kad zaradim značku"
                 comments: "Komentari mojih aktivnosti"
@@ -1476,6 +1490,7 @@ hr:
                 reading_plans: "O mojim planovima"
                 votd: "Stih dana tekst"
                 votd_image: "Slika stiha dana"
+                contact_joins: "Kad se kontakt pridruži"
             error: 
                 token: "Žao nam je, da bi se postavke Obavijesti mogle izmijeniti, potrebno je prvo prijaviti se:"
                 other_type: "Žao nam je, ovo nismo očekivali. Želiš li nadograditi svoje Obavijesti?"

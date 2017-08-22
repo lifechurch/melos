@@ -1446,10 +1446,10 @@ uk:
     EventsAdmin: 
         footer: 
             events: "Події"
-            versions: "Versions (%{count})"
-            languages: "Languages (%{count})"
+            versions: "Видань (%{count})"
+            languages: "Мов (%{count})"
             help: "Допомога"
-            social: "Social"
+            social: "Соц. мережі"
             donate: "Пожертвувати"
             about: "Про додаток"
             jobs: "Заняття"
@@ -1479,7 +1479,7 @@ uk:
                 rp_daily: "Ви щойно відписались від <b>щоденної розсилки Планів Читання</b> з %{plan_title}."
                 votd: "Ви щойно відписались від отримання <b>Віршів дня</b>через електронну адресу."
                 votd_image: "Ви щойно відписались від<b>Малюнку з віршем дня</b> через електронну адресу."
-                contact_joins: "You successfully unsubscribed from <b>Contacts</b> emails."
+                contact_joins: "Ви щойно відписались від отримання <b>Контактів</b> через електронну пошту."
             labels: 
                 badges: "Здобуття вами значка"
                 comments: "Коментарі про мою діяльність"

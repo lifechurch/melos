@@ -1414,13 +1414,26 @@ hu:
             just now: "épp most"
         verses selected: "kijelölt versek"
     EventsAdmin: 
+        footer: 
+            events: "Események"
+            versions: "Fordítás (%{count})"
+            languages: "Nyelv (%{count})"
+            help: "Súgó"
+            social: "Közösségi"
+            donate: "Adomány"
+            about: "Rólunk"
+            jobs: "Álláslehetőség"
+            blog: "Blog"
+            press: "Sajtó"
+            privacy: "Adatvédelmi irányelvek"
+            terms: "ÁSZF"
         unsubscribe: 
             about: "Állítsd be, milyen e-maileket szeretnél a YouVersion-től fogadni. Szerkesztheted az alkalmazásból küldött mobil értesítéseket."
             email: "E-mail"
             not me: "Nem én voltam"
             saved: "Mentve!"
             plan delivery: "TERV KÉZBESÍTÉS"
-            sign-in: "Egyéb beállítások módosításához <a href='{sign_in_path}'>jelentkezz be a fiókodba</a>."
+            sign-in: "Egyéb beállítások módosításához <a href='%{sign_in_path}'>jelentkezz be a fiókodba</a>."
             links: 
                 manage: "Email értesítések kezelése"
                 unsub all: "Leiratkozás minden emailről"
@@ -1436,6 +1449,7 @@ hu:
                 rp_daily: "Sikeresen leiratkoztál a <b>Napi olvasási terv levelekről</b> a %{plan_title} tervnél."
                 votd: "Sikeresen leiratkoztál a <b>Nap igeverse</b> levelekről."
                 votd_image: "Sikeresen leiratkoztál a <b>Nap igeképe</b> levelekről."
+                contact_joins: "Sikeresen leiratkoztál a <b>Kapcsolatok</b> levelekről."
             labels: 
                 badges: "Ha szerzek egy jelvényt"
                 comments: "Hozzászólások tevékenységeimhez"
@@ -1446,6 +1460,7 @@ hu:
                 reading_plans: "Biblia-olvasó terveimről"
                 votd: "Napi igevers"
                 votd_image: "Napi igevers kép"
+                contact_joins: "Amikor egy ismerősöd csatlakozik"
             error: 
                 token: "Sajnáljuk, de be kell jelentkezned mielőtt az értesítési beállításokat módosítani tudnád:"
                 other_type: "Sajnálom, hogy nem volt mi mi várt. Szeretnéd frissíteni az értesítéseidet?"
