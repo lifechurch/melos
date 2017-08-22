@@ -63,15 +63,15 @@ class VersionPicker extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const { versions, languages } = this.props
+		const { versions, languages } = this.state
 		// if languages and versions weren't available when componentDidMount
 		// then let's handle adding the filter
-		if (!languages && nextProps.languages) {
+		if (languages !== nextProps.languages) {
 			Filter.add('LanguageStore', nextProps.languages)
 		}
-		if (!versions && nextProps.versions) {
+		if (versions !== nextProps.versions && nextProps.versions.selectedLanguage) {
 			// versions.byLang["lang_tag"] is an object, so we need to pass as array for filter
-			const versionsObj = nextProps.versions.byLang[versions.selectedLanguage].versions
+			const versionsObj = nextProps.versions.byLang[nextProps.versions.selectedLanguage].versions
 			Filter.add('VersionStore', Object.keys(versionsObj).map(key => { return versionsObj[key] }))
 		}
 	}
@@ -142,6 +142,7 @@ class VersionPicker extends Component {
 		) {
 			this.setState({
 				versions: versions.byLang[versions.selectedLanguage].versions,
+				selectedLanguage: versions.selectedLanguage,
 			})
 		}
 	}
@@ -420,7 +421,7 @@ class VersionPicker extends Component {
 							classes={classes}
 							languageList={languages}
 							versionList={versions}
-							versionsMap={(!this.props.versions.loading
+							versionsMap={(this.props.versions.byLang
 								&& selectedLanguage in this.props.versions.byLang)
 								? this.props.versions.byLang[selectedLanguage].map
 								: []

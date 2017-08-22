@@ -28,6 +28,7 @@ import {
 	getVerseAudioTiming,
 } from '../lib/readerUtils'
 import { getReferencesTitle } from '../lib/usfmUtils'
+import ViewportUtils from '../lib/viewportUtils'
 import Routes from '../lib/routes'
 import Filter from '../lib/filter'
 import LocalStore from '../lib/localStore'
@@ -57,6 +58,8 @@ class BibleHeader extends Component {
 		// this.recentVersions.onUpdate((settings) => {
 		// 	dispatch(ActionCreators.usersUpdateSettings(auth.isLoggedIn, settings))
 		// })
+		this.viewportUtils = new ViewportUtils()
+		this.viewportUtils.registerListener('resize', this.updateMobileStyling)
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -167,6 +170,57 @@ class BibleHeader extends Component {
 		})
 	}
 
+	/**
+	 *
+	 * figures out the viewport size and styles the modals to fill the screen
+	 * if the user is on a mobile (small: <= 599 px) screen
+	 *
+	 */
+	updateMobileStyling = () => {
+		if (typeof window === 'undefined') {
+			return
+		}
+		const viewport = this.viewportUtils.getViewport()
+		// if we're actually going to use this style, let's do the calculations and set it
+		// i.e. we're on a mobile screen
+		if (parseInt(viewport.width, 10) <= 599) {
+
+			// the modal is the absolute positioned element that shows the dropdowns
+			const modalPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
+			// the header on mobile becomes fixed at the bottom, so we need the mobile to fill until that
+			const footerModal = this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
+
+			// how much offset is there from modalPos.top and bookList.top?
+			// we need to bring that into the calculations so we don't set the height too high for the viewport
+			const bookList = document.getElementsByClassName('book-list')[0]
+			const bookContainer = document.getElementsByClassName('book-container')[0]
+			const bookOffset = Math.abs(this.viewportUtils.getElement(bookContainer).top - this.viewportUtils.getElement(bookList).top)
+
+			const versionList = document.getElementsByClassName('version-list')[0]
+			const versionContainer = document.getElementsByClassName('version-container')[0]
+			const versionOffset = Math.abs(this.viewportUtils.getElement(versionContainer).top - this.viewportUtils.getElement(versionList).top)
+
+			this.setState({
+				extraStyle: `
+					@media only screen and (max-width: 37.438em) {
+						.book-list, .chapter-list {
+							max-height: ${viewport.height - (modalPos.top + bookOffset + footerModal.height)}px !important;
+						}
+						.book-container, .language-container, .version-container {
+							width: ${viewport.width}px !important;
+						}
+						.language-list {
+							max-height: ${viewport.height - (modalPos.top + bookOffset + 40 + footerModal.height)}px !important;
+						}
+						.version-list {
+							max-height: ${viewport.height - (modalPos.top + versionOffset + footerModal.height)}px !important;
+						}
+					}
+				`
+			})
+		}
+	}
+
 	render() {
 		const {
 			customHeaderClass,
@@ -270,7 +324,10 @@ class BibleHeader extends Component {
 							}
 							// cancelDropDown={this.state.versionDropDownCancel}
 							localizedLink={localizedLink}
-							ref={(vpicker) => { this.versionPickerInstance = vpicker }}
+							ref={(vpicker) => {
+								// this.updateMobileStyling()
+								this.versionPickerInstance = vpicker
+							}}
 							dispatch={dispatch}
 						/>
 				}
