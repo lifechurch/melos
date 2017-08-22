@@ -5,7 +5,7 @@
 export default class viewportUtils {
 
 	constructor() {
-
+		return this
 	}
 
 	/**
@@ -14,7 +14,7 @@ export default class viewportUtils {
 	 * @param      {string}    eventListener  The event listener name
 	 * @param      {Function}  callback       The callback function
 	 */
-	registerListener(eventListener, callback) {
+	registerListener = (eventListener, callback) => {
 		if (typeof window !== 'undefined') {
 			window.addEventListener(eventListener, callback)
 		}
@@ -25,7 +25,7 @@ export default class viewportUtils {
 	 * wastefully add a listener (there is also a warning in chrome wanting to set a passive attr
 	 * on the listener to improve scrolling performance, but it's currently not cross-browser supported - jan.22.17)
 	 */
-	initIsUsingTouchScreen() {
+	initIsUsingTouchScreen = () => {
 		this.isUsingTouchScreen = false
 
 		this.registerListener('touchstart', () => {
@@ -40,7 +40,7 @@ export default class viewportUtils {
 	 *
 	 * @return     {boolean}  True if using touch screen, False otherwise.
 	 */
-	isUsingTouchScreen() {
+	isUsingTouchScreen = () => {
 		if (typeof this.isUsingTouchScreen !== 'undefined') {
 			return this.isUsingTouchScreen
 		} else {
@@ -54,7 +54,7 @@ export default class viewportUtils {
 	 *
 	 * @return     {Object}  The viewport height and width
 	 */
-	getViewport() {
+	getViewport = () => {
 		if (typeof window === 'undefined') {
 			return null
 		}
@@ -71,7 +71,7 @@ export default class viewportUtils {
 	 * @param      {DOMNode}  element  The element
 	 * @return     {Object}  The element's dimenstions/position
 	 */
-	getElement(element) {
+	getElement = (element) => {
 		if (typeof window === 'undefined') {
 			return null
 		}
