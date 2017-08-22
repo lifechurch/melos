@@ -89,7 +89,7 @@ function requireChapterData(nextState, replace, callback, force = false) {
 	}
 
 	let nextUsfm = `${nextBook}.${nextChapter}`
-	if (!nextVersion) { nextVersion = cookie.load('version') || '1' }
+	if (!nextVersion) { nextVersion = currentVersion || cookie.load('version') || '1' }
 	if (!nextChapter) {
 		nextUsfm = (cookie.load('last_read') || 'JHN.1').split('.').slice(0, 2).join('.')
 	}
