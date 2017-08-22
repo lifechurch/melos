@@ -291,7 +291,7 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "Бусад Холбоосын Хэсэг",
 	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "Үйл явдлынхаа дотор гадны цахим хуудастай холбох товчлуурыг үүсгэ. Үзэгчидээ нэг товчлуур дараад л онлайнаар өргөл өгөх, сайн дурын ажилд бүртгүүлэх эсвэл чуулганы цахим хуудасны эхлэл хуудас дээр очих боломжтой болго.",
 	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "Зарлалын Хэсэг",
-	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Сүмийн мэдээ, хуанлийн үйл явдал, хөтөлбөр, хичээл, сайн дурын болон илгээлтийн боломжууд... Зарлалын хэсгүүд нь ��йл явдлынхаа үндсэн мессэжийг өөр тийш нь сатааруулчихгүйгээр, тогтмол гардаг, чухал мэдээллийг түгээхэд зориулсан төгс сав болж өгдөг. Үйл явдлын дотор Зарлалын хэсэг бүр өөрийн хуудсанд харагдах ба олон төрөлийн текстийг агуулна (болд, италик гэх мэт).",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Сүмийн мэдээ, хуанлийн үйл явдал, хөтөлбөр, хичээл, сайн дурын болон илгээлтийн боломжууд... Зарлалын хэсгүүд нь Үйл явдлынхаа үндсэн мессэжийг өөр тийш нь сатааруулчихгүйгээр, тогтмол гардаг, чухал мэдээллийг түгээхэд зориулсан төгс сав болж өгдөг. Үйл явдлын дотор Зарлалын хэсэг бүр өөрийн хуудсанд харагдах ба олон төрөлийн текстийг агуулна (болд, италик гэх мэт).",
 	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Дараагийн хэсгийг энд оруул",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Гарчиг",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Ямар нэгэн зүйлийг энд бичнэ үү...",

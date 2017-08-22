@@ -72,7 +72,8 @@ class ManageNotifications extends Component {
 				likes: likesStatus,
 				newsletter: newsletterStatus,
 				badges: badgesStatus,
-				reading_plans: readingPlansStatus
+				reading_plans: readingPlansStatus,
+				contact_joins: contactJoinsStatus
 			},
 			tokenIdentity: {
 				email,
@@ -178,6 +179,13 @@ class ManageNotifications extends Component {
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.likes" />}
+							/>
+							<AsyncCheck
+								initialValue={getTypeStatus(contactJoinsStatus)}
+								data={{ type: 'likes' }}
+								onChange={this.handleChange}
+								enabled={!!email}
+								label={<FormattedMessage id="unsubscribe.labels.contact_joins" />}
 							/>
 							<AsyncCheck
 								initialValue={getTypeStatus(newsletterStatus)}
