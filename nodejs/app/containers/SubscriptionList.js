@@ -327,7 +327,7 @@ class SubscriptionList extends Component {
 													plan_id: sub.plan_id,
 													subscription_id: id,
 												})}
-												className='yv-gray-link margin-left-auto'
+												className='yv-gray-link'
 											>
 												<FormattedMessage id='settings' />
 											</Link>

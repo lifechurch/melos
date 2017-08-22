@@ -134,28 +134,30 @@ class ParticipantsView extends Component {
 			<div>
 				<Participants
 					planImg={src}
-					accepted={
-						acceptedParticipants
+					accepted={acceptedParticipants
 						&& Object.keys(acceptedParticipants)
 						&& Object.keys(acceptedParticipants).length > 0
 						&& Object.keys(acceptedParticipants).map((id) => {
 							return acceptedParticipants[id]
 						})
 					}
-					pending={
-						pendingParticipants
+					pending={pendingParticipants
 						&& Object.keys(pendingParticipants)
 						&& Object.keys(pendingParticipants).length > 0
 						&& Object.keys(pendingParticipants).map((id) => {
 							return pendingParticipants[id]
 						})
 					}
-					shareLink={together && together.public_share ? together.public_share : null}
+					shareLink={together
+						&& together.public_share
+						&& this.isAuthHost
+						? together.public_share
+						: null
+					}
 					// only allow participant deletes if the authed user is the host of pwf
 					handleDelete={this.isAuthHost && this.openDelete}
 					// show checkmarks if we have a specific day
-					activities={
-						together
+					activities={together
 						&& together.activities
 						&& day
 						&& Immutable

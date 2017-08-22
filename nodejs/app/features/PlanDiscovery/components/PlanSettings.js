@@ -178,7 +178,7 @@ class PlanSettings extends Component {
 															subscription_id: this.subscription_id,
 														}
 													})}
-													className='yv-gray-link'
+													className='yv-gray-link margin-left-auto'
 												>
 													<FormattedMessage id='change date' />
 												</Link>
