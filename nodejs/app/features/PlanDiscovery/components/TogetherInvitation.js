@@ -33,8 +33,9 @@ function Invitation({
 					<Card>
 						<ParticipantsAvatarList
 							customClass='horizontal-center'
-							avatarWidth={48}
+							avatarWidth={46}
 							together_id={together_id}
+							showMoreLink={false}
 							statusFilter='host'
 						/>
 						<div style={{ margin: '20px 0' }}>

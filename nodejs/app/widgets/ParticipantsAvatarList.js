@@ -119,36 +119,33 @@ class ParticipantsAvatarList extends Component {
 			})
 		}
 
-		let participantsLink = null
-		if (showMoreLink) {
-			participantsLink = showMoreLink
-		} else {
-			participantsLink = Routes.togetherParticipants({
-				plan_id: plan_id || (together && together.plan_id),
-				slug: '',
-				together_id,
-				query: day ? { day } : null,
-			})
-		}
+		const participantsLink = Routes.togetherParticipants({
+			plan_id: plan_id || (together && together.plan_id),
+			slug: '',
+			together_id,
+			query: day ? { day } : null,
+		})
 
 		return (
 			<Link to={participantsLink}>
 				<div className={`participants-list vertical-center ${customClass}`}>
 					{ avatarList }
 					{
-						// if we want to show more users than is allowed, show the link
-						usersToShow
+						// if we want to show more users than is allowed, show the number
+						showMoreLink
+							&& usersToShow
 							&& Object.keys(usersToShow).length > avatarList.length
 							? (
 								<div className='yv-green-link' style={{ fontSize: `${avatarWidth * 0.43}px` }}>
 									{`+ ${Object.keys(usersToShow).length - avatarList.length}`}
 								</div>
 							)
-							: (
-								<div className='yv-green-link' style={{ fontSize: `${avatarWidth * 0.43}px` }}>
-									<FormattedMessage id='x participants' values={{ number: avatarList.length }} />
-								</div>
-							)
+							: showMoreLink
+									&& (
+									<div className='yv-green-link' style={{ fontSize: `${avatarWidth * 0.43}px` }}>
+										<FormattedMessage id='x participants' values={{ number: avatarList.length }} />
+									</div>
+								)
 					}
 				</div>
 			</Link>
@@ -173,7 +170,7 @@ ParticipantsAvatarList.propTypes = {
 	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	plan_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	customClass: PropTypes.string,
-	showMoreLink: PropTypes.string,
+	showMoreLink: PropTypes.bool,
 	statusFilter: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 	avatarWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	auth: PropTypes.object,
@@ -183,7 +180,7 @@ ParticipantsAvatarList.propTypes = {
 }
 
 ParticipantsAvatarList.defaultProps = {
-	showMoreLink: null,
+	showMoreLink: true,
 	auth: null,
 	together: null,
 	plan_id: null,

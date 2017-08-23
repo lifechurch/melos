@@ -1,18 +1,12 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
-import { FormattedMessage } from 'react-intl'
 // actions
-import planView from '@youversion/api-redux/lib/batchedActions/planView'
-import plansAPI, { getTogether } from '@youversion/api-redux/lib/endpoints/plans'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // models
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
-import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
 // selectors
 import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
 // utils
-import { selectImageFromList } from '../lib/imageUtil'
-import Routes from '../lib/routes'
 import ViewportUtils from '../lib/viewportUtils'
 import getCurrentDT from '../lib/getCurrentDT'
 // components
@@ -289,11 +283,11 @@ function mapStateToProps(state, props) {
 	const { together_id } = props
 	console.log('TOG', getTogetherModel(state));
 	return {
-		activities: getTogetherModel(state) &&
-								together_id in getTogetherModel(state).byId &&
-								getTogetherModel(state).byId[together_id].activities ?
-								getTogetherModel(state).byId[together_id].activities :
-								null,
+		activities: getTogetherModel(state)
+			&& together_id in getTogetherModel(state).byId
+			&& getTogetherModel(state).byId[together_id].activities
+			? getTogetherModel(state).byId[together_id].activities
+			: null,
 		users: getUsers(state),
 		auth: state.auth,
 	}

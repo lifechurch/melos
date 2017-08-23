@@ -2,18 +2,18 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 // selectors
-import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
-import getTogetherModel from '@youversion/api-redux/lib/models/together'
+import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
 
 
-function InvitationString({ together_id, together, participants }) {
+function InvitationString({ together_id, participants }) {
 
-	const host = together && participants && together.host_user_id in participants
-		? participants[together.host_user_id].name
-		: null
-	const others = together_id in participants
-		? participants[together_id].map.length - 1
-		: null
+	const hostObj = participants
+		&& participants.filter({ together_id, statusFilter: 'host' })
+	const host = hostObj
+		&& hostObj[Object.keys(hostObj)[0]]
+		&& hostObj[Object.keys(hostObj)[0]].name
+	const others = participants
+		&& participants.filter({ together_id, idOnly: true }).length - 1
 
 	return (
 		<FormattedMessage
@@ -26,21 +26,14 @@ function InvitationString({ together_id, together, participants }) {
 	)
 }
 
-function mapStateToProps(state, props) {
-	const { together_id } = props
+function mapStateToProps(state) {
 	return {
-		participants: together_id && getParticipantsUsersByTogetherId(state, together_id)
-			? getParticipantsUsersByTogetherId(state, together_id)
-			: null,
-		together: getTogetherModel(state) && together_id in getTogetherModel(state).byId
-			? getTogetherModel(state).byId[together_id]
-			: null,
+		participants: getParticipantsUsers(state)
 	}
 }
 
 InvitationString.propTypes = {
 	together_id: PropTypes.object.isRequired,
-	together: PropTypes.object.isRequired,
 	participants: PropTypes.object.isRequired,
 }
 

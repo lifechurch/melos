@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 // models
-import { getParticipantsUsersByTogetherId } from '@youversion/api-redux/lib/models'
+import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
@@ -65,7 +65,7 @@ class InvitationView extends Component {
 	}
 
 	render() {
-		const { plan, params: { together_id }, location: { query }, together, participantsUsers } = this.props
+		const { plan, params: { together_id }, location: { query }, together, participants } = this.props
 
 		const joinToken = query && query.token ? query.token : null
 		const planImg = plan ?
@@ -73,15 +73,14 @@ class InvitationView extends Component {
 					''
 		const planTitle = plan ? plan.name.default : null
 		const planLink = plan ? plan.short_url : null
-		let invitedNum = 0
-		let acceptedNum = 0
-		if (participantsUsers) {
-			Object.keys(participantsUsers).forEach((id) => {
-				const user = participantsUsers[id]
-				if (user.status === 'invited') invitedNum++
-				if (user.status === 'accepted') acceptedNum++
-			})
-		}
+		const invitedNum = participants
+			&& participants.filter({ together_id, statusFilter: 'invited', idOnly: true })
+			? participants.filter({ together_id, statusFilter: 'invited', idOnly: true }).length
+			: 0
+		const acceptedNum = participants
+			&& participants.filter({ together_id, statusFilter: ['host', 'accepted'], idOnly: true })
+			? participants.filter({ together_id, statusFilter: ['host', 'accepted'], idOnly: true }).length
+			: 0
 
 		return (
 			<TogetherInvitation
@@ -114,7 +113,7 @@ function mapStateToProps(state, props) {
 	const plan_id = id ? id.split('-')[0] : null
 	return {
 		plan: getPlanById(state, plan_id),
-		participantsUsers: getParticipantsUsersByTogetherId(state, together_id),
+		participants: getParticipantsUsers(state),
 		together: getTogetherModel(state) && together_id in getTogetherModel(state).byId
 			? getTogetherModel(state).byId[together_id]
 			: null,
@@ -126,7 +125,7 @@ function mapStateToProps(state, props) {
 InvitationView.propTypes = {
 	plan: PropTypes.object.isRequired,
 	auth: PropTypes.object.isRequired,
-	participantsUsers: PropTypes.object.isRequired,
+	participants: PropTypes.object.isRequired,
 	together: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
