@@ -129,24 +129,6 @@
 	}
 }
 
-.invitation-actions {
-	margin-top: 10px;
-	font-size: 14px;
-	padding: 0 2px;
-	a {
-		margin-right: 20px;
-	}
-}
-.invitation {
-	.invitation-actions {
-		width: 100%;
-		flex-wrap: wrap;
-		a {
-			.card-button;
-		}
-	}
-}
-
 .card-buttons {
 	width: 100%;
 	display: inline-flex;
@@ -212,11 +194,21 @@
 	}
 
 	.talk-it-over-modal {
+		padding: 20px 10px;
 		.participants-list {
 			margin: 30px 0 20px 0;
 		}
 		h6 {
 			font-size: 1.2rem;
+		}
+	}
+
+	.yv-modal {
+		.comment {
+			.modal-content {
+				background: transparent !important;
+				padding: 0 !important;
+			}
 		}
 	}
 }

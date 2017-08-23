@@ -73,6 +73,7 @@ function Invitation({
 					</Card>
 					<div className='card-buttons'>
 						<TogetherInvitationActions
+							customClass='stacked'
 							showDecline={showDecline}
 							handleActionComplete={handleActionComplete}
 							handleUnauthed={handleUnauthed}

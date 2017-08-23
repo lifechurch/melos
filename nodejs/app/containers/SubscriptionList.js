@@ -300,7 +300,7 @@ class SubscriptionList extends Component {
 									subscription_id: id,
 								})
 							}
-							<div className='invitation-actions vertical-center'>
+							<div className='button-actions vertical-center'>
 								{
 									// show host actions on a together that starts in the future
 									isInFuture

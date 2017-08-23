@@ -159,11 +159,11 @@ class PlanSettings extends Component {
 
 		return (
 			<div className='row large-6 medium-8 small-11 plan-settings' style={{ marginTop: 30 }}>
-				<div style={{ padding: '20px 0 35px 0' }}>
+				<div style={{ padding: '20px 0 20px 0' }}>
 					{
 						startsInFuture
 							?	(
-								<div className='vertical-center invitation-actions'>
+								<div className='vertical-center button-actions'>
 									<h4>
 										<PlanStartString start_dt={subscription && subscription.start_dt} />
 									</h4>

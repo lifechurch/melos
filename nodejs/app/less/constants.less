@@ -216,6 +216,27 @@
 .centered {
 	margin: auto;
 }
+.button-actions {
+	margin-top: 10px;
+	font-size: 14px;
+	padding: 0 2px;
+	a, button {
+		margin-right: 20px;
+	}
+}
+.button-actions.stacked {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	a, button {
+		margin: 0;
+		.card-button;
+	}
+}
+
+
+
+
 .dropdown-transform {
 	/* only transition on transform properties which are hardware accelerated = way better performances */
 	-webkit-transition:-webkit-transform .7s cubic-bezier(0.42,1,.16,.93);

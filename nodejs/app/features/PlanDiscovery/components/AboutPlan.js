@@ -23,7 +23,18 @@ class AboutPlan extends Component {
 	}
 
 	render() {
-		const { readingPlan, savedPlans, recommendedPlans, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
+		const {
+			readingPlan,
+			savedPlans,
+			recommendedPlans,
+			serverLanguageTag,
+			imageConfig,
+			auth,
+			isSubscribed,
+			localizedLink,
+			isRtl,
+			params
+		} = this.props
 
 		if (!readingPlan || (typeof readingPlan === 'object' && readingPlan.__validation && !readingPlan.__validation.isValid)) {
 			return (
@@ -139,8 +150,14 @@ class AboutPlan extends Component {
 										aboutLink={aboutLink}
 										subLinkBase={subLinkBase}
 										planLinkNode={planLinkNode}
-										isSubscribed={'subscription_id' in readingPlan}
+										isSubscribed={isSubscribed}
 										isSaved={isSaved}
+										subscriptionsLink={auth
+											&& auth.isLoggedIn
+											&& Routes.subscriptions({
+												username: auth.userData.username,
+											})
+										}
 									/>
 									<hr />
 									<div className='widget'>

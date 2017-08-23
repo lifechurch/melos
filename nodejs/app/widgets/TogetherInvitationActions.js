@@ -66,7 +66,7 @@ class TogetherInvitationActions extends Component {
 	render() {
 		const { accept, decline, customClass, showDecline } = this.props
 		return (
-			<div className={`invitation-actions vertical-center ${customClass || ''}`}>
+			<div className={`button-actions vertical-center ${customClass || ''}`}>
 				<a tabIndex={0} onClick={this.handleAccept}>{ accept }</a>
 				{
 					showDecline &&
