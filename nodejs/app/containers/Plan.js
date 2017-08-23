@@ -91,10 +91,11 @@ class Plan extends Component {
 
 	onCatchUp = () => {
 		const { dispatch, auth, subscription } = this.props
-		if (subscription) {
+		if (subscription && subscription.days) {
 			// calculate last completed day to set the new start date
 			let newStartDt = null
-			subscription.days.some((progressDay, i) => {
+			Object.keys(subscription.days).some((key, i) => {
+				const progressDay = subscription.days[key]
 				// start plan however many days are completed away from today
 				// i.e. we have 2 days completed and we're behind, let's start the plan
 				// 2 days ago
@@ -251,6 +252,7 @@ class Plan extends Component {
 						dayOfString,
 						startString,
 						endString,
+						onCatchUp: this.onCatchUp,
 					})
 				}
 			</PlanComponent>
