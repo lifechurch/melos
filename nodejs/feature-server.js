@@ -303,8 +303,9 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 				//  but we want to capture any other exceptions here
 				if (ex.code !== 'MODULE_NOT_FOUND') {
 					Raven.captureException(ex)
+				} else {
+					reject(ex)
 				}
-				reject(ex)
 			}
 		}
 		return resolve({})

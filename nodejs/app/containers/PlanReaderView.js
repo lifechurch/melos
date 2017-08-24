@@ -197,6 +197,7 @@ class PlanReaderView extends Component {
 						<BibleWidget
 							customHeaderClass='plan-reader-heading'
 							usfm={this.segment.content}
+							showChapterPicker={false}
 						/>
 					)
 					break
