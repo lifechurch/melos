@@ -1,23 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import rtlDetect from 'rtl-detect'
 import { routeActions } from 'react-router-redux'
-import Immutable from 'immutable'
 // actions
 import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
-import bibleReference from '@youversion/api-redux/lib/batchedActions/bibleReference'
 // models
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
-import getBibleModel from '@youversion/api-redux/lib/models/bible'
 // components
 import BibleWidget from './BibleWidget'
 import TalkItOver from './TalkItOver'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
-import PlanRef from '../features/PlanDiscovery/components/planReader/PlanRef'
 // utils
-import { isVerseOrChapter, getBibleVersionFromStorage, getReferencesTitle } from '../lib/readerUtils'
 import { isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 
@@ -32,33 +27,15 @@ class PlanReaderView extends Component {
 	}
 
 	componentDidMount() {
-		const { bible, plan, params: { subscription_id, day }, dispatch, auth } = this.props
+		const { plan, params: { subscription_id, day }, dispatch, auth } = this.props
 		if (!plan) {
 			dispatch(subscriptionData({ subscription_id, auth, day }))
 		}
 		this.buildData()
 	}
 
-	localizedLink = (link) => {
-		const { params, serverLanguageTag } = this.props
-		const languageTag = serverLanguageTag || params.lang || 'en'
-
-		if (['en', 'en-US'].indexOf(languageTag) > -1) {
-			return link
-		} else {
-			return `/${languageTag}${link}`
-		}
-	}
-
-	isRtl = () => {
-		const { params, serverLanguageTag } = this.props
-		const languageTag = params.lang || serverLanguageTag || 'en'
-		return rtlDetect.isRtlLang(languageTag)
-	}
-
-
-	componentDidUpdate(prevProps, prevState) {
-		const { params: { content }, dispatch } = this.props
+	componentDidUpdate(prevProps) {
+		const { params: { content } } = this.props
 
 		const isNewContent = typeof content !== 'undefined'
 			&& typeof prevProps.params.content !== 'undefined'
@@ -94,8 +71,25 @@ class PlanReaderView extends Component {
 		}))
 	}
 
+	localizedLink = (link) => {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = serverLanguageTag || params.lang || 'en'
+
+		if (['en', 'en-US'].indexOf(languageTag) > -1) {
+			return link
+		} else {
+			return `/${languageTag}${link}`
+		}
+	}
+
+	isRtl = () => {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = params.lang || serverLanguageTag || 'en'
+		return rtlDetect.isRtlLang(languageTag)
+	}
+
 	buildNavLinks() {
-		const { params: { content, id, subscription_id, day }, auth } = this.props
+		const { params: { id, subscription_id, day }, auth } = this.props
 
 		let previous, next, subLink = null
 		const username = auth && auth.userData ? auth.userData.username : null
@@ -246,18 +240,26 @@ class PlanReaderView extends Component {
 	}
 }
 
+PlanReaderView.propTypes = {
+	params: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	plan: PropTypes.object.isRequired,
+	subscription: PropTypes.object.isRequired,
+	auth: PropTypes.object.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
+}
+
 function mapStateToProps(state, props) {
 	const { params: { id, subscription_id } } = props
 	const plan_id = id.split('-')[0]
-	console.log('PLANS', getPlansModel(state))
-	console.log('SUB', getSubscriptionModel(state))
 	return {
-		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId ?
-					getPlansModel(state).byId[plan_id] :
-					null,
-		subscription: getSubscriptionModel(state) && subscription_id in getSubscriptionModel(state).byId ?
-									getSubscriptionModel(state).byId[subscription_id] :
-									null,
+		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId
+			? getPlansModel(state).byId[plan_id]
+			: null,
+		subscription: getSubscriptionModel(state)
+			&& subscription_id in getSubscriptionModel(state).byId
+			? getSubscriptionModel(state).byId[subscription_id]
+			: null,
 		auth: state.auth,
 		hosts: state.hosts,
 	}

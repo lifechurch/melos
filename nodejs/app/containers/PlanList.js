@@ -2,10 +2,6 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
-import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
-import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
-import getTogetherModel from '@youversion/api-redux/lib/models/together'
-import { getTogetherInvitations } from '@youversion/api-redux/lib/models'
 import SubscriptionList from './SubscriptionList'
 import CompletedList from './CompletedList'
 import SavedList from './SavedList'
@@ -13,11 +9,6 @@ import Routes from '../lib/routes'
 
 
 class PlansList extends Component {
-
-	componentDidMount() {
-		const { auth } = this.props
-		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
-	}
 
 	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
@@ -32,18 +23,19 @@ class PlansList extends Component {
 
 	render() {
 		const {
-			subscriptions,
-			together,
-			invitations,
-			readingPlans,
 			route: { view },
 			auth,
 			params,
 			serverLanguageTag
 		} = this.props
 
-		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
-
+		const username = auth
+			&& auth.userData
+			&& auth.userData.username
+		const language_tag = serverLanguageTag
+			|| params.lang
+			|| auth.userData.language_tag
+			|| 'en'
 		let component = null
 		const title = ''
 		let backButton = null
@@ -65,7 +57,7 @@ class PlansList extends Component {
 					/>
 				)
 				backButton = (
-					<Link to={this.localizedLink(Routes.subscriptions({ username: this.username }))}>
+					<Link to={this.localizedLink(Routes.subscriptions({ username }))}>
 						&larr;
 						<FormattedMessage id='plans.back' />
 					</Link>
@@ -81,7 +73,7 @@ class PlansList extends Component {
 					/>
 				)
 				backButton = (
-					<Link to={this.localizedLink(Routes.subscriptions({ username: this.username }))}>
+					<Link to={this.localizedLink(Routes.subscriptions({ username }))}>
 						&larr;
 						<FormattedMessage id='plans.back' />
 					</Link>
@@ -92,7 +84,6 @@ class PlansList extends Component {
 
 			default: return null
 		}
-
 
 
 		return (
@@ -112,12 +103,12 @@ class PlansList extends Component {
 				</div>
 				<div className='row collapse subscription-actions'>
 					<div className='left'>
-						<Link to={this.username ? this.localizedLink(Routes.subscriptionsSaved({ username: this.username })) : null}>
+						<Link to={this.localizedLink(Routes.subscriptionsSaved({ username }))}>
 							<FormattedMessage id='plans.saved plans' />
 						</Link>
 					</div>
 					<div className='right'>
-						<Link to={this.username ? this.localizedLink(Routes.subscriptionsCompleted({ username: this.username })) : null}>
+						<Link to={this.localizedLink(Routes.subscriptionsCompleted({ username }))}>
 							<FormattedMessage id='plans.completed plans' />
 						</Link>
 					</div>
@@ -128,22 +119,17 @@ class PlansList extends Component {
 }
 
 function mapStateToProps(state) {
-	console.log('PLANS', getPlansModel(state));
 	return {
-		subscriptions: getSubscriptionsModel(state),
-		readingPlans: getPlansModel(state),
-		together: getTogetherModel(state),
-		invitations: getTogetherInvitations(state),
 		auth: state.auth,
+		serverLanguageTag: state.serverLanguageTag,
 	}
 }
 
 PlansList.propTypes = {
-	subscriptions: PropTypes.object.isRequired,
-	readingPlans: PropTypes.object.isRequired,
-	together: PropTypes.object.isRequired,
-	invitations: PropTypes.array,
 	auth: PropTypes.object.isRequired,
+	route: PropTypes.object.isRequired,
+	params: PropTypes.object.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
 }
 
 PlansList.defaultProps = {

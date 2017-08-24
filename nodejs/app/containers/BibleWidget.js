@@ -1,25 +1,11 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { injectIntl, FormattedMessage } from 'react-intl'
-import rtlDetect from 'rtl-detect'
-import { routeActions } from 'react-router-redux'
-import Immutable from 'immutable'
-// actions
-import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
-import audioAction from '@youversion/api-redux/lib/endpoints/audio/action'
-import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
-import bibleReference from '@youversion/api-redux/lib/batchedActions/bibleReference'
-// models
-import getBibleModel from '@youversion/api-redux/lib/models/bible'
-import getMomentsModel from '@youversion/api-redux/lib/models/moments'
-import getAudioModel from '@youversion/api-redux/lib/models/audio'
+import { injectIntl } from 'react-intl'
 // components
 import BibleHeader from './BibleHeader'
 import BibleContent from './BibleContent'
 // utils
-import { getBibleVersionFromStorage, chapterifyUsfm, buildCopyright, isVerseOrChapter, parseVerseFromContent } from '../lib/readerUtils'
-import { getReferencesTitle } from '../lib/usfmUtils'
-import Routes from '../lib/routes'
+import { getBibleVersionFromStorage } from '../lib/readerUtils'
 
 
 class BibleWidget extends Component {
@@ -79,7 +65,6 @@ class BibleWidget extends Component {
 			showVerseAction,
 			showChapterPicker,
 			showVersionPicker,
-			title,
 			customHeaderClass,
 		} = this.props
 		const { usfm, version_id } = this.state
@@ -87,28 +72,38 @@ class BibleWidget extends Component {
 		return (
 			<div className='bible'>
 				<BibleHeader
-					title={title}
 					customHeaderClass={customHeaderClass}
 					showAudio={showAudio}
 					showVersionPicker={showVersionPicker}
+					showChapterPicker={showChapterPicker}
 					sticky={stickyHeader}
 					usfm={usfm}
 					version_id={version_id}
 					localizedLink={this.localizedLink}
 					onVersionClick={this.handleUpdateVersion}
 				/>
-				<BibleContent
-					usfm={usfm}
-					version_id={version_id}
-					onUpdateVersion={this.handleUpdateVersion}
-					onUpdateUsfm={this.handleUpdateUsfm}
-				/>
+				{
+					showContent
+						&& (
+							<BibleContent
+								usfm={usfm}
+								version_id={version_id}
+								onUpdateVersion={this.handleUpdateVersion}
+								onUpdateUsfm={this.handleUpdateUsfm}
+								showGetChapter={showGetChapter}
+								showCopyright={showCopyright}
+								showVerseAction={showVerseAction}
+							/>
+						)
+				}
 			</div>
 		)
 	}
 }
 
 BibleWidget.propTypes = {
+	usfm: PropTypes.string.isRequired,
+	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	showContent: PropTypes.bool,
 	showCopyright: PropTypes.bool,
 	showGetChapter: PropTypes.bool,
@@ -117,6 +112,9 @@ BibleWidget.propTypes = {
 	showChapterPicker: PropTypes.bool,
 	showVersionPicker: PropTypes.bool,
 	stickyHeader: PropTypes.bool,
+	customHeaderClass: PropTypes.string,
+	language_tag: PropTypes.string,
+	serverLanguageTag: PropTypes.string.isRequired,
 }
 
 BibleWidget.defaultProps = {
@@ -128,18 +126,14 @@ BibleWidget.defaultProps = {
 	showChapterPicker: true,
 	showVersionPicker: true,
 	stickyHeader: false,
+	version_id: null,
+	customHeaderClass: null,
+	language_tag: null,
 }
 
 function mapStateToProps(state) {
-	console.log('BIBLE', getBibleModel(state))
-	console.log('MOMENTS', getMomentsModel(state))
-	console.log('AUDIO', getAudioModel(state))
 	return {
-		bible: getBibleModel(state),
-		moments: getMomentsModel(state),
-		audio: getAudioModel(state),
 		auth: state.auth,
-		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag,
 	}
 }

@@ -1,12 +1,9 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl, FormattedMessage } from 'react-intl'
-import rtlDetect from 'rtl-detect'
-import { routeActions } from 'react-router-redux'
 import Immutable from 'immutable'
 // actions
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
-import audioAction from '@youversion/api-redux/lib/endpoints/audio/action'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import bibleReference from '@youversion/api-redux/lib/batchedActions/bibleReference'
 // models
@@ -20,7 +17,6 @@ import ChapterCopyright from '../features/Bible/components/content/ChapterCopyri
 // utils
 import { getBibleVersionFromStorage, chapterifyUsfm, buildCopyright, isVerseOrChapter, parseVerseFromContent } from '../lib/readerUtils'
 import { getReferencesTitle } from '../lib/usfmUtils'
-import Routes from '../lib/routes'
 
 
 class BibleContent extends Component {
@@ -53,10 +49,12 @@ class BibleContent extends Component {
 	}
 
 	getReference = (usfm, version_id = null) => {
-		const { bible, onUpdateVersion, onUpdateUsfm, dispatch } = this.props
+		const { bible, onUpdateUsfm, dispatch } = this.props
 		if (usfm) {
 			this.setState({ usfm, version_id })
-			onUpdateUsfm(usfm)
+			if (onUpdateUsfm) {
+				onUpdateUsfm(usfm)
+			}
 			// if we don't already have it in app state,
 			// let's get it
 			if (!(bible && bible.pullRef(usfm, version_id))) {
@@ -66,7 +64,7 @@ class BibleContent extends Component {
 	}
 
 	getBibleData = (usfm, version_id) => {
-		const { bible, moments, dispatch, audio } = this.props
+		const { bible, moments, dispatch } = this.props
 
 		this.getReference(usfm, version_id)
 
@@ -154,16 +152,10 @@ class BibleContent extends Component {
 		const {
 			bible,
 			moments,
-			audio,
-			showContent,
 			showGetChapter,
-			showAudio,
 			showCopyright,
 			showVerseAction,
-			showChapterPicker,
-			showVersionPicker,
 			auth,
-			hosts,
 			dispatch,
 			intl
 		} = this.props
@@ -178,16 +170,13 @@ class BibleContent extends Component {
 
 		return (
 			<div className='bible-content'>
-				{
-					showContent &&
-					<Chapter
-						content={this.ref ? this.ref.content : null}
-						verseColors={moments ? moments.verseColors : null}
-						onSelect={this.handleVerseSelect}
-						// textDirection={textDirection}
-						ref={(chapter) => { this.chapterInstance = chapter }}
-					/>
-				}
+				<Chapter
+					content={this.ref ? this.ref.content : null}
+					verseColors={moments ? moments.verseColors : null}
+					onSelect={this.handleVerseSelect}
+					// textDirection={textDirection}
+					ref={(chapter) => { this.chapterInstance = chapter }}
+				/>
 				{
 					showCopyright &&
 					this.version &&
@@ -209,43 +198,53 @@ class BibleContent extends Component {
 						</button>
 					</div>
 				}
-				<VerseAction
-						// props
-					version={this.version}
-					verseColors={moments ? moments.verseColors : null}
-						// isRtl={isRtl}
-					highlightColors={moments ? moments.colors : null}
-					momentsLabels={moments ? moments.labels : null}
-					auth={auth}
-					dispatch={dispatch}
-						// state
-					selection={verseSelection}
-					deletableColors={deletableColors}
-					onClose={this.handleVerseClear}
-				/>
+				{
+					showVerseAction
+						&& (
+							<VerseAction
+								// props
+								version={this.version}
+								verseColors={moments ? moments.verseColors : null}
+								// isRtl={isRtl}
+								highlightColors={moments ? moments.colors : null}
+								momentsLabels={moments ? moments.labels : null}
+								auth={auth}
+								dispatch={dispatch}
+								// state
+								selection={verseSelection}
+								deletableColors={deletableColors}
+								onClose={this.handleVerseClear}
+							/>
+						)
+				}
 			</div>
 		)
 	}
 }
 
 BibleContent.propTypes = {
-	showContent: PropTypes.bool,
-	showCopyright: PropTypes.bool,
+	usfm: PropTypes.string.isRequired,
+	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	bible: PropTypes.object.isRequired,
+	moments: PropTypes.object,
+	onUpdateUsfm: PropTypes.func,
+	hosts: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
 	showGetChapter: PropTypes.bool,
-	showAudio: PropTypes.bool,
+	showCopyright: PropTypes.bool,
 	showVerseAction: PropTypes.bool,
-	showChapterPicker: PropTypes.bool,
-	showVersionPicker: PropTypes.bool,
+	auth: PropTypes.object.isRequired,
+	intl: PropTypes.object.isRequired,
 }
 
 BibleContent.defaultProps = {
-	showContent: true,
 	showCopyright: true,
 	showGetChapter: true,
-	showAudio: true,
 	showVerseAction: true,
-	showChapterPicker: true,
-	showVersionPicker: true,
+	version_id: null,
+	showParallel: true,
+	moments: null,
+	onUpdateUsfm: null,
 }
 
 function mapStateToProps(state) {
@@ -255,7 +254,6 @@ function mapStateToProps(state) {
 	return {
 		bible: getBibleModel(state),
 		moments: getMomentsModel(state),
-		audio: getAudioModel(state),
 		auth: state.auth,
 		hosts: state.hosts,
 	}

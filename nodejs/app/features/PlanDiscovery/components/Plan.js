@@ -91,46 +91,46 @@ function Plan({
 		refsDiv = (
 			<ul className='no-bullets plan-pieces'>
 				{
-							daySegments &&
-							daySegments.map((segment, i) => {
-								let title
-								let key = segment.kind
-								const link = Routes.subscriptionContent({
-									username: auth.userData.username,
-									plan_id: plan.id,
-									slug: plan.slug,
-									subscription_id,
-									day,
-									content: i,
-								})
-								const complete = dayProgress &&
-									(dayProgress.complete ||
-									(dayProgress.partial && dayProgress.partial[i]))
+					daySegments &&
+					daySegments.map((segment, i) => {
+						let title
+						let key = segment.kind
+						const link = Routes.subscriptionContent({
+							username: auth.userData.username,
+							plan_id: plan.id,
+							slug: plan.slug,
+							subscription_id,
+							day,
+							content: i,
+						})
+						const complete = dayProgress &&
+							(dayProgress.complete ||
+							(dayProgress.partial && dayProgress.partial[i]))
 
-								if (segment.kind === 'devotional') {
-									title = <FormattedMessage id='plans.devotional' />
-								} else if (segment.kind === 'reference') {
-									const usfm = [segment.content]
-									title = getReferencesTitle({ bookList, usfmList: usfm }).title
-									key = usfm
-								} else if (segment.kind === 'talk-it-over') {
-									title = <FormattedMessage id='plans.talk it over' />
-								}
-
-								return (
-									<PlanContentListItem
-										key={key}
-										title={title}
-										isComplete={complete}
-										handleIconClick={handleContentCheck.bind(this, {
-											contentIndex: i,
-											complete: !complete
-										})}
-										link={link}
-									/>
-								)
-							})
+						if (segment.kind === 'devotional') {
+							title = <FormattedMessage id='plans.devotional' />
+						} else if (segment.kind === 'reference') {
+							const usfm = [segment.content]
+							title = getReferencesTitle({ bookList, usfmList: usfm }).title
+							key = usfm
+						} else if (segment.kind === 'talk-it-over') {
+							title = <FormattedMessage id='plans.talk it over' />
 						}
+
+						return (
+							<PlanContentListItem
+								key={key}
+								title={title}
+								isComplete={complete}
+								handleIconClick={handleContentCheck.bind(this, {
+									contentIndex: i,
+									complete: !complete
+								})}
+								link={link}
+							/>
+						)
+					})
+				}
 			</ul>
 			)
 	}
@@ -222,7 +222,18 @@ Plan.propTypes = {
 	auth: PropTypes.object,
 	localizedLink: PropTypes.func,
 	serverLanguageTag: PropTypes.string,
-	savedPlans: PropTypes.object.isRequired
+	savedPlans: PropTypes.object.isRequired,
+	day: PropTypes.string.isRequired,
+	together_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	subscription_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	handleContentCheck: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	handleCatchUp: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	start_dt: PropTypes.string,
+	dayProgress: PropTypes.object,
+	daySegments: PropTypes.object,
+	progressDays: PropTypes.object,
+	progressString: PropTypes.object,
+	bookList: PropTypes.array.isRequired,
 }
 
 Plan.defaultProps = {
@@ -232,7 +243,16 @@ Plan.defaultProps = {
 	auth: {},
 	location: {},
 	localizedLink: (param) => { return param },
-	serverLanguageTag: ''
+	serverLanguageTag: '',
+	together_id: null,
+	subscription_id: null,
+	handleContentCheck: null,
+	handleCatchUp: null,
+	start_dt: null,
+	dayProgress: null,
+	daySegments: null,
+	progressDays: null,
+	progressString: null,
 }
 
 export default Plan
