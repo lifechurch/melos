@@ -8,9 +8,8 @@ function XMark({ width, height, fill, className }) {
 				viewBox='67 8 8 8'
 				width={width}
 				height={height}
-				version='1.1'
-				xmlns='http://www.w3.org/2000/svg'
-				xlink='http://www.w3.org/1999/xlink'
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg"
 			>
 				<polygon
 					stroke='none'

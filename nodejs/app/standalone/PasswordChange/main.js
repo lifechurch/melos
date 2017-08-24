@@ -27,5 +27,5 @@ render(
 			<PasswordChange />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+  document.getElementById('react-app-PasswordChange')
 )

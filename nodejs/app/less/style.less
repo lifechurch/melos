@@ -26,6 +26,10 @@
 
 @import "../features/Moments/components/less/moment.less";
 
+@import "../features/Footer/components/less/Footer.less";
+@import "../features/Footer/components/less/LangSelector.less";
+
+@import "../components/less/Modal.less";
 @import "../components/less/ButtonBar.less";
 @import "../components/less/Toggle.less";
 @import "../components/less/PopupMenu.less";
@@ -41,9 +45,14 @@
 @import "../components/less/Footer.less";
 @import "../components/less/StickyDiv.less";
 @import "../components/less/ConfirmationDialog.less";
+@import "../components/AsyncCheck/AsyncCheck.less";
 
 @import "../features/Bible/components/settings/less/Settings.less";
 @import "../features/Bible/components/audio/less/Audio.less";
+
+@import "../features/Notifications/components/UnsubscribeConfirmation/UnsubscribeConfirmation.less";
+@import "../features/Notifications/components/ManageNotifications/ManageNotifications.less";
+@import "../features/Notifications/less/notifications.less";
 
 @import "../features/Lookinside/components/lookinside.less";
 
@@ -79,6 +88,16 @@
 
 body {
     font-family: @base-font-family;
+}
+
+.yv-events-select-lang {
+	.yv-lang-selector {
+			margin-top: 0;
+	}
+
+	.title {
+		font-size: 36px;
+	}
 }
 
 .error-message {

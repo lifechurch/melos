@@ -1,9 +1,25 @@
 
+:ruby
+  hillsong_campaign = (params[:campaign] == "2") || (params[:redirect].present? and params[:redirect].downcase.include? "campaign=2")
+  hillsong_london_campaign = (params[:campaign] == "4") || (params[:redirect].present? and params[:redirect].downcase.include? "campaign=4")
+
 - if @user and @user.invalid?
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
 .medium-centered
   .columns.medium-centered.large-11
+    - if hillsong_london_campaign
+      %p= "To make your donation to help get God's Word to the billion-plus people who still don’t have it, simply sign in to YouVersion."
+      %br
+      %p= "Thank you for partnering with Hillsong Conference, SPHERES and YouVersion to help ensure that EVERYONE can experience the transforming power of the Bible in their own heart language."
+      %br
+
+    - elsif hillsong_campaign
+      %p= "To make your donation to help get God's Word to the Pitjantjatjara people and beyond, simply sign in to YouVersion."
+      %br
+      %p= "Thank you for partnering with Hillsong Conference, SPHERES and YouVersion to help ensure that EVERYONE can experience the transforming power of the Bible in their own heart language."
+      %br
+
     = render partial: 'shared/facebook_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
     = render partial: 'shared/google_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
     %hr

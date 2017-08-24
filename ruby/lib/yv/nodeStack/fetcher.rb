@@ -34,7 +34,7 @@ module YV
 
           params['languageTag'] = I18n.locale
           params['railsHost'] = "#{request.protocol}#{request.host_with_port}"
-
+					params['acceptLangHeader'] = request.env['HTTP_ACCEPT_LANGUAGE']
           resource_url = "#{Cfg.nodejs_import_url}/#{feature}"
           curb_get = lambda do
             begin
@@ -103,7 +103,7 @@ module YV
           opts.delete('cache_for')
           opts.delete('url')
 
-          key = [params['url'], opts.sort_by{|k,v| k.to_s}].flatten.join("_")
+          key = [feature, params['url'], opts.sort_by{|k,v| k.to_s}].flatten.join("_")
           return data_from_cache_or_api(key, curb_get, can_cache, params)
           #return curb_get.call
         end

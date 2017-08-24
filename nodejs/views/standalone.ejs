@@ -1,16 +1,57 @@
-<script src="https://cdn.ravenjs.com/3.14.0/raven.min.js" crossorigin="anonymous"></script>
-
-<%if (config.linkCss) { %>
-	<link rel="stylesheet" href="<%=assetPrefix%>/assets/<%= getAssetPath('main.css') %>" />
-<% } %>
-<script src="<%=assetPrefix%>/assets/<%= getAssetPath('manifest.js') %>"></script>
-<script src="<%=assetPrefix%>/assets/<%= getAssetPath('vendor.js') %>"></script>
-<div id="react-app"><%- appString %></div>
+<div id="react-app-<%=appContainerSuffix%>"><%- appString %></div>
 <script type="application/javascript">
+	// var head = document.getElementsByTagName('head')[0];
+	// var body = document.getElementsByTagName('body')[0];
+	//
+	// function loadScript(path, el, anonymous) {
+	// 	var js = document.createElement("script");
+	// 	js.type = "text/javascript";
+	//
+	// 	if (anonymous) {
+	// 		js.crossOrigin = "anonymous";
+	// 	}
+	//
+	// 	js.src = path
+	// 	el.appendChild(js);
+	// }
+
+	// function loadStylesheet(path) {
+	// 	var ss = document.createElement("link");
+	// 	ss.rel = "stylesheet"
+	// 	ss.href = path
+	// 	head.append(ss)
+	// }
+
+	if (typeof window.standaloneInitialized === 'undefined') {
+		window.standaloneInitialized = true
+
+		// Load once-only scripts
+		// loadScript("<%=assetPrefix%>/assets/<%= getAssetPath('manifest.js') %>", head);
+		// loadScript("<%=assetPrefix%>/assets/<%= getAssetPath('vendor.js') %>", head);
+		// loadScript("https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Number.isNaN,Promise", body);
+		// loadScript("https://cdn.ravenjs.com/3.14.0/raven.min.js", body, true)
+
+		// <%if (config.linkCss) { %>
+		// loadStylesheet("<%=assetPrefix%>/assets/<%= getAssetPath('main.css') %>");
+		// <% } %>
+
+		// Load once-only variables
+		window.__ENV__ = "<%- environment %>";
+		window.__RAILS_HOST__ = "<%- railsHost %>";
+		window.__NODE_HOST__ = "<%- nodeHost %>";
+		window.__LOCALE__ = <%- JSON.stringify(locale, function(key, val) {
+			if (typeof val === 'function') {
+				return val + '';
+			}
+			return val;
+		}, 4) %>;
+	}
+
+	window.<%=appContainerSuffix%> = {}
+
 	if (typeof Raven !== 'undefined' && !Raven.isSetup()) {
 		Raven.config('https://488eeabd899a452783e997c6558e0852@sentry.io/129704', { sampleRate: 0.5 }).install()
 	}
-
 	window.__LOCALE__ = <%- JSON.stringify(locale, function(key, val) {
 		if (typeof val === 'function') {
 			return val + '';
@@ -26,3 +67,5 @@
 </script>
 
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Number.isNaN,Promise"></script>
+	window.<%=appContainerSuffix%>.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
+</script>

@@ -40,7 +40,9 @@ const clientConfig = {
 		PlanDiscovery: './app/standalone/PlanDiscovery/main.js',
 		Bible: './app/standalone/Bible/main.js',
 		SubscribeUser: './app/standalone/SubscribeUser/main.js',
-		Passage: './app/standalone/Passage/main.js'
+		Passage: './app/standalone/Passage/main.js',
+		Footer: './app/standalone/Footer/main.js',
+		Unsubscribe: './app/standalone/Unsubscribe/main.js'
 	},
 
 	output: {

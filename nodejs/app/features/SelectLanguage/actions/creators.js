@@ -5,36 +5,47 @@ import moment from 'moment'
 const ActionCreators = {
 
 	changeLanguage(params) {
-
 		return dispatch => {
-			dispatch({type: type('changeLanguageRequest'), params })
+			return new Promise((resolve) => {
+				dispatch({ type: type('changeLanguageRequest'), params })
 
-			const { language_tag, user_id, locale } = params
+				const { language_tag, user_id, locale } = params
+				let { redirect } = params
 
-			function finish(response) {
-				cookie.save('locale', locale, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
-				dispatch({type: type('changeLanguageSuccess'), params, response })
-				window.location = '/' + locale + '/'
-			}
+				if (typeof redirect === 'undefined') {
+					redirect = true
+				}
 
-			if (typeof language_tag === 'undefined' || typeof locale === 'undefined') {
-				dispatch({type: type('changeLanguageFailure'), params, error: 'Invalid params' })
+				function finish(response) {
+					cookie.save('locale', locale, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+					if (redirect) {
+						window.location = `/${locale}/`
+					}
+					dispatch({ type: type('changeLanguageSuccess'), params, response })
+					if (redirect === false) {
+						resolve()
+					}
+				}
 
-			} else if (typeof user_id === 'undefined') {
-				finish({})
+				if (typeof language_tag === 'undefined' || typeof locale === 'undefined') {
+					return dispatch({ type: type('changeLanguageFailure'), params, error: 'Invalid params' })
 
-			} else {
-				dispatch(ActionCreators.getUser({ id: user_id })).then((user) => {
-					user.language_tag = locale
-					dispatch(ActionCreators.updateUser(user)).then((response) => {
-						finish(response)
+				} else if (typeof user_id === 'undefined') {
+					finish({})
+
+				} else {
+					dispatch(ActionCreators.getUser({ id: user_id })).then((user) => {
+						user.language_tag = locale.replace('-', '_')
+						dispatch(ActionCreators.updateUser(user)).then((response) => {
+							finish(response)
+						}, (error) => {
+							return dispatch({ type: type('changeLanguageFailure'), params, error })
+						})
 					}, (error) => {
-						return dispatch({type: type('changeLanguageFailure'), params, error })
+						return dispatch({ type: type('changeLanguageFailure'), params, error })
 					})
-				}, (error) => {
-						return dispatch({type: type('changeLanguageFailure'), params, error })
-				})
-			}
+				}
+			})
 		}
 	},
 
@@ -46,7 +57,7 @@ const ActionCreators = {
 				method: 'view',
 				version: '3.1',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('getUserRequest'), type('getUserSuccess'), type('getUserFailure') ]
 			}
@@ -61,7 +72,7 @@ const ActionCreators = {
 				method: 'update',
 				version: '3.1',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'post',
 				types: [ type('updateUserRequest'), type('updateUserSuccess'), type('updateUserFailure') ]
 			}

@@ -30,7 +30,7 @@ production:
     - command deploy
   environment:
     name: production
-    url: http://www.$KUBE_DOMAIN
+    url: http://$KUBE_DOMAIN
   when: manual
   only:
     - master

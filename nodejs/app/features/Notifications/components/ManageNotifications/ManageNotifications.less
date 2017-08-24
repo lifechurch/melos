@@ -1,0 +1,179 @@
+.ghosted {
+	background-color: #eee;
+	color: rgba(0,0,0,0);
+	border-color: rgba(0,0,0,0);
+}
+
+.not_ghosted {
+	transition: background-color 0.4s ease-in-out, color 0.2s ease-in-out 0.1s, border-color 0.4s ease-in-out;
+}
+
+.green-link {
+	color: #6ab750;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.centered-link {
+	text-align: center;
+	width: 50%;
+	display: block;
+	font-size: 16px;
+	border: solid 1px;
+	border-radius: 3px;
+	padding: 10px;
+	margin: auto;
+	margin-top: 15px;
+	text-decoration: none;
+	color: #6ab750;
+
+	&:hover {
+		background-color: #6ab750;
+		color: white;
+	}
+}
+
+.yv-unsubscribe-manage-footer {
+	font-size: 11px;
+	color: #979797;
+	line-height: 18px;
+	margin-top: 30px;
+
+	a {
+		.green-link();
+	}
+}
+
+.yv-unsubscribe-manage {
+	top: 0;
+	bottom: -300px;
+	left: 0;
+	right: 0;
+	background-color: #F4F4F4;
+	position: absolute;
+	padding: 20px;
+	display: flex;
+	margin: auto;
+
+	@media @small-only {
+		padding: 0;
+	}
+
+	.card-wrapper {
+		margin: auto;
+		margin-top: 50px;
+		width: 500px;
+		text-align: center;
+
+		@media @small-only {
+			width: 100%;
+			margin-top: 30px;
+		}
+
+		.card {
+			margin-top: 50px;
+			margin-bottom: 10px;
+
+			@media @small-only {
+				margin-top: 30px;
+			}
+
+			.content-wrapper {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+
+				h1 {
+					font-size: 20px;
+					color: #000000;
+					letter-spacing: 0;
+					font-weight: normal;
+					text-align: left;
+
+					@media @small-only {
+						text-align: center;
+					}
+				}
+
+				h2 {
+					font-size: 13px;
+					color: #979797;
+					font-weight: normal;
+					letter-spacing: 0;
+					margin-bottom: 30px;
+				}
+
+				p {
+					text-align: left;
+					font-size: 12px;
+					color: #979797;
+
+					@media @small-only {
+						text-align: center;
+					}
+				}
+
+				.not-me {
+					margin-left: 15px;
+					.green-link();
+
+					@media @small-only {
+						display: block;
+						margin-top: 15px;
+						margin-left: 0;
+						text-align: center;
+					}
+				}
+
+				hr {
+					width: 100%;
+			    margin-bottom: 20px;
+					background-color: #D4D4D4;
+					border: none;
+					height: 1px;
+				}
+
+				.error {
+					color: red;
+				}
+
+				p.user {
+					width: 100%;
+				}
+
+				&.no-ghost {
+					.yv-async-check {
+						.check-box, span {
+							.not_ghosted();
+						}
+					}
+
+					p.user {
+						.not_ghosted();
+						a {
+							.not_ghosted();
+						}
+					}
+				}
+
+				&.ghost {
+					.yv-async-check {
+						.check-box, span {
+							.ghosted();
+						}
+					}
+
+					p.user {
+						.ghosted();
+						a {
+							.ghosted();
+						}
+					}
+				}
+			}
+		}
+	}
+}

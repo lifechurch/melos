@@ -9,7 +9,7 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
 import SubscribeUserView from '../../features/SubscribeUser/components/SubscribeUserView'
 
-import "../../less/style.less"
+import '../../less/style.less'
 
 require('moment/min/locales')
 
@@ -35,5 +35,5 @@ render(
 			<SubscribeUserView />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+  document.getElementById('react-app-SubscribeUser')
 )
