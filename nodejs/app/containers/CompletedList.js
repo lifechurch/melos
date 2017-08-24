@@ -48,17 +48,27 @@ class CompletedList extends Component {
 			src = plan.images ?
 						selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
 						null
-			link = localizedLink(
-				Routes.plan({
-					plan_id: plan.id,
-					slug: plan.slug
-				}))
+			if (together_id) {
+				link = localizedLink(
+					Routes.subscription({
+						username: this.username,
+						plan_id: plan.id,
+						slug: plan.slug,
+						subscription_id,
+					})
+				)
+			} else {
+				link = localizedLink(
+					Routes.plan({
+						plan_id: plan.id,
+						slug: plan.slug
+					}))
+			}
 
 			subContent = (
 				<div>
 					<ParticipantsAvatarList
 						together_id={together_id}
-						showMoreLink={''}
 						avatarWidth={26}
 					/>
 					<div className='plan-length'>

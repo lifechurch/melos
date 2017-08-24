@@ -106,7 +106,7 @@ class ColorList extends Component {
 			// push custom picker trigger as the last 'color' in the list
 			colors.push(
 				<div key={'custom-color'} className='custom-color-icon color' onClick={this.handleScreenChange}>
-					<EllipsisMoreIcon />
+					<EllipsisMoreIcon classes='vertical-center' />
 				</div>
 			)
 		}

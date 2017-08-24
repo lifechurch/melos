@@ -76,7 +76,7 @@ PopupMenu.propTypes = {
 }
 
 PopupMenu.defaultProps = {
-	triggerButton: <EllipsisMoreIcon />,
+	triggerButton: <EllipsisMoreIcon classes='vertical-center' />,
 	closeButton: <XMark width={14.4} height={13.7} />,
 	header: null,
 	footer: null,
