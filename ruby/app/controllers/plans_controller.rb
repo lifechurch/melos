@@ -76,7 +76,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
     @deeplink_plan_id = p['id']
-    render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), add_node_assets(css: fromNode['css']) }
+    render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
 
   # action and view from node server for save for later url (from email link)
