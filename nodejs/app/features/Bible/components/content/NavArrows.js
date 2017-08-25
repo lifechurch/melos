@@ -68,8 +68,10 @@ function NavArrows(props) {
 		if (isRtl) {
 			right = (
 				<Link
-					to={localizedLink(`${previousURL}`)}
-					query={parallelVersion ? { parallel: parallelVersion } : null}
+					to={{
+						pathname: localizedLink(`${previousURL}`),
+						query: parallelVersion ? { parallel: parallelVersion } : null
+					}}
 					onClick={onPrevClick}
 					className={rightClass}
 				>
@@ -79,8 +81,10 @@ function NavArrows(props) {
 		} else {
 			left = (
 				<Link
-					to={localizedLink(`${previousURL}`)}
-					query={parallelVersion ? { parallel: parallelVersion } : null}
+					to={{
+						pathname: localizedLink(`${previousURL}`),
+						query: parallelVersion ? { parallel: parallelVersion } : null
+					}}
 					onClick={onPrevClick}
 					className={leftClass}
 				>
@@ -94,8 +98,10 @@ function NavArrows(props) {
 		if (isRtl) {
 			left = (
 				<Link
-					to={localizedLink(`${nextURL}`)}
-					query={parallelVersion ? { parallel: parallelVersion } : null}
+					to={{
+						pathname: localizedLink(`${nextURL}`),
+						query: parallelVersion ? { parallel: parallelVersion } : null
+					}}
 					onClick={onNextClick}
 					className={leftClass}
 				>
@@ -105,8 +111,10 @@ function NavArrows(props) {
 		} else {
 			right = (
 				<Link
-					to={localizedLink(`${nextURL}`)}
-					query={parallelVersion ? { parallel: parallelVersion } : null}
+					to={{
+						pathname: localizedLink(`${nextURL}`),
+						query: parallelVersion ? { parallel: parallelVersion } : null
+					}}
 					onClick={onNextClick}
 					className={rightClass}
 				>

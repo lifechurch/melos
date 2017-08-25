@@ -373,8 +373,10 @@ class Bible extends Component {
 
 					{!hasParallel &&
 						<Link
-							to={buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation)}
-							query={{ parallel: LocalStore.get('parallelVersion') || bible.version.id }}
+							to={{
+								pathname: buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation),
+								query: { parallel: LocalStore.get('parallelVersion') || bible.version.id }
+							}}
 							className="hide-for-small"
 							style={{
 								display: 'flex',
