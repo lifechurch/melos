@@ -4,7 +4,7 @@ import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 
 
 function TalkItOverInfo(props) {
-	const { together_id, day, questionContent, customClass } = props
+	const { together_id, day, questionContent, customClass, archived } = props
 
 	return (
 		<div
@@ -18,6 +18,14 @@ function TalkItOverInfo(props) {
 				avatarWidth={30}
 			/>
 			<h6 style={{ width: '100%' }}>{ questionContent }</h6>
+			{
+				archived
+					&& (
+						<div className='font-grey'>
+							<FormattedMessage id='plan archived' />
+						</div>
+					)
+			}
 		</div>
 	)
 }
@@ -27,11 +35,13 @@ TalkItOverInfo.propTypes = {
 	questionContent: PropTypes.string.isRequired,
 	day: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	customClass: PropTypes.string,
+	archived: PropTypes.bool,
 }
 
 TalkItOverInfo.defaultProps = {
 	day: null,
 	customClass: '',
+	archived: false,
 }
 
 export default TalkItOverInfo

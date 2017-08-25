@@ -15,13 +15,18 @@ function PlanContentListItem({
 
 	return (
 		<li className='li-right'>
-			<a tabIndex={0} onClick={handleIconClick}>
-				{
-					isComplete ?
-						<CheckMark fill='#444444' style={iconStyle} /> :
-						<Circle style={iconStyle} />
-				}
-			</a>
+			{
+				handleIconClick
+					&& (
+						<a tabIndex={0} onClick={handleIconClick}>
+							{
+								isComplete ?
+									<CheckMark fill='#444444' style={iconStyle} /> :
+									<Circle style={iconStyle} />
+							}
+						</a>
+					)
+			}
 			<Link to={link}>{ title }</Link>
 		</li>
 	)

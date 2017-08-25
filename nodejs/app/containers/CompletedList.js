@@ -67,16 +67,16 @@ class CompletedList extends Component {
 
 			subContent = (
 				<div>
-					<ParticipantsAvatarList
-						together_id={together_id}
-						avatarWidth={26}
-					/>
 					<div className='plan-length'>
 						{
 							plan.formatted_length[language_tag] ||
 							plan.formatted_length.default
 						}
 					</div>
+					<ParticipantsAvatarList
+						together_id={together_id}
+						avatarWidth={26}
+					/>
 					<div className='plan-completed'>
 						{ moment(completed_dt).format('LL') }
 					</div>

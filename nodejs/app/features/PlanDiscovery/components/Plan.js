@@ -122,10 +122,12 @@ function Plan({
 								key={key}
 								title={title}
 								isComplete={complete}
-								handleIconClick={handleContentCheck.bind(this, {
-									contentIndex: i,
-									complete: !complete
-								})}
+								handleIconClick={handleContentCheck
+									&& handleContentCheck.bind(this, {
+										contentIndex: i,
+										complete: !complete
+									})
+								}
 								link={link}
 							/>
 						)

@@ -14,9 +14,10 @@ import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
+import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 // utils
-import { calcCurrentPlanDay, isDayComplete, isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
+import { calcCurrentPlanDay, isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
 // components
@@ -127,6 +128,9 @@ class Plan extends Component {
 	OnContentCheck = ({ contentIndex, complete }) => {
 		const { params: { subscription_id, id }, dispatch, auth } = this.props
 
+		// no activity on an archived plan
+		if (this.isArchived) return
+
 		const isFinalDay = isFinalPlanDay(this.currentDay, this.progressDays)
 		const isPlanComplete = complete
 			&& isFinalDay
@@ -165,7 +169,7 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { children, subscription, plan, bible, params: { day } } = this.props
+		const { children, subscription, plan, bible, params: { day }, togethers } = this.props
 
 		this.daySegments = null
 		this.currentDay = null
@@ -177,8 +181,14 @@ class Plan extends Component {
 		let endString = null
 		let subscription_id = null
 
-		const together_id = subscription && 'together_id' in subscription ?
-												subscription.together_id : null
+		const together_id = subscription
+			&& 'together_id' in subscription
+			? subscription.together_id
+			: null
+		this.isArchived = togethers
+			&& togethers.byId
+			&& together_id in togethers.byId
+			&& togethers.byId[together_id].archived
 		if (plan && subscription && subscription.start_dt) {
 			subscription_id = subscription.id
 			this.currentDay = day ||
@@ -237,7 +247,7 @@ class Plan extends Component {
 				bookList={bookList ? bookList.toJS() : null}
 				start_dt={subscription ? subscription.start_dt : null}
 				subscription_id={subscription ? subscription.id : null}
-				handleContentCheck={this.OnContentCheck}
+				handleContentCheck={!this.isArchived && this.OnContentCheck}
 				handleCatchUp={this.onCatchUp}
 			>
 				{
@@ -272,6 +282,7 @@ function mapStateToProps(state, props) {
 			? getSubscriptionModel(state).byId[subscription_id]
 			: null,
 		bible: getBibleModel(state),
+		togethers: getTogetherModel(state),
 		savedPlans: state.readingPlans && state.readingPlans.savedPlans ? state.readingPlans.savedPlans : null,
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,

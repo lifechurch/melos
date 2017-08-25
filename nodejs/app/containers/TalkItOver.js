@@ -157,7 +157,9 @@ class TalkItOver extends Component {
 	}
 
 	hasLiked = (momentLikes) => {
-		return momentLikes && this.authedUser && momentLikes.includes(this.authedUser.id)
+		return momentLikes
+			&& this.authedUser
+			&& momentLikes.includes(this.authedUser.id)
 	}
 
 	renderMoment = (moment) => {
@@ -167,15 +169,15 @@ class TalkItOver extends Component {
 				content={moment.content}
 				dt={moment.updated_dt || moment.created_dt}
 				likedIds={moment.likes}
-				onLike={this.handleLike.bind(this, moment.id)}
-				onDelete={this.handleDelete.bind(this, moment.id)}
-				onEdit={this.handleEdit.bind(this, moment)}
+				onLike={!this.isArchived && this.handleLike.bind(this, moment.id)}
+				onDelete={!this.isArchived && this.handleDelete.bind(this, moment.id)}
+				onEdit={!this.isArchived && this.handleEdit.bind(this, moment)}
 			/>
 		)
 	}
 
 	render() {
-		const { content, day, together_id, activities, auth, users } = this.props
+		const { content, day, together_id, together, auth, users } = this.props
 		const { comment, editingMoment, editingComment, headerModalOpen } = this.state
 
 		this.authedUser = auth
@@ -192,9 +194,12 @@ class TalkItOver extends Component {
 			? this.authedUser.user_avatar_url.px_48x48
 			: null
 
-		this.dayActivities = activities
-			&& activities[day]
-			? activities[day]
+		this.isArchived = together
+			&& together.archived
+		this.dayActivities = together
+			&& together.activities
+			&& together.activities[day]
+			? together.activities[day]
 			: null
 
 		let modalContent = null
@@ -216,6 +221,7 @@ class TalkItOver extends Component {
 					together_id={together_id}
 					day={day}
 					questionContent={content}
+					archived={this.isArchived}
 				/>
 			)
 		}
@@ -233,6 +239,7 @@ class TalkItOver extends Component {
 							together_id={together_id}
 							day={day}
 							questionContent={content}
+							archived={this.isArchived}
 						/>
 					</div>
 				}
@@ -252,13 +259,16 @@ class TalkItOver extends Component {
 							return null
 						})
 					}
-					<CommentCreate
-						avatarSrc={avatarSrc}
-						avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
-						onChange={(val) => { this.setState({ comment: val }) }}
-						value={comment}
-						onComment={this.handleComment}
-					/>
+					{
+						!this.isArchived &&
+						<CommentCreate
+							avatarSrc={avatarSrc}
+							avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
+							onChange={(val) => { this.setState({ comment: val }) }}
+							value={comment}
+							onComment={this.handleComment}
+						/>
+					}
 				</List>
 				{/*
 					this modal is opened in two ways, either by editing a comment or showing the
@@ -283,10 +293,10 @@ function mapStateToProps(state, props) {
 	const { together_id } = props
 	console.log('TOG', getTogetherModel(state));
 	return {
-		activities: getTogetherModel(state)
+		together: getTogetherModel(state)
 			&& together_id in getTogetherModel(state).byId
-			&& getTogetherModel(state).byId[together_id].activities
-			? getTogetherModel(state).byId[together_id].activities
+			&& getTogetherModel(state).byId[together_id]
+			? getTogetherModel(state).byId[together_id]
 			: null,
 		users: getUsers(state),
 		auth: state.auth,
@@ -297,14 +307,13 @@ TalkItOver.propTypes = {
 	content: PropTypes.string.isRequired,
 	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-	activities: PropTypes.object,
+	together: PropTypes.object.isRequired,
 	users: PropTypes.object,
 	auth: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 }
 
 TalkItOver.defaultProps = {
-	activities: null,
 	users: null,
 }
 
