@@ -72,8 +72,8 @@ class CreatePWF extends Component {
 						<h4 className='text-center' style={{ flex: 1 }}>
 							{
 								isEditingDate
-									? <FormattedMessage id='edit' />
-									: <FormattedMessage id='select start date' />
+									? <FormattedMessage id='change date' />
+									: <FormattedMessage id='start plan when' />
 							}
 						</h4>
 						<a
@@ -84,7 +84,7 @@ class CreatePWF extends Component {
 							{
 								isEditingDate
 									? <FormattedMessage id='done' />
-									: <FormattedMessage id='next' />
+									: <FormattedMessage id='invite friends' />
 							}
 						</a>
 					</div>
@@ -116,7 +116,7 @@ class CreatePWF extends Component {
 						{
 							isEditingDate
 								? <FormattedMessage id='done' />
-								: <FormattedMessage id='next' />
+								: <FormattedMessage id='invite friends' />
 						}
 					</a>
 				</Footer>

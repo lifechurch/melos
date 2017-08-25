@@ -341,11 +341,6 @@ class SubscriptionList extends Component {
 			})
 		}
 
-		let shareLink = null
-		if (inviteId && together && together.byId[inviteId]) {
-			shareLink = together.byId[inviteId].public_share
-		}
-
 		return (
 			<div>
 				<List customClass='subscription-list' loadMore={this.loadMore}>
@@ -362,17 +357,7 @@ class SubscriptionList extends Component {
 						this.setState({ inviteId: null })
 					}}
 				>
-					{
-						inviteId
-							&& shareLink
-							&& (
-								<ShareLink
-									link={shareLink}
-									text={intl.formatMessage({ id: 'join together' })}
-									description={<FormattedMessage id='use share link' />}
-								/>
-							)
-					}
+					{ inviteId && <ShareLink together_id={inviteId} /> }
 				</Modal>
 			</div>
 		)

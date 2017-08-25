@@ -118,7 +118,7 @@ class InvitePWF extends Component {
 	}
 
 	render() {
-		const { search, friends, shareLink, backLink } = this.props
+		const { search, friends, backLink, together_id } = this.props
 		const { showSearchResults, selectedFriends } = this.state
 
 		const selectedUsers = selectedFriends.toJS()
@@ -162,7 +162,9 @@ class InvitePWF extends Component {
 						>
 							&larr;
 						</Link> */}
-						<h4 className='text-center' style={{ flex: 1 }}>Invite Friends</h4>
+						<h4 className='text-center' style={{ flex: 1 }}>
+							<FormattedMessage id='invite friends' />
+						</h4>
 						<a
 							tabIndex={0}
 							className='text-right green'
@@ -176,7 +178,7 @@ class InvitePWF extends Component {
 					<div className='columns medium-5 small-12 small-centered '>
 						<div className='horizontal-center vertical-center'>
 							<div className='selected-number'>{ selectedUsers.length }</div>
-							Selected
+							<FormattedMessage id='selected' />
 						</div>
 						<div className='users'>
 							<div>
@@ -187,15 +189,15 @@ class InvitePWF extends Component {
 								/>
 								<div style={{ position: 'relative' }}>
 									{
-											showSearchResults && !search ?
-												<div>Loading...</div> :
-												searchResults
-										}
+										showSearchResults && !search ?
+											<div><FormattedMessage id='loading' /></div> :
+											searchResults
+									}
 								</div>
 								<CustomScroll>
 									{
 										!friends ?
-											<div>Loading...</div> :
+											<div><FormattedMessage id='loading' /></div> :
 											<div
 												className='friend-list'
 												style={{
@@ -215,7 +217,7 @@ class InvitePWF extends Component {
 						</div>
 					</div>
 				</div>
-				<ShareLink link={shareLink} description={<FormattedMessage id='use share link' />} />
+				<ShareLink together_id={together_id} />
 				<Footer>
 					<a
 						tabIndex={0}

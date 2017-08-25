@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import XMark from '../../../components/XMark'
 import CheckMark from '../../../components/CheckMark'
 import LazyImage from '../../../components/LazyImage'
@@ -47,12 +47,11 @@ function Participants({
 	planImg,
 	accepted,
 	pending,
-	shareLink,
+	together_id,
 	handleDelete,
 	backLink,
 	activities,
-	day,
-	intl
+	day
 }) {
 
 	return (
@@ -142,14 +141,7 @@ function Participants({
 				</div>
 			</div>
 			<div id='share-link'>
-				{
-					shareLink &&
-					<ShareLink
-						link={shareLink}
-						text={intl.formatMessage({ id: 'join together' })}
-						description={<FormattedMessage id='use share link' />}
-					/>
-				}
+				{ together_id && <ShareLink together_id={together_id} /> }
 			</div>
 		</div>
 	)
@@ -158,13 +150,12 @@ function Participants({
 Participants.propTypes = {
 	planImg: PropTypes.string,
 	activities: PropTypes.object,
-	shareLink: PropTypes.string,
 	backLink: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	accepted: PropTypes.array,
 	pending: PropTypes.array,
 	handleDelete: PropTypes.func,
-	intl: PropTypes.object.isRequired,
 }
 
-export default injectIntl(Participants)
+export default Participants

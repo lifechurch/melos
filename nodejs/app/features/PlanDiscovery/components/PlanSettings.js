@@ -96,7 +96,6 @@ class PlanSettings extends Component {
 			startString,
 			endString,
 			subscription,
-			shareLink,
 			isAuthHost,
 			auth,
 			intl,
@@ -224,16 +223,9 @@ class PlanSettings extends Component {
 				{
 					this.together_id
 						&& isAuthHost
-						&& shareLink
 						&& (
 							<div className='text-center flex-wrap horizontal-center' style={rowStyle}>
-								<div style={{ width: '100%' }}>
-									<FormattedMessage id='invite others' />
-								</div>
-								<ShareLink
-									link={shareLink}
-									text={intl.formatMessage({ id: 'join together' })}
-								/>
+								<ShareLink together_id={this.together_id} />
 							</div>
 						)
 				}

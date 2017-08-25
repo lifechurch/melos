@@ -148,12 +148,7 @@ class ParticipantsView extends Component {
 							return pendingParticipants[id]
 						})
 					}
-					shareLink={together
-						&& together.public_share
-						&& this.isAuthHost
-						? together.public_share
-						: null
-					}
+					together_id={together_id}
 					// only allow participant deletes if the authed user is the host of pwf
 					handleDelete={this.isAuthHost && this.openDelete}
 					// show checkmarks if we have a specific day

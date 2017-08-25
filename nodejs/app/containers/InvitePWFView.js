@@ -64,7 +64,7 @@ class InvitePWFView extends Component {
 		return (
 			<InvitePWF
 				{...this.props}
-				shareLink={together && together.public_share ? together.public_share : null}
+				together_id={together && together.id}
 				handleSearch={this.onHandleSearch}
 				handleInvite={this.onHandleInvite}
 				localizedLink={this.localizedLink}

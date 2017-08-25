@@ -12,17 +12,9 @@ function InvitationString({ together_id, participants }) {
 	const host = hostObj
 		&& hostObj[Object.keys(hostObj)[0]]
 		&& hostObj[Object.keys(hostObj)[0]].name
-	const others = participants
-		&& participants.filter({ together_id, idOnly: true }).length - 1
 
 	return (
-		<FormattedMessage
-			id='invitation with others'
-			values={{
-				host,
-				others,
-			}}
-		/>
+		<FormattedMessage id='join together' values={{ host }} />
 	)
 }
 

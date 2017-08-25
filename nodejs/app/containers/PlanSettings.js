@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
 // actions
@@ -11,33 +11,23 @@ import PlanSettingsComponent from '../features/PlanDiscovery/components/PlanSett
 // utils
 
 
-class PlanSettings extends Component {
+function PlanSettings(props) {
+	const { subscription, participants } = props
+	const isAuthHost = participants.isAuthHost(
+		subscription
+		&& subscription.together_id
+	)
 
-	render() {
-		const { subscription, participants, togethers } = this.props
-		const isAuthHost = participants.isAuthHost(
-			subscription
-			&& subscription.together_id
-		)
-		const shareLink = togethers
-			&& togethers.byId
-			&& subscription
-			&& subscription.together_id
-			&& togethers.byId[subscription.together_id]
-			&& togethers.byId[subscription.together_id].public_share
-		const subSettings = subscription
-			&& subscription.settings
+	const subSettings = subscription
+		&& subscription.settings
 
-		return (
-			<PlanSettingsComponent
-				{...this.props}
-				onStopPlan={this.handleStopPlan}
-				isAuthHost={isAuthHost}
-				shareLink={shareLink}
-				subSettings={subSettings}
-			/>
-		)
-	}
+	return (
+		<PlanSettingsComponent
+			{...props}
+			isAuthHost={isAuthHost}
+			subSettings={subSettings}
+		/>
+	)
 }
 
 function mapStateToProps(state, props) {
@@ -56,7 +46,6 @@ function mapStateToProps(state, props) {
 
 PlanSettings.propTypes = {
 	subscription: PropTypes.object.isRequired,
-	togethers: PropTypes.object.isRequired,
 	participants: PropTypes.object.isRequired,
 }
 
