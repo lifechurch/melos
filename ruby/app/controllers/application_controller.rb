@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  
+
   include YV::Concerns::Locale
   include YV::Concerns::Versions
   include YV::Concerns::UserAuth
@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
 
   include ApplicationHelper
   protect_from_forgery
-  
-  helper_method :last_read
-  
+
+  helper_method :last_read, :add_node_assets
+
   before_filter :tend_caches
   before_filter :set_page
   before_filter :set_site
@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
   before_filter :skip_home
   before_filter :check_facebook_cookie   # from YV::Concerns::SocialNetworks
   before_filter :set_default_sidebar     # from YV::Concerns::Presenters
-
 
   protected
 
@@ -36,6 +35,21 @@ class ApplicationController < ActionController::Base
       client_settings.last_read = reference unless request.xhr?
     end
 
+    def add_node_assets(assets)
+      assetsToLoad = []
+      if !@node_assets.present?
+        @node_assets = []
+      end
+
+      assets.each do |s|
+        if !@node_assets.include? s
+          @node_assets.push(s)
+          assetsToLoad.push(s)
+        end
+      end
+
+      return assetsToLoad
+    end
   private
 
     def id_param(val)
@@ -79,5 +93,4 @@ class ApplicationController < ActionController::Base
       end
       expires_in maxage, public: true
     end
-
 end

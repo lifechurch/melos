@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
     @title_tag = fromNode['head']['title']
 
-    render locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
 
 

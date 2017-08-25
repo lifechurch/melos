@@ -26,7 +26,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
 
   def plan_collection
@@ -47,7 +47,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
 
   def show
@@ -76,7 +76,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
     @deeplink_plan_id = p['id']
-    render locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), add_node_assets(css: fromNode['css']) }
   end
 
   # action and view from node server for save for later url (from email link)
@@ -101,7 +101,7 @@ class PlansController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
-    render 'save_for_later_action', locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render 'save_for_later_action', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
 
   # action and view from node server for subscribe user url (from email link)
@@ -127,7 +127,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'subscribe_user_action', locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render 'subscribe_user_action', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
 
   def sample
@@ -149,7 +149,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
     @deeplink_plan_id = p['id']
-    render 'index', locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
     # respond_to do |format|
     #   format.json { return render nothing: true }
     #   format.any {
@@ -198,7 +198,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
 
   def ref_not_found
@@ -258,7 +258,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
   def lookinside_sample
     return lookinside_view
