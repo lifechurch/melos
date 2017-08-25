@@ -59,7 +59,7 @@ class NotificationsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'unsubscribe', locals: { html: fromNode['html'], js: fromNode['js'] }, layout: 'node_only'
+    render 'unsubscribe', locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }, layout: 'node_only'
 	end
 
   def destroy

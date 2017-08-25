@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { routeReducer } from 'react-router-redux'
 import bible from '@youversion/api-redux/lib/endpoints/bible/reducer'
 
 const emptyReducer = (state = {}) => { return state }
@@ -17,7 +16,7 @@ const rootReducer = combineReducers({
 	plansDiscovery: emptyReducer,
 	configuration: emptyReducer,
 	references: emptyReducer,
-	routing: routeReducer,
+	routing: emptyReducer,
 	serverLanguageTag: emptyReducer,
 	altVersions: emptyReducer,
 	hosts: emptyReducer,

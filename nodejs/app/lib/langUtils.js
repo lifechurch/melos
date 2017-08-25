@@ -1,3 +1,4 @@
+import planLocales from '../../locales/config/planLocales.json'
 const availableLocales = require('../../locales/config/availableLocales.json')
 const localeList = require('../../locales/config/localeList.json')
 
@@ -88,6 +89,7 @@ export function getLocale({ localeFromUrl, localeFromCookie, localeFromUser, acc
 			final.locale3 = lc.locale3
 			final.momentLocale = lc.momentLocale
 			final.nativeName = lc.nativeName
+			final.planLocale = planLocales[lc.locale]
 		}
 	})
 

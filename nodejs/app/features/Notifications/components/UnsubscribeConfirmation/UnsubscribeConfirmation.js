@@ -9,8 +9,14 @@ import XMark from '../../../../components/XMark'
 import YouVersion from '../../../../components/YVLogo'
 
 class UnsubscribeConfirmation extends Component {
+	constructor(props) {
+		super(props)
+		this.state = { ready: false }
+	}
+
 	componentDidMount() {
 		const { type } = this.props
+		this.setState({ ready: true })
 		this.unsubscribe(type)
 	}
 
@@ -49,6 +55,8 @@ class UnsubscribeConfirmation extends Component {
 			}
 		} = this.props
 
+		const { ready } = this.state
+
 		let statusMark
 		if (status === 'success') {
 			statusMark = <CheckMark width={28} height={21} />
@@ -82,8 +90,8 @@ class UnsubscribeConfirmation extends Component {
 						<div className={status === 'loading' ? 'ghost' : ''}>
 							{statusMark}
 							<p>{statusText}</p>
-							<Link to={localizedLink(`/unsubscribe/manage${tokenValid ? `?token=${token}` : ''}`, languageTag)} className="solid-button"><FormattedMessage id="unsubscribe.links.manage" /></Link>
-							{ type !== 'all' && <Link to={localizedLink(`/unsubscribe?type=all${tokenValid ? `&token=${token}` : ''}`, languageTag)}><FormattedMessage id="unsubscribe.links.unsub all" /></Link>}
+							<Link to={localizedLink(`/unsubscribe/manage${ready && tokenValid ? `?token=${token}` : ''}`, languageTag)} className="solid-button"><FormattedMessage id="unsubscribe.links.manage" /></Link>
+							{ type !== 'all' && <Link to={localizedLink(`/unsubscribe?type=all${ready && tokenValid ? `&token=${token}` : ''}`, languageTag)}><FormattedMessage id="unsubscribe.links.unsub all" /></Link>}
 						</div>
 					</Card>
 				</div>

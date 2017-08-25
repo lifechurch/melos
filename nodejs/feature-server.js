@@ -14,12 +14,10 @@ import moment from 'moment'
 import Raven from 'raven'
 import { getLocale } from './app/lib/langUtils'
 
-import planLocales from './locales/config/planLocales.json'
-
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
-const availableLocales = require('./locales/config/availableLocales.json');
-const localeList = require('./locales/config/localeList.json');
+// const availableLocales = require('./locales/config/availableLocales.json');
+// const localeList = require('./locales/config/localeList.json');
 
 const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 	if (process.env.DEBUG) {
@@ -172,34 +170,6 @@ const loadData = nr.createTracer('fnLoadData', (feature, params, startingState, 
 		}
 	}))
 })
-//
-// function getLocale(languageTag) {
-// 	let final = {}
-//
-// 	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || typeof availableLocales[languageTag] === 'undefined') {
-// 		final = { locale: availableLocales['en-US'], source: 'default' }
-// 	} else {
-// 		final = { locale: availableLocales[languageTag], source: 'param' }
-// 	}
-//
-// 	// Get the appropriate set of localized strings for this locale
-// 	final.messages = require(`./locales/${final.locale}.json`);
-//
-// 	for (const lc of localeList) {
-// 		if (lc.locale === final.locale) {
-// 			final.locale2 = lc.locale2
-// 			final.locale3 = lc.locale3
-// 			final.momentLocale = lc.momentLocale
-// 			final.planLocale = planLocales[lc.locale]
-// 		}
-// 	}
-// 	// Get the appropriate react-intl locale data for this locale
-// 	const localeData = require(`react-intl/locale-data/${final.locale2}`);
-// 	final.data = localeData;
-//
-// 	moment.locale(final.momentLocale)
-// 	return final;
-// }
 
 const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 	return new Promise(nr.createTracer('fnGetRenderProps::promsie', (resolve) => {
@@ -229,7 +199,6 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	// const Locale = getLocale(params.languageTag)
-
 	nr.setTransactionName(`featureImport/${feature}`)
 
 	Raven.setContext({ user: auth, tags: { feature, url: params.url }, extra: { params } })
@@ -254,7 +223,6 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 
 		startingState.locale = { nativeName: Locale.nativeName }
 		moment.locale(Locale.momentLocale)
-
 		try {
 			const history = createMemoryHistory()
 			const store = getStore(feature, startingState, history, null)

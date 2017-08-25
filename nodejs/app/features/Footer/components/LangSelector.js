@@ -46,6 +46,45 @@ class LangSelector extends Component {
 		this.localeIndex = []
 		this.preferredLocales = null
 		this.availableLocales = null
+		this.state = { ready: false }
+	}
+
+	componentDidMount() {
+		const { auth } = this.props
+		const { ready } = this.state
+		if (!ready && this.preferredLocales === null && typeof window !== 'undefined') {
+			const _preferredLocales = window.__LOCALE__.preferredLocales.slice()
+
+			// Check locale cookie
+			const cookieLocale = cookie.load('locale')
+			if (typeof cookieLocale !== 'undefined') {
+				_preferredLocales.unshift({ locale: cookieLocale })
+			}
+
+			// Check language_tag in User Profile
+			if (typeof auth !== 'undefined' && typeof auth.userData !== 'undefined' && typeof auth.userData.language_tag !== 'undefined') {
+				_preferredLocales.unshift({ locale: auth.userData.language_tag })
+			}
+
+			this.preferredLocales = _preferredLocales.map((l) => {
+				const match2Letter = []
+				for (const al of LocaleList) {
+					const fullDisplayName = al.nativeName && al.englishName && al.nativeName !== al.englishName ? (<span>{al.displayName} <small>{al.englishName}</small></span>) : al.displayName
+					if (this.localeIndex.indexOf(al.locale) === -1) {
+						if (al.locale === l.locale) {
+							this.localeIndex.push(al.locale)
+							return (<li className='preferred' key={al.locale}><a tabIndex={0} onClick={this.handleLanguageChange(al)}>{fullDisplayName}</a></li>)
+						} else if (al.locale2 === l.locale) {
+							this.localeIndex.push(al.locale)
+							match2Letter.push(<li className='preferred' key={al.locale}><a tabIndex={0} onClick={this.handleLanguageChange(al)}>{fullDisplayName}</a></li>)
+						}
+					}
+				}
+				return match2Letter
+			})
+
+			this.setState({ ready: true })
+		}
 	}
 
 	handleLanguageChange = (locale) => {
@@ -78,40 +117,9 @@ class LangSelector extends Component {
 			this.availableLocales = LocaleList.map((l) => {
 				if (this.localeIndex.indexOf(l.locale) === -1) {
 					const fullDisplayName = l.nativeName && l.englishName && l.nativeName !== l.englishName ? (<span>{l.displayName} <small>{l.englishName}</small></span>) : l.displayName
-					return (<li key={l.locale}><a onClick={this.handleLanguageChange(l)}>{fullDisplayName}</a></li>)
+					return (<li key={l.locale}><a tabIndex={0} onClick={this.handleLanguageChange(l)}>{fullDisplayName}</a></li>)
 				}
-			})
-		}
-
-		if (this.preferredLocales === null && typeof window !== 'undefined') {
-			const _preferredLocales = window.__LOCALE__.preferredLocales.slice()
-
-			// Check locale cookie
-			const cookieLocale = cookie.load('locale')
-			if (typeof cookieLocale !== 'undefined') {
-				_preferredLocales.unshift({ locale: cookieLocale })
-			}
-
-			// Check language_tag in User Profile
-			if (typeof auth !== 'undefined' && typeof auth.userData !== 'undefined' && typeof auth.userData.language_tag !== 'undefined') {
-				_preferredLocales.unshift({ locale: auth.userData.language_tag })
-			}
-
-			this.preferredLocales = _preferredLocales.map((l) => {
-				const match2Letter = []
-				for (const al of LocaleList) {
-					const fullDisplayName = al.nativeName && al.englishName && al.nativeName !== al.englishName ? (<span>{al.displayName} <small>{al.englishName}</small></span>) : al.displayName
-					if (this.localeIndex.indexOf(al.locale) === -1) {
-						if (al.locale === l.locale) {
-							this.localeIndex.push(al.locale)
-							return (<li className='preferred' key={al.locale}><a onClick={this.handleLanguageChange(al)}>{fullDisplayName}</a></li>)
-						} else if (al.locale2 === l.locale) {
-							this.localeIndex.push(al.locale)
-							match2Letter.push(<li className='preferred' key={al.locale}><a onClick={this.handleLanguageChange(al)}>{fullDisplayName}</a></li>)
-						}
-					}
-				}
-				return match2Letter
+				return null
 			})
 		}
 
