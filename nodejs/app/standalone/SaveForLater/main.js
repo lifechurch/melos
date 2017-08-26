@@ -9,14 +9,14 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
 import SaveForLaterView from '../../features/SaveForLater/components/SaveForLaterView'
 
-import "../../less/style.less"
+import '../../less/style.less'
 
 require('moment/min/locales')
 
 let initialState = defaultState
 
-if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.SaveForLater.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.SaveForLater.__INITIAL_STATE__
 }
 
 let logger = null
@@ -25,6 +25,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 }
 
 const store = configureStore(initialState, null, logger)
+
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 

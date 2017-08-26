@@ -1,11 +1,5 @@
-// import rootReducer from '../../reducers/index'
-// export default rootReducer
-
-// import rootReducer from '../../reducers/index'
-// export default rootReducer
-
 import { combineReducers } from 'redux'
-import { routeReducer } from 'react-router-redux'
+import { routerReducer } from 'react-router-redux'
 // import { eventFeeds } from './eventFeeds'
 // import { modals } from './modals'
 // import loc from '../features/EventEdit/features/location/reducers/location'
@@ -25,29 +19,29 @@ import readingPlans from '../../features/PlanDiscovery/reducers/readingPlans'
 import api from '../../features/PlanDiscovery/reducers/api'
 
 
+const emptyReducer = (state = {}) => { return state }
+
 const rootReducer = combineReducers({
 	auth,
-	// auth: (state = {}, action) => { return state },
 	bibleReader,
-	eventFeeds: (state = {}, action) => { return state },
-	content: (state = {}, action) => { return state },
-	event: (state = {}, action) => { return state },
-	modals: (state = {}, action) => { return state },
-	loc: (state = {}, action) => { return state },
-	locations: (state = {}, action) => { return state },
+	eventFeeds: emptyReducer,
+	content: emptyReducer,
+	event: emptyReducer,
+	modals: emptyReducer,
+	loc: emptyReducer,
+	locations: emptyReducer,
 	readingPlans,
 	plansDiscovery,
-	configuration: (state = {}, action) => { return state },
-	references: (state = {}, action) => { return state },
-	routing: routeReducer,
-	serverLanguageTag: (state = {}, action) => { return state },
-	altVersions: (state = {}, action) => { return state },
-	hosts: (state = {}, action) => { return state },
+	configuration: emptyReducer,
+	references: emptyReducer,
+	routing: routerReducer,
+	serverLanguageTag: emptyReducer,
+	altVersions: emptyReducer,
+	hosts: emptyReducer,
 	passage,
 	// for all the reducers being autopopulated by the api actions
 	api,
-	plans: combineReducers(plansAPI.reducers),
-
+	plans: combineReducers(plansAPI.reducers)
 })
 
 export default rootReducer

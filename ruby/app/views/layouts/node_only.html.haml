@@ -6,18 +6,19 @@
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" }
     %base{href: "/"}
+    = content_for?(:stylesheets) ? yield(:stylesheets) : nil
 
     -# = render '/shared/head'
     -# = render '/shared/javascripts'
 
   %body{class: "c_#{params[:controller]} a_#{params[:action]}"}
     = render '/shared/google_analytics'
-    = content_for?(:lower_javascript) ? yield(:lower_javascript) : nil
-
     -# = content_for?(:header) ? yield(:header) : render("/shared/header/default")
 
     #current-ui-view{'ui-view' => ""}
       = content_for?(:main) ? yield(:main) : yield
+
+    = content_for?(:lower_javascript) ? yield(:lower_javascript) : nil
 
     -# = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
     -# = render partial: "/shared/js_footer"

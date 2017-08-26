@@ -1,39 +1,7 @@
 <div id="react-app-<%=appContainerSuffix%>"><%- appString %></div>
 <script type="application/javascript">
-	// var head = document.getElementsByTagName('head')[0];
-	// var body = document.getElementsByTagName('body')[0];
-	//
-	// function loadScript(path, el, anonymous) {
-	// 	var js = document.createElement("script");
-	// 	js.type = "text/javascript";
-	//
-	// 	if (anonymous) {
-	// 		js.crossOrigin = "anonymous";
-	// 	}
-	//
-	// 	js.src = path
-	// 	el.appendChild(js);
-	// }
-
-	// function loadStylesheet(path) {
-	// 	var ss = document.createElement("link");
-	// 	ss.rel = "stylesheet"
-	// 	ss.href = path
-	// 	head.append(ss)
-	// }
-
 	if (typeof window.standaloneInitialized === 'undefined') {
 		window.standaloneInitialized = true
-
-		// Load once-only scripts
-		// loadScript("<%=assetPrefix%>/assets/<%= getAssetPath('manifest.js') %>", head);
-		// loadScript("<%=assetPrefix%>/assets/<%= getAssetPath('vendor.js') %>", head);
-		// loadScript("https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Number.isNaN,Promise", body);
-		// loadScript("https://cdn.ravenjs.com/3.14.0/raven.min.js", body, true)
-
-		// <%if (config.linkCss) { %>
-		// loadStylesheet("<%=assetPrefix%>/assets/<%= getAssetPath('main.css') %>");
-		// <% } %>
 
 		// Load once-only variables
 		window.__ENV__ = "<%- environment %>";

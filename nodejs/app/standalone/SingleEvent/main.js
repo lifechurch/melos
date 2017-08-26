@@ -8,14 +8,14 @@ import EventView from '../../containers/EventView'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
 
-import "../../less/style.less"
+import '../../less/style.less'
 
 require('moment/min/locales')
 
 let initialState = defaultState
 
-if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.SingleEvent.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.SingleEvent.__INITIAL_STATE__
 }
 
 let logger = null
@@ -24,11 +24,13 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 }
 
 const store = configureStore(initialState, null, logger)
+
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
+console.log('LOCALE', window.__LOCALE__.locale2, window.__LOCALE__.locale)
 render(
-	<IntlProvider locale={window.__LOCALE__.locale2 == 'mn' ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+	<IntlProvider locale={window.__LOCALE__.locale2 === 'mn' ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
 			<EventView />
 		</Provider>

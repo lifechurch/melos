@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import ga from 'react-ga'
 import { createHistory } from 'history'
+import { syncHistoryWithStore } from 'react-router-redux'
 import createLogger from 'redux-logger'
 import configureStore from './store'
 import getRoutes from './routes'
@@ -31,8 +32,8 @@ const browserHistory = useRouterHistory(createHistory)({
 	basename: '/'
 })
 
-if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.Unsubscribe.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.Unsubscribe.__INITIAL_STATE__
 }
 
 let logger = null
@@ -40,7 +41,9 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, browserHistory, logger)
+const store = configureStore(initialState, null, logger)
+const history = syncHistoryWithStore(browserHistory, store)
+
 addLocaleData(window.__LOCALE__.data)
 
 const routes = getRoutes()
@@ -51,5 +54,5 @@ render(
 			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app')
+  document.getElementById('react-app-Unsubscribe')
 )

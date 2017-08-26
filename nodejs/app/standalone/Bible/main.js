@@ -6,6 +6,7 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import ga from 'react-ga'
 import { createHistory } from 'history'
 import createLogger from 'redux-logger'
+import { syncHistoryWithStore } from 'react-router-redux'
 import cookie from 'react-cookie'
 import configureStore from './store'
 import getRoutes from './routes'
@@ -44,7 +45,9 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, browserHistory, logger)
+const store = configureStore(initialState, null, logger)
+const history = syncHistoryWithStore(browserHistory, store)
+
 addLocaleData(window.__LOCALE__.data)
 
 function requireChapterData(nextState, replace, callback, force = false) {
@@ -79,7 +82,7 @@ function requireChapterData(nextState, replace, callback, force = false) {
 				}
 			},
 			routing: {
-				location: {
+				locationBeforeTransitions: {
 					query
 				}
 			}
@@ -238,7 +241,7 @@ const routes = getRoutes(requireChapterData, requireVerseData, setupReference, h
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
+			<Router routes={routes} history={history} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app-Bible')

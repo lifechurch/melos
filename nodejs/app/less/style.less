@@ -1366,18 +1366,21 @@ form.locationForm {
 
 #ev-view .addthis_sharing_toolbox {
 	display: none;
-    position: absolute;
-    right: 10px;
-    bottom: 45px;
-    background: rgba(255,255,255,.9);
-    border-radius: 5px;
+  position: absolute;
+  right: 10px;
+  bottom: 45px;
+  background: rgba(255,255,255,.9);
+  border-radius: 5px;
+	z-index: 50;
+  border: solid 1px #ddd;
+  padding: 5px;
 
-    &.show {
-    	display: block;
-    }
+  &.show {
+  	display: block;
+  }
 
-    .at-share-btn {
-	    margin: 2px 4px;
+  .at-share-btn {
+    margin: 2px 4px;
 	}
 }
 
@@ -1396,7 +1399,7 @@ form.locationForm {
 			}
 			.addthis_sharing_toolbox {
 			    bottom: -22px;
-			    padding: 0 5px;
+			    padding: 5px;
 			    &.show { display: block; }
 			}
 		}
