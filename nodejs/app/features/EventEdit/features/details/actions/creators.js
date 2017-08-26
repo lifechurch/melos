@@ -1,9 +1,9 @@
+import { push } from 'react-router-redux'
 import type from './constants'
-import { routeActions } from 'react-router-redux'
 
 function cancel(locale) {
 	return dispatch => {
-		dispatch(routeActions.push('/' + locale + '/'))
+		dispatch(push(`/${locale}/`))
 		dispatch({ type: type('cancel') })
 	}
 }
@@ -36,7 +36,7 @@ function imgUploadFailure(params) {
 	}
 }
 
-function view(id, auth=true) {
+function view(id, auth = true) {
 	return {
 		api_call: {
 			endpoint: 'events',
@@ -91,12 +91,11 @@ function setDetails(field, value) {
 }
 
 function saveDetails(event, goNext, locale) {
-	return dispatch => {
-
+	return (dispatch) => {
 		function handlePromise(goNext, response) {
-			if (goNext === true && typeof response == 'object' && typeof response.id == 'number') {
-				const nextUrl = '/' + locale + '/event/edit/' + response.id + '/locations_and_times'
-				dispatch(routeActions.push(nextUrl))
+			if (goNext === true && typeof response === 'object' && typeof response.id === 'number') {
+				const nextUrl = `/${locale}/event/edit/${response.id}/locations_and_times`
+				dispatch(push(nextUrl))
 			}
 		}
 

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 
 import ActionCreators from '../actions/creators'
 
@@ -17,13 +17,13 @@ class SubscribeUserDialog extends Component {
 		if (!isSubscribed) {
 			dispatch(ActionCreators.readingplanSubscribeUser({ id, private: privacy }, isLoggedIn)).then(() => {
 				if (useRouter) {
-					dispatch(routeActions.push(subscriptionLink))
+					dispatch(push(subscriptionLink))
 				} else {
 					window.location.replace(subscriptionLink)
 				}
 			})
 		} else if (useRouter) {
-			dispatch(routeActions.push(subscriptionLink))
+			dispatch(push(subscriptionLink))
 		} else {
 			window.location.replace(subscriptionLink)
 		}

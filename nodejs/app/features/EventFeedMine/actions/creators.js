@@ -1,14 +1,14 @@
+import { push } from 'react-router-redux'
+import { validateDuplicateParams } from '../validators/eventFeedMine'
 import contentType from './constants'
-import { validateDuplicateParams } from '../validators/eventFeedMine.js'
-import { routeActions } from 'react-router-redux'
 
 const ActionCreators = {
 	duplicate(params, locale) {
 		validateDuplicateParams(params)
 		return dispatch => {
 			dispatch(ActionCreators.callDuplicate(params)).then((event) => {
-				const nextUrl = '/' + locale + '/event/edit/' + event.id
-				dispatch(routeActions.push(nextUrl))
+				const nextUrl = `/${locale}/event/edit/${event.id}`
+				dispatch(push(nextUrl))
 			})
 		}
 	},
@@ -40,7 +40,7 @@ const ActionCreators = {
 				method: 'duplicate',
 				version: '3.2',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'post',
 				types: [ contentType('duplicateRequest'), contentType('duplicateSuccess'), contentType('duplicateFailure') ]
 			}

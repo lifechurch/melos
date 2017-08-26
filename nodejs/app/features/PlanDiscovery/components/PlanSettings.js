@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 
 import ActionCreators from '../actions/creators'
 
@@ -49,7 +49,7 @@ class PlanSettings extends Component {
 		const { dispatch, id, subscriptionLink } = this.props
 		dispatch(ActionCreators.resetSubscription({ id }, true)).then(() => {
 			this.handleReloadCalendar().then(() => {
-				dispatch(routeActions.push(subscriptionLink))
+				dispatch(push(subscriptionLink))
 			})
 		})
 	}
@@ -58,7 +58,7 @@ class PlanSettings extends Component {
 		const { dispatch, id, subscriptionLink } = this.props
 		dispatch(ActionCreators.restartSubscription({ id }, true)).then(() => {
 			this.handleReloadCalendar().then(() => {
-				dispatch(routeActions.push(subscriptionLink))
+				dispatch(push(subscriptionLink))
 			})
 		})
 	}
@@ -67,7 +67,7 @@ class PlanSettings extends Component {
 		const { dispatch, id, myPlansLink, auth: { userData: { userid } } } = this.props
 		dispatch(ActionCreators.unsubscribeUser({ id }, true)).then(() => {
 			dispatch(ActionCreators.items({ user_id: userid, page: 1 }, true)).then(() => {
-				dispatch(routeActions.push(myPlansLink))
+				dispatch(push(myPlansLink))
 			})
 		})
 	}

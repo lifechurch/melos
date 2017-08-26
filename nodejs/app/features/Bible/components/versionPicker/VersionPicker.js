@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 
 import Filter from '../../../../lib/filter'
 import VersionPickerModal from './VersionPickerModal'
@@ -312,7 +312,7 @@ class VersionPicker extends Component {
 			if (keyEventName === 'Enter') {
 				event.preventDefault()
 				const chapURL = localizedLink(linkBuilder(versions[versionKeys[versionlistSelectionIndex]].id, selectedChapter.toLowerCase(), versions[versionKeys[versionlistSelectionIndex]].local_abbreviation.toLowerCase()))
-				dispatch(routeActions.push(chapURL))
+				dispatch(push(chapURL))
 			}
 
 		}

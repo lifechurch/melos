@@ -1,13 +1,13 @@
-import type from './constants'
-import { routeActions } from 'react-router-redux'
 import { storeToken, deleteToken } from '@youversion/token-storage'
+import { push } from 'react-router-redux'
+import type from './constants'
 
 const ActionCreators = {
 	logout(locale) {
 		return dispatch => {
 			deleteToken()
 			dispatch({ type: type('logout') })
-			dispatch(routeActions.push('/' + locale + '/login'))
+			dispatch(push(`/${locale}/login`))
 		}
 	},
 
@@ -29,7 +29,7 @@ const ActionCreators = {
 			dispatch(ActionCreators.callAuthenticate(params)).then((authResponse) => {
 				if (!(authResponse instanceof Error)) {
 					storeToken(authResponse.token)
-					dispatch(routeActions.push('/' + locale + '/'))
+					dispatch(push(`/${locale}/`))
 				}
 			})
 		}

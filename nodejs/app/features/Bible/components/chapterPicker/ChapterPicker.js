@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import Filter from '../../../../lib/filter'
 import scrollList from '../../../../lib/scrollToView'
 import ChapterPickerModal from './ChapterPickerModal'
@@ -454,7 +454,7 @@ class ChapterPicker extends Component {
 			if (keyEventName === 'Enter') {
 				const chapIndex = chapterKeys[chapterlistSelectionIndex]
 				const chapURL = localizedLink(linkBuilder(versionID, (books[bookMap[selectedBook]].chapters)[chapIndex].usfm, versionAbbr))
-				dispatch(routeActions.push(chapURL))
+				dispatch(push(chapURL))
 			}
 		}
 
