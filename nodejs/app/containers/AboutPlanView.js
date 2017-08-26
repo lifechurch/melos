@@ -23,7 +23,10 @@ class AboutPlanView extends Component {
 						&& data.data
 						&& Object.keys(data.data).some((sub_id) => {
 							const sub = data.data[sub_id]
-							return parseInt(sub.plan_id, 10) === parseInt(readingPlan.id, 10)
+							if (readingPlan && readingPlan.id && sub.plan_id) {
+								return parseInt(sub.plan_id, 10) === parseInt(readingPlan.id, 10)
+							}
+							return false
 						})
 					})
 				}

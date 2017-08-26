@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import getCurrentDT from '../../../lib/getCurrentDT'
@@ -21,7 +21,7 @@ class SubscribeUserDialog extends Component {
 
 		switch (subscribeContext) {
 			case 'together':
-				dispatch(routeActions.push(`${subLinkBase}/together/create`))
+				dispatch(push(`${subLinkBase}/together/create`))
 				break
 			case 'public':
 			case 'private':
@@ -37,7 +37,7 @@ class SubscribeUserDialog extends Component {
 					if (data) {
 						const subId = data.map[0]
 						if (useRouter) {
-							dispatch(routeActions.push(`${subLinkBase}/subscription/${subId}`))
+							dispatch(push(`${subLinkBase}/subscription/${subId}`))
 						} else {
 							window.location.replace(`${subLinkBase}/subscription/${subId}`)
 						}
@@ -83,7 +83,7 @@ class SubscribeUserDialog extends Component {
 						</a>
 					</ul>
 				</Menu>
-				<Modal ref={(m) => { this.modal = m }}>
+				<Modal ref={(m) => { this.modal = m }} customClass='subscribe-modal'>
 					<div customClass='horizontal-center flex-wrap' style={{ width: '250px' }}>
 						<div className='flex-wrap horizontal-center option' style={{ marginBottom: '20px' }}>
 							<div className='action-title' style={{ width: '100%' }}><FormattedMessage id='level of privacy' /></div>
