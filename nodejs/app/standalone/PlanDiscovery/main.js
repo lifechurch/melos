@@ -9,7 +9,7 @@ import { createHistory } from 'history'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import Immutable from 'immutable'
 import cookie from 'react-cookie'
-
+import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './store'
 import defaultState from './defaultState'
 import getRoutes from './routes'
@@ -34,7 +34,6 @@ function logPageView() {
 	}
 }
 
-
 let initialState = defaultState
 
 const browserHistory = useRouterHistory(createHistory)({
@@ -50,11 +49,11 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, browserHistory, logger)
+const store = configureStore(initialState, null, logger)
+const history = syncHistoryWithStore(browserHistory, store)
+
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
-
-
 
 /**
  * { function_description }
@@ -385,12 +384,12 @@ function requireSamplePlan(nextState, replace, callback) {
 
 function requirePlanReferences(prevState, nextState, replace, callback) {
 	const currentState = store.getState()
-	const { params, location } = nextState
+	const { params, locationBeforeTransitions } = nextState
 	const id = parseInt(params.id.toString().split('-')[0], 10)
 	const { readingPlans: { fullPlans } } = currentState
 	const plan = fullPlans[id] || { id }
 
-	let currentDay = location.query.day
+	let currentDay = locationBeforeTransitions.query.day
 	if (!currentDay || isNaN(currentDay)) {
 		const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
 		if (isNaN(calculatedDay)) {
@@ -501,7 +500,7 @@ const routes = getRoutes(
 render(
 	<IntlProvider locale={window.__LOCALE__.locale2 === 'mn' ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
+			<Router routes={routes} history={history} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app-PlanDiscovery')

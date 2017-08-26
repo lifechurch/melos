@@ -138,7 +138,7 @@ class ReferencesController < ApplicationController
     @render_rails_meta = true
     @deeplink_version = version
     @deeplink_reference = reference
-    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'], css: fromNode['css'] }
+    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
   end
 
   # def passage

@@ -14,9 +14,10 @@ gem 'haml-rails'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem 'sentry-raven',           '~> 2.4.0'
+
 #gem 'i18n-js',                '~> 3.0.0.rc6'
-#gem 'oink'
 #gem 'rack-mini-profiler'
+
 gem 'gabba'
 gem 'memcachier'
 gem 'fast_gettext'

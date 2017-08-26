@@ -12,10 +12,6 @@ import defaultState from './defaultState'
 
 let initialState = defaultState
 
-const browserHistory = createHistory({
-	basename: '/'
-})
-
 if (typeof window !== 'undefined' && typeof window.Footer.__INITIAL_STATE__ !== 'undefined') {
 	initialState = window.Footer.__INITIAL_STATE__
 }
@@ -25,7 +21,8 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, browserHistory, logger)
+const store = configureStore(initialState, null, logger)
+
 addLocaleData(window.__LOCALE__.data)
 
 

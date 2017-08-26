@@ -1,17 +1,17 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import createLogger from 'redux-logger'
+import { addLocaleData, IntlProvider } from 'react-intl'
 import configureStore from './store'
 import defaultState from './defaultState'
-import createLogger from 'redux-logger'
 import PasswordChange from '../../features/PasswordChange/components/PasswordChange'
-import { addLocaleData, IntlProvider } from 'react-intl'
-import "../../less/style.less"
+import '../../less/style.less'
 
 let initialState = defaultState
 
-if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.PasswordChange.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.PasswordChange.__INITIAL_STATE__
 }
 
 let logger = null

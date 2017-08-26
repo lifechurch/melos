@@ -15,8 +15,8 @@ require('moment/min/locales')
 
 let initialState = defaultState
 
-if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.SubscribeUser.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.SubscribeUser.__INITIAL_STATE__
 }
 
 let logger = null
@@ -25,6 +25,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 }
 
 const store = configureStore(initialState, null, logger)
+
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 

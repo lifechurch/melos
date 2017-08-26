@@ -16,9 +16,9 @@
       != 'window.YV_API_PORT = "' + Cfg.nodejs_api_port + '"'
 
 - content_for :lower_javascript do
-  - @footer_from_node['js'].each do |s|
+  - add_node_assets(@footer_from_node['js']).each do |s|
     = javascript_include_tag s['src']
 
 - content_for :stylesheets do
-  - @footer_from_node['css'].each do |s|
+  - add_node_assets(@footer_from_node['css']).each do |s|
     = stylesheet_link_tag s['src']

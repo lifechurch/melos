@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { routeReducer } from 'react-router-redux'
+import { routerReducer } from 'react-router-redux'
 import notifications from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import users from '@youversion/api-redux/lib/endpoints/users/reducer'
 import readingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
 	plansDiscovery: emptyReducer,
 	configuration: emptyReducer,
 	references: emptyReducer,
-	routing: routeReducer,
+	routing: routerReducer,
 	serverLanguageTag: emptyReducer,
 	altVersions: emptyReducer,
 	hosts: emptyReducer,
