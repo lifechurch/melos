@@ -1,23 +1,21 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
+import { routerMiddleware } from 'react-router-redux'
 import rootReducer from '../reducers'
 import youversionApi from '../middleware/youversionApi'
 import googleMapsApi from '../middleware/googleMapsApi'
 import youversionAuth from '../middleware/youversionAuth'
-import { syncHistory } from 'react-router-redux'
 
 export default function configureStore(initialState, history, logger) {
-	const reduxRouterMiddleware = syncHistory(history)
-
+	const reduxRouterMiddleware = routerMiddleware(history)
 	let finalCreateStore = null
-
 	if (logger !== null) {
 		finalCreateStore = compose(
-		  applyMiddleware(thunk, youversionApi, googleMapsApi, youversionAuth, reduxRouterMiddleware, logger)
+			applyMiddleware(thunk, youversionApi, googleMapsApi, youversionAuth, reduxRouterMiddleware, logger)
 		)(createStore)
 	} else {
 		finalCreateStore = compose(
-		  applyMiddleware(thunk, youversionApi, googleMapsApi, youversionAuth, reduxRouterMiddleware)
+			applyMiddleware(thunk, youversionApi, googleMapsApi, youversionAuth, reduxRouterMiddleware)
 		)(createStore)
 	}
 

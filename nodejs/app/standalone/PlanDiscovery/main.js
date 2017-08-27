@@ -49,7 +49,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, null, logger)
+const store = configureStore(initialState, browserHistory, logger)
 const history = syncHistoryWithStore(browserHistory, store)
 
 addLocaleData(window.__LOCALE__.data)

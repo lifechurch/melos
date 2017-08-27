@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import moment from 'moment'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import cookie from 'react-cookie'
 import Immutable from 'immutable'
 
@@ -72,9 +72,9 @@ class Plan extends Component {
 		if (complete) {
 			if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
 				if (isFinalPlanDay(day, calendar, total_days)) {
-					dispatch(routeActions.push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
+					dispatch(push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
 				} else {
-					dispatch(routeActions.push(`${window.location.pathname}/completed`))
+					dispatch(push(`${window.location.pathname}/completed`))
 				}
 			}
 		}

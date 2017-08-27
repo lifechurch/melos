@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
 
 import SubscribeUserDialog from './SubscribeUserDialog'
@@ -22,7 +22,7 @@ class SubscribeUserAction extends Component {
 
 	handleGoToPlan() {
 		const { dispatch, subscriptionLink } = this.props
-		dispatch(routeActions.push(subscriptionLink))
+		dispatch(push(subscriptionLink))
 	}
 
 	render() {

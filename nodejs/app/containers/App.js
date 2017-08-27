@@ -1,20 +1,17 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
 
-class App extends Component {
-	render() {
-		const { children } = this.props
-		return (
-			<div>
-				{children}
-			</div>
-		)
-	}
+function App(props) {
+	const { children } = props
+	return (
+		<div>
+			{ children }
+		</div>
+	)
 }
 
 App.propTypes = {
-	children: PropTypes.node
+	children: PropTypes.node.isRequired
 }
 
 function mapStateToProps(state) {

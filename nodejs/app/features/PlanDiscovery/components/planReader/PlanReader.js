@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import PlanNavigation from './PlanNavigation'
 import isFinalReadingForDay, { isFinalPlanDay, dayHasDevo, handleRefUpdate } from '../../../../lib/readingPlanUtils'
@@ -30,7 +30,7 @@ class PlanReader extends Component {
 		const { dispatch } = this.props
 
 		this.handleComplete()
-		dispatch(routeActions.push(this.navLinks.next))
+		dispatch(push(this.navLinks.next))
 		// if audio has completed a ref then keep it playing for the next one
 		this.setState({ audioPlaying: true })
 	}
