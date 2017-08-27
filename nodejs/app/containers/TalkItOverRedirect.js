@@ -10,6 +10,7 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 // selectors
 // utils
 import Routes from '../lib/routes'
+import { mapTioIndices } from '../lib/readingPlanUtils'
 // components
 
 
@@ -42,15 +43,7 @@ class TalkItOverRedirect extends Component {
 				? plan.days[day].segments
 				: null
 			// which sub segment index corresponds to the tio number in the url?
-			const tioIndices = []
-			if (segs) {
-				segs.forEach((seg, i) => {
-					if (seg.kind === 'talk-it-over') {
-						tioIndices.push(i)
-					}
-				})
-			}
-			const mappedSegment = tioIndices[content]
+			const mappedSegment = mapTioIndices(segs)[content]
 			if (mappedSegment && this.username && day) {
 				window.location.replace(
 					Routes.subscriptionContent({

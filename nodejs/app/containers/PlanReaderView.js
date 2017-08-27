@@ -13,7 +13,7 @@ import TalkItOver from './TalkItOver'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
 // utils
-import { isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
+import { isFinalSegmentToComplete, isFinalPlanDay, mapTioIndices } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 
 
@@ -49,7 +49,7 @@ class PlanReaderView extends Component {
 	onAudioComplete = () => {
 		const { dispatch } = this.props
 
-		this.handleComplete()
+		this.onComplete()
 		dispatch(push())
 			// if audio has completed a ref then keep it playing for the next one
 		this.setState({ audioPlaying: true })
@@ -159,7 +159,9 @@ class PlanReaderView extends Component {
 		this.segment = this.daySegments
 			? this.daySegments[this.contentNum]
 			: null
-
+		// calc which tio we're on if we are going to render tio
+		this.tio = mapTioIndices(this.daySegments)
+			&& mapTioIndices(this.daySegments).indexOf(this.contentNum)
 		this.progressDays = subscription && subscription.days ? subscription.days : null
 		this.dayProgress = this.progressDays
 			&& this.progressDays[day]
@@ -209,6 +211,7 @@ class PlanReaderView extends Component {
 							together_id={subscription ? subscription.together_id : null}
 							content={this.segment.content}
 							day={day}
+							tioIndex={this.tio}
 						/>
 					)
 					break

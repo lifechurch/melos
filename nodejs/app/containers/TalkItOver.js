@@ -32,12 +32,13 @@ class TalkItOver extends Component {
 	}
 
 	getActivities = ({ page }) => {
-		const { day, together_id, dispatch } = this.props
+		const { day, together_id, dispatch, tioIndex } = this.props
 		dispatch(plansAPI.actions.activities.get({
 			id: together_id,
 			day,
 			page,
-			order: 'asc'
+			order: 'asc',
+			talk_it_over: tioIndex,
 		},
 			{
 				auth: true
@@ -54,7 +55,7 @@ class TalkItOver extends Component {
 	}
 
 	handleComment = ({ parent_id = null }) => {
-		const { day, together_id, dispatch } = this.props
+		const { day, together_id, dispatch, tioIndex } = this.props
 		const { comment } = this.state
 		if (comment) {
 			dispatch(plansAPI.actions.activities.post({
@@ -67,6 +68,7 @@ class TalkItOver extends Component {
 						created_dt: getCurrentDT(),
 						content: comment,
 						parent_id,
+						talk_it_over: tioIndex,
 					},
 					auth: true
 				})).then(() => {
