@@ -1,5 +1,5 @@
 import { getClient } from '@youversion/js-api'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import RavenNode from 'raven'
 
 import ActionCreators from '../features/Auth/actions/creators'
@@ -158,7 +158,7 @@ export default store => {
 			}, (error) => {
 				if (error.status === 401) {
 					next(ActionCreators.authenticationFailed())
-					next(routeActions.push(`/${window.__LOCALE__.locale}/login`))
+					next(push(`/${window.__LOCALE__.locale}/login`))
 				} else {
 					next(getFailureAction(failureType, action, [ error ]))
 				}

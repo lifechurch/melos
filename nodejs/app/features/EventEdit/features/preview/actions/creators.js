@@ -1,5 +1,4 @@
 import detailsType from '../../details/actions/constants'
-import { routeActions } from 'react-router-redux'
 
 const ActionCreators = {
 	publishEvent(params) {

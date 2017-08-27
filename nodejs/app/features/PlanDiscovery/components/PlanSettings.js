@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import Toggle from 'react-toggle-button'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import ProgressBar from '../../../components/ProgressBar'
@@ -12,7 +12,6 @@ import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import Routes from '../../../lib/routes'
 import calcTodayVsStartDt from '../../../lib/calcTodayVsStartDt'
 import getCurrentDT from '../../../lib/getCurrentDT'
-
 
 
 class PlanSettings extends Component {
@@ -72,7 +71,7 @@ class PlanSettings extends Component {
 				auth: auth.isLoggedIn
 			})).then(() => {
 				dispatch({ type: 'DELETE_SUB_FROM_STATE', data: { id: this.subscription_id } })
-				dispatch(routeActions.push(Routes.subscriptions({
+				dispatch(push(Routes.subscriptions({
 					username: auth.userData.username
 				})))
 			})
@@ -82,7 +81,7 @@ class PlanSettings extends Component {
 			}, {
 				auth: auth.isLoggedIn
 			})).then(() => {
-				dispatch(routeActions.push(Routes.subscriptions({
+				dispatch(push(Routes.subscriptions({
 					username: auth.userData.username
 				})))
 			})

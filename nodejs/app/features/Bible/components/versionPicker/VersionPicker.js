@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import { routeActions } from 'react-router-redux'
 import { injectIntl } from 'react-intl'
+import { push } from 'react-router-redux'
 import Filter from '../../../../lib/filter'
 import VersionPickerModal from './VersionPickerModal'
 import Label from '../chapterPicker/Label'
@@ -349,7 +349,7 @@ class VersionPicker extends Component {
 					onClick({ id: versions[versionKeys[versionlistSelectionIndex]].id })
 				} else {
 					const chapURL = localizedLink(linkBuilder(versions[versionKeys[versionlistSelectionIndex]].id, selectedChapter.toLowerCase(), versions[versionKeys[versionlistSelectionIndex]].local_abbreviation.toLowerCase()))
-					dispatch(routeActions.push(chapURL))
+					dispatch(push(chapURL))
 				}
 			}
 
@@ -445,7 +445,6 @@ class VersionPicker extends Component {
 								&& this.props.languages[languageMap[selectedLanguage]].name
 							}
 							versionFiltering={versionFiltering}
-							intl={intl}
 							cancel={this.handleCloseDropdown}
 							inputValue={langInputValue}
 							onClick={onClick}

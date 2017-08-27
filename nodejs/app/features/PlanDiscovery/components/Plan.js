@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
-// actions
-
 // components
 import LazyImage from '../../../components/LazyImage'
 import PlanMenu from './PlanMenu'
@@ -134,7 +132,7 @@ function Plan({
 					})
 				}
 			</ul>
-			)
+		)
 	}
 
 

@@ -1,6 +1,6 @@
-import { routeActions } from 'react-router-redux'
 import cookie from 'react-cookie'
 import { storeToken, deleteToken } from '@youversion/token-storage'
+import { push } from 'react-router-redux'
 import type from './constants'
 
 const ActionCreators = {
@@ -9,7 +9,7 @@ const ActionCreators = {
 			deleteToken()
 			cookie.remove('OAUTH', { path: '/' })
 			dispatch({ type: type('logout') })
-			dispatch(routeActions.push(`/${locale}/login`))
+			dispatch(push(`/${locale}/login`))
 		}
 	},
 
@@ -31,7 +31,7 @@ const ActionCreators = {
 			dispatch(ActionCreators.callAuthenticate(params)).then((authResponse) => {
 				if (!(authResponse instanceof Error)) {
 					storeToken(authResponse.token)
-					dispatch(routeActions.push(`/${locale}/`))
+					dispatch(push(`/${locale}/`))
 				}
 			})
 		}
