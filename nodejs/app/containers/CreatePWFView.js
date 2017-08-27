@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
@@ -59,7 +59,7 @@ class CreatePWFView extends Component {
 				},
 				auth: auth.isLoggedIn,
 			})).then(() => {
-				dispatch(routeActions.push(Routes.subscriptions({
+				dispatch(push(Routes.subscriptions({
 					username: auth.userData.username,
 				})))
 			})
@@ -77,7 +77,7 @@ class CreatePWFView extends Component {
 			})).then((data) => {
 				if (data && data.map && data.data) {
 					const sub = data.data[data.map[0]]
-					dispatch(routeActions.push(Routes.togetherInvite({
+					dispatch(push(Routes.togetherInvite({
 						username: auth.userData.username,
 						plan_id,
 						together_id: sub.together_id

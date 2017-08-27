@@ -6,6 +6,7 @@ import rtlDetect from 'rtl-detect'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import plansAPI, { getProgressById } from '@youversion/api-redux/lib/endpoints/plans'
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
+import customGet from '@youversion/api-redux/lib/customHelpers/get'
 import Routes from '../lib/routes'
 import { selectImageFromList, PLAN_DEFAULT } from '../lib/imageUtil'
 import LazyImage from '../components/LazyImage'
@@ -17,7 +18,7 @@ import Share from '../features/Bible/components/verseAction/share/Share'
 
 class DayCompleteView extends Component {
 	componentDidMount() {
-		const { dispatch, params: { id, subscription_id }, plan } = this.props
+		const { dispatch, params: { id, subscription_id }, plan, auth } = this.props
 
 		if (!plan) {
 			dispatch(readingPlansAction({
@@ -28,12 +29,20 @@ class DayCompleteView extends Component {
 			}))
 		}
 
-		dispatch(plansAPI.actions.progress.get({
-			id: subscription_id,
-			fields: 'overall'
-		}, {
-			auth: true
-		}))
+		customGet({
+			actionName: 'progress',
+			pathvars: {
+				id: subscription_id,
+				page: '*',
+				fields: 'overall'
+			},
+			params: {
+				auth: true,
+			},
+			dispatch,
+			actions: plansAPI.actions,
+			auth,
+		})
 	}
 
 	localizedLink = (link) => {

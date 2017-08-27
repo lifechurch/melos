@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
-
 import SubscribeUserDialog from './SubscribeUserDialog'
+
 
 class SubscribeUserAction extends Component {
 	constructor(props) {

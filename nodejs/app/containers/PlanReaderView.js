@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import rtlDetect from 'rtl-detect'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 // actions
 import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 // models
@@ -50,7 +50,7 @@ class PlanReaderView extends Component {
 		const { dispatch } = this.props
 
 		this.handleComplete()
-		dispatch(routeActions.push())
+		dispatch(push())
 			// if audio has completed a ref then keep it playing for the next one
 		this.setState({ audioPlaying: true })
 	}

@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import { FormattedMessage } from 'react-intl'
 // actions
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
@@ -48,7 +48,7 @@ class InvitationView extends Component {
 
 	OnActionComplete = () => {
 		const { auth, dispatch } = this.props
-		dispatch(routeActions.push(Routes.subscriptions({
+		dispatch(push(Routes.subscriptions({
 			username: auth.userData.username
 		})))
 	}

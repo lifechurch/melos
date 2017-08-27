@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import Immutable from 'immutable'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
@@ -88,7 +88,7 @@ class ParticipantsView extends Component {
 					}
 				})
 				dispatch({ type: 'DELETE_SUB_FROM_STATE', data: { id: idToDelete } })
-				dispatch(routeActions.push(Routes.subscriptions({
+				dispatch(push(Routes.subscriptions({
 					username: auth.userData.username
 				})))
 			}

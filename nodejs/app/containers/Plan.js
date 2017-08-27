@@ -4,7 +4,7 @@ import Immutable from 'immutable'
 import { FormattedHTMLMessage } from 'react-intl'
 import rtlDetect from 'rtl-detect'
 import moment from 'moment'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 // actions
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
@@ -149,13 +149,13 @@ class Plan extends Component {
 			// state
 			if (isPlanComplete || (this.dayProgress.complete)) {
 				if (isPlanComplete) {
-					dispatch(routeActions.push(Routes.subscriptionComplete({
+					dispatch(push(Routes.subscriptionComplete({
 						username: auth.userData.username,
 						plan_id: id.split('-')[0],
 						slug: id.split('-')[1],
 					})))
 				} else {
-					dispatch(routeActions.push(Routes.subscriptionDayComplete({
+					dispatch(push(Routes.subscriptionDayComplete({
 						username: auth.userData.username,
 						plan_id: id.split('-')[0],
 						slug: id.split('-')[1],

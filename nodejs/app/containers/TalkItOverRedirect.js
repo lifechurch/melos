@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 // actions
 import subscriptionData from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 // models
@@ -17,7 +17,7 @@ class TalkItOverRedirect extends Component {
 	componentDidMount() {
 		const { dispatch, params: { subscription_id, day }, auth } = this.props
 		if (!auth.isLoggedIn) {
-			dispatch(routeActions.push(
+			dispatch(push(
 				Routes.signIn({})
 			))
 		} else if (subscription_id) {

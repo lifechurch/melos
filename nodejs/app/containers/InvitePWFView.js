@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import friendsAction from '@youversion/api-redux/lib/endpoints/friends/action'
 import { getFriends } from '@youversion/api-redux/lib/endpoints/friends/reducer'
 import searchAction from '@youversion/api-redux/lib/endpoints/search/action'
@@ -31,7 +31,7 @@ class InvitePWFView extends Component {
 			body: ids,
 			auth: auth.isLoggedIn
 		})).then(() => {
-			dispatch(routeActions.push(Routes.subscriptions({ username: auth.userData.username })))
+			dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
 		})
 	}
 

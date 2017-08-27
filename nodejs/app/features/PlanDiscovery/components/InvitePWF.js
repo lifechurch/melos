@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { Link } from 'react-router'
-import { routeActions } from 'react-router-redux'
+import { push } from 'react-router-redux'
 import CustomScroll from 'react-custom-scroll'
 import Immutable from 'immutable'
 import { FormattedMessage } from 'react-intl'
@@ -88,7 +88,7 @@ class InvitePWF extends Component {
 		if (selectedFriends.size > 0 && typeof handleInvite === 'function') {
 			handleInvite(selectedFriends.map((friend) => { return { id: friend.id } }))
 		} else {
-			dispatch(routeActions.push(Routes.subscriptions({ username: auth.userData.username })))
+			dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
 		}
 	}
 
@@ -170,7 +170,7 @@ class InvitePWF extends Component {
 							className='text-right green'
 							onClick={this.handleInvite}
 						>
-							<FormattedMessage id='next' />
+							<FormattedMessage id='done' />
 						</a>
 					</div>
 				</div>
@@ -225,7 +225,7 @@ class InvitePWF extends Component {
 						onClick={this.handleInvite}
 						style={{ marginBottom: 0 }}
 					>
-						<FormattedMessage id='next' />
+						<FormattedMessage id='done' />
 					</a>
 				</Footer>
 			</div>
