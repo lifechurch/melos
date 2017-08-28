@@ -482,7 +482,7 @@
 	"Reader.verse action.draft": "Luonnos",
 	"Reader.verse action.save": "Tallenna",
 	"Reader.verse action.add labels": "Lisää tunnisteet...",
-	"Reader.verse action.no labels": "Sinulla ei ole vielä yhtään tunnistetta. Syötä tunniste ja paina Enter-näppäintä lisätäksesi uuden tunnisteen tälle kirjanmerkille. Kun olet luonut uuden tunnisteen, se on käytettävissä missä tahansa kirjanmerkissäsi.",
+	"Reader.verse action.no labels": "Sinulla ei ole vielä yhtään tunnistetta. Syötä tunniste ja paina Enter-näppäintä lis��täksesi uuden tunnisteen tälle kirjanmerkille. Kun olet luonut uuden tunnisteen, se on käytettävissä missä tahansa kirjanmerkissäsi.",
 	"Reader.verse action.labels": "Tunnisteet",
 	"Reader.verse action.add with count": "Lisää ({count})",
 	"Reader.verse action.alphabetical": "Aakkosellinen",
