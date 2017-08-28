@@ -2035,6 +2035,7 @@ en:
         count:                                  "Count"
         add color:                              "Add Color"
         labels private:                         "Labels are always private"
+    notifications:                              "Notifications"
     start plan title:                           "How do you want to read this Plan?"
     by myself:                                  "By Myself"
     by myself description:                      "Keep your Plan activity private, or allow your Friends to see your Plan activity."
