@@ -1,18 +1,18 @@
 import 'babel-polyfill'
 import React from 'react'
-import { Router } from 'react-router'
+import { Router, browserHistory } from 'react-router'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import configureStore from './store/configureStore'
-import { browserHistory } from 'react-router'
 import createLogger from 'redux-logger'
+import { addLocaleData, IntlProvider } from 'react-intl'
+import moment from 'moment'
+import ga from 'react-ga'
+import { syncHistoryWithStore } from 'react-router-redux'
 import getRoutes from './routes'
 import defaultState from './defaultState'
 import EventActionCreators from './features/EventEdit/features/details/actions/creators'
 import PlanDiscoveryActionCreators from './features/PlanDiscovery/actions/creators'
-import { addLocaleData, IntlProvider } from 'react-intl'
-import moment from 'moment'
-import ga from 'react-ga'
+import configureStore from './store/configureStore'
 import './less/style.less'
 
 ga.initialize('UA-3571547-125', { language: window.__LOCALE__.locale });
@@ -35,6 +35,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 }
 
 const store = configureStore(initialState, browserHistory, logger)
+const history = syncHistoryWithStore(browserHistory, store)
 
 function requireAuth(nextState, replace) {
 	const state = store.getState()
@@ -109,7 +110,7 @@ window.__LOCALE__.momentLocaleData = moment.localeData()
 render(
 	<IntlProvider locale={window.__LOCALE__.locale2 == 'mn' ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} onUpdate={logPageView} />
+			<Router routes={routes} history={history} onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
 	document.getElementById('react-app')

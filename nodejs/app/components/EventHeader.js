@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { FormattedMessage } from 'react-intl'
+import { Link } from 'react-router'
 import Row from './Row'
 import Column from './Column'
 import EventEditNav from '../features/EventEdit/components/EventEditNav'
@@ -7,6 +9,7 @@ import PreviewActionCreators from '../features/EventEdit/features/preview/action
 import AuthActionCreators from '../features/Auth/actions/creators'
 import CheckGrayImage from '../../images/check-gray.png'
 import YouVersionImage from '../../images/YouVersion.png'
+import EventStatus from '../features/EventEdit/eventStatus'
 
 class EventHeader extends Component {
 	handleCancel() {

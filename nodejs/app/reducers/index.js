@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { routeReducer } from 'react-router-redux'
+import { routerReducer } from 'react-router-redux'
 import { eventFeeds } from './eventFeeds'
 import { modals } from './modals'
 import auth from '../features/Auth/reducers/auth'
@@ -32,7 +32,7 @@ const rootReducer = combineReducers({
 	references,
 	readingPlans,
 	users,
-	routing: routeReducer,
+	routing: routerReducer,
 	serverLanguageTag: (state = {}, action) => { return state },
 	hosts: (state = {}, action) => { return state }
 })

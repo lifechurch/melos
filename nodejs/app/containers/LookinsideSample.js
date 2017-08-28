@@ -57,7 +57,7 @@ function mapStateToProps(state) {
 	return {
 		plan: state.readingPlans && state.readingPlans.fullPlans && state.readingPlans.fullPlans._SELECTED ? state.readingPlans.fullPlans._SELECTED : null,
 		bible: state.bibleReader,
-		location: state.routing && state.routing.location ? state.routing.location : null,
+		location: state.routing && state.routing.locationBeforeTransitions ? state.routing.locationBeforeTransitions : null,
 		auth: state.auth,
 		hosts: state.hosts,
 	}
