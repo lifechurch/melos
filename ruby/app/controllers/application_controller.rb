@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   include YV::Concerns::Presenters
   include YV::Concerns::Redirection
   include YV::Concerns::SocialNetworks
-
+  include YV::Concerns::NodeAssets
 
   include ApplicationHelper
   protect_from_forgery
@@ -35,21 +35,6 @@ class ApplicationController < ActionController::Base
       client_settings.last_read = reference unless request.xhr?
     end
 
-    def add_node_assets(assets)
-      assetsToLoad = []
-      if !@node_assets.present?
-        @node_assets = []
-      end
-
-      assets.each do |s|
-        if !@node_assets.include? s
-          @node_assets.push(s)
-          assetsToLoad.push(s)
-        end
-      end
-
-      return assetsToLoad
-    end
   private
 
     def id_param(val)
