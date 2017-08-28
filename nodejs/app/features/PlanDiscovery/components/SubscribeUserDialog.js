@@ -84,7 +84,7 @@ class SubscribeUserDialog extends Component {
 					</ul>
 				</Menu>
 				<Modal ref={(m) => { this.modal = m }} customClass='subscribe-modal'>
-					<div customClass='horizontal-center flex-wrap' style={{ width: '250px' }}>
+					<div customClass='horizontal-center flex-wrap'>
 						<div className='flex-wrap horizontal-center option' style={{ marginBottom: '20px' }}>
 							<div className='action-title' style={{ width: '100%' }}><FormattedMessage id='level of privacy' /></div>
 							<div className='action-description'><FormattedMessage id='plan privacy prompt' /></div>

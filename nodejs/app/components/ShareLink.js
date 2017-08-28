@@ -30,11 +30,10 @@ function ShareLink({
 
 	let shareText
 	if (!text && participants && together_id) {
-		const others = participants.filter({ together_id, idOnly: true }).length - 1
-		shareText = intl.formatMessage({
-			id: 'join together share',
-			values: { plan: planName, others },
-		})
+		shareText = intl.formatMessage(
+			{ id: 'join together share' },
+			{ plan: planName },
+		)
 	} else {
 		shareText = text
 	}

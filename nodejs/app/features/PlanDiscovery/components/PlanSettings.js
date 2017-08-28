@@ -157,7 +157,7 @@ class PlanSettings extends Component {
 
 		return (
 			<div className='row large-6 medium-8 small-11 plan-settings' style={{ marginTop: 30 }}>
-				<div style={{ padding: '20px 0 20px 0' }}>
+				<div style={{ padding: '25px 0 20px 0' }}>
 					{
 						startsInFuture
 							?	(
@@ -223,10 +223,16 @@ class PlanSettings extends Component {
 					this.together_id
 						&& isAuthHost
 						&& (
-							<div className='text-center flex-wrap horizontal-center' style={rowStyle}>
+							<div className='text-center flex-wrap horizontal-center'>
 								<ShareLink together_id={this.together_id} />
 							</div>
 						)
+				}
+				{
+					this.together_id &&
+					<div style={{ marginTop: '50px', padding: '10px 0' }}>
+						<h3><FormattedMessage id='notifications' /></h3>
+					</div>
 				}
 				{
 					this.together_id &&
