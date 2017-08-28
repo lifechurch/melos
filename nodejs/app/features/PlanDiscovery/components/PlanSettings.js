@@ -233,7 +233,7 @@ class PlanSettings extends Component {
 					isAuthHost &&
 					<div style={rowStyle}>
 						<div style={{ flex: 1, paddingRight: '40px' }}>
-							<h3><FormattedMessage id='notifications.participant accept' /></h3>
+							<h3><FormattedMessage id='when participant accepts' /></h3>
 						</div>
 						<div>
 							<Toggle
@@ -255,7 +255,7 @@ class PlanSettings extends Component {
 					this.together_id &&
 					<div style={rowStyle}>
 						<div style={{ flex: 1, paddingRight: '40px' }}>
-							<h3><FormattedMessage id='notifications.participant comment' /></h3>
+							<h3><FormattedMessage id='when participant comments' /></h3>
 						</div>
 						<div>
 							<Toggle

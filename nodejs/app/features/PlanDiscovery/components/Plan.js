@@ -112,7 +112,7 @@ function Plan({
 							title = getReferencesTitle({ bookList, usfmList: usfm }).title
 							key = usfm
 						} else if (segment.kind === 'talk-it-over') {
-							title = <FormattedMessage id='plans.talk it over' />
+							title = <FormattedMessage id='talk it over' />
 						}
 
 						return (

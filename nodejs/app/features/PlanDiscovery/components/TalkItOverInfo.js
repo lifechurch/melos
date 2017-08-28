@@ -10,7 +10,7 @@ function TalkItOverInfo(props) {
 		<div
 			className={`vertical-center horizontal-center flex-wrap text-center ${customClass}`}
 		>
-			<h5 style={{ width: '100%' }}><FormattedMessage id='talk-it-over' /></h5>
+			<h5 style={{ width: '100%' }}><FormattedMessage id='talk it over' /></h5>
 			<ParticipantsAvatarList
 				together_id={together_id}
 				day={day}

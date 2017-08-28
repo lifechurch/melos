@@ -67,7 +67,7 @@ function Invitation({
 							/>
 						</div>
 						<div style={{ margin: '50px 0 20px 0' }}>
-							<div className='font-grey' style={{ fontSize: '14px' }}><FormattedMessage id='Together.start date' /></div>
+							<div className='font-grey' style={{ fontSize: '14px' }}><FormattedMessage id='start date' /></div>
 							<div style={{ fontSize: '14px' }}>{ startDate }</div>
 						</div>
 					</Card>
@@ -80,7 +80,7 @@ function Invitation({
 							joinToken={joinToken}
 							together_id={together_id}
 						/>
-						<a className='card-button'><FormattedMessage id='Together.invitation blurb' /></a>
+						<a className='card-button'><FormattedMessage id='what is this' /></a>
 					</div>
 				</div>
 			</div>

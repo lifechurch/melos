@@ -137,7 +137,7 @@ class ParticipantsAvatarList extends Component {
 							&& Object.keys(usersToShow).length > avatarList.length
 							? (
 								<div className='yv-green-link' style={{ fontSize: `${avatarWidth * 0.43}px` }}>
-									{`+ ${Object.keys(usersToShow).length - avatarList.length}`}
+									<FormattedMessage id='+ x more' values={{ number: Object.keys(usersToShow).length - avatarList.length }} />
 								</div>
 							)
 							: showMoreLink

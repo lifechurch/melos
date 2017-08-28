@@ -90,11 +90,11 @@ class InvitationView extends Component {
 				planLink={planLink}
 				participantsString={
 					<div>
-						<FormattedMessage id='Together.invited' values={{ number: invitedNum }} />
+						<FormattedMessage id='x pending' values={{ number: invitedNum }} />
 						&nbsp;
 						&bull;
 						&nbsp;
-						<FormattedMessage id='Together.accepted' values={{ number: acceptedNum }} />
+						<FormattedMessage id='x accepted' values={{ number: acceptedNum }} />
 					</div>
 				}
 				startDate={<PlanStartString start_dt={together && together.start_dt} dateOnly />}
