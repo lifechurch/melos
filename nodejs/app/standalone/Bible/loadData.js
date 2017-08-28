@@ -27,7 +27,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
 			const version = params.version
 				|| cookie.load('version')
-				|| (Array.isArray(localeVersionList)) ? localeVersionList[0] : false
+				|| ((Array.isArray(localeVersionList)) ? localeVersionList[0] : false)
 				|| '1'
 
 			let reference = params.ref || cookie.load('last_read') || 'JHN.1'
