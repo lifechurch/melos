@@ -1,12 +1,13 @@
 class AppStoreController < ActionController::Base
   include YV::Concerns::UserAuth
   include YV::Concerns::Locale
+  include YV::Concerns::NodeAssets
   include ApplicationHelper
 
   before_filter :set_site, only: [:index]
   before_filter :set_locale_and_timezone # ripped from Concerns::Locale
   before_filter :track_app_download, only: [:index]
-  helper_method :current_auth, :ref_from_params, :current_avatar
+  helper_method :current_auth, :ref_from_params, :current_avatar, :add_node_assets
 
 
   # get /app/(:store)
@@ -79,7 +80,7 @@ class AppStoreController < ActionController::Base
     visitor_locale ||= request.compatible_language_from(I18n.available_locales)
     visitor_locale ||= I18n.default_locale
     visitor_locale = visitor_locale.to_sym
-    
+
     set_locale(visitor_locale)
     set_available_locales( @site.available_locales.present? ? @site.available_locales : I18n.available_locales )
   end
