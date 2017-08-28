@@ -61,17 +61,21 @@ function Participants({
 				<div className='text-center' style={{ fontSize: '18px', flex: 1 }}>
 					<FormattedMessage id='participants' />
 				</div>
-				<a
-					tabIndex={0}
-					className='yv-gray-link'
-					onClick={
-						() => {
-							document.getElementById('share-link').scrollIntoView(false)
+				{
+					// handleDelete is only passed if auth is host
+					handleDelete &&
+					<a
+						tabIndex={0}
+						className='yv-gray-link'
+						onClick={
+							() => {
+								document.getElementById('share-link').scrollIntoView(false)
+							}
 						}
-					}
-				>
-					<FormattedMessage id='invite others' />
-				</a>
+					>
+						<FormattedMessage id='invite others' />
+					</a>
+				}
 			</div>
 			<div className='gray-background content'>
 				<div className='columns medium-5 small-12 small-centered white' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
@@ -141,7 +145,9 @@ function Participants({
 				</div>
 			</div>
 			<div id='share-link'>
-				{ together_id && <ShareLink together_id={together_id} /> }
+				{/* handleDelete is passed if auth is host, and we only show share if
+					auth is host */}
+				{ together_id && handleDelete && <ShareLink together_id={together_id} /> }
 			</div>
 		</div>
 	)
