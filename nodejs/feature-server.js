@@ -187,7 +187,8 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 				// We expect MODULE_NOT_FOUND errors because some features don't use routing
 				//  but we want to capture any other exceptions here
 				if (ex.code !== 'MODULE_NOT_FOUND') {
-					Raven.captureException(ex)
+					// Don't report this error for now, too many false positives
+					// Raven.captureException(ex)
 				}
 			}
 		}
