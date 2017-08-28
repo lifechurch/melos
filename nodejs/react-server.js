@@ -12,8 +12,10 @@ import { tokenAuth } from '@youversion/js-api'
 import { IntlProvider } from 'react-intl'
 import rtlDetect from 'rtl-detect'
 import Raven from 'raven'
+import { syncHistoryWithStore } from 'react-router-redux'
 import getRoutes from './app/routes'
 import configureStore from './app/store/configureStore'
+
 import defaultState from './app/defaultState'
 import { getLocale } from './app/lib/langUtils'
 
@@ -197,9 +199,11 @@ router.get('/*', cookieParser(), (req, res) => {
 
 			try {
 				const logger = createNodeLogger()
-				const history = createMemoryHistory()
-				const store = configureStore(startingState, history, logger)
-				const html = renderToString(<IntlProvider locale={req.Locale.locale2 === 'mn' ? req.Locale.locale2 : req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
+				const memoryHistory = createMemoryHistory()
+				const store = configureStore(startingState, memoryHistory, logger)
+				const history = syncHistoryWithStore(memoryHistory, store)
+
+				const html = renderToString(<IntlProvider locale={req.Locale.locale2 === 'mn' ? req.Locale.locale2 : req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext history={history} {...renderProps} /></Provider></IntlProvider>)
 				const initialState = store.getState()
 				const rtl = rtlDetect.isRtlLang(req.Locale.locale)
 				const renderParams = {
@@ -216,7 +220,7 @@ router.get('/*', cookieParser(), (req, res) => {
 			} catch (ex) {
 				// throw new Error(ex)
 				Raven.captureException(ex)
-				res.status(500).send()
+				res.status(500).send(ex.message)
 			}
 
 		} else {

@@ -137,10 +137,10 @@ class AudioPlayer extends Component {
 			this.player.onerror = this.handlePlayerError
 			this.player.onplay = this.handlePlayerPlaying
 			this.player.onpause = this.handlePlayerPause
-			this.player.playbackRate = this.state.playbackRate
+			this.player.playbackRate = this.state.playbackRate || 1
 			this.player.ontimeupdate = this.handlePlayerTimeUpdate
 			this.player.ondurationchange = this.handlePlayerDurationChange
-			this.player.currentTime = currentTime
+			this.player.currentTime = currentTime || 0
 
 			if (playing) {
 				this.handlePlayerPlayRequest()
