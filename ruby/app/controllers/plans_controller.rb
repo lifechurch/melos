@@ -101,7 +101,7 @@ class PlansController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
-    render 'save_for_later_action', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'save_for_later_action', locals: { html: fromNode['html'] }
   end
 
   # action and view from node server for subscribe user url (from email link)
