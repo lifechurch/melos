@@ -4,6 +4,7 @@ import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../../../widgets/TogetherInvitationActions'
 import InvitationString from '../../../widgets/InvitationString'
 import Card from '../../../components/Card'
+import SectionedHeading from '../../../components/SectionedHeading'
 import LazyImage from '../../../components/LazyImage'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
@@ -23,11 +24,9 @@ function Invitation({
 
 	return (
 		<div className='invitation text-center'>
-			<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
-				<div className='row text-center'>
-					<h4><FormattedMessage id='invitation' /></h4>
-				</div>
-			</div>
+			<SectionedHeading>
+				<FormattedMessage id='invite friends' />
+			</SectionedHeading>
 			<div className='gray-background content'>
 				<div className='columns medium-5 small-12 small-centered' style={{ padding: '40px 0 100px 0' }}>
 					<Card>

@@ -5,6 +5,7 @@ import CheckMark from '../../../components/CheckMark'
 import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
+import SectionedHeading from '../../../components/SectionedHeading'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
 import { hasUserCompletedActivity } from '../../../lib/readingPlanUtils'
@@ -56,12 +57,9 @@ function Participants({
 
 	return (
 		<div className='pwf-flow pwf-invite'>
-			<div className='reading_plan_index_header medium-8 small-11 centered vertical-center'>
-				{ backLink }
-				<div className='text-center' style={{ fontSize: '18px', flex: 1 }}>
-					<FormattedMessage id='participants' />
-				</div>
-				{
+			<SectionedHeading
+				left={backLink}
+				right={
 					// handleDelete is only passed if auth is host
 					handleDelete &&
 					<a
@@ -76,7 +74,9 @@ function Participants({
 						<FormattedMessage id='invite others' />
 					</a>
 				}
-			</div>
+			>
+				<FormattedMessage id='participants' />
+			</SectionedHeading>
 			<div className='gray-background content'>
 				<div className='columns medium-5 small-12 small-centered white' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
 					<div className='horizontal-center' style={{ height: '250px', marginBottom: '30px' }}>

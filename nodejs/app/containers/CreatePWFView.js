@@ -97,10 +97,16 @@ class CreatePWFView extends Component {
 				height: 405
 			}).url
 			: null
+		const backPath = plan
+			&& 'id' in plan
+			&& Routes.plan({
+				plan_id: plan.id,
+				slug: plan.slug,
+			})
 
 		return (
 			<CreatePWF
-				backPath={null}
+				backPath={backPath}
 				planImgSrc={src}
 				onHandleSubscribe={this.handleSubscribe}
 				isEditingDate={!!this.subscription_id}
@@ -126,10 +132,15 @@ function mapStateToProps(state, props) {
 
 CreatePWFView.propTypes = {
 	plan: PropTypes.object.isRequired,
+	subscription: PropTypes.object,
 	auth: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
+}
+
+CreatePWFView.defaultProps = {
+	subscription: null,
 }
 
 export default connect(mapStateToProps, null)(CreatePWFView)

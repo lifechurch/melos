@@ -5,6 +5,7 @@ import moment from 'moment'
 import Calendar from './Calendar'
 import CalendarDay from './CalendarDay'
 import LazyImage from '../../../components/LazyImage'
+import SectionedHeading from '../../../components/SectionedHeading'
 import Footer from '../../../components/Footer'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
@@ -61,21 +62,16 @@ class CreatePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-create'>
-				<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
-					<div className='row vertical-center'>
+				<SectionedHeading
+					left={
 						<Link
 							className='plans vertical-center'
 							to={backPath}
 						>
 							&larr;
 						</Link>
-						<h4 className='text-center' style={{ flex: 1 }}>
-							{
-								isEditingDate
-									? <FormattedMessage id='change date' />
-									: <FormattedMessage id='start plan when' />
-							}
-						</h4>
+					}
+					right={
 						<a
 							tabIndex={0}
 							className='text-right green'
@@ -87,8 +83,14 @@ class CreatePWF extends Component {
 									: <FormattedMessage id='invite friends' />
 							}
 						</a>
-					</div>
-				</div>
+					}
+				>
+					{
+						isEditingDate
+							? <FormattedMessage id='change date' />
+							: <FormattedMessage id='start plan when' />
+					}
+				</SectionedHeading>
 				<div className='gray-background content text-center'>
 					<div className='columns medium-8 small-12 small-centered'>
 						<div className='horizontal-center' style={{ height: '150px', marginBottom: '30px' }}>
@@ -100,6 +102,7 @@ class CreatePWF extends Component {
 								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
 							/>
 						</div>
+						<FormattedMessage id='future start blurb' />
 						<Calendar showFullWeeks={false}>
 							{ this.renderDay }
 						</Calendar>

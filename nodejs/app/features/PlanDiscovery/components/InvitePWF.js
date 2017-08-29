@@ -10,6 +10,7 @@ import Search from '../../../components/Search'
 import User from '../../../components/User'
 import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
+import SectionedHeading from '../../../components/SectionedHeading'
 import Routes from '../../../lib/routes'
 import { selectImageFromList } from '../../../lib/imageUtil'
 
@@ -154,17 +155,8 @@ class InvitePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-invite'>
-				<div className='reading_plan_index_header columns medium-8 small-12 small-centered'>
-					<div className='row vertical-center'>
-						{/* <Link
-							className='plans vertical-center'
-							to={backLink}
-						>
-							&larr;
-						</Link> */}
-						<h4 className='text-center' style={{ flex: 1 }}>
-							<FormattedMessage id='invite friends' />
-						</h4>
+				<SectionedHeading
+					right={
 						<a
 							tabIndex={0}
 							className='text-right green'
@@ -172,8 +164,10 @@ class InvitePWF extends Component {
 						>
 							<FormattedMessage id='done' />
 						</a>
-					</div>
-				</div>
+					}
+				>
+					<FormattedMessage id='invite friends' />
+				</SectionedHeading>
 				<div className='gray-background content' style={{ minHeight: '450px' }}>
 					<div className='columns medium-5 small-12 small-centered '>
 						<div className='horizontal-center vertical-center'>
