@@ -2,7 +2,7 @@
 	"footer.events": "Notikumi",
 	"footer.versions": "Versijas ({count})",
 	"footer.languages": "Valodas ({count})",
-	"footer.help": "Pal��dzība",
+	"footer.help": "Palīdzība",
 	"footer.social": "Sociālie tīkli",
 	"footer.donate": "Ziedot",
 	"footer.about": "Par",
@@ -537,6 +537,7 @@
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
 	"x participants": "{number} Participants",
+	"participant limit": "Participant Limit: {number}",
 	"+ x more": "+ {number} more",
 	"when participant comments": "When Participants post a comment",
 	"when participant accepts": "When Participants accept an invite"

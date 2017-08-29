@@ -52,7 +52,7 @@
 	"plans.see all": "Ver Todos",
 	"plans.discover": "Descubrir",
 	"plans.my_plans": "Mis Planes",
-	"plans.day_completed": "<b>{username}</b> complet�� el <b>{day}día</b> del Plan bíblico: <b>{plan_title}</b>",
+	"plans.day_completed": "<b>{username}</b> completó el <b>{day}día</b> del Plan bíblico: <b>{plan_title}</b>",
 	"plans.which reading": "{current} de {total}",
 	"plans.status.on track": "¡En Curso!",
 	"plans.status.days ahead.one": " ¡{count} Día Adelante!",
@@ -533,6 +533,7 @@
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
 	"x participants": "{number} Participants",
+	"participant limit": "Participant Limit: {number}",
 	"+ x more": "+ {number} more",
 	"when participant comments": "When Participants post a comment",
 	"when participant accepts": "When Participants accept an invite"

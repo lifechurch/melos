@@ -143,7 +143,7 @@
 	"plans.catch up text": "Өнөөдрийн төлөвлөгөөний оронд сүүлд уншсан (ѳдѳр {last_completed_day} очих).",
 	"plans.catch up description only": "Та хоцорчихсон уу? Бүү санаа зов! Төлөвлөгөөгөө та үргэлж сүүлд хоцорсон хэсгээсээ үргэлжлүүлэх боломжтой.",
 	"plans.catch me up": "Нөхөж унших",
-	"plans.restart description": "Та төлөвлөгөөгөө дахин эхлүүлэх боломжтой. Таны бүх уншсан түүх болон таны уншиж байсан бүх явц устаж дахин эхлэх болно.",
+	"plans.restart description": "Та төлөвлөгөөгөө дахин эхлүүлэх боломжтой. Таны бүх ��ншсан түүх болон таны уншиж байсан бүх явц устаж дахин эхлэх болно.",
 	"plans.restart": "Тѳлѳвлѳгѳѳг Дахин Эхлүүлэх",
 	"plans.privacy description.private": "Таны Төлөвлөгөө Хувийнх байна. Тохиргоогоо Зөвхөн Найзууд болгон өөрчилж найзуудтайгаа Төлөвлөгөөнийхөө үйл ажиллагааг хуваалц.",
 	"plans.privacy description.public": "Таны Төлөвлөгөөг найзууд чинь харах боломжтой байна. Төлөвлөгөөний үйл ажиллагаагаа нууцлахын тулд хувийнх болгон өөрчил.",
@@ -533,6 +533,7 @@
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
 	"x participants": "{number} Participants",
+	"participant limit": "Participant Limit: {number}",
 	"+ x more": "+ {number} more",
 	"when participant comments": "When Participants post a comment",
 	"when participant accepts": "When Participants accept an invite"

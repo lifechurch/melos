@@ -58,7 +58,7 @@
 	"plans.status.days ahead.one": "اگلا دِن {count}",
 	"plans.status.days ahead.other": "اگلا دِن {count}",
 	"plans.status.missed days.one": "چھوٹ جانے والے دِن {count}",
-	"plans.status.missed days.other": "چھوٹ جانے والے د��ن {count}",
+	"plans.status.missed days.other": "چھوٹ جانے والے دِن {count}",
 	"plans.bible plan language": "Bible Plan Language",
 	"plans.share plan": "Check out this @YouVersion #BiblePlan: {plan_title}",
 	"plans.widget.my plans": "My Plans",
@@ -533,6 +533,7 @@
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
 	"x participants": "{number} Participants",
+	"participant limit": "Participant Limit: {number}",
 	"+ x more": "+ {number} more",
 	"when participant comments": "When Participants post a comment",
 	"when participant accepts": "When Participants accept an invite"

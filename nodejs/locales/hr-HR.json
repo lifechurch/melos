@@ -541,6 +541,7 @@
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
 	"x participants": "{number} Participants",
+	"participant limit": "Participant Limit: {number}",
 	"+ x more": "+ {number} more",
 	"when participant comments": "When Participants post a comment",
 	"when participant accepts": "When Participants accept an invite"
