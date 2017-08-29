@@ -70,7 +70,7 @@ YouversionWeb::Application.routes.draw do
   get "/ua/kids",     to: "redirects#ua_kids"
 
 	get "/unsubscribe", to: "notifications#unsubscribe"
-	get "/unsubscribe/manage", to: "notifications#unsubscribe"
+	get "/unsubscribe/manage", to: "notifications#manage_notifications"
 
   get "/trending-bible-verses", to: "pages#trending"
   get "/verse-of-the-day", to: "pages#votd", as: "votd"
