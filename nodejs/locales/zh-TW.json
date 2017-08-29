@@ -34,7 +34,7 @@
 	"unsubscribe.labels.badges": "當我獲得一枚徽章時",
 	"unsubscribe.labels.comments": "有關我的活動的評論",
 	"unsubscribe.labels.friendships": "朋友請求",
-	"unsubscribe.labels.likes": "���的活動點讚",
+	"unsubscribe.labels.likes": "我的活動點讚",
 	"unsubscribe.labels.moments": "朋友的活動",
 	"unsubscribe.labels.newsletter": "來自 YouVersion 的資訊",
 	"unsubscribe.labels.reading_plans": "有關我的讀經計劃",
@@ -529,6 +529,7 @@
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
 	"x participants": "{number} Participants",
+	"participant limit": "Participant Limit: {number}",
 	"+ x more": "+ {number} more",
 	"when participant comments": "When Participants post a comment",
 	"when participant accepts": "When Participants accept an invite"

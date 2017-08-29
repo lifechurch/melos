@@ -398,7 +398,7 @@
 	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "Stav:",
 	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "Červený znak NAŽIVO bude zobrazený pri začiatku Vášho najskoršieho času.",
 	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Odstrániť:",
-	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Vaša udalosť po jej ukončení už nebude identifikovateľn��. Účastníci, ktorí klikli na \"Uložiť udalosť\", kým táto ešte bola identifikovateľná, budú mať i naďalej prístup k jej archívnej verzii, táto udalosť bude tiež naďalej prístupná cez priamy prichádzajúci odkaz.",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Vaša udalosť po jej ukončení už nebude identifikovateľná. Účastníci, ktorí klikli na \"Uložiť udalosť\", kým táto ešte bola identifikovateľná, budú mať i naďalej prístup k jej archívnej verzii, táto udalosť bude tiež naďalej prístupná cez priamy prichádzajúci odkaz.",
 	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Rozšíriť",
 	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "Čítať",
 	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "Informácie o pláne",
@@ -537,6 +537,7 @@
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
 	"x participants": "{number} Participants",
+	"participant limit": "Participant Limit: {number}",
 	"+ x more": "+ {number} more",
 	"when participant comments": "When Participants post a comment",
 	"when participant accepts": "When Participants accept an invite"

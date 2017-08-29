@@ -228,7 +228,7 @@
 	"containers.EventEditContentContainer.choose": "Välj innehåll för att komma igång.",
 	"containers.EventEditContentContainer.needHelp": "Vill du ha hjälp?",
 	"containers.EventEditContentContainer.title": "Händelseinnehåll",
-	"containers.EventEditContentContainer.previous": "← Föregående: Tid & plats",
+	"containers.EventEditContentContainer.previous": "← Föreg��ende: Tid & plats",
 	"containers.EventEditContentContainer.next": "Nästa: Förhandsgranska →",
 	"containers.EventEditDetails.title": "Händelsedetaljer",
 	"containers.EventEditLocationContainer.title": "Plats för händelse",
@@ -533,6 +533,7 @@
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
 	"x participants": "{number} Participants",
+	"participant limit": "Participant Limit: {number}",
 	"+ x more": "+ {number} more",
 	"when participant comments": "When Participants post a comment",
 	"when participant accepts": "When Participants accept an invite"
