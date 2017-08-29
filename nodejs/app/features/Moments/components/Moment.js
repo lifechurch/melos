@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
+import { FormattedMessage } from 'react-intl'
 // actions
 // models
 // selectors
@@ -57,7 +58,7 @@ class Moment extends Component {
 					{
 						likedIds && likedIds.length > 0 &&
 						<div className='font-grey margin-left-auto'>
-							{ likedIds.length }
+							<FormattedMessage id='x likes' values={{ number: likedIds.length }} />
 						</div>
 					}
 				</div>

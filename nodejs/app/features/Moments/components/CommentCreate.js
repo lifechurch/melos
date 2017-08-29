@@ -16,7 +16,7 @@ function CommentCreate(props) {
 					className='green flex-end'
 					onClick={onComment}
 				>
-					<FormattedMessage id='moments.comments.form.save button' />
+					<FormattedMessage id='post' />
 				</a>
 			}
 		>
