@@ -25,7 +25,7 @@ function Invitation({
 	return (
 		<div className='invitation text-center'>
 			<SectionedHeading>
-				<FormattedMessage id='invite friends' />
+				<FormattedMessage id='invitation' />
 			</SectionedHeading>
 			<div className='gray-background content'>
 				<div className='columns medium-5 small-12 small-centered' style={{ padding: '40px 0 100px 0' }}>

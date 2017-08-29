@@ -6,7 +6,6 @@ class List extends Component {
 
 	handleLoadMore = () => {
 		const { loadMore } = this.props
-		console.log('pls load more')
 		if (loadMore) {
 			loadMore()
 		}
@@ -40,12 +39,14 @@ List.propTypes = {
 	loadMore: PropTypes.func,
 	customClass: PropTypes.string,
 	loadMoreDirection: PropTypes.string,
+	style: PropTypes.object,
 }
 
 List.defaultProps = {
 	loadMore: null,
 	customClass: '',
 	loadMoreDirection: 'down',
+	style: null,
 }
 
 export default List
