@@ -62,6 +62,10 @@ class NotificationsController < ApplicationController
     render 'unsubscribe', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }, layout: 'node_only'
 	end
 
+	def manage_notifications
+		unsubscribe
+	end
+
   def destroy
     # This method is for clearing (marking as read) notifications
     # Rather than shoehorning this into update (messy), or separating controllers (probably the best option, but most complex)
