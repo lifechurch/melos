@@ -22,8 +22,13 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const BIBLE_WITH_REF		= /^\/bible\/[0-9]+/ // /bible/1/***
 			const language_tag = Locale.locale3
 
-			const localeVersionList = Immutable.fromJS(localeVersions).getIn([ Locale.locale2, 'text' ]).toJS()
-				|| Immutable.fromJS(localeVersions).getIn([ Locale.locale3, 'text' ]).toJS()
+			let localeVersionList = [ 1 ]
+			const immLocaleVersions = Immutable.fromJS(localeVersions)
+			if (immLocaleVersions.hasIn([ Locale.locale, 'text' ])) {
+				localeVersionList = immLocaleVersions.getIn([ Locale.locale, 'text' ]).toJS()
+			} else if (immLocaleVersions.hasIn([ Locale.locale2, 'text' ])) {
+				localeVersionList = immLocaleVersions.getIn([ Locale.locale2, 'text' ]).toJS()
+			}
 
 			const version = params.version
 				|| cookie.load('version')
