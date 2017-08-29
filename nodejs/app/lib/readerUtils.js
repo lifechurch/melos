@@ -1,5 +1,6 @@
 import React from 'react'
 import Immutable from 'immutable'
+import cookie from 'react-cookie'
 import ActionCreators from '../features/Bible/actions/creators'
 import LocaleList from '../../locales/config/localeList.json'
 import LocalStore from './localStore'
@@ -83,29 +84,30 @@ export function handleVerseSelectionClear(refToThis, refToChapter) {
 }
 
 export function getVerseAudioTiming(startRef, endRef, timing) {
-	let startTime = null
-	let endTime = null
+	const audioTiming = {
+		startTime: null,
+		endTime: null
+	}
 
 	if (!Array.isArray(timing)) {
-		// console.warn('invalid param: timing must be an array')
-		return null
+		return audioTiming
 	}
 
 	for (let i = 0; i < timing.length; i++) {
 		const ref = timing[i]
-		if (startRef.toString() === ref.usfm.toString()) {
-			startTime = ref.start
+		if (startRef.toString().toLowerCase() === ref.usfm.toString().toLowerCase()) {
+			audioTiming.startTime = ref.start
 		}
-		if (endRef.toString() === ref.usfm.toString()) {
-			endTime = ref.end
+		if (endRef.toString().toLowerCase() === ref.usfm.toString().toLowerCase()) {
+			audioTiming.endTime = ref.end
 		}
 
-		if (startTime && endTime) {
-			return { startTime, endTime }
+		if (audioTiming.startTime && audioTiming.endTime) {
+			return audioTiming
 		}
 	}
 
-	return { startTime, endTime }
+	return audioTiming
 }
 
 
@@ -191,6 +193,11 @@ export function buildMeta(props) {
 	return { link, meta }
 }
 
+export function chapterifyUsfm(usfm) {
+	if (!usfm) return null
+	const usfmParts = usfm.split('.')
+	return usfmParts.slice(0, 2).join('.')
+}
 
 export function isVerseOrChapter(usfm) {
 	const IS_BOOK = /^\d?[a-zA-Z]{2,3}$/
@@ -201,7 +208,7 @@ export function isVerseOrChapter(usfm) {
 		return FALLBACK_VALUE
 	}
 
-	const usfmParts = usfm.split('.')
+	const usfmParts = usfm.split('+')[0].split('.')
 
 	let isVerse = usfmParts.length >= 4
 	let isChapter = usfmParts.length === 2
@@ -244,4 +251,47 @@ export function buildCopyright(formatMessage, version) {
 		openInNewTab: !!reader_footer_url
 	}
 	/* eslint-enable react/no-danger */
+}
+
+export function getBibleVersionFromStorage() {
+	return cookie.load('version') || cookie.load('alt_version') || 59
+}
+
+
+export function parseVerseFromContent({ usfms, fullContent }) {
+	const textOutput = []
+	const htmlOutput = []
+
+	if (usfms && fullContent) {
+		const doc = new DOMParser().parseFromString(fullContent, 'text/html')
+		const usfmList = Array.isArray(usfms)
+		? usfms
+		: [usfms]
+
+		usfmList.forEach((usfm) => {
+			const htmlXpath = `//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+${usfm}+')]`
+			const textXpath = `${htmlXpath}/node()[not(contains(concat(\' \',@class,\' \'),\' note \'))][not(contains(concat(\' \',@class,\' \'),\' label \'))]`
+
+			const html = doc.evaluate(htmlXpath, doc, null, XPathResult.ANY_TYPE, null)
+			const text = doc.evaluate(textXpath, doc, null, XPathResult.ANY_TYPE, null)
+
+			// text
+			let nextText = text.iterateNext()
+			while (nextText) {
+				textOutput.push(nextText.textContent)
+				nextText = text.iterateNext()
+			}
+			// html
+			let nextHtml = html.iterateNext()
+			while (nextHtml) {
+				htmlOutput.push(nextHtml.outerHTML)
+				nextHtml = html.iterateNext()
+			}
+		})
+	}
+
+	return {
+		text: textOutput.join(' '),
+		html: htmlOutput.join('')
+	}
 }
