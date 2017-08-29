@@ -6,16 +6,17 @@ class List extends Component {
 
 	handleLoadMore = () => {
 		const { loadMore } = this.props
-		if (typeof loadMore === 'function') {
+		console.log('pls load more')
+		if (loadMore) {
 			loadMore()
 		}
 	}
 
 	render() {
-		const { loadMoreDirection, children, customClass } = this.props
+		const { loadMoreDirection, children, customClass, style } = this.props
 
 		let content = (
-			<ul className={`yv-list ${customClass}`}>
+			<ul className={`yv-list ${customClass}`} style={style}>
 				{ children }
 				<Waypoint onEnter={this.handleLoadMore} />
 			</ul>
@@ -23,7 +24,7 @@ class List extends Component {
 
 		if (loadMoreDirection === 'up') {
 			content = (
-				<ul className={`yv-list ${customClass}`}>
+				<ul className={`yv-list ${customClass}`} style={style}>
 					<Waypoint onEnter={this.handleLoadMore} />
 					{ children }
 				</ul>

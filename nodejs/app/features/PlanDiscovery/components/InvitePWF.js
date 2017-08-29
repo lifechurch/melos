@@ -11,6 +11,7 @@ import User from '../../../components/User'
 import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
 import SectionedHeading from '../../../components/SectionedHeading'
+import List from '../../../components/List'
 import Routes from '../../../lib/routes'
 import { selectImageFromList } from '../../../lib/imageUtil'
 
@@ -86,10 +87,12 @@ class InvitePWF extends Component {
 	handleInvite = () => {
 		const { dispatch, auth, handleInvite } = this.props
 		const { selectedFriends } = this.state
-		if (selectedFriends.size > 0 && typeof handleInvite === 'function') {
-			handleInvite(selectedFriends.map((friend) => { return { id: friend.id } }))
-		} else {
-			dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
+		if (selectedFriends && selectedFriends.length <= 150) {
+			if (selectedFriends.size > 0 && typeof handleInvite === 'function') {
+				handleInvite(selectedFriends.map((friend) => { return { id: friend.id } }))
+			} else {
+				dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
+			}
 		}
 	}
 
@@ -119,7 +122,7 @@ class InvitePWF extends Component {
 	}
 
 	render() {
-		const { search, friends, backLink, together_id } = this.props
+		const { search, friends, getFriends, backLink, together_id } = this.props
 		const { showSearchResults, selectedFriends } = this.state
 
 		const selectedUsers = selectedFriends.toJS()
@@ -148,7 +151,7 @@ class InvitePWF extends Component {
 			)
 		}
 
-		const friendsList = friends || []
+		const friendsList = (friends && friends.users) || []
 		// merge together selected users with the friends list, to add selected users
 		// from search to the friends list. the set will remove duplicates
 		const mergedUsers = Array.from(new Set(friendsList.concat(selectedUsers)))
@@ -171,7 +174,19 @@ class InvitePWF extends Component {
 				<div className='gray-background content' style={{ minHeight: '450px' }}>
 					<div className='columns medium-5 small-12 small-centered '>
 						<div className='horizontal-center vertical-center'>
-							<div className='selected-number'>{ selectedUsers.length }</div>
+							<div
+								className={[
+									'selected-number',
+									`${
+										selectedUsers
+										&& selectedUsers.length > 150
+										? 'red'
+										: ''
+									}`,
+								].join(' ')}
+							>
+								{ selectedUsers.length }
+							</div>
 							<FormattedMessage id='selected' />
 						</div>
 						<div className='users'>
@@ -189,23 +204,22 @@ class InvitePWF extends Component {
 									}
 								</div>
 								<CustomScroll>
-									{
-										!friends ?
-											<div><FormattedMessage id='loading' /></div> :
-											<div
-												className='friend-list'
-												style={{
-													minHeight: '350px',
-													maxHeight: '350px'
-												}}
-											>
-												{
-													mergedUsers.map((user) => {
-														return this.renderUser(user)
-													})
-												}
-											</div>
+									<List
+										customClass='friend-list'
+										loadMore={getFriends.bind(this, friends && friends.next_page)}
+										style={{
+											minHeight: '350px',
+											maxHeight: '350px'
+										}}
+									>
+										{
+											!friends ?
+												<div><FormattedMessage id='loading' /></div> :
+												mergedUsers.map((user) => {
+													return this.renderUser(user)
+												})
 										}
+									</List>
 								</CustomScroll>
 							</div>
 						</div>

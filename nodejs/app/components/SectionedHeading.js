@@ -5,21 +5,19 @@ function SectionedHeading(props) {
 
 	return (
 		<div
-			className={
-				`
-					sectioned-header
-					vertical-center
-					horizontal-center
-					columns
-					medium-8
-					small-11
-					small-centered
-					${classes}
-				`
-			}
+			className={[
+				'sectioned-heading',
+				'vertical-center',
+				'horizontal-center',
+				'columns',
+				'medium-8',
+				'small-11',
+				'small-centered',
+				`${classes}`
+			].join(' ')}
 			style={{ marginBottom: '15px' }}
 		>
-			<div className='vertical-center'>
+			<div className='vertical-center' style={{ width: '66%' }}>
 				{
 					left &&
 					<div className='absolute absolute-left'>{ left }</div>

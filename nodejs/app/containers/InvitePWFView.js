@@ -14,25 +14,21 @@ import Routes from '../lib/routes'
 class InvitePWFView extends Component {
 
 	componentDidMount() {
-		const { dispatch, auth, params: { together_id } } = this.props
-		dispatch(friendsAction({
-			method: 'items',
-			params: {
-				page: 1,
-			},
-			auth: auth.isLoggedIn,
-		}))
+		const { dispatch, params: { together_id } } = this.props
+		this.getFriends()
 		dispatch(plansAPI.actions.together.get({ id: together_id }, { auth: true }))
 	}
 
 	onHandleInvite = (ids) => {
 		const { dispatch, auth, params: { together_id } } = this.props
-		dispatch(plansAPI.actions.participants.post({ id: together_id }, {
-			body: ids,
-			auth: auth.isLoggedIn
-		})).then(() => {
-			dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
-		})
+		if (ids && ids.length <= 150) {
+			dispatch(plansAPI.actions.participants.post({ id: together_id }, {
+				body: ids,
+				auth: auth.isLoggedIn
+			})).then(() => {
+				dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
+			})
+		}
 	}
 
 	onHandleSearch = (query) => {
@@ -45,6 +41,19 @@ class InvitePWFView extends Component {
 			},
 			auth: auth.isLoggedIn,
 		}))
+	}
+
+	getFriends = (page = 1) => {
+		const { dispatch, auth } = this.props
+		if (page) {
+			dispatch(friendsAction({
+				method: 'items',
+				params: {
+					page,
+				},
+				auth: auth.isLoggedIn,
+			}))
+		}
 	}
 
 	localizedLink = (link) => {
@@ -67,6 +76,7 @@ class InvitePWFView extends Component {
 				together_id={together && together.id}
 				handleSearch={this.onHandleSearch}
 				handleInvite={this.onHandleInvite}
+				getFriends={this.getFriends}
 				localizedLink={this.localizedLink}
 			/>
 		)

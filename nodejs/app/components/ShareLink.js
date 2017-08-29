@@ -61,6 +61,9 @@ function ShareLink({
 					/>
 				</a>
 			</div>
+			<div className='centered text-center' style={{ fontSize: '12px' }}>
+				<FormattedMessage id='participant limit' values={{ number: 150 }} />
+			</div>
 		</div>
 	)
 }
