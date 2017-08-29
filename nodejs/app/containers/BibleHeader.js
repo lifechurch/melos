@@ -35,7 +35,7 @@ class BibleHeader extends Component {
 			usfm: props.usfm,
 			version_id: props.version_id || getBibleVersionFromStorage(),
 			language_tag: props.language_tag
-				|| (window && window.__LOCALE__ && window.__LOCALE__.locale3),
+				|| (typeof window !== 'undefined' && window.__LOCALE__ && window.__LOCALE__.locale3),
 			audioPlaying: false,
 			mobileStyle: '',
 		}

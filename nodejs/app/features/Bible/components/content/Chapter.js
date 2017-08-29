@@ -16,7 +16,15 @@ class Chapter extends Component {
 		this.state = Object.assign({}, DEFAULT_STATE)
 	}
 
-	clearSelection = () => {
+	componentWillReceiveProps(nextProps) {
+		const { content: nextContent } = nextProps
+		const { content } = this.props
+		if (nextContent !== content) {
+			this.clearSelection()
+		}
+	}
+
+	clearSelection() {
 		this.setState(Object.assign({}, DEFAULT_STATE))
 	}
 
@@ -129,8 +137,9 @@ class Chapter extends Component {
 		if (Array.isArray(verseColors) && verseColors.length > 0) {
 			verseColors.forEach((verseColor) => {
 				const [ usfm, color ] = verseColor
+				const [ book, chapter, verse ] = usfm.split('.')
 				if (typeof usfm === 'string' && typeof color === 'string') {
-					highlightedStyles += `.bible-reader.${className} .v${usfm.split('.')[2]} { background-color: #${color}; } `
+					highlightedStyles += `.bible-reader.${className} .bk${book} .ch${chapter} .v${verse} { background-color: #${color}; } `
 				}
 			})
 		}
