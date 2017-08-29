@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
-import LocalStore from '../../../../lib/localStore'
+import cookie from 'react-cookie'
+import moment from 'moment'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import Chapter from '../../../Bible/components/content/Chapter'
 import ChapterCopyright from '../../../Bible/components/content/ChapterCopyright'
-import AudioPopup from '../../../Bible/components/audio/AudioPopup'
 import VerseAction from '../../../Bible/components/verseAction/VerseAction'
+import BibleHeader from '../../../../containers/BibleHeader'
+
 import {
 	handleVerseSelect,
 	handleVerseSelectionClear,
@@ -76,6 +78,11 @@ class PlanRef extends Component {
 		handleVerseSelectionClear(this.refToThis, refToChapter)
 	}
 
+	handleVersionClick = (version) => {
+		cookie.save('version', version, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+		window.location.reload()
+	}
+
 	render() {
 		const {
 			verseColors,
@@ -84,19 +91,13 @@ class PlanRef extends Component {
 			isRtl,
 			content,
 			version,
-			refHeading,
-			bibleChapterLink,
 			bibleReferences,
+			reference,
 			bibleVerses,
 			textDirection,
 			showChapterButton,
-			audio,
-			onAudioComplete,
-			audioStart,
-			audioStop,
-			audioPlaying,
-			hosts,
-			intl
+			intl,
+			localizedLink
 		} = this.props
 
 		// these state variables are set and maintained by the
@@ -107,22 +108,15 @@ class PlanRef extends Component {
 		} = this.state
 
 		const planRefHeading = (
-			<div className='plan-reader-heading'>
-				<div className='ref-heading'>
-					{`${refHeading} ${version.local_abbreviation.toUpperCase()}`}
-				</div>
-				<AudioPopup
-					audio={audio}
-					hosts={hosts}
-					enabled={typeof audio !== 'undefined' && audio && 'id' in audio}
-					onAudioComplete={onAudioComplete}
-					// if we're not rendering the entire chapter, the audio should start
-					// at the verse start, otherwise, it starts at the beginning of the chapter
-					startTime={showChapterButton ? audioStart : 0}
-					stopTime={showChapterButton ? audioStop : null}
-					playing={audioPlaying}
-				/>
-			</div>
+			<BibleHeader
+				customHeaderClass="plan-reader-heading"
+				usfm={reference}
+				version_id={version.id}
+				showAudio={true}
+				showVersionPicker={true}
+				localizedLink={localizedLink}
+				onVersionClick={this.handleVersionClick}
+			/>
 		)
 
 		let fullChapButton = null
@@ -184,6 +178,7 @@ PlanRef.propTypes = {
 	refHeading: PropTypes.string,
 	bibleChapterLink: PropTypes.string,
 	bibleReferences: PropTypes.array,
+	reference: PropTypes.string,
 	bibleVerses: PropTypes.object,
 	textDirection: PropTypes.string,
 	showChapterButton: PropTypes.bool,
@@ -205,6 +200,7 @@ PlanRef.defaultProps = {
 	refHeading: '',
 	bibleChapterLink: '',
 	bibleReferences: [],
+	reference: null,
 	bibleVerses: null,
 	textDirection: 'ltr',
 	showChapterButton: true,

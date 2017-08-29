@@ -230,6 +230,7 @@ class PlanReader extends Component {
 								bibleVerses: bible.verses.verses,
 								bibleChapterLink,
 								content: referenceContent,
+								reference: this.reference,
 								refHeading,
 								showChapterButton,
 								audio,
@@ -246,7 +247,8 @@ class PlanReader extends Component {
 								getChapter: this.getChapter,
 								auth,
 								hosts,
-								dispatch
+								dispatch,
+								localizedLink: this.props.localizedLink
 							})
 						}
 					</div>
