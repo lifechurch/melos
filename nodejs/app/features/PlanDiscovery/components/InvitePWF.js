@@ -87,12 +87,10 @@ class InvitePWF extends Component {
 	handleInvite = () => {
 		const { dispatch, auth, handleInvite } = this.props
 		const { selectedFriends } = this.state
-		if (selectedFriends && selectedFriends.length <= 150) {
-			if (selectedFriends.size > 0 && typeof handleInvite === 'function') {
-				handleInvite(selectedFriends.map((friend) => { return { id: friend.id } }))
-			} else {
-				dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
-			}
+		if (selectedFriends.size > 0 && typeof handleInvite === 'function') {
+			handleInvite(selectedFriends.map((friend) => { return { id: friend.id } }))
+		} else {
+			dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
 		}
 	}
 
