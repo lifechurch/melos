@@ -51,67 +51,67 @@ spec:
           - name: YOUVERSION_TOKEN_PHRASE
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: YOUVERSION_TOKEN_PHRASE
           - name: TREADSTONE_SECRET
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: TREADSTONE_SECRET
           - name: NEW_RELIC_LICENSE_KEY
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: NEW_RELIC_LICENSE_KEY
           - name: NEW_RELIC_APP_NAME
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: NEW_RELIC_APP_NAME
           - name: NEW_RELIC_LOG_LEVEL
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: NEW_RELIC_LOG_LEVEL
           - name: PASSENGER_APP_ENV
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: PASSENGER_APP_ENV
           - name: MEMCACHE_SERVERS
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: MEMCACHE_SERVERS
           - name: HTTP_TIMEOUT
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: HTTP_TIMEOUT
           - name: LOG_LEVEL
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: LOG_LEVEL
           - name: SECURE_TRAFFIC
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: SECURE_TRAFFIC
           - name: OAUTH_CLIENT_ID
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: OAUTH_CLIENT_ID
           - name: OAUTH_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: OAUTH_CLIENT_SECRET
           - name: SECURE_HOSTNAME
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
+                name: $KUBE_NAMESPACE-secrets-production
                 key: SECURE_HOSTNAME
       imagePullSecrets:
         - name: gitlab-registry

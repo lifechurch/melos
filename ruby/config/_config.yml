@@ -78,10 +78,8 @@ staging:
   nodejs_api_host: "nodejs-staging.bible.com"
 
 review:
-  # api_root: youversionapistaging.com
-  # api_referer: web-dev-review.youversionapistaging.com
-  api_root: youversionapi.com
-  api_referer: web.youversionapi.com
+  api_root: youversionapistaging.com
+  api_referer: web-dev-review.youversionapistaging.com
   api_version: "3.1"
   api_default_timeout: 15
   rack_execution_timeout: 15
@@ -90,8 +88,7 @@ review:
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-  # nodejs_api_host: "nodejs-review.bible.com"
-  nodejs_api_host: "nodejs.bible.com"
+  nodejs_api_host: "nodejs-review.bible.com"
 
 test:
   api_root: youversionapistaging.com
