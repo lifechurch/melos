@@ -93,7 +93,7 @@ class Plan extends Component {
 	onCatchUp = () => {
 		const { dispatch, auth, subscription } = this.props
 		if (subscription && subscription.days) {
-			// calculate last completed day to set the new start date
+			// calculate first uncompleted day to set the new start date
 			let newStartDt = null
 			Object.keys(subscription.days).some((key, i) => {
 				const progressDay = subscription.days[key]
