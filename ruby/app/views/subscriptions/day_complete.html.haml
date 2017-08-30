@@ -2,7 +2,8 @@
 
 - content_for :lower_javascript do
   %script{type:'text/javascript'}
-    !='window.YV_API_HOST = "' + ENV['SECURE_HOSTNAME'] + '"'
+    !='window.YV_API_HOST = "nodejs.bible.com"'
+    -# !='window.YV_API_HOST = "' + ENV['SECURE_HOSTNAME'] + '"'
     = if Cfg.nodejs_api_port.present?
       != 'window.YV_API_PORT = "' + Cfg.nodejs_api_port + '"'
 
