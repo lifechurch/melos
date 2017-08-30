@@ -21,7 +21,7 @@ class InvitePWFView extends Component {
 
 	onHandleInvite = (ids) => {
 		const { dispatch, auth, params: { together_id } } = this.props
-		if (ids && ids.length <= 150) {
+		if (!ids || (ids && ids.size <= 150)) {
 			dispatch(plansAPI.actions.participants.post({ id: together_id }, {
 				body: ids,
 				auth: auth.isLoggedIn

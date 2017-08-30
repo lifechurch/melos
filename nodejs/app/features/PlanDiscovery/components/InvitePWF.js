@@ -132,7 +132,8 @@ class InvitePWF extends Component {
 					<div className='search-results'>
 						<CustomScroll allowOutsideScroll={false}>
 							<div
-								className='friend-list' style={{
+								className='friend-list'
+								style={{
 									minHeight: '350px',
 									maxHeight: '350px'
 								}}
