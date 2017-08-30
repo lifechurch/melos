@@ -12,7 +12,6 @@ stages:
   - test
   - review
   - staging
-  - beta
   - production
 
 build:
@@ -36,20 +35,6 @@ production:
   only:
     - master
 
-beta:
-  stage: beta
-  variables:
-    CI_ENVIRONMENT_URL: http://beta.$KUBE_DOMAIN
-    PRODUCTION_SECURE_HOSTNAME: beta.nodejs.$KUBE_DOMAIN
-  script:
-    - command deploy
-  environment:
-    name: production
-    url: http://beta.$KUBE_DOMAIN
-  when: manual
-  only:
-    - pwf
-
 staging:
   stage: staging
   variables:
@@ -70,7 +55,7 @@ review:
     REVIEW_SECURE_HOSTNAME: nodejs-$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
   script:
     - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
-    - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211
+    - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211 
     - command deploy
     - helm list | grep $SHORT || helm install --name $SHORT --set memcached.verbosity=v --set memcached.maxItemMemory=100 stable/memcached --version 0.4.1 --namespace $KUBE_NAMESPACE --replace
   environment:
