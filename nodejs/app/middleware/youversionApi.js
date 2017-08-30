@@ -4,7 +4,7 @@ import RavenNode from 'raven'
 
 import ActionCreators from '../features/Auth/actions/creators'
 
-const endpoints = [ 'events', 'search', 'users', 'bible', 'reading-plans', 'moments', 'audio-bible', 'notifications' ]
+const endpoints = [ 'events', 'search', 'users', 'bible', 'reading-plans', 'moments', 'audio-bible', 'notifications', 'streaks' ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]
 const http_methods = [ 'get', 'post' ]

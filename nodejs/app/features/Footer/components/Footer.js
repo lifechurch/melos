@@ -2,6 +2,10 @@ import React, { PropTypes, Component } from 'react'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
+import streaksAction from '@youversion/api-redux/lib/endpoints/streaks/action'
+import moment from 'moment'
+import Immutable from 'immutable'
+import ga from 'react-ga'
 import YouVersion from '../../../components/YVLogo'
 import DropdownTransition from '../../../components/DropdownTransition'
 import Card from '../../../components/Card'
@@ -13,6 +17,7 @@ import PinterestLogo from '../../../components/PinterestLogo'
 import DropDownArrow from '../../../components/DropDownArrow'
 import XMark from '../../../components/XMark'
 import { localizedLink } from '../../../lib/routeUtils'
+import localOnceDaily from '../../../lib/localOnceDaily'
 import LangSelector from './LangSelector'
 
 class Footer extends Component {
@@ -28,6 +33,10 @@ class Footer extends Component {
 	}
 
 	componentDidMount() {
+		const { dispatch, auth } = this.props
+		const immAuth = Immutable.fromJS(auth)
+		const userIdKeyPath = [ 'userData', 'userid' ]
+
 		window.addEventListener('scroll', () => {
 			this.didScroll = true
 		})
@@ -38,6 +47,36 @@ class Footer extends Component {
 				this.handleScroll()
 			}
 		}, 250)
+
+		if (immAuth.hasIn(userIdKeyPath)) {
+			const userId = immAuth.getIn(userIdKeyPath)
+			localOnceDaily(`DailyStreakCheckin-${userId}`, (handleSuccess) => {
+				const today = moment()
+
+				// Streaks Checkin
+				dispatch(streaksAction({
+					method: 'checkin',
+					params: {
+						user_id: userId,
+						day_of_year: today.dayOfYear(),
+						year: today.year()
+					}
+				})).then((response) => {
+					if ('current_streak' in response && typeof handleSuccess === 'function') {
+						handleSuccess()
+
+						// Google Analytics Event
+						if (window.location.hostname === 'www.bible.com') {
+							ga.event({
+								category: 'User',
+								action: 'StreaksCheckin',
+								value: parseInt(response.current_streak.toString(), 10)
+							})
+						}
+					}
+				})
+			})
+		}
 	}
 
 	handleLangClick = () => {
@@ -121,7 +160,7 @@ class Footer extends Component {
 								<li><a target="_self" href="https://help.youversion.com"><FormattedMessage id="footer.help" /></a></li>
 								<li><a target="_self" href={localizedLink('/features/events', serverLanguageTag)}><FormattedMessage id="footer.events" /></a></li>
 								<li>
-									<a target="_self" className="yv-social-toggle" onClick={this.handleSocialClick}><FormattedMessage id="footer.social" /></a>
+									<a tabIndex={0} target="_self" className="yv-social-toggle" onClick={this.handleSocialClick}><FormattedMessage id="footer.social" /></a>
 									<div className="yv-popup-modal-container">
 										<DropdownTransition
 											show={socialOpen}
@@ -133,7 +172,7 @@ class Footer extends Component {
 										>
 											<Card>
 												<div className="yv-social-card">
-													<a className="yv-close-x" onClick={this.handleSocialClose}><XMark width={15} height={15} fill="#444444" /></a>
+													<a tabIndex={0} className="yv-close-x" onClick={this.handleSocialClose}><XMark width={15} height={15} fill="#444444" /></a>
 													<a target="_self" href="http://www.facebook.com/YouVersion"><FacebookLogo height={20} />Facebook</a>
 													<a target="_self" href="http://www.twitter.com/youversion"><TwitterLogo height={20} />Twitter</a>
 													<a target="_self" href="http://www.instagram.com/youversion"><InstagramLogo height={20} />Instagram</a>
@@ -156,13 +195,13 @@ class Footer extends Component {
 							</ul>
 						</div>
 						<div className="right">
-							<a className="yv-lang-toggle" target="_self" onClick={this.handleLangClick}>
+							<a tabIndex={0} className="yv-lang-toggle" target="_self" onClick={this.handleLangClick}>
 								{locale.nativeName}
 								<DropDownArrow fill="#DDDDDD" height={10} dir={langSelectorOpen ? 'up' : 'down' } />
 							</a>
 							<div className="show-for-medium-down" style={{ width: '100%' }} />
-							<a target="_self" href={localizedLink('/app', serverLanguageTag)}><img className="bible-icon first-icon" src={`/assets/icons/bible/58/${serverLanguageTag}.png`} /></a>
-							<a target="_self" href={localizedLink('/kids', serverLanguageTag)}><img className="bible-icon" src="/assets/BibleAppForKids-icon-48x48.png" /></a>
+							<a target="_self" href={localizedLink('/app', serverLanguageTag)}><img alt="Bible App Icon" className="bible-icon first-icon" src={`/assets/icons/bible/58/${serverLanguageTag}.png`} /></a>
+							<a target="_self" href={localizedLink('/kids', serverLanguageTag)}><img alt="Bible App for Kids Icon" className="bible-icon" src="/assets/BibleAppForKids-icon-48x48.png" /></a>
 						</div>
 					</div>
 					<div className="yv-fullscreen-modal-container">
@@ -174,7 +213,7 @@ class Footer extends Component {
 							exemptClass="yv-lang-toggle"
 							classes="yv-fullscreen-modal-content"
 						>
-							<a className="yv-close-x" onClick={this.handleLangClose}><XMark width={15} height={15} fill="#444444" /></a>
+							<a tabIndex={0} className="yv-close-x" onClick={this.handleLangClose}><XMark width={15} height={15} fill="#444444" /></a>
 							<LangSelector {...this.props} />
 						</DropdownTransition>
 					</div>
@@ -188,7 +227,8 @@ Footer.propTypes = {
 	serverLanguageTag: PropTypes.string,
 	bibleConfiguration: PropTypes.object,
 	auth: PropTypes.object,
-	locale: PropTypes.object
+	locale: PropTypes.object,
+	dispatch: PropTypes.func.isRequired
 }
 
 Footer.defaultProps = {
