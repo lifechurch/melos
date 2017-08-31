@@ -17,7 +17,7 @@ spec:
     - $CI_ENVIRONMENT_HOSTNAME
     - events-$CI_ENVIRONMENT_HOSTNAME
     - nodejs-$CI_ENVIRONMENT_HOSTNAME
-    - beta.$CI_ENVIRONMENT_HOSTNAME
+    - beta.bible.com
     secretName: ssl
   rules:
   - host: $CI_ENVIRONMENT_HOSTNAME
@@ -41,7 +41,7 @@ spec:
         backend:
           serviceName: $CI_ENVIRONMENT_SLUG
           servicePort: $PORT
-  - host: beta.$CI_ENVIRONMENT_HOSTNAME
+  - host: beta.bible.com
     http:
       paths:
       - path: /
