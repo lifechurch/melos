@@ -108,10 +108,5 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-production
                 key: OAUTH_CLIENT_SECRET
-          - name: SECURE_HOSTNAME
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
-                key: SECURE_HOSTNAME
       imagePullSecrets:
         - name: gitlab-registry
