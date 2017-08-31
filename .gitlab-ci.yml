@@ -52,7 +52,7 @@ review:
   stage: review
   variables:
     CI_ENVIRONMENT_URL: http://$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
-    REVIEW_SECURE_HOSTNAME: nodejs-$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
+    REVIEW_SECURE_HOSTNAME: nodejs-beta.$KUBE_DOMAIN
   script:
     - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
     - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211 
