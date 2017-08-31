@@ -66,12 +66,12 @@ spec:
           - name: NEW_RELIC_APP_NAME
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: NEW_RELIC_APP_NAME
           - name: NEW_RELIC_LOG_LEVEL
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: NEW_RELIC_LOG_LEVEL
           - name: PASSENGER_APP_ENV
             valueFrom:
