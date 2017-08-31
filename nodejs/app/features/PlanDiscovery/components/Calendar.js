@@ -42,7 +42,7 @@ class Calendar extends Component {
 						<CarouselArrow
 							onClick={this.decrementMonth}
 							dir='left'
-							containerClass='arrow'
+							containerClass='arrow pointer'
 							fill='gray'
 							width={15}
 							height={15}
@@ -50,7 +50,7 @@ class Calendar extends Component {
 						<CarouselArrow
 							onClick={this.incrementMonth}
 							dir='right'
-							containerClass='arrow'
+							containerClass='arrow pointer'
 							fill='gray'
 							width={15}
 							height={15}

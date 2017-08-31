@@ -138,6 +138,7 @@ class SubscriptionList extends Component {
 			readingPlans,
 			invitations,
 			subscriptions,
+			auth,
 			localizedLink
 		} = this.props
 		const plan = (plan_id && plan_id in readingPlans.byId) ? readingPlans.byId[plan_id] : null
@@ -192,10 +193,12 @@ class SubscriptionList extends Component {
 			// if this is a subscription, link to it
 			if (subscription_id) {
 				if (isInFuture) {
+					// link to settings for future start
 					link = localizedLink(
-						Routes.plan({
-							plan_id: plan.id,
-							slug: plan.slug,
+						Routes.subscriptionSettings({
+							username: auth && auth.userData && auth.userData.username,
+							plan_id: sub.plan_id,
+							subscription_id,
 						})
 					)
 				} else {
@@ -252,7 +255,7 @@ class SubscriptionList extends Component {
 
 
 	render() {
-		const { subscriptions, together, invitations, auth, participants, intl } = this.props
+		const { subscriptions, together, invitations, participants } = this.props
 		const { inviteId } = this.state
 
 		const plansList = []
@@ -318,21 +321,6 @@ class SubscriptionList extends Component {
 											</a>
 										)
 								}
-								{
-									isInFuture
-										&& (
-											<Link
-												to={Routes.subscriptionSettings({
-													username: auth && auth.userData && auth.userData.username,
-													plan_id: sub.plan_id,
-													subscription_id: id,
-												})}
-												className='yv-gray-link'
-											>
-												<FormattedMessage id='settings' />
-											</Link>
-										)
-								}
 							</div>
 						</div>
 					)
@@ -344,11 +332,7 @@ class SubscriptionList extends Component {
 		return (
 			<div>
 				<List customClass='subscription-list' loadMore={this.loadMore}>
-					{
-						plansList.length > 0
-							? plansList
-							: <FormattedMessage id='plans.you have no plans' />
-					}
+					{ plansList }
 				</List>
 				<Modal
 					ref={(ref) => { this.modal = ref }}

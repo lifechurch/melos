@@ -27,31 +27,30 @@ class TalkItOver extends Component {
 	}
 
 	componentDidMount() {
-		this.getActivities({ page: 1 })
+		this.getActivities(1)
 		this.viewportUtils = new ViewportUtils()
 	}
 
-	getActivities = ({ page }) => {
+	getActivities = (page) => {
 		const { day, together_id, dispatch, tioIndex } = this.props
-		dispatch(plansAPI.actions.activities.get({
-			id: together_id,
-			day,
-			page,
-			order: 'asc',
-			talk_it_over: tioIndex,
-		},
-			{
-				auth: true
-			})).then(() => {
+		if (page) {
+			dispatch(plansAPI.actions.activities.get({
+				id: together_id,
+				day,
+				page,
+				order: 'asc',
+				talk_it_over: tioIndex,
+			}, { auth: true })).then(() => {
 				// when we load first time, scroll to bottom for comment creator
 				if (page === 1) {
 					setTimeout(() => {
 						document
-							.getElementsByClassName('plan-reader-content')[0]
-							.scrollIntoView(false)
+						.getElementsByClassName('plan-reader-content')[0]
+						.scrollIntoView(false)
 					}, 500)
 				}
 			})
+		}
 	}
 
 	handleComment = ({ parent_id = null }) => {
@@ -245,7 +244,16 @@ class TalkItOver extends Component {
 						/>
 					</div>
 				}
-				<List>
+				<List
+					loadMoreDirection='up'
+					loadMore={
+						this.getActivities.bind(
+							this,
+							this.dayActivities
+							&& this.dayActivities.next_page
+						)
+					}
+				>
 					{
 						this.dayActivities &&
 						this.dayActivities.map &&

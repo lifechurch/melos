@@ -10,6 +10,11 @@ import Routes from '../lib/routes'
 
 class PlansList extends Component {
 
+	// componentDidMount() {
+	// 	const { dispatch } = this.props
+	//
+	// }
+
 	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || params.lang || 'en'
@@ -132,8 +137,5 @@ PlansList.propTypes = {
 	serverLanguageTag: PropTypes.string.isRequired,
 }
 
-PlansList.defaultProps = {
-	invitations: null,
-}
 
 export default connect(mapStateToProps, null)(PlansList)

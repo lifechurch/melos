@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import Input from './Input'
 import SearchIcon from './Icons/SearchIcon'
+import XMark from './XMark'
 
 
 class Search extends Component {
 	constructor(props) {
 		super(props)
-		const { showInput, value, showIcon } = props
+		const { showInput, value } = props
 		this.state = {
-			showIcon,
 			showInput,
 			value: value || '',
 		}
@@ -23,10 +23,12 @@ class Search extends Component {
 	}
 
 	handleChange = (val) => {
-		if (val) {
-			this.setState({
-				value: val,
-			})
+		const { onChange } = this.props
+		this.setState({
+			value: val,
+		})
+		if (onChange) {
+			onChange(val)
 		}
 	}
 
@@ -59,14 +61,15 @@ class Search extends Component {
 	}
 
 	render() {
-		const { placeholder, debounce, customClass } = this.props
-		const { showInput, showIcon } = this.state
+		const { showIcon, showClear, placeholder, debounce, customClass } = this.props
+		const { showInput, value } = this.state
 
 		return (
-			<div className={`search ${showInput ? 'open' : ''} ${customClass}`}>
+			<div className={`search vertical-center ${showInput ? 'open' : ''} ${customClass}`}>
 				{
 					showInput &&
 					<Input
+						ref={(i) => { this.input = i }}
 						name='search'
 						customClass='search-input'
 						onChange={this.handleChange}
@@ -86,6 +89,27 @@ class Search extends Component {
 						/>
 					</a>
 				}
+				{
+					showClear
+						&& value
+						&& value.length > 0
+						&& (
+							<a
+								tabIndex={0}
+								onClick={() => {
+									this.input.clearInput()
+									this.setState({ value: '' })
+								}}
+								style={{ position: 'absolute' }}
+							>
+								<XMark
+									fill='gray'
+									width={11}
+									height={11}
+								/>
+							</a>
+						)
+				}
 			</div>
 		)
 	}
@@ -94,6 +118,8 @@ class Search extends Component {
 Search.propTypes = {
 	showInput: PropTypes.bool,
 	showIcon: PropTypes.bool,
+	showClear: PropTypes.bool,
+	onChange: PropTypes.func,
 	placeholder: PropTypes.string,
 	onHandleSearch: PropTypes.func,
 	value: PropTypes.string,
@@ -104,11 +130,13 @@ Search.propTypes = {
 Search.defaultProps = {
 	showInput: true,
 	showIcon: true,
+	showClear: true,
 	placeholder: '',
 	onHandleSearch: null,
 	value: null,
 	debounce: false,
 	customClass: null,
+	onChange: null,
 }
 
 export default Search

@@ -35,7 +35,6 @@ class InvitePWF extends Component {
 			query: null,
 			showSearchResults: false,
 			selectedFriends: Immutable.List(),
-			showCircleView: false,
 		}
 	}
 
@@ -157,17 +156,7 @@ class InvitePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-invite'>
-				<SectionedHeading
-					right={
-						<a
-							tabIndex={0}
-							className='text-right green'
-							onClick={this.handleInvite}
-						>
-							<FormattedMessage id='done' />
-						</a>
-					}
-				>
+				<SectionedHeading>
 					<FormattedMessage id='invite friends' />
 				</SectionedHeading>
 				<div className='gray-background content' style={{ minHeight: '450px' }}>
@@ -192,15 +181,16 @@ class InvitePWF extends Component {
 							<div>
 								<Search
 									onHandleSearch={this.handleSearch}
+									onChange={(val) => {
+										if (val.length < 1) {
+											this.hideSearchResults()
+										}
+									}}
 									placeholder='Search...'
 									customClass='row-reverse'
 								/>
 								<div style={{ position: 'relative' }}>
-									{
-										showSearchResults && !search ?
-											<div><FormattedMessage id='loading' /></div> :
-											searchResults
-									}
+									{ showSearchResults && searchResults }
 								</div>
 								<CustomScroll>
 									<List

@@ -4,8 +4,8 @@ function Footer(props) {
 	const { customClass, children } = props
 
 	return (
-		<div className={`sticky-footer ${customClass || ''}`}>
-			<div className='medium-8 small-10 vertical-center'>
+		<div className='sticky-footer'>
+			<div className={`medium-8 small-10 vertical-center ${customClass || ''}`}>
 				{ children }
 			</div>
 		</div>

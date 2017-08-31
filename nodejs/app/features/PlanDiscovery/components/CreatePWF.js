@@ -14,7 +14,7 @@ class CreatePWF extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			selectedDay: props.initialDay || new Date()
+			selectedDay: props.initialDay || moment().add(1, 'days')
 		}
 	}
 
@@ -71,19 +71,6 @@ class CreatePWF extends Component {
 							&larr;
 						</Link>
 					}
-					right={
-						<a
-							tabIndex={0}
-							className='text-right green'
-							onClick={this.handleCreateSubscription}
-						>
-							{
-								isEditingDate
-									? <FormattedMessage id='done' />
-									: <FormattedMessage id='invite friends' />
-							}
-						</a>
-					}
 				>
 					{
 						isEditingDate
@@ -108,13 +95,13 @@ class CreatePWF extends Component {
 						</Calendar>
 					</div>
 				</div>
-				<Footer>
+				<Footer customClass='space-between'>
 					<div>{ selectedDay ? moment(selectedDay).format('dddd, MMMM Do YYYY') : null }</div>
 					<a
 						tabIndex={0}
-						className='solid-button green margin-left-auto'
+						className='solid-button green'
 						onClick={this.handleCreateSubscription}
-						style={{ marginBottom: 0 }}
+						style={{ margin: '0 0 0 5px', lineHeight: 1.1 }}
 					>
 						{
 							isEditingDate

@@ -17,6 +17,10 @@ class Input extends Component {
 		}
 	}
 
+	clearInput = () => {
+		this.setState({ stateValue: '' }, this.sendChange)
+	}
+
 	sendChange = () => {
 		const { onChange } = this.props
 		const { stateValue } = this.state
@@ -28,16 +32,15 @@ class Input extends Component {
 
 	handleChange = (changeEvent) => {
 		const { debounce } = this.props
-
-		this.setState({ stateValue: changeEvent.target.value });
 		if (debounce) {
+			this.setState({ stateValue: changeEvent.target.value })
 			if (typeof this.cancelChange === 'number') {
 				clearTimeout(this.cancelChange)
 				this.cancelChange = null
 			}
 			this.cancelChange = setTimeout(this.sendChange, DEBOUNCE_TIMEOUT)
 		} else {
-			this.sendChange()
+			this.setState({ stateValue: changeEvent.target.value }, this.sendChange)
 		}
 	}
 
