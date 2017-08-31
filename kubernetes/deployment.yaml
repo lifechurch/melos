@@ -9,6 +9,7 @@ metadata:
     pipeline_id: "$CI_PIPELINE_ID"
     build_id: "$CI_JOB_ID"
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: $CI_ENVIRONMENT_SLUG
@@ -25,7 +26,6 @@ spec:
         app: $CI_ENVIRONMENT_SLUG
         space: $KUBE_NAMESPACE
     spec:
-      replicas: 2
       terminationGracePeriodSeconds: 60
       containers:
       - name: $KUBE_NAMESPACE-$CI_ENVIRONMENT_SLUG
