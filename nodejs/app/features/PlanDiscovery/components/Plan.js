@@ -234,6 +234,7 @@ Plan.propTypes = {
 	progressDays: PropTypes.object,
 	progressString: PropTypes.object,
 	bookList: PropTypes.array.isRequired,
+	isRtl: PropTypes.func.isRequired,
 }
 
 Plan.defaultProps = {

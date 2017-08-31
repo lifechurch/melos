@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Immutable from 'immutable'
 import { FormattedHTMLMessage } from 'react-intl'
@@ -53,7 +53,7 @@ class Plan extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const { dispatch, params: { day, id }, plan, subscription } = this.props
+		const { dispatch, params: { day }, plan, subscription } = this.props
 		// either new day from url or no day in url and we calculated the right day
 		const dayToCheck = this.currentDay || day
 		const newDay = dayToCheck
@@ -71,23 +71,6 @@ class Plan extends Component {
 				}, {}))
 			}
 		}
-	}
-
-	localizedLink = (link) => {
-		const { params, serverLanguageTag } = this.props
-		const languageTag = serverLanguageTag || params.lang || 'en'
-
-		if (['en', 'en-US'].indexOf(languageTag) > -1) {
-			return link
-		} else {
-			return `/${languageTag}${link}`
-		}
-	}
-
-	isRtl = () => {
-		const { params, serverLanguageTag } = this.props
-		const languageTag = params.lang || serverLanguageTag || 'en'
-		return rtlDetect.isRtlLang(languageTag)
 	}
 
 	onCatchUp = () => {
@@ -166,6 +149,23 @@ class Plan extends Component {
 			}
 		})
 
+	}
+
+	localizedLink = (link) => {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = serverLanguageTag || params.lang || 'en'
+
+		if (['en', 'en-US'].indexOf(languageTag) > -1) {
+			return link
+		} else {
+			return `/${languageTag}${link}`
+		}
+	}
+
+	isRtl = () => {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = params.lang || serverLanguageTag || 'en'
+		return rtlDetect.isRtlLang(languageTag)
 	}
 
 	render() {
@@ -273,7 +273,6 @@ class Plan extends Component {
 function mapStateToProps(state, props) {
 	const { params: { id, subscription_id } } = props
 	const plan_id = id.split('-')[0]
-	console.log('SUB', getSubscriptionModel(state));
 	return {
 		plan: getPlansModel(state) && plan_id in getPlansModel(state).byId
 			? getPlansModel(state).byId[plan_id]
@@ -291,7 +290,15 @@ function mapStateToProps(state, props) {
 }
 
 Plan.propTypes = {
-
+	children: PropTypes.object.isRequired,
+	subscription: PropTypes.object.isRequired,
+	plan: PropTypes.object.isRequired,
+	bible: PropTypes.object.isRequired,
+	params: PropTypes.object.isRequired,
+	togethers: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	auth: PropTypes.object.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
 }
 
 export default connect(mapStateToProps, null)(Plan)
