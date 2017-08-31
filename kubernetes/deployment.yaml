@@ -81,7 +81,7 @@ spec:
           - name: MEMCACHE_SERVERS
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: MEMCACHE_SERVERS
           - name: HTTP_TIMEOUT
             valueFrom:
