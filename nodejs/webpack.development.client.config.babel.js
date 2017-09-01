@@ -41,6 +41,7 @@ const clientConfig = {
 		SubscribeUser: './app/standalone/SubscribeUser/main.js',
 		Passage: './app/standalone/Passage/main.js',
 		Footer: './app/standalone/Footer/main.js',
+		Header: './app/standalone/Header/main.js',
 		Unsubscribe: './app/standalone/Unsubscribe/main.js'
 	},
 

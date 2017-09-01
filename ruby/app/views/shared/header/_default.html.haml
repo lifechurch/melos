@@ -1,4 +1,31 @@
 :ruby
+  #Header
+  header_params = {
+    "strings" => {},
+    "languageTag" => I18n.locale.to_s,
+    "url" => request.path,
+    "cache_for" => YV::Caching::a_very_long_time
+  }
+
+  @header_from_node = YV::Nodestack::Fetcher.get('Header', header_params, cookies, current_auth, current_user, request)
+
+- content_for :lower_javascript do
+  %script{type:'text/javascript'}
+    !='window.YV_API_HOST = "' + ENV['SECURE_HOSTNAME'] + '"'
+    = if Cfg.nodejs_api_port.present?
+      != 'window.YV_API_PORT = "' + Cfg.nodejs_api_port + '"'
+
+- content_for :lower_javascript do
+  - add_node_assets(@header_from_node['js']).each do |s|
+    = javascript_include_tag s['src']
+
+- content_for :stylesheets do
+  - add_node_assets(@header_from_node['css']).each do |s|
+    = stylesheet_link_tag s['src']
+
+!= @header_from_node['html']
+
+-#:ruby
   is_home_url       = current_page?(moments_path)
   plan_href = logged_in? ? subscriptions_path(user_id: current_auth.username) : plans_path
   live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"
@@ -12,7 +39,7 @@
     searchKey = "bible"
   end
 
-.fixed.header-box#fixed-page-header{"ng-controller" => "HeaderCtrl as ctrl"}
+-#.fixed.header-box#fixed-page-header{"ng-controller" => "HeaderCtrl as ctrl"}
   .ng-hide.nav-more-menu{"ng-show" => "isMoreOpen"}
     %ul.side-nav
       %li
@@ -233,5 +260,3 @@
   /             = yield :mobile_subscription_nav
   /           - else
   /             = yield :mobile_right_nav
-
-
