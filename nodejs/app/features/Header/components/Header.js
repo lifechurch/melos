@@ -1,10 +1,13 @@
 import React, { PropTypes, Component } from 'react'
+import Immutable from 'immutable'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import friendshipsAction from '@youversion/api-redux/lib/endpoints/friendships/action'
 import { getFriendshipRequests } from '@youversion/api-redux/lib/endpoints/friendships/reducer'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
+import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
+import { getUserById, getLoggedInUser } from '@youversion/api-redux/lib/endpoints/users/reducer'
 import SectionedHeading from '../../../components/SectionedHeading'
 import YouVersion from '../../../components/YVLogo'
 import IconButtonGroup from '../../../components/IconButtonGroup'
@@ -12,42 +15,41 @@ import IconButton from '../../../components/IconButton'
 import NoticeIcon from '../../../components/NoticeIcon'
 import DropdownTransition from '../../../components/DropdownTransition'
 import Card from '../../../components/Card'
-import FacebookLogo from '../../../components/FacebookLogo'
-import TwitterLogo from '../../../components/TwitterLogo'
-import InstagramLogo from '../../../components/InstagramLogo'
-import YouTubeLogo from '../../../components/YouTubeLogo'
-import PinterestLogo from '../../../components/PinterestLogo'
 import DropDownArrow from '../../../components/DropDownArrow'
 import XMark from '../../../components/XMark'
 import { localizedLink } from '../../../lib/routeUtils'
-
+import Home from '../../../components/icons/Home'
+import Read from '../../../components/icons/Read'
+import Plans from '../../../components/icons/Plans'
+import Videos from '../../../components/icons/Videos'
+import Friends from '../../../components/icons/Friends'
+import Notifications from '../../../components/icons/Notifications'
+import Settings from '../../../components/icons/Settings'
+import Avatar from '../../../components/Avatar'
 
 class Header extends Component {
 	constructor(props) {
 		super(props)
 		this.didScroll = false
 		this.state = {
-			state: 'fixed',
-			lastScrollTop: 0
+			isLoggedIn: false,
+			userId: null,
+			ready: false
 		}
 	}
 
 	componentDidMount() {
-		const { dispatch } = this.props
+		const { dispatch, auth, loggedInUser } = this.props
 
-		window.addEventListener('scroll', () => {
-			this.didScroll = true
-		})
-
-		setInterval(() => {
-			if (this.didScroll) {
-				this.didScroll = false
-				this.handleScroll()
-			}
-		}, 250)
-
-		dispatch(friendshipsAction({ method: 'incoming', params: { page: 1 }, auth: true }))
-		dispatch(notificationsAction({ method: 'items', auth: true }))
+		if (loggedInUser) {
+			const userId = loggedInUser.userid
+			this.setState({ ready: true, isLoggedIn: true, userId })
+			dispatch(friendshipsAction({ method: 'incoming', params: { page: 1 }, auth: true }))
+			dispatch(notificationsAction({ method: 'items', auth: true }))
+			dispatch(usersAction({ method: 'view', params: { id: userId } }))
+		} else {
+			this.setState({ ready: true, isLoggedIn: false, userId: null })
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -71,59 +73,67 @@ class Header extends Component {
 		}
 	}
 
-	handleScroll = () => {
-		const { lastScrollTop } = this.state
-		const scrollTop = (window.pageYOffset || document.documentElement.scrollTop)
-		const atBottom = ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.scrollHeight - 105)
-		let state
-		if (atBottom) {
-			state = 'fixed'
-		} else if (lastScrollTop < scrollTop) {
-			// scroll down
-			state = 'hidden'
-		} else {
-			// scroll up
-			state = 'fixed'
-		}
-
-		this.setState(() => {
-			return {
-				state,
-				lastScrollTop: scrollTop
-			}
-		})
-	}
-
 	render() {
 		const {
 			serverLanguageTag,
-			locale
+			locale,
+			user,
+			loggedInUser
 		} = this.props
 
 		const {
 			state,
 			hasNotifications,
-			hasFriendshipRequests
+			hasFriendshipRequests,
+			isLoggedIn,
+			ready
 		} = this.state
 
 		const left = (
 			<div>
-				<IconButtonGroup iconHeight={15}>
-					<IconButton label="Home">
-						<InstagramLogo />
+				<IconButtonGroup iconHeight={24} iconSpacing={44} iconFill="#a2a2a2" labelColor="#a2a2a2" iconActiveFill="#444444" labelActiveColor="#444444" >
+					<IconButton label="Home" useClientRouting={false} to="/">
+						<Home />
 					</IconButton>
-					<IconButton label="Away">
-						<YouTubeLogo />
+					<IconButton label="Read" useClientRouting={false} to="/bible">
+						<Read />
+					</IconButton>
+					<IconButton label="Plans" useClientRouting={false} to="/reading-plans">
+						<Plans />
+					</IconButton>
+					<IconButton label="Videos" useClientRouting={false} to="/videos">
+						<Videos />
 					</IconButton>
 				</IconButtonGroup>
 			</div>
 		)
 
-		const right = (
-			<div >
-				<NoticeIcon showNotice={hasNotifications}>
-					<InstagramLogo height={15} />
-				</NoticeIcon>
+		const right = isLoggedIn
+		? (
+			<div>
+				<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#000000" alignTo="middle">
+					<IconButton>
+						<NoticeIcon showNotice={hasNotifications}>
+							<Notifications />
+						</NoticeIcon>
+					</IconButton>
+					<IconButton>
+						<NoticeIcon showNotice={hasFriendshipRequests}>
+							<Friends />
+						</NoticeIcon>
+					</IconButton>
+					<IconButton>
+						<Settings />
+					</IconButton>
+					<IconButton lockHeight={true}>
+						{'response' in user && <Avatar placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />}
+					</IconButton>
+				</IconButtonGroup>
+			</div>
+		)
+		: (
+			<div>
+				<button />
 			</div>
 		)
 
@@ -131,7 +141,7 @@ class Header extends Component {
 			<div className="yv-header">
 				<SectionedHeading
 					left={left}
-					right={right}
+					right={ready && right}
 				>
 					<div className="yv-header-search">
 						<input type="text" />
@@ -141,6 +151,7 @@ class Header extends Component {
 		)
 	}
 }
+
 
 Header.propTypes = {
 	serverLanguageTag: PropTypes.string,
@@ -156,12 +167,15 @@ Header.defaultProps = {
 }
 
 function mapStateToProps(state) {
+	const loggedInUser = getLoggedInUser(state)
 	return {
 		serverLanguageTag: state.serverLanguageTag,
 		auth: state.auth,
 		locale: state.locale,
 		notifications: getNotifications(state),
-		friendshipRequests: getFriendshipRequests(state)
+		friendshipRequests: getFriendshipRequests(state),
+		loggedInUser,
+		user: getUserById(state, loggedInUser.userid)
 	}
 }
 

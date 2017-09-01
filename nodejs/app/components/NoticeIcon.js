@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react'
 
-function NoticeIcon({ children, showNotice }) {
+function NoticeIcon({ children, showNotice, iconHeight, iconFill }) {
 	return (
 		<div className={`yv-notice-icon yv-notice-icon-${showNotice ? 'on' : 'off'}`}>
-			{children}
+			{children && React.cloneElement(children, { height: iconHeight, fill: iconFill })}
 		</div>
 	)
 }
