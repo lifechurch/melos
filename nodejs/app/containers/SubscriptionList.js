@@ -20,6 +20,9 @@ import calcTodayVsStartDt from '../lib/calcTodayVsStartDt'
 import List from '../components/List'
 import Modal from '../components/Modal'
 import ShareLink from '../components/ShareLink'
+import Placeholder from '../components/placeholders/Placeholder'
+import PlaceholderText from '../components/placeholders/PlaceholderText'
+import PlaceholderShape from '../components/placeholders/PlaceholderShape'
 import ParticipantsAvatarList from '../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../widgets/TogetherInvitationActions'
 import InvitationString from '../widgets/InvitationString'
@@ -332,6 +335,10 @@ class SubscriptionList extends Component {
 		return (
 			<div>
 				<List customClass='subscription-list' loadMore={this.loadMore}>
+					{/* <Placeholder height='80px'>
+						<PlaceholderShape borderRadius='100%' width='80px' />
+						<PlaceholderText className='flex' lineSpacing='7px' textHeight='10px' />
+					</Placeholder> */}
 					{ plansList }
 				</List>
 				<Modal

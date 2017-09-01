@@ -152,7 +152,7 @@ class InvitePWF extends Component {
 		const friendsList = (friends && friends.users) || []
 		// merge together selected users with the friends list, to add selected users
 		// from search to the friends list. the set will remove duplicates
-		const mergedUsers = Array.from(new Set(friendsList.concat(selectedUsers)))
+		const mergedUsers = Array.from(new Set(selectedUsers.concat(friendsList)))
 
 		return (
 			<div className='pwf-flow pwf-invite'>
