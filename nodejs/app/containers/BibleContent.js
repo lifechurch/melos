@@ -11,6 +11,8 @@ import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import getAudioModel from '@youversion/api-redux/lib/models/audio'
 // components
+import Placeholder from '../components/placeholders/Placeholder'
+import PlaceholderText from '../components/placeholders/PlaceholderText'
 import Chapter from '../features/Bible/components/content/Chapter'
 import VerseAction from '../features/Bible/components/verseAction/VerseAction'
 import ChapterCopyright from '../features/Bible/components/content/ChapterCopyright'
@@ -164,19 +166,34 @@ class BibleContent extends Component {
 		this.ref = bible && bible.pullRef(usfm, version_id)
 			? bible.pullRef(usfm, version_id)
 			: null
+		const isVerse = usfm && isVerseOrChapter(usfm.split('+')[0]).isVerse
 		this.version = bible && Immutable.fromJS(bible).hasIn(['versions', 'byId', `${version_id}`, 'response'])
 			? Immutable.fromJS(bible).getIn(['versions', 'byId', `${version_id}`, 'response']).toJS()
 			: null
 
 		return (
 			<div className='bible-content'>
-				<Chapter
-					content={this.ref ? this.ref.content : null}
-					verseColors={moments ? moments.verseColors : null}
-					onSelect={this.handleVerseSelect}
-					// textDirection={textDirection}
-					ref={(chapter) => { this.chapterInstance = chapter }}
-				/>
+				{
+					this.ref && this.ref.content
+						? (
+							<Chapter
+								content={this.ref.content}
+								verseColors={moments ? moments.verseColors : null}
+								onSelect={this.handleVerseSelect}
+								// textDirection={textDirection}
+								ref={(chapter) => { this.chapterInstance = chapter }}
+							/>
+						)
+						: (
+							<Placeholder height={isVerse ? '200px' : '600px'}>
+								<PlaceholderText
+									className='flex'
+									lineSpacing='15px'
+									textHeight='16px'
+								/>
+							</Placeholder>
+						)
+				}
 				{
 					showCopyright &&
 					this.version &&
@@ -186,7 +203,7 @@ class BibleContent extends Component {
 				{
 					showGetChapter &&
 					usfm &&
-					isVerseOrChapter(usfm.split('+')[0]).isVerse &&
+					isVerse &&
 					<div className='buttons'>
 						<button
 							className='chapter-button solid-button'

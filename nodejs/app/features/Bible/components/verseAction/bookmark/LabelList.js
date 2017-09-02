@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
-import ActionCreators from '../../../actions/creators'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import LabelPill from './LabelPill'
 
@@ -17,7 +15,7 @@ class LabelList extends Component {
 			canDelete
 		} = this.props
 
-		let labels = []
+		const labels = []
 
 		if (list) {
 			list.forEach((label, index) => {
@@ -25,13 +23,13 @@ class LabelList extends Component {
 				// count does not
 				// group headings are set to null if the label's first character has been seen before
 				if (showHeading && 'groupHeading' in label && label.groupHeading != null) {
-					labels.push (
+					labels.push(
 						<div key={`label-list-heading-${label.groupHeading}`} className='group-heading'>{ label.groupHeading }</div>
 					)
 				}
 				// if our array isn't full of objects
-				let labelString = label.label ? label.label : label
-				labels.push (
+				const labelString = label.label ? label.label : label
+				labels.push(
 					<LabelPill
 						key={labelString}
 						label={labelString}
@@ -47,14 +45,15 @@ class LabelList extends Component {
 
 		return (
 			<div className='label-list'>
-        <ReactCSSTransitionGroup
-          transitionName="label"
-          transitionAppear={true}
-      		transitionAppearTimeout={500}
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
+				<ReactCSSTransitionGroup
+					transitionName='basic'
+					transitionAppear={true}
+					transitionAppearTimeout={500}
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={300}
+				>
 					{ labels }
-        </ReactCSSTransitionGroup>
+				</ReactCSSTransitionGroup>
 			</div>
 		)
 	}

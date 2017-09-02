@@ -48,6 +48,21 @@ class SubscriptionList extends Component {
 		this.getSubs({ page: 1 })
 	}
 
+	shouldComponentUpdate(nextProps) {
+		const { subscriptions, invitations } = this.props
+		if (
+			subscriptions.byId
+			&& subscriptions.byId.length < 1
+			&& nextProps.subscriptions.byId.length < 1
+			&& invitations
+			&& invitations.length < 1
+			&& nextProps.invitations.length < 1
+		) {
+			return false
+		}
+		return true
+	}
+
 	getSubs = ({ page = null }) => {
 		const { dispatch, auth, subscriptions, readingPlans, participants } = this.props
 		return dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
@@ -335,11 +350,20 @@ class SubscriptionList extends Component {
 		return (
 			<div>
 				<List customClass='subscription-list' loadMore={this.loadMore}>
-					{/* <Placeholder height='80px'>
-						<PlaceholderShape borderRadius='100%' width='80px' />
-						<PlaceholderText className='flex' lineSpacing='7px' textHeight='10px' />
-					</Placeholder> */}
-					{ plansList }
+					{
+						plansList && plansList.length > 0
+							? plansList
+							: (
+								<Placeholder key='sub-placeholder' height='80px' duplicate={5} className='subscription'>
+									<PlaceholderShape borderRadius='5px' width='80px' height='80px' />
+									<PlaceholderText
+										className='flex'
+										lineSpacing='15px'
+										textHeight='10px'
+									/>
+								</Placeholder>
+							)
+					}
 				</List>
 				<Modal
 					ref={(ref) => { this.modal = ref }}

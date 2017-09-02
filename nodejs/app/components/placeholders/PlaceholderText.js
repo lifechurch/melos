@@ -9,16 +9,17 @@ function PlaceholderText(props) {
     height,
     lineSpacing,
     textHeight,
-    className,
   } = props
 
 	const totalLines = Math.floor(
-    parseInt(height, 10) / (parseInt(textHeight, 10))
+    parseInt(height, 10) / (parseInt(textHeight, 10) + parseInt(lineSpacing, 10))
   )
+	const fillExtraSpace = parseInt(height, 10)
+		% (parseInt(textHeight, 10) + parseInt(lineSpacing, 10))
 
 	const placeholder = []
-	for (let i = 0; i < totalLines; i++) {
-		const isEven = i % 2 === 0
+	for (let i = 0; i < (totalLines * 2); i++) {
+		const isEven = (i % 2 === 0)
 		const lineWidth = getRandomInt(80, 100)
     // build the lines with the background color
     // and place mask divs after each line
@@ -38,7 +39,8 @@ function PlaceholderText(props) {
 					style={{
 						height: `${parseInt(textHeight, 10)}px`,
 						width: `${100 - lineWidth}%`,
-						background: 'white',
+						border: `1px solid ${fill}`,
+						background: `${fill}`,
 					}}
 					className='margin-left-auto'
 				/>
@@ -46,15 +48,24 @@ function PlaceholderText(props) {
 		}
 	}
 
+	if (fillExtraSpace) {
+		placeholder.push(
+			<div
+				style={{
+					height: `${parseInt(fillExtraSpace, 10)}px`,
+					width: '100%',
+					background: `${fill}`,
+				}}
+			/>
+		)
+	}
+
 	return (
 		<div
 			className={[
 				'placeholder-text',
-				`${className}`,
-				'vertical-center',
-				'flex-wrap'
 			].join(' ')}
-			style={{ height, background }}
+			style={{ height, background, width: '100%' }}
 		>
 			{ placeholder }
 		</div>
@@ -63,9 +74,8 @@ function PlaceholderText(props) {
 
 PlaceholderText.propTypes = {
 	fill: PropTypes.string,
-	className: PropTypes.string,
 	background: PropTypes.string,
-	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 	lineSpacing: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	textHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
@@ -73,10 +83,8 @@ PlaceholderText.propTypes = {
 PlaceholderText.defaultProps = {
 	fill: 'white',
 	background: null,
-	height: '200px',
-	lineSpacing: '10px',
-	textHeight: '17px',
-	className: '',
+	lineSpacing: '6px',
+	textHeight: '12px',
 }
 
 export default PlaceholderText

@@ -4,12 +4,9 @@ import React, { PropTypes } from 'react'
 function PlaceholderShape(props) {
 	const {
     fill,
-    background,
     height,
     borderRadius,
     width,
-    lineSpacing,
-    textHeight,
     className,
   } = props
 
@@ -21,28 +18,37 @@ function PlaceholderShape(props) {
 				'vertical-center',
 				'flex-wrap'
 			].join(' ')}
-			style={{ width, height, background, borderRadius, }}
-		/>
+		>
+			<svg width={width} height={height}>
+				<defs>
+					<mask id="mask">
+						<rect width="100%" height="100%" fill={fill} />
+						{
+							parseInt(borderRadius, 10) > 20
+								? <circle r={(parseInt(height, 10) || parseInt(width, 10)) / 2} cx='50%' cy='50%' fill='black' />
+								: <rect width={width} height={height} rx={borderRadius} ry={borderRadius} />
+						}
+					</mask>
+				</defs>
+				<rect width="100%" height="100%" mask="url(#mask)" fill={fill} />
+			</svg>
+		</div>
 	)
 }
 
 PlaceholderShape.propTypes = {
 	fill: PropTypes.string,
 	className: PropTypes.string,
-	background: PropTypes.string,
+	borderRadius: PropTypes.string,
 	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-	lineSpacing: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-	textHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 PlaceholderShape.defaultProps = {
 	fill: 'white',
-	background: null,
 	height: '100px',
 	width: '100px',
-	lineSpacing: '10px',
-	textHeight: '17px',
+	borderRadius: '0px',
 	className: '',
 }
 
