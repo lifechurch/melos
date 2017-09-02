@@ -166,9 +166,9 @@ class SubscriptionList extends Component {
 		if (start_dt && plan && 'id' in plan) {
 			isInFuture = calcTodayVsStartDt(start_dt).isInFuture
 
-			src = plan.images ?
-				selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
-				null
+			src = plan.images
+				? selectImageFromList({ images: plan.images, width: 160, height: 160 }).url
+				: null
 			progress = (
 				<div style={{ padding: '5px 0', width: '50px' }}>
 					<ProgressBar
@@ -210,25 +210,14 @@ class SubscriptionList extends Component {
 			link = localizedLink(Routes.plans({}))
 			// if this is a subscription, link to it
 			if (subscription_id) {
-				if (isInFuture) {
-					// link to settings for future start
-					link = localizedLink(
-						Routes.subscriptionSettings({
-							username: auth && auth.userData && auth.userData.username,
-							plan_id: sub.plan_id,
-							subscription_id,
-						})
-					)
-				} else {
-					link = localizedLink(
-						Routes.subscription({
-							username: this.username,
-							plan_id: plan.id,
-							slug: plan.slug,
-							subscription_id,
-						})
-					)
-				}
+				link = localizedLink(
+					Routes.subscription({
+						username: this.username,
+						plan_id: plan.id,
+						slug: plan.slug,
+						subscription_id,
+					})
+				)
 			// otherwise it's an invitation where we want more info
 			} else {
 				link = localizedLink(

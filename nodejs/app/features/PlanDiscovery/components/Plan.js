@@ -148,8 +148,7 @@ function Plan({
 							<ShareWidget />
 							<PlanMenu
 								aboutLink={aboutLink}
-								// don't allow user to see subscription if it starts in the future
-								subscriptionLink={!isInFuture && subscriptionLink}
+								subscriptionLink={subscriptionLink}
 								// no catchup for together
 								onCatchUp={!isInFuture && !together_id && handleCatchUp}
 								participantsLink={

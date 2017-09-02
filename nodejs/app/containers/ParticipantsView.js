@@ -157,6 +157,9 @@ class ParticipantsView extends Component {
 						&& day
 						&& Immutable
 								.fromJS(together)
+								.hasIn(['activities', `${day}`, 'data'], false)
+						&& Immutable
+								.fromJS(together)
 								.getIn(['activities', `${day}`, 'data'])
 								.toJS()
 					}

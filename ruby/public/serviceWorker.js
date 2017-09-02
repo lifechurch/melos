@@ -19,7 +19,11 @@ self.addEventListener('fetch', function(e) {
 	const isCacheable = headers.has('X-YouVersion-Client')
 		&& (!(headers.has('authorization')) || headers.has('X-ServiceWorker-Cacheable'))
 		&& request.method === 'GET'
-	
+	// determine what's volatile
+	// let's cache and fetch authed calls
+	const isVolatile = headers.has('X-YouVersion-Client')
+		&& request.method === 'GET'
+
 	if (isCacheable) {
 		return e.respondWith(
 			caches.match(request.url).then(function(cacheResponse) {
@@ -46,6 +50,12 @@ self.addEventListener('fetch', function(e) {
 				}
 			})
 		)
+	}
+
+	// return quickly with possibly stale data and then refresh with new data
+	// when fetch returns
+	if (isVolatile) {
+
 	}
 
 	// Bypass cache and continue with HTTP request
