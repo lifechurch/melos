@@ -18,7 +18,7 @@ import Share from '../features/Bible/components/verseAction/share/Share'
 
 class DayCompleteView extends Component {
 	componentDidMount() {
-		const { dispatch, params: { id, subscription_id }, plan, auth } = this.props
+		const { dispatch, params: { id }, plan } = this.props
 
 		if (!plan) {
 			dispatch(readingPlansAction({
@@ -28,21 +28,6 @@ class DayCompleteView extends Component {
 				},
 			}))
 		}
-
-		customGet({
-			actionName: 'progress',
-			pathvars: {
-				id: subscription_id,
-				page: '*',
-				fields: 'overall'
-			},
-			params: {
-				auth: true,
-			},
-			dispatch,
-			actions: plansAPI.actions,
-			auth,
-		})
 	}
 
 	localizedLink = (link) => {

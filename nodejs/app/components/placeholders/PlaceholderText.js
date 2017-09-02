@@ -66,7 +66,6 @@ PlaceholderText.propTypes = {
 	className: PropTypes.string,
 	background: PropTypes.string,
 	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	lineSpacing: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	textHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
@@ -75,7 +74,6 @@ PlaceholderText.defaultProps = {
 	fill: 'white',
 	background: null,
 	height: '200px',
-	width: '100%',
 	lineSpacing: '10px',
 	textHeight: '17px',
 	className: '',

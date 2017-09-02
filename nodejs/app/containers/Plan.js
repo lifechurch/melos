@@ -99,7 +99,7 @@ class Plan extends Component {
 					dispatch(plansAPI.actions.progress.get({
 						id: subscription.id,
 						page: '*',
-						fields: 'days,overall'
+						fields: 'days'
 					}, {
 						auth: true
 					}))

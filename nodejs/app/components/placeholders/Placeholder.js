@@ -60,6 +60,8 @@ Placeholder.propTypes = {
 	fill: PropTypes.string,
 	className: PropTypes.string,
 	background: PropTypes.string,
+	childSpacing: PropTypes.string,
+	children: PropTypes.node.isRequired,
 	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	animation: PropTypes.oneOf(PLACEHOLDER_ANIMATIONS),
