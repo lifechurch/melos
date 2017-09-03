@@ -190,6 +190,7 @@ class BibleContent extends Component {
 									className='flex'
 									lineSpacing='15px'
 									textHeight='16px'
+									widthRange={[0, 100]}
 								/>
 							</Placeholder>
 						)

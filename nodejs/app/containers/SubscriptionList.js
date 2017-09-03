@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import moment from 'moment'
 // actions
@@ -99,14 +98,14 @@ class SubscriptionList extends Component {
 								auth,
 							})
 						}
-						if (!(id in subscriptions.byId && 'overall' in subscriptions.byId[id])) {
+						if (!(id in subscriptions.byId && 'days' in subscriptions.byId[id])) {
 							// get progress for progress bar
 							customGet({
 								actionName: 'progress',
 								pathvars: {
 									id,
 									page: '*',
-									fields: 'days,overall'
+									fields: 'days'
 								},
 								params: {
 									auth: true,

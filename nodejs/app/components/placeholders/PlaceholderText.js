@@ -7,6 +7,7 @@ function PlaceholderText(props) {
     fill,
     background,
     height,
+		widthRange,
     lineSpacing,
     textHeight,
   } = props
@@ -20,7 +21,7 @@ function PlaceholderText(props) {
 	const placeholder = []
 	for (let i = 0; i < (totalLines * 2); i++) {
 		const isEven = (i % 2 === 0)
-		const lineWidth = getRandomInt(80, 100)
+		const lineWidth = getRandomInt(widthRange[0], widthRange[1])
     // build the lines with the background color
     // and place mask divs after each line
 		if (isEven) {
@@ -75,6 +76,7 @@ function PlaceholderText(props) {
 PlaceholderText.propTypes = {
 	fill: PropTypes.string,
 	background: PropTypes.string,
+	widthRange: PropTypes.array,
 	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 	lineSpacing: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	textHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -83,6 +85,7 @@ PlaceholderText.propTypes = {
 PlaceholderText.defaultProps = {
 	fill: 'white',
 	background: null,
+	widthRange: [80, 100],
 	lineSpacing: '6px',
 	textHeight: '12px',
 }

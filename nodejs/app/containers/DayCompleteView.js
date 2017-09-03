@@ -4,9 +4,9 @@ import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import rtlDetect from 'rtl-detect'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
-import plansAPI, { getProgressById } from '@youversion/api-redux/lib/endpoints/plans'
+import { getProgressById } from '@youversion/api-redux/lib/endpoints/plans'
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
-import customGet from '@youversion/api-redux/lib/customHelpers/get'
+import calcProgress from '@youversion/utils/lib/calcProgress'
 import Routes from '../lib/routes'
 import { selectImageFromList, PLAN_DEFAULT } from '../lib/imageUtil'
 import LazyImage from '../components/LazyImage'
@@ -50,13 +50,14 @@ class DayCompleteView extends Component {
 	render() {
 		const { params: { id, day, subscription_id }, plan, progress, auth } = this.props
 
-		const imgSrc = plan && plan.images ?
-								selectImageFromList({
-									images: plan.images,
-									width: 720,
-									height: 405
-								}).url :
-								null
+		const imgSrc = plan
+			&& plan.images
+			? selectImageFromList({
+				images: plan.images,
+				width: 720,
+				height: 405
+			}).url
+			: null
 		const backImgStyle = {
 			backgroundImage: `
 				linear-gradient(
@@ -71,21 +72,21 @@ class DayCompleteView extends Component {
 		const slug = id.split('-')[1]
 		const dayNum = parseInt(day, 10)
 		const totalDays = plan ? plan.total_days : null
-		const nextLink = 	(dayNum + 1) <= totalDays ?
-												Routes.subscriptionDay({
-													username,
-													plan_id,
-													slug,
-													subscription_id,
-													day: dayNum + 1
-												}) :
-												Routes.subscriptionDay({
-													username,
-													plan_id,
-													slug,
-													subscription_id,
-													day: 1
-												})
+		const nextLink = 	(dayNum + 1) <= totalDays
+			? Routes.subscriptionDay({
+				username,
+				plan_id,
+				slug,
+				subscription_id,
+				day: dayNum + 1
+			})
+			: Routes.subscriptionDay({
+				username,
+				plan_id,
+				slug,
+				subscription_id,
+				day: 1
+			})
 
 
 		return (
@@ -117,7 +118,7 @@ class DayCompleteView extends Component {
 						</div>
 						<div className='row horizontal-center vertical-center'>
 							<ProgressBar
-								percentComplete={progress ? progress.completion_percentage * 100 : null}
+								percentComplete={progress}
 								width={'250px'}
 								height={'9px'}
 								isRtl={this.isRtl()}
@@ -172,9 +173,12 @@ function mapStateToProps(state, props) {
 
 	return {
 		plan: getPlanById(state, plan_id),
-		progress: getProgressById(state, subscription_id) ?
-							getProgressById(state, subscription_id).data.overall :
-							null,
+		progress: getProgressById(state, subscription_id)
+			&& getProgressById(state, subscription_id).data.days
+			? calcProgress({
+				progressDays: getProgressById(state, subscription_id).data.days
+			}).completion_percentage
+			: null,
 		auth: state.auth,
 		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag
@@ -183,7 +187,7 @@ function mapStateToProps(state, props) {
 
 DayCompleteView.propTypes = {
 	plan: PropTypes.object.isRequired,
-	progress: PropTypes.object.isRequired,
+	progress: PropTypes.number.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	params: PropTypes.object.isRequired,
 	auth: PropTypes.object.isRequired,
