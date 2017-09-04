@@ -38,7 +38,7 @@ class TalkItOver extends Component {
 				id: together_id,
 				day,
 				page,
-				order: 'asc',
+				order: 'desc',
 				talk_it_over: tioIndex,
 			}, { auth: true })).then(() => {
 				// when we load first time, scroll to bottom for comment creator
