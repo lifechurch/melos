@@ -50,17 +50,18 @@ class Moment extends Component {
 		const userLink = Routes.user({
 			username: user && user.username,
 		})
-		const cardFooter = likedIds
-			&& likedIds.length > 0
+		const likes = likedIds && likedIds.length
+		const cardFooter = likes
 			? (
 				<div className='flex-wrap' style={{ width: '100%', padding: '0 17px' }}>
 					<AvatarList userids={likedIds} avatarWidth={26} />
-					{
-						likedIds && likedIds.length > 0 &&
-						<div className='font-grey margin-left-auto'>
-							<FormattedMessage id='x likes' values={{ number: likedIds.length }} />
-						</div>
-					}
+					<div className='font-grey margin-left-auto'>
+						{
+							likes > 1
+								? <FormattedMessage id='x likes.other' values={{ number: likedIds.length }} />
+								: <FormattedMessage id='x likes.one' values={{ number: likedIds.length }} />
+						}
+					</div>
 				</div>
 			)
 			: null

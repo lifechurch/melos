@@ -143,7 +143,11 @@ class ParticipantsAvatarList extends Component {
 							: showMoreLink
 									&& (
 									<div className='yv-green-link' style={{ fontSize: `${avatarWidth * 0.43}px` }}>
-										<FormattedMessage id='x participants' values={{ number: avatarList.length }} />
+										{
+											avatarList.length > 1
+												? <FormattedMessage id='x participants.other' values={{ number: avatarList.length }} />
+												: <FormattedMessage id='x participants.one' values={{ number: avatarList.length }} />
+										}
 									</div>
 								)
 					}
