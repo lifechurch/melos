@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react'
-import Immutable from 'immutable'
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import friendshipsAction from '@youversion/api-redux/lib/endpoints/friendships/action'
 import { getFriendshipRequests } from '@youversion/api-redux/lib/endpoints/friendships/reducer'
@@ -13,9 +12,6 @@ import IconButtonGroup from '../../../components/IconButtonGroup'
 import IconButton from '../../../components/IconButton'
 import NoticeIcon from '../../../components/NoticeIcon'
 import DropdownTransition from '../../../components/DropdownTransition'
-import Card from '../../../components/Card'
-import DropDownArrow from '../../../components/DropDownArrow'
-import XMark from '../../../components/XMark'
 import { localizedLink } from '../../../lib/routeUtils'
 import Home from '../../../components/icons/Home'
 import Read from '../../../components/icons/Read'
@@ -41,7 +37,7 @@ class Header extends Component {
 	}
 
 	componentDidMount() {
-		const { dispatch, auth, loggedInUser } = this.props
+		const { dispatch, loggedInUser } = this.props
 
 		if (loggedInUser) {
 			const userId = loggedInUser.userid
@@ -87,16 +83,25 @@ class Header extends Component {
 		this.setState({ profileMenuOpen: false })
 	}
 
+	handleSearch = (searchQuery) => {
+		const { serverLanguageTag } = this.props
+		let searchTarget = 'bible'
+		if (window.location.pathname.indexOf('/reading-plans') > -1) {
+			searchTarget = 'plans'
+		} else if (window.location.pathname.indexOf('/users') > -1) {
+			searchTarget = 'users'
+		}
+		window.location = localizedLink(`/search/${searchTarget}?q=${encodeURIComponent(searchQuery)}`, serverLanguageTag)
+	}
+
 	render() {
 		const {
 			serverLanguageTag,
-			locale,
 			user,
 			loggedInUser
 		} = this.props
 
 		const {
-			state,
 			hasNotifications,
 			hasFriendshipRequests,
 			isLoggedIn,
@@ -107,16 +112,16 @@ class Header extends Component {
 		const left = (
 			<div>
 				<IconButtonGroup iconHeight={24} iconSpacing={44} iconFill="#a2a2a2" labelColor="#a2a2a2" iconActiveFill="#444444" labelActiveColor="#444444" >
-					<IconButton label="Home" useClientRouting={false} to={localizedLink('/', serverLanguageTag)}>
+					<IconButton label={<FormattedMessage id="header.home" />} useClientRouting={false} to={localizedLink('/', serverLanguageTag)}>
 						<Home />
 					</IconButton>
-					<IconButton label="Read" useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
+					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
 						<Read />
 					</IconButton>
-					<IconButton label="Plans" useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
+					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
 						<Plans />
 					</IconButton>
-					<IconButton label="Videos" useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
+					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
 						<Videos />
 					</IconButton>
 				</IconButtonGroup>
@@ -140,8 +145,8 @@ class Header extends Component {
 					<IconButton to={localizedLink('/settings', serverLanguageTag)} useClientRouting={false}>
 						<Settings />
 					</IconButton>
-					<IconButton lockHeight={true}>
-						{'response' in user && <Avatar customClass="yv-profile-menu-trigger" onClick={this.handleProfileMenuClick} placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />}
+					<IconButton lockHeight={true} onClick={this.handleProfileMenuClick}>
+						{'response' in user && <Avatar customClass="yv-profile-menu-trigger" placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />}
 					</IconButton>
 				</IconButtonGroup>
 				{'response' in user &&
@@ -177,10 +182,13 @@ class Header extends Component {
 					left={left}
 					right={right}
 				>
-					<div><Search placeholder="Search..." /></div>
-					{/* <div className="yv-header-search">
-						<input type="text" />
-					</div> */}
+					<div>
+						<Search
+							placeholder="Search..."
+							showClear={false}
+							onHandleSearch={this.handleSearch}
+						/>
+					</div>
 				</SectionedHeading>
 			</div>
 		)
@@ -190,22 +198,25 @@ class Header extends Component {
 
 Header.propTypes = {
 	serverLanguageTag: PropTypes.string,
-	auth: PropTypes.object,
-	locale: PropTypes.object,
-	dispatch: PropTypes.func.isRequired
+	dispatch: PropTypes.func.isRequired,
+	loggedInUser: PropTypes.object,
+	notifications: PropTypes.object,
+	friendshipRequests: PropTypes.object,
+	user: PropTypes.object
 }
 
 Header.defaultProps = {
 	serverLanguageTag: 'en',
-	auth: {},
-	locale: {}
+	loggedInUser: null,
+	notifications: null,
+	friendshipRequests: null,
+	user: null
 }
 
 function mapStateToProps(state) {
 	const loggedInUser = getLoggedInUser(state)
 	return {
 		serverLanguageTag: state.serverLanguageTag,
-		auth: state.auth,
 		locale: state.locale,
 		notifications: getNotifications(state),
 		friendshipRequests: getFriendshipRequests(state),

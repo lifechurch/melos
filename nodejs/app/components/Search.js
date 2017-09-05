@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Input from './Input'
-import SearchIcon from './Icons/SearchIcon'
+import SearchIcon from './icons/SearchIcon'
 import XMark from './XMark'
 
 
