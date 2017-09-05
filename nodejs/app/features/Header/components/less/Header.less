@@ -9,7 +9,7 @@
 	z-index: 99;
 	display: flex;
 	align-items: center;
-	
+
 	.yv-header-search {
 		input {
 			border: solid 1px #ddd;
@@ -17,4 +17,20 @@
 			margin:0;
 		}
 	}
+
+	.yv-header-right {
+		transition: opacity 0.5s ease-in-out;
+		opacity: 0;
+
+		&.ready {
+			opacity: 1;
+		}
+	}
 }
+
+.yv-profile-menu-container {
+	top: 45px;
+	right: -32px;
+}
+
+@import './ProfileMenu.less';

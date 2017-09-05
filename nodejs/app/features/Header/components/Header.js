@@ -9,7 +9,6 @@ import { getNotifications } from '@youversion/api-redux/lib/endpoints/notificati
 import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
 import { getUserById, getLoggedInUser } from '@youversion/api-redux/lib/endpoints/users/reducer'
 import SectionedHeading from '../../../components/SectionedHeading'
-import YouVersion from '../../../components/YVLogo'
 import IconButtonGroup from '../../../components/IconButtonGroup'
 import IconButton from '../../../components/IconButton'
 import NoticeIcon from '../../../components/NoticeIcon'
@@ -26,6 +25,8 @@ import Friends from '../../../components/icons/Friends'
 import Notifications from '../../../components/icons/Notifications'
 import Settings from '../../../components/icons/Settings'
 import Avatar from '../../../components/Avatar'
+import ProfileMenu from './ProfileMenu'
+import Search from '../../../components/Search'
 
 class Header extends Component {
 	constructor(props) {
@@ -34,7 +35,8 @@ class Header extends Component {
 		this.state = {
 			isLoggedIn: false,
 			userId: null,
-			ready: false
+			ready: false,
+			profileMenuOpen: false
 		}
 	}
 
@@ -43,10 +45,12 @@ class Header extends Component {
 
 		if (loggedInUser) {
 			const userId = loggedInUser.userid
-			this.setState({ ready: true, isLoggedIn: true, userId })
+			this.setState({ isLoggedIn: true, userId })
 			dispatch(friendshipsAction({ method: 'incoming', params: { page: 1 }, auth: true }))
 			dispatch(notificationsAction({ method: 'items', auth: true }))
-			dispatch(usersAction({ method: 'view', params: { id: userId } }))
+			dispatch(usersAction({ method: 'view', params: { id: userId } })).then(() => {
+				this.setState({ ready: true })
+			})
 		} else {
 			this.setState({ ready: true, isLoggedIn: false, userId: null })
 		}
@@ -66,11 +70,21 @@ class Header extends Component {
 
 		if (nextFriendshipRequests && nextFriendshipRequests !== friendshipRequests) {
 			let hasFriendshipRequests = false
-			if ('items' in nextFriendshipRequests && Array.isArray(nextFriendshipRequests.users) && nextFriendshipRequests.users.length > 0) {
+			if ('users' in nextFriendshipRequests && Array.isArray(nextFriendshipRequests.users) && nextFriendshipRequests.users.length > 0) {
 				hasFriendshipRequests = true
 			}
 			this.setState({ hasFriendshipRequests })
 		}
+	}
+
+	handleProfileMenuClick = () => {
+		this.setState((state) => {
+			return { profileMenuOpen: !state.profileMenuOpen }
+		})
+	}
+
+	handleProfileMenuClose = () => {
+		this.setState({ profileMenuOpen: false })
 	}
 
 	render() {
@@ -86,22 +100,23 @@ class Header extends Component {
 			hasNotifications,
 			hasFriendshipRequests,
 			isLoggedIn,
-			ready
+			ready,
+			profileMenuOpen
 		} = this.state
 
 		const left = (
 			<div>
 				<IconButtonGroup iconHeight={24} iconSpacing={44} iconFill="#a2a2a2" labelColor="#a2a2a2" iconActiveFill="#444444" labelActiveColor="#444444" >
-					<IconButton label="Home" useClientRouting={false} to="/">
+					<IconButton label="Home" useClientRouting={false} to={localizedLink('/', serverLanguageTag)}>
 						<Home />
 					</IconButton>
-					<IconButton label="Read" useClientRouting={false} to="/bible">
+					<IconButton label="Read" useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
 						<Read />
 					</IconButton>
-					<IconButton label="Plans" useClientRouting={false} to="/reading-plans">
+					<IconButton label="Plans" useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
 						<Plans />
 					</IconButton>
-					<IconButton label="Videos" useClientRouting={false} to="/videos">
+					<IconButton label="Videos" useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
 						<Videos />
 					</IconButton>
 				</IconButtonGroup>
@@ -110,29 +125,48 @@ class Header extends Component {
 
 		const right = isLoggedIn
 		? (
-			<div>
-				<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#000000" alignTo="middle">
-					<IconButton>
+			<div className={`yv-header-right ${ready && 'ready'}`}>
+				<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#a2a2a2" iconActiveFill="#444444" alignTo="middle">
+					<IconButton to={localizedLink('/notifications', serverLanguageTag)} useClientRouting={false}>
 						<NoticeIcon showNotice={hasNotifications}>
 							<Notifications />
 						</NoticeIcon>
 					</IconButton>
-					<IconButton>
+					<IconButton to={localizedLink('/friends', serverLanguageTag)} useClientRouting={false}>
 						<NoticeIcon showNotice={hasFriendshipRequests}>
 							<Friends />
 						</NoticeIcon>
 					</IconButton>
-					<IconButton>
+					<IconButton to={localizedLink('/settings', serverLanguageTag)} useClientRouting={false}>
 						<Settings />
 					</IconButton>
 					<IconButton lockHeight={true}>
-						{'response' in user && <Avatar placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />}
+						{'response' in user && <Avatar customClass="yv-profile-menu-trigger" onClick={this.handleProfileMenuClick} placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />}
 					</IconButton>
 				</IconButtonGroup>
+				{'response' in user &&
+					<DropdownTransition
+						show={profileMenuOpen}
+						hideDir="up"
+						transition={true}
+						onOutsideClick={this.handleProfileMenuClose}
+						exemptClass="yv-profile-menu-trigger"
+						classes="yv-popup-modal-content"
+						containerClasses="yv-profile-menu-container"
+					>
+						<ProfileMenu
+							username={user.response.username}
+							firstName={user.response.first_name}
+							lastName={user.response.last_name}
+							avatarUrl={user.response.user_avatar_url.px_48x48}
+							serverLanguageTag={serverLanguageTag}
+						/>
+					</DropdownTransition>
+				}
 			</div>
 		)
 		: (
-			<div>
+			<div className={`yv-header-right ${ready && 'ready'}`}>
 				<button />
 			</div>
 		)
@@ -141,11 +175,12 @@ class Header extends Component {
 			<div className="yv-header">
 				<SectionedHeading
 					left={left}
-					right={ready && right}
+					right={right}
 				>
-					<div className="yv-header-search">
+					<div><Search placeholder="Search..." /></div>
+					{/* <div className="yv-header-search">
 						<input type="text" />
-					</div>
+					</div> */}
 				</SectionedHeading>
 			</div>
 		)
