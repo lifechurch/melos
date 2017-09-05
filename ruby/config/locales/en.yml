@@ -2103,6 +2103,7 @@ en:
     join together:                              "%{host} wants to read this Plan with you."
     talk it over:                               "Talk It Over"
     participants:                               "Participants"
+    host:                                       "Host"
     x participants:
       one:                                      "%{number} Participant"
       other:                                    "%{number} Participants"
