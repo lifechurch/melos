@@ -31,6 +31,7 @@ class PlanDaySlider extends Component {
 			start_dt,
 			dayBaseLink,
 			day,
+			isCompleted,
 			showDate,
 			isRtl,
 			language_tag,
@@ -79,7 +80,7 @@ class PlanDaySlider extends Component {
 				const progressDay = progressDays ? progressDays[i + 1] : null
 				const date = start_dt ? moment(start_dt).add(i, 'day').format('l') : null
 
-				if (progressDay && progressDay.complete) {
+				if ((progressDay && progressDay.complete) || isCompleted) {
 					checkmark = <CheckMark fill='black' />
 				}
 
@@ -92,7 +93,7 @@ class PlanDaySlider extends Component {
 								{ checkmark }
 							</div>
 							<div className='day-bottom'>
-								<h1>{i + 1}</h1>
+								<h1>{ i + 1 }</h1>
 								<h4>
 									{
 										showDate && date ?
@@ -150,12 +151,14 @@ PlanDaySlider.propTypes = {
 	start_dt: PropTypes.string.isRequired,
 	day: PropTypes.number.isRequired,
 	showDate: PropTypes.bool,
+	isCompleted: PropTypes.bool,
 	language_tag: PropTypes.string,
 	isRtl: PropTypes.bool,
 }
 
 PlanDaySlider.defaultProps = {
 	showDate: true,
+	isCompleted: false,
 	language_tag: 'en',
 	isRtl: false,
 	progressDays: null,

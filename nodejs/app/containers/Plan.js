@@ -114,7 +114,7 @@ class Plan extends Component {
 		const { params: { subscription_id, id }, dispatch, auth } = this.props
 
 		// no activity on an archived plan
-		if (this.isArchived) return
+		if (this.isArchived || this.isCompleted) return
 
 		const isFinalDay = isFinalPlanDay(this.currentDay, this.progressDays)
 		const isPlanComplete = complete
@@ -214,26 +214,27 @@ class Plan extends Component {
 			endString = moment(subscription.start_dt)
 				.add(plan.total_days, 'days')
 				.format('dddd, MMMM Do YYYY')
+			this.isCompleted = !!subscription.completed_dt
 			this.progressDays = subscription.days
 				? subscription.days
 				: null
 			this.dayProgress = this.progressDays && this.progressDays[this.currentDay]
 				? this.progressDays[this.currentDay]
 				: null
-			// if the plan starts in the future we want to show the start string
-			// in place of the progress string
-			progressString = (
-				(
-					calcTodayVsStartDt(subscription && subscription.start_dt).isInFuture
-						&& <PlanStartString start_dt={subscription.start_dt} />
-				)
-				|| (
-					subscription.overall
-						? subscription.overall.progress_string
-						: null
-				)
-			)
-
+			if (this.isCompleted) {
+				progressString = moment(subscription.completed_dt).format('LL')
+			} else if (
+				calcTodayVsStartDt(
+					subscription
+					&& subscription.start_dt
+				).isInFuture
+			) {
+				progressString = <PlanStartString start_dt={subscription.start_dt} />
+			} else {
+				progressString = subscription.overall
+					? subscription.overall.progress_string
+					: null
+			}
 		}
 
 		this.daySegments = plan
@@ -260,7 +261,12 @@ class Plan extends Component {
 				bookList={bookList ? bookList.toJS() : null}
 				start_dt={subscription ? subscription.start_dt : null}
 				subscription_id={subscription ? subscription.id : null}
-				handleContentCheck={!this.isArchived && this.OnContentCheck}
+				isCompleted={this.isCompleted}
+				handleContentCheck={
+					!this.isArchived
+						&& !this.isCompleted
+						&& this.OnContentCheck
+				}
 				handleCatchUp={this.onCatchUp}
 			>
 				{

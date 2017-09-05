@@ -45,9 +45,13 @@ class CompletedList extends Component {
 
 		let link, src, subContent
 		if (plan && 'id' in plan) {
-			src = plan.images ?
-						selectImageFromList({ images: plan.images, width: 160, height: 160 }).url :
-						null
+			src = plan.images
+				? selectImageFromList({
+					images: plan.images,
+					width: 160,
+					height: 160
+				}).url
+				: null
 			if (together_id) {
 				link = localizedLink(
 					Routes.subscription({
@@ -73,10 +77,17 @@ class CompletedList extends Component {
 							plan.formatted_length.default
 						}
 					</div>
-					<ParticipantsAvatarList
-						together_id={together_id}
-						avatarWidth={26}
-					/>
+					{
+						together_id
+							&& (
+								<ParticipantsAvatarList
+									together_id={together_id}
+									plan_id={plan_id}
+									avatarWidth={26}
+									statusFilter={['accepted', 'host']}
+								/>
+							)
+					}
 					<div className='plan-completed'>
 						{ moment(completed_dt).format('LL') }
 					</div>

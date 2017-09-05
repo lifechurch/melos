@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
+import SectionedHeading from '../components/SectionedHeading'
 import SubscriptionList from './SubscriptionList'
 import CompletedList from './CompletedList'
 import SavedList from './SavedList'
@@ -9,11 +10,6 @@ import Routes from '../lib/routes'
 
 
 class PlansList extends Component {
-
-	// componentDidMount() {
-	// 	const { dispatch } = this.props
-	//
-	// }
 
 	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
@@ -42,7 +38,7 @@ class PlansList extends Component {
 			|| auth.userData.language_tag
 			|| 'en'
 		let component = null
-		const title = ''
+		let title = <FormattedMessage id='plans.my_plans' />
 		let backButton = null
 		switch (view) {
 			case 'subscribed': {
@@ -55,6 +51,7 @@ class PlansList extends Component {
 				break
 			}
 			case 'saved': {
+				title = <FormattedMessage id='plans.saved plans' />
 				component = (
 					<SavedList
 						localizedLink={this.localizedLink}
@@ -71,6 +68,7 @@ class PlansList extends Component {
 				break
 			}
 			case 'completed': {
+				title = <FormattedMessage id='plans.completed plans' />
 				component = (
 					<CompletedList
 						localizedLink={this.localizedLink}
@@ -90,32 +88,29 @@ class PlansList extends Component {
 			default: return null
 		}
 
-
 		return (
-			<div className='large-6 medium-8 small-11 centered'>
-				<div className='row collapse'>
-					<div className='row collapse plan-title-row'>
-						<div className='columns small-2'>
-							{ backButton }
-						</div>
-						<div className='column small-8 end text-center'>
-							<div className='plan-saved-title'>{ title }</div>
-						</div>
+			<div>
+				<SectionedHeading
+					left={backButton}
+					classes='large-6'
+				>
+					<div className='plan-saved-title'>{ title }</div>
+				</SectionedHeading>
+				<div className='large-6 medium-8 small-11 centered'>
+					<div className='row collapse'>
+						{ component }
 					</div>
-				</div>
-				<div className='row collapse'>
-					{ component }
-				</div>
-				<div className='row collapse subscription-actions'>
-					<div className='left'>
-						<Link to={this.localizedLink(Routes.subscriptionsSaved({ username }))}>
-							<FormattedMessage id='plans.saved plans' />
-						</Link>
-					</div>
-					<div className='right'>
-						<Link to={this.localizedLink(Routes.subscriptionsCompleted({ username }))}>
-							<FormattedMessage id='plans.completed plans' />
-						</Link>
+					<div className='row collapse subscription-actions'>
+						<div className='left'>
+							<Link to={this.localizedLink(Routes.subscriptionsSaved({ username }))}>
+								<FormattedMessage id='plans.saved plans' />
+							</Link>
+						</div>
+						<div className='right'>
+							<Link to={this.localizedLink(Routes.subscriptionsCompleted({ username }))}>
+								<FormattedMessage id='plans.completed plans' />
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>

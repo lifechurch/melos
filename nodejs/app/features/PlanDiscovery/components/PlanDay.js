@@ -16,6 +16,7 @@ function PlanDay(props) {
 		planLinkNode,
 		totalDays,
 		isSubscribed,
+		isCompleted,
 		actionsNode,
 		refListNode,
 		language_tag,
@@ -51,6 +52,7 @@ function PlanDay(props) {
 							day={day}
 							totalDays={totalDays}
 							progressDays={progressDays}
+							isCompleted={isCompleted}
 							start_dt={start_dt}
 							dayBaseLink={subscriptionLink}
 							showDate={isSubscribed}

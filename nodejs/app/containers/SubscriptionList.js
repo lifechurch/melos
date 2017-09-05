@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
 // actions
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
@@ -155,7 +155,6 @@ class SubscriptionList extends Component {
 			readingPlans,
 			invitations,
 			subscriptions,
-			auth,
 			localizedLink
 		} = this.props
 		const plan = (plan_id && plan_id in readingPlans.byId) ? readingPlans.byId[plan_id] : null
@@ -391,11 +390,10 @@ SubscriptionList.propTypes = {
 	language_tag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	localizedLink: PropTypes.func.isRequired,
-	intl: PropTypes.func.isRequired,
 }
 
 SubscriptionList.defaultProps = {
 	invitations: null,
 }
 
-export default connect(mapStateToProps, null)(injectIntl(SubscriptionList))
+export default connect(mapStateToProps, null)(SubscriptionList)

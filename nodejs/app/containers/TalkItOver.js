@@ -318,6 +318,7 @@ TalkItOver.propTypes = {
 	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	together: PropTypes.object.isRequired,
+	tioIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	users: PropTypes.object,
 	auth: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
