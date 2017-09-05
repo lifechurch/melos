@@ -162,9 +162,9 @@ class PlanSettings extends Component {
 						startsInFuture
 							?	(
 								<div className='vertical-center button-actions'>
-									<h4>
+									<h5>
 										<PlanStartString start_dt={subscription && subscription.start_dt} />
-									</h4>
+									</h5>
 									{
 										isAuthHost
 											&& (

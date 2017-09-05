@@ -18,10 +18,12 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 // utils
 import { calcCurrentPlanDay, isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
+import calcTodayVsStartDt from '../lib/calcTodayVsStartDt'
 import Routes from '../lib/routes'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
 // components
 import PlanComponent from '../features/PlanDiscovery/components/Plan'
+import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'
 
 
 class Plan extends Component {
@@ -218,9 +220,20 @@ class Plan extends Component {
 			this.dayProgress = this.progressDays && this.progressDays[this.currentDay]
 				? this.progressDays[this.currentDay]
 				: null
-			progressString = subscription.overall
-				? subscription.overall.progress_string
-				: null
+			// if the plan starts in the future we want to show the start string
+			// in place of the progress string
+			progressString = (
+				(
+					calcTodayVsStartDt(subscription && subscription.start_dt).isInFuture
+						&& <PlanStartString start_dt={subscription.start_dt} />
+				)
+				|| (
+					subscription.overall
+						? subscription.overall.progress_string
+						: null
+				)
+			)
+
 		}
 
 		this.daySegments = plan

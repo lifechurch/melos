@@ -18,28 +18,40 @@ function renderUser(friend, handleDelete = null, complete = null) {
 	})
 	return (
 		<div className='vertical-center item' key={friend.id}>
-			<User
-				avatarLetter={friend.first_name ? friend.first_name.charAt(0) : null}
-				src={src}
-				width={36}
-				heading={friend.name ? friend.name : null}
-				subheading={friend.source ? friend.source : null}
-				link={userLink}
-			/>
+			<div style={{ width: 'initial' }}>
+				<User
+					avatarLetter={friend.first_name ? friend.first_name.charAt(0) : null}
+					src={src}
+					width={36}
+					heading={friend.name ? friend.name : null}
+					subheading={friend.source ? friend.source : null}
+					link={userLink}
+				/>
+			</div>
 			{
-				complete &&
-				<CheckMark fill='black' />
+				friend.status === 'host'
+					&& (
+						<div className='font-badge' style={{ fontSize: '15px' }}>
+							<FormattedMessage id='host' />
+						</div>
+					)
 			}
-			{
-				handleDelete &&
-				<a
-					tabIndex={0}
-					onClick={handleDelete.bind(this, friend.id)}
-					style={{ marginLeft: '10px' }}
-				>
-					<XMark width={13} height={13} />
-				</a>
-			}
+			<div className='margin-left-auto vertical-center'>
+				{
+					complete &&
+					<CheckMark fill='black' />
+				}
+				{
+					handleDelete &&
+					<a
+						tabIndex={0}
+						onClick={handleDelete.bind(this, friend.id)}
+						style={{ marginLeft: '10px' }}
+					>
+						<XMark width={13} height={13} />
+					</a>
+				}
+			</div>
 		</div>
 	)
 }

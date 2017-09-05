@@ -10,7 +10,7 @@ function PlanStartString({ start_dt, dateOnly }) {
 	} = calcTodayVsStartDt(start_dt)
 
 	return (
-		<div className='start-string'>
+		<div className='start-string' style={{ display: 'inline-block' }}>
 			{
 				!dateOnly &&
 				(
