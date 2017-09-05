@@ -39,32 +39,33 @@ class AvatarList extends Component {
 		const avatarList = []
 		if (users && userids) {
 			userids.forEach((userID) => {
-				const user = users[userID].response
-				const avatarSrc = user && user.user_avatar_url ? user.user_avatar_url.px_48x48 : ''
-				const userLink = Routes.user({
-					username: user && user.username,
-				})
-				avatarList.push(
-					<div
-						className='item'
-						key={userID}
-						// set the margin as a ratio of the width
-						style={{
-							marginRight: `${avatarWidth * 0.35}px`,
-							display: 'flex',
-							alignItems: 'flex-start'
-						}}
-					>
-						<User
-							avatarLetter={user && user.first_name ? user.first_name.charAt(0) : null}
-							src={user && user.has_avatar ? avatarSrc : null}
-							width={avatarWidth}
-							link={userLink}
-						/>
-					</div>
-				)
+				if (userID in users) {
+					const user = users[userID].response
+					const avatarSrc = user && user.user_avatar_url ? user.user_avatar_url.px_48x48 : ''
+					const userLink = Routes.user({
+						username: user && user.username,
+					})
+					avatarList.push(
+						<div
+							className='item'
+							key={userID}
+							// set the margin as a ratio of the width
+							style={{
+								marginRight: `${avatarWidth * 0.35}px`,
+								display: 'flex',
+								alignItems: 'flex-start'
+							}}
+						>
+							<User
+								avatarLetter={user && user.first_name ? user.first_name.charAt(0) : null}
+								src={user && user.has_avatar ? avatarSrc : null}
+								width={avatarWidth}
+								link={userLink}
+							/>
+						</div>
+					)
+				}
 			})
-
 		}
 
 		return (

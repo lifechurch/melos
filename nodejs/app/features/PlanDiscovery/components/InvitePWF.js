@@ -12,6 +12,9 @@ import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
 import SectionedHeading from '../../../components/SectionedHeading'
 import List from '../../../components/List'
+import Placeholder from '../../../components/placeholders/Placeholder'
+import PlaceholderText from '../../../components/placeholders/PlaceholderText'
+import PlaceholderShape from '../../../components/placeholders/PlaceholderShape'
 import Routes from '../../../lib/routes'
 import { selectImageFromList } from '../../../lib/imageUtil'
 
@@ -202,9 +205,28 @@ class InvitePWF extends Component {
 										}}
 									>
 										{
-											!friends ?
-												<div><FormattedMessage id='loading' /></div> :
-												mergedUsers.map((user) => {
+											!friends
+												? (
+													<Placeholder
+														key='friends-placeholder'
+														height='36px'
+														duplicate={15}
+														style={{ margin: '15px 15px' }}
+													>
+														<PlaceholderShape
+															borderRadius='36px'
+															width='36px'
+															height='36px'
+														/>
+														<PlaceholderText
+															className='flex'
+															lineSpacing='15px'
+															textHeight='10px'
+															widthRange={[30, 60]}
+														/>
+													</Placeholder>
+												)
+												: mergedUsers.map((user) => {
 													return this.renderUser(user)
 												})
 										}

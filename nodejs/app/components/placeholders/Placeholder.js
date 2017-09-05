@@ -20,6 +20,7 @@ class Placeholder extends Component {
 			width,
 			children,
 			className,
+			style,
 			animation,
 		} = this.props
 
@@ -40,7 +41,7 @@ class Placeholder extends Component {
 						'vertical-center',
 						'flex-wrap'
 					].join(' ')}
-					style={{ width, height, background }}
+					style={{ width, height, background, ...style }}
 				>
 					{
 							React.Children.map(children, (c) => {
@@ -86,6 +87,7 @@ Placeholder.propTypes = {
 	fill: PropTypes.string,
 	className: PropTypes.string,
 	background: PropTypes.string,
+	style: PropTypes.object,
 	childSpacing: PropTypes.string,
 	duplicate: PropTypes.number,
 	children: PropTypes.node.isRequired,
@@ -103,6 +105,7 @@ Placeholder.defaultProps = {
 	animation: 'shimmer',
 	className: '',
 	duplicate: 0,
+	style: {},
 }
 
 export default Placeholder

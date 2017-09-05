@@ -52,8 +52,6 @@ export default function (
 		requireSubscribedPlans,
 		requireSavedPlans,
 		requireCompletedPlans,
-		requireSubscribedPlan,
-		requirePlanReferences,
 		requirePlanCompleteData,
 		requirePlanView,
 		requireSamplePlan,

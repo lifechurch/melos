@@ -262,88 +262,6 @@ function requireCompletedPlans(nextState, replace, callback) {
 	}
 }
 
-function requireSubscribedPlan(a, b, c, d) {
-	let prevState, nextState, replace, callback
-
-	/* ugly hack because onEnter and onChange have different arity */
-	if (typeof d === 'undefined') {
-		prevState = {}
-		nextState = a
-		replace = b
-		callback = c
-	} else {
-		prevState = a
-		nextState = b
-		replace = c
-		callback = d
-	}
-
-	const currentState = store.getState()
-	const version = cookie.load('version') || '1'
-	const { params } = nextState
-	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
-	const id = parseInt(params.id.toString().split('-')[0], 10)
-	const plan = fullPlans[id] || { id }
-
-	let currentDay = params.day
-	if (!currentDay || isNaN(currentDay)) {
-		const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
-		if (isNaN(calculatedDay)) {
-			currentDay = 1
-		} else if (calculatedDay > plan.total_days) {
-			currentDay = plan.total_days
-		} else {
-			currentDay = calculatedDay
-		}
-	}
-
-	const dayKey = [
-		'readingPlans',
-		'fullPlans',
-		id.toString(),
-		'calendar',
-		(currentDay - 1).toString()
-	]
-
-	const planIsInState = typeof fullPlans === 'object'
-		&& typeof fullPlans[id] !== 'undefined'
-		&& fullPlans[id].dirtySubscription !== true
-		&& typeof fullPlans[id].calendar === 'object'
-
-	const planHasRefs = planIsInState
-		&& Immutable.fromJS(currentState).hasIn([ ...dayKey, 'reference_content' ])
-
-
-
-	if (planHasRefs) {
-		store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
-		callback()
-	} else if (planIsInState && !planHasRefs) {
-		const references = Immutable.fromJS(currentState).getIn([ ...dayKey, 'references' ]).toJS()
-		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay })).then(() => {
-			store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
-			callback()
-		}, () => {
-			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
-			store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version: defaultVersion, id, currentDay })).then(() => {
-				store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
-				callback()
-			}, () => { callback() })
-		})
-	} else {
-		store.dispatch(PlanDiscoveryActionCreators.subscriptionAll({ id, language_tag: window.__LOCALE__.planLocale, user_id: userid, version }, true)).then(() => {
-			callback()
-		}, () => {
-			const defaultVersion = getDefaultVersion(store, window.__LOCALE__.planLocale)
-			store.dispatch(PlanDiscoveryActionCreators.subscriptionAll({ id, language_tag: window.__LOCALE__.planLocale, user_id: userid, version: defaultVersion }, true)).then(() => {
-				callback()
-			}, () => { callback() })
-		})
-	}
-}
-
-
-
 function requireSamplePlan(nextState, replace, callback) {
 
 	const currentState = store.getState()
@@ -382,45 +300,6 @@ function requireSamplePlan(nextState, replace, callback) {
 	}
 }
 
-function requirePlanReferences(prevState, nextState, replace, callback) {
-	const currentState = store.getState()
-	const { params, locationBeforeTransitions } = nextState
-	const id = parseInt(params.id.toString().split('-')[0], 10)
-	const { readingPlans: { fullPlans } } = currentState
-	const plan = fullPlans[id] || { id }
-
-	let currentDay = locationBeforeTransitions.query.day
-	if (!currentDay || isNaN(currentDay)) {
-		const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
-		if (isNaN(calculatedDay)) {
-			currentDay = 1
-		} else if (calculatedDay > plan.total_days) {
-			currentDay = plan.total_days
-		} else {
-			currentDay = calculatedDay
-		}
-	}
-
-	const version = cookie.load('version') || '1'
-	const dayKey = [
-		'readingPlans',
-		'fullPlans',
-		id.toString(),
-		'calendar',
-		(currentDay - 1).toString()
-	]
-
-	if (Immutable.fromJS(currentState).hasIn([ ...dayKey, 'reference_content' ])) {
-		callback()
-	} else {
-		const references = Immutable.fromJS(currentState).getIn([ ...dayKey, 'references' ]).toJS()
-		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay })).then(() => {
-			store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
-			callback()
-		})
-	}
-}
-
 function requirePlanCompleteData(nextState, replace, callback) {
 	const currentState = store.getState()
 	const { params } = nextState
@@ -443,9 +322,17 @@ function requirePlanCompleteData(nextState, replace, callback) {
 	) {
 		getRecommendedPlans = false
 	}
-	if (typeof savedPlans === 'object' &&
-		typeof savedPlans.items !== 'undefined' &&
-		(savedPlans.items.length > 0 || savedPlans.all.length > 0)
+	if (
+		(
+			typeof savedPlans === 'object' &&
+			typeof savedPlans.items !== 'undefined' &&
+			savedPlans.items.length > 0
+		) ||
+		(
+			typeof savedPlans === 'object' &&
+			typeof savedPlans.all !== 'undefined' &&
+			savedPlans.all.length > 0
+		)
 	) {
 		getSavedPlans = false
 	}
@@ -490,8 +377,6 @@ const routes = getRoutes(
 	requireSubscribedPlans,
 	requireSavedPlans,
 	requireCompletedPlans,
-	requireSubscribedPlan,
-	requirePlanReferences,
 	requirePlanCompleteData,
 	requirePlanView,
 	requireSamplePlan
