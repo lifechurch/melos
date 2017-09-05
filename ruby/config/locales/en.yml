@@ -1416,6 +1416,25 @@ en:
       just now:                                 "just now"
     verses selected:                            "verses selected"
   EventsAdmin:
+    header:
+      home:                                     "Home"
+      read:                                     "Read"
+      plans:                                    "Plans"
+      videos:                                   "Videos"
+      notifications:                            "Notifications"
+      friend requests:                          "Friend Requests"
+      settings:                                 "Settings"
+      search placeholder:                       "Search..."
+      sign in:                                  "Sign In"
+      sign up:                                  "Sign Up"
+    profile menu:
+      bookmarks:                                "Bookmarks"
+      highlights:                               "Highlights"
+      notes:                                    "Notes"
+      images:                                   "Images"
+      friends:                                  "Friends"
+      badges:                                   "Badges"
+      sign out:                                 "Sign Out"
     footer:
       events:                                    "Events"
       versions:                                  "Versions (%{count})"
