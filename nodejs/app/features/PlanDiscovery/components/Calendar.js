@@ -78,7 +78,7 @@ Calendar.propTypes = {
 
 Calendar.defaultProps = {
 	showFullWeeks: true,
-	data: {}
+	data: {},
 }
 
 export default Calendar

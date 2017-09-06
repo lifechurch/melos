@@ -1,16 +1,18 @@
 import React, { PropTypes } from 'react'
 import moment from 'moment'
 
-import Calendar from './Calendar'
+import CalendarMonth from './CalendarMonth'
+import CalendarDay from './CalendarDay'
 
 function PlanComponent(props) {
-	const { plan, subscriptionLink } = props
+	const { progressDays, start_dt, subscriptionLink } = props
 	const months = {}
 	const calendars = []
 
-	if ('calendar' in plan) {
-		plan.calendar.forEach((day, i) => {
-			const date = moment(day.date)
+	if (progressDays && Object.keys(progressDays).length > 0) {
+		Object.keys(progressDays).forEach((dayNum, i) => {
+			const day = progressDays[dayNum]
+			const date = moment(start_dt).add(i, 'days')
 			const year = date.year()
 			const month = date.month() + 1
 			const dayOfMonth = date.date()
@@ -21,21 +23,20 @@ function PlanComponent(props) {
 			}
 
 			let prevComplete = false
-			if (i > 0) {
-				prevComplete = plan.calendar[i - 1].completed
+			if ((dayNum - 1) in progressDays) {
+				prevComplete = progressDays[dayNum - 1].completed
 			}
 
 			let nextComplete = false
-			if (i < (plan.calendar.length - 1)) {
-				nextComplete = plan.calendar[i + 1].completed
+			if ((dayNum + 1) in progressDays) {
+				nextComplete = progressDays[dayNum + 1].completed
 			}
 
 			let complete = 'Incomplete'
 			if (day.completed) {
 				complete = 'Complete'
 			} else if (
-        ('additional_content' in day && day.additional_content.completed && (day.additional_content.html !== null || day.additional_content.text !== null)) ||
-        ('references_completed' in day && day.references_completed.length > 0)
+        day.partial && day.partial.length > 0
       ) {
 				complete = 'Partial'
 			} else if (date.isSameOrAfter(today)) {
@@ -79,13 +80,26 @@ function PlanComponent(props) {
 						const year = parseInt(yearString, 10)
 						const month = parseInt(monthString, 10)
 						return (
-							<Calendar
+							<CalendarMonth
 								key={`${year}-${month}`}
 								showFullWeeks={false}
 								monthNumber={month}
 								yearNumber={year}
-								data={months}
-							/>
+							>
+								{
+									({ day }) => {
+										const dayData = calendars[calendarKey][day.dayOfMonth()]
+										console.log(day, dayData)
+										return (
+											<CalendarDay
+												// customClass={}
+												// link={}
+												date={day.getDate()}
+											/>
+										)
+									}
+								}
+							</CalendarMonth>
 						)
 					})}
 				</div>
@@ -95,7 +109,8 @@ function PlanComponent(props) {
 }
 
 PlanComponent.propTypes = {
-	plan: PropTypes.object.isRequired,
+	progressDays: PropTypes.object.isRequired,
+	start_dt: PropTypes.string.isRequired,
 	subscriptionLink: PropTypes.string.isRequired
 }
 

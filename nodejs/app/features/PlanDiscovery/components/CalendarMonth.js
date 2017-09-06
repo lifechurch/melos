@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import moment from 'moment'
-import Immutable from 'immutable'
 
 
 function getDaysInMonth(month, year, fullWeeks = true, direction = 1, startDate = null, limit = null) {
@@ -39,7 +38,7 @@ function getDaysInMonth(month, year, fullWeeks = true, direction = 1, startDate 
 }
 
 function CalendarMonth(props) {
-	const { monthNumber, yearNumber, showFullWeeks, data, children } = props
+	const { monthNumber, yearNumber, showFullWeeks, children } = props
 	const date = moment(new Date(yearNumber, monthNumber - 1, 1))
 
 	const monthDays = getDaysInMonth(monthNumber - 1, yearNumber, showFullWeeks).map((day, index, days) => {
@@ -57,22 +56,12 @@ function CalendarMonth(props) {
 			}
 		}
 
-		let dayData = {}
-		const m = moment(day)
-		const iData = Immutable.fromJS(data)
-		const key = [
-			m.year().toString(),
-			(m.month() + 1).toString(),
-			m.date().toString()
-		]
-
-		if (iData.hasIn(key)) {
-			dayData = iData.getIn(key).toJS()
-		}
-
 		return (
 			<div key={day.toString()} className={`day ${classNames.join(' ')}`}>
-				{ children({ day, dayData }) }
+				{
+					children
+						&& children({ day })
+				}
 			</div>
 		)
 	})
@@ -80,8 +69,8 @@ function CalendarMonth(props) {
 	return (
 		<div className='plan-calendar-container'>
 			<h2>
-				<span className='month'>{date.format('MMMM')}</span> &nbsp;
-				<span className='year'>{date.format('YYYY')}</span>
+				<span className='month'>{ date.format('MMMM') }</span> &nbsp;
+				<span className='year'>{ date.format('YYYY') }</span>
 			</h2>
 			<div className='plan-calendar'>
 				{ monthDays }
@@ -95,14 +84,12 @@ CalendarMonth.propTypes = {
 	yearNumber: PropTypes.number.isRequired,
 	children: PropTypes.func.isRequired,
 	showFullWeeks: PropTypes.bool,
-	data: PropTypes.object
 }
 
 CalendarMonth.defaultProps = {
 	monthNumber: new Date().getMonth(),
 	yearNumber: new Date().getYear(),
 	showFullWeeks: true,
-	data: {}
 }
 
 export default CalendarMonth
