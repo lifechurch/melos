@@ -552,6 +552,7 @@
 	"join together": "{host} wants to read this Plan with you.",
 	"talk it over": "Talk It Over",
 	"participants": "Participants",
+	"host": "Host",
 	"x participants.one": "{number} Participant",
 	"x participants.other": "{number} Participants",
 	"participant limit": "Participant Limit: {number}",

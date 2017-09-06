@@ -13,6 +13,7 @@ import IconButton from '../../../components/IconButton'
 import NoticeIcon from '../../../components/NoticeIcon'
 import DropdownTransition from '../../../components/DropdownTransition'
 import { localizedLink } from '../../../lib/routeUtils'
+import ViewportUtils from '../../../lib/viewportUtils'
 import Home from '../../../components/icons/Home'
 import Read from '../../../components/icons/Read'
 import Plans from '../../../components/icons/Plans'
@@ -34,6 +35,7 @@ class Header extends Component {
 			ready: false,
 			profileMenuOpen: false
 		}
+		this.viewportUtils = new ViewportUtils()
 	}
 
 	componentDidMount() {
@@ -50,6 +52,8 @@ class Header extends Component {
 		} else {
 			this.setState({ ready: true, isLoggedIn: false, userId: null })
 		}
+		console.log('this-cdm', this)
+		this.viewportUtils.registerListener('resize', this.handleWindowResize)
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -92,6 +96,19 @@ class Header extends Component {
 			searchTarget = 'users'
 		}
 		window.location = localizedLink(`/search/${searchTarget}?q=${encodeURIComponent(searchQuery)}`, serverLanguageTag)
+	}
+
+	handleWindowResize = (viewport) => {
+		const width = parseInt(viewport.width, 10)
+		let screenSize
+		if (width > 0 && width < 600) {
+			screenSize = 'small'
+		} else if (width < 1024) {
+			screenSize = 'medium'
+		} else {
+			screenSize = 'large'
+		}
+		this.stateState({ screenSize })
 	}
 
 	render() {
