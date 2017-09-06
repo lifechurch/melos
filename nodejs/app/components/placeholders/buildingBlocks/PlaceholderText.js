@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import getRandomInt from '../../lib/getRandomInt'
+import getRandomInt from '../../../lib/getRandomInt'
 
 
 function PlaceholderText(props) {

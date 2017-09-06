@@ -12,9 +12,7 @@ import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
 import SectionedHeading from '../../../components/SectionedHeading'
 import List from '../../../components/List'
-import Placeholder from '../../../components/placeholders/Placeholder'
-import PlaceholderText from '../../../components/placeholders/PlaceholderText'
-import PlaceholderShape from '../../../components/placeholders/PlaceholderShape'
+import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
 import Routes from '../../../lib/routes'
 import { selectImageFromList } from '../../../lib/imageUtil'
 
@@ -209,22 +207,14 @@ class InvitePWF extends Component {
 												? (
 													<Placeholder
 														key='friends-placeholder'
-														height='36px'
+														height='38px'
+														width='38px'
+														borderRadius='38'
 														duplicate={15}
-														style={{ margin: '15px 15px' }}
-													>
-														<PlaceholderShape
-															borderRadius='36px'
-															width='36px'
-															height='36px'
-														/>
-														<PlaceholderText
-															className='flex'
-															lineSpacing='15px'
-															textHeight='10px'
-															widthRange={[30, 60]}
-														/>
-													</Placeholder>
+														lineSpacing='15px'
+														textHeight='10px'
+														widthRange={[30, 60]}
+													/>
 												)
 												: mergedUsers.map((user) => {
 													return this.renderUser(user)

@@ -20,7 +20,12 @@ function SectionedHeading(props) {
 			<div className='vertical-center' style={{ width: '66%' }}>
 				{
 					left &&
-					<div className='absolute absolute-left'>{ left }</div>
+					<div
+						className='absolute absolute-left'
+						style={{ fontSize: '13.5px' }}
+					>
+						{ left }
+					</div>
 				}
 				{
 					children
@@ -32,7 +37,12 @@ function SectionedHeading(props) {
 				}
 				{
 					right &&
-					<div className='absolute absolute-right'>{ right }</div>
+					<div
+						className='absolute absolute-right'
+						style={{ fontSize: '13.5px' }}
+					>
+						{ right }
+					</div>
 				}
 			</div>
 		</div>

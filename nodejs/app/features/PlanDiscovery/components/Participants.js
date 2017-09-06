@@ -6,6 +6,7 @@ import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
 import SectionedHeading from '../../../components/SectionedHeading'
+import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
 import { hasUserCompletedActivity } from '../../../lib/readingPlanUtils'
@@ -110,8 +111,18 @@ function Participants({
 						{
 							!(accepted || pending)
 								? (
-									<div className='friend-list'>
-										<FormattedMessage id='loading' />
+									<div className='friend-list' style={{ marginTop: '60px' }}>
+										<Placeholder
+											key='friends-placeholder'
+											height='42px'
+											borderRadius='42px'
+											width='42px'
+											duplicate={15}
+											lineSpacing='15px'
+											textHeight='10px'
+											widthRange={[30, 60]}
+											style={{ margin: '20px 20px' }}
+										/>
 									</div>
 								)
 								: (

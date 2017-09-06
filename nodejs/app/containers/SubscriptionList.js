@@ -19,9 +19,7 @@ import calcTodayVsStartDt from '../lib/calcTodayVsStartDt'
 import List from '../components/List'
 import Modal from '../components/Modal'
 import ShareLink from '../components/ShareLink'
-import Placeholder from '../components/placeholders/Placeholder'
-import PlaceholderText from '../components/placeholders/PlaceholderText'
-import PlaceholderShape from '../components/placeholders/PlaceholderShape'
+import Placeholder from '../components/placeholders/MediaListItemPlaceholder'
 import ParticipantsAvatarList from '../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../widgets/TogetherInvitationActions'
 import InvitationString from '../widgets/InvitationString'
@@ -341,14 +339,15 @@ class SubscriptionList extends Component {
 						plansList && plansList.length > 0
 							? plansList
 							: (
-								<Placeholder key='sub-placeholder' height='80px' duplicate={5} className='subscription'>
-									<PlaceholderShape borderRadius='5px' width='80px' height='80px' />
-									<PlaceholderText
-										className='flex'
-										lineSpacing='15px'
-										textHeight='10px'
-									/>
-								</Placeholder>
+								<Placeholder
+									height='80px'
+									width='80px'
+									duplicate={5}
+									className='subscription'
+									lineSpacing='15px'
+									textHeight='10px'
+									borderRadius='5px'
+								/>
 							)
 					}
 				</List>
