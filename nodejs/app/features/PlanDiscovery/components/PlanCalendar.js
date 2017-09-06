@@ -70,7 +70,7 @@ function PlanComponent(props) {
 	}
 
 	return (
-		<div className='row' style={{ marginTop: 30 }}>
+		<div className='row' style={{ marginTop: '50px' }}>
 			<div className='columns medium-8 large-8 medium-centered text-center'>
 				<div className={`plan-calendar-collection ${calendars.length === 1 && 'single'}`}>
 					{
