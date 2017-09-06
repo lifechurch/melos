@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import moment from 'moment'
 
 import CalendarMonth from './CalendarMonth'
-import CalendarDay from './CalendarDay'
+import StreakDay from './StreakDay'
 
 function PlanComponent(props) {
 	const { progressDays, start_dt, subscriptionLink } = props
@@ -23,32 +23,30 @@ function PlanComponent(props) {
 			}
 
 			let prevComplete = false
-			if ((dayNum - 1) in progressDays) {
-				prevComplete = progressDays[dayNum - 1].completed
+			if ((parseInt(dayNum, 10) - 1) in progressDays) {
+				prevComplete = progressDays[parseInt(dayNum, 10) - 1].complete
 			}
 
 			let nextComplete = false
-			if ((dayNum + 1) in progressDays) {
-				nextComplete = progressDays[dayNum + 1].completed
+			if ((parseInt(dayNum, 10) + 1) in progressDays) {
+				nextComplete = progressDays[parseInt(dayNum, 10) + 1].complete
 			}
 
 			let complete = 'Incomplete'
-			if (day.completed) {
+			if (day.complete) {
 				complete = 'Complete'
-			} else if (
-        day.partial && day.partial.length > 0
-      ) {
+			} else if (day.partial && day.partial.length > 0) {
 				complete = 'Partial'
 			} else if (date.isSameOrAfter(today)) {
 				complete = 'Future'
 			}
 
 			let streak = 'None'
-			if (prevComplete && day.completed && nextComplete) {
+			if (prevComplete && day.complete && nextComplete) {
 				streak = 'Middle'
-			} else if (prevComplete && day.completed) {
+			} else if (prevComplete && day.complete) {
 				streak = 'End'
-			} else if (nextComplete && day.completed) {
+			} else if (nextComplete && day.complete) {
 				streak = 'Beginning'
 			}
 
@@ -72,36 +70,38 @@ function PlanComponent(props) {
 	}
 
 	return (
-		<div className="row" style={{ marginTop: 30 }}>
-			<div className="columns medium-8 large-8 medium-centered text-center">
+		<div className='row' style={{ marginTop: 30 }}>
+			<div className='columns medium-8 large-8 medium-centered text-center'>
 				<div className={`plan-calendar-collection ${calendars.length === 1 && 'single'}`}>
-					{calendars.map((calendarKey) => {
-						const [yearString, monthString] = calendarKey.split('-')
-						const year = parseInt(yearString, 10)
-						const month = parseInt(monthString, 10)
-						return (
-							<CalendarMonth
-								key={`${year}-${month}`}
-								showFullWeeks={false}
-								monthNumber={month}
-								yearNumber={year}
-							>
-								{
-									({ day }) => {
-										const dayData = calendars[calendarKey][day.dayOfMonth()]
-										console.log(day, dayData)
-										return (
-											<CalendarDay
-												// customClass={}
-												// link={}
-												date={day.getDate()}
-											/>
-										)
+					{
+						calendars.map((calendarKey) => {
+							const [yearString, monthString] = calendarKey.split('-')
+							const year = parseInt(yearString, 10)
+							const month = parseInt(monthString, 10)
+							return (
+								<CalendarMonth
+									key={`${year}-${month}`}
+									showFullWeeks={false}
+									monthNumber={month}
+									yearNumber={year}
+								>
+									{
+										({ day }) => {
+											const dayData = months[year][month][day.getDate()]
+											return (
+												<StreakDay
+													link={dayData && dayData.link}
+													date={day}
+													streak={dayData && dayData.streak}
+													complete={dayData && dayData.complete}
+												/>
+											)
+										}
 									}
-								}
-							</CalendarMonth>
-						)
-					})}
+								</CalendarMonth>
+							)
+						})
+					}
 				</div>
 			</div>
 		</div>
