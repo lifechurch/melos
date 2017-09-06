@@ -16,23 +16,34 @@ import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 class CompletedList extends Component {
 
 	componentDidMount() {
-		const { auth, dispatch } = this.props
+		const { auth } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
-		dispatch(plansAPI.actions.subscriptions.get({ status: 'completed', order: 'desc' }, { auth: true })).then((subs) => {
-			if (subs && subs.data) {
-				const ids = Object.keys(subs.data)
-				if (ids.length > 0) {
-					ids.forEach((id) => {
-						const sub = subs.data[id]
-						dispatch(planView({
-							plan_id: sub.plan_id,
-							together_id: sub.together_id,
-							auth,
-						}))
-					})
+		this.getCompletedSubs()
+	}
+
+	getCompletedSubs = (page = 1) => {
+		const { auth, dispatch } = this.props
+		if (page) {
+			dispatch(plansAPI.actions.subscriptions.get({
+				status: 'completed',
+				order: 'desc',
+				page,
+			}, { auth: true })).then((subs) => {
+				if (subs && subs.data) {
+					const ids = Object.keys(subs.data)
+					if (ids.length > 0) {
+						ids.forEach((id) => {
+							const sub = subs.data[id]
+							dispatch(planView({
+								plan_id: sub.plan_id,
+								together_id: sub.together_id,
+								auth,
+							}))
+						})
+					}
 				}
-			}
-		})
+			})
+		}
 	}
 
 	renderListItem = ({ plan_id, together_id, completed_dt, subscription_id = null }) => {
@@ -127,7 +138,7 @@ class CompletedList extends Component {
 		}
 
 		return (
-			<List customClass='subscription-list'>
+			<List customClass='subscription-list' loadMore={this.getCompletedSubs.bind(this, subscriptions.next_page)}>
 				{
 					plansList.length > 0
 						? plansList

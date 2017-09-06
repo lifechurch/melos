@@ -10,7 +10,6 @@ import Routes from '../lib/routes'
 
 
 class PlansList extends Component {
-
 	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || params.lang || 'en'
@@ -130,6 +129,7 @@ PlansList.propTypes = {
 	route: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 
