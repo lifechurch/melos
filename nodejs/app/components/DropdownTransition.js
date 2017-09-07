@@ -78,14 +78,14 @@ class DropdownTransition extends Component {
 	}
 
 	render() {
-		const { classes, hideDir, show, transition } = this.props
+		const { classes, hideDir, show, transition, children } = this.props
 		const transitionDir = hideDir || 'up'
 		const showTransition = transition || false
 
 		return (
 			<div className={`modal ${show ? '' : 'hide-modal'} ${showTransition ? 'dropdown-transform' : ''}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >
 				<div className={`element-to-translate ${classes || ''} ${showTransition ? 'dropdown-transform' : ''} ${transitionDir}`}>
-					{this.props.children}
+					{ children }
 				</div>
 			</div>
 		)
