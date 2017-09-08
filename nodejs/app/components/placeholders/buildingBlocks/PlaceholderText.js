@@ -27,6 +27,7 @@ function PlaceholderText(props) {
 		if (isEven) {
 			placeholder.push(
 				<div
+					key={`text-${i}`}
 					style={{
 						height: `${parseInt(lineSpacing, 10)}px`,
 						width: '100%',
@@ -37,6 +38,7 @@ function PlaceholderText(props) {
 		} else {
 			placeholder.push(
 				<div
+					key={`text-${i}`}
 					style={{
 						height: `${parseInt(textHeight, 10)}px`,
 						width: `${100 - lineWidth}%`,
@@ -52,6 +54,7 @@ function PlaceholderText(props) {
 	if (fillExtraSpace) {
 		placeholder.push(
 			<div
+				key='text-fill'
 				style={{
 					height: `${parseInt(fillExtraSpace, 10)}px`,
 					width: '100%',
@@ -77,12 +80,13 @@ PlaceholderText.propTypes = {
 	fill: PropTypes.string,
 	background: PropTypes.string,
 	widthRange: PropTypes.array,
-	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	lineSpacing: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	textHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 PlaceholderText.defaultProps = {
+	height: '200px',
 	fill: 'white',
 	background: null,
 	widthRange: [80, 100],

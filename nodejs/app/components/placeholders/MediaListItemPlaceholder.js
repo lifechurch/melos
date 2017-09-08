@@ -49,7 +49,7 @@ MediaListItemPlaceholder.propTypes = {
 	duplicate: PropTypes.number,
 	borderRadius: PropTypes.string,
 	className: PropTypes.string,
-	widthRange: PropTypes.string,
+	widthRange: PropTypes.array,
 	lineSpacing: PropTypes.string,
 	textHeight: PropTypes.string,
 	animation: PropTypes.oneOf(PLACEHOLDER_ANIMATIONS),

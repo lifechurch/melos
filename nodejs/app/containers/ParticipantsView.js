@@ -5,6 +5,7 @@ import { push } from 'react-router-redux'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
+import deleteSub from '@youversion/api-redux/lib/batchedActions/deleteSub'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
@@ -87,7 +88,7 @@ class ParticipantsView extends Component {
 						idToDelete = id
 					}
 				})
-				dispatch({ type: 'DELETE_SUB_FROM_STATE', data: { id: idToDelete } })
+				dispatch(deleteSub({ subscription_id: idToDelete, together_id }))
 				dispatch(push(Routes.subscriptions({
 					username: auth.userData.username
 				})))

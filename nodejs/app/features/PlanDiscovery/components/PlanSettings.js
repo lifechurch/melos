@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
 import { push } from 'react-router-redux'
 import Toggle from 'react-toggle-button'
+import deleteSub from '@youversion/api-redux/lib/batchedActions/deleteSub'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import ProgressBar from '../../../components/ProgressBar'
 import ShareLink from '../../../components/ShareLink'
@@ -70,7 +71,10 @@ class PlanSettings extends Component {
 			}, {
 				auth: auth.isLoggedIn
 			})).then(() => {
-				dispatch({ type: 'DELETE_SUB_FROM_STATE', data: { id: this.subscription_id } })
+				dispatch(deleteSub({
+					subscription_id: this.subscription_id,
+					together_id: this.together_id
+				}))
 				dispatch(push(Routes.subscriptions({
 					username: auth.userData.username
 				})))

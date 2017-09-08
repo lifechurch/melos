@@ -62,11 +62,12 @@ Modal.propTypes = {
 	customClass: PropTypes.string,
 	showBackground: PropTypes.bool,
 	heading: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-	children: PropTypes.node.isRequired,
+	children: PropTypes.node,
 	handleCloseCallback: PropTypes.func,
 }
 
 Modal.defaultProps = {
+	children: null,
 	showBackground: true,
 	customClass: '',
 	heading: null,
