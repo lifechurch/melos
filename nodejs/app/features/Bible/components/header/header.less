@@ -26,12 +26,22 @@
   transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .react-header.fixed, .react-header.fixed::after {
-	position: fixed !important;
+	position: absolute !important;
 	// the rails css tries to set .fixed class to bottom 0
 	bottom: initial;
 }
 
 .show-fixed {
+	.react-header.fixed, .react-header.fixed::after {
+		position: fixed !important;
+		@media @small-only {
+			top: 0px;
+		}
+		@media @medium-up {
+			top: 70px;
+		}
+	}
+
 	.react-header::after {
 		opacity: 1 !important;
 	}
@@ -49,12 +59,12 @@
 		top: 70px;
 	}
 	.waypoint {
-		top: 20px;
+		top: 0px;
 	}
 }
 @media @medium-only {
 	.react-header, .react-header::after {
-		top: 44px;
+		top: 70px;
 	}
 	.waypoint {
 		top: 0px;
@@ -64,11 +74,11 @@
 }
 @media @small-only {
 	.react-header, .react-header::after {
-		top: 0px;
+		top: 70px;
 		padding-left: 5px;
 	}
 	.waypoint {
-		top: 0px;
+		top: 70px;
 		height: 1px;
 	}
 }
@@ -92,7 +102,7 @@
 }
 @media @medium-only {
 	.version-picker-container, .chapter-picker-container {
-		margin-right: 35px;
+		margin-right: 15px;
 	}
 }
 @media @small-only {
@@ -100,8 +110,8 @@
 		display: none;
 	}
 	.chapter-picker-container {
+		margin-right: 15px;
 		input {
-			max-width: 100px;
 		}
 	}
 	input {
@@ -112,13 +122,38 @@
 
 .chapter-picker-container, .version-picker-container {
 	display: inline-flex;
-	.picker-label { flex: 0 1 auto; }
-	@media @small-only { input { width: 100%; } }
+	.picker-label { flex: 1 1 auto; }
+	@media @small-only {
+		width: 100%;
+		input {
+			width: 100%;
+		}
+	}
+	@media @medium-only {
+		input {
+			font-size: 14px;
+			max-width: 150px;
+		}
+	}
 }
+
+@media @small-only {
+	.reader-header {
+		.audio-popup {
+			width: 25%;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}
+
 .version-picker-container {
 	.picker-label input {
-		max-width: 100px;
 		min-width: 50px;
+		@media @medium-only {
+			font-size: 14px;
+			max-width: 150px;
+		}
 	}
 }
 
@@ -126,6 +161,7 @@
 	align-items: center;
 	margin: auto;
 	height: 70px;
+	padding: 0 15px;
 }
 
 .reader-header::after {

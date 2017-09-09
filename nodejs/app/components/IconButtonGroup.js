@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react'
 
 function IconButtonGroup({ children, iconHeight, iconSpacing, iconFill, labelColor, labelSize, iconActiveFill, labelActiveColor, alignTo }) {
 	const iconStyle = {
-		marginRight: iconSpacing
+		paddingRight: iconSpacing / 2,
+		paddingLeft: iconSpacing / 2
 	}
 
 	let alignItems = 'flex-end'
@@ -16,15 +17,17 @@ function IconButtonGroup({ children, iconHeight, iconSpacing, iconFill, labelCol
 		<div className="yv-icon-button-group" style={{ alignItems }}>
 			{children &&
 				React.Children.map(children, (child => {
-					return React.cloneElement(child, {
-						iconHeight,
-						iconFill,
-						iconActiveFill,
-						labelColor,
-						labelSize,
-						labelActiveColor,
-						style: iconStyle
-					})
+					if (child) {
+						return React.cloneElement(child, {
+							iconHeight,
+							iconFill,
+							iconActiveFill,
+							labelColor,
+							labelSize,
+							labelActiveColor,
+							style: iconStyle
+						})
+					}
 				}))
 			}
 		</div>

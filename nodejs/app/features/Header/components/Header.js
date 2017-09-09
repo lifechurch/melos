@@ -19,6 +19,7 @@ import Read from '../../../components/icons/Read'
 import Plans from '../../../components/icons/Plans'
 import Videos from '../../../components/icons/Videos'
 import Friends from '../../../components/icons/Friends'
+import More from '../../../components/icons/More'
 import Notifications from '../../../components/icons/Notifications'
 import Settings from '../../../components/icons/Settings'
 import Avatar from '../../../components/Avatar'
@@ -33,7 +34,8 @@ class Header extends Component {
 			isLoggedIn: false,
 			userId: null,
 			ready: false,
-			profileMenuOpen: false
+			profileMenuOpen: false,
+			screenSize: 0
 		}
 		this.viewportUtils = new ViewportUtils()
 	}
@@ -52,7 +54,7 @@ class Header extends Component {
 		} else {
 			this.setState({ ready: true, isLoggedIn: false, userId: null })
 		}
-		console.log('this-cdm', this)
+		// this.handleWindowResize(this.viewportUtils.getViewport())
 		this.viewportUtils.registerListener('resize', this.handleWindowResize)
 	}
 
@@ -102,13 +104,13 @@ class Header extends Component {
 		const width = parseInt(viewport.width, 10)
 		let screenSize
 		if (width > 0 && width < 600) {
-			screenSize = 'small'
+			screenSize = 0 // small
 		} else if (width < 1024) {
-			screenSize = 'medium'
+			screenSize = 1 // 'medium'
 		} else {
-			screenSize = 'large'
+			screenSize = 2 // 'large'
 		}
-		this.stateState({ screenSize })
+		this.setState({ screenSize })
 	}
 
 	render() {
@@ -123,8 +125,30 @@ class Header extends Component {
 			hasFriendshipRequests,
 			isLoggedIn,
 			ready,
-			profileMenuOpen
+			profileMenuOpen,
+			screenSize
 		} = this.state
+
+		const plansButton = (
+			<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
+				<Plans />
+			</IconButton>
+		)
+
+		const videosButton = (
+			<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
+				<Videos />
+			</IconButton>
+		)
+
+		const search = (
+			<Search
+				placeholder="Search..."
+				showClose={screenSize === 0}
+				showInput={screenSize > 0}
+				onHandleSearch={this.handleSearch}
+			/>
+		)
 
 		const left = (
 			<div>
@@ -135,38 +159,58 @@ class Header extends Component {
 					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
 						<Read />
 					</IconButton>
-					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
-						<Plans />
-					</IconButton>
-					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
-						<Videos />
-					</IconButton>
+					{ (screenSize > 1) ? plansButton : null }
+					{ (screenSize > 1) ? videosButton : null }
 				</IconButtonGroup>
 			</div>
 		)
 
+		const profileTopContent = (screenSize < 2)
+			? (<div>
+				<IconButtonGroup iconHeight={24} iconSpacing={44} iconFill="#a2a2a2" labelColor="#a2a2a2" iconActiveFill="#444444" labelActiveColor="#444444" >
+					{plansButton}
+					{videosButton}
+				</IconButtonGroup>
+			</div>)
+			: null
+
+		const userNotificationGroup = isLoggedIn ? (
+			<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#a2a2a2" iconActiveFill="#444444" alignTo="middle">
+				<IconButton to={localizedLink('/notifications', serverLanguageTag)} useClientRouting={false}>
+					<NoticeIcon showNotice={hasNotifications}>
+						<Notifications />
+					</NoticeIcon>
+				</IconButton>
+				<IconButton to={localizedLink('/friends', serverLanguageTag)} useClientRouting={false}>
+					<NoticeIcon showNotice={hasFriendshipRequests}>
+						<Friends />
+					</NoticeIcon>
+				</IconButton>
+				<IconButton to={localizedLink('/settings', serverLanguageTag)} useClientRouting={false}>
+					<Settings />
+				</IconButton>
+				{(screenSize > 1) && ('response' in user) &&
+					<IconButton lockHeight={true} onClick={this.handleProfileMenuClick} useClientRouting={false}>
+						<Avatar customClass="yv-profile-menu-trigger" placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />
+					</IconButton>
+				}
+			</IconButtonGroup>
+		) : null
+
+		const moreMenu = isLoggedIn && screenSize < 2 ? (
+			<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#a2a2a2" iconActiveFill="#444444" alignTo="middle">
+				<IconButton className="yv-profile-menu-trigger" onClick={this.handleProfileMenuClick} useClientRouting={false}>
+					<More />
+				</IconButton>
+			</IconButtonGroup>
+		) : null
+
 		const right = isLoggedIn
 		? (
 			<div className={`yv-header-right ${ready && 'ready'}`}>
-				<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#a2a2a2" iconActiveFill="#444444" alignTo="middle">
-					<IconButton to={localizedLink('/notifications', serverLanguageTag)} useClientRouting={false}>
-						<NoticeIcon showNotice={hasNotifications}>
-							<Notifications />
-						</NoticeIcon>
-					</IconButton>
-					<IconButton to={localizedLink('/friends', serverLanguageTag)} useClientRouting={false}>
-						<NoticeIcon showNotice={hasFriendshipRequests}>
-							<Friends />
-						</NoticeIcon>
-					</IconButton>
-					<IconButton to={localizedLink('/settings', serverLanguageTag)} useClientRouting={false}>
-						<Settings />
-					</IconButton>
-					<IconButton lockHeight={true} onClick={this.handleProfileMenuClick}>
-						{'response' in user && <Avatar customClass="yv-profile-menu-trigger" placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />}
-					</IconButton>
-				</IconButtonGroup>
-				{'response' in user &&
+				{screenSize < 2 && search}
+				{(screenSize > 1) ? userNotificationGroup : moreMenu}
+				{('response' in user) &&
 					<DropdownTransition
 						show={profileMenuOpen}
 						hideDir="up"
@@ -182,6 +226,8 @@ class Header extends Component {
 							lastName={user.response.last_name}
 							avatarUrl={user.response.user_avatar_url.px_48x48}
 							serverLanguageTag={serverLanguageTag}
+							topContent={profileTopContent}
+							topAvatarContent={(screenSize < 2) ? userNotificationGroup : null}
 						/>
 					</DropdownTransition>
 				}
@@ -200,11 +246,7 @@ class Header extends Component {
 					right={right}
 				>
 					<div>
-						<Search
-							placeholder="Search..."
-							showClear={false}
-							onHandleSearch={this.handleSearch}
-						/>
+						{screenSize > 1 && search}
 					</div>
 				</SectionedHeading>
 			</div>

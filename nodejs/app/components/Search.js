@@ -14,6 +14,15 @@ class Search extends Component {
 		}
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const { showInput } = this.props
+		const { showInput: nextShowInput } = nextProps
+
+		if (showInput !== nextShowInput) {
+			this.setState({ showInput: nextShowInput })
+		}
+	}
+
 	handleSearch = () => {
 		const { onHandleSearch } = this.props
 		const { value } = this.state
@@ -54,6 +63,7 @@ class Search extends Component {
 			showInput: true
 		})
 	}
+
 	closeInput = () => {
 		this.setState({
 			showInput: false
@@ -61,11 +71,21 @@ class Search extends Component {
 	}
 
 	render() {
-		const { showIcon, showClear, placeholder, debounce, customClass } = this.props
+		const { showIcon, showClear, showClose, placeholder, debounce, customClass } = this.props
 		const { showInput, value } = this.state
 
 		return (
 			<div className={`search vertical-center ${showInput ? 'open' : ''} ${customClass}`}>
+				{
+					showIcon &&
+					<a tabIndex={0} onClick={this.handleClick}>
+						<SearchIcon
+							fill='gray'
+							width={15}
+							height={30}
+						/>
+					</a>
+				}
 				{
 					showInput &&
 					<Input
@@ -78,16 +98,6 @@ class Search extends Component {
 						debounce={debounce}
 						type='search'
 					/>
-				}
-				{
-					showIcon &&
-					<a tabIndex={0} onClick={this.handleClick}>
-						<SearchIcon
-							fill='gray'
-							width={15}
-							height={30}
-						/>
-					</a>
 				}
 				{
 					showClear
@@ -110,6 +120,21 @@ class Search extends Component {
 							</a>
 						)
 				}
+				{ showClose
+					&& showInput
+					&& (
+						<a
+							tabIndex={0}
+							onClick={this.closeInput}
+						>
+							<XMark
+								fill='gray'
+								width={11}
+								height={11}
+							/>
+						</a>
+					)
+				}
 			</div>
 		)
 	}
@@ -119,6 +144,7 @@ Search.propTypes = {
 	showInput: PropTypes.bool,
 	showIcon: PropTypes.bool,
 	showClear: PropTypes.bool,
+	showClose: PropTypes.bool,
 	onChange: PropTypes.func,
 	placeholder: PropTypes.string,
 	onHandleSearch: PropTypes.func,
@@ -131,6 +157,7 @@ Search.defaultProps = {
 	showInput: true,
 	showIcon: true,
 	showClear: true,
+	showClose: false,
 	placeholder: '',
 	onHandleSearch: null,
 	value: null,

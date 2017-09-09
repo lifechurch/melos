@@ -259,25 +259,25 @@ class Bible extends Component {
 			return
 		}
 
-		const viewport = this.viewportUtils.getViewport()
+		const viewport = this.viewportUtils && this.viewportUtils.getViewport()
 		// if we're actually going to use this style, let's do the calculations and set it
 		// i.e. we're on a mobile screen
 		if (parseInt(viewport.width, 10) <= 599) {
 
 			// the modal is the absolute positioned element that shows the dropdowns
-			const modalPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
+			const modalPos = this.viewportUtils && this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
 			// the header on mobile becomes fixed at the bottom, so we need the mobile to fill until that
-			const footerModal = this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
+			const footerModal = this.viewportUtils && this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
 
 			// how much offset is there from modalPos.top and bookList.top?
 			// we need to bring that into the calculations so we don't set the height too high for the viewport
 			const bookList = document.getElementsByClassName('book-list')[0]
 			const bookContainer = document.getElementsByClassName('book-container')[0]
-			const bookOffset = Math.abs(this.viewportUtils.getElement(bookContainer).top - this.viewportUtils.getElement(bookList).top)
+			const bookOffset = this.viewportUtils && (Math.abs(this.viewportUtils.getElement(bookContainer).top - this.viewportUtils.getElement(bookList).top))
 
 			const versionList = document.getElementsByClassName('version-list')[0]
 			const versionContainer = document.getElementsByClassName('version-container')[0]
-			const versionOffset = Math.abs(this.viewportUtils.getElement(versionContainer).top - this.viewportUtils.getElement(versionList).top)
+			const versionOffset = this.viewportUtils && (Math.abs(this.viewportUtils.getElement(versionContainer).top - this.viewportUtils.getElement(versionList).top))
 
 			this.setState({
 				extraStyle: `

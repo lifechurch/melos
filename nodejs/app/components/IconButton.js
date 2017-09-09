@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
-function A({ children, href }) {
-	return (<a target="_self" href={href}>{children}</a>)
+function A({ children, href, onClick }) {
+	return (<a target="_self" href={href} onClick={onClick}>{children}</a>)
 }
 
 function IconButton({ className, label, children, iconHeight, style, iconFill, labelColor, labelSize, to, useClientRouting, onClick, iconActiveFill, labelActiveColor, lockHeight }) {

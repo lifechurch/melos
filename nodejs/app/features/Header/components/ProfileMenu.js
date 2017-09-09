@@ -8,14 +8,22 @@ function buildUserLink(section, username, serverLanguageTag) {
 	return localizedLink(`/users/${username}${section ? `/${section}` : ''}`, serverLanguageTag)
 }
 
-function ProfileMenu({ username, firstName, lastName, avatarUrl, serverLanguageTag }) {
+function ProfileMenu({ username, firstName, lastName, avatarUrl, serverLanguageTag, topContent, topAvatarContent }) {
 	return (
 		<div className="yv-profile-menu">
 			<Card>
-				<a target="_self" href={buildUserLink(null, username, serverLanguageTag)} className="yv-profile-avatar-name">
-					<Avatar height={60} width={60} src={avatarUrl} />
-					<div className="yv-profile-name">{firstName} {lastName}</div>
-				</a>
+				{topContent &&
+					<div className="yv-profile-top-content">
+						{topContent}
+					</div>
+				}
+				<div target="_self" className="yv-profile-avatar-name">
+					<Avatar height={60} width={60} src={avatarUrl} link={buildUserLink(null, username, serverLanguageTag)} />
+					<div className="yv-profile-avatar-content-name">
+						<div className="yv-profile-top-avatar-content">{topAvatarContent}</div>
+						<div className="yv-profile-name">{firstName} {lastName}</div>
+					</div>
+				</div>
 				<div className="yv-profile-user-links">
 					<a target="_self" href={buildUserLink('bookmarks', username, serverLanguageTag)}><FormattedMessage id="profile menu.bookmarks" /></a>
 					<a target="_self" href={buildUserLink('highlights', username, serverLanguageTag)}><FormattedMessage id="profile menu.highlights" /></a>
@@ -37,7 +45,9 @@ ProfileMenu.propTypes = {
 	firstName: PropTypes.string,
 	lastName: PropTypes.string,
 	avatarUrl: PropTypes.string,
-	serverLanguageTag: PropTypes.string
+	serverLanguageTag: PropTypes.string,
+	topContent: PropTypes.node,
+	topAvatarContent: PropTypes.node
 }
 
 ProfileMenu.defaultProps = {
@@ -45,7 +55,9 @@ ProfileMenu.defaultProps = {
 	firstName: null,
 	lastName: null,
 	avatarUrl: null,
-	serverLanguageTag: null
+	serverLanguageTag: null,
+	topContent: null,
+	topAvatarContent: null
 }
 
 export default ProfileMenu
