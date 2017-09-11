@@ -402,7 +402,7 @@
 	"features.EventEdit.features.location.components.UnpublishModal.desc": "Pentru a adăuga, pentru a edita sau pentru a șterge locațiile și orele, evenimentul trebuie revocat temporar de la publicare. În acest timp, evenimentul tău nu va fi vizibil în rezultatele căutării. Nu uita să publici din nou evenimentul tău.",
 	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Revocă de la publicare",
 	"features.EventEdit.features.preview.notes.prompt": "Adaugă notițele tale private...",
-	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Autentifică-te pentru a adăuga notițe private���</span> Autentifică-te pentru a adăuga notițe private…</a>",
+	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Autentifică-te pentru a adăuga notițe private…</span> Autentifică-te pentru a adăuga notițe private…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.review": "Revizuiește-ți evenimentul înainte de publicare",
 	"features.EventEdit.features.preview.components.PreviewFeed.previewUrl": "URL de previzualizare:",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Partajează evenimentul",

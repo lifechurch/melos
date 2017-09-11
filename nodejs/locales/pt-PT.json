@@ -552,7 +552,7 @@
 	"join together": "{host} quer ler este Plano contigo.",
 	"talk it over": "Converse sobre",
 	"participants": "Participantes",
-	"host": "Host",
+	"host": "Acolhimento",
 	"x participants.one": "{number} Participante",
 	"x participants.other": "{number} Participantes",
 	"participant limit": "Limite de Participantes: {number}",
