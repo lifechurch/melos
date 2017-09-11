@@ -146,6 +146,7 @@ class Header extends Component {
 		const search = (
 			<Search
 				placeholder="Search..."
+				showClear={false}
 				showClose={screenSize === 0}
 				showInput={screenSize > 0}
 				onHandleSearch={this.handleSearch}
