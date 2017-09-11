@@ -8,6 +8,7 @@ function A({ children, href, onClick }) {
 class IconButton extends Component {
 	constructor(props) {
 		super(props)
+		this._isMounted = false
 		this.state = {
 			isActive: false
 		}
@@ -15,12 +16,19 @@ class IconButton extends Component {
 
 	componentDidMount() {
 		const { to } = this.props
+		this._isMounted = true
 		setTimeout(() => {
-			this.setState({ isActive: window.location.pathname.indexOf(to) > -1
-				&& (to.length > 1 || window.location.pathname === to)
-				&& to.length <= window.location.pathname.length
-			})
+			if (this._isMounted) {
+				this.setState({ isActive: window.location.pathname.indexOf(to) > -1
+					&& (to.length > 1 || window.location.pathname === to)
+					&& to.length <= window.location.pathname.length
+				})
+			}
 		}, 300)
+	}
+
+	componentWillUnmount() {
+		this._isMounted = false
 	}
 
 	render() {

@@ -13,12 +13,21 @@ import MomentCreate from './MomentCreate'
 class VerseAction extends Component {
 	constructor(props) {
 		super(props)
+		this._isMounted = false
 		this.state = { verseCopied: false, isOpen: false, momentContainerOpen: false, momentKind: 'bookmark' }
 		this.handleActionClick = ::this.handleActionClick
 		this.handleClose = ::this.handleClose
 		this.handleHighlight = ::this.handleHighlight
 		this.openMe = ::this.openMe
 		this.closeMe = ::this.closeMe
+	}
+
+	componentDidMount() {
+		this._isMounted = true
+	}
+
+	componentWillUnmount() {
+		this._isMounted = false
 	}
 
 	handleActionClick(e) {
@@ -124,7 +133,11 @@ class VerseAction extends Component {
 		const { selection: { human } } = nextProps
 		if (!(typeof human === 'string' && human.length > 0)) {
 			setTimeout(this.closeMe, 100)
-			setTimeout(() => { this.forceUpdate() }, 1000)
+			setTimeout(() => {
+				if (this._isMounted) {
+					this.forceUpdate()
+				}
+			}, 1000)
 		}
 	}
 
@@ -136,7 +149,11 @@ class VerseAction extends Component {
 
 		if (shouldIUpdate && (typeof currHuman === 'undefined' || currHuman.length === 0)) {
 			setTimeout(() => { this.openMe() }, 100)
-			setTimeout(() => { this.forceUpdate() }, 1000)
+			setTimeout(() => {
+				if (this._isMounted) {
+					this.forceUpdate()
+				}
+			}, 1000)
 			return false
 		} else if (typeof nextHuman === 'undefined' || nextHuman.length === 0) {
 			return false

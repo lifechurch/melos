@@ -15,19 +15,20 @@
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %base{href: "/"}
     = csrf_meta_tags
+    = render '/shared/footer_head'
     = render '/shared/head'
     = render '/shared/javascripts'
 
   %body{onload: "init()", class: "c_#{params[:controller]} a_#{params[:action]}"}
     = render '/shared/google_analytics'
-    #wrapper
-      = content_for?(:header) ? yield(:header) : render("/shared/header/default")
-      = content_for?(:secondary_header) ? yield(:secondary_header) : ''
-      -#= render(partial: "layouts/mobile_nav") unless @main_nav == false    
+    = content_for?(:header) ? yield(:header) : render("/shared/header/default")
 
-      - flash.each do |key, msg|      
+    #wrapper
+      = content_for?(:secondary_header) ? yield(:secondary_header) : ''
+
+      - flash.each do |key, msg|
         .row.pad-row
-          .columns.medium-12      
+          .columns.medium-12
             %div{class: container_class_str + 'alert-box success radius', id: "flash_#{key}"}= msg
 
       #container{class: container_class_str}
@@ -39,13 +40,11 @@
                   = yield :sidebar
                 - else
                   - unless (@sidebar == false || sidebar_presenter.blank?)
-                    = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}      
-          .columns.medium-9 
+                    = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
+          .columns.medium-9
             #main{role: "main", class: @is_reader == true ? 'main_reader' : ''}
               -#= render(partial: "layouts/primary_nav") unless @main_nav == false
               = content_for?(:main) ? yield(:main) : yield
 
-
-      -#= render partial: '/shared/footer', locals: {footer_classes: container_class_str}
-
-    -# = render partial: "/shared/js_templates"
+    = render partial: '/shared/footer', locals: { footer_classes: container_class_str }
+    = content_for?(:lower_javascript) ? yield(:lower_javascript) : nil

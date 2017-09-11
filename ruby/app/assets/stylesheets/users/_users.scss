@@ -1,19 +1,19 @@
 /* !Profile header */
 
 .profile-user-box {
-  margin: 100px 0 0;
+  padding: 100px 0 0;
 
   @media #{$medium-only} {
-    margin: 64px 0 0;
+    padding: 100px 0 0;
   }
 
   @media #{$small-only} {
-    margin: 0;
+    padding: 0;
   }
 }
 
 #current-ui-view .profile-user-box {
-  margin: 0;
+  padding: 0;
 }
 
 .profile-user {
