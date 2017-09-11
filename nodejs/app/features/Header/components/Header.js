@@ -10,6 +10,8 @@ import { getUserById, getLoggedInUser } from '@youversion/api-redux/lib/endpoint
 import SectionedHeading from '../../../components/SectionedHeading'
 import IconButtonGroup from '../../../components/IconButtonGroup'
 import IconButton from '../../../components/IconButton'
+import Button from '../../../components/Button'
+import ButtonGroup from '../../../components/ButtonGroup'
 import NoticeIcon from '../../../components/NoticeIcon'
 import DropdownTransition from '../../../components/DropdownTransition'
 import { localizedLink } from '../../../lib/routeUtils'
@@ -42,8 +44,7 @@ class Header extends Component {
 
 	componentDidMount() {
 		const { dispatch, loggedInUser } = this.props
-
-		if (loggedInUser) {
+		if (typeof loggedInUser === 'object' && 'userid' in loggedInUser) {
 			const userId = loggedInUser.userid
 			this.setState({ isLoggedIn: true, userId })
 			dispatch(friendshipsAction({ method: 'incoming', params: { page: 1 }, auth: true }))
@@ -52,9 +53,10 @@ class Header extends Component {
 				this.setState({ ready: true })
 			})
 		} else {
-			this.setState({ ready: true, isLoggedIn: false, userId: null })
+			setTimeout(() => {
+				this.setState({ ready: true, isLoggedIn: false, userId: null })
+			}, 300)
 		}
-		// this.handleWindowResize(this.viewportUtils.getViewport())
 		this.viewportUtils.registerListener('resize', this.handleWindowResize)
 	}
 
@@ -197,13 +199,20 @@ class Header extends Component {
 			</IconButtonGroup>
 		) : null
 
-		const moreMenu = isLoggedIn && screenSize < 2 ? (
+		const moreMenu = screenSize < 2 ? (
 			<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#a2a2a2" iconActiveFill="#444444" alignTo="middle">
 				<IconButton className="yv-profile-menu-trigger" onClick={this.handleProfileMenuClick} useClientRouting={false}>
 					<More />
 				</IconButton>
 			</IconButtonGroup>
 		) : null
+
+		const signUpButtons = !isLoggedIn && (
+			<ButtonGroup buttonWidth={100}>
+				<Button to={localizedLink('/sign-in')} useClientRouting={false}><FormattedMessage id="header.sign in" /></Button>
+				<Button to={localizedLink('/sign-up')} useClientRouting={false}><FormattedMessage id="header.sign up" /></Button>
+			</ButtonGroup>
+		)
 
 		const right = isLoggedIn
 		? (
@@ -235,7 +244,23 @@ class Header extends Component {
 		)
 		: (
 			<div className={`yv-header-right ${ready && 'ready'}`}>
-				<button />
+				{screenSize < 2 && search}
+				{(screenSize > 1) ? signUpButtons : moreMenu}
+				<DropdownTransition
+					show={profileMenuOpen}
+					hideDir="up"
+					transition={true}
+					onOutsideClick={this.handleProfileMenuClose}
+					exemptClass="yv-profile-menu-trigger"
+					classes="yv-popup-modal-content"
+					containerClasses="yv-profile-menu-container"
+				>
+					<ProfileMenu
+						serverLanguageTag={serverLanguageTag}
+						topContent={profileTopContent}
+						bottomContent={signUpButtons}
+					/>
+				</DropdownTransition>
 			</div>
 		)
 
