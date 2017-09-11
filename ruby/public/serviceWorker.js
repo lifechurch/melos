@@ -1,4 +1,4 @@
-const version = 1
+const version = 2
 const cacheName = `youversion-v${version}`
 
 function fetchThenCache(request) {
