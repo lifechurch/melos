@@ -1401,12 +1401,12 @@ zh-HK:
     EventsAdmin: 
         header: 
             home: "Home"
-            read: "Read"
+            read: "閱讀"
             plans: "Plans"
             videos: "Videos"
-            notifications: "Notifications"
+            notifications: "通知"
             friend requests: "Friend Requests"
-            settings: "Settings"
+            settings: "設定"
             search placeholder: "Search..."
             sign in: "Sign In"
             sign up: "Sign Up"

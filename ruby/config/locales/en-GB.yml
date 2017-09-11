@@ -1420,11 +1420,11 @@ en-GB:
             plans: "Plans"
             videos: "Videos"
             notifications: "Notifications"
-            friend requests: "Friend Requests"
+            friend requests: "Friend requests"
             settings: "Settings"
             search placeholder: "Search..."
-            sign in: "Sign In"
-            sign up: "Sign Up"
+            sign in: "Sign in"
+            sign up: "Sign up"
         profile menu: 
             bookmarks: "Bookmarks"
             highlights: "Highlights"
@@ -1432,7 +1432,7 @@ en-GB:
             images: "Images"
             friends: "Friends"
             badges: "Badges"
-            sign out: "Sign Out"
+            sign out: "Sign out"
         footer: 
             events: "Events"
             versions: "Versions (%{count})"
