@@ -32,12 +32,15 @@ async function deleteCacheEntriesMatching(cacheName, matchFunc) {
 }
 
 
+
 // SERVICE WORKER METHODS --------------------------------------------
+
 // INSTALL
 self.addEventListener('install', function() {
 	console.log('[ServiceWorker] Install')
 	// what kind of assets do we want to cache here?
 })
+
 // ACTIVATE
 self.addEventListener('activate', function(e) {
 	// remove all caches that don't match the current version
@@ -51,39 +54,36 @@ self.addEventListener('activate', function(e) {
 		})
 	)
 })
+
 // FETCH
 self.addEventListener('fetch', (e) => {
 	const headers = e.request.headers
-	// determine what's cacheable
-	// api call from youversion
-	// no authorization in header or does but is not going to send auth to server
-	// get e.request
-	const isCacheable = headers.has('X-YouVersion-Client')
-		&& (!(headers.has('authorization')) || headers.has('X-ServiceWorker-Cacheable'))
-		&& e.request.method === 'GET'
-	// determine what's volatile
-	// let's cache and fetch authed calls
-	const isVolatile = headers.has('X-YouVersion-Client')
-		&& e.request.method === 'GET'
-	const isInvalidating = headers.has('X-YouVersion-Client')
-		&& (
-			e.request.method === 'POST'
-				|| e.request.method === 'PUT'
-				|| e.request.method === 'DELETE'
-		)
+
+	const isYouversionApi = headers.has('X-YouVersion-Client')
+	const isActionRequest = e.request.method === 'POST'
+		|| e.request.method === 'PUT'
+		|| e.request.method === 'DELETE'
+
+	/**
+	 * Invalidating or force updating previous caches:
+	 * 		youversionapi and post, put or delete request
+	 *
+	 * let's delete the corresponding cached responses when we see a request that
+	 * is going to invalidate it i.e.
+	 * delete /subscriptions when we do a PUT on /subscriptions/2461
+	 * or /subscriptions/2461 when we forceUpdate /subscriptions
+	 */
+	const isInvalidating = isYouversionApi
+		&& isActionRequest
 	const forceUpdate = headers.has('X-YouVersion-Client')
 		&& headers.has('X-ServiceWorker-Force-Update')
 		&& e.request.method === 'GET'
-
-	// let's delete the corresponding cached responses when we see a request that
-	// is going to invalidate it i.e.
-	// delete /subscriptions when we do a PUT on /subscriptions/2461
-	// or /subscriptions/2461 when we forceUpdate /subscriptions
 	if (isInvalidating || forceUpdate) {
 		return e.respondWith(
 			deleteCacheEntriesMatching(
 				cacheName,
 				(key) => {
+
 					console.log('isDELETE',
 						e.request.url,
 						key,
@@ -103,11 +103,18 @@ self.addEventListener('fetch', (e) => {
 		)
 	}
 
-	// return with cached data after fetching to update cache for next e.request
-	if (isVolatile) {
+	/**
+	 * Is cacheable:
+	 * 		youversionapi and GET request
+	 *
+	 * return with cached data after fetching to update cache for next request
+	 */
+	const isCacheable = isYouversionApi
+		&& e.request.method === 'GET'
+	if (isCacheable) {
 		return e.respondWith(
 			caches.match(e.request.url).then(function(cacheResponse) {
-				// first fetch the new data
+				// first fetch the new data (and also cache it)
 				returnVal = fetchThenCache(e.request)
 				// if we have a cached value, then return with that before the fetchResponse
 				// returns
@@ -115,24 +122,7 @@ self.addEventListener('fetch', (e) => {
 					console.log('[ServiceWorker] Found it in Cache')
 					returnVal = cacheResponse
 				}
-				console.log('VOLATILE', returnVal, 'SKIPPED:', forceUpdate)
 				return returnVal
-			})
-		)
-	}
-
-	if (isCacheable) {
-		return e.respondWith(
-			caches.match(e.request.url).then(function(cacheResponse) {
-				// Found it in the cache
-				if (cacheResponse) {
-					console.log('[ServiceWorker] Found it in Cache')
-					return cacheResponse
-				// Not in the cache
-				} else {
-					console.log('[ServiceWorker] Not in Cache')
-					return fetchThenCache(e.request)
-				}
 			})
 		)
 	}

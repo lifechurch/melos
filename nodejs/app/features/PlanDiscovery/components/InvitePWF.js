@@ -211,7 +211,7 @@ class InvitePWF extends Component {
 														width='38px'
 														borderRadius='38'
 														duplicate={15}
-														lineSpacing='15px'
+														lineSpacing='16px'
 														textHeight='10px'
 														widthRange={[30, 60]}
 													/>

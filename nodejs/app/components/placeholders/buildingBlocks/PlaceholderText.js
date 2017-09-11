@@ -66,9 +66,7 @@ function PlaceholderText(props) {
 
 	return (
 		<div
-			className={[
-				'placeholder-text',
-			].join(' ')}
+			className='placeholder-text'
 			style={{ height, background, width: '100%' }}
 		>
 			{ placeholder }
