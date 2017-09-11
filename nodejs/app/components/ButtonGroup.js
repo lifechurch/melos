@@ -17,11 +17,14 @@ function ButtonGroup({ className, buttonWidth, children }) {
 }
 
 ButtonGroup.propTypes = {
-
+	className: PropTypes.string,
+	buttonWidth: PropTypes.number,
+	children: PropTypes.node.isRequired
 }
 
 ButtonGroup.defaultProps = {
-
+	className: '',
+	buttonWidth: null
 }
 
 export default ButtonGroup
