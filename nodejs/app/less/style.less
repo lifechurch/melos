@@ -2354,11 +2354,12 @@ html[dir="rtl"] {
 @media @small-only {
 	html, body {
 		height: 100%;
-		/* MM
+		-webkit-overflow-scrolling: touch;
+	}
+
+	html {
 		overflow: scroll;
 		overflow-x: hidden;
-		*/
-		-webkit-overflow-scrolling: touch;
 	}
 
 	// center all the modals horizontally when small or medium viewport
