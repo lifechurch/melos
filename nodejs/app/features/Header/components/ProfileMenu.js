@@ -20,7 +20,7 @@ function ProfileMenu({ username, firstName, lastName, avatarUrl, serverLanguageT
 
 				{username &&
 					<div target="_self" className="yv-profile-avatar-name">
-						<Avatar height={60} width={60} src={avatarUrl} link={buildUserLink(null, username, serverLanguageTag)} />
+						<Avatar placeholderText={firstName[0].toUpperCase()} height={60} width={60} src={avatarUrl} link={buildUserLink(null, username, serverLanguageTag)} />
 						<div className="yv-profile-avatar-content-name">
 							<div className="yv-profile-top-avatar-content">{topAvatarContent}</div>
 							<a target="_self" href={buildUserLink(null, username, serverLanguageTag)} className="yv-profile-name">{firstName} {lastName}</a>

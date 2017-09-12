@@ -33,6 +33,8 @@ class Header extends Component {
 		super(props)
 		this.didScroll = false
 		this.state = {
+			state: 'fixed',
+			lastScrollTop: 0,
 			isLoggedIn: false,
 			userId: null,
 			ready: false,
@@ -44,6 +46,20 @@ class Header extends Component {
 
 	componentDidMount() {
 		const { dispatch, loggedInUser } = this.props
+
+		console.log('ah')
+		window.addEventListener('scroll', () => {
+			console.log('oooh')
+			this.didScroll = true
+		})
+
+		setInterval(() => {
+			if (this.didScroll) {
+				this.didScroll = false
+				this.handleScroll()
+			}
+		}, 250)
+
 		if (typeof loggedInUser === 'object' && 'userid' in loggedInUser) {
 			const userId = loggedInUser.userid
 			this.setState({ isLoggedIn: true, userId })
@@ -113,6 +129,30 @@ class Header extends Component {
 			screenSize = 2 // 'large'
 		}
 		this.setState({ screenSize })
+	}
+
+	handleScroll = () => {
+		const { lastScrollTop } = this.state
+		console.log('Header Scroll', window.pageYOffset, document.documentElement.scrollTop, window.innerHeight, document.body.scrollHeight)
+		const scrollTop = (window.pageYOffset || document.documentElement.scrollTop)
+		const atBottom = ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.scrollHeight - 105)
+		let state
+		if (atBottom) {
+			state = 'fixed'
+		} else if (lastScrollTop < scrollTop) {
+			// scroll down
+			state = 'hidden'
+		} else {
+			// scroll up
+			state = 'fixed'
+		}
+
+		this.setState(() => {
+			return {
+				state,
+				lastScrollTop: scrollTop
+			}
+		})
 	}
 
 	render() {

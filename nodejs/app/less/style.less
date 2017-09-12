@@ -1779,7 +1779,9 @@ ul.language-selector li {
 	body {
 	  height: 100%;
 	  width: 100%;
-	  overflow: auto;
+		/* MM
+		overflow: auto;
+		*/
 	}
 }
 
@@ -2352,8 +2354,10 @@ html[dir="rtl"] {
 @media @small-only {
 	html, body {
 		height: 100%;
+		/* MM
 		overflow: scroll;
 		overflow-x: hidden;
+		*/
 		-webkit-overflow-scrolling: touch;
 	}
 
