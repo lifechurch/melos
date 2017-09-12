@@ -77,6 +77,18 @@ class Footer extends Component {
 				})
 			})
 		}
+
+		// serviceWorker stuff for now..
+		if ('serviceWorker' in navigator) {
+			// serviceWorker caching
+			navigator.serviceWorker
+				.register('./serviceWorker.js', { scope: '/' })
+				.then((reg) => {
+					console.log('Service Worker Registered', reg)
+				})
+		} else {
+			console.log('Browser doesn\'t support service worker.')
+		}
 	}
 
 	handleLangClick = () => {

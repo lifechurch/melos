@@ -2,14 +2,14 @@ const version = 1
 const cacheName = `youversion-v${version}`
 
 function fetchThenCache(request) {
-	return fetch(request).then(function(fetchResponse) {
+	return fetch(request).then((fetchResponse) => {
 		console.log('[ServiceWorker] Fetched from API', fetchResponse)
 		// don't cache errors
 		if (!(fetchResponse && fetchResponse.status === 200)) {
 			console.log('[ServiceWorker] Not 200, no cache')
 			return fetchResponse
 		}
-		return caches.open(cacheName).then(function(cache) {
+		return caches.open(cacheName).then((cache) => {
 			cache.put(request.url, fetchResponse.clone())
 			console.log('[ServiceWorker] Fetched and Cached Data', request.url)
 			return fetchResponse
@@ -17,14 +17,14 @@ function fetchThenCache(request) {
 	})
 }
 
-async function deleteCacheEntriesMatching(cacheName, matchFunc) {
-  const cache = await caches.open(cacheName)
-  const cachedRequests = await cache.keys()
-  const requestsToDelete = cachedRequests
+async function deleteCacheEntriesMatching(name, matchFunc) {
+	const cache = await caches.open(name)
+	const cachedRequests = await cache.keys()
+	const requestsToDelete = cachedRequests
 		.filter((request) => {
 			return matchFunc(request.url)
 		})
-  return Promise.all(
+	return Promise.all(
 		requestsToDelete.map((request) => {
 			return cache.delete(request.url)
 		})
@@ -36,20 +36,21 @@ async function deleteCacheEntriesMatching(cacheName, matchFunc) {
 // SERVICE WORKER METHODS --------------------------------------------
 
 // INSTALL
-self.addEventListener('install', function() {
+self.addEventListener('install', () => {
 	console.log('[ServiceWorker] Install')
 	// what kind of assets do we want to cache here?
 })
 
 // ACTIVATE
-self.addEventListener('activate', function(e) {
+self.addEventListener('activate', (e) => {
 	// remove all caches that don't match the current version
 	e.waitUntil(
-		caches.keys().then(function(keyList) {
-			return Promise.all(keyList.map(function(key) {
+		caches.keys().then((keyList) => {
+			return Promise.all(keyList.map((key) => {
 				if (cacheName.indexOf(key) === -1) {
 					return caches.delete(key)
 				}
+				return null
 			}))
 		})
 	)
@@ -113,9 +114,9 @@ self.addEventListener('fetch', (e) => {
 		&& e.request.method === 'GET'
 	if (isCacheable) {
 		return e.respondWith(
-			caches.match(e.request.url).then(function(cacheResponse) {
+			caches.match(e.request.url).then((cacheResponse) => {
 				// first fetch the new data (and also cache it)
-				returnVal = fetchThenCache(e.request)
+				let returnVal = fetchThenCache(e.request)
 				// if we have a cached value, then return with that before the fetchResponse
 				// returns
 				if (cacheResponse) {
