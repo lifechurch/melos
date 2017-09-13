@@ -47,7 +47,6 @@ class Header extends Component {
 	componentDidMount() {
 		const { dispatch, loggedInUser } = this.props
 
-		console.log('ah')
 		window.addEventListener('scroll', () => {
 			console.log('oooh')
 			this.didScroll = true

@@ -13,26 +13,14 @@
 }
 // render the dropshadow and transition on opacity for hardware accelerated
 // transition performance
-.react-header::after {
-	position: absolute;
-	left: 0;
-	min-height: 20px;
- 	width: 100%;
-	content: '';
-	z-index: -1;
-	opacity: 0;
-	border-bottom: solid 1px #DDD;
-  -webkit-transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.react-header.fixed, .react-header.fixed::after {
+.react-header.fixed {
 	position: absolute !important;
 	// the rails css tries to set .fixed class to bottom 0
 	bottom: initial;
 }
 
 .show-fixed {
-	.react-header.fixed, .react-header.fixed::after {
+	.react-header.fixed {
 		position: fixed !important;
 		@media @small-only {
 			top: 0px;
@@ -40,10 +28,6 @@
 		@media @medium-up {
 			top: 70px;
 		}
-	}
-
-	.react-header::after {
-		opacity: 1 !important;
 	}
 }
 
@@ -55,7 +39,7 @@
 }
 
 @media @large-up {
-	.react-header, .react-header::after {
+	.react-header {
 		top: 70px;
 	}
 	.waypoint {
@@ -63,7 +47,7 @@
 	}
 }
 @media @medium-only {
-	.react-header, .react-header::after {
+	.react-header {
 		top: 70px;
 	}
 	.waypoint {
@@ -73,7 +57,7 @@
 
 }
 @media @small-only {
-	.react-header, .react-header::after {
+	.react-header {
 		top: 70px;
 		padding-left: 5px;
 	}

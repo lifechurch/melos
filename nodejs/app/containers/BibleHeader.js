@@ -190,7 +190,7 @@ class BibleHeader extends Component {
 			// the modal is the absolute positioned element that shows the dropdowns
 			const modalPos = this.viewportUtils && this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
 			// the header on mobile becomes fixed at the bottom, so we need the mobile to fill until that
-			const footerModal = this.viewportUtils && this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
+			const headerModal = this.viewportUtils && this.viewportUtils.getElement(document.getElementById('react-app-Header'))
 
 			// how much offset is there from modalPos.top and bookList.top?
 			// we need to bring that into the calculations so we don't set the height too high for the viewport
@@ -212,16 +212,16 @@ class BibleHeader extends Component {
 				mobileStyle: `
 					@media only screen and (max-width: 37.438em) {
 						.book-list, .chapter-list {
-							max-height: ${viewport.height - (modalPos.top + bookOffset + footerModal.height)}px !important;
+							max-height: ${viewport.height - (modalPos.top + bookOffset + headerModal.height)}px !important;
 						}
 						.book-container, .language-container, .version-container {
 							width: ${viewport.width}px !important;
 						}
 						.language-list {
-							max-height: ${viewport.height - (modalPos.top + bookOffset + 40 + footerModal.height)}px !important;
+							max-height: ${viewport.height - (modalPos.top + bookOffset + 40 + headerModal.height)}px !important;
 						}
 						.version-list {
-							max-height: ${viewport.height - (modalPos.top + versionOffset + footerModal.height)}px !important;
+							max-height: ${viewport.height - (modalPos.top + versionOffset + headerModal.height)}px !important;
 						}
 					}
 				`
