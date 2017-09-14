@@ -26,7 +26,7 @@ class Modal extends Component {
 	}
 
 	render() {
-		const { customClass, heading, showBackground, children } = this.props
+		const { customClass, heading, showBackground, style, children } = this.props
 		const { show } = this.state
 
 		return (
@@ -35,7 +35,7 @@ class Modal extends Component {
 					showBackground &&
 					<div className={`yv-modal-background ${show ? '' : 'yv-hide-modal'}`} />
 				}
-				<div className={`yv-modal ${show ? '' : 'yv-hide-modal'}` }>
+				<div className={`yv-modal ${show ? '' : 'yv-hide-modal'}` } style={style}>
 					<div className={customClass}>
 						<ClickTarget handleOutsideClick={show && this.handleClose}>
 							<div className='modal-heading'>
@@ -61,6 +61,7 @@ class Modal extends Component {
 Modal.propTypes = {
 	customClass: PropTypes.string,
 	showBackground: PropTypes.bool,
+	style: PropTypes.object,
 	heading: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	children: PropTypes.node,
 	handleCloseCallback: PropTypes.func,
@@ -71,6 +72,7 @@ Modal.defaultProps = {
 	showBackground: true,
 	customClass: '',
 	heading: null,
+	style: null,
 	handleCloseCallback: null,
 }
 

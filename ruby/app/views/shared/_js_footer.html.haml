@@ -5,6 +5,8 @@
 -#  = javascript_include_tag "https://jira.lifechurch.tv/s/b17eb5e5f8f998659004f0ac03143e6e-T/en_US1dmgn3/71006/01b32b66f1a9832636b5f267a1988181/2.0.11/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=c48f3ab5"
 
 -if (true) #controller_name != 'subscriptions' || action_name == 'show' || action_name == 'update' || action_name == 'mark_complete')
+  -# firebase sdk for server push
+  %script{:type => "text/javascript", :src  => "https://www.gstatic.com/firebasejs/4.3.1/firebase.js"}
   :javascript
     if($('#choose_language').length) {
       var language_menu   = new LanguageMenu("#choose_language");
@@ -22,6 +24,17 @@
       services_expanded : '2tag,a97abi,adifni,amenme,aim,aolmail,azadegi,baidu,blogger,buffer,delicious,digg,evernote,fabulously40,facebook,gg,gmail,govn,googleplus,hootsuite,hotmail,iwiw,ketnooi,linkedin,mymailru,live,myspace,nujij,oyyla,pinterest_share,qzone,reddit,sinaweibo,stumbleupon,tumblr,twitter,viadeo,vk,werkenntwen,whatsapp,wordpress,yahoomail'
     }
     addthis_config.data_track_clickback = false;
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAcHq_2VULF9ab8JKAPD-nBpOwlqlAjI5w",
+      authDomain: "youversion-base.firebaseapp.com",
+      databaseURL: "https://youversion-base.firebaseio.com",
+      projectId: "youversion-base",
+      storageBucket: "youversion-base.appspot.com",
+      messagingSenderId: "201895780642"
+    };
+    firebase.initializeApp(config);
+
     /*
     (function() {
         var _fbq = window._fbq || (window._fbq = []);

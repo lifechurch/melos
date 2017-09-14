@@ -19,6 +19,7 @@ import XMark from '../../../components/XMark'
 import { localizedLink } from '../../../lib/routeUtils'
 import localOnceDaily from '../../../lib/localOnceDaily'
 import LangSelector from './LangSelector'
+import NotificationsPermissionPrompt from '../../../widgets/NotificationsPermissionPrompt'
 
 class Footer extends Component {
 	constructor(props) {
@@ -76,18 +77,6 @@ class Footer extends Component {
 					}
 				})
 			})
-		}
-
-		// serviceWorker stuff for now..
-		if ('serviceWorker' in navigator) {
-			// serviceWorker caching
-			navigator.serviceWorker
-				.register('./serviceWorker.js', { scope: '/' })
-				.then((reg) => {
-					console.log('Service Worker Registered', reg)
-				})
-		} else {
-			console.log('Browser doesn\'t support service worker.')
 		}
 	}
 
@@ -229,6 +218,7 @@ class Footer extends Component {
 							<LangSelector {...this.props} />
 						</DropdownTransition>
 					</div>
+					<NotificationsPermissionPrompt />
 				</div>
 			</div>
 		)

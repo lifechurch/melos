@@ -27,7 +27,6 @@ import ProgressBar from '../components/ProgressBar'
 import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'
 import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 
-
 class SubscriptionList extends Component {
 	constructor(props) {
 		super(props)

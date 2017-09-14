@@ -126,6 +126,7 @@ function inPathNotFirst(segment, path) {
     return segments.indexOf(segment) > 0;
 }
 
+var firebaseMessaging = false
 function init() {
     if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
@@ -137,6 +138,52 @@ function init() {
         gapi.load('auth2', function () {
             gapi.auth2.init();
         })
+    }
+
+    if ('serviceWorker' in navigator) {
+      // serviceWorker caching
+      navigator.serviceWorker
+        .register('./serviceWorker.js', { scope: '/' })
+        .then((reg) => {
+          console.log('Service Worker Registered', reg)
+					// Retrieve Firebase Messaging object.
+					// firebaseMessaging = firebase.messaging().useServiceWorker(reg)
+					firebaseMessaging = firebase.messaging()
+					firebaseMessaging.useServiceWorker(reg)
+
+					/**
+					 * token refresh
+					 *
+					 * Callback fired if Instance ID token is updated.
+					 */
+					firebaseMessaging.onTokenRefresh(() => {
+						firebaseMessaging.getToken()
+							.then((refreshedToken) => {
+								console.log('Token refreshed.')
+								// Indicate that the new Instance ID token has not yet been sent to the
+								// app server.
+								setTokenSentToServer(false)
+								// Send Instance ID token to app server.
+								sendTokenToServer(refreshedToken)
+							})
+							.catch((err) => {
+								console.log('Unable to retrieve refreshed token ', err)
+							})
+					})
+
+					/**
+					 *  Handle incoming messages. Called when:
+							  - a message is received while the app has focus
+							  - the user clicks on an app notification created by a sevice worker
+							    `firebaseMessaging.setBackgroundMessageHandler` handler.
+					 */
+					firebaseMessaging.onMessage((payload) => {
+						console.log('Message received. ', payload)
+					})
+
+      })
+    } else {
+      console.log('Browser doesn\'t support service worker.')
     }
 }
 

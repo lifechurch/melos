@@ -15,6 +15,7 @@ import defaultState from './defaultState'
 import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
+import NotificationsPermissionPrompt from '../../widgets/NotificationsPermissionPrompt'
 
 import '../../less/style.less'
 
@@ -49,7 +50,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, browserHistory, logger)
+export const store = configureStore(initialState, browserHistory, logger)
 const history = syncHistoryWithStore(browserHistory, store)
 
 addLocaleData(window.__LOCALE__.data)

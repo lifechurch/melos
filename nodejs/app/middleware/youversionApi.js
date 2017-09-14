@@ -14,7 +14,8 @@ const endpoints = [
 	'audio-bible',
 	'friends',
 	'notifications',
-	'streaks'
+	'streaks',
+	'messaging'
 ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]

@@ -136,3 +136,26 @@ self.addEventListener('fetch', (e) => {
 		})
 	)
 })
+
+
+// FIREBASE Messaging ----------------------------------------------------------
+
+// Give the service worker access to Firebase Messaging.
+importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js')
+importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js')
+
+// Initialize the Firebase app in the service worker by passing in the
+// messagingSenderId.
+firebase.initializeApp({
+  messagingSenderId: "201895780642"
+})
+
+// Retrieve an instance of Firebase Messaging so that it can handle background
+// messages.
+const firebaseMessaging = firebase.messaging()
+
+firebaseMessaging.setBackgroundMessageHandler((payload) => {
+	const { notification } = payload
+  console.log('[ServiceWorker] Received background message ', payload);
+  return self.registration.showNotification(notification.title, notification)
+})

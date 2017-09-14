@@ -43,9 +43,6 @@ const clientConfig = {
 		Passage: './app/standalone/Passage/main.js',
 		Footer: './app/standalone/Footer/main.js',
 		Unsubscribe: './app/standalone/Unsubscribe/main.js',
-
-		// ServiceWorker
-		ServiceWorker: './serviceWorker.js'
 	},
 
 	output: {
