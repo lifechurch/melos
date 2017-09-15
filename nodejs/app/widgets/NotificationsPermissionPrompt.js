@@ -5,12 +5,12 @@ import messagingAction from '@youversion/api-redux/lib/endpoints/messaging/actio
 import localStore from '../lib/localStore'
 import Modal from '../components/Modal'
 import ConfirmationDialog from '../components/ConfirmationDialog'
-import YVLogo from '../components/YVLogo'
+import LazyImage from '../components/LazyImage'
 
 
 
 function isTokenSentToServer() {
-	return localStore.get('sentToServer') === 1
+	return parseInt(localStore.get('sentToServer'), 10) === 1
 }
 
 function setTokenSentToServer(sent) {
@@ -56,23 +56,34 @@ class NotificationsPermissionPrompt extends Component {
 	}
 
 	componentDidMount() {
+		// listener for event to open the dialog to ask user for permission
 		this.prompt.addEventListener('notificationsPrompt', this.handleEvent, false)
+		// listener to send off refreshed token from the initial messaging setup
+		// on the rails side
+		this.prompt.addEventListener(
+			'sendTokenToServer',
+			(e) => {
+				this.sendTokenToServer(e.detail)
+			},
+			false
+		)
 	}
 
 	onRequestPermission = () => {
 		console.log('Requesting permission...')
+		this.modal.handleClose()
 		if (firebaseMessaging) {
 			firebaseMessaging.requestPermission().then(() => {
 				console.log('Notification permission granted.')
-				// Get Instance ID token. Initially this makes a network call, once retrieved
-				// subsequent calls to getToken will return from cache.
+					// Get Instance ID token. Initially this makes a network call, once retrieved
+					// subsequent calls to getToken will return from cache.
 				firebaseMessaging.getToken().then((currentToken) => {
 					if (currentToken) {
 						this.sendTokenToServer(currentToken)
 					} else {
-						// Show permission request.
+							// Show permission request.
 						console.log('No Instance ID token available. Request permission to generate one.')
-						// Show permission UI.
+							// Show permission UI.
 						setTokenSentToServer(false)
 					}
 				}).catch((err) => {
@@ -87,7 +98,7 @@ class NotificationsPermissionPrompt extends Component {
 
 	handleEvent = (e) => {
 		const { detail } = e
-		if (detail) {
+		if (!isTokenSentToServer() && detail) {
 			this.setState({ message: detail })
 			this.modal.handleOpen()
 		}
@@ -103,7 +114,7 @@ class NotificationsPermissionPrompt extends Component {
 	sendTokenToServer = (currentToken) => {
 		const { dispatch, auth: { isLoggedIn, userData } } = this.props
 		console.log('sendTokenToServer?', !isTokenSentToServer())
-		if (!isTokenSentToServer()) {
+		if (!isTokenSentToServer() && currentToken) {
 			console.log('Sending token to server...')
 			dispatch(messagingAction({
 				method: 'register',
@@ -136,6 +147,7 @@ class NotificationsPermissionPrompt extends Component {
 	}
 
 	render() {
+		const { serverLanguageTag } = this.props
 		const { message } = this.state
 
 		return (
@@ -150,7 +162,18 @@ class NotificationsPermissionPrompt extends Component {
 						<ConfirmationDialog
 							handleConfirm={this.onRequestPermission}
 							handleCancel={() => { this.modal.handleClose() }}
-							prompt={message}
+							prompt={
+								<div className='flex-wrap horizontal-center'>
+									<LazyImage
+										src={`/assets/icons/bible/58/${serverLanguageTag}.png`}
+										width='48px'
+										height='48px'
+									/>
+									<div style={{ marginTop: '25px' }}>
+										{ message }
+									</div>
+								</div>
+							}
 							confirmPrompt={<FormattedMessage id='sure!' />}
 							cancelPrompt={<FormattedMessage id='no thanks' />}
 						/>
@@ -162,7 +185,9 @@ class NotificationsPermissionPrompt extends Component {
 }
 
 NotificationsPermissionPrompt.propTypes = {
-
+	auth: PropTypes.object.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 NotificationsPermissionPrompt.defaultProps = {
@@ -172,6 +197,7 @@ NotificationsPermissionPrompt.defaultProps = {
 function mapStateToProps(state) {
 	return {
 		auth: state.auth,
+		serverLanguageTag: state.serverLanguageTag,
 	}
 }
 

@@ -160,11 +160,10 @@ function init() {
 						firebaseMessaging.getToken()
 							.then((refreshedToken) => {
 								console.log('Token refreshed.')
-								// Indicate that the new Instance ID token has not yet been sent to the
-								// app server.
-								setTokenSentToServer(false)
-								// Send Instance ID token to app server.
-								sendTokenToServer(refreshedToken)
+								// send token to server using react prompt component
+								document
+									.getElementById('notifications-prompt')
+									.dispatchEvent(new CustomEvent('sendTokenToServer', { detail: refreshedToken }))
 							})
 							.catch((err) => {
 								console.log('Unable to retrieve refreshed token ', err)
