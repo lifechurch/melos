@@ -177,9 +177,31 @@ function init() {
 							    `firebaseMessaging.setBackgroundMessageHandler` handler.
 					 */
 					firebaseMessaging.onMessage((payload) => {
-						console.log('Message received. ', payload)
+						console.log('received message ', payload)
+						const { data } = payload
+						if (data) {
+							const notificationPayload = {
+								'title': 'YouVersion',
+								'body': data.message,
+								'click_action': data.url,
+								'icon': '/apple-touch-icon.png'
+							}
+							console.log(JSON.parse(data.notification))
+							if (!('Notification' in window)) {
+							   console.log('This browser does not support system notifications')
+							} else if (Notification.permission === 'granted') {
+								var notification = new Notification(
+									notificationPayload.title,
+									notificationPayload
+								)
+								notification.onclick = (event) => {
+									event.preventDefault() // prevent the browser from focusing the Notification's tab
+									window.open(data.url, '_blank')
+									notification.close()
+								}
+							}
+						}
 					})
-
       })
     } else {
       console.log('Browser doesn\'t support service worker.')

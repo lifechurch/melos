@@ -153,9 +153,20 @@ firebase.initializeApp({
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
 const firebaseMessaging = firebase.messaging()
-
+// handle message received while app is in the background
 firebaseMessaging.setBackgroundMessageHandler((payload) => {
-	const { notification } = payload
-  console.log('[ServiceWorker] Received background message ', payload);
-  return self.registration.showNotification(notification.title, notification)
+	const { data } = payload
+	console.log('background notification', payload)
+	if (data) {
+		const notificationPayload = {
+			'title': 'YouVersion',
+			'body': data.message,
+			'click_action': data.url,
+			'icon': '/apple-touch-icon.png'
+		}
+		
+		return self
+			.registration
+			.showNotification(notificationPayload.title, notificationPayload)
+	}
 })

@@ -54,6 +54,14 @@ class TogetherInvitationActions extends Component {
 				}
 			})
 		}
+
+		// reset cached subscription list
+		if ('serviceWorker' in navigator) {
+			dispatch(plansAPI.actions.subscriptions.get({}, {
+				auth: true,
+				forceUpdateSWCache: true,
+			}))
+		}
 	}
 
 	handleAccept = () => {

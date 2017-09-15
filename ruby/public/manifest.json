@@ -28,7 +28,7 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "index.html?utm_source=homescreen",
+  "start_url": "/bible?utm_source=homescreen",
   "background_color": "white",
   "display": "standalone",
   "gcm_sender_id": "103953800507"

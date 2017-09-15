@@ -278,6 +278,7 @@ class SubscriptionList extends Component {
 							<TogetherInvitationActions
 								together_id={id}
 								handleActionComplete={() => {
+									this.getInvitations()
 									this.getSubs({ page: 1 })
 								}}
 							/>
