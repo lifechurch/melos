@@ -4,8 +4,9 @@ class LazyImage extends Component {
 
 	constructor(props) {
 		super(props)
+		console.log('IMG', !!(this.img && this.img.complete))
 		this.state = {
-			loaded: false
+			loaded: !!(this.img && this.img.complete)
 		}
 	}
 
@@ -32,13 +33,14 @@ class LazyImage extends Component {
 			>
 				{ placeholder }
 				<img
+					ref={(img) => { this.img = img }}
+					onLoad={() => { this.setState({ loaded: true }) }}
 					alt={alt}
 					src={src}
 					width={width}
 					height={height}
 					crossOrigin={crossOrigin}
 					className={`large ${loaded ? 'loaded' : ''} ${imgClass}`}
-					onLoad={() => { this.setState(() => { return { loaded: true } }) }}
 				/>
 			</div>
 		)

@@ -8,6 +8,7 @@ import getCurrentDT from '../../../lib/getCurrentDT'
 import Menu from '../../../components/Menu'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Modal from '../../../components/Modal'
+import { promptUserForNotificationsPermission } from '../../../widgets/NotificationsPermissionPrompt'
 
 class SubscribeUserDialog extends Component {
 	constructor(props) {
@@ -47,7 +48,7 @@ class SubscribeUserDialog extends Component {
 			default:
 				break
 		}
-
+		promptUserForNotificationsPermission('dude! wanna get notified when rad things take place?')
 	}
 
 	render() {

@@ -165,7 +165,7 @@ function init() {
 									.getElementById('notifications-prompt')
 									.dispatchEvent(new CustomEvent('sendTokenToServer', { detail: refreshedToken }))
 							})
-							.catch((err) => {
+							.catch(function(err) {
 								console.log('Unable to retrieve refreshed token ', err)
 							})
 					})
