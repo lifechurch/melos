@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react'
+import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import messagingAction from '@youversion/api-redux/lib/endpoints/messaging/action'
 import localStore from '../lib/localStore'
 import Modal from '../components/Modal'
+import ConfirmationDialog from '../components/ConfirmationDialog'
+import YVLogo from '../components/YVLogo'
 
 
 
@@ -48,7 +51,7 @@ class NotificationsPermissionPrompt extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			message: ''
+			message: <FormattedMessage id='notifications' />
 		}
 	}
 
@@ -56,15 +59,7 @@ class NotificationsPermissionPrompt extends Component {
 		this.prompt.addEventListener('notificationsPrompt', this.handleEvent, false)
 	}
 
-	handleEvent = (e) => {
-		const { detail } = e
-		if (detail) {
-			this.setState({ message: detail })
-			this.modal.handleOpen()
-		}
-	}
-
-	handleRequestPermission = () => {
+	onRequestPermission = () => {
 		console.log('Requesting permission...')
 		if (firebaseMessaging) {
 			firebaseMessaging.requestPermission().then(() => {
@@ -90,6 +85,14 @@ class NotificationsPermissionPrompt extends Component {
 		}
 	}
 
+	handleEvent = (e) => {
+		const { detail } = e
+		if (detail) {
+			this.setState({ message: detail })
+			this.modal.handleOpen()
+		}
+	}
+
 	/**
 	 *  Send the Instance ID token your application server, so that it can:
 			  - send messages back to this app
@@ -112,8 +115,9 @@ class NotificationsPermissionPrompt extends Component {
 			}))
 			setTokenSentToServer(true)
 		} else {
-			console.log('Token already sent to server so won\'t send it again ' +
-	           'unless it changes')
+			console.log(
+				'Token already sent to server so won\'t send it again unless it changes'
+			)
 		}
 	}
 
@@ -139,10 +143,18 @@ class NotificationsPermissionPrompt extends Component {
 				<Modal
 					ref={(mod) => { this.modal = mod }}
 					showBackground={false}
+					customClass='yv-drop-shadow white'
 					style={{ justifyContent: 'flex-start', alignItems: 'flex-start' }}
 				>
-					{ message }
-					<button onClick={this.handleRequestPermission}>REQUEST PERMISSION</button>
+					<div style={{ width: '215px' }}>
+						<ConfirmationDialog
+							handleConfirm={this.onRequestPermission}
+							handleCancel={() => { this.modal.handleClose() }}
+							prompt={message}
+							confirmPrompt={<FormattedMessage id='sure!' />}
+							cancelPrompt={<FormattedMessage id='no thanks' />}
+						/>
+					</div>
 				</Modal>
 			</div>
 		)

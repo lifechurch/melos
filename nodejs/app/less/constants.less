@@ -80,9 +80,61 @@
 // font **********************************************************************
 @small-font-size: 0.85714rem;
 
+//  **************************************************************************
+@default-radius: 5px;
+@default-padding: 5px;
+@thin-grey-border: 1px solid @background-grey;
+@list-font-size: 15px;
 
 // mixins ********************************************************************
 
+// links ----------------------------------
+.yv-green-link {
+	color: @green;
+	cursor: pointer;
+}
+.yv-green-link:hover, .yv-green-link:active {
+	color: darkgreen;
+}
+.yv-gray-link {
+	color: @font-grey;
+	cursor: pointer;
+}
+.yv-gray-link:hover, .yv-green-link:active {
+	color: @dark_grey;
+}
+.disabled-link, .disabled-link:hover {
+	color: @color-muted;
+	cursor: not-allowed;
+}
+
+// flex ------------------------------------
+.yv-flex-center-all {
+	justify-content: center;
+	align-items: center;
+}
+.flex {
+	display: flex;
+	flex: 1;
+}
+.flex-end {
+	display: flex;
+	justify-content: flex-end;
+}
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.space-between {
+	display: flex;
+	justify-content: space-between;
+}
+.row-reverse {
+	display: inline-flex;
+	flex-direction: row-reverse;
+}
+
+// text -----------------------------------
 .small-font {
 	font-size: @small-font-size;
 }
@@ -94,6 +146,24 @@
 	border: 1px solid @font-grey;
 	color: @font-grey;
 }
+.yv-text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.font-badge {
+	padding: 1px 5px;
+	border-radius: 3px;
+	background-color: @font-grey;
+	color: white;
+}
+
+
+
+
+
+
+
 .yv-drop-shadow {
   box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
   -moz-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
@@ -133,14 +203,7 @@
 	color: white;
 	cursor: pointer;
 }
-.yv-green-link {
-	color: @green;
-	cursor: pointer;
-}
-.yv-gray-link {
-	color: @font-grey;
-	cursor: pointer;
-}
+
 .yv-list {
 	margin: 0;
 
@@ -148,41 +211,14 @@
 		.no-bullets;
 	}
 }
-.disabled-link, .disabled-link:hover {
-	color: @color-muted;
-	cursor: not-allowed;
-}
-.yv-flex-center-all {
-	justify-content: center;
-	align-items: center;
-}
-.flex {
-	display: flex;
-	flex: 1;
-}
-.flex-end {
-	display: flex;
-	justify-content: flex-end;
-}
-.flex-wrap {
-	display: flex;
-	flex-wrap: wrap;
-}
-.space-between {
-	display: flex;
-	justify-content: space-between;
-}
+
 .margin-left-auto {
 	margin-left: auto;
 }
 .margin-right-auto {
 	margin-right: auto;
 }
-.yv-text-ellipsis {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
+
 .click-for-small {
 	@media @large-up {
 		pointer-events: none;
@@ -194,10 +230,7 @@
 .gray-background {
 	background-color: @light-grey;
 }
-.row-reverse {
-	display: inline-flex;
-	flex-direction: row-reverse;
-}
+
 .picker-error {
 	background-color: @error-grey;
 	color: white;
@@ -220,12 +253,7 @@
 .centered {
 	margin: auto;
 }
-.font-badge {
-	padding: 1px 5px;
-	border-radius: 3px;
-	background-color: @font-grey;
-	color: white;
-}
+
 .button-actions {
 	margin-top: 10px;
 	font-size: 14px;
@@ -256,6 +284,10 @@
 	right: 0;
 }
 
+
+
+
+// animations ---------------------------------------------------
 .dropdown-transform {
 	/* only transition on transform properties which are hardware accelerated = way better performances */
 	-webkit-transition:-webkit-transform .7s cubic-bezier(0.42,1,.16,.93);
@@ -378,9 +410,3 @@
 	border: @thin-grey-border;
 	border-radius: 5px;
 }
-
-//  **************************************************************************
-@default-radius: 5px;
-@default-padding: 5px;
-@thin-grey-border: 1px solid @background-grey;
-@list-font-size: 15px;
