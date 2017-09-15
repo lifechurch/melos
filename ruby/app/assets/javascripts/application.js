@@ -144,7 +144,7 @@ function init() {
       // serviceWorker caching
       navigator.serviceWorker
         .register('./serviceWorker.js', { scope: '/' })
-        .then((reg) => {
+        .then(function(reg) {
           console.log('Service Worker Registered', reg)
 					// Retrieve Firebase Messaging object.
 					// firebaseMessaging = firebase.messaging().useServiceWorker(reg)
@@ -156,9 +156,9 @@ function init() {
 					 *
 					 * Callback fired if Instance ID token is updated.
 					 */
-					firebaseMessaging.onTokenRefresh(() => {
+					firebaseMessaging.onTokenRefresh(function() {
 						firebaseMessaging.getToken()
-							.then((refreshedToken) => {
+							.then(function(refreshedToken) {
 								console.log('Token refreshed.')
 								// send token to server using react prompt component
 								document
@@ -176,7 +176,7 @@ function init() {
 							  - the user clicks on an app notification created by a sevice worker
 							    `firebaseMessaging.setBackgroundMessageHandler` handler.
 					 */
-					firebaseMessaging.onMessage((payload) => {
+					firebaseMessaging.onMessage(function(payload) {
 						console.log('received message ', payload)
 						const { data } = payload
 						if (data) {
@@ -186,7 +186,7 @@ function init() {
 								'click_action': data.url,
 								'icon': '/apple-touch-icon.png'
 							}
-							console.log(JSON.parse(data.notification))
+
 							if (!('Notification' in window)) {
 							   console.log('This browser does not support system notifications')
 							} else if (Notification.permission === 'granted') {
@@ -194,7 +194,7 @@ function init() {
 									notificationPayload.title,
 									notificationPayload
 								)
-								notification.onclick = (event) => {
+								notification.onclick = function(event) {
 									event.preventDefault() // prevent the browser from focusing the Notification's tab
 									window.open(data.url, '_blank')
 									notification.close()
