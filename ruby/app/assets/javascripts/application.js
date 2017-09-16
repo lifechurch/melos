@@ -178,9 +178,9 @@ function init() {
 					 */
 					firebaseMessaging.onMessage(function(payload) {
 						console.log('received message ', payload)
-						const { data } = payload
+						var data = payload.data
 						if (data) {
-							const notificationPayload = {
+							var notificationPayload = {
 								'title': 'YouVersion',
 								'body': data.message,
 								'click_action': data.url,
