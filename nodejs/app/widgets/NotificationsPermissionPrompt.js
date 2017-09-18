@@ -6,7 +6,7 @@ import localStore from '../lib/localStore'
 import Modal from '../components/Modal'
 import ConfirmationDialog from '../components/ConfirmationDialog'
 import LazyImage from '../components/LazyImage'
-
+import ViewportUtils from '../lib/viewportUtils'
 
 
 function isTokenSentToServer() {
@@ -67,6 +67,7 @@ class NotificationsPermissionPrompt extends Component {
 			},
 			false
 		)
+		this.viewport = new ViewportUtils()
 	}
 
 	onRequestPermission = () => {
@@ -98,8 +99,15 @@ class NotificationsPermissionPrompt extends Component {
 
 	handleEvent = (e) => {
 		const { detail } = e
-		if (!isTokenSentToServer() && detail) {
-			this.setState({ message: detail })
+		console.log('handle openprompt event', !isTokenSentToServer(), 'serviceWorker' in navigator, firebaseMessaging)
+		if (
+			'serviceWorker' in navigator
+			&& !isTokenSentToServer()
+			&& firebaseMessaging
+		) {
+			if (detail) {
+				this.setState({ message: detail })
+			}
 			this.modal.handleOpen()
 		}
 	}
@@ -150,34 +158,50 @@ class NotificationsPermissionPrompt extends Component {
 		const { serverLanguageTag } = this.props
 		const { message } = this.state
 
+		const isMobileScreen = this.viewport
+			&& this.viewport.getViewport()
+			&& this.viewport.getViewport().width <= 599
+		const promptContent = (
+			<div className='confirm-wrapper'>
+				<ConfirmationDialog
+					handleConfirm={this.onRequestPermission}
+					handleCancel={() => { this.modal.handleClose() }}
+					prompt={
+						<div
+							className={`flex-wrap ${isMobileScreen
+								? 'flex-start'
+								: 'horizontal-center'
+							}`}
+						>
+							<LazyImage
+								src={`/assets/icons/bible/58/${serverLanguageTag}.png`}
+								width='48px'
+								height='48px'
+							/>
+							<div className='message'>
+								{ message }
+							</div>
+						</div>
+					}
+					confirmPrompt={<FormattedMessage id='sure!' />}
+					cancelPrompt={<FormattedMessage id='no thanks' />}
+				/>
+			</div>
+		)
+
 		return (
 			<div ref={(prompt) => { this.prompt = prompt }} id='notifications-prompt'>
 				<Modal
 					ref={(mod) => { this.modal = mod }}
 					showBackground={false}
+					closeOnOutsideClick={false}
 					customClass='yv-drop-shadow white'
-					style={{ justifyContent: 'flex-start', alignItems: 'flex-start' }}
+					heading={isMobileScreen && promptContent}
 				>
-					<div style={{ width: '215px' }}>
-						<ConfirmationDialog
-							handleConfirm={this.onRequestPermission}
-							handleCancel={() => { this.modal.handleClose() }}
-							prompt={
-								<div className='flex-wrap horizontal-center'>
-									<LazyImage
-										src={`/assets/icons/bible/58/${serverLanguageTag}.png`}
-										width='48px'
-										height='48px'
-									/>
-									<div style={{ marginTop: '25px' }}>
-										{ message }
-									</div>
-								</div>
-							}
-							confirmPrompt={<FormattedMessage id='sure!' />}
-							cancelPrompt={<FormattedMessage id='no thanks' />}
-						/>
-					</div>
+					{
+						!isMobileScreen
+							&& promptContent
+					}
 				</Modal>
 			</div>
 		)

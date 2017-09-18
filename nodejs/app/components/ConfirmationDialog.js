@@ -13,8 +13,8 @@ function ConfirmationDialog(props) {
 
 	return (
 		<div className='confirmation-dialog horizontal-center flex-wrap'>
-			<div className='horizontal-center flex-wrap' style={{ width: '100%', marginBottom: '25px' }}>
-				<div className='prompt text-center' style={{ width: '100%', marginBottom: '15px' }}>
+			<div className='prompt-wrapper horizontal-center flex-wrap'>
+				<div className='prompt text-center'>
 					{ prompt }
 				</div>
 				{

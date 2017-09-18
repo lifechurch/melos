@@ -185,9 +185,6 @@ class SubscriptionList extends Component {
 					dayString = <PlanStartString start_dt={start_dt} />
 					titleString = <InvitationString together_id={together_id} />
 				}
-				if (isInFuture) {
-					dayString = <PlanStartString start_dt={start_dt} />
-				}
 			} else {
 				let day = moment().diff(moment(start_dt, 'YYYY-MM-DD'), 'days') + 1
 				if (day > plan.total_days) {
@@ -200,7 +197,9 @@ class SubscriptionList extends Component {
 					/>
 				)
 			}
-
+			if (isInFuture) {
+				dayString = <PlanStartString start_dt={start_dt} />
+			}
 
 			link = localizedLink(Routes.plans({}))
 			// if this is a subscription, link to it

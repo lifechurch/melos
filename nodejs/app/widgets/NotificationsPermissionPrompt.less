@@ -1,11 +1,61 @@
 #notifications-prompt {
 	.modal-heading {
-		padding: 15px 10px 0 0;
+		padding: 15px 10px 0 15px;
 		polygon {
 			fill: @font-grey;
 		}
 	}
-	.modal-content {
-		padding: 15px 40px 40px 40px;
+	@media @medium-up {
+		.yv-modal {
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			.confirm-wrapper {
+				width: 215px;
+
+				.message {
+					margin-top: 25px;
+				}
+			}
+			.modal-content {
+				padding: 15px 40px 40px 40px;
+			}
+		}
 	}
+	@media @small-only {
+		.yv-modal {
+			justify-content: center;
+			align-items: flex-end;
+
+			.confirm-wrapper {
+				padding: 0 15px;
+			}
+			.content-wrapper {
+				width: 100%;
+			}
+			.actions {
+				justify-content: flex-end;
+				margin-bottom: 20px;
+			}
+			.modal-content {
+				padding: 0;
+			}
+			.prompt-wrapper {
+				margin: 0;
+				.placeholder {
+					width: 32px !important;
+					height: 32px !important;
+				}
+				.prompt {
+					margin: 0;
+				}
+				.message {
+					.vertical-center;
+					margin-left: 15px;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
 }

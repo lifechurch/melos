@@ -196,7 +196,32 @@ function init() {
 								)
 								notification.onclick = function(event) {
 									event.preventDefault() // prevent the browser from focusing the Notification's tab
-									window.open(data.url, '_blank')
+									var urlToOpen = data.url
+									// let's avoid opening a new window if the app is already running
+									// in one of the users tabs
+									// get all tabs that match our domain
+									var promiseChain = clients.matchAll({
+										type: 'window',
+										includeUncontrolled: true
+									}).then(function(windowClients) {
+										var matchingClient = null
+										// find any matches between the tab's url and the notification
+										// url!
+										for (let i = 0; i < windowClients.length; i++) {
+											const windowClient = windowClients[i]
+											if (windowClient.url === urlToOpen) {
+												matchingClient = windowClient
+												break
+											}
+										}
+
+										if (matchingClient) {
+											return matchingClient.focus()
+										} else {
+											return clients.openWindow(urlToOpen)
+										}
+									})
+									event.waitUntil(promiseChain);
 									notification.close()
 								}
 							}
