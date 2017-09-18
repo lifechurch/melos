@@ -14,6 +14,7 @@ import LocalStore from '../../../lib/localStore'
 import ViewportUtils from '../../../lib/viewportUtils'
 import RecentVersions from '../lib/RecentVersions'
 import Header from './header/Header'
+import StickyHeader from '../../../components/StickyHeader'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
@@ -334,7 +335,7 @@ class Bible extends Component {
 			&& bible.version.abbreviation
 		) {
 			this.header = (
-				<Header sticky={true} classes={'reader-header horizontal-center'}>
+				<StickyHeader className={'reader-header horizontal-center'} topOffset={70}>
 					<ChapterPicker
 						{...this.props}
 						chapter={bible.chapter}
@@ -462,7 +463,7 @@ class Bible extends Component {
 							</span>
 						</Link>
 					}
-				</Header>
+				</StickyHeader>
 			)
 		}
 

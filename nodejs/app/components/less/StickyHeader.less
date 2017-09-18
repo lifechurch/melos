@@ -1,0 +1,35 @@
+.yv-sticky-header {
+  .yv-sticky-header-content {
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    position: fixed;
+    transition: transform 0.2s ease-out;
+
+    &.yv-sticky-header-fixed {
+  		transform: translateY(0);
+  	}
+  }
+
+  &.yv-sticky-header-pin-to-top {
+    .yv-sticky-header-content {
+      top: 0;
+
+      &.yv-sticky-header-hidden {
+    		transform: translateY(-100%);
+    	}
+    }
+  }
+
+  &.yv-sticky-header-pin-to-bottom {
+    .yv-sticky-header-content {
+      bottom: 0;
+
+      &.yv-sticky-header-hidden {
+    		transform: translateY(100%);
+    	}
+    }
+  }
+}

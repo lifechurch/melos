@@ -23,6 +23,7 @@
 @import "../features/Header/components/less/Header.less";
 @import "../features/Footer/components/less/Footer.less";
 @import "../features/Footer/components/less/LangSelector.less";
+@import "../features/Footer/components/less/LinkCard.less";
 
 @import "../components/less/Modal.less";
 @import "../components/less/ButtonBar.less";
@@ -35,6 +36,7 @@
 @import "../components/less/stackedContainer.less";
 @import "../components/AsyncCheck/AsyncCheck.less";
 @import "../components/less/SectionedHeading.less";
+@import "../components/less/StickyHeader.less";
 @import "../components/less/Button.less";
 @import "../components/less/ButtonGroup.less";
 @import "../components/less/IconButton.less";
@@ -2351,11 +2353,8 @@ html[dir="rtl"] {
 @media @small-only {
 	html, body {
 		height: 100%;
+		overflowScrolling: touch;
 		-webkit-overflow-scrolling: touch;
-	}
-
-	body {
-		overflow: scroll;
 	}
 
 	// center all the modals horizontally when small or medium viewport

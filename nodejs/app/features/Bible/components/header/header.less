@@ -1,81 +1,41 @@
 
 
-.react-header {
-	position: absolute;
-	z-index: 10;
-	width: 100%;
-	min-height: 20px;
-	margin: auto;
-	display: inline-flex;
-	background-color: white;
-  -webkit-transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-// render the dropshadow and transition on opacity for hardware accelerated
-// transition performance
-.react-header.fixed {
-	position: absolute !important;
-	// the rails css tries to set .fixed class to bottom 0
-	bottom: initial;
-}
-
-.show-fixed {
-	.react-header.fixed {
-		position: fixed !important;
-		@media @small-only {
-			top: 0px;
-		}
-		@media @medium-up {
-			top: 70px;
-		}
-	}
-}
-
-.waypoint {
-	position: absolute;
-	width: 100%;
-	min-height: 20px;
-	z-index: 0;
-}
-
-@media @large-up {
-	.react-header {
-		top: 70px;
-	}
-	.waypoint {
-		top: 0px;
-	}
-}
-@media @medium-only {
-	.react-header {
-		top: 70px;
-	}
-	.waypoint {
-		top: 0px;
-		height: 30px;
-	}
-
-}
-@media @small-only {
-	.react-header {
-		top: 70px;
-		padding-left: 5px;
-	}
-	.waypoint {
-		top: 70px;
-		height: 1px;
-	}
-}
-
-
-
-
-
-
-
-
-
-
+// .react-header {
+// 	position: absolute;
+// 	z-index: 10;
+// 	width: 100%;
+// 	min-height: 20px;
+// 	margin: auto;
+// 	display: inline-flex;
+// 	background-color: white;
+//   -webkit-transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+// 	transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+// 	top: 70px;
+//
+// 	&.fixed {
+// 		position: absolute !important;
+// 		// the rails css tries to set .fixed class to bottom 0
+// 		bottom: initial;
+// 		transform: translateY(0);
+// 	}
+//
+// 	.waypoint {
+// 		position: absolute;
+// 		width: 100%;
+// 		min-height: 20px;
+// 		z-index: 0;
+// 	}
+// }
+//
+// &.show-fixed {
+// 	.react-header {
+// 		&.fixed {
+// 			position: fixed !important;
+// 			border-bottom: solid 1px #ddd;
+// 			transform: translateY(-70px);
+// 		}
+// 	}
+// }
 
 
 // BIBLE HEADER
@@ -91,7 +51,9 @@
 }
 @media @small-only {
 	.reader-settings {
-		display: none;
+		.trigger-button {
+			margin-left: 5px !important;
+		}
 	}
 	.chapter-picker-container {
 		margin-right: 15px;
@@ -121,16 +83,6 @@
 	}
 }
 
-@media @small-only {
-	.reader-header {
-		.audio-popup {
-			width: 25%;
-			display: flex;
-			justify-content: flex-end;
-		}
-	}
-}
-
 .version-picker-container {
 	.picker-label input {
 		min-width: 50px;
@@ -142,24 +94,34 @@
 }
 
 .reader-header {
-	align-items: center;
-	margin: auto;
-	height: 70px;
-	padding: 0 15px;
-}
-
-.reader-header::after {
-  height: 70px;
-}
-
-.reader-header {
-	.trigger-button {
-		margin-left: 15px;
-		width: 36px;
-		height: 36px;
-		display: flex;
+	.yv-sticky-header-content {
 		align-items: center;
 		justify-content: center;
+		background-color: white;
+		margin: auto;
+		height: 70px;
+		padding: 0 15px;
+
+		.trigger-button {
+			margin-left: 15px;
+			width: 36px;
+			height: 36px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.audio-popup {
+			@media @small-only {
+				width: 25%;
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
+
+		&.yv-sticky-header-hidden {
+			border-bottom: solid 1px #ddd;
+		}
 	}
 }
 
