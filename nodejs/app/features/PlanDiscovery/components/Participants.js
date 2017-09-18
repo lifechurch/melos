@@ -70,26 +70,28 @@ function Participants({
 
 	return (
 		<div className='pwf-flow pwf-invite'>
-			<SectionedHeading
-				left={backLink}
-				right={
-					// handleDelete is only passed if auth is host
-					handleDelete &&
-					<a
-						tabIndex={0}
-						className='yv-gray-link'
-						onClick={
-							() => {
-								document.getElementById('share-link').scrollIntoView(false)
+			<div className='large-8 small-11 centered'>
+				<SectionedHeading
+					left={backLink}
+					right={
+						// handleDelete is only passed if auth is host
+						handleDelete &&
+						<a
+							tabIndex={0}
+							className='yv-gray-link'
+							onClick={
+								() => {
+									document.getElementById('share-link').scrollIntoView(false)
+								}
 							}
+						>
+							<FormattedMessage id='invite others' />
+							</a>
 						}
-					>
-						<FormattedMessage id='invite others' />
-					</a>
-				}
-			>
-				<FormattedMessage id='participants' />
-			</SectionedHeading>
+				>
+					<h4><FormattedMessage id='participants' /></h4>
+				</SectionedHeading>
+			</div>
 			<div className='gray-background content'>
 				<div className='columns medium-5 small-12 small-centered white' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
 					<div className='horizontal-center' style={{ height: '250px', marginBottom: '30px' }}>

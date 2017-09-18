@@ -158,7 +158,7 @@ class InvitePWF extends Component {
 		return (
 			<div className='pwf-flow pwf-invite'>
 				<SectionedHeading>
-					<FormattedMessage id='invite friends' />
+					<h4><FormattedMessage id='invite friends' /></h4>
 				</SectionedHeading>
 				<div className='gray-background content' style={{ minHeight: '450px' }}>
 					<div className='columns medium-5 small-12 small-centered '>
@@ -188,7 +188,6 @@ class InvitePWF extends Component {
 										}
 									}}
 									placeholder='Search...'
-									customClass='row-reverse'
 								/>
 								<div style={{ position: 'relative' }}>
 									{ showSearchResults && searchResults }

@@ -62,22 +62,24 @@ class CreatePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-create'>
-				<SectionedHeading
-					left={
-						<Link
-							className='plans vertical-center'
-							to={backPath}
-						>
-							&larr;
-						</Link>
-					}
-				>
-					{
-						isEditingDate
-							? <FormattedMessage id='change date' />
-							: <FormattedMessage id='start plan when' />
-					}
-				</SectionedHeading>
+				<div className='large-8 small-11 centered'>
+					<SectionedHeading
+						left={
+							<Link
+								className='plans vertical-center'
+								to={backPath}
+							>
+									&larr;
+								</Link>
+							}
+					>
+						{
+							isEditingDate
+								? <h4><FormattedMessage id='change date' /></h4>
+								: <h4><FormattedMessage id='start plan when' /></h4>
+						}
+					</SectionedHeading>
+				</div>
 				<div className='gray-background content text-center'>
 					<div className='columns medium-8 small-12 small-centered'>
 						<div className='horizontal-center' style={{ height: '150px', marginBottom: '30px' }}>

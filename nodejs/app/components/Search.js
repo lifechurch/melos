@@ -77,6 +77,16 @@ class Search extends Component {
 		return (
 			<div className={`search vertical-center ${showInput ? 'open' : ''} ${customClass}`}>
 				{
+					showIcon &&
+					<a tabIndex={0} onClick={this.handleClick}>
+						<SearchIcon
+							fill='gray'
+							width={15}
+							height={30}
+						/>
+					</a>
+				}
+				{
 					showInput &&
 					<Input
 						ref={(i) => { this.input = i }}
@@ -90,16 +100,6 @@ class Search extends Component {
 					/>
 				}
 				{
-					showIcon &&
-					<a tabIndex={0} onClick={this.handleClick}>
-						<SearchIcon
-							fill='gray'
-							width={15}
-							height={30}
-						/>
-					</a>
-				}
-				{
 					showClear
 						&& value
 						&& value.length > 0
@@ -110,12 +110,12 @@ class Search extends Component {
 									this.input.clearInput()
 									this.setState({ value: '' })
 								}}
-								style={{ position: 'absolute' }}
+								className='close-button'
 							>
 								<XMark
 									fill='gray'
-									width={11}
-									height={11}
+									width={14}
+									height={14}
 								/>
 							</a>
 						)

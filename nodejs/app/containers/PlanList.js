@@ -89,12 +89,13 @@ class PlansList extends Component {
 
 		return (
 			<div>
-				<SectionedHeading
-					left={backButton}
-					classes='large-6'
-				>
-					<div className='plan-saved-title'>{ title }</div>
-				</SectionedHeading>
+				<div className='large-6 centered' style={{ marginBottom: '15px' }}>
+					<SectionedHeading
+						left={backButton}
+					>
+						<div className='plan-saved-title'>{ title }</div>
+					</SectionedHeading>
+				</div>
 				<div className='large-6 medium-8 small-11 centered'>
 					<div className='row collapse'>
 						{ component }

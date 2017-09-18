@@ -15,7 +15,8 @@ const endpoints = [
 	'friends',
 	'notifications',
 	'streaks',
-	'messaging'
+	'messaging',
+	'friendships'
 ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]
