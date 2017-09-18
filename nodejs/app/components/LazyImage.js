@@ -43,13 +43,13 @@ class LazyImage extends Component {
 				{ placeholder }
 				<img
 					ref={(img) => { this.img = img }}
-					onLoad={() => { this.setState({ loaded: true }) }}
+					onLoad={() => { this.setState(() => { return { loaded: true } }) }}
+					className={`large ${loaded ? 'loaded' : ''} ${imgClass}`}
 					alt={alt}
 					src={src}
 					width={width}
 					height={height}
 					crossOrigin={crossOrigin}
-					className={`large ${loaded ? 'loaded' : ''} ${imgClass}`}
 				/>
 			</div>
 		)

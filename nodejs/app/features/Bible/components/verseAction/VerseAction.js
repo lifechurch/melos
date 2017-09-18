@@ -15,6 +15,7 @@ import { chapterifyUsfm } from '../../../../lib/readerUtils'
 class VerseAction extends Component {
 	constructor(props) {
 		super(props)
+		this._isMounted = false
 		this.state = { verseCopied: false, isOpen: false, momentContainerOpen: false, momentKind: 'bookmark' }
 		this.handleActionClick = ::this.handleActionClick
 		this.handleClose = ::this.handleClose
@@ -23,29 +24,12 @@ class VerseAction extends Component {
 		this.closeMe = ::this.closeMe
 	}
 
-	componentWillReceiveProps(nextProps) {
-		const { selection: { human } } = nextProps
-		if (!(typeof human === 'string' && human.length > 0)) {
-			setTimeout(this.closeMe, 100)
-			setTimeout(() => { this.forceUpdate() }, 1000)
-		}
+	componentDidMount() {
+		this._isMounted = true
 	}
 
-	shouldComponentUpdate(nextProps) {
-		const { selection: { human: nextHuman } } = nextProps
-		const { selection: { human: currHuman } } = this.props
-
-		const shouldIUpdate = nextHuman !== currHuman && typeof nextHuman !== 'undefined' && nextHuman.length > 0
-
-		if (shouldIUpdate && (typeof currHuman === 'undefined' || currHuman.length === 0)) {
-			setTimeout(() => { this.openMe() }, 100)
-			setTimeout(() => { this.forceUpdate() }, 1000)
-			return false
-		} else if (typeof nextHuman === 'undefined' || nextHuman.length === 0) {
-			return false
-		} else {
-			return true
-		}
+	componentWillUnmount() {
+		this._isMounted = false
 	}
 
 	handleActionClick(e) {
@@ -150,7 +134,38 @@ class VerseAction extends Component {
 		})
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const { selection: { human } } = nextProps
+		if (!(typeof human === 'string' && human.length > 0)) {
+			setTimeout(this.closeMe, 100)
+			setTimeout(() => {
+				if (this._isMounted) {
+					this.forceUpdate()
+				}
+			}, 1000)
+		}
+	}
 
+	shouldComponentUpdate(nextProps) {
+		const { selection: { human: nextHuman } } = nextProps
+		const { selection: { human: currHuman } } = this.props
+
+		const shouldIUpdate = nextHuman !== currHuman && typeof nextHuman !== 'undefined' && nextHuman.length > 0
+
+		if (shouldIUpdate && (typeof currHuman === 'undefined' || currHuman.length === 0)) {
+			setTimeout(() => { this.openMe() }, 100)
+			setTimeout(() => {
+				if (this._isMounted) {
+					this.forceUpdate()
+				}
+			}, 1000)
+			return false
+		} else if (typeof nextHuman === 'undefined' || nextHuman.length === 0) {
+			return false
+		} else {
+			return true
+		}
+	}
 
 	render() {
 		const {

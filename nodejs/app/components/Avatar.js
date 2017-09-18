@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import LazyImage from './LazyImage'
 
 function Avatar(props) {
-	const { placeholderText, customClass, src, width, height, link } = props
+	const { placeholderText, customClass, src, width, height, link, onClick } = props
 
 	const placeholder = (
 		<div
@@ -24,13 +24,13 @@ function Avatar(props) {
 	)
 
 	return (
-		link ?
-			<a href={link} className='avatar-container'>
-				{ img }
-			</a> :
-			<div className='avatar-container'>
-				{ img }
-			</div>
+		(link || typeof onClick === 'function')
+		? <a href={link} onClick={onClick} className='avatar-container'>
+			{ img }
+		</a>
+		: <div className='avatar-container'>
+			{ img }
+		</div>
 	)
 }
 
@@ -41,6 +41,7 @@ Avatar.propTypes = {
 	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	link: PropTypes.string,
+	onClick: PropTypes.func
 }
 
 Avatar.defaultProps = {
@@ -49,6 +50,7 @@ Avatar.defaultProps = {
 	width: 48,
 	height: null,
 	link: null,
+	onClick: null
 }
 
 export default Avatar

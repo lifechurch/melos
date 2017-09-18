@@ -24,6 +24,7 @@ const rootReducer = combineReducers({
 	altVersions: emptyReducer,
 	hosts: emptyReducer,
 	passage: emptyReducer,
+	locale: emptyReducer,
 	api: combineReducers({
 		notifications,
 		users,

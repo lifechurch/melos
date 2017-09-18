@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Input from './Input'
-import SearchIcon from './Icons/SearchIcon'
+import SearchIcon from './icons/SearchIcon'
 import XMark from './XMark'
 
 
@@ -11,6 +11,15 @@ class Search extends Component {
 		this.state = {
 			showInput,
 			value: value || '',
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { showInput } = this.props
+		const { showInput: nextShowInput } = nextProps
+
+		if (showInput !== nextShowInput) {
+			this.setState({ showInput: nextShowInput })
 		}
 	}
 
@@ -54,6 +63,7 @@ class Search extends Component {
 			showInput: true
 		})
 	}
+
 	closeInput = () => {
 		this.setState({
 			showInput: false
@@ -61,7 +71,7 @@ class Search extends Component {
 	}
 
 	render() {
-		const { showIcon, showClear, placeholder, debounce, customClass } = this.props
+		const { showIcon, showClear, showClose, placeholder, debounce, customClass } = this.props
 		const { showInput, value } = this.state
 
 		return (
@@ -110,6 +120,22 @@ class Search extends Component {
 							</a>
 						)
 				}
+				{
+					showClose
+					&& showInput
+					&& (
+						<a
+							tabIndex={0}
+							onClick={this.closeInput}
+						>
+							<XMark
+								fill='gray'
+								width={11}
+								height={11}
+							/>
+						</a>
+					)
+				}
 			</div>
 		)
 	}
@@ -119,6 +145,7 @@ Search.propTypes = {
 	showInput: PropTypes.bool,
 	showIcon: PropTypes.bool,
 	showClear: PropTypes.bool,
+	showClose: PropTypes.bool,
 	onChange: PropTypes.func,
 	placeholder: PropTypes.string,
 	onHandleSearch: PropTypes.func,
@@ -131,6 +158,7 @@ Search.defaultProps = {
 	showInput: true,
 	showIcon: true,
 	showClear: true,
+	showClose: false,
 	placeholder: '',
 	onHandleSearch: null,
 	value: null,

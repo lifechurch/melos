@@ -14,10 +14,21 @@ export default class viewportUtils {
 	 * @param      {string}    eventListener  The event listener name
 	 * @param      {Function}  callback       The callback function
 	 */
-	registerListener = (eventListener, callback) => {
-		if (typeof window !== 'undefined') {
-			window.addEventListener(eventListener, callback)
-		}
+	registerListener(eventListener, callback) {
+		const eventKey = `did_${eventListener}`
+
+		window.addEventListener(eventListener, () => {
+			this[eventKey] = true
+		})
+
+		setInterval(() => {
+			if (this[eventKey]) {
+				this[eventKey] = false
+				callback(this.getViewport())
+			}
+		}, 100)
+
+		callback(this.getViewport())
 	}
 
 	/**
@@ -77,7 +88,7 @@ export default class viewportUtils {
 		}
 
 		// DOMRect object with eight properties: left, top, right, bottom, x, y, width, height
-		return element.getBoundingClientRect()
+		return element ? element.getBoundingClientRect() : {}
 	}
 
 

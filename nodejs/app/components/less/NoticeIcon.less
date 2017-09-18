@@ -1,0 +1,22 @@
+.yv-notice-icon {
+	display: flex;
+
+	&::after {
+		opacity: 0;
+		height: 8px;
+		width: 8px;
+		border-radius: 50%;
+		background-color: red;
+		content: ' ';
+		transform: translate(-8px, 0);
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	&.yv-notice-icon-on::after {
+		opacity: 1;
+	}
+
+	&.yv-notice-icon-off::after {
+		opacity: 0;
+	}
+}

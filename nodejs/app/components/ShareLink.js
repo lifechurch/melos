@@ -4,7 +4,7 @@ import { FormattedMessage, injectIntl } from 'react-intl'
 import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
-import ShareIcon from './Icons/ShareIcon'
+import ShareIcon from './icons/ShareIcon'
 import ClickToCopy from './ClickToCopy'
 import Share from '../features/Bible/components/verseAction/share/Share'
 

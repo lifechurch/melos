@@ -1,5 +1,5 @@
 // on mobile hide chapter until book is selected, then hide book when selecting chapter
-@media @small-only {
+@media @small-only, @medium-only {
 	.hide-chaps {
 		.book-container {
 			display: block;
@@ -194,6 +194,8 @@ input {
 .dropdown-arrow-container {
 	width: 38px;
 	height: 37px;
+	display: flex;
+	justify-content: center;
 	.dropdown-arrow {
 		height: 100%;
 		display: flex;

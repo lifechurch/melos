@@ -1,14 +1,28 @@
-.sectioned-heading {
-  .absolute {
-    max-width: 27%;
-  }
-  .absolute-left {
-    text-align: left;
-  }
-  .absolute-right {
-    text-align: right;
-  }
-  .center {
-    text-align: center;
-  }
+.yv-sectioned-heading {
+	display: flex;
+	position: relative;
+	align-items: center;
+	width: 100%;
+
+	.yv-left {
+		display: flex;
+		align-items: center;
+	}
+
+	.yv-center {
+		position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+		display: flex;
+		align-items: center;
+		width: max-content;
+		width: -moz-max-content;
+		width: -webkit-max-content;
+	}
+
+	.yv-right {
+		display: flex;
+		align-items: center;
+    margin-left: auto;
+	}
 }

@@ -39,6 +39,7 @@ const rootReducer = combineReducers({
 	altVersions: emptyReducer,
 	hosts: emptyReducer,
 	passage,
+	locale: emptyReducer,	
 	// for all the reducers being autopopulated by the api actions
 	api,
 	plans: combineReducers(plansAPI.reducers)

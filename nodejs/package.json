@@ -85,7 +85,7 @@
     "react-slick": "0.15.0",
     "react-time-picker": "^1.1.0",
     "react-toggle-button": "^2.1.0",
-    "react-waypoint": "^5.0.0",
+    "react-waypoint": "^5.3.1",
     "redux": "^3.0.5",
     "redux-devtools": "^3.0.1",
     "redux-logger": "^2.3.1",

@@ -1,65 +1,33 @@
 import React, { PropTypes } from 'react'
 
-function SectionedHeading(props) {
-	const { classes, left, right, children } = props
-
+function SectionedHeading({ className, left, right, children }) {
 	return (
-		<div
-			className={[
-				'sectioned-heading',
-				'vertical-center',
-				'horizontal-center',
-				'columns',
-				'medium-8',
-				'small-11',
-				'small-centered',
-				`${classes}`
-			].join(' ')}
-			style={{ marginBottom: '15px' }}
-		>
-			<div className='vertical-center' style={{ width: '66%' }}>
-				{
-					left &&
-					<div
-						className='absolute absolute-left'
-						style={{ fontSize: '13.5px' }}
-					>
-						{ left }
-					</div>
-				}
-				{
-					children
-					&& (
-						<h4 className='center centered text-center'>
-							{ children }
-						</h4>
-					)
-				}
-				{
-					right &&
-					<div
-						className='absolute absolute-right'
-						style={{ fontSize: '13.5px' }}
-					>
-						{ right }
-					</div>
-				}
+		<div className={`yv-sectioned-heading ${className}`} >
+			<div className="yv-left">
+				{left}
+			</div>
+			<div className="yv-center">
+				{children}
+			</div>
+			<div className="yv-right">
+				{right}
 			</div>
 		</div>
 	)
 }
 
 SectionedHeading.propTypes = {
-	classes: PropTypes.string,
+	className: PropTypes.string,
 	left: PropTypes.node,
 	right: PropTypes.node,
-	children: PropTypes.node.isRequired,
+	children: PropTypes.node
 }
 
 SectionedHeading.defaultProps = {
-	classes: '',
+	className: '',
 	left: null,
 	right: null,
+	children: null
 }
 
 export default SectionedHeading

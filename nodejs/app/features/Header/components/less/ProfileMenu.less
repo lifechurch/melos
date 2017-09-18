@@ -1,0 +1,106 @@
+.yv-profile-menu {
+	width: 243px;
+	border: solid 1px #ddd;
+
+	.card {
+		padding: 0;
+	}
+
+	.yv-profile-avatar-name {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 20px 20px 0 20px;
+
+		.yv-profile-avatar-content-name {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-left: 15px;
+		}
+	}
+
+	.yv-profile-name {
+		display: block;
+		font-size: 16px;
+    text-overflow: ellipsis;
+    width: auto;
+    overflow: hidden;
+		color: #444;
+		font-weight: normal;
+		padding-top: 5px;
+	}
+
+	.yv-profile-top-content {
+	  border-bottom: solid 1px #ddd;
+
+		.yv-icon-button-group {
+			justify-content: center;
+			height: 100%;
+			padding: 0 22px;
+
+			.yv-icon-button {
+				border-right: solid 1px #ddd;
+				padding: 0;
+				padding-bottom: 13px;
+				padding-top: 13px;
+				width: 100%;
+
+				&:last-child {
+					border: none !important;
+				}
+			}
+		}
+	}
+
+	.yv-profile-user-links {
+		display: flex;
+		padding: 20px 20px 0 20px;
+    flex-wrap: wrap;
+
+		a {
+			font-size: 12px;
+	    color: #606061;
+	    flex: 1 0 50%;
+			line-height: 35px;
+
+			&:hover {
+				color: #6ab750;
+			}
+		}
+	}
+
+	.yv-profile-footer {
+		border-top: solid 1px #ddd;
+		display: flex;
+		justify-content: center;
+		padding: 15px;
+		margin-top: 20px;
+
+		a {
+			font-size: 12px;
+			color: #6ab750;
+
+			&:hover {
+	    	color: #606061;
+			}
+		}
+	}
+
+	&.yv-profile-no-user {
+		.yv-profile-footer {
+			margin-top: -1px;
+		}
+	}
+}
+
+.modal.dropdown-transform.yv-profile-menu-container {
+	z-index: 11;
+
+	@media @small-only {
+		left: auto;
+		right: 0;
+		transform: none;
+		-webkit-transform: none;
+	}
+}
