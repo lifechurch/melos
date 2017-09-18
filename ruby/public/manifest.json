@@ -7,23 +7,11 @@
       "type": "image/png",
       "sizes": "48x48"
     }, {
-      "src": "apple-touch-icon.png",
+      "src": "icon_96.png",
       "type": "image/png",
       "sizes": "96x96"
     }, {
-      "src": "apple-touch-icon.png",
-      "type": "image/png",
-      "sizes": "128x128"
-    }, {
-      "src": "apple-touch-icon.png",
-      "type": "image/png",
-      "sizes": "152x152"
-    }, {
-      "src": "apple-touch-icon.png",
-      "type": "image/png",
-      "sizes": "144x144"
-    }, {
-      "src": "apple-touch-icon.png",
+      "src": "icon_192.png",
       "type": "image/png",
       "sizes": "192x192"
     }

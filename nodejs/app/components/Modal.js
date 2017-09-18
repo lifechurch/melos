@@ -42,8 +42,11 @@ class Modal extends Component {
 					showBackground &&
 					<div className={`yv-modal-background ${show ? '' : 'yv-hide-modal'}`} />
 				}
-				<div className={`yv-modal ${show ? '' : 'yv-hide-modal'}` } style={style}>
-					<div className={`content-wrapper ${customClass}`}>
+				<div
+					className={`yv-modal ${show ? '' : 'yv-hide-modal'}` }
+					style={{ ...style, pointerEvents: closeOnOutsideClick ? 'initial' : 'none' }}
+				>
+					<div className={`content-wrapper ${customClass}`} style={{ pointerEvents: 'initial' }}>
 						<ClickTarget handleOutsideClick={show && closeOnOutsideClick && this.handleClose}>
 							<div className='modal-heading'>
 								{ heading }
@@ -81,7 +84,7 @@ Modal.defaultProps = {
 	closeOnOutsideClick: true,
 	customClass: '',
 	heading: null,
-	style: null,
+	style: {},
 	handleCloseCallback: null,
 }
 
