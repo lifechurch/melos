@@ -26,14 +26,6 @@
 
 #current-ui-view {
 	padding: 140px 0 0;
-
-  @media #{$medium-only} {
-    padding: 108px 0 0;
-  }
-
-  @media #{$small-only} {
-    padding: 64px 0 0;
-  }
 }
 
 .md-open-menu-container {
@@ -59,14 +51,6 @@
 .c_ {
   #current-ui-view {
     padding: 100px 0 0;
-
-    @media #{$medium-only} {
-      padding: 64px 0 0;
-    }
-
-    @media #{$small-only} {
-      padding: 49px 0 0;
-    }
   }
 }
 

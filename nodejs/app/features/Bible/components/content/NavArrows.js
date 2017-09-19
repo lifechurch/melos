@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
+import StickyHeader from '../../../../components/StickyHeader'
+import { ScreenSize } from '../../../../lib/responsiveConstants'
+import SectionedHeading from '../../../../components/SectionedHeading'
 
 function NavArrows(props) {
 
@@ -17,7 +20,8 @@ function NavArrows(props) {
 		rightClass,
 		localizedLink,
 		extraClassNames,
-		parallelVersion
+		parallelVersion,
+		screenSize
 	} = props
 
 	if (!previousURL && !nextURL) return (<div />)
@@ -125,10 +129,12 @@ function NavArrows(props) {
 	}
 
 	return (
-		<div className={`reader-arrows ${extraClassNames}`}>
-			<div className='prev-arrow' style={style}>{ left }</div>
-			<div className='next-arrow' style={style}>{ right }</div>
-		</div>
+		<StickyHeader pinTo="bottom" verticalOffset={70} className={`reader-arrows ${extraClassNames}`} isSticky={screenSize === ScreenSize.SMALL}>
+			<SectionedHeading
+				left={<div className='prev-arrow' style={style}>{ left }</div>}
+				right={<div className='next-arrow' style={style}>{ right }</div>}
+			/>
+		</StickyHeader>
 	)
 }
 
@@ -152,7 +158,8 @@ NavArrows.propTypes = {
 	bottomPos: PropTypes.string,
 	localizedLink: PropTypes.func,
 	extraClassNames: PropTypes.string,
-	parallelVersion: PropTypes.number
+	parallelVersion: PropTypes.number,
+	screenSize: PropTypes.number
 }
 
 NavArrows.defaultProps = {
@@ -167,7 +174,8 @@ NavArrows.defaultProps = {
 	bottomPos: null,
 	localizedLink: (link) => { return link },
 	extraClassNames: null,
-	parallelVersion: null
+	parallelVersion: null,
+	screenSize: 0
 }
 
 export default NavArrows

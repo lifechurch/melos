@@ -100,6 +100,13 @@
 		margin: auto;
 	}
 
+	.yv-sticky-header-content {
+		height: 70px;
+		padding-left: 10px;
+		padding-right: 10px;
+		z-index: 50 !important;
+	}
+
 	&.parallel {
 		@media @large-up {
 			.next-arrow {
@@ -109,6 +116,12 @@
 				left: 10%;
 			}
 		}
+	}
+
+	.next-arrow, .prev-arrow {
+		position: fixed;
+		padding-bottom: 2px;
+		z-index: 1;
 	}
 
 	@media @large-up {
@@ -134,8 +147,10 @@
 		}
 	}
 	@media @small-only {
+		height: 70px;
+
 		.next-arrow, .prev-arrow {
-			bottom: 60px !important;
+			position: static;
 			transform: scale(0.9);
 		}
 		.next-arrow {
@@ -144,11 +159,6 @@
 		.prev-arrow {
 			left: 10px;
 		}
-	}
-	.next-arrow, .prev-arrow {
-		position: fixed;
-		padding-bottom: 2px;
-		z-index: 1;
 	}
 
 	.next-arrow {

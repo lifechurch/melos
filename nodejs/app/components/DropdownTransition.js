@@ -78,12 +78,12 @@ class DropdownTransition extends Component {
 	}
 
 	render() {
-		const { classes, hideDir, show, transition } = this.props
+		const { classes, hideDir, show, transition, containerClasses } = this.props
 		const transitionDir = hideDir || 'up'
 		const showTransition = transition || false
 
 		return (
-			<div className={`modal ${show ? '' : 'hide-modal'} ${showTransition ? 'dropdown-transform' : ''}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >
+			<div className={`modal ${show ? '' : 'hide-modal'} ${showTransition ? 'dropdown-transform' : ''} ${containerClasses}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >
 				<div className={`element-to-translate ${classes || ''} ${showTransition ? 'dropdown-transform' : ''} ${transitionDir}`}>
 					{this.props.children}
 				</div>
@@ -103,6 +103,7 @@ DropdownTransition.propTypes = {
 	show: PropTypes.bool,
 	transition: PropTypes.bool,
 	classes: PropTypes.string,
+	containerClasses: PropTypes.string,
 	hideDir: PropTypes.oneOf(['down', 'up', 'left', 'right']),
 	onOutsideClick: PropTypes.func,
 	exemptClass: PropTypes.string,
@@ -114,6 +115,7 @@ DropdownTransition.defaultProps = {
 	show: false,
 	transition: false,
 	classes: null,
+	containerClasses: '',
 	hideDir: 'up',
 	onOutsideClick: null,
 	exemptClass: null,

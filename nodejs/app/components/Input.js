@@ -5,56 +5,91 @@ const DEBOUNCE_TIMEOUT = 300
 class Input extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { stateValue: props.value, changeEvent: {} }
+		this.state = {
+			stateValue: props.value,
+			changeEvent: {}
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.value !== this.props.value) {
-			this.setState({stateValue: nextProps.value})
+			this.setState({ stateValue: nextProps.value })
 		}
 	}
 
-	sendChange() {
-		const { value, onChange } = this.props
-		const el = this.refs.inputElement;
+	clearInput = () => {
+		this.setState({ stateValue: '' }, this.sendChange)
+	}
 
-		if (typeof el === 'object' && (el.value !== value)) {
-			onChange({target: el, currentTarget: el})
+	sendChange = () => {
+		const { onChange } = this.props
+		const { stateValue } = this.state
+
+		if (onChange) {
+			onChange(stateValue)
 		}
 	}
 
-	handleChange(changeEvent) {
-		this.setState({stateValue: changeEvent.target.value});
-
-		if (typeof this.cancelChange === 'number') {
-			clearTimeout(this.cancelChange)
-			this.cancelChange = null
+	handleChange = (changeEvent) => {
+		const { debounce } = this.props
+		if (debounce) {
+			this.setState({ stateValue: changeEvent.target.value })
+			if (typeof this.cancelChange === 'number') {
+				clearTimeout(this.cancelChange)
+				this.cancelChange = null
+			}
+			this.cancelChange = setTimeout(this.sendChange, DEBOUNCE_TIMEOUT)
+		} else {
+			this.setState({ stateValue: changeEvent.target.value }, this.sendChange)
 		}
+	}
 
-		this.cancelChange = setTimeout(::this.sendChange, DEBOUNCE_TIMEOUT)
+	handleKeyUp = (e) => {
+		const { onKeyUp } = this.props
+		if (onKeyUp && typeof onKeyUp === 'function') {
+			onKeyUp(e)
+		}
 	}
 
 	render() {
-		const { size } = this.props
+		const { customClass, size, name, placeholder, type } = this.props
 		const { stateValue } = this.state
 
 		return (
-			<input ref='inputElement' className={size} {...this.props} onChange={::this.handleChange} value={stateValue} />
+			<input
+				className={customClass || size}
+				onChange={this.handleChange}
+				onKeyUp={this.handleKeyUp}
+				value={stateValue}
+				name={name}
+				placeholder={placeholder}
+				type={type}
+			/>
 		)
 	}
 }
 
 Input.propTypes = {
+	onChange: PropTypes.func.isRequired,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 	placeholder: PropTypes.string,
-	name: PropTypes.string.isRequired,
-	onChange: PropTypes.func.isRequired,
+	name: PropTypes.string,
+	onKeyUp: PropTypes.func,
 	value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
-	type: PropTypes.oneOf(['text', 'password'])
+	type: PropTypes.oneOf(['text', 'password', 'search']),
+	customClass: PropTypes.string,
+	debounce: PropTypes.bool,
 }
 
 Input.defaultProps = {
-	type: 'text'
+	size: 'medium',
+	placeholder: '',
+	value: '',
+	name: 'input',
+	customClass: null,
+	type: 'text',
+	onKeyUp: null,
+	debounce: true,
 }
 
 export default Input

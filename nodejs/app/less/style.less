@@ -20,8 +20,10 @@
 @import "../features/PlanDiscovery/components/less/PlanSettings.less";
 @import "../features/PlanDiscovery/components/less/PlanCalendar.less";
 
+@import "../features/Header/components/less/Header.less";
 @import "../features/Footer/components/less/Footer.less";
 @import "../features/Footer/components/less/LangSelector.less";
+@import "../features/Footer/components/less/LinkCard.less";
 
 @import "../components/less/Modal.less";
 @import "../components/less/ButtonBar.less";
@@ -33,7 +35,15 @@
 @import "../components/less/Select.less";
 @import "../components/less/stackedContainer.less";
 @import "../components/AsyncCheck/AsyncCheck.less";
-
+@import "../components/less/SectionedHeading.less";
+@import "../components/less/StickyHeader.less";
+@import "../components/less/Button.less";
+@import "../components/less/ButtonGroup.less";
+@import "../components/less/IconButton.less";
+@import "../components/less/IconButtonGroup.less";
+@import "../components/less/NoticeIcon.less";
+@import "../components/less/LazyImage.less";
+@import "../components/less/Search.less";
 @import "../features/Bible/components/settings/less/Settings.less";
 @import "../features/Bible/components/audio/less/Audio.less";
 
@@ -1771,7 +1781,6 @@ ul.language-selector li {
 	body {
 	  height: 100%;
 	  width: 100%;
-	  overflow: auto;
 	}
 }
 
@@ -2344,8 +2353,7 @@ html[dir="rtl"] {
 @media @small-only {
 	html, body {
 		height: 100%;
-		overflow: scroll;
-		overflow-x: hidden;
+		overflowScrolling: touch;
 		-webkit-overflow-scrolling: touch;
 	}
 

@@ -214,7 +214,7 @@ VersionPickerModal.defaultProps = {
 	versionList: {},
 	recentLanguages: [],
 	recentVersions: {},
-	inputValue: null,
+	inputValue: '',
 	selectedLanguage: null,
 	selectedVersion: null,
 	getLanguage: null,

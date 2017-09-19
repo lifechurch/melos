@@ -13,13 +13,14 @@ import VersionPicker from './versionPicker/VersionPicker'
 import LocalStore from '../../../lib/localStore'
 import ViewportUtils from '../../../lib/viewportUtils'
 import RecentVersions from '../lib/RecentVersions'
-import Header from './header/Header'
+import StickyHeader from '../../../components/StickyHeader'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
 import PlusButton from '../../../components/PlusButton'
 import XMark from '../../../components/XMark'
 import { deepLinkPath, buildMeta, buildCopyright } from '../../../lib/readerUtils'
+import ResponsiveContainer from '../../../components/ResponsiveContainer'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
@@ -259,40 +260,40 @@ class Bible extends Component {
 			return
 		}
 
-		const viewport = this.viewportUtils.getViewport()
+		const viewport = this.viewportUtils && this.viewportUtils.getViewport()
 		// if we're actually going to use this style, let's do the calculations and set it
 		// i.e. we're on a mobile screen
 		if (parseInt(viewport.width, 10) <= 599) {
 
 			// the modal is the absolute positioned element that shows the dropdowns
-			const modalPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
+			const modalPos = this.viewportUtils && this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
 			// the header on mobile becomes fixed at the bottom, so we need the mobile to fill until that
-			const footerModal = this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
+			const headerModal = this.viewportUtils && this.viewportUtils.getElement(document.getElementById('react-app-Header'))
 
 			// how much offset is there from modalPos.top and bookList.top?
 			// we need to bring that into the calculations so we don't set the height too high for the viewport
 			const bookList = document.getElementsByClassName('book-list')[0]
 			const bookContainer = document.getElementsByClassName('book-container')[0]
-			const bookOffset = Math.abs(this.viewportUtils.getElement(bookContainer).top - this.viewportUtils.getElement(bookList).top)
+			const bookOffset = this.viewportUtils && (Math.abs(this.viewportUtils.getElement(bookContainer).top - this.viewportUtils.getElement(bookList).top))
 
 			const versionList = document.getElementsByClassName('version-list')[0]
 			const versionContainer = document.getElementsByClassName('version-container')[0]
-			const versionOffset = Math.abs(this.viewportUtils.getElement(versionContainer).top - this.viewportUtils.getElement(versionList).top)
+			const versionOffset = this.viewportUtils && (Math.abs(this.viewportUtils.getElement(versionContainer).top - this.viewportUtils.getElement(versionList).top))
 
 			this.setState({
 				extraStyle: `
 					@media only screen and (max-width: 37.438em) {
 						.book-list, .chapter-list {
-							max-height: ${viewport.height - (modalPos.top + bookOffset + footerModal.height)}px !important;
+							max-height: ${viewport.height - (modalPos.top + bookOffset + headerModal.height)}px !important;
 						}
 						.book-container, .language-container, .version-container {
 							width: ${viewport.width}px !important;
 						}
 						.language-list {
-							max-height: ${viewport.height - (modalPos.top + bookOffset + 40 + footerModal.height)}px !important;
+							max-height: ${viewport.height - (modalPos.top + bookOffset + 40 + headerModal.height)}px !important;
 						}
 						.version-list {
-							max-height: ${viewport.height - (modalPos.top + versionOffset + footerModal.height)}px !important;
+							max-height: ${viewport.height - (modalPos.top + versionOffset + headerModal.height)}px !important;
 						}
 					}
 				`
@@ -334,7 +335,7 @@ class Bible extends Component {
 			&& bible.version.abbreviation
 		) {
 			this.header = (
-				<Header sticky={true} classes={'reader-header horizontal-center'}>
+				<StickyHeader className={'reader-header horizontal-center'} verticalOffset={70}>
 					<ChapterPicker
 						{...this.props}
 						chapter={bible.chapter}
@@ -462,7 +463,7 @@ class Bible extends Component {
 							</span>
 						</Link>
 					}
-				</Header>
+				</StickyHeader>
 			)
 		}
 
@@ -492,14 +493,16 @@ class Bible extends Component {
 						className="primary-chapter"
 					/>
 					<ChapterCopyright {...buildCopyright(intl.formatMessage, bible.version)} />
-					<NavArrows
-						{...this.props}
-						isRtl={isRtl()}
-						parallelVersion={hasParallel ? bible.parallelVersion.id : null}
-						previousURL={bible.chapter.previous ? buildBibleLink(this.state.selectedVersion, bible.chapter.previous.usfm, bible.version.local_abbreviation) : null}
-						nextURL={bible.chapter.next ? buildBibleLink(this.state.selectedVersion, bible.chapter.next.usfm, bible.version.local_abbreviation) : null}
-						extraClassNames={hasParallel ? 'parallel' : ''}
-					/>
+					<ResponsiveContainer>
+						<NavArrows
+							{...this.props}
+							isRtl={isRtl()}
+							parallelVersion={hasParallel ? bible.parallelVersion.id : null}
+							previousURL={bible.chapter.previous ? buildBibleLink(this.state.selectedVersion, bible.chapter.previous.usfm, bible.version.local_abbreviation) : null}
+							nextURL={bible.chapter.next ? buildBibleLink(this.state.selectedVersion, bible.chapter.next.usfm, bible.version.local_abbreviation) : null}
+							extraClassNames={hasParallel ? 'parallel' : ''}
+						/>
+					</ResponsiveContainer>
 				</div>
 			)
 
