@@ -15,12 +15,12 @@ function FormattedText({ text, customClass }) {
 }
 
 FormattedText.propTypes = {
-  text: PropTypes.string.isRequired,
-  customClass: PropTypes.string,
+	text: PropTypes.string.isRequired,
+	customClass: PropTypes.string,
 }
 
 FormattedText.defaultProps = {
-  customClass: '',
+	customClass: '',
 }
 
 export default FormattedText
