@@ -76,7 +76,15 @@ const serverConfig = {
 	},
 
 	/* Exclude external dependencies from bundle */
-	externals: [nodeExternals()]
+	externals: [nodeExternals()],
+
+	resolve: {
+		/* redirect imports to preact */
+		alias: {
+			react: 'preact-compat',
+			'react-dom': 'preact-compat'
+		}
+	}
 };
 
 module.exports = serverConfig;

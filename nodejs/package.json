@@ -13,8 +13,8 @@
     "@newrelic/native-metrics": "^2.1.0",
     "@youversion/api-redux": "^0.3.75",
     "@youversion/js-api": "^1.0.8",
-    "@youversion/utils": "^1.0.19",
     "@youversion/token-storage": "^0.0.36",
+    "@youversion/utils": "^1.0.19",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
     "babelify": "^7.3.0",
@@ -57,6 +57,8 @@
     "moment-timezone": "^0.5.4",
     "morgan": "~1.6.1",
     "newrelic": "^1.40.0",
+    "preact": "^8.2.5",
+    "preact-compat": "^3.17.0",
     "quill": "^0.20.1",
     "raven": "^1.2.0",
     "react": "^15.6.1",
@@ -97,8 +99,7 @@
     "serve-favicon": "~2.3.0",
     "smooth-scroll": "^11.1.0",
     "update": "^0.7.4",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-buffer": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

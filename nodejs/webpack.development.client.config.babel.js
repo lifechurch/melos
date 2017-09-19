@@ -112,6 +112,14 @@ const clientConfig = {
 				]
 			}
 		]
+	},
+
+	resolve: {
+		/* redirect imports to preact */
+		alias: {
+			react: 'preact-compat',
+			'react-dom': 'preact-compat'
+		}
 	}
 };
 
