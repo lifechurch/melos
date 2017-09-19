@@ -60,7 +60,8 @@ class SubscribeUserAction extends Component {
 SubscribeUserAction.propTypes = {
 	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	dispatch: PropTypes.func.isRequired,
-	subLinkBase: PropTypes.string.isRequired
+	subLinkBase: PropTypes.string.isRequired,
+	subscriptionLink: PropTypes.string.isRequired,
 }
 
 export default connect()(SubscribeUserAction)

@@ -29,6 +29,7 @@ class SubscribeUserDialog extends Component {
 				dispatch(plansAPI.actions.subscriptions.post({}, {
 					body: {
 						created_dt: getCurrentDT(),
+						start_dt: getCurrentDT(),
 						plan_id: id,
 						privacy: subscribeContext,
 						language_tag: serverLanguageTag,
@@ -110,11 +111,14 @@ SubscribeUserDialog.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 	isLoggedIn: PropTypes.bool.isRequired,
 	subLinkBase: PropTypes.string.isRequired,
-	useRouter: PropTypes.bool
+	serverLanguageTag: PropTypes.string.isRequired,
+	useRouter: PropTypes.bool,
+	footer: PropTypes.node,
 }
 
 SubscribeUserDialog.defaultProps = {
 	useRouter: true,
+	footer: null,
 }
 
 function mapStateToProps(state) {
