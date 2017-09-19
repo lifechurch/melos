@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import PopupMenu from '../../../components/PopupMenu'
-import HeartIcon from '../../../components/Icons/Heart'
+import HeartIcon from '../../../components/icons/Heart'
 
 
 function MomentFooter(props) {
