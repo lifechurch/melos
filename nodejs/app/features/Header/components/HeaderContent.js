@@ -182,7 +182,7 @@ class HeaderContent extends Component {
 				</IconButton>
 				{(screenSize > ScreenSize.MEDIUM) && ('response' in user) &&
 					<IconButton lockHeight={true} onClick={this.handleProfileMenuClick} useClientRouting={false}>
-						<Avatar customClass="yv-profile-menu-trigger" placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />
+						<Avatar customClass="yv-profile-menu-trigger" placeholderText={loggedInUser.has_avatar && loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />
 					</IconButton>
 				}
 			</IconButtonGroup>
