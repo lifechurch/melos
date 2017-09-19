@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/api-redux": "^0.3.54",
+    "@youversion/api-redux": "^0.3.76",
     "@youversion/token-storage": "^0.0.36",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
@@ -82,7 +82,7 @@
     "react-simple-slider": "^0.2.2",
     "react-slick": "0.14.6",
     "react-time-picker": "^1.1.0",
-    "react-waypoint": "^3.1.1",
+    "react-waypoint": "^5.3.1",
     "redux": "^3.0.5",
     "redux-devtools": "^3.0.1",
     "redux-logger": "^2.3.1",

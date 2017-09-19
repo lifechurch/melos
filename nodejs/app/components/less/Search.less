@@ -1,0 +1,39 @@
+.search {
+	display: inline-flex;
+	border: @thin-grey-border;
+	border-radius: 3px;
+	width: 100%;
+	background: white;
+
+	&:hover {
+		transition-property: border-color, background;
+		transition-duration: 0.15s, 0.15s;
+		transition-timing-function: linear, linear;
+		transition-delay: initial, initial;
+	}
+
+	.search-input {
+		margin-bottom: 0;
+		border: 0;
+		font-size: 14px;
+		border-radius: 3px;
+		padding: 0 !important;
+	}
+
+	.searchicon-container {
+		padding: 0 10px 0 10px;
+		display: flex;
+		align-items: center;
+		background: white;
+		border: none;
+		border-radius: 3px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.xmark-container {
+		padding: 0 10px 0 0;
+	}
+}

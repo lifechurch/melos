@@ -1,0 +1,52 @@
+.yv-link-card {
+  .card {
+    padding-bottom: 70px;
+  }
+
+  .title {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .yv-icon-button-group {
+    flex-wrap: wrap;
+    margin: auto;
+
+    @media @small-only {
+      max-width: 272px;
+    }
+
+    .yv-icon-button {
+      @media @small-only {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  ul.yv-card-links {
+    justify-content: flex-start !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: solid 1px #ddd;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    li {
+      padding: 10px 0;
+      margin-right: 0 !important;
+      font-size: 14px !important;
+      
+      @media @small-only {
+        text-align: center;
+        width: 100%;
+      }
+
+      @media @medium-only {
+        text-align: left;
+        width: 50%;
+      }
+    }
+  }
+}

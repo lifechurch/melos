@@ -244,6 +244,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
 							Raven.captureException(ex)
 							nr.endTransaction()
+							console.log(ex)
 							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 

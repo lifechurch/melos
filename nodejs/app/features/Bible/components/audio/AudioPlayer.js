@@ -331,7 +331,6 @@ class AudioPlayer extends Component {
 					<AudioTrack duration={duration} currentTime={currentTime} percentComplete={percentComplete} onSeek={this.handlePlayerSeekToRequest} />
 					<audio
 						preload="none"
-						playbackRate={playbackRate}
 						ref={this.handlePlayerLoaded}
 					>
 						{audioSources}

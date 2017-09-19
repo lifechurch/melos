@@ -26,7 +26,7 @@ class VersionPicker extends Component {
 				&& versions.selectedLanguage
 				&& versions.byLang[versions.selectedLanguage].versions,
 			inputValue: version && version.local_abbreviation.toUpperCase(),
-			langInputValue: null,
+			langInputValue: '',
 			languagelistSelectionIndex: 0,
 			versionlistSelectionIndex: 0,
 			cancelBlur: false,
@@ -102,7 +102,7 @@ class VersionPicker extends Component {
 			} else if (!dropdown) {
 				this.setState({
 					inputDisabled: false,
-					langInputValue: null,
+					langInputValue: '',
 					inputValue: version && version.local_abbreviation.toUpperCase(),
 				})
 				// always reset to show versions when the modal is closing
@@ -415,7 +415,7 @@ class VersionPicker extends Component {
 					disabled={inputDisabled}
 				/>
 				<DropdownTransition show={dropdown} exemptSelector={`.version-picker-container${extraClassNames ? `.${extraClassNames.split(' ').join('.')}` : ''} .dropdown-arrow-container`} onOutsideClick={this.handleCloseDropdown}>
-					<div handleClick={this.cancelBlur}>
+					<div tabIndex={0} onClick={this.cancelBlur}>
 						<VersionPickerModal
 							{...this.props}
 							classes={classes}
