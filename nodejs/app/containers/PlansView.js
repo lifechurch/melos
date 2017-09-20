@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
@@ -50,6 +50,15 @@ class PlansView extends Component {
 		)
 	}
 }
+
+PlansView.propTypes = {
+	params: PropTypes.object.isRequired,
+	auth: PropTypes.object.isRequired,
+	route: PropTypes.object.isRequired,
+	children: PropTypes.node.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
+}
+
 
 function mapStateToProps(state) {
 	return {
