@@ -1,6 +1,19 @@
 import React, { PropTypes } from 'react'
 
-function IconButtonGroup({ children, iconHeight, iconSpacing, iconFill, labelColor, labelSize, iconActiveFill, labelActiveColor, verticalAlign, horizontalAlign }) {
+function IconButtonGroup({
+	children,
+	iconHeight,
+	iconSpacing,
+	iconFill,
+	labelColor,
+	labelSize,
+	iconActiveFill,
+	labelActiveColor,
+	iconHoverFill,
+	labelHoverColor,
+	verticalAlign,
+	horizontalAlign
+}) {
 	const iconStyle = {
 		paddingRight: iconSpacing / 2,
 		paddingLeft: iconSpacing / 2
@@ -32,6 +45,8 @@ function IconButtonGroup({ children, iconHeight, iconSpacing, iconFill, labelCol
 							labelColor,
 							labelSize,
 							labelActiveColor,
+							iconHoverFill,
+							labelHoverColor,
 							style: iconStyle
 						})
 					}
@@ -47,8 +62,10 @@ IconButtonGroup.propTypes = {
 	iconSpacing: PropTypes.number,
 	iconFill: PropTypes.string,
 	iconActiveFill: PropTypes.string,
+	iconHoverFill: PropTypes.string,
 	labelColor: PropTypes.string,
 	labelActiveColor: PropTypes.string,
+	labelHoverColor: PropTypes.string,
 	labelSize: PropTypes.number,
 	verticalAlign: PropTypes.oneOf(['top', 'middle', 'bottom']),
 	horizontalAlign: PropTypes.oneOf(['left', 'center', 'right'])
@@ -57,10 +74,12 @@ IconButtonGroup.propTypes = {
 IconButtonGroup.defaultProps = {
 	iconHeight: 20,
 	iconSpacing: 20,
-	iconFill: '#444444',
-	iconActiveFill: '#6ab750',
-	labelColor: '#444444',
-	labelActiveColor: '#6ab750',
+	iconFill: '#a2a2a2',
+	iconActiveFill: '#444444',
+	iconHoverFill: '#626262',
+	labelColor: '#a2a2a2',
+	labelActiveColor: '#444444',
+	labelHoverColor: '#626262',
 	labelSize: 12,
 	verticalAlign: 'bottom',
 	horizontalAlign: 'left'

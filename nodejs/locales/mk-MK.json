@@ -156,7 +156,7 @@
 	"plans.start date _ before date string": "Датум на почеток:",
 	"plans.end date _ before date string": "Датум на завршување:",
 	"plans.are you behind": "Дали заостануваш?",
-	"plans.do you want to reset": "Сакаш повторно да почнеш?",
+	"plans.do you want to reset": "Сакаш повторно да ��очнеш?",
 	"plans.catch up text": "Направи денешната порака да биде последната што си ја прочитал во твојот план (ден {last_completed_day} од твојот план).",
 	"plans.catch up description only": "Ако заостануваш со читањето, не грижи се! Секогаш можеш да ја направиш денешната порака да биде последната прочитана порака во твојот план за читање.",
 	"plans.catch me up": "Стигни ме",

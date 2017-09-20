@@ -2033,6 +2033,7 @@ km:
                 add color: "បន្ថែម​ពណ៌"
                 labels private: "ស្លាកគឺតែងតែឯកជន"
         notifications: "ការ​ជូនដំណឹង"
+<<<<<<< HEAD
         start plan title: "How do you want to read this Plan?"
         by myself: "By Myself"
         by myself description: "Keep your Plan activity private, or allow your Friends to see your Plan activity."
@@ -2046,6 +2047,21 @@ km:
         start plan when: "When do you want to start this Plan?"
         future start blurb: "Starting on a future date will give your Friends time to accept your invitation."
         change date: "Change Date"
+=======
+        start plan title: "តើអ្នកចង់អានគំរោងនេះដោយរបៀបណា?"
+        by myself: "ដោយខ្លួនឯង"
+        by myself description: "ធ្វើអោយសកម្មភាពគំរោងអាននេះជាឯកជន ឬអនុញ្ញាតិអោយមិត្តរបស់អ្នកបានឃើញពីសកម្មភាពអានរបស់អ្នក។"
+        with friends: "ជាមួយមិត្តភក្តិ"
+        with friends description: "អញ្ជើញមិត្តភក្តិមកចូលរួមជាមួយអ្នកក្នុងគំរោងអាននេះ។ អ្នកនឹងអាចបញ្ចប់ថ្ងៃអានជាមួយគ្នា ក្នុងពេលតំណាលគ្នា ហើយអ្នកនឹងអាចពិភាក្សាអំពីការបង្រៀនរបស់ព្រះជាមួយគ្នាផងដែរ។"
+        level of privacy: "កំរឹតនៃភាពជាឯកជន"
+        plan privacy prompt: "តើអ្នកចង់អោយមិត្តអ្នកឃើញសកម្មភាពគំរោងអ្នកទេ?"
+        visible to friends: "មិត្តភក្តិអាចមើលឃើញ"
+        private: "ឯកជន"
+        cancel: "បោះ​បង់"
+        start plan when: "តើអ្នកចង់អានគំរោងនេះនៅពេលណា?"
+        future start blurb: "ចាប់ផ្ដើមជាមួយកាលបរិច្ឆេទអនាគត នឹងអោយមិត្តភក្តិរបស់អ្នកមានពេលក្នុងការទទួលយកការអញ្ជើញរបស់អ្នក។"
+        change date: "ប្ដូរកាលបរិច្ឆេទ"
+>>>>>>> master
         settings: "ការ​កំណត់"
         done: "រួច​ហើយ"
         next: "បន្ទាប់"
@@ -2055,6 +2071,7 @@ km:
         x likes: 
             other: "%{number} ចូលចិត្ត"
         selected: "បាន​ជ្រើស​រើស​"
+<<<<<<< HEAD
         currently subscribed: "Currently Subscribed"
         invite friends: "អញ្ជើញ​មិត្ត​ភក្តិ"
         invite others: "Invite Others"
@@ -2085,3 +2102,35 @@ km:
         + x more: "+ %{number} more"
         when participant comments: "When Participants post a comment"
         when participant accepts: "When Participants accept an invite"
+=======
+        currently subscribed: "បានជាវបច្ចុប្បន្ន"
+        invite friends: "អញ្ជើញ​មិត្ត​ភក្តិ"
+        invite others: "អញ្ជើញអ្នកផ្សេង"
+        invited: "Invited"
+        pending: "រងចាំ"
+        x pending: 
+            other: "%{number} រងចាំ"
+        accepted: "បានទទួល"
+        x accepted: 
+            other: "%{number} បានទទួល"
+        invitation: "លិខិតអញ្ជើញ"
+        accept invitation: "ទទួលការអញ្ជើញ"
+        what is this: "ស្អីគេហ្នឹង?"
+        decline: "បដិសេធ"
+        start date: "ចាប់ផ្ដើមថ្ងៃ"
+        plan archived: "ឃ្លាំងផ្ទុកគំរោងអាន"
+        starts: "ចាប់​ផ្ដើម"
+        started: "បាន​ចាប់​ផ្ដើម"
+        loading: "Loading..."
+        join together share: "តើអ្នកអានគំរោងព្រះគម្ពីរ, %{plan}, ជាមួយខ្ញុំទេ?"
+        join together: "%{host} ចង់អានគំរោងនេះជាមួយអ្នក។"
+        talk it over: "និយាយពីលើ"
+        participants: "អ្នកចូលរួម"
+        host: "ម្ចាស់ផ្ទះ"
+        x participants: 
+            other: "%{number} អ្នកចូលរួម"
+        participant limit: "អ្នកចូលរួមកំណត់ត្រឹមតែ: %{number}"
+        + x more: "+ %{number} ច្រើនទៀត"
+        when participant comments: "ពេលអ្នកចូលរួមបានផ្សាយមិតិ។"
+        when participant accepts: "ពេលអ្នកចូលរួមទទួលការអញ្ជើញ"
+>>>>>>> master

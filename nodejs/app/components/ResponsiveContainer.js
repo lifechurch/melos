@@ -37,7 +37,13 @@ class ResponsiveContainer extends Component {
 			<div className={`yv-responsive-container ${className}`}>
 				{children &&
 					React.Children.map(children, (child => {
-						return React.cloneElement(child, { screenSize, screenWidth })
+						// Only append screen props to custom React components
+						let props = {}
+						if (typeof child.type === 'function') {
+							props = { screenSize, screenWidth }
+						}
+
+						return React.cloneElement(child, props)
 					}))
 				}
 			</div>

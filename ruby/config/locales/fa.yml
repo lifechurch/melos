@@ -2061,10 +2061,17 @@ fa:
         invited: "Invited"
         pending: "Pending"
         x pending: 
+<<<<<<< HEAD
             other: "%{number} Pending"
         accepted: "Accepted"
         x accepted: 
             other: "%{number} Accepted"
+=======
+            other: "%{number}دعوت منتظر پاسخ"
+        accepted: "Accepted"
+        x accepted: 
+            other: "%{number}دعوت پذیرفته شده"
+>>>>>>> master
         invitation: "Invitation"
         accept invitation: "Accept Invitation"
         what is this: "What is this?"
@@ -2078,7 +2085,11 @@ fa:
         join together: "%{host} wants to read this Plan with you."
         talk it over: "Talk It Over"
         participants: "Participants"
+<<<<<<< HEAD
         host: "Host"
+=======
+        host: "میزبان"
+>>>>>>> master
         x participants: 
             other: "%{number} Participants"
         participant limit: "Participant Limit: %{number}"

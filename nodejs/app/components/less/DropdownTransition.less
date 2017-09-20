@@ -28,8 +28,10 @@
 	}
 
 	.element-to-translate {
-		.yv-drop-shadow;
-		.dropdown-show;
+		@media @medium-up {
+			.yv-drop-shadow;
+			.dropdown-show;
+		}
 		max-width: 100%;
 	}
 }

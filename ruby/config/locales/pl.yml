@@ -2090,6 +2090,7 @@ pl:
                 add color: "Dodaj kolor"
                 labels private: "Etykiety są zawsze prywatne"
         notifications: "Powiadomienia"
+<<<<<<< HEAD
         start plan title: "How do you want to read this Plan?"
         by myself: "By Myself"
         by myself description: "Keep your Plan activity private, or allow your Friends to see your Plan activity."
@@ -2103,6 +2104,21 @@ pl:
         start plan when: "When do you want to start this Plan?"
         future start blurb: "Starting on a future date will give your Friends time to accept your invitation."
         change date: "Change Date"
+=======
+        start plan title: "Jak chcesz przeczytać ten Plan?"
+        by myself: "Samemu"
+        by myself description: "Ustaw aktywność planu na prywaty lub zezwól znajomym, aby widzieli Twoją aktywność w ramach planu."
+        with friends: "Z przyjaciółmi"
+        with friends description: "Zaproś Znajomych, aby dołączyli to tego Planu. W tym samym tempie, będziecie razem kończyć dni, oraz wszyscy będą mogli dyskutować o tym, czego Bóg uczy po drodze."
+        level of privacy: "poziom prywatności"
+        plan privacy prompt: "Czy chcesz aby twoi znajomi widzieli twoją aktywność czytania planów?"
+        visible to friends: "Widoczne dla przyjaciół"
+        private: "Prywatne"
+        cancel: "Anuluj"
+        start plan when: "Kiedy chcesz rozpocząć ten plan?"
+        future start blurb: "Zaczynając od nadchodzącej daty, dasz Twoim Przyjaciołom czas, na zaakceptował Twojego zaproszenia."
+        change date: "Zmień datę"
+>>>>>>> master
         settings: "Ustawienia"
         done: "Wykonane"
         next: "Dalej"
@@ -2115,22 +2131,35 @@ pl:
             many: "%{number} polubień"
             other: "%{number} polubień"
         selected: "wybrane"
+<<<<<<< HEAD
         currently subscribed: "Currently Subscribed"
         invite friends: "Zaproś Znajomych"
         invite others: "Invite Others"
         invited: "Invited"
         pending: "Pending"
+=======
+        currently subscribed: "Obecnie subskrybowany"
+        invite friends: "Zaproś Znajomych"
+        invite others: "zapraszaj innych"
+        invited: "Invited"
+        pending: "w oczekiwaniu"
+>>>>>>> master
         x pending: 
             one: "%{number} Pending"
             few: "%{number} Pending"
             many: "%{number} Pending"
             other: "%{number} Pending"
+<<<<<<< HEAD
         accepted: "Accepted"
+=======
+        accepted: "zaakceptowane"
+>>>>>>> master
         x accepted: 
             one: "%{number} Accepted"
             few: "%{number} Accepted"
             many: "%{number} Accepted"
             other: "%{number} Accepted"
+<<<<<<< HEAD
         invitation: "Invitation"
         accept invitation: "Accept Invitation"
         what is this: "What is this?"
@@ -2152,5 +2181,28 @@ pl:
             other: "%{number} Participants"
         participant limit: "Participant Limit: %{number}"
         + x more: "+ %{number} more"
+=======
+        invitation: "zaproszenie"
+        accept invitation: "zaproszenie zaakceptowane"
+        what is this: "co to jest?"
+        decline: "Odmów"
+        start date: "Data rozpoczęcia"
+        plan archived: "plan zarchiwizowany"
+        starts: "Rozpoczęcie"
+        started: "Rozpoczęto"
+        loading: "Loading..."
+        join together share: "Czy chcesz czytać plan Biblijny, %{plan}, razem ze mną?"
+        join together: "%{host} chce czytać ten Plan wraz z tobą."
+        talk it over: "Porozmawiaj o tym"
+        participants: "uczestnicy"
+        host: "Host"
+        x participants: 
+            one: "%{number} Uczestnik"
+            few: "%{number} Uczestników"
+            many: "%{number} Uczestników"
+            other: "%{number} Uczestników"
+        participant limit: "Participant Limit: %{number}"
+        + x more: "+ %{number} więcej"
+>>>>>>> master
         when participant comments: "When Participants post a comment"
         when participant accepts: "When Participants accept an invite"

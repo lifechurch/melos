@@ -4,6 +4,7 @@ class StickyHeader extends Component {
 	constructor(props) {
 		super(props)
 		this.didScroll = false
+		this._isMounted = false
 		this.state = {
 			mode: 'fixed',
 			lastScrollTop: 0,
@@ -18,16 +19,22 @@ class StickyHeader extends Component {
 	componentDidMount() {
 		const { scrollDebounceTimeout } = this.props
 
+		this._isMounted = true
+
 		window.addEventListener('scroll', () => {
 			this.didScroll = true
 		})
 
 		setInterval(() => {
-			if (this.didScroll) {
+			if (this.didScroll && this._isMounted) {
 				this.didScroll = false
 				this.handleScroll()
 			}
 		}, scrollDebounceTimeout)
+	}
+
+	componentWillUnmount() {
+		this._isMounted = false
 	}
 
 	handleScroll = () => {
@@ -60,7 +67,8 @@ class StickyHeader extends Component {
       className,
       children,
       pinTo,
-      topOffset
+      verticalOffset,
+			isSticky
     } = this.props
 
 		const {
@@ -68,17 +76,19 @@ class StickyHeader extends Component {
     } = this.state
 
 		const style = {}
-		if (topOffset > 20) {
-			style.marginTop = topOffset - 10
-			style.paddingTop = 10
+		const marginKey = pinTo === 'top' ? 'marginTop' : 'marginBottom'
+		const paddingKey = pinTo === 'top' ? 'paddingTop' : 'paddingBottom'
+		if (verticalOffset > 20) {
+			style[marginKey] = verticalOffset - 10
+			style[paddingKey] = 10
 			style.zIndex = 97
 		} else {
-			style.marginTop = topOffset
+			style[marginKey] = verticalOffset
 		}
 
 		return (
-			<div className={`yv-sticky-header yv-sticky-header-pin-to-${pinTo} ${className}`}>
-				<div className={`yv-sticky-header-content yv-sticky-header-${mode}`} style={style}>
+			<div className={isSticky ? `yv-sticky-header yv-sticky-header-pin-to-${pinTo} ${className}` : `${className}`}>
+				<div className={isSticky ? `yv-sticky-header-content yv-sticky-header-${mode}` : ''} style={isSticky ? style : {}}>
 					{children}
 				</div>
 			</div>
@@ -91,7 +101,8 @@ StickyHeader.propTypes = {
 	children: PropTypes.node,
 	pinTo: PropTypes.oneOf(['top', 'bottom']),
 	scrollDebounceTimeout: PropTypes.number,
-	topOffset: PropTypes.number
+	verticalOffset: PropTypes.number,
+	isSticky: PropTypes.bool
 }
 
 StickyHeader.defaultProps = {
@@ -99,7 +110,9 @@ StickyHeader.defaultProps = {
 	children: null,
 	pinTo: 'top',
 	scrollDebounceTimeout: 100,
-	topOffset: 0
+	verticalOffset: 0,
+	bottomOffset: 0,
+	isSticky: true
 }
 
 export default StickyHeader

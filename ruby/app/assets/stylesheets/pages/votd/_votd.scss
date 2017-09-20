@@ -1,9 +1,6 @@
 
 body.c_pages.a_votd {
   #current-ui-view {
-    @media #{$small-only} {
-      padding-top: 0;
-    }
   }
 
   h1.heading {

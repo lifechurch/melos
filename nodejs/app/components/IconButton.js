@@ -10,7 +10,8 @@ class IconButton extends Component {
 		super(props)
 		this._isMounted = false
 		this.state = {
-			isActive: false
+			isActive: false,
+			isHover: false
 		}
 	}
 
@@ -31,33 +32,65 @@ class IconButton extends Component {
 		this._isMounted = false
 	}
 
-	render() {
-		const { className, label, children, iconHeight, style, iconFill, labelColor, labelSize, to, useClientRouting, onClick, iconActiveFill, labelActiveColor, lockHeight } = this.props
-		const { isActive } = this.state
-		const LinkComponent = useClientRouting ? Link : A
-		const linkProps = {
-			tabIndex: 0,
-			onClick
-		}
+	handleMouseOver = () => {
+		this.setState({ isHover: true })
+	}
 
-		if (useClientRouting) {
-			linkProps.to = to
-		} else {
-			linkProps.href = to
-		}
+	handleMouseOut = () => {
+		this.setState({ isHover: false })
+	}
+
+	render() {
+		const {
+			className,
+			label,
+			children,
+			iconHeight,
+			style,
+			iconFill,
+			labelColor,
+			labelSize,
+			to,
+			useClientRouting,
+			onClick,
+			iconActiveFill,
+			labelActiveColor,
+			iconHoverFill,
+			labelHoverColor,
+			lockHeight
+		} = this.props
+
+		const {
+			isActive,
+			isHover
+		} = this.state
 
 		const childProps = { fill: isActive ? iconActiveFill : iconFill }
+		let currentLabelColor
+		let currentIconFill
+		if (isHover) {
+			currentLabelColor = labelHoverColor
+			currentIconFill = iconHoverFill
+		} else if (isActive) {
+			currentLabelColor = labelActiveColor
+			currentIconFill = iconActiveFill
+		} else {
+			currentLabelColor = labelColor
+			currentIconFill = iconFill
+		}
+
+		const childProps = { fill: currentIconFill }
 		if (!lockHeight) {
 			childProps.height = iconHeight
 		}
 
 		return (
-			<div className={`yv-icon-button ${className}`} style={style}>
+			<div className={`yv-icon-button ${className}`} style={style} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
 				<LinkComponent {...linkProps}>
 					<div className="yv-icon-button-svg">
 						{children && React.cloneElement(children, childProps)}
 					</div>
-					{label && <div className="yv-icon-button-label" style={{ color: isActive ? labelActiveColor : labelColor, fontSize: labelSize }}>{label}</div>}
+					{label && <div className="yv-icon-button-label" style={{ color: currentLabelColor, fontSize: labelSize }}>{label}</div>}
 				</LinkComponent>
 			</div>
 		)
@@ -72,8 +105,10 @@ IconButton.propTypes = {
 	style: PropTypes.object,
 	iconFill: PropTypes.string,
 	iconActiveFill: PropTypes.string,
+	iconHoverFill: PropTypes.string,
 	labelColor: PropTypes.string,
 	labelActiveColor: PropTypes.string,
+	labelHoverColor: PropTypes.string,
 	labelSize: PropTypes.number,
 	to: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
 	useClientRouting: PropTypes.bool,
@@ -86,10 +121,12 @@ IconButton.defaultProps = {
 	label: null,
 	iconHeight: 20,
 	style: null,
-	iconFill: '#444444',
-	iconActiveFill: '#6ab750',
-	labelColor: '#444444',
-	labelActiveColor: '#6ab750',
+	iconFill: '#a2a2a2',
+	iconActiveFill: '#444444',
+	iconHoverFill: '#626262',
+	labelColor: '#a2a2a2',
+	labelActiveColor: '#444444',
+	labelHoverColor: '#626262',
 	labelSize: 12,
 	to: null,
 	useClientRouting: true,

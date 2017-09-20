@@ -368,7 +368,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "اسم الكنيسة أو المنظمة",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "وصف الحدث",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "التالي: أضف مواقع و مواعيد →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} لايمكن ان يكون فارغ.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} لايمكن ان يكون فا��غ.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "اضف على الاقل مره واحده.",
 	"features.EventEdit.features.location.components.Location.use": "استخدم هذا الموقع",
 	"features.EventEdit.features.location.components.Location.edit": "عدل الموقع",

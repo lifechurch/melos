@@ -2,14 +2,6 @@
   padding: 90px 0 0;
   padding-bottom: 0;
 
-  @media #{$medium-only} {
-    padding: 60px 0 0;
-  }
-
-  @media #{$small-only} {
-    padding: 10px 0 0;
-  }
-
   & * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

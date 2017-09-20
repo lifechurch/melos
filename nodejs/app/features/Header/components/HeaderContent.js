@@ -60,7 +60,7 @@ class HeaderContent extends Component {
 
 		if (nextNotifications && nextNotifications !== notifications) {
 			let hasNotifications = false
-			if ('items' in nextNotifications && Array.isArray(nextNotifications.items) && nextNotifications.items.length > 0) {
+			if ('items' in nextNotifications && nextNotifications.new_count > 0) {
 				hasNotifications = true
 			}
 			this.setState({ hasNotifications })
@@ -94,6 +94,13 @@ class HeaderContent extends Component {
 			searchTarget = 'users'
 		}
 		window.location = localizedLink(`/search/${searchTarget}?q=${encodeURIComponent(searchQuery)}`, serverLanguageTag)
+	}
+
+	handleOpenNotifications = () => {
+		const { dispatch, serverLanguageTag } = this.props
+		dispatch(notificationsAction({ method: 'update', auth: true })).then(() => {
+			window.location.pathname = localizedLink('/notifications', serverLanguageTag)
+		})
 	}
 
 	render() {
@@ -136,7 +143,7 @@ class HeaderContent extends Component {
 
 		const left = (
 			<div>
-				<IconButtonGroup iconHeight={24} iconSpacing={44} iconFill="#a2a2a2" labelColor="#a2a2a2" iconActiveFill="#444444" labelActiveColor="#444444" >
+				<IconButtonGroup iconHeight={24} iconSpacing={44} >
 					<IconButton label={<FormattedMessage id="header.home" />} useClientRouting={false} to={localizedLink('/', serverLanguageTag)}>
 						<Home />
 					</IconButton>
@@ -151,7 +158,7 @@ class HeaderContent extends Component {
 
 		const profileTopContent = (screenSize < ScreenSize.LARGE)
 			? (<div>
-				<IconButtonGroup iconHeight={24} iconSpacing={44} iconFill="#a2a2a2" labelColor="#a2a2a2" iconActiveFill="#444444" labelActiveColor="#444444" >
+				<IconButtonGroup iconHeight={24} iconSpacing={44}>
 					{plansButton}
 					{videosButton}
 				</IconButtonGroup>
@@ -159,8 +166,8 @@ class HeaderContent extends Component {
 			: null
 
 		const userNotificationGroup = isLoggedIn ? (
-			<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#a2a2a2" iconActiveFill="#444444" verticalAlign="middle">
-				<IconButton to={localizedLink('/notifications', serverLanguageTag)} useClientRouting={false}>
+			<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
+				<IconButton to={null} useClientRouting={false} onClick={this.handleOpenNotifications}>
 					<NoticeIcon showNotice={hasNotifications}>
 						<Notifications />
 					</NoticeIcon>
@@ -175,14 +182,14 @@ class HeaderContent extends Component {
 				</IconButton>
 				{(screenSize > ScreenSize.MEDIUM) && ('response' in user) &&
 					<IconButton lockHeight={true} onClick={this.handleProfileMenuClick} useClientRouting={false}>
-						<Avatar customClass="yv-profile-menu-trigger" placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.user_avatar_url.px_48x48} />
+						<Avatar customClass="yv-profile-menu-trigger" placeholderText={loggedInUser.first_name[0].toUpperCase()} width={36} height={36} src={user.response.has_avatar && user.response.user_avatar_url.px_48x48} />
 					</IconButton>
 				}
 			</IconButtonGroup>
 		) : null
 
 		const moreMenu = screenSize < ScreenSize.LARGE ? (
-			<IconButtonGroup iconHeight={24} iconSpacing={24} iconFill="#a2a2a2" iconActiveFill="#444444" verticalAlign="middle">
+			<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
 				<IconButton className="yv-profile-menu-trigger" onClick={this.handleProfileMenuClick} useClientRouting={false}>
 					<More />
 				</IconButton>

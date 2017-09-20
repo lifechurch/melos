@@ -97,6 +97,17 @@
 .modal.dropdown-transform.yv-profile-menu-container {
 	z-index: 11;
 
+	&.hide-modal {
+		.element-to-translate {
+			opacity: 0;
+		}
+	}
+
+	.element-to-translate {
+		opacity: 1;
+		transition: opacity 0.1s ease-out;
+	}
+
 	@media @small-only {
 		left: auto;
 		right: 0;

@@ -298,7 +298,11 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "ကျမ်းညွှန်းပုံစံ",
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "YouVersion တွင်ပါရှိသည့် ကျမ်းစာဗားရှင်းပေါင်း ၁၂၀၀ ကျော်နှင့် ဘာသာစကား ၉၀၀ ကျော်ထဲမှ ကြိုက်နှစ်သက်သည့် ကျမ်းပိုဒ်နှင့်ကျမ်းချက်တို့ကိုရွေးချယ်ပြီး တိုက်ရိုက်ချိတ်ဆက်ပေးလိုက်ပါ။ သင်၏လှုပ်ရှားမှုအစီအစဉ်ကို ကြည့်ရှုနေသောသူတို့သည် ကျမ်းညွှန်းကိုနှိပ်ပြီး ကျမ်းစာအက်ပ်ဖတ်စာမျက်နှာတွင် ၎င်းကိုဖတ်ရှုနိုင်ပြီး မှတ်သားထားခြင်း၊ အရောင်မုတ်ထားခြင်းစသည်တို့ကိုပြုနိုင်ပါသည်။",
 	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "ဖတ်ရှုခြင်းအစီစဉ်ပုံစံ",
+<<<<<<< HEAD
 	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "သင်၏ပရိသတ်တို့သည် တစ်ပတ်လုံး ဘုရားသခင်၏နှုတ်ကပတ်တော်နှင့်ထိတွေ့မှုရှိစေရန် သင်၏သင်ကြားမှုအဓိကအချက်အလက်များနှင့်စပ်လျှဉ်းသည့် ကျမ်းစာအစီအစဉ်နှင့် ဝိညာဉ်ရေးရာအချက်အလက်သ���ု့ ချိတ်ဆက့််နိုင်သည့် လင့်ကို သူတို့အားပေးပါ။ ",
+=======
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "သင်၏ပရိသတ်တို့သည် တစ်ပတ်လုံး ဘုရားသခင်၏နှုတ်ကပတ်တော်နှင့်ထိတွေ့မှုရှိစေရန် သင်၏သင်ကြားမှုအဓိကအချက်အလက်များနှင့်စပ်လျှဉ်းသည့် ကျမ်းစာအစီအစဉ်နှင့် ဝိညာဉ်ရေးရာအချက်အလက်သို့ ချိတ်ဆက့််နိုင်သည့် လင့်ကို သူတို့���ားပေးပါ။ ",
+>>>>>>> master
 	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "ဓာတ်ပုံပုံစံ",
 	"features.EventEdit.features.content.components.ContentHelpModal.image.desc": "သုံးပြုခွင့်ပေးထားသော ပန်ချီပုံ၊ ဓာတ်ပုံ၊ ကျမ်းပိုဒ်ပုံစသည့်ရုပ်ပုံများကိုထည့်သွင်းခြင်းအားဖြင့် သင်၏လှုပ်ရှားမှုအစီအစဉ်ကို သစ်လွင်လန်းဆန်းစေပါ။ ပါဝင်သူများသည် သင်၏လှုပ်ရှားမှုအစီအစဉ်၏ရုပ်ပုံများကို မိမိတို့လူမှူကွန်ရက်တွင် လွယ်ကူစွာမျှဝေနိုင်သဖြင့် သင်၏သတင်းစကားသည် ပို���ပျံ့နှံ့သွားမည်။",
 	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "ပြင်ပလင့်ပုံစံ",

@@ -13,15 +13,14 @@ import VersionPicker from './versionPicker/VersionPicker'
 import LocalStore from '../../../lib/localStore'
 import ViewportUtils from '../../../lib/viewportUtils'
 import RecentVersions from '../lib/RecentVersions'
-import Header from './header/Header'
 import StickyHeader from '../../../components/StickyHeader'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
 import PlusButton from '../../../components/PlusButton'
 import XMark from '../../../components/XMark'
-import { deepLinkPath, buildMeta, buildCopyright, getBibleVersionFromStorage, chapterifyUsfm, isVerseOrChapter, parseVerseFromContent } from '../../../lib/readerUtils'
-import { getReferencesTitle } from '../../../lib/usfmUtils'
+import { deepLinkPath, buildMeta, buildCopyright } from '../../../lib/readerUtils'
+import ResponsiveContainer from '../../../components/ResponsiveContainer'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
@@ -328,7 +327,7 @@ class Bible extends Component {
 			&& bible.version.abbreviation
 		) {
 			this.header = (
-				<StickyHeader className={'reader-header horizontal-center'} topOffset={70}>
+				<StickyHeader className={'reader-header horizontal-center'} verticalOffset={70}>
 					<ChapterPicker
 						{...this.props}
 						chapter={bible.chapter}
@@ -486,14 +485,16 @@ class Bible extends Component {
 						className="primary-chapter"
 					/>
 					<ChapterCopyright {...buildCopyright(intl.formatMessage, bible.version)} />
-					<NavArrows
-						{...this.props}
-						isRtl={isRtl()}
-						parallelVersion={hasParallel ? bible.parallelVersion.id : null}
-						previousURL={bible.chapter.previous ? buildBibleLink(this.state.selectedVersion, bible.chapter.previous.usfm, bible.version.local_abbreviation) : null}
-						nextURL={bible.chapter.next ? buildBibleLink(this.state.selectedVersion, bible.chapter.next.usfm, bible.version.local_abbreviation) : null}
-						extraClassNames={hasParallel ? 'parallel' : ''}
-					/>
+					<ResponsiveContainer>
+						<NavArrows
+							{...this.props}
+							isRtl={isRtl()}
+							parallelVersion={hasParallel ? bible.parallelVersion.id : null}
+							previousURL={bible.chapter.previous ? buildBibleLink(this.state.selectedVersion, bible.chapter.previous.usfm, bible.version.local_abbreviation) : null}
+							nextURL={bible.chapter.next ? buildBibleLink(this.state.selectedVersion, bible.chapter.next.usfm, bible.version.local_abbreviation) : null}
+							extraClassNames={hasParallel ? 'parallel' : ''}
+						/>
+					</ResponsiveContainer>
 				</div>
 			)
 

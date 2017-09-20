@@ -1,13 +1,18 @@
 import React, { Component, PropTypes } from 'react'
+import moment from 'moment'
+import Immutable from 'immutable'
+import ga from 'react-ga'
 import { connect } from 'react-redux'
+import streaksAction from '@youversion/api-redux/lib/endpoints/streaks/action'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
 import DropdownTransition from '../../../components/DropdownTransition'
 import XMark from '../../../components/XMark'
+import NotificationsPermissionPrompt from '../../../widgets/NotificationsPermissionPrompt'
 import FooterContent from './FooterContent'
 import LangSelector from './LangSelector'
-import NotificationsPermissionPrompt from '../../../widgets/NotificationsPermissionPrompt'
 import LinkCard from './LinkCard'
+import localOnceDaily from '../../../lib/localOnceDaily'
 
 class Footer extends Component {
 	constructor(props) {
@@ -15,6 +20,42 @@ class Footer extends Component {
 		this.state = {
 			linksOpen: false,
 			langSelectorOpen: false
+		}
+	}
+
+	componentDidMount() {
+		const { dispatch, auth } = this.props
+		const immAuth = Immutable.fromJS(auth)
+		const userIdKeyPath = [ 'userData', 'userid' ]
+
+		if (immAuth.hasIn(userIdKeyPath)) {
+			const userId = immAuth.getIn(userIdKeyPath)
+			localOnceDaily(`DailyStreakCheckin-${userId}`, (handleSuccess) => {
+				const today = moment()
+
+				// Streaks Checkin
+				dispatch(streaksAction({
+					method: 'checkin',
+					params: {
+						user_id: userId,
+						day_of_year: today.dayOfYear(),
+						year: today.year()
+					}
+				})).then((response) => {
+					if ('current_streak' in response && typeof handleSuccess === 'function') {
+						handleSuccess()
+
+						// Google Analytics Event
+						if (window.location.hostname === 'www.bible.com') {
+							ga.event({
+								category: 'User',
+								action: 'StreaksCheckin',
+								value: parseInt(response.current_streak.toString(), 10)
+							})
+						}
+					}
+				})
+			})
 		}
 	}
 
@@ -40,13 +81,23 @@ class Footer extends Component {
 
 	render() {
 		const {
-      serverLanguageTag
+      serverLanguageTag,
+			bibleConfiguration
     } = this.props
 
 		const {
       langSelectorOpen,
       linksOpen
     } = this.state
+
+		const {
+			response: {
+				totals: {
+					versions,
+					languages
+				}
+			}
+		} = bibleConfiguration
 
 		return (
 			<ResponsiveContainer>
@@ -58,6 +109,8 @@ class Footer extends Component {
 					onLinksClick={this.handleLinksClick}
 					langSelectorOpen={langSelectorOpen}
 					linksOpen={linksOpen}
+					versions={versions}
+					languages={languages}
 				/>
 				<div className="yv-fullscreen-modal-container">
 					<DropdownTransition
@@ -82,7 +135,7 @@ class Footer extends Component {
 						classes="yv-fullscreen-modal-content"
 					>
 						<a tabIndex={0} className="yv-close-x" onClick={this.handleLinksClose}><XMark width={15} height={15} fill="#444444" /></a>
-						<LinkCard serverLanguageTag={serverLanguageTag} versions={1} languages={1} />
+						<LinkCard serverLanguageTag={serverLanguageTag} versions={versions} languages={languages} />
 					</DropdownTransition>
 				</div>
 				<NotificationsPermissionPrompt />
@@ -95,7 +148,6 @@ Footer.propTypes = {
 	serverLanguageTag: PropTypes.string,
 	bibleConfiguration: PropTypes.object,
 	auth: PropTypes.object,
-	locale: PropTypes.object,
 	dispatch: PropTypes.func.isRequired
 }
 

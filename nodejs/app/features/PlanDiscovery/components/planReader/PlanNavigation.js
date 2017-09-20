@@ -6,8 +6,8 @@ import { PLAN_DEFAULT } from '../../../../lib/imageUtil'
 import LazyImage from '../../../../components/LazyImage'
 import CheckMark from '../../../../components/CheckMark'
 import NavArrows from '../../../Bible/components/content/NavArrows'
-import Header from '../../../Bible/components/header/Header'
-
+import StickyHeader from '../../../../components/StickyHeader'
+import ResponsiveContainer from '../../../../components/ResponsiveContainer'
 
 class PlanNavigation extends Component {
 
@@ -81,7 +81,7 @@ class PlanNavigation extends Component {
 
 		return (
 			<div className='plan-nav'>
-				<Header sticky={true} classes={'plan-nav-header'}>
+				<StickyHeader className={'plan-nav-header'} verticalOffset={70}>
 					<div className='nav-content columns large-6 medium-8 medium-centered'>
 						<Link to={subLink}>
 							<LazyImage
@@ -106,15 +106,17 @@ class PlanNavigation extends Component {
 							</div>
 						</div>
 					</div>
-				</Header>
-				<NavArrows
-					isRtl={isRtl}
-					nextURL={next}
-					previousURL={previous}
-					customNext={customNext}
-					onNextClick={onHandleComplete}
-					bottomPos={bottomPos}
-				/>
+				</StickyHeader>
+				<ResponsiveContainer>
+					<NavArrows
+						isRtl={isRtl}
+						nextURL={next}
+						previousURL={previous}
+						customNext={customNext}
+						onNextClick={onHandleComplete}
+						bottomPos={bottomPos}
+					/>
+				</ResponsiveContainer>
 			</div>
 		)
 	}

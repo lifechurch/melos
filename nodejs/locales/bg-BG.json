@@ -13,7 +13,11 @@
 	"profile menu.highlights": "Маркировки",
 	"profile menu.notes": "Бележки",
 	"profile menu.images": "Снимки",
+<<<<<<< HEAD
 	"profile menu.friends": "Приятели",
+=======
+	"profile menu.friends": "П��иятели",
+>>>>>>> master
 	"profile menu.badges": "Значки",
 	"profile menu.sign out": "Отписване",
 	"footer.events": "Събития",
@@ -196,7 +200,7 @@
 	"plans.reminder off successful": "Няма да бъдат изпращани повече ежедневни напомняния.",
 	"plans.email delivery on successful": "Поздравления! Вече ще получавате ежедневни четения по имейл.",
 	"plans.email delivery off successful": "Няма да бъдат изпращани повече имейли за ежедневни четения.",
-	"plans.email delivery updated successful": "Настройките за изпращане на електронна поща са променени успешно.",
+	"plans.email delivery updated successful": "Настройките за изпращане на електронна ��оща са променени успешно.",
 	"plans.report on successful": "Поздравления! Вече ще получавате седмични доклади.",
 	"plans.report off successful": "Няма да бъдат изпращани повече седмични доклади.",
 	"plans.catch up successful": "Пропуснатите дни за прочит са наваксани.",
@@ -306,7 +310,11 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "Модул с изображения",
 	"features.EventEdit.features.content.components.ContentHelpModal.image.desc": "Дайте живот на вашето събитие с всякакви подкрепящи графични изображения: серии рисунки, фотоси, стихове в снимки и т.н. Посетителите ще могат лесно да споделят вашите изображения за събитието в техните социални мрежи и така да поддържат вашето послание в обръщение.",
 	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "Модул за външни линкове",
+<<<<<<< HEAD
 	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "Създава бутон във вашето събитие, който да препраща към някакъв външен сайт. Поставя вашата аудитория само на един клик разстояние от това да направят дарение, да с��анат доброволци или да посетят интернет страницата на вашата църква.",
+=======
+	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "Създава бутон във вашето събитие, който да препраща към някакъв външен сайт. Поставя вашата аудитория само на един клик разстояние от това да направят дарение, да станат доброволци или да посетят интернет страницата на вашата църква.",
+>>>>>>> master
 	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "Модул със съобщения",
 	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Църковни новини, събития от календара, програми, обучения, доброволци и възможни мисии... Модулите за съобщения са идеалното място за споделяне на информация, която е важна и навременна, но с която не бихте искали да отвличате вниманието от основното послание на вашето събитие. Всеки модул със съобщение се изобразява на отделна страница във вашето събитие и дори може да съдържа форматиран текст (например болд или курсив).",
 	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Вмъкнете следващ модул тук",
@@ -456,7 +464,7 @@
 	"Reader.plan subtitle": "Плановете за прочит разпределят четенето Ви на Писанието на умерено дълги порции за всеки ден. Плановете често включват спомагателни посвещения, аудио или видео селекции. Независимо как ги наричате - библейски планове, планове за прочит на Библията или посвещения, плановете са изпитан начин, по който Вие можете да направите Библията част от Вашето ежедневие.",
 	"Reader.meta.mobile.title": "Приложение Библията",
 	"Reader.meta.site.title": "Bible.com",
-	"Reader.header.parallel": "Паралелни версии",
+	"Reader.header.parallel": "Паралелни вер��ии",
 	"Reader.header.parallel exit": "Изход от паралелния режим",
 	"Reader.header.cancel": "Отказ",
 	"Reader.header.audio label": "Аудио",

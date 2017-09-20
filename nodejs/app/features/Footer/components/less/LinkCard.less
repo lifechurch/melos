@@ -23,15 +23,30 @@
     }
   }
 
-  ul {
-    font-size: 14px;
-    justify-content: flex-start;
+  ul.yv-card-links {
+    justify-content: flex-start !important;
+    flex-direction: row;
     flex-wrap: wrap;
-    
+    border-top: solid 1px #ddd;
+
+    &:first-child {
+      border-top: none;
+    }
+
     li {
       padding: 10px 0;
       margin-right: 0 !important;
-      text-align: center;
+      font-size: 14px !important;
+
+      @media @small-only {
+        text-align: center;
+        width: 100%;
+      }
+
+      @media @medium-only {
+        text-align: left;
+        width: 50%;
+      }
     }
   }
 }
