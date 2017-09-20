@@ -339,7 +339,7 @@
 	"features.EventEdit.features.content.components.ContentTypeReference.book": "Kniha",
 	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "Kapitola: Verš",
 	"features.EventEdit.features.content.components.ContentTypeText.prompt": "Pište zde...",
-	"features.EventEdit.features.content.components.LiveWarningModal.title": "Nelze smazat, pokud je událost ve stavu ŽIV��",
+	"features.EventEdit.features.content.components.LiveWarningModal.title": "Nelze smazat, pokud je událost ve stavu ŽIVĚ",
 	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Pokud je událost ve statusu ŽIVĚ, nelze mazat moduly Text, Biblické odkazy a Obrázky z důvodu přidaných soukromých poznámek ostatních uživatelů. Nicméně je možné tyto moduly editovat.",
 	"features.EventEdit.features.content.components.LiveWarningModal.ok": "OK",
 	"features.EventEdit.features.details.errors.generic": "Došlo k potížím při nahrávání události.",

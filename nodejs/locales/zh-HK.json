@@ -33,7 +33,7 @@
 	"unsubscribe.not me": "This is not me",
 	"unsubscribe.saved": "Saved!",
 	"unsubscribe.plan delivery": "PLAN DELIVERY",
-	"unsubscribe.sign-in": "要編輯���他設定，請<a href='{sign_in_path}'>登入你的帳戶</a>。",
+	"unsubscribe.sign-in": "要編輯其他設定，請<a href='{sign_in_path}'>登入你的帳戶</a>。",
 	"unsubscribe.links.manage": "Manage Your Email Notifications",
 	"unsubscribe.links.unsub all": "Unsubscribe from all emails",
 	"unsubscribe.success.all": "You successfully unsubscribed from <b>all YouVersion emails</b>.",

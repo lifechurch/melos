@@ -282,7 +282,7 @@
 	"features.Auth.errors.invalidEmail": "Email sau parolă nevalide.",
 	"features.EventEdit.errors.locationMustHaveTime": "Toate locațiile trebuie să conțină cel puțin o oră.",
 	"features.EventEdit.errors.locationRequired": "Nu poți publica un eveniment fără locații.",
-	"features.EventEdit.errors.contentRequired": "Nu poți publica un Eveniment fără conținut.",
+	"features.EventEdit.errors.contentRequired": "Nu po��i publica un Eveniment fără conținut.",
 	"features.EventEdit.errors.planSearchFailed": "Căutarea nu s-a potrivit cu niciun document",
 	"features.EventEdit.errors.noMatchingPlans": "Nu se potrivește niciunui plan",
 	"features.EventEdit.components.EventEditNav.details": "Detalii",
@@ -555,20 +555,6 @@
 	"starts": "Începe",
 	"started": "Început",
 	"loading": "Loading...",
-<<<<<<< HEAD
-	"join together share": "Would you read the bible plan, {plan}, with me?",
-	"join together": "{host} wants to read this Plan with you.",
-	"talk it over": "Talk It Over",
-	"participants": "Participants",
-	"host": "Organizator",
-	"x participants.one": "{number} Participant",
-	"x participants.few": "{number} Participants",
-	"x participants.other": "{number} Participants",
-	"participant limit": "Participant Limit: {number}",
-	"+ x more": "+ {number} more",
-	"when participant comments": "When Participants post a comment",
-	"when participant accepts": "When Participants accept an invite"
-=======
 	"join together share": "Vrei să citești planul biblic, {plan}, împreună cu mine?",
 	"join together": "{host} vrea să citească acest Plan împreună cu tine.",
 	"talk it over": "Comentarii",
@@ -581,5 +567,4 @@
 	"+ x more": "+ încă {number}",
 	"when participant comments": "Când un participant postează un comentariu",
 	"when participant accepts": "Când un participant acceptă o invitație"
->>>>>>> master
 }
