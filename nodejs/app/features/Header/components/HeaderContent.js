@@ -21,6 +21,7 @@ import Notifications from '../../../components/icons/Notifications'
 import Settings from '../../../components/icons/Settings'
 import Avatar from '../../../components/Avatar'
 import ProfileMenu from './ProfileMenu'
+import NotificationsInbox from './NotificationsInbox'
 import Search from '../../../components/Search'
 import StickyHeader from '../../../components/StickyHeader'
 import { ScreenSize } from '../../../lib/responsiveConstants'
@@ -32,7 +33,8 @@ class HeaderContent extends Component {
 			isLoggedIn: false,
 			userId: null,
 			ready: false,
-			profileMenuOpen: false
+			profileMenuOpen: false,
+			notificationsOpen: false
 		}
 	}
 
@@ -97,10 +99,11 @@ class HeaderContent extends Component {
 	}
 
 	handleOpenNotifications = () => {
-		const { dispatch, serverLanguageTag } = this.props
-		dispatch(notificationsAction({ method: 'update', auth: true })).then(() => {
-			window.location.pathname = localizedLink('/notifications', serverLanguageTag)
+		const { dispatch } = this.props
+		this.setState((state) => {
+			return { notificationsOpen: !state.profileMenuOpen }
 		})
+		dispatch(notificationsAction({ method: 'update', auth: true }))
 	}
 
 	render() {
@@ -116,7 +119,8 @@ class HeaderContent extends Component {
 			hasFriendshipRequests,
 			isLoggedIn,
 			ready,
-			profileMenuOpen
+			profileMenuOpen,
+			notificationsOpen
 		} = this.state
 
 		const plansButton = (
@@ -208,7 +212,19 @@ class HeaderContent extends Component {
 			<div className={`yv-header-right ${ready && 'ready'}`}>
 				{screenSize < ScreenSize.LARGE && search}
 				{(screenSize > ScreenSize.MEDIUM) ? userNotificationGroup : moreMenu}
-				{('response' in user) &&
+				{
+					<DropdownTransition
+						show={notificationsOpen}
+						hideDir="up"
+						transition={true}
+						onOutsideClick={() => { this.setState({ notificationsOpen: false }) }}
+						containerClasses="yv-profile-menu-container"
+					>
+						<NotificationsInbox previewNum={10} />
+					</DropdownTransition>
+				}
+				{
+					('response' in user) &&
 					<DropdownTransition
 						show={profileMenuOpen}
 						hideDir="up"
