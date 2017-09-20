@@ -65,7 +65,18 @@ class IconButton extends Component {
 			isHover
 		} = this.state
 
-		const childProps = { fill: isActive ? iconActiveFill : iconFill }
+		const LinkComponent = useClientRouting ? Link : A
+		const linkProps = {
+			tabIndex: 0,
+			onClick
+		}
+
+		if (useClientRouting) {
+			linkProps.to = to
+		} else {
+			linkProps.href = to
+		}
+
 		let currentLabelColor
 		let currentIconFill
 		if (isHover) {
