@@ -12,10 +12,10 @@ import getCurrentDT from '../lib/getCurrentDT'
 // components
 import List from '../components/List'
 import Modal from '../components/Modal'
+import StickyHeader from '../components/StickyHeader'
 import Moment from '../features/Moments/components/Moment'
 import CommentCreate from '../features/Moments/components/CommentCreate'
 import TalkItOverInfo from '../features/PlanDiscovery/components/TalkItOverInfo'
-
 
 class TalkItOver extends Component {
 	constructor(props) {
@@ -229,21 +229,23 @@ class TalkItOver extends Component {
 
 		return (
 			<div className='talk-it-over'>
-				{
-					// we want to wait to render the info because the participants list
-					// will try and grab the day completes if it doesn't see the activities
-					// already for today
-					this.dayActivities &&
-					<div role='button' tabIndex={0} onClick={this.handleHeaderModal}>
-						<TalkItOverInfo
-							customClass='talk-it-over-header'
-							together_id={together_id}
-							day={day}
-							questionContent={content}
-							archived={this.isArchived}
-						/>
-					</div>
-				}
+				<StickyHeader verticalOffset={140} translationDistance='70px' stackOrder={2}>
+					{
+						// we want to wait to render the info because the participants list
+						// will try and grab the day completes if it doesn't see the activities
+						// already for today
+						this.dayActivities &&
+						<div role='button' tabIndex={0} onClick={this.handleHeaderModal}>
+							<TalkItOverInfo
+								customClass='talk-it-over-header'
+								together_id={together_id}
+								day={day}
+								questionContent={content}
+								archived={this.isArchived}
+							/>
+						</div>
+					}
+				</StickyHeader>
 				<List
 					loadMoreDirection='up'
 					loadMore={

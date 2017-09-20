@@ -180,7 +180,7 @@ function Plan({
 					</div>
 				</div>
 				{
-						children &&
+						children.length > 0 &&
 						React.cloneElement(children, {
 							id: plan_id,
 							plan,

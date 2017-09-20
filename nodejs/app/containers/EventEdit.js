@@ -33,7 +33,7 @@ class EventEdit extends Component {
 			<div>
 				<EventHeader {...this.props} />
 				<div>
-        	{children && React.cloneElement(children, { modals, event, loc, dispatch, params, routing, references, plans, auth, _content, handleDetailsNext: ::this.handleDetailsNext })}
+        	{children.length > 0 && React.cloneElement(children, { modals, event, loc, dispatch, params, routing, references, plans, auth, _content, handleDetailsNext: ::this.handleDetailsNext })}
 				</div>
 			</div>
 		)

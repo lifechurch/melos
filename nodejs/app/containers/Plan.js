@@ -270,7 +270,7 @@ class Plan extends Component {
 				handleCatchUp={this.onCatchUp}
 			>
 				{
-					children &&
+					children.length > 0 &&
 					React.cloneElement(children, {
 						localizedLink: this.localizedLink,
 						isRtl: this.isRtl,

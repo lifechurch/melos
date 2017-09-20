@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 function ButtonGroup({ className, buttonWidth, children }) {
 	return (
 		<div className={`yv-button-group ${className}`}>
-			{children &&
+			{children.length > 0 &&
 				React.Children.map(children, (child => {
 					if (child) {
 						return React.cloneElement(child, {

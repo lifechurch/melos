@@ -1,88 +1,88 @@
 ---
-ro: 
-    time: 
-        formats: 
+ro:
+    time:
+        formats:
             votd: "%-d %B, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
+    datetime:
+        time_ago_in_words:
+            about_x_hours:
                 one: "cu %{count} oră în urmă"
                 few: "Cu %{count} ore în urmă"
                 other: "cu %{count} de ore în urmă"
-            about_x_months: 
+            about_x_months:
                 one: "cu %{count} lună în urmă"
                 few: "cu %{count} luni în urmă"
                 other: "Cu %{count} luni în urmă"
-            about_x_years: 
+            about_x_years:
                 one: "cu %{count} an în urmă"
                 few: "cu %{count} ani în urmă"
                 other: "cu %{count} de ani în urmă"
-            almost_x_years: 
+            almost_x_years:
                 one: "aproape %{count} an în urmă"
                 few: "aproape %{count} ani în urmă"
                 other: "aproape %{count} de ani în urmă"
             half_a_minute: "jumătate de minut în urmă"
-            less_than_x_minutes: 
+            less_than_x_minutes:
                 one: "mai puțin de %{count} minut în urmă"
                 few: "mai puțin de %{count} minute în urmă"
                 other: "mai puțin de %{count} de minute în urmă"
-            less_than_x_seconds: 
+            less_than_x_seconds:
                 one: "mai puțin de %{count} secundă în urmă"
                 few: "mai puțin de %{count} secunde în urmă"
                 other: "mai puțin de %{count} de secunde în urmă"
-            over_x_years: 
+            over_x_years:
                 one: "peste %{count} an în urmă"
                 few: "peste %{count} ani în urmă"
                 other: "peste %{count} de ani în urmă"
-            x_days: 
+            x_days:
                 one: "%{count} zi în urmă"
                 few: "%{count} zile în urmă"
                 other: "%{count} de zile în urmă"
-            x_minutes: 
+            x_minutes:
                 one: "%{count} minut în urmă"
                 few: "%{count} minute în urmă"
                 other: "%{count} de minute în urmă"
-            x_months: 
+            x_months:
                 one: "%{count} lună în urmă"
                 few: "%{count} luni în urmă"
                 other: "%{count} de luni în urmă"
-            x_seconds: 
+            x_seconds:
                 one: "%{count} secundă în urmă"
                 few: "%{count} secunde în urmă"
                 other: "%{count} de secunde în urmă"
-    counter: 
+    counter:
         format: "999.999.999"
-    social: 
-        intro page: 
+    social:
+        intro page:
             main heading: "Discută și Descoperă"
             main description: "Un nou mod de a explora Biblia cu prietenii tăi apropiați"
-            moment: 
+            moment:
                 user aaron: "Aron Oțel"
                 user andy: "Andrei Militaru"
                 timestamp: "Cu 5 zile în urmă"
                 title: "a marcat Psalmul 31:7"
                 verse: "Fă-mă să mă înveselesc și să mă bucur de îndurarea Ta, căci vezi ticăloșia mea și știi neliniștea sufletului meu."
                 reference: "Psalmul 31:7"
-                discover: 
+                discover:
                     copy: "Descoperă și învață împreună cu prietenii tăi pe măsură ce aceștia adaugă evidențieri, marcaje și notițe."
                     button: "De unde pot să încep?"
-                share: 
+                share:
                     copy: "Poartă discuții sincere despre Scriptură."
                     button: "Începe prin a găsi câțiva prieteni."
-                likes: 
+                likes:
                     info: "și alți 4 apreciază asta"
-                comments: 
-                    first: 
+                comments:
+                    first:
                         text: "Chiar aveam nevoie să aud asta azi, mulțumesc. Ne-auzim în curând!"
                         time: "cu 3 ore în urmă"
-                    second: 
+                    second:
                         text: "Amin, deasemenea. Îți trimit un e-mail acum."
                         time: "cu 27 de minute în urmă"
                     field placeholder: "Scrie un comentariu..."
-        widget: 
+        widget:
             timeline: "Cronologie"
             no activity yet: "Nu există încă activități."
-        moment: 
+        moment:
             read all: "Citește tot"
             read less: "Vezi mai puțin"
         share: "Partajează"
@@ -91,18 +91,18 @@ ro:
         connected as: "Ești conectat la %{connection} ca și %{username}."
         remove connection: "Șterge conexiunea"
         connection friends: "Utilizatori YouVersion cu care ești conectat pe %{connection}:"
-        errors: 
+        errors:
             no friends: "Nici unul din prietenii %{connection} tăi nu s-a conectat încă pe YouVersion."
             reset connection: "Ne pare rău, s-a produs o eroare. Trebuie să ștergi și să refaci conexiunea."
-        email: 
+        email:
             name: "e-mail"
-        twitter: 
+        twitter:
             name: "Twitter"
-        facebook: 
+        facebook:
             name: "Facebook"
-            errors: 
+            errors:
                 expired access: "Jetonul (codul) de acces a expirat. Deconectează-te și apoi reconectează-te la Facebook."
-    language names: 
+    language names:
         arabic: "Arabic"
         bulgarian: "Bulgarian"
         czech: "Czech"
@@ -121,7 +121,7 @@ ro:
         ukrainian: "Ukrainian"
         simplified chinese: "Simplified Chinese"
         traditional chinese: "Traditional Chinese"
-    api: 
+    api:
         users agree bool: "Pentru a-ți crea cont trebuie să fii de acord cu termenii și condițiile de utilizare."
         users confirm password matches: "Parola nouă și confirmarea acesteia nu coincid."
         users email email: "Adresa de e-mail nu este validă."
@@ -144,26 +144,26 @@ ro:
         users last name required: "Trebuie să introduci un nume."
         moments content required: "Conținutul nu poate fi necompletat."
         users auth password required: "Trebuie să introduci o parolă."
-    meta: 
+    meta:
         best kids app: "Cea mai bună aplicație pentru copii!"
         best educational app: "Cea mai bună aplicație educațională"
-        kids_app: 
+        kids_app:
             title: "Aplicația Biblia pentru copii"
             description: "Aplicația Biblia pentru copii este o modalitate foarte bună pentru copiii tăi ca să învețe povestiri biblice despre Iisus, darul vieții veșnice, și multele lecții pe care ni le dă Dumnezeu. În această experiență interactivă, copiii se implică direct în Cuvântul lui Dumnezeu cu imagini încântătoare, în timp ce câștigă puncte pentru citit și colecționează comori."
-        100million: 
+        100million:
             title: "Începe cu 100 de milioane"
             description: "Aplicația Biblia a fost instalată de aproape 100 milioane de ori - un adevărat moment de referință! Dar acesta e doar începutul. Descarcă azi Aplicația Biblia gratuită și apoi împărtășește-o cu prietenii. Să facem istorie împreună."
-        mobile: 
+        mobile:
             title: "Aplicația Biblia"
             description: "Citește din Cuvântul lui Dumnezeu oricând și oriunde folosind Aplicația Biblia de la YouVersion. Împărtășește Scriptura cu prieteni, evidențiază și marchează pasaje, și fă-ți un obicei zilnic cu Planurile biblice. Disponibilă pentru iOS, Android, Blackberry, Windows Phone și altele."
             download or read: "Descarcă acum sau citește online."
-        site: 
+        site:
             title: "Bible.com"
             description: "Adu frumusețea și adevărul Bibliei în viața de zi cu zi. Alături de Aplicația Biblia de la Youversion, poți citi, viziona, asculta și distribui Biblia atât pe smartphone-ul sau tableta ta, cât și conectat pe site-ul Bible.com."
-        connections: 
-            index: 
+        connections:
+            index:
                 title: "Conturi conectate"
-    kids: 
+    kids:
         bible app: "Aplicația Biblia"
         for: "for"
         kids: "copii"
@@ -186,7 +186,7 @@ ro:
         feature 3: "Ilustrații colorate cu animații activate de atingere"
         feature 4: "Jocurile și activitățile îi ajută pe copii să își amintească ce învață"
         feature 5: "Navigare ușoară pentru copii"
-        share: 
+        share:
             tell friends: "Spune-le prietenilor tăi despre Aplicația Biblia pentru copii."
             facebook name: "Aplicația Biblia pentru copii"
             facebook description: "Aplicația Biblia pentru copii este aici! Descarcă aplicația gratuită pentru iOS și Android azi: povestiri biblice interactive pentru a-ți ajuta copilul să învețe, să se joace și să crească în Cuvântul Lui Dumnezeu. www.bible.com/ro/kids"
@@ -197,11 +197,11 @@ ro:
             email: "E-mail"
             email subject: "Aplicația Biblia pentru copii este aici!"
             email body: "Vești minunate - Aplicația Biblia pentru copii este aici! Este complet gratuită și este disponibilă acum pentru iphone, ipad, ipod touch și dispozitivele cu sistem de operare Android. Aplicația este o colecție în creștere de povestiri biblice cu animații activate de atingere și activități pentru învățare, perfectă pentru a-i ajuta pe copii să învețe marile istorii din Biblie. Du-te la bible.com/kids pe dispozitivul tău mobil pentru a o descărca azi."
-        partner: 
+        partner:
             youversion: "YouVersion: cea mai populară aplicație biblică"
             in partnership: "în parteneriat cu"
             one hope: "One Hope: conținut biblic extraordinar pentru copii"
-        links: 
+        links:
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&hl=ro"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
@@ -226,8 +226,8 @@ ro:
     new note: "Notiță nouă"
     share success: "Mesajul tău a fost partajat."
     share error: "Ne pare rău, s-a produs o eroare la partajarea mesajului tău. Încearcă din nou."
-    share: 
-        request: 
+    share:
+        request:
             no_twitter_connection: "Nu ai un cont de Twitter conectat. Conectează-ți contul în pagina de setări."
             no_facebook_connection: "Nu ai un cont de Facebook conectat. Conectează-ți contul în pagina de setări. "
     google plus: "Google+"
@@ -322,9 +322,9 @@ ro:
     groups: "Grupuri"
     mobile: "Aplicații mobile"
     live: "În direct"
-    events: 
+    events:
         events: "Evenimente"
-        menu: 
+        menu:
             features: "Features"
             faq: "FAQ"
             resources: "Resources"
@@ -417,16 +417,16 @@ ro:
     traditional: "Tradițional"
     alphabetic: "Alfabetic"
     versions title: "Versiuni"
-    languages: 
+    languages:
         title: "Limbi și traduceri ale Bibliei"
         most popular: "Cele mai populare limbi"
         additional: "Limbi suplimentare"
         download language: "Descarcă Biblia în limba %{language_name}"
         bible in: "Biblia în limba %{language_name}"
-    or: 
+    or:
         lower: "sau"
         upper: "SAU"
-    moments: 
+    moments:
         scripture unavailable: "Scriptură indisponibilă"
         could not load: "Nu se poate încărca"
         could not load verse: "Nu se poate încărca versetul"
@@ -440,8 +440,8 @@ ro:
         users like this: "%{last_liker_link} și %{more_link} apreciază aceasta"
         like: "Apreciez"
         likes: "Aprecieri"
-        more than one like: 
-        vod: 
+        more than one like:
+        vod:
             title: "Versetul zilei"
             get daily email: "Primește e-mail zilnic"
             subscribe: "Abonează-te"
@@ -451,16 +451,16 @@ ro:
             view more: "Vezi mai mult"
             time: "Ora"
             blurb: "Abonează-te la Versetul Zilei. Primește un email zilnic sau o notificare pe dispozitivul tău mobil."
-        friendship: 
+        friendship:
             now friends: "Acum ești prieten cu"
-        cta: 
+        cta:
             profile update text: "Ajută-ți prietenii să te găsească"
             profile update button: "Actualizează-ți profilul"
             sharing text: "Împărtășește versete prin rețele sociale."
             sharing button: "Activează partajarea"
             friends text: "Vezi activitatea din Biblie a prietenilor tăi."
             friends button: "Găsește prieteni"
-        action: 
+        action:
             go to scripture: "Du-te la scriptură"
             add friend button: "Adaugă prieten"
             load more: "Încarcă mai mult"
@@ -488,41 +488,41 @@ ro:
             read plan: "Citește"
             about plan: "Despre plan"
             start plan: "Începe planul"
-    notifications: 
+    notifications:
         title: "Notificări"
         none: "Nu ai notificări"
         no new: "Nici o notificare nouă"
         view all: "Vizualizează toate notificările"
-    likes: 
+    likes:
         create success: "Succes! Aprecierea ta a fost salvată"
         create failure: "Aprecierea ta nu a putut fi salvată"
         destroy success: "Apreciere ștearsă"
         destroy failure: "Aprecierea ta nu a putut fi ștearsă"
-    comments: 
+    comments:
         view all N: "Vezi toate cele %{count} comentarii"
         post comment: "Postează un comentariu"
         create success: "Succes! Comentariul tău a fost postat."
         create failure: "Comentariul nu a putut fi postat"
         destroy success: "Comentariu șters"
         destroy failure: "Comentariul nu a putut fi șters"
-        form: 
+        form:
             save button: "Postează"
-    friends: 
+    friends:
         you have N friends: "Ai %{count} prieteni"
         none me: "Împărtășește activitatea ta în Biblie precum semne de carte, evidențieri sau notițe, cu prietenii apropiați și cu familia ta."
         find friends: "Găsește prieteni"
-        blank slate: 
+        blank slate:
             heading: "Momentan nu sunteți prieteni"
             description: "Trebuie să fii prieten cu această persoană pentru a-i vedea prietenii."
         limit notice: "Poți avea până la 150 de prieteni"
         limit description: "Limitarea prieteniilor din Aplicația Biblia la persoane care le cunoști bine creează un mediu favorabil pentru discuții sincere și împărtășirea lucrurilor descoperite cu prieteni de încredere."
-    friendships: 
+    friendships:
         blurb: "Adună-ți prietenii în jurul Bibliei. Împărtășește ce vrei, când vrei, în siguranța relațiilor de încredere."
         name required: "Pentru a experimenta Biblia împreună cu prietenii, actualizează-ți profilul cu prenumele și numele de familie"
         find friends title: "Găsește prieteni"
         search by name: "Caută după nume"
         search button: "Caută"
-        widget: 
+        widget:
             find friends title: "Găsește prieteni"
             search by name: "Caută după nume"
             search button: "Caută"
@@ -536,12 +536,12 @@ ro:
         requests view all: "Vizualizează toate cererile de prietenie"
         requests none: "Nu ai cereri de prietenie"
         requests no new: "Nici o cerere nouă."
-        status: 
+        status:
             pending: "Cererea este în așteptare"
             friends: "Prieteni"
         user wants friendship: "%{user} vrea să îți fie prieten"
         user wants friendship partial: "vrea să îți fie prieten"
-        form: 
+        form:
             remove friend button: "Șterge prieten"
             remove friend button title: "Șterge această persoană din lista ta de prieteni"
             add friend button: "Adaugă prieten"
@@ -551,24 +551,24 @@ ro:
             accept request button: "Acceptă cererea"
             ignore button: "Refuză"
             ignore request button: "Refuză solicitarea"
-    images: 
+    images:
         none user: "%{username} nu a creat încă imagini."
-        blank slate: 
+        blank slate:
             heading: "Nu ai încă imagini"
             description: "Folosește aplicația mobilă de la YouVersion pentru a crea versete ilustrate."
-    notes: 
+    notes:
         none user: "%{username} nu are notițe încă"
-        blank slate: 
+        blank slate:
             heading: "Încă nu ai notițe"
             description: "În timp ce citești Biblia, când auzi acel susur blând al vocii lui Dumnezeu vorbindu-ți, poți nota acele gânduri rapid aici. Notițele tale vor fi marcate implicit ca <em>private</em>. Dacă dorești să împărtășești o notiță cu prietenii tăi, dechide-o și schimbă-i starea în <em>publică</em>."
-        form: 
+        form:
             title field: "Titlu:"
             content field: "Conținut:"
             highlight field: "Evidențiază: (opțional)"
             reference field: "Referință(e):"
             status field: "Status:"
             save button: "Salvează"
-        status: 
+        status:
             private: "Privat"
             public: "Public"
             friends: "Doar prieteni"
@@ -607,7 +607,7 @@ ro:
         destroy success: "Notița a fost ștearsă"
         destroy failure: "S-a produs o eroare la ștergerea notiței"
         update success: "Notiță actualizată"
-    ref: 
+    ref:
         loading secondary: "Se încarcă referinţa în versiunea secundară..."
         clear verses: "Șterge versetele selectate."
         choose book and chapter: "Alege carte + capitol"
@@ -629,7 +629,7 @@ ro:
         no secondary version text: "În %{language_name} există doar o versiune disponibilă, prin urmare nu îți putem alege o versiune secundară. Alege-ți o versiune secundară pentru comparația paralelă."
         select another chapter: "Alege un alt capitol"
         view in reader: "Arată %{reference} în cititor."
-    users: 
+    users:
         unverified heading: "Aproape gata!"
         unverified message: "Se pare că încerci să te autentifici pe un cont setat incomplet. Mai ai doar un pas: faci click pe legătura de verificare primită prin e-mail de la YouVersion. În caz că nu ai e-mail-ul în „Inbox”, verifică în „Spam” sau <a href='%{resend_path}' target='_self'>retrimite e-mail de confirmare</a>."
         settings: "Setări"
@@ -733,7 +733,7 @@ ro:
         resend confirmation title: "Nu ai primit e-mailul de confirmare?"
         resend confirmation copy: "Introdu mai jos adresa de e-mail cu care te-ai înregistrat și îți vom trimite încă un e-mail de confirmare."
         resend confirmation button: "Retrimite confirmarea."
-        privacy: 
+        privacy:
             policy: "Politica de confidențialitate %{youversion}"
             intro: "YouVersion, o pagină web și o aplicație deținută și operată de Life.Church, știe că ție îți pasă de modul în care informațiile despre tine sunt folosite și distribuite. Sperăm că următoarele afirmații te vor ajuta să înțelegi modul în care YouVersion va strânge, folosi și proteja informațiile pe care le pui la dispoziție pe pagina sau aplicația noastră."
             translation disclaimer: "Politica de confidențialitate este disponibilă și în limba română; totuși, Life.Church nu garantează acuratețea acestei traduceri. Dacă sunt discrepanțe față de versiunea în limba engleză, aceasta din urmă este considerată ca referință."
@@ -762,7 +762,7 @@ ro:
             enforcement text: "Life.Church își revizuiește periodic conformitatea cu această politică de confidențialitate. Când primim reclamații formale scrise cu privire la probleme de confidențialitate, face parte din politica noastră să contactăm utilizatorii în cauză relativ la îngrijorările lor. Vom coopera cu autoritățile legiuitoare, inclusiv autoritatea locala pentru protecția datelor, pentru a rezolva orice reclamații cu privire la transferul datelor personale care nu pot fi rezolvate între Life.Church și o anumită persoană."
             questions title: "Întrebări"
             questions text: "Orice întrebări referitoare la politica de confidențialitate pot fi adresate la: <a href='mailto:legal@youversion.com'>legal@youversion.com</a>"
-        terms: 
+        terms:
             title: "Termeni de utilizare"
             translation disclaimer: "TERMENII DE UTILIZARE sunt traduși și în limba română; totuși, Life.Church nu garantează acuratețea acestei traduceri. Dacă sunt discrepanțe față de versiunea în limba engleză, aceasta din urmă este considerată ca referință."
             acceptance title: "Acceptarea termenilor"
@@ -811,8 +811,8 @@ ro:
             copyright text: "Life.Church respectă proprietatea intelectuală a altora. Cerem utilizatorilor noștri același lucru, în special când e vorba de utilizarea YouVersion. Life.Church poate, în împrejurări adecvate și la discreția Life.Church, să dezactiveze sau să închidă conturile utilizatorilor care încalcă în mod repetat regulile. Dacă consideri că munca ta a fost copiată astfel încât constituie încălcare a dreptului de autor, sau drepturile tale de proprietate intelectuală au fost încălcate în vreun fel, trimite următoarele informații pe adresa legal@youversion.com:<ul type='none'><li>Semnătura electronică sau fizică a persoanei autorizate să acționeze în numele proprietarului dreptului de autor sau al altei proprietăți intelectuale în cauză;</li><br><li>O prezentare în scris a materialului sau proprietății intelectuale cu privire la care pretinzi că s-a produs încălcarea dreptului de autor sau a drepturile tale de proprietate intelectuală;</li><br><li>O prezentare în scris a locației în cadrul YouVersion a materialului care pretinzi că produce încălcarea;</li><br><li>Adresa ta, numărul de telefon și adresa de e-mail (oricare din acestea);</li><br><li>O declarație scrisă din partea ta cu bună credință că utilizarea contestată nu este autorizată de proprietarul dreptului de autor, de reprezentantul său sau de lege;</li><br><li>O declarație scrisă din partea ta, sub incidența pedepsei pentru mărturie mincinoasă, că informațiile sus-menționate în sesizarea ta sunt exacte și că ești proprietarul dreptului de autor sau proprietății intelectuale, sau că ești autorizat să acționezi în numele proprietarului dreptului de autor sau proprietății intelectuale. Agentul pentru depunerea cererilor legate de drepturi de autor și proprietate intelectuală al Life.Church poate fi contactat după cum urmează:%{newline}Adresa Poștală: Life.Church c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Telefon: 01(405) 680-5433%{newline}%{newline}Fax: 01(405) 844-3002%{mailto_link}Email: %{mailto_link}</li></ul>"
             general title: "Informații generale"
             general text: "Acordul în întregime. Acești TERMENI DE UTILIZARE alcătuiesc întregul acord între tine și Life.Church și reglementează utilizarea YouVersion, înlocuind orice acorduri anterioare dintre tine și Life.Church cu privire la YouVersion. Poți fi supus la termeni și condiții adiționale.<br><br>Alegerea jurisdicției și tribunalului. TERMENII DE UTILIZARE și relația dintre tine și Life.Church sunt reglementate de legile statului Oklahoma. Tu și Life.Church agreați să vă supuneți jurisdicției exclusive și personale ale tribunalelor localizate în districtul Oklahoma County, Oklahoma.<br><br>Derogare și separabilitate a termenilor. Eșecul Life.Church de a exercita sau constrânge orice drept sau prevederi ale acestor TERMENI DE UTILIZARE nu constituie o derogare de la acestea. Dacă oricare din prevederile acestor TERMENI DE UTILIZARE sunt considerate neîntemeiate de către vreun tribunal din jurisdicția avizată, părțile sunt oricum de acord că tribunalul va căuta să dea curs intențiilor părților care sunt reflectate în prevederi, iar celelalte prevederi ale acestor TERMENI DE UTILIZARE rămân în vigoare în totalitate.<br><br>Drepturi de moștenire și transferabilitate. Ești de acord că contul tău Life.Church este netransferabil și orice drepturi la ID-ul Life.Church sau conținuturi din cadrul contului încetează după decesul utilizatorului. După primirea unei copii a certificatului de deces, Life.Church poate închide contul și șterge permanent toate conținuturile aferente.<br><br>Legea privitoare la prescriere. Înțelegi că fără o reglementare sau lege în sens contrar, orice revendicare sau cauză de punere sub acuzare rezultând din, sau legată de utilizarea de către tine a YouVersion sau din TERMENII DE UTILIZARE, trebuie înregistrată în interval de un an după ce asemenea revendicare sau punere sub acuzare a fost inițiată, altfel va fi prescrisă definitiv.<br><br>Titlurile secțiunilor din cadrul acestor TERMENI DE UTILIZARE au caracter convenabil și nu au efect legal sau contractual."
-        profile: 
-            blank slate: 
+        profile:
+            blank slate:
                 heading: "Mergi mai departe, nu este nimic de văzut aici (încă)"
                 description: "Începe să citești Biblia sau să comunici cu prietenii tăi. Pagina aceasta afișează istoricul activităților tale."
             visit friend: "Vizitează profilul lui %{friend}"
@@ -852,11 +852,11 @@ ro:
             edit: "Modifică"
             bio: "Biografie"
             complete_first_last: "Pentru a-ți completa profilul trebuie să introduci numele și prenumele"
-        password: 
+        password:
             updated: "Parola ta a fost schimbată cu succes."
             error: "Ne pare rău, dar s-a produs o eroare la schimbarea parolei."
             old was invalid: "Ne pare rău, dar trebuie să completezi corect parola cea veche pentru a-ți schimba parola."
-        notifications: 
+        notifications:
             badges: "Înștiințează-mă despre insignele câștigate."
             follower: "Înștiințează-mă când cineva mă simpatizează."
             newsletter: "Ține-mă la curent cu anunțurile YouVersion."
@@ -869,7 +869,7 @@ ro:
             moments: "Anunță-mă despre activitatea prietenilor"
             comments: "Anunță-mă despre comentarii asupra activității mele"
             likes: "Anunță-mă despre aprecierile la activitatea mea"
-    bookmarks: 
+    bookmarks:
         new: "Marcaj nou"
         edit: "Modifică"
         delete: "Șterge acest marcaj"
@@ -900,10 +900,10 @@ ro:
         color: "Culoare:"
         version field: "Versiune:"
         none user: "%{username} nu are marcaje"
-        blank slate: 
+        blank slate:
             heading: "Marchează versetele semnificative"
             description: "În timpul citirii Bibliei, selectează un verset și marchează-l. Întoarce-te aici pentru a vizualiza, pentru a edita sau pentru a șterge marcajele."
-        form: 
+        form:
             title field: "Titlu:"
             reference field: "Referință:"
             labels field: "Etichete (separate de virgulă):"
@@ -911,28 +911,28 @@ ro:
             colors field: "Culoare:"
             update button: "Actualizează marcaj"
             save button: "Salvează marcaj"
-    badges: 
+    badges:
         earned a badge: "Am câștigat o insignă"
         user badges: "Insignele lui %{user}"
         earned date: "Primită de către %{username} cu %{ago} în urmă"
         none me: "Încă nu ai primit nici o insignă."
         none user: "%{username} nu a primit nici o insignă încă."
-    plans: 
+    plans:
         see all: "Vezi toate"
         day_completed: "<b>%{username}</b> a completat <b> ziua %{day}</b> a planului: <b>%{plan_title}</b>"
-        status: 
+        status:
             on track: "La zi!"
-            days ahead: 
+            days ahead:
                 one: "%{count} zi în avans!"
                 few: "%{count} zile în avans!"
                 other: "%{count} de zile în avans!"
-            missed days: 
+            missed days:
                 one: "%{count} zi în urmă"
                 few: "%{count} zile în urmă"
                 other: "%{count} de zile în urmă"
         bible plan language: "Limba planului de citire"
         share plan: "Încearcă acest plan de citire a Bibliei de la @YouVersion: %{plan_title}"
-        widget: 
+        widget:
             my plans: "Planurile mele"
             start reading: "Începe să citești"
             view my plans: "Vezi Planurile mele"
@@ -941,12 +941,12 @@ ro:
             reading: "lectură"
             readings: "lecturi"
             readings 5 or more: "lecturi"
-        stats: 
-            friends reading: 
+        stats:
+            friends reading:
                 one: "%{count} prieten s-a abonat la acest plan"
                 few: "%{count} prieteni s-au abonat la acest plan"
                 other: "%{count} prieteni s-au abonat la acest plan"
-            friends completed: 
+            friends completed:
                 one: "%{count} prieten a terminat acest plan"
                 few: "%{count} prieteni au terminat acest plan"
                 other: "%{count} prieteni au terminat acest plan"
@@ -954,7 +954,7 @@ ro:
             view all: "Vezi tot"
             close: "Închide"
         settings: "Setări"
-        privacy: 
+        privacy:
             visible to friends?: "Dorești ca prietenii tăi să vadă activitatea ta legată de Planurile de citire?"
             private: "Privat"
             public: "Public"
@@ -1024,7 +1024,7 @@ ro:
         catch me up: "Adu-mă la zi"
         restart description: "Poți să reîncepi planul. Toată istoria și progresul citirii tale vor fi resetate și o vei lua de la început."
         restart: "Reîncepe plan"
-        privacy description: 
+        privacy description:
             private: "Planul tău este privat. Schimbă-ți setările în Doar Prieteni pentru a împărtăși activitatea ta din planurile de citire cu prietenii."
             public: "Planul tău este vizibil prietenilor. Schimbă în Privat pentru a face activitatea din planurile de citire privată."
         make private: "Păstrează privat"
@@ -1074,32 +1074,32 @@ ro:
         completed notice: "Felicitări! Ai finalizat planul de citire."
         exit: "Ieșire"
         loading sidebar content: "Se încarcă conținutul barei laterale..."
-    videos: 
+    videos:
         title: "Videoclipuri"
         watch videos: "Urmărește videoclipuri despre Biblie"
         all: "Toate videoclipurile"
         related scripture: "Scriptura înrudită"
         share video: "Mă uit la:%{video_title}pe @YouVersion"
-    licenses: 
-        authorized: 
+    licenses:
+        authorized:
             heading: "Conținutul tău a fost autorizat"
             description: "Acum poți <a href='%{content_link}' target='_self'>vedea conținutul achiziționat</a> de la %{vendor} pe YouVersion!"
         has errors: "S-au produs erori în legătură cu solicitarea ta:"
-        confirm: 
+        confirm:
             email: "Pentru autorizarea conținutului video pe care l-ai achiziționat, verifică-ți e-mailul pentru confirmarea primită de la YouVersion și efectuează clic pe legătura furnizată pentru a confirma înregistrarea."
-        request: 
+        request:
             invalid_vendor_signature: "Validarea licenței a eșuat: semnătură invalidă furnizor"
             invalid_vendor_id: "Validarea licenței a eșuat: identitate invalidă furnizor"
             invalid_item_ids: "Validarea licenței a eșuat: termeni neconformi"
-        vendor_transaction_id: 
+        vendor_transaction_id:
             duplicate: "Identificator tranzacție: acest identificator de tranzacție este deja înregistrat"
-        auth: 
+        auth:
             login notice: "Pentru validarea conținutului achiziționat, autentifică-te pe contul YouVersion mai jos sau <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
             signup notice: "Pentru validarea conținutului achiziționat, înregistrează-te mai jos pentru un cont nou YouVersion sau <a href='/sign-in?source=licenses' target='_self'>%{login}</a> dacă deja ai un cont."
             signup link text: "Crează-ți un cont gratuit"
             login link text: "autentificare"
-    registration: 
-        placeholder: 
+    registration:
+        placeholder:
             email: "Introdu adresa de e-mail"
             username: "Introdu numele de utilizator"
             password: "Introdu parola"
@@ -1113,14 +1113,14 @@ ro:
         share blurb: "Se pare că vrei să partajezi Scriptura. Minunat! Poți face acest lucru folosind Facebook sau Tweeter. Autentifică-te sau creează-ți cont și poți începe!"
         highlight blurb: "Se pare că dorești să evidențiezi un pasaj din Scriptură. Excelent! Evidențierile te ajută să îți organizezi și să păstrezi versetele favorite. Intră în cont sau creează-ți un cont pentru a începe!"
         note blurb: "Se pare că dorești să îți faci o notiță despre un verset. Bună idee! Notițele te pot ajuta să-ți amintești și să organizezi adevărurile descoperite în Cuvântul lui Dumnezeu. Intră în contul tău sau creează-ți un cont mai jos pentru a începe!"
-    audio: 
+    audio:
         none: "Nu există nici o versiune audio pentru această versiune a Bibliei"
         chapter only: "Ne pare rău, nu există material audio pentru versete. Accesează partea audio pentru întregul capitol în cititor."
         close player menu: "Închide"
         publisher website: "Pagina Web a Editorului"
-    highlights: 
+    highlights:
         title: "Evidențieri"
-        blank slate: 
+        blank slate:
             heading: "Evidențiază versetele semnificative"
             description: "În timpul citirii Bibliei, selectează un verset și evidențiază-l. Revino aici pentru a vizualiza, pentru a edita sau pentru a șterge evidențierile."
         none user: "%{username} nu are evidențieri"
@@ -1131,9 +1131,9 @@ ro:
         destroy failure: "S-a produs o eroare la ștergerea evidențierii"
         creation error: "Ne pare rău, nu se poate evidenția."
         delete error: "Ne pare rău, evidențierea nu poate fi eliminată."
-        form: 
+        form:
             save button: "Salvează evidențiere"
-    searching: 
+    searching:
         bible: "Biblia"
         plans: "Planuri"
         users: "Utilizatori"
@@ -1142,7 +1142,7 @@ ro:
         suggestion html: "Ai vrut să spui %{suggestion_link}?"
         all versions: "Toate versiunile %{language_name}"
         results for: "Rezultatele căutării pentru: "
-    donate: 
+    donate:
         donate now: "Donează acum"
         donate now intl: "sau donează din afara Statelor Unite"
         enter amount: "Trebuie să introduci o sumă"
@@ -1171,7 +1171,7 @@ ro:
         state: "Județ"
         zip: "Cod"
         creation form errors: "Următoarele erori au împiedicat donația:"
-    download ad: 
+    download ad:
         title: "Descarcă gratuit aplicația Biblia"
         description copy: "Sute de versiuni în peste %{language_count} de limbi diferite - Biblia care te însoțește pretutindeni."
         meta copy title: "Descarcă gratuit aplicația Biblia"
@@ -1183,11 +1183,11 @@ ro:
         banner title: "Aplicația Biblia"
         banner action: "Descarcă"
         banner open: "Deschide"
-    download bafk ad: 
+    download bafk ad:
         title: "Descarcă Aplicația Biblia pentru copii"
         description copy: "Aplicația Biblia pentru copii este o cale minunată pentru copiii tăi de a învăța povestiri biblice despre Iisus."
         download: "Descarcă acum"
-    about page: 
+    about page:
         relevancy: "Relevanță"
         relevancy copy: "În generațiile anterioare, accesul oamenilor la Biblie era foarte limitat. Astăzi lucrurile stau altfel. Totuși, mulți oameni care au acces la Biblie cred că mesajul ei nu se aplică pentru viața lor. În același timp, sunt alții care cred că există o legătură între Biblie și experiența lor de zi cu zi."
         information revolution: "Revoluția informației"
@@ -1198,7 +1198,7 @@ ro:
         partners text: "Fără partenerii noștri generoși care publică Biblia, YouVersion pur și simplu nu ar fi în măsură să ofere comunității noastre din întreaga lume așa multe Biblii. Mulți ne-au întrebat cum pot mulțumi acestor susținători vitali ai misiunii YouVersion. Poți afla mai multe despre ei prin intermediul legăturilor de mai jos."
         translation title: "Echipele noastre de traducere"
         learn more: "Află mai mult"
-    press page: 
+    press page:
         title: "Secțiunea pentru presă"
         contact header: "Informații de contact pentru presă"
         contact header 2: "De pe web"
@@ -1211,13 +1211,13 @@ ro:
         lead copy: "Bazate pe Biblia online, Bible.com, Aplicația Biblia este o Biblie mobilă gratuită care poate fi instalată pe aproape orice telefon. Aplicația Biblia permite utilizatorilor să citească Biblia, să distribuie versete cu rețelele lor sociale, să salveze pasajele preferate, și multe altele – toate într-un format care ține pasul cu stilul de viață tot mai mobil."
         resources title: "Resurse pentru presă"
         now title: "Azi, în comunitatea YouVersion"
-        resources: 
+        resources:
             now: "Vizualizare în direct a angajamentelor și ultimele informații"
             about: "Despre YouVersion și aplicația Biblia"
             history: "Istoric și statistici YouVersion"
             manual: "Ghidul mărcii YouVersion"
         images title: "Sigle și imagini YouVersion"
-        images: 
+        images:
             logos: "Pachetul cu sigle YouVersion"
             icons: "Pictograme pentru Aplicația Biblia"
             infographic: "Infografic: statisticile și utilizarea Aplicației Biblia"
@@ -1225,7 +1225,7 @@ ro:
             lifestyle: "Colecție de imagini: Lifestyle"
             screencast: "Screencast YouVersion"
         links title: "Legături către ariile de acoperire media"
-    mobile page: 
+    mobile page:
         h2: "Ai Scriptura mereu la tine."
         h3: "YouVersion este global"
         h3 sub: "Disponibilă în peste %{language_count} limbi la nivel mondial."
@@ -1270,44 +1270,44 @@ ro:
         sms info: "Vei primi un SMS unic pentru a descarca aplicatia"
         sms download: "Apasă pentru a descarca Aplicația Biblia:"
         sms default country: "RO"
-    pages: 
-        generic_error: 
+    pages:
+        generic_error:
             title: "Oops!"
             explanation: "Ceva nu a mers cum trebuie! Încearcă din nou reîncărcând pagina; ne pare rău de inconveniente!"
             our action: "Am fost înștiințați; vom rezolva cât mai curând."
-        home: 
+        home:
             heading: "Obține o Biblie gratuită pentru telefonul, tableta și calculatorul tău."
             cta: "Citește Biblia acum"
-            experience: 
+            experience:
                 title: "Experimenteaz-o oriunde"
                 body: "Alege dintre mai mult de 1.200 de versiuni ale Bibliei, în peste 900 de limbi, pe calculatorul, telefonul sau tableta ta - multe disponibile ca Biblii audio."
                 action: "Vezi versiuni ale Bibliei"
-            make_yours: 
+            make_yours:
                 title: "Transform-o în Biblia ta"
                 body: "Evidențiază sau marchează versetele tale preferate, creează versete ilustrate pe care le poți partaja și atașează notițe publice sau private pasajelor Bibliei."
                 action: "Creează Contul Tău Gratuit"
-            install_now: 
+            install_now:
                 title: "Instalează aplicația acum"
                 body: "Aplicația Biblia este complet gratuită, fără reclame și fără achiziții în interiorul aplicației. A fost instalată pe atâtea dispozitive unice (până acum):"
                 action: "Descarcă gratuit aplicația Biblia"
-            free_plans: 
+            free_plans:
                 title: "Planuri de citire și Devoționale Gratuite"
                 body: "Planurile de citire te ajută să te angajezi în citirea zilnică a Cuvântului lui Dumnezeu, puțin câte puțin."
             browse_plans: "Răsfoiește toate Planurile"
             read_listen: "Citește, ascultă, vizionează, partajează"
             start_now: "Începe acum"
-            votd: 
+            votd:
                 title: "Versetul zilei"
                 highlight_bookmark: "Evidențiază, marchează sau partajează acest verset"
                 subscribe: "Abonează-te la Versetul Zilei"
-            hero: 
+            hero:
                 heading: "Biblia – gratuit pe telefon, tabletă și computer."
                 description: "Biblia de la YouVersion este o aplicație simplă, fără reclame, care îți aduce Cuvântul lui Dumnezeu în viața de zi cu zi."
                 learn more: "află mai multe"
                 start reading: "Începe să citești"
                 skip in future: "Pe viitor, sari peste această pagină."
                 now skipped: "Această pagină va fi sărită."
-            features: 
+            features:
                 read heading: "Citește Biblia."
                 read description: "Alege din <a href='%{versions_path}' target='_self'>sute de versiuni și limbi ale Bibliei</a>. Compară două versiuni afișate una alături de alta. Poți chiar să-ți alegi mărimea textului și a modului de afișare. Poți experimenta Biblia online exact așa cum îți dorești."
                 study heading: "Studiază Biblia."
@@ -1321,11 +1321,11 @@ ro:
             download action: "Descarcă Aplicația Biblia"
             download description: "Descarcă gratuit Aplicația Biblia pe dispozitivul tău mobil și vei avea Biblia cu tine oriunde mergi."
             world installs: "Instalări pe tot globul"
-        trending verses: 
+        trending verses:
             title: "Versete din Biblie în trend"
             headline: "Versete din Biblie care sunt acum în trend în Aplicația Biblia de la YouVersion și pe Bible.com"
-    shared: 
-        menu_settings: 
+    shared:
+        menu_settings:
             title: "Setări cititor"
             close: "Închide"
             font: "Font:"
@@ -1345,7 +1345,7 @@ ro:
             translation notes: "Note de subsol"
             cross references: "Trimiteri la alte referințe"
             numbers and titles: "Numere și titluri"
-    app errors: 
+    app errors:
         404 plans explanation: "Cauți planul <a href='%{plan_path}' target='_self'>%{title}</a>?"
         404 contact support: "Întâmpini probleme? Contactează <a href='%{support_url}' target='_self'>echipa noastră de asistență</a>."
         404 explanation: "Încearcă să reiei căutarea de la <a href='%{reader_path}' target='_self'>pagina Acasă</a>. Nu merge nici așa? Contactează <a href='%{support_url}' target='_self'>echipa de asistență</a>."
@@ -1353,7 +1353,7 @@ ro:
         408 message: "Din păcate, serverele noastre nu au răspuns în timp util."
         408 explanation: "Am fost notificați și ne vom ocupa de toate problemele persistente în cel mai scurt timp. Acum încercăm să te ducem înapoi la planul tău de citire."
         try again: "Încearcă din nou"
-    versions: 
+    versions:
         filter: "Introdu numele versiunii (sau limba)"
         see all: "Vezi toate versiunile..."
         courtesy of: "%{abbreviation} îţi este oferit(ă) de %{publisher}"
@@ -1369,8 +1369,8 @@ ro:
         public domain: "Domeniu public"
         loading: "Se încarcă mai multe versiuni..."
         load error: "S-a produs o eroare la încărcarea mai multor versiuni. Pentru a încerca din nou, închide și apoi redeschide acest meniu."
-    campaigns: 
-        christmas: 
+    campaigns:
+        christmas:
             tracker title: "Pe Urmele CRĂCIUNULUI"
             twitter text: "Urmărește o lume întreagă citind despre nașterea lui Isus. Distribuie Pe Urmele Crăciunului @YouVersion: https://www.bible.com/christmas"
             facebook text: "Distribuie Pe Urmele Crăciunului pe măsură ce oameni din întreaga lume citesc despre nașterea lui Isus.  La biserică sau acasă, lângă cei dragi sau într-un moment de singurătate, ne oprim să ne gândim la minunea dragostei lui Dumnezeu pentru noi."
@@ -1385,51 +1385,51 @@ ro:
             versions: "Peste %{version_count} versiuni în %{language_count} limbi"
             tagline: "Biblia care merge cu tine oriunde"
             chapter counter format: "9.999.999"
-        100m: 
+        100m:
             logo: "YouVersion: Aplicația Biblia"
             tagline: "Începe cu <em>100 milioane</em>"
             intro: "Poate Aplicația Biblia să ajungă la 100 milioane de instalări înainte de 10 Iulie, când avem aniversarea de 5 ani? Doar cu ajutorul tău!"
             after: "Datorită ție, Aplicația Biblia a ajuns la 100 de milioane de instalări la aniversarea noastră de 5 ani, în 10 Iulie. Îți mulțumim!"
-            share: 
+            share:
                 with friends: "Împărtășește cu prietenii tăi"
-                fb: 
+                fb:
                     dialog name: "Ai Aplicația Biblia?"
                     dialog desc: "Iubesc Aplicația Biblia! M-a ajutat mult să fac Biblia parte din viața de fiecare zi. Îmi permite să evidențiez versete, să ascult Biblii audio, să fac notițe, să urmez planuri devoționale... și chiar să vizionez videoclipuri! Descărc-o chiar acum (gratuit) de aici: http://www.bible.com/app"
-                tw: 
+                tw:
                     tweet: "Aplicația Biblia de la @YouVersion o am mereu pe ecran. Citesc, vizionez, ascult și împărtășesc... totul gratuit: bible.com/app"
-                em: 
+                em:
                     subject: "Ai Aplicația Biblia?"
                     body: "Mă bucur de Aplicația Biblia și mă gândeam că ți-ar place și ție. Acum deschid Biblia mai des pentru că e foarte ușor de citit, de vizionat, de ascultat și de împărtășit. Are și Planuri de citire selectate din Biblie care mă așteaptă în fiecare zi.\n\nO poți obține (gratuit!) pentru aproape orice dispozitiv mobil, aici: http://www.bible.com/app"
-            body: 
+            body:
                 p1: "10 Iulie va fi o zi mare. Nu doar că Aplicația Biblia aniversează 5 ani dar în aceeași zi se împlinesc 5 ani de la lansarea Apple’s iTunes Store."
                 p2: "Chiar mai mult de atât? Cu ajutorul tău, este ziua când Aplicația Biblia va ajunge la 100 milioane de instalări."
                 p3: "Am învățat că Dumnezeu folosește asemenea momente importante pentru a încuraja o creștere și mai mare."
                 p4: "Să facem istorie împreună."
                 after p1: "YouVersion reprezintă o alianţă globală de oameni pasionaţi pentru a-i ajuta pe toţi să interacţioneze cu Cuvântul lui Dumnezeu. Pentru toate organizaţiile şi editurile Biblice, bisericile, pastorii şi voluntarii: vă mulţumim pentru generozitatea voastră!"
                 after p2: "Lucrul cel mai captivant despre acest eveniment este semnificația acestuia: oamenii de astăzi interacţionează cu Biblia la un nivel nemaivăzut de noi până acum. Este copleşitor de inspiraţional să vezi ceea ce Dumnezeu face. Şi noi credem că acesta este doar începutul. <em>Începe cu 100 de milioane</em>."
-            ad: 
+            ad:
                 title: "Aplicația Biblia este complet gratuită și un mod minunat de a explora Biblia."
                 copy: "Citește, vizionează, ascultă, împărtășește. Obține Aplicația Biblia pentru smartphone sau tabletă: <a href='http://bible.com/app' target='_self'>Descarcă acum</a>"
-            sidebar: 
+            sidebar:
                 tagline: "Să facem istorie împreună."
                 button: "Împărtășește Aplicația Biblia"
-    ui: 
+    ui:
         characters remaining: "caractere rămase"
         yes button: "Da"
         no button: "Nu"
         cancel: "Anulează"
-        plans: 
+        plans:
             privacy: "Dorești ca activitatea ta legată de acest plan să fie vizibilă prietenilor tăi?"
         loading indicator text: "Se încarcă ..."
         loading: "Încărcare"
-        pagination: 
+        pagination:
             next page: "Pagina următoare"
             previous page: "Pagina anterioară"
-        datetime: 
+        datetime:
             just now: "chiar acum"
         verses selected: "versete selectate"
-    EventsAdmin: 
-        header: 
+    EventsAdmin:
+        header:
             home: "Acasă"
             read: "Citește"
             plans: "Planuri de citire"
@@ -1440,7 +1440,7 @@ ro:
             search placeholder: "Caută..."
             sign in: "Autentificare"
             sign up: "Înregistrare"
-        profile menu: 
+        profile menu:
             bookmarks: "Marcaje"
             highlights: "Evidențieri"
             notes: "Notițe"
@@ -1448,7 +1448,7 @@ ro:
             friends: "Prieteni"
             badges: "Insigne"
             sign out: "Deconectare"
-        footer: 
+        footer:
             events: "Evenimente"
             versions: "Versiuni (%{count})"
             languages: "Limbi (%{count})"
@@ -1461,17 +1461,17 @@ ro:
             press: "Presă"
             privacy: "Politică de confidențialitate"
             terms: "Termeni și condiții"
-        unsubscribe: 
+        unsubscribe:
             about: "Ai control asupra email-urilor pe care le primești de la YouVersion Poți edita notificările pe dispozitivele mobile din aplicația mobilă."
             email: "e-mail"
             not me: "Nu sunt eu"
             saved: "Salvat!"
             plan delivery: "Planul de citire pentru azi"
             sign-in: "Pentru a modifica alte opțiuni, <a href='%{sign_in_path}'>autentifică-te în contul tău</a>."
-            links: 
+            links:
                 manage: "Gestionează notificările prin email"
                 unsub all: "Dezabonare de la toate email-urile"
-            success: 
+            success:
                 all: "Te-ai dezabonat cu succes de la <b>toate email-urile YouVersion</b>."
                 badges: "Te-ai dezabonat cu succes de la email-urile legate de <b>Insigne</b>."
                 comments: "Te-ai dezabonat cu succes de la email-urile legate de <b>Comentarii</b>."
@@ -1484,7 +1484,7 @@ ro:
                 votd: "Te-ai dezabonat cu succes de la email-urile cu <b>Versetul zilei</b>."
                 votd_image: "Te-ai dezabonat cu succes de la email-urile cu <b>Imaginea versetului zilei</b>."
                 contact_joins: "Te-ai dezabonat cu succes de la email-urile primite de la <b>Contacte</b>"
-            labels: 
+            labels:
                 badges: "Când câștig o insignă"
                 comments: "Comentarii legate de activitatea mea"
                 friendships: "Cereri de prietenie"
@@ -1495,14 +1495,14 @@ ro:
                 votd: "Textul Versetului zilei"
                 votd_image: "Imaginea pentru versetul zilei"
                 contact_joins: "Când cineva din lista de contacte se alătură"
-            error: 
+            error:
                 token: "Ne pare rău; trebuie să te autentifici pentru a putea modifica configurările notificărilor:"
                 other_type: "Ne pare rău, acțiunea nu s-a realizat. Dorești să-ți actualizezi notificările?"
         change: "Schimbă"
-        ui: 
+        ui:
             yes button: "Da"
             no button: "Nu"
-        plans: 
+        plans:
             plans: "Planuri de citire"
             plans back: "← Planuri"
             related plans: "Planuri asemănătoare"
@@ -1511,19 +1511,19 @@ ro:
             my_plans: "Planurile mele"
             day_completed: "<b>%{username}</b> a completat <b> ziua %{day}</b> a planului: <b>%{plan_title}</b>"
             which reading: "%{current} din %{total}"
-            status: 
+            status:
                 on track: "La zi!"
-                days ahead: 
+                days ahead:
                     one: "%{count} zi în avans!"
                     few: "%{count} zile în avans!"
                     other: "%{count} de zile în avans!"
-                missed days: 
+                missed days:
                     one: "%{count} zi în urmă"
                     few: "%{count} zile în urmă"
                     other: "%{count} de zile în urmă"
             bible plan language: "Limba planului de citire"
             share plan: "Încearcă acest plan de citire a Bibliei de la @YouVersion: %{plan_title}"
-            widget: 
+            widget:
                 my plans: "Planurile mele"
                 start reading: "Începe să citești"
                 view my plans: "Vezi Planurile mele"
@@ -1532,12 +1532,12 @@ ro:
                 reading: "lectură"
                 readings: "lecturi"
                 readings 5 or more: "lecturi"
-            stats: 
-                friends reading: 
+            stats:
+                friends reading:
                     one: "%{count} prieten s-a abonat la acest plan"
                     few: "%{count} prieteni s-au abonat la acest plan"
                     other: "%{count} prieteni s-au abonat la acest plan"
-                friends completed: 
+                friends completed:
                     one: "%{count} prieten a terminat acest plan"
                     few: "%{count} prieteni au terminat acest plan"
                     other: "%{count} prieteni au terminat acest plan"
@@ -1545,7 +1545,7 @@ ro:
                 view all: "Vezi tot"
                 close: "Închide"
             settings: "Setări"
-            privacy: 
+            privacy:
                 visible to friends?: "Dorești ca prietenii tăi să vadă activitatea ta legată de Planurile de citire?"
                 private: "Privat"
                 public: "Public"
@@ -1615,7 +1615,7 @@ ro:
             catch me up: "Adu-mă la zi"
             restart description: "Poți să reîncepi planul. Toată istoria și progresul citirii tale vor fi resetate și o vei lua de la început."
             restart: "Reîncepe plan"
-            privacy description: 
+            privacy description:
                 private: "Planul tău este privat. Schimbă-ți setările în Doar Prieteni pentru a împărtăși activitatea ta din planurile de citire cu prietenii."
                 public: "Planul tău este vizibil prietenilor. Schimbă în Privat pentru a face activitatea din planurile de citire privată."
             make private: "Păstrează privat"
@@ -1665,39 +1665,39 @@ ro:
             completed notice: "Felicitări! Ai finalizat planul de citire."
             exit: "Ieșire"
             loading sidebar content: "Se încarcă conținutul barei laterale..."
-        components: 
-            ErrorMessage: 
+        components:
+            ErrorMessage:
                 genericError: "A apărut o eroare"
-                announcement: 
-                    events: 
-                        title: 
+                announcement:
+                    events:
+                        title:
                             required: "Anunțul trebuie să aibă titlu."
-                default: 
-                    bible: 
-                        reference: 
+                default:
+                    bible:
+                        reference:
                             not_found: "Referință biblică nevalidă."
-                    events: 
-                        google_place_id: 
+                    events:
+                        google_place_id:
                             required: "Trebuie să alegi o locație de pe hartă."
-                        latitude: 
+                        latitude:
                             required: "Trebuie să alegi o locație de pe hartă."
-                        times: 
-                            start_dt: 
+                        times:
+                            start_dt:
                                 must_be_a_future_date: "Ora începerii nu poate fi în trecut."
-                        timezone: 
+                        timezone:
                             required: "Este nevoie de fusul orar."
-                reference: 
-                    events: 
-                        usfm: 
+                reference:
+                    events:
+                        usfm:
                             invalid: "Referința biblică nu este valabilă."
-                url: 
-                    events: 
-                        url: 
+                url:
+                    events:
+                        url:
                             required: "Este necesar URL."
-                        title: 
+                        title:
                             required: "Este necesară eticheta URL."
-            EventHeader: 
-                status: 
+            EventHeader:
+                status:
                     published: "Publicat"
                     draft: "Ciornă"
                     live: "În direct"
@@ -1709,36 +1709,36 @@ ro:
                 eventBuilder: "ORGANIZATOR DE EVENIMENTE"
                 signOut: "Deconectare"
                 createAccount: "Creează cont"
-            HtmlEditor: 
+            HtmlEditor:
                 text: "Text"
                 bold: "îngroșat"
                 italic: "italic"
-        containers: 
-            Auth: 
+        containers:
+            Auth:
                 title: "Autentificare evenimente"
                 signIn: "Autentificare"
                 subHead1: "Dacă ești utilizator al Aplicației Biblia și deja ai cont YouVersion, te poți autentifica folosind aceleași autorizări.<br/><br/>Nu ai încă un cont YouVersion? <br/><a href='%{url}'>Înregistrează-te acum pe Bible.com pentru a începe să creezi evenimente.</a>"
                 email: "e-mail"
                 password: "Parolă"
                 forgotPassword: "Am uitat parola"
-            EventEdit: 
+            EventEdit:
                 event: "Eveniment"
-            EventEditContentContainer: 
+            EventEditContentContainer:
                 choose: "Alege un conținut pentru a începe."
                 needHelp: "Ai nevoie de ajutor"
                 title: "Conținut eveniment"
                 previous: "←Pasul anterior: locul & ora"
                 next: "Pasul următor: Previzualizare→"
-            EventEditDetails: 
+            EventEditDetails:
                 title: "Detaliile evenimentului"
-            EventEditLocationContainer: 
+            EventEditLocationContainer:
                 title: "Locul evenimentului"
                 previous: "← Pasul anterior: detalii"
                 next: "Pasul următor: adaugă un conținut→"
-            EventEditPreview: 
+            EventEditPreview:
                 title: "Previzualizarea evenimentului"
                 previous: "← Pasul anterior: Conținut"
-            EventEditShare: 
+            EventEditShare:
                 title: "Partajare eveniment"
                 subTitle: "Evenimentul tău este acum publicat:"
                 edit: "Editează eveniment"
@@ -1747,10 +1747,10 @@ ro:
                 copy: "Copiază"
                 copied: "Legătura scurtă a fost copiată în clipboard"
                 previous: "← Anterior: Previzualizare"
-            EventFeedDiscover: 
+            EventFeedDiscover:
                 title: "Descoperă evenimente"
                 discover: "Descoperă"
-            EventFeedMine: 
+            EventFeedMine:
                 title: "Evenimentele mele"
                 previous: "← Anterior"
                 next: "Continuă →"
@@ -1759,38 +1759,38 @@ ro:
                 subTitle: "EVENIMENTE CREATE DE MINE"
                 newFirst: "Creează primul eveniment"
                 learn: "Află cum să pregătești un eveniment reușit"
-            EventFeedSaved: 
+            EventFeedSaved:
                 title: "Evenimente salvate"
-            EventView: 
+            EventView:
                 title: "Eveniment YouVersion"
-            SelectLanguage: 
+            SelectLanguage:
                 choose: "Alege limba"
-        features: 
-            Auth: 
-                errors: 
+        features:
+            Auth:
+                errors:
                     sessionExpired: "Sesiunea ta a expirat Te rugăm să te autentifici din nou."
                     invalidEmail: "Email sau parolă nevalide."
-            EventEdit: 
-                errors: 
+            EventEdit:
+                errors:
                     locationMustHaveTime: "Toate locațiile trebuie să conțină cel puțin o oră."
                     locationRequired: "Nu poți publica un eveniment fără locații."
                     contentRequired: "Nu poți publica un Eveniment fără conținut."
                     planSearchFailed: "Căutarea nu s-a potrivit cu niciun document"
                     noMatchingPlans: "Nu se potrivește niciunui plan"
-                components: 
-                    EventEditNav: 
+                components:
+                    EventEditNav:
                         details: "Detalii"
                         locations: "Locuri & Ore"
                         content: "Conținut"
                         preview: "Vizualizare & Publicare"
                         share: "Distribuie"
-                features: 
-                    content: 
-                        components: 
-                            ContentFeed: 
+                features:
+                    content:
+                        components:
+                            ContentFeed:
                                 reorder: "Reorganizare conținut"
                                 doneReordering: "Reordonare efectuată"
-                            ContentHeader: 
+                            ContentHeader:
                                 text: "Text"
                                 reference: "Referința biblică"
                                 plan: "Plan de citire"
@@ -1798,40 +1798,40 @@ ro:
                                 link: "Link extern"
                                 giving: "Adăugare link"
                                 announcement: "Anunț"
-                            ContentHelpModal: 
+                            ContentHelpModal:
                                 types: "Tip conținut"
                                 learn: "Află cum să faci <br>un eveniment grozav"
-                                text: 
+                                text:
                                     title: "Modul text"
                                     desc: "Schițe, idei principale, întrebări pentru discuții… orice conținut general legat de text care ajută participanții să îți urmărească mesajele în timp real. Modulele textului nu au limită de lungime și pot include rich text formatting."
-                                reference: 
+                                reference:
                                     title: "Modul referințe biblice"
                                     desc: "Selectează orice verset biblic sau pasaj cu legătură (link) directă la oricare din cele peste 1200 de versiuni din cele peste 900 de limbi, oferite de YouVersion. Persoanele care vizualizează evenimentul tău pot atinge referința ta pentru a o vedea în cadrul Aplicației Biblia, unde o pot marca, pot face evidențieri și multe altele"
-                                plan: 
+                                plan:
                                     title: "Modul Plan"
                                     desc: "Link către Planuri de citire și Devoționale care au legătură cu învățătura oferită și care ajută pe cei care te urmăresc să continue să citească din Cuvântul lui Dumnezeu întreaga săptămână. "
-                                image: 
+                                image:
                                     title: "Modul imagine"
                                     desc: "Evenimentul tău prinde viață cu diferite elemente grafice: imaginea seriei, fotografii, versete ilustrate, etc. Participanții vor putea să distribuie ușor grafica Evenimentului pe rețelele sociale, transformând mesajul tău într-unul viral."
-                                link: 
+                                link:
                                     title: "Modul link extern"
                                     desc: "Creează un buton în Eveniment care face legătura cu orice website extern. Plasează audiența la doar un clic distanță de donare online, înregistrare voluntari sau pagina bisericii."
-                                announcement: 
+                                announcement:
                                     title: "Modul anunțuri"
                                     desc: "Știri din biserici, evenimente din calendar, programe, clase de studiu, oportunități de voluntariat și misiune... Modulele de anunțuri conțin exact ce trebuie pentru partajarea informațiilor importante din punct de vedere al timpului, dar în același timp nu trebuie să-ți distragă atenția de la esența evenimentului. Fiecare modul de anunțuri apare pe propria pagină la evenimentele tale și poate să includă chiar și conținut cu text îmbogățit (cum ar fi îngroșat sau cursiv)."
-                            ContentInsertionPoint: 
+                            ContentInsertionPoint:
                                 title: "Inserează modulul următor aici"
-                            ContentTypeAnnouncement: 
+                            ContentTypeAnnouncement:
                                 title: "Titlu"
                                 prompt: "Scrie ceva aici..."
                                 caption: "Doar titlul (vezi mai sus) va fi vizibil în evenimentul tău. Când atingi titlul, conținutul (vezi mai jos) este afișat în ecran separat."
-                            ContentTypeContainer: 
+                            ContentTypeContainer:
                                 dirty: "Conținutul se va salva automat la câteva secunde după ce ai încetat să mai tastezi."
                                 failed: "Nu se poate salva"
                                 tryAgain: "Încearcă din nou."
                                 lastSaved: "Ultima salvare %{when}"
-                            ContentTypeImage: 
-                                errors: 
+                            ContentTypeImage:
+                                errors:
                                     wrongSize: "Dimensiunea imaginii trebuie să fie de%{requiredWidth}x%{requiredHeight}. Imaginea ta este de %{yourWidth}x%{yourHeight}."
                                     wrongType: "Tip de fișier nevalid. Trebuie să fie JPG."
                                 caption: "Adaugă legendă"
@@ -1839,32 +1839,32 @@ ro:
                                 onlyJpg: "[numai JPG]"
                                 sizePrompt: "%{requiredWidth}px adâncime x %{requiredHeight}px înălțime"
                                 select: "Selectare imagine"
-                            ContentTypeLink: 
+                            ContentTypeLink:
                                 kindrid: "Dacă dorești o platformă inteligentă și simplă pentru a dărui, încearcă Kindrid. <a href='%{url}'>Dacă dorești o platformă inteligentă și simplă pentru a dărui, încearcă Kindrid.</a>Dacă dorești o platformă inteligentă și simplă pentru a dărui, încearcă Kindrid."
                                 label: "Eticheta link"
                                 prompt: "Scrie ceva aici..."
                                 url: "URL"
-                            ContentTypePlan: 
+                            ContentTypePlan:
                                 replace: "Înlocuiește"
                                 search: "Caută un plan de citire"
-                            ContentTypeReference: 
+                            ContentTypeReference:
                                 language: "Limbă"
                                 version: "Versiune"
                                 book: "Cartea"
                                 chapterVerse: "Capitol: verset"
-                            ContentTypeText: 
+                            ContentTypeText:
                                 prompt: "Scrie ceva aici..."
-                            LiveWarningModal: 
+                            LiveWarningModal:
                                 title: "Nu se poate șterge în timpul derulării evenimentului"
                                 desc: "Odată ce evenimentul a început să se deruleze, nu poți șterge text, referințe biblice și module de imagine din cadrul acestuia pentru că utilizatorii e posibil să fi adăugat notițe private. Totuși, poți edita aceste module."
                                 ok: "OK"
-                    details: 
-                        errors: 
+                    details:
+                        errors:
                             generic: "A apărut o problemă în timpul publicării evenimentului tău."
                             invalidTimes: "Un singur serviciu nu poate dura mai mult de 12 ore și diferența dintre timpul de început cel mai devreme respectiv cel mai târziu dintr-un eveniment nu poate fi mai mare de 8 zile. Te rugăm corectează orele evenimentului și încearcă din nou."
-                        components: 
-                            DetailsEdit: 
-                                errors: 
+                        components:
+                            DetailsEdit:
+                                errors:
                                     wrongSize: "Mărimea imaginii trebuie să fie %{requiredWidth}x%{requiredHeight}. Imaginea ta este %{yourWidth}x%{yourHeight}."
                                     wrongType: "Tipul de fișier este invalid. Trebuie să fie JPG."
                                 changeImage: "Schimbă imaginea"
@@ -1878,29 +1878,29 @@ ro:
                                 desc: "Descrierea evenimentului "
                                 next: "Următorul pas: adaugă locul și ora"
                                 blank: "%{field} nu poate fi gol."
-                    location: 
-                        components: 
-                            Location: 
+                    location:
+                        components:
+                            Location:
                                 oneRequired: "Adaugă cel puțin o dată."
                                 use: "FOLOSEȘTE ACEST LOC"
                                 edit: "Editare loc"
                                 delete: "Ștergere loc"
-                            LocationAddButtons: 
+                            LocationAddButtons:
                                 addPhysical: "Adaugă un loc fizic"
                                 promptPhysical: "Poți adăuga mai multe locuri."
                                 addVirtual: "Adaugă un loc virtual"
                                 churchOnline: "Știai? Poți lansa gratuit o misiune online folosind platforma Church Online. <a className='button-caption' href='%{url}'>Poți lansa gratuit o misiune online folosind platforma Church Online.</a>Poți lansa gratuit o misiune online folosind platforma Church Online."
-                            LocationAddTime: 
+                            LocationAddTime:
                                 minutes: "MINUTE"
                                 hours: "ORE"
                                 days: "zile"
-                            LocationDeleteModal: 
+                            LocationDeleteModal:
                                 sure: "Sigur?"
                                 selected: "Acest loc a fost selectat pentru ștergere:"
                                 warn: "Locul va fi șters din lista evenimentelor trecute și a celor prezente. Nu vei mai putea folosi acest loc pentru evenimente viitoare."
                                 cancel: "Anulează"
                                 delete: "Șterge"
-                            LocationEdit: 
+                            LocationEdit:
                                 prompt: "Adaugă adresa locului..."
                                 country: "Țara"
                                 timezone: "Fus orar"
@@ -1911,7 +1911,7 @@ ro:
                                 cancel: "Anulează"
                                 save: "Salvează acest loc"
                                 virtualPrompt: "Introdu un oraș pentru a stabili un fus orar..."
-                            LocationTimeShifter: 
+                            LocationTimeShifter:
                                 shift: "Mută datele de început"
                                 forward: "Redirecționează"
                                 backward: "înapoi"
@@ -1926,17 +1926,17 @@ ro:
                                 hours: "ORE"
                                 update: "Actualizare"
                                 shiftButton: "Schimbă toate datele și orele în același timp."
-                            UnpublishModal: 
+                            UnpublishModal:
                                 cancel: "Anulează"
                                 title: "Pentru a efectua modificări trebuie să-l revoci de la publicare."
                                 desc: "Pentru a adăuga, pentru a edita sau pentru a șterge locațiile și orele, evenimentul trebuie revocat temporar de la publicare. În acest timp, evenimentul tău nu va fi vizibil în rezultatele căutării. Nu uita să publici din nou evenimentul tău."
                                 unpublish: "Revocă de la publicare"
-                    preview: 
-                        notes: 
+                    preview:
+                        notes:
                             prompt: "Adaugă notițele tale private..."
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Autentifică-te pentru a adăuga notițe private…</span> Autentifică-te pentru a adăuga notițe private…</a>"
-                        components: 
-                            PreviewFeed: 
+                        components:
+                            PreviewFeed:
                                 review: "Revizuiește-ți evenimentul înainte de publicare"
                                 previewUrl: "URL de previzualizare:"
                                 share: "Partajează evenimentul"
@@ -1944,23 +1944,23 @@ ro:
                                 publish: "Publică"
                                 unpublish: "Revocă de la publicare"
                                 locations: "Locuri:"
-                                discoverable: 
+                                discoverable:
                                     title: "Disponibil"
                                     desc: "Evenimentul va fi vizibil în Aplicația Biblia, la Locul evenimentului, iar rezultatele căutării cu 5 zile înainte de cel mai apropiat început."
-                                status: 
+                                status:
                                     title: "Status:"
                                     desc: "Semnul roșu LIVE va afișa cel mai apropiat început."
-                                remove: 
+                                remove:
                                     title: "Șterge:"
                                     desc: "Evenimentul nu mai poate fi găsit după ultimul termen dat. Participanții care au apăsat „Salvează Evenimentul” când Evenimentul era disponibil vor avea în continuare acces la versiunea arhivată. Acest eveniment va continua să fie accesibil prin link-uri directe."
-                            PreviewTypeAnnouncement: 
+                            PreviewTypeAnnouncement:
                                 expand: "Extinde"
-                            PreviewTypePlan: 
+                            PreviewTypePlan:
                                 read: "Citește"
                                 info: "Informații despre Plan"
-            EventFeedMine: 
-                components: 
-                    EventListItem: 
+            EventFeedMine:
+                components:
+                    EventListItem:
                         duplicate: "Duplică"
                         share: "Distribuie"
                         delete: "Șterge"
@@ -1968,24 +1968,24 @@ ro:
                         edit: "Modifică"
                         view: "Arată"
                         fail: "Evenimentul nu poate fi șters"
-            EventView: 
-                components: 
-                    EventViewContent: 
+            EventView:
+                components:
+                    EventViewContent:
                         copy: "Copiază"
                         copied: "Copiat"
                         share: "Distribuie"
                         read: "Citește"
                         readPlan: "Citește plan"
-                    EventViewContentAnnouncement: 
+                    EventViewContentAnnouncement:
                         expand: "Extinde"
                         collapse: "Restrânge"
-                    EventViewDetails: 
+                    EventViewDetails:
                         expand: "Extinde"
                         collapse: "Restrânge"
                         save: "Salvează evenimentul"
                         signIn: "Autentifică-te pentru a salva evenimentul"
                         saved: "Eveniment salvat"
-        Auth: 
+        Auth:
             sign up: "Înregistrare"
             sign in: "Autentificare"
             sign up google: "Înregistrare cu contul Google"
@@ -2000,19 +2000,19 @@ ro:
             share blurb: "Se pare că vrei să partajezi Scriptura. Minunat! Poți face acest lucru folosind Facebook sau Tweeter. Autentifică-te sau creează-ți cont și poți începe!"
             highlight blurb: "Se pare că dorești să evidențiezi un pasaj din Scriptură. Excelent! Evidențierile te ajută să îți organizezi și să păstrezi versetele favorite. Intră în cont sau creează-ți un cont pentru a începe!"
             note blurb: "Se pare că dorești să îți faci o notiță despre un verset. Bună idee! Notițele te pot ajuta să-ți amintești și să organizezi adevărurile descoperite în Cuvântul lui Dumnezeu. Intră în contul tău sau creează-ți un cont mai jos pentru a începe!"
-        Reader: 
+        Reader:
             chapter: "Capitolul"
             read reference: "Citește %{reference}"
             read chapter: "Citește întreg capitolul"
             plan title: "Planuri de citire și Devoționale Gratuite"
             plan title ref: "Planuri de citire și Devoționale gratuite în legătură cu %{reference}"
             plan subtitle: "Planurile Biblice despart citirea Scripturii în fragmente zilnice realizabile. Planurile includ deseori devotionale ajutătoare, sau selecții audio ori video. Fie că le numești Planuri Biblice, Planuri de citire sau Devoționale, Planurile sunt o metodă dovedită că poți să faci din Biblie o parte normală a vieții tale zilnice. "
-            meta: 
-                mobile: 
+            meta:
+                mobile:
                     title: "Aplicația Biblia"
-                site: 
+                site:
                     title: "Bible.com"
-            header: 
+            header:
                 parallel: "În paralel"
                 parallel exit: "Ieșire din modul paralel"
                 cancel: "Anulează"
@@ -2028,32 +2028,32 @@ ro:
                 videos: "Videoclipuri"
                 me: "Eu"
                 recent versions: "Folosite recent"
-            chapterpicker: 
+            chapterpicker:
                 book label: "CARTE"
                 chapter label: "CAPITOL"
                 chapter unavailable: "Capitol indisponibil în această versiune.  Alege alt capitol sau altă versiune."
                 choose chapter: "Alege capitolul"
-            versionpicker: 
+            versionpicker:
                 language label: "LIMBI ALE BIBLIEI"
                 language sub-label: "Limba Bibliei"
                 change language: "Schimbare limbă"
                 filter languages: "Filtrează limbi..."
                 version label: "VERSIUNI"
                 choose version: "Alege versiunea"
-            reader settings: 
+            reader settings:
                 footnotes: "Note de subsol"
                 numbers: "Numere și titluri"
-            more: 
+            more:
                 events: "Evenimente"
                 settings: "Setări"
-            search: 
+            search:
                 bible: "Biblia"
                 users: "Utilizatori"
                 plans: "Planuri de citire"
-            version: 
+            version:
                 learn more: "Află mai mult"
                 courtesy of: "%{abbreviation} îţi este oferit(ă) de %{publisher}"
-            verse action: 
+            verse action:
                 copy: "Copiază"
                 bookmark: "Marcaj"
                 note: "Notiță"
@@ -2071,21 +2071,6 @@ ro:
                 add color: "Adaugă culoare"
                 labels private: "Etichetele sunt întotdeauna private"
         notifications: "Notificări"
-<<<<<<< HEAD
-        start plan title: "How do you want to read this Plan?"
-        by myself: "By Myself"
-        by myself description: "Keep your Plan activity private, or allow your Friends to see your Plan activity."
-        with friends: "With Friends"
-        with friends description: "Invite Friends to join you in this Plan. You’ll complete days together at the same pace, and you’ll all be able to discuss what God is teaching you along the way."
-        level of privacy: "Level of Privacy"
-        plan privacy prompt: "Do you want your Friends to see your Plan activity?"
-        visible to friends: "Visible to Friends"
-        private: "Privat"
-        cancel: "Anulează"
-        start plan when: "When do you want to start this Plan?"
-        future start blurb: "Starting on a future date will give your Friends time to accept your invitation."
-        change date: "Change Date"
-=======
         start plan title: "Cum vrei să citești acest Plan?"
         by myself: "Singur"
         by myself description: "Activitatea ta în acest Plan va fi privată sau o poți face publică Prietenilor tăi."
@@ -2099,67 +2084,28 @@ ro:
         start plan when: "Când vrei să începi acest plan?"
         future start blurb: "Dacă începi la o dată ulterioară le vei da timp prietenilor tăi să-ți accepte invitația."
         change date: "Schimbă data"
->>>>>>> master
         settings: "Setări"
         done: "Terminat"
         next: "Următorul"
         edit: "Modifică"
         delete: "Șterge"
         post: "Postează"
-        x likes: 
+        x likes:
             one: "%{number} apreciere"
             few: "%{number} aprecieri"
             other: "%{number} de aprecieri"
         selected: "Selectate"
-<<<<<<< HEAD
-        currently subscribed: "Currently Subscribed"
-        invite friends: "Invită prieteni"
-        invite others: "Invite Others"
-        invited: "Invited"
-        pending: "Pending"
-        x pending: 
-            one: "%{number} Pending"
-            few: "%{number} Pending"
-            other: "%{number} Pending"
-        accepted: "Accepted"
-        x accepted: 
-            one: "%{number} Accepted"
-            few: "%{number} Accepted"
-            other: "%{number} Accepted"
-        invitation: "Invitation"
-        accept invitation: "Accept Invitation"
-        what is this: "What is this?"
-        decline: "Refuză"
-        start date: "Start Date"
-        plan archived: "Plan Archived"
-        starts: "Începe"
-        started: "Început"
-        loading: "Loading..."
-        join together share: "Would you read the bible plan, %{plan}, with me?"
-        join together: "%{host} wants to read this Plan with you."
-        talk it over: "Talk It Over"
-        participants: "Participants"
-        host: "Organizator"
-        x participants: 
-            one: "%{number} Participant"
-            few: "%{number} Participants"
-            other: "%{number} Participants"
-        participant limit: "Participant Limit: %{number}"
-        + x more: "+ %{number} more"
-        when participant comments: "When Participants post a comment"
-        when participant accepts: "When Participants accept an invite"
-=======
         currently subscribed: "Abonați în prezent"
         invite friends: "Invită prieteni"
         invite others: "Invită pe alții"
         invited: "Invited"
         pending: "În Așteptare"
-        x pending: 
+        x pending:
             one: "%{number} în așteptare"
             few: "%{number} în așteptare"
             other: "%{number} în așteptare"
         accepted: "Au acceptat"
-        x accepted: 
+        x accepted:
             one: "%{number} a acceptat"
             few: "%{number} au acceptat"
             other: "%{number} au acceptat"
@@ -2177,7 +2123,7 @@ ro:
         talk it over: "Comentarii"
         participants: "Participanți"
         host: "Organizator"
-        x participants: 
+        x participants:
             one: "%{number} participant"
             few: "%{number} participanți"
             other: "%{number} de participanți"
@@ -2185,4 +2131,3 @@ ro:
         + x more: "+ încă %{number}"
         when participant comments: "Când un participant postează un comentariu"
         when participant accepts: "Când un participant acceptă o invitație"
->>>>>>> master

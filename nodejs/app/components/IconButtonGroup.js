@@ -35,7 +35,7 @@ function IconButtonGroup({
 
 	return (
 		<div className="yv-icon-button-group" style={{ alignItems, justifyContent }}>
-			{children &&
+			{children.length > 0 &&
 				React.Children.map(children, (child => {
 					if (child) {
 						return React.cloneElement(child, {

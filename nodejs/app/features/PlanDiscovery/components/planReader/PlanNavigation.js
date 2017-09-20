@@ -81,28 +81,30 @@ class PlanNavigation extends Component {
 
 		return (
 			<div className='plan-nav'>
-				<StickyHeader className={'plan-nav-header'} verticalOffset={70}>
-					<div className='nav-content columns large-6 medium-8 medium-centered'>
-						<Link to={subLink}>
-							<LazyImage
-								alt='plan-image'
-								src={planImgUrl}
-								width={40}
-								height={40}
-								customClass='nav-img img-left'
-								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
-							/>
-						</Link>
-						<div className='plan-info'>
+				<StickyHeader verticalOffset={70} translationDistance='70px' stackOrder={1}>
+					<div className='plan-nav-header' style={{ width: '100%' }}>
+						<div className='nav-content columns large-6 medium-8 medium-centered'>
 							<Link to={subLink}>
-								<div className='nav-title'>{ planName }</div>
+								<LazyImage
+									alt='plan-image'
+									src={planImgUrl}
+									width={40}
+									height={40}
+									customClass='nav-img img-left'
+									placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
+								/>
 							</Link>
-							<div className='nav-length'>
-								<FormattedMessage id="plans.day number" values={{ day }} />
-								&nbsp;
-								&bull;
-								&nbsp;
-								<FormattedMessage id="plans.which reading" values={{ current: contentNum, total: totalSegments }} />
+							<div className='plan-info'>
+								<Link to={subLink}>
+									<div className='nav-title'>{ planName }</div>
+								</Link>
+								<div className='nav-length'>
+									<FormattedMessage id="plans.day number" values={{ day }} />
+									&nbsp;
+									&bull;
+									&nbsp;
+									<FormattedMessage id="plans.which reading" values={{ current: contentNum, total: totalSegments }} />
+								</div>
 							</div>
 						</div>
 					</div>

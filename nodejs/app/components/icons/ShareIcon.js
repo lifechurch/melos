@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 function ShareIcon({ width, height, fill }) {
 	return (
 		<div className="shareicon-container vertical-center">
-			<svg className='shareicon' viewBox="0 0 24 33" width={width} height={height} version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+			<svg className='shareicon' viewBox="0 0 24 33" width={width} height={height} version="1.1" xmlns="http://www.w3.org/2000/svg">
 				<g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
 					<g transform="translate(-942.000000, -1335.000000)" fill={fill}>
 						<g transform="translate(460.000000, 1236.000000)">

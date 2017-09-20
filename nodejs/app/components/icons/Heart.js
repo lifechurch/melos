@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 function HeartIcon({ width, height, fill }) {
 	return (
 		<div className='hearticon-container vertical-center'>
-			<svg className='hearticon' viewBox='0 0 24 20' width={width} height={height} version='1.1' xmlns='http://www.w3.org/2000/svg' xlink='http://www.w3.org/1999/xlink'>
+			<svg className='hearticon' viewBox='0 0 24 20' width={width} height={height} version='1.1' xmlns='http://www.w3.org/2000/svg'>
 				<g stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
 					<g transform='translate(-530.000000, -131.000000)' fill={fill}>
 						<g transform='translate(530.000000, 131.000000)'>

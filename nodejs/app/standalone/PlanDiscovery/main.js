@@ -15,11 +15,11 @@ import defaultState from './defaultState'
 import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
-import NotificationsPermissionPrompt from '../../widgets/NotificationsPermissionPrompt'
 
 import '../../less/style.less'
 
 require('moment/min/locales')
+require('preact/devtools')
 
 if (typeof window !== 'undefined') {
 	ga.initialize('UA-3571547-76', { language: window.__LOCALE__.locale });
@@ -50,7 +50,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-export const store = configureStore(initialState, browserHistory, logger)
+const store = configureStore(initialState, browserHistory, logger)
 const history = syncHistoryWithStore(browserHistory, store)
 
 addLocaleData(window.__LOCALE__.data)

@@ -101,7 +101,7 @@ class UnsubbedPlan extends Component {
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>
-					{children && React.cloneElement(children, {
+					{children.length > 0 && React.cloneElement(children, {
 						id: plan.id,
 						plan,
 						dispatch,

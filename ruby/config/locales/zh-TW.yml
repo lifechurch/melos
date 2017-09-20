@@ -1,66 +1,66 @@
 ---
-zh-TW: 
-    time: 
-        formats: 
+zh-TW:
+    time:
+        formats:
             votd: "%Y/%B/%-d"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
+    datetime:
+        time_ago_in_words:
+            about_x_hours:
                 other: "大約%{count}小時前"
-            about_x_months: 
+            about_x_months:
                 other: "大約%{count}個月前"
-            about_x_years: 
+            about_x_years:
                 other: "大約%{count}年前"
-            almost_x_years: 
+            almost_x_years:
                 other: "將近%{count}年前"
             half_a_minute: "半分鐘前"
-            less_than_x_minutes: 
+            less_than_x_minutes:
                 other: "不到%{count}分鐘前"
-            less_than_x_seconds: 
+            less_than_x_seconds:
                 other: "不到%{count}秒前"
-            over_x_years: 
+            over_x_years:
                 other: "超過%{count}年前"
-            x_days: 
+            x_days:
                 other: "%{count}天前"
-            x_minutes: 
+            x_minutes:
                 other: "%{count}分鐘前"
-            x_months: 
+            x_months:
                 other: "%{count}個月前"
-            x_seconds: 
+            x_seconds:
                 other: "%{count}秒前"
-    counter: 
+    counter:
         format: "999,999,999"
-    social: 
-        intro page: 
+    social:
+        intro page:
             main heading: "對話與發現"
             main description: "與您信賴的朋友一起探索聖經，一種全新的方式"
-            moment: 
+            moment:
                 user aaron: "亞倫"
                 user andy: "安迪"
                 timestamp: "5 天前"
                 title: "書籤標記了詩篇 31:7"
                 verse: "我要為你的慈愛高興歡喜；因為你見過我的困苦，知道我心中的艱難。"
                 reference: "詩篇 31:7"
-                discover: 
+                discover:
                     copy: "與您的朋友一起從彼此的醒目標示、書籤和筆記中發掘和學習。"
                     button: "我從哪裡開始？"
-                share: 
+                share:
                     copy: "共享有關聖經的真誠交流。"
                     button: "從尋找朋友開始。"
-                likes: 
+                likes:
                     info: "有 4 個人點讚"
-                comments: 
-                    first: 
+                comments:
+                    first:
                         text: "這正是我今天所需要聽到的，謝謝！讓我們找機會再聊！"
                         time: "大約 3 小時前"
-                    second: 
+                    second:
                         text: "阿們，我也是。現在給您發郵件。"
                         time: "大約 27 分鐘前"
                     field placeholder: "寫評論..."
-        widget: 
+        widget:
             timeline: "動態時報"
             no activity yet: "還沒有任何活動。"
-        moment: 
+        moment:
             read all: "閱讀全部"
             read less: "精簡閱讀"
         share: "分享"
@@ -69,18 +69,18 @@ zh-TW:
         connected as: "您已與 %{connection} 上的 %{username} 帳戶連接。"
         remove connection: "移除這個連接"
         connection friends: "這是一些在 %{connection} 服務上與您有連接的 YouVersion 用戶："
-        errors: 
+        errors:
             no friends: "看來您在%{connection}的朋友還沒有 YouVersion。"
             reset connection: "抱歉，出錯了！請移除這個連接然後重新連接。"
-        email: 
+        email:
             name: "電子郵件"
-        twitter: 
+        twitter:
             name: "Twitter"
-        facebook: 
+        facebook:
             name: "Facebook"
-            errors: 
+            errors:
                 expired access: "您接入 Facebook 的授權已經失效。請先移除關聯，然後重新連接去 Facebook。"
-    language names: 
+    language names:
         arabic: "Arabic"
         bulgarian: "Bulgarian"
         czech: "Czech"
@@ -99,7 +99,7 @@ zh-TW:
         ukrainian: "Ukrainian"
         simplified chinese: "Simplified Chinese"
         traditional chinese: "Traditional Chinese"
-    api: 
+    api:
         users agree bool: "您必須同意使用條款與條件才能建立帳戶。"
         users confirm password matches: "新密碼不匹配。"
         users email email: "電子郵件地址無效。"
@@ -122,26 +122,26 @@ zh-TW:
         users last name required: "您必須鍵入一個姓氏。"
         moments content required: "内容不能留白。"
         users auth password required: "您必須鍵入密碼。"
-    meta: 
+    meta:
         best kids app: "最棒的兒童應用！"
         best educational app: "最棒的教育應用"
-        kids_app: 
+        kids_app:
             title: "兒童聖經軟體"
             description: "兒童聖經軟體提供您的孩子一個絕佳途徑，來學習關於耶穌的聖經故事、我們永生的賞賜，以及上帝對我們的教導。在這個互動的體驗中，您的孩子可以透過生動有趣的畫面，直接接觸上帝的話語，而且在閱讀的同時，還可以贏得點數和收集寶藏。"
-        100million: 
+        100million:
             title: "從1億開始"
             description: "聖經軟體的安裝量幾乎達到1億次，這真是一個不可思議的里程碑！但是我們才剛剛開始。下載免費的聖經軟體，然后與朋友們分享這個軟體，讓我們一起開創歷史。"
-        mobile: 
+        mobile:
             title: "聖經軟體"
             description: "使用 YonVersion 聖經軟體可以讓你隨時隨地閱讀神的話語。與朋友分享經文、醒目標示和書籤標記經文，依照聖經計劃建立每日讀經的習慣。在iOS, Android、Blackberry 和 Windows Phone 等多個平台均可使用。"
             download or read: "現在就下載或線上閱讀。"
-        site: 
+        site:
             title: "Bible.com"
             description: "將聖經的真理和美善帶入每天的生活!  藉著 YouVersion 聖經軟體，您可以在智慧型手機、平板電腦或者 Bible.com 網站閱讀、觀看、聆聽並分享聖經。"
-        connections: 
-            index: 
+        connections:
+            index:
                 title: "已連接的帳戶"
-    kids: 
+    kids:
         bible app: "聖經軟體"
         for: "for"
         kids: "兒童"
@@ -164,7 +164,7 @@ zh-TW:
         feature 3: "色彩繽紛的插圖和觸動式的動畫"
         feature 4: "幫助兒童記住所學的遊戲和活動"
         feature 5: "適合兒童操作的簡易導航"
-        share: 
+        share:
             tell friends: "快把兒童聖經軟體介紹給您的朋友吧！"
             facebook name: "兒童聖經軟體"
             facebook description: "聖經軟體隆重登場了！互動的聖經故事能幫助您的孩子透過學習和遊戲，在上帝的話語中成長。今天就來下載 iOS 和 Android 版的免費軟體：www.bible.com/er-tong"
@@ -175,11 +175,11 @@ zh-TW:
             email: "電子郵件"
             email subject: "兒童聖經軟體隆重登場了！"
             email body: "好消息－兒童聖經軟體隆重登場了！完全免費，可安裝在 iPhone、iPod touch 和 Android 設備上。這個軟體所提供的聖經故事附帶觸動式動畫和遊戲，而且故事數量還在不斷增加中，能幫助兒童學習聖經裡的重要故事，提供兒童最完美的聖經體驗。今天就前往 bible.com/er-tong 下載此軟體到你的行動設備上。"
-        partner: 
+        partner:
             youversion: "YouVersion：全世界最受歡迎的聖經軟體"
             in partnership: "偕同合作夥伴"
             one hope: "希望之書（OneHope）：適合兒童閱讀的絕佳聖經內容"
-        links: 
+        links:
             apple: "https://itunes.apple.com/tw/app/bible-for-kids/id668692393?l=zh"
             google: " https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=zh_tw"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
@@ -204,8 +204,8 @@ zh-TW:
     new note: "創建新筆記"
     share success: "您的信息已經成功分享了。"
     share error: "抱歉，信息分享出錯。請重試。"
-    share: 
-        request: 
+    share:
+        request:
             no_twitter_connection: "您沒有連接的Twitter帳戶。請在設定頁面連接您的帳戶。"
             no_facebook_connection: "您沒有連接的Facebook帳戶。請在設定頁面連接您的帳戶。"
     google plus: "Google+"
@@ -300,9 +300,9 @@ zh-TW:
     groups: "群組"
     mobile: "行動軟體"
     live: "現場"
-    events: 
+    events:
         events: "互動"
-        menu: 
+        menu:
             features: "功能"
             faq: "常見問題"
             resources: "資源"
@@ -395,16 +395,16 @@ zh-TW:
     traditional: "傳統次序"
     alphabetic: "按字母順序"
     versions title: "譯本"
-    languages: 
+    languages:
         title: "聖經語言和譯本"
         most popular: "最常用的語言"
         additional: "其他語言"
         download language: "下載 %{language_name} 聖經"
         bible in: "%{language_name} 聖經"
-    or: 
+    or:
         lower: "或"
         upper: "或"
-    moments: 
+    moments:
         scripture unavailable: "無法使用經文。"
         could not load: "無法載入"
         could not load verse: "無法載入經節"
@@ -418,8 +418,8 @@ zh-TW:
         users like this: "%{last_liker_link} 和 %{more_link} 點讚這個"
         like: "讚"
         likes: "點讚"
-        more than one like: 
-        vod: 
+        more than one like:
+        vod:
             title: "今日金句"
             get daily email: "獲取每日郵件"
             subscribe: "訂閱"
@@ -429,16 +429,16 @@ zh-TW:
             view more: "查看更多"
             time: "時間"
             blurb: "訂閱【今日經文】。在你的行動設備上每天接收郵件或推送通知。"
-        friendship: 
+        friendship:
             now friends: "現在已成為您的朋友的"
-        cta: 
+        cta:
             profile update text: "幫助您的朋友找到您。"
             profile update button: "更新您的檔案"
             sharing text: "透過社交網路分享經節"
             sharing button: "啟動分享功能"
             friends text: "看看您的朋友在聖經軟體裡的動態時刻。"
             friends button: "尋找朋友"
-        action: 
+        action:
             go to scripture: "進入經文"
             add friend button: "添加朋友"
             load more: "載入更多"
@@ -466,41 +466,41 @@ zh-TW:
             read plan: "閱讀"
             about plan: "關於計劃"
             start plan: "開始計劃"
-    notifications: 
+    notifications:
         title: "通知"
         none: "您沒有任何通知"
         no new: "沒有新通知"
         view all: "查看所有通知"
-    likes: 
+    likes:
         create success: "成了！您的點讚已經儲存。"
         create failure: "您的讚不能被保存"
         destroy success: "讚已被刪除"
         destroy failure: "您的讚不能被刪除"
-    comments: 
+    comments:
         view all N: "查看所有 %{count} 評語"
         post comment: "張貼評語"
         create success: "成了！您的評論已經發佈。"
         create failure: "不能張貼評語"
         destroy success: "評語已被刪除"
         destroy failure: "評語不能被刪除"
-        form: 
+        form:
             save button: "發佈"
-    friends: 
+    friends:
         you have N friends: "您有 %{count} 朋友"
         none me: "與您親近的朋友和家人分享您的書籤、醒目標示和筆記等動態。"
         find friends: "尋找朋友"
-        blank slate: 
+        blank slate:
             heading: "目前不是朋友"
             description: "您必須先與此人為友才能查看他的朋友。"
         limit notice: "您可以有多至 150 位朋友"
         limit description: "將聖經軟體上的朋友關係限定在熟悉的人之間，這有助於和自己信任的朋友一起打造坦誠對話和分享觀點的環境。"
-    friendships: 
+    friendships:
         blurb: "讓聖經成為你友誼的中心。在可信賴的朋友圈裡坦然分享，內容和時間全由你來决定。"
         name required: "要與朋友一起體驗聖經，請您先更新個人檔案中的姓名。"
         find friends title: "尋找朋友"
         search by name: "按名字搜尋"
         search button: "開始"
-        widget: 
+        widget:
             find friends title: "尋找朋友"
             search by name: "按名字搜尋"
             search button: "轉到"
@@ -514,12 +514,12 @@ zh-TW:
         requests view all: "查看所有朋友請求"
         requests none: "您沒有任何朋友請求"
         requests no new: "沒有新請求"
-        status: 
+        status:
             pending: "請求待決"
             friends: "朋友"
         user wants friendship: "%{user} 要與您為友"
         user wants friendship partial: "要成為您的朋友"
-        form: 
+        form:
             remove friend button: "刪除朋友"
             remove friend button title: "從您的朋友列表中刪除這個人"
             add friend button: "添加朋友"
@@ -529,24 +529,24 @@ zh-TW:
             accept request button: "接受請求"
             ignore button: "拒絕"
             ignore request button: "拒絕請求"
-    images: 
+    images:
         none user: "%{username} 還未創建任何圖像。"
-        blank slate: 
+        blank slate:
             heading: "您還沒有任何圖像"
             description: "用YouVersion的行動應用程序製作經句圖。"
-    notes: 
+    notes:
         none user: "%{username} 還未創建任何筆記。"
-        blank slate: 
+        blank slate:
             heading: "您還未有任何筆記"
             description: "在讀經時，如果您感受到神在用細微的聲音對您內心講話，您可趕快記下您的所思所想。在預設情況下，您的筆記會被標為<em>不公開</em>的私人狀態。如果您希望和您的朋友共享，只需將筆記打開再改為<em>公開</em>狀態即可。"
-        form: 
+        form:
             title field: "標題："
             content field: "內容:"
             highlight field: "醒目標示: (可選)"
             reference field: "經節："
             status field: "狀態:"
             save button: "儲存"
-        status: 
+        status:
             private: "保密"
             public: "公開"
             friends: "朋友而已"
@@ -585,7 +585,7 @@ zh-TW:
         destroy success: "筆記已刪除"
         destroy failure: "刪除筆記時出錯誤"
         update success: "筆記更新"
-    ref: 
+    ref:
         loading secondary: "載入第二譯本裡的參考經文..."
         clear verses: "清除選定的經節"
         choose book and chapter: "選擇書卷＋章節"
@@ -607,7 +607,7 @@ zh-TW:
         no secondary version text: "%{language_name} 只有一個譯本可使用，所以我們不能為您挑選第二個譯本。請您選擇第二個譯本來做並排對照。"
         select another chapter: "選擇不同的章節"
         view in reader: "在閱讀版面查看%{reference}"
-    users: 
+    users:
         unverified heading: "幾乎完成了！"
         unverified message: "看起來您要登錄的賬戶還未完全設置好。不過只差一步了：您只要點擊從YouVersion 發來的確認郵件裡的賬戶驗證連接就行了。若是找不到那份郵件，請查看一下您的垃圾郵件箱，或點擊<a href='%{resend_path}' target='_self'>重發確認郵件</a>。"
         settings: "設定"
@@ -711,7 +711,7 @@ zh-TW:
         resend confirmation title: "還未收到您的確認郵件？"
         resend confirmation copy: "請在以下鍵入您用來註冊的電郵地址，我們將會發送另一份確認郵件給您。"
         resend confirmation button: "重發確認郵件"
-        privacy: 
+        privacy:
             policy: "%{youversion} 隱私政策"
             intro: "YouVersion, 作為 Life.Church 擁有和運營的網站和應用軟體，我們知道您關注自己的資訊是如何被使用和分享的。我們希望以下的聲明能幫助您理解 YouVersion 將如何收集、使用和保護您在我們的網站或軟體裡提供的資訊。"
             translation disclaimer: "隱私政策是為了方便您查閱而翻譯；然而，Life.Church 對於翻譯的準確性不作任何承諾或保證。如果譯文與英文有不一致的地方，應以英文為準。"
@@ -740,7 +740,7 @@ zh-TW:
             enforcement text: "Life.Church 定期地檢討並遵行本隱私權政策。當我們接到有關隱私權問題的正式書面投訴時，我們的政策是聯絡投訴的用戶來處理有關他或她的顧慮。我們將與適當的政府監管部門配合，包括當地的政府資料保護部門，以解決 Life.Church 和個人之間任何無法解決的有關個人資料移轉的投訴。"
             questions title: "問題"
             questions text: "任何有關隱私權政策的疑問可以轉到：<a href='mailto:legal@youversion.com'>legal@youversion.com</a>"
-        terms: 
+        terms:
             title: "使用條款"
             translation disclaimer: "使用條款是為了方便您查閱而翻譯；然而，Life.Church 對於翻譯的準確性不作任何承諾或保證。如果英文和譯文有不一致的地方，應以英文為準。"
             acceptance title: "接受使用條款"
@@ -789,8 +789,8 @@ zh-TW:
             copyright text: "Life.Church 尊重他人的知識產權，我們也如此要求我們的用戶，尤其是當涉及到使用 YouVersion 服務時。Life.Church 可以在適當情況下自行決定禁用和/或終止可能重復侵權的用戶賬戶。若您認為對您作品的某種復制侵犯了版權，或您的知識產權被妨害，請將下列信息發送給legal@youversion.com：<ul type='none'><li>該問題作品的版權或知識財產權擁有者的電子或實體簽名授權書；</li><br><li>您聲稱被侵犯版權或其他知識產權的書面描述；</li><br><li>以書面說明您聲稱在 YouVersion 服務上侵權的作品所在；</li><br><li>您的聯絡方式如地址、電話號碼和可與您聯絡的電子郵件地址；</li><br><li>您有合理理由相信該爭議項目並未獲得版權人、其代理人或法律所授權的書面陳述；</li><br><li>您依據偽證處罰法作出的書面聲明，以上通告的信息是準確的，您是版權或知識產權的所有者，或者您是版權或知識產權所有者的授權代表。 要聯絡Life.Church的版權擁有聲明或其他侵犯智慧產權通告的代理，可透過以下途徑：%{newline}郵件：Life.Church c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}電話：(405) 680-5433%{newline}傳真：(405) 844-3002%{newline}電郵：%{mailto_link}</li></ul>"
             general title: "一般資訊"
             general text: "整體協議: 此《使用條款》構成了您與 Life.Church 之間的整體協議，管制着您 YouVersion 的使用並取代了任何您與 Life.Church 之間有關於 YouVersion 的在先協議。 您也可能受到附加條款和條件的約束。<br><br>法律與訴訟的選擇。 《使用條款》和您與 Life.Church 之間的關係將由俄克拉荷馬州的法律管轄並無須考慮法律衝突的條文。您與 Life.Church 同意並願意在屬於俄克拉荷馬縣的範圍內，接受縣內法院的個人與專屬司法管轄權所管轄。<br><br>條款的豁免與可分割性。Life.Church 沒有成功履行《使用條款》裡的任何權利或條文並不構成此權利或條文的豁免。如果此《使用條款》的規定被具有司法管轄權的法院判為無效，各方仍然同意法院應該盡力落實條文裡所反映的意圖，還有其他《使用條款》的條文規定仍然保持十足效力與作用。<br><br>沒有生存者取得權與不可轉讓性。您同意您的 Life.Church 帳戶是不可轉讓的，而且您 Life.Church 的身份或帳戶裡內容的任何權利將在您去世的時候終止。在收到死亡證書的副本後，Life.Church 可能中止您的帳戶並永久刪除其中的任何內容。<br><br>訴訟時效法令。您理解並同意無論任何法令或者法律有相反的規定，任何因為使用 YouVersion 而產生或關聯到《使用條款》的索賠或訴訟因由必須在一(1)年內交存檔案，否則被永久撤銷。<br><br>這些在《使用條款》中的章節標題僅為方便而設，並沒有法律或合同效力。"
-        profile: 
-            blank slate: 
+        profile:
+            blank slate:
                 heading: "請到別處瀏覽，這裡暫時沒東西看"
                 description: "開始投入聖經、或與您的朋友交流，這頁面將顯示您的活動日誌。"
             visit friend: "查看 %{friend} 的個人檔案"
@@ -830,11 +830,11 @@ zh-TW:
             edit: "編輯"
             bio: "個人簡介"
             complete_first_last: "請在您個人檔案中填妥名字與姓氏"
-        password: 
+        password:
             updated: "成功了！您已經更換了您的密碼。"
             error: "抱歉，在更改您的密碼時發生錯誤。"
             old was invalid: "抱歉，您需要正確地輸入舊密碼來更改密碼。"
-        notifications: 
+        notifications:
             badges: "當我贏得徽章時通知我。"
             follower: "當有人關注我時通知我。"
             newsletter: "通知我有關 YouVersion 的公告"
@@ -847,7 +847,7 @@ zh-TW:
             moments: "通知我朋友的活動"
             comments: "我的活動有評語時通知我"
             likes: "我的活動有點讚時通知我"
-    bookmarks: 
+    bookmarks:
         new: "新書籤"
         edit: "編輯"
         delete: "刪除此書籤"
@@ -878,10 +878,10 @@ zh-TW:
         color: "色彩:"
         version field: "版本："
         none user: "%{username} 沒有書籤"
-        blank slate: 
+        blank slate:
             heading: "書籤標記有意義的經文"
             description: "當閱讀聖經時，選擇一段經節並以書籤標記。回到這裡來閱讀，編輯或刪除您的書籤。"
-        form: 
+        form:
             title field: "標題："
             reference field: "參考經文:"
             labels field: "標籤 (以逗號分隔)："
@@ -889,24 +889,24 @@ zh-TW:
             colors field: "色彩:"
             update button: "更新書籤"
             save button: "儲存書籤"
-    badges: 
+    badges:
         earned a badge: "贏得了一個徽章"
         user badges: "%{user} 的徽章"
         earned date: "%{username} 在%{ago}之前獲得的徽章"
         none me: "您還未獲得任何徽章。"
         none user: "%{username}還未獲得任何徽章。"
-    plans: 
+    plans:
         see all: "查看全部"
         day_completed: "<b>%{username}</b>完成了聖經計劃：<b>%{plan_title} 中的</b><b>第 %{day} 天</b>"
-        status: 
+        status:
             on track: "如期進行！"
-            days ahead: 
+            days ahead:
                 other: "進度超前 %{count} 天"
-            missed days: 
+            missed days:
                 other: "錯過 %{count} 天"
         bible plan language: "聖經計劃的語言"
         share plan: "查看此計劃 @YouVersion #BiblePlan: %{plan_title}"
-        widget: 
+        widget:
             my plans: "我的計劃"
             start reading: "開始閱讀"
             view my plans: "查看我的計劃"
@@ -915,16 +915,16 @@ zh-TW:
             reading: "個閱讀內容"
             readings: "個閱讀內容"
             readings 5 or more: "個閱讀內容"
-        stats: 
-            friends reading: 
+        stats:
+            friends reading:
                 other: "%{count}位朋友訂閱了此計劃"
-            friends completed: 
+            friends completed:
                 other: "%{count}位朋友完成此計劃"
             total completions: "完成次數超過%{count}"
             view all: "查看全部"
             close: "關閉"
         settings: "設定"
-        privacy: 
+        privacy:
             visible to friends?: "您是否要公開您的計劃活動給朋友看？"
             private: "保密"
             public: "公開"
@@ -994,7 +994,7 @@ zh-TW:
         catch me up: "幫我跟上進度"
         restart description: "您可以重新開始您的計劃。您的所有閱讀歷史和進度將會被重設到初始狀態。"
         restart: "重新開始計劃"
-        privacy description: 
+        privacy description:
             private: "您的計劃是保密的。要與朋友們分享您的計劃活動，請將您的設定換成『與朋友分享』"
             public: "您的計劃是對朋友們公開的。如果不想公開您的計劃活動，請選擇『設為保密』。"
         make private: "設為保密"
@@ -1044,32 +1044,32 @@ zh-TW:
         completed notice: "恭喜！你已完成了讀經計劃。"
         exit: "退出"
         loading sidebar content: "載入提要欄位內容..."
-    videos: 
+    videos:
         title: "視訊"
         watch videos: "觀賞有關聖經的視訊"
         all: "所有錄像"
         related scripture: "相關經文"
         share video: "我在 @YouVersion 觀賞 %{video_title}。"
-    licenses: 
-        authorized: 
+    licenses:
+        authorized:
             heading: "您的內容已被授權。"
             description: "您現可檢視您透過 YouVersion 從%{vendor}購買的<a href='%{content_link}' target='_self'>內容</a>！"
         has errors: "您的請求出了錯誤："
-        confirm: 
+        confirm:
             email: "要授權您購買的視訊內容，請先查看您的電郵收件箱裡 YouVersion 發送的確認郵件，點選郵件裡的鏈結以確認您的註冊。"
-        request: 
+        request:
             invalid_vendor_signature: "許可驗證失敗：無效的廠商簽名"
             invalid_vendor_id: "許可驗證失敗：無效的廠商 ID"
             invalid_item_ids: "許可驗證失敗：無效項目"
-        vendor_transaction_id: 
+        vendor_transaction_id:
             duplicate: "交易 id : 此交易 id 已被註冊。"
-        auth: 
+        auth:
             login notice: "要確認您購買的內容，請在下方登入您的 YouVersion 帳戶或者進行註冊 <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>。"
             signup notice: "要確認您購買的內容，請在下方註冊一個免費的 YouVersion 帳戶，如您已有了帳戶，請登入<a href='/sign-in?source=licenses' target='_self'>%{login}</a> 。"
             signup link text: "註冊一個免費帳戶"
             login link text: "登入"
-    registration: 
-        placeholder: 
+    registration:
+        placeholder:
             email: "輸入您的電子郵件"
             username: "輸入您的用戶名稱"
             password: "輸入您的密碼"
@@ -1083,14 +1083,14 @@ zh-TW:
         share blurb: "看來您希望分享經文。太好了！您可以透過 Facebook 或 Twitter 即時分享神的話語。趕緊登入或在下方註冊一個帳戶就可以開始了！"
         highlight blurb: "看來您想醒目顯示這節經文。太好了！醒目顯示功能幫助您整理並記錄您喜愛的聖經經節。請登入或者建立一個帳戶，然後就可以開始了！"
         note blurb: "看來您想為這段經文寫些筆記。好主意！筆記能夠幫助您記住並整理您在上帝的話語裡所發掘的真理。請登入或者建立一個帳戶就可以開始了！"
-    audio: 
+    audio:
         none: "抱歉，此版本不提供語音功能。"
         chapter only: "抱歉，經節不支持語音功能。請在閱讀器裡查看章節的語音功能。"
         close player menu: "關閉"
         publisher website: "出版商網站"
-    highlights: 
+    highlights:
         title: "醒目"
-        blank slate: 
+        blank slate:
             heading: "醒目顯示有意義的經節"
             description: "當閱讀聖經時，選擇一段經節並加以醒目顯示。回到這裡來閱讀，編輯或刪除您的醒目顯示。"
         none user: "%{username} 沒有醒目顯示"
@@ -1101,9 +1101,9 @@ zh-TW:
         destroy failure: "刪除醒目顯示時出錯誤"
         creation error: "抱歉，不能醒目顯示。"
         delete error: "抱歉！無法取消醒目顯示。"
-        form: 
+        form:
             save button: "儲存醒目標示"
-    searching: 
+    searching:
         bible: "聖經"
         plans: "計劃"
         users: "用戶"
@@ -1112,7 +1112,7 @@ zh-TW:
         suggestion html: "您是指%{suggestion_link}嗎？"
         all versions: "所有%{language_name} 譯本"
         results for: "搜尋結果 "
-    donate: 
+    donate:
         donate now: "現在就捐獻"
         donate now intl: "或者國際捐贈"
         enter amount: "鍵入一個數目"
@@ -1141,7 +1141,7 @@ zh-TW:
         state: "州"
         zip: "郵編"
         creation form errors: "下列錯誤妨礙了您進行捐獻："
-    download ad: 
+    download ad:
         title: "免費下載聖經軟體"
         description copy: "數以百計以超過%{language_count} 種不同語言譯成的版本 - 聖經軟體伴您左右。"
         meta copy title: "免費下載聖經軟體"
@@ -1153,11 +1153,11 @@ zh-TW:
         banner title: "聖經軟體"
         banner action: "下載"
         banner open: "打開"
-    download bafk ad: 
+    download bafk ad:
         title: "下載兒童聖經軟體"
         description copy: "兒童聖經軟體是您孩子學習聖經故事、認識耶穌的最佳途徑。"
         download: "現在就下載"
-    about page: 
+    about page:
         relevancy: "適切性"
         relevancy copy: "在過去的年代裡，人們接觸聖經的機會非常有限。今時今日，這已不再是問題了。雖然，許多有機會接觸到聖經的人認為上帝的話語在他們的生活裡起不了作用，但是，也有許多人相信聖經與他們每一天的生活經驗是息息相關的。"
         information revolution: "資訊革命"
@@ -1168,7 +1168,7 @@ zh-TW:
         partners text: "如果沒有我們慷慨的聖經出版社夥伴， YouVersion 根本沒有能力給全世界的社群提供這麼多的聖經譯本。許多用戶曾問過該如何感謝這些重要的 YouVersion 使命支持者。您可以透過以下的鏈結來暸解他們與他們的事工，還有您可以幫助他們的方法。"
         translation title: "我們的翻譯團隊"
         learn more: "暸解更多"
-    press page: 
+    press page:
         title: "新聞區"
         contact header: "新聞聯絡資訊"
         contact header 2: "全球資訊網上的資訊"
@@ -1181,13 +1181,13 @@ zh-TW:
         lead copy: "以線上聖經Bible.com為基，聖經軟體是幾乎在任何款式的手機都可以安裝的免費行動聖經程式。聖經軟體讓用戶閱讀聖經、在社交網路上分享經節、書籤標記他們喜歡的經文等等——一切操作都配合了用戶越來越移動化的生活方式。"
         resources title: "新聞資源"
         now title: "今日的 YouVersion 社群"
-        resources: 
+        resources:
             now: "現場查看參與情況和最新數據"
             about: "關於 YouVersion 和聖經軟體"
             history: "YouVersion 歷史和統計"
             manual: "YouVersion 品牌手冊"
         images title: "YouVersion 標誌和圖像"
-        images: 
+        images:
             logos: "YouVersion 圖標集"
             icons: "聖經軟體圖標"
             infographic: "圖表：聖經軟體使用統計"
@@ -1195,7 +1195,7 @@ zh-TW:
             lifestyle: "圖片集：生活方式"
             screencast: "YouVersion 螢幕截圖"
         links title: "媒體報導鏈結"
-    mobile page: 
+    mobile page:
         h2: "上帝的話語與您同在。"
         h3: "YouVersion 是全球性的"
         h3 sub: "提供超過 %{language_count} 種語言。"
@@ -1240,44 +1240,44 @@ zh-TW:
         sms info: "您將收到一個附有鏈結的簡訊給您下載應用"
         sms download: "點擊下載聖經軟體："
         sms default country: "US"
-    pages: 
-        generic_error: 
+    pages:
+        generic_error:
             title: "抱歉！"
             explanation: "系統出現故障！抱歉給您帶來不便，請嘗試重新載入頁面。"
             our action: "我們已經留意到這個事件並會盡快跟進。"
-        home: 
+        home:
             heading: "快來下載適用於手機、平板電腦及個人電腦的免費聖經！"
             cta: "現在就開始閱讀聖經"
-            experience: 
+            experience:
                 title: "隨時隨地閱讀聖經"
                 body: "不論是在電腦、手機、或平板電腦上都有翻譯成900多種不同語言的1200多個聖經譯本可供選擇－－其中還包括了語音聖經。"
                 action: "瀏覽聖經譯本"
-            make_yours: 
+            make_yours:
                 title: "讓它成為你的專屬聖經"
                 body: "為你喜愛的經文標示醒目或書籤；創作經句圖與人分享；並在聖經章節上記錄公開或私密的筆記。"
                 action: "建立你的免費帳戶"
-            install_now: 
+            install_now:
                 title: "立即下載聖經軟體"
                 body: "聖經軟體完全免費，不含廣告及內置付費。目前已安裝此軟體的設備總數："
                 action: "免費下載聖經軟體"
-            free_plans: 
+            free_plans:
                 title: "免費的讀經計劃及靈修內容"
                 body: "聖經計劃幫助你每日接觸神的話語，一點一滴，積少成多。"
             browse_plans: "瀏覽所有計劃"
             read_listen: "閱讀、聆聽、觀賞、分享"
             start_now: "現在就開始"
-            votd: 
+            votd:
                 title: "今日經文"
                 highlight_bookmark: "分享此經文, 或為此經文標示醒目和書籤"
                 subscribe: "訂閱今日經文"
-            hero: 
+            hero:
                 heading: "可用於手機、平板電腦和個人電腦的免費聖經。"
                 description: "YouVersion 是一款簡單易用、沒有廣告的聖經軟體，能將神的話語帶入您的日常生活。"
                 learn more: "若想了解詳情，請繼續往下閱讀"
                 start reading: "開始閱讀"
                 skip in future: "日後請自動跳過這一頁"
                 now skipped: "從現在起，將被自動跳過此頁。"
-            features: 
+            features:
                 read heading: "閱讀聖經"
                 read description: "從<a href='%{versions_path}' target='_self'>數以百計的聖經譯本和語言</a>中任意選擇。並排比較兩個譯本。甚至可以選擇字體和顯示大小。用您自己喜歡的方式來閱讀線上聖經。"
                 study heading: "研讀聖經"
@@ -1291,11 +1291,11 @@ zh-TW:
             download action: "下載聖經軟體"
             download description: "下載免費的 YouVersion 聖經軟體到您的行動設備上吧！無論何時何地、神的話語都將伴您左右！"
             world installs: "全球軟體安裝次數"
-        trending verses: 
+        trending verses:
             title: "正流行的聖經經節"
             headline: "目前在YouVersion聖經軟體和Bible.com流行的聖經經節"
-    shared: 
-        menu_settings: 
+    shared:
+        menu_settings:
             title: "閱讀器設定"
             close: "關閉"
             font: "字體："
@@ -1315,7 +1315,7 @@ zh-TW:
             translation notes: "註腳"
             cross references: "交叉引用經文"
             numbers and titles: "數字和標題"
-    app errors: 
+    app errors:
         404 plans explanation: "你在尋找<a href='%{plan_path}' target='_self'>%{title}</a> 計劃?"
         404 contact support: "遇上難題？請聯絡我們的 <a href='%{support_url}' target='_self'>支援團隊</a>。"
         404 explanation: "您可能需要再次從<a href='%{reader_path}' target='_self'>首頁</a>試一下。如果仍然不行，請通知我們的 <a href='%{support_url}' target='_self'>支援團隊</a>！"
@@ -1323,7 +1323,7 @@ zh-TW:
         408 message: "很抱歉我們的伺服器沒有及時回應。"
         408 explanation: "我們已經接到警示並將盡快解決一切持續存在的問題。希望您能盡快返回到聖經的閱讀中！"
         try again: "再試一次"
-    versions: 
+    versions:
         filter: "輸入譯本名（或語言）......"
         see all: "查看全部譯本"
         courtesy of: "%{abbreviation} 是由 %{publisher} 提供"
@@ -1339,8 +1339,8 @@ zh-TW:
         public domain: "公有領域"
         loading: "載入更多譯本..."
         load error: "抱歉，載入更多譯本時發生錯誤，請關掉這個選單，再重新打開嘗試。"
-    campaigns: 
-        christmas: 
+    campaigns:
+        christmas:
             tracker title: "聖誕故事閱讀追蹤"
             twitter text: "看看世界正在閱讀耶穌的誕生。在YouVersion: https://www.bible.com/christmas分享聖誕故事的閱讀追踪"
             facebook text: "世界各地的人都在閱讀耶穌的誕生。請分享聖誕故事的閱讀追踪。在教會裡或在家裡，與摯愛的人一起或者獨處的時候，讓我們靜下來思考神對我們的愛是何等奇妙。"
@@ -1355,51 +1355,51 @@ zh-TW:
             versions: "超過%{version_count}個以%{language_count}種語言呈現的譯本"
             tagline: "隨時隨地陪伴著您的聖經"
             chapter counter format: "9,999,999"
-        100m: 
+        100m:
             logo: "YouVersion：聖經軟體"
             tagline: "從<em>1億</em>開始"
             intro: "聖經軟體能否在7月10日5週年前達到一億個安裝的里程碑嗎？全靠您的幫助！"
             after: "因為您的參與，聖經軟體在7月10日5週年時達到了一億個安裝的里程碑。謝謝您！"
-            share: 
+            share:
                 with friends: "和您的朋友分享"
-                fb: 
+                fb:
                     dialog name: "您有使用聖經軟體嗎？"
                     dialog desc: "我喜歡聖經軟體！它真的使聖經成為我日常生活的一部分。聖經軟體能讓我醒目標記經文、聆聽語音聖經、創建筆記、跟進靈修計劃... 甚至觀賞視訊！請現在就去下載 (免費的)：http://www.bible.com/app"
-                tw: 
+                tw:
                     tweet: "我將 @YouVersion 的聖經軟體長駐在我的主熒幕上。無論是閱讀、觀看視訊、聆聽音訊或分享經文... 全都在一個免費的程序裡:\nbible.com/app"
-                em: 
+                em:
                     subject: "您有使用聖經軟體嗎？"
                     body: "我很喜歡使用 YouVersion 的聖經軟體，我想你也會喜歡的。不管是閱讀、看視訊、聽音訊或分享經文，聖經軟體都很容易使用，因此現在我接觸聖經的次數也更多了。聖經軟體也包括了計劃，每天備有一系列的精選經文供我閱讀。\n\n你可以從這裡把軟體下載和安裝 (免費的！) 到幾乎任何款式的行動設備上:\nhttp://www.bible.com/app"
-            body: 
+            body:
                 p1: "7月10日將是一個大日子，它不僅是聖經軟體誕生五周年，這也是蘋果公司的iTunes商店開張五周年。"
                 p2: "您敢想像嗎？您再給力一下，這一天也將成為聖經軟體達到1億次下載量的重要紀念日！"
                 p3: "我們知道到神利用好像這一個的里程碑去推動更大增長。"
                 p4: "讓我們一同來創造歷史!"
                 after p1: "YouVersion 代表了世界各地熱衷於幫助他人了解神的話語的人們。我們在此感謝所有的聖經協會、聖經出版商、教會、牧師並志願者們的慷慨付出！"
                 after p2: "這個里程碑更讓人興奮的是其背後的意義：今天的人們正在以超乎我們所見所想的規模來閱讀聖經。上帝的作為真是令人振奮！我們相信這僅僅是個開始。<em> 從1億開始</em>"
-            ad: 
+            ad:
                 title: "聖經軟體是一款完全免費與超棒的探索聖言工具。"
                 copy: "閱讀、看視訊、聽音訊或分享經文。下載聖經軟體到你的智能電話或平板電腦：<a href='http://bible.com/app' target='_self'>即時下載</a>"
-            sidebar: 
+            sidebar:
                 tagline: "讓我們一同創造歷史"
                 button: "分享聖經軟體"
-    ui: 
+    ui:
         characters remaining: "可用字符數"
         yes button: "是"
         no button: "否"
         cancel: "取消"
-        plans: 
+        plans:
             privacy: "你是否願意讓朋友看到你的計劃的活動？"
         loading indicator text: "載入中..."
         loading: "載入中"
-        pagination: 
+        pagination:
             next page: "下一頁"
             previous page: "上一頁"
-        datetime: 
+        datetime:
             just now: "剛才"
         verses selected: "已選擇的經文"
-    EventsAdmin: 
-        header: 
+    EventsAdmin:
+        header:
             home: "主頁"
             read: "閱讀"
             plans: "計劃"
@@ -1410,7 +1410,7 @@ zh-TW:
             search placeholder: "搜尋..."
             sign in: "登入"
             sign up: "註冊帳戶"
-        profile menu: 
+        profile menu:
             bookmarks: "書籤"
             highlights: "醒目顯示："
             notes: "筆記"
@@ -1418,7 +1418,7 @@ zh-TW:
             friends: "朋友"
             badges: "徽章"
             sign out: "登出"
-        footer: 
+        footer:
             events: "互動"
             versions: "譯本（%{count}）"
             languages: "語言（%{count}）"
@@ -1431,17 +1431,17 @@ zh-TW:
             press: "新聞室"
             privacy: "隱私政策"
             terms: "使用條款"
-        unsubscribe: 
+        unsubscribe:
             about: "選擇你想收到 YouVersion 的電郵類別。 你可以透過手機程式來編輯手機通知。"
             email: "電子郵件"
             not me: "這不是我"
             saved: "已儲存！"
             plan delivery: "傳送計劃"
             sign-in: "要編輯其他設定，請<a href='%{sign_in_path}'>登入你的帳戶</a>。"
-            links: 
+            links:
                 manage: "管理電郵通知。"
                 unsub all: "取消訂閱所有電郵。"
-            success: 
+            success:
                 all: "你已成功取消訂閱所有<b>YouVersion 電郵</b>。"
                 badges: "你已成功取消訂閱有關<b>徽章</b>的電郵。"
                 comments: "你已成功取消訂閱有關<b>評論</b>的電郵。"
@@ -1454,7 +1454,7 @@ zh-TW:
                 votd: "你已成功取消訂閱<b>今日經文</b>的電郵。"
                 votd_image: "你已成功取消訂閱<b>今日經文圖</b>的電郵。"
                 contact_joins: "你已成功取消訂閱有關<b>聯絡人</b>的電郵。"
-            labels: 
+            labels:
                 badges: "當我獲得一枚徽章時"
                 comments: "有關我的活動的評論"
                 friendships: "朋友請求"
@@ -1465,14 +1465,14 @@ zh-TW:
                 votd: "今日經文文本"
                 votd_image: "今日經文圖"
                 contact_joins: "有聯絡人參加的時候"
-            error: 
+            error:
                 token: "很抱歉，你需要登錄才可以更改通知設定。"
                 other_type: "很抱歉，出現了錯誤。你想更新你的通知設定嗎？"
         change: "更改"
-        ui: 
+        ui:
             yes button: "是"
             no button: "否"
-        plans: 
+        plans:
             plans: "計劃"
             plans back: "← 計劃"
             related plans: "相關題材的計劃"
@@ -1481,15 +1481,15 @@ zh-TW:
             my_plans: "我的計劃"
             day_completed: "<b>%{username}</b> 完成了聖經計劃：<b> %{plan_title}</b><b> 中的第 %{day} 天</b>"
             which reading: "%{total}段中的第%{current}段"
-            status: 
+            status:
                 on track: "如期進行！"
-                days ahead: 
+                days ahead:
                     other: "進度超前 %{count} 天"
-                missed days: 
+                missed days:
                     other: "錯過 %{count} 天"
             bible plan language: "聖經計劃的語言"
             share plan: "查看此計劃 @YouVersion #BiblePlan: %{plan_title}"
-            widget: 
+            widget:
                 my plans: "我的計劃"
                 start reading: "開始閱讀"
                 view my plans: "查看我的計劃"
@@ -1498,16 +1498,16 @@ zh-TW:
                 reading: "個閱讀內容"
                 readings: "個閱讀內容"
                 readings 5 or more: "個閱讀內容"
-            stats: 
-                friends reading: 
+            stats:
+                friends reading:
                     other: "%{count}位朋友訂閱了此計劃"
-                friends completed: 
+                friends completed:
                     other: "%{count}位朋友完成此計劃"
                 total completions: "完成次數超過 %{count}"
                 view all: "查看全部"
                 close: "關閉"
             settings: "設定"
-            privacy: 
+            privacy:
                 visible to friends?: "你是否要公開你的計劃活動給朋友看？"
                 private: "保密"
                 public: "公開"
@@ -1577,7 +1577,7 @@ zh-TW:
             catch me up: "幫我跟上進度"
             restart description: "您可以重新開始您的計劃。您的所有閱讀歷史和進度將會被重設到初始狀態。"
             restart: "重新開始計劃"
-            privacy description: 
+            privacy description:
                 private: "您的計劃是保密的。要與朋友們分享您的計劃活動，請將您的設定換成『與朋友分享』"
                 public: "您的計劃是對朋友們公開的。如果不想公開您的計劃活動，請選擇『設為保密』。"
             make private: "設為保密"
@@ -1627,39 +1627,39 @@ zh-TW:
             completed notice: "恭喜！你已完成了讀經計劃。"
             exit: "退出"
             loading sidebar content: "載入提要欄位內容..."
-        components: 
-            ErrorMessage: 
+        components:
+            ErrorMessage:
                 genericError: "發生錯誤"
-                announcement: 
-                    events: 
-                        title: 
+                announcement:
+                    events:
+                        title:
                             required: "公告標題必填"
-                default: 
-                    bible: 
-                        reference: 
+                default:
+                    bible:
+                        reference:
                             not_found: "參考經文不存在。"
-                    events: 
-                        google_place_id: 
+                    events:
+                        google_place_id:
                             required: "你必須在地圖中選擇一個地點。"
-                        latitude: 
+                        latitude:
                             required: "你必需在地圖上選擇一個地點。"
-                        times: 
-                            start_dt: 
+                        times:
+                            start_dt:
                                 must_be_a_future_date: "不可用過去時間作為開始時間。"
-                        timezone: 
+                        timezone:
                             required: "請填入時區。"
-                reference: 
-                    events: 
-                        usfm: 
+                reference:
+                    events:
+                        usfm:
                             invalid: "參考經文不存在。"
-                url: 
-                    events: 
-                        url: 
+                url:
+                    events:
+                        url:
                             required: "必需填寫網頁地址（URL）"
-                        title: 
+                        title:
                             required: "網址標籤必填。"
-            EventHeader: 
-                status: 
+            EventHeader:
+                status:
                     published: "發佈"
                     draft: "草稿"
                     live: "現場"
@@ -1671,36 +1671,36 @@ zh-TW:
                 eventBuilder: "互動活動編輯器"
                 signOut: "登出"
                 createAccount: "建立帳戶"
-            HtmlEditor: 
+            HtmlEditor:
                 text: "文本"
                 bold: "粗體"
                 italic: "斜體"
-        containers: 
-            Auth: 
+        containers:
+            Auth:
                 title: "互動活動登入"
                 signIn: "登入"
                 subHead1: "如果你是聖經軟體用戶，而且已擁有一個 YouVersion 帳戶，你可以用同樣的用戶名與密碼登入。<br/><br/> 還沒有 YouVersion 帳戶？<br/> <a href='%{url}'>現在就在 Bible.com 註冊一個帳戶，</a>開始創建互動活動。"
                 email: "電子郵件"
                 password: "密碼"
                 forgotPassword: "忘記密碼"
-            EventEdit: 
+            EventEdit:
                 event: "互動"
-            EventEditContentContainer: 
+            EventEditContentContainer:
                 choose: "選擇內容，開始創建。"
                 needHelp: "需要協助嗎？"
                 title: "互動活動內容"
                 previous: "← 上一頁：地點與時間"
                 next: "下一頁：預覽 →"
-            EventEditDetails: 
+            EventEditDetails:
                 title: "互動活動細節"
-            EventEditLocationContainer: 
+            EventEditLocationContainer:
                 title: "互動地點 "
                 previous: "← 上一頁：細節"
                 next: "下一頁：加入內容 →"
-            EventEditPreview: 
+            EventEditPreview:
                 title: "互動預覽"
                 previous: "← 上一頁：內容"
-            EventEditShare: 
+            EventEditShare:
                 title: "分享互動"
                 subTitle: "你的互動活動現在已經發佈："
                 edit: "修改互動"
@@ -1709,10 +1709,10 @@ zh-TW:
                 copy: "複製"
                 copied: "此短連接已複製到你的剪貼簿"
                 previous: "←上一頁﹕預覽"
-            EventFeedDiscover: 
+            EventFeedDiscover:
                 title: "發掘互動"
                 discover: "發掘"
-            EventFeedMine: 
+            EventFeedMine:
                 title: "我的互動"
                 previous: "← 上一頁"
                 next: "下一頁 →"
@@ -1721,38 +1721,38 @@ zh-TW:
                 subTitle: "由我創建的互動"
                 newFirst: "創造你的第一個互動活動"
                 learn: "學習如何建立一個絕佳的互動活動"
-            EventFeedSaved: 
+            EventFeedSaved:
                 title: "已儲存的互動"
-            EventView: 
+            EventView:
                 title: "YouVersion 的互動活動"
-            SelectLanguage: 
+            SelectLanguage:
                 choose: "選擇你的語言"
-        features: 
-            Auth: 
-                errors: 
+        features:
+            Auth:
+                errors:
                     sessionExpired: "你的登入連線已中斷。請重新登入。"
                     invalidEmail: "不正確的電郵地址或密碼。"
-            EventEdit: 
-                errors: 
+            EventEdit:
+                errors:
                     locationMustHaveTime: "所有地點必須至少設定一個時間。"
                     locationRequired: "你不能發佈不含地點的互動。"
                     contentRequired: "你不能公佈一個沒有內容的互動活動。"
                     planSearchFailed: "搜尋不到任何相關文檔"
                     noMatchingPlans: "沒有相關的計劃"
-                components: 
-                    EventEditNav: 
+                components:
+                    EventEditNav:
                         details: "詳情"
                         locations: "地點與時間"
                         content: "內容"
                         preview: "預覽與發佈"
                         share: "分享"
-                features: 
-                    content: 
-                        components: 
-                            ContentFeed: 
+                features:
+                    content:
+                        components:
+                            ContentFeed:
                                 reorder: "重整內容"
                                 doneReordering: "完成重整"
-                            ContentHeader: 
+                            ContentHeader:
                                 text: "文本"
                                 reference: "參考經文"
                                 plan: "計劃"
@@ -1760,40 +1760,40 @@ zh-TW:
                                 link: "外部連結"
                                 giving: "捐獻連結"
                                 announcement: "公告"
-                            ContentHelpModal: 
+                            ContentHelpModal:
                                 types: "內容類型"
                                 learn: "學習如何建立一個<br>絕佳的互動活動"
-                                text: 
+                                text:
                                     title: "文本模組"
                                     desc: "大綱、重點、問題討論...…分享任何以文本為主的一般內容來幫助參與者即時跟進你的信息。你的文本模組沒有長度的限制，可以包含多文字格式 (RTF)。"
-                                reference: 
+                                reference:
                                     title: "參考經文模組"
                                     desc: "直接連接到 YouVersion，從以 900多種語言所提供的逾 1,200個譯本中挑選任何聖經經節或段落。觀看你互動活動的人可以在他們的聖經軟體閱讀器上點選你的參考資料，並直接在該處作書籤標記、醒目標示、以及更多。"
-                                plan: 
+                                plan:
                                     title: "計劃模組"
                                     desc: "連結到與你的教學重點相關的聖經計劃與靈修，幫助參與互動活動者一整週持續投入神的話語。"
-                                image: 
+                                image:
                                     title: "圖像模組"
                                     desc: "用整系列的藝術、相片、經句圖等輔助圖片來讓你的活動更生動。參加者可以輕鬆分享你互動活動的圖像至他們的社交媒體，讓你的信息廣傳。"
-                                link: 
+                                link:
                                     title: "外部連結模組"
                                     desc: "在你的互動活動中設立一個選項按鈕，以連結到任何外部的網站。你的觀眾只要點擊一下，即可上網捐獻，加入義工行列，或連結到教會網頁。"
-                                announcement: 
+                                announcement:
                                     title: "公告模組"
                                     desc: "教會消息、日程安排、項目計劃、各種課程、義工與宣教機會等……公告模組最適合用來分享及時又重要的訊息，而且並不會影響到你互動活動的主要內容。在你的互動活動裡，每個公告模式都會顯示在其專屬頁面上，甚至還可以包含富文本格式的內容（如粗體與斜體字）。"
-                            ContentInsertionPoint: 
+                            ContentInsertionPoint:
                                 title: "在此加入下一個模組"
-                            ContentTypeAnnouncement: 
+                            ContentTypeAnnouncement:
                                 title: "標題"
                                 prompt: "在這裡寫幾句話⋯⋯"
                                 caption: "只有你的標題（見上方）會呈現在你的互動活動中。用戶點擊你的標題時，內文（見下方）會呈現在另一螢幕上。"
-                            ContentTypeContainer: 
+                            ContentTypeContainer:
                                 dirty: "內容將在你停止輸入後數秒內自動儲存。"
                                 failed: "無法儲存。"
                                 tryAgain: "再試一次。"
                                 lastSaved: "上次儲存時間 %{when}"
-                            ContentTypeImage: 
-                                errors: 
+                            ContentTypeImage:
+                                errors:
                                     wrongSize: "圖像大小必須是%{requiredWidth}x%{requiredHeight}。你的圖像是%{yourWidth}x%{yourHeight}。"
                                     wrongType: "無效的檔案類別。必須是JPG檔。"
                                 caption: "添加標題說明"
@@ -1801,32 +1801,32 @@ zh-TW:
                                 onlyJpg: "[限JPG檔]"
                                 sizePrompt: "%{requiredWidth}px 寬 x %{requiredHeight}px 高"
                                 select: "選擇圖像"
-                            ContentTypeLink: 
+                            ContentTypeLink:
                                 kindrid: "如果你正在尋找一個簡便的智慧化捐獻平台，<a href='%{url}'>請試試 Kindrid</a>。"
                                 label: "連結標籤"
                                 prompt: "在這裡寫幾句話......"
                                 url: "網址"
-                            ContentTypePlan: 
+                            ContentTypePlan:
                                 replace: "取代"
                                 search: "搜尋讀經計劃"
-                            ContentTypeReference: 
+                            ContentTypeReference:
                                 language: "語言"
                                 version: "聖經譯本"
                                 book: "書卷"
                                 chapterVerse: "章數：經節"
-                            ContentTypeText: 
+                            ContentTypeText:
                                 prompt: "在這裡寫幾句話......"
-                            LiveWarningModal: 
+                            LiveWarningModal:
                                 title: "不能刪除正在進行中的互動"
                                 desc: "互動的活動一旦開始在現場進行，你就無法刪除文本、聖經參考資料和圖像模組，因為用户可能已經新增他們的個人筆記了。不過，你可以選擇修改這些模組。"
                                 ok: "好"
-                    details: 
-                        errors: 
+                    details:
+                        errors:
                             generic: "發佈你的互動活動時出現了問題。"
                             invalidTimes: "單一服務不能超過12小時，而且最早開始時間以及最晚結束時間的差異不可超過8天。請調整你互動活動的時間，再試一次。"
-                        components: 
-                            DetailsEdit: 
-                                errors: 
+                        components:
+                            DetailsEdit:
+                                errors:
                                     wrongSize: "圖像大小必須是 %{requiredWidth}x%{requiredHeight}。你的圖像大小是 %{yourWidth}x%{yourHeight}。"
                                     wrongType: "無效的檔案類別。必須是JPG檔。"
                                 changeImage: "更換圖像"
@@ -1840,29 +1840,29 @@ zh-TW:
                                 desc: "互動活動描述"
                                 next: "下一頁：加入地點與時間 →"
                                 blank: "%{field} 不能留空。"
-                    location: 
-                        components: 
-                            Location: 
+                    location:
+                        components:
+                            Location:
                                 oneRequired: "新增至少一個時間。"
                                 use: "使用這個地點"
                                 edit: "修改地點"
                                 delete: "删除地點"
-                            LocationAddButtons: 
+                            LocationAddButtons:
                                 addPhysical: "新增實際地點"
                                 promptPhysical: "你可以增添多處地點。"
                                 addVirtual: "新增虛擬地點"
                                 churchOnline: "你知道嗎？你可以<a className='button-caption' href='%{url}'>使用教會線上平台</a>來開始一個線上免費的事工。"
-                            LocationAddTime: 
+                            LocationAddTime:
                                 minutes: "分鐘"
                                 hours: "小時"
                                 days: "日"
-                            LocationDeleteModal: 
+                            LocationDeleteModal:
                                 sure: "你確定嗎？"
                                 selected: "你已選擇要刪除以下地點："
                                 warn: "這將會刪除所有以往和現在互動活動的地點。你將不能再度使用此地點作未來的互動活動。"
                                 cancel: "取消"
                                 delete: "刪除"
-                            LocationEdit: 
+                            LocationEdit:
                                 prompt: "填入地點的地址..."
                                 country: "國家"
                                 timezone: "時區"
@@ -1873,7 +1873,7 @@ zh-TW:
                                 cancel: "取消"
                                 save: "儲存這個地點"
                                 virtualPrompt: "輸入城市名來設定時區⋯⋯"
-                            LocationTimeShifter: 
+                            LocationTimeShifter:
                                 shift: "移動開始日期"
                                 forward: "推遲"
                                 backward: "提前"
@@ -1888,17 +1888,17 @@ zh-TW:
                                 hours: "小時"
                                 update: "更新"
                                 shiftButton: "移動所有日期與時間"
-                            UnpublishModal: 
+                            UnpublishModal:
                                 cancel: "取消"
                                 title: "取消發佈以進行更改"
                                 desc: "若要新增、編輯或刪除地點及時間，你可以暫時取消發佈該活動。在此期間，你的活動將不會出現在【互動】的搜索結果中。請務必記得再次發佈你的活動。"
                                 unpublish: "取消發佈"
-                    preview: 
-                        notes: 
+                    preview:
+                        notes:
                             prompt: "新增你的私人筆記......"
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>請登入，</span>以增添你的私人筆記……</a>"
-                        components: 
-                            PreviewFeed: 
+                        components:
+                            PreviewFeed:
                                 review: "發佈之前審閱你的互動活動"
                                 previewUrl: "預覽 URL 連結："
                                 share: "分享互動活動"
@@ -1906,23 +1906,23 @@ zh-TW:
                                 publish: "發佈"
                                 unpublish: "取消發佈"
                                 locations: "地點："
-                                discoverable: 
+                                discoverable:
                                     title: "可搜尋:"
                                     desc: "你的活動會呈現在聖經軟體【互動】的地點上，也會出現在活動最早開始時間前5天的搜尋結果中。"
-                                status: 
+                                status:
                                     title: "狀態:"
                                     desc: "你的活動一旦開始進行，就會出現紅色的【現場】標示。"
-                                remove: 
+                                remove:
                                     title: "移除"
                                     desc: "在活動最後結束時間之後，你的互動活動將不再出現在可搜尋的互動裡。只要參加者在此互動活動還可被搜尋的時段中點選【儲存互動】，他們就仍然可以讀取該互動活動的封存版本。他們也可以透過直接的內部連結，持續參與這個互動活動。"
-                            PreviewTypeAnnouncement: 
+                            PreviewTypeAnnouncement:
                                 expand: "展開"
-                            PreviewTypePlan: 
+                            PreviewTypePlan:
                                 read: "閱讀"
                                 info: "計劃信息"
-            EventFeedMine: 
-                components: 
-                    EventListItem: 
+            EventFeedMine:
+                components:
+                    EventListItem:
                         duplicate: "複製"
                         share: "分享"
                         delete: "刪除"
@@ -1930,24 +1930,24 @@ zh-TW:
                         edit: "編輯"
                         view: "檢視"
                         fail: "互動活動無法刪除"
-            EventView: 
-                components: 
-                    EventViewContent: 
+            EventView:
+                components:
+                    EventViewContent:
                         copy: "複製"
                         copied: "複製"
                         share: "分享"
                         read: "閱讀"
                         readPlan: "閱讀計劃"
-                    EventViewContentAnnouncement: 
+                    EventViewContentAnnouncement:
                         expand: "展開"
                         collapse: "收合"
-                    EventViewDetails: 
+                    EventViewDetails:
                         expand: "展開"
                         collapse: "收合"
                         save: "儲存互動"
                         signIn: "登入以儲存互動"
                         saved: "互動已儲存"
-        Auth: 
+        Auth:
             sign up: "註冊帳戶"
             sign in: "登入"
             sign up google: "透過谷歌註冊"
@@ -1962,19 +1962,19 @@ zh-TW:
             share blurb: "看來您希望分享經文。太好了！您可以透過 Facebook 或 Twitter 即時分享神的話語。趕緊登入或在下方註冊一個帳戶就可以開始了！"
             highlight blurb: "看來您想醒目顯示這節經文。太好了！醒目顯示功能幫助您整理並記錄您喜愛的聖經經節。請登入或者建立一個帳戶，然後就可以開始了！"
             note blurb: "看來您想為這段經文寫些筆記。好主意！筆記能夠幫助您記住並整理您在上帝的話語裡所發掘的真理。請登入或者建立一個帳戶就可以開始了！"
-        Reader: 
+        Reader:
             chapter: "章節"
             read reference: "閱讀 %{reference}"
             read chapter: "閱讀整章"
             plan title: "免費的讀經計劃及靈修內容"
             plan title ref: "與 %{reference} 相關的免費讀經計劃與靈修短文"
             plan subtitle: "聖經計劃定量分配讀經內容，使你每日都能閱讀聖經。【計劃】通常包含了輔助性的靈修短文、音訊或視訊精選。無論你怎麼稱呼他們，【計劃】是經過證實、能讓聖經自然而然融入你日常生活的最佳途徑。"
-            meta: 
-                mobile: 
+            meta:
+                mobile:
                     title: "聖經軟體"
-                site: 
+                site:
                     title: "Bible.com"
-            header: 
+            header:
                 parallel: "並排"
                 parallel exit: "退出並排對照模式"
                 cancel: "取消"
@@ -1990,32 +1990,32 @@ zh-TW:
                 videos: "視訊"
                 me: "本人"
                 recent versions: "最近使用譯本"
-            chapterpicker: 
+            chapterpicker:
                 book label: "書卷"
                 chapter label: "章節"
                 chapter unavailable: "此譯本沒有提供此章經節。請選擇不同章節或譯本。"
                 choose chapter: "選擇章節"
-            versionpicker: 
+            versionpicker:
                 language label: "譯本語言"
                 language sub-label: "譯本語言"
                 change language: "變換語言"
                 filter languages: "篩選語言......"
                 version label: "譯本"
                 choose version: "選擇譯本"
-            reader settings: 
+            reader settings:
                 footnotes: "註腳"
                 numbers: "數字和標題"
-            more: 
+            more:
                 events: "互動"
                 settings: "設定"
-            search: 
+            search:
                 bible: "聖經"
                 users: "用戶"
                 plans: "計劃"
-            version: 
+            version:
                 learn more: "暸解更多"
                 courtesy of: "%{publisher} 為你帶來 %{abbreviation}"
-            verse action: 
+            verse action:
                 copy: "複製"
                 bookmark: "書籤"
                 note: "筆記"
@@ -2033,21 +2033,6 @@ zh-TW:
                 add color: "加入顏色"
                 labels private: "標籤不會被公開"
         notifications: "通知"
-<<<<<<< HEAD
-        start plan title: "How do you want to read this Plan?"
-        by myself: "By Myself"
-        by myself description: "Keep your Plan activity private, or allow your Friends to see your Plan activity."
-        with friends: "With Friends"
-        with friends description: "Invite Friends to join you in this Plan. You’ll complete days together at the same pace, and you’ll all be able to discuss what God is teaching you along the way."
-        level of privacy: "Level of Privacy"
-        plan privacy prompt: "你是否要公開你的計劃活動給朋友看？"
-        visible to friends: "Visible to Friends"
-        private: "保密"
-        cancel: "取消"
-        start plan when: "When do you want to start this Plan?"
-        future start blurb: "Starting on a future date will give your Friends time to accept your invitation."
-        change date: "Change Date"
-=======
         start plan title: "你想如何讀這個計劃？"
         by myself: "自己讀"
         by myself description: "不公開你的計劃活動，或公開你的計劃活動給朋友看。"
@@ -2061,57 +2046,24 @@ zh-TW:
         start plan when: "你想何時開始這個計劃？"
         future start blurb: "請預設開始日期，讓你的朋友有充分時間接受你的邀請。"
         change date: "更改日期"
->>>>>>> master
         settings: "設定"
         done: "完成"
         next: "後"
         edit: "編輯"
         delete: "刪除"
         post: "發佈"
-        x likes: 
+        x likes:
             other: "%{number} 個讚"
         selected: "選定"
-<<<<<<< HEAD
-        currently subscribed: "Currently Subscribed"
-        invite friends: "邀請朋友"
-        invite others: "邀請其他人"
-        invited: "Invited"
-        pending: "Pending"
-        x pending: 
-            other: "%{number} Pending"
-        accepted: "Accepted"
-        x accepted: 
-            other: "%{number} Accepted"
-        invitation: "Invitation"
-        accept invitation: "Accept Invitation"
-        what is this: "What is this?"
-        decline: "拒絕"
-        start date: "開始日期"
-        plan archived: "Plan Archived"
-        starts: "開始"
-        started: "開始"
-        loading: "Loading..."
-        join together share: "Would you read the bible plan, %{plan}, with me?"
-        join together: "%{host} 想和你一起讀這個計劃。"
-        talk it over: "主題討論"
-        participants: "Participants"
-        host: "Host"
-        x participants: 
-            other: "%{number} Participants"
-        participant limit: "Participant Limit: %{number}"
-        + x more: "+ %{number} more"
-        when participant comments: "When Participants post a comment"
-        when participant accepts: "When Participants accept an invite"
-=======
         currently subscribed: "目前訂閱"
         invite friends: "邀請朋友"
         invite others: "邀請其他人"
         invited: "Invited"
         pending: "尚未決定"
-        x pending: 
+        x pending:
             other: "%{number} 人尚未決定"
         accepted: "接受"
-        x accepted: 
+        x accepted:
             other: "%{number} 人已接受邀請"
         invitation: "邀請"
         accept invitation: "接受邀請"
@@ -2127,10 +2079,9 @@ zh-TW:
         talk it over: "主題討論"
         participants: "參與者"
         host: "發起人"
-        x participants: 
+        x participants:
             other: "%{number} 名參與者"
         participant limit: "參與者人數限制： %{number}"
         + x more: "+ %{number} 人"
         when participant comments: "當參與者發布評論時"
         when participant accepts: "當參與者接受邀請時"
->>>>>>> master

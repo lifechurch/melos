@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 function ListIcon({ width, height, fill }) {
 	return (
 		<div className="bubblesicon-container vertical-center">
-			<svg className='bubblesicon' viewBox="0 0 33 15" width={width} height={height} version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+			<svg className='bubblesicon' viewBox="0 0 33 15" width={width} height={height} version="1.1" xmlns="http://www.w3.org/2000/svg">
 				<g transform="translate(-734.000000, -236.000000)" fill={fill}>
 					<g transform="translate(658.000000, 222.000000)">
 						<g transform="translate(-19.539394, 0.000000)">

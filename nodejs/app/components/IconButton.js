@@ -99,7 +99,7 @@ class IconButton extends Component {
 			<div className={`yv-icon-button ${className}`} style={style} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
 				<LinkComponent {...linkProps}>
 					<div className="yv-icon-button-svg">
-						{children && React.cloneElement(children, childProps)}
+						{children.length > 0 && React.cloneElement(children, childProps)}
 					</div>
 					{label && <div className="yv-icon-button-label" style={{ color: currentLabelColor, fontSize: labelSize }}>{label}</div>}
 				</LinkComponent>

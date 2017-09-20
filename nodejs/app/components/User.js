@@ -19,7 +19,7 @@ function User(props) {
 	)
 	// either render children, or the heading and/or subheading
 	const content = (
-		children ?
+		children && children.length > 0 ?
 			(
 				<div className='content'>
 					{ children }

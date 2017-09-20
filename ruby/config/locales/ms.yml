@@ -1,66 +1,66 @@
 ---
-ms: 
-    time: 
-        formats: 
+ms:
+    time:
+        formats:
             votd: "%-d %B %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
+    datetime:
+        time_ago_in_words:
+            about_x_hours:
                 other: "kira-kira %{count} jam yang lalu"
-            about_x_months: 
+            about_x_months:
                 other: "kira-kira %{count} bulan yang lalu"
-            about_x_years: 
+            about_x_years:
                 other: "kira-kira %{count} tahun yang lalu"
-            almost_x_years: 
+            almost_x_years:
                 other: "kira-kira %{count} tahun yang lalu"
             half_a_minute: "setengah minit yang lalu"
-            less_than_x_minutes: 
+            less_than_x_minutes:
                 other: "kurang daripada %{count} minit sebelum ini"
-            less_than_x_seconds: 
+            less_than_x_seconds:
                 other: "kurang daripada %{count} saat yang lepas"
-            over_x_years: 
+            over_x_years:
                 other: "lebih daripada %{count} tahun yang lalu"
-            x_days: 
+            x_days:
                 other: "%{count} hari yang lalu"
-            x_minutes: 
+            x_minutes:
                 other: "%{count} minit yang lalu"
-            x_months: 
+            x_months:
                 other: "%{count} bulan yang lepas"
-            x_seconds: 
+            x_seconds:
                 other: "%{count} saat yang lepas"
-    counter: 
+    counter:
         format: "999,999,999"
-    social: 
-        intro page: 
+    social:
+        intro page:
             main heading: "Perbualan & Penemuan"
             main description: "Cara yang baru untuk mengeksplorasi Alkitab bersama sahabat yang dipercayai"
-            moment: 
+            moment:
                 user aaron: "Aaron Steele"
                 user andy: "Andy Knight"
                 timestamp: "5 hari lalu"
                 title: "bookmark Mazmur 31:7"
                 verse: "Aku akan bersorak-sorak dan bersukacita karena kasih setia-Mu, sebab Engkau telah menilik sengsaraku, telah memperhatikan kesesakan jiwaku."
                 reference: "Mazmur 31:7"
-                discover: 
+                discover:
                     copy: "Temui dan pelajari dengan sahabat anda ketika mereka menambah highlight, bookmark, dan nota."
                     button: "Di mana boleh saya bermula?"
-                share: 
+                share:
                     copy: "Kongsi perbualan yang jujur tentang Kitab."
                     button: "Bermula dengan mencari sahabat-sahabat."
-                likes: 
+                likes:
                     info: "dan 4 lagi seperti ini"
-                comments: 
-                    first: 
+                comments:
+                    first:
                         text: "Memang sangat memerlukan untuk mendengarkan itu hari ini, terima kasih. Mari berhubung lagi akan datang!"
                         time: "lebih kurang 3 jam lalu"
-                    second: 
+                    second:
                         text: "Amen, saya juga. Sedang menghantar e-mel kepada anda sekarang."
                         time: "lebih kurang 27 minit lalu"
                     field placeholder: "Tulis komen..."
-        widget: 
+        widget:
             timeline: "Timeline"
             no activity yet: "Tidak terdapat sebarang aktiviti lagi."
-        moment: 
+        moment:
             read all: "Baca semua"
             read less: "Baca Kurang"
         share: "Beritakan"
@@ -69,18 +69,18 @@ ms:
         connected as: "Anda tersambung ke %{connection} sebagai %{username}."
         remove connection: "Batalkan sambungan ini"
         connection friends: "Ini beberapa pengguna YouVersion yang tersambung kepada anda di %{connection}:"
-        errors: 
+        errors:
             no friends: "Rupanya sahabat %{connection} anda belum menggunakan YouVersion."
             reset connection: "Maaf, kesilapan berlaku. Sila putuskan hubungan, kemudian sambung kembali."
-        email: 
+        email:
             name: "E-mel"
-        twitter: 
+        twitter:
             name: "Twitter"
-        facebook: 
+        facebook:
             name: "Facebook"
-            errors: 
+            errors:
                 expired access: "Token akses anda telah tamat dari Facebook. Sila hapuskan sambungan anda dan sambungkan kembali ke Facebook."
-    language names: 
+    language names:
         arabic: "Arabic"
         bulgarian: "Bulgarian"
         czech: "Czech"
@@ -99,7 +99,7 @@ ms:
         ukrainian: "Ukrainian"
         simplified chinese: "Simplified Chinese"
         traditional chinese: "Traditional Chinese"
-    api: 
+    api:
         users agree bool: "Anda mesti bersetuju dengan terma dan syarat untuk membuat akaun."
         users confirm password matches: "Kata laluan baru tidak sama."
         users email email: "Alamat e-mel ini tidak sah."
@@ -122,26 +122,26 @@ ms:
         users last name required: "Anda harus masukkan nama terakhir."
         moments content required: "Ruangan tidak boleh kosong"
         users auth password required: "Anda mesti masukkan kata laluan."
-    meta: 
+    meta:
         best kids app: "Aplikasi Kanak-kanak yang Terbaik!"
         best educational app: "Aplikasi Pendidikan yang Terbaik"
-        kids_app: 
+        kids_app:
             title: "App Alkitab untuk Kanak-Kanak"
             description: "App Alkitab untuk Kanak-kanak merupakan cara yang amat baik untuk anak-anak anda mempelajari cerita Biblikal tentang Yesus, karunia kehidupan kekal untuk kita, dan banyak lagi pengajaran yang diajarkan Allah kepada kita. Dalam pengalaman interaktif ini, kanak-kanak secara langsung dapat turut serta di dalam Firman Allah dengan visual yang menarik sementara memperoleh mata untuk pembacaan dan pengumpulan harta karun."
-        100million: 
+        100million:
             title: "Ia Bermula dengan 100 Juta"
             description: "App Alkitab telah di instalasi hampir 100 juta kali - pencapaian yang menakjubkan! Tetapi kita baru sahaja bermula. Muat turun App Alkitab percuma hari ini - dan kongsikan app ini dengan sahabat anda. Ayuh mencipta sejarah bersama."
-        mobile: 
+        mobile:
             title: "App Alkitab"
             description: "Baca Firman Allah pada bila-bila masa, di mana sahaja dengan menggunakan App Alkitab YouVersion. Kongsikan Ayat Alkitab dengan sahabat, highlight dan bookmark petikan, dan lakukan sebagai kebiasaan sehari-hari dengan Pelan Alkitab. Tersedia untuk iOS, Android, Blackberry, Windows Phone dan banyak lagi."
             download or read: "Muat turun sekarang atau baca online."
-        site: 
+        site:
             title: "Bible.com"
             description: "Bawakan keindahan dan kebenaran Alkitab ke dalam kehidupan seharian. Melalui App Alkitab YouVersion, anda boleh membaca, menonton, mendengar, dan berkongsi dalam telefon mudah alih atau tablet anda, dan secara online di Bible.com."
-        connections: 
-            index: 
+        connections:
+            index:
                 title: "Akaun yang Berkaitan"
-    kids: 
+    kids:
         bible app: "App Alkitab"
         for: "for"
         kids: "kanak-kanak"
@@ -164,7 +164,7 @@ ms:
         feature 3: "Ilustrasi berwarna-warni dengan animasi sentuh-aktif "
         feature 4: "Permainan dan aktiviti membantu kanak-kanak mengingat apa yang mereka pelajari"
         feature 5: "Navigasi mesra kanak-kanak"
-        share: 
+        share:
             tell friends: "Beritahu rakan-rakan anda tentang App Alkitab untuk Kanak-Kanak."
             facebook name: "App Alkitab untuk Kanak-Kanak"
             facebook description: "App Alkitab untuk Kanak-Kanak kini ada di sini! Muat turun app percuma untuk iOS dan Android hari ini: cerita Alkitab yang interaktif untuk membantu anak anda belajar, bermain, dan membesar dalam Firman Allah. www.bible.com/kids"
@@ -175,11 +175,11 @@ ms:
             email: "E-mel"
             email subject: "App Alkitab untuk Kanak-Kanak kini ada di sini!"
             email body: "Berita baik - App Alkitab untuk Kanak-Kanak ada di sini!  Ia adalah percuma dan tersedia untuk iPhone, iPad, iPod touch, dan peranti Android. App ini merupakan koleksi cerita Alkitab yang semakin berkembang dengan animasi yang aktif apabila disentuh dan aktiviti pembelajaran, sesuai untuk membantu kanak-kanak mempelajari cerita besar daripada Alkitab. Layari bible.com/kids dalam peranti mudah alih anda untuk memuat turun hari ini."
-        partner: 
+        partner:
             youversion: "YouVersion: App Alkitab yang paling terkenal di dunia"
             in partnership: "dengan perkongsian bersama"
             one hope: "One Hope: Kandungan Alkitab yang luar biasa untuk Kanak-Kanak"
-        links: 
+        links:
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
@@ -204,8 +204,8 @@ ms:
     new note: "Nota Baru"
     share success: "Mesej anda sudah diberitakan."
     share error: "Maaf, ada kesilapan semasa memberitakan mesej anda. Sila cuba lagi."
-    share: 
-        request: 
+    share:
+        request:
             no_twitter_connection: "Anda tidak mempunyai akaun Twitter yang terhubung. Sila hubungkan akaun anda pada halaman seting."
             no_facebook_connection: "Anda tidak mempunyai akaun Facebook yang terhubung. Sila hubungkan akaun anda pada halaman seting."
     google plus: "Google+"
@@ -300,9 +300,9 @@ ms:
     groups: "Group"
     mobile: "App Mobil"
     live: "Siaran Langsung"
-    events: 
+    events:
         events: "Acara"
-        menu: 
+        menu:
             features: "Features"
             faq: "FAQ"
             resources: "Resources"
@@ -395,16 +395,16 @@ ms:
     traditional: "Tradisional"
     alphabetic: "Berabjad"
     versions title: "Versi"
-    languages: 
+    languages:
         title: "Bahasa dan terjemahan Alkitab"
         most popular: "Bahasa-bahasa yang paling terkenal"
         additional: "Bahasa-bahasa tambahan"
         download language: "Muat turun Alkitab dalam %{language_name}"
         bible in: "Alkitab dalam %{language_name}"
-    or: 
+    or:
         lower: "atau"
         upper: "ATAU"
-    moments: 
+    moments:
         scripture unavailable: "Alkitab tidak tersedia."
         could not load: "Tidak dapat memuat"
         could not load verse: "Tidak dapat memuat ayat"
@@ -418,8 +418,8 @@ ms:
         users like this: "%{last_liker_link} dan %{more_link} like ini"
         like: "Like"
         likes: "Like"
-        more than one like: 
-        vod: 
+        more than one like:
+        vod:
             title: "Ayat harian"
             get daily email: "Dapatkan e-mel harian"
             subscribe: "Langgan"
@@ -429,16 +429,16 @@ ms:
             view more: "Lihat Lebih Banyak"
             time: "Masa"
             blurb: "Langgani Ayat Harian. Terima e-mel harian atau notifikasi tolak pada peranti mudah alih anda."
-        friendship: 
+        friendship:
             now friends: "Anda sekarang bersahabat dengan"
-        cta: 
+        cta:
             profile update text: "Bantu sahabat anda untuk mencari anda"
             profile update button: "Update profil anda"
             sharing text: "Kongsikan ayat dengan rangkaian sosial"
             sharing button: "Aktifkan perkongsian"
             friends text: "Lihat moments sahabat anda di Alkitab."
             friends button: "Cari sahabat"
-        action: 
+        action:
             go to scripture: "Terus ke alkitab"
             add friend button: "Tambah sahabat"
             load more: "Load lebih lagi"
@@ -466,41 +466,41 @@ ms:
             read plan: "Baca"
             about plan: "Tentang pelan"
             start plan: "Mulakan pelan"
-    notifications: 
+    notifications:
         title: "Notifikasi"
         none: "Anda tidak mempunyai sebarang notifikasi"
         no new: "Tiada notifikasi baru"
         view all: "Lihat semua Notifikasi"
-    likes: 
+    likes:
         create success: "Berjaya! Like anda telah disimpan"
         create failure: "Tanda suka anda tidak boleh disimpan"
         destroy success: "Tanda suka dipadam"
         destroy failure: "Tanda suka anda tidak boleh dipadam"
-    comments: 
+    comments:
         view all N: "Lihat semua %{count} komen"
         post comment: "Pos komen"
         create success: "Berjaya! Komen anda telah ditulis."
         create failure: "Komen tidak dapat dipos"
         destroy success: "Komen dipadam"
         destroy failure: "Komen tidak boleh dipadam"
-        form: 
+        form:
             save button: "Pos"
-    friends: 
+    friends:
         you have N friends: "Anda mempunyai %{count} sahabat"
         none me: "Beritakanlah saat Alkitab anda yang istimewa - bookmark, highlight, dan nota - kepada sahabat dan keluarga anda."
         find friends: "Cari sahabat"
-        blank slate: 
+        blank slate:
             heading: "Ketika ini bukannya sahabat"
             description: "Anda perlu bersahabatkan seseorang ini sekiranya anda ingin melihat senarai sahabatnya."
         limit notice: "Anda boleh mempunyai sebanyak 150 sahabat"
         limit description: "Menghadkan sahabat App Alkitab anda kepada orang yang anda sangat kenal mewujudkan persekitaran untuk perbualan yang jujur dan penemuan yang dikongsi dengan sahabat yang dipercayai."
-    friendships: 
+    friendships:
         blurb: "Tumpukan persahabatan anda sekitar Alkitab. Kongsikan apa yang anda ingini, bila sahaja anda ingin berkongsi, dalam keselamatan hubungan yang dipercayai."
         name required: "Update nama pertama serta nama keluarga anda dalam Profil demi menikmati Alkitab bersama sahabat anda."
         find friends title: "Cari sahabat"
         search by name: "Cari menggunakan nama"
         search button: "Pergi"
-        widget: 
+        widget:
             find friends title: "Cari sahabat"
             search by name: "Cari menggunakan nama"
             search button: "Pergi"
@@ -514,12 +514,12 @@ ms:
         requests view all: "Lihat semua permintaan sahabat"
         requests none: "Anda tidak mempunyai sebarang permintaan sahabat"
         requests no new: "Tiada permintaan baru"
-        status: 
+        status:
             pending: "Permintaan tertunda"
             friends: "Sahabat"
         user wants friendship: "%{user} ingin menjadi sahabat anda"
         user wants friendship partial: "ingin menjadi sahabat anda"
-        form: 
+        form:
             remove friend button: "Keluarkan sahabat"
             remove friend button title: "Keluarkan orang ini dari senarai sahabat anda"
             add friend button: "Tambah sahabat"
@@ -529,24 +529,24 @@ ms:
             accept request button: "Terima permintaan"
             ignore button: "Tolak"
             ignore request button: "Permintaan ditolak"
-    images: 
+    images:
         none user: "%{username}belum lagi menciptai gambar."
-        blank slate: 
+        blank slate:
             heading: "Anda belum ada gambar lagi."
             description: "Gunakan aplikasi YouVersion mudah alih untuk menghasilkan gambar ayat."
-    notes: 
+    notes:
         none user: "%{username} belum lagi mengambil nota."
-        blank slate: 
+        blank slate:
             heading: "Anda belum lagi mempunyai nota"
             description: "Semasa membaca Alkitab, ketika mendengar suara Allah yang senyap tenang, bolehlah mencatat fikiran di sini. Nota anda ditanda <em>private</em> secara default. Jika anda ingin berkongsi sama sahabat, cuma perlu dibukanya dan ditukar ke <em>awam</em>."
-        form: 
+        form:
             title field: "Tajuk:"
             content field: "Kandungan:"
             highlight field: "Highlight: (pilihan)"
             reference field: "Rujukan:"
             status field: "Status:"
             save button: "Simpan"
-        status: 
+        status:
             private: "Private"
             public: "Awam"
             friends: "Sahabat sahaja"
@@ -585,7 +585,7 @@ ms:
         destroy success: "Nota dihapuskan"
         destroy failure: "Terjadi kesilapan semasa menghapuskan nota"
         update success: "Nota telah dikemas kini"
-    ref: 
+    ref:
         loading secondary: "Memuatkan Rujukan dalam Versi Kedua..."
         clear verses: "Batalkan Ayat-ayat yang Terpilih"
         choose book and chapter: "Pilih Kitab + Bab"
@@ -607,7 +607,7 @@ ms:
         no secondary version text: "Kami tidak terpilih versi kedua untuk anda kerana %{language_name} cuma tersedia satu versi. Sila pilih versi kedua anda untuk membuat perbandingan paralel."
         select another chapter: "Pilihilah Bab yang Berbeza"
         view in reader: "Lihat %{reference} di Pembaca"
-    users: 
+    users:
         unverified heading: "Hampir Selesai!"
         unverified message: "Rupanya anda cuba log masuk akaun yang belum selesai didaftarkan. Hanya ada satu langkah terakhir: sila klik link pengesahan dalam e-mel pengesahan yang anda terima daripada YouVersion. Tidak terjumpakah? Sila periksa folder spam anda ataupun <a href='%{resend_path}' target='_self'>kirim lagi e-mel pengesahan</a>."
         settings: "Setting"
@@ -711,7 +711,7 @@ ms:
         resend confirmation title: "Apakah anda tidak menerima e-mel pengesahan?"
         resend confirmation copy: "Masukkan alamat e-mel yang diguna untuk mendaftar. Kami akan menghantar e-mel pengesahan sekali lagi."
         resend confirmation button: "Menghantar Pengesahan Sekali Lagi"
-        privacy: 
+        privacy:
             policy: "Polisi Privasi %{youversion}"
             intro: "YouVersion, Laman Web dan Aplikasi yang dimiliki dan dikendalikan oleh LifeChuech.tv, sedar bahawa anda mengambil berat bagaimana informasi anda diguna dan diberitakan. Kami harap kenyataan berikut akan membantu anda memahami bagaimana YouVersion mengumpul, mengguna dan melindungi informasi yand diberi oleh anda di laman atau app kami."
             translation disclaimer: "Polisi privasi diterjemah demi kemudahan anda; namun, Life.Church tidak memberi jaminan atau representasi tentang ketepatan terjemahan.  Di mana versi Inggeris dan versi terjemahan tidak sejajar, versi Inggeris akan dipatuhi."
@@ -740,7 +740,7 @@ ms:
             enforcement text: "Dari semasa ke semasa Life.Church menyemak pematuhannya dengan Polisi Privasi ini. Ketika kami menerima aduan bertulis yang rasmi tentang isu privasi, polisi kami adalah untuk menghubungi pengguna yang membuat aduan tentang perkara ini. Kami akan bekerjasama dengan pihak berkuasa regulatori yang sewajarnya, termasuk pihak berkuasa perlindungan data tempatan, untuk menyelesaikan sebarang aduan mengenai pemindahan data peribadi yang tidak boleh diselesaikan di antara Life.Church dan seorang individu."
             questions title: "Soalan"
             questions text: "Sebarang soalan mengenai polisi privasi boleh diarahkan kepada: <a href='mailto:legal@youversion.com'>legal@youversion.com</a>"
-        terms: 
+        terms:
             title: "Terma Penggunaan"
             translation disclaimer: "Terma penggunaan diterjemah demi kemudahan anda; namun, Life.Church tidak memberi jaminan atau representasi tentang ketepatan terjemahan.  Di mana versi Inggeris dan versi terjemahan tidak sejajar, versi Inggeris akan dipatuhi."
             acceptance title: "Penerimaan Terma"
@@ -789,8 +789,8 @@ ms:
             copyright text: "Life.Church menghormati harta intelektual orang lain. Kami meminta para pengguna kami agar melakukan yang sama, terutamanya berkenaan penggunaan YouVersion. Life.Church mungkin, pada keadaan yang sesuai dan budi bicara tunggalnya, melumpuhkan dan/atau menghentikan akaun pengguna yang merupakan pelanggar berulang. Sekiranya anda yakin bahawa kerja anda telah disalin dalam cara yang melanggar hak milik, atau hak harta intelektual anda telah dicabuli, sila hantar maklumat berikut ke legal@youversion.com:<ul type='none'><li>Tandatangan elektronik atau fizikal orang yang dibenarkan untuk bertindak bagi pihak pemilik hak cipta atau kepentingan harta intelektual yang berkenaan;</li><br/><li>Huraian bertulis tentang kerja berhak cipta atau harta intelektual lain yang anda dakwa telah dilanggar;</li><br/><li>Huraian bertulis tentang lokasi bahan yang anda dakwa telah dilanggar di YouVersion;</li><br/><li>Alamat, nombor telefon dan alamat emel anda (semua yang berkenaan);</li><br/><li>Pernyataan bertulis oleh anda bahawa anda secara jujur mempercayai bahawa penggunaan yang dipertikaikan tidak dibenarkan oleh pemilik hak milik, agennya, atau undang-undang;</li><br/><li>Pernyataan bertulis oleh anda, dengan bersedia dikenakan hukuman sumpah palsu, bahawa maklumat di atas dalam Notis anda adalah tepat dan bahawa anda ialah pemilik hak cipta atau harta intelektual itu, atau bahawa anda merupakan orang yang dibenarkan untuk bertindak bagi pihak pemilik hak cipta atau harta intelektual itu. Agen Life.Church untuk Notis tuntutan pelanggaran hak milik atau harta intelektual boleh dihubungi seperti berikut:%{newline}Melalui pos: Life.Church c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline} Telefon: (405) 680-5433%{newline}Faks: (405) 844-3002%{newline}Emel: %{mailto_link}</li></ul>"
             general title: "Informasi Umum"
             general text: "Kesuluruhan Persetujuan. TERMA PENGGUNAAN ini merupakan keseluruhan persetujuan di antara anda dan Life.Church dan mengawal penggunaan YouVersion oleh anda, dan menggantikan sebarang persetujuan terdahulu di antara anda dan Life.Church berkenaan dengan YouVersion. Anda juga mungkin tertakluk kepada terma dan syarat tambahan.<br><br>Pilihan Undang-undang dan Forum. TERMA PENGGUNAAN dan perhubungan antara anda dan Life.Church dikawal oleh undang-undang Negeri Oklahoma tanpa mengambil kira konflik peruntukan undang-undang. Anda dan Life.Church bersetuju bertunduk kepada bidang kuasa peribadi dan eksklusif mahkamah yang dilokasi di dalam daerah Oklahoma County, Oklahoma.<br><br>Pengecualian dan Pemutusan Terma. Kegagalan Life.Church untuk menggunakan hak atau peruntukan dalam TERMA PENGGUNAAN ini tidak merupakan pengecualian hak atau peruntukan tersebut. Sekiranya sebarang peruntukan dalam TERMA PENGGUNAAN ini didapati tidak sah oleh mahkamah yang berbidang kuasa kompeten, pihak-pihak namun bersetuju bahawa mahkamah akan berusaha memberi kesan kepada niat pihak-pihak seperti dicerminkan dalam peruntukan tersebut, dan peruntukan lain dalam TERMA PENGGUNAAN ini terus berkuatkuasa.<br><br>Tiada Hak Survivorship dan Tiada Pindahmilikan. Anda bersetuju bahawa akaun Life.Church anda tidak boleh dipindah milik, dan segala hak terhadap ID Life.Church anda atau kandungan akaun anda tamat ketika anda meninggal dunia. Selepas menerima salinan sijil kematian, Life.Church boleh memberhentikan akaun anda dan menghapuskan secara kekal segala kandungannya.<br><br>Statut Batasan. Anda memahami dan bersetuju bahawa tidak kira sebarang statut atau undang-undang yang bertentangan, sebarang tuntutan atau kausa tindakan yang berbangkit dari atau berkaitan dengan penggunaan YouVersion atau TERMA PENGGUNAAN ini mesti difail dalam masa satu (1) tahun selepas tuntutan atau kausa tindakan demikian berlaku atau dihalang selama-lamanya.<br><br>Tajuk seksyen dalam TERMA PENGGUNAAN ini adalah untuk kemudahan sahaja dan tidak mempunyai kesan perundangan atau kontraktual."
-        profile: 
-            blank slate: 
+        profile:
+            blank slate:
                 heading: "Site ini belum tersedia"
                 description: "Laman ini menunjukkan sejarah penglibatan anda bersama sahabat, ataupun pembacaan Alkitab anda."
             visit friend: "Kunjungilah profil %{friend}"
@@ -830,11 +830,11 @@ ms:
             edit: "Mengedit"
             bio: "Bio"
             complete_first_last: "Lengkapkan profil anda dengan mengisikan nama pertama dan nama keluarga anda"
-        password: 
+        password:
             updated: "Ya! Kata laluan anda sudah di-update."
             error: "Maaf, ada kesilapan semasa mengubah kata laluan anda."
             old was invalid: "Maaf, anda perlu masukkan kata laluan lama yang betul untuk mengubah kata laluan."
-        notifications: 
+        notifications:
             badges: "Beritahu saya tentang lencana yang saya perolehi."
             follower: "Beritahu saya bila seseorang mengikuti saya."
             newsletter: "Saya ingin menerima pengumuman YouVersion yang baru."
@@ -847,7 +847,7 @@ ms:
             moments: "Beritahu saya tentang aktiviti sahabat"
             comments: "Beritahu saya tentang komen terhadap aktiviti saya"
             likes: "Beritahu saya tentang like terhadap aktiviti saya"
-    bookmarks: 
+    bookmarks:
         new: "Bookmark Baru"
         edit: "Mengedit"
         delete: "Hapuskan Bookmark ini"
@@ -878,10 +878,10 @@ ms:
         color: "Warna:"
         version field: "Versi:"
         none user: "%{username} tiada bookmark"
-        blank slate: 
+        blank slate:
             heading: "Bookmark ayat-ayat yang bermakna"
             description: "Semasa membaca Alkitab, pilih sesuatu ayat dan tandai dengan bookmark. Kembali ke sini untuk membaca, mengedit, atau membatalkan bookmark anda."
-        form: 
+        form:
             title field: "Tajuk:"
             reference field: "Rujukan:"
             labels field: "Label (dipisahkan oleh koma):"
@@ -889,24 +889,24 @@ ms:
             colors field: "Warna:"
             update button: "Update Bookmark"
             save button: "Simpan Bookmark"
-    badges: 
+    badges:
         earned a badge: "Terperolehi Lencana"
         user badges: "Lencana %{user}"
         earned date: "Diperolehi oleh %{username} %{ago} dahulu."
         none me: "Anda belum memperolehi sebarang lencana."
         none user: "%{username} belum memperolehi sebarang lencana."
-    plans: 
+    plans:
         see all: "Lihat semua"
         day_completed: "<b>%{username}</b> menyelesaikan <b>Hari %{day}</b> daripada Pelan Bible: <b>%{plan_title}</b>"
-        status: 
+        status:
             on track: "Dalam Landasan!"
-            days ahead: 
+            days ahead:
                 other: "%{count} Hari ke Depan!"
-            missed days: 
+            missed days:
                 other: "%{count} Hari yang Terlepas"
         bible plan language: "Bahasa Pelan Alkitab"
         share plan: "Lihat #PelanAlkitab @YouVersion: %{plan_title}"
-        widget: 
+        widget:
             my plans: "Pelan Saya"
             start reading: "Mula membaca"
             view my plans: "Lihat Pelan Saya"
@@ -915,16 +915,16 @@ ms:
             reading: "pembacaan"
             readings: "pembacaan"
             readings 5 or more: "pembacaan"
-        stats: 
-            friends reading: 
+        stats:
+            friends reading:
                 other: "%{count} sahabat melanggan pelan ini"
-            friends completed: 
+            friends completed:
                 other: "%{count} sahabat telah melengkapkan pelan ini"
             total completions: "Lebih %{count} pelengkapan"
             view all: "Lihat Semua"
             close: "Tutup"
         settings: "Setting"
-        privacy: 
+        privacy:
             visible to friends?: "Adakah anda ingin sahabat anda untuk melihat aktiviti Pelan anda?"
             private: "Private"
             public: "Awam"
@@ -994,7 +994,7 @@ ms:
         catch me up: "Kejarkan Saya"
         restart description: "Anda boleh memulakan pelan sekali lagi. Segala sejarah dan kemajuan akan reset dan kembali ke permulaan."
         restart: "Mulakan Pelan Sekali Lagi"
-        privacy description: 
+        privacy description:
             private: "Pelan anda Private. Tukarkan setting anda kepada Sahabat Sahaja untuk berkongsi aktiviti Pelan bersama sahabat."
             public: "Pelan anda boleh dilihat oleh sahabat. Tukarkan kepada Private untuk menjadikan aktiviti Pelan anda Private."
         make private: "Set ke Private"
@@ -1044,32 +1044,32 @@ ms:
         completed notice: "Tahniah! Anda sudah melengkapi pelan bacaan anda."
         exit: "Keluar"
         loading sidebar content: "Memuat isi kandungan sidebar..."
-    videos: 
+    videos:
         title: "Video"
         watch videos: "Tonton video-video tentang Alkitab"
         all: "Semua video"
         related scripture: "Kitab Berkaitan"
         share video: "Saya sedang menonton %{video_title} di @YouVersion."
-    licenses: 
-        authorized: 
+    licenses:
+        authorized:
             heading: "Isi kandungan anda telah disahkan"
             description: "Anda sekarang boleh <a href='%{content_link}' target='_self'>melihat isi kandungan yang telah anda beli</a> daripada %{vendor} dalam YouVersion!"
         has errors: "Terdapat kesilapan dengan permintaan anda:"
-        confirm: 
+        confirm:
             email: "Untuk membenarkan isi kandungan video yang telah anda beli, sila lihat inbox e-mel anda untuk e-mel pengesahan daripada YouVersion dan klik link di dalam untuk mengesahkan pendaftaran anda."
-        request: 
+        request:
             invalid_vendor_signature: "Pengesahan lesen gagal: Tandatangan penjual tidak sah"
             invalid_vendor_id: "Pengesahan lesen gagal: ID penjual tidak sah"
             invalid_item_ids: "Pengesahan lesen gagal: Item tidak sah"
-        vendor_transaction_id: 
+        vendor_transaction_id:
             duplicate: "Id transaksi: Id transaksi ini telah berdaftar"
-        auth: 
+        auth:
             login notice: "Untuk mengesahkan kandungan pembelian anda, sila log masuk ke akaun YouVersion anda di bawah atau <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
             signup notice: "Untuk mengesahkan kandungan pembelian anda, sila mendaftar untuk akaun YouVersion percuma di bawah atau <a href='/sign-in?source=licenses' target='_self'>%{login}</a> jika anda sudah mempunyai akaun."
             signup link text: "Daftar untuk akaun percuma"
             login link text: "Log masuk"
-    registration: 
-        placeholder: 
+    registration:
+        placeholder:
             email: "Masukkan alamat e-mel anda"
             username: "Masukkan nama pengguna anda"
             password: "Masukkan kata laluan anda"
@@ -1083,14 +1083,14 @@ ms:
         share blurb: "Nampaknya anda ingin berkongsi Ayat Alkitab. Indahnya! Anda boleh berkongsi ayat alkitab via Facebook atau Twitter. Log masuk atau daftarkan akaun di bawah dan bermulalah!"
         highlight blurb: "Rupanya anda ingin highlight ayat kitab. Bagus! Highlight membantu anda mengaturkan ayat-ayat kegemaran anda. Log masuk atau daftarkan akaun  di bawah dan bermulalah!"
         note blurb: "Rupanya anda ingin mencatat nota tentang alkitab. Bagus! Nota-nota membantu anda mengingati dan mengaturkan pelajaran dari Firman Allah. Log masuk atau daftarkan akaun di bawah dan bermulalah!"
-    audio: 
+    audio:
         none: "Maaf, versi ini tiada audio."
         chapter only: "Maaf, audio tidak tersedia untuk ayat-ayat. Audio bab boleh dikunjungi di pembaca."
         close player menu: "Tutup"
         publisher website: "Laman Web Penerbit"
-    highlights: 
+    highlights:
         title: "Highlight"
-        blank slate: 
+        blank slate:
             heading: "Highlight ayat-ayat yang bererti"
             description: "Semasa membaca Alkitab, pilih sesuatu ayat dan highlight. Kembali ke sini untuk membaca, mengedit, atau membatalkan highlight."
         none user: "%{username} tiada highlight"
@@ -1101,9 +1101,9 @@ ms:
         destroy failure: "Terjadi kesilapan semasa membatalkan highlight"
         creation error: "Maaf, tidak dapat highlight."
         delete error: "Maaf, highlight tidak dapat dibatalkan."
-        form: 
+        form:
             save button: "Simpan Highlight"
-    searching: 
+    searching:
         bible: "Alkitab"
         plans: "Pelan"
         users: "Pengguna"
@@ -1112,7 +1112,7 @@ ms:
         suggestion html: "Apakah maksud anda %{suggestion_link}?"
         all versions: "Segala Versi %{language_name}"
         results for: "Hasil carian untuk: "
-    donate: 
+    donate:
         donate now: "Buat Sumbangan Sekarang"
         donate now intl: "atau memberi sumbangan antarabangsa"
         enter amount: "Masukkan jumlah"
@@ -1141,7 +1141,7 @@ ms:
         state: "Negeri"
         zip: "Poskod"
         creation form errors: "Kesilapan berikut menghalang sumbangan anda:"
-    download ad: 
+    download ad:
         title: "Muat turun App Alkitab secara Percuma"
         description copy: "Beratus versi dalam %{language_count}+ bahasa berlainan - Alkitab yang mengikuti anda ke mana sahaja."
         meta copy title: "Muat turun App Alkitab secara Percuma"
@@ -1153,11 +1153,11 @@ ms:
         banner title: "App Alkitab"
         banner action: "Download"
         banner open: "Buka"
-    download bafk ad: 
+    download bafk ad:
         title: "Muat turun App Alkitab untuk Kanak-Kanak"
         description copy: "App Alkitab untuk Kanak-Kanak merupakan cara yang amat baik untuk anak-anak anda mempelajari cerita Biblikal tentang Yesus."
         download: "Muat turun Sekarang"
-    about page: 
+    about page:
         relevancy: "Relevan"
         relevancy copy: "Pada zaman yang lalu, akses kepada Alkitab memang terbatas. Kini tidak sedemikian lagi. Namun, ramai orang merasa bahawa mesej Alkitab tidak terguna dalam kehidupan mereka, walaupun orang lain percaya bahawa Alkitab memang terhubung dengan pengalaman seharian mereka."
         information revolution: "Revolusi Informasi"
@@ -1168,7 +1168,7 @@ ms:
         partners text: "Tanpa kemurahan hati rakan penerbit Alkitab kita, YouVersion tidak mungkin membekalkan begitu banyak Alkitab ke seluruh dunia. Ramai orang ingin mengucapkan terima kasih kepada penyokong kami yang penting ini. Anda boleh berbuat demikian melalui link di bawah, secara memahami lebih lanjut tentang mereka, perkhidmatan mereka, serta bagaimana anda boleh menyokong mereka."
         translation title: "Pasukan Penterjemah Kami"
         learn more: "Ketahui Lebih Lanjut"
-    press page: 
+    press page:
         title: "Kawasan Media"
         contact header: "Informasi Perhubungan Media"
         contact header 2: "Sekitar Web"
@@ -1181,13 +1181,13 @@ ms:
         lead copy: "Berdasarkan Alkitab online, Bible.com, App Alkitab adalah Alkitab mobil percuma yang boleh dimuat turun dalam hampir semua peranti. App Alkitab ini membolehkan pengguna membaca Alkitab, berkongsi ayat kepada jaringan sosial mereka, bookmark petikan kegemaran, dan banyak lagi— segalanya dalam format yang sepadan dengan gaya hidup mudah alih yang semakin berkembang."
         resources title: "Sumber Media"
         now title: "Hari ini, dalam komuniti YouVersion"
-        resources: 
+        resources:
             now: "Nikmati interaksi dan lihat data terbaru secara langsung"
             about: "Tentang YouVersion dan App Alkitab"
             history: "Sejarah dan Statistik YouVersion"
             manual: "Buku Pengguna Jenama YouVersion"
         images title: "Logo dan Imej YouVersion"
-        images: 
+        images:
             logos: "Pakej Logo YouVersion"
             icons: "Icon App Alkitab"
             infographic: "Infografik: Statistik dan Penggunaan App Alkitab"
@@ -1195,7 +1195,7 @@ ms:
             lifestyle: "Kutipan Imej: Lifestyle"
             screencast: "Screencast YouVersion"
         links title: "Link Liputan Media"
-    mobile page: 
+    mobile page:
         h2: "Firman Allah ada bersama anda."
         h3: "YouVersion kini Global"
         h3 sub: "Boleh didapati dalam lebih daripada %{language_count} bahasa di seluruh dunia."
@@ -1240,44 +1240,44 @@ ms:
         sms info: "Anda akan menerima SMS untuk memuat turun app"
         sms download: "Sila klik untuk memuat turun App Alkitab:"
         sms default country: "MY"
-    pages: 
-        generic_error: 
+    pages:
+        generic_error:
             title: "Maaf!"
             explanation: "Ada kesilapan di balik tabir! Kami meminta maaf, sila reload halaman sekali lagi!"
             our action: "Kami sudah diberitahu tentang hal ini dan akan menyelesaikannya secepat mungkin."
-        home: 
+        home:
             heading: "Dapatkan Alkitab percuma untuk telefon, tablet, dan komputer anda."
             cta: "Baca Alkitab Sekarang"
-            experience: 
+            experience:
                 title: "Alaminya di mana-mana jua"
                 body: "Pilih daripada lebih daripada 1,200 versi Alkitab dalam lebih daripada 900 bahasa pada komputer, telefon, atau tablet anda -- banyak antaranya sedia ada dalam bentuk Alkitab audio."
                 action: "Lihat Versi-versi Alkitab"
-            make_yours: 
+            make_yours:
                 title: "Jadikannya Alkitab anda"
                 body: "Tandakan atau letakkan Penanda pada ayat-ayat kegemaran anda, hasilkan Imej Ayat yang boleh dikongsikan, dan lampirkan Nota awam atau persendirian untuk petikan Alkitab."
                 action: "Cipta Akaun Percuma Anda"
-            install_now: 
+            install_now:
                 title: "Pasang App itu Sekarang"
                 body: "App Alkitab adalah percuma sepenuhnya, tanpa iklan dan pembelian dalam aplikasi. Ia telah dipasang (setakat ini) pada banyak peranti yang unik:"
                 action: "Muat turun App Alkitab secara Percuma"
-            free_plans: 
+            free_plans:
                 title: "Pelan Bacaan dan Bahan Renungan Percuma"
                 body: "Pelan Alkitab membantu anda melibatkan diri dalam Firman Allah pada setiap hari, sedikit demi sedikit."
             browse_plans: "Layari Semua Pelan"
             read_listen: "Baca, Dengar, Tonton, Kongsi"
             start_now: "Mulakan Sekarang"
-            votd: 
+            votd:
                 title: "Ayat Hari Ini"
                 highlight_bookmark: "Tandakan, letakkan Penanda, atau kongsikan ayat ini"
                 subscribe: "Langgani Ayat Harian"
-            hero: 
+            hero:
                 heading: "Alkitab yang percuma dalam telefon, tablet, dan komputer anda."
                 description: "YouVersion ialah Alkitab yang mudah dan ad-free yang membawa Firman Allah ke dalam kehidupan anda setiap hari."
                 learn more: "Ketahui lebih lanjut di bawah"
                 start reading: "Mula membaca"
                 skip in future: "Skip halaman ini pada masa akan datang"
                 now skipped: "Halaman ini akan di skip sekarang"
-            features: 
+            features:
                 read heading: "Baca Alkitab."
                 read description: "Ambil pilihan anda daripada <a href='%{versions_path}' target='_self'>ratusan versi Alkitab dan bahasa</a>. Bandingkan dua versi sebelah menyebelah. Anda juga boleh memilih font dan saiz display anda. Jadikan pengalaman Alkitab online anda sepertimana yang anda suka."
                 study heading: "Pelajari Alkitab."
@@ -1291,11 +1291,11 @@ ms:
             download action: "Muat turun Bible App"
             download description: "Muat turun YouVersion Bible App secara percuma dalam alat peranti mudah alih anda dan anda akan ada bersama Alkitab anda di mana sahaja anda pergi."
             world installs: "Install di seluruh dunia"
-        trending verses: 
+        trending verses:
             title: "Ayat Alkitab yang menjadi trend"
             headline: "Ayat Alkitab pada masa ini sedang menjadi trend dalam App Alkitab YouVersion dan Bible.com"
-    shared: 
-        menu_settings: 
+    shared:
+        menu_settings:
             title: "Setting Anda"
             close: "Tutup"
             font: "Font:"
@@ -1315,7 +1315,7 @@ ms:
             translation notes: "Footnotes"
             cross references: "Rujuk Silang"
             numbers and titles: "Nombor dan Tajuk"
-    app errors: 
+    app errors:
         404 plans explanation: "Adakah anda sedang mencari pelan <a href='%{plan_path}' target='_self'>%{title}</a> ?"
         404 contact support: "Anda mempunyai masalah? Anda boleh menghubungi  <a href='%{support_url}' target='_self'>pihak sokongan</a>kami."
         404 explanation: "Anda boleh bermula kembali dari <a href='%{reader_path}' target='_self'>halaman utama</a>. Sekiranya masih ada kesulitan, sila hubungi <a href='%{support_url}' target='_self'>pihak sokongan</a> kami."
@@ -1323,7 +1323,7 @@ ms:
         408 message: "Maaf, server kami terlewat respons."
         408 explanation: "Kami sudah diberitahu tentang hal ini dan akan menyelesaikan masalah yang berterusan secepat mungkin. Semoga anda dapat pantas kembali kepada bacaan Alkitab!"
         try again: "Cuba lagi"
-    versions: 
+    versions:
         filter: "Mula menaip nama Versi (atau Bahasa)..."
         see all: "Lihat Semua Versi..."
         courtesy of: "%{abbreviation} dibawakan untuk anda daripada %{publisher}"
@@ -1339,8 +1339,8 @@ ms:
         public domain: "Domain Awam"
         loading: "Memuat Versi Lain..."
         load error: "Maaf, memuat versi lain mempunyai masalah. Tutup menu ini dan buka semula untuk mencuba kembali."
-    campaigns: 
-        christmas: 
+    campaigns:
+        christmas:
             tracker title: "Penjejak Kisah Natal"
             twitter text: "Lihatlah seluruh dunia membaca tentang kelahiran Yesus. Kongsikan Penjejak Kisah Natal @YouVersion: https://www.bible.com/christmas"
             facebook text: "Kongsikan Penjejak Kisah Natal supaya semua orang di seluruh dunia dapat membaca tentang kelahiran Yesus.  Di gereja atau di rumah, bersama dengan orang yang dikasihi atau semasa waktu sunyi secara bersendirian, kita berhenti sejenak untuk merenungkan keajaiban kasih Allah terhadap kita."
@@ -1355,51 +1355,51 @@ ms:
             versions: "Lebih daripada %{version_count}versi dalam %{language_count}bahasa"
             tagline: "Alkitab yang menyertai anda ke mana-mana sahaja"
             chapter counter format: "9,999,999"
-        100m: 
+        100m:
             logo: "YouVersion: App Alkitab"
             tagline: "Ia bermula dengan <em>100 juta</em>"
             intro: "Bolehkah App Alkitab mencapai 100 juta instalasi sebelum ulangtahun kami yang ke 5 pada 10 Julai? Hanya dengan bantuan anda!"
             after: "Oleh kerana anda, App Alkitab mencapai 100 juta pemuat turun di ulang tahun yang ke 5 pada 10 Julai. Terima kasih!"
-            share: 
+            share:
                 with friends: "Kongsikan dengan sahabat anda"
-                fb: 
+                fb:
                     dialog name: "Adakah anda mempunyai App Alkitab?"
                     dialog desc: "Saya amat menyukai App Alkitab! Ia amat membantu saya untuk menjadikan Alkitab sebahagian dari hidup saya sehari-hari. Ia membolehkan saya untuk highlight, mendengarkan audio Alkitab, membuat nota, mengikuti pelan devosi...dan menonton video! Muat turun sekarang (ia adalah percuma): http://www.bible.com/app"
-                tw: 
+                tw:
                     tweet: "App Alkitab @YouVersion ditempatkan di sudut kekal dalam home screen saya. Baca, tonton, dengar, dan kongsi...semuanya dalam app yang percuma:"
-                em: 
+                em:
                     subject: "Adakah anda mempunyai App Alkitab?"
                     body: "Saya amat gembira dengan App Alkitab dari YouVersion dan berharap anda juga akan menyukainyai. Saya membuka Alkitab lebih kerap kebelakangan ini kerana ianya mudah untuk dibaca, ditonton, didengar dan dikongsi. Ia juga mempunyai Pelan, yang mana mempunyai pilihan Alkitab yang terpilih dan menunggu saya setiap hari. \n\nAnda boleh mendapatinya (percuma!) untuk kebanyakan telefon mudah alih di sini:\nhttp://www.bible.com/app"
-            body: 
+            body:
                 p1: "10 Julai akan menjadi hari yang besar. Ia bukan sahaja ulangtahun ke-5 App Alkitab, tetapi juga menandakan 5 tahun sejak pelancaran Apple's iTunes Store."
                 p2: "Tetapi lebih besar? Dengan bantuan anda, inilah harinya App Alkitab akan mencapai 100 juta muat turun."
                 p3: "Kita telah mempelajari bahawa Allah menggunakan pencapaian seperti ini untuk menjana perkembangan yang lebih besar."
                 p4: "Ayuh mencipta sejarah bersama."
                 after p1: "YouVersion mewakili kesatuan global masyarakat yang bersemangat untuk membantu orang lain terlibat dengan Firman Allah. Kepada semua kumpulan Alkitab dan para penerbit, gereja-gereja, pastor-pastor, dan para sukarelawan Alkitab: terima kasih atas kemurahan hati anda!"
                 after p2: "Apa yang sangat menarik tentang pencapaian ini adalah apa yang ia wakili: hari ini masyarakat berhubung dengan Alkitab dalam skala yang tidak pernah kita lihat sebelum ini. Ini sangat manakjubkan untuk melihat apa yang Allah sedang lakukan. Dan kita percaya ini baru permulaan. <em>Ia bermula dengan 100 juta</em>."
-            ad: 
+            ad:
                 title: "App Alkitab secara keseluruhannya adalah percuma dan merupakan cara yang hebat untuk meneroka Alkitab."
                 copy: "Baca, Dengar, Tonton, Kongsi. Dapatkan App Bible untuk smartphone dan tablet anda: <a href='http://bible.com/app' target='_self'>Muat Turun Sekarang</a>"
-            sidebar: 
+            sidebar:
                 tagline: "Ayuh mencipta sejarah bersama"
                 button: "Kongsi App Alkitab"
-    ui: 
+    ui:
         characters remaining: "baki karakter"
         yes button: "Ya"
         no button: "Tidak"
         cancel: "Batalkan"
-        plans: 
+        plans:
             privacy: "Adakah anda ingin aktiviti anda dengan pelan ini dapat dilihat oleh sahabat anda?"
         loading indicator text: "Memuat ..."
         loading: "Memuat"
-        pagination: 
+        pagination:
             next page: "Halaman Seterusnya"
             previous page: "Halaman Sebelumnya"
-        datetime: 
+        datetime:
             just now: "baru sahaja"
         verses selected: "ayat-ayat yang dipilih"
-    EventsAdmin: 
-        header: 
+    EventsAdmin:
+        header:
             home: "Halaman Utama"
             read: "Baca"
             plans: "Pelan"
@@ -1410,7 +1410,7 @@ ms:
             search placeholder: "Kini Mencari..."
             sign in: "Log Masuk"
             sign up: "Daftar"
-        profile menu: 
+        profile menu:
             bookmarks: "Bookmark"
             highlights: "Highlight"
             notes: "Nota"
@@ -1418,7 +1418,7 @@ ms:
             friends: "Sahabat"
             badges: "Lencana"
             sign out: "Log Keluar"
-        footer: 
+        footer:
             events: "Acara"
             versions: "Versi (%{count})"
             languages: "Bahasa (%{count})"
@@ -1431,17 +1431,17 @@ ms:
             press: "Media"
             privacy: "Polisi Privasi"
             terms: "Terma"
-        unsubscribe: 
+        unsubscribe:
             about: "Tentukan jenis emel yang anda terima daripada YouVersion. Anda boleh mengedit notifikasi mudah alih daripada app mudah alih anda."
             email: "E-mel"
             not me: "Ini bukan saya"
             saved: "Sudah Disimpan!"
             plan delivery: "PENGHANTARAN PELAN"
             sign-in: "Untuk mengedit seting lain, <a href='%{sign_in_path}'>log masuk ke akaun anda</a>."
-            links: 
+            links:
                 manage: "Uruskan Notifikasi Emel Anda"
                 unsub all: "Hentikan langganan semua emel"
-            success: 
+            success:
                 all: "Anda telah berjaya menghentikan langganan <b>semua emel YouVersion</b>."
                 badges: "Anda telah berjaya menghentikan langganan emel <b>Lencana</b>."
                 comments: "Anda telah berjaya menghentikan langganan emel <b>Komen</b>."
@@ -1454,7 +1454,7 @@ ms:
                 votd: "Anda telah berjaya menghentikan langganan emel <b>Firman Hari Ini</b>."
                 votd_image: "Anda telah berjaya menghentikan langganan emel <b>Gambar Firman Hari Ini</b>."
                 contact_joins: "Anda telah membatalkan langganan emel <b>Hubungan</b>"
-            labels: 
+            labels:
                 badges: "Ketika saya memperolehi lencana"
                 comments: "Komen pada aktiviti saya"
                 friendships: "Permintaan sahabat"
@@ -1465,14 +1465,14 @@ ms:
                 votd: "Teks Ayat Hari Ini"
                 votd_image: "Imej Ayat Hari Ini"
                 contact_joins: "Apabila kenalan menyertai"
-            error: 
+            error:
                 token: "Harap maaf, anda perlu Log Masuk sebelum anda boleh mengubah seting Notifikasi:"
                 other_type: "Harap maaf, itu tidak berhasil. Adakah anda ingin mengemas kini Notifikasi anda?"
         change: "Tukar"
-        ui: 
+        ui:
             yes button: "Ya"
             no button: "Tidak"
-        plans: 
+        plans:
             plans: "Pelan"
             plans back: "← Pelan"
             related plans: "Pelan yang berkaitan"
@@ -1481,15 +1481,15 @@ ms:
             my_plans: "Pelan Saya"
             day_completed: "<b>%{username}</b> menyelesaikan <b>Hari %{day}</b> daripada Pelan Bible: <b>%{plan_title}</b>"
             which reading: "%{current} dari %{total}"
-            status: 
+            status:
                 on track: "Dalam Landasan!"
-                days ahead: 
+                days ahead:
                     other: "%{count} Hari ke Depan!"
-                missed days: 
+                missed days:
                     other: "%{count} Hari yang Terlepas"
             bible plan language: "Bahasa Pelan Alkitab"
             share plan: "Lihat #PelanAlkitab @YouVersion: %{plan_title}"
-            widget: 
+            widget:
                 my plans: "Pelan Saya"
                 start reading: "Mula membaca"
                 view my plans: "Lihat Pelan Saya"
@@ -1498,16 +1498,16 @@ ms:
                 reading: "pembacaan"
                 readings: "pembacaan"
                 readings 5 or more: "pembacaan"
-            stats: 
-                friends reading: 
+            stats:
+                friends reading:
                     other: "%{count} sahabat melanggan pelan ini"
-                friends completed: 
+                friends completed:
                     other: "%{count} sahabat telah melengkapkan pelan ini"
                 total completions: "Lebih daripada %{count} yang telah dilengkapkan"
                 view all: "Lihat Semua"
                 close: "Tutup"
             settings: "Setting"
-            privacy: 
+            privacy:
                 visible to friends?: "Adakah anda ingin sahabat anda untuk melihat aktiviti Pelan anda?"
                 private: "Private"
                 public: "Awam"
@@ -1577,7 +1577,7 @@ ms:
             catch me up: "Kejarkan Saya"
             restart description: "Anda boleh memulakan pelan sekali lagi. Segala sejarah dan kemajuan akan reset dan kembali ke permulaan."
             restart: "Mulakan Pelan Sekali Lagi"
-            privacy description: 
+            privacy description:
                 private: "Pelan anda Private. Tukarkan setting anda kepada Sahabat Sahaja untuk berkongsi aktiviti Pelan bersama sahabat."
                 public: "Pelan anda boleh dilihat oleh sahabat. Tukarkan kepada Private untuk menjadikan aktiviti Pelan anda Private."
             make private: "Set ke Private"
@@ -1627,39 +1627,39 @@ ms:
             completed notice: "Tahniah! Anda sudah melengkapi pelan bacaan anda."
             exit: "Keluar"
             loading sidebar content: "Memuat isi kandungan sidebar..."
-        components: 
-            ErrorMessage: 
+        components:
+            ErrorMessage:
                 genericError: "Kesilapan telah berlaku"
-                announcement: 
-                    events: 
-                        title: 
+                announcement:
+                    events:
+                        title:
                             required: "Tajuk pengumuman diperlukan."
-                default: 
-                    bible: 
-                        reference: 
+                default:
+                    bible:
+                        reference:
                             not_found: "Rujukan Alkitab tidak sah."
-                    events: 
-                        google_place_id: 
+                    events:
+                        google_place_id:
                             required: "Anda mesti memilih lokasi daripada peta."
-                        latitude: 
+                        latitude:
                             required: "Anda mesti memilih lokasi daripada peta."
-                        times: 
-                            start_dt: 
+                        times:
+                            start_dt:
                                 must_be_a_future_date: "Masa Bermula tidak boleh pada masa lalu."
-                        timezone: 
+                        timezone:
                             required: "Zon masa diperlukan."
-                reference: 
-                    events: 
-                        usfm: 
+                reference:
+                    events:
+                        usfm:
                             invalid: "Rujukan Alkitab tidak sah."
-                url: 
-                    events: 
-                        url: 
+                url:
+                    events:
+                        url:
                             required: "URL diperlukan."
-                        title: 
+                        title:
                             required: "Label URL diperlukan."
-            EventHeader: 
-                status: 
+            EventHeader:
+                status:
                     published: "Diberitakan"
                     draft: "Draf"
                     live: "Siaran Langsung"
@@ -1671,36 +1671,36 @@ ms:
                 eventBuilder: "PEMBINA ACARA"
                 signOut: "Log Keluar"
                 createAccount: "Buat Akaun"
-            HtmlEditor: 
+            HtmlEditor:
                 text: "Teks"
                 bold: "Bold"
                 italic: "Italic"
-        containers: 
-            Auth: 
+        containers:
+            Auth:
                 title: "Log Masuk Acara"
                 signIn: "Log Masuk"
                 subHead1: "Jika anda merupakan pengguna App Alkitab dan telah mempunyai akaun YouVersion, anda boleh log masuk dengan menggunakan nama pengguna dan kata laluan yang sama.<br/><br/>Belum mempunyai akaun YouVersion? <br/><a href='%{url}'>Daftar masuk sekarang di Bible.com</a> untuk mula membuat Acara."
                 email: "E-mel"
                 password: "Kata Laluan"
                 forgotPassword: "Terlupa Kata Laluan"
-            EventEdit: 
+            EventEdit:
                 event: "Acara"
-            EventEditContentContainer: 
+            EventEditContentContainer:
                 choose: "Pilih beberapa kandungan untuk bermula."
                 needHelp: "Perlukan Bantuan?"
                 title: "Kandungan Acara"
                 previous: "← Sebelumnya: Lokasi & Masa"
                 next: "Seterusnya: Preview→"
-            EventEditDetails: 
+            EventEditDetails:
                 title: "Butiran Acara"
-            EventEditLocationContainer: 
+            EventEditLocationContainer:
                 title: "Lokasi Acara"
                 previous: "← Sebelumnya: Butiran"
                 next: "Seterusnya: Tambah Kandungan →"
-            EventEditPreview: 
+            EventEditPreview:
                 title: "Preview Acara"
                 previous: "← Sebelumnya: Kandungan"
-            EventEditShare: 
+            EventEditShare:
                 title: "Perkongsian Acara"
                 subTitle: "Acara Anda Kini Telah Diberitakan:"
                 edit: "Edit Acara"
@@ -1709,10 +1709,10 @@ ms:
                 copy: "Salin"
                 copied: "Link pendek ini telah disalin ke clipboard anda"
                 previous: "← Sebelumnya: Preview"
-            EventFeedDiscover: 
+            EventFeedDiscover:
                 title: "Lihat Acara-Acara"
                 discover: "Menerokai"
-            EventFeedMine: 
+            EventFeedMine:
                 title: "Acara-Acara Saya"
                 previous: "← Sebelumnya"
                 next: "Seterusnya →"
@@ -1721,38 +1721,38 @@ ms:
                 subTitle: "ACARA-ACARA YANG DIBUAT OLEH SAYA"
                 newFirst: "Cipta Acara(Event) Pertama Anda"
                 learn: "Pelajari bagaimana membuat Acara yang hebat"
-            EventFeedSaved: 
+            EventFeedSaved:
                 title: "Acara disimpan"
-            EventView: 
+            EventView:
                 title: "Acara YouVersion"
-            SelectLanguage: 
+            SelectLanguage:
                 choose: "Pilih Bahasa Anda"
-        features: 
-            Auth: 
-                errors: 
+        features:
+            Auth:
+                errors:
                     sessionExpired: "Sesi anda telah tamat tempoh. Sila log masuk kembali."
                     invalidEmail: "E-mel atau kata laluan tidak sah."
-            EventEdit: 
-                errors: 
+            EventEdit:
+                errors:
                     locationMustHaveTime: "Semua lokasi perlu ada sekurang-kurangnya sekali."
                     locationRequired: "Anda tidak boleh beritakan Acara tanpa lokasi."
                     contentRequired: "Anda tidak boleh beritakan Acara tanpa kandungan."
                     planSearchFailed: "Carian tidak padan dengan mana-mana dokumen"
                     noMatchingPlans: "Tiada Pelan yang sepadan"
-                components: 
-                    EventEditNav: 
+                components:
+                    EventEditNav:
                         details: "Butiran"
                         locations: "Lokasi & Masa"
                         content: "Kandungan"
                         preview: "Preview & Beritakan"
                         share: "Beritakan"
-                features: 
-                    content: 
-                        components: 
-                            ContentFeed: 
+                features:
+                    content:
+                        components:
+                            ContentFeed:
                                 reorder: "Kandungan Menyusun Semula"
                                 doneReordering: "Penyusunan Semula telah siap"
-                            ContentHeader: 
+                            ContentHeader:
                                 text: "Teks"
                                 reference: "Rujukan Alkitab"
                                 plan: "Pelan"
@@ -1760,40 +1760,40 @@ ms:
                                 link: "Pautan Luar"
                                 giving: "Pautan yang Diberikan"
                                 announcement: "Pengumuman"
-                            ContentHelpModal: 
+                            ContentHelpModal:
                                 types: "Jenis Kandungan"
                                 learn: "Pelajari bagaimana membuat <br>Acara yang hebat"
-                                text: 
+                                text:
                                     title: "Modul Teks"
                                     desc: "Rangka, kata kunci, soalan perbincangan… Kongsi apa-apa kandungan am berasaskan teks yang akan membantu peserta anda ikut bersama-sama sejajar dengan mesej anda semasa ia berlangsung. Modul teks anda boleh sepanjang mungkin dan boleh termasuk rich text format (rtf)."
-                                reference: 
+                                reference:
                                     title: "Modul Rujukan Alkitab"
                                     desc: "Pilih mana-mana ayat atau petikan Alkitab, dari antara 1,200+ versi, dalam 900+ bahasa dalam YouVersion. Orang yang lihat Acara anda boleh tap rujukan anda untuk melihatnya dalam App Alkitab mereka, dan mereka boleh Bookmark, Highlight, dan lain-lain lagi."
-                                plan: 
+                                plan:
                                     title: "Modul Pelan"
                                     desc: "Pautkan ke Pelan Alkitab dan Devosi yang berkaitan dengan arah pengajaran anda, yang membantu pendengar anda untuk terus berhubung dengan Firman Allah sepanjang minggu tersebut."
-                                image: 
+                                image:
                                     title: "Modul Imej"
                                     desc: "Hidupkan Acara anda dengan apa sahaja jenis sokongan grafik: seni bersiri, gambar, Imej Ayat etc. Peserta akan dengan mudah dapat berkongsi imej Acara anda ke laman sosial mereka, yang menjadikan mesej anda viral."
-                                link: 
+                                link:
                                     title: "Modul Pautan Luaran"
                                     desc: "Ciptakan butang dalam Acara anda yang menghubungkan ke mana-mana laman web luar. Mudahkan peserta anda dengan hanya satu tap untuk memberi sumbangan online, daftar masuk sebagai sukarelawan, atau ke halaman utama gereja."
-                                announcement: 
+                                announcement:
                                     title: "Modul Pengumuman"
                                     desc: "Berita gereja, acara dalam kalendar, program, kelas, sukarelawan dan peluang misi... Modul pengumuman merupakan tempat yang tepat untuk berkongsi info yang penting dan tepat pada waktunya,tanpa mengalihkan perhatian dari mesej utama Acara anda. Setiap modul pengumuman terpapar di halaman sendiri dalam acara anda, malah boleh juga termasuk teks berformat (seperti bold dan italic)."
-                            ContentInsertionPoint: 
+                            ContentInsertionPoint:
                                 title: "Masukkan modul seterusnya di sini"
-                            ContentTypeAnnouncement: 
+                            ContentTypeAnnouncement:
                                 title: "Tajuk"
                                 prompt: "Tulis sesuatu di sini..."
                                 caption: "Dalam Acara anda, hanya Tajuk anda (di atas) yang akan kelihatan. Apabila pengguna tap Tajuk anda, Isi (di bawah) dipaparkan dalam skrin yang berasingan."
-                            ContentTypeContainer: 
+                            ContentTypeContainer:
                                 dirty: "Kandungan akan disimpan secara automatik selepas beberapa saat anda berhenti menaip."
                                 failed: "Tidak dapat disimpan."
                                 tryAgain: "Cuba lagi."
                                 lastSaved: "Kali terakhir simpan %{when}"
-                            ContentTypeImage: 
-                                errors: 
+                            ContentTypeImage:
+                                errors:
                                     wrongSize: "Saiz imej mestilah %{requiredWidth}x%{requiredHeight}. Imej anda ialah %{yourWidth}x%{yourHeight}."
                                     wrongType: "Jenisfail tidak sah. Jenisfail mestilah JPG."
                                 caption: "Tambah kapsyen"
@@ -1801,32 +1801,32 @@ ms:
                                 onlyJpg: "[JPG sahaja]"
                                 sizePrompt: "%{requiredWidth}px lebar x %{requiredHeight}px tinggi"
                                 select: "Pilih Imej"
-                            ContentTypeLink: 
+                            ContentTypeLink:
                                 kindrid: "Jika anda sedang mencari platform pemberian sumbangan yang cepat dan mudah, <a href='%{url}'> cuba Kindrid</a>."
                                 label: "Label Pautan"
                                 prompt: "Tulis sesuatu di sini..."
                                 url: "URL"
-                            ContentTypePlan: 
+                            ContentTypePlan:
                                 replace: "Ganti"
                                 search: "Cari Pelan Bacaan"
-                            ContentTypeReference: 
+                            ContentTypeReference:
                                 language: "Bahasa"
                                 version: "Versi"
                                 book: "Kitab"
                                 chapterVerse: "Bab: Ayat"
-                            ContentTypeText: 
+                            ContentTypeText:
                                 prompt: "Tulis sesuatu di sini..."
-                            LiveWarningModal: 
+                            LiveWarningModal:
                                 title: "Tidak Dapat Dipadam Semasa Acara sedang Berlangsung "
                                 desc: "Ketika Acara sedang berlangsung, anda tidak boleh padam modul Teks, Rujukan Alkitab, dan Imej daripadanya kerana pengguna mungkin telah menambah nota peribadi mereka di sana. Walaubagaimanapun, anda boleh edit modul-modul ini."
                                 ok: "OK"
-                    details: 
-                        errors: 
+                    details:
+                        errors:
                             generic: "Terdapat masalah ketika memberitakan Acara anda."
                             invalidTimes: "Satu pelayanan tidak boleh lebih dari 12 jam, dan perbezaan antara masa bermula terawal dengan masa berhenti terakhir dalam Acara tidak boleh lebih dari 8 hari. Sila aturkan masa Acara anda dan cuba kembali."
-                        components: 
-                            DetailsEdit: 
-                                errors: 
+                        components:
+                            DetailsEdit:
+                                errors:
                                     wrongSize: "Saiz imej mestilah%{requiredWidth}x%{requiredHeight}. Imej anda ialah %{yourWidth}x%{yourHeight}."
                                     wrongType: "Jenis fail tidak sah. Fail harus dalam bentuk JPG."
                                 changeImage: "Tukar Imej"
@@ -1840,29 +1840,29 @@ ms:
                                 desc: "Penerangan Acara"
                                 next: "Seterusnya: Tambah Lokasi & Masa →"
                                 blank: "%{field} tidak boleh dikosongkan."
-                    location: 
-                        components: 
-                            Location: 
+                    location:
+                        components:
+                            Location:
                                 oneRequired: "Tambah sekurang-kurangnya sekali."
                                 use: "GUNA LOKASI INI"
                                 edit: "Edit Lokasi"
                                 delete: "Padam Lokasi"
-                            LocationAddButtons: 
+                            LocationAddButtons:
                                 addPhysical: "Tambah Lokasi Fizikal"
                                 promptPhysical: "Anda boleh menambah pelbagai lokasi."
                                 addVirtual: "Tambah Lokasi Alam Maya (Virtual)"
                                 churchOnline: "Adakah anda tahu? Anda boleh mengadakan pelayanan online dengan percuma menggunakan <a className='button-caption' href='%{url}'>Platform Online Gereja</a>."
-                            LocationAddTime: 
+                            LocationAddTime:
                                 minutes: "MINIT"
                                 hours: "JAM"
                                 days: "HARI"
-                            LocationDeleteModal: 
+                            LocationDeleteModal:
                                 sure: "Adakah anda pasti?"
                                 selected: "Anda telah memilih lokasi berikut untuk dipadam:"
                                 warn: "Ini akan menghapus lokasi dari semua acara yang lalu dan terkini. Anda tidak lagi dapat mengguna semula lokasi ini untuk acara akan datang."
                                 cancel: "Batalkan"
                                 delete: "Hapuskan"
-                            LocationEdit: 
+                            LocationEdit:
                                 prompt: "Masukkan alamat Lokasi..."
                                 country: "Negara"
                                 timezone: "Zon Masa"
@@ -1873,7 +1873,7 @@ ms:
                                 cancel: "Batalkan"
                                 save: "Simpan Lokasi ini"
                                 virtualPrompt: "Masukkan bandar untuk set zon waktu..."
-                            LocationTimeShifter: 
+                            LocationTimeShifter:
                                 shift: "Ubah tarikh bermula"
                                 forward: "Forward"
                                 backward: "ke belakang"
@@ -1888,17 +1888,17 @@ ms:
                                 hours: "JAM"
                                 update: "Update"
                                 shiftButton: "Alihkan semua tarikh dan masa sekaligus"
-                            UnpublishModal: 
+                            UnpublishModal:
                                 cancel: "Batalkan"
                                 title: "Batalkan pemberitaan acara untuk Membuat Perubahan"
                                 desc: "Untuk tambah, edit, atau padam Lokasi dan Masa, batalkan pemberitaan acara buat sementara. Pada masa ini, acara anda tidak akan kelihatan dalam hasil carian. Jangan lupa untuk beritakan acara anda kembali."
                                 unpublish: "Batal pemberitaan"
-                    preview: 
-                        notes: 
+                    preview:
+                        notes:
                             prompt: "Tambah nota peribadi anda..."
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Log masuk</span> untuk tambah nota peribadi…</a>"
-                        components: 
-                            PreviewFeed: 
+                        components:
+                            PreviewFeed:
                                 review: "Semak Semula Acara Anda Sebelum Beritakan"
                                 previewUrl: "Preview URL:"
                                 share: "Kongsi Acara"
@@ -1906,23 +1906,23 @@ ms:
                                 publish: "Terbitkan"
                                 unpublish: "Batal pemberitaan"
                                 locations: "Lokasi-lokasi:"
-                                discoverable: 
+                                discoverable:
                                     title: "Boleh ditemui:"
                                     desc: "Acara anda akan dapat dilihat dalam lokasi dan hasil carian di Acara App Alkitab 5 hari sebelum masa bermula."
-                                status: 
+                                status:
                                     title: "Status:"
                                     desc: "Tanda SECARA LANGSUNG berwarna merah akan dipaparkan ketika masa bermula anda yang paling awal berlangsung."
-                                remove: 
+                                remove:
                                     title: "Hapus:"
                                     desc: "Acara anda tidak akan dapat dilihat lagi selepas masa tamat terakhir. Peserta yang tap \"Simpan Acara\" ketika Acara anda telah ditemui masih akan mempunyai akses untuk versi yang telah disimpan, Acara ini juga akan terus boleh diakses melalui pautan inbound."
-                            PreviewTypeAnnouncement: 
+                            PreviewTypeAnnouncement:
                                 expand: "Luaskan"
-                            PreviewTypePlan: 
+                            PreviewTypePlan:
                                 read: "Baca"
                                 info: "Darihal Pelan"
-            EventFeedMine: 
-                components: 
-                    EventListItem: 
+            EventFeedMine:
+                components:
+                    EventListItem:
                         duplicate: "Duplicate"
                         share: "Beritakan"
                         delete: "Hapuskan"
@@ -1930,24 +1930,24 @@ ms:
                         edit: "Mengedit"
                         view: "Kunjungi"
                         fail: "Tidak dapat padam Acara"
-            EventView: 
-                components: 
-                    EventViewContent: 
+            EventView:
+                components:
+                    EventViewContent:
                         copy: "Salin"
                         copied: "Disalin"
                         share: "Beritakan"
                         read: "Baca"
                         readPlan: "Baca Pelan"
-                    EventViewContentAnnouncement: 
+                    EventViewContentAnnouncement:
                         expand: "Luaskan"
                         collapse: "Hapus"
-                    EventViewDetails: 
+                    EventViewDetails:
                         expand: "Luaskan"
                         collapse: "Hapus"
                         save: "Simpan Acara"
                         signIn: "Log Masuk untuk Simpan Event"
                         saved: "Event telah Disimpan"
-        Auth: 
+        Auth:
             sign up: "Daftar"
             sign in: "Log Masuk"
             sign up google: "Mendaftar melalui Google"
@@ -1962,19 +1962,19 @@ ms:
             share blurb: "Nampaknya anda ingin berkongsi Ayat Alkitab. Indahnya! Anda boleh berkongsi ayat alkitab via Facebook atau Twitter. Log masuk atau daftarkan akaun di bawah dan bermulalah!"
             highlight blurb: "Rupanya anda ingin highlight ayat kitab. Bagus! Highlight membantu anda mengaturkan ayat-ayat kegemaran anda. Log masuk atau daftarkan akaun  di bawah dan bermulalah!"
             note blurb: "Rupanya anda ingin mencatat nota tentang alkitab. Bagus! Nota-nota membantu anda mengingati dan mengaturkan pelajaran dari Firman Allah. Log masuk atau daftarkan akaun di bawah dan bermulalah!"
-        Reader: 
+        Reader:
             chapter: "Bab"
             read reference: "Baca %{reference}"
             read chapter: "Membaca seluruh bab"
             plan title: "Pelan Bacaan dan Bahan Renungan Percuma"
             plan title ref: "Pelan Bacaan dan Renungan yang percuma berkaitan dengan %{reference}"
             plan subtitle: "Pelan Alkitab memecahkan pembacaan Kitab kepada bahagian harian yang terurus. Pelan biasanya termasuk renungan, audio, atau pilihan video. Sama ada anda memanggilnya Pelan Alkitab, Pelan Bacaan, atau Renungan, Pelan tersebut terbukti bahawa anda boleh menjadikan Alkitab sebagai sebahagian daripada kehidupan anda setiap hari."
-            meta: 
-                mobile: 
+            meta:
+                mobile:
                     title: "App Alkitab"
-                site: 
+                site:
                     title: "Bible.com"
-            header: 
+            header:
                 parallel: "Paralel"
                 parallel exit: "Keluar daripada Mod Selari"
                 cancel: "Batalkan"
@@ -1990,32 +1990,32 @@ ms:
                 videos: "Video"
                 me: "Saya"
                 recent versions: "Baru Diguna"
-            chapterpicker: 
+            chapterpicker:
                 book label: "KITAB"
                 chapter label: "BAB"
                 chapter unavailable: "Bab ini tidak tersedia dalam versi ini. Sila pilih bab atau versi yang berlainan."
                 choose chapter: "Pilih Bab"
-            versionpicker: 
+            versionpicker:
                 language label: "BAHASA ALKITAB"
                 language sub-label: "Bahasa Alkitab"
                 change language: "Tukar Bahasa"
                 filter languages: "Menapis Bahasa..."
                 version label: "VERSI"
                 choose version: "Pilih Versi"
-            reader settings: 
+            reader settings:
                 footnotes: "Footnotes"
                 numbers: "Nombor dan Tajuk"
-            more: 
+            more:
                 events: "Acara"
                 settings: "Setting"
-            search: 
+            search:
                 bible: "Translation of this string is not necessary, as it is not yet supported in Apple's iTunes store."
                 users: "Pengguna"
                 plans: "Pelan"
-            version: 
+            version:
                 learn more: "Ketahui Lebih Lanjut"
                 courtesy of: "%{abbreviation} dibawakan untuk anda daripada %{publisher}"
-            verse action: 
+            verse action:
                 copy: "Salin"
                 bookmark: "Bookmark"
                 note: "Nota"
@@ -2033,21 +2033,6 @@ ms:
                 add color: "Tambahkan Warna"
                 labels private: "Label adalah sentiasa sulit"
         notifications: "Notifikasi"
-<<<<<<< HEAD
-        start plan title: "How do you want to read this Plan?"
-        by myself: "By Myself"
-        by myself description: "Keep your Plan activity private, or allow your Friends to see your Plan activity."
-        with friends: "With Friends"
-        with friends description: "Invite Friends to join you in this Plan. You’ll complete days together at the same pace, and you’ll all be able to discuss what God is teaching you along the way."
-        level of privacy: "Level of Privacy"
-        plan privacy prompt: "Do you want your Friends to see your Plan activity?"
-        visible to friends: "Visible to Friends"
-        private: "Private"
-        cancel: "Batalkan"
-        start plan when: "When do you want to start this Plan?"
-        future start blurb: "Starting on a future date will give your Friends time to accept your invitation."
-        change date: "Change Date"
-=======
         start plan title: "Bagaimanakah anda ingin membaca Pelan ini?"
         by myself: "Seorang Diri"
         by myself description: "Merahsiakan aktiviti Pelan anda, atau membenarkan Kawan anda melihat aktiviti Pelan anda."
@@ -2061,57 +2046,24 @@ ms:
         start plan when: "Bilakah anda ingin memulakan Pelan ini?"
         future start blurb: "Memulakan pada tarikh ke hadapan akan memberikan Kawan anda masa untuk menerima jemputan anda."
         change date: "Tukar tarikh"
->>>>>>> master
         settings: "Setting"
         done: "Selesai"
         next: "Seterusnya"
         edit: "Mengedit"
         delete: "Hapuskan"
         post: "Pos"
-        x likes: 
+        x likes:
             other: "%{number} like"
         selected: "Terpilih"
-<<<<<<< HEAD
-        currently subscribed: "Currently Subscribed"
-        invite friends: "Jemput Rakan"
-        invite others: "Invite Others"
-        invited: "Invited"
-        pending: "Pending"
-        x pending: 
-            other: "%{number} Pending"
-        accepted: "Accepted"
-        x accepted: 
-            other: "%{number} Accepted"
-        invitation: "Invitation"
-        accept invitation: "Accept Invitation"
-        what is this: "What is this?"
-        decline: "Tolak"
-        start date: "Start Date"
-        plan archived: "Plan Archived"
-        starts: "Bermula"
-        started: "Bermula"
-        loading: "Loading..."
-        join together share: "Would you read the bible plan, %{plan}, with me?"
-        join together: "%{host} wants to read this Plan with you."
-        talk it over: "Talk It Over"
-        participants: "Participants"
-        host: "Host"
-        x participants: 
-            other: "%{number} Participants"
-        participant limit: "Participant Limit: %{number}"
-        + x more: "+ %{number} more"
-        when participant comments: "When Participants post a comment"
-        when participant accepts: "When Participants accept an invite"
-=======
         currently subscribed: "Sedang Dilanggan"
         invite friends: "Jemput Rakan"
         invite others: "Jemput Orang Lain"
         invited: "Invited"
         pending: "Menunggu"
-        x pending: 
+        x pending:
             other: "Menunggu %{number}"
         accepted: "Telah Menerima"
-        x accepted: 
+        x accepted:
             other: "%{number} Telah Menerima"
         invitation: "Jemputan"
         accept invitation: "Terima Jemputan"
@@ -2127,10 +2079,9 @@ ms:
         talk it over: "Berbincang"
         participants: "Peserta"
         host: "Hos"
-        x participants: 
+        x participants:
             other: "%{number} Peserta"
         participant limit: "Had Peserta: %{number}"
         + x more: "+ %{number} orang lagi"
         when participant comments: "Apabila Peserta menghantar komen"
         when participant accepts: "Apabila Peserta menerima jemputan"
->>>>>>> master

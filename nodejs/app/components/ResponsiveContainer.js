@@ -35,7 +35,7 @@ class ResponsiveContainer extends Component {
 
 		return (
 			<div className={`yv-responsive-container ${className}`}>
-				{children &&
+				{children.length > 0 &&
 					React.Children.map(children, (child => {
 						// Only append screen props to custom React components
 						let props = {}

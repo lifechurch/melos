@@ -1,77 +1,77 @@
 ---
-sv: 
-    time: 
-        formats: 
+sv:
+    time:
+        formats:
             votd: "%-d %B, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
+    datetime:
+        time_ago_in_words:
+            about_x_hours:
                 one: "ungefär 1 timme sedan"
                 other: "ungefär%{count} timmar sedan"
-            about_x_months: 
+            about_x_months:
                 one: "ungefär 1 månad sedan"
                 other: "ungefär %{count} månader sedan"
-            about_x_years: 
+            about_x_years:
                 one: "ungefär 1 år sedan"
                 other: "ungefär %{count} år sedan"
-            almost_x_years: 
+            almost_x_years:
                 one: "ungefär 1 år sedan"
                 other: "ungefär %{count} år sedan"
             half_a_minute: "en halv minut sedan"
-            less_than_x_minutes: 
+            less_than_x_minutes:
                 one: "mindre än en minut sedan"
                 other: "mindre än %{count} minuter sedan"
-            less_than_x_seconds: 
+            less_than_x_seconds:
                 one: "mindre än 1 sekund sedan"
                 other: "mindre än %{count} sekunder sedan"
-            over_x_years: 
+            over_x_years:
                 one: "över 1 år sedan"
                 other: "över %{count} år sedan"
-            x_days: 
+            x_days:
                 one: "1 dag sedan"
                 other: "%{count} dagar sedan"
-            x_minutes: 
+            x_minutes:
                 one: "1 minut sedan"
                 other: "%{count} minuter sedan"
-            x_months: 
+            x_months:
                 one: "1 månad sedan"
                 other: "%{count} månader sedan"
-            x_seconds: 
+            x_seconds:
                 one: "1 sekund sedan"
                 other: "%{count} sekunder sedan"
-    counter: 
+    counter:
         format: "999 999 999"
-    social: 
-        intro page: 
+    social:
+        intro page:
             main heading: "Samtal & Utforskning"
             main description: "Ett nytt sätt att utforska Bibeln tillsammans med nära vänner"
-            moment: 
+            moment:
                 user aaron: "Pär Hansson"
                 user andy: "Jonas Söderberg"
                 timestamp: "5 dagar sedan"
                 title: "har bokmärkt Psaltaren 31:8"
                 verse: "Jag vill jubla av glädje över din godhet, du som såg mitt elände och tog dig an mig när jag led."
                 reference: "Psaltaren 31:8"
-                discover: 
+                discover:
                     copy: "Utforska och lär dig tillsammans med dina vänner när de lägger till markeringar, bokmärken och anteckningar."
                     button: "Var kan jag börja?"
-                share: 
+                share:
                     copy: "Delta i ärliga samtal om Skriften."
                     button: "Kom igång genom att hitta några vänner."
-                likes: 
+                likes:
                     info: "och ytterligare 4 gillar detta"
-                comments: 
-                    first: 
+                comments:
+                    first:
                         text: "Tack, behövde verkligen höra detta idag. Hoppas vi hörs snart igen!"
                         time: "nästan 3 timmar sedan"
-                    second: 
+                    second:
                         text: "Amen till det. Skickar ett mail till dig nu."
                         time: "nästan 27 minuter sedan"
                     field placeholder: "Skriv en kommentar..."
-        widget: 
+        widget:
             timeline: "Tidslinje"
             no activity yet: "Det har inte varit någon aktivitet än."
-        moment: 
+        moment:
             read all: "Läs allt"
             read less: "Läs mindre"
         share: "Dela"
@@ -80,18 +80,18 @@ sv:
         connected as: "Du är ansluten till %{connection} som %{username}."
         remove connection: "Ta bort denna anslutning"
         connection friends: "Här är några YouVersion-användare du är ansluten till på %{connection}:"
-        errors: 
+        errors:
             no friends: "Inga av dina vänner på %{connection} verkar finnas på YouVerson."
             reset connection: "Ett fel har tyvärr inträffat. Stäng ner och försök sedan att återansluta."
-        email: 
+        email:
             name: "E-post"
-        twitter: 
+        twitter:
             name: "Twitter"
-        facebook: 
+        facebook:
             name: "Facebook"
-            errors: 
+            errors:
                 expired access: "Din åtkomsttoken har löpt ut för Facebook. Ta bort din anslutning och anslut till Facebook igen."
-    language names: 
+    language names:
         arabic: "Arabic"
         bulgarian: "Bulgarian"
         czech: "Czech"
@@ -110,7 +110,7 @@ sv:
         ukrainian: "Ukrainian"
         simplified chinese: "Simplified Chinese"
         traditional chinese: "Traditional Chinese"
-    api: 
+    api:
         users agree bool: "Du måste acceptera bestämmelser och villkor för att skapa ett konto."
         users confirm password matches: "Det nya lösenordet matchar inte."
         users email email: "E-postadressen är ogiltig."
@@ -133,26 +133,26 @@ sv:
         users last name required: "Du måste ange ett efternamn."
         moments content required: "Innehåll kan inte vara tomt."
         users auth password required: "Du måste ange ett lösenord."
-    meta: 
+    meta:
         best kids app: "Bästa barnappen!"
         best educational app: "Bästa utbildningsappen"
-        kids_app: 
+        kids_app:
             title: "Bibelappen för barn"
             description: "Bibelappen för barn är ett utmärkt sätt för dina barn att lära sig bibelberättelser om Jesus, om evigt liv och om Guds många lärdomar för oss.I detta livfulla äventyr, närmar sig barn Guds ord, samtidigt som de lekfullt tjänar poäng på att läsa och samla skatter."
-        100million: 
+        100million:
             title: "Det närmar sig 100 miljoner"
             description: "Bibelappen har installerats nästan 100 miljoner gånger - en otrolig milstolpe! Men vi har precis kommit igång. Ladda ner den fria Bibelappen idag - och dela sedan appen med dina vänner. Låt oss skapa historia tillsammans."
-        mobile: 
+        mobile:
             title: "Bibelappen"
             description: "Läs Guds Ord närsomhelst, varsomhelst med Bibelappen från YouVersion. Dela skriften med vänner, markera och bokmärk texter och skapa en daglig vana med bibelplaner. Tillgänglig för iOS, Android, Blackberry, Windows Phone m.m."
             download or read: "Ladda ner nu eller läs online."
-        site: 
+        site:
             title: "Bible.com/sv"
             description: "Ta skönheten och sanningen från Bibeln in i ditt vardagliga liv. Med Bibelappen från YouVersion kan du läsa, titta, lyssna och dela på din telefon eller platta, och online på Bible.com."
-        connections: 
-            index: 
+        connections:
+            index:
                 title: "Anslutna konton"
-    kids: 
+    kids:
         bible app: "Bibelappen"
         for: "for"
         kids: "barn"
@@ -175,7 +175,7 @@ sv:
         feature 3: "Färgglada illustrationer med lekfulla animationer"
         feature 4: "Spel och pyssel som hjälper barn att komma ihåg vad de lärt sig"
         feature 5: "Barnvänlig navigering"
-        share: 
+        share:
             tell friends: "Berätta för dina vänner om Bibelappen för barn"
             facebook name: "Bibelappen för barn"
             facebook description: "Bibelappen för barn är här! Ladda ned appen gratis idag, finns för iOS och Android: Engagerande bibelberättelser som hjälper ditt barn att lära, leka och närma sig Guds ord. www.bible.com/barn"
@@ -186,11 +186,11 @@ sv:
             email: "E-post"
             email subject: "Bibelappen för barn är här!"
             email body: "Goda nyheter - Bibelappen för barn är här! Den är helt gratis och är tillgänglig för iPhone, iPad, iPod touch och android-enheter. Appen har en växande samling bibelberättelser med lekfulla animationer och lärande, toppen för barnen som lär sig de stora berättelserna i Bibeln. Gå till bible.com/barn på din mobila enheten för att ladda ned den idag."
-        partner: 
+        partner:
             youversion: "YouVersion: Världens populäraste Bibelapp"
             in partnership: "i samarbete med"
             one hope: "One Hope: Extraordinärt bibelmaterial för barn"
-        links: 
+        links:
             apple: "https://itunes.apple.com/se/app/bible-for-kids/id668692393?l=se"
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=sv"
             amazon: "https://www.amazon.co.uk/Life-Church-Bible-for-Kids/dp/B00GURLC40"
@@ -215,8 +215,8 @@ sv:
     new note: "Ny anteckning"
     share success: "Ditt meddelande har delats"
     share error: "Ett fel uppstod när du försökte dela ditt meddelande. Försök igen."
-    share: 
-        request: 
+    share:
+        request:
             no_twitter_connection: "Du har inte ett anslutet Twitter-konto. Anslut ditt konto på inställningssidan."
             no_facebook_connection: "Du har inte ett anslutet Facebook-konto. Anslut ditt konto på inställningssidan."
     google plus: "Google+"
@@ -311,9 +311,9 @@ sv:
     groups: "Grupper"
     mobile: "Mobilappar"
     live: "Live"
-    events: 
+    events:
         events: "Evenemang"
-        menu: 
+        menu:
             features: "Features"
             faq: "FAQ"
             resources: "Resources"
@@ -406,16 +406,16 @@ sv:
     traditional: "Traditionell"
     alphabetic: "Alfabetisk"
     versions title: "Översättningar"
-    languages: 
+    languages:
         title: "Bibelspråk och översättningar"
         most popular: "Mest populära språk"
         additional: "Fler språk"
         download language: "Ladda ner Bibeln på %{language_name}"
         bible in: "Bibeln på %{language_name}"
-    or: 
+    or:
         lower: "eller"
         upper: "ELLER"
-    moments: 
+    moments:
         scripture unavailable: "Skrift otillgänglig"
         could not load: "Kunde inte ladda"
         could not load verse: "Kunde inte ladda vers"
@@ -429,8 +429,8 @@ sv:
         users like this: "%{last_liker_link} och %{more_link} har gillat detta"
         like: "Gilla"
         likes: "Gillar"
-        more than one like: 
-        vod: 
+        more than one like:
+        vod:
             title: "Dagens vers"
             get daily email: "Få dagliga e-brev"
             subscribe: "Prenumeration"
@@ -440,16 +440,16 @@ sv:
             view more: "Visa mer"
             time: "Tid"
             blurb: "Prenumerera på dagens vers. Få ett dagligt e-brev eller push-meddelanden på din mobila enhet."
-        friendship: 
+        friendship:
             now friends: "Du är nu vän med"
-        cta: 
+        cta:
             profile update text: "Hjälp dina vänner hitta dig"
             profile update button: "Uppdatera din profil"
             sharing text: "Dela verser via sociala nätverk"
             sharing button: "Aktivera social delning"
             friends text: "Se dina vänners upplevelser i Bibeln."
             friends button: "Hitta vänner"
-        action: 
+        action:
             go to scripture: "Gå till skriften"
             add friend button: "Lägg till vän"
             load more: "Ladda mer"
@@ -477,41 +477,41 @@ sv:
             read plan: "Läs"
             about plan: "Om plan"
             start plan: "Följ plan"
-    notifications: 
+    notifications:
         title: "Meddelanden"
         none: "Du har inga meddelanden"
         no new: "Inga nya meddelanden"
         view all: "Visa alla meddelanden"
-    likes: 
+    likes:
         create success: "Din \"gilla\" har sparats"
         create failure: "Din \"gilla\" kunde inte sparas"
         destroy success: "\"gilla\" borttagen"
         destroy failure: "Din \"gilla\" kunde inte tas bort"
-    comments: 
+    comments:
         view all N: "Se alla %{count} kommentarer"
         post comment: "Skriv en kommentar"
         create success: "Din kommentar har skickats."
         create failure: "Kommentar kunde inte skickas"
         destroy success: "Kommentar borttagen"
         destroy failure: "Kommentar kunde inte tas bort"
-        form: 
+        form:
             save button: "Skicka"
-    friends: 
+    friends:
         you have N friends: "Du har %{count} vänner"
         none me: "Dela dina upplevelser i Bibeln så som bokmärken, markeringar och anteckningar med dina närmaste vänner och familj."
         find friends: "Hitta vänner"
-        blank slate: 
+        blank slate:
             heading: "Inte vänner än"
             description: "Du måste vara vän med denna person för att kunna se dess vänner."
         limit notice: "Du kan ha så många som 150 vänner"
         limit description: "Begränsa vilka du bli vänner med i Bibelappen till folk du känner väl för att skapa en miljö av ärliga samtal och gemensam utforskning med nära vänner,"
-    friendships: 
+    friendships:
         blurb: "Fokusera vänskapsrelationer kring Bibeln. Dela vad du vill, när du vill inom din trygga vänskapskrets."
         name required: "För att uppleva Bibeln tillsammans med vänner, uppdatera din profil med ditt för- och efternamn."
         find friends title: "Hitta vänner"
         search by name: "Sök med namn"
         search button: "Sök"
-        widget: 
+        widget:
             find friends title: "Hitta vänner"
             search by name: "Sök med namn"
             search button: "Sök"
@@ -525,12 +525,12 @@ sv:
         requests view all: "Visa alla vänskapsförfrågningar"
         requests none: "Du har inga vänskapsförfrågningar"
         requests no new: "Inga nya förfrågningar"
-        status: 
+        status:
             pending: "Förfrågan väntar"
             friends: "Vänner"
         user wants friendship: "%{user} vill bli din vän"
         user wants friendship partial: "vill bli din vän"
-        form: 
+        form:
             remove friend button: "Ta bort vän"
             remove friend button title: "Ta bort denna person från vänlistan"
             add friend button: "Lägg till vän"
@@ -540,24 +540,24 @@ sv:
             accept request button: "Acceptera förfrågan"
             ignore button: "Inte nu"
             ignore request button: "Neka förfrågan"
-    images: 
+    images:
         none user: "%{username} har inte skapat några kort ännu."
-        blank slate: 
+        blank slate:
             heading: "Du har inte några kort ännu."
             description: "Använd YouVersion mobilapp för att skapa bibelkort."
-    notes: 
+    notes:
         none user: "%{username} har inte gjort några anteckningar än."
-        blank slate: 
+        blank slate:
             heading: "Du har inga anteckningar än"
             description: "Medan du läser Bibeln och känner Guds ödmjuka och stilla röst tala till dig, kan du snabbt skriva dina tankar här. Din anteckning är alltid markerad som <em>Egen</em>. Om du vill dela en anteckning med dina vänner kan du öppna den och ändra status till <em>Delad</em>."
-        form: 
+        form:
             title field: "Titel:"
             content field: "Innehåll:"
             highlight field: "Markering: (valfritt)"
             reference field: "Referens(er):"
             status field: "status:"
             save button: "Spara"
-        status: 
+        status:
             private: "Privata"
             public: "Offentliga"
             friends: "Enbart vänner"
@@ -596,7 +596,7 @@ sv:
         destroy success: "Anteckning borttagen"
         destroy failure: "Kunde inte ta bort anteckning"
         update success: "Anteckning uppdaterad"
-    ref: 
+    ref:
         loading secondary: "Laddar hänvisningar i sekundär översättning"
         clear verses: "Ta bort markerade verser"
         choose book and chapter: "Välj bok + kapitel"
@@ -618,7 +618,7 @@ sv:
         no secondary version text: "%{language_name} har bara en översättning tillgänglig, så vi kunde inte välja en sekundär översättning åt dig. Välj din sekundära översättning för parallell jämförelse."
         select another chapter: "Välj ett annat kapitel"
         view in reader: "Visa %{reference} i läsare"
-    users: 
+    users:
         unverified heading: "Nästan klar!"
         unverified message: "Det ser ut som att du försöker logga in med ett konto som inte färdigkonfigurerat än.  Du har bara ett steg kvar: klicka helt enkelt på verifieringslänken i e-brevet med bekräftelse som du har fått från YouVersion. Kan du inte hitta det? Kolla bland skräppost eller <a href='%{resend_path}' target='_self'>Skicka om e-brevet med bekräftelse</a>."
         settings: "Inställningar"
@@ -722,7 +722,7 @@ sv:
         resend confirmation title: "Har du inte fått e-post för din bekräftelse?"
         resend confirmation copy: "Ange e-postadressen du vill registrera nedan så kommer vi att skicka ett till e-post för din bekräftelse."
         resend confirmation button: "Bekräfta omsändning"
-        privacy: 
+        privacy:
             policy: "%{youversion}s Sekretesspolicy"
             intro: "YouVersion, en webbplats och applikation som ägs och sköts av Life.Church, vet att du bryr dig om hur information om dig används och sprids. Vi hoppas att följande information kommer att hjälpa dig att förstå hur YouVersion kommer att samla in, använda och skydda informationen du lämnar till oss på sidan eller i appen."
             translation disclaimer: "Sekretesspolicyn har översatts för din bekvämlighet, men  Life.Church ger inga garantier eller utfästelser med avseende på riktigheten i översättningen. Om några avvikelser finns mellan den engelska och den översatta versionen, är det den engelska versionen som gäller."
@@ -751,7 +751,7 @@ sv:
             enforcement text: "Life.Church granskar regelbundet att vi efterlever vår sekretesspolicy. När vi får formella skriftliga klagomål rörande integritetsfrågor, är det vår policy att kontakta den klagande användaren angående hans eller hennes problem. Vi kommer att samarbeta med relevanta tillsynsmyndigheter, inklusive lokala myndigheter för dataskydd, för att lösa eventuella klagomål som rör överföring av personuppgifter som inte kan lösas mellan Life.Church och användaren."
             questions title: "Frågor"
             questions text: "Eventuella frågor om sekretesspolicy kan riktas till: <a href='mailto:legal@youversion.com'>legal@youversion.com</a>"
-        terms: 
+        terms:
             title: "Användarvillkor"
             translation disclaimer: "Användarvillkoren har översatts för din bekvämlighet, men Life.Church ger inga garantier eller utfästelser med avseende på riktigheten i översättningen. Om några avvikelser finns mellan den engelska och den översatta versionen, är det den engelska versionen som gäller."
             acceptance title: "Godkännande av villkor"
@@ -800,8 +800,8 @@ sv:
             copyright text: "Life.Church respekterar andra personers immaterialrätt. Vi ber våra användare att göra detsamma, speciellt när det gäller att använda YouVersion. Life.Church kan, då lämpliga omständigheter finns och efter eget gottfinnande, inaktivera och/eller avsluta konton för användare som kan ha gjort upprepade intrång.   Om du tror att ditt verk har blivit kopierat på ett sätt som innebär upphovsrättsintrång, eller om era immateriella rättigheter har på annat sätt blivit kränkta, vänligen skicka följande information till legal@youversion.com:<ul type='none'><li>En elektronisk eller fysisk signatur av personen som är auktoriserad att representera ägaren av upphovsrätten eller andra immaterialrätts intressen som ärendet gäller;</li><br/><li>En skriftlig beskrivning av verket med upphovsrätt eller andra immateriella rättigheter som ni anser blivit kränkta.</li><br/><li>En beskrivning var verket ni anser blivit kränkt finns att hitta på YouVersion;</li><br/><li>Er adress, telefonnummer och e-postadress (allt som är giltigt för er)</li><br/><li>Ett skriftligt uttalande från er att ni har goda skäl att tro att det omtvistade användandet inte är godkänt av upphovsrättsverkets ägare, dess agent eller av lagen.</li><br/><li>Ett skriftligt uttalande från er, skapat under ed, att den ovan lämnade informationen av ert &quot;Tillkännagivande&quot; är korrekt och att ni är ägare av upphovsrättsverket eller immaterialrätten eller att ni är auktoriserade att ta tillvara på ägarens intressen avseende upphovsrätten eller immaterialrätten. Life.Church Agent för Tillkännagivanden av anspråk på intrång av upphovsrätt eller immaterialrätt kan nås på följande: %{newline} Per post: Life.Church c/o Contracts Coordinator %{newline}4600 E, 2nd Street Edmond, OK 73034, USA %{newline} Tel: +1 405 608 5433 %{newline} Fax +1 405 844 3002 %{newline} E-post %{mailto_link}</li></ul>"
             general title: "Allmän information"
             general text: "Hela avtalet. Dessa ANVÄNDARVILLKOR utgör hela avtalet mellan dig och Life.Church och styr din användning av YouVersion, ersätter alla tidigare avtal mellan dig och Life.Church avseende YouVersion. Du kan också vara föremål för ytterligare villkor.<br><br>Val av lag och forum. ANVÄNDARVILLKOR och förhållandet mellan dig och Life.Church skall regleras av lagarna i delstaten Oklahoma utan hänsyn till internationellt privaträttsliga bestämmelser. Du och Life.Church samtycker att underställa oss den personliga och exklusiva behörigheten för domstolarna belägna i staten Oklahoma County, Oklahoma. <br><br>Avstående och avskiljbara villkor. Misslyckande av Life.Church att utöva eller hävda en rätt eller bestämmelse i dessa ANVÄNDARVILLKOR skall inte utgöra en avsägelse av sådan rätt eller bestämmelse. Om någon bestämmelse i dessa ANVÄNDARVILLKOR anses vara ogiltig av en behörig domstol är parterna överens om att domstolen skall sträva efter att verkställa parternas avsikter såsom det avspeglas i bestämmelsen och övriga bestämmelser i dessa ANVÄNDARVILLKOR förbli i full kraft och effekt. <br><br>Ingen rätt för efterlevande och överlåtelset. Du samtycker till att ditt Life.Church-kontot kan inte överlåtas, och alla rättigheter till ditt Life.Church-ID eller innehållet i ditt konto upphör vid din död. Vid mottagande av en kopia av en dödsattest kan Life.Church avsluta ditt konto och permanent radera allt innehåll däri.<br><br>Regelbegränsningar. Du förstår och accepterar att oavsett regel eller lag om motsatsen, måste anspråk eller grund för talan till följd av eller i samband med användning av YouVersion eller dessa ANVÄNDARVILLKOR lämnas in inom ett (1) år efter det att kravet eller orsaken till åtgärden uppstod eller bli för alltid spärrat.<br><br>Rubrikerna i dessa ANVÄNDARVILLKOR är enbart för enkelhetens skull och har ingen laglig eller avtalsenlig effekt."
-        profile: 
-            blank slate: 
+        profile:
+            blank slate:
                 heading: "Sök vidare, inget att se här (än)"
                 description: "Börja att engagera din i Bibeln eller dina vänner så kommer denna sidan visa historik över vad du har gjort."
             visit friend: "Besök profil för %{friend}"
@@ -841,11 +841,11 @@ sv:
             edit: "Redigera"
             bio: "Biografi"
             complete_first_last: "Fullfölj din profil genom att ange ditt för- och efternamn"
-        password: 
+        password:
             updated: "Du har uppdaterat ditt lösenord."
             error: "Ett fel uppstod vid ändring av lösenord."
             old was invalid: "Du måste ange ditt gamla lösenord korrekt för att kunna ändra lösenord."
-        notifications: 
+        notifications:
             badges: "Meddela mig när jag får medaljer."
             follower: "Meddela mig när någon följer mig."
             newsletter: "Håll mig uppdaterad om meddelanden från YouVersion."
@@ -858,7 +858,7 @@ sv:
             moments: "Meddela mig om vänners aktivitet"
             comments: "Meddela mig om kommentarer på min aktivitet"
             likes: "Meddela mig om någon gillar min aktivitet"
-    bookmarks: 
+    bookmarks:
         new: "Nytt bokmärke"
         edit: "Ändra"
         delete: "Ta bort detta bokmärke"
@@ -889,10 +889,10 @@ sv:
         color: "Färg:"
         version field: "Översättning:"
         none user: "%{username} har inga bokmärken"
-        blank slate: 
+        blank slate:
             heading: "Skapa bokmärken för meningsfulla verser"
             description: "När du läser Bibeln, välj en vers och skapa bokmärke till den. Kom tillbaka hit för att se, redigera eller radera dina bokmärken."
-        form: 
+        form:
             title field: "Titel:"
             reference field: "Referens:"
             labels field: "Etiketter (kommaseparerade)"
@@ -900,26 +900,26 @@ sv:
             colors field: "Färg:"
             update button: "Uppdatera bokmärke"
             save button: "Spara bokmärke"
-    badges: 
+    badges:
         earned a badge: "Fick en medalj"
         user badges: "%{user}s medaljer"
         earned date: "Förtjänad av %{username} för %{ago} sedan"
         none me: "Du har inte fått några medaljer än."
         none user: "%{username} har inte fått några medaljer än."
-    plans: 
+    plans:
         see all: "Se alla"
         day_completed: "<b>%{username}</b> fullföljde <b>dag %{day}</b> av bibelplanen <b>%{plan_title}</b>"
-        status: 
+        status:
             on track: "Enligt plan!"
-            days ahead: 
+            days ahead:
                 one: "%{count} dag före!"
                 other: "%{count} dagar före!"
-            missed days: 
+            missed days:
                 one: "%{count} missad dag"
                 other: "%{count} missade dagar"
         bible plan language: "Bibelplanens språk"
         share plan: "Kolla in denna  #BiblePlan från @YouVersion: %{plan_title}"
-        widget: 
+        widget:
             my plans: "Mina planer"
             start reading: "Börja läsa"
             view my plans: "Visa mina planer"
@@ -928,18 +928,18 @@ sv:
             reading: "läsning"
             readings: "läsningar"
             readings 5 or more: "läsningar"
-        stats: 
-            friends reading: 
+        stats:
+            friends reading:
                 one: "%{count} vän prenumererar på denna plan"
                 other: "%{count} vänner prenumererar på denna plan"
-            friends completed: 
+            friends completed:
                 one: "%{count} vän har fullföljt denna plan"
                 other: "%{count} vänner har fullföljt denna plan"
             total completions: "Över %{count} färdigt"
             view all: "Visa alla"
             close: "Stäng"
         settings: "Inställningar"
-        privacy: 
+        privacy:
             visible to friends?: "Vill du att dina vänner ska se dina planaktiviteter?"
             private: "Privata"
             public: "Offentliga"
@@ -1009,7 +1009,7 @@ sv:
         catch me up: "Justera läsplan"
         restart description: "Du kan starta om din plan. Hela din läshistoria och framgång kommer att återställas och startas från början."
         restart: "Starta om plan"
-        privacy description: 
+        privacy description:
             private: "Din plan är privat. Växla dina inställningar till \"Enbart vänner\" för att dela dina planaktiviteter med vänner."
             public: "Din plan är synlig för vänner. Växla till Privat för att göra dina planaktiviteter privata."
         make private: "Sätt till privat"
@@ -1059,32 +1059,32 @@ sv:
         completed notice: "Grattis! Du har fullföljt din läsplan."
         exit: "Avsluta"
         loading sidebar content: "Laddar innehåll i sidofällt..."
-    videos: 
+    videos:
         title: "Videor"
         watch videos: "Se på filmer om Bibeln"
         all: "Alla videor"
         related scripture: "Relaterad text"
         share video: "Jag tittar på %{video_title} på @YouVersion."
-    licenses: 
-        authorized: 
+    licenses:
+        authorized:
             heading: "Ditt innehåll har godkänts"
             description: "Du kan nu <a href='%{content_link}' target='_self'>se innehållet du har köpt</a> från %{vendor} på YouVersion!"
         has errors: "Det fanns fel i din förfrågan:"
-        confirm: 
+        confirm:
             email: "För att godkänna videoinnehåll du köpt, kontrollera din e-post efter ett e-brev med bekräftelse från YouVersion och klicka på länken i det för att bekräfta din registrering."
-        request: 
+        request:
             invalid_vendor_signature: "Licensvalidering misslyckades: Felaktig försäljarsignatur"
             invalid_vendor_id: "Licensvalidering misslyckades: Felaktig försäljar-ID"
             invalid_item_ids: "Licensvalidering misslyckades: Felaktigt objekt"
-        vendor_transaction_id: 
+        vendor_transaction_id:
             duplicate: "Transaktions-ID: Detta transaktions-ID har redan registrerats"
-        auth: 
+        auth:
             login notice: "För att bekräfta köpet, logga in med ditt YouVersion-konto nedan eller <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
             signup notice: "För att bekräfta köpet, registrera ditt YouVersion-konto gratis nedan eller <a href='/sign-in?source=licenses' target='_self'>%{login}</a> om du redan har ett konto."
             signup link text: "registrera dig för ett gratis-konto"
             login link text: "Logga in"
-    registration: 
-        placeholder: 
+    registration:
+        placeholder:
             email: "Ange din e-postadress"
             username: "Ange ditt användarnamn"
             password: "Ange ditt lösenord"
@@ -1098,14 +1098,14 @@ sv:
         share blurb: "Det verka som att du vill dela ett bibelord. Fantastiskt! Du kommer kunna dela skriften via Facebook eller Twitter. Logga in eller skapa ett konto nedan för komma igång!"
         highlight blurb: "Det ser ut som att du vill markera i Skriften. Fantastiskt! Markeringar hjälper dig att organisera och hålla reda på dina favoritverser. Logga in eller skapa ett konto nedan och kom igång!"
         note blurb: "Det ser ut som att du vill skapa en anteckning om Skriften. Bra tänkt! Anteckningar kan hjälpa dig att komma ihåg och organisera sanningen du hittar i Guds Ord. Logga in eller skapa ett konto nedan och kom igång!"
-    audio: 
+    audio:
         none: "Ljudbibel är inte tillgänglig för denna översättning."
         chapter only: "Ljud är inte tillgänglig för verser. Visa i läsaren för kapitelljud."
         close player menu: "Stäng"
         publisher website: "Förlagets hemsida"
-    highlights: 
+    highlights:
         title: "Markeringar"
-        blank slate: 
+        blank slate:
             heading: "Markera meningsfulla verser"
             description: "När du läser Bibeln, välj en vers och markera den. Kom tillbaka hit för att se, redigera eller radera dina markeringar."
         none user: "%{username} har inga markeringar"
@@ -1116,9 +1116,9 @@ sv:
         destroy failure: "Kunde inte ta bort markering"
         creation error: "Kunde inte markera."
         delete error: "Kunde inte ta bort markering."
-        form: 
+        form:
             save button: "Spara markering"
-    searching: 
+    searching:
         bible: "Bibeln"
         plans: "Planer"
         users: "Användare"
@@ -1127,7 +1127,7 @@ sv:
         suggestion html: "Menar du %{suggestion_link}?"
         all versions: "Alla %{language_name} översättningar"
         results for: "Sökresultat för: "
-    donate: 
+    donate:
         donate now: "Donera nu"
         donate now intl: "eller donera internationellt"
         enter amount: "Ange ett belopp"
@@ -1156,7 +1156,7 @@ sv:
         state: "Stat"
         zip: "Postkod"
         creation form errors: "Följande fel gjorde att du inte kunde göra en donation:"
-    download ad: 
+    download ad:
         title: "Ladda ner den fria Bibelappen"
         description copy: "Hundratals översättningar på över %{language_count} olika språk - Bibeln du tar med dig överallt."
         meta copy title: "Ladda ner den kostnadsfria Bibelappen"
@@ -1168,11 +1168,11 @@ sv:
         banner title: "Bibelappen"
         banner action: "Ladda ner"
         banner open: "Öppna"
-    download bafk ad: 
+    download bafk ad:
         title: "Ladda ned Bibelappen för barn"
         description copy: "Bibelappen för barn är ett fantastiskt verktyg för dina barn att lära sig Bibelns berättelser om Jesus."
         download: "Ladda ned nu"
-    about page: 
+    about page:
         relevancy: "Relevans"
         relevancy copy: "I tidigare generationer var folks tillgång till Bibeln mycket begränsad. Idag är detta inte längre fallet. Men många människor som har tillgång till Bibeln tycker att budskapet inte gäller för deras liv. Samtidigt finns det andra som tror det finns ett samband mellan Bibeln och deras upplevelse varje dag."
         information revolution: "Informationsrevolution"
@@ -1183,7 +1183,7 @@ sv:
         partners text: "Utan våra generösa bibelpubliceringspartners skulle YouVersion inte ha möjlighet att tillhandahålla vår världsomspännande gemenskap med så många Biblar. Många av er har undrat hur ni kan tacka dem för deras viktiga stöd till YouVersion. Du kan läsa mer om dem, om deras arbete och om hur du kan stödja dem, via länken nedan."
         translation title: "Vårt översättningsteam"
         learn more: "Läs mer"
-    press page: 
+    press page:
         title: "Pressområde"
         contact header: "Kontaktinformation för press"
         contact header 2: "På webben"
@@ -1196,13 +1196,13 @@ sv:
         lead copy: "Bibelappen är en gratis mobil Bibel baserad på online-Bibeln Bibel.com som kan installeras på nästan alla telefoner. Bibelappen låter användare läsa Bibeln, dela verser i sitt sociala nätverk, bokmärka sina favorittexter m.m. - allt på ett format som hänger med i den allt mer mobila livsstilen."
         resources title: "Pressinformation"
         now title: "Idag i YouVersion-gemenskapen"
-        resources: 
+        resources:
             now: "En levande bild över engagemang och senaste informationen"
             about: "Om YouVersion och Bibelappen"
             history: "YouVersions historia och statistik"
             manual: "YouVersions varumärkesguide"
         images title: "YouVersion-logotyper och -bilder"
-        images: 
+        images:
             logos: "YouVersion logotyppaket"
             icons: "Ikoner till Bibelappen"
             infographic: "Informationsgrafik: Statistik och användning för Bibelappen"
@@ -1210,7 +1210,7 @@ sv:
             lifestyle: "Bildsamling: Livsstil"
             screencast: "YouVersion-presentation"
         links title: "Länkar till media"
-    mobile page: 
+    mobile page:
         h2: "Guds ord är med dig."
         h3: "YouVersion är global"
         h3 sub: "Tillgänglig på mer än %{language_count} språk över hela världen."
@@ -1255,44 +1255,44 @@ sv:
         sms info: "Du får ett SMS för att ladda ner appen"
         sms download: "Klicka för att ladda ner Bibelappen:"
         sms default country: "SE"
-    pages: 
-        generic_error: 
+    pages:
+        generic_error:
             title: "Upps!"
             explanation: "Något gick fel bakom kulisserna! Du kan prova igen genom att ladda om sidan, vi är mycket ledsna för besväret!"
             our action: "Vi har meddelats om detta och kommer att ta tag i det så snart som möjligt."
-        home: 
+        home:
             heading: "Skaffa en gratis Bibel till din telefon, surfplatta och dator."
             cta: "Läs Bibeln nu"
-            experience: 
+            experience:
                 title: "Upplev den överallt"
                 body: "Välj från mer än 1200 Bibelöversättningar på över 900 språk på din dator, telefon eller surfplatta - med många tillgängliga som ljudbiblar."
                 action: "Se Bibelöversättningar"
-            make_yours: 
+            make_yours:
                 title: "Gör det till din Bibel"
                 body: "Markera eller Bokmärk dina favoritverser, gör Bibelkort som du kan dela och lägg till publika eller privata Anteckningar till Bibeltexter."
                 action: "Skapa ett gratis konto"
-            install_now: 
+            install_now:
                 title: "Installera appen nu"
                 body: "Bibelappen är helt gratis utan annonsering och utan köp i appen. Den har installerats på så här många olika enheter (så långt):"
                 action: "Ladda ner den kostnadsfria Bibelappen"
-            free_plans: 
+            free_plans:
                 title: "Gratis läsplaner och andakter"
                 body: "Läsplaner hjälper dig att engagera dig med Guds Ord varje dag - lite i taget."
             browse_plans: "Bläddra igenom alla läsplaner"
             read_listen: "Läs, lyssna, titta och dela"
             start_now: "Börja nu"
-            votd: 
+            votd:
                 title: "Dagens vers"
                 highlight_bookmark: "Markera, Bokmärk eller dela denna vers"
                 subscribe: "Prenumerera på Dagens vers"
-            hero: 
+            hero:
                 heading: "En gratis Bibel i din telefon, läsplatta och dator."
                 description: "YouVersion är en enkel, reklamfri Bibelapp som tar Guds Ord in i ditt dagliga liv."
                 learn more: "lär dig mer nedan"
                 start reading: "Börja läsa"
                 skip in future: "Hoppa över den här sidan i framtiden"
                 now skipped: "Den här sidan hoppas nu över."
-            features: 
+            features:
                 read heading: "Läs Bibeln."
                 read description: "Välj bland <a href='%{versions_path}' target='_self'>hundratals bibelöversättningar och språk</a>. Jämför två översättningar sida vid sida. Du kan till och med välja vilket typsnitt och storlek som visas. Anpassa din Bibelupplevelse helt efter din personliga smak."
                 study heading: "Studera Bibeln."
@@ -1306,11 +1306,11 @@ sv:
             download action: "Ladda ner Bibelappen"
             download description: "Ladda ner din gratisversion av Bibelappen till din mobila enhet så har du med dig Bibeln var du än går."
             world installs: "Installationer runt om i världen"
-        trending verses: 
+        trending verses:
             title: "Bibelverstrender"
             headline: "Bibelverstrender just nu i Youversions Bibelapp och Bible.com"
-    shared: 
-        menu_settings: 
+    shared:
+        menu_settings:
             title: "Läsinställningar"
             close: "Stäng"
             font: "Typsnitt:"
@@ -1330,7 +1330,7 @@ sv:
             translation notes: "Fotnoter"
             cross references: "Korsreferenser"
             numbers and titles: "Nummer och rubriker"
-    app errors: 
+    app errors:
         404 plans explanation: "Söker du efter planen <a href='%{plan_path}' target='_self'>%{title}</a>?"
         404 contact support: "Har du problem? Kontakta vår <a href='%{support_url}' target='_self'>supportgrupp</a>."
         404 explanation: "Du kan pröva att gå tillbaka till <a href='%{reader_path}' target='_self'>startsidan</a>.\nOm du fortfarande har problem kan du kontakta vår <a href='%{support_url}' target='_self'>supportgrupp</a>."
@@ -1338,7 +1338,7 @@ sv:
         408 message: "Tyvärr svarade inte våra servrar i tid."
         408 explanation: "Vi har blivit informerade och kommer se till att åtgärda eventuella problem så fort som möjligt. Låt oss se om vi kan få dig tillbaka till din bibelläsning!"
         try again: "Försök igen"
-    versions: 
+    versions:
         filter: "Skriv översättningsversion (eller språk)..."
         see all: "Se alla översättningar..."
         courtesy of: "%{abbreviation} tillhandahållen av %{publisher}"
@@ -1354,8 +1354,8 @@ sv:
         public domain: "Allmän egendom"
         loading: "Laddar fler översättningar..."
         load error: "Beklagar, ett problem uppstod och det gick inte att ladda ner fler översättningar. Stäng denna meny och starta om för att försöka igen."
-    campaigns: 
-        christmas: 
+    campaigns:
+        christmas:
             tracker title: "Räknare för julberättelse"
             twitter text: "Se världen läsa om Jesu födelse. Dela räknaren över julberättelse @YouVersion: https://www.bible.com/christmas"
             facebook text: "Dela räknaren över julberättelse medan folk runt om i världen läser om Jesu födelse.   I kyrkan eller hemma, tillsammans med människor vi älskar eller under en lugn stund i ensamhet, stannar vi upp och reflektera över det underbara kärlek Gud ger till oss."
@@ -1370,51 +1370,51 @@ sv:
             versions: "Över %{version_count} översättningar på %{language_count} språk"
             tagline: "Bibeln som följer med dig överallt"
             chapter counter format: "9 999 999"
-        100m: 
+        100m:
             logo: "YouVersion: Bibelappen"
             tagline: "Det närmar sig <em>100 miljoner</em>"
             intro: "Kan Bibelappen nå 100 miljoner installationer före vår 5-årsdag den 10 juli? Bara med din hjälp!"
             after: "Tack vare dig når Bibelappen 100 miljoner installationer vid vår 5-årsdag den 10 juli. Tack!"
-            share: 
+            share:
                 with friends: "Dela med dina vänner"
-                fb: 
+                fb:
                     dialog name: "Har du Bibelappen?"
                     dialog desc: "Jag älskar Bibelappen! Den hjälpte mig verkligen att göra Bibeln till en del av mitt vardagliga liv. Den låter mig markera, lyssna på ljudbiblar, ta anteckningar, följa andaktsplaner...t.o.m. titta på film! Gå och ladda ner den nu (det är gratis): http://www.bible.com/sv/app"
-                tw: 
+                tw:
                     tweet: "Bibelappen från @YouVersion har en fast plats på min startskärm. Läs, titta, lyssna och dela...allt i en fri app: bible.com/sv/app"
-                em: 
+                em:
                     subject: "Har du Bibelappen?"
                     body: "Jag har njutit av Bibelappen från YouVersion och tror att du kanske också kommer göra det. Jag öppnar Bibeln betydligt oftare idag bara för att det är så enkelt att läsa, titta, lyssna och dela. Den har t.o.m. planer som har ett urval av Bibeln som ligger och väntar på mig varje dag. \n\nDu kan hämta den (gratis!) för nästan alla mobila enheter här: \nhttp://www.bible.com/sv/app"
-            body: 
+            body:
                 p1: "10 juli kommer bli en stor dag. Det är inte bara Bibelappens 5:e födelsedag, det är också 5 år sedan Apple lanserade iTunes Store."
                 p2: "Men ännu större? Med din hjälp är det dagen Bibelappen kommer att nå 100 miljoner nerladdningar."
                 p3: "Vi har lärt oss att Gud använder milstolpar som denna för att växa ännu större."
                 p4: "Låt oss skapa historia tillsammans."
                 after p1: "YouVersion är en global gemenskap med människor som brinner för att hjälpa andra att komma i kontakt med Guds Ord. Till alla bibelsällskap och -utgivare, kyrkor, pastorer och volontärer: tack för din generositet!"
                 after p2: "Vad som är mest spännande med denna milstolpe är vad den representerar: Människor kommer idag i kontakt med Bibeln i en skala som aldrig har förut skådats. Det är fantastiskt att se vad Gud gör. Och vi tror att detta bara är början. <em>Det börjar med 100 miljoner</em>."
-            ad: 
+            ad:
                 title: "Bibelappen är helt gratis och ett suveränt sätt att utforska Bibeln."
                 copy: "Läs, lyssna, titta, dela. Hämta Bibelappen till din smartphone eller läsplatta: <a href='http://bible.com/app' target='_self'>Ladda ner nu</a>"
-            sidebar: 
+            sidebar:
                 tagline: "Låt oss skapa historia tillsammans"
                 button: "Dela Bibelappen"
-    ui: 
+    ui:
         characters remaining: "tecken kvar"
         yes button: "Ja"
         no button: "Nej"
         cancel: "Avbryt"
-        plans: 
+        plans:
             privacy: "Vill du att dina aktiviteter i denna plan ska vara synliga för dina vänner?"
         loading indicator text: "Laddar..."
         loading: "Laddar"
-        pagination: 
+        pagination:
             next page: "Nästa sida"
             previous page: "Föregående sida"
-        datetime: 
+        datetime:
             just now: "Precis nu"
         verses selected: "verser valda"
-    EventsAdmin: 
-        header: 
+    EventsAdmin:
+        header:
             home: "Hem"
             read: "Läs"
             plans: "Läsplaner"
@@ -1425,7 +1425,7 @@ sv:
             search placeholder: "Sök..."
             sign in: "Logga in"
             sign up: "Skapa ett konto"
-        profile menu: 
+        profile menu:
             bookmarks: "Bokmärken"
             highlights: "Markeringar"
             notes: "Anteckningar"
@@ -1433,7 +1433,7 @@ sv:
             friends: "Vänner"
             badges: "Medaljer"
             sign out: "Logga ut"
-        footer: 
+        footer:
             events: "Evenemang"
             versions: "Översättningar (%{count})"
             languages: "Språk (%{count})"
@@ -1446,17 +1446,17 @@ sv:
             press: "Press"
             privacy: "Integritetspolicy"
             terms: "Villkor"
-        unsubscribe: 
+        unsubscribe:
             about: "Bestäm vad för e-post du får från YouVersion. Du kan ändra dina mobil-notifikationer från din mobilapp."
             email: "E-post"
             not me: "Detta är inte jag"
             saved: "Sparat!"
             plan delivery: "LEVERANS AV LÄSPLAN"
             sign-in: "För att ändra andra inställningar, <a href='%{sign_in_path}'>logga in på ditt konto</a>."
-            links: 
+            links:
                 manage: "Hantera notifikationer via e-post"
                 unsub all: "Avsluta prenumeration på all e-post"
-            success: 
+            success:
                 all: "Du har avslutat din prenumeration från <b>all e-post från YouVersion</b>."
                 badges: "Du har avslutat din prenumeration på e-post angående <b>Emblem</b>."
                 comments: "Du har avslutat din prenumeration på e-post angående <b>Kommentarer</b>."
@@ -1469,7 +1469,7 @@ sv:
                 votd: "Du har avslutat din prenumeration på e-post angående <b>Dagens Vers</b>."
                 votd_image: "Du har avslutat din prenumeration på e-post angående <b>Dagens Vers-bild</b>."
                 contact_joins: "Du har avslutat din prenumeration angående <b>Kontakter</b>."
-            labels: 
+            labels:
                 badges: "När jag får ett emblem"
                 comments: "Kommentarer på mina aktiviteter"
                 friendships: "Vänförfrågningar"
@@ -1480,14 +1480,14 @@ sv:
                 votd: "Text till Dagens bibelord"
                 votd_image: "Bild till dagens vers"
                 contact_joins: "När en kontakt registrerar sig"
-            error: 
+            error:
                 token: "Tyvärr, du behöver Logga In innan du kan ändra dina notifikations-inställningar:"
                 other_type: "Förlåt, det där gick inte som vi förväntade oss. Skulle du vilja uppdatera dina Notifikationer?"
         change: "Ändra"
-        ui: 
+        ui:
             yes button: "Ja"
             no button: "Nej"
-        plans: 
+        plans:
             plans: "Läsplaner"
             plans back: "planererar"
             related plans: "Relaterade Planer"
@@ -1496,17 +1496,17 @@ sv:
             my_plans: "Mina planer"
             day_completed: "<b>%{username}</b> fullföljde <b>dag %{day}</b> av bibelplanen <b>%{plan_title}</b>"
             which reading: "%{current} av %{total}"
-            status: 
+            status:
                 on track: "Enligt plan!"
-                days ahead: 
+                days ahead:
                     one: "%{count} dag före!"
                     other: "%{count} dagar före!"
-                missed days: 
+                missed days:
                     one: "%{count} missad dag"
                     other: "%{count} missade dagar"
             bible plan language: "Bibelplanens språk"
             share plan: "Kolla in denna  #BiblePlan från @YouVersion: %{plan_title}"
-            widget: 
+            widget:
                 my plans: "Mina planer"
                 start reading: "Börja läsa"
                 view my plans: "Visa mina planer"
@@ -1515,18 +1515,18 @@ sv:
                 reading: "läsning"
                 readings: "läsningar"
                 readings 5 or more: "läsningar"
-            stats: 
-                friends reading: 
+            stats:
+                friends reading:
                     one: "%{count} vän prenumererar på denna plan"
                     other: "%{count} vänner prenumererar på denna plan"
-                friends completed: 
+                friends completed:
                     one: "%{count} vän har fullföljt denna plan"
                     other: "%{count} vänner har fullföljt denna plan"
                 total completions: "Fullföljda över %{count} gånger"
                 view all: "Visa alla"
                 close: "Stäng"
             settings: "Inställningar"
-            privacy: 
+            privacy:
                 visible to friends?: "Vill du att dina vänner ska se dina planaktiviteter?"
                 private: "Privata"
                 public: "Offentliga"
@@ -1596,7 +1596,7 @@ sv:
             catch me up: "Justera läsplan"
             restart description: "Du kan starta om din plan. Hela din läshistoria och framgång kommer att återställas och startas från början."
             restart: "Starta om plan"
-            privacy description: 
+            privacy description:
                 private: "Din plan är privat. Växla dina inställningar till \"Enbart vänner\" för att dela dina planaktiviteter med vänner."
                 public: "Din plan är synlig för vänner. Växla till Privat för att göra dina planaktiviteter privata."
             make private: "Sätt till privat"
@@ -1646,39 +1646,39 @@ sv:
             completed notice: "Grattis! Du har fullföljt din läsplan."
             exit: "Avsluta"
             loading sidebar content: "Laddar innehåll i sidofällt..."
-        components: 
-            ErrorMessage: 
+        components:
+            ErrorMessage:
                 genericError: "Ett fel uppstod"
-                announcement: 
-                    events: 
-                        title: 
+                announcement:
+                    events:
+                        title:
                             required: "Meddelandetitel krävs."
-                default: 
-                    bible: 
-                        reference: 
+                default:
+                    bible:
+                        reference:
                             not_found: "Bibelreferens felaktig."
-                    events: 
-                        google_place_id: 
+                    events:
+                        google_place_id:
                             required: "Du måste välja en plats på kartan."
-                        latitude: 
+                        latitude:
                             required: "Du måste välja en plats på kartan."
-                        times: 
-                            start_dt: 
+                        times:
+                            start_dt:
                                 must_be_a_future_date: "Starttid måste vara i framtiden."
-                        timezone: 
+                        timezone:
                             required: "Tidszon krävs."
-                reference: 
-                    events: 
-                        usfm: 
+                reference:
+                    events:
+                        usfm:
                             invalid: "Bibelreferens felaktig."
-                url: 
-                    events: 
-                        url: 
+                url:
+                    events:
+                        url:
                             required: "Webb-adress krävs."
-                        title: 
+                        title:
                             required: "Länktitel krävs."
-            EventHeader: 
-                status: 
+            EventHeader:
+                status:
                     published: "Publicerad"
                     draft: "Utkast"
                     live: "Live"
@@ -1690,36 +1690,36 @@ sv:
                 eventBuilder: "Skapa händelse"
                 signOut: "Logga ut"
                 createAccount: "Skapa konto"
-            HtmlEditor: 
+            HtmlEditor:
                 text: "Text"
                 bold: "Fet"
                 italic: "Kursiv"
-        containers: 
-            Auth: 
+        containers:
+            Auth:
                 title: "Händelse - Logga in"
                 signIn: "Logga in"
                 subHead1: "Om du är en Bibelapp-användare och redan har ett YouVersion-konto kan du logga in med samma inloggningsuppgifter.<br/><br/>Har du inte redan ett YouVersion-konto?<br/><a href='%{url}'>Registrera dig nu på Bibel.com</a> för att börja skapa händelser."
                 email: "E-post"
                 password: "Lösenord"
                 forgotPassword: "Glömt lösenordet"
-            EventEdit: 
+            EventEdit:
                 event: "Händelse"
-            EventEditContentContainer: 
+            EventEditContentContainer:
                 choose: "Välj innehåll för att komma igång."
                 needHelp: "Vill du ha hjälp?"
                 title: "Händelseinnehåll"
                 previous: "← Föregående: Tid & plats"
                 next: "Nästa: Förhandsgranska →"
-            EventEditDetails: 
+            EventEditDetails:
                 title: "Händelsedetaljer"
-            EventEditLocationContainer: 
+            EventEditLocationContainer:
                 title: "Plats för händelse"
                 previous: "← Föregående: Detaljer"
                 next: "Nästa: Lägg till innehåll →"
-            EventEditPreview: 
+            EventEditPreview:
                 title: "Förhandsgranska händelse"
                 previous: "← Föregående: Innehåll"
-            EventEditShare: 
+            EventEditShare:
                 title: "Dela händelse"
                 subTitle: "Din händelse är nu publicerad:"
                 edit: "Redigera händelse"
@@ -1728,10 +1728,10 @@ sv:
                 copy: "Kopiera"
                 copied: "Kortlänken kopierades till urklipp"
                 previous: "← Föregående: Förhandsgranska"
-            EventFeedDiscover: 
+            EventFeedDiscover:
                 title: "Upptäck händelser"
                 discover: "Upptäck"
-            EventFeedMine: 
+            EventFeedMine:
                 title: "Mina händelser"
                 previous: "← Föregående"
                 next: "Nästa →"
@@ -1740,38 +1740,38 @@ sv:
                 subTitle: "HÄNDELSER SKAPADE AV MIG"
                 newFirst: "Skapa din första händelse"
                 learn: "Lär hur du gör en stor händelse"
-            EventFeedSaved: 
+            EventFeedSaved:
                 title: "Sparade Evenemang"
-            EventView: 
+            EventView:
                 title: "YouVersion-händelse"
-            SelectLanguage: 
+            SelectLanguage:
                 choose: "Välj ditt språk"
-        features: 
-            Auth: 
-                errors: 
+        features:
+            Auth:
+                errors:
                     sessionExpired: "Din session har löpt ut. Logga in igen."
                     invalidEmail: "Felaktig e-post eller lösenord"
-            EventEdit: 
-                errors: 
+            EventEdit:
+                errors:
                     locationMustHaveTime: "Alla platser måste ha åtminstone en tid."
                     locationRequired: "Du kan inte publicera en händelse utan plats."
                     contentRequired: "Du kan inte publicera en händelse utan innehåll."
                     planSearchFailed: "Sökningen matchade inte några dokument"
                     noMatchingPlans: "Inga hittade planer"
-                components: 
-                    EventEditNav: 
+                components:
+                    EventEditNav:
                         details: "Detaljer"
                         locations: "Tider & platser"
                         content: "Innehåll"
                         preview: "Förhandsgranska & publicera"
                         share: "Dela"
-                features: 
-                    content: 
-                        components: 
-                            ContentFeed: 
+                features:
+                    content:
+                        components:
+                            ContentFeed:
                                 reorder: "Flytta innehåll"
                                 doneReordering: "Färdig med att flytta innehåll"
-                            ContentHeader: 
+                            ContentHeader:
                                 text: "Text"
                                 reference: "Bibelreferens"
                                 plan: "Plan"
@@ -1779,40 +1779,40 @@ sv:
                                 link: "Extern länk"
                                 giving: "Länk till donation"
                                 announcement: "Meddelande"
-                            ContentHelpModal: 
+                            ContentHelpModal:
                                 types: "Typ av innehåll"
                                 learn: "Lär dig hur du skapa<br>en fantastisk händelse"
-                                text: 
+                                text:
                                     title: "Textmodul"
                                     desc: "Översikt, huvudpunkter, diskussionsfrågor… Dela med dig av allmänt textbaserat innehåll för att hjälpa dina åhörare att följa med i ditt budskap, medan du säger det. Din textmodul kan vara hur lång som helst och kan innehålla formaterad text."
-                                reference: 
+                                reference:
                                     title: "Bibelreferensmodul"
                                     desc: "Välja valfri bibelvers eller -passage länkad direkt till någon av YouVersions över 1 200 bibelöversättningar på mer än 900 språk. Människor som tittar på din händelse kan trycka på dina referenser för att se dem i Bibelappen och därifrån bl.a. skapa bokmärken och göra markerar."
-                                plan: 
+                                plan:
                                     title: "Planmodul"
                                     desc: "Länka till bibelplaner och andakter som relaterar till vad du vill ha sagt för att hjälpa din publik att fortsätta engagera sig i Guds Ord hela veckan."
-                                image: 
+                                image:
                                     title: "Bildmodul"
                                     desc: "Gör din händelse levande med valfri typ av grafik: serier, foton, bibelkort m.m. Deltagare kan enkelt dela dina bilder på social media och göra ditt budskap viralt. "
-                                link: 
+                                link:
                                     title: "Extern länk-modul"
                                     desc: "Skapa en knapp i din händelse för att länka till externa hemsidor. Gör att din publik bara har en knapptryckning till hemsidor för välgörenhet, volontärsarbete och kyrkor."
-                                announcement: 
+                                announcement:
                                     title: "Meddelandemodul"
                                     desc: "Kyrkonyheter, schema, program, studiegrupper, volontärsarbete och missionsmöjligheter...Meddelandemodulen är den perfekta platsen att dela med dig av viktig information som är aktuellt vid en viss tid, men som du inte vill dra uppmärksamhet från det primära budskapet. Varje meddelandemodul visas på varsin sida i händelsen och kan även innehålla formaterad text (så som fet och kursivt text)"
-                            ContentInsertionPoint: 
+                            ContentInsertionPoint:
                                 title: "Lägg till nästa modul här"
-                            ContentTypeAnnouncement: 
+                            ContentTypeAnnouncement:
                                 title: "Titel"
                                 prompt: "Skriv något här..."
                                 caption: "I din händelse kommer enbart din titel (ovan) visas. När en användare trycker på titeln kommer innehållet (nedan) visas i en separat vy."
-                            ContentTypeContainer: 
+                            ContentTypeContainer:
                                 dirty: "Innehållet kommer automatiskt sparas några sekunder efter att du sluta skriva."
                                 failed: "Kan inte spara."
                                 tryAgain: "Försök igen."
                                 lastSaved: "Senast sparad %{when}"
-                            ContentTypeImage: 
-                                errors: 
+                            ContentTypeImage:
+                                errors:
                                     wrongSize: "Bildstorlek måste vara %{requiredWidth}x%{requiredHeight}. Din bild är %{yourWidth}x%{yourHeight}."
                                     wrongType: "Felaktig filtyp. Måste vara JPG."
                                 caption: "Lägg till bildtext"
@@ -1820,32 +1820,32 @@ sv:
                                 onlyJpg: "[Enbart JPG]"
                                 sizePrompt: "%{requiredWidth}px bred x %{requiredHeight}px hög"
                                 select: "Välj bild"
-                            ContentTypeLink: 
+                            ContentTypeLink:
                                 kindrid: "Om du söker efter en smart och enkelt gåvoplattform, <a href='%{url}'>prova Kindrid</a>."
                                 label: "Länkbeskrivning"
                                 prompt: "Skriv något här..."
                                 url: "Webb-adress"
-                            ContentTypePlan: 
+                            ContentTypePlan:
                                 replace: "Ersätt"
                                 search: "Sök efter läsplan"
-                            ContentTypeReference: 
+                            ContentTypeReference:
                                 language: "Språk"
                                 version: "Översättning"
                                 book: "Bok"
                                 chapterVerse: "Kapitel:Vers:"
-                            ContentTypeText: 
+                            ContentTypeText:
                                 prompt: "Skriv något här..."
-                            LiveWarningModal: 
+                            LiveWarningModal:
                                 title: "Kan inte ta bort medan händelse pågår"
                                 desc: "När väl en händelse har startat kan du inte ta bort text-, bibelreferens- eller bildmoduler då användare kanske redan har lagt till egna privata anteckningar på dem. Å andra sidan kan du redigera modulerna."
                                 ok: "OK"
-                    details: 
-                        errors: 
+                    details:
+                        errors:
                             generic: "Ett problem uppstod när händelsen skulle publiceras."
                             invalidTimes: "En enskild session kan inte vara mer än 12 timmar, och det får inte vara mer än 8 dagar mellan första starttiden och sista sluttiden på en händelse. Justera tiderna för händelsen och försök igen."
-                        components: 
-                            DetailsEdit: 
-                                errors: 
+                        components:
+                            DetailsEdit:
+                                errors:
                                     wrongSize: "Bildstorleken måste vara %{requiredWidth}x%{requiredHeight}. Din bild är %{yourWidth}x%{yourHeight}."
                                     wrongType: "Ogiltig filtyp. Måste vara JPG."
                                 changeImage: "Ändra bild"
@@ -1859,29 +1859,29 @@ sv:
                                 desc: "Händelsedetaljer"
                                 next: "Nästa: Lägg till tid och plats"
                                 blank: "%{field} kan inte vara tom."
-                    location: 
-                        components: 
-                            Location: 
+                    location:
+                        components:
+                            Location:
                                 oneRequired: "Lägg till åtminstone en gång."
                                 use: "ANVÄND DENNA PLATS"
                                 edit: "Redigera plats"
                                 delete: "Ta bort plats"
-                            LocationAddButtons: 
+                            LocationAddButtons:
                                 addPhysical: "Lägg till en fysisk plats"
                                 promptPhysical: "Du kan lägga till flera platser."
                                 addVirtual: "Lägg till virtuell plats"
                                 churchOnline: "Visste du? Du kan gratis utöva ditt prästerskap online med <a className='button-caption' href='%{url}'>Church Online Platform</a>."
-                            LocationAddTime: 
+                            LocationAddTime:
                                 minutes: "minuter"
                                 hours: "timmar"
                                 days: "dagar"
-                            LocationDeleteModal: 
+                            LocationDeleteModal:
                                 sure: "Är du säker?"
                                 selected: "Du har valt följande plats att ta bort:"
                                 warn: "Detta kommer att ta bort platsen från alla tidigare och framtida händelser. Du kommer inte kunna återanvända denna plats i framtida händelser."
                                 cancel: "Avbryt"
                                 delete: "Ta bort"
-                            LocationEdit: 
+                            LocationEdit:
                                 prompt: "Ange platsens adress..."
                                 country: "Land"
                                 timezone: "Tidszon"
@@ -1892,7 +1892,7 @@ sv:
                                 cancel: "Avbryt"
                                 save: "Spara denna plats"
                                 virtualPrompt: "Ange en stad för att välja en tidszon..."
-                            LocationTimeShifter: 
+                            LocationTimeShifter:
                                 shift: "Flytta startdatum"
                                 forward: "Framåt"
                                 backward: "bakåt"
@@ -1907,17 +1907,17 @@ sv:
                                 hours: "TIMMAR"
                                 update: "Uppdatera"
                                 shiftButton: "Ändra alla datum och tider samtigt"
-                            UnpublishModal: 
+                            UnpublishModal:
                                 cancel: "Avbryt"
                                 title: "Avpublicera för att göra förändringar"
                                 desc: "För att lägga till, ändra eller ta bort tid och plats, avpublicera händelsen tillfälligt. Under tiden kommer det inte vara möjligt att söka upp händelsen. Glöm inte att publicera din händelse igen."
                                 unpublish: "Avpublicera"
-                    preview: 
-                        notes: 
+                    preview:
+                        notes:
                             prompt: "Lägg till dina privata Anteckningar..."
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Logga in</span> för att skriva dina privata anteckningar…</a>"
-                        components: 
-                            PreviewFeed: 
+                        components:
+                            PreviewFeed:
                                 review: "Granska din händelse före publicering"
                                 previewUrl: "Förhandsvisningsadress:"
                                 share: "Dela händelse"
@@ -1925,23 +1925,23 @@ sv:
                                 publish: "Publicera"
                                 unpublish: "Avpublicera"
                                 locations: "Platser:"
-                                discoverable: 
+                                discoverable:
                                     title: "Synligt:"
                                     desc: "Din händelse kommer att vara synlig i Bibelappen vid sökning efter händelser eller på kartan 5 dagar före startdatum."
-                                status: 
+                                status:
                                     title: "Status:"
                                     desc: "LIVE kommer att visas när händelsen har startat."
-                                remove: 
+                                remove:
                                     title: "Ta bort:"
                                     desc: "Din händelse kommer inte längre vara sökbara efter slutdatumet. Deltagare som har tryckt \"Spara händelse\" när händelsen fortfarande var sökbar kommer att ha tillgång till en arkiverad version av den. Händelsen kommer också vara tillgänglig om en direktlänk används. "
-                            PreviewTypeAnnouncement: 
+                            PreviewTypeAnnouncement:
                                 expand: "Expandera"
-                            PreviewTypePlan: 
+                            PreviewTypePlan:
                                 read: "Läs"
                                 info: "Om läsplanen"
-            EventFeedMine: 
-                components: 
-                    EventListItem: 
+            EventFeedMine:
+                components:
+                    EventListItem:
                         duplicate: "Duplicera"
                         share: "Dela"
                         delete: "Ta bort"
@@ -1949,24 +1949,24 @@ sv:
                         edit: "Ändra"
                         view: "Visa"
                         fail: "Kunde inte ta bort händelse"
-            EventView: 
-                components: 
-                    EventViewContent: 
+            EventView:
+                components:
+                    EventViewContent:
                         copy: "Kopiera"
                         copied: "Kopierad"
                         share: "Dela"
                         read: "Läs"
                         readPlan: "Läsplan"
-                    EventViewContentAnnouncement: 
+                    EventViewContentAnnouncement:
                         expand: "Expandera"
                         collapse: "Komprimera "
-                    EventViewDetails: 
+                    EventViewDetails:
                         expand: "Expandera"
                         collapse: "Komprimera"
                         save: "Spara evenemang"
                         signIn: "Logga in för att spara händelse"
                         saved: "Händelse sparad"
-        Auth: 
+        Auth:
             sign up: "Skapa ett konto"
             sign in: "Logga in"
             sign up google: "Registrera med Google"
@@ -1981,19 +1981,19 @@ sv:
             share blurb: "Det verka som att du vill dela ett bibelord. Fantastiskt! Du kommer kunna dela skriften via Facebook eller Twitter. Logga in eller skapa ett konto nedan för komma igång!"
             highlight blurb: "Det ser ut som att du vill markera i Skriften. Fantastiskt! Markeringar hjälper dig att organisera och hålla reda på dina favoritverser. Logga in eller skapa ett konto nedan och kom igång!"
             note blurb: "Det ser ut som att du vill skapa en anteckning om Skriften. Bra tänkt! Anteckningar kan hjälpa dig att komma ihåg och organisera sanningen du hittar i Guds Ord. Logga in eller skapa ett konto nedan och kom igång!"
-        Reader: 
+        Reader:
             chapter: "Kapitel"
             read reference: "Läs %{reference}"
             read chapter: "Läs helt kapitel"
             plan title: "Gratis läsplaner och andakter"
             plan title ref: "Gratis Läsplaner och Andakter relaterade till %{reference}"
             plan subtitle: "Läsplaner delar upp din Bibelläsning i hanterbara dagliga delar. Planer inkluderar ofta understödjande andakts-, ljud- och video-material. Oavsett om du kallar dem Bibelplaner, Läsplaner eller Andakter så är Läsplaner ett beprövat sätt att göra Bibeln till en naturlig del av ditt vardagsliv."
-            meta: 
-                mobile: 
+            meta:
+                mobile:
                     title: "Bibelappen"
-                site: 
+                site:
                     title: "Bible.com/sv"
-            header: 
+            header:
                 parallel: "Parallell"
                 parallel exit: "Gå ur sida-vid-sida-läge"
                 cancel: "Avbryt"
@@ -2009,32 +2009,32 @@ sv:
                 videos: "Videor"
                 me: "Mig"
                 recent versions: "Senast använda"
-            chapterpicker: 
+            chapterpicker:
                 book label: "BOK"
                 chapter label: "KAPITEL"
                 chapter unavailable: "Det här kapitlet är inte tillgängligt i denna översättningen. Vänligen välj ett annat kapitel eller en annan översättning."
                 choose chapter: "Välj Kapitel"
-            versionpicker: 
+            versionpicker:
                 language label: "BIBELSPRÅK"
                 language sub-label: "Bibelspråk"
                 change language: "Byt språk"
                 filter languages: "Filtrera språk..."
                 version label: "ÖVERSÄTTNINGAR"
                 choose version: "Välj översättning"
-            reader settings: 
+            reader settings:
                 footnotes: "Fotnoter"
                 numbers: "Nummer och rubriker"
-            more: 
+            more:
                 events: "Evenemang"
                 settings: "Inställningar"
-            search: 
+            search:
                 bible: "Bibeln"
                 users: "Användare"
                 plans: "Läsplaner"
-            version: 
+            version:
                 learn more: "Läs mer"
                 courtesy of: "%{abbreviation} tillhandahållen av %{publisher}"
-            verse action: 
+            verse action:
                 copy: "Kopiera"
                 bookmark: "Bokmärke"
                 note: "Anteckning"
@@ -2058,11 +2058,7 @@ sv:
         with friends: "With Friends"
         with friends description: "Invite Friends to join you in this Plan. You’ll complete days together at the same pace, and you’ll all be able to discuss what God is teaching you along the way."
         level of privacy: "Level of Privacy"
-<<<<<<< HEAD
-        plan privacy prompt: "Do you want your Friends to see your Plan activity?"
-=======
         plan privacy prompt: "Vill du att dina Vänner ska se din aktivitet med Läsplaner?"
->>>>>>> master
         visible to friends: "Visible to Friends"
         private: "Privata"
         cancel: "Avbryt"
@@ -2075,7 +2071,7 @@ sv:
         edit: "Ändra"
         delete: "Ta bort"
         post: "Skicka"
-        x likes: 
+        x likes:
             one: "%{number} gillar"
             other: "%{number} gillar"
         selected: "Markerat"
@@ -2084,11 +2080,11 @@ sv:
         invite others: "Invite Others"
         invited: "Invited"
         pending: "Pending"
-        x pending: 
+        x pending:
             one: "%{number} Pending"
             other: "%{number} Pending"
         accepted: "Accepted"
-        x accepted: 
+        x accepted:
             one: "%{number} Accepted"
             other: "%{number} Accepted"
         invitation: "Invitation"
@@ -2105,7 +2101,7 @@ sv:
         talk it over: "Talk It Over"
         participants: "Participants"
         host: "Host"
-        x participants: 
+        x participants:
             one: "%{number} Participant"
             other: "%{number} Participants"
         participant limit: "Participant Limit: %{number}"

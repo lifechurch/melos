@@ -1710,15 +1710,6 @@ html[dir="rtl"] .plan-settings {
     font-size: 14px;
   }
 
-<<<<<<< HEAD
-  // #current-ui-view {
-  //   padding: 95px 0 0;
-	//
-  //   @media #{$small-only} {
-  //     padding: 25px 15px 0;
-  //   }
-  // }
-=======
   #current-ui-view {
     padding: 95px 0 0;
 
@@ -1726,7 +1717,6 @@ html[dir="rtl"] .plan-settings {
       padding: 95px 15px 0;
     }
   }
->>>>>>> master
 
   .resource_list {
     @media #{$small-only} {

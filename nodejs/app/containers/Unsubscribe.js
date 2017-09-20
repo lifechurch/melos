@@ -197,7 +197,7 @@ class Unsubscribe extends Component {
 
 		return (
 			<div className="yv-unsubscribe">
-				{children &&
+				{children.length > 0 &&
 					React.cloneElement(children, {
 						status,
 						loggedIn,
