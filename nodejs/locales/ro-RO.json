@@ -282,7 +282,7 @@
 	"features.Auth.errors.invalidEmail": "Email sau parolă nevalide.",
 	"features.EventEdit.errors.locationMustHaveTime": "Toate locațiile trebuie să conțină cel puțin o oră.",
 	"features.EventEdit.errors.locationRequired": "Nu poți publica un eveniment fără locații.",
-	"features.EventEdit.errors.contentRequired": "Nu po��i publica un Eveniment fără conținut.",
+	"features.EventEdit.errors.contentRequired": "Nu poți publica un Eveniment fără conținut.",
 	"features.EventEdit.errors.planSearchFailed": "Căutarea nu s-a potrivit cu niciun document",
 	"features.EventEdit.errors.noMatchingPlans": "Nu se potrivește niciunui plan",
 	"features.EventEdit.components.EventEditNav.details": "Detalii",
