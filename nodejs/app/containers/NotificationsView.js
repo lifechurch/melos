@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import rtlDetect from 'rtl-detect'
+import { FormattedMessage } from 'react-intl'
+import SectionedHeading from '../components/SectionedHeading'
 import NotificationsList from '../features/Notifications/components/NotificationsList'
 
 class NotificationsView extends Component {
@@ -23,8 +25,14 @@ class NotificationsView extends Component {
 	render() {
 		return (
 			<div>
-				HELLLOOOOOO
-				<NotificationsList />
+				<div className='large-5 small-11 centered'>
+					<SectionedHeading>
+						<h1><FormattedMessage id='notifications' /></h1>
+					</SectionedHeading>
+				</div>
+				<div className='gray-background'>
+					<NotificationsList className='large-5 small-11 centered' />
+				</div>
 			</div>
 		)
 	}

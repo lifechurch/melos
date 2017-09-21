@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import { FormattedMessage } from 'react-intl'
+import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import User from '../../../components/User'
 import { selectImageFromList } from '../../../lib/imageUtil'
@@ -15,7 +16,10 @@ class NotificationsList extends Component {
 	}
 
 	componentDidMount() {
-
+		const { dispatch, notifications } = this.props
+		if (!notifications) {
+			dispatch(notificationsAction({ method: 'items', auth: true }))
+		}
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -23,14 +27,14 @@ class NotificationsList extends Component {
 	}
 
 	render() {
-		const { notifications, previewNum, avatarWidth } = this.props
+		const { notifications, previewNum, avatarWidth, className } = this.props
 
 		const notificationsItems = notifications
 			&& notifications.items
 			&& notifications.items.length > 0
 			&& notifications.items
 		return (
-			<div className='notifications-list'>
+			<div className={`notifications-list ${className}`}>
 				{
 					notificationsItems
 						&& notificationsItems.map((item, i) => {
@@ -83,12 +87,14 @@ NotificationsList.propTypes = {
 	avatarWidth: PropTypes.number,
 	previewNum: PropTypes.number,
 	notifications: PropTypes.object,
+	className: PropTypes.string,
 }
 
 NotificationsList.defaultProps = {
 	avatarWidth: 36,
 	previewNum: null,
 	notifications: null,
+	className: '',
 }
 
 function mapStateToProps(state) {
