@@ -32,18 +32,21 @@
 
 	.modal {
 		margin-left: -260px;
-		padding: 0px 15px 25px 15px;
-		top: 53px;
+		top: 57px;
+
+		@media @small-only {
+			width: 100%;
+		}
 	}
 
 	.audio-popup-modal {
 		background-color: white;
+		width: 350px;
+
 		@media @small-only {
-			width: 320px;
+			width: 100%;
 		}
-		@media @medium-up {
-			width: 350px;
-		}
+
 		border-radius: @default-radius @default-radius 0px 0px;
 		border: @thin-grey-border;
 
