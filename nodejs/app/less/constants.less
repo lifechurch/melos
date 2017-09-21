@@ -72,7 +72,10 @@
   -moz-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
   -webkit-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
 }
-
+.space-between {
+	display: inline-flex;
+	justify-content: space-between;
+}
 // scroll bar styling for safari, chrome
 .yv-scroll-bar {
 	::-webkit-scrollbar {
@@ -101,6 +104,9 @@
 .yv-green-link {
 	color: @green;
 	cursor: pointer;
+}
+.yv-green-link:hover {
+	color: darkgreen;
 }
 .yv-gray-link {
 	color: @font-grey;

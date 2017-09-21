@@ -1,6 +1,14 @@
-- @sidebar = true
+!= html
 
-%article.notifications
-  %h1
-    = t('notifications.title')
-  = render partial: "notifications/list", locals: {notifications: @notifications}
+- content_for :lower_javascript do
+  %script{type:'text/javascript'}
+    !='window.YV_API_HOST = "' + ENV['SECURE_HOSTNAME'] + '"'
+    = if Cfg.nodejs_api_port.present?
+      != 'window.YV_API_PORT = "' + Cfg.nodejs_api_port + '"'
+
+  - js.each do |s|
+    = javascript_include_tag s['src']
+
+- content_for :stylesheets do
+  - css.each do |s|
+    = stylesheet_link_tag s['src']

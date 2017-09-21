@@ -21,7 +21,7 @@ import Notifications from '../../../components/icons/Notifications'
 import Settings from '../../../components/icons/Settings'
 import Avatar from '../../../components/Avatar'
 import ProfileMenu from './ProfileMenu'
-import NotificationsInbox from './NotificationsInbox'
+import NotificationsInbox from '../../Notifications/components/NotificationsInbox'
 import Search from '../../../components/Search'
 import StickyHeader from '../../../components/StickyHeader'
 import { ScreenSize } from '../../../lib/responsiveConstants'
@@ -98,12 +98,14 @@ class HeaderContent extends Component {
 		window.location = localizedLink(`/search/${searchTarget}?q=${encodeURIComponent(searchQuery)}`, serverLanguageTag)
 	}
 
-	handleOpenNotifications = () => {
+	handleNotificationsClick = () => {
 		const { dispatch } = this.props
 		this.setState((state) => {
-			return { notificationsOpen: !state.profileMenuOpen }
+			if (!state.notificationsOpen) {
+				dispatch(notificationsAction({ method: 'update', auth: true }))
+			}
+			return { notificationsOpen: !state.notificationsOpen }
 		})
-		dispatch(notificationsAction({ method: 'update', auth: true }))
 	}
 
 	render() {
@@ -172,7 +174,7 @@ class HeaderContent extends Component {
 
 		const userNotificationGroup = isLoggedIn ? (
 			<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
-				<IconButton to={null} useClientRouting={false} onClick={this.handleOpenNotifications}>
+				<IconButton to={null} className='notification-button' useClientRouting={false} onClick={this.handleNotificationsClick}>
 					<NoticeIcon showNotice={hasNotifications}>
 						<Notifications />
 					</NoticeIcon>
@@ -217,11 +219,12 @@ class HeaderContent extends Component {
 					<DropdownTransition
 						show={notificationsOpen}
 						hideDir="up"
-						transition={true}
+						transition={false}
 						onOutsideClick={() => { this.setState({ notificationsOpen: false }) }}
 						containerClasses="yv-profile-menu-container"
+						exemptClass="notification-button"
 					>
-						<NotificationsInbox previewNum={10} />
+						<NotificationsInbox previewNum={4} />
 					</DropdownTransition>
 				}
 				{
