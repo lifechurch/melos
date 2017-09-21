@@ -53,20 +53,15 @@ class FooterContent extends Component {
 
 		const showLinks = (screenWidth >= 865)
 
-		const langToggleStyle = {}
-		if (screenWidth < 930) {
-			langToggleStyle.fontSize = 8
-		}
-
 		const langToggle = (
-			<a style={langToggleStyle} tabIndex={0} className="yv-lang-toggle" target="_self" onClick={handleLangClick}>
+			<a tabIndex={0} className="yv-lang-toggle" target="_self" onClick={handleLangClick}>
 				{locale.nativeName}
 				<DropDownArrow fill="#DDDDDD" height={10} dir={langSelectorOpen ? 'up' : 'down' } />
 			</a>
 		)
 
 		const linksToggle = (
-			<a style={langToggleStyle} tabIndex={0} className="yv-link-toggle" target="_self" onClick={handleLinksClick}>
+			<a tabIndex={0} className="yv-link-toggle" target="_self" onClick={handleLinksClick}>
 				<FormattedMessage id="Reader.header.more label" />
 				<DropDownArrow fill="#DDDDDD" height={10} dir={linksOpen ? 'up' : 'down' } />
 			</a>
