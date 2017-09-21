@@ -1461,6 +1461,7 @@ ro:
             press: "Presă"
             privacy: "Politică de confidențialitate"
             terms: "Termeni și condiții"
+            volunteer: "Voluntar"
         unsubscribe: 
             about: "Ai control asupra email-urilor pe care le primești de la YouVersion Poți edita notificările pe dispozitivele mobile din aplicația mobilă."
             email: "e-mail"
@@ -2020,7 +2021,7 @@ ro:
                 audio window: "Deschide în fereastră nouă"
                 font label: "SETĂRI CITITOR"
                 notifications label: "NOTIFICĂRI"
-                more label: "MAI MULT"
+                more label: "Mai mult"
                 search input: "Referință sau cuvânt cheie"
                 home: "Acasă"
                 bible: "Biblia"

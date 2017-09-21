@@ -1446,6 +1446,7 @@ ca:
             press: "Premsa"
             privacy: "Política de privadesa"
             terms: "Condicions d'ús"
+            volunteer: "Voluntaris"
         unsubscribe: 
             about: "Controlar el que els missatges que rep dels YouVersion. Podeu editar les notificacions de mòbils de l'aplicació mòbil."
             email: "Correu electrònic"
@@ -2001,7 +2002,7 @@ ca:
                 audio window: "Obre en una nova finestra"
                 font label: "CONFIGURACIÓ DEL LECTOR"
                 notifications label: "AVISOS"
-                more label: "MÉS"
+                more label: "Més"
                 search input: "Referència o paraula clau…"
                 home: "Inici"
                 bible: "La Bíblia"

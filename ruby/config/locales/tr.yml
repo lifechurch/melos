@@ -1446,6 +1446,7 @@ tr:
             press: "Basın"
             privacy: "Gizlilik Politikası"
             terms: "Koşullar"
+            volunteer: "Gönüllü Ol"
         unsubscribe: 
             about: "YouVersion'dan hangi e-postaları aldığını kontrol et. Mobil uygulamasından mobil bildirimlerini düzenleyebilirsin."
             email: "e-Posta"
@@ -2001,7 +2002,7 @@ tr:
                 audio window: "Yeni pencerede aç"
                 font label: "Okuyucu Ayarları"
                 notifications label: "Bildirimler"
-                more label: "DAHA FAZLA"
+                more label: "Daha fazla"
                 search input: "Referans ya da Parola..."
                 home: "Ana Sayfa"
                 bible: "Kutsal Kitap"

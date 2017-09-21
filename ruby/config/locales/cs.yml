@@ -1461,6 +1461,7 @@ cs:
             press: "Noviny"
             privacy: "Ochrana soukromí"
             terms: "Podmínky"
+            volunteer: "Dobrovolníci"
         unsubscribe: 
             about: "Nastavení emailových oznámení z YouVersion. Můžete si změnit nastavení oznámení z mobilní aplikace."
             email: "E-mail"
@@ -2020,7 +2021,7 @@ cs:
                 audio window: "Otevřít v novém okně"
                 font label: "NASTAVENÍ ČTENÍ"
                 notifications label: "OZNÁMENÍ"
-                more label: "VÍCE"
+                more label: "Více"
                 search input: "Odkaz nebo klíčové slovo..."
                 home: "Úvodní obrazovka"
                 bible: "Bible"

@@ -1446,6 +1446,7 @@ af:
             press: "Media"
             privacy: "Privaatheidsbeleid"
             terms: "Voorwaardes"
+            volunteer: "Vrywilliger"
         unsubscribe: 
             about: "Besluit watter e-pos jy van YouVersion wil ontvang. Jy kan jou mobiele kennisgewings van jou mobiele toep verander."
             email: "E-pos"
@@ -2001,7 +2002,7 @@ af:
                 audio window: "Maak 'n nuwe blad oop"
                 font label: "LESER VERSTELLINGS"
                 notifications label: "KENNISGEWINGS"
-                more label: "MEER"
+                more label: "Meer"
                 search input: "Verwysing of Sleutelwoord..."
                 home: "Tuisblad"
                 bible: "Bybel"

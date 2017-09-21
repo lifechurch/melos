@@ -1446,6 +1446,7 @@ hu:
             press: "Sajtó"
             privacy: "Adatvédelmi irányelvek"
             terms: "ÁSZF"
+            volunteer: "Önkéntesség"
         unsubscribe: 
             about: "Állítsd be, milyen e-maileket szeretnél a YouVersion-től fogadni. Szerkesztheted az alkalmazásból küldött mobil értesítéseket."
             email: "E-mail"
@@ -2081,12 +2082,12 @@ hu:
         invited: "Invited"
         pending: "Pending"
         x pending: 
-            one: "%{number} Pending"
-            other: "%{number} Pending"
+            one: "%{number} db Függőben lévő"
+            other: "%{number} db Függőben lévő"
         accepted: "Accepted"
         x accepted: 
-            one: "%{number} Accepted"
-            other: "%{number} Accepted"
+            one: "%{number} db Elfogadva"
+            other: "%{number} db Elfogadva"
         invitation: "Invitation"
         accept invitation: "Accept Invitation"
         what is this: "What is this?"
@@ -2100,7 +2101,7 @@ hu:
         join together: "%{host} wants to read this Plan with you."
         talk it over: "Talk It Over"
         participants: "Participants"
-        host: "Host"
+        host: "Szervező"
         x participants: 
             one: "%{number} Participant"
             other: "%{number} Participants"
