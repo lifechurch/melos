@@ -23,6 +23,7 @@ class NotificationsView extends Component {
 	render() {
 		return (
 			<div>
+				HELLLOOOOOO
 				<NotificationsList />
 			</div>
 		)

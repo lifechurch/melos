@@ -92,6 +92,7 @@ NotificationsList.defaultProps = {
 }
 
 function mapStateToProps(state) {
+	console.log(state)
 	return {
 		serverLanguageTag: state.serverLanguageTag,
 		notifications: getNotifications(state),

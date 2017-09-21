@@ -34,7 +34,7 @@ class NotificationsController < ApplicationController
 		@title_tag = fromNode['head']['title']
 		@node_meta_tags = fromNode['head']['meta']
 
-		render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+		render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }, layout: 'node_app'
   end
 
   def edit
