@@ -76,7 +76,7 @@ export default function (
 			<Route path="(:lang/)recommended-plans-collection" component={PlansView}>
 				<Route path=":id(-:slug)" component={PlanCollectionView} onEnter={requireRecommendedPlanData} />
 			</Route>
-			<Route path="(:lang/)users/:username" component={PlansView}>
+			<Route path="(:lang/)users/:username" component={PlansView} isMyPlans={true}>
 				<Route path="saved-reading-plans" component={MySavedPlans} onEnter={requireSavedPlans} />
 				<Route path="completed-reading-plans" component={MyCompletedPlans} onEnter={requireCompletedPlans} />
 				<Route path="reading-plans" component={MySubscribedPlans} onEnter={requireSubscribedPlans} />
