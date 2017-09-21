@@ -71,6 +71,7 @@ class CreatePWFView extends Component {
 					start_dt: moment(selectedDay).utc().format(),
 					plan_id,
 					together: true,
+					privacy: 'private',
 					language_tag: serverLanguageTag,
 				},
 				auth: auth.isLoggedIn,
