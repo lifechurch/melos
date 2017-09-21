@@ -94,7 +94,7 @@ module YV
           opts.delete('cache_for')
           opts.delete('url')
 
-          key = [feature, params['url'], opts.sort_by{|k,v| k.to_s}].flatten.join("_")
+          key = [I18n.locale, feature, params['url'], opts.sort_by{|k,v| k.to_s}].flatten.join("_")
           return data_from_cache_or_api(key, curb_get, can_cache, params)
           #return curb_get.call
         end
