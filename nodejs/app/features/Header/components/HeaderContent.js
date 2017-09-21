@@ -141,10 +141,11 @@ class HeaderContent extends Component {
 			/>
 		)
 
+		const homeLink = isLoggedIn ? '/moments' : '/'
 		const left = (
 			<div>
 				<IconButtonGroup iconHeight={24} iconSpacing={44} >
-					<IconButton label={<FormattedMessage id="header.home" />} useClientRouting={false} to={localizedLink('/', serverLanguageTag)}>
+					<IconButton label={<FormattedMessage id="header.home" />} useClientRouting={false} to={localizedLink(homeLink, serverLanguageTag)}>
 						<Home />
 					</IconButton>
 					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
