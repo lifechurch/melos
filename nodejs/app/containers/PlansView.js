@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
@@ -23,12 +23,7 @@ class PlansView extends Component {
 	}
 
 	render() {
-		const { children, auth } = this.props
-
-		let isMyPlans = false
-		try {
-			 isMyPlans = (['MySubscribedPlans', 'MyCompletedPlans', 'MySavedPlans'].indexOf(children.type.WrappedComponent.name) > -1)
-		} catch (e) {}
+		const { children, auth, route: { isMyPlans } } = this.props
 
 		const myPlansLink = auth.isLoggedIn && auth.userData && auth.userData.username ?
 			(<Link className='solid-button green' to={`/users/${auth.userData.username}/reading-plans`}><FormattedMessage id="plans.my_plans" /></Link>) :
@@ -38,14 +33,22 @@ class PlansView extends Component {
 			<div>
 				<div className='row horizontal-center discover-buttons'>
 					<ul className='button-group primary-toggle'>
-						<li className={isMyPlans ? 'inactive' : ''}><Link to='/reading-plans' className='solid-button green'><FormattedMessage id="plans.discover" /></Link></li>
 						<li className={isMyPlans ? '' : 'inactive' }>{ myPlansLink }</li>
+						<li className={isMyPlans ? 'inactive' : ''}><Link to='/reading-plans' className='solid-button green'><FormattedMessage id="plans.discover" /></Link></li>
 					</ul>
 				</div>
 				{children && React.cloneElement(children, { localizedLink: ::this.localizedLink, isRtl: ::this.isRtl })}
 			</div>
 		)
 	}
+}
+
+PlansView.propTypes = {
+	params: PropTypes.object.isRequired,
+	auth: PropTypes.object.isRequired,
+	route: PropTypes.object.isRequired,
+	children: PropTypes.node.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
 }
 
 function mapStateToProps(state) {
