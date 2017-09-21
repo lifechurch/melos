@@ -1,8 +1,12 @@
 .reader-settings {
 
 	.modal {
-			top: 53px;
+			top: 57px;
 			margin-left: -255px;
+
+			@media @small-only {
+				width: 100%;
+			}
 	}
 
 	.reader-settings-modal {
@@ -10,6 +14,10 @@
 		width: 310px;
 		border-radius: @default-radius @default-radius 0px 0px;
 		border: @thin-grey-border;
+
+		@media @small-only {
+			width: 100%;
+		}
 
 		.header {
 			width: 100%;
