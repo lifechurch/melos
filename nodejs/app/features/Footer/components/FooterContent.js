@@ -122,6 +122,7 @@ class FooterContent extends Component {
 					<li style={linkStyle}><a target="_self" href={localizedLink('/donate', serverLanguageTag)}><FormattedMessage id="footer.donate" /></a></li>
 				</ul>
 				<ul className="gray-links">
+					<li><a target="_self" href="https://www.youversion.com/volunteer"><FormattedMessage id="footer.volunteer" /></a></li>
 					<li><a target="_self" href={localizedLink('/about', serverLanguageTag)}><FormattedMessage id="footer.about" /></a></li>
 					<li><a target="_self" href="https://www.youversion.com/jobs"><FormattedMessage id="footer.jobs" /></a></li>
 					<li><a target="_self" href="http://blog.youversion.com"><FormattedMessage id="footer.blog" /></a></li>

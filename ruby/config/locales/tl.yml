@@ -1446,6 +1446,7 @@ tl:
             press: "Pahayagan"
             privacy: "Patakaran sa Privacy"
             terms: "Mga Pagtatakda"
+            volunteer: "Boluntaryo"
         unsubscribe: 
             about: "I-kontrol kung anong email ang matatanggap mula sa YouVersion. Puwede mong i-edit ang iyong mga abiso sa mobile app."
             email: "Email"
@@ -2001,7 +2002,7 @@ tl:
                 audio window: "Buksan sa bagong window"
                 font label: "ANG IYONG MGA SETTING"
                 notifications label: "MGA ABISO"
-                more label: "KARAGDAGAN"
+                more label: "Karagdagan"
                 search input: "Mga Sanggunian o Keyword..."
                 home: "Home"
                 bible: "Biblia"

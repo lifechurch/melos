@@ -1446,6 +1446,7 @@ es-ES:
             press: "Pulsar"
             privacy: "Políticas de privacidad"
             terms: "Términos"
+            volunteer: "Voluntario"
         unsubscribe: 
             about: "Controla los mensajes de correo electrónico que recibes de YouVersion. Puedes editar tus notificaciones para móviles desde tu aplicación para dispositivos móviles."
             email: "Correo electrónico"
@@ -2001,7 +2002,7 @@ es-ES:
                 audio window: "Abrir en nueva ventana"
                 font label: "CONFIGURACIÓN DEL LECTOR"
                 notifications label: "NOTIFICACIONES"
-                more label: "MÁS"
+                more label: "Más"
                 search input: "Referencia o palabra clave..."
                 home: "Inicio"
                 bible: "Biblia"

@@ -1446,6 +1446,7 @@ bn:
             press: "Press"
             privacy: "গোপনীয়তার নীতিমালা"
             terms: "Terms"
+            volunteer: "Volunteer"
         unsubscribe: 
             about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
             email: "Email"
@@ -2001,7 +2002,7 @@ bn:
                 audio window: "Open in new window"
                 font label: "READER SETTINGS"
                 notifications label: "NOTIFICATIONS"
-                more label: "MORE"
+                more label: "More"
                 search input: "Reference or Keyword..."
                 home: "Home"
                 bible: "Bible"
