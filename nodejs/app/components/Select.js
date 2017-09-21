@@ -8,13 +8,17 @@ class Select extends Component {
 	constructor(props) {
 		super(props)
 		const { list } = props
-		let selectedVal
+		let selectedVal, selectedKey
 		if (Array.isArray(list)) {
+			selectedKey = null
 			selectedVal = list[0]
 		} else if (typeof list === 'object') {
-			selectedVal = list[Object.keys(list)[0]]
+			selectedKey = Object.keys(list)[0]
+			selectedVal = list[selectedKey]
 		}
+
 		this.state = {
+			selectedKey,
 			selectedValue: props.initialValue || selectedVal,
 			dropdown: false,
 		}
@@ -31,15 +35,17 @@ class Select extends Component {
 		}
 	}
 
-	selectOption(value) {
+	selectOption(selectEvent) {
 		const { onChange } = this.props
+		const { key, value } = selectEvent
 		this.setState({
+			selectedKey: key,
 			selectedValue: value,
 			dropdown: false,
 		})
 
 		if (typeof onChange === 'function') {
-			onChange(value)
+			onChange({ key, value })
 		}
 	}
 
@@ -56,11 +62,11 @@ class Select extends Component {
 		if (list) {
 			if (typeof list === 'object') {
 				Object.keys(list).forEach((key) => {
-					const val = list[key]
+					const value = list[key]
 					// leave the selected value out of the list
-					if (selectedValue !== val) {
+					if (selectedValue !== value) {
 						optionList.push(
-							<li key={val} onClick={this.selectOption.bind(this, val)}>{val}</li>
+							<li key={key} onClick={this.selectOption.bind(this, { key, value })}>{value}</li>
 						)
 					}
 				})
