@@ -7,7 +7,11 @@ function Avatar(props) {
 	const placeholder = (
 		<div
 			className='avatar avatar-placeholder content-gray vertical-center horizontal-center'
-			style={{ width, height: width || height }}
+			style={{
+				width,
+				height: width || height,
+				fontSize: `${width / 2.4}px`
+			}}
 		>
 			{ placeholderText }
 		</div>

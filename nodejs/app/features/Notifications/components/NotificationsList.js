@@ -8,22 +8,11 @@ import User from '../../../components/User'
 import { selectImageFromList } from '../../../lib/imageUtil'
 
 class NotificationsList extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-
-		}
-	}
-
 	componentDidMount() {
 		const { dispatch, notifications } = this.props
 		if (!notifications) {
 			dispatch(notificationsAction({ method: 'items', auth: true }))
 		}
-	}
-
-	componentDidUpdate(prevProps, prevState) {
-
 	}
 
 	render() {
@@ -32,35 +21,49 @@ class NotificationsList extends Component {
 		const notificationsItems = notifications
 			&& notifications.items
 			&& notifications.items.length > 0
-			&& notifications.items
+			? notifications.items
+			: null
+
 		return (
 			<div className={`notifications-list ${className}`}>
 				{
 					notificationsItems
 						&& notificationsItems.map((item, i) => {
-							if (previewNum && ((i + 1) > previewNum)) return null
+							if (
+								(previewNum && ((i + 1) > previewNum))
+								|| !(item && item.base)
+							) {
+								return null
+							} else {
+								const time = moment(item.created_dt).fromNow()
+								const notification = item.base
+								const avatar = notification
+								&& notification.images
+								&& notification.images.avatar
+								const avatarUrl = selectImageFromList({
+									images: avatar && avatar.renditions,
+									width: avatarWidth,
+									height: avatarWidth,
+								}).url
 
-							const time = moment(item.created_dt).fromNow()
-							const notification = item.base
-							const avatarUrl = selectImageFromList({
-								images: notification
-									&& notification.images
-									&& notification.images.avatar
-									&& notification.images.avatar.renditions,
-								width: avatarWidth,
-								height: avatarWidth,
-							}).url
-							return (
-								<div key={item.created_dt} className='notification'>
-									<User
-										src={avatarUrl}
-										heading={notification.title && notification.title.l_str}
-										subheading={time}
-										link={notification.action_url}
-										width={avatarWidth}
-									/>
-								</div>
-							)
+								return (
+									<a
+										tabIndex={0}
+										key={item.created_dt}
+										className='notification'
+										href={notification.action_url}
+										style={{ display: 'block' }}
+									>
+										<User
+											src={avatarUrl}
+											heading={notification.title && notification.title.l_str}
+											subheading={time}
+											width={avatarWidth}
+											avatarLetter={avatar && avatar.accessibility && avatar.accessibility[0]}
+										/>
+									</a>
+								)
+							}
 						})
 				}
 				{
@@ -70,6 +73,7 @@ class NotificationsList extends Component {
 						&& (
 							<a
 								tabIndex={0}
+								target='_self'
 								href='/notifications'
 								className='yv-green-link text-center'
 								style={{ padding: '5px', display: 'block', fontSize: '15px' }}
@@ -88,6 +92,7 @@ NotificationsList.propTypes = {
 	previewNum: PropTypes.number,
 	notifications: PropTypes.object,
 	className: PropTypes.string,
+	dispatch: PropTypes.func.isRequired,
 }
 
 NotificationsList.defaultProps = {
@@ -98,7 +103,6 @@ NotificationsList.defaultProps = {
 }
 
 function mapStateToProps(state) {
-	console.log(state)
 	return {
 		serverLanguageTag: state.serverLanguageTag,
 		notifications: getNotifications(state),

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import rtlDetect from 'rtl-detect'
 import { FormattedMessage } from 'react-intl'
+import Settings from '../components/icons/Settings'
+import IconButton from '../components/IconButton'
 import SectionedHeading from '../components/SectionedHeading'
 import NotificationsList from '../features/Notifications/components/NotificationsList'
 
@@ -26,12 +28,28 @@ class NotificationsView extends Component {
 		return (
 			<div>
 				<div className='large-5 small-11 centered'>
-					<SectionedHeading>
-						<h1><FormattedMessage id='notifications' /></h1>
+					<SectionedHeading
+						style={{ height: '60px', padding: '15px' }}
+						right={
+							<IconButton
+								to='/notifications/edit'
+								useClientRouting={false}
+								iconHeight={25}
+							>
+								<Settings />
+							</IconButton>
+						}
+					>
+						<h1 style={{ fontWeight: 'normal' }}>
+							<FormattedMessage id='notifications' />
+						</h1>
 					</SectionedHeading>
 				</div>
-				<div className='gray-background'>
-					<NotificationsList className='large-5 small-11 centered' />
+				<div className='gray-background' style={{ padding: '50px 0', minHeight: '400px' }}>
+					<NotificationsList
+						className='large-5 small-11 centered'
+						avatarWidth={38}
+					/>
 				</div>
 			</div>
 		)
