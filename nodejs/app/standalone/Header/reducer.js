@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import notifications from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import friendships from '@youversion/api-redux/lib/endpoints/friendships/reducer'
+import localization from '@youversion/api-redux/lib/endpoints/localization'
 import users from '@youversion/api-redux/lib/endpoints/users/reducer'
 
 const emptyReducer = (state = {}) => { return state }
@@ -24,6 +25,8 @@ const rootReducer = combineReducers({
 	hosts: emptyReducer,
 	passage: emptyReducer,
 	locale: emptyReducer,
+	hello: (state) => { return 'hello' },
+	localization: combineReducers(localization.reducers),
 	api: combineReducers({
 		notifications,
 		friendships,

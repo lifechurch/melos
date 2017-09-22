@@ -39,7 +39,7 @@ class HeaderContent extends Component {
 	}
 
 	componentDidMount() {
-		const { dispatch, loggedInUser } = this.props
+		const { dispatch, loggedInUser, serverLanguageTag } = this.props
 
 		if (typeof loggedInUser === 'object' && 'userid' in loggedInUser) {
 			const userId = loggedInUser.userid

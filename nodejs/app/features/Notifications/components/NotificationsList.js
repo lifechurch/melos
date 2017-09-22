@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, addLocaleData } from 'react-intl'
+import localizationApi, { getLocalization } from '@youversion/api-redux/lib/endpoints/localization'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import User from '../../../components/User'
@@ -9,14 +10,20 @@ import { selectImageFromList } from '../../../lib/imageUtil'
 
 class NotificationsList extends Component {
 	componentDidMount() {
-		const { dispatch, notifications } = this.props
+		const { dispatch, notifications, serverLanguageTag } = this.props
 		if (!notifications) {
 			dispatch(notificationsAction({ method: 'items', auth: true }))
+			dispatch(localizationApi.actions.items.get({ language_tag: serverLanguageTag }))
+				.then((data) => {
+					if (data && data.data) {
+						addLocaleData([{ [serverLanguageTag]: data.data }])
+					}
+				})
 		}
 	}
 
 	render() {
-		const { notifications, previewNum, avatarWidth, className } = this.props
+		const { notifications, localization, previewNum, avatarWidth, className, serverLanguageTag } = this.props
 
 		const notificationsItems = notifications
 			&& notifications.items
@@ -45,7 +52,12 @@ class NotificationsList extends Component {
 									width: avatarWidth,
 									height: avatarWidth,
 								}).url
-
+								const stringId = notification
+									&& notification.title
+									&& notification.title.l_str
+								const string = stringId
+									&& localization[stringId]
+								console.log(string, string && notification.title.l_args)
 								return (
 									<a
 										tabIndex={0}
@@ -56,7 +68,15 @@ class NotificationsList extends Component {
 									>
 										<User
 											src={avatarUrl}
-											heading={notification.title && notification.title.l_str}
+											heading={
+												string
+												&& (
+													<FormattedMessage
+														id={`${serverLanguageTag}.${stringId}`}
+														values={notification.title && notification.title.l_args}
+													/>
+												)
+											}
 											subheading={time}
 											width={avatarWidth}
 											avatarLetter={avatar && avatar.accessibility && avatar.accessibility[0]}
@@ -106,6 +126,7 @@ function mapStateToProps(state) {
 	return {
 		serverLanguageTag: state.serverLanguageTag,
 		notifications: getNotifications(state),
+		localization: getLocalization(state),
 	}
 }
 

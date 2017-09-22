@@ -55,6 +55,7 @@
     "moment-timezone": "^0.5.4",
     "morgan": "~1.6.1",
     "newrelic": "^1.40.0",
+    "po2json": "^0.4.5",
     "quill": "^0.20.1",
     "raven": "^1.2.0",
     "react": "^15.6.1",
