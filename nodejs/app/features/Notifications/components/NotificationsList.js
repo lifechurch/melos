@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { FormattedMessage, addLocaleData } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import localizationApi, { getLocalization } from '@youversion/api-redux/lib/endpoints/localization'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import User from '../../../components/User'
 import { selectImageFromList } from '../../../lib/imageUtil'
+import generateTemplateString from '../../../lib/generateTemplateString'
 
 class NotificationsList extends Component {
 	componentDidMount() {
@@ -14,11 +15,6 @@ class NotificationsList extends Component {
 		if (!notifications) {
 			dispatch(notificationsAction({ method: 'items', auth: true }))
 			dispatch(localizationApi.actions.items.get({ language_tag: serverLanguageTag }))
-				.then((data) => {
-					if (data && data.data) {
-						addLocaleData([{ [serverLanguageTag]: data.data }])
-					}
-				})
 		}
 	}
 
@@ -56,8 +52,8 @@ class NotificationsList extends Component {
 									&& notification.title
 									&& notification.title.l_str
 								const string = stringId
-									&& localization[stringId]
-								console.log(string, string && notification.title.l_args)
+									&& generateTemplateString(localization[stringId])
+
 								return (
 									<a
 										tabIndex={0}
@@ -70,12 +66,7 @@ class NotificationsList extends Component {
 											src={avatarUrl}
 											heading={
 												string
-												&& (
-													<FormattedMessage
-														id={`${serverLanguageTag}.${stringId}`}
-														values={notification.title && notification.title.l_args}
-													/>
-												)
+													&& string(notification.title && notification.title.l_args)
 											}
 											subheading={time}
 											width={avatarWidth}
