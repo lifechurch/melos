@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import rtlDetect from 'rtl-detect'
 import { FormattedMessage } from 'react-intl'
 import Settings from '../components/icons/Settings'
@@ -57,6 +57,11 @@ class NotificationsView extends Component {
 			</div>
 		)
 	}
+}
+
+NotificationsView.propTypes = {
+	params: PropTypes.object.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
 }
 
 export default NotificationsView

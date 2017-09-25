@@ -1,31 +1,26 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { FormattedMessage, defineMessages } from 'react-intl'
-import localizationApi, { getLocalization } from '@youversion/api-redux/lib/endpoints/localization'
+import { FormattedMessage } from 'react-intl'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import User from '../../../components/User'
 import { selectImageFromList } from '../../../lib/imageUtil'
-import generateTemplateString from '../../../lib/generateTemplateString'
 
 class NotificationsList extends Component {
 	componentDidMount() {
-		const { dispatch, notifications, serverLanguageTag } = this.props
+		const { dispatch, notifications } = this.props
 		if (!notifications) {
 			dispatch(notificationsAction({ method: 'items', auth: true }))
-			dispatch(localizationApi.actions.items.get({ language_tag: serverLanguageTag }))
 		}
 	}
 
 	render() {
 		const {
 			notifications,
-			localization,
 			previewNum,
 			avatarWidth,
 			className,
-			serverLanguageTag
 		} = this.props
 
 		const notificationsItems = notifications
@@ -58,8 +53,6 @@ class NotificationsList extends Component {
 								const stringId = notification
 									&& notification.title
 									&& notification.title.l_str
-								const string = stringId
-									&& generateTemplateString(localization[stringId])
 
 								return (
 									<a
@@ -71,10 +64,12 @@ class NotificationsList extends Component {
 									>
 										<User
 											src={avatarUrl}
-											heading={string && string(
-													notification.title
-													&& notification.title.l_args
-												)
+											heading={
+												stringId &&
+												<FormattedMessage
+													id={stringId}
+													values={notification.title && notification.title.l_args}
+												/>
 											}
 											subheading={time}
 											width={avatarWidth}
@@ -125,7 +120,6 @@ function mapStateToProps(state) {
 	return {
 		serverLanguageTag: state.serverLanguageTag,
 		notifications: getNotifications(state),
-		localization: getLocalization(state),
 	}
 }
 

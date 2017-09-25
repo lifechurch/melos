@@ -30,10 +30,18 @@ export function configuration(params = {}) {
 	return localizationClientCall('configuration', params)
 }
 
-export function items(params = {}) {
+/**
+ * localization.items get
+ * @param  {Object} [params={}] [{ language_tag }]
+ * @return {[type]}             [description]
+ */
+export function items(params = { language_tag: 'en' }) {
 	return localizationClientCall('items', params)
 }
 
+export function poToJson(data) {
+	return po2json.parse(data, { format: 'mf' })
+}
 
 router.get('/configuration', jsonParser, (req, res) => {
 	configuration().then((config) => {
@@ -46,8 +54,7 @@ router.get('/configuration', jsonParser, (req, res) => {
 router.get('/items', jsonParser, (req, res) => {
 	items(req.query).then((config) => {
 		// convert po to json
-		const strings = po2json.parse(config, { format: 'mf' })
-		res.send(strings)
+		res.send(poToJson(config))
 	}, (err) => {
 		res.send(err)
 	})
