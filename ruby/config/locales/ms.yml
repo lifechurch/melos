@@ -1431,6 +1431,7 @@ ms:
             press: "Media"
             privacy: "Polisi Privasi"
             terms: "Terma"
+            volunteer: "Jadi Sukarelawan"
         unsubscribe: 
             about: "Tentukan jenis emel yang anda terima daripada YouVersion. Anda boleh mengedit notifikasi mudah alih daripada app mudah alih anda."
             email: "E-mel"
@@ -1982,7 +1983,7 @@ ms:
                 audio window: "Buka di tetingkap baru"
                 font label: "SETING PEMBACA"
                 notifications label: "NOTIFIKASI"
-                more label: "LEBIH"
+                more label: "Lebih"
                 search input: "Rujukan atau Kata Kunci..."
                 home: "Halaman Utama"
                 bible: "Translation of this string is not necessary, as it is not yet supported in Apple's iTunes store."

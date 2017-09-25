@@ -1446,6 +1446,7 @@ da:
             press: "Presse område"
             privacy: "Privatlivs politik"
             terms: "Betingelser"
+            volunteer: "Frivillig"
         unsubscribe: 
             about: "Kontroller hvilke emails du modtager fra YouVersion. Du kan redigere dine notifikationer på mobilen, fra din mobil app."
             email: "Email"
@@ -2001,7 +2002,7 @@ da:
                 audio window: "Åben i nyt vindue"
                 font label: "LÆSE INDSTILLINGER"
                 notifications label: "NOTIFIKATIONER"
-                more label: "MERE"
+                more label: "Mere"
                 search input: "Reference eller Nøgleord..."
                 home: "Hjem"
                 bible: "Bibel"

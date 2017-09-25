@@ -1431,6 +1431,7 @@ zh-HK:
             press: "新聞室"
             privacy: "私隱政策"
             terms: "條款"
+            volunteer: "Volunteer"
         unsubscribe: 
             about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
             email: "Email"
@@ -1982,7 +1983,7 @@ zh-HK:
                 audio window: "Open in new window"
                 font label: "READER SETTINGS"
                 notifications label: "NOTIFICATIONS"
-                more label: "MORE"
+                more label: "More"
                 search input: "Reference or Keyword..."
                 home: "Home"
                 bible: "Bible"

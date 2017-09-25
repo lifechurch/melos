@@ -1446,6 +1446,7 @@ sv:
             press: "Press"
             privacy: "Integritetspolicy"
             terms: "Villkor"
+            volunteer: "Volontär"
         unsubscribe: 
             about: "Bestäm vad för e-post du får från YouVersion. Du kan ändra dina mobil-notifikationer från din mobilapp."
             email: "E-post"
@@ -2001,7 +2002,7 @@ sv:
                 audio window: "Öppna i nytt fönster"
                 font label: "LÄSARINSTÄLLNINGAR"
                 notifications label: "MEDDELANDEN"
-                more label: "MER"
+                more label: "Mer"
                 search input: "Bibelord eller Nyckelord..."
                 home: "Hem"
                 bible: "Bibeln"
