@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, defineMessages } from 'react-intl'
 import localizationApi, { getLocalization } from '@youversion/api-redux/lib/endpoints/localization'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
@@ -19,7 +19,14 @@ class NotificationsList extends Component {
 	}
 
 	render() {
-		const { notifications, localization, previewNum, avatarWidth, className, serverLanguageTag } = this.props
+		const {
+			notifications,
+			localization,
+			previewNum,
+			avatarWidth,
+			className,
+			serverLanguageTag
+		} = this.props
 
 		const notificationsItems = notifications
 			&& notifications.items
@@ -41,8 +48,8 @@ class NotificationsList extends Component {
 								const time = moment(item.created_dt).fromNow()
 								const notification = item.base
 								const avatar = notification
-								&& notification.images
-								&& notification.images.avatar
+									&& notification.images
+									&& notification.images.avatar
 								const avatarUrl = selectImageFromList({
 									images: avatar && avatar.renditions,
 									width: avatarWidth,
@@ -64,9 +71,10 @@ class NotificationsList extends Component {
 									>
 										<User
 											src={avatarUrl}
-											heading={
-												string
-													&& string(notification.title && notification.title.l_args)
+											heading={string && string(
+													notification.title
+													&& notification.title.l_args
+												)
 											}
 											subheading={time}
 											width={avatarWidth}

@@ -45,7 +45,10 @@ class NotificationsView extends Component {
 						</h1>
 					</SectionedHeading>
 				</div>
-				<div className='gray-background' style={{ padding: '50px 0', minHeight: '400px' }}>
+				<div
+					className='gray-background'
+					style={{ padding: '50px 0', minHeight: '400px' }}
+				>
 					<NotificationsList
 						className='large-5 small-11 centered'
 						avatarWidth={38}
