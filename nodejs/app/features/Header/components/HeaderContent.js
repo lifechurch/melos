@@ -104,7 +104,13 @@ class HeaderContent extends Component {
 			if (!state.notificationsOpen) {
 				dispatch(notificationsAction({ method: 'update', auth: true }))
 			}
-			return { notificationsOpen: !state.notificationsOpen }
+			// close profile menu when notifications are opened on mobile
+			return {
+				notificationsOpen: !state.notificationsOpen,
+				profileMenuOpen: state.profileMenuOpen
+					? !state.profileMenuOpen
+					: state.profileMenuOpen
+			}
 		})
 	}
 
@@ -219,12 +225,12 @@ class HeaderContent extends Component {
 					<DropdownTransition
 						show={notificationsOpen}
 						hideDir="up"
-						transition={false}
+						transition={true}
 						onOutsideClick={() => { this.setState({ notificationsOpen: false }) }}
 						containerClasses="yv-profile-menu-container"
 						exemptClass="notification-button"
 					>
-						<NotificationsInbox previewNum={4} />
+						<NotificationsInbox />
 					</DropdownTransition>
 				}
 				{
