@@ -152,7 +152,8 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 						if (oauthIsValid(oauth)) {
 							resolve(buildAuth(authData, oauth))
 						} else {
-							reject(oauth)
+							resolve(authData)
+							// reject(oauth)
 						}
 					})
 				// hasn't expired yet, we can reuse the data from cookies after making
@@ -163,7 +164,8 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 						resolve(buildAuth(authData, oauthFromRails))
 					} else {
 						console.log('ERROR', oauthFromRails)
-						reject(oauthFromRails)
+						resolve(authData)
+						// reject(oauthFromRails)
 					}
 				}
 			// we have no oauth data from rails so we need a new token from scratch
@@ -174,7 +176,8 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 						resolve(buildAuth(authData, oauth))
 					} else {
 						console.log('ERROR', oauth)
-						reject(oauth)
+						resolve(authData)
+						// reject(oauth)
 					}
 				})
 			}
