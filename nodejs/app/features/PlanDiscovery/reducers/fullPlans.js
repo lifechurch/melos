@@ -2,7 +2,6 @@ import Immutable from 'immutable'
 
 import type from '../actions/constants'
 import bibleType from '../../Bible/actions/constants'
-import { dayHasDevo } from '../../../lib/readingPlanUtils'
 
 
 export default function reducer(state = {}, action) {
@@ -24,7 +23,11 @@ export default function reducer(state = {}, action) {
 				const calendar = action.response
 				// lets go through and mark all days with no content as completed like the apps do
 				const updatedCal = calendar.calendar.map((day) => {
-					if (day.references.length === 0 && !dayHasDevo(day.additional_content)) {
+					if (
+						day.references.length === 0
+						&& !((typeof day.additional_content.html !== 'undefined' && day.additional_content.html !== null) ||
+							(typeof day.additional_content.text !== 'undefined' && day.additional_content.text !== null))
+					) {
 						day.completed = true
 					}
 					return day

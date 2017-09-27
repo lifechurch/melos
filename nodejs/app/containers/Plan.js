@@ -64,13 +64,30 @@ class Plan extends Component {
 		const calcDay = !newDay
 			&& (!(plan && Immutable.fromJS(plan).getIn(['days', `${dayToCheck}`], false)))
 
-		if ((newDay || calcDay) && (this.currentDay || nextProps.params.day)) {
+		const dayToGet = parseInt(nextProps.params.day, 10) || this.currentDay
+		if ((newDay || calcDay) && dayToGet) {
 			if (plan && 'id' in plan) {
 				dispatch(plansAPI.actions.day.get({
 					id: plan.id,
-					day: parseInt(nextProps.params.day, 10) || this.currentDay,
+					day: dayToGet,
 					together: !!(subscription && subscription.together_id),
-				}, {}))
+				}, {})).then((data) => {
+					// if this day doesn't have any segments then we want to mark it as complete
+					if (
+						data
+						&& data[plan.id]
+						&& data[plan.id][dayToGet]
+						&& data[plan.id][dayToGet].segments
+						&& data[plan.id][dayToGet].segments.length < 1
+						&& !(this.dayProgress && this.dayProgress.complete)
+					) {
+						dispatch(subscriptionDayUpdate({
+							markDayComplete: true,
+							id: subscription.id,
+							day: dayToGet,
+						}))
+					}
+				})
 			}
 		}
 	}

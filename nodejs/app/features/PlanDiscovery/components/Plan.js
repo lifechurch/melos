@@ -87,53 +87,54 @@ function Plan({
 		plan_id = plan.id
 		totalDays = plan.total_days
 
-		refsDiv = (
-			<ul className='no-bullets plan-pieces'>
-				{
-					daySegments &&
-					daySegments.map((segment, i) => {
-						let title
-						let key = segment.kind
-						const link = Routes.subscriptionContent({
-							username: auth.userData.username,
-							plan_id: plan.id,
-							slug: plan.slug,
-							subscription_id,
-							day,
-							content: i,
+		refsDiv = daySegments && daySegments.length > 0
+			&& (
+				<ul className='no-bullets plan-pieces'>
+					{
+						daySegments &&
+						daySegments.map((segment, i) => {
+							let title
+							let key = segment.kind
+							const link = Routes.subscriptionContent({
+								username: auth.userData.username,
+								plan_id: plan.id,
+								slug: plan.slug,
+								subscription_id,
+								day,
+								content: i,
+							})
+							const complete = dayProgress &&
+								(dayProgress.complete ||
+								(dayProgress.partial && dayProgress.partial[i]))
+
+							if (segment.kind === 'devotional') {
+								title = <FormattedMessage id='plans.devotional' />
+							} else if (segment.kind === 'reference') {
+								const usfm = [segment.content]
+								title = getReferencesTitle({ bookList, usfmList: usfm }).title
+								key = usfm
+							} else if (segment.kind === 'talk-it-over') {
+								title = <FormattedMessage id='talk it over' />
+							}
+
+							return (
+								<PlanContentListItem
+									key={key}
+									title={title}
+									isComplete={complete}
+									handleIconClick={handleContentCheck
+										&& handleContentCheck.bind(this, {
+											contentIndex: i,
+											complete: !complete
+										})
+									}
+									link={link}
+								/>
+							)
 						})
-						const complete = dayProgress &&
-							(dayProgress.complete ||
-							(dayProgress.partial && dayProgress.partial[i]))
-
-						if (segment.kind === 'devotional') {
-							title = <FormattedMessage id='plans.devotional' />
-						} else if (segment.kind === 'reference') {
-							const usfm = [segment.content]
-							title = getReferencesTitle({ bookList, usfmList: usfm }).title
-							key = usfm
-						} else if (segment.kind === 'talk-it-over') {
-							title = <FormattedMessage id='talk it over' />
-						}
-
-						return (
-							<PlanContentListItem
-								key={key}
-								title={title}
-								isComplete={complete}
-								handleIconClick={handleContentCheck
-									&& handleContentCheck.bind(this, {
-										contentIndex: i,
-										complete: !complete
-									})
-								}
-								link={link}
-							/>
-						)
-					})
-				}
-			</ul>
-		)
+					}
+				</ul>
+			)
 	}
 
 

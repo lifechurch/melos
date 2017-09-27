@@ -19,6 +19,8 @@ class UnsubbedPlan extends Component {
 
 	render() {
 		const { plan, savedPlans, dispatch, children, version, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
+		console.log(plan)
+		if (!plan) return <div />
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const versionID = version ? version.id : '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
@@ -101,7 +103,7 @@ class UnsubbedPlan extends Component {
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>
-					{children.length > 0 && React.cloneElement(children, {
+					{children && children.length > 0 && React.cloneElement(children, {
 						id: plan.id,
 						plan,
 						dispatch,
