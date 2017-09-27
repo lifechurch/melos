@@ -132,7 +132,7 @@ self.addEventListener('fetch', (e) => {
 	return e.respondWith(
 		fetch(e.request).catch((err) => {
 			console.log('fetch failed: do offline stuff?', err)
-			return err
+			return new Response(err)
 		})
 	)
 })
