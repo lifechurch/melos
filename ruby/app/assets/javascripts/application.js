@@ -128,7 +128,7 @@ function inPathNotFirst(segment, path) {
 
 var firebaseMessaging = false
 function init() {
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside || isTIORedirect || isNotifications) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
@@ -214,6 +214,7 @@ var isResetPassword     = isFirst("resetPassword");
 var isReadingPlanSample = isFirst("reading-plans") && inPathNotFirst("day");
 var isReader 			= isFirst("bible");
 var isHomeFeed 			= isFirst("moments");
+var isTIORedirect				= isFirst("subscription");
 var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
 var isSignUp            = isFirst("sign-up");
@@ -221,6 +222,7 @@ var isSignIn            = isFirst("sign-in");
 var isPassage           = isFirst("passage");
 
 var isLookInside        = isFirst("lookinside");
+var isNotifications			= isFirst("notifications")
 
 var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
 var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");

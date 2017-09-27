@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import { push } from 'react-router-redux'
 // actions
@@ -71,11 +72,11 @@ class TalkItOverRedirect extends Component {
 				<h5 className='text-center' style={{ width: '100%' }}>
 					<FormattedMessage id='talk it over' style={{ width: '100%' }} />
 				</h5>
-				<a href={Routes.subscriptions({ username: this.username })}>
+				<Link to={Routes.subscriptions({ username: this.username })}>
 					<button className='chapter-button'>
 						<FormattedMessage id='plans.my plans' />
 					</button>
-				</a>
+				</Link>
 			</div>
 		)
 	}
