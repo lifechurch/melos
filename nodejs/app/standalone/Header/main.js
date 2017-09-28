@@ -4,10 +4,13 @@ import { Provider } from 'react-redux'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import createLogger from 'redux-logger'
 import ga from 'react-ga'
+import moment from 'moment'
 import Header from '../../features/Header/components/Header'
 import configureStore from './store'
 
 import defaultState from './defaultState'
+
+require('moment/min/locales')
 
 let initialState = defaultState
 
@@ -27,6 +30,7 @@ if (typeof window !== 'undefined') {
 const store = configureStore(initialState, null, logger)
 
 addLocaleData(window.__LOCALE__.data)
+moment.locale(window.__LOCALE__.locale)
 
 
 render(

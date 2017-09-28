@@ -5,11 +5,11 @@ function Inbox(props) {
 	const { heading, className, children } = props
 
 	return (
-		<div className={`inbox-wrapper ${className}`}>
-			<div className='inbox-heading'>
+		<div className={`yv-inbox-wrapper ${className}`}>
+			<div className='yv-inbox-header'>
 				{ heading }
 			</div>
-			<div className='inbox-content'>
+			<div className='yv-inbox-content'>
 				<Card>
 					{ children }
 				</Card>
