@@ -10,7 +10,7 @@ function NotificationsInbox(props) {
 
 	return (
 		<Inbox
-			className='notifications-inbox'
+			className='yv-notifications-inbox'
 			heading={
 				<div className='vertical-center space-between' style={{ width: '100%' }}>
 					<FormattedMessage id='notifications' />

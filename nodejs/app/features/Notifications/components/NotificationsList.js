@@ -29,15 +29,16 @@ class NotificationsList extends Component {
 			? notifications.items
 			: null
 
+		const list = previewNum
+			? (notificationsItems && notificationsItems.slice(0, previewNum))
+			: notificationsItems
+
 		return (
-			<div className={`notifications-list ${className}`}>
+			<div className={`yv-notifications-list ${className}`}>
 				{
-					notificationsItems
-						&& notificationsItems.map((item, i) => {
-							if (
-								(previewNum && ((i + 1) > previewNum))
-								|| !(item && item.base)
-							) {
+					false
+						? list.map((item) => {
+							if (!(item && item.base)) {
 								return null
 							} else {
 								const time = moment(item.created_dt).fromNow()
@@ -47,8 +48,8 @@ class NotificationsList extends Component {
 									&& notification.images.avatar
 								const avatarUrl = selectImageFromList({
 									images: avatar && avatar.renditions,
-									width: avatarWidth,
-									height: avatarWidth,
+									width: avatarWidth * 2,
+									height: avatarWidth * 2,
 								}).url
 								const stringId = notification
 									&& notification.title
@@ -58,7 +59,7 @@ class NotificationsList extends Component {
 									<a
 										tabIndex={0}
 										key={item.created_dt}
-										className='notification'
+										className='yv-notification'
 										href={notification.action_url}
 										style={{ display: 'block' }}
 									>
@@ -79,6 +80,11 @@ class NotificationsList extends Component {
 								)
 							}
 						})
+						: (
+							<div className='yv-notification'>
+								<FormattedMessage id='no notifications' />
+							</div>
+						)
 				}
 				{
 					previewNum
