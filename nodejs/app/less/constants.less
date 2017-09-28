@@ -72,7 +72,10 @@
   -moz-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
   -webkit-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
 }
-
+.space-between {
+	display: inline-flex;
+	justify-content: space-between;
+}
 // scroll bar styling for safari, chrome
 .yv-scroll-bar {
 	::-webkit-scrollbar {
@@ -88,7 +91,7 @@
 	  background: transparent;
 	}
 }
-
+.centered { margin: auto; }
 .yv-active {
 	background-color: @green;
 	color: white;
@@ -102,10 +105,18 @@
 	color: @green;
 	cursor: pointer;
 }
+.yv-green-link:hover {
+	color: darkgreen;
+}
 .yv-gray-link {
 	color: @font-grey;
 	cursor: pointer;
 }
+.content-gray {
+	border: 1px solid @font-grey;
+	color: @font-grey;
+}
+
 .yv-flex-center-all {
 	justify-content: center;
 	align-items: center;
@@ -115,6 +126,9 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+.gray-background {
+	background-color: @light-grey;
 }
 
 .picker-error {

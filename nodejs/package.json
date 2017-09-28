@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/api-redux": "^0.3.76",
+    "@youversion/api-redux": "^0.3.85",
     "@youversion/token-storage": "^0.0.36",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
@@ -55,6 +55,7 @@
     "moment-timezone": "^0.5.4",
     "morgan": "~1.6.1",
     "newrelic": "^1.40.0",
+    "po2json": "^0.4.5",
     "quill": "^0.20.1",
     "raven": "^1.2.0",
     "react": "^15.6.1",

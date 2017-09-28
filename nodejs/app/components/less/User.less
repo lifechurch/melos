@@ -1,0 +1,41 @@
+.yv-user-container {
+	display: inline-flex;
+
+	.content {
+		.vertical-center;
+		flex-wrap: wrap;
+		padding: 0 10px;
+	}
+	.heading {
+		width: 100%;
+		color: @dark_grey;
+	}
+	.subheading {
+		font-size: 10px;
+		color: @font-grey;
+		line-height: initial;
+	}
+}
+
+.friend-list {
+	.yv-user-container {
+		width: 100%;
+	}
+}
+
+.yv-avatar-container {
+	display: inline-flex;
+	align-items: center;
+
+	.yv-avatar {
+		border-radius: 100%;
+		.avatar-placeholder {
+			border-radius: 100%;
+			background: white;
+		}
+		img {
+			border-radius: 100%;
+		}
+	}
+	.yv-avatar.placeholder { background: white; }
+}
