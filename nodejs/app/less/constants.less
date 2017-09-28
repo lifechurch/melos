@@ -47,6 +47,7 @@
 // colors ********************************************************************
 @green: #6ab750;
 @red: #CC0000;
+@like-red: #DA1000;
 @blue: #0099CC;
 @light-grey: #F4F4F4;
 @color-muted: #979797;
@@ -56,25 +57,125 @@
 @error-grey: #444444;
 @brown: #824F2B;
 
+.green {
+	color: @green;
+}
+.red {
+	color: @red;
+}
+.blue {
+	color: @blue;
+}
+.font-grey {
+	color: @font-grey;
+}
+.dark-gray {
+	color: @dark_grey;
+}
+
+.font-grey:hover {
+	color: @dark_grey;
+}
 
 // font **********************************************************************
 @small-font-size: 0.85714rem;
 
+//  **************************************************************************
+@default-radius: 5px;
+@default-padding: 5px;
+@thin-grey-border: 1px solid @background-grey;
+@list-font-size: 15px;
 
 // mixins ********************************************************************
 
+// links ----------------------------------
+.yv-green-link {
+	color: @green;
+	cursor: pointer;
+}
+.yv-green-link:hover, .yv-green-link:active {
+	color: darkgreen;
+}
+.yv-gray-link {
+	color: @font-grey;
+	cursor: pointer;
+}
+.yv-gray-link:hover, .yv-green-link:active {
+	color: @dark_grey;
+}
+.disabled-link, .disabled-link:hover {
+	color: @color-muted;
+	cursor: not-allowed;
+}
+
+// flex ------------------------------------
+.yv-flex-center-all {
+	justify-content: center;
+	align-items: center;
+}
+.flex {
+	display: flex;
+	flex: 1;
+}
+.flex-end {
+	display: flex;
+	justify-content: flex-end;
+}
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.space-between {
+	display: flex;
+	justify-content: space-between;
+}
+.row-reverse {
+	display: inline-flex;
+	flex-direction: row-reverse;
+}
+
+// text -----------------------------------
 .small-font {
 	font-size: @small-font-size;
 }
+.content-white {
+	border: 1px solid white;
+	color: white;
+}
+.content-gray {
+	border: 1px solid @font-grey;
+	color: @font-grey;
+}
+.yv-text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.font-badge {
+	padding: 1px 5px;
+	border-radius: 3px;
+	background-color: @font-grey;
+	color: white;
+}
+
+
+
+
+
+
 
 .yv-drop-shadow {
   box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
   -moz-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
   -webkit-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
 }
-.space-between {
-	display: inline-flex;
-	justify-content: space-between;
+.yv-textarea {
+	margin: 0;
+	border: none;
+	resize: vertical;
+}
+.pointer:hover {
+	cursor: pointer;
 }
 // scroll bar styling for safari, chrome
 .yv-scroll-bar {
@@ -91,41 +192,40 @@
 	  background: transparent;
 	}
 }
-.centered { margin: auto; }
+
 .yv-active {
 	background-color: @green;
-	color: white;
+	color: white !important;
+	* { color: white !important; }
 }
 .yv-hover {
 	background-color: @background-grey;
 	color: white;
 	cursor: pointer;
 }
-.yv-green-link {
-	color: @green;
-	cursor: pointer;
-}
-.yv-green-link:hover {
-	color: darkgreen;
-}
-.yv-gray-link {
-	color: @font-grey;
-	cursor: pointer;
-}
-.content-gray {
-	border: 1px solid @font-grey;
-	color: @font-grey;
+
+.yv-list {
+	margin: 0;
+
+	li {
+		.no-bullets;
+	}
 }
 
-.yv-flex-center-all {
-	justify-content: center;
-	align-items: center;
+.margin-left-auto {
+	margin-left: auto;
+}
+.margin-right-auto {
+	margin-right: auto;
 }
 
-.yv-text-ellipsis {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+.click-for-small {
+	@media @large-up {
+		pointer-events: none;
+	}
+	@media @medium-only {
+		pointer-events: none;
+	}
 }
 .gray-background {
 	background-color: @light-grey;
@@ -138,7 +238,9 @@
 	font-size: 12px;
 	padding: 15px 15px 15px 15px;
 }
-
+.default-border {
+	border: @thin-grey-border;
+}
 .absolute-horizontal-center {
 	left: 50%;
 	transform: 				translate(-50%, 0%);
@@ -148,7 +250,44 @@
   -o-transform:     translate(-50%, 0%);
 	transition:       translate(-50%, 0%);
 }
+.centered {
+	margin: auto;
+}
 
+.button-actions {
+	margin-top: 10px;
+	font-size: 14px;
+	padding: 0 2px;
+	a, button {
+		margin-right: 20px;
+	}
+}
+.button-actions.stacked {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	a, button {
+		margin: 0;
+		.card-button;
+	}
+}
+.card-shadow {
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.19);
+}
+.absolute {
+	position: absolute;
+}
+.absolute-left {
+	left: 0;
+}
+.absolute-right {
+	right: 0;
+}
+
+
+
+
+// animations ---------------------------------------------------
 .dropdown-transform {
 	/* only transition on transform properties which are hardware accelerated = way better performances */
 	-webkit-transition:-webkit-transform .7s cubic-bezier(0.42,1,.16,.93);
@@ -244,8 +383,30 @@
 	display:none;
 }
 
-//  **************************************************************************
-@default-radius: 5px;
-@default-padding: 5px;
-@thin-grey-border: 1px solid @background-grey;
-@list-font-size: 15px;
+.animate-away {
+		position: absolute;
+		background: white;
+    animation-name: animate-away;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+		transition: opacity 3s ease-in-out;
+}
+
+@keyframes animate-away {
+    0% {
+			transform: translate(0,  0px);
+			opacity: 0.8;
+		}
+    100% {
+			transform: translate(0, -100px);
+			opacity: 0;
+		}
+}
+
+.copied {
+	background: white;
+	padding: 5px;
+	border: @thin-grey-border;
+	border-radius: 5px;
+}
