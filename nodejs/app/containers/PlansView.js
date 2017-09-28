@@ -59,7 +59,6 @@ PlansView.propTypes = {
 	serverLanguageTag: PropTypes.string.isRequired,
 }
 
-
 function mapStateToProps(state) {
 	return {
 		auth: state.auth,

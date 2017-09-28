@@ -42,7 +42,6 @@
 .c_pages,
 .c_moments,
 .c_videos,
-.c_notifications,
 .c_search,
 .c_sessions,
 .c_users,
@@ -53,7 +52,11 @@
     padding: 100px 0 0;
   }
 }
-
+.c_notifications {
+	#current-ui-view {
+		padding: 85px 0 0;
+	}
+}
 .c_subscriptions.a_index,
 .c_plans.a_index {
   #current-ui-view {

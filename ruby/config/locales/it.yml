@@ -1446,6 +1446,7 @@ it:
             press: "Notizie"
             privacy: "Politica di Privacy"
             terms: "Condizioni"
+            volunteer: "Volontari"
         unsubscribe: 
             about: "Gestisci quali e-mail riceverai da YouVersion. Puoi modificare le tue notifiche mobili dalla tua app mobile."
             email: "E-mail"
@@ -2001,7 +2002,7 @@ it:
                 audio window: "Aprire in una nuova finestra"
                 font label: "OPZIONI LETTORE"
                 notifications label: "NOTIFICHE"
-                more label: "ALTRO"
+                more label: "Altro"
                 search input: "Riferimento o Parola Chiave..."
                 home: "Home"
                 bible: "Bibbia"

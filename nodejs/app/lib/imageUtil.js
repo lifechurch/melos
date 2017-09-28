@@ -65,14 +65,14 @@ export function selectImageFromList({ images, width, height }) {
 
 	const selectedImage = images.reduce((lastMatch, currentSize) => {
 		const currentDiff = Math.abs(currentSize.width - width)
-		return (currentDiff < lastMatch.diff) ?
-		{
-			diff: currentDiff,
-			width: currentSize.width,
-			height: currentSize.height,
-			url: currentSize.url
-		} :
-			lastMatch
+		return (currentDiff < lastMatch.diff)
+			? {
+				diff: currentDiff,
+				width: currentSize.width,
+				height: currentSize.height,
+				url: currentSize.url
+			}
+			: lastMatch
 	}, { diff: width, width, height: height || width })
 
 	return {

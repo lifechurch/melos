@@ -71,7 +71,7 @@ class MomentCreate extends Component {
 	 *
 	 * @param      {string}  key     'private', 'public', 'friends', 'draft'
 	 */
-	changeUserStatus = (key) => {
+	changeUserStatus = ({ key }) => {
 		this.setState({
 			user_status: key,
 		})

@@ -10,6 +10,7 @@ const api = require('@youversion/js-api');
 const httpProxy = require('http-proxy');
 const ping = require('./ping');
 const oauth = require('./oauth').default;
+const localization = require('./localization').default;
 
 const auth = api.tokenAuth;
 const cors = require('cors');
@@ -77,6 +78,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxage: '1y' }));
 // oauth authentication
 app.use('/oauth', oauth);
 app.use('/authenticate', auth.expressAuthRouteHandler);
+app.use('/localization', localization);
 app.use('/', ping);
 app.use('/', api.expressRouter);
 

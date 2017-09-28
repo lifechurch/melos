@@ -1446,6 +1446,7 @@ sq:
             press: "Shtypi"
             privacy: "Politika e privatësisë"
             terms: "Kushtet"
+            volunteer: "Dil vullnetar"
         unsubscribe: 
             about: "Kontrolloni cilat e-posta merrni nga YouVersion. Ju mund të ndryshoni njoftimet për pajisje të lëvizshme nga aplikacioni i pajisjes suaj."
             email: "E-postë"
@@ -2001,7 +2002,7 @@ sq:
                 audio window: "Hap në një dritare të re"
                 font label: "CILËSIMET E LEXUESIT"
                 notifications label: "NJOFTIMET"
-                more label: "MË SHUMË"
+                more label: "Më shumë"
                 search input: "Referimi ose Fjala kyç..."
                 home: "Shtëpia"
                 bible: "Bibla"

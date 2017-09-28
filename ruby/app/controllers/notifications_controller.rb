@@ -8,15 +8,33 @@ class NotificationsController < ApplicationController
   before_filter :force_notification_token_or_login, only: [:edit, :update]
 
   def show
-    @user = get_user
-    @notifications = get_notifications
-    if (@user and @notifications)
-      respond_with @notifications do |format|
-        format.html { render :layout => 'users' }
-      end
-    else
-      render_404
-    end
+    # @user = get_user
+    # @notifications = get_notifications
+    # if (@user and @notifications)
+    #   respond_with @notifications do |format|
+    #     format.html { render :layout => 'users' }
+    #   end
+    # else
+    #   render_404
+    # end
+    #
+		p = {
+				"strings" => {},
+				"languageTag" => I18n.locale.to_s,
+				"url" => request.path,
+				"cache_for" => YV::Caching::a_very_long_time
+		}
+
+		fromNode = YV::Nodestack::Fetcher.get('Notifications', p, cookies, current_auth, current_user, request)
+
+		if (fromNode['error'].present?)
+			return render_404
+		end
+
+		@title_tag = fromNode['head']['title']
+		@node_meta_tags = fromNode['head']['meta']
+
+		render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }, layout: 'node_app'
   end
 
   def edit

@@ -1431,6 +1431,7 @@ vi:
             press: "Thông tấn"
             privacy: "Quy định riêng tư"
             terms: "Điều khoản"
+            volunteer: "Tình nguyện"
         unsubscribe: 
             about: "Vui lòng quản lý hộp thư điện tử nhận từ YouVersion. Bạn có thể chỉnh sửa thông báo nhắc nhở trên ứng dụng điện thoại của bạn."
             email: "Email"
@@ -1982,7 +1983,7 @@ vi:
                 audio window: "Mở trong cửa sổ mới"
                 font label: "CÀI ĐẶT GIAO DIỆN ĐỌC"
                 notifications label: "THÔNG BÁO"
-                more label: "THÊM"
+                more label: "Thêm"
                 search input: "Tham chiếu hoặc từ khóa ..."
                 home: "Trang nhà"
                 bible: "Kinh Thánh"

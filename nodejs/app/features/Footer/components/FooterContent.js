@@ -53,20 +53,15 @@ class FooterContent extends Component {
 
 		const showLinks = (screenWidth >= 865)
 
-		const langToggleStyle = {}
-		if (screenWidth < 930) {
-			langToggleStyle.fontSize = 8
-		}
-
 		const langToggle = (
-			<a style={langToggleStyle} tabIndex={0} className="yv-lang-toggle" target="_self" onClick={handleLangClick}>
+			<a tabIndex={0} className="yv-lang-toggle" target="_self" onClick={handleLangClick}>
 				{locale.nativeName}
 				<DropDownArrow fill="#DDDDDD" height={10} dir={langSelectorOpen ? 'up' : 'down' } />
 			</a>
 		)
 
 		const linksToggle = (
-			<a style={langToggleStyle} tabIndex={0} className="yv-link-toggle" target="_self" onClick={handleLinksClick}>
+			<a tabIndex={0} className="yv-link-toggle" target="_self" onClick={handleLinksClick}>
 				<FormattedMessage id="Reader.header.more label" />
 				<DropDownArrow fill="#DDDDDD" height={10} dir={linksOpen ? 'up' : 'down' } />
 			</a>
@@ -127,6 +122,7 @@ class FooterContent extends Component {
 					<li style={linkStyle}><a target="_self" href={localizedLink('/donate', serverLanguageTag)}><FormattedMessage id="footer.donate" /></a></li>
 				</ul>
 				<ul className="gray-links">
+					<li><a target="_self" href="https://www.youversion.com/volunteer"><FormattedMessage id="footer.volunteer" /></a></li>
 					<li><a target="_self" href={localizedLink('/about', serverLanguageTag)}><FormattedMessage id="footer.about" /></a></li>
 					<li><a target="_self" href="https://www.youversion.com/jobs"><FormattedMessage id="footer.jobs" /></a></li>
 					<li><a target="_self" href="http://blog.youversion.com"><FormattedMessage id="footer.blog" /></a></li>

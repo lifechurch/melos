@@ -31,13 +31,12 @@ class Search extends Component {
 		}
 	}
 
-	handleChange = (val) => {
+	handleChange = (changeEvent) => {
+		const { value } = changeEvent.target
 		const { onChange } = this.props
-		this.setState({
-			value: val,
-		})
-		if (onChange) {
-			onChange(val)
+		this.setState({ value })
+		if (typeof onChange === 'function') {
+			onChange(value)
 		}
 	}
 
@@ -161,7 +160,7 @@ Search.defaultProps = {
 	showClose: false,
 	placeholder: '',
 	onHandleSearch: null,
-	value: null,
+	value: '',
 	debounce: false,
 	customClass: null,
 	onChange: null,

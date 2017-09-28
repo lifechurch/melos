@@ -36,11 +36,11 @@ function User(props) {
 
 	return (
 		(link || onClick) ?
-			<a href={link} onClick={onClick} className='user-container'>
+			<a href={link} onClick={onClick} className='yv-user-container'>
 				{ avatar }
 				{ content }
 			</a> :
-			<div className='user-container'>
+			<div className='yv-user-container'>
 				{ avatar }
 				{ content }
 			</div>

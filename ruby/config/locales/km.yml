@@ -1,66 +1,66 @@
 ---
-km:
-    time:
-        formats:
+km: 
+    time: 
+        formats: 
             votd: "%B %-d, %Y"
-    datetime:
-        time_ago_in_words:
-            about_x_hours:
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
                 other: "ប្រហែល %{count} ម៉ោង​កន្លង​ទៅ"
-            about_x_months:
+            about_x_months: 
                 other: "ប្រហែល %{count} ខែ​កន្លង​ទៅ"
-            about_x_years:
+            about_x_years: 
                 other: "ប្រហែល %{count} ឆ្នាំ​កន្លង​ទៅ"
-            almost_x_years:
+            almost_x_years: 
                 other: "ជិត %{count} ឆ្នាំ​កន្លង​ទៅ"
             half_a_minute: "កន្លះនាទីមុន"
-            less_than_x_minutes:
+            less_than_x_minutes: 
                 other: "តិច​ជាង %{count} នាទី​កន្លង​ទៅ"
-            less_than_x_seconds:
+            less_than_x_seconds: 
                 other: "តិច​ជាង %{count} វិនាទី​​កន្លង​ទៅ"
-            over_x_years:
+            over_x_years: 
                 other: "លើស %{count} ឆ្នាំ​​កន្លង​ទៅ"
-            x_days:
+            x_days: 
                 other: "%{count} ថ្ងៃ​​កន្លង​ទៅ"
-            x_minutes:
+            x_minutes: 
                 other: "%{count} នាទីកន្លង​ទៅ"
-            x_months:
+            x_months: 
                 other: "%{count} ខែ​កន្លង​ទៅ"
-            x_seconds:
+            x_seconds: 
                 other: "%{count} វិនាទី​​កន្លង​ទៅ"
-    counter:
+    counter: 
         format: "999.999.999"
-    social:
-        intro page:
+    social: 
+        intro page: 
             main heading: "កិច្ច​សន្ទនា និង ការ​រកឃើញថ្មី"
             main description: "របៀប​ថ្មី​ក្នុង​ការ​ស្វែង​យល់​ព្រះ​គម្ពីរ​ជាមួយ​នឹង​មិត្ត​ភ័ក្ត្រ​ដែល​អ្នក​ទុក​ចិត្ត​"
-            moment:
+            moment: 
                 user aaron: "Aaron Steele"
                 user andy: "Andy Knight"
                 timestamp: "៥ ថ្ងៃ​កន្លង​ទៅ"
                 title: "បានកត់​ចំណាំ ទំនុកតម្កើង ៣១:៧"
                 verse: "ទូលបង្គំ​ត្រេកអរ​សប្បាយ​យ៉ាង​ខ្លាំង​ ដោយ​ព្រះ​អង្គ​មាន​ព្រះ​ហឬទ័យសប្បុរស​ចំពោះ​ទូល​បង្គំ​ ព្រះ​អង្គ​ទត​ឃើញ​ទុក្ខ​វេទនា​របស់​ទូលបង្គំ ព្រះ​អង្គ​ជ្រាប​ថា​ទូល​បង្គំ​មាន​ទុក្ខ​កង្វល់។"
                 reference: "ទំនុក​តម្កើង ៣១:៧"
-                discover:
+                discover: 
                     copy: "ការ​រកឃើញ​ថ្មី និង ការ​សិក្សា​ជាមួយ​នឹង​មិត្ត​ភ័ក្ត្រ​របស់​លោក​អ្នក​ នៅ​ពេល​ដែល​ពួក​គេ គូស​ចំណាំ កត់​ចំណាំ និង កត់​ត្រា​ទុក។"
                     button: "តើ​ខ្ញុំ​អាច​ចាប់​ផ្ដើម​នៅ​ពេល​ណា?"
-                share:
+                share: 
                     copy: "ចែក​រំលែក​កិច្ច​សន្ទនា​អំពី​ខគម្ពីរ​ដោយ​ស្មោះ​ស្ម័គ្រ។"
                     button: "សូម​ចាប់​ផ្ដើម​ដោយ​ការ​ស្វែង​រក​មិត្តភ័ក្ត្រ។"
-                likes:
+                likes: 
                     info: "និង ៤ នាក់​ផ្សេង​ទៀត​ចូល​ចិត្ត"
-                comments:
-                    first:
+                comments: 
+                    first: 
                         text: "ខ្ញុំ​ពិត​ជា​ត្រូវ​ការ​ឮ​ព្រះ​បន្ទូល​នេះ​ក្នុង​ថ្ងៃ​នេះ សូម​អរគុណ។ ចាំ​ទាក់​ទង​គ្នា​ពេល​ក្រោយ​ទៀត!"
                         time: "ប្រហែល​ ៣ ម៉ោង​កន្លង​ទៅ"
-                    second:
+                    second: 
                         text: "អាមែន ខ្ញុំ​ក៏​អញ្ចឹង​ដែរ។ ខ្ញុំ​កំពុង​ផ្ញើ​អ៊ី​ម៉េល​ទៅ​​លោក​។"
                         time: "ប្រហែល​ ២៧ នាទី​កន្លង​ទៅ"
                     field placeholder: "សរសេរ​មតិ​យោបល់មួយ..."
-        widget:
+        widget: 
             timeline: "​កំណត់​ពេល​វេលា"
             no activity yet: "មិន​ទាន់​មាន​សកម្ម​ភាព​ណាមួយ​នៅ​ឡើយ។"
-        moment:
+        moment: 
             read all: "ត្រូវ​បាន​អាន​ទាំង​អស់"
             read less: "អាន​តិចតួច"
         share: "ចែក​រំលែក"
@@ -69,18 +69,18 @@ km:
         connected as: "លោក​អ្នក​ត្រូវ​បាន​ភ្ជាប់​ទៅ %{connection} ជា %{username}."
         remove connection: "ដក​តំណរ​ភ្ជាប់​នេះ​ចេញ"
         connection friends: "នេះ​ជា​អ្នក​ប្រើ​ប្រាស់ YouVersion មួយ​ចំនួន​ដែល​លោក​អ្នក​បាន​ភ្ជាប់​ទៅលើ %{connection}"
-        errors:
+        errors: 
             no friends: "មិន​មានមិត្ត​របស់​អ្នក %{connection} លេច​ឡើង​នៅ​លើ YouVersion នៅ​ឡើយ​ទេ"
             reset connection: "សូម​ទោស មាន​កំហុស​កើត​មាន​ឡើង។ សូមដក​ចេញ​ហើយ​ភ្ជាប់​ការ​ភ្ជាប់​នេះ​ឡើង​វិញ"
-        email:
+        email: 
             name: "អ៊ីម៉ែល"
-        twitter:
+        twitter: 
             name: "Twitter"
-        facebook:
+        facebook: 
             name: "ហ្វេសប៊ុក"
-            errors:
+            errors: 
                 expired access: "ការ​ចូល​របស់​អ្នក​ត្រូវ​បាន​ហូស​កំណត់​ដោយ​ហ្វេសប៊ុក។ សូម​ផ្ដាច់​ការភ្ជាប់​របស់​លោក​អ្នក​ហើយ​ភ្ជាប់​ឡើង​វិញ​លើ​ហ្វេសប៊ុក"
-    language names:
+    language names: 
         arabic: "Arabic"
         bulgarian: "Bulgarian"
         czech: "Czech"
@@ -99,7 +99,7 @@ km:
         ukrainian: "Ukrainian"
         simplified chinese: "Simplified Chinese"
         traditional chinese: "Traditional Chinese"
-    api:
+    api: 
         users agree bool: "លោក​អ្នក​ត្រូវ​យល់​ព្រម​ជាមួយនិតិវិធី និង​​លក្ខខ័ណ្ឌ​​​ដើម្បីបង្កើតគណនី។"
         users confirm password matches: "អក្សរសម្ងាត់មិនត្រឹមត្រូវទេ ។"
         users email email: "អាសយដ្ឋានអ៊ីម៉ែល​អសុពលភាព"
@@ -122,26 +122,26 @@ km:
         users last name required: "អ្នក​ត្រូវ​បញ្ចូល​នាម"
         moments content required: "មាតិការ​មិន​អាច​ទទេ​រ​បាន​ឡើយ។"
         users auth password required: "លោកអ្នកត្រូវតែ​បញ្ចូលអក្សរសម្ងាត់ ។"
-    meta:
+    meta: 
         best kids app: "កម្មវិធី​​ កុមារ​ ដ៏ល្អ​ជាងគេ"
         best educational app: "កម្មវិធី​អប់រំ​ កុមារ ល្អ​ជាង​គេ"
-        kids_app:
+        kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
-        100million:
+        100million: 
             title: "វាចាប់ផ្ដើមជាមួយ ១០០ លាន"
             description: "កម្មវិធីព្រះគម្ពីរត្រូវបានតម្លើងជាង ១០០ លាន​ដងហើយ ដែលជាព្រឹត្តិការណ៍ដ័មិនគួរឱ្យជឿ! តែយើងទើបតែចាប់​ផ្ដើមទេ ។​ សូមដោនឡូដកម្មវិធីព្រះគម្ពីរ​ឥតគិតថ្លៃនៅថ្ងៃនេះ​- ហើយចែកចាយ​ពី​កម្មវិធីនេះទៅ​មិត្តភក្ដិរបស់អ្នក​ ។ តោះ យើងបង្កើតប្រវតិ្តសាស្ដ្រជាមួយគ្នា ។​"
-        mobile:
+        mobile: 
             title: "កម្មវិធីព្រះគម្ពីរ"
             description: "អាន​ព្រះ​បន្ទូល​របស់​ព្រះ​ជាម្ចាស់គ្រប់ពេល​វេលា គ្រប់​ទី​កន្លែង ជាមួយ​នឹង កម្មវិធី​ព្រះ​គម្ពីរ​ YouVersion។ ចែក​ចាយ​ខ​គម្ពីរ​ជាមួយ​នឹង​មិត្ត​ភ័ក្ត្រ គូស​ពណ៌ និង គូស​ចំណាំខ​គម្ពីរ និង ​បង្កើត​ទំលាប់​ប្រចាំ​ថ្ងៃ​ជាមួយ​នឹង​គំរោង​ផែន​ការ​អានព្រះ​គម្ពីរ។ មាន​ជាមួយនឹង​ប្រព័ន្ធប្រតិបត្តិ​ការណ៍ iOS Android Blackberry Windows Phone និង ប្រព័ន្ធប្រតិបត្តិ​ការណ៍​ផ្សេងៗ​​ទៀត។"
             download or read: "ទាញ​យក​ឥឡូវ ឬ​អាន​លើ​បណ្ដាញ"
-        site:
+        site: 
             title: "Bible.com"
             description: "នាំយក​នូវសម្ផស្ស និង សេចក្ដី​ពិត​នៃព្រះ​គម្ពីរ​មក​ដាក់​ក្នុង​ជីវិត​ប្រចាំថ្ងៃ។   ជាមួយ​នឹងកម្ម​វិធី​ព្រះ​គម្ពីរ  YouVersion លោក​អ្នក​អាចអាន មើល ស្ដាប់ នឹង​ចែក​ចាយ​តាមរយៈ  smartphone ឬ table និង តភ្ជាប់​នៅ​ក្នុងBible.com។ "
-        connections:
-            index:
+        connections: 
+            index: 
                 title: "បាន​ភ្ជាប់​ទៅ​គណនី"
-    kids:
+    kids: 
         bible app: "កម្មវិធីព្រះគម្ពីរ"
         for: "for"
         kids: "kids"
@@ -164,7 +164,7 @@ km:
         feature 3: "Vivid illustrations with touch-activated animations"
         feature 4: "Games and activities help kids remember what they learn"
         feature 5: "Kid-friendly navigation"
-        share:
+        share: 
             tell friends: "Tell your friends about the Bible App for Kids."
             facebook name: "The Bible App for Kids"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
@@ -175,11 +175,11 @@ km:
             email: "Email"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
-        partner:
+        partner: 
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
-        links:
+        links: 
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
@@ -204,8 +204,8 @@ km:
     new note: "កំណត់​ត្រាថ្មី"
     share success: "សារ​របស់​លោក​អ្នកត្រូវ​បាន​ចែក​រំលែក"
     share error: "សូមទោស មាន​កំហុស​ក្នុង​ពេល​ចែក​រំលែក​សារ​របស់​អ្នក។ សូម​ព្យាយាមម្ដង​ទៀត"
-    share:
-        request:
+    share: 
+        request: 
             no_twitter_connection: "អ្នក​មិន​មាន​ភ្ជាប់​ទៅ​កាន់​គណនី Twitter​ទេ សូម​ភ្ជាប់​ទៅ​គណនី​របស់​អ្នក​លើ​ទំព័រ​ការ​កំណត់"
             no_facebook_connection: "អ្នក​មិន​បាន​ភ្ជាប់​ទៅ​កាន់​គណនី​ហ្វេសប៊ុក​របស់​អ្នក​ទេ សូម​ភ្ជាប់​ទៅ​កាន់​គណនី​របស់​អ្នក​លើ​ទំព័រ​ការ​កំណត់។"
     google plus: "Google+"
@@ -300,9 +300,9 @@ km:
     groups: "ក្រុម"
     mobile: "កម្មវិធី​សំរាប់​ឧបករណ៍ចល័ត"
     live: "បន្ត​ផ្ទាល់"
-    events:
+    events: 
         events: "ព្រឹត្តិការណ៍នានា"
-        menu:
+        menu: 
             features: "Features"
             faq: "FAQ"
             resources: "Resources"
@@ -395,16 +395,16 @@ km:
     traditional: "ប្រពៃណី"
     alphabetic: "តាមអក្ខរក្រម"
     versions title: "ជំនាន់"
-    languages:
+    languages: 
         title: "ភាសាសំរាប់​​គម្ពីរ និង​ការ​បក​ប្រែ"
         most popular: "ភាសា​ដែល​ពេញ​និយម​ជាង​គេ"
         additional: "ភាសាបន្ថែម​ផ្សេងៗ"
         download language: "ទាញ​យក​ព្រះ​គម្ពីក្នុង %{language_name}"
         bible in: "ព្រះគម្ពីរជា %{language_name}"
-    or:
+    or: 
         lower: "ឬ"
         upper: "រឺ"
-    moments:
+    moments: 
         scripture unavailable: "មិន​មាន​ខគម្ពីរ"
         could not load: "មិន​អាច​ទាញ​យក​បាន"
         could not load verse: "មិន​អាច​ទាញ​យក​ខគម្ពីរ​បាន"
@@ -418,8 +418,8 @@ km:
         users like this: "%{last_liker_link} និង %{more_link} ដូច​គ្នានេះ"
         like: "ចូល​ចិត្ត"
         likes: "ចូល​ចិត្តច្រើន"
-        more than one like:
-        vod:
+        more than one like: 
+        vod: 
             title: "ខគម្ពីរ​ប្រចាំ​ថ្ងៃ"
             get daily email: "យក​អ៊ី​ម៉េល​ប្រចាំថ្ងៃ"
             subscribe: "ចុះ​ឈ្មោះ"
@@ -429,16 +429,16 @@ km:
             view more: "បង្ហាញ​បន្ថែម"
             time: "ពេល​វេលា"
             blurb: "ចុះ​ឈ្មោះ​អាន​ខព្រះ​គម្ពីរ​ប្រចាំ​ថ្ងៃ។ ទទួល​បាន​អ៊ី​ម៉េល​ប្រចាំ​ថ្ងៃ ឬ ការ​ជូន​ដំណឹង​នៅ​លើ​ឧបករណ៍ចល័ត​របស់​លោក​អ្នក។"
-        friendship:
+        friendship: 
             now friends: "ឥឡូវ​អ្នក​ជា​មិត្ត​ជាមួយ​នឹង"
-        cta:
+        cta: 
             profile update text: "ជួយ​មិត្ត​របស់​អ្នក​រក​អ្នក"
             profile update button: "អាប់ឌែត​ទម្រង់​របស់​អ្ន"
             sharing text: "ចែក​រំលែក​ខគម្ពីឬ​ជាមួយ​នឹង​បណ្ដាញ​សង្គម"
             sharing button: "តំណើរ​ការ ចែក​រំលែក"
             friends text: "មើលការ​ប៉ះពាល់​ចិត្ត​របស់​មិត្ត​អ្នកក្នុង​ព្រះ​គម្ពីរ"
             friends button: "រក​មិត្ត​ភក្តិ"
-        action:
+        action: 
             go to scripture: "ទៅ​កាន់​បទ​គម្ពីរ"
             add friend button: "បន្ថែម​មិត្ត"
             load more: "ទាញ​យក ថែម​ទៀត"
@@ -466,41 +466,41 @@ km:
             read plan: "អាន"
             about plan: "អំពី​គំរោង​ផែនការ"
             start plan: "ចាប់​ផ្ដើម​គំរោង​ផែន​ការ"
-    notifications:
+    notifications: 
         title: "ការ​តឿន​រំលឹក"
         none: "អ្នក​មិន​មាន​ការ​តឿន​រំលឹក​ទេ"
         no new: "មិន​មាន​សារ​តឿន​ថ្មី"
         view all: "មើល​ការ​តឿន​ទាំង​អស់"
-    likes:
+    likes: 
         create success: "ជោគ​ជ័យ! ចូល​ចិត្ត របស់​អ្នក​បាន​រក្សា​ទុក"
         create failure: "ចូល​ចិត្ត របស់​អ្នក​មិន​អាច​រក្សា​ទុក​ឡើយ"
         destroy success: "ចូល​ចិត្ត​បាន​លុប"
         destroy failure: "ចូល​ចិត្ត​ របស់​អ្នក​មិន​អាច​លប់​បាន​ឡើយ"
-    comments:
+    comments: 
         view all N: "មើលមតិ​ទាំង​អស់​របស់ %{count}"
         post comment: "ផ្សាយ​មតិ"
         create success: "ជោគ​ជ័យ! មតិ​របស់​អ្នក​បាន​បិទ​ផ្សាយ"
         create failure: "មតិ​មិន​អាច​ផ្សាយ​បាន​ទេ"
         destroy success: "មតិ​បាន​លុប"
         destroy failure: "មតិ​មិន​អាច​លុប​បាន​ឡើយ"
-        form:
+        form: 
             save button: "ផ្សាយ"
-    friends:
+    friends: 
         you have N friends: "អ្នក​មានមិត្ត %{count} នាក់"
         none me: "ចែក​រំលែក​មតិ​របស់​អ្នក​ក្នុងព្រះ​គម្ពីរ​ដូចជា កំណត់​ចំណាំ, គំនូស​ពណ៌, និង​កំណត់​ត្រា​ជាមួយ​មិត្ត​ជិត​ស្និទ្ធ និង​គ្រួសារ​របស់​អ្នក​"
         find friends: "រក​មិត្ត​ភក្តិ"
-        blank slate:
+        blank slate: 
             heading: "មិន​មាន​មិត្ត​ថ្មី​នេះ"
             description: "អ្នក​ត្រូវធ្វើ​ជាមិត្ត​របស់​បុគ្គល​នេះ ដើម្បី​អាច​មើល​មិត្ត​របស់​គាត់​បាន។"
         limit notice: "អ្នក​អាច​មាន​មិត្ត​ច្រើន​ដូច​ជា​150"
         limit description: "ការ​កំណត់​មិត្ត​លើ​កម្ម​វិធី​ព្រះ​គម្ពីរ​គឺ​ដើម្បី​អោយ​មនុស្ស​ស្គាល់​និងបង្កើត​នូវ​បរិយាកាស​នៃ​ភាព​ស្មោះត្រង់​ក្នុង​ការ​សន្ទនា​និង​ចែក​រំលែក​នូវ​អ្វី​ដែល​បាន​រក​ឃើញ​ជាមួយ​មិត្ត​ជិតស្និទ្ធ​របស់​គេ។"
-    friendships:
+    friendships: 
         blurb: "ផ្ដោតអារម្មណ៍​​មិត្ត​ភាព​របស់​លោក​អ្នក​ជុំវិញ​ព្រះ​គម្ពីរ។ ចែក​រំលែក​នូវ​អ្វី​ដែល​លោក​អ្នក​ចង់​បាន នៅ​ពេល​ដែល​លោក​អ្នក​ចង់​បាន នៅ​ក្នុង​រង្វង់​ទំនាក់​ទំនង​ដែលលោក​អ្នកទុក​ចិត្ត។"
         name required: "ដើម្បី​ទទួល​យក​បទ​ពិសោធន៍​ដ៏​ល្អ​ក្នុង​ព្រះ​គម្ពីរ​ជាមួយ​មិត្ត​ភក្តិ សូម​អាប់​ឌែត​នូវ​ទម្រង់​របស់​អ្នក​ជាមួយ​នាម​ និង​កោត្ត​នាម"
         find friends title: "រក​មិត្ត​ភក្តិ"
         search by name: "ស្វែង​រក​តាម​រយៈឈ្មោះ"
         search button: "ទៅ"
-        widget:
+        widget: 
             find friends title: "រក​មិត្ត​ភក្តិ"
             search by name: "ស្វែង​រក​តាម​រយៈឈ្មោះ"
             search button: "ទៅ"
@@ -514,12 +514,12 @@ km:
         requests view all: "មើល​សំណើរ​មិត្ត​ទាំង​អស់"
         requests none: "អ្នក​មិន​មាន​សំណើរ​ជា​មិត្ត​ទេ"
         requests no new: "មិន​មាន​សំណើរ​ថ្មី"
-        status:
+        status: 
             pending: "សំណើរ​កំពុង​រង់ចាំ"
             friends: "មិត្ត​ភក្តិ"
         user wants friendship: "%{user} ចង់​ធ្វើ​ជា​មិត្ត​អ្នក"
         user wants friendship partial: "ចងធ្វើ​ជា​មិត្ត​អ្ន"
-        form:
+        form: 
             remove friend button: "ដក​មិត្ត​ចេញ"
             remove friend button title: "ដក​បុគ្គល​នេះ​ចេញ​ពី​បញ្ជីរ​មិត្ត​របស់​អ្ន"
             add friend button: "បន្ថែម​មិត្ត"
@@ -529,24 +529,24 @@ km:
             accept request button: "ទទួល​យក​សំណើរ"
             ignore button: "បដិសេធ"
             ignore request button: "បដិសេធសំណើ"
-    images:
+    images: 
         none user: "%{username} មិនទាន់បានបង្កើតរូបភាពណាមួយនៅឡើយទេ។"
-        blank slate:
+        blank slate: 
             heading: "អ្នកមិនទាន់មានរូបភាពនៅឡើយទេ។"
             description: "ប្រើប្រាស់កម្មវិធីលើទូរស័ព្ទ YouVersion ដើម្បីបង្កើតខជារូបភាព។"
-    notes:
+    notes: 
         none user: "%{username} មិន​ទាន់​មាន​កំណត់​ត្រា​នៅ​ឡើយ​ទេ"
-        blank slate:
+        blank slate: 
             heading: "អ្នក​មិន​ទាន​មាន​កំណត់​ត្រា​ទេ"
             description: "ពេល​ដែល​អ្នក​កំពុង​អាន​ព្រះ​គម្ពីរ ហើយ​ពេល​អ្នក​មាន​អារម្មណ៍​ថា​ព្រះ​កំពុង​មាន​បន្ទូល​មក​កាន់​អ្នក លោក​អ្នក​អាច​បន្ថែម​គំនិត​ទាំង​នោះ​នៅ​ទី​នេះ។ កំណត់​ត្រា​របស់​អ្នក​នឹង​កំណត់​ជា <em>ឯកជន</em> តែម្ដង. ប្រសិន​បើ​អ្នក​ចង់​ចែក​រំលែក​កំណត់​ត្រា​នេះ​ជាមួយ​មិត្ត​របស់​អ្នក ងាយ​ស្រួល​បំផុត​ដោយ​គ្រាន់​តែ​បើ​ក​វា​ហើយ​ប្ដូរ​ទៅ​ជា<em>សាធារណះ</em>."
-        form:
+        form: 
             title field: "ចំណង​ជើង"
             content field: "មាតិការ"
             highlight field: "កំណត់​ចំណាំ៖ (អាច​ជ្រើស​រើស​មិន​ធ្វើ​បាន)"
             reference field: "សេចក្ដី​យោង"
             status field: "ស្ថាន​ភាពៈ"
             save button: "រក្សា​ទុក"
-        status:
+        status: 
             private: "ឯក​ជន"
             public: "សាធារណះ"
             friends: "ជា​មិត្ត​ ប៉ុណ្ណោះ"
@@ -585,7 +585,7 @@ km:
         destroy success: "កំណត់​ត្រា​បាន​លុបចេញ"
         destroy failure: "បញ្ហា ពេល​លុប​កំណត់​ត្រា"
         update success: "កំណត់​ចំណាំ​ត្រូវ​បាន​ធ្វើ​បច្ចុប្បន្នភាព"
-    ref:
+    ref: 
         loading secondary: "ទាញយកអំណៈអំណាង​ពី​ជំនាន់​ទី២..."
         clear verses: "សំអាតខ​ដែល​បាន​ជ្រើស​រើស"
         choose book and chapter: "ជ្រើស​រើស ព្រគម្ពីរ + ជំពូក"
@@ -607,7 +607,7 @@ km:
         no secondary version text: "%{language_name} មាន​តែ​មួយ​ជំនាន់​ទេ​ដែល​មាន យើង​មិន​អាច​ទាញ​យក​ជំនាន់​ទី២​អោយ​អ្នក​បានឡើយ។ សូម​ជ្រើស​រើស​ជំនាន់​ទី​២​សំរាប់​ផ្នែក​ផ្សេង​ដើម្បី​ប្រៀប​ធៀប។"
         select another chapter: "ជ្រើស​រើស​ជំពូក​ផ្សេង"
         view in reader: "បង្ហាញ %{reference} ក្នុង​កម្មវិធីអាន"
-    users:
+    users: 
         unverified heading: "ជិត​ចប់​ហើយ!"
         unverified message: "វាមើលទៅដូចជាអ្នកកំពុងព្យាយាម​ចុះឈ្មោះចូលគណនី​ដែលមិនទាន់​បានបង្កើតចប់សព្វគ្រប់នៅឡើយ។ អ្នកនៅសល់តែពីរជំហានទៀតប៉ុណ្ណោះ៖ ចុចលើតំណភ្ជាប់សម្រាប់ផ្ទៀងផ្ទាត់តាមធម្មតានៅក្នុងអ៊ីម៉ែលបញ្ជាក់ដែល អ្នកបានទទួលពី YouVersion។ រកមិនឃើញវាឬ? ពិនិត្យមើលថតសារឥតបានការរបស់អ្នក ឬ <a href='%{resend_path}' target='_self'>ផ្ញើអ៊ីម៉ែលបញ្ជាក់ឡើងវិញ</a>។"
         settings: "ការ​កំណត់"
@@ -711,7 +711,7 @@ km:
         resend confirmation title: "មិន​បាន​ទទួល​អ៊ីម៉ែល​បញ្ជាក់?"
         resend confirmation copy: "សូម​បញ្ជូល​អាស័យដ្ឋាន​អ៊ី​ម៉ែល​របស់អ្នក​ដែល​បាន​ប្រើ​ក្នុង​ការ​ចុះឈ្មោះខាង​ក្រោម នោះ​យើង​នឹងផ្ញើរ​អ៊ីម៉ែល​បញ្ជាក់​មក​កាន់​អ្នក​ម្ដង​ទៀត។"
         resend confirmation button: "ការ​បញ្ជាក់​បាន​បញ្ជូន​សាជាថ្មី"
-        privacy:
+        privacy: 
             policy: "%{youversion} ច្បាប់​ជាឯក​ជន"
             intro: "YouVersion, ជា​វែប​សាយ និង​កម្មវិធី​ដែល​បង្កើត និង​ដំណើរ​ការ​ដោយ Life.Church ទទួល​ស្គាល់​ថា​លោក​អ្នក​ប្រុង​ប្រយ័ត្ន​នឹង​របៀប​ដែល​យើង​ប្រើប្រាស់​នូវ​ព័ត៌មាន​របស់​អ្នក។ យើង​សង្ឃឹម​ថា ការ​ប្រកាស​ខាង​ក្រោម​នឹង​ជួយ​លោក​អ្នក​អោយ​យល់ពី​របៀប​ដែល​YouVersionប្រមូល​ព៍ត៌មាន ប្រើប្រាស់ និងការពារ​នូវ​ព៍ត៌មាន​ដែល​អ្នក​បាន​ផ្ដល់​មក​កាន់​វែប​សាយ ឬ​កម្មវិធីរបស់​យើង។"
             translation disclaimer: "ច្បាប់​ជា​ឯក​ជន ត្រូវ​បាន​បក​ប្រែ​ដើម្បី​អោយ​មាន​ភាព​ងាយ​ស្រួល​សំរាប់​លោក​អ្នក តែ​យ៉ាង​ណា​ម៉ិញ Life.Church មិន​មាន​ការ​ធានា​ ឬ​តំណាង​​ជាមួយ​នឹង​ការ​គោរព​ចំពោះ​ការ​បក​ប្រែ​ដោយ​ត្រឹម​ត្រូវ​នោះ​ឡើយ។  ប្រសិន​បើ​មាន​ភាព​ផ្សេង​គ្នា​រក​ឃើញ​រវាង​អង់​គ្លេស និង​ជំនាន់​ដែល​បាន​បក​ប្រែ នោះ​ភាសា​អង់​គ្លេស​នឹង​យក​ជា​គោល។"
@@ -740,7 +740,7 @@ km:
             enforcement text: "Life.Church periodically reviews its compliance with this Privacy Policy. When we receive formal written complaints regarding privacy issues, it is our policy to contact the complaining user regarding his or her concerns. We will cooperate with the appropriate regulatory authorities, including local data protection authorities, to resolve any complaints regarding the transfer of personal data that cannot be resolved between Life.Church and an individual."
             questions title: "សំនួរ"
             questions text: "សំនួរ​ទាំង​ឡាយ​ទាក់​ទង​ទៅ​នឹង​គោល​នយោបាយ​ឯកជន <a href='mailto:legal@youversion.com'>អាច​ត្រូវ​បញ្ជូន​ទៅ​កាន់ legal@youversion.com</a>"
-        terms:
+        terms: 
             title: "ច្បាប់​នៃ​ការ​ប្រើ​ប្រាស់"
             translation disclaimer: "The terms of use have been translated for your convenience; however, Life.Church makes no warranties or representations with respect to the accuracy of the translation.  If any discrepancies are found between the English and the translated version, the English version will control."
             acceptance title: "ទទួល​ស្គាល់​ច្បាប់​នេះ"
@@ -789,8 +789,8 @@ km:
             copyright text: "Life.Church respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. Life.Church may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. Life.Church's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: Life.Church c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "ព័ត៌មាន​ទូទៅ"
             general text: "Entire Agreement. This TERMS OF USE constitutes the entire agreement between you and Life.Church and governs your use of YouVersion, superseding any prior agreements between you and Life.Church with respect to YouVersion. You also may be subject to additional terms and conditions.<br><br>Choice of Law and Forum. The TERMS OF USE and the relationship between you and Life.Church shall be governed by the laws of the State of Oklahoma without regard to conflict of law provisions. You and Life.Church agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Oklahoma County, Oklahoma.<br><br>Waiver and Severability of Terms. The failure of Life.Church to exercise or enforce any right or provision of these TERMS OF USE shall not constitute a waiver of such right or provision. If any provision of these TERMS OF USE is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of these TERMS OF USE remain in full force and effect.<br><br>No Right of Survivorship and Non-Transferability. You agree that your Life.Church account is non-transferable, and any rights to your Life.Church ID or contents within your account terminate upon your death. Upon receipt of a copy of a death certificate, Life.Church may terminate your account and permanently delete all contents therein.<br><br>Statute of Limitations. You understand and agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of YouVersion or these TERMS OF USE must be filed within one (1) year after such claim or cause of action arose or be forever barred.<br><br>The section titles within these TERMS OF USE are for convenience only and have no legal or contractual effect."
-        profile:
-            blank slate:
+        profile: 
+            blank slate: 
                 heading: "ទៅ​មុខ​ទៀត គ្មាន​អ្វី​មើល​ទេ​នៅទីនេះ (មិនទាន់មាន)"
                 description: "ចាប់​ផ្ដើម​ប្រាស្រ័យ​ជាមួយ​ព្រះគម្ពីរ ឬ​មិត្ត​របស់​អ្នក ហើយ​ទំព័រ​នេះ​នឹង​បង្ហាញ​ពី​ប្រវត្ត​នៃ​កិច្ច​ការ​របស់​អ្នក។"
             visit friend: "មើល​ទំម្រង់ %{friend}"
@@ -830,11 +830,11 @@ km:
             edit: "កែសម្រួល"
             bio: "Bio"
             complete_first_last: "សូម​បំពេញ​ព័ត៌មាន​របស់​លោក​អ្នក​ជាមួយ​នឹង​នាម និង គោត្តនាម (ឈ្មោះ និង ត្រគោល)"
-        password:
+        password: 
             updated: "ជោគ​ជ័យ! ពាក្យ​សម្ងាត់​របស់​អ្នក​ត្រូវ​បាន​អាប់ឌែត"
             error: "សូម​ទោស មាន​កំហុស​ពេល​ប្ដូរ​ពាក្យ​សម្ងាត់​របស់​អ្នក។"
             old was invalid: "សូម​ទោស អ្នក​ត្រូវ​បញ្ចូល​ពាក្យ​សម្ងាត់​ចាស់អោយ​បាន​ត្រឹម​ត្រូវ​ដើម្បី​ប្ដូរ​ពាក្យ​សម្ងាត់​របស់​អ្នក។"
-        notifications:
+        notifications: 
             badges: "ប្រាប់​ខ្ញុំ​អោយ​ដឹងអំពីផ្លាក​សញ្ញា​ដែល​ខ្ញុំ​ទទួល​បាន"
             follower: "ប្រាប់​ខ្ញុំ​អោយដឹង​ពេល​មាន​អ្នក​​តាម​ខ្ញុំ"
             newsletter: "សូម​ប្រាប់​ខ្ញុំ​អោយ​ដឹង​ពេល​មាន​ដំណឹង​ថ្មីៗ​ពី YouVersion"
@@ -847,7 +847,7 @@ km:
             moments: "ប្រាប់​ខ្ញុំ​អោយ​ដឹង​អំពី​សកម្ម​ភាព​របស់​មិត្ត"
             comments: "ប្រាប់​ខ្ញុំ​អោយ​ដឹង​ពី​មតិ​លើ​សកម្ម​ភាព​របស់​ខ្ញុំ"
             likes: "ប្រាប់​ខ្ញុំ​អោយ​ដឹងពី ចូល​ចិត្ត លើ​សកម្ម​ភាព​របស់​ខ្ញុំ"
-    bookmarks:
+    bookmarks: 
         new: "កំណត់​ចំណាំ​ថ្មី"
         edit: "កែសម្រួល"
         delete: "លុប​ចេញ​កំណត់​ចំណាំ​នេះ"
@@ -878,10 +878,10 @@ km:
         color: "ពណ៌ៈ"
         version field: "ជំនាន់ៈ"
         none user: "%{username} មិន​មាន​កំណត់​ចំណាំ"
-        blank slate:
+        blank slate: 
             heading: "កំណត់​ចំណាំ​ខគម្ពីរ​ដែល​មានន័យ"
             description: "ពេល​អាន​ព្រះ​គម្ពីរ ជ្រើស​រើស​យក​ខគម្ពីរ​ហើយ​កត់​ចំណាំ​វា។ ត្រប់​មក​ទីនេះ ដើម្បី មើល កែសម្រួល ឬ​លុប​កំណត់​ចំណាំ​របស់​អ្នក"
-        form:
+        form: 
             title field: "ចំណង​ជើង"
             reference field: "សេច​ក្ដីព្រាងៈ"
             labels field: "ផ្លាក (ផ្ដាច់​ដោយ​ប្រើ​សញ្ញា​ក្បៀស)"
@@ -889,24 +889,24 @@ km:
             colors field: "ពណ៌ៈ"
             update button: "អាប់​ឌែត​កំណត់​ចំណាំ"
             save button: "រក្សា​កំណត់​ចំណាំ"
-    badges:
+    badges: 
         earned a badge: "ទទួល​បាន​ផ្លាកសញ្ញា"
         user badges: "ផ្លាក​សញ្ញា​របស់​ %{user}"
         earned date: "ទទួល​បាន​ដោយ %{username} %{ago} កន្លង​ទៅ"
         none me: "លោក​អ្នក​មិន​ទទួល​បាន ផ្លាក់​សញ្ញា​ អី​នៅ​ឡើយ​ទេ"
         none user: "%{username} មិន​ទាន់​ទទួល​បាន ផ្លាក​សញ្ញា អី​នៅ​ឡើយ​ទេ"
-    plans:
+    plans: 
         see all: "មើល​ទាំង​អស់"
         day_completed: "<b>%{username}​បាន​បញ្ចប់​ការ​អាន​នៅ​ថ្ងៃទី​%{day}នៃ​គំរោង​អាន​ព្រះ​គម្ពីរ​៖ %{plan_title}</b><b></b><b></b>"
-        status:
+        status: 
             on track: "កំពុងដំណើរការ!"
-            days ahead:
+            days ahead: 
                 other: "%{count} ថ្ងៃ​ទៅមុខទៀត!"
-            missed days:
+            missed days: 
                 other: "%{count} ថ្ងៃដែលខកខាន"
         bible plan language: "ភាសារបស់គម្រោងព្រះគម្ពីរ"
         share plan: "ឆែក​មើល​មក @YouVersion #គំរោង​អាន​គម្ពីរ: %{plan_title}"
-        widget:
+        widget: 
             my plans: "គំរោង​របស់​ខ្ញុំ"
             start reading: "ចាប់ផ្ដើមអាន"
             view my plans: "មើល​គំរោងផែន​ការ​របស់​ខ្ញុំ"
@@ -915,16 +915,16 @@ km:
             reading: "ការ​អាន"
             readings: "ការ​អាន"
             readings 5 or more: "ការ​អាន"
-        stats:
-            friends reading:
+        stats: 
+            friends reading: 
                 other: "មាន​មិត្ត​ភ័ក្ត្រ​របស់​លោក​អ្នក​ចំនួន %{count} នាក់បាន​ចុះ​ឈ្មោះ​ក្នុង​គំរោង​នេះ"
-            friends completed:
+            friends completed: 
                 other: "មាន​មិត្ត​ភ័ក្ត្រ​របស់​លោក​អ្នក​ចំនួន %{count} នាក់បាន​​បញ្ចប់​​គំរោង​នេះ"
             total completions: "មានគំរោង​ចំនួន​​ជាង %{count} ត្រូវ​​បានបញ្ចប់​"
             view all: "បង្ហាញ​ទាំង​អស់"
             close: "បិទ"
         settings: "ការ​កំណត់"
-        privacy:
+        privacy: 
             visible to friends?: "តើ​លោក​អ្នក​ចង់​អោយ​មិត្ត​ភ័ក្រ្ត​របស់​លោក​អ្នក​ឃើញ​គំរោង​ផែន​ការ​សកម្ម​ភាព​របស់​លោក​អ្នក​ដែរ​ឬទេ?"
             private: "ឯក​ជន"
             public: "សាធារណះ"
@@ -994,7 +994,7 @@ km:
         catch me up: "ជួយ​ខ្ញុំ​ឡើង​វិញ"
         restart description: "លោក​អ្នក​អាច​ចាប់​ផ្ដើម​គំរោង​អាន​សារ​ជាថ្មី។ រាល់​ប្រវត្តិនៃ​ការ​អាន​របស់​លោក​អ្នក​នឹង​ត្រូវ​រៀប​ជាថ្មី​ ហើយ​ចាប់​ផ្ដើម​អាន​ពី​តំបូង"
         restart: "រៀប​គំរោង​ជាថ្មី"
-        privacy description:
+        privacy description: 
             private: "គំរោង​ផែន​ការ​របស់​លោក​អ្នក​មាន​លក្ខណៈ​ជា​ឯកជន​ សូម​ផ្លាស់​ប្ដូរ​ការ​កំណត់​របស់​លោក​អ្នកជា​ មិត្ត​ភ័ក្ត្រតែប៉ុណ្ណោះ ដើម្បី​ចែក​រំលែក​ផែន​ការ​សកម្មភាព ជាមួយ​នឹង​មិត្ត​ភ័ក្ត្រ។"
             public: "មិត្ត​ភ័ក្ត្រ​​អាច​មើល​ឃើញ​គំរោង​ផែន​ការ​របស់​លោក​អ្នក​។ សូម​ប្ដូរ​ទៅ​ភាព​ជា​ឯកជន​ដើម្បី​អោយ​ផែនការ​សកម្ម​ភាព​របស់​លោក​អ្នក​មាន​ភាព​ជា​ឯកជន ដែល​គេ​មិន​អាច​មើល​ឃើញ។"
         make private: "កំណត់​ភាព​ជា​ឯកជន​"
@@ -1044,32 +1044,32 @@ km:
         completed notice: "សូមអបអរ! លោកអ្នកបានបញ្ចប់ គម្រោងអានព្រះគម្ពីររបស់អ្នកហើយ!"
         exit: "ចាក​ចេញ"
         loading sidebar content: "កំពុងផ្ទុកមាតិការបារចំហៀង..."
-    videos:
+    videos: 
         title: "វីដេអូច្រើន"
         watch videos: "មើល​វីដេអូនេះ​អំពី​ព្រះ​គម្ពីរ"
         all: "វីដេអូទាំងអស់"
         related scripture: "អត្តបទគម្ពីរដែលពាក់ព័ន្ធ"
         share video: "ខ្ញុំ​កំពុង​មើល​វីដេអូ %{video_title} លើ @YouVersion."
-    licenses:
-        authorized:
+    licenses: 
+        authorized: 
             heading: "មាតិការបស់លោកអ្នកត្រូវបានអនុញ្ញាត្ត"
             description: "ពេលនេះលោកអ្នកអាច <a href='%{content_link}' target='_self'>បើកមើលមាតិកាដែលលោកអ្នកបានជាវ</a> ពី %{vendor} នៅលើ YouVersion!"
         has errors: "មានកំហុសកើតឡើងជាមួយនឹងសំណូមពរលោកអ្នក ៖"
-        confirm:
+        confirm: 
             email: "ដើម្បីផ្ដល់សិទ្ធិមាតិកា វីដេអូ ដែលលោកអ្នកបានជាវ សូមឆែកមើលក្នុងប្រអប់ទទួល អ៊ីម៉ែល សម្រាប់ អ៊ីម៉ែល បញ្ជាក់ពី YouVersion ហើយចុចលើ តំណរភ្ជាប់ នៅខាងក្នុងដើម្បី​បញ្ជាក់​ពី​ការ​ចុះ​ឈ្មោះ​របស់​លោក​អ្នក ។"
-        request:
+        request: 
             invalid_vendor_signature: "សុពលកម្ម​អជ្ញាប័ណ្ណបរាជ័យ ៖ ហត្ថលេខា​អ្នកលក់អសុពលភាព"
             invalid_vendor_id: "សុពលកម្មអជ្ញាប័ណ្ណមិនបរាជ័យ ៖ លេខសម្គាល់អ្នកលក់អសុពលភាព"
             invalid_item_ids: "សុពលកម្មអជ្ញាប័ណ្ណបរាជ័យ ៖ ធាតុ​ផ្សំអសុពលភាព"
-        vendor_transaction_id:
+        vendor_transaction_id: 
             duplicate: "លេខប្រតិបត្តិការ ៖ លេខប្រតិបត្តិការនេះត្រូវបានចុះឈ្មោះរួចហើយ"
-        auth:
+        auth: 
             login notice: "ដើម្បីធ្វើឱ្យគណនី​ដែលលោកអ្នកបានជាវមានសុពលភាព សូមចូលទៅកាន់គណនី YouVersion ដែលនៅខាង​ក្រោម ឬ <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
             signup notice: "ដើម្បីធ្វើឱ្យ​មាតិកាដែលអ្នកបានជាវមានសុពលភាព សូមចុះឈ្មោះដើម្បីទទួលបានគណនី YouVersion ដោយឥតគិតថ្លៃមួយដែលនៅខាងក្រោម​ ឬ <a href='/sign-in?source=licenses' target='_self'>%{login}</a> ប្រសិនបើអ្នកមានគណនីស្រាប់ហើយ ។"
             signup link text: "សូមចុះឈ្មោះ ដើម្បីទទួលបាន គណនីឥតគិតថ្លៃមួយ"
             login link text: "ចូល"
-    registration:
-        placeholder:
+    registration: 
+        placeholder: 
             email: "វាយអាសយដ្ឋានអ៊ីម៉ែលរបស់អ្នកចូល"
             username: "សូមវាយឈ្មោះប្រើប្រាស់របស់អ្នកចូល"
             password: "វាយអក្សរសំងាត់របស់អ្នកចូល"
@@ -1083,14 +1083,14 @@ km:
         share blurb: "មើល​ទៅ​ហាក់​ដូច​ជា​អ្នក​ចង់​ចែក​រំលែកខ​ព្រះ​គម្ពីរ​នេះ។ ល្អណាស់! លោក​អ្នក​នឹង​អាច​ចែក​រំលែកខគម្ពីរ​លើ​ហ្វេសប៊ុក ឬ Twitter។ ចុះ​ឈ្មោះ​ចូល ឬ​បង្កើត​គណនីយ​មួយ​ថ្មី​នៅ​ខាង​ក្រោម​ហើយ​ចាប់ផ្ដើម!"
         highlight blurb: "មើល​ទៅ​ហាក់​ដូច​ជា​អ្នក​ចង់​គូស​ចំណាំ​ខ​ព្រះ​គម្ពីរ​នេះ។ ល្អណាស់! គូស​ចំណាំ​នឹង​ជួយ​អ្នក​ក្នុង​ការ​រៀប​ចំ និង​រក្សា​នូវ​ខ​ព្រះ​គម្ពីរ​ដែល​អ្នក​ចូល​ចិត្ត។ ចុះ​ឈ្មោះ​ចូល ឬ​បង្កើត​គណនី​មួយ​នៅ​ខាង​ក្រោម​ហើយ​ចាប់​ផ្ដើម!"
         note blurb: "មើល​ទៅ​ហាក់ដូច​ជា​អ្នកចង់​កត់ត្រា​ខ​គម្ពីរ! គិត​បាន​ល្អ​ណាស់! កំណត់​ត្រា​អាចជយយ​អ្នក​ក្នុង​ការ​ចង​ចាំ​ និង​រៀប​ចំ​នូវ​សេចក្ដីពិត​ដែល​អ្នក​ស្វែង​រក​នៅ​ក្នុង​ព្រះ​បន្ទូល​របស់​ព្រះជាម្ចាស់។ ចុះ​ឈ្មោះ​ចូល ឬ​បង្កើត​គណនី​មួយ​នៅ​ខាង​ក្រោម​ហើយ​ចាប់​ផ្ដើម!"
-    audio:
+    audio: 
         none: "សូម​ទោស! ជំនាន់​ព្រះ​គម្ពីរ​នេះ​មិន​មាន​ជា​សំលេង​ទេ"
         chapter only: "សូម​ទោស មិន​មាន​ខគម្ពីរ​ជា​សំលេង​ទេ។ សូមមើល​នៅ​ក្នុង​កម្ម​វិធី​អាន​គម្ពីរ​សំរាប់​ខគម្ពីរ​ជា​សំលេង"
         close player menu: "បិទ"
         publisher website: "គេហទំព័រ​របស់​អ្នក​បោះពុម្ភ​ផ្សាយ"
-    highlights:
+    highlights: 
         title: "គូស​ចំណាំៈ"
-        blank slate:
+        blank slate: 
             heading: "គូស​លើ​ខគម្ពីរ​ដែល​មានន័យ"
             description: "ពេល​អាន​ព្រះ​គម្ពីរ ជ្រើស​រើស​យក​ខគម្ពីរ​ហើយ​គួស​ពណ៌វា។ ត្រប់​មក​ទីនេះ ដើម្បី មើល កែសម្រួល ឬ​លុប​កំណត់​ចំណាំ​របស់​អ្នក"
         none user: "%{username} មិន​មាន​គំនូស​ពណ៌"
@@ -1101,9 +1101,9 @@ km:
         destroy failure: "មាន​បញ្ហា​ពេល​លុប​គំនូស​ពណ៌"
         creation error: "សូម​ទោស! មិន​អាច​គូស​ចំណាំ​ទេ"
         delete error: "សូម​ទោស មិន​អាចលុប​ការគូស​ចំណាំ​ទេ"
-        form:
+        form: 
             save button: "រក្សា​ទុក គូស​ចំណាំ"
-    searching:
+    searching: 
         bible: "ព្រះគម្ពីរ"
         plans: "គំរោង​ច្រើន"
         users: "អ្នក​ប្រើ​ប្រាស់"
@@ -1112,7 +1112,7 @@ km:
         suggestion html: "តើ​លោក​អ្នក​មានន័យថា %{suggestion_link}?"
         all versions: "ជំនាន់​ %{language_name}ទាំងអស់"
         results for: "លទ្ធ​ផល​ស្វែង​រកៈ "
-    donate:
+    donate: 
         donate now: "បរិច្ចាក​ឥឡូវ"
         donate now intl: "ឬបរិច្ចាក​ជាលក្ខណះ​អន្តរជាតិ"
         enter amount: "សូម​បញ្ចូល​ចំនួន"
@@ -1141,7 +1141,7 @@ km:
         state: "រដ្ឋ"
         zip: "Zip"
         creation form errors: "មាន​កំហុស(ច្រើន)​កើត​មាន​ឡើង​រារាំង​មិន​អោយ​អ្នក​ធ្វើ​ការ​បរិច្ចាក"
-    download ad:
+    download ad: 
         title: "ដោន​ឡូដ​យក​ Bible App ដោយ​ឥត​គិតថ្លៃ"
         description copy: "មាន​ជំនាន់​រាប់​រយ​ត្រូវ​បាន​បក​ប្រែ​ជា %{language_count} ភាសារ​ផ្សេងៗ​គ្នា - ជា​ព្រះ​គម្ពីរ​ដែល​ទៅ​ជា​មួយ​លោក​អ្នក​គ្រប់​ទី​កន្លែង​ទាំងអស់។"
         meta copy title: "ដោន​ឡូដ​យក​ Bible App ដោយ​ឥត​គិតថ្លៃ"
@@ -1153,11 +1153,11 @@ km:
         banner title: "កម្មវិធីព្រះគម្ពីរ"
         banner action: "ដោន​ឡូដ"
         banner open: "បើក"
-    download bafk ad:
+    download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
         download: "Download Now"
-    about page:
+    about page: 
         relevancy: "ភាព​ពាក់ពន្ធ័"
         relevancy copy: "មួយ​ជំនាន់​កន្លង​ទៅ ដែល​មនុស្ស​ម្នាក់​មាន​ព្រះ​គម្ពីរគឺ​ពិបាក​ណាស់។ ថ្ងៃ​នេះ​វា​មិន​មែន​ជា​រឿង​ដែល​ពិ​បាក​បែប​ហ្នឹង​ឡើយ។ យ៉ាងណា​ម៉ិញ មនុស្ស​ជា​ច្រើន​អាច​មាន​​ព្រះ​គម្ពីរ​ ហើយ​គិត​ថា​សារ​នៅ​ក្នុង​ព្រះគម្ពីរ​មិន​មាន​ប្រសិទ្ធិភាព​នៅ​ក្នុង​ការ​រស់​នៅ​របស់​ពួក​គេ​ទេ។ ទន្ទឹម​នេះ​ផង​ដែរ ក៏​មាន​មនុស្ស​ខ្លះ​គេ​ជឿ​ថា ព្រះគម្ពីរគឺ​ផ្សារភ្ជាប់​នឹង​បទ​ពិសោធន៍​រស់​នៅ​ប្រចាំ​ថ្ងៃ​របស់​ពួក​គេ។"
         information revolution: "ព័ត៌មាន​ពី​ការ​ផ្លាស់​ប្ដូរ"
@@ -1168,7 +1168,7 @@ km:
         partners text: "ជាមួយ​ក្រុម​ដៃ​គូរ​បោះ​ផ្សាយ​ព្រះ​គម្ពីរ​របស់​យើង, YouVersion នឹង​មិន​អាច​ផ្ដល់​ជូន​នូវ​ភាព​ទូលំទូលាយ​នៃ​សហគមន៍​ព្រះ​គម្ពីរ​ជា​ច្រើននោះ​ទេ។ លោក​អ្នក​ភាគ​ច្រើន​សួរ​ថា តើ​យើង​អាច​អរគុណ​ដល់​ក្រុម​អ្នក​ផ្គត់​ផ្គង់​ក៏​មាន​តម្លៃ​របស់បេសកកម្ម​ YouVersion ដោយ​របៀប​ណាទៅ។ លោក​អ្នក​អាច​រៀន​បាន​ច្រើន​ថែម​ទៀត​ពី​ពួក​គេ, ពន្ធ័កិច្ច​ពួក​គេ និង​របៀប​ដែល​អ្នក​អាច​គាំ​ទ្រ​ពួក​គេ​តាម​រយះ​តំណរ​ភ្ជាប់​ខាង​ក្រោម។"
         translation title: "ក្រុម​បក​ប្រែ​របស់​យើង"
         learn more: "រៀន​ថែម​ទៀត"
-    press page:
+    press page: 
         title: "តំបន់សារព័ត៌មាន"
         contact header: "ព័ត៌មានទាក់ទងមក​កាន់​សារព័ត៌មាន"
         contact header 2: "ជុំវិញ​វែប"
@@ -1181,13 +1181,13 @@ km:
         lead copy: "ដោយ​ផ្អែក​ទៅលើ​ព្រះគម្ពីរ​តាមរយៈអ៊ីនធើណេត Bible.com កម្មវិធី​ព្រះ​គម្ពីរ​ត្រូវ​បាន​ចែក​ចាយ​ដោយ​ឥត​គិតថ្លៃ ហើយ​អាច​តម្លើង​នៅ​លើ​ទូរស័ព្ទ​គ្រប់​ប្រភេទ។ កម្ម​វិធី​ព្រះ​គម្ពីរ​អនុ​ញ្ញាត​អោយ​​អ្នក​ប្រើ​ប្រាស់​អាន​ព្រះ​គម្ពីរ ចែក​ចាយ​ខ​គម្ពីរជាមួយ​នឹង​បណ្ដាញ​សង្គម​របស់​ខ្លួន អាច​កត់​ចំណាំ​ខគម្ពីរ​ដែល​ខ្លួន​ចូល​ចិត្ត និង​ធ្វើ​អ្វី​ផ្សេងៗ​ទៀត​ជា​ច្រើន — ទាំង​អស់​នេះ​អាច​ធ្វើ​អោយ​អ្នក​ប្រើ​ប្រាស់​អាច​គ្រប់​គ្រងការ​កើន​ឡើងនៃស្ថាន​ភាព​​ជីវិត​ដែល​មាន​លក្ខណៈចល័ត។"
         resources title: "ធនធាន​សារព័ត៌មាន"
         now title: "ថ្ងៃ​នេះ​នៅ​សហគមន៍ YouVersion"
-        resources:
+        resources: 
             now: "ការ​មើល​ដោយ​ផ្ទាល់​កំពុង​ធ្វើ និង​មាន​ទិន្នន័យ​ចុង​ក្រោយ​បំផុត"
             about: "អំពី YouVersion និង Bible App"
             history: "ប្រវត្ត និង​ស្ថានភាព​របស់​ YouVersion"
             manual: "សញ្ញា​នែណាំ YouVersion"
         images title: "រូប​តំណាង និង​រូប​ភាព YouVersion"
-        images:
+        images: 
             logos: "កញ្ចប់​រូប​តំណាង​YouVersion"
             icons: "រូប​សំគាល់ Bible App"
             infographic: "Infographic: ស្ថាន​ភាព និង​ការ​ប្រើ​ប្រាស់ Bible App"
@@ -1195,7 +1195,7 @@ km:
             lifestyle: "ការ​ប្រមូល​រូបភាពៈ Lifestyle"
             screencast: "YouVersion Screencast"
         links title: "Media Coverage Links"
-    mobile page:
+    mobile page: 
         h2: "ព្រះបន្ទូល​របស់​ព្រះជាម្ចាស់​គឺ​នៅ​ជាមួយ​អ្នក"
         h3: "YouVersion គឺជា​សកល"
         h3 sub: "មាន​ច្រើន​ជាង​%{language_count} ភាសារ​ជុំវិញ​ពិភពលោក។"
@@ -1240,44 +1240,44 @@ km:
         sms info: "អ្នកនឹងទទួលនូវសារខ្លីដើម្បីទាញយកនូវកម្មវិធី។"
         sms download: "ចុចដើម្បីទាញយកកម្មវិធីព្រះគម្ពីរ៖"
         sms default country: "KH"
-    pages:
-        generic_error:
+    pages: 
+        generic_error: 
             title: "Oops!"
             explanation: "មាន​អ្វី​មួយ​ខុស​ឆ្គង! សូម​ព្យាយាម​ម្ដង​ទៀត​ដោយ​ទាញ​យក​ទំព័រ​សារ​ជាថ្មី យើង​ខ្ញុំ​ពិត​ជាសូម​ទោស​រាល់កំហុស​ទាំង​នេះ។"
             our action: "យើង​បាន​ដឹង​ពី​ការ​ទាំង​នេះ ហើយ​យើង​នឹង​កែរ​សម្រួល​អោយ​បាន​ឆាប់​ជាទី​បំផុត។"
-        home:
+        home: 
             heading: "ទាញយកកម្មវិធីព្រះគម្ពីរដោយ​ឥតគិតថ្លៃសម្រាប់​ទូរស័ព្ទ ថេប្លេត និងកុំព្យូទ័ររបស់អ្នក។"
             cta: "អានកម្មវិធីព្រះគម្ពីរឥឡូវនេះ"
-            experience:
+            experience: 
                 title: "ប្រើប្រាស់កម្មវិធីនេះគ្រប់ទីកន្លែង"
                 body: "ជ្រើស​ពីកំណែព្រះគម្ពីរដែលមានលើសពី 1,200 និងមានជាង 900 ភាសានៅលើកុំព្យូទ័រ ទូរស័ព្ទ ឬថេប្លេតរបស់អ្នក -- ដែលទាំងអស់នោះ​ក៏មានកម្មវិធីព្រះគម្ពីរជាអូឌីយ៉ូផងដែរ។."
                 action: "មើលកំណែកម្មវិធីព្រះគម្ពីរ"
-            make_yours:
+            make_yours: 
                 title: "ធ្វើឲ្យវាជាកម្មវិធីព្រះគម្ពីររបស់អ្នក"
                 body: "រំលេច ឬចំណាំឃ្លាសំណព្វរបស់អ្នក បង្កើត​រូបភាព​ឃ្លាដែល​អ្នក​អាច​ចែករំលែក​ និងភ្ជាប់​កំណត់ចំណាំ​ជាសាធារណៈ ឬផ្ទាល់​ខ្លួន​​ទៅកាន់វគ្គកម្មវិធី​ព្រះគម្ពីរ ។"
                 action: "បង្កើត​គណនី​ឥតគិតថ្លៃរបស់អ្នក"
-            install_now:
+            install_now: 
                 title: "ដំឡើងកម្មវិធីឥឡូវនេះ"
                 body: "កម្មវិធីព្រះគម្ពីរគឺពិតជាឥតគិតថ្លៃ ដោយមិនមាន​ការផ្សព្វផ្សាយ​ពាណិជ្ជកម្ម ឬការជាវ​កម្មវិធីជាប់មកជាមួយ។ វាត្រូវបានដំឡើងនៅលើ​ឧបករណ៍ជាច្រើនដែលមានលក្ខណៈ​ពិសេសនេះ (មកទល់ពេលនេះ)៖"
                 action: "ដោន​ឡូដ​យក​ Bible App ដោយ​ឥត​គិតថ្លៃ"
-            free_plans:
+            free_plans: 
                 title: "គម្រោងអាន និងការលះបង់ជូនដោយឥតគិតថ្លៃ"
                 body: "គម្រោងព្រះគម្ពីរជួយឲ្យអ្នកមានទំនាក់ទំនងជាមួយនឹង​ពាក្យសំដីរបស់ព្រះជាម្ចាស់​ម្ដងបន្តិចៗជារៀងរាល់ថ្ងៃ ។"
             browse_plans: "រកមើលគម្រោងទាំងអស់"
             read_listen: "អាន ស្ដាប់ មើល ចែករំលែក"
             start_now: "ចាប់ផ្ដើមឥឡូវនេះ"
-            votd:
+            votd: 
                 title: "ខគម្ពីរ​សំរាប់​ថ្ងៃ​នេះ"
                 highlight_bookmark: "រំលេច ចំណាំ ឬចែកវំលែកឃ្លានេះ"
                 subscribe: "ជាវឃ្លាប្រចាំថ្ងៃ"
-            hero:
+            hero: 
                 heading: "ព្រះ​គម្ពីរ​ដោយ​ឥត​គិត​ថ្លៃ​លើ​ទូរស័ព្ទ​ តាប្លេត និង​កុំព្យូទ័រ​របស់​អ្នក"
                 description: "YouVersion​ សាមញ្ញណាស់ ជាព្រះគម្ពីរ​ មិន​មាន​ការ​ផ្សាយ​ពានិជ្ជកម្ម ដែល​នាំ​ព្រះបន្ទូល​របស់ព្រះជាម្ចាស់​មក​ក្នុង​ជីវិត​ប្រចាំ​ថ្ងៃ​របស់​អ្នក"
                 learn more: "រៀនថែមទៀតនៅខាងក្រោម"
                 start reading: "ចាប់ផ្ដើមអាន"
                 skip in future: "រំលងទំព័រនេះ​នៅពេលក្រោយ"
                 now skipped: "ទំព័រនៃនឹងមិនត្រូវបានរំលងទេ ។"
-            features:
+            features: 
                 read heading: "អានព្រះគម្ពីរ"
                 read description: "យកជម្រើសរបស់អ្នកពី <a href='%{versions_path}' target='_self'>​ព្រះគម្ពីររាប់រយជំនាន់ និង រាប់រយភាសា​</a>. ប្រៀបធៀបជំនាន់ពីរ​ នៅម្ខាងមួយជំនាន់ជាប់គ្នា ។ អ្នក​ក៏អាច​ជ្រើស​រើសពុម្ពអក្សរ និងទំហំបញ្ចាំងផងដែរ ។​ សូមធ្វើឱ្យបទ​ពិសោធន៍​ព្រះគម្ពីរ​លើបណ្ដាញរបស់អ្នក ស្ថិតក្នុងលក្ខណៈដែលអ្នក​ពេញចិត្ត ។"
                 study heading: "សិក្សាព្រះគម្ពីរ ។"
@@ -1291,11 +1291,11 @@ km:
             download action: "ដោនឡូដ Bible App"
             download description: "ដោនឡូដ YouVersion Bible App ដោយឥតគិតថ្លៃលើ​ទូរស័ព្ទចល័តរបស់អ្នក​ហើយអ្នកនឹង​មាន​ព្រះគម្ពីរនៅជាប់ជាមួយ ទោះបីទៅទីណាក្ដី ។"
             world installs: "តំឡើងទូទាំងពិភពលោក"
-        trending verses:
+        trending verses: 
             title: "ខព្រះគម្ពីរដែលពេញនិយម"
             headline: "ខព្រះគម្ពីរដែលពេញនិយមពេលបច្ចុប្បន្ននៅក្នុងកម្មវិធីព្រះគម្ពីរ YouVersion និងBible.com"
-    shared:
-        menu_settings:
+    shared: 
+        menu_settings: 
             title: "ការ​កំណត់​របស់​អ្នក"
             close: "បិទ"
             font: "ពុម្ភ​អក្សរ"
@@ -1315,7 +1315,7 @@ km:
             translation notes: "កំណត់ចំណាំ"
             cross references: "ឯកសារ​យោង"
             numbers and titles: "លេខ និងចំណងជើង"
-    app errors:
+    app errors: 
         404 plans explanation: "តើអ្នកកំពុងរកមើលគម្រោង <a href='%{plan_path}' target='_self'>%{title}</a> ឬ?"
         404 contact support: "មានបញ្ហា? សូមទំនាក់ទំនងមកកាន់ <a href='%{support_url}' target='_self'>ក្រុមគាំទ្ររបស់យើងខ្ញុំ</a>។"
         404 explanation: "លោក​អ្នក​ប្រហែល​ជា​ចាប់​ផ្ដើម​ម្ដង​ទៀត​ពី  <a href='%{reader_path}' target='_self'>ទំព័រ​ដើម</a>. នៅ​តែ​មាន​បញ្ហា? សូម​ទាក់​ទង​មក​យើង <a href='%{support_url}' target='_self'>ក្រុម​ជំនួយ</a>."
@@ -1323,7 +1323,7 @@ km:
         408 message: "សូម​ទោស​ ម៉ាស៊ីន​មេ​របស់​យើង​មិន​ឆ្លើយតប​ក្នុង​កំឡុង​ពេល​បង្ហាញ​នេះ​។"
         408 explanation: "យើង​បាន​ទទួល​នូវ​ការ​ជូន​ដំណឹង​រួច​ហើយ យើង​នឹង​ធ្វើ​ការ​ដោះ​ស្រាយ​នូវ​រាល់​បញ្ហា​ទាំង​ឡាយ​អោយ​បាន​ឆាប់​រហ័ស​បំផុត​តាម​តែ​អាច​ធ្វើ​បាន។យើង​​នាំ​លោក​អ្នក​ត្រឡប់​ទៅ​កាន់​គំរោង​ផែន​ការ​ណ៍​អាន​ព្រះ​គម្ពីរវិញ!"
         try again: "សូម​ព្យាយាម​ម្ដង​ទៀត"
-    versions:
+    versions: 
         filter: "ចាប់​ផ្ដើម​វាយ​ឈ្មោះ​ជំនាន់ (ឬ​ភាសា)..."
         see all: "ជ្រើស​រើស​ជំនាន់​ទាំង​អស់"
         courtesy of: "%{abbreviation} នាំ​មកជូនលោកអ្នកដោយ %{publisher}"
@@ -1339,8 +1339,8 @@ km:
         public domain: "ដូមេន សាធារណះ"
         loading: "ទាញ​យក​ជំនាន់​ច្រើន​ទៀត"
         load error: "សូម​ទោស មាន​បញ្ហា​ទាញ​យក​ជំនាន់​ច្រើន​ទៀត។ បិទ មីនុយ​នេះ​ហើយ​បើក​សារ​ជា​ថ្មី​ម្ដង​ទៀត។"
-    campaigns:
-        christmas:
+    campaigns: 
+        christmas: 
             tracker title: "តាម​ដាន​រឿង​គ្រិស្ត​ស្មាស់"
             twitter text: "មើល​ពី ពិភព​លោក​អាន​ពីកំណើត​ព្រះយេស៊ូ ចែក​រំលែក​រឿង​គ្រិស្ត​ស្មាស់@YouVersion​https://www.bible.com/christmas"
             facebook text: "ចែក​រំលែក​រឿង​គ្រិស្ត​ស្មាស់​ដូច​ជាមនុស្ស​នៅ​ជុំ​វិញពិភព​លោក​កំពុង​អាន​អំពី​រឿង​កំណើត​ព្រះយេស៊ូ  នៅ​ក្នុង​ក្រុម​ជំនុំ ឬ​នៅ​ផ្ទះ ជិត​មនុស្ស​ដែល​យើង​ស្រឡាញ់ ឬ​ក្នុង​កំឡុង​ពេល​ស្ងៀម​ស្ងាត់​តែ​ម្នាក់​ឯង យើង​កំពុត​តែ​ឆ្លុះ​បញ្ចាំង​​​ពី​ក្ដី​ស្រឡាញ់​ដ៏អស្ចារ្យ​របស់​ព្រះ​ចំពោះ​យើង។"
@@ -1355,51 +1355,51 @@ km:
             versions: "លើស​ពី %{version_count} ជំនាក់​ក្នុង​ %{language_count} ភាសា"
             tagline: "ជា​ព្រះ​គម្ពីរ​ដែល​ទៅ​ជាមួយ​អ្នក​គ្រប់​ទី​កន្លែង"
             chapter counter format: "9,999,999"
-        100m:
+        100m: 
             logo: "YouVersion: កម្មវិធីព្រះគម្ពីរ"
             tagline: "វាចាប់ផ្ដើមជាមួយ​ <em>១០០ លាន</em>"
             intro: "តើ កម្មវិធីព្រះគម្ពីរ អាចឈានដល់ចំនួនអ្នកដំឡើង១០០លានដំឡើងដែរឬទេ នៅមុនខួបទី៥​របស់យើងនៅថ្ងៃទី ១០ ខែ​កក្កដាឬទេ? លុះត្រាតែមានជំនួយពីអ្នក!"
             after: "ដោយសារ​តែមាន​ការ​រួម​ចំណែក​ពី លោក​អ្នក កម្មវិធីព្រះគម្ពីរ ត្រូវ​បាន​ដោនឡូដ​រហូត​ដល់​ចំនួន ១០០លាន គិត​មក​ត្រឹម​ខួប​លើកទី៥របស់យើងនៅថ្ងៃទី ១០ខែកក្កដា ។ សូមអរគុណ!"
-            share:
+            share: 
                 with friends: "ចែករំលែក​ជាមួយមិត្តភក្ដិរបស់អ្នក"
-                fb:
+                fb: 
                     dialog name: "តើអ្នកមានកម្មវិធីព្រះគម្ពីរដែរឬទេ?"
                     dialog desc: "ខ្ញុំចូលចិត្តកម្មវិធីព្រះគម្ពីរ! វាពិតជាបានជួយខ្ញុំឱ្យប្រើប្រាស់ព្រះគម្ពីរ ក្លាយ​ជា​បំណែក​មួយ​នៃ​ជីវិត​ប្រចាំថ្ងៃ​របស់​ខ្ញុំ ។ វាអាចឱ្យខ្ញុំបន្លិច ស្ដាប់ព្រះគម្ពីរជាអូឌីយ៉ូ ធ្វើកំណត់ត្រា អនុវត្ត​គម្រោង​ចំណាយ​ពេល​ផ្ទាល់​ខ្លួន​ជាមួយ​ព្រះជាម្ចាស់…ថែមទាំងមើលវីដេអូទៀត! សូមដោនឡូដវាឥឡូវនេះតែម្ដង (ឥតគិតថ្លៃទេ): http://www.bible.com/app"
-                tw:
+                tw: 
                     tweet: "កម្មវិធីព្រះគម្ពីរ @YouVersion មានចំណុចអចិន្ត្រៃយ៍នៅលើ​អេក្រង់ហូម​របស់ខ្ញុំ ។ សូមអាន មើល ស្ដាប់ និង ចែកចាយ...ទាំងនេះមាននៅក្នុងកម្មវិធីមួយដែលឥតគិតថ្លៃ ៖ bible.com/app"
-                em:
+                em: 
                     subject: "តើអ្នកមានកម្មវិធីព្រះគម្ពីរដែរឬទេ?"
                     body: "ខ្ញុំចូលចិត្តកម្មវិធីព្រះគម្ពីរពី YouVersion ហើយគិតថាអ្នកក៏ប្រហែលជាចូលចិត្តដែរ ។ ​ខ្ញុំឧស្សាហ៍បើក​ព្រះគម្ពីរអានច្រើនជាងមុន នៅប៉ុន្មានថ្ងៃនេះ ដោយព្រោះវាងាយស្រួលអាន មើល ស្ដាប់ និង​ចែកចាយ​ណាស់ ។ វាក៏ថែមទាំងមានគម្រោងអាន ដែលមានជម្រើសអាចឱ្យ​យើងអាន​បានទាំងអស់ ហើយរង់ចាំអ្នកជ្រើសរើសអាន​រាល់ថ្ងៃ ។​\n\nអ្នកអាច​ជាវវាបាន (ឥតគិតថ្លៃ!) នៅលើឧបករណ៍ចល័តភាគច្រើននៅទីនេះ ៖\nhttp://www.bible.com/app"
-            body:
+            body: 
                 p1: "ថ្ងៃទី ១០ ខែ កក្កដា​​នឹង​​ជា​​ថ្ងៃ​មួយ​​ដ៏​​អស្ចារ្យ​ ។​ មិនគ្រាន់តែ​ជា​ខួបលើកទី ៥​នៃ​កម្មវិធីព្រះគម្ពីរប៉ុណ្ណោះទេ វាក៏ជាជាថ្ងៃដែលសម្គាល់រយៈពេល ៥ ឆ្នាំ​នៃការចាប់ផ្ដើម​នៃ iTune Store របស់ក្រុមហ៊ុន​​ Apple ដែរ ។"
                 p2: "តែធំជាងនេះទៅទៀត? ដោយជំនួយពីអ្នក នេះជាពេលដែល​កម្មវិធីព្រះគម្ពីរ​​នឹងឈានដល់​ចំនួនដោនឡូដ​ ១០០ លានដងហើយ ។"
                 p3: "យើងរៀនបានថា ព្រះជាម្ចាស់ប្រើប្រាស់ព្រឹត្តិការណ៍បែបនេះ ដើម្បី​ធ្វើឱ្យសំទុះនៃការរីកចំរើនកាន់តែខ្លាំងថែមទៀត ។"
                 p4: "តោះ យើង​បង្កើត​ប្រវត្តិសាស្ត្រ​ជាមួយ​គ្នា។"
                 after p1: "YouVersion តំំណាង​អោយ​ការ​ចូល​រួម​នៃ​ក្រុម​មនុស្ស​ជុំ​វិញ​ពិភព​លោក​ដែល​មាន​ការ​រំភើប​ក្នុង​ការ​ជួយ​អ្នក​ដទៃ​អោយ​បាន​ទទួល​នូវ​ការ​ប៉ះ​ពាល់​ពី​ព្រះ​បន្ទូល​របស់​ព្រះ​ជាម្ចាស់។ យើង​សូម​អរគុណ​សំរាប់​ជំនួយ​សប្បុរសធម៌​ពី​សំណាក់​សមាគម​ព្រះ​គម្ពីរ​ផ្សេងៗ ស្ថាប័ន​ចែក​ផ្សាយ​ព្រះ​គម្ពីរ ក្រុម​ជំនុំ គ្រូ​គង្វាល និង អ្នក​ក្រុម​បុគ្គលិក​ស្ម័គ្រចិត្ត​ទាំងអស់។​"
                 after p2: "អ្វី​ដែល​ធ្វើ​អោយ​មាន​ការ​រំភើបខ្លាំង​​ទាក់​ទង​ទៅ​នឹង​ស្នាដៃ​នេះ គឺ​មាន​មនុស្ស​ចំនួន​ជា​ច្រើន​ដែល​អាច​ទទួល​បាន​នូវ​ព្រះ​គម្ពីរ​ផ្ទាល់​ខ្លួន​។ ជា​ចំនួន​ដ៏​ច្រើនដែល​មិន​ធ្លាប់​មាន​​ក្នុង​ប្រវត្តិសាស្ត្រកន្លង​មក។ វា​ជា​ការ​លើក និង ជំរុញ​ទឹក​ចិត្ត​យ៉ាង​ខ្លាំង​ដោយ​យើង​បាន​ឃើញ​នូវ​កិច្ច​ការ​ដែល​ព្រះ​ជា​ម្ចាស់​​កំពុង​ធ្វើ។ យើង​ជឿរ​ជាក់​ថា​នេះ​គ្រាន់​តែ​ជា​ការ​ចាប់​ផ្ដើម​តែ​ប៉ុណ្ណោះ។ <em> ជា​ការ​ចាប់​ផ្ដើម​ពី​ចំនុច ១០០ លាន។</em>."
-            ad:
+            ad: 
                 title: "កម្មវិធីព្រះគម្ពីរ​ ឥតគិតថ្លៃទាំងស្រុង ហើយជារបៀបមួយដ៏ប្រសើរក្នុងការ​សិក្សាព្រះគម្ពីរ ។​"
                 copy: "អាន ស្ដាប់ ទស្សនា ចែករំលែក ។ ទទួលបាន​​កម្មវិធីព្រះគម្ពីរ សម្រាប់ទូរស័ព្ទទំនើប ឬ តាប្លេតរបស់លោកអ្នក៖​ <a href='http://bible.com/app' target='_self'>ដោនឡូដ​ឥឡូវនេះ</a>"
-            sidebar:
+            sidebar: 
                 tagline: "តោះ យើង​បង្កើត​ប្រវត្តិសាស្ត្រ​ជាមួយ​គ្នា។"
                 button: "ចែកចាយ​កម្មវិធី​ព្រះ​គម្ពីរ"
-    ui:
+    ui: 
         characters remaining: "តួ​អក្សរ​នៅ​សល់"
         yes button: "បាទ/ចា៎"
         no button: "ទេ"
         cancel: "បោះ​បង់"
-        plans:
+        plans: 
             privacy: "តើ​អ្នក​ចង់​អោយ​ សកម្ម​ភាព​របស់​អ្នក ជាមួយ​នឹង​គំរោង​នេះ អោយ​មិត្ត​ភក្តិ​ឃើញ​ទេ?"
         loading indicator text: "កំពុង​ទាញ ..."
         loading: "កំពុង​ទាញយក"
-        pagination:
+        pagination: 
             next page: "ទំព័រ​បន្ទាប់"
             previous page: "ទំព័រ​មុន"
-        datetime:
+        datetime: 
             just now: "ទើប​តែ​ឥឡូវ​នេះ"
         verses selected: "ឃ្លាត្រូវបានជ្រើស"
-    EventsAdmin:
-        header:
+    EventsAdmin: 
+        header: 
             home: "គេហ៍"
             read: "អាន"
             plans: "គំរោង​ច្រើន"
@@ -1410,7 +1410,7 @@ km:
             search placeholder: "ស្វែង​រក..."
             sign in: "ចុះ​ឈ្មោះ​ចូល"
             sign up: "ចុះ​ឈ្មោះ"
-        profile menu:
+        profile menu: 
             bookmarks: "កំណត់​ចំណាំ"
             highlights: "គូស​ចំណាំៈ"
             notes: "កំណត់​ត្រា"
@@ -1418,7 +1418,7 @@ km:
             friends: "មិត្ត​ភ័ក្ត្រ"
             badges: "ផ្លាក​សញ្ញា"
             sign out: "ចាក​ចេញ"
-        footer:
+        footer: 
             events: "ព្រឹត្តិការណ៍នានា"
             versions: "ជំនាន់ (%{count})"
             languages: "ភាសា (%{count})"
@@ -1431,17 +1431,18 @@ km:
             press: "ដំណឹង"
             privacy: "គោល​នយោបាយ​ឯកជន"
             terms: "លក្ខខណ្ឌ័"
-        unsubscribe:
+            volunteer: "អ្នកស្ម័គ្រចិត្ត"
+        unsubscribe: 
             about: "គ្រប់គ្រងលើអ៊ីម៉ែលដែលអ្នកទទួលពី YouVersion អ្នកអាចកែរនូវការតឿនរំលឹកលើឧបករណ៍របស់អ្នកពីកម្មវិធី។"
             email: "អ៊ីម៉ែល"
             not me: "នេះមិនមែនខ្ញុំទេ"
             saved: "បានរក្សាទុក"
             plan delivery: "គំរោងបញ្ជូន"
             sign-in: "ដើម្បីកែរនូវការកំណត់ផ្សេងៗ <a href='%{sign_in_path}'>ចុះឈ្មោះចូលទៅគណនីរបស់អ្នក</a>។"
-            links:
+            links: 
                 manage: "គ្រប់គ្រងនូវអ៊ីម៉ែលតឿនរំលឹក"
                 unsub all: "លែងជាវពីគ្រប់អ៊ីម៉ែលទាំងអស់"
-            success:
+            success: 
                 all: "អ្នកលែងជាវដោយជោគជ័យពី<b>គ្រប់អ៊ីម៉ែលYouVersion</b>"
                 badges: "អ្នកលែងជាវដោយជោគជ័យពី<b>ផ្លាក</b> អ៊ីម៉ែល"
                 comments: "អ្នកលែងជាវដោយជោគជ័យពី<b>មតិ</b> អ៊ីម៉ែល"
@@ -1454,7 +1455,7 @@ km:
                 votd: "អ្នកលែងជាវដោយជោគជ័យពី <b>ខប្រចាំថ្ងៃ</b> អ៊ីម៉ែល"
                 votd_image: "អ្នកលែងជាវដោយជោគជ័យពី <b>រូបភាពខប្រចាំថ្ងៃ</b> អ៊ីម៉ែល"
                 contact_joins: "អ្នកលែងជាវជោគជ័យពី 1 បញ្ជីទំនាក់ទំនង</b>"
-            labels:
+            labels: 
                 badges: "ពេល​ខ្ញុំ​ទទួលបានផ្លាក"
                 comments: "ការ​បញ្ចេញ​មតិ​លើ​សកម្ម​ភាព​របស់​ខ្ញុំ"
                 friendships: "រក​សំណើរ"
@@ -1465,14 +1466,14 @@ km:
                 votd: "ខប្រចាំថ្ងៃ អក្សរ"
                 votd_image: "រូបភាព​ខគម្ពីរ​ប្រចាំថ្ងៃ"
                 contact_joins: "នៅ​ពេល​ដែល​អ្នក​ដែល​មាន​ទំនាក់​ទំនង​ជាមួយ​លោក​អ្នក​ចូល​រួម"
-            error:
+            error: 
                 token: "សូមទោស អ្នកត្រូវចុះឈ្មោះចូលមុននឹងអ្នកអាចប្ដូរនូវការកំណត់ការតឿនរំលឹករបស់អ្នក"
                 other_type: "សូមទោស យើងមិនបានរំពឹងថានឹងមានអញ្ចឹងទេ។ តើលោកអ្នកចង់អាប់ឌែតនូវការតឿនរំលឹករបស់អ្នកទេ?"
         change: "ផ្លាស់​ប្ដូរ"
-        ui:
+        ui: 
             yes button: "បាទ/ចា៎"
             no button: "ទេ"
-        plans:
+        plans: 
             plans: "គំរោង​ច្រើន"
             plans back: "← គំរោង​ច្រើន"
             related plans: "គម្រោងដែលពាក់ព័ន្ធ"
@@ -1481,15 +1482,15 @@ km:
             my_plans: "គំរោង​របស់​ខ្ញុំ"
             day_completed: "<b>%{username}​បាន​បញ្ចប់​ការ​អាន​នៅ​ថ្ងៃទី​%{day}នៃ​គំរោង​អាន​ព្រះ​គម្ពីរ​៖ %{plan_title}</b><b></b><b></b>"
             which reading: "%{current} នៃ %{total}"
-            status:
+            status: 
                 on track: "កំពុងដំណើរការ!"
-                days ahead:
+                days ahead: 
                     other: "%{count} ថ្ងៃ​ទៅមុខទៀត!"
-                missed days:
+                missed days: 
                     other: "%{count} ថ្ងៃដែលខកខាន"
             bible plan language: "ភាសារបស់គម្រោងព្រះគម្ពីរ"
             share plan: "ឆែក​មើល​មក @YouVersion #គំរោង​អាន​គម្ពីរ: %{plan_title}"
-            widget:
+            widget: 
                 my plans: "គំរោង​របស់​ខ្ញុំ"
                 start reading: "ចាប់ផ្ដើមអាន"
                 view my plans: "មើល​គំរោងផែន​ការ​របស់​ខ្ញុំ"
@@ -1498,16 +1499,16 @@ km:
                 reading: "ការ​អាន"
                 readings: "ការ​អាន"
                 readings 5 or more: "ការ​អាន"
-            stats:
-                friends reading:
+            stats: 
+                friends reading: 
                     other: "មាន​មិត្ត​ភ័ក្ត្រ​របស់​លោក​អ្នក​ចំនួន %{count} នាក់បាន​ចុះ​ឈ្មោះ​ក្នុង​គំរោង​នេះ"
-                friends completed:
+                friends completed: 
                     other: "មាន​មិត្ត​ភ័ក្ត្រ​របស់​លោក​អ្នក​ចំនួន %{count} នាក់បាន​​បញ្ចប់​​គំរោង​នេះ"
                 total completions: "មានគំរោង​ចំនួន​​ជាង %{count} ត្រូវ​​បានបញ្ចប់​"
                 view all: "បង្ហាញ​ទាំង​អស់"
                 close: "បិទ"
             settings: "ការ​កំណត់"
-            privacy:
+            privacy: 
                 visible to friends?: "តើ​លោក​អ្នក​ចង់​អោយ​មិត្ត​ភ័ក្រ្ត​របស់​លោក​អ្នក​ឃើញ​គំរោង​ផែន​ការ​សកម្ម​ភាព​របស់​លោក​អ្នក​ដែរ​ឬទេ?"
                 private: "ឯកជន"
                 public: "សាធារណៈ"
@@ -1577,7 +1578,7 @@ km:
             catch me up: "ជួយ​ខ្ញុំ​ឡើង​វិញ"
             restart description: "លោក​អ្នក​អាច​ចាប់​ផ្ដើម​គំរោង​អាន​សារ​ជាថ្មី។ រាល់​ប្រវត្តិនៃ​ការ​អាន​របស់​លោក​អ្នក​នឹង​ត្រូវ​រៀប​ជាថ្មី​ ហើយ​ចាប់​ផ្ដើម​អាន​ពី​តំបូង"
             restart: "រៀប​គំរោង​ជាថ្មី"
-            privacy description:
+            privacy description: 
                 private: "គំរោង​ផែន​ការ​របស់​លោក​អ្នក​មាន​លក្ខណៈ​ជា​ឯកជន​ សូម​ផ្លាស់​ប្ដូរ​ការ​កំណត់​របស់​លោក​អ្នកជា​ មិត្ត​ភ័ក្ត្រតែប៉ុណ្ណោះ ដើម្បី​ចែក​រំលែក​ផែន​ការ​សកម្មភាព ជាមួយ​នឹង​មិត្ត​ភ័ក្ត្រ។"
                 public: "មិត្ត​ភ័ក្ត្រ​​អាច​មើល​ឃើញ​គំរោង​ផែន​ការ​របស់​លោក​អ្នក​។ សូម​ប្ដូរ​ទៅ​ភាព​ជា​ឯកជន​ដើម្បី​អោយ​ផែនការ​សកម្ម​ភាព​របស់​លោក​អ្នក​មាន​ភាព​ជា​ឯកជន ដែល​គេ​មិន​អាច​មើល​ឃើញ។"
             make private: "កំណត់​ភាព​ជា​ឯកជន​"
@@ -1627,39 +1628,39 @@ km:
             completed notice: "សូមអបអរ! លោកអ្នកបានបញ្ចប់ គម្រោងអានព្រះគម្ពីររបស់អ្នកហើយ!"
             exit: "ចាក​ចេញ"
             loading sidebar content: "កំពុងផ្ទុកមាតិការបារចំហៀង..."
-        components:
-            ErrorMessage:
+        components: 
+            ErrorMessage: 
                 genericError: "មាន​កំហុស​កើតឡើង"
-                announcement:
-                    events:
-                        title:
+                announcement: 
+                    events: 
+                        title: 
                             required: "តម្រូវ​អោយ​មានចំណង​ជើង​ព័ត៌មាន"
-                default:
-                    bible:
-                        reference:
+                default: 
+                    bible: 
+                        reference: 
                             not_found: "អំណះអំណាងព្រះគម្ពីរ​មិន​ត្រឹម​ត្រូវ"
-                    events:
-                        google_place_id:
+                    events: 
+                        google_place_id: 
                             required: "អ្នកត្រូវជ្រើស​រើសទីតាំង​ពី​ផែន​ទី។"
-                        latitude:
+                        latitude: 
                             required: "អ្នក​ត្រូ​វតែជ្រើស​រើសទីតាំង​ពីផែន​ទី"
-                        times:
-                            start_dt:
+                        times: 
+                            start_dt: 
                                 must_be_a_future_date: "ម៉ោង​ចាប់​ផ្ដើមមិន​អាចនៅ​អតីតកាល"
-                        timezone:
+                        timezone: 
                             required: "ហ្សូន​ម៉ោង​តម្រូវ​អោយ​មាន"
-                reference:
-                    events:
-                        usfm:
+                reference: 
+                    events: 
+                        usfm: 
                             invalid: "អំណះអំណាងព្រះ​គម្ពីរមិន​ត្រឹម​ត្រូវ"
-                url:
-                    events:
-                        url:
+                url: 
+                    events: 
+                        url: 
                             required: "ត្រូវ​ការ​មាន​URL"
-                        title:
+                        title: 
                             required: "តម្រូវ​អោយ​មាន​ផ្លាក​URL "
-            EventHeader:
-                status:
+            EventHeader: 
+                status: 
                     published: "បាន​ផ្សាយ"
                     draft: "សេចក្ដី​ព្រាង"
                     live: "បន្ត​ផ្ទាល់"
@@ -1671,36 +1672,36 @@ km:
                 eventBuilder: "ឧបករណ៍បង្កើត​ព្រឹត្តិការណ៍"
                 signOut: "ចាក​ចេញ"
                 createAccount: "បង្កើត​គណនី"
-            HtmlEditor:
+            HtmlEditor: 
                 text: "អត្ថបទ"
                 bold: "ក្រាស់"
                 italic: "ទ្រេត"
-        containers:
-            Auth:
+        containers: 
+            Auth: 
                 title: "ចុះ​ឈ្មោះ​ចូល​ក្នុង​ព្រឹត្តិការណ៍"
                 signIn: "ចុះ​ឈ្មោះ​ចូល"
                 subHead1: "ប្រសិន​បើ​លោក​អ្នក​ជាំ​អ្នក​ប្រើ​ប្រាស់កម្មវិធីព្រះគម្ពីរ ហើយ​លោក​អ្នក​មាន​គណនីYouVersionរួច​ហើយ លោក​អ្នក​អាច​ចុះ​ឈ្មោះ ចូល​ប្រើ​ប្រាស់​នូវ​ឈ្មោះ​ពីមុន​របស់​អ្នក។<br/><br/>លោក​អ្នក​មិន​ទាន់​មាន​គណនីYouVersion​នៅ​ឡើយ​ទេ?<br/><a href='%{url}'>ចុះ​ឈ្មោះ​ចូល​នៅ Bible.com ដើម្បីដើម្បី​ចាប់​ផ្ដើម​បង្កើត​ព្រឹត្តិការណ៍ច្រើន។</a>"
                 email: "អ៊ីម៉ែល"
                 password: "ពាក្យ​សម្ងាត់"
                 forgotPassword: "ភ្លេច​ពាក្យ​សម្ងាត់"
-            EventEdit:
+            EventEdit: 
                 event: "ព្រឹត្តិការណ៍"
-            EventEditContentContainer:
+            EventEditContentContainer: 
                 choose: "ជ្រើសរើស​ខ្លឹម​សារ​ខ្លះ​ដើម្បី​ចាប់​ផ្ដើម។"
                 needHelp: "តើ​លោក​អ្នក​ត្រូវ​ការ​ជំនួយ​ឬ?"
                 title: "ខ្លឹម​សារ​ព្រឹត្តិការណ៍"
                 previous: "← មុន៖ ទី​កន្លែង និង ពេល​វេលា"
                 next: "បន្ទាប់៖ មើល​សេចក្ដី​ព្រៀង →"
-            EventEditDetails:
+            EventEditDetails: 
                 title: "ព្រឹត្តិការណ៍ពិស្ដារ"
-            EventEditLocationContainer:
+            EventEditLocationContainer: 
                 title: "ទី​កន្លែង​ព្រឹត្តិការណ៍"
                 previous: "← មុន៖ ពិស្ដារ"
                 next: "បន្ទាប់៖ បន្ថែម​ខ្លឹម​សារ →"
-            EventEditPreview:
+            EventEditPreview: 
                 title: "មើល​សេចក្ដីព្រៀង​ព្រឹត្តិការណ៍"
                 previous: "←មុន៖ ខ្លឹម​សារ"
-            EventEditShare:
+            EventEditShare: 
                 title: "ចែក​រំលែកព្រឹត្តិការណ៍"
                 subTitle: "ព្រឹត្តិការណ៍របស់​អ្នក​កំពុងតែ​​បោះផ្សាយ"
                 edit: "កែរ​សម្រួលព្រឹត្តិការណ៍"
@@ -1709,10 +1710,10 @@ km:
                 copy: "ចម្លង"
                 copied: "តំណរ​ភ្ជាប់ខ្លី​បាន​ចម្លង​ទៅកាន់​ក្លីបបត​"
                 previous: "← ពីមុន: មើល"
-            EventFeedDiscover:
+            EventFeedDiscover: 
                 title: "រុក​រកព្រឹត្តិការណ៍ច្រើន"
                 discover: "រុក​រក"
-            EventFeedMine:
+            EventFeedMine: 
                 title: "ព្រឹត្តិការណ៍របស់​ខ្ញុំ"
                 previous: "← ពី​មុន"
                 next: "បន្ទាប់→"
@@ -1721,38 +1722,38 @@ km:
                 subTitle: "ព្រឹត្តិការណ៍ច្រើនបានបង្កើតដោយ​ខ្ញុំ"
                 newFirst: "បង្កើត​ព្រឹត្តិការណ៍ដំបូង​របស់​លោក​អ្នក"
                 learn: "រៀន​បង្កើត​ព្រឹត្តិការណ៍អស្ចារ្យ"
-            EventFeedSaved:
+            EventFeedSaved: 
                 title: "ព្រឹត្តិការណ៍ដែលបានរក្សាទុក"
-            EventView:
+            EventView: 
                 title: "ព្រឹត្តិការណ៍YouVersion"
-            SelectLanguage:
+            SelectLanguage: 
                 choose: "សូមជ្រើសរើសភាសារបស់អ្នក។"
-        features:
-            Auth:
-                errors:
+        features: 
+            Auth: 
+                errors: 
                     sessionExpired: "ថេរវេលា​អស់​សុពលភាព​ហើយ សូម​ចុះ​ឈ្មោះ​ចូល​ម្ដង​ទៀត"
                     invalidEmail: "អ៊ី​ម៉េល​ ឬ ពាក្យ​សំងាត់​មិន​ត្រឹម​ត្រូវ"
-            EventEdit:
-                errors:
+            EventEdit: 
+                errors: 
                     locationMustHaveTime: "ទីតាំងទាំងអស់​ត្រូវ​មាន​យ៉ាង​ហោច​ណាស់​ម្ដង។"
                     locationRequired: "អ្នកមិន​អាចផ្សាយ​ព្រឹត្តិការណ៍ដោយ​គ្មានទីតាំង​បាន​ទេ។"
                     contentRequired: "លោក​អ្នក​មិន​អាច​ផ្សព្វ​ផ្សាយ​ព្រឹត្តិ​ការណ៍​ដែល​មិន​មាន​ខ្លឹមសារ​ជាប់​ជាមួយ​បាន​ឡើយ។"
                     planSearchFailed: "មិន​មាន​ការ​ស្វែង​រកដូច​នឹង​ឯកសារណា​មួយទេ។"
                     noMatchingPlans: "មិន​មាន​គំរោងដែល​ស្វែង​រក"
-                components:
-                    EventEditNav:
+                components: 
+                    EventEditNav: 
                         details: "សេចក្ដី​ពិស្ដារ"
                         locations: "ទី​កន្លែង និង ពេល​វេលា"
                         content: "ខ្លឹម​សារ"
                         preview: "មើល​សេចក្ដី​ព្រៀង និង ផ្សព្វ​ផ្សាយ"
                         share: "ចែក​រំលែក"
-                features:
-                    content:
-                        components:
-                            ContentFeed:
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
                                 reorder: "ជាវ​មាតិការ​ឡើងវិញ"
                                 doneReordering: "បញ្ចប់ការ​ថត"
-                            ContentHeader:
+                            ContentHeader: 
                                 text: "អត្ថបទ"
                                 reference: "អត្ថបទ​យោង​ព្រះ​គម្ពីរ"
                                 plan: "គំរោង​ផែនការ"
@@ -1760,40 +1761,40 @@ km:
                                 link: "តំណរ​ខាង​ក្រៅ"
                                 giving: "តំណរ​ទៅ​កាន់​ទំព័រ​បរិច្ចាគ"
                                 announcement: "សេចក្ដី​ជូនដំណឹង"
-                            ContentHelpModal:
+                            ContentHelpModal: 
                                 types: "ប្រភេទខ្លឹមសារ"
                                 learn: "រៀន​ពីរបៀប​បង្កើត<br>ព្រឹត្តិការណ៍អស្ចារ្យ​មួយ។"
-                                text:
+                                text: 
                                     title: "អត្ថបទ"
                                     desc: "បង្ហាញ ចំនុច​គន្លឺះ ការ​ពីភាក្សារ សំនួរផ្សេងៗ… ចែក​រំលែក​នូវ​ខ្លឺម​សារ​ជា​អត្ថបទទូទៅ ដែល​ជួយ​អ្នក​ចូល​រួម​ក្នុង​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក​តាម​រយៈសារ និង អ្វី​ដែល​កំពុង​កើត​មាន​ឡើង។ អត្ថបទ​របស់​លោក​អ្នក​អាច​មាន​ប៉ុន្មាន​តួ​អក្សរ​ក៏​បាន ហើយ​ថែម​ទាំង​អាចតុប​តែង​លំអរ​បានទៀត​ផង។"
-                                reference:
+                                reference: 
                                     title: "ខគម្ពីរ​យោង"
                                     desc: "ជ្រើស​រើស​ខ​គម្ពីរ ឬ​អត្ថ​បទណា​មួយ ដែល​ភ្ជាប់​ដោយ​ផ្ទាល់ទៅកាន់​ជំនាន់YouVersion 1200+ នៅ​ក្នុង 900​ភាសា។ មនុស្ស​មើល​ព្រឹត្តិការណ៍​របស់​អ្នក​អាច​ប៉ះ​អំណះអំណាងដើម្បី មើល​កម្មវិធី​អានកម្មវិធីព្រះគម្ពីរ ដែល​គេអា​កំណត់​ចំណាំ គូស​ពណ៌ និង​ច្រើន​ថែម​ទៀត។"
-                                plan:
+                                plan: 
                                     title: "ផែន​ការ"
                                     desc: "តំណរ​​ទៅ​កាន់​គំរោង​អាន​ព្រះ​គម្ពីរ​និង ការ​ចំណាយ​ពេល​ជា​មួយ​នឹង​ព្រះ​ជា​ម្ចាស់ ទាក់​ទងនឹង​ចំនុច​បង្រៀន​របស់​លោក​អ្នក ថែម​ទាំង​ជួយ​អោយ​អ្នក​ចូល​រួម​បន្ត​មាន​ទំនាក់​ទំនង​ដោយ​ផ្ទាល់​ជាមួយ​នឹង​ព្រះ​បន្ទូល​របស់​ព្រះ​ជា​ម្ចាស់ក្នុង​កំឡុង​ពេល​នៃ​សប្ដាហ៍។"
-                                image:
+                                image: 
                                     title: "រូប​ភាព"
                                     desc: "ធ្វើ​អោយ​ព្រឹត្តិការណ៍​របស់​លោកអ្នក​មានជីវិត​ដែល​អាច​ប្រើប្រាស់​បាន​ជាមួយ​នឹង​ក្រាហ្វិក​គ្រប់​ទំរង់៖ គំនូ រូបថត រូបខគម្ពីរ ។ល។ អ្នក​ចូលរួម​នឹង​អាច​ចែក​រំលែក​នូវ​រូបភាព​ព្រឹត្តិការណ៍​របស់​អ្នក​ទៅកាន់​បណ្ដាញ​សង្គម ធ្វើ​អោយ​សារ​របស់​អ្នក​ផ្ទុះ​តែ​ម្ដង។"
-                                link:
+                                link: 
                                     title: "គំរូ​តំណរ​ខាង​ក្រៅ"
                                     desc: "បង្កើតប៊ូតុង​នៅ​ក្នុង​ព្រឹត្តិការណ៍របស់​អ្នក​ដែលតំណរ​ភ្ជាប់ទៅ​កាន់វែប​សាយខាងក្រៅ។ អោយ​ទស្សនិកជន​របស់អ្នក​គ្រាន់​តែ​ប៉ះ​បន្តិច​នោះ​គេ​អាចឧបត្ថម្ភ​លើបណ្ដាញ ចុះ​ឈ្មោះ​ស្ម័គ្រចិត្ត ឬ​ទំព័រ​របស់​ក្រុម​ជំនុំ។"
-                                announcement:
+                                announcement: 
                                     title: "គំរូ​ដំណឹង"
                                     desc: "ព៌តមាន​ក្រុម​ជំនុំ ប្រក្រតិទិន ព្រឹត្តិការណ៍ កម្មវិធី​ផ្សេងៗ ថ្នាក់​រៀន អ្នក​ស្ម័គ្រចិត្ត និង ឱកាស​បេសកកម្ម​ផ្សេងៗ​... សេចក្ដី​ជូន​ដំណឹងជាវេទិការ​ដ៏​ប្រពៃ​បំផុត​សំរាប់​ចែក​ចាយ​ព៌តមានទាន់​ហេតុការណ៍សំខាន់ៗ ប៉ុន្តែ​មិន​ត្រូវ​អោយ​ព៌តមាន​ទាំង​នេះ​រំខាន​សារចម្បង​ឡើយ។ សេចក្ដី​ជូន​ដំណឹងនឹង​លេច​ឡើង​នៅលើទំព័រ​របស់​វាដែល​ស្ថិត​​នៅ​ក្នុង​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក ហើយថែម​ទាំង​មាន​ទំរង់​ដែល​អាច​តុប​តែង​បាន (ដូច​ជាការ​ធ្វើ​ជា​អក្សរ​ដិត និង ទ្រេត​ជាដើម)។"
-                            ContentInsertionPoint:
+                            ContentInsertionPoint: 
                                 title: "បញ្ចូល​គំូរ​បន្ទាប់នៅទីនេះ"
-                            ContentTypeAnnouncement:
+                            ContentTypeAnnouncement: 
                                 title: "ចំណង​ជើង"
                                 prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
                                 caption: "នៅ​ក្នុង​ព្រឹត្តិការណ៍របស់​អ្នក​ មាន​តែ​ចំណង​ជើង (ខាងលើ) នឹង​មើល​ឃើញ។ ពេល​អ្នកប៉ះលើ​ចំណង​ជើង អត្ថបទ(ខាងក្រោម)​បង្ហាញ​លើ​អេក្រង់​ដោយ​ឡែក​មួយ​ទៀត។"
-                            ContentTypeContainer:
+                            ContentTypeContainer: 
                                 dirty: "មាតិការ​នឹង​រក្សា​ទុកដោយ​ស្វ័យ​ប្រវត្តិ​ពីរបីវិនាទីបន្ទាប់ពីអ្នកឈប់​វាយ។"
                                 failed: "មិន​អាចរក្សា​ទុក"
                                 tryAgain: "ព្យាយាមម្ដងទៀត"
                                 lastSaved: "បានរក្សា​ទុកចុង​ក្រោយ%{when}"
-                            ContentTypeImage:
-                                errors:
+                            ContentTypeImage: 
+                                errors: 
                                     wrongSize: "រូបភាព​ត្រូវ​តែ​មាន​ទំ​ហំ %{requiredWidth} x %{requiredHeight}។ រូបភាព​របស់​លោក​អ្នក​មាន​ទំហំ %{yourWidth} x %{yourHeight}។"
                                     wrongType: "ប្រភេទ​ឯកសារ​មិន​ត្រឹម​ត្រូវ ឯកសារ​ត្រូវ​តែ​ជា​ប្រភេទ JPG។"
                                 caption: "បន្ថែមចំណង​ជើង"
@@ -1801,32 +1802,32 @@ km:
                                 onlyJpg: "[មាន​តែរូបភាព​ប្រភេទ JPG មួយគត់]"
                                 sizePrompt: "ទទឹង​ទំហំ%{requiredWidth} ភិកសែល x កំពស់ %{requiredHeight} ភិកសែល"
                                 select: "ជ្រើស​រើស​រូប​ភាព"
-                            ContentTypeLink:
+                            ContentTypeLink: 
                                 kindrid: "ប្រសិន​លោក​អ្នក​កំពុង​ស្វែង​រកវេទិការ​ដែល​វ័យឆ្លាត និង ងាយ​ស្រួល​ សូម​លោក​អ្នក​សាក​ល្បង Kindrid។ <a href='%{url}'></a>"
                                 label: "ផ្លាក​តំណរ​ភ្ជាប់"
                                 prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
                                 url: "URL"
-                            ContentTypePlan:
+                            ContentTypePlan: 
                                 replace: "ជំនួស"
                                 search: "ស្វែង​រកសំរាប់គំរោង​អានគម្ពីរ"
-                            ContentTypeReference:
+                            ContentTypeReference: 
                                 language: "ភាសា"
                                 version: "ជំនាន់"
                                 book: "សៀវភៅ"
                                 chapterVerse: "ជំពូកៈខគម្ពីរ"
-                            ContentTypeText:
+                            ContentTypeText: 
                                 prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
-                            LiveWarningModal:
+                            LiveWarningModal: 
                                 title: "មិន​អាចលុបព្រឹត្តិការណ៍ក្នុងកំឡុង​ពេលផ្សាយ​ផ្ទាល់"
                                 desc: "នៅ​ពេល​ដែលព្រឹត្តិការណ៍​បញ្ចប់​ការ​ផ្សាយ​ផ្ទាល់ អ្នក​មិនអាច​លុប​អក្សរ អំណះអំណាងព្រះ​គម្ពីរ និង​គំរូ​រូប​ភាព​ពី​វា​បាន​ឡើង​ដោយ​ព្រោះ​អ្នក​ប្រើ​ប្រាស់​អាច​បន្ថែម​រួច​ហើយទៅ​លើ​កំណត់​ត្រា​ឯក​ជន​របស់​ពួក​គេ។ យ៉ាង​ណា​ម៉ិញ អ្នក​អាច​កែរ​សំរួល​នូវ​គំរូ​ទាំង​នេះ។"
                                 ok: "អូឃេ"
-                    details:
-                        errors:
+                    details: 
+                        errors: 
                             generic: "មាន​បញ្ហា​ក្នុងកំឡុង​ពេល​ផ្សាយ​នូវ​ព្រឹត្តិការណ៍របស់​អ្នក។"
                             invalidTimes: "សេវាកម្ម​មួយ​មិន​អាច​មាន​រយៈពេល​លើ​សពី​ ១២ ម៉ោងឡើយ ចំណែករយៈពេល​ចាប់​ផ្ដើម​ដំបូង​បំផុត​រហូត​ដល់​ចុង​បញ្ចប់​នៃ​ព្រឹត្តិការណ៍មួយ មិនត្រូវ​អោយ​លើស​ពី ៨ថ្ងៃ​ឡើយ។ សូម​កែ​តម្រូវ​ពេល​វេលា​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក ហើយ​សាក​ល្បង​ម្ដង​ទៀត។"
-                        components:
-                            DetailsEdit:
-                                errors:
+                        components: 
+                            DetailsEdit: 
+                                errors: 
                                     wrongSize: "រូបភាព​ត្រូវ​តែ​មាន​ទំ​ហំ %{requiredWidth} x %{requiredHeight}។ រូបភាព​របស់​លោក​អ្នក​មាន​ទំហំ %{yourWidth} x %{yourHeight}។"
                                     wrongType: "ប្រភេទ​ឯកសារ​មិនត្រឹម​ត្រូវ ត្រូវ​តែជា​ប្រភេទ JPG"
                                 changeImage: "ប្ដូរ​រូប​ភាព"
@@ -1840,29 +1841,29 @@ km:
                                 desc: "ពិពណ៌នា​ព្រឹត្តិការណ៍"
                                 next: "បន្ទាប់៖ បន្ថែមទី​កន្លែង និង ពេល​វេលា →"
                                 blank: "%{field} មិន​អាច​ទុក​ចោល​អោយ​ទំនេរបានឡើយ"
-                    location:
-                        components:
-                            Location:
+                    location: 
+                        components: 
+                            Location: 
                                 oneRequired: "បន្ថែមយ៉ាងហោច​ណាស់​ម្ដង"
                                 use: "ប្រើ​ប្រាស់​ទីតាំង​នេះ"
                                 edit: "កែរ​សម្រួលទី​តាំង"
                                 delete: "លុបទី​តាំង"
-                            LocationAddButtons:
+                            LocationAddButtons: 
                                 addPhysical: "បន្ថែម​ទី​កន្លែង​ជាក់​ស្ដែង​"
                                 promptPhysical: "លោក​អ្នក​អាច​បន្ថែម​ពហុ​ទី​កន្លែង​។"
                                 addVirtual: "បន្ថែម​ទីកន្លែង​និម្មិត"
                                 churchOnline: "តើ​លោក​អ្នក​ដឹង​ទេ? លោក​អ្នក​អាច​ចាប់​ផ្ដើម​ពន្ធ័កិច្ច​លើ​បណ្ដាញ​អ៊ីន​ធើណេត​​បាន​ដោយ​ប្រើ​ប្រាស់​វេទិកា Church Online។ <a className='button-caption' href='%{url}'></a>"
-                            LocationAddTime:
+                            LocationAddTime: 
                                 minutes: "នាទី"
                                 hours: "ម៉ោង"
                                 days: "ថ្ងៃ"
-                            LocationDeleteModal:
+                            LocationDeleteModal: 
                                 sure: "តើ​អ្នក​ប្រាកដ​ទេ?"
                                 selected: "អ្នក​បាន​ជ្រើស​រើស​នូវ​ទាំតាំង​ខាង​ក្រោម​ដើម្បី​លុប។"
                                 warn: "នេះ​នឹង​ដក​ចេញ​នូវ​ទី​តាំង​ពី​ព្រឹត្តិការណ៍​ពី​អតីតកាល និងបច្ចុប្បន្ន​កន្លង​មក។ អ្នក​នឹង​មិន​អាច​ប្រើ​ប្រាស់​ឡើង​វិញ​នូវ​ទីតាំង​នេះ​សំរាប់ព្រឹត្តិការណ៍ខាង​មុខ​ទេ។"
                                 cancel: "បោះ​បង់"
                                 delete: "លុប"
-                            LocationEdit:
+                            LocationEdit: 
                                 prompt: "បញ្ចូលអាស័យដ្ឋាន​ទី​តាំង"
                                 country: "ប្រទេស"
                                 timezone: "ហ្សូន​ម៉ោង"
@@ -1873,7 +1874,7 @@ km:
                                 cancel: "បោះ​បង់"
                                 save: "រក្សា​ទុក​ទីកន្លែង​នេះ"
                                 virtualPrompt: "បញ្ចូលទី​ក្រុង​ដើម្បី​កំណត់​ហ្សូន​ពេលវេលា..."
-                            LocationTimeShifter:
+                            LocationTimeShifter: 
                                 shift: "ចាប់​ផ្ដើមប្ដូរកាល​បរិច្ឆេទ​"
                                 forward: "ទៅ​មុខ"
                                 backward: "ទៅ​ក្រោយ"
@@ -1888,17 +1889,17 @@ km:
                                 hours: "ម៉ោង"
                                 update: "អាប់ឌែត"
                                 shiftButton: "ប្ដូរ​កាល​បរិច្ឆេទ​និង ពេលវេលាក្នុងពេល​តែមួយ"
-                            UnpublishModal:
+                            UnpublishModal: 
                                 cancel: "បោះ​បង់"
                                 title: "មិន​បាន​ផ្សាយដើម្បី​ធ្វើការ​ប្ដូរ"
                                 desc: "ដើម្បី​បន្ថែម​ កែរ​សម្រួល ឬ​លុបនូវ​ទីតាំង និង​ពេល​វេលា ព្រឹត្តិការណ៍មិន​បាន​ផ្សាយជា​បណ្ដោះ​អាសន្ន។ ក្នុងកំឡុង​ពេល​នេះ ព្រឹត្តិការណ៍របស់​អ្នក​នឹង​មិន​លេច​ចេញ​នៅ​លើលទ្ធ​ផល​ស្វែង​រក​ទេ។ កុំ​ភ្លេច​ផ្សាយនូវ​ព្រឹត្តិការណ៍របស់​អ្នក​ម្ដង​ទៀត។"
                                 unpublish: "មិន​បាន​ផ្សព្វផ្សាយ"
-                    preview:
-                        notes:
+                    preview: 
+                        notes: 
                             prompt: "ធ្វើ​កំណត់​ត្រា​ជា​ឯកជន​របស់​លោក​អ្នក..."
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>ចុះ​ឈ្មោះ​ចូល​ដើម្បី​ធ្វើ​កំណត់​ត្រា​ជា​ឯកជន...</span></a>"
-                        components:
-                            PreviewFeed:
+                        components: 
+                            PreviewFeed: 
                                 review: "មើល​ព្រឹត្តិ​ការណ៍​របស់​លោក​អ្នក​មុន​ពេល​ផ្សព្វ​ផ្សាយ"
                                 previewUrl: "មើល​អាស័យ​ដ្ឋាន​តំណរ៖"
                                 share: "ចែក​រំលែក​ព្រឹត្តិការណ៍"
@@ -1906,23 +1907,23 @@ km:
                                 publish: "បោះ​ផ្សាយ"
                                 unpublish: "មិន​បាន​ផ្សព្វផ្សាយ"
                                 locations: "ទីកន្លែង"
-                                discoverable:
+                                discoverable: 
                                     title: "អាច​រក​ឃើញ"
                                     desc: "ព្រឹត្តិការណ៍របស់​លោក​អ្នក​អាច​មើល​ឃើញ​បានតាម​រយៈទី​តាំង​ព្រឹត្តិការណ៍​ក្នុង​កម្ម​វិធី​ព្រះ​គម្ពីរ​ និង អាច​ធ្វើ​ការ​ស្វែងរកឃើញ​បាន​ ៥ថ្ងៃ​មុន​ព្រឹត្តិ​ការណ៍​ចាប់​ផ្ដើម។"
-                                status:
+                                status: 
                                     title: "ស្ថាន​ភាព​កំណត់​ត្រា"
                                     desc: "ផ្លាក ផ្ទាល់​ពណ៌​ក្រហម​នឹង​បង្ហាញ​នៅ​ពេល​លោក​អ្នកចាប់​ផ្ដើម​ពី​តំបូង​មុន​គេ។"
-                                remove:
+                                remove: 
                                     title: "លុប​ចេញ៖"
                                     desc: "ព្រឹត្តិ​ការណ៍​របស់​លោក​អ្នក​នឹង​ត្រូវ​លុប​បាត់​បន្ទាប់​ពី​ពេល​វេ​លាចុង​ក្រោយ​របស់​វា​ត្រូវ​បាន​បញ្ចប់។ អ្នក​ចូល​រួម​ដែល​បាន​ចុច​លើ​ \"រក្សា​ទុក​ព្រឹត្តិ​ការណ៍\" នៅ​ពេល​ដែល​ព្រឹត្តិការ​ណ៍​របស់​លោក​អ្នក​នៅ​មាន​វត្្តមាន​នៅ​ឡើយ អាច​ចូល​ទៅ​កាន់​ឃ្លាំង​ទុក​ឯកសារ​ចាស់ដើម្បី​ស្វែង​រក​វា។ ព្រឹត្តិការណ៍នេះ​ក៏​នឹង​នៅ​តែអាច​ត្រូវ​បាន​គេ​រក​បាន​តាម​រយៈតំណរ​ដែល​ត្រូវ​បាន​បញ្ជូន​មក។"
-                            PreviewTypeAnnouncement:
+                            PreviewTypeAnnouncement: 
                                 expand: "ពង្រីក"
-                            PreviewTypePlan:
+                            PreviewTypePlan: 
                                 read: "អាន"
                                 info: "ព័ត៌មានគម្រោង"
-            EventFeedMine:
-                components:
-                    EventListItem:
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
                         duplicate: "ស្ទួន"
                         share: "ចែក​រំលែក"
                         delete: "លុប"
@@ -1930,24 +1931,24 @@ km:
                         edit: "កែសម្រួល"
                         view: "មើល"
                         fail: "មិន​អាច​លុប​ព្រឹត្តិការណ៍បានឡើយ"
-            EventView:
-                components:
-                    EventViewContent:
+            EventView: 
+                components: 
+                    EventViewContent: 
                         copy: "ចម្លង"
                         copied: "ចម្លងទុក"
                         share: "ចែក​រំលែក"
                         read: "អាន"
                         readPlan: "គំរោងអាន"
-                    EventViewContentAnnouncement:
+                    EventViewContentAnnouncement: 
                         expand: "ពង្រីក"
                         collapse: "បិទ"
-                    EventViewDetails:
+                    EventViewDetails: 
                         expand: "ពង្រីក"
                         collapse: "បិទ"
                         save: "រក្សាទុក​ព្រឹត្តិការណ៍"
                         signIn: "ចុះ​ឈ្មោះ​ចូល​ដើម្បី​រក្សា​ទុកព្រឹត្តិការណ៍"
                         saved: "ព្រឹត្តិការណ៍បានរក្សា​ទុក"
-        Auth:
+        Auth: 
             sign up: "ចុះ​ឈ្មោះ"
             sign in: "ចុះ​ឈ្មោះ​ចូល"
             sign up google: "ចុះឈ្មោះជាមួយ Google"
@@ -1962,19 +1963,19 @@ km:
             share blurb: "មើល​ទៅ​ហាក់​ដូច​ជា​អ្នក​ចង់​ចែក​រំលែកខ​ព្រះ​គម្ពីរ​នេះ។ ល្អណាស់! លោក​អ្នក​នឹង​អាច​ចែក​រំលែកខគម្ពីរ​លើ​ហ្វេសប៊ុក ឬ Twitter។ ចុះ​ឈ្មោះ​ចូល ឬ​បង្កើត​គណនីយ​មួយ​ថ្មី​នៅ​ខាង​ក្រោម​ហើយ​ចាប់ផ្ដើម!"
             highlight blurb: "មើល​ទៅ​ហាក់​ដូច​ជា​អ្នក​ចង់​គូស​ចំណាំ​ខ​ព្រះ​គម្ពីរ​នេះ។ ល្អណាស់! គូស​ចំណាំ​នឹង​ជួយ​អ្នក​ក្នុង​ការ​រៀប​ចំ និង​រក្សា​នូវ​ខ​ព្រះ​គម្ពីរ​ដែល​អ្នក​ចូល​ចិត្ត។ ចុះ​ឈ្មោះ​ចូល ឬ​បង្កើត​គណនី​មួយ​នៅ​ខាង​ក្រោម​ហើយ​ចាប់​ផ្ដើម!"
             note blurb: "មើល​ទៅ​ហាក់ដូច​ជា​អ្នកចង់​កត់ត្រា​ខ​គម្ពីរ! គិត​បាន​ល្អ​ណាស់! កំណត់​ត្រា​អាចជយយ​អ្នក​ក្នុង​ការ​ចង​ចាំ​ និង​រៀប​ចំ​នូវ​សេចក្ដីពិត​ដែល​អ្នក​ស្វែង​រក​នៅ​ក្នុង​ព្រះ​បន្ទូល​របស់​ព្រះជាម្ចាស់។ ចុះ​ឈ្មោះ​ចូល ឬ​បង្កើត​គណនី​មួយ​នៅ​ខាង​ក្រោម​ហើយ​ចាប់​ផ្ដើម!"
-        Reader:
+        Reader: 
             chapter: "ជំពូក"
             read reference: "អាន %{reference}"
             read chapter: "អានជំពូក​ទាំង​មូល"
             plan title: "គម្រោងអាន និងការលះបង់ជូនដោយឥតគិតថ្លៃ"
             plan title ref: "គំរោង​អាន​ដោយ​ឥត​គិត​ថ្លៃ និង​ការ​ចំនាយ​ពេល​ជាមួយ​ព្រះ​ដែល​ទាក់​ទង​ទៅ​នឹង%{reference}"
             plan subtitle: "គំរោង​អានគម្ពីរដែល​បំបែក​នូវ​ការអានអត្ថបទ​គម្ពីរ​ទៅជា​ផ្នែកប្រចាំថ្ងៃ​ដែល​អាច​គ្រប់​គ្រង​បាន។ គំរោង​អាន​តែង​តែ​បញ្ចូល​នូវ​ការ​ចំណាយ​ពេល​មាន​ទាំង សំលេង រូបភាព​អាច​ជ្រើស​រើស​បាន។ ទោះ​បី​អ្នក​ហៅថា​គំរោង​អាន​គម្ពីរ អាន​តាម​គំរោង ឬ​ការ​ចំណាយ​ពេល ក៏​គំរោងអាន​នៅ​តែ​អាច​បញ្ជាក់​ពី​របៀប​ដែល​អ្នក​អាច​ធ្វើ​អោយ​ព្រះ​គម្ពីរ​ទៅ​ជា​ផ្នែក​មួយ​នៃ​ជីវិត​របស់​នៅ​ប្រចាំ​ថ្ងៃ​ដោយ​ងាយ។"
-            meta:
-                mobile:
+            meta: 
+                mobile: 
                     title: "កម្មវិធីព្រះគម្ពីរ"
-                site:
+                site: 
                     title: "Bible.com"
-            header:
+            header: 
                 parallel: "ប៉ារ៉ា​ឡែល"
                 parallel exit: "ចេញ​ពី​ម៉ូដ​ស្រប"
                 cancel: "បោះ​បង់"
@@ -1990,32 +1991,32 @@ km:
                 videos: "វីដេអូ"
                 me: "ខ្ញុំ"
                 recent versions: "បាន​ប្រើប្រាស់​ថ្មីៗ"
-            chapterpicker:
+            chapterpicker: 
                 book label: "សៀវភៅ"
                 chapter label: "ជំពូក"
                 chapter unavailable: "ជំពូក​នេះ​មិន​មាន​នៅ​ក្នុង​ជំនាន់​នេះ​ទេ។ សូម​ជ្រើស​រើស​ជំពូក​ផ្សេង ឬ​ជំនាន់​ផ្សេង។"
                 choose chapter: "ជ្រើស​រើស​ជំពូក"
-            versionpicker:
+            versionpicker: 
                 language label: "ភាសា​ព្រះ​គម្ពីរ"
                 language sub-label: "ភាសា​ព្រះគម្ពីរ"
                 change language: "ប្ដូរភាសា"
                 filter languages: "ជម្រើស​ភាសា..."
                 version label: "ជំនាន់"
                 choose version: "ជ្រើស​រើស​ជំនាន់"
-            reader settings:
+            reader settings: 
                 footnotes: "កំណត់ចំណាំ"
                 numbers: "លេខ និងចំណងជើង"
-            more:
+            more: 
                 events: "ព្រឹត្តិការណ៍នានា"
                 settings: "ការ​កំណត់"
-            search:
+            search: 
                 bible: "ព្រះគម្ពីរ"
                 users: "អ្នក​ប្រើ​ប្រាស់"
                 plans: "គំរោង​ច្រើន"
-            version:
+            version: 
                 learn more: "រៀន​ថែម​ទៀត"
                 courtesy of: "%{abbreviation} នាំ​មកជូនលោកអ្នកដោយ %{publisher}"
-            verse action:
+            verse action: 
                 copy: "ចម្លង"
                 bookmark: "កត់​ចំណាំ"
                 note: "កំណត់​ត្រា"
@@ -2052,7 +2053,7 @@ km:
         edit: "កែសម្រួល"
         delete: "លុប"
         post: "ផ្សាយ"
-        x likes:
+        x likes: 
             other: "%{number} ចូលចិត្ត"
         selected: "បាន​ជ្រើស​រើស​"
         currently subscribed: "បានជាវបច្ចុប្បន្ន"
@@ -2060,10 +2061,10 @@ km:
         invite others: "អញ្ជើញអ្នកផ្សេង"
         invited: "Invited"
         pending: "រងចាំ"
-        x pending:
+        x pending: 
             other: "%{number} រងចាំ"
         accepted: "បានទទួល"
-        x accepted:
+        x accepted: 
             other: "%{number} បានទទួល"
         invitation: "លិខិតអញ្ជើញ"
         accept invitation: "ទទួលការអញ្ជើញ"
@@ -2079,7 +2080,7 @@ km:
         talk it over: "និយាយពីលើ"
         participants: "អ្នកចូលរួម"
         host: "ម្ចាស់ផ្ទះ"
-        x participants:
+        x participants: 
             other: "%{number} អ្នកចូលរួម"
         participant limit: "អ្នកចូលរួមកំណត់ត្រឹមតែ: %{number}"
         + x more: "+ %{number} ច្រើនទៀត"

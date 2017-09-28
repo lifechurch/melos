@@ -13,10 +13,11 @@ const endpoints = [
 	'moments',
 	'audio-bible',
 	'friends',
+	'messaging',
 	'notifications',
 	'streaks',
-	'messaging',
-	'friendships'
+	'friendships',
+	'localization'
 ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]

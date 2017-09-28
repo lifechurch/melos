@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-const DEBOUNCE_TIMEOUT = 300
+const DEBOUNCE_TIMEOUT = 100
 
 class Input extends Component {
 	constructor(props) {
@@ -22,26 +22,23 @@ class Input extends Component {
 	}
 
 	sendChange = () => {
-		const { onChange } = this.props
-		const { stateValue } = this.state
+		const { onChange, value } = this.props
+		const el = this.refs.inputElement
 
-		if (onChange) {
-			onChange(stateValue)
+		if (typeof onChange === 'function' && typeof el === 'object' && (el.value !== value)) {
+			onChange({ target: el, currentTarget: el })
 		}
 	}
 
 	handleChange = (changeEvent) => {
-		const { debounce } = this.props
-		if (debounce) {
-			this.setState({ stateValue: changeEvent.target.value })
-			if (typeof this.cancelChange === 'number') {
-				clearTimeout(this.cancelChange)
-				this.cancelChange = null
-			}
-			this.cancelChange = setTimeout(this.sendChange, DEBOUNCE_TIMEOUT)
-		} else {
-			this.setState({ stateValue: changeEvent.target.value }, this.sendChange)
+		this.setState({ stateValue: changeEvent.target.value })
+
+		if (typeof this.cancelChange === 'number') {
+			clearTimeout(this.cancelChange)
+			this.cancelChange = null
 		}
+
+		this.cancelChange = setTimeout(this.sendChange, DEBOUNCE_TIMEOUT)
 	}
 
 	handleKeyUp = (e) => {
@@ -52,11 +49,13 @@ class Input extends Component {
 	}
 
 	render() {
-		const { customClass, size, name, placeholder, type } = this.props
+		const { customClass, size, name, placeholder, onKeyPress, type } = this.props
 		const { stateValue } = this.state
 
 		return (
 			<input
+				ref="inputElement"
+				onKeyPress={onKeyPress}
 				className={customClass || size}
 				onChange={this.handleChange}
 				onKeyUp={this.handleKeyUp}

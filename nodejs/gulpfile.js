@@ -18,6 +18,11 @@ const fs = require('fs');
 const async = require('async');
 const langmap = require('langmap');
 const langs = require('langs');
+
+require('babel-register')({ presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties', 'syntax-dynamic-import' ] });
+
+const getApiStrings = require('./localization').items
+const poToJson = require('./localization').poToJson
 // var sourcemaps = require("gulp-sourcemaps");
 // var gutil = require("gulp-util");
 
@@ -326,6 +331,14 @@ gulp.task('watch', ['images', 'css', 'javascript'], () => {
 	gulp.watch(['./app/**/*.less'], ['css']);
 });
 
+const prefixedLocales = [
+	'en-GB',
+	'zh-CN',
+	'zh-TW',
+	'es-ES',
+	'pt-PT',
+]
+
 gulp.task('smartling', (callback) => {
 	return smartlingAuth().then((response) => {
 		const token = response.response.data.accessToken;
@@ -390,7 +403,34 @@ gulp.task('smartling', (callback) => {
 			fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, '\t'));
 
 			queue.push(tasks, (task, data, err) => {
-				fs.writeFileSync(`./locales/${task.locale}.json`, JSON.stringify(flattenObject(data[task.prefix].EventsAdmin), null, '\t').replace(/\%\{/g, '{'));
+				// let's get the api strings
+				getApiStrings({
+					language_tag: prefixedLocales.includes(task.locale)
+						? task.locale.replace('-', '_')
+						: task.prefix
+				}).then((resp) => {
+					// the response is a bit odd, in that if we see we have a 'response'
+					// key, it means we have an error. if we actually get the strings, they
+					// are at the top level
+					let apiStrings = {}
+					try {
+						JSON.parse(resp)
+					} catch (e) {
+						apiStrings = poToJson(resp)
+					}
+
+					const strings = Object.assign(
+						{},
+						data[task.prefix].EventsAdmin,
+						apiStrings
+					)
+
+					fs.writeFileSync(
+						`./locales/${task.locale}.json`,
+						JSON.stringify(flattenObject(strings), null, '\t')
+						.replace(/\%\{/g, '{')
+					);
+				})
 			});
 
 			const client = GetClient('reading-plans')
