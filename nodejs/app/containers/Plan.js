@@ -77,8 +77,7 @@ class Plan extends Component {
 						data
 						&& data[plan.id]
 						&& data[plan.id][dayToGet]
-						&& data[plan.id][dayToGet].segments
-						&& data[plan.id][dayToGet].segments.length < 1
+						&& !data[plan.id][dayToGet].segments
 						&& !(this.dayProgress && this.dayProgress.complete)
 					) {
 						dispatch(subscriptionDayUpdate({
