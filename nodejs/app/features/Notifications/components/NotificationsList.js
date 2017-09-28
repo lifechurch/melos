@@ -36,7 +36,7 @@ class NotificationsList extends Component {
 		return (
 			<div className={`yv-notifications-list ${className}`}>
 				{
-					false
+					list
 						? list.map((item) => {
 							if (!(item && item.base)) {
 								return null
