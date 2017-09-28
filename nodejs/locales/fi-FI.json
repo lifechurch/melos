@@ -508,6 +508,7 @@
 	"Reader.verse action.add color": "Lisää väri",
 	"Reader.verse action.labels private": "Tunnisteet ovat aina yksityisiä",
 	"notifications": "Ilmoitukset",
+	"no notifications": "You don't have any notifications",
 	"start plan title": "Miten haluat lukea tämän suunnitelman?",
 	"by myself": "Itsekseni",
 	"by myself description": "Pidä suunnitelmiin liittyvä toimintasi yksityisenä tai salli ystäviesi nähdä se.",
