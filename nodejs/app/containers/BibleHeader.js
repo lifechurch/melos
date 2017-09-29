@@ -349,8 +349,7 @@ class BibleHeader extends Component {
 								lineHeight: 1
 							}}
 						>
-							<PlusButton
-								className='circle-border'
+							<Parallel
 								height={13}
 								width={13}
 							/>

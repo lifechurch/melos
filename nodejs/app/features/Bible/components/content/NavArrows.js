@@ -47,8 +47,9 @@ function NavArrows(props) {
 				fill='#888888'
 				containerClass='circle-buttons'
 				arrowClass='reader-arrow'
-				width={18}
-				height={35}
+				width={24}
+				height={24}
+				thin={false}
 			/>
 		)
 	}
@@ -62,8 +63,9 @@ function NavArrows(props) {
 				fill='#888888'
 				containerClass='circle-buttons'
 				arrowClass='reader-arrow'
-				width={18}
-				height={35}
+				width={24}
+				height={24}
+				thin={false}
 			/>
 		)
 	}

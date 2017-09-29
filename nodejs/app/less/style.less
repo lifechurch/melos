@@ -2314,8 +2314,15 @@ ul.language-selector li {
 	.header {
 		.actions {
 			min-width: 100px;
+			display: flex;
+			flex-direction: row-reverse;
+
+			.popup-menu {
+				margin: auto !important;
+				height: 16px;
+			}
 		}
-		.actions, .actions div {
+		.actions, .actions > div {
 			float: right;
 		}
 	}

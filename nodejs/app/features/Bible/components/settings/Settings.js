@@ -23,9 +23,9 @@ class Settings extends Component {
 		this.onChange = ::this.onChange
 
 		this.fontSizes = [
-			{ value: 14, label: (<FontSettingsTriggerImage height={12} width={18} />) },
-			{ value: 18, label: (<FontSettingsTriggerImage height={16} width={24} />) },
-			{ value: 22, label: (<FontSettingsTriggerImage height={20} width={30} />) }
+			{ value: 14, label: (<FontSettingsTriggerImage height={18} width={18} />) },
+			{ value: 18, label: (<FontSettingsTriggerImage height={24} width={24} />) },
+			{ value: 22, label: (<FontSettingsTriggerImage height={30} width={30} />) }
 		]
 
 		this.fontFamilies = [
@@ -48,19 +48,19 @@ class Settings extends Component {
 	}
 
 	handleFontSizeChange(item) {
-		this.onChange("reader.settings.fontSize", item.value)
+		this.onChange('reader.settings.fontSize', item.value)
 	}
 
 	handleFontFamilyChange(item) {
-		this.onChange("reader.settings.fontFamily", item.value)
+		this.onChange('reader.settings.fontFamily', item.value)
 	}
 
 	handleFootnotesToggle(value) {
-		this.onChange("reader.settings.showFootnotes", value)
+		this.onChange('reader.settings.showFootnotes', value)
 	}
 
 	handleVerseNumbersToggle(value) {
-		this.onChange("reader.settings.showVerseNumbers", value)
+		this.onChange('reader.settings.showVerseNumbers', value)
 	}
 
 	closeDropdown = () => {
