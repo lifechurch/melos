@@ -38,6 +38,7 @@ class Plan extends Component {
 					&& Immutable.fromJS(subscription).getIn(['days'], false)
 				)
 			) {
+				console.log('WHOA', plansAPI.actions.subscriptions({}, { auth: true }))
 				dispatch(subscriptionData({ subscription_id, auth, day }))
 			}
 		} else {
