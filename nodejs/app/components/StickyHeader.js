@@ -40,7 +40,7 @@ class StickyHeader extends Component {
 	handleScroll = () => {
 		const { lastScrollTop } = this.state
 		const scrollTop = (window.pageYOffset || document.documentElement.scrollTop)
-		const atTop = window.pageYOffset === 0
+		const atTop = window.pageYOffset <= 0
 		const atBottom = ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.scrollHeight - 105)
 
 		let mode
