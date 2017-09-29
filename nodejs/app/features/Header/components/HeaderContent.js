@@ -39,7 +39,7 @@ class HeaderContent extends Component {
 	}
 
 	componentDidMount() {
-		const { dispatch, loggedInUser, serverLanguageTag } = this.props
+		const { dispatch, loggedInUser } = this.props
 
 		if (typeof loggedInUser === 'object' && 'userid' in loggedInUser) {
 			const userId = loggedInUser.userid
@@ -119,7 +119,8 @@ class HeaderContent extends Component {
 			serverLanguageTag,
 			user,
 			loggedInUser,
-			screenSize
+			screenSize,
+			screenWidth
 		} = this.props
 
 		const {
@@ -163,8 +164,8 @@ class HeaderContent extends Component {
 					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
 						<Read />
 					</IconButton>
-					{ (screenSize > ScreenSize.MEDIUM) ? plansButton : null }
-					{ (screenSize > ScreenSize.MEDIUM) ? videosButton : null }
+					{ (true || screenSize > ScreenSize.MEDIUM) ? plansButton : null }
+					{ (true || screenSize > ScreenSize.MEDIUM) ? videosButton : null }
 				</IconButtonGroup>
 			</div>
 		)
@@ -232,7 +233,26 @@ class HeaderContent extends Component {
 			<div className={`yv-header-right ${ready && 'ready'}`}>
 				{screenSize < ScreenSize.LARGE && search}
 				{(screenSize > ScreenSize.MEDIUM) ? userNotificationGroup : moreMenu}
-				{
+			</div>
+		)
+		: (
+			<div className={`yv-header-right ${ready && 'ready'}`}>
+				{screenSize < ScreenSize.LARGE && search}
+				{(screenSize > ScreenSize.MEDIUM) ? signUpButtons : moreMenu}
+			</div>
+		)
+
+		return (
+			<StickyHeader className={`yv-header ${screenWidth < 416 && 'yv-header-scroll'} ${(profileMenuOpen || notificationsOpen) && 'yv-header-scroll-lock'}`}>
+				<SectionedHeading
+					left={left}
+					right={right}
+				>
+					<div>
+						{screenSize > ScreenSize.MEDIUM && search}
+					</div>
+				</SectionedHeading>
+				{ isLoggedIn &&
 					<DropdownTransition
 						show={notificationsOpen}
 						hideDir="up"
@@ -244,8 +264,7 @@ class HeaderContent extends Component {
 						<NotificationsInbox />
 					</DropdownTransition>
 				}
-				{
-					('response' in user) &&
+				{ isLoggedIn && ('response' in user) &&
 					<DropdownTransition
 						show={profileMenuOpen}
 						hideDir="up"
@@ -266,40 +285,23 @@ class HeaderContent extends Component {
 						/>
 					</DropdownTransition>
 				}
-			</div>
-		)
-		: (
-			<div className={`yv-header-right ${ready && 'ready'}`}>
-				{screenSize < ScreenSize.LARGE && search}
-				{(screenSize > ScreenSize.MEDIUM) ? signUpButtons : moreMenu}
-				<DropdownTransition
-					show={profileMenuOpen}
-					hideDir="up"
-					transition={true}
-					onOutsideClick={this.handleProfileMenuClose}
-					exemptClass="yv-profile-menu-trigger"
-					classes="yv-popup-modal-content"
-					containerClasses="yv-profile-menu-container"
-				>
-					<ProfileMenu
-						serverLanguageTag={serverLanguageTag}
-						topContent={profileTopContent}
-						bottomContent={signUpButtons}
-					/>
-				</DropdownTransition>
-			</div>
-		)
-
-		return (
-			<StickyHeader className="yv-header">
-				<SectionedHeading
-					left={left}
-					right={right}
-				>
-					<div>
-						{screenSize > ScreenSize.MEDIUM && search}
-					</div>
-				</SectionedHeading>
+				{ !isLoggedIn &&
+					<DropdownTransition
+						show={profileMenuOpen}
+						hideDir="up"
+						transition={true}
+						onOutsideClick={this.handleProfileMenuClose}
+						exemptClass="yv-profile-menu-trigger"
+						classes="yv-popup-modal-content"
+						containerClasses="yv-profile-menu-container"
+					>
+						<ProfileMenu
+							serverLanguageTag={serverLanguageTag}
+							topContent={profileTopContent}
+							bottomContent={signUpButtons}
+						/>
+					</DropdownTransition>
+				}
 			</StickyHeader>
 		)
 	}
@@ -313,7 +315,8 @@ HeaderContent.propTypes = {
 	notifications: PropTypes.object,
 	friendshipRequests: PropTypes.object,
 	user: PropTypes.object,
-	screenSize: PropTypes.number
+	screenSize: PropTypes.number,
+	screenWidth: PropTypes.number
 }
 
 HeaderContent.defaultProps = {
@@ -322,7 +325,8 @@ HeaderContent.defaultProps = {
 	notifications: null,
 	friendshipRequests: null,
 	user: null,
-	screenSize: ScreenSize.SMALL
+	screenSize: ScreenSize.SMALL,
+	screenWidth: null
 }
 
 export default HeaderContent

@@ -40,6 +40,28 @@
 			}
 		}
 	}
+
+	&.yv-header-scroll {
+		.yv-sticky-header-content {
+		  margin-top: 0;
+		  overflow-x: scroll;
+		  padding: 5px;
+		  border-bottom: none;
+		}
+
+		.yv-sectioned-heading {
+		  min-width: 400px;
+		  background-color: #eee;
+		  border-radius: 5px;
+		  padding: 8px 15px;
+		}
+	}
+
+	&.yv-header-scroll-lock {
+		.yv-sticky-header-content {
+			overflow: visible;
+		}
+	}
 }
 
 .yv-profile-menu-container {
