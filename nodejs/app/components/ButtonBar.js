@@ -22,8 +22,8 @@ class ButtonBarButton extends Component {
 	render() {
 		const { selectedClass, item } = this.props
 		return (
-			<div className={`button-bar-button ${selectedClass}`} onClick={this.handleClick}>
-				<div className='button-bar-button-content'>{item.label}</div>
+			<div className={`yv-button-bar-button ${selectedClass}`} onClick={this.handleClick}>
+				<div className='yv-button-bar-button-content'>{item.label}</div>
 			</div>
 		)
 	}
@@ -87,7 +87,7 @@ class ButtonBar extends Component {
 		})
 
 		return (
-			<div className={`button-bar ${columnsClass}`}>
+			<div className={`yv-button-bar ${columnsClass}`}>
 				{buttons}
 			</div>
 		)

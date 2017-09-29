@@ -101,7 +101,7 @@
                 -#{"ng-show" => "showShare"}
                 %div.video.addthis_sharing_toolbox{:data => {:url => "#{votd_url(ref: @vodRef.usfm.to_param, day: @vodImage.day.to_i)}", :title => "#{t('pages.home.votd.title')} - #{@vodRef.to_s}", :description => "#{@vodContent}" }}
             %h2.heading
-              %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
+              %img.votd-icon{src: "#{image_path('votd.svg')}"}
               =link_to(votd_path, { target: "_self" }) do
                 =t('pages.home.votd.title')
             %p.votd-verse
@@ -131,7 +131,7 @@
 
 .row
   .columns.medium-6.medium-centered.text-center
-    %img.heading{src: "#{image_path('plans-stroked.png')}"}
+    %img.heading{src: "#{image_path('plans.svg')}"}
     %h2.heading
       =t("pages.home.free_plans.title")
     %p.body-text

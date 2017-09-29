@@ -58,7 +58,7 @@
                 %div.share-panel
                   %div.video.addthis_sharing_toolbox{:data => {:url => "#{@meta_url}", :title => "#{@title}", :description => "#{@vodContent}"}}
               %h1.heading
-                %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
+                %img.votd-icon{src: "#{image_path('votd.svg')}"}
                 =t('pages.home.votd.title')
               %p.votd-verse
                 =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do

@@ -90,7 +90,7 @@
 }
 
 li.profile-hdr-info-user {
-	background: url("../assets/me-solid.svg") no-repeat left;
+	background: url("../assets/me.svg") no-repeat left;
 	background-size: 16px;
 	padding-left: 22px;
 	font-size: $text-size;
@@ -105,9 +105,9 @@ li.profile-hdr-info-user {
 }
 
 li.profile-hdr-info-location {
-	background: url("../assets/icon-profile-location.svg") no-repeat left;
-	background-size: 10px;
-	padding-left: 14px;
+	background: url("../assets/events.svg") no-repeat left;
+	background-size: 16px;
+	padding-left: 18px;
 	font-size: $text-size;
 
   @media #{$medium-only} {
@@ -218,7 +218,7 @@ li.profile-hdr-info-link {
     }
 
     a:nth-child(2) {
-      background: image-url("me-outline.svg") no-repeat 10px center;
+      background: image-url("me.svg") no-repeat 10px center;
       background-size: 18px;
     }
 

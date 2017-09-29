@@ -128,7 +128,7 @@ function inPathNotFirst(segment, path) {
 
 function init() {
     if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside) {
-        angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
+        // angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
     }

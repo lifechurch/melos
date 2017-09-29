@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import XMark from './XMark'
+import Ellipsis from './icons/Ellipsis'
 
 class PopupMenu extends Component {
 
@@ -46,8 +47,8 @@ PopupMenu.propTypes = {
 }
 
 PopupMenu.defaultProps = {
-	triggerButton: '•••',
-	closeButton: <XMark width={14.4} height={13.7} />,
+	triggerButton: <Ellipsis height={16} />,
+	closeButton: <XMark width={16} height={13.7} />,
 }
 
 export default PopupMenu

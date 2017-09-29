@@ -17,7 +17,7 @@ angular.module('yv.moments.votd', [])
             $scope.usfm = Bible.fixVerseRange($scope.data.object.references[0]);
 			var version = $scope.data.object.recent_versions[0];
 
-			$scope.data.object.avatar = "/assets/icon-vod.svg";
+			$scope.data.object.avatar = "/assets/votd.svg";
 
 			$timeout(function() {
 				Bible.getVerse($scope.usfm, version.id).success(function(verse) {
