@@ -132,17 +132,13 @@ class HeaderContent extends Component {
 			notificationsOpen
 		} = this.state
 
-		const plansButton = (
-			<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
-				<Plans />
-			</IconButton>
-		)
+		// const plansButton = (
+		//
+		// )
 
-		const videosButton = (
-			<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
-				<Videos />
-			</IconButton>
-		)
+		// const videosButton = (
+		//
+		// )
 
 		const search = (
 			<Search
@@ -164,20 +160,24 @@ class HeaderContent extends Component {
 					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
 						<Read />
 					</IconButton>
-					{ (true || screenSize > ScreenSize.MEDIUM) ? plansButton : null }
-					{ (true || screenSize > ScreenSize.MEDIUM) ? videosButton : null }
+					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
+						<Plans />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
+						<Videos />
+					</IconButton>
 				</IconButtonGroup>
 			</div>
 		)
 
-		const profileTopContent = (screenSize < ScreenSize.LARGE)
-			? (<div>
-				<IconButtonGroup iconHeight={24} iconSpacing={44}>
-					{plansButton}
-					{videosButton}
-				</IconButtonGroup>
-			</div>)
-			: null
+		// const profileTopContent = (screenSize < ScreenSize.LARGE)
+		// 	? (<div>
+		// 		<IconButtonGroup iconHeight={24} iconSpacing={44}>
+		// 			{plansButton}
+		// 			{videosButton}
+		// 		</IconButtonGroup>
+		// 	</div>)
+		// 	: null
 
 		const userNotificationGroup = isLoggedIn ? (
 			<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
@@ -280,7 +280,6 @@ class HeaderContent extends Component {
 							lastName={user.response.last_name}
 							avatarUrl={user.response.user_avatar_url.px_48x48}
 							serverLanguageTag={serverLanguageTag}
-							topContent={profileTopContent}
 							topAvatarContent={(screenSize < ScreenSize.LARGE) ? userNotificationGroup : null}
 						/>
 					</DropdownTransition>
@@ -297,7 +296,6 @@ class HeaderContent extends Component {
 					>
 						<ProfileMenu
 							serverLanguageTag={serverLanguageTag}
-							topContent={profileTopContent}
 							bottomContent={signUpButtons}
 						/>
 					</DropdownTransition>
