@@ -2053,6 +2053,7 @@ nl:
                 add color: "Voeg kleur toe"
                 labels private: "Labels zijn altijd privé"
         notifications: "Meldingen"
+        no notifications: "You don't have any notifications"
         start plan title: "Hoe wil je dit leesplan lezen?"
         by myself: "Alleen"
         by myself description: "Verberg jouw leesplanactiviteit, of laat je vrienden jouw leesplanactiviteit zien."

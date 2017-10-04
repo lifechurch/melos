@@ -2053,6 +2053,7 @@ tl:
                 add color: "Magdagdag ng Kulay"
                 labels private: "Ang mga label ay palaging pribado"
         notifications: "Mga Abiso"
+        no notifications: "You don't have any notifications"
         start plan title: "Paano mo nais basahin ang Planong ito?"
         by myself: "Pansarili"
         by myself description: "Panatilihing pribado ang kaganapan ng iyong Plano, o pahintulutan ang iyong Mga Kaibigan na makita ang iyong kaganapan sa Plano."

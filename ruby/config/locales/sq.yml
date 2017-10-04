@@ -2053,6 +2053,7 @@ sq:
                 add color: "Shto ngjyrë"
                 labels private: "Etiketat janë gjithnjë private"
         notifications: "Njoftime"
+        no notifications: "You don't have any notifications"
         start plan title: "Si dëshiron ta lexosh këtë plan?"
         by myself: "Vetëm"
         by myself description: "Mbaje privat aktivitetin e Planit ose lejo Miqtë e tu të shohin aktivitetin e Planit."

@@ -2053,6 +2053,7 @@ ta:
                 add color: "வண்ணம் சேர்"
                 labels private: "எப்போதுமே விவரக்குறிப்புகள் தனிமுறையானவையே."
         notifications: "அறிவிப்புகள்"
+        no notifications: "You don't have any notifications"
         start plan title: "இந்த திட்டத்தை எவ்வாறு வாசிக்க விரும்புகிறீர்கள்?"
         by myself: "நான் மட்டும்"
         by myself description: "உங்களது திட்டத்தின் செயற்பாட்டை தனிப்பட்ட முறையிலா, அல்லது உங்கள் நண்பர்களும் அறிய விரும்புகிறீர்களா?"
