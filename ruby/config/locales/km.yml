@@ -2034,6 +2034,7 @@ km:
                 add color: "បន្ថែម​ពណ៌"
                 labels private: "ស្លាកគឺតែងតែឯកជន"
         notifications: "ការ​ជូនដំណឹង"
+        no notifications: "You don't have any notifications"
         start plan title: "តើអ្នកចង់អានគំរោងនេះដោយរបៀបណា?"
         by myself: "ដោយខ្លួនឯង"
         by myself description: "ធ្វើអោយសកម្មភាពគំរោងអាននេះជាឯកជន ឬអនុញ្ញាតិអោយមិត្តរបស់អ្នកបានឃើញពីសកម្មភាពអានរបស់អ្នក។"

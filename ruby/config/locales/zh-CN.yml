@@ -2034,6 +2034,7 @@ zh-CN:
                 add color: "添加颜色"
                 labels private: "标签不会被公开"
         notifications: "通知"
+        no notifications: "You don't have any notifications"
         start plan title: "你想以什么方式阅读这个计划？"
         by myself: "独自阅读"
         by myself description: "你的读经活动可以选择保密，也可以选择让你的朋友看见。"

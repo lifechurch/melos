@@ -2034,6 +2034,7 @@ vi:
                 add color: "Thêm màu"
                 labels private: "Nhãn dán luôn luôn riêng tư"
         notifications: "Thông báo"
+        no notifications: "You don't have any notifications"
         start plan title: "Bạn thực hiện Kế hoạch đọc Kinh Thánh như thế nào?"
         by myself: "Chỉ mình tôi"
         by myself description: "Thực hiện Kế hoạch đọc Kinh Thánh cách riêng tư, hoặc cho phép bạn bè xem Kế hoạch đọc Kinh Thánh của bạn."

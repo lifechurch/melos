@@ -2053,6 +2053,7 @@ it:
                 add color: "Aggiungi Colore"
                 labels private: "Le Etichette sono sempre private"
         notifications: "Notifiche"
+        no notifications: "You don't have any notifications"
         start plan title: "Come vuoi leggere questo Piano?"
         by myself: "Da Solo"
         by myself description: "Mantieni privata, oppure permetti ai tuoi Amici di vedere la tua attività con il Piano."
