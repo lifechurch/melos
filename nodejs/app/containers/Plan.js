@@ -38,7 +38,7 @@ class Plan extends Component {
 					&& Immutable.fromJS(subscription).getIn(['days'], false)
 				)
 			) {
-				console.log('WHOA', plansAPI.actions.subscriptions({}, { auth: true }))
+				console.log('WHOA', plansAPI.actions.subscriptions.get({}, { auth: true }))
 				dispatch(subscriptionData({ subscription_id, auth, day }))
 			}
 		} else {
@@ -287,19 +287,20 @@ class Plan extends Component {
 				handleCatchUp={this.onCatchUp}
 			>
 				{
-					children.length > 0 &&
-					React.cloneElement(children, {
-						localizedLink: this.localizedLink,
-						isRtl: this.isRtl,
-						together_id,
-						day: this.currentDay,
-						progressDays: this.progressDays,
-						subscription_id,
-						dayOfString,
-						startString,
-						endString,
-						onCatchUp: this.onCatchUp,
-					})
+					children
+						&& (children.length > 0 || !Array.isArray(children))
+						&& React.cloneElement(children, {
+							localizedLink: this.localizedLink,
+							isRtl: this.isRtl,
+							together_id,
+							day: this.currentDay,
+							progressDays: this.progressDays,
+							subscription_id,
+							dayOfString,
+							startString,
+							endString,
+							onCatchUp: this.onCatchUp,
+						})
 				}
 			</PlanComponent>
 		)

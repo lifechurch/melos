@@ -35,16 +35,20 @@ class ResponsiveContainer extends Component {
 
 		return (
 			<div className={`yv-responsive-container ${className}`}>
-				{children.length > 0 &&
-					React.Children.map(children, (child => {
-						// Only append screen props to custom React components
-						let props = {}
-						if (typeof child.type === 'function') {
-							props = { screenSize, screenWidth }
-						}
+				{
+					children
+						&& (children.length > 0 || !Array.isArray(children))
+						&& (
+							React.Children.map(children, (child => {
+								// Only append screen props to custom React components
+								let props = {}
+								if (typeof child.type === 'function') {
+									props = { screenSize, screenWidth }
+								}
 
-						return React.cloneElement(child, props)
-					}))
+								return React.cloneElement(child, props)
+							}))
+						)
 				}
 			</div>
 		)

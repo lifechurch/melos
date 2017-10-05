@@ -181,8 +181,9 @@ function Plan({
 					</div>
 				</div>
 				{
-						children.length > 0 &&
-						React.cloneElement(children, {
+					children
+						&& (children.length > 0 || !Array.isArray(children))
+						&& React.cloneElement(children, {
 							id: plan_id,
 							plan,
 							start_dt,

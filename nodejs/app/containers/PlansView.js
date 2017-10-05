@@ -38,13 +38,14 @@ class PlansView extends Component {
 					</ul>
 				</div>
 				{
-					children.length > 0 &&
-					React.cloneElement(children, {
-						localizedLink: this.localizedLink,
-						isRtl: this.isRtl,
-						auth,
-						serverLanguageTag,
-					})
+					children
+						&& (children.length > 0 || !Array.isArray(children))
+						&& React.cloneElement(children, {
+							localizedLink: this.localizedLink,
+							isRtl: this.isRtl,
+							auth,
+							serverLanguageTag,
+						})
 				}
 			</div>
 		)

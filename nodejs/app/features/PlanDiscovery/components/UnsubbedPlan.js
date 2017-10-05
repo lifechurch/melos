@@ -103,31 +103,35 @@ class UnsubbedPlan extends Component {
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>
-					{children && children.length > 0 && React.cloneElement(children, {
-						id: plan.id,
-						plan,
-						dispatch,
-						auth,
-						day,
-						dayData,
-						planLinkNode,
-						actionsNode,
-						refListNode: refList,
-						calendar: plan.calendar,
-						totalDays: plan.total_days,
-						isSubscribed: ('subscription_id' in plan),
-						dayBaseLink: daySliderBasePath,
-						subscriptionLink,
-						aboutLink,
-						bibleLink,
-						myPlansLink,
-						hasDevo,
-						isSaved,
-						isPrivate: plan.private,
-						isEmailDeliveryOn: (typeof plan.email_delivery === 'string'),
-						emailDelivery: plan.email_delivery,
-						handleCompleteRef: this.handleCompleteRef
-					})}
+					{
+						children
+							&& (children.length > 0 || !Array.isArray(children))
+							&& React.cloneElement(children, {
+								id: plan.id,
+								plan,
+								dispatch,
+								auth,
+								day,
+								dayData,
+								planLinkNode,
+								actionsNode,
+								refListNode: refList,
+								calendar: plan.calendar,
+								totalDays: plan.total_days,
+								isSubscribed: ('subscription_id' in plan),
+								dayBaseLink: daySliderBasePath,
+								subscriptionLink,
+								aboutLink,
+								bibleLink,
+								myPlansLink,
+								hasDevo,
+								isSaved,
+								isPrivate: plan.private,
+								isEmailDeliveryOn: (typeof plan.email_delivery === 'string'),
+								emailDelivery: plan.email_delivery,
+								handleCompleteRef: this.handleCompleteRef
+							})
+					}
 					{
 						hasDevo &&
 						<div className="row">
