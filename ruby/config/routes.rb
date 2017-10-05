@@ -74,8 +74,8 @@ YouversionWeb::Application.routes.draw do
 	get "/unsubscribe", to: "notifications#unsubscribe"
 	get "/unsubscribe/manage", to: "notifications#manage_notifications"
 
-  get "/trending-bible-verses", to: "pages#trending"
-	get "/popular-bible-verses", to: "redirect#trending"
+	get "/popular-bible-verses", to: "pages#trending", :as => 'popular'
+  get "/trending-bible-verses", to: "redirects#trending"
   get "/verse-of-the-day", to: "pages#votd", as: "votd"
   get "/bible-verse-of-the-day", to: "redirects#votd"
   # get "/wmf",           to: "redirects#wmf"

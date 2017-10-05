@@ -85,7 +85,7 @@ class RedirectsController < ApplicationController
   end
 
 	def trending
-		redirect_to('/popular-bible-verses')
+		redirect_to(popular_url())
 	end
 
   def lifechurchtv
