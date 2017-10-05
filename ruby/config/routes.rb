@@ -75,10 +75,11 @@ YouversionWeb::Application.routes.draw do
 	get "/unsubscribe/manage", to: "notifications#manage_notifications"
 
   get "/trending-bible-verses", to: "pages#trending"
+	get "/popular-bible-verses", to: "redirect#trending"
   get "/verse-of-the-day", to: "pages#votd", as: "votd"
   get "/bible-verse-of-the-day", to: "redirects#votd"
-  get "/wmf",           to: "redirects#wmf"
-  get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
+  # get "/wmf",           to: "redirects#wmf"
+  # get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"
 
   # get "/users/:username/reading-plans/:id", to: "redirects#show"

@@ -84,6 +84,10 @@ class RedirectsController < ApplicationController
     redirect_to(delete_account_user_url(current_user.username))
   end
 
+	def trending
+		redirect_to('/popular-bible-verses')
+	end
+
   def lifechurchtv
     # Resolves to a.youversion.com/groups/lifechurchtv
     redirect_to('/groups/lifechurchtv')
