@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux'
 import moments from '@youversion/api-redux/lib/endpoints/moments/reducer'
+import bible from '@youversion/api-redux/lib/endpoints/bible/reducer'
+import images from '@youversion/api-redux/lib/endpoints/images/reducer'
 
 const emptyReducer = (state = {}) => { return state }
 
@@ -23,7 +25,9 @@ const rootReducer = combineReducers({
 	passage: emptyReducer,
 	locale: emptyReducer,
 	api: combineReducers({
-		moments
+		moments,
+		bible,
+		images
 	})
 })
 
