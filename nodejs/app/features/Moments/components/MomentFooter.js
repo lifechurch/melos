@@ -9,7 +9,7 @@ function MomentFooter(props) {
 	const { onLike, onDelete, onEdit, filledLike } = props
 
 	return (
-		<div className='moment-footer'>
+		<div className='yv-moment-footer'>
 			{
 				onLike &&
 				<div className='margin-right-auto vertical-center' style={{ marginLeft: '10px' }}>

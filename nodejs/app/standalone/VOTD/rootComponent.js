@@ -1,3 +1,3 @@
-import VOTDView from '../../containers/VOTDView'
+import { RouterContext } from 'react-router'
 
-export default VOTDView
+export default RouterContext

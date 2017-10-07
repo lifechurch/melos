@@ -9,11 +9,19 @@ import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import { getBibleVersionFromStorage, chapterifyUsfm, parseVerseFromContent } from '../../../../lib/readerUtils'
 import VOTDIcon from '../../../../components/icons/VOTD'
+import Moment from '../Moment'
+
 
 class VotdText extends Component {
+	constructor(props) {
+		super(props)
+		const { dayOfYear } = this.props
+		this.dayOfYear = parseInt(dayOfYear || moment().dayOfYear(), 10)
+	}
+
 	componentDidMount() {
-		const { moments, dayOfYear, dispatch, serverLanguageTag } = this.props
-		if (!(moments && moments.pullVotd(dayOfYear))) {
+		const { moments, dispatch, serverLanguageTag } = this.props
+		if (!(moments && moments.pullVotd(this.dayOfYear))) {
 			dispatch(momentsAction({
 				method: 'votd',
 				params: {
@@ -30,9 +38,9 @@ class VotdText extends Component {
 	}
 
 	getVotd = () => {
-		const { dayOfYear, moments, bible, dispatch } = this.props
+		const { moments, bible, dispatch } = this.props
 		if (moments.votd && moments.votd.length > 0) {
-			const usfm = moments.pullVotd(dayOfYear).usfm
+			const usfm = moments.pullVotd(this.dayOfYear).usfm
 
 			if (usfm && (bible && !bible.pullRef(chapterifyUsfm(usfm[0])))) {
 				dispatch(bibleAction({
@@ -53,10 +61,10 @@ class VotdText extends Component {
 	}
 
 	render() {
-		const { dayOfYear, moments, className, bible } = this.props
+		const { moments, className, bible } = this.props
 
-		let verse, verseTitle
-		const votd = moments && moments.pullVotd(dayOfYear)
+		let verse
+		const votd = moments && moments.pullVotd(this.dayOfYear)
 		const chapterUsfm = votd && chapterifyUsfm(votd.usfm[0])
 		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
 		if (ref) {
@@ -68,37 +76,41 @@ class VotdText extends Component {
 
 		/* eslint-disable react/no-danger */
 		return (
-			<div className={className}>
-				<div className='vertical-center' style={{ marginBottom: '20px' }}>
-					<VOTDIcon />
-					<div className='vertical-center flex-wrap' style={{ marginLeft: '15px' }}>
-						<div style={{ width: '100%' }}><FormattedMessage id='votd' /></div>
-						{ ref && ref.reference && ref.reference.human }
-						{
-							ref
-							&& bible.versions
-							&& Immutable
-									.fromJS(bible)
-									.hasIn([
-										'versions',
-										'byId',
-										`${getBibleVersionFromStorage()}`,
-										'response',
-										'local_abbreviation'
-									], false)
-							&& ` ${Immutable
-									.fromJS(bible)
-									.getIn([
-										'versions',
-										'byId',
-										`${getBibleVersionFromStorage()}`,
-										'response',
-										'local_abbreviation'
-									])}`
-						}
-					</div>
-				</div>
-				<div dangerouslySetInnerHTML={{ __html: verse }} />
+			<div className={`yv-votd-text ${className}`}>
+				<Moment
+					title={
+						<div className='vertical-center'>
+							<VOTDIcon />
+							<div className='vertical-center flex-wrap' style={{ marginLeft: '15px' }}>
+								<div style={{ width: '100%' }}><FormattedMessage id='votd' /></div>
+								{ ref && ref.reference && ref.reference.human }
+								{
+									ref
+									&& bible.versions
+									&& Immutable
+											.fromJS(bible)
+											.hasIn([
+												'versions',
+												'byId',
+												`${getBibleVersionFromStorage()}`,
+												'response',
+												'local_abbreviation'
+											], false)
+									&& ` ${Immutable
+											.fromJS(bible)
+											.getIn([
+												'versions',
+												'byId',
+												`${getBibleVersionFromStorage()}`,
+												'response',
+												'local_abbreviation'
+											])}`
+								}
+							</div>
+						</div>
+					}
+					content={<div dangerouslySetInnerHTML={{ __html: verse }} />}
+				/>
 			</div>
 		)
 	}
@@ -107,11 +119,15 @@ class VotdText extends Component {
 VotdText.propTypes = {
 	dayOfYear: PropTypes.number,
 	className: PropTypes.string,
+	bible: PropTypes.object.isRequired,
+	moments: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
 }
 
 VotdText.defaultProps = {
-	dayOfYear: moment().dayOfYear(),
-	className: 'card',
+	dayOfYear: null,
+	className: '',
 }
 
 function mapStateToProps(state) {

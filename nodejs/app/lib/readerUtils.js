@@ -265,8 +265,8 @@ export function parseVerseFromContent({ usfms, fullContent }) {
 	if (usfms && fullContent) {
 		const doc = new DOMParser().parseFromString(fullContent, 'text/html')
 		const usfmList = Array.isArray(usfms)
-		? usfms
-		: [usfms]
+			? usfms
+			: [usfms]
 
 		usfmList.forEach((usfm) => {
 			const htmlXpath = `//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+${usfm}+')]`

@@ -1,3 +1,72 @@
+// .card {
+// 	@media @medium-up {
+// 		padding: 35px 45px 35px 45px;
+// 	}
+// 	@media @small-only {
+// 		padding: 20px;
+// 	}
+// 	background: white;
+// 	box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.07);
+// 	border-radius: 2px;
+//
+// }
+//
+// .verse-card {
+//
+// 	.note { display: none !important; }
+//
+// 	.verse {
+// 		display: inline-block;
+//
+// 		.xmark-container:hover {
+// 			cursor: pointer;
+// 		}
+//
+// 	}
+// 	.verse ~ .delete {
+// 		display: inline-flex;
+// 		align-items: center;
+// 		.xmark-container {
+// 			margin-left: auto;
+// 			margin-right: 4px;
+// 		}
+// 	}
+//
+//
+// 	.heading {
+// 		font-weight: bold;
+// 		font-size: 16px;
+// 		color: black;
+// 		margin-bottom: 20px;
+// 		margin-top: 10px;
+// 		letter-spacing: 1px;
+// 	}
+// 	h2 {
+// 		letter-spacing: 0.9px;
+// 		text-transform: none;
+// 	}
+//
+// 	.verse-content {
+// 		display: inline-flex;
+// 		padding-right: 25px;
+// 		margin-bottom: 20px;
+// 		color: @font-grey;
+//
+// 		.note {
+// 			display: none !important
+// 		}
+// 	}
+//
+// 	.card-footer {
+// 		display: inline-flex;
+// 		width: 100%;
+// 	}
+//
+// }
+
+
+
+.card-container { width: 100%; }
 .card {
 	@media @medium-up {
 		padding: 35px 45px 35px 45px;
@@ -6,9 +75,20 @@
 		padding: 20px;
 	}
 	background: white;
-	box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.07);
+	.card-shadow;
 	border-radius: 2px;
-
+}
+.card-footer {
+	margin-top: 40px;
+}
+.card-extension {
+	width: 100%;
+	background: white;
+	padding: 10px;
+	margin-top: -2px;
+	border-top: 1px solid @light-grey;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.19);
+	border-radius: 0 2px 2px 0;
 }
 
 .verse-card {
@@ -23,14 +103,14 @@
 		}
 
 	}
-	.verse ~ .delete {
-		display: inline-flex;
-		align-items: center;
-		.xmark-container {
-			margin-left: auto;
-			margin-right: 4px;
-		}
-	}
+	// .verse ~ .delete {
+	// 	display: inline-flex;
+	// 	align-items: center;
+	// 	.xmark-container {
+	// 		margin-left: auto;
+	// 		margin-right: 4px;
+	// 	}
+	// }
 
 
 	.heading {
@@ -47,8 +127,6 @@
 	}
 
 	.verse-content {
-		display: inline-flex;
-		padding-right: 25px;
 		margin-bottom: 20px;
 		color: @font-grey;
 

@@ -8,7 +8,7 @@ function MomentHeader(props) {
 	} = props
 
 	return (
-		<div className='moment-header'>
+		<div className='yv-moment-header'>
 			<div className='title'>
 				{ title }
 			</div>

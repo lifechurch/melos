@@ -2,26 +2,25 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
-import Immutable from 'immutable'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
 import { getImages } from '@youversion/api-redux/lib/endpoints/images/reducer'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import LazyImage from '../../../../components/LazyImage'
 import Slider from '../../../../components/Slider'
+import Moment from '../Moment'
 import { selectImageFromList } from '../../../../lib/imageUtil'
 
 class VotdImage extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {
-
-		}
+		const { dayOfYear } = this.props
+		this.dayOfYear = parseInt(dayOfYear || moment().dayOfYear(), 10)
 	}
 
 	componentDidMount() {
-		const { moments, dayOfYear, images, dispatch, serverLanguageTag } = this.props
-		if (!(moments && moments.pullVotd(dayOfYear) && moments.pullVotd(dayOfYear).image_id)) {
+		const { moments, dispatch, serverLanguageTag } = this.props
+		if (!(moments && moments.pullVotd(this.dayOfYear) && moments.pullVotd(this.dayOfYear).image_id)) {
 			dispatch(momentsAction({
 				method: 'votd',
 				params: {
@@ -36,14 +35,14 @@ class VotdImage extends Component {
 	}
 
 	getImages = () => {
-		const { dayOfYear, dispatch, serverLanguageTag, moments, images } = this.props
+		const { dispatch, serverLanguageTag, moments, images } = this.props
 		if (!(images && false)) {
 			dispatch(imagesAction({
 				method: 'items',
 				params: {
 					language_tag: serverLanguageTag,
 					category: 'prerendered',
-					usfm: moments.pullVotd(dayOfYear).usfm,
+					usfm: moments.pullVotd(this.dayOfYear).usfm,
 				}
 			}))
 		}
@@ -52,43 +51,57 @@ class VotdImage extends Component {
 	render() {
 		const { images, className } = this.props
 
-		console.log(images)
 		return (
-			<div className={className}>
-				<div><FormattedMessage id='votd image' /></div>
-				<Slider childWidth={320}>
-					{
+			<div className={`yv-votd-image ${className}`}>
+				<Moment
+					title={
+						<FormattedMessage id='votd image' />
+					}
+					content={
 						images
 							&& images.length > 0
-							&& images.map((img) => {
-								const src = selectImageFromList({
-									images: img.renditions,
-									width: 640,
-									height: 640,
-								}).url
+							&& (
+								<Slider>
+									{
+										images.map((img) => {
+											const src = selectImageFromList({
+												images: img.renditions,
+												width: 640,
+												height: 640,
+											}).url
 
-								return (
-									<LazyImage
-										key={img.id}
-										src={src}
-										width={320}
-										height={320}
-									/>
-								)
-							})
+											return (
+												<LazyImage
+													key={img.id}
+													src={src}
+													width={320}
+													height={320}
+												/>
+											)
+										})
+									}
+								</Slider>
+							)
 					}
-				</Slider>
+				/>
 			</div>
 		)
 	}
 }
 
 VotdImage.propTypes = {
+	dayOfYear: PropTypes.number,
 	className: PropTypes.string,
+	images: PropTypes.array,
+	moments: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
 }
 
 VotdImage.defaultProps = {
-	className: 'card',
+	dayOfYear: null,
+	images: null,
+	className: '',
 }
 
 function mapStateToProps(state) {

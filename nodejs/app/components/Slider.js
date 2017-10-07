@@ -17,7 +17,7 @@ class Slider extends Component {
 	}
 
 	// we need to wait for our children to render first and
-	// then calculate the width of all the children
+	// then calculate the width of all the children to set the width of the slider
 	// see: https://stackoverflow.com/questions/26556436/react-after-render-code
 	onNextFrame = (callback) => {
 		setTimeout(() => {
@@ -68,7 +68,7 @@ class Slider extends Component {
 }
 
 Slider.propTypes = {
-
+	children: PropTypes.node.isRequired,
 }
 
 Slider.defaultProps = {

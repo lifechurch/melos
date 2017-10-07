@@ -39,6 +39,7 @@ class Moment extends Component {
 			onEdit,
 			users,
 			auth,
+			footer,
 		} = this.props
 
 		const user = 	userid && userid in users
@@ -68,26 +69,28 @@ class Moment extends Component {
 
 
 		return (
-			<Card customClass='moment-card' extension={cardFooter}>
+			<Card customClass='yv-moment-card' extension={cardFooter}>
 				<div style={{ display: 'flex', width: '100%' }}>
-					<div className='aside-col'>
-						{
-							userid &&
-							<Avatar
-								src={avatarSrc}
-								width={38}
-								placeholderText={user && user.first_name ? user.first_name.charAt(0) : null}
-								link={userLink}
-							/>
-						}
-					</div>
+					{
+						userid &&
+						(
+							<div className='aside-col'>
+								<Avatar
+									src={avatarSrc}
+									width={38}
+									placeholderText={user && user.first_name ? user.first_name.charAt(0) : null}
+									link={userLink}
+								/>
+							</div>
+						)
+					}
 					<div className='main-col'>
 						{/* if we don't pass a title and do pass a userid, use the name */}
 						<MomentHeader
 							title={title || (user ? user.name : null)}
 							dt={dt}
 						/>
-						<div className='content'>
+						<div className='yv-moment-content'>
 							{
 								content
 									&& typeof content === 'string'
@@ -97,12 +100,17 @@ class Moment extends Component {
 						</div>
 					</div>
 				</div>
-				<MomentFooter
-					filledLike={likedIds && auth.userData && likedIds.includes(auth.userData.userid)}
-					onLike={onLike}
-					onEdit={this.isAuthedMoment ? onEdit : null}
-					onDelete={this.isAuthedMoment ? onDelete : null}
-				/>
+				{
+					footer
+						|| (
+							<MomentFooter
+								filledLike={likedIds && auth.userData && likedIds.includes(auth.userData.userid)}
+								onLike={onLike}
+								onEdit={this.isAuthedMoment ? onEdit : null}
+								onDelete={this.isAuthedMoment ? onDelete : null}
+							/>
+						)
+				}
 			</Card>
 		)
 	}
