@@ -20,30 +20,30 @@ import PlanStartString from '../features/PlanDiscovery/components/PlanStartStrin
 
 class InvitationView extends Component {
 	componentDidMount() {
-		const { dispatch, params: { id, together_id }, auth, location: { query } } = this.props
-		// join token will allow us to see the participants and together unauthed
-		const token = query && query.token ? query.token : null
-		dispatch(planView({
-			plan_id: id.split('-')[0],
-			together_id,
-			token,
+		const {
+			dispatch,
+			params: { id, together_id },
 			auth,
-		}))
+			location: { query },
+			plan,
+			participants,
+			serverLanguageTag
+		} = this.props
+		// join token will allow us to see the participants and together unauthed
+		this.joinToken = query && query.token ? query.token : null
+		if (!(plan && participants && participants.filter({ together_id, idOnly: true }).length > 0)) {
+			dispatch(planView({
+				plan_id: id.split('-')[0],
+				together_id,
+				token: this.joinToken,
+				auth,
+				serverLanguageTag,
+			}))
+		}
 		dispatch(plansAPI.actions.together.get({
 			id: together_id,
-			token
+			token: this.joinToken
 		}, { auth: auth && auth.isLoggedIn }))
-	}
-
-	localizedLink = (link) => {
-		const { params, serverLanguageTag } = this.props
-		const languageTag = serverLanguageTag || params.lang || 'en'
-
-		if (['en', 'en-US'].indexOf(languageTag) > -1) {
-			return link
-		} else {
-			return `/${languageTag}${link}`
-		}
 	}
 
 	OnActionComplete = () => {
@@ -65,12 +65,11 @@ class InvitationView extends Component {
 	}
 
 	render() {
-		const { plan, params: { together_id }, location: { query }, together, participants } = this.props
+		const { plan, params: { together_id }, together, participants } = this.props
 
-		const joinToken = query && query.token ? query.token : null
-		const planImg = plan ?
-					selectImageFromList({ images: plan.images, width: 640, height: 320 }).url :
-					''
+		const planImg = plan
+			? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url
+			: ''
 		const planTitle = plan ? plan.name.default : null
 		const planLink = plan ? plan.short_url : null
 		const invitedNum = participants
@@ -90,16 +89,24 @@ class InvitationView extends Component {
 				planLink={planLink}
 				participantsString={
 					<div>
-						<FormattedMessage id='x pending' values={{ number: invitedNum }} />
+						{
+							invitedNum > 1
+								? <FormattedMessage id='x pending.other' values={{ number: invitedNum }} />
+								: <FormattedMessage id='x pending.one' values={{ number: invitedNum }} />
+						}
 						&nbsp;
 						&bull;
 						&nbsp;
-						<FormattedMessage id='x accepted' values={{ number: acceptedNum }} />
+						{
+							acceptedNum > 1
+								? <FormattedMessage id='x accepted.other' values={{ number: acceptedNum }} />
+								: <FormattedMessage id='x accepted.one' values={{ number: acceptedNum }} />
+						}
 					</div>
 				}
 				startDate={<PlanStartString start_dt={together && together.start_dt} dateOnly />}
-				joinToken={joinToken}
-				showDecline={!joinToken}
+				joinToken={this.joinToken}
+				showDecline={!this.joinToken}
 				handleActionComplete={this.OnActionComplete}
 				handleUnauthed={this.OnUnauthedAction}
 			/>
@@ -118,7 +125,7 @@ function mapStateToProps(state, props) {
 			? getTogetherModel(state).byId[together_id]
 			: null,
 		auth: state.auth,
-		serverLanguageTag: state.serverLanguageTag
+		serverLanguageTag: state.serverLanguageTag,
 	}
 }
 
@@ -128,9 +135,9 @@ InvitationView.propTypes = {
 	participants: PropTypes.object.isRequired,
 	together: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired,
-	serverLanguageTag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	location: PropTypes.object,
+	serverLanguageTag: PropTypes.string.isRequired,
 }
 
 InvitationView.defaultProps = {

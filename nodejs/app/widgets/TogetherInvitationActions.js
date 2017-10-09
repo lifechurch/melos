@@ -17,7 +17,7 @@ class TogetherInvitationActions extends Component {
 		} = this.props
 
 		// handle action when unauthed
-		if (!auth.isLoggedIn) {
+		if (!auth.isLoggedIn && !joinToken) {
 			if (typeof handleUnauthed === 'function') {
 				handleUnauthed()
 				return

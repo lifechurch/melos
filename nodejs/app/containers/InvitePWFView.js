@@ -56,17 +56,6 @@ class InvitePWFView extends Component {
 		}
 	}
 
-	localizedLink = (link) => {
-		const { params, serverLanguageTag } = this.props
-		const languageTag = serverLanguageTag || params.lang || 'en'
-
-		if (['en', 'en-US'].indexOf(languageTag) > -1) {
-			return link
-		} else {
-			return `/${languageTag}${link}`
-		}
-	}
-
 	render() {
 		const { together } = this.props
 
@@ -77,7 +66,6 @@ class InvitePWFView extends Component {
 				handleSearch={this.onHandleSearch}
 				handleInvite={this.onHandleInvite}
 				getFriends={this.getFriends}
-				localizedLink={this.localizedLink}
 			/>
 		)
 	}

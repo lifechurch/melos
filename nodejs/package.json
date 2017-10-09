@@ -12,7 +12,7 @@
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
     "@redux-offline/redux-offline": "^2.1.0",
-    "@youversion/api-redux": "^0.3.92",
+    "@youversion/api-redux": "^0.3.93",
     "@youversion/js-api": "^1.0.8",
     "@youversion/token-storage": "^0.0.36",
     "@youversion/utils": "^1.0.19",

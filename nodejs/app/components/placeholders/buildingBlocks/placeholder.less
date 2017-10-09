@@ -17,25 +17,22 @@
 
 // SHIMMER
 .placeholder-animation-shimmer {
-  animation-duration: 1s;
+  animation-duration: 0.75s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-name: shimmer;
   animation-timing-function: linear;
   background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-  background-size: 2000px;
+  background-size: 1000px;
   height: 100%;
   position: relative;
 }
 
 @keyframes shimmer {
-  0%{
+  0% {
     background-position: 100% 0
   }
-  50%{
-    background-position: 0% 0
-  }
-  100%{
-    background-position: -100% 0
+  100% {
+    background-position: 0 0
   }
 }

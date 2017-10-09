@@ -116,11 +116,11 @@ function Participants({
 									<div className='friend-list' style={{ marginTop: '60px' }}>
 										<Placeholder
 											key='friends-placeholder'
-											height='42px'
-											borderRadius='42px'
-											width='42px'
+											height='38px'
+											width='38px'
+											borderRadius='38'
 											duplicate={15}
-											lineSpacing='15px'
+											lineSpacing='16px'
 											textHeight='10px'
 											widthRange={[30, 60]}
 											style={{ margin: '20px 20px' }}

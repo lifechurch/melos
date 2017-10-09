@@ -37,6 +37,7 @@ function MediaListItemPlaceholder(props) {
 				lineSpacing={lineSpacing}
 				textHeight={textHeight}
 				widthRange={widthRange}
+				height={height}
 			/>
 		</Placeholder>
 	)

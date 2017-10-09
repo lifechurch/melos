@@ -47,7 +47,7 @@ function ShareLink({
 			</div>
 			<div className='vertical-center horizontal-center flex-wrap'>
 				<div style={{ margin: '25px 10px' }}>
-					<ClickToCopy text={link} customClass='yv-gray-link share-link'>
+					<ClickToCopy text={shareLink} customClass='yv-gray-link share-link'>
 						{ shareLink }
 					</ClickToCopy>
 				</div>
