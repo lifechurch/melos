@@ -2,13 +2,14 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import getCurrentDT from '../../../lib/getCurrentDT'
 import Menu from '../../../components/Menu'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Modal from '../../../components/Modal'
 import { promptUserForNotificationsPermission } from '../../../widgets/NotificationsPermissionPrompt'
+import Routes from '../../../lib/routes'
+
 
 class SubscribeUserDialog extends Component {
 	constructor(props) {
@@ -18,7 +19,16 @@ class SubscribeUserDialog extends Component {
 
 	handleSubscribeUser(subscribeContext) {
 		const { dispatch, id, isLoggedIn, subLinkBase, useRouter, serverLanguageTag } = this.props
-		if (!isLoggedIn) window.location.replace('/sign-in')
+		if (!isLoggedIn) {
+			// redirect to sign up
+			if (window) {
+				window.location.href = Routes.signUp({
+					query: {
+						redirect: window.location.href
+					}
+				})
+			}
+		}
 
 		switch (subscribeContext) {
 			case 'together':
