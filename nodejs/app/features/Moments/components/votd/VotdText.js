@@ -3,11 +3,17 @@ import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
 import Immutable from 'immutable'
+import { Link } from 'react-router'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
-import { getBibleVersionFromStorage, chapterifyUsfm, parseVerseFromContent } from '../../../../lib/readerUtils'
+import {
+	getBibleVersionFromStorage,
+	chapterifyUsfm,
+	parseVerseFromContent
+} from '../../../../lib/readerUtils'
+import Routes from '../../../../lib/routes'
 import VOTDIcon from '../../../../components/icons/VOTD'
 import Moment from '../Moment'
 
@@ -61,7 +67,7 @@ class VotdText extends Component {
 	}
 
 	render() {
-		const { moments, className, bible } = this.props
+		const { moments, className, bible, serverLanguageTag } = this.props
 
 		let verse
 		const votd = moments && moments.pullVotd(this.dayOfYear)
@@ -73,7 +79,27 @@ class VotdText extends Component {
 				fullContent: ref.content,
 			}).html
 		}
-
+		const version_id = getBibleVersionFromStorage()
+		const version_abbr = ref
+			&& bible.versions
+			&& Immutable
+					.fromJS(bible)
+					.hasIn([
+						'versions',
+						'byId',
+						`${version_id}`,
+						'response',
+						'local_abbreviation'
+					], false)
+			&& Immutable
+					.fromJS(bible)
+					.getIn([
+						'versions',
+						'byId',
+						`${version_id}`,
+						'response',
+						'local_abbreviation'
+					])
 		/* eslint-disable react/no-danger */
 		return (
 			<div className={`yv-votd-text ${className}`}>
@@ -83,33 +109,56 @@ class VotdText extends Component {
 							<VOTDIcon />
 							<div className='vertical-center flex-wrap' style={{ marginLeft: '15px' }}>
 								<div style={{ width: '100%' }}><FormattedMessage id='votd' /></div>
-								{ ref && ref.reference && ref.reference.human }
 								{
 									ref
-									&& bible.versions
-									&& Immutable
-											.fromJS(bible)
-											.hasIn([
-												'versions',
-												'byId',
-												`${getBibleVersionFromStorage()}`,
-												'response',
-												'local_abbreviation'
-											], false)
-									&& ` ${Immutable
-											.fromJS(bible)
-											.getIn([
-												'versions',
-												'byId',
-												`${getBibleVersionFromStorage()}`,
-												'response',
-												'local_abbreviation'
-											])}`
+										&& ref.reference
+										&& ref.reference.human
+										&& (
+											<Link
+												to={Routes.reference({
+													version_id,
+													usfm: chapterUsfm,
+													version_abbr,
+													serverLanguageTag
+												})}
+											>
+												{ ref.reference.human }
+											</Link>
+										)
+								}
+								{
+									version_abbr
+									&& (
+										<Link
+											to={Routes.version({
+												version_id,
+												serverLanguageTag
+											})}
+										>
+											&nbsp;
+											{ version_abbr }
+										</Link>
+									)
 								}
 							</div>
 						</div>
 					}
-					content={<div dangerouslySetInnerHTML={{ __html: verse }} />}
+					content={
+						<Link
+							to={Routes.reference({
+								version_id,
+								usfm: votd && votd.usfm && votd.usfm[0],
+								version_abbr,
+								serverLanguageTag
+							})}
+						>
+							<div
+								className='reader'
+								style={{ color: 'black' }}
+								dangerouslySetInnerHTML={{ __html: verse }}
+							/>
+						</Link>
+					}
 				/>
 			</div>
 		)
