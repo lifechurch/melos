@@ -9,7 +9,7 @@ class Slider extends Component {
 		this.refsList = []
 	}
 
-	componentDidUpdate() {
+	componentDidMount() {
 		const { sliderWidth } = this.state
 		if (sliderWidth === 0) {
 			this.onNextFrame(this.calculateSliderWidth)

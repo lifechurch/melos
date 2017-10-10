@@ -4,6 +4,6 @@ import VOTDView from '../../containers/VOTDView'
 
 export default () => {
 	return (
-		<Route path="/(:lang/)verse-of-the-day(/:day)" component={VOTDView} />
+		<Route path="/(:lang/)verse-of-the-day" component={VOTDView} />
 	)
 }

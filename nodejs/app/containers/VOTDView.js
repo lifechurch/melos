@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
-import VotdText from '../features/Moments/components/votd/VotdText'
-import VotdImage from '../features/Moments/components/votd/VotdImage'
+import VotdText from '../features/Moments/components/types/VotdText'
+import VotdImage from '../features/Moments/components/types/VotdImage'
 
 const VOTDView = (props) => {
-	const { params: { day = null } } = props
+	const { location: { query } } = props
+	const day = query && query.day
 
 	return (
 		<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
@@ -20,7 +21,7 @@ const VOTDView = (props) => {
 }
 
 VOTDView.propTypes = {
-	params: PropTypes.object.isRequired,
+	location: PropTypes.object.isRequired,
 }
 
 VOTDView.defaultProps = {

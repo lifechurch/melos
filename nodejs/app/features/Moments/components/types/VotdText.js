@@ -15,7 +15,12 @@ import {
 } from '../../../../lib/readerUtils'
 import Routes from '../../../../lib/routes'
 import VOTDIcon from '../../../../components/icons/VOTD'
+import ShareIcon from '../../../../components/icons/ShareIcon'
+import OverflowMenu from '../../../../components/OverflowMenu'
 import Moment from '../Moment'
+import MomentHeader from '../MomentHeader'
+import MomentFooter from '../MomentFooter'
+import Share from '../../../Bible/components/verseAction/share/Share'
 
 
 class VotdText extends Component {
@@ -104,62 +109,89 @@ class VotdText extends Component {
 		return (
 			<div className={`yv-votd-text ${className}`}>
 				<Moment
-					title={
-						<div className='vertical-center'>
-							<VOTDIcon />
-							<div className='vertical-center flex-wrap' style={{ marginLeft: '15px' }}>
-								<div style={{ width: '100%' }}><FormattedMessage id='votd' /></div>
-								{
-									ref
-										&& ref.reference
-										&& ref.reference.human
-										&& (
-											<Link
-												to={Routes.reference({
-													version_id,
-													usfm: chapterUsfm,
-													version_abbr,
-													serverLanguageTag
-												})}
-											>
-												{ ref.reference.human }
-											</Link>
-										)
-								}
-								{
-									version_abbr
-									&& (
-										<Link
-											to={Routes.version({
-												version_id,
-												serverLanguageTag
-											})}
-										>
-											&nbsp;
-											{ version_abbr }
-										</Link>
-									)
-								}
-							</div>
-						</div>
+					header={
+						<MomentHeader
+							icon={<VOTDIcon />}
+							title={
+								<div className='vertical-center'>
+									<div className='vertical-center flex-wrap'>
+										<div style={{ width: '100%' }}><FormattedMessage id='votd' /></div>
+										{
+											ref
+												&& ref.reference
+												&& ref.reference.human
+												&& (
+													<Link
+														to={Routes.reference({
+															version_id,
+															usfm: chapterUsfm,
+															version_abbr,
+															serverLanguageTag
+														})}
+													>
+														{ ref.reference.human }
+													</Link>
+												)
+										}
+										{
+											version_abbr
+											&& (
+												<Link
+													to={Routes.version({
+														version_id,
+														serverLanguageTag
+													})}
+												>
+													&nbsp;
+													{ version_abbr.toUpperCase() }
+												</Link>
+											)
+										}
+									</div>
+								</div>
+							}
+						/>
 					}
-					content={
-						<Link
-							to={Routes.reference({
-								version_id,
-								usfm: votd && votd.usfm && votd.usfm[0],
-								version_abbr,
-								serverLanguageTag
-							})}
-						>
-							<div
-								className='reader'
-								style={{ color: 'black' }}
-								dangerouslySetInnerHTML={{ __html: verse }}
-							/>
-						</Link>
+					footer={
+						<MomentFooter
+							right={[
+								<a>
+									<Share
+										text={''}
+										url={
+											typeof window !== 'undefined'
+												&& window.location
+												&& window.location.href
+												? window.location.href
+												: ''
+										}
+										button={
+											<ShareIcon fill='gray' />
+										}
+									/>
+								</a>,
+								<OverflowMenu>
+									<li>Read</li>
+								</OverflowMenu>
+							]}
+						/>
 					}
-				/>
+				>
+					<Link
+						to={Routes.reference({
+							version_id,
+							usfm: votd && votd.usfm && votd.usfm[0],
+							version_abbr,
+							serverLanguageTag
+						})}
+					>
+						<div
+							className='reader'
+							style={{ color: 'black' }}
+							dangerouslySetInnerHTML={{ __html: verse }}
+						/>
+					</Link>
+				</Moment>
 			</div>
 		)
 	}

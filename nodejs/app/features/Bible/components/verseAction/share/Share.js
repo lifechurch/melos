@@ -105,7 +105,7 @@ class Share extends Component {
 		let buttonDiv
 		if (button) {
 			buttonDiv = (
-				<div onClick={this.handleClick}>
+				<div onClick={this.handleClick} className='vertical-center'>
 					{ button }
 				</div>
 			)

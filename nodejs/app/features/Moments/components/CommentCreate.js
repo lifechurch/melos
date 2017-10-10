@@ -9,7 +9,7 @@ function CommentCreate(props) {
 
 	return (
 		<Card
-			customClass='moment-card'
+			customClass='yv-moment-card'
 			extension={
 				<a
 					tabIndex={0}
@@ -20,7 +20,7 @@ function CommentCreate(props) {
 				</a>
 			}
 		>
-			<div style={{ display: 'inline-flex', alignItems: 'flex-start' }}>
+			<div style={{ display: 'inline-flex', alignItems: 'flex-start', marginRight: '15px' }}>
 				<Avatar
 					src={avatarSrc}
 					width={38}

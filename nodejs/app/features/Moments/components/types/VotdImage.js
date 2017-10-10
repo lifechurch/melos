@@ -9,7 +9,10 @@ import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import LazyImage from '../../../../components/LazyImage'
 import Slider from '../../../../components/Slider'
 import Moment from '../Moment'
+import MomentHeader from '../MomentHeader'
+import MomentFooter from '../MomentFooter'
 import { selectImageFromList } from '../../../../lib/imageUtil'
+
 
 class VotdImage extends Component {
 	constructor(props) {
@@ -54,36 +57,46 @@ class VotdImage extends Component {
 		return (
 			<div className={`yv-votd-image ${className}`}>
 				<Moment
-					title={
-						<FormattedMessage id='votd image' />
+					header={
+						<MomentHeader
+							title={
+								<FormattedMessage id='votd image' />
+							}
+						/>
 					}
-					content={
+					footer={
+						<MomentFooter
+							right={'footee'}
+						/>
+					}
+				>
+					{
 						images
-							&& images.length > 0
-							&& (
-								<Slider>
-									{
-										images.map((img) => {
-											const src = selectImageFromList({
-												images: img.renditions,
-												width: 640,
-												height: 640,
-											}).url
+						&& images.length > 0
+						&& (
+							<Slider>
+								{
+									images.map((img) => {
+										const src = selectImageFromList({
+											images: img.renditions,
+											width: 640,
+											height: 640,
+										}).url
 
-											return (
-												<LazyImage
-													key={img.id}
-													src={src}
-													width={320}
-													height={320}
-												/>
-											)
-										})
-									}
-								</Slider>
-							)
+										return (
+											<LazyImage
+												key={img.id}
+												src={src}
+												width={320}
+												height={320}
+											/>
+										)
+									})
+								}
+							</Slider>
+						)
 					}
-				/>
+				</Moment>
 			</div>
 		)
 	}
