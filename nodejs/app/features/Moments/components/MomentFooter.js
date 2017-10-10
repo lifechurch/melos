@@ -1,42 +1,17 @@
 import React, { PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
-import PopupMenu from '../../../components/PopupMenu'
-import HeartIcon from '../../../components/icons/Heart'
+import SectionedHeading from '../../../components/SectionedHeading'
 
 
 function MomentFooter(props) {
 
-	const { onLike, onDelete, onEdit, filledLike } = props
+	const { left, right } = props
 
 	return (
 		<div className='moment-footer'>
-			{
-				onLike &&
-				<div className='margin-right-auto vertical-center' style={{ marginLeft: '10px' }}>
-					<a tabIndex={0} onClick={onLike}>
-						<HeartIcon fill={filledLike ? '#DA1000' : '#979797'} />
-					</a>
-				</div>
-			}
-			{
-				(onEdit || onDelete) &&
-				<PopupMenu >
-					<ul>
-						{
-							onEdit &&
-							<a tabIndex={0} className='font-grey text-center' onClick={onEdit}>
-								<li><FormattedMessage id='edit' /></li>
-							</a>
-						}
-						{
-							onDelete &&
-							<a tabIndex={0} className='font-grey text-center' onClick={onDelete}>
-								<li><FormattedMessage id='delete' /></li>
-							</a>
-						}
-					</ul>
-				</PopupMenu>
-			}
+			<SectionedHeading
+				left={left}
+				right={right}
+			/>
 		</div>
 	)
 }

@@ -3,21 +3,41 @@ import moment from 'moment'
 
 function MomentHeader(props) {
 	const {
+		icon,
 		title,
+		subTitle,
 		dt,
 	} = props
 
 	return (
 		<div className='moment-header'>
-			<div className='title'>
-				{ title }
-			</div>
 			{
-				dt &&
-				<div className='dt margin-left-auto'>
-					{ moment(dt).fromNow() }
-				</div>
+				icon
+					&& (
+						<div className='aside-col icon' style={{ marginRight: '15px' }}>
+							{ icon }
+						</div>
+					)
 			}
+			<div className='main-col vertical-center'>
+				<div className='title'>
+					{ title }
+				</div>
+				{
+					subTitle
+						&& (
+							<div className='sub-title'>
+								{ subTitle }
+							</div>
+						)
+				}
+				{
+					dt &&
+						<div className='dt margin-left-auto'>
+							{ moment(dt).fromNow() }
+						</div>
+				}
+			</div>
 		</div>
 	)
 }

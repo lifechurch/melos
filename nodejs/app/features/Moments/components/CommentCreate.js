@@ -20,7 +20,7 @@ function CommentCreate(props) {
 				</a>
 			}
 		>
-			<div style={{ display: 'inline-flex', alignItems: 'flex-start' }}>
+			<div style={{ display: 'inline-flex', alignItems: 'flex-start', marginRight: '15px' }}>
 				<Avatar
 					src={avatarSrc}
 					width={38}
