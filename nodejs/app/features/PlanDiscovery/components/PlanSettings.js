@@ -128,14 +128,6 @@ class PlanSettings extends Component {
 						</div>
 					</div>
 					<div className="row" style={rowStyle}>
-						<div className="columns medium-8">
-							<h3><FormattedMessage id="plans.do you want to reset" /></h3>
-							<p>
-								<FormattedMessage id="plans.restart description" />
-							</p>
-						</div>
-					</div>
-					<div className="row" style={rowStyle}>
 						<div className="columns small-12">
 							<a tabIndex={0} onClick={this.handleStop} className="warning-text">
 								<FormattedMessage id="plans.stop reading" />
