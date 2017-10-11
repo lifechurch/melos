@@ -8,7 +8,8 @@ import Overflow, {
 	Copy,
 	Share,
 	Edit,
-	Delete
+	Delete,
+	Cancel
 } from '../components/OverflowMenu'
 import {
 	isVerseOrChapter,
@@ -56,7 +57,7 @@ class OverflowMenu extends Component {
 						bookList: versionData.books,
 						usfmList: usfm,
 					}).title
-
+				console.log('ASKFJWENGR', title, usfm)
 				readLink = Routes.reference({
 					usfm,
 					version_id,
@@ -74,16 +75,7 @@ class OverflowMenu extends Component {
 				if (ref) {
 					copyAction = (
 						<ClickToCopy
-							text={`
-								${parseVerseFromContent({
-									usfms: usfm,
-									fullContent: ref.content,
-								}).text}
-								\n
-								${title} ${versionData && versionData.local_abbreviation.toUpperCase()}
-								\n\n
-								${hosts.railsHost}${readLink}
-							`}
+							text={`${parseVerseFromContent({ usfms: usfm, fullContent: ref.content }).text}\n${title} ${versionData && versionData.local_abbreviation.toUpperCase()}\n\n${hosts.railsHost}${readLink}`}
 						>
 							<Copy />
 						</ClickToCopy>
@@ -106,9 +98,7 @@ class OverflowMenu extends Component {
 							<Read link={readLink} />
 						)
 				}
-				{
-					copyAction
-				}
+				{ copyAction }
 				{
 					onEdit
 						&& (
@@ -123,6 +113,7 @@ class OverflowMenu extends Component {
 				}
 				{/* allow additional actions to be rendered */}
 				{ children }
+				<Cancel />
 			</Overflow>
 		)
 	}

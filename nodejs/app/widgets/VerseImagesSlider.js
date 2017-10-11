@@ -12,6 +12,9 @@ import { getReferencesTitle } from '../lib/usfmUtils'
 import Moment from '../features/Moments/components/Moment'
 import MomentHeader from '../features/Moments/components/MomentHeader'
 import MomentFooter from '../features/Moments/components/MomentFooter'
+import Routes from '../lib/routes'
+import { Item } from '../components/OverflowMenu'
+import OverflowMenu from '../widgets/OverflowMenu'
 
 
 class VerseImagesSlider extends Component {
@@ -61,6 +64,7 @@ class VerseImagesSlider extends Component {
 				bookList: versionData.books,
 				usfmList: usfm,
 			}).title
+
 		return (
 			<div className={`yv-votd-image ${className}`}>
 				<Moment
@@ -71,7 +75,17 @@ class VerseImagesSlider extends Component {
 					}
 					footer={
 						<MomentFooter
-							right={'footee'}
+							right={[
+								<OverflowMenu
+									key='overflow'
+									usfm={usfm && (Array.isArray(usfm) ? usfm[0] : usfm)}
+									version_id={versionData && versionData.id}
+								>
+									<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
+										<FormattedMessage id='notification settings' />
+									</Item>
+								</OverflowMenu>
+							]}
 						/>
 					}
 				>

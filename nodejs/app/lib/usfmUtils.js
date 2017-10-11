@@ -134,14 +134,14 @@ export function getSelectionString(selectionObject, returnText = false) {
  * @return {[string]}          [description]
  */
 export function getReferencesTitle({ bookList, usfmList, isRtl = false }) {
-	const usfmArrray = Array.isArray(usfmList)
+	const usfmArray = Array.isArray(usfmList)
 		? usfmList
 		: [usfmList]
 	if (
 		!bookList
 		|| !usfmList
 		|| bookList.length < 1
-		|| usfmArrray.length < 1
+		|| usfmArray.length < 1
 	) {
 		return {
 			title: '',
@@ -150,8 +150,8 @@ export function getReferencesTitle({ bookList, usfmList, isRtl = false }) {
 		}
 	}
 
-	const bookUsfm = usfmArrray[0].split('.')[0]
-	const chapNum = usfmArrray[0].split('.')[1]
+	const bookUsfm = usfmArray[0].split('.')[0]
+	const chapNum = usfmArray[0].split('.')[1]
 	const bookObj = bookList.filter((book) => {
 		return book.usfm.toLowerCase() === bookUsfm.toLowerCase()
 	})[0]
@@ -159,12 +159,12 @@ export function getReferencesTitle({ bookList, usfmList, isRtl = false }) {
 
 	// let's build the verse string
 	let usfms = []
-	usfmArrray.forEach((usfmString) => {
+	usfmArray.forEach((usfmString) => {
 		usfms = usfms.concat(usfmString.split('+'))
 	})
 	const verseString = usfms.length > 1
 		? getSelectionString(usfms)
-		: usfmList[0].split('.')[2]
+		: usfmArray[0].split('.')[2]
 
 	return {
 		usfm: `${bookUsfm}.${chapNum}${verseString ? `.${verseString}` : ''}`,

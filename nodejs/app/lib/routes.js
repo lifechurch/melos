@@ -4,7 +4,9 @@ export const queryifyParamsObj = (params) => {
 	// convert query: { redirect: true } to route?redirect=true
 	return Object.keys(params).reduce((acc, key) => {
 		const val = params[key]
-		return `${acc}${key}=${val}&`
+		return val
+			? `${acc}${key}=${val}&`
+			: ''
 	}, '').replace(/&\s*$/, '') // strip trailing &
 }
 
@@ -250,5 +252,34 @@ const Routes = {
 
 		return route.get()
 	},
+	// verse of the day ----------------------------------------------------------
+	votd: ({ query = null, serverLanguageTag = null }) => {
+		const route = new Route({
+			path: '/verse-of-the-day',
+			query,
+			serverLanguageTag,
+		})
+
+		return route.get()
+	},
+	// notifications -------------------------------------------------------------
+	notifications: ({ query = null, serverLanguageTag = null }) => {
+		const route = new Route({
+			path: '/notifications',
+			query,
+			serverLanguageTag,
+		})
+
+		return route.get()
+	},
+	notificationsEdit: ({ query = null, serverLanguageTag = null }) => {
+		const route = new Route({
+			path: '/notifications/edit',
+			query,
+			serverLanguageTag,
+		})
+
+		return route.get()
+	}
 }
 export default Routes

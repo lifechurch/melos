@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import moment from 'moment'
-import Immutable from 'immutable'
 import { Link } from 'react-router'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
@@ -13,14 +12,16 @@ import {
 	chapterifyUsfm,
 	parseVerseFromContent
 } from '../../../../lib/readerUtils'
+import { getReferencesTitle } from '../../../../lib/usfmUtils'
 import Routes from '../../../../lib/routes'
 import VOTDIcon from '../../../../components/icons/VOTD'
 import ShareIcon from '../../../../components/icons/ShareIcon'
+import { Item } from '../../../../components/OverflowMenu'
 import OverflowMenu from '../../../../widgets/OverflowMenu'
+import Share from '../../../Bible/components/verseAction/share/Share'
 import Moment from '../Moment'
 import MomentHeader from '../MomentHeader'
 import MomentFooter from '../MomentFooter'
-import Share from '../../../Bible/components/verseAction/share/Share'
 
 
 class VotdText extends Component {
@@ -72,7 +73,7 @@ class VotdText extends Component {
 	}
 
 	render() {
-		const { moments, className, bible, serverLanguageTag } = this.props
+		const { moments, className, bible, serverLanguageTag, intl, hosts } = this.props
 
 		let verse
 		const votd = moments && moments.pullVotd(this.dayOfYear)
@@ -85,26 +86,20 @@ class VotdText extends Component {
 			}).html
 		}
 		const version_id = getBibleVersionFromStorage()
-		const version_abbr = ref
+		const versionData = bible
 			&& bible.versions
-			&& Immutable
-					.fromJS(bible)
-					.hasIn([
-						'versions',
-						'byId',
-						`${version_id}`,
-						'response',
-						'local_abbreviation'
-					], false)
-			&& Immutable
-					.fromJS(bible)
-					.getIn([
-						'versions',
-						'byId',
-						`${version_id}`,
-						'response',
-						'local_abbreviation'
-					])
+			&& bible.versions.byId
+			&& bible.versions.byId[version_id]
+			&& bible.versions.byId[version_id].response
+		const title = versionData
+			&& versionData.books
+			&& getReferencesTitle({
+				bookList: versionData.books,
+				usfmList: votd.usfm,
+			}).title
+		const version_abbr = versionData
+			&& versionData.local_abbreviation.toUpperCase()
+
 		/* eslint-disable react/no-danger */
 		return (
 			<div className={`yv-votd-text ${className}`}>
@@ -155,25 +150,27 @@ class VotdText extends Component {
 					footer={
 						<MomentFooter
 							right={[
-								<a>
-									<Share
-										text={''}
-										url={
-											typeof window !== 'undefined'
-												&& window.location
-												&& window.location.href
-												? window.location.href
-												: ''
-										}
-										button={
-											<ShareIcon fill='gray' />
-										}
-									/>
+								<a key='share'>
+									{
+										title
+											&& (
+												<Share
+													text={`${intl.formatMessage({ id: 'votd' })} - ${title} (${version_abbr})`}
+													url={`${hosts && hosts.railsHost}${Routes.votd({ query: { day: this.dayOfYear }, serverLanguageTag })}`}
+													button={<ShareIcon fill='gray' />}
+												/>
+											)
+									}
 								</a>,
 								<OverflowMenu
+									key='overflow'
 									usfm={votd && votd.usfm && votd.usfm[0]}
 									version_id={version_id}
-								/>
+								>
+									<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
+										<FormattedMessage id='notification settings' />
+									</Item>
+								</OverflowMenu>
 							]}
 						/>
 					}
@@ -217,7 +214,8 @@ function mapStateToProps(state) {
 		bible: getBibleModel(state),
 		moments: getMomentsModel(state),
 		serverLanguageTag: state.serverLanguageTag,
+		hosts: state.hosts,
 	}
 }
 
-export default connect(mapStateToProps, null)(VotdText)
+export default connect(mapStateToProps, null)(injectIntl(VotdText))

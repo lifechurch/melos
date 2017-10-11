@@ -2,11 +2,17 @@ import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import PopupMenu from './PopupMenu'
 
-function OnClick(props) {
-	const { onClick, link, children } = props
+export function Item(props) {
+	const { onClick, link, style = {}, className = '', children } = props
 	return (
-		<a tabIndex={0} href={link} className='font-grey text-center' onClick={onClick}>
-			{ children }
+		<a
+			tabIndex={0}
+			href={link}
+			className={`font-grey text-center ${className}`}
+			style={style}
+			onClick={onClick}
+		>
+			<li>{ children }</li>
 		</a>
 	)
 }
@@ -14,54 +20,63 @@ function OnClick(props) {
 export function Read(props) {
 	const { onClick, link } = props
 	return (
-		<OnClick onClick={onClick} link={link}>
-			<li><FormattedMessage id='read' /></li>
-		</OnClick>
+		<Item onClick={onClick} link={link}>
+			<FormattedMessage id='read' />
+		</Item>
 	)
 }
 
 export function ReadFullChapter(props) {
 	const { onClick, link } = props
 	return (
-		<OnClick onClick={onClick} link={link}>
-			<li><FormattedMessage id='read full chapter' /></li>
-		</OnClick>
+		<Item onClick={onClick} link={link}>
+			<FormattedMessage id='read full chapter' />
+		</Item>
 	)
 }
 
 export function Copy(props) {
 	const { onClick, link } = props
 	return (
-		<OnClick onClick={onClick} link={link}>
-			<li><FormattedMessage id='copy' /></li>
-		</OnClick>
+		<Item onClick={onClick} link={link}>
+			<FormattedMessage id='copy' />
+		</Item>
 	)
 }
 
 export function Share(props) {
 	const { onClick, link } = props
 	return (
-		<OnClick onClick={onClick} link={link}>
-			<li><FormattedMessage id='share' /></li>
-		</OnClick>
+		<Item onClick={onClick} link={link}>
+			<FormattedMessage id='share' />
+		</Item>
 	)
 }
 
 export function Edit(props) {
 	const { onClick, link } = props
 	return (
-		<OnClick onClick={onClick} link={link}>
-			<li><FormattedMessage id='edit' /></li>
-		</OnClick>
+		<Item onClick={onClick} link={link}>
+			<FormattedMessage id='edit' />
+		</Item>
 	)
 }
 
 export function Delete(props) {
 	const { onClick, link } = props
 	return (
-		<OnClick onClick={onClick} link={link}>
-			<li className='warning-text'><FormattedMessage id='delete' /></li>
-		</OnClick>
+		<Item onClick={onClick} link={link} className='red'>
+			<FormattedMessage id='delete' />
+		</Item>
+	)
+}
+
+export function Cancel(props) {
+	const { onClick, link } = props
+	return (
+		<Item onClick={onClick} link={link}>
+			<FormattedMessage id='cancel' />
+		</Item>
 	)
 }
 
@@ -72,10 +87,8 @@ function OverflowMenu(props) {
 		children
 			&& (children.length > 0 || !Array.isArray(children))
 			&& (
-				<PopupMenu>
-					<ul>
-						{ children }
-					</ul>
+				<PopupMenu closeButton={null}>
+					<ul>{ children }</ul>
 				</PopupMenu>
 			)
 	)

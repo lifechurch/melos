@@ -1,12 +1,9 @@
 .popup-menu-container {
-	// display: inline-block;
-	// float: right;
-
 	.popup-menu {
 		ul {
 			position: absolute;
-			margin-left: -130px;
-			width: 150px;
+			margin: -100px 0 0 -100px;
+			max-width: 225px;
 			.yv-drop-shadow;
 			z-index: 100;
 		}
@@ -16,7 +13,7 @@
 .yv-menu {
 	ul {
 		background-color: white;
-		opacity: 0.9;
+		opacity: 0.95;
 		border-radius: 5px;
 		display: inherit;
 		margin: 0;
@@ -26,9 +23,11 @@
 		text-align: left;
 		background-color: white;
 		li {
-			padding: 5px 10px;
+			padding: 6px 10px;
+			border-radius: 5px;
 			color: @dark_grey;
 			text-align: center;
+			border-bottom: 1px solid @light-grey;
 			&:hover {
 				color: @green;
 				cursor: pointer;
