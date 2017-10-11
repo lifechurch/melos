@@ -10,7 +10,6 @@ class PlanSettings extends Component {
 		this.handleCatchUp = this.handleCatchUp.bind(this)
 		this.handleEmailDeliveryChange = this.handleEmailDeliveryChange.bind(this)
 		this.handlePrivacyChange = this.handlePrivacyChange.bind(this)
-		this.handleRestart = this.handleRestart.bind(this)
 		this.handleStop = this.handleStop.bind(this)
 		this.handleSelectPlan = this.handleSelectPlan.bind(this)
 		this.handleReloadCalendar = this.handleReloadCalendar.bind(this)
@@ -48,15 +47,6 @@ class PlanSettings extends Component {
 	handleCatchUp() {
 		const { dispatch, id, subscriptionLink } = this.props
 		dispatch(ActionCreators.resetSubscription({ id }, true)).then(() => {
-			this.handleReloadCalendar().then(() => {
-				dispatch(push(subscriptionLink))
-			})
-		})
-	}
-
-	handleRestart() {
-		const { dispatch, id, subscriptionLink } = this.props
-		dispatch(ActionCreators.restartSubscription({ id }, true)).then(() => {
 			this.handleReloadCalendar().then(() => {
 				dispatch(push(subscriptionLink))
 			})
@@ -143,11 +133,6 @@ class PlanSettings extends Component {
 							<p>
 								<FormattedMessage id="plans.restart description" />
 							</p>
-						</div>
-						<div className="columns medium-4" style={rightCellStyle}>
-							<button className="solid-button green" onClick={this.handleRestart}>
-								<FormattedMessage id="plans.restart" />
-							</button>
 						</div>
 					</div>
 					<div className="row" style={rowStyle}>
