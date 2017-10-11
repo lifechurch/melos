@@ -5,27 +5,62 @@ import PopupMenu from './PopupMenu'
 function OnClick(props) {
 	const { onClick, link, children } = props
 	return (
-		onClick &&
-			<a tabIndex={0} href={link} className='font-grey text-center' onClick={onClick}>
-				{ children }
-			</a>
+		<a tabIndex={0} href={link} className='font-grey text-center' onClick={onClick}>
+			{ children }
+		</a>
+	)
+}
+
+export function Read(props) {
+	const { onClick, link } = props
+	return (
+		<OnClick onClick={onClick} link={link}>
+			<li><FormattedMessage id='read' /></li>
+		</OnClick>
+	)
+}
+
+export function ReadFullChapter(props) {
+	const { onClick, link } = props
+	return (
+		<OnClick onClick={onClick} link={link}>
+			<li><FormattedMessage id='read full chapter' /></li>
+		</OnClick>
+	)
+}
+
+export function Copy(props) {
+	const { onClick, link } = props
+	return (
+		<OnClick onClick={onClick} link={link}>
+			<li><FormattedMessage id='copy' /></li>
+		</OnClick>
+	)
+}
+
+export function Share(props) {
+	const { onClick, link } = props
+	return (
+		<OnClick onClick={onClick} link={link}>
+			<li><FormattedMessage id='share' /></li>
+		</OnClick>
 	)
 }
 
 export function Edit(props) {
-	const { onClick } = props
+	const { onClick, link } = props
 	return (
-		<OnClick onClick={onClick}>
+		<OnClick onClick={onClick} link={link}>
 			<li><FormattedMessage id='edit' /></li>
 		</OnClick>
 	)
 }
 
 export function Delete(props) {
-	const { onClick } = props
+	const { onClick, link } = props
 	return (
-		<OnClick onClick={onClick}>
-			<li><FormattedMessage id='delete' /></li>
+		<OnClick onClick={onClick} link={link}>
+			<li className='warning-text'><FormattedMessage id='delete' /></li>
 		</OnClick>
 	)
 }

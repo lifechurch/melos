@@ -16,7 +16,7 @@ import {
 import Routes from '../../../../lib/routes'
 import VOTDIcon from '../../../../components/icons/VOTD'
 import ShareIcon from '../../../../components/icons/ShareIcon'
-import OverflowMenu from '../../../../components/OverflowMenu'
+import OverflowMenu from '../../../../widgets/OverflowMenu'
 import Moment from '../Moment'
 import MomentHeader from '../MomentHeader'
 import MomentFooter from '../MomentFooter'
@@ -170,9 +170,10 @@ class VotdText extends Component {
 										}
 									/>
 								</a>,
-								<OverflowMenu>
-									<li>Read</li>
-								</OverflowMenu>
+								<OverflowMenu
+									usfm={votd && votd.usfm && votd.usfm[0]}
+									version_id={version_id}
+								/>
 							]}
 						/>
 					}
