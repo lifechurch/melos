@@ -6,7 +6,9 @@ import getImagesModel from '@youversion/api-redux/lib/models/images'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import LazyImage from '../components/LazyImage'
 import Slider from '../components/Slider'
-import { selectImageFromList } from '../lib/imageUtil'
+import Button from '../components/Button'
+import StackedContainer from '../components/StackedContainer'
+import { selectImageFromList, PLAN_DEFAULT } from '../lib/imageUtil'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
 import { getReferencesTitle } from '../lib/usfmUtils'
 import Moment from '../features/Moments/components/Moment'
@@ -108,6 +110,19 @@ class VerseImagesSlider extends Component {
 				>
 					<Slider>
 						{ imagesToRender }
+						<StackedContainer>
+							<LazyImage
+								key='sub'
+								src={PLAN_DEFAULT}
+								width={320}
+								height={320}
+							/>
+							<div className='vertical-center horizontal-center' style={{ height: '100%', width: '100%' }}>
+								<Button to='/vod_subscriptions' className='green' useClientRouting={false}>
+									<FormattedMessage id='votd notifications prompt' />
+								</Button>
+							</div>
+						</StackedContainer>
 					</Slider>
 				</Moment>
 			</div>

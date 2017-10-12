@@ -16,7 +16,6 @@ import { getReferencesTitle } from '../../../../lib/usfmUtils'
 import Routes from '../../../../lib/routes'
 import VOTDIcon from '../../../../components/icons/VOTD'
 import ShareIcon from '../../../../components/icons/ShareIcon'
-import { Item } from '../../../../components/OverflowMenu'
 import OverflowMenu from '../../../../widgets/OverflowMenu'
 import Share from '../../../Bible/components/verseAction/share/Share'
 import Moment from '../Moment'
@@ -73,15 +72,28 @@ class VotdText extends Component {
 	}
 
 	render() {
-		const { moments, className, bible, serverLanguageTag, intl, hosts } = this.props
+		const {
+			className,
+			usfm,
+			icon,
+			title,
+			onLike,
+			onComment,
+			onEdit,
+			onDelete,
+			overflowMenuChildren,
+			bible,
+			serverLanguageTag,
+			intl,
+			hosts
+		} = this.props
 
 		let verse
-		const votd = moments && moments.pullVotd(this.dayOfYear)
-		const chapterUsfm = votd && chapterifyUsfm(votd.usfm[0])
+		const chapterUsfm = usfm && chapterifyUsfm(usfm)
 		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
 		if (ref) {
 			verse = parseVerseFromContent({
-				usfms: votd.usfm,
+				usfms: usfm,
 				fullContent: ref.content,
 			}).html
 		}
@@ -95,7 +107,7 @@ class VotdText extends Component {
 			&& versionData.books
 			&& getReferencesTitle({
 				bookList: versionData.books,
-				usfmList: votd.usfm,
+				usfmList: usfm,
 			})
 		const usfmString = refStrings && refStrings.usfm
 		const version_abbr = versionData
@@ -107,49 +119,53 @@ class VotdText extends Component {
 				<Moment
 					header={
 						<MomentHeader
-							icon={<VOTDIcon />}
+							icon={icon}
 							title={
-								<div className='vertical-center'>
-									<div className='vertical-center flex-wrap'>
-										<div style={{ width: '100%' }}><FormattedMessage id='votd' /></div>
-										{
-											ref
-												&& ref.reference
-												&& ref.reference.human
-												&& (
-													<Link
-														to={Routes.reference({
-															version_id,
-															usfm: chapterUsfm,
-															version_abbr,
-															serverLanguageTag
-														})}
-													>
-														{ ref.reference.human }
-													</Link>
-												)
-										}
-										{
-											version_abbr
+								<div className='vertical-center flex-wrap'>
+									{ title }
+									{
+										ref
+											&& ref.reference
+											&& ref.reference.human
 											&& (
 												<Link
-													to={Routes.version({
+													to={Routes.reference({
 														version_id,
+														usfm: chapterUsfm,
+														version_abbr,
 														serverLanguageTag
 													})}
 												>
-													&nbsp;
-													{ version_abbr.toUpperCase() }
+													{ ref.reference.human }
 												</Link>
 											)
-										}
-									</div>
+									}
+									{
+										version_abbr
+										&& (
+											<Link
+												to={Routes.version({
+													version_id,
+													serverLanguageTag
+												})}
+											>
+												&nbsp;
+												{ version_abbr.toUpperCase() }
+											</Link>
+										)
+									}
 								</div>
 							}
 						/>
 					}
 					footer={
 						<MomentFooter
+							left={[
+								(onLike
+									&& <Like onClick={onLike} />),
+								(onComment
+									&& <Comment onClick={onComment} />),
+							]}
 							right={[
 								<a key='share'>
 									{
@@ -166,12 +182,12 @@ class VotdText extends Component {
 								</a>,
 								<OverflowMenu
 									key='overflow'
-									usfm={votd && votd.usfm}
+									usfm={usfm}
 									version_id={version_id}
+									onEdit={onEdit}
+									onDelete={onDelete}
 								>
-									<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
-										<FormattedMessage id='notification settings' />
-									</Item>
+									{ overflowMenuChildren }
 								</OverflowMenu>
 							]}
 						/>

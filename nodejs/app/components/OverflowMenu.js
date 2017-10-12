@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import PopupMenu from './PopupMenu'
 
+
+/*  */
 export function Item(props) {
 	const { onClick, link, style = {}, className = '', children } = props
 	return (
@@ -95,11 +97,11 @@ function OverflowMenu(props) {
 }
 
 OverflowMenu.propTypes = {
-
+	children: PropTypes.node,
 }
 
 OverflowMenu.defaultProps = {
-
+	children: null,
 }
 
 export default OverflowMenu
