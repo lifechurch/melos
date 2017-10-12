@@ -52,7 +52,7 @@ class TalkItOver extends Component {
 		}
 	}
 
-	handleComment = ({ parent_id = null }) => {
+	handleComment = () => {
 		const { day, together_id, dispatch, tioIndex } = this.props
 		const { comment } = this.state
 		if (comment) {
@@ -65,7 +65,6 @@ class TalkItOver extends Component {
 						day: parseInt(day, 10),
 						created_dt: getCurrentDT(),
 						content: comment,
-						parent_id,
 						talk_it_over: tioIndex,
 					},
 					auth: true
