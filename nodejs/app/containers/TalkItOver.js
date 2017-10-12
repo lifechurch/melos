@@ -53,7 +53,7 @@ class TalkItOver extends Component {
 	}
 
 	handleComment = () => {
-		const { day, together_id, dispatch, tioIndex } = this.props
+		const { day, together_id, dispatch } = this.props
 		const { comment } = this.state
 		if (comment) {
 			dispatch(plansAPI.actions.activities.post({
@@ -65,7 +65,6 @@ class TalkItOver extends Component {
 						day: parseInt(day, 10),
 						created_dt: getCurrentDT(),
 						content: comment,
-						talk_it_over: tioIndex,
 					},
 					auth: true
 				})).then(() => {
