@@ -193,17 +193,23 @@ export function buildMeta(props) {
 	return { link, meta }
 }
 
-export function chapterifyUsfm(usfm) {
-	if (!usfm) return null
+export function chapterifyUsfm(usfmArg) {
+	if (!usfmArg) return null
+	const usfm = Array.isArray(usfmArg)
+		? usfmArg[0]
+		: usfmArg
 	const usfmParts = usfm.split('.')
 	return usfmParts.slice(0, 2).join('.')
 }
 
-export function isVerseOrChapter(usfm) {
+export function isVerseOrChapter(usfmArg) {
 	const IS_BOOK = /^\d?[a-zA-Z]{2,3}$/
 	const IS_CHAPTER = /^(INTRO)?[0-9_]+$/
 	const IS_VERSE = /^[0-9-,_]+$/
 	const FALLBACK_VALUE = { isVerse: false, isChapter: false }
+	const usfm = Array.isArray(usfmArg)
+		? usfmArg[0]
+		: usfmArg
 	if (typeof usfm !== 'string' || usfm.length === 0) {
 		return FALLBACK_VALUE
 	}
@@ -291,7 +297,11 @@ export function parseVerseFromContent({ usfms, fullContent }) {
 	}
 
 	return {
-		text: textOutput.join(' '),
+		text: textOutput
+			.join(' ')
+			.replace('\n', ' ')
+			.replace('  ', ' ')
+			.replace(' ,', ','),
 		html: htmlOutput.join('')
 	}
 }

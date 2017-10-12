@@ -65,6 +65,23 @@ class VerseImagesSlider extends Component {
 				usfmList: usfm,
 			}).title
 
+		const imagesToRender = matchedImages
+			&& matchedImages.map((img) => {
+				const src = selectImageFromList({
+					images: img.renditions,
+					width: 640,
+					height: 640,
+				}).url
+				return (
+					<LazyImage
+						key={img.id}
+						src={src}
+						width={320}
+						height={320}
+					/>
+				)
+			})
+
 		return (
 			<div className={`yv-votd-image ${className}`}>
 				<Moment
@@ -78,7 +95,7 @@ class VerseImagesSlider extends Component {
 							right={[
 								<OverflowMenu
 									key='overflow'
-									usfm={usfm && (Array.isArray(usfm) ? usfm[0] : usfm)}
+									usfm={usfm}
 									version_id={versionData && versionData.id}
 								>
 									<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
@@ -90,25 +107,7 @@ class VerseImagesSlider extends Component {
 					}
 				>
 					<Slider>
-						{
-							matchedImages
-								&& matchedImages.map((img) => {
-									const src = selectImageFromList({
-										images: img.renditions,
-										width: 640,
-										height: 640,
-									}).url
-
-									return (
-										<LazyImage
-											key={img.id}
-											src={src}
-											width={320}
-											height={320}
-										/>
-									)
-								})
-						}
+						{ imagesToRender }
 					</Slider>
 				</Moment>
 			</div>
@@ -118,6 +117,7 @@ class VerseImagesSlider extends Component {
 
 VerseImagesSlider.propTypes = {
 	usfm: PropTypes.string,
+	bible: PropTypes.object,
 	className: PropTypes.string,
 	images: PropTypes.array,
 	dispatch: PropTypes.func.isRequired,
@@ -126,12 +126,12 @@ VerseImagesSlider.propTypes = {
 
 VerseImagesSlider.defaultProps = {
 	usfm: null,
+	bible: null,
 	images: null,
 	className: '',
 }
 
 function mapStateToProps(state) {
-	console.log('IMAGES', getImagesModel(state))
 	return {
 		images: getImagesModel(state),
 		bible: getBibleModel(state),

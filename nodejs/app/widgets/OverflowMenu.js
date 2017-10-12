@@ -51,15 +51,15 @@ class OverflowMenu extends Component {
 					&& bible.versions.byId
 					&& bible.versions.byId[version_id]
 					&& bible.versions.byId[version_id].response
-				const title = versionData
+				const refStrings = versionData
 					&& versionData.books
 					&& getReferencesTitle({
 						bookList: versionData.books,
 						usfmList: usfm,
-					}).title
-				console.log('ASKFJWENGR', title, usfm)
+					})
+				const usfmString = refStrings && refStrings.usfm
 				readLink = Routes.reference({
-					usfm,
+					usfm: usfmString,
 					version_id,
 					version_abbr: versionData && versionData.local_abbreviation,
 					serverLanguageTag,
@@ -75,7 +75,7 @@ class OverflowMenu extends Component {
 				if (ref) {
 					copyAction = (
 						<ClickToCopy
-							text={`${parseVerseFromContent({ usfms: usfm, fullContent: ref.content }).text}\n${title} ${versionData && versionData.local_abbreviation.toUpperCase()}\n\n${hosts.railsHost}${readLink}`}
+							text={`${parseVerseFromContent({ usfms: usfm, fullContent: ref.content }).text}\n${refStrings && refStrings.title} ${versionData && versionData.local_abbreviation.toUpperCase()}\n\n${hosts.railsHost}${readLink}`}
 						>
 							<Copy />
 						</ClickToCopy>

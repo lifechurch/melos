@@ -91,12 +91,13 @@ class VotdText extends Component {
 			&& bible.versions.byId
 			&& bible.versions.byId[version_id]
 			&& bible.versions.byId[version_id].response
-		const title = versionData
+		const refStrings = versionData
 			&& versionData.books
 			&& getReferencesTitle({
 				bookList: versionData.books,
 				usfmList: votd.usfm,
-			}).title
+			})
+		const usfmString = refStrings && refStrings.usfm
 		const version_abbr = versionData
 			&& versionData.local_abbreviation.toUpperCase()
 
@@ -152,10 +153,11 @@ class VotdText extends Component {
 							right={[
 								<a key='share'>
 									{
-										title
+										refStrings
+											&& refStrings.title
 											&& (
 												<Share
-													text={`${intl.formatMessage({ id: 'votd' })} - ${title} (${version_abbr})`}
+													text={`${intl.formatMessage({ id: 'votd' })} - ${refStrings.title} (${version_abbr})`}
 													url={`${hosts && hosts.railsHost}${Routes.votd({ query: { day: this.dayOfYear }, serverLanguageTag })}`}
 													button={<ShareIcon fill='gray' />}
 												/>
@@ -164,7 +166,7 @@ class VotdText extends Component {
 								</a>,
 								<OverflowMenu
 									key='overflow'
-									usfm={votd && votd.usfm && votd.usfm[0]}
+									usfm={votd && votd.usfm}
 									version_id={version_id}
 								>
 									<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
@@ -178,7 +180,7 @@ class VotdText extends Component {
 					<Link
 						to={Routes.reference({
 							version_id,
-							usfm: votd && votd.usfm && votd.usfm[0],
+							usfm: usfmString,
 							version_abbr,
 							serverLanguageTag
 						})}

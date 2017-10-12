@@ -6,10 +6,16 @@ class Slider extends Component {
 		this.state = {
 			sliderWidth: 0,
 		}
-		this.refsList = []
 	}
 
 	componentDidMount() {
+		const { sliderWidth } = this.state
+		if (sliderWidth === 0) {
+			this.onNextFrame(this.calculateSliderWidth)
+		}
+	}
+
+	componentDidUpdate() {
 		const { sliderWidth } = this.state
 		if (sliderWidth === 0) {
 			this.onNextFrame(this.calculateSliderWidth)
@@ -43,6 +49,7 @@ class Slider extends Component {
 		const { children } = this.props
 		const { sliderWidth } = this.state
 
+		this.refsList = []
 		return (
 			<div className='yv-slider horizontal-overflow-scroll'>
 				<div
@@ -51,14 +58,18 @@ class Slider extends Component {
 				>
 					{
 						React.Children.map(children, (child) => {
-							return (
-								<div
-									ref={(el) => { this.refsList.push(el) }}
-									className='yv-slider-child'
-								>
-									{ child }
-								</div>
-							)
+							if (child) {
+								return (
+									<div
+										ref={(el) => { this.refsList.push(el) }}
+										className='yv-slider-child'
+									>
+										{ child }
+									</div>
+								)
+							} else {
+								return null
+							}
 						})
 					}
 				</div>
