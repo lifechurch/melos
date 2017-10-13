@@ -236,7 +236,7 @@ const Routes = {
 	// bible ---------------------------------------------------------------------
 	version: ({ version_id, query = null, serverLanguageTag = null }) => {
 		const route = new Route({
-			path: `/bible/${version_id}`,
+			path: `/versions/${version_id}`,
 			query,
 			serverLanguageTag,
 		})

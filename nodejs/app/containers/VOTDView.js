@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import VotdText from '../features/Moments/components/types/VotdText'
 import VotdImage from '../features/Moments/components/types/VotdImage'
+import ShareSheet from '../widgets/ShareSheet/ShareSheet'
+
 
 const VOTDView = (props) => {
 	const { location: { query } } = props
@@ -16,6 +18,7 @@ const VOTDView = (props) => {
 					<VotdImage dayOfYear={day} />
 				</div>
 			</div>
+			<ShareSheet />
 		</div>
 	)
 }

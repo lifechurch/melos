@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import ClickToCopy from '../components/ClickToCopy'
@@ -15,116 +15,134 @@ import {
 	isVerseOrChapter,
 	chapterifyUsfm,
 	parseVerseFromContent,
-	getBibleVersionFromStorage
 } from '../lib/readerUtils'
 import { getReferencesTitle } from '../lib/usfmUtils'
 import Routes from '../lib/routes'
 
 
-class OverflowMenu extends Component {
-	componentDidMount() {
-		const { usfm, plan_id, subscription_id, dispatch } = this.props
-	}
+function OverflowMenu(props) {
+	const {
+		usfm,
+		version_id,
+		plan_id,
+		subscription_id,
+		together_id,
+		onEdit,
+		onDelete,
+		children,
+		serverLanguageTag,
+		bible,
+		hosts,
+	} = props
 
-	render() {
-		const {
-			usfm,
-			version_id,
-			plan_id,
-			subscription_id,
-			onEdit,
-			onDelete,
-			children,
-			serverLanguageTag,
-			bible,
-			hosts,
-		} = this.props
-
-		let readFullChapLink, readLink = null
-		let copyAction = null
-		// if we have usfm and version then let's build out links and data for
-		// reading and copying the reference
-		if (usfm && version_id) {
-			if (isVerseOrChapter(usfm).isVerse) {
-				const versionData = bible
-					&& bible.versions
-					&& bible.versions.byId
-					&& bible.versions.byId[version_id]
-					&& bible.versions.byId[version_id].response
-				const refStrings = versionData
-					&& versionData.books
-					&& getReferencesTitle({
-						bookList: versionData.books,
-						usfmList: usfm,
-					})
-				const usfmString = refStrings && refStrings.usfm
-				readLink = Routes.reference({
-					usfm: usfmString,
-					version_id,
-					version_abbr: versionData && versionData.local_abbreviation,
-					serverLanguageTag,
+	let readFullChapLink, readLink = null
+	let copyAction = null
+	// if we have usfm and version then let's build out links and data for
+	// reading and copying the reference
+	if (usfm && version_id) {
+		if (isVerseOrChapter(usfm).isVerse) {
+			const versionData = bible
+				&& bible.versions
+				&& bible.versions.byId
+				&& bible.versions.byId[version_id]
+				&& bible.versions.byId[version_id].response
+			const refStrings = versionData
+				&& versionData.books
+				&& getReferencesTitle({
+					bookList: versionData.books,
+					usfmList: usfm,
 				})
-				readFullChapLink = Routes.reference({
-					usfm: chapterifyUsfm(usfm),
-					version_id,
-					version_abbr: versionData && versionData.local_abbreviation,
-					serverLanguageTag,
-				})
-				// copy
-				const ref = bible && bible.pullRef(chapterifyUsfm(usfm))
-				if (ref) {
-					copyAction = (
-						<ClickToCopy
-							text={`${parseVerseFromContent({ usfms: usfm, fullContent: ref.content }).text}\n${refStrings && refStrings.title} ${versionData && versionData.local_abbreviation.toUpperCase()}\n\n${hosts.railsHost}${readLink}`}
-						>
-							<Copy />
-						</ClickToCopy>
-					)
-				}
+			const usfmString = refStrings && refStrings.usfm
+			readLink = Routes.reference({
+				usfm: usfmString,
+				version_id,
+				version_abbr: versionData && versionData.local_abbreviation,
+				serverLanguageTag,
+			})
+			readFullChapLink = Routes.reference({
+				usfm: chapterifyUsfm(usfm),
+				version_id,
+				version_abbr: versionData && versionData.local_abbreviation,
+				serverLanguageTag,
+			})
+			// copy
+			const ref = bible && bible.pullRef(chapterifyUsfm(usfm))
+			if (ref) {
+				copyAction = (
+					<ClickToCopy
+						text={`${parseVerseFromContent({ usfms: usfm, fullContent: ref.content }).text}\n${refStrings && refStrings.title} ${versionData && versionData.local_abbreviation.toUpperCase()}\n\n${hosts.railsHost}${readLink}`}
+					>
+						<Copy />
+					</ClickToCopy>
+				)
 			}
 		}
-
-		return (
-			<Overflow>
-				{
-					readFullChapLink
-						&& (
-							<ReadFullChapter link={readFullChapLink} />
-						)
-				}
-				{
-					readLink
-						&& (
-							<Read link={readLink} />
-						)
-				}
-				{ copyAction }
-				{
-					onEdit
-						&& (
-							<Edit onClick={onEdit} />
-						)
-				}
-				{
-					onDelete
-						&& (
-							<Delete onClick={onDelete} />
-						)
-				}
-				{/* allow additional actions to be rendered */}
-				{ children }
-				<Cancel />
-			</Overflow>
-		)
 	}
+
+	// TODO: just as we did with the usfm, let's pull in plan/subscription/together
+	// data if those are passed in
+	// i.e. start plan link, read plan link, participants link, etc...
+
+	return (
+		<Overflow>
+			{
+				readFullChapLink
+					&& (
+						<ReadFullChapter link={readFullChapLink} />
+					)
+			}
+			{
+				readLink
+					&& (
+						<Read link={readLink} />
+					)
+			}
+			{ copyAction }
+			{
+				onEdit
+					&& (
+						<Edit onClick={onEdit} />
+					)
+			}
+			{
+				onDelete
+					&& (
+						<Delete onClick={onDelete} />
+					)
+			}
+			{/* allow additional actions to be rendered */}
+			{ children }
+			<Cancel />
+		</Overflow>
+	)
 }
 
 OverflowMenu.propTypes = {
-
+	usfm: PropTypes.string,
+	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	plan_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	subscription_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	together_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	onEdit: PropTypes.func,
+	onDelete: PropTypes.func,
+	children: PropTypes.node,
+	serverLanguageTag: PropTypes.string.isRequired,
+	bible: PropTypes.object,
+	hosts: PropTypes.object,
 }
 
 OverflowMenu.defaultProps = {
-
+	usfm: null,
+	version_id: null,
+	plan_id: null,
+	subscription_id: null,
+	together_id: null,
+	onEdit: null,
+	onDelete: null,
+	children: null,
+	serverLanguageTag: null,
+	bible: null,
+	hosts: null,
 }
 
 function mapStateToProps(state) {

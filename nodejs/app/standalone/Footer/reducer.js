@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
 	locale: emptyReducer,
 	api: combineReducers({
 		bible
-	})
+	}),
 })
 
 export default rootReducer

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import SectionedHeading from '../../../components/SectionedHeading'
+import SectionedLayout from '../../../components/SectionedLayout'
 
 function build(eleArr) {
 	return eleArr.map((el, i) => {
@@ -21,7 +21,7 @@ function MomentFooter(props) {
 		: build(right)
 	return (
 		<div className='yv-moment-footer'>
-			<SectionedHeading
+			<SectionedLayout
 				left={leftDivs}
 				right={rightDivs}
 			/>

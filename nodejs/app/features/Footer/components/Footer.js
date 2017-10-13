@@ -12,6 +12,7 @@ import FooterContent from './FooterContent'
 import LangSelector from './LangSelector'
 import LinkCard from './LinkCard'
 import localOnceDaily from '../../../lib/localOnceDaily'
+import ShareSheet from '../../../widgets/ShareSheet/ShareSheet'
 
 class Footer extends Component {
 	constructor(props) {
@@ -137,6 +138,7 @@ class Footer extends Component {
 						<LinkCard serverLanguageTag={serverLanguageTag} versions={versions} languages={languages} />
 					</DropdownTransition>
 				</div>
+				<ShareSheet />
 			</ResponsiveContainer>
 		)
 	}

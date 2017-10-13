@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { FormattedMessage, injectIntl } from 'react-intl'
-import moment from 'moment'
+import { injectIntl } from 'react-intl'
 import { Link } from 'react-router'
-import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
+import shareAction from '../../../../widgets/ShareSheet/action'
 import {
 	getBibleVersionFromStorage,
 	chapterifyUsfm,
@@ -14,46 +13,30 @@ import {
 } from '../../../../lib/readerUtils'
 import { getReferencesTitle } from '../../../../lib/usfmUtils'
 import Routes from '../../../../lib/routes'
-import VOTDIcon from '../../../../components/icons/VOTD'
+import Like from '../../../../components/Like'
 import ShareIcon from '../../../../components/icons/ShareIcon'
 import OverflowMenu from '../../../../widgets/OverflowMenu'
-import Share from '../../../Bible/components/verseAction/share/Share'
 import Moment from '../Moment'
 import MomentHeader from '../MomentHeader'
 import MomentFooter from '../MomentFooter'
 
 
-class VotdText extends Component {
-	constructor(props) {
-		super(props)
-		const { dayOfYear } = this.props
-		this.dayOfYear = parseInt(dayOfYear || moment().dayOfYear(), 10)
+class ReferenceMoment extends Component {
+	componentDidMount() {
+		this.getReference()
 	}
 
-	componentDidMount() {
-		const { moments, dispatch, serverLanguageTag } = this.props
-		if (!(moments && moments.pullVotd(this.dayOfYear))) {
-			dispatch(momentsAction({
-				method: 'votd',
-				params: {
-					language_tag: serverLanguageTag,
-				}
-			})).then((data) => {
-				if (data) {
-					this.getVotd()
-				}
-			})
-		} else {
-			this.getVotd()
+	componentWillReceiveProps(nextProps) {
+		const { usfm } = this.props
+		if (nextProps.usfm && usfm !== nextProps.usfm) {
+			this.getReference()
 		}
 	}
 
-	getVotd = () => {
-		const { moments, bible, dispatch } = this.props
-		if (moments.votd && moments.votd.length > 0) {
-			const usfm = moments.pullVotd(this.dayOfYear).usfm
-
-			if (usfm && (bible && !bible.pullRef(chapterifyUsfm(usfm[0])))) {
+	getReference = () => {
+		const { usfm, bible, dispatch } = this.props
+		if (usfm) {
+			if (usfm && (bible && !bible.pullRef(chapterifyUsfm(usfm)))) {
 				dispatch(bibleAction({
 					method: 'version',
 					params: {
@@ -64,11 +47,20 @@ class VotdText extends Component {
 					method: 'chapter',
 					params: {
 						id: getBibleVersionFromStorage(),
-						reference: chapterifyUsfm(usfm[0]),
+						reference: chapterifyUsfm(usfm),
 					}
 				}))
 			}
 		}
+	}
+
+	handleShare = ({ text, url }) => {
+		const { dispatch } = this.props
+		dispatch(shareAction({
+			isOpen: true,
+			text,
+			url,
+		}))
 	}
 
 	render() {
@@ -77,6 +69,8 @@ class VotdText extends Component {
 			usfm,
 			icon,
 			title,
+			likedIds,
+			commentIds,
 			onLike,
 			onComment,
 			onEdit,
@@ -84,6 +78,7 @@ class VotdText extends Component {
 			overflowMenuChildren,
 			bible,
 			serverLanguageTag,
+			auth,
 			intl,
 			hosts
 		} = this.props
@@ -110,10 +105,10 @@ class VotdText extends Component {
 				usfmList: usfm,
 			})
 		const usfmString = refStrings && refStrings.usfm
+		const titleString = refStrings && refStrings.title
 		const version_abbr = versionData
 			&& versionData.local_abbreviation.toUpperCase()
 
-		/* eslint-disable react/no-danger */
 		return (
 			<div className={`yv-votd-text ${className}`}>
 				<Moment
@@ -124,9 +119,7 @@ class VotdText extends Component {
 								<div className='vertical-center flex-wrap'>
 									{ title }
 									{
-										ref
-											&& ref.reference
-											&& ref.reference.human
+										titleString
 											&& (
 												<Link
 													to={Routes.reference({
@@ -136,7 +129,7 @@ class VotdText extends Component {
 														serverLanguageTag
 													})}
 												>
-													{ ref.reference.human }
+													{ titleString }
 												</Link>
 											)
 									}
@@ -158,28 +151,38 @@ class VotdText extends Component {
 							}
 						/>
 					}
+					likedIds={likedIds}
+					commentIds={commentIds}
 					footer={
 						<MomentFooter
 							left={[
 								(onLike
-									&& <Like onClick={onLike} />),
+									&& <Like
+										onClick={onLike}
+										isFilled={likedIds
+											&& auth.userData
+											&& likedIds.includes(auth.userData.userid)
+										}
+									/>
+								),
 								(onComment
-									&& <Comment onClick={onComment} />),
+									&& <Comment onClick={onComment} />
+								),
 							]}
 							right={[
-								<a key='share'>
-									{
-										refStrings
-											&& refStrings.title
-											&& (
-												<Share
-													text={`${intl.formatMessage({ id: 'votd' })} - ${refStrings.title} (${version_abbr})`}
-													url={`${hosts && hosts.railsHost}${Routes.votd({ query: { day: this.dayOfYear }, serverLanguageTag })}`}
-													button={<ShareIcon fill='gray' />}
-												/>
-											)
-									}
-								</a>,
+								refStrings
+									&& refStrings.title
+									&& (
+										<a
+											tabIndex={0}
+											onClick={this.handleShare.bind(this, {
+												text: `${intl.formatMessage({ id: 'votd' })} - ${refStrings.title} (${version_abbr})`,
+												url: `${hosts && hosts.railsHost}${Routes.votd({ query: { day: this.dayOfYear }, serverLanguageTag })}`,
+											})}
+										>
+											<ShareIcon fill='gray' />
+										</a>
+									),
 								<OverflowMenu
 									key='overflow'
 									usfm={usfm}
@@ -201,6 +204,7 @@ class VotdText extends Component {
 							serverLanguageTag
 						})}
 					>
+						{ /* eslint-disable react/no-danger */ }
 						<div
 							className='reader'
 							style={{ color: 'black' }}
@@ -213,20 +217,37 @@ class VotdText extends Component {
 	}
 }
 
-VotdText.propTypes = {
-	dayOfYear: PropTypes.number,
+ReferenceMoment.propTypes = {
+	usfm: PropTypes.string.isRequired,
+	icon: PropTypes.node,
+	title: PropTypes.string,
+	likedIds: PropTypes.array,
+	commentIds: PropTypes.array,
+	onLike: PropTypes.func,
+	onComment: PropTypes.func,
+	onEdit: PropTypes.func,
+	onDelete: PropTypes.func,
+	overflowMenuChildren: PropTypes.node,
+	auth: PropTypes.object.isRequired,
 	className: PropTypes.string,
 	bible: PropTypes.object.isRequired,
-	moments: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	hosts: PropTypes.object.isRequired,
 	intl: PropTypes.object.isRequired,
 }
 
-VotdText.defaultProps = {
-	dayOfYear: null,
+ReferenceMoment.defaultProps = {
 	className: '',
+	icon: null,
+	title: null,
+	likedIds: null,
+	commentIds: null,
+	onLike: null,
+	onComment: null,
+	onEdit: null,
+	onDelete: null,
+	overflowMenuChildren: null,
 }
 
 function mapStateToProps(state) {
@@ -235,7 +256,8 @@ function mapStateToProps(state) {
 		moments: getMomentsModel(state),
 		serverLanguageTag: state.serverLanguageTag,
 		hosts: state.hosts,
+		auth: state.auth,
 	}
 }
 
-export default connect(mapStateToProps, null)(injectIntl(VotdText))
+export default connect(mapStateToProps, null)(injectIntl(ReferenceMoment))
