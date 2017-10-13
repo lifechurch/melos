@@ -13,7 +13,6 @@ import { IntlProvider } from 'react-intl'
 import moment from 'moment'
 import Raven from 'raven'
 import { getLocale } from './app/lib/langUtils'
-
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
 // const availableLocales = require('./locales/config/availableLocales.json');
@@ -38,12 +37,12 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		if (typeof auth === 'object' && typeof auth.token === 'string') {
 			// We have a token
 			try {
-				const token = auth.token
+				const [ token, tp_token ] = auth.token.split(tokenAuth.tokenDelimiter)
 				const tokenData = tokenAuth.decodeToken(token)
 				const sessionData = tokenAuth.decryptToken(tokenData.token)
 
 				resolve({
-					token,
+					token: auth.token,
 					isLoggedIn: true,
 					isWorking: false,
 					userData: sessionData,
@@ -64,7 +63,9 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
 			// No token, but we have enough info to create one
 			const sessionData = auth
-			const token = tokenAuth.token(sessionData)
+			const tp_token = auth.tp_token
+			delete sessionData.tp_token
+			const token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
 			resolve({
 				token,
 				isLoggedIn: true,
