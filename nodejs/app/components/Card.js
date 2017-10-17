@@ -33,7 +33,7 @@ Card.propTypes = {
 
 Card.defaultProps = {
 	children: '',
-	customClass: null,
+	customClass: '',
 	extension: null,
 }
 

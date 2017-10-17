@@ -175,6 +175,7 @@ class ReferenceMoment extends Component {
 									&& (
 										<a
 											tabIndex={0}
+											className='vertical-center'
 											onClick={this.handleShare.bind(this, {
 												text: `${intl.formatMessage({ id: 'votd' })} - ${refStrings.title} (${version_abbr})`,
 												url: `${hosts && hosts.railsHost}${Routes.votd({ query: { day: this.dayOfYear }, serverLanguageTag })}`,

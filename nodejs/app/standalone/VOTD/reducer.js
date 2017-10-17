@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import moments from '@youversion/api-redux/lib/endpoints/moments/reducer'
 import bible from '@youversion/api-redux/lib/endpoints/bible/reducer'
 import images from '@youversion/api-redux/lib/endpoints/images/reducer'
+import readingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 import shareData from '../../widgets/ShareSheet/reducer'
 
 const emptyReducer = (state = {}) => { return state }
@@ -28,7 +29,8 @@ const rootReducer = combineReducers({
 	api: combineReducers({
 		moments,
 		bible,
-		images
+		images,
+		readingPlans,
 	}),
 	shareData,
 })

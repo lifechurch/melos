@@ -1,9 +1,9 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
+import { FormattedMessage } from 'react-intl'
 import shareAction from './action'
-import DropdownTransition from '../../components/DropdownTransition'
+import FullscreenDrawer from '../../components/FullscreenDrawer'
 import Card from '../../components/Card'
-import XMark from '../../components/XMark'
 
 
 class ShareSheet extends Component {
@@ -16,28 +16,16 @@ class ShareSheet extends Component {
 		const { shareData } = this.props
 		console.log('SHARE DATA', shareData)
 		return (
-			<div className="yv-fullscreen-modal-container">
-				<DropdownTransition
-					show={shareData && shareData.isOpen}
-					hideDir="down"
-					transition={true}
-					classes="yv-fullscreen-modal-content"
-				>
-					<div className='large-5 small-11 centered' style={{ padding: '50px 0' }}>
-						<a
-							tabIndex={0}
-							className="flex-end"
-							onClick={this.handleClose}
-							style={{ marginBottom: '25px' }}
-						>
-							<XMark width={20} height={20} fill="#444444" />
-						</a>
-						<Card>
-							SHARE
-						</Card>
-					</div>
-				</DropdownTransition>
-			</div>
+			<FullscreenDrawer
+				isOpen={shareData && shareData.isOpen}
+				onClose={this.handleClose}
+				className='large-5 small-11 centered'
+				title={<FormattedMessage id='share' />}
+			>
+				<Card>
+					SHARE
+				</Card>
+			</FullscreenDrawer>
 		)
 	}
 }
