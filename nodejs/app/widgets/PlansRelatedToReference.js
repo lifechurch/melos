@@ -8,7 +8,7 @@ import LazyImage from '../components/LazyImage'
 import Grid from '../components/Grid'
 import Card from '../components/Card'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
-import { getReferencesTitle } from '../lib/usfmUtils'
+import { getReferencesTitle, PLAN_DEFAULT } from '../lib/usfmUtils'
 import Routes from '../lib/routes'
 
 
@@ -72,51 +72,59 @@ class PlansRelatedToReference extends Component {
 				usfmList: usfm,
 			})
 
+		if (!(plansList && plansList.length > 0)) {
+			return null
+		}
+
 		return (
 			<Card className='plans-related-to-reference'>
-				<h2>
-					<div style={{ fontSize: '18px' }}>
+				<h2 style={{ marginBottom: '40px' }}>
+					<div style={{ fontSize: '18px', marginBottom: '20px' }}>
 						<FormattedMessage
 							id='Reader.plan title ref'
 							values={{ reference: refStrings && refStrings.title }}
 						/>
 					</div>
-					<br />
 					<div style={{ fontSize: '15px' }}>
 						<FormattedMessage id='Reader.plan subtitle' />
 					</div>
 				</h2>
-				<Grid>
+				<Grid lgCols={3} smCols={2}>
 					{
-						plansList
-							&& plansList.length > 0
-							&& plansList.map((plan) => {
-								const src = planSrcTemplate
-									.replace('{0}', '320')
-									.replace('{1}', '180')
-									.replace('{image_id}', plan.id)
+						plansList.map((plan) => {
+							const src = planSrcTemplate
+								.replace('{0}', '320')
+								.replace('{1}', '180')
+								.replace('{image_id}', plan.id)
 
-								return (
-									<div key={plan.id}>
-										<a
-											href={Routes.plan({
-												plan_id: plan.id,
-												slug: plan.slug,
-												serverLanguageTag
-											})}
-											title={`${intl.formatMessage({ id: 'plans.about this plan' })}: ${plan.name}`}
-											className='vertical-center flex-wrap'
-										>
-											<LazyImage
-												src={src}
-												width={150}
-												height={75}
-												customClass='radius-5'
-											/>
-										</a>
+							return (
+								<a
+									key={plan.id}
+									style={{ marginBottom: '20px' }}
+									href={Routes.plan({
+										plan_id: plan.id,
+										slug: plan.slug,
+										serverLanguageTag
+									})}
+									title={`${intl.formatMessage({ id: 'plans.about this plan' })}: ${plan.name}`}
+									className='horizontal-center vertical-center flex-wrap'
+								>
+									<LazyImage
+										placeholder={PLAN_DEFAULT}
+										src={src}
+										width={165}
+										height={90}
+										customClass='radius-5'
+									/>
+									<div
+										className='yv-text-ellipsis'
+										style={{ fontSize: '12px', color: 'black', width: '90%' }}
+									>
+										{ plan.name }
 									</div>
-								)
-							})
+								</a>
+							)
+						})
 					}
 				</Grid>
 			</Card>
@@ -125,11 +133,19 @@ class PlansRelatedToReference extends Component {
 }
 
 PlansRelatedToReference.propTypes = {
-
+	usfm: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+	plans: PropTypes.object,
+	bible: PropTypes.object,
+	serverLanguageTag: PropTypes.string,
+	intl:	PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 PlansRelatedToReference.defaultProps = {
-
+	usfm: null,
+	plans: null,
+	bible: null,
+	serverLanguageTag: 'en',
 }
 
 function mapStateToProps(state) {
