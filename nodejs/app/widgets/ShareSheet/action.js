@@ -3,7 +3,6 @@ export default function share({
 	isOpen,
 	text = null,
 	url = null,
-	custom = null,
 }) {
 	return {
 		type: 'SHARE_ACTION',
@@ -11,7 +10,6 @@ export default function share({
 			isOpen,
 			text,
 			url,
-			custom
 		}
 	}
 }

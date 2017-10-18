@@ -6,9 +6,9 @@ function Grid(props) {
 	const { smCols, medCols, lgCols, className, children } = props
 
 	// mobile first approach, always fall back to small
-	const lgRatio = MAX_WIDTH / (lgCols || medCols || smCols)
-	const medRatio = MAX_WIDTH / (medCols || smCols)
 	const smRatio = MAX_WIDTH / smCols
+	const medRatio = MAX_WIDTH / (medCols || smCols)
+	const lgRatio = MAX_WIDTH / (lgCols || medCols || smCols)
 
 	return (
 		<div className='yv-grid'>

@@ -8,7 +8,8 @@ import LazyImage from '../components/LazyImage'
 import Grid from '../components/Grid'
 import Card from '../components/Card'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
-import { getReferencesTitle, PLAN_DEFAULT } from '../lib/usfmUtils'
+import { getReferencesTitle } from '../lib/usfmUtils'
+import { PLAN_DEFAULT } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 
 
@@ -78,7 +79,7 @@ class PlansRelatedToReference extends Component {
 
 		return (
 			<Card className='plans-related-to-reference'>
-				<h2 style={{ marginBottom: '40px' }}>
+				<h2 style={{ marginBottom: '40px', padding: '0 10px' }}>
 					<div style={{ fontSize: '18px', marginBottom: '20px' }}>
 						<FormattedMessage
 							id='Reader.plan title ref'
@@ -100,7 +101,7 @@ class PlansRelatedToReference extends Component {
 							return (
 								<a
 									key={plan.id}
-									style={{ marginBottom: '20px' }}
+									style={{ marginBottom: '20px', padding: '0 5px' }}
 									href={Routes.plan({
 										plan_id: plan.id,
 										slug: plan.slug,
@@ -110,7 +111,9 @@ class PlansRelatedToReference extends Component {
 									className='horizontal-center vertical-center flex-wrap'
 								>
 									<LazyImage
-										placeholder={PLAN_DEFAULT}
+										placeholder={
+											<img alt='Reading Plan Default' src={PLAN_DEFAULT} />
+										}
 										src={src}
 										width={165}
 										height={90}

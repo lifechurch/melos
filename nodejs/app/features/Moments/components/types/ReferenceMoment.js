@@ -54,13 +54,22 @@ class ReferenceMoment extends Component {
 		}
 	}
 
-	handleShare = ({ text, url }) => {
-		const { dispatch } = this.props
-		dispatch(shareAction({
-			isOpen: true,
-			text,
-			url,
-		}))
+	handleShare = () => {
+		const { dispatch, hosts, onShare, serverLanguageTag } = this.props
+		const refTitle = `${this.refStrings.title} (${this.version_abbr})`
+		if (onShare && typeof onShare === 'function') {
+			onShare({ refTitle, refText: this.verseContent.text })
+		} else {
+			dispatch(shareAction({
+				isOpen: true,
+				text: this.verseContent.text,
+				url: `${hosts && hosts.railsHost}${Routes.reference({
+					usfm: this.refStrings.usfm,
+					version_id: getBibleVersionFromStorage(),
+					serverLanguageTag
+				})}`,
+			}))
+		}
 	}
 
 	render() {
@@ -83,14 +92,16 @@ class ReferenceMoment extends Component {
 			hosts
 		} = this.props
 
-		let verse
+		let verse, verseText
 		const chapterUsfm = usfm && chapterifyUsfm(usfm)
 		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
 		if (ref) {
-			verse = parseVerseFromContent({
+			this.verseContent = parseVerseFromContent({
 				usfms: usfm,
 				fullContent: ref.content,
-			}).html
+			})
+			verse = this.verseContent.html
+			verseText = this.verseContent.text
 		}
 		const version_id = getBibleVersionFromStorage()
 		const versionData = bible
@@ -98,15 +109,15 @@ class ReferenceMoment extends Component {
 			&& bible.versions.byId
 			&& bible.versions.byId[version_id]
 			&& bible.versions.byId[version_id].response
-		const refStrings = versionData
+		this.refStrings = versionData
 			&& versionData.books
 			&& getReferencesTitle({
 				bookList: versionData.books,
 				usfmList: usfm,
 			})
-		const usfmString = refStrings && refStrings.usfm
-		const titleString = refStrings && refStrings.title
-		const version_abbr = versionData
+		const usfmString = this.refStrings && this.refStrings.usfm
+		const titleString = this.refStrings && this.refStrings.title
+		this.version_abbr = versionData
 			&& versionData.local_abbreviation.toUpperCase()
 
 		return (
@@ -125,7 +136,7 @@ class ReferenceMoment extends Component {
 													to={Routes.reference({
 														version_id,
 														usfm: chapterUsfm,
-														version_abbr,
+														version_abbr: this.version_abbr,
 														serverLanguageTag
 													})}
 												>
@@ -134,18 +145,18 @@ class ReferenceMoment extends Component {
 											)
 									}
 									{
-										version_abbr
-										&& (
-											<Link
-												to={Routes.version({
-													version_id,
-													serverLanguageTag
-												})}
-											>
-												&nbsp;
-												{ version_abbr.toUpperCase() }
-											</Link>
-										)
+										this.version_abbr
+											&& (
+												<Link
+													to={Routes.version({
+														version_id,
+														serverLanguageTag
+													})}
+												>
+													&nbsp;
+													{ this.version_abbr }
+												</Link>
+											)
 									}
 								</div>
 							}
@@ -170,16 +181,13 @@ class ReferenceMoment extends Component {
 								),
 							]}
 							right={[
-								refStrings
-									&& refStrings.title
+								this.refStrings
+									&& this.refStrings.title
 									&& (
 										<a
 											tabIndex={0}
 											className='vertical-center'
-											onClick={this.handleShare.bind(this, {
-												text: `${intl.formatMessage({ id: 'votd' })} - ${refStrings.title} (${version_abbr})`,
-												url: `${hosts && hosts.railsHost}${Routes.votd({ query: { day: this.dayOfYear }, serverLanguageTag })}`,
-											})}
+											onClick={this.handleShare}
 										>
 											<ShareIcon fill='gray' />
 										</a>
@@ -201,7 +209,7 @@ class ReferenceMoment extends Component {
 						to={Routes.reference({
 							version_id,
 							usfm: usfmString,
-							version_abbr,
+							version_abbr: this.version_abbr,
 							serverLanguageTag
 						})}
 					>

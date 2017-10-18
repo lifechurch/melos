@@ -1,12 +1,12 @@
 
-.width-percentage(@num, @den) {
-	width: unit((@num / @den) * 100, %);
+.max-width-percentage(@num, @den) {
+	max-width: unit((@num / @den) * 100, %);
 }
 
 // SMALL -----------------------------------------------------------------------
 .small-col(@col) {
 	@media @small-only {
-		.width-percentage(@col, 12);
+		.max-width-percentage(@col, 12);
 	}
 }
 
@@ -50,7 +50,7 @@
 // MEDIUM -----------------------------------------------------------------------
 .medium-col(@col) {
 	@media @medium-only {
-		.width-percentage(@col, 12);
+		.max-width-percentage(@col, 12);
 	}
 }
 
@@ -95,7 +95,7 @@
 // LARGE -----------------------------------------------------------------------
 .large-col(@col) {
 	@media @large-only {
-		.width-percentage(@col, 12);
+		.max-width-percentage(@col, 12);
 	}
 }
 

@@ -5,6 +5,7 @@ import moment from 'moment'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
+import shareAction from '../../../../widgets/ShareSheet/action'
 import { getBibleVersionFromStorage } from '../../../../lib/readerUtils'
 import Routes from '../../../../lib/routes'
 import VOTDIcon from '../../../../components/icons/VOTD'
@@ -31,6 +32,18 @@ class VotdText extends Component {
 		}
 	}
 
+	handleShare = ({ refTitle }) => {
+		const { dispatch, serverLanguageTag, intl, hosts } = this.props
+		dispatch(shareAction({
+			isOpen: true,
+			text: `${intl.formatMessage({ id: 'votd' })} - ${refTitle}`,
+			url: `${hosts && hosts.railsHost}${Routes.votd({
+				query: { day: this.dayOfYear },
+				serverLanguageTag
+			})}`,
+		}))
+	}
+
 	render() {
 		const { moments, className, serverLanguageTag } = this.props
 
@@ -41,7 +54,16 @@ class VotdText extends Component {
 			<ReferenceMoment
 				className={className}
 				icon={<VOTDIcon />}
-				title={<div style={{ width: '100%' }}><FormattedMessage id='votd' /></div>}
+				title={
+					<h1
+						style={{
+							all: 'unset',
+							width: '100%',
+						}}
+					>
+						<FormattedMessage id='votd' />
+					</h1>
+				}
 				usfm={votd && votd.usfm}
 				version_id={version_id}
 				overflowMenuChildren={
@@ -49,6 +71,7 @@ class VotdText extends Component {
 						<FormattedMessage id='notification settings' />
 					</Item>
 				}
+				onShare={this.handleShare}
 			/>
 		)
 	}

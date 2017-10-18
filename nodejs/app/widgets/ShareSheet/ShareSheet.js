@@ -19,11 +19,19 @@ class ShareSheet extends Component {
 			<FullscreenDrawer
 				isOpen={shareData && shareData.isOpen}
 				onClose={this.handleClose}
-				className='large-5 small-11 centered'
+				className='yv-large-5 yv-small-11 centered'
 				title={<FormattedMessage id='share' />}
 			>
-				<Card>
-					SHARE
+				<Card customClass='horizontal-center flex-wrap'>
+					<div
+						className='text-center'
+						style={{ fontSize: '20px', width: '100%', marginBottom: '20px' }}
+					>
+						{ shareData && shareData.text }
+					</div>
+					<div className='text-center' style={{ fontSize: '14px', width: '100%' }}>
+						{ shareData && shareData.url }
+					</div>
 				</Card>
 			</FullscreenDrawer>
 		)

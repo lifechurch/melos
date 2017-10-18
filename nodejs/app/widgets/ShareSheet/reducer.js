@@ -5,7 +5,7 @@ export default function reducer(state = {}, action) {
 		case 'SHARE_ACTION':
 			return Immutable
 				.fromJS(state)
-				.setIn(['data'], action.data)
+				.mergeIn(['data'], action.data)
 				.toJS()
 
 		default:
