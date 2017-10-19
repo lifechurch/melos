@@ -57,7 +57,7 @@ class VOTDView extends Component {
 		})
 		const titleString = refStrings && refStrings.title
 		const version_abbr = versionData
-		&& versionData.local_abbreviation.toUpperCase()
+			&& versionData.local_abbreviation.toUpperCase()
 		const title = `${intl.formatMessage({ id: 'votd' })} - ${titleString} (${version_abbr}) | The Bible App | Bible.com`
 		const url = `${hosts && hosts.railsHost}${Routes.votd({
 			query: {
@@ -81,6 +81,7 @@ class VOTDView extends Component {
 				{ name: 'twitter:image', content: `https:${src}` }
 			]
 		}
+
 		return (
 			<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
 				<Helmet
@@ -97,42 +98,32 @@ class VOTDView extends Component {
 						{ name: 'twitter:site', content: '@YouVersion' },
 					].concat(imgMeta)}
 				/>
-				<div className='yv-large-5 yv-small-11'>
-					<div style={{ padding: '25px 0' }}>
-						<VotdText dayOfYear={day} />
-					</div>
-					<div style={{ padding: '25px 0' }}>
-						<VotdImage dayOfYear={day} />
-					</div>
-					<div style={{ padding: '25px 0' }}>
-						<PlansRelatedToReference
-							usfm={usfm}
+				<div className='yv-large-5 yv-small-11 votd-view'>
+					<VotdText dayOfYear={day} />
+					<VotdImage dayOfYear={day} />
+					<PlansRelatedToReference usfm={usfm} />
+					<Card customClass='horizontal-center flex-wrap'>
+						<img
+							className="bible-icon"
+							alt="Bible App Icon"
+							src={`/assets/icons/bible/120/${serverLanguageTag}.png`}
+							style={{ width: '72px', height: '72px' }}
 						/>
-					</div>
-					<div style={{ padding: '25px 0' }}>
-						<Card customClass='horizontal-center flex-wrap'>
-							<img
-								className="bible-icon"
-								alt="Bible App Icon"
-								src={`/assets/icons/bible/120/${serverLanguageTag}.png`}
-								style={{ width: '72px', height: '72px' }}
-							/>
-							<div
-								className='text-center'
-								style={{
-									fontSize: '26px',
-									fontWeight: 600,
-									width: '90%',
-									margin: '25px 0'
-								}}
-							>
-								<FormattedMessage id='get a free bible' />
-							</div>
-							<a href={localizedLink('/app', serverLanguageTag)} className='yv-green-link'>
-								<FormattedMessage id='download the bible' />
-							</a>
-						</Card>
-					</div>
+						<div
+							className='text-center'
+							style={{
+								fontSize: '26px',
+								fontWeight: 600,
+								width: '90%',
+								margin: '25px 0'
+							}}
+						>
+							<FormattedMessage id='get a free bible' />
+						</div>
+						<a href={localizedLink('/app', serverLanguageTag)} className='yv-green-link'>
+							<FormattedMessage id='download the bible' />
+						</a>
+					</Card>
 				</div>
 				<ShareSheet />
 			</div>
@@ -144,10 +135,15 @@ VOTDView.propTypes = {
 	moments: PropTypes.object,
 	location: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string,
+	bible: PropTypes.object,
+	intl: PropTypes.object.isRequired,
+	hosts: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 VOTDView.defaultProps = {
 	moments: null,
+	bible: null,
 	serverLanguageTag: 'en',
 }
 

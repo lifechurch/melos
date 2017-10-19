@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl'
 import shareAction from './action'
 import FullscreenDrawer from '../../components/FullscreenDrawer'
 import Card from '../../components/Card'
+import AddThis from '../../components/AddThis'
 
 
 class ShareSheet extends Component {
@@ -14,7 +15,6 @@ class ShareSheet extends Component {
 
 	render() {
 		const { shareData } = this.props
-		console.log('SHARE DATA', shareData)
 		return (
 			<FullscreenDrawer
 				isOpen={shareData && shareData.isOpen}
@@ -25,12 +25,18 @@ class ShareSheet extends Component {
 				<Card customClass='horizontal-center flex-wrap'>
 					<div
 						className='text-center'
-						style={{ fontSize: '20px', width: '100%', marginBottom: '20px' }}
+						style={{ fontSize: '24px', width: '100%', margin: '15px 0' }}
 					>
 						{ shareData && shareData.text }
 					</div>
 					<div className='text-center' style={{ fontSize: '14px', width: '100%' }}>
 						{ shareData && shareData.url }
+					</div>
+					<div style={{ margin: '25px 0' }}>
+						<AddThis
+							text={shareData && shareData.text}
+							url={shareData && shareData.url}
+						/>
 					</div>
 				</Card>
 			</FullscreenDrawer>
@@ -45,6 +51,7 @@ function mapStateToProps(state) {
 }
 
 ShareSheet.propTypes = {
+	shareData: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 }
 

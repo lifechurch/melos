@@ -21,52 +21,86 @@ import OverflowMenu from '../widgets/OverflowMenu'
 
 class VerseImagesSlider extends Component {
 	componentDidMount() {
-		const { usfm, images, serverLanguageTag } = this.props
+		const { serverLanguageTag } = this.props
+		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
+		if (!this.hasImages() && this.versionData()) {
+			this.getImages()
+		}
+	}
 
-		const matchedImages = images
-			&& images.filter({
-				category: 'prerendered',
-				usfm,
-				language_tag: serverLanguageTag
-			}).length > 0
-		if (!matchedImages) {
+	componentDidUpdate(prevProps) {
+		const version = this.versionData()
+		const prevVersion = prevProps
+			&& prevProps.bible
+			&& prevProps.bible.versions
+			&& prevProps.bible.versions.byId
+			&& prevProps.bible.versions.byId[this.version_id]
+			&& prevProps.bible.versions.byId[this.version_id].response
+			? prevProps.bible.versions.byId[this.version_id].response
+			: null
+		if (
+			!this.hasImages()
+			&& version
+			&& !prevVersion
+			&& (!!version !== !!prevVersion)
+		) {
 			this.getImages()
 		}
 	}
 
 	getImages = () => {
-		const { dispatch, serverLanguageTag, usfm } = this.props
-		dispatch(imagesAction({
-			method: 'items',
-			params: {
-				language_tag: serverLanguageTag,
+		const { dispatch, usfm } = this.props
+		const version = this.versionData()
+		if (version) {
+			dispatch(imagesAction({
+				method: 'items',
+				params: {
+					language_tag: version.language.iso_639_1,
+					category: 'prerendered',
+					usfm,
+				}
+			}))
+		}
+	}
+
+	hasImages = () => {
+		const { images, usfm } = this.props
+		const version = this.versionData()
+		return images
+			&& images.filter({
 				category: 'prerendered',
 				usfm,
-			}
-		}))
+				language_tag: version && version.language.iso_639_1
+			}).length > 0
+	}
+
+	versionData = () => {
+		const { bible } = this.props
+		return bible
+			&& bible.versions
+			&& bible.versions.byId
+			&& bible.versions.byId[this.version_id]
+			&& bible.versions.byId[this.version_id].response
+			? bible.versions.byId[this.version_id].response
+			: null
 	}
 
 	render() {
-		const { usfm, images, className, serverLanguageTag, bible } = this.props
+		const { usfm, images, className, serverLanguageTag } = this.props
 
+		const version = this.versionData()
+		const title = version
+			&& version.books
+			&& getReferencesTitle({
+				bookList: version.books,
+				usfmList: usfm,
+			}).title
 		const matchedImages = images
 			&& images.filter({
 				category: 'prerendered',
 				usfm,
-				language_tag: serverLanguageTag
+				language_tag: version && version.language.iso_639_1
 			})
-		const versionData = bible
-			&& bible.versions
-			&& bible.versions.byId
-			&& bible.versions.byId[getBibleVersionFromStorage()]
-			&& bible.versions.byId[getBibleVersionFromStorage()].response
-		const title = versionData
-			&& versionData.books
-			&& getReferencesTitle({
-				bookList: versionData.books,
-				usfmList: usfm,
-			}).title
-
 		const imagesToRender = matchedImages
 			&& matchedImages.map((img) => {
 				const src = selectImageFromList({
@@ -84,6 +118,7 @@ class VerseImagesSlider extends Component {
 				)
 			})
 
+		if (matchedImages.length === 0) return null
 		return (
 			<div className={`yv-votd-image ${className}`}>
 				<Moment
@@ -98,7 +133,7 @@ class VerseImagesSlider extends Component {
 								<OverflowMenu
 									key='overflow'
 									usfm={usfm}
-									version_id={versionData && versionData.id}
+									version_id={version && version.id}
 								>
 									<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
 										<FormattedMessage id='notification settings' />

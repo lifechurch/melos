@@ -23,6 +23,8 @@ import MomentFooter from '../MomentFooter'
 
 class ReferenceMoment extends Component {
 	componentDidMount() {
+		const { serverLanguageTag } = this.props
+		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
 		this.getReference()
 	}
 
@@ -40,13 +42,13 @@ class ReferenceMoment extends Component {
 				dispatch(bibleAction({
 					method: 'version',
 					params: {
-						id: getBibleVersionFromStorage(),
+						id: this.version_id,
 					}
 				}))
 				dispatch(bibleAction({
 					method: 'chapter',
 					params: {
-						id: getBibleVersionFromStorage(),
+						id: this.version_id,
 						reference: chapterifyUsfm(usfm),
 					}
 				}))
@@ -65,7 +67,7 @@ class ReferenceMoment extends Component {
 				text: this.verseContent.text,
 				url: `${hosts && hosts.railsHost}${Routes.reference({
 					usfm: this.refStrings.usfm,
-					version_id: getBibleVersionFromStorage(),
+					version_id: this.version_id,
 					serverLanguageTag
 				})}`,
 			}))
@@ -88,11 +90,9 @@ class ReferenceMoment extends Component {
 			bible,
 			serverLanguageTag,
 			auth,
-			intl,
-			hosts
 		} = this.props
 
-		let verse, verseText
+		let verse
 		const chapterUsfm = usfm && chapterifyUsfm(usfm)
 		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
 		if (ref) {
@@ -101,14 +101,12 @@ class ReferenceMoment extends Component {
 				fullContent: ref.content,
 			})
 			verse = this.verseContent.html
-			verseText = this.verseContent.text
 		}
-		const version_id = getBibleVersionFromStorage()
 		const versionData = bible
 			&& bible.versions
 			&& bible.versions.byId
-			&& bible.versions.byId[version_id]
-			&& bible.versions.byId[version_id].response
+			&& bible.versions.byId[this.version_id]
+			&& bible.versions.byId[this.version_id].response
 		this.refStrings = versionData
 			&& versionData.books
 			&& getReferencesTitle({
@@ -134,7 +132,7 @@ class ReferenceMoment extends Component {
 											&& (
 												<Link
 													to={Routes.reference({
-														version_id,
+														version_id: this.version_id,
 														usfm: chapterUsfm,
 														version_abbr: this.version_abbr,
 														serverLanguageTag
@@ -149,7 +147,7 @@ class ReferenceMoment extends Component {
 											&& (
 												<Link
 													to={Routes.version({
-														version_id,
+														version_id: this.version_id,
 														serverLanguageTag
 													})}
 												>
@@ -195,7 +193,7 @@ class ReferenceMoment extends Component {
 								<OverflowMenu
 									key='overflow'
 									usfm={usfm}
-									version_id={version_id}
+									version_id={this.version_id}
 									onEdit={onEdit}
 									onDelete={onDelete}
 								>
@@ -207,7 +205,7 @@ class ReferenceMoment extends Component {
 				>
 					<Link
 						to={Routes.reference({
-							version_id,
+							version_id: this.version_id,
 							usfm: usfmString,
 							version_abbr: this.version_abbr,
 							serverLanguageTag
@@ -237,6 +235,7 @@ ReferenceMoment.propTypes = {
 	onEdit: PropTypes.func,
 	onDelete: PropTypes.func,
 	overflowMenuChildren: PropTypes.node,
+	onShare: PropTypes.func,
 	auth: PropTypes.object.isRequired,
 	className: PropTypes.string,
 	bible: PropTypes.object.isRequired,
@@ -255,6 +254,7 @@ ReferenceMoment.defaultProps = {
 	onLike: null,
 	onComment: null,
 	onEdit: null,
+	onShare: null,
 	onDelete: null,
 	overflowMenuChildren: null,
 }

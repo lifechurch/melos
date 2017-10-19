@@ -2374,7 +2374,7 @@ html[dir="rtl"] {
 	}
 
 	// center all the modals horizontally when small or medium viewport
-	.modal {
+	.yv-popup-modal-container > .modal, {
 		margin: 0 !important;
 		.absolute-horizontal-center;
 	}
@@ -2413,5 +2413,11 @@ html[dir="rtl"] {
 		padding: 2px;
     width: 11px;
     height: 11px;
+	}
+}
+
+.votd-view {
+	> * {
+		padding: 25px 0;
 	}
 }

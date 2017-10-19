@@ -4,6 +4,8 @@ import cookie from 'react-cookie'
 import ActionCreators from '../features/Bible/actions/creators'
 import LocaleList from '../../locales/config/localeList.json'
 import LocalStore from './localStore'
+import LocaleVersions from '../../locales/config/localeVersions.json'
+
 
 // default settings to build user settings below
 const DEFAULT_READER_SETTINGS = {
@@ -259,8 +261,12 @@ export function buildCopyright(formatMessage, version) {
 	/* eslint-enable react/no-danger */
 }
 
-export function getBibleVersionFromStorage() {
-	return cookie.load('version') || cookie.load('alt_version') || 59
+export function getBibleVersionFromStorage(language_tag = null) {
+	let defaultVersion = 1
+	if (language_tag && language_tag in LocaleVersions) {
+		defaultVersion = LocaleVersions[language_tag].text[0]
+	}
+	return cookie.load('version') || cookie.load('alt_version') || defaultVersion
 }
 
 

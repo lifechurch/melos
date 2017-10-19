@@ -48,7 +48,7 @@ class VotdText extends Component {
 		const { moments, className, serverLanguageTag } = this.props
 
 		const votd = moments && moments.pullVotd(this.dayOfYear)
-		const version_id = getBibleVersionFromStorage()
+		const version_id = getBibleVersionFromStorage(serverLanguageTag)
 		/* eslint-disable react/no-danger */
 		return (
 			<ReferenceMoment
@@ -83,6 +83,8 @@ VotdText.propTypes = {
 	moments: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
+	intl: PropTypes.object.isRequired,
+	hosts: PropTypes.object.isRequired,
 }
 
 VotdText.defaultProps = {
