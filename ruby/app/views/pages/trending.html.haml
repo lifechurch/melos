@@ -12,6 +12,7 @@
       %h1= t('pages.trending verses.title')
       - rank = 0
       %p= t('pages.trending verses.headline')
+      %br
       - @trending_verses.each do |verse|
         - rank = rank + 1
         %h2= link_to "#{rank}. #{verse.human}", reference_path(version: verse.version, reference: verse.to_param), target: '_self'
@@ -19,4 +20,3 @@
     .medium-4.columns.show-for-medium-up.l-border
       = render partial: 'widgets/download_app', :locals => {show_sms: true}
       = render partial: 'widgets/bible_app_for_kids'
-
