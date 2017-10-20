@@ -21,8 +21,6 @@ import OverflowMenu from '../widgets/OverflowMenu'
 
 class VerseImagesSlider extends Component {
 	componentDidMount() {
-		const { serverLanguageTag } = this.props
-		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
 		if (!this.hasImages() && this.versionData()) {
 			this.getImages()
 		}
@@ -88,6 +86,7 @@ class VerseImagesSlider extends Component {
 	render() {
 		const { usfm, images, className, serverLanguageTag } = this.props
 
+		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
 		const version = this.versionData()
 		const title = version
 			&& version.books

@@ -29,10 +29,8 @@ class VOTDView extends Component {
 	render() {
 		const { location: { query }, moments, bible, intl, hosts, serverLanguageTag } = this.props
 		const day = query && query.day
-
 		const votd = moments
-		&& moments.pullVotd(day)
-		&& moments.pullVotd(day)
+			&& moments.pullVotd(day)
 		const usfm = votd && votd.usfm
 		const chapterUsfm = usfm && chapterifyUsfm(usfm)
 		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
@@ -45,16 +43,16 @@ class VOTDView extends Component {
 		}
 		const version_id = getBibleVersionFromStorage()
 		const versionData = bible
-		&& bible.versions
-		&& bible.versions.byId
-		&& bible.versions.byId[version_id]
-		&& bible.versions.byId[version_id].response
+			&& bible.versions
+			&& bible.versions.byId
+			&& bible.versions.byId[version_id]
+			&& bible.versions.byId[version_id].response
 		const refStrings = versionData
-		&& versionData.books
-		&& getReferencesTitle({
-			bookList: versionData.books,
-			usfmList: usfm,
-		})
+			&& versionData.books
+			&& getReferencesTitle({
+				bookList: versionData.books,
+				usfmList: usfm,
+			})
 		const titleString = refStrings && refStrings.title
 		const version_abbr = versionData
 			&& versionData.local_abbreviation.toUpperCase()

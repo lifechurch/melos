@@ -274,30 +274,58 @@ export function parseVerseFromContent({ usfms, fullContent }) {
 	const textOutput = []
 	const htmlOutput = []
 
+	const isServerRendering = typeof window === 'undefined'
+	let doc, xpath
+	if (isServerRendering) {
+		// parsing on the server
+		xpath = require('xpath')
+		const Parser = require('xmldom').DOMParser
+		doc = new Parser().parseFromString(fullContent)
+	} else {
+		doc = new DOMParser().parseFromString(fullContent, 'text/html')
+	}
+
 	if (usfms && fullContent) {
-		const doc = new DOMParser().parseFromString(fullContent, 'text/html')
 		const usfmList = Array.isArray(usfms)
 			? usfms
 			: [usfms]
-
 		usfmList.forEach((usfm) => {
 			const htmlXpath = `//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+${usfm}+')]`
 			const textXpath = `${htmlXpath}/node()[not(contains(concat(\' \',@class,\' \'),\' note \'))][not(contains(concat(\' \',@class,\' \'),\' label \'))]`
 
-			const html = doc.evaluate(htmlXpath, doc, null, XPathResult.ANY_TYPE, null)
-			const text = doc.evaluate(textXpath, doc, null, XPathResult.ANY_TYPE, null)
+			let html, text
+			if (isServerRendering) {
+				html = xpath.evaluate(htmlXpath, doc, null, xpath.XPathResult.ANY_TYPE, null)
+				text = xpath.evaluate(textXpath, doc, null, xpath.XPathResult.ANY_TYPE, null)
 
-			// text
-			let nextText = text.iterateNext()
-			while (nextText) {
-				textOutput.push(nextText.textContent)
-				nextText = text.iterateNext()
-			}
-			// html
-			let nextHtml = html.iterateNext()
-			while (nextHtml) {
-				htmlOutput.push(nextHtml.outerHTML)
-				nextHtml = html.iterateNext()
+				// text
+				let nextText = text.iterateNext()
+				while (nextText) {
+					textOutput.push(nextText.textContent)
+					nextText = text.iterateNext()
+				}
+				// html
+				let nextHtml = html.iterateNext()
+				while (nextHtml) {
+					htmlOutput.push(nextHtml.toString())
+					nextHtml = html.iterateNext()
+				}
+			} else {
+				html = doc.evaluate(htmlXpath, doc, null, XPathResult.ANY_TYPE, null)
+				text = doc.evaluate(textXpath, doc, null, XPathResult.ANY_TYPE, null)
+
+				// text
+				let nextText = text.iterateNext()
+				while (nextText) {
+					textOutput.push(nextText.textContent)
+					nextText = text.iterateNext()
+				}
+				// html
+				let nextHtml = html.iterateNext()
+				while (nextHtml) {
+					htmlOutput.push(nextHtml.outerHTML)
+					nextHtml = html.iterateNext()
+				}
 			}
 		})
 	}

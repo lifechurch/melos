@@ -79,11 +79,12 @@ class PagesController < ApplicationController
   end
 
   def votd
-
+		url = request.query_string.present? ? request.path + '?' + request.query_string : request.path
 		p = {
 				"strings" => {},
 				"languageTag" => I18n.locale.to_s,
-				"url" => request.path,
+				"url" => url,
+				"day" => params[:day],
 				"cache_for" => YV::Caching::a_very_long_time
 		}
 

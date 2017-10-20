@@ -1,11 +1,28 @@
 import React, { Component, PropTypes } from 'react'
+import { imgLoaded } from '../lib/imageUtil'
 
 class LazyImage extends Component {
-
 	constructor(props) {
 		super(props)
 		this.state = {
-			loaded: false
+			loaded: !!(this.img && imgLoaded(this.img))
+		}
+	}
+
+	componentDidMount() {
+		this.updateImgIfNeeded()
+	}
+
+	componentDidUpdate() {
+		this.updateImgIfNeeded()
+	}
+
+	updateImgIfNeeded = () => {
+		const { loaded } = this.state
+		// we need to check this in case the img is already downloaded
+		// and the onload doesn't fire
+		if (!loaded && this.img && imgLoaded(this.img)) {
+			this.setState({ loaded: true })
 		}
 	}
 
@@ -32,13 +49,14 @@ class LazyImage extends Component {
 			>
 				{ placeholder }
 				<img
+					ref={(img) => { this.img = img }}
+					onLoad={() => { this.setState(() => { return { loaded: true } }) }}
+					className={`large ${loaded ? 'loaded' : ''} ${imgClass}`}
 					alt={alt}
 					src={src}
 					width={width}
 					height={height}
 					crossOrigin={crossOrigin}
-					className={`large ${loaded ? 'loaded' : ''} ${imgClass}`}
-					onLoad={() => { this.setState(() => { return { loaded: true } }) }}
 				/>
 			</div>
 		)

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { injectIntl } from 'react-intl'
 import { Link } from 'react-router'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
@@ -23,8 +22,6 @@ import MomentFooter from '../MomentFooter'
 
 class ReferenceMoment extends Component {
 	componentDidMount() {
-		const { serverLanguageTag } = this.props
-		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
 		this.getReference()
 	}
 
@@ -37,22 +34,20 @@ class ReferenceMoment extends Component {
 
 	getReference = () => {
 		const { usfm, bible, dispatch } = this.props
-		if (usfm) {
-			if (usfm && (bible && !bible.pullRef(chapterifyUsfm(usfm)))) {
-				dispatch(bibleAction({
-					method: 'version',
-					params: {
-						id: this.version_id,
-					}
-				}))
-				dispatch(bibleAction({
-					method: 'chapter',
-					params: {
-						id: this.version_id,
-						reference: chapterifyUsfm(usfm),
-					}
-				}))
-			}
+		if (usfm && bible && !bible.pullRef(chapterifyUsfm(usfm))) {
+			dispatch(bibleAction({
+				method: 'version',
+				params: {
+					id: this.version_id,
+				}
+			}))
+			dispatch(bibleAction({
+				method: 'chapter',
+				params: {
+					id: this.version_id,
+					reference: chapterifyUsfm(usfm),
+				}
+			}))
 		}
 	}
 
@@ -92,6 +87,7 @@ class ReferenceMoment extends Component {
 			auth,
 		} = this.props
 
+		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
 		let verse
 		const chapterUsfm = usfm && chapterifyUsfm(usfm)
 		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
@@ -242,7 +238,6 @@ ReferenceMoment.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	hosts: PropTypes.object.isRequired,
-	intl: PropTypes.object.isRequired,
 }
 
 ReferenceMoment.defaultProps = {
@@ -269,4 +264,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(injectIntl(ReferenceMoment))
+export default connect(mapStateToProps, null)(ReferenceMoment)

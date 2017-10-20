@@ -46,7 +46,7 @@ class PlansRelatedToReference extends Component {
 	}
 
 	render() {
-		const { usfm, plans, bible, serverLanguageTag, intl } = this.props
+		const { usfm, plans, subTitle, bible, serverLanguageTag, intl } = this.props
 
 		this.usfmString = Array.isArray(usfm)
 			? usfm.join('+')
@@ -79,16 +79,14 @@ class PlansRelatedToReference extends Component {
 
 		return (
 			<Card className='plans-related-to-reference'>
-				<h2 style={{ marginBottom: '40px', padding: '0 10px' }}>
+				<h2 style={{ padding: '0 10px' }}>
 					<div style={{ fontSize: '18px', marginBottom: '20px' }}>
 						<FormattedMessage
 							id='Reader.plan title ref'
 							values={{ reference: refStrings && refStrings.title }}
 						/>
 					</div>
-					<div style={{ fontSize: '15px' }}>
-						<FormattedMessage id='Reader.plan subtitle' />
-					</div>
+					{ subTitle }
 				</h2>
 				<Grid lgCols={3} smCols={2}>
 					{
@@ -139,6 +137,7 @@ PlansRelatedToReference.propTypes = {
 	usfm: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 	plans: PropTypes.object,
 	bible: PropTypes.object,
+	subTitle: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	serverLanguageTag: PropTypes.string,
 	intl:	PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
@@ -147,6 +146,7 @@ PlansRelatedToReference.propTypes = {
 PlansRelatedToReference.defaultProps = {
 	usfm: null,
 	plans: null,
+	subTitle: null,
 	bible: null,
 	serverLanguageTag: 'en',
 }

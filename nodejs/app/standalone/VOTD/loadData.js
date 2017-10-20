@@ -1,3 +1,4 @@
+import moment from 'moment'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
@@ -22,15 +23,18 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const version_id = getBibleVersionFromStorage(serverLanguageTag)
 			const isVOTD = new RegExp('^\/verse-of-the-day')
 			if (isVOTD.test(params.url)) {
-				console.log('LOAD', params)
 				dispatch(momentsAction({
 					method: 'votd',
 					params: {
 						language_tag: serverLanguageTag,
 					}
 				})).then((data) => {
-					const usfm = data && data.votd && data.votd[2] && data.votd[2].usfm
+					const day = parseInt((params.day || moment().dayOfYear()), 10) - 1
+					const usfm = data && data.votd && data.votd[day] && data.votd[day].usfm
 					const promises = [
+						dispatch(momentsAction({
+							method: 'configuration',
+						})),
 						dispatch(bibleAction({
 							method: 'chapter',
 							params: {
@@ -38,20 +42,28 @@ export default function loadData(params, startingState, sessionData, store, Loca
 								reference: chapterifyUsfm(usfm),
 							}
 						})),
-						dispatch(bibleAction({
-							method: 'version',
-							params: {
-								id: version_id,
-							}
-						})).then((version) => {
-							dispatch(imagesAction({
-								method: 'items',
+						new Promise((resolve2) => {
+							dispatch(bibleAction({
+								method: 'version',
 								params: {
-									language_tag: version.language.iso_639_1,
-									category: 'prerendered',
-									usfm,
+									id: version_id,
 								}
-							}))
+							})).then((version) => {
+								dispatch(imagesAction({
+									method: 'items',
+									params: {
+										language_tag: version.language.iso_639_1,
+										category: 'prerendered',
+										usfm,
+									}
+								}))
+								.then(() => {
+									resolve2()
+								})
+								.catch(() => {
+									resolve2()
+								})
+							})
 						}),
 						dispatch(readingPlansAction({
 							method: 'configuration'
@@ -64,10 +76,11 @@ export default function loadData(params, startingState, sessionData, store, Loca
 							}
 						}))
 					]
-					Promise.all(promises).then(() => { resolve() })
+					Promise.all(promises)
+						.then(() => { resolve() })
+						.catch((err) => { resolve(err) })
 				})
 				.catch((err) => {
-					console.log('ERR', err)
 					resolve(err)
 				})
 			}

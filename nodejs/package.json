@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/api-redux": "^0.3.96",
+    "@youversion/api-redux": "^0.3.97",
     "@youversion/token-storage": "^0.0.36",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
@@ -95,7 +95,9 @@
     "serve-favicon": "~2.3.0",
     "smooth-scroll": "^11.1.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.24"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
