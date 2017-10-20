@@ -59,6 +59,8 @@ class VotdText extends Component {
 						style={{
 							all: 'unset',
 							width: '100%',
+							marginBottom: '3px',
+							color: 'black'
 						}}
 					>
 						<FormattedMessage id='votd' />
