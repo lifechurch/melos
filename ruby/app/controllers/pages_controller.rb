@@ -79,9 +79,29 @@ class PagesController < ApplicationController
   end
 
   def votd
-    @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
+		url = request.query_string.present? ? request.path + '?' + request.query_string : request.path
+		p = {
+				"strings" => {},
+				"languageTag" => I18n.locale.to_s,
+				"url" => url,
+				"day" => params[:day],
+				"cache_for" => YV::Caching::a_very_long_time
+		}
 
-    get_votd()
+		fromNode = YV::Nodestack::Fetcher.get('VOTD', p, cookies, current_auth, current_user, request)
+
+		if (fromNode['error'].present?)
+			return render_404
+		end
+
+		@title_tag = fromNode['head']['title']
+		@node_meta_tags = fromNode['head']['meta']
+
+		render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+
+    # @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
+		#
+    # get_votd()
   end
 
   # /app url - redirects to an store for mobile device if found

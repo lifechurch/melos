@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import { imgLoaded } from '../lib/imageUtil'
 
 class LazyImage extends Component {
-
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -10,7 +9,15 @@ class LazyImage extends Component {
 		}
 	}
 
+	componentDidMount() {
+		this.updateImgIfNeeded()
+	}
+
 	componentDidUpdate() {
+		this.updateImgIfNeeded()
+	}
+
+	updateImgIfNeeded = () => {
 		const { loaded } = this.state
 		// we need to check this in case the img is already downloaded
 		// and the onload doesn't fire

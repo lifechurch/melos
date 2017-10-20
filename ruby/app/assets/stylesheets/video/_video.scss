@@ -31,9 +31,9 @@ body.c_videos.a_index {
     }
 
     .publisher {
-      padding: 0 0 0 22px;
+      padding: 0 0 0 28px;
       background: image-url("icon-about.svg") no-repeat 0px center;
-      background-size: 16px 16px;
+      background-size: 24px 24px;
       color: #777;
 
       @media #{$small-only} {
@@ -120,9 +120,11 @@ body.c_videos.a_series {
       }
       .info:hover {
         @media #{$medium-up} {
-          background: image-url("videos-thumb-grad-play.png") no-repeat 0px 0px;
-          background-size: 100% 100%;
+          background: image-url("play.svg") no-repeat 0px 0px;
           box-shadow: 2px -1px 7px #a9a9a9;
+          background-position: center;
+          background-size: 48px 48px;
+          background-color: rgba(0,0,0,0.4);
         }
       }
     }
@@ -140,13 +142,13 @@ body.c_videos.a_series {
   h2.publisher {
     display: inline-block;
     margin-top: -10px;
-    padding-left: 22px;
-    background: image-url("icon-about-white.svg") no-repeat left 11px;
-    background-size: 16px 16px;
+    padding-left: 28px;
+    background: image-url("icon-about-white.svg") no-repeat left 7px;
+    background-size: 24px 24px;
 
     @media #{$small-only} {
-      background: image-url("icon-about.svg") no-repeat left 11px;
-      background-size: 16px 16px;
+      background: image-url("icon-about.svg") no-repeat left 7px;
+      background-size: 24px 24px;
     }
 
     a {

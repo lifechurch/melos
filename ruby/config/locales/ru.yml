@@ -2091,6 +2091,7 @@ ru:
                 add color: "Добавить цвет"
                 labels private: "Ярлыки всегда приватные."
         notifications: "Уведомления"
+        no notifications: "You don't have any notifications"
         start plan title: "Как вы хотите читать этот план?"
         by myself: "Самостоятельно"
         by myself description: "Сохраните активность чтения плана личной, или позвольте видеть вашу активность друзьям."

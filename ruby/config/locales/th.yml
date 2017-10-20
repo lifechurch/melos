@@ -2034,6 +2034,7 @@ th:
                 add color: "เพิ่มสี"
                 labels private: "ป้ายชื่อจะเป็นความลับเสมอ"
         notifications: "การแจ้งเตือน"
+        no notifications: "You don't have any notifications"
         start plan title: "คุณต้องการจะอ่านแผนการอ่านนี้อย่างไร"
         by myself: "ด้วยตนเอง"
         by myself description: "เก็บรักษาแผนการอ่านของคุณไว้ส่วนตัว,หรืออนุญาตให้เพื่อนของคุณได้เห็นแผนการอ่านของคุณ"

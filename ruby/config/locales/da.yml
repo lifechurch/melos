@@ -2053,6 +2053,7 @@ da:
                 add color: "Tilføj farve"
                 labels private: "Mærkater er altid private"
         notifications: "Notifikationer"
+        no notifications: "You don't have any notifications"
         start plan title: "Hvordan ønsker du at læse denne Plan?"
         by myself: "Kun med mig selv."
         by myself description: "Behold dine Plan aktiviteter privat, eller tillad dine venner at se dine Plan aktiviteter."

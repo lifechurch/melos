@@ -2072,6 +2072,7 @@ cs:
                 add color: "Přidat barvu"
                 labels private: "Značky jsou vždy soukromé"
         notifications: "Oznámení"
+        no notifications: "You don't have any notifications"
         start plan title: "Jak chcete číst tento plán čtení Bible?"
         by myself: "Pouze já"
         by myself description: "Můžete nastavit vaši aktivitu čtení plánu jako soukromou, nebo můžete dovolit přátelům vidět vaší aktivitu."

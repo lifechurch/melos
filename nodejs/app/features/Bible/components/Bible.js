@@ -17,8 +17,8 @@ import StickyHeader from '../../../components/StickyHeader'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
-import PlusButton from '../../../components/PlusButton'
-import XMark from '../../../components/XMark'
+import ParallelExit from '../../../components/icons/ParallelExit'
+import Parallel from '../../../components/icons/Parallel'
 import { deepLinkPath, buildMeta, buildCopyright } from '../../../lib/readerUtils'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
 
@@ -379,10 +379,9 @@ class Bible extends Component {
 								lineHeight: 1
 							}}
 						>
-							<PlusButton
-								className="circle-border"
-								height={13}
-								width={13}
+							<Parallel
+								height={16}
+								width={16}
 							/>
 							<span
 								style={{
@@ -438,10 +437,9 @@ class Bible extends Component {
 								lineHeight: 1
 							}}
 						>
-							<XMark
-								className="circle-border"
-								height={13}
-								width={13}
+							<ParallelExit
+								height={16}
+								width={16}
 							/>
 							<span
 								style={{

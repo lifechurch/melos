@@ -2034,6 +2034,7 @@ ja:
                 add color: "色を追加"
                 labels private: "ラベルは常に非公開です"
         notifications: "通知"
+        no notifications: "You don't have any notifications"
         start plan title: "このプランをどのように読みたいですか？"
         by myself: "自分だけで読む"
         by myself description: "あなたのプランに関するアクティビティを非公開、または、友達に公開することができます。"

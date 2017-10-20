@@ -19,8 +19,8 @@ EllipsisMoreIcon.propTypes = {
 }
 
 EllipsisMoreIcon.defaultProps = {
-	width: 20,
-	height: 20,
+	width: 18,
+	height: 18,
 	fill: '#979797',
 	classes: '',
 }

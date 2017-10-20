@@ -31,6 +31,9 @@
 @import "../features/Footer/components/less/LangSelector.less";
 @import "../features/Footer/components/less/LinkCard.less";
 
+@import "../features/Moments/components/less/moment.less";
+@import "../features/Moments/components/less/votd.less";
+
 @import "../components/less/Modal.less";
 @import "../components/less/ButtonBar.less";
 @import "../components/less/Toggle.less";
@@ -64,12 +67,16 @@
 @import "../components/less/Search.less";
 @import "../components/less/Inbox.less";
 @import "../components/less/User.less";
+@import "../components/less/Slider.less";
+@import "../components/less/Grid.less";
+@import "../components/less/FullscreenDrawer.less";
 @import "../features/Bible/components/settings/less/Settings.less";
 @import "../features/Bible/components/audio/less/Audio.less";
 
 @import "../features/Notifications/components/UnsubscribeConfirmation/UnsubscribeConfirmation.less";
 @import "../features/Notifications/components/ManageNotifications/ManageNotifications.less";
 @import "../features/Notifications/less/notifications.less";
+
 
 @import "../features/Lookinside/components/lookinside.less";
 
@@ -2364,7 +2371,7 @@ html[dir="rtl"] {
 	}
 
 	// center all the modals horizontally when small or medium viewport
-	.modal {
+	.yv-popup-modal-container > .modal, {
 		margin: 0 !important;
 		.absolute-horizontal-center;
 	}
@@ -2395,4 +2402,21 @@ button.chapter-button {
 #ssIFrame_google {
  left: 0 !important;
  visibility: hidden !important ;
+}
+
+.circle-border {
+	border: solid 1px @color-muted;
+	border-radius: 50%;
+
+	svg.xmark {
+		padding: 2px;
+    width: 11px;
+    height: 11px;
+	}
+}
+
+.votd-view {
+	> * {
+		padding: 25px 0;
+	}
 }

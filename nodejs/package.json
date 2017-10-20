@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@redux-offline/redux-offline": "^2.1.0",
     "@youversion/api-redux": "^0.3.93",
     "@youversion/js-api": "^1.0.8",
+    "@youversion/api-redux": "^0.3.97",
     "@youversion/token-storage": "^0.0.36",
     "@youversion/utils": "^1.0.19",
     "async": "^2.0.0-rc.3",
@@ -54,8 +54,8 @@
     "langs": "^1.0.1",
     "locale-string": "^1.0.0",
     "loose-envify": "^1.1.0",
-    "moment": "^2.13.0",
-    "moment-timezone": "^0.5.4",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
     "morgan": "~1.6.1",
     "newrelic": "^1.40.0",
     "po2json": "^0.4.5",
@@ -104,7 +104,9 @@
     "smooth-scroll": "^11.1.0",
     "update": "^0.7.4",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.0.0"
+    "vinyl-source-stream": "^1.1.0",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.24"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

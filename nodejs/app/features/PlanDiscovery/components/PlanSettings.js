@@ -16,7 +16,6 @@ import getCurrentDT from '../../../lib/getCurrentDT'
 
 
 class PlanSettings extends Component {
-
 	componentDidMount() {
 		const { dispatch } = this.props
 		dispatch(plansAPI.actions.settings.get({
@@ -93,6 +92,7 @@ class PlanSettings extends Component {
 	}
 
 
+
 	render() {
 		const {
 			dayOfString,
@@ -101,7 +101,6 @@ class PlanSettings extends Component {
 			subscription,
 			isAuthHost,
 			auth,
-			intl,
 		} = this.props
 
 		this.together_id = subscription && subscription.together_id
@@ -346,11 +345,9 @@ PlanSettings.propTypes = {
 	onCatchUp: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired,
 	isAuthHost: PropTypes.bool.isRequired,
-	shareLink: PropTypes.node,
 	dayOfString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	startString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	endString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-	intl: PropTypes.object.isRequired,
 }
 
 PlanSettings.defaultProps = {

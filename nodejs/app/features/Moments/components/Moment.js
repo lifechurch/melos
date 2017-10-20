@@ -31,10 +31,10 @@ function Moment(props) {
 		: null
 
 	return (
-		<Card customClass={`moment-card flex-wrap ${className}`} extension={cardFooter}>
+		<Card customClass={`yv-moment-card ${className}`} extension={cardFooter}>
 			{ header }
 			<div className='main-col'>
-				<div className='content'>
+				<div className='yv-moment-content'>
 					{ children }
 				</div>
 			</div>

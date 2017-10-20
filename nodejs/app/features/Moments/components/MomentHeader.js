@@ -10,11 +10,11 @@ function MomentHeader(props) {
 	} = props
 
 	return (
-		<div className='moment-header'>
+		<div className='yv-moment-header'>
 			{
 				icon
 					&& (
-						<div className='aside-col icon' style={{ marginRight: '15px' }}>
+						<div className='aside-col icon vertical-center' style={{ marginRight: '15px' }}>
 							{ icon }
 						</div>
 					)
@@ -43,11 +43,17 @@ function MomentHeader(props) {
 }
 
 MomentHeader.propTypes = {
-
+	icon: PropTypes.node,
+	title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+	subTitle: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+	dt: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 }
 
 MomentHeader.defaultProps = {
-
+	icon: null,
+	title: null,
+	subTitle: null,
+	dt: null,
 }
 
 export default MomentHeader

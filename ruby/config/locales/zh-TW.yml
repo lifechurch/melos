@@ -2034,6 +2034,7 @@ zh-TW:
                 add color: "加入顏色"
                 labels private: "標籤不會被公開"
         notifications: "通知"
+        no notifications: "You don't have any notifications"
         start plan title: "你想如何讀這個計劃？"
         by myself: "自己讀"
         by myself description: "不公開你的計劃活動，或公開你的計劃活動給朋友看。"

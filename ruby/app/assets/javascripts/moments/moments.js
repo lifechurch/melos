@@ -45,6 +45,18 @@ angular.module('yv.moments', [
         templateUrl: '/single-moment-feed.tpl.html'
     })
 
+		.state('comment', {
+        url:         '/moments/:momentId/comments/:commentId',
+        controller:  'MomentCtrl',
+        templateUrl: '/single-moment-feed.tpl.html'
+    })
+
+    .state('comment-locale', {
+        url:         '/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/moments/:momentId/comments/:commentId',
+        controller:  'MomentCtrl',
+        templateUrl: '/single-moment-feed.tpl.html'
+    })
+
 	.state('profileActivity', {
 		url: 		'/users/:username',
 		controller: 	'MomentsCtrl',

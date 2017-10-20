@@ -7,10 +7,18 @@
 	align-items: center;
 	cursor: pointer;
 
-	.toggle-button {
+	.yv-toggle-button {
 		height: 18px;
 		width: 16px;
 		margin-right: 10px;
+
+		.yv-toggle-button-check-container {
+			border: solid 1px #bbb;
+			border-radius: 50%;
+			display: inline-flex;
+			min-height: 20px;
+			min-width: 20px;
+		}
 
 		.toggle-circle {
 			width: 16px;
@@ -28,12 +36,12 @@
 		}
 	}
 
-	.toggle-label {
+	.yv-toggle-label {
 
 	}
 
 	&.selected {
-		.toggle-button {
+		.yv-toggle-button {
 			.toggle-check {
 				opacity: 1;
 			}

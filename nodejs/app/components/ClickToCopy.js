@@ -19,11 +19,11 @@ class ClickToCopy extends Component {
 			<div>
 				{
 					copied
-					&& (
-						<div className='animate-away copied'>
-							<FormattedMessage id='copied' />
-						</div>
-					)
+						&& (
+							<div className='animate-away copied'>
+								<FormattedMessage id='copied' />
+							</div>
+						)
 				}
 				<CopyToClipboard
 					className={`pointer yv-text-ellipsis ${customClass}`}

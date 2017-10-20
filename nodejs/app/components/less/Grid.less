@@ -1,0 +1,155 @@
+
+.max-width-percentage(@num, @den) {
+	max-width: unit((@num / @den) * 100, %);
+}
+
+// SMALL -----------------------------------------------------------------------
+.small-col(@col) {
+	@media @small-only {
+		.max-width-percentage(@col, 12);
+	}
+}
+
+.yv-small-1 {
+	.small-col(1);
+}
+.yv-small-2 {
+	.small-col(2);
+}
+.yv-small-3 {
+	.small-col(3);
+}
+.yv-small-4 {
+	.small-col(4);
+}
+.yv-small-5 {
+	.small-col(5);
+}
+.yv-small-6 {
+	.small-col(6);
+}
+.yv-small-7 {
+	.small-col(7);
+}
+.yv-small-8 {
+	.small-col(8);
+}
+.yv-small-9 {
+	.small-col(9);
+}
+.yv-small-10 {
+	.small-col(10);
+}
+.yv-small-11 {
+	.small-col(11);
+}
+.yv-small-12 {
+	.small-col(12);
+}
+
+// MEDIUM -----------------------------------------------------------------------
+.medium-col(@col) {
+	@media @medium-only {
+		.max-width-percentage(@col, 12);
+	}
+}
+
+.yv-medium-1 {
+	.medium-col(1);
+}
+.yv-medium-2 {
+	.medium-col(2);
+}
+.yv-medium-3 {
+	.medium-col(3);
+}
+.yv-medium-4 {
+	.medium-col(4);
+}
+.yv-medium-5 {
+	.medium-col(5);
+}
+.yv-medium-6 {
+	.medium-col(6);
+}
+.yv-medium-7 {
+	.medium-col(7);
+}
+.yv-medium-8 {
+	.medium-col(8);
+}
+.yv-medium-9 {
+	.medium-col(9);
+}
+.yv-medium-10 {
+	.medium-col(10);
+}
+.yv-medium-11 {
+	.medium-col(11);
+}
+.yv-medium-12 {
+	.medium-col(12);
+}
+
+
+// LARGE -----------------------------------------------------------------------
+.large-col(@col) {
+	@media @large-only {
+		.max-width-percentage(@col, 12);
+	}
+}
+
+.yv-large-1 {
+	.large-col(1);
+}
+.yv-large-2 {
+	.large-col(2);
+}
+.yv-large-3 {
+	.large-col(3);
+}
+.yv-large-4 {
+	.large-col(4);
+}
+.yv-large-5 {
+	.large-col(5);
+}
+.yv-large-6 {
+	.large-col(6);
+}
+.yv-large-7 {
+	.large-col(7);
+}
+.yv-large-8 {
+	.large-col(8);
+}
+.yv-large-9 {
+	.large-col(9);
+}
+.yv-large-10 {
+	.large-col(10);
+}
+.yv-large-11 {
+	.large-col(11);
+}
+.yv-large-12 {
+	.large-col(12);
+}
+// -----------------------------------------------------------------------------
+
+
+.yv-grid {
+	display: flex;
+	flex-wrap: wrap;
+
+	.yv-col {
+		display: flex;
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+
+		> * {
+			width: 100%;
+		}
+	}
+}

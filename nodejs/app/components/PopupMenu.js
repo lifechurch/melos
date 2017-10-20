@@ -6,7 +6,6 @@ import ClickTarget from './ClickTarget'
 
 
 class PopupMenu extends Component {
-
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -27,16 +26,14 @@ class PopupMenu extends Component {
 	render() {
 		const { triggerButton, closeButton, children, header, footer } = this.props
 		const { show } = this.state
-		let trigger = null
 
+		let trigger = triggerButton
 		// if we're wanting to show two different trigger buttons
 		// toggle between them, if not than we always render triggerButton prop
 		if (show) {
 			if (closeButton) {
 				trigger = closeButton
 			}
-		} else if (triggerButton) {
-			trigger = triggerButton
 		}
 
 		return (
@@ -77,7 +74,7 @@ PopupMenu.propTypes = {
 
 PopupMenu.defaultProps = {
 	triggerButton: <EllipsisMoreIcon classes='vertical-center' />,
-	closeButton: <XMark width={14.4} height={13.7} />,
+	closeButton: <XMark width={17} height={17} className='vertical-center' />,
 	header: null,
 	footer: null,
 }

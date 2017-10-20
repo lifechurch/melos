@@ -2053,6 +2053,7 @@ fr:
                 add color: "Ajouter une couleur"
                 labels private: "Les étiquettes sont toujours privées"
         notifications: "Notifications"
+        no notifications: "You don't have any notifications"
         start plan title: "Comment désirez-vous lire ce Plan?"
         by myself: "Seul"
         by myself description: "Gardez votre activité sur ce Plan privée, ou permettez à vos amis de voir votre activité."
