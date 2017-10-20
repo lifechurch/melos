@@ -126,8 +126,9 @@ class ReferenceMoment extends Component {
 									{
 										titleString
 											&& (
-												<Link
-													to={Routes.reference({
+												<a
+													target='_self'
+													href={Routes.reference({
 														version_id: this.version_id,
 														usfm: chapterUsfm,
 														version_abbr: this.version_abbr,
@@ -135,21 +136,22 @@ class ReferenceMoment extends Component {
 													})}
 												>
 													{ titleString }
-												</Link>
+												</a>
 											)
 									}
 									{
 										this.version_abbr
 											&& (
-												<Link
-													to={Routes.version({
+												<a
+													target='_self'
+													href={Routes.version({
 														version_id: this.version_id,
 														serverLanguageTag
 													})}
 												>
 													&nbsp;
 													{ this.version_abbr }
-												</Link>
+												</a>
 											)
 									}
 								</div>
@@ -199,8 +201,9 @@ class ReferenceMoment extends Component {
 						/>
 					}
 				>
-					<Link
-						to={Routes.reference({
+					<a
+						target='_self'
+						href={Routes.reference({
 							version_id: this.version_id,
 							usfm: usfmString,
 							version_abbr: this.version_abbr,
@@ -213,7 +216,7 @@ class ReferenceMoment extends Component {
 							style={{ color: 'black' }}
 							dangerouslySetInnerHTML={{ __html: verse }}
 						/>
-					</Link>
+					</a>
 				</Moment>
 			</div>
 		)
