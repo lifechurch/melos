@@ -10,7 +10,7 @@ function CarouselArrow(props) {
 	const rotation = dir === 'right' ? 0 : 180
 	const containerClass = props.containerClass || `slick-arrow-${dir}-container`
 	const arrowClass = props.arrowClass || `slick-arrow-${dir}`
-	const thin = typeof this.props.thin === 'undefined' ? true : this.props.thin
+	const thin = typeof props.thin === 'undefined' ? true : props.thin
 
 
 	let style = null

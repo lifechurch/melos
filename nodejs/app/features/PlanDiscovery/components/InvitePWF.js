@@ -10,7 +10,7 @@ import Search from '../../../components/Search'
 import User from '../../../components/User'
 import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
-import SectionedHeading from '../../../components/SectionedHeading'
+import SectionedLayout from '../../../components/SectionedLayout'
 import List from '../../../components/List'
 import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
 import Routes from '../../../lib/routes'
@@ -157,9 +157,9 @@ class InvitePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-invite'>
-				<SectionedHeading>
+				<SectionedLayout>
 					<h4><FormattedMessage id='invite friends' /></h4>
-				</SectionedHeading>
+				</SectionedLayout>
 				<div className='gray-background content' style={{ minHeight: '450px' }}>
 					<div className='columns medium-5 small-12 small-centered '>
 						<div className='horizontal-center vertical-center'>

@@ -4,7 +4,7 @@ import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../../../widgets/TogetherInvitationActions'
 import InvitationString from '../../../widgets/InvitationString'
 import Card from '../../../components/Card'
-import SectionedHeading from '../../../components/SectionedHeading'
+import SectionedLayout from '../../../components/SectionedLayout'
 import LazyImage from '../../../components/LazyImage'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
@@ -24,9 +24,9 @@ function Invitation({
 
 	return (
 		<div className='invitation text-center'>
-			<SectionedHeading>
+			<SectionedLayout>
 				<FormattedMessage id='invitation' />
-			</SectionedHeading>
+			</SectionedLayout>
 			<div className='gray-background content'>
 				<div className='columns medium-5 small-12 small-centered' style={{ padding: '40px 0 100px 0' }}>
 					<Card>

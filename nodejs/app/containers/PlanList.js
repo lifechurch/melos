@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
-import SectionedHeading from '../components/SectionedHeading'
+import SectionedLayout from '../components/SectionedLayout'
 import SubscriptionList from './SubscriptionList'
 import CompletedList from './CompletedList'
 import SavedList from './SavedList'
@@ -90,11 +90,11 @@ class PlansList extends Component {
 		return (
 			<div>
 				<div className='large-6 centered' style={{ marginBottom: '15px' }}>
-					<SectionedHeading
+					<SectionedLayout
 						left={backButton}
 					>
 						<div className='plan-saved-title'>{ title }</div>
-					</SectionedHeading>
+					</SectionedLayout>
 				</div>
 				<div className='large-6 medium-8 small-11 centered'>
 					<div className='row collapse'>

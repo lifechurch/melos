@@ -5,7 +5,7 @@ import moment from 'moment'
 import Calendar from './Calendar'
 import CalendarDay from './CalendarDay'
 import LazyImage from '../../../components/LazyImage'
-import SectionedHeading from '../../../components/SectionedHeading'
+import SectionedLayout from '../../../components/SectionedLayout'
 import Footer from '../../../components/Footer'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
@@ -63,7 +63,7 @@ class CreatePWF extends Component {
 		return (
 			<div className='pwf-flow pwf-create'>
 				<div className='large-8 small-11 centered'>
-					<SectionedHeading
+					<SectionedLayout
 						left={
 							<Link
 								className='plans vertical-center'
@@ -78,7 +78,7 @@ class CreatePWF extends Component {
 								? <h4><FormattedMessage id='change date' /></h4>
 								: <h4><FormattedMessage id='start plan when' /></h4>
 						}
-					</SectionedHeading>
+					</SectionedLayout>
 				</div>
 				<div className='gray-background content text-center'>
 					<div className='columns medium-8 small-12 small-centered'>

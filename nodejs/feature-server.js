@@ -102,15 +102,15 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		if (typeof auth === 'object' && typeof auth.token === 'string') {
 			try {
 				hasAuth = true
-				const [ token, tp_token ] = auth.token.split(tokenAuth.tokenDelimiter)
-				const tokenData = tokenAuth.decodeToken(token)
-				const sessionData = tokenAuth.decryptToken(tokenData.token)
+				token = auth.token.split(tokenAuth.tokenDelimiter).token
+				tokenData = tokenAuth.decodeToken(token)
+				sessionData = tokenAuth.decryptToken(tokenData.token)
 
 				authData = Object.assign(
 					{},
 					authData,
 					{
-						token,
+						token: auth.token,
 						isLoggedIn: true,
 						userData: sessionData,
 						user: sessionData.email,
@@ -126,10 +126,9 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 			sessionData = auth
 			// remove oauth from userData because it's top level
 			if ('oauth' in sessionData) delete sessionData.oauth
-			token = tokenAuth.token(sessionData)
 			const tp_token = auth.tp_token
 			delete sessionData.tp_token
-			const token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
+			token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
 
 			authData = Object.assign(
 				{},

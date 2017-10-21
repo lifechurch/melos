@@ -5,7 +5,7 @@ import CheckMark from '../../../components/CheckMark'
 import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
-import SectionedHeading from '../../../components/SectionedHeading'
+import SectionedLayout from '../../../components/SectionedLayout'
 import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
@@ -71,7 +71,7 @@ function Participants({
 	return (
 		<div className='pwf-flow pwf-invite'>
 			<div className='large-8 small-11 centered'>
-				<SectionedHeading
+				<SectionedLayout
 					left={backLink}
 					right={
 						// handleDelete is only passed if auth is host
@@ -90,7 +90,7 @@ function Participants({
 						}
 				>
 					<h4><FormattedMessage id='participants' /></h4>
-				</SectionedHeading>
+				</SectionedLayout>
 			</div>
 			<div className='gray-background content'>
 				<div className='columns medium-5 small-12 small-centered white' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
