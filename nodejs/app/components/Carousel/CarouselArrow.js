@@ -29,6 +29,7 @@ function CarouselArrow(props) {
 	delete immProps.currentSlide
 	delete immProps.slideCount
 	delete immProps.backColor
+	delete immProps.thin
 
 	const points = thin
 		? 'M10 17.66l5.12-5.13c.1-.1.1-.26 0-.36L10 7.05c-.19-.19-.19-.5 0-.68 0-.01.01-.01.01-.02l.01-.01c.2-.18.51-.18.7.01L16 11.64c.39.39.39 1.02 0 1.41l-5.3 5.31c-.2.19-.51.19-.7 0-.2-.2-.2-.51 0-.7zm0 0'

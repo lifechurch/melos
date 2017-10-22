@@ -72,123 +72,193 @@ function oauthIsValid(response) {
 	} else return true
 }
 
+// const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
+// 	return new Promise((resolve, reject) => {
+//
+// 		let authData = {
+// 			token: null,
+// 			isLoggedIn: false,
+// 			isWorking: false,
+// 			userData: {},
+// 			user: null,
+// 			oauth: {},
+// 			password: null,
+// 			errors: {
+// 				api: null,
+// 				fields: {
+// 					user: null,
+// 					password: null
+// 				}
+// 			}
+// 		}
+//
+// 		let token
+// 		let tokenData
+// 		let sessionData
+// 		let hasAuth = false
+// 		const oauthFromRails = auth && typeof auth === 'object' && auth.oauth
+//
+// 		// We have a token
+// 		if (typeof auth === 'object' && typeof auth.token === 'string') {
+// 			try {
+// 				hasAuth = true
+// 				token = auth.token.split(tokenAuth.tokenDelimiter).token
+// 				tokenData = tokenAuth.decodeToken(token)
+// 				sessionData = tokenAuth.decryptToken(tokenData.token)
+// 				console.log('FEATURE AUTH', tokenData, sessionData, auth.token)
+// 				authData = Object.assign(
+// 					{},
+// 					authData,
+// 					{
+// 						token: auth.token,
+// 						isLoggedIn: true,
+// 						userData: sessionData,
+// 						user: sessionData.email,
+// 					}
+// 				)
+// 			} catch (err) {
+// 				reject({ error: 1, message: 'Invalid or Expired Token' })
+// 			}
+//
+// 		// No token, but we have enough info to create one
+// 		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
+// 			hasAuth = true
+// 			sessionData = auth
+// 			// remove oauth from userData because it's top level
+// 			if ('oauth' in sessionData) delete sessionData.oauth
+// 			const tp_token = auth.tp_token
+// 			delete sessionData.tp_token
+// 			token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
+// 			console.log('FEATURE AUTH', sessionData, token)
+// 			authData = Object.assign(
+// 				{},
+// 				authData,
+// 				{
+// 					token,
+// 					isLoggedIn: true,
+// 					userData: sessionData,
+// 					user: sessionData.email,
+// 				}
+// 			)
+// 		}
+// 		resolve(authData)
+//
+// 		// if (hasAuth) {
+// 		// 	// figure out if we need to get a new oauth token
+// 		// 	// we have oauth data from rails cookie
+// 		// 	if (oauthFromRails && 'access_token' in oauthFromRails) {
+// 		// 		// but it has expired
+// 		// 		if (isTimestampExpired(oauthFromRails.valid_until)) {
+// 		// 			console.log('EXPIRED: REFRESH OAUTH')
+// 		// 			refreshToken({ refresh_token: oauthFromRails.refresh_token }).then((oauth) => {
+// 		// 				if (oauthIsValid(oauth)) {
+// 		// 					resolve(buildAuth(authData, oauth))
+// 		// 				} else {
+// 		// 					resolve(authData)
+// 		// 					// reject(oauth)
+// 		// 				}
+// 		// 			})
+// 		// 		// hasn't expired yet, we can reuse the data from cookies after making
+// 		// 		// sure the cookie has no error in it
+// 		// 		} else {
+// 		// 			console.log('NOT EXPIRED: USE OAUTH FROM COOKIES')
+// 		// 			if (oauthIsValid(oauthFromRails)) {
+// 		// 				resolve(buildAuth(authData, oauthFromRails))
+// 		// 			} else {
+// 		// 				console.log('ERROR', oauthFromRails)
+// 		// 				resolve(authData)
+// 		// 				// reject(oauthFromRails)
+// 		// 			}
+// 		// 		}
+// 		// 	// we have no oauth data from rails so we need a new token from scratch
+// 		// 	} else {
+// 		// 		console.log('NO TOKEN: GET NEW OAUTH')
+// 		// 		getToken(massageSessionToOauth(sessionData)).then((oauth) => {
+// 		// 			if (oauthIsValid(oauth)) {
+// 		// 				resolve(buildAuth(authData, oauth))
+// 		// 			} else {
+// 		// 				console.log('ERROR', oauth)
+// 		// 				resolve(authData)
+// 		// 				// reject(oauth)
+// 		// 			}
+// 		// 		})
+// 		// 	}
+// 		// // no auth at all
+// 		// } else {
+// 		// 	console.log('NO AUTH')
+// 		// 	resolve(authData)
+// 		// }
+//
+// 	})
+// })
+
 const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 	return new Promise((resolve, reject) => {
-
-		let authData = {
-			token: null,
-			isLoggedIn: false,
-			isWorking: false,
-			userData: {},
-			user: null,
-			oauth: {},
-			password: null,
-			errors: {
-				api: null,
-				fields: {
-					user: null,
-					password: null
-				}
-			}
-		}
-
-		let token
-		let tokenData
-		let sessionData
-		let hasAuth = false
-		const oauthFromRails = auth && typeof auth === 'object' && auth.oauth
-
-		// We have a token
 		if (typeof auth === 'object' && typeof auth.token === 'string') {
+			// We have a token
 			try {
-				hasAuth = true
-				token = auth.token.split(tokenAuth.tokenDelimiter).token
-				tokenData = tokenAuth.decodeToken(token)
-				sessionData = tokenAuth.decryptToken(tokenData.token)
+				const [ token, tp_token ] = auth.token.split(tokenAuth.tokenDelimiter)
+				const tokenData = tokenAuth.decodeToken(token)
+				const sessionData = tokenAuth.decryptToken(tokenData.token)
 
-				authData = Object.assign(
-					{},
-					authData,
-					{
-						token: auth.token,
-						isLoggedIn: true,
-						userData: sessionData,
-						user: sessionData.email,
+				resolve({
+					token: auth.token,
+					isLoggedIn: true,
+					isWorking: false,
+					userData: sessionData,
+					user: sessionData.email,
+					password: null,
+					errors: {
+						api: null,
+						fields: {
+							user: null,
+							password: null
+						}
 					}
-				)
+				})
 			} catch (err) {
 				reject({ error: 1, message: 'Invalid or Expired Token' })
 			}
 
-		// No token, but we have enough info to create one
 		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
-			hasAuth = true
-			sessionData = auth
-			// remove oauth from userData because it's top level
-			if ('oauth' in sessionData) delete sessionData.oauth
+			// No token, but we have enough info to create one
+			const sessionData = auth
 			const tp_token = auth.tp_token
 			delete sessionData.tp_token
-			token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
-
-			authData = Object.assign(
-				{},
-				authData,
-				{
-					token,
-					isLoggedIn: true,
-					userData: sessionData,
-					user: sessionData.email,
-				}
-			)
-		}
-
-
-		if (hasAuth) {
-			// figure out if we need to get a new oauth token
-			// we have oauth data from rails cookie
-			if (oauthFromRails && 'access_token' in oauthFromRails) {
-				// but it has expired
-				if (isTimestampExpired(oauthFromRails.valid_until)) {
-					console.log('EXPIRED: REFRESH OAUTH')
-					refreshToken({ refresh_token: oauthFromRails.refresh_token }).then((oauth) => {
-						if (oauthIsValid(oauth)) {
-							resolve(buildAuth(authData, oauth))
-						} else {
-							resolve(authData)
-							// reject(oauth)
-						}
-					})
-				// hasn't expired yet, we can reuse the data from cookies after making
-				// sure the cookie has no error in it
-				} else {
-					console.log('NOT EXPIRED: USE OAUTH FROM COOKIES')
-					if (oauthIsValid(oauthFromRails)) {
-						resolve(buildAuth(authData, oauthFromRails))
-					} else {
-						console.log('ERROR', oauthFromRails)
-						resolve(authData)
-						// reject(oauthFromRails)
+			const token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
+			resolve({
+				token,
+				isLoggedIn: true,
+				isWorking: false,
+				userData: sessionData,
+				user: sessionData.email,
+				password: null,
+				errors: {
+					api: null,
+					fields: {
+						user: null,
+						password: null
 					}
 				}
-			// we have no oauth data from rails so we need a new token from scratch
-			} else {
-				console.log('NO TOKEN: GET NEW OAUTH')
-				getToken(massageSessionToOauth(sessionData)).then((oauth) => {
-					if (oauthIsValid(oauth)) {
-						resolve(buildAuth(authData, oauth))
-					} else {
-						console.log('ERROR', oauth)
-						resolve(authData)
-						// reject(oauth)
-					}
-				})
-			}
-		// no auth at all
+			})
+
 		} else {
-			console.log('NO AUTH')
-			resolve(authData)
+			resolve({
+				token: null,
+				isLoggedIn: false,
+				isWorking: false,
+				userData: {},
+				user: null,
+				password: null,
+				errors: {
+					api: null,
+					fields: {
+						user: null,
+						password: null
+					}
+				}
+			})
 		}
-
 	})
 })
 

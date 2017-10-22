@@ -7,11 +7,12 @@ import ActionCreators from '../actions/creators'
 import Carousel from '../../../components/Carousel/Carousel'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
 import CarouselSlideGradient from '../../../components/Carousel/CarouselSlideGradient'
-import Image from '../../../components/Carousel/Image'
+import LazyImage from '../../../components/LazyImage'
+import { PLAN_DEFAULT } from '../../../lib/imageUtil'
+
 
 class PlanCollection extends Component {
-
-	loadMore(currentPosition, previousPosition) {
+	handleLoadMore = () => {
 		const { dispatch, collection } = this.props
 		if (collection.next_page > 0) {
 			return new Promise((resolve, reject) => {
@@ -23,7 +24,6 @@ class PlanCollection extends Component {
 							ids.push(item.id)
 						}
 					})
-
 					if (ids.length > 0) {
 						resolve(dispatch(ActionCreators.collectionsItems({ ids, collectInception: true })))
 					} else {
@@ -52,47 +52,59 @@ class PlanCollection extends Component {
 		if (collection.items) {
 			collection.items.forEach((item) => {
 				let slide = null
-
 				if (item.type === 'collection' && item.items && item.items.length > 0) {
-					carousels.push(<div key={`collection-${item.id}`}><Carousel localizedLink={localizedLink} isRtl={isRtl} carouselContent={item} carouselType={item.display} imageConfig={imageConfig} /></div>)
+					carousels.push(
+						<div key={`collection-${item.id}`}>
+							<Carousel
+								localizedLink={localizedLink}
+								isRtl={isRtl}
+								carouselContent={item}
+								carouselType={item.display}
+								imageConfig={imageConfig}
+							/>
+						</div>
+					)
 				} else if (item.type === 'reading_plan') {
 					const slideLink = localizedLink(`/reading-plans/${item.id}`)
-					if (item.image_id) {
+					if (item.gradient) {
 						slide = (
-							<div className='radius-5' >
-								<CarouselSlideImage title={item.title}>
-									<Image width={720} height={405} thumbnail={false} imageId={item.image_id} type={item.type} config={imageConfig} />
-								</CarouselSlideImage>
+							<div className='radius-5' key={item.id} style={{ width: '100%' }}>
+								<Link to={slideLink}>
+									<CarouselSlideGradient gradient={item.gradient} id={item.id} title={item.title} />
+								</Link>
 							</div>
-							)
-					} else if (item.gradient) {
-						slide = (
-							<div className='radius-5' >
-								<CarouselSlideGradient gradient={item.gradient} id={item.id} title={item.title} />
-							</div>
-							)
+						)
 					} else {
+						const src = imageConfig
+								&& item.image_id
+								&& imageConfig.reading_plans.url
+									.replace('{image_id}', item.image_id)
+									.replace('{0}', 720)
+									.replace('{1}', 405)
 						slide = (
-							<div className='radius-5' >
-								<CarouselSlideImage title={item.title}>
-									<Image width={720} height={405} thumbnail={false} imageId='default' type={item.type} config={imageConfig} />
-								</CarouselSlideImage>
+							<div className='radius-5' key={item.id} style={{ width: '100%', height: '100%' }}>
+								<Link to={slideLink}>
+									<CarouselSlideImage title={item.title}>
+										<LazyImage
+											lazy={false}
+											src={src}
+											placeholder={<img alt='Plan Default' src={PLAN_DEFAULT} width={600} height={350} />}
+											width='100%'
+											height='100%'
+										/>
+									</CarouselSlideImage>
+								</Link>
 							</div>
-							)
+						)
 					}
 					items.push(
-							(
-								<li className="collection-item" key={`item-${item.id}`}>
-									<Link to={slideLink}>
-										{slide}
-									</Link>
-								</li>
-							)
-						)
+						<li className="collection-item" key={`item-${item.id}`}>
+							{ slide }
+						</li>
+					)
 				}
 			})
 		}
-
 
 		return (
 			<div className='row collections-view'>
@@ -101,14 +113,17 @@ class PlanCollection extends Component {
 					meta={[ { name: 'description', content: `${intl.formatMessage({ id: 'plans.title' })}: ${intl.formatMessage({ id: 'plans.browse plans' }, { category: collection.title })}` } ]}
 				/>
 				<div className='columns medium-12'>
-					<Link className='plans' to={localizedLink('/reading-plans')}>&larr; <FormattedMessage id="plans.plans" /></Link>
+					<Link className='plans' to={localizedLink('/reading-plans')}>
+						&larr;
+						<FormattedMessage id="plans.plans" />
+					</Link>
 					<div className='collection-title'>{ title }</div>
 					<div className='collection-items'>
 						{ carousels }
 						<div className='horizontal-center'>
-							<ul className="medium-block-grid-3 small-block-grid-2">
+							<ul className="medium-block-grid-3 small-block-grid-2" style={{ width: '100%' }}>
 								{ items }
-								<li><Waypoint onEnter={::this.loadMore} /></li>
+								<li><Waypoint onEnter={this.handleLoadMore} /></li>
 							</ul>
 						</div>
 					</div>
@@ -116,6 +131,15 @@ class PlanCollection extends Component {
 			</div>
 		)
 	}
+}
+
+PlanCollection.propTypes = {
+	collection: PropTypes.object.isRequired,
+	intl: PropTypes.object.isRequired,
+	imageConfig: PropTypes.object.isRequired,
+	localizedLink: PropTypes.func.isRequired,
+	isRtl: PropTypes.func.isRequired,
+	dispatch: PropTypes.func.isRequired
 }
 
 export default injectIntl(PlanCollection)
