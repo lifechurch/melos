@@ -1,11 +1,9 @@
 import React, { PropTypes, Component } from 'react'
 import Immutable from 'immutable'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import PLACEHOLDER_ANIMATIONS from './PLACEHOLDER_ANIMATIONS'
 
 
 class Placeholder extends Component {
-
 	shouldComponentUpdate() {
 		return false
 	}
@@ -70,15 +68,9 @@ class Placeholder extends Component {
 		}
 
 		return (
-			<ReactCSSTransitionGroup
-				transitionName='basic'
-				transitionAppear={true}
-				transitionAppearTimeout={300}
-				transitionEnterTimeout={300}
-				transitionLeaveTimeout={300}
-			>
+			<div>
 				{ placeholders }
-			</ReactCSSTransitionGroup>
+			</div>
 		)
 	}
 }

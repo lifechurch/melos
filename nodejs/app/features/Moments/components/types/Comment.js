@@ -151,7 +151,7 @@ class Comment extends Component {
 		return (
 			<div>
 				<Moment
-					className='comment-moment'
+					className='yv-comment-moment'
 					likedIds={likedIds}
 					commentIds={null}
 					header={
@@ -180,10 +180,11 @@ class Comment extends Component {
 							}
 							right={
 								!this.archived
+									&& this.isAuthedMoment
 									&& (
 										<OverflowMenu>
-											<Edit onClick={this.isAuthedMoment ? this.handleEdit : null} />
-											<Delete onClick={this.isAuthedMoment ? this.handleDelete : null} />
+											<Edit onClick={this.handleEdit} />
+											<Delete onClick={this.handleDelete} />
 										</OverflowMenu>
 									)
 							}

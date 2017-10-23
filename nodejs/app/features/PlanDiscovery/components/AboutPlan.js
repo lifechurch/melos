@@ -86,7 +86,6 @@ class AboutPlan extends Component {
 				)
 			}
 
-
 			milestones.forEach((milestone) => {
 				if (readingPlan.stats.total_completed > milestone && milestone > completedMilestone) {
 					completedMilestone = milestone
@@ -102,22 +101,23 @@ class AboutPlan extends Component {
 		const selectedImage = imageUtil(360, 640, false, 'about_plan', readingPlan, false)
 		const url = `https://www.bible.com/reading-plans/${readingPlan.id}-${readingPlan.slug}`
 		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id='plans.sample' /></Link>
-
+		const planTitle = readingPlan.name[languageTag] || readingPlan.name.default
+		const planInfo = readingPlan.about.text[languageTag] || readingPlan.about.text.default
 		return (
 			<div className='row collapse about-plan horizontal-center'>
 				<Helmet
-					title={`${readingPlan.name[languageTag] || readingPlan.name.default} - ${readingPlan.about.text[languageTag] || readingPlan.about.text.default}`}
+					title={`${planTitle} - ${planInfo}`}
 					meta={[
-						{ name: 'description', content: readingPlan.about.text[languageTag] || readingPlan.about.text.default },
+						{ name: 'description', content: planInfo },
 						{ name: 'og:image', content: `https:${selectedImage.url}` },
-						{ name: 'og:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
+						{ name: 'og:title', content: `${planTitle}` },
 						{ name: 'og:url', content: url },
-						{ name: 'og:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
+						{ name: 'og:description', content: `${planInfo}` },
 						{ name: 'twitter:image', content: `https:${selectedImage.url}` },
 						{ name: 'twitter:card', content: 'summary' },
 						{ name: 'twitter:url', content: url },
-						{ name: 'twitter:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
-						{ name: 'twitter:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
+						{ name: 'twitter:title', content: `${planTitle}` },
+						{ name: 'twitter:description', content: `${planInfo}` },
 						{ name: 'twitter:site', content: '@YouVersion' },
 						{ name: 'og:image:width', content: selectedImage.width },
 						{ name: 'og:image:height', content: selectedImage.height }
@@ -127,7 +127,7 @@ class AboutPlan extends Component {
 					<div className='reading_plan_index_header'>
 						<Link className='plans' to={localizedLink('/reading-plans')}>&larr;<FormattedMessage id='plans.plans' /></Link>
 						<div className='right'>
-							<ShareWidget />
+							<ShareWidget title={planTitle} text={planInfo} />
 						</div>
 					</div>
 					<article className='reading_plan_index'>
@@ -178,7 +178,7 @@ class AboutPlan extends Component {
 }
 
 AboutPlan.propTypes = {
-	readingPlan: PropTypes.object,
+	readingPlan: PropTypes.object.isRequired,
 	recommendedPlans: PropTypes.object,
 	imageConfig: PropTypes.object,
 	auth: PropTypes.object,

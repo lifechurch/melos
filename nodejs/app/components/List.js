@@ -3,7 +3,6 @@ import Waypoint from 'react-waypoint'
 
 
 class List extends Component {
-
 	handleLoadMore = () => {
 		const { loadMore } = this.props
 		if (loadMore) {

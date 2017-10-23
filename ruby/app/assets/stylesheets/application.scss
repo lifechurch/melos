@@ -124,3 +124,7 @@ a {
 		pointer-events: none;
 	}
 }
+
+a:hover, a:focus {
+  color: #6ab750 !important;
+}

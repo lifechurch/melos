@@ -146,7 +146,7 @@ class TalkItOver extends Component {
 							const moment = this.dayActivities.data[id]
 							if (moment && moment.id && moment.kind === 'comment') {
 								return (
-									<li key={moment.id} style={{ marginBottom: '20px' }}>
+									<li key={moment.id} style={{ marginBottom: '40px' }}>
 										<CommentMoment
 											id={moment.id}
 											tioDay={day}

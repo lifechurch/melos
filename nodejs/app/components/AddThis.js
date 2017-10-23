@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react'
 
 class AddThis extends Component {
 	componentDidMount() {
+		const { url, text, title } = this.props
 		if (typeof window !== 'undefined') {
 			// Initialize AddThis, if Necessary
 			const interval = setInterval(() => {
@@ -13,12 +14,15 @@ class AddThis extends Component {
 				) {
 					clearInterval(interval);
 					window.addthis.layers.refresh()
+					window.addthis.update('share', 'url', url)
+					window.addthis.update('share', 'title', `${title || text}`)
+					window.addthis.update('share', 'description', text)
 				}
 			}, 100);
 		}
 	}
 
-	shouldComponentUpdate(nextProps) {
+	componentWillReceiveProps(nextProps) {
 		const { title: nextTitle, text: nextText, url: nextUrl } = nextProps
 		const { title, text, url } = this.props
 
@@ -33,16 +37,11 @@ class AddThis extends Component {
 			window.addthis.update('share', 'url', nextUrl)
 			window.addthis.update('share', 'title', `${nextTitle || nextText}`)
 			window.addthis.update('share', 'description', nextText)
-
-			return true
 		}
-
-		return false
 	}
 
 	render() {
 		const { className } = this.props
-
 		return (
 			<div className={className}>
 				<div className='addthis_inline_share_toolbox_a0vl' />
@@ -53,13 +52,14 @@ class AddThis extends Component {
 
 AddThis.propTypes = {
 	title: PropTypes.string,
-	text: PropTypes.string.isRequired,
+	text: PropTypes.string,
 	url: PropTypes.string.isRequired,
 	className: PropTypes.string,
 }
 
 AddThis.defaultProps = {
-	title: '',
+	title: null,
+	text: null,
 	className: '',
 }
 

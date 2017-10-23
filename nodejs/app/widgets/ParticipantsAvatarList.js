@@ -36,12 +36,10 @@ class ParticipantsAvatarList extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		const { day, together } = this.props
+		const { day } = this.props
 
 		if (day && prevProps.day !== day) {
-			if (!(together && together.activities && Immutable.fromJS(together.activities).hasIn(day))) {
-				this.getDayCompletes()
-			}
+			this.getDayCompletes()
 		}
 	}
 
@@ -93,7 +91,7 @@ class ParticipantsAvatarList extends Component {
 					if (day && activities) {
 						const completions = activities[day] ? activities[day].data : null
 						if (hasUserCompletedActivity(completions, participant.id)) {
-							check = <CheckMark width={13} fill='black' />
+							check = <CheckMark width={13} height={13} fill='black' />
 						}
 					}
 					avatarList.push(

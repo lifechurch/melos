@@ -9,20 +9,25 @@ function PlanContentListItem({
 	title,
 	link,
 	isComplete,
-	iconStyle,
 	handleIconClick
 }) {
 
 	return (
-		<li className='li-right'>
+		<li className='li-right vertical-center'>
 			{
 				handleIconClick
 					&& (
-						<a tabIndex={0} onClick={handleIconClick}>
+						<a tabIndex={0} onClick={handleIconClick} className='vertical-center'>
 							{
 								isComplete ?
-									<CheckMark fill='#444444' style={iconStyle} /> :
-									<Circle style={iconStyle} />
+									<CheckMark fill='#444444' style={{ padding: '0' }} width={18} height={18} /> :
+									<Circle
+										style={{
+											padding: '1px 2px 1px 0',
+											height: 17,
+											width: 18,
+										}}
+									/>
 							}
 						</a>
 					)
@@ -37,17 +42,10 @@ PlanContentListItem.propTypes = {
 	isComplete: PropTypes.bool.isRequired,
 	link: PropTypes.string.isRequired,
 	handleIconClick: PropTypes.func.isRequired,
-	iconStyle: PropTypes.object,
 }
 
 PlanContentListItem.defaultProps = {
-	iconStyle: {
-		padding: '1px 2px 3px 0',
-		verticalAlign: 'middle',
-		height: 18,
-		width: 23,
-		cursor: 'pointer'
-	}
+
 }
 
 export default PlanContentListItem

@@ -137,7 +137,6 @@ function Plan({
 			)
 	}
 
-
 	return (
 		<div className='subscription-show'>
 			<div className='plan-overview'>
@@ -147,7 +146,9 @@ function Plan({
 							<FormattedHTMLMessage id='plans.plans back' />
 						</Link>
 						<div className='margin-left-auto vertical-center'>
-							<ShareWidget />
+							<div style={{ marginRight: '10px' }}>
+								<ShareWidget title={planTitle} url={aboutLink} />
+							</div>
 							<PlanMenu
 								aboutLink={aboutLink}
 								subscriptionLink={subscriptionLink}

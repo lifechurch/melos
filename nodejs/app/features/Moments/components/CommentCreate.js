@@ -9,7 +9,7 @@ function CommentCreate(props) {
 
 	return (
 		<Card
-			customClass='yv-moment-card'
+			customClass='yv-moment-card flex'
 			extension={
 				<a
 					tabIndex={0}

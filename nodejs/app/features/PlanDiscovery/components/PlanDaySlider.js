@@ -7,7 +7,6 @@ import CheckMark from '../../../components/CheckMark'
 
 
 class PlanDaySlider extends Component {
-
 	componentDidMount() {
 		const { day } = this.props
 		if (typeof day !== 'undefined') {
@@ -15,6 +14,14 @@ class PlanDaySlider extends Component {
 				this.scrollSlider(day - 1)
 			}, 150)
 		}
+	}
+
+	shouldComponentUpdate(nextProps) {
+		const { day, progressDays } = this.props
+		if (day !== nextProps.day || progressDays !== nextProps.progressDays) {
+			return true
+		}
+		return false
 	}
 
 	scrollSlider = (slideNum) => {
@@ -73,17 +80,17 @@ class PlanDaySlider extends Component {
 		moment.locale(language_tag)
 		const slides = []
 		if (totalDays) {
+			const today = moment().format('MMM D')
 			for (let i = 0; i < totalDays; i++) {
 				let checkmark = null
 				const isActiveDay = ((i + 1) === parseInt(day, 10))
 				const active = isActiveDay ? 'active' : ''
 				const progressDay = progressDays ? progressDays[i + 1] : null
-				const date = start_dt ? moment(start_dt).add(i, 'day').format('l') : null
-
+				const date = start_dt ? moment(start_dt).add(i, 'day').format('MMM D') : null
+				const isToday = date && date === today
 				if ((progressDay && progressDay.complete) || isCompleted) {
-					checkmark = <CheckMark fill='black' />
+					checkmark = <CheckMark fill='black' width={18} height={18} />
 				}
-
 				const to = `${dayBaseLink}/day/${i + 1}`
 
 				slides.push(
@@ -93,15 +100,34 @@ class PlanDaySlider extends Component {
 								{ checkmark }
 							</div>
 							<div className='day-bottom'>
-								<h1>{ i + 1 }</h1>
+								<h1>
+									{ i + 1 }
+								</h1>
 								<h4>
 									{
-										showDate && date ?
-										date :
-										<FormattedMessage
-											id='plans.day number'
-											values={{ day: i + 1 }}
-										/>
+										showDate
+											&& date
+											? (
+												<div
+													style={{
+														background: isToday ? '#6ab750' : 'white',
+														color: isToday ? 'white' : '#616161',
+														border: '1px solid white',
+														borderRadius: '25px',
+														display: 'inline-flex',
+														margin: 0,
+														padding: '0 5px',
+													}}
+												>
+													{ date }
+												</div>
+											)
+											: (
+												<FormattedMessage
+													id='plans.day number'
+													values={{ day: i + 1 }}
+												/>
+											)
 									}
 								</h4>
 							</div>

@@ -28,7 +28,7 @@ function PlanMenu({ subscriptionLink, aboutLink, participantsLink, onCatchUp }) 
 							</Link>
 						)
 				}
-				<Link to={`${aboutLink}`}>
+				<Link to={aboutLink}>
 					<li>
 						<FormattedMessage id='features.EventEdit.features.preview.components.PreviewTypePlan.info' />
 					</li>

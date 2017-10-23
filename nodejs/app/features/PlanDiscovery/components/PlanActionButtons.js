@@ -38,7 +38,7 @@ function PlanActionButtons({
 								</div>
 							)
 							: (
-								<div>
+								<div className='horizontal-center vertical-center'>
 									<SaveForLaterAction
 										id={id}
 										isSaved={isSaved}

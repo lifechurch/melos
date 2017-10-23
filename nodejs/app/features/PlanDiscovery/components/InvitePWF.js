@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react'
-import { Link } from 'react-router'
 import { push } from 'react-router-redux'
 import CustomScroll from 'react-custom-scroll'
 import Immutable from 'immutable'
@@ -130,21 +129,20 @@ class InvitePWF extends Component {
 			searchResults = (
 				<ClickTarget handleOutsideClick={this.hideSearchResults}>
 					<div className='search-results'>
-						<CustomScroll allowOutsideScroll={false}>
-							<div
-								className='friend-list'
-								style={{
-									minHeight: '350px',
-									maxHeight: '350px'
-								}}
-							>
-								{
-									search.map((user) => {
-										return this.renderUser(user)
-									})
-								}
-							</div>
-						</CustomScroll>
+						<div
+							className='friend-list'
+							style={{
+								minHeight: '350px',
+								maxHeight: '350px',
+								overflowY: 'auto'
+							}}
+						>
+							{
+								search.map((user) => {
+									return this.renderUser(user)
+								})
+							}
+						</div>
 					</div>
 				</ClickTarget>
 			)
@@ -192,35 +190,34 @@ class InvitePWF extends Component {
 								<div style={{ position: 'relative' }}>
 									{ showSearchResults && searchResults }
 								</div>
-								<CustomScroll>
-									<List
-										customClass='friend-list'
-										loadMore={getFriends.bind(this, friends && friends.next_page)}
-										style={{
-											minHeight: '350px',
-											maxHeight: '350px'
-										}}
-									>
-										{
-											!friendsList
-												? (
-													<Placeholder
-														key='friends-placeholder'
-														height='38px'
-														width='38px'
-														borderRadius='38'
-														duplicate={15}
-														lineSpacing='16px'
-														textHeight='10px'
-														widthRange={[30, 60]}
-													/>
-												)
-												: mergedUsers.map((user) => {
-													return this.renderUser(user)
-												})
+								<List
+									customClass='friend-list'
+									loadMore={getFriends.bind(this, friends && friends.next_page)}
+									style={{
+										minHeight: '350px',
+										maxHeight: '350px',
+										overflowY: 'auto'
+									}}
+								>
+									{
+										!friendsList
+											? (
+												<Placeholder
+													key='friends-placeholder'
+													height='38px'
+													width='38px'
+													borderRadius='38'
+													duplicate={15}
+													lineSpacing='16px'
+													textHeight='10px'
+													widthRange={[30, 60]}
+												/>
+											)
+											: mergedUsers.map((user) => {
+												return this.renderUser(user)
+											})
 										}
-									</List>
-								</CustomScroll>
+								</List>
 							</div>
 						</div>
 					</div>

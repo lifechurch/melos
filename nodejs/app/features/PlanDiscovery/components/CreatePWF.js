@@ -69,9 +69,9 @@ class CreatePWF extends Component {
 								className='plans vertical-center'
 								to={backPath}
 							>
-									&larr;
-								</Link>
-							}
+								&larr;
+							</Link>
+						}
 					>
 						{
 							isEditingDate

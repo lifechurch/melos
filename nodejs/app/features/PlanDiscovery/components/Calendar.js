@@ -14,13 +14,13 @@ class Calendar extends Component {
 		}
 	}
 
-	incrementMonth = () => {
+	handleIncrementMonth = () => {
 		this.setState((prevState) => {
 			prevState.activeMoment.add('1', 'month')
 		})
 	}
 
-	decrementMonth = () => {
+	handleDecrementMonth = () => {
 		this.setState((prevState) => {
 			prevState.activeMoment.subtract('1', 'month')
 		})
@@ -40,20 +40,20 @@ class Calendar extends Component {
 				<div className='nav'>
 					<div>
 						<CarouselArrow
-							onClick={this.decrementMonth}
+							onClick={this.handleDecrementMonth}
 							dir='left'
 							containerClass='arrow pointer'
-							fill='gray'
-							width={15}
-							height={15}
+							fill='black'
+							width={20}
+							height={20}
 						/>
 						<CarouselArrow
-							onClick={this.incrementMonth}
+							onClick={this.handleIncrementMonth}
 							dir='right'
 							containerClass='arrow pointer'
-							fill='gray'
-							width={15}
-							height={15}
+							fill='black'
+							width={20}
+							height={20}
 						/>
 					</div>
 				</div>
