@@ -88,6 +88,11 @@ class PagesController < ApplicationController
 				"cache_for" => YV::Caching::a_very_long_time
 		}
 
+		day = params[:day].to_i
+    if (day && (day > 366 || day < 1) )
+      return render_404
+    end
+
 		fromNode = YV::Nodestack::Fetcher.get('VOTD', p, cookies, current_auth, current_user, request)
 
 		if (fromNode['error'].present?)

@@ -31,6 +31,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				})).then((data) => {
 					const day = parseInt((params.day || moment().dayOfYear()), 10) - 1
 					const usfm = data && data.votd && data.votd[day] && data.votd[day].usfm
+
 					const promises = [
 						dispatch(momentsAction({
 							method: 'configuration',

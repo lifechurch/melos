@@ -88,7 +88,7 @@ class PlansRelatedToReference extends Component {
 					</div>
 					{ subTitle }
 				</h2>
-				<Grid lgCols={3} smCols={2}>
+				<Grid lgCols={3} medCols={3} smCols={2}>
 					{
 						plansList.map((plan) => {
 							const src = planSrcTemplate

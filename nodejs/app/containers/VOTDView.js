@@ -96,7 +96,7 @@ class VOTDView extends Component {
 						{ name: 'twitter:site', content: '@YouVersion' },
 					].concat(imgMeta)}
 				/>
-				<div className='yv-large-5 yv-small-11 votd-view'>
+				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
 					<VotdText dayOfYear={day} />
 					<VotdImage dayOfYear={day} />
 					<PlansRelatedToReference usfm={usfm} />
