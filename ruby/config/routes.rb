@@ -27,7 +27,7 @@ YouversionWeb::Application.routes.draw do
   get "/250million",    to: redirect("http://installs.youversion.com/250million/index.html")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/blog-events",      to: redirect("http://blog.youversion.com/2016/03/introducing-events-the-newest-feature-in-the-bible-app")
-  get "volunteer-form", to: redirect("https://lifechurch.formstack.com/forms/volunteer_interest_form")
+  get "volunteer-form", to: redirect("https://www.youversion.com/volunteer")
 
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
