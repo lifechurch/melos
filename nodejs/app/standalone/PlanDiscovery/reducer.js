@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+// import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import bibleReader from '../../features/Bible/reducers'
 import passage from '../../features/Passage/reducers'
 import plansDiscovery from '../../features/PlanDiscovery/reducers'
@@ -27,10 +27,10 @@ const rootReducer = combineReducers({
 	altVersions: emptyReducer,
 	hosts: emptyReducer,
 	passage,
-	locale: emptyReducer,	
+	locale: emptyReducer,
 	// for all the reducers being autopopulated by the api actions
 	api,
-	plans: combineReducers(plansAPI.reducers)
+	// plans: combineReducers(plansAPI.reducers)
 })
 
 export default rootReducer
