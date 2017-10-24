@@ -119,7 +119,7 @@
 	"plans.see all": "Összes megtekintése",
 	"plans.discover": "Felfedezés",
 	"plans.my_plans": "Terveim",
-	"plans.day_completed": "<b>{username}</b> befejezte a(z) <b>{plan_title}</b> című olvasási terv <b>{day}. napját.</b>",
+	"plans.day_completed": "<b>{username}</b> befejezte a(z) <b>{plan_title}</b> c��mű olvasási terv <b>{day}. napját.</b>",
 	"plans.which reading": "{current}/{total}",
 	"plans.status.on track": "Terv szerint!",
 	"plans.status.days ahead.one": "{count} napppal előrébb!",

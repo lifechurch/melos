@@ -127,7 +127,7 @@ function inPathNotFirst(segment, path) {
 }
 
 function init() {
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside || isVOTD) {
         // angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
@@ -144,12 +144,13 @@ function init() {
 var isEvents            = isFirst("events");
 var isResetPassword     = isFirst("resetPassword");
 var isReadingPlanSample = isFirst("reading-plans") && inPathNotFirst("day");
-var isReader 			= isFirst("bible");
+var isReader 						= isFirst("bible");
 var isHomeFeed 			= isFirst("moments") || isFirst("notes");
 var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
 var isSignUp            = isFirst("sign-up");
 var isSignIn            = isFirst("sign-in");
+var isVOTD            	= isFirst("verse-of-the-day");
 var isPassage           = isFirst("passage");
 
 var isLookInside        = isFirst("lookinside");

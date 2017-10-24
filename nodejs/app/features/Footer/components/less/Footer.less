@@ -1,12 +1,4 @@
-#react-app-Footer {
-	.yv-close-x {
-		position: absolute;
-		right: 0;
-		top: 0;
-		padding: 15px !important;
-		z-index: 100;
-	}
-
+.footer-container {
 	.green-links {
 		a {
 			color: @green;
@@ -45,79 +37,78 @@
 			}
 		}
 	}
-}
 
-.yv-footer {
-	height: 75px;
-	margin-top: 30px;
+	.yv-footer {
+		height: 66px;
 
-	.yv-lang-toggle, .yv-link-toggle {
-	  color: #777;
-	  font-size: 11px;
-		border: solid 1px #CCC;
-		padding: 3px 10px;
-		border-radius: 5px;
-		display: inline-block;
+		.yv-lang-toggle, .yv-link-toggle {
+			color: #777;
+			font-size: 11px;
+			border: solid 1px #CCC;
+			padding: 3px 10px;
+			border-radius: 5px;
+			display: inline-block;
 
-		.dropdown-arrow {
-			margin-left: 5px;
-			padding-top: 4px;
+			.dropdown-arrow {
+				margin-left: 5px;
+				padding-top: 4px;
+			}
 		}
-	}
 
-	.yv-left {
-		.yv-lang-toggle {
-			margin-right: 7px;
+		.yv-left {
+			.yv-lang-toggle {
+				margin-right: 7px;
+			}
 		}
-	}
 
-	.yv-sticky-header-content {
-		padding: 12.5px 16px;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		border-top: 1px solid #DDD;
-		background-color: white;
-		z-index: 51 !important;
-
-		.yv-social-card {
+		.yv-sticky-header-content {
+			padding: 12.5px 16px;
 			display: flex;
 			flex-direction: row;
-			justify-content: space-around;
-			width: 450px;
+			justify-content: space-between;
+			align-items: center;
+			border-top: 1px solid #DDD;
+			background-color: white;
+			z-index: 51 !important;
 
-			@media @medium-only, @small-only {
-				width: 100%;
-				max-width:500px;
-				flex-wrap: wrap;
-				justify-content: space-evenly;
-			}
-
-			a {
-				font-size: 14px;
-				color: #BBB;
+			.yv-social-card {
 				display: flex;
-				flex-direction: column;
-				justify-content: flex-end;
-				align-items: center;
+				flex-direction: row;
+				justify-content: space-around;
+				width: 450px;
 
-				svg {
-					margin-bottom: 10px;
+				@media @medium-only, @small-only {
+					width: 100%;
+					max-width:500px;
+					flex-wrap: wrap;
+					justify-content: space-evenly;
+				}
 
-					@media @medium-only, @small-only {
-						margin-top: 10px;
+				a {
+					font-size: 14px;
+					color: #BBB;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
+					align-items: center;
+
+					svg {
+						margin-bottom: 10px;
+
+						@media @medium-only, @small-only {
+							margin-top: 10px;
+						}
 					}
 				}
 			}
-		}
 
-		.bible-icon {
-			height: 40px;
-			width: 40px;
+			.bible-icon {
+				height: 40px;
+				width: 40px;
 
-			&.first-icon {
-				margin: 0 7px;
+				&.first-icon {
+					margin: 0 7px;
+				}
 			}
 		}
 	}

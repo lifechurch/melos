@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl'
 import friendshipsAction from '@youversion/api-redux/lib/endpoints/friendships/action'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
-import SectionedHeading from '../../../components/SectionedHeading'
+import SectionedLayout from '../../../components/SectionedLayout'
 import IconButtonGroup from '../../../components/IconButtonGroup'
 import IconButton from '../../../components/IconButton'
 import Button from '../../../components/Button'
@@ -292,14 +292,14 @@ class HeaderContent extends Component {
 
 		return (
 			<StickyHeader className="yv-header">
-				<SectionedHeading
+				<SectionedLayout
 					left={left}
 					right={right}
 				>
 					<div>
 						{screenSize > ScreenSize.MEDIUM && search}
 					</div>
-				</SectionedHeading>
+				</SectionedLayout>
 			</StickyHeader>
 		)
 	}

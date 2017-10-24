@@ -254,7 +254,7 @@
 	"plans.report on successful": "Izdevās! Iknedēļas pārskati tiks nosūtīti.",
 	"plans.report off successful": "Iknedēļas pārskati vairs netiks sūtīti.",
 	"plans.catch up successful": "Izdevās. Tu esi aizrāvies ar savu lasīšanu.",
-	"plans.restart successful": "Jūsu plāns ir s��kts no sākuma.",
+	"plans.restart successful": "Jūsu plāns ir sākts no sākuma.",
 	"plans.subscribe successful": "Lieliski! Tu esi pierakstījies šim plānam.",
 	"plans.day number": "{day} diena",
 	"plans.which day in plan": "{day} diena no {total}",

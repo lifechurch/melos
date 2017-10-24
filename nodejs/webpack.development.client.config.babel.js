@@ -43,7 +43,8 @@ const clientConfig = {
 		Footer: './app/standalone/Footer/main.js',
 		Header: './app/standalone/Header/main.js',
 		Unsubscribe: './app/standalone/Unsubscribe/main.js',
-		Notifications: './app/standalone/Notifications/main.js'
+		Notifications: './app/standalone/Notifications/main.js',
+		VOTD: './app/standalone/VOTD/main.js'
 	},
 
 	output: {

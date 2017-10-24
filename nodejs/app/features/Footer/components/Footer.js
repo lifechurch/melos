@@ -6,12 +6,13 @@ import { connect } from 'react-redux'
 import streaksAction from '@youversion/api-redux/lib/endpoints/streaks/action'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
-import DropdownTransition from '../../../components/DropdownTransition'
 import XMark from '../../../components/XMark'
 import FooterContent from './FooterContent'
 import LangSelector from './LangSelector'
 import LinkCard from './LinkCard'
 import localOnceDaily from '../../../lib/localOnceDaily'
+import FullscreenDrawer from '../../../components/FullscreenDrawer'
+
 
 class Footer extends Component {
 	constructor(props) {
@@ -99,7 +100,7 @@ class Footer extends Component {
 		} = bibleConfiguration
 
 		return (
-			<ResponsiveContainer>
+			<ResponsiveContainer className='footer-container'>
 				<FooterContent
 					{...this.props}
 					onLangClose={this.handleLangClose}
@@ -111,32 +112,22 @@ class Footer extends Component {
 					versions={versions}
 					languages={languages}
 				/>
-				<div className="yv-fullscreen-modal-container">
-					<DropdownTransition
-						show={langSelectorOpen}
-						hideDir="down"
-						transition={true}
-						onOutsideClick={this.handleLangClose}
-						exemptClass="yv-lang-toggle"
-						classes="yv-fullscreen-modal-content"
-					>
-						<a tabIndex={0} className="yv-close-x" onClick={this.handleLangClose}><XMark width={15} height={15} fill="#444444" /></a>
-						<LangSelector {...this.props} />
-					</DropdownTransition>
-				</div>
-				<div className="yv-fullscreen-modal-container">
-					<DropdownTransition
-						show={linksOpen}
-						hideDir="down"
-						transition={true}
-						onOutsideClick={this.handleLinksClose}
-						exemptClass="yv-link-toggle"
-						classes="yv-fullscreen-modal-content"
-					>
-						<a tabIndex={0} className="yv-close-x" onClick={this.handleLinksClose}><XMark width={15} height={15} fill="#444444" /></a>
-						<LinkCard serverLanguageTag={serverLanguageTag} versions={versions} languages={languages} />
-					</DropdownTransition>
-				</div>
+				<FullscreenDrawer
+					isOpen={langSelectorOpen}
+					onClose={this.handleLangClose}
+				>
+					<LangSelector {...this.props} />
+				</FullscreenDrawer>
+				<FullscreenDrawer
+					isOpen={linksOpen}
+					onClose={this.handleLinksClose}
+				>
+					<LinkCard
+						serverLanguageTag={serverLanguageTag}
+						versions={versions}
+						languages={languages}
+					/>
+				</FullscreenDrawer>
 			</ResponsiveContainer>
 		)
 	}

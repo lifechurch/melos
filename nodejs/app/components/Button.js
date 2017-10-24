@@ -3,8 +3,25 @@ import { Link } from 'react-router'
 
 function Button({ className, to, useClientRouting, children, width }) {
 	return useClientRouting
-		? <Link style={ width && { width } } className={`yv-button ${className}`} to={to}>{children}</Link>
-		: <a target="_self" style={ width && { width } } className={`yv-button ${className}`} href={to}>{children}</a>
+		? (
+			<Link
+				style={ width && { width } }
+				className={`yv-button ${className}`}
+				to={to}
+			>
+				{ children }
+			</Link>
+		)
+		: (
+			<a
+				target="_self"
+				style={ width && { width } }
+				className={`yv-button ${className}`}
+				href={to}
+			>
+				{ children }
+			</a>
+		)
 }
 
 Button.propTypes = {

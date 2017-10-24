@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 function XMark({ width, height, fill, className }) {
 	return (
-		<div className={`xmark-container ${className}`}>
+		<div className={`xmark-container vertical-center ${className}`}>
 			<svg
 				className="xmark"
 				viewBox="67 8 8 8"
@@ -33,7 +33,7 @@ XMark.defaultProps = {
 	width: 8,
 	height: 8,
 	fill: '#979797',
-	className: null
+	className: '',
 }
 
 export default XMark

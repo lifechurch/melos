@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 
-function SectionedHeading({ className, style, left, right, children }) {
+function SectionedLayout({ className, style, left, right, children }) {
 	return (
-		<div className={`yv-sectioned-heading ${className}`} style={style}>
+		<div className={`yv-sectioned-layout ${className}`} style={style}>
 			<div className="yv-left">
 				{left}
 			</div>
@@ -16,7 +16,7 @@ function SectionedHeading({ className, style, left, right, children }) {
 	)
 }
 
-SectionedHeading.propTypes = {
+SectionedLayout.propTypes = {
 	className: PropTypes.string,
 	style: PropTypes.object,
 	left: PropTypes.node,
@@ -24,7 +24,7 @@ SectionedHeading.propTypes = {
 	children: PropTypes.node
 }
 
-SectionedHeading.defaultProps = {
+SectionedLayout.defaultProps = {
 	className: '',
 	style: null,
 	left: null,
@@ -32,4 +32,4 @@ SectionedHeading.defaultProps = {
 	children: null
 }
 
-export default SectionedHeading
+export default SectionedLayout

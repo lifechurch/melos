@@ -13,6 +13,7 @@ import { IntlProvider } from 'react-intl'
 import moment from 'moment'
 import Raven from 'raven'
 import { getLocale } from './app/lib/langUtils'
+
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
 // const availableLocales = require('./locales/config/availableLocales.json');
@@ -227,7 +228,8 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 		moment.locale(Locale.momentLocale)
 		try {
 			const history = createMemoryHistory()
-			const store = getStore(feature, startingState, history, null)
+			const initialState = Object.assign({}, startingState, { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
+			const store = getStore(feature, initialState, history, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('loadData', (action) => {
 				const finish = nr.createTracer('finish', () => {
 					const RootComponent = getRootComponent(feature)
@@ -249,8 +251,6 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 
-						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
-
 						let head = Helmet.rewind()
 
 						head = {
@@ -266,11 +266,11 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						if (params.referrer) {
 							referrer = params.referrer
 						}
-
+						const storeState = store.getState()
 						res.setHeader('Cache-Control', 'public')
 						res.render('standalone', {
 							appString: html,
-							initialState,
+							initialState: storeState,
 							environment: process.env.NODE_ENV,
 							getAssetPath,
 							assetPrefix,
@@ -285,7 +285,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 							res.send({
 								html,
 								head,
-								token: initialState.auth.token,
+								token: storeState.auth.token,
 								js: [
 									{ name: 'polyfill', src: 'https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Number.isNaN,Promise' },
 									{ name: 'raven', src: 'https://cdn.ravenjs.com/3.14.0/raven.min.js', crossOrigin: true },
