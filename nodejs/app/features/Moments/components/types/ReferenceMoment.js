@@ -181,6 +181,7 @@ class ReferenceMoment extends Component {
 									&& this.refStrings.title
 									&& (
 										<a
+											title='Share'
 											tabIndex={0}
 											className='vertical-center'
 											onClick={this.handleShare}
