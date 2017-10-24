@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
+import moment from 'moment'
 import Helmet from 'react-helmet'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
@@ -30,7 +31,7 @@ class VOTDView extends Component {
 
 	render() {
 		const { location: { query }, moments, bible, intl, hosts, serverLanguageTag } = this.props
-		const day = query && query.day
+		const day = (query && query.day) || moment().dayOfYear()
 		const votd = moments
 			&& moments.pullVotd(day)
 		const usfm = votd && votd.usfm
