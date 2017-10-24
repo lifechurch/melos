@@ -97,19 +97,6 @@ feature "Users", js: true do
 		expect { page.find(sel)}.to raise_error
 	end
 
-	scenario "connecting/disconnecting accounts" do
-		pending "todo"
-	end
-
-	scenario "removing coneected devices" do
-		Device.new({vendor: "Apple", model: "iPhone 6", os: "iOS 7", device_id: "1232313323314", auth: @user.auth}).save.should
-		visit devices_path
-		page.find("ul.resource_list li h4").text.should eq "Apple Iphone 6" # argh, come on guys
-		page.find("ul.resource_list li div.confirm a").click
-		page.find("ul.resource_list li div.danger a").click
-		page.should_not have_content "Apple Iphone 6"
-	end
-
 	scenario "deleting account" do
 		visit delete_account_path
 		fill_in "password", with: @user.auth.password

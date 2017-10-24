@@ -32,10 +32,6 @@ class RedirectsController < ApplicationController
     redirect_to(edit_user_url(id: current_user.username))
   end
 
-  def settings_connections
-   redirect_to(connections_user_url(current_user.username))
-  end
-
   def profile
     redirect_to(user_url(current_user.username))
   end
@@ -70,10 +66,6 @@ class RedirectsController < ApplicationController
 
   def settings_notifications
     redirect_to(edit_notifications_url(token: params[:token]))
-  end
-
-  def settings_devices
-    redirect_to(user_devices_url(current_user.username))
   end
 
   def settings_vod_subscriptions
