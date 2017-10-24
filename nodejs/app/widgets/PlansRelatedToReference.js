@@ -110,10 +110,15 @@ class PlansRelatedToReference extends Component {
 								>
 									<LazyImage
 										placeholder={
-											<img alt='Reading Plan Default' src={PLAN_DEFAULT} />
+											<img
+												alt='Reading Plan Default'
+												src={PLAN_DEFAULT}
+												width='100%'
+												height='90px'
+											/>
 										}
 										src={src}
-										width={165}
+										width='100%'
 										height={90}
 										customClass='radius-5'
 									/>
