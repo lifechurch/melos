@@ -54,7 +54,7 @@ class PagesController < ApplicationController
     # Get VOD for Locale
     @showVerseImage = I18n.locale == :en
 
-    day = params[:day].to_i
+    day = params[:day] && params[:day].to_i
 
     if (!day || (day > 366 || day < 1) )
       @vodImage = VOD.image_for_day(Date.today.yday(), 640)
@@ -88,6 +88,11 @@ class PagesController < ApplicationController
 				"cache_for" => YV::Caching::a_very_long_time
 		}
 
+		day = params[:day] && params[:day].to_i
+    if (day && (day > 366 || day < 1) )
+      return render_404
+    end
+
 		fromNode = YV::Nodestack::Fetcher.get('VOTD', p, cookies, current_auth, current_user, request)
 
 		if (fromNode['error'].present?)
@@ -97,7 +102,7 @@ class PagesController < ApplicationController
 		@title_tag = fromNode['head']['title']
 		@node_meta_tags = fromNode['head']['meta']
 
-		render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+		render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }, layout: 'node_only'
 
     # @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
 		#

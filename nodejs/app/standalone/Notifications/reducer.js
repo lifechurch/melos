@@ -23,7 +23,6 @@ const rootReducer = combineReducers({
 	hosts: emptyReducer,
 	passage: emptyReducer,
 	locale: emptyReducer,
-	hello: (state) => { return 'hello' },
 	localization: combineReducers(localization.reducers),
 	api: combineReducers({
 		notifications,

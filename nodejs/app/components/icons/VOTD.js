@@ -1,10 +1,25 @@
 import React, { PropTypes } from 'react'
+import getProportionalSize from '../../lib/imageProportions'
 
 function VOTDIcon(props) {
 	const { width, height, fill } = props
-
+	const {
+		height: finalHeight,
+		width: finalWidth
+	} = getProportionalSize({
+		defaultHeight: VOTDIcon.defaultProps.height,
+		defaultWidth: VOTDIcon.defaultProps.width,
+		newHeight: height,
+		newWidth: width
+	})
 	return (
-		<svg width={typeof width === 'string' ? width : `${width}px`} height={typeof height === 'string' ? height : `${height}px`} viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			width={typeof finalWidth === 'string' ? finalWidth : `${finalWidth}px`}
+			height={typeof finalHeight === 'string' ? finalHeight : `${finalHeight}px`}
+			viewBox="0 0 24 24"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+		>
 			<path
 				fillRule="evenodd"
 				stroke="none"

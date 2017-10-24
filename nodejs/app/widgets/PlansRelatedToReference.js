@@ -88,7 +88,7 @@ class PlansRelatedToReference extends Component {
 					</div>
 					{ subTitle }
 				</h2>
-				<Grid lgCols={3} smCols={2}>
+				<Grid lgCols={3} medCols={3} smCols={2}>
 					{
 						plansList.map((plan) => {
 							const src = planSrcTemplate
@@ -110,7 +110,12 @@ class PlansRelatedToReference extends Component {
 								>
 									<LazyImage
 										placeholder={
-											<img alt='Reading Plan Default' src={PLAN_DEFAULT} />
+											<img
+												alt='Reading Plan Default'
+												src={PLAN_DEFAULT}
+												width={165}
+												height='90px'
+											/>
 										}
 										src={src}
 										width={165}

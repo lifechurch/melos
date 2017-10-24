@@ -29,8 +29,9 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						language_tag: serverLanguageTag,
 					}
 				})).then((data) => {
-					const day = parseInt((params.day || moment().dayOfYear()), 10) - 1
+					const day = parseInt(((params && params.day) || moment().dayOfYear()), 10) - 1
 					const usfm = data && data.votd && data.votd[day] && data.votd[day].usfm
+
 					const promises = [
 						dispatch(momentsAction({
 							method: 'configuration',
@@ -41,6 +42,12 @@ export default function loadData(params, startingState, sessionData, store, Loca
 								id: version_id,
 								reference: chapterifyUsfm(usfm),
 							}
+						})),
+						dispatch(bibleAction({
+							method: 'configuration',
+							params: {},
+							extras: {},
+							auth: false
 						})),
 						new Promise((resolve2) => {
 							dispatch(bibleAction({

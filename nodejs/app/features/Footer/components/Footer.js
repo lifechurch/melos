@@ -100,7 +100,7 @@ class Footer extends Component {
 		} = bibleConfiguration
 
 		return (
-			<ResponsiveContainer>
+			<ResponsiveContainer className='footer-container'>
 				<FooterContent
 					{...this.props}
 					onLangClose={this.handleLangClose}

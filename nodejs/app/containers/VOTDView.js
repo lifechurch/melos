@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
+import Header from '../features/Header/components/Header'
+import Footer from '../features/Footer/components/Footer'
 import VotdText from '../features/Moments/components/types/VotdText'
 import VotdImage from '../features/Moments/components/types/VotdImage'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
@@ -81,49 +83,53 @@ class VOTDView extends Component {
 		}
 
 		return (
-			<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
-				<Helmet
-					title={title}
-					meta={[
-						{ name: 'description', content: verse },
-						{ name: 'og:title', content: title },
-						{ name: 'og:url', content: url },
-						{ name: 'og:description', content: verse },
-						{ name: 'twitter:card', content: 'summary' },
-						{ name: 'twitter:url', content: url },
-						{ name: 'twitter:title', content: title },
-						{ name: 'twitter:description', content: verse },
-						{ name: 'twitter:site', content: '@YouVersion' },
-					].concat(imgMeta)}
-				/>
-				<div className='yv-large-5 yv-small-11 votd-view'>
-					<VotdText dayOfYear={day} />
-					<VotdImage dayOfYear={day} />
-					<PlansRelatedToReference usfm={usfm} />
-					<Card customClass='horizontal-center flex-wrap'>
-						<img
-							className="bible-icon"
-							alt="Bible App Icon"
-							src={`/assets/icons/bible/120/${serverLanguageTag}.png`}
-							style={{ width: '72px', height: '72px' }}
-						/>
-						<div
-							className='text-center'
-							style={{
-								fontSize: '26px',
-								fontWeight: 600,
-								width: '90%',
-								margin: '25px 0'
-							}}
-						>
-							<FormattedMessage id='get a free bible' />
-						</div>
-						<a href={localizedLink('/app', serverLanguageTag)} className='yv-green-link'>
-							<FormattedMessage id='download the bible' />
-						</a>
-					</Card>
+			<div>
+				<Header />
+				<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
+					<Helmet
+						title={title}
+						meta={[
+							{ name: 'description', content: verse },
+							{ name: 'og:title', content: title },
+							{ name: 'og:url', content: url },
+							{ name: 'og:description', content: verse },
+							{ name: 'twitter:card', content: 'summary' },
+							{ name: 'twitter:url', content: url },
+							{ name: 'twitter:title', content: title },
+							{ name: 'twitter:description', content: verse },
+							{ name: 'twitter:site', content: '@YouVersion' },
+						].concat(imgMeta)}
+					/>
+					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
+						<VotdText dayOfYear={day} />
+						<VotdImage dayOfYear={day} />
+						<PlansRelatedToReference usfm={usfm} />
+						<Card customClass='horizontal-center flex-wrap'>
+							<img
+								className="bible-icon"
+								alt="Bible App Icon"
+								src={`/assets/icons/bible/120/${serverLanguageTag}.png`}
+								style={{ width: '72px', height: '72px' }}
+							/>
+							<div
+								className='text-center'
+								style={{
+									fontSize: '26px',
+									fontWeight: 600,
+									width: '90%',
+									margin: '25px 0'
+								}}
+							>
+								<FormattedMessage id='get a free bible' />
+							</div>
+							<a href={localizedLink('/app', serverLanguageTag)} className='yv-green-link'>
+								<FormattedMessage id='download the bible' />
+							</a>
+						</Card>
+					</div>
+					<ShareSheet />
 				</div>
-				<ShareSheet />
+				<Footer />
 			</div>
 		)
 	}

@@ -6,7 +6,7 @@ class NotesController < BaseMomentsController
 
   # Filters
     before_filter :set_sidebar, only: [:index]
-    before_filter :force_login, only: [:new,:edit,:create,:update,:destroy, :show]
+    before_filter :force_login, only: [:new,:edit,:create,:update,:destroy]
     prepend_before_filter :mobile_redirect, only: [:show]
 
   # TODO: figure out public/friends/private/draft display and authorization
@@ -15,11 +15,11 @@ class NotesController < BaseMomentsController
     if @moment.invalid?
       if @moment.has_error?("Note is private")
          redirect_to(notes_path, notice: t("notes.is private")) and return
-      
+
       elsif @moment.has_error?("Note not found")
          render_404 unless current_auth # render 404 unless logged in
          @moment = Note.find(params[:id]) # logged in, attempt to find the note without auth
-      
+
       elsif @moment.has_error?("Note has been reported and is in review")
          @moment = Note.find(params[:id], auth: current_auth, force_auth: true)
       end
@@ -61,7 +61,7 @@ class NotesController < BaseMomentsController
   def ref_to_usfm_array(ref)
     if ref.chapter?
       _usfm = ref.usfm
-      (1..5).collect {|num| "#{_usfm}.#{num}" }  
+      (1..5).collect {|num| "#{_usfm}.#{num}" }
     else
       ref.usfm.split("+")
     end

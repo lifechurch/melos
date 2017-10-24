@@ -27,7 +27,7 @@ YouversionWeb::Application.routes.draw do
   get "/250million",    to: redirect("http://installs.youversion.com/250million/index.html")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/blog-events",      to: redirect("http://blog.youversion.com/2016/03/introducing-events-the-newest-feature-in-the-bible-app")
-  get "volunteer-form", to: redirect("https://lifechurch.formstack.com/forms/volunteer_interest_form")
+  get "volunteer-form", to: redirect("https://www.youversion.com/volunteer")
 
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
@@ -160,10 +160,6 @@ YouversionWeb::Application.routes.draw do
     resource :email,    only: [:show,:update]
     resource :password, only: [:show,:update]
     resource :avatar,   only: [:show,:update],  path: "picture"
-    resources :devices, only: [:index,:destroy]
-
-    # bible.com/users/:id/connections => connections#index
-    get :connections, on: :member, to: "connections#index", as: 'connections'
 
     get :delete_account, on: :member
     get :notes,       on: :member, as: 'notes'
@@ -287,13 +283,6 @@ YouversionWeb::Application.routes.draw do
   get  "/sign-out",                        to: "sessions#destroy",           as: "sign_out"
   get  "/api-test",                        to: "api_test#index"
 
-  # connections
-  get "/auth/:provider/callback",          to: "auth#callback",              as: "auth_callback"
-  get "/auth/:provider/connect",           to: "auth#connect",               as: "auth_connect"
-  get "/connections/:provider/new",        to: "connections#new",            as: "new_connection"
-  get "/connections/:provider/create",     to: "connections#create",         as: "create_connection"
-  delete "/connections/:provider/delete",  to: "connections#destroy",        as: "delete_connection"
-
   # Legacy routes, many used in transactional emails
   get "/friends",                          to: "redirects#friends"
   get "/bookmarks",                        to: "redirects#bookmarks"
@@ -306,7 +295,6 @@ YouversionWeb::Application.routes.draw do
   get "/settings/update_email",            to: "redirects#settings_email"
   get "/settings/password",                to: "redirects#settings_password"
   get "/settings/picture",                 to: "redirects#settings_picture"
-  get "/settings/devices",                 to: "redirects#settings_devices"
   get "/settings/notifications",           to: "redirects#settings_notifications", as: "notification_settings"
 
   # Adding a totally unique URL to that can be used in emails and that the apps are not currently using
@@ -314,7 +302,6 @@ YouversionWeb::Application.routes.draw do
 
   get "/settings/delete_account",          to: "redirects#delete_account"
   get "/settings/vod_subscriptions",       to: "redirects#settings_vod_subscriptions"
-  get "/settings/connections",             to: "redirects#settings_connections"
 
 # Redirect to a.youversion.com/groups/lifechurchtv
   get "/lifechurchtv",  to: "redirects#lifechurchtv"

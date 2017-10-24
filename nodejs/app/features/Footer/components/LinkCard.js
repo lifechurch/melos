@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { localizedLink } from '../../../lib/routeUtils'
-import YouVersion from '../../../components/YVLogo'
 import Card from '../../../components/Card'
 
 function LinkCard({ serverLanguageTag, versions, languages }) {
@@ -9,7 +8,6 @@ function LinkCard({ serverLanguageTag, versions, languages }) {
 		<div className="yv-link-card">
 			<div className="row">
 				<div className="medium-10 large-6 medium-centered column">
-					<h2 className="title"><YouVersion height={14} width={100} /></h2>
 					<Card>
 						<ul className="green-links yv-card-links">
 							<li><a target="_self" href={localizedLink('/versions', serverLanguageTag)}><FormattedHTMLMessage id="footer.versions" values={{ count: versions.toLocaleString() }} /></a></li>
