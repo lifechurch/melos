@@ -113,12 +113,12 @@ class PlansRelatedToReference extends Component {
 											<img
 												alt='Reading Plan Default'
 												src={PLAN_DEFAULT}
-												width='100%'
+												width={165}
 												height='90px'
 											/>
 										}
 										src={src}
-										width='100%'
+										width={165}
 										height={90}
 										customClass='radius-5'
 									/>
