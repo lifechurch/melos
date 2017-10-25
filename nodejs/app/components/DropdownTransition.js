@@ -78,14 +78,18 @@ class DropdownTransition extends Component {
 	}
 
 	render() {
-		const { classes, hideDir, show, transition, containerClasses } = this.props
+		const { classes, hideDir, show, transition, containerClasses, children } = this.props
 		const transitionDir = hideDir || 'up'
 		const showTransition = transition || false
 
 		return (
-			<div className={`modal ${show ? '' : 'hide-modal'} ${showTransition ? 'dropdown-transform' : ''} ${containerClasses}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >
+			<div
+				className={`modal ${show ? '' : 'hide-modal'} ${showTransition ? 'dropdown-transform' : ''} ${containerClasses}` }
+				onMouseDown={this.handleMouseDown}
+				onMouseUp={this.handleMouseUp}
+			>
 				<div className={`element-to-translate ${classes || ''} ${showTransition ? 'dropdown-transform' : ''} ${transitionDir}`}>
-					{this.props.children}
+					{ children }
 				</div>
 			</div>
 		)
@@ -115,7 +119,7 @@ DropdownTransition.defaultProps = {
 	show: false,
 	transition: false,
 	classes: null,
-	containerClasses: '',
+	containerClasses: 'yv-popup-modal-container',
 	hideDir: 'up',
 	onOutsideClick: null,
 	exemptClass: null,
