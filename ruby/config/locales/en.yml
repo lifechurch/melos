@@ -2133,7 +2133,6 @@ en:
     currently subscribed:                       "Currently Subscribed"
     invite friends:                             "Invite Friends"
     invite others:                              "Invite Others"
-    invited:                                    "Invited"
     pending:                                    "Pending"
     x pending:
       one:                                      "%{number} Pending"
