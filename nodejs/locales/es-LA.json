@@ -383,7 +383,7 @@
 	"features.EventEdit.features.content.components.ContentTypeReference.language": "Idioma",
 	"features.EventEdit.features.content.components.ContentTypeReference.version": "Versión",
 	"features.EventEdit.features.content.components.ContentTypeReference.book": "Libro",
-	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "Capítulo:Versículo",
+	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "Cap��tulo:Versículo",
 	"features.EventEdit.features.content.components.ContentTypeText.prompt": "Escribe algo aquí ...",
 	"features.EventEdit.features.content.components.LiveWarningModal.title": "No se puede eliminar mientras este evento esté en vivo",
 	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Una vez que un evento haya sido en directo, no se pueden eliminar módulos del texto, referencia de la Biblia, ni imagen, porque los usuarios ya pueden haber añadido sus notas privadas a ellos. Sin embargo, puede editar estos módulos.",

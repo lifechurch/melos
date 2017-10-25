@@ -49,7 +49,6 @@ class VotdText extends Component {
 
 		const votd = moments && moments.pullVotd(this.dayOfYear)
 		const version_id = getBibleVersionFromStorage(serverLanguageTag)
-		/* eslint-disable react/no-danger */
 		return (
 			<ReferenceMoment
 				className={className}

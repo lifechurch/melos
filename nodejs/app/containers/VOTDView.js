@@ -44,7 +44,7 @@ class VOTDView extends Component {
 				fullContent: ref.content,
 			}).text
 		}
-		const version_id = getBibleVersionFromStorage()
+		const version_id = getBibleVersionFromStorage(serverLanguageTag)
 		const versionData = bible
 			&& bible.versions
 			&& bible.versions.byId
