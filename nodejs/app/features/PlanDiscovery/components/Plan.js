@@ -152,13 +152,13 @@ class Plan extends Component {
 							<Link to={`/users/${auth.userData.username}/reading-plans`}>
 								<FormattedHTMLMessage id="plans.plans back" />
 							</Link>
-							<div className="actions">
+							<div className="actions vertical-center">
 								<PlanMenu
 									subscriptionLink={subscriptionLink}
 									aboutLink={aboutLink}
 									onCatchUp={this.handleCatchUp}
 								/>
-								<div><ShareWidget /></div>
+								<div style={{ marginRight: '10px' }}><ShareWidget /></div>
 							</div>
 						</div>
 					</div>
