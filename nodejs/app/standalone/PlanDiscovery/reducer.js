@@ -17,6 +17,7 @@ import passage from '../../features/Passage/reducers'
 import plansDiscovery from '../../features/PlanDiscovery/reducers'
 import readingPlans from '../../features/PlanDiscovery/reducers/readingPlans'
 import api from '../../features/PlanDiscovery/reducers/api'
+import shareData from '../../widgets/ShareSheet/reducer'
 
 
 const emptyReducer = (state = {}) => { return state }
@@ -42,7 +43,8 @@ const rootReducer = combineReducers({
 	locale: emptyReducer,
 	// for all the reducers being autopopulated by the api actions
 	api,
-	plans: combineReducers(plansAPI.reducers)
+	plans: combineReducers(plansAPI.reducers),
+	shareData
 })
 
 export default rootReducer
