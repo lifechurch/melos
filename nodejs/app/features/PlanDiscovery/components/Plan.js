@@ -148,17 +148,17 @@ class Plan extends Component {
 				/>
 				<div className="plan-overview">
 					<div className="row">
-						<div className="header columns large-8 medium-8 medium-centered">
+						<div className='header medium-8 small-11 centered vertical-center'>
 							<Link to={`/users/${auth.userData.username}/reading-plans`}>
-								<FormattedHTMLMessage id="plans.plans back" />
+								<FormattedHTMLMessage id='plans.plans back' />
 							</Link>
-							<div className="actions vertical-center">
+							<div className='margin-left-auto vertical-center'>
+								<div style={{ marginRight: '10px' }}><ShareWidget /></div>
 								<PlanMenu
 									subscriptionLink={subscriptionLink}
 									aboutLink={aboutLink}
 									onCatchUp={this.handleCatchUp}
 								/>
-								<div style={{ marginRight: '10px' }}><ShareWidget /></div>
 							</div>
 						</div>
 					</div>
