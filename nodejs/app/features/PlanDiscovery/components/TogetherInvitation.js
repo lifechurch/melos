@@ -79,7 +79,6 @@ function Invitation({
 							joinToken={joinToken}
 							together_id={together_id}
 						/>
-						<a className='card-button'><FormattedMessage id='what is this' /></a>
 					</div>
 				</div>
 			</div>
