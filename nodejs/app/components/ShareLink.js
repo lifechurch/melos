@@ -33,12 +33,12 @@ class ShareLink extends Component {
 	} = this.props
 
 		const planName = plans
-		&& plans.byId
-		&& together
-		&& together.plan_id
-		&& plans.byId[together.plan_id]
-		&& plans.byId[together.plan_id].name
-		&& plans.byId[together.plan_id].name.default
+			&& plans.byId
+			&& together
+			&& together.plan_id
+			&& plans.byId[together.plan_id]
+			&& plans.byId[together.plan_id].name
+			&& plans.byId[together.plan_id].name.default
 
 		let shareText
 		if (!text && participants && together_id) {
@@ -63,7 +63,7 @@ class ShareLink extends Component {
 							<div className='yv-gray-link share-link'>{ shareLink }</div>
 						</ClickToCopy>
 					</div>
-					<a onClick={this.handleShare}>
+					<a onClick={this.handleShare.bind(this, { url: shareLink, title: linkTitle, text: shareText })}>
 						<ShareIcon fill='darkgray' />
 					</a>
 				</div>
