@@ -309,7 +309,7 @@
 	"containers.EventEditShare.go": "Saját eseményeim",
 	"containers.EventEditShare.share": "Eseményed megosztása:",
 	"containers.EventEditShare.copy": "Másolás",
-	"containers.EventEditShare.copied": "A rövidített link vágólapra másolva.",
+	"containers.EventEditShare.copied": "A rövidített link vág��lapra másolva.",
 	"containers.EventEditShare.previous": "← Vissza: esemény előnézete",
 	"containers.EventFeedDiscover.title": "Események keresése",
 	"containers.EventFeedDiscover.discover": "Felfedezés",
