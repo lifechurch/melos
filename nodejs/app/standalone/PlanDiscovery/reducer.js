@@ -10,7 +10,7 @@ import { routerReducer } from 'react-router-redux'
 // import plans from './plans'
 // import configuration from '../features/EventFeedMine/reducers/configuration'
 // import plansDiscovery from '../features/PlanDiscovery/reducers'
-// import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import auth from '../../features/Auth/reducers/auth'
 import bibleReader from '../../features/Bible/reducers'
 import passage from '../../features/Passage/reducers'
@@ -42,7 +42,7 @@ const rootReducer = combineReducers({
 	locale: emptyReducer,
 	// for all the reducers being autopopulated by the api actions
 	api,
-	// plans: combineReducers(plansAPI.reducers)
+	plans: combineReducers(plansAPI.reducers)
 })
 
 export default rootReducer

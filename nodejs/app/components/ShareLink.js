@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
@@ -6,21 +6,33 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import ShareIcon from './icons/ShareIcon'
 import ClickToCopy from './ClickToCopy'
-import Share from '../features/Bible/components/verseAction/share/Share'
+import shareAction from '../widgets/ShareSheet/action'
+import ShareSheet from '../widgets/ShareSheet/ShareSheet'
 
 
-function ShareLink({
-	link,
-	description,
-	text,
-	together_id,
-	plans,
-	together,
-	participants,
-	intl
-}) {
+class ShareLink extends Component {
+	handleShare = ({ url, title, text }) => {
+		const { dispatch } = this.props
+		dispatch(shareAction({
+			url,
+			title,
+			text,
+			isOpen: true,
+		}))
+	}
+	render() {
+		const {
+		link,
+		description,
+		text,
+		together_id,
+		plans,
+		together,
+		participants,
+		intl
+	} = this.props
 
-	const planName = plans
+		const planName = plans
 		&& plans.byId
 		&& together
 		&& together.plan_id
@@ -28,45 +40,42 @@ function ShareLink({
 		&& plans.byId[together.plan_id].name
 		&& plans.byId[together.plan_id].name.default
 
-	let shareText
-	if (!text && participants && together_id) {
-		shareText = intl.formatMessage(
+		let shareText
+		if (!text && participants && together_id) {
+			shareText = intl.formatMessage(
 			{ id: 'join together share' },
 			{ plan: planName },
 		)
-	} else {
-		shareText = text
-	}
-	const shareLink = link || (together && together.public_share)
-	const linkTitle = description || <FormattedMessage id='invite others' />
+		} else {
+			shareText = text
+		}
+		const shareLink = link || (together && together.public_share)
+		const linkTitle = description || <FormattedMessage id='invite others' />
 
-	return (
-		<div className='centered share-link-container' style={{ padding: '25px 0' }}>
-			<div className='text-center'>
-				{ linkTitle }
-			</div>
-			<div className='vertical-center horizontal-center flex-wrap'>
-				<div style={{ margin: '25px 10px' }}>
-					<ClickToCopy text={shareLink}>
-						<div className='yv-gray-link share-link'>{ shareLink }</div>
-					</ClickToCopy>
+		return (
+			<div className='centered share-link-container' style={{ padding: '25px 0' }}>
+				<div className='text-center'>
+					{ linkTitle }
 				</div>
-				<a>
-					<Share
-						text={shareText}
-						url={shareLink}
-						button={
-							<ShareIcon fill='darkgray' />
-						}
-					/>
-				</a>
+				<div className='vertical-center horizontal-center flex-wrap'>
+					<div style={{ margin: '25px 10px' }}>
+						<ClickToCopy text={shareLink}>
+							<div className='yv-gray-link share-link'>{ shareLink }</div>
+						</ClickToCopy>
+					</div>
+					<a onClick={this.handleShare}>
+						<ShareIcon fill='darkgray' />
+					</a>
+				</div>
+				<div className='centered text-center' style={{ fontSize: '12px' }}>
+					<FormattedMessage id='participant limit' values={{ number: 150 }} />
+				</div>
+				<ShareSheet />
 			</div>
-			<div className='centered text-center' style={{ fontSize: '12px' }}>
-				<FormattedMessage id='participant limit' values={{ number: 150 }} />
-			</div>
-		</div>
-	)
+		)
+	}
 }
+
 
 ShareLink.propTypes = {
 	link: PropTypes.string,

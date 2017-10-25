@@ -17,7 +17,12 @@ function PlanContentListItem({
 			{
 				handleIconClick
 					&& (
-						<a tabIndex={0} onClick={handleIconClick} className='vertical-center'>
+						<a
+							tabIndex={0}
+							onClick={handleIconClick}
+							className='vertical-center'
+							style={{ marginRight: '5px' }}
+						>
 							{
 								isComplete ?
 									<CheckMark fill='#444444' style={{ padding: '0' }} width={18} height={18} /> :
