@@ -16,36 +16,23 @@ import Routes from '../../../lib/routes'
 import { selectImageFromList } from '../../../lib/imageUtil'
 
 
-function getFriendIndex(list, user) {
-	if (list && list.size > 0) {
-		return list.findIndex((selectedFriend) => {
-			return selectedFriend.id === user.id
-		})
-	} else {
-		return -1
-	}
-}
-
 class InvitePWF extends Component {
-
 	constructor(props) {
 		super(props)
-
 		this.state = {
 			query: null,
 			showSearchResults: false,
-			selectedFriends: Immutable.List(),
+			selectedIds: [],
 		}
 	}
 
-	onUserClick = (user) => {
-		const { selectedFriends } = this.state
-
-		const isAlreadySelected = (getFriendIndex(selectedFriends, user) !== -1)
+	onUserClick = (id) => {
+		const { selectedIds } = this.state
+		const isAlreadySelected = selectedIds.includes(id)
 		if (isAlreadySelected) {
-			this.unselectFriend(user)
+			this.unselectFriend(id)
 		} else {
-			this.selectFriend(user)
+			this.selectFriend(id)
 		}
 	}
 
@@ -67,34 +54,36 @@ class InvitePWF extends Component {
 		}
 	}
 
-	selectFriend = (user) => {
-		const { selectedFriends } = this.state
+	selectFriend = (id) => {
+		const { selectedIds } = this.state
 		this.setState({
-			selectedFriends: selectedFriends.push(user)
+			selectedIds: selectedIds.concat([id])
 		})
 	}
-	unselectFriend = (user) => {
-		const { selectedFriends } = this.state
-		const toDeleteIndex = getFriendIndex(selectedFriends, user)
+	unselectFriend = (id) => {
+		const { selectedIds } = this.state
+		const toDeleteIndex = selectedIds.indexOf(id)
+		console.log('UNSLEELEC', toDeleteIndex, selectedIds.splice(toDeleteIndex, 1))
 		if (toDeleteIndex !== -1) {
 			this.setState({
-				selectedFriends: selectedFriends.delete(toDeleteIndex)
+				selectedIds: selectedIds.splice(toDeleteIndex, 1)
 			})
 		}
 	}
 
 	handleInvite = () => {
 		const { dispatch, auth, handleInvite } = this.props
-		const { selectedFriends } = this.state
-		if (selectedFriends.size > 0 && typeof handleInvite === 'function') {
-			handleInvite(selectedFriends.map((friend) => { return { id: friend.id } }))
+		const { selectedIds } = this.state
+		if (selectedIds.length > 0 && typeof handleInvite === 'function') {
+			handleInvite(selectedIds)
 		} else {
 			dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
 		}
 	}
 
 	renderUser = (friend) => {
-		const { selectedFriends } = this.state
+		const { selectedIds } = this.state
+		console.log('selectedIds', selectedIds)
 		const img = selectImageFromList({ images: friend.avatar.renditions, width: 50 })
 		return (
 			<div
@@ -107,12 +96,11 @@ class InvitePWF extends Component {
 					width={36}
 					heading={friend.name}
 					subheading={friend.source}
-					onClick={this.onUserClick.bind(this, friend)}
+					onClick={this.onUserClick.bind(this, friend.id)}
 				/>
 				{
-					selectedFriends &&
-					getFriendIndex(selectedFriends, friend) !== -1 &&
-					<CheckMark />
+					selectedIds.includes(friend.id)
+						&& <CheckMark />
 				}
 			</div>
 		)
@@ -120,9 +108,7 @@ class InvitePWF extends Component {
 
 	render() {
 		const { search, friends, getFriends, backLink, together_id } = this.props
-		const { showSearchResults, selectedFriends } = this.state
-
-		const selectedUsers = selectedFriends.toJS()
+		const { showSearchResults, selectedIds } = this.state
 
 		let searchResults = null
 		if (showSearchResults && search) {
@@ -149,9 +135,18 @@ class InvitePWF extends Component {
 		}
 
 		const friendsList = friends && friends.users
-		// merge together selected users with the friends list, to add selected users
-		// from search to the friends list. the set will remove duplicates
-		const mergedUsers = Array.from(new Set(selectedUsers.concat(friendsList || [])))
+		const friendIds = friendsList && friendsList.map((f) => {
+			return f.id
+		})
+		// show the friends list along with anyone selected from search results
+		const selectedFromSearch = search
+			&& search.reduce((result, s) => {
+				if (selectedIds && selectedIds.includes(s.id) && !friendIds.includes(s.id)) {
+					result.push(s)
+				}
+				return result
+			}, [])
+		const mergedUsers = (selectedFromSearch || []).concat(friendsList || [])
 
 		return (
 			<div className='pwf-flow pwf-invite'>
@@ -165,14 +160,14 @@ class InvitePWF extends Component {
 								className={[
 									'selected-number',
 									`${
-										selectedUsers
-										&& selectedUsers.length > 150
+										selectedIds
+										&& selectedIds.length > 150
 										? 'red'
 										: ''
 									}`,
 								].join(' ')}
 							>
-								{ selectedUsers.length }
+								{ selectedIds.length }
 							</div>
 							<FormattedMessage id='selected' />
 						</div>
