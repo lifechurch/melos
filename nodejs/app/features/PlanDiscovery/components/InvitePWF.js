@@ -63,7 +63,6 @@ class InvitePWF extends Component {
 	unselectFriend = (id) => {
 		const { selectedIds } = this.state
 		const toDeleteIndex = selectedIds.indexOf(id)
-		console.log('UNSLEELEC', toDeleteIndex, selectedIds.splice(toDeleteIndex, 1))
 		if (toDeleteIndex !== -1) {
 			this.setState({
 				selectedIds: selectedIds.splice(toDeleteIndex, 1)
@@ -83,7 +82,6 @@ class InvitePWF extends Component {
 
 	renderUser = (friend) => {
 		const { selectedIds } = this.state
-		console.log('selectedIds', selectedIds)
 		const img = selectImageFromList({ images: friend.avatar.renditions, width: 50 })
 		return (
 			<div
@@ -141,7 +139,11 @@ class InvitePWF extends Component {
 		// show the friends list along with anyone selected from search results
 		const selectedFromSearch = search
 			&& search.reduce((result, s) => {
-				if (selectedIds && selectedIds.includes(s.id) && !friendIds.includes(s.id)) {
+				if (
+					selectedIds
+					&& selectedIds.includes(s.id)
+					&& !(friendIds && friendIds.includes(s.id))
+				) {
 					result.push(s)
 				}
 				return result
