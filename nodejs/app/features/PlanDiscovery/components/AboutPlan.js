@@ -97,18 +97,18 @@ class AboutPlan extends Component {
 					title={`${readingPlan.name[languageTag] || readingPlan.name.default} - ${readingPlan.about.text[languageTag] || readingPlan.about.text.default}`}
 					meta={[
 						{ name: 'description', content: readingPlan.about.text[languageTag] || readingPlan.about.text.default },
-						{ name: 'og:image', content: `https:${selectedImage.url}` },
-						{ name: 'og:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
-						{ name: 'og:url', content: url },
-						{ name: 'og:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
+						{ property: 'og:image', content: `https:${selectedImage.url}` },
+						{ property: 'og:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
+						{ property: 'og:url', content: url },
+						{ property: 'og:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
 						{ name: 'twitter:image', content: `https:${selectedImage.url}` },
 						{ name: 'twitter:card', content: 'summary' },
 						{ name: 'twitter:url', content: url },
 						{ name: 'twitter:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
 						{ name: 'twitter:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
 						{ name: 'twitter:site', content: '@YouVersion' },
-						{ name: 'og:image:width', content: selectedImage.width },
-						{ name: 'og:image:height', content: selectedImage.height }
+						{ property: 'og:image:width', content: selectedImage.width },
+						{ property: 'og:image:height', content: selectedImage.height }
 					]}
 				/>
 				<div className='columns large-8 medium-8'>
