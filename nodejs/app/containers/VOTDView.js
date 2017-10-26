@@ -76,9 +76,9 @@ class VOTDView extends Component {
 					.replace('{0}', 640)
 					.replace('{1}', 640)
 			imgMeta = [
-				{ name: 'og:image', content: `https:${src}` },
-				{ name: 'og:image:width', content: 640 },
-				{ name: 'og:image:height', content: 640 },
+				{ property: 'og:image', content: `https:${src}` },
+				{ property: 'og:image:width', content: 640 },
+				{ property: 'og:image:height', content: 640 },
 				{ name: 'twitter:image', content: `https:${src}` }
 			]
 		}
@@ -91,9 +91,9 @@ class VOTDView extends Component {
 						title={title}
 						meta={[
 							{ name: 'description', content: verse },
-							{ name: 'og:title', content: title },
-							{ name: 'og:url', content: url },
-							{ name: 'og:description', content: verse },
+							{ property: 'og:title', content: title },
+							{ property: 'og:url', content: url },
+							{ property: 'og:description', content: verse },
 							{ name: 'twitter:card', content: 'summary' },
 							{ name: 'twitter:url', content: url },
 							{ name: 'twitter:title', content: title },
