@@ -288,7 +288,7 @@ export function parseVerseFromContent({ usfms, fullContent }) {
 	if (usfms && fullContent) {
 		const usfmList = Array.isArray(usfms)
 			? usfms
-			: [usfms]
+			: usfms.split('+')
 		usfmList.forEach((usfm) => {
 			const htmlXpath = `//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+${usfm}+')]`
 			const textXpath = `${htmlXpath}/node()[not(contains(concat(\' \',@class,\' \'),\' note \'))][not(contains(concat(\' \',@class,\' \'),\' label \'))]`

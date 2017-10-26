@@ -71,7 +71,7 @@ class Plan extends Component {
 					id: plan.id,
 					day: dayToGet,
 					together: !!(subscription && subscription.together_id),
-				}, {})).then((data) => {
+				}, {})).then(({ data }) => {
 					// if this day doesn't have any segments then we want to mark it as complete
 					if (
 						data
@@ -82,7 +82,7 @@ class Plan extends Component {
 					) {
 						dispatch(subscriptionDayUpdate({
 							markDayComplete: true,
-							id: subscription.id,
+							subscription_id: subscription.id,
 							day: dayToGet,
 						}))
 					}
