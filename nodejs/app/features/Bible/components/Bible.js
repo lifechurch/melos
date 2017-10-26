@@ -546,8 +546,8 @@ class Bible extends Component {
 						title={metaTitle}
 						meta={[
 							{ name: 'description', content: `${metaContent.substring(0, 200)}...` },
-							{ name: 'og:title', content: metaTitle },
-							{ name: 'og:description', content: `${metaContent.substring(0, 200)}...` },
+							{ property: 'og:title', content: metaTitle },
+							{ property: 'og:description', content: `${metaContent.substring(0, 200)}...` },
 							// hacky meta rendering on rails side
 							// { name: 'og:image', content: `` },
 							// { name: 'og:url', content: '' },

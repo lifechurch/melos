@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
+import moment from 'moment'
 import Helmet from 'react-helmet'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
@@ -30,7 +31,7 @@ class VOTDView extends Component {
 
 	render() {
 		const { location: { query }, moments, bible, intl, hosts, serverLanguageTag } = this.props
-		const day = query && query.day
+		const day = (query && query.day) || moment().dayOfYear()
 		const votd = moments
 			&& moments.pullVotd(day)
 		const usfm = votd && votd.usfm
@@ -43,7 +44,7 @@ class VOTDView extends Component {
 				fullContent: ref.content,
 			}).text
 		}
-		const version_id = getBibleVersionFromStorage()
+		const version_id = getBibleVersionFromStorage(serverLanguageTag)
 		const versionData = bible
 			&& bible.versions
 			&& bible.versions.byId
@@ -75,9 +76,9 @@ class VOTDView extends Component {
 					.replace('{0}', 640)
 					.replace('{1}', 640)
 			imgMeta = [
-				{ name: 'og:image', content: `https:${src}` },
-				{ name: 'og:image:width', content: 640 },
-				{ name: 'og:image:height', content: 640 },
+				{ property: 'og:image', content: `https:${src}` },
+				{ property: 'og:image:width', content: 640 },
+				{ property: 'og:image:height', content: 640 },
 				{ name: 'twitter:image', content: `https:${src}` }
 			]
 		}
@@ -90,9 +91,9 @@ class VOTDView extends Component {
 						title={title}
 						meta={[
 							{ name: 'description', content: verse },
-							{ name: 'og:title', content: title },
-							{ name: 'og:url', content: url },
-							{ name: 'og:description', content: verse },
+							{ property: 'og:title', content: title },
+							{ property: 'og:url', content: url },
+							{ property: 'og:description', content: verse },
 							{ name: 'twitter:card', content: 'summary' },
 							{ name: 'twitter:url', content: url },
 							{ name: 'twitter:title', content: title },
