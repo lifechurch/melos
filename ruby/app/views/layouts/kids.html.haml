@@ -335,20 +335,20 @@
       -# !App store buttons
       - if not prelaunch
         .download
-          %a.download-ios{href: t.call('kids.links.apple'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
+          %a.download-ios{href: t.call('kids.links.apple'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.app store')
-          %a.download-play{href: t.call('kids.links.google'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
+          %a.download-play{href: t.call('kids.links.google'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.google play')
           -if I18n.locale.to_s.eql?("zh-CN")
             %br.desktop-only
-            %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
+            %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px; background-size: contain"}
               = t.call('kids.free download')
           -if I18n.locale.to_s.eql?("ru")
             %br.desktop-only
-            %a.download-apk{href: "https://store.yandex.ru/", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px"}
+            %a.download-apk{href: "https://store.yandex.ru/", style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px; background-size: contain"}
               = t.call('kids.free download')
 
-          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
+          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.amazon')
 
 
