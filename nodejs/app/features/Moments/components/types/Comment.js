@@ -118,6 +118,7 @@ class Comment extends Component {
 			auth,
 			together,
 			momentData,
+			charLimit,
 		} = this.props
 		const { editingComment } = this.state
 
@@ -212,6 +213,7 @@ class Comment extends Component {
 										avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
 										onChange={(val) => { this.setState({ editingComment: val }) }}
 										value={editingComment}
+										charLimit={charLimit}
 										onComment={this.handleSaveEdit}
 									/>
 								)
@@ -249,6 +251,7 @@ Comment.propTypes = {
 	onEdit: PropTypes.func,
 	momentData: PropTypes.object,
 	dispatch: PropTypes.func.isRequired,
+	charLimit: PropTypes.number,
 }
 
 Comment.defaultProps = {
@@ -265,6 +268,7 @@ Comment.defaultProps = {
 	onUnlike: null,
 	onDelete: null,
 	momentData: null,
+	charLimit: null,
 }
 
 export default connect(mapStateToProps, null)(Comment)

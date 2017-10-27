@@ -17,6 +17,8 @@ import CommentMoment from '../features/Moments/components/types/Comment'
 import CommentCreate from '../features/Moments/components/CommentCreate'
 import TalkItOverInfo from '../features/PlanDiscovery/components/TalkItOverInfo'
 
+const CHAR_LIMIT = 1000
+
 class TalkItOver extends Component {
 	constructor(props) {
 		super(props)
@@ -151,6 +153,7 @@ class TalkItOver extends Component {
 											id={moment.id}
 											tioDay={day}
 											together_id={together_id}
+											charLimit={CHAR_LIMIT}
 										/>
 									</li>
 								)
@@ -166,15 +169,12 @@ class TalkItOver extends Component {
 									avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
 									onChange={(val) => { this.setState({ comment: val }) }}
 									value={comment}
+									charLimit={CHAR_LIMIT}
 									onComment={this.handleComment}
 								/>
 							)
 					}
 				</List>
-				{/*
-					this modal is opened in two ways, either by editing a comment or showing the
-					talk it over header on mobile
-				*/}
 				<Modal
 					ref={(ref) => { this.modal = ref }}
 					handleCloseCallback={() => {

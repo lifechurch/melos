@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
-import { push } from 'react-router-redux'
 // actions
 import subscriptionData from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 // models
@@ -18,12 +17,20 @@ import { mapTioIndices } from '../lib/readingPlanUtils'
 class TalkItOverRedirect extends Component {
 	componentDidMount() {
 		const { dispatch, params: { subscription_id, day }, auth } = this.props
+		const signin = Routes.signIn({
+			query: {
+				redirect: true
+			}
+		})
 		if (!auth.isLoggedIn) {
-			dispatch(push(
-				Routes.signIn({})
-			))
+			window.location.replace(signin)
 		} else if (subscription_id) {
 			dispatch(subscriptionData({ subscription_id, auth, day }))
+				.catch(() => {
+					// if we don't get any successful promises back from the call, then
+					// we most likely are the wrong authed user for the link
+					window.location.replace(signin)
+				})
 		}
 	}
 

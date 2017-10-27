@@ -128,6 +128,7 @@ class Footer extends Component {
 						languages={languages}
 					/>
 				</FullscreenDrawer>
+				<NotificationsPermissionPrompt />
 			</ResponsiveContainer>
 		)
 	}
