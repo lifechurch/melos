@@ -19,8 +19,9 @@ import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
 import ParallelExit from '../../../components/icons/ParallelExit'
 import Parallel from '../../../components/icons/Parallel'
-import { deepLinkPath, buildMeta, buildCopyright } from '../../../lib/readerUtils'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
+import { buildCopyright, parseVerseFromContent, deepLinkPath, buildMeta } from '../../../lib/readerUtils'
+import { getReferencesTitle } from '../../../lib/usfmUtils'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',

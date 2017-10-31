@@ -1,12 +1,11 @@
 import Immutable from 'immutable'
 import moment from 'moment'
-
+import UsersActionCreator from '@youversion/api-redux/lib/endpoints/users/action'
 import type from './constants'
 import BibleActionCreator from '../../Bible/actions/creators'
-import UsersActionCreator from '@youversion/api-redux/lib/endpoints/users/action'
+
 
 const ActionCreators = {
-
 	discoverAll(params, auth) {
 		return dispatch => {
 			return Promise.all([

@@ -114,7 +114,7 @@ export default function (
 				path="(:lang/)users/:username/reading-plans/:id(-:slug)/together/:together_id/invite"
 				component={InvitePWFView}
 			/>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/completed" component={DayCompleteView} onEnter={requirePlanView} />
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/completed" component={DayCompleteView} />
 			{/* this is also day complete, but an unauthed page with the user id in the url as params, only loaded from the server */}
 			<Route path="(:lang/)reading-plans/:id(-:slug)/day/:day/completed" component={SharedDayCompleteView} />
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
