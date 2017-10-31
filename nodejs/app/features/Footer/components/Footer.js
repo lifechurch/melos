@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import streaksAction from '@youversion/api-redux/lib/endpoints/streaks/action'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
-import NotificationsPermissionPrompt from '../../../widgets/NotificationsPermissionPrompt'
 import FooterContent from './FooterContent'
 import LangSelector from './LangSelector'
 import LinkCard from './LinkCard'
@@ -128,7 +127,6 @@ class Footer extends Component {
 						languages={languages}
 					/>
 				</FullscreenDrawer>
-				<NotificationsPermissionPrompt />
 			</ResponsiveContainer>
 		)
 	}

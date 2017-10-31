@@ -1,13 +1,16 @@
 
-.subscribe-actions {
-	position: relative;
-	.yv-drop-shadow;
-	top: -90px;
-	margin-bottom: -60px;
+.side-col {
 	@media @medium-up {
 		left: -50px;
-		width: 300px;
 	}
+}
+.subscribe-actions {
+	position: absolute;
+	.yv-drop-shadow;
+	top: -90px;
+	.absolute-horizontal-center;
+	width: 300px;
+	z-index: 1;
 
 	li {
 		text-align: left !important;
