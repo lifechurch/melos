@@ -119,7 +119,12 @@ class TalkItOver extends Component {
 						// already for today
 						this.dayActivities
 							&& (
-								<div role='button' tabIndex={0} onClick={this.handleHeaderModal}>
+								<div
+									role='button'
+									tabIndex={0}
+									onClick={this.handleHeaderModal}
+									style={{ maxWidth: '100%' }}
+								>
 									<TalkItOverInfo
 										customClass='talk-it-over-header'
 										together_id={together_id}
