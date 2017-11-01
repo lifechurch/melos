@@ -221,7 +221,7 @@ class PlanReaderView extends Component {
 		}
 
 		return (
-			<div>
+			<div className={`${this.segment && this.segment.kind === 'talk-it-over' ? 'talk-it-over-container' : ''}`}>
 				<PlanReader
 					customClass={customClass}
 					previousPath={previous}

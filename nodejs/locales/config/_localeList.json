@@ -198,6 +198,14 @@
 		"displayName": "NO-NO"
 	},
 	{
+		"nativeName": "O'zbek",
+		"englishName": "Uzbek",
+		"locale": "uz-UZ",
+		"locale2": "uz",
+		"locale3": "uzb",
+		"displayName": "O'zbek"
+	},
+	{
 		"nativeName": "Polski",
 		"englishName": "Polish",
 		"locale": "pl-PL",
@@ -400,6 +408,14 @@
 		"locale2": "ta",
 		"locale3": "tam",
 		"displayName": "தமிழ்"
+	},
+	{
+		"nativeName": "മലയാളം",
+		"englishName": "Malayalam",
+		"locale": "ml-IN",
+		"locale2": "ml",
+		"locale3": "mal",
+		"displayName": "മലയാളം"
 	},
 	{
 		"nativeName": "ภาษาไทย (ประเทศไทย)",
