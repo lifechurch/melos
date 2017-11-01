@@ -328,44 +328,45 @@ class Bible extends Component {
 			&& bible.version.abbreviation
 		) {
 			this.header = (
-				<StickyHeader className={'reader-header horizontal-center'} verticalOffset={70}>
-					<ChapterPicker
-						{...this.props}
-						chapter={bible.chapter}
-						books={bible.books.all}
-						bookMap={bible.books.map}
-						selectedLanguage={this.state.selectedLanguage}
-						initialBook={this.state.selectedBook}
-						initialChapter={this.state.selectedChapter}
-						versionID={this.state.selectedVersion}
-						versionAbbr={bible.version.local_abbreviation}
-						initialInput={bible.chapter.reference.human}
-						initialChapters={this.chapters}
-						cancelDropDown={this.state.chapDropDownCancel}
-						ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
-						linkBuilder={(version, usfm, abbr) => {
-							return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
-						}}
-					/>
-					<VersionPicker
-						{...this.props}
-						version={bible.version}
-						languages={bible.languages.all}
-						versions={bible.versions}
-						recentVersions={this.state.recentVersions}
-						languageMap={bible.languages.map}
-						selectedChapter={this.state.selectedChapter}
-						alert={this.state.chapterError}
-						getVersions={this.getVersions}
-						cancelDropDown={this.state.versionDropDownCancel}
-						extraClassNames="main-version-picker-container"
-						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
-						linkBuilder={(version, usfm, abbr) => {
-							return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
-						}}
-					/>
+				<StickyHeader verticalOffset={70} stackOrder={2} translationDistance='70px'>
+					<div className='reader-header horizontal-center'>
+						<ChapterPicker
+							{...this.props}
+							chapter={bible.chapter}
+							books={bible.books.all}
+							bookMap={bible.books.map}
+							selectedLanguage={this.state.selectedLanguage}
+							initialBook={this.state.selectedBook}
+							initialChapter={this.state.selectedChapter}
+							versionID={this.state.selectedVersion}
+							versionAbbr={bible.version.local_abbreviation}
+							initialInput={bible.chapter.reference.human}
+							initialChapters={this.chapters}
+							cancelDropDown={this.state.chapDropDownCancel}
+							ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
+							linkBuilder={(version, usfm, abbr) => {
+								return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
+							}}
+						/>
+						<VersionPicker
+							{...this.props}
+							version={bible.version}
+							languages={bible.languages.all}
+							versions={bible.versions}
+							recentVersions={this.state.recentVersions}
+							languageMap={bible.languages.map}
+							selectedChapter={this.state.selectedChapter}
+							alert={this.state.chapterError}
+							getVersions={this.getVersions}
+							cancelDropDown={this.state.versionDropDownCancel}
+							extraClassNames="main-version-picker-container"
+							ref={(vpicker) => { this.versionPickerInstance = vpicker }}
+							linkBuilder={(version, usfm, abbr) => {
+								return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
+							}}
+						/>
 
-					{!hasParallel &&
+						{!hasParallel &&
 						<Link
 							to={{
 								pathname: buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation),
@@ -397,7 +398,7 @@ class Bible extends Component {
 						</Link>
 					}
 
-					{hasParallel &&
+						{hasParallel &&
 						<VersionPicker
 							{...this.props}
 							version={bible.parallelVersion}
@@ -417,16 +418,16 @@ class Bible extends Component {
 						/>
 					}
 
-					<AudioPopup audio={bible.audio} hosts={hosts} enabled={typeof bible.audio.id !== 'undefined'} />
-					<Settings
-						onChange={this.handleSettingsChange}
-						initialFontSize={fontSize}
-						initialFontFamily={fontFamily}
-						initialShowFootnotes={showFootnotes}
-						initialShowVerseNumbers={showVerseNumbers}
-					/>
+						<AudioPopup audio={bible.audio} hosts={hosts} enabled={typeof bible.audio.id !== 'undefined'} />
+						<Settings
+							onChange={this.handleSettingsChange}
+							initialFontSize={fontSize}
+							initialFontFamily={fontFamily}
+							initialShowFootnotes={showFootnotes}
+							initialShowVerseNumbers={showVerseNumbers}
+						/>
 
-					{hasParallel &&
+						{hasParallel &&
 						<Link
 							to={buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation)}
 							className="hide-for-small"
@@ -454,6 +455,7 @@ class Bible extends Component {
 							</span>
 						</Link>
 					}
+					</div>
 				</StickyHeader>
 			)
 		}

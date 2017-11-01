@@ -209,7 +209,6 @@ class TalkItOver extends Component {
 
 function mapStateToProps(state, props) {
 	const { together_id } = props
-	console.log('TOG', getTogetherModel(state));
 	return {
 		together: getTogetherModel(state)
 			&& together_id in getTogetherModel(state).byId
