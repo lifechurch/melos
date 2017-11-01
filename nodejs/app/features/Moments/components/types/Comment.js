@@ -206,12 +206,16 @@ class Comment extends Component {
 					customClass='large-6 medium-8 small-11 comment'
 				>
 					{
-							editingComment
+							typeof editingComment === 'string'
 								&& (
 									<CommentCreate
 										avatarSrc={avatarSrc}
 										avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
-										onChange={(val) => { this.setState({ editingComment: val }) }}
+										onChange={(val) => {
+											this.setState({
+												editingComment: val || ''
+											})
+										}}
 										value={editingComment}
 										charLimit={charLimit}
 										onComment={this.handleSaveEdit}
