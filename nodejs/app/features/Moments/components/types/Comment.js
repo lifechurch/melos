@@ -210,7 +210,7 @@ class Comment extends Component {
 								&& (
 									<CommentCreate
 										avatarSrc={avatarSrc}
-										avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
+										avatarPlaceholder={user && user.first_name ? user.first_name.charAt(0) : null}
 										onChange={(val) => {
 											this.setState({
 												editingComment: val || ''
