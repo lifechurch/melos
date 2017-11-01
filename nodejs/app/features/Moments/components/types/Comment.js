@@ -195,7 +195,7 @@ class Comment extends Component {
 					{
 						this.moment
 							&& this.moment.content
-							&& <FormattedText text={this.moment.content} />
+							&& <FormattedText customClass='yv-text-wrap' text={this.moment.content} />
 					}
 				</Moment>
 				<Modal
