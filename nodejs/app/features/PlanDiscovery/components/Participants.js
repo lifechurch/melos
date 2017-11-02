@@ -73,45 +73,31 @@ function Participants({
 			<div className='large-8 small-11 centered'>
 				<SectionedLayout
 					left={backLink}
-					right={
-						// handleDelete is only passed if auth is host
-						handleDelete &&
-						<a
-							tabIndex={0}
-							className='yv-gray-link'
-							onClick={
-								() => {
-									document.getElementById('share-link').scrollIntoView(false)
-								}
-							}
-						>
-							<FormattedMessage id='invite others' />
-							</a>
-						}
 				>
 					<h4><FormattedMessage id='participants' /></h4>
 				</SectionedLayout>
 			</div>
-			<div className='gray-background content'>
-				<div className='columns medium-5 small-12 small-centered white' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
-					<div className='horizontal-center' style={{ height: '250px', marginBottom: '30px' }}>
-						<LazyImage
-							alt='plan-image'
-							src={planImg}
-							width={400}
-							height={250}
-							placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
-						/>
-					</div>
-					{
-						day &&
-						<div className='text-center' style={{ width: '100%', margin: '10px 0' }}>
-							<FormattedMessage id='plans.day number' values={{ day }} />
+			<div className='gray-background content horizontal-center flex-wrap' style={{ height: '100%' }}>
+				<div style={{ width: '100%', marginBottom: '100px' }}>
+					<div className='yv-large-5 yv-small-12 white centered' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
+						<div className='horizontal-center' style={{ height: '250px', marginBottom: '30px' }}>
+							<LazyImage
+								alt='plan-image'
+								src={planImg}
+								width={400}
+								height={250}
+								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
+							/>
 						</div>
-					}
-					<div className='users'>
 						{
-							!(accepted || pending)
+							day &&
+							<div className='text-center' style={{ width: '100%', margin: '10px 0' }}>
+								<FormattedMessage id='plans.day number' values={{ day }} />
+							</div>
+						}
+						<div className='users'>
+							{
+								!(accepted || pending)
 								? (
 									<div className='friend-list' style={{ marginTop: '60px' }}>
 										<Placeholder
@@ -165,14 +151,11 @@ function Participants({
 										</div>
 									</div>
 								)
-						}
+							}
+						</div>
+						{ together_id && handleDelete && <ShareLink together_id={together_id} /> }
 					</div>
 				</div>
-			</div>
-			<div id='share-link'>
-				{/* handleDelete is passed if auth is host, and we only show share if
-					auth is host */}
-				{ together_id && handleDelete && <ShareLink together_id={together_id} /> }
 			</div>
 		</div>
 	)

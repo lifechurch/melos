@@ -53,12 +53,12 @@ class ShareLink extends Component {
 		const linkTitle = description || <FormattedMessage id='invite others' />
 
 		return (
-			<div className='centered share-link-container' style={{ padding: '25px 0' }}>
+			<div className='centered share-link-container white' style={{ padding: '25px' }}>
 				<div className='text-center'>
 					{ linkTitle }
 				</div>
 				<div className='vertical-center horizontal-center flex-wrap'>
-					<div style={{ margin: '25px 10px' }}>
+					<div style={{ margin: '0 10px' }}>
 						<ClickToCopy text={shareLink}>
 							<div className='yv-gray-link share-link'>{ shareLink }</div>
 						</ClickToCopy>

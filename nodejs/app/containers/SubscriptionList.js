@@ -331,24 +331,27 @@ class SubscriptionList extends Component {
 			})
 		}
 
+		let content = (
+			<Placeholder
+				height='80px'
+				width='80px'
+				duplicate={5}
+				className='subscription'
+				lineSpacing='15px'
+				textHeight='10px'
+				borderRadius='5px'
+			/>
+		)
+		if (plansList.length > 0) {
+			content = plansList
+		} else if (plansList.length < 1 && !subscriptions.loading) {
+			content = <FormattedMessage id='plans.you have no plans' />
+		}
+
 		return (
 			<div>
 				<List customClass='subscription-list' loadMore={this.loadMore}>
-					{
-						plansList && plansList.length > 0
-							? plansList
-							: (
-								<Placeholder
-									height='80px'
-									width='80px'
-									duplicate={5}
-									className='subscription'
-									lineSpacing='15px'
-									textHeight='10px'
-									borderRadius='5px'
-								/>
-							)
-					}
+					{ content	}
 				</List>
 				<Modal
 					ref={(ref) => { this.modal = ref }}
@@ -365,8 +368,6 @@ class SubscriptionList extends Component {
 }
 
 function mapStateToProps(state) {
-	console.log('SUB', getSubscriptionsModel(state));
-	console.log('TOGETHER', getTogetherModel(state));
 	return {
 		subscriptions: getSubscriptionsModel(state),
 		readingPlans: getPlansModel(state),

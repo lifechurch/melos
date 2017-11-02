@@ -65,9 +65,10 @@ class CreatePWFView extends Component {
 			})
 		// creating plan with friends date
 		} else {
+			const created_dt = getCurrentDT()
 			dispatch(plansAPI.actions.subscriptions.post({}, {
 				body: {
-					created_dt: getCurrentDT(),
+					created_dt,
 					start_dt: moment(selectedDay).utc().format(),
 					plan_id,
 					together: true,
@@ -77,12 +78,18 @@ class CreatePWFView extends Component {
 				auth: auth.isLoggedIn,
 			})).then((data) => {
 				if (data && data.map && data.data) {
-					const sub = data.data[data.map[0]]
-					dispatch(push(Routes.togetherInvite({
-						username: auth.userData.username,
-						plan_id,
-						together_id: sub.together_id
-					})))
+					const newSubId = data.map.filter((subId) => {
+						return data.data[subId]
+							&& data.data[subId].created_dt === created_dt
+					})[0]
+					const sub = data.data[newSubId]
+					if (sub && sub.together_id) {
+						dispatch(push(Routes.togetherInvite({
+							username: auth.userData.username,
+							plan_id,
+							together_id: sub.together_id
+						})))
+					}
 				}
 			})
 		}

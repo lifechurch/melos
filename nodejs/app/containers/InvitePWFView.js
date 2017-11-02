@@ -8,11 +8,11 @@ import searchAction from '@youversion/api-redux/lib/endpoints/search/action'
 import { getSearchUsers } from '@youversion/api-redux/lib/endpoints/search/reducer'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
+import getReadingPlans from '@youversion/api-redux/lib/models/readingPlans'
 import InvitePWF from '../features/PlanDiscovery/components/InvitePWF'
 import Routes from '../lib/routes'
 
 class InvitePWFView extends Component {
-
 	componentDidMount() {
 		const { dispatch, params: { together_id } } = this.props
 		this.getFriends()
@@ -58,7 +58,6 @@ class InvitePWFView extends Component {
 
 	render() {
 		const { together } = this.props
-
 		return (
 			<InvitePWF
 				{...this.props}
@@ -73,9 +72,14 @@ class InvitePWFView extends Component {
 
 
 function mapStateToProps(state, props) {
-	const { params: { together_id } } = props
-	console.log('TOG', getTogetherModel(state))
+	const { params: { id, together_id } } = props
+	const plan_id = id ? id.split('-')[0] : null
 	return {
+		planImg: getReadingPlans(state)
+			&& getReadingPlans(state)
+					.getPlanImgs({ id: plan_id, width: 640, height: 360 })
+			&& getReadingPlans(state)
+					.getPlanImgs({ id: plan_id, width: 640, height: 360 }).url,
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,
 		search: getSearchUsers(state),
@@ -88,7 +92,7 @@ function mapStateToProps(state, props) {
 
 InvitePWFView.propTypes = {
 	together: PropTypes.object.isRequired,
-	friends: PropTypes.array.isRequired,
+	friends: PropTypes.object.isRequired,
 	search: PropTypes.array.isRequired,
 	auth: PropTypes.object.isRequired,
 	params: PropTypes.object.isRequired,
