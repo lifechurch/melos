@@ -62,8 +62,9 @@ class InvitePWF extends Component {
 		const { selectedIds } = this.state
 		const toDeleteIndex = selectedIds.indexOf(id)
 		if (toDeleteIndex !== -1) {
+			selectedIds.splice(toDeleteIndex, 1)
 			this.setState({
-				selectedIds: selectedIds.splice(toDeleteIndex, 1)
+				selectedIds
 			})
 		}
 	}
@@ -72,7 +73,7 @@ class InvitePWF extends Component {
 		const { dispatch, auth, handleInvite } = this.props
 		const { selectedIds } = this.state
 		if (selectedIds.length > 0 && typeof handleInvite === 'function') {
-			handleInvite(selectedIds)
+			handleInvite(selectedIds.map((id) => { return { id } }))
 		} else {
 			dispatch(push(Routes.subscriptions({ username: auth.userData.username })))
 		}
