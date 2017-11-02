@@ -69,7 +69,7 @@ class NotificationsList extends Component {
 												stringId &&
 												<FormattedMessage
 													id={stringId}
-													values={notification.title && notification.title.l_args}
+													values={(notification.title && notification.title.l_args) || {}}
 												/>
 											}
 											subheading={time}
