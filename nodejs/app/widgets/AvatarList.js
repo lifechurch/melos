@@ -16,7 +16,7 @@ class AvatarList extends Component {
 		// we could pass in users data or this will try and get it from users state
 		if (userids) {
 			userids.forEach((id) => {
-				if (!(id in users)) {
+				if (!(users && id in users)) {
 					dispatch(usersAction({
 						method: 'view',
 						params: {

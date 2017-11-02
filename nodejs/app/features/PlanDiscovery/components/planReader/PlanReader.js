@@ -27,7 +27,7 @@ function PlanReader(props) {
 				planImgUrl={plan && plan.images ?
 					selectImageFromList({
 						images: plan.images,
-						width: 640,
+						width: 320,
 						height: 320
 					}).url :
 					null
@@ -72,7 +72,7 @@ PlanReader.propTypes = {
 
 PlanReader.defaultProps = {
 	showFullChapter: false,
-	customClass: null,
+	customClass: '',
 	day: null,
 	contentNum: null,
 	totalSegments: null,

@@ -30,7 +30,7 @@ class PlansView extends Component {
 			(<a className='solid-button green' href='/sign-in'><FormattedMessage id="plans.my_plans" /></a>)
 
 		return (
-			<div>
+			<div style={{ paddingBottom: '100px' }}>
 				<div className='row horizontal-center discover-buttons'>
 					<ul className='button-group primary-toggle'>
 						<li className={isMyPlans ? '' : 'inactive' }>{ myPlansLink }</li>

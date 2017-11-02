@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import CarouselStandard from '../../../components/Carousel/CarouselStandard'
 import Image from '../../../components/Carousel/Image'
 import PlanActionButtons from './PlanActionButtons'
-import AvatarList from '../../../components/AvatarList'
+import AvatarList from '../../../widgets/AvatarList'
 import ShareWidget from './ShareWidget'
 import imageUtil from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
@@ -71,7 +71,10 @@ class AboutPlan extends Component {
 				friendsReading = (
 					<div>
 						<p className='friends_completed'>{ readingText }</p>
-						<AvatarList avatarList={readingList} />
+						<AvatarList
+							customClass='horizontal-center'
+							userids={readingList.map((usr) => { return usr.id })}
+						/>
 					</div>
 				)
 			}
@@ -81,7 +84,10 @@ class AboutPlan extends Component {
 				friendsCompleted = (
 					<div>
 						<p className='friends_completed'>{ completedText }</p>
-						<AvatarList avatarList={completedList} />
+						<AvatarList
+							customClass='horizontal-center'
+							userids={completedList.map((usr) => { return usr.id })}
+						/>
 					</div>
 				)
 			}
