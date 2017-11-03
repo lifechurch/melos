@@ -3,6 +3,31 @@ import React, { Component, PropTypes } from 'react'
 
 class AddThis extends Component {
 	componentDidMount() {
+		this.initialize()
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { title: nextTitle, text: nextText, url: nextUrl } = nextProps
+		const { title, text, url } = this.props
+
+		if (
+			typeof window !== 'undefined' &&
+			(text !== nextText || url !== nextUrl || title !== nextTitle)
+		) {
+			if (typeof window.addthis_share !== 'object') {
+				window.addthis_share = {}
+			}
+			if (window.addthis) {
+				window.addthis.update('share', 'url', nextUrl)
+				window.addthis.update('share', 'title', `${nextTitle || nextText}`)
+				window.addthis.update('share', 'description', nextText)
+			} else {
+				this.initialize()
+			}
+		}
+	}
+
+	initialize = () => {
 		const { url, text, title } = this.props
 		if (typeof window !== 'undefined') {
 			// Initialize AddThis, if Necessary
@@ -19,24 +44,6 @@ class AddThis extends Component {
 					window.addthis.update('share', 'description', text)
 				}
 			}, 100);
-		}
-	}
-
-	componentWillReceiveProps(nextProps) {
-		const { title: nextTitle, text: nextText, url: nextUrl } = nextProps
-		const { title, text, url } = this.props
-
-		if (
-			typeof window !== 'undefined' &&
-			(text !== nextText || url !== nextUrl || title !== nextTitle)
-		) {
-			if (typeof window.addthis_share !== 'object') {
-				window.addthis_share = {}
-			}
-
-			window.addthis.update('share', 'url', nextUrl)
-			window.addthis.update('share', 'title', `${nextTitle || nextText}`)
-			window.addthis.update('share', 'description', nextText)
 		}
 	}
 

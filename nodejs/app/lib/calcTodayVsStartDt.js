@@ -1,8 +1,8 @@
 import moment from 'moment'
 
 function calcTodayVsStartDt(start_dt) {
-	const today = moment()
-	const startDate = moment(start_dt, 'YYYY-MM-DD')
+	const today = moment().startOf('day')
+	const startDate = moment(start_dt, 'YYYY-MM-DD').startOf('day')
 	const diff = today.diff(startDate, 'days')
 
 	return {

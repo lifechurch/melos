@@ -160,7 +160,6 @@ class SubscriptionList extends Component {
 		let link, src, subContent, dayString, progress, titleString, isInFuture
 		if (start_dt && plan && 'id' in plan) {
 			isInFuture = calcTodayVsStartDt(start_dt).isInFuture
-
 			src = plan.images
 				? selectImageFromList({ images: plan.images, width: 160, height: 160 }).url
 				: null
