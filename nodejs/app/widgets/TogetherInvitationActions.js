@@ -5,7 +5,6 @@ import { getAuth } from '@youversion/api-redux/lib/models'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 
 class TogetherInvitationActions extends Component {
-
 	handleAction = (action) => {
 		const {
 			together_id,
@@ -53,14 +52,6 @@ class TogetherInvitationActions extends Component {
 					handleActionComplete()
 				}
 			})
-		}
-
-		// reset cached subscription list
-		if ('serviceWorker' in navigator) {
-			dispatch(plansAPI.actions.subscriptions.get({}, {
-				auth: true,
-				forceUpdateSWCache: true,
-			}))
 		}
 	}
 

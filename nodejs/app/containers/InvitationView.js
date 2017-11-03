@@ -43,17 +43,29 @@ class InvitationView extends Component {
 		dispatch(plansAPI.actions.together.get({
 			id: together_id,
 			token: this.joinToken
-		}, { auth: auth && auth.isLoggedIn }))
+		}, { auth: auth && auth.isLoggedIn })).then((data) => {
+			if (!(data && data.data)) {
+				this.onUnauthedAction()
+			}
+		})
 	}
 
-	OnActionComplete = () => {
+	onActionComplete = () => {
 		const { auth, dispatch } = this.props
-		dispatch(push(Routes.subscriptions({
-			username: auth.userData.username
-		})))
+		if (auth.isLoggedIn) {
+			dispatch(push(Routes.subscriptions({
+				username: auth.userData.username
+			})))
+		} else if (window) {
+			window.location.href = Routes.signIn({
+				query: {
+					redirect: window.location.href
+				}
+			})
+		}
 	}
 
-	OnUnauthedAction = () => {
+	onUnauthedAction = () => {
 		// redirect to sign up
 		if (window) {
 			window.location.href = Routes.signUp({
@@ -107,8 +119,8 @@ class InvitationView extends Component {
 				startDate={<PlanStartString start_dt={together && together.start_dt} dateOnly />}
 				joinToken={this.joinToken}
 				showDecline={!this.joinToken}
-				handleActionComplete={this.OnActionComplete}
-				handleUnauthed={this.OnUnauthedAction}
+				handleActionComplete={this.onActionComplete}
+				handleUnauthed={this.onUnauthedAction}
 			/>
 		)
 	}
