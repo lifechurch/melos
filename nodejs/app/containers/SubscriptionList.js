@@ -71,7 +71,7 @@ class SubscriptionList extends Component {
 							!(
 								sub.plan_id in readingPlans.byId
 								&& participants
-								&& participants.filter({ together_id: sub.together_id }).length > 0
+								&& participants.filter({ together_id: sub.together_id, idOnly: true }).length > 0
 							)
 						) {
 							dispatch(planView({

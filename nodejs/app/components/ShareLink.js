@@ -20,6 +20,7 @@ class ShareLink extends Component {
 			isOpen: true,
 		}))
 	}
+
 	render() {
 		const {
 		link,
@@ -60,10 +61,17 @@ class ShareLink extends Component {
 				<div className='vertical-center horizontal-center flex-wrap'>
 					<div style={{ margin: '0 10px' }}>
 						<ClickToCopy text={shareLink}>
-							<div className='yv-gray-link share-link'>{ shareLink }</div>
+							<div className='yv-gray-link share-link yv-text-ellipsis'>{ shareLink }</div>
 						</ClickToCopy>
 					</div>
-					<a onClick={this.handleShare.bind(this, { url: shareLink, title: linkTitle, text: shareText })}>
+					<a
+						tabIndex={0}
+						onClick={this.handleShare.bind(this, {
+							url: shareLink,
+							title: linkTitle,
+							text: shareText
+						})}
+					>
 						<ShareIcon fill='darkgray' />
 					</a>
 				</div>
@@ -86,6 +94,7 @@ ShareLink.propTypes = {
 	together: PropTypes.object,
 	participants: PropTypes.object,
 	intl: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 ShareLink.defaultProps = {

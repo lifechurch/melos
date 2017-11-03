@@ -2,7 +2,6 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
-import Immutable from 'immutable'
 // actions
 import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
