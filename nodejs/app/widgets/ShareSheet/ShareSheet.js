@@ -29,7 +29,7 @@ class ShareSheet extends Component {
 					>
 						{ text }
 					</div>
-					<div className='text-center' style={{ fontSize: '14px', width: '100%' }}>
+					<div className='text-center yv-text-ellipsis' style={{ fontSize: '14px', width: '100%' }}>
 						{ url }
 					</div>
 					<div style={{ margin: '25px 0' }}>
