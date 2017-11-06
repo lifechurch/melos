@@ -2,8 +2,13 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import getCurrentDT from '../../../lib/getCurrentDT'
+import Menu from '../../../components/Menu'
+import CarouselArrow from '../../../components/Carousel/CarouselArrow'
+import Modal from '../../../components/Modal'
+import Routes from '../../../lib/routes'
 
-import ActionCreators from '../actions/creators'
 
 class SubscribeUserDialog extends Component {
 	constructor(props) {
@@ -11,46 +16,99 @@ class SubscribeUserDialog extends Component {
 		this.handleSubscribeUser = this.handleSubscribeUser.bind(this)
 	}
 
-	handleSubscribeUser(privacy) {
-		const { dispatch, id, isLoggedIn, isSubscribed, subscriptionLink, useRouter } = this.props
-		if (!isLoggedIn) window.location.replace('/sign-in')
-		if (!isSubscribed) {
-			dispatch(ActionCreators.readingplanSubscribeUser({ id, private: privacy }, isLoggedIn)).then(() => {
-				if (useRouter) {
-					dispatch(push(subscriptionLink))
-				} else {
-					window.location.replace(subscriptionLink)
-				}
-			})
-		} else if (useRouter) {
-			dispatch(push(subscriptionLink))
-		} else {
-			window.location.replace(subscriptionLink)
+	handleSubscribeUser(subscribeContext) {
+		const { dispatch, id, isLoggedIn, subLinkBase, useRouter, serverLanguageTag } = this.props
+		if (!isLoggedIn) {
+			// redirect to sign up
+			if (window) {
+				window.location.href = Routes.signUp({
+					query: {
+						redirect: window.location.href
+					}
+				})
+			}
+		}
+
+		switch (subscribeContext) {
+			case 'together':
+				dispatch(push(`${subLinkBase}/together/create`))
+				break
+			case 'public':
+			case 'private':
+				dispatch(plansAPI.actions.subscriptions.post({}, {
+					body: {
+						created_dt: getCurrentDT(),
+						start_dt: getCurrentDT(),
+						plan_id: id,
+						privacy: subscribeContext,
+						language_tag: serverLanguageTag,
+					},
+					auth: isLoggedIn
+				})).then((data) => {
+					if (data) {
+						const subId = data.map[0]
+						if (useRouter) {
+							dispatch(push(`${subLinkBase}/subscription/${subId}`))
+						} else {
+							window.location.replace(`${subLinkBase}/subscription/${subId}`)
+						}
+					}
+				})
+				break
+			default:
+				break
 		}
 	}
 
 	render() {
+		const { footer } = this.props
+		const heading = (
+			<h6><FormattedMessage id='start plan title' /></h6>
+		)
 		return (
-			<div className='plan-privacy-buttons text-center'>
-				<p className='detail-text'>
-					<FormattedMessage id="plans.privacy.visible to friends?" />
-				</p>
-				<div className='yes-no-buttons'>
-					<a
-						tabIndex={0}
-						className='yes solid-button green'
-						onClick={() => { this.handleSubscribeUser(false) }}
-					>
-						<FormattedMessage id="ui.yes button" />
-					</a>
-					<a
-						tabIndex={0}
-						className='no solid-button gray'
-						onClick={() => { this.handleSubscribeUser(true) }}
-					>
-						<FormattedMessage id="ui.no button" />
-					</a>
-				</div>
+			<div>
+				<Menu
+					customClass='subscribe-actions'
+					heading={heading}
+					footer={footer}
+				>
+					<ul>
+						<a tabIndex={0} onClick={() => { this.modal.handleOpen() }}>
+							<li className='vertical-center'>
+								<div className='option'>
+									<div className='action-title'><FormattedMessage id='by myself' /></div>
+									<div className='action-description'><FormattedMessage id='by myself description' /></div>
+								</div>
+								<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
+							</li>
+						</a>
+						<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'together')}>
+							<li className='vertical-center'>
+								<div className='option'>
+									<div className='action-title'><FormattedMessage id='with friends' /></div>
+									<div className='action-description'><FormattedMessage id='with friends description' /></div>
+								</div>
+								<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
+							</li>
+						</a>
+					</ul>
+				</Menu>
+				<Modal ref={(m) => { this.modal = m }} customClass='subscribe-modal'>
+					<div customClass='horizontal-center flex-wrap'>
+						<div className='flex-wrap horizontal-center option' style={{ marginBottom: '20px' }}>
+							<div className='action-title' style={{ width: '100%' }}><FormattedMessage id='level of privacy' /></div>
+							<div className='action-description'><FormattedMessage id='plan privacy prompt' /></div>
+						</div>
+						<div className='button-actions stacked'>
+							<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'public')}>
+								<FormattedMessage id='visible to friends' />
+							</a>
+							<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'private')}>
+								<FormattedMessage id='private' />
+							</a>
+						</div>
+					</div>
+				</Modal>
 			</div>
 		)
 	}
@@ -59,19 +117,22 @@ class SubscribeUserDialog extends Component {
 SubscribeUserDialog.propTypes = {
 	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	dispatch: PropTypes.func.isRequired,
-	isSubscribed: PropTypes.bool.isRequired,
 	isLoggedIn: PropTypes.bool.isRequired,
-	subscriptionLink: PropTypes.string.isRequired,
-	useRouter: PropTypes.bool
+	subLinkBase: PropTypes.string.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired,
+	useRouter: PropTypes.bool,
+	footer: PropTypes.node,
 }
 
 SubscribeUserDialog.defaultProps = {
 	useRouter: true,
+	footer: null,
 }
 
 function mapStateToProps(state) {
 	return {
 		isLoggedIn: state.auth.isLoggedIn,
+		serverLanguageTag: state.serverLanguageTag,
 	}
 }
 

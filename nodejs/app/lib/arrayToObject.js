@@ -11,7 +11,7 @@ export default function arrayToObject(a, keyProperty) {
 		throw new Error('`arrayToObject` expects `keyProperty` to be a string.')
 	}
 
-	return a.reduce((prev, curr, idx) => {
+	return a.reduce((prev, curr) => {
 		const key = curr[keyProperty]
 
 		if (typeof curr !== 'object') {

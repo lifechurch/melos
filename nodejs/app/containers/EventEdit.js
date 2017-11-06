@@ -33,7 +33,11 @@ class EventEdit extends Component {
 			<div>
 				<EventHeader {...this.props} />
 				<div>
-        	{children && React.cloneElement(children, { modals, event, loc, dispatch, params, routing, references, plans, auth, _content, handleDetailsNext: ::this.handleDetailsNext })}
+					{
+						children
+							&& (children.length > 0 || !Array.isArray(children))
+							&& React.cloneElement(children, { modals, event, loc, dispatch, params, routing, references, plans, auth, _content, handleDetailsNext: ::this.handleDetailsNext })
+					}
 				</div>
 			</div>
 		)
@@ -51,7 +55,7 @@ EventEdit.defaultProps = {
 		isSaving: false,
 		item: {
 			org_name: null,
-			status: "new",
+			status: 'new',
 			updated_dt: null,
 			description: null,
 			title: null,

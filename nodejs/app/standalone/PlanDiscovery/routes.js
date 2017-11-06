@@ -3,11 +3,8 @@ import { Route, IndexRoute } from 'react-router'
 import PlanDiscoveryView from '../../containers/PlanDiscoveryView'
 import PlanCollectionView from '../../containers/PlanCollectionView'
 import PlansView from '../../containers/PlansView'
+import PlansList from '../../containers/PlanList'
 import AboutPlanView from '../../containers/AboutPlanView'
-
-import MySubscribedPlans from '../../containers/MySubscribedPlans'
-import MySavedPlans from '../../containers/MySavedPlans'
-import MyCompletedPlans from '../../containers/MyCompletedPlans'
 
 import Plan from '../../containers/Plan'
 import UnsubbedPlan from '../../containers/UnsubbedPlan'
@@ -16,8 +13,6 @@ import PlanSettings from '../../containers/PlanSettings'
 import PlanCalendar from '../../containers/PlanCalendar'
 
 import PlanReader from '../../containers/PlanReaderView'
-import PlanDevo from '../../features/PlanDiscovery/components/planReader/PlanDevo'
-import PlanRef from '../../features/PlanDiscovery/components/planReader/PlanRef'
 
 import DayCompleteView from '../../containers/DayCompleteView'
 import SharedDayCompleteView from '../../containers/SharedDayCompleteView'
@@ -25,6 +20,13 @@ import PlanCompleteView from '../../containers/PlanCompleteView'
 
 import LookinsideView from '../../containers/LookinsideView'
 import LookinsideSample from '../../containers/LookinsideSample'
+
+import CreatePWFView from '../../containers/CreatePWFView'
+import InvitePWFView from '../../containers/InvitePWFView'
+import ParticipantsView from '../../containers/ParticipantsView'
+import InvitationView from '../../containers/InvitationView'
+import TalkItOverRedirect from '../../containers/TalkItOverRedirect'
+
 
 /**
  * get the routes for reading plans
@@ -50,11 +52,9 @@ export default function (
 		requireSubscribedPlans,
 		requireSavedPlans,
 		requireCompletedPlans,
-		requireSubscribedPlan,
-		requirePlanReferences,
 		requirePlanCompleteData,
 		requirePlanView,
-		requireSamplePlan
+		requireSamplePlan,
 	) {
 	return (
 		<Route path="/">
@@ -76,22 +76,45 @@ export default function (
 			<Route path="(:lang/)recommended-plans-collection" component={PlansView}>
 				<Route path=":id(-:slug)" component={PlanCollectionView} onEnter={requireRecommendedPlanData} />
 			</Route>
-			<Route path="(:lang/)users/:username" component={PlansView} isMyPlans={true}>
-				<Route path="saved-reading-plans" component={MySavedPlans} onEnter={requireSavedPlans} />
-				<Route path="completed-reading-plans" component={MyCompletedPlans} onEnter={requireCompletedPlans} />
-				<Route path="reading-plans" component={MySubscribedPlans} onEnter={requireSubscribedPlans} />
+			<Route path="(:lang/)users/:username" component={PlansView} isMyPlans>
+				<Route path="saved-reading-plans" component={PlansList} view='saved' onEnter={requireSavedPlans} />
+				<Route path="completed-reading-plans" component={PlansList} view='completed' />
+				<Route path="reading-plans" component={PlansList} view='subscribed' />
 			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onChange={requireSubscribedPlan} onEnter={requireSubscribedPlan}>
+			<Route
+				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id"
+				component={Plan}
+			>
 				<IndexRoute component={PlanDay} />
 				<Route path="day/:day" component={PlanDay} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/day/:day" component={PlanReader}>
-				<Route path="devo" component={PlanDevo} />
-				<Route path="ref/:content" component={PlanRef} />
-			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/day/:day/completed" component={DayCompleteView} onEnter={requirePlanView} />
+			<Route
+				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/segment/:content"
+				component={PlanReader}
+			/>
+			<Route
+				path="(:lang/)subscription/:subscription_id/day/:day/talk-it-over/:content"
+				component={TalkItOverRedirect}
+			/>
+			<Route
+				path="(:lang/)reading-plans/:id(-:slug)/together/:together_id/invitation"
+				component={InvitationView}
+			/>
+			<Route
+				path="(:lang/)reading-plans/:id(-:slug)/together/:together_id/participants"
+				component={ParticipantsView}
+			/>
+			<Route
+				path="(:lang/)users/:username/reading-plans/:id(-:slug)/together/create"
+				component={CreatePWFView}
+			/>
+			<Route
+				path="(:lang/)users/:username/reading-plans/:id(-:slug)/together/:together_id/invite"
+				component={InvitePWFView}
+			/>
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/completed" component={DayCompleteView} />
 			{/* this is also day complete, but an unauthed page with the user id in the url as params, only loaded from the server */}
 			<Route path="(:lang/)reading-plans/:id(-:slug)/day/:day/completed" component={SharedDayCompleteView} />
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
@@ -103,24 +126,7 @@ export default function (
 					<IndexRoute component={PlanDay} />
 				</Route>
 			</Route>
+			<Route component={() => { return <div>Not Found</div> }} />
 		</Route>
 	)
 }
-
-/*
-
-MyPlans (PlansView)
-  - Subscribed (MySubscribedPlans)
- - Saved (MySavedPlans)
- - Completed (MyCompletedPlans)
-
-Plan (Plan)
- - Overview (PlanDay)
- - Settings (PlanSettings)
- - Calendar (PlanCalendar)
-
-PlanReader
- - Devo (PlanDayDevo)
- - Ref (PlanDayRef)
-
-*/

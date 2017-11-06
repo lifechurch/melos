@@ -27,6 +27,11 @@ module YV
             auth = {}
           end
 
+					# merge in oauth for the feature import
+					if cookies.has_key?(:OAUTH)
+						auth[:oauth] = JSON.parse cookies[:OAUTH]
+					end
+
           params['languageTag'] = I18n.locale
           params['railsHost'] = "#{request.protocol}#{request.host_with_port}"
 					params['acceptLangHeader'] = request.env['HTTP_ACCEPT_LANGUAGE']
@@ -63,6 +68,10 @@ module YV
               if (!cookies.has_key?(CookieName) || cookies[CookieName] != response['token']) && response['token']
                 cookies[CookieName] = { value: response['token'], expires: 24.hour.from_now }
               end
+
+							if (!cookies.has_key?('OAUTH') || cookies['OAUTH'] != response['oauth']) && response['oauth']
+								cookies[:OAUTH] = { value: JSON.generate(response['oauth']), expires: 24.hour.from_now }
+							end
 
               return response
 

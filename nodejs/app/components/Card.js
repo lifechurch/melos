@@ -17,9 +17,9 @@ function Card(props) {
 			</div>
 			{
 				extension &&
-				<div className='card-extension'>
-					{ extension }
-				</div>
+					<div className='card-extension'>
+						{ extension }
+					</div>
 			}
 		</div>
 	)

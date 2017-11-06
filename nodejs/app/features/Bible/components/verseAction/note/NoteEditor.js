@@ -42,7 +42,7 @@ class NoteEditor extends Component {
  * @updateNote 		{function} 		callback to update text value
  */
 NoteEditor.propTypes = {
-	updateNote: PropTypes.func,
+	updateNote: PropTypes.func.isRequired,
 }
 
 export default NoteEditor

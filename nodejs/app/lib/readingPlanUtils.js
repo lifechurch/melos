@@ -1,64 +1,46 @@
-import ActionCreators from '../features/PlanDiscovery/actions/creators'
+import moment from 'moment'
+import Immutable from 'immutable'
 import BibleActionCreators from '../features/Bible/actions/creators'
 
 /**
  * Determines if final reading content for a
- * specific reading plan day.
+ * specific reading plan day based on the list of bools for segment progress.
  *
- * @param      {object}   planDay         The plan day object from calendar
- * @param      {string}   currentRef      The current reference
- * @param      {boolean}  isCheckingDevo  Indicates if checking devo
  * @return     {boolean}  True if final reading content, False otherwise.
  */
-export default function isFinalReadingForDay(planDay, currentRef, isCheckingDevo = false) {
-	let isDevoCompleted, isFinalRef = false
-	// either devo is already completed, or
-	// all refs are completed and we're checking if the devo is the last
-	// content to be completed
-	if (isCheckingDevo) {
-		isDevoCompleted = true
-	} else {
-		isDevoCompleted = planDay.additional_content.completed
-	}
-	// either we have no refs, all refs are already completed, or this current ref
-	// is the last remaining to be completed
-	if (planDay.references.length < 1) {
-		isFinalRef = true
-	} else if (planDay.refs_completed) {
-		isFinalRef = true
-	} else if (currentRef) {
-		for (let i = 0; i < planDay.references_remaining.length; i++) {
-			const ref = planDay.references_remaining[i]
-			// if the current ref is the only ref remaining
-			if (ref.toString() === currentRef.toString() && planDay.references_remaining.length === 1) {
-				isFinalRef = true
-			}
-		}
-	}
-	// if the devo is already complete (or we're checking devo), and this is the last
-	// incomplete ref (or refs are all complete), then this is the last content for the day
-	return (isDevoCompleted && isFinalRef)
+export function isDayComplete(dayProgress) {
+	if (!dayProgress) return false
+	// if day progress doesn't include a false value, then it's complete
+	return !(Immutable.List(dayProgress).includes(false))
 }
 
+export function isFinalSegmentToComplete(segIndex, dayProgress) {
+	if (!dayProgress) return false
+	let isFinal = true
+	dayProgress.forEach((segComplete, i) => {
+		// if any of the segments we're not currently on is not complete, than this
+		// seg is not the final reading for the day
+		if (i !== parseInt(segIndex, 10) && !segComplete) {
+			isFinal = false
+		}
+	})
+	return isFinal
+}
 
-export function isFinalPlanDay(day, calendar, total_days) {
+export function isFinalPlanDay(day, progressDays) {
+	if (!day || !progressDays) return false
+
 	const dayNum = parseInt(day, 10)
-	const planDay = calendar[dayNum - 1]
-	const totalDays = parseInt(total_days, 10)
+	const days = Object.keys(progressDays)
+	const totalDays = parseInt(days.length, 10)
 
-	// if the day we're on is already completed, and the plan isn't completed yet
-	// then this isn't the last uncompleted day in the plan
-	if (planDay.completed) {
-		return false
-	}
-
-	// start at the end of the calendar and check for an uncomplete day that's not
+	// start at the end of the progressDays and check for an incomplete day that's not
 	// the current one
-	for (let i = totalDays - 1; i >= 0; i--) {
-		const dayObj = calendar[i]
+	for (let i = totalDays; i > 0; i--) {
+		const dayObj = progressDays[i]
 			// if we find a day that is not complete, and it's not the day that we're currently
 			// on, then we have more days to go
-		if (dayObj.day !== dayNum && !dayObj.completed) {
+		if (dayObj.day !== dayNum && !dayObj.complete) {
 			return false
 		}
 	}
@@ -67,47 +49,6 @@ export function isFinalPlanDay(day, calendar, total_days) {
 	return true
 }
 
-
-export function dayHasDevo(additional_content) {
-	return 	(!!additional_content.html) ||
-					(!!additional_content.text)
-}
-
-
-export function handleRefUpdate(
-	completedRefs,
-	isDevo,
-	hasDevo,
-	devoCompleted,
-	currentRef,
-	complete,
-	planId,
-	dayNum,
-	dispatch
-) {
-	const references = completedRefs
-	let completeDevo = true
-	// devotional is true by default if there is no devotional
-	// otherwise this will overwrite with the correct value
-	if (hasDevo) {
-		completeDevo = (isDevo && complete) || devoCompleted
-	}
-	// if we have a reference, that we're reading through,
-	// add it to the list of completedRefs
-	if (currentRef && complete) {
-		references.push(currentRef)
-	} else if (currentRef) {
-		references.splice(references.indexOf(currentRef), 1)
-	}
-
-	// make api call
-	dispatch(ActionCreators.updatePlanDay({
-		id: planId,
-		day: dayNum,
-		references,
-		devotional: completeDevo,
-	}, true))
-}
 
 
 /**
@@ -130,4 +71,64 @@ export function getDefaultVersion(store, locale) {
 		})
 	}
 	return defaultVersion
+}
+
+/**
+ * if no day is passed to a subscription then we want to figure out
+ * what day to start on based on the date and the start date of the plan
+ * @param  {[number]} total_days [total days in plan]
+ * @param  {[string]} start_dt   [start date of plan]
+ * @return {[number]}            [current day of plan]
+ */
+export function calcCurrentPlanDay({ total_days, start_dt }) {
+	const calculatedDay = moment().diff(moment(start_dt, 'YYYY-MM-DD'), 'days') + 1
+	let currentDay
+	if (parseInt(calculatedDay, 10) > parseInt(total_days, 10)) {
+		currentDay = total_days
+	} else {
+		currentDay = calculatedDay
+	}
+
+	if (Number.isNaN(currentDay) || currentDay < 1) {
+		return 1
+	} else {
+		return currentDay
+	}
+}
+
+export function hasUserCompletedActivity(dayActivities, userid) {
+	let hasCompleted = false
+	if (dayActivities && Object.keys(dayActivities).length > 0) {
+		Object.keys(dayActivities).forEach((id) => {
+			const completion = dayActivities[id]
+			if (
+				completion.kind === 'complete' &&
+				parseInt(completion.user_id, 10) === parseInt(userid, 10)
+			) {
+				hasCompleted = true
+			}
+		})
+	}
+	return hasCompleted
+}
+
+/**
+ * calculate which indices the talk it overs appear in the full exploded daySegments
+ * @param  {[array]} daySegments [array of segments for a specific plan day]
+ * @return {[array]}             [array mapping the appearance of tio to it's
+ * index in the daysegments. i.e. a tio which appears as the 3rd segment will be returned
+ * as [2]. this says that the first tio is at index 2. if we have multiple tio, then the
+ * index into this array will be the appearance order. i.e. [2, 4] says that the 2nd tio
+ * is at index 4 of daySegments]
+ */
+export function mapTioIndices(daySegments) {
+	const tioIndices = []
+	if (daySegments) {
+		daySegments.forEach((seg, i) => {
+			if (seg.kind === 'talk-it-over') {
+				tioIndices.push(i)
+			}
+		})
+	}
+	return tioIndices
 }

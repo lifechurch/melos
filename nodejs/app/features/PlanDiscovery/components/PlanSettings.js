@@ -1,138 +1,337 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
+import Immutable from 'immutable'
 import { push } from 'react-router-redux'
+import Toggle from 'react-toggle-button'
+import deleteSub from '@youversion/api-redux/lib/batchedActions/deleteSub'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import ProgressBar from '../../../components/ProgressBar'
+import ShareLink from '../../../components/ShareLink'
+import PlanStartString from './PlanStartString'
+import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
+import Routes from '../../../lib/routes'
+import calcTodayVsStartDt from '../../../lib/calcTodayVsStartDt'
+import getCurrentDT from '../../../lib/getCurrentDT'
 
-import ActionCreators from '../actions/creators'
 
 class PlanSettings extends Component {
-	constructor(props) {
-		super(props)
-		this.handleCatchUp = this.handleCatchUp.bind(this)
-		this.handleEmailDeliveryChange = this.handleEmailDeliveryChange.bind(this)
-		this.handlePrivacyChange = this.handlePrivacyChange.bind(this)
-		this.handleStop = this.handleStop.bind(this)
-		this.handleSelectPlan = this.handleSelectPlan.bind(this)
-		this.handleReloadCalendar = this.handleReloadCalendar.bind(this)
+	componentDidMount() {
+		const { dispatch } = this.props
+		dispatch(plansAPI.actions.settings.get({
+			id: this.subscription_id,
+		}, { auth: true }))
 	}
 
-	handleSelectPlan() {
-		const { dispatch, id } = this.props
-		dispatch(ActionCreators.planSelect({ id }))
+	handlePrivacyChange = (isPrivate) => {
+		const { dispatch, subscription } = this.props
+		dispatch(plansAPI.actions.subscription.put({
+			id: subscription.id
+		}, {
+			auth: true,
+			body: {
+				privacy: isPrivate
+					? 'private'
+					: 'public'
+			}
+		}))
 	}
 
-	handleReloadCalendar() {
-		const { dispatch, id, params, serverLanguageTag, auth: { userData: { userid } } } = this.props
-		const language_tag = serverLanguageTag || params.lang || 'en'
-		return dispatch(ActionCreators.calendar({ id, language_tag, user_id: userid })).then(() => {
-			this.handleSelectPlan()
-		})
+	handleTogetherNotifications = (notificationsOn, kind) => {
+		const { subscription, dispatch } = this.props
+		dispatch(plansAPI.actions.setting.put({
+			id: this.subscription_id,
+			kind,
+		}, {
+			auth: true,
+			body: {
+				setting: Immutable
+					.fromJS(subscription.settings[kind])
+					.setIn(['email'], notificationsOn)
+					.toJS(),
+				updated_dt: getCurrentDT(),
+			}
+		}))
 	}
 
-	handlePrivacyChange() {
-		const { dispatch, id, isPrivate } = this.props
-		dispatch(ActionCreators.updateSubscribeUser({ id, private: !isPrivate }, true)).then(() => {
-			this.handleSelectPlan()
-		})
+	handleCatchUp = () => {
+		const { onCatchUp } = this.props
+		if (onCatchUp && typeof onCatchUp === 'function') {
+			onCatchUp()
+		}
 	}
 
-	handleEmailDeliveryChange() {
-		const { dispatch, id, isEmailDeliveryOn } = this.props
-		const email_delivery = isEmailDeliveryOn ? false : '08:00:00'
-		const email_delivery_version_id = isEmailDeliveryOn ? null : 1
-		dispatch(ActionCreators.updateSubscribeUser({ id, email_delivery, email_delivery_version_id }, true)).then(() => {
-			this.handleSelectPlan()
-		})
-	}
-
-	handleCatchUp() {
-		const { dispatch, id, subscriptionLink } = this.props
-		dispatch(ActionCreators.resetSubscription({ id }, true)).then(() => {
-			this.handleReloadCalendar().then(() => {
-				dispatch(push(subscriptionLink))
+	handleStop = () => {
+		const { dispatch, auth } = this.props
+		if (this.together_id) {
+			dispatch(plansAPI.actions.participant.delete({
+				id: this.together_id,
+				userid: auth && auth.userData && auth.userData.userid
+			}, {
+				auth: auth.isLoggedIn
+			})).then(() => {
+				dispatch(deleteSub({
+					subscription_id: this.subscription_id,
+					together_id: this.together_id
+				}))
+				dispatch(push(Routes.subscriptions({
+					username: auth.userData.username
+				})))
 			})
-		})
+		} else {
+			dispatch(plansAPI.actions.subscription.delete({
+				id: this.subscription_id
+			}, {
+				auth: auth.isLoggedIn
+			})).then(() => {
+				dispatch(push(Routes.subscriptions({
+					username: auth.userData.username
+				})))
+			})
+		}
 	}
 
-	handleStop() {
-		const { dispatch, id, myPlansLink, auth: { userData: { userid } } } = this.props
-		dispatch(ActionCreators.unsubscribeUser({ id }, true)).then(() => {
-			dispatch(ActionCreators.items({ user_id: userid, page: 1 }, true)).then(() => {
-				dispatch(push(myPlansLink))
-			})
-		})
-	}
+
 
 	render() {
-		const { isPrivate, isEmailDeliveryOn, emailDelivery } = this.props
+		const {
+			dayOfString,
+			startString,
+			endString,
+			subscription,
+			isAuthHost,
+			auth,
+		} = this.props
+
+		this.together_id = subscription && subscription.together_id
+			? subscription.together_id
+			: null
+		this.subscription_id = subscription && subscription.id
+			? subscription.id
+			: null
 
 		const rowStyle = {
 			paddingTop: 20,
 			paddingBottom: 20,
-			borderTop: '1px solid #ddd'
+			borderTop: '1px solid #ddd',
+			display: 'flex',
+			alignItems: 'center',
 		}
+		const switchColors = {
+			active: {
+				base: '#6ab750',
+			},
+			inactive: {
+				base: '#D4D4D4',
+			}
+		}
+		const trackStyle = {
+			height: 27,
+			width: 55,
+		}
+		const thumbStyle = {
+			width: 27,
+			height: 27,
+		}
+		const thumbAnimateRange = [1, 25]
 
-		const rightCellStyle = {
-			textAlign: 'right'
+		let isPrivate = false
+		let commentNotificationsOn = false
+		let acceptNotificationsOn = false
+		let startsInFuture = false
+		let progressPercentage = 0
+		let progressString = ''
+		if (subscription) {
+			startsInFuture = calcTodayVsStartDt(subscription.start_dt).isInFuture
+			isPrivate = subscription.privacy === 'private'
+			commentNotificationsOn = this.together_id
+				&& subscription.settings
+				&& subscription.settings.comment_notifications
+				&& subscription.settings.comment_notifications.email
+			acceptNotificationsOn = this.together_id
+				&& subscription.settings
+				&& subscription.settings.accept_notifications
+				&& subscription.settings.accept_notifications.email
+			if (subscription.overall) {
+				progressPercentage = subscription.overall.completion_percentage
+				progressString = subscription.overall.progress_string
+			}
 		}
 
 		return (
-			<div className="row" style={{ marginTop: 30 }}>
-				<div className="columns large-8 large-centered">
-					<div className="row" style={rowStyle}>
-						<div className="columns medium-8">
-							<h3><FormattedMessage id="plans.privacy title" /></h3>
-							<p>
-								{isPrivate
-                ? <FormattedMessage id="plans.privacy description.private" />
-                : <FormattedMessage id="plans.privacy description.public" />
-              }
-							</p>
+			<div className='row large-6 medium-8 small-11 plan-settings' style={{ marginTop: 30 }}>
+				<div style={{ padding: '25px 0 20px 0' }}>
+					{
+						startsInFuture
+							?	(
+								<div className='vertical-center button-actions'>
+									<h5>
+										<PlanStartString start_dt={subscription && subscription.start_dt} />
+									</h5>
+									{
+										isAuthHost
+											&& (
+												<Link
+													to={Routes.togetherCreate({
+														username: auth && auth.userData && auth.userData.username,
+														plan_id: subscription && subscription.plan_id,
+														query: {
+															subscription_id: this.subscription_id,
+														}
+													})}
+													className='yv-gray-link margin-left-auto'
+												>
+													<FormattedMessage id='change date' />
+												</Link>
+											)
+									}
+								</div>
+							)
+							: (
+								<div>
+									<div style={{ marginBottom: '10px' }}>
+										{ dayOfString }
+										{` (${progressPercentage}%)`}
+										&nbsp;&bull;&nbsp;
+										{ progressString }
+									</div>
+									<ProgressBar
+										percentComplete={progressPercentage}
+										height='6px'
+										color='#6ab750'
+										borderColor='white'
+										backgroundColor='#F4F4F4'
+									/>
+									<div className='space-between' style={{ marginTop: '5px' }}>
+										<p>{ startString }</p>
+										<p>{ endString }</p>
+									</div>
+								</div>
+							)
+					}
+				</div>
+				{
+					this.together_id &&
+					<div className='text-center flex-wrap horizontal-center' style={rowStyle}>
+						<div style={{ marginBottom: '15px', width: '100%' }}>
+							<FormattedMessage id='participants' />
 						</div>
-						<div className="columns medium-4" style={rightCellStyle}>
-							<button className="solid-button green" onClick={this.handlePrivacyChange}>
-								{isPrivate
-                ? <FormattedMessage id="plans.make public" />
-                : <FormattedMessage id="plans.make private" />
-              }
-							</button>
+						<ParticipantsAvatarList
+							together_id={this.together_id}
+							statusFilter={['host', 'accepted']}
+						/>
+					</div>
+				}
+				{
+					this.together_id
+						&& isAuthHost
+						&& (
+							<div className='text-center flex-wrap horizontal-center'>
+								<ShareLink together_id={this.together_id} />
+							</div>
+						)
+				}
+				{
+					this.together_id &&
+					<div style={{ marginTop: '50px', padding: '10px 0' }}>
+						<h3><FormattedMessage id='notifications' /></h3>
+					</div>
+				}
+				{
+					this.together_id &&
+					isAuthHost &&
+					<div style={rowStyle}>
+						<div style={{ flex: 1, paddingRight: '40px' }}>
+							<h3><FormattedMessage id='when participant accepts' /></h3>
+						</div>
+						<div>
+							<Toggle
+								value={acceptNotificationsOn}
+								onToggle={(val) => {
+									this.handleTogetherNotifications(!val, 'accept_notifications')
+								}}
+								activeLabel=''
+								inactiveLabel=''
+								colors={switchColors}
+								trackStyle={trackStyle}
+								thumbStyle={thumbStyle}
+								thumbAnimateRange={thumbAnimateRange}
+							/>
 						</div>
 					</div>
-					<div className="row" style={rowStyle}>
-						<div className="columns medium-8">
-							<h3><FormattedMessage id="plans.email delivery" /></h3>
-							<p>
-								<FormattedMessage id="plans.email delivery text" />
-							</p>
+				}
+				{
+					this.together_id &&
+					<div style={rowStyle}>
+						<div style={{ flex: 1, paddingRight: '40px' }}>
+							<h3><FormattedMessage id='when participant comments' /></h3>
 						</div>
-						<div className="columns medium-4" style={rightCellStyle}>
-							<button className="solid-button green" onClick={this.handleEmailDeliveryChange}>
-								{isEmailDeliveryOn
-                ? <FormattedMessage id="plans.email_off" />
-                : <FormattedMessage id="plans.email_on" />
-              }
-							</button>
-							<div>{emailDelivery}</div>
-						</div>
-					</div>
-					<div className="row" style={rowStyle}>
-						<div className="columns medium-8">
-							<h3><FormattedMessage id="plans.are you behind" /></h3>
-							<p>
-								<FormattedMessage id="plans.catch up description only" />
-							</p>
-						</div>
-						<div className="columns medium-4" style={rightCellStyle}>
-							<button className="solid-button green" onClick={this.handleCatchUp}>
-								<FormattedMessage id="plans.catch me up" />
-							</button>
+						<div>
+							<Toggle
+								value={commentNotificationsOn}
+								onToggle={(val) => {
+									this.handleTogetherNotifications(!val, 'comment_notifications')
+								}}
+								activeLabel=''
+								inactiveLabel=''
+								colors={switchColors}
+								trackStyle={trackStyle}
+								thumbStyle={thumbStyle}
+								thumbAnimateRange={thumbAnimateRange}
+							/>
 						</div>
 					</div>
-					<div className="row" style={rowStyle}>
-						<div className="columns small-12">
-							<a tabIndex={0} onClick={this.handleStop} className="warning-text">
-								<FormattedMessage id="plans.stop reading" />
-							</a>
+				}
+				{
+					// privacy can't be changed with a pwf
+					!this.together_id &&
+					<div style={rowStyle}>
+						<div style={{ flex: 1, paddingRight: '40px' }}>
+							<h3><FormattedMessage id='plans.privacy title' /></h3>
+							<p>
+								{
+									isPrivate
+										? <FormattedMessage id='plans.privacy description.private' />
+										: <FormattedMessage id='plans.privacy description.public' />
+								}
+							</p>
 						</div>
+						<div>
+							<Toggle
+								value={isPrivate}
+								onToggle={(val) => {
+									this.handlePrivacyChange(!val)
+								}}
+								activeLabel=''
+								inactiveLabel=''
+								colors={switchColors}
+								trackStyle={trackStyle}
+								thumbStyle={thumbStyle}
+								thumbAnimateRange={thumbAnimateRange}
+							/>
+						</div>
+					</div>
+				}
+				{
+					// can't catch up on a pwf
+					!this.together_id &&
+					<div style={rowStyle}>
+						<div style={{ flex: 1, paddingRight: '40px' }}>
+							<h3><FormattedMessage id='plans.are you behind' /></h3>
+							<p>
+								<FormattedMessage id='plans.catch up description only' />
+							</p>
+						</div>
+						<button className='solid-button green' onClick={this.handleCatchUp}>
+							<FormattedMessage id='plans.catch me up' />
+						</button>
+					</div>
+				}
+				<div style={rowStyle}>
+					<div style={{ flex: 1, paddingRight: '40px' }}>
+						<a tabIndex={0} onClick={this.handleStop} className='warning-text'>
+							<FormattedMessage id='plans.stop reading' />
+						</a>
 					</div>
 				</div>
 			</div>
@@ -141,20 +340,21 @@ class PlanSettings extends Component {
 }
 
 PlanSettings.propTypes = {
-	id: PropTypes.number.isRequired,
-	isPrivate: PropTypes.bool.isRequired,
-	isEmailDeliveryOn: PropTypes.bool.isRequired,
-	subscriptionLink: PropTypes.string.isRequired,
-	emailDelivery: PropTypes.object,
+	subscription: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
-	myPlansLink: PropTypes.string.isRequired,
-	serverLanguageTag: PropTypes.string.isRequired,
+	onCatchUp: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired,
-	params: PropTypes.object.isRequired
+	isAuthHost: PropTypes.bool.isRequired,
+	dayOfString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+	startString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+	endString: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 }
 
 PlanSettings.defaultProps = {
-	emailDelivery: {}
+	shareLink: null,
+	dayOfString: null,
+	startString: null,
+	endString: null,
 }
 
 export default PlanSettings

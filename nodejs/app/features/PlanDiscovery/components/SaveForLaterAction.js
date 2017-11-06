@@ -31,10 +31,10 @@ class SaveForLaterAction extends Component {
 			<div className='checkmark-container'>
 				<a
 					tabIndex={0}
-					className={`save-for-later ${isButton && 'button'}`}
+					className={`save-for-later ${isButton ? 'button' : ''}`}
 					onClick={this.handleSaveForLater}
 				>
-					{isSaved && <CheckMark />}
+					{isSaved && <CheckMark width={15} height={15} />}
 					{isSaved
 						? <FormattedMessage id="plans.saved for later" />
 						: <FormattedMessage id="plans.save for later" />

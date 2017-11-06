@@ -109,17 +109,18 @@ class Search extends Component {
 									this.input.clearInput()
 									this.setState({ value: '' })
 								}}
-								style={{ position: 'absolute' }}
+								className='close-button'
 							>
 								<XMark
 									fill='gray'
-									width={11}
-									height={11}
+									width={14}
+									height={14}
 								/>
 							</a>
 						)
 				}
-				{ showClose
+				{
+					showClose
 					&& showInput
 					&& (
 						<a

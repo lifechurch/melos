@@ -12,6 +12,8 @@ const endpoints = [
 	'reading-plans',
 	'moments',
 	'audio-bible',
+	'friends',
+	'messaging',
 	'notifications',
 	'streaks',
 	'friendships',

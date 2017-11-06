@@ -118,6 +118,7 @@ class Comment extends Component {
 			auth,
 			together,
 			momentData,
+			charLimit,
 		} = this.props
 		const { editingComment } = this.state
 
@@ -151,7 +152,7 @@ class Comment extends Component {
 		return (
 			<div>
 				<Moment
-					className='comment-moment'
+					className='yv-comment-moment'
 					likedIds={likedIds}
 					commentIds={null}
 					header={
@@ -180,10 +181,11 @@ class Comment extends Component {
 							}
 							right={
 								!this.archived
+									&& this.isAuthedMoment
 									&& (
 										<OverflowMenu>
-											<Edit onClick={this.isAuthedMoment ? this.handleEdit : null} />
-											<Delete onClick={this.isAuthedMoment ? this.handleDelete : null} />
+											<Edit onClick={this.handleEdit} />
+											<Delete onClick={this.handleDelete} />
 										</OverflowMenu>
 									)
 							}
@@ -193,7 +195,7 @@ class Comment extends Component {
 					{
 						this.moment
 							&& this.moment.content
-							&& <FormattedText text={this.moment.content} />
+							&& <FormattedText customClass='yv-text-wrap' text={this.moment.content} />
 					}
 				</Moment>
 				<Modal
@@ -204,13 +206,18 @@ class Comment extends Component {
 					customClass='large-6 medium-8 small-11 comment'
 				>
 					{
-							editingComment
+							typeof editingComment === 'string'
 								&& (
 									<CommentCreate
 										avatarSrc={avatarSrc}
-										avatarPlaceholder={this.authedUser && this.authedUser.first_name ? this.authedUser.first_name.charAt(0) : null}
-										onChange={(val) => { this.setState({ editingComment: val }) }}
+										avatarPlaceholder={user && user.first_name ? user.first_name.charAt(0) : null}
+										onChange={(val) => {
+											this.setState({
+												editingComment: val || ''
+											})
+										}}
 										value={editingComment}
+										charLimit={charLimit}
 										onComment={this.handleSaveEdit}
 									/>
 								)
@@ -248,6 +255,7 @@ Comment.propTypes = {
 	onEdit: PropTypes.func,
 	momentData: PropTypes.object,
 	dispatch: PropTypes.func.isRequired,
+	charLimit: PropTypes.number,
 }
 
 Comment.defaultProps = {
@@ -264,6 +272,7 @@ Comment.defaultProps = {
 	onUnlike: null,
 	onDelete: null,
 	momentData: null,
+	charLimit: null,
 }
 
 export default connect(mapStateToProps, null)(Comment)

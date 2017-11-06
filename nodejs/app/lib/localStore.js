@@ -3,10 +3,10 @@ import Immutable from 'immutable'
 
 function getKeysAndValue(key) {
 	if (typeof key === 'undefined') {
-		throw `LocalStore: Invalid key 'undefined' for setIn/getIn.`
+		throw 'LocalStore: Invalid key \'undefined\' for setIn/getIn.'
 	}
 
-	let keys = key.split('.')
+	const keys = key.split('.')
 	const storageKey = keys.splice(0, 1)
 
 	if (keys.length < 1) {
@@ -39,18 +39,18 @@ function getMergedOptions(opts) {
 }
 
 export default {
-	set(key, value, opt={}) {
+	set(key, value, opt = {}) {
 		cookie.save(key, value, getMergedOptions(opt))
 	},
 
-	setIn(key, value, opt={}) {
+	setIn(key, value, opt = {}) {
 		const { keys, storageKey, storageObject } = getKeysAndValue(key)
 		cookie.save(storageKey, Immutable.fromJS(storageObject).setIn(keys, value).toJS(), getMergedOptions(opt))
 	},
 
 	get(key) {
 		const value = cookie.load(key)
-		return value === "" ? null : value
+		return value === '' ? null : value
 	},
 
 	getIn(key) {
@@ -58,11 +58,11 @@ export default {
 		return Immutable.fromJS(storageObject).getIn(keys)
 	},
 
-	delete(key, opt={}) {
+	delete(key, opt = {}) {
 		cookie.remove(key, getMergedOptions(opt))
 	},
 
-	deleteIn(key, opt={}) {
+	deleteIn(key, opt = {}) {
 		const { keys, storageKey, storageObject } = getKeysAndValue(key)
 		cookie.save(storageKey, Immutable.fromJS(storageObject).deleteIn(keys).toJS(), getMergedOptions(opt))
 	}

@@ -1,0 +1,106 @@
+
+.sticky-div {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	min-height: 20px;
+	margin: auto;
+	.horizontal-center;
+	background-color: white;
+  -webkit-transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+// render the dropshadow and transition on opacity for hardware accelerated
+// transition performance
+.sticky-div::after {
+	position: absolute;
+	left: 0;
+	min-height: 20px;
+ 	width: 100%;
+	content: '';
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.17);
+	z-index: -1;
+	opacity: 0;
+  -webkit-transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.sticky-div.fixed, .sticky-div.fixed::after {
+	position: fixed !important;
+	// the rails css tries to set .fixed class to bottom 0
+	bottom: initial;
+	top: initial;
+}
+
+.show-fixed {
+	.sticky-div::after {
+		opacity: 1 !important;
+	}
+}
+
+.waypoint {
+	position: absolute;
+	width: 100%;
+	min-height: 20px;
+	z-index: 0;
+}
+
+@media @large-up {
+	.fix-to-top {
+		.sticky-div, .sticky-div::after {
+			top: 70px;
+		}
+		.waypoint {
+			top: 20px;
+		}
+	}
+	.fix-to-bottom {
+		.sticky-div, .sticky-div::after {
+			bottom: 0px;
+		}
+		.waypoint {
+			bottom: 0px;
+			height: 1px;
+		}
+	}
+}
+@media @medium-only {
+	.fix-to-top {
+		.sticky-div, .sticky-div::after {
+			top: 44px;
+		}
+		.waypoint {
+			top: 0px;
+			height: 30px;
+		}
+	}
+	.fix-to-bottom {
+		.sticky-div, .sticky-div::after {
+			bottom: 0px;
+		}
+		.waypoint {
+			bottom: 0px;
+			height: 1px;
+		}
+	}
+}
+@media @small-only {
+	.fix-to-top {
+		.sticky-div, .sticky-div::after {
+			top: 0px;
+			padding-left: 5px;
+		}
+		.waypoint {
+			top: 0px;
+			height: 1px;
+		}
+	}
+	.fix-to-bottom {
+		.sticky-div, .sticky-div::after {
+			bottom: 0px;
+		}
+		.waypoint {
+			bottom: 0px;
+			height: 1px;
+		}
+	}
+}

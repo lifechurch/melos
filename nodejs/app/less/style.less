@@ -19,6 +19,12 @@
 @import "../features/PlanDiscovery/components/less/PlanDaySlider.less";
 @import "../features/PlanDiscovery/components/less/PlanSettings.less";
 @import "../features/PlanDiscovery/components/less/PlanCalendar.less";
+@import "../features/PlanDiscovery/components/less/SubscribeUserDialog.less";
+
+
+@import "../features/PlanDiscovery/components/less/pwf.less";
+
+@import "../features/Moments/components/less/moment.less";
 
 @import "../features/Header/components/less/Header.less";
 @import "../features/Footer/components/less/Footer.less";
@@ -37,7 +43,19 @@
 @import "../components/less/DropdownTransition.less";
 @import "../components/less/Select.less";
 @import "../components/less/stackedContainer.less";
+@import "../components/less/Search.less";
+@import "../components/less/User.less";
+@import "../components/less/LazyImage.less";
+@import "../components/less/Modal.less";
+@import "../components/less/Footer.less";
+@import "../components/less/StickyDiv.less";
+@import "../components/less/ConfirmationDialog.less";
 @import "../components/AsyncCheck/AsyncCheck.less";
+@import "../components/placeholders/buildingBlocks/placeholder.less";
+@import "../components/less/SectionedLayout.less";
+
+@import "../widgets/NotificationsPermissionPrompt.less";
+
 @import "../components/less/SectionedLayout.less";
 @import "../components/less/StickyHeader.less";
 @import "../components/less/Button.less";
@@ -104,6 +122,10 @@ body {
 	.title {
 		font-size: 36px;
 	}
+}
+
+a {
+	color: @green;
 }
 
 .error-message {
@@ -1188,7 +1210,7 @@ form.locationForm {
 }
 
 .right {
-	float: right;
+	float: right !important;
 }
 
 #preview-container {
@@ -1885,7 +1907,7 @@ ul.language-selector li {
 
 		@media only screen and (max-width: 699px) {
 
-			.slide, img {
+			.slide, .slide-image, img {
 				width: 240px;
 				max-width: 240px;
 				height: 155px;
@@ -1907,18 +1929,18 @@ ul.language-selector li {
 
 			height: 360px;
 
-			.slide, img {
+			.slide-image, img {
 				width: 600px;
 				height: 350px;
 				border-radius: 8px;
-				transform: scale(0.85);
+				transform: scale(0.92);
 				transition: transform 0.5s ease-in-out;
 			}
 			.slide-title {
 				width: 600px;
 			}
 			.slick-active {
-				.slide, img {
+				.slick-slide, .slide-image, img {
 					transform: scale(1);
 				}
 			}
@@ -2213,25 +2235,26 @@ ul.language-selector li {
   	border-radius: 4px;
 		width: 225px;
 		height: 125px;
+	}
+	.slick-slide {
 		margin-right: 15px;
 	}
+
 }
 
 .collections-view {
-
+	width: 100%;
 	.collection-items {
 		margin-top: 40px;
 	}
 
 	@media only screen and (max-width: 1024px) {
-		width: 100%;
-
 		.collection-item {
 			width: 50%;
 			margin-top: 15px;
 		}
-		.slide, img {
-			/*height: 100%;*/
+		.slide, .slide-image, img {
+			height: 95px;
 		}
 		.collection-title {
 			margin-top: 20px;
@@ -2248,14 +2271,12 @@ ul.language-selector li {
 		}
 	}
 	@media only screen and (min-width: 1025px) {
-		width: 75%;
-
 		.collection-item {
 			width: 33%;
 			margin-top: 20px;
 		}
-		.slide, img {
-			/*height: 100%;*/
+		.slide, .slide-image, img {
+			height: 200px;
 		}
 		.collection-title {
 			margin-top: 40px;
@@ -2317,27 +2338,6 @@ ul.language-selector li {
 
 
 
-.plan-overview {
-	.header {
-		.actions {
-			min-width: 100px;
-			display: flex;
-			flex-direction: row-reverse;
-
-			.popup-menu {
-				margin: auto !important;
-				height: 16px;
-			}
-		}
-		.actions, .actions > div {
-			float: right;
-		}
-	}
-}
-
-
-
-
 
 
 
@@ -2390,13 +2390,15 @@ html[dir="rtl"] {
 	flex-wrap: wrap;
 	margin-top: 30px;
 	.chapter-button {
-		border: @thin-grey-border;
-		background-color: white;
-		padding-top: 15px;
-		padding-bottom: 15px;
-		color: @font-grey;
 		margin-right: 15px;
 	}
+}
+button.chapter-button {
+	border: @thin-grey-border;
+	background-color: white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: @font-grey;
 }
 
 /* Fix Google Auth iFrame inline style of left: -9999px */

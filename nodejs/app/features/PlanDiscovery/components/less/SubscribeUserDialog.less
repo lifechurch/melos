@@ -1,0 +1,72 @@
+
+.side-col {
+	@media @medium-up {
+		left: -50px;
+	}
+}
+.subscribe-actions {
+	position: absolute;
+	.yv-drop-shadow;
+	top: -90px;
+	.absolute-horizontal-center;
+	width: 300px;
+	z-index: 1;
+
+	li {
+		text-align: left !important;
+		padding: 20px 10px 20px 20px !important;
+		border-bottom: @thin-grey-border;
+		.option {
+			width: 80%;
+		}
+		.action-title {
+			color: black;
+			font-weight: bold;
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+		.action-description {
+			font-size: 12px;
+			color: @font-grey;
+		}
+	}
+	h6 {
+		border-bottom: @thin-grey-border;
+		padding: 15px 50px;
+		margin: 0;
+		background: white;
+	}
+
+	.arrow {
+		flex-grow: 1;
+		justify-content: flex-end;
+	}
+}
+.subscribe-modal {
+	.modal-content {
+		width: 265px;
+		padding: 20px 0 0 0 !important;
+		.option {
+			padding: 0 20px;
+			font-size: 16px;
+			.action-title {
+				margin-bottom: 5px;
+			}
+			.action-description {
+				line-height: 1.5;
+			}
+		}
+	}
+}
+.cancel-button:hover {
+	background: white;
+	color: @green;
+}
+.cancel-button {
+	width: 100%;
+	background: white;
+	margin: 0;
+	color: @green;
+	font-size: 12px;
+	padding: 15px;
+}

@@ -367,6 +367,7 @@ class ChapterPicker extends Component {
 			versionAbbr,
 			dispatch,
 			localizedLink,
+			onRefSelect,
 			linkBuilder
 		} = this.props
 
@@ -453,8 +454,13 @@ class ChapterPicker extends Component {
 			}
 			if (keyEventName === 'Enter') {
 				const chapIndex = chapterKeys[chapterlistSelectionIndex]
-				const chapURL = localizedLink(linkBuilder(versionID, (books[bookMap[selectedBook]].chapters)[chapIndex].usfm, versionAbbr))
-				dispatch(push(chapURL))
+				const usfm = (books[bookMap[selectedBook]].chapters)[chapIndex].usfm
+				if (!onRefSelect) {
+					const chapURL = localizedLink(linkBuilder(versionID, usfm, versionAbbr))
+					dispatch(push(chapURL))
+				} else {
+					onRefSelect(usfm)
+				}
 			}
 		}
 
@@ -485,7 +491,8 @@ class ChapterPicker extends Component {
 			versionAbbr,
 			linkBuilder,
 			localizedLink,
-			params
+			params,
+			onRefSelect
 		} = this.props
 
 		const {
@@ -535,6 +542,7 @@ class ChapterPicker extends Component {
 							alert={listErrorAlert}
 							onCancel={this.handleOutsideClick}
 							linkBuilder={linkBuilder}
+							onRefSelect={onRefSelect}
 						/>
 					</div>
 				</DropdownTransition>
@@ -575,6 +583,7 @@ ChapterPicker.propTypes = {
 	params: PropTypes.object,
 	localizedLink: PropTypes.func,
 	versionAbbr: PropTypes.string,
+	onRefSelect: PropTypes.func,
 	dispatch: PropTypes.func
 }
 
@@ -592,6 +601,7 @@ ChapterPicker.defaultProps = {
 	localizedLink: null,
 	versionAbbr: null,
 	dispatch: null,
+	onRefSelect: null,
 	linkBuilder: (version, usfm, abbr) => {
 		return `/bible/${version}/${usfm}.${abbr}`
 	}

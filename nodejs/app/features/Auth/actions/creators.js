@@ -1,3 +1,4 @@
+import cookie from 'react-cookie'
 import { storeToken, deleteToken } from '@youversion/token-storage'
 import { push } from 'react-router-redux'
 import type from './constants'
@@ -6,6 +7,7 @@ const ActionCreators = {
 	logout(locale) {
 		return dispatch => {
 			deleteToken()
+			cookie.remove('OAUTH', { path: '/' })
 			dispatch({ type: type('logout') })
 			dispatch(push(`/${locale}/login`))
 		}

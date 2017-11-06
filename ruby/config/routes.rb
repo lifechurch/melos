@@ -219,17 +219,24 @@ YouversionWeb::Application.routes.draw do
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
   match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
-  match '/users/:username/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
+  match '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
   match '/users/:username/reading-plans/:id/completed' => 'plans#day_complete', as: "plan_complete_plan", via: :get
 
-  get '/users/:username/reading-plans/:id/day/:day' => 'subscriptions#show', as: "plan_show"
-  get '/users/:username/reading-plans/:id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"
-  get '/users/:username/reading-plans/:id/day/:day/ref/:content' => 'subscriptions#ref', as: "plan_ref"
+	get '/users/:username/reading-plans/:id/subscription/:subscription_id' => 'subscriptions#show'
+  get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day' => 'subscriptions#show', as: "plan_show"
+  # get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"
+  get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/segment/:content' => 'subscriptions#ref', as: "plan_ref"
 
   get '/reading-plans-collection/:id' => 'plans#plan_collection'
   get '/recommended-plans-collection/:id' => 'plans#plan_collection'
   get '/saved-plans-collection' => 'plans#plan_collection'
 
+  # PWF
+  get '/reading-plans/:id/together/:together_id/invitation' => 'subscriptions#show', as: "pwf_invitation"
+  get '/users/:username/reading-plans/:id/together/create' => 'subscriptions#show', as: "pwf_create"
+  get '/users/:username/reading-plans/:id/together/:together_id/invite' => 'subscriptions#show', as: "pwf_invite"
+  get '/reading-plans/:id/together/:together_id/participants' => 'subscriptions#show', as: "participants"
+	get '/subscription/:subscription_id/day/:day/talk-it-over/:content' => 'plans#index'
 
   # LOOKINSIDE READING PLAN LANDING PAGES
   get '/lookinside/:id' => 'plans#lookinside_view'

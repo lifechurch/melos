@@ -1,0 +1,236 @@
+.pwf-create {
+	.plan-calendar-container {
+		margin-top: 40px;
+		max-width: 500px;
+
+		.centered;
+		h2 {
+			text-align: center;
+			color: @font-grey;
+			margin-bottom: 25px;
+		}
+		.calendar-day {
+			border-color: @font-grey;
+		}
+		.calendar-day.disabled {
+			color: @font-grey;
+		}
+	}
+	@media @medium-up {
+		.calendar-day {
+			height: 64px;
+		}
+	}
+	@media @small-only {
+		.calendar-day {
+			height: 50px;
+		}
+	}
+	.nav {
+		position: relative;
+		top: 39px;
+		width: 100%;
+    display: inline-flex;
+		justify-content: center;
+		>div {
+			width: 300px;
+			display: inline-flex;
+			justify-content: space-between;
+		}
+	}
+}
+
+.pwf-invite {
+	.button-bar {
+		.button-bar-button {
+			.button-bar-button-content {
+				padding: 5px;
+			}
+		}
+	}
+	.search {
+		padding: 10px 15px;
+		background: white;
+		input {
+			font-size: 18px;
+		}
+	}
+	.search, .search:hover {
+		border: none;
+		border-bottom: @thin-grey-border;
+	}
+	.search.open {
+		.searchicon-container {
+			border: none;
+		}
+	}
+	.search-results {
+		position: absolute;
+		width: 100%;
+		background: white;
+		z-index: 2;
+	}
+	.friend-list {
+		padding: 0 30px;
+		margin-bottom: 15px;
+		a {
+			color: initial;
+		}
+		.item {
+			border-bottom: @thin-grey-border;
+			padding: 10px 15px 10px 0;
+			margin: 8px 0;
+			.heading {
+				font-size: 18px;
+			}
+		}
+	}
+	.users {
+		background-color: white;
+		margin-top: 20px;
+		border-bottom: 2px solid @light-grey;
+	}
+	.selected-number {
+		background: @green;
+		border-radius: 100%;
+		color: white;
+		.vertical-center;
+		.horizontal-center;
+		min-width: 27px;
+		min-height: 27px;
+		padding: 2px;
+		display: inline-flex;
+		margin: 0 10px;
+	}
+	.selected-number.red {
+		background: @red !important;
+	}
+}
+
+.share-link-container {
+	.share-link {
+		.default-border;
+		border-radius: @default-radius;
+		padding: 5px 45px;
+		font-size: 18px;
+		margin: 25px;
+		max-width: 300px;
+	}
+	.va-share-panel-wrapper {
+		.absolute-horizontal-center;
+		.va-share-panel {
+			padding: 10px;
+			.va-share-header {
+				display: none;
+			}
+		}
+	}
+	@media @small-only {
+		.va-share-closed {
+			display: none;
+		}
+	}
+}
+.pwf-flow {
+	// height: 100%;
+	padding-bottom: 100px;
+	.content {
+		padding: 75px 0 50px 0;
+	}
+	.gray-heading {
+		color: @font-grey;
+		font-size: 18px;
+	}
+}
+
+.card-buttons {
+	width: 100%;
+	display: inline-flex;
+	flex-wrap: wrap;
+	background: white;
+	.card-shadow;
+}
+.card-button {
+	width: 100%;
+	text-align: center;
+	border-top: 1px solid @light-grey;
+	border-bottom: 1px solid @light-grey;
+	padding: 15px 0;
+}
+
+.participants-list .item .checkmark-container {
+	margin-right: -7px;
+}
+
+#current-ui-view {
+	height: 100%;
+	#react-app-PlanDiscovery {
+		height: 100%;
+		.talk-it-over-container {
+			>div {
+				height: 100%;
+				.plan-reader-content {
+					height: 100%;
+				}
+			}
+		}
+	}
+}
+.talk-it-over-container {
+	height: 100%;
+	.talk-it-over {
+		padding-top: 120px;
+
+		.participants-list { .horizontal-center; }
+
+		.yv-sticky-header-content {
+			background: white;
+			.horizontal-center;
+			border-bottom: @thin-grey-border;
+
+			.talk-it-over-header {
+				background: white;
+				width: 100%;
+				z-index: 10;
+				display: flex;
+				padding: 5px 15px;
+
+				@media @small-only {
+					.participants-list { display: none; }
+					h5 { display: none; }
+					h6 { .yv-text-ellipsis; }
+				}
+
+				.participants-list {
+					margin: 6px 0;
+				}
+			}
+		}
+
+		.talk-it-over-modal {
+			padding: 20px 10px;
+			.participants-list {
+				margin: 30px 0 20px 0;
+			}
+			h6 {
+				font-size: 1.2rem;
+			}
+		}
+
+		.yv-modal {
+			.comment {
+				.modal-content {
+					background: transparent !important;
+					padding: 0 !important;
+				}
+				.yv-textarea {
+					max-height: 250px;
+				}
+			}
+		}
+	}
+}
+
+.subscription-show {
+	padding-bottom: 100px;
+}

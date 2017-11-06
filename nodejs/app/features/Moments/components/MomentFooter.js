@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import SectionedLayout from '../../../components/SectionedLayout'
 
+
 function build(eleArr) {
 	return eleArr.map((el, i) => {
 		return (

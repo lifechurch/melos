@@ -1,8 +1,9 @@
+import oauthAPI from '@youversion/api-redux/lib/endpoints/oauth'
 import type from '../actions/constants'
 import defaultState from '../../../defaultState'
 
 export default function login(state = {}, action) {
-	switch(action.type) {
+	switch (action.type) {
 
 		case type('logout'):
 			return Object.assign({}, state, {
@@ -15,7 +16,7 @@ export default function login(state = {}, action) {
 				...defaultState.auth,
 				errors: {
 					...state.errors,
-					api: "features.Auth.errors.sessionExpired"
+					api: 'features.Auth.errors.sessionExpired'
 				},
 				user: state.user
 			})
@@ -34,17 +35,17 @@ export default function login(state = {}, action) {
 
 		case type('authenticateSuccess'):
 			const { token } = action.response
-			let user = Object.assign({}, action.response)
+			const user = Object.assign({}, action.response)
 			delete user.token
 
 			if (user.language_tag !== window.__LOCALE__.locale) {
-				window.location = '/' + user.language_tag + '/'
+				window.location = `/${user.language_tag}/`
 			}
 
 			return Object.assign({}, state, {
 				isLoggedIn: true,
 				isWorking: false,
-				token: token,
+				token,
 				userData: user
 			})
 
@@ -53,8 +54,14 @@ export default function login(state = {}, action) {
 				isWorking: false,
 				errors: {
 					...state.errors,
-					api: "features.Auth.errors.invalidEmail"
+					api: 'features.Auth.errors.invalidEmail'
 				}
+			})
+
+		// overwrite oauth state with refresh response
+		case oauthAPI.events.refresh.actionSuccess:
+			return Object.assign({}, state, {
+				oauth: action.data
 			})
 
 		default:

@@ -5,6 +5,7 @@ import rootReducer from './reducer'
 import youversionApi from '../../middleware/youversionApi'
 import youversionAuth from '../../middleware/youversionAuth'
 
+
 export default function configureStore(initialState, history, logger) {
 	const reduxRouterMiddleware = routerMiddleware(history)
 	let finalCreateStore = null

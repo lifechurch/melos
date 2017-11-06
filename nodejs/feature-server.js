@@ -12,12 +12,14 @@ import { tokenAuth } from '@youversion/js-api'
 import { IntlProvider } from 'react-intl'
 import moment from 'moment'
 import Raven from 'raven'
+import { getToken, refreshToken } from './oauth'
 import { getLocale } from './app/lib/langUtils'
+import planLocales from './locales/config/planLocales.json'
+import isTimestampExpired from './app/lib/isTimestampExpired'
+
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
-// const availableLocales = require('./locales/config/availableLocales.json');
-// const localeList = require('./locales/config/localeList.json');
 
 const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 	if (process.env.DEBUG) {
@@ -27,81 +29,166 @@ const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 			const Manifest = require('./public/assets/manifest.json')
 			return Manifest[path];
 		} catch (ex) {
-			Raven.captureException(ex)
+			console.log(ex)
+			if (__dirname) {
+				console.log('CWD', __dirname)
+			}
 			return path
 		}
 	}
 })
 
+function massageSessionToOauth(sessionData) {
+	const { tp_token, username, password } = sessionData
+	const oauth = { username, password }
+	if (tp_token) {
+		if (tp_token.includes('Facebook')) {
+			oauth.facebook = tp_token.replace('Facebook ', '')
+		} else if (tp_token.includes('GoogleJWT')) {
+			oauth.googlejwt = tp_token.replace('GoogleJWT ', '')
+		}
+	}
+	return oauth
+}
+
+function buildAuth(auth, oauth) {
+	return Object.assign(
+		{},
+		auth,
+		{
+			oauth: Object.assign(
+				oauth,
+				!('error' in oauth) ?
+					{ valid_until: moment().add(oauth.expires_in, 'seconds').unix() } :
+					null
+			)
+		}
+	)
+}
+
+function oauthIsValid(response) {
+	if ('error' in response) {
+		return false
+	} else return true
+}
+
 const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 	return new Promise((resolve, reject) => {
-		if (typeof auth === 'object' && typeof auth.token === 'string') {
-			// We have a token
-			try {
-				const [ token, tp_token ] = auth.token.split(tokenAuth.tokenDelimiter)
-				const tokenData = tokenAuth.decodeToken(token)
-				const sessionData = tokenAuth.decryptToken(tokenData.token)
 
-				resolve({
-					token: auth.token,
-					isLoggedIn: true,
-					isWorking: false,
-					userData: sessionData,
-					user: sessionData.email,
-					password: null,
-					errors: {
-						api: null,
-						fields: {
-							user: null,
-							password: null
-						}
+		let authData = {
+			token: null,
+			isLoggedIn: false,
+			isWorking: false,
+			userData: {},
+			user: null,
+			oauth: {},
+			password: null,
+			errors: {
+				api: null,
+				fields: {
+					user: null,
+					password: null
+				}
+			}
+		}
+
+		let token
+		let tokenData
+		let sessionData
+		let hasAuth = false
+		const oauthFromRails = auth && typeof auth === 'object' && auth.oauth
+
+		// We have a token
+		if (typeof auth === 'object' && typeof auth.token === 'string') {
+			try {
+				hasAuth = true
+				token = auth.token.split(tokenAuth.tokenDelimiter).token
+				tokenData = tokenAuth.decodeToken(token)
+				sessionData = tokenAuth.decryptToken(tokenData.token)
+				authData = Object.assign(
+					{},
+					authData,
+					{
+						token: auth.token,
+						isLoggedIn: true,
+						userData: sessionData,
+						user: sessionData.email,
 					}
-				})
+				)
 			} catch (err) {
 				reject({ error: 1, message: 'Invalid or Expired Token' })
 			}
 
+		// No token, but we have enough info to create one
 		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
-			// No token, but we have enough info to create one
-			const sessionData = auth
+			hasAuth = true
+			sessionData = auth
+			// remove oauth from userData because it's top level
+			if ('oauth' in sessionData) delete sessionData.oauth
 			const tp_token = auth.tp_token
 			delete sessionData.tp_token
-			const token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
-			resolve({
-				token,
-				isLoggedIn: true,
-				isWorking: false,
-				userData: sessionData,
-				user: sessionData.email,
-				password: null,
-				errors: {
-					api: null,
-					fields: {
-						user: null,
-						password: null
-					}
+			token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
+			authData = Object.assign(
+				{},
+				authData,
+				{
+					token,
+					isLoggedIn: true,
+					userData: sessionData,
+					user: sessionData.email,
 				}
-			})
-
-		} else {
-			resolve({
-				token: null,
-				isLoggedIn: false,
-				isWorking: false,
-				userData: {},
-				user: null,
-				password: null,
-				errors: {
-					api: null,
-					fields: {
-						user: null,
-						password: null
-					}
-				}
-			})
+			)
 		}
+
+		if (hasAuth) {
+			// figure out if we need to get a new oauth token
+			// we have oauth data from rails cookie
+			if (oauthFromRails && 'access_token' in oauthFromRails) {
+				// but it has expired
+				if (isTimestampExpired(oauthFromRails.valid_until)) {
+					console.log('EXPIRED: REFRESH OAUTH')
+					refreshToken({ refresh_token: oauthFromRails.refresh_token }).then((oauth) => {
+						if (oauthIsValid(oauth)) {
+							resolve(buildAuth(authData, oauth))
+						} else {
+							resolve(authData)
+							// reject(oauth)
+						}
+					})
+				// hasn't expired yet, we can reuse the data from cookies after making
+				// sure the cookie has no error in it
+				} else {
+					console.log('NOT EXPIRED: USE OAUTH FROM COOKIES')
+					if (oauthIsValid(oauthFromRails)) {
+						resolve(buildAuth(authData, oauthFromRails))
+					} else {
+						console.log('ERROR', oauthFromRails)
+						resolve(authData)
+						// reject(oauthFromRails)
+					}
+				}
+			// we have no oauth data from rails so we need a new token from scratch
+			} else {
+				console.log('NO TOKEN: GET NEW OAUTH')
+				getToken(massageSessionToOauth(sessionData)).then((oauth) => {
+					if (oauthIsValid(oauth)) {
+						resolve(buildAuth(authData, oauth))
+					} else {
+						console.log('ERROR', oauth)
+						resolve(authData)
+						// reject(oauth)
+					}
+				})
+			}
+		// no auth at all
+		} else {
+			console.log('NO AUTH')
+			resolve(authData)
+		}
+
 	})
 })
+
 
 const getAssetPrefix = nr.createTracer('fnGetAssetPrefix', (req) => {
 	const ssl = !!process.env.SECURE_TRAFFIC || false
@@ -174,7 +261,7 @@ const loadData = nr.createTracer('fnLoadData', (feature, params, startingState, 
 })
 
 const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
-	return new Promise(nr.createTracer('fnGetRenderProps::promsie', (resolve) => {
+	return new Promise(nr.createTracer('fnGetRenderProps::promsie', (resolve, reject) => {
 		if (url !== null && typeof url === 'string' && url.length > 0) {
 			let getRoutes = null
 			try {
@@ -191,6 +278,8 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 				if (ex.code !== 'MODULE_NOT_FOUND') {
 					// Don't report this error for now, too many false positives
 					// Raven.captureException(ex)
+				} else {
+					reject(ex)
 				}
 			}
 		}
@@ -244,6 +333,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						try {
 							html = renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch (ex) {
+							console.log('ERROR', ex, feature, params.url, renderProps)
 								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
 							Raven.captureException(ex)
 							nr.endTransaction()
@@ -285,6 +375,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 							res.send({
 								html,
 								head,
+								oauth: verifiedAuth.oauth,
 								token: storeState.auth.token,
 								js: [
 									{ name: 'polyfill', src: 'https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Number.isNaN,Promise' },
@@ -299,7 +390,9 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 							})
 						}))
 						return null
-					}))
+					}), (err) => {
+						console.log('Render props error', err)
+					})
 				})
 
 				if (typeof action === 'function') {

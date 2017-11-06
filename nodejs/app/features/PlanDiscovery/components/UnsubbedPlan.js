@@ -19,13 +19,8 @@ class UnsubbedPlan extends Component {
 
 	render() {
 		const { plan, savedPlans, dispatch, children, version, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
-
-		if (typeof plan !== 'object' || (plan.__validation && !plan.__validation.isValid)) {
-			return (
-				<div />
-			)
-		}
-
+		console.log(plan)
+		if (!plan) return <div />
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const versionID = version ? version.id : '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
@@ -51,7 +46,7 @@ class UnsubbedPlan extends Component {
 				let itemBibleLink
 				if (reference.usfm[0].split('.').length === 2) {
 					// Two pieces indicates full chapter
-					itemBibleLink = `${bibleLink}/${reference.usfm[0]}`
+					itemBibleLink = reference.usfm[0]
 				} else {
 					// Three pieces indicates verses
 					itemBibleLink = `${bibleLink}/${reference.usfm[0].split('.').slice(0, 2).join('.')}.${getSelectionString(reference.usfm)}`
@@ -108,31 +103,35 @@ class UnsubbedPlan extends Component {
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>
-					{children && React.cloneElement(children, {
-						id: plan.id,
-						plan,
-						dispatch,
-						auth,
-						day,
-						dayData,
-						planLinkNode,
-						actionsNode,
-						refListNode: refList,
-						calendar: plan.calendar,
-						totalDays: plan.total_days,
-						isSubscribed: ('subscription_id' in plan),
-						dayBaseLink: daySliderBasePath,
-						subscriptionLink,
-						aboutLink,
-						bibleLink,
-						myPlansLink,
-						hasDevo,
-						isSaved,
-						isPrivate: plan.private,
-						isEmailDeliveryOn: (typeof plan.email_delivery === 'string'),
-						emailDelivery: plan.email_delivery,
-						handleCompleteRef: this.handleCompleteRef
-					})}
+					{
+						children
+							&& (children.length > 0 || !Array.isArray(children))
+							&& React.cloneElement(children, {
+								id: plan.id,
+								plan,
+								dispatch,
+								auth,
+								day,
+								dayData,
+								planLinkNode,
+								actionsNode,
+								refListNode: refList,
+								calendar: plan.calendar,
+								totalDays: plan.total_days,
+								isSubscribed: ('subscription_id' in plan),
+								dayBaseLink: daySliderBasePath,
+								subscriptionLink,
+								aboutLink,
+								bibleLink,
+								myPlansLink,
+								hasDevo,
+								isSaved,
+								isPrivate: plan.private,
+								isEmailDeliveryOn: (typeof plan.email_delivery === 'string'),
+								emailDelivery: plan.email_delivery,
+								handleCompleteRef: this.handleCompleteRef
+							})
+					}
 					{
 						hasDevo &&
 						<div className="row">

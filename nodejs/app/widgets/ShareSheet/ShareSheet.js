@@ -14,10 +14,10 @@ class ShareSheet extends Component {
 	}
 
 	render() {
-		const { shareData } = this.props
+		const { shareData: { isOpen, text, url } } = this.props
 		return (
 			<FullscreenDrawer
-				isOpen={shareData && shareData.isOpen}
+				isOpen={isOpen}
 				onClose={this.handleClose}
 				className='yv-large-5 yv-small-11 centered'
 				title={<FormattedMessage id='share' />}
@@ -27,15 +27,15 @@ class ShareSheet extends Component {
 						className='text-center'
 						style={{ fontSize: '24px', width: '100%', margin: '15px 0' }}
 					>
-						{ shareData && shareData.text }
+						{ text }
 					</div>
-					<div className='text-center' style={{ fontSize: '14px', width: '100%' }}>
-						{ shareData && shareData.url }
+					<div className='text-center yv-text-ellipsis' style={{ fontSize: '14px', width: '100%' }}>
+						{ url }
 					</div>
 					<div style={{ margin: '25px 0' }}>
 						<AddThis
-							text={shareData && shareData.text}
-							url={shareData && shareData.url}
+							text={text}
+							url={url}
 						/>
 					</div>
 				</Card>
@@ -51,12 +51,16 @@ function mapStateToProps(state) {
 }
 
 ShareSheet.propTypes = {
-	shareData: PropTypes.object.isRequired,
+	shareData: PropTypes.object,
 	dispatch: PropTypes.func.isRequired,
 }
 
 ShareSheet.defaultProps = {
-
+	shareData: {
+		isOpen: false,
+		text: '',
+		url: ''
+	}
 }
 
 export default connect(mapStateToProps, null)(ShareSheet)

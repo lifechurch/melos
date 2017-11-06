@@ -197,27 +197,29 @@ class Unsubscribe extends Component {
 
 		return (
 			<div className="yv-unsubscribe">
-				{children &&
-					React.cloneElement(children, {
-						status,
-						loggedIn,
-						token,
-						type,
-						data,
-						localizedLink,
-						errors,
-						hosts,
-						tokenIdentity,
-						notificationSettings,
-						votdSubscription,
-						myPlans,
-						intl,
-						getNotificationSettings: this.getNotificationSettings,
-						getVOTDSubscription: this.getVOTDSubscription,
-						unsubscribe: this.unsubscribe,
-						updateNotificationSettings: this.updateNotificationSettings,
-						updateVOTDSubscription: this.updateVOTDSubscription
-					})
+				{
+					children
+						&& (children.length > 0 || !Array.isArray(children))
+						&& React.cloneElement(children, {
+							status,
+							loggedIn,
+							token,
+							type,
+							data,
+							localizedLink,
+							errors,
+							hosts,
+							tokenIdentity,
+							notificationSettings,
+							votdSubscription,
+							myPlans,
+							intl,
+							getNotificationSettings: this.getNotificationSettings,
+							getVOTDSubscription: this.getVOTDSubscription,
+							unsubscribe: this.unsubscribe,
+							updateNotificationSettings: this.updateNotificationSettings,
+							updateVOTDSubscription: this.updateVOTDSubscription
+						})
 				}
 			</div>
 		)

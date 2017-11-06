@@ -29,8 +29,7 @@ class ClickToCopy extends Component {
 					className={`pointer yv-text-ellipsis ${customClass}`}
 					text={text}
 				>
-					<div
-						role='button'
+					<a
 						tabIndex={0}
 						onClick={() => {
 							this.setState({ copied: true })
@@ -40,7 +39,7 @@ class ClickToCopy extends Component {
 						}}
 					>
 						{ children }
-					</div>
+					</a>
 				</CopyToClipboard>
 			</div>
 		)

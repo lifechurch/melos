@@ -35,22 +35,25 @@ function IconButtonGroup({
 
 	return (
 		<div className="yv-icon-button-group" style={{ alignItems, justifyContent }}>
-			{children &&
-				React.Children.map(children, (child => {
-					if (child) {
-						return React.cloneElement(child, {
-							iconHeight,
-							iconFill,
-							iconActiveFill,
-							labelColor,
-							labelSize,
-							labelActiveColor,
-							iconHoverFill,
-							labelHoverColor,
-							style: iconStyle
-						})
-					}
-				}))
+			{
+				children
+					&& (children.length > 0 || !Array.isArray(children))
+					&& React.Children.map(children, (child => {
+						if (child) {
+							return React.cloneElement(child, {
+								iconHeight,
+								iconFill,
+								iconActiveFill,
+								labelColor,
+								labelSize,
+								labelActiveColor,
+								iconHoverFill,
+								labelHoverColor,
+								style: iconStyle
+							})
+						}
+						return null
+					}))
 			}
 		</div>
 	)

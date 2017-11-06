@@ -2,7 +2,6 @@ import Immutable from 'immutable'
 
 import type from '../actions/constants'
 import bibleType from '../../Bible/actions/constants'
-import { dayHasDevo } from '../../../lib/readingPlanUtils'
 
 
 export default function reducer(state = {}, action) {
@@ -24,7 +23,11 @@ export default function reducer(state = {}, action) {
 				const calendar = action.response
 				// lets go through and mark all days with no content as completed like the apps do
 				const updatedCal = calendar.calendar.map((day) => {
-					if (day.references.length === 0 && !dayHasDevo(day.additional_content)) {
+					if (
+						day.references.length === 0
+						&& !((typeof day.additional_content.html !== 'undefined' && day.additional_content.html !== null) ||
+							(typeof day.additional_content.text !== 'undefined' && day.additional_content.text !== null))
+					) {
 						day.completed = true
 					}
 					return day
@@ -60,28 +63,25 @@ export default function reducer(state = {}, action) {
 
 		case bibleType('bibleChapterSuccess'):
 			return (function bibleChapterSuccess() {
-				const { isParallel } = action.extras
-				if (!isParallel) {
-					const { response: verse } = action
-					let plan_id = null
-					let plan_content = null
-					let plan_day = null
-					if (typeof action.extras !== 'undefined') {
-						plan_id = parseInt(action.extras.plan_id, 10)
-						plan_content = parseInt(action.extras.plan_content, 10)
-						plan_day = parseInt(action.extras.plan_day, 10)
-					}
+				const { response: verse } = action
+				let plan_id = null
+				let plan_content = null
+				let plan_day = null
+				if (typeof action.extras !== 'undefined') {
+					plan_id = parseInt(action.extras.plan_id, 10)
+					plan_content = parseInt(action.extras.plan_content, 10)
+					plan_day = parseInt(action.extras.plan_day, 10)
+				}
 
-					if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id] &&
-						!Number.isNaN(plan_content) && !Number.isNaN(plan_day)
-					) {
-						const plan = Immutable
-							.fromJS(state[plan_id])
-							.mergeDeepIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse)
-							.mergeDeepIn(['calendar', plan_day - 1], { hasReferences: true })
-							.toJS()
-						return Immutable.fromJS(state).mergeDeep({ [plan.id]: plan }).toJS()
-					}
+				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id] &&
+					!Number.isNaN(plan_content) && !Number.isNaN(plan_day)
+				) {
+					const plan = Immutable
+						.fromJS(state[plan_id])
+						.mergeDeepIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse)
+						.mergeDeepIn(['calendar', plan_day - 1], { hasReferences: true })
+						.toJS()
+					return Immutable.fromJS(state).mergeDeep({ [plan.id]: plan }).toJS()
 				}
 				return state
 			}())

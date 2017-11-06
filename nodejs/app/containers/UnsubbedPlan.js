@@ -22,13 +22,17 @@ class Plan extends Component {
 	}
 
 	render() {
+		const { children } = this.props
+
 		return (
 			<UnsubbedPlanComponent {...this.props} localizedLink={::this.localizedLink} isRtl={::this.isRtl} >
-				{!!this.props.children &&
-					React.cloneElement(this.props.children, {
-						localizedLink: ::this.localizedLink,
-						isRtl: ::this.isRtl
-					})
+				{
+					children
+						&& (children.length > 0 || !Array.isArray(children))
+						&& React.cloneElement(children, {
+							localizedLink: ::this.localizedLink,
+							isRtl: ::this.isRtl
+						})
 				}
 			</UnsubbedPlanComponent>
 		)

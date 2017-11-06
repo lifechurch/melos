@@ -5,19 +5,48 @@ import Textarea from '../../../components/Textarea'
 import Avatar from '../../../components/Avatar'
 
 function CommentCreate(props) {
-	const { onComment, onChange, value, avatarSrc, avatarPlaceholder, intl } = props
+	const {
+		onComment,
+		onChange,
+		value,
+		avatarSrc,
+		avatarPlaceholder,
+		intl,
+		charLimit,
+	} = props
+
+	let charDiv = null
+	let isOverLimit = false
+	if (charLimit && value) {
+		const threshold = 0.9 * charLimit
+		const chars = value.length
+		if (chars > threshold && chars <= charLimit) {
+			charDiv = (
+				<div>{ charLimit - chars }</div>
+			)
+		} else if (chars > charLimit) {
+			isOverLimit = true
+			charDiv = (
+				<div className='red'>{ `-${chars - charLimit}` }</div>
+			)
+		}
+	}
 
 	return (
 		<Card
-			customClass='yv-moment-card'
+			customClass='yv-moment-card flex'
 			extension={
-				<a
-					tabIndex={0}
-					className='green flex-end'
-					onClick={onComment}
-				>
-					<FormattedMessage id='post' />
-				</a>
+				<div className='space-between'>
+					{ charDiv }
+					<a
+						tabIndex={0}
+						className={`margin-left-auto ${isOverLimit ? 'font-grey' : 'green'}`}
+						style={{ cursor: `${isOverLimit ? 'not-allowed' : 'pointer'}` }}
+						onClick={!isOverLimit && onComment}
+					>
+						<FormattedMessage id='post' />
+					</a>
+				</div>
 			}
 		>
 			<div style={{ display: 'inline-flex', alignItems: 'flex-start', marginRight: '15px' }}>
@@ -45,12 +74,14 @@ CommentCreate.propTypes = {
 	avatarSrc: PropTypes.string,
 	avatarPlaceholder: PropTypes.string,
 	intl: PropTypes.object.isRequired,
+	charLimit: PropTypes.number,
 }
 
 CommentCreate.defaultProps = {
 	value: null,
 	avatarSrc: null,
 	avatarPlaceholder: null,
+	charLimit: null,
 }
 
 export default injectIntl(CommentCreate)
