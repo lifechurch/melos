@@ -168,7 +168,7 @@ class InvitePWF extends Component {
 							{
 								planImg
 									&& (
-										<img
+										<LazyImage
 											alt='Devotional'
 											width='100%'
 											style={{ width: '100%' }}
@@ -220,11 +220,11 @@ class InvitePWF extends Component {
 													}}
 												>
 													{
-																friendsList
-																&& mergedUsers.map((user) => {
-																	return this.renderUser(user)
-																})
-															}
+														friendsList
+														&& mergedUsers.map((user) => {
+															return this.renderUser(user)
+														})
+													}
 												</List>
 											</div>
 										</div>

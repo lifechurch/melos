@@ -83,7 +83,7 @@ class CreatePWF extends Component {
 				</div>
 				<div className='gray-background content text-center'>
 					<div className='yv-large-4 yv-small-11 centered white'>
-						<img
+						<LazyImage
 							alt='Devotional'
 							width='100%'
 							style={{ width: '100%', marginBottom: '30px' }}

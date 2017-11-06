@@ -86,7 +86,7 @@ function Participants({
 						{
 							planImg
 								&& (
-									<img
+									<LazyImage
 										alt='Devotional'
 										width='100%'
 										style={{ width: '100%' }}
