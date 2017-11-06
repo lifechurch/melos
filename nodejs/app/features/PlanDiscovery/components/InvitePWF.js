@@ -1,13 +1,14 @@
 import React, { PropTypes, Component } from 'react'
 import { push } from 'react-router-redux'
 import { FormattedMessage } from 'react-intl'
+import Heading from '@youversion/react-components/dist/typography/Heading1'
+import SectionedLayout from '@youversion/react-components/dist/layouts/SectionedLayout'
 import Footer from '../../../components/Footer'
 import ShareLink from '../../../components/ShareLink'
 import Search from '../../../components/Search'
 import User from '../../../components/User'
 import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
-import SectionedLayout from '../../../components/SectionedLayout'
 import List from '../../../components/List'
 import Routes from '../../../lib/routes'
 import LazyImage from '../../../components/LazyImage'
@@ -151,9 +152,13 @@ class InvitePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-invite'>
-				<SectionedLayout>
-					<h4><FormattedMessage id='invite friends' /></h4>
-				</SectionedLayout>
+				<div className='large-8 small-11 centered' style={{ marginBottom: '25px' }}>
+					<SectionedLayout>
+						<Heading>
+							<FormattedMessage id='invite friends' />
+						</Heading>
+					</SectionedLayout>
+				</div>
 				<div
 					className='gray-background content horizontal-center flex-wrap'
 					style={{ minHeight: '450px', height: '100%' }}

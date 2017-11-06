@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import Heading from '@youversion/react-components/dist/typography/Heading1'
+import SectionedLayout from '@youversion/react-components/dist/layouts/SectionedLayout'
 import XMark from '../../../components/XMark'
 import CheckMark from '../../../components/CheckMark'
 import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
-import SectionedLayout from '../../../components/SectionedLayout'
 import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
@@ -70,11 +71,13 @@ function Participants({
 
 	return (
 		<div className='pwf-flow pwf-invite'>
-			<div className='large-8 small-11 centered'>
+			<div className='large-8 small-11 centered' style={{ marginBottom: '25px' }}>
 				<SectionedLayout
 					left={backLink}
 				>
-					<h4><FormattedMessage id='participants' /></h4>
+					<Heading>
+						<FormattedMessage id='participants' />
+					</Heading>
 				</SectionedLayout>
 			</div>
 			<div className='gray-background content horizontal-center flex-wrap' style={{ height: '100%' }}>

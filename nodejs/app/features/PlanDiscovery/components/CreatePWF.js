@@ -2,10 +2,11 @@ import React, { PropTypes, Component } from 'react'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
+import Heading from '@youversion/react-components/dist/typography/Heading1'
+import SectionedLayout from '@youversion/react-components/dist/layouts/SectionedLayout'
 import Calendar from './Calendar'
 import CalendarDay from './CalendarDay'
 import LazyImage from '../../../components/LazyImage'
-import SectionedLayout from '../../../components/SectionedLayout'
 import Footer from '../../../components/Footer'
 import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
@@ -62,11 +63,11 @@ class CreatePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-create'>
-				<div className='large-8 small-11 centered'>
+				<div className='large-8 small-11 centered' style={{ marginBottom: '25px' }}>
 					<SectionedLayout
 						left={
 							<Link
-								className='plans vertical-center'
+								className='vertical-center'
 								to={backPath}
 							>
 								&larr;
@@ -75,8 +76,8 @@ class CreatePWF extends Component {
 					>
 						{
 							isEditingDate
-								? <h4><FormattedMessage id='change date' /></h4>
-								: <h4><FormattedMessage id='start plan when' /></h4>
+								? <Heading><FormattedMessage id='change date' /></Heading>
+								: <Heading><FormattedMessage id='start plan when' /></Heading>
 						}
 					</SectionedLayout>
 				</div>

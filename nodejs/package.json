@@ -15,6 +15,7 @@
     "@youversion/api-redux": "^0.4.05",
     "@youversion/token-storage": "^0.0.36",
     "@youversion/utils": "^1.0.19",
+		"@youversion/react-components": "0.0.5",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
     "babelify": "^7.3.0",
