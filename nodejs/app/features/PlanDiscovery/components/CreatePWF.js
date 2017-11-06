@@ -82,17 +82,16 @@ class CreatePWF extends Component {
 					</SectionedLayout>
 				</div>
 				<div className='gray-background content text-center'>
-					<div className='columns medium-8 small-12 small-centered'>
-						<div className='horizontal-center' style={{ height: '150px', marginBottom: '30px' }}>
-							<LazyImage
-								alt='plan-image'
-								src={planImgSrc}
-								width={250}
-								height={150}
-								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
-							/>
+					<div className='yv-large-4 yv-small-11 centered white'>
+						<img
+							alt='Devotional'
+							width='100%'
+							style={{ width: '100%', marginBottom: '30px' }}
+							src={planImgSrc}
+						/>
+						<div className='centered' style={{ width: '90%' }}>
+							<FormattedMessage id='future start blurb' />
 						</div>
-						<FormattedMessage id='future start blurb' />
 						<Calendar showFullWeeks={false}>
 							{ this.renderDay }
 						</Calendar>

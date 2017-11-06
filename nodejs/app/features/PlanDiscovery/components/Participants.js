@@ -82,27 +82,29 @@ function Participants({
 			</div>
 			<div className='gray-background content horizontal-center flex-wrap' style={{ height: '100%' }}>
 				<div style={{ width: '100%', marginBottom: '100px' }}>
-					<div className='yv-large-5 yv-small-12 white centered' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
-						<div className='horizontal-center' style={{ height: '250px', marginBottom: '30px' }}>
-							<LazyImage
-								alt='plan-image'
-								src={planImg}
-								width={400}
-								height={250}
-								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
-							/>
-						</div>
+					<div className='yv-large-4 yv-small-11 white centered'>
+						{
+							planImg
+								&& (
+									<img
+										alt='Devotional'
+										width='100%'
+										style={{ width: '100%' }}
+										src={planImg}
+									/>
+								)
+						}
 						{
 							day &&
 							<div className='text-center' style={{ width: '100%', margin: '10px 0' }}>
 								<FormattedMessage id='plans.day number' values={{ day }} />
 							</div>
 						}
-						<div className='users'>
+						<div className='users' style={{ padding: '25px 0 15px 0' }}>
 							{
 								!(accepted || pending)
 								? (
-									<div className='friend-list' style={{ marginTop: '60px' }}>
+									<div className='friend-list'>
 										<Placeholder
 											key='friends-placeholder'
 											height='38px'

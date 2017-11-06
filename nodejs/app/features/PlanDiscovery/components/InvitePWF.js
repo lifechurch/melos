@@ -164,19 +164,22 @@ class InvitePWF extends Component {
 					style={{ minHeight: '450px', height: '100%' }}
 				>
 					<div style={{ width: '100%' }}>
-						<div className='yv-large-5 yv-small-12 centered white' style={{ paddingTop: '25px' }}>
-							<div className='horizontal-center' style={{ marginBottom: '25px' }}>
-								<LazyImage
-									src={planImg}
-									width={320}
-									height={160}
-									placeholder={<img alt='Reading Plan' src={PLAN_DEFAULT} />}
-								/>
-							</div>
+						<div className='yv-large-4 yv-small-11 centered white'>
+							{
+								planImg
+									&& (
+										<img
+											alt='Devotional'
+											width='100%'
+											style={{ width: '100%' }}
+											src={planImg}
+										/>
+									)
+							}
 							{
 								mergedUsers.length > 0
 								&& (
-									<div>
+									<div style={{ paddingTop: '25px' }}>
 										<div className='horizontal-center vertical-center'>
 											<div
 												className={[
