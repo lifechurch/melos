@@ -70,7 +70,7 @@ function Participants({
 
 	return (
 		<div className='pwf-flow pwf-invite'>
-			<div className='large-8 small-11 centered' style={{ marginBottom: '25px' }}>
+			<div className='yv-large-8 yv-small-11 centered' style={{ marginBottom: '25px' }}>
 				<SectionedLayout left={backLink}>
 					<Heading>
 						<FormattedMessage id='participants' />
@@ -79,7 +79,7 @@ function Participants({
 			</div>
 			<div className='gray-background content horizontal-center flex-wrap' style={{ height: '100%' }}>
 				<div style={{ width: '100%', marginBottom: '100px' }}>
-					<div className='yv-large-4 yv-small-11 white centered'>
+					<div className='yv-large-4 yv-medium-6 yv-small-11 white centered'>
 						{
 							planImg
 								&& (

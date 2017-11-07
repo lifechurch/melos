@@ -8,7 +8,6 @@ import Calendar from './Calendar'
 import CalendarDay from './CalendarDay'
 import LazyImage from '../../../components/LazyImage'
 import Footer from '../../../components/Footer'
-import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
 
 class CreatePWF extends Component {
@@ -38,7 +37,7 @@ class CreatePWF extends Component {
 
 	renderDay = ({ day }) => {
 		const { selectedDay } = this.state
-		const isInPast = (moment(day).dayOfYear() < moment(new Date()).dayOfYear())
+		const isInPast = (moment(day).startOf('day') < moment(new Date()).startOf('day'))
 
 		return (
 			<CalendarDay
@@ -63,7 +62,7 @@ class CreatePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-create'>
-				<div className='large-8 small-11 centered' style={{ marginBottom: '25px' }}>
+				<div className='yv-large-8 yv-small-11 centered' style={{ marginBottom: '25px' }}>
 					<SectionedLayout
 						left={
 							<Link
@@ -82,7 +81,7 @@ class CreatePWF extends Component {
 					</SectionedLayout>
 				</div>
 				<div className='gray-background content text-center'>
-					<div className='yv-large-4 yv-small-11 centered white'>
+					<div className='yv-large-4 yv-medium-6 yv-small-11 centered white'>
 						<LazyImage
 							alt='Devotional'
 							width='100%'

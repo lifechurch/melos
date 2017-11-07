@@ -32,8 +32,8 @@ function Invitation({
 				</SectionedLayout>
 			</div>
 			<div className='gray-background content'>
-				<div className='yv-small-11 yv-large-4 centered' style={{ padding: '40px 0 100px 0' }}>
-					<Card>
+				<div className='yv-small-11 yv-medium-6 yv-large-4 centered' style={{ padding: '60px 0 130px 0' }}>
+					<Card style={{ padding: '0 0 25px 0' }}>
 						<a href={planLink}>
 							<LazyImage
 								alt='plan-image'
