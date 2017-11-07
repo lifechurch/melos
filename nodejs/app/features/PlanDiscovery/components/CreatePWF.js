@@ -2,12 +2,12 @@ import React, { PropTypes, Component } from 'react'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
+import Heading from '@youversion/react-components/dist/typography/Heading1'
+import SectionedLayout from '@youversion/react-components/dist/layouts/SectionedLayout'
 import Calendar from './Calendar'
 import CalendarDay from './CalendarDay'
 import LazyImage from '../../../components/LazyImage'
-import SectionedLayout from '../../../components/SectionedLayout'
 import Footer from '../../../components/Footer'
-import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
 
 class CreatePWF extends Component {
@@ -37,7 +37,7 @@ class CreatePWF extends Component {
 
 	renderDay = ({ day }) => {
 		const { selectedDay } = this.state
-		const isInPast = (moment(day).dayOfYear() < moment(new Date()).dayOfYear())
+		const isInPast = (moment(day).startOf('day') < moment(new Date()).startOf('day'))
 
 		return (
 			<CalendarDay
@@ -62,11 +62,11 @@ class CreatePWF extends Component {
 
 		return (
 			<div className='pwf-flow pwf-create'>
-				<div className='large-8 small-11 centered'>
+				<div className='yv-large-8 yv-small-11 centered' style={{ marginBottom: '25px' }}>
 					<SectionedLayout
 						left={
 							<Link
-								className='plans vertical-center'
+								className='vertical-center'
 								to={backPath}
 							>
 								&larr;
@@ -75,23 +75,22 @@ class CreatePWF extends Component {
 					>
 						{
 							isEditingDate
-								? <h4><FormattedMessage id='change date' /></h4>
-								: <h4><FormattedMessage id='start plan when' /></h4>
+								? <Heading><FormattedMessage id='change date' /></Heading>
+								: <Heading><FormattedMessage id='start plan when' /></Heading>
 						}
 					</SectionedLayout>
 				</div>
 				<div className='gray-background content text-center'>
-					<div className='columns medium-8 small-12 small-centered'>
-						<div className='horizontal-center' style={{ height: '150px', marginBottom: '30px' }}>
-							<LazyImage
-								alt='plan-image'
-								src={planImgSrc}
-								width={250}
-								height={150}
-								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
-							/>
+					<div className='yv-large-4 yv-medium-6 yv-small-11 centered white'>
+						<LazyImage
+							alt='Devotional'
+							width='100%'
+							style={{ width: '100%', marginBottom: '30px' }}
+							src={planImgSrc}
+						/>
+						<div className='centered' style={{ width: '90%' }}>
+							<FormattedMessage id='future start blurb' />
 						</div>
-						<FormattedMessage id='future start blurb' />
 						<Calendar showFullWeeks={false}>
 							{ this.renderDay }
 						</Calendar>

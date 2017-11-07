@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import Heading from '@youversion/react-components/dist/typography/Heading1'
+import SectionedLayout from '@youversion/react-components/dist/layouts/SectionedLayout'
 import XMark from '../../../components/XMark'
 import CheckMark from '../../../components/CheckMark'
 import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
-import SectionedLayout from '../../../components/SectionedLayout'
 import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
-import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
 import { hasUserCompletedActivity } from '../../../lib/readingPlanUtils'
 
@@ -70,42 +70,46 @@ function Participants({
 
 	return (
 		<div className='pwf-flow pwf-invite'>
-			<div className='large-8 small-11 centered'>
-				<SectionedLayout
-					left={backLink}
-				>
-					<h4><FormattedMessage id='participants' /></h4>
+			<div className='yv-large-8 yv-small-11 centered' style={{ marginBottom: '25px' }}>
+				<SectionedLayout left={backLink}>
+					<Heading>
+						<FormattedMessage id='participants' />
+					</Heading>
 				</SectionedLayout>
 			</div>
 			<div className='gray-background content horizontal-center flex-wrap' style={{ height: '100%' }}>
 				<div style={{ width: '100%', marginBottom: '100px' }}>
-					<div className='yv-large-5 yv-small-12 white centered' style={{ paddingTop: '1.07143rem', paddingBottom: '1.07143rem' }}>
-						<div className='horizontal-center' style={{ height: '250px', marginBottom: '30px' }}>
-							<LazyImage
-								alt='plan-image'
-								src={planImg}
-								width={400}
-								height={250}
-								placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
-							/>
-						</div>
+					<div className='yv-large-4 yv-medium-6 yv-small-11 white centered'>
 						{
-							day &&
-							<div className='text-center' style={{ width: '100%', margin: '10px 0' }}>
-								<FormattedMessage id='plans.day number' values={{ day }} />
-							</div>
+							planImg
+								&& (
+									<LazyImage
+										alt='Devotional'
+										width='100%'
+										style={{ width: '100%' }}
+										src={planImg}
+									/>
+								)
 						}
-						<div className='users'>
+						{
+							day
+								&& (
+									<div className='text-center' style={{ width: '100%', margin: '10px 0' }}>
+										<FormattedMessage id='plans.day number' values={{ day }} />
+									</div>
+								)
+						}
+						<div className='users' style={{ padding: '25px 0 15px 0' }}>
 							{
 								!(accepted || pending)
 								? (
-									<div className='friend-list' style={{ marginTop: '60px' }}>
+									<div className='friend-list'>
 										<Placeholder
 											key='friends-placeholder'
 											height='38px'
 											width='38px'
 											borderRadius='38'
-											duplicate={15}
+											duplicate={6}
 											lineSpacing='16px'
 											textHeight='10px'
 											widthRange={[30, 60]}

@@ -82,7 +82,7 @@ class SubscribeUserDialog extends Component {
 								<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
 							</li>
 						</a>
-						<a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'together')}>
+						{/* <a tabIndex={0} onClick={this.handleSubscribeUser.bind(this, 'together')}>
 							<li className='vertical-center'>
 								<div className='option'>
 									<div className='action-title'><FormattedMessage id='with friends' /></div>
@@ -90,7 +90,7 @@ class SubscribeUserDialog extends Component {
 								</div>
 								<CarouselArrow dir='right' containerClass='arrow' fill='gray' width={14} height={14} />
 							</li>
-						</a>
+						</a> */}
 					</ul>
 				</Menu>
 				<Modal ref={(m) => { this.modal = m }} customClass='subscribe-modal'>

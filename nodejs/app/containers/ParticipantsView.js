@@ -2,8 +2,8 @@ import React, { PropTypes, Component } from 'react'
 import Immutable from 'immutable'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
+import { Link } from 'react-router'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import deleteSub from '@youversion/api-redux/lib/batchedActions/deleteSub'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
@@ -120,12 +120,12 @@ class ParticipantsView extends Component {
 		const backLink = (
 			auth.isLoggedIn
 				? (
-					<Link to={Routes.subscriptions({ username: auth.userData.username })} className='yv-gray-link'>
+					<Link to={Routes.subscriptions({ username: auth.userData.username })}>
 						<FormattedMessage id='plans.my_plans' />
 					</Link>
 				)
 				: (
-					<Link to={Routes.plan({ plan_id: plan && plan.id })} className='yv-gray-link'>
+					<Link to={Routes.plan({ plan_id: plan && plan.id })}>
 						<FormattedMessage id='plans.about this plan' />
 					</Link>
 				)
@@ -199,7 +199,6 @@ class ParticipantsView extends Component {
 function mapStateToProps(state, props) {
 	const { params: { id, together_id } } = props
 	const plan_id = id ? id.split('-')[0] : null
-	console.log('TOG', getTogetherModel(state))
 	return {
 		plan: getPlanById(state, plan_id),
 		participants: getParticipantsUsers(state),

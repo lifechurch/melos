@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import Heading from '@youversion/react-components/dist/typography/Heading1'
+import SectionedLayout from '../../../components/SectionedLayout'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../../../widgets/TogetherInvitationActions'
 import InvitationString from '../../../widgets/InvitationString'
 import Card from '../../../components/Card'
-import SectionedLayout from '../../../components/SectionedLayout'
 import LazyImage from '../../../components/LazyImage'
-import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
 
 function Invitation({
@@ -24,12 +24,27 @@ function Invitation({
 
 	return (
 		<div className='invitation text-center'>
-			<SectionedLayout>
-				<FormattedMessage id='invitation' />
-			</SectionedLayout>
+			<div className='large-8 small-11 centered' style={{ marginBottom: '25px' }}>
+				<SectionedLayout>
+					<Heading>
+						<FormattedMessage id='invitation' />
+					</Heading>
+				</SectionedLayout>
+			</div>
 			<div className='gray-background content'>
-				<div className='columns medium-5 small-12 small-centered' style={{ padding: '40px 0 100px 0' }}>
-					<Card>
+				<div className='yv-small-11 yv-medium-6 yv-large-4 centered' style={{ padding: '60px 0 130px 0' }}>
+					<Card style={{ padding: '0 0 25px 0' }}>
+						<a href={planLink}>
+							<LazyImage
+								alt='plan-image'
+								src={planImg}
+								width='100%'
+								style={{ width: '100%', marginBottom: '10px' }}
+							/>
+							<div className='dark-gray' style={{ marginBottom: '30px', fontSize: '14px' }}>
+								{ planTitle }
+							</div>
+						</a>
 						<ParticipantsAvatarList
 							customClass='horizontal-center'
 							avatarWidth={46}
@@ -40,20 +55,6 @@ function Invitation({
 						<div style={{ margin: '20px 0' }}>
 							<InvitationString together_id={together_id} />
 						</div>
-						<a href={planLink}>
-							<div className='horizontal-center' style={{ height: '150px', marginBottom: '10px' }}>
-								<LazyImage
-									alt='plan-image'
-									src={planImg}
-									width={250}
-									height={150}
-									placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
-								/>
-							</div>
-							<div className='dark-gray' style={{ marginBottom: '30px', fontSize: '14px' }}>
-								{ planTitle }
-							</div>
-						</a>
 						<div style={{ marginTop: '40px' }}>
 							<div className='font-grey' style={{ fontSize: '14px', marginBottom: '10px' }}>
 								{ participantsString }

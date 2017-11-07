@@ -51,7 +51,7 @@ class ShareLink extends Component {
 			shareText = text
 		}
 		const shareLink = link || (together && together.public_share)
-		const linkTitle = description || <FormattedMessage id='invite others' />
+		const linkTitle = description || <FormattedMessage id='join link' />
 
 		return (
 			<div className='centered share-link-container white' style={{ padding: '25px' }}>

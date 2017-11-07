@@ -49,41 +49,51 @@ class LazyImage extends Component {
 			customClass,
 			imgClass,
 			alt,
+			style,
 			crossOrigin
 		} = this.props
 		const { loaded, needsLoading } = this.state
 
 		const imgDiv = (
-			<div
-				className={`placeholder ${customClass}`}
-				style={{
-					width: typeof width === 'string' ? width : `${width}px`,
-					height: typeof height === 'string' ? height : `${height}px`,
-					backgroundColor: placeholder ? 'transparent' : 'lightGray'
-				}}
-			>
-				{ placeholder }
-				<img
-					ref={(img) => { this.img = img }}
-					onLoad={() => { this.showImgIfNeeded() }}
-					className={`large ${loaded ? 'loaded' : ''} ${imgClass}`}
-					alt={alt}
-					src={(needsLoading || loaded) ? src : null}
-					width={width}
-					height={height}
-					crossOrigin={crossOrigin}
-				/>
-			</div>
+			<img
+				ref={(img) => { this.img = img }}
+				onLoad={() => { this.showImgIfNeeded() }}
+				className={`large ${loaded ? 'loaded' : ''} ${imgClass}`}
+				alt={alt}
+				src={(needsLoading || loaded) ? src : null}
+				width={width}
+				height={height}
+				style={style}
+				crossOrigin={crossOrigin}
+			/>
+		)
+
+		const content = (
+			placeholder
+				? (
+					<div
+						className={`placeholder ${customClass}`}
+						style={{
+							width: typeof width === 'string' ? width : `${width}px`,
+							height: typeof height === 'string' ? height : `${height}px`,
+							backgroundColor: placeholder ? 'transparent' : 'lightGray'
+						}}
+					>
+						{ placeholder }
+						{ imgDiv }
+					</div>
+				)
+				: imgDiv
 		)
 
 		return (
 			lazy
 				? (
 					<WayPoint onEnter={this.handleLoadImg} fireOnRapidScroll={false}>
-						{ imgDiv }
+						{ content }
 					</WayPoint>
 				)
-				: imgDiv
+				: content
 		)
 	}
 }
@@ -97,7 +107,8 @@ LazyImage.propTypes = {
 	imgClass: PropTypes.string,
 	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-	crossOrigin: PropTypes.string
+	crossOrigin: PropTypes.string,
+	style: PropTypes.object,
 }
 
 LazyImage.defaultProps = {
@@ -108,8 +119,9 @@ LazyImage.defaultProps = {
 	customClass: '',
 	imgClass: '',
 	width: '100%',
-	height: '100%',
-	crossOrigin: null
+	height: null,
+	crossOrigin: null,
+	style: null,
 }
 
 export default LazyImage

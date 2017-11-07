@@ -48,6 +48,7 @@ function massageSessionToOauth(sessionData) {
 			oauth.googlejwt = tp_token.replace('GoogleJWT ', '')
 		}
 	}
+	console.log('BROOAYTH', oauth)
 	return oauth
 }
 
@@ -96,6 +97,7 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		let tokenData
 		let sessionData
 		let hasAuth = false
+		let tp_token = null
 		const oauthFromRails = auth && typeof auth === 'object' && auth.oauth
 
 		// We have a token
@@ -125,7 +127,7 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 			sessionData = auth
 			// remove oauth from userData because it's top level
 			if ('oauth' in sessionData) delete sessionData.oauth
-			const tp_token = auth.tp_token
+			tp_token = auth.tp_token
 			delete sessionData.tp_token
 			token = `${tokenAuth.token(sessionData)}${tokenAuth.tokenDelimiter}${tp_token}`
 			authData = Object.assign(
@@ -146,7 +148,6 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 			if (oauthFromRails && 'access_token' in oauthFromRails) {
 				// but it has expired
 				if (isTimestampExpired(oauthFromRails.valid_until)) {
-					console.log('EXPIRED: REFRESH OAUTH')
 					refreshToken({ refresh_token: oauthFromRails.refresh_token }).then((oauth) => {
 						if (oauthIsValid(oauth)) {
 							resolve(buildAuth(authData, oauth))
@@ -157,24 +158,18 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 					})
 				// hasn't expired yet, we can reuse the data from cookies after making
 				// sure the cookie has no error in it
+				} else if (oauthIsValid(oauthFromRails)) {
+					resolve(buildAuth(authData, oauthFromRails))
 				} else {
-					console.log('NOT EXPIRED: USE OAUTH FROM COOKIES')
-					if (oauthIsValid(oauthFromRails)) {
-						resolve(buildAuth(authData, oauthFromRails))
-					} else {
-						console.log('ERROR', oauthFromRails)
-						resolve(authData)
-						// reject(oauthFromRails)
-					}
+					resolve(authData)
+					// reject(oauthFromRails)
 				}
 			// we have no oauth data from rails so we need a new token from scratch
 			} else {
-				console.log('NO TOKEN: GET NEW OAUTH')
-				getToken(massageSessionToOauth(sessionData)).then((oauth) => {
+				getToken(massageSessionToOauth({ ...sessionData, tp_token })).then((oauth) => {
 					if (oauthIsValid(oauth)) {
 						resolve(buildAuth(authData, oauth))
 					} else {
-						console.log('ERROR', oauth)
 						resolve(authData)
 						// reject(oauth)
 					}
@@ -182,10 +177,8 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 			}
 		// no auth at all
 		} else {
-			console.log('NO AUTH')
 			resolve(authData)
 		}
-
 	})
 })
 

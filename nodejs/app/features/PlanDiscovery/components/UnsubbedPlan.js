@@ -19,7 +19,6 @@ class UnsubbedPlan extends Component {
 
 	render() {
 		const { plan, savedPlans, dispatch, children, version, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
-		console.log(plan)
 		if (!plan) return <div />
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const versionID = version ? version.id : '1'

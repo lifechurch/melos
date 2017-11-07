@@ -474,9 +474,6 @@ BibleHeader.defaultProps = {
 }
 
 function mapStateToProps(state) {
-	console.log('BIBLE', getBibleModel(state))
-	console.log('MOMENTS', getMomentsModel(state))
-	console.log('AUDIO', getAudioModel(state))
 	return {
 		bible: getBibleModel(state),
 		audio: getAudioModel(state),
