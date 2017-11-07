@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
-// import LinkText from '@youversion/react-components/dist/links/LinkText'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import deleteSub from '@youversion/api-redux/lib/batchedActions/deleteSub'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
@@ -200,7 +199,6 @@ class ParticipantsView extends Component {
 function mapStateToProps(state, props) {
 	const { params: { id, together_id } } = props
 	const plan_id = id ? id.split('-')[0] : null
-	console.log('TOG', getTogetherModel(state))
 	return {
 		plan: getPlanById(state, plan_id),
 		participants: getParticipantsUsers(state),

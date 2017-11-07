@@ -8,7 +8,6 @@ import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
 import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
-import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
 import { hasUserCompletedActivity } from '../../../lib/readingPlanUtils'
 
@@ -72,9 +71,7 @@ function Participants({
 	return (
 		<div className='pwf-flow pwf-invite'>
 			<div className='large-8 small-11 centered' style={{ marginBottom: '25px' }}>
-				<SectionedLayout
-					left={backLink}
-				>
+				<SectionedLayout left={backLink}>
 					<Heading>
 						<FormattedMessage id='participants' />
 					</Heading>
@@ -95,10 +92,12 @@ function Participants({
 								)
 						}
 						{
-							day &&
-							<div className='text-center' style={{ width: '100%', margin: '10px 0' }}>
-								<FormattedMessage id='plans.day number' values={{ day }} />
-							</div>
+							day
+								&& (
+									<div className='text-center' style={{ width: '100%', margin: '10px 0' }}>
+										<FormattedMessage id='plans.day number' values={{ day }} />
+									</div>
+								)
 						}
 						<div className='users' style={{ padding: '25px 0 15px 0' }}>
 							{
@@ -110,7 +109,7 @@ function Participants({
 											height='38px'
 											width='38px'
 											borderRadius='38'
-											duplicate={15}
+											duplicate={6}
 											lineSpacing='16px'
 											textHeight='10px'
 											widthRange={[30, 60]}
