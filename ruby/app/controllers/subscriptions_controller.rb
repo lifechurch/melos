@@ -29,7 +29,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   def completed
@@ -49,7 +49,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   def saved
@@ -69,7 +69,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # Plan Day: Overview
@@ -92,7 +92,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # Plan Day: Devo
@@ -115,7 +115,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # Plan Day: Ref
@@ -138,7 +138,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   def create
@@ -282,7 +282,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   def calendar
@@ -303,7 +303,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # for marking day complete from subscription email
