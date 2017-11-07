@@ -13,14 +13,15 @@ class Textarea extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.value !== this.state.value) {
+		const { value } = this.props
+		if (value !== nextProps.value && nextProps.value !== this.state.value) {
 			this.setState({ stateValue: nextProps.value })
 		}
 	}
 
 	sendChange = () => {
 		const { value, onChange } = this.props
-		const el = this.refs.textareaElement;
+		const el = this.textarea
 
 		if (typeof el === 'object' && (el.value !== value)) {
 			onChange({ target: el, currentTarget: el })
@@ -40,7 +41,7 @@ class Textarea extends Component {
 	}
 
 	resize = () => {
-		const el = this.refs.textareaElement;
+		const el = this.textarea
 
 		if (el.value !== '') {
 			el.style.overflowY = 'hidden';
@@ -54,11 +55,10 @@ class Textarea extends Component {
 	render() {
 		const { size, placeholder, name } = this.props
 		const { stateValue } = this.state
-
 		return (
 			<textarea
 				{...this.props}
-				ref='textareaElement'
+				ref={(val) => { this.textarea = val }}
 				name={name}
 				size={size}
 				placeholder={placeholder}

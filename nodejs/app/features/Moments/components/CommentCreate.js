@@ -78,7 +78,7 @@ CommentCreate.propTypes = {
 }
 
 CommentCreate.defaultProps = {
-	value: null,
+	value: '',
 	avatarSrc: null,
 	avatarPlaceholder: null,
 	charLimit: null,

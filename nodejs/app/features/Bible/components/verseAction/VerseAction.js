@@ -4,7 +4,7 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import ColorList from './ColorList'
 import ButtonBar from '../../../../components/ButtonBar'
-import DropdownTransition from '../../../../components/DropdownTransition'
+import FullscreenDrawer from '../../../../components/FullscreenDrawer'
 import ShareWidget from './share/Share'
 import ActionCreators from '../../actions/creators'
 import MomentCreate from './MomentCreate'
@@ -225,7 +225,11 @@ class VerseAction extends Component {
 					<ButtonBar items={actions} onClick={this.handleActionClick} />
 					{ colorList }
 				</div>
-				<DropdownTransition classes='va-moment-container' show={momentContainerOpen} hideDir='down' transition={true}>
+				<FullscreenDrawer
+					isOpen={momentContainerOpen}
+					onClose={this.handleMomentContainerClose}
+					className='va-moment-container'
+				>
 					<MomentCreate
 						{...this.props}
 						// changing the key will cause a rerender for all children
@@ -239,11 +243,11 @@ class VerseAction extends Component {
 						version_id={version ? version.id : null}
 						local_abbreviation={version ? version.local_abbreviation : null}
 						labels={momentsLabels}
-						colors={highlightColors}
 						onClose={this.handleMomentContainerClose}
+						colors={highlightColors}
 						isRtl={isRtl}
 					/>
-				</DropdownTransition>
+				</FullscreenDrawer>
 			</div>
 		)
 	}
