@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
-import Immutable from 'immutable'
 import CustomScroll from 'react-custom-scroll'
+import SectionedLayout from '@youversion/react-components/dist/layouts/SectionedLayout'
 import ActionCreators from '../../actions/creators'
-import XMark from '../../../../components/XMark'
 import DropdownTransition from '../../../../components/DropdownTransition'
 import VerseCard from '../../../../components/VerseCard'
 import Card from '../../../../components/Card'
@@ -221,7 +220,10 @@ class MomentCreate extends Component {
 							<Select list={this.USER_STATUS} onChange={this.changeUserStatus} />
 						</div>
 						<div className='note-editor'>
-							<NoteEditor intl={intl} updateNote={this.onNoteKeyPress} />
+							<NoteEditor
+								intl={intl}
+								updateNote={this.onNoteKeyPress}
+							/>
 						</div>
 					</div>
 				)
@@ -233,17 +235,21 @@ class MomentCreate extends Component {
 				<CustomScroll allowOutsideScroll={false}>
 					<div className='content large-6 medium-10 small-12'>
 						<div className='heading vertical-center'>
-							<a tabIndex={0} className='columns medium-4 cancel' onClick={this.handleClose}><XMark width={18} height={18} /></a>
-							<div className='columns medium-4 title'>{ createHeader }</div>
-							<div className='columns medium-4 save'>
-								{
-									isLoggedIn
-										? <a tabIndex={0} onClick={this.save} className='solid-button green'>
-											{ intl.formatMessage({ id: 'Reader.verse action.save' }) }
-										</a>
-										: null
+							<SectionedLayout
+								right={
+									<div className='columns medium-4 save'>
+										{
+											isLoggedIn
+												? <a tabIndex={0} onClick={this.save} className='solid-button green'>
+													{ intl.formatMessage({ id: 'Reader.verse action.save' }) }
+												</a>
+												: null
+										}
+									</div>
 								}
-							</div>
+							>
+								<div className='columns medium-4 title'>{ createHeader }</div>
+							</SectionedLayout>
 						</div>
 						{ contentDiv }
 					</div>

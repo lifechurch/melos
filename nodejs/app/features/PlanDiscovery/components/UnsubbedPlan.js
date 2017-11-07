@@ -113,6 +113,7 @@ class UnsubbedPlan extends Component {
 								day,
 								dayData,
 								planLinkNode,
+								subLinkBase: `${myPlansLink}/${plan && plan.id}`,
 								actionsNode,
 								refListNode: refList,
 								calendar: plan.calendar,
