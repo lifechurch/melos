@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/js-api": "^1.0.8",
     "@youversion/api-redux": "^0.4.05",
+    "@youversion/js-api": "^1.0.8",
+    "@youversion/react-components": "0.0.5",
     "@youversion/token-storage": "^0.0.36",
     "@youversion/utils": "^1.0.19",
 		"@youversion/react-components": "0.0.5",
@@ -34,6 +35,7 @@
     "express": "^4.13.4",
     "express-jwt": "^3.3.0",
     "express-locale": "^0.1.2",
+    "glamor": "^2.20.40",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.0.1",

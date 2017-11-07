@@ -12,11 +12,11 @@ import { tokenAuth } from '@youversion/js-api'
 import { IntlProvider } from 'react-intl'
 import moment from 'moment'
 import Raven from 'raven'
+import { renderStatic } from 'glamor/server'
 import { getToken, refreshToken } from './oauth'
 import { getLocale } from './app/lib/langUtils'
 import planLocales from './locales/config/planLocales.json'
 import isTimestampExpired from './app/lib/isTimestampExpired'
-
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -322,9 +322,11 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 					}
 
 					getRenderProps(feature, params.url).then(nr.createTracer('getRenderProps', (renderProps) => {
-						let html = null
+						let html, css = null
 						try {
-							html = renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
+							({ html, css } = renderStatic(() => {
+								return renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
+							}))
 						} catch (ex) {
 							console.log('ERROR', ex, feature, params.url, renderProps)
 								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
@@ -379,7 +381,8 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 								],
 								css: [
 									{ name: 'main', src: `${assetPrefix}/assets/${getAssetPath('main.css')}` }
-								]
+								],
+								css_inline: css
 							})
 						}))
 						return null

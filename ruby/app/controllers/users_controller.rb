@@ -290,7 +290,7 @@ class UsersController < ApplicationController
     end
 
     @title = t('users.my password')
-    render layout: "node_app", locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render layout: "node_app", locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline']  }
   end
 
 private

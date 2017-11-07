@@ -1,11 +1,12 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import Heading1 from '@youversion/react-components/dist/typography/Heading1'
+import Body from '@youversion/react-components/dist/typography/Body'
+import VerticalSpace from '@youversion/react-components/dist/layouts/VerticalSpace'
 import { connect } from 'react-redux'
-import FormField from '../../../components/FormField'
-import Input from '../../../components/Input'
 import ActionCreators from '../actions/creators'
 
 function makeErrorMessage(key, strings) {
-	if (key.lastIndexOf('users.password.less_than_minimum',0) === 0) {
+	if (key.lastIndexOf('users.password.less_than_minimum', 0) === 0) {
 		return strings['api.users password length']
 	} else if (key === 'users.same_password.change') {
 		return strings['api.users password change']
@@ -77,9 +78,11 @@ class PasswordChange extends Component {
 		return (
 			<div className='row'>
 				<div className='medium-7 medium-centered columns'>
-					<h1>{password.strings['users.my password']}</h1>
-					<p className='terms'>{password.strings['users.forgot password prompt']}</p>
-					<br/>
+					<VerticalSpace>
+						<Heading1>{password.strings['users.my password']}</Heading1>
+						<Body>{password.strings['users.forgot password prompt']}</Body>
+					</VerticalSpace>
+					<br />
 					<div>
 						<label htmlFor='newPassword'>{password.strings['users.profile.new password']}</label>
 						<input
@@ -89,12 +92,13 @@ class PasswordChange extends Component {
 							name='newPassword'
 							onChange={::this.handleChange}
 							value={password.newPassword}
-							ref={function() {
+							ref={function () {
 								if (firstLoad) {
 									document.getElementById('newPassword').focus()
 								}
 							}}
-							disabled={success} />
+							disabled={success}
+						/>
 					</div>
 					<div>
 						<label htmlFor='newPasswordVerify'>{password.strings['users.profile.confirm password']}</label>
@@ -106,7 +110,8 @@ class PasswordChange extends Component {
 							onChange={::this.handleChange}
 							value={password.newPasswordVerify}
 							disabled={verifyDisabled || success}
-							onKeyPress={::this.handleKeyPress} />
+							onKeyPress={::this.handleKeyPress}
+						/>
 					</div>
 					{ userReadyToVerify ? <div className='form_errors'><ul className='no-bullet error'>{errorMessages}</ul></div> : null }
 					{ success ?
@@ -116,7 +121,8 @@ class PasswordChange extends Component {
 								tabIndex='3'
 								disabled={submitDisabled}
 								className='solid-button green'
-								onClick={::this.handleClick}>
+								onClick={::this.handleClick}
+							>
 								{password.strings['users.my password']}
 							</a>
 							<div className='right'>

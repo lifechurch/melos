@@ -52,17 +52,17 @@ spec:
           - name: YOUVERSION_TOKEN_PHRASE
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: YOUVERSION_TOKEN_PHRASE
           - name: TREADSTONE_SECRET
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: TREADSTONE_SECRET
           - name: NEW_RELIC_LICENSE_KEY
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: NEW_RELIC_LICENSE_KEY
           - name: NEW_RELIC_APP_NAME
             valueFrom:
@@ -77,7 +77,7 @@ spec:
           - name: PASSENGER_APP_ENV
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: PASSENGER_APP_ENV
           - name: MEMCACHE_SERVERS
             valueFrom:
@@ -87,27 +87,27 @@ spec:
           - name: HTTP_TIMEOUT
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: HTTP_TIMEOUT
           - name: LOG_LEVEL
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: LOG_LEVEL
           - name: SECURE_TRAFFIC
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: SECURE_TRAFFIC
           - name: OAUTH_CLIENT_ID
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: OAUTH_CLIENT_ID
           - name: OAUTH_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-production
+                name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: OAUTH_CLIENT_SECRET
           - name: SECURE_HOSTNAME
             valueFrom:
