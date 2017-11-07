@@ -2149,6 +2149,7 @@ en:
     plan archived:                              "Plan Archived"
     starts:                                     "Starts"
     started:                                    "Started"
+    join link:                                  "Anyone with a link can join"
     join together share:                        "Would you read the bible plan, %{plan}, with me?"
     join together:                              "%{host} wants to read this Plan with you."
     talk it over:                               "Talk It Over"
