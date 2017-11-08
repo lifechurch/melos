@@ -103,7 +103,9 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		if (typeof auth === 'object' && typeof auth.token === 'string') {
 			try {
 				hasAuth = true
-				token = auth.token.split(tokenAuth.tokenDelimiter)[0]
+				const tokenPieces = auth.token.split(tokenAuth.tokenDelimiter)
+				token = tokenPieces[0]
+				tp_token = tokenPieces[1]
 				tokenData = tokenAuth.decodeToken(token)
 				sessionData = tokenAuth.decryptToken(tokenData.token)
 				authData = Object.assign(
@@ -327,11 +329,9 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 								return renderToString(<IntlProvider locale={ (Locale.locale2 === 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 							}))
 						} catch (ex) {
-							console.log('ERROR', ex, feature, params.url, renderProps)
 								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
 							Raven.captureException(ex)
 							nr.endTransaction()
-							console.log(ex)
 							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 
