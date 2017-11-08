@@ -226,7 +226,6 @@ class Plan extends Component {
 					}}
 				/>
 			)
-			console.log('AKSHFLADJHFAWLR', calcTodayVsStartDt(subscription.start_dt), subscription)
 			startString = moment(subscription.start_dt).format('dddd, MMMM Do YYYY')
 			endString = moment(subscription.start_dt)
 				.add(plan.total_days, 'days')
