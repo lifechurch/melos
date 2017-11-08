@@ -112,6 +112,7 @@ class AudioPlayer extends Component {
 	handlePlayerSrcLoad(src, playAfterLoad) {
 		this.player.querySelector('source').src = src
 		this.player.pause()
+		this.player.currentTime = 0
 		this.player.load()
 		if (playAfterLoad) {
 			this.player.oncanplaythrough = this.player.play()
