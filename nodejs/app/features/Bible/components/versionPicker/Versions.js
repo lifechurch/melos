@@ -67,20 +67,25 @@ function Versions(props) {
 							{
 								// show audio icon next to name
 								version.audio
-									?
-										<li className={`${active} ${focusClass}`}>
-											<div className={'small-10'} onMouseOver={handleMouseOver}>
+									? (
+										<li className={`${active} ${focusClass} vertical-center`}>
+											<div style={{ flex: 6 }} className='yv-text-ellipsis' onMouseOver={handleMouseOver}>
 												{ `${abbr} ${name}` }
 											</div>
-											<div className={'small-2'}>
+											<div style={{ flex: 1 }} className='horizontal-center'>
 												<AudioIcon color={(id === initialSelection) ? 'white' : 'gray'} />
 											</div>
 										</li>
-
-									:
-										<li className={`${active} ${focusClass}`} onMouseOver={handleMouseOver}>
+									)
+									: (
+										<li
+											className={`${active} ${focusClass}`}
+											style={{ paddingRight: '5px' }}
+											onMouseOver={handleMouseOver}
+										>
 											{ `${abbr} ${name}` }
 										</li>
+									)
 							}
 						</Link>
 						)
@@ -94,16 +99,22 @@ function Versions(props) {
 							{
 								// show audio icon next to name
 								version.audio
-									?
-									<li className={`${active}`}>
-										<div className={'small-10'}>
-											{ `${abbr} ${name}` }</div>
-										<div className={'small-2'}>
-											<AudioIcon color={(id === initialSelection) ? 'white' : 'gray'} />
-										</div>
-									</li>
-									:
-									<li className={`${active}`} >{ `${abbr} ${name}` }</li>
+									? (
+										<li className={`${active} vertical-center`}>
+											<div style={{ flex: 6 }} className='yv-text-ellipsis'>{ `${abbr} ${name}` }</div>
+											<div style={{ flex: 1 }} className='horizontal-center'>
+												<AudioIcon color={(id === initialSelection) ? 'white' : 'gray'} />
+											</div>
+										</li>
+									)
+									: (
+										<li
+											className={`${active} vertical-center`}
+											style={{ paddingRight: '5px' }}
+										>
+											{ `${abbr} ${name}` }
+										</li>
+									)
 								}
 						</Link>
 						)
