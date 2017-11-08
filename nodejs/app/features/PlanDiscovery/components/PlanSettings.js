@@ -6,12 +6,12 @@ import { push } from 'react-router-redux'
 import Toggle from 'react-toggle-button'
 import deleteSub from '@youversion/api-redux/lib/batchedActions/deleteSub'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
 import ProgressBar from '../../../components/ProgressBar'
 import ShareLink from '../../../components/ShareLink'
 import PlanStartString from './PlanStartString'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import Routes from '../../../lib/routes'
-import calcTodayVsStartDt from '../../../lib/calcTodayVsStartDt'
 import getCurrentDT from '../../../lib/getCurrentDT'
 
 

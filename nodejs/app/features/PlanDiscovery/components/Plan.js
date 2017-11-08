@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
 // components
 import LazyImage from '../../../components/LazyImage'
 import PlanMenu from './PlanMenu'
@@ -11,7 +12,6 @@ import { getBibleVersionFromStorage } from '../../../lib/readerUtils'
 import { getReferencesTitle } from '../../../lib/usfmUtils'
 import { PLAN_DEFAULT, selectImageFromList } from '../../../lib/imageUtil'
 import Routes from '../../../lib/routes'
-import calcTodayVsStartDt from '../../../lib/calcTodayVsStartDt'
 
 
 function Plan({

@@ -17,8 +17,8 @@ import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 // utils
+import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
 import { calcCurrentPlanDay, isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
-import calcTodayVsStartDt from '../lib/calcTodayVsStartDt'
 import Routes from '../lib/routes'
 import { getBibleVersionFromStorage } from '../lib/readerUtils'
 // components
@@ -226,6 +226,7 @@ class Plan extends Component {
 					}}
 				/>
 			)
+			console.log('AKSHFLADJHFAWLR', calcTodayVsStartDt(subscription.start_dt), subscription)
 			startString = moment(subscription.start_dt).format('dddd, MMMM Do YYYY')
 			endString = moment(subscription.start_dt)
 				.add(plan.total_days, 'days')
@@ -239,12 +240,7 @@ class Plan extends Component {
 				: null
 			if (this.isCompleted) {
 				progressString = moment(subscription.completed_dt).format('LL')
-			} else if (
-				calcTodayVsStartDt(
-					subscription
-					&& subscription.start_dt
-				).isInFuture
-			) {
+			} else if (calcTodayVsStartDt(subscription.start_dt).isInFuture) {
 				progressString = <PlanStartString start_dt={subscription.start_dt} />
 			} else {
 				progressString = subscription.overall
