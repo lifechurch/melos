@@ -48,7 +48,6 @@ function massageSessionToOauth(sessionData) {
 			oauth.googlejwt = tp_token.replace('GoogleJWT ', '')
 		}
 	}
-	console.log('BROOAYTH', oauth)
 	return oauth
 }
 
@@ -104,7 +103,7 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 		if (typeof auth === 'object' && typeof auth.token === 'string') {
 			try {
 				hasAuth = true
-				token = auth.token.split(tokenAuth.tokenDelimiter).token
+				token = auth.token.split(tokenAuth.tokenDelimiter)[0]
 				tokenData = tokenAuth.decodeToken(token)
 				sessionData = tokenAuth.decryptToken(tokenData.token)
 				authData = Object.assign(
