@@ -28,7 +28,7 @@ import PlanStartString from '../features/PlanDiscovery/components/PlanStartStrin
 
 class Plan extends Component {
 	componentDidMount() {
-		const { dispatch, params: { subscription_id, day, id }, auth, subscription, plan } = this.props
+		const { dispatch, params: { subscription_id, day, id }, bible, auth, subscription, plan, serverLanguageTag } = this.props
 		if (subscription_id) {
 			if (
 				!(
@@ -40,18 +40,21 @@ class Plan extends Component {
 			) {
 				dispatch(subscriptionData({ subscription_id, auth, day }))
 			}
-		} else {
+		} else if (!plan) {
 			dispatch(planView({
 				plan_id: id.split('-')[0],
 			}))
 		}
 		// get bible version for building reference strings
-		dispatch(bibleAction({
-			method: 'version',
-			params: {
-				id: getBibleVersionFromStorage(),
-			}
-		}))
+		const version_id = getBibleVersionFromStorage(serverLanguageTag)
+		if (!(bible && bible.versions && bible.versions.byId && version_id in bible.versions.byId)) {
+			dispatch(bibleAction({
+				method: 'version',
+				params: {
+					id: version_id,
+				}
+			}))
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -187,7 +190,7 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { children, subscription, plan, bible, params: { day }, togethers } = this.props
+		const { children, subscription, plan, bible, params: { day }, togethers, serverLanguageTag } = this.props
 
 		this.daySegments = null
 		this.currentDay = null
@@ -256,7 +259,7 @@ class Plan extends Component {
 
 		const bookList = Immutable
 			.fromJS(bible)
-			.getIn(['versions', 'byId', `${getBibleVersionFromStorage()}`, 'response', 'books'], null)
+			.getIn(['versions', 'byId', `${getBibleVersionFromStorage(serverLanguageTag)}`, 'response', 'books'], null)
 
 		return (
 			<PlanComponent

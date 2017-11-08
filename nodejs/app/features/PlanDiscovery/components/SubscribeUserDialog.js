@@ -48,9 +48,9 @@ class SubscribeUserDialog extends Component {
 					if (data) {
 						const subId = data.map[0]
 						if (useRouter) {
-							dispatch(push(`${subLinkBase}/subscription/${subId}`))
+							dispatch(push(`${subLinkBase}/subscription/${subId}/day/1`))
 						} else {
-							window.location.replace(`${subLinkBase}/subscription/${subId}`)
+							window.location.replace(`${subLinkBase}/subscription/${subId}/day/1`)
 						}
 					}
 				})

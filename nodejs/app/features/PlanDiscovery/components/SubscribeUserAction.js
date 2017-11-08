@@ -10,7 +10,6 @@ class SubscribeUserAction extends Component {
 		super(props)
 		this.state = { dialogOpen: false }
 
-		this.handleGoToPlan = this.handleGoToPlan.bind(this)
 		this.handleClick = this.handleClick.bind(this)
 	}
 
@@ -18,11 +17,6 @@ class SubscribeUserAction extends Component {
 		this.setState((nextState) => {
 			return { dialogOpen: !nextState.dialogOpen }
 		})
-	}
-
-	handleGoToPlan() {
-		const { dispatch, subscriptionLink } = this.props
-		dispatch(push(subscriptionLink))
 	}
 
 	render() {
