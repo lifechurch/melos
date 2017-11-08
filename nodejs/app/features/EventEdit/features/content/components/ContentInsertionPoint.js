@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import ActionCreators from '../actions/creators'
 import { FormattedMessage } from 'react-intl'
 import CheckImage from '../../../../../../images/check.png'
@@ -61,9 +60,9 @@ class ContentInsertionPoint extends Component {
 
 		return (
 			<div className='content-insertion-point' onMouseEnter={::this.handleMouseEnter} onMouseLeave={::this.handleMouseLeave}>
-				<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={50} transitionLeaveTimeout={300}>
+				<div>
 					{insertionPoint}
-				</ReactCSSTransitionGroup>
+				</div>
 			</div>
 		)
 	}
