@@ -12,6 +12,12 @@ const secretParams = {
 	client_secret: process.env.OAUTH_CLIENT_SECRET,
 }
 
+function encode(str) {
+	return encodeURIComponent(str).replace(/[!'()*]/g, (c) => {
+		return `%${c.charCodeAt(0).toString(16)}`
+	})
+}
+
 /**
  * call the oauth endpoint from the server
  * @param  {[object]} params [description]
@@ -45,7 +51,10 @@ export function getToken({ username = null, password = null, facebook = null, go
 	} else if (googlejwt) {
 		params = Object.assign({ grant_type: 'password' }, secretParams, { googlejwt })
 	}
-
+	// encode the values to be passed to oauth
+	Object.keys(params).forEach((parmesan) => {
+		params[parmesan] = encode(params[parmesan])
+	})
 	return oauthClientCall(params)
 }
 
