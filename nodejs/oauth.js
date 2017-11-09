@@ -52,9 +52,11 @@ export function getToken({ username = null, password = null, facebook = null, go
 		params = Object.assign({ grant_type: 'password' }, secretParams, { googlejwt })
 	}
 	// encode the values to be passed to oauth
-	Object.keys(params).forEach((parmesan) => {
-		params[parmesan] = encode(params[parmesan])
-	})
+	if (params && Object.keys(params).length > 0) {
+		Object.keys(params).forEach((parmesan) => {
+			params[parmesan] = encode(params[parmesan])
+		})
+	}
 	return oauthClientCall(params)
 }
 
