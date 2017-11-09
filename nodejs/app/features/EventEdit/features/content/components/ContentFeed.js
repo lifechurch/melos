@@ -3,7 +3,6 @@ import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import ContentTypeContainer from './ContentTypeContainer'
 import ContentDraggable from './ContentDraggable'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import HTML5Backend from 'react-dnd-html5-backend'
 import { DragDropContext } from 'react-dnd'
 import { FormattedMessage } from 'react-intl'
@@ -64,9 +63,9 @@ class ContentFeed extends Component {
 						{reorderButton}
 					</div>
 					<div className='medium-8 large-6 columns end'>
-						<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+						<div>
 							{contentList}
-						</ReactCSSTransitionGroup>
+						</div>
 					</div>
 				</Row>
 			</div>

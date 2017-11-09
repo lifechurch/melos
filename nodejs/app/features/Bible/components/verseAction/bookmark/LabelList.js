@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import LabelPill from './LabelPill'
 
 class LabelList extends Component {
@@ -45,15 +44,9 @@ class LabelList extends Component {
 
 		return (
 			<div className='label-list'>
-				<ReactCSSTransitionGroup
-					transitionName='basic'
-					transitionAppear={true}
-					transitionAppearTimeout={500}
-					transitionEnterTimeout={500}
-					transitionLeaveTimeout={300}
-				>
+				<div>
 					{ labels }
-				</ReactCSSTransitionGroup>
+				</div>
 			</div>
 		)
 	}

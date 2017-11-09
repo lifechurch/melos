@@ -14,7 +14,7 @@ class HtmlEditor extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (!this.state.isDirty) {
-			this.setState({value: nextProps.value})
+			this.setState({ value: nextProps.value })
 		}
 	}
 
@@ -22,10 +22,10 @@ class HtmlEditor extends Component {
 		const { onChange, name } = this.props
 		const { value, isDirty } = this.state
 		if (isDirty) {
-			this.setState({isDirty: false})
+			this.setState({ isDirty: false })
 			onChange({
 				target: {
-					value: value,
+					value,
 					name
 				}
 			})
@@ -40,7 +40,7 @@ class HtmlEditor extends Component {
 			this.cancelSave = null
 		}
 
-		this.setState({ value: value, isDirty: true })
+		this.setState({ value, isDirty: true })
 
 		onChange({})
 		this.cancelSave = setTimeout(::this.sendUpdate, DEBOUNCE_TIMEOUT)
@@ -55,11 +55,11 @@ class HtmlEditor extends Component {
 
 		const toolbarItems = [
 			{
-				label:intl.formatMessage({ id: "components.HtmlEditor.text" }),
-				type:'group',
+				label: intl.formatMessage({ id: 'components.HtmlEditor.text' }),
+				type: 'group',
 				items: [
-					{ type:'bold', label: intl.formatMessage({ id: "components.HtmlEditor.bold" }) },
-					{ type:'italic', label: intl.formatMessage({ id: "components.HtmlEditor.italic" }) }
+					{ type: 'bold', label: intl.formatMessage({ id: 'components.HtmlEditor.bold' }) },
+					{ type: 'italic', label: intl.formatMessage({ id: 'components.HtmlEditor.italic' }) }
 				]
 			}
 		]
@@ -71,22 +71,22 @@ class HtmlEditor extends Component {
 					formats={formats}
 					theme="snow"
 					value={value}
-					onChange={::this.handleChange}>
-
+					onChange={::this.handleChange}
+				>
 					<div
 						key='toolbar'
 						ref='toolbar'
-						items={toolbarItems}>
+						items={toolbarItems}
+					>
 						<a className='ql-bold'><FormattedMessage id="components.HtmlEditor.bold" /></a>
 						<a className='ql-italic'><FormattedMessage id="components.HtmlEditor.italic" /></a>
 					</div>
-
 					<div
 						key='editor'
 						ref='editor'
 						className='quill-contents form-body-block white content-html-editor-content'
-						dangerouslySetInnerHTML={html} />
-
+						dangerouslySetInnerHTML={html}
+					/>
 				</ReactQuill>
 			</div>
 		)
