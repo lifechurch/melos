@@ -19,7 +19,7 @@ class UnsubbedPlan extends Component {
 
 	render() {
 		const { plan, savedPlans, dispatch, children, version, dayBasePath, actionsNode, allplansNode, params, auth, localizedLink, serverLanguageTag } = this.props
-		if (!plan) return <div />
+		if (!(plan && plan.id)) return <div />
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const versionID = version ? version.id : '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)

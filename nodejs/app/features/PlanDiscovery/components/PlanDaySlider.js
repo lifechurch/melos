@@ -144,7 +144,7 @@ class PlanDaySlider extends Component {
 				overflowX: 'scroll'
 			}
 			const innerStyle = {
-				width: `${(80 * progressDays.length) + 30}px`
+				width: `${(80 * totalDays) + 30}px`
 			}
 
 			slider = (
