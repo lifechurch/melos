@@ -65,6 +65,7 @@ module YV
         end
 
         cookies.delete 'YouVersionToken'
+				cookies.delete 'OAUTH'
         @current_auth = Hashie::Mash.new( { 'user_id' => user.id, 'username' => user.username, 'password' => password, 'tp_token' => tp_token, 'tp_id' => tp_id } )
       end
 
@@ -80,6 +81,7 @@ module YV
         cookies.delete :t
         cookies.delete :ti
         cookies.delete 'YouVersionToken'
+				cookies.delete 'OAUTH'
         clear_redirect
       end
 

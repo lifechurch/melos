@@ -3,8 +3,23 @@ import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 import rtlDetect from 'rtl-detect'
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import getSubscriptionsModel from '@youversion/api-redux/lib/models/subscriptions'
 
 class PlansView extends Component {
+	componentDidMount() {
+		const { dispatch, subscriptions, auth } = this.props
+		const prefetch = auth.isLoggedIn
+			&& !(subscriptions && subscriptions.allIds.length > 0)
+		// if the user is logged in and on the plans tab, let's prefetch the id list
+		// for subscriptions if the user has any
+		if (prefetch) {
+			dispatch(plansAPI.actions.subscriptions.get({
+				order: 'desc',
+				page: 1
+			}, { auth: true }))
+		}
+	}
 	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || params.lang || 'en'
@@ -62,6 +77,7 @@ PlansView.propTypes = {
 
 function mapStateToProps(state) {
 	return {
+		subscriptions: getSubscriptionsModel(state),
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag
 	}
