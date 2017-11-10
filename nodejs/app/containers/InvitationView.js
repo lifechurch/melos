@@ -1,7 +1,8 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-import { FormattedMessage } from 'react-intl'
+import Helmet from 'react-helmet'
+import { FormattedMessage, injectIntl } from 'react-intl'
 // actions
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
@@ -14,6 +15,7 @@ import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/re
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 // components
+import InvitationString from '../widgets/InvitationString'
 import TogetherInvitation from '../features/PlanDiscovery/components/TogetherInvitation'
 import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'
 
@@ -31,6 +33,7 @@ class InvitationView extends Component {
 		} = this.props
 		// join token will allow us to see the participants and together unauthed
 		this.joinToken = query && query.token ? query.token : null
+		console.log('MOUNT', together_id, participants.filter({ together_id, idOnly: true }))
 		if (!(plan && participants && participants.filter({ together_id, idOnly: true }).length > 0)) {
 			dispatch(planView({
 				plan_id: id.split('-')[0],
@@ -39,15 +42,16 @@ class InvitationView extends Component {
 				auth,
 				serverLanguageTag,
 			}))
+			dispatch(plansAPI.actions.together.get({
+				id: together_id,
+				token: this.joinToken
+			}, { auth: auth && auth.isLoggedIn })).then((data) => {
+				console.log('DATATATATATAT', data)
+				if (!(data && data.data)) {
+					// this.onUnauthedAction()
+				}
+			})
 		}
-		dispatch(plansAPI.actions.together.get({
-			id: together_id,
-			token: this.joinToken
-		}, { auth: auth && auth.isLoggedIn })).then((data) => {
-			if (!(data && data.data)) {
-				this.onUnauthedAction()
-			}
-		})
 	}
 
 	onActionComplete = () => {
@@ -77,7 +81,7 @@ class InvitationView extends Component {
 	}
 
 	render() {
-		const { plan, params: { together_id }, together, participants } = this.props
+		const { plan, params: { together_id }, together, participants, hosts, serverLanguageTag, intl } = this.props
 
 		const planImg = plan
 			? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url
@@ -92,16 +96,48 @@ class InvitationView extends Component {
 			&& participants.filter({ together_id, statusFilter: ['host', 'accepted'], idOnly: true })
 			? participants.filter({ together_id, statusFilter: ['host', 'accepted'], idOnly: true }).length
 			: 0
-
+		const hostObj = participants
+			&& participants.filter({ together_id, statusFilter: 'host' })
+		const host = hostObj
+			&& hostObj[Object.keys(hostObj)[0]]
+			&& hostObj[Object.keys(hostObj)[0]].name
+		const title = `${planTitle}: ${intl.formatMessage({ id: 'invitation' })}`
+		const description = intl.formatMessage({ id: 'join together' }, { host })
+		console.log('host', hostObj, host, description)
+		const url = `${hosts && hosts.railsHost}${Routes.togetherInvitation({
+			plan_id: plan && plan.id,
+			slug: plan && plan.slug,
+			together_id,
+			serverLanguageTag,
+		})}`
 		return (
-			<TogetherInvitation
-				together_id={together_id}
-				planImg={planImg}
-				planTitle={planTitle}
-				planLink={planLink}
-				participantsString={
-					<div>
-						{
+			<div>
+				<Helmet
+					title={title}
+					meta={[
+						{ name: 'description', content: description },
+						{ property: 'og:title', content: title },
+						{ property: 'og:url', content: url },
+						{ property: 'og:description', content: description },
+						{ name: 'twitter:card', content: 'summary' },
+						{ name: 'twitter:url', content: url },
+						{ name: 'twitter:title', content: title },
+						{ name: 'twitter:description', content: description },
+						{ name: 'twitter:site', content: '@YouVersion' },
+						{ property: 'og:image', content: `https:${planImg}` },
+						{ property: 'og:image:width', content: 720 },
+						{ property: 'og:image:height', content: 402 },
+						{ name: 'twitter:image', content: `https:${planImg}` }
+					]}
+				/>
+				<TogetherInvitation
+					together_id={together_id}
+					planImg={planImg}
+					planTitle={planTitle}
+					planLink={planLink}
+					participantsString={
+						<div>
+							{
 							invitedNum > 1
 								? <FormattedMessage id='x pending.other' values={{ number: invitedNum }} />
 								: <FormattedMessage id='x pending.one' values={{ number: invitedNum }} />
@@ -114,14 +150,15 @@ class InvitationView extends Component {
 								? <FormattedMessage id='x accepted.other' values={{ number: acceptedNum }} />
 								: <FormattedMessage id='x accepted.one' values={{ number: acceptedNum }} />
 						}
-					</div>
+						</div>
 				}
-				startDate={<PlanStartString start_dt={together && together.start_dt} dateOnly />}
-				joinToken={this.joinToken}
-				showDecline={!this.joinToken}
-				handleActionComplete={this.onActionComplete}
-				handleUnauthed={this.onUnauthedAction}
-			/>
+					startDate={<PlanStartString start_dt={together && together.start_dt} dateOnly />}
+					joinToken={this.joinToken}
+					showDecline={!this.joinToken}
+					handleActionComplete={this.onActionComplete}
+					handleUnauthed={this.onUnauthedAction}
+				/>
+			</div>
 		)
 	}
 }
@@ -138,6 +175,7 @@ function mapStateToProps(state, props) {
 			: null,
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,
+		hosts: state.hosts
 	}
 }
 
@@ -156,4 +194,4 @@ InvitationView.defaultProps = {
 	location: {},
 }
 
-export default connect(mapStateToProps, null)(InvitationView)
+export default connect(mapStateToProps, null)(injectIntl(InvitationView))

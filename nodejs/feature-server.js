@@ -315,6 +315,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 			const store = getStore(feature, initialState, history, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('loadData', (action) => {
 				const finish = nr.createTracer('finish', () => {
+					// console.log('FEATURE DATA', action)
 					const RootComponent = getRootComponent(feature)
 
 					if (RootComponent === null) {

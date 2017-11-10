@@ -19,7 +19,7 @@ function Invitation({
 	showDecline,
 	handleActionComplete,
 	handleUnauthed,
-	joinToken
+	joinToken,
 }) {
 
 	return (
