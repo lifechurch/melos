@@ -2,8 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
-import getCurrentDT from '../../../lib/getCurrentDT'
+import subscribeToPlan from '@youversion/api-redux/lib/batchedActions/subscribeToPlan'
 import Menu from '../../../components/Menu'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Modal from '../../../components/Modal'
@@ -35,25 +34,20 @@ class SubscribeUserDialog extends Component {
 				break
 			case 'public':
 			case 'private':
-				dispatch(plansAPI.actions.subscriptions.post({}, {
-					body: {
-						created_dt: getCurrentDT(),
-						start_dt: getCurrentDT(),
-						plan_id: id,
-						privacy: subscribeContext,
-						language_tag: serverLanguageTag,
-					},
-					auth: isLoggedIn
-				})).then((data) => {
-					if (data) {
-						const subId = data.map[0]
+				dispatch(subscribeToPlan({
+					plan_id: id,
+					privacy: subscribeContext,
+					serverLanguageTag,
+					auth: isLoggedIn,
+					onComplete: (sub) => {
+						const newSubId = sub && sub.id
 						if (useRouter) {
-							dispatch(push(`${subLinkBase}/subscription/${subId}/day/1`))
+							dispatch(push(`${subLinkBase}/subscription/${newSubId}/day/1`))
 						} else {
-							window.location.replace(`${subLinkBase}/subscription/${subId}/day/1`)
+							window.location.replace(`${subLinkBase}/subscription/${newSubId}/day/1`)
 						}
 					}
-				})
+				}))
 				break
 			default:
 				break

@@ -5,11 +5,11 @@ import { push } from 'react-router-redux'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import subscribeToPlan from '@youversion/api-redux/lib/batchedActions/subscribeToPlan'
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 import CreatePWF from '../features/PlanDiscovery/components/CreatePWF'
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
-import getCurrentDT from '../lib/getCurrentDT'
 
 function getSubId(props) {
 	return props.location
@@ -65,24 +65,14 @@ class CreatePWFView extends Component {
 			})
 		// creating plan with friends date
 		} else {
-			const created_dt = getCurrentDT()
-			dispatch(plansAPI.actions.subscriptions.post({}, {
-				body: {
-					created_dt,
-					start_dt: moment(selectedDay).utc().format(),
-					plan_id,
-					together: true,
-					privacy: 'private',
-					language_tag: serverLanguageTag,
-				},
+			dispatch(subscribeToPlan({
+				start_dt: moment(selectedDay).utc().format(),
+				plan_id,
+				isTogether: true,
+				privacy: 'private',
+				serverLanguageTag,
 				auth: auth.isLoggedIn,
-			})).then((data) => {
-				if (data && data.map && data.data) {
-					const newSubId = data.map.filter((subId) => {
-						return data.data[subId]
-							&& data.data[subId].created_dt === created_dt
-					})[0]
-					const sub = data.data[newSubId]
+				onComplete: (sub) => {
 					if (sub && sub.together_id) {
 						dispatch(push(Routes.togetherInvite({
 							username: auth.userData.username,
@@ -91,7 +81,7 @@ class CreatePWFView extends Component {
 						})))
 					}
 				}
-			})
+			}))
 		}
 	}
 
