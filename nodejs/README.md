@@ -19,9 +19,10 @@
 
 **Create environment variables**
 
- * export NODE_ENV=staging
- * export YOUVERSION_TOKEN_PHRASE='bob the builder builds some cool things'
- * export NEW_RELIC_LICENSE_KEY=148b7b0a47e0219bd1117c19b692c94c779cdf33
+ * `export NODE_ENV=staging`
+ * `export YOUVERSION_TOKEN_PHRASE='bob the builder builds some cool things'`
+ * `export NEW_RELIC_LICENSE_KEY=148b7b0a47e0219bd1117c19b692c94c779cdf33`
+ * export `OAUTH_CLIENT_SECRET` and `OAUTH_CLIENT_ID` for staging env (ask repo maintainer for secrets)
  
 **Start Watching Files and Run Local Server**
 
