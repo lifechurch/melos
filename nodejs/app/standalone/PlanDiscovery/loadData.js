@@ -1,8 +1,8 @@
 import cookie from 'react-cookie'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
-import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
-import planView from '@youversion/api-redux/lib/batchedActions/planView'
+import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
+import customGet from '@youversion/api-redux/lib/customHelpers/get'
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
 /**
@@ -46,7 +46,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			} else if (isSaved.test(params.url)) {
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => { resolve() })
 			} else if (isTogetherInvitation.test(params.url)) {
-				const { id, together_id, token, languageTag } = params
+				const { id, together_id, token } = params
 				const { dispatch } = store
 				const proms = [
 					dispatch(readingPlansAction({
@@ -56,23 +56,53 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						},
 					})),
 					new Promise((resolve2) => {
-						dispatch(participantsView({
-							together_id,
-							token,
+						customGet({
+							actionName: 'participants',
+							pathvars: {
+								id: together_id,
+								token,
+							},
+							dispatch,
+							actions: plansAPI.actions,
 							auth,
-							serverLanguageTag: languageTag
-						})).then((data) => { console.log('PARTYPANTS', data); resolve2(data) })
+							serverLanguageTag: Locale.planLocale,
+						})
+							.then((data) => {
+								const promesan = [data]
+								if (data && data.data) {
+									data.data.forEach((user) => {
+										promesan.push(
+											dispatch(usersAction({
+												method: 'view',
+												params: {
+													id: user.id,
+												},
+											}))
+										)
+									})
+								}
+								Promise.all(promesan)
+									.then((promisedLand) => {
+										resolve2(promisedLand)
+									})
+									.catch((err) => {
+										resolve2(err)
+									})
+							})
+							.catch((err) => { resolve2(err) })
 					}),
-					new Promise((res) => {
+					new Promise((reso) => {
 						dispatch(plansAPI.actions.together.get({
 							id: together_id,
 							token,
-						}, { auth })).then((data) => { res(data) })
+						}, { auth }))
+						.then((data) => { reso(data) })
+						.catch((err) => { reso(err) })
 					})
 				]
-				Promise.all(proms)
-					.then((data) => { console.log('all', data); resolve(); })
-					.catch(() => { resolve() })
+				resolve(Promise.all(proms)
+					.then(() => { resolve() })
+					.catch(() => { resolve() }))
 			} else if (isPlanComplete.test(params.url)) {
 				store.dispatch(ActionCreator.planComplete({
 					id: params.id,

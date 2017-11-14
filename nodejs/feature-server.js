@@ -365,10 +365,10 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 							railsHost: params.railsHost,
 							referrer,
 							appContainerSuffix: feature
-						}, nr.createTracer('render', (err, html) => {
+						}, nr.createTracer('render', (err, renderedHtml) => {
 							nr.endTransaction()
 							res.send({
-								html,
+								html: renderedHtml,
 								head,
 								oauth: verifiedAuth.oauth,
 								token: storeState.auth.token,
@@ -390,7 +390,6 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						console.log('Render props error', err)
 					})
 				})
-
 				if (typeof action === 'function') {
 					store.dispatch(action).then(nr.createTracer('actionIsFn::success', () => {
 						finish()

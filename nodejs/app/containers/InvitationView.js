@@ -15,7 +15,6 @@ import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/re
 import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 // components
-import InvitationString from '../widgets/InvitationString'
 import TogetherInvitation from '../features/PlanDiscovery/components/TogetherInvitation'
 import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'
 
@@ -33,7 +32,6 @@ class InvitationView extends Component {
 		} = this.props
 		// join token will allow us to see the participants and together unauthed
 		this.joinToken = query && query.token ? query.token : null
-		console.log('MOUNT', together_id, participants.filter({ together_id, idOnly: true }))
 		if (!(plan && participants && participants.filter({ together_id, idOnly: true }).length > 0)) {
 			dispatch(planView({
 				plan_id: id.split('-')[0],
@@ -46,9 +44,8 @@ class InvitationView extends Component {
 				id: together_id,
 				token: this.joinToken
 			}, { auth: auth && auth.isLoggedIn })).then((data) => {
-				console.log('DATATATATATAT', data)
 				if (!(data && data.data)) {
-					// this.onUnauthedAction()
+					this.onUnauthedAction()
 				}
 			})
 		}
@@ -81,8 +78,9 @@ class InvitationView extends Component {
 	}
 
 	render() {
-		const { plan, params: { together_id }, together, participants, hosts, serverLanguageTag, intl } = this.props
+		const { plan, params: { together_id }, location: { query }, together, participants, hosts, serverLanguageTag, intl } = this.props
 
+		const isFromShareLink = !(query && query.source) && this.joinToken
 		const planImg = plan
 			? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url
 			: ''
@@ -103,13 +101,13 @@ class InvitationView extends Component {
 			&& hostObj[Object.keys(hostObj)[0]].name
 		const title = `${planTitle}: ${intl.formatMessage({ id: 'invitation' })}`
 		const description = intl.formatMessage({ id: 'join together' }, { host })
-		console.log('host', hostObj, host, description)
 		const url = `${hosts && hosts.railsHost}${Routes.togetherInvitation({
 			plan_id: plan && plan.id,
 			slug: plan && plan.slug,
 			together_id,
 			serverLanguageTag,
 		})}`
+
 		return (
 			<div>
 				<Helmet
@@ -138,23 +136,23 @@ class InvitationView extends Component {
 					participantsString={
 						<div>
 							{
-							invitedNum > 1
-								? <FormattedMessage id='x pending.other' values={{ number: invitedNum }} />
-								: <FormattedMessage id='x pending.one' values={{ number: invitedNum }} />
-						}
-						&nbsp;
-						&bull;
-						&nbsp;
-						{
-							acceptedNum > 1
-								? <FormattedMessage id='x accepted.other' values={{ number: acceptedNum }} />
-								: <FormattedMessage id='x accepted.one' values={{ number: acceptedNum }} />
-						}
+								invitedNum > 1
+									? <FormattedMessage id='x pending.other' values={{ number: invitedNum }} />
+									: <FormattedMessage id='x pending.one' values={{ number: invitedNum }} />
+							}
+							&nbsp;
+							&bull;
+							&nbsp;
+							{
+								acceptedNum > 1
+									? <FormattedMessage id='x accepted.other' values={{ number: acceptedNum }} />
+									: <FormattedMessage id='x accepted.one' values={{ number: acceptedNum }} />
+							}
 						</div>
-				}
+					}
 					startDate={<PlanStartString start_dt={together && together.start_dt} dateOnly />}
 					joinToken={this.joinToken}
-					showDecline={!this.joinToken}
+					showDecline={!isFromShareLink}
 					handleActionComplete={this.onActionComplete}
 					handleUnauthed={this.onUnauthedAction}
 				/>
@@ -187,6 +185,8 @@ InvitationView.propTypes = {
 	params: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	location: PropTypes.object,
+	hosts: PropTypes.object.isRequired,
+	intl: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 }
 
