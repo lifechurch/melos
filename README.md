@@ -334,6 +334,6 @@ information on how you can lend a hand.
 
 
 
-[our-storybook]: /docs/ "YouVersion React Component Library Storybook"
+[our-storybook]: https://lifechurch.github.io/melos/ "YouVersion React Component Library Storybook"
 [contributing]: /CONTRIBUTING.md "YouVersion React Component Library Contribution Guidelines"
 [storybook]: https://storybook.js.org/
