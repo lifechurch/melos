@@ -12,6 +12,36 @@ simple and engaging user experience on Bible.com.
   Example components in a mobile view
 </p>
 
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Usage](#usage)
+	- [Getting Started](#getting-started)
+- [Test Drive all Components in a Sandbox Environment with React Storybook](#test-drive-all-components-in-a-sandbox-environment-with-react-storybook)
+- [Available Components](#available-components)
+	- [Standardized Typography](#standardized-typography)
+	- [Convenient Layouts](#convenient-layouts)
+	- [Links and Buttons](#links-and-buttons)
+	- [Logos](#logos)
+	- [Icons](#icons)
+	- [Media Queries](#media-queries)
+	- [Forms](#forms)
+	- [Containers](#containers)
+	- [Utility Functions](#utility-functions)
+- [CSS, Themes, and Dynamically Generated CSS using Glamor and Glamorous](#css-themes-and-dynamically-generated-css-using-glamor-and-glamorous)
+	- [Our Default Themes](#our-default-themes)
+	- [Putting it Together in a Custom Theme](#putting-it-together-in-a-custom-theme)
+	- [Applying Your Theme to components](#applying-your-theme-to-components)
+	- [Under the Hood](#under-the-hood)
+- [Development](#development)
+	- [Using Storybook to develop these components](#using-storybook-to-develop-these-components)
+	- [Run Tests](#run-tests)
+	- [Generate a Production Build](#generate-a-production-build)
+	- [Watch for Code Changes and Automatically Rebuild During Development](#watch-for-code-changes-and-automatically-rebuild-during-development)
+- [Contributing](#contributing)
+- [License](#license)
+- [How did you come up with the name mélos?](#how-did-you-come-up-with-the-name-mlos)
+
+<!-- /TOC -->
 
 ## Usage
 
