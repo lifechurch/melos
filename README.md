@@ -10,7 +10,7 @@ simple and engaging user experience on Bible.com.
 
 If you want to start using these components right away, here's a brief intro
 and a couple examples. You can see all of the available components, and
-examples with usage, in our [Storybook for this library](our-storybook).
+examples with usage, in our [Storybook for this library][our-storybook].
 
 If you're looking to develop or add to this collection of components, see
 the [Development](#development) section of this document.
@@ -35,7 +35,7 @@ the [Development](#development) section of this document.
         </div>
         ```
 
-For usage examples of each of the components in this library, see [our Storybook](our-storybook).
+For usage examples of each of the components in this library, see [our Storybook][our-storybook].
 
 ## Test Drive all Components in a Sandbox Environment with React Storybook
 
@@ -44,11 +44,11 @@ allows us to create a centrally located sandbox where developers can discover
 new components and test drive them using different prop combinations before
 using them in their projects.
 
-To see the complete collection of components, code examples, and test-drive them live, [see our Storybook](our-storybook).
+To see the complete collection of components, code examples, and test-drive them live, [see our Storybook][our-storybook].
 
 ## Available Components
 
-See the complete list of available components, and test drive them all in our [Storybook](our-storybook).
+See the complete list of available components, and test drive them all in our [Storybook][our-storybook].
 
 Our components are organized into categories, based on their normal usage patterns. This hopefully makes them easier to find and utilize here and in the Storybook.
 
@@ -308,7 +308,7 @@ We recommend the use of React Storybook for developing these components.
 
 5. Write stories for your components in their respective `stories` folder. E.g., `/src/components/{component-name}/stories/{name}.stories.js`.
 
-For more information on Storybook specifically, see [the Storybook site](storybook).
+For more information on Storybook specifically, see [the Storybook site][storybook].
 
 ### Run Tests
 
