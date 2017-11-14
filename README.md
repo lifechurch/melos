@@ -291,6 +291,8 @@ We recommend the use of React Storybook for developing these components.
 
 5. Write stories for your components in their respective `stories` folder. E.g., `/src/components/{component-name}/stories/{name}.stories.js`.
 
+6. Write tests for your component in their respective `__tests__` folder. E.g., `/src/components/{component-name}/__tests__/{name}.unit.test.js`.
+
 For more information on Storybook specifically, see [the Storybook site][storybook].
 
 ### Run Tests
