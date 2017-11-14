@@ -57,63 +57,46 @@ Our components are organized into categories, based on their normal usage patter
 
 Components for body copy, captions, headings (1 - 3), titles and links. By using these components throughout our projects, we create a standard for typography that adheres to our style guide.
 
-[`src/typography`](./src/typography/)
-
 
 ### Convenient Layouts
 
 These components are useful when designing layouts. They provide simple components for creating complex or frequently used layout patterns (such as 'vertical layouts evenly spaced' or 'fixed left and right content with a centered title')
-
-[`src/layouts`](./src/layouts/)
 
 
 ### Links and Buttons
 
 Standardized way of displaying, links, buttons, icon/image buttons, etc.
 
-[`src/links`](./src/links/) and [`src/images`](./src/images/)
-
 
 ### Logos
 
 Set of third-party and internal logos in SVG format, wrapped as React components with props for height, width and fill.
-
-[`src/logos`](./src/logos/)
 
 
 ### Icons
 
 Collection of icons currently being used in our web apps, in SVG format, wrapped as React components with props for height, width and fill.
 
-[`src/icons`](./src/icons/)
-
 
 ### Media Queries
 
 Standard set of media query breakpoints and pre-defined ranges for small, medium, large and x-large screens. They're defined in Javascript for use with our dynamically generated CSS (via Glamor and Glamorous).
-
-[`src/mediaQueries.js`](./src/mediaQueries.js)
 
 
 ### Forms
 
 Standard components for handling form input. Inputs, Selects, Textareas and a Debounced higher order component.
 
-[`src/forms`](./src/forms/)
 
 
 ### Containers
 
 Currently, just a simple Card component for wrapping UI elements in a card.
 
-[`src/containers`](./src/containers/)
-
 
 ### Utility Functions
 
 A handy set of utility functions that we use in multiple places to make calculations or parse data such as converting arrays to object, fast searching/filtering long lists in the browser, darken/lighten hex colors by percent, monitor scroll position, monitor browser width, and more.
-
-[`src/utils`](./src/utils/)
 
 
 ## CSS, Themes, and Dynamically Generated CSS using Glamor and Glamorous
