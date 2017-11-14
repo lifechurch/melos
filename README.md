@@ -323,16 +323,6 @@ For more information on Storybook specifically, see [the Storybook site][storybo
 Please check out our [Contribution Guidelines][contributing] for detailed
 information on how you can lend a hand.
 
-## License
-
-[Apache License 2.0](./LICENSE)
-
-
-
-[our-storybook]: https://lifechurch.github.io/melos/ "YouVersion React Component Library Storybook"
-[contributing]: /CONTRIBUTING.md "YouVersion React Component Library Contribution Guidelines"
-[storybook]: https://storybook.js.org/
-
 
 ## How did you come up with the name mélos?
 
@@ -344,3 +334,12 @@ In the Bible, [1 Corinthians 12:12](https://www.bible.com/bible/116/2CO.12.12.nl
 
 We liked the idea of many parts (or mélos) working together to build something bigger. That's the way the Church is being built, and that's also the way good web applications are built - each of the mélos doing the work it was designed for.
 
+
+## License
+
+[Apache License 2.0](./LICENSE)
+
+
+[our-storybook]: https://lifechurch.github.io/melos/ "YouVersion React Component Library Storybook"
+[contributing]: /CONTRIBUTING.md "YouVersion React Component Library Contribution Guidelines"
+[storybook]: https://storybook.js.org/
