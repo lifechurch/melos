@@ -4,7 +4,7 @@ This project sets the standard for user interfaces on various YouVersion web
 projects, containing many of the pieces that come together to create a clean,
 simple and engaging user experience on Bible.com.
 
-![Example Storybook Animation](/docs/youversion-react-components-800.gif)
+![Example components in a mobile view](./docs/demo_votd_mobile.gif)
 
 ## Usage
 
@@ -43,6 +43,8 @@ For usage examples of each of the components in this library, see [our Storybook
 
 ## Test Drive all Components in a Sandbox Environment with React Storybook
 
+![Example Storybook Animation](/docs/youversion-react-components-800.gif)
+
 We've built [React Storybook](https://storybook.js.org/) into our repo. This
 allows us to create a centrally located sandbox where developers can discover
 new components and test drive them using different prop combinations before
@@ -61,6 +63,8 @@ Our components are organized into categories, based on their normal usage patter
 
 Components for body copy, captions, headings (1 - 3), titles and links. By using these components throughout our projects, we create a standard for typography that adheres to our style guide.
 
+<img width="400" src="./docs/demo_typography.png" alt="Example of default typography styles.">
+
 
 ### Convenient Layouts
 
@@ -70,6 +74,8 @@ These components are useful when designing layouts. They provide simple componen
 ### Links and Buttons
 
 Standardized way of displaying, links, buttons, icon/image buttons, etc.
+
+<img width="400" src="./docs/demo_buttons.png" alt="Example default button styles">
 
 
 ### Logos
