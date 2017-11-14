@@ -1,0 +1,100 @@
+{
+  "name": "@youversion/react-components",
+  "version": "0.0.5",
+  "description": "Open source library of React components from the YouVersion Bible.com team",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage",
+    "compile": "babel src --out-dir dist --copy-files",
+    "watch": "babel src --out-dir dist --copy-files --watch",
+    "storybook": "start-storybook -p 6006",
+    "build_storybook": "build-storybook -c .storybook -o docs",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@in.thewardro.be:web/youversion-react-components.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@youversion/utils": "^1.0.20",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.11.0",
+    "object-assign-deep": "^0.3.1",
+    "prop-types": "^15.6.0",
+    "jest-glamor-react": "^1.2.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^3.0.5",
+    "react-test-renderer": "^15.6.2",
+    "react-waypoint": "^7.3.1"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "testMatch": [
+      "**/src/**/__tests__/**/*.js?(x)",
+      "**/src/**/?(*.)(spec|test).js?(x)"
+    ],
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss|less)$": "identity-obj-proxy"
+    },
+    "unmockedModulePathPatterns": [
+      "react",
+      "react-dom",
+      "react-addons-test-utils",
+      "fbjs",
+      "enzyme",
+      "domhandler",
+      "object.assign",
+      "define-properties",
+      "function-bind",
+      "object-keys"
+    ],
+    "modulePaths": [
+      "./node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.13",
+    "@storybook/addon-info": "^3.2.13",
+    "@storybook/addon-links": "^3.2.13",
+    "@storybook/react": "^3.2.13",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^2.9.1",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.3",
+    "jest-enzyme": "^3.0.0",
+    "jsdom": "^9.12.0",
+    "less": "^2.7.2",
+    "less-loader": "^3.0.0",
+    "react-storybook-addon-chapters": "^2.0.0",
+    "webpack": "^3.8.1"
+  }
+}
