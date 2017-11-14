@@ -19,21 +19,25 @@ the [Development](#development) section of this document.
 
 1. Install these components for use, by running
 
-        `npm install @youversion/react-components`
+```
+        npm install @youversion/react-components
+```
 
 2. Import the component you want to use...
 
-        `import Card from '@youversion/react-components'`
+```
+        import Card from '@youversion/react-components'
+```
 
 3. Use the Component somewhere!
 
-        ```
+```
         <div>
             <Card>
                 Contents in a card component!
             </Card>
         </div>
-        ```
+```
 
 For usage examples of each of the components in this library, see [our Storybook][our-storybook].
 
