@@ -78,6 +78,30 @@ class PagesController < ApplicationController
     end
   end
 
+
+  def year_in_review
+    p = {
+      "id" => params[:user_id],
+      "strings" => {}
+    }
+
+    results = YV::Nodestack::Fetcher.get('YearInReview', p, cookies, current_auth, current_user, request)
+
+    if results['error'].present?
+      return render_404
+    end
+
+    @title_tag = results['head']['title']
+
+    render locals: {
+      html: results['html'],
+      js: add_node_assets(results['js']),
+      css: add_node_assets(results['css'])
+    }
+  end
+
+
+
   def votd
 		url = request.query_string.present? ? request.path + '?' + request.query_string : request.path
 		p = {
