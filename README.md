@@ -4,7 +4,13 @@ This project sets the standard for user interfaces on various YouVersion web
 projects, containing many of the pieces that come together to create a clean,
 simple and engaging user experience on Bible.com.
 
-![Example components in a mobile view](./docs/demo_votd_mobile.gif)
+<p align="center">
+  <img src="./docs/demo_votd_mobile.gif" />
+</p>
+<p align="center">
+  Example components in a mobile view
+</p>
+
 
 ## Usage
 
