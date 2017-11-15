@@ -60,7 +60,7 @@ review:
     - helm list | grep $SHORT || helm install --name $SHORT --set memcached.verbosity=v --set memcached.maxItemMemory=100 stable/memcached --version 0.4.1 --namespace $KUBE_NAMESPACE --replace
   environment:
     name: review/$CI_COMMIT_REF_NAME
-    url: https://beta.bible.com
+    url: $CI_ENVIRONMENT_URL
     on_stop: stop_review
   only:
     - branches
