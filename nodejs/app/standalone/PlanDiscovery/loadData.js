@@ -91,13 +91,13 @@ export default function loadData(params, startingState, sessionData, store, Loca
 							})
 							.catch((err) => { resolve2(err) })
 					}),
-					new Promise((reso) => {
+					new Promise((reso, rej) => {
 						dispatch(plansAPI.actions.together.get({
 							id: together_id,
 							token,
 						}, { auth }))
 						.then((data) => { reso(data) })
-						.catch((err) => { reso(err) })
+						.catch((err) => { rej(err) })
 					})
 				]
 				resolve(Promise.all(proms)
