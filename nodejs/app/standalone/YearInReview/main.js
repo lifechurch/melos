@@ -10,8 +10,8 @@ import defaultState from './defaultState'
 
 let initialState = defaultState
 
-if (typeof window !== 'undefined' && typeof window.Footer.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.Footer.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.YearInReview.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.YearInReview.__INITIAL_STATE__
 }
 
 let logger = null

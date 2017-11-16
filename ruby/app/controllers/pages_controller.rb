@@ -81,7 +81,7 @@ class PagesController < ApplicationController
 
   def year_in_review
     p = {
-      "id" => params[:user_id],
+      "user_id" => User.find_id(params[:username]).user_id,
       "strings" => {}
     }
 

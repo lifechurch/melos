@@ -222,7 +222,7 @@ YouversionWeb::Application.routes.draw do
   match '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
   match '/users/:username/reading-plans/:id/completed' => 'plans#day_complete', as: "plan_complete_plan", via: :get
 
-  get '/users/:user_id/year-in-review' => 'pages#year_in_review'
+  get '/users/:username/year-in-review' => 'pages#year_in_review'
 	get '/users/:username/reading-plans/:id/subscription/:subscription_id' => 'subscriptions#show'
   get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day' => 'subscriptions#show', as: "plan_show"
   # get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"

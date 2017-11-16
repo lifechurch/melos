@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import notifications from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import users from '@youversion/api-redux/lib/endpoints/users/reducer'
-import readingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 
 const emptyReducer = (state = {}) => { return state }
 
@@ -25,10 +23,9 @@ const rootReducer = combineReducers({
   hosts: emptyReducer,
   passage: emptyReducer,
   locale: emptyReducer,
+  userId: emptyReducer,
   api: combineReducers({
-    notifications,
     users,
-    readingPlans
   })
 })
 
