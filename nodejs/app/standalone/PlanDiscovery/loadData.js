@@ -1,8 +1,10 @@
 import cookie from 'react-cookie'
-
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
+import customGet from '@youversion/api-redux/lib/customHelpers/get'
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
-
 /**
  * Loads a data.
  *
@@ -30,6 +32,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isLookinside = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+')
 			const isLookinsideSample = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+\/read\/day/[0-9]+')
 
+			const isTogetherInvitation = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+(-[^\r\n\t\f\/ ]+)?\/together/[0-9a-zA-Z-]+/invitation')
+
 			let auth = false
 			if (sessionData.email && sessionData.password) {
 				auth = { username: sessionData.email, password: sessionData.password }
@@ -41,7 +45,64 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
 			} else if (isSaved.test(params.url)) {
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => { resolve() })
-
+			} else if (isTogetherInvitation.test(params.url)) {
+				const { id, together_id, token } = params
+				const { dispatch } = store
+				const proms = [
+					dispatch(readingPlansAction({
+						method: 'view',
+						params: {
+							id: id.split('-')[0],
+						},
+					})),
+					new Promise((resolve2) => {
+						customGet({
+							actionName: 'participants',
+							pathvars: {
+								id: together_id,
+								token,
+							},
+							dispatch,
+							actions: plansAPI.actions,
+							auth,
+							serverLanguageTag: Locale.planLocale,
+						})
+							.then((data) => {
+								const promesan = [data]
+								if (data && data.data) {
+									data.data.forEach((user) => {
+										promesan.push(
+											dispatch(usersAction({
+												method: 'view',
+												params: {
+													id: user.id,
+												},
+											}))
+										)
+									})
+								}
+								Promise.all(promesan)
+									.then((promisedLand) => {
+										resolve2(promisedLand)
+									})
+									.catch((err) => {
+										resolve2(err)
+									})
+							})
+							.catch((err) => { resolve2(err) })
+					}),
+					new Promise((reso) => {
+						dispatch(plansAPI.actions.together.get({
+							id: together_id,
+							token,
+						}, { auth }))
+						.then((data) => { reso(data) })
+						.catch((err) => { reso(err) })
+					})
+				]
+				resolve(Promise.all(proms)
+					.then(() => { resolve() })
+					.catch(() => { resolve() }))
 			} else if (isPlanComplete.test(params.url)) {
 				store.dispatch(ActionCreator.planComplete({
 					id: params.id,
