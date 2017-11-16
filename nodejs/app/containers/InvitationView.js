@@ -31,18 +31,17 @@ class InvitationView extends Component {
 			serverLanguageTag
 		} = this.props
 		// join token will allow us to see the participants and together unauthed
-		this.joinToken = query && query.token ? query.token : null
 		if (!(plan && participants && participants.filter({ together_id, idOnly: true }).length > 0)) {
 			dispatch(planView({
 				plan_id: id.split('-')[0],
 				together_id,
-				token: this.joinToken,
+				token: query && query.token,
 				auth,
 				serverLanguageTag,
 			}))
 			dispatch(plansAPI.actions.together.get({
 				id: together_id,
-				token: this.joinToken
+				token: query && query.token
 			}, { auth: auth && auth.isLoggedIn })).then((data) => {
 				if (!(data && data.data)) {
 					this.onUnauthedAction()
@@ -79,7 +78,7 @@ class InvitationView extends Component {
 
 	render() {
 		const { plan, params: { together_id }, location: { query }, together, participants, hosts, serverLanguageTag, intl } = this.props
-
+		this.joinToken = query && query.token
 		const isFromShareLink = !!(query && (!query.source && query.token))
 		const planImg = plan
 			? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url
