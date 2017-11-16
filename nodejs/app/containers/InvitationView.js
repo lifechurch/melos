@@ -99,13 +99,16 @@ class InvitationView extends Component {
 		const host = hostObj
 			&& hostObj[Object.keys(hostObj)[0]]
 			&& hostObj[Object.keys(hostObj)[0]].name
-		const title = `${planTitle}: ${intl.formatMessage({ id: 'invitation' })}`
+		const title = planTitle
 		const description = intl.formatMessage({ id: 'join together' }, { host })
 		const url = `${hosts && hosts.railsHost}${Routes.togetherInvitation({
 			plan_id: plan && plan.id,
 			slug: plan && plan.slug,
 			together_id,
 			serverLanguageTag,
+			query: {
+				token: together && together.token,
+			}
 		})}`
 
 		return (
@@ -117,7 +120,7 @@ class InvitationView extends Component {
 						{ property: 'og:title', content: title },
 						{ property: 'og:url', content: url },
 						{ property: 'og:description', content: description },
-						{ name: 'twitter:card', content: 'summary' },
+						{ name: 'twitter:card', content: 'summary_large_image' },
 						{ name: 'twitter:url', content: url },
 						{ name: 'twitter:title', content: title },
 						{ name: 'twitter:description', content: description },
