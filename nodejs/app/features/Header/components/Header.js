@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+import withGoogle from '@youversion/react-components/dist/components/auth/hocs/withGoogle'
 import { getFriendshipRequests } from '@youversion/api-redux/lib/endpoints/friendships/reducer'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import { getUserById, getLoggedInUser } from '@youversion/api-redux/lib/endpoints/users/reducer'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
 import HeaderContent from './HeaderContent'
+
 
 function Header(props) {
 	return (
@@ -43,4 +45,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(Header)
+export default connect(mapStateToProps, null)(withGoogle(Header))
