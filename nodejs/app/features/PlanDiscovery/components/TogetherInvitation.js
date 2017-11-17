@@ -19,7 +19,7 @@ function Invitation({
 	showDecline,
 	handleActionComplete,
 	handleUnauthed,
-	joinToken
+	joinToken,
 }) {
 
 	return (
@@ -38,6 +38,7 @@ function Invitation({
 							<LazyImage
 								alt='plan-image'
 								src={planImg}
+								lazy={false}
 								width='100%'
 								style={{ width: '100%', marginBottom: '10px' }}
 							/>

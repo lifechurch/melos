@@ -6,7 +6,6 @@ import { getParticipantsUsers } from '@youversion/api-redux/lib/models'
 
 
 function InvitationString({ together_id, participants }) {
-
 	const hostObj = participants
 		&& participants.filter({ together_id, statusFilter: 'host' })
 	const host = hostObj
