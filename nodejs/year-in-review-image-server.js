@@ -69,15 +69,15 @@ class YiR {
 			highlights: {
 				x: this.relativeX(0.47),
 				y: this.relativeY(0.28),
-				relX:0.47,
-				relY:0.28,
+				relX: 0.47,
+				relY: 0.28,
 				iconYShift: 0.035
 			},
-			streaks: {
-				x: this.relativeX(0.665),
-				y: this.relativeY(0.350),
-				relX: 0.665,
-				relY: 0.350,
+			friends: {
+				x: this.relativeX(0.65),
+				y: this.relativeY(0.365),
+				relX: 0.65,
+				relY: 0.365,
 				iconYShift: 0.025
 			},
 			notes: {
@@ -99,13 +99,6 @@ class YiR {
 				y: this.relativeY(0.7),
 				relX: 0.455,
 				relY: 0.7,
-				iconYShift: 0.03
-			},
-			friends: {
-				x: this.relativeX(0.29),
-				y: this.relativeY(0.733),
-				relX: 0.29,
-				relY: 0.733,
 				iconYShift: 0.03
 			},
 			badges: {
@@ -169,11 +162,11 @@ class YiR {
 			this.colors.red
 		);
 
-		// Top right yellow - Streaks
+		// Top right yellow - Friends
 		this.drawCircle(
-			this.coordinates.streaks.x,
-			this.coordinates.streaks.y,
-			this.relativeCircleSize(0.195),
+			this.coordinates.friends.x,
+			this.coordinates.friends.y,
+			this.relativeCircleSize(0.175),
 			this.colors.yellow
 		);
 
@@ -209,14 +202,6 @@ class YiR {
 			this.colors.yellow
 		);
 
-		// Bottom left aqau circle - Friends
-		this.drawCircle(
-			this.coordinates.friends.x,
-			this.coordinates.friends.y,
-			this.relativeCircleSize(0.17),
-			this.colors.aqua
-		);
-
 		// Bottom left red circle - Badges
 		this.drawCircle(
 			this.relativeX(0.305),
@@ -241,15 +226,15 @@ class YiR {
 		);
 
 
-		this.drawIcon(
-			new Icon(
-				this.icons.streak,
-				this.relativeW(0.035),
-				this.relativeW(0.05),
-				0
-			),
-			this.coordinates.streaks
-		);
+		// this.drawIcon(
+		// 	new Icon(
+		// 		this.icons.streak,
+		// 		this.relativeW(0.035),
+		// 		this.relativeW(0.05),
+		// 		0
+		// 	),
+		// 	this.coordinates.streaks
+		// );
 
 		this.drawIcon(
 			new Icon(
