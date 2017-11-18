@@ -403,21 +403,86 @@ class YiR {
 
 class AvatarImage {
 
-	constructor(url) {
-		this.url = url;
+	// Ex user data:
+	// { website: null,
+	//  username: 'MichaelMartin@Awesome',
+	//  first_name: 'Michael',
+	//  last_name: 'Martin@Awesome',
+	//  name: 'Michael Martin@Awesome',
+	//  has_avatar: false,
+	//  bio: null,
+	//  user_avatar_url:
+	//   { px_128x128: '//s3.amazonaws.com/static-youversionapidev-com/users/images/54a395cc0a002c10577dea1c28a004cb_128x128.png',
+	//     px_24x24: '//s3.amazonaws.com/static-youversionapidev-com/users/images/54a395cc0a002c10577dea1c28a004cb_24x24.png',
+	//     px_48x48: '//s3.amazonaws.com/static-youversionapidev-com/users/images/54a395cc0a002c10577dea1c28a004cb_48x48.png',
+	//     px_512x512: '//s3.amazonaws.com/static-youversionapidev-com/users/images/54a395cc0a002c10577dea1c28a004cb_512x512.png' },
+	//  created_dt: '2017-06-27T14:28:43.284699+00:00',
+	// ...
+	//  cacheLifetime: 604800 }
+
+	constructor(userData) {
+		this.userData = userData;
 	}
 
+	hasAvatar() {
+		return this.userData.hasAvatar;
+	}
+
+	initials() {
+		let firstInitial, lastInitial;
+		if (this.userData.first_name) {
+			firstInitial = this.userData.first_name.charAt(0);
+		}
+		if (this.userData.last_name) {
+			lastInitial = this.userData.last_name.charAt(0);
+		}
+
+		return `${firstInitial}${lastInitial}`;
+	}
+
+	// Pass image buffer data via callback
 	load(cb) {
 		const data = [];
-		http.get(this.url, (response) => {
-			response.on('data', (chunk) => {
-				data.push(chunk);
+		if (this.hasAvatar()) {
+			const url = `http:${this.userData.user_avatar_url.px_512x512}`
+
+			http.get(url, (response) => {
+				response.on('data', (chunk) => {
+					data.push(chunk);
+				});
+				response.on('end', () => {
+					cb(Buffer.concat(data));
+				});
 			});
-			response.on('end', () => {
-				cb(Buffer.concat(data));
-			});
-		});
+		} else {
+			cb(this.renderInitials().toBuffer());
+		}
 	}
+
+	renderInitials( ) {
+		const canvas = new Canvas(512, 512); // same size as large avatar
+		const ctx = canvas.getContext('2d');
+
+		const bgColor = '#f2f2f2';
+		const fontColor = '#1e7170';
+		const fontSize = 250;
+		const startAngle = 0;
+		const endAngle = Math.PI * 2;
+
+		ctx.fillStyle = bgColor;
+		ctx.beginPath();
+		ctx.arc(256, 256, 256, startAngle, endAngle, true);
+		ctx.closePath();
+		ctx.fill();
+
+		ctx.textAlign = 'center';
+		ctx.fillStyle = fontColor;
+		ctx.font = `${fontSize}px Arial Bold`;
+		ctx.fillText(this.initials(), 250, (256 + (fontSize / 2.5)));
+
+		return canvas;
+	}
+
 }
 
 //https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
@@ -446,7 +511,7 @@ router.get('/year-in-review/:user_id/:size', (req, res) => {
 		const momentData = results[1];
 
 		graphic.momentData = momentData;
-		avatar = new AvatarImage(`http:${userData.user_avatar_url.px_512x512}`);
+		avatar = new AvatarImage(userData);
 		avatar.load((data) => {
 			graphic.avatarData = data;
 
