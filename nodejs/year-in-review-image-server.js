@@ -426,7 +426,8 @@ router.get('/year-in-review/:user_id/:size', (req, res) => {
 	const fromDate = '2017-01-01';
 	const toDate = '2017-12-31';
 	const userId = req.params.user_id;
-	const graphic = new YiR(500);
+	const imageSize = parseInt(req.params.size, 10);
+	const graphic = new YiR(imageSize);
 	let avatar;
 
 	const userPromise = Users.call('view')
