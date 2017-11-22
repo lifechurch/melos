@@ -49,7 +49,7 @@ YearInReview.defaultProps = {
 function mapStateToProps(state) {
 	return {
 		user: getUserById(state, state.userId),
-		nodeHost: state.hosts.nodeHost,
+		nodeHost: state.nodeHost,
 		locale: state.serverLanguageTag
 	}
 }

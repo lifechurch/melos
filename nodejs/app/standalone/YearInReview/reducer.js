@@ -24,6 +24,7 @@ const rootReducer = combineReducers({
   passage: emptyReducer,
   locale: emptyReducer,
   userId: emptyReducer,
+  nodeHost: emptyReducer,
   api: combineReducers({
     users,
   })
