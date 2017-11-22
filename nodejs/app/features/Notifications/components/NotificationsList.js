@@ -58,6 +58,7 @@ class NotificationsList extends Component {
 								return (
 									<a
 										tabIndex={0}
+										target='_self'
 										key={item.created_dt}
 										className='yv-notification'
 										href={notification.action_url}
