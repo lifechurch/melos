@@ -24,6 +24,10 @@ ENV NODE_ENV production
 COPY nodejs/ /home/app/nodejs/
 RUN cd /home/app/nodejs && npm run build:production
 
+# Node-Canvas (https://github.com/Automattic/node-canvas#installation)
+RUN apt-get update && apt-get install -y build-essential g++ \
+  libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev 
+
 # Passenger Enterprise
 COPY nginx/passenger-enterprise-license /etc/passenger-enterprise-license
 RUN echo deb https://download:$DOWNLOAD_TOKEN@www.phusionpassenger.com/enterprise_apt xenial main > /etc/apt/sources.list.d/passenger.list
