@@ -430,7 +430,7 @@ class AvatarImage {
 	}
 
 	hasAvatar() {
-		return this.userData.hasAvatar;
+		return this.userData.has_avatar;
 	}
 
 	initials() {
@@ -492,8 +492,6 @@ class AvatarImage {
 
 //https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
 router.get('/year-in-review/:user_id/:size', (req, res) => {
-
-
 
 	const fromDate = '2017-01-01';
 	const toDate = '2017-12-31';
