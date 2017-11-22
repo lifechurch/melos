@@ -3,6 +3,8 @@ import moment from 'moment'
 import Immutable from 'immutable'
 import ga from 'react-ga'
 import { connect } from 'react-redux'
+import cookie from 'react-cookie'
+import GoogleAuth from '@youversion/utils/lib/auth/googleAuth'
 import streaksAction from '@youversion/api-redux/lib/endpoints/streaks/action'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
@@ -28,6 +30,13 @@ class Footer extends Component {
 		const userIdKeyPath = [ 'userData', 'userid' ]
 
 		if (immAuth.hasIn(userIdKeyPath)) {
+			// setup google auth for monitoring google token if signed in with google
+			if (cookie.load('auth_type') === 'google') {
+				window.yvga = new GoogleAuth({
+					client_id: '201895780642-g4oj7hm4p3h81eg7b1di2l2l93k5gcm3.apps.googleusercontent.com',
+				})
+				window.yvga.init()
+			}
 			const userId = immAuth.getIn(userIdKeyPath)
 			localOnceDaily(`DailyStreakCheckin-${userId}`, (handleSuccess) => {
 				const today = moment()
