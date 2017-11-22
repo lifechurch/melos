@@ -410,6 +410,14 @@
 		"displayName": "தமிழ்"
 	},
 	{
+		"nativeName": "ಕನ್ನಡ (India)",
+		"englishName": "Kannada (India)",
+		"locale": "kn-IN",
+		"locale2": "kn",
+		"locale3": "kan",
+		"displayName": "ಕನ್ನಡ (India)"
+	},
+	{
 		"nativeName": "മലയാളം",
 		"englishName": "Malayalam",
 		"locale": "ml-IN",
