@@ -110,6 +110,8 @@ class YiR {
 		}
 	}
 
+	get locale() { return this._locale; }
+	set locale(l) { this._locale = l; }
 	get canvas() { return this._canvas; }
 	get avatarData() { return this._avatarData; }
 	set avatarData(d) { this._avatarData = d; }
@@ -305,6 +307,9 @@ class YiR {
 		ctx.fillStyle = '#066261';
 		ctx.fillText('My Year in the Bible App', this.relativeX(0.5), this.relativeY(0.1));
 
+		ctx.font = `15px Arial Bold`;
+		ctx.textAlign = 'left';
+		ctx.fillText(`Locale: ${this.locale}`, 10, 10);
 
 	}
 
@@ -488,12 +493,17 @@ class AvatarImage {
 //https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
 router.get('/year-in-review/:user_id/:size', (req, res) => {
 
+
+
 	const fromDate = '2017-01-01';
 	const toDate = '2017-12-31';
 	const userId = req.params.user_id;
 	const imageSize = parseInt(req.params.size, 10);
 	const graphic = new YiR(imageSize);
 	let avatar;
+
+	graphic.locale = req.query.locale || 'en';
+
 
 	const userPromise = Users.call('view')
 	.setEnvironment('staging')

@@ -82,6 +82,7 @@ class PagesController < ApplicationController
   def year_in_review
     p = {
       "user_id" => User.find_id(params[:username]).user_id,
+      "languageTag" => I18n.locale.to_s,
       "strings" => {}
     }
 
