@@ -74,7 +74,7 @@
 	"footer.about": "關於",
 	"footer.jobs": "工作機會",
 	"footer.blog": "部落格",
-	"footer.press": "���聞室",
+	"footer.press": "新聞室",
 	"footer.privacy": "私隱政策",
 	"footer.terms": "條款",
 	"footer.volunteer": "Volunteer",
@@ -608,5 +608,6 @@
 	"copy": "複製",
 	"notification settings": "通知設定",
 	"get a free bible": "快來下載適用於手機、平板電腦及個人電腦的免費聖經！",
-	"download the bible": "下載聖經軟件"
+	"download the bible": "下載聖經軟件",
+	"my year": "My Year in the Bible App"
 }
