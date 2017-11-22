@@ -7,18 +7,15 @@ class YearInReview extends Component {
 
 	constructor(props) {
 		super(props)
-		this.state = {
-
-		}
 	}
 
 	render() {
-		const { user } = this.props
+		const { user, nodeHost } = this.props
 		let imgSrc;
 		let introCopy;
 
 		if (user && ('response' in user)) {
-			imgSrc = `http://localhost:3000/year-in-review/${user.response.id}/500`
+			imgSrc = `${nodeHost}/year-in-review/${user.response.id}/500`
 			introCopy = (
 				<div>
 					<h1>Hi, {user.response.name}</h1>
@@ -40,7 +37,8 @@ class YearInReview extends Component {
 }
 
 YearInReview.propTypes = {
-	user: PropTypes.object.isRequired
+	user: PropTypes.object.isRequired,
+	nodeHost: PropTypes.string.isRequired
 }
 
 YearInReview.defaultProps = {
@@ -49,7 +47,8 @@ YearInReview.defaultProps = {
 
 function mapStateToProps(state) {
 	return {
-		user: getUserById(state, state.userId)
+		user: getUserById(state, state.userId),
+		nodeHost: state.hosts.nodeHost
 	}
 }
 
