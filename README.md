@@ -338,7 +338,7 @@ information on how you can lend a hand.
 
 ## How did you come up with the name mélos?
 
-In the Bible, [1 Corinthians 12:12](https://www.bible.com/bible/116/2CO.12.12.nlt) says...
+In the Bible, [1 Corinthians 12:12](https://www.bible.com/bible/116/1CO.12.12.nlt) says...
 
 > “For just as the body is one and has many members [ mélos ], and all the members of the body, though many, are one body, so it is with Christ.”
 
