@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import Immutable from 'immutable'
+import arrayToObject from '@youversion/utils/lib/arrayToObject'
 import LabelsModal from './LabelsModal'
 import LabelInput from './LabelInput'
 import LabelList from './LabelList'
 import Filter from '../../../../../../app/lib/filter'
-import arrayToObject from '../../../../../../app/lib/arrayToObject'
 import DropdownTransition from '../../../../../components/DropdownTransition'
 
 class LabelSelector extends Component {

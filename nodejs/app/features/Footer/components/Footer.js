@@ -7,11 +7,11 @@ import cookie from 'react-cookie'
 import GoogleAuth from '@youversion/utils/lib/auth/googleAuth'
 import streaksAction from '@youversion/api-redux/lib/endpoints/streaks/action'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
+import localOnceDaily from '@youversion/utils/lib/localOnceDaily'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
 import FooterContent from './FooterContent'
 import LangSelector from './LangSelector'
 import LinkCard from './LinkCard'
-import localOnceDaily from '../../../lib/localOnceDaily'
 import FullscreenDrawer from '../../../components/FullscreenDrawer'
 
 

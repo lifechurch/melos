@@ -3,12 +3,13 @@ import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import Waypoint from 'react-waypoint'
+import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import ActionCreators from '../actions/creators'
 import Carousel from '../../../components/Carousel/Carousel'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
 import CarouselSlideGradient from '../../../components/Carousel/CarouselSlideGradient'
 import LazyImage from '../../../components/LazyImage'
-import { PLAN_DEFAULT } from '../../../lib/imageUtil'
+
 
 
 class PlanCollection extends Component {

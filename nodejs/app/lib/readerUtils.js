@@ -1,10 +1,10 @@
 import React from 'react'
 import Immutable from 'immutable'
 import cookie from 'react-cookie'
+import LocaleVersions from '@youversion/stringer-things/dist/config/localeVersions.json'
+import LocalStore from '@youversion/utils/lib/localStore'
 import ActionCreators from '../features/Bible/actions/creators'
 import LocaleList from '../../locales/config/localeList.json'
-import LocalStore from './localStore'
-import LocaleVersions from '../../locales/config/localeVersions.json'
 
 
 // default settings to build user settings below
@@ -85,54 +85,6 @@ export function handleVerseSelectionClear(refToThis, refToChapter) {
 	refToThis.setState({ verseSelection: {}, deletableColors: [] })
 }
 
-export function getVerseAudioTiming(startRef, endRef, timing) {
-	const audioTiming = {
-		startTime: null,
-		endTime: null
-	}
-
-	if (!Array.isArray(timing)) {
-		return audioTiming
-	}
-
-	for (let i = 0; i < timing.length; i++) {
-		const ref = timing[i]
-		if (startRef.toString().toLowerCase() === ref.usfm.toString().toLowerCase()) {
-			audioTiming.startTime = ref.start
-		}
-		if (endRef.toString().toLowerCase() === ref.usfm.toString().toLowerCase()) {
-			audioTiming.endTime = ref.end
-		}
-
-		if (audioTiming.startTime && audioTiming.endTime) {
-			return audioTiming
-		}
-	}
-
-	return audioTiming
-}
-
-
-export function deepLinkPath(chapUsfm, versionID, versionAbbr, verseNum = null) {
-	if (!chapUsfm) { return null }
-	let android, ios, native
-
-	if (verseNum && versionID) {
-		ios = `bible?reference=${chapUsfm}.${verseNum}&version_id=${versionID}`
-		android = `bible?reference=${chapUsfm}.${verseNum}&version=${versionID}`
-		native = `bible?reference=${chapUsfm}.${verseNum}.${versionAbbr}&version=${versionID}`
-	} else if (versionID) {
-		ios = `bible?reference=${chapUsfm}&version_id=${versionID}`
-		android = `bible?reference=${chapUsfm}&version=${versionID}`
-		native = `bible?reference=${chapUsfm}.${versionAbbr}&version=${versionID}`
-	} else {
-		ios = `bible?reference=${chapUsfm}`
-		android = `bible?reference=${chapUsfm}`
-		native = `bible?reference=${chapUsfm}`
-	}
-
-	return { android, ios, native }
-}
 
 // From Rails - Refactored
 function getBibleLink(reference, locale) {
@@ -195,46 +147,6 @@ export function buildMeta(props) {
 	return { link, meta }
 }
 
-export function chapterifyUsfm(usfmArg) {
-	if (!usfmArg) return null
-	const usfm = Array.isArray(usfmArg)
-		? usfmArg[0]
-		: usfmArg
-	const usfmParts = usfm.split('.')
-	return usfmParts.slice(0, 2).join('.')
-}
-
-export function isVerseOrChapter(usfmArg) {
-	const IS_BOOK = /^\d?[a-zA-Z]{2,3}$/
-	const IS_CHAPTER = /^(INTRO)?[0-9_]+$/
-	const IS_VERSE = /^[0-9-,_]+$/
-	const FALLBACK_VALUE = { isVerse: false, isChapter: false }
-	const usfm = Array.isArray(usfmArg)
-		? usfmArg[0]
-		: usfmArg
-	if (typeof usfm !== 'string' || usfm.length === 0) {
-		return FALLBACK_VALUE
-	}
-
-	const usfmParts = usfm.split('+')[0].split('.')
-
-	let isVerse = usfmParts.length >= 4
-	let isChapter = usfmParts.length === 2
-
-	if (
-		usfm.length === 0 ||
-		!IS_BOOK.test(usfmParts[0]) ||
-		!IS_CHAPTER.test(usfmParts[1])
-	) {
-		return FALLBACK_VALUE
-	} else if (usfmParts.length >= 3) {
-		isVerse = IS_VERSE.test(usfmParts[2])
-		isChapter = !isVerse
-	}
-
-	return { isVerse, isChapter }
-}
-
 export function buildCopyright(formatMessage, version) {
 	let content = ''
 	const {
@@ -259,83 +171,4 @@ export function buildCopyright(formatMessage, version) {
 		openInNewTab: !!reader_footer_url
 	}
 	/* eslint-enable react/no-danger */
-}
-
-export function getBibleVersionFromStorage(language_tag = null) {
-	let defaultVersion = 1
-	if (language_tag && language_tag in LocaleVersions) {
-		defaultVersion = LocaleVersions[language_tag].text[0]
-	}
-	return cookie.load('version') || cookie.load('alt_version') || defaultVersion
-}
-
-
-export function parseVerseFromContent({ usfms, fullContent }) {
-	const textOutput = []
-	const htmlOutput = []
-
-	const isServerRendering = typeof window === 'undefined'
-	let doc, xpath
-	if (isServerRendering) {
-		// parsing on the server
-		xpath = require('xpath')
-		const Parser = require('xmldom').DOMParser
-		doc = new Parser().parseFromString(fullContent)
-	} else {
-		doc = new DOMParser().parseFromString(fullContent, 'text/html')
-	}
-
-	if (usfms && fullContent) {
-		const usfmList = Array.isArray(usfms)
-			? usfms
-			: usfms.split('+')
-		usfmList.forEach((usfm) => {
-			const htmlXpath = `//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+${usfm}+')]`
-			const textXpath = `${htmlXpath}/node()[not(contains(concat(\' \',@class,\' \'),\' note \'))][not(contains(concat(\' \',@class,\' \'),\' label \'))]`
-
-			let html, text
-			if (isServerRendering) {
-				html = xpath.evaluate(htmlXpath, doc, null, xpath.XPathResult.ANY_TYPE, null)
-				text = xpath.evaluate(textXpath, doc, null, xpath.XPathResult.ANY_TYPE, null)
-
-				// text
-				let nextText = text.iterateNext()
-				while (nextText) {
-					textOutput.push(nextText.textContent)
-					nextText = text.iterateNext()
-				}
-				// html
-				let nextHtml = html.iterateNext()
-				while (nextHtml) {
-					htmlOutput.push(nextHtml.toString())
-					nextHtml = html.iterateNext()
-				}
-			} else {
-				html = doc.evaluate(htmlXpath, doc, null, XPathResult.ANY_TYPE, null)
-				text = doc.evaluate(textXpath, doc, null, XPathResult.ANY_TYPE, null)
-
-				// text
-				let nextText = text.iterateNext()
-				while (nextText) {
-					textOutput.push(nextText.textContent)
-					nextText = text.iterateNext()
-				}
-				// html
-				let nextHtml = html.iterateNext()
-				while (nextHtml) {
-					htmlOutput.push(nextHtml.outerHTML)
-					nextHtml = html.iterateNext()
-				}
-			}
-		})
-	}
-
-	return {
-		text: textOutput
-			.join(' ')
-			.replace('\n', ' ')
-			.replace('  ', ' ')
-			.replace(' ,', ','),
-		html: htmlOutput.join('')
-	}
 }

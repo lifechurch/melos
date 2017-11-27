@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import Heading from '@youversion/react-components/dist/components/typography/Heading1'
+import Heading from '@youversion/melos/dist/components/typography/Heading1'
 import SectionedLayout from '../../../components/SectionedLayout'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../../../widgets/TogetherInvitationActions'

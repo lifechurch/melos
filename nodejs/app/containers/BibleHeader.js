@@ -2,6 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Immutable from 'immutable'
 
+import LocalStore from '@youversion/utils/lib/localStore'
+import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
+import getVerseAudioTiming from '@youversion/utils/lib/bible/getVerseAudioTiming'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 // actions
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import audioAction from '@youversion/api-redux/lib/endpoints/audio/action'
@@ -15,16 +21,8 @@ import Header from '../features/Bible/components/header/Header'
 import VersionPicker from '../features/Bible/components/versionPicker/VersionPicker'
 import AudioPopup from '../features/Bible/components/audio/AudioPopup'
 // utils
-import {
-	getBibleVersionFromStorage,
-	chapterifyUsfm,
-	isVerseOrChapter,
-	getVerseAudioTiming,
-} from '../lib/readerUtils'
-import { getReferencesTitle } from '../lib/usfmUtils'
 import ViewportUtils from '../lib/viewportUtils'
 import Filter from '../lib/filter'
-import LocalStore from '../lib/localStore'
 import RecentVersions from '../features/Bible/lib/RecentVersions'
 
 

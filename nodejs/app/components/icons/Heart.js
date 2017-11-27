@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import getProportionalSize from '../../lib/imageProportions'
+import getProportionalSize from '@youversion/utils/lib/images/imageProportions'
 
 function HeartIcon({ width, height, fill, className }) {
 	const {

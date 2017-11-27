@@ -1,6 +1,3 @@
-import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
-import { chapterifyUsfm } from '../../../lib/readerUtils'
-
 import type from './constants'
 
 const ActionCreators = {

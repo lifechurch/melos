@@ -1,6 +1,6 @@
-import SyncStore from '../../../lib/syncStore'
 import Immutable from 'immutable'
-import LocalStore from '../../../lib/localStore'
+import LocalStore from '@youversion/utils/lib/localStore'
+import SyncStore from '../../../lib/syncStore'
 
 /**
  * Class representing list of recently used Bible versions
@@ -22,7 +22,7 @@ class RecentVersions extends SyncStore {
 	 * @param {object} userSettings - the result of users/view_settings api call
 	 *  See {@link http://developers.youversion.com/api/docs/3.1/sections/users/update_settings.html}
 	 */
-	syncVersions(userSettings={}) {
+	syncVersions(userSettings = {}) {
 		const settings = Immutable.fromJS(userSettings)
 		let versions = settings.getIn(['settings', 'bible', 'recent_versions']) || []
 		if (typeof versions.toJS === 'function') {
@@ -33,7 +33,7 @@ class RecentVersions extends SyncStore {
 		if (typeof settings.get('updated_dt') === 'string') {
 			try {
 				syncDate = new Date(Date.parse(settings.get('updated_dt')))
-			} catch(e) {}
+			} catch (e) {}
 		}
 
 		this.sync(versions, syncDate)
@@ -63,8 +63,8 @@ class RecentVersions extends SyncStore {
 	 * @param      {object}  versionsList  Object of version objects
 	 */
 	getVersions(versionsList) {
-		let recentVersions = LocalStore.get('RecentVersions') ? LocalStore.get('RecentVersions').data : null
-		let versionsInfo = {}
+		const recentVersions = LocalStore.get('RecentVersions') ? LocalStore.get('RecentVersions').data : null
+		const versionsInfo = {}
 
 		if (Array.isArray(recentVersions) && recentVersions.length > 0) {
 			recentVersions.forEach((id) => {

@@ -1,10 +1,10 @@
+import arrayToObject from '@youversion/utils/lib/arrayToObject'
 import type from '../actions/constants'
 import { fromApiFormat } from '../transformers/location'
-import arrayToObject from '../../../../../lib/arrayToObject'
 
 export default function locations(state = {}, action) {
 
-	switch(action.type) {
+	switch (action.type) {
 
 		case type('deleteRequest'):
 			const { items } = state
@@ -16,13 +16,13 @@ export default function locations(state = {}, action) {
 
 		case type('itemsRequest'):
 			return Object.assign({}, state, {
-				isFetching: true 
+				isFetching: true
 			})
 
 		case type('itemsSuccess'):
 			let { locations } = action.response
 			if (Array.isArray(locations) && locations.length > 0) {
-				
+
 				locations = locations.map((location) => {
 					return {
 						...location,

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import LocalStore from '../../../../lib/localStore'
+import LocalStore from '@youversion/utils/lib/localStore'
 import PlayButton from './PlayButton'
 import PauseButton from './PauseButton'
 import SeekButton from './SeekButton'

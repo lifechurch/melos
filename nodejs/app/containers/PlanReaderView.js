@@ -2,6 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import rtlDetect from 'rtl-detect'
 import { push } from 'react-router-redux'
+import isFinalSegmentToComplete from '@youversion/utils/lib/readingPlans/isFinalSegmentToComplete'
+import isFinalPlanDay from '@youversion/utils/lib/readingPlans/isFinalPlanDay'
+import mapTioIndices from '@youversion/utils/lib/readingPlans/mapTIOIndices'
 // actions
 import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 // models
@@ -13,7 +16,6 @@ import TalkItOver from './TalkItOver'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
 // utils
-import { isFinalSegmentToComplete, isFinalPlanDay, mapTioIndices } from '../lib/readingPlanUtils'
 import Routes from '../lib/routes'
 
 

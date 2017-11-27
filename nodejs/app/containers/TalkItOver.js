@@ -7,8 +7,8 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
 // utils
+import getCurrentDT from '@youversion/utils/lib/time/getCurrentDT'
 import ViewportUtils from '../lib/viewportUtils'
-import getCurrentDT from '../lib/getCurrentDT'
 // components
 import List from '../components/List'
 import Modal from '../components/Modal'

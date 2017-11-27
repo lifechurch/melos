@@ -1,17 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import LocalStore from '@youversion/utils/lib/localStore'
 import AudioPlayer from '../features/Bible/components/audio/AudioPlayer'
-import LocalStore from '../lib/localStore'
 
-class BibleAudioView extends Component {
-
-	render() {
-		const audio = LocalStore.get("standaloneAudioPlayerAudio")
-		return (
-			<div className="standalone-audio-player">
-				<AudioPlayer audio={audio} />
-			</div>
-		)
-	}
+function BibleAudioView() {
+	const audio = LocalStore.get('standaloneAudioPlayerAudio')
+	return (
+		<div className="standalone-audio-player">
+			<AudioPlayer audio={audio} />
+		</div>
+	)
 }
 
 export default BibleAudioView

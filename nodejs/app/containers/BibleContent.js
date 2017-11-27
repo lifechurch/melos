@@ -2,6 +2,11 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
+import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
+import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 // actions
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
@@ -17,8 +22,7 @@ import Chapter from '../features/Bible/components/content/Chapter'
 import VerseAction from '../features/Bible/components/verseAction/VerseAction'
 import ChapterCopyright from '../features/Bible/components/content/ChapterCopyright'
 // utils
-import { getBibleVersionFromStorage, chapterifyUsfm, buildCopyright, isVerseOrChapter, parseVerseFromContent } from '../lib/readerUtils'
-import { getReferencesTitle } from '../lib/usfmUtils'
+import { buildCopyright } from '../lib/readerUtils'
 
 
 class BibleContent extends Component {

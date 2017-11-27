@@ -7,7 +7,7 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
 // utils
-import getCurrentDT from '../../../../lib/getCurrentDT'
+import getCurrentDT from '@youversion/utils/lib/time/getCurrentDT'
 import Routes from '../../../../lib/routes'
 // components
 import Avatar from '../../../../components/Avatar'

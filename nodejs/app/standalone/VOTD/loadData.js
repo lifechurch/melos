@@ -3,7 +3,8 @@ import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
-import { chapterifyUsfm, getBibleVersionFromStorage } from '../../lib/readerUtils'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 
 /**
  * Loads a data.

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import CustomScroll from 'react-custom-scroll'
-import SectionedLayout from '@youversion/react-components/dist/components/layouts/SectionedLayout'
+import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
 import ActionCreators from '../../actions/creators'
 import DropdownTransition from '../../../../components/DropdownTransition'
 import VerseCard from '../../../../components/VerseCard'

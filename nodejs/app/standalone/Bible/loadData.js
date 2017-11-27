@@ -1,9 +1,9 @@
 import cookie from 'react-cookie';
 import Immutable from 'immutable';
+import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
+import localeVersions from '@youversion/stringer-things/dist/config/localeVersions.json'
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
-import { isVerseOrChapter } from '../../lib/readerUtils'
-import localeVersions from '../../../locales/config/localeVersions.json'
 
 /**
  * Loads a data.

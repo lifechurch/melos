@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import reactCookie from 'react-cookie'
 import bodyParser from 'body-parser'
 import { tokenAuth } from '@youversion/js-api'
+import isTimestampExpired from '@youversion/utils/lib/isTimestampExpired'
 import { IntlProvider } from 'react-intl'
 import moment from 'moment'
 import Raven from 'raven'
@@ -16,7 +17,6 @@ import { renderStatic } from 'glamor/server'
 import { getToken, refreshToken } from './oauth'
 import { getLocale } from './app/lib/langUtils'
 import planLocales from './locales/config/planLocales.json'
-import isTimestampExpired from './app/lib/isTimestampExpired'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
