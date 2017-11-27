@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as glamor from 'glamor'
 import { withTheme } from 'glamorous'
+import shadeColor from '@youversion/utils/lib/shadeColor'
 import SectionedLayout from '../../layouts/SectionedLayout'
 import Link from '../Link'
 import getThemeForComponent from '../../themes/utils/getThemeForComponent'
-import shadeColor from '../../../utils/shadeColor'
 
 function ButtonMajor(props) {
   const { left, right, theme, children, color, textColor } = props

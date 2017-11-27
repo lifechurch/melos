@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withTheme } from 'glamorous'
 import * as glamor from 'glamor'
+import shadeColor from '@youversion/utils/lib/shadeColor'
 import Link from '../Link'
 import getThemeForComponent from '../../themes/utils/getThemeForComponent'
-import shadeColor from '../../../utils/shadeColor'
 
 function LinkText(props) {
   const { theme, children } = props

@@ -92,10 +92,10 @@ Installation.defaultProps = {
 			Michael Martin
 		</a>
 	),
-  command: 'npm install @youversion/react-components',
+  command: 'npm install @youversion/melos',
   npm: (
     <a href='https://in.thewardro.be/web/youversion-react-components'>
-			@youversion/react-components
+			@youversion/melos
 		</a>
 	),
   source: (

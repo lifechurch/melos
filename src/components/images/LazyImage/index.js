@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Div, Img } from 'glamorous'
 import WayPoint from 'react-waypoint'
-import { imgLoaded } from '@youversion/utils/lib/imageUtil'
+import imgLoaded from '@youversion/utils/lib/images/imgLoaded'
 
 class LazyImage extends Component {
   constructor(props) {

@@ -5,3 +5,4 @@ npm-debug.log
 dist
 node_modules
 *.log
+package-lock.json

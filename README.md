@@ -27,13 +27,13 @@ the [Development](#development) section of this document.
 1. Install these components for use, by running
 
 ```
-npm install @youversion/react-components
+npm install @youversion/melos
 ```
 
 2. Import the component you want to use...
 
 ```
-import Card from '@youversion/react-components'
+import Card from '@youversion/melos'
 ```
 
 3. Use the Component somewhere!
@@ -235,7 +235,7 @@ const customTheme2 = {
 First, import our `<Theme />` component:
 
 ```Javascript
-import Theme from '@youversion/react-components/dist/components/themes/Theme'
+import Theme from '@youversion/melos/dist/components/themes/Theme'
 ```
 
 Then, define a variable containing your custom theme, like this:

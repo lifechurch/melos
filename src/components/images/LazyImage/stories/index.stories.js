@@ -24,7 +24,7 @@ const Docs = () => {
         />
 			}
       usage={
-        <Usage importString={'import LazyImage from \'@youversion/react-components\''}>
+        <Usage importString={'import LazyImage from \'@youversion/melos\''}>
           {`
 						This package exports a LazyImage component.
 						Use LazyImage for lazy loading images with an animated transition between an optional placeholder and the desired src.
