@@ -629,6 +629,7 @@
 	"view snapshot": "To View Your Snapshot",
 	"hi name": "Hi, {name}",
 	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt",
 	"moment.badge.earned.self.title": "Tu nopelnīji <b>{title}</b> nozīmīti",
 	"moment.badge.earned.title": "{name} nopelnīja <b>{title}</b> nozīmīti",
 	"moment.bible.download.self.title": "Tu lejupielādēji tulkojumu, <b>{version}</b>",

@@ -621,6 +621,7 @@
 	"view snapshot": "To View Your Snapshot",
 	"hi name": "Hi, {name}",
 	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt",
 	"moment.badge.earned.self.title": "Ulipata beji ya <b>{title}</b>",
 	"moment.badge.earned.title": "{name} alipata beji ya <b>{title}</b>",
 	"moment.bible.download.self.title": "Ulidownload toleo, <b>{version}</b>",

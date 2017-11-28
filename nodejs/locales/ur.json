@@ -109,7 +109,7 @@
 	"unsubscribe.labels.votd_image": "آج کی آیت کا امیج",
 	"unsubscribe.labels.contact_joins": "جب کوئی رابطہ کرے",
 	"unsubscribe.error.token": "اس سے پہلے کہ آپ اپنے اعلان کی سیٹنگیں تبدیل کر سکتے ہیں معاف کیجئے گا, آپ میں سائن ان کرنے کی ضرورت ہے:",
-	"unsubscribe.error.other_type": "معاف کیجئے گا، کیا ہم توقع نے ایسا نہ کیا ۔ آپ کو آ�� کی اطلاعات کی تازہ کاری کرنا چاہتے ہیں؟",
+	"unsubscribe.error.other_type": "معاف کیجئے گا، کیا ہم توقع نے ایسا نہ کیا ۔ آپ کو آپ کی اطلاعات کی تازہ کاری کرنا چاہتے ہیں؟",
 	"change": "Change",
 	"ui.yes button": "Yes",
 	"ui.no button": "No",
@@ -620,5 +620,6 @@
 	"my year": "My Year in the Bible App",
 	"view snapshot": "To View Your Snapshot",
 	"hi name": "Hi, {name}",
-	"your snapshot": "Here's a snapshot of your year in the Bible App"
+	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt"
 }

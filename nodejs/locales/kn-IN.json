@@ -308,7 +308,7 @@
 	"containers.EventEditShare.edit": "Edit Event",
 	"containers.EventEditShare.go": "Go to My Events",
 	"containers.EventEditShare.share": "Share your event:",
-	"containers.EventEditShare.copy": "ನಕಲಿಸ��� / ಅನುಕರಿಸು / ಕಾಪಿ",
+	"containers.EventEditShare.copy": "ನಕಲಿಸಿ / ಅನುಕರಿಸು / ಕಾಪಿ",
 	"containers.EventEditShare.copied": "The shortlink was copied to your clipboard",
 	"containers.EventEditShare.previous": "← Previous: Preview",
 	"containers.EventFeedDiscover.title": "Discover Events",
@@ -599,7 +599,7 @@
 	"started": "ಪ್ರಾರಂಭಿಸಿದೆ",
 	"join link": "ಈ ಲಿಂಕ್ ಮೂಲಕ \nಯಾರಾದರೂ \nಸೇರಬಹುದು",
 	"join together share": "ಈ {plan} ಬೈಬಲ್ ಯೋಜನೆಯನ್ನು ನನ್ನ ಜೊತೆ\nನೀವು ಓದುತ್ತೀರಾ ?",
-	"join together": "{host} ಈ ಯೋಜನೆಯನ್ನು ನಿಮ್ಮೊಂದಿಗೆ ಓದಲು ಬಯಸುತ್ತಾರೆ.",
+	"join together": "{host} ಈ ಯೋಜನೆ���ನ್ನು ನಿಮ್ಮೊಂದಿಗೆ ಓದಲು ಬಯಸುತ್ತಾರೆ.",
 	"talk it over": "ಅದರ ಮೇಲೆ ಮಾತನಾಡಿ",
 	"participants": "ಭಾಗವಹಿಸುವವರು",
 	"host": "ಹೋಸ್ಟ್",
@@ -620,5 +620,6 @@
 	"my year": "My Year in the Bible App",
 	"view snapshot": "To View Your Snapshot",
 	"hi name": "Hi, {name}",
-	"your snapshot": "Here's a snapshot of your year in the Bible App"
+	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt"
 }

@@ -103,7 +103,7 @@
 	"unsubscribe.labels.friendships": "ചങ്ങാത്ത അഭ്യർത്ഥനകൾ",
 	"unsubscribe.labels.likes": "എന്റെ പ്രവൃത്തിയിൽ ഇഷ്ടപ്പെടുന്നു",
 	"unsubscribe.labels.moments": "സുഹൃത്തുക്കളുടെ പ്രവർത്തനം",
-	"unsubscribe.labels.newsletter": "യൂവേർഷനിൽ നിന്നുള്ള വാർത്ത",
+	"unsubscribe.labels.newsletter": "യൂവേർഷനിൽ നിന്നുള്��� വാർത്ത",
 	"unsubscribe.labels.reading_plans": "എൻറെ ബൈബിൾ പ്ലാനുകളെക്കുറിച്ച്",
 	"unsubscribe.labels.votd": "Verse of the Day Text",
 	"unsubscribe.labels.votd_image": "ദിവസേനയുള്ള വാക്യത്തിന്റെ ചിത്രം",
@@ -272,7 +272,7 @@
 	"components.ErrorMessage.url.events.url.required": "URL is required.",
 	"components.ErrorMessage.url.events.title.required": "URL Label is required.",
 	"components.EventHeader.status.published": "Published",
-	"components.EventHeader.status.draft": "ഡ്രാഫ്റ്റ്",
+	"components.EventHeader.status.draft": "ഡ്���ാഫ്റ്റ്",
 	"components.EventHeader.status.live": "തത്സമയം",
 	"components.EventHeader.status.archived": "ആർക്കൈവുചെയ്തു\n",
 	"components.EventHeader.unpublish": "Unpublish",
@@ -562,7 +562,7 @@
 	"by myself": "ഞാൻ തന്നെ\n",
 	"by myself description": "നിങ്ങളുടെ പ്ലാൻ പ്രവർത്തനം സ്വകാര്യമായി സൂക്ഷിക്കുക അല്ലെങ്കിൽ നിങ്ങളുടെ പ്ലാൻ പ്രവർത്തനം കാണുന്നതിന് സുഹൃത്തുക്കളെ അനുവദിക്കുക.\n",
 	"with friends": "കൂട്ടുകരോടൊപ്പം\n",
-	"with friends description": "ഈ പ്ലാനിൽ നിങ്ങളോട് ചേരാൻ സ���ഹൃത്തുക്കളെ ക്ഷണിക്കുക.\n നിങ്ങൾ ഒരേ വേഗത്തിൽ ദിവസങ്ങൾ ഒന്നിച്ച് പൂർത്തിയാക്കും, വഴിയിൽ ദൈവം നിങ്ങളെ പഠിപ്പിക്കുന്ന കാര്യങ്ങൾ നിങ്ങൾക്കെല്ലാം ചർച്ച ചെയ്യാൻ കഴിയും.\n",
+	"with friends description": "ഈ പ്ലാനിൽ നിങ്ങളോട് ചേരാൻ സുഹൃത്തുക്കളെ ക്ഷണിക്കുക.\n നിങ്ങൾ ഒരേ വേഗത്തിൽ ദിവസങ്ങൾ ഒന്നിച്ച് പൂർത്തിയാക്കും, വഴിയിൽ ദൈവം നിങ്ങളെ പഠിപ്പിക്കുന്ന കാര്യങ്ങൾ നിങ്ങൾക്കെല്ലാം ചർച്ച ചെയ്യാൻ കഴിയും.\n",
 	"level of privacy": "സ്വകാര്യതയുടെ നില\n",
 	"plan privacy prompt": "നിങ്ങളുടെ പ്ലാൻ പ്രവർത്തനം നിങ്ങളുടെ സുഹൃത്തുക്കൾ കാണാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?",
 	"visible to friends": "സുഹൃത്തുക്കൾക്ക് ദൃശ്യം\n",
@@ -620,5 +620,6 @@
 	"my year": "ബൈബിൾ ആപ്പിൽ എൻറെ വർഷം",
 	"view snapshot": "To View Your Snapshot",
 	"hi name": "Hi, {name}",
-	"your snapshot": "Here's a snapshot of your year in the Bible App"
+	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt"
 }

@@ -621,6 +621,7 @@
 	"view snapshot": "To View Your Snapshot",
 	"hi name": "Hi, {name}",
 	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt",
 	"moment.badge.earned.self.title": "Jy het die <b>{title}</b> kenteken verdien",
 	"moment.badge.earned.title": "{name} het die <b>{title}</b> kenteken verdien",
 	"moment.bible.download.self.title": "Jy het die weergawe, <b>{version}</b> afgelaai",
