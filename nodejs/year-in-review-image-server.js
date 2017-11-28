@@ -5,6 +5,8 @@ const canvg = require('canvg');
 const Promise = require('bluebird');
 const http = require('http');
 const api = require('@youversion/js-api');
+const getLocale = require('./app/lib/langUtils').getLocale;
+
 
 const Image = Canvas.Image;
 const Users = api.getClient('users');
@@ -111,11 +113,17 @@ class YiR {
 		}
 	}
 
+	get canvas() { return this._canvas; }
+
 	get locale() { return this._locale; }
 	set locale(l) { this._locale = l; }
-	get canvas() { return this._canvas; }
+
+	get localeData() { return this._localeData; }
+	set localeData(d) { this._localeData = d; }
+
 	get avatarData() { return this._avatarData; }
 	set avatarData(d) { this._avatarData = d; }
+
 	get momentData() { return this._momentData; }
 	set momentData(data) {
 		const defaults = {
@@ -306,7 +314,7 @@ class YiR {
 		// Draw heading text
 		ctx.font = `${this.relativeFontSize() * 0.95}px Arial Bold`;
 		ctx.fillStyle = '#066261';
-		ctx.fillText('My Year in the Bible App', this.relativeX(0.5), this.relativeY(0.1));
+		ctx.fillText( this.translate('my year'), this.relativeX(0.5), this.relativeY(0.1));
 
 		ctx.font = `15px Arial Bold`;
 		ctx.textAlign = 'left';
@@ -335,6 +343,10 @@ class YiR {
 			this.ctx.fillText(icon.data, xPos, yTextPos);
 		}
 
+	}
+
+	translate(str) {
+		return this.localeData.messages[str];
 	}
 
 	drawProfileImage() {
@@ -510,10 +522,13 @@ router.get('/year-in-review/:user_id_hash/:user_id/:size', (req, res) => {
 		const userId = req.params.user_id;
 		const imageSize = parseInt(req.params.size, 10);
 		const graphic = new YiR(imageSize);
+		const locale = req.query.locale || 'en';
 		let avatar;
 
-		graphic.locale = req.query.locale || 'en';
-
+		graphic.locale = locale;
+		graphic.localeData = getLocale({
+			localeFromUrl: locale, localeFromCookie: null, localeFromUser: null, acceptLangHeader: null
+		})
 
 		const userPromise = Users.call('view')
 		.setEnvironment('staging')
