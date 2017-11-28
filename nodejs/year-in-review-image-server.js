@@ -6,12 +6,12 @@ const Promise = require('bluebird');
 const http = require('http');
 const api = require('@youversion/js-api');
 const getLocale = require('./app/lib/langUtils').getLocale;
-
-
 const Image = Canvas.Image;
 const Users = api.getClient('users');
 const Moments = api.getClient('moments');
 const router = express.Router();
+
+global.Intl = require('intl');
 
 class Icon {
 	constructor(svgString, w, h, data = null) {
@@ -58,7 +58,8 @@ class YiR {
 			note: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 10"><path fill="#FFF" fill-rule="evenodd" d="M6.262 9.233V7.017H8.48v-.554H5.986a.278.278 0 0 0-.278.277v2.493H1.277a.556.556 0 0 1-.556-.555V.922c0-.307.249-.555.556-.555h6.646c.307 0 .556.248.556.555v6.095L6.265 9.233h-.003zM7.371 3.97a.277.277 0 0 0-.277-.277H2.106a.277.277 0 1 0 0 .554h4.988a.277.277 0 0 0 .277-.277zm0-1.663a.277.277 0 0 0-.277-.277H2.106a.277.277 0 1 0 0 .554h4.988a.277.277 0 0 0 .277-.277z" opacity=".9"/></svg>',
 			verseImage: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15"><path fill="#FFF" fill-rule="evenodd" d="M8.546 8.793L6.668 5.337a.417.417 0 0 0-.733 0l-3.634 6.686a.417.417 0 0 0 .366.615h9.3a.417.417 0 0 0 .356-.634L9.806 7.896a.417.417 0 0 0-.71 0l-.55.897zM1.41.925H13.04c.46 0 .834.373.834.834V13.39c0 .46-.373.834-.834.834H1.41a.834.834 0 0 1-.834-.834V1.76c0-.46.373-.834.834-.834zm9.557 4.156a1.247 1.247 0 1 0 0-2.494 1.247 1.247 0 0 0 0 2.494z"/></svg>',
 			bookmark: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9"><path fill="#FFF" fill-rule="evenodd" d="M1.335.283h6.53c.345 0 .625.28.625.626v7.726a.313.313 0 0 1-.468.271L4.929 7.13a.625.625 0 0 0-.62-.001l-3.132 1.78a.313.313 0 0 1-.467-.271V.908c0-.345.28-.625.625-.625z" opacity=".9"/></svg>',
-			friends: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 9"><path fill="#FFF" fill-rule="evenodd" d="M8.642 4.014S8.405 5.44 6.829 5.42a1.733 1.733 0 0 1-1.782-1.415l-.155-1.048S4.707 1.135 6.386.891c0 0 .35-.051.762 0 .462.057 1.37.152 1.617 1.414 0 0 .052.326.031.62-.052.758-.154 1.09-.154 1.09zm-4.534.983s-.16 1.035-1.223 1.02C1.823 6.002 1.684 4.99 1.684 4.99l-.104-.762s-.125-1.323 1.007-1.5c0 0 .236-.038.514 0 .31.04.924.11 1.09 1.027 0 0 .035.237.021.451-.036.55-.104.792-.104.792zm2.671.884c2.182 0 3.48.682 3.894 2.046a.556.556 0 0 1-.531.718l-6.626.003a.556.556 0 0 1-.54-.687c.338-1.387 1.606-2.08 3.803-2.08zM2.705 8.65H.88a.556.556 0 0 1-.52-.753C.664 7.099 1.56 6.7 3.054 6.7c-.59.598-.902 1.473-.348 1.949z" opacity=".9"/></svg>'
+			friends: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 9"><path fill="#FFF" fill-rule="evenodd" d="M8.642 4.014S8.405 5.44 6.829 5.42a1.733 1.733 0 0 1-1.782-1.415l-.155-1.048S4.707 1.135 6.386.891c0 0 .35-.051.762 0 .462.057 1.37.152 1.617 1.414 0 0 .052.326.031.62-.052.758-.154 1.09-.154 1.09zm-4.534.983s-.16 1.035-1.223 1.02C1.823 6.002 1.684 4.99 1.684 4.99l-.104-.762s-.125-1.323 1.007-1.5c0 0 .236-.038.514 0 .31.04.924.11 1.09 1.027 0 0 .035.237.021.451-.036.55-.104.792-.104.792zm2.671.884c2.182 0 3.48.682 3.894 2.046a.556.556 0 0 1-.531.718l-6.626.003a.556.556 0 0 1-.54-.687c.338-1.387 1.606-2.08 3.803-2.08zM2.705 8.65H.88a.556.556 0 0 1-.52-.753C.664 7.099 1.56 6.7 3.054 6.7c-.59.598-.902 1.473-.348 1.949z" opacity=".9"/></svg>',
+			badges: '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.55 16.57"><defs><style>.cls-1{fill:none;}.cls-2{fill:#fff;}</style></defs><title>badge</title><path class="cls-1" d="M5.24,7.2H5.12a4,4,0,1,0,.12,0Zm.06,6.93a2.95,2.95,0,1,1,2.95-2.95A2.95,2.95,0,0,1,5.3,14.13Z"/><path class="cls-2" d="M6.6,6.41,9.83,4.53a1,1,0,0,0,.48-.94c0-.63,0-1.83,0-2.47S9.76.18,9.19.18h-8c-.55,0-.87.64-.87,1s0,2.47,0,2.47a1,1,0,0,0,.45.87l3.1,1.82.1.07a5,5,0,1,0,2.63,0ZM5.24,15.23a4,4,0,0,1-.12-8h.12a4,4,0,1,1,0,8Z"/><circle class="cls-2" cx="5.3" cy="11.19" r="2.95"/></svg>'
 		}
 
 		this.coordinates = {
@@ -236,17 +237,6 @@ class YiR {
 			this.coordinates.highlights
 		);
 
-
-		// this.drawIcon(
-		// 	new Icon(
-		// 		this.icons.streak,
-		// 		this.relativeW(0.035),
-		// 		this.relativeW(0.05),
-		// 		0
-		// 	),
-		// 	this.coordinates.streaks
-		// );
-
 		this.drawIcon(
 			new Icon(
 				this.icons.note,
@@ -290,9 +280,15 @@ class YiR {
 			this.coordinates.friends
 		);
 
-
-		// Still need to draw badges icon
-		ctx.fillText('2', this.coordinates.badges.x,this.coordinates.badges.y);
+		this.drawIcon(
+			new Icon(
+				this.icons.badges,
+				this.relativeW(0.080),
+				this.relativeH(0.040),
+				this.momentData.badges
+			),
+			this.coordinates.badges
+		)
 
 		this.drawIcon(
 			new Icon(
@@ -309,7 +305,7 @@ class YiR {
 		// Draw 2017 text in small bubble
 		const fontSize2017 = this.relativeFontSize() / 2.2;
 		ctx.font = `${fontSize2017}px Arial Bold`;
-		ctx.fillText('2017', this.relativeX(0.78), (this.relativeY(0.64) + (fontSize2017 / 2.5)));
+		ctx.fillText(new Intl.DateTimeFormat('en-US', { year: 'numeric' }).format(1511908459070), this.relativeX(0.78), (this.relativeY(0.64) + (fontSize2017 / 2.5)));
 
 		// Draw heading text
 		ctx.font = `${this.relativeFontSize() * 0.95}px Arial Bold`;
@@ -340,7 +336,7 @@ class YiR {
 		this.ctx.translate((xPos) * (-1), (yIconPos) * (-1));
 
 		if (displayDataText) {
-			this.ctx.fillText(icon.data, xPos, yTextPos);
+			this.ctx.fillText(new Intl.NumberFormat(this.locale).format(icon.data), xPos, yTextPos);
 		}
 
 	}
@@ -522,7 +518,7 @@ router.get('/year-in-review/:user_id_hash/:user_id/:size', (req, res) => {
 		const userId = req.params.user_id;
 		const imageSize = parseInt(req.params.size, 10);
 		const graphic = new YiR(imageSize);
-		const locale = req.query.locale || 'en';
+		const locale = req.query.locale || 'en-US';
 		let avatar;
 
 		graphic.locale = locale;
