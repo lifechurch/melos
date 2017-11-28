@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/api-redux": "^0.4.13",
+    "@youversion/api-redux": "0.4.17",
     "@youversion/js-api": "^1.0.9",
     "@youversion/melos": "0.0.6",
     "@youversion/stringer-things": "0.0.1",
-    "@youversion/token-storage": "^0.0.36",
+    "@youversion/token-storage": "0.0.38",
     "@youversion/utils": "1.0.23",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
