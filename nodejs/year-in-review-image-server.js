@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const express = require('express');
 const Canvas = require('canvas');
 const canvg = require('canvg');
@@ -490,44 +491,56 @@ class AvatarImage {
 
 }
 
+function isHashVerified(hashToVerify, userId) {
+	const secret = process.env.YIR_SHA1_SECRET_KEY || 'SECRET';
+	const algo = 'sha1';
+	const hmac = crypto.createHmac(algo, secret);
+	hmac.update(userId);
+	return hashToVerify === hmac.digest('hex');
+}
+
+
 //https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
-router.get('/year-in-review/:user_id/:size', (req, res) => {
+router.get('/year-in-review/:user_id_hash/:user_id/:size', (req, res) => {
+	if (!isHashVerified(req.params.user_id_hash, req.params.user_id)) {
+		res.status(404).send('Not found');
+	} else {
+		const fromDate = '2017-01-01';
+		const toDate = '2017-12-31';
+		const userId = req.params.user_id;
+		const imageSize = parseInt(req.params.size, 10);
+		const graphic = new YiR(imageSize);
+		let avatar;
 
-	const fromDate = '2017-01-01';
-	const toDate = '2017-12-31';
-	const userId = req.params.user_id;
-	const imageSize = parseInt(req.params.size, 10);
-	const graphic = new YiR(imageSize);
-	let avatar;
-
-	graphic.locale = req.query.locale || 'en';
+		graphic.locale = req.query.locale || 'en';
 
 
-	const userPromise = Users.call('view')
-	.setEnvironment('staging')
-	.params({ id: userId })
-	.get()
+		const userPromise = Users.call('view')
+		.setEnvironment('staging')
+		.params({ id: userId })
+		.get()
 
-	const momentPromise = Moments.call('summary')
-	.setEnvironment('staging')
-	.params({ user_id: userId, from_date: fromDate, to_date: toDate })
-	.get()
+		const momentPromise = Moments.call('summary')
+		.setEnvironment('staging')
+		.params({ user_id: userId, from_date: fromDate, to_date: toDate })
+		.get()
 
-	Promise.all([userPromise, momentPromise])
-	.then((results) => {
-		const userData = results[0];
-		const momentData = results[1];
+		Promise.all([userPromise, momentPromise])
+		.then((results) => {
+			const userData = results[0];
+			const momentData = results[1];
 
-		graphic.momentData = momentData;
-		avatar = new AvatarImage(userData);
-		avatar.load((data) => {
-			graphic.avatarData = data;
+			graphic.momentData = momentData;
+			avatar = new AvatarImage(userData);
+			avatar.load((data) => {
+				graphic.avatarData = data;
 
-			graphic.render();
-			res.setHeader('Content-Type', 'image/png');
-			graphic.canvas.pngStream().pipe(res);
+				graphic.render();
+				res.setHeader('Content-Type', 'image/png');
+				graphic.canvas.pngStream().pipe(res);
+			})
 		})
-	})
+	}
 })
 
 module.exports = router;
