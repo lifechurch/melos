@@ -28,6 +28,11 @@ RUN cd /home/app/nodejs && npm run build:production
 RUN apt-get update && apt-get install -y build-essential g++ \
   libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev 
 
+# Year in Review Fonts
+RUN [ -d /usr/share/fonts/truetype ] || mkdir /usr/share/fonts/truetype
+COPY nodejs/fonts /usr/share/fonts/truetype
+RUN fc-cache -f -v
+
 # Passenger Enterprise
 COPY nginx/passenger-enterprise-license /etc/passenger-enterprise-license
 RUN echo deb https://download:$DOWNLOAD_TOKEN@www.phusionpassenger.com/enterprise_apt xenial main > /etc/apt/sources.list.d/passenger.list

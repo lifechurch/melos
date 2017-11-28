@@ -10,6 +10,7 @@ const Image = Canvas.Image;
 const Users = api.getClient('users');
 const Moments = api.getClient('moments');
 const router = express.Router();
+const displayFont = "Arial Unicode MS Bold";
 
 global.Intl = require('intl');
 
@@ -37,7 +38,7 @@ class YiR {
 		this.width = size;
 		this.height = size;
 		this.fontSize = this.relativeFontSize();
-		this.fontStyle = `${this.fontSize}px Arial Bold`;
+		this.fontStyle = `${this.fontSize}px ${displayFont}`;
 
 		this._canvas = new Canvas(size,size);
 		this.ctx = this._canvas.getContext('2d');
@@ -304,15 +305,15 @@ class YiR {
 
 		// Draw 2017 text in small bubble
 		const fontSize2017 = this.relativeFontSize() / 2.2;
-		ctx.font = `${fontSize2017}px Arial Bold`;
+		ctx.font = `${fontSize2017}px ${displayFont}`;
 		ctx.fillText(new Intl.DateTimeFormat('en-US', { year: 'numeric' }).format(1511908459070), this.relativeX(0.78), (this.relativeY(0.64) + (fontSize2017 / 2.5)));
 
 		// Draw heading text
-		ctx.font = `${this.relativeFontSize() * 0.95}px Arial Bold`;
+		ctx.font = `${this.relativeFontSize() * 0.95}px ${displayFont}`;
 		ctx.fillStyle = '#066261';
 		ctx.fillText( this.translate('my year'), this.relativeX(0.5), this.relativeY(0.1));
 
-		ctx.font = `15px Arial Bold`;
+		ctx.font = `15px ${displayFont}`;
 		ctx.textAlign = 'left';
 		ctx.fillText(`Locale: ${this.locale}`, 10, 10);
 
@@ -491,7 +492,7 @@ class AvatarImage {
 
 		ctx.textAlign = 'center';
 		ctx.fillStyle = fontColor;
-		ctx.font = `${fontSize}px Arial Bold`;
+		ctx.font = `${fontSize}px ${displayFont}`;
 		ctx.fillText(this.initials(), 250, (256 + (fontSize / 2.5)));
 
 		return canvas;
