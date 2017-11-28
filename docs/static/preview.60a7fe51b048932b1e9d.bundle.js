@@ -12222,11 +12222,11 @@ Installation.defaultProps = {
     { href: 'https://in.thewardro.be/michael.martin' },
     'Michael Martin'
   ),
-  command: 'npm install @youversion/react-components',
+  command: 'npm install @youversion/melos',
   npm: _react2.default.createElement(
     'a',
     { href: 'https://in.thewardro.be/web/youversion-react-components' },
-    '@youversion/react-components'
+    '@youversion/melos'
   ),
   source: _react2.default.createElement(
     'a',
@@ -57069,7 +57069,7 @@ var Docs = function Docs() {
     }),
     usage: _react2.default.createElement(
       _Docs.Usage,
-      { importString: 'import Card from \'@youversion/react-components/dist/containers/Card\'' },
+      { importString: 'import Card from \'@youversion/melos/dist/containers/Card\'' },
       '\n\t\t\t\t\t\tThis package exports a Card component.\n\t\t\t\t\t\t\n\n\n\t\t\t\t\t\tUse the Card component to encapsulate content.\n\t\t\t\t\t'
     )
   });
@@ -57138,7 +57138,7 @@ var Docs = function Docs() {
     }),
     usage: _react2.default.createElement(
       _Docs.Usage,
-      { importString: 'import LazyImage from \'@youversion/react-components\'' },
+      { importString: 'import LazyImage from \'@youversion/melos\'' },
       '\n\t\t\t\t\t\tThis package exports a LazyImage component.\n\t\t\t\t\t\tUse LazyImage for lazy loading images with an animated transition between an optional placeholder and the desired src.\n\t\t\t\t\t\tThe src only replaces the placeholder if it is successfully downloaded (i.e. not missing, 0 width, broken etc.).\n\t\t\t\t\t\tThe \'lazy\' ability can also be false for server rendering.\n\t\t\t\t\t\tHaving a placeholder requires explicit dimension properties, but if a dynamic image size is required just forgo the placeholder and pass `{ width: \'100%\', height: null }`\n\t\t\t\t\t'
     )
   });
@@ -58630,7 +58630,7 @@ var Docs = function Docs() {
     }),
     usage: _react2.default.createElement(
       _Docs.Usage,
-      { importString: 'import Card from \'@youversion/react-components\'' },
+      { importString: 'import Card from \'@youversion/melos\'' },
       '\n\t\t\t\t\t\tThis package exports a Card component.\n\t\t\t\t\t\t\n\n\n\t\t\t\t\t\tUse the Card component to encapsulate content.\n\t\t\t\t\t'
     )
   });

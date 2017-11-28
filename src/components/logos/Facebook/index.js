@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import getProportionalSize from '../../../utils/imageProportions'
+import getProportionalSize from '@youversion/utils/lib/images/imageProportions'
 
 
 function Facebook({ width, height, fill, className }) {

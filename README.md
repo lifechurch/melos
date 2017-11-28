@@ -27,7 +27,7 @@ the [Development](#development) section of this document.
 1. Install these components for use, by running
 
 ```
-npm install @youvesion/melos
+npm install @youversion/melos
 ```
 
 2. Import the component you want to use...

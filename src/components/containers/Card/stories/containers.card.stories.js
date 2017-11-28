@@ -23,7 +23,7 @@ const Docs = () => {
         />
 			}
       usage={
-        <Usage importString={'import Card from \'@youversion/react-components/dist/containers/Card\''}>
+        <Usage importString={'import Card from \'@youversion/melos/dist/containers/Card\''}>
           {`
 						This package exports a Card component.
 						\n\n
