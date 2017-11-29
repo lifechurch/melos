@@ -1,11 +1,11 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
+// utils
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 // components
 import BibleHeader from './BibleHeader'
 import BibleContent from './BibleContent'
-// utils
-import { getBibleVersionFromStorage } from '../lib/readerUtils'
 
 
 class BibleWidget extends Component {

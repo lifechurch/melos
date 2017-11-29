@@ -1,6 +1,10 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
+import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
+import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
 import ClickToCopy from '../components/ClickToCopy'
 import Overflow, {
 	Read,
@@ -11,12 +15,6 @@ import Overflow, {
 	Delete,
 	Cancel
 } from '../components/OverflowMenu'
-import {
-	isVerseOrChapter,
-	chapterifyUsfm,
-	parseVerseFromContent,
-} from '../lib/readerUtils'
-import { getReferencesTitle } from '../lib/usfmUtils'
 import Routes from '../lib/routes'
 
 

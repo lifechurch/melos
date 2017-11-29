@@ -1,3 +1,5 @@
+import arrayToObject from '@youversion/utils/lib/arrayToObject'
+import moment from 'moment'
 import type from '../actions/constants'
 import locationType from '../../location/actions/constants'
 import contentType from '../../content/actions/constants'
@@ -7,16 +9,14 @@ import { fromApiFormat as eventFromApiFormat, sortContent } from '../transformer
 import defaultState from '../../../../../defaultState'
 import { fromApiFormat as locationFromApiFormat } from '../../location/transformers/location'
 import { fromApiFormat as contentFromApiFormat } from '../../content/transformers/content'
-import arrayToObject from '../../../../../lib/arrayToObject'
 import mergeObjects from '../../../../../lib/mergeObjects'
 import applyLifecycleRules from '../../../validators/applyLifecycleRules'
-import moment from 'moment'
 
 
 
 function selectLocation(locations, id, selected) {
 	if (['string', 'number'].indexOf(typeof id) === -1) {
-		throw new Error('Invalid location id, cannot remove:' + id.toString())
+		throw new Error(`Invalid location id, cannot remove:${id.toString()}`)
 	}
 	locations[id].isSelected = selected
 	locations[id].times = []
@@ -24,7 +24,7 @@ function selectLocation(locations, id, selected) {
 }
 
 export default function event(state = {}, action) {
-	switch(action.type) {
+	switch (action.type) {
 
 		case type('publishEventRequest'):
 		case type('unpublishEventRequest'):
@@ -32,11 +32,11 @@ export default function event(state = {}, action) {
 
 		case type('publishEventFailure'):
 		case type('unpublishEventFailure'):
-			var publishError = "features.EventEdit.features.details.errors.generic"
+			var publishError = 'features.EventEdit.features.details.errors.generic'
 			for (const e of action.api_errors) {
-				switch(e.key) {
+				switch (e.key) {
 					case 'events.all_times.invalid':
-						publishError = "features.EventEdit.features.details.errors.invalidTimes"
+						publishError = 'features.EventEdit.features.details.errors.invalidTimes'
 						break;
 				}
 			}
@@ -44,7 +44,7 @@ export default function event(state = {}, action) {
 
 		case type('publishEventSuccess'):
 		case type('unpublishEventSuccess'):
-			return applyLifecycleRules(Object.assign({}, state, { isFetching: false, item: {...state.item, status: action.response.status}}))
+			return applyLifecycleRules(Object.assign({}, state, { isFetching: false, item: { ...state.item, status: action.response.status } }))
 
 		case type('cancel'):
 			return validateEventDetails(Object.assign({}, defaultState.event))
@@ -88,7 +88,7 @@ export default function event(state = {}, action) {
 			)))
 
 		case type('updateFailure'):
-			//hasError: true, errors: action.error.errors,
+			// hasError: true, errors: action.error.errors,
 			return validateEventDetails(Object.assign({}, state,
 				{
 					isFetching: false,
@@ -103,7 +103,7 @@ export default function event(state = {}, action) {
 
 		case type('setDetails'):
 			if (['title', 'org_name', 'images', 'image_id', 'description'].indexOf(action.field) > -1) {
-				let item = Object.assign({}, state.item)
+				const item = Object.assign({}, state.item)
 				item[action.field] = action.value
 				return validateEventDetails(Object.assign({}, state, { item, isDirty: true }))
 			} else {
@@ -119,7 +119,7 @@ export default function event(state = {}, action) {
 			})))
 
 		case locationType('deleteRequest'):
-			const eLocs  = state.item.locations
+			const eLocs = state.item.locations
 			delete eLocs[action.locationId]
 			return applyLifecycleRules(validateEventDetails(Object.assign({}, state, {
 				item: {
@@ -148,7 +148,7 @@ export default function event(state = {}, action) {
 							{},
 							state.item.locations[newParams.id],
 							newParams,
-							{'original': Object.assign({}, state.item.locations[newParams.id])}
+							{ original: Object.assign({}, state.item.locations[newParams.id]) }
 						)
 					}
 				}
@@ -221,7 +221,7 @@ export default function event(state = {}, action) {
 			var newContent = Object.assign({}, action.params)
 			newContent.isSaving = true
 			if (newContent.errors && newContent.errors.update) {
-				delete newContent.errors['update']
+				delete newContent.errors.update
 			}
 			return applyLifecycleRules(Object.assign({}, state, {
 				item: {
@@ -237,7 +237,7 @@ export default function event(state = {}, action) {
 		case contentType('chapterRequest'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			if (newContent.errors && newContent.errors.chapter) {
-				delete newContent.errors['chapter']
+				delete newContent.errors.chapter
 			}
 			return Object.assign({}, state, {
 				item: {
@@ -267,7 +267,7 @@ export default function event(state = {}, action) {
 		case contentType('chapterFailure'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			newContent.data.chapter = ''
-			newContent.errors = Object.assign({}, {...newContent.errors}, {'chapter': action.api_errors})
+			newContent.errors = Object.assign({}, { ...newContent.errors }, { chapter: action.api_errors })
 
 			return Object.assign({}, state, {
 				item: {
@@ -325,7 +325,7 @@ export default function event(state = {}, action) {
 
 		case contentType('versionRequest'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-			//newContent.isDirty = true
+			// newContent.isDirty = true
 			newContent.isFetching = true
 			return Object.assign({}, state, {
 				item: {
@@ -341,7 +341,7 @@ export default function event(state = {}, action) {
 		case contentType('versionSuccess'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			newContent.data.version_id = action.params.id
-			//newContent.data.language_tag = action.response.language.iso_639_3
+			// newContent.data.language_tag = action.response.language.iso_639_3
 
 			newContent.isFetching = false
 			return Object.assign({}, state, {
@@ -375,7 +375,7 @@ export default function event(state = {}, action) {
 		case contentType('clearReference'):
 			var newContent = Object.assign({}, state.item.content[action.index])
 			newContent.data.usfm = ['']
-			newContent.data.human = " "
+			newContent.data.human = ' '
 
 			return Object.assign({}, state, {
 				item: {
@@ -411,7 +411,7 @@ export default function event(state = {}, action) {
 		case contentType('addFailure'):
 		case contentType('updateFailure'):
 			var newContent = Object.assign({}, action.response, state.item.content[action.params.index], { hasError: true, isSaving: false, isDirty: true })
-			newContent.errors = Object.assign({}, {...newContent.errors}, {'update': action.api_errors})
+			newContent.errors = Object.assign({}, { ...newContent.errors }, { update: action.api_errors })
 
 			return Object.assign({}, state, {
 				item: {
@@ -490,7 +490,7 @@ export default function event(state = {}, action) {
 
 		case contentType('initUploadFailure'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-			newContent.errors = Object.assign({}, {...newContent.errors}, {'image': [action.params.error]})
+			newContent.errors = Object.assign({}, { ...newContent.errors }, { image: [action.params.error] })
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -503,8 +503,8 @@ export default function event(state = {}, action) {
 			})
 
 		case type('imgUploadFailure'):
-			var error_fields = Object.assign({}, {...state.errors.fields}, {'image': action.params.errors})
-			return Object.assign({}, state, {errors: {...state.errors, fields: {...error_fields}}})
+			var error_fields = Object.assign({}, { ...state.errors.fields }, { image: action.params.errors })
+			return Object.assign({}, state, { errors: { ...state.errors, fields: { ...error_fields } } })
 
 		case contentType('initUploadSuccess'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
@@ -529,7 +529,7 @@ export default function event(state = {}, action) {
 					...state.item,
 					content: [
 						...state.item.content.slice(0, action.index),
-						Object.assign({}, state.item.content[action.index], {comment: action.note}),
+						Object.assign({}, state.item.content[action.index], { comment: action.note }),
 						...state.item.content.slice(action.index + 1)
 					]
 				}
@@ -539,19 +539,19 @@ export default function event(state = {}, action) {
 			return state
 		case viewType('saveNoteRequest'):
 		case viewType('saveNoteSuccess'):
-			return Object.assign({}, state, {isSaved: true})
+			return Object.assign({}, state, { isSaved: true })
 
 		case viewType('savedEventsRequest'):
 			return state
 
 		case viewType('savedEventsFailure'):
 		case viewType('savedEventsSuccess'):
-			var savedEvents = (typeof action.response != 'undefined') ? action.response.data : []
-			return Object.assign({}, state, {isSaved: (savedEvents.indexOf(action.id) != -1)})
+			var savedEvents = (typeof action.response !== 'undefined') ? action.response.data : []
+			return Object.assign({}, state, { isSaved: (savedEvents.indexOf(action.id) != -1) })
 
 		case contentType('setLang'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-			newContent.data = Object.assign({}, {...newContent.data}, { language_tag: action.params.language_tag })
+			newContent.data = Object.assign({}, { ...newContent.data }, { language_tag: action.params.language_tag })
 			return Object.assign({}, state, {
 				item: {
 					...state.item,

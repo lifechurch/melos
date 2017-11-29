@@ -1,4 +1,4 @@
-import LocalStore from './localStore'
+import LocalStore from '@youversion/utils/lib/localStore'
 
 /**
  * Helps keep an array of items stored on a client in sync with a server list
@@ -9,7 +9,7 @@ class SyncStore {
 	 * @param {string} storeKey - the key used to reference this list in the local store
 	 * @param {integer} max - the maximum number of items allowed in this list
 	 */
-	constructor(storeKey, max=5) {
+	constructor(storeKey, max = 5) {
 		this.DATE_MIN = new Date(0)
 		this.storeKey = storeKey
 		this.max = max
@@ -35,7 +35,7 @@ class SyncStore {
 	 *   local time to equal the last sync time on the client, so pass the value of last-server-sync-time
 	 *   to changedDate here
 	 */
-	save(changedDate=new Date(), updateServer=true) {
+	save(changedDate = new Date(), updateServer = true) {
 		this.changedDate = changedDate
 		LocalStore.set(this.storeKey, {
 			data: this.data,
@@ -54,7 +54,7 @@ class SyncStore {
 	 * @param {any} value - the actual value stored in the list
 	 * @param {object} meta - [optional] metadata associated with value
 	 */
-	add(value, meta=null) {
+	add(value, meta = null) {
 		const index = this.data.indexOf(value)
 
 		if (index === -1) {
@@ -68,8 +68,8 @@ class SyncStore {
 		}
 
 		if (this.data.length > this.max) {
-			this.data.slice(0, this.data.length - this.max).forEach((value) => {
-				delete this.meta[value]
+			this.data.slice(0, this.data.length - this.max).forEach((val) => {
+				delete this.meta[val]
 			})
 			this.data = this.data.slice(-1 * this.max)
 		}
@@ -95,7 +95,7 @@ class SyncStore {
 	 * Get the list of items or metadata associated with list
 	 * @param {boolean} meta - IF TRUE, return list of metadata, ELSE return just list of items
 	 */
-	get(meta=false) {
+	get(meta = false) {
 		if (meta) {
 			return this.data.map((value) => {
 				return this.meta[value] || {}

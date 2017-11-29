@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import PlanNavigation from './PlanNavigation'
-// utils
-import { selectImageFromList } from '../../../../lib/imageUtil'
 
 function PlanReader(props) {
 	const {

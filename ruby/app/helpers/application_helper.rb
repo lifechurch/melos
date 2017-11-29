@@ -392,7 +392,12 @@ module ApplicationHelper
 
           end
         end
-
+        if params['tp_source'] == "Facebook"
+          # write cookie for auth type
+          cookies[:auth_type] = 'facebook'
+        else
+          cookies[:auth_type] = 'google'
+        end
         sign_in(@user, nil, tp_token, tp_id)
         I18n.locale = @user.language_tag.gsub('_', '-') unless @user.language_tag.nil?
         location = redirect_path

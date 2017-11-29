@@ -1,5 +1,5 @@
+import arrayToObject from '@youversion/utils/lib/arrayToObject'
 import { fromApiFormat as contentFromApiFormat } from '../../content/transformers/content'
-import arrayToObject from '../../../../../lib/arrayToObject'
 
 export function fromApiFormat(event) {
 	let item = Object.assign({}, event.item)
@@ -20,7 +20,7 @@ export function fromApiFormat(event) {
 		item.locations = []
 	}
 
-	let locations = arrayToObject(item.locations.map((l) => {
+	const locations = arrayToObject(item.locations.map((l) => {
 		l.isSelected = true
 		l.times = Array.isArray(l.times) ? l.times : []
 		return l
@@ -28,11 +28,11 @@ export function fromApiFormat(event) {
 
 	content = sortContent(content)
 
-	return Object.assign({}, event, { item: { ...item, content, locations }})
+	return Object.assign({}, event, { item: { ...item, content, locations } })
 }
 
 export function sortContent(content) {
-	content.sort((a,b) => {
+	content.sort((a, b) => {
 		if (a.sort < b.sort) {
 			return -1
 		} else if (a.sort > b.sort) {
@@ -48,7 +48,7 @@ export function sortContent(content) {
 		}
 	})
 
-	return content.map((c,i) => {
+	return content.map((c, i) => {
 		c.sort = i * 100
 		return c
 	})

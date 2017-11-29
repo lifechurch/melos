@@ -18,9 +18,11 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 // utils
 import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
-import { calcCurrentPlanDay, isFinalSegmentToComplete, isFinalPlanDay } from '../lib/readingPlanUtils'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
+import calcCurrentPlanDay from '@youversion/utils/lib/readingPlans/calcCurrentPlanDay'
+import isFinalSegmentToComplete from '@youversion/utils/lib/readingPlans/isFinalSegmentToComplete'
+import isFinalPlanDay from '@youversion/utils/lib/readingPlans/isFinalPlanDay'
 import Routes from '../lib/routes'
-import { getBibleVersionFromStorage } from '../lib/readerUtils'
 // components
 import PlanComponent from '../features/PlanDiscovery/components/Plan'
 import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'

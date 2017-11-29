@@ -7,8 +7,8 @@ import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import subscribeToPlan from '@youversion/api-redux/lib/batchedActions/subscribeToPlan'
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import CreatePWF from '../features/PlanDiscovery/components/CreatePWF'
-import { selectImageFromList } from '../lib/imageUtil'
 import Routes from '../lib/routes'
 
 function getSubId(props) {

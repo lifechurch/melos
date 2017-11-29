@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import WayPoint from 'react-waypoint'
-import { imgLoaded } from '../lib/imageUtil'
+import imgLoaded from '@youversion/utils/lib/images/imgLoaded'
 
 
 class LazyImage extends Component {

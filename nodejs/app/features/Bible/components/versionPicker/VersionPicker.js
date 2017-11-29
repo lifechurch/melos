@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import { injectIntl } from 'react-intl'
 import { push } from 'react-router-redux'
+import arrayToObject from '@youversion/utils/lib/arrayToObject'
 import Filter from '../../../../lib/filter'
 import VersionPickerModal from './VersionPickerModal'
 import Label from '../chapterPicker/Label'
-import arrayToObject from '../../../../lib/arrayToObject'
 import DropdownTransition from '../../../../components/DropdownTransition'
 
 class VersionPicker extends Component {

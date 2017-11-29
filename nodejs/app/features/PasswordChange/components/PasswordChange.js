@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Heading1 from '@youversion/react-components/dist/typography/Heading1'
-import Body from '@youversion/react-components/dist/typography/Body'
-import VerticalSpace from '@youversion/react-components/dist/layouts/VerticalSpace'
+import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
+import Body from '@youversion/melos/dist/components/typography/Body'
+import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import { connect } from 'react-redux'
 import ActionCreators from '../actions/creators'
 

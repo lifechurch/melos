@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react'
 import Slider from 'react-slick'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
+import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import CarouselSlideGradient from './CarouselSlideGradient'
 import CarouselSlideImage from './CarouselSlideImage'
 import CarouselArrow from './CarouselArrow'
 import LazyImage from '../LazyImage'
-import { PLAN_DEFAULT } from '../../lib/imageUtil'
 
 
 function CarouselStandard(props) {

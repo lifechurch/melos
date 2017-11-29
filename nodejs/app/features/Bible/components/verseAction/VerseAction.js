@@ -2,14 +2,14 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
+import getCurrentDT from '@youversion/utils/lib/time/getCurrentDT'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import ColorList from './ColorList'
 import ButtonBar from '../../../../components/ButtonBar'
 import FullscreenDrawer from '../../../../components/FullscreenDrawer'
 import ShareWidget from './share/Share'
 import ActionCreators from '../../actions/creators'
 import MomentCreate from './MomentCreate'
-import getCurrentDT from '../../../../lib/getCurrentDT'
-import { chapterifyUsfm } from '../../../../lib/readerUtils'
 
 
 class VerseAction extends Component {

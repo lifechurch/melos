@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import messagingAction from '@youversion/api-redux/lib/endpoints/messaging/action'
-import localStore from '../lib/localStore'
+import LocalStore from '@youversion/utils/lib/localStore'
 import Modal from '../components/Modal'
 import ConfirmationDialog from '../components/ConfirmationDialog'
 import LazyImage from '../components/LazyImage'
@@ -10,11 +10,11 @@ import ViewportUtils from '../lib/viewportUtils'
 
 
 function isTokenSentToServer() {
-	return parseInt(localStore.get('sentToServer'), 10) === 1
+	return parseInt(LocalStore.get('sentToServer'), 10) === 1
 }
 
 function setTokenSentToServer(sent) {
-	localStore.set('sentToServer', sent ? 1 : 0)
+	LocalStore.set('sentToServer', sent ? 1 : 0)
 }
 
 export function promptUserForNotificationsPermission(customMessage = null) {
@@ -71,11 +71,9 @@ class NotificationsPermissionPrompt extends Component {
 	}
 
 	onRequestPermission = () => {
-		console.log('Requesting permission...')
 		this.modal.handleClose()
 		if (firebaseMessaging) {
 			firebaseMessaging.requestPermission().then(() => {
-				console.log('Notification permission granted.')
 					// Get Instance ID token. Initially this makes a network call, once retrieved
 					// subsequent calls to getToken will return from cache.
 				firebaseMessaging.getToken().then((currentToken) => {
@@ -83,23 +81,19 @@ class NotificationsPermissionPrompt extends Component {
 						this.sendTokenToServer(currentToken)
 					} else {
 							// Show permission request.
-						console.log('No Instance ID token available. Request permission to generate one.')
 							// Show permission UI.
 						setTokenSentToServer(false)
 					}
 				}).catch((err) => {
-					console.log('An error occurred while retrieving token. ', err)
 					setTokenSentToServer(false)
 				})
 			}).catch((err) => {
-				console.log('Unable to get permission to notify.', err)
 			})
 		}
 	}
 
 	handleEvent = (e) => {
 		const { detail } = e
-		console.log('handle openprompt event', !isTokenSentToServer(), 'serviceWorker' in navigator, firebaseMessaging)
 		if (
 			'serviceWorker' in navigator
 			&& !isTokenSentToServer()
@@ -121,9 +115,7 @@ class NotificationsPermissionPrompt extends Component {
 	 */
 	sendTokenToServer = (currentToken) => {
 		const { dispatch, auth: { isLoggedIn, userData } } = this.props
-		console.log('sendTokenToServer?', !isTokenSentToServer())
 		if (!isTokenSentToServer() && currentToken) {
-			console.log('Sending token to server...')
 			dispatch(messagingAction({
 				method: 'register',
 				params: {
@@ -133,10 +125,6 @@ class NotificationsPermissionPrompt extends Component {
 				},
 			}))
 			setTokenSentToServer(true)
-		} else {
-			console.log(
-				'Token already sent to server so won\'t send it again unless it changes'
-			)
 		}
 	}
 
@@ -144,7 +132,6 @@ class NotificationsPermissionPrompt extends Component {
 		// Delete Instance ID token.
 		firebaseMessaging.getToken().then((currentToken) => {
 			firebaseMessaging.deleteToken(currentToken).then(() => {
-				console.log('Token deleted.')
 				setTokenSentToServer(false)
 			}).catch((err) => {
 				console.log('Unable to delete token. ', err)

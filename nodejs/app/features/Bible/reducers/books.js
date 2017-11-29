@@ -1,6 +1,6 @@
 import Immutable from 'immutable'
+import arrayToObject from '@youversion/utils/lib/arrayToObject'
 import type from '../actions/constants'
-import arrayToObject from '../../../lib/arrayToObject'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {

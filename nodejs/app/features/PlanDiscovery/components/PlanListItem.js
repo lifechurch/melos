@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import LazyImage from '../../../components/LazyImage'
-import { PLAN_DEFAULT } from '../../../lib/imageUtil'
 
 function PlanListItem(props) {
 	const { name, link, src, subContent } = props
