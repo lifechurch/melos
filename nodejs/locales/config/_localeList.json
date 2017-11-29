@@ -136,6 +136,12 @@
 		"displayName": "Hrvatski"
 	},
 	{
+		"locale": "ig",
+		"locale2": "ig",
+		"locale3": "ibo",
+		"displayName": "IG"
+	},
+	{
 		"nativeName": "isiZulu",
 		"englishName": "Zulu",
 		"locale": "zu-ZA",

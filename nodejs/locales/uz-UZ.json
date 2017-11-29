@@ -617,5 +617,9 @@
 	"notification settings": "Notification Settings",
 	"get a free bible": "Get a free Bible for your phone, tablet, and computer.",
 	"download the bible": "Download the Bible App",
-	"my year": "My Year in the Bible App"
+	"my year": "My Year in the Bible App",
+	"view snapshot": "To View Your Snapshot",
+	"hi name": "Hi, {name}",
+	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt"
 }
