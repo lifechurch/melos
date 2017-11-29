@@ -606,7 +606,7 @@
 	"x participants.one": "{number}افراد شامل ہیں",
 	"x participants.other": "{number}افراد شامل ہیں",
 	"participant limit": "شامل ہونے والے لوگوں کی تعداد:{number}",
-	"+ x more": "+{number}مزید",
+	"+ x more": "+{number}��زید",
 	"when participant comments": "جب شرکاٰء اپنی رائے دیں",
 	"when participant accepts": "جب شرکاء دعوت قبول کریں",
 	"share": "شئیر",
@@ -616,5 +616,11 @@
 	"copy": "کاپی",
 	"notification settings": "سیٹنگ کے لئے نوٹیفکیشن",
 	"get a free bible": "اپنے فون ٹیبلٹ اور کمپیوٹر کے لئے مفت بائبل حاصل کریں۔",
-	"download the bible": "بائبل ایپ ڈاؤن لاڈ کریں"
+	"download the bible": "بائبل ایپ ڈاؤن لاڈ کریں",
+	"my year": "My Year in the Bible App",
+	"view snapshot": "To View Your Snapshot",
+	"view my snapshot": "View My Snapshot",
+	"hi name": "Hi, {name}",
+	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt"
 }

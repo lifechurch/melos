@@ -492,7 +492,7 @@
 	"Auth.continue facebook": "Facebook এর সাথে এগিয়ে যান",
 	"Auth.have an account": "ইতিমধ্যে কি একটি একাউন্ট রয়েছে?",
 	"Auth.sign up alternate": "ইতিমধ্যে কি একটি একাউন্ট রয়েছে? <a href='{sign_in_path}' target='_self'>সাইন ইন</a>",
-	"Auth.plan blurb": "দেখে মনে হচ্ছে আপনি একটি পাঠ পরিকল্পনা শুরু করতে চান। স্মার্ট! বাইবেলকে আপনার প্রতিদিনের জীবনের একটি অংশ করতে এই পরিকল্পনাগুলি আপনাকে সাহায্য করবে। সাইন ইন করুন অথবা নীম্নে একটি নতুন একাউন্ট খুলুন এবং এখনই শুরু করুন!",
+	"Auth.plan blurb": "দেখে মনে হচ্ছে আপনি একটি পাঠ পরিকল্পনা শুরু করতে চান। স্মার্ট! বাইবেলকে আপনার প্রতিদিনের জীবনের একটি অংশ করতে এই পরিকল্পনাগুলি আপনাকে সাহায্য করবে। সাইন ইন করুন অথবা নীম্নে একটি নতুন একাউন্ট ���ুলুন এবং এখনই শুরু করুন!",
 	"Auth.bookmark blurb": "মনে হচ্ছে আপনি বুকমার্ক ব্যবহার করতে চাচ্ছেন? দারুন! বুকমার্ক আপনাকে সাহায্য করে সেই পদগুলি মনে রাখতে যেগুলি আপনি মুখস্থ করতে, শেয়ার করতে অথবা প্রিয়পদ হিসাবে মনে রাখতে চান। সাইন ইন করুন অথবা নীম্নে একটি নতুন একাউন্ট খুলুন এবং এখনই শুরু করুন!",
 	"Auth.friends blurb": "মনে হচ্ছে আপনি বন্ধুদের সাথে সম্পর্কযুক্ত হতে চান? ভাল চিন্তা! আপনি আপনার শিক্ষাগুলি শেয়ার করতে এবং একে অপরকে বাক্য পাঠের লক্ষ্য পূরণে সাহায্য করতে পারবেন। নিম্নে সাইন ইন করুন অথবা একটি একাউন্ট খুলে এখনই শুরু করুন!",
 	"Auth.share blurb": "It looks like you want to share Scripture. Wonderful! You'll be able to share verses via Facebook or Twitter. Sign in or create an account below and get started!",
@@ -616,5 +616,11 @@
 	"copy": "Copy",
 	"notification settings": "Notification Settings",
 	"get a free bible": "Get a free Bible for your phone, tablet, and computer.",
-	"download the bible": "Download the Bible App"
+	"download the bible": "Download the Bible App",
+	"my year": "My Year in the Bible App",
+	"view snapshot": "To View Your Snapshot",
+	"view my snapshot": "View My Snapshot",
+	"hi name": "Hi, {name}",
+	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt"
 }

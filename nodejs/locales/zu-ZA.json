@@ -608,5 +608,11 @@
 	"copy": "Kopisha ",
 	"notification settings": "AmaSetting ezaziso",
 	"get a free bible": "Thola iBhayibheli lamahhala lefowuni, nethebulethi kanye nekhompuyutha yakho.",
-	"download the bible": "Thola i-Bible App"
+	"download the bible": "Thola i-Bible App",
+	"my year": "Unyaka wami eni i-App yeBhayibheli",
+	"view snapshot": "To View Your Snapshot",
+	"view my snapshot": "View My Snapshot",
+	"hi name": "Hi, {name}",
+	"your snapshot": "Here's a snapshot of your year in the Bible App",
+	"user snapshot": "{year} Snapshot for Matt"
 }

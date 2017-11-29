@@ -136,6 +136,12 @@
 		"displayName": "Hrvatski"
 	},
 	{
+		"locale": "ig",
+		"locale2": "ig",
+		"locale3": "ibo",
+		"displayName": "IG"
+	},
+	{
 		"nativeName": "isiZulu",
 		"englishName": "Zulu",
 		"locale": "zu-ZA",
@@ -408,6 +414,14 @@
 		"locale2": "ta",
 		"locale3": "tam",
 		"displayName": "தமிழ்"
+	},
+	{
+		"nativeName": "ಕನ್ನಡ (India)",
+		"englishName": "Kannada (India)",
+		"locale": "kn-IN",
+		"locale2": "kn",
+		"locale3": "kan",
+		"displayName": "ಕನ್ನಡ (India)"
 	},
 	{
 		"nativeName": "മലയാളം",
