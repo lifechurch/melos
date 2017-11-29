@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { getUserById } from '@youversion/api-redux/lib/endpoints/users/reducer'
-
+import { FormattedMessage } from 'react-intl'
 
 class YearInReview extends Component {
 
@@ -18,12 +18,12 @@ class YearInReview extends Component {
 			imgSrc = `${nodeHost}/year-in-review/${userIdHash}/${user.response.id}/500?locale=${locale}`
 			introCopy = (
 				<div>
-					<h1>Hi, {user.response.name}</h1>
-					<h2>Here's a snapshot of your year in the Bible App</h2>
-					<div style={{width:"500px", height:"500px",background:"#eee",margin:"0 auto"}}>
+					<FormattedMessage tagName="h1" id="hi name" values={{name: user.response.name}} />
+					<FormattedMessage tagName="h2" id="your snapshot" />
+					<div className="year-in-review-img-container">
 						<img src={imgSrc} />
 					</div>
-					<a href="#">Share Your Snapshot</a>
+					<a href="#" className="year-in-review-share-link">Share Your Snapshot</a>
 				</div>
 			)
 		}
