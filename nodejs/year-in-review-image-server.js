@@ -1,3 +1,4 @@
+const fs = require('fs');
 const crypto = require('crypto');
 const express = require('express');
 const Canvas = require('canvas');
@@ -10,7 +11,7 @@ const Image = Canvas.Image;
 const Users = api.getClient('users');
 const Moments = api.getClient('moments');
 const router = express.Router();
-const displayFont = "Arial Unicode MS Bold";
+const displayFont = 'Arial Unicode MS Bold';
 
 global.Intl = require('intl');
 
@@ -40,7 +41,7 @@ class YiR {
 		this.fontSize = this.relativeFontSize();
 		this.fontStyle = `${this.fontSize}px ${displayFont}`;
 
-		this._canvas = new Canvas(size,size);
+		this._canvas = new Canvas(size, size);
 		this.ctx = this._canvas.getContext('2d');
 
 		this.colors = {
@@ -126,6 +127,9 @@ class YiR {
 	get avatarData() { return this._avatarData; }
 	set avatarData(d) { this._avatarData = d; }
 
+	get appLogo() { return this._appLogo; }
+	set appLogo(l) { this._appLogo = l; }
+
 	get momentData() { return this._momentData; }
 	set momentData(data) {
 		const defaults = {
@@ -145,6 +149,10 @@ class YiR {
 	render() {
 		const ctx = this.ctx;
 
+
+		ctx.antialias = 'subpixel';
+		ctx.patternQuality = 'bilinear';
+		ctx.filter = 'bilinear';
 		ctx.fillStyle = this.colors.lightGrey;
 		ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -306,16 +314,22 @@ class YiR {
 		// Draw 2017 text in small bubble
 		const fontSize2017 = this.relativeFontSize() / 2.2;
 		ctx.font = `${fontSize2017}px ${displayFont}`;
-		ctx.fillText(new Intl.DateTimeFormat('en-US', { year: 'numeric' }).format(1511908459070), this.relativeX(0.78), (this.relativeY(0.64) + (fontSize2017 / 2.5)));
+		ctx.fillText(new Intl.DateTimeFormat(this.locale, { year: 'numeric' }).format(1511908459070), this.relativeX(0.78), (this.relativeY(0.64) + (fontSize2017 / 2.5)));
 
 		// Draw heading text
 		ctx.font = `${this.relativeFontSize() * 0.95}px ${displayFont}`;
 		ctx.fillStyle = '#066261';
-		ctx.fillText( this.translate('my year'), this.relativeX(0.5), this.relativeY(0.1));
+		ctx.fillText(this.translate('my year'), this.relativeX(0.5), this.relativeY(0.1));
 
-		ctx.font = `15px ${displayFont}`;
-		ctx.textAlign = 'left';
-		ctx.fillText(`Locale: ${this.locale}`, 10, 10);
+
+		// Draw bottom link text
+		ctx.font = `${this.relativeFontSize() * 0.65}px ${displayFont}`;
+		ctx.fillStyle = '#616161';
+		ctx.fillText('Bible.com/app', this.relativeX(0.53), this.relativeY(0.94));
+
+		let img = new Image;
+				img.src = this.appLogo;
+		ctx.drawImage(img, Math.round(this.relativeX(0.33)), Math.round(this.relativeY(0.895)), Math.round(this.relativeW(0.07)), Math.round(this.relativeH(0.07)));
 
 	}
 
@@ -500,7 +514,7 @@ class AvatarImage {
 
 }
 
-function isHashVerified(hashToVerify, userId) {
+function isHashValid(hashToVerify, userId) {
 	const secret = process.env.YIR_SHA1_SECRET_KEY || 'SECRET';
 	const algo = 'sha1';
 	const hmac = crypto.createHmac(algo, secret);
@@ -508,20 +522,38 @@ function isHashVerified(hashToVerify, userId) {
 	return hashToVerify === hmac.digest('hex');
 }
 
+function isSizeValid(size) {
+	if (size < 100) return false;
+	if (size > 4000) return false;
+	if (size % 100 !== 0) return false;
+
+	return true;
+}
 
 //https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
 router.get('/year-in-review/:user_id_hash/:user_id/:size', (req, res) => {
-	if (!isHashVerified(req.params.user_id_hash, req.params.user_id)) {
-		res.status(404).send('Not found');
-	} else {
-		const fromDate = '2017-01-01';
-		const toDate = '2017-12-31';
-		const userId = req.params.user_id;
-		const imageSize = parseInt(req.params.size, 10);
-		const graphic = new YiR(imageSize);
-		const locale = req.query.locale || 'en-US';
-		let avatar;
+	const fromDate = '2017-01-01';
+	const toDate = '2017-12-31';
+	const userId = req.params.user_id;
+	const imageSize = parseInt(req.params.size, 10);
+	const locale = req.query.locale || 'en-US';
+	let avatar;
+	let appLogo;
 
+	if (!isHashValid(req.params.user_id_hash, req.params.user_id)) {
+		res.status(404).send('Not found');
+	}
+
+	if (!isSizeValid(imageSize)) {
+		res.status(404).send('Not found');
+	}
+
+	fs.readFile(__dirname + '/images/BibleAppLogo.png', function(err, logo) {
+		if (err) throw err;
+
+		const graphic = new YiR(imageSize);
+
+		graphic.appLogo = logo;
 		graphic.locale = locale;
 		graphic.localeData = getLocale({
 			localeFromUrl: locale, localeFromCookie: null, localeFromUser: null, acceptLangHeader: null
@@ -552,7 +584,7 @@ router.get('/year-in-review/:user_id_hash/:user_id/:size', (req, res) => {
 				graphic.canvas.pngStream().pipe(res);
 			})
 		})
-	}
+	});
 })
 
 module.exports = router;
