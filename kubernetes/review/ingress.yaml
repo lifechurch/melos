@@ -14,6 +14,7 @@ spec:
     - $CI_ENVIRONMENT_HOSTNAME
     - events-$CI_ENVIRONMENT_HOSTNAME
     - nodejs-$CI_ENVIRONMENT_HOSTNAME
+    - eoy-images-staging.bible.com
     secretName: ssl
   rules:
   - host: $CI_ENVIRONMENT_HOSTNAME
