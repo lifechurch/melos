@@ -70,17 +70,19 @@ class ParticipantsView extends Component {
 	deleteParticipant = () => {
 		const { dispatch, auth, params: { together_id }, subscriptions } = this.props
 		const { userToDelete } = this.state
-		dispatch(plansAPI.actions.participant.delete(
-			{
-				id: together_id,
-				userid: userToDelete,
-			}, {
-				auth: true,
-			}
-		)).then(() => {
-			// remove subscription from state for authed user
-			this.modal.handleClose()
-			if (auth.userData.userid === userToDelete) {
+		// if the host is removing themself, do a delete call and then remove the sub
+		// from the list
+		if (auth.userData.userid === userToDelete) {
+			dispatch(plansAPI.actions.participant.delete(
+				{
+					id: together_id,
+					userid: userToDelete,
+				}, {
+					auth: true,
+				}
+			)).then(() => {
+				// remove subscription from state for authed user
+				this.modal.handleClose()
 				let idToDelete
 				Object.keys(subscriptions.byId).forEach((id) => {
 					const sub = subscriptions.byId[id]
@@ -92,8 +94,23 @@ class ParticipantsView extends Component {
 				dispatch(push(Routes.subscriptions({
 					username: auth.userData.username
 				})))
-			}
-		})
+			})
+		} else {
+		// else host is removing someone else, we want to kick them
+			dispatch(plansAPI.actions.participant.put(
+				{
+					id: together_id,
+					userid: userToDelete,
+				}, {
+					body: {
+						status: 'kicked'
+					},
+					auth: true,
+				}
+			)).then(() => {
+				this.modal.handleClose()
+			})
+		}
 	}
 
 	openDelete = (userid) => {
