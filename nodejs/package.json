@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/api-redux": "0.4.17",
+    "@youversion/api-redux": "0.4.18",
     "@youversion/js-api": "^1.0.9",
     "@youversion/melos": "0.0.7",
     "@youversion/stringer-things": "0.0.1",
