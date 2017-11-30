@@ -113,5 +113,10 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: SECURE_HOSTNAME
+          - name: YIR_SHA1_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: YIR_SHA1_SECRET_KEY
       imagePullSecrets:
         - name: gitlab-registry
