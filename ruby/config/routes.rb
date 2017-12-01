@@ -66,6 +66,7 @@ YouversionWeb::Application.routes.draw do
   get "/lapset",    to: "redirects#lasten"
   get "/fi/lapset", to: "redirects#lasten"
   get "/barn",        to: "redirects#barn"
+  get "/huuhduud",        to: "redirects#huuhduud"
   get "/hk/kids",     to: "redirects#hk_kids"
   get "/ua/kids",     to: "redirects#ua_kids"
   get "/paidia",			to: "redirects#paidia"
