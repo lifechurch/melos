@@ -392,6 +392,14 @@
 		"displayName": "नेपाली"
 	},
 	{
+		"nativeName": "मराठी",
+		"englishName": "Marathi",
+		"locale": "mr-IN",
+		"locale2": "mr",
+		"locale3": "mar",
+		"displayName": "मराठी"
+	},
+	{
 		"nativeName": "हिन्दी",
 		"englishName": "Hindi",
 		"locale": "hi-IN",

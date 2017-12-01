@@ -172,7 +172,7 @@
 	"plans.back": "Буцах",
 	"plans.length field": "Тѳлѳвлѳгѳѳний хугацаа:",
 	"plans.view sample": "Тѳлѳвлѳгѳѳний загвар үзэх",
-	"plans.users subscribed": "{user_count} Хэрэглэгч Энэ Тѳлѳвлѳгѳѳг Уншиж Ба��на",
+	"plans.users subscribed": "{user_count} Хэрэглэгч Энэ Тѳлѳвлѳгѳѳг Уншиж Байна",
 	"plans.more info": "Дэлгэрэнгүй Мэдээлэл",
 	"plans.about this plan": "Энэ Тѳлѳвлѳгѳѳний талаар",
 	"plans.about the publisher": "Энэ Нийтлэгчийн талаар",
@@ -619,8 +619,8 @@
 	"download the bible": "Библи Апп Татаж Авах",
 	"my year": "My Year in the Bible App",
 	"view snapshot": "To View Your Snapshot",
-	"view my snapshot": "View My Snapshot",
-	"hi name": "Hi, {name}",
+	"view my snapshot": "Өөрийнхөө агшинг харах",
+	"hi name": "Сайн уу, {name}",
 	"your snapshot": "Here's a snapshot of your year in the Bible App",
-	"user snapshot": "{year} Snapshot for Matt"
+	"user snapshot": "{year} Snapshot for {user}"
 }

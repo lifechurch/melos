@@ -622,7 +622,7 @@
 	"view my snapshot": "View My Snapshot",
 	"hi name": "Hi, {name}",
 	"your snapshot": "Here's a snapshot of your year in the Bible App",
-	"user snapshot": "{year} Snapshot for Matt",
+	"user snapshot": "{year} Snapshot for {user}",
 	"moment.badge.earned.self.title": "You earned the <b>{title}</b> badge",
 	"moment.badge.earned.title": "{name} earned the <b>{title}</b> badge",
 	"moment.bible.download.self.title": "You downloaded the version, <b>{version}</b>",
