@@ -111,7 +111,8 @@ class YiR {
 				x: this.relativeX(0.305),
 				y: this.relativeY(0.595),
 				relX: 0.305,
-				relY: 0.595
+				relY: 0.595,
+				iconYShift: 0.02
 			}
 		}
 	}
