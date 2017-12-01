@@ -499,7 +499,7 @@
 	"Reader.read chapter": "Read full chapter",
 	"Reader.plan title": "Free Reading Plans and Devotionals",
 	"Reader.plan title ref": "與 {reference} 相關的免費讀經計劃和靈修短文",
-	"Reader.plan subtitle": "讀經計劃將你的聖經閱讀以每日容易完成的定量來分配。【計劃】通常包含了輔助性的靈修短文、音訊或視訊精選。無論你怎樣稱呼它，讀經計劃是經過證實能讓聖經自然而然地融入你日常生活的途徑。",
+	"Reader.plan subtitle": "讀經計劃將你的聖經閱讀以每日容易完成的定量來分配。【計劃】���常包含了輔助性的靈修短文、音訊或視訊精選。無論你怎樣稱呼它，讀經計劃是經過證實能讓聖經自然而然地融入你日常生活的途徑。",
 	"Reader.meta.mobile.title": "The Bible App",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Parallel",
@@ -614,5 +614,5 @@
 	"view my snapshot": "View My Snapshot",
 	"hi name": "Hi, {name}",
 	"your snapshot": "Here's a snapshot of your year in the Bible App",
-	"user snapshot": "{year} Snapshot for Matt"
+	"user snapshot": "{year} Snapshot for {user}"
 }
