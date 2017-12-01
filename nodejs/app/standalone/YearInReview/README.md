@@ -6,8 +6,24 @@
 
 
 #### Format and example:
-`http://{host}/year-in-review/{user-id-sha1-hex-hash}/{user-id}/{size}?locale={locale}`
-`http://localhost:3000/year-in-review/b3990f0dc47c81c7c1d5d6edd0b774d21f355991/9417/500?locale=en-GB`
+
+##### Default Snapshot
+
+This will return a generic image that is not customized for any user.
+
+`http://{host}/snapshot/default/{size}?locale={locale}`
+`http://localhost:3000/snapshot/default/500?locale=en-GB`
+
+* `host` - proper host name for the requested environment
+* `size` - the size of image you want.  The image is square so a `size` of 500 is a 500x500px PNG image.
+* `locale` - (Optional) the locale for translations in the image.  Default locale is `en`
+
+##### Snapshot for a User
+
+This will return a customized image for the requested user.
+
+`http://{host}/snapshot/{user-id-sha1-hex-hash}/{user-id}/{size}?locale={locale}`
+`http://localhost:3000/snapshot/b3990f0dc47c81c7c1d5d6edd0b774d21f355991/9417/500?locale=en-GB`
 
 * `host` - proper host name for the requested environment
 * `user-id-sha1-hex-hash` - a hash of the `user-id` using SHA-1 in hexadecimal (see below)
