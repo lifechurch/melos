@@ -242,6 +242,8 @@ YouversionWeb::Application.routes.draw do
   get '/lookinside/:id' => 'plans#lookinside_view'
   get '/lookinside/:id/read/day/:day' => 'plans#lookinside_sample'
 
+  # Explore
+  get '/explore' => 'explore#index'
 
   # Reading Plans
   # Legacy links that need to be supported
