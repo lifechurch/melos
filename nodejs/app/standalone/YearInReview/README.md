@@ -1,4 +1,4 @@
-# Year In Review Feature
+# Snapshot Feature
 
 ## Requesting Images from the Image Server
 
@@ -23,13 +23,15 @@ This will return a generic image that is not customized for any user.
 This will return a customized image for the requested user.
 
 `http://{host}/snapshot/{user-id-sha1-hex-hash}/{user-id}/{size}?locale={locale}`  
-`http://localhost:3000/snapshot/b3990f0dc47c81c7c1d5d6edd0b774d21f355991/9417/500?locale=en-GB`  
+`http://localhost:3000/snapshot/b3990f0dc47c81c7c1d5d6edd0b774d21f355991/9417/500?locale=en-GB&year=2017`  
 
 * `host` - proper host name for the requested environment
 * `user-id-sha1-hex-hash` - a hash of the `user-id` using SHA-1 in hexadecimal (see below)
 * `user-id` - the user id being requested to generate the image for
 * `size` - the size of image you want.  The image is square so a `size` of 500 is a 500x500px PNG image.
-* `locale` - (Optional) the locale for translations in the image.  Default locale is `en`
+* `year` - specify the year for the desired Snapshot
+* `locale` - (Optional) the locale for translations in the image.  Locale will default to `en-US` if nothing is provided.
+
 
 
 #### SHA-1 Hash of User Id
