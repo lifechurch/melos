@@ -21,7 +21,7 @@ import { localizedLink } from '../lib/routeUtils'
 import Routes from '../lib/routes'
 
 
-class VOTDView extends Component {
+class ExploreView extends Component {
 	componentDidMount() {
 		const { moments, dispatch } = this.props
 		if (!(moments && moments.configuration)) {
@@ -60,7 +60,7 @@ class VOTDView extends Component {
 	}
 }
 
-VOTDView.propTypes = {
+ExploreView.propTypes = {
 	moments: PropTypes.object,
 	location: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string,
@@ -70,7 +70,7 @@ VOTDView.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 }
 
-VOTDView.defaultProps = {
+ExploreView.defaultProps = {
 	moments: null,
 	bible: null,
 	serverLanguageTag: 'en',
@@ -85,4 +85,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(injectIntl(VOTDView))
+export default connect(mapStateToProps, null)(injectIntl(ExploreView))
