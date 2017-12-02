@@ -4,14 +4,14 @@ import { Provider } from 'react-redux'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import createLogger from 'redux-logger'
 import ga from 'react-ga'
-import YearInReview from '../../features/YearInReview/components/YearInReview'
+import Snapshot from '../../features/Snapshot/components/Snapshot'
 import configureStore from './store'
 import defaultState from './defaultState'
 
 let initialState = defaultState
 
-if (typeof window !== 'undefined' && typeof window.YearInReview.__INITIAL_STATE__ !== 'undefined') {
-	initialState = window.YearInReview.__INITIAL_STATE__
+if (typeof window !== 'undefined' && typeof window.Snapshot.__INITIAL_STATE__ !== 'undefined') {
+	initialState = window.Snapshot.__INITIAL_STATE__
 }
 
 let logger = null
@@ -30,8 +30,8 @@ addLocaleData(window.__LOCALE__.data)
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<YearInReview />
+			<Snapshot />
 		</Provider>
 	</IntlProvider>,
-  document.getElementById('react-app-YearInReview')
+  document.getElementById('react-app-Snapshot')
 )

@@ -46,7 +46,7 @@ const clientConfig = {
 		Unsubscribe: './app/standalone/Unsubscribe/main.js',
 		Notifications: './app/standalone/Notifications/main.js',
 		VOTD: './app/standalone/VOTD/main.js',
-		YearInReview: './app/standalone/YearInReview/main.js'
+		Snapshot: './app/standalone/Snapshot/main.js'
 	},
 
 	output: {

@@ -7,7 +7,7 @@ import ButtonGroup from '../../../components/ButtonGroup'
 import { localizedLink } from '../../../lib/routeUtils'
 import Share from './Share'
 
-class YearInReview extends Component {
+class Snapshot extends Component {
 
 	constructor(props) {
 		super(props)
@@ -115,7 +115,7 @@ class YearInReview extends Component {
 	}
 }
 
-YearInReview.propTypes = {
+Snapshot.propTypes = {
 	user: PropTypes.object,
 	userIdHash: PropTypes.string,
 	nodeHost: PropTypes.string.isRequired,
@@ -123,7 +123,7 @@ YearInReview.propTypes = {
 	viewingMine: PropTypes.bool.isRequired
 }
 
-YearInReview.defaultProps = {
+Snapshot.defaultProps = {
 	user: null,
 	userIdHash: null
 }
@@ -138,4 +138,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(YearInReview)
+export default connect(mapStateToProps, null)(Snapshot)

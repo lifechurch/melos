@@ -115,7 +115,7 @@ class PagesController < ApplicationController
       
     end
 
-    results = YV::Nodestack::Fetcher.get('YearInReview', p, cookies, current_auth, current_user, request)
+    results = YV::Nodestack::Fetcher.get('Snapshot', p, cookies, current_auth, current_user, request)
 
     if results['error'].present?
       return render_404
