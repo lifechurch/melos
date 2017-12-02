@@ -1,3 +1,5 @@
+require 'openssl'
+
 class PagesController < ApplicationController
 
   before_filter :force_login, only: [:donate]
@@ -79,12 +81,39 @@ class PagesController < ApplicationController
   end
 
 
-  def year_in_review
-    p = {
-      "user_id" => User.find_id(params[:username]).user_id,
-      "languageTag" => I18n.locale.to_s,
-      "strings" => {}
-    }
+  def snapshot
+    user_id, user_id_hash = params[:user_id], params[:user_id_hash]
+
+    if current_user && (user_id.nil? && user_id_hash.nil?)
+      # on /snapshot and logged in, redirect to proper snapshot url
+      current_user_hash = build_snapshot_sha1_hash(current_user.id)
+      return redirect_to("/snapshot/#{current_user_hash}/#{current_user.id}?year=2017")
+    end
+    
+    if user_id && user_id_hash
+      # we're on /snapshot/:user_id_hash/:user_id?year=2017
+      unless validate_snapshot_sha1_hash(user_id,user_id_hash)
+        return render_404
+      end
+
+      p = {
+        "viewing_mine" => (current_user && current_user.id.to_s == user_id) ? true : false,
+        "user_id" => user_id,
+        "user_id_hash" => user_id_hash,
+        "languageTag" => I18n.locale.to_s,
+        "strings" => {}
+      }
+
+    else
+      # we're on /snapshot and not logged in.
+      p = {
+        "viewing_mine" => false,
+        "user_id" => nil,
+        "languageTag" => I18n.locale.to_s,
+        "strings" => {}
+      }
+      
+    end
 
     results = YV::Nodestack::Fetcher.get('YearInReview', p, cookies, current_auth, current_user, request)
 
@@ -99,6 +128,7 @@ class PagesController < ApplicationController
       js: add_node_assets(results['js']),
       css: add_node_assets(results['css'])
     }
+
   end
 
 
@@ -218,6 +248,16 @@ class PagesController < ApplicationController
     else
       send_file 'apple-app-site-association-staging', :filename => 'apple-app-site-association', :type => :json
     end
+  end
+
+
+
+  private def build_snapshot_sha1_hash(user_id)
+    OpenSSL::HMAC.hexdigest('sha1', ENV['YIR_SHA1_SECRET_KEY'], user_id.to_s)
+  end
+
+  private def validate_snapshot_sha1_hash(user_id,hash)
+    hash === OpenSSL::HMAC.hexdigest('sha1', ENV['YIR_SHA1_SECRET_KEY'], user_id.to_s)    
   end
 
 end

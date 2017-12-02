@@ -1,9 +1,7 @@
-@green-link-color: #066261;
-
-body.a_year_in_review {
+body.a_snapshot {
   background: #f2f2f2;
   h1, h2 {
-    color: @green-link-color;
+    color: #000;
     margin: 0 auto;
   }
   h1 {
@@ -14,17 +12,44 @@ body.a_year_in_review {
     font-size: 18px;
     width: 70%;
     margin-bottom: 1em;
+    font-weight: bold;  }
+
+  .snapshot-wrapper {
+    text-align: center;
   }
-  .year-in-review-share-link {
-    display: block;
-    color: @green-link-color;
-    font-weight: bold;
-    margin: 1.5em auto;
+
+  .snapshot-top-copy {
+    margin: 1.5em 0;
+  }
+
+  .snapshot-bottom-copy {
+    margin-top: 2.5em;
+
+    a {
+      color: #999;
+      padding: 1em;
+      line-height: 1em;
+      font-weight: bold;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+
+  .snapshot-sign-in-up {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 2em;
   }
 }
 
 @media @small-only {
-  .year-in-review-img-container {
+  .snapshot-img-container {
     width: 300px;
     height: 300px;
     padding: 9px;
@@ -32,15 +57,16 @@ body.a_year_in_review {
 }
 
 @media @medium-up {
-  .year-in-review-img-container {
+  .snapshot-img-container {
     width: 500px;
     height: 500px;
     padding: 11px;
   }
 }
 
-.year-in-review-img-container {
+.snapshot-img-container {
   background: #fff;
   margin: 0 auto;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
