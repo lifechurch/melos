@@ -211,9 +211,9 @@ class Snapshot {
 
 		// 2017 circle
 		this.drawCircle(
-			this.relativeX(0.78),
-			this.relativeY(0.64),
-			this.relativeCircleSize(0.065),
+			this.relativeX(0.80),
+			this.relativeY(0.65),
+			this.relativeCircleSize(0.097),
 			this.colors.grey
 		);
 
@@ -314,9 +314,9 @@ class Snapshot {
 		this.drawProfileImage();
 
 		// Draw 2017 text in small bubble
-		const fontSize2017 = this.relativeFontSize() / 2.2;
+		const fontSize2017 = this.relativeFontSize() * 0.70;
 		ctx.font = `${fontSize2017}px ${displayFont}`;
-		ctx.fillText(new Intl.DateTimeFormat(this.locale, { year: 'numeric' }).format(1511908459070), this.relativeX(0.78), (this.relativeY(0.64) + (fontSize2017 / 2.5)));
+		ctx.fillText(new Intl.DateTimeFormat(this.locale, { year: 'numeric' }).format(1511908459070), this.relativeX(0.80), (this.relativeY(0.65) + (fontSize2017 / 2.5)));
 
 		// Draw heading text
 		ctx.font = `bold ${this.relativeFontSize() * 0.95}px ${displayFont}`;
