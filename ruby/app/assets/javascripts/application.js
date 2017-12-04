@@ -128,9 +128,7 @@ function inPathNotFirst(segment, path) {
 
 var firebaseMessaging = false
 function init() {
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside || isTIORedirect || isNotifications || isVOTD || isExplore) {
-        angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
-    } else {
+    if (!(isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside || isTIORedirect || isNotifications || isVOTD || isExplore)) {
         angular.bootstrap(document, ['yv']);
     }
 

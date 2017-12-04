@@ -45,7 +45,8 @@ const clientConfig = {
 		Header: './app/standalone/Header/main.js',
 		Unsubscribe: './app/standalone/Unsubscribe/main.js',
 		Notifications: './app/standalone/Notifications/main.js',
-		VOTD: './app/standalone/VOTD/main.js'
+		VOTD: './app/standalone/VOTD/main.js',
+		Explore: './app/standalone/Explore/main.js'
 	},
 
 	output: {

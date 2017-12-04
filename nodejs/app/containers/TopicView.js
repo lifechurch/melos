@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import moment from 'moment'
 import Helmet from 'react-helmet'
+import exploreApi from '@youversion/api-redux/lib/endpoints/explore'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
@@ -10,19 +11,22 @@ import TopicList from '../features/Explore/TopicList'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
 
 
-class ExploreView extends Component {
+class TopicView extends Component {
 	componentDidMount() {
-		const { moments, dispatch } = this.props
+		const { moments, dispatch, routeParams } = this.props
+		dispatch(exploreApi.actions.topic.get({ topic: routeParams && routeParams.topic }))
 	}
 
 	render() {
-		const { location: { query }, moments, bible, intl, hosts, serverLanguageTag } = this.props
+		const { routeParams, moments, bible, intl, hosts, serverLanguageTag } = this.props
 
 
 		return (
 			<div>
 				<div style={{ width: '100%', marginBottom: '25px' }}>
-					<Heading1>Explore</Heading1>
+					<Heading1>
+						<FormattedMessage id={routeParams && routeParams.topic} />
+					</Heading1>
 				</div>
 				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0' }}>
 					{/* <Helmet
@@ -39,14 +43,7 @@ class ExploreView extends Component {
 							{ name: 'twitter:site', content: '@YouVersion' },
 						]}
 					/> */}
-					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
-						<Card>
-							<div style={{ marginBottom: '25px' }}>
-								<Heading2>What does the Bible say about...</Heading2>
-							</div>
-							<TopicList />
-						</Card>
-					</div>
+					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }} />
 					<ShareSheet />
 				</div>
 			</div>
@@ -54,9 +51,9 @@ class ExploreView extends Component {
 	}
 }
 
-ExploreView.propTypes = {
+TopicView.propTypes = {
 	moments: PropTypes.object,
-	location: PropTypes.object.isRequired,
+	routeParams: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string,
 	bible: PropTypes.object,
 	intl: PropTypes.object.isRequired,
@@ -64,7 +61,7 @@ ExploreView.propTypes = {
 	dispatch: PropTypes.func.isRequired,
 }
 
-ExploreView.defaultProps = {
+TopicView.defaultProps = {
 	moments: null,
 	bible: null,
 	serverLanguageTag: 'en',
@@ -77,4 +74,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(injectIntl(ExploreView))
+export default connect(mapStateToProps, null)(injectIntl(TopicView))

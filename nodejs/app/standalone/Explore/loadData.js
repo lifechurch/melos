@@ -1,8 +1,5 @@
 import moment from 'moment'
-import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
-import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
-import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
-import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import exploreApi from '@youversion/api-redux/lib/endpoints/explore'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 
@@ -23,11 +20,17 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const { dispatch } = store
 			const serverLanguageTag = params.languageTag
 			const version_id = getBibleVersionFromStorage(serverLanguageTag)
-			// const isVOTD = new RegExp('^\/verse-of-the-day')
-			// if (isVOTD.test(params.url)) {
-			//
-			// }
-			resolve()
+			const isTopic = new RegExp('^\/explore/[0-9a-zA-Z-]+')
+			const isExplore = new RegExp('^\/explore')
+			if (isTopic.test(params.url)) {
+				dispatch(exploreApi.actions.topic.get({ topic: params.topic })).then(() => {
+					resolve()
+				}).catch(() => { resolve() })
+			} else if (isExplore.test(params.url)) {
+				dispatch(exploreApi.actions.topics.get()).then(() => {
+					resolve()
+				}).catch(() => { resolve() })
+			}
 		} else {
 			resolve()
 		}

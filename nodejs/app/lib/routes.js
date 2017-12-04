@@ -280,6 +280,25 @@ const Routes = {
 		})
 
 		return route.get()
-	}
+	},
+	// explore
+	explore: ({ query = null, serverLanguageTag = null }) => {
+		const route = new Route({
+			path: '/explore',
+			query,
+			serverLanguageTag,
+		})
+
+		return route.get()
+	},
+	exploreTopic: ({ topic, query = null, serverLanguageTag = null }) => {
+		const route = new Route({
+			path: `/explore/${topic}`,
+			query,
+			serverLanguageTag,
+		})
+
+		return route.get()
+	},
 }
 export default Routes
