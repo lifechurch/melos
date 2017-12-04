@@ -1,16 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
+import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import shareAction from '../../../../widgets/ShareSheet/action'
-import {
-	getBibleVersionFromStorage,
-	chapterifyUsfm,
-	parseVerseFromContent
-} from '../../../../lib/readerUtils'
-import { getReferencesTitle } from '../../../../lib/usfmUtils'
 import Routes from '../../../../lib/routes'
 import Like from '../../../../components/Like'
 import ShareIcon from '../../../../components/icons/ShareIcon'

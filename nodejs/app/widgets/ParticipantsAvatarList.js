@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
+import hasUserCompletedActivity from '@youversion/utils/lib/readingPlans/hasUserCompletedActivity'
 // actions
 import participantsView from '@youversion/api-redux/lib/batchedActions/participantsUsersView'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
@@ -13,7 +14,6 @@ import User from '../components/User'
 import CheckMark from '../components/CheckMark'
 // utils
 import Routes from '../lib/routes'
-import { hasUserCompletedActivity } from '../lib/readingPlanUtils'
 
 
 const MAX_AVATARS = 5

@@ -58,6 +58,10 @@ module YV
 
         if tp_token.present?
           cookies.permanent.signed[:t] = tp_token
+        else
+          # set auth type to email
+          # google and facebook are set in tp_sign_in
+          cookies[:auth_type] = 'email'
         end
 
         if tp_id.present?

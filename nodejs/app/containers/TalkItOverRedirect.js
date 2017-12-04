@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
+import mapTioIndices from '@youversion/utils/lib/readingPlans/mapTIOIndices'
 // actions
 import subscriptionData from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 // models
@@ -10,7 +11,6 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 // selectors
 // utils
 import Routes from '../lib/routes'
-import { mapTioIndices } from '../lib/readingPlanUtils'
 // components
 
 

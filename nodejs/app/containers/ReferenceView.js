@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import rtlDetect from 'rtl-detect'
 import Immutable from 'immutable'
-import { isVerseOrChapter } from '../lib/readerUtils'
+import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
 import Passage from '../features/Passage/components/Passage'
 import Bible from '../features/Bible/components/Bible'
 

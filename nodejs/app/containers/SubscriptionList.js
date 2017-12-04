@@ -13,7 +13,7 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import { getTogetherInvitations, getParticipantsUsers } from '@youversion/api-redux/lib/models'
 // utils
 import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
-import { selectImageFromList } from '../lib/imageUtil'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import Routes from '../lib/routes'
 // components
 import List from '../components/List'

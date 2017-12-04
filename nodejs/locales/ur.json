@@ -196,7 +196,7 @@
 	"plans.next": "اگلا",
 	"plans.finish": "Finish",
 	"plans.reading completed _ mark and show next": "Next: {next_reference}",
-	"plans.done reading": "مکمل ہو گیا",
+	"plans.done reading": "مک��ل ہو گیا",
 	"plans.no verses": "No verses for today",
 	"plans.no content": "Your plan has no scheduled scripture readings for this day, so it has been marked as completed.",
 	"plans.read today": "This day’s reading",
@@ -619,7 +619,8 @@
 	"download the bible": "بائبل ایپ ڈاؤن لاڈ کریں",
 	"my year": "My Year in the Bible App",
 	"view snapshot": "To View Your Snapshot",
+	"view my snapshot": "View My Snapshot",
 	"hi name": "Hi, {name}",
 	"your snapshot": "Here's a snapshot of your year in the Bible App",
-	"user snapshot": "{year} Snapshot for Matt"
+	"user snapshot": "{year} Snapshot for {user}"
 }

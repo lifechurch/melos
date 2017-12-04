@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import Heading from '@youversion/react-components/dist/typography/Heading1'
-import SectionedLayout from '@youversion/react-components/dist/layouts/SectionedLayout'
+import Heading from '@youversion/melos/dist/components/typography/Heading1'
+import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
+import hasUserCompletedActivity from '@youversion/utils/lib/readingPlans/hasUserCompletedActivity'
 import XMark from '../../../components/XMark'
 import CheckMark from '../../../components/CheckMark'
 import LazyImage from '../../../components/LazyImage'
@@ -9,7 +10,6 @@ import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
 import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
 import Routes from '../../../lib/routes'
-import { hasUserCompletedActivity } from '../../../lib/readingPlanUtils'
 
 
 function renderUser(friend, handleDelete = null, complete = null) {

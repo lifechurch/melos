@@ -5,7 +5,7 @@ import plansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action
 import { getAllQueueItems } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
-import { selectImageFromList } from '../lib/imageUtil'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import Routes from '../lib/routes'
 import List from '../components/List'
 import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'

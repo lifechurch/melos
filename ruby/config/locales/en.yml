@@ -2172,6 +2172,7 @@ en:
     download the bible:                         "Download the Bible App"
     my year:                                    "My Year in the Bible App"
     view snapshot:                              "To View Your Snapshot"
+    view my snapshot:                           "View My Snapshot"
     hi name:                                    "Hi, %{name}"
     your snapshot:                              "Here's a snapshot of your year in the Bible App"
-    user snapshot:                              "%{year} Snapshot for Matt"
+    user snapshot:                              "%{year} Snapshot for %{user}"

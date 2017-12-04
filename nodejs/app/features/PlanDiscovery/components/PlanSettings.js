@@ -7,12 +7,12 @@ import Toggle from 'react-toggle-button'
 import deleteSub from '@youversion/api-redux/lib/batchedActions/deleteSub'
 import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
+import getCurrentDT from '@youversion/utils/lib/time/getCurrentDT'
 import ProgressBar from '../../../components/ProgressBar'
 import ShareLink from '../../../components/ShareLink'
 import PlanStartString from './PlanStartString'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import Routes from '../../../lib/routes'
-import getCurrentDT from '../../../lib/getCurrentDT'
 
 
 class PlanSettings extends Component {

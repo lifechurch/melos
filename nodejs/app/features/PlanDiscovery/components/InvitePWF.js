@@ -1,8 +1,9 @@
 import React, { PropTypes, Component } from 'react'
 import { push } from 'react-router-redux'
 import { FormattedMessage } from 'react-intl'
-import Heading from '@youversion/react-components/dist/typography/Heading1'
-import SectionedLayout from '@youversion/react-components/dist/layouts/SectionedLayout'
+import Heading from '@youversion/melos/dist/components/typography/Heading1'
+import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import Footer from '../../../components/Footer'
 import ShareLink from '../../../components/ShareLink'
 import Search from '../../../components/Search'
@@ -12,7 +13,6 @@ import ClickTarget from '../../../components/ClickTarget'
 import List from '../../../components/List'
 import Routes from '../../../lib/routes'
 import LazyImage from '../../../components/LazyImage'
-import { selectImageFromList, PLAN_DEFAULT } from '../../../lib/imageUtil'
 
 
 class InvitePWF extends Component {

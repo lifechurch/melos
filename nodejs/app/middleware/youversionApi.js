@@ -98,6 +98,15 @@ export default store => {
 
 			const validator = api_call.validator
 
+			// fire off prefetch if passed
+			if (action.prefetch) {
+				if (typeof action.prefetch === 'object') {
+					next(action.prefetch)
+				} else if (typeof action.prefetch === 'function') {
+					action.prefetch(store.dispatch, store.getState)
+				}
+			}
+
 			next(getRequestAction(requestType, action))
 
 			const client = getClient(endpoint)
@@ -140,7 +149,7 @@ export default store => {
 				} else {
 					if (Raven && !response.__validation.isValid) {
 						// Somehow, we got back an invalid response from the API
-						//  that wasn't a typical error response
+						// that wasn't a typical error response
 						Raven.captureMessage(`Invalid API Response: ${endpoint}/${method}. ${response.__validation.reason}`, {
 							extra: {
 								api_call,

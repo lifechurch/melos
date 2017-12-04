@@ -1,4 +1,4 @@
-import { isVerseOrChapter } from '../readerUtils';
+import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
 
 
 const verseUSFMs = [

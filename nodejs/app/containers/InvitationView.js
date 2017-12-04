@@ -12,7 +12,7 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 // utils
-import { selectImageFromList } from '../lib/imageUtil'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import Routes from '../lib/routes'
 // components
 import TogetherInvitation from '../features/PlanDiscovery/components/TogetherInvitation'
