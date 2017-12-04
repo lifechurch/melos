@@ -4,7 +4,7 @@ const express = require('express');
 const Canvas = require('canvas');
 const canvg = require('canvg');
 const Promise = require('bluebird');
-const http = require('http');
+const request = require('request');
 const api = require('@youversion/js-api');
 const getLocale = require('./app/lib/langUtils').getLocale;
 
@@ -485,7 +485,8 @@ class AvatarImage {
 		if (this.hasAvatar()) {
 			const url = `http:${this.userData.user_avatar_url.px_512x512}`
 
-			http.get(url, (response) => {
+			request.get(url)
+			.on('response', (response) => {
 				response.on('data', (chunk) => {
 					data.push(chunk);
 				});
@@ -493,6 +494,7 @@ class AvatarImage {
 					cb(Buffer.concat(data));
 				});
 			});
+
 		} else if (this.isDefault()) {
 			const svgString = '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.09 50.03"><defs><style>.cls-1{fill:#f2f2f2;}</style></defs><title>me</title><path class="cls-1" d="M24.87,48.86a24,24,0,1,1,24-24A24,24,0,0,1,24.87,48.86Z"/><path d="M24.83,14.91a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM16.05,31.57q1.14-3.71,9.32-3.71t9.32,3.71a1,1,0,0,1-1,1.29H17a1,1,0,0,1-1-1.29Z"/><path class="cls-1" d="M24.87.86a24,24,0,1,0,24,24A24,24,0,0,0,24.87.86Zm0,14a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM34,32.82a1,1,0,0,1-.29,0H17a1,1,0,0,1-1-1.29q1.14-3.71,9.32-3.71t9.32,3.71A1,1,0,0,1,34,32.82Z"/><path d="M21.41,22.44a4.13,4.13,0,0,0,8.14,0l.38-2.56a4.48,4.48,0,1,0-8.91,0Z"/><path d="M25.37,27.86q-8.18,0-9.32,3.71a1,1,0,0,0,1,1.29H33.73a1,1,0,0,0,1-1.29Q33.55,27.86,25.37,27.86Z"/></svg>';
 			const w = this.graphicSize * 0.30;
