@@ -12,7 +12,7 @@ const Image = Canvas.Image;
 const Users = api.getClient('users');
 const Moments = api.getClient('moments');
 const router = express.Router();
-const displayFont = 'Arial Unicode MS Bold';
+const displayFont = 'Arial Unicode MS';
 
 global.Intl = require('intl');
 
@@ -319,7 +319,7 @@ class Snapshot {
 		ctx.fillText(new Intl.DateTimeFormat(this.locale, { year: 'numeric' }).format(1511908459070), this.relativeX(0.78), (this.relativeY(0.64) + (fontSize2017 / 2.5)));
 
 		// Draw heading text
-		ctx.font = `${this.relativeFontSize() * 0.95}px ${displayFont}`;
+		ctx.font = `bold ${this.relativeFontSize() * 0.95}px ${displayFont}`;
 		ctx.fillStyle = '#000000';
 		ctx.fillText(this.translate('my year'), this.relativeX(0.5), this.relativeY(0.1));
 
