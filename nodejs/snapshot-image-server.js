@@ -455,6 +455,10 @@ class AvatarImage {
 		this.userData = userData;
 	}
 
+	get graphicSize() { return this._graphicSize; }
+	set graphicSize(s) { this._graphicSize = s; }
+
+
 	hasAvatar() {
 		return this.userData.has_avatar;
 	}
@@ -491,8 +495,8 @@ class AvatarImage {
 			});
 		} else if (this.isDefault()) {
 			const svgString = '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.09 50.03"><defs><style>.cls-1{fill:#f2f2f2;}</style></defs><title>me</title><path class="cls-1" d="M24.87,48.86a24,24,0,1,1,24-24A24,24,0,0,1,24.87,48.86Z"/><path d="M24.83,14.91a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM16.05,31.57q1.14-3.71,9.32-3.71t9.32,3.71a1,1,0,0,1-1,1.29H17a1,1,0,0,1-1-1.29Z"/><path class="cls-1" d="M24.87.86a24,24,0,1,0,24,24A24,24,0,0,0,24.87.86Zm0,14a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM34,32.82a1,1,0,0,1-.29,0H17a1,1,0,0,1-1-1.29q1.14-3.71,9.32-3.71t9.32,3.71A1,1,0,0,1,34,32.82Z"/><path d="M21.41,22.44a4.13,4.13,0,0,0,8.14,0l.38-2.56a4.48,4.48,0,1,0-8.91,0Z"/><path d="M25.37,27.86q-8.18,0-9.32,3.71a1,1,0,0,0,1,1.29H33.73a1,1,0,0,0,1-1.29Q33.55,27.86,25.37,27.86Z"/></svg>';
-			const w = 512;
-			const h = 512;
+			const w = this.graphicSize * 0.30;
+			const h = this.graphicSize * 0.30;
 			const canvas = new Canvas(w, h);
 
 			canvg(canvas, svgString, { ignoreMouse: true, ignoreAnimation: true, ImageClass: Image });
@@ -545,8 +549,29 @@ function isSizeValid(size) {
 	return true;
 }
 
+function getLogoSize(graphicSize) {
+	let logoSize;
+	switch (true) {
+		case graphicSize <= 500:
+			logoSize = 48
+			break
+		case graphicSize <= 1500:
+			logoSize = 120
+			break
+		case graphicSize <= 2500:
+			logoSize = 200
+			break
+		case graphicSize <= 4000:
+			logoSize = 512
+			break
+	}
+	return logoSize;
+}
+
+
 router.get('/snapshot/default/:size', (req,res) => {
 	const imageSize = parseInt(req.params.size, 10);
+	const logoSize = getLogoSize(imageSize);
 	const locale = req.query.locale || 'en-US';
 	let avatar;
 
@@ -554,7 +579,7 @@ router.get('/snapshot/default/:size', (req,res) => {
 		res.status(404).send('Not found');
 	}
 
-	fs.readFile(__dirname + '/images/BibleAppLogo.png', function(err, logo) {
+	fs.readFile(__dirname + `/images/BibleAppLogo-${logoSize}.png`, function(err, logo) {
 		if (err) throw err;
 
 		const graphic = new Snapshot(imageSize);
@@ -567,6 +592,7 @@ router.get('/snapshot/default/:size', (req,res) => {
 
 		graphic.momentData = {}; // blank data
 		avatar = new AvatarImage({default: true});
+		avatar.graphicSize = imageSize;
 		avatar.load((data) => {
 			graphic.avatarData = data;
 
@@ -586,6 +612,7 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 	const toDate = '2017-12-31';
 	const userId = req.params.user_id;
 	const imageSize = parseInt(req.params.size, 10);
+	const logoSize = getLogoSize(imageSize);
 	const locale = req.query.locale || 'en-US';
 	let avatar;
 
@@ -597,7 +624,7 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 		res.status(404).send('Not found');
 	}
 
-	fs.readFile(__dirname + '/images/BibleAppLogo.png', function(err, logo) {
+	fs.readFile(__dirname + `/images/BibleAppLogo-${logoSize}.png`, function(err, logo) {
 		if (err) throw err;
 
 		const graphic = new Snapshot(imageSize);
@@ -625,6 +652,7 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 
 			graphic.momentData = momentData;
 			avatar = new AvatarImage(userData);
+			avatar.graphicSize = imageSize;
 			avatar.load((data) => {
 				graphic.avatarData = data;
 
