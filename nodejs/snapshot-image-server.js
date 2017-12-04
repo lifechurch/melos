@@ -329,8 +329,8 @@ class Snapshot {
 		ctx.fillStyle = '#616161';
 		ctx.fillText('Bible.com/app', this.relativeX(0.53), this.relativeY(0.94));
 
-		let img = new Image;
-				img.src = this.appLogo;
+		const img = new Image();
+		img.src = this.appLogo;
 		ctx.drawImage(img, Math.round(this.relativeX(0.33)), Math.round(this.relativeY(0.895)), Math.round(this.relativeW(0.07)), Math.round(this.relativeH(0.07)));
 
 	}
@@ -507,7 +507,7 @@ class AvatarImage {
 		}
 	}
 
-	renderInitials( ) {
+	renderInitials() {
 		const canvas = new Canvas(512, 512); // same size as large avatar
 		const ctx = canvas.getContext('2d');
 
@@ -569,7 +569,7 @@ function getLogoSize(graphicSize) {
 }
 
 
-router.get('/snapshot/default/:size', (req,res) => {
+router.get('/snapshot/default/:size', (req, res) => {
 	const imageSize = parseInt(req.params.size, 10);
 	const logoSize = getLogoSize(imageSize);
 	const locale = req.query.locale || 'en-US';
@@ -579,7 +579,7 @@ router.get('/snapshot/default/:size', (req,res) => {
 		res.status(404).send('Not found');
 	}
 
-	fs.readFile(__dirname + `/images/BibleAppLogo-${logoSize}.png`, function(err, logo) {
+	fs.readFile(`${__dirname}/images/BibleAppLogo-${logoSize}.png`, (err, logo) => {
 		if (err) throw err;
 
 		const graphic = new Snapshot(imageSize);
@@ -591,7 +591,7 @@ router.get('/snapshot/default/:size', (req,res) => {
 		})
 
 		graphic.momentData = {}; // blank data
-		avatar = new AvatarImage({default: true});
+		avatar = new AvatarImage({ default: true });
 		avatar.graphicSize = imageSize;
 		avatar.load((data) => {
 			graphic.avatarData = data;
@@ -606,7 +606,7 @@ router.get('/snapshot/default/:size', (req,res) => {
 })
 
 
-//https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
+// https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
 router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 	const fromDate = '2017-01-01';
 	const toDate = '2017-12-31';
@@ -624,7 +624,7 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 		res.status(404).send('Not found');
 	}
 
-	fs.readFile(__dirname + `/images/BibleAppLogo-${logoSize}.png`, function(err, logo) {
+	fs.readFile(`${__dirname}/images/BibleAppLogo-${logoSize}.png`, (err, logo) => {
 		if (err) throw err;
 
 		const graphic = new Snapshot(imageSize);
@@ -636,12 +636,12 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 		})
 
 		const userPromise = Users.call('view')
-		.setEnvironment('staging')
+		.setEnvironment(process.env.NODE_ENV)
 		.params({ id: userId })
 		.get()
 
 		const momentPromise = Moments.call('summary')
-		.setEnvironment('staging')
+		.setEnvironment(process.env.NODE_ENV)
 		.params({ user_id: userId, from_date: fromDate, to_date: toDate })
 		.get()
 
