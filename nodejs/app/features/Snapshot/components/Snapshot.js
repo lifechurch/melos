@@ -67,7 +67,7 @@ class Snapshot extends Component {
 		} else {
 			topCopy = (
 				<div className="snapshot-top-copy">
-					<FormattedMessage tagName="h1" id="user snapshot" values={{year: "2017", name: user.response.first_name}} />
+					<FormattedMessage tagName="h1" id="user snapshot" values={{year: "2017", user: user.response.first_name}} />
 				</div>
 			)
 
@@ -80,7 +80,7 @@ class Snapshot extends Component {
 					</li>
 					<li>
 						<a target="_self" href={localizedLink("/snapshot",locale)}>
-							View My Snapshot
+							<FormattedMessage id="view my snapshot" />
 						</a>
 					</li>
 				</ul>
