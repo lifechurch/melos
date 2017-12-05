@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 import users from '@youversion/api-redux/lib/endpoints/users/reducer'
+import shareData from '../../widgets/ShareSheet/reducer'
 
 const emptyReducer = (state = {}) => { return state }
 
@@ -29,7 +30,8 @@ const rootReducer = combineReducers({
 	nodeHost: emptyReducer,
 	api: combineReducers({
 		users,
-	})
+	}),
+	shareData,
 })
 
 export default rootReducer
