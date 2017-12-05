@@ -14,7 +14,41 @@ const Moments = api.getClient('moments');
 const router = express.Router();
 const displayFont = 'Arial Unicode MS';
 
+
 global.Intl = require('intl');
+
+// Optimization for readFile
+// Load logos upon server startup and apply them as needed at request time
+// instead of reading the file on each request
+
+const appLogos = {};
+const appLogoSizes = [48, 120, 200, 512];
+
+appLogoSizes.forEach((size) => {
+	fs.readFile(`${__dirname}/images/BibleAppLogo-${size}.png`, (err, logo) => {
+		appLogos[size] = logo;
+	})
+});
+
+function getLogo(graphicSize) {
+	switch (true) {
+		case graphicSize <= 500:
+			return appLogos[48]
+
+		case graphicSize <= 1500:
+			return appLogos[120]
+
+		case graphicSize <= 2500:
+			return appLogos[200]
+
+		case graphicSize <= 4000:
+			return appLogos[512]
+
+		default:
+			return appLogos[512]
+	}
+}
+
 
 class Icon {
 	constructor(svgString, w, h, data = null) {
@@ -551,59 +585,32 @@ function isSizeValid(size) {
 	return true;
 }
 
-function getLogoSize(graphicSize) {
-	let logoSize;
-	switch (true) {
-		case graphicSize <= 500:
-			logoSize = 48
-			break
-		case graphicSize <= 1500:
-			logoSize = 120
-			break
-		case graphicSize <= 2500:
-			logoSize = 200
-			break
-		case graphicSize <= 4000:
-			logoSize = 512
-			break
-	}
-	return logoSize;
-}
-
-
 router.get('/snapshot/default/:size', (req, res) => {
 	const imageSize = parseInt(req.params.size, 10);
-	const logoSize = getLogoSize(imageSize);
+	const logo = getLogo(imageSize);
 	const locale = req.query.locale || 'en-US';
-	let avatar;
+	const avatar = new AvatarImage({ default: true });
 
 	if (!isSizeValid(imageSize)) {
 		res.status(404).send('Not found');
 	}
 
-	fs.readFile(`${__dirname}/images/BibleAppLogo-${logoSize}.png`, (err, logo) => {
-		if (err) throw err;
+	const graphic = new Snapshot(imageSize);
 
-		const graphic = new Snapshot(imageSize);
+	graphic.appLogo = logo;
+	graphic.locale = locale;
+	graphic.localeData = getLocale({
+		localeFromUrl: locale, localeFromCookie: null, localeFromUser: null, acceptLangHeader: null
+	})
 
-		graphic.appLogo = logo;
-		graphic.locale = locale;
-		graphic.localeData = getLocale({
-			localeFromUrl: locale, localeFromCookie: null, localeFromUser: null, acceptLangHeader: null
-		})
-
-		graphic.momentData = {}; // blank data
-		avatar = new AvatarImage({ default: true });
-		avatar.graphicSize = imageSize;
-		avatar.load((data) => {
-			graphic.avatarData = data;
-
-			graphic.render();
-			res.setHeader('Content-Type', 'image/png');
-			graphic.canvas.pngStream().pipe(res);
-		})
-
-	});
+	graphic.momentData = {}; // blank data
+	avatar.graphicSize = imageSize;
+	avatar.load((data) => {
+		graphic.avatarData = data;
+		graphic.render();
+		res.setHeader('Content-Type', 'image/png');
+		graphic.canvas.pngStream().pipe(res);
+	})
 
 })
 
@@ -614,7 +621,7 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 	const toDate = '2017-12-31';
 	const userId = req.params.user_id;
 	const imageSize = parseInt(req.params.size, 10);
-	const logoSize = getLogoSize(imageSize);
+	const logo = getLogo(imageSize);
 	const locale = req.query.locale || 'en-US';
 	let avatar;
 
@@ -626,44 +633,40 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 		res.status(404).send('Not found');
 	}
 
-	fs.readFile(`${__dirname}/images/BibleAppLogo-${logoSize}.png`, (err, logo) => {
-		if (err) throw err;
+	const graphic = new Snapshot(imageSize);
 
-		const graphic = new Snapshot(imageSize);
+	graphic.appLogo = logo;
+	graphic.locale = locale;
+	graphic.localeData = getLocale({
+		localeFromUrl: locale, localeFromCookie: null, localeFromUser: null, acceptLangHeader: null
+	})
 
-		graphic.appLogo = logo;
-		graphic.locale = locale;
-		graphic.localeData = getLocale({
-			localeFromUrl: locale, localeFromCookie: null, localeFromUser: null, acceptLangHeader: null
+	const userPromise = Users.call('view')
+	.setEnvironment(process.env.NODE_ENV)
+	.params({ id: userId })
+	.get()
+
+	const momentPromise = Moments.call('summary')
+	.setEnvironment(process.env.NODE_ENV)
+	.params({ user_id: userId, from_date: fromDate, to_date: toDate })
+	.get()
+
+	Promise.all([userPromise, momentPromise])
+	.then((results) => {
+		const userData = results[0];
+		const momentData = results[1];
+
+		graphic.momentData = momentData;
+		avatar = new AvatarImage(userData);
+		avatar.graphicSize = imageSize;
+		avatar.load((data) => {
+			graphic.avatarData = data;
+
+			graphic.render();
+			res.setHeader('Content-Type', 'image/png');
+			graphic.canvas.pngStream().pipe(res);
 		})
-
-		const userPromise = Users.call('view')
-		.setEnvironment(process.env.NODE_ENV)
-		.params({ id: userId })
-		.get()
-
-		const momentPromise = Moments.call('summary')
-		.setEnvironment(process.env.NODE_ENV)
-		.params({ user_id: userId, from_date: fromDate, to_date: toDate })
-		.get()
-
-		Promise.all([userPromise, momentPromise])
-		.then((results) => {
-			const userData = results[0];
-			const momentData = results[1];
-
-			graphic.momentData = momentData;
-			avatar = new AvatarImage(userData);
-			avatar.graphicSize = imageSize;
-			avatar.load((data) => {
-				graphic.avatarData = data;
-
-				graphic.render();
-				res.setHeader('Content-Type', 'image/png');
-				graphic.canvas.pngStream().pipe(res);
-			})
-		})
-	});
+	})
 })
 
 module.exports = router;
