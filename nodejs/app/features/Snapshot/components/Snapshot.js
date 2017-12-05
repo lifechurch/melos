@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { getUserById } from '@youversion/api-redux/lib/endpoints/users/reducer'
 import { FormattedMessage, injectIntl } from 'react-intl'
@@ -22,10 +23,12 @@ class Snapshot extends Component {
 	}
 
 	renderGeneric() {
-		const { locale, nodeHost } = this.props
+		const { locale, nodeHost, intl } = this.props
 		const imgSrc = `${nodeHost}/snapshot/default/500?locale=${locale}`
 		return (
 			<div>
+				<Helmet title={intl.formatMessage({ id: 'my year' })} />
+
 				<div className="snapshot-img-container">
 					<img src={imgSrc} />
 				</div>
@@ -49,7 +52,7 @@ class Snapshot extends Component {
 	}
 
 	renderDetail() {
-		const { user, userIdHash, locale, nodeHost, viewingMine } = this.props
+		const { user, userIdHash, locale, nodeHost, viewingMine, intl } = this.props
 		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${locale}&year=2017`
 		let bottomLinks
 		let topCopy
@@ -97,6 +100,8 @@ class Snapshot extends Component {
 
 		return (
 			<div>
+				<Helmet title={intl.formatMessage({ id: 'user snapshot' }, { year: '2017', user: user.response.first_name })} />
+
 				{topCopy}
 				<div className="snapshot-img-container">
 					<img src={imgSrc} />
