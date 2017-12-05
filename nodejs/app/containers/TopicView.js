@@ -9,13 +9,13 @@ import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import TopicList from '../features/Explore/TopicList'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
-
+import TopicComponent from '../features/Explore/TopicView'
 
 class TopicView extends Component {
-	componentDidMount() {
-		const { moments, dispatch, routeParams } = this.props
-		dispatch(exploreApi.actions.topic.get({ topic: routeParams && routeParams.topic }))
-	}
+	// componentDidMount() {
+	// 	const { moments, dispatch, routeParams, getTopic } = this.props
+	// 	dispatch(exploreApi.actions.topic.get({ topic: routeParams && routeParams.topic }))
+	// }
 
 	render() {
 		const { routeParams, moments, bible, intl, hosts, serverLanguageTag } = this.props
@@ -23,29 +23,7 @@ class TopicView extends Component {
 
 		return (
 			<div>
-				<div style={{ width: '100%', marginBottom: '25px' }}>
-					<Heading1>
-						<FormattedMessage id={routeParams && routeParams.topic} />
-					</Heading1>
-				</div>
-				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0' }}>
-					{/* <Helmet
-							title={title}
-							meta={[
-							{ name: 'description', content: verse },
-							{ property: 'og:title', content: title },
-							{ property: 'og:url', content: url },
-							{ property: 'og:description', content: verse },
-							{ name: 'twitter:card', content: 'summary' },
-							{ name: 'twitter:url', content: url },
-							{ name: 'twitter:title', content: title },
-							{ name: 'twitter:description', content: verse },
-							{ name: 'twitter:site', content: '@YouVersion' },
-						]}
-					/> */}
-					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }} />
-					<ShareSheet />
-				</div>
+				<TopicComponent topic={routeParams && routeParams.topic} />
 			</div>
 		)
 	}
