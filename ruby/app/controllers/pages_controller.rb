@@ -84,8 +84,9 @@ class PagesController < ApplicationController
   def snapshot
     user_id, user_id_hash = params[:user_id], params[:user_id_hash]
 
-    # if invalid auth redirect to sign in (gwt expires, etc)
-    if ((!current_user && cookies['YouVersionToken']) || (current_user && current_user.invalid?))
+    # /snapshot and attempted to be logged in but
+    # invalid auth (gwt expires, etc)
+    if ((user_id.nil? && user_id_hash.nil?) && ((!current_user && cookies['YouVersionToken']) || (current_user && current_user.invalid?)))
       redirect_to sign_in_path(redirect: snapshot_path) and return
     end
 
