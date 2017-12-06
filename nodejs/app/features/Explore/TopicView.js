@@ -5,6 +5,7 @@ import withTopicData from '@youversion/api-redux/lib/endpoints/explore/hocs/with
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import TopicList from '../../features/Explore/TopicList'
 import ShareSheet from '../../widgets/ShareSheet/ShareSheet'
 
@@ -39,7 +40,12 @@ class TopicView extends Component {
 						{
 							usfmsForTopic && Array.isArray(usfmsForTopic) && usfmsForTopic.map((usfm) => {
 								console.log(usfm)
-								return <div>{ usfm }</div>
+								return (
+									<ReferenceContent
+										className=''
+										usfm={chapterifyUsfm(usfm)}
+									/>
+								)
 							})
 						}
 						<Card>
