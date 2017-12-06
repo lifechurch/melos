@@ -17,7 +17,7 @@ class Snapshot extends Component {
 		const { dispatch, intl } = this.props;
 		dispatch(shareAction({
 			isOpen: true,
-			text: intl.formatMessage({ id: 'view my snapshot' }),
+			text: intl.formatMessage({ id: 'my year' }),
 			url: document.location.href
 		}))
 	}
@@ -25,12 +25,14 @@ class Snapshot extends Component {
 	renderGeneric() {
 		const { locale, nodeHost, intl } = this.props
 		const imgSrc = `${nodeHost}/snapshot/default/500?locale=${locale}`
+		const imgSrc2x = `${nodeHost}/snapshot/default/1000?locale=${locale}`
+
 		return (
 			<div>
 				<Helmet title={intl.formatMessage({ id: 'my year' })} />
 
 				<div className="snapshot-img-container">
-					<img src={imgSrc} />
+					<img src={imgSrc} srcSet={`${imgSrc} 1x, ${imgSrc2x} 2x`} />
 				</div>
 				<div className="snapshot-bottom-copy">
 					<FormattedMessage tagName="h2" id="view snapshot" />
@@ -54,6 +56,7 @@ class Snapshot extends Component {
 	renderDetail() {
 		const { user, userIdHash, locale, nodeHost, viewingMine, intl } = this.props
 		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${locale}&year=2017`
+		const imgSrc2x = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/1000?locale=${locale}&year=2017`
 		let bottomLinks
 		let topCopy
 
@@ -104,7 +107,7 @@ class Snapshot extends Component {
 
 				{topCopy}
 				<div className="snapshot-img-container">
-					<img src={imgSrc} />
+					<img src={imgSrc} srcSet={`${imgSrc} 1x, ${imgSrc2x} 2x`} />
 				</div>
 				<div className="snapshot-bottom-copy">
 					{bottomLinks}

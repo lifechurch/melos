@@ -259,6 +259,7 @@ class Snapshot {
 			this.colors.yellow
 		);
 
+
 		// Bottom left red circle - Badges
 		this.drawCircle(
 			this.relativeX(0.305),
@@ -268,7 +269,7 @@ class Snapshot {
 		);
 
 		ctx.globalCompositeOperation = 'normal';
-		ctx.font = this.fontStyle;
+		ctx.font = `bold ${this.fontSize}px ${displayFont}`;
 		ctx.fillStyle = 'white';
 		ctx.textAlign = 'center';
 
