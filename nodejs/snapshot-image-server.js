@@ -13,7 +13,7 @@ const Users = api.getClient('users');
 const Moments = api.getClient('moments');
 const router = express.Router();
 const displayFont = 'Arial Unicode MS';
-
+const lengthyStringLocales = ['ar', 'vi', 'el']
 
 global.Intl = require('intl');
 
@@ -69,7 +69,6 @@ class Icon {
 
 class Snapshot {
 	constructor(size) {
-
 		this.size = size;
 		this.width = size;
 		this.height = size;
@@ -259,6 +258,7 @@ class Snapshot {
 			this.colors.yellow
 		);
 
+
 		// Bottom left red circle - Badges
 		this.drawCircle(
 			this.relativeX(0.305),
@@ -268,7 +268,7 @@ class Snapshot {
 		);
 
 		ctx.globalCompositeOperation = 'normal';
-		ctx.font = this.fontStyle;
+		ctx.font = `bold ${this.fontSize}px ${displayFont}`;
 		ctx.fillStyle = 'white';
 		ctx.textAlign = 'center';
 
@@ -353,7 +353,8 @@ class Snapshot {
 		ctx.fillText(new Intl.DateTimeFormat(this.locale, { year: 'numeric' }).format(1511908459070), this.relativeX(0.80), (this.relativeY(0.65) + (fontSize2017 / 2.5)));
 
 		// Draw heading text
-		ctx.font = `bold ${this.relativeFontSize() * 0.95}px ${displayFont}`;
+		const sizeModifier = lengthyStringLocales.includes(this.locale) ? 0.82 : 0.95;
+		ctx.font = `bold ${this.relativeFontSize() * sizeModifier}px ${displayFont}`;
 		ctx.fillStyle = '#000000';
 		ctx.fillText(this.translate('my year'), this.relativeX(0.5), this.relativeY(0.1));
 
