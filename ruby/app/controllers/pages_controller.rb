@@ -84,12 +84,18 @@ class PagesController < ApplicationController
   def snapshot
     user_id, user_id_hash = params[:user_id], params[:user_id_hash]
 
+    # /snapshot and attempted to be logged in but
+    # invalid auth (gwt expires, etc)
+    if ((user_id.nil? && user_id_hash.nil?) && ((!current_user && cookies['YouVersionToken']) || (current_user && current_user.invalid?)))
+      redirect_to sign_in_path(redirect: snapshot_path) and return
+    end
+
     if current_user && (user_id.nil? && user_id_hash.nil?)
       # on /snapshot and logged in, redirect to proper snapshot url
       current_user_hash = build_snapshot_sha1_hash(current_user.id)
       return redirect_to("/snapshot/#{current_user_hash}/#{current_user.id}?year=2017")
     end
-    
+
     if user_id && user_id_hash
       # we're on /snapshot/:user_id_hash/:user_id?year=2017
       unless validate_snapshot_sha1_hash(user_id,user_id_hash)
@@ -112,7 +118,7 @@ class PagesController < ApplicationController
         "languageTag" => I18n.locale.to_s,
         "strings" => {}
       }
-      
+
     end
 
     results = YV::Nodestack::Fetcher.get('Snapshot', p, cookies, current_auth, current_user, request)
@@ -257,7 +263,7 @@ class PagesController < ApplicationController
   end
 
   private def validate_snapshot_sha1_hash(user_id,hash)
-    hash === OpenSSL::HMAC.hexdigest('sha1', ENV['YIR_SHA1_SECRET_KEY'], user_id.to_s)    
+    hash === OpenSSL::HMAC.hexdigest('sha1', ENV['YIR_SHA1_SECRET_KEY'], user_id.to_s)
   end
 
 end

@@ -225,7 +225,7 @@ YouversionWeb::Application.routes.draw do
   match '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
   match '/users/:username/reading-plans/:id/completed' => 'plans#day_complete', as: "plan_complete_plan", via: :get
 
-  get '/snapshot' => 'pages#snapshot'
+  get '/snapshot' => 'pages#snapshot', as: "snapshot"
   get '/snapshot/:user_id_hash/:user_id' => 'pages#snapshot'
 	get '/users/:username/reading-plans/:id/subscription/:subscription_id' => 'subscriptions#show'
   get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day' => 'subscriptions#show', as: "plan_show"

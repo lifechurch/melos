@@ -14,6 +14,7 @@ tell application "iTerm2"
 			write text "export NEW_RELIC_LICENSE_KEY=148b7b0a47e0219bd1117c19b692c94c779cdf33"
 			write text "export YIR_SHA1_SECRET_KEY=SECRET"
 			write text "cd '" & working_dir & "'"
+			write text "Be sure to export OAUTH secrets!"
 			write text "npm run dev:server"
 		end tell
 
