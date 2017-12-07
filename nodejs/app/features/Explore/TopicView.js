@@ -6,6 +6,7 @@ import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import wrapWordsInTag from '@youversion/utils/lib/text/wrapWordsInTag'
 import TopicList from '../../features/Explore/TopicList'
 import ShareSheet from '../../widgets/ShareSheet/ShareSheet'
 import ReferenceContent from '../Bible/components/content/ReferenceContent'
@@ -43,8 +44,12 @@ class TopicView extends Component {
 							usfmsForTopic && Array.isArray(usfmsForTopic) && usfmsForTopic.map((usfm) => {
 								return (
 									<ReferenceContent
+										key={usfm}
 										className=''
 										usfm={usfm}
+										processContent={(content) => {
+											return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
+										}}
 									/>
 								)
 							})

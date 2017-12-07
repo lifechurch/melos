@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Waypoint from 'react-waypoint'
+import { FormattedMessage } from 'react-intl'
 
 
 class List extends Component {
@@ -11,19 +12,30 @@ class List extends Component {
 	}
 
 	render() {
-		const { loadMoreDirection, children, customClass, style } = this.props
+		const { loadMoreDirection, children, customClass, style, pageOnScroll, loadMore } = this.props
+
+		const loadMoreButton = loadMore
+			&& <a tabIndex={0} onClick={this.handleLoadMore}><FormattedMessage id="more" /></a>
 
 		let content = (
 			<ul className={`yv-list ${customClass}`} style={style}>
 				{ children }
-				<Waypoint onEnter={this.handleLoadMore} />
+				{
+					pageOnScroll
+						? <Waypoint onEnter={this.handleLoadMore} />
+						: loadMoreButton
+				}
 			</ul>
 		)
 
 		if (loadMoreDirection === 'up') {
 			content = (
 				<ul className={`yv-list ${customClass}`} style={style}>
-					<Waypoint onEnter={this.handleLoadMore} />
+					{
+						pageOnScroll
+							? <Waypoint onEnter={this.handleLoadMore} />
+							: loadMoreButton
+					}
 					{ children }
 				</ul>
 			)
@@ -39,6 +51,7 @@ List.propTypes = {
 	customClass: PropTypes.string,
 	loadMoreDirection: PropTypes.string,
 	style: PropTypes.object,
+	pageOnScroll: PropTypes.bool,
 }
 
 List.defaultProps = {
@@ -46,6 +59,7 @@ List.defaultProps = {
 	customClass: '',
 	loadMoreDirection: 'down',
 	style: null,
+	pageOnScroll: true,
 }
 
 export default List
