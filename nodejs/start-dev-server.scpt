@@ -13,9 +13,8 @@ tell application "iTerm2"
 			write text "export YOUVERSION_TOKEN_PHRASE='bob the builder builds some cool things'"
 			write text "export NEW_RELIC_LICENSE_KEY=148b7b0a47e0219bd1117c19b692c94c779cdf33"
 			write text "export YIR_SHA1_SECRET_KEY=SECRET"
-			write text "export OAUTH_CLIENT_ID=28edb8be359c01567cb8c30b6db672d5"
-			write text "export OAUTH_CLIENT_SECRET=b7921f3afdffa373e29814a2ce70b40c"
 			write text "cd '" & working_dir & "'"
+			write text "Be sure to export OAUTH secrets!"
 			write text "npm run dev:server"
 		end tell
 
