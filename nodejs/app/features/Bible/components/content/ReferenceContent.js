@@ -11,10 +11,16 @@ import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 class TopicView extends Component {
 
 	render() {
-		const { content, usfm } = this.props
+		const { content, usfm, className, referenceTitle } = this.props
 		return (
-			<div>
-				{ usfm }
+			<div className={className}>
+				{ referenceTitle }
+				{ /* eslint-disable react/no-danger */ }
+				<div
+					className='reader'
+					style={{ color: 'black' }}
+					dangerouslySetInnerHTML={{ __html: content }}
+				/>
 			</div>
 		)
 	}

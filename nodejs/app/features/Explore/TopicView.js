@@ -8,6 +8,8 @@ import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import TopicList from '../../features/Explore/TopicList'
 import ShareSheet from '../../widgets/ShareSheet/ShareSheet'
+import ReferenceContent from '../Bible/components/content/ReferenceContent'
+
 
 class TopicView extends Component {
 
@@ -39,11 +41,10 @@ class TopicView extends Component {
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
 						{
 							usfmsForTopic && Array.isArray(usfmsForTopic) && usfmsForTopic.map((usfm) => {
-								console.log(usfm)
 								return (
 									<ReferenceContent
 										className=''
-										usfm={chapterifyUsfm(usfm)}
+										usfm={usfm}
 									/>
 								)
 							})
