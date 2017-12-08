@@ -1,170 +1,53 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { FormattedMessage } from 'react-intl'
-import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
 import getImagesModel from '@youversion/api-redux/lib/models/images'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
-import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
-import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
+import withImages from '@youversion/api-redux/lib/endpoints/images/hocs/withImages'
 import LazyImage from '../components/LazyImage'
 import Slider from '../components/Slider'
-import Moment from '../features/Moments/components/Moment'
-import MomentHeader from '../features/Moments/components/MomentHeader'
-import MomentFooter from '../features/Moments/components/MomentFooter'
-import Routes from '../lib/routes'
-import { Item } from '../components/OverflowMenu'
-import OverflowMenu from '../widgets/OverflowMenu'
 
 
-class VerseImagesSlider extends Component {
-	componentDidMount() {
-		if (!this.hasImages() && this.versionData()) {
-			this.getImages()
-		}
-	}
+function VerseImagesSlider(props) {
+	const { images, imgWidth, imgHeight } = props
 
-	componentDidUpdate(prevProps) {
-		const version = this.versionData()
-		const prevVersion = prevProps
-			&& prevProps.bible
-			&& prevProps.bible.versions
-			&& prevProps.bible.versions.byId
-			&& prevProps.bible.versions.byId[this.version_id]
-			&& prevProps.bible.versions.byId[this.version_id].response
-			? prevProps.bible.versions.byId[this.version_id].response
-			: null
-		if (
-			!this.hasImages()
-			&& version
-			&& !prevVersion
-			&& (!!version !== !!prevVersion)
-		) {
-			this.getImages()
-		}
-	}
-
-	getImages = () => {
-		const { dispatch, usfm } = this.props
-		const version = this.versionData()
-		if (version) {
-			dispatch(imagesAction({
-				method: 'items',
-				params: {
-					language_tag: version.language.iso_639_1,
-					category: 'prerendered',
-					usfm,
-				}
-			}))
-		}
-	}
-
-	hasImages = () => {
-		const { images, usfm } = this.props
-		const version = this.versionData()
-		return images
-			&& images.filter({
-				category: 'prerendered',
-				usfm,
-				language_tag: version && version.language.iso_639_1
-			}).length > 0
-	}
-
-	versionData = () => {
-		const { bible } = this.props
-		return bible
-			&& bible.versions
-			&& bible.versions.byId
-			&& bible.versions.byId[this.version_id]
-			&& bible.versions.byId[this.version_id].response
-			? bible.versions.byId[this.version_id].response
-			: null
-	}
-
-	render() {
-		const { usfm, images, className, serverLanguageTag } = this.props
-
-		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
-		const version = this.versionData()
-		const title = version
-			&& version.books
-			&& getReferencesTitle({
-				bookList: version.books,
-				usfmList: usfm,
-			}).title
-		const matchedImages = images
-			&& images.filter({
-				category: 'prerendered',
-				usfm,
-				language_tag: version && version.language.iso_639_1
-			})
-		const imagesToRender = matchedImages
-			&& matchedImages.map((img) => {
-				const src = selectImageFromList({
-					images: img.renditions,
-					width: 640,
-					height: 640,
-				}).url
-				return (
-					<LazyImage
-						key={img.id}
-						src={src}
-						placeholder={<img alt='Default Placeholder' src={PLAN_DEFAULT} />}
-						width={320}
-						height={320}
-					/>
-				)
-			})
-
-		if (matchedImages.length === 0) return null
-		return (
-			<div className={`yv-votd-image ${className}`}>
-				<Moment
-					header={
-						<MomentHeader
-							title={title}
-						/>
-					}
-					footer={
-						<MomentFooter
-							right={[
-								<OverflowMenu
-									key='overflow'
-									usfm={usfm}
-									version_id={version && version.id}
-								>
-									<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
-										<FormattedMessage id='notification settings' />
-									</Item>
-								</OverflowMenu>
-							]}
-						/>
-					}
-				>
-					<Slider>
-						{ imagesToRender }
-					</Slider>
-				</Moment>
-			</div>
-		)
-	}
+	if (!images || (images.length === 0)) return null
+	return (
+		<Slider>
+			{
+				images
+					&& images.map((img) => {
+						const src = selectImageFromList({
+							images: img.renditions,
+							width: imgWidth * 2,
+							height: imgHeight * 2,
+						}).url
+						return (
+							<LazyImage
+								key={img.id}
+								src={src}
+								placeholder={<img alt='Default Placeholder' src={PLAN_DEFAULT} />}
+								width={imgWidth}
+								height={imgHeight}
+							/>
+						)
+					})
+			}
+		</Slider>
+	)
 }
 
 VerseImagesSlider.propTypes = {
-	usfm: PropTypes.string,
-	bible: PropTypes.object,
-	className: PropTypes.string,
 	images: PropTypes.array,
-	dispatch: PropTypes.func.isRequired,
-	serverLanguageTag: PropTypes.string.isRequired,
+	imgHeight: PropTypes.number,
+	imgWidth: PropTypes.number
 }
 
 VerseImagesSlider.defaultProps = {
-	usfm: null,
-	bible: null,
 	images: null,
-	className: '',
+	imgHeight: 320,
+	imgWidth: 320,
 }
 
 function mapStateToProps(state) {
@@ -175,4 +58,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(VerseImagesSlider)
+export default connect(mapStateToProps, null)(withImages(VerseImagesSlider))

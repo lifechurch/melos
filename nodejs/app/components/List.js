@@ -12,10 +12,10 @@ class List extends Component {
 	}
 
 	render() {
-		const { loadMoreDirection, children, customClass, style, pageOnScroll, loadMore } = this.props
+		const { loadMoreDirection, children, customClass, style, pageOnScroll, loadMore, loadButton } = this.props
 
 		const loadMoreButton = loadMore
-			&& <a tabIndex={0} onClick={this.handleLoadMore}><FormattedMessage id="more" /></a>
+			&& <a tabIndex={0} onClick={this.handleLoadMore}>{ loadButton }</a>
 
 		let content = (
 			<ul className={`yv-list ${customClass}`} style={style}>
@@ -52,6 +52,7 @@ List.propTypes = {
 	loadMoreDirection: PropTypes.string,
 	style: PropTypes.object,
 	pageOnScroll: PropTypes.bool,
+	loadButton: PropTypes.node,
 }
 
 List.defaultProps = {
@@ -60,6 +61,7 @@ List.defaultProps = {
 	loadMoreDirection: 'down',
 	style: null,
 	pageOnScroll: true,
+	loadButton: <FormattedMessage id="more" />
 }
 
 export default List

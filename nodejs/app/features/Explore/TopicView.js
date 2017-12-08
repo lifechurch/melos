@@ -5,18 +5,39 @@ import withTopicData from '@youversion/api-redux/lib/endpoints/explore/hocs/with
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
-import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import wrapWordsInTag from '@youversion/utils/lib/text/wrapWordsInTag'
+import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import TopicList from '../../features/Explore/TopicList'
 import ShareSheet from '../../widgets/ShareSheet/ShareSheet'
+import VerseImagesSlider from '../../widgets/VerseImagesSlider'
 import ReferenceContent from '../Bible/components/content/ReferenceContent'
+import List from '../../components/List'
 
+export const ABOVE_THE_FOLD = 3
 
 class TopicView extends Component {
 
+	constructor(props) {
+		super(props)
+		this.state = {
+			showAll: false,
+		}
+	}
+
+	showAll = () => {
+		const { showAll } = this.state
+		if (!showAll) {
+			this.setState({ showAll: true })
+		}
+	}
+
 	render() {
 		const { usfmsForTopic, topic } = this.props
-		console.log('usfmsForTopic', usfmsForTopic)
+		const { showAll } = this.state
+
+		const list = showAll
+			? usfmsForTopic
+			: usfmsForTopic.slice(0, ABOVE_THE_FOLD)
 		return (
 			<div>
 				<div style={{ width: '100%', marginBottom: '25px' }}>
@@ -24,7 +45,7 @@ class TopicView extends Component {
 						<FormattedMessage id={topic} />
 					</Heading1>
 				</div>
-				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0' }}>
+				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0 100px 0' }}>
 					{/* <Helmet
 							title={title}
 							meta={[
@@ -40,26 +61,37 @@ class TopicView extends Component {
 						]}
 					/> */}
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
-						{
-							usfmsForTopic && Array.isArray(usfmsForTopic) && usfmsForTopic.map((usfm) => {
-								return (
-									<ReferenceContent
-										key={usfm}
-										className=''
-										usfm={usfm}
-										processContent={(content) => {
-											return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
-										}}
-									/>
-								)
-							})
-						}
-						<Card>
-							<div style={{ marginBottom: '25px' }}>
-								<Heading2>What does the Bible say about...</Heading2>
-							</div>
-							<TopicList />
-						</Card>
+						<VerticalSpace space={40}>
+							<Card mini>
+								<List
+									loadMore={!showAll && this.showAll}
+									pageOnScroll={false}
+									loadButton={<div className='card-button'><FormattedMessage id='more' /></div>}
+								>
+									{
+										list.map((usfm) => {
+											return (
+												<div key={usfm} style={{ borderBottom: '2px solid #F4F4F4', padding: '35px 15px' }}>
+													<ReferenceContent
+														usfm={usfm}
+														processContent={(content) => {
+															return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
+														}}
+													/>
+													<VerseImagesSlider usfm={usfm} />
+												</div>
+											)
+										})
+									}
+								</List>
+							</Card>
+							<Card>
+								<div style={{ marginBottom: '25px' }}>
+									<Heading2>What does the Bible say about...</Heading2>
+								</div>
+								<TopicList />
+							</Card>
+						</VerticalSpace>
 					</div>
 					<ShareSheet />
 				</div>
