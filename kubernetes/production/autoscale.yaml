@@ -7,8 +7,8 @@ metadata:
   name: bible
   namespace: bible
 spec:
-  maxReplicas: 12
-  minReplicas: 12
+  maxReplicas: 25
+  minReplicas: 8
   scaleTargetRef:
     kind: Deployment
     name: production
