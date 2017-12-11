@@ -128,6 +128,7 @@ class PagesController < ApplicationController
     end
 
     @title_tag = results['head']['title']
+    @node_meta_tags = results['head']['meta']
 
     render locals: {
       html: results['html'],

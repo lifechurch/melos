@@ -23,13 +23,28 @@ class Snapshot extends Component {
 	}
 
 	renderGeneric() {
-		const { locale, nodeHost, intl } = this.props
+		const { locale, nodeHost, railsHost, intl } = this.props
 		const imgSrc = `${nodeHost}/snapshot/default/500?locale=${locale}`
 		const imgSrc2x = `${nodeHost}/snapshot/default/1000?locale=${locale}`
+		const snapshotUrl = `${railsHost}/snapshot`
 
 		return (
 			<div>
-				<Helmet title={intl.formatMessage({ id: 'my year' })} />
+				<Helmet
+					title={intl.formatMessage({ id: 'my year' })}
+					meta={[
+            { property: 'og:image', content: `${imgSrc2x}` },
+            { property: 'og:image:height', content: '1000' },
+            { property: 'og:image:width', content: '1000' },
+            { property: 'og:url', content: `${snapshotUrl}` },
+            { property: 'og:type', content: 'website' },
+            { property: 'fb:app_id', content: '105030176203924' },
+            { property: 'og:title', content: intl.formatMessage({ id: 'my year' }) },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:site', content: '@youversion' },
+            { name: 'twitter:creator', content: '@youversion' }
+					]}
+    />
 
 				<div className="snapshot-img-container">
 					<img src={imgSrc} srcSet={`${imgSrc} 1x, ${imgSrc2x} 2x`} />
@@ -54,9 +69,10 @@ class Snapshot extends Component {
 	}
 
 	renderDetail() {
-		const { user, userIdHash, locale, nodeHost, viewingMine, intl } = this.props
+		const { user, userIdHash, locale, nodeHost, railsHost, viewingMine, intl } = this.props
 		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${locale}&year=2017`
 		const imgSrc2x = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/1000?locale=${locale}&year=2017`
+		const snapshotUrl = `${railsHost}/snapshot/${userIdHash}/${user.response.id}?year=2017`
 		let bottomLinks
 		let topCopy
 
@@ -103,7 +119,22 @@ class Snapshot extends Component {
 
 		return (
 			<div>
-				<Helmet title={intl.formatMessage({ id: 'user snapshot' }, { year: '2017', user: user.response.first_name })} />
+				<Helmet
+					title={intl.formatMessage({ id: 'user snapshot' }, { year: '2017', user: user.response.first_name })}
+					meta={[
+            { property: 'og:image', content: `${imgSrc2x}` },
+            { property: 'og:url', content: `${snapshotUrl}` },
+            { property: 'og:type', content: 'website' },
+            { property: 'fb:app_id', content: '105030176203924' },
+            { property: 'og:image:height', content: '1000' },
+            { property: 'og:image:width', content: '1000' },
+            { property: 'og:title', content: intl.formatMessage({ id: 'user snapshot' }, { year: '2017', user: user.response.first_name }) },
+            { property: 'og:description', content: intl.formatMessage({ id: 'your snapshot' }) },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:site', content: '@youversion' },
+            { name: 'twitter:creator', content: '@youversion' }
+					]}
+    />
 
 				{topCopy}
 				<div className="snapshot-img-container">
@@ -135,6 +166,7 @@ Snapshot.propTypes = {
 	intl: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	nodeHost: PropTypes.string.isRequired,
+	railsHost: PropTypes.string.isRequired,
 	locale: PropTypes.string.isRequired,
 	viewingMine: PropTypes.bool.isRequired
 }
@@ -148,6 +180,7 @@ function mapStateToProps(state) {
 	return {
 		user: getUserById(state, state.userId),
 		nodeHost: state.nodeHost,
+		railsHost: state.hosts.railsHost,
 		userIdHash: state.userIdHash,
 		locale: state.serverLanguageTag,
 		viewingMine: state.viewingMine
