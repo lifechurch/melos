@@ -10,6 +10,7 @@ import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpa
 import TopicList from '../../features/Explore/TopicList'
 import ShareSheet from '../../widgets/ShareSheet/ShareSheet'
 import VerseImagesSlider from '../../widgets/VerseImagesSlider'
+import PlansRelatedToTopic from '../../widgets/PlansRelatedToTopic'
 import ReferenceContent from '../Bible/components/content/ReferenceContent'
 import List from '../../components/List'
 
@@ -92,6 +93,7 @@ class TopicView extends Component {
 									}
 								</List>
 							</Card>
+							<PlansRelatedToTopic query={topic} />
 							<Card>
 								<div style={{ marginBottom: '25px' }}>
 									<Heading2>What does the Bible say about...</Heading2>

@@ -6,6 +6,7 @@ import readingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/reduc
 import notifications from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import friendships from '@youversion/api-redux/lib/endpoints/friendships/reducer'
 import users from '@youversion/api-redux/lib/endpoints/users/reducer'
+import search from '@youversion/api-redux/lib/endpoints/search/reducer'
 import exploreApi from '@youversion/api-redux/lib/endpoints/explore'
 import shareData from '../../widgets/ShareSheet/reducer'
 
@@ -37,7 +38,8 @@ const rootReducer = combineReducers({
 		readingPlans,
 		notifications,
 		friendships,
-		users
+		users,
+		search
 	}),
 	shareData,
 	explore: combineReducers(exploreApi.reducers),

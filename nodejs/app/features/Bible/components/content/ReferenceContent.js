@@ -68,6 +68,7 @@ ReferenceContent.propTypes = {
 	titleWithAbbr: PropTypes.string,
 	className: PropTypes.string,
 	renderLink: PropTypes.bool,
+	referenceLink: PropTypes.string.isRequired,
 }
 
 ReferenceContent.defaultProps = {
