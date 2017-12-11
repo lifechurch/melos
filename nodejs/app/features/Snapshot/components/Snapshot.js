@@ -33,7 +33,7 @@ class Snapshot extends Component {
 				<Helmet
 					title={intl.formatMessage({ id: 'my year' })}
 					meta={[
-            { property: 'og:image', content: `${imgSrc2x}` },
+            { property: 'og:image', content: `https:${imgSrc2x}` },
             { property: 'og:image:height', content: '1000' },
             { property: 'og:image:width', content: '1000' },
             { property: 'og:url', content: `${snapshotUrl}` },
@@ -122,7 +122,7 @@ class Snapshot extends Component {
 				<Helmet
 					title={intl.formatMessage({ id: 'user snapshot' }, { year: '2017', user: user.response.first_name })}
 					meta={[
-            { property: 'og:image', content: `${imgSrc2x}` },
+            { property: 'og:image', content: `https:${imgSrc2x}` },
             { property: 'og:url', content: `${snapshotUrl}` },
             { property: 'og:type', content: 'website' },
             { property: 'fb:app_id', content: '105030176203924' },
