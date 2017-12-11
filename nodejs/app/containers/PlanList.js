@@ -6,7 +6,7 @@ import SectionedLayout from '../components/SectionedLayout'
 import SubscriptionList from './SubscriptionList'
 import CompletedList from './CompletedList'
 import SavedList from './SavedList'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class PlansList extends Component {

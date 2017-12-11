@@ -10,7 +10,7 @@ import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVers
 import Moment from '../Moment'
 import MomentHeader from '../MomentHeader'
 import MomentFooter from '../MomentFooter'
-import Routes from '../../../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 import { Item } from '../../../../components/OverflowMenu'
 import OverflowMenu from '../../../../widgets/OverflowMenu'
 import VerseImagesSlider from '../../../../widgets/VerseImagesSlider'
@@ -89,6 +89,7 @@ VotdImage.propTypes = {
 	dayOfYear: PropTypes.number,
 	className: PropTypes.string,
 	moments: PropTypes.object.isRequired,
+	bible: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 }

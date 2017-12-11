@@ -13,7 +13,7 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import User from '../components/User'
 import CheckMark from '../components/CheckMark'
 // utils
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 const MAX_AVATARS = 5

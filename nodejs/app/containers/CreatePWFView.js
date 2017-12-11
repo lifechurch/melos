@@ -9,7 +9,7 @@ import subscribeToPlan from '@youversion/api-redux/lib/batchedActions/subscribeT
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import CreatePWF from '../features/PlanDiscovery/components/CreatePWF'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 function getSubId(props) {
 	return props.location

@@ -15,7 +15,7 @@ import Overflow, {
 	Delete,
 	Cancel
 } from '../components/OverflowMenu'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 function OverflowMenu(props) {

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import withTopicsData from '@youversion/api-redux/lib/endpoints/explore/hocs/withTopics'
 import ButtonStroke from '@youversion/melos/dist/components/links/ButtonStroke'
-import Routes from '../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 function TopicList(props) {
 	const { topics, serverLanguageTag } = props

@@ -3,19 +3,59 @@ import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
 import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/withReference'
 import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
+import Link from '@youversion/melos/dist/components/links/Link'
 
 
 function ReferenceContent(props) {
-	const { html, text, className, referenceTitle, showTitle, renderText } = props
+	const {
+		html,
+		text,
+		className,
+		titleWithAbbr,
+		showTitle,
+		renderText,
+		renderLink,
+		referenceLink
+	} = props
+
+	let heading = (
+		<div style={{ marginBottom: '15px' }}>
+			<Heading3>
+				{ titleWithAbbr }
+			</Heading3>
+		</div>
+	)
+	let content = (
+		/* eslint-disable react/no-danger */
+		<div
+			className='reader'
+			style={{ color: 'black' }}
+			dangerouslySetInnerHTML={{ __html: html && (renderText ? text : html) }}
+		/>
+	)
+	if (renderLink) {
+		heading = (
+			<Link to={referenceLink}>
+				{ heading }
+			</Link>
+		)
+		content = (
+			<Link to={referenceLink}>
+				{ content }
+			</Link>
+		)
+	}
+
 	return (
 		<div className={className}>
-			{ showTitle && referenceTitle && <Heading3>{ referenceTitle }</Heading3> }
-			{ /* eslint-disable react/no-danger */ }
-			<div
-				className='reader'
-				style={{ color: 'black' }}
-				dangerouslySetInnerHTML={{ __html: html && (renderText ? text : html) }}
-			/>
+			{
+				showTitle
+					&& titleWithAbbr
+					&& heading
+			}
+			{
+				content
+			}
 		</div>
 	)
 }
@@ -25,8 +65,9 @@ ReferenceContent.propTypes = {
 	renderText: PropTypes.bool,
 	html: PropTypes.string,
 	text: PropTypes.string,
-	referenceTitle: PropTypes.string,
+	titleWithAbbr: PropTypes.string,
 	className: PropTypes.string,
+	renderLink: PropTypes.bool,
 }
 
 ReferenceContent.defaultProps = {
@@ -36,8 +77,9 @@ ReferenceContent.defaultProps = {
 	renderText: false,
 	html: null,
 	text: null,
-	referenceTitle: null,
+	titleWithAbbr: null,
 	className: '',
+	renderLink: true,
 }
 
 function mapStateToProps(state) {

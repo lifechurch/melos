@@ -8,7 +8,7 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
 // utils
 import getCurrentDT from '@youversion/utils/lib/time/getCurrentDT'
-import Routes from '../../../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 // components
 import Avatar from '../../../../components/Avatar'
 import Like from '../../../../components/Like'

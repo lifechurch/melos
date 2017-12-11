@@ -1,7 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import { getClient } from '@youversion/js-api'
-import { queryifyParamsObj } from './app/lib/routes'
+import queryifyParamsObj from '@youversion/utils/lib/routes/queryifyParamsObj'
 
 const router = express.Router()
 const jsonParser = bodyParser.json()

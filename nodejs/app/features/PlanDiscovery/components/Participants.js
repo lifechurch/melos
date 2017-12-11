@@ -9,7 +9,7 @@ import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
 import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
-import Routes from '../../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 function renderUser(friend, handleDelete = null, complete = null) {

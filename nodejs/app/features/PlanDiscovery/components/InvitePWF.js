@@ -11,7 +11,7 @@ import User from '../../../components/User'
 import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
 import List from '../../../components/List'
-import Routes from '../../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 import LazyImage from '../../../components/LazyImage'
 
 

@@ -12,7 +12,7 @@ import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
 import PlanContentListItem from './PlanContentListItem'
 // utils
-import Routes from '../../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 function Plan({

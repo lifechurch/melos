@@ -17,8 +17,8 @@ import VotdImage from '../features/Moments/components/types/VotdImage'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
 import PlansRelatedToReference from '../widgets/PlansRelatedToReference'
 import Card from '../components/Card'
-import { localizedLink } from '../lib/routeUtils'
-import Routes from '../lib/routes'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class VOTDView extends Component {

@@ -8,7 +8,7 @@ import { unsubscribeStatus, unsubscribeErrors, isLoggedIn, getNotificationSettin
 import { getTokenIdentity, getLoggedInUser } from '@youversion/api-redux/lib/endpoints/users/reducer'
 import { getMyPlans } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 
-import { localizedLink } from '../lib/routeUtils'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 
 function hasError(response) {
 	return ('errors' in response && response.errors.length > 0)

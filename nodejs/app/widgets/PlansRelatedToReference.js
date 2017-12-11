@@ -7,10 +7,10 @@ import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
+import Routes from '@youversion/utils/lib/routes/routes'
 import LazyImage from '../components/LazyImage'
 import Grid from '../components/Grid'
 import Card from '../components/Card'
-import Routes from '../lib/routes'
 
 
 class PlansRelatedToReference extends Component {
@@ -60,7 +60,7 @@ class PlansRelatedToReference extends Component {
 			&& plans.configuration.images
 			&& plans.configuration.images.reading_plans
 			&& plans.configuration.images.reading_plans.url
-		const version_id = getBibleVersionFromStorage()
+		const version_id = getBibleVersionFromStorage(serverLanguageTag)
 		const versionData = bible
 			&& bible.versions
 			&& bible.versions.byId

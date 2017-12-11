@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
-import { localizedLink } from '../../../lib/routeUtils'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 import Card from '../../../components/Card'
 
 function LinkCard({ serverLanguageTag, versions, languages }) {

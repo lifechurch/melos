@@ -9,7 +9,7 @@ import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/re
 import calcProgress from '@youversion/utils/lib/calcProgress'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 import LazyImage from '../components/LazyImage'
 import StackedContainer from '../components/StackedContainer'
 import CheckMark from '../components/CheckMark'

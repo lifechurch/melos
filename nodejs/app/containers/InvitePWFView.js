@@ -10,7 +10,7 @@ import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import getReadingPlans from '@youversion/api-redux/lib/models/readingPlans'
 import InvitePWF from '../features/PlanDiscovery/components/InvitePWF'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 class InvitePWFView extends Component {
 	componentDidMount() {

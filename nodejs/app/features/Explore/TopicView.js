@@ -62,7 +62,7 @@ class TopicView extends Component {
 					/> */}
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
 						<VerticalSpace space={40}>
-							<Card mini>
+							<Card padding='none'>
 								<List
 									loadMore={!showAll && this.showAll}
 									pageOnScroll={false}
@@ -71,14 +71,21 @@ class TopicView extends Component {
 									{
 										list.map((usfm) => {
 											return (
-												<div key={usfm} style={{ borderBottom: '2px solid #F4F4F4', padding: '35px 15px' }}>
-													<ReferenceContent
-														usfm={usfm}
-														processContent={(content) => {
-															return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
-														}}
-													/>
-													<VerseImagesSlider usfm={usfm} />
+												<div key={usfm} style={{ borderBottom: '2px solid #F4F4F4', padding: '35px 25px' }}>
+													<VerticalSpace>
+														<ReferenceContent
+															usfm={usfm}
+															processContent={(content) => {
+																return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
+															}}
+														/>
+														<VerseImagesSlider
+															usfm={usfm}
+															category='prerendered'
+															imgWidth={200}
+															imgHeight={200}
+														/>
+													</VerticalSpace>
 												</div>
 											)
 										})

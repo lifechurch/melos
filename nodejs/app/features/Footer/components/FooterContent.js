@@ -10,7 +10,7 @@ import YouTubeLogo from '../../../components/YouTubeLogo'
 import PinterestLogo from '../../../components/PinterestLogo'
 import DropDownArrow from '../../../components/DropDownArrow'
 import XMark from '../../../components/XMark'
-import { localizedLink } from '../../../lib/routeUtils'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 import StickyHeader from '../../../components/StickyHeader'
 import SectionedLayout from '../../../components/SectionedLayout'
 

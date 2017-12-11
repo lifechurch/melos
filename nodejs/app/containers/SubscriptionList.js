@@ -14,7 +14,7 @@ import { getTogetherInvitations, getParticipantsUsers } from '@youversion/api-re
 // utils
 import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 // components
 import List from '../components/List'
 import Modal from '../components/Modal'
