@@ -49,6 +49,9 @@ function getLogo(graphicSize) {
 	}
 }
 
+function cleanLocale(locale) {
+	return locale.split(/[\-_]+/).slice(0, 2).join('-')
+}
 
 class Icon {
 	constructor(svgString, w, h, data = null) {
@@ -589,7 +592,7 @@ function isSizeValid(size) {
 router.get('/snapshot/default/:size', (req, res) => {
 	const imageSize = parseInt(req.params.size, 10);
 	const logo = getLogo(imageSize);
-	const locale = req.query.locale || 'en-US';
+	const locale = cleanLocale(req.query.locale || 'en-US');
 	const avatar = new AvatarImage({ default: true });
 
 	if (!isSizeValid(imageSize)) {
@@ -623,7 +626,7 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 	const userId = req.params.user_id;
 	const imageSize = parseInt(req.params.size, 10);
 	const logo = getLogo(imageSize);
-	const locale = req.query.locale || 'en-US';
+	const locale = cleanLocale(req.query.locale || 'en-US');
 	let avatar;
 
 	if (!isHashValid(req.params.user_id_hash, req.params.user_id)) {
