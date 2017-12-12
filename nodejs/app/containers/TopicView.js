@@ -23,7 +23,9 @@ class TopicView extends Component {
 
 		return (
 			<div>
-				<TopicComponent topic={routeParams && routeParams.topic} />
+				<TopicComponent
+					topic={routeParams && routeParams.topic}
+				/>
 			</div>
 		)
 	}

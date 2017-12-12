@@ -2,6 +2,8 @@ import exploreApi from '@youversion/api-redux/lib/endpoints/explore'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import bibleActions from '@youversion/api-redux/lib/endpoints/bible/action'
+import searchAction from '@youversion/api-redux/lib/endpoints/search/action'
+
 import { ABOVE_THE_FOLD } from '../../features/Explore/TopicView'
 
 /**
@@ -20,9 +22,13 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const { dispatch } = store
 			const serverLanguageTag = params.languageTag
 			const version_id = getBibleVersionFromStorage(serverLanguageTag)
+
 			const isTopic = new RegExp('^\/explore/[0-9a-zA-Z-]+')
 			const isExplore = new RegExp('^\/explore')
+
 			if (isTopic.test(params.url)) {
+				const topic = params.topic
+
 				const proms = [
 					dispatch(bibleActions({
 						method: 'version',
@@ -53,7 +59,15 @@ export default function loadData(params, startingState, sessionData, store, Loca
 								.then(() => { resolve2() })
 								.catch(() => { resolve2() })
 						}).catch(() => { resolve2() })
-					})
+					}),
+					dispatch(exploreApi.actions.topics.get()),
+					dispatch(searchAction({
+						method: 'reading_plans',
+						params: {
+							query: topic,
+							language_tag: serverLanguageTag,
+						}
+					}))
 				]
 
 				Promise.all(proms)

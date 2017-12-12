@@ -17,7 +17,6 @@ import List from '../../components/List'
 export const ABOVE_THE_FOLD = 3
 
 class TopicView extends Component {
-
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -38,7 +37,7 @@ class TopicView extends Component {
 
 		const list = showAll
 			? usfmsForTopic
-			: usfmsForTopic.slice(0, ABOVE_THE_FOLD)
+			: (usfmsForTopic || []).slice(0, ABOVE_THE_FOLD)
 		return (
 			<div>
 				<div style={{ width: '100%', marginBottom: '25px' }}>
@@ -63,36 +62,43 @@ class TopicView extends Component {
 					/> */}
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
 						<VerticalSpace space={40}>
-							<Card padding='none'>
-								<List
-									loadMore={!showAll && this.showAll}
-									pageOnScroll={false}
-									loadButton={<div className='card-button'><FormattedMessage id='more' /></div>}
-								>
-									{
-										list.map((usfm) => {
-											return (
-												<div key={usfm} style={{ borderBottom: '2px solid #F4F4F4', padding: '35px 25px' }}>
-													<VerticalSpace>
-														<ReferenceContent
-															usfm={usfm}
-															processContent={(content) => {
-																return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
-															}}
-														/>
-														<VerseImagesSlider
-															usfm={usfm}
-															category='prerendered'
-															imgWidth={200}
-															imgHeight={200}
-														/>
-													</VerticalSpace>
-												</div>
-											)
-										})
-									}
-								</List>
-							</Card>
+							{
+								list
+									&& list.length > 0
+									&& (
+										<Card padding='none'>
+											<List
+												loadMore={!showAll && this.showAll}
+												pageOnScroll={false}
+												loadButton={<div className='card-button'><FormattedMessage id='more' /></div>}
+											>
+												{
+													list.map((usfm) => {
+														return (
+															<div key={usfm} style={{ borderBottom: '2px solid #F4F4F4', padding: '35px 25px' }}>
+																<VerticalSpace>
+																	<ReferenceContent
+																		usfm={usfm}
+																		processContent={(content) => {
+																			return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
+																		}}
+																		version_id={59}
+																	/>
+																	<VerseImagesSlider
+																		usfm={usfm}
+																		category='prerendered'
+																		imgWidth={160}
+																		imgHeight={160}
+																	/>
+																</VerticalSpace>
+															</div>
+														)
+													})
+												}
+											</List>
+										</Card>
+									)
+							}
 							<PlansRelatedToTopic query={topic} />
 							<Card>
 								<div style={{ marginBottom: '25px' }}>
