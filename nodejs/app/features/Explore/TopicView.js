@@ -7,6 +7,7 @@ import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import wrapWordsInTag from '@youversion/utils/lib/text/wrapWordsInTag'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import TopicList from '../../features/Explore/TopicList'
 import ShareSheet from '../../widgets/ShareSheet/ShareSheet'
 import VerseImagesSlider from '../../widgets/VerseImagesSlider'
@@ -32,7 +33,7 @@ class TopicView extends Component {
 	}
 
 	render() {
-		const { usfmsForTopic, topic } = this.props
+		const { usfmsForTopic, topic, serverLanguageTag } = this.props
 		const { showAll } = this.state
 
 		const list = showAll
@@ -82,7 +83,7 @@ class TopicView extends Component {
 																		processContent={(content) => {
 																			return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
 																		}}
-																		version_id={59}
+																		version_id={getBibleVersionFromStorage(serverLanguageTag)}
 																	/>
 																	<VerseImagesSlider
 																		usfm={usfm}

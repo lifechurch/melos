@@ -10,6 +10,8 @@ import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
+import Routes from '@youversion/utils/lib/routes/routes'
 import Header from '../features/Header/components/Header'
 import Footer from '../features/Footer/components/Footer'
 import VotdText from '../features/Moments/components/types/VotdText'
@@ -17,8 +19,6 @@ import VotdImage from '../features/Moments/components/types/VotdImage'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
 import PlansRelatedToReference from '../widgets/PlansRelatedToReference'
 import Card from '../components/Card'
-import localizedLink from '@youversion/utils/lib/routes/localizedLink'
-import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class VOTDView extends Component {
