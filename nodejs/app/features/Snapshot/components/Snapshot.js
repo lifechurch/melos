@@ -8,11 +8,6 @@ import ShareSheet from '../../../widgets/ShareSheet/ShareSheet'
 import shareAction from '../../../widgets/ShareSheet/action'
 
 class Snapshot extends Component {
-
-	constructor(props) {
-		super(props)
-	}
-
 	handleShare = () => {
 		const { dispatch, intl } = this.props;
 		dispatch(shareAction({
@@ -42,12 +37,12 @@ class Snapshot extends Component {
             { property: 'og:title', content: intl.formatMessage({ id: 'my year' }) },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@youversion' },
-            { name: 'twitter:creator', content: '@youversion' }
+            { name: 'twitter:creator', content: '@youversion' },
+						{ name: 'twitter:image', content: `https:${imgSrc2x}` }
 					]}
     />
-
 				<div className="snapshot-img-container">
-					<img src={imgSrc} srcSet={`${imgSrc} 1x, ${imgSrc2x} 2x`} />
+					<img alt='snapshot' src={imgSrc} srcSet={`${imgSrc} 1x, ${imgSrc2x} 2x`} />
 				</div>
 				<div className="snapshot-bottom-copy">
 					<FormattedMessage tagName="h2" id="view snapshot" />
@@ -80,7 +75,7 @@ class Snapshot extends Component {
 			bottomLinks = (
 				<ul>
 					<li>
-						<a onClick={this.handleShare}>
+						<a tabIndex={0} onClick={this.handleShare}>
 							<FormattedMessage id="share" />
 						</a>
 					</li>
@@ -132,13 +127,14 @@ class Snapshot extends Component {
             { property: 'og:description', content: intl.formatMessage({ id: 'your snapshot' }) },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@youversion' },
-            { name: 'twitter:creator', content: '@youversion' }
+            { name: 'twitter:creator', content: '@youversion' },
+						{ name: 'twitter:image', content: `https:${imgSrc2x}` }
 					]}
     />
 
 				{topCopy}
 				<div className="snapshot-img-container">
-					<img src={imgSrc} srcSet={`${imgSrc} 1x, ${imgSrc2x} 2x`} />
+					<img alt='snapshot' src={imgSrc} srcSet={`${imgSrc} 1x, ${imgSrc2x} 2x`} />
 				</div>
 				<div className="snapshot-bottom-copy">
 					{bottomLinks}
