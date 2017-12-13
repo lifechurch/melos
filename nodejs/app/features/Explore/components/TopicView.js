@@ -8,14 +8,18 @@ import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import wrapWordsInTag from '@youversion/utils/lib/text/wrapWordsInTag'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
-import TopicList from '../../features/Explore/TopicList'
-import ShareSheet from '../../widgets/ShareSheet/ShareSheet'
-import VerseImagesSlider from '../../widgets/VerseImagesSlider'
-import PlansRelatedToTopic from '../../widgets/PlansRelatedToTopic'
-import ReferenceContent from '../Bible/components/content/ReferenceContent'
-import List from '../../components/List'
+import TopicList from './TopicList'
+import EmotionPicker from './EmotionPicker'
+import ShareSheet from '../../../widgets/ShareSheet/ShareSheet'
+import VerseImagesSlider from '../../../widgets/VerseImagesSlider'
+import PlansRelatedToTopic from '../../../widgets/PlansRelatedToTopic'
+import ReferenceContent from '../../Bible/components/content/ReferenceContent'
+import List from '../../../components/List'
+import { getCategoryFromEmotion } from '../assets/emotions'
+
 
 export const ABOVE_THE_FOLD = 3
+
 
 class TopicView extends Component {
 	constructor(props) {
@@ -33,7 +37,7 @@ class TopicView extends Component {
 	}
 
 	render() {
-		const { usfmsForTopic, topic, serverLanguageTag } = this.props
+		const { usfmsForTopic, topic, serverLanguageTag, hosts } = this.props
 		const { showAll } = this.state
 
 		const list = showAll
@@ -106,6 +110,12 @@ class TopicView extends Component {
 									<Heading2>What does the Bible say about...</Heading2>
 								</div>
 								<TopicList />
+							</Card>
+							<Card>
+								<EmotionPicker
+									nodeHost={hosts && hosts.nodeHost}
+									category={getCategoryFromEmotion(topic)}
+								/>
 							</Card>
 						</VerticalSpace>
 					</div>

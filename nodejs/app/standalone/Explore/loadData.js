@@ -4,7 +4,7 @@ import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVers
 import bibleActions from '@youversion/api-redux/lib/endpoints/bible/action'
 import searchAction from '@youversion/api-redux/lib/endpoints/search/action'
 
-import { ABOVE_THE_FOLD } from '../../features/Explore/TopicView'
+import { ABOVE_THE_FOLD } from '../../features/Explore/components/TopicView'
 
 /**
  * Loads a data.

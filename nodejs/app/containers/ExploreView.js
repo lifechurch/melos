@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
-import TopicList from '../features/Explore/TopicList'
+import TopicList from '../features/Explore/components/TopicList'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
 
 
