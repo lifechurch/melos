@@ -8,6 +8,7 @@ import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import Routes from '@youversion/utils/lib/routes/routes'
+import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
 import LazyImage from '../components/LazyImage'
 import Grid from '../components/Grid'
 import Card from '../components/Card'
@@ -79,15 +80,15 @@ class PlansRelatedToReference extends Component {
 
 		return (
 			<Card className='plans-related-to-reference'>
-				<h2 style={{ padding: '0 10px' }}>
-					<div style={{ fontSize: '18px', marginBottom: '20px' }}>
+				<Heading3>
+					<div style={{ marginBottom: '20px' }}>
 						<FormattedMessage
 							id='Reader.plan title ref'
 							values={{ reference: refStrings && refStrings.title }}
 						/>
 					</div>
 					{ subTitle }
-				</h2>
+				</Heading3>
 				<Grid lgCols={3} medCols={3} smCols={2}>
 					{
 						plansList.map((plan) => {
@@ -120,7 +121,7 @@ class PlansRelatedToReference extends Component {
 										src={src}
 										width={165}
 										height={90}
-										customClass='radius-5'
+										imgClass='radius-5'
 									/>
 									<div
 										className='yv-text-ellipsis'

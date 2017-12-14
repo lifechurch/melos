@@ -5,6 +5,7 @@ import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
+import Routes from '@youversion/utils/lib/routes/routes'
 import ClickToCopy from '../components/ClickToCopy'
 import Overflow, {
 	Read,
@@ -15,7 +16,6 @@ import Overflow, {
 	Delete,
 	Cancel
 } from '../components/OverflowMenu'
-import Routes from '@youversion/utils/lib/routes/routes'
 
 
 function OverflowMenu(props) {

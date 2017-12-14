@@ -1,7 +1,4 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
-import getImagesModel from '@youversion/api-redux/lib/models/images'
-import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import withImages from '@youversion/api-redux/lib/endpoints/images/hocs/withImages'
@@ -50,12 +47,4 @@ VerseImagesSlider.defaultProps = {
 	imgWidth: 320,
 }
 
-function mapStateToProps(state) {
-	return {
-		images: getImagesModel(state),
-		bible: getBibleModel(state),
-		serverLanguageTag: state.serverLanguageTag,
-	}
-}
-
-export default connect(mapStateToProps, null)(withImages(VerseImagesSlider))
+export default withImages(VerseImagesSlider)

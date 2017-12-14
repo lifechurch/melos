@@ -111,8 +111,8 @@ export function buildMeta(props) {
 
 	const reference = {
 		usfm,
-		version_string: version.local_abbreviation,
-		version: version.id,
+		version_string: version && version.local_abbreviation,
+		version: version && version.id,
 	}
 
 	if (version && version.id && usfm) {

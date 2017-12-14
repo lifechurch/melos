@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router'
 import BibleView from '../../containers/Bible'
 import ReferenceView from '../../containers/ReferenceView'
 
-export default function (requireChapterData, requireVerseData, setupReference, handleParallelVersionChange) {
+export default function (requireChapterData, setupReference, handleParallelVersionChange) {
 	return (
 		<Route path="/">
 			<Route path="(:lang/)bible(/:version)">

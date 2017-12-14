@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import moment from 'moment'
 import Helmet from 'react-helmet'
+import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
+import EmotionPicker from '../features/Explore/components/EmotionPicker'
 import TopicList from '../features/Explore/components/TopicList'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
 
@@ -40,12 +42,20 @@ class ExploreView extends Component {
 						]}
 					/> */}
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
-						<Card>
-							<div style={{ marginBottom: '25px' }}>
-								<Heading2>What does the Bible say about...</Heading2>
-							</div>
-							<TopicList />
-						</Card>
+						<VerticalSpace>
+							<Card>
+								<div style={{ marginBottom: '25px' }}>
+									<Heading2>What does the Bible say about...</Heading2>
+								</div>
+								<TopicList />
+							</Card>
+							<Card>
+								<EmotionPicker
+									nodeHost={hosts && hosts.nodeHost}
+									category='sad'
+								/>
+							</Card>
+						</VerticalSpace>
 					</div>
 					<ShareSheet />
 				</div>

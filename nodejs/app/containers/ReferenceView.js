@@ -26,26 +26,26 @@ class ReferenceView extends Component {
 	}
 
 	render() {
-		const { params: { splat }, location: { query }, bible } = this.props
+		const { params: { splat, version }, location: { query }, bible } = this.props
+
 		const hasParallel = 'parallel' in query && Immutable.fromJS(bible).hasIn(['parallelVersion', 'id'])
-		const { isVerse } = isVerseOrChapter(splat)
-
-		let referenceComponent = (
-			<Bible
-				{...this.props}
-				hasParallel={hasParallel}
-				localizedLink={this.localizedLink}
-				isRtl={this.isRtl}
-			/>
-		)
-
-		if (isVerse) {
+		const usfm = `${splat.split('.').slice(0, 3).join('.')}`.toUpperCase()
+		const { isVerse, isChapter } = isVerseOrChapter(usfm)
+		console.log('sojdnglakwjrngklasjdnfksdf', usfm, isVerse, isChapter)
+		let referenceComponent = null
+		if (isChapter) {
 			referenceComponent = (
-				<Passage
+				<Bible
 					{...this.props}
-					isRtl={this.isRtl}
+					hasParallel={hasParallel}
 					localizedLink={this.localizedLink}
+					isRtl={this.isRtl}
 				/>
+			)
+		} else if (isVerse) {
+			console.log('ISIASFNSDFJSFJG', usfm, version)
+			referenceComponent = (
+				<Passage usfm={usfm} version_id={version} />
 			)
 		}
 
@@ -71,7 +71,6 @@ ReferenceView.defaultProps = {
 
 function mapStateToProps(state) {
 	return {
-		passage: (state.passage) ? state.passage : {},
 		auth: (state.auth),
 		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag,

@@ -7,10 +7,11 @@ import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
+import Routes from '@youversion/utils/lib/routes/routes'
+import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
 import Moment from '../Moment'
 import MomentHeader from '../MomentHeader'
 import MomentFooter from '../MomentFooter'
-import Routes from '@youversion/utils/lib/routes/routes'
 import { Item } from '../../../../components/OverflowMenu'
 import OverflowMenu from '../../../../widgets/OverflowMenu'
 import VerseImagesSlider from '../../../../widgets/VerseImagesSlider'
@@ -25,8 +26,8 @@ class VotdImage extends Component {
 	}
 
 	componentDidMount() {
-		const { moments, dispatch, serverLanguageTag } = this.props
-		if (!(moments && moments.pullVotd(this.dayOfYear) && moments.pullVotd(this.dayOfYear).image_id)) {
+		const { moments, dispatch, serverLanguageTag, usfm } = this.props
+		if (!usfm && !(moments && moments.pullVotd(this.dayOfYear) && moments.pullVotd(this.dayOfYear).image_id)) {
 			dispatch(momentsAction({
 				method: 'votd',
 				params: {
@@ -37,16 +38,19 @@ class VotdImage extends Component {
 	}
 
 	render() {
-		const { moments, className, serverLanguageTag, bible } = this.props
+		const { moments, className, serverLanguageTag, bible, usfm } = this.props
 
-		const usfm = moments.pullVotd(this.dayOfYear)
-			&& moments.pullVotd(this.dayOfYear).usfm
+		const usfmForImgs = usfm
+			|| (
+				moments.pullVotd(this.dayOfYear)
+				&& moments.pullVotd(this.dayOfYear).usfm
+			)
 		const version = bible.pullVersion(this.version_id)
 		const title = version
 			&& version.books
 			&& getReferencesTitle({
 				bookList: version.books,
-				usfmList: usfm,
+				usfmList: usfmForImgs,
 			}).title
 		return (
 			usfm
@@ -55,7 +59,11 @@ class VotdImage extends Component {
 						<Moment
 							header={
 								<MomentHeader
-									title={title}
+									title={(
+										<Heading3>
+											{ title }
+										</Heading3>
+									)}
 								/>
 							}
 							footer={
@@ -63,7 +71,7 @@ class VotdImage extends Component {
 									right={[
 										<OverflowMenu
 											key='overflow'
-											usfm={usfm}
+											usfm={usfmForImgs}
 											version_id={this.version_id}
 										>
 											<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
@@ -87,6 +95,7 @@ class VotdImage extends Component {
 
 VotdImage.propTypes = {
 	dayOfYear: PropTypes.number,
+	usfm: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 	className: PropTypes.string,
 	moments: PropTypes.object.isRequired,
 	bible: PropTypes.object.isRequired,
@@ -96,6 +105,7 @@ VotdImage.propTypes = {
 
 VotdImage.defaultProps = {
 	dayOfYear: null,
+	usfm: null,
 	images: null,
 	className: '',
 }

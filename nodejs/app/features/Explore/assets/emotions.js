@@ -59,6 +59,8 @@ const emotions = {
 export default emotions
 
 export function getCategoryFromEmotion(emotion) {
+	// 'sad' (maybe unfortunately) is the most popular category based on metrics
+	// so if there is no speciic match then default to 'sad'
 	if (!emotion) return 'sad'
 	let category
 	emotions.allCategories.some((cat) => {

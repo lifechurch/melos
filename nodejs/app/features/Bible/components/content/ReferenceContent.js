@@ -19,7 +19,7 @@ function ReferenceContent(props) {
 	} = props
 
 	let heading = (
-		<div style={{ marginBottom: '15px' }}>
+		<div style={{ marginBottom: '10px' }}>
 			<Heading3>
 				{ titleWithAbbr }
 			</Heading3>

@@ -12,7 +12,6 @@ import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
 import configureStore from './store'
 import getRoutes from './routes'
 import BibleActionCreator from '../../features/Bible/actions/creators'
-import PassageActionCreator from '../../features/Passage/actions/creators'
 import defaultState from './defaultState'
 import '../../less/style.less'
 
@@ -52,7 +51,6 @@ addLocaleData(window.__LOCALE__.data)
 
 function requireChapterData(nextState, replace, callback, force = false) {
 	const currentState = store.getState()
-
 	let {
 		params: {
 			version: nextVersion,
@@ -142,60 +140,6 @@ function requireChapterData(nextState, replace, callback, force = false) {
 	}
 }
 
-function requireVerseData(nextState, replace, callback) {
-	const currentState = store.getState()
-
-	const {
-		params: {
-			version: nextVersion,
-			book: nextBook,
-			chapter: nextChapter,
-			verse: nextVerse
-		}
-	} = nextState
-
-	const {
-		serverLanguageTag,
-		altVersions,
-		auth: {
-			isLoggedIn
-		},
-		passage: {
-			verses: {
-				primaryVersion: {
-					version: currentVersion,
-					passage: currentUsfm
-				}
-			}
-		}
-	} = currentState
-
-	const nextUsfm = `${nextBook}.${nextChapter}.${nextVerse}`
-	const hasVersionChanged = nextVersion.toString() !== currentVersion.toString()
-	const hasVerseChanged = nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()
-
-	if (!hasVersionChanged && !hasVerseChanged) {
-		callback()
-	} else if (hasVersionChanged && !hasVerseChanged) {
-		store.dispatch(PassageActionCreator.selectPrimaryVersion(nextVersion))
-		callback()
-	} else {
-		store.dispatch(
-			PassageActionCreator.passageLoad({
-				isInitialLoad: false,
-				hasVersionChanged,
-				hasVerseChanged,
-				language_tag: window.__LOCALE__.planLocale,
-				versions: [ parseInt(nextVersion, 10), ...altVersions[serverLanguageTag].text ],
-				passage: nextUsfm
-			}, isLoggedIn)
-		).then(
-			() => { callback() },
-			() => { callback() }
-		)
-	}
-}
-
 function setupReference(nextState, replace, callback) {
 	const { params: { splat, version } } = nextState
 	const { isVerse, isChapter } = isVerseOrChapter(splat)
@@ -209,17 +153,7 @@ function setupReference(nextState, replace, callback) {
 			}
 		}
 		requireChapterData(newNextState, replace, callback)
-	} else if (isVerse) {
-		const newNextState = {
-			params: {
-				version,
-				book: splat.split('.')[0],
-				chapter: splat.split('.')[1],
-				verse: splat.split('.')[2]
-			}
-		}
-		requireVerseData(newNextState, replace, callback)
-	} else {
+	} else if (!isVerse) {
 		const newNextState = {
 			params: {
 				version: 1,
@@ -233,10 +167,10 @@ function setupReference(nextState, replace, callback) {
 }
 
 function handleParallelVersionChange(prevState, nextState, replace, callback) {
-	requireChapterData(nextState, replace, callback, true)
+	setupReference(nextState, replace, callback)
 }
 
-const routes = getRoutes(requireChapterData, requireVerseData, setupReference, handleParallelVersionChange)
+const routes = getRoutes(requireChapterData, setupReference, handleParallelVersionChange)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
