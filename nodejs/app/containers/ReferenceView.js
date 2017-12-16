@@ -7,7 +7,6 @@ import Passage from '../features/Passage/components/Passage'
 import Bible from '../features/Bible/components/Bible'
 
 class ReferenceView extends Component {
-
 	localizedLink = (link) => {
 		const { serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || 'en'
@@ -31,7 +30,7 @@ class ReferenceView extends Component {
 		const hasParallel = 'parallel' in query && Immutable.fromJS(bible).hasIn(['parallelVersion', 'id'])
 		const usfm = `${splat.split('.').slice(0, 3).join('.')}`.toUpperCase()
 		const { isVerse, isChapter } = isVerseOrChapter(usfm)
-		console.log('sojdnglakwjrngklasjdnfksdf', usfm, isVerse, isChapter)
+
 		let referenceComponent = null
 		if (isChapter) {
 			referenceComponent = (
@@ -43,7 +42,6 @@ class ReferenceView extends Component {
 				/>
 			)
 		} else if (isVerse) {
-			console.log('ISIASFNSDFJSFJG', usfm, version)
 			referenceComponent = (
 				<Passage usfm={usfm} version_id={version} />
 			)

@@ -47,8 +47,31 @@ class ReferenceMoment extends Component {
 			referenceLink,
 			versionId,
 			versionAbbr,
-			html
+			html,
+			leftFooter,
 		} = this.props
+
+		const footerLeft = []
+		if (onLike) {
+			footerLeft.push(
+				<Like
+					onClick={onLike}
+					isFilled={likedIds
+						&& auth.userData
+						&& likedIds.includes(auth.userData.userid)
+					}
+				/>
+			)
+		}
+		if (onComment) {
+			footerLeft.push(
+				<Comment onClick={onComment} />
+			)
+		}
+		if (leftFooter) {
+			footerLeft.push([ ...leftFooter ])
+		}
+
 
 		return (
 			<div className={`yv-votd-text ${className}`}>
@@ -95,20 +118,7 @@ class ReferenceMoment extends Component {
 					commentIds={commentIds}
 					footer={
 						<MomentFooter
-							left={[
-								(onLike
-									&& <Like
-										onClick={onLike}
-										isFilled={likedIds
-											&& auth.userData
-											&& likedIds.includes(auth.userData.userid)
-										}
-									/>
-								),
-								(onComment
-									&& <Comment onClick={onComment} />
-								),
-							]}
+							left={footerLeft}
 							right={[
 								referenceTitle
 									&& (
@@ -175,6 +185,7 @@ ReferenceMoment.propTypes = {
 	versionAbbr: PropTypes.string.isRequired,
 	html: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,
+	leftFooter: PropTypes.array,
 }
 
 ReferenceMoment.defaultProps = {
@@ -188,6 +199,7 @@ ReferenceMoment.defaultProps = {
 	onEdit: null,
 	onShare: null,
 	onDelete: null,
+	leftFooter: null,
 	overflowMenuChildren: null,
 }
 

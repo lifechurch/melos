@@ -76,12 +76,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
 								reference: chapterifyUsfm(reference),
 							}
 						})),
-						dispatch(bibleAction({
-							method: 'configuration',
-							params: {},
-							extras: {},
-							auth: false
-						})),
 						new Promise((resolve2) => {
 							dispatch(bibleAction({
 								method: 'version',

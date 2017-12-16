@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
@@ -8,6 +9,7 @@ import withImagesData from '@youversion/api-redux/lib/endpoints/images/hocs/with
 import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/withReference'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import Routes from '@youversion/utils/lib/routes/routes'
+import DropDownArrow from '../../../components/DropDownArrow'
 import { buildMeta } from '../../../lib/readerUtils'
 import ReferenceMoment from '../../Moments/components/types/ReferenceMoment'
 import ImagesMoment from '../../Moments/components/types/VotdImage'
@@ -18,17 +20,12 @@ import PlansRelatedToReference from '../../../widgets/PlansRelatedToReference'
 function Passage(props) {
 	const {
 		usfm,
-		referenceTitle,
 		titleWithAbbr,
 		versionAbbr,
 		versionId,
-		chapterLink,
 		text,
-		html,
-		intl,
 		hosts,
 		serverLanguageTag,
-		moments,
 		bible,
 		images,
 	} = props
@@ -41,7 +38,7 @@ function Passage(props) {
 		version_abbr: versionAbbr,
 		serverLanguageTag,
 	})}`
-	const metaLink = (version && buildMeta({ hosts, version, usfm }).link) || {}
+	const metaLink = (version && buildMeta({ hosts, version, usfm }).link) || []
 	// const nextLink = localizedLink(`/bible/${versionId}/${primaryVersion.nextVerse}.${version.local_abbreviation.toLowerCase()}`)
 	// const prevLink = localizedLink(`/bible/${versionId}/${primaryVersion.previousVerse}.${version.local_abbreviation.toLowerCase()}`)
 	let imgMeta = []
@@ -60,6 +57,23 @@ function Passage(props) {
 		]
 	}
 
+	const versionDropdown = (
+		<a
+			tabIndex={0}
+			className="dropdown-button vertical-center"
+			target="_self"
+			onClick={null}
+		>
+			<div className='flex-wrap' style={{ flex: 4, lineHeight: '1.5' }}>
+				<div style={{ fontSize: '11px', width: '100%' }}><FormattedMessage id='version' /></div>
+				<div style={{ fontSize: '14px', color: 'black' }}>{ versionAbbr }</div>
+			</div>
+			<div className='vertical-center' style={{ flex: 1 }}>
+				<DropDownArrow fill="#DDDDDD" height={10} dir='down' />
+			</div>
+		</a>
+	)
+
 	return (
 		<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
 			<Helmet
@@ -75,12 +89,12 @@ function Passage(props) {
 					{ name: 'twitter:description', content: text },
 					{ name: 'twitter:site', content: '@YouVersion' },
 				].concat(imgMeta)}
-				link={[ ...metaLink ]}
+				link={metaLink}
 			/>
 			<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
-				<ReferenceMoment usfm={usfm} />
-				<ImagesMoment usfm={usfm} />
-				<PlansRelatedToReference usfm={usfm} />
+				<ReferenceMoment usfm={usfm} version_id={versionId} leftFooter={[versionDropdown]} />
+				<ImagesMoment usfm={usfm} version_id={versionId} />
+				<PlansRelatedToReference usfm={usfm} version_id={versionId} />
 			</div>
 			<ShareSheet />
 		</div>
@@ -88,16 +102,21 @@ function Passage(props) {
 }
 
 Passage.propTypes = {
-	moments: PropTypes.object,
 	serverLanguageTag: PropTypes.string,
 	bible: PropTypes.object,
-	intl: PropTypes.object.isRequired,
 	hosts: PropTypes.object.isRequired,
+	usfm: PropTypes.string.isRequired,
+	titleWithAbbr: PropTypes.string.isRequired,
+	versionAbbr: PropTypes.string.isRequired,
+	versionId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	text: PropTypes.string.isRequired,
+	images: PropTypes.array,
 }
 
 Passage.defaultProps = {
 	moments: null,
 	bible: null,
+	images: null,
 	serverLanguageTag: 'en',
 }
 

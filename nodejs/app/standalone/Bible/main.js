@@ -164,13 +164,10 @@ function setupReference(nextState, replace, callback) {
 		requireChapterData(newNextState, replace, callback)
 	}
 
+	callback()
 }
 
-function handleParallelVersionChange(prevState, nextState, replace, callback) {
-	setupReference(nextState, replace, callback)
-}
-
-const routes = getRoutes(requireChapterData, setupReference, handleParallelVersionChange)
+const routes = getRoutes(requireChapterData, setupReference)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
