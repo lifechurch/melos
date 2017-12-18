@@ -19,7 +19,7 @@ class TalkItOverRedirect extends Component {
 		const { dispatch, params: { subscription_id, day }, auth } = this.props
 		const signin = Routes.signIn({
 			query: {
-				redirect: true
+				redirect: window.location.pathname
 			}
 		})
 		if (!auth.isLoggedIn) {

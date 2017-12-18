@@ -16,7 +16,7 @@ class MarkCompleteRedirect extends Component {
 
 		const signin = Routes.signIn({
 			query: {
-				redirect: true
+				redirect: window.location.pathname
 			}
 		})
 		if (!auth.isLoggedIn) {
