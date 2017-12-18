@@ -13,6 +13,7 @@ import localeVersions from '@youversion/stringer-things/dist/config/localeVersio
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Link from '@youversion/melos/dist/components/links/Link'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
+import VersionPicker from '../../Bible/components/versionPicker/VersionPicker'
 import DropDownArrow from '../../../components/DropDownArrow'
 import FullscreenDrawer from '../../../components/FullscreenDrawer'
 import { buildMeta } from '../../../lib/readerUtils'
@@ -91,6 +92,27 @@ class Passage extends Component {
 					<DropDownArrow fill="#DDDDDD" height={10} dir='down' />
 				</div>
 			</a>
+			// <VersionPicker
+			// 	version={version}
+			// 	languages={bible.languages.all}
+			// 	versions={bible.versions}
+			// 	recentVersions={this.state.recentVersions}
+			// 	languageMap={bible.languages.map}
+			// 	selectedChapter={this.state.selectedChapter}
+			// 	alert={this.state.chapterError}
+			// 	getVersions={this.getVersions}
+			// 	cancelDropDown={this.state.versionDropDownCancel}
+			// 	extraClassNames="main-version-picker-container"
+			// 	ref={(vpicker) => { this.versionPickerInstance = vpicker }}
+			// 	linkBuilder={(version_id, usfmString, abbr) => {
+			// 		return Routes.reference({
+			// 			usfm,
+			// 			version_id,
+			// 			version_abbr: abbr,
+			// 			serverLanguageTag,
+			// 		})
+			// 	}}
+			// />
 		)
 
 		const versions = localeVersions.en && localeVersions.en.text

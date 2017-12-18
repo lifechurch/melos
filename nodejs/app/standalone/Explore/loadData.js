@@ -4,7 +4,7 @@ import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVers
 import bibleActions from '@youversion/api-redux/lib/endpoints/bible/action'
 import searchAction from '@youversion/api-redux/lib/endpoints/search/action'
 
-import { ABOVE_THE_FOLD } from '../../features/Explore/components/TopicView'
+import { PAGE_NUM } from '../../features/Explore/components/TopicView'
 
 /**
  * Loads a data.
@@ -42,7 +42,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 							const usfmsForTopic = data && data[params.topic]
 							if (usfmsForTopic && usfmsForTopic.length > 0) {
 								usfmsForTopic.forEach((usfm, i) => {
-									if (i < ABOVE_THE_FOLD) {
+									if (i < PAGE_NUM) {
 										promises.push(
 											dispatch(bibleActions({
 												method: 'chapter',

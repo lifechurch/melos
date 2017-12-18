@@ -4,6 +4,7 @@ import moment from 'moment'
 import { FormattedMessage } from 'react-intl'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
+import withImages from '@youversion/api-redux/lib/endpoints/images/hocs/withImages'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
@@ -38,7 +39,7 @@ class VotdImage extends Component {
 	}
 
 	render() {
-		const { moments, className, serverLanguageTag, bible, usfm } = this.props
+		const { moments, className, serverLanguageTag, bible, usfm, hasNoImages } = this.props
 
 		const usfmForImgs = usfm
 			|| (
@@ -52,8 +53,9 @@ class VotdImage extends Component {
 				bookList: version.books,
 				usfmList: usfmForImgs,
 			}).title
+
 		return (
-			usfm
+			!hasNoImages
 				&& (
 					<div className={`yv-votd-image ${className}`}>
 						<Moment
@@ -101,12 +103,13 @@ VotdImage.propTypes = {
 	bible: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
+	hasNoImages: PropTypes.bool,
 }
 
 VotdImage.defaultProps = {
 	dayOfYear: null,
 	usfm: null,
-	images: null,
+	hasNoImages: false,
 	className: '',
 }
 
@@ -118,4 +121,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(VotdImage)
+export default connect(mapStateToProps, null)(withImages(VotdImage))

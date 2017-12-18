@@ -18,31 +18,36 @@ import List from '../../../components/List'
 import { getCategoryFromEmotion } from '../assets/emotions'
 
 
-export const ABOVE_THE_FOLD = 3
-
+export const PAGE_NUM = 3
 
 class TopicView extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			showAll: false,
+			page: 1,
 		}
 	}
 
-	showAll = () => {
-		const { showAll } = this.state
-		if (!showAll) {
-			this.setState({ showAll: true })
+	hasNextPage = () => {
+		const { usfmsForTopic } = this.props
+		const { page } = this.state
+
+		return (usfmsForTopic && ((PAGE_NUM * page) < usfmsForTopic.length))
+			|| false
+	}
+
+	page = () => {
+		const { page } = this.state
+		if (this.hasNextPage()) {
+			this.setState({ page: page + 1 })
 		}
 	}
 
 	render() {
 		const { usfmsForTopic, topic, serverLanguageTag, hosts } = this.props
-		const { showAll } = this.state
+		const { nextPage, page } = this.state
 
-		const list = showAll
-			? usfmsForTopic
-			: (usfmsForTopic || []).slice(0, ABOVE_THE_FOLD)
+		const list = (usfmsForTopic || []).slice(0, page * PAGE_NUM)
 		return (
 			<div>
 				<div style={{ width: '100%', marginBottom: '25px' }}>
@@ -73,7 +78,7 @@ class TopicView extends Component {
 									&& (
 										<Card padding='none'>
 											<List
-												loadMore={!showAll && this.showAll}
+												loadMore={this.hasNextPage() && this.page}
 												pageOnScroll={false}
 												loadButton={<div className='card-button'><FormattedMessage id='more' /></div>}
 											>
