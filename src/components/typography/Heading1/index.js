@@ -12,6 +12,7 @@ function Heading1(props) {
         fontWeight: t.fontWeight.bold,
         fontSize: t.fontSize.xlarge,
         textAlign,
+        width: '100%',
         color: muted ? t.color.muted : t.color.text,
         padding: t.padding.none,
         margin: t.margin.none
