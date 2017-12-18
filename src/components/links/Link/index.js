@@ -5,7 +5,8 @@ function Link({ to, href, onClick, children, className, target }) {
   let useClientRouting = false
 
   const linkProps = {
-    className
+    className,
+    target: target || '_self'
   }
 
   if (to !== null && ['string', 'object'].indexOf(typeof to) !== -1) {
@@ -14,7 +15,6 @@ function Link({ to, href, onClick, children, className, target }) {
   } else if (href !== null && typeof href === 'string') {
     linkProps.href = href
   }
-  linkProps.target = target || '_self'
 
   if (typeof onClick === 'function') {
     linkProps.onClick = onClick
