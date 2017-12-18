@@ -26,7 +26,7 @@ import InvitePWFView from '../../containers/InvitePWFView'
 import ParticipantsView from '../../containers/ParticipantsView'
 import InvitationView from '../../containers/InvitationView'
 import TalkItOverRedirect from '../../containers/TalkItOverRedirect'
-
+import MarkCompleteRedirect from '../../containers/MarkCompleteRedirect'
 
 /**
  * get the routes for reading plans
@@ -113,6 +113,10 @@ export default function (
 			<Route
 				path="(:lang/)users/:username/reading-plans/:id(-:slug)/together/:together_id/invite"
 				component={InvitePWFView}
+			/>
+			<Route
+				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/mark-complete"
+				component={MarkCompleteRedirect}
 			/>
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/completed" component={DayCompleteView} />
 			{/* this is also day complete, but an unauthed page with the user id in the url as params, only loaded from the server */}
