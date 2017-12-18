@@ -4,7 +4,7 @@ import glamorous from 'glamorous'
 import getThemeForComponent from '../../themes/utils/getThemeForComponent'
 
 function Title(props) {
-  const { children, muted } = props
+  const { children, muted, textAlign } = props
 
   const ThemedElement = glamorous.h3({}, ({ theme }) => {
     return getThemeForComponent('Title', theme, props, (t) => {
@@ -12,6 +12,7 @@ function Title(props) {
         fontFamily: t.fontFamily.primary,
         fontWeight: t.fontWeight.semibold,
         fontSize: t.fontSize.default,
+        textAlign,
         lineHeight: t.lineHeight.medium,
         color: muted ? t.color.muted : t.color.text,
         padding: t.padding.none,
@@ -31,12 +32,14 @@ function Title(props) {
 
 Title.propTypes = {
   children: PropTypes.node,
-  muted: PropTypes.bool
+  muted: PropTypes.bool,
+  textAlign: PropTypes.string,
 }
 
 Title.defaultProps = {
   children: null,
-  muted: false
+  muted: false,
+  textAlign: 'center'
 }
 
 export default Title

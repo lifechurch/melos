@@ -8,13 +8,13 @@ function Link({ to, href, onClick, children, className, target }) {
     className
   }
 
-  if (to !== null && ['string', 'object'].indexOf(typeof to)) {
+  if (to !== null && ['string', 'object'].indexOf(typeof to) !== -1) {
     useClientRouting = true
     linkProps.to = to
   } else if (href !== null && typeof href === 'string') {
     linkProps.href = href
-    linkProps.target = target || '_self'
   }
+  linkProps.target = target || '_self'
 
   if (typeof onClick === 'function') {
     linkProps.onClick = onClick
