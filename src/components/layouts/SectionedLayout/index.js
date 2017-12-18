@@ -13,27 +13,26 @@ function SectionedLayout({ className, style, left, right, children }) {
       style={style}
     >
       <Div
+        position="absolute"
+        left="0"
         display="flex"
         alignItems="center"
       >
         {left}
       </Div>
       <Div
-        position="absolute"
-        left="50%"
-        top="50%"
-        transform="translate(-50%,-50%)"
         display="flex"
         alignItems="center"
-        width="max-content"
+        width={(left || right) ? '80%' : '100%'}
         margin="auto"
       >
         {children}
       </Div>
       <Div
+        position="absolute"
+        left="100%"
         display="flex"
         alignItems="center"
-        marginLeft="auto"
       >
         {right}
       </Div>
