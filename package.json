@@ -1,6 +1,6 @@
 {
   "name": "@youversion/melos",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Open source library of React components from the YouVersion Bible.com team",
   "main": "index.js",
   "scripts": {
