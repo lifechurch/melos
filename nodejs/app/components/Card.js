@@ -9,10 +9,7 @@ function Card(props) {
 
 	return (
 		<div className='card-container'>
-			<div
-				{...props}
-				className={`card ${customClass}`}
-			>
+			<div className={`card ${customClass}`}>
 				{ children }
 			</div>
 			{
