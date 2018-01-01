@@ -237,7 +237,7 @@ class MomentCreate extends Component {
 						<div className='heading vertical-center'>
 							<SectionedLayout
 								right={
-									<div className='columns medium-4 save'>
+									<div className='save'>
 										{
 											isLoggedIn
 												? <a tabIndex={0} onClick={this.handleSave} className='solid-button green'>
@@ -248,7 +248,9 @@ class MomentCreate extends Component {
 									</div>
 								}
 							>
-								<div className='columns medium-4 title'>{ createHeader }</div>
+								<div className='title' style={{ width: '100%' }}>
+									{ createHeader }
+								</div>
 							</SectionedLayout>
 						</div>
 						{ contentDiv }

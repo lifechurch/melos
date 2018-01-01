@@ -18,7 +18,7 @@ const selectVerse = (verseNum) => {
 describe('Verse Actions', () => {
 	// login before attempting auth-required verse actions
 	before(() => {
-		cy.fixture('default-login.json').then((auth) => {
+		cy.fixture('auth-credentials.json').then((auth) => {
 			// call custom login function in cypress/support/commands
 			cy.login(auth.username, auth.password, '/bible/59/jhn.1.esv')
 		})
