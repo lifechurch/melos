@@ -71,7 +71,7 @@ class Plan extends Component {
 			&& nextDay <= plan.total_days
 		const calcDay = !newDay
 			&& (!(plan && Immutable.fromJS(plan).getIn(['days', `${dayToCheck}`], false)))
-		const dayToGet = (newDay && Math.abs(parseInt(nextDay, 10))) || dayToCheck
+		const dayToGet = (newDay && nextDay) || dayToCheck
 		if ((newDay || calcDay) && dayToGet) {
 			if (plan && 'id' in plan) {
 				dispatch(plansAPI.actions.day.get({
@@ -255,8 +255,8 @@ class Plan extends Component {
 			this.progressDays = subscription.days
 				? subscription.days
 				: null
-			this.dayProgress = this.progressDays && this.progressDays[this.currentDay]
-				? this.progressDays[this.currentDay]
+			this.dayProgress = this.progressDays && this.progressDays[currentDay]
+				? this.progressDays[currentDay]
 				: null
 			if (this.isCompleted) {
 				progressString = moment(subscription.completed_dt).format('LL')
