@@ -2,7 +2,7 @@ const emotions = {
 	allCategories: [
 		'happy',
 		'afraid',
-		'mad',
+		'angry',
 		'sad'
 	],
 	byCategory: {
@@ -30,7 +30,7 @@ const emotions = {
 			'peaceful',
 			'thankful'
 		],
-		mad: [
+		angry: [
 			'angry',
 			'annoyed',
 			'attacked',

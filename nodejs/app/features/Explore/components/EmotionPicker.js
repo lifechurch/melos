@@ -5,13 +5,13 @@ import TopicList from './TopicList'
 import EMOTIONS from '../assets/emotions'
 import happy from '../assets/happy.png'
 import sad from '../assets/sad.png'
-import mad from '../assets/mad.png'
+import angry from '../assets/angry.png'
 import afraid from '../assets/afraid.png'
 
 const emojis = {
 	happy,
 	sad,
-	mad,
+	angry,
 	afraid
 }
 
