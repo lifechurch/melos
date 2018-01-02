@@ -30,10 +30,12 @@ module.exports = {
 		"env": {
 		  "browser": true,
 		  "node": true,
-		  "jasmine": true
+		  "jasmine": true,
+			"cypress/globals": true
 		},
 		"plugins": [
 			"react",
+			"cypress"
 		],
 		"parser": "babel-eslint",
 		"extends": "airbnb",

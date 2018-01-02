@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import XMark from './XMark'
-import EllipsisMoreIcon from './EllipsisMoreIcon'
+import Ellipsis from './icons/Ellipsis'
 import Menu from './Menu'
 import ClickTarget from './ClickTarget'
 
@@ -73,7 +73,7 @@ PopupMenu.propTypes = {
 }
 
 PopupMenu.defaultProps = {
-	triggerButton: <EllipsisMoreIcon classes='vertical-center' />,
+	triggerButton: <Ellipsis className='vertical-center' />,
 	closeButton: <XMark width={17} height={17} className='vertical-center' />,
 	header: null,
 	footer: null,
