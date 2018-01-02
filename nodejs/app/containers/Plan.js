@@ -30,7 +30,8 @@ import PlanStartString from '../features/PlanDiscovery/components/PlanStartStrin
 
 class Plan extends Component {
 	componentDidMount() {
-		const { dispatch, params: { subscription_id, day, id }, bible, auth, subscription, plan, serverLanguageTag } = this.props
+		const { dispatch, params: { subscription_id, id }, bible, auth, subscription, plan, serverLanguageTag } = this.props
+		const day = this.currentDay()
 		if (subscription_id) {
 			if (
 				!(
@@ -60,16 +61,17 @@ class Plan extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const { dispatch, params: { day }, plan, subscription } = this.props
+		const { dispatch, plan, subscription } = this.props
+		const nextDay = nextProps.params.day && Math.abs(parseInt(nextProps.params.day, 10))
 		// either new day from url or no day in url and we calculated the right day
-		const dayToCheck = this.currentDay || day
+		const dayToCheck = this.currentDay()
 		const newDay = dayToCheck
-			&& nextProps.params.day
-			&& dayToCheck !== nextProps.params.day
+			&& nextDay
+			&& dayToCheck !== nextDay
+			&& nextDay <= plan.total_days
 		const calcDay = !newDay
 			&& (!(plan && Immutable.fromJS(plan).getIn(['days', `${dayToCheck}`], false)))
-
-		const dayToGet = parseInt(nextProps.params.day, 10) || this.currentDay
+		const dayToGet = (newDay && Math.abs(parseInt(nextDay, 10))) || dayToCheck
 		if ((newDay || calcDay) && dayToGet) {
 			if (plan && 'id' in plan) {
 				dispatch(plansAPI.actions.day.get({
@@ -136,8 +138,8 @@ class Plan extends Component {
 
 		// no activity on an archived plan
 		if (this.isArchived || this.isCompleted) return
-
-		const isFinalDay = isFinalPlanDay(this.currentDay, this.progressDays)
+		const day = this.currentDay()
+		const isFinalDay = isFinalPlanDay(day, this.progressDays)
 		const isPlanComplete = complete
 			&& isFinalDay
 			&& isFinalSegmentToComplete(contentIndex, this.dayProgress.partial)
@@ -148,7 +150,7 @@ class Plan extends Component {
 			daySegments: this.daySegments,
 			dayProgress: this.dayProgress,
 			subscription_id,
-			day: this.currentDay,
+			day,
 			isPlanComplete,
 		})).then(() => {
 			// either we're completing a day or just completed the plan and deleted it from
@@ -166,12 +168,33 @@ class Plan extends Component {
 						plan_id: id.split('-')[0],
 						slug: id.split('-')[1],
 						subscription_id,
-						day: this.currentDay,
+						day,
 					})))
 				}
 			}
 		})
+	}
 
+	/**
+	 * the current day is either a sanitized url param or a calcCurrentPlanDay()
+	 * result (which looks at the the current date against the start date)
+	 * @return {String, Number} current plan day
+	 */
+	currentDay = () => {
+		const { params: { day }, plan, subscription } = this.props
+		// make sure if we get a day from the url that it is atleast a positive num
+		// and then if we have the plan data let's make sure it falls within the total_days
+		// for the plan
+		let currentDay = day && Math.abs(parseInt(day, 10))
+		const invalidDay = !currentDay ||
+			(currentDay && plan && plan.total_days && (currentDay > plan.total_days))
+		if (invalidDay && plan && subscription && subscription.start_dt) {
+			currentDay = calcCurrentPlanDay({
+				total_days: plan.total_days,
+				start_dt: subscription.start_dt
+			})
+		}
+		return currentDay || 1
 	}
 
 	localizedLink = (link) => {
@@ -192,10 +215,9 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { children, subscription, plan, bible, params: { day }, togethers, serverLanguageTag } = this.props
+		const { children, subscription, plan, bible, togethers, serverLanguageTag } = this.props
 
 		this.daySegments = null
-		this.currentDay = null
 		this.dayProgress = null
 		this.progressDays = null
 		let progressString = null
@@ -204,6 +226,7 @@ class Plan extends Component {
 		let endString = null
 		let subscription_id = null
 
+		const currentDay = this.currentDay()
 		const together_id = subscription
 			&& 'together_id' in subscription
 			? subscription.together_id
@@ -212,21 +235,14 @@ class Plan extends Component {
 			&& togethers.byId
 			&& together_id in togethers.byId
 			&& togethers.byId[together_id].archived
+
 		if (plan && subscription && subscription.start_dt) {
 			subscription_id = subscription.id
-			this.currentDay = day ||
-				calcCurrentPlanDay({
-					total_days: plan.total_days,
-					start_dt: subscription.start_dt
-				})
 			dayOfString = (
 				<FormattedHTMLMessage
 					id='plans.which day in plan'
 					values={{
-						day: calcCurrentPlanDay({
-							total_days: plan.total_days,
-							start_dt: subscription.start_dt
-						}),
+						day: this.currentDay(),
 						total: plan.total_days
 					}}
 				/>
@@ -255,8 +271,8 @@ class Plan extends Component {
 
 		this.daySegments = plan
 			&& plan.days
-			&& plan.days[this.currentDay]
-			? plan.days[this.currentDay].segments
+			&& plan.days[currentDay]
+			? plan.days[currentDay].segments
 			: null
 
 		const bookList = Immutable
@@ -269,7 +285,7 @@ class Plan extends Component {
 				localizedLink={this.localizedLink}
 				isRtl={this.isRtl}
 				together_id={together_id}
-				day={this.currentDay}
+				day={currentDay}
 				progressDays={this.progressDays}
 				dayProgress={this.dayProgress}
 				daySegments={this.daySegments}
@@ -292,7 +308,7 @@ class Plan extends Component {
 							localizedLink: this.localizedLink,
 							isRtl: this.isRtl,
 							together_id,
-							day: this.currentDay,
+							day: currentDay,
 							progressDays: this.progressDays,
 							subscription_id,
 							dayOfString,
