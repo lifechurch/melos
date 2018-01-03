@@ -245,6 +245,7 @@ YouversionWeb::Application.routes.draw do
   # Explore
   get '/explore' => 'explore#index'
   get '/explore/:topic' => 'explore#index'
+  get '/explore/stories' => 'explore#index'
 
   # Reading Plans
   # Legacy links that need to be supported
