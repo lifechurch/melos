@@ -65,14 +65,16 @@ class Plan extends Component {
 		const nextDay = nextProps.params.day && Math.abs(parseInt(nextProps.params.day, 10))
 		// either new day from url or no day in url and we calculated the right day
 		const dayToCheck = this.currentDay()
-		const newDay = dayToCheck
+		const hasNewDay = dayToCheck
 			&& nextDay
 			&& dayToCheck !== nextDay
 			&& nextDay <= plan.total_days
-		const calcDay = !newDay
-			&& (!(plan && Immutable.fromJS(plan).getIn(['days', `${dayToCheck}`], false)))
-		const dayToGet = (newDay && nextDay) || dayToCheck
-		if ((newDay || calcDay) && dayToGet) {
+		let hasCalcNewDay = false
+		if (!hasNewDay && plan) {
+			hasCalcNewDay = !Immutable.fromJS(plan).hasIn(['days', `${dayToCheck}`], false)
+		}
+		const dayToGet = (hasNewDay && nextDay) || dayToCheck
+		if ((hasNewDay || hasCalcNewDay) && dayToGet) {
 			if (plan && 'id' in plan) {
 				dispatch(plansAPI.actions.day.get({
 					id: plan.id,
