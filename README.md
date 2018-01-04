@@ -1,5 +1,7 @@
 # Melos: The YouVersion React Component Library
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/5bb4a2a26802b7233a10/maintainability)](https://codeclimate.com/github/lifechurch/melos/maintainability)
+
 This project sets the standard for user interfaces on various YouVersion web
 projects, containing many of the pieces that come together to create a clean,
 simple and engaging user experience on Bible.com.
