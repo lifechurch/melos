@@ -6,6 +6,7 @@ import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
 import BibleActionCreator from '../../features/Bible/actions/creators'
 
 
@@ -68,6 +69,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				const { isVerse, isChapter } = isVerseOrChapter(reference)
 				if (isVerse) {
 					reference = reference.split('.').slice(0, 3).join('.')
+					const usfms = expandUsfm(reference)
 					const promises = [
 						dispatch(bibleAction({
 							method: 'chapter',
@@ -88,7 +90,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 									params: {
 										language_tag: versionData.language.iso_639_1,
 										category: 'prerendered',
-										usfm: [reference],
+										usfm: usfms,
 									}
 								}))
 								.then(() => {
@@ -105,7 +107,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						dispatch(readingPlansAction({
 							method: 'plans_by_reference',
 							params: {
-								usfm: reference,
+								usfm: usfms[0],
 								language_tag: params.language_tag || 'en',
 							}
 						}))
