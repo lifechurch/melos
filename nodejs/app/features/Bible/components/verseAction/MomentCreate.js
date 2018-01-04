@@ -70,7 +70,7 @@ class MomentCreate extends Component {
 	 *
 	 * @param      {string}  key     'private', 'public', 'friends', 'draft'
 	 */
-	changeUserStatus = ({ key }) => {
+	handleChangeUserStatus = ({ key }) => {
 		this.setState({
 			user_status: key,
 		})
@@ -81,7 +81,7 @@ class MomentCreate extends Component {
 	 *
 	 * @param      {string}  color   The color selected from the ColorList
 	 */
-	addColor = (color) => {
+	handleAddColor = (color) => {
 		this.setState({
 			selectedColor: color,
 		})
@@ -105,7 +105,7 @@ class MomentCreate extends Component {
 	 *
 	 * some keys to the api will be null, depending on which kind we are creating
 	 */
-	save = () => {
+	handleSave = () => {
 		const { dispatch, references, version_id, isLoggedIn, kind, onClose } = this.props
 		const { addedLabels, content, user_status, selectedColor } = this.state
 
@@ -171,7 +171,7 @@ class MomentCreate extends Component {
 						</a>
 						<DropdownTransition show={dropdown} hideDir='up' onOutsideClick={this.handleDropdownClose} exemptClass='color-trigger-button'>
 							<div className='labels-modal'>
-								<ColorList list={colors} onClick={this.addColor} isRtl={isRtl} />
+								<ColorList list={colors} onClick={this.handleAddColor} isRtl={isRtl} />
 								<a tabIndex={0} onClick={this.handleDropdownClose} className="close-button yv-gray-link">
 									<FormattedMessage id="plans.stats.close" />
 								</a>
@@ -217,7 +217,7 @@ class MomentCreate extends Component {
 							{ colorsDiv }
 						</VerseCard>
 						<div className='user-status-dropdown'>
-							<Select list={this.USER_STATUS} onChange={this.changeUserStatus} />
+							<Select list={this.USER_STATUS} onChange={this.handleChangeUserStatus} />
 						</div>
 						<div className='note-editor'>
 							<NoteEditor
@@ -237,10 +237,10 @@ class MomentCreate extends Component {
 						<div className='heading vertical-center'>
 							<SectionedLayout
 								right={
-									<div className='columns medium-4 save'>
+									<div className='save'>
 										{
 											isLoggedIn
-												? <a tabIndex={0} onClick={this.save} className='solid-button green'>
+												? <a tabIndex={0} onClick={this.handleSave} className='solid-button green'>
 													{ intl.formatMessage({ id: 'Reader.verse action.save' }) }
 												</a>
 												: null
@@ -248,7 +248,9 @@ class MomentCreate extends Component {
 									</div>
 								}
 							>
-								<div className='columns medium-4 title'>{ createHeader }</div>
+								<div className='title' style={{ width: '100%' }}>
+									{ createHeader }
+								</div>
 							</SectionedLayout>
 						</div>
 						{ contentDiv }
@@ -273,15 +275,19 @@ class MomentCreate extends Component {
  */
 MomentCreate.propTypes = {
 	kind: PropTypes.oneOf(['bookmark', 'note', 'image', 'highlight']).isRequired,
-	verseContent: PropTypes.string.isRequired,
-	references: PropTypes.array.isRequired,
+	verseContent: PropTypes.string,
+	references: PropTypes.array,
 	labels: PropTypes.object,
 	colors: PropTypes.array,
 	onClose: PropTypes.func,
 	isRtl: PropTypes.bool,
+	intl: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 MomentCreate.defaultProps = {
+	verseContent: null,
+	references: null,
 	isRtl: false,
 	labels: null,
 	colors: null,

@@ -25,6 +25,8 @@ YouversionWeb::Application.routes.draw do
   get "/marriage",      to: redirect("http://blog.youversion.com/2015/10/top-10-marriage-bible-plans-on-youversion/")
   get "/200million",    to: redirect("http://installs.youversion.com/200million/index.html")
   get "/250million",    to: redirect("http://installs.youversion.com/250million/index.html")
+  get "/300million",    to: redirect("http://installs.youversion.com/2017-year-in-review/index.html")
+  get "/2017",          to: redirect("http://installs.youversion.com/2017-year-in-review/index.html")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/blog-events",      to: redirect("http://blog.youversion.com/2016/03/introducing-events-the-newest-feature-in-the-bible-app")
   get "volunteer-form", to: redirect("https://www.youversion.com/volunteer")
@@ -66,6 +68,7 @@ YouversionWeb::Application.routes.draw do
   get "/lapset",    to: "redirects#lasten"
   get "/fi/lapset", to: "redirects#lasten"
   get "/barn",        to: "redirects#barn"
+  get "/huuhduud",        to: "redirects#huuhduud"
   get "/hk/kids",     to: "redirects#hk_kids"
   get "/ua/kids",     to: "redirects#ua_kids"
   get "/paidia",			to: "redirects#paidia"
@@ -222,6 +225,10 @@ YouversionWeb::Application.routes.draw do
   match '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
   match '/users/:username/reading-plans/:id/completed' => 'plans#day_complete', as: "plan_complete_plan", via: :get
 
+  get 'users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/mark-complete' => 'subscriptions#mark_complete'
+
+  get '/snapshot' => 'pages#snapshot', as: "snapshot"
+  get '/snapshot/:user_id_hash/:user_id' => 'pages#snapshot'
 	get '/users/:username/reading-plans/:id/subscription/:subscription_id' => 'subscriptions#show'
   get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day' => 'subscriptions#show', as: "plan_show"
   # get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"

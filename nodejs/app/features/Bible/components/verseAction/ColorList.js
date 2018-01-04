@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Slider from 'react-slick'
 import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
-import EllipsisMoreIcon from '../../../../components/EllipsisMoreIcon'
+import Ellipsis from '../../../../components/icons/Ellipsis'
 import XMark from '../../../../components/XMark'
 import Color from './Color'
 // import { SliderPicker } from 'react-color'
@@ -105,9 +105,9 @@ class ColorList extends Component {
 			})
 			// push custom picker trigger as the last 'color' in the list
 			colors.push(
-				<div key={'custom-color'} className='custom-color-icon color' onClick={this.handleScreenChange}>
-					<EllipsisMoreIcon classes='vertical-center' />
-				</div>
+				<a tabIndex={0} key='custom-color' className='custom-color-icon color' onClick={this.handleScreenChange}>
+					<Ellipsis className='vertical-center' />
+				</a>
 			)
 		}
 

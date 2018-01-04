@@ -332,26 +332,7 @@ class SubscriptionsController < ApplicationController
 
   # for marking day complete from subscription email
   def mark_complete
-    refs = presenter.reading.references(version_id: presenter.subscription.version_id)
-    refs.each_with_index { |ref,index|
-      if(ref.completed == false)
-        ref.completed = true
-        @subscription.set_ref_completion(params[:day], ref.reference.to_param.downcase , ref.reference.to_param.downcase.present?, true)
-      end
-    }
-
-    # after changing refs, fall back to version_id of plan if specified
-    params[:initial] = true
-
-    @subscription = subscription_for(params[:id]) || @subscription
-    self.presenter = Presenter::Subscription.new( @subscription , params, self)
-
-    if @subscription.completed?
-      return redirect_to plan_complete_plan_path(username: current_user.username, id: params[:id])
-    end
-
-    return redirect_to day_complete_plan_path(username: current_user.username, id: params[:id], day: params[:day])
-
+    return calendar
   end
 
   private

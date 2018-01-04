@@ -22,6 +22,7 @@ require('babel-register')({ presets: [ 'env', 'react' ], plugins: [ 'transform-o
 
 const reactServer = require('./react-server');
 const featureServer = require('./feature-server');
+const yearInReviewServer = require('./snapshot-image-server');
 
 const app = express();
 app.use(Raven.requestHandler());
@@ -84,6 +85,9 @@ app.use('/', api.expressRouter);
 
 // entry point for rails apps
 app.use(featureServer);
+
+// year in review image server
+app.use(yearInReviewServer);
 
 // primary route handle for react-router
 app.use(reactServer);
