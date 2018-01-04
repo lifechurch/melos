@@ -27,9 +27,9 @@ class ExploreView extends Component {
 		return (
 			<div>
 				<div style={{ width: '100%', marginBottom: '25px' }}>
-					<Heading1>Explore</Heading1>
+					<Heading1><FormattedMessage id='explore' /></Heading1>
 				</div>
-				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0' }}>
+				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0 100px 0' }}>
 					{/* <Helmet
 							title={title}
 							meta={[
@@ -48,7 +48,7 @@ class ExploreView extends Component {
 						<VerticalSpace>
 							<Card>
 								<div style={{ marginBottom: '25px' }}>
-									<Heading2>What does the Bible say about...</Heading2>
+									<Heading2><FormattedMessage id='what does the bible say' /></Heading2>
 								</div>
 								<TopicList />
 							</Card>
@@ -60,9 +60,9 @@ class ExploreView extends Component {
 							</Card>
 							<Link to={Routes.exploreStories({ serverLanguageTag })}>
 								<Card>
-									<Heading2>Bible Stories</Heading2>
+									<Heading2><FormattedMessage id='bible stories' /></Heading2>
 									<div style={{ width: '75%', textAlign: 'center', margin: '10px auto 0 auto' }}>
-										<Body muted>Jesus, Paul</Body>
+										<Body muted><FormattedMessage id='stories blurb' /></Body>
 									</div>
 								</Card>
 							</Link>

@@ -9,7 +9,7 @@ import withImagesData from '@youversion/api-redux/lib/endpoints/images/hocs/with
 import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/withReference'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import Routes from '@youversion/utils/lib/routes/routes'
-import localeVersions from '@youversion/stringer-things/dist/config/localeVersions.json'
+import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Link from '@youversion/melos/dist/components/links/Link'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
@@ -115,8 +115,7 @@ class Passage extends Component {
 			// />
 		)
 
-		const versions = localeVersions.en && localeVersions.en.text
-
+		const usfms = expandUsfm(usfm, false)
 		return (
 			<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
 				<Helmet
@@ -136,37 +135,9 @@ class Passage extends Component {
 				/>
 				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
 					<ReferenceMoment usfm={usfm} version_id={versionId} leftFooter={[versionDropdown]} />
-					<ImagesMoment usfm={usfm} version_id={versionId} />
-					<PlansRelatedToReference usfm={usfm} version_id={versionId} />
+					<ImagesMoment usfm={usfms} version_id={versionId} />
+					<PlansRelatedToReference usfm={usfms.slice(0, 4).join('+')} version_id={versionId} />
 				</div>
-				<FullscreenDrawer
-					isOpen={versionsOpen}
-					onClose={() => { this.setState({ versionsOpen: false }) }}
-					className='yv-large-3 yv-small-11 centered'
-					title={<FormattedMessage id='select version' />}
-				>
-					<VerticalSpace>
-						{
-							versions && versions.map((v) => {
-								return (
-									<Link
-										key={v}
-										to={Routes.reference({
-											version_id: v,
-											usfm,
-											version_abbr: versionAbbr,
-											serverLanguageTag
-										})}
-									>
-										<Card customClass='horizontal-center flex-wrap'>
-											{ v }
-										</Card>
-									</Link>
-								)
-							})
-							}
-					</VerticalSpace>
-				</FullscreenDrawer>
 				<ShareSheet />
 			</div>
 		)

@@ -19,7 +19,7 @@ function StoriesList(props) {
 			<div style={{ width: '100%', marginBottom: '25px' }}>
 				<Heading1>Bible Stories</Heading1>
 			</div>
-			<div className='gray-background horizontal-center flex-wrap' style={{ padding: '40px 0' }}>
+			<div className='gray-background horizontal-center flex-wrap' style={{ padding: '40px 0 80px 0' }}>
 				{/* <Helmet
 						title={title}
 						meta={[
@@ -38,30 +38,37 @@ function StoriesList(props) {
 					<VerticalSpace space={10}>
 						{
 							STORIES && STORIES.map((story) => {
+								if (!(story && story.references)) return null
 								return (
 									<Card key={story.id}>
 										<Link
-											to={Routes.exploreStory({ id: story.id, serverLanguageTag })}
+											to={Routes.reference({
+												usfm: story.references[0],
+												version_id: version && version.id
+											})}
 										>
 											<Heading3>{ story.title_localization_key }</Heading3>
 										</Link>
 										<Body muted>
-											{
-												story.references && story.references.map((ref, i) => {
-													const { usfm, title } = getReferencesTitle({
-														usfmList: ref,
-														bookList: version && version.books
+											<div className='comma-list'>
+												{
+													story.references.map((ref) => {
+														const { usfm, title } = getReferencesTitle({
+															usfmList: ref,
+															bookList: version && version.books
+														})
+														return (
+															<Link
+																key={ref}
+																className='font-grey'
+																to={Routes.reference({ usfm, version_id: version && version.id })}
+															>
+																{ title }
+															</Link>
+														)
 													})
-													return (
-														<Link key={ref} to={Routes.reference({ usfm, version_id: 59 })}>
-															{ title }
-															{
-																i !== story.references.length - 1 && ', '
-															}
-														</Link>
-													)
-												})
-											}
+												}
+											</div>
 										</Body>
 									</Card>
 								)

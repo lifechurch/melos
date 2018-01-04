@@ -169,6 +169,17 @@
 	background-color: @font-grey;
 	color: white;
 }
+.comma-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.comma-list > *::after {
+  content:',\0000a0';
+}
+.comma-list > *:last-child::after {
+  content: normal;
+}
+
 
 // buttons ---------------------------------------------
 .dropdown-button {

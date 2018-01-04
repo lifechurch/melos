@@ -69,7 +69,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				const { isVerse, isChapter } = isVerseOrChapter(reference)
 				if (isVerse) {
 					reference = reference.split('.').slice(0, 3).join('.')
-					const usfms = expandUsfm(reference)
+					const usfms = expandUsfm(reference, false)
 					const promises = [
 						dispatch(bibleAction({
 							method: 'chapter',
@@ -107,7 +107,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						dispatch(readingPlansAction({
 							method: 'plans_by_reference',
 							params: {
-								usfm: usfms[0],
+								usfm: usfms.slice(0, 4).join('+'),
 								language_tag: params.language_tag || 'en',
 							}
 						}))

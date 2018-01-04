@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl'
 import plansAction from '@youversion/api-redux/lib/endpoints/plans'
 import subscriptionData from '@youversion/api-redux/lib/batchedActions/subscriptionData'
 import getCurrentDT from '@youversion/utils/lib/time/getCurrentDT'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class MarkCompleteRedirect extends Component {
