@@ -79,7 +79,7 @@ class InvitationView extends Component {
 	render() {
 		const { plan, params: { together_id }, location: { query }, together, participants, hosts, serverLanguageTag, intl } = this.props
 		this.joinToken = query && query.token
-		const isFromShareLink = !!(query && (!query.source && query.token))
+		const isFromShareLink = query.source && query.source === 'share'
 		const planImg = plan
 			? selectImageFromList({ images: plan.images, width: 640, height: 320 }).url
 			: ''
