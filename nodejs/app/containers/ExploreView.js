@@ -10,9 +10,11 @@ import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import Body from '@youversion/melos/dist/components/typography/Body'
 import Link from '@youversion/melos/dist/components/links/Link'
 import Routes from '@youversion/utils/lib/routes/routes'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import EmotionPicker from '../features/Explore/components/EmotionPicker'
 import TopicList from '../features/Explore/components/TopicList'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
+import VerseImagesGrid from '../widgets/VerseImagesGrid'
 
 
 class ExploreView extends Component {
@@ -66,6 +68,18 @@ class ExploreView extends Component {
 									</div>
 								</Card>
 							</Link>
+							<Card>
+								<VerseImagesGrid
+									imgWidth={180}
+									imgHeight='auto'
+									linkBuilder={({ usfm }) => {
+										return Routes.reference({
+											usfm: usfm.join('+'),
+											version_id: getBibleVersionFromStorage()
+										})
+									}}
+								/>
+							</Card>
 						</VerticalSpace>
 					</div>
 					<ShareSheet />

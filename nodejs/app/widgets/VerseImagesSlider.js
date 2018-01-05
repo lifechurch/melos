@@ -1,50 +1,32 @@
 import React, { PropTypes } from 'react'
-import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
-import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
-import withImages from '@youversion/api-redux/lib/endpoints/images/hocs/withImages'
-import LazyImage from '../components/LazyImage'
+import withLazyImages from '@youversion/api-redux/lib/endpoints/images/hocs/withLazyImages'
 import Slider from '../components/Slider'
 
 
 function VerseImagesSlider(props) {
-	const { images, imgWidth, imgHeight } = props
+	const { images, children } = props
 
 	if (!images || (images.length === 0)) return null
 	return (
-		<Slider>
-			{
-				images
-					&& images.map((img) => {
-						const src = selectImageFromList({
-							images: img.renditions,
-							width: imgWidth * 2,
-							height: imgHeight * 2,
-						}).url
-						return (
-							<LazyImage
-								key={img.id}
-								src={src}
-								placeholder={<img alt='Default Placeholder' src={PLAN_DEFAULT} />}
-								width={imgWidth}
-								height={imgHeight}
-							/>
-						)
-					})
-			}
-		</Slider>
+		<Slider>{ children }</Slider>
 	)
 }
 
+/* eslint-disable react/no-unused-prop-types */
 VerseImagesSlider.propTypes = {
 	images: PropTypes.array,
 	imgHeight: PropTypes.number,
-	imgWidth: PropTypes.number
+	imgWidth: PropTypes.number,
+	hiRes: PropTypes.bool,
+	children: PropTypes.any,
 }
 
 VerseImagesSlider.defaultProps = {
 	images: null,
 	imgHeight: 320,
 	imgWidth: 320,
+	hiRes: true,
+	children: null,
 }
 
-export default withImages(VerseImagesSlider)
+export default withLazyImages(VerseImagesSlider)

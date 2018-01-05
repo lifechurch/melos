@@ -3,6 +3,7 @@ import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import bibleActions from '@youversion/api-redux/lib/endpoints/bible/action'
 import searchAction from '@youversion/api-redux/lib/endpoints/search/action'
+import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 
 import { PAGE_NUM } from '../../features/Explore/components/TopicView'
 
@@ -74,9 +75,21 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					.then(() => { resolve() })
 					.catch(() => { resolve() })
 			} else if (isExplore.test(params.url)) {
-				dispatch(exploreApi.actions.topics.get()).then(() => {
-					resolve()
-				}).catch(() => { resolve() })
+				const proms = [
+					dispatch(exploreApi.actions.topics.get()),
+					dispatch(momentsAction({
+						method: 'configuration'
+					})),
+					dispatch(momentsAction({
+						method: 'votd',
+						params: {
+							language_tag: serverLanguageTag,
+						}
+					}))
+				]
+				Promise.all(proms)
+					.then(() => { resolve() })
+					.catch(() => { resolve() })
 			}
 		} else {
 			resolve()
