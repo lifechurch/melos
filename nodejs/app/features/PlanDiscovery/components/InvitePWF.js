@@ -4,6 +4,8 @@ import { FormattedMessage } from 'react-intl'
 import Heading from '@youversion/melos/dist/components/typography/Heading1'
 import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
+import Routes from '@youversion/utils/lib/routes/routes'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import Footer from '../../../components/Footer'
 import ShareLink from '../../../components/ShareLink'
 import Search from '../../../components/Search'
@@ -11,8 +13,6 @@ import User from '../../../components/User'
 import CheckMark from '../../../components/CheckMark'
 import ClickTarget from '../../../components/ClickTarget'
 import List from '../../../components/List'
-import Routes from '@youversion/utils/lib/routes/routes'
-import LazyImage from '../../../components/LazyImage'
 
 
 class InvitePWF extends Component {
@@ -170,7 +170,6 @@ class InvitePWF extends Component {
 									&& (
 										<LazyImage
 											alt='Devotional'
-											width='100%'
 											style={{ width: '100%' }}
 											src={planImg}
 										/>

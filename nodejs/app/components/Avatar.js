@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import LazyImage from './LazyImage'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 
 function Avatar(props) {
 	const { placeholderText, customClass, src, width, link, onClick } = props
@@ -24,6 +24,7 @@ function Avatar(props) {
 			height={width}
 			customClass={`yv-avatar ${customClass}`}
 			placeholder={placeholder}
+			borderRadius='100%'
 		/>
 	)
 

@@ -3,9 +3,9 @@ import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import messagingAction from '@youversion/api-redux/lib/endpoints/messaging/action'
 import LocalStore from '@youversion/utils/lib/localStore'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import Modal from '../components/Modal'
 import ConfirmationDialog from '../components/ConfirmationDialog'
-import LazyImage from '../components/LazyImage'
 import ViewportUtils from '../lib/viewportUtils'
 
 

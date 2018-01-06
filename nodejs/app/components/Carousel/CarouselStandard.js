@@ -3,10 +3,10 @@ import Slider from 'react-slick'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import CarouselSlideGradient from './CarouselSlideGradient'
 import CarouselSlideImage from './CarouselSlideImage'
 import CarouselArrow from './CarouselArrow'
-import LazyImage from '../LazyImage'
 
 
 function CarouselStandard(props) {

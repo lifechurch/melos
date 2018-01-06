@@ -5,7 +5,7 @@ import withPlanSearch from '@youversion/api-redux/lib/endpoints/search/hocs/with
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import Routes from '@youversion/utils/lib/routes/routes'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
-import LazyImage from '../components/LazyImage'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import Grid from '../components/Grid'
 import Card from '../components/Card'
 
@@ -51,7 +51,6 @@ function PlansRelatedToTopic(props) {
 							>
 								<LazyImage
 									src={src}
-									height={100}
 									imgClass='radius-5'
 								/>
 								<div

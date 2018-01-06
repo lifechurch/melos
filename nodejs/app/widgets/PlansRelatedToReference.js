@@ -9,7 +9,7 @@ import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVers
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import Routes from '@youversion/utils/lib/routes/routes'
 import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
-import LazyImage from '../components/LazyImage'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import Grid from '../components/Grid'
 import Card from '../components/Card'
 
@@ -114,13 +114,9 @@ class PlansRelatedToReference extends Component {
 											<img
 												alt='Reading Plan Default'
 												src={PLAN_DEFAULT}
-												width={165}
-												height='90px'
 											/>
 										}
 										src={src}
-										width={165}
-										height={90}
 										imgClass='radius-5'
 									/>
 									<div

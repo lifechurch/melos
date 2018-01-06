@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
-import LazyImage from '../../../components/LazyImage'
+import { SQUARE } from '@youversion/utils/lib/images/readingPlanDefault'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 
 function PlanListItem(props) {
 	const { name, link, src, subContent } = props
@@ -17,7 +17,7 @@ function PlanListItem(props) {
 								src={src}
 								width={80}
 								height={80}
-								placeholder={<img alt='plan' className='subscription_thumbnail radius' src={PLAN_DEFAULT} />}
+								placeholder={<img alt='plan' className='subscription_thumbnail radius' src={SQUARE} />}
 								imgClass='subscription_thumbnail radius'
 							/>
 						</div>

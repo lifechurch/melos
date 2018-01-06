@@ -70,7 +70,7 @@ class ExploreView extends Component {
 							</Link>
 							<Card>
 								<VerseImagesGrid
-									imgWidth={180}
+									imgWidth='100%'
 									imgHeight='auto'
 									linkBuilder={({ usfm }) => {
 										return Routes.reference({
