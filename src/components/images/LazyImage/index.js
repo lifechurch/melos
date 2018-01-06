@@ -163,7 +163,7 @@ LazyImage.defaultProps = {
   className: '',
   imgClass: '',
   width: '100%',
-  height: null,
+  height: 'auto',
   crossOrigin: null,
   borderRadius: null,
 }
