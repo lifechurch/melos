@@ -351,15 +351,10 @@ class Bible extends Component {
 							}}
 						/>
 						<VersionPicker
-							{...this.props}
-							version={bible.version}
-							languages={bible.languages.all}
-							versions={bible.versions}
+							version_id={this.state.selectedVersion}
 							recentVersions={this.state.recentVersions}
-							languageMap={bible.languages.map}
 							selectedChapter={this.state.selectedChapter}
 							alert={this.state.chapterError}
-							getVersions={this.getVersions}
 							cancelDropDown={this.state.versionDropDownCancel}
 							extraClassNames="main-version-picker-container"
 							ref={(vpicker) => { this.versionPickerInstance = vpicker }}
@@ -402,16 +397,11 @@ class Bible extends Component {
 
 						{hasParallel &&
 						<VersionPicker
-							{...this.props}
-							version={bible.parallelVersion}
-							languages={bible.languages.all}
-							versions={bible.versions}
+							version_id={bible.parallelVersion.id}
 							recentVersions={this.state.recentVersions}
-							languageMap={bible.languages.map}
 							selectedChapter={this.state.selectedChapter}
 							alert={this.state.chapterError}
-							getVersions={this.getVersions}
-							cancelDropDown={this.state.parallelDropDownCancel}
+							cancelDropDown={this.state.versionDropDownCancel}
 							extraClassNames="hide-for-small parallel-version-picker-container"
 							ref={(vpicker) => { this.parallelVersionPickerInstance = vpicker }}
 							linkBuilder={(version, usfm, abbr) => {

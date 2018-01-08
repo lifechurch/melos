@@ -29,12 +29,11 @@ function PlansRelatedToTopic(props) {
 				{
 					plans.map((plan) => {
 						const src = plan.images
-							? selectImageFromList({
+							&& selectImageFromList({
 								images: plan.images,
 								width: 620,
 								height: 310,
 							}).url
-							: PLAN_DEFAULT
 						const name = plan.name && (plan.name[serverLanguageTag] || plan.name.default)
 
 						return (
@@ -50,6 +49,12 @@ function PlansRelatedToTopic(props) {
 								className='horizontal-center vertical-center flex-wrap'
 							>
 								<LazyImage
+									placeholder={
+										<img
+											alt='Reading Plan Default'
+											src={PLAN_DEFAULT}
+										/>
+									}
 									src={src}
 									imgClass='radius-5'
 								/>

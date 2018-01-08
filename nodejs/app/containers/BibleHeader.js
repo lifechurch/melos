@@ -43,7 +43,7 @@ class BibleHeader extends Component {
 	componentDidMount() {
 		const { usfm, version_id, language_tag } = this.state
 		this.getBibleData(usfm, version_id)
-		this.getVersions(language_tag)
+		// this.getVersions(language_tag)
 
 		this.recentVersions = new RecentVersions()
 		this.updateRecentVersions()
@@ -98,44 +98,44 @@ class BibleHeader extends Component {
 		}
 	}
 
-	getVersions = (language_tag) => {
-		const { dispatch } = this.props
-		if (language_tag && typeof language_tag === 'string') {
-			this.setState({ language_tag })
-			dispatch(bibleAction({
-				method: 'versions',
-				params: {
-					language_tag,
-					type: 'all'
-				}
-			})).then((versions) => {
-				Filter.clear('VersionStore')
-				Filter.add('VersionStore', versions.versions)
-			})
-		}
-	}
+	// getVersions = (language_tag) => {
+	// 	const { dispatch } = this.props
+	// 	if (language_tag && typeof language_tag === 'string') {
+	// 		this.setState({ language_tag })
+	// 		dispatch(bibleAction({
+	// 			method: 'versions',
+	// 			params: {
+	// 				language_tag,
+	// 				type: 'all'
+	// 			}
+	// 		})).then((versions) => {
+	// 			Filter.clear('VersionStore')
+	// 			Filter.add('VersionStore', versions.versions)
+	// 		})
+	// 	}
+	// }
 
 	getBibleData = (usfm, version_id) => {
 		const { bible, dispatch, audio } = this.props
 
 		this.getReference(usfm, version_id)
 
-		if (!(bible && Immutable.fromJS(bible).hasIn(['languages', 'all']))) {
-			dispatch(bibleAction({
-				method: 'configuration',
-				params: {
-					type: 'all',
-				}
-			}))
-		}
-		if (version_id && !(bible && Immutable.fromJS(bible).hasIn(['versions', 'byId', version_id]))) {
-			dispatch(bibleAction({
-				method: 'version',
-				params: {
-					id: version_id,
-				}
-			}))
-		}
+		// if (!(bible && Immutable.fromJS(bible).hasIn(['languages', 'all']))) {
+		// 	dispatch(bibleAction({
+		// 		method: 'configuration',
+		// 		params: {
+		// 			type: 'all',
+		// 		}
+		// 	}))
+		// }
+		// if (version_id && !(bible && Immutable.fromJS(bible).hasIn(['versions', 'byId', version_id]))) {
+		// 	dispatch(bibleAction({
+		// 		method: 'version',
+		// 		params: {
+		// 			id: version_id,
+		// 		}
+		// 	}))
+		// }
 		if (version_id && usfm && !(audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm), version_id]))) {
 			dispatch(audioAction({
 				method: 'chapter',
@@ -305,14 +305,10 @@ class BibleHeader extends Component {
 					showVersionPicker &&
 						<VersionPicker
 							extraClassNames='main-version-picker-container'
-							version={this.version}
-							languages={bible.languages.all}
-							versions={bible.versions}
+							version_id={this.version && this.version.id}
 							recentVersions={recentVersions}
-							languageMap={bible.languages.map}
 							selectedChapter={usfm}
-							// alert={this.state.chapterError}
-							getVersions={this.getVersions}
+							// getVersions={this.getVersions}
 							onClick={
 								onVersionClick
 									? ({ id }) => {
@@ -320,9 +316,7 @@ class BibleHeader extends Component {
 									}
 									: null
 							}
-							// cancelDropDown={this.state.versionDropDownCancel}
 							ref={(v) => { this.versionPickerInstance = v }}
-							localizedLink={localizedLink}
 							dispatch={dispatch}
 						/>
 				}

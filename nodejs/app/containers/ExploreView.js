@@ -70,12 +70,10 @@ class ExploreView extends Component {
 							</Link>
 							<Card>
 								<VerseImagesGrid
-									imgWidth='100%'
-									imgHeight='auto'
 									linkBuilder={({ usfm }) => {
 										return Routes.reference({
 											usfm: usfm.join('+'),
-											version_id: getBibleVersionFromStorage()
+											version_id: getBibleVersionFromStorage(serverLanguageTag)
 										})
 									}}
 								/>

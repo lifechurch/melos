@@ -14,7 +14,7 @@
     "@newrelic/native-metrics": "^2.1.0",
     "@youversion/api-redux": "0.4.21",
     "@youversion/js-api": "^1.0.10",
-    "@youversion/melos": "0.0.8",
+    "@youversion/melos": "0.0.9",
     "@youversion/stringer-things": "0.0.1",
     "@youversion/token-storage": "0.0.38",
     "@youversion/utils": "1.0.32",

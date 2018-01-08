@@ -19,9 +19,12 @@ function VerseImagesGrid(props) {
 						.replace('{1}', '320')
 						.replace('{image_id}', day.image_id)
 					const lazyImg = (
-						<div className='horizontal-center' style={{ margin: ' 0 2.5px 5px 2.5px' }}>
+						<div
+							key={day.id}
+							className='horizontal-center'
+							style={{ margin: '0 2.5px 5px 2.5px' }}
+						>
 							<LazyImage
-								key={day.id}
 								src={src}
 								placeholder={<img alt='Default Placeholder' src={SQUARE} />}
 								width={imgWidth}

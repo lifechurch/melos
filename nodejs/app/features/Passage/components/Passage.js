@@ -10,6 +10,7 @@ import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/wi
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import Routes from '@youversion/utils/lib/routes/routes'
 import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Link from '@youversion/melos/dist/components/links/Link'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
@@ -25,42 +26,30 @@ import PlansRelatedToReference from '../../../widgets/PlansRelatedToReference'
 
 class Passage extends Component {
 
-	constructor(props) {
-		super(props)
-		this.state = {
-			versionsOpen: false,
-		}
-	}
-
-	handleOpenVersions = () => {
-		this.setState({ versionsOpen: true })
-	}
-
 	render() {
 		const {
 			usfm,
 			titleWithAbbr,
 			versionAbbr,
-			versionId,
+			version_id,
 			text,
 			hosts,
 			serverLanguageTag,
 			bible,
 			images,
 		} = this.props
-		const { versionsOpen } = this.state
 
-		const version = bible && bible.pullVersion(versionId)
+		const version = bible && bible.pullVersion(version_id)
 		const title = `${titleWithAbbr}; ${text}`
 		const url = `${hosts.railsHost}${Routes.reference({
 			usfm,
-			version_id: versionId,
+			version_id,
 			version_abbr: versionAbbr,
 			serverLanguageTag,
 		})}`
 		const metaLink = (version && buildMeta({ hosts, version, usfm }).link) || []
-		// const nextLink = localizedLink(`/bible/${versionId}/${primaryVersion.nextVerse}.${version.local_abbreviation.toLowerCase()}`)
-		// const prevLink = localizedLink(`/bible/${versionId}/${primaryVersion.previousVerse}.${version.local_abbreviation.toLowerCase()}`)
+		// const nextLink = localizedLink(`/bible/${version_id}/${primaryVersion.nextVerse}.${version.local_abbreviation.toLowerCase()}`)
+		// const prevLink = localizedLink(`/bible/${version_id}/${primaryVersion.previousVerse}.${version.local_abbreviation.toLowerCase()}`)
 		let imgMeta = []
 		if (images && images.length > 0) {
 			const img = images[0]
@@ -78,41 +67,18 @@ class Passage extends Component {
 		}
 
 		const versionDropdown = (
-			<a
-				tabIndex={0}
-				className="dropdown-button vertical-center"
-				target="_self"
-				onClick={this.handleOpenVersions}
-			>
-				<div className='flex-wrap' style={{ flex: 4, lineHeight: '1.5' }}>
-					<div style={{ fontSize: '11px', width: '100%' }}><FormattedMessage id='version' /></div>
-					<div style={{ fontSize: '14px', color: 'black' }}>{ versionAbbr }</div>
-				</div>
-				<div className='vertical-center' style={{ flex: 1 }}>
-					<DropDownArrow fill="#DDDDDD" height={10} dir='down' />
-				</div>
-			</a>
-			// <VersionPicker
-			// 	version={version}
-			// 	languages={bible.languages.all}
-			// 	versions={bible.versions}
-			// 	recentVersions={this.state.recentVersions}
-			// 	languageMap={bible.languages.map}
-			// 	selectedChapter={this.state.selectedChapter}
-			// 	alert={this.state.chapterError}
-			// 	getVersions={this.getVersions}
-			// 	cancelDropDown={this.state.versionDropDownCancel}
-			// 	extraClassNames="main-version-picker-container"
-			// 	ref={(vpicker) => { this.versionPickerInstance = vpicker }}
-			// 	linkBuilder={(version_id, usfmString, abbr) => {
-			// 		return Routes.reference({
-			// 			usfm,
-			// 			version_id,
-			// 			version_abbr: abbr,
-			// 			serverLanguageTag,
-			// 		})
-			// 	}}
-			// />
+			<VersionPicker
+				version_id={version_id}
+				selectedChapter={chapterifyUsfm(usfm)}
+				linkBuilder={(versionId, usfmString, abbr) => {
+					return Routes.reference({
+						usfm,
+						version_id: versionId,
+						version_abbr: abbr,
+						serverLanguageTag,
+					})
+				}}
+			/>
 		)
 
 		const usfms = expandUsfm(usfm, false)
@@ -134,9 +100,9 @@ class Passage extends Component {
 					link={metaLink}
 				/>
 				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
-					<ReferenceMoment usfm={usfm} version_id={versionId} leftFooter={[versionDropdown]} />
-					<ImagesMoment usfm={usfms} version_id={versionId} />
-					<PlansRelatedToReference usfm={usfms.slice(0, 4).join('+')} version_id={versionId} />
+					<ReferenceMoment usfm={usfm} version_id={version_id} leftFooter={[versionDropdown]} />
+					<ImagesMoment usfm={usfms} version_id={version_id} />
+					<PlansRelatedToReference usfm={usfms.slice(0, 4).join('+')} version_id={version_id} />
 				</div>
 				<ShareSheet />
 			</div>
@@ -151,7 +117,7 @@ Passage.propTypes = {
 	usfm: PropTypes.string.isRequired,
 	titleWithAbbr: PropTypes.string.isRequired,
 	versionAbbr: PropTypes.string.isRequired,
-	versionId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	text: PropTypes.string.isRequired,
 	images: PropTypes.array,
 }
