@@ -48,7 +48,6 @@ class LazyImage extends Component {
 			height,
 			className,
 			imgClass,
-			alt,
 			crossOrigin,
 			lazy,
       borderRadius
@@ -67,7 +66,6 @@ class LazyImage extends Component {
         top={0}
         left={0}
         transition="opacity 0.5s linear"
-        alt={alt}
         src={(needsLoading || loaded) ? src : null}
         width={width}
         height={height}
@@ -126,10 +124,6 @@ LazyImage.propTypes = {
    */
   src: PropTypes.string,
   /**
-   * Alt text for image
-   */
-  alt: PropTypes.string,
-  /**
    * Class to apply to wrapper div if a placeholder is passed
    */
   className: PropTypes.string,
@@ -159,7 +153,6 @@ LazyImage.defaultProps = {
   placeholder: null,
   lazy: true,
   src: '',
-  alt: '',
   className: '',
   imgClass: '',
   width: '100%',
