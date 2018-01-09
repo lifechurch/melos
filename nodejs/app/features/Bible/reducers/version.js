@@ -19,6 +19,7 @@ export default function reducer(state = {}, action) {
 			return state
 		}
 
+		case 'BIBLE__VERSION__SUCCESS':
 		case type('bibleVersionSuccess'): {
 			const { isParallel } = action.extras
 			if (!isParallel) {

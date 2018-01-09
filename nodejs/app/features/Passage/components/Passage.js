@@ -11,12 +11,7 @@ import selectImageFromList from '@youversion/utils/lib/images/selectImageFromLis
 import Routes from '@youversion/utils/lib/routes/routes'
 import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
-import Card from '@youversion/melos/dist/components/containers/Card'
-import Link from '@youversion/melos/dist/components/links/Link'
-import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import VersionPicker from '../../Bible/components/versionPicker/VersionPicker'
-import DropDownArrow from '../../../components/DropDownArrow'
-import FullscreenDrawer from '../../../components/FullscreenDrawer'
 import { buildMeta } from '../../../lib/readerUtils'
 import ReferenceMoment from '../../Moments/components/types/ReferenceMoment'
 import ImagesMoment from '../../Moments/components/types/VotdImage'
@@ -48,8 +43,6 @@ class Passage extends Component {
 			serverLanguageTag,
 		})}`
 		const metaLink = (version && buildMeta({ hosts, version, usfm }).link) || []
-		// const nextLink = localizedLink(`/bible/${version_id}/${primaryVersion.nextVerse}.${version.local_abbreviation.toLowerCase()}`)
-		// const prevLink = localizedLink(`/bible/${version_id}/${primaryVersion.previousVerse}.${version.local_abbreviation.toLowerCase()}`)
 		let imgMeta = []
 		if (images && images.length > 0) {
 			const img = images[0]

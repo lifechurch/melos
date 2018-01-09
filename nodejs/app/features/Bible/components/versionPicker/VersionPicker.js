@@ -64,7 +64,7 @@ class VersionPicker extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const { allVersions, languages, alert } = this.state
+		const { allVersions, languages, alert, selectedLanguage, versionsById } = this.state
 		// if languages and versions weren't available when componentDidMount
 		// then let's handle adding the filter
 		if (languages !== nextProps.languages) {
@@ -87,6 +87,19 @@ class VersionPicker extends Component {
 			} else {
 				this.setState({ listErrorAlert: false, dropdown: false })
 			}
+		}
+		// if we've changed languages, let's update the versions list
+		const isNewLanguage = nextProps.selectedLanguage
+			&& selectedLanguage
+			&& (selectedLanguage !== nextProps.selectedLanguage)
+		if (versionsById && isNewLanguage) {
+			this.setState({
+				versions: nextProps.versionsById,
+				selectedLanguage: nextProps.selectedLanguage,
+			})
+		}
+		if (isNewLanguage) {
+			this.setState({ dropdown: true })
 		}
 	}
 
@@ -136,19 +149,6 @@ class VersionPicker extends Component {
 				selectedLanguage: version.language.language_tag,
 			})
 		}
-
-		// if we've changed languages, let's update the versions list
-		if (versionsById
-			&& (
-				!prevProps.versionsById
-				|| selectedLanguage !== prevProps.selectedLanguage
-			)
-		) {
-			this.setState({
-				versions: versionsById,
-				selectedLanguage,
-			})
-		}
 	}
 
 	/**
@@ -160,15 +160,15 @@ class VersionPicker extends Component {
 	 */
 	onBlur() {
 		const { languages, version, versionsById } = this.props
+		const { cancelBlur } = this.state
 		const dat = this
 
 		// when we click out of the input, we need to wait and check if either
 		// the dropdown or a lang/version has been clicked
 		// otherwise let's close and reset
 		setTimeout(() => {
-
 			// cancel blur is only true when dropdown or book/version is clicked
-			if (dat.state.cancelBlur) {
+			if (cancelBlur) {
 				dat.setState({ cancelBlur: false })
 			} else {
 				dat.setState({
@@ -182,7 +182,7 @@ class VersionPicker extends Component {
 					// doesn't look weird
 					dis.setState({
 						languages,
-						// versions: versionsById,
+						versions: versionsById,
 						listErrorAlert: false
 					})
 				}, 700)
@@ -198,11 +198,10 @@ class VersionPicker extends Component {
 	 */
 	getLanguage(selectedLanguage) {
 		const { getVersions } = this.props
-
-		if (selectedLanguage.language_tag) {
-			getVersions(selectedLanguage.language_tag)
+		const language_tag = selectedLanguage.language_tag
+		if (language_tag) {
+			getVersions(language_tag)
 			this.setState({
-				selectedLanguage: selectedLanguage.language_tag,
 				dropdown: true,
 				languagelistSelectionIndex: 0,
 				languageFiltering: false,
@@ -420,7 +419,6 @@ class VersionPicker extends Component {
 				<DropdownTransition show={dropdown} exemptSelector={`.version-picker-container${extraClassNames ? `.${extraClassNames.split(' ').join('.')}` : ''} .dropdown-arrow-container`} onOutsideClick={this.handleCloseDropdown}>
 					<div tabIndex={0} onClick={this.cancelBlur}>
 						<VersionPickerModal
-							{...this.props}
 							classes={classes}
 							languageList={languages}
 							versionList={versions}
@@ -440,8 +438,8 @@ class VersionPicker extends Component {
 								&& selectedLanguage
 								&& languageMap
 								&& languageMap[selectedLanguage]
-								&& this.props.languages[selectedLanguage]
-								&& this.props.languages[selectedLanguage].name
+								&& this.props.languages[languageMap[selectedLanguage]]
+								&& this.props.languages[languageMap[selectedLanguage]].name
 							}
 							versionFiltering={versionFiltering}
 							cancel={this.handleCloseDropdown}
@@ -470,7 +468,6 @@ VersionPicker.propTypes = {
 	languages: PropTypes.array,
 	languageMap: PropTypes.object,
 	version: PropTypes.object,
-	versions: PropTypes.object,
 	recentVersions: PropTypes.object,
 	selectedChapter: PropTypes.string,
 	getVersions: PropTypes.func,
@@ -479,7 +476,6 @@ VersionPicker.propTypes = {
 	intl: PropTypes.object,
 	onClick: PropTypes.func,
 	extraClassNames: PropTypes.string,
-	localizedLink: PropTypes.func,
 	linkBuilder: PropTypes.func
 }
 
@@ -488,7 +484,6 @@ VersionPicker.defaultProps = {
 	languages: [],
 	languageMap: {},
 	version: null,
-	versions: { byLang: {} },
 	recentVersions: [],
 	selectedChapter: null,
 	getVersions: null,
@@ -498,7 +493,6 @@ VersionPicker.defaultProps = {
 	intl: null,
 	onClick: null,
 	extraClassNames: null,
-	localizedLink: null,
 	linkBuilder: (version, usfm, abbr) => {
 		return `/bible/${version}/${usfm}.${abbr}`
 	}

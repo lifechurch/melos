@@ -86,12 +86,11 @@ class PlanNavigation extends Component {
 						<div className='nav-content columns large-6 medium-8 medium-centered'>
 							<Link to={subLink}>
 								<LazyImage
-									alt='plan-image'
 									src={planImgUrl}
 									width={40}
 									height={40}
-									customClass='nav-img img-left'
-									placeholder={<img alt='plan' src={SQUARE} />}
+									className='nav-img img-left'
+									placeholder={<img alt='plan' className='nav-img img-left' width={40} height={40} src={SQUARE} />}
 								/>
 							</Link>
 							<div className='plan-info'>

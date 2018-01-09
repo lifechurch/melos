@@ -7,6 +7,7 @@ import LocalStore from '@youversion/utils/lib/localStore'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
 import deepLinkPath from '@youversion/utils/lib/bible/deepLinkPath'
+import bibleActions from '@youversion/api-redux/lib/endpoints/bible/action'
 import VerseAction from './verseAction/VerseAction'
 import ActionCreators from '../actions/creators'
 import Filter from '../../../lib/filter'
@@ -397,6 +398,7 @@ class Bible extends Component {
 
 						{hasParallel &&
 						<VersionPicker
+							isParallel={true}
 							version_id={bible.parallelVersion.id}
 							recentVersions={this.state.recentVersions}
 							selectedChapter={this.state.selectedChapter}
