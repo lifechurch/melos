@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import TopicList from './TopicList'
 import EMOTIONS from '../assets/emotions'
 import happy from '../assets/happy.png'
@@ -31,7 +32,7 @@ class EmotionPicker extends Component {
 	}
 
 	render() {
-		const { nodeHost } = this.props
+		const { nodeHost, version_id } = this.props
 		const { category } = this.state
 
 		return (
@@ -77,7 +78,10 @@ class EmotionPicker extends Component {
 						padding: '10px 5px'
 					}}
 				>
-					<TopicList topics={EMOTIONS.byCategory[category.toLowerCase()]} />
+					<TopicList
+						topics={EMOTIONS.byCategory[category.toLowerCase()]}
+						version_id={version_id}
+					/>
 				</div>
 			</div>
 		)
@@ -87,10 +91,12 @@ class EmotionPicker extends Component {
 EmotionPicker.propTypes = {
 	category: PropTypes.string,
 	nodeHost: PropTypes.string.isRequired,
+	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 
 EmotionPicker.defaultProps = {
 	category: 'happy',
+	version_id: getBibleVersionFromStorage('en'),
 }
 
 export default EmotionPicker

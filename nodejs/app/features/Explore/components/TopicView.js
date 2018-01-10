@@ -44,7 +44,7 @@ class TopicView extends Component {
 	}
 
 	render() {
-		const { usfmsForTopic, topic, serverLanguageTag, hosts } = this.props
+		const { usfmsForTopic, topic, serverLanguageTag, hosts, version_id } = this.props
 		const { nextPage, page } = this.state
 
 		const list = (usfmsForTopic || []).slice(0, page * PAGE_NUM)
@@ -92,7 +92,7 @@ class TopicView extends Component {
 																		processContent={(content) => {
 																			return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
 																		}}
-																		version_id={getBibleVersionFromStorage(serverLanguageTag)}
+																		version_id={version_id}
 																	/>
 																	<VerseImagesSlider
 																		usfm={usfm}
@@ -109,7 +109,7 @@ class TopicView extends Component {
 										</Card>
 									)
 							}
-							<PlansRelatedToTopic query={topic} />
+							<PlansRelatedToTopic query={topic} version_id={version_id} />
 							<Card>
 								<div style={{ marginBottom: '25px' }}>
 									<Heading2>What does the Bible say about...</Heading2>
@@ -120,6 +120,7 @@ class TopicView extends Component {
 								<EmotionPicker
 									nodeHost={hosts && hosts.nodeHost}
 									category={getCategoryFromEmotion(topic)}
+									version_id={version_id}
 								/>
 							</Card>
 						</VerticalSpace>
@@ -145,6 +146,7 @@ TopicView.defaultProps = {
 	moments: null,
 	bible: null,
 	serverLanguageTag: 'en',
+	version_id: getBibleVersionFromStorage('en'),
 }
 
 function mapStateToProps(state) {
@@ -154,4 +156,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(injectIntl(withTopicData(TopicView)))
+export default connect(mapStateToProps, null)(withTopicData(TopicView))

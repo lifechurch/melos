@@ -22,7 +22,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 		if (typeof store !== 'undefined' && params.url && params.languageTag) {
 			const { dispatch } = store
 			const serverLanguageTag = params.languageTag
-			const version_id = getBibleVersionFromStorage(serverLanguageTag)
+			const version_id = params.version_id || getBibleVersionFromStorage(serverLanguageTag)
 
 			const isTopic = new RegExp('^\/explore/[0-9a-zA-Z-]+')
 			const isExplore = new RegExp('^\/explore')

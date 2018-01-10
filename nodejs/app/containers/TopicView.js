@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import TopicComponent from '../features/Explore/components/TopicView'
 
 class TopicView extends Component {
@@ -10,11 +11,12 @@ class TopicView extends Component {
 	// }
 
 	render() {
-		const { routeParams } = this.props
+		const { routeParams, serverLanguageTag, location: { query } } = this.props
 
 		return (
 			<TopicComponent
 				topic={routeParams && routeParams.topic}
+				version_id={query && query.version}
 			/>
 		)
 	}

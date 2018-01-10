@@ -5,7 +5,7 @@ import ButtonStroke from '@youversion/melos/dist/components/links/ButtonStroke'
 import Routes from '@youversion/utils/lib/routes/routes'
 
 function TopicList(props) {
-	const { topics, serverLanguageTag } = props
+	const { topics, serverLanguageTag, version_id } = props
 	return (
 		<div className='flex-wrap horizontal-center'>
 			{
@@ -18,6 +18,7 @@ function TopicList(props) {
 								to={Routes.exploreTopic({
 									serverLanguageTag,
 									topic,
+									query: { version: version_id }
 								})}
 							>
 								{

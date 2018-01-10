@@ -27,17 +27,16 @@ function StoriesList(props) {
 							>
 								<Heading3>{ story.title_localization_key }</Heading3>
 							</Link>
-							<Body muted>
-								<div className='comma-list'>
-									{
-										story.references.map((ref) => {
-											const { usfm, title } = getReferencesTitle({
-												usfmList: ref,
-												bookList: version && version.books
-											})
-											return (
+							<div className='comma-list'>
+								{
+									story.references.map((ref) => {
+										const { usfm, title } = getReferencesTitle({
+											usfmList: ref,
+											bookList: version && version.books
+										})
+										return (
+											<Body key={ref} muted>
 												<Link
-													key={ref}
 													className='font-grey'
 													to={Routes.reference({
 														usfm,
@@ -48,11 +47,11 @@ function StoriesList(props) {
 												>
 													{ title }
 												</Link>
-											)
-										})
-									}
-								</div>
-							</Body>
+											</Body>
+										)
+									})
+								}
+							</div>
 						</Card>
 					)
 				})

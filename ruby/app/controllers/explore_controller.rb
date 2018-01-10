@@ -4,9 +4,10 @@ class ExploreController < ApplicationController
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
-        "url" => request.path,
+        "url" => request.fullpath,
         "cache_for" => YV::Caching::a_very_long_time,
-        "topic" => params && params[:topic]
+        "topic" => params && params[:topic],
+        "version_id" => params && params[:version]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('Explore', p, cookies, current_auth, current_user, request)

@@ -47,7 +47,7 @@ class PlansRelatedToReference extends Component {
 	}
 
 	render() {
-		const { usfm, plans, subTitle, bible, serverLanguageTag, intl } = this.props
+		const { usfm, plans, subTitle, bible, serverLanguageTag, intl, version_id } = this.props
 
 		this.usfmString = Array.isArray(usfm)
 			? usfm.join('+')
@@ -61,12 +61,7 @@ class PlansRelatedToReference extends Component {
 			&& plans.configuration.images
 			&& plans.configuration.images.reading_plans
 			&& plans.configuration.images.reading_plans.url
-		const version_id = getBibleVersionFromStorage(serverLanguageTag)
-		const versionData = bible
-			&& bible.versions
-			&& bible.versions.byId
-			&& bible.versions.byId[version_id]
-			&& bible.versions.byId[version_id].response
+		const versionData = bible && bible.pullVersion(version_id)
 		const refStrings = versionData
 			&& versionData.books
 			&& getReferencesTitle({
@@ -112,6 +107,7 @@ class PlansRelatedToReference extends Component {
 									<LazyImage
 										placeholder={
 											<img
+												className='radius-5'
 												alt='Reading Plan Default'
 												src={PLAN_DEFAULT}
 											/>
@@ -139,6 +135,7 @@ PlansRelatedToReference.propTypes = {
 	usfm: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 	plans: PropTypes.object,
 	bible: PropTypes.object,
+	version_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	subTitle: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	serverLanguageTag: PropTypes.string,
 	intl:	PropTypes.object.isRequired,
@@ -151,6 +148,7 @@ PlansRelatedToReference.defaultProps = {
 	subTitle: null,
 	bible: null,
 	serverLanguageTag: 'en',
+	version_id: getBibleVersionFromStorage('en')
 }
 
 function mapStateToProps(state) {

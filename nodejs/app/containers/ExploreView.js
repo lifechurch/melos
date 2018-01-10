@@ -25,7 +25,8 @@ class ExploreView extends Component {
 	render() {
 		const { location: { query }, moments, bible, intl, hosts, serverLanguageTag } = this.props
 
-
+		const version_id = (query && query.version)
+			|| getBibleVersionFromStorage(serverLanguageTag)
 		return (
 			<div>
 				<div style={{ width: '100%', marginBottom: '25px' }}>
@@ -52,15 +53,16 @@ class ExploreView extends Component {
 								<div style={{ marginBottom: '25px' }}>
 									<Heading2><FormattedMessage id='what does the bible say' /></Heading2>
 								</div>
-								<TopicList />
+								<TopicList version_id={version_id} />
 							</Card>
 							<Card>
 								<EmotionPicker
 									nodeHost={hosts && hosts.nodeHost}
 									category='sad'
+									version_id={version_id}
 								/>
 							</Card>
-							<Link to={Routes.exploreStories({ serverLanguageTag })}>
+							<Link to={Routes.exploreStories({ serverLanguageTag, query: { version: version_id } })}>
 								<Card>
 									<Heading2><FormattedMessage id='bible stories' /></Heading2>
 									<div style={{ width: '75%', textAlign: 'center', margin: '10px auto 0 auto' }}>
@@ -73,7 +75,7 @@ class ExploreView extends Component {
 									linkBuilder={({ usfm }) => {
 										return Routes.reference({
 											usfm: usfm.join('+'),
-											version_id: getBibleVersionFromStorage(serverLanguageTag)
+											version_id
 										})
 									}}
 								/>

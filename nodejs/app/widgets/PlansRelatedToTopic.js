@@ -53,6 +53,7 @@ function PlansRelatedToTopic(props) {
 										<img
 											alt='Reading Plan Default'
 											src={PLAN_DEFAULT}
+											className='radius-5'
 										/>
 									}
 									src={src}

@@ -2,10 +2,13 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import StoriesList from '../features/Explore/components/StoriesList'
 
 function StoriesView(props) {
-
+	const { serverLanguageTag, location: { query } } = props
+	const version_id = (query && query.version)
+		|| getBibleVersionFromStorage(serverLanguageTag)
 	return (
 		<div>
 			<div style={{ width: '100%', marginBottom: '25px' }}>
@@ -27,7 +30,7 @@ function StoriesView(props) {
 					]}
 				/> */}
 				<div className='yv-large-4 yv-medium-6 yv-small-11 votd-view' style={{ width: '100%' }}>
-					<StoriesList />
+					<StoriesList version_id={version_id} />
 				</div>
 			</div>
 		</div>
@@ -35,12 +38,10 @@ function StoriesView(props) {
 }
 
 StoriesView.propTypes = {
-
+	serverLanguageTag: PropTypes.string,
 }
 
 StoriesView.defaultProps = {
-	moments: null,
-	bible: null,
 	serverLanguageTag: 'en',
 }
 
