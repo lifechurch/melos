@@ -50,6 +50,7 @@ class UnsubscribeConfirmation extends Component {
 			localizedLink,
 			errors,
 			intl,
+      plan,
 			tokenIdentity: {
 				languageTag
 			}
@@ -69,7 +70,8 @@ class UnsubscribeConfirmation extends Component {
 		let statusText
 		let tokenValid = !!token
 		if (['success', 'loading'].indexOf(status) > -1) {
-			statusText = <FormattedHTMLMessage id={`unsubscribe.success.${type}`} />
+			const plan_title = (plan && typeof plan === 'object') ? (plan.name[languageTag] || plan.name.default) : ''
+			statusText = <FormattedHTMLMessage id={`unsubscribe.success.${type}`} values={{ plan_title }} />
 		} else {
 			let errorType = 'other_type'
 			errors.forEach((e) => {
@@ -123,7 +125,8 @@ UnsubscribeConfirmation.propTypes = {
 	localizedLink: PropTypes.func.isRequired,
 	unsubscribe: PropTypes.func.isRequired,
 	intl: PropTypes.object.isRequired,
-	tokenIdentity: PropTypes.object
+	tokenIdentity: PropTypes.object,
+	plan: PropTypes.object
 }
 
 UnsubscribeConfirmation.defaultProps = {
@@ -133,7 +136,8 @@ UnsubscribeConfirmation.defaultProps = {
 	status: null,
 	loggedIn: false,
 	errors: [],
-	tokenIdentity: {}
+	tokenIdentity: {},
+	plan: null
 }
 
 export default UnsubscribeConfirmation
