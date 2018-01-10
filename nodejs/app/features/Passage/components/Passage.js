@@ -42,7 +42,7 @@ class Passage extends Component {
 			version_abbr: versionAbbr,
 			serverLanguageTag,
 		})}`
-		const metaLink = (version && buildMeta({ hosts, version, usfm }).link) || []
+		const metaLink = (version && version.id && buildMeta({ hosts, version, usfm }).link) || []
 		let imgMeta = []
 		if (images && images.length > 0) {
 			const img = images[0]

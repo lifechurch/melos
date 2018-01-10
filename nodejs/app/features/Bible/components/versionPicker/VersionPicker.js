@@ -120,7 +120,9 @@ class VersionPicker extends Component {
 				this.setState({
 					inputDisabled: false,
 					langInputValue: '',
-					inputValue: version && version.local_abbreviation.toUpperCase(),
+					inputValue: version
+						&& version.local_abbreviation
+						&& version.local_abbreviation.toUpperCase(),
 				})
 				// always reset to show versions when the modal is closing
 				if (classes === 'hide-versions') {
@@ -145,8 +147,12 @@ class VersionPicker extends Component {
 			this.setState({
 				dropdown: false,
 				selectedVersion: version.id,
-				inputValue: version.local_abbreviation.toUpperCase(),
-				selectedLanguage: version.language.language_tag,
+				inputValue: version
+					&& version.local_abbreviation
+					&& version.local_abbreviation.toUpperCase(),
+				selectedLanguage: version
+					&& version.language
+					&& version.language.language_tag,
 			})
 		}
 	}

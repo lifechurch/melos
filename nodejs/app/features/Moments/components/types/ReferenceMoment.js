@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { FormattedMessage } from 'react-intl'
 import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/withReference'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
@@ -49,6 +50,7 @@ class ReferenceMoment extends Component {
 			versionAbbr,
 			html,
 			leftFooter,
+			noContentAvailable
 		} = this.props
 
 		const footerLeft = []
@@ -72,6 +74,21 @@ class ReferenceMoment extends Component {
 			footerLeft.push([ ...leftFooter ])
 		}
 
+		const content = noContentAvailable
+			? <FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
+			: (
+				<a
+					target='_self'
+					href={referenceLink}
+				>
+					{ /* eslint-disable react/no-danger */ }
+					<div
+						className='reader'
+						style={{ color: 'black' }}
+						dangerouslySetInnerHTML={{ __html: html }}
+					/>
+				</a>
+			)
 
 		return (
 			<div className={`yv-votd-text ${className}`}>
@@ -144,17 +161,7 @@ class ReferenceMoment extends Component {
 						/>
 					}
 				>
-					<a
-						target='_self'
-						href={referenceLink}
-					>
-						{ /* eslint-disable react/no-danger */ }
-						<div
-							className='reader'
-							style={{ color: 'black' }}
-							dangerouslySetInnerHTML={{ __html: html }}
-						/>
-					</a>
+					{ content }
 				</Moment>
 			</div>
 		)
@@ -186,6 +193,7 @@ ReferenceMoment.propTypes = {
 	html: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,
 	leftFooter: PropTypes.array,
+	noContentAvailable: PropTypes.bool,
 }
 
 ReferenceMoment.defaultProps = {
@@ -201,6 +209,7 @@ ReferenceMoment.defaultProps = {
 	onDelete: null,
 	leftFooter: null,
 	overflowMenuChildren: null,
+	noContentAvailable: false,
 }
 
 function mapStateToProps(state) {
