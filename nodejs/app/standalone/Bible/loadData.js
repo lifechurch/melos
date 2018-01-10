@@ -72,6 +72,9 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					const usfms = expandUsfm(reference, false)
 					const promises = [
 						dispatch(bibleAction({
+							method: 'configuration',
+						})),
+						dispatch(bibleAction({
 							method: 'chapter',
 							params: {
 								id: version,
@@ -85,20 +88,29 @@ export default function loadData(params, startingState, sessionData, store, Loca
 									id: version,
 								}
 							})).then((versionData) => {
-								dispatch(imagesAction({
-									method: 'items',
-									params: {
-										language_tag: versionData.language.iso_639_1,
-										category: 'prerendered',
-										usfm: usfms,
-									}
-								}))
-								.then(() => {
-									resolve2()
-								})
-								.catch(() => {
-									resolve2()
-								})
+								const versionProms = [
+									dispatch(imagesAction({
+										method: 'items',
+										params: {
+											language_tag: versionData
+												&& versionData.language
+												&& versionData.language.iso_639_1,
+											category: 'prerendered',
+											usfm: usfms,
+										}
+									})),
+									dispatch(bibleAction({
+										method: 'versions',
+										params: {
+											language_tag: versionData
+												&& versionData.language
+												&& versionData.language.iso_639_3,
+										}
+									}))
+								]
+								Promise.all(versionProms)
+									.then(() => { resolve2() })
+									.catch(() => { resolve2() })
 							})
 						}),
 						dispatch(readingPlansAction({

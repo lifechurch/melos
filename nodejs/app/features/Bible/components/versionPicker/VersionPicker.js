@@ -490,7 +490,7 @@ VersionPicker.defaultProps = {
 	languages: [],
 	languageMap: {},
 	version: null,
-	recentVersions: [],
+	recentVersions: {},
 	selectedChapter: null,
 	getVersions: null,
 	chapter: null,

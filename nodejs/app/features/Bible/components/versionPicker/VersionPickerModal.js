@@ -178,7 +178,6 @@ function VersionPickerModal(props) {
  *
  */
 VersionPickerModal.propTypes = {
-	localizedLink: PropTypes.func,
 	params: PropTypes.object,
 	languageList: PropTypes.array,
 	versionList: PropTypes.object,
@@ -204,7 +203,6 @@ VersionPickerModal.propTypes = {
 }
 
 VersionPickerModal.defaultProps = {
-	localizedLink: null,
 	params: {},
 	versionsMap: {},
 	languageList: [],

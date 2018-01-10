@@ -61,6 +61,7 @@ class Passage extends Component {
 
 		const versionDropdown = (
 			<VersionPicker
+				key='version-picker'
 				version_id={version_id}
 				selectedChapter={chapterifyUsfm(usfm)}
 				linkBuilder={(versionId, usfmString, abbr) => {
