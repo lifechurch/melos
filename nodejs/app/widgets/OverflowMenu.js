@@ -116,7 +116,7 @@ function OverflowMenu(props) {
 }
 
 OverflowMenu.propTypes = {
-	usfm: PropTypes.string,
+	usfm: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	plan_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	subscription_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

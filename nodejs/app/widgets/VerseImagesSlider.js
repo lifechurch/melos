@@ -15,8 +15,8 @@ function VerseImagesSlider(props) {
 /* eslint-disable react/no-unused-prop-types */
 VerseImagesSlider.propTypes = {
 	images: PropTypes.array,
-	imgHeight: PropTypes.number,
-	imgWidth: PropTypes.number,
+	imgHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	imgWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	hiRes: PropTypes.bool,
 	children: PropTypes.any,
 }

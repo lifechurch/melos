@@ -39,6 +39,7 @@ function StoriesView(props) {
 
 StoriesView.propTypes = {
 	serverLanguageTag: PropTypes.string,
+	location: PropTypes.object.isRequired,
 }
 
 StoriesView.defaultProps = {

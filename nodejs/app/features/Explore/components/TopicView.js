@@ -99,6 +99,7 @@ class TopicView extends Component {
 																		category='prerendered'
 																		imgWidth={160}
 																		imgHeight={160}
+																		version_id={version_id}
 																	/>
 																</VerticalSpace>
 															</div>

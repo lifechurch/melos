@@ -78,6 +78,7 @@ class ExploreView extends Component {
 											version_id
 										})
 									}}
+									version_id={version_id}
 								/>
 							</Card>
 						</VerticalSpace>

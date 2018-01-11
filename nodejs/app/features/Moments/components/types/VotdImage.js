@@ -21,9 +21,9 @@ import VerseImagesSlider from '../../../../widgets/VerseImagesSlider'
 class VotdImage extends Component {
 	constructor(props) {
 		super(props)
-		const { dayOfYear, serverLanguageTag } = this.props
+		const { dayOfYear, serverLanguageTag, version_id } = this.props
 		this.dayOfYear = parseInt((dayOfYear || moment().dayOfYear()), 10)
-		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
+		this.version_id = version_id || getBibleVersionFromStorage(serverLanguageTag)
 	}
 
 	componentDidMount() {
@@ -96,6 +96,7 @@ class VotdImage extends Component {
 }
 
 VotdImage.propTypes = {
+	version_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	dayOfYear: PropTypes.number,
 	usfm: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 	className: PropTypes.string,
@@ -107,6 +108,7 @@ VotdImage.propTypes = {
 }
 
 VotdImage.defaultProps = {
+	version_id: null,
 	dayOfYear: null,
 	usfm: null,
 	hasNoImages: false,

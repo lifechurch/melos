@@ -34,11 +34,15 @@ function TopicList(props) {
 }
 
 TopicList.propTypes = {
-
+	topics: PropTypes.array,
+	serverLanguageTag: PropTypes.string,
+	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }
 
 TopicList.defaultProps = {
-
+	topics: null,
+	serverLanguageTag: 'en',
+	version_id: null,
 }
 
 export default withTopicsData(TopicList)

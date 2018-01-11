@@ -1,6 +1,5 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
@@ -19,89 +18,86 @@ import ShareSheet from '../../../widgets/ShareSheet/ShareSheet'
 import PlansRelatedToReference from '../../../widgets/PlansRelatedToReference'
 
 
-class Passage extends Component {
+function Passage(props) {
+	const {
+		usfm,
+		titleWithAbbr,
+		versionAbbr,
+		version_id,
+		text,
+		hosts,
+		serverLanguageTag,
+		bible,
+		images,
+	} = props
 
-	render() {
-		const {
-			usfm,
-			titleWithAbbr,
-			versionAbbr,
-			version_id,
-			text,
-			hosts,
-			serverLanguageTag,
-			bible,
-			images,
-		} = this.props
-
-		const version = bible && bible.pullVersion(version_id)
-		const title = `${titleWithAbbr}; ${text}`
-		const url = `${hosts.railsHost}${Routes.reference({
-			usfm,
-			version_id,
-			version_abbr: versionAbbr,
-			serverLanguageTag,
-		})}`
-		const metaLink = (version && version.id && buildMeta({ hosts, version, usfm }).link) || []
-		let imgMeta = []
-		if (images && images.length > 0) {
-			const img = images[0]
-			const src = selectImageFromList({
-				images: img.renditions,
-				width: 640,
-				height: 640,
-			}).url
-			imgMeta = [
-				{ property: 'og:image', content: `https:${src}` },
-				{ property: 'og:image:width', content: 640 },
-				{ property: 'og:image:height', content: 640 },
-				{ name: 'twitter:image', content: `https:${src}` }
-			]
-		}
-
-		const versionDropdown = (
-			<VersionPicker
-				key='version-picker'
-				version_id={version_id}
-				selectedChapter={chapterifyUsfm(usfm)}
-				linkBuilder={(versionId, usfmString, abbr) => {
-					return Routes.reference({
-						usfm,
-						version_id: versionId,
-						version_abbr: abbr,
-						serverLanguageTag,
-					})
-				}}
-			/>
-		)
-
-		const usfms = expandUsfm(usfm, false)
-		return (
-			<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
-				<Helmet
-					title={title}
-					meta={[
-						{ name: 'description', content: text },
-						{ property: 'og:title', content: title },
-						{ property: 'og:url', content: url },
-						{ property: 'og:description', content: text },
-						{ name: 'twitter:card', content: 'summary' },
-						{ name: 'twitter:url', content: url },
-						{ name: 'twitter:title', content: title },
-						{ name: 'twitter:description', content: text },
-						{ name: 'twitter:site', content: '@YouVersion' },
-					].concat(imgMeta)}
-					link={metaLink}
-				/>
-				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
-					<ReferenceMoment usfm={usfm} version_id={version_id} leftFooter={[versionDropdown]} />
-					<ImagesMoment usfm={usfms} version_id={version_id} />
-					<PlansRelatedToReference usfm={usfms.slice(0, 4).join('+')} version_id={version_id} />
-				</div>
-				<ShareSheet />
-			</div>
-		)
+	const version = bible && bible.pullVersion(version_id)
+	const title = `${titleWithAbbr}; ${text}`
+	const url = `${hosts.railsHost}${Routes.reference({
+		usfm,
+		version_id,
+		version_abbr: versionAbbr,
+		serverLanguageTag,
+	})}`
+	const metaLink = (version && version.id && buildMeta({ hosts, version, usfm }).link) || []
+	let imgMeta = []
+	if (images && images.length > 0) {
+		const img = images[0]
+		const src = selectImageFromList({
+			images: img.renditions,
+			width: 640,
+			height: 640,
+		}).url
+		imgMeta = [
+			{ property: 'og:image', content: `https:${src}` },
+			{ property: 'og:image:width', content: 640 },
+			{ property: 'og:image:height', content: 640 },
+			{ name: 'twitter:image', content: `https:${src}` }
+		]
 	}
+
+	const versionDropdown = (
+		<VersionPicker
+			key='version-picker'
+			version_id={version_id}
+			selectedChapter={chapterifyUsfm(usfm)}
+			linkBuilder={(versionId, usfmString, abbr) => {
+				return Routes.reference({
+					usfm,
+					version_id: versionId,
+					version_abbr: abbr,
+					serverLanguageTag,
+				})
+			}}
+		/>
+	)
+
+	const usfms = expandUsfm(usfm, false)
+	return (
+		<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
+			<Helmet
+				title={title}
+				meta={[
+					{ name: 'description', content: text },
+					{ property: 'og:title', content: title },
+					{ property: 'og:url', content: url },
+					{ property: 'og:description', content: text },
+					{ name: 'twitter:card', content: 'summary' },
+					{ name: 'twitter:url', content: url },
+					{ name: 'twitter:title', content: title },
+					{ name: 'twitter:description', content: text },
+					{ name: 'twitter:site', content: '@YouVersion' },
+				].concat(imgMeta)}
+				link={metaLink}
+			/>
+			<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
+				<ReferenceMoment usfm={usfm} version_id={version_id} leftFooter={[versionDropdown]} />
+				<ImagesMoment usfm={usfms} version_id={version_id} />
+				<PlansRelatedToReference usfm={usfms.slice(0, 4).join('+')} version_id={version_id} />
+			</div>
+			<ShareSheet />
+		</div>
+	)
 }
 
 Passage.propTypes = {
