@@ -52,7 +52,7 @@ class TopicView extends Component {
 			<div>
 				<div style={{ width: '100%', marginBottom: '25px' }}>
 					<Heading1>
-						<FormattedMessage id={topic} />
+						<FormattedMessage id='what the bible says about' values={{ topic }} />
 					</Heading1>
 				</div>
 				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0 100px 0' }}>
@@ -113,7 +113,7 @@ class TopicView extends Component {
 							<PlansRelatedToTopic query={topic} version_id={version_id} />
 							<Card>
 								<div style={{ marginBottom: '25px' }}>
-									<Heading2>What does the Bible say about...</Heading2>
+									<Heading2><FormattedMessage id='what does the bible say about' /></Heading2>
 								</div>
 								<TopicList />
 							</Card>

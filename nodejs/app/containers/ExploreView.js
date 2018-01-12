@@ -66,7 +66,7 @@ class ExploreView extends Component {
 								<Card>
 									<Heading2><FormattedMessage id='bible stories' /></Heading2>
 									<div style={{ width: '75%', textAlign: 'center', margin: '10px auto 0 auto' }}>
-										<Body muted><FormattedMessage id='stories blurb' /></Body>
+										<Body muted><FormattedMessage id='STORIESEXAMPLES' /></Body>
 									</div>
 								</Card>
 							</Link>
