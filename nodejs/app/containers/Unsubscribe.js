@@ -6,7 +6,7 @@ import Users from '@youversion/api-redux/lib/endpoints/users/action'
 import ReadingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import { unsubscribeStatus, unsubscribeErrors, isLoggedIn, getNotificationSettings, getVOTDSubscription } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import { getTokenIdentity, getLoggedInUser } from '@youversion/api-redux/lib/endpoints/users/reducer'
-import { getMyPlans } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
+import { getMyPlans, getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 
 import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 
@@ -73,6 +73,20 @@ class Unsubscribe extends Component {
 		})
 	}
 
+	getPlan = (id) => {
+		const { dispatch } = this.props
+
+		dispatch(ReadingPlans({
+			method: 'view',
+			params: { id },
+			extras: {}
+		})).then((d) => {
+			if (hasError(d)) {
+				reportError(d.errors[0].key)
+			}
+		})
+	}
+
 	getNotificationSettings = (token) => {
 		const { dispatch } = this.props
 
@@ -119,8 +133,8 @@ class Unsubscribe extends Component {
 				if (hasError(d)) {
 					reportError(d.errors[0].key)
 					reject()
-				} else if (type === 'rp_daily' && 'userid' in loggedInUser) {
-					this.getPlans(loggedInUser.userid)
+				} else if (type === 'rp_daily') {
+					this.getPlan(data)
 					resolve()
 				} else {
 					resolve()
@@ -184,6 +198,7 @@ class Unsubscribe extends Component {
 			notificationSettings,
 			votdSubscription,
 			myPlans,
+      plan,
 			intl,
 			location: {
 				query: {
@@ -199,27 +214,28 @@ class Unsubscribe extends Component {
 			<div className="yv-unsubscribe">
 				{
 					children
-						&& (children.length > 0 || !Array.isArray(children))
-						&& React.cloneElement(children, {
-							status,
-							loggedIn,
-							token,
-							type,
-							data,
-							localizedLink,
-							errors,
-							hosts,
-							tokenIdentity,
-							notificationSettings,
-							votdSubscription,
-							myPlans,
-							intl,
-							getNotificationSettings: this.getNotificationSettings,
-							getVOTDSubscription: this.getVOTDSubscription,
-							unsubscribe: this.unsubscribe,
-							updateNotificationSettings: this.updateNotificationSettings,
-							updateVOTDSubscription: this.updateVOTDSubscription
-						})
+          && (children.length > 0 || !Array.isArray(children))
+          && React.cloneElement(children, {
+            status,
+            loggedIn,
+            token,
+            type,
+            data,
+            localizedLink,
+            errors,
+            hosts,
+            tokenIdentity,
+            notificationSettings,
+            votdSubscription,
+            myPlans,
+            plan,
+            intl,
+            getNotificationSettings: this.getNotificationSettings,
+            getVOTDSubscription: this.getVOTDSubscription,
+            unsubscribe: this.unsubscribe,
+            updateNotificationSettings: this.updateNotificationSettings,
+            updateVOTDSubscription: this.updateVOTDSubscription
+          })
 				}
 			</div>
 		)
@@ -253,7 +269,15 @@ Unsubscribe.defaultProps = {
 	votdSubscription: {}
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, props) {
+	const {
+    location: {
+      query: {
+        data: planId
+      }
+    }
+  } = props
+
 	return {
 		status: unsubscribeStatus(state),
 		errors: unsubscribeErrors(state),
@@ -262,6 +286,7 @@ function mapStateToProps(state) {
 		tokenIdentity: getTokenIdentity(state),
 		loggedInUser: getLoggedInUser(state),
 		myPlans: getMyPlans(state),
+		plan: planId ? getPlanById(state, planId) : null,
 		notificationSettings: getNotificationSettings(state),
 		votdSubscription: getVOTDSubscription(state)
 	}
