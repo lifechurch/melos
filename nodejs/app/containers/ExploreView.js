@@ -1,7 +1,6 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
-import moment from 'moment'
 import Helmet from 'react-helmet'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import Card from '@youversion/melos/dist/components/containers/Card'
@@ -17,92 +16,88 @@ import ShareSheet from '../widgets/ShareSheet/ShareSheet'
 import VerseImagesGrid from '../widgets/VerseImagesGrid'
 
 
-class ExploreView extends Component {
-	componentDidMount() {
-		const { moments, dispatch } = this.props
-	}
+function ExploreView(props) {
+	const { location: { query }, intl, hosts, serverLanguageTag } = props
 
-	render() {
-		const { location: { query }, moments, bible, intl, hosts, serverLanguageTag } = this.props
-
-		const version_id = (query && query.version)
+	const version_id = (query && query.version)
 			|| getBibleVersionFromStorage(serverLanguageTag)
-		return (
-			<div>
-				<div style={{ width: '100%', marginBottom: '25px' }}>
-					<Heading1><FormattedMessage id='explore' /></Heading1>
-				</div>
-				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0 100px 0' }}>
-					{/* <Helmet
-							title={title}
-							meta={[
-							{ name: 'description', content: verse },
+	const title = intl.formatMessage({ id: 'explore the bible' })
+	const description = intl.formatMessage({ id: 'explore the bible description' })
+	const url = `${hosts && hosts.railsHost}${Routes.explore({
+		query: {
+			version: version_id
+		}
+	})}`
+	return (
+		<div>
+			<div style={{ width: '100%', marginBottom: '25px' }}>
+				<Heading1><FormattedMessage id='explore' /></Heading1>
+			</div>
+			<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0 100px 0' }}>
+				<Helmet
+					title={title}
+					meta={[
+							{ name: 'description', content: description },
 							{ property: 'og:title', content: title },
 							{ property: 'og:url', content: url },
-							{ property: 'og:description', content: verse },
+							{ property: 'og:description', content: description },
 							{ name: 'twitter:card', content: 'summary' },
 							{ name: 'twitter:url', content: url },
 							{ name: 'twitter:title', content: title },
-							{ name: 'twitter:description', content: verse },
+							{ name: 'twitter:description', content: description },
 							{ name: 'twitter:site', content: '@YouVersion' },
-						]}
-					/> */}
-					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
-						<VerticalSpace>
+					]}
+				/>
+				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
+					<VerticalSpace>
+						<Card>
+							<div style={{ marginBottom: '25px' }}>
+								<Heading2><FormattedMessage id='what does the bible say' /></Heading2>
+							</div>
+							<TopicList version_id={version_id} />
+						</Card>
+						<Card>
+							<EmotionPicker
+								nodeHost={hosts && hosts.nodeHost}
+								category='sad'
+								version_id={version_id}
+							/>
+						</Card>
+						<Link to={Routes.exploreStories({ serverLanguageTag, query: { version: version_id } })}>
 							<Card>
-								<div style={{ marginBottom: '25px' }}>
-									<Heading2><FormattedMessage id='what does the bible say' /></Heading2>
+								<Heading2><FormattedMessage id='bible stories' /></Heading2>
+								<div style={{ width: '75%', textAlign: 'center', margin: '10px auto 0 auto' }}>
+									<Body muted><FormattedMessage id='STORIESEXAMPLES' /></Body>
 								</div>
-								<TopicList version_id={version_id} />
 							</Card>
-							<Card>
-								<EmotionPicker
-									nodeHost={hosts && hosts.nodeHost}
-									category='sad'
-									version_id={version_id}
-								/>
-							</Card>
-							<Link to={Routes.exploreStories({ serverLanguageTag, query: { version: version_id } })}>
-								<Card>
-									<Heading2><FormattedMessage id='bible stories' /></Heading2>
-									<div style={{ width: '75%', textAlign: 'center', margin: '10px auto 0 auto' }}>
-										<Body muted><FormattedMessage id='STORIESEXAMPLES' /></Body>
-									</div>
-								</Card>
-							</Link>
-							<Card>
-								<VerseImagesGrid
-									linkBuilder={({ usfm }) => {
-										return Routes.reference({
-											usfm: usfm.join('+'),
-											version_id
-										})
-									}}
-									version_id={version_id}
-								/>
-							</Card>
-						</VerticalSpace>
-					</div>
-					<ShareSheet />
+						</Link>
+						<Card>
+							<VerseImagesGrid
+								linkBuilder={({ usfm }) => {
+									return Routes.reference({
+										usfm: usfm.join('+'),
+										version_id
+									})
+								}}
+								version_id={version_id}
+							/>
+						</Card>
+					</VerticalSpace>
 				</div>
+				<ShareSheet />
 			</div>
-		)
-	}
+		</div>
+	)
 }
 
 ExploreView.propTypes = {
-	moments: PropTypes.object,
 	location: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string,
-	bible: PropTypes.object,
 	intl: PropTypes.object.isRequired,
 	hosts: PropTypes.object.isRequired,
-	dispatch: PropTypes.func.isRequired,
 }
 
 ExploreView.defaultProps = {
-	moments: null,
-	bible: null,
 	serverLanguageTag: 'en',
 }
 

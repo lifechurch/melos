@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { FormattedMessage } from 'react-intl'
 import withVersion from '@youversion/api-redux/lib/endpoints/bible/hocs/withVersion'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import Card from '@youversion/melos/dist/components/containers/Card'
@@ -25,7 +26,9 @@ function StoriesList(props) {
 									version_id: version && version.id
 								})}
 							>
-								<Heading3>{ story.title_localization_key }</Heading3>
+								<Heading3>
+									<FormattedMessage id={story.title_localization_key} />
+								</Heading3>
 							</Link>
 							<div className='comma-list'>
 								{

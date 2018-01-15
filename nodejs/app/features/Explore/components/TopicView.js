@@ -1,13 +1,18 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
+import Helmet from 'react-helmet'
 import { FormattedMessage, injectIntl } from 'react-intl'
+import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import withTopicData from '@youversion/api-redux/lib/endpoints/explore/hocs/withTopic'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import wrapWordsInTag from '@youversion/utils/lib/text/wrapWordsInTag'
-import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import parseVerseContent from '@youversion/utils/lib/bible/parseVerseContent'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
+import Routes from '@youversion/utils/lib/routes/routes'
+import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import TopicList from './TopicList'
 import EmotionPicker from './EmotionPicker'
 import ShareSheet from '../../../widgets/ShareSheet/ShareSheet'
@@ -44,33 +49,58 @@ class TopicView extends Component {
 	}
 
 	render() {
-		const { usfmsForTopic, topic, serverLanguageTag, hosts, version_id } = this.props
-		const { nextPage, page } = this.state
+		const { usfmsForTopic, topic, hosts, intl, version_id, bibleModel, serverLanguageTag } = this.props
+		const { page } = this.state
 
 		const list = (usfmsForTopic || []).slice(0, page * PAGE_NUM)
+		const title = intl.formatMessage({ id: 'what the bible says about' }, { topic })
+		const firstChapter = list
+			&& list.length > 0
+			&& bibleModel
+			&& bibleModel.pullRef(chapterifyUsfm(list[0]))
+			&& bibleModel.pullRef(chapterifyUsfm(list[0])).content
+		const description = firstChapter
+			&& parseVerseContent({
+				usfms: list[0],
+				fullContent: firstChapter,
+			}).text
+		const url = `${hosts && hosts.railsHost}${Routes.exploreTopic({
+			topic,
+			query: {
+				version: version_id
+			},
+			serverLanguageTag
+		})}`
+
 		return (
 			<div>
+				<Helmet
+					title={title}
+					meta={[
+						{ name: 'description', content: description },
+						{ property: 'og:title', content: title },
+						{ property: 'og:url', content: url },
+						{ property: 'og:description', content: description },
+						{ name: 'twitter:card', content: 'summary' },
+						{ name: 'twitter:url', content: url },
+						{ name: 'twitter:title', content: title },
+						{ name: 'twitter:description', content: description },
+						{ name: 'twitter:site', content: '@YouVersion' },
+					]}
+				/>
 				<div style={{ width: '100%', marginBottom: '25px' }}>
 					<Heading1>
 						<FormattedMessage id='what the bible says about' values={{ topic }} />
 					</Heading1>
 				</div>
-				<div className='gray-background horizontal-center flex-wrap' style={{ padding: '50px 0 100px 0' }}>
-					{/* <Helmet
-							title={title}
-							meta={[
-							{ name: 'description', content: verse },
-							{ property: 'og:title', content: title },
-							{ property: 'og:url', content: url },
-							{ property: 'og:description', content: verse },
-							{ name: 'twitter:card', content: 'summary' },
-							{ name: 'twitter:url', content: url },
-							{ name: 'twitter:title', content: title },
-							{ name: 'twitter:description', content: verse },
-							{ name: 'twitter:site', content: '@YouVersion' },
-						]}
-					/> */}
-					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view' style={{ width: '100%' }}>
+				<div
+					className='gray-background horizontal-center flex-wrap'
+					style={{ padding: '50px 0 100px 0' }}
+				>
+					<div
+						className='yv-large-5 yv-medium-7 yv-small-11 votd-view'
+						style={{ width: '100%' }}
+					>
 						<VerticalSpace space={40}>
 							{
 								list
@@ -80,17 +110,31 @@ class TopicView extends Component {
 											<List
 												loadMore={this.hasNextPage() && this.page}
 												pageOnScroll={false}
-												loadButton={<div className='card-button'><FormattedMessage id='more' /></div>}
+												loadButton={(
+													<div className='card-button'>
+														<FormattedMessage id='Reader.header.more label' />
+													</div>
+												)}
 											>
 												{
 													list.map((usfm) => {
 														return (
-															<div key={usfm} style={{ borderBottom: '2px solid #F4F4F4', padding: '35px 25px' }}>
+															<div
+																key={usfm}
+																style={{
+																	borderBottom: '2px solid #F4F4F4',
+																	padding: '35px 25px'
+																}}
+															>
 																<VerticalSpace>
 																	<ReferenceContent
 																		usfm={usfm}
 																		processContent={(content) => {
-																			return wrapWordsInTag({ text: content, tag: 'strong', words: [topic] })
+																			return wrapWordsInTag({
+																				text: content,
+																				tag: 'strong',
+																				words: [topic]
+																			})
 																		}}
 																		version_id={version_id}
 																	/>
@@ -113,7 +157,9 @@ class TopicView extends Component {
 							<PlansRelatedToTopic query={topic} version_id={version_id} />
 							<Card>
 								<div style={{ marginBottom: '25px' }}>
-									<Heading2><FormattedMessage id='what does the bible say about' /></Heading2>
+									<Heading2>
+										<FormattedMessage id='what does the bible say about' />
+									</Heading2>
 								</div>
 								<TopicList />
 							</Card>
@@ -134,17 +180,18 @@ class TopicView extends Component {
 }
 
 TopicView.propTypes = {
-	moments: PropTypes.object,
-	routeParams: PropTypes.object.isRequired,
+	topic: PropTypes.string.isRequired,
+	usfmsForTopic: PropTypes.array,
+	version_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	bibleModel: PropTypes.object,
 	serverLanguageTag: PropTypes.string,
-	bible: PropTypes.object,
 	intl: PropTypes.object.isRequired,
 	hosts: PropTypes.object.isRequired,
-	dispatch: PropTypes.func.isRequired,
 }
 
 TopicView.defaultProps = {
-	moments: null,
+	usfmsForTopic: null,
+	bibleModel: null,
 	bible: null,
 	serverLanguageTag: 'en',
 	version_id: getBibleVersionFromStorage('en'),
@@ -154,7 +201,8 @@ function mapStateToProps(state) {
 	return {
 		serverLanguageTag: state.serverLanguageTag,
 		hosts: state.hosts,
+		bibleModel: getBibleModel(state),
 	}
 }
 
-export default connect(mapStateToProps, null)(withTopicData(TopicView))
+export default connect(mapStateToProps, null)(withTopicData(injectIntl(TopicView)))
