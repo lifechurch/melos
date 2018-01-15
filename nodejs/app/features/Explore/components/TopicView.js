@@ -158,10 +158,10 @@ class TopicView extends Component {
 							<Card>
 								<div style={{ marginBottom: '25px' }}>
 									<Heading2>
-										<FormattedMessage id='what does the bible say about' />
+										<FormattedMessage id='what does the bible say' />
 									</Heading2>
 								</div>
-								<TopicList />
+								<TopicList version_id={version_id} />
 							</Card>
 							<Card>
 								<EmotionPicker
