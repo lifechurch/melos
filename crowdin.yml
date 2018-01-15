@@ -1,0 +1,3 @@
+files:
+  - source: /ruby/config/locales/source/en.yml
+    translation: /ruby/config/locales/%two_letters_code%.yml
