@@ -86,7 +86,6 @@ class EmotionPicker extends Component {
 
 EmotionPicker.propTypes = {
 	category: PropTypes.string,
-	nodeHost: PropTypes.string.isRequired,
 	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 

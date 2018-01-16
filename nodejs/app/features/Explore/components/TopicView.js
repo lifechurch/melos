@@ -165,7 +165,6 @@ class TopicView extends Component {
 							</Card>
 							<Card>
 								<EmotionPicker
-									nodeHost={hosts && hosts.nodeHost}
 									category={getCategoryFromEmotion(topic)}
 									version_id={version_id}
 								/>

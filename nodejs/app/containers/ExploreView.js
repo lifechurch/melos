@@ -58,7 +58,6 @@ function ExploreView(props) {
 						</Card>
 						<Card>
 							<EmotionPicker
-								nodeHost={hosts && hosts.nodeHost}
 								category='sad'
 								version_id={version_id}
 							/>
