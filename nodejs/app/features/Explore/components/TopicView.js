@@ -7,6 +7,9 @@ import withTopicData from '@youversion/api-redux/lib/endpoints/explore/hocs/with
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
+import Body from '@youversion/melos/dist/components/typography/Body'
+import Link from '@youversion/melos/dist/components/links/Link'
+import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
 import wrapWordsInTag from '@youversion/utils/lib/text/wrapWordsInTag'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import parseVerseContent from '@youversion/utils/lib/bible/parseVerseContent'
@@ -88,10 +91,28 @@ class TopicView extends Component {
 						{ name: 'twitter:site', content: '@YouVersion' },
 					]}
 				/>
-				<div style={{ width: '100%', marginBottom: '25px' }}>
-					<Heading1>
-						<FormattedMessage id='what the bible says about' values={{ topic }} />
-					</Heading1>
+				<div
+					className='yv-large-6 yv-medium-9 yv-small-11 centered'
+					style={{ marginBottom: '25px' }}
+				>
+					<SectionedLayout
+						left={(
+							<Link
+								to={Routes.explore({
+									serverLanguageTag,
+									query: { version: version_id }
+								})}
+							>
+								<Body muted>
+									<FormattedMessage id='explore' />
+								</Body>
+							</Link>
+						)}
+					>
+						<Heading1>
+							<FormattedMessage id='what the bible says about' values={{ topic }} />
+						</Heading1>
+					</SectionedLayout>
 				</div>
 				<div
 					className='gray-background horizontal-center flex-wrap'

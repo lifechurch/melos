@@ -5,6 +5,9 @@ import { FormattedMessage, injectIntl } from 'react-intl'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import Routes from '@youversion/utils/lib/routes/routes'
+import Body from '@youversion/melos/dist/components/typography/Body'
+import Link from '@youversion/melos/dist/components/links/Link'
+import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
 import StoriesList from '../features/Explore/components/StoriesList'
 
 function StoriesView(props) {
@@ -34,11 +37,37 @@ function StoriesView(props) {
 					{ name: 'twitter:site', content: '@YouVersion' },
 				]}
 			/>
-			<div style={{ width: '100%', marginBottom: '25px' }}>
-				<Heading1><FormattedMessage id='bible stories' /></Heading1>
+			<div
+				className='yv-large-6 yv-medium-9 yv-small-11 centered'
+				style={{ marginBottom: '25px' }}
+			>
+				<SectionedLayout
+					left={(
+						<Link
+							to={Routes.explore({
+								serverLanguageTag,
+								query: { version: version_id }
+							})}
+						>
+							<Body muted>
+								<FormattedMessage id='explore' />
+							</Body>
+						</Link>
+					)}
+				>
+					<Heading1>
+						<FormattedMessage id='bible stories' />
+					</Heading1>
+				</SectionedLayout>
 			</div>
-			<div className='gray-background horizontal-center flex-wrap' style={{ padding: '40px 0 80px 0' }}>
-				<div className='yv-large-4 yv-medium-6 yv-small-11 votd-view' style={{ width: '100%' }}>
+			<div
+				className='gray-background horizontal-center flex-wrap'
+				style={{ padding: '40px 0 80px 0' }}
+			>
+				<div
+					className='yv-large-4 yv-medium-6 yv-small-11 votd-view'
+					style={{ width: '100%' }}
+				>
 					<StoriesList version_id={version_id} />
 				</div>
 			</div>
