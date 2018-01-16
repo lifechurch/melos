@@ -3,11 +3,13 @@ files:
     translation: /ruby/config/locales/%osx_locale%.yml
     languages_mapping:
       osx_locale:
+        'es-ES': 'es-ES'
+        'es-LA': 'es'
         'zh-CN': 'zh-CN'
-        'es-la': 'es-LA'
         'zh-TW': 'zh-TW'
         'zh-HK': 'zh-HK'
         'en-GB': 'en-GB'
-        'pt-PT': 'pt'
-        'pt-BR': 'pt-BR'
+        'en': 'en'
+        'pt-PT': 'pt-PT'
+        'pt-BR': 'pt'
         'sv-SE': 'sv'
