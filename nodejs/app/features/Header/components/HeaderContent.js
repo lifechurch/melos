@@ -119,7 +119,8 @@ class HeaderContent extends Component {
 			serverLanguageTag,
 			user,
 			loggedInUser,
-			screenSize
+			screenSize,
+			screenWidth
 		} = this.props
 
 		const {
@@ -131,17 +132,13 @@ class HeaderContent extends Component {
 			notificationsOpen
 		} = this.state
 
-		const plansButton = (
-			<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
-				<Plans />
-			</IconButton>
-		)
+		// const plansButton = (
+		//
+		// )
 
-		const videosButton = (
-			<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
-				<Videos />
-			</IconButton>
-		)
+		// const videosButton = (
+		//
+		// )
 
 		const search = (
 			<Search
@@ -163,20 +160,24 @@ class HeaderContent extends Component {
 					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
 						<Read />
 					</IconButton>
-					{ (screenSize > ScreenSize.MEDIUM) ? plansButton : null }
-					{ (screenSize > ScreenSize.MEDIUM) ? videosButton : null }
+					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
+						<Plans />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
+						<Videos />
+					</IconButton>
 				</IconButtonGroup>
 			</div>
 		)
 
-		const profileTopContent = (screenSize < ScreenSize.LARGE)
-			? (<div>
-				<IconButtonGroup iconHeight={24} iconSpacing={44}>
-					{plansButton}
-					{videosButton}
-				</IconButtonGroup>
-			</div>)
-			: null
+		// const profileTopContent = (screenSize < ScreenSize.LARGE)
+		// 	? (<div>
+		// 		<IconButtonGroup iconHeight={24} iconSpacing={44}>
+		// 			{plansButton}
+		// 			{videosButton}
+		// 		</IconButtonGroup>
+		// 	</div>)
+		// 	: null
 
 		const userNotificationGroup = isLoggedIn ? (
 			<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
@@ -232,7 +233,26 @@ class HeaderContent extends Component {
 			<div className={`yv-header-right ${ready && 'ready'}`}>
 				{screenSize < ScreenSize.LARGE && search}
 				{(screenSize > ScreenSize.MEDIUM) ? userNotificationGroup : moreMenu}
-				{
+			</div>
+		)
+		: (
+			<div className={`yv-header-right ${ready && 'ready'}`}>
+				{screenSize < ScreenSize.LARGE && search}
+				{(screenSize > ScreenSize.MEDIUM) ? signUpButtons : moreMenu}
+			</div>
+		)
+
+		return (
+			<StickyHeader className={`yv-header ${screenWidth < 416 && 'yv-header-scroll'} ${(profileMenuOpen || notificationsOpen) && 'yv-header-scroll-lock'}`}>
+				<SectionedHeading
+					left={left}
+					right={right}
+				>
+					<div>
+						{screenSize > ScreenSize.MEDIUM && search}
+					</div>
+				</SectionedHeading>
+				{ isLoggedIn &&
 					<DropdownTransition
 						show={notificationsOpen}
 						hideDir="up"
@@ -244,8 +264,7 @@ class HeaderContent extends Component {
 						<NotificationsInbox />
 					</DropdownTransition>
 				}
-				{
-					('response' in user) &&
+				{ isLoggedIn && ('response' in user) &&
 					<DropdownTransition
 						show={profileMenuOpen}
 						hideDir="up"
@@ -261,45 +280,26 @@ class HeaderContent extends Component {
 							lastName={user.response.last_name}
 							avatarUrl={user.response.user_avatar_url.px_48x48}
 							serverLanguageTag={serverLanguageTag}
-							topContent={profileTopContent}
 							topAvatarContent={(screenSize < ScreenSize.LARGE) ? userNotificationGroup : null}
 						/>
 					</DropdownTransition>
 				}
-			</div>
-		)
-		: (
-			<div className={`yv-header-right ${ready && 'ready'}`}>
-				{screenSize < ScreenSize.LARGE && search}
-				{(screenSize > ScreenSize.MEDIUM) ? signUpButtons : moreMenu}
-				<DropdownTransition
-					show={profileMenuOpen}
-					hideDir="up"
-					transition={true}
-					onOutsideClick={this.handleProfileMenuClose}
-					exemptClass="yv-profile-menu-trigger"
-					classes="yv-popup-modal-content"
-					containerClasses="yv-profile-menu-container"
-				>
-					<ProfileMenu
-						serverLanguageTag={serverLanguageTag}
-						topContent={profileTopContent}
-						bottomContent={signUpButtons}
-					/>
-				</DropdownTransition>
-			</div>
-		)
-
-		return (
-			<StickyHeader className="yv-header">
-				<SectionedLayout
-					left={left}
-					right={right}
-				>
-					<div>
-						{screenSize > ScreenSize.MEDIUM && search}
-					</div>
-				</SectionedLayout>
+				{ !isLoggedIn &&
+					<DropdownTransition
+						show={profileMenuOpen}
+						hideDir="up"
+						transition={true}
+						onOutsideClick={this.handleProfileMenuClose}
+						exemptClass="yv-profile-menu-trigger"
+						classes="yv-popup-modal-content"
+						containerClasses="yv-profile-menu-container"
+					>
+						<ProfileMenu
+							serverLanguageTag={serverLanguageTag}
+							bottomContent={signUpButtons}
+						/>
+					</DropdownTransition>
+				}
 			</StickyHeader>
 		)
 	}
@@ -313,7 +313,8 @@ HeaderContent.propTypes = {
 	notifications: PropTypes.object,
 	friendshipRequests: PropTypes.object,
 	user: PropTypes.object,
-	screenSize: PropTypes.number
+	screenSize: PropTypes.number,
+	screenWidth: PropTypes.number
 }
 
 HeaderContent.defaultProps = {
@@ -322,7 +323,8 @@ HeaderContent.defaultProps = {
 	notifications: null,
 	friendshipRequests: null,
 	user: null,
-	screenSize: ScreenSize.SMALL
+	screenSize: ScreenSize.SMALL,
+	screenWidth: null
 }
 
 export default HeaderContent
