@@ -3,15 +3,17 @@ import moment from 'moment'
 import Immutable from 'immutable'
 import ga from 'react-ga'
 import { connect } from 'react-redux'
+import cookie from 'react-cookie'
+import GoogleAuth from '@youversion/utils/lib/auth/googleAuth'
 import streaksAction from '@youversion/api-redux/lib/endpoints/streaks/action'
 import { getConfiguration } from '@youversion/api-redux/lib/endpoints/bible/reducer'
+import localOnceDaily from '@youversion/utils/lib/localOnceDaily'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
-import DropdownTransition from '../../../components/DropdownTransition'
-import XMark from '../../../components/XMark'
 import FooterContent from './FooterContent'
 import LangSelector from './LangSelector'
 import LinkCard from './LinkCard'
-import localOnceDaily from '../../../lib/localOnceDaily'
+import FullscreenDrawer from '../../../components/FullscreenDrawer'
+
 
 class Footer extends Component {
 	constructor(props) {
@@ -28,6 +30,13 @@ class Footer extends Component {
 		const userIdKeyPath = [ 'userData', 'userid' ]
 
 		if (immAuth.hasIn(userIdKeyPath)) {
+			// setup google auth for monitoring google token if signed in with google
+			if (cookie.load('auth_type') === 'google') {
+				window.yvga = new GoogleAuth({
+					client_id: '201895780642-g4oj7hm4p3h81eg7b1di2l2l93k5gcm3.apps.googleusercontent.com',
+				})
+				window.yvga.init()
+			}
 			const userId = immAuth.getIn(userIdKeyPath)
 			localOnceDaily(`DailyStreakCheckin-${userId}`, (handleSuccess) => {
 				const today = moment()
@@ -99,7 +108,7 @@ class Footer extends Component {
 		} = bibleConfiguration
 
 		return (
-			<ResponsiveContainer>
+			<ResponsiveContainer className='footer-container'>
 				<FooterContent
 					{...this.props}
 					onLangClose={this.handleLangClose}
@@ -111,32 +120,22 @@ class Footer extends Component {
 					versions={versions}
 					languages={languages}
 				/>
-				<div className="yv-fullscreen-modal-container">
-					<DropdownTransition
-						show={langSelectorOpen}
-						hideDir="down"
-						transition={true}
-						onOutsideClick={this.handleLangClose}
-						exemptClass="yv-lang-toggle"
-						classes="yv-fullscreen-modal-content"
-					>
-						<a tabIndex={0} className="yv-close-x" onClick={this.handleLangClose}><XMark width={15} height={15} fill="#444444" /></a>
-						<LangSelector {...this.props} />
-					</DropdownTransition>
-				</div>
-				<div className="yv-fullscreen-modal-container">
-					<DropdownTransition
-						show={linksOpen}
-						hideDir="down"
-						transition={true}
-						onOutsideClick={this.handleLinksClose}
-						exemptClass="yv-link-toggle"
-						classes="yv-fullscreen-modal-content"
-					>
-						<a tabIndex={0} className="yv-close-x" onClick={this.handleLinksClose}><XMark width={15} height={15} fill="#444444" /></a>
-						<LinkCard serverLanguageTag={serverLanguageTag} versions={versions} languages={languages} />
-					</DropdownTransition>
-				</div>
+				<FullscreenDrawer
+					isOpen={langSelectorOpen}
+					onClose={this.handleLangClose}
+				>
+					<LangSelector {...this.props} />
+				</FullscreenDrawer>
+				<FullscreenDrawer
+					isOpen={linksOpen}
+					onClose={this.handleLinksClose}
+				>
+					<LinkCard
+						serverLanguageTag={serverLanguageTag}
+						versions={versions}
+						languages={languages}
+					/>
+				</FullscreenDrawer>
 			</ResponsiveContainer>
 		)
 	}

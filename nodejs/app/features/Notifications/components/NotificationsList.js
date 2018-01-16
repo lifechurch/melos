@@ -4,8 +4,8 @@ import moment from 'moment'
 import { FormattedMessage } from 'react-intl'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import User from '../../../components/User'
-import { selectImageFromList } from '../../../lib/imageUtil'
 
 class NotificationsList extends Component {
 	componentDidMount() {
@@ -58,6 +58,7 @@ class NotificationsList extends Component {
 								return (
 									<a
 										tabIndex={0}
+										target='_self'
 										key={item.created_dt}
 										className='yv-notification'
 										href={notification.action_url}
@@ -69,7 +70,7 @@ class NotificationsList extends Component {
 												stringId &&
 												<FormattedMessage
 													id={stringId}
-													values={notification.title && notification.title.l_args}
+													values={(notification.title && notification.title.l_args) || {}}
 												/>
 											}
 											subheading={time}

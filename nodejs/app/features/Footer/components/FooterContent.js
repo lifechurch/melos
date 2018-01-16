@@ -12,7 +12,7 @@ import DropDownArrow from '../../../components/DropDownArrow'
 import XMark from '../../../components/XMark'
 import { localizedLink } from '../../../lib/routeUtils'
 import StickyHeader from '../../../components/StickyHeader'
-import SectionedHeading from '../../../components/SectionedHeading'
+import SectionedLayout from '../../../components/SectionedLayout'
 
 class FooterContent extends Component {
 	constructor(props) {
@@ -135,12 +135,12 @@ class FooterContent extends Component {
 
 		return (
 			<StickyHeader className="yv-footer" pinTo="bottom">
-				<SectionedHeading
+				<SectionedLayout
 					left={left}
 					right={right}
 				>
 					{showLinks && links}
-				</SectionedHeading>
+				</SectionedLayout>
 			</StickyHeader>
 		)
 	}

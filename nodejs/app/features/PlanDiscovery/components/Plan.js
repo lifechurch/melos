@@ -1,209 +1,222 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import Helmet from 'react-helmet'
-import moment from 'moment'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
-import { push } from 'react-router-redux'
-import cookie from 'react-cookie'
-import Immutable from 'immutable'
-
-import Image from '../../../components/Carousel/Image'
+import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
+import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
+import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
+// components
+import LazyImage from '../../../components/LazyImage'
 import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
-import ActionCreators from '../actions/creators'
-import isFinalReadingForDay, { isFinalPlanDay, dayHasDevo, handleRefUpdate } from '../../../lib/readingPlanUtils'
+import PlanContentListItem from './PlanContentListItem'
+// utils
+import Routes from '../../../lib/routes'
 
 
-class Plan extends Component {
-	constructor(props) {
-		super(props)
+function Plan({
+	plan,
+	day,
+	start_dt,
+	dayProgress,
+	daySegments,
+	progressDays,
+	progressString,
+	bookList,
+	savedPlans,
+	dispatch,
+	children,
+	params,
+	auth,
+	localizedLink,
+	isCompleted,
+	isRtl,
+	serverLanguageTag,
+	together_id,
+	subscription_id,
+	handleContentCheck,
+	handleCatchUp,
+}) {
 
-		this.handleCatchUp = this.handleCatchUp.bind(this)
-		this.handleCompleteRef = this.handleCompleteRef.bind(this)
-	}
+	const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
+	const isSaved = plan && plan.id && !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(plan.id) !== -1))
+	const isInFuture = start_dt && calcTodayVsStartDt(start_dt).isInFuture
 
-	handleCatchUp() {
-		const {
-			dispatch,
-			params,
-			plan: {
-				id
-			},
-			serverLanguageTag,
-			auth: {
-				userData: {
-					userid: user_id,
-					language_tag: userLanguageTag
-				}
-			},
-			location: {
-				query
-			}
-		} = this.props
+	let aboutLink,
+		myPlansLink,
+		bibleLink,
+		planLinkNode,
+		subscriptionLink,
+		startLink,
+		planTitle,
+		planImgSrc,
+		plan_id,
+		totalDays,
+		refsDiv
 
-		const day = parseInt(query.day, 10)
-		const language_tag = serverLanguageTag || params.lang || userLanguageTag || 'en'
-		const version = cookie.load('version') || '1'
-
-		if (id) {
-			dispatch(ActionCreators.resetSubscriptionAll({ id, language_tag, user_id, day, version }, true))
-		}
-	}
-
-	handleCompleteRef(day, ref, complete) {
-		const { dispatch, plan: { calendar, id, total_days } } = this.props
-		const dayData = calendar[day - 1]
-		const references = Immutable.fromJS(dayData.references_completed).toJS()
-		const hasDevo = dayHasDevo(dayData.additional_content)
-
-		handleRefUpdate(
-			references,
-			ref === 'devo',
-			hasDevo,
-			ref === 'devo' ? complete : dayData.additional_content.completed,
-			ref !== 'devo' ? ref : null,
-			complete,
-			id,
+	if (plan && plan.id) {
+			// build some links
+		aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
+		myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
+		bibleLink = localizedLink(`/bible/${getBibleVersionFromStorage()}`)
+		planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id='plans.sample' /></Link>
+		subscriptionLink = Routes.subscription({
+			username: auth.userData.username,
+			plan_id: plan.id,
+			slug: plan.slug,
+			subscription_id,
+		})
+		startLink = Routes.subscriptionContent({
+			username: auth.userData.username,
+			plan_id: plan.id,
+			slug: plan.slug,
+			subscription_id,
 			day,
-			dispatch
-		)
+			content: 0,
+		})
 
-		// push day complete/plan complete
-		if (complete) {
-			if (isFinalReadingForDay(dayData, ref, ref === 'devo')) {
-				if (isFinalPlanDay(day, calendar, total_days)) {
-					dispatch(push(`${window.location.pathname.replace(`/day/${day}`)}/completed`))
-				} else {
-					dispatch(push(`${window.location.pathname}/completed`))
-				}
-			}
-		}
-	}
+			// get other plan info
+		planTitle = plan.name[language_tag] || plan.name.default
+		planImgSrc = plan.images ?
+			selectImageFromList({
+				images: plan.images,
+				width: 640,
+				height: 320
+			}).url :
+			null
+		plan_id = plan.id
+		totalDays = plan.total_days
 
-	render() {
-		const { plan, savedPlans, dispatch, children, params, auth, localizedLink, isRtl, serverLanguageTag } = this.props
+		refsDiv = daySegments && daySegments.length > 0
+			&& (
+				<ul className='no-bullets plan-pieces'>
+					{
+						daySegments &&
+						daySegments.map((segment, i) => {
+							let title
+							let key = segment.kind
+							const link = Routes.subscriptionContent({
+								username: auth.userData.username,
+								plan_id: plan.id,
+								slug: plan.slug,
+								subscription_id,
+								day,
+								content: i,
+							})
+							const complete = dayProgress &&
+								(dayProgress.complete ||
+								(dayProgress.partial && dayProgress.partial[i]))
 
-		if (typeof plan !== 'object' || (plan.__validation && !plan.__validation.isValid)) {
-			return (
-				<div />
-			)
-		}
+							if (segment.kind === 'devotional') {
+								title = <FormattedMessage id='plans.devotional' />
+							} else if (segment.kind === 'reference') {
+								const usfm = [segment.content]
+								title = getReferencesTitle({ bookList, usfmList: usfm }).title
+								key = usfm
+							} else if (segment.kind === 'talk-it-over') {
+								title = <FormattedMessage id='talk it over' />
+							}
 
-		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
-		const version = cookie.load('version') || '1'
-		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
-		const myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
-		const bibleLink = localizedLink(`/bible/${version}`)
-		const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(plan.id) !== -1))
-
-		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
-
-		let day = parseInt(params.day, 10)
-		// if day is not valid, calculate based on start_dt
-		if (!day || isNaN(day)) {
-			const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
-			if (isNaN(calculatedDay)) {
-				day = 1
-			} else if (calculatedDay > plan.total_days) {
-				day = plan.total_days
-			} else {
-				day = calculatedDay
-			}
-		}
-
-		const subscriptionLink = `${myPlansLink}/${plan.id}-${plan.slug}`
-		const dayBaseLink = `${myPlansLink}/${plan.id}-${plan.slug}`
-
-		const dayData = Array.isArray(plan.calendar) && plan.calendar.length >= (day - 1)
-			? plan.calendar[day - 1]
-			: {}
-
-		const devoCompleted = 'additional_content' in dayData
-			? dayData.additional_content.completed
-			: false
-
-		const hasDevo = 'additional_content' in dayData
-			? dayHasDevo(dayData.additional_content)
-			: false
-
-		let startLink = ''
-		if (hasDevo) {
-			startLink = `${subscriptionLink}/day/${day}/devo`
-		} else if (!hasDevo && ('references' in dayData) && dayData.references.length === 0) {
-			startLink = `${subscriptionLink}/day/${day}`
-		} else {
-			startLink = `${subscriptionLink}/day/${day}/ref/0`
-		}
-
-		const metaTitle = `${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`
-		const metaDesc = `${plan.about.text[language_tag] || plan.about.text.default}`
-
-		return (
-			<div className="subscription-show">
-				<Helmet
-					title={metaTitle}
-					meta={[
-						{ name: 'description', content: metaDesc }
-					]}
-				/>
-				<div className="plan-overview">
-					<div className="row">
-						<div className="header columns large-8 medium-8 medium-centered">
-							<Link to={`/users/${auth.userData.username}/reading-plans`}>
-								<FormattedHTMLMessage id="plans.plans back" />
-							</Link>
-							<div className="actions">
-								<PlanMenu
-									subscriptionLink={subscriptionLink}
-									aboutLink={aboutLink}
-									onCatchUp={this.handleCatchUp}
+							return (
+								<PlanContentListItem
+									key={key}
+									title={title}
+									isComplete={complete}
+									handleIconClick={handleContentCheck
+										&& handleContentCheck.bind(this, {
+											contentIndex: i,
+											complete: !complete
+										})
+									}
+									link={link}
 								/>
-								<div><ShareWidget /></div>
-							</div>
-						</div>
-					</div>
-					<div className="row collapse">
-						<div className="columns medium-centered text-center img">
-							<Image className="rp-hero-img" width={640} height={360} thumbnail={false} imageId="false" type="about_plan" config={plan} />
-						</div>
-					</div>
-					<div className="row">
-						<div className="medium-centered text-center columns">
-							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
-						</div>
-					</div>
-					{children && React.cloneElement(children, {
-						id: plan.id,
-						plan,
-						dispatch,
-						auth,
-						day,
-						dayData,
-						actionsNode: <div />,
-						planLinkNode,
-						isSubscribed: ('subscription_id' in plan),
-						calendar: Array.isArray(plan.calendar) ? plan.calendar : [],
-						totalDays: plan.total_days,
-						subscriptionLink,
-						dayBaseLink,
-						aboutLink,
-						startLink,
-						bibleLink,
-						myPlansLink,
-						devoCompleted,
-						language_tag: serverLanguageTag,
-						isRtl,
-						hasDevo,
-						isSaved,
-						isPrivate: plan.private,
-						isEmailDeliveryOn: (typeof plan.email_delivery === 'string'),
-						emailDelivery: plan.email_delivery,
-						handleCompleteRef: this.handleCompleteRef
-					})}
-				</div>
-			</div>
-		)
+							)
+						})
+					}
+				</ul>
+			)
 	}
+
+	return (
+		<div className='subscription-show'>
+			<div className='plan-overview'>
+				<div className='row'>
+					<div className='header medium-8 small-11 centered vertical-center'>
+						<Link to={`/users/${auth.userData.username}/reading-plans`}>
+							<FormattedHTMLMessage id='plans.plans back' />
+						</Link>
+						<div className='margin-left-auto vertical-center'>
+							<div style={{ marginRight: '10px' }}>
+								<ShareWidget title={planTitle} url={aboutLink} />
+							</div>
+							<PlanMenu
+								aboutLink={aboutLink}
+								subscriptionLink={subscriptionLink}
+								// no catchup for together
+								onCatchUp={!isInFuture && !together_id && handleCatchUp}
+								participantsLink={
+									together_id
+										&& Routes.togetherParticipants({
+											plan_id,
+											together_id
+										})
+								}
+							/>
+						</div>
+					</div>
+				</div>
+				<div className='row collapse'>
+					<div className='horizontal-center' style={{ height: '170', marginBottom: '30px' }}>
+						<LazyImage
+							alt='plan-image'
+							src={planImgSrc}
+							width={300}
+							height={170}
+							placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
+						/>
+					</div>
+				</div>
+				<div className='row'>
+					<div className='medium-centered text-center columns'>
+						<h3 className='plan-title'>{ planTitle }</h3>
+					</div>
+				</div>
+				{
+					children
+						&& (children.length > 0 || !Array.isArray(children))
+						&& React.cloneElement(children, {
+							id: plan_id,
+							plan,
+							start_dt,
+							dispatch,
+							auth,
+							refListNode: refsDiv,
+							day,
+							daySegments,
+							progressDays,
+							progressString,
+							actionsNode: <div />,
+							planLinkNode,
+							isSubscribed: !!subscription_id,
+							isCompleted,
+							totalDays,
+							subscriptionLink,
+							aboutLink,
+							startLink,
+							bibleLink,
+							myPlansLink,
+							language_tag: serverLanguageTag,
+							isRtl,
+							isSaved,
+							together_id,
+							handleCompleteRef: handleContentCheck,
+							handleCatchUp,
+						})
+					}
+			</div>
+		</div>
+	)
 }
 
 Plan.propTypes = {
@@ -212,10 +225,22 @@ Plan.propTypes = {
 	params: PropTypes.object,
 	children: PropTypes.object,
 	auth: PropTypes.object,
-	location: PropTypes.object,
 	localizedLink: PropTypes.func,
 	serverLanguageTag: PropTypes.string,
-	savedPlans: PropTypes.object.isRequired
+	savedPlans: PropTypes.object.isRequired,
+	day: PropTypes.string.isRequired,
+	together_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	subscription_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	handleContentCheck: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	handleCatchUp: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	start_dt: PropTypes.string,
+	isCompleted: PropTypes.bool,
+	dayProgress: PropTypes.object,
+	daySegments: PropTypes.object,
+	progressDays: PropTypes.object,
+	progressString: PropTypes.object,
+	bookList: PropTypes.array.isRequired,
+	isRtl: PropTypes.func.isRequired,
 }
 
 Plan.defaultProps = {
@@ -225,7 +250,17 @@ Plan.defaultProps = {
 	auth: {},
 	location: {},
 	localizedLink: (param) => { return param },
-	serverLanguageTag: ''
+	serverLanguageTag: '',
+	isCompleted: false,
+	together_id: null,
+	subscription_id: null,
+	handleContentCheck: null,
+	handleCatchUp: null,
+	start_dt: null,
+	dayProgress: null,
+	daySegments: null,
+	progressDays: null,
+	progressString: null,
 }
 
 export default Plan

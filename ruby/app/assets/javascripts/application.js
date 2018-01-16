@@ -126,8 +126,9 @@ function inPathNotFirst(segment, path) {
     return segments.indexOf(segment) > 0;
 }
 
+var firebaseMessaging = false
 function init() {
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan || isReadingPlanSample || isLookInside || isTIORedirect || isNotifications || isVOTD || isSnapshot) {
         // angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
@@ -139,20 +140,99 @@ function init() {
         })
     }
 
+    // if ('serviceWorker' in navigator) {
+    //   // serviceWorker caching
+    //   navigator.serviceWorker
+    //     .register('./serviceWorker.js', { scope: '/' })
+    //     .then(function(reg) {
+    //       console.log('Service Worker Registered', reg)
+		// 			// Retrieve Firebase Messaging object.
+		// 			// firebaseMessaging = firebase.messaging().useServiceWorker(reg)
+		// 			firebaseMessaging = firebase.messaging()
+		// 			firebaseMessaging.useServiceWorker(reg)
+		//
+		// 			/**
+		// 			 * token refresh
+		// 			 *
+		// 			 * Callback fired if Instance ID token is updated.
+		// 			 */
+		// 			firebaseMessaging.onTokenRefresh(function() {
+		// 				firebaseMessaging.getToken()
+		// 					.then(function(refreshedToken) {
+		// 						console.log('Token refreshed.')
+		// 						// send token to server using react prompt component
+		// 						const prompt = document.getElementById('notifications-prompt')
+		// 						console.log('PROMSTP', prompt)
+		// 						if (prompt) {
+		// 							prompt.dispatchEvent(
+		// 								new CustomEvent(
+		// 									'sendTokenToServer',
+		// 									{ detail: refreshedToken }
+		// 								)
+		// 							)
+		// 						}
+		// 					})
+		// 					.catch(function(err) {
+		// 						console.log('Unable to retrieve refreshed token ', err)
+		// 					})
+		// 			})
+		//
+		// 			/**
+		// 			 *  Handle incoming messages. Called when:
+		// 					  - a message is received while the app has focus
+		// 					  - the user clicks on an app notification created by a sevice worker
+		// 					    `firebaseMessaging.setBackgroundMessageHandler` handler.
+		// 			 */
+		// 			firebaseMessaging.onMessage(function(payload) {
+		// 				console.log('received message ', payload)
+		// 				var data = payload.data
+		// 				if (data) {
+		// 					var notificationPayload = {
+		// 						'title': 'YouVersion',
+		// 						'body': data.message,
+		// 						'click_action': data.url,
+		// 						'icon': '/apple-touch-icon.png'
+		// 					}
+		//
+		// 					if (!('Notification' in window)) {
+		// 					   console.log('This browser does not support system notifications')
+		// 					} else if (Notification.permission === 'granted') {
+		// 						var notification = new Notification(
+		// 							notificationPayload.title,
+		// 							notificationPayload
+		// 						)
+		// 						notification.onclick = function(event) {
+		// 							event.preventDefault() // prevent the browser from focusing the Notification's tab
+		// 							window.open(notificationPayload.click_action)
+		// 							notification.close()
+		// 						}
+		// 					}
+		// 				}
+		// 			})
+    //   })
+    // } else {
+    //   console.log('Browser doesn\'t support service worker.')
+    // }
 }
+
 
 var isEvents            = isFirst("events");
 var isResetPassword     = isFirst("resetPassword");
 var isReadingPlanSample = isFirst("reading-plans") && inPathNotFirst("day");
 var isReader 			= isFirst("bible");
-var isHomeFeed 			= isFirst("moments");
+var isTIORedirect				= isFirst("subscription");
+var isReader 						= isFirst("bible");
+var isHomeFeed 			= isFirst("moments") || isFirst("notes");
 var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
 var isSignUp            = isFirst("sign-up");
 var isSignIn            = isFirst("sign-in");
+var isVOTD            	= isFirst("verse-of-the-day");
 var isPassage           = isFirst("passage");
+var isSnapshot          = isFirst("snapshot");
 
 var isLookInside        = isFirst("lookinside");
+var isNotifications			= isFirst("notifications")
 
 var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
 var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");

@@ -12,7 +12,8 @@ function Chapters(props) {
 			onMouseOver,
 			selectedChapter,
 			localizedLink,
-			linkBuilder
+			linkBuilder,
+			onRefSelect,
 		} = props
 
 	const chapters = []
@@ -25,19 +26,31 @@ function Chapters(props) {
 			if (focus) {
 				const focusClass = (index === listSelectionIndex) ? 'focus' : ''
 				chapters.push(
-					<Link key={usfm} to={localizedLink(linkBuilder(versionID, usfm, versionAbbr))} >
-						<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, 'chapters', index)} >
-							<div>{ chapter.human }</div>
-						</li>
-					</Link>
+					onRefSelect ?
+						<a tabIndex={0} onClick={onRefSelect.bind(this, usfm)}>
+							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, 'chapters', index)} >
+								<div>{ chapter.human }</div>
+							</li>
+						</a> :
+						<Link key={usfm} to={localizedLink(linkBuilder(versionID, usfm, versionAbbr))} >
+							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, 'chapters', index)} >
+								<div>{ chapter.human }</div>
+							</li>
+						</Link>
 				)
 			} else {
 				chapters.push(
-					<Link key={usfm} to={localizedLink(linkBuilder(versionID, usfm, versionAbbr))} >
-						<li className={`${active}`}>
-							<div>{ chapter.human }</div>
-						</li>
-					</Link>
+					onRefSelect ?
+						<a tabIndex={0} onClick={onRefSelect.bind(this, usfm)}>
+							<li className={`${active}`}>
+								<div>{ chapter.human }</div>
+							</li>
+						</a> :
+						<Link key={usfm} to={localizedLink(linkBuilder(versionID, usfm, versionAbbr))} >
+							<li className={`${active}`}>
+								<div>{ chapter.human }</div>
+							</li>
+						</Link>
 				)
 			}
 		})
@@ -71,7 +84,8 @@ Chapters.propTypes = {
 	onMouseOver: PropTypes.func,
 	selectedChapter: PropTypes.string,
 	localizedLink: PropTypes.func.isRequired,
-	linkBuilder: PropTypes.func.isRequired
+	linkBuilder: PropTypes.func.isRequired,
+	onRefSelect: PropTypes.func,
 }
 
 Chapters.defaultProps = {
@@ -80,7 +94,8 @@ Chapters.defaultProps = {
 	focus: false,
 	versionAbbr: null,
 	onMouseOver: null,
-	selectedChapter: null
+	selectedChapter: null,
+	onRefSelect: null,
 }
 
 export default Chapters

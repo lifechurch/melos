@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react'
-import { push } from 'react-router-redux'
 import { injectIntl } from 'react-intl'
+import { push } from 'react-router-redux'
+import arrayToObject from '@youversion/utils/lib/arrayToObject'
 import Filter from '../../../../lib/filter'
 import VersionPickerModal from './VersionPickerModal'
 import Label from '../chapterPicker/Label'
-import arrayToObject from '../../../../lib/arrayToObject'
 import DropdownTransition from '../../../../components/DropdownTransition'
 
 class VersionPicker extends Component {
@@ -445,11 +445,11 @@ class VersionPicker extends Component {
 								&& this.props.languages[languageMap[selectedLanguage]].name
 							}
 							versionFiltering={versionFiltering}
-							intl={intl}
 							cancel={this.handleCloseDropdown}
 							inputValue={langInputValue}
 							onClick={onClick}
 							linkBuilder={linkBuilder}
+							intl={intl}
 							localizedLink={localizedLink}
 						/>
 					</div>

@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
+import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
 import Viewport from '../../../../lib/viewportUtils'
+import LazyImage from '../../../../components/LazyImage'
 import CheckMark from '../../../../components/CheckMark'
 import NavArrows from '../../../Bible/components/content/NavArrows'
 import StickyHeader from '../../../../components/StickyHeader'
@@ -23,8 +25,8 @@ class PlanNavigation extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		const { whichContent, updateStyle } = this.props
-		if (whichContent !== prevProps.whichContent || (updateStyle && updateStyle !== prevProps.updateStyle)) {
+		const { contentNum, updateStyle } = this.props
+		if (contentNum !== prevProps.contentNum || (updateStyle && updateStyle !== prevProps.updateStyle)) {
 			this.styleArrows()
 		}
 	}
@@ -59,17 +61,17 @@ class PlanNavigation extends Component {
 			day,
 			next,
 			previous,
-			dayBasePath,
-			whichContent,
-			totalContentsNum,
-			isFinalContent,
+			subLink,
+			contentNum,
+			totalSegments,
+			showCheckmark,
 			onHandleComplete,
 			isRtl,
 		} = this.props
 		const { bottomPos } = this.state
 
 		let customNext = null
-		if (isFinalContent) {
+		if (showCheckmark) {
 			customNext = (
 				<div className='checkmark circle-buttons vertical-center horizontal-center'>
 					<CheckMark fill='white' width={27} height={26} classes='reader-arrow' />
@@ -79,21 +81,30 @@ class PlanNavigation extends Component {
 
 		return (
 			<div className='plan-nav'>
-				<StickyHeader className={'plan-nav-header'} verticalOffset={70}>
-					<div className='nav-content columns large-6 medium-8 medium-centered'>
-						<Link to={dayBasePath}>
-							<img alt='reading plan' className='nav-img img-left' src={planImgUrl} />
-						</Link>
-						<div className='plan-info'>
-							<Link to={dayBasePath}>
-								<div className='nav-title'>{ planName }</div>
+				<StickyHeader verticalOffset={70} translationDistance='70px' stackOrder={1}>
+					<div className='plan-nav-header' style={{ width: '100%' }}>
+						<div className='nav-content columns large-6 medium-8 medium-centered'>
+							<Link to={subLink}>
+								<LazyImage
+									alt='plan-image'
+									src={planImgUrl}
+									width={40}
+									height={40}
+									customClass='nav-img img-left'
+									placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
+								/>
 							</Link>
-							<div className='nav-length'>
-								<FormattedMessage id="plans.day number" values={{ day }} />
-								&nbsp;
-								&bull;
-								&nbsp;
-								<FormattedMessage id="plans.which reading" values={{ current: whichContent, total: totalContentsNum }} />
+							<div className='plan-info'>
+								<Link to={subLink}>
+									<div className='nav-title'>{ planName }</div>
+								</Link>
+								<div className='nav-length'>
+									<FormattedMessage id="plans.day number" values={{ day }} />
+									&nbsp;
+									&bull;
+									&nbsp;
+									<FormattedMessage id="plans.which reading" values={{ current: contentNum, total: totalSegments }} />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -120,10 +131,10 @@ PlanNavigation.propTypes = {
 	next: PropTypes.string,
 	previous: PropTypes.string,
 	isRtl: PropTypes.bool.isRequired,
-	dayBasePath: PropTypes.string,
-	whichContent: PropTypes.number.isRequired,
-	totalContentsNum: PropTypes.number.isRequired,
-	isFinalContent: PropTypes.bool.isRequired,
+	subLink: PropTypes.string,
+	contentNum: PropTypes.number.isRequired,
+	totalSegments: PropTypes.number.isRequired,
+	showCheckmark: PropTypes.bool.isRequired,
 	onHandleComplete: PropTypes.func,
 	updateStyle: PropTypes.bool,
 }
@@ -131,7 +142,7 @@ PlanNavigation.propTypes = {
 PlanNavigation.defaultProps = {
 	next: null,
 	previous: null,
-	dayBasePath: '',
+	subLink: '',
 	onHandleComplete: () => {},
 	updateStyle: false,
 }

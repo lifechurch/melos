@@ -13,7 +13,9 @@
   }
 
   .plan-calendar-container {
-    flex-basis: 50%;
+    @media @medium-up {
+      flex-basis: 50%;
+    }
     padding: 20px;
     border: solid 1px #eee;
   }
@@ -125,4 +127,26 @@
 
 		.loop(@from);
 	}
+}
+
+.calendar-container {
+	width: 100%;
+	padding: 20px;
+}
+.calendar-day {
+	border: @thin-grey-border;
+	.horizontal-center;
+	.vertical-center;
+	color: @dark_grey;
+	font-weight: bold;
+	margin: -1px 0 0 -1px;
+}
+.calendar-day:hover {
+	cursor: pointer;
+}
+.calendar-day.disabled {
+	color: @background-grey;
+}
+.calendar-day.disabled:hover {
+	cursor: not-allowed;
 }

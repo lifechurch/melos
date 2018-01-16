@@ -1,15 +1,24 @@
 import React, { Component, PropTypes } from 'react'
-import ActionCreators from '../../../actions/creators'
+import { injectIntl, FormattedMessage } from 'react-intl'
+import { Link } from 'react-router'
 import Card from '../../../../../components/Card'
 import XMark from '../../../../../components/XMark'
-import { injectIntl, FormattedMessage } from 'react-intl'
-import Immutable from 'immutable'
-import { Link } from 'react-router'
+
 
 class VerseCard extends Component {
 
 	render() {
-		const { verseContent, verseHeading, deleteVerse, intl, isLink, localizedLink } = this.props
+		const {
+			verseContent,
+			verseHeading,
+			deleteVerse,
+			isLink,
+			versionID,
+			local_abbreviation,
+			intl,
+			localizedLink,
+			children
+		} = this.props
 
 		const verses = []
 		let cardFooter = null
@@ -34,8 +43,8 @@ class VerseCard extends Component {
 						<div key={key} className='verse'>
 							{ heading }
 							<Link
-								to={localizedLink(`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`)}
-								title={`${intl.formatMessage({ id: 'Reader.read reference' }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
+								to={localizedLink(`/bible/${versionID}/${verse.usfm}.${local_abbreviation.toLowerCase()}`)}
+								title={`${intl.formatMessage({ id: 'Reader.read reference' }, { reference: `${verse.human}` })} ${local_abbreviation}`}
 							>
 								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }} />
 							</Link>
@@ -54,10 +63,10 @@ class VerseCard extends Component {
 
 		// this is for rendering an additional component(s) at the footer for
 		// specific action (label selector for book mark, reference selector for note, etc)
-		if (this.props.children) {
+		if (children) {
 			cardFooter = (
 				<div className='card-footer'>
-					{ this.props.children }
+					{ children }
 				</div>
 			)
 		}
@@ -84,19 +93,28 @@ class VerseCard extends Component {
  * 																	inside an h2
  */
 VerseCard.propTypes = {
-	verseContent: React.PropTypes.shape({
-		content: React.PropTypes.string,
-		heading: React.PropTypes.string,
-		human: React.PropTypes.string,
-		usfm: React.PropTypes.array,
-		versionInfo: React.PropTypes.shape({
-			id: React.PropTypes.number,
-			local_abbreviation: React.PropTypes.string,
-		}),
+	verseContent: PropTypes.shape({
+		content: PropTypes.string,
+		heading: PropTypes.string,
+		human: PropTypes.string,
+		usfm: PropTypes.array,
 	}),
+	versionID: PropTypes.number,
+	local_abbreviation: PropTypes.string,
 	deleteVerse: React.PropTypes.func,
 	verseHeading: React.PropTypes.node,
 	isLink: React.PropTypes.bool,
+	children: PropTypes.any,
+}
+
+VerseCard.defaultProps = {
+	verseContent: null,
+	isLink: false,
+	verseHeading: null,
+	deleteVerse: null,
+	children: null,
+	versionID: null,
+	local_abbreviation: null
 }
 
 export default injectIntl(VerseCard)

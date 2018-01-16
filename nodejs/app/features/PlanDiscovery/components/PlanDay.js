@@ -1,22 +1,23 @@
 import React, { PropTypes } from 'react'
 import { FormattedHTMLMessage, FormattedMessage } from 'react-intl'
-import PlanDayStatus from './PlanDayStatus'
+import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import PlanDaySlider from './PlanDaySlider'
 import PlanDayStartButton from './PlanDayStartButton'
-import PlanReferences from './PlanReferences'
 import PlanActionButtons from './PlanActionButtons'
+
 
 function PlanDay(props) {
 	const {
-		plan,
+		id,
 		day,
-		dayData,
-		calendar,
+		start_dt,
+		progressDays,
+		progressString,
 		planLinkNode,
-		dayBaseLink,
 		totalDays,
-		aboutLink,
 		isSubscribed,
+		isCompleted,
+		subLinkBase,
 		actionsNode,
 		refListNode,
 		language_tag,
@@ -24,89 +25,82 @@ function PlanDay(props) {
 		subscriptionLink,
 		startLink,
 		isSaved,
-		devoCompleted,
-		hasDevo,
-		handleCompleteRef,
+		together_id
 	} = props
 
-	// parent overwrite a few things if desired
-	let refsDiv, actionsDiv
-	if (actionsNode) {
-		actionsDiv = actionsNode
-	} else {
-		actionsDiv = (
-			<PlanActionButtons
-				id={plan.id}
-				subscriptionLink={subscriptionLink}
-				planLinkNode={planLinkNode}
-				isSubscribed={isSubscribed}
-				isSaved={isSaved}
-			/>
-		)
-	}
-
-	// show no content message if there is no content
-	if (dayData.references.length === 0 && !hasDevo) {
-		refsDiv = <FormattedMessage id="plans.no content" />
-	} else if (refListNode) {
-		refsDiv = refListNode
-	} else {
-		refsDiv = (
-			<PlanReferences
-				day={day}
-				devoCompleted={devoCompleted}
-				completedRefs={dayData.references_completed}
-				references={dayData.reference_content}
-				link={`${subscriptionLink}/day/${day}`}
-				hasDevo={hasDevo}
-				handleCompleteRef={handleCompleteRef}
-			/>
-		)
-	}
 
 	return (
 		<div>
-			<div className="row">
-				<div className="columns medium-8 large-8 medium-centered text-center">
-					{ actionsDiv }
-				</div>
-			</div>
-			<div className="row days-container collapse">
-				<div className="columns large-8 medium-8 medium-centered">
-					<PlanDaySlider
-						day={day}
-						calendar={calendar}
-						dayBaseLink={dayBaseLink}
-						showDate={isSubscribed}
-						language_tag={language_tag}
-						isRtl={isRtl()}
-					/>
-				</div>
-			</div>
-			<div className="row">
-				<div className="columns large-8 medium-8 medium-centered">
+			<div className='row'>
+				<div className='columns medium-8 large-8 medium-centered text-center'>
 					{
-								isSubscribed ?
-									<div>
-										<div className="start-reading">
-											<PlanDayStartButton
-												dayData={dayData}
-												link={startLink}
-											/>
-										</div>
-										<PlanDayStatus
-											day={day}
-											calendar={calendar}
-											total={totalDays}
+						actionsNode ||
+						<PlanActionButtons
+							id={id}
+							subLinkBase={subLinkBase}
+							subscriptionLink={subscriptionLink}
+							planLinkNode={planLinkNode}
+							isSubscribed={isSubscribed}
+							isSaved={isSaved}
+						/>
+					}
+				</div>
+			</div>
+			<div className='row days-container collapse'>
+				<div className='columns large-8 medium-8 medium-centered'>
+					{
+						totalDays &&
+						<PlanDaySlider
+							day={day}
+							totalDays={totalDays}
+							progressDays={progressDays}
+							isCompleted={isCompleted}
+							start_dt={start_dt}
+							dayBaseLink={subscriptionLink}
+							showDate={isSubscribed}
+							language_tag={language_tag}
+							isRtl={isRtl()}
+						/>
+					}
+				</div>
+			</div>
+			<div className='row'>
+				<div className='columns large-8 medium-8 medium-centered'>
+					{
+						together_id &&
+						<div style={{ marginBottom: '25px' }}>
+							<ParticipantsAvatarList
+								together_id={together_id}
+								day={day}
+								statusFilter={['accepted', 'host']}
+								avatarWidth={36}
+							/>
+						</div>
+					}
+					{
+							isSubscribed ?
+								<div>
+									<div className='start-reading'>
+										<PlanDayStartButton
+											link={startLink}
 										/>
-									</div> :
+									</div>
 									<p>
-										<FormattedHTMLMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
+										<FormattedHTMLMessage id='plans.which day in plan' values={{ day, total: totalDays }} />
 										&nbsp;&bull;&nbsp;
-										<FormattedMessage id="plans.read today" />
+										{ progressString }
 									</p>
-							}
-					{ refsDiv }
+								</div> :
+								<p>
+									<FormattedHTMLMessage id='plans.which day in plan' values={{ day, total: totalDays }} />
+									&nbsp;&bull;&nbsp;
+									<FormattedMessage id='plans.read today' />
+								</p>
+					}
+					{
+						refListNode ||
+						<FormattedMessage id='plans.no content' />
+					}
 				</div>
 			</div>
 		</div>
@@ -115,28 +109,32 @@ function PlanDay(props) {
 
 PlanDay.propTypes = {
 	day: PropTypes.number.isRequired,
-	dayData: PropTypes.object.isRequired,
-	calendar: PropTypes.array.isRequired,
+	together_id: PropTypes.number,
 	totalDays: PropTypes.number.isRequired,
+	progressDays: PropTypes.array,
+	progressString: PropTypes.node,
 	subscriptionLink: PropTypes.string.isRequired,
-	aboutLink: PropTypes.string.isRequired,
-	startLink: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-	devoCompleted: PropTypes.bool.isRequired,
-	hasDevo: PropTypes.bool.isRequired,
+	start_dt: PropTypes.string,
+	startLink: PropTypes.string.isRequired,
 	isSaved: PropTypes.bool.isRequired,
 	isRtl: PropTypes.func,
-	handleCompleteRef: PropTypes.func,
-	plan: PropTypes.object.isRequired,
+	language_tag: PropTypes.string.isRequired,
+	id: PropTypes.number.isRequired,
 	actionsNode: PropTypes.node,
+	refListNode: PropTypes.node,
 	planLinkNode: PropTypes.node,
 	isSubscribed: PropTypes.bool.isRequired,
 }
 
 PlanDay.defaultProps = {
 	actionsNode: null,
-	handleCompleteRef: () => {},
+	progressDays: null,
+	together_id: null,
+	start_dt: null,
 	isRtl: () => { return false },
 	planLinkNode: null,
+	refListNode: null,
+	progressString: null,
 }
 
 export default PlanDay

@@ -1,13 +1,11 @@
 import Immutable from 'immutable'
 import moment from 'moment'
-
+import UsersActionCreator from '@youversion/api-redux/lib/endpoints/users/action'
 import type from './constants'
-import Validators from './validators'
 import BibleActionCreator from '../../Bible/actions/creators'
-import UsersActionCreator from '../../Users/actions/creators'
+
 
 const ActionCreators = {
-
 	discoverAll(params, auth) {
 		return dispatch => {
 			return Promise.all([
@@ -94,8 +92,8 @@ const ActionCreators = {
 		return dispatch => {
 			const { id, language_tag, user_id, day, version } = params
 			const promises = [
-				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
-				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth)),
+				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, true)),
+				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, true)),
 				dispatch(BibleActionCreator.bibleVersion({ id: version })),
 				dispatch(ActionCreators.allQueueItems(auth))
 			]
@@ -112,7 +110,6 @@ const ActionCreators = {
 							currentDay = calculatedDay
 						}
 					}
-
 					const dayData = calendar[currentDay - 1]
 					dispatch(ActionCreators.planReferences({
 						references: dayData.references,
@@ -327,7 +324,12 @@ const ActionCreators = {
 			} = params
 			const planID = parseInt(id, 10)
 			return Promise.all([
-				dispatch(UsersActionCreator.usersView({ id: user_id }, false)),
+				dispatch(UsersActionCreator({
+					method: 'view',
+					params: {
+						id: user_id
+					}
+				})),
 				dispatch(ActionCreators.readingplanView({ id: planID, language_tag, user_id }, false))
 			])
 		}
@@ -617,8 +619,7 @@ const ActionCreators = {
 				auth,
 				params,
 				http_method: 'get',
-				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ],
-				validator: Validators.plan
+				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ]
 			}
 		}
 	},

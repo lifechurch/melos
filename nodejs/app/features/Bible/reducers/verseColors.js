@@ -3,9 +3,11 @@ import type from '../actions/constants'
 
 export default function reducer(state = [], action) {
 	switch (action.type) {
-		case type('momentsVerseColorsRequest'):
+		case type('momentsVerseColorsRequest'): {
 			return []
+		}
 
+		case 'MOMENTS__VERSE_COLORS__SUCCESS':
 		case type('momentsVerseColorsSuccess'): {
 			const { response: { verse_colors } } = action
 			if (verse_colors) {

@@ -1,4 +1,4 @@
-FROM in.thewardro.be:4567/docker/passenger-full:2017.09.02
+FROM in.thewardro.be:4567/docker/passenger-full:2017.09.27
 
 ARG NPM_TOKEN
 ENV NPM_TOKEN: $NPM_TOKEN
@@ -23,6 +23,15 @@ RUN cd /home/app/ruby && bundle exec rake assets:precompile
 ENV NODE_ENV production
 COPY nodejs/ /home/app/nodejs/
 RUN cd /home/app/nodejs && npm run build:production
+
+# Node-Canvas (https://github.com/Automattic/node-canvas#installation)
+RUN apt-get update && apt-get install -y build-essential g++ \
+  libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev 
+
+# Year in Review Fonts
+RUN [ -d /usr/share/fonts/truetype ] || mkdir /usr/share/fonts/truetype
+COPY nodejs/fonts /usr/share/fonts/truetype
+RUN fc-cache -f -v
 
 # Passenger Enterprise
 COPY nginx/passenger-enterprise-license /etc/passenger-enterprise-license

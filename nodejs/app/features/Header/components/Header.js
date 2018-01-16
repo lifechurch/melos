@@ -6,6 +6,7 @@ import { getUserById, getLoggedInUser } from '@youversion/api-redux/lib/endpoint
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
 import HeaderContent from './HeaderContent'
 
+
 function Header(props) {
 	return (
 		<ResponsiveContainer>

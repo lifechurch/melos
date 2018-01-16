@@ -25,9 +25,11 @@ YouversionWeb::Application.routes.draw do
   get "/marriage",      to: redirect("http://blog.youversion.com/2015/10/top-10-marriage-bible-plans-on-youversion/")
   get "/200million",    to: redirect("http://installs.youversion.com/200million/index.html")
   get "/250million",    to: redirect("http://installs.youversion.com/250million/index.html")
+  get "/300million",    to: redirect("http://installs.youversion.com/2017-year-in-review/index.html")
+  get "/2017",          to: redirect("http://installs.youversion.com/2017-year-in-review/index.html")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/blog-events",      to: redirect("http://blog.youversion.com/2016/03/introducing-events-the-newest-feature-in-the-bible-app")
-  get "volunteer-form", to: redirect("https://lifechurch.formstack.com/forms/volunteer_interest_form")
+  get "volunteer-form", to: redirect("https://www.youversion.com/volunteer")
 
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
@@ -66,18 +68,21 @@ YouversionWeb::Application.routes.draw do
   get "/lapset",    to: "redirects#lasten"
   get "/fi/lapset", to: "redirects#lasten"
   get "/barn",        to: "redirects#barn"
+  get "/huuhduud",        to: "redirects#huuhduud"
   get "/hk/kids",     to: "redirects#hk_kids"
   get "/ua/kids",     to: "redirects#ua_kids"
-	get "/ben/kids",		to: "redirects#ben_kids"
+  get "/paidia",			to: "redirects#paidia"
+  get "/ben/kids",		to: "redirects#ben_kids"
 
 	get "/unsubscribe", to: "notifications#unsubscribe"
 	get "/unsubscribe/manage", to: "notifications#manage_notifications"
 
-  get "/trending-bible-verses", to: "pages#trending"
+	get "/popular-bible-verses", to: "pages#trending", :as => 'popular'
+  get "/trending-bible-verses", to: "redirects#trending"
   get "/verse-of-the-day", to: "pages#votd", as: "votd"
   get "/bible-verse-of-the-day", to: "redirects#votd"
-  get "/wmf",           to: "redirects#wmf"
-  get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
+  # get "/wmf",           to: "redirects#wmf"
+  # get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"
 
   # get "/users/:username/reading-plans/:id", to: "redirects#show"
@@ -158,10 +163,6 @@ YouversionWeb::Application.routes.draw do
     resource :email,    only: [:show,:update]
     resource :password, only: [:show,:update]
     resource :avatar,   only: [:show,:update],  path: "picture"
-    resources :devices, only: [:index,:destroy]
-
-    # bible.com/users/:id/connections => connections#index
-    get :connections, on: :member, to: "connections#index", as: 'connections'
 
     get :delete_account, on: :member
     get :notes,       on: :member, as: 'notes'
@@ -221,17 +222,28 @@ YouversionWeb::Application.routes.draw do
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
   match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
-  match '/users/:username/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
+  match '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
   match '/users/:username/reading-plans/:id/completed' => 'plans#day_complete', as: "plan_complete_plan", via: :get
 
-  get '/users/:username/reading-plans/:id/day/:day' => 'subscriptions#show', as: "plan_show"
-  get '/users/:username/reading-plans/:id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"
-  get '/users/:username/reading-plans/:id/day/:day/ref/:content' => 'subscriptions#ref', as: "plan_ref"
+  get 'users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/mark-complete' => 'subscriptions#mark_complete'
+
+  get '/snapshot' => 'pages#snapshot', as: "snapshot"
+  get '/snapshot/:user_id_hash/:user_id' => 'pages#snapshot'
+	get '/users/:username/reading-plans/:id/subscription/:subscription_id' => 'subscriptions#show'
+  get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day' => 'subscriptions#show', as: "plan_show"
+  # get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/devo' => 'subscriptions#devo', as: "plan_devo"
+  get '/users/:username/reading-plans/:id/subscription/:subscription_id/day/:day/segment/:content' => 'subscriptions#ref', as: "plan_ref"
 
   get '/reading-plans-collection/:id' => 'plans#plan_collection'
   get '/recommended-plans-collection/:id' => 'plans#plan_collection'
   get '/saved-plans-collection' => 'plans#plan_collection'
 
+  # PWF
+  get '/reading-plans/:id/together/:together_id/invitation' => 'subscriptions#invitation', as: "pwf_invitation"
+  get '/users/:username/reading-plans/:id/together/create' => 'subscriptions#show', as: "pwf_create"
+  get '/users/:username/reading-plans/:id/together/:together_id/invite' => 'subscriptions#show', as: "pwf_invite"
+  get '/reading-plans/:id/together/:together_id/participants' => 'subscriptions#show', as: "participants"
+	get '/subscription/:subscription_id/day/:day/talk-it-over/:content' => 'plans#index'
 
   # LOOKINSIDE READING PLAN LANDING PAGES
   get '/lookinside/:id' => 'plans#lookinside_view'
@@ -278,13 +290,6 @@ YouversionWeb::Application.routes.draw do
   get  "/sign-out",                        to: "sessions#destroy",           as: "sign_out"
   get  "/api-test",                        to: "api_test#index"
 
-  # connections
-  get "/auth/:provider/callback",          to: "auth#callback",              as: "auth_callback"
-  get "/auth/:provider/connect",           to: "auth#connect",               as: "auth_connect"
-  get "/connections/:provider/new",        to: "connections#new",            as: "new_connection"
-  get "/connections/:provider/create",     to: "connections#create",         as: "create_connection"
-  delete "/connections/:provider/delete",  to: "connections#destroy",        as: "delete_connection"
-
   # Legacy routes, many used in transactional emails
   get "/friends",                          to: "redirects#friends"
   get "/bookmarks",                        to: "redirects#bookmarks"
@@ -297,7 +302,6 @@ YouversionWeb::Application.routes.draw do
   get "/settings/update_email",            to: "redirects#settings_email"
   get "/settings/password",                to: "redirects#settings_password"
   get "/settings/picture",                 to: "redirects#settings_picture"
-  get "/settings/devices",                 to: "redirects#settings_devices"
   get "/settings/notifications",           to: "redirects#settings_notifications", as: "notification_settings"
 
   # Adding a totally unique URL to that can be used in emails and that the apps are not currently using
@@ -305,7 +309,6 @@ YouversionWeb::Application.routes.draw do
 
   get "/settings/delete_account",          to: "redirects#delete_account"
   get "/settings/vod_subscriptions",       to: "redirects#settings_vod_subscriptions"
-  get "/settings/connections",             to: "redirects#settings_connections"
 
 # Redirect to a.youversion.com/groups/lifechurchtv
   get "/lifechurchtv",  to: "redirects#lifechurchtv"

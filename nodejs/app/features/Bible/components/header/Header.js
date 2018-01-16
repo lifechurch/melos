@@ -38,7 +38,7 @@ class Header extends Component {
 		return (
 			<div className={`yv-reader-header-container ${showFixed ? 'show-fixed' : ''}`}>
 				{ way }
-				<div className={`${classes} react-header ${sticky ? 'fixed' : ''}`}>
+				<div {...this.props} className={`${classes} react-header ${sticky ? 'fixed' : ''}`}>
 					{ this.props.children }
 				</div>
 			</div>

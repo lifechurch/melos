@@ -3,7 +3,7 @@ import rtlDetect from 'rtl-detect'
 import { FormattedMessage } from 'react-intl'
 import Settings from '../components/icons/Settings'
 import IconButton from '../components/IconButton'
-import SectionedHeading from '../components/SectionedHeading'
+import SectionedLayout from '../components/SectionedLayout'
 import NotificationsList from '../features/Notifications/components/NotificationsList'
 
 class NotificationsView extends Component {
@@ -28,7 +28,7 @@ class NotificationsView extends Component {
 		return (
 			<div>
 				<div className='large-5 small-11 centered'>
-					<SectionedHeading
+					<SectionedLayout
 						style={{ height: '60px', padding: '15px' }}
 						right={
 							<IconButton
@@ -43,7 +43,7 @@ class NotificationsView extends Component {
 						<h1 style={{ fontWeight: 'normal' }}>
 							<FormattedMessage id='notifications' />
 						</h1>
-					</SectionedHeading>
+					</SectionedLayout>
 				</div>
 				<div
 					className='gray-background'

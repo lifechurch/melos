@@ -1,23 +1,22 @@
-import type from '../actions/constants'
 import Immutable from 'immutable'
-import arrayToObject from '../../../lib/arrayToObject'
+import type from '../actions/constants'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
-		case type("bibleConfigurationRequest"):
+		case type('bibleConfigurationRequest'):
 			return {
 				loading: true,
 				all: {},
 				byFilter: {
-					filter: "",
+					filter: '',
 					results: {}
 				}
 			}
 
-		case type("bibleConfigurationFailure"):
+		case type('bibleConfigurationFailure'):
 			return Immutable.fromJS(state).set('loading', false).toJS()
 
-		case type("bibleConfigurationSuccess"):
+		case type('bibleConfigurationSuccess'):
 			if (typeof action.response.default_versions !== 'undefined') {
 
 				// ordered array of languages from api

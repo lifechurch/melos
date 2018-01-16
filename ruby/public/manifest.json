@@ -1,0 +1,23 @@
+{
+  "short_name": "Bible",
+  "name": "Bible.com | YouVersion, the Bible App",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }, {
+      "src": "icon_96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }, {
+      "src": "icon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/bible?utm_source=homescreen",
+  "background_color": "white",
+  "display": "standalone",
+  "gcm_sender_id": "103953800507"
+}

@@ -93,7 +93,7 @@ class SharedDayCompleteView extends Component {
 function mapStateToProps(state) {
 	return {
 		plans: state.readingPlans && state.readingPlans.fullPlans && state.readingPlans.fullPlans ? state.readingPlans.fullPlans : null,
-		users: state.users && state.users.view ? state.users.view : null,
+		users: state.api.users && state.api.users.view ? state.api.users.view : null,
 		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag
 	}

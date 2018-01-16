@@ -1,14 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { injectIntl, FormattedMessage } from 'react-intl'
-import rtlDetect from 'rtl-detect'
-import { routeActions } from 'react-router-redux'
 import Immutable from 'immutable'
 
+import LocalStore from '@youversion/utils/lib/localStore'
+import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
+import getVerseAudioTiming from '@youversion/utils/lib/bible/getVerseAudioTiming'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 // actions
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import audioAction from '@youversion/api-redux/lib/endpoints/audio/action'
-import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import bibleReference from '@youversion/api-redux/lib/batchedActions/bibleReference'
 // models
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
@@ -19,19 +21,8 @@ import Header from '../features/Bible/components/header/Header'
 import VersionPicker from '../features/Bible/components/versionPicker/VersionPicker'
 import AudioPopup from '../features/Bible/components/audio/AudioPopup'
 // utils
-import {
-	getBibleVersionFromStorage,
-	chapterifyUsfm,
-	buildCopyright,
-	isVerseOrChapter,
-	parseVerseFromContent,
-	getVerseAudioTiming,
-} from '../lib/readerUtils'
-import { getReferencesTitle } from '../lib/usfmUtils'
 import ViewportUtils from '../lib/viewportUtils'
-import Routes from '../lib/routes'
 import Filter from '../lib/filter'
-import LocalStore from '../lib/localStore'
 import RecentVersions from '../features/Bible/lib/RecentVersions'
 
 
@@ -125,7 +116,7 @@ class BibleHeader extends Component {
 	}
 
 	getBibleData = (usfm, version_id) => {
-		const { bible, moments, dispatch, audio } = this.props
+		const { bible, dispatch, audio } = this.props
 
 		this.getReference(usfm, version_id)
 
@@ -446,11 +437,38 @@ class BibleHeader extends Component {
 }
 
 BibleHeader.propTypes = {
-
+	usfm: PropTypes.string.isRequired,
+	version_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	bible: PropTypes.object.isRequired,
+	audio: PropTypes.object.isRequired,
+	hosts: PropTypes.object.isRequired,
+	sticky: PropTypes.bool,
+	showAudio: PropTypes.bool,
+	showChapterPicker: PropTypes.bool,
+	showVersionPicker: PropTypes.bool,
+	customHeaderClass: PropTypes.string,
+	language_tag: PropTypes.string,
+	showSettings: PropTypes.bool,
+	showParallel: PropTypes.bool,
+	onVersionClick: PropTypes.func,
+	dispatch: PropTypes.func.isRequired,
+	localizedLink: PropTypes.func.isRequired,
 }
 
 BibleHeader.defaultProps = {
-
+	showCopyright: true,
+	showGetChapter: true,
+	showAudio: true,
+	showVerseAction: true,
+	showChapterPicker: true,
+	showVersionPicker: true,
+	sticky: true,
+	version_id: null,
+	customHeaderClass: null,
+	language_tag: null,
+	showSettings: true,
+	showParallel: true,
+	onVersionClick: null,
 }
 
 function mapStateToProps(state) {

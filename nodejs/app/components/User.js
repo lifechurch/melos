@@ -19,13 +19,14 @@ function User(props) {
 	)
 	// either render children, or the heading and/or subheading
 	const content = (
-		children && children.length > 0 ?
-			(
+		children
+			&& (children.length > 0 || !Array.isArray(children))
+			? (
 				<div className='content'>
 					{ children }
 				</div>
-			) :
-			(
+			)
+			: (
 				(heading || subheading) &&
 				<div className='content'>
 					<div className='heading'>{ heading }</div>

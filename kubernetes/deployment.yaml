@@ -98,10 +98,25 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: SECURE_TRAFFIC
+          - name: OAUTH_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: OAUTH_CLIENT_ID
+          - name: OAUTH_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: OAUTH_CLIENT_SECRET
           - name: SECURE_HOSTNAME
             valueFrom:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: SECURE_HOSTNAME
+          - name: YIR_SHA1_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: YIR_SHA1_SECRET_KEY
       imagePullSecrets:
         - name: gitlab-registry

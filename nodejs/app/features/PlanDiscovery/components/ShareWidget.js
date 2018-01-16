@@ -1,13 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import Immutable from 'immutable'
-import { Link } from 'react-router'
-import ActionCreators from '../actions/creators'
-import Carousel from '../../../components/Carousel/Carousel'
-import Image from '../../../components/Carousel/Image'
+import AddThis from '../../../components/AddThis'
+import ClickTarget from '../../../components/ClickTarget'
+
 
 class ShareWidget extends Component {
-
 	constructor(props) {
 		super(props)
 		this.state = { dialogOpen: false }
@@ -17,52 +14,44 @@ class ShareWidget extends Component {
 		this.setState({ dialogOpen: !this.state.dialogOpen })
 	}
 
-
 	render() {
-		const { collapsible, button, url } = this.props
-
+		const { collapsible, button, title, text, url } = this.props
+		const { dialogOpen } = this.state
 		let shareText = null
 		let classes = 'share-panel'
 
 		if (collapsible) {
-			shareText = <a onClick={this.handleClick}><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>
-			if (!this.state.dialogOpen) {
+			shareText = (
+				<a tabIndex={0} onClick={this.handleClick}>
+					<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
+				</a>
+			)
+			if (!dialogOpen) {
 				// hide the widget
 				classes = 'share-panel ng-hide'
 			}
 		}
 		if (button) {
 			shareText = (
-				<a onClick={this.handleClick}>
+				<a tabIndex={0} onClick={this.handleClick}>
 					{ button }
 				</a>
 			)
-		}
-
-		if (typeof window !== 'undefined') {
-			const interval = setInterval(() => {
-				if (typeof window !== 'undefined' && window.addthis
-					&& window.addthis.layers && window.addthis.layers.refresh) {
-					clearInterval(interval);
-					window.addthis.layers.refresh()
-				}
-			}, 100);
-
-			// if (url) {
-			// 	// window.addthis.update('share', 'url', url)
-			// 	window.addthis_share = Immutable.fromJS(window.addthis_share)
-			// 		.set('url', url)
-			// 		.toJS()
-			// } else {
-			// 	window.addthis_share.layers.refresh()
-			// }
 		}
 
 		return (
 			<div>
 				{ shareText }
 				<div className={classes}>
-					<div className='video addthis_sharing_toolbox' />
+					<ClickTarget
+						handleOutsideClick={() => {
+							if (dialogOpen) {
+								this.setState({ dialogOpen: false })
+							}
+						}}
+					>
+						<AddThis title={title} text={text} url={url} />
+					</ClickTarget>
 				</div>
 			</div>
 		)

@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
+import React, { PropTypes } from 'react'
 
 
-class CarouselSlideTitle extends Component {
-    render() {
-        const { title, id } = this.props
+function CarouselSlideTitle(props) {
+	const { title } = props
 
-        var classes = 'slide'
-        var titleClasses = 'title-padding title-container radius-5'
-        return (
-          <div className={classes}>
-            <div className={titleClasses}>{title}</div>
-          </div>
-        );
-    }
+	const classes = 'slide'
+	const titleClasses = 'title-padding title-container radius-5'
+	return (
+		<div className={classes}>
+			<div className={titleClasses}>{ title }</div>
+		</div>
+	)
+}
+
+CarouselSlideTitle.propTypes = {
+	title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired
 }
 
 export default CarouselSlideTitle

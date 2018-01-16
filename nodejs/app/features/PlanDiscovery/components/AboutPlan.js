@@ -6,12 +6,13 @@ import Helmet from 'react-helmet'
 import CarouselStandard from '../../../components/Carousel/CarouselStandard'
 import Image from '../../../components/Carousel/Image'
 import PlanActionButtons from './PlanActionButtons'
-import AvatarList from '../../../components/AvatarList'
+import AvatarList from '../../../widgets/AvatarList'
 import ShareWidget from './ShareWidget'
 import imageUtil from '../../../lib/imageUtil'
+import Routes from '../../../lib/routes'
+
 
 class AboutPlan extends Component {
-
 	constructor(props) {
 		super(props)
 		this.state = { dialogOpen: false }
@@ -22,7 +23,18 @@ class AboutPlan extends Component {
 	}
 
 	render() {
-		const { readingPlan, savedPlans, recommendedPlans, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
+		const {
+			readingPlan,
+			savedPlans,
+			recommendedPlans,
+			serverLanguageTag,
+			imageConfig,
+			auth,
+			isSubscribed,
+			localizedLink,
+			isRtl,
+			params
+		} = this.props
 
 		if (!readingPlan || (typeof readingPlan === 'object' && readingPlan.__validation && !readingPlan.__validation.isValid)) {
 			return (
@@ -31,7 +43,7 @@ class AboutPlan extends Component {
 		}
 
 		const aboutLink = localizedLink(`/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
-		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
+		const subLinkBase = localizedLink(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
 		const isSaved = !!((savedPlans && Array.isArray(savedPlans.all) && savedPlans.all.indexOf(readingPlan.id) !== -1))
 		const recommended = (recommendedPlans && recommendedPlans[readingPlan.id]) ? recommendedPlans[readingPlan.id] : null
 		let friendsReading, friendsCompleted, readingList, completedList, relatedCarousel = null
@@ -41,7 +53,7 @@ class AboutPlan extends Component {
 		if (recommended) {
 			relatedCarousel = (
 				<div className='row collapse'>
-					<CarouselStandard carouselContent={recommended} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
+					<CarouselStandard carouselContent={recommended} context='recommended' imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
 				</div>
 			)
 		}
@@ -59,7 +71,10 @@ class AboutPlan extends Component {
 				friendsReading = (
 					<div>
 						<p className='friends_completed'>{ readingText }</p>
-						<AvatarList avatarList={readingList} />
+						<AvatarList
+							customClass='horizontal-center'
+							userids={readingList.map((usr) => { return usr.id })}
+						/>
 					</div>
 				)
 			}
@@ -69,11 +84,13 @@ class AboutPlan extends Component {
 				friendsCompleted = (
 					<div>
 						<p className='friends_completed'>{ completedText }</p>
-						<AvatarList avatarList={completedList} />
+						<AvatarList
+							customClass='horizontal-center'
+							userids={completedList.map((usr) => { return usr.id })}
+						/>
 					</div>
 				)
 			}
-
 
 			milestones.forEach((milestone) => {
 				if (readingPlan.stats.total_completed > milestone && milestone > completedMilestone) {
@@ -89,38 +106,39 @@ class AboutPlan extends Component {
 
 		const selectedImage = imageUtil(360, 640, false, 'about_plan', readingPlan, false)
 		const url = `https://www.bible.com/reading-plans/${readingPlan.id}-${readingPlan.slug}`
-		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id="plans.sample" /></Link>
-
+		const planLinkNode = <Link to={`${aboutLink}/day/1`}><FormattedMessage id='plans.sample' /></Link>
+		const planTitle = readingPlan.name[languageTag] || readingPlan.name.default
+		const planInfo = readingPlan.about.text[languageTag] || readingPlan.about.text.default
 		return (
 			<div className='row collapse about-plan horizontal-center'>
 				<Helmet
-					title={`${readingPlan.name[languageTag] || readingPlan.name.default} - ${readingPlan.about.text[languageTag] || readingPlan.about.text.default}`}
+					title={`${planTitle} - ${planInfo}`}
 					meta={[
-						{ name: 'description', content: readingPlan.about.text[languageTag] || readingPlan.about.text.default },
-						{ name: 'og:image', content: `https:${selectedImage.url}` },
-						{ name: 'og:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
-						{ name: 'og:url', content: url },
-						{ name: 'og:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
+						{ name: 'description', content: planInfo },
+						{ property: 'og:image', content: `https:${selectedImage.url}` },
+						{ property: 'og:title', content: `${planTitle}` },
+						{ property: 'og:url', content: url },
+						{ property: 'og:description', content: `${planInfo}` },
 						{ name: 'twitter:image', content: `https:${selectedImage.url}` },
 						{ name: 'twitter:card', content: 'summary' },
 						{ name: 'twitter:url', content: url },
-						{ name: 'twitter:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
-						{ name: 'twitter:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
+						{ name: 'twitter:title', content: `${planTitle}` },
+						{ name: 'twitter:description', content: `${planInfo}` },
 						{ name: 'twitter:site', content: '@YouVersion' },
-						{ name: 'og:image:width', content: selectedImage.width },
-						{ name: 'og:image:height', content: selectedImage.height }
+						{ property: 'og:image:width', content: selectedImage.width },
+						{ property: 'og:image:height', content: selectedImage.height }
 					]}
 				/>
-				<div className='columns large-8 medium-8'>
+				<div className='large-8 medium-8 small-11'>
 					<div className='reading_plan_index_header'>
 						<Link className='plans' to={localizedLink('/reading-plans')}>&larr;<FormattedMessage id='plans.plans' /></Link>
 						<div className='right'>
-							<ShareWidget />
+							<ShareWidget title={planTitle} text={planInfo} />
 						</div>
 					</div>
 					<article className='reading_plan_index'>
 						<div className='plan-image'>
-							<Image className="rp-hero-img" width={720} height={400} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
+							<Image className='rp-hero-img' width={720} height={400} thumbnail={false} imageId='false' type='about_plan' config={readingPlan} />
 						</div>
 						<div className='row collapse'>
 							<div className='columns large-8 medium-8'>
@@ -136,10 +154,16 @@ class AboutPlan extends Component {
 									<PlanActionButtons
 										id={readingPlan.id}
 										aboutLink={aboutLink}
-										subscriptionLink={subscriptionLink}
+										subLinkBase={subLinkBase}
 										planLinkNode={planLinkNode}
-										isSubscribed={'subscription_id' in readingPlan}
+										isSubscribed={isSubscribed}
 										isSaved={isSaved}
+										subscriptionsLink={auth
+											&& auth.isLoggedIn
+											&& Routes.subscriptions({
+												username: auth.userData.username,
+											})
+										}
 									/>
 									<hr />
 									<div className='widget'>
@@ -150,7 +174,7 @@ class AboutPlan extends Component {
 								</div>
 							</div>
 						</div>
-						<hr className="hide-for-small" />
+						<hr className='hide-for-small' />
 						{ relatedCarousel }
 					</article>
 				</div>
@@ -160,7 +184,7 @@ class AboutPlan extends Component {
 }
 
 AboutPlan.propTypes = {
-	readingPlan: PropTypes.object,
+	readingPlan: PropTypes.object.isRequired,
 	recommendedPlans: PropTypes.object,
 	imageConfig: PropTypes.object,
 	auth: PropTypes.object,

@@ -4,10 +4,10 @@ import { Link } from 'react-router'
 function StreakDay(props) {
 	const { date, complete, streak, link } = props
 	const day = (
-		<div className="streak-day">
+		<div className='streak-day'>
 			<div className={`streak-bar sd-${streak}`} />
 			<div className={`sd-content sd-${complete}`}>
-				<div>{date.getDate()}</div>
+				<div>{ date.getDate() }</div>
 			</div>
 		</div>
   )

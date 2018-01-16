@@ -1,6 +1,6 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder, :enfants, :ar_kids, :wmf, :anak, :cocuk, :kodomo, :er_tong, :kinderbybel, :pambatang, :thaibafk, :thieunhi, :ragazzi, :dzieci, :copii, :votd, :barn, :hk_kids, :lasten, :ua_kids, :ben_kids ]
+  before_filter :force_login, except: [:settings_notifications, :trending, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder, :enfants, :ar_kids, :wmf, :anak, :cocuk, :kodomo, :er_tong, :kinderbybel, :pambatang, :thaibafk, :thieunhi, :ragazzi, :dzieci, :copii, :votd, :barn, :hk_kids, :lasten, :ua_kids, :paidia, :ben_kids, :barnebibelen, :huuhduud]
 
   prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
   # skip_filter :set_page,
@@ -30,10 +30,6 @@ class RedirectsController < ApplicationController
 
   def settings
     redirect_to(edit_user_url(id: current_user.username))
-  end
-
-  def settings_connections
-   redirect_to(connections_user_url(current_user.username))
   end
 
   def profile
@@ -72,10 +68,6 @@ class RedirectsController < ApplicationController
     redirect_to(edit_notifications_url(token: params[:token]))
   end
 
-  def settings_devices
-    redirect_to(user_devices_url(current_user.username))
-  end
-
   def settings_vod_subscriptions
     redirect_to(vod_subscriptions_url(token: params[:token]))
   end
@@ -83,6 +75,10 @@ class RedirectsController < ApplicationController
   def delete_account
     redirect_to(delete_account_user_url(current_user.username))
   end
+
+	def trending
+		redirect_to(popular_url())
+	end
 
   def lifechurchtv
     # Resolves to a.youversion.com/groups/lifechurchtv
@@ -201,7 +197,19 @@ class RedirectsController < ApplicationController
 		redirect_to('/uk/kids')
 	end
 
+	def paidia
+		redirect_to('/el/kids')
+	end
+
 	def ben_kids
 		redirect_to('/bn/kids')
 	end
+
+  def barnebibelen
+      redirect_to('/no/kids')
+  end
+
+  def huuhduud
+      redirect_to('/mn/kids')
+  end
 end

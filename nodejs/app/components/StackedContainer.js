@@ -41,12 +41,16 @@ function StackedContainer({
 }
 
 StackedContainer.propTypes = {
-
+	width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	children: PropTypes.node.isRequired,
+	overrideContainerStyle: PropTypes.object,
+	overrideChildStyle: PropTypes.object,
 }
 
 StackedContainer.defaultProps = {
-	overrideChildStyle: '',
-	overrideContainerStyle: '',
+	overrideChildStyle: null,
+	overrideContainerStyle: null,
 }
 
 export default StackedContainer

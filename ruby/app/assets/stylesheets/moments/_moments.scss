@@ -1,5 +1,6 @@
 .moments-feed {
   min-height: 400px;
+	padding-bottom: 100px;
 }
 
 #home .home {
@@ -18,6 +19,15 @@
   background: #fff;
   color: #444;
   overflow: hidden;
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    -webkit-border-radius:  48px;
+    -moz-border-radius:     48px;
+    border-radius:          48px;
+  }
+
 }
 
 .moment-top {
@@ -42,13 +52,6 @@
   text-align: center;
 }
 
-.avatar {
-	width: 48px;
-	height: 48px;
-	-webkit-border-radius:  48px;
-	-moz-border-radius:     48px;
-	border-radius:          48px;
-}
 
 .moment-divider {
 	display: table-cell;

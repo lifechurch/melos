@@ -8,7 +8,6 @@ import Row from '../components/Row'
 import Column from '../components/Column'
 import EventListItem from '../features/EventFeedMine/components/EventListItem'
 import ActionCreators from '../features/EventFeedMine/actions/creators'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 
@@ -79,9 +78,9 @@ class EventFeedMine extends Component {
 						</Row>
 					</div>
 					<ul className="unindented">
-						<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+						<div>
 							{itemList}
-						</ReactCSSTransitionGroup>
+						</div>
 					</ul>
 					{pagination}
 				</div>

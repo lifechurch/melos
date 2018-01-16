@@ -3,6 +3,10 @@ import { injectIntl, FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
 import Helmet from 'react-helmet'
 import { Link } from 'react-router'
+import LocalStore from '@youversion/utils/lib/localStore'
+import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
+import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
+import deepLinkPath from '@youversion/utils/lib/bible/deepLinkPath'
 import VerseAction from './verseAction/VerseAction'
 import ActionCreators from '../actions/creators'
 import Filter from '../../../lib/filter'
@@ -10,7 +14,6 @@ import Chapter from './content/Chapter'
 import NavArrows from './content/NavArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
-import LocalStore from '../../../lib/localStore'
 import ViewportUtils from '../../../lib/viewportUtils'
 import RecentVersions from '../lib/RecentVersions'
 import StickyHeader from '../../../components/StickyHeader'
@@ -19,8 +22,8 @@ import AudioPopup from './audio/AudioPopup'
 import ChapterCopyright from './content/ChapterCopyright'
 import ParallelExit from '../../../components/icons/ParallelExit'
 import Parallel from '../../../components/icons/Parallel'
-import { deepLinkPath, buildMeta, buildCopyright } from '../../../lib/readerUtils'
 import ResponsiveContainer from '../../../components/ResponsiveContainer'
+import { buildCopyright, buildMeta } from '../../../lib/readerUtils'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
@@ -175,51 +178,43 @@ class Bible extends Component {
 		})
 	}
 
-// TODO: use readerUtils for this
-	handleVerseSelect = (verseSelection) => {
-		const { hosts, bible: { version: { id, local_abbreviation }, chapter: { reference: { human, usfm } }, verseColors }, dispatch } = this.props
-		const refUrl = `${hosts.railsHost}/bible/${id}/${usfm}.${verseSelection.human}`
+	handleVerseSelect = ({ verses }) => {
+		const { hosts, bible: { verseColors, chapter, books } } = this.props
+		const { selectedVersion } = this.state
 
-		// get the verses that are both selected and already have a highlight
-		// color associated with them, so we can allow the user to delete them
-		const deletableColors = []
-		verseSelection.verses.forEach((selectedVerse) => {
-			verseColors.forEach((colorVerse) => {
-				if (selectedVerse === colorVerse[0]) {
-					deletableColors.push(colorVerse[1])
+		if (verses) {
+			const { title, usfm } = getReferencesTitle({
+				bookList: books.all,
+				usfmList: verses
+			})
+			const { html, text } = parseVerseFromContent({
+				usfms: verses,
+				fullContent: chapter ? chapter.content : null
+			})
+			const refUrl = `${hosts.railsHost}/bible/${selectedVersion}/${usfm}`
+
+			// get the verses that are both selected and already have a highlight
+			// color associated with them, so we can allow the user to delete them
+			const deletableColors = []
+			verses.forEach((selectedVerse) => {
+				if (verseColors) {
+					verseColors.forEach((colorVerse) => {
+						if (selectedVerse === colorVerse[0]) {
+							deletableColors.push(colorVerse[1])
+						}
+					})
 				}
 			})
-		})
-		this.setState({
-			deletableColors,
-			verseSelection: Immutable.fromJS(verseSelection).merge({
-				chapter: human,
-				url: refUrl,
-				version: id
-			}).toJS()
-		})
-
-		// now merge in the text for the verses for actions like copy and share
-		// we're setting state with all the other verseAction before so this api call doesn't slow anything down
-		if (verseSelection.verses && verseSelection.verses.length > 0) {
-			dispatch(ActionCreators.bibleVerses({
-				id,
-				references: verseSelection.verses,
-				format: 'text',
-			}, { local_abbreviation }
-			)).then((response) => {
-				this.setState({
-					verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
-						text: response.verses.reduce((acc, curr, index) => {
-							// don't put a space in front of the first string
-							if (index !== 0) {
-								return `${acc} ${curr.content}`
-							} else {
-								return acc + curr.content
-							}
-						}, '')
-					}).toJS()
-				})
+			this.setState({
+				deletableColors,
+				verseSelection: Immutable.fromJS({}).merge({
+					human: title,
+					url: refUrl,
+					text,
+					verseContent: html,
+					verses,
+					version: selectedVersion
+				}).toJS()
 			})
 		}
 	}
@@ -335,44 +330,45 @@ class Bible extends Component {
 			&& bible.version.abbreviation
 		) {
 			this.header = (
-				<StickyHeader className={'reader-header horizontal-center'} verticalOffset={70}>
-					<ChapterPicker
-						{...this.props}
-						chapter={bible.chapter}
-						books={bible.books.all}
-						bookMap={bible.books.map}
-						selectedLanguage={this.state.selectedLanguage}
-						initialBook={this.state.selectedBook}
-						initialChapter={this.state.selectedChapter}
-						versionID={this.state.selectedVersion}
-						versionAbbr={bible.version.local_abbreviation}
-						initialInput={bible.chapter.reference.human}
-						initialChapters={this.chapters}
-						cancelDropDown={this.state.chapDropDownCancel}
-						ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
-						linkBuilder={(version, usfm, abbr) => {
-							return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
-						}}
-					/>
-					<VersionPicker
-						{...this.props}
-						version={bible.version}
-						languages={bible.languages.all}
-						versions={bible.versions}
-						recentVersions={this.state.recentVersions}
-						languageMap={bible.languages.map}
-						selectedChapter={this.state.selectedChapter}
-						alert={this.state.chapterError}
-						getVersions={this.getVersions}
-						cancelDropDown={this.state.versionDropDownCancel}
-						extraClassNames="main-version-picker-container"
-						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
-						linkBuilder={(version, usfm, abbr) => {
-							return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
-						}}
-					/>
+				<StickyHeader verticalOffset={70} stackOrder={2} translationDistance='70px'>
+					<div className='reader-header horizontal-center'>
+						<ChapterPicker
+							{...this.props}
+							chapter={bible.chapter}
+							books={bible.books.all}
+							bookMap={bible.books.map}
+							selectedLanguage={this.state.selectedLanguage}
+							initialBook={this.state.selectedBook}
+							initialChapter={this.state.selectedChapter}
+							versionID={this.state.selectedVersion}
+							versionAbbr={bible.version.local_abbreviation}
+							initialInput={bible.chapter.reference.human}
+							initialChapters={this.chapters}
+							cancelDropDown={this.state.chapDropDownCancel}
+							ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
+							linkBuilder={(version, usfm, abbr) => {
+								return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
+							}}
+						/>
+						<VersionPicker
+							{...this.props}
+							version={bible.version}
+							languages={bible.languages.all}
+							versions={bible.versions}
+							recentVersions={this.state.recentVersions}
+							languageMap={bible.languages.map}
+							selectedChapter={this.state.selectedChapter}
+							alert={this.state.chapterError}
+							getVersions={this.getVersions}
+							cancelDropDown={this.state.versionDropDownCancel}
+							extraClassNames="main-version-picker-container"
+							ref={(vpicker) => { this.versionPickerInstance = vpicker }}
+							linkBuilder={(version, usfm, abbr) => {
+								return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
+							}}
+						/>
 
-					{!hasParallel &&
+						{!hasParallel &&
 						<Link
 							to={{
 								pathname: buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation),
@@ -404,7 +400,7 @@ class Bible extends Component {
 						</Link>
 					}
 
-					{hasParallel &&
+						{hasParallel &&
 						<VersionPicker
 							{...this.props}
 							version={bible.parallelVersion}
@@ -424,16 +420,16 @@ class Bible extends Component {
 						/>
 					}
 
-					<AudioPopup audio={bible.audio} hosts={hosts} enabled={typeof bible.audio.id !== 'undefined'} />
-					<Settings
-						onChange={this.handleSettingsChange}
-						initialFontSize={fontSize}
-						initialFontFamily={fontFamily}
-						initialShowFootnotes={showFootnotes}
-						initialShowVerseNumbers={showVerseNumbers}
-					/>
+						<AudioPopup audio={bible.audio} hosts={hosts} enabled={typeof bible.audio.id !== 'undefined'} />
+						<Settings
+							onChange={this.handleSettingsChange}
+							initialFontSize={fontSize}
+							initialFontFamily={fontFamily}
+							initialShowFootnotes={showFootnotes}
+							initialShowVerseNumbers={showVerseNumbers}
+						/>
 
-					{hasParallel &&
+						{hasParallel &&
 						<Link
 							to={buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation)}
 							className="hide-for-small"
@@ -461,6 +457,7 @@ class Bible extends Component {
 							</span>
 						</Link>
 					}
+					</div>
 				</StickyHeader>
 			)
 		}
@@ -554,8 +551,8 @@ class Bible extends Component {
 						title={metaTitle}
 						meta={[
 							{ name: 'description', content: `${metaContent.substring(0, 200)}...` },
-							{ name: 'og:title', content: metaTitle },
-							{ name: 'og:description', content: `${metaContent.substring(0, 200)}...` },
+							{ property: 'og:title', content: metaTitle },
+							{ property: 'og:description', content: `${metaContent.substring(0, 200)}...` },
 							// hacky meta rendering on rails side
 							// { name: 'og:image', content: `` },
 							// { name: 'og:url', content: '' },

@@ -8,12 +8,12 @@ import { createHistory } from 'history'
 import createLogger from 'redux-logger'
 import { syncHistoryWithStore } from 'react-router-redux'
 import cookie from 'react-cookie'
+import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
 import configureStore from './store'
 import getRoutes from './routes'
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 import defaultState from './defaultState'
-import { isVerseOrChapter } from '../../lib/readerUtils'
 import '../../less/style.less'
 
 if (typeof window !== 'undefined') {

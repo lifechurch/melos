@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import LocalStore from '../../../../lib/localStore'
+import LocalStore from '@youversion/utils/lib/localStore'
 import PlayButton from './PlayButton'
 import PauseButton from './PauseButton'
 import SeekButton from './SeekButton'
@@ -18,9 +18,13 @@ const IS_STANDALONE = (IS_CLIENT && typeof window.opener !== 'undefined' && wind
 class AudioPlayer extends Component {
 	constructor(props) {
 		super(props)
-
-		this.POST_MESSAGE_URL_ORIGIN = props.hosts.nodeHost || 'http://localhost:3000'
-		this.POST_MESSAGE_URL_STANDALONE = props.hosts.railsHost || 'http://localhost:8001'
+		const { hosts, playing, startTime, stopTime, hasStandalone } = props
+		this.POST_MESSAGE_URL_ORIGIN = hosts && 'nodeHost' in hosts ?
+																		hosts.nodeHost :
+																		'http://localhost:3000'
+		this.POST_MESSAGE_URL_STANDALONE = hosts && 'nodeHost' in hosts ?
+																				hosts.nodeHost :
+																				'http://localhost:8001'
 		this.ALLOWED_ORIGINS = [ this.POST_MESSAGE_URL_STANDALONE, this.POST_MESSAGE_URL_ORIGIN ]
 
 		this.playbackSpeeds = [
@@ -40,16 +44,16 @@ class AudioPlayer extends Component {
 			this.state = {
 				standaloneWindow: null,
 				initialized: false,
-				playing: props.playing || false,
+				playing: playing || false,
 				buffering: false,
 				paused: false,
 				hasError: false,
-				currentTime: props.startTime || 0,
-				stopTime: props.stopTime || null,
+				currentTime: startTime || 0,
+				stopTime: stopTime || null,
 				duration: 0,
 				percentComplete: 0,
 				playbackRate: LocalStore.getIn('audio.player.playbackRate') || 1,
-				hasStandalone: props.hasStandalone || false
+				hasStandalone: hasStandalone || false
 			}
 		}
 
@@ -108,6 +112,7 @@ class AudioPlayer extends Component {
 	handlePlayerSrcLoad(src, playAfterLoad) {
 		this.player.querySelector('source').src = src
 		this.player.pause()
+		this.player.currentTime = 0
 		this.player.load()
 		if (playAfterLoad) {
 			this.player.oncanplaythrough = this.player.play()

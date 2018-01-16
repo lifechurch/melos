@@ -1,8 +1,10 @@
 import cookie from 'react-cookie'
-
+import plansAPI from '@youversion/api-redux/lib/endpoints/plans'
+import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
+import customGet from '@youversion/api-redux/lib/customHelpers/get'
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
 import { getDefaultVersion } from '../../lib/readingPlanUtils'
-
 /**
  * Loads a data.
  *
@@ -22,22 +24,15 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isRecommended = new RegExp('^\/recommended-plans-collection\/[0-9]+')
 			const isPlan = new RegExp('^\/reading-plans\/[0-9]+')
 
-			const isSubscribedPlans = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans')
-			const isSavedPlans = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/saved-reading-plans')
-			const isCompletedPlans = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/completed-reading-plans')
-
-			const isReadingPlanRef = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/day\/[0-9]+\/ref\/[0-9]+')
-			const isReadingPlanDevo = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/day\/[0-9]+\/devo')
 			const isReadingPlanSample = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+-[^\r\n\t\f\/ ]+\/day/[0-9]+')
-			const isReadingPlanSettings = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+-[^\r\n\t\f\/ ]+\/edit')
-			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+(\/day\/[0-9]+)*')
 
-			const isDayComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
 			const isSharedDayComplete = new RegExp('^\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
 			const isPlanComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/completed')
 
 			const isLookinside = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+')
 			const isLookinsideSample = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+\/read\/day/[0-9]+')
+
+			const isTogetherInvitation = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+(-[^\r\n\t\f\/ ]+)?\/together/[0-9a-zA-Z-]+/invitation')
 
 			let auth = false
 			if (sessionData.email && sessionData.password) {
@@ -48,35 +43,66 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
 			if (isIndex.test(params.url)) {
 				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
-
 			} else if (isSaved.test(params.url)) {
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => { resolve() })
-
-			} else if (isReadingPlanRef.test(params.url) || isReadingPlanDevo.test(params.url)) {
-				const version = params.version || cookie.load('version') || '1'
-				const content = params.content ? parseInt(params.content, 10) : null
-				store.dispatch(ActionCreator.subscriptionAll({
-					id: params.id,
-					language_tag: Locale.planLocale,
-					user_id: sessionData.userid,
-					day: params.day ? parseInt(params.day, 10) : null,
-					version,
-					content
-				}, auth))
-					.then(() => {
-						resolve()
-					}, (error) => {
-						store.dispatch(ActionCreator.subscriptionAll({
-							id: params.id,
-							language_tag: Locale.planLocale,
-							user_id: sessionData.userid,
-							day: params.day,
-							version: getDefaultVersion(store, Locale.locale3),
-						}, auth)).then(() => {
-							resolve()
-						}, () => { resolve() })
+			} else if (isTogetherInvitation.test(params.url)) {
+				const { id, together_id, token } = params
+				const { dispatch } = store
+				const proms = [
+					dispatch(readingPlansAction({
+						method: 'view',
+						params: {
+							id: id.split('-')[0],
+						},
+					})),
+					new Promise((resolve2) => {
+						customGet({
+							actionName: 'participants',
+							pathvars: {
+								id: together_id,
+								token,
+							},
+							dispatch,
+							actions: plansAPI.actions,
+							auth,
+							serverLanguageTag: Locale.planLocale,
+						})
+							.then((data) => {
+								const promesan = [data]
+								if (data && data.data) {
+									data.data.forEach((user) => {
+										promesan.push(
+											dispatch(usersAction({
+												method: 'view',
+												params: {
+													id: user.id,
+												},
+											}))
+										)
+									})
+								}
+								Promise.all(promesan)
+									.then((promisedLand) => {
+										resolve2(promisedLand)
+									})
+									.catch((err) => {
+										resolve2(err)
+									})
+							})
+							.catch((err) => { resolve2(err) })
+					}),
+					new Promise((reso, rej) => {
+						dispatch(plansAPI.actions.together.get({
+							id: together_id,
+							token,
+						}, { auth }))
+						.then((data) => { reso(data) })
+						.catch((err) => { rej(err) })
 					})
-
+				]
+				resolve(Promise.all(proms)
+					.then(() => { resolve() })
+					.catch(() => { resolve() }))
 			} else if (isPlanComplete.test(params.url)) {
 				store.dispatch(ActionCreator.planComplete({
 					id: params.id,
@@ -85,12 +111,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					getPlanView: true,
 					getSavedPlans: true,
 					getRecommendedPlans: true,
-				}, auth)).then((d) => { resolve() })
-
-			} else if (isDayComplete.test(params.url)) {
-				store.dispatch(ActionCreator.readingplanView({
-					id: params.id,
-					language_tag: Locale.planLocale,
 				}, auth)).then((d) => { resolve() })
 
 			} else if (isSharedDayComplete.test(params.url)) {
@@ -121,48 +141,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						}, () => { resolve() })
 					})
 
-			} else if (isReadingPlanSettings.test(params.url)) {
-				const version = params.version || cookie.load('version') || '1'
-				store.dispatch(ActionCreator.subscriptionAll({
-					id: params.id,
-					language_tag: Locale.planLocale,
-					user_id: sessionData.userid,
-					version,
-				}, auth)).then(() => { resolve() })
-
-			} else if (isSubscription.test(params.url)) {
-				const version = params.version || cookie.load('version') || '1'
-				store.dispatch(ActionCreator.subscriptionAll({
-					id: params.id,
-					language_tag: Locale.planLocale,
-					user_id: sessionData.userid,
-					day: params.day,
-					version,
-				}, auth))
-					.then(() => {
-						resolve()
-					}, (error) => {
-						store.dispatch(ActionCreator.subscriptionAll({
-							id: params.id,
-							language_tag: Locale.planLocale,
-							user_id: sessionData.userid,
-							day: params.day,
-							version: getDefaultVersion(store, Locale.locale3),
-						}, auth)).then(() => {
-							resolve()
-						}, () => { resolve() })
-					})
-
-			} else if (isSubscribedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
-
-			} else if (isSavedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then(() => { resolve() })
-
-			} else if (isCompletedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
-
-			} else if (isLookinsideSample.test(params.url)) {
+			}	else if (isLookinsideSample.test(params.url)) {
 				const version = params.version || cookie.load('version') || '1'
 				store.dispatch(ActionCreator.sampleAll({
 					id: params.id,
@@ -183,7 +162,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					}, () => { resolve() })
 				})
 			} else if (isLookinside.test(params.url)) {
-				// figure out referrer and fire off lookinside analytics
 				store.dispatch(ActionCreator.readingplanView({
 					id: params.id,
 					language_tag: Locale.planLocale,

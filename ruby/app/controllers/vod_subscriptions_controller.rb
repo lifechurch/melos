@@ -6,7 +6,7 @@ class VodSubscriptionsController < ApplicationController
   before_filter :find_vod_subscription
 
   def index
-   @devices = current_user.devices if current_user.present? and current_user.auth.present?
+  #  @devices = current_user.devices if current_user.present? and current_user.auth.present?
    # One of these might work, depending on how the API returns devices with token auth.
    # @devices = current_user.present? ? current_user.devices : User.find(@vod_subscription.user.devices)
    # @devices ||= @current_user.devices if @current_user.present?

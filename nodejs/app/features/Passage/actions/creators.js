@@ -66,6 +66,20 @@ const ActionCreators = {
 					)
 				}
 
+
+
+
+// try getting chapters to see if we can pull the text out
+				// versions.forEach((id) => {
+				// 	dispatch(bibleAction({
+				// 		method: 'chapter',
+				// 		params: {
+				// 			id,
+				// 			reference: chapterifyUsfm(passage),
+				// 		},
+				// 	}))
+				// })
+
 				Promise.all(promises).then(() => {
 					resolve()
 				}, () => {

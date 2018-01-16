@@ -136,6 +136,12 @@
 		"displayName": "Hrvatski"
 	},
 	{
+		"locale": "ig",
+		"locale2": "ig",
+		"locale3": "ibo",
+		"displayName": "IG"
+	},
+	{
 		"nativeName": "isiZulu",
 		"englishName": "Zulu",
 		"locale": "zu-ZA",
@@ -196,6 +202,14 @@
 		"locale2": "no",
 		"locale3": "nor",
 		"displayName": "NO-NO"
+	},
+	{
+		"nativeName": "O'zbek",
+		"englishName": "Uzbek",
+		"locale": "uz-UZ",
+		"locale2": "uz",
+		"locale3": "uzb",
+		"displayName": "O'zbek"
 	},
 	{
 		"nativeName": "Polski",
@@ -378,6 +392,14 @@
 		"displayName": "नेपाली"
 	},
 	{
+		"nativeName": "मराठी",
+		"englishName": "Marathi",
+		"locale": "mr-IN",
+		"locale2": "mr",
+		"locale3": "mar",
+		"displayName": "मराठी"
+	},
+	{
 		"nativeName": "हिन्दी",
 		"englishName": "Hindi",
 		"locale": "hi-IN",
@@ -400,6 +422,22 @@
 		"locale2": "ta",
 		"locale3": "tam",
 		"displayName": "தமிழ்"
+	},
+	{
+		"nativeName": "ಕನ್ನಡ (India)",
+		"englishName": "Kannada (India)",
+		"locale": "kn-IN",
+		"locale2": "kn",
+		"locale3": "kan",
+		"displayName": "ಕನ್ನಡ (India)"
+	},
+	{
+		"nativeName": "മലയാളം",
+		"englishName": "Malayalam",
+		"locale": "ml-IN",
+		"locale2": "ml",
+		"locale3": "mal",
+		"displayName": "മലയാളം"
 	},
 	{
 		"nativeName": "ภาษาไทย (ประเทศไทย)",

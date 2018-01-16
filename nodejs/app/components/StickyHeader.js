@@ -68,22 +68,28 @@ class StickyHeader extends Component {
       children,
       pinTo,
       verticalOffset,
-			isSticky
+			translationDistance,
+			isSticky,
+			stackOrder,
     } = this.props
 
 		const {
       mode
     } = this.state
 
-		const style = {}
-		const marginKey = pinTo === 'top' ? 'marginTop' : 'marginBottom'
+		// we need to stack headers properly so the padding from the next header
+		// doesn't cover up the previous
+		const style = {
+			zIndex: 99 - stackOrder,
+		}
 		const paddingKey = pinTo === 'top' ? 'paddingTop' : 'paddingBottom'
-		if (verticalOffset > 20) {
-			style[marginKey] = verticalOffset - 10
-			style[paddingKey] = 10
-			style.zIndex = 97
-		} else {
-			style[marginKey] = verticalOffset
+		if (verticalOffset > 0) {
+			style[paddingKey] = verticalOffset
+		}
+
+		const translation = pinTo === 'top' ? `-${translationDistance}` : translationDistance
+		if (mode === 'hidden') {
+			style.transform = `translateY(${translation})`
 		}
 
 		return (
@@ -102,6 +108,8 @@ StickyHeader.propTypes = {
 	pinTo: PropTypes.oneOf(['top', 'bottom']),
 	scrollDebounceTimeout: PropTypes.number,
 	verticalOffset: PropTypes.number,
+	stackOrder: PropTypes.number,
+	translationDistance: PropTypes.string,
 	isSticky: PropTypes.bool
 }
 
@@ -111,6 +119,8 @@ StickyHeader.defaultProps = {
 	pinTo: 'top',
 	scrollDebounceTimeout: 100,
 	verticalOffset: 0,
+	stackOrder: 0,
+	translationDistance: '100%',
 	bottomOffset: 0,
 	isSticky: true
 }

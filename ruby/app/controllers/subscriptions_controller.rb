@@ -2,11 +2,11 @@ class SubscriptionsController < ApplicationController
 
   respond_to :html, :json
   prepend_before_filter :mobile_redirect, only: [:show]
-  before_filter :check_existing_subscription, only: [:create]
-  before_filter :force_login
-  before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
-  before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
-  before_filter :get_plan_counts, only: [:index,:saved]
+  # before_filter :check_existing_subscription, only: [:create]
+  # before_filter :force_login
+  # before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
+  # before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
+  # before_filter :get_plan_counts, only: [:index,:saved]
 
 
 
@@ -29,8 +29,32 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
+
+	def invitation
+		url = request.query_string.present? ? request.path + '?' + request.query_string : request.path
+		p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => url,
+        "cache_for" => YV::Caching::a_very_long_time,
+				"id" => params[:id].split("-")[0],
+				"together_id" => params[:together_id],
+				"token" => params[:token]
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
+	end
 
   def completed
     p = {
@@ -49,7 +73,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   def saved
@@ -69,7 +93,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # Plan Day: Overview
@@ -92,7 +116,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # Plan Day: Devo
@@ -115,7 +139,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # Plan Day: Ref
@@ -138,7 +162,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   def create
@@ -282,7 +306,7 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   def calendar
@@ -303,31 +327,12 @@ class SubscriptionsController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+    render 'index', locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # for marking day complete from subscription email
   def mark_complete
-    refs = presenter.reading.references(version_id: presenter.subscription.version_id)
-    refs.each_with_index { |ref,index|
-      if(ref.completed == false)
-        ref.completed = true
-        @subscription.set_ref_completion(params[:day], ref.reference.to_param.downcase , ref.reference.to_param.downcase.present?, true)
-      end
-    }
-
-    # after changing refs, fall back to version_id of plan if specified
-    params[:initial] = true
-
-    @subscription = subscription_for(params[:id]) || @subscription
-    self.presenter = Presenter::Subscription.new( @subscription , params, self)
-
-    if @subscription.completed?
-      return redirect_to plan_complete_plan_path(username: current_user.username, id: params[:id])
-    end
-
-    return redirect_to day_complete_plan_path(username: current_user.username, id: params[:id], day: params[:day])
-
+    return calendar
   end
 
   private

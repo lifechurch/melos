@@ -11,7 +11,6 @@ import LocationDeleteModal from '../features/EventEdit/features/location/compone
 import UnpublishModal from '../features/EventEdit/features/location/components/UnpublishModal'
 import Location from '../features/EventEdit/features/location/components/Location'
 import LocationAddButtons from '../features/EventEdit/features/location/components/LocationAddButtons'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import LocationTimeShifter from '../features/EventEdit/features/location/components/LocationTimeShifter'
 import { injectIntl, FormattedHTMLMessage } from 'react-intl'
 
@@ -59,7 +58,7 @@ class EventEditLocationContainer extends Component {
 			const { modal } = event.rules.locations.canAddPhysical
 			dispatch(ModalActionCreators.openModal(modal))
 		} else {
-			dispatch(ActionCreators.add({locationType: 'physical', auth}))
+			dispatch(ActionCreators.add({ locationType: 'physical', auth }))
 		}
 	}
 
@@ -69,7 +68,7 @@ class EventEditLocationContainer extends Component {
 			const { modal } = event.rules.locations.canAddVirtual
 			dispatch(ModalActionCreators.openModal(modal))
 		} else {
-			dispatch(ActionCreators.add({locationType: 'virtual', auth}))
+			dispatch(ActionCreators.add({ locationType: 'virtual', auth }))
 		}
 	}
 
@@ -84,12 +83,10 @@ class EventEditLocationContainer extends Component {
 		if (typeof event.rules.locations.canRemove === 'object') {
 			const { modal } = event.rules.locations.canRemove
 			dispatch(ModalActionCreators.openModal(modal))
+		} else if (checked === true) {
+			dispatch(ActionCreators.addLocation(event.item.id, name))
 		} else {
-			if (checked === true) {
-				dispatch(ActionCreators.addLocation(event.item.id, name))
-			} else {
-				dispatch(ActionCreators.removeLocation(event.item.id, name))
-			}
+			dispatch(ActionCreators.removeLocation(event.item.id, name))
 		}
 	}
 
@@ -170,23 +167,24 @@ class EventEditLocationContainer extends Component {
 	render() {
 		const { dispatch, event, loc, modals, intl, params } = this.props
 
-		var locations = []
-		var index = 0
-		for (var key in event.item.locations) {
+		const locations = []
+		let index = 0
+		for (const key in event.item.locations) {
 			const loc = event.item.locations[key]
 			locations.push(<li key={index}><Location intl={intl} dispatch={dispatch} event={event} index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
 			index++
 		}
 
-		var centerButtons
+		let centerButtons
 		if (!(event.item && event.item.locations && Object.keys(event.item.locations).length > 0)) {
 			centerButtons = 'center-single-item'
 		}
 
-		var locationEditor
-		var locationList = null
+		let locationEditor
+		let locationList = null
 		if (loc && typeof loc.type === 'string') {
-			locationEditor = (<LocationEdit key='locationeditor'
+			locationEditor = (<LocationEdit
+				key='locationeditor'
 				handleCancel={::this.handleCancel}
 				handleChange={::this.handleChange}
 				handleChoosePlace={::this.handleChoosePlace}
@@ -196,12 +194,13 @@ class EventEditLocationContainer extends Component {
 				handleSave={::this.handleSave}
 				dispatch={dispatch}
 				loc={loc}
-				intl={intl} />
+				intl={intl}
+			/>
 			)
 		} else {
 			locationList = (
 				<ul className="medium-block-grid-3" key='locationlist'>
-					<ReactCSSTransitionGroup className='medium-block-grid-3' transitionName="locationlist" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+					<div className='medium-block-grid-3'>
 						{locations}
 						<li className={centerButtons} key={-1}>
 							<LocationAddButtons
@@ -209,17 +208,17 @@ class EventEditLocationContainer extends Component {
 								event={event}
 								handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick}
 								handleAddVirtualLocationClick={::this.handleAddVirtualLocationClick}
-								intl={intl}>
-							</LocationAddButtons>
+								intl={intl}
+							/>
 						</li>
-					</ReactCSSTransitionGroup>
+					</div>
 				</ul>
 			)
 		}
 
 		return (
 			<div>
-				<Helmet title={intl.formatMessage({ id: "containers.EventEditLocationContainer.title" })} />
+				<Helmet title={intl.formatMessage({ id: 'containers.EventEditLocationContainer.title' })} />
 				<Row>
 					<Column s='medium-12'>
 						<LocationTimeShifter intl={intl} dispatch={dispatch} event={event} />
@@ -227,19 +226,16 @@ class EventEditLocationContainer extends Component {
 				</Row>
 				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
-
-						<ReactCSSTransitionGroup transitionName="locationeditor" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+						<div>
 							{locationEditor}
 							{locationList}
-						</ReactCSSTransitionGroup>
+						</div>
 						<LocationDeleteModal intl={intl} modalState={modals.LocationDelete} handleDelete={::this.handleDelete} handleClose={::this.handleCloseModal} />
 						<UnpublishModal intl={intl} event={event} dispatch={dispatch} modalState={modals.Unpublish} handleClose={::this.handleCloseUnpublishModal} />
 					</div>
 				</Row>
 				<Row>
-					<div className="medium-10 large-8 columns small-centered text-center">
-
-					</div>
+					<div className="medium-10 large-8 columns small-centered text-center" />
 				</Row>
 				<Row>
 					<Column s='medium-6'>

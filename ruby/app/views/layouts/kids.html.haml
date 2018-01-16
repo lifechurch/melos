@@ -179,11 +179,29 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/uk/kids"
     facebook_locale = "uk_UA"
     youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("el")) then
+    i18n_css_class = "el"
+    i18n_image_dir = "/el"
+    meta_url = "#{request.protocol}#{request.host_with_port}/el/kids"
+    facebook_locale = "el_GR"
+    youtube_url = ""
   elsif (I18n.locale.to_s.eql?("bn")) then
     i18n_css_class = "bn"
     i18n_image_dir = "/bn"
     meta_url = "#{request.protocol}#{request.host_with_port}/bn/kids"
     facebook_locale = "bn_IN"
+    youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("no")) then
+    i18n_css_class = "no"
+    i18n_image_dir = "/no"
+    meta_url = "#{request.protocol}#{request.host_with_port}/no/kids"
+    facebook_locale = "nb_NO"
+    youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("mn")) then
+    i18n_css_class = "mn"
+    i18n_image_dir = "/mn"
+    meta_url = "#{request.protocol}#{request.host_with_port}/mn/kids"
+    facebook_locale = "mn_MN"
     youtube_url = ""
   end
 
@@ -232,7 +250,10 @@
     %meta{property: "og:locale:alternate", content: "zh_HK"}
     %meta{property: "og:locale:alternate", content: "sv_SE"}
     %meta{property: "og:locale:alternate", content: "uk_UA"}
+    %meta{property: "og:locale:alternate", content: "el_GR"}
     %meta{property: "og:locale:alternate", content: "bn_IN"}
+    %meta{property: "og:locale:alternate", content: "nb_NO"}
+    %meta{property: "og:locale:alternate", content: "mn_MN"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -273,7 +294,9 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/hk/kids",:rel=>"alternate",:hreflang=>"zh-hk"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/sv/kids",:rel=>"alternate",:hreflang=>"sv"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/uk/kids",:rel=>"alternate",:hreflang=>"uk"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/el/kids",:rel=>"alternate",:hreflang=>"el"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/bn/kids",:rel=>"alternate",:hreflang=>"bn"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/no/kids",:rel=>"alternate",:hreflang=>"no"}
 
     - if I18n.locale.to_s.eql?("vi") then
       %link{:href=> "https://fonts.googleapis.com/css?family=Open+Sans", :rel=>"stylesheet"}
@@ -294,7 +317,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro") or I18n.locale.to_s.eql?("fi") or I18n.locale.to_s.eql?("zh-HK") or I18n.locale.to_s.eql?("sv") or I18n.locale.to_s.eql?("uk") or I18n.locale.to_s.eql?("bn"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro") or I18n.locale.to_s.eql?("fi") or I18n.locale.to_s.eql?("zh-HK") or I18n.locale.to_s.eql?("sv") or I18n.locale.to_s.eql?("uk")  or I18n.locale.to_s.eql?("el") or I18n.locale.to_s.eql?("bn") or I18n.locale.to_s.eql?("no") or I18n.locale.to_s.eql?("mn"))
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
@@ -327,20 +350,20 @@
       -# !App store buttons
       - if not prelaunch
         .download
-          %a.download-ios{href: t.call('kids.links.apple'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
+          %a.download-ios{href: t.call('kids.links.apple'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.app store')
-          %a.download-play{href: t.call('kids.links.google'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
+          %a.download-play{href: t.call('kids.links.google'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.google play')
           -if I18n.locale.to_s.eql?("zh-CN")
             %br.desktop-only
-            %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
+            %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px; background-size: contain"}
               = t.call('kids.free download')
           -if I18n.locale.to_s.eql?("ru")
             %br.desktop-only
-            %a.download-apk{href: "https://store.yandex.ru/", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px"}
+            %a.download-apk{href: "https://store.yandex.ru/", style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px; background-size: contain"}
               = t.call('kids.free download')
 
-          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
+          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.amazon')
 
 

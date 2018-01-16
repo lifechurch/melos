@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react'
+import { FormattedMessage } from 'react-intl'
 import FontSettingsTriggerImage from './FontSettingsTriggerImage'
 import TriggerButton from '../../../../components/TriggerButton'
 import ButtonBar from '../../../../components/ButtonBar'
 import Toggle from '../../../../components/Toggle'
-import LocalStore from '../../../../lib/localStore'
 import DropdownTransition from '../../../../components/DropdownTransition'
-import { FormattedMessage } from 'react-intl'
 
 class Settings extends Component {
 	constructor(props) {

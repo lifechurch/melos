@@ -1,25 +1,22 @@
 import React, { Component, PropTypes } from 'react'
-import ActionCreators from '../../actions/creators'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
-import Immutable from 'immutable'
-import XMark from '../../../../components/XMark'
+import CustomScroll from 'react-custom-scroll'
+import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
+import ActionCreators from '../../actions/creators'
 import DropdownTransition from '../../../../components/DropdownTransition'
-import VerseCard from './bookmark/VerseCard'
+import VerseCard from '../../../../components/VerseCard'
 import Card from '../../../../components/Card'
 import LabelSelector from './bookmark/LabelSelector'
 import NoteEditor from './note/NoteEditor'
 import Select from '../../../../components/Select'
 import ColorList from './ColorList'
 import Color from './Color'
-import CustomScroll from 'react-custom-scroll'
 
 class MomentCreate extends Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-			localVerses: props.verses || {},
-			localRefs: props.references || [],
 			content: null,
 			user_status: 'private',
 			addedLabels: [],
@@ -33,26 +30,17 @@ class MomentCreate extends Component {
 			friends: props.intl.formatMessage({ id: 'Reader.verse action.friends' }),
 			draft: props.intl.formatMessage({ id: 'Reader.verse action.draft' }),
 		}
-
 	}
 
-	componentWillReceiveProps(nextProps) {
-		const { verses, references } = this.props
-		const { localVerses, localRefs } = this.state
-
-		// merge in new verses
-		if (nextProps.verses && nextProps.references) {
-			if (verses !== nextProps.verses) {
-				this.setState({
-					localVerses: Immutable.fromJS(nextProps.verses).toJS()
-				})
-			}
-			if (references !== nextProps.references) {
-				this.setState({
-					localRefs: Immutable.fromJS(nextProps.references).toJS()
-				})
-			}
-		}
+	/**
+	 * note content on keypress
+	 *
+	 * @param      {string}  content  keypress value
+	 */
+	onNoteKeyPress = (content) => {
+		this.setState({
+			content,
+		})
 	}
 
 	/**
@@ -78,47 +66,11 @@ class MomentCreate extends Component {
 	}
 
 	/**
-	 * delete verse from moment create. on click of XMark next to verse content
-	 * currently only on Note create
-	 *
-	 * @param      {<type>}  key     The key of the verse to delete
-	 *   														 i.e. 59-REV.2.1
-	 */
-	deleteVerse = (key) => {
-		const { localVerses, localRefs } = this.state
-
-		if (key in localVerses) {
-			this.setState({
-				localVerses: Immutable.fromJS(localVerses).delete(key).toJS(),
-			})
-			// delete from references as well
-			localRefs.forEach((ref, index) => {
-				if (localVerses[key].usfm[0] == ref.usfm[0]) {
-					this.setState({
-						localRefs: Immutable.fromJS(localRefs).delete(index).toJS(),
-					})
-				}
-			})
-		}
-	}
-
-	/**
-	 * note content on keypress
-	 *
-	 * @param      {string}  content  keypress value
-	 */
-	onNoteKeyPress = (content) => {
-		this.setState({
-			content,
-		})
-	}
-
-	/**
 	 * on Select component change, for selecting privacy options on note
 	 *
 	 * @param      {string}  key     'private', 'public', 'friends', 'draft'
 	 */
-	changeUserStatus = ({ key }) => {
+	handleChangeUserStatus = ({ key }) => {
 		this.setState({
 			user_status: key,
 		})
@@ -129,7 +81,7 @@ class MomentCreate extends Component {
 	 *
 	 * @param      {string}  color   The color selected from the ColorList
 	 */
-	addColor = (color) => {
+	handleAddColor = (color) => {
 		this.setState({
 			selectedColor: color,
 		})
@@ -153,35 +105,37 @@ class MomentCreate extends Component {
 	 *
 	 * some keys to the api will be null, depending on which kind we are creating
 	 */
-	save = () => {
-		const { dispatch, isLoggedIn, kind, onClose } = this.props
-		const { localRefs, addedLabels, content, user_status, selectedColor } = this.state
+	handleSave = () => {
+		const { dispatch, references, version_id, isLoggedIn, kind, onClose } = this.props
+		const { addedLabels, content, user_status, selectedColor } = this.state
+
+		const refs = (Array.isArray(references) && references.length > 0)
+			? [{ usfm: references, version_id }]
+			: []
 
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind,
-			references: (Array.isArray(localRefs) && localRefs.length > 0) ? localRefs : [],
+			references: refs,
 			labels: (Array.isArray(addedLabels) && addedLabels.length > 0) ? addedLabels : [],
 			created_dt: `${new Date().toISOString().split('.')[0]}+00:00`,
 			content,
 			user_status,
 			color: selectedColor ? selectedColor.replace('#', '') : null,
 		}))
-			.then(data => {
+			.then(() => {
 				if (typeof onClose === 'function') {
 					onClose(true)
 				}
-			}, error => {
-
 			}
 		)
 	}
 
 
 	render() {
-		const { labels, colors, kind, intl, isLoggedIn, isRtl } = this.props
-		const { localVerses, dropdown, selectedColor, content } = this.state
+		const { labels, colors, kind, intl, isLoggedIn, isRtl, human, local_abbreviation, verseContent } = this.props
+		const { dropdown, selectedColor } = this.state
 
-		let labelsDiv, colorsDiv, contentDiv, createHeader = null
+		let colorsDiv, contentDiv, createHeader = null
 
 		if (!isLoggedIn) {
 			let message = ''
@@ -208,19 +162,19 @@ class MomentCreate extends Component {
 			if (Array.isArray(colors)) {
 				colorsDiv = (
 					<div className='colors-div'>
-						<div onClick={this.handleDropdownOpen} className='color-trigger-button'>
+						<a tabIndex={0} onClick={this.handleDropdownOpen} className='color-trigger-button'>
 							{
 								selectedColor
-								?
-									<Color color={selectedColor} />
-								:
-									<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
+									? <Color color={selectedColor} />
+									: <div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
 							}
-						</div>
+						</a>
 						<DropdownTransition show={dropdown} hideDir='up' onOutsideClick={this.handleDropdownClose} exemptClass='color-trigger-button'>
 							<div className='labels-modal'>
-								<ColorList list={colors} onClick={this.addColor} isRtl={isRtl} />
-								<a onClick={this.handleDropdownClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
+								<ColorList list={colors} onClick={this.handleAddColor} isRtl={isRtl} />
+								<a tabIndex={0} onClick={this.handleDropdownClose} className="close-button yv-gray-link">
+									<FormattedMessage id="plans.stats.close" />
+								</a>
 							</div>
 						</DropdownTransition>
 					</div>
@@ -228,37 +182,48 @@ class MomentCreate extends Component {
 			}
 
 			// display Bookmark create
-			if (kind === 'bookmark' && localVerses) {
+			if (kind === 'bookmark' && verseContent) {
 				createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
 				contentDiv = (
 					<div className='bookmark-create'>
-						<VerseCard verseContent={localVerses}>
-							<div className='small-10'>
-								<LabelSelector
-									byAlphabetical={labels.byAlphabetical}
-									byCount={labels.byCount}
-									updateLabels={this.updateLabels}
-									intl={intl}
-								/>
-							</div>
-							<div className='small-2'>
+						<VerseCard
+							verseContent={verseContent}
+							human={human}
+							local_abbreviation={local_abbreviation}
+						>
+							<div style={{ width: '100%', display: 'flex', alignItems: 'flex-end' }}>
+								<div style={{ flex: 1 }}>
+									<LabelSelector
+										byAlphabetical={labels ? labels.byAlphabetical : null}
+										byCount={labels ? labels.byCount : null}
+										updateLabels={this.updateLabels}
+										intl={intl}
+									/>
+								</div>
 								{ colorsDiv }
 							</div>
 						</VerseCard>
 					</div>
 				)
-			} else if (kind === 'note' && localVerses) {
+			} else if (kind === 'note' && verseContent) {
 				createHeader = <FormattedMessage id='Reader.verse action.note' />
 				contentDiv = (
 					<div className='note-create'>
-						<VerseCard verseContent={localVerses} deleteVerse={this.deleteVerse}>
+						<VerseCard
+							verseContent={verseContent}
+							human={human}
+							local_abbreviation={local_abbreviation}
+						>
 							{ colorsDiv }
 						</VerseCard>
 						<div className='user-status-dropdown'>
-							<Select list={this.USER_STATUS} onChange={this.changeUserStatus} />
+							<Select list={this.USER_STATUS} onChange={this.handleChangeUserStatus} />
 						</div>
 						<div className='note-editor'>
-							<NoteEditor intl={intl} updateNote={this.onNoteKeyPress} />
+							<NoteEditor
+								intl={intl}
+								updateNote={this.onNoteKeyPress}
+							/>
 						</div>
 					</div>
 				)
@@ -270,16 +235,23 @@ class MomentCreate extends Component {
 				<CustomScroll allowOutsideScroll={false}>
 					<div className='content large-6 medium-10 small-12'>
 						<div className='heading vertical-center'>
-							<div className='columns medium-4 cancel' onClick={this.handleClose}><XMark width={18} height={18} /></div>
-							<div className='columns medium-4 title'>{ createHeader }</div>
-							<div className='columns medium-4 save'>
-								{
-									isLoggedIn ?
-										<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: 'Reader.verse action.save' }) }</div>
-									:
-									null
+							<SectionedLayout
+								right={
+									<div className='save'>
+										{
+											isLoggedIn
+												? <a tabIndex={0} onClick={this.handleSave} className='solid-button green'>
+													{ intl.formatMessage({ id: 'Reader.verse action.save' }) }
+												</a>
+												: null
+										}
+									</div>
 								}
-							</div>
+							>
+								<div className='title' style={{ width: '100%' }}>
+									{ createHeader }
+								</div>
+							</SectionedLayout>
 						</div>
 						{ contentDiv }
 					</div>
@@ -302,17 +274,24 @@ class MomentCreate extends Component {
  * @onClose 					{func}					on click of the XMark in header. should close the component
  */
 MomentCreate.propTypes = {
-	kind: React.PropTypes.oneOf(['bookmark', 'note', 'image', 'highlight']).isRequired,
-	verses: React.PropTypes.object,
-	references: React.PropTypes.array,
-	labels: React.PropTypes.object,
-	colors: React.PropTypes.array,
-	onClose: React.PropTypes.func,
+	kind: PropTypes.oneOf(['bookmark', 'note', 'image', 'highlight']).isRequired,
+	verseContent: PropTypes.string,
+	references: PropTypes.array,
+	labels: PropTypes.object,
+	colors: PropTypes.array,
+	onClose: PropTypes.func,
 	isRtl: PropTypes.bool,
+	intl: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 MomentCreate.defaultProps = {
+	verseContent: null,
+	references: null,
 	isRtl: false,
+	labels: null,
+	colors: null,
+	onClose: null,
 }
 
 export default injectIntl(MomentCreate)

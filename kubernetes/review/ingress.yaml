@@ -14,6 +14,7 @@ spec:
     - $CI_ENVIRONMENT_HOSTNAME
     - events-$CI_ENVIRONMENT_HOSTNAME
     - nodejs-$CI_ENVIRONMENT_HOSTNAME
+    - eoy-images-staging.bible.com
     secretName: ssl
   rules:
   - host: $CI_ENVIRONMENT_HOSTNAME
@@ -37,4 +38,10 @@ spec:
         backend:
           serviceName: $CI_ENVIRONMENT_SLUG
           servicePort: $PORT
-
+  - host: eoy-images-staging.bible.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: $CI_ENVIRONMENT_SLUG
+          servicePort: $PORT

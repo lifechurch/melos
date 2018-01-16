@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
 import StickyHeader from '../../../../components/StickyHeader'
 import { ScreenSize } from '../../../../lib/responsiveConstants'
-import SectionedHeading from '../../../../components/SectionedHeading'
+import SectionedLayout from '../../../../components/SectionedLayout'
 
 function NavArrows(props) {
 
@@ -132,7 +132,7 @@ function NavArrows(props) {
 
 	return (
 		<StickyHeader pinTo="bottom" verticalOffset={70} className={`reader-arrows ${extraClassNames}`} isSticky={screenSize === ScreenSize.SMALL}>
-			<SectionedHeading
+			<SectionedLayout
 				left={<div className='prev-arrow' style={style}>{ left }</div>}
 				right={<div className='next-arrow' style={style}>{ right }</div>}
 			/>
