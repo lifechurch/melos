@@ -4,16 +4,12 @@ import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import TopicList from './TopicList'
 import EMOTIONS from '../assets/emotions'
-import happy from '../assets/happy.png'
-import sad from '../assets/sad.png'
-import angry from '../assets/angry.png'
-import afraid from '../assets/afraid.png'
 
 const emojis = {
-	happy,
-	sad,
-	angry,
-	afraid
+	happy: '/assets/happy.png',
+	sad: '/assets/sad.png',
+	angry: '/assets/angry.png',
+	afraid: '/assets/afraid.png'
 }
 
 class EmotionPicker extends Component {
@@ -32,7 +28,7 @@ class EmotionPicker extends Component {
 	}
 
 	render() {
-		const { nodeHost, version_id } = this.props
+		const { version_id } = this.props
 		const { category } = this.state
 
 		return (
@@ -62,7 +58,7 @@ class EmotionPicker extends Component {
 								>
 									<img
 										alt={cat}
-										src={`${nodeHost}${emojis[cat]}`}
+										src={emojis[cat]}
 										height='32px'
 										width='32px'
 									/>

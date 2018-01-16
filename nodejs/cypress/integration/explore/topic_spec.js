@@ -1,5 +1,5 @@
 
-describe('Explore Page', () => {
+describe('Topic Page', () => {
 	before(() => {
 		cy.visit('localhost:8001/explore')
 		cy.contains('Love')
