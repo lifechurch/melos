@@ -4,7 +4,7 @@ import friendshipsAction from '@youversion/api-redux/lib/endpoints/friendships/a
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
 import localizedLink from '@youversion/utils/lib/routes/localizedLink'
-import SectionedLayout from '../../../components/SectionedLayout'
+import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
 import IconButtonGroup from '../../../components/IconButtonGroup'
 import IconButton from '../../../components/IconButton'
 import Button from '../../../components/Button'
@@ -16,6 +16,7 @@ import Read from '../../../components/icons/Read'
 import Plans from '../../../components/icons/Plans'
 import Videos from '../../../components/icons/Videos'
 import Friends from '../../../components/icons/Friends'
+import SearchIcon from '../../../components/icons/SearchIcon'
 import More from '../../../components/icons/More'
 import Notifications from '../../../components/icons/Notifications'
 import Settings from '../../../components/icons/Settings'
@@ -132,14 +133,6 @@ class HeaderContent extends Component {
 			notificationsOpen
 		} = this.state
 
-		// const plansButton = (
-		//
-		// )
-
-		// const videosButton = (
-		//
-		// )
-
 		const search = (
 			<Search
 				placeholder="Search..."
@@ -151,24 +144,7 @@ class HeaderContent extends Component {
 		)
 
 		const homeLink = isLoggedIn ? '/moments' : '/'
-		const left = (
-			<div>
-				<IconButtonGroup iconHeight={24} iconSpacing={44} >
-					<IconButton label={<FormattedMessage id="header.home" />} useClientRouting={false} to={localizedLink(homeLink, serverLanguageTag)}>
-						<Home />
-					</IconButton>
-					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
-						<Read />
-					</IconButton>
-					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
-						<Plans />
-					</IconButton>
-					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
-						<Videos />
-					</IconButton>
-				</IconButtonGroup>
-			</div>
-		)
+		const showSmallHeader = screenWidth < 416
 
 		// const profileTopContent = (screenSize < ScreenSize.LARGE)
 		// 	? (<div>
@@ -242,16 +218,58 @@ class HeaderContent extends Component {
 			</div>
 		)
 
+		const left = (
+			<div>
+				<IconButtonGroup iconHeight={24} iconSpacing={44} >
+					<IconButton label={<FormattedMessage id="header.home" />} useClientRouting={false} to={localizedLink(homeLink, serverLanguageTag)}>
+						<Home />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
+						<Read />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
+						<Plans />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="explore" />} useClientRouting={false} to={localizedLink('/explore', serverLanguageTag)}>
+						<SearchIcon className='explore-icon' />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
+						<Videos />
+					</IconButton>
+				</IconButtonGroup>
+			</div>
+		)
+
 		return (
-			<StickyHeader className={`yv-header ${screenWidth < 416 && 'yv-header-scroll'} ${(profileMenuOpen || notificationsOpen) && 'yv-header-scroll-lock'}`}>
-				<SectionedHeading
-					left={left}
-					right={right}
-				>
-					<div>
-						{screenSize > ScreenSize.MEDIUM && search}
-					</div>
-				</SectionedHeading>
+			<StickyHeader className={`yv-header ${showSmallHeader && 'yv-header-scroll'} ${(profileMenuOpen || notificationsOpen) && 'yv-header-scroll-lock'}`}>
+				{
+					showSmallHeader
+						? (
+							<div className='vertical-center' style={{ padding: '5px 15px' }}>
+								<div>{ left }</div>
+								<div
+									style={{
+										width: '1px',
+										border: '1px solid gray',
+										height: '50px',
+										margin: '0 30px'
+									}}
+								/>
+								<div>{ right }</div>
+							</div>
+						)
+						: (
+							<SectionedLayout
+								left={left}
+								right={right}
+							>
+								<div className='centered'>
+									{screenSize > ScreenSize.MEDIUM && search}
+								</div>
+							</SectionedLayout>
+						)
+				}
+
 				{ isLoggedIn &&
 					<DropdownTransition
 						show={notificationsOpen}
