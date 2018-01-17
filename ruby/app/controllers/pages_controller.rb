@@ -147,7 +147,9 @@ class PagesController < ApplicationController
 				"languageTag" => I18n.locale.to_s,
 				"url" => url,
 				"day" => params[:day],
-				"cache_for" => YV::Caching::a_very_long_time
+				"cache_for" => YV::Caching::a_very_long_time,
+        "usfm" => params[:usfm],
+        "image_id" => params[:image_id]
 		}
 
 		day = params[:day] && params[:day].to_i
@@ -158,6 +160,9 @@ class PagesController < ApplicationController
 		fromNode = YV::Nodestack::Fetcher.get('VOTD', p, cookies, current_auth, current_user, request)
 
 		if (fromNode['error'].present?)
+      puts "****"*100
+      puts fromNode["stack"]
+      puts "****"*100
 			return render_404
 		end
 

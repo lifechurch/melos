@@ -248,6 +248,7 @@ class HeaderContent extends Component {
 							<div className='vertical-center' style={{ padding: '5px 15px' }}>
 								<div>{ left }</div>
 								<div
+									className={`yv-header-right ${ready && 'ready'}`}
 									style={{
 										width: '1px',
 										border: '1px solid gray',

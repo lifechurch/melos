@@ -32,11 +32,10 @@ class VOTDView extends Component {
 	}
 
 	render() {
-		const { location: { query }, moments, bible, intl, hosts, serverLanguageTag } = this.props
-		const day = (query && query.day) || moment().dayOfYear()
-		const votd = moments
-			&& moments.pullVotd(day)
-		const usfm = votd && votd.usfm
+		const { location: { query }, params: { image_id, usfm }, moments, bible, intl, hosts, serverLanguageTag } = this.props
+
+		const version_id = (query && query.version)
+			|| getBibleVersionFromStorage(serverLanguageTag)
 		const chapterUsfm = usfm && chapterifyUsfm(usfm)
 		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
 		let verse
@@ -46,7 +45,6 @@ class VOTDView extends Component {
 				fullContent: ref.content,
 			}).text
 		}
-		const version_id = getBibleVersionFromStorage(serverLanguageTag)
 		const versionData = bible
 			&& bible.versions
 			&& bible.versions.byId
@@ -62,77 +60,51 @@ class VOTDView extends Component {
 		const version_abbr = versionData
 			&& versionData.local_abbreviation.toUpperCase()
 		const title = `${intl.formatMessage({ id: 'votd' })} - ${titleString} (${version_abbr}) | The Bible App | Bible.com`
-		const url = `${hosts && hosts.railsHost}${Routes.votd({
+		const url = `${hosts && hosts.railsHost}${Routes.votdImage({
+			usfm,
+			image_id,
 			query: {
-				day
+				version: version_id
 			},
 			serverLanguageTag
 		})}`
 		let imgMeta = []
-		if (votd && votd.image_id) {
+		if (image_id) {
 			const src = moments
 				&& moments.configuration
 				&& moments.configuration.images.verse_images
 				&& moments.configuration.images.verse_images.url
-					.replace('{image_id}', votd.image_id)
-					.replace('{0}', 640)
-					.replace('{1}', 640)
+						.replace('{image_id}', image_id)
+						.replace('{0}', 1280)
+						.replace('{1}', 1280)
 			imgMeta = [
 				{ property: 'og:image', content: `https:${src}` },
-				{ property: 'og:image:width', content: 640 },
-				{ property: 'og:image:height', content: 640 },
+				{ property: 'og:image:width', content: 1280 },
+				{ property: 'og:image:height', content: 1280 },
 				{ name: 'twitter:image', content: `https:${src}` }
 			]
 		}
 
 		return (
-			<div>
-				<Header />
-				<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
-					<Helmet
-						title={title}
-						meta={[
-							{ name: 'description', content: verse },
-							{ property: 'og:title', content: title },
-							{ property: 'og:url', content: url },
-							{ property: 'og:description', content: verse },
-							{ name: 'twitter:card', content: 'summary' },
-							{ name: 'twitter:url', content: url },
-							{ name: 'twitter:title', content: title },
-							{ name: 'twitter:description', content: verse },
-							{ name: 'twitter:site', content: '@YouVersion' },
-						].concat(imgMeta)}
-					/>
-					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
-						<VotdText dayOfYear={day} version_id={version_id} />
-						<VotdImage dayOfYear={day} version_id={version_id} />
-						<PlansRelatedToReference usfm={usfm} version_id={version_id} />
-						<Card customClass='horizontal-center flex-wrap'>
-							<img
-								className="bible-icon"
-								alt="Bible App Icon"
-								src={`/assets/icons/bible/120/${serverLanguageTag}.png`}
-								style={{ width: '72px', height: '72px' }}
-							/>
-							<div
-								className='text-center'
-								style={{
-									fontSize: '26px',
-									fontWeight: 600,
-									width: '90%',
-									margin: '25px 0'
-								}}
-							>
-								<FormattedMessage id='get a free bible' />
-							</div>
-							<a href={localizedLink('/app', serverLanguageTag)} className='yv-green-link'>
-								<FormattedMessage id='download the bible' />
-							</a>
-						</Card>
-					</div>
-					<ShareSheet />
+			<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
+				<Helmet
+					title={title}
+					meta={[
+						{ name: 'description', content: verse },
+						{ property: 'og:title', content: title },
+						{ property: 'og:url', content: url },
+						{ property: 'og:description', content: verse },
+						{ name: 'twitter:card', content: 'summary' },
+						{ name: 'twitter:url', content: url },
+						{ name: 'twitter:title', content: title },
+						{ name: 'twitter:description', content: verse },
+						{ name: 'twitter:site', content: '@YouVersion' },
+					].concat(imgMeta)}
+				/>
+				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
+					<VotdImage usfm={usfm} image_id={image_id} />
 				</div>
-				<Footer />
+				<ShareSheet />
 			</div>
 		)
 	}

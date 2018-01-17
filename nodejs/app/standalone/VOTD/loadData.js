@@ -22,8 +22,13 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const { dispatch } = store
 			const serverLanguageTag = params.languageTag
 			const version_id = getBibleVersionFromStorage(serverLanguageTag)
+			const isVotdImage = new RegExp('^\/verse-of-the-day/[a-zA-Z0-9]+(/[0-9]+)')
 			const isVOTD = new RegExp('^\/verse-of-the-day')
-			if (isVOTD.test(params.url)) {
+			console.log('lasdjnfkawejnfkwjnlsjanskldjnwelfbakldsjflKSJNFWF')
+			if (isVotdImage.test(params.url)) {
+				console.log('image')
+				resolve()
+			} else if (isVOTD.test(params.url)) {
 				dispatch(momentsAction({
 					method: 'votd',
 					params: {

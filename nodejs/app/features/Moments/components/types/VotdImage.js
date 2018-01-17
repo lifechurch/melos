@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import { FormattedMessage } from 'react-intl'
-import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import withImages from '@youversion/api-redux/lib/endpoints/images/hocs/withImages'
+import withVotd from '@youversion/api-redux/lib/endpoints/moments/hocs/withVotd'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
@@ -18,81 +18,103 @@ import OverflowMenu from '../../../../widgets/OverflowMenu'
 import VerseImagesSlider from '../../../../widgets/VerseImagesSlider'
 
 
-class VotdImage extends Component {
-	constructor(props) {
-		super(props)
-		const { dayOfYear, serverLanguageTag, version_id } = this.props
-		this.dayOfYear = parseInt((dayOfYear || moment().dayOfYear()), 10)
-		this.version_id = version_id || getBibleVersionFromStorage(serverLanguageTag)
-	}
+function VotdImage(props) {
+	const {
+		dayOfYear,
+		moments,
+		className,
+		serverLanguageTag,
+		bible,
+		usfm,
+		hasNoImages,
+		version_id,
+		image_id,
+		images,
+	} = props
 
-	componentDidMount() {
-		const { moments, dispatch, serverLanguageTag, usfm } = this.props
-		if (!usfm && !(moments && moments.pullVotd(this.dayOfYear) && moments.pullVotd(this.dayOfYear).image_id)) {
-			dispatch(momentsAction({
-				method: 'votd',
-				params: {
-					language_tag: serverLanguageTag,
-				}
-			}))
-		}
-	}
+	const day = parseInt((dayOfYear || moment().dayOfYear()), 10)
+	const usfmForImgs = usfm
+		|| (
+			moments.pullVotd(day)
+			&& moments.pullVotd(day).usfm
+		)
+	const version = bible
+		.pullVersion(version_id || getBibleVersionFromStorage(serverLanguageTag))
+	const title = version
+		&& version.books
+		&& getReferencesTitle({
+			bookList: version.books,
+			usfmList: usfmForImgs,
+		}).title
 
-	render() {
-		const { moments, className, serverLanguageTag, bible, usfm, hasNoImages } = this.props
+	let content = null
+	if (image_id) {
+		const img = images.filter((im) => {
+			return parseInt(im.id, 10) === parseInt(image_id, 10)
+		})[0]
+		const src = img
+			&& img.renditions
+			&& img.renditions[img.renditions.length - 1].url
 
-		const usfmForImgs = usfm
-			|| (
-				moments.pullVotd(this.dayOfYear)
-				&& moments.pullVotd(this.dayOfYear).usfm
-			)
-		const version = bible.pullVersion(this.version_id)
-		const title = version
-			&& version.books
-			&& getReferencesTitle({
-				bookList: version.books,
-				usfmList: usfmForImgs,
-			}).title
-
-		return (
-			!hasNoImages
-				&& (
-					<div className={`yv-votd-image ${className}`}>
-						<Moment
-							header={
-								<MomentHeader
-									title={(
-										<Heading3>
-											{ title }
-										</Heading3>
-									)}
-								/>
-							}
-							footer={
-								<MomentFooter
-									right={[
-										<OverflowMenu
-											key='overflow'
-											usfm={usfmForImgs}
-											version_id={this.version_id}
-										>
-											<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
-												<FormattedMessage id='notification settings' />
-											</Item>
-										</OverflowMenu>
-									]}
-								/>
-							}
-						>
-							<VerseImagesSlider
-								usfm={usfm}
-								category='prerendered'
-							/>
-						</Moment>
-					</div>
-				)
+		content = (
+			<div style={{ marginBottom: '10px', paddingRight: '20px' }}>
+				<img alt='verse' src={src} />
+			</div>
+		)
+	} else {
+		content = (
+			<VerseImagesSlider
+				usfm={usfm}
+				category='prerendered'
+				linkBuilder={({ usfm: imgUsfm, id }) => {
+					return Routes.votdImage({
+						usfm: imgUsfm,
+						id,
+						serverLanguageTag,
+						query: {
+							version: version_id
+						}
+					})
+				}}
+			/>
 		)
 	}
+
+	return (
+		!hasNoImages
+			&& (
+				<div className={`yv-votd-image ${className}`}>
+					<Moment
+						header={
+							<MomentHeader
+								title={(
+									<Heading3>
+										{ title }
+									</Heading3>
+								)}
+							/>
+						}
+						footer={
+							<MomentFooter
+								right={[
+									<OverflowMenu
+										key='overflow'
+										usfm={usfmForImgs}
+										version_id={version_id}
+									>
+										<Item link={Routes.notificationsEdit({ serverLanguageTag })}>
+											<FormattedMessage id='notification settings' />
+										</Item>
+									</OverflowMenu>
+								]}
+							/>
+						}
+					>
+						{ content }
+					</Moment>
+				</div>
+			)
+	)
 }
 
 VotdImage.propTypes = {
@@ -102,9 +124,9 @@ VotdImage.propTypes = {
 	className: PropTypes.string,
 	moments: PropTypes.object.isRequired,
 	bible: PropTypes.object.isRequired,
-	dispatch: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	hasNoImages: PropTypes.bool,
+	image_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 VotdImage.defaultProps = {
@@ -113,6 +135,7 @@ VotdImage.defaultProps = {
 	usfm: null,
 	hasNoImages: false,
 	className: '',
+	image_id: null,
 }
 
 function mapStateToProps(state) {
@@ -123,4 +146,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(withImages(VotdImage))
+export default connect(mapStateToProps, null)(withVotd(withImages(VotdImage)))
