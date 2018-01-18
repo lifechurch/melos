@@ -10,7 +10,7 @@ import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
-import localizedLink from '@youversion/utils/lib/routes/localizedLink'
+import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
 import Routes from '@youversion/utils/lib/routes/routes'
 import Header from '../features/Header/components/Header'
 import Footer from '../features/Footer/components/Footer'
@@ -54,12 +54,10 @@ class VOTDView extends Component {
 			&& versionData.books
 			&& getReferencesTitle({
 				bookList: versionData.books,
-				usfmList: usfm,
+				usfmList: expandUsfm(usfm, false),
 			})
 		const titleString = refStrings && refStrings.title
-		const version_abbr = versionData
-			&& versionData.local_abbreviation.toUpperCase()
-		const title = `${intl.formatMessage({ id: 'votd' })} - ${titleString} (${version_abbr}) | The Bible App | Bible.com`
+		const title = `${intl.formatMessage({ id: 'votd' })} - ${titleString} | The Bible App | Bible.com`
 		const url = `${hosts && hosts.railsHost}${Routes.votdImage({
 			usfm,
 			image_id,
@@ -86,25 +84,33 @@ class VOTDView extends Component {
 		}
 
 		return (
-			<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
-				<Helmet
-					title={title}
-					meta={[
-						{ name: 'description', content: verse },
-						{ property: 'og:title', content: title },
-						{ property: 'og:url', content: url },
-						{ property: 'og:description', content: verse },
-						{ name: 'twitter:card', content: 'summary' },
-						{ name: 'twitter:url', content: url },
-						{ name: 'twitter:title', content: title },
-						{ name: 'twitter:description', content: verse },
-						{ name: 'twitter:site', content: '@YouVersion' },
-					].concat(imgMeta)}
-				/>
-				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
-					<VotdImage usfm={usfm} image_id={image_id} />
+			<div>
+				<Header />
+				<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
+					<Helmet
+						title={title}
+						meta={[
+							{ name: 'description', content: verse },
+							{ property: 'og:title', content: title },
+							{ property: 'og:url', content: url },
+							{ property: 'og:description', content: verse },
+							{ name: 'twitter:card', content: 'summary_large_image' },
+							{ name: 'twitter:url', content: url },
+							{ name: 'twitter:title', content: title },
+							{ name: 'twitter:description', content: verse },
+							{ name: 'twitter:site', content: '@YouVersion' },
+						].concat(imgMeta)}
+					/>
+					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
+						<VotdImage
+							usfm={expandUsfm(usfm, false)}
+							image_id={image_id}
+							version_id={version_id}
+						/>
+					</div>
+					<ShareSheet />
 				</div>
-				<ShareSheet />
+				<Footer />
 			</div>
 		)
 	}

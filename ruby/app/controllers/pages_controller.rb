@@ -149,7 +149,8 @@ class PagesController < ApplicationController
 				"day" => params[:day],
 				"cache_for" => YV::Caching::a_very_long_time,
         "usfm" => params[:usfm],
-        "image_id" => params[:image_id]
+        "image_id" => params[:image_id],
+        "version_id" => params[:version]
 		}
 
 		day = params[:day] && params[:day].to_i

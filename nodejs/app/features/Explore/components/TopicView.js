@@ -165,6 +165,16 @@ class TopicView extends Component {
 																		imgWidth={160}
 																		imgHeight={160}
 																		version_id={version_id}
+																		linkBuilder={({ id }) => {
+																			return Routes.votdImage({
+																				usfm,
+																				id,
+																				serverLanguageTag,
+																				query: {
+																					version: version_id
+																				}
+																			})
+																		}}
 																	/>
 																</VerticalSpace>
 															</div>

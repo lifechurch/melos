@@ -5,6 +5,8 @@ import notificationsAction from '@youversion/api-redux/lib/endpoints/notificatio
 import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
 import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
+import Routes from '@youversion/utils/lib/routes/routes'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import IconButtonGroup from '../../../components/IconButtonGroup'
 import IconButton from '../../../components/IconButton'
 import Button from '../../../components/Button'
@@ -230,7 +232,14 @@ class HeaderContent extends Component {
 					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
 						<Plans />
 					</IconButton>
-					<IconButton label={<FormattedMessage id="explore" />} useClientRouting={false} to={localizedLink('/explore', serverLanguageTag)}>
+					<IconButton
+						label={<FormattedMessage id="explore" />}
+						useClientRouting={false}
+						to={Routes.explore({
+							serverLanguageTag,
+							query: { version: getBibleVersionFromStorage(serverLanguageTag) }
+						})}
+					>
 						<SearchIcon className='explore-icon' />
 					</IconButton>
 					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
