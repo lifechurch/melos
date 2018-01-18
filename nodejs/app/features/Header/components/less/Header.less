@@ -35,6 +35,11 @@
 				    left: 0;
 				    top: 0;
 				    height: 100%;
+						padding: 5px;
+						background: white;
+						* {
+							background: white;
+						}
 					}
 				}
 			}
@@ -56,6 +61,21 @@
 		  border-radius: 5px;
 		  padding: 8px 15px;
 		}
+
+		.small-header {
+			background: @light-grey;
+			border-radius: 10px;
+
+			.search {
+				padding: 10px 2px;
+				margin-right: 33px;
+				background: @light-grey;
+				* {
+					background: @light-grey;
+				}
+			}
+
+		}
 	}
 
 	&.yv-header-scroll-lock {
@@ -64,15 +84,15 @@
 		}
 	}
 	.explore-icon {
-		width: 16px;
-		height: 16px;
-		margin-top: -19px !important;
+		width: 17px;
+		height: 17px;
+		margin-top: -20px !important;
 	}
 }
 
 .yv-profile-menu-container {
 	top: 70px;
-	// right: -32px;
+	right: 0;
 }
 
 @import './ProfileMenu.less';

@@ -18,7 +18,7 @@ import Read from '../../../components/icons/Read'
 import Plans from '../../../components/icons/Plans'
 import Videos from '../../../components/icons/Videos'
 import Friends from '../../../components/icons/Friends'
-import SearchIcon from '../../../components/icons/SearchIcon'
+import Explore from '../../../components/icons/Explore'
 import More from '../../../components/icons/More'
 import Notifications from '../../../components/icons/Notifications'
 import Settings from '../../../components/icons/Settings'
@@ -148,14 +148,23 @@ class HeaderContent extends Component {
 		const homeLink = isLoggedIn ? '/moments' : '/'
 		const showSmallHeader = screenWidth < 416
 
-		// const profileTopContent = (screenSize < ScreenSize.LARGE)
-		// 	? (<div>
-		// 		<IconButtonGroup iconHeight={24} iconSpacing={44}>
-		// 			{plansButton}
-		// 			{videosButton}
-		// 		</IconButtonGroup>
-		// 	</div>)
-		// 	: null
+		const avatarButton = (
+			(user && ('response' in user)) &&
+				<IconButton lockHeight={true} onClick={this.handleProfileMenuClick} useClientRouting={false}>
+					<Avatar
+						customClass="yv-profile-menu-trigger"
+						placeholderText={
+							loggedInUser
+								&& loggedInUser.first_name
+								&& loggedInUser.first_name[0]
+								&& loggedInUser.first_name[0].toUpperCase()
+						}
+						width={36}
+						height={36}
+						src={user.response.has_avatar && user.response.user_avatar_url.px_48x48}
+					/>
+				</IconButton>
+		)
 
 		const userNotificationGroup = isLoggedIn ? (
 			<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
@@ -172,22 +181,7 @@ class HeaderContent extends Component {
 				<IconButton to={localizedLink('/settings', serverLanguageTag)} useClientRouting={false}>
 					<Settings />
 				</IconButton>
-				{(screenSize > ScreenSize.MEDIUM) && ('response' in user) &&
-					<IconButton lockHeight={true} onClick={this.handleProfileMenuClick} useClientRouting={false}>
-						<Avatar
-							customClass="yv-profile-menu-trigger"
-							placeholderText={
-								loggedInUser
-									&& loggedInUser.first_name
-									&& loggedInUser.first_name[0]
-									&& loggedInUser.first_name[0].toUpperCase()
-							}
-							width={36}
-							height={36}
-							src={user.response.has_avatar && user.response.user_avatar_url.px_48x48}
-						/>
-					</IconButton>
-				}
+				{ avatarButton }
 			</IconButtonGroup>
 		) : null
 
@@ -207,18 +201,25 @@ class HeaderContent extends Component {
 		)
 
 		const right = isLoggedIn
-		? (
-			<div className={`yv-header-right ${ready && 'ready'}`}>
-				{screenSize < ScreenSize.LARGE && search}
-				{(screenSize > ScreenSize.MEDIUM) ? userNotificationGroup : moreMenu}
-			</div>
-		)
-		: (
-			<div className={`yv-header-right ${ready && 'ready'}`}>
-				{screenSize < ScreenSize.LARGE && search}
-				{(screenSize > ScreenSize.MEDIUM) ? signUpButtons : moreMenu}
-			</div>
-		)
+			? (
+				<div className={`yv-header-right ${ready && 'ready'}`}>
+					{screenSize < ScreenSize.LARGE && search}
+					{(screenSize > ScreenSize.MEDIUM)
+						? userNotificationGroup
+						: (
+							<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
+								{ avatarButton }
+							</IconButtonGroup>
+						)
+					}
+				</div>
+			)
+			: (
+				<div className={`yv-header-right ${ready && 'ready'}`}>
+					{screenSize < ScreenSize.LARGE && search}
+					{(screenSize > ScreenSize.MEDIUM) ? signUpButtons : moreMenu}
+				</div>
+			)
 
 		const left = (
 			<div>
@@ -240,7 +241,7 @@ class HeaderContent extends Component {
 							query: { version: getBibleVersionFromStorage(serverLanguageTag) }
 						})}
 					>
-						<SearchIcon className='explore-icon' />
+						<Explore className='explore-icon' />
 					</IconButton>
 					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
 						<Videos />
@@ -252,20 +253,11 @@ class HeaderContent extends Component {
 		return (
 			<StickyHeader className={`yv-header ${showSmallHeader && 'yv-header-scroll'} ${(profileMenuOpen || notificationsOpen) && 'yv-header-scroll-lock'}`}>
 				{
-					showSmallHeader
+					(showSmallHeader && ready)
 						? (
-							<div className='vertical-center' style={{ padding: '5px 15px' }}>
+							<div className='vertical-center small-header' style={{ padding: '5px 15px' }}>
 								<div>{ left }</div>
-								<div
-									className={`yv-header-right ${ready && 'ready'}`}
-									style={{
-										width: '1px',
-										border: '1px solid gray',
-										height: '50px',
-										margin: '0 30px'
-									}}
-								/>
-								<div>{ right }</div>
+								<div style={{ marginLeft: '44px' }}>{ right }</div>
 							</div>
 						)
 						: (

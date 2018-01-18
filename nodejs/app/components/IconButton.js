@@ -19,8 +19,8 @@ class IconButton extends Component {
 		const { to } = this.props
 		this._isMounted = true
 		setTimeout(() => {
-			if (this._isMounted) {
-				this.setState({ isActive: window.location.pathname.indexOf(to) > -1
+			if (this._isMounted && to) {
+				this.setState({ isActive: to.startsWith(window.location.pathname)
 					&& (to.length > 1 || window.location.pathname === to)
 					&& to.length <= window.location.pathname.length
 				})
