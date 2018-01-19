@@ -7,6 +7,7 @@ import getImagesModel from '@youversion/api-redux/lib/models/images'
 import withImagesData from '@youversion/api-redux/lib/endpoints/images/hocs/withImages'
 import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/withReference'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
+import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import Routes from '@youversion/utils/lib/routes/routes'
 import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
@@ -74,7 +75,7 @@ function Passage(props) {
 
 	const usfms = expandUsfm(usfm, false)
 	return (
-		<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
+		<div>
 			<Helmet
 				title={title}
 				meta={[
@@ -90,12 +91,17 @@ function Passage(props) {
 				].concat(imgMeta)}
 				link={metaLink}
 			/>
-			<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
-				<ReferenceMoment usfm={usfm} version_id={version_id} leftFooter={[versionDropdown]} />
-				<ImagesMoment usfm={usfms} version_id={version_id} />
-				<PlansRelatedToReference usfm={usfms.slice(0, 4).join('+')} version_id={version_id} />
+			<div style={{ width: '100%', marginBottom: '25px' }}>
+				<Heading1>{ titleWithAbbr }</Heading1>
 			</div>
-			<ShareSheet />
+			<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
+				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
+					<ReferenceMoment usfm={usfm} version_id={version_id} leftFooter={[versionDropdown]} />
+					<ImagesMoment usfm={usfms} version_id={version_id} />
+					<PlansRelatedToReference usfm={usfms.slice(0, 4).join('+')} version_id={version_id} />
+				</div>
+				<ShareSheet />
+			</div>
 		</div>
 	)
 }

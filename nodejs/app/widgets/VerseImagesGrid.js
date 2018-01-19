@@ -7,13 +7,14 @@ import Grid from '../components/Grid'
 
 
 function VerseImagesGrid(props) {
-	const { votd, imgSrcTemplate, imgHeight, imgWidth, linkBuilder } = props
+	const { votd, imgSrcTemplate, imgHeight, imgWidth, linkBuilder, hasVotdImages } = props
 
-	if (!votd || (votd.length === 0)) return null
+	if (!votd || (votd.length === 0) || !hasVotdImages) return null
 	return (
 		<Grid className='verse-images-grid' lgCols={3} medCols={3} smCols={2}>
 			{
 				votd && votd.map((day) => {
+					if (!day.image_id) return null
 					const src = imgSrcTemplate
 						.replace('{0}', '320')
 						.replace('{1}', '320')
@@ -49,6 +50,7 @@ function VerseImagesGrid(props) {
 
 /* eslint-disable react/no-unused-prop-types */
 VerseImagesGrid.propTypes = {
+	hasVotdImages: PropTypes.bool.isRequired,
 	votd: PropTypes.array,
 	imgSrcTemplate: PropTypes.string,
 	imgHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

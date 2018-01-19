@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import Helmet from 'react-helmet'
+import withVotd from '@youversion/api-redux/lib/endpoints/moments/hocs/withVotd'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
@@ -17,7 +18,7 @@ import VerseImagesGrid from '../widgets/VerseImagesGrid'
 
 
 function ExploreView(props) {
-	const { location: { query }, intl, hosts, serverLanguageTag } = props
+	const { location: { query }, intl, hosts, serverLanguageTag, hasVotdImages } = props
 
 	const version_id = (query && query.version)
 			|| getBibleVersionFromStorage(serverLanguageTag)
@@ -28,6 +29,7 @@ function ExploreView(props) {
 			version: version_id
 		}
 	})}`
+
 	return (
 		<div>
 			<div style={{ width: '100%', marginBottom: '25px' }}>
@@ -70,17 +72,22 @@ function ExploreView(props) {
 								</div>
 							</Card>
 						</Link>
-						<Card>
-							<VerseImagesGrid
-								linkBuilder={({ usfm }) => {
-									return Routes.reference({
-										usfm: usfm.join('+'),
-										version_id
-									})
-								}}
-								version_id={version_id}
-							/>
-						</Card>
+						{
+							hasVotdImages
+								&& (
+									<Card>
+										<VerseImagesGrid
+											linkBuilder={({ usfm }) => {
+												return Routes.reference({
+													usfm: usfm.join('+'),
+													version_id
+												})
+											}}
+											version_id={version_id}
+										/>
+									</Card>
+								)
+						}
 					</VerticalSpace>
 				</div>
 				<ShareSheet />
@@ -90,6 +97,7 @@ function ExploreView(props) {
 }
 
 ExploreView.propTypes = {
+	hasVotdImages: PropTypes.bool,
 	location: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string,
 	intl: PropTypes.object.isRequired,
@@ -97,6 +105,7 @@ ExploreView.propTypes = {
 }
 
 ExploreView.defaultProps = {
+	hasVotdImages: false,
 	serverLanguageTag: 'en',
 }
 
@@ -107,4 +116,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(injectIntl(ExploreView))
+export default connect(mapStateToProps, null)(injectIntl(withVotd(ExploreView)))

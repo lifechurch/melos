@@ -48,7 +48,7 @@ class VersionPicker extends Component {
 	}
 
 	componentDidMount() {
-		const { languages, allVersions, versionsById, selectedLanguage } = this.props
+		const { languages, allVersions, versionsById } = this.props
 		// build languages and versions index client side when the component renders
 		Filter.build('LanguageStore', [ 'name', 'local_name' ])
 		Filter.build('VersionStore', [ 'title', 'local_title', 'local_abbreviation' ])
@@ -104,7 +104,7 @@ class VersionPicker extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		const { alert, versionsById, version, selectedLanguage } = this.props
+		const { alert, version } = this.props
 		const {
 			dropdown,
 			listErrorAlert,
@@ -482,7 +482,10 @@ VersionPicker.propTypes = {
 	intl: PropTypes.object,
 	onClick: PropTypes.func,
 	extraClassNames: PropTypes.string,
-	linkBuilder: PropTypes.func
+	linkBuilder: PropTypes.func,
+	allVersions: PropTypes.array,
+	versionsById: PropTypes.object,
+	selectedLanguage: PropTypes.string,
 }
 
 VersionPicker.defaultProps = {
@@ -490,6 +493,9 @@ VersionPicker.defaultProps = {
 	languages: [],
 	languageMap: {},
 	version: null,
+	allVersions: null,
+	versionsById: null,
+	selectedLanguage: null,
 	recentVersions: {},
 	selectedChapter: null,
 	getVersions: null,
