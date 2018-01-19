@@ -29,6 +29,7 @@
 
 			.search {
 				margin-right: 15px;
+				border: none;
 				&.open {
 					@media @small-only {
 						position: absolute;
@@ -40,6 +41,7 @@
 						* {
 							background: white;
 						}
+						border: @thin-grey-border;
 					}
 				}
 			}
@@ -48,10 +50,9 @@
 
 	&.yv-header-scroll {
 		.yv-sticky-header-content {
-		  margin-top: 0;
 		  overflow-x: scroll;
 			overflow-y: hidden;
-		  padding: 5px;
+		  padding: 10px 15px 5px 15px;
 		  border-bottom: none;
 		}
 
@@ -65,7 +66,7 @@
 		.small-header {
 			background: @light-grey;
 			border-radius: 10px;
-
+			border: @thin-grey-border;
 			.search {
 				padding: 10px 2px;
 				margin-right: 33px;
