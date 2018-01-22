@@ -325,7 +325,7 @@ class VersionPicker extends Component {
 			versions,
 		} = this.state
 
-		const versionKeys = typeof versions === 'object' ? Object.keys(versions) : []
+		const versionKeys = (versions && typeof versions === 'object') ? Object.keys(versions) : []
 		// filtering
 		if (versionFiltering && versionKeys.length > 0) {
 
