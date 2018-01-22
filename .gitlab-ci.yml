@@ -1,7 +1,7 @@
 # This file is a template, and might need editing before it works on your project.
 # Explaination on the scripts:
 # https://gitlab.com/gitlab-examples/kubernetes-deploy/blob/master/README.md
-image: in.thewardro.be:4567/docker/kubernetes-deploy:latest
+image: quay.io/lifechurch/k8s-deployer-helper:1.0.0
 
 variables:
   # Application deployment domain
