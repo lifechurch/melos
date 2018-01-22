@@ -70,7 +70,7 @@ class VersionPicker extends Component {
 		if (languages !== nextProps.languages) {
 			Filter.add('LanguageStore', nextProps.languages)
 		}
-		if ((allVersions !== nextProps.allVersions) && nextProps.selectedLanguage) {
+		if ((allVersions !== nextProps.allVersions) && nextProps.selectedLanguage && nextProps.allVersions) {
 			Filter.add(
 				'VersionStore',
 				nextProps.allVersions.map(key => { return nextProps.versionsById[key] })
