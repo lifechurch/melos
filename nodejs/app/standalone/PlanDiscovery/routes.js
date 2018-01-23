@@ -88,11 +88,13 @@ export default function (
 				<IndexRoute component={PlanDay} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />
-				<Route path="day/:day">
-					<IndexRoute component={PlanDay} />
-					<Route path="mark-complete" component={MarkCompleteRedirect} />
-					<Route path="segment/:content" component={PlanReader} />
-				</Route>
+				<Route path="day/:day" component={PlanDay} />
+			</Route>
+			<Route
+				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day"
+			>
+				<Route path="mark-complete" component={MarkCompleteRedirect} />
+				<Route path="segment/:content" component={PlanReader} />
 			</Route>
 			<Route path="(:lang/)reading-plans/:id(-:slug)/together">
 				<Route path="create" component={CreatePWFView} />

@@ -13,11 +13,14 @@ function PlanListItem(props) {
 					<Link to={link} className='subscription-title'>
 						<div style={{ height: '80px' }}>
 							<LazyImage
-								alt='plan-image'
 								src={src}
 								width={80}
 								height={80}
-								placeholder={<img alt='plan' className='subscription_thumbnail radius' src={SQUARE} />}
+								placeholder={<img
+									alt='plan'
+									className='subscription_thumbnail radius'
+									src={SQUARE}
+								/>}
 								imgClass='subscription_thumbnail radius'
 							/>
 						</div>
