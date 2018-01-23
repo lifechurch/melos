@@ -54,12 +54,8 @@ class VotdImage extends Component {
 		const day = parseInt((dayOfYear || moment().dayOfYear()), 10)
 		const versionId = version_id || getBibleVersionFromStorage(serverLanguageTag)
 		const usfmForImgs = usfm
-			|| (
-				momentsModel.pullVotd(day)
-				&& momentsModel.pullVotd(day).usfm
-			)
-		const version = bibleModel
-			.pullVersion(versionId)
+			|| (momentsModel.pullVotd(day) && momentsModel.pullVotd(day).usfm)
+		const version = bibleModel.pullVersion(versionId)
 		const referenceStrings = version
 			&& version.books
 			&& getReferencesTitle({
@@ -89,7 +85,7 @@ class VotdImage extends Component {
 		} else {
 			content = (
 				<VerseImagesSlider
-					usfm={expandUsfm(usfm, false)}
+					usfm={expandUsfm(usfmForImgs, false)}
 					category='prerendered'
 					linkBuilder={({ id }) => {
 						return Routes.votdImage({

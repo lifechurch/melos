@@ -23,8 +23,8 @@ import Card from '../components/Card'
 
 class VOTDView extends Component {
 	componentDidMount() {
-		const { moments, dispatch } = this.props
-		if (!(moments && moments.configuration)) {
+		const { momentsModel, dispatch } = this.props
+		if (!(momentsModel && momentsModel.configuration)) {
 			dispatch(momentsAction({
 				method: 'configuration',
 			}))
@@ -32,13 +32,13 @@ class VOTDView extends Component {
 	}
 
 	render() {
-		const { location: { query }, moments, bible, intl, hosts, serverLanguageTag } = this.props
+		const { location: { query }, momentsModel, bibleModel, intl, hosts, serverLanguageTag } = this.props
 		const day = (query && query.day) || moment().dayOfYear()
-		const votd = moments
-			&& moments.pullVotd(day)
+		const votd = momentsModel
+			&& momentsModel.pullVotd(day)
 		const usfm = votd && votd.usfm
 		const chapterUsfm = usfm && chapterifyUsfm(usfm)
-		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
+		const ref = chapterUsfm && bibleModel && bibleModel.pullRef(chapterUsfm)
 		let verse
 		if (ref) {
 			verse = parseVerseFromContent({
@@ -47,11 +47,7 @@ class VOTDView extends Component {
 			}).text
 		}
 		const version_id = getBibleVersionFromStorage(serverLanguageTag)
-		const versionData = bible
-			&& bible.versions
-			&& bible.versions.byId
-			&& bible.versions.byId[version_id]
-			&& bible.versions.byId[version_id].response
+		const versionData = bibleModel.pullVersion(version_id)
 		const refStrings = versionData
 			&& versionData.books
 			&& getReferencesTitle({
@@ -70,10 +66,10 @@ class VOTDView extends Component {
 		})}`
 		let imgMeta = []
 		if (votd && votd.image_id) {
-			const src = moments
-				&& moments.configuration
-				&& moments.configuration.images.verse_images
-				&& moments.configuration.images.verse_images.url
+			const src = momentsModel
+				&& momentsModel.configuration
+				&& momentsModel.configuration.images.verse_images
+				&& momentsModel.configuration.images.verse_images.url
 					.replace('{image_id}', votd.image_id)
 					.replace('{0}', 640)
 					.replace('{1}', 640)
@@ -139,25 +135,25 @@ class VOTDView extends Component {
 }
 
 VOTDView.propTypes = {
-	moments: PropTypes.object,
+	momentsModel: PropTypes.object,
 	location: PropTypes.object.isRequired,
 	serverLanguageTag: PropTypes.string,
-	bible: PropTypes.object,
+	bibleModel: PropTypes.object,
 	intl: PropTypes.object.isRequired,
 	hosts: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 }
 
 VOTDView.defaultProps = {
-	moments: null,
-	bible: null,
+	momentsModel: null,
+	bibleModel: null,
 	serverLanguageTag: 'en',
 }
 
 function mapStateToProps(state) {
 	return {
-		moments: getMomentsModel(state),
-		bible: getBibleModel(state),
+		momentsModel: getMomentsModel(state),
+		bibleModel: getBibleModel(state),
 		serverLanguageTag: state.serverLanguageTag,
 		hosts: state.hosts,
 	}

@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
-import { FormattedMessage, injectIntl } from 'react-intl'
-import moment from 'moment'
+import { injectIntl } from 'react-intl'
 import Helmet from 'react-helmet'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
@@ -14,11 +13,8 @@ import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
 import Routes from '@youversion/utils/lib/routes/routes'
 import Header from '../features/Header/components/Header'
 import Footer from '../features/Footer/components/Footer'
-import VotdText from '../features/Moments/components/types/VotdText'
 import VotdImage from '../features/Moments/components/types/VotdImage'
 import ShareSheet from '../widgets/ShareSheet/ShareSheet'
-import PlansRelatedToReference from '../widgets/PlansRelatedToReference'
-import Card from '../components/Card'
 
 
 class VOTDView extends Component {
@@ -52,6 +48,7 @@ class VOTDView extends Component {
 			&& bible.versions.byId[version_id].response
 		const refStrings = versionData
 			&& versionData.books
+			&& usfm
 			&& getReferencesTitle({
 				bookList: versionData.books,
 				usfmList: expandUsfm(usfm, false),
@@ -103,7 +100,7 @@ class VOTDView extends Component {
 					/>
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
 						<VotdImage
-							usfm={expandUsfm(usfm, false)}
+							usfm={usfm && expandUsfm(usfm, false)}
 							image_id={image_id}
 							version_id={version_id}
 						/>
@@ -124,6 +121,7 @@ VOTDView.propTypes = {
 	intl: PropTypes.object.isRequired,
 	hosts: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
+	params: PropTypes.object.isRequired,
 }
 
 VOTDView.defaultProps = {

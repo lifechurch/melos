@@ -170,11 +170,7 @@ class PagesController < ApplicationController
 		@title_tag = fromNode['head']['title']
 		@node_meta_tags = fromNode['head']['meta']
 
-		render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }, layout: 'node_only'
-
-    # @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
-		#
-    # get_votd()
+		render 'votd', layout: "node_app", locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # /app url - redirects to an store for mobile device if found
