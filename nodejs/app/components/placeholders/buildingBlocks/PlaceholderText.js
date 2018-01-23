@@ -78,13 +78,12 @@ PlaceholderText.propTypes = {
 	fill: PropTypes.string,
 	background: PropTypes.string,
 	widthRange: PropTypes.array,
-	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 	lineSpacing: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	textHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 PlaceholderText.defaultProps = {
-	height: '200px',
 	fill: 'white',
 	background: null,
 	widthRange: [80, 100],

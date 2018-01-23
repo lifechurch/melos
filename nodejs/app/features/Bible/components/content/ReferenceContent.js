@@ -4,6 +4,8 @@ import { injectIntl } from 'react-intl'
 import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/withReference'
 import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
 import Link from '@youversion/melos/dist/components/links/Link'
+import Placeholder from '../../../../components/placeholders/buildingBlocks/Placeholder'
+import PlaceholderText from '../../../../components/placeholders/buildingBlocks/PlaceholderText'
 
 
 function ReferenceContent(props) {
@@ -54,7 +56,18 @@ function ReferenceContent(props) {
 					&& heading
 			}
 			{
-				content
+				html
+					? content
+					: (
+						<Placeholder height='110px'>
+							<PlaceholderText
+								className='flex'
+								lineSpacing='15px'
+								textHeight='16px'
+								widthRange={[20, 100]}
+							/>
+						</Placeholder>
+					)
 			}
 		</div>
 	)
