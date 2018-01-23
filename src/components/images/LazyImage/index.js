@@ -58,11 +58,10 @@ class LazyImage extends Component {
       <Img
         ref={(img) => {
           if (img) {
-            const domId = img._reactInternalInstance
-              && img._reactInternalInstance._renderedComponent
-              && img._reactInternalInstance._renderedComponent._domID
-            this._img = domId
-              && document.querySelector(`img[data-reactid="${domId}"]`)
+            // hopefully the src prop is unique...
+            const imgSrc = img.props && img.props.src
+            this._img = imgSrc
+              && document.querySelector(`img[src="${imgSrc}"]`)
           }
         }}
         onLoad={() => { this.showImgIfNeeded() }}
