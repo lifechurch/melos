@@ -85,6 +85,7 @@ ReferenceContent.propTypes = {
 	className: PropTypes.string,
 	renderLink: PropTypes.bool,
 	referenceLink: PropTypes.string.isRequired,
+	noContentAvailable: PropTypes.bool,
 }
 
 ReferenceContent.defaultProps = {
@@ -97,6 +98,7 @@ ReferenceContent.defaultProps = {
 	titleWithAbbr: null,
 	className: '',
 	renderLink: true,
+	noContentAvailable: false,
 }
 
 function mapStateToProps(state) {
