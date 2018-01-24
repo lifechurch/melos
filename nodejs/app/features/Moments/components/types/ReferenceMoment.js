@@ -12,6 +12,9 @@ import OverflowMenu from '../../../../widgets/OverflowMenu'
 import Moment from '../Moment'
 import MomentHeader from '../MomentHeader'
 import MomentFooter from '../MomentFooter'
+import Placeholder from '../../../../components/placeholders/buildingBlocks/Placeholder'
+import PlaceholderText from '../../../../components/placeholders/buildingBlocks/PlaceholderText'
+
 
 
 class ReferenceMoment extends Component {
@@ -74,9 +77,8 @@ class ReferenceMoment extends Component {
 			footerLeft.push([ ...leftFooter ])
 		}
 
-		const content = noContentAvailable
-			? <FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
-			: (
+		const htmlOrLoader = html
+			? (
 				<a
 					target='_self'
 					href={referenceLink}
@@ -89,6 +91,19 @@ class ReferenceMoment extends Component {
 					/>
 				</a>
 			)
+			: (
+				<Placeholder height='110px'>
+					<PlaceholderText
+						className='flex'
+						lineSpacing='15px'
+						textHeight='16px'
+						widthRange={[20, 100]}
+					/>
+				</Placeholder>
+			)
+		const content = noContentAvailable
+			? <FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
+			: htmlOrLoader
 
 		return (
 			<div className={`yv-votd-text ${className}`}>

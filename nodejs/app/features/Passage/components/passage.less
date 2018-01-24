@@ -1,3 +1,18 @@
+// NOTE: this is just a hack until we can figure out mobile options for melos
+// components
+//
+// font size should be adjusted in the melos Heading1 for small screens
+// SectionedLayout should also adjust the width on the text to 70% on mobile
+#react-app-Bible, #react-app-Explore {	
+	@media @small-only {
+		h1 {
+			font-size: 24px !important;
+			width: 70% !important;
+			margin: auto !important;
+			margin-top: -10px;
+		}
+	}
+}
 .yv-moment-card {
 	.version-picker-container {
 		input {

@@ -91,7 +91,7 @@ function Passage(props) {
 				].concat(imgMeta)}
 				link={metaLink}
 			/>
-			<div style={{ width: '100%', marginBottom: '25px' }}>
+			<div style={{ width: '100%', marginBottom: '25px', marginTop: '-40px' }}>
 				<Heading1>{ titleWithAbbr }</Heading1>
 			</div>
 			<div className='gray-background horizontal-center' style={{ padding: '50px 0' }}>
