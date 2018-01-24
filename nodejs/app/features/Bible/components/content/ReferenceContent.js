@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { injectIntl } from 'react-intl'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/withReference'
 import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
 import Link from '@youversion/melos/dist/components/links/Link'
@@ -17,7 +17,8 @@ function ReferenceContent(props) {
 		showTitle,
 		renderText,
 		renderLink,
-		referenceLink
+		referenceLink,
+		noContentAvailable
 	} = props
 
 	let heading = (
@@ -27,23 +28,34 @@ function ReferenceContent(props) {
 			</Heading3>
 		</div>
 	)
-	let content = (
-		/* eslint-disable react/no-danger */
-		<div
-			className='reader'
-			style={{ color: 'black' }}
-			dangerouslySetInnerHTML={{ __html: html && (renderText ? text : html) }}
-		/>
-	)
+	let contentOrLoader = html
+		? (
+			/* eslint-disable react/no-danger */
+			<div
+				className='reader'
+				style={{ color: 'black' }}
+				dangerouslySetInnerHTML={{ __html: html && (renderText ? text : html) }}
+			/>
+		)
+		: (
+			<Placeholder height='110px'>
+				<PlaceholderText
+					className='flex'
+					lineSpacing='15px'
+					textHeight='16px'
+					widthRange={[20, 100]}
+				/>
+			</Placeholder>
+		)
 	if (renderLink) {
 		heading = (
 			<Link to={referenceLink}>
 				{ heading }
 			</Link>
 		)
-		content = (
+		contentOrLoader = (
 			<Link to={referenceLink}>
-				{ content }
+				{ contentOrLoader }
 			</Link>
 		)
 	}
@@ -56,18 +68,9 @@ function ReferenceContent(props) {
 					&& heading
 			}
 			{
-				html
-					? content
-					: (
-						<Placeholder height='110px'>
-							<PlaceholderText
-								className='flex'
-								lineSpacing='15px'
-								textHeight='16px'
-								widthRange={[20, 100]}
-							/>
-						</Placeholder>
-					)
+				noContentAvailable
+					? <FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
+					: contentOrLoader
 			}
 		</div>
 	)
