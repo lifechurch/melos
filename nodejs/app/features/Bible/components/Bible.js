@@ -403,7 +403,7 @@ class Bible extends Component {
 							recentVersions={this.state.recentVersions}
 							selectedChapter={this.state.selectedChapter}
 							alert={this.state.chapterError}
-							cancelDropDown={this.state.versionDropDownCancel}
+							cancelDropDown={this.state.parallelDropDownCancel}
 							extraClassNames="hide-for-small parallel-version-picker-container"
 							ref={(vpicker) => { this.parallelVersionPickerInstance = vpicker }}
 							linkBuilder={(version, usfm, abbr) => {
