@@ -1,67 +1,32 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
-import getBibleModel from '@youversion/api-redux/lib/models/bible'
+import { FormattedMessage } from 'react-intl'
+import withReferenceData from '@youversion/api-redux/lib/endpoints/bible/hocs/withReference'
 import getMomentsModel from '@youversion/api-redux/lib/models/moments'
-import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
-import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
-import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
-import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
+import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
+import Routes from '@youversion/utils/lib/routes/routes'
 import shareAction from '../../../../widgets/ShareSheet/action'
-import Routes from '../../../../lib/routes'
 import Like from '../../../../components/Like'
 import ShareIcon from '../../../../components/icons/ShareIcon'
 import OverflowMenu from '../../../../widgets/OverflowMenu'
 import Moment from '../Moment'
 import MomentHeader from '../MomentHeader'
 import MomentFooter from '../MomentFooter'
+import Placeholder from '../../../../components/placeholders/buildingBlocks/Placeholder'
+import PlaceholderText from '../../../../components/placeholders/buildingBlocks/PlaceholderText'
+
 
 
 class ReferenceMoment extends Component {
-	componentDidMount() {
-		this.getReference()
-	}
-
-	componentWillReceiveProps(nextProps) {
-		const { usfm } = this.props
-		if (nextProps.usfm && usfm !== nextProps.usfm) {
-			this.getReference()
-		}
-	}
-
-	getReference = () => {
-		const { usfm, bible, dispatch } = this.props
-		if (usfm && bible && !bible.pullRef(chapterifyUsfm(usfm))) {
-			dispatch(bibleAction({
-				method: 'version',
-				params: {
-					id: this.version_id,
-				}
-			}))
-			dispatch(bibleAction({
-				method: 'chapter',
-				params: {
-					id: this.version_id,
-					reference: chapterifyUsfm(usfm),
-				}
-			}))
-		}
-	}
-
 	handleShare = () => {
-		const { dispatch, hosts, onShare, serverLanguageTag } = this.props
-		const refTitle = `${this.refStrings.title} (${this.version_abbr})`
+		const { dispatch, hosts, onShare, text, referenceLink, referenceTitle } = this.props
 		if (onShare && typeof onShare === 'function') {
-			onShare({ refTitle, refText: this.verseContent.text })
+			onShare({ refTitle: referenceTitle, refText: text })
 		} else {
 			dispatch(shareAction({
 				isOpen: true,
-				text: this.verseContent.text,
-				url: `${hosts && hosts.railsHost}${Routes.reference({
-					usfm: this.refStrings.usfm,
-					version_id: this.version_id,
-					serverLanguageTag
-				})}`,
+				text,
+				url: `${hosts && hosts.railsHost}${referenceLink}`,
 			}))
 		}
 	}
@@ -79,37 +44,66 @@ class ReferenceMoment extends Component {
 			onEdit,
 			onDelete,
 			overflowMenuChildren,
-			bible,
 			serverLanguageTag,
 			auth,
+			referenceTitle,
+			chapterLink,
+			referenceLink,
+			versionId,
+			versionAbbr,
+			html,
+			leftFooter,
+			noContentAvailable
 		} = this.props
 
-		this.version_id = getBibleVersionFromStorage(serverLanguageTag)
-		let verse
-		const chapterUsfm = usfm && chapterifyUsfm(usfm)
-		const ref = chapterUsfm && bible && bible.pullRef(chapterUsfm)
-		if (ref) {
-			this.verseContent = parseVerseFromContent({
-				usfms: usfm,
-				fullContent: ref.content,
-			})
-			verse = this.verseContent.html
+		const footerLeft = []
+		if (onLike) {
+			footerLeft.push(
+				<Like
+					onClick={onLike}
+					isFilled={likedIds
+						&& auth.userData
+						&& likedIds.includes(auth.userData.userid)
+					}
+				/>
+			)
 		}
-		const versionData = bible
-			&& bible.versions
-			&& bible.versions.byId
-			&& bible.versions.byId[this.version_id]
-			&& bible.versions.byId[this.version_id].response
-		this.refStrings = versionData
-			&& versionData.books
-			&& getReferencesTitle({
-				bookList: versionData.books,
-				usfmList: usfm,
-			})
-		const usfmString = this.refStrings && this.refStrings.usfm
-		const titleString = this.refStrings && this.refStrings.title
-		this.version_abbr = versionData
-			&& versionData.local_abbreviation.toUpperCase()
+		if (onComment) {
+			footerLeft.push(
+				<Comment onClick={onComment} />
+			)
+		}
+		if (leftFooter) {
+			footerLeft.push([ ...leftFooter ])
+		}
+
+		const htmlOrLoader = html
+			? (
+				<a
+					target='_self'
+					href={referenceLink}
+				>
+					{ /* eslint-disable react/no-danger */ }
+					<div
+						className='reader'
+						style={{ color: 'black' }}
+						dangerouslySetInnerHTML={{ __html: html }}
+					/>
+				</a>
+			)
+			: (
+				<Placeholder height='110px'>
+					<PlaceholderText
+						className='flex'
+						lineSpacing='15px'
+						textHeight='16px'
+						widthRange={[20, 100]}
+					/>
+				</Placeholder>
+			)
+		const content = noContentAvailable
+			? <FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
+			: htmlOrLoader
 
 		return (
 			<div className={`yv-votd-text ${className}`}>
@@ -120,37 +114,34 @@ class ReferenceMoment extends Component {
 							title={
 								<div className='vertical-center flex-wrap'>
 									{ title }
-									{
-										titleString
-											&& (
-												<a
-													target='_self'
-													href={Routes.reference({
-														version_id: this.version_id,
-														usfm: chapterUsfm,
-														version_abbr: this.version_abbr,
-														serverLanguageTag
-													})}
-												>
-													{ titleString }
-												</a>
-											)
-									}
-									{
-										this.version_abbr
-											&& (
-												<a
-													target='_self'
-													href={Routes.version({
-														version_id: this.version_id,
-														serverLanguageTag
-													})}
-												>
-													&nbsp;
-													{ this.version_abbr }
-												</a>
-											)
-									}
+									<Heading3>
+										{
+											referenceTitle
+												&& (
+													<a
+														target='_self'
+														href={chapterLink}
+													>
+														{ referenceTitle }
+													</a>
+												)
+										}
+										{
+											versionAbbr
+												&& (
+													<a
+														target='_self'
+														href={Routes.version({
+															version_id: versionId,
+															serverLanguageTag
+														})}
+													>
+														&nbsp;
+														{ versionAbbr }
+													</a>
+												)
+										}
+									</Heading3>
 								</div>
 							}
 						/>
@@ -159,23 +150,9 @@ class ReferenceMoment extends Component {
 					commentIds={commentIds}
 					footer={
 						<MomentFooter
-							left={[
-								(onLike
-									&& <Like
-										onClick={onLike}
-										isFilled={likedIds
-											&& auth.userData
-											&& likedIds.includes(auth.userData.userid)
-										}
-									/>
-								),
-								(onComment
-									&& <Comment onClick={onComment} />
-								),
-							]}
+							left={footerLeft}
 							right={[
-								this.refStrings
-									&& this.refStrings.title
+								referenceTitle
 									&& (
 										<a
 											title='Share'
@@ -189,7 +166,7 @@ class ReferenceMoment extends Component {
 								<OverflowMenu
 									key='overflow'
 									usfm={usfm}
-									version_id={this.version_id}
+									version_id={versionId}
 									onEdit={onEdit}
 									onDelete={onDelete}
 								>
@@ -199,22 +176,7 @@ class ReferenceMoment extends Component {
 						/>
 					}
 				>
-					<a
-						target='_self'
-						href={Routes.reference({
-							version_id: this.version_id,
-							usfm: usfmString,
-							version_abbr: this.version_abbr,
-							serverLanguageTag
-						})}
-					>
-						{ /* eslint-disable react/no-danger */ }
-						<div
-							className='reader'
-							style={{ color: 'black' }}
-							dangerouslySetInnerHTML={{ __html: verse }}
-						/>
-					</a>
+					{ content }
 				</Moment>
 			</div>
 		)
@@ -235,10 +197,18 @@ ReferenceMoment.propTypes = {
 	onShare: PropTypes.func,
 	auth: PropTypes.object.isRequired,
 	className: PropTypes.string,
-	bible: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	serverLanguageTag: PropTypes.string.isRequired,
 	hosts: PropTypes.object.isRequired,
+	referenceTitle: PropTypes.string.isRequired,
+	chapterLink: PropTypes.string.isRequired,
+	referenceLink: PropTypes.string.isRequired,
+	versionId: PropTypes.string.isRequired,
+	versionAbbr: PropTypes.string.isRequired,
+	html: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
+	leftFooter: PropTypes.array,
+	noContentAvailable: PropTypes.bool,
 }
 
 ReferenceMoment.defaultProps = {
@@ -252,12 +222,13 @@ ReferenceMoment.defaultProps = {
 	onEdit: null,
 	onShare: null,
 	onDelete: null,
+	leftFooter: null,
 	overflowMenuChildren: null,
+	noContentAvailable: false,
 }
 
 function mapStateToProps(state) {
 	return {
-		bible: getBibleModel(state),
 		moments: getMomentsModel(state),
 		serverLanguageTag: state.serverLanguageTag,
 		hosts: state.hosts,
@@ -265,4 +236,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(ReferenceMoment)
+export default connect(mapStateToProps, null)(withReferenceData(ReferenceMoment))

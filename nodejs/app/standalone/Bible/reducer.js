@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
+import bible from '@youversion/api-redux/lib/endpoints/bible/reducer'
+import images from '@youversion/api-redux/lib/endpoints/images/reducer'
+import readingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
+import shareData from '../../widgets/ShareSheet/reducer'
 import bibleReader from '../../features/Bible/reducers'
-import passage from '../../features/Passage/reducers'
 
 const emptyReducer = (state = {}) => { return state }
 
@@ -23,7 +26,12 @@ const rootReducer = combineReducers({
 	altVersions: emptyReducer,
 	hosts: emptyReducer,
 	locale: emptyReducer,
-	passage
+	api: combineReducers({
+		bible,
+		images,
+		readingPlans,
+	}),
+	shareData,
 })
 
 export default rootReducer

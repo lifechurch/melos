@@ -1,13 +1,12 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import CustomScroll from 'react-custom-scroll'
-
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 import Languages from './Languages'
 import Versions from './Versions'
 
 function VersionPickerModal(props) {
 	const {
-		localizedLink,
 		params,
 		languageList,
 		versionList,
@@ -147,7 +146,7 @@ function VersionPickerModal(props) {
 	}
 
 	return (
-		<div className={classNames} >
+		<div className={classNames}>
 			{ languages }
 			{ versionBlock }
 		</div>
@@ -179,7 +178,6 @@ function VersionPickerModal(props) {
  *
  */
 VersionPickerModal.propTypes = {
-	localizedLink: PropTypes.func,
 	params: PropTypes.object,
 	languageList: PropTypes.array,
 	versionList: PropTypes.object,
@@ -205,7 +203,6 @@ VersionPickerModal.propTypes = {
 }
 
 VersionPickerModal.defaultProps = {
-	localizedLink: null,
 	params: {},
 	versionsMap: {},
 	languageList: [],

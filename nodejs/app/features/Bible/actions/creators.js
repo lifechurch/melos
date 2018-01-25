@@ -1,3 +1,4 @@
+import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
 import type from './constants'
 
 const ActionCreators = {
@@ -19,7 +20,7 @@ const ActionCreators = {
 		// chapter from the new version and set the bible up that way
 		return dispatch => {
 			return new Promise((resolve) => {
-				dispatch(ActionCreators.bibleVersion({ id: version })).then((newVersion) => {
+				dispatch(bibleAction({ id: version })).then((newVersion) => {
 					let newRef, newReaderVersion
 					// if this version call fails, then it's probably just a bad version, so don't
 					// try to make the new reader call with the same version
@@ -57,7 +58,7 @@ const ActionCreators = {
 			const promises = []
 			if (isInitialLoad) {
 				promises.push(
-					dispatch(ActionCreators.bibleConfiguration()),
+					dispatch(bibleAction({ method: 'configuration' })),
 					dispatch(ActionCreators.momentsColors(auth))
 				)
 			}
@@ -65,12 +66,12 @@ const ActionCreators = {
 			if (isInitialLoad || hasVersionChanged) {
 				promises.push(
 					new Promise((resolve, reject) => {
-						dispatch(ActionCreators.bibleVersion({ id: version })).then((newVersion) => {
+						dispatch(bibleAction({ method: 'version', params: { id: version } })).then((newVersion) => {
 							if ('errors' in newVersion) {
 								reject(newVersion.errors)
 							} else {
 								resolve(
-									dispatch(ActionCreators.bibleVersions({ language_tag: newVersion.language.language_tag, type: 'all' }))
+									dispatch(bibleAction({ method: 'versions', params: { language_tag: newVersion.language.language_tag, type: 'all' } }))
 								)
 							}
 						})
@@ -81,7 +82,7 @@ const ActionCreators = {
 			if (hasParallelVersionChanged && !!parallelVersion) {
 				promises.push(
 					new Promise((resolve, reject) => {
-						dispatch(ActionCreators.bibleVersion({ id: parallelVersion }, { isParallel: true })).then((newVersion) => {
+						dispatch(bibleAction({ method: 'version', params: { id: parallelVersion }, extras: { isParallel: true } })).then((newVersion) => {
 							if ('errors' in newVersion) {
 								reject(newVersion.errors)
 							} else {
@@ -146,7 +147,7 @@ const ActionCreators = {
 		return dispatch => {
 			const { id, reference } = params
 			return Promise.all([
-				dispatch(ActionCreators.bibleVersion({ id })),
+				dispatch(bibleAction({ method: 'version', params: { id } })),
 				dispatch(ActionCreators.bibleChapter({ id, reference: reference.toUpperCase() }))
 			])
 		}

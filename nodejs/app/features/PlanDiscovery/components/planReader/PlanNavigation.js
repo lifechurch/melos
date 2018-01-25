@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
-import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
+import { SQUARE } from '@youversion/utils/lib/images/readingPlanDefault'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import Viewport from '../../../../lib/viewportUtils'
-import LazyImage from '../../../../components/LazyImage'
 import CheckMark from '../../../../components/CheckMark'
 import NavArrows from '../../../Bible/components/content/NavArrows'
 import StickyHeader from '../../../../components/StickyHeader'
@@ -86,12 +86,11 @@ class PlanNavigation extends Component {
 						<div className='nav-content columns large-6 medium-8 medium-centered'>
 							<Link to={subLink}>
 								<LazyImage
-									alt='plan-image'
 									src={planImgUrl}
 									width={40}
 									height={40}
-									customClass='nav-img img-left'
-									placeholder={<img alt='plan' src={PLAN_DEFAULT} />}
+									className='nav-img img-left'
+									placeholder={<img alt='plan' className='nav-img img-left' width={40} height={40} src={SQUARE} />}
 								/>
 							</Link>
 							<div className='plan-info'>

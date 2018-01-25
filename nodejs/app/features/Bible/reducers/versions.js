@@ -10,6 +10,7 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersionsFailure'):
 			return Immutable.fromJS(state).set('loading', false).toJS()
 
+		case 'BIBLE__VERSIONS__SUCCESS':
 		case type('bibleVersionsSuccess'):
 			if (typeof action.response.versions !== 'undefined') {
 				const versions = arrayToObject(action.response.versions, 'id')

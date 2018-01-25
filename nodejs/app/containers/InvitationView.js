@@ -13,7 +13,7 @@ import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import { getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 // utils
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 // components
 import TogetherInvitation from '../features/PlanDiscovery/components/TogetherInvitation'
 import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'

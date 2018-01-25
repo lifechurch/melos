@@ -9,7 +9,7 @@ import PlanActionButtons from './PlanActionButtons'
 import AvatarList from '../../../widgets/AvatarList'
 import ShareWidget from './ShareWidget'
 import imageUtil from '../../../lib/imageUtil'
-import Routes from '../../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class AboutPlan extends Component {

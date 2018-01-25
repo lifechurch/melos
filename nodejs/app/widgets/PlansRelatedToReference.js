@@ -7,10 +7,11 @@ import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
-import LazyImage from '../components/LazyImage'
+import Routes from '@youversion/utils/lib/routes/routes'
+import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import Grid from '../components/Grid'
 import Card from '../components/Card'
-import Routes from '../lib/routes'
 
 
 class PlansRelatedToReference extends Component {
@@ -46,7 +47,7 @@ class PlansRelatedToReference extends Component {
 	}
 
 	render() {
-		const { usfm, plans, subTitle, bible, serverLanguageTag, intl } = this.props
+		const { usfm, plans, subTitle, bible, serverLanguageTag, intl, version_id } = this.props
 
 		this.usfmString = Array.isArray(usfm)
 			? usfm.join('+')
@@ -60,12 +61,7 @@ class PlansRelatedToReference extends Component {
 			&& plans.configuration.images
 			&& plans.configuration.images.reading_plans
 			&& plans.configuration.images.reading_plans.url
-		const version_id = getBibleVersionFromStorage()
-		const versionData = bible
-			&& bible.versions
-			&& bible.versions.byId
-			&& bible.versions.byId[version_id]
-			&& bible.versions.byId[version_id].response
+		const versionData = bible && bible.pullVersion(version_id)
 		const refStrings = versionData
 			&& versionData.books
 			&& getReferencesTitle({
@@ -79,15 +75,15 @@ class PlansRelatedToReference extends Component {
 
 		return (
 			<Card className='plans-related-to-reference'>
-				<h2 style={{ padding: '0 10px' }}>
-					<div style={{ fontSize: '18px', marginBottom: '20px' }}>
+				<Heading3>
+					<div style={{ marginBottom: '20px' }}>
 						<FormattedMessage
 							id='Reader.plan title ref'
 							values={{ reference: refStrings && refStrings.title }}
 						/>
 					</div>
 					{ subTitle }
-				</h2>
+				</Heading3>
 				<Grid lgCols={3} medCols={3} smCols={2}>
 					{
 						plansList.map((plan) => {
@@ -111,16 +107,13 @@ class PlansRelatedToReference extends Component {
 									<LazyImage
 										placeholder={
 											<img
+												className='radius-5'
 												alt='Reading Plan Default'
 												src={PLAN_DEFAULT}
-												width={165}
-												height='90px'
 											/>
 										}
 										src={src}
-										width={165}
-										height={90}
-										customClass='radius-5'
+										imgClass='radius-5'
 									/>
 									<div
 										className='yv-text-ellipsis'
@@ -142,6 +135,7 @@ PlansRelatedToReference.propTypes = {
 	usfm: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 	plans: PropTypes.object,
 	bible: PropTypes.object,
+	version_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	subTitle: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	serverLanguageTag: PropTypes.string,
 	intl:	PropTypes.object.isRequired,
@@ -154,6 +148,7 @@ PlansRelatedToReference.defaultProps = {
 	subTitle: null,
 	bible: null,
 	serverLanguageTag: 'en',
+	version_id: getBibleVersionFromStorage('en')
 }
 
 function mapStateToProps(state) {

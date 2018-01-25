@@ -29,22 +29,71 @@
 
 			.search {
 				margin-right: 15px;
+				border: none;
 				&.open {
 					@media @small-only {
 						position: absolute;
 				    left: 0;
 				    top: 0;
 				    height: 100%;
+						padding: 5px;
+						background: white;
+						* {
+							background: white;
+						}
+						border: @thin-grey-border;
 					}
 				}
 			}
 		}
 	}
+
+	&.yv-header-scroll {
+		.yv-sticky-header-content {
+		  overflow-x: scroll;
+			overflow-y: hidden;
+		  padding: 10px 15px 5px 12px;
+		  border-bottom: none;
+		}
+
+		.yv-sectioned-heading {
+		  min-width: 400px;
+		  background-color: #eee;
+		  border-radius: 5px;
+		  padding: 8px 15px;
+		}
+
+		.small-header {
+			background: @light-grey;
+			border-radius: 10px;
+			border: @thin-grey-border;
+			.search {
+				padding: 10px 2px;
+				margin-right: 33px;
+				background: @light-grey;
+				* {
+					background: @light-grey;
+				}
+			}
+
+		}
+	}
+
+	&.yv-header-scroll-lock {
+		.yv-sticky-header-content {
+			overflow: visible;
+		}
+	}
+	.explore-icon {
+		width: 17px;
+		height: 17px;
+		margin-top: -20px !important;
+	}
 }
 
 .yv-profile-menu-container {
-	top: 45px;
-	right: -32px;
+	top: 70px;
+	right: 0;
 }
 
 @import './ProfileMenu.less';

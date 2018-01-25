@@ -6,13 +6,13 @@ import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'
+// utils
+import Routes from '@youversion/utils/lib/routes/routes'
 // components
-import LazyImage from '../../../components/LazyImage'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
 import PlanContentListItem from './PlanContentListItem'
-// utils
-import Routes from '../../../lib/routes'
 
 
 function Plan({

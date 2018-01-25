@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import Card from '../../../components/Card'
 import Avatar from '../../../components/Avatar'
-import { localizedLink } from '../../../lib/routeUtils'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 
 function buildUserLink(section, username, serverLanguageTag) {
 	return localizedLink(`/users/${username}${section ? `/${section}` : ''}`, serverLanguageTag)

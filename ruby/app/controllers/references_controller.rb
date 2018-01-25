@@ -66,21 +66,26 @@ class ReferencesController < ApplicationController
         reference.gsub!(/\.$/, '')
       end
 
+      if (reference.include?("+"))
+        refs = reference.split("+")
+        refNums = []
+        refs.each do |ref|
+          refNums.push(ref.split(".")[2])
+        end
+
+        reference = "#{ref[0]}.#{ref[1]}.#{refNums.join(",")}"
+      end
     end
-
-
-
 
     if book.is_a? String
       # leave it if it's already a USFM code
       _book = Cfg.osis_usfm_hash[:books][book.downcase]
       # try to parse from known values
       # _book ||= Cfg.osis_usfm_hash[:books][@hash[:book].downcase]
-
       if _book.nil?
         reference = nil
       else
-        reference = "#{_book}#{reference.gsub(book, '')}"
+        reference = "#{reference.gsub(book, _book)}"
       end
 
       redirect = true if reference != params[:reference]
@@ -130,6 +135,9 @@ class ReferencesController < ApplicationController
     fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request)
 
     if (fromNode['error'].present?)
+      puts "----"*100
+      puts fromNode["stack"]
+      puts "----"*100
       return render_404
     end
 
@@ -138,7 +146,8 @@ class ReferencesController < ApplicationController
     @render_rails_meta = true
     @deeplink_version = version
     @deeplink_reference = reference
-    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }
+
+    render 'show', layout: "node_app", locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # def passage

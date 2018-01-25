@@ -12,7 +12,7 @@ import ProgressBar from '../../../components/ProgressBar'
 import ShareLink from '../../../components/ShareLink'
 import PlanStartString from './PlanStartString'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
-import Routes from '../../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class PlanSettings extends Component {

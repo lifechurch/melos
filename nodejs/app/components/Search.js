@@ -80,8 +80,7 @@ class Search extends Component {
 					<a tabIndex={0} onClick={this.handleClick}>
 						<SearchIcon
 							fill='gray'
-							width={15}
-							height={30}
+							className='searchicon-container'
 						/>
 					</a>
 				}
@@ -126,6 +125,7 @@ class Search extends Component {
 						<a
 							tabIndex={0}
 							onClick={this.closeInput}
+							style={{ margin: '0 10px' }}
 						>
 							<XMark
 								fill='gray'

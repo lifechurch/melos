@@ -10,7 +10,7 @@ import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 // selectors
 // utils
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 // components
 
 

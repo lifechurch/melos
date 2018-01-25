@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { getUserById } from '@youversion/api-redux/lib/endpoints/users/reducer'
 import { FormattedMessage, injectIntl } from 'react-intl'
-import { localizedLink } from '../../../lib/routeUtils'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 import ShareSheet from '../../../widgets/ShareSheet/ShareSheet'
 import shareAction from '../../../widgets/ShareSheet/action'
 

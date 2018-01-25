@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react'
 import SectionedLayout from '../../../components/SectionedLayout'
 
 
-function build(eleArr) {
+function build(eleArr, key) {
 	return eleArr.map((el, i) => {
 		return (
-			<div key={i} className='yv-footer-child' style={{ margin: '0 11px' }}>
+			<div key={`${key}-${i}`} className='yv-footer-child' style={{ margin: '0 11px' }}>
 				{ el }
 			</div>
 		)
@@ -16,10 +16,10 @@ function MomentFooter(props) {
 	const { left, right } = props
 	const leftDivs = !Array.isArray(left)
 		? left
-		: build(left)
+		: build(left, 'left')
 	const rightDivs = !Array.isArray(right)
 		? right
-		: build(right)
+		: build(right, 'right')
 	return (
 		<div className='yv-moment-footer'>
 			<SectionedLayout

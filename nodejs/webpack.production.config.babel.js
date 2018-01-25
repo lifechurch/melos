@@ -113,12 +113,12 @@ const clientConfig = {
 		PlanDiscovery: './app/standalone/PlanDiscovery/main.js',
 		Bible: './app/standalone/Bible/main.js',
 		SubscribeUser: './app/standalone/SubscribeUser/main.js',
-		Passage: './app/standalone/Passage/main.js',
 		Footer: './app/standalone/Footer/main.js',
 		Header: './app/standalone/Header/main.js',
 		Unsubscribe: './app/standalone/Unsubscribe/main.js',
 		Notifications: './app/standalone/Notifications/main.js',
 		VOTD: './app/standalone/VOTD/main.js',
+		Explore: './app/standalone/Explore/main.js',
 		Snapshot: './app/standalone/Snapshot/main.js'
 	},
 

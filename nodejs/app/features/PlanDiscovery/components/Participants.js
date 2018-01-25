@@ -3,13 +3,13 @@ import { FormattedMessage } from 'react-intl'
 import Heading from '@youversion/melos/dist/components/typography/Heading1'
 import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
 import hasUserCompletedActivity from '@youversion/utils/lib/readingPlans/hasUserCompletedActivity'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
+import Routes from '@youversion/utils/lib/routes/routes'
 import XMark from '../../../components/XMark'
 import CheckMark from '../../../components/CheckMark'
-import LazyImage from '../../../components/LazyImage'
 import User from '../../../components/User'
 import ShareLink from '../../../components/ShareLink'
 import Placeholder from '../../../components/placeholders/MediaListItemPlaceholder'
-import Routes from '../../../lib/routes'
 
 
 function renderUser(friend, handleDelete = null, complete = null) {
@@ -85,7 +85,6 @@ function Participants({
 								&& (
 									<LazyImage
 										alt='Devotional'
-										width='100%'
 										style={{ width: '100%' }}
 										src={planImg}
 									/>

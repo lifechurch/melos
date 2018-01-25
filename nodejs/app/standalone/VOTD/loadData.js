@@ -4,6 +4,7 @@ import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 
 /**
@@ -21,9 +22,61 @@ export default function loadData(params, startingState, sessionData, store, Loca
 		if (typeof store !== 'undefined' && params.url && params.languageTag) {
 			const { dispatch } = store
 			const serverLanguageTag = params.languageTag
-			const version_id = getBibleVersionFromStorage(serverLanguageTag)
+			const isVotdImage = new RegExp('^\/verse-of-the-day\/[a-zA-Z0-9,.-]+\/[0-9]+')
 			const isVOTD = new RegExp('^\/verse-of-the-day')
-			if (isVOTD.test(params.url)) {
+
+			if (isVotdImage.test(params.url)) {
+				const usfm = expandUsfm(params.usfm, false)
+				const version_id = params.version_id || getBibleVersionFromStorage(serverLanguageTag)
+
+				const promises = [
+					dispatch(momentsAction({
+						method: 'configuration',
+					})),
+					dispatch(bibleAction({
+						method: 'chapter',
+						params: {
+							id: version_id,
+							reference: chapterifyUsfm(usfm),
+						}
+					})),
+					dispatch(bibleAction({
+						method: 'configuration',
+						params: {},
+						extras: {},
+						auth: false
+					})),
+					new Promise((resolve2) => {
+						dispatch(bibleAction({
+							method: 'version',
+							params: {
+								id: version_id,
+							}
+						})).then((version) => {
+							dispatch(imagesAction({
+								method: 'items',
+								params: {
+									language_tag: version.language.iso_639_1,
+									category: 'prerendered',
+									usfm,
+								}
+							}))
+							.then(() => {
+								resolve2()
+							})
+							.catch(() => {
+								resolve2()
+							})
+						})
+					})
+				]
+				Promise.all(promises)
+					.then(() => { resolve() })
+					.catch((err) => { resolve(err) })
+
+			} else if (isVOTD.test(params.url)) {
+				const version_id = getBibleVersionFromStorage(serverLanguageTag)
+
 				dispatch(momentsAction({
 					method: 'votd',
 					params: {

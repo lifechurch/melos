@@ -86,38 +86,29 @@ export default function (
 				component={Plan}
 			>
 				<IndexRoute component={PlanDay} />
-				<Route path="day/:day" component={PlanDay} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />
+				<Route path="day/:day" component={PlanDay} />
 			</Route>
 			<Route
-				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/segment/:content"
-				component={PlanReader}
-			/>
+				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day"
+			>
+				<Route path="mark-complete" component={MarkCompleteRedirect} />
+				<Route path="segment/:content" component={PlanReader} />
+			</Route>
+			<Route path="(:lang/)reading-plans/:id(-:slug)/together">
+				<Route path="create" component={CreatePWFView} />
+				<Route path=":together_id">
+					<Route path="invite" component={InvitePWFView} />
+					<Route path="invitation" component={InvitationView} />
+					<Route path="participants" component={ParticipantsView} />
+				</Route>
+			</Route>
 			<Route
 				path="(:lang/)subscription/:subscription_id/day/:day/talk-it-over/:content"
 				component={TalkItOverRedirect}
 			/>
-			<Route
-				path="(:lang/)reading-plans/:id(-:slug)/together/:together_id/invitation"
-				component={InvitationView}
-			/>
-			<Route
-				path="(:lang/)reading-plans/:id(-:slug)/together/:together_id/participants"
-				component={ParticipantsView}
-			/>
-			<Route
-				path="(:lang/)users/:username/reading-plans/:id(-:slug)/together/create"
-				component={CreatePWFView}
-			/>
-			<Route
-				path="(:lang/)users/:username/reading-plans/:id(-:slug)/together/:together_id/invite"
-				component={InvitePWFView}
-			/>
-			<Route
-				path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/mark-complete"
-				component={MarkCompleteRedirect}
-			/>
+
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)/subscription/:subscription_id/day/:day/completed" component={DayCompleteView} />
 			{/* this is also day complete, but an unauthed page with the user id in the url as params, only loaded from the server */}
 			<Route path="(:lang/)reading-plans/:id(-:slug)/day/:day/completed" component={SharedDayCompleteView} />

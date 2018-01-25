@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import Heading from '@youversion/melos/dist/components/typography/Heading1'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import SectionedLayout from '../../../components/SectionedLayout'
 import ParticipantsAvatarList from '../../../widgets/ParticipantsAvatarList'
 import TogetherInvitationActions from '../../../widgets/TogetherInvitationActions'
 import InvitationString from '../../../widgets/InvitationString'
 import Card from '../../../components/Card'
-import LazyImage from '../../../components/LazyImage'
 
 
 function Invitation({
@@ -39,7 +39,6 @@ function Invitation({
 								alt='plan-image'
 								src={planImg}
 								lazy={false}
-								width='100%'
 								style={{ width: '100%', marginBottom: '10px' }}
 							/>
 							<div className='dark-gray' style={{ marginBottom: '30px', fontSize: '14px' }}>

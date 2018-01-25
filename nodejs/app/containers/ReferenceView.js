@@ -7,7 +7,6 @@ import Passage from '../features/Passage/components/Passage'
 import Bible from '../features/Bible/components/Bible'
 
 class ReferenceView extends Component {
-
 	localizedLink = (link) => {
 		const { serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || 'en'
@@ -26,26 +25,25 @@ class ReferenceView extends Component {
 	}
 
 	render() {
-		const { params: { splat }, location: { query }, bible } = this.props
+		const { params: { splat, version }, location: { query }, bible } = this.props
+
 		const hasParallel = 'parallel' in query && Immutable.fromJS(bible).hasIn(['parallelVersion', 'id'])
-		const { isVerse } = isVerseOrChapter(splat)
+		const usfm = `${splat.split('.').slice(0, 3).join('.')}`.toUpperCase()
+		const { isVerse, isChapter } = isVerseOrChapter(usfm)
 
-		let referenceComponent = (
-			<Bible
-				{...this.props}
-				hasParallel={hasParallel}
-				localizedLink={this.localizedLink}
-				isRtl={this.isRtl}
-			/>
-		)
-
-		if (isVerse) {
+		let referenceComponent = null
+		if (isChapter) {
 			referenceComponent = (
-				<Passage
+				<Bible
 					{...this.props}
-					isRtl={this.isRtl}
+					hasParallel={hasParallel}
 					localizedLink={this.localizedLink}
+					isRtl={this.isRtl}
 				/>
+			)
+		} else if (isVerse) {
+			referenceComponent = (
+				<Passage usfm={usfm} version_id={version} />
 			)
 		}
 
@@ -71,7 +69,6 @@ ReferenceView.defaultProps = {
 
 function mapStateToProps(state) {
 	return {
-		passage: (state.passage) ? state.passage : {},
 		auth: (state.auth),
 		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag,

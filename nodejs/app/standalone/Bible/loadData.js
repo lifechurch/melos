@@ -2,8 +2,13 @@ import cookie from 'react-cookie';
 import Immutable from 'immutable';
 import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
 import localeVersions from '@youversion/stringer-things/dist/config/localeVersions.json'
+import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
+import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
+import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
+import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
+import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
 import BibleActionCreator from '../../features/Bible/actions/creators'
-import PassageActionCreator from '../../features/Passage/actions/creators'
+
 
 /**
  * Loads a data.
@@ -21,6 +26,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const BIBLE 						= new RegExp('^\/bible$') // /bible
 			const BIBLE_WITH_REF		= /^\/bible\/[0-9]+/ // /bible/1/***
 			const language_tag = Locale.locale3
+
+			const { dispatch } = store
 
 			let localeVersionList = [ 1 ]
 			const immLocaleVersions = Immutable.fromJS(localeVersions)
@@ -46,18 +53,12 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			}
 
 			const loadChapter = (finalParams) => {
-				store.dispatch(BibleActionCreator.readerLoad(finalParams, auth)).then(() => {
+				dispatch(BibleActionCreator.readerLoad(finalParams, auth)).then(() => {
 					resolve()
 				}, () => {
-					store.dispatch(BibleActionCreator.handleInvalidReference(finalParams, auth)).then(() => {
+					dispatch(BibleActionCreator.handleInvalidReference(finalParams, auth)).then(() => {
 						resolve()
 					})
-				})
-			}
-
-			const loadVerse = (finalParams) => {
-				store.dispatch(PassageActionCreator.passageLoad(finalParams, auth)).then(() => {
-					resolve()
 				})
 			}
 
@@ -68,14 +69,65 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				const { isVerse, isChapter } = isVerseOrChapter(reference)
 				if (isVerse) {
 					reference = reference.split('.').slice(0, 3).join('.')
-					loadVerse({
-						isInitialLoad: true,
-						hasVersionChanged: true,
-						hasChapterChanged: true,
-						versions: [ parseInt(version, 10), ...params.altVersions[startingState.serverLanguageTag].text ],
-						language_tag: Locale.planLocale,
-						passage: reference
-					})
+					const usfms = expandUsfm(reference, false)
+					const promises = [
+						dispatch(bibleAction({
+							method: 'configuration',
+						})),
+						dispatch(bibleAction({
+							method: 'chapter',
+							params: {
+								id: version,
+								reference: chapterifyUsfm(reference),
+							}
+						})),
+						new Promise((resolve2) => {
+							dispatch(bibleAction({
+								method: 'version',
+								params: {
+									id: version,
+								}
+							})).then((versionData) => {
+								const versionProms = [
+									dispatch(imagesAction({
+										method: 'items',
+										params: {
+											language_tag: versionData
+												&& versionData.language
+												&& versionData.language.iso_639_1,
+											category: 'prerendered',
+											usfm: usfms,
+										}
+									})),
+									dispatch(bibleAction({
+										method: 'versions',
+										params: {
+											language_tag: versionData
+												&& versionData.language
+												&& versionData.language.iso_639_3,
+											type: 'all'
+										}
+									}))
+								]
+								Promise.all(versionProms)
+									.then(() => { resolve2() })
+									.catch(() => { resolve2() })
+							})
+						}),
+						dispatch(readingPlansAction({
+							method: 'configuration'
+						})),
+						dispatch(readingPlansAction({
+							method: 'plans_by_reference',
+							params: {
+								usfm: usfms.slice(0, 4).join('+'),
+								language_tag: params.language_tag || 'en',
+							}
+						}))
+					]
+					Promise.all(promises)
+						.then(() => { resolve() })
+						.catch(() => { resolve() })
 				} else if (isChapter) {
 					reference = reference.split('.').slice(0, 2).join('.')
 					loadChapter({

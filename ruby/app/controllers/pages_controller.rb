@@ -147,7 +147,10 @@ class PagesController < ApplicationController
 				"languageTag" => I18n.locale.to_s,
 				"url" => url,
 				"day" => params[:day],
-				"cache_for" => YV::Caching::a_very_long_time
+				"cache_for" => YV::Caching::a_very_long_time,
+        "usfm" => params[:usfm],
+        "image_id" => params[:image_id],
+        "version_id" => params[:version]
 		}
 
 		day = params[:day] && params[:day].to_i
@@ -158,17 +161,16 @@ class PagesController < ApplicationController
 		fromNode = YV::Nodestack::Fetcher.get('VOTD', p, cookies, current_auth, current_user, request)
 
 		if (fromNode['error'].present?)
+      puts "****"*100
+      puts fromNode["stack"]
+      puts "****"*100
 			return render_404
 		end
 
 		@title_tag = fromNode['head']['title']
 		@node_meta_tags = fromNode['head']['meta']
 
-		render locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']) }, layout: 'node_only'
-
-    # @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
-		#
-    # get_votd()
+		render 'votd', layout: "node_app", locals: { html: fromNode['html'], js: add_node_assets(fromNode['js']), css: add_node_assets(fromNode['css']), css_inline: fromNode['css_inline'] }
   end
 
   # /app url - redirects to an store for mobile device if found

@@ -16,7 +16,7 @@ import TalkItOver from './TalkItOver'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
 // utils
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class PlanReaderView extends Component {

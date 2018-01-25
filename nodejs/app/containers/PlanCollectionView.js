@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import PlanCollection from '../features/PlanDiscovery/components/PlanCollection'
+import React from 'react'
 import { connect } from 'react-redux'
+import PlanCollection from '../features/PlanDiscovery/components/PlanCollection'
 
-class PlanCollectionView extends Component {
-	render() {
-		return (
-			<PlanCollection {...this.props} />
-		)
-	}
+function PlanCollectionView(props) {
+	return (
+		<PlanCollection {...props} />
+	)
 }
 
 function mapStateToProps(state) {

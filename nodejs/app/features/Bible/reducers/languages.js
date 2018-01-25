@@ -16,6 +16,7 @@ export default function reducer(state = {}, action) {
 		case type('bibleConfigurationFailure'):
 			return Immutable.fromJS(state).set('loading', false).toJS()
 
+		case 'BIBLE__CONFIGURATION__SUCCESS':
 		case type('bibleConfigurationSuccess'):
 			if (typeof action.response.default_versions !== 'undefined') {
 

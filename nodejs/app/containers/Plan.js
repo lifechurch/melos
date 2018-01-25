@@ -22,7 +22,7 @@ import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVers
 import calcCurrentPlanDay from '@youversion/utils/lib/readingPlans/calcCurrentPlanDay'
 import isFinalSegmentToComplete from '@youversion/utils/lib/readingPlans/isFinalSegmentToComplete'
 import isFinalPlanDay from '@youversion/utils/lib/readingPlans/isFinalPlanDay'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 // components
 import PlanComponent from '../features/PlanDiscovery/components/Plan'
 import PlanStartString from '../features/PlanDiscovery/components/PlanStartString'

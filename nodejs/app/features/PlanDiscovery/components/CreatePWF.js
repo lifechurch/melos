@@ -4,9 +4,9 @@ import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
 import Heading from '@youversion/melos/dist/components/typography/Heading1'
 import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import Calendar from './Calendar'
 import CalendarDay from './CalendarDay'
-import LazyImage from '../../../components/LazyImage'
 import Footer from '../../../components/Footer'
 
 
@@ -84,7 +84,6 @@ class CreatePWF extends Component {
 					<div className='yv-large-4 yv-medium-6 yv-small-11 centered white'>
 						<LazyImage
 							alt='Devotional'
-							width='100%'
 							style={{ width: '100%', marginBottom: '30px' }}
 							src={planImgSrc}
 						/>

@@ -17,13 +17,14 @@ class DropdownTransition extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		const { show } = this.props
-
+		const { show, classes } = this.props
+		const classList = ['modal-open']
+		if (classes) classList.push(classes)
 		if (typeof window !== 'undefined' && show !== prevProps.show) {
 			if (show) {
-				document.getElementsByTagName('body')[0].classList.add('modal-open')
+				document.getElementsByTagName('body')[0].classList.add(...classList)
 			} else {
-				document.getElementsByTagName('body')[0].classList.remove('modal-open')
+				document.getElementsByTagName('body')[0].classList.remove(...classList)
 			}
 		}
 	}

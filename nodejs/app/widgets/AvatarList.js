@@ -7,7 +7,7 @@ import { getUsers } from '@youversion/api-redux/lib/endpoints/users/reducer'
 // components
 import User from '../components/User'
 // utils
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class AvatarList extends Component {

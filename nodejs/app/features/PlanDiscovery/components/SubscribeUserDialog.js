@@ -6,7 +6,7 @@ import subscribeToPlan from '@youversion/api-redux/lib/batchedActions/subscribeT
 import Menu from '../../../components/Menu'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Modal from '../../../components/Modal'
-import Routes from '../../../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class SubscribeUserDialog extends Component {

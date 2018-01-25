@@ -1,0 +1,331 @@
+export default [
+	{
+		id: '0',
+		title_localization_key: 'STORIES.CREATION',
+		references: ['GEN.1', 'GEN.2.1+GEN.2.2+GEN.2.3+GEN.2.4']
+	},
+  { id: '1', title_localization_key: 'STORIES.FALL', references: ['GEN.3'] },
+	{
+		id: '2',
+		title_localization_key: 'STORIES.FLOOD',
+		references: [
+			'GEN.6.5+GEN.6.6+GEN.6.7+GEN.6.8+GEN.6.9+GEN.6.10+GEN.6.11+GEN.6.12+GEN.6.13+GEN.6.14+GEN.6.15+GEN.6.16+GEN.6.17+GEN.6.18+GEN.6.19+GEN.6.20+GEN.6.21+GEN.6.22',
+			'GEN.7',
+			'GEN.8',
+			'GEN.9.1+GEN.9.2+GEN.9.3+GEN.9.4+GEN.9.5+GEN.9.6+GEN.9.7+GEN.9.8+GEN.9.9+GEN.9.10+GEN.9.11+GEN.9.12+GEN.9.13+GEN.9.14+GEN.9.15+GEN.9.16+GEN.9.17'
+		]
+	},
+	{
+		id: '3',
+		title_localization_key: 'STORIES.ABRAHAMCALLED',
+		references: [
+			'GEN.12.1+GEN.12.2+GEN.12.3+GEN.12.4+GEN.12.5+GEN.12.6+GEN.12.7+GEN.12.8+GEN.12.9',
+			'GEN.15.1+GEN.15.2+GEN.15.3+GEN.15.4+GEN.15.5+GEN.15.6+GEN.15.7'
+		]
+	},
+	{
+		id: '4',
+		title_localization_key: 'STORIES.ABRAHAMISAAC',
+		references: [
+			'GEN.15.1+GEN.15.2+GEN.15.3+GEN.15.4+GEN.15.5+GEN.15.6',
+			'GEN.21.1+GEN.21.2+GEN.21.3+GEN.21.4+GEN.21.5+GEN.21.6+GEN.21.7',
+			'GEN.22.1+GEN.22.2+GEN.22.3+GEN.22.4+GEN.22.5+GEN.22.6+GEN.22.7+GEN.22.8+GEN.22.9+GEN.22.10+GEN.22.11+GEN.22.12+GEN.22.13+GEN.22.14+GEN.22.15+GEN.22.16+GEN.22.17+GEN.22.18+GEN.22.19'
+		]
+	},
+	{
+		id: '5',
+		title_localization_key: 'STORIES.JOSEPHSOLD',
+		references: ['GEN.37']
+	},
+	{
+		id: '6',
+		title_localization_key: 'STORIES.JOSEPHRISE',
+		references: [
+			'GEN.39',
+			'GEN.40',
+			'GEN.41',
+			'GEN.42',
+			'GEN.43',
+			'GEN.44',
+			'GEN.45'
+		]
+	},
+	{
+		id: '7',
+		title_localization_key: 'STORIES.MOSES',
+		references: [
+			'EXO.1.6+EXO.1.7+EXO.1.8+EXO.1.9+EXO.1.10+EXO.1.11+EXO.1.12+EXO.1.13+EXO.1.14+EXO.1.15+EXO.1.16+EXO.1.17+EXO.1.18+EXO.1.19+EXO.1.20+EXO.1.21+EXO.1.22',
+			'EXO.2',
+			'EXO.3',
+			'EXO.4'
+		]
+	},
+	{
+		id: '8',
+		title_localization_key: 'STORIES.PLAGUES',
+		references: [
+			'EXO.5',
+			'EXO.6',
+			'EXO.7',
+			'EXO.8',
+			'EXO.9',
+			'EXO.10',
+			'EXO.11',
+			'EXO.12'
+		]
+	},
+	{
+		id: '9',
+		title_localization_key: 'STORIES.REDSEA',
+		references: ['EXO.14', 'EXO.19', 'EXO.20', 'EXO.34']
+	},
+	{
+		id: '10',
+		title_localization_key: 'STORIES.PROMISEDLAND',
+		references: ['NUM.13', 'NUM.14', 'JOS.2', 'JOS.3', 'JOS.5', 'JOS.6']
+	},
+	{
+		id: '11',
+		title_localization_key: 'STORIES.SAMSON',
+		references: ['JDG.13', 'JDG.14', 'JDG.15', 'JDG.16']
+	},
+	{
+		id: '12',
+		title_localization_key: 'STORIES.RUTH',
+		references: ['RUT.1', 'RUT.2', 'RUT.3', 'RUT.4']
+	},
+	{
+		id: '13',
+		title_localization_key: 'STORIES.SAMUEL',
+		references: ['1SA.1', '1SA.3']
+	},
+	{
+		id: '14',
+		title_localization_key: 'STORIES.GOLIATH',
+		references: ['1SA.16', '1SA.17']
+	},
+	{
+		id: '15',
+		title_localization_key: 'STORIES.ELIJAH',
+		references: [
+			'1KI.16.29+1KI.16.30+1KI.16.31+1KI.16.32+1KI.16.33+1KI.16.34',
+			'1KI.17',
+			'1KI.18',
+			'1KI.19',
+			'1KI.21.17+1KI.21.18+1KI.21.19+1KI.21.20+1KI.21.21+1KI.21.22+1KI.21.23+1KI.21.24+1KI.21.25+1KI.21.26+1KI.21.27+1KI.21.28+1KI.21.29',
+			'2KI.1',
+			'2KI.2.1+2KI.2.2+2KI.2.3+2KI.2.4+2KI.2.5+2KI.2.6+2KI.2.7+2KI.2.8+2KI.2.9+2KI.2.10+2KI.2.11+2KI.2.12+2KI.2.13+2KI.2.14+2KI.2.15+2KI.2.16+2KI.2.17+2KI.2.18'
+		]
+	},
+	{
+		id: '16',
+		title_localization_key: 'STORIES.NEHEMIAH',
+		references: [
+			'NEH.1',
+			'NEH.2',
+			'NEH.3',
+			'NEH.4',
+			'NEH.6.15+NEH.6.16',
+			'NEH.8.1+NEH.8.2+NEH.8.3',
+			'NEH.10.28+NEH.10.29'
+		]
+	},
+	{
+		id: '17',
+		title_localization_key: 'STORIES.ESTHER',
+		references: [
+			'EST.2',
+			'EST.3',
+			'EST.4',
+			'EST.5',
+			'EST.6',
+			'EST.7',
+			'EST.8',
+			'EST.9'
+		]
+	},
+  { id: '18', title_localization_key: 'STORIES.DANIEL', references: ['DAN.6'] },
+	{
+		id: '19',
+		title_localization_key: 'STORIES.JESUSBORN',
+		references: [
+			'MAT.1.18+MAT.1.19+MAT.1.20+MAT.1.21+MAT.1.22+MAT.1.23+MAT.1.24+MAT.1.25',
+			'LUK.1.26+LUK.1.27+LUK.1.28+LUK.1.29+LUK.1.30+LUK.1.31+LUK.1.32+LUK.1.33+LUK.1.34+LUK.1.35+LUK.1.36+LUK.1.37+LUK.1.38',
+			'LUK.2.1+LUK.2.2+LUK.2.3+LUK.2.4+LUK.2.5+LUK.2.6+LUK.2.7+LUK.2.8+LUK.2.9+LUK.2.10+LUK.2.11+LUK.2.12+LUK.2.13+LUK.2.14+LUK.2.15+LUK.2.16+LUK.2.17+LUK.2.18+LUK.2.19+LUK.2.20+LUK.2.21'
+		]
+	},
+	{
+		id: '20',
+		title_localization_key: 'STORIES.JESUSBAPTIZED',
+		references: [
+			'MAT.3',
+			'MRK.1.1+MRK.1.2+MRK.1.3+MRK.1.4+MRK.1.5+MRK.1.6+MRK.1.7+MRK.1.8+MRK.1.9+MRK.1.10+MRK.1.11',
+			'LUK.3.15+LUK.3.16+LUK.3.17+LUK.3.18+LUK.3.19+LUK.3.20+LUK.3.21+LUK.3.22',
+			'JHN.1.29+JHN.1.30+JHN.1.31+JHN.1.32+JHN.1.33+JHN.1.34'
+		]
+	},
+	{
+		id: '21',
+		title_localization_key: 'STORIES.JESUSTEMPTED',
+		references: [
+			'MAT.4.1+MAT.4.2+MAT.4.3+MAT.4.4+MAT.4.5+MAT.4.6+MAT.4.7+MAT.4.8+MAT.4.9+MAT.4.10+MAT.4.11',
+			'MRK.1.12+MRK.1.13',
+			'LUK.4.1+LUK.4.2+LUK.4.3+LUK.4.4+LUK.4.5+LUK.4.6+LUK.4.7+LUK.4.8+LUK.4.9+LUK.4.10+LUK.4.11+LUK.4.12+LUK.4.13'
+		]
+	},
+	{
+		id: '22',
+		title_localization_key: 'STORIES.SERMONMOUNT',
+		references: ['MAT.5', 'MAT.6', 'MAT.7']
+	},
+	{
+		id: '23',
+		title_localization_key: 'STORIES.JESUSHEALSMAN',
+		references: [
+			'MAT.9.2+MAT.9.3+MAT.9.4+MAT.9.5+MAT.9.6+MAT.9.7+MAT.9.8',
+			'MRK.2.1+MRK.2.2+MRK.2.3+MRK.2.4+MRK.2.5+MRK.2.6+MRK.2.7+MRK.2.8+MRK.2.9+MRK.2.10+MRK.2.11+MRK.2.12',
+			'LUK.5.17+LUK.5.18+LUK.5.19+LUK.5.20+LUK.5.21+LUK.5.22+LUK.5.23+LUK.5.24+LUK.5.25+LUK.5.26'
+		]
+	},
+	{
+		id: '24',
+		title_localization_key: 'STORIES.JESUSCASTSOUT',
+		references: [
+			'MAT.8.28+MAT.8.29+MAT.8.30+MAT.8.31+MAT.8.32+MAT.8.33+MAT.8.34',
+			'MRK.5.1+MRK.5.2+MRK.5.3+MRK.5.4+MRK.5.5+MRK.5.6+MRK.5.7+MRK.5.8+MRK.5.9+MRK.5.10+MRK.5.11+MRK.5.12+MRK.5.13+MRK.5.14+MRK.5.15+MRK.5.16+MRK.5.17+MRK.5.18+MRK.5.19+MRK.5.20',
+			'LUK.8.27+LUK.8.28+LUK.8.29+LUK.8.30+LUK.8.31+LUK.8.32+LUK.8.33+LUK.8.34+LUK.8.35+LUK.8.36+LUK.8.37+LUK.8.38+LUK.8.39'
+		]
+	},
+	{
+		id: '25',
+		title_localization_key: 'STORIES.JESUSHEALSGIRL',
+		references: [
+			'MAT.9.18+MAT.9.19+MAT.9.20+MAT.9.21+MAT.9.22+MAT.9.23+MAT.9.24+MAT.9.25+MAT.9.26',
+			'MRK.5.21+MRK.5.22+MRK.5.23+MRK.5.24+MRK.5.25+MRK.5.26+MRK.5.27+MRK.5.28+MRK.5.29+MRK.5.30+MRK.5.31+MRK.5.32+MRK.5.33+MRK.5.34+MRK.5.35+MRK.5.36+MRK.5.37+MRK.5.38+MRK.5.39+MRK.5.40+MRK.5.41+MRK.5.42+MRK.5.43',
+			'LUK.8.40+LUK.8.41+LUK.8.42+LUK.8.43+LUK.8.44+LUK.8.45+LUK.8.46+LUK.8.47+LUK.8.48+LUK.8.49+LUK.8.50+LUK.8.51+LUK.8.52+LUK.8.53+LUK.8.54+LUK.8.55+LUK.8.56'
+		]
+	},
+	{
+		id: '26',
+		title_localization_key: 'STORIES.JESUSFEEDS',
+		references: [
+			'MAT.14.13+MAT.14.14+MAT.14.15+MAT.14.16+MAT.14.17+MAT.14.18+MAT.14.19+MAT.14.20+MAT.14.21',
+			'MRK.6.30+MRK.6.31+MRK.6.32+MRK.6.33+MRK.6.34+MRK.6.35+MRK.6.36+MRK.6.37+MRK.6.38+MRK.6.39+MRK.6.40+MRK.6.41+MRK.6.42+MRK.6.43+MRK.6.44',
+			'LUK.9.10+LUK.9.11+LUK.9.12+LUK.9.13+LUK.9.14+LUK.9.15+LUK.9.16+LUK.9.17',
+			'JHN.6.1+JHN.6.2+JHN.6.3+JHN.6.4+JHN.6.5+JHN.6.6+JHN.6.7+JHN.6.8+JHN.6.9+JHN.6.10+JHN.6.11+JHN.6.12+JHN.6.13+JHN.6.14'
+		]
+	},
+	{
+		id: '27',
+		title_localization_key: 'STORIES.FATHERANDSONS',
+		references: [
+			'LUK.15.11+LUK.15.12+LUK.15.13+LUK.15.14+LUK.15.15+LUK.15.16+LUK.15.17+LUK.15.18+LUK.15.19+LUK.15.20+LUK.15.21+LUK.15.22+LUK.15.23+LUK.15.24+LUK.15.25+LUK.15.26+LUK.15.27+LUK.15.28+LUK.15.29+LUK.15.30+LUK.15.31+LUK.15.32'
+		]
+	},
+	{
+		id: '28',
+		title_localization_key: 'STORIES.TRIUMPHALENTRY',
+		references: [
+			'MAT.21.1+MAT.21.2+MAT.21.3+MAT.21.4+MAT.21.5+MAT.21.6+MAT.21.7+MAT.21.8+MAT.21.9+MAT.21.10+MAT.21.11',
+			'MRK.11.1+MRK.11.2+MRK.11.3+MRK.11.4+MRK.11.5+MRK.11.6+MRK.11.7+MRK.11.8+MRK.11.9+MRK.11.10+MRK.11.11',
+			'LUK.19.28+LUK.19.29+LUK.19.30+LUK.19.31+LUK.19.32+LUK.19.33+LUK.19.34+LUK.19.35+LUK.19.36+LUK.19.37+LUK.19.38+LUK.19.39+LUK.19.40+LUK.19.41+LUK.19.42+LUK.19.43+LUK.19.44',
+			'JHN.12.12+JHN.12.13+JHN.12.14+JHN.12.15+JHN.12.16+JHN.12.17+JHN.12.18+JHN.12.19'
+		]
+	},
+	{
+		id: '29',
+		title_localization_key: 'STORIES.LASTSUPPER',
+		references: [
+			'MAT.26.14+MAT.26.15+MAT.26.16+MAT.26.17+MAT.26.18+MAT.26.19+MAT.26.20+MAT.26.21+MAT.26.22+MAT.26.23+MAT.26.24+MAT.26.25+MAT.26.26+MAT.26.27+MAT.26.28+MAT.26.29+MAT.26.30',
+			'MRK.14.12+MRK.14.13+MRK.14.14+MRK.14.15+MRK.14.16+MRK.14.17+MRK.14.18+MRK.14.19+MRK.14.20+MRK.14.21+MRK.14.22+MRK.14.23+MRK.14.24+MRK.14.25+MRK.14.26',
+			'LUK.22.7+LUK.22.8+LUK.22.9+LUK.22.10+LUK.22.11+LUK.22.12+LUK.22.13+LUK.22.14+LUK.22.15+LUK.22.16+LUK.22.17+LUK.22.18+LUK.22.19+LUK.22.20+LUK.22.21+LUK.22.22+LUK.22.23',
+			'JHN.13.1+JHN.13.2+JHN.13.3+JHN.13.4+JHN.13.5+JHN.13.6+JHN.13.7+JHN.13.8+JHN.13.9+JHN.13.10+JHN.13.11+JHN.13.12+JHN.13.13+JHN.13.14+JHN.13.15+JHN.13.16+JHN.13.17+JHN.13.18+JHN.13.19+JHN.13.20+JHN.13.21+JHN.13.22+JHN.13.23+JHN.13.24+JHN.13.25+JHN.13.26+JHN.13.27+JHN.13.28+JHN.13.29+JHN.13.30'
+		]
+	},
+	{
+		id: '30',
+		title_localization_key: 'STORIES.JESUSARRESTED',
+		references: [
+			'MAT.26.36+MAT.26.37+MAT.26.38+MAT.26.39+MAT.26.40+MAT.26.41+MAT.26.42+MAT.26.43+MAT.26.44+MAT.26.45+MAT.26.46+MAT.26.47+MAT.26.48+MAT.26.49+MAT.26.50+MAT.26.51+MAT.26.52+MAT.26.53+MAT.26.54+MAT.26.55+MAT.26.56+MAT.26.57+MAT.26.58+MAT.26.59+MAT.26.60+MAT.26.61+MAT.26.62+MAT.26.63+MAT.26.64+MAT.26.65+MAT.26.66+MAT.26.67+MAT.26.68+MAT.26.69+MAT.26.70+MAT.26.71+MAT.26.72+MAT.26.73+MAT.26.74+MAT.26.75',
+			'MRK.14.32+MRK.14.33+MRK.14.34+MRK.14.35+MRK.14.36+MRK.14.37+MRK.14.38+MRK.14.39+MRK.14.40+MRK.14.41+MRK.14.42+MRK.14.43+MRK.14.44+MRK.14.45+MRK.14.46+MRK.14.47+MRK.14.48+MRK.14.49+MRK.14.50',
+			'LUK.22.39+LUK.22.40+LUK.22.41+LUK.22.42+LUK.22.43+LUK.22.44+LUK.22.45+LUK.22.46+LUK.22.47+LUK.22.48+LUK.22.49+LUK.22.50+LUK.22.51+LUK.22.52+LUK.22.53',
+			'JHN.18.1+JHN.18.2+JHN.18.3+JHN.18.4+JHN.18.5+JHN.18.6+JHN.18.7+JHN.18.8+JHN.18.9+JHN.18.10+JHN.18.11'
+		]
+	},
+	{
+		id: '31',
+		title_localization_key: 'STORIES.CROSS',
+		references: [
+			'MAT.27.11+MAT.27.12+MAT.27.13+MAT.27.14+MAT.27.15+MAT.27.16+MAT.27.17+MAT.27.18+MAT.27.19+MAT.27.20+MAT.27.21+MAT.27.22+MAT.27.23+MAT.27.24+MAT.27.25+MAT.27.26+MAT.27.27+MAT.27.28+MAT.27.29+MAT.27.30+MAT.27.31+MAT.27.32+MAT.27.33+MAT.27.34+MAT.27.35+MAT.27.36+MAT.27.37+MAT.27.38+MAT.27.39+MAT.27.40+MAT.27.41+MAT.27.42+MAT.27.43+MAT.27.44+MAT.27.45+MAT.27.46+MAT.27.47+MAT.27.48+MAT.27.49+MAT.27.50+MAT.27.51+MAT.27.52+MAT.27.53+MAT.27.54+MAT.27.55+MAT.27.56+MAT.27.57+MAT.27.58+MAT.27.59+MAT.27.60+MAT.27.61',
+			'MRK.15',
+			'LUK.23',
+			'JHN.18.28+JHN.18.29+JHN.18.30+JHN.18.31+JHN.18.32+JHN.18.33+JHN.18.34+JHN.18.35+JHN.18.36+JHN.18.37+JHN.18.38+JHN.18.39+JHN.18.40',
+			'JHN.19'
+		]
+	},
+	{
+		id: '32',
+		title_localization_key: 'STORIES.EMPTYTOMB',
+		references: [
+			'MAT.27.61+MAT.27.62+MAT.27.63+MAT.27.64+MAT.27.65+MAT.27.66',
+			'MAT.28.1+MAT.28.2+MAT.28.3+MAT.28.4+MAT.28.5+MAT.28.6+MAT.28.7+MAT.28.8+MAT.28.9+MAT.28.10+MAT.28.11+MAT.28.12+MAT.28.13+MAT.28.14+MAT.28.15',
+			'MRK.16.1+MRK.16.2+MRK.16.3+MRK.16.4+MRK.16.5+MRK.16.6+MRK.16.7+MRK.16.8+MRK.16.9+MRK.16.10+MRK.16.11+MRK.16.12+MRK.16.13+MRK.16.14',
+			'LUK.24.1+LUK.24.2+LUK.24.3+LUK.24.4+LUK.24.5+LUK.24.6+LUK.24.7+LUK.24.8+LUK.24.9+LUK.24.10+LUK.24.11+LUK.24.12+LUK.24.13+LUK.24.14+LUK.24.15+LUK.24.16+LUK.24.17+LUK.24.18+LUK.24.19+LUK.24.20+LUK.24.21+LUK.24.22+LUK.24.23+LUK.24.24+LUK.24.25+LUK.24.26+LUK.24.27+LUK.24.28+LUK.24.29+LUK.24.30+LUK.24.31+LUK.24.32+LUK.24.33+LUK.24.34+LUK.24.35+LUK.24.36+LUK.24.37+LUK.24.38+LUK.24.39+LUK.24.40+LUK.24.41+LUK.24.42+LUK.24.43+LUK.24.44+LUK.24.45+LUK.24.46+LUK.24.47+LUK.24.48+LUK.24.49',
+			'JHN.20'
+		]
+	},
+	{
+		id: '33',
+		title_localization_key: 'STORIES.JESUSRETURNS',
+		references: [
+			'MAT.28.16+MAT.28.17+MAT.28.18+MAT.28.19+MAT.28.20',
+			'MRK.16.15+MRK.16.16+MRK.16.17+MRK.16.18+MRK.16.19+MRK.16.20',
+			'LUK.24.50+LUK.24.51+LUK.24.52+LUK.24.53',
+			'ACT.1.1+ACT.1.2+ACT.1.3+ACT.1.4+ACT.1.5+ACT.1.6+ACT.1.7+ACT.1.8+ACT.1.9+ACT.1.10+ACT.1.11'
+		]
+	},
+	{
+		id: '34',
+		title_localization_key: 'STORIES.HOLYSPIRIT',
+		references: ['ACT.2']
+	},
+	{
+		id: '35',
+		title_localization_key: 'STORIES.CRIPPLEHEALED',
+		references: ['ACT.3']
+	},
+	{
+		id: '36',
+		title_localization_key: 'STORIES.PAULMEETSJESUS',
+		references: [
+			'ACT.9.1+ACT.9.2+ACT.9.3+ACT.9.4+ACT.9.5+ACT.9.6+ACT.9.7+ACT.9.8+ACT.9.9+ACT.9.10+ACT.9.11+ACT.9.12+ACT.9.13+ACT.9.14+ACT.9.15+ACT.9.16+ACT.9.17+ACT.9.18+ACT.9.19'
+		]
+	},
+	{
+		id: '37',
+		title_localization_key: 'STORIES.PETERSVISION',
+		references: ['ACT.10']
+	},
+	{
+		id: '38',
+		title_localization_key: 'STORIES.PAULSJOURNEY',
+		references: [
+			'ACT.13',
+			'ACT.14',
+			'ACT.16',
+			'ACT.17',
+			'ACT.18',
+			'ACT.19',
+			'ACT.20',
+			'ACT.21',
+			'ACT.25',
+			'ACT.27',
+			'ACT.28'
+		]
+	},
+	{
+		id: '39',
+		title_localization_key: 'STORIES.NEWHEAVEN',
+		references: ['REV.21', 'REV.22.1+REV.22.2+REV.22.3+REV.22.4+REV.22.5']
+	}
+]

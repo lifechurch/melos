@@ -79,7 +79,7 @@ YouversionWeb::Application.routes.draw do
 
 	get "/popular-bible-verses", to: "pages#trending", :as => 'popular'
   get "/trending-bible-verses", to: "redirects#trending"
-  get "/verse-of-the-day", to: "pages#votd", as: "votd"
+  get "/verse-of-the-day(/:usfm/:image_id)", to: "pages#votd", as: "votd", :constraints => {:usfm => /[^\/]*/}
   get "/bible-verse-of-the-day", to: "redirects#votd"
   # get "/wmf",           to: "redirects#wmf"
   # get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
@@ -249,6 +249,10 @@ YouversionWeb::Application.routes.draw do
   get '/lookinside/:id' => 'plans#lookinside_view'
   get '/lookinside/:id/read/day/:day' => 'plans#lookinside_sample'
 
+  # Explore
+  get '/explore' => 'explore#index'
+  get '/explore/:topic' => 'explore#index'
+  get '/explore/stories' => 'explore#index'
 
   # Reading Plans
   # Legacy links that need to be supported

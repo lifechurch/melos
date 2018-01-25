@@ -47,7 +47,6 @@
 @import "../components/less/stackedContainer.less";
 @import "../components/less/Search.less";
 @import "../components/less/User.less";
-@import "../components/less/LazyImage.less";
 @import "../components/less/Modal.less";
 @import "../components/less/Footer.less";
 @import "../components/less/StickyDiv.less";
@@ -65,7 +64,6 @@
 @import "../components/less/IconButton.less";
 @import "../components/less/IconButtonGroup.less";
 @import "../components/less/NoticeIcon.less";
-@import "../components/less/LazyImage.less";
 @import "../components/less/Search.less";
 @import "../components/less/Inbox.less";
 @import "../components/less/User.less";
@@ -2255,9 +2253,6 @@ ul.language-selector li {
 			width: 50%;
 			margin-top: 15px;
 		}
-		.slide, .slide-image, img {
-			height: 95px;
-		}
 		.collection-title {
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -2276,9 +2271,6 @@ ul.language-selector li {
 		.collection-item {
 			width: 33%;
 			margin-top: 20px;
-		}
-		.slide, .slide-image, img {
-			height: 200px;
 		}
 		.collection-title {
 			margin-top: 40px;
@@ -2428,4 +2420,10 @@ button.chapter-button {
 
 #react-app-Bible {
 	padding-bottom: 100px;
+}
+
+body.c_explore {
+	#current-ui-view {
+		padding: 100px 0 50px 0;
+	}
 }

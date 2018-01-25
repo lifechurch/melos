@@ -7,6 +7,7 @@ import LocalStore from '@youversion/utils/lib/localStore'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import parseVerseFromContent from '@youversion/utils/lib/bible/parseVerseContent'
 import deepLinkPath from '@youversion/utils/lib/bible/deepLinkPath'
+import bibleActions from '@youversion/api-redux/lib/endpoints/bible/action'
 import VerseAction from './verseAction/VerseAction'
 import ActionCreators from '../actions/creators'
 import Filter from '../../../lib/filter'
@@ -351,15 +352,10 @@ class Bible extends Component {
 							}}
 						/>
 						<VersionPicker
-							{...this.props}
-							version={bible.version}
-							languages={bible.languages.all}
-							versions={bible.versions}
+							version_id={this.state.selectedVersion}
 							recentVersions={this.state.recentVersions}
-							languageMap={bible.languages.map}
 							selectedChapter={this.state.selectedChapter}
 							alert={this.state.chapterError}
-							getVersions={this.getVersions}
 							cancelDropDown={this.state.versionDropDownCancel}
 							extraClassNames="main-version-picker-container"
 							ref={(vpicker) => { this.versionPickerInstance = vpicker }}
@@ -402,15 +398,11 @@ class Bible extends Component {
 
 						{hasParallel &&
 						<VersionPicker
-							{...this.props}
-							version={bible.parallelVersion}
-							languages={bible.languages.all}
-							versions={bible.versions}
+							isParallel={true}
+							version_id={bible.parallelVersion.id}
 							recentVersions={this.state.recentVersions}
-							languageMap={bible.languages.map}
 							selectedChapter={this.state.selectedChapter}
 							alert={this.state.chapterError}
-							getVersions={this.getVersions}
 							cancelDropDown={this.state.parallelDropDownCancel}
 							extraClassNames="hide-for-small parallel-version-picker-container"
 							ref={(vpicker) => { this.parallelVersionPickerInstance = vpicker }}

@@ -3,19 +3,22 @@ import { FormattedMessage } from 'react-intl'
 import friendshipsAction from '@youversion/api-redux/lib/endpoints/friendships/action'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
-import SectionedLayout from '../../../components/SectionedLayout'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
+import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'
+import Routes from '@youversion/utils/lib/routes/routes'
+import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import IconButtonGroup from '../../../components/IconButtonGroup'
 import IconButton from '../../../components/IconButton'
 import Button from '../../../components/Button'
 import ButtonGroup from '../../../components/ButtonGroup'
 import NoticeIcon from '../../../components/NoticeIcon'
 import DropdownTransition from '../../../components/DropdownTransition'
-import { localizedLink } from '../../../lib/routeUtils'
 import Home from '../../../components/icons/Home'
 import Read from '../../../components/icons/Read'
 import Plans from '../../../components/icons/Plans'
 import Videos from '../../../components/icons/Videos'
 import Friends from '../../../components/icons/Friends'
+import Explore from '../../../components/icons/Explore'
 import More from '../../../components/icons/More'
 import Notifications from '../../../components/icons/Notifications'
 import Settings from '../../../components/icons/Settings'
@@ -119,7 +122,8 @@ class HeaderContent extends Component {
 			serverLanguageTag,
 			user,
 			loggedInUser,
-			screenSize
+			screenSize,
+			screenWidth
 		} = this.props
 
 		const {
@@ -130,18 +134,6 @@ class HeaderContent extends Component {
 			profileMenuOpen,
 			notificationsOpen
 		} = this.state
-
-		const plansButton = (
-			<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
-				<Plans />
-			</IconButton>
-		)
-
-		const videosButton = (
-			<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
-				<Videos />
-			</IconButton>
-		)
 
 		const search = (
 			<Search
@@ -154,29 +146,25 @@ class HeaderContent extends Component {
 		)
 
 		const homeLink = isLoggedIn ? '/moments' : '/'
-		const left = (
-			<div>
-				<IconButtonGroup iconHeight={24} iconSpacing={44} >
-					<IconButton label={<FormattedMessage id="header.home" />} useClientRouting={false} to={localizedLink(homeLink, serverLanguageTag)}>
-						<Home />
-					</IconButton>
-					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
-						<Read />
-					</IconButton>
-					{ (screenSize > ScreenSize.MEDIUM) ? plansButton : null }
-					{ (screenSize > ScreenSize.MEDIUM) ? videosButton : null }
-				</IconButtonGroup>
-			</div>
-		)
+		const showSmallHeader = screenWidth < 416
 
-		const profileTopContent = (screenSize < ScreenSize.LARGE)
-			? (<div>
-				<IconButtonGroup iconHeight={24} iconSpacing={44}>
-					{plansButton}
-					{videosButton}
-				</IconButtonGroup>
-			</div>)
-			: null
+		const avatarButton = (
+			(user && ('response' in user)) &&
+				<IconButton lockHeight={true} onClick={this.handleProfileMenuClick} useClientRouting={false}>
+					<Avatar
+						customClass="yv-profile-menu-trigger"
+						placeholderText={
+							loggedInUser
+								&& loggedInUser.first_name
+								&& loggedInUser.first_name[0]
+								&& loggedInUser.first_name[0].toUpperCase()
+						}
+						width={36}
+						height={36}
+						src={user.response.has_avatar && user.response.user_avatar_url.px_48x48}
+					/>
+				</IconButton>
+		)
 
 		const userNotificationGroup = isLoggedIn ? (
 			<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
@@ -193,22 +181,7 @@ class HeaderContent extends Component {
 				<IconButton to={localizedLink('/settings', serverLanguageTag)} useClientRouting={false}>
 					<Settings />
 				</IconButton>
-				{(screenSize > ScreenSize.MEDIUM) && ('response' in user) &&
-					<IconButton lockHeight={true} onClick={this.handleProfileMenuClick} useClientRouting={false}>
-						<Avatar
-							customClass="yv-profile-menu-trigger"
-							placeholderText={
-								loggedInUser
-									&& loggedInUser.first_name
-									&& loggedInUser.first_name[0]
-									&& loggedInUser.first_name[0].toUpperCase()
-							}
-							width={36}
-							height={36}
-							src={user.response.has_avatar && user.response.user_avatar_url.px_48x48}
-						/>
-					</IconButton>
-				}
+				{ avatarButton }
 			</IconButtonGroup>
 		) : null
 
@@ -228,11 +201,78 @@ class HeaderContent extends Component {
 		)
 
 		const right = isLoggedIn
-		? (
-			<div className={`yv-header-right ${ready && 'ready'}`}>
-				{screenSize < ScreenSize.LARGE && search}
-				{(screenSize > ScreenSize.MEDIUM) ? userNotificationGroup : moreMenu}
+			? (
+				<div className={`yv-header-right ${ready && 'ready'}`}>
+					{screenSize < ScreenSize.LARGE && search}
+					{(screenSize > ScreenSize.MEDIUM)
+						? userNotificationGroup
+						: (
+							<IconButtonGroup iconHeight={24} iconSpacing={24} verticalAlign="middle">
+								{ avatarButton }
+							</IconButtonGroup>
+						)
+					}
+				</div>
+			)
+			: (
+				<div className={`yv-header-right ${ready && 'ready'}`}>
+					{screenSize < ScreenSize.LARGE && search}
+					{(screenSize > ScreenSize.MEDIUM) ? signUpButtons : moreMenu}
+				</div>
+			)
+
+		const left = (
+			<div>
+				<IconButtonGroup iconHeight={24} iconSpacing={44} >
+					<IconButton label={<FormattedMessage id="header.home" />} useClientRouting={false} to={localizedLink(homeLink, serverLanguageTag)}>
+						<Home />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="header.read" />} useClientRouting={false} to={localizedLink('/bible', serverLanguageTag)}>
+						<Read />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
+						<Plans />
+					</IconButton>
+					<IconButton
+						label={<FormattedMessage id="explore" />}
+						useClientRouting={false}
+						to={Routes.explore({
+							serverLanguageTag,
+							query: { version: getBibleVersionFromStorage(serverLanguageTag) }
+						})}
+					>
+						<Explore className='explore-icon' />
+					</IconButton>
+					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
+						<Videos />
+					</IconButton>
+				</IconButtonGroup>
+			</div>
+		)
+
+		return (
+			<StickyHeader className={`yv-header ${showSmallHeader && 'yv-header-scroll'} ${(profileMenuOpen || notificationsOpen) && 'yv-header-scroll-lock'}`}>
 				{
+					(showSmallHeader && ready)
+						? (
+							<div className='vertical-center small-header' style={{ padding: '5px 15px' }}>
+								<div>{ left }</div>
+								<div style={{ marginLeft: '44px' }}>{ right }</div>
+							</div>
+						)
+						: (
+							<SectionedLayout
+								left={left}
+								right={right}
+							>
+								<div className='centered'>
+									{screenSize > ScreenSize.MEDIUM && search}
+								</div>
+							</SectionedLayout>
+						)
+				}
+
+				{ isLoggedIn &&
 					<DropdownTransition
 						show={notificationsOpen}
 						hideDir="up"
@@ -244,8 +284,7 @@ class HeaderContent extends Component {
 						<NotificationsInbox />
 					</DropdownTransition>
 				}
-				{
-					('response' in user) &&
+				{ isLoggedIn && ('response' in user) &&
 					<DropdownTransition
 						show={profileMenuOpen}
 						hideDir="up"
@@ -261,45 +300,26 @@ class HeaderContent extends Component {
 							lastName={user.response.last_name}
 							avatarUrl={user.response.user_avatar_url.px_48x48}
 							serverLanguageTag={serverLanguageTag}
-							topContent={profileTopContent}
 							topAvatarContent={(screenSize < ScreenSize.LARGE) ? userNotificationGroup : null}
 						/>
 					</DropdownTransition>
 				}
-			</div>
-		)
-		: (
-			<div className={`yv-header-right ${ready && 'ready'}`}>
-				{screenSize < ScreenSize.LARGE && search}
-				{(screenSize > ScreenSize.MEDIUM) ? signUpButtons : moreMenu}
-				<DropdownTransition
-					show={profileMenuOpen}
-					hideDir="up"
-					transition={true}
-					onOutsideClick={this.handleProfileMenuClose}
-					exemptClass="yv-profile-menu-trigger"
-					classes="yv-popup-modal-content"
-					containerClasses="yv-profile-menu-container"
-				>
-					<ProfileMenu
-						serverLanguageTag={serverLanguageTag}
-						topContent={profileTopContent}
-						bottomContent={signUpButtons}
-					/>
-				</DropdownTransition>
-			</div>
-		)
-
-		return (
-			<StickyHeader className="yv-header">
-				<SectionedLayout
-					left={left}
-					right={right}
-				>
-					<div>
-						{screenSize > ScreenSize.MEDIUM && search}
-					</div>
-				</SectionedLayout>
+				{ !isLoggedIn &&
+					<DropdownTransition
+						show={profileMenuOpen}
+						hideDir="up"
+						transition={true}
+						onOutsideClick={this.handleProfileMenuClose}
+						exemptClass="yv-profile-menu-trigger"
+						classes="yv-popup-modal-content"
+						containerClasses="yv-profile-menu-container"
+					>
+						<ProfileMenu
+							serverLanguageTag={serverLanguageTag}
+							bottomContent={signUpButtons}
+						/>
+					</DropdownTransition>
+				}
 			</StickyHeader>
 		)
 	}
@@ -313,7 +333,8 @@ HeaderContent.propTypes = {
 	notifications: PropTypes.object,
 	friendshipRequests: PropTypes.object,
 	user: PropTypes.object,
-	screenSize: PropTypes.number
+	screenSize: PropTypes.number,
+	screenWidth: PropTypes.number
 }
 
 HeaderContent.defaultProps = {
@@ -322,7 +343,8 @@ HeaderContent.defaultProps = {
 	notifications: null,
 	friendshipRequests: null,
 	user: null,
-	screenSize: ScreenSize.SMALL
+	screenSize: ScreenSize.SMALL,
+	screenWidth: null
 }
 
 export default HeaderContent

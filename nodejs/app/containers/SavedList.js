@@ -6,7 +6,7 @@ import { getAllQueueItems } from '@youversion/api-redux/lib/endpoints/readingPla
 import planView from '@youversion/api-redux/lib/batchedActions/planView'
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
-import Routes from '../lib/routes'
+import Routes from '@youversion/utils/lib/routes/routes'
 import List from '../components/List'
 import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 
