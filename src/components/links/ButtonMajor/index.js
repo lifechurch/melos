@@ -27,7 +27,7 @@ function ButtonMajor(props) {
       alignItems: 'center',
       justifyContent: 'center',
       ':hover': {
-        backgroundColor: shadeColor(color || t.color.primary, -0.2)
+        backgroundColor: shadeColor(color || t.color.primary, -0.35)
       }
     }
   }))
