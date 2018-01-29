@@ -66,6 +66,7 @@ review:
     - branches
   except:
     - master
+    - l10n_master    
 
 stop_review:
   stage: review
@@ -83,3 +84,4 @@ stop_review:
     - branches
   except:
     - master
+    - l10n_master    
