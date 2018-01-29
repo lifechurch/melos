@@ -5,7 +5,7 @@ import bibleActions from '@youversion/api-redux/lib/endpoints/bible/action'
 import searchAction from '@youversion/api-redux/lib/endpoints/search/action'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'
 
-import { PAGE_NUM } from '../../features/Explore/components/TopicView'
+import { PAGE_NUM } from '../../features/Explore/components/Topic'
 
 /**
  * Loads a data.
@@ -80,12 +80,23 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					dispatch(momentsAction({
 						method: 'configuration'
 					})),
-					dispatch(momentsAction({
-						method: 'votd',
+					dispatch(bibleActions({
+						method: 'version',
 						params: {
-							language_tag: serverLanguageTag,
+							id: version_id,
 						}
-					}))
+					})).then((versionData) => {
+						if (versionData) {
+							dispatch(momentsAction({
+								method: 'votd',
+								params: {
+									language_tag: versionData
+										&& versionData.language
+										&& versionData.language.iso_639_1,
+								}
+							}))
+						}
+					}),
 				]
 				Promise.all(proms)
 					.then(() => { resolve() })

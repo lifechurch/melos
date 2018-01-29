@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
-import TopicComponent from '../features/Explore/components/TopicView'
+import TopicComponent from '../features/Explore/components/Topic'
 
 function TopicView(props) {
 	const { routeParams, location: { query } } = props
