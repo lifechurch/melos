@@ -20,6 +20,8 @@ build:
     - command build
   only:
     - branches
+  except:
+    - l10n_master  
 
 production:
   stage: production
