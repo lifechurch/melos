@@ -181,22 +181,16 @@
   }
   // hanging indents for quotes
   .iq, .iq1, .q, .q1, .qm, .qm1 {
-    padding-left: 2.5em;
-    text-indent: -1em;
-    //line-height: 1.5em
+    padding-left: 2em;
+    text-indent: -2em;
     line-height: $reader_line_height;
   }
   .iqt {
     margin-left: 1em;
   }
-  .iq2, .q2, .qm2, .iq3, .q3, .qm3 {
-    padding-left: 3.5em;
+  .iq2, .q2, .qm2, .iq3, .q3, .qm3, .iq4, .q4, .qm4 {
+    padding-left: 2em;
     text-indent: -1em;
-    //line-height: 1.5em
-    line-height: $reader_line_height;
-  }
-  .iq4, .q4, .qm4 {
-    padding-left: 3.5em;
     //line-height: 1.5em
     line-height: $reader_line_height;
   }
@@ -249,15 +243,7 @@
     font-style: italic;
     display: block;
   }
-  .q, .q1 {
-    text-indent: 1em;
-  }
-  .q2, .q3 {
-    text-indent: 2em;
-  }
-  .q4 {
-    text-indent: 3em;
-  }
+
   //Footnote additional paragraph
   .fp {
     margin-top: 1em;
