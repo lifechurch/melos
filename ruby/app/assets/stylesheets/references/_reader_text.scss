@@ -132,7 +132,7 @@
   .ipi {
     text-indent: 1em;
   }
-  .imt2, .imt3, .imt4 {
+  .imt2, .imt3, .imt4, .mt2, .mt3, .mt4 {
     font-size: 1em;
     line-height: $reader_line_height;
     margin: 0.5em 0;
@@ -158,7 +158,7 @@
     line-height: $reader_line_height;
     margin: 1em 0 0.5em;
   }
- 
+
   .ip, .im, .iex, .p, .m, .nb, .cls {
     font-size: 1em;
     line-height: $reader_line_height;
@@ -412,5 +412,10 @@
   // hide cross references in
   .vid191 .note.x {
     display: none !important;
+  }
+
+  /* Passion Translation */
+  .vid1849 .mt1, .vid1849 .mt2, .vid1849 .imt, .vid1849 .is {
+      text-align: center;
   }
 }
