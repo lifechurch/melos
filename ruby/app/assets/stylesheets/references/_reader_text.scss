@@ -139,11 +139,12 @@
     font-weight: bold;
   }
   .is, .is1, .s, .s1, .ms, .ms1 {
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-weight: bold;
     line-height: $reader_line_height;
-    margin: 0 0 1em 0;
+    margin: 0 0 0.5em 0;
   }
+
   // Font size should be set in the parent element: (for example .s)
   .heading {
     font-size: 1.03em;
@@ -153,11 +154,11 @@
     -webkit-font-smoothing: subpixel-antialiased;
   }
   .s2, .s3, .s4, .ms2, .ms3, .ms4 {
-    font-size: 0.85em;
     font-weight: bold;
     line-height: $reader_line_height;
-    margin: 0 0 1em 0;
+    margin: 1em 0 0.5em;
   }
+ 
   .ip, .im, .iex, .p, .m, .nb, .cls {
     font-size: 1em;
     line-height: $reader_line_height;
