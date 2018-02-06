@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
+import calcTodayVsStartDt from '@youversion/utils/lib/readingPlans/calcTodayVsStartDt'
 
 
 function PlanStartString({ start_dt, dateOnly }) {
