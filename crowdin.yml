@@ -12,6 +12,7 @@ files:
         pt-PT: pt-PT
         pt-BR: pt
         sv-SE: sv
+        fil: tl
   - source: /ruby/config/locales/kids/en.yml
     translation: /ruby/config/locales/kids/%osx_locale%.yml
     languages_mapping:
@@ -25,6 +26,7 @@ files:
         pt-PT: pt-PT
         pt-BR: pt
         sv-SE: sv
+        fil: tl
   - source: /ruby/config/locales/privacy_and_terms/en.yml
     translation: /ruby/config/locales/privacy_and_terms/%osx_locale%.yml
     languages_mapping:
@@ -38,3 +40,4 @@ files:
         pt-PT: pt-PT
         pt-BR: pt
         sv-SE: sv
+        fil: tl
