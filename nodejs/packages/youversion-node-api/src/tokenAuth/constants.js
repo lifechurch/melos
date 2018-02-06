@@ -1,0 +1,5 @@
+const TOKEN_PHRASE_ENV_KEY = 'YOUVERSION_TOKEN_PHRASE'
+
+export default {
+	TOKEN_PHRASE_ENV_KEY
+}

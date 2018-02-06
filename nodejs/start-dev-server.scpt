@@ -41,6 +41,16 @@ tell application "iTerm2"
 			end tell
 		end tell
 
+    # WATCH PACKAGES
+		create tab with default profile
+		tell current tab
+			tell current session
+				write text "export NPM_TOKEN=NotARealToken"
+				write text "cd '" & working_dir & "'"
+				write text "npm run dev:watch:packages"
+			end tell
+		end tell
+
 		# MEMCACHE
 		create tab with default profile
 		tell current tab

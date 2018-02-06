@@ -1,0 +1,54 @@
+{
+  "name": "@youversion/js-api",
+  "description": "YouVersion API Wrapper for Javascript",
+  "version": "1.0.17",
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@youversion/token-storage": "^0.0.45",
+    "bluebird": "2.10.2",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.4",
+    "express-jwt": "^3.3.0",
+    "jsonwebtoken": "^5.7.0",
+    "memcached": "^2.2.2",
+    "object-hash": "^1.1.7",
+    "qs": "^6.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.1.1",
+    "babel-helper-get-function-arity": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-react-intl": "^2.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-syntax-function-bind": "^6.3.13",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-function-bind": "^6.22.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0"
+  },
+  "browser": {
+    "./lib/api.js": "./lib/shim/api.js",
+    "./lib/index.js": "./lib/shim/index.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage",
+    "compile": "babel src --out-dir lib --copy-files",
+    "watch": "babel src --out-dir lib --copy-files --watch",
+    "prepublish": "npm run compile"
+  },
+  "false": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}

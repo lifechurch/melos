@@ -12,7 +12,7 @@ import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 import { getTogetherInvitations, getParticipantsUsers } from '@youversion/api-redux/lib/models'
 // utils
-import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
+import calcTodayVsStartDt from '@youversion/utils/lib/readingPlans/calcTodayVsStartDt'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import Routes from '@youversion/utils/lib/routes/routes'
 // components

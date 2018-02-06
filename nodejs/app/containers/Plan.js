@@ -17,7 +17,7 @@ import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getTogetherModel from '@youversion/api-redux/lib/models/together'
 // selectors
 // utils
-import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
+import calcTodayVsStartDt from '@youversion/utils/lib/readingPlans/calcTodayVsStartDt'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import calcCurrentPlanDay from '@youversion/utils/lib/readingPlans/calcCurrentPlanDay'
 import isFinalSegmentToComplete from '@youversion/utils/lib/readingPlans/isFinalSegmentToComplete'

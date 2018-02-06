@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
-import calcTodayVsStartDt from '@youversion/utils/lib/calcTodayVsStartDt'
+import calcTodayVsStartDt from '@youversion/utils/lib/readingPlans/calcTodayVsStartDt'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'
 import getBibleVersionFromStorage from '@youversion/utils/lib/bible/getBibleVersionFromStorage'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'

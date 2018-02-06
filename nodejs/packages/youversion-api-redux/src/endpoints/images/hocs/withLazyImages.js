@@ -1,0 +1,69 @@
+import React, { PropTypes } from 'react'
+import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
+import { SQUARE } from '@youversion/utils/lib/images/readingPlanDefault'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
+import Link from '@youversion/melos/dist/components/links/Link'
+import withImages from './withImages'
+
+
+function withLazyImages(WrappedComponent) {
+	function LazyImages(props) {
+		const { images, imgWidth, imgHeight, hiRes, linkBuilder, usfm } = props
+
+		return (
+			<WrappedComponent {...props}>
+				{
+					images
+						&& images.map((img) => {
+							const src = selectImageFromList({
+								images: img.renditions,
+								width: hiRes ? imgWidth * 2 : imgWidth,
+								height: hiRes ? imgHeight * 2 : imgHeight,
+							}).url
+							const lazyImg = (
+								<div className='horizontal-center' key={img.id}>
+									<LazyImage
+										src={src}
+										placeholder={<img alt='Default Placeholder' src={SQUARE} />}
+										width={imgWidth}
+										height={imgHeight}
+									/>
+								</div>
+							)
+							return (
+								linkBuilder
+									? (
+										<Link to={linkBuilder({ id: img.id, usfm })}>
+											{ lazyImg }
+										</Link>
+									)
+									: lazyImg
+							)
+						})
+				}
+			</WrappedComponent>
+		)
+	}
+
+	LazyImages.propTypes = {
+		images: PropTypes.array,
+		imgHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+		imgWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+		hiRes: PropTypes.bool,
+		linkBuilder: PropTypes.func,
+		usfm: PropTypes.string,
+	}
+
+	LazyImages.defaultProps = {
+		images: null,
+		imgHeight: 'auto',
+		imgWidth: 320,
+		hiRes: true,
+		linkBuilder: null,
+		usfm: null,
+	}
+
+	return withImages(LazyImages)
+}
+
+export default withLazyImages
