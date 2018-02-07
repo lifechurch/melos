@@ -97,6 +97,9 @@
   .mr + .s1 {
     margin-top: 1em;
   }
+  .d + .d {
+    margin-top: -1.5em;
+  }
   .chapter div:first-child {
     margin-top: 0;
   }
