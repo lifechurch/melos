@@ -1,6 +1,6 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :trending, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder, :enfants, :ar_kids, :wmf, :anak, :cocuk, :kodomo, :er_tong, :kinderbybel, :pambatang, :thaibafk, :thieunhi, :ragazzi, :dzieci, :copii, :votd, :barn, :hk_kids, :lasten, :ua_kids, :paidia, :ben_kids, :barnebibelen, :huuhduud]
+  before_filter :force_login, except: [:settings_notifications, :trending, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder, :enfants, :ar_kids, :wmf, :anak, :cocuk, :kodomo, :er_tong, :kinderbybel, :pambatang, :thaibafk, :thieunhi, :ragazzi, :dzieci, :copii, :votd, :barn, :hk_kids, :lasten, :ua_kids, :paidia, :ben_kids, :barnebibelen, :huuhduud, :yezingane]
 
   prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
   # skip_filter :set_page,
@@ -193,23 +193,27 @@ class RedirectsController < ApplicationController
     redirect_to('/zh-HK/kids')
   end
 
-	def ua_kids
-		redirect_to('/uk/kids')
-	end
+  def ua_kids
+  	redirect_to('/uk/kids')
+  end
 
-	def paidia
-		redirect_to('/el/kids')
-	end
+  def paidia
+  	redirect_to('/el/kids')
+  end
 
-	def ben_kids
-		redirect_to('/bn/kids')
-	end
+  def ben_kids
+  	redirect_to('/bn/kids')
+  end
 
   def barnebibelen
-      redirect_to('/no/kids')
+    redirect_to('/no/kids')
   end
 
   def huuhduud
-      redirect_to('/mn/kids')
+    redirect_to('/mn/kids')
+  end
+
+  def yezingane
+    redirect_to('/zu/kids')
   end
 end
