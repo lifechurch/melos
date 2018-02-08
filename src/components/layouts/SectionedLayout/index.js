@@ -31,6 +31,7 @@ function SectionedLayout({ className, style, left, right, children }) {
       <Div
         position="absolute"
         right="0"
+        left="100%"
         display="flex"
         alignItems="center"
       >

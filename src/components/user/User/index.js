@@ -31,7 +31,8 @@ function User(props) {
           padding="0 10px"
           flexDirection="column"
           display="flex"
-          alignItems="center"
+          alignItems="start"
+          justifyContent="center"
         >
           {headingContent}
           {subHeadingContent}

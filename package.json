@@ -1,6 +1,6 @@
 {
   "name": "@youversion/melos",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Open source library of React components from the YouVersion Bible.com team",
   "main": "index.js",
   "scripts": {
@@ -20,17 +20,17 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@youversion/utils": "1.0.33",
+    "@youversion/utils": "^1.0.40",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
-    "immutable": "^3.8.2",
+    "immutable": "^3.8.1",
     "jest-glamor-react": "^1.2.0",
     "prop-types": "^15.6.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-router": "^3.0.5",
     "react-test-renderer": "^15.6.2",
-    "react-waypoint": "^7.3.1"
+    "react-waypoint": "^7.3.4"
   },
   "jest": {
     "verbose": true,
@@ -73,28 +73,29 @@
     "@storybook/addon-info": "^3.2.13",
     "@storybook/addon-links": "^3.2.13",
     "@storybook/react": "^3.2.13",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^19.0.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.6.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
-    "enzyme": "^2.9.1",
+    "enzyme": "^2.8.0",
     "enzyme-adapter-react-15": "^1.0.5",
     "eslint": "^3.14.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
-    "jest": "^20.0.4",
+    "jest": "^19.0.2",
     "jest-cli": "^20.0.3",
     "jest-enzyme": "^3.0.0",
     "jsdom": "^9.12.0",
     "less": "^2.7.2",
-    "less-loader": "^3.0.0",
+    "less-loader": "^4.0.4",
     "react-storybook-addon-chapters": "^2.0.0",
-    "webpack": "^3.8.1"
+    "webpack": "^3.0.0"
   }
 }

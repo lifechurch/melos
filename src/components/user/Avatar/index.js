@@ -16,6 +16,7 @@ function Avatar(props) {
       alignItems="center"
       justifyContent="center"
       color="#777777"
+      backgroundColor="#f5f5f5"
     >
       {placeholderText}
     </Div>
