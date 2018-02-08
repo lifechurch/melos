@@ -245,7 +245,7 @@ module.exports = warning;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -872,7 +872,7 @@ module.exports = { "default": __webpack_require__(497), __esModule: true };
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 function makeEmptyFunction(arg) {
@@ -961,7 +961,7 @@ exports.f = __webpack_require__(23) ? Object.defineProperty : function definePro
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -1325,7 +1325,7 @@ module.exports = function (fn, that, length) {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -3972,7 +3972,7 @@ module.exports = function (it, key) {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -5619,7 +5619,7 @@ module.exports = win;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -6632,7 +6632,7 @@ module.exports = emptyObject;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -8688,7 +8688,7 @@ module.exports = __webpack_require__(413);
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -9173,7 +9173,7 @@ module.exports = EventPluginUtils;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -9829,7 +9829,7 @@ module.exports = LinkedValueUtils;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -9877,7 +9877,7 @@ module.exports = ReactComponentEnvironment;
  * LICENSE file in the root directory of this source tree.
  *
  * @typechecks
- * 
+ *
  */
 
 /*eslint-disable no-self-compare */
@@ -9992,7 +9992,7 @@ module.exports = shouldUpdateReactComponent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -14362,7 +14362,7 @@ module.exports = ReactNoopUpdateQueue;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -14391,7 +14391,7 @@ module.exports = canDefineProperty;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -14480,7 +14480,7 @@ module.exports = ReactDOMComponentFlags;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -14541,7 +14541,7 @@ module.exports = accumulateInto;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -14611,7 +14611,7 @@ module.exports = getTextContentAccessor;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -14733,7 +14733,7 @@ module.exports = PooledClass.addPoolingTo(CallbackQueue);
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -14884,7 +14884,7 @@ module.exports = inputValueTracking;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -15294,7 +15294,7 @@ module.exports = hyphenateStyleName;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  * @typechecks static-only
  */
 
@@ -15900,7 +15900,7 @@ module.exports = instantiateReactComponent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -16226,7 +16226,7 @@ module.exports = traverseAllChildren;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -18851,7 +18851,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
           warning(
             typeof typeDef[propName] === 'function',
             '%s: %s type `%s` is invalid; it must be a function, usually from ' +
-              'React.PropTypes.',
+              'PropTypes.',
             Constructor.displayName || 'ReactClass',
             ReactPropTypeLocationNames[location],
             propName
@@ -20369,7 +20369,7 @@ exports.default = Card;
       var array = this._array;
       var maxIndex = array.length - 1;
       var ii = 0;
-      return new Iterator(function() 
+      return new Iterator(function()
         {return ii > maxIndex ?
           iteratorDone() :
           iteratorValue(type, ii, array[reverse ? maxIndex - ii++ : ii++])}
@@ -20840,7 +20840,7 @@ exports.default = Card;
 
     Repeat.prototype.__iterator = function(type, reverse) {var this$0 = this;
       var ii = 0;
-      return new Iterator(function() 
+      return new Iterator(function()
         {return ii < this$0.size ? iteratorValue(type, ii++, this$0._value) : iteratorDone()}
       );
     };
@@ -23038,7 +23038,7 @@ exports.default = Card;
         return flipSequence;
       };
     }
-    reversedSequence.get = function(key, notSetValue) 
+    reversedSequence.get = function(key, notSetValue)
       {return iterable.get(useKeys ? key : -1 - key, notSetValue)};
     reversedSequence.has = function(key )
       {return iterable.has(useKeys ? key : -1 - key)};
@@ -23237,7 +23237,7 @@ exports.default = Card;
         return this.cacheResult().__iterate(fn, reverse);
       }
       var iterations = 0;
-      iterable.__iterate(function(v, k, c) 
+      iterable.__iterate(function(v, k, c)
         {return predicate.call(context, v, k, c) && ++iterations && fn(v, k, this$0)}
       );
       return iterations;
@@ -23428,7 +23428,7 @@ exports.default = Card;
     interposedSequence.size = iterable.size && iterable.size * 2 -1;
     interposedSequence.__iterateUncached = function(fn, reverse) {var this$0 = this;
       var iterations = 0;
-      iterable.__iterate(function(v, k) 
+      iterable.__iterate(function(v, k)
         {return (!iterations || fn(separator, iterations++, this$0) !== false) &&
         fn(v, iterations++, this$0) !== false},
         reverse
@@ -35661,7 +35661,7 @@ module.exports = ReactChildren;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -35955,7 +35955,7 @@ module.exports = traverseAllChildren;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -35999,7 +35999,7 @@ module.exports = getIteratorFn;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -36415,7 +36415,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
             'Read more at http://fb.me/use-check-prop-types'
           );
         } else if (false) {
-          // Old behavior for people using React.PropTypes
+          // Old behavior for people using PropTypes
           var cacheKey = componentName + ':' + propName;
           if (
             !manualPropTypeCallCache[cacheKey] &&
@@ -36424,7 +36424,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
           ) {
             warning(
               false,
-              'You are manually calling a React.PropTypes validation ' +
+              'You are manually calling a PropTypes validation ' +
               'function for the `%s` prop on `%s`. This is deprecated ' +
               'and will throw in the standalone `prop-types` package. ' +
               'You may be seeing this warning due to a third-party PropTypes ' +
@@ -38113,7 +38113,7 @@ module.exports = ChangeEventPlugin;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -38205,7 +38205,7 @@ module.exports = ReactRef;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -40975,7 +40975,7 @@ module.exports = ReactDOMInput;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -42792,7 +42792,7 @@ module.exports = ReactCompositeComponent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -42816,7 +42816,7 @@ module.exports = getNextDebugID;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -42839,7 +42839,7 @@ module.exports = REACT_ELEMENT_TYPE;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -42883,7 +42883,7 @@ module.exports = getIteratorFn;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -43056,7 +43056,7 @@ module.exports = ReactServerRenderingTransaction;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -44348,7 +44348,7 @@ module.exports = getNodeForCharacterOffset;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 var isTextNode = __webpack_require__(465);
@@ -44941,7 +44941,7 @@ module.exports = SelectEventPlugin;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -45788,7 +45788,7 @@ module.exports = ReactMarkupChecksum;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -51044,13 +51044,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-/* 
+/*
 
-high performance StyleSheet for css-in-js systems 
+high performance StyleSheet for css-in-js systems
 
-- uses multiple style tags behind the scenes for millions of rules 
+- uses multiple style tags behind the scenes for millions of rules
 - uses `insertRule` for appending in production for *much* faster performance
-- 'polyfills' on server side 
+- 'polyfills' on server side
 
 
 // usage
@@ -51058,13 +51058,13 @@ high performance StyleSheet for css-in-js systems
 import StyleSheet from 'glamor/lib/sheet'
 let styleSheet = new StyleSheet()
 
-styleSheet.inject() 
+styleSheet.inject()
 - 'injects' the stylesheet into the page (or into memory if on server)
 
-styleSheet.insert('#box { border: 1px solid red; }') 
-- appends a css rule into the stylesheet 
+styleSheet.insert('#box { border: 1px solid red; }')
+- appends a css rule into the stylesheet
 
-styleSheet.flush() 
+styleSheet.flush()
 - empties the stylesheet of all its contents
 
 
@@ -51079,7 +51079,7 @@ function sheetForTag(tag) {
     return tag.sheet;
   }
 
-  // this weirdness brought to you by firefox 
+  // this weirdness brought to you by firefox
   for (var i = 0; i < document.styleSheets.length; i++) {
     if (document.styleSheets[i].ownerNode === tag) {
       return document.styleSheets[i];
@@ -51139,8 +51139,8 @@ function StyleSheet() {
       this.sheet = {
         cssRules: [],
         insertRule: function insertRule(rule) {
-          // enough 'spec compliance' to be able to extract the rules later  
-          // in other words, just the cssText field 
+          // enough 'spec compliance' to be able to extract the rules later
+          // in other words, just the cssText field
           _this.sheet.cssRules.push({ cssText: rule });
         }
       };
@@ -51154,14 +51154,14 @@ function StyleSheet() {
     this.isSpeedy = !!bool;
   },
   _insert: function _insert(rule) {
-    // this weirdness for perf, and chrome's weird bug 
+    // this weirdness for perf, and chrome's weird bug
     // https://stackoverflow.com/questions/20007992/chrome-suddenly-stopped-accepting-insertrule
     try {
       var sheet = this.getSheet();
       sheet.insertRule(rule, rule.indexOf('@import') !== -1 ? 0 : sheet.cssRules.length);
     } catch (e) {
       if (isDev) {
-        // might need beter dx for this 
+        // might need beter dx for this
         console.warn('whoops, illegal rule inserted', rule); //eslint-disable-line no-console
       }
     }
@@ -51169,12 +51169,12 @@ function StyleSheet() {
   insert: function insert(rule) {
 
     if (isBrowser) {
-      // this is the ultrafast version, works across browsers 
+      // this is the ultrafast version, works across browsers
       if (this.isSpeedy && this.getSheet().insertRule) {
         this._insert(rule);
       }
-      // more browser weirdness. I don't even know    
-      // else if(this.tags.length > 0 && this.tags::last().styleSheet) {      
+      // more browser weirdness. I don't even know
+      // else if(this.tags.length > 0 && this.tags::last().styleSheet) {
       //   this.tags::last().styleSheet.cssText+= rule
       // }
       else {
@@ -51186,7 +51186,7 @@ function StyleSheet() {
           }
         }
     } else {
-      // server side is pretty simple         
+      // server side is pretty simple
       this.sheet.insertRule(rule, rule.indexOf('@import') !== -1 ? 0 : this.sheet.cssRules.length);
     }
 
@@ -51197,21 +51197,21 @@ function StyleSheet() {
     return this.ctr - 1;
   },
 
-  // commenting this out till we decide on v3's decision 
+  // commenting this out till we decide on v3's decision
   // _replace(index, rule) {
-  //   // this weirdness for perf, and chrome's weird bug 
+  //   // this weirdness for perf, and chrome's weird bug
   //   // https://stackoverflow.com/questions/20007992/chrome-suddenly-stopped-accepting-insertrule
-  //   try {  
-  //     let sheet = this.getSheet()        
-  //     sheet.deleteRule(index) // todo - correct index here     
+  //   try {
+  //     let sheet = this.getSheet()
+  //     sheet.deleteRule(index) // todo - correct index here
   //     sheet.insertRule(rule, index)
   //   }
   //   catch(e) {
   //     if(isDev) {
-  //       // might need beter dx for this 
+  //       // might need beter dx for this
   //       console.warn('whoops, problem replacing rule', rule) //eslint-disable-line no-console
-  //     }          
-  //   }          
+  //     }
+  //   }
 
   // }
   // replace(index, rule) {
@@ -51220,7 +51220,7 @@ function StyleSheet() {
   //       this._replace(index, rule)
   //     }
   //     else {
-  //       let _slot = Math.floor((index  + this.maxLength) / this.maxLength) - 1        
+  //       let _slot = Math.floor((index  + this.maxLength) / this.maxLength) - 1
   //       let _index = (index % this.maxLength) + 1
   //       let tag = this.tags[_slot]
   //       tag.replaceChild(document.createTextNode(rule), tag.childNodes[_index])
@@ -51245,7 +51245,7 @@ function StyleSheet() {
       this.ctr = 0;
       // todo - look for remnants in document.styleSheets
     } else {
-      // simpler on server 
+      // simpler on server
       this.sheet.cssRules = [];
     }
     this.injected = false;
@@ -51572,7 +51572,7 @@ function cleanArray(rules) {
   return filtered.length == 0 ? null : hasFalsy ? filtered : rules;
 }
 
-// Takes style array or object provided by user and clears all the falsy data 
+// Takes style array or object provided by user and clears all the falsy data
 // If there is no styles left after filtration returns null
 function clean(input) {
   return Array.isArray(input) ? cleanArray(input) : cleanObject(input);
@@ -51660,8 +51660,8 @@ function fallbacks(node) {
       o[key] = Array.isArray(style[key]) ? style[key].join('; ' + (0, _CSSPropertyOperations.processStyleName)(key) + ': ') : style[key];
       return o;
     }, {});
-    // todo - 
-    // flatten arrays which haven't been flattened yet 
+    // todo -
+    // flatten arrays which haven't been flattened yet
     return (0, _objectAssign2.default)({}, node, { style: flattened });
   }
   return node;
@@ -54549,7 +54549,7 @@ function escape(html, encode) {
 }
 
 function unescape(html) {
-	// explicitly match decimal, hex, and named HTML entities 
+	// explicitly match decimal, hex, and named HTML entities
   return html.replace(/&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/g, function(_, n) {
     n = n.toLowerCase();
     if (n === 'colon') return ':';

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import getProportionalSize from '@youversion/utils/lib/images/imageProportions'
 
 function FacebookInverted({ width, height, fill, className }) {

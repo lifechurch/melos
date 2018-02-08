@@ -18458,7 +18458,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
           warning(
             typeof typeDef[propName] === 'function',
             '%s: %s type `%s` is invalid; it must be a function, usually from ' +
-              'React.PropTypes.',
+              'PropTypes.',
             Constructor.displayName || 'ReactClass',
             ReactPropTypeLocationNames[location],
             propName
@@ -35868,7 +35868,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
             'Read more at http://fb.me/use-check-prop-types'
           );
         } else if (false) {
-          // Old behavior for people using React.PropTypes
+          // Old behavior for people using PropTypes
           var cacheKey = componentName + ':' + propName;
           if (
             !manualPropTypeCallCache[cacheKey] &&
@@ -35877,7 +35877,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
           ) {
             warning(
               false,
-              'You are manually calling a React.PropTypes validation ' +
+              'You are manually calling a PropTypes validation ' +
               'function for the `%s` prop on `%s`. This is deprecated ' +
               'and will throw in the standalone `prop-types` package. ' +
               'You may be seeing this warning due to a third-party PropTypes ' +

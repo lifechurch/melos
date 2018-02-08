@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Link as RouterLink } from 'react-router'
 
 function Link({ to, href, onClick, children, className, target }) {
