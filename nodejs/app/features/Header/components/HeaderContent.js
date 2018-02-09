@@ -233,16 +233,16 @@ class HeaderContent extends Component {
 					<IconButton label={<FormattedMessage id="header.plans" />} useClientRouting={false} to={localizedLink('/reading-plans', serverLanguageTag)}>
 						<Plans />
 					</IconButton>
-					<IconButton
+					{/* <IconButton
 						label={<FormattedMessage id="explore" />}
 						useClientRouting={false}
 						to={Routes.explore({
 							serverLanguageTag,
 							query: { version: getBibleVersionFromStorage(serverLanguageTag) }
 						})}
-					>
+            >
 						<Explore className='explore-icon' />
-					</IconButton>
+					</IconButton> */}
 					<IconButton label={<FormattedMessage id="header.videos" />} useClientRouting={false} to={localizedLink('/videos', serverLanguageTag)}>
 						<Videos />
 					</IconButton>
