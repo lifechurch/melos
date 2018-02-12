@@ -98,7 +98,7 @@
     margin-top: 1em;
   }
   .d + .d {
-    margin-top: -1.5em;
+    margin-top: -1.25em;
   }
   .chapter div:first-child {
     margin-top: 0;
@@ -420,5 +420,11 @@
   /* Passion Translation */
   .vid1849 .mt1, .vid1849 .mt2, .vid1849 .imt, .vid1849 .is {
       text-align: center;
+  }
+  .vid1849 .q1 {
+    text-indent: -1em;
+  }
+  .vid1849 .q2, .vid1849 .q3 {
+    text-indent: 0em;
   }
 }
