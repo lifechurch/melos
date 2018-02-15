@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import LocalStore from '@youversion/utils/lib/localStore'
 import PlayButton from './PlayButton'
 import PauseButton from './PauseButton'
@@ -349,13 +350,13 @@ class AudioPlayer extends Component {
 }
 
 AudioPlayer.propTypes = {
-	audio: React.PropTypes.object.isRequired,
+	audio: PropTypes.object.isRequired,
 	startTime: PropTypes.number,
 	stopTime: PropTypes.number,
-	onTimeChange: React.PropTypes.func,
-	hasStandalone: React.PropTypes.bool,
-	onResumeFromStandalone: React.PropTypes.func,
-	hosts: React.PropTypes.object
+	onTimeChange: PropTypes.func,
+	hasStandalone: PropTypes.bool,
+	onResumeFromStandalone: PropTypes.func,
+	hosts: PropTypes.object
 }
 
 AudioPlayer.defaultProps = {

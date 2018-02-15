@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import CustomScroll from 'react-custom-scroll'
 import localizedLink from '@youversion/utils/lib/routes/localizedLink'

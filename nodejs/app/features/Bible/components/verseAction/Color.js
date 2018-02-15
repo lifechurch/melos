@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import shadeColor from '@youversion/utils/lib/shadeColor'
 import XMark from '../../../../components/XMark'
 
@@ -70,9 +71,9 @@ class Color extends Component {
  * 		@deleteColor					function to show X and delete color
  */
 Color.propTypes = {
-	color: React.PropTypes.string,
-	onSelect: React.PropTypes.func,
-	deleteColor: React.PropTypes.func,
+	color: PropTypes.string,
+	onSelect: PropTypes.func,
+	deleteColor: PropTypes.func,
 }
 
 export default Color

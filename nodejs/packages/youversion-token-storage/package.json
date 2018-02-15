@@ -1,7 +1,8 @@
 {
 		"name": "@youversion/token-storage",
-		"version": "0.0.45",
+		"version": "0.0.49",
 		"description": "YouVersion Token Storage",
+		"license": "ISC",
 		"main": "./lib/index.js",
 		"scripts": {
 				"test": "jest",
@@ -25,7 +26,7 @@
 				"babel-plugin-transform-class-properties": "^6.24.1",
 				"babel-plugin-transform-function-bind": "^6.22.0",
 				"babel-plugin-transform-object-assign": "^6.22.0",
-				"babel-plugin-transform-object-rest-spread": "^6.23.0",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
 				"babel-polyfill": "^6.23.0",
 				"babel-preset-env": "^1.5.2",
 				"babel-preset-react": "^6.24.1",

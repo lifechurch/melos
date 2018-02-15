@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { push } from 'react-router-redux'
 import { FormattedMessage } from 'react-intl'
 import Heading from '@youversion/melos/dist/components/typography/Heading1'

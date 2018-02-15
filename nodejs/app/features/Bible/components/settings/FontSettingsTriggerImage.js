@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class FontSettingsTriggerImage extends Component {
 	render() {
@@ -17,9 +18,9 @@ class FontSettingsTriggerImage extends Component {
 }
 
 FontSettingsTriggerImage.propTypes = {
-	width: React.PropTypes.number,
-	height: React.PropTypes.number,
-	color: React.PropTypes.string,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	color: PropTypes.string,
 }
 
 FontSettingsTriggerImage.defaultProps = {

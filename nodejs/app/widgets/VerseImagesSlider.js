@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import withLazyImages from '@youversion/api-redux/lib/endpoints/images/hocs/withLazyImages'
 import Slider from '../components/Slider'
 

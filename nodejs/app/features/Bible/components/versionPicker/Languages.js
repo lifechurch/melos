@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Languages extends Component {
 
@@ -61,13 +62,13 @@ class Languages extends Component {
  * 		@focus								allow mouse over and key actions on list items
  */
 Languages.propTypes = {
-	list: React.PropTypes.array,
-	header: React.PropTypes.string,
-	onSelect: React.PropTypes.func,
-	initialSelection: React.PropTypes.string,
-	onMouseOver: React.PropTypes.func,
-	listSelectionIndex: React.PropTypes.number,
-	focus: React.PropTypes.bool
+	list: PropTypes.array,
+	header: PropTypes.string,
+	onSelect: PropTypes.func,
+	initialSelection: PropTypes.string,
+	onMouseOver: PropTypes.func,
+	listSelectionIndex: PropTypes.number,
+	focus: PropTypes.bool
 }
 
 export default Languages

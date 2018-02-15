@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
 import Ellipsis from '../../../../components/icons/Ellipsis'
@@ -160,10 +161,10 @@ class ColorList extends Component {
 }
 
 ColorList.propTypes = {
-	list: React.PropTypes.array.isRequired,
-	deletableColors: React.PropTypes.array,
-	onClick: React.PropTypes.func,
-	deleteColor: React.PropTypes.func,
+	list: PropTypes.array.isRequired,
+	deletableColors: PropTypes.array,
+	onClick: PropTypes.func,
+	deleteColor: PropTypes.func,
 	isRtl: PropTypes.bool,
 }
 

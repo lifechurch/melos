@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getFriendshipRequests } from '@youversion/api-redux/lib/endpoints/friendships/reducer'
 import { getNotifications } from '@youversion/api-redux/lib/endpoints/notifications/reducer'

@@ -1,0 +1,3 @@
+[submodule "nodejs/packages/melos"]
+	path = nodejs/packages/melos
+	url = https://github.com/lifechurch/melos.git

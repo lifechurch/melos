@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import momentsAction from '@youversion/api-redux/lib/endpoints/moments/action'

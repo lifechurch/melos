@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Placeholder from './buildingBlocks/Placeholder'
 import PlaceholderShape from './buildingBlocks/PlaceholderShape'
 import PlaceholderText from './buildingBlocks/PlaceholderText'

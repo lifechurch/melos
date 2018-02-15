@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Row from '../../../components/Row'
 import Column from '../../../components/Column'
 import ActionCreators from '../../EventEdit/features/content/actions/creators'

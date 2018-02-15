@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import { Link } from 'react-router'
 import PLAN_DEFAULT from '@youversion/utils/lib/images/readingPlanDefault'

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import CustomScroll from 'react-custom-scroll'
 import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'

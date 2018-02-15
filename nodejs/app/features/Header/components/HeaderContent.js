@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import friendshipsAction from '@youversion/api-redux/lib/endpoints/friendships/action'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'

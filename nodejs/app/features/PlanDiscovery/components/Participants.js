@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import Heading from '@youversion/melos/dist/components/typography/Heading1'
 import SectionedLayout from '@youversion/melos/dist/components/layouts/SectionedLayout'

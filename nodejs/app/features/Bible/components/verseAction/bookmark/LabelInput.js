@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import PlusButton from '../../../../../components/PlusButton'
 import LabelIcon from '../../../../../components/LabelIcon'
 import LabelList from './LabelList'
@@ -91,12 +92,12 @@ class LabelInput extends Component {
  * 		@onBlur								function to call when clicking out of the input field
  */
 LabelInput.propTypes = {
-	input: React.PropTypes.string,
-	disabled: React.PropTypes.bool,
-	onKeyDown: React.PropTypes.func,
-	onClick: React.PropTypes.func,
-	onChange: React.PropTypes.func,
-	onBlur: React.PropTypes.func
+	input: PropTypes.string,
+	disabled: PropTypes.bool,
+	onKeyDown: PropTypes.func,
+	onClick: PropTypes.func,
+	onChange: PropTypes.func,
+	onBlur: PropTypes.func
 }
 
 export default LabelInput

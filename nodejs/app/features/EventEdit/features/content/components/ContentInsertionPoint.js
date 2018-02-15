@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import ActionCreators from '../actions/creators'
 import { FormattedMessage } from 'react-intl'
 import CheckImage from '../../../../../../images/check.png'
@@ -69,7 +70,7 @@ class ContentInsertionPoint extends Component {
 }
 
 ContentInsertionPoint.propTypes = {
-	index: React.PropTypes.number.isRequired
+	index: PropTypes.number.isRequired
 }
 
 export default ContentInsertionPoint

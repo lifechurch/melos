@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class SeekButton extends Component {
 	constructor(props) {
@@ -39,11 +40,11 @@ class SeekButton extends Component {
 }
 
 SeekButton.propTypes = {
-	width: React.PropTypes.number,
-	height: React.PropTypes.number,
-	color: React.PropTypes.string,
-	onClick: React.PropTypes.func,
-	increment: React.PropTypes.number
+	width: PropTypes.number,
+	height: PropTypes.number,
+	color: PropTypes.string,
+	onClick: PropTypes.func,
+	increment: PropTypes.number
 }
 
 SeekButton.defaultProps = {

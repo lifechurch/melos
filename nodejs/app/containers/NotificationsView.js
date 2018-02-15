@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import rtlDetect from 'rtl-detect'
 import { FormattedMessage } from 'react-intl'
 import Settings from '../components/icons/Settings'

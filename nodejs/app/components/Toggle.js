@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import CheckMark from './CheckMark'
 
 class Toggle extends Component {
@@ -34,8 +35,8 @@ class Toggle extends Component {
 }
 
 Toggle.propTypes = {
-	label: React.PropTypes.node,
-	initialValue: React.PropTypes.bool
+	label: PropTypes.node,
+	initialValue: PropTypes.bool
 }
 
 Toggle.defaultProps = {

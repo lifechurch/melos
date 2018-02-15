@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../../../actions/creators'
 import LabelList from './LabelList'
@@ -62,9 +63,9 @@ class LabelsModal extends Component {
 }
 
 LabelsModal.propTypes = {
-	byCount: React.PropTypes.array,
-	byAlphabetical: React.PropTypes.array,
-	addLabels: React.PropTypes.func
+	byCount: PropTypes.array,
+	byAlphabetical: PropTypes.array,
+	addLabels: PropTypes.func
 }
 
 export default LabelsModal

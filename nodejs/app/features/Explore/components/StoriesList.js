@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import withVersion from '@youversion/api-redux/lib/endpoints/bible/hocs/withVersion'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'

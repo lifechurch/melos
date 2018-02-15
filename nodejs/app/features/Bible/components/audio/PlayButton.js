@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class PlayButton extends Component {
 	constructor(props) {
@@ -26,10 +27,10 @@ class PlayButton extends Component {
 }
 
 PlayButton.propTypes = {
-	width: React.PropTypes.number,
-	height: React.PropTypes.number,
-	color: React.PropTypes.string,
-	onClick: React.PropTypes.func
+	width: PropTypes.number,
+	height: PropTypes.number,
+	color: PropTypes.string,
+	onClick: PropTypes.func
 }
 
 PlayButton.defaultProps = {

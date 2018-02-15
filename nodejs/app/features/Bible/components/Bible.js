@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
 import Helmet from 'react-helmet'

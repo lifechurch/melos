@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 const VALID_COLUMN_COUNTS = [1, 2, 3, 4]
 
 /**
@@ -30,9 +31,9 @@ class ButtonBarButton extends Component {
 }
 
 ButtonBarButton.propTypes = {
-	item: React.PropTypes.object.isRequired,
-	selectedClass: React.PropTypes.string.isRequired,
-	onClick: React.PropTypes.func.isRequired
+	item: PropTypes.object.isRequired,
+	selectedClass: PropTypes.string.isRequired,
+	onClick: PropTypes.func.isRequired
 }
 
 

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import ThinXImage from '../../../../../../images/thin-x.png'
 import ActionCreators from '../actions/creators'
 import moment from 'moment'

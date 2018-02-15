@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 
 class SelectableLabel extends Component {
@@ -35,10 +36,10 @@ class SelectableLabel extends Component {
  * 		@count								number of times the label has been used
  */
 SelectableLabel.propTypes = {
-	label: React.PropTypes.string.isRequired,
-	onSelect: React.PropTypes.func,
-	count: React.PropTypes.number,
-	index: React.PropTypes.number
+	label: PropTypes.string.isRequired,
+	onSelect: PropTypes.func,
+	count: PropTypes.number,
+	index: PropTypes.number
 }
 
 export default SelectableLabel

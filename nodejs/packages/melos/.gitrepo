@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/lifechurch/melos.git
+	branch = master
+	commit = bef916ec36e2f93e28f0e9bbc318072830ababcb
+	parent = 5b1bfe56375a3046ac5d20189f3328fc7001e431
+	cmdver = 0.3.1

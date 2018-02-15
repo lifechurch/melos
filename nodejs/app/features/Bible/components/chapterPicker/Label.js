@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import DropDownArrow from '../../../../components/DropDownArrow'
 
 class Label extends Component {
@@ -64,12 +65,12 @@ class Label extends Component {
  * 		@onBlur								function to call when clicking out of the input field
  */
 Label.propTypes = {
-	input: React.PropTypes.string,
-	disabled: React.PropTypes.bool,
-	onKeyDown: React.PropTypes.func,
-	onClick: React.PropTypes.func,
-	onChange: React.PropTypes.func,
-	onBlur: React.PropTypes.func
+	input: PropTypes.string,
+	disabled: PropTypes.bool,
+	onKeyDown: PropTypes.func,
+	onClick: PropTypes.func,
+	onChange: PropTypes.func,
+	onBlur: PropTypes.func
 }
 
 export default Label

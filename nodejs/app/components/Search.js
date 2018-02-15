@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Input from './Input'
 import SearchIcon from './icons/SearchIcon'
 import XMark from './XMark'
