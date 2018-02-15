@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Column extends Component {
 	render() {
@@ -21,7 +22,7 @@ Column.propTypes = {
 			return new Error('Validation failed!');
 		}
 	},
-	a: React.PropTypes.oneOf(['left', 'center', 'right'])
+	a: PropTypes.oneOf(['left', 'center', 'right'])
 }
 
 export default Column

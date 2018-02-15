@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { ActionCreators } from '../../../../../actions/modals'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import localeFeatures from '../../../../../../locales/config/localeFeatures.json'

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class PauseButton extends Component {
 	constructor(props) {
@@ -26,10 +27,10 @@ class PauseButton extends Component {
 }
 
 PauseButton.propTypes = {
-	width: React.PropTypes.number,
-	height: React.PropTypes.number,
-	color: React.PropTypes.string,
-	onClick: React.PropTypes.func
+	width: PropTypes.number,
+	height: PropTypes.number,
+	color: PropTypes.string,
+	onClick: PropTypes.func
 }
 
 PauseButton.defaultProps = {

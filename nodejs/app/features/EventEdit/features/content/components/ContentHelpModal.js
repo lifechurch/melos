@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import ThinXImage from '../../../../../../images/thin-x.png'

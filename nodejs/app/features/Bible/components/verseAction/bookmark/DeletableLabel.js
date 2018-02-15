@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import XMark from '../../../../../components/XMark'
 
 
@@ -35,8 +36,8 @@ class DeletableLabel extends Component {
  * 		@onDelete							function to call when deleting label
  */
 DeletableLabel.propTypes = {
-	label: React.PropTypes.string.isRequired,
-	onDelete: React.PropTypes.func
+	label: PropTypes.string.isRequired,
+	onDelete: PropTypes.func
 }
 
 export default DeletableLabel

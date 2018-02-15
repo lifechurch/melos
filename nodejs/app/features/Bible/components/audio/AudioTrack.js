@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class AudioTrack extends Component {
 	constructor(props) {
@@ -35,10 +36,10 @@ class AudioTrack extends Component {
 }
 
 AudioTrack.propTypes = {
-	percentComplete: React.PropTypes.number,
-	duration: React.PropTypes.number,
-	currentTime: React.PropTypes.number,
-	onSeek: React.PropTypes.func
+	percentComplete: PropTypes.number,
+	duration: PropTypes.number,
+	currentTime: PropTypes.number,
+	onSeek: PropTypes.func
 }
 
 AudioTrack.defaultProps = {

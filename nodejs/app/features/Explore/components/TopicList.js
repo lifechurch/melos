@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import withTopicsData from '@youversion/api-redux/lib/endpoints/explore/hocs/withTopics'
 import ButtonStroke from '@youversion/melos/dist/components/links/ButtonStroke'
 import Routes from '@youversion/utils/lib/routes/routes'

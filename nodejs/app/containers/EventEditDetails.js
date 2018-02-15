@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import DetailsEdit from '../features/EventEdit/features/details/components/DetailsEdit'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'

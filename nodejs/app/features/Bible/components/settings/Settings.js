@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import FontSettingsTriggerImage from './FontSettingsTriggerImage'
 import TriggerButton from '../../../../components/TriggerButton'
@@ -88,11 +89,11 @@ class Settings extends Component {
 }
 
 Settings.propTypes = {
-	onChange: React.PropTypes.func,
-	initialFontSize: React.PropTypes.number,
-	initialFontFamily: React.PropTypes.string,
-	initialShowFootnotes: React.PropTypes.bool,
-	initialShowVerseNumbers: React.PropTypes.bool
+	onChange: PropTypes.func,
+	initialFontSize: PropTypes.number,
+	initialFontFamily: PropTypes.string,
+	initialShowFootnotes: PropTypes.bool,
+	initialShowVerseNumbers: PropTypes.bool
 }
 
 Settings.defaultProps = {

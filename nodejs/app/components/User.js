@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Avatar from './Avatar'
 
 function User(props) {
@@ -55,7 +56,7 @@ User.propTypes = {
 	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	link: PropTypes.string,
 	onClick: PropTypes.func,
-	heading: PropTypes.string,
+	heading: PropTypes.node,
 	subheading: PropTypes.string,
 	children: PropTypes.node,
 }

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
 import getReferencesTitle from '@youversion/utils/lib/bible/getReferencesTitle'

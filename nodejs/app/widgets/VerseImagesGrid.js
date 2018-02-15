@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import withVotd from '@youversion/api-redux/lib/endpoints/moments/hocs/withVotd'
 import { SQUARE } from '@youversion/utils/lib/images/readingPlanDefault'
 import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
@@ -21,7 +22,7 @@ function VerseImagesGrid(props) {
 						.replace('{image_id}', day.image_id)
 					const lazyImg = (
 						<div
-							key={day.id}
+							key={day.day}
 							className='horizontal-center'
 							style={{ margin: '0 2.5px 5px 2.5px' }}
 						>
@@ -36,7 +37,7 @@ function VerseImagesGrid(props) {
 					return (
 						linkBuilder
 							? (
-								<Link to={linkBuilder({ id: day.id, usfm: day.usfm })}>
+								<Link key={day.day} to={linkBuilder({ id: day.id, usfm: day.usfm })}>
 									{ lazyImg }
 								</Link>
 							)

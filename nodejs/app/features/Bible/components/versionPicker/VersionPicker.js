@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { injectIntl } from 'react-intl'
 import { push } from 'react-router-redux'
 import withVersions from '@youversion/api-redux/lib/endpoints/bible/hocs/withVersions'

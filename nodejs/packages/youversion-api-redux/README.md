@@ -36,7 +36,8 @@ A barebones `PlanInfo.js` component that just grabs the data it needs would look
 
 ``` javascript
 // PlanInfo.js
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 // actions
 import plansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
@@ -495,7 +496,8 @@ Utility functions also add some nice reusable calculations to the views importin
 Lastly, our views only need to have the following code to access every moment data that has been populated and utility functions:
 
 ``` javascript
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 // selectors
 import { getMomentsModel } from '@youversion/api-redux/lib/models/moments'

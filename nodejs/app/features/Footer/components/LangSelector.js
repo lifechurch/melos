@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import cookie from 'react-cookie'
 import ActionCreators from '../../../features/SelectLanguage/actions/creators'

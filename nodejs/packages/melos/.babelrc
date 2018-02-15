@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-assign"
+  ],
+  "presets": [
+		"env",
+    "react"
+  ]
+}

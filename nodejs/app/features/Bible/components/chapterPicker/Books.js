@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Books extends Component {
 
@@ -50,12 +51,12 @@ class Books extends Component {
  * 		@focus								allow mouse over and key actions on list items
  */
 Books.propTypes = {
-	list: React.PropTypes.array.isRequired,
-	onSelect: React.PropTypes.func,
-	initialSelection: React.PropTypes.string,
-	onMouseOver: React.PropTypes.func,
-	listSelectionIndex: React.PropTypes.number,
-	focus: React.PropTypes.bool
+	list: PropTypes.array.isRequired,
+	onSelect: PropTypes.func,
+	initialSelection: PropTypes.string,
+	onMouseOver: PropTypes.func,
+	listSelectionIndex: PropTypes.number,
+	focus: PropTypes.bool
 }
 
 export default Books

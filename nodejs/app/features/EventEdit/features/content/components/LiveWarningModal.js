@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import ActionCreators from '../../preview/actions/creators'
 import { FormattedMessage } from 'react-intl'

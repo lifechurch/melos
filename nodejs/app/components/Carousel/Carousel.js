@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import CarouselBanner from './CarouselBanner'
 import CarouselGradient from './CarouselGradient'
 import CarouselTitle from './CarouselTitle'

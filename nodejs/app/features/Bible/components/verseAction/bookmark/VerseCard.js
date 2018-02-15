@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 import Card from '../../../../../components/Card'
@@ -101,9 +102,9 @@ VerseCard.propTypes = {
 	}),
 	versionID: PropTypes.number,
 	local_abbreviation: PropTypes.string,
-	deleteVerse: React.PropTypes.func,
-	verseHeading: React.PropTypes.node,
-	isLink: React.PropTypes.bool,
+	deleteVerse: PropTypes.func,
+	verseHeading: PropTypes.node,
+	isLink: PropTypes.bool,
 	children: PropTypes.any,
 }
 

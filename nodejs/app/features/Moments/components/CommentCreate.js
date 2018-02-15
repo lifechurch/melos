@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import Card from '../../../components/Card'
 import Textarea from '../../../components/Textarea'

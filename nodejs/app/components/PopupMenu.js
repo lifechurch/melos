@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import XMark from './XMark'
 import Ellipsis from './icons/Ellipsis'
 import Menu from './Menu'

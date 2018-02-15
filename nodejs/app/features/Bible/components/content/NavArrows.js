@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
 import StickyHeader from '../../../../components/StickyHeader'

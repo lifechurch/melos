@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class TriggerButton extends Component {
 
@@ -55,11 +56,11 @@ class TriggerButton extends Component {
 }
 
 TriggerButton.propTypes = {
-	onClick: React.PropTypes.func,
-	image: React.PropTypes.element,
-	label: React.PropTypes.string,
-	isOpen: React.PropTypes.bool,
-	enabled: React.PropTypes.bool
+	onClick: PropTypes.func,
+	image: PropTypes.element,
+	label: PropTypes.string,
+	isOpen: PropTypes.bool,
+	enabled: PropTypes.bool
 }
 
 TriggerButton.defaultProps = {

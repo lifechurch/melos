@@ -1,6 +1,6 @@
 {
   "name": "@youversion/utils",
-  "version": "1.0.38",
+  "version": "1.0.42",
   "description": "A library of utility javascript functions used in YouVersion projects such as bible and youversion-api-redux.",
   "main": "./lib",
   "scripts": {
@@ -14,9 +14,7 @@
   "author": "YouVersion",
   "license": "ISC",
   "dependencies": {
-    "@youversion/js-api": "^1.0.17",
     "@youversion/stringer-things": "0.0.1",
-    "@youversion/token-storage": "^0.0.45",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
     "jest-enzyme": "^3.0.0",
@@ -24,7 +22,7 @@
     "moment": "^2.18.1",
     "react": "^15.6.1",
     "react-cookie": "^0.4.5",
-    "react-intl": "^2.2.3",
+    "react-intl": "^2.4.0",
     "universal-cookie": "^2.0.8"
   },
   "devDependencies": {
@@ -39,7 +37,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-function-bind": "^6.22.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.2",

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 import Card from '../../../components/Card'

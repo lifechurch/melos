@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import FormField from '../../../../../../app/components/FormField'
 import Textarea from '../../../../../../app/components/Textarea'
 import Input from '../../../../../../app/components/Input'

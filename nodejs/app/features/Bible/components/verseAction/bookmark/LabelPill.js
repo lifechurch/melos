@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import XMark from '../../../../../components/XMark'
 import SelectableLabel from './SelectableLabel'
 import DeletableLabel from './DeletableLabel'
@@ -38,12 +39,12 @@ class LabelPill extends Component {
  * 		@active								bool for determining if label is actively selected
  */
 LabelPill.propTypes = {
-	label: React.PropTypes.string.isRequired,
-	count: React.PropTypes.number,
-	onSelect: React.PropTypes.func,
-	canDelete: React.PropTypes.bool,
-	onDelete: React.PropTypes.func,
-	active: React.PropTypes.bool
+	label: PropTypes.string.isRequired,
+	count: PropTypes.number,
+	onSelect: PropTypes.func,
+	canDelete: PropTypes.bool,
+	onDelete: PropTypes.func,
+	active: PropTypes.bool
 }
 
 export default LabelPill

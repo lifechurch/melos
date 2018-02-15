@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import selectImageFromList from '@youversion/utils/lib/images/selectImageFromList'
 import PlanNavigation from './PlanNavigation'
 

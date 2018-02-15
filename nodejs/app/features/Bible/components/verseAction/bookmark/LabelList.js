@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import LabelPill from './LabelPill'
 
 class LabelList extends Component {
@@ -58,10 +59,10 @@ class LabelList extends Component {
  * 												{ label: 'labelname', [optionally] count: 3, [optionally] groupHeading: 'a' }
  */
 LabelList.propTypes = {
-	list: React.PropTypes.array,
-	showHeading: React.PropTypes.bool,
-	onSelect: React.PropTypes.func,
-	selectedLabels: React.PropTypes.object
+	list: PropTypes.array,
+	showHeading: PropTypes.bool,
+	onSelect: PropTypes.func,
+	selectedLabels: PropTypes.object
 }
 
 export default LabelList
