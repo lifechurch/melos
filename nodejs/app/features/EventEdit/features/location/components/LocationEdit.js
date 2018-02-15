@@ -20,7 +20,7 @@ class LocationEdit extends Component {
 		// const { loc } = props
 	}
 
-	handleBoundsChanged () {
+	handleBoundsChanged() {
 		const { loc } = this.props
 		if (typeof loc.place === 'object' && typeof loc.place.geometry === 'object') {
 			this.mapPlaces([loc.place], false)
@@ -37,10 +37,10 @@ class LocationEdit extends Component {
 	}
 
 
-	handlePlacesChanged () {
+	handlePlacesChanged() {
 		const places = this.refs.searchBox.getPlaces();
 		this.mapPlaces(places)
-		return;
+
 	}
 
 	mapPlaces(places, triggerChoose = true) {
@@ -48,7 +48,7 @@ class LocationEdit extends Component {
 		const { dispatch, handleChoosePlace } = this.props
 
 		// Add a marker for each place returned from search bar
-		places.forEach(function (place) {
+		places.forEach((place) => {
 			markers.push({
 				position: place.geometry.location
 			});
@@ -63,83 +63,87 @@ class LocationEdit extends Component {
 
 		this.setState({
 			center: mapCenter,
-			markers: markers
+			markers
 		});
 
-		return;
+
 	}
 
 	render() {
 		const { handleCancel, handleChange, handleSave, handleSetTime, handleAddTime, handleRemoveTime, loc, intl } = this.props
 
-		var inputStyle = {
-			"border": "1px solid transparent",
-			"borderRadius": "1px",
-			"boxShadow": "0 2px 6px rgba(0, 0, 0, 0.3)",
-			"boxSizing": "border-box",
-			"MozBoxSizing": "border-box",
-			"fontSize": "14px",
-			"marginTop": "12px",
-			"outline": "none",
-			"padding": "19px 12px !important",
-			"textOverflow": "ellipses",
-			"width": "524px",
-			"left": "120px",
-			"top": "0px",
-			"height": "40px !important",
-			"background-color": "white"
+		const inputStyle = {
+			border: '1px solid transparent',
+			borderRadius: '1px',
+			boxShadow: '0 2px 6px rgba(0, 0, 0, 0.3)',
+			boxSizing: 'border-box',
+			MozBoxSizing: 'border-box',
+			fontSize: '14px',
+			marginTop: '12px',
+			outline: 'none',
+			padding: '19px 12px !important',
+			textOverflow: 'ellipses',
+			width: '524px',
+			left: '120px',
+			top: '0px',
+			height: '40px !important',
+			'background-color': 'white'
 		}
 
-		var containerProps = {
+		const containerProps = {
 			...this.props,
 			style: {
-				height: "230px",
-				width: "100%"
+				height: '230px',
+				width: '100%'
 			}
 		}
 
-		var times;
+		let times;
 		if (loc.hasOwnProperty('times')) {
 			times = loc.times.map((t, i) => {
-				return (<LocationAddTime tz={loc.timezone} intl={intl} key={Math.random()} time={t} timeIndex={i} handleTimeChange={handleSetTime} handleRemoveTime={handleRemoveTime} />)
+				return (<LocationAddTime key={t.uid} tz={loc.timezone} intl={intl} time={t} timeIndex={i} handleTimeChange={handleSetTime} handleRemoveTime={handleRemoveTime} />)
 			})
 		}
 
-		var gMap = null;
-			gMap = (
-				<GoogleMap
-					center={this.state.center}
-					containerProps={containerProps}
-					defaultZoom={15}
-					onBoundsChanged={::this.handleBoundsChanged}
-					ref="map">
+		let gMap = null;
+		gMap = (
+			<GoogleMap
+				center={this.state.center}
+				containerProps={containerProps}
+				defaultZoom={15}
+				onBoundsChanged={::this.handleBoundsChanged}
+				ref="map"
+			>
 
-					<SearchBox
-						bounds={this.state.bounds}
-						controlPosition={google.maps.ControlPosition.TOP_LEFT}
-						onPlacesChanged={::this.handlePlacesChanged}
-						ref="searchBox"
-						placeholder={ loc.type === 'physical' ? intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.prompt"}) : intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.virtualPrompt"}) }
-						style={inputStyle} />
+				<SearchBox
+					bounds={this.state.bounds}
+					controlPosition={google.maps.ControlPosition.TOP_LEFT}
+					onPlacesChanged={::this.handlePlacesChanged}
+					ref="searchBox"
+					placeholder={ loc.type === 'physical' ? intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationEdit.prompt' }) : intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationEdit.virtualPrompt' }) }
+					style={inputStyle}
+				/>
 
-					{this.state.markers.map((marker, index) => (
+				{this.state.markers.map((marker, index) => {
+					return (
 						<Marker position={marker.position} key={index} />
-					))}
+					)
+				})}
 
-				</GoogleMap>
+			</GoogleMap>
 			)
 
-		var locationDetails = null;
+		let locationDetails = null;
 		if (loc.type === 'physical') {
 			locationDetails = (
 				<div className='form-body-block text-left'>
 					<form>
 						<Row>
 							<Column s='small-6'>
-								<input className='small' type='text' name='country' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.country"})} onChange={handleChange} value={loc.country} disabled/>
+								<input className='small' type='text' name='country' placeholder={intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationEdit.country' })} onChange={handleChange} value={loc.country} disabled />
 							</Column>
 							<Column s='small-6'>
-								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.timezone"})} onChange={handleChange} value={loc.timezone} disabled/>
+								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationEdit.timezone' })} onChange={handleChange} value={loc.timezone} disabled />
 							</Column>
 						</Row>
 					</form>
@@ -151,7 +155,7 @@ class LocationEdit extends Component {
 					<form>
 						<Row>
 							<Column s='small-6 end'>
-								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.timezone"})} onChange={handleChange} value={loc.timezone} disabled/>
+								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationEdit.timezone' })} onChange={handleChange} value={loc.timezone} disabled />
 							</Column>
 						</Row>
 					</form>
@@ -165,7 +169,7 @@ class LocationEdit extends Component {
 					<div className='form-body-block white'>
 						<form className="locationForm">
 							<label>
-								<input className='small' type='text' name='name' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.namePrompt"})} onChange={handleChange} value={loc.name} />
+								<input className='small' type='text' name='name' placeholder={intl.formatMessage({ id: 'features.EventEdit.features.location.components.LocationEdit.namePrompt' })} onChange={handleChange} value={loc.name} />
 								<span className="left"><FormattedMessage id="features.EventEdit.features.location.components.LocationEdit.name" /></span><span className="labelRight"><FormattedMessage id="features.EventEdit.features.location.components.LocationEdit.nameOptional" /></span>
 							</label>
 						</form>

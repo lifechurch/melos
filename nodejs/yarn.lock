@@ -92,24 +92,25 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-4.0.0.tgz#9a93ffa4ee1329e85166278a5ed99f81dc4c8362"
 
-"@youversion/api-redux@0.4.28":
-  version "0.4.28"
-  resolved "https://registry.yarnpkg.com/@youversion/api-redux/-/api-redux-0.4.28.tgz#900f25cf1c4408c2095be5a5601ce0a21753d633"
+"@youversion/api-redux@^0.4.36":
+  version "0.4.40"
+  resolved "https://registry.yarnpkg.com/@youversion/api-redux/-/api-redux-0.4.40.tgz#b1739476b7a54e6d907036684ee81162c67a5616"
   dependencies:
-    "@youversion/js-api" "^1.0.9"
-    "@youversion/melos" "0.0.11"
-    "@youversion/token-storage" "0.0.38"
-    "@youversion/utils" "1.0.34"
-    babelify "^7.2.0"
+    "@youversion/js-api" "^1.0.21"
+    "@youversion/melos" "^0.0.14"
+    "@youversion/token-storage" "^0.0.49"
+    "@youversion/utils" "^1.0.42"
+    babelify "^7.3.0"
     idb "^2.0.4"
     immutable "^3.8.1"
     isomorphic-fetch "^2.2.1"
-    moment "^2.13.0"
-    react "^15.4.2"
+    moment "^2.18.1"
+    prop-types "^15.6.0"
+    react "^15.6.1"
     react-cookie "^0.4.5"
     react-redux "^5.0.2"
-    react-router-redux "^2.1.0"
-    react-waypoint "^7.3.1"
+    react-router-redux "^4.0.8"
+    react-waypoint "^7.3.4"
     redux "^3.0.5"
     redux-api "^0.11.0"
     redux-devtools "^3.0.1"
@@ -134,12 +135,12 @@
     object-hash "^1.1.7"
     qs "^6.2.0"
 
-"@youversion/js-api@^1.0.10", "@youversion/js-api@^1.0.9":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@youversion/js-api/-/js-api-1.0.10.tgz#60199410cc7a25ce1a3ad951f96ce8ba418ccb9c"
+"@youversion/js-api@^1.0.17", "@youversion/js-api@^1.0.21":
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/@youversion/js-api/-/js-api-1.0.21.tgz#34950dfa532e0a40ec2866720f0df0969cc5a003"
   dependencies:
-    "@youversion/token-storage" "0.0.36"
-    bluebird "2.10.2"
+    "@youversion/token-storage" "^0.0.49"
+    bluebird "^3.5.1"
     body-parser "^1.13.3"
     express "^4.13.4"
     express-jwt "^3.3.0"
@@ -147,22 +148,6 @@
     memcached "^2.2.2"
     object-hash "^1.1.7"
     qs "^6.2.0"
-
-"@youversion/melos@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@youversion/melos/-/melos-0.0.11.tgz#ab37519d096ca757c17fe093432e564879ce45d3"
-  dependencies:
-    "@youversion/utils" "1.0.33"
-    glamor "^2.20.40"
-    glamorous "^4.11.0"
-    immutable "^3.8.2"
-    jest-glamor-react "^1.2.0"
-    prop-types "^15.6.0"
-    react "^15.5.4"
-    react-dom "^15.5.4"
-    react-router "^3.0.5"
-    react-test-renderer "^15.6.2"
-    react-waypoint "^7.3.1"
 
 "@youversion/melos@0.0.12":
   version "0.0.12"
@@ -180,6 +165,22 @@
     react-test-renderer "^15.6.2"
     react-waypoint "^7.3.1"
 
+"@youversion/melos@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@youversion/melos/-/melos-0.0.14.tgz#5ab643f04e05f867c8060cf416b35b1558dfbd06"
+  dependencies:
+    "@youversion/utils" "^1.0.42"
+    glamor "^2.20.40"
+    glamorous "^4.11.0"
+    immutable "^3.8.1"
+    jest-glamor-react "^1.2.0"
+    prop-types "^15.6.0"
+    react "^15.6.1"
+    react-dom "^15.6.1"
+    react-router "^3.0.5"
+    react-test-renderer "^15.6.2"
+    react-waypoint "^7.3.4"
+
 "@youversion/stringer-things@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@youversion/stringer-things/-/stringer-things-0.0.1.tgz#1f14bc7469d382b817b121ca1227dfea62db3bb3"
@@ -190,9 +191,15 @@
   dependencies:
     react-cookie "^0.4.5"
 
-"@youversion/token-storage@0.0.38":
-  version "0.0.38"
-  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.38.tgz#c6add3af3cafae159d061caed2e835e34c43ad7c"
+"@youversion/token-storage@^0.0.45":
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.45.tgz#09f88035e9f178b589ad57a0741e43b4f04d76f0"
+  dependencies:
+    react-cookie "^0.4.5"
+
+"@youversion/token-storage@^0.0.49":
+  version "0.0.49"
+  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.49.tgz#29072d49f182ff14c062270ea47885e6b415060e"
   dependencies:
     react-cookie "^0.4.5"
 
@@ -212,11 +219,10 @@
     react-intl "^2.2.3"
     universal-cookie "^2.0.8"
 
-"@youversion/utils@1.0.34":
-  version "1.0.34"
-  resolved "https://registry.yarnpkg.com/@youversion/utils/-/utils-1.0.34.tgz#24b6c4a47d1170a7aa3b628fd0067a4287097c69"
+"@youversion/utils@^1.0.38", "@youversion/utils@^1.0.42":
+  version "1.0.42"
+  resolved "https://registry.yarnpkg.com/@youversion/utils/-/utils-1.0.42.tgz#7055d6b490db8038fb71ff727dc7d2387ea87059"
   dependencies:
-    "@youversion/js-api" "1.0.9"
     "@youversion/stringer-things" "0.0.1"
     immutable "^3.8.1"
     jest "^19.0.2"
@@ -225,7 +231,7 @@
     moment "^2.18.1"
     react "^15.6.1"
     react-cookie "^0.4.5"
-    react-intl "^2.2.3"
+    react-intl "^2.4.0"
     universal-cookie "^2.0.8"
 
 JSONStream@^1.0.3, JSONStream@^1.0.4:
@@ -1670,7 +1676,7 @@ babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.23.0, babel-types@^6.24
     lodash "^4.17.4"
     to-fast-properties "^1.0.3"
 
-babelify@^7.2.0, babelify@^7.3.0:
+babelify@^7.3.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/babelify/-/babelify-7.3.0.tgz#aa56aede7067fd7bd549666ee16dc285087e88e5"
   dependencies:
@@ -2131,7 +2137,7 @@ bluebird@3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
-bluebird@^3.1.1:
+bluebird@^3.1.1, bluebird@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
@@ -5779,6 +5785,10 @@ group-array@^0.3.0:
 growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
+
+guid@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/guid/-/guid-0.0.12.tgz#9137c52b185f7de12490b9bebcc1660b9025fe0c"
 
 gulp-choose-files@^0.1.3:
   version "0.1.3"
@@ -10656,11 +10666,7 @@ react-redux@^5.0.2:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-router-redux@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-2.1.0.tgz#ac1e822ae0e7ecddd9499c5adde32dcbe5e67196"
-
-react-router-redux@^4.0.7:
+react-router-redux@^4.0.7, react-router-redux@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
 
@@ -10734,14 +10740,14 @@ react-waypoint@^5.3.1:
   dependencies:
     consolidated-events "^1.0.1"
 
-react-waypoint@^7.3.1:
+react-waypoint@^7.3.1, react-waypoint@^7.3.4:
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/react-waypoint/-/react-waypoint-7.3.4.tgz#6f4a167ca71c0877576699d6980089f001137f90"
   dependencies:
     consolidated-events "^1.1.0"
     prop-types "^15.0.0"
 
-react@^15.4.2, react@^15.5.4, react@^15.6.1:
+react@^15.5.4, react@^15.6.1:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
   dependencies:

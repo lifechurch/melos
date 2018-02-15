@@ -1,11 +1,11 @@
-import type from '../actions/constants'
 import moment from 'moment'
+import getRandomInt from '../../../../../lib/getRandomInt'
+import type from '../actions/constants'
 import { fromApiFormat } from '../transformers/location'
 
 
-
 function parsePlaceFor(type, place) {
-	for (var addressComponent of place.address_components) {
+	for (const addressComponent of place.address_components) {
 		if (addressComponent.types.indexOf(type) > -1) {
 			return addressComponent.short_name
 		}
@@ -13,14 +13,18 @@ function parsePlaceFor(type, place) {
 }
 
 export default function loc(state = {}, action) {
-	switch(action.type) {
+	switch (action.type) {
 
-		case type('viewSuccess'):
+		case type('viewSuccess'): {
 			if (action.initiatedByEdit) {
 				return Object.assign({}, state, { isLoading: true })
 			} else {
-				return fromApiFormat(Object.assign({}, action.originalLoc, action.response))
+				const times = action.response.map((t) => {
+					return Object.assign({}, t, { uid: getRandomInt(0, 1000) })
+				})
+				return fromApiFormat(Object.assign({}, action.originalLoc, action.response, { times }))
 			}
+		}
 
 		case type('viewFailure'):
 			return Object.assign({}, state, { errors: action.errors, hasError: true })
@@ -28,18 +32,20 @@ export default function loc(state = {}, action) {
 		case type('viewRequest'):
 			return Object.assign({}, state, { isLoading: true, hasError: false })
 
-		case type('add'):
+		case type('add'): {
 			const start_dt = moment().endOf('week')
 			const end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
-
+			const uid = getRandomInt(0, 1000)
 			return {
 				type: action.locationType,
 				times: [{
 					start_dt,
-					end_dt
+					end_dt,
+					uid
 				}],
 				timezone: action.auth.userData.timezone
 			}
+		}
 
 		case type('edit'):
 			return Object.assign({}, state, action.loc)
@@ -55,7 +61,7 @@ export default function loc(state = {}, action) {
 					isDirty: true
 				})
 			} else {
-				throw new Error('Attempted to set invalid Location field `' + action.field.toString() + '`')
+				throw new Error(`Attempted to set invalid Location field \`${action.field.toString()}\``)
 			}
 
 		case type('setPlace'):
@@ -102,21 +108,23 @@ export default function loc(state = {}, action) {
 				]
 			})
 
-		case type('addTime'):
-			var new_time = {}
+		case type('addTime'): {
+			let new_time = {}
 			if (Array.isArray(state.times) && state.times.length > 0) {
 				new_time = Object.assign({}, state.times[state.times.length - 1])
 			} else {
-				var start_dt = moment().endOf('week').hour(17).startOf('hour')
-				var end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
+				const start_dt = moment().endOf('week').hour(17).startOf('hour')
+				const end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
 				new_time = { start_dt, end_dt }
 			}
+			new_time.uid = getRandomInt(0, 1000)
 			return Object.assign({}, state, {
 				times: [
 					...state.times,
 					new_time
 				]
 			})
+		}
 
 		case type('save'):
 			return state
