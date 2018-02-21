@@ -774,7 +774,7 @@
 	"notifications.comments.moments.friend.owner.bookmark": "{moment_owner_name} skrifaði einnig ummæli við bókamerki sitt: \"{comment}\"",
 	"notifications.comments.moments.friend.owner.friendship": "{moment_owner_name} skrifaði einnig ummæli um nýja vináttu sína við {friend_name}: \"{comment}\"",
 	"notifications.comments.moments.friend.owner.friendship.ours": "{moment_owner_name} skrifaði einnig ummæli um nýja vináttu sína við þig: \"{comment}\"",
-	"notifications.comments.moments.friend.owner.highlight": "{moment_owner_name} skrifaði einnig ummæli vi�� áherslumerkingu sína: \"{comment}\"",
+	"notifications.comments.moments.friend.owner.highlight": "{moment_owner_name} skrifaði einnig ummæli við áherslumerkingu sína: \"{comment}\"",
 	"notifications.comments.moments.friend.owner.note": "{moment_owner_name} skrifaði einnig ummæli við minnispunkt sinn: \"{comment}\"",
 	"notifications.comments.moments.friend.owner.plan_activity": "{moment_owner_name} skrifaði einnig ummæli við áætlun sína: \"{comment}\"",
 	"notifications.comments.moments.friend.owner.plan_activity.push": "{moment_owner_name} skrifaði einnig ummæli við Biblíulestraráætlun sína: \"{comment}\"",

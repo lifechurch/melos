@@ -767,7 +767,7 @@
 	"notifications.comments.moment.mine.plan_activity.push": "{name} ha commentato il tuo Piano Bibbia: “{comment}”",
 	"notifications.comments.moments.friend.bookmark": "Anche {commenter_name} ha commentato il segnalibro di {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.friendship": "Anche {commenter_name} ha commentato la nuova amicizia di  {moment_owner_name} con {friend_name}: “{comment}”",
-	"notifications.comments.moments.friend.friendship.their": "{commenter_name} ha anche fatto un commento sulla sua nuova Amicizia con {moment_owner_name}:��{comment}”",
+	"notifications.comments.moments.friend.friendship.their": "{commenter_name} ha anche fatto un commento sulla sua nuova Amicizia con {moment_owner_name}:“{comment}”",
 	"notifications.comments.moments.friend.friendship.ours": "{commenter_name} ha anche fatto un commento sulla tua nuova Amicizia con {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.highlight": "Anche {commenter_name} ha commentato l'evidenziazione di {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.note": "Anche {commenter_name} ha commentato la nota di {moment_owner_name}: “{comment}”",

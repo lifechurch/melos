@@ -766,7 +766,7 @@
 	"notifications.comments.moment.mine.plan_activity": "{name} megjegyzést fűzött a tervedhez: “{comment}”",
 	"notifications.comments.moment.mine.plan_activity.push": "{name}megjegyzést fűzött a Biblia tervedhez: “{comment}”",
 	"notifications.comments.moments.friend.bookmark": "{commenter_name} szintén hozzászólt {moment_owner_name} könyvjelzőjéhez: “{comment}”",
-	"notifications.comments.moments.friend.friendship": "{commenter_name} is fűz��tt megjegyzést a {moment_owner_name} új barátságához a következővel {friend_name}: “{comment}”",
+	"notifications.comments.moments.friend.friendship": "{commenter_name} is fűzött megjegyzést a {moment_owner_name} új barátságához a következővel {friend_name}: “{comment}”",
 	"notifications.comments.moments.friend.friendship.their": "{commenter_name} szintén hozzászólt a(z){moment_owner_name} személlyel létrejött új barátságához: “{comment}”",
 	"notifications.comments.moments.friend.friendship.ours": "{commenter_name} szintén hozzászólt a(z){moment_owner_name} személlyel létrejött új barátságodhoz: “{comment}”",
 	"notifications.comments.moments.friend.highlight": "{commenter_name} szintén hozzászólt {moment_owner_name} kiemeléséhez: “{comment}”",

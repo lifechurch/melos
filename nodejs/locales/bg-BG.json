@@ -397,7 +397,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.prompt": "Завлечете и пуснете изображение",
 	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[само JPG]",
 	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "{requiredWidth}px широчина x {requiredHeight}px височина",
-	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Размера на вашето изображение трябва да бъде {requiredWidth} x {requiredHeight} пиксе��а.",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Размера на вашето изображение трябва да бъде {requiredWidth} x {requiredHeight} пиксела.",
 	"features.EventEdit.features.details.components.DetailsEdit.eventName": "Име на събитието",
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Име на църквата или организацията",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Описание на събитието",

@@ -260,7 +260,7 @@
 	"components.ErrorMessage.genericError": "发生了错误",
 	"components.ErrorMessage.announcement.events.title.required": "必须填写公告标题。",
 	"components.ErrorMessage.default.bible.reference.not_found": "参考经文不存在。",
-	"components.ErrorMessage.default.events.google_place_id.required": "必须在地图上选择一个地点。",
+	"components.ErrorMessage.default.events.google_place_id.required": "���须在地图上选择一个地点。",
 	"components.ErrorMessage.default.events.latitude.required": "必须在地图上选择一个地点。",
 	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "开始时间不能早于当前时间。",
 	"components.ErrorMessage.default.events.timezone.required": "必须选择时区。",
