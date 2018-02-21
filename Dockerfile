@@ -24,19 +24,18 @@ ENV NODE_ENV production
 COPY nodejs/ /home/app/nodejs/
 RUN cd /home/app/nodejs && npm run build:production
 
-# Node-Canvas (https://github.com/Automattic/node-canvas#installation)
-RUN apt-get update && apt-get install -y build-essential g++ \
-  libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev 
+# Node-Canvas (https://github.com/Automattic/node-canvas#installation) and pre-req
+# Passenger Enterprise
+COPY nginx/passenger-enterprise-license /etc/passenger-enterprise-license
+RUN echo deb https://download:$DOWNLOAD_TOKEN@www.phusionpassenger.com/enterprise_apt xenial main > /etc/apt/sources.list.d/passenger.list
+RUN apt-get update && apt-get install -y -o Dpkg::Options::="--force-confold" \
+  build-essential g++ libcairo2-dev libpango1.0-dev libjpeg-dev \
+  libgif-dev passenger-enterprise nginx-extras
 
 # Year in Review Fonts
 RUN [ -d /usr/share/fonts/truetype ] || mkdir /usr/share/fonts/truetype
 COPY nodejs/fonts /usr/share/fonts/truetype
 RUN fc-cache -f -v
-
-# Passenger Enterprise
-COPY nginx/passenger-enterprise-license /etc/passenger-enterprise-license
-RUN echo deb https://download:$DOWNLOAD_TOKEN@www.phusionpassenger.com/enterprise_apt xenial main > /etc/apt/sources.list.d/passenger.list
-RUN apt-get update && apt-get install -y -o Dpkg::Options::="--force-confold" passenger-enterprise nginx-extras
 
 # NGINX Config
 RUN rm -f /etc/service/nginx/down && rm -f /etc/nginx/nginx.conf
