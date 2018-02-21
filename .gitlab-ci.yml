@@ -1,7 +1,7 @@
 # This file is a template, and might need editing before it works on your project.
 # Explaination on the scripts:
 # https://gitlab.com/gitlab-examples/kubernetes-deploy/blob/master/README.md
-image: quay.io/lifechurch/k8s-deploy-helper:1.0.0
+image: quay.io/lifechurch/k8s-deploy-helper:2.0.0
 
 variables:
   # Application deployment domain
@@ -13,6 +13,7 @@ stages:
   - review
   - staging
   - production
+  - taglatest
 
 build:
   stage: build
@@ -34,6 +35,7 @@ production:
     name: production
     url: http://$KUBE_DOMAIN
   when: manual
+  allow_failure: false
   only:
     - master
 
@@ -86,4 +88,13 @@ stop_review:
     - branches
   except:
     - master
-    - l10n_master    
+    - l10n_master
+
+taglatest:
+  stage: taglatest
+  dependencies: []
+  allow_failure: false
+  script:
+    - command push
+  only:
+    - master
