@@ -12,7 +12,7 @@ const del = require('del');
 const runSequence = require('run-sequence');
 // const envify = require('loose-envify');
 const https = require('https');
-const querystring = require('querystring');
+// const querystring = require('querystring');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const async = require('async');
@@ -26,8 +26,63 @@ const poToJson = require('./localization').poToJson
 // var sourcemaps = require("gulp-sourcemaps");
 // var gutil = require("gulp-util");
 
+const localeNameException = {
+	af: 'af-ZA',
+	be: 'be-BY',
+	bg: 'bg-BG',
+	bn: 'bn-IN',
+	ca: 'ca-ES',
+	cs: 'cs-CZ',
+	cy: 'cy-GB',
+	da: 'da-DK',
+	de: 'de-DE',
+	el: 'el-GR',
+	es: 'es-LA',
+	et: 'et-EE',
+	fa: 'fa-IR',
+	fi: 'fi-FI',
+	fil: 'tl-PH',
+	fr: 'fr-FR',
+	hi: 'hi-IN',
+	hr: 'hr-HR',
+	hu: 'hu-HU',
+	id: 'id-ID',
+	it: 'it-IT',
+	ja: 'ja-JP',
+	km: 'km-KH',
+	kn: 'kn-IN',
+	ko: 'ko-KR',
+	lt: 'lt-LT',
+	lv: 'lv-LV',
+	mk: 'mk-MK',
+	ml: 'ml-IN',
+	mr: 'mr-IN',
+	ms: 'ms-MY',
+	mn: 'xc-MN',
+	ne: 'ne-NP',
+	nl: 'nl-NL',
+	no: 'no-NO',
+	pl: 'pl-PL',
+	pt: 'pt-BR',
+	ro: 'ro-RO',
+	ru: 'ru-RU',
+	sk: 'sk-SK',
+	sq: 'sq-AL',
+	sv: 'sv-SE',
+	ta: 'ta-IN',
+	th: 'th-TH',
+	tl: 'tl-PH',
+	tr: 'tr-TR',
+	uk: 'uk-UA',
+	uz: 'uz-UZ',
+	vi: 'vi-VN',
+	zu: 'zu-ZA'
+}
+
 // Just set this to something because @youversion/js-api expects a value and will crash without it
 process.env.YOUVERSION_TOKEN_PHRASE = 'just-a-test';
+
+const CROWDIN_API_KEY = process.env.CROWDIN_API_KEY
 
 const GetClient = require('@youversion/js-api').getClient;
 
@@ -36,7 +91,7 @@ const smartlingCredentials = {
 	userSecret: '7vmbf0a699o0jlrpsbiaq3cbq8He-uv57mks52dpsl3lirnasso7usp'
 };
 
-const smartlingProjectId = 'b13fafcf3';
+const smartlingProjectId = 'biblecom';
 
 const IS_PROD = process.env.NODE_ENV === 'production';
 
@@ -339,159 +394,194 @@ const prefixedLocales = [
 	'pt-PT',
 ]
 
-gulp.task('smartling', (callback) => {
-	return smartlingAuth().then((response) => {
-		const token = response.response.data.accessToken;
-		return smartlingFetchAvailableLocales(token).then((response) => {
-			const locales = response.response.data.items;
-			const queue = async.queue((task, callback) => {
-				smartlingFetchLocaleFile(task.locale, token).then((data) => {
-					callback(task, data, null);
-				}, (error) => {
-					callback(null, null, error);
-				})
-			}, 10);
+gulp.task('crowdin', (callback) => {
+	return crowdinFetchAvailableLocales(CROWDIN_API_KEY).then((response) => {
+		const locales = response
+		const queue = async.queue((task, callback) => {
+			crowdinFetchLocaleFile(task.locale, CROWDIN_API_KEY).then((data) => {
+				callback(task, data, null);
+			}, (error) => {
+				callback(null, null, error);
+			})
+		}, 10);
 
-			const localeList = locales.map((item) => {
-				const lang_country = item.localeId.split('-');
-				const country = lang_country[1] || '';
-				const lang = langs.where('1', lang_country[0]);
-				const locale3 = lang ? lang['3'] : null;
-				const locale2 = lang ? lang['1'] : null;
-				const final = Object.assign(
-					{},
-					langmap[item.localeId],
-					{
-						locale: item.localeId,
-						locale2,
-						locale3
-					}
-				);
+		const localeList = locales.map((item) => {
+			const lang_country = item.code.split('-');
+			// const country = lang_country[1] || '';
+			const lang = langs.where('1', lang_country[0]);
+			const locale3 = lang ? lang['3'] : null;
+			const locale2 = lang ? lang['1'] : null;
+			const final = Object.assign(
+        {},
+        langmap[item.code],
+				{
+					locale: item.code,
+					locale2,
+					locale3
+				}
+      );
 
-				final.displayName = final.nativeName || final.englishName || final.locale.toUpperCase();
-				return final;
-			});
+			final.displayName = final.nativeName || final.englishName || final.locale.toUpperCase();
+			return final;
+		});
 
-			localeList.push({
-				nativeName: 'English (US)',
-				englishName: 'English (US)',
-				locale: 'en-US',
-				locale2: 'en',
-				locale3: 'eng',
-				displayName: 'English (US)'
-			});
+		localeList.push({
+			nativeName: 'English (US)',
+			englishName: 'English (US)',
+			locale: 'en-US',
+			locale2: 'en',
+			locale3: 'eng',
+			displayName: 'English (US)'
+		});
 
-			localeList.sort((a, b) => {
-				return a.displayName.localeCompare(b.displayName);
-			});
+		localeList.sort((a, b) => {
+			return a.displayName.localeCompare(b.displayName);
+		});
 
-			fs.writeFileSync('./locales/config/_localeList.json', JSON.stringify(localeList, null, '\t'));
+		fs.writeFileSync('./locales/config/_localeList.json', JSON.stringify(localeList, null, '\t'));
 
-			const tasks = locales.map((item) => {
-				return { locale: item.localeId, prefix: item.localeId.split('-')[0] }
-			});
+		const tasks = locales.map((item) => {
+			return { locale: item.code, prefix: item.code.split('-')[0] }
+		});
 
-			tasks.push({ locale: 'en-US', prefix: 'en' });
+		tasks.push({ locale: 'en-US', prefix: 'en' });
 
-			const availableLocales = {};
-			tasks.forEach((t) => {
-				availableLocales[t.locale] = t.locale;
-				availableLocales[t.prefix] = t.locale;
-				availableLocales[t.locale.replace('-', '_')] = t.locale
-			});
+		const availableLocales = {};
+		tasks.forEach((t) => {
+			availableLocales[t.locale] = t.locale;
+			availableLocales[t.prefix] = t.locale;
+			availableLocales[t.locale.replace('-', '_')] = t.locale
+		});
 
-			fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, '\t'));
+		fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, '\t'));
 
-			queue.push(tasks, (task, data, err) => {
-				// let's get the api strings
-				getApiStrings({
-					language_tag: prefixedLocales.includes(task.locale)
+		queue.push(tasks, (task, data, err) => {
+			// let's get the api strings
+
+			console.log('=== Got a response from Crowdin:', task.locale)
+
+			if (!(typeof data === 'object')) {
+				console.log(' !! Bad Response')
+			}
+
+			if (task.locale.indexOf('es') > -1) {
+				console.log('+++', task.locale, data.es.EventsAdmin.Auth['plan blurb'])
+			}
+
+			getApiStrings({
+				language_tag: prefixedLocales.includes(task.locale)
 						? task.locale.replace('-', '_')
 						: task.prefix
-				}).then((resp) => {
-					// the response is a bit odd, in that if we see we have a 'response'
-					// key, it means we have an error. if we actually get the strings, they
-					// are at the top level
-					let apiStrings = {}
-					try {
-						JSON.parse(resp)
-					} catch (e) {
-						apiStrings = poToJson(resp)
-					}
+			}).then((resp) => {
 
-					const strings = Object.assign(
+				console.log('=== Got a response from YV API:', task.locale, typeof resp === 'string')
+				if (!(typeof resp === 'string')) {
+					console.log(' !! Bad Response')
+				}
+
+				// the response is a bit odd, in that if we see we have a 'response'
+				// key, it means we have an error. if we actually get the strings, they
+				// are at the top level
+				const localeExceptions = {
+					myz: 'qz-MM',
+					'ml-IN': 'ml',
+					'ne-NP': 'ne',
+					'es-la': 'es',
+					'es-ES': 'es',
+					'sv-SE': 'sv',
+					'en-US': false,
+					'ur-PK': 'ur',
+					fil: 'tl',
+					'pt-BR': 'pt',
+					'pt-PT': 'pt',
+					ckb: 'ckb-IR'
+				}
+
+				const localeKey = localeExceptions[task.locale] || task.locale
+
+				let apiStrings = {}
+				try {
+					JSON.parse(resp)
+				} catch (e) {
+					apiStrings = poToJson(resp)
+				}
+
+				const strings = Object.assign(
 						{},
-						data[task.prefix].EventsAdmin,
+						typeof data[localeKey] === 'undefined' ? {} : data[localeKey].EventsAdmin,
 						apiStrings
 					)
 
-					fs.writeFileSync(
-						`./locales/${task.locale}.json`,
+				if (typeof data[localeKey] === 'undefined') {
+					console.log('ERROR', localeKey, Object.keys(data), data)
+				}
+
+				if (task.locale.indexOf('es') > -1) {
+					console.log('+++', localeKey, Object.keys(strings))
+				}
+
+				const fileName = (['es', 'pt'].indexOf(localeKey) > -1) ? task.locale : (localeNameException[localeKey] || localeKey)
+
+				fs.writeFileSync(
+						`./locales/${fileName}.json`,
 						JSON.stringify(flattenObject(strings), null, '\t')
 						.replace(/\%\{/g, '{')
 					);
-				})
-			});
-
-			const client = GetClient('reading-plans')
-				.call('configuration')
-				.setVersion('3.1')
-				.get()
-				.then((data) => {
-					const planLocales = {}
-
-					const isFullMatch = (locale, planLocale) => {
-						return locale.replace('-', '_') === planLocale.replace('-', '_')
-					}
-
-					const isOverride = (locale, planLocale) => {
-						return (isFullMatch('pt-PT', locale) && isFullMatch('pt', planLocale)) ||
-							(isFullMatch('es-ES', locale) && isFullMatch('es', planLocale))
-					}
-
-
-					const isPrefixMatch = (locale, planLocale) => {
-						return planLocale.length === 2 &&
-							!isOverride(locale, planLocale) &&
-							(locale.split('-')[0].split('_')[0] === planLocale.split('-')[0].split('_')[0])
-					}
-
-					const mergeLocale = (final, locale, planLocale) => {
-						if (isFullMatch(locale, planLocale) || isPrefixMatch(locale, planLocale)) {
-							final[locale] = planLocale
-						}
-					}
-
-					data.available_language_tags.forEach((l) => {
-						Object.keys(availableLocales).forEach((a) => {
-							mergeLocale(planLocales, a, l)
-						});
-					});
-					fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, '\t'));
-				}, (error) => {
-					console.log(error);
-				});
-
-			// queue.drain = callback;
-
-		}, (error) => {
-			console.log(error);
+			})
 		});
+
+		const client = GetClient('reading-plans')
+      .call('configuration')
+      .setVersion('3.1')
+      .get()
+      .then((data) => {
+	const planLocales = {}
+
+	const isFullMatch = (locale, planLocale) => {
+		return locale.replace('-', '_') === planLocale.replace('-', '_')
+	}
+
+	const isOverride = (locale, planLocale) => {
+		return (isFullMatch('pt-PT', locale) && isFullMatch('pt', planLocale)) ||
+          (isFullMatch('es-ES', locale) && isFullMatch('es', planLocale))
+	}
+
+
+	const isPrefixMatch = (locale, planLocale) => {
+		return planLocale.length === 2 &&
+          !isOverride(locale, planLocale) &&
+          (locale.split('-')[0].split('_')[0] === planLocale.split('-')[0].split('_')[0])
+	}
+
+	const mergeLocale = (final, locale, planLocale) => {
+		if (isFullMatch(locale, planLocale) || isPrefixMatch(locale, planLocale)) {
+			final[locale] = planLocale
+		}
+	}
+
+	data.available_language_tags.forEach((l) => {
+		Object.keys(availableLocales).forEach((a) => {
+			mergeLocale(planLocales, a, l)
+		});
+	});
+	fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, '\t'));
+}, (error) => {
+	console.log(error);
+});
+
 	}, (error) => {
 		console.log(error);
 	});
 });
 
-function smartlingAuth() {
+
+function crowdinFetchAvailableLocales(token) {
 	return new Promise((resolve, reject) => {
 		const options = {
-			hostname: 'api.smartling.com',
+			hostname: 'api.crowdin.com',
 			port: 443,
-			path: '/auth-api/v2/authenticate',
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			}
+			path: `/api/project/${smartlingProjectId}/status?key=${token}&json`,
+			method: 'GET'
 		}
 
 		const req = https.request(options)
@@ -517,73 +607,20 @@ function smartlingAuth() {
 			reject(e);
 		});
 
-		req.write(JSON.stringify(smartlingCredentials));
-
 		req.end();
 	})
 }
 
-function smartlingFetchAvailableLocales(token) {
+function crowdinFetchLocaleFile(locale, token) {
 	return new Promise((resolve, reject) => {
-		const query = querystring.stringify({
-			fileUri: '/files/en.yml'
-		})
+
+		// console.log('Requesting locale file from Crowdin:', locale)
 
 		const options = {
-			hostname: 'api.smartling.com',
+			hostname: 'api.crowdin.com',
 			port: 443,
-			path: `/files-api/v2/projects/${smartlingProjectId}/file/status?${query}`,
-			method: 'GET',
-			headers: {
-				Authorization: `Bearer ${token}`,
-				'Content-Type': 'application/json'
-			}
-		}
-
-		const req = https.request(options)
-
-		req.on('response', (response) => {
-			/* eslint-disable no-var */
-			var body = '';
-
-			response.on('data', (chunk) => {
-				body += chunk;
-			});
-
-			response.on('end', () => {
-				try {
-					resolve(JSON.parse(body));
-				} catch (ex) {
-					reject(ex);
-				}
-			});
-		});
-
-		req.on('error', (e) => {
-			reject(e);
-		});
-
-		req.write(JSON.stringify(smartlingCredentials));
-
-		req.end();
-	})
-}
-
-function smartlingFetchLocaleFile(locale, token) {
-	return new Promise((resolve, reject) => {
-		const query = querystring.stringify({
-			fileUri: '/files/en.yml'
-		})
-
-		const options = {
-			hostname: 'api.smartling.com',
-			port: 443,
-			path: `/files-api/v2/projects/${smartlingProjectId}/locales/${locale}/file?${query}`,
-			method: 'GET',
-			headers: {
-				Authorization: `Bearer ${token}`,
-				'Content-Type': 'application/json'
-			}
+			path: `/api/project/${smartlingProjectId}/export-file?file=/master/ruby/config/locales/en.yml&format=yaml&language=${locale}&key=${token}`,
+			method: 'GET'
 		}
 
 		const req = https.request(options)
@@ -608,8 +645,6 @@ function smartlingFetchLocaleFile(locale, token) {
 		req.on('error', (e) => {
 			reject(e);
 		});
-
-		req.write(JSON.stringify(smartlingCredentials));
 
 		req.end();
 	})
