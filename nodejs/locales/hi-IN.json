@@ -255,7 +255,7 @@
 	"plans.day number": "दिन {day}",
 	"plans.which day in plan": "{total}में से दिवस{day}",
 	"plans.must start to complete": "पूर्ण रीडिंग को save करने के लिए यह योजना शुरू करे!",
-	"plans.invalid reference": "कृपया क्षमा कीजिए,आपके द्वारा चयनित संस्करण में इस पाठक योजना से सम्बंधित पद्य टिपण्णीयाँ नहीं हैं।दूसरा संस्करण चुनिए,यदि आप दोबारा यह सन्देश पाते हैं, संपर्क करे <a href='{support_url}' target='_self'>support team</a> और इसकी जानकारी दे।",
+	"plans.invalid reference": "कृपया क्षमा कीजिए,आपके द्वारा चयनित संस्करण में इस पाठक योजना से सम्बंधित पद्य टिपण्णीयाँ नहीं हैं।दूसरा सं���्करण चुनिए,यदि आप दोबारा यह सन्देश पाते हैं, संपर्क करे <a href='{support_url}' target='_self'>support team</a> और इसकी जानकारी दे।",
 	"plans.sidebar notice": "आप एक पाठक योजना का दर्शन कर रहे हैं",
 	"plans.congratulations": "बधाई हो !",
 	"plans.completed notice": "मुबारकबाद! अपनी पाठक योजना सफलता पूर्वक सम्पूर्ण करने हेतु।",

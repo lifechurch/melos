@@ -505,7 +505,7 @@
 	"Reader.header.parallel": "平行",
 	"Reader.header.parallel exit": "退出平行对照模式",
 	"Reader.header.cancel": "取消",
-	"Reader.header.audio label": "���频",
+	"Reader.header.audio label": "音频",
 	"Reader.header.audio window": "在新窗口打开",
 	"Reader.header.font label": "阅读器设置",
 	"Reader.header.notifications label": "通知",
