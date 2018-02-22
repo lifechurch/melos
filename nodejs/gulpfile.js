@@ -1,18 +1,5 @@
 const gulp = require('gulp');
-const browserify = require('browserify');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const uglify = require('gulp-uglify');
-const livereload = require('gulp-livereload');
-const less = require('gulp-less');
-const cssnano = require('gulp-cssnano');
-const concat 	= require('gulp-concat');
-const rev = require('gulp-rev');
-const del = require('del');
-const runSequence = require('run-sequence');
-// const envify = require('loose-envify');
 const https = require('https');
-// const querystring = require('querystring');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const async = require('async');
@@ -23,8 +10,6 @@ require('babel-register')({ presets: [ 'env', 'react' ], plugins: [ 'transform-o
 
 const getApiStrings = require('./localization').items
 const poToJson = require('./localization').poToJson
-// var sourcemaps = require("gulp-sourcemaps");
-// var gutil = require("gulp-util");
 
 const localeNameException = {
 	af: 'af-ZA',
@@ -86,305 +71,7 @@ const CROWDIN_API_KEY = process.env.CROWDIN_API_KEY
 
 const GetClient = require('@youversion/js-api').getClient;
 
-const smartlingCredentials = {
-	userIdentifier: 'bpmknlysfearpoukuoydwwhduxoidv',
-	userSecret: '7vmbf0a699o0jlrpsbiaq3cbq8He-uv57mks52dpsl3lirnasso7usp'
-};
-
-const smartlingProjectId = 'biblecom';
-
-const IS_PROD = process.env.NODE_ENV === 'production';
-
-gulp.task('javascript:prod', () => {
-	return browserify('app/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.transform('loose-envify', { NODE_ENV: 'production' })
-		.bundle()
-		.pipe(source('app.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/javascripts/'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-
-gulp.task('javascript:prod:event', () => {
-	return browserify('app/standalone/SingleEvent/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.transform('loose-envify', { NODE_ENV: 'production' })
-		.bundle()
-		.pipe(source('SingleEvent.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/javascripts/'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-gulp.task('javascript:prod:passwordChange', () => {
-	return browserify('app/standalone/PasswordChange/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.transform('loose-envify', { NODE_ENV: 'production' })
-		.bundle()
-		.pipe(source('PasswordChange.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/javascripts/'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-gulp.task('javascript:prod:planDiscovery', () => {
-	return browserify('app/standalone/PlanDiscovery/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.transform('loose-envify', { NODE_ENV: 'production' })
-		.bundle()
-		.pipe(source('PlanDiscovery.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/javascripts/'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-gulp.task('javascript:prod:unsubscribe', () => {
-	return browserify('app/standalone/Unsubscribe/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ [ 'env', { debug: false } ], 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.transform('loose-envify', { NODE_ENV: 'production' })
-		.bundle()
-		.pipe(source('Unsubscribe.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/javascripts/'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-// Leaving here for a how-to on doing sourceMaps to inspect package size
-// gulp.task('javascript:prod:Bible', function() {
-// 	return browserify({ entries: "app/standalone/Bible/main.js", debug: false })
-// 		.transform("babelify", { presets: [ "es2015", "stage-0", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
-// 		.transform('loose-envify', { NODE_ENV: 'staging' })
-// 		.bundle()
-// 		.pipe(source('Bible.js'))
-// 		.pipe(buffer())
-// 		.pipe(sourcemaps.init({ loadMaps:true }))
-// 		.pipe(uglify())
-// 		.on('error', gutil.log)
-// 		//.pipe(rev())
-// 		.pipe(sourcemaps.write())
-// 		.pipe(gulp.dest("./public/javascripts/"))
-// 		//.pipe(rev.manifest({merge:true, base: 'build/assets'}))
-// 		//.pipe(gulp.dest('build/assets'));
-// });
-
-gulp.task('javascript:prod:Bible', () => {
-	return browserify('app/standalone/Bible/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.transform('loose-envify', { NODE_ENV: 'production' })
-		.bundle()
-		.pipe(source('Bible.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/javascripts/'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-gulp.task('javascript:prod:subscribeUser', () => {
-	return browserify('app/standalone/SubscribeUser/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.transform('loose-envify', { NODE_ENV: 'production' })
-		.bundle()
-		.pipe(source('SubscribeUser.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/javascripts/'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-gulp.task('javascript:prod:passage', () => {
-	return browserify('app/standalone/Passage/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'es2015', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.transform('loose-envify', { NODE_ENV: 'production' })
-		.bundle()
-		.pipe(source('Passage.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/javascripts/'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-gulp.task('javascript:dev', () => {
-	return browserify('app/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.bundle()
-		.pipe(source('app.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./public/javascripts/'));
-});
-
-gulp.task('javascript:dev:event', () => {
-	return browserify('app/standalone/SingleEvent/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.bundle()
-		.pipe(source('SingleEvent.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./public/javascripts/'));
-});
-
-gulp.task('javascript:dev:passwordChange', () => {
-	return browserify('app/standalone/PasswordChange/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.bundle()
-		.pipe(source('PasswordChange.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./public/javascripts/'));
-});
-
-gulp.task('javascript:dev:planDiscovery', () => {
-	return browserify('app/standalone/PlanDiscovery/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.bundle()
-		.pipe(source('PlanDiscovery.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./public/javascripts/'));
-});
-
-gulp.task('javascript:dev:unsubscribe', () => {
-	return browserify('app/standalone/Unsubscribe/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ [ 'env', { debug: false } ], 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.bundle()
-		.pipe(source('Unsubscribe.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./public/javascripts/'));
-});
-
-gulp.task('javascript:dev:Bible', () => {
-	return browserify('app/standalone/Bible/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.bundle()
-		.pipe(source('Bible.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./public/javascripts/'));
-});
-
-gulp.task('javascript:dev:subscribeUser', () => {
-	return browserify('app/standalone/SubscribeUser/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.bundle()
-		.pipe(source('SubscribeUser.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./public/javascripts/'));
-});
-
-gulp.task('javascript:dev:passage', () => {
-	return browserify('app/standalone/Passage/main.js', { debug: !IS_PROD })
-		.transform('babelify', { presets: [ 'es2015', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties' ] })
-		.bundle()
-		.pipe(source('Passage.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./public/javascripts/'));
-});
-
-gulp.task('javascript:clean', () => {
-	return del([ 'public/javascripts/*.js' ]);
-});
-
-gulp.task('css:clean', () => {
-	return del([ 'public/stylesheets/*.css' ]);
-});
-
-gulp.task('images:clean', () => {
-	return del([ 'public/images/**/*' ]);
-});
-
-gulp.task('javascript', (callback) => {
-	if (IS_PROD) {
-		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:unsubscribe', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', 'javascript:prod:passage', callback);
-	} else {
-		runSequence('javascript:clean', [ /* 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', */ 'javascript:dev:unsubscribe' /* , 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage' */], callback);
-	}
-});
-
-gulp.task('css:prod', () => {
-	return gulp.src(['./app/less/style.less'])
-		.pipe(concat('style.css'))
-    .pipe(less())
-		.pipe(cssnano())
-		.pipe(rev())
-		.pipe(gulp.dest('./public/stylesheets'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-gulp.task('css:dev', () => {
-	return gulp.src(['./app/less/style.less'])
-		.pipe(concat('style.css'))
-    .pipe(less())
-		.pipe(gulp.dest('./public/stylesheets'));
-});
-
-gulp.task('css', (callback) => {
-	if (IS_PROD) {
-		runSequence('css:clean', 'css:prod', callback);
-	} else {
-		runSequence('css:clean', 'css:dev', callback);
-	}
-});
-
-gulp.task('images', (callback) => {
-	if (IS_PROD) {
-		runSequence('images:clean', 'images:prod', callback);
-	} else {
-		runSequence('images:clean', 'images:dev', callback);
-	}
-});
-
-gulp.task('images:prod', () => {
-	return gulp.src(['./images/**/*'])
-		.pipe(rev())
-		.pipe(gulp.dest('./public/images'))
-		.pipe(rev.manifest({ merge: true, base: 'build/assets' }))
-		.pipe(gulp.dest('build/assets'));
-});
-
-gulp.task('images:dev', () => {
-	return gulp.src(['./images/**/*'])
-		.pipe(gulp.dest('./public/images'));
-});
-
-gulp.task('build', ['images', 'css', 'javascript']);
-
-gulp.task('build:production', (callback) => {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:unsubscribe', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', 'javascript:prod:passage', callback);
-});
-
-gulp.task('build:staging', (callback) => {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:unsubscribe', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
-});
-
-gulp.task('build:review', (callback) => {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:unsubscribe', 'javascript:dev:Bible', 'javascript:dev:subscribeUser', 'javascript:dev:passage'], callback);
-});
-
-gulp.task('watch', ['images', 'css', 'javascript'], () => {
-	livereload.listen();
-	gulp.watch(['./images/**/*.js'], ['images']);
-	gulp.watch(['./app/**/*.js'], ['javascript']);
-	gulp.watch(['./app/**/*.less'], ['css']);
-});
+const crowdinProjectId = 'biblecom';
 
 const prefixedLocales = [
 	'en-GB',
@@ -394,7 +81,99 @@ const prefixedLocales = [
 	'pt-PT',
 ]
 
-gulp.task('crowdin', (callback) => {
+function crowdinFetchAvailableLocales(token) {
+	return new Promise((resolve, reject) => {
+		const options = {
+			hostname: 'api.crowdin.com',
+			port: 443,
+			path: `/api/project/${crowdinProjectId}/status?key=${token}&json`,
+			method: 'GET'
+		}
+
+		const req = https.request(options)
+
+		req.on('response', (response) => {
+			/* eslint-disable no-var */
+			var body = '';
+
+			response.on('data', (chunk) => {
+				body += chunk;
+			});
+
+			response.on('end', () => {
+				try {
+					resolve(JSON.parse(body));
+				} catch (ex) {
+					reject(ex);
+				}
+			});
+		});
+
+		req.on('error', (e) => {
+			reject(e);
+		});
+
+		req.end();
+	})
+}
+
+function crowdinFetchLocaleFile(locale, token) {
+	return new Promise((resolve, reject) => {
+
+		// console.log('Requesting locale file from Crowdin:', locale)
+
+		const options = {
+			hostname: 'api.crowdin.com',
+			port: 443,
+			path: `/api/project/${crowdinProjectId}/export-file?file=/master/ruby/config/locales/en.yml&format=yaml&language=${locale}&key=${token}`,
+			method: 'GET'
+		}
+
+		const req = https.request(options)
+
+		req.on('response', (response) => {
+			/* eslint-disable no-var */
+			var body = '';
+
+			response.on('data', (chunk) => {
+				body += chunk;
+			});
+
+			response.on('end', () => {
+				try {
+					resolve(yaml.safeLoad(body, { json: true }));
+				} catch (ex) {
+					reject(ex);
+				}
+			});
+		});
+
+		req.on('error', (e) => {
+			reject(e);
+		});
+
+		req.end();
+	})
+}
+
+/*eslint-disable */
+function flattenObject(ob) {
+	var toReturn = {};
+	for (var i of Object.keys(ob)) {
+		if ((typeof ob[i]) === 'object') {
+			var flatObject = flattenObject(ob[i]);
+			for (var x in flatObject) {
+				toReturn[`${i}.${x}`] = flatObject[x];
+			}
+		} else {
+			toReturn[i] = ob[i];
+		}
+	}
+	return toReturn;
+}
+/*eslint-enable*/
+
+gulp.task('crowdin', () => {
 	return crowdinFetchAvailableLocales(CROWDIN_API_KEY).then((response) => {
 		const locales = response
 		const queue = async.queue((task, callback) => {
@@ -438,7 +217,11 @@ gulp.task('crowdin', (callback) => {
 			return a.displayName.localeCompare(b.displayName);
 		});
 
-		fs.writeFileSync('./locales/config/_localeList.json', JSON.stringify(localeList, null, '\t'));
+    // With the Smartling integration, we were writing this file as point of reference
+    //  for copying/pasting into ./locales/config/localeList.json (no underscore)
+    //  Removing this with Crowdin to prevent accidentally copying/pasting bad data into
+    //  production file
+		// fs.writeFileSync('./locales/config/_localeList.json', JSON.stringify(localeList, null, '\t'));
 
 		const tasks = locales.map((item) => {
 			return { locale: item.code, prefix: item.code.split('-')[0] }
@@ -453,19 +236,17 @@ gulp.task('crowdin', (callback) => {
 			availableLocales[t.locale.replace('-', '_')] = t.locale
 		});
 
-		fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, '\t'));
+    // With the Smartling integration, we were writing this file as point of reference
+    //  for copying/pasting into ./locales/config/availableLocales.json (no underscore)
+    //  Removing this with Crowdin to prevent accidentally copying/pasting bad data into
+    //  production file
+		// fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, '\t'));
 
-		queue.push(tasks, (task, data, err) => {
-			// let's get the api strings
-
+		queue.push(tasks, (task, data) => {
 			console.log('=== Got a response from Crowdin:', task.locale)
 
 			if (!(typeof data === 'object')) {
-				console.log(' !! Bad Response')
-			}
-
-			if (task.locale.indexOf('es') > -1) {
-				console.log('+++', task.locale, data.es.EventsAdmin.Auth['plan blurb'])
+				console.log(' !! Bad Response', data)
 			}
 
 			getApiStrings({
@@ -513,11 +294,7 @@ gulp.task('crowdin', (callback) => {
 					)
 
 				if (typeof data[localeKey] === 'undefined') {
-					console.log('ERROR', localeKey, Object.keys(data), data)
-				}
-
-				if (task.locale.indexOf('es') > -1) {
-					console.log('+++', localeKey, Object.keys(strings))
+					console.log('ERROR', localeKey, Object.keys(data))
 				}
 
 				const fileName = (['es', 'pt'].indexOf(localeKey) > -1) ? task.locale : (localeNameException[localeKey] || localeKey)
@@ -530,7 +307,7 @@ gulp.task('crowdin', (callback) => {
 			})
 		});
 
-		const client = GetClient('reading-plans')
+		GetClient('reading-plans')
       .call('configuration')
       .setVersion('3.1')
       .get()
@@ -542,10 +319,8 @@ gulp.task('crowdin', (callback) => {
 	}
 
 	const isOverride = (locale, planLocale) => {
-		return (isFullMatch('pt-PT', locale) && isFullMatch('pt', planLocale)) ||
-          (isFullMatch('es-ES', locale) && isFullMatch('es', planLocale))
+		return (isFullMatch('pt-PT', locale) && isFullMatch('pt', planLocale)) || (isFullMatch('es-ES', locale) && isFullMatch('es', planLocale))
 	}
-
 
 	const isPrefixMatch = (locale, planLocale) => {
 		return planLocale.length === 2 &&
@@ -564,7 +339,9 @@ gulp.task('crowdin', (callback) => {
 			mergeLocale(planLocales, a, l)
 		});
 	});
-	fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, '\t'));
+
+	// fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, '\t'));
+
 }, (error) => {
 	console.log(error);
 });
@@ -573,96 +350,3 @@ gulp.task('crowdin', (callback) => {
 		console.log(error);
 	});
 });
-
-
-function crowdinFetchAvailableLocales(token) {
-	return new Promise((resolve, reject) => {
-		const options = {
-			hostname: 'api.crowdin.com',
-			port: 443,
-			path: `/api/project/${smartlingProjectId}/status?key=${token}&json`,
-			method: 'GET'
-		}
-
-		const req = https.request(options)
-
-		req.on('response', (response) => {
-			/* eslint-disable no-var */
-			var body = '';
-
-			response.on('data', (chunk) => {
-				body += chunk;
-			});
-
-			response.on('end', () => {
-				try {
-					resolve(JSON.parse(body));
-				} catch (ex) {
-					reject(ex);
-				}
-			});
-		});
-
-		req.on('error', (e) => {
-			reject(e);
-		});
-
-		req.end();
-	})
-}
-
-function crowdinFetchLocaleFile(locale, token) {
-	return new Promise((resolve, reject) => {
-
-		// console.log('Requesting locale file from Crowdin:', locale)
-
-		const options = {
-			hostname: 'api.crowdin.com',
-			port: 443,
-			path: `/api/project/${smartlingProjectId}/export-file?file=/master/ruby/config/locales/en.yml&format=yaml&language=${locale}&key=${token}`,
-			method: 'GET'
-		}
-
-		const req = https.request(options)
-
-		req.on('response', (response) => {
-			/* eslint-disable no-var */
-			var body = '';
-
-			response.on('data', (chunk) => {
-				body += chunk;
-			});
-
-			response.on('end', () => {
-				try {
-					resolve(yaml.safeLoad(body, { json: true }));
-				} catch (ex) {
-					reject(ex);
-				}
-			});
-		});
-
-		req.on('error', (e) => {
-			reject(e);
-		});
-
-		req.end();
-	})
-}
-
-/*eslint-disable */
-function flattenObject(ob) {
-	var toReturn = {};
-	for (var i of Object.keys(ob)) {
-		if ((typeof ob[i]) === 'object') {
-			var flatObject = flattenObject(ob[i]);
-			for (var x in flatObject) {
-				toReturn[`${i}.${x}`] = flatObject[x];
-			}
-		} else {
-			toReturn[i] = ob[i];
-		}
-	}
-	return toReturn;
-}
-/*eslint-enable*/
