@@ -398,7 +398,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "Тып файла не пасуе. Мусіць быць JPG.",
 	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "Зьмяніць выяву",
 	"features.EventEdit.features.details.components.DetailsEdit.removeImage": "Выдаліць выяву",
-	"features.EventEdit.features.details.components.DetailsEdit.prompt": "П��рацягніце сюды выяву і адпусьціце",
+	"features.EventEdit.features.details.components.DetailsEdit.prompt": "Перацягніце сюды выяву і адпусьціце",
 	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[Толькі JPG]",
 	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "{requiredWidth}px шырыня x {requiredHeight}px вышыня",
 	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Your image dimensions should be {requiredWidth} x {requiredHeight} pixels.",

@@ -255,7 +255,7 @@
 	"plans.unsubscribe successful": "لقد قمت بإلغاء اشتراكك في هذه الخطة.",
 	"plans.already subscribed": "انت مشترك بالفعل في هذه الخطة!",
 	"plans.partner added successful": "لقد تم اضافة المستخدم {username} إلى مسؤولين الخطة بنجاح.",
-	"plans.partner removed successful": "لقد تم ازالة المستخدم {username} من مسؤولي�� الخطة.",
+	"plans.partner removed successful": "لقد تم ازالة المستخدم {username} من مسؤولين الخطة.",
 	"plans.make public successful": "لقد تم نشر خطتك للعامة بنجاح!",
 	"plans.make private successful": "خطتك الآن شخصية.",
 	"plans.reminder on successful": "تم بنجاح! سوف يتم ارسال بريد الكتروني للتذكرة يوميا.",
