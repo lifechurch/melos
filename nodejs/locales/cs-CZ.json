@@ -798,7 +798,7 @@
 	"notifications.likes.moment.mine.note.no_title_no_reference": "Uživateli {name} se líbí vaše poznámka",
 	"notifications.likes.moment.mine.note.reference": "Uživateli {name} se líbí vaše poznámka na {reference_human}",
 	"notifications.likes.moment.mine.note.title": "Uživateli {name} se líbí vaše poznámka, “{title}”",
-	"notifications.likes.moment.mine.plan_activity": "uživ. {name} se líbí váš pokrok ve čtení",
+	"notifications.likes.moment.mine.plan_activity": "uživ. {name} se l��bí váš pokrok ve čtení",
 	"notifications.likes.moment.mine.plan_activity.push": "uživ. {name} se líbí váš pokrok ve čtení Bible",
 	"notifications.moments.create.bookmark": "{name} vytvořil záložku {reference_human}",
 	"notifications.moments.create.highlight": "{name} zvýraznil {reference_human}",

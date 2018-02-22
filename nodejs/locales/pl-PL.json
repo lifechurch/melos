@@ -775,7 +775,7 @@
 	"notifications.comments.moment.mine.plan_activity.push": "{name} skomentował twój plan czytania Biblii: “{comment}”",
 	"notifications.comments.moments.friend.bookmark": "{commenter_name} również skomentował zakładkę {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.friendship": "{commenter_name} również skomentował nową znajomość {moment_owner_name} z {friend_name}: “{comment}”",
-	"notifications.comments.moments.friend.friendship.their": "{commenter_name} także skomentował(a) o ich nowej Przyjaźni z {moment_owner_name}: “{comment}��",
+	"notifications.comments.moments.friend.friendship.their": "{commenter_name} także skomentował(a) o ich nowej Przyjaźni z {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.friendship.ours": "{commenter_name} także skomentował(a) o twojej nowej Przyjaźni z {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.highlight": "{commenter_name} również skomentował zakreślenie {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.note": "{commenter_name} również skomentował notatkę {moment_owner_name}: “{comment}”",

@@ -774,7 +774,7 @@
 	"notifications.comments.moment.mine.plan_activity": "{name} komentira tvoj plan čitanja: “{comment}”",
 	"notifications.comments.moment.mine.plan_activity.push": "{name} komentira tvoj plan čitanja Biblije: “{comment}”",
 	"notifications.comments.moments.friend.bookmark": "Oznaka korisnika {moment_owner_name}, “{comment}”, je isto komentirana od strane korisnika {commenter_name}",
-	"notifications.comments.moments.friend.friendship": "{commenter_name} tako��er komentira prijateljstvo vlasnika trenutka {moment_owner_name} s {friend_name}: “{comment}”",
+	"notifications.comments.moments.friend.friendship": "{commenter_name} također komentira prijateljstvo vlasnika trenutka {moment_owner_name} s {friend_name}: “{comment}”",
 	"notifications.comments.moments.friend.friendship.their": "{commenter_name} također komentira svoje novo prijateljstvo s korisnikom {moment_owner_name}:“{comment}”",
 	"notifications.comments.moments.friend.friendship.ours": "{commenter_name} također komentira tvoje novo prijateljstvo s korisnikom {moment_owner_name}:“{comment}”",
 	"notifications.comments.moments.friend.highlight": "Korisnik {commenter_name} je isto komentirao: “{comment}”, što je istaknuo korisnik {moment_owner_name}",
