@@ -1977,7 +1977,7 @@ id:
     currently subscribed: "Berlangganan Saat Ini"
     invite friends: "Undang Teman"
     invite others: "Undang Teman Lain"
-    invited: "Invited"
+    invited: "Diundang"
     pending: "Tertunda"
     x pending:
       other: "%{number} Tertunda"
