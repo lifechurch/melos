@@ -16,7 +16,7 @@ spec:
       space: $KUBE_NAMESPACE
   strategy:
     rollingUpdate:
-      maxSurge: 2
+      maxSurge: 10%
       maxUnavailable: 0
   template:
     metadata:
