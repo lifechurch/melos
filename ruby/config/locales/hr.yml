@@ -2063,7 +2063,7 @@ hr:
     hi name: "Pozdrav, %{name}"
     your snapshot: "Evo pregleda tvoje godine u aplikaciji Biblija"
     user snapshot: "%{year} pregled za %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "Adam i Eva, Noa, Mojsije, Estera, Isus, Pavao iostalo"
     STORIES.ABRAHAMCALLED: "Bog poziva Abrahama"
     STORIES.ABRAHAMISAAC: "Abraham i Izak"
     STORIES.CREATION: "Stvaranje svijeta"
