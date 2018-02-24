@@ -2086,7 +2086,7 @@ cs:
     hi name: "Vítej, %{name}"
     your snapshot: "Zde jsou všechny momenty za uplynulý rok s aplikací Bible"
     user snapshot: "%{year} momentka pro %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "Adam a Eva, Noe, Mojžíš, Ester, Ježíš, Pavel avíce"
     STORIES.ABRAHAMCALLED: "Povolání Abrahama"
     STORIES.ABRAHAMISAAC: "Abraham a Izák"
     STORIES.CREATION: "Stvoření světa"
