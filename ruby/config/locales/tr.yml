@@ -2040,7 +2040,7 @@ tr:
     hi name: "Merhaba, %{name}"
     your snapshot: "İşte Kutsal Kitap uygulamasında geçirdiğiniz yılın anlık bir görüntüsü!"
     user snapshot: "%{user} için %{year} Anlık Görüntüsü"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "Adem ve Havva, Nuh, Musa, Ester, İsa, Pavlus vediğerleri"
     STORIES.ABRAHAMCALLED: "Tanrı İbrahim’i çağırıyor"
     STORIES.ABRAHAMISAAC: "İbrahim ve İshak"
     STORIES.CREATION: "Dünyanın yaratılışı "
