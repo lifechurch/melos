@@ -43,7 +43,7 @@ es:
   social:
     intro page:
       main heading: "Conversación y Descubrimientos"
-      main description: "Una nueva forma de explorar La Biblia con amigos de confianza"
+      main description: "Una nueva forma de explorar la Biblia con amigos de confianza"
       moment:
         user aaron: "Aaron Steele"
         user andy: "Andy Knight"
@@ -58,10 +58,10 @@ es:
           copy: "Comparta conversaciones honestas sobre la Escritura."
           button: "Busque algunos amigos para iniciar."
         likes:
-          info: "a 4 mas les gusta esto"
+          info: "y cuatro más como éste"
         comments:
           first:
-            text: "Realmente necesitaba escuchar hoy eso, gracias. ¡Nos pondremos al día pronto!"
+            text: "Realmente necesitaba escuchar eso hoy, gracias. ¡Nos pondremos al día pronto!"
             time: "hace 3 horas"
           second:
             text: "Amén, yo también. Ahora mismo le envío un correo electrónico."
@@ -78,7 +78,7 @@ es:
     my connections: "Cuentas Conectadas"
     connected as: "Está conectado a %{connection} como %{username}."
     remove connection: "Eliminar esta conexión."
-    connection friends: "Estos son algunos usuarios de YouVersion a los que estás conectado en %{connection}:"
+    connection friends: "Estos son algunos usuarios de YouVersion a los que está conectado en %{connection}:"
     errors:
       no friends: "Aparentemente ninguno de sus amigos de %{connection} está conectado a YouVersion aún."
       reset connection: "Lo sentimos, ha ocurrido un error. Por favor, elimina esta conexión y vuelve a conectarte."
