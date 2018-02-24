@@ -2017,7 +2017,7 @@ km:
     hi name: "សួស្ដី, %{name}"
     your snapshot: "នេះជារូបថតអំពីឆ្នាំរបស់អ្នកលើកម្មវិធីព្រះគម្ពីរ!"
     user snapshot: "%{year} រូបថតសម្រាប់ %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "លោកអាដាំ និងនាងអេវ៉ា លោកណូអេ លោកម៉ូសេ នាងអេសធើរ ព្រះយេស៊ូ លោកប៉ូល និង ច្រើនទៀត"
     STORIES.ABRAHAMCALLED: "លោកអាប្រាហាំបានត្រាស់ហៅដោយព្រះជាម្ចាស់"
     STORIES.ABRAHAMISAAC: "លោកអាប្រាហាំ និងអ៊ីសាក់"
     STORIES.CREATION: "ការបង្កើតពិភពលោក"
