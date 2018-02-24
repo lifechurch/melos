@@ -2040,7 +2040,7 @@ hi:
     hi name: "हेलो, %{name}"
     your snapshot: "ये है बाइबिल ऐप में आपके वर्ष का आशुचित्र"
     user snapshot: "%{year} के लिए आशुचित्र %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "आदम और हब्बा, नूह, मूसा, एस्तेर, यीशु, पौलुस और कई और"
     STORIES.ABRAHAMCALLED: "अब्राहम परमेश्वर के द्वारा बुलावट प्राप्त करता है"
     STORIES.ABRAHAMISAAC: "अब्राहम और इसहाक"
     STORIES.CREATION: "संसार की सृष्टी"
