@@ -1067,7 +1067,7 @@ cs:
     banner action: "Stáhnout"
     banner open: "Otevřít"
   download bafk ad:
-    title: "Download the Bible App for Kids"
+    title: "Stáhnout aplikaci Bible pro děti"
     description copy: "Aplikace Bible pro děti je skvělý způsob, jak se vaše děti naučí biblické příběhy o Ježíši."
     download: "Stahujte nyní"
   about page:
@@ -2037,7 +2037,7 @@ cs:
     currently subscribed: "Aktuálně odebírají"
     invite friends: "Pozvat přítele"
     invite others: "Pozvat další"
-    invited: "Invited"
+    invited: "Pozvánky"
     pending: "Čekající"
     x pending:
       one: "%{number} čekající"
@@ -2128,10 +2128,10 @@ cs:
     STORIES.SERMONMOUNT: "Kázání na hoře"
     STORIES.TRIUMPHALENTRY: "Vjezd do Jeruzaléma"
     explore: "Vyhledat"
-    what does the bible say: "What does the Bible say about..."
+    what does the bible say: "Co říká Bible o..."
     how are you feeling: "Jak se cítíte?"
     bible stories: "Biblické příběhy"
-    what the bible says about: "Here's what the Bible says about: %{topic}"
+    what the bible says about: "Zde Bible mluví k tématu: %{topic}"
     amazed: "Ohromený"
     content: "Obsah"
     faithful: "Věrný"
