@@ -175,7 +175,7 @@ it:
   google plus: "Google+"
   connect to: "Collegati al tuo account %{connection}"
   deleted connection: "Il collegamento con %{connection} è stato rimosso con successo."
-  deleted connection error: "Scusa, c'è stato un problema nel rimuovere il tuo collegamento con  %{connection}"
+  deleted connection error: "Scusa, c'è stato un problema nel rimuovere il tuo collegamento con %{connection}."
   connection marketing: "YouVersion è ancora più divertente con gli amici! Collega il tuo account YouVersion ai tuoi Social Network e trova immediatamente e segui i tuoi amici su YouVersion. Collegando i tuoi account ti facilita anche a condividere i contenuti con pochi clic. Noi non metteremo mai i post senza la tua approvazione."
   next step connections: "Prossimo: Collega i tuoi account e trova i tuoi amici"
   no notes found: "%{username} non ha nessuna nota."
