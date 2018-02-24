@@ -512,7 +512,7 @@ es:
       draft: "Borrador"
     list title: "Notas"
     loading community: "Cargando notas de la comunidad..."
-    no community notes: "No se encontraron notas de la comunidad que hagan referencia a los versículos seleccionados. Para crear una nota, selecciona un versículo en el lector de la Biblia y luego haz clic en el botón Seleccionado ubicado en la parte superior del lector."
+    no community notes: "No se encontraron notas de la comunidad que hagan referencia a los versículos seleccionados. Para crear una nota, seleccione un versículo en el lector de la Biblia y luego haga clic en el botón Seleccionado ubicado en la parte superior del lector."
     public: "Público"
     private: "Privado"
     is private: "La nota que solicitas es privada."
