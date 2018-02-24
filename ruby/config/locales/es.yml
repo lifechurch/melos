@@ -562,7 +562,7 @@ es:
     invalid chapter text: "Este capítulo no existe en esta versión."
     invalid secondary chapter text: "Este capítulo no existe en su versión secundaria preferida."
     no secondary version title: "Acerca de Comparación Paralela"
-    no secondary version text: "%{language_name} solo tienes una versión disponible, por eso no pudimos seleccionar una versión secundaria. Por favor selecciona tu versión secundaria para realizar una comparación paralela."
+    no secondary version text: "%{language_name} solo tiene una versión disponible; por eso no pudimos seleccionar una versión secundaria. Por favor seleccione su versión secundaria para realizar una comparación paralela."
     select another chapter: "Seleccionar un Capítulo Diferente"
     view in reader: "Ver %{reference} en Lector"
   users:
