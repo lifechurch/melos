@@ -320,7 +320,7 @@ mk:
     testimonial 3 text: "“We use Events for all of our sessions, allowing our attendees to have the notes and Scriptures from the speakers right in front of them. Events has saved us printing thousands of pages! Setting up an Event is incredibly easy, and it’s always published at the exact time we need it.”"
     all new title: "Events is all-new, entirely free, and only in the Bible App."
     all new text: "A revolution in Bible engagement is taking place within our lifetimes. Installed on more than %{install_count} million unique devices so far (and counting), the Bible App is helping people in every country on earth connect more with God’s Word. And now, through Events, we’re happy to offer the reach of that platform to you."
-    get started title: "Let’s get you started."
+    get started title: "Да почнеме."
     get started text: "Get your first Event ready to share in the Bible App in less than ten minutes. All you need is a Mac or PC and a free YouVersion account."
     create an event: "Create an Event"
     resources: "Ресурси"
