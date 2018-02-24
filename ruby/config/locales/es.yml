@@ -81,7 +81,7 @@ es:
     connection friends: "Estos son algunos usuarios de YouVersion a los que está conectado en %{connection}:"
     errors:
       no friends: "Aparentemente ninguno de sus amigos de %{connection} está conectado a YouVersion aún."
-      reset connection: "Lo sentimos, ha ocurrido un error. Por favor, elimina esta conexión y vuelve a conectarte."
+      reset connection: "Lo sentimos, ha ocurrido un error. Por favor, elimine esta conexión y vuelva a conectarse."
     email:
       name: "Correo Electrónico"
     twitter:
@@ -89,7 +89,7 @@ es:
     facebook:
       name: "Facebook"
       errors:
-        expired access: "Tu sesión en Facebook ha expirado. Por favor elimina la conexión y vuelve a conectarte a Facebook."
+        expired access: "Su sesión en Facebook ha expirado. Por favor elimine la conexión y vuelva a conectarse a Facebook."
   language names:
     arabic: "árabe"
     bulgarian: "búlgaro"
