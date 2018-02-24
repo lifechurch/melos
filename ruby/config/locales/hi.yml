@@ -1038,7 +1038,7 @@ hi:
     banner open: "खोलें"
   download bafk ad:
     title: "बाइबल एप्प बच्चों के लिए डाउनलोड करें "
-    description copy: "बाइबल एप्प बच्चों के लिए आपके बच्चों को यीशु के बारे में और अधिक जानने का एक महान माध्यम है।  "
+    description copy: "बाइबिल की कहानियों द्वारा यीशु के बारे में आपके बच्चों सिखाने के लिए बच्चों की बाइबिल ऐप एक बहुत ही उत्तम साधन है।"
     download: "कृपया डाउनलोड करें"
   about page:
     relevancy: "प्रासंगिकता"
@@ -2040,10 +2040,10 @@ hi:
     hi name: "हेलो, %{name}"
     your snapshot: "ये है बाइबिल ऐप में आपके वर्ष का आशुचित्र"
     user snapshot: "%{year} के लिए आशुचित्र %{user}"
-    STORIESEXAMPLES: "आदम और हब्बा, नूह, मूसा, एस्तेर, यीशु, पौलुस और कई और"
-    STORIES.ABRAHAMCALLED: "अब्राहम परमेश्वर के द्वारा बुलावट प्राप्त करता है"
-    STORIES.ABRAHAMISAAC: "अब्राहम और इसहाक"
-    STORIES.CREATION: "संसार की सृष्टी"
+    STORIESEXAMPLES: "आदम और हवा, नूह, मूसा, एस्तेर, यीशु, पौलुस तथा कई और भी"
+    STORIES.ABRAHAMCALLED: "अब्राहम परमेश्वर द्वारा बुलाया गया"
+    STORIES.ABRAHAMISAAC: "Abraham and Isaac"
+    STORIES.CREATION: "संसार की रचना"
     STORIES.CRIPPLEHEALED: "लंगड़ा आदमी चंगा होता है"
     STORIES.CROSS: "सलीब"
     STORIES.DANIEL: "दानियल और शेरों की मांद"
