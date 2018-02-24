@@ -2040,7 +2040,7 @@ sv:
     hi name: "Hej, %{name}"
     your snapshot: "Här syns en ögonblicksbild från ditt år med Bibelappen!"
     user snapshot: "%{year} Ögonblicksbild för %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "Adam och Eva, Noa, Mose, Ester, Jesus, Paulus medflera"
     STORIES.ABRAHAMCALLED: "Gud kallar Abraham"
     STORIES.ABRAHAMISAAC: "Abraham och Isak"
     STORIES.CREATION: "Världens skapelse"
