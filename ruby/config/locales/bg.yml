@@ -351,7 +351,7 @@ bg:
     free resources title: "Безплатни ресурси за помощ със събитията"
     resources video: "Гледайте видео за прехода към събития"
     resources social: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Изтеглете</a> тези материали, за да промотирате Вашите събития във Facebook, Twitter и Instagram"
-    resources slides: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Download</a> these slides and handouts to market your Events within your church or organization"
+    resources slides: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Изтеглете</a> тези слайдове и материали, за да промотирате Вашите събития във Вашата църква или организация"
     resources more: "Търсите повече свободни ресурси? Разгледайте повече от 30 000 проповеди, детски материали, творчески ресурси и повече в <a class='text2' href='https://open.church'>open.church</a>\n"
   first page: "Първа страница"
   last page: "Последна страница"
@@ -1037,7 +1037,7 @@ bg:
     banner action: "Изтегляне"
     banner open: "Отваряне"
   download bafk ad:
-    title: "Download the Bible App for Kids"
+    title: "Изтеглете приложение Библията за деца"
     description copy: "Библейското приложение за деца е чудесен начин децата ви да научат библейски истории за Исус."
     download: "Изтегляне"
   about page:
@@ -1114,7 +1114,7 @@ bg:
     hp palm: "HP/Palm"
     java: "Java"
     symbian: "Symbian"
-    mobile web: "Mobile Web"
+    mobile web: "Мобилен интернет"
     amazon: "Kindle Fire"
     free overlay: "100% Безплатно"
     sms button: "Изпрати ми линк с SMS"
@@ -1997,7 +1997,7 @@ bg:
     currently subscribed: "Абониран в момента"
     invite friends: "Поканете приятели"
     invite others: "Поканете други"
-    invited: "Invited"
+    invited: "Поканен(а)"
     pending: "Неотговорили"
     x pending:
       one: "%{number} неотговорил"
