@@ -20,16 +20,16 @@ sk:
         many: "about %{count} years ago"
         other: "asi pred %{count} rokmi"
       almost_x_years:
-        one: "skoro pred %{count} rokom"
-        few: "skoro pred %{count} rokmi"
+        one: "takmer pred %{count} rokom"
+        few: "takmer pred %{count} rokmi"
         many: "almost %{count} years ago"
-        other: "skoro pred %{count} rokmi"
+        other: "takmer pred %{count} rokmi"
       half_a_minute: "pred polminútou"
       less_than_x_minutes:
-        one: "pred menej ako%{count} minútou"
-        few: "pred menej ako%{count} minútami"
+        one: "pred menej ako %{count} minútou"
+        few: "pred menej ako %{count} minútami"
         many: "less than %{count} minutes ago"
-        other: "pred menej ako%{count} minútami"
+        other: "pred menej ako %{count} minútami"
       less_than_x_seconds:
         one: "pred menej ako %{count} sekundou"
         few: "pred menej ako %{count} sekundami"
