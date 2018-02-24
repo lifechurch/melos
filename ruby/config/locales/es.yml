@@ -233,7 +233,7 @@ es:
     none: "No tiene ninguna notificación"
     no new: "No hay nuevas notificaciones"
     view all: "Ver todas las notificaciones"
-  choose language field: "Elige Tu Idioma:"
+  choose language field: "Elegir Su Idioma:"
   settings: "Configuración"
   profile: "Perfil"
   find friends: "Encontrar Amigos"
@@ -263,11 +263,11 @@ es:
   notes title: "Notas"
   friends:
     you have N friends: "Tiene %{count} amigos"
-    none me: "Comparta sus momentos en la Biblia, tales como marcadores, resaltados, y notas con sus amigos más cercanos y familia."
+    none me: "Comparta sus momentos en la Biblia, tales como marcadores, resaltados y notas, con sus amigos más cercanos y familia."
     find friends: "Encontrar amigos"
     blank slate:
-      heading: "Actualmente no hay amigos"
-      description: "Debe tener amistad con esta persona para poder ver sus amigos"
+      heading: "Actualmente no son amigos"
+      description: "Debe tener amistad con esta persona para poder ver sus amigos."
     limit notice: "Puede tener hasta 150 amigos"
     limit description: "Definir su grupo de amistades en la Biblia App a las personas que conoce bien, propicia un ambiente de conversaciones francas, compartiendo descubrimientos con amigos de confianza."
   groups: "Grupos"
