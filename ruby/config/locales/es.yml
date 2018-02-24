@@ -603,7 +603,7 @@ es:
     subscribed to plan: "Usuarios Suscritos a %{plan}"
     reading: "Usuarios Leyendo Este Plan"
     subscribed previously: "Inició hace %{time_ago}"
-    sign in for settings: "Por favor, ingresar a tu cuenta para acceder al perfil."
+    sign in for settings: "Por favor, ingrese a su cuenta para acceder al perfil."
     my profile: "Mi Perfil"
     edit profile: "Editar Perfil"
     update profile: "Actualizar Perfil"
