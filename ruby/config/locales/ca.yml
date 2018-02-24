@@ -2040,7 +2040,7 @@ ca:
     hi name: "Hola, %{name}"
     your snapshot: "Aquí tens una instantània del teu any a l'app Bible"
     user snapshot: "Instantània del %{year} per a %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "Adam i Eva, Noè, Moisès, Ester, Jesús, Pau id'altres"
     STORIES.ABRAHAMCALLED: "Abraham és cridat per Déu"
     STORIES.ABRAHAMISAAC: "Abraham i Isaac"
     STORIES.CREATION: "Creació del món"
