@@ -655,7 +655,7 @@ es:
     invalid confirm hash: "Lo sentimos, ese código de confirmación parece ser inválido. Puede reiniciar el navegador para intentarlo de nuevo o, si esto continúa, haga clic abajo para solicitar un nuevo código de confirmación."
     confirm password to continue: "Por favor, ingrese la contraseña para ingresar e iniciar."
     invalid email forgot: "Lo sentimos, no logramos encontrar una cuenta con esa dirección de correo electrónico. Por favor, inténtelo de nuevo."
-    error deleting account: "Lo sentimos. Hubo un problema en nuestra ubicación. Por favor intenta de nuevo o comunícate con Soporte Técnico."
+    error deleting account: "Lo sentimos. Hubo un problema en nuestra ubicación. Por favor intente de nuevo o comuníquese con Soporte Técnico."
     send new password button: "Enviar Nueva Contraseña"
     forgot password copy: "Escriba su correo electrónico o usuario, y le enviaremos un enlace para restablecer su contraseña."
     forgot password check: "Trataremos de enviarle un correo electrónico para restablecer su contraseña a <br><br>%{email}<br><br>y haga clic en el enlace de ese correo electrónico para continuar."
