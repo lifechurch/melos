@@ -8,7 +8,7 @@ mk:
         one: "пред околу %{count} час"
         other: "пред околу %{count} часа"
       about_x_months:
-        one: "пред околу %{count} месец"
+        one: "пред околу 1 месец"
         other: "пред околу %{count} месеци"
       about_x_years:
         one: "пред околу %{count} година"
