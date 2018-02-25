@@ -978,7 +978,7 @@ es:
       description: "Al leer la Biblia, seleccione un versículo y resáltelo. Regrese aquí para verlo, editarlo o eliminarlo."
     none user: "%{username} no tiene resaltados"
     choose color: "Elija un color"
-    create success: "¡Hecho! Tu resaltado ha sido guardado."
+    create success: "¡Hecho! Su resaltado ha sido guardado."
     create failure: "Error al guardar resaltado"
     destroy success: "Resaltado eliminado"
     destroy failure: "Error al eliminar resaltado"
@@ -992,7 +992,7 @@ es:
     users: "Usuarios"
     notes: "Notas"
     total results: "Aproximadamente %{total} Resultados"
-    suggestion html: "Quiso usted decir %{suggestion_link}?"
+    suggestion html: "¿Quería usted decir %{suggestion_link}?"
     all versions: "Todas las Versiones en %{language_name}"
     results for: "Resultados de búsqueda para: "
   donate:
