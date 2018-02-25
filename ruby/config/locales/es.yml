@@ -939,7 +939,7 @@ es:
       description: "Ya puede <a href='%{content_link}' target='_self'>ver el contenido que compró</a> de %{vendor} en YouVersion!"
     has errors: "Habían errores con su solicitud:"
     confirm:
-      email: "Para autorizar el contenido de video que compraste, por favor revisa tu correo electrónico para un correo de confirmación de YouVersion y haz clic en el enlace para confirmar el registro."
+      email: "Para autorizar el contenido de video que compró, por favor revise su correo electrónico para un correo de confirmación de YouVersion y haga clic en el enlace para confirmar el registro."
     request:
       invalid_vendor_signature: "Falló la validación de la licencia: la firma del vendedor es inválida"
       invalid_vendor_id: "Falló la validación de la licencia: identidad del vendedor es inválida"
@@ -947,19 +947,19 @@ es:
     vendor_transaction_id:
       duplicate: "Identidad de transacción: Esta identidad de transacción ya ha sido registrada"
     auth:
-      login notice: "Para validar tu contenido comprado, por favor inicia sesión en tu cuenta de YouVersion abajo o <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
-      signup notice: "Para validar tu contenido comprado, inscríbete en una cuenta gratuita de YouVersion abajo o <a href='/sign-in?source=licenses' target='_self'>%{login}</a> si ya tienes una cuenta."
-      signup link text: "Inscríbete para una cuenta gratuita"
-      login link text: "ingresar"
+      login notice: "Para validar su contenido comprado, por favor inicie sesión en su cuenta de YouVersion abajo o <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
+      signup notice: "Para validar su contenido comprado, inscríbase en una cuenta gratuita de YouVersion abajo o <a href='/sign-in?source=licenses' target='_self'>%{login}</a> si ya tiene una cuenta."
+      signup link text: "Inscríbase para una cuenta gratuita"
+      login link text: "Ingresar"
   registration:
     placeholder:
       email: "Ingrese su correo electrónico"
       username: "Ingrese su nombre de usuario"
       password: "Ingrese su contraseña"
-    with email: "Ingresar utilizando tu correo electrónico."
+    with email: "Ingresar utilizando su correo electrónico"
     with facebook: "Ingresar utilizando Facebook"
     benefits title: "Obtenga la Experiencia Completa"
-    benefits blurb: "Crear una cuenta en YouVersion le da acceso a más funciones como marcadores y notas. Éstas se mostrarán en cualquier dispositivo en el que usted inicie una sesión. Con una cuenta también se hace más fácil el poder compartir la Biblia con sus amigos, así que tome un minuto o dos y regístrese!"
+    benefits blurb: "Crear una cuenta en YouVersion le da acceso a más funciones como Marcadores y Notas. Éstas se mostrarán en cualquier dispositivo en el que usted inicie una sesión. Con una cuenta también se hace más fácil el poder compartir la Biblia con sus amigos, así que tome un minuto o dos y regístrese!"
     plan blurb: "Parece que usted quiere iniciar un Plan de Lectura. ¡Genial! Los planes le pueden ayudar a hacer de la Biblia parte de su vida diaria. ¡Ingrese, o cree una cuenta a continuación, e inicie esta maravillosa experiencia!"
     bookmark blurb: "Parece que usted quiere usar un marcador. ¡Fantástico! Los marcadores  le ayudan a mantener un registro de los versículos que usted quiere memorizar, compartir, o marcar como favoritos. ¡Ingrese, o cree una cuenta a continuación, e inicie esta maravillosa experiencia!"
     friends blurb: "Parece que usted desea interactuar con Amigos. ¡Buena idea! Usted será capaz de compartir lo que está aprendiendo y ayudar a otros a mantenerse enfocados en las metas de lectura. ¡Ingrese, o cree una cuenta a continuación, e inicie esta maravillosa experiencia!"
