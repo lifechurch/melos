@@ -993,7 +993,7 @@ es:
     notes: "Notas"
     total results: "Aproximadamente %{total} Resultados"
     suggestion html: "¿Quería usted decir %{suggestion_link}?"
-    all versions: "Todas las Versiones en %{language_name}"
+    all versions: "Todas las versiones en %{language_name}"
     results for: "Resultados de búsqueda para: "
   donate:
     donate now: "Donar ahora"
