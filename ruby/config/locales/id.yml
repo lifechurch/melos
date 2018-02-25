@@ -261,7 +261,7 @@ id:
     limit description: "Membatasi persahabatan Aplikasi Alkitab pada orang yang Anda kenal betul akan menciptakan lingkungan yang tepat untuk berbagi perbincangan jujur dan penemuan Anda dengan teman kepercayaan Anda."
   groups: "Grup"
   mobile: "Ap Seluler"
-  live: "Langsung"
+  live: "Siaran Langsung"
   events:
     events: "Acara"
     menu:
@@ -327,8 +327,8 @@ id:
     faq answer 3: "Fitur Acara membantu para pengguna Aplikasi Alkitab menemukan acara gereja yang sedang berlangsung di dekat mereka dengan menggunakan fitur lokasi-geografis pada perangkat mereka. Saat pengguna menghadiri salah satu dari Acara Anda, mereka dapat dengan mudah mengikuti pelayanan Anda dengan melihat informasi yang Anda sediakan. Para pengguna bisa menambahkan catatan mereka sendiri ke dalam Acara dan bahkan menyimpan salinannya untuk referensi di masa mendatang; hal ini akan mendorong mereka untuk lebih sering membaca Alkitab."
     faq question 4: "Bagaimana saya dapat membuat sebuah jajak pendapat?"
     faq answer 4: "Gunakan alat atau layanan pihak ketiga (seperti <a href='https://www.surveymonkey.com/'>SurveyMonkey®</a>, <a href='http://www.pollsnack.com/'>PollSnack</a>, atau <a href='http://www.poll-maker.com/'>Poll Maker</a>) untuk membuat jajak pendapat. Saat Anda menyimpan jajak pendapat, layanan ini akan menyediakan sebuah tautan yang dapat dibagikan. Dalam alat administrasi Acara, tarik-dan-letakkan (drag and drop) Modul Tautan Situs Web ke dalam Acara di mana Anda ingin jajak pendapat itu muncul, dan sertakan tautan jajak pendapat di sana."
-    faq question 5: "Will events that we created on YouVersion Live automatically transition to the new Events platform?"
-    faq answer 5: "Sorry, but no. To create the best Events experience possible — both for you and for your attenders — we had to build Events from the ground up. Consequently, data from Live is not transferable to Events."
+    faq question 5: "Akankah acara-acara yang kami buat di Siaran Langsung YouVersion secara otomatis beralih ke platform Acara yang baru?"
+    faq answer 5: "Maaf, tidak bisa. Untuk memberikan pengalaman terbaik dalam Acara — baik bagi Anda maupun para jemaat — kita harus membuat Acara dari awal. Oleh sebab itu, data dari Siaran Langsung tidak dapat ditransfer ke Acara."
     faq question 6: "What if our attenders don’t update their Bible App? Will they be able to see the new Events we create?"
     faq answer 6: "Because Events is an all-new app feature, users must update their Bible App to get it. (Fortunately, many Bible App users already have their devices set to auto-update.) When a user taps on the Live tab, a single Live event displays a message recommending that they update so that they can take advantage of Events. Until your regular attenders become accustomed to Events, we suggest that you explain briefly during your announcement time how your church is using it. Help your audience understand how it benefits them, and let them know how they can get it."
     faq question 7: "Live has always been free. Will Events cost anything?"
@@ -337,7 +337,7 @@ id:
     faq answer 8: "While technically you can use your personal YouVersion account to create Events, we recommend instead that you maintain a separate account for your organization, one set aside specifically for administrative purposes. This approach serves two purposes: (1) it lets you keep your personal Bible App use separate from your ministry tasks, and (2) it allows you to empower others to manage Events for your ministry, such as other staff members or trusted volunteers. (If your ministry already has a YouVersion account designated for administrative tasks — such as for the older YouVersion Live — you’ll be able to use that same account to sign in to the new Events administrative site.)"
     spread the word: "Spread the word about your Event, easily."
     resources intro: "Once you have your Event scheduled and ready to share, Events gives you a link you can use on all your social networks, in your email communications, and even on screen during your service or event. When someone with the Bible App visits your link, your Event opens directly inside the app. If they don’t have the Bible App, they’ll see your Event at Bible.com, with options to get the app if they want it."
-    free resources title: "Free resources for helping you with Events"
+    free resources title: "Sumber-sumber gratis untuk membantu Anda membuat Acara"
     resources video: "Watch a video about transitioning to Events"
     resources social: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Download</a> these assets to market your Events on Facebook, Twitter, and Instagram"
     resources slides: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Download</a> these slides and handouts to market your Events within your church or organization"
@@ -1580,7 +1580,7 @@ id:
         status:
           published: "Terpublikasi"
           draft: "Draf"
-          live: "Langsung"
+          live: "Siaran Langsung"
           archived: "Terarsip"
         unpublish: "Batalkan Publikasi"
         saving: "Menyimpan..."
