@@ -653,7 +653,7 @@ es:
     account already confirmed: "¡Su cuenta ha sido confirmada! Ingrese para continuar."
     errors confirming account: "Lo sentimos, algo falló en nuestro sistema. Puede reiniciar el navegador para intentar de nuevo, o si el problema persiste, haga clic abajo para solicitar un nuevo correo de confirmación."
     invalid confirm hash: "Lo sentimos, ese código de confirmación parece ser inválido. Puede reiniciar el navegador para intentarlo de nuevo o, si esto continúa, haga clic abajo para solicitar un nuevo código de confirmación."
-    confirm password to continue: "Por favor ingresar la contraseña para ingresar e iniciar."
+    confirm password to continue: "Por favor, ingrese la contraseña para ingresar e iniciar."
     invalid email forgot: "Lo sentimos, no logramos encontrar una cuenta con esa dirección de correo electrónico. Por favor, inténtelo de nuevo."
     error deleting account: "Lo sentimos. Hubo un problema en nuestra ubicación. Por favor intenta de nuevo o comunícate con Soporte Técnico."
     send new password button: "Enviar Nueva Contraseña"
