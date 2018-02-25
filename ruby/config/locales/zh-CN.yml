@@ -34,7 +34,7 @@ zh-CN:
       main heading: "对话与发现"
       main description: "与可信赖的朋友一起查考圣经的全新方式"
       moment:
-        user aaron: "亚伦"
+        user aaron: "施亚龙"
         user andy: "安迪"
         timestamp: "5 天前"
         title: "给诗篇 31:7 加了书签"
@@ -1168,7 +1168,7 @@ zh-CN:
       close: "关闭"
       font: "字体"
       font1: "Helvetica 字体"
-      font2: "Georgia 字体"
+      font2: "Georgia"
       font3: "Baskerville 字体"
       font4: "宋体"
       font size: "字体大小"
