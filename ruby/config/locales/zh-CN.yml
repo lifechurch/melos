@@ -785,7 +785,7 @@ zh-CN:
       readings 5 or more: "阅读内容"
     stats:
       friends reading:
-        other: "%{count}位朋友订阅了这个计划"
+        other: "%{count}位朋友订阅了此计划"
       friends completed:
         other: "%{count}位朋友完成了此计划"
       total completions: "完成次数超过%{count}"
@@ -818,7 +818,7 @@ zh-CN:
     save for later: "先存后读"
     saved for later: "先存后读"
     sample: "预览"
-    back: "回去"
+    back: "返回"
     length field: "计划长度："
     view sample: "预览"
     users subscribed: "目前有 %{user_count} 位用户正在订阅该计划"
@@ -888,7 +888,7 @@ zh-CN:
     add member: "添加"
     email edit: "编辑"
     unsubscribe successful: "你已经成功退订这个读经计划。"
-    already subscribed: "你已经订阅了此计划。"
+    already subscribed: "你已经订阅了此计划！"
     partner added successful: "成功！%{username} 已经添加到读经计划督责人中。"
     partner removed successful: "%{username}的督促责任已经移除了。"
     make public successful: "该读经计划已设置为公开的。"
@@ -1419,7 +1419,7 @@ zh-CN:
         readings 5 or more: "阅读内容"
       stats:
         friends reading:
-          other: "%{count}位朋友订阅了这个计划"
+          other: "%{count}位朋友订阅了此计划"
         friends completed:
           other: "%{count}位朋友完成了此计划"
         total completions: "完成次数超过%{count}"
@@ -1452,7 +1452,7 @@ zh-CN:
       save for later: "先存后读"
       saved for later: "先存后读"
       sample: "预览"
-      back: "回去"
+      back: "返回"
       length field: "计划长度："
       view sample: "预览"
       users subscribed: "目前有 %{user_count} 位用户正在订阅该计划"
@@ -1521,7 +1521,7 @@ zh-CN:
       add member: "添加"
       email edit: "编辑"
       unsubscribe successful: "你已经成功退订这个读经计划。"
-      already subscribed: "你已经订阅了此计划。"
+      already subscribed: "你已经订阅了此计划！"
       partner added successful: "成功！%{username} 已经添加到读经计划督责人中。"
       partner removed successful: "%{username}的督促责任已经移除了。"
       make public successful: "该读经计划已设置为公开的。"
