@@ -276,7 +276,7 @@ mk:
   events:
     events: "Настани"
     menu:
-      features: "Features"
+      features: "Карактеристики"
       faq: "ЧПП"
       resources: "Ресурси"
       tell your church: "Tell your church"
