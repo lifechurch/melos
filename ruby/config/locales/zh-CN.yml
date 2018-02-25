@@ -35,8 +35,8 @@ zh-CN:
       main description: "与可信赖的朋友一起查考圣经的全新方式"
       moment:
         user aaron: "施亚龙"
-        user andy: "安迪"
-        timestamp: "5 天前"
+        user andy: "聂安笛"
+        timestamp: "5天前"
         title: "给诗篇 31:7 加了书签"
         verse: "我要为你的慈爱高兴欢喜，因为你见过我的困苦，知道我心中的艰难。"
         reference: "诗篇 31:7"
@@ -47,14 +47,14 @@ zh-CN:
           copy: "展开环绕圣经的坦诚对话。"
           button: "从找些朋友开始。"
         likes:
-          info: "有4 个以上的人喜欢这个"
+          info: "有4 个人点赞"
         comments:
           first:
             text: "这正是我今天需要听到的，谢谢。让我们找机会再聊！"
-            time: "大约 3 小时前"
+            time: "大约3小时前"
           second:
-            text: "阿们！我也是。现在给你发邮件。"
-            time: "大约 27 分钟前"
+            text: "阿们！我也是。我正在给你发邮件。"
+            time: "大约27分钟前"
           field placeholder: "写评论……"
     widget:
       timeline: "时间线"
@@ -67,9 +67,9 @@ zh-CN:
     my connections: "连接的账户"
     connected as: "您已经与 %{connection} 上的 %{username}账户关联。"
     remove connection: "移除这个连接"
-    connection friends: "这是一些在 %{connection} 上与你有连接的YouVersion 用户："
+    connection friends: "这是一些在 %{connection} 上与你有连接的 YouVersion 用户："
     errors:
-      no friends: "您在 %{connection}上 的朋友现在不在 YouVersion 上。"
+      no friends: "你在 %{connection} 上的朋友似乎还未使用 YouVersion。"
       reset connection: "很抱歉，出错了！请解除并重新连接！"
     email:
       name: "电子邮件"
@@ -78,7 +78,7 @@ zh-CN:
     facebook:
       name: "Facebook"
       errors:
-        expired access: "你接入 Facebook 的授权已到期，请先解除关联，然后重新关联到 Facebook。"
+        expired access: "你接入 Facebook 的授权已到期，请先解除关联，再重新关联到 Facebook。"
   language names:
     arabic: "阿拉伯语"
     bulgarian: "保加利亚语"
@@ -100,9 +100,9 @@ zh-CN:
     traditional chinese: "繁体中文"
   api:
     users agree bool: "您必须同意使用协议和条款才能注册账户。"
-    users confirm password matches: "新密码不匹配。"
+    users confirm password matches: "新输入的密码不匹配。"
     users email email: "电子邮件地址无效。"
-    users email email rfc: "你提供的电子邮件地址无效。"
+    users email email rfc: "你提供了一个无效的电邮地址。"
     users email not available: "该电子邮件已被其它账户注册。"
     users email not found: "没有与此邮件相关的帐号。"
     users email required: "请输入正确的电子邮件地址。"
