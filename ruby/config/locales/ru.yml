@@ -13,7 +13,7 @@ ru:
         one: "около {0} месяца назад"
         few: "около {0} месяцев назад"
         many: "about %{count} months ago"
-        other: "около%{count}месяцев назад"
+        other: "около %{count} месяцев назад"
       about_x_years:
         one: "около года назад"
         few: "около 2 лет назад"
