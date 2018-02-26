@@ -5,59 +5,59 @@ ru:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "около {0} часа назад"
-        few: "около {0} часов назад"
+        one: "около %{count} часа назад"
+        few: "около %{count} часов назад"
         many: "about %{count} hours ago"
         other: "около %{count} часов назад"
       about_x_months:
-        one: "около {0} месяца назад"
-        few: "около {0} месяцев назад"
+        one: "около %{count} месяца назад"
+        few: "около %{count} месяцев назад"
         many: "about %{count} months ago"
         other: "около %{count} месяцев назад"
       about_x_years:
-        one: "около года назад"
-        few: "около 2 лет назад"
+        one: "около %{count} года назад"
+        few: "около %{count} лет назад"
         many: "about %{count} years ago"
-        other: "около%{count}лет назад"
+        other: "около %{count} лет назад"
       almost_x_years:
-        one: "почти {0} год назад"
-        few: "почти {0} года назад"
+        one: "почти %{count} год назад"
+        few: "почти %{count} года назад"
         many: "almost %{count} years ago"
         other: "почти %{count} года назад"
       half_a_minute: "пол минуты назад"
       less_than_x_minutes:
-        one: "менее {0} минуты назад"
-        few: "менее {0} минут назад"
+        one: "менее %{count} минуты назад"
+        few: "менее %{count} минут назад"
         many: "less than %{count} minutes ago"
-        other: "менее %{count} минуты назад"
+        other: "менее %{count} минут назад"
       less_than_x_seconds:
-        one: "менее {0} секунды назад"
-        few: "менее {0} секунд назад"
+        one: "менее %{count} секунды назад"
+        few: "менее %{count} секунд назад"
         many: "less than %{count} seconds ago"
         other: "менее %{count} секунды назад"
       over_x_years:
-        one: "более {0} года назад"
-        few: "более {0} лет назад"
+        one: "более %{count} года назад"
+        few: "более %{count} лет назад"
         many: "over %{count} years ago"
         other: "более %{count} года назад"
       x_days:
-        one: "{0} день назад"
-        few: "{0} дня назад"
+        one: "%{count} день назад"
+        few: "%{count} дня назад"
         many: "%{count} days ago"
         other: "%{count} дня назад"
       x_minutes:
         one: "%{count} минуту назад"
         few: "%{count} минуты назад"
         many: "%{count} minutes ago"
-        other: "%{count} минуты назад"
+        other: "%{count} минут назад"
       x_months:
-        one: "{0} месяц назад"
-        few: "{0} месяца назад"
+        one: "%{count} месяц назад"
+        few: "%{count} месяца назад"
         many: "%{count} months ago"
         other: "%{count} месяца назад"
       x_seconds:
-        one: "{0} секунду назад"
-        few: "{0} секунды назад"
+        one: "%{count} секунду назад"
+        few: "%{count} секунды назад"
         many: "%{count} seconds ago"
         other: "%{count} секунды назад"
   counter:
@@ -802,7 +802,7 @@ ru:
     status:
       on track: "Всё по плану!"
       days ahead:
-        one: "%{count} день впереди!"
+        one: "опережение на %{count} день!"
         few: "%{count} дня впереди!"
         many: "%{count} Days Ahead!"
         other: "%{count} дней впереди!"
@@ -1448,8 +1448,8 @@ ru:
       status:
         on track: "Всё по плану!"
         days ahead:
-          one: "%{count} день впереди!"
-          few: "%{count} дня впереди!"
+          one: "опережение на %{count} день!"
+          few: "опережение на %{count} дня!"
           many: "%{count} Days Ahead!"
           other: "%{count} дней впереди!"
         missed days:
