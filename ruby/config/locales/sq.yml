@@ -2040,7 +2040,7 @@ sq:
     hi name: "Përshëndetje, %{name}"
     your snapshot: "Ja një përmbledhje e vitit tënd në Programi i Biblës!"
     user snapshot: "Përmbledhje %{year} për %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "Adami dhe Eva, Noeu, Moisiu, Esteri, Jezusi, Pali dhemë shumë"
     STORIES.ABRAHAMCALLED: "Abrahami thirret nga Perëndia"
     STORIES.ABRAHAMISAAC: "Abrahami dhe Isaku"
     STORIES.CREATION: "Krijimi i botës"

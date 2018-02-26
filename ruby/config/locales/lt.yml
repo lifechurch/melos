@@ -7,47 +7,58 @@ lt:
       about_x_hours:
         one: "about 1 hour ago"
         few: "about %{count} hours ago"
+        many: "about %{count} hours ago"
         other: "about %{count} hours ago"
       about_x_months:
         one: "about 1 month ago"
         few: "about %{count} months ago"
+        many: "about %{count} months ago"
         other: "about %{count} months ago"
       about_x_years:
         one: "about 1 year ago"
         few: "about %{count} years ago"
+        many: "about %{count} years ago"
         other: "about %{count} years ago"
       almost_x_years:
         one: "almost 1 year ago"
         few: "almost %{count} years ago"
+        many: "almost %{count} years ago"
         other: "almost %{count} years ago"
       half_a_minute: "half a minute ago"
       less_than_x_minutes:
         one: "less than a minute ago"
         few: "less than %{count} minutes ago"
+        many: "less than %{count} minutes ago"
         other: "less than %{count} minutes ago"
       less_than_x_seconds:
         one: "less than 1 second ago"
         few: "less than %{count} seconds ago"
+        many: "less than %{count} seconds ago"
         other: "less than %{count} seconds ago"
       over_x_years:
         one: "over 1 year ago"
         few: "over %{count} years ago"
+        many: "over %{count} years ago"
         other: "over %{count} years ago"
       x_days:
         one: "1 day ago"
         few: "%{count} days ago"
+        many: "%{count} days ago"
         other: "%{count} days ago"
       x_minutes:
         one: "1 minute ago"
         few: "%{count} minutes ago"
+        many: "%{count} minutes ago"
         other: "%{count} minutes ago"
       x_months:
         one: "1 month ago"
         few: "%{count} months ago"
+        many: "%{count} months ago"
         other: "%{count} months ago"
       x_seconds:
         one: "1 second ago"
         few: "%{count} seconds ago"
+        many: "%{count} seconds ago"
         other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
@@ -793,10 +804,12 @@ lt:
       days ahead:
         one: "%{count} Day Ahead!"
         few: "%{count} Days Ahead!"
+        many: "%{count} Days Ahead!"
         other: "%{count} Days Ahead!"
       missed days:
         one: "%{count} Missed Day"
         few: "%{count} Missed Days"
+        many: "%{count} Missed Days"
         other: "%{count} Missed Days"
     bible plan language: "Bible Plan Language"
     share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
@@ -813,10 +826,12 @@ lt:
       friends reading:
         one: "%{count} friend subscribed to this plan"
         few: "%{count} friends subscribed to this plan"
+        many: "%{count} friends subscribed to this plan"
         other: "%{count} friends subscribed to this plan"
       friends completed:
         one: "%{count} friend has completed this plan"
         few: "%{count} friends have completed this plan"
+        many: "%{count} friends have completed this plan"
         other: "%{count} friends have completed this plan"
       total completions: "Virš %{count} įvykdymų."
       view all: "View All"
@@ -1435,10 +1450,12 @@ lt:
         days ahead:
           one: "%{count} Day Ahead!"
           few: "%{count} Days Ahead!"
+          many: "%{count} Days Ahead!"
           other: "%{count} Days Ahead!"
         missed days:
           one: "%{count} Missed Day"
           few: "%{count} Missed Days"
+          many: "%{count} Missed Days"
           other: "%{count} Missed Days"
       bible plan language: "Bible Plan Language"
       share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
@@ -1455,10 +1472,12 @@ lt:
         friends reading:
           one: "%{count} friend subscribed to this plan"
           few: "%{count} friends subscribed to this plan"
+          many: "%{count} friends subscribed to this plan"
           other: "%{count} friends subscribed to this plan"
         friends completed:
           one: "%{count} friend has completed this plan"
           few: "%{count} friends have completed this plan"
+          many: "%{count} friends have completed this plan"
           other: "%{count} friends have completed this plan"
         total completions: "Virš %{count} įvykdymų."
         view all: "View All"
@@ -2012,6 +2031,7 @@ lt:
     x likes:
       one: "%{number} like"
       few: "%{number} likes"
+      many: "%{number} likes"
       other: "%{number} likes"
     selected: "Pasirinktas"
     currently subscribed: "Currently Subscribed"
@@ -2022,11 +2042,13 @@ lt:
     x pending:
       one: "%{number} Pending"
       few: "%{number} Pending"
+      many: "%{number} Pending"
       other: "%{number} Pending"
     accepted: "Accepted"
     x accepted:
       one: "%{number} Accepted"
       few: "%{number} Accepted"
+      many: "%{number} Accepted"
       other: "%{number} Accepted"
     invitation: "Invitation"
     accept invitation: "Accept Invitation"
@@ -2044,6 +2066,7 @@ lt:
     x participants:
       one: "%{number} Participant"
       few: "%{number} Participants"
+      many: "%{number} Participants"
       other: "%{number} Participants"
     participant limit: "Participant Limit: %{number}"
     + x more: "+ %{number} more"

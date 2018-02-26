@@ -7,47 +7,58 @@ pl:
       about_x_hours:
         one: "około godziny temu"
         few: "około %{count} godzin temu"
+        many: "about %{count} hours ago"
         other: "około %{count} godziny temu"
       about_x_months:
         one: "około miesiąca temu"
         few: "około %{count} miesięcy temu"
+        many: "about %{count} months ago"
         other: "około %{count} miesiąca temu"
       about_x_years:
         one: "około roku temu"
         few: "około %{count} lat temu"
+        many: "about %{count} years ago"
         other: "około %{count} roku temu"
       almost_x_years:
         one: "prawie rok temu"
         few: "prawie %{count} lata temu"
+        many: "almost %{count} years ago"
         other: "prawie %{count} roku temu"
       half_a_minute: "pół minuty temu"
       less_than_x_minutes:
         one: "mniej niż minutę temu"
         few: "mniej niż %{count} minuty temu"
+        many: "less than %{count} minutes ago"
         other: "mniej niż %{count} minuty temu"
       less_than_x_seconds:
         one: "mniej niż sekundę temu"
         few: "mniej niż %{count} sekundy temu"
+        many: "less than %{count} seconds ago"
         other: "mniej niż %{count} sekundy temu"
       over_x_years:
         one: "ponad rok temu"
         few: "ponad %{count} lata temu"
+        many: "over %{count} years ago"
         other: "ponad %{count} roku temu"
       x_days:
         one: "dzień temu"
         few: "%{count} dni temu"
+        many: "%{count} days ago"
         other: "%{count} dnia temu"
       x_minutes:
         one: "minutę temu"
         few: "%{count} minuty temu"
+        many: "%{count} minutes ago"
         other: "%{count} minuty temu"
       x_months:
         one: "miesiąc temu"
         few: "%{count} miesiące temu"
+        many: "%{count} months ago"
         other: "%{count} miesięcy temu"
       x_seconds:
         one: "sekundę temu"
         few: "%{count} sekundy temu"
+        many: "%{count} seconds ago"
         other: "%{count} sekundy temu"
   counter:
     format: "999 999 999"
@@ -793,10 +804,12 @@ pl:
       days ahead:
         one: "Przed tobą %{count} dzień!"
         few: "Przed tobą %{count} dni!"
+        many: "%{count} Days Ahead!"
         other: "Przed tobą %{count} dnia!"
       missed days:
         one: "%{count} pominięty dzień"
         few: "%{count} pominięte dni"
+        many: "%{count} Missed Days"
         other: "%{count} pominiętego dnia"
     bible plan language: "Język Planu Biblii"
     share plan: "Zobacz ten #BiblePlan od @YouVersion : %{plan_title}"
@@ -813,10 +826,12 @@ pl:
       friends reading:
         one: "%{count} przyjaciel subskrybował ten plan"
         few: "%{count} przyjaciół subskrybowało ten plan"
+        many: "%{count} friends subscribed to this plan"
         other: "%{count} przyjaciół subskrybowało ten plan"
       friends completed:
         one: "%{count} przyjaciel ukończył ten plan"
         few: "%{count} przyjaciół ukończyło ten plan"
+        many: "%{count} friends have completed this plan"
         other: "%{count} przyjaciół ukończyło ten plan"
       total completions: "Ukończono ponad %{count} "
       view all: "Zobacz wszystkie"
@@ -1435,10 +1450,12 @@ pl:
         days ahead:
           one: "Przed tobą %{count} dzień!"
           few: "Przed tobą %{count} dni!"
+          many: "%{count} Days Ahead!"
           other: "Przed tobą %{count} dnia!"
         missed days:
           one: "%{count} pominięty dzień"
           few: "%{count} pominięte dni"
+          many: "%{count} Missed Days"
           other: "%{count} pominiętego dnia"
       bible plan language: "Język Planu Biblii"
       share plan: "Zobacz ten #BiblePlan od @YouVersion : %{plan_title}"
@@ -1455,10 +1472,12 @@ pl:
         friends reading:
           one: "%{count} przyjaciel subskrybował ten plan"
           few: "%{count} przyjaciół subskrybowało ten plan"
+          many: "%{count} friends subscribed to this plan"
           other: "%{count} przyjaciół subskrybowało ten plan"
         friends completed:
           one: "%{count} przyjaciel ukończył ten plan"
           few: "%{count} przyjaciół ukończyło ten plan"
+          many: "%{count} friends have completed this plan"
           other: "%{count} przyjaciół ukończyło ten plan"
         total completions: "Ukończono ponad %{count} "
         view all: "Zobacz wszystkie"
@@ -2012,6 +2031,7 @@ pl:
     x likes:
       one: "%{number} polubienie"
       few: "%{number} polubienia"
+      many: "%{number} likes"
       other: "%{number} polubień"
     selected: "wybrane"
     currently subscribed: "Obecnie subskrybowany"
@@ -2022,11 +2042,13 @@ pl:
     x pending:
       one: "%{number} oczekuje"
       few: "%{number} oczekują"
+      many: "%{number} Pending"
       other: "%{number} oczekuje"
     accepted: "zaakceptowane"
     x accepted:
       one: "%{number} zaakceptowanie"
       few: "%{number} zaakceptowania"
+      many: "%{number} Accepted"
       other: "%{number}zaakceptowań"
     invitation: "zaproszenie"
     accept invitation: "zaproszenie zaakceptowane"
@@ -2044,6 +2066,7 @@ pl:
     x participants:
       one: "%{number} Uczestnik"
       few: "%{number} Uczestników"
+      many: "%{number} Participants"
       other: "%{number} Uczestników"
     participant limit: "Limit uczestników : %{number}"
     + x more: "+ %{number} więcej"

@@ -2040,7 +2040,7 @@ fa:
     hi name: "سلام، %{name}"
     your snapshot: "این تصویرفعالیت سال گذشته شما در برنامۀ کتاب‌مقدس می‌باشد"
     user snapshot: "تصویرفعالیت سال %{year} برای %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "آدم و حوا، نوح، موسی، استر، عیسی، پولس و"
     STORIES.ABRAHAMCALLED: "خداوند ابراهیم را دعوت می کند"
     STORIES.ABRAHAMISAAC: "ابراهیم و اسحاق"
     STORIES.CREATION: "آفرینش جهان"

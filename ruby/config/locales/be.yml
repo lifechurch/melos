@@ -7,47 +7,58 @@ be:
       about_x_hours:
         one: "прыкладна %{count} гадзіну таму"
         few: "прыкладна %{count} гадзіны таму"
+        many: "about %{count} hours ago"
         other: "прыкладна %{count} гадзін таму"
       about_x_months:
         one: "каля %{count} месяц таму"
         few: "каля %{count} месяцы таму"
+        many: "about %{count} months ago"
         other: "каля %{count} месяцы таму"
       about_x_years:
         one: "каля %{count} году"
         few: "каля %{count} год таму"
+        many: "about %{count} years ago"
         other: "каля %{count} гадоў таму"
       almost_x_years:
         one: "амаль %{count} год таму"
         few: "амаль %{count} гады таму"
+        many: "almost %{count} years ago"
         other: "амаль %{count} гадоў таму"
       half_a_minute: "паўхвіліны таму"
       less_than_x_minutes:
         one: "менш за %{count} хвіліну таму"
         few: "менш за %{count} хвіліны таму"
+        many: "less than %{count} minutes ago"
         other: "менш за %{count} хвіліны таму"
       less_than_x_seconds:
         one: "менш за %{count} сэкунду таму"
         few: "менш за %{count} сэкунды таму"
+        many: "less than %{count} seconds ago"
         other: "менш за %{count} сэкунды аму"
       over_x_years:
         one: "больш за %{count} год таму"
         few: "больш за %{count} гады таму"
+        many: "over %{count} years ago"
         other: "больш за %{count} гадоў таму"
       x_days:
         one: "%{count} дзень таму"
         few: "%{count} дні таму"
+        many: "%{count} days ago"
         other: "%{count} дні таму"
       x_minutes:
         one: "%{count} хвіліну таму"
         few: "%{count} хвіліны таму"
+        many: "%{count} minutes ago"
         other: "%{count} хвіліны таму"
       x_months:
         one: "%{count} месяц таму"
         few: "%{count} месяцы таму"
+        many: "%{count} months ago"
         other: "%{count} месяцаў таму"
       x_seconds:
         one: "%{count} секунду таму"
         few: "%{count} секунды таму"
+        many: "%{count} seconds ago"
         other: "%{count} секунды таму"
   counter:
     format: "999,999,999"
@@ -793,10 +804,12 @@ be:
       days ahead:
         one: "%{count} дзень наперадзе!"
         few: "%{count} дні наперадзе!"
+        many: "%{count} Days Ahead!"
         other: "%{count} дзён наперадзе!"
       missed days:
         one: "%{count} прапушчаны дзень"
         few: "%{count} прапушчаныя дні"
+        many: "%{count} Missed Days"
         other: "%{count} прапушчаных дня"
     bible plan language: "Bible Plan Language"
     share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
@@ -813,10 +826,12 @@ be:
       friends reading:
         one: "%{count} friend subscribed to this plan"
         few: "%{count} friends subscribed to this plan"
+        many: "%{count} friends subscribed to this plan"
         other: "%{count} friends subscribed to this plan"
       friends completed:
         one: "%{count} friend has completed this plan"
         few: "%{count} friends have completed this plan"
+        many: "%{count} friends have completed this plan"
         other: "%{count} friends have completed this plan"
       total completions: "Больш за %{count} выкананьняў"
       view all: "Праглядзець усё"
@@ -1435,10 +1450,12 @@ be:
         days ahead:
           one: "%{count} дзень наперадзе!"
           few: "%{count} дні наперадзе!"
+          many: "%{count} Days Ahead!"
           other: "%{count} дзён наперадзе!"
         missed days:
           one: "%{count} прапушчаны дзень"
           few: "%{count} прапушчаныя дні"
+          many: "%{count} Missed Days"
           other: "%{count} прапушчаных дня"
       bible plan language: "Bible Plan Language"
       share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
@@ -1455,10 +1472,12 @@ be:
         friends reading:
           one: "%{count} friend subscribed to this plan"
           few: "%{count} friends subscribed to this plan"
+          many: "%{count} friends subscribed to this plan"
           other: "%{count} friends subscribed to this plan"
         friends completed:
           one: "%{count} friend has completed this plan"
           few: "%{count} friends have completed this plan"
+          many: "%{count} friends have completed this plan"
           other: "%{count} friends have completed this plan"
         total completions: "Больш за %{count} выкананьняў"
         view all: "Праглядзець усё"
@@ -2012,6 +2031,7 @@ be:
     x likes:
       one: "%{number} упадабаньне"
       few: "%{number} упадабаньні"
+      many: "%{number} likes"
       other: "%{number} упадабаньняў"
     selected: "Выбраныя"
     currently subscribed: "Падпісаліся"
@@ -2022,11 +2042,13 @@ be:
     x pending:
       one: "%{number} ня вызначыліся"
       few: "%{number} ня вызначыліся"
+      many: "%{number} Pending"
       other: "%{number} ня вызначыліся"
     accepted: "ПАГАДЗІЛІСЯ"
     x accepted:
       one: "%{number} прынялі"
       few: "%{number} прынялі"
+      many: "%{number} Accepted"
       other: "%{number} прынялі"
     invitation: "Запрашэнне"
     accept invitation: "Прыняць запрашэньне"
@@ -2044,6 +2066,7 @@ be:
     x participants:
       one: "%{number} Удзельнік"
       few: "%{number} Удзельнікі"
+      many: "%{number} Participants"
       other: "%{number} Удзельнікаў"
     participant limit: "Ліміт удзельнікаў: %{number}"
     + x more: "+%{number} яшчэ"

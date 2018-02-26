@@ -7,47 +7,58 @@ cs:
       about_x_hours:
         one: "před %{count} hodinou"
         few: "před %{count} hodinami"
+        many: "about %{count} hours ago"
         other: "před %{count} hodinami"
       about_x_months:
         one: "před %{count} měsícem"
         few: "před %{count} měsíci"
+        many: "about %{count} months ago"
         other: "před %{count} měsíci"
       about_x_years:
         one: "před %{count} rokem"
         few: "před %{count} roky"
+        many: "about %{count} years ago"
         other: "před %{count} roky"
       almost_x_years:
         one: "téměř před %{count} rokem"
         few: "téměř před %{count} roky"
+        many: "almost %{count} years ago"
         other: "téměř před %{count} roky"
       half_a_minute: "před minutou"
       less_than_x_minutes:
         one: "před %{count} minutou"
         few: "před %{count} minutami"
+        many: "less than %{count} minutes ago"
         other: "před %{count} minutami"
       less_than_x_seconds:
         one: "před %{count} sekudnou"
         few: "před %{count} sekundami"
+        many: "less than %{count} seconds ago"
         other: "před %{count} sekudami"
       over_x_years:
         one: "starší než %{count} rok"
         few: "starší %{count} let"
+        many: "over %{count} years ago"
         other: "starší %{count} let"
       x_days:
         one: "před %{count} dnem"
         few: "před %{count} dny"
+        many: "%{count} days ago"
         other: "před %{count} dny"
       x_minutes:
         one: "před %{count} minutou"
         few: "před %{count} minutami"
+        many: "%{count} minutes ago"
         other: "před %{count} minutami"
       x_months:
         one: "před %{count} měsícem"
         few: "před %{count} měsíci"
+        many: "%{count} months ago"
         other: "před %{count} měsíci"
       x_seconds:
         one: "před %{count} sekundou"
         few: "před %{count} sekundami"
+        many: "%{count} seconds ago"
         other: "před %{count} sekundami"
   counter:
     format: "999 999 999"
@@ -324,7 +335,7 @@ cs:
     module 8 text: "Save time and effort. Rapidly create new Events by copying existing ones and modifying them with updated information."
     module 9 title: "Cost Savings"
     module 9 text: "Save money on printing and use less paper… even as you’re reaching out to people on a platform with more than 200 million installs."
-    cost savings: "The average church spends <b>$10,000 a year</b><br>on printing bulletins. Events helps you cut or <br>even eliminate those costs."
+    cost savings: "Průměrná církev utratí <b>10 000 dolarů ročně</b><br>kvůli tisku materiálů. Události vám pomáhají snížit nebo <br>dokonce eliminovat tyto náklady."
     testimonials: "Testimonials"
     testimonial 1 text: "“We were excited to implement YouVersion in our ministry, especially the Events section, where we insert each week’s teaching notes and comments. Our people appreciate having the notes at their fingertips, sharing them, and saving them. We’ve redirected thousands of dollars to other ministry needs by replacing printed programs!”"
     testimonial 2 text: "“YouVersion Events is a valuable resource for our church family. The ability for our people to follow along with sermon notes and Scriptures during our messages creates powerful engagement and impact.”"
@@ -793,10 +804,12 @@ cs:
       days ahead:
         one: "%{count} den napřed"
         few: "%{count} dny napřed"
+        many: "%{count} Days Ahead!"
         other: "%{count} dnů napřed"
       missed days:
         one: "%{count} zmeškaný den"
         few: "%{count} zmeškané dny"
+        many: "%{count} Missed Days"
         other: "%{count} zmeškaných dnů"
     bible plan language: "Jazyk plánu čtení Bible"
     share plan: "Prohlédněte si tento @YouVersion #Plán čtení: %{plan_title}"
@@ -813,10 +826,12 @@ cs:
       friends reading:
         one: "%{count} přítel odebírá tento plán"
         few: "%{count} přátelé odebírají tento plán"
+        many: "%{count} friends subscribed to this plan"
         other: "%{count} přátel odebírá tento plán"
       friends completed:
         one: "%{count} přítel dokončil tento plán"
         few: "%{count} přátelé dokončili tento plán"
+        many: "%{count} friends have completed this plan"
         other: "%{count} přátel dokončilo tento plán"
       total completions: "Více než %{count} dokončení"
       view all: "Zobrazit vše"
@@ -1052,8 +1067,8 @@ cs:
     banner action: "Stáhnout"
     banner open: "Otevřít"
   download bafk ad:
-    title: "Download the Bible App for Kids"
-    description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+    title: "Stáhnout aplikaci Bible pro děti"
+    description copy: "Aplikace Bible pro děti je skvělý způsob, jak se vaše děti naučí biblické příběhy o Ježíši."
     download: "Stahujte nyní"
   about page:
     relevancy: "Význam"
@@ -1435,10 +1450,12 @@ cs:
         days ahead:
           one: "%{count} den napřed"
           few: "%{count} dny napřed"
+          many: "%{count} Days Ahead!"
           other: "%{count} dnů napřed"
         missed days:
           one: "%{count} zmeškaný den"
           few: "%{count} zmeškané dny"
+          many: "%{count} Missed Days"
           other: "%{count} zmeškaných dnů"
       bible plan language: "Jazyk plánu čtení Bible"
       share plan: "Prohlédněte si tento @YouVersion #Plán čtení: %{plan_title}"
@@ -1455,10 +1472,12 @@ cs:
         friends reading:
           one: "%{count} přítel odebírá tento plán"
           few: "%{count} přátelé odebírají tento plán"
+          many: "%{count} friends subscribed to this plan"
           other: "%{count} přátel odebírá tento plán"
         friends completed:
           one: "%{count} přítel dokončil tento plán"
           few: "%{count} přátelé dokončili tento plán"
+          many: "%{count} friends have completed this plan"
           other: "%{count} přátel dokončilo tento plán"
         total completions: "Více než %{count} dokončení"
         view all: "Zobrazit vše"
@@ -2012,21 +2031,24 @@ cs:
     x likes:
       one: "To se líbí %{number}"
       few: "To se líbí %{number}"
+      many: "%{number} likes"
       other: "To se líbí %{number}"
     selected: "Zvolené"
     currently subscribed: "Aktuálně odebírají"
     invite friends: "Pozvat přítele"
     invite others: "Pozvat další"
-    invited: "Invited"
+    invited: "Pozvánky"
     pending: "Čekající"
     x pending:
       one: "%{number} čekající"
       few: "%{number} čekající"
+      many: "%{number} Pending"
       other: "%{number} čekajících"
     accepted: "Potvrdili"
     x accepted:
       one: "%{number} přijat"
       few: "%{number} přijatí"
+      many: "%{number} Accepted"
       other: "%{number} přijatých"
     invitation: "Pozvání"
     accept invitation: "Potvrdit pozvání"
@@ -2044,6 +2066,7 @@ cs:
     x participants:
       one: "%{number} účastník"
       few: "%{number} účastníci"
+      many: "%{number} Participants"
       other: "%{number} účastníků"
     participant limit: "Počet účastníků omezen na %{number}"
     + x more: "+ %{number}dalších"
@@ -2063,7 +2086,7 @@ cs:
     hi name: "Vítej, %{name}"
     your snapshot: "Zde jsou všechny momenty za uplynulý rok s aplikací Bible"
     user snapshot: "%{year} momentka pro %{user}"
-    STORIESEXAMPLES: "Adam and Eve, Noah, Moses, Esther, Jesus, Paul and more"
+    STORIESEXAMPLES: "Adam a Eva, Noe, Mojžíš, Ester, Ježíš, Pavel avíce"
     STORIES.ABRAHAMCALLED: "Povolání Abrahama"
     STORIES.ABRAHAMISAAC: "Abraham a Izák"
     STORIES.CREATION: "Stvoření světa"
@@ -2105,10 +2128,10 @@ cs:
     STORIES.SERMONMOUNT: "Kázání na hoře"
     STORIES.TRIUMPHALENTRY: "Vjezd do Jeruzaléma"
     explore: "Vyhledat"
-    what does the bible say: "What does the Bible say about..."
+    what does the bible say: "Co říká Bible o..."
     how are you feeling: "Jak se cítíte?"
     bible stories: "Biblické příběhy"
-    what the bible says about: "Here's what the Bible says about: %{topic}"
+    what the bible says about: "Zde Bible mluví k tématu: %{topic}"
     amazed: "Ohromený"
     content: "Obsah"
     faithful: "Věrný"

@@ -7,47 +7,58 @@ uk:
       about_x_hours:
         one: "близько %{count} год. тому"
         few: "близько %{count} год. тому"
+        many: "about %{count} hours ago"
         other: "близько %{count} год. тому"
       about_x_months:
         one: "близько %{count} місяць тому"
         few: "близько %{count} місяця тому"
+        many: "about %{count} months ago"
         other: "близько %{count} місяця тому"
       about_x_years:
         one: "близько %{count} років тому"
         few: "близько %{count} роки тому"
+        many: "about %{count} years ago"
         other: "близько %{count} року тому"
       almost_x_years:
         one: "майже %{count} рік тому"
         few: "майже %{count} роки тому"
+        many: "almost %{count} years ago"
         other: "майже %{count} року тому"
       half_a_minute: "пів хвилини тому"
       less_than_x_minutes:
         one: "менше, ніж %{count} хв. тому"
         few: "менше, ніж %{count} хв. тому"
+        many: "less than %{count} minutes ago"
         other: "менше, ніж %{count} хв. тому"
       less_than_x_seconds:
         one: "менше, ніж %{count} сек. тому"
         few: "менше, ніж %{count} сек. тому"
+        many: "less than %{count} seconds ago"
         other: "менше, ніж %{count} сек. тому"
       over_x_years:
         one: "понад %{count} рік тому"
         few: "понад %{count} роки тому"
+        many: "over %{count} years ago"
         other: "понад %{count} року тому"
       x_days:
         one: "%{count} день тому"
         few: "%{count} дні тому"
+        many: "%{count} days ago"
         other: "%{count} дня тому"
       x_minutes:
         one: "%{count} хв. тому"
         few: "%{count} хв. тому"
+        many: "%{count} minutes ago"
         other: "%{count} хв. тому"
       x_months:
         one: "%{count} місяць тому"
         few: "%{count} місяці тому"
+        many: "%{count} months ago"
         other: "%{count} місяця тому"
       x_seconds:
         one: "%{count} сек. тому"
         few: "%{count} сек. тому"
+        many: "%{count} seconds ago"
         other: "%{count} сек. тому"
   counter:
     format: "999 999 999"
@@ -793,10 +804,12 @@ uk:
       days ahead:
         one: "%{count} день попереду!"
         few: "%{count} дні попереду!"
+        many: "%{count} Days Ahead!"
         other: "%{count} днів попереду!"
       missed days:
         one: "%{count} день пропущено"
         few: "%{count} дні пропущено"
+        many: "%{count} Missed Days"
         other: "%{count} дні пропущено"
     bible plan language: "Мова Біблійного Плану"
     share plan: "Спробуйте цей @YouVersion #BiblePlan: %{plan_title}"
@@ -813,10 +826,12 @@ uk:
       friends reading:
         one: "%{count} друг підписався на цей план"
         few: "%{count} друга підписалися на цей план"
+        many: "%{count} friends subscribed to this plan"
         other: "%{count} друга пілписались на цей план"
       friends completed:
         one: "%{count} друг завершив цей план"
         few: "%{count} друга завершили цей план"
+        many: "%{count} friends have completed this plan"
         other: "%{count} друга завершили цей план"
       total completions: "Понад %{count} завершень"
       view all: "Переглянути усе"
@@ -1435,10 +1450,12 @@ uk:
         days ahead:
           one: "%{count} день попереду!"
           few: "%{count} дні попереду!"
+          many: "%{count} Days Ahead!"
           other: "%{count} днів попереду!"
         missed days:
           one: "%{count} день пропущено"
           few: "%{count} дні пропущено"
+          many: "%{count} Missed Days"
           other: "%{count} дні пропущено"
       bible plan language: "Мова Біблійного Плану"
       share plan: "Спробуйте цей @YouVersion #BiblePlan: %{plan_title}"
@@ -1455,10 +1472,12 @@ uk:
         friends reading:
           one: "%{count} друг підписався на цей план"
           few: "%{count} друга підписалися на цей план"
+          many: "%{count} friends subscribed to this plan"
           other: "%{count} друга пілписались на цей план"
         friends completed:
           one: "%{count} друг завершив цей план"
           few: "%{count} друга завершили цей план"
+          many: "%{count} friends have completed this plan"
           other: "%{count} друга завершили цей план"
         total completions: "Понад %{count} завершень"
         view all: "Переглянути усе"
@@ -2012,6 +2031,7 @@ uk:
     x likes:
       one: "%{number} вподобання"
       few: "%{number} вподобань"
+      many: "%{number} likes"
       other: "%{number} вподобань"
     selected: "Обрано"
     currently subscribed: "Підписано"
@@ -2022,11 +2042,13 @@ uk:
     x pending:
       one: "%{number} в очікуванні"
       few: "%{number} в очікуванні"
+      many: "%{number} Pending"
       other: "%{number} в очікуванні"
     accepted: "Підтверджено"
     x accepted:
       one: "%{number} прийнято"
       few: "%{number} прийнято"
+      many: "%{number} Accepted"
       other: "%{number} прийнято"
     invitation: "Запрошення"
     accept invitation: "Прийняти запрошення"
@@ -2044,6 +2066,7 @@ uk:
     x participants:
       one: "%{number} учасник"
       few: "%{number} учасника"
+      many: "%{number} Participants"
       other: "%{number} учасника"
     participant limit: "Макс. число читачів: %{number}"
     + x more: "+ %{number} інших"

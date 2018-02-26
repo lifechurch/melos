@@ -5,39 +5,39 @@ tlh:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "crwdns114858:0crwdne114858:0"
-        other: "crwdns114858:1%{count}crwdne114858:1"
+        one: "crwdns114858:1crwdne114858:1"
+        other: "crwdns114858:5%{count}crwdne114858:5"
       about_x_months:
-        one: "crwdns114859:0crwdne114859:0"
-        other: "crwdns114859:1%{count}crwdne114859:1"
+        one: "crwdns114859:1crwdne114859:1"
+        other: "crwdns114859:5%{count}crwdne114859:5"
       about_x_years:
-        one: "crwdns114860:0crwdne114860:0"
-        other: "crwdns114860:1%{count}crwdne114860:1"
+        one: "crwdns114860:1crwdne114860:1"
+        other: "crwdns114860:5%{count}crwdne114860:5"
       almost_x_years:
-        one: "crwdns114861:0crwdne114861:0"
-        other: "crwdns114861:1%{count}crwdne114861:1"
+        one: "crwdns114861:1crwdne114861:1"
+        other: "crwdns114861:5%{count}crwdne114861:5"
       half_a_minute: "crwdns114862:0crwdne114862:0"
       less_than_x_minutes:
-        one: "crwdns114863:0crwdne114863:0"
-        other: "crwdns114863:1%{count}crwdne114863:1"
+        one: "crwdns114863:1crwdne114863:1"
+        other: "crwdns114863:5%{count}crwdne114863:5"
       less_than_x_seconds:
-        one: "crwdns114864:0crwdne114864:0"
-        other: "crwdns114864:1%{count}crwdne114864:1"
+        one: "crwdns114864:1crwdne114864:1"
+        other: "crwdns114864:5%{count}crwdne114864:5"
       over_x_years:
-        one: "crwdns114865:0crwdne114865:0"
-        other: "crwdns114865:1%{count}crwdne114865:1"
+        one: "crwdns114865:1crwdne114865:1"
+        other: "crwdns114865:5%{count}crwdne114865:5"
       x_days:
-        one: "crwdns114866:0crwdne114866:0"
-        other: "crwdns114866:1%{count}crwdne114866:1"
+        one: "crwdns114866:1crwdne114866:1"
+        other: "crwdns114866:5%{count}crwdne114866:5"
       x_minutes:
-        one: "crwdns114867:0crwdne114867:0"
-        other: "crwdns114867:1%{count}crwdne114867:1"
+        one: "crwdns114867:1crwdne114867:1"
+        other: "crwdns114867:5%{count}crwdne114867:5"
       x_months:
-        one: "crwdns114868:0crwdne114868:0"
-        other: "crwdns114868:1%{count}crwdne114868:1"
+        one: "crwdns114868:1crwdne114868:1"
+        other: "crwdns114868:5%{count}crwdne114868:5"
       x_seconds:
-        one: "crwdns114869:0crwdne114869:0"
-        other: "crwdns114869:1%{count}crwdne114869:1"
+        one: "crwdns114869:1crwdne114869:1"
+        other: "crwdns114869:5%{count}crwdne114869:5"
   counter:
     format: "crwdns114870:0crwdne114870:0"
   social:
@@ -780,11 +780,11 @@ tlh:
     status:
       on track: "crwdns115546:0crwdne115546:0"
       days ahead:
-        one: "crwdns115547:0%{count}crwdne115547:0"
-        other: "crwdns115547:1%{count}crwdne115547:1"
+        one: "crwdns115547:1%{count}crwdne115547:1"
+        other: "crwdns115547:5%{count}crwdne115547:5"
       missed days:
-        one: "crwdns115548:0%{count}crwdne115548:0"
-        other: "crwdns115548:1%{count}crwdne115548:1"
+        one: "crwdns115548:1%{count}crwdne115548:1"
+        other: "crwdns115548:5%{count}crwdne115548:5"
     bible plan language: "crwdns115549:0crwdne115549:0"
     share plan: "crwdns115550:0%{plan_title}crwdne115550:0"
     widget:
@@ -798,11 +798,11 @@ tlh:
       readings 5 or more: "crwdns115558:0crwdne115558:0"
     stats:
       friends reading:
-        one: "crwdns115559:0%{count}crwdne115559:0"
-        other: "crwdns115559:1%{count}crwdne115559:1"
+        one: "crwdns115559:1%{count}crwdne115559:1"
+        other: "crwdns115559:5%{count}crwdne115559:5"
       friends completed:
-        one: "crwdns115560:0%{count}crwdne115560:0"
-        other: "crwdns115560:1%{count}crwdne115560:1"
+        one: "crwdns115560:1%{count}crwdne115560:1"
+        other: "crwdns115560:5%{count}crwdne115560:5"
       total completions: "crwdns115561:0%{count}crwdne115561:0"
       view all: "crwdns115562:0crwdne115562:0"
       close: "crwdns115563:0crwdne115563:0"
@@ -1418,11 +1418,11 @@ tlh:
       status:
         on track: "crwdns116108:0crwdne116108:0"
         days ahead:
-          one: "crwdns116109:0%{count}crwdne116109:0"
-          other: "crwdns116109:1%{count}crwdne116109:1"
+          one: "crwdns116109:1%{count}crwdne116109:1"
+          other: "crwdns116109:5%{count}crwdne116109:5"
         missed days:
-          one: "crwdns116110:0%{count}crwdne116110:0"
-          other: "crwdns116110:1%{count}crwdne116110:1"
+          one: "crwdns116110:1%{count}crwdne116110:1"
+          other: "crwdns116110:5%{count}crwdne116110:5"
       bible plan language: "crwdns116111:0crwdne116111:0"
       share plan: "crwdns116112:0%{plan_title}crwdne116112:0"
       widget:
@@ -1436,11 +1436,11 @@ tlh:
         readings 5 or more: "crwdns116120:0crwdne116120:0"
       stats:
         friends reading:
-          one: "crwdns116121:0%{count}crwdne116121:0"
-          other: "crwdns116121:1%{count}crwdne116121:1"
+          one: "crwdns116121:1%{count}crwdne116121:1"
+          other: "crwdns116121:5%{count}crwdne116121:5"
         friends completed:
-          one: "crwdns116122:0%{count}crwdne116122:0"
-          other: "crwdns116122:1%{count}crwdne116122:1"
+          one: "crwdns116122:1%{count}crwdne116122:1"
+          other: "crwdns116122:5%{count}crwdne116122:5"
         total completions: "crwdns116123:0%{count}crwdne116123:0"
         view all: "crwdns116124:0crwdne116124:0"
         close: "crwdns116125:0crwdne116125:0"
@@ -1991,8 +1991,8 @@ tlh:
     delete: "crwdns116558:0crwdne116558:0"
     post: "crwdns116559:0crwdne116559:0"
     x likes:
-      one: "crwdns116560:0%{number}crwdne116560:0"
-      other: "crwdns116560:1%{number}crwdne116560:1"
+      one: "crwdns116560:1%{number}crwdne116560:1"
+      other: "crwdns116560:5%{number}crwdne116560:5"
     selected: "crwdns116561:0crwdne116561:0"
     currently subscribed: "crwdns116562:0crwdne116562:0"
     invite friends: "crwdns116563:0crwdne116563:0"
@@ -2000,12 +2000,12 @@ tlh:
     invited: "crwdns116565:0crwdne116565:0"
     pending: "crwdns116566:0crwdne116566:0"
     x pending:
-      one: "crwdns116567:0%{number}crwdne116567:0"
-      other: "crwdns116567:1%{number}crwdne116567:1"
+      one: "crwdns116567:1%{number}crwdne116567:1"
+      other: "crwdns116567:5%{number}crwdne116567:5"
     accepted: "crwdns116568:0crwdne116568:0"
     x accepted:
-      one: "crwdns116569:0%{number}crwdne116569:0"
-      other: "crwdns116569:1%{number}crwdne116569:1"
+      one: "crwdns116569:1%{number}crwdne116569:1"
+      other: "crwdns116569:5%{number}crwdne116569:5"
     invitation: "crwdns116570:0crwdne116570:0"
     accept invitation: "crwdns116571:0crwdne116571:0"
     decline: "crwdns116572:0crwdne116572:0"
@@ -2020,8 +2020,8 @@ tlh:
     participants: "crwdns116581:0crwdne116581:0"
     host: "crwdns116582:0crwdne116582:0"
     x participants:
-      one: "crwdns116583:0%{number}crwdne116583:0"
-      other: "crwdns116583:1%{number}crwdne116583:1"
+      one: "crwdns116583:1%{number}crwdne116583:1"
+      other: "crwdns116583:5%{number}crwdne116583:5"
     participant limit: "crwdns116584:0%{number}crwdne116584:0"
     + x more: "crwdns116585:0%{number}crwdne116585:0"
     when participant comments: "crwdns116586:0crwdne116586:0"
