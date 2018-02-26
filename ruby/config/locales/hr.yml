@@ -363,7 +363,7 @@ hr:
     resources video: "Watch a video about transitioning to Events"
     resources social: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Download</a> these assets to market your Events on Facebook, Twitter, and Instagram"
     resources slides: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Download</a> these slides and handouts to market your Events within your church or organization"
-    resources more: "Looking for more free resources? Explore more than 30,000 sermons, children’s materials, creative resources and more at <a class='text2' href='https://open.church'>open.church</a>"
+    resources more: "Tražiš više besplatnih izvora? istraži više od 30,000 propovijedi, materijala za djecu, kreativnih reusursa i još više na <a class='text2' href='https://open.church'>open.church</a>"
   first page: "Prva strana"
   last page: "Zadnja strana"
   invalid username or password: "Neispravno korisničko ime i/ili lozinka."
@@ -1053,7 +1053,7 @@ hr:
     banner open: "Otvori"
   download bafk ad:
     title: "Download the Bible App for Kids"
-    description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+    description copy: "Ova aplikacija Biblija za djecu je izvrstan način za vašu djeca da nauče biblijske priče o Isusu."
     download: "Preuzmi sad"
   about page:
     relevancy: "Značajnost"
