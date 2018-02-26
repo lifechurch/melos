@@ -1,4 +1,4 @@
-ckb-IR:
+ckb:
   time:
     formats:
       votd: "%B %-d, %Y"
