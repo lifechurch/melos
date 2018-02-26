@@ -803,7 +803,7 @@ ru:
       on track: "Всё по плану!"
       days ahead:
         one: "опережение на %{count} день!"
-        few: "%{count} дня впереди!"
+        few: "опережение на %{count} дня!"
         many: "%{count} Days Ahead!"
         other: "%{count} дней впереди!"
       missed days:
@@ -1451,7 +1451,7 @@ ru:
           one: "опережение на %{count} день!"
           few: "опережение на %{count} дня!"
           many: "%{count} Days Ahead!"
-          other: "%{count} дней впереди!"
+          other: "%{count} Days Ahead!"
         missed days:
           one: "%{count} пропущенный день"
           few: "%{count} пропущенных дня"
