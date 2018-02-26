@@ -968,7 +968,7 @@ es:
     note blurb: "Parece que usted quiere tomar una nota acerca de Las Escrituras. ¡Muy bien pensado! Las Notas le pueden ayudar a recordar y organizar la verdad que usted descubra en la Palabra de Dios. Entre o inicie una cuenta abajo, y ¡comience!"
   audio:
     none: "No existen Audio Biblias para esta versión."
-    chapter only: "Lo sentimos, el audio no está disponible para versículos. Vea en el lector para el audio del capitulo."
+    chapter only: "Lo sentimos, el audio no está disponible para versículos. Vea en el lector para el audio del capítulo."
     close player menu: "Finalizar"
     publisher website: "Sitio Web del Editor"
   highlights:
