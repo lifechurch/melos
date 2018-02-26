@@ -6,6 +6,8 @@ ENV NPM_TOKEN: $NPM_TOKEN
 ARG DOWNLOAD_TOKEN
 ENV DOWNLOAD_TOKEN: $DOWNLOAD_TOKEN
 
+# Prefer IPv4 over IPv6
+RUN echo 'precedence ::ffff:0:0/96  100' >> /etc/gai.conf
 RUN bash -lc 'rvm --default use ruby-2.2.5'
 
 RUN mkdir -p /home/app/ruby
