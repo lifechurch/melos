@@ -113,7 +113,7 @@ hr:
     korean: "Korejski"
     macedonian: "Makedonski"
     mongolian: "Mongolski"
-    burmese: "Myanmar Burmese"
+    burmese: "Mianmar (burmanski)"
     russian: "Ruski"
     tamil: "Tamilski"
     thai: "Thai"
@@ -287,7 +287,7 @@ hr:
   events:
     events: "Događaji"
     menu:
-      features: "Features"
+      features: "Značajke"
       faq: "FAQ"
       resources: "Resources"
       tell your church: "Tell your church"
@@ -1302,7 +1302,7 @@ hr:
       albanian: "Albanski"
       arabic: "Arapski"
       bulgarian: "Bugarski"
-      burmese: "Myanmar Burmese"
+      burmese: "Mianmar (burmanski)"
       catalan: "Katalonski"
       chinese cn: "Kineski pojednostavljeni"
       chinese tw: "Kineski tradicionalni"
