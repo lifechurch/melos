@@ -1631,7 +1631,7 @@ es:
       EventEditDetails:
         title: "Detalles del evento"
       EventEditLocationContainer:
-        title: "Ubicación del evento"
+        title: "Ubicación del Evento"
         previous: "← Anterior: Detalles"
         next: "Siguiente: Agregar contenido →"
       EventEditPreview:
