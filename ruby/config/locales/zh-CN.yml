@@ -928,7 +928,7 @@ zh-CN:
     request:
       invalid_vendor_signature: "许可验证失败：无效的供应商签名"
       invalid_vendor_id: "许可验证失败：无效的供应商ID"
-      invalid_item_ids: "License validation failed: Invalid items"
+      invalid_item_ids: "许可验证失败：无效的项目"
     vendor_transaction_id:
       duplicate: "交易号：此交易号已经被注册"
     auth:
