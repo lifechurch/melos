@@ -1268,7 +1268,7 @@ es:
         button: "Comparta la Biblia App"
   ui:
     characters remaining: "caracteres restantes"
-    yes button: "Sí."
+    yes button: "Sí"
     no button: "No"
     cancel: "Cancelar"
     plans:
@@ -1277,7 +1277,7 @@ es:
     loading: "Cargando"
     pagination:
       next page: "Página siguiente"
-      previous page: "Página Anterior"
+      previous page: "Página anterior"
     datetime:
       just now: "Justo ahora"
     verses selected: "versículos seleccionados"
@@ -1356,7 +1356,7 @@ es:
       versions: "Versiones%{count}"
       languages: "Idiomas%{count}"
       help: "Ayuda"
-      social: "social"
+      social: "Social"
       donate: "Donar (EEUU)"
       about: "Acerca de"
       jobs: "Empleos"
@@ -1392,7 +1392,7 @@ es:
         badges: "Cuando gane una insignia"
         comments: "Comentarios de mi actividad"
         friendships: "Solicitud de amistad"
-        likes: "Cantidad de Me gusta en mi actividad"
+        likes: "Cantidad de Me Gusta en mi actividad"
         moments: "Actividad de amigos"
         newsletter: "Noticias de YouVersion"
         reading_plans: "Acerca de mis Planes Bíblicos"
@@ -1400,11 +1400,11 @@ es:
         votd_image: "Imagen de Versículo del Día"
         contact_joins: "Cuando un Contacto se une"
       error:
-        token: "Lo sentimos, necesita iniciar sesión antes de poder cambiar su configuración de notificaciones:"
+        token: "Lo sentimos, necesita iniciar sesión antes de que pueda cambiar sus Notificaciones:"
         other_type: "Lo sentimos, esto no hizo lo que esperábamos. Le gustaría actualizar sus Notificaciones?"
     change: "Cambiar"
     ui:
-      yes button: "Sí."
+      yes button: "Sí"
       no button: "No"
     plans:
       plans: "Planes"
