@@ -1699,22 +1699,22 @@ es:
                 announcement: "Invitación"
               ContentHelpModal:
                 types: "Tipos de contenido"
-                learn: "Aprender como hacer <br>un grandioso evento"
+                learn: "Aprender como hacer <br>un grandioso Evento"
                 text:
                   title: "Módulo de texto"
-                  desc: "Esquemas de temas, puntos clave, preguntas de discusión … Comparte contenido basado en texto que ayudará a los asistentes a seguir su mensaje en el momento que sucede. Sus módulos de texto pueden ser de cualquier largo e incluir formato. "
+                  desc: "Esquemas de temas, puntos clave, preguntas de discusión… Comparta contenido basado en texto que ayudará a los asistentes a seguir su mensaje en el momento que sucede. Sus módulos de texto pueden ser de cualquier largo e incluir formato."
                 reference:
-                  title: "Módulo de referencia de Biblia"
-                  desc: "Selecciona cualquier versículo o pasaje de la Biblia, vinculado directamente a cualquiera de las 1.200+ versiones de YouVersion, en 900+ idiomas. Personas que observen tu evento pueden teclear tu referencia para verla en su lector de la Biblia App, donde pueden marcarlo, sobresaltarlo, y más."
+                  title: "Módulo de referencia bíblica"
+                  desc: "Seleccione cualquier versículo o pasaje de la Biblia, vinculado directamente a cualquiera de las 1.200+ versiones de YouVersion, en 900+ idiomas. Personas que observen su Evento pueden teclear su referencia para verla en su lector de la Biblia App, donde pueden marcarlo, sobresaltarlo y más."
                 plan:
-                  title: "Módulo de plan"
+                  title: "Módulo de Plan"
                   desc: "Enlace a Planes de Lectura bíblicos y devocionales que se relacionan con la enseñanza de su evento para ayudar a su audiencia a continuar leyendo la Palabra de Dios durante la semana."
                 image:
                   title: "Módulo de imagen"
-                  desc: "Déle vida a su evento con cualquier tipo de gráficos: arte, fotos, imágenes de versículos, etc. Los asistentes podrán compartir fácilmente las imágenes de su evento en sus redes sociales, haciendo viral su mensaje. "
+                  desc: "Déle vida a su Evento con cualquier tipo de gráficos: arte, fotos, imágenes de versículos, etc. Los asistentes podrán compartir fácilmente las imágenes de su Evento en sus redes sociales, haciendo viral su mensaje."
                 link:
                   title: "Módulo de enlace externo"
-                  desc: "Crea un botón en su evento que se enlaza a cualquier sitio web externo. Dé a su audiencia la oportunidad de donar en línea, registrarse como voluntario o visitar la página web de su iglesia de manera fácil."
+                  desc: "Crea un botón en su Evento que se enlaza a cualquier sitio web externo. Dé a su audiencia la oportunidad de donar en línea, registrarse como voluntario o visitar la página web de su iglesia de manera fácil."
                 announcement:
                   title: "Módulo de anuncio"
                   desc: "Noticias de la Iglesia, calendario de eventos, programas, clases, voluntariado y oportunidades misionales...Módulos de anuncio son el contenedor perfecto para compartir información que es oportuna e importante, pero las cuales no quieres distraer del mensaje principal de tu evento. Cada módulo de anuncio aparece en su propia página en tu evento, y puede incluso tener contenido de texto enriquecido (como negritas e italica)."
