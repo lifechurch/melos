@@ -1200,9 +1200,9 @@ es:
       numbers and titles: "Números y Títulos"
   app errors:
     404 plans explanation: "¿Está buscando el Plan <a href='%{plan_path}' target='_self'>%{title}</a>?"
-    404 contact support: "¿Tienes problemas? Contacta nuestro <a href='%{support_url}' target='_self'>equipo de apoyo</a>."
-    404 explanation: "Puedes intentar comenzar otra vez desde <a href='%{reader_path}' target='_self'>home page</a>¿Aún persiste el problema? Contacta nuestro <a href='%{support_url}' target='_self'>support team.</a>."
-    404 message: "Lo sentimos. La página que estás buscando no puede ser hallada."
+    404 contact support: "¿Tiene problemas? Contacte a nuestro <a href='%{support_url}' target='_self'>equipo de apoyo</a>."
+    404 explanation: "Puede intentar comenzar otra vez desde <a href='%{reader_path}' target='_self'>home page</a>¿Aún persiste el problema? Contacte a nuestro <a href='%{support_url}' target='_self'>equipo de apoyo</a>."
+    404 message: "Lo sentimos. La página que está buscando no puede ser hallada."
     408 message: "Lo sentimos, nuestros servidores no respondieron en el tiempo estimado."
     408 explanation: "Hemos sido alertados y resolveremos cualquier problema persistente tan pronto como sea posible.  ¡Veamos si podemos llevarlo de nuevo a su Plan de Lectura!"
     try again: "Intente Nuevamente"
