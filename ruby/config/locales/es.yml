@@ -1214,13 +1214,13 @@ es:
     index title: "Versiones Disponibles"
     publisher widget title: "Editor"
     visit publisher: "Visite la Página Web del Editor"
-    read title: "Lea esta Versión"
+    read title: "Leer esta Versión"
     other versions: "Otras Versiones de este Editor"
-    number of versions field: "Número total de versiones:"
+    number of versions field: "Número total de Versiones:"
     number of languages field: "Número total de idiomas:"
     language and count: "%{language_name} (%{language_count})"
     public domain: "Dominio Público"
-    loading: "Cargando Más versiones..."
+    loading: "Cargando Más Versiones..."
     load error: "Lo sentimos, hubo un problema técnico cargando más versiones. Cierre este menú e inicie nuevamente."
   campaigns:
     christmas:
