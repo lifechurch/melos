@@ -1126,13 +1126,13 @@ es:
   pages:
     generic_error:
       title: "¡Lo sentimos!"
-      explanation: "Algo inesperado sucedió.  Puede intentar reiniciar la página nuevamente.  Lamentamos mucho los inconvenientes experimentados."
+      explanation: "Algo inesperado sucedió. Puede intentar reiniciar la página nuevamente. Lamentamos mucho los inconvenientes experimentados."
       our action: "Hemos sido notificados acerca de esto y procederemos a solucionarlo tan pronto como sea posible."
     home:
-      heading: "Obtén una Biblia gratis para tu teléfono, tableta y computador."
+      heading: "Obtenga una Biblia gratis para su teléfono, tableta y computador."
       cta: "Leer la Biblia Ahora"
       experience:
-        title: "DISFRÚTALA EN CUALQUIER LUGAR"
+        title: "Disfrútela en cualquier lugar"
         body: "Escoge entre más de 1.200 versiones de la Biblia en más de 900 idiomas en tu computador, teléfono o tableta -- con muchas de ellas disponibles como audio Biblias."
         action: "Ver Versiones de la Biblia"
       make_yours:
@@ -2032,7 +2032,7 @@ es:
     read full chapter: "Leer el capítulo completo"
     copy: "Copiar"
     notification settings: "Configuración de notificaciones"
-    get a free bible: "Obtén una Biblia gratis para tu teléfono, tableta y computador."
+    get a free bible: "Obtenga una Biblia gratis para su teléfono, tableta y computador."
     download the bible: "Descargar la Biblia App"
     my year: "Mi Año en la Biblia App"
     view snapshot: "Ver Tu instantánea"
