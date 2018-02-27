@@ -149,8 +149,16 @@ module YouversionWeb
 
     # Set available locales to only the files we have in /config/locales (otherwise we would get everything in rails-i18n gem)
     # disabled since we're manually using the files
-    #config.i18n.available_locales = [:de, :en, :es, :fr, :ja, :ko, :nl, :no, :pl, "pt-BR", :ru, :sv, "zh-CN", "zh-TW"]
-   
+    config.i18n.available_locales = [
+      :af, :ar, :be, :bg, :bn, :ca, :cs, :cy, :da, :de, :el, :en,
+      :es, :et, :fa, :fi, :fr, :he, :hi, :hr, :ht, :hu, :id, :ig,
+      :is, :it, :ja, :ka, :km, :kn, :ko, :lt, :lv, :mk, :ml, :mn,
+      :mr, :ms, :my, :ne, :nl, :no, :pl, :pt, :ro, :ru, :sk, :sn,
+      :sq, :sv, :sw, :ta, :tg, :th, :tl, :tr, :uk, :ur, :uz, :vi,
+      :ckb, :myz,
+      "en-GB", "es-ES", "pt-PT", "zh-CN", "zh-HK", "zh-TW", :zu
+    ]
+
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
