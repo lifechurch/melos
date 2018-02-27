@@ -1656,8 +1656,8 @@ es:
         my: "Mis Eventos"
         new: "Crear un Nuevo Evento"
         subTitle: "EVENTOS CREADOS POR MÍ"
-        newFirst: "Crear tu primer evento"
-        learn: "Aprender como crear un gran evento"
+        newFirst: "Crear Su Primer Evento"
+        learn: "Aprender cómo crear un gran Evento"
       EventFeedSaved:
         title: "Eventos guardados"
       EventView:
@@ -1668,12 +1668,12 @@ es:
       Auth:
         errors:
           sessionExpired: "Su sesión expiró. Por favor ingrese de nuevo."
-          invalidEmail: "correo electrónico o contraseña inválidos."
+          invalidEmail: "Correo electrónico o contraseña inválidos."
       EventEdit:
         errors:
           locationMustHaveTime: "Todas las ubicaciones deben tener al menos una hora."
-          locationRequired: "No se puede publicar un evento sin una ubicación."
-          contentRequired: "No se puede publicar un evento sin contenido."
+          locationRequired: "No se puede publicar un Evento sin una ubicación."
+          contentRequired: "No se puede publicar un Evento sin contenido."
           planSearchFailed: "La búsqueda no encontró ningún documento parecido"
           noMatchingPlans: "No hay resultados"
         components:
