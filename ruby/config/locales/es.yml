@@ -1616,7 +1616,7 @@ es:
       Auth:
         title: "Ingresar para eventos"
         signIn: "Iniciar sesión"
-        subHead1: "Si eres un usuario de la Biblia App y ya tienes una cuenta YouVersion, puedes ingresar usando tus mismas credenciales.No tienes una cuenta YouVersion aún?<a href='%{url}'>Suscribete ahora en Biblia.com para empezar a crear eventos.</a>"
+        subHead1: "Si es usted usuario de la Biblia App y ya tiene una cuenta YouVersion, puede ingresar usando sus mismas credenciales.<br/><br/>¿No tiene una cuenta YouVersion aún?<br/><a href='%{url}'>Suscríbase ahora en Biblia.com</a> para empezar a crear eventos."
         email: "Correo Electrónico"
         password: "Contraseña"
         forgotPassword: "Olvidé contraseña."
@@ -1626,7 +1626,7 @@ es:
         choose: "Escoja algún contenido para iniciar."
         needHelp: "¿Necesita ayuda?"
         title: "Contenido del evento"
-        previous: "← Anterior: Ubicaciones y horarios"
+        previous: "← Anterior: Ubicaciones y Horarios"
         next: "Siguiente: Vista preliminar →"
       EventEditDetails:
         title: "Detalles del evento"
