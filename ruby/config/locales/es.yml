@@ -1226,10 +1226,10 @@ es:
     christmas:
       tracker title: "El Rastreador de la Historia de la Navidad"
       twitter text: "Observe al mundo leyendo acerca del nacimiento de Jesús. Comparta la Historia del Rastreador de la Historia de Navidad @YouVersion: http://www.bible.com/christmas"
-      facebook text: "Comparte el Rastreador de la Historia de la Navidad a medida que personas alrededor del mundo leen acerca del nacimiento de Jesús.  En la iglesia o en casa, cerca de las personas que amamos o durante un momento de quietud a solas, hacemos una pausa para reflexionar acerca de lo maravilloso del amor de Dios por nosotros."
+      facebook text: "Comparta el Rastreador de la Historia de la Navidad a medida que personas alrededor del mundo leen acerca del nacimiento de Jesús.  En la iglesia o en casa, cerca de las personas que amamos o durante un momento de quietud a solas, hacemos una pausa para reflexionar acerca de lo maravilloso del amor de Dios por nosotros."
       summary: "Durante diciembre de 2014, así se veía al mundo leyendo acerca del nacimiento de Jesús."
       verse: "<sup>10</sup> Pero el ángel les dijo,<br>“No teman. Porque he aquí les doy nuevas de gran gozo, que será para todo el pueblo. <sup>11</sup> &quot;Hoy en la ciudad de David un salvador ha nacido para ustedes; él es el Mesías, el Señor.&quot;"
-      read more: "Lee la asombrosa historia de la Navidad"
+      read more: "Lea la asombrosa historia de la Navidad"
       read about: "Leyendo acerca del nacimiento de Jesús"
       totals since: "Total de YouVersion desde Diciembre 1, 2014 "
       totals during: "Totales de YouVersion en diciembre de 2014:"
@@ -1237,7 +1237,7 @@ es:
       download: "Descargue la Biblia App gratis"
       versions: "Más de %{version_count} versiones en %{language_count} idiomas"
       tagline: "la Biblia que va consigo dondequiera que vaya"
-      chapter counter format: "9,999,999"
+      chapter counter format: "9.999.999"
     100m:
       logo: "YouVersion: La Biblia App"
       tagline: "Inicia con <em>100 millones</em>"
