@@ -1413,7 +1413,7 @@ tl:
       see all: "Tingnan Lahat"
       discover: "Tuklasin"
       my_plans: "My Plans"
-      day_completed: "<b>Natapos ni %{username} ang ika-%{day} araw ng Bible Plan: %{plan_title}</b><b></b><b></b>"
+      day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
       which reading: "%{current} ng %{total}"
       status:
         on track: "Nakakasunod!"
@@ -1423,14 +1423,14 @@ tl:
         missed days:
           one: "%{count} Araw na Nakaligtaan"
           other: "%{count} Mga Araw na Nakaligtaan"
-      bible plan language: "Wikang Gamit sa Babasahin"
+      bible plan language: "Bible Plan Language"
       share plan: "Tingnan mo itong %{plan_title} ng @YouVersion #BiblePlan"
       widget:
-        my plans: "Ang aking mga Plano"
+        my plans: "My Plans"
         start reading: "Simulan ang pagbabasa"
-        view my plans: "Tingnan ang mga Babasahin"
-        featured plans: "Tampok na mga Babasahin"
-        view all plans: "Tingnan ang mga Babasahin"
+        view my plans: "View My Plans"
+        featured plans: "Featured Plans"
+        view all plans: "View All Plans"
         reading: "Babasahin"
         readings: "Mga Babasahin"
         readings 5 or more: "Mga Babasahin"
