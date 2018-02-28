@@ -831,7 +831,7 @@ ru:
       friends completed:
         one: "%{count} друг завершил этот план чтения"
         few: "%{count} друга завершили этот план чтения"
-        many: "%{count} friends have completed this plan"
+        many: "%{count} друзей завершили этот план чтения"
         other: "%{count} друзей завершили этот план чтения"
       total completions: "Завершён более %{count} раз"
       view all: "Показать все"
@@ -1477,7 +1477,7 @@ ru:
         friends completed:
           one: "%{count} друг завершил этот план чтения"
           few: "%{count} друга завершили этот план чтения"
-          many: "%{count} friends have completed this plan"
+          many: "%{count} друзей завершили этот план чтения"
           other: "%{count} друзей завершили этот план чтения"
         total completions: "Завершён более %{count} раз"
         view all: "Показать все"
