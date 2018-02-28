@@ -301,7 +301,7 @@ fi:
     module 2 text: "Näytä raamatunkohdat, joihin saarnassasi viitataan, linkitettynä mihin tahansa Raamattusovelluksen %{version_count}+ raamatunkäännökseen, %{language_count}+ kielellä - kopiointia ja liittämistä ei tarvita."
     module 3 title: "Lukusuunnitelma-moduuli"
     module 3 text: "Linkitä opetuksesi siihen liittyviin lukusuunnitelmiin ja hartauksiin, se auttaa yleisöäsi jatkamaan sitoutumista Jumalan Sanaan koko viikon ajan."
-    module 4 title: "Web Links Module"
+    module 4 title: "Nettilinkkejä"
     module 4 text: "Vain yhdellä napautuksella kuulijasi pääsevät lahjoittamaan verkossa, ilmoittautumaan vapaaehtoiseksi tai käymään seurakunnan kotisivuilla, kun sijoitat minkä tahansa linkin Tapahtumaasi."
     module 5 title: "Kuva"
     module 5 text: "Elävöitä Tapahtumaasi grafiikoilla, valokuvilla, huoneentauluilla jne. Kuulijat voivat helposti jakaa Tapahtuman kuvia sosiaalisessa mediassa ja näin saarnasi lähtee leviämään netissä."
