@@ -1717,13 +1717,13 @@ es:
                   desc: "Cree un botón en su Evento que se enlaza a cualquier sitio web externo. Dé a su audiencia la oportunidad de donar en línea, registrarse como voluntario o visitar la página web de su iglesia de manera fácil."
                 announcement:
                   title: "Módulo de anuncio"
-                  desc: "Noticias de la Iglesia, calendario de eventos, programas, clases, voluntariado y oportunidades misionales...Módulos de anuncio son el contenedor perfecto para compartir información que es oportuna e importante, pero las cuales no quieres distraer del mensaje principal de tu evento. Cada módulo de anuncio aparece en su propia página en tu evento, y puede incluso tener contenido de texto enriquecido (como negritas e italica)."
+                  desc: "Noticias de la Iglesia, calendario de eventos, programas, clases, voluntariado y oportunidades misionales... Módulos de anuncio son el contenedor perfecto para compartir información que es oportuna e importante, pero las cuales que no quiere distraer del mensaje principal de su Evento. Cada módulo de anuncio aparece en su propia página en su Evento, y puede incluso tener contenido de texto enriquecido (como negritas e italica)."
               ContentInsertionPoint:
                 title: "Insertar siguiente módulo de texto aquí"
               ContentTypeAnnouncement:
                 title: "Título"
                 prompt: "Escribir algo aquí ..."
-                caption: "En su evento, sólo su título (arriba) será visible. Cuando un usuario pulsa en el título, el cuerpo (abajo) se muestra en una pantalla separada."
+                caption: "En su Evento, sólo su título (arriba) será visible. Cuando un usuario pulsa en el título, el cuerpo (abajo) se muestra en una pantalla separada."
               ContentTypeContainer:
                 dirty: "El contenido se guardará automáticamente segundos después de dejar de teclear. "
                 failed: "Incapaz de guardar."
@@ -1731,7 +1731,7 @@ es:
                 lastSaved: "Guardado %{when}"
               ContentTypeImage:
                 errors:
-                  wrongSize: "El tamaño de la imagen debe ser%{requiredWidth}x%{requiredHeight} Tu imagen es %{yourWidth}x%{yourHeight}"
+                  wrongSize: "El tamaño de la imagen debe ser%{requiredWidth}x%{requiredHeight} Su imagen es %{yourWidth}x%{yourHeight}."
                   wrongType: "Tipo de archivo inválido. Debe ser JPG."
                 caption: "Añadir subtítulo"
                 prompt: "Arrastrar y soltar una imagen"
@@ -1745,7 +1745,7 @@ es:
                 url: "URL"
               ContentTypePlan:
                 replace: "Reemplazar"
-                search: "Buscar un plan de lectura"
+                search: "Buscar un Plan de Lectura"
               ContentTypeReference:
                 language: "Idioma"
                 version: "Versión"
@@ -1754,27 +1754,27 @@ es:
               ContentTypeText:
                 prompt: "Escribir algo aquí ..."
               LiveWarningModal:
-                title: "No se puede eliminar mientras este evento esté en vivo"
-                desc: "Una vez que un evento haya sido en directo, no se pueden eliminar módulos del texto, referencia de la Biblia, ni imagen, porque los usuarios ya pueden haber añadido sus notas privadas a ellos. Sin embargo, puede editar estos módulos."
+                title: "No se puede eliminar mientras este Evento esté en vivo"
+                desc: "Una vez que un evento haya sido en directo, no se pueden eliminar módulos del texto, referencia de la Biblia, ni imagen, porque los usuarios ya pueden haber añadido sus Notas privadas a ellos. Sin embargo, puede editar estos módulos."
                 ok: "OK"
           details:
             errors:
-              generic: "Hubo un problema al publicar su evento."
-              invalidTimes: "Un único servicio no puede ser más de 12 horas y la diferencia entre la hora de inicio más temprana y la última hora de finalización de un evento no puede ser más de 8 días. Por favor, ajuste tu horario de los eventos y vuelve a intentarlo."
+              generic: "Hubo un problema al publicar su Evento."
+              invalidTimes: "Un único servicio no puede ser más de 12 horas y la diferencia entre la hora de inicio más temprana y la última hora de finalización de un Evento no puede ser más de 8 días. Por favor, ajuste su horario de los Eventos y vuelva a intentarlo."
             components:
               DetailsEdit:
                 errors:
-                  wrongSize: "El tamaño de la imagen debe ser%{requiredWidth}x%{requiredHeight} Tu imagen es %{yourWidth}x%{yourHeight}"
+                  wrongSize: "El tamaño de la imagen debe ser%{requiredWidth}x%{requiredHeight} Su imagen es %{yourWidth}x%{yourHeight}."
                   wrongType: "Tipo de archivo inválido. Debe ser JPG."
                 changeImage: "Cambiar imagen"
                 removeImage: "Remover imagen"
                 prompt: "Arrastrar y soltar una imagen"
                 onlyJpg: "[JPG solamente]"
                 sizePrompt: "%{requiredWidth}px ancho x %{requiredHeight}px altura"
-                sizePrompt2: "Las dimensiones de tu imagen deben ser %{requiredWidth} x %{requiredHeight} pixels."
-                eventName: "Nombre del evento"
+                sizePrompt2: "Las dimensiones de su imagen deben ser %{requiredWidth} x %{requiredHeight} pixels."
+                eventName: "Nombre del Evento"
                 org: "Nombre de la Iglesia u organización"
-                desc: "Descripción del evento"
+                desc: "Descripción del Evento"
                 next: "Siguiente: Agregar ubicación y horarios →"
                 blank: "%{field} no puede quedar vacio."
           location:
@@ -1788,7 +1788,7 @@ es:
                 addPhysical: "Agregar una ubicación física"
                 promptPhysical: "Puede agregar múltiples ubicaciones."
                 addVirtual: "Agregar ubicación virtual"
-                churchOnline: "¿Sabias que? Puedes iniciar un ministerio en línea gratis usando la <a className='button-caption' href='%{url}'>Plataforma en Línea de la Iglesia</a>."
+                churchOnline: "¿Sabia que? Puede iniciar un ministerio en línea gratis usando la <a className='button-caption' href='%{url}'>Plataforma en Línea de la Iglesia</a>."
               LocationAddTime:
                 minutes: "minutos"
                 hours: "horas"
@@ -1796,7 +1796,7 @@ es:
               LocationDeleteModal:
                 sure: "¿Está seguro?"
                 selected: "Ha seleccionado la siguiente ubicación, desea eliminarla?"
-                warn: "Esto eliminará la ubicación y todos los eventos pasados y presentes. Usted no podra volver a utilizar esta ubicación para eventos futuros."
+                warn: "Esto eliminará la ubicación y todos los Eventos pasados y presentes. Usted no podra volver a utilizar esta ubicación para Eventos futuros."
                 cancel: "Cancelar"
                 delete: "Eliminar"
               LocationEdit:
@@ -1809,7 +1809,7 @@ es:
                 addAnother: "Agregar otro horario"
                 cancel: "Cancelar"
                 save: "Guardar esta ubicación"
-                virtualPrompt: "Ingresa una ciudad para establecer el horario correspondiente..."
+                virtualPrompt: "Ingrese una ciudad para establecer el horario correspondiente..."
               LocationTimeShifter:
                 shift: "Cambiar la fecha de inicio"
                 forward: "Adelante"
@@ -1821,22 +1821,22 @@ es:
                 months: "Meses"
                 day: "Día"
                 days: "Días"
-                hour: "hora"
+                hour: "Hora"
                 hours: "horas"
                 update: "Actualizar"
                 shiftButton: "Cambiar todas las fechas y horarios de una vez"
               UnpublishModal:
                 cancel: "Cancelar"
                 title: "Anular publicación para hacer cambios"
-                desc: "Para añadir, editar o eliminar los lugares y horarios, anular temporalmente la publicación del evento. Durante este tiempo, tu evento no será visible en los resultados de búsqueda. No te olvides de publicar tu nuevo evento."
+                desc: "Para añadir, editar o eliminar los lugares y horarios, anule temporalmente la publicación del Event. Durante este tiempo, su Evento no será visible en los resultados de búsqueda. No se olvide de publicar su nuevo Evento."
                 unpublish: "Anular publicación"
           preview:
             notes:
-              prompt: "Agregar tus notas privadas…"
-              noAuthPrompt: "<a href='%{url}'><span className='highlight'>Inicia sesión para añadir tus notas privadas ...</span></a>"
+              prompt: "Agregar sus Notas privadas..."
+              noAuthPrompt: "<a href='%{url}'><span className='highlight'>Inicia sesión para añadir sus Notas privadas...</span></a>"
             components:
               PreviewFeed:
-                review: "Revisa tu evento antes de publicarlo"
+                review: "Revise su Evento antes de publicarlo"
                 previewUrl: "URL vista previa:"
                 share: "Compartir evento"
                 locationsAndTimes: "Lugares y horarios"
