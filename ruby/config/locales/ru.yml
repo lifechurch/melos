@@ -7,22 +7,22 @@ ru:
       about_x_hours:
         one: "около часа назад"
         few: "около %{count} часов назад"
-        many: "about %{count} hours ago"
+        many: "около %{count} часов назад"
         other: "около %{count} часов назад"
       about_x_months:
         one: "около 1 месяца назад"
         few: "около %{count} месяцев назад"
-        many: "about %{count} months ago"
+        many: "около %{count} месяцев назад"
         other: "около %{count} месяцев назад"
       about_x_years:
         one: "около 1 года назад"
         few: "около %{count} лет назад"
-        many: "about %{count} years ago"
+        many: "около %{count} лет назад"
         other: "около %{count} лет назад"
       almost_x_years:
         one: "почти год назад"
         few: "почти %{count} года назад"
-        many: "almost %{count} years ago"
+        many: "почти %{count} лет назад"
         other: "почти %{count} лет назад"
       half_a_minute: "пол минуты назад"
       less_than_x_minutes:
@@ -33,32 +33,32 @@ ru:
       less_than_x_seconds:
         one: "менее 1 секунды назад"
         few: "менее %{count} секунд назад"
-        many: "less than %{count} seconds ago"
+        many: "менее %{count} секунд назад"
         other: "менее %{count} секунд назад"
       over_x_years:
         one: "более 1 года назад"
         few: "более %{count} лет назад"
-        many: "over %{count} years ago"
+        many: "более %{count} лет назад"
         other: "более %{count} лет назад"
       x_days:
         one: "1 день назад"
         few: "%{count} дня назад"
-        many: "%{count} days ago"
+        many: "%{count} дней назад"
         other: "%{count} дней назад"
       x_minutes:
         one: "1 минуту назад"
         few: "%{count} минуты назад"
-        many: "%{count} minutes ago"
+        many: "%{count} минут назад"
         other: "%{count} минут назад"
       x_months:
         one: "1 месяц назад"
         few: "%{count} месяца назад"
-        many: "%{count} months ago"
+        many: "%{count} месяцев назад"
         other: "%{count} месяцев назад"
       x_seconds:
         one: "1 секунду назад"
         few: "%{count} секунды назад"
-        many: "%{count} seconds ago"
+        many: "%{count} секунд назад"
         other: "%{count} секунд назад"
   counter:
     format: "999,999,999"
@@ -2031,7 +2031,7 @@ ru:
     x likes:
       one: "%{number} лайк"
       few: "%{number} лайка"
-      many: "%{number} likes"
+      many: "%{number} лайков"
       other: "%{number} лайков"
     selected: "Выбранное"
     currently subscribed: "Подписанные в настоящее время."
@@ -2040,15 +2040,15 @@ ru:
     invited: "Приглашены"
     pending: "В ожидании."
     x pending:
-      one: "%{number} ожидание"
-      few: "%{number} ожидания"
-      many: "%{number} Pending"
-      other: "%{number} ожиданий"
+      one: "%{number} ожидает"
+      few: "%{number} ожидают"
+      many: "%{number} ожидают"
+      other: "%{number} ожидают"
     accepted: "Принятые."
     x accepted:
       one: "%{number} принят"
       few: "%{number} принято"
-      many: "%{number} Accepted"
+      many: "%{number} принято"
       other: "%{number} принято"
     invitation: "Приглашение."
     accept invitation: "Принять приглашение."
@@ -2066,7 +2066,7 @@ ru:
     x participants:
       one: "%{number} участник"
       few: "%{number} участника"
-      many: "%{number} Participants"
+      many: "%{number} участников"
       other: "%{number} участников"
     participant limit: "Максимальное количество участников: %{number}"
     + x more: "+ еще %{number}"
