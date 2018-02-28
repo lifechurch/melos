@@ -1838,25 +1838,25 @@ es:
               PreviewFeed:
                 review: "Revise su Evento antes de publicarlo"
                 previewUrl: "URL vista previa:"
-                share: "Compartir evento"
+                share: "Compartir Evento"
                 locationsAndTimes: "Lugares y horarios"
                 publish: "Publicar"
                 unpublish: "Anular publicación"
                 locations: "Ubicaciones:"
                 discoverable:
                   title: "Visible:"
-                  desc: "Su evento será visible en Localización de Evento en la Biblia App, y en resultados de búsqueda 5 días antes del comienzo de su evento. "
+                  desc: "Su Evento será visible en Localización de Evento en la Biblia App, y en resultados de búsqueda 5 días antes del comienzo de su Evento."
                 status:
                   title: "Estado:"
                   desc: "La insignia roja EN VIVO indicará su hora de comienzo. "
                 remove:
                   title: "Eliminar:"
-                  desc: "Al finalizar, el evento ya no será visible. Los asistentes que seleccionaron \"Guardar Evento\" cuando aún era visible podrán ver una versión archivada de él. Este evento continuará siendo accesible a través de enlaces directos. "
+                  desc: "Al finalizar, el Evento ya no será visible. Los asistentes que seleccionaron \"Guardar Evento\" cuando aún era visible podrán ver una versión archivada de él. Este Evento continuará siendo accesible a través de enlaces directos."
               PreviewTypeAnnouncement:
                 expand: "Expandir"
               PreviewTypePlan:
                 read: "Leer"
-                info: "Información del plan"
+                info: "Información del Plan"
       EventFeedMine:
         components:
           EventListItem:
@@ -1866,7 +1866,7 @@ es:
             draft: "Borrador"
             edit: "Editar"
             view: "Ver"
-            fail: "No se puede eliminar el evento"
+            fail: "No se puede eliminar el Evento"
       EventView:
         components:
           EventViewContent:
@@ -1874,15 +1874,15 @@ es:
             copied: "Copiado"
             share: "Compartir"
             read: "Leer"
-            readPlan: "Leer plan"
+            readPlan: "Leer Plan"
           EventViewContentAnnouncement:
             expand: "Expandir"
             collapse: "Plegar"
           EventViewDetails:
             expand: "Expandir"
             collapse: "Plegar"
-            save: "Guardar evento"
-            signIn: "Iniciar sesión para guardar el evento"
+            save: "Guardar Evento"
+            signIn: "Iniciar sesión para guardar el Evento"
             saved: "Evento guardado"
     Auth:
       sign up: "Registrarse"
@@ -1905,7 +1905,7 @@ es:
       read chapter: "Leer el capítulo completo"
       plan title: "Planes de Lectura y Devocionales Gratis"
       plan title ref: "Planes de Lectura y Devocionales Gratis relacionados con %{reference}"
-      plan subtitle: "Los Planes Bíblicos dividen tu lectura de la Escritura en razonables porciones diarias.  Los Planes a menudo incluyen selecciones de devocionales con audio o video.  Ya sea que los llames Planes Bíblicos, Planes de Lectura, o Devocionales, los Planes son una manera probada de empezar a hacer de la Biblia una parte natural de tu vida diaria. "
+      plan subtitle: "Los Planes Bíblicos dividen su lectura de la Escritura en razonables porciones diarias. Los Planes a menudo incluyen selecciones de devocionales con audio o video. Ya sea que los llame Planes Bíblicos, Planes de Lectura, o Devocionales, los Planes son una manera probada de empezar a hacer de la Biblia una parte natural de su vida diaria."
       meta:
         mobile:
           title: "La Biblia App"
