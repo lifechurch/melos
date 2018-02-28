@@ -1675,7 +1675,7 @@ es:
           locationRequired: "No se puede publicar un Evento sin una ubicación."
           contentRequired: "No se puede publicar un Evento sin contenido."
           planSearchFailed: "La búsqueda no encontró ningún documento parecido"
-          noMatchingPlans: "No hay resultados"
+          noMatchingPlans: "No hay Planes Parecidos"
         components:
           EventEditNav:
             details: "Detalles"
