@@ -5,61 +5,61 @@ ru:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "около %{count} часа назад"
+        one: "около часа назад"
         few: "около %{count} часов назад"
         many: "about %{count} hours ago"
         other: "около %{count} часов назад"
       about_x_months:
-        one: "около %{count} месяца назад"
+        one: "около 1 месяца назад"
         few: "около %{count} месяцев назад"
         many: "about %{count} months ago"
         other: "около %{count} месяцев назад"
       about_x_years:
-        one: "около %{count} года назад"
+        one: "около 1 года назад"
         few: "около %{count} лет назад"
         many: "about %{count} years ago"
         other: "около %{count} лет назад"
       almost_x_years:
-        one: "почти %{count} год назад"
+        one: "почти год назад"
         few: "почти %{count} года назад"
         many: "almost %{count} years ago"
-        other: "почти %{count} года назад"
+        other: "почти %{count} лет назад"
       half_a_minute: "пол минуты назад"
       less_than_x_minutes:
-        one: "менее %{count} минуты назад"
+        one: "менее минуты назад"
         few: "менее %{count} минут назад"
-        many: "less than %{count} minutes ago"
+        many: "менее %{count} минут назад"
         other: "менее %{count} минут назад"
       less_than_x_seconds:
-        one: "менее %{count} секунды назад"
+        one: "менее 1 секунды назад"
         few: "менее %{count} секунд назад"
         many: "less than %{count} seconds ago"
-        other: "менее %{count} секунды назад"
+        other: "менее %{count} секунд назад"
       over_x_years:
-        one: "более %{count} года назад"
+        one: "более 1 года назад"
         few: "более %{count} лет назад"
         many: "over %{count} years ago"
-        other: "более %{count} года назад"
+        other: "более %{count} лет назад"
       x_days:
-        one: "%{count} день назад"
+        one: "1 день назад"
         few: "%{count} дня назад"
         many: "%{count} days ago"
-        other: "%{count} дня назад"
+        other: "%{count} дней назад"
       x_minutes:
-        one: "%{count} минуту назад"
+        one: "1 минуту назад"
         few: "%{count} минуты назад"
         many: "%{count} minutes ago"
         other: "%{count} минут назад"
       x_months:
-        one: "%{count} месяц назад"
+        one: "1 месяц назад"
         few: "%{count} месяца назад"
         many: "%{count} months ago"
-        other: "%{count} месяца назад"
+        other: "%{count} месяцев назад"
       x_seconds:
-        one: "%{count} секунду назад"
+        one: "1 секунду назад"
         few: "%{count} секунды назад"
         many: "%{count} seconds ago"
-        other: "%{count} секунды назад"
+        other: "%{count} секунд назад"
   counter:
     format: "999,999,999"
   social:
@@ -804,12 +804,12 @@ ru:
       days ahead:
         one: "опережение на %{count} день!"
         few: "опережение на %{count} дня!"
-        many: "%{count} Days Ahead!"
-        other: "%{count} дней впереди!"
+        many: "опережение на %{count} дней!"
+        other: "опережение на %{count} дней!"
       missed days:
         one: "%{count} пропущенный день"
         few: "%{count} пропущенных дня"
-        many: "%{count} Missed Days"
+        many: "%{count} пропущенных дней"
         other: "%{count} пропущенных дней"
     bible plan language: "Язык плана чтения Библии."
     share plan: "Очень интересный план чтения от @YouVersion #BiblePlan: %{plan_title}"
@@ -826,7 +826,7 @@ ru:
       friends reading:
         one: " %{count} друг начал этот план чтения"
         few: "%{count} друга начали этот план чтения"
-        many: "%{count} friends subscribed to this plan"
+        many: "%{count} друзей начали этот план чтения"
         other: "%{count} друзей начали этот план чтения"
       friends completed:
         one: "%{count} друг завершил этот план чтения"
@@ -1450,12 +1450,12 @@ ru:
         days ahead:
           one: "опережение на %{count} день!"
           few: "опережение на %{count} дня!"
-          many: "%{count} Days Ahead!"
-          other: "%{count} Days Ahead!"
+          many: "опережение на %{count} дней!"
+          other: "опережение на %{count} дней!"
         missed days:
           one: "%{count} пропущенный день"
           few: "%{count} пропущенных дня"
-          many: "%{count} Missed Days"
+          many: "%{count} пропущенных дней"
           other: "%{count} пропущенных дней"
       bible plan language: "Язык плана чтения Библии."
       share plan: "Очень интересный план чтения от @YouVersion #BiblePlan: %{plan_title}"
@@ -1472,7 +1472,7 @@ ru:
         friends reading:
           one: " %{count} друг начал этот план чтения"
           few: "%{count} друга начали этот план чтения"
-          many: "%{count} friends subscribed to this plan"
+          many: "%{count} друзей начали этот план чтения"
           other: "%{count} друзей начали этот план чтения"
         friends completed:
           one: "%{count} друг завершил этот план чтения"
