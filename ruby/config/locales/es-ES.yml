@@ -1,4 +1,4 @@
-es-ES:
+es:
   time:
     formats:
       votd: "%-d %B, %Y"
