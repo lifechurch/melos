@@ -1,7 +1,7 @@
 sv:
   time:
     formats:
-      votd: "%B %-d, %Y"
+      votd: "%-d %B, %Y"
   datetime:
     time_ago_in_words:
       about_x_hours:
@@ -1997,7 +1997,7 @@ sv:
     currently subscribed: "Prenumererar"
     invite friends: "Bjud in Vänner"
     invite others: "Bjud in andra"
-    invited: "Invited"
+    invited: "Inbjuden"
     pending: "Inväntar Svar"
     x pending:
       one: "%{number} Inväntar Svar"
@@ -2082,10 +2082,10 @@ sv:
     STORIES.SERMONMOUNT: "Bergspredikan"
     STORIES.TRIUMPHALENTRY: "Jesus rider in i Jerusalem"
     explore: "Utforska"
-    what does the bible say: "What does the Bible say about..."
+    what does the bible say: "Vad säger Bibeln om..."
     how are you feeling: "Hur känner du dig?"
     bible stories: "Berättelser från Bibeln"
-    what the bible says about: "Here's what the Bible says about: %{topic}"
+    what the bible says about: "Detta säger bibeln om: %{topic}"
     amazed: "Förundrad"
     content: "Innehåll"
     faithful: "Trogen"
