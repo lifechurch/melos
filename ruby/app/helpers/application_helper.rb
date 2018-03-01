@@ -172,7 +172,7 @@ module ApplicationHelper
     # the others will default to en
     [ :en, :"en-GB", :es, :"zh-CN", :"zh-TW", :ko, :pt, :ru, :nl, :de, :fr, :ar,
       :id, :tr, :fa, :ja, :af, :tl, :ur, :th, :it, :vi, :hi, :pl, :ro, :fi,
-      :"zh-HK", :sv, :uk, :el, :bn, :no, :mn, :zu ]
+      :"zh-HK", :sv, :uk, :el, :bn, :no, :mn, :zu, :ta ]
   end
 
   def i18n_events_whitelist
