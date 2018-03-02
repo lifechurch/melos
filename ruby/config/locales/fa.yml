@@ -6,38 +6,38 @@ fa:
     time_ago_in_words:
       about_x_hours:
         one: "about 1 hour ago"
-        other: "about %{count} hours ago"
+        other: "حدود %{count} ساعت پیش"
       about_x_months:
-        one: "about 1 month ago"
-        other: "about %{count} months ago"
+        one: "حدود %{count} ماه پیش"
+        other: "حدود %{count} ماه پیش"
       about_x_years:
         one: "about 1 year ago"
-        other: "about %{count} years ago"
+        other: "حدود %{count} سال پیش"
       almost_x_years:
-        one: "almost 1 year ago"
-        other: "almost %{count} years ago"
+        one: "تقریباً %{count} سال پیش"
+        other: "تقریباً %{count} سال پیش"
       half_a_minute: "نیم دقیقه پیش"
       less_than_x_minutes:
-        one: "less than a minute ago"
-        other: "less than %{count} minutes ago"
+        one: "کمتر از %{count} دقیقه پیش"
+        other: "کمتر از %{count} دقیقه پیش"
       less_than_x_seconds:
-        one: "less than 1 second ago"
-        other: "less than %{count} seconds ago"
+        one: "کمتر از %{count} ثانیه پیش"
+        other: "کمتر از %{count} ثانیه پیش"
       over_x_years:
-        one: "over 1 year ago"
-        other: "over %{count} years ago"
+        one: "بیش از %{count} سال پیش"
+        other: "بیش از %{count} سال پیش"
       x_days:
-        one: "1 day ago"
-        other: "%{count} days ago"
+        one: "%{count} روز پیش"
+        other: "%{count} روز پیش"
       x_minutes:
-        one: "1 minute ago"
-        other: "%{count} minutes ago"
+        one: "%{count} دقیقه پیش"
+        other: "%{count} دقیقه پیش"
       x_months:
-        one: "1 month ago"
-        other: "%{count} months ago"
+        one: "%{count} ماه پیش"
+        other: "%{count} ماه پیش"
       x_seconds:
-        one: "1 second ago"
-        other: "%{count} seconds ago"
+        one: "%{count} ثانیه پیش"
+        other: "%{count} ثانیه پیش"
   counter:
     format: "999,999,999"
   social:
