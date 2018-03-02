@@ -92,7 +92,7 @@ hr:
     connection friends: "Ovo su neki YouVersion korisnici sa kojima ste spojeni na %{connection}:"
     errors:
       no friends: "Izgleda da nitko od tvojih %{connection} prijatelja još nije na YouVersionu."
-      reset connection: "Ispričavamo se, došlo je do greške. Molimo makni konekciju i pokušaj ponovo."
+      reset connection: "Ispričavamo se, došlo je do greške. Molimo odspoji se i pokušaj ponovo."
     email:
       name: "Email"
     twitter:
@@ -303,8 +303,8 @@ hr:
     section 4 title: "Svoje ljude vodite dublje u Bibliju."
     section 4 text: "Preporuči Planove čitanja i Nadahnute tekstove koji će čitav tjedan vašu zajednicu povezivati sa Svetim pismom."
     slide demo title: "Snažan ne mora značiti komliciran."
-    slide demo text: "Jednostavno stvorite Događaj s bilo kojeg Mac ili računala poveznaog s internetom. Svaki svoj Događaj samo povucite i ispustite na njegovo mjesto, presložite ga, uredite i dotjerujte ga usput."
-    building blocks title: "Sve što vam jepotrebno…kako biste stvorili Događaj upravo onakav kakav želite."
+    slide demo text: "Jednostavno stvori Događaj s bilo kojeg Mac ili računala povezanog s internetom. Svaki svoj Događaj samo povuci i ispusti na njegovo mjesto, presloži ga, uredi i dotjeruj ga usput."
+    building blocks title: "Sve što vti je potrebno…kako bi stvorio Događaj upravo onakav kakav želiš."
     building blocks text: "Fleksibilni moduli štede trud i vrijeme. Prilikom kreiranja novih događaja, možeš kombinirati različite elemente ili ponovo iskoristiti postojeće i prilagoditi ih po potrebi. Možeš čak i kopirati postojeće događaje i prilagoditi ih različitim vrstama okupljanja. Cijelo to vrijeme, pomoću pregleda možeš svoj događaj vidjeti točno onako kako će ga vidjeti polaznici."
     module 1 title: "Modul teksta"
     module 1 text: "Osnove, ključne točke, pitanja za razgovor… Podijeli bilo koji tekstualni sadržaj koji će pomoći polaznicima da prate poruku događaja dok je isti u tijeku."
