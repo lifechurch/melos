@@ -5,39 +5,39 @@ el:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "περίπου %{count} ώρα πριν"
-        other: "περίπου %{count} ώρες πριν"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "περίπου %{count} μήνα πριν"
-        other: "περίπου %{count} μήνες πριν"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "περίπου %{count} έτος πριν"
-        other: "περίπου %{count} έτη πριν"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "σχεδόν %{count} έτος πριν"
-        other: "σχεδόν %{count} έτη πριν"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "μισό λεπτό πριν"
       less_than_x_minutes:
-        one: "λιγότερο από %{count} λεπτό πριν"
-        other: "λιγότερο από %{count} λεπτά πριν"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "λιγότερο από %{count} δευτερόλεπτο πριν"
-        other: "λιγότερο από %{count} δευτερόλεπτα πριν"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "πάνω από %{count} έτος πριν"
-        other: "πάνω από %{count} έτη πριν"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} ημέρα πριν"
-        other: "%{count} ημέρες πριν"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} λεπτό πριν"
-        other: "%{count} λεπτά πριν"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} μήνα πριν"
-        other: "%{count} μήνες πριν"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count} δευτερόλεπτο πριν"
-        other: "%{count} δευτερόλεπτα πριν"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -262,7 +262,9 @@ el:
   translation: "Μετάφραση"
   notes title: "Σημειώσεις"
   friends:
-    you have N friends: "Έχετε %{count} φίλους"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Κοινοποιήστε, στους φίλους και την οικογένειά σας, τις εμπερίες σας με την Αγία Γραφή, όπως σελιδοδείκτες, επισημάνσεις και σημειώσεις"
     find friends: "Αναζήτηση φίλων"
     blank slate:
@@ -445,7 +447,9 @@ el:
     destroy success: "Η δήλωση ότι σας αρέσει διαγράφηκε"
     destroy failure: "Η δήλωση ότι σας αρέσει δεν μπόρεσε να διαγραφεί"
   comments:
-    view all N: "Προβολή όλων των σχολίων για %{count}"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Ανάρτηση σχολίου"
     create success: "Επιτυχία! Το σχόλιό σας αναρτήθηκε."
     create failure: "Το σχόλιο δεν μπορεσε να αναρτηθεί"
@@ -803,7 +807,9 @@ el:
       friends completed:
         one: "%{count} φίλος τελείωσε το σχέδιο"
         other: "%{count} φίλοι τελείωσαν το σχέδιο"
-      total completions: "Πάνω από %{count} ολοκληρώσεις"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Προβολή Όλων"
       close: "Κλείσιμο"
     settings: "Ρυθμίσεις"
