@@ -5,39 +5,39 @@ ta:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "சுமார் 1 மணி நேரத்திற்கு முன்"
-        other: "சுமார் %{count} மணி நேரங்களுக்கு முன்"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "சுமார் 1 மாதத்திற்கு முன்"
-        other: "சுமார் %{count} மாதங்களுக்கு முன்"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "சுமார் 1 ஆண்டுக்கு முன்"
-        other: "சுமார் %{count} ஆண்டுகளுக்கு முன்"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "கிட்டத்தட்ட 1 ஆண்டுக்கு முன்"
-        other: "கிட்டத்தட்ட %{count} ஆண்டுகளுக்கு முன்"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "அரை நிமிடத்திற்கு முன்"
       less_than_x_minutes:
-        one: "ஒரு நிமிடத்திற்கு முன்"
-        other: "%{count} க்கு குறைவான நிமிடங்களுக்கு முன்"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "ஒரு வினாடிக்கு முன்"
-        other: "%{count} வினாடிகளுக்கு முன்"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "ஒரு ஆண்டிற்கு மேல்"
-        other: "%{count} ஆண்டுகளுக்கு மேல்"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "ஒரு நாளுக்கு முன்"
-        other: "%{count} நாட்களுக்கு முன்"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "ஒரு நிமிடத்திற்கு முன்"
-        other: "%{count} நிமிடங்களுக்கு முன்"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "ஒரு மாதத்திற்கு முன்"
-        other: "%{count} மாதங்களுக்கு முன்"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "ஒரு வினாடிக்கு முன்"
-        other: "%{count} வினாடிகளுக்கு முன்"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "99,99,99,999"
   social:
@@ -262,7 +262,9 @@ ta:
   translation: "மொழிபெயர்ப்பு"
   notes title: "குறிப்புகள்"
   friends:
-    you have N friends: "உங்களுக்கு %{count} நண்பர்கள்"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "உங்கள் வேதாகம தருணங்களை அதாவது புத்தககுறிகள், சிறப்புக்கூறுகள் மற்றும் குறிப்புகளை நெருங்கிய நண்பர்கள் மற்றும் குடும்பத்துடன் பகிர்க"
     find friends: "நண்பர்களை தேடு"
     blank slate:
@@ -445,7 +447,9 @@ ta:
     destroy success: "விருப்பம் நீக்கப்பட்டது"
     destroy failure: "உங்கள் விருப்பத்தை நீக்க முடியவில்லை"
   comments:
-    view all N: "அனைத்து %{count} கருத்துக்களையும் பார்வையிட"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "ஒரு கருத்தை பரிமாறு"
     create success: "வெற்றி! உங்கள் கருத்து வெளியிடப்பட்டது."
     create failure: "கருத்தை வெளியிட முடியவில்லை"
@@ -803,7 +807,9 @@ ta:
       friends completed:
         one: "ஒரு நண்பர் இந்த திட்டத்தை நிறைவு செய்துள்ளார்"
         other: "%{count} நண்பர்கள் இந்த திட்டத்தை நிறைவு செய்துள்ளார்கள்"
-      total completions: "%{count}-க்கு மேலான நிறைவுசெய்தல்கள்"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "அனைத்தும் பார்க்க"
       close: "மூடு"
     settings: "அமைவுகள்"
