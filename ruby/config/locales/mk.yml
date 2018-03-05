@@ -5,39 +5,39 @@ mk:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "пред околу %{count} час"
-        other: "пред околу %{count} часа"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "пред околу 1 месец"
-        other: "пред околу %{count} месеци"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "пред околу %{count} година"
-        other: "пред околу %{count} години"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "пред скоро %{count} година"
-        other: "пред скоро %{count} години"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "пред пола минута"
       less_than_x_minutes:
-        one: "пред помалку од %{count} минута"
-        other: "пред помалку од %{count} минути"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "пред помалку од %{count} секунда"
-        other: "пред помалку од %{count} секунди"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "пред повеќе од %{count} година"
-        other: "пред повеќе од %{count} години"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "пред %{count} ден"
-        other: "пред %{count} дена"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "пред %{count} минута"
-        other: "пред %{count} минути"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "пред %{count} месец"
-        other: "пред %{count} месеци"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "пред %{count} секунда"
-        other: "пред %{count} секунди"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -262,7 +262,9 @@ mk:
   translation: "Превод"
   notes title: "Белешки"
   friends:
-    you have N friends: "Имаш %{count} пријатели"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Сподели твои моменти од Библијата како обележувачи, нагласувања и белешки со твоите најблиски пријатели и фамилија."
     find friends: "Најди пријатели"
     blank slate:
@@ -445,7 +447,9 @@ mk:
     destroy success: "\"Лајк\"-от е избришан"
     destroy failure: "Твојот \"лајк\" не може да биде избришан"
   comments:
-    view all N: "Види ги сите %{count} коментари"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Напиши коментар"
     create success: "Успех! Твојот коментар е објавен."
     create failure: "Коментарот неможе да се објави"
@@ -803,7 +807,9 @@ mk:
       friends completed:
         one: "%{count} пријател го заврши овој план "
         other: "%{count} пријатели го завршија овој план "
-      total completions: "Над %{count} луѓе прочитале"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Види сè"
       close: "Затвори"
     settings: "Уредувања"
