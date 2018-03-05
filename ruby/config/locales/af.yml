@@ -5,39 +5,39 @@ af:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "omtrent %{count} uur gelede"
-        other: "omtrent %{count} ure gelede"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "omtrent %{count} maand gelede"
-        other: "omtrent %{count} maande gelede"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "omtrent %{count} jaar gelede"
-        other: "omtrent %{count} jare gelede"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "amper %{count} jaar gelede"
-        other: "amper %{count} jare gelede"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "'n halwe minuut terug"
       less_than_x_minutes:
-        one: "minder as %{count} minuut gelede"
-        other: "minder as %{count} minute gelede"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "minder as %{count} sekond terug"
-        other: "minder as %{count} sekondes terug"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "meer as %{count} jaar gelede"
-        other: "meer as %{count} jaar gelede"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} dag gelede"
-        other: "%{count} dae gelede"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} minuut gelede"
-        other: "%{count} minute gelede"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} maand gelede"
-        other: "%{count} maande gelede"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count} sekond terug"
-        other: "%{count} sekondes terug"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ af:
   translation: "Vertaling"
   notes title: "Notas"
   friends:
-    you have N friends: "Jy het %{count} vriende"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Deel jou oomblikke in die Bybel soos boekmerke, hoogtepunte en notas met jou naaste vriende en familie."
     find friends: "Soek vriende"
     blank slate:
@@ -445,7 +447,9 @@ af:
     destroy success: "'Hou Van' verwyder"
     destroy failure: "Jou 'Hou Van' kon nie verwyder word nie"
   comments:
-    view all N: "Wys al %{count} opmerkings"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Plaas 'n opmerking"
     create success: "Sukses! Jou opmerking is gepos"
     create failure: "Opmerking kon nie geplaas word nie"
@@ -803,7 +807,9 @@ af:
       friends completed:
         one: "%{count} vriend het hierdie plan voltooi"
         other: "%{count} vriende het hierdie plan voltooi"
-      total completions: "Meer as %{count} voltooi"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Kyk na almal"
       close: "Maak toe"
     settings: "Opstellings"
