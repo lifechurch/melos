@@ -5,39 +5,39 @@ nl:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "ca %{count} uur geleden"
-        other: "ca %{count} uur geleden"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "ca %{count} maand geleden"
-        other: "ca %{count} maanden geleden"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "ca %{count} jaar geleden"
-        other: "ca %{count} jaar geleden"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "bijna %%{count} jaar geleden"
-        other: "bijna %{count} jaar geleden"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "een halve minuut geleden"
       less_than_x_minutes:
-        one: "minder dan %{count} minuut geleden"
-        other: "minder dan %{count} minuten geleden"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "minder dan %{count} seconde geleden"
-        other: "minder dan %{count} seconden geleden"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "meer dan %{count} jaar geleden"
-        other: "meer dan %{count} jaar geleden"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} dag geleden"
-        other: "%{count} dagen geleden"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} minuut geleden"
-        other: "%{count} minuten geleden"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} maand geleden"
-        other: "%{count} maanden geleden"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count} seconde geleden"
-        other: "%{count} seconden geleden"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ nl:
   translation: "Vertaling"
   notes title: "Notities"
   friends:
-    you have N friends: "Je hebt %{count} vrienden"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Deel van jouw Bijbelmomenten, bijvoorbeeld bladwijzers, markeringen en notities met goede vrienden en familie."
     find friends: "Vrienden vinden"
     blank slate:
@@ -445,7 +447,9 @@ nl:
     destroy success: "'Vind ik leuk' verwijderd"
     destroy failure: "Jouw 'vind ik leuk' kon niet worden verwijderd"
   comments:
-    view all N: "Bekijk alle %{count} reacties"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Plaats een reactie"
     create success: "Gelukt! Jouw reactie is geplaatst."
     create failure: "Reactie kon niet worden geplaatst"
@@ -803,7 +807,9 @@ nl:
       friends completed:
         one: "%{count} vriend heeft dit leesplan voltooid"
         other: "%{count} vrienden hebben dit leesplan voltooid"
-      total completions: "Meer dan %{count} voltooid"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Bekijk alles"
       close: "Sluiten"
     settings: "Instellingen"

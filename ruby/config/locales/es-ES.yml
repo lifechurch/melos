@@ -5,39 +5,39 @@ es-ES:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "hace una %{count} hora"
-        other: "hace unas %{count} horas"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "Hace uno %{count} mes"
-        other: "Hace unos %{count} meses"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "Hace un %{count} año"
-        other: "Hace unos %{count} años"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "hace casi %{count} año"
-        other: "hace casi %{count} años"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "hace medio minuto"
       less_than_x_minutes:
-        one: "hace menos de %{count} minuto"
-        other: "hace menos de %{count} minutos"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "hace menos de %{count} segundo"
-        other: "hace menos de %{count} segundos"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "más de %{count} año"
-        other: "más de %{count} años"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "hace %{count} día"
-        other: "hace %{count} días"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "hace %{count} minuto"
-        other: "hace %{count} minutos"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "hace %{count} mes"
-        other: "hace %{count} meses"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "hace %{count} segundo"
-        other: "hace %{count} segundos"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -262,7 +262,9 @@ es-ES:
   translation: "Traducción"
   notes title: "Notas"
   friends:
-    you have N friends: "Tienes %{count} amigos"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Comparte tus momentos con la Biblia tales como marcadores, subrayados y notas con tus amigos más cercanos y familia."
     find friends: "Encuentra amigos"
     blank slate:
@@ -445,7 +447,9 @@ es-ES:
     destroy success: "\"me gusta\" borrado"
     destroy failure: "Tu \"me gusta\" no se ha borrado"
   comments:
-    view all N: "Mira todos los %{count} comentarios"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Publicar un comentario"
     create success: "¡Éxito! Tu comentario ha sido publicado."
     create failure: "El comentario no pudo publicarse"
@@ -803,7 +807,9 @@ es-ES:
       friends completed:
         one: "%{count} amigos completaron este plan"
         other: "%{count} amigos completaron este plan"
-      total completions: "Alrededor de %{count} completados"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Ver Todo"
       close: "Cerrado"
     settings: "Configuración"

@@ -5,28 +5,28 @@ myz:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "လြန္ခဲ့တဲ့ %{count} နာရီခန႔္က"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "လြန္ခဲ့ေသာ%{count}လတြင္"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "လြန္ခဲ့ေသာ%{count} ႏွစ္က"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "လြန္ခဲ့ေသာ%{count}ႏွင့္နီးပါးက"
+        other: "almost %{count} years ago"
       half_a_minute: "လြန္ခဲ့ေသာမိနစ္ဝက္က"
       less_than_x_minutes:
-        other: "လြန္ခဲ့ေသာ%{count}မိနစ္ထက္နည္းသည့္အခ်ိန္က"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "လြန္ခဲ့ေသာ%{count}စကၠန႔္ထက္နည္းသည့္အခ်ိန္တြင္"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "လြန္ခဲ့ေသာ%{count}ႏွစ္ေက်ာ္က"
+        other: "over %{count} years ago"
       x_days:
-        other: "လြန္ခဲ့ေသာ%{count}ရက္က"
+        other: "%{count} days ago"
       x_minutes:
-        other: "လြန္ခဲ့ေသာ%{count}မိနစ္က"
+        other: "%{count} minutes ago"
       x_months:
-        other: "လြန္ခဲ့ေသာ%{count}လက"
+        other: "%{count} months ago"
       x_seconds:
-        other: "လြန္ခဲ့ေသာ%{count}စကၠန႔္က"
+        other: "%{count} seconds ago"
   counter:
     format: "၉၉၉၉၉၉၉၉၉"
   social:
@@ -251,7 +251,8 @@ myz:
   translation: "ဘာသာျပန္ျခင္း"
   notes title: "မွတ္စု"
   friends:
-    you have N friends: "သင့္မွာမိတ္ေဆြ%{count}ေယာက္ရွိသည္။"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "မွတ္ခ်က္၊ မွတ္စုႏွင့္အေရာင္မွတ္ခ်က္စသည့္ သင္အခ်ိန္ယူဆင္ျခင္သည့္အခ်က္ကို သင္၏ရင္းႏွီးဆုံးမိတ္ေဆြႏွင့္မိသားစုဝင္တို႔ႏွင့္မၽွေဝပါ။"
     find friends: "မိတ္ေဆြရွာရန္"
     blank slate:
@@ -434,7 +435,8 @@ myz:
     destroy success: "ႏွစ္သက္အမွတ္ကို ပယ္ဖ်က္ၿပီ။"
     destroy failure: "သင္၏ႏွစ္သက္အမွတ္ကို မပယ္ဖ်က္နိုင္ခဲ့ပါ။"
   comments:
-    view all N: "%{count} ၏ေဝဖန္မွတ္ခ်က္အားလုံးကိုၾကည့္ရႈရန္"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "ေဝဖန္မွတ္ခ်က္တင္ရန္"
     create success: "ၿပီးပါၿပီ။ သင္၏ေဝဖန္မွတ္ခ်က္ကို တင္လိုက္ၿပီ။"
     create failure: "ေဝဖန္မွတ္ခ်က္ကိုမတင္နိုင္ပါ"
@@ -788,7 +790,8 @@ myz:
         other: "မိတ္ေဆြ%{count}ေယာက္သည္ ဤအစီအစဥ္ကိုမွာယူခဲ့သည္။"
       friends completed:
         other: "မိတ္ေဆြ%{count}သည္ ဤအစီအစဥ္ကိုဖတ္ၿပီးပါၿပီ။"
-      total completions: "%{count}ထက္ပိုၿပီးၿပီးဆုံးခဲ့ၿပီ။"
+      total completions:
+        other: "Over %{count} completions"
       view all: "အားလုံးၾကည့္ရန္"
       close: "ပိတ္ရန္"
     settings: "ခ်ိန္ညႇိခ်က္"

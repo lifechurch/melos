@@ -5,39 +5,39 @@ tl:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "may%{count} oras nang nakalipas"
-        other: "mga %{count} oras nang nakalipas"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "may%{count} buwan nang nakalipas"
-        other: "mga %{count} buwan nang nakalipas"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "may %{count} taon nang nakalipas"
-        other: "mga %{count} taon nang nakalipas"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "halos %{count} taon nang nakalipas"
-        other: "halos %{count} taon nang nakalipas"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "kalahating minuto nang nakalipas"
       less_than_x_minutes:
-        one: "kumulang %{count} minuto nang nakalipas"
-        other: "kumulang %{count} minuto nang nakalipas"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "kumulang %{count} segundo nang nakalipas"
-        other: "kumulang %{count} segundo nang nakalipas"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "humigit %{count} taon nang nakalipas"
-        other: "humigit %{count} taon nang nakalipas"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} araw nang nakalipas"
-        other: "%{count} araw nang nakalipas"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} minuto nang nakalipas"
-        other: "%{count} minuto nang nakalipas"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} buwan nang nakalipas"
-        other: "%{count} buwan nang nakalipas"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count} segundo nang nakalipas"
-        other: "%{count} segundo nang nakalipas"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ tl:
   translation: "Salin"
   notes title: "Mga tala"
   friends:
-    you have N friends: "Mayroon kang %{count} kaibigan"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Ibahagi ang mga ugnayan sa Biblia gaya ng mga pananda, highligh, at tala sa mga malalapit na mga kaibigan at pamilya."
     find friends: "Maghanap ng mga Kaibigan"
     blank slate:
@@ -445,7 +447,9 @@ tl:
     destroy success: "Ang page-like ay tinanggal"
     destroy failure: "Any pag-like ay hindi maaaring tanggalin"
   comments:
-    view all N: "Tingnan ang %{count} komento"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Mag-post ng komento"
     create success: "Tagumpay! Ang iyong komento ay naipost na."
     create failure: "Ang komento ay hindi mai-post"
@@ -803,7 +807,9 @@ tl:
       friends completed:
         one: "%{count} kaibigan ang nakatapos ng babasahin"
         other: "%{count} mga kaibigan ang nakatapos ng babasahin"
-      total completions: "Higit sa %{count} ang natapos basahin"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Tingnan Lahat"
       close: "Isara"
     settings: "Mga Setting"

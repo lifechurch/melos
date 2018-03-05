@@ -5,39 +5,39 @@ sq:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "para rreth 1 ore"
-        other: "para rreth %{count} orësh"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "para rreth 1 muaji"
-        other: "para rreth %{count} muajsh"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "para rreth 1 viti"
-        other: "para rreth %{count} vjetësh"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "para pothuaj 1 viti"
-        other: "para pothuaj %{count} vjetësh"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "para më pak se një minutë"
       less_than_x_minutes:
-        one: "para më pak se një minutë"
-        other: "para më pak se %{count} minutash"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "para më pak se 1 sekondë"
-        other: "para më pak se %{count} sekondash"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "mbi 1 vit më parë"
-        other: "mbi %{count} vjet më parë"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "para 1 dite"
-        other: "para %{count} ditësh"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "para 1 minute"
-        other: "para %{count} minutash"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "para 1 muaji"
-        other: "para %{count} muajsh"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "para 1 sekonde"
-        other: "para %{count} sekondash"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ sq:
   translation: "Përkthimi"
   notes title: "Shënimet"
   friends:
-    you have N friends: "Ju keni %{count} miq"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Ndani momentet tuaja me Biblën si shenjuesit, theksimet dhe shënimet me familjen dhe miqtë më të ngushtë."
     find friends: "Gjej miq"
     blank slate:
@@ -445,7 +447,9 @@ sq:
     destroy success: "Pëlqimi u fshi"
     destroy failure: "Pëlqimi juaj nuk mund të fshihej"
   comments:
-    view all N: "Shiko të %{count} komentet"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Posto një koment"
     create success: "Sukses! Komenti juaj u postua."
     create failure: "Komenti nuk mund të postohej"
@@ -803,7 +807,9 @@ sq:
       friends completed:
         one: "%{count} mik e ka përfunduar këtë plan"
         other: "%{count} miq e kanë përfunduar këtë plan"
-      total completions: "Mbi %{count} përfundime"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Shiko të gjitha"
       close: "Mbylli"
     settings: "Cilësimet"

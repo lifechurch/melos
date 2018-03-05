@@ -5,39 +5,39 @@ sv:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "ungefär 1 timme sedan"
-        other: "ungefär%{count} timmar sedan"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "ungefär 1 månad sedan"
-        other: "ungefär %{count} månader sedan"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "ungefär 1 år sedan"
-        other: "ungefär %{count} år sedan"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "ungefär 1 år sedan"
-        other: "ungefär %{count} år sedan"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "en halv minut sedan"
       less_than_x_minutes:
-        one: "mindre än en minut sedan"
-        other: "mindre än %{count} minuter sedan"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "mindre än 1 sekund sedan"
-        other: "mindre än %{count} sekunder sedan"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "över 1 år sedan"
-        other: "över %{count} år sedan"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "1 dag sedan"
-        other: "%{count} dagar sedan"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "1 minut sedan"
-        other: "%{count} minuter sedan"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "1 månad sedan"
-        other: "%{count} månader sedan"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "1 sekund sedan"
-        other: "%{count} sekunder sedan"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999 999 999"
   social:
@@ -262,7 +262,9 @@ sv:
   translation: "Översättning"
   notes title: "Anteckningar"
   friends:
-    you have N friends: "Du har %{count} vänner"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Dela dina upplevelser i Bibeln så som bokmärken, markeringar och anteckningar med dina närmaste vänner och familj."
     find friends: "Hitta vänner"
     blank slate:
@@ -445,7 +447,9 @@ sv:
     destroy success: "\"gilla\" borttagen"
     destroy failure: "Din \"gilla\" kunde inte tas bort"
   comments:
-    view all N: "Se alla %{count} kommentarer"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Skriv en kommentar"
     create success: "Din kommentar har skickats."
     create failure: "Kommentar kunde inte skickas"
@@ -803,7 +807,9 @@ sv:
       friends completed:
         one: "%{count} vän har fullföljt denna plan"
         other: "%{count} vänner har fullföljt denna plan"
-      total completions: "Över %{count} färdigt"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Visa alla"
       close: "Stäng"
     settings: "Inställningar"

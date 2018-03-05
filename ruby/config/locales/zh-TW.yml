@@ -5,28 +5,28 @@ zh-TW:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "大約%{count}小時前"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "大約%{count}個月前"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "大約%{count}年前"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "將近%{count}年前"
+        other: "almost %{count} years ago"
       half_a_minute: "半分鐘前"
       less_than_x_minutes:
-        other: "不到%{count}分鐘前"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "不到%{count}秒前"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "超過%{count}年前"
+        other: "over %{count} years ago"
       x_days:
-        other: "%{count}天前"
+        other: "%{count} days ago"
       x_minutes:
-        other: "%{count}分鐘前"
+        other: "%{count} minutes ago"
       x_months:
-        other: "%{count}個月前"
+        other: "%{count} months ago"
       x_seconds:
-        other: "%{count}秒前"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -251,7 +251,8 @@ zh-TW:
   translation: "譯本"
   notes title: "筆記"
   friends:
-    you have N friends: "您有 %{count} 朋友"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "與您親近的朋友和家人分享您的書籤、醒目標示和筆記等動態。"
     find friends: "尋找朋友"
     blank slate:
@@ -434,7 +435,8 @@ zh-TW:
     destroy success: "讚已被刪除"
     destroy failure: "您的讚不能被刪除"
   comments:
-    view all N: "查看所有 %{count} 評語"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "張貼評語"
     create success: "成了！您的評論已經發佈。"
     create failure: "不能張貼評語"
@@ -788,7 +790,8 @@ zh-TW:
         other: "%{count} 位朋友訂閱了此計畫"
       friends completed:
         other: "%{count} 位朋友完成此計畫"
-      total completions: "完成次數超過%{count}"
+      total completions:
+        other: "Over %{count} completions"
       view all: "查看全部"
       close: "關閉"
     settings: "設定"

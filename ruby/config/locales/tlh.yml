@@ -5,39 +5,39 @@ tlh:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "crwdns114858:1crwdne114858:1"
-        other: "crwdns114858:5%{count}crwdne114858:5"
+        one: "crwdns129006:1%{count}crwdne129006:1"
+        other: "crwdns129006:5%{count}crwdne129006:5"
       about_x_months:
-        one: "crwdns114859:1crwdne114859:1"
-        other: "crwdns114859:5%{count}crwdne114859:5"
+        one: "crwdns129007:1%{count}crwdne129007:1"
+        other: "crwdns129007:5%{count}crwdne129007:5"
       about_x_years:
-        one: "crwdns114860:1crwdne114860:1"
-        other: "crwdns114860:5%{count}crwdne114860:5"
+        one: "crwdns129008:1%{count}crwdne129008:1"
+        other: "crwdns129008:5%{count}crwdne129008:5"
       almost_x_years:
-        one: "crwdns114861:1crwdne114861:1"
-        other: "crwdns114861:5%{count}crwdne114861:5"
+        one: "crwdns129009:1%{count}crwdne129009:1"
+        other: "crwdns129009:5%{count}crwdne129009:5"
       half_a_minute: "crwdns114862:0crwdne114862:0"
       less_than_x_minutes:
-        one: "crwdns114863:1crwdne114863:1"
-        other: "crwdns114863:5%{count}crwdne114863:5"
+        one: "crwdns129010:1%{count}crwdne129010:1"
+        other: "crwdns129010:5%{count}crwdne129010:5"
       less_than_x_seconds:
-        one: "crwdns114864:1crwdne114864:1"
-        other: "crwdns114864:5%{count}crwdne114864:5"
+        one: "crwdns129011:1%{count}crwdne129011:1"
+        other: "crwdns129011:5%{count}crwdne129011:5"
       over_x_years:
-        one: "crwdns114865:1crwdne114865:1"
-        other: "crwdns114865:5%{count}crwdne114865:5"
+        one: "crwdns129012:1%{count}crwdne129012:1"
+        other: "crwdns129012:5%{count}crwdne129012:5"
       x_days:
-        one: "crwdns114866:1crwdne114866:1"
-        other: "crwdns114866:5%{count}crwdne114866:5"
+        one: "crwdns129013:1%{count}crwdne129013:1"
+        other: "crwdns129013:5%{count}crwdne129013:5"
       x_minutes:
-        one: "crwdns114867:1crwdne114867:1"
-        other: "crwdns114867:5%{count}crwdne114867:5"
+        one: "crwdns129014:1%{count}crwdne129014:1"
+        other: "crwdns129014:5%{count}crwdne129014:5"
       x_months:
-        one: "crwdns114868:1crwdne114868:1"
-        other: "crwdns114868:5%{count}crwdne114868:5"
+        one: "crwdns129015:1%{count}crwdne129015:1"
+        other: "crwdns129015:5%{count}crwdne129015:5"
       x_seconds:
-        one: "crwdns114869:1crwdne114869:1"
-        other: "crwdns114869:5%{count}crwdne114869:5"
+        one: "crwdns129016:1%{count}crwdne129016:1"
+        other: "crwdns129016:5%{count}crwdne129016:5"
   counter:
     format: "crwdns114870:0crwdne114870:0"
   social:
@@ -262,7 +262,9 @@ tlh:
   translation: "crwdns115063:0crwdne115063:0"
   notes title: "crwdns115064:0crwdne115064:0"
   friends:
-    you have N friends: "crwdns115065:0%{count}crwdne115065:0"
+    you have N friends:
+      one: "crwdns129017:1%{count}crwdne129017:1"
+      other: "crwdns129017:5%{count}crwdne129017:5"
     none me: "crwdns115066:0crwdne115066:0"
     find friends: "crwdns115067:0crwdne115067:0"
     blank slate:
@@ -445,7 +447,9 @@ tlh:
     destroy success: "crwdns115234:0crwdne115234:0"
     destroy failure: "crwdns115235:0crwdne115235:0"
   comments:
-    view all N: "crwdns115236:0%{count}crwdne115236:0"
+    view all N:
+      one: "crwdns129018:1%{count}crwdne129018:1"
+      other: "crwdns129018:5%{count}crwdne129018:5"
     post comment: "crwdns115237:0crwdne115237:0"
     create success: "crwdns115238:0crwdne115238:0"
     create failure: "crwdns115239:0crwdne115239:0"
@@ -803,7 +807,9 @@ tlh:
       friends completed:
         one: "crwdns115560:1%{count}crwdne115560:1"
         other: "crwdns115560:5%{count}crwdne115560:5"
-      total completions: "crwdns115561:0%{count}crwdne115561:0"
+      total completions:
+        one: "crwdns129019:1%{count}crwdne129019:1"
+        other: "crwdns129019:5%{count}crwdne129019:5"
       view all: "crwdns115562:0crwdne115562:0"
       close: "crwdns115563:0crwdne115563:0"
     settings: "crwdns115564:0crwdne115564:0"

@@ -5,28 +5,28 @@ ko:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "%{count}시간 전"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "약 %{count}개월 전"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "약 %{count}년 전"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "거의 %{count}년 전"
+        other: "almost %{count} years ago"
       half_a_minute: "30초 전"
       less_than_x_minutes:
-        other: "%{count}분 전"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "%{count}초 전"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "%{count}년도 더 전에"
+        other: "over %{count} years ago"
       x_days:
-        other: "%{count}일 전"
+        other: "%{count} days ago"
       x_minutes:
-        other: "%{count}분 전"
+        other: "%{count} minutes ago"
       x_months:
-        other: "%{count}개월 전"
+        other: "%{count} months ago"
       x_seconds:
-        other: "%{count}초 전"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -251,7 +251,8 @@ ko:
   translation: "번역선택"
   notes title: "노트"
   friends:
-    you have N friends: "%{count}명의 친구가 있습니다."
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "성경 속의 책갈피, 하이라이트 노트 등을 가족, 친구들과 나누세요."
     find friends: "친구 찾기"
     blank slate:
@@ -434,7 +435,8 @@ ko:
     destroy success: "좋아요가 삭제되었습니다."
     destroy failure: "좋아요가 삭제되지 않았습니다."
   comments:
-    view all N: "%{count} 댓글 모두 보기"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "댓글 달기"
     create success: "댓글이 저장되었습니다."
     create failure: "댓글을 달 수가 없습니다"
@@ -788,7 +790,8 @@ ko:
         other: "이 계획에 %{count} 명의 친구들이 신청하였습니다."
       friends completed:
         other: "%{count}명의 친구가 이 계획을 마쳤습니다."
-      total completions: "%{count}명이 넘는 분들이 이 계획을 마쳤습니다."
+      total completions:
+        other: "Over %{count} completions"
       view all: "전체 보기"
       close: "닫기"
     settings: "설정"

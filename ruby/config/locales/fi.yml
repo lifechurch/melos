@@ -5,39 +5,39 @@ fi:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "noin %{count} tunti sitten"
-        other: "noin %{count} tuntia sitten"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "noin %{count} kuukausi sitten"
-        other: "noin %{count} kuukautta sitten"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "noin %{count} vuosi sitten"
-        other: "noin %{count} vuotta sitten"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "melkein %{count} vuosi sitten"
-        other: "melkein %{count} vuotta sitten"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "puoli minuuttia sitten"
       less_than_x_minutes:
-        one: "alle %{count} minuutti sitten"
-        other: "alle %{count} minuuttia sitten"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "alle %{count} sekunti sitten"
-        other: "alle %{count} sekuntia sitten"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "yli %{count} vuosi sitten"
-        other: "yli %{count} vuotta sitten"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} päivä sitten"
-        other: "%{count} päivää sitten"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} minuutti sitten"
-        other: "%{count} minuuttia sitten"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} kuukausi sitten"
-        other: "%{count} kuukautta sitten"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count} sekunti sitten"
-        other: "%{count} sekuntia sitten"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999 999 999"
   social:
@@ -262,7 +262,9 @@ fi:
   translation: "Käännös"
   notes title: "Muistiinpanot"
   friends:
-    you have N friends: "Sinulla on %{count}  ystävää"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Jaa merkintäsi Raamatussa, kuten kirjanmerkit, korostukset ja muistiinpanot lähimpien ystäviesi ja perheenjäsentesi kanssa."
     find friends: "Etsi ystäviä"
     blank slate:
@@ -445,7 +447,9 @@ fi:
     destroy success: "Tykkäys poistettu"
     destroy failure: "Tykkäystäsi ei voitu poistaa"
   comments:
-    view all N: "Näytä kaikki %{count} kommenttia"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Lähetä kommentti"
     create success: "OK! Kommenttisi lähetettiin."
     create failure: "Kommenttia ei voitu lähettää"
@@ -803,7 +807,9 @@ fi:
       friends completed:
         one: "%{count} ystävä on suorittanut tämän suunnitelman"
         other: "%{count} ystävää on suorittanut tämän suunnitelman"
-      total completions: "Suoritettu yli %{count} kertaa"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Näytä kaikki"
       close: "Sulje"
     settings: "Asetukset"

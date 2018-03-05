@@ -5,38 +5,38 @@ ka:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about 1 hour ago"
+        one: "about %{count} hour ago"
         other: "about %{count} hours ago"
       about_x_months:
-        one: "about 1 month ago"
+        one: "about %{count} month ago"
         other: "about %{count} months ago"
       about_x_years:
-        one: "about 1 year ago"
+        one: "about %{count} year ago"
         other: "about %{count} years ago"
       almost_x_years:
-        one: "almost 1 year ago"
+        one: "almost %{count} year ago"
         other: "almost %{count} years ago"
       half_a_minute: "half a minute ago"
       less_than_x_minutes:
-        one: "less than a minute ago"
+        one: "less than %{count} minute ago"
         other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "less than 1 second ago"
+        one: "less than %{count} second ago"
         other: "less than %{count} seconds ago"
       over_x_years:
-        one: "over 1 year ago"
+        one: "over %{count} year ago"
         other: "over %{count} years ago"
       x_days:
-        one: "1 day ago"
+        one: "%{count} day ago"
         other: "%{count} days ago"
       x_minutes:
-        one: "1 minute ago"
+        one: "%{count} minute ago"
         other: "%{count} minutes ago"
       x_months:
-        one: "1 month ago"
+        one: "%{count} month ago"
         other: "%{count} months ago"
       x_seconds:
-        one: "1 second ago"
+        one: "%{count} second ago"
         other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
@@ -262,7 +262,9 @@ ka:
   translation: "Translation"
   notes title: "Notes"
   friends:
-    you have N friends: "You have %{count} friends"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
     find friends: "Find friends"
     blank slate:
@@ -445,7 +447,9 @@ ka:
     destroy success: "Like deleted"
     destroy failure: "Your like could not be deleted"
   comments:
-    view all N: "View all %{count} comments"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Post a comment"
     create success: "Success! Your comment was posted."
     create failure: "Comment could not be posted"
@@ -803,7 +807,9 @@ ka:
       friends completed:
         one: "%{count} friend has completed this plan"
         other: "%{count} friends have completed this plan"
-      total completions: "Over %{count} completions"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "View All"
       close: "Close"
     settings: "Settings"

@@ -5,39 +5,39 @@ fa:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about 1 hour ago"
-        other: "حدود %{count} ساعت پیش"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "حدود %{count} ماه پیش"
-        other: "حدود %{count} ماه پیش"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "about 1 year ago"
-        other: "حدود %{count} سال پیش"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "تقریباً %{count} سال پیش"
-        other: "تقریباً %{count} سال پیش"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "نیم دقیقه پیش"
       less_than_x_minutes:
-        one: "کمتر از %{count} دقیقه پیش"
-        other: "کمتر از %{count} دقیقه پیش"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "کمتر از %{count} ثانیه پیش"
-        other: "کمتر از %{count} ثانیه پیش"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "بیش از %{count} سال پیش"
-        other: "بیش از %{count} سال پیش"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} روز پیش"
-        other: "%{count} روز پیش"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} دقیقه پیش"
-        other: "%{count} دقیقه پیش"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} ماه پیش"
-        other: "%{count} ماه پیش"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count} ثانیه پیش"
-        other: "%{count} ثانیه پیش"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ fa:
   translation: "ترجمه"
   notes title: "يادداشت‌ها"
   friends:
-    you have N friends: "شما %{count} عدد دوست دارید"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "نشان‌ها، هایلایت، و یادداشت‌های خود را از طریق برنامهٔ کتاب‌مقدس با دوستان و خانواده‌تان به اشتراک بگذارید."
     find friends: "جستجوى دوستان"
     blank slate:
@@ -445,7 +447,9 @@ fa:
     destroy success: "لایک حذف شد"
     destroy failure: "لایک شما حذف نشد"
   comments:
-    view all N: "نمايش كامل نظرات %{count}"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "نظر بدهید"
     create success: "نظر با موفقیت فرستاده شد!"
     create failure: "نظر فرستاده نشد."
@@ -803,7 +807,9 @@ fa:
       friends completed:
         one: "%{count} friend has completed this plan"
         other: "%{count} friends have completed this plan"
-      total completions: "بیشتر از %{count} تکمیل "
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "دیدن همه"
       close: "بستن"
     settings: "تنظيمات"

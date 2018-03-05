@@ -5,28 +5,28 @@ th:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "ประมาณ%{count}ชั่วโมงที่แล้ว"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "ประมาณ%{count}เดือนที่แล้ว"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "ประมาณ%{count}ปีที่แล้ว"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "เกือบ%{count}ปีที่แล้ว"
+        other: "almost %{count} years ago"
       half_a_minute: "ครึ่งนาทีที่แล้ว"
       less_than_x_minutes:
-        other: "ไม่เกิน%{count}นาทีที่แล้ว"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "ไม่เกิน%{count}วินาทีที่แล้ว"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "มากกว่า%{count}ปีที่แล้ว"
+        other: "over %{count} years ago"
       x_days:
-        other: "%{count}วันที่แล้ว"
+        other: "%{count} days ago"
       x_minutes:
-        other: "%{count}นาทีที่แล้ว"
+        other: "%{count} minutes ago"
       x_months:
-        other: "%{count}เดือนที่แล้ว"
+        other: "%{count} months ago"
       x_seconds:
-        other: "%{count}วินาทีที่แล้ว"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -251,7 +251,8 @@ th:
   translation: "การแปล"
   notes title: "โน้ต"
   friends:
-    you have N friends: "คุณมีเพื่อนทั้งหมด %{count} คน"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "แบ่งปันช่วงเวลาที่คุณได้อ่านพระคัมภีร์ด้วยที่คั่นหน้า การเน้นข้อพระคำ และบันทึกต่างๆ กับเพื่อนสนิท และครอบครัวของคุณ"
     find friends: "ค้นหาเพื่อน"
     blank slate:
@@ -434,7 +435,8 @@ th:
     destroy success: "\"ถูกใจ\" ถูกลบไปแล้ว"
     destroy failure: "ลบ \"ถูกใจ\" ของคุณไ่ม่ได้"
   comments:
-    view all N: "อ่านความเห็นทั้งหมด %{count} ข้อความ"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "โพสต์ความคิดเห็น"
     create success: "สำเร็จแล้ว! ความเห็นของคุณได้รับการโพสต์แล้ว"
     create failure: "การแสดงความคิดเห็นไม่สามารถโพสต์ได้"
@@ -788,7 +790,8 @@ th:
         other: "เพื่อน %{count} คนได้สมัครแผนการอ่านนี้"
       friends completed:
         other: "เพื่อน %{count} คนได้อ่านแผนการอ่านนี้จบแล้ว"
-      total completions: "มากกว่า %{count} คนที่อ่านจบแล้ว"
+      total completions:
+        other: "Over %{count} completions"
       view all: "แสดงทั้งหมด"
       close: "ปิด"
     settings: "การตั้งค่า"

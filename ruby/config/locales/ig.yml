@@ -251,7 +251,8 @@ ig:
   translation: "Translation"
   notes title: "Notes"
   friends:
-    you have N friends: "You have %{count} friends"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
     find friends: "Find friends"
     blank slate:
@@ -434,7 +435,8 @@ ig:
     destroy success: "Like deleted"
     destroy failure: "Your like could not be deleted"
   comments:
-    view all N: "View all %{count} comments"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "Post a comment"
     create success: "Success! Your comment was posted."
     create failure: "Comment could not be posted"
@@ -788,7 +790,8 @@ ig:
         other: "%{count} friends subscribed to this plan"
       friends completed:
         other: "%{count} friends have completed this plan"
-      total completions: "Over %{count} completions"
+      total completions:
+        other: "Over %{count} completions"
       view all: "View All"
       close: "Close"
     settings: "Settings"

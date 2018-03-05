@@ -5,39 +5,39 @@ fr:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "Il y a environ %{count} heure"
-        other: "Il y a environ %{count} heures"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "Il y a environ %{count} mois"
-        other: "Il y a environ %{count} mois"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "Il y a environ %{count} an"
-        other: "Il y a environ %{count} ans"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "Il y a presque %{count} an"
-        other: "Il y a presque %{count} ans"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "Il y a moins d'une minute"
       less_than_x_minutes:
-        one: "Il y a moins d'%{count} minute"
-        other: "Il y a moins de %{count} minutes"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "Il y a moins d'%{count} seconde"
-        other: "Il y a moins de %{count} secondes"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "Il y a plus de %{count} an"
-        other: "Il y a plus de %{count} ans"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "Il y a %{count} jour"
-        other: "Il y a %{count} jours"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "Il y a %{count} minute"
-        other: "Il y a %{count} minutes"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "Il y a %{count} mois"
-        other: "Il y a %{count} mois"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "Il y a %{count} seconde"
-        other: "Il y a %{count} secondes"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999 999 999"
   social:
@@ -262,7 +262,9 @@ fr:
   translation: "Version"
   notes title: "Notes"
   friends:
-    you have N friends: "Vous avez %{count} amis"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Partagez vos moments avec la Bible tels que les favoris, les surbrillances et les notes avec votre famille et vos amis les plus proches."
     find friends: "Trouver des amis"
     blank slate:
@@ -445,7 +447,9 @@ fr:
     destroy success: "J'aime supprimé"
     destroy failure: "Votre J'aime n'a pas pu être supprimé"
   comments:
-    view all N: "Voir tous les %{count} commentaires"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Poster un commentaire"
     create success: "Succès ! Votre commentaire a été enregistré."
     create failure: "Le commentaire n'a pas pu être enregistré"
@@ -803,7 +807,9 @@ fr:
       friends completed:
         one: "%{count} ami a terminé ce plan"
         other: "%{count} amis ont terminé ce plan"
-      total completions: "Plus de %{count} terminés"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Tout Voir"
       close: "Fermer"
     settings: "Paramètres"
