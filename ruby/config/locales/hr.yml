@@ -5,50 +5,50 @@ hr:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "prije %{count} sat"
-        few: "prije %{count} sata"
-        other: "prije %{count} sati"
+        one: "about %{count} hour ago"
+        few: "about %{count} hours ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "prije %{count} mjeseca"
-        few: "prije %{count} mjeseca"
-        other: "prije %{count} mjeseci"
+        one: "about %{count} month ago"
+        few: "about %{count} months ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "prije %{count} godine"
-        few: "prije %{count} godine"
-        other: "prije %{count} godine"
+        one: "about %{count} year ago"
+        few: "about %{count} years ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "prije skoro %{count} godinu"
-        few: "prije skoro %{count} godine"
-        other: "prije skoro %{count} godina"
+        one: "almost %{count} year ago"
+        few: "almost %{count} years ago"
+        other: "almost %{count} years ago"
       half_a_minute: "prije pola minute"
       less_than_x_minutes:
-        one: "prije manje od %{count} minutu"
-        few: "prije manje od %{count} minute"
-        other: "prije manje od %{count} minuta"
+        one: "less than %{count} minute ago"
+        few: "less than %{count} minutes ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "prije manje od %{count} sekundu"
-        few: "prije manje od %{count} sekunde"
-        other: "prije manje od %{count} sekundi"
+        one: "less than %{count} second ago"
+        few: "less than %{count} seconds ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "prije više od %{count} godinu"
-        few: "prije više od %{count} godine"
-        other: "prije više od %{count} godina"
+        one: "over %{count} year ago"
+        few: "over %{count} years ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "Prije %{count} dana"
-        few: "Prije %{count} dana"
-        other: "Prije %{count} dana"
+        one: "%{count} day ago"
+        few: "%{count} days ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "prije %{count} minute"
-        few: "prije %{count} minute"
-        other: "prije %{count} minuta"
+        one: "%{count} minute ago"
+        few: "%{count} minutes ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "prije %{count} mjeseca"
-        few: "prije %{count} mjeseca"
-        other: "prije %{count} mjeseci"
+        one: "%{count} month ago"
+        few: "%{count} months ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "prije %{count} sekunde"
-        few: "prije %{count} sekunde"
-        other: "prije %{count} sekundi"
+        one: "%{count} second ago"
+        few: "%{count} seconds ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -273,7 +273,10 @@ hr:
   translation: "Prijevod"
   notes title: "Bilješke"
   friends:
-    you have N friends: "Imaš %{count} prijatelja"
+    you have N friends:
+      one: "You have %{count} friend"
+      few: "You have %{count} friends"
+      other: "You have %{count} friends"
     none me: "Podijeli svoje trenutke u aplikaciji poput oznaka, istaknutog i bilješki s bliskim prijateljima i obitelji."
     find friends: "Nađi prijatelje"
     blank slate:
@@ -456,7 +459,10 @@ hr:
     destroy success: "Lajk je obrisan"
     destroy failure: "Lajk ne može biti obrisan"
   comments:
-    view all N: "Pogledaj sve %{count} komentare"
+    view all N:
+      one: "View %{count} comment"
+      few: "View all %{count} comments"
+      other: "View all %{count} comments"
     post comment: "Objavi komentar"
     create success: "Bravo! Komentar je objavljen."
     create failure: "Komentar ne može biti objavljen"
@@ -818,7 +824,10 @@ hr:
         one: "%{count} prijatelj je dovršio ovaj plan"
         few: "%{count} prijatelja je dovršilo ovaj plan"
         other: "%{count} prijatelja je dovršilo ovaj plan"
-      total completions: "Preko %{count} dovršenih planova"
+      total completions:
+        one: "Over %{count} completion"
+        few: "Over %{count} completions"
+        other: "Over %{count} completions"
       view all: "Pogledaj sve"
       close: "Zatvori"
     settings: "Postavke"
