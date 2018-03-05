@@ -5,39 +5,39 @@ it:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "circa %{count} ora fa"
-        other: "circa %{count} ore fa"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "circa %{count} mese fa"
-        other: "circa %{count} mesi fa"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "circa %{count} anno fa"
-        other: "circa %{count} anni fa"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "quasi %{count} anno fa"
-        other: "quasi %{count} anni fa"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "mezzo minuto fa"
       less_than_x_minutes:
-        one: "meno di un minuto fa"
-        other: "meno di %{count} minuti fa"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "meno di %{count} secondo fa"
-        other: "meno di %{count} secondi fa"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "più di %{count} anno fa"
-        other: "più di %{count} anni fa"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} giorno fa"
-        other: "%{count} giorni fa"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} minuto fa"
-        other: "%{count} minuti fa"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} mese fa"
-        other: "%{count} mesi fa"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count} secondo fa"
-        other: "%{count} secondi fa"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -262,7 +262,9 @@ it:
   translation: "Versione"
   notes title: "Note"
   friends:
-    you have N friends: "Hai %{count} amici"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Condividi i tuoi momenti nella Bibbia come segnalibri, evidenziazioni e note con i tuoi amici e famiglia più vicini."
     find friends: "Trova amici"
     blank slate:
@@ -445,7 +447,9 @@ it:
     destroy success: "\"Mi piace\" cancellato"
     destroy failure: "Non è stato possibile cancellare il tuo \"mi piace\""
   comments:
-    view all N: "Vedi tutti i %{count} commenti"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Pubblica un commento"
     create success: "Successo! Il tuo commento è stato pubblicato"
     create failure: "Commento non poteva essere pubblicato"
@@ -803,7 +807,9 @@ it:
       friends completed:
         one: "%{count} amico ha completato questo piano"
         other: "%{count}amici hanno completato questo piano"
-      total completions: "Completato più di %{count}volte"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Vedi Tutti"
       close: "Chiudere"
     settings: "Opzioni"
