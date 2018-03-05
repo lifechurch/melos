@@ -5,28 +5,28 @@ km:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "ប្រហែល %{count} ម៉ោង​កន្លង​ទៅ"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "ប្រហែល %{count} ខែ​កន្លង​ទៅ"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "ប្រហែល %{count} ឆ្នាំ​កន្លង​ទៅ"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "ជិត %{count} ឆ្នាំ​កន្លង​ទៅ"
+        other: "almost %{count} years ago"
       half_a_minute: "កន្លះនាទីមុន"
       less_than_x_minutes:
-        other: "តិច​ជាង %{count} នាទី​កន្លង​ទៅ"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "តិច​ជាង %{count} វិនាទី​​កន្លង​ទៅ"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "លើស %{count} ឆ្នាំ​​កន្លង​ទៅ"
+        other: "over %{count} years ago"
       x_days:
-        other: "%{count} ថ្ងៃ​​កន្លង​ទៅ"
+        other: "%{count} days ago"
       x_minutes:
-        other: "%{count} នាទីកន្លង​ទៅ"
+        other: "%{count} minutes ago"
       x_months:
-        other: "%{count} ខែ​កន្លង​ទៅ"
+        other: "%{count} months ago"
       x_seconds:
-        other: "%{count} វិនាទី​​កន្លង​ទៅ"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -251,7 +251,8 @@ km:
   translation: "ការបកប្រែ"
   notes title: "កំណត់​ត្រា"
   friends:
-    you have N friends: "អ្នក​មានមិត្ត %{count} នាក់"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "ចែក​រំលែក​មតិ​របស់​អ្នក​ក្នុងព្រះ​គម្ពីរ​ដូចជា កំណត់​ចំណាំ, គំនូស​ពណ៌, និង​កំណត់​ត្រា​ជាមួយ​មិត្ត​ជិត​ស្និទ្ធ និង​គ្រួសារ​របស់​អ្នក​"
     find friends: "រក​មិត្ត​ភក្តិ"
     blank slate:
@@ -434,7 +435,8 @@ km:
     destroy success: "ចូល​ចិត្ត​បាន​លុប"
     destroy failure: "ចូល​ចិត្ត​ របស់​អ្នក​មិន​អាច​លប់​បាន​ឡើយ"
   comments:
-    view all N: "មើលមតិ​ទាំង​អស់​របស់ %{count}"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "ផ្សាយ​មតិ"
     create success: "ជោគ​ជ័យ! មតិ​របស់​អ្នក​បាន​បិទ​ផ្សាយ"
     create failure: "មតិ​មិន​អាច​ផ្សាយ​បាន​ទេ"
@@ -788,7 +790,8 @@ km:
         other: "មាន​មិត្ត​ភ័ក្ត្រ​របស់​លោក​អ្នក​ចំនួន %{count} នាក់បាន​ចុះ​ឈ្មោះ​ក្នុង​គំរោង​នេះ"
       friends completed:
         other: "មាន​មិត្ត​ភ័ក្ត្រ​របស់​លោក​អ្នក​ចំនួន %{count} នាក់បាន​​បញ្ចប់​​គំរោង​នេះ"
-      total completions: "មានគំរោង​ចំនួន​​ជាង %{count} ត្រូវ​​បានបញ្ចប់​"
+      total completions:
+        other: "Over %{count} completions"
       view all: "បង្ហាញ​ទាំង​អស់"
       close: "បិទ"
     settings: "ការ​កំណត់"
