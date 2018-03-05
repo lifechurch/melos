@@ -5,39 +5,39 @@ de:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "vor ungefähr 1 Stunde"
-        other: "vor ungefähr %{count} Stunden"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "vor ungefähr 1 Monat"
-        other: "vor ungefähr %{count} Monaten"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "vor ungefähr einem Jahr"
-        other: "vor ungefähr %{count} Jahren"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "vor fast einem Jahr"
-        other: "vor fast %{count} Jahren"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "vor einer halben Minute"
       less_than_x_minutes:
-        one: "vor weniger als 1 Minute"
-        other: "vor weniger als %{count} Minuten"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "vor weniger als 1 Sekunde"
-        other: "vor weniger als %{count} Sekunden"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "vor über einem Jahr"
-        other: "vor über %{count} Jahren"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "vor 1 Tag"
-        other: "vor %{count} Tagen"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "vor einer Minute"
-        other: "vor %{count} Minuten"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "vor 1 Monat"
-        other: "vor %{count} Monaten"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "vor einer Sekunde"
-        other: "vor %{count} Sekunden"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -262,7 +262,9 @@ de:
   translation: "Übersetzung"
   notes title: "Notizen"
   friends:
-    you have N friends: "Du hast %{count} Freunde"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Teile deine Momente in der Bibel, zum Beispiel in Form von Lesezeichen, Markierungen und Notizen mit deinen engsten Freunden und deiner Familie."
     find friends: "Finde Freunde"
     blank slate:
@@ -445,7 +447,9 @@ de:
     destroy success: "\"Gefällt mir\" entfernt"
     destroy failure: "Dein \"Gefällt mir\" konnte nicht gelöscht werden"
   comments:
-    view all N: "Alle %{count} Kommentare zeigen"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Einen Kommentar posten"
     create success: "Super! Dein Kommentar wurde gepostet."
     create failure: "Der Kommentar konnte nicht gepostet werden"
@@ -803,7 +807,9 @@ de:
       friends completed:
         one: "%{count} Freund hat diesen Leseplan abgeschlossen"
         other: "%{count} Freunde haben diesen Leseplan abgeschlossen"
-      total completions: "Über %{count} Leute haben diesen Leseplan wurde abgeschlossen"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Alle anzeigen"
       close: "Schließen"
     settings: "Einstellungen"

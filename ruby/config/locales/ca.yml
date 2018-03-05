@@ -5,39 +5,39 @@ ca:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "fa aproximadament una hora"
-        other: "fa unes %{count} hores"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "fa aproximadament un mes"
-        other: "fa uns %{count} mesos"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "fa aproximadament un any"
-        other: "fa uns %{count} anys"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "fa gairebé un any"
-        other: "fa gairebé %{count} anys"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "fa mig minut"
       less_than_x_minutes:
-        one: "fa menys de un minut"
-        other: "fa menys de %{count} minuts"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "fa menys de un segon"
-        other: "fa menys de %{count} segons"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "fa més d'un any"
-        other: "fa més de %{count} anys"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "fa un dia"
-        other: "fa %{count} dies"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "fa un minut"
-        other: "fa %{count} minuts"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "fa un mes"
-        other: "fa %{count} mesos"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "fa un segon"
-        other: "fa %{count} segons"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -262,7 +262,9 @@ ca:
   translation: "Traducció"
   notes title: "Notes"
   friends:
-    you have N friends: "Tens %{count} amics"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Comparteix els teus moments amb la Bíblia mitjançant els marcadors, els subratllats i les notes amb els teus amics més propers."
     find friends: "Troba amics"
     blank slate:
@@ -445,7 +447,9 @@ ca:
     destroy success: "\"m'agrada\" esborrat"
     destroy failure: "El teu \"m'agrada\" no s'ha pogut esborrar"
   comments:
-    view all N: "Visualitza tots els %{count} comentaris"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Publica un comentari"
     create success: "Perfecte! El teu comentari s'ha publicat."
     create failure: "El comentari no s'ha pogut publicar"
@@ -803,7 +807,9 @@ ca:
       friends completed:
         one: "%{count} amistat ha completat aquest pla"
         other: "%{count}amistats han completat aquest pla"
-      total completions: "Aquest pla ha estat completat més de %{count} vegades"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Veure-ho tot"
       close: "Tanca"
     settings: "Configuració"

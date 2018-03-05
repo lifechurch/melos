@@ -5,39 +5,39 @@ sn:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "Muawa rapfuura"
-        other: "maawa %{count} apfuura"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "Mwedzi wapfuura"
-        other: "Mwedzi %{count} yapfuura"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "Gore rapfuura"
-        other: "Makore %{count} apfuura"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "Tave kubata gore rapfuura"
-        other: "Tave kubata makore %{count} apfuura"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "chimedu cheminiti chapfuura"
       less_than_x_minutes:
-        one: "miniti haisati yasvika"
-        other: "hapana maminiti %{count} apfuura"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "manje manje"
-        other: "hapana masekondi %{count} apfuura"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "papfuura gore"
-        other: "makore %{count} apfuura"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "nezuro"
-        other: "mazuva %{count} apfuura"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "muminiti rapfuura"
-        other: "maminiti %{count} apfuura"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "mwedzi wapfuura"
-        other: "mwedzi %{count} yapfuura"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "manje manje"
-        other: "masekonzi %{count} apfuura"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ sn:
   translation: "ndimi "
   notes title: "Zvinyorwa"
   friends:
-    you have N friends: "Une shamwari %{count}"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Taurira hama neshamwari zvaurikuwana muBhaibheri zvinenge zvibatwa, zvimakwa nezvinyorwa."
     find friends: "Wana shamwari"
     blank slate:
@@ -445,7 +447,9 @@ sn:
     destroy success: "'Ida' yadzimwa"
     destroy failure: "'Ida' yako yaramba kudzimika"
   comments:
-    view all N: "Wona zvawanyora %{count} zvose"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Nyora mhinduro"
     create success: "Zvaita! Mhinduro yako yaiswa."
     create failure: "Mhinduro yako haina kuiswa"
@@ -803,7 +807,9 @@ sn:
       friends completed:
         one: "Shamwari yako %{count} yakapedza kuverenga chirongwa ichi"
         other: "Shamwari dzako %{count} dzakapedza kuverenga chirongwa ichi"
-      total completions: "Chirongwa ichi chakaverengwa zvinopfuura %{count}"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Tarisa ose"
       close: "Vhara"
     settings: "Marongero"

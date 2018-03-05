@@ -1,43 +1,43 @@
 sv:
   time:
     formats:
-      votd: "%B %-d, %Y"
+      votd: "%-d %B, %Y"
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "ungefär 1 timme sedan"
-        other: "ungefär%{count} timmar sedan"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "ungefär 1 månad sedan"
-        other: "ungefär %{count} månader sedan"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "ungefär 1 år sedan"
-        other: "ungefär %{count} år sedan"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "ungefär 1 år sedan"
-        other: "ungefär %{count} år sedan"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "en halv minut sedan"
       less_than_x_minutes:
-        one: "mindre än en minut sedan"
-        other: "mindre än %{count} minuter sedan"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "mindre än 1 sekund sedan"
-        other: "mindre än %{count} sekunder sedan"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "över 1 år sedan"
-        other: "över %{count} år sedan"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "1 dag sedan"
-        other: "%{count} dagar sedan"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "1 minut sedan"
-        other: "%{count} minuter sedan"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "1 månad sedan"
-        other: "%{count} månader sedan"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "1 sekund sedan"
-        other: "%{count} sekunder sedan"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999 999 999"
   social:
@@ -102,7 +102,7 @@ sv:
     korean: "Koreanska"
     macedonian: "Makedonska"
     mongolian: "Mongoliska"
-    burmese: "Myanmar Burmese"
+    burmese: "Myanmar burmesiska"
     russian: "Ryska"
     tamil: "tamil"
     thai: "Thailändska"
@@ -262,7 +262,9 @@ sv:
   translation: "Översättning"
   notes title: "Anteckningar"
   friends:
-    you have N friends: "Du har %{count} vänner"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Dela dina upplevelser i Bibeln så som bokmärken, markeringar och anteckningar med dina närmaste vänner och familj."
     find friends: "Hitta vänner"
     blank slate:
@@ -276,18 +278,18 @@ sv:
   events:
     events: "Evenemang"
     menu:
-      features: "Features"
-      faq: "FAQ"
-      resources: "Resources"
-      tell your church: "Tell your church"
-      create an event: "Create an event"
+      features: "Funktioner"
+      faq: "VANLIGA FRÅGOR OCH SVAR"
+      resources: "Resurser"
+      tell your church: "Berätta för din kyrka"
+      create an event: "Skapa en händelse"
     mail subject: "This new feature from YouVersion could really help our church!"
     mail body: "Have you seen YouVersion’s new Events feature yet? I believe it would really help our church engage people more with our services. It lets people add their own notes during a service, then even save the event so they can come back later and study it with the Bible references. I think it could probably save us money on printing costs, too. Here’s YouVersion’s Events website: http://www.bible.com/features/events."
     section 1 title: "Bring the power of the Bible App into your church services."
     section 1 text: "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices."
     section 2 title: "Help your community get more out of your messages."
     section 2 text: "Attenders can follow along, engage with Scripture, take notes, and even save their own personalized copy for future reference."
-    section 3 title: "Your content on their smartphone."
+    section 3 title: "Ditt innehåll på deras smartphone."
     section 3 text: "Message outlines, announcements, links to online giving… whatever you need to communicate to your church, share it all — 100% free."
     section 4 title: "Lead your people further into the Bible."
     section 4 text: "Recommend Reading Plans and Devotionals that will keep your community connecting with Scripture all week long."
@@ -297,7 +299,7 @@ sv:
     building blocks text: "Flexible modules save you time and effort. Combine elements to create new Events from scratch. Or reuse your existing Events and modify them as necessary. Even copy existing Events and modify them to suit completely different types of gatherings. All along the way, Preview lets you see your Event content exactly as your attenders will."
     module 1 title: "Textmodul"
     module 1 text: "Outlines, key points, discussion questions… Share any text content that will help your attenders follow along with your message as it’s happening."
-    module 2 title: "Bible References"
+    module 2 title: "Bibelreferenser"
     module 2 text: "Display passages right where your message refers to them, linked to any of the Bible App’s %{version_count}+ versions, in %{language_count}+ languages — no copying or pasting required."
     module 3 title: "Reading Plans Module"
     module 3 text: "Länka till bibelplaner och andakter som relaterar till vad du vill ha sagt för att hjälpa din publik att fortsätta engagera sig i Guds Ord hela veckan."
@@ -323,7 +325,7 @@ sv:
     get started title: "Let’s get you started."
     get started text: "Get your first Event ready to share in the Bible App in less than ten minutes. All you need is a Mac or PC and a free YouVersion account."
     create an event: "Create an Event"
-    resources: "Resources"
+    resources: "Resurser"
     resources text: "Learn how to best use Events with free resources."
     frequently asked questions: "Frequently Asked<br>Questions"
     frequently asked questions text: "Find answers to everything you need to know about getting started with YouVersion Events."
@@ -445,7 +447,9 @@ sv:
     destroy success: "\"gilla\" borttagen"
     destroy failure: "Din \"gilla\" kunde inte tas bort"
   comments:
-    view all N: "Se alla %{count} kommentarer"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Skriv en kommentar"
     create success: "Din kommentar har skickats."
     create failure: "Kommentar kunde inte skickas"
@@ -803,7 +807,9 @@ sv:
       friends completed:
         one: "%{count} vän har fullföljt denna plan"
         other: "%{count} vänner har fullföljt denna plan"
-      total completions: "Över %{count} färdigt"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Visa alla"
       close: "Stäng"
     settings: "Inställningar"
@@ -1287,7 +1293,7 @@ sv:
       albanian: "Albanska"
       arabic: "Arabiska"
       bulgarian: "Bulgariska"
-      burmese: "Myanmar Burmese"
+      burmese: "Myanmar burmesiska"
       catalan: "Katalanska"
       chinese cn: "Förenklad kinesiska"
       chinese tw: "Traditionell kinesiska"
@@ -1997,7 +2003,7 @@ sv:
     currently subscribed: "Prenumererar"
     invite friends: "Bjud in Vänner"
     invite others: "Bjud in andra"
-    invited: "Invited"
+    invited: "Inbjuden"
     pending: "Inväntar Svar"
     x pending:
       one: "%{number} Inväntar Svar"
@@ -2082,10 +2088,10 @@ sv:
     STORIES.SERMONMOUNT: "Bergspredikan"
     STORIES.TRIUMPHALENTRY: "Jesus rider in i Jerusalem"
     explore: "Utforska"
-    what does the bible say: "What does the Bible say about..."
+    what does the bible say: "Vad säger Bibeln om..."
     how are you feeling: "Hur känner du dig?"
     bible stories: "Berättelser från Bibeln"
-    what the bible says about: "Here's what the Bible says about: %{topic}"
+    what the bible says about: "Detta säger bibeln om: %{topic}"
     amazed: "Förundrad"
     content: "Innehåll"
     faithful: "Trogen"

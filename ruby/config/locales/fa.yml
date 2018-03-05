@@ -5,38 +5,38 @@ fa:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about 1 hour ago"
+        one: "about %{count} hour ago"
         other: "about %{count} hours ago"
       about_x_months:
-        one: "about 1 month ago"
+        one: "about %{count} month ago"
         other: "about %{count} months ago"
       about_x_years:
-        one: "about 1 year ago"
+        one: "about %{count} year ago"
         other: "about %{count} years ago"
       almost_x_years:
-        one: "almost 1 year ago"
+        one: "almost %{count} year ago"
         other: "almost %{count} years ago"
       half_a_minute: "نیم دقیقه پیش"
       less_than_x_minutes:
-        one: "less than a minute ago"
+        one: "less than %{count} minute ago"
         other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "less than 1 second ago"
+        one: "less than %{count} second ago"
         other: "less than %{count} seconds ago"
       over_x_years:
-        one: "over 1 year ago"
+        one: "over %{count} year ago"
         other: "over %{count} years ago"
       x_days:
-        one: "1 day ago"
+        one: "%{count} day ago"
         other: "%{count} days ago"
       x_minutes:
-        one: "1 minute ago"
+        one: "%{count} minute ago"
         other: "%{count} minutes ago"
       x_months:
-        one: "1 month ago"
+        one: "%{count} month ago"
         other: "%{count} months ago"
       x_seconds:
-        one: "1 second ago"
+        one: "%{count} second ago"
         other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
@@ -262,7 +262,9 @@ fa:
   translation: "ترجمه"
   notes title: "يادداشت‌ها"
   friends:
-    you have N friends: "شما %{count} عدد دوست دارید"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "نشان‌ها، هایلایت، و یادداشت‌های خود را از طریق برنامهٔ کتاب‌مقدس با دوستان و خانواده‌تان به اشتراک بگذارید."
     find friends: "جستجوى دوستان"
     blank slate:
@@ -276,7 +278,7 @@ fa:
   events:
     events: "رویدادها"
     menu:
-      features: "Features"
+      features: "امکانات"
       faq: "FAQ"
       resources: "Resources"
       tell your church: "Tell your church"
@@ -296,7 +298,7 @@ fa:
     building blocks title: "All the building blocks you need…to make exactly the Events you want."
     building blocks text: "Flexible modules save you time and effort. Combine elements to create new Events from scratch. Or reuse your existing Events and modify them as necessary. Even copy existing Events and modify them to suit completely different types of gatherings. All along the way, Preview lets you see your Event content exactly as your attenders will."
     module 1 title: "ماژول متن"
-    module 1 text: "Outlines, key points, discussion questions… Share any text content that will help your attenders follow along with your message as it’s happening."
+    module 1 text: "رئوس مطالب، نکات کلیدی، سؤالاتی برای بحث و غیره. مطالبی را که به حاضرین در جلسه کمک می‌کند تا همزمان با پیغام شما همگام شوند، با آنها به اشتراک بگذارید."
     module 2 title: "Bible References"
     module 2 text: "Display passages right where your message refers to them, linked to any of the Bible App’s %{version_count}+ versions, in %{language_count}+ languages — no copying or pasting required."
     module 3 title: "Reading Plans Module"
@@ -445,7 +447,9 @@ fa:
     destroy success: "لایک حذف شد"
     destroy failure: "لایک شما حذف نشد"
   comments:
-    view all N: "نمايش كامل نظرات %{count}"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "نظر بدهید"
     create success: "نظر با موفقیت فرستاده شد!"
     create failure: "نظر فرستاده نشد."
@@ -803,7 +807,9 @@ fa:
       friends completed:
         one: "%{count} friend has completed this plan"
         other: "%{count} friends have completed this plan"
-      total completions: "بیشتر از %{count} تکمیل "
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "دیدن همه"
       close: "بستن"
     settings: "تنظيمات"
@@ -1261,7 +1267,7 @@ fa:
         after p1: "یوورژن سمبل اتحاد جهانی مسیحیانی است که مشتاقند یکدیگر را در مطالعهٔ کلام خدا کمک و حمایت کنند. از سخاوت و حمایت انجمن‌های ترجمهٔ کتاب‌مقدس، ناشران، کلیساها، کشیشان، و داوطلبان سپاسگزاریم.‏"
         after p2: "نکتهٔ هیجان‌انگیز در خصوص این دستاورد بزرگ این است که امروزه مردم در سراسر جهان در مقیاسی عظیم و بی‌سابقه کتاب‌مقدس را مطالعه می‌کنند و با آن سروکار دارند، و این به‌خاطر عمل شگفت‌انگیز خداست! ما بر این باوریم که این تازه ابتدای کار است. <em>این حرکت با ۱۰۰ میلیون آغاز می‌شود.‏</em> "
       ad:
-        title: "برنامهٔ مطالعهٔ کتاب‌مقدس رایگان است و برای آشنایی با کتاب‌مقدس بسیار مؤثر و مفید می‌باشد"
+        title: "برنامهٔ مطالعهٔ کتاب‌مقدس رایگان است و برای آشنایی با کتاب‌مقدس بسیار مؤثر و مفید می‌باشد."
         copy: "خواندن، شنیدن، تماشا کردن و به اشتراک گذاشتن کلام خدا. برنامهٔ کتاب‌مقدس را برای تلفن هوشمند و تبلت از اینجا <a href='http://bible.com/app' target='_self'>دانلود کنید </a>"
       sidebar:
         tagline: "بیایید تاریخ را با هم بسازیم."

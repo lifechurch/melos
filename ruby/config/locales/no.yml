@@ -5,39 +5,39 @@
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "for %{count} time siden"
-        other: "for %{count} timer siden"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "for %{count} måned siden"
-        other: "for %{count} måneder siden"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "for %{count} år siden"
-        other: "for %{count} år siden"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "nesten %{count} år siden"
-        other: "nesten %{count} år siden"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "halvt minutt siden"
       less_than_x_minutes:
-        one: "mindre enn %{count} minutt siden"
-        other: "mindre enn %{count} mininutt siden"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "minder enn %{count} sekund siden"
-        other: "minder enn%{count} sekunder siden"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "over %{count} år siden"
-        other: "over %{count} år siden"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} dag siden"
-        other: "%{count} dager siden"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} minutt siden"
-        other: "%{count} minutt siden"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} måned siden"
-        other: "%{count} måneder siden"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count} sekund siden"
-        other: "%{count} sekunder siden"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999 999 999"
   social:
@@ -262,7 +262,9 @@
   translation: "Oversettelse"
   notes title: "Notater"
   friends:
-    you have N friends: "Du har %{count} venner"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Del dine hendelser i Bibelen som bokmerker, markeringer og notater med dine nærmeste venner og familie."
     find friends: "Finn venner"
     blank slate:
@@ -445,7 +447,9 @@
     destroy success: "\"Liker\" er slettet"
     destroy failure: "Ditt \"liker\" kunne ikke slettes"
   comments:
-    view all N: "Se alle %{count} kommentarer"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Legg til en kommentar"
     create success: "Suksess! Din kommentar ble lagt ut."
     create failure: "Kommentaren kunne ikke lagres"
@@ -803,7 +807,9 @@
       friends completed:
         one: "%{count} venn har fullført denne planen"
         other: "%{count} venner har fullført denne planen"
-      total completions: "Mer enn %{count} fullførte"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Se alle"
       close: "Lukk"
     settings: "Innstillinger"

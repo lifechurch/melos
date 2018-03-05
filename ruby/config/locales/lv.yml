@@ -5,50 +5,50 @@ lv:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        zero: "aptuveni pirms %{count} stundām"
-        one: "aptuveni pirms %{count} stundas"
-        other: "aptuveni pirms %{count} stundām"
+        zero: "about %{count} hours ago"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        zero: "aptuveni pirms %{count} mēnešiem"
-        one: "aptuveni pirms %{count} mēneša"
-        other: "aptuveni pirms %{count} mēnešiem"
+        zero: "about %{count} months ago"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        zero: "aptuveni pirms %{count} gadiem"
-        one: "aptuveni pirms %{count} gada"
-        other: "aptuveni pirms %{count} gadiem"
+        zero: "about %{count} years ago"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        zero: "gandrīz pirms %{count} gadiem"
-        one: "gandrīz pirms %{count} gada"
-        other: "gandrīz pirms %{count} gadiem"
+        zero: "almost %{count} years ago"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "pirms pusminūtes"
       less_than_x_minutes:
-        zero: "mazāk kā pirms %{count} minūtēm"
-        one: "mazāk kā pirms %{count} minūtes"
-        other: "mazāk kā pirms %{count} minūtēm"
+        zero: "less than %{count} minutes ago"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        zero: "mazāk kā pirms %{count} sekundēm"
-        one: "mazāk kā pirms %{count} sekundes"
-        other: "mazāk kā pirms %{count} sekundēm"
+        zero: "less than %{count} seconds ago"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        zero: "vairāk nekā pirms %{count} gadiem"
-        one: "vairāk nekā pirms %{count} gada"
-        other: "vairāk nekā pirms %{count} gadiem"
+        zero: "over %{count} years ago"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        zero: "pirms %{count}dienām"
-        one: "pirms %{count}dienas"
-        other: "pirms %{count}dienām"
+        zero: "%{count} days ago"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        zero: "pirms %{count}minūtēm"
-        one: "pirms %{count}minūtes"
-        other: "pirms %{count}minūtēm"
+        zero: "%{count} minutes ago"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        zero: "pirms %{count} mēnešiem"
-        one: "pirms %{count} mēneša"
-        other: "pirms %{count} mēnešiem"
+        zero: "%{count} months ago"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        zero: "pirms %{count} sekundēm"
-        one: "pirms %{count} sekundes"
-        other: "pirms %{count} sekundēm"
+        zero: "%{count} seconds ago"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999 999 999"
   social:
@@ -273,7 +273,10 @@ lv:
   translation: "Tulkojums"
   notes title: "Piezīmes"
   friends:
-    you have N friends: "Tev ir %{count} draugu"
+    you have N friends:
+      zero: "You have %{count} friends"
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Koplieto kas tev svarīgs Bībelē kā piemēram grāmatzīmes, izcelto un piezīmes ar saviem draugiem un ģimeni."
     find friends: "Atrodi draugus"
     blank slate:
@@ -456,7 +459,10 @@ lv:
     destroy success: "\"Patīk\" izdzēsts"
     destroy failure: "Tavs \"Patīk\" netika izdzēsts"
   comments:
-    view all N: "Apskatīt visus %{count} komentārus"
+    view all N:
+      zero: "View all %{count} comments"
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Ieraksti komentāru"
     create success: "Izdevās! Jūsu komentārs ir publicēts."
     create failure: "Komentārs nevarēja tikt ierakstīts"
@@ -818,7 +824,10 @@ lv:
         zero: "%{count} draugi pabeiguši šo lasīšanas plānu"
         one: "%{count} draugs pabeidzis šo lasīšanas plānu"
         other: "%{count}draugi pabeiguši šo lasīšanas plānu"
-      total completions: "Vairāk nekā %{count} ir izlasīts"
+      total completions:
+        zero: "Over %{count} completions"
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Apskatīt visu"
       close: "Tuvu"
     settings: "Uzstādījumi"

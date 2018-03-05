@@ -5,28 +5,28 @@ ms:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "kira-kira %{count} jam yang lalu"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "kira-kira %{count} bulan yang lalu"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "kira-kira %{count} tahun yang lalu"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "kira-kira %{count} tahun yang lalu"
+        other: "almost %{count} years ago"
       half_a_minute: "setengah minit yang lalu"
       less_than_x_minutes:
-        other: "kurang daripada %{count} minit sebelum ini"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "kurang daripada %{count} saat yang lepas"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "lebih daripada %{count} tahun yang lalu"
+        other: "over %{count} years ago"
       x_days:
-        other: "%{count} hari yang lalu"
+        other: "%{count} days ago"
       x_minutes:
-        other: "%{count} minit yang lalu"
+        other: "%{count} minutes ago"
       x_months:
-        other: "%{count} bulan yang lepas"
+        other: "%{count} months ago"
       x_seconds:
-        other: "%{count} saat yang lepas"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -251,7 +251,8 @@ ms:
   translation: "Terjemahan"
   notes title: "Nota"
   friends:
-    you have N friends: "Anda mempunyai %{count} sahabat"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "Beritakanlah saat Alkitab anda yang istimewa - bookmark, highlight, dan nota - kepada sahabat dan keluarga anda."
     find friends: "Cari sahabat"
     blank slate:
@@ -434,7 +435,8 @@ ms:
     destroy success: "Tanda suka dipadam"
     destroy failure: "Tanda suka anda tidak boleh dipadam"
   comments:
-    view all N: "Lihat semua %{count} komen"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "Pos komen"
     create success: "Berjaya! Komen anda telah ditulis."
     create failure: "Komen tidak dapat dipos"
@@ -788,7 +790,8 @@ ms:
         other: "%{count} sahabat melanggan pelan ini"
       friends completed:
         other: "%{count} sahabat telah melengkapkan pelan ini"
-      total completions: "Lebih %{count} pelengkapan"
+      total completions:
+        other: "Over %{count} completions"
       view all: "Lihat Semua"
       close: "Tutup"
     settings: "Setting"

@@ -5,39 +5,39 @@ pt:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "cerca de %{count} hora atrás"
-        other: "cerca de %{count} horas atrás"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "cerca de %{count} mês atrás"
-        other: "cerca de %{count} meses atrás"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "cerca de %{count} ano atrás"
-        other: "cerca de %{count} anos atrás"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "quase %{count} ano atrás"
-        other: "quase %{count} anos atrás"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "meio minuto atrás"
       less_than_x_minutes:
-        one: "menos de %{count} minuto atrás"
-        other: "menos de %{count} minutos atrás"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "menos de %{count} segundo atrás"
-        other: "menos de %{count} segundos atrás"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "mais de %{count} ano atrás"
-        other: "mais de %{count} anos atrás"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "%{count} dia atrás"
-        other: "%{count} dias atrás"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "%{count} minuto atrás"
-        other: "%{count} minutos atrás"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "%{count} mês atrás"
-        other: "%{count} meses atrás"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "%{count}segundo atrás"
-        other: "%{count} segundos atrás"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999,999"
   social:
@@ -262,7 +262,9 @@ pt:
   translation: "Tradução"
   notes title: "Anotações"
   friends:
-    you have N friends: "Você tem %{count} amigos"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Compartilhe seus momentos junto a Bíblia tais como marcadores, destaques e anotações com sua família e amigos mais próximos."
     find friends: "Encontre Amigos"
     blank slate:
@@ -445,7 +447,9 @@ pt:
     destroy success: "Curtida apagada"
     destroy failure: "Sua curtida não pode ser apagada"
   comments:
-    view all N: "Visualizar todos os %{count} comentários"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Publicar um comentário"
     create success: "Sucesso! Seu comentário foi publicado."
     create failure: "Seu comentário não pode ser publicado"
@@ -803,7 +807,9 @@ pt:
       friends completed:
         one: "%{count} amigo completou este plano"
         other: "%{count} amigos completaram este plano"
-      total completions: "Mais de %{count} completaram"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Ver Todos"
       close: "Fechar"
     settings: "Configurações"

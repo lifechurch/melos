@@ -5,28 +5,28 @@ ja:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "約%{count}時間前"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "約%{count}ヵ月前"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "約%{count}年前"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "ほとんど%{count}年前"
+        other: "almost %{count} years ago"
       half_a_minute: "30秒前"
       less_than_x_minutes:
-        other: "%{count}分以内"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "%{count}秒以内"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "%{count}年以上前"
+        other: "over %{count} years ago"
       x_days:
-        other: "%{count}日前"
+        other: "%{count} days ago"
       x_minutes:
-        other: "%{count}分前"
+        other: "%{count} minutes ago"
       x_months:
-        other: "%{count}ヶ月前"
+        other: "%{count} months ago"
       x_seconds:
-        other: "%{count}秒前"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -251,7 +251,8 @@ ja:
   translation: "翻訳"
   notes title: "ノート"
   friends:
-    you have N friends: "%{count}人の友達がいます"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "ブックマーク、ハイライト、ノートなど聖書から学んだことを親しい友達や家族にシェアしましょう"
     find friends: "友達を探す"
     blank slate:
@@ -302,7 +303,7 @@ ja:
     module 8 text: "時間と労力を節約できます。既存のイベントをコピーして情報を更新するだけで、すぐに新しいイベントが作成できます。"
     module 9 title: "コスト削減"
     module 9 text: "印刷物を減らすことで、コストを削減しながら、2億以上のインストール済みのデバイスを通じて呼びかけることができます。"
-    cost savings: "The average church spends <b>$10,000 a year</b><br>on printing bulletins. Events helps you cut or <br>even eliminate those costs."
+    cost savings: "平均的なアメリカの教会では、一年間に<b>1万ドル</b><br>教会週報印刷に費やされています。イベントを使えば、それらの<br>費用を削減もしくはなくすことができます。"
     testimonials: "お客様の声"
     testimonial 1 text: "「私たちのミニストリーにYouVersionを取り入れてワクワクしています。特に、イベントセクションでは、毎週の説教ノートやコメントを挿入しています。教会のみなは、デバイスからノートを書けて、他の人たちにシェアしたり、保存できることを喜んでいます。多額の印刷費用が削減できたので、その費用を必要な他の分野に回しています」"
     testimonial 2 text: "「YouVersion イベントは私たちの教会ファミリーにとって価値のあるリソースです。みんながメッセージを聞きながらノートとったり、聖書を追っていくことができるので、大きなインパクトを与えています」"
@@ -434,7 +435,8 @@ ja:
     destroy success: "「いいね」が削除されました。"
     destroy failure: "「いいね」が削除できませんでした。"
   comments:
-    view all N: "全ての%{count}コメントを見る。"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "コメントを投稿する"
     create success: "成功！コメントが表示されました。"
     create failure: "コメントを投稿することができませんでした"
@@ -788,7 +790,8 @@ ja:
         other: "%{count}人の友達がこの読書プランを利用しています"
       friends completed:
         other: "%{count}人の友達がこの読書プランを修了しました"
-      total completions: " %{count}人以上が完了しました"
+      total completions:
+        other: "Over %{count} completions"
       view all: "全てを見る"
       close: "閉じる"
     settings: "設定"

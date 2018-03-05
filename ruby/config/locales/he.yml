@@ -5,58 +5,58 @@ he:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about 1 hour ago"
+        one: "about %{count} hour ago"
         two: "about %{count} hours ago"
         many: "about %{count} hours ago"
         other: "about %{count} hours ago"
       about_x_months:
-        one: "about 1 month ago"
+        one: "about %{count} month ago"
         two: "about %{count} months ago"
         many: "about %{count} months ago"
         other: "about %{count} months ago"
       about_x_years:
-        one: "about 1 year ago"
+        one: "about %{count} year ago"
         two: "about %{count} years ago"
         many: "about %{count} years ago"
         other: "about %{count} years ago"
       almost_x_years:
-        one: "almost 1 year ago"
+        one: "almost %{count} year ago"
         two: "almost %{count} years ago"
         many: "almost %{count} years ago"
         other: "almost %{count} years ago"
       half_a_minute: "half a minute ago"
       less_than_x_minutes:
-        one: "less than a minute ago"
+        one: "less than %{count} minute ago"
         two: "less than %{count} minutes ago"
         many: "less than %{count} minutes ago"
         other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "less than 1 second ago"
+        one: "less than %{count} second ago"
         two: "less than %{count} seconds ago"
         many: "less than %{count} seconds ago"
         other: "less than %{count} seconds ago"
       over_x_years:
-        one: "over 1 year ago"
+        one: "over %{count} year ago"
         two: "over %{count} years ago"
         many: "over %{count} years ago"
         other: "over %{count} years ago"
       x_days:
-        one: "1 day ago"
+        one: "%{count} day ago"
         two: "%{count} days ago"
         many: "%{count} days ago"
         other: "%{count} days ago"
       x_minutes:
-        one: "1 minute ago"
+        one: "%{count} minute ago"
         two: "%{count} minutes ago"
         many: "%{count} minutes ago"
         other: "%{count} minutes ago"
       x_months:
-        one: "1 month ago"
+        one: "%{count} month ago"
         two: "%{count} months ago"
         many: "%{count} months ago"
         other: "%{count} months ago"
       x_seconds:
-        one: "1 second ago"
+        one: "%{count} second ago"
         two: "%{count} seconds ago"
         many: "%{count} seconds ago"
         other: "%{count} seconds ago"
@@ -284,7 +284,11 @@ he:
   translation: "Translation"
   notes title: "Notes"
   friends:
-    you have N friends: "You have %{count} friends"
+    you have N friends:
+      one: "You have %{count} friend"
+      two: "You have %{count} friends"
+      many: "You have %{count} friends"
+      other: "You have %{count} friends"
     none me: "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
     find friends: "Find friends"
     blank slate:
@@ -467,7 +471,11 @@ he:
     destroy success: "Like deleted"
     destroy failure: "Your like could not be deleted"
   comments:
-    view all N: "View all %{count} comments"
+    view all N:
+      one: "View %{count} comment"
+      two: "View all %{count} comments"
+      many: "View all %{count} comments"
+      other: "View all %{count} comments"
     post comment: "Post a comment"
     create success: "Success! Your comment was posted."
     create failure: "Comment could not be posted"
@@ -833,7 +841,11 @@ he:
         two: "%{count} friends have completed this plan"
         many: "%{count} friends have completed this plan"
         other: "%{count} friends have completed this plan"
-      total completions: "Over %{count} completions"
+      total completions:
+        one: "Over %{count} completion"
+        two: "Over %{count} completions"
+        many: "Over %{count} completions"
+        other: "Over %{count} completions"
       view all: "View All"
       close: "סגור"
     settings: "Settings"

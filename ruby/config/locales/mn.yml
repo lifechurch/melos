@@ -5,39 +5,39 @@ mn:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "1 цагийн ѳмнѳ"
-        other: "%{count} цагийн ѳмнѳ"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "1 сарын ѳмнѳ"
-        other: "%{count} сарын ѳмнѳ"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "1 жилийн ѳмнѳ"
-        other: "%{count} жилийн ѳмнѳ"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "бараг 1 жилийн ѳмнѳ"
-        other: "бараг %{count} жилийн ѳмнѳ"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "хагас минутийн ѳмнѳ"
       less_than_x_minutes:
-        one: "нэг минутийн ѳмнѳ"
-        other: "%{count} минутийн ѳмнѳ"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "бараг 1 секундын ѳмнѳ"
-        other: "%{count} секундын ѳмнѳ"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "1 жилийн ѳмнѳѳс "
-        other: "%{count} жилийн ѳнмѳѳс"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "Ѳчигдѳр"
-        other: "%{count} ѳдѳрийн ѳмнѳ"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "1 минутийн ѳмнѳ"
-        other: "%{count} минутийн ѳмнѳ"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "1 сарын ѳмнѳ"
-        other: "%{count} сарын ѳмнѳ"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "дѳнгѳж сая"
-        other: "%{count} секундын ѳмнѳ"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ mn:
   translation: "Орчуулга"
   notes title: "Тэмдэглэлүүд"
   friends:
-    you have N friends: "Танд  %{count} найзууд байна"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Библи унших явцдаа хийсэн хавчуурга, тодруулга ба тэмдэглэлээ дотно найзууд болон гэр бүлийнхэнтэйгээ хуваалц."
     find friends: "Найзууд олох"
     blank slate:
@@ -445,7 +447,9 @@ mn:
     destroy success: "Лайк устгагдсан"
     destroy failure: "Лайк устгах боломжгүй"
   comments:
-    view all N: "Бүх %{count} сэтгэгдэлүүд харах"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Санал оруулах"
     create success: "Санал амжилттай орлоо."
     create failure: "Сэтгэгдлийг оруулах боломжгүй"
@@ -803,7 +807,9 @@ mn:
       friends completed:
         one: "%{count} 2 с дээш найзууд энэ уншлагын төлөвлөгөөг дуусгасан."
         other: "%{count} 2 с дээш найзууд энэ уншлагын төлөвлөгөөг дуусгасан."
-      total completions: "%{count} гаруй уншиж дуусгасан"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Бүгдийг нь Харах"
       close: "Хаах"
     settings: "Тохиргоо"

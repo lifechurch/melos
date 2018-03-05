@@ -5,39 +5,39 @@ sw:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "yapata saa %{count} lililopita"
-        other: "yapata masaa %{count} yaliyopita"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "yapata mwezi %{count} uliopita"
-        other: "yapata miezi %{count} iliyopita"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "yapata mwaka %{count} uliopita"
-        other: "yapata miaka %{count} iliyopita"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "karibu mwaka %{count} umepita"
-        other: "karibu miaka %{count} iliyopita"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "nusu dakika iliyopita"
       less_than_x_minutes:
-        one: "chini ya dakika %{count} iliyopita"
-        other: "chini ya dakika %{count} zilizopita"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "chini ya sekunde %{count} iliyopita"
-        other: "chini ya sekunde %{count} zilizopita"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "zaidi ya mwaka %{count} uliopita"
-        other: "zaidi ya miaka %{count} iliyopita"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "siku %{count} iliyopita"
-        other: "siku %{count} zilizopita"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "dakika %{count} iliyopita"
-        other: "dakika %{count} zilizopita"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "mwezi %{count} uliopita"
-        other: "miezi %{count} iliyopita"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "sekunde %{count} iliyopita"
-        other: "sekunde %{count} zilizopita"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ sw:
   translation: "Tafsiri"
   notes title: "maelezo"
   friends:
-    you have N friends: "unamarafiki %{count}"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Shirikisha wakati wako katika Biblia kama vile maalamisho, mambo muhimu, na maelezo kwa marafiki zako wa karibu na familia."
     find friends: "Tafuta marafiki"
     blank slate:
@@ -445,7 +447,9 @@ sw:
     destroy success: "kupenda kwako kumefutwa"
     destroy failure: "kupenda kwako hakukuweza kufutwa"
   comments:
-    view all N: "Ona zote%{count} maoni"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Andika maoni"
     create success: "Umefanikiwa! Maoni yako yametumwa."
     create failure: "Maoni haya kuweza kutumwa"
@@ -803,7 +807,9 @@ sw:
       friends completed:
         one: "{0} rafiki ambaye amemaliza hii mpango"
         other: "%{count} rafiki ambao wamemaliza hii mpango"
-      total completions: "Zaidi ya %{count} wamemaliza"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Tazama zote"
       close: "Funga"
     settings: "mipangilio"
