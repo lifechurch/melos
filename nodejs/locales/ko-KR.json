@@ -302,7 +302,7 @@
 	"containers.EventEditShare.title": "이벤트 공유",
 	"containers.EventEditShare.subTitle": "이벤트가 공개되었습니다",
 	"containers.EventEditShare.edit": "이벤트 수정",
-	"containers.EventEditShare.go": "���의 이벤트로 가기",
+	"containers.EventEditShare.go": "나의 이벤트로 가기",
 	"containers.EventEditShare.share": "이벤트 공유",
 	"containers.EventEditShare.copy": "복사",
 	"containers.EventEditShare.copied": "링크가 클립보드에 복사되었습니다.",
