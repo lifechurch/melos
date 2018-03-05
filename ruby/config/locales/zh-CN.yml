@@ -5,28 +5,28 @@ zh-CN:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "大约%{count}小时前"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "大约%{count}个月前"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "大约%{count}年前"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "将近%{count}年前"
+        other: "almost %{count} years ago"
       half_a_minute: "半分钟前"
       less_than_x_minutes:
-        other: "不到%{count}分钟前"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "不到%{count}秒前"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "超过%{count}年前"
+        other: "over %{count} years ago"
       x_days:
-        other: "%{count}天前"
+        other: "%{count} days ago"
       x_minutes:
-        other: "%{count}分钟前"
+        other: "%{count} minutes ago"
       x_months:
-        other: "%{count}个月前"
+        other: "%{count} months ago"
       x_seconds:
-        other: "%{count}秒前"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -251,7 +251,8 @@ zh-CN:
   translation: "译本"
   notes title: "笔记"
   friends:
-    you have N friends: "你有 %{count} 位朋友"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "和你亲近的朋友与家人分享你的书签、高亮显示和笔记等动态。"
     find friends: "寻找朋友"
     blank slate:
@@ -434,7 +435,8 @@ zh-CN:
     destroy success: "赞已被删除"
     destroy failure: "你的点赞不能删除"
   comments:
-    view all N: "查看所有%{count}条评论"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "发表评论"
     create success: "成了！你的评论已被发表。"
     create failure: "不能发表评论"
@@ -788,7 +790,8 @@ zh-CN:
         other: "%{count}位朋友订阅了此计划"
       friends completed:
         other: "%{count}位朋友完成了此计划"
-      total completions: "完成次数超过%{count}"
+      total completions:
+        other: "Over %{count} completions"
       view all: "查看全部"
       close: "关闭"
     settings: "设置"
