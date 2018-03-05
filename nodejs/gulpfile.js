@@ -17,6 +17,7 @@ const localeNameException = {
 	bg: 'bg-BG',
 	bn: 'bn-IN',
 	ca: 'ca-ES',
+	ckb: 'ckb-IR',
 	cs: 'cs-CZ',
 	cy: 'cy-GB',
 	da: 'da-DK',
@@ -49,6 +50,7 @@ const localeNameException = {
 	no: 'no-NO',
 	pl: 'pl-PL',
 	pt: 'pt-BR',
+	myz: 'qz-MM',
 	ro: 'ro-RO',
 	ru: 'ru-RU',
 	sk: 'sk-SK',
@@ -264,18 +266,18 @@ gulp.task('crowdin', () => {
 				// key, it means we have an error. if we actually get the strings, they
 				// are at the top level
 				const localeExceptions = {
-					myz: 'qz-MM',
+					// myz: 'qz-MM',
 					'ml-IN': 'ml',
 					'ne-NP': 'ne',
 					'es-la': 'es',
-					'es-ES': 'es',
+					// 'es-ES': 'es',
 					'sv-SE': 'sv',
 					'en-US': false,
 					'ur-PK': 'ur',
 					fil: 'tl',
 					'pt-BR': 'pt',
-					'pt-PT': 'pt',
-					ckb: 'ckb-IR'
+					// 'pt-PT': 'pt',
+					// ckb: 'ckb-IR'
 				}
 
 				const localeKey = localeExceptions[task.locale] || task.locale
