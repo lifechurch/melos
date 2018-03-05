@@ -5,39 +5,39 @@ hi:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "लगभग %{count} घंटे पहले"
-        other: "लगभग%{count} घंटे पहले"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "लगभग १ माह पहले"
-        other: "लगभग %{count} माह पहले"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "लगभग %{count} वर्ष पहले"
-        other: "लगभग %{count} वर्ष पहले"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "लगभग  १ वर्ष पहले"
-        other: "लगभग %{count} वर्ष पहले"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "आधे मिनट पहले"
       less_than_x_minutes:
-        one: "१ मिनट से भी कम"
-        other: "%{count} मिनट पहले"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "१ सेकंड पहले "
-        other: "%{count} सेकंड पहले "
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "१ वर्ष से ज्यादा"
-        other: "%{count} वर्ष से ज्यादा "
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "१ दिन पहले "
-        other: "%{count} दिन पहले"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "१ मिनट पहले"
-        other: "%{count} मिनट पहले"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "१ माह पहले"
-        other: "%{count} माह पहले"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "१ सेकंड पहले"
-        other: "%{count} सेकंड पहले"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -262,7 +262,9 @@ hi:
   translation: "अनुवाद"
   notes title: "टिप्पणियाँ"
   friends:
-    you have N friends: "आपके %{count}मित्र हैं"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "अपने करीबी मित्रों और परिवार सदस्यों के साथ बाइबिल अध्ययन के दौरान अनुभव किया गया अद्भुत एहसास को बुकमार्क,हाईलाइट और नोट के रूप में शेयर करे।"
     find friends: "मित्रों को खोजे"
     blank slate:
@@ -445,7 +447,9 @@ hi:
     destroy success: "पसंद डिलीट हुआ"
     destroy failure: "आपकी पसंद डिलीट नहीं हो सका"
   comments:
-    view all N: "समूचे %{count} कमेंट्स"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "कमेंट पोस्ट करे"
     create success: "आपकी टिप्पणी सफलतापूर्वक पोस्ट किया गया"
     create failure: "कमेंट पोस्ट नहीं हो सका"
@@ -803,7 +807,9 @@ hi:
       friends completed:
         one: "%{count}के मित्रों द्वारा यह पाठक योजना सम्पूर्ण किया गया"
         other: "%{count}के मित्रों द्वारा यह पाठक योजना सम्पूर्ण किया गया"
-      total completions: "%{count}से अधिक पूरे "
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "पूरा देखे "
       close: "बंद "
     settings: "सेटिंग्स"
