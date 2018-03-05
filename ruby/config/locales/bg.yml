@@ -5,39 +5,39 @@ bg:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "преди около %{count} час"
-        other: "преди около %{count} часа"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "преди около %{count} месец"
-        other: "преди около %{count} месеца"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "преди около %{count} година"
-        other: "преди около %{count} години"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "преди почти %{count} година"
-        other: "преди почти %{count} години"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "преди половин минута"
       less_than_x_minutes:
-        one: "преди по-малко от %{count} минута"
-        other: "преди по-малко от %{count} минути"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "преди по-малко от %{count} секунда"
-        other: "преди по-малко от %{count} секунди"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "преди повече от %{count} година"
-        other: "преди повече от %{count} години"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "преди %{count} ден"
-        other: "преди %{count} дни"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "преди %{count} минута"
-        other: "преди %{count} минути"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "преди %{count} месец"
-        other: "преди %{count} месеца"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "преди %{count} секунда"
-        other: "преди %{count} секунди"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999 999 999"
   social:
@@ -262,7 +262,9 @@ bg:
   translation: "Превод"
   notes title: "Бележки"
   friends:
-    you have N friends: "Имате %{count} приятели"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Споделете Вашите моменти в Библията като отбелязвания, маркировки и бележки с най-близките си приятели и семейство."
     find friends: "Открийте приятели"
     blank slate:
@@ -445,7 +447,9 @@ bg:
     destroy success: "Харесването беше изтрито"
     destroy failure: "Вашето харесване не можа да бъде изтрито"
   comments:
-    view all N: "Разгледайте всички %{count} коментара"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Оставете коментар"
     create success: "Вашият коментар беше публикуван успешно."
     create failure: "Коментарът не можа да бъде публикуван"
@@ -803,7 +807,9 @@ bg:
       friends completed:
         one: "{0} приятел завърши този план"
         other: "%{count} приятели завършиха този план"
-      total completions: "Завършен повече от %{count} пъти"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Преглед на всички"
       close: "Затвори"
     settings: "Настройки"
