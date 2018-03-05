@@ -5,39 +5,39 @@ tr:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "1 saat kadar önce"
-        other: "%{count} saat kadar önce"
+        one: "about %{count} hour ago"
+        other: "about %{count} hours ago"
       about_x_months:
-        one: "1 ay kadar önce"
-        other: "%{count} ay kadar önce"
+        one: "about %{count} month ago"
+        other: "about %{count} months ago"
       about_x_years:
-        one: "1 yıl kadar önce"
-        other: "%{count} yıl kadar önce"
+        one: "about %{count} year ago"
+        other: "about %{count} years ago"
       almost_x_years:
-        one: "yaklaşık 1 yıl önce"
-        other: "yaklaşık %{count} yıl önce"
+        one: "almost %{count} year ago"
+        other: "almost %{count} years ago"
       half_a_minute: "yarım dakika önce"
       less_than_x_minutes:
-        one: "bir dakikadan daha az önce"
-        other: "%{count} dakikadan daha az önce"
+        one: "less than %{count} minute ago"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        one: "bir saniyeden daha az önce"
-        other: "%{count} saniyeden daha az önce"
+        one: "less than %{count} second ago"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        one: "bir yılı aşkın öncesi"
-        other: "%{count} yılı aşkın öncesi"
+        one: "over %{count} year ago"
+        other: "over %{count} years ago"
       x_days:
-        one: "bir gün önce"
-        other: "%{count} gün önce"
+        one: "%{count} day ago"
+        other: "%{count} days ago"
       x_minutes:
-        one: "bir dakika önce"
-        other: "%{count} dakika önce"
+        one: "%{count} minute ago"
+        other: "%{count} minutes ago"
       x_months:
-        one: "1 ay önce"
-        other: "%{count} ay önce"
+        one: "%{count} month ago"
+        other: "%{count} months ago"
       x_seconds:
-        one: "1 saniye önce"
-        other: "%{count} saniye önce"
+        one: "%{count} second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -262,7 +262,9 @@ tr:
   translation: "Çeviri"
   notes title: "Notlar"
   friends:
-    you have N friends: "%{count} arkadaşınız var"
+    you have N friends:
+      one: "You have %{count} friend"
+      other: "You have %{count} friends"
     none me: "Kutsal Kitap'ta geçirdiğiniz özel anları, yer imlerini, vurguları ve notlarınızı olarak yakın arkadaşlarınız ve ailenizle paylaşın."
     find friends: "Arkadaş Bul"
     blank slate:
@@ -445,7 +447,9 @@ tr:
     destroy success: "Beğenme silindi"
     destroy failure: "Beğenmeniz silinemedi"
   comments:
-    view all N: "%{count} yorumların tümünü görüntüle"
+    view all N:
+      one: "View %{count} comment"
+      other: "View all %{count} comments"
     post comment: "Yorum yaz"
     create success: "Yorumunuz yayımlandı!"
     create failure: "Yorum postalanamadı"
@@ -803,7 +807,9 @@ tr:
       friends completed:
         one: "%{count} arkadaşınız bu planı tamamladı"
         other: "%{count} arkadaşınız bu planı tamamladı"
-      total completions: "%{count} oranından fazlası tamamlandı"
+      total completions:
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
       view all: "Hepsini Göster"
       close: "Kapat"
     settings: "Ayarlar"
