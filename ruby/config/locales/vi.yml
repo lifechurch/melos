@@ -5,28 +5,28 @@ vi:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "khoảng %{count} giờ trước"
+        other: "about %{count} hours ago"
       about_x_months:
-        other: "khoảng %{count} tháng trước"
+        other: "about %{count} months ago"
       about_x_years:
-        other: "khoảng %{count} năm trước"
+        other: "about %{count} years ago"
       almost_x_years:
-        other: "gần %{count} năm trước"
+        other: "almost %{count} years ago"
       half_a_minute: "nửa phút trước"
       less_than_x_minutes:
-        other: "chưa đến %{count} phút trước"
+        other: "less than %{count} minutes ago"
       less_than_x_seconds:
-        other: "chưa đến %{count} giây trước"
+        other: "less than %{count} seconds ago"
       over_x_years:
-        other: "hơn %{count} năm trước"
+        other: "over %{count} years ago"
       x_days:
-        other: "%{count} ngày trước"
+        other: "%{count} days ago"
       x_minutes:
-        other: "%{count} phút trước"
+        other: "%{count} minutes ago"
       x_months:
-        other: "%{count} tháng trước"
+        other: "%{count} months ago"
       x_seconds:
-        other: "%{count} giây trước"
+        other: "%{count} seconds ago"
   counter:
     format: "999.999.999"
   social:
@@ -251,7 +251,8 @@ vi:
   translation: "Bản dịch"
   notes title: "Ghi chú"
   friends:
-    you have N friends: "Bạn có %{count} bạn"
+    you have N friends:
+      other: "You have %{count} friends"
     none me: "Chia sẻ cùng gia đình và bạn bè những trải nghiệm Kinh Thánh như các đánh dấu, tô màu và ghi chú."
     find friends: "Tìm bạn bè"
     blank slate:
@@ -434,7 +435,8 @@ vi:
     destroy success: "Đã xóa ý thích"
     destroy failure: "Không xóa ý thích của bạn được"
   comments:
-    view all N: "Xem tất cả %{count} bình luận"
+    view all N:
+      other: "View all %{count} comments"
     post comment: "Đăng bình luận"
     create success: "Đã đăng bình luận của bạn!"
     create failure: "Không đăng bình luận được"
@@ -788,7 +790,8 @@ vi:
         other: "Có %{count} người bạn từng đăng ký kế hoạch này"
       friends completed:
         other: "Có %{count} người bạn đã hoàn tất kế hoạch này"
-      total completions: "Hơn %{count} lượt hoàn tất"
+      total completions:
+        other: "Over %{count} completions"
       view all: "Xem tất cả"
       close: "Đóng"
     settings: "Cài đặt"
