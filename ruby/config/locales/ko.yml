@@ -5,28 +5,28 @@ ko:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "about %{count} hours ago"
+        other: "약 %{count}시간 전"
       about_x_months:
-        other: "about %{count} months ago"
+        other: "약 %{count}개월 전"
       about_x_years:
-        other: "about %{count} years ago"
+        other: "약 %{count}년 전"
       almost_x_years:
-        other: "almost %{count} years ago"
+        other: "거의 %{count}년 전"
       half_a_minute: "30초 전"
       less_than_x_minutes:
-        other: "less than %{count} minutes ago"
+        other: "%{count}분 전"
       less_than_x_seconds:
-        other: "less than %{count} seconds ago"
+        other: "%{count}초 전"
       over_x_years:
-        other: "over %{count} years ago"
+        other: "%{count}년 전"
       x_days:
-        other: "%{count} days ago"
+        other: "%{count}일 전"
       x_minutes:
-        other: "%{count} minutes ago"
+        other: "%{count}분 전"
       x_months:
-        other: "%{count} months ago"
+        other: "%{count}개월 전"
       x_seconds:
-        other: "%{count} seconds ago"
+        other: "%{count}초 전"
   counter:
     format: "999,999,999"
   social:
@@ -252,7 +252,7 @@ ko:
   notes title: "노트"
   friends:
     you have N friends:
-      other: "You have %{count} friends"
+      other: "%{count}명의 친구가 있습니다."
     none me: "성경 속의 책갈피, 하이라이트 노트 등을 가족, 친구들과 나누세요."
     find friends: "친구 찾기"
     blank slate:
@@ -436,7 +436,7 @@ ko:
     destroy failure: "좋아요가 삭제되지 않았습니다."
   comments:
     view all N:
-      other: "View all %{count} comments"
+      other: "%{count} 댓글 모두 보기"
     post comment: "댓글 달기"
     create success: "댓글이 저장되었습니다."
     create failure: "댓글을 달 수가 없습니다"
@@ -791,7 +791,7 @@ ko:
       friends completed:
         other: "%{count}명의 친구가 이 계획을 마쳤습니다."
       total completions:
-        other: "Over %{count} completions"
+        other: "%{count}명이 넘는 분들이 이 계획을 마쳤습니다."
       view all: "전체 보기"
       close: "닫기"
     settings: "설정"

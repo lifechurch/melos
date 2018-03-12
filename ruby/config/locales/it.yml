@@ -120,7 +120,7 @@ it:
     users hash verified: "Questo account è già stato verificato."
     users password change: "La nuova password dev'essere diversa da quella precedente."
     users password length: "La tua password deve contenere almeno 6 caratteri."
-    users password less than minimum value 6: "Your password must be at least 6 characters."
+    users password less than minimum value 6: "La tua password deve contenere almeno 6 caratteri."
     users password required: "Devi scrivere una password."
     user id users not found: "Username non valido."
     users username alpha numeric extra: "Il nome utente dovrebbe contenere solo lettere, numeri o trattini."
@@ -131,7 +131,7 @@ it:
     users first name required: "Devi scrivere un nome."
     users last name required: "Devi scrivere un cognome."
     moments content required: "Il campo non può essere vuoto."
-    users auth password required: "You must enter a password."
+    users auth password required: "Devi scrivere una password."
   meta:
     best educational app: "Migliore App Educativa"
     100million:
@@ -146,7 +146,7 @@ it:
       description: "Porta la bellezza e la verità della Bibbia nella vita quotidiana. Con l'App Bibbia YouVersion puoi leggere, guardare, ascoltare e condividere sul tuo smartphone o tablet, e sul web su Bible.com."
     connections:
       index:
-        title: "Connected Accounts"
+        title: "Account Collegati"
   now: "Ora"
   select dropdown: "--Seleziona--"
   celebrating 50MM: "Celebrando 50 milioni di installazioni!"
@@ -263,8 +263,8 @@ it:
   notes title: "Note"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
-      other: "You have %{count} friends"
+      one: "Hai %{count} amico"
+      other: "Hai %{count} amici"
     none me: "Condividi i tuoi momenti nella Bibbia come segnalibri, evidenziazioni e note con i tuoi amici e famiglia più vicini."
     find friends: "Trova amici"
     blank slate:

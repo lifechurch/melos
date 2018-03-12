@@ -5,28 +5,28 @@ my:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "about %{count} hours ago"
+        other: "လွန်ခဲ့တဲ့ %{count}နာရီခန့်က"
       about_x_months:
-        other: "about %{count} months ago"
+        other: "လွန်ခဲ့သော%{count}လတွင်"
       about_x_years:
-        other: "about %{count} years ago"
+        other: "လွန်ခဲ့သော%{count} နှစ်က"
       almost_x_years:
-        other: "almost %{count} years ago"
+        other: "လွန်ခဲ့သော%{count}နှင့်နီးပါးက"
       half_a_minute: "လွန်ခဲ့သောမိနစ်ဝက်က"
       less_than_x_minutes:
-        other: "less than %{count} minutes ago"
+        other: "လွန်ခဲ့သော%{count}မိနစ်ထက်နည်းသည့်အချိန်က"
       less_than_x_seconds:
-        other: "less than %{count} seconds ago"
+        other: "လွန်ခဲ့သော%{count}စက္ကန့်ထက်နည်းသည့်အချိန်တွင်"
       over_x_years:
-        other: "over %{count} years ago"
+        other: "လွန်ခဲ့သော%{count}နှစ်ကျော်က"
       x_days:
-        other: "%{count} days ago"
+        other: "လွန်ခဲ့သော%{count}ရက်က"
       x_minutes:
-        other: "%{count} minutes ago"
+        other: "လွန်ခဲ့သော%{count}မိနစ်က"
       x_months:
-        other: "%{count} months ago"
+        other: "လွန်ခဲ့သော%{count}လက"
       x_seconds:
-        other: "%{count} seconds ago"
+        other: "လွန်ခဲ့သော%{count}စက္ကန့်က"
   counter:
     format: "၉၉၉၉၉၉၉၉၉"
   social:
@@ -252,7 +252,7 @@ my:
   notes title: "မှတ်စု"
   friends:
     you have N friends:
-      other: "You have %{count} friends"
+      other: "သင့်မှာမိတ်ဆွေ%{count}ယောက်ရှိသည်။"
     none me: "မှတ်ချက်၊ မှတ်စုနှင့်အရောင်မှတ်ချက်စသည့် သင်အချိန်ယူဆင်ခြင်သည့်အချက်ကို သင်၏ရင်းနှီးဆုံးမိတ်ဆွေနှင့်မိသားစုဝင်တို့နှင့်မျှဝေပါ။"
     find friends: "မိတ်ဆွေရှာရန်"
     blank slate:
@@ -436,7 +436,7 @@ my:
     destroy failure: "သင်၏နှစ်သက်အမှတ်ကို မပယ်ဖျက်နိုင်ခဲ့ပါ။"
   comments:
     view all N:
-      other: "View all %{count} comments"
+      other: "%{count} ၏ဝေဖန်မှတ်ချက်အားလုံးကိုကြည့်ရှုရန်"
     post comment: "ဝေဖန်မှတ်ချက်တင်ရန်"
     create success: "ပြီးပါပြီ။ သင်၏ဝေဖန်မှတ်ချက်ကို တင်လိုက်ပြီ။"
     create failure: "ဝေဖန်မှတ်ချက်ကိုမတင်နိုင်ပါ"
@@ -791,7 +791,7 @@ my:
       friends completed:
         other: "မိတ်ဆွေ%{count}သည် ဤအစီအစဉ်ကိုဖတ်ပြီးပါပြီ။"
       total completions:
-        other: "Over %{count} completions"
+        other: "%{count}ထက်ပိုပြီးပြီးဆုံးခဲ့ပြီ။"
       view all: "အားလုံးကြည့်ရန်"
       close: "ပိတ်ရန်"
     settings: "ချိန်ညှိချက်"

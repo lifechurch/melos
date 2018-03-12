@@ -263,7 +263,7 @@ es:
   notes title: "Notas"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
+      one: "Tiene %{count} amigo"
       other: "You have %{count} friends"
     none me: "Comparta sus momentos en la Biblia, tales como marcadores, resaltados y notas, con sus amigos más cercanos y familia."
     find friends: "Encontrar amigos"
@@ -412,7 +412,7 @@ es:
       sharing text: "Comparta versículos en las redes sociales"
       sharing button: "Habilitar compartir"
       friends text: "Observe los momentos en la Biblia de sus amigos."
-      friends button: "Find friends"
+      friends button: "Encontrar amigos"
     action:
       go to scripture: "Ir a las Escrituras"
       add friend button: "Agregar un amigo"
@@ -1033,7 +1033,7 @@ es:
   download ad:
     title: "Descargue la Aplicación Gratuita de la Biblia"
     description copy: "Cientos de versiones en más de %{language_count}+ diferentes idiomas - la Biblia que lo acompaña a cualquier lugar."
-    meta copy title: "Download the Free Bible App"
+    meta copy title: "Descargar la Biblia App Gratis"
     meta copy versions: "Cientos de versiones en más de %{language_count}diferentes idiomas"
     line 1: "Cientos de versiones en 100+"
     line 2: "diferentes idiomas - la Biblia"
@@ -1148,7 +1148,7 @@ es:
       install_now:
         title: "Instalar la App Ahora"
         body: "La Biblia App es completamente gratis, sin anuncios, y de ningún modo compras. Se ha instalado en esta cantidad de dispositivos (hasta ahora):"
-        action: "Download the Free Bible App"
+        action: "Descargar la Biblia App gratis"
       free_plans:
         title: "Planes de Lectura y Devocionales Gratis"
         body: "Los Planes Bíblicos le ayudan a involucrarse con la Palabra de Dios todos los días, un poco cada vez."
@@ -1176,7 +1176,7 @@ es:
         download heading: "Lleve la Biblia consigo."
         download description: "<a href='https://bible.com/download' target='_self'>Descargue </a>la Biblia App gratuitamente en cualquier dispositivo móvil. Cuando utiliza la aplicación móvil, sus Notas, Marcadores, Resaltados, Planes y más se sincronizarán automáticamente en todos sus dispositivos."
       get started: "Inicie creando su cuenta gratis."
-      word with you: "God's Word is with you."
+      word with you: "Descargar la Biblia App gratis"
       download action: "Descargar la Biblia App"
       download description: "Descargue gratis la Biblia App de YouVersion en su dispositivo móvil y tendrá consigo la Biblia dondequiera que vaya."
       world installs: "Instalaciones alrededor del mundo."

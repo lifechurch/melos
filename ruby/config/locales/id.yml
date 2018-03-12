@@ -5,28 +5,28 @@ id:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "about %{count} hours ago"
+        other: "sekitar %{count} jam yang lalu"
       about_x_months:
-        other: "about %{count} months ago"
+        other: "sekitar %{count} bulan yang lalu"
       about_x_years:
-        other: "about %{count} years ago"
+        other: "sekitar %{count} tahun yang lalu"
       almost_x_years:
-        other: "almost %{count} years ago"
+        other: "hampir %{count} tahun yang lalu"
       half_a_minute: "setengah menit yang lalu"
       less_than_x_minutes:
-        other: "less than %{count} minutes ago"
+        other: "kurang dari %{count} menit yang lalu"
       less_than_x_seconds:
-        other: "less than %{count} seconds ago"
+        other: "kurang dari %{count} detik yang lalu"
       over_x_years:
-        other: "over %{count} years ago"
+        other: "lebih dari %{count} tahun yang lalu"
       x_days:
-        other: "%{count} days ago"
+        other: "%{count} hari yang lalu"
       x_minutes:
-        other: "%{count} minutes ago"
+        other: "%{count} menit yang lalu"
       x_months:
-        other: "%{count} months ago"
+        other: "%{count} bulan yang lalu"
       x_seconds:
-        other: "%{count} seconds ago"
+        other: "%{count} detik yang lalu"
   counter:
     format: "999.999.999"
   social:
@@ -252,7 +252,7 @@ id:
   notes title: "Catatan"
   friends:
     you have N friends:
-      other: "You have %{count} friends"
+      other: "Anda memiliki %{count} teman"
     none me: "Berbagi momen Alkitab Anda seperti markah, sorotan, dan catatan dengan teman-teman terdekat dan keluarga Anda."
     find friends: "Cari teman"
     blank slate:
@@ -436,7 +436,7 @@ id:
     destroy failure: "Pilihan suka Anda tidak dapat dihapus"
   comments:
     view all N:
-      other: "View all %{count} comments"
+      other: "Lihat semua %{count} komentar"
     post comment: "Poskan komentar"
     create success: "Berhasil! Komentar Anda telah ditampilkan."
     create failure: "Komentar tidak dapat diposkan"
@@ -791,7 +791,7 @@ id:
       friends completed:
         other: "%{count} teman menyelesaikan rencana ini"
       total completions:
-        other: "Over %{count} completions"
+        other: "Lebih dari %{count} penyelesaian"
       view all: "Lihat Semua"
       close: "Tutup"
     settings: "Pengaturan"

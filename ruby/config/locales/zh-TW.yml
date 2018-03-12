@@ -5,28 +5,28 @@ zh-TW:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "about %{count} hours ago"
+        other: "大約%{count}小時前"
       about_x_months:
-        other: "about %{count} months ago"
+        other: "大約%{count}個月前"
       about_x_years:
-        other: "about %{count} years ago"
+        other: "大約%{count}年前"
       almost_x_years:
-        other: "almost %{count} years ago"
+        other: "將近%{count}年前"
       half_a_minute: "半分鐘前"
       less_than_x_minutes:
-        other: "less than %{count} minutes ago"
+        other: "不到%{count}分鐘前"
       less_than_x_seconds:
-        other: "less than %{count} seconds ago"
+        other: "不到%{count}秒前"
       over_x_years:
-        other: "over %{count} years ago"
+        other: "超過%{count}年前"
       x_days:
-        other: "%{count} days ago"
+        other: "%{count}天前"
       x_minutes:
-        other: "%{count} minutes ago"
+        other: "%{count}分鐘前"
       x_months:
-        other: "%{count} months ago"
+        other: "%{count}個月前"
       x_seconds:
-        other: "%{count} seconds ago"
+        other: "%{count}秒前"
   counter:
     format: "999,999,999"
   social:
@@ -252,7 +252,7 @@ zh-TW:
   notes title: "筆記"
   friends:
     you have N friends:
-      other: "You have %{count} friends"
+      other: "你有%{count}位朋友"
     none me: "與您親近的朋友和家人分享您的書籤、醒目標示和筆記等動態。"
     find friends: "尋找朋友"
     blank slate:
@@ -436,7 +436,7 @@ zh-TW:
     destroy failure: "您的讚不能被刪除"
   comments:
     view all N:
-      other: "View all %{count} comments"
+      other: "查看所有%{count}條評語"
     post comment: "張貼評語"
     create success: "成了！您的評論已經發佈。"
     create failure: "不能張貼評語"
@@ -791,7 +791,7 @@ zh-TW:
       friends completed:
         other: "%{count} 位朋友完成此計畫"
       total completions:
-        other: "Over %{count} completions"
+        other: "完成次數超過%{count}"
       view all: "查看全部"
       close: "關閉"
     settings: "設定"
