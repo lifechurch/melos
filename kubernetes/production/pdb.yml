@@ -8,7 +8,7 @@ metadata:
     pipeline_id: "$CI_PIPELINE_ID"
     build_id: "$CI_JOB_ID"
 spec:
-  minAvailable: 7
+  minAvailable: 85%
   selector:
     matchLabels:
       app: $CI_ENVIRONMENT_SLUG
