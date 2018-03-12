@@ -5,28 +5,28 @@ ja:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "about %{count} hours ago"
+        other: "約%{count}時間前"
       about_x_months:
-        other: "about %{count} months ago"
+        other: "約%{count}ヵ月前"
       about_x_years:
-        other: "about %{count} years ago"
+        other: "約%{count}年前"
       almost_x_years:
-        other: "almost %{count} years ago"
+        other: "ほとんど%{count}年前"
       half_a_minute: "30秒前"
       less_than_x_minutes:
-        other: "less than %{count} minutes ago"
+        other: "%{count}分以内"
       less_than_x_seconds:
-        other: "less than %{count} seconds ago"
+        other: "%{count}秒以内"
       over_x_years:
-        other: "over %{count} years ago"
+        other: "%{count}年以上前"
       x_days:
-        other: "%{count} days ago"
+        other: "%{count}日前"
       x_minutes:
-        other: "%{count} minutes ago"
+        other: "%{count}分前"
       x_months:
-        other: "%{count} months ago"
+        other: "%{count}ヶ月前"
       x_seconds:
-        other: "%{count} seconds ago"
+        other: "%{count}秒前"
   counter:
     format: "999,999,999"
   social:
@@ -252,7 +252,7 @@ ja:
   notes title: "ノート"
   friends:
     you have N friends:
-      other: "You have %{count} friends"
+      other: "%{count}人の友達がいます"
     none me: "ブックマーク、ハイライト、ノートなど聖書から学んだことを親しい友達や家族にシェアしましょう"
     find friends: "友達を探す"
     blank slate:
@@ -436,7 +436,7 @@ ja:
     destroy failure: "「いいね」が削除できませんでした。"
   comments:
     view all N:
-      other: "View all %{count} comments"
+      other: "%{count}件のコメントを見る"
     post comment: "コメントを投稿する"
     create success: "成功！コメントが表示されました。"
     create failure: "コメントを投稿することができませんでした"
@@ -791,7 +791,7 @@ ja:
       friends completed:
         other: "%{count}人の友達がこの読書プランを修了しました"
       total completions:
-        other: "Over %{count} completions"
+        other: " %{count}人以上が完了しました"
       view all: "全てを見る"
       close: "閉じる"
     settings: "設定"

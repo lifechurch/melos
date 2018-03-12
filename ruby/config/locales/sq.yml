@@ -6,12 +6,12 @@ sq:
     time_ago_in_words:
       about_x_hours:
         one: "about %{count} hour ago"
-        other: "about %{count} hours ago"
+        other: "rreth %{count} orë më parë"
       about_x_months:
-        one: "about %{count} month ago"
+        one: "rreth %{count} muaj më parë"
         other: "about %{count} months ago"
       about_x_years:
-        one: "about %{count} year ago"
+        one: "rreth %{count} vit më parë"
         other: "about %{count} years ago"
       almost_x_years:
         one: "almost %{count} year ago"

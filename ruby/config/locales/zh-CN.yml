@@ -5,28 +5,28 @@ zh-CN:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "about %{count} hours ago"
+        other: "大约%{count}小时前"
       about_x_months:
-        other: "about %{count} months ago"
+        other: "大约%{count}个月前"
       about_x_years:
-        other: "about %{count} years ago"
+        other: "大约%{count}年前"
       almost_x_years:
-        other: "almost %{count} years ago"
+        other: "将近%{count}年前"
       half_a_minute: "半分钟前"
       less_than_x_minutes:
-        other: "less than %{count} minutes ago"
+        other: "不到%{count}分钟前"
       less_than_x_seconds:
-        other: "less than %{count} seconds ago"
+        other: "不到%{count}秒前"
       over_x_years:
-        other: "over %{count} years ago"
+        other: "超过%{count}年前"
       x_days:
-        other: "%{count} days ago"
+        other: "%{count}天前"
       x_minutes:
-        other: "%{count} minutes ago"
+        other: "%{count}分钟前"
       x_months:
-        other: "%{count} months ago"
+        other: "%{count}个月前"
       x_seconds:
-        other: "%{count} seconds ago"
+        other: "%{count}秒前"
   counter:
     format: "999,999,999"
   social:
@@ -252,7 +252,7 @@ zh-CN:
   notes title: "笔记"
   friends:
     you have N friends:
-      other: "You have %{count} friends"
+      other: "你有 %{count} 位朋友"
     none me: "和你亲近的朋友与家人分享你的书签、高亮显示和笔记等动态。"
     find friends: "寻找朋友"
     blank slate:
@@ -436,7 +436,7 @@ zh-CN:
     destroy failure: "你的点赞不能删除"
   comments:
     view all N:
-      other: "View all %{count} comments"
+      other: "查看所有%{count}条评论"
     post comment: "发表评论"
     create success: "成了！你的评论已被发表。"
     create failure: "不能发表评论"
@@ -791,7 +791,7 @@ zh-CN:
       friends completed:
         other: "%{count}位朋友完成了此计划"
       total completions:
-        other: "Over %{count} completions"
+        other: "完成次数超过%{count}"
       view all: "查看全部"
       close: "关闭"
     settings: "设置"

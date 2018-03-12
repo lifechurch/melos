@@ -354,7 +354,7 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "外部リンクモジュール",
 	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "外部のウェブサイトへリンクするボタンをイベント内に作ることができます。オンラインでの献金、ボランティアの応募、教会のホームページなど、１度のタップでリンクします。",
 	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "告知モジュール",
-	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "アナウンスメントモジュールは、教会のニュース、予定、クラス、ボランティア、宣教の機会をシェアするのに最適です。タイムリーかつ大切な情報を、イベントの重要なメッセージを邪魔することなくシェアできます。各アナウンスメントモジュールは、イベントページ上に表示され、太字やイタリック体などの色々なスタイルで作成できま���。",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "アナウンスメントモジュールは、教会のニュース、予定、クラス、ボランティア、宣教の機会をシェアするのに最適です。タイムリーかつ大切な情報を、イベントの重要なメッセージを邪魔することなくシェアできます。各アナウンスメントモジュールは、イベントページ上に表示され、太字やイタリック体などの色々なスタイルで作成できます。",
 	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "次のモジュールをここへ挿入する",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "タイトル",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "内容を記入…",

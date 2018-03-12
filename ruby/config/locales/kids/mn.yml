@@ -9,7 +9,7 @@ mn:
     app store: "Апп дэлгүүрт байгаа"
     google play: "Google Play-с авах"
     amazon: "Amazon Appstore-т Андройдед зориулагдсанаар байгаа"
-    app icon: "App icon for The Bible App for Kids"
+    app icon: "Хүүхдийн Библи Аппын таних тэмдэг"
     jesus and friends: "Есүс ба найзууд"
     interact text: "Библитэй харьцаж, амьдралдаа хэрхэн амьд үнэн бодит болохыг нь мэдэр."
     story text 1: "Еден Цэцэрлэг"
@@ -24,7 +24,7 @@ mn:
     feature 5: "Хүүхдэд тохируулсан хайлтын систем"
     share:
       tell friends: "Хүүхдийн Библи Аппын талаар найзууддаа хэлээрэй."
-      facebook name: "The Bible App for Kids"
+      facebook name: "Хүүхдийн Библи Апп"
       facebook description: "Хүүхдийн Библи Апп бэлэн боллоо! iOS ба Android-д зориулсан үнэгүй аппыг татаж аваарай: анхаарал татахуйц Библийн түүхүүд хүүхдүүдэд чинь Бурханы Үгээс суралцах, тоглох ба өсөхөд нь туслах болно.\nwww.bible.com/kids"
       facebook link: "http://www.bible.com/kids"
       facebook redirect: "http://www.bible.com/kids"
@@ -44,5 +44,5 @@ mn:
   meta:
     best kids app: "Хамгийн Сайн Хүүхдийн Апп!"
     kids_app:
-      title: "The Bible App for Kids"
+      title: "Хүүхдийн Библи Апп"
       description: "Хүүхдийн Библи Апп нь Бурханы бидэнд заасан Есүсийн тухай Библийн түүхүүд, мөнхийн амийн бэлэг болон олон олон хичээлүүдийг хүүхдүүддээ заах гайхалтай арга зам юм. Энэхүү идэвхитэй аргаар хүүхдүүд Бурханы Үгийг уншин, эрдэнэсүүдийг цуглуулах замаар Үгтэй шууд холбогдох болно."

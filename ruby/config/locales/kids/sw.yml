@@ -9,7 +9,7 @@ sw:
     app store: "Inapatikana kwenye App store"
     google play: "Ipate kwenye Google Play"
     amazon: "Inapatikana katika Amazon Appstore ya Android"
-    app icon: "App icon for The Bible App for Kids"
+    app icon: "Ikoni ya apu ya Apu ya Biblia kwa Watoto"
     jesus and friends: "Yesu na marafiki"
     interact text: "Shiriki katika Bibilia uone ikipata uhai."
     story text 1: "Bustani ya Edeni"
@@ -24,12 +24,12 @@ sw:
     feature 5: "Urambazaji rahisi kwa watoto"
     share:
       tell friends: "Waambie mafiki zako kuhusu apu ya Biblia ya watoto"
-      facebook name: "The Bible App for Kids"
+      facebook name: "Apu ya Biblia ya Watoto"
       facebook description: "Apu ya Biblia ya watoto iko hapa. Ipakue bure katika rununu yako ya iOS au Android leo: pata hadithi za Bibilia ambazo zitasaidia mtoto wako kujifunza, kucheza na kukua katika neno la Mungu. www.bible.com/kids"
-      facebook link: "http://www.bible.com/kids"
-      facebook redirect: "http://www.bible.com/kids"
+      facebook link: "http://www.bible.com/watoto"
+      facebook redirect: "http://www.bible.com/watoto"
       twitter description: "Apu ya Biblia ya watoto kutoka @YouVersion iko hapa. Inaleta burudani na ni bure. Ipakue hapa: bible.com/kids"
-      twitter hashtags: "Bibilia ya watoto"
+      twitter hashtags: "Bibiliayawatoto"
       email: "Barua pepe"
       email subject: "Apu ya Biblia ya watoto iko hapa!"
       email body: "Habari Njema - Apu ya Biblia ya watoto iko hapa! Ni bure na unaweza ipata katika rununu za iPhone, iPad, iPod touch, na Android. Hii apu ni mkusanyiko wa hadithi za Bibilia zinazoendelea kuongezeka. Apu ina michoro na mazoezi ambayo itawasaidia watoto kujifunza hadithi muhimu za Bibilia. Tembelea bible.com/kids katika rununu yako uweze kuipata leo."
@@ -44,5 +44,5 @@ sw:
   meta:
     best kids app: "Programu bora kwa watoto!"
     kids_app:
-      title: "The Bible App for Kids"
+      title: "Apu ya Biblia ya Watoto"
       description: "Apu ya Biblia ya watoto ni njia nzuri ya watoto wako kujifunza hadithi za Bibilia kuhusu Yesu, zawadi yetu ya uzima wa milele na mafunzo mengi kutoka kwa Mungu. Kutoko uzoefu huu, watoto wanapata fursa ya kushiriki na neno la Mungu kwa kutumia maonyesho ya kupendeza na hata kupata mapoto kutoka kusoma na kukusanya hazina."

@@ -449,7 +449,7 @@ en-GB:
   comments:
     view all N:
       one: "View %{count} comment"
-      other: "View all %{count} comments"
+      other: "View %{count} comments"
     post comment: "Post a comment"
     create success: "Success! Your comment was posted."
     create failure: "Comment could not be posted"

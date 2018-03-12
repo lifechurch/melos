@@ -372,7 +372,7 @@
 	"features.EventEdit.features.content.components.ContentTypeImage.select": "選擇圖像",
 	"features.EventEdit.features.content.components.ContentTypeLink.kindrid": "如果你正在尋找一個簡便的智慧化捐獻平台，<a href='{url}'>請試試 Kindrid</a>。",
 	"features.EventEdit.features.content.components.ContentTypeLink.label": "連結標籤",
-	"features.EventEdit.features.content.components.ContentTypeLink.prompt": "在這裡寫幾句話⋯⋯",
+	"features.EventEdit.features.content.components.ContentTypeLink.prompt": "在這裡��幾句話⋯⋯",
 	"features.EventEdit.features.content.components.ContentTypeLink.url": "網址",
 	"features.EventEdit.features.content.components.ContentTypePlan.replace": "取代",
 	"features.EventEdit.features.content.components.ContentTypePlan.search": "搜尋讀經計畫",

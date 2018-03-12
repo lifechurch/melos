@@ -5,50 +5,50 @@ ro:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        few: "about %{count} hours ago"
-        other: "about %{count} hours ago"
+        one: "cu aproximativ %{count} oră în urmă"
+        few: "cu aproximativ %{count} ore în urmă"
+        other: "cu aproximativ %{count} de ore în urmă"
       about_x_months:
-        one: "about %{count} month ago"
-        few: "about %{count} months ago"
-        other: "about %{count} months ago"
+        one: "cu aproximativ %{count} lună în urmă"
+        few: "cu aproximativ %{count} luni în urmă"
+        other: "cu aproximativ %{count} de luni în urmă"
       about_x_years:
-        one: "about %{count} year ago"
-        few: "about %{count} years ago"
-        other: "about %{count} years ago"
+        one: "cu aproximativ %{count} an în urmă"
+        few: "cu aproximativ %{count} ani în urmă"
+        other: "cu aproximativ %{count} de ani în urmă"
       almost_x_years:
-        one: "almost %{count} year ago"
-        few: "almost %{count} years ago"
-        other: "almost %{count} years ago"
+        one: "cu aproape %{count} an în urmă"
+        few: "cu aproape %{count} ani în urmă"
+        other: "cu aproape %{count} de ani în urmă"
       half_a_minute: "jumătate de minut în urmă"
       less_than_x_minutes:
-        one: "less than %{count} minute ago"
-        few: "less than %{count} minutes ago"
-        other: "less than %{count} minutes ago"
+        one: "cu mai puțin de %{count} minut în urmă"
+        few: "cu mai puțin de %{count} minute în urmă"
+        other: "cu mai puțin de %{count} de minute în urmă"
       less_than_x_seconds:
-        one: "less than %{count} second ago"
-        few: "less than %{count} seconds ago"
-        other: "less than %{count} seconds ago"
+        one: "cu mai puțin de %{count} secundă în urmă"
+        few: "cu mai puțin de %{count} secunde în urmă"
+        other: "cu mai puțin de %{count} de secunde în urmă"
       over_x_years:
-        one: "over %{count} year ago"
-        few: "over %{count} years ago"
-        other: "over %{count} years ago"
+        one: "cu peste %{count} an în urmă"
+        few: "cu peste %{count} ani în urmă"
+        other: "cu peste %{count} de ani în urmă"
       x_days:
-        one: "%{count} day ago"
-        few: "%{count} days ago"
-        other: "%{count} days ago"
+        one: "%{count} zi în urmă"
+        few: "%{count} zile în urmă"
+        other: "%{count} de zile în urmă"
       x_minutes:
-        one: "%{count} minute ago"
-        few: "%{count} minutes ago"
-        other: "%{count} minutes ago"
+        one: "%{count} minut în urmă"
+        few: "%{count} minute în urmă"
+        other: "%{count} de minute în urmă"
       x_months:
-        one: "%{count} month ago"
-        few: "%{count} months ago"
-        other: "%{count} months ago"
+        one: "%{count} lună în urmă"
+        few: "%{count} luni în urmă"
+        other: "%{count} de luni în urmă"
       x_seconds:
-        one: "%{count} second ago"
-        few: "%{count} seconds ago"
-        other: "%{count} seconds ago"
+        one: "%{count} secundă în urmă"
+        few: "%{count} secunde în urmă"
+        other: "%{count} de secunde în urmă"
   counter:
     format: "999.999.999"
   social:
@@ -274,9 +274,9 @@ ro:
   notes title: "Notițe"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
-      few: "You have %{count} friends"
-      other: "You have %{count} friends"
+      one: "Ai %{count} prieten"
+      few: "Ai %{count} prieteni"
+      other: "Ai %{count} de prieteni"
     none me: "Împărtășește activitatea ta în Biblie precum semne de carte, evidențieri sau notițe, cu prietenii apropiați și cu familia ta."
     find friends: "Găsește prieteni"
     blank slate:
@@ -460,9 +460,9 @@ ro:
     destroy failure: "Aprecierea ta nu a putut fi ștearsă"
   comments:
     view all N:
-      one: "View %{count} comment"
-      few: "View all %{count} comments"
-      other: "View all %{count} comments"
+      one: "Vizualizează %{count} comentariu"
+      few: "Vizualizează %{count} comentarii"
+      other: "Vizualizează %{count} de comentarii"
     post comment: "Postează un comentariu"
     create success: "Succes! Comentariul tău a fost postat."
     create failure: "Comentariul nu a putut fi postat"
@@ -825,9 +825,9 @@ ro:
         few: "%{count} prieteni au terminat acest plan"
         other: "%{count} prieteni au terminat acest plan"
       total completions:
-        one: "Over %{count} completion"
-        few: "Over %{count} completions"
-        other: "Over %{count} completions"
+        one: "Mai mult de %{count} completare"
+        few: "Mai mult de %{count} completări"
+        other: "Mai mult de %{count} de completări"
       view all: "Vezi tot"
       close: "Închide"
     settings: "Setări"
