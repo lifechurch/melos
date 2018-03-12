@@ -8,38 +8,39 @@ import withImages from '@youversion/api-redux/lib/endpoints/images/hocs/withImag
 
 function withLazyImages(WrappedComponent) {
 	function LazyImages(props) {
-		const { images, imgWidth, imgHeight, hiRes, linkBuilder, usfm } = props
+		const { images, imgWidth, imgHeight, hiRes, linkBuilder, usfm, alt } = props
 
 		return (
 			<WrappedComponent {...props}>
 				{
 					images
-						&& images.map((img) => {
-							const src = selectImageFromList({
-								images: img.renditions,
-								width: hiRes ? imgWidth * 2 : imgWidth,
-								height: hiRes ? imgHeight * 2 : imgHeight,
-							}).url
-							const lazyImg = (
-								<div className='horizontal-center' key={img.id}>
-									<LazyImage
-										src={src}
-										placeholder={<img alt='Default Placeholder' src={SQUARE} />}
-										width={imgWidth}
-										height={imgHeight}
-									/>
-								</div>
-							)
-							return (
+          && images.map((img) => {
+	const src = selectImageFromList({
+		images: img.renditions,
+		width: hiRes ? imgWidth * 2 : imgWidth,
+		height: hiRes ? imgHeight * 2 : imgHeight,
+	}).url
+	const lazyImg = (
+		<div className='horizontal-center' key={img.id}>
+			<LazyImage
+				alt={alt}
+				src={src}
+				placeholder={<img alt='Default Placeholder' src={SQUARE} />}
+				width={imgWidth}
+				height={imgHeight}
+			/>
+		</div>
+            )
+	return (
 								linkBuilder
-									? (
-										<Link to={linkBuilder({ id: img.id, usfm })}>
-											{ lazyImg }
-										</Link>
+                  ? (
+	<Link key={img.id} to={linkBuilder({ id: img.id, usfm })}>
+		{ lazyImg }
+	</Link>
 									)
 									: lazyImg
-							)
-						})
+	)
+})
 				}
 			</WrappedComponent>
 		)
@@ -51,7 +52,8 @@ function withLazyImages(WrappedComponent) {
 		imgWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 		hiRes: PropTypes.bool,
 		linkBuilder: PropTypes.func,
-		usfm: PropTypes.string,
+		usfm: PropTypes.array,
+		alt: PropTypes.string
 	}
 
 	LazyImages.defaultProps = {
@@ -61,6 +63,7 @@ function withLazyImages(WrappedComponent) {
 		hiRes: true,
 		linkBuilder: null,
 		usfm: null,
+		alt: null
 	}
 
 	return withImages(LazyImages)

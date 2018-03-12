@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@youversion/token-storage@^0.0.49":
+  version "0.0.49"
+  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.49.tgz#29072d49f182ff14c062270ea47885e6b415060e"
+  dependencies:
+    react-cookie "^0.4.5"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -980,7 +986,7 @@ cookie-signature@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
 
-cookie@0.3.1:
+cookie@0.3.1, cookie@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
 
@@ -2507,6 +2513,12 @@ rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-cookie@^0.4.5:
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/react-cookie/-/react-cookie-0.4.9.tgz#21a0fcc9c6265aa86bba6d174122acb3851b8736"
+  dependencies:
+    cookie "^0.3.1"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"

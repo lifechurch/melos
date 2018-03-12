@@ -50,6 +50,7 @@ class VotdImage extends Component {
 			version_id,
 			image_id,
 			images,
+      alt
 		} = this.props
 
 		const day = parseInt((dayOfYear || moment().dayOfYear()), 10)
@@ -77,6 +78,7 @@ class VotdImage extends Component {
 			content = (
 				<div style={{ marginBottom: '10px', paddingRight: '20px' }}>
 					<LazyImage
+						alt={alt}
 						src={src}
 						lazy={false}
 						placeholder={<img alt='' height='auto' width='100%' src={SQUARE} />}
@@ -86,6 +88,7 @@ class VotdImage extends Component {
 		} else {
 			content = (
 				<VerseImagesSlider
+          alt={alt}
 					usfm={expandUsfm(usfmForImgs, false)}
 					category='prerendered'
 					linkBuilder={({ id }) => {
@@ -164,6 +167,7 @@ VotdImage.propTypes = {
 	image_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	dispatch: PropTypes.func.isRequired,
 	onShare: PropTypes.func,
+  alt: PropTypes.string
 }
 
 VotdImage.defaultProps = {
@@ -174,6 +178,7 @@ VotdImage.defaultProps = {
 	className: '',
 	image_id: null,
 	onShare: null,
+  alt: null
 }
 
 function mapStateToProps(state) {

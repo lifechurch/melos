@@ -57,7 +57,7 @@ class VOTDView extends Component {
 			})
 		const titleString = refStrings && refStrings.title
 		const version_abbr = versionData
-			&& versionData.local_abbreviation.toUpperCase()
+			&& versionData.local_abbreviation && versionData.local_abbreviation.toUpperCase()
 		const title = `${intl.formatMessage({ id: 'votd' })} - ${titleString} (${version_abbr}) | The Bible App | Bible.com`
 		const url = `${hosts && hosts.railsHost}${Routes.votd({
 			query: {
@@ -98,11 +98,11 @@ class VOTDView extends Component {
 							{ name: 'twitter:title', content: title },
 							{ name: 'twitter:description', content: verse },
 							{ name: 'twitter:site', content: '@YouVersion' },
-						].concat(imgMeta)}
-					/>
+              ].concat(imgMeta)}
+     />
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
 						<VotdText dayOfYear={day} version_id={version_id} />
-						<VotdImage dayOfYear={day} version_id={version_id} />
+						<VotdImage dayOfYear={day} version_id={version_id} alt={verse} />
 						<PlansRelatedToReference usfm={usfm} version_id={version_id} />
 						<Card customClass='horizontal-center flex-wrap'>
 							<img
@@ -110,10 +110,14 @@ class VOTDView extends Component {
 								alt="Bible App Icon"
 								src={`/assets/icons/bible/120/${serverLanguageTag}.png`}
 								style={{ width: '72px', height: '72px' }}
-							/>
-							<div
+       />
+
+							<a
+								href={localizedLink('/app', serverLanguageTag)}
 								className='text-center'
 								style={{
+									color: 'black',
+									display: 'block',
 									fontSize: '26px',
 									fontWeight: 600,
 									width: '90%',
@@ -121,7 +125,7 @@ class VOTDView extends Component {
 								}}
 							>
 								<FormattedMessage id='get a free bible' />
-							</div>
+							</a>
 							<a href={localizedLink('/app', serverLanguageTag)} className='yv-green-link'>
 								<FormattedMessage id='download the bible' />
 							</a>
