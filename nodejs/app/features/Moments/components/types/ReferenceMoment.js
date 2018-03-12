@@ -17,7 +17,6 @@ import Placeholder from '../../../../components/placeholders/buildingBlocks/Plac
 import PlaceholderText from '../../../../components/placeholders/buildingBlocks/PlaceholderText'
 
 
-
 class ReferenceMoment extends Component {
 	handleShare = () => {
 		const { dispatch, hosts, onShare, text, referenceLink, referenceTitle } = this.props
@@ -185,9 +184,9 @@ class ReferenceMoment extends Component {
 }
 
 ReferenceMoment.propTypes = {
-	usfm: PropTypes.string.isRequired,
+	usfm: PropTypes.array.isRequired,
 	icon: PropTypes.node,
-	title: PropTypes.string,
+	title: PropTypes.node,
 	likedIds: PropTypes.array,
 	commentIds: PropTypes.array,
 	onLike: PropTypes.func,
@@ -204,7 +203,7 @@ ReferenceMoment.propTypes = {
 	referenceTitle: PropTypes.string.isRequired,
 	chapterLink: PropTypes.string.isRequired,
 	referenceLink: PropTypes.string.isRequired,
-	versionId: PropTypes.string.isRequired,
+	versionId: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]).isRequired,
 	versionAbbr: PropTypes.string.isRequired,
 	html: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,

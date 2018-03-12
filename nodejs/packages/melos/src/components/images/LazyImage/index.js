@@ -42,6 +42,7 @@ class LazyImage extends Component {
 
   render() {
     const {
+      alt,
 			placeholder,
 			src,
 			width,
@@ -61,7 +62,7 @@ class LazyImage extends Component {
             // hopefully the src prop is unique...
             const imgSrc = img.props && img.props.src
             this._img = imgSrc
-              && document.querySelector(`img[src="${imgSrc}"]`)
+            && document.querySelector(`img[src="${imgSrc}"]`)
           }
         }}
         onLoad={() => { this.showImgIfNeeded() }}
@@ -76,6 +77,8 @@ class LazyImage extends Component {
         opacity={loaded ? 1 : 0}
         borderRadius={borderRadius}
         className={`large ${loaded ? 'loaded' : ''} ${imgClass}`}
+        color="transparent"
+        alt={alt}
       />
 		)
 
@@ -112,6 +115,7 @@ class LazyImage extends Component {
 }
 
 LazyImage.propTypes = {
+  alt: PropTypes.string,
   /**
    * Element (usually a default image) to show until
    * the src successfully downloads and covers it
@@ -153,6 +157,7 @@ LazyImage.propTypes = {
 }
 
 LazyImage.defaultProps = {
+  alt: null,
   placeholder: null,
   lazy: true,
   src: '',

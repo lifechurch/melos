@@ -50,12 +50,13 @@ function withVotdData(WrappedComponent) {
 	votdData.propTypes = {
 		momentsModel: PropTypes.object,
 		dispatch: PropTypes.func.isRequired,
-		iso_639_1: PropTypes.string.isRequired,
+		iso_639_1: PropTypes.string,
 	}
 
 	votdData.defaultProps = {
 		category: 'prerendered',
 		momentsModel: null,
+		iso_639_1: null
 	}
 
 	function mapStateToProps(state) {
