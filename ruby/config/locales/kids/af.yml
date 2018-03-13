@@ -9,7 +9,7 @@ af:
     app store: "Beskikbaar in die App store"
     google play: "Kry dit op Google Play"
     amazon: "Beskikbaar by Amazon Appstore vir Android"
-    app icon: "Toepassing ikoon vir die Bybel Toep vir Kinders"
+    app icon: "Toepassing ikoon vir die Bybel App vir Kinders"
     jesus and friends: "Jesus en vriende"
     interact text: "Geniet interaksie met die Bybel en sien hoe dit lewendig word."
     story text 1: "Die tuin van Eden"
@@ -24,15 +24,15 @@ af:
     feature 5: "Kindervriendelike navigasie"
     share:
       tell friends: "Vertel jou vriende van die Bybel Toep vir Kinders."
-      facebook name: "Die Bybel Toep vir Kinders"
-      facebook description: "Die Bybel Toep vir Kinders is hier! Laai die gratis app vir iOS en Android nog vandag af: interaktiewe Bybel stories om jou kind te help leer, speel en groei in God se woord. www.bible.com/kids"
+      facebook name: "Die Bybel App vir Kinders"
+      facebook description: "Die Bybel App vir Kinders is hier! Laai die gratis app vir iOS en Android nog vandag af: interaktiewe Bybel stories om jou kind te help leer, speel en groei in God se woord. www.bible.com/kids"
       facebook link: "http://www.bible.com/kids"
       facebook redirect: "http://www.bible.com/kids"
-      twitter description: "Die Bybel Toep vir Kinders van @YouVersion is hier! Dis pret en heeltemal gratis. Laai dit af: bible.com/kids"
+      twitter description: "Die Bybel App vir Kinders van @YouVersion is hier! Dis pret en heeltemal gratis. Laai dit af: bible.com/kids"
       twitter hashtags: "kinderbybel"
       email: "E-pos"
-      email subject: "Die Bybel Toep vir Kinders is hier!"
-      email body: "Goeie nuus - die Bybel Toep vir Kinders is hier! Dis heeltemal gratis en is nou beskikbaar vir iPhone, iPad, iPod touch, en Android toestelle. Die app is 'n groeiende versameling van Bybelstories met druk-geaktiveerde animasies en leer aktiwiteite, perfek om kinders te help om die groot stories van die Bybel te leer. Gaan na bible.com/kinders op jou mobiele toestelle om dit nog vandag af te laai."
+      email subject: "Die Bybel App vir Kinders is hier!"
+      email body: "Goeie nuus - die Bybel App vir Kinders is hier! Dis heeltemal gratis en is nou beskikbaar vir iPhone, iPad, iPod touch, en Android toestelle. Die app is 'n groeiende versameling van Bybelstories met druk-geaktiveerde animasies en leer aktiwiteite, perfek om kinders te help om die groot stories van die Bybel te leer. Gaan na bible.com/kinders op jou mobiele toestelle om dit nog vandag af te laai."
     partner:
       youversion: "YouVersion: Die wêreld se mees populêre Bybel Toep"
       in partnership: "in samewerking met"
@@ -44,5 +44,5 @@ af:
   meta:
     best kids app: "Beste Kinders App!"
     kids_app:
-      title: "Die Bybel Toep vir Kinders"
-      description: "Die Bybel Toep vir kinders is `n goeie manier vir jou kinders om Bybelstories te leer oor Jesus, ons geskenk van ewige lewe, en die baie lesse wat God ons leer. In hierdie interaktiewe ervaring, raak kinders direk betrokke met God se Woord met pragtige visuele elemente terwyl hulle punte verdien vir lees en die bymekaarmaak van skatte."
+      title: "Die Bybel App vir Kinders"
+      description: "Die Bybel App vir kinders is `n goeie manier vir jou kinders om Bybelstories te leer oor Jesus, ons geskenk van ewige lewe, en die baie lesse wat God ons leer. In hierdie interaktiewe ervaring, raak kinders direk betrokke met God se Woord met pragtige visuele elemente terwyl hulle punte verdien vir lees en die bymekaarmaak van skatte."

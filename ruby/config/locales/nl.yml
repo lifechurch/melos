@@ -1,7 +1,7 @@
 nl:
   time:
     formats:
-      votd: "%-d, %b, %Y"
+      votd: "%B %-d, %Y"
   datetime:
     time_ago_in_words:
       about_x_hours:
