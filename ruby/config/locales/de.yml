@@ -14,11 +14,11 @@ de:
         one: "vor etwa %{count} Jahr"
         other: "vor etwa %{count} Jahren"
       almost_x_years:
-        one: "almost %{count} year ago"
+        one: "vor fast %{count} Jahr"
         other: "vor fast %{count} Jahren"
       half_a_minute: "vor einer halben Minute"
       less_than_x_minutes:
-        one: "less than %{count} minute ago"
+        one: "vor weniger als %{count} Minute"
         other: "vor weniger als %{count} Minuten"
       less_than_x_seconds:
         one: "vor weniger als %{count} Sekunde"
@@ -264,7 +264,7 @@ de:
   friends:
     you have N friends:
       one: "Du hast %{count} Freund"
-      other: "You have %{count} friends"
+      other: "Du hast %{count} Freunde"
     none me: "Teile deine Momente in der Bibel, zum Beispiel in Form von Lesezeichen, Markierungen und Notizen mit deinen engsten Freunden und deiner Familie."
     find friends: "Finde Freunde"
     blank slate:
@@ -448,8 +448,8 @@ de:
     destroy failure: "Dein \"Gefällt mir\" konnte nicht gelöscht werden"
   comments:
     view all N:
-      one: "View %{count} comment"
-      other: "View all %{count} comments"
+      one: "%{count} Kommentar zeigen"
+      other: "Alle %{count} Kommentare zeigen"
     post comment: "Einen Kommentar posten"
     create success: "Super! Dein Kommentar wurde gepostet."
     create failure: "Der Kommentar konnte nicht gepostet werden"
@@ -808,8 +808,8 @@ de:
         one: "%{count} Freund hat diesen Leseplan abgeschlossen"
         other: "%{count} Freunde haben diesen Leseplan abgeschlossen"
       total completions:
-        one: "Over %{count} completion"
-        other: "Over %{count} completions"
+        one: "%{count} Person hat diesen Leseplan abgeschlossen"
+        other: "Über %{count} Leute haben diesen Leseplan wurde abgeschlossen"
       view all: "Alle anzeigen"
       close: "Schließen"
     settings: "Einstellungen"
