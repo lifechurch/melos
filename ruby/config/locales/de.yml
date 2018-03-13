@@ -5,39 +5,39 @@ de:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        other: "about %{count} hours ago"
+        one: "vor etwa %{count} Stunde"
+        other: "vor etwa %{count} Stunden"
       about_x_months:
-        one: "about %{count} month ago"
-        other: "about %{count} months ago"
+        one: "vor etwa %{count} Monat"
+        other: "vor etwa %{count} Monaten"
       about_x_years:
-        one: "about %{count} year ago"
-        other: "about %{count} years ago"
+        one: "vor etwa %{count} Jahr"
+        other: "vor etwa %{count} Jahren"
       almost_x_years:
         one: "almost %{count} year ago"
-        other: "almost %{count} years ago"
+        other: "vor fast %{count} Jahren"
       half_a_minute: "vor einer halben Minute"
       less_than_x_minutes:
         one: "less than %{count} minute ago"
-        other: "less than %{count} minutes ago"
+        other: "vor weniger als %{count} Minuten"
       less_than_x_seconds:
-        one: "less than %{count} second ago"
-        other: "less than %{count} seconds ago"
+        one: "vor weniger als %{count} Sekunde"
+        other: "vor weniger als %{count} Sekunden"
       over_x_years:
-        one: "over %{count} year ago"
-        other: "over %{count} years ago"
+        one: "vor über %{count} Jahr"
+        other: "vor über %{count} Jahren"
       x_days:
-        one: "%{count} day ago"
-        other: "%{count} days ago"
+        one: "vor %{count} Tag"
+        other: "vor %{count} Tagen"
       x_minutes:
-        one: "%{count} minute ago"
-        other: "%{count} minutes ago"
+        one: "vor %{count} Minute"
+        other: "vor %{count} Minuten"
       x_months:
-        one: "%{count} month ago"
-        other: "%{count} months ago"
+        one: "vor %{count} Monat"
+        other: "vor %{count} Monaten"
       x_seconds:
-        one: "%{count} second ago"
-        other: "%{count} seconds ago"
+        one: "vor %{count} Sekunde"
+        other: "vor %{count} Sekunden"
   counter:
     format: "999.999.999"
   social:
@@ -263,7 +263,7 @@ de:
   notes title: "Notizen"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
+      one: "Du hast %{count} Freund"
       other: "You have %{count} friends"
     none me: "Teile deine Momente in der Bibel, zum Beispiel in Form von Lesezeichen, Markierungen und Notizen mit deinen engsten Freunden und deiner Familie."
     find friends: "Finde Freunde"
