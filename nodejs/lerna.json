@@ -1,7 +1,9 @@
 {
   "lerna": "2.8.0",
   "npmClient": "yarn",
-  "npmClientArgs": [ "--ignore-engines" ],
+  "npmClientArgs": [
+    "--ignore-engines"
+  ],
   "packages": [
     "packages/*",
     ""
