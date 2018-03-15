@@ -1,11 +1,11 @@
 {
   "name": "@youversion/js-api",
   "description": "YouVersion API Wrapper for Javascript",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "main": "./lib/index.js",
   "license": "ISC",
   "dependencies": {
-    "@youversion/token-storage": "^0.0.52",
+    "@youversion/token-storage": "^0.0.53",
     "bluebird": "^3.5.1",
     "body-parser": "^1.13.3",
     "express": "^4.13.4",
