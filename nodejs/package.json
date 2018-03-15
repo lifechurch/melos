@@ -1,6 +1,6 @@
 {
   "name": "youversion-events",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "private": true,
   "license": "ISC",
   "scripts": {
@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@newrelic/native-metrics": "^2.1.0",
-    "@youversion/api-redux": "^0.4.45",
-    "@youversion/js-api": "^1.0.26",
+    "@youversion/api-redux": "^0.4.46",
+    "@youversion/js-api": "^1.0.27",
     "@youversion/melos": "^0.0.14",
     "@youversion/stringer-things": "0.0.1",
-    "@youversion/token-storage": "^0.0.56",
+    "@youversion/token-storage": "^0.0.57",
     "@youversion/utils": "^1.0.42",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
