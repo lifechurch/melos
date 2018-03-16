@@ -47,6 +47,8 @@ common:
   facebook_signin_scope: "public_profile,email"
   facebook_signin_app_id: "117344358296665"
   facebook_signin_app_secret: "8cc85686e4ff71fe0ee8de801dd5d7f3"
+  # Sentry/Raven DSN defaults to "YouVersion Web / Production" (historically):
+  sentry_dsn: "https://eddeeff44cf84a31b214e9530c200f5a:fec04d30688c4d79b7e1a5be0cd4df18@app.getsentry.com/6470"
 
 development:
 #  api_root: youversionapi.com
@@ -63,6 +65,9 @@ development:
   nodejs_import_url: "http://localhost:3000/featureImport"
   nodejs_api_host: "localhost"
   nodejs_api_port: "3000"
+  # Use alternate Sentry DSN ("YouVersion Web / Dev") in development environments:
+  sentry_dsn: "https://fd471bea250d42a6981047c9656bf735:a3292ab70935413c9e8b386d84b19f39@sentry.io/305258"
+
 
 staging:
   api_root: youversionapistaging.com
