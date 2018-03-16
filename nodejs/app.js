@@ -16,7 +16,9 @@ const auth = api.tokenAuth;
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-Raven.config('https://cc7248185fe54b72a7419782feb9f483:dd4bdec0c223479cbc7ba5231d89507f@sentry.io/149323').install()
+const SENTRY_DSN = process.env.SENTRY_DSN;
+
+Raven.config(SENTRY_DSN).install()
 
 require('babel-register')({ presets: [ 'env', 'react' ], plugins: [ 'transform-object-rest-spread', 'transform-function-bind', 'transform-object-assign', 'transform-class-properties', 'syntax-dynamic-import' ] });
 
