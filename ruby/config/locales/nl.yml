@@ -2091,7 +2091,7 @@ nl:
     what does the bible say: "Wat zegt de Bijbel over..."
     how are you feeling: "Hoe voel je je?"
     bible stories: "Bijbelverhalen"
-    what the bible says about: "Dit zegt de Bijbel over: %{topic}"
+    what the bible says about: "Here's what the Bible says about: %{topic}"
     amazed: "Verwonderd"
     content: "Inhoud"
     faithful: "Standvastig"
