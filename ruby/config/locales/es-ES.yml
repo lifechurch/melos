@@ -636,7 +636,7 @@ es-ES:
     no devices download copy: "Basado en la Biblia online, YouVersion, la aplicación de la Biblia es una Biblia gratis para móviles que puede ser instalada en casi cualquier dispositivo. la aplicación de la Biblia permite a los usuarios leer la Biblia, compartir versículos en las redes sociales, marcar los pasajes preferidos y mucho más— todo en un formato que va contigo en tu vida cada vez más dinámica. Visita <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> desde tu dispositivo movil, descarga la aplicación de la Biblia y conecta con tu cuenta de usuario."
     yes delete: "Si, eliminar mi cuenta"
     account delete success: "Hemos borrado tu cuenta de YouVersion, tal como lo solicitaste. Sentimos que te vayas. Esperamos sinceramente que sigas buscando formas que te permitan estar en contacto con la Palabra de Dios."
-    delete account description: "Si borras tu cuenta, eliminarás permanentemente toda tu información, historial, y personalización (como notas, destacados, subrayados, etc.) en Biblia.com y la Biblia.App. Esta acción no puede deshacerse ni por ti ni por nuestro equipo. Si estás seguro de querer seguir adelante, procede según se indica más abajo."
+    delete account description: "Si borras tu cuenta, eliminarás permanentemente toda tu información, historial, y personalización (como notas, destacados, subrayados, etc.) en Bible.com y la Aplicación de la Biblia. Esta acción no puede deshacerse ni por ti ni por nuestro equipo. Si estás seguro de querer seguir adelante, procede según se indica más abajo."
     user recent activity: "Actividad reciente de %{user}"
     my notes: "Notas"
     user notes: "Notas de %{user}"
@@ -970,7 +970,7 @@ es-ES:
     bookmark blurb: "Parece que quieres usar un marcador. ¡Buena decisión! Los marcadores te ayudan a mantener un registro de los versículos que quieres memorizar, compartir o marcar como favoritos. ¡Inicia sesión o crea una cuenta para comenzar!"
     friends blurb: "Parece que quieres interactuar con tus Amigos. ¡Buena idea! Podréis compartir lo que cada uno está aprendiendo y ayudaros a mantener los objetivos de lectura. ¡Inicia sesión o crea una cuenta para comenzar!"
     share blurb: "Parece que quieres compartir la Escritura. ¡Enhorabuena! Podrás compartirla vía Facebook o Twitter. Inicia sesión o crea una cuenta y comienza a compartir!"
-    highlight blurb: "Parece que quieres subrayar. ¡Genial! Subrayar te ayuda a organizarte y tener presente tus versículos favoritos. ¡Inicia sesión o crea un cuenta y comienza!"
+    highlight blurb: "Parece que quieres subrayar versículos. ¡Genial! Subrayar te ayuda a organizarte y tener presente tus versículos favoritos. ¡Inicia sesión o crea un cuenta y empieza a hacerlo!"
     note blurb: "Parece que quieres tomar nota. ¡Bien pensado! Las notas pueden ayudarte a recordar y organizar lo que descubres en la Palabra de Dios. ¡Inicia sesión o crea una cuenta y comienza!"
   audio:
     none: "Lo sentimos, el audio no está disponible para esta versión."
@@ -981,17 +981,17 @@ es-ES:
     title: "Subrayados"
     blank slate:
       heading: "Subraya versículos importantes"
-      description: "Mientras lees la Biblia, selecciona un versículo y subráyalo. Vuelve aquí para ver, editar o eliminar tu destacado."
+      description: "Mientras lees la Biblia, selecciona un versículo y subráyalo. Vuelve aquí para ver, editar o eliminar tu subrayado."
     none user: "%{username} no tiene subrayados"
     choose color: "Elige color"
-    create success: "¡Perfecto! Tu destacado se ha guardado"
-    create failure: "Error al guardar el destacado"
-    destroy success: "Destacado eliminado"
+    create success: "¡Perfecto! Tu subrayado se ha guardado"
+    create failure: "Error al guardar el subrayado"
+    destroy success: "Subrayado eliminado"
     destroy failure: "Error al eliminar el subrayado"
     creation error: "Lo sentimos, no se ha podido subrayar."
     delete error: "Lo sentimos, no ha sido posible eliminar lo subrayado."
     form:
-      save button: "Guardar destacado"
+      save button: "Guardar subrayado"
   searching:
     bible: "Biblia"
     plans: "Planes"
@@ -1157,7 +1157,7 @@ es-ES:
       start_now: "Comienza Ahora"
       votd:
         title: "Versículo del día"
-        highlight_bookmark: "Subraya, pon un marcador o comparte este Versículo"
+        highlight_bookmark: "Subraya, pon un marcador o comparte este versículo"
         subscribe: "Suscríbete al Versículo del Día"
       hero:
         heading: "Una Biblia gratis en tu teléfono, tablet y ordenador."
@@ -1174,7 +1174,7 @@ es-ES:
         subscribe heading: "Subscríbete a planes de la Biblia."
         subscribe description: "Abarca toda la Biblia, céntrate en un tema, o lee un devocional de un talentoso profesor. Elige tu plan y cada día encontrarás una selección de la Biblia esperando por ti."
         download heading: "Lleva la Biblia contigo."
-        download description: "<a href='https://bible.com/download' target='_self'>Descarga</a> la aplicación de la Biblia gratis en cualquier dispositivo móvil. Cuando uses la aplicación del móvil, tus notas, marcadores, subrayados, planes, y más serán automáticamente sincronizados en todos tus dispositivos."
+        download description: "<a href='https://bible.com/download' target='_self'>Descarga</a> la aplicación de la Biblia gratis en cualquier dispositivo móvil. Cuando uses la aplicación del móvil, tus notas, marcadores, subrayados, planes, y más se sincronizarán automáticamente en todos tus dispositivos."
       get started: "Comienza con tu nueva cuenta gratis."
       word with you: "La Palabra de Dios está contigo."
       download action: "Descarga la aplicación de la Biblia"
@@ -1711,7 +1711,7 @@ es-ES:
                   desc: "Líneas generales, temas clave, preguntas para discutir... Comparte cualquier contenido general basado en texto que pueda ayudar a tus asistentes a seguir el mensaje mientras se desarrolla. Tus módulos de texto pueden tener cualquier longitud y pueden incluir formato de texto enriquecido."
                 reference:
                   title: "Módulo de referencias bíblicas"
-                  desc: "Selecciona cualquier versículo o pasaje bíblico y enlázalo directamente desde cualquiera de las más de 1200 versiones en más de 900 idiomas. Las personas que estén viento tu evento podrán dar en tu cita bíblica para verla en su lector de la aplicación de la Biblia, donde podrán marcarla, resaltarla, etc."
+                  desc: "Selecciona cualquier versículo o pasaje bíblico, enlazado directamente desde cualquiera de las más de 1200 versiones en más de 900 idiomas. Las personas que estén viento tu evento podrán dar en tu cita bíblica para verla en su lector de la aplicación de la Biblia, donde podrán hacer un marcador, subrayarla, etc."
                 plan:
                   title: "Módulo del Plan"
                   desc: "Enlace a los Planes de Lectura de la Biblia y Devocionales relacionados con tus puntos de enseñanza, ayudando a tu audiencia a continuar comprometidos con la Palabra de Dios a lo largo de la semana."
@@ -1903,7 +1903,7 @@ es-ES:
       bookmark blurb: "Parece que quieres usar un marcador. ¡Buena decisión! Los marcadores te ayudan a mantener un registro de los versículos que quieres memorizar, compartir o marcar como favoritos. ¡Inicia sesión o crea una cuenta para comenzar!"
       friends blurb: "Parece que quieres interactuar con tus Amigos. ¡Buena idea! Podréis compartir lo que cada uno está aprendiendo y ayudaros a mantener los objetivos de lectura. ¡Inicia sesión o crea una cuenta para comenzar!"
       share blurb: "Parece que quieres compartir la Escritura. ¡Enhorabuena! Podrás compartirla vía Facebook o Twitter. Inicia sesión o crea una cuenta y comienza a compartir!"
-      highlight blurb: "Parece que quieres subrayar. ¡Genial! Subrayar te ayuda a organizarte y tener presente tus versículos favoritos. ¡Inicia sesión o crea un cuenta y comienza!"
+      highlight blurb: "Parece que quieres subrayar versículos. ¡Genial! Subrayar te ayuda a organizarte y tener presente tus versículos favoritos. ¡Inicia sesión o crea un cuenta y empieza a hacerlo!"
       note blurb: "Parece que quieres tomar nota. ¡Bien pensado! Las notas pueden ayudarte a recordar y organizar lo que descubres en la Palabra de Dios. ¡Inicia sesión o crea una cuenta y comienza!"
     Reader:
       chapter: "Capítulo"
