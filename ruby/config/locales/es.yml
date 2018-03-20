@@ -1196,7 +1196,7 @@ es:
       small: "Pequeño"
       medium: "Mediano"
       large: "Grande"
-      highlights: "Highlights"
+      highlights: "Resaltados"
       contrast: "Contraste"
       on: "Activado"
       off: "Desactivado"
@@ -1711,7 +1711,7 @@ es:
                   desc: "Esquemas de temas, puntos clave, preguntas de discusión… Comparta contenido basado en texto que ayudará a los asistentes a seguir su mensaje en el momento que sucede. Sus módulos de texto pueden ser de cualquier largo e incluir formato."
                 reference:
                   title: "Módulo de referencia bíblica"
-                  desc: "Seleccione cualquier versículo o pasaje de la Biblia, vinculado directamente a cualquiera de las 1.200+ versiones de YouVersion, en 900+ idiomas. Personas que observen su Evento pueden teclear su referencia para verla en su lector de la Biblia App, donde pueden marcarlo, sobresaltarlo y más."
+                  desc: "Seleccione cualquier versículo o pasaje de la Biblia, vinculado directamente a cualquiera de las más de1.200 versiones de YouVersion, en más de 900 Idiomas. Personas que observen su Evento pueden teclear su referencia para verla en su lector de la Biblia App, donde pueden marcarlo, Resaltarlo y más."
                 plan:
                   title: "Módulo de Plan"
                   desc: "Enlace a Planes de Lectura Bíblicos y Devocionales que se relacionan con la enseñanza de su Evento para ayudar a su audiencia a continuar leyendo la Palabra de Dios durante la semana."
