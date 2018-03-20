@@ -52,7 +52,7 @@ es:
         verse: "Me gozaré y alegraré en tu misericordia, porque has visto mi aflicción; has conocido mi alma en las angustias."
         reference: "Salmo 31:7"
         discover:
-          copy: "Descubra y aprenda con sus amigos mientras ellos agregan resaltados, marcadores y notas."
+          copy: "Descubra y aprenda con sus amigos mientras ellos agregan Resaltados, Marcadores y notas."
           button: "¿Dónde puedo empezar?"
         share:
           copy: "Comparta conversaciones honestas sobre la Escritura."
@@ -139,7 +139,7 @@ es:
       description: "La Biblia App ha sido instalada casi 100 millones de veces – ¡Un increíble logro! Pero sólo estamos iniciando. Descargue gratuitamente la Biblia App hoy – y luego comparta la App con sus amigos. Hagamos historia juntos."
     mobile:
       title: "La Biblia App"
-      description: "Lea la Palabra de Dios en cualquier momento y en cualquier lugar con la aplicación YouVersion Bible. Comparta las Escrituras con amigos, resalte y marque los pasajes, y cree un hábito diario con los Planes Bíblicos. Disponible para iOS, Android, Blackberry, Windows Phone y más."
+      description: "Lea la Palabra de Dios en cualquier momento y en cualquier lugar usando YouVersion Bible App. Comparta las Escrituras con amigos, Resalte y Marque los pasajes, y cree un hábito diario con los Planes Bíblicos. Disponible para iOS, Android, Blackberry, Windows Phone y más."
       download or read: "Descargar ahora o leer en línea."
     site:
       title: "Bible.com/es"
@@ -1143,7 +1143,7 @@ es:
         action: "Ver Versiones de la Biblia"
       make_yours:
         title: "Haga de ella su Biblia"
-        body: "Resalte o marque sus versículos favoritos, haga Imágenes de Versículos que puede compartir, y agregue a pasajes bíblicos Notas públicas o privadas."
+        body: "Resalte o Marque sus versículos favoritos, haga Imágenes de Versículo que puede compartir, y agregue pasajes bíblicos a Notas públicas o privadas."
         action: "Crear Su Cuenta Gratis"
       install_now:
         title: "Instalar la App Ahora"
@@ -1157,7 +1157,7 @@ es:
       start_now: "Empezar ahora"
       votd:
         title: "Versículo del Día"
-        highlight_bookmark: "Resalte, Marcque, o comparta este versículo"
+        highlight_bookmark: "Resaltar, Marcar, o Compartir este versículo"
         subscribe: "Suscribirse al Versículo del Día"
       hero:
         heading: "La Biblia gratis para su teléfono, tableta, y computadora."
@@ -1170,7 +1170,7 @@ es:
         read heading: "Leer la Biblia."
         read description: "Elija entre <a href='%{versions_path}' target='_self'>cientos de versiones e idiomas de la Biblia</a>. Compare dos versiones una al lado de la otra. Puede incluso elegir el tipo y tamaño de letra en la pantalla. Haga que su experiencia en línea sea exactamente lo que desea."
         study heading: "Estudie la Biblia."
-        study description: "<strong>Resalte </strong>sus versículos con su color favorito, <strong>marque </strong>sus versículos favoritos, y cree Notas acerca de lo que está aprendiendo. No solo está invirtiendo tiempo en la Palabra de Dios, también está construyendo una historia de su interacción con la Biblia."
+        study description: "<strong>Resalte </strong>sus versículos con su color favorito, <strong>Marque </strong>sus versículos favoritos, y cree Notas acerca de lo que está aprendiendo. No solo está invirtiendo tiempo en la Palabra de Dios, también está construyendo una historia de su interacción con la Biblia."
         subscribe heading: "Subscríbase a los Planes de Lectura de la Biblia."
         subscribe description: "Lea toda la Biblia, enfóquese en un tema, o lea un devocional de un buen maestro. Elija un Plan de Lectura y diariamente hallará una selección bíblica esperando por usted."
         download heading: "Lleve la Biblia consigo."
@@ -1839,7 +1839,7 @@ es:
           preview:
             notes:
               prompt: "Agregar sus Notas privadas..."
-              noAuthPrompt: "<a href='%{url}'><span className='highlight'>Inicia sesión para añadir sus Notas privadas...</span></a>"
+              noAuthPrompt: "<a href='%{url}'><span className='highlight'>Ingresar</span>para agregar sus notas privadas…</a>"
             components:
               PreviewFeed:
                 review: "Revise su Evento antes de publicarlo"
