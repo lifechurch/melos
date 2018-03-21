@@ -5,7 +5,7 @@ metadata:
   labels:
     app: bible
   name: bible
-  namespace: bible
+  namespace: $KUBE_NAMESPACE
 spec:
   maxReplicas: 30
   minReplicas: 8
