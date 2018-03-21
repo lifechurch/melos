@@ -5,12 +5,12 @@ ar:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        zero: "about %{count} hours ago"
-        one: "about %{count} hour ago"
-        two: "about %{count} hours ago"
-        few: "about %{count} hours ago"
-        many: "about %{count} hours ago"
-        other: "about %{count} hours ago"
+        zero: "منذ %{count} ساعة مضت"
+        one: "منذ %{count} ساعه مضت"
+        two: "منذ %{count} ساعه مضت"
+        few: "منذ %{count} ساعه مضت"
+        many: "منذ %{count} ساعه مضت"
+        other: "منذ %{count} ساعه مضت"
       about_x_months:
         zero: "about %{count} months ago"
         one: "about %{count} month ago"
@@ -307,12 +307,12 @@ ar:
   notes title: "ملاحظات"
   friends:
     you have N friends:
-      zero: "You have %{count} friends"
-      one: "You have %{count} friend"
-      two: "You have %{count} friends"
-      few: "You have %{count} friends"
-      many: "You have %{count} friends"
-      other: "You have %{count} friends"
+      zero: "لديك %{count} صديق"
+      one: "لديك %{count} صديق"
+      two: "لديك %{count} صديق"
+      few: "لديك %{count} أصدقاء"
+      many: "لديك %{count} أصدقاء"
+      other: "لديك %{count} أصدقاء"
     none me: "شارك لحظاتك الخاصة فى الكتاب المقدس مثل  الإشارات المرجعية والنصوص المميزة والملاحظات مع أصدقائك المقربيين و أقربائك"
     find friends: "ابحث عن أصدقاء"
     blank slate:
