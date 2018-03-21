@@ -33,11 +33,11 @@ nl:
         one: "%{count} minuut geleden"
         other: "%{count} minuten geleden"
       x_months:
-        one: "%{count} month ago"
-        other: "%{count} months ago"
+        one: "%{count} maand geleden"
+        other: "%{count} maanden geleden"
       x_seconds:
-        one: "%{count} second ago"
-        other: "%{count} seconds ago"
+        one: "%{count} seconde geleden"
+        other: "%{count} seconden geleden"
   counter:
     format: "999,999,999"
   social:
@@ -263,8 +263,8 @@ nl:
   notes title: "Notities"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
-      other: "You have %{count} friends"
+      one: "Je hebt %{count} vriend"
+      other: "Je hebt %{count} vrienden"
     none me: "Deel van jouw Bijbelmomenten, bijvoorbeeld bladwijzers, markeringen en notities met goede vrienden en familie."
     find friends: "Vrienden vinden"
     blank slate:
@@ -448,8 +448,8 @@ nl:
     destroy failure: "Jouw 'vind ik leuk' kon niet worden verwijderd"
   comments:
     view all N:
-      one: "View %{count} comment"
-      other: "View all %{count} comments"
+      one: "Bekijk %{count} reactie"
+      other: "Bekijk alle %{count} reacties"
     post comment: "Plaats een reactie"
     create success: "Gelukt! Jouw reactie is geplaatst."
     create failure: "Reactie kon niet worden geplaatst"
@@ -808,8 +808,8 @@ nl:
         one: "%{count} vriend heeft dit leesplan voltooid"
         other: "%{count} vrienden hebben dit leesplan voltooid"
       total completions:
-        one: "Over %{count} completion"
-        other: "Over %{count} completions"
+        one: "Meer dan %{count} voltooiing"
+        other: "Meer dan %{count} voltooiingen"
       view all: "Bekijk alles"
       close: "Sluiten"
     settings: "Instellingen"
@@ -2091,7 +2091,7 @@ nl:
     what does the bible say: "Wat zegt de Bijbel over..."
     how are you feeling: "Hoe voel je je?"
     bible stories: "Bijbelverhalen"
-    what the bible says about: "Here's what the Bible says about: %{topic}"
+    what the bible says about: "Dit zegt de Bijbel over %{topic}"
     amazed: "Verwonderd"
     content: "Inhoud"
     faithful: "Standvastig"
