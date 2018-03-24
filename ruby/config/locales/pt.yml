@@ -11,7 +11,7 @@ pt:
         one: "cerca de %{count} mês atrás"
         other: "cerca de %{count} meses atrás"
       about_x_years:
-        one: "about %{count} year ago"
+        one: "cerca de %{count} ano atrás"
         other: "cerca de %{count} anos atrás"
       almost_x_years:
         one: "almost %{count} year ago"
