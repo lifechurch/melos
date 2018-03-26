@@ -1,6 +1,6 @@
 {
 		"name": "@youversion/token-storage",
-		"version": "0.0.51",
+		"version": "0.0.58",
 		"description": "YouVersion Token Storage",
 		"license": "ISC",
 		"main": "./lib/index.js",
