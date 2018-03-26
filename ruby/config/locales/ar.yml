@@ -26,12 +26,12 @@ ar:
         many: "about %{count} years ago"
         other: "about %{count} years ago"
       almost_x_years:
-        zero: "almost %{count} years ago"
-        one: "almost %{count} year ago"
-        two: "almost %{count} years ago"
-        few: "almost %{count} years ago"
-        many: "almost %{count} years ago"
-        other: "almost %{count} years ago"
+        zero: "تقريبا %{count} سنه مضت"
+        one: "تقريبا %{count} سنه مضت"
+        two: "تقريبا %{count} سنه مضت"
+        few: "تقريبا %{count} سنوات مضت"
+        many: "تقريبا %{count} سنوات مضت"
+        other: "تقريبا %{count} سنه مضت"
       half_a_minute: "قبل نصف دقيقة"
       less_than_x_minutes:
         zero: "less than %{count} minutes ago"
