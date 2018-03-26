@@ -5,14 +5,14 @@ pt:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        other: "about %{count} hours ago"
+        one: "cerca de %{count} hora atrás"
+        other: "cerca de %{count} horas atrás"
       about_x_months:
-        one: "about %{count} month ago"
-        other: "about %{count} months ago"
+        one: "cerca de %{count} mês atrás"
+        other: "cerca de %{count} meses atrás"
       about_x_years:
-        one: "about %{count} year ago"
-        other: "about %{count} years ago"
+        one: "cerca de %{count} ano atrás"
+        other: "cerca de %{count} anos atrás"
       almost_x_years:
         one: "almost %{count} year ago"
         other: "almost %{count} years ago"

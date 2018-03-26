@@ -742,7 +742,7 @@
 	"moment.video.watched.self.title": "Du så på <b>{title}</b>",
 	"moment.video.watched.title": "{name} så på <b>{title}</b>",
 	"moment.client_side.reading_plan_carousel.advent.title": "Gjør deg klar for julen med en leseplan for advent",
-	"moment.system.bafk.title": "",
+	"moment.system.bafk.title": "Hjelp barna dine å bli glade i Guds ord.",
 	"moment.system.christmas.title": "Del de gode nyhetene: Frelseren er født!",
 	"moment.client_side.reading_plan_carousel.january.title": "Ditt beste år noen sinne starter nå.",
 	"moment.client_side.reading_plan_carousel.february.title": "Finn Guds kjærlighet i hans ord.",
@@ -814,6 +814,11 @@
 	"notifications.plans_with_friends_comment": "{name} kommenterte på dag {day} av planen\"{title}.\"",
 	"notifications.plans_with_friends_accept": "{name} aksepterte din invitasjon til å lese planen \"{title}\" sammen med deg.",
 	"notifications.plans_with_friends_update_start_date": "{name} endret startdatoen for planen \"{title}\" til {date}.",
+	"notifications.comments.moment.mine.badge": "",
+	"notifications.comments.moments.friend.badge": "",
+	"notifications.comments.moments.friend.owner.badge": "",
+	"notifications.likes.moment.mine.badge": "",
+	"notifications.moments.create.badge": "",
 	"share.find_friends.invite_email_html": "<p>Hei!</p><p>Jeg bruker Bibel-appen fra YouVersion og ønsker å dele denne med deg. Dersom du ikke kjenner denne fra før, er det en enkel måte å bringe skjønnheten og sannheten fra Bibelen inn i hverdagen din. </p><p><strong>Last ned Bibel-appen:</strong> les, se, hør og del på smarttelefonen eller nettbrettet ditt, og på www.bible.com/no</p><p><strong>Opprett din egen konto:</strong> abonner på bibelleseplaner og ha tilgang til bokmerker, markeringer og notater på alle plattformer.</p><p><strong>Legg til venner (Lik meg!):</strong> utforsk og diskuter Bibelen med personer du bryr deg om</p><p>Alt dette får du i Bibel-appen - kom i gang her: </p>",
 	"share.invite_email_body": "Jeg har glede av Bibel-appen fra YouVersion, og tror at du også vil like den. Jeg åpner Bibelen mer nå fordi det er så lett å lese, se, lytte og dele. Den har også leseplaner, der utvalgte deler av Bibelen venter på meg hver dag. \n\nDu kan få den (gratis!) for så godt som alle mobile enheter her: ",
 	"share.invite_email_subject": "Har du Bibel-appen?",
@@ -821,6 +826,6 @@
 	"share.invite_facebook_direct": "Har du Bibel-appen? Jeg liker den, og tenkte at du også ville like den. Her er lenke om du ikke har den:",
 	"share.invite_sms": "Jeg elsker bibelappen til YouVersion. Jeg tror du også vil elske den:",
 	"share.invite_sms_prefix": "Fra {name}:",
-	"share.invite_twitter": "Bibel-appen fra @YouVersion er plassert på førstesiden på skjermen min. Les, se, lytt og del - alt i en gratis app:",
+	"share.invite_twitter": "Bibel-appen fra @YouVersion er plassert på førstesiden p�� skjermen min. Les, se, lytt og del - alt i en gratis app:",
 	"share.invite_twitter_direct": "Har du Bibel-appen fra @YouVersion? Jeg liker den, og tenkte at du også ville like den. Her er lenke om du ikke har den:"
 }
