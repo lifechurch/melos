@@ -17,11 +17,17 @@ module YV
       end
 
       def cookie_domain
+        puts 'getting cookie domain'
+        domain = '.bible.com'
         begin
-          (request.host == 'localhost') ? 'localhost' : request.host.split('.').last(2).unshift('').join('.')
+          puts 'trying option1'
+          domain = (request.host == 'localhost') ? 'localhost' : request.host.split('.').last(2).unshift('').join('.')
         rescue
-          '.bible.com'
+          puts 'trying option2'
+          domain = '.bible.com'
         end
+        puts "COOKIE DOMAIN: #{domain}"
+        return domain
       end
 
       def force_login(opts = {})
@@ -76,7 +82,7 @@ module YV
           cookies.permanent.signed[:ti] = tp_id
         end
 
-        cookies.delete( name: 'YouVersionToken', domain: cookie_domain )
+        cookies.delete 'YouVersionToken', domain: cookie_domain
 				cookies.delete 'OAUTH'
         @current_auth = Hashie::Mash.new( { 'user_id' => user.id, 'username' => user.username, 'password' => password, 'tp_token' => tp_token, 'tp_id' => tp_id } )
       end
@@ -92,7 +98,7 @@ module YV
         cookies.delete :f
         cookies.delete :t
         cookies.delete :ti
-        cookies.delete( name: 'YouVersionToken', domain: cookie_domain )
+        cookies.delete 'YouVersionToken', domain: cookie_domain
 				cookies.delete 'OAUTH'
         clear_redirect
       end

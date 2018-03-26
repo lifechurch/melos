@@ -62,7 +62,7 @@ module YV
               end
 
               if (response['error'] == INVALID_TOKEN_ERROR)
-                cookies.delete(name: CookieName, domain: cookieDomain)
+                cookies.delete CookieName, domain: cookieDomain
                 return get(feature, params, cookies, current_auth, current_user, request)
               end
 
