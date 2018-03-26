@@ -17,16 +17,12 @@ module YV
       end
 
       def cookie_domain
-        puts 'getting cookie domain'
         domain = '.bible.com'
         begin
-          puts 'trying option1'
           domain = (request.host == 'localhost') ? 'localhost' : request.host.split('.').last(2).unshift('').join('.')
         rescue
-          puts 'trying option2'
           domain = '.bible.com'
         end
-        puts "COOKIE DOMAIN: #{domain}"
         return domain
       end
 
