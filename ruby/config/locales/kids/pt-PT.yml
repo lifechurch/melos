@@ -9,7 +9,7 @@ pt-PT:
     app store: "Disponível na App Store"
     google play: "Disponível no Google Play"
     amazon: "Disponível na Amazon Appstore para Android"
-    app icon: "App icon for The Bible App for Kids"
+    app icon: "Ícone da App para a App da Bíblia para crianças"
     jesus and friends: "Jesus e os amigos"
     interact text: "Interaja com a Bíblia e veja como se torna viva."
     story text 1: "O jardim do Éden"
@@ -24,7 +24,7 @@ pt-PT:
     feature 5: "Navegação criada a pensar nas crianças"
     share:
       tell friends: "Fale aos seus amigos a respeito da App da Bíblia para Crianças."
-      facebook name: "The Bible App for Kids"
+      facebook name: "A App da Bíblia para Crianças"
       facebook description: "Chegou a App da Bíblia para Crianças! Faça download gratuito para iOS e Android: histórias da Bíblia interativas para ajudar as crianças a aprender, brincar, e crescer na Palavra de Deus. www.bible.com/pt-pt/criancas"
       facebook link: "http://www.bible.com/pt-pt/criancas"
       facebook redirect: "http://www.bible.com/pt-pt/criancas"
@@ -44,5 +44,5 @@ pt-PT:
   meta:
     best kids app: "A melhor App para crianças!"
     kids_app:
-      title: "The Bible App for Kids"
+      title: "A App da Bíblia para Crianças"
       description: "A App da Bíblia para Crianças é uma ótima maneira dos seus filhos aprenderem as histórias Bíblicas sobre Jesus, o nosso dom da vida eterna e as muitas lições que Deus nos ensina. Nesta experiência interativa, as crianças tomam contacto direto com a Palavra de Deus através de imagens apelativas, ao mesmo tempo que ganham pontos por ler e colecionarem tesouros."
