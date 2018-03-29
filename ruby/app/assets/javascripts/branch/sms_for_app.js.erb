@@ -6,7 +6,7 @@ function loadsms(defaultCountry) {
   $("input[id^=numberToText_sms]").intlTelInput({
       preferredCountries: "undefined" == typeof preferredCountries ? ["us"] : preferredCountries,
       defaultCountry: "undefined" == typeof smsDefaultCountry ? "us" : smsDefaultCountry,
-      utilsScript: 'https://commondatastorage.googleapis.com/installs.youversion.com/utils.js',
+      utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/6.0.0/lib/libphonenumber/build/utils.js',
       onlyCountries: "undefined" == typeof onlyCountries ? ["us"] : onlyCountries
   });
 
