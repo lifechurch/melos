@@ -5,11 +5,11 @@ el:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        other: "about %{count} hours ago"
+        one: "περίπου %{count} ώρα πριν"
+        other: "περίπου %{count} ώρες πριν"
       about_x_months:
-        one: "about %{count} month ago"
-        other: "about %{count} months ago"
+        one: "περίπου %{count} μήνα πριν"
+        other: "περίπου %{count} μήνες πριν"
       about_x_years:
         one: "about %{count} year ago"
         other: "about %{count} years ago"
@@ -263,8 +263,8 @@ el:
   notes title: "Σημειώσεις"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
-      other: "You have %{count} friends"
+      one: "Έχετε %{count} φίλο/η"
+      other: "Έχετε %{count} φίλους\\ες"
     none me: "Κοινοποιήστε, στους φίλους και την οικογένειά σας, τις εμπερίες σας με την Αγία Γραφή, όπως σελιδοδείκτες, επισημάνσεις και σημειώσεις"
     find friends: "Αναζήτηση φίλων"
     blank slate:
