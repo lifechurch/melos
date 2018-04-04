@@ -32,17 +32,17 @@ be:
       twitter hashtags: "дзіцячаябіблія"
       email: "Эмэйл"
       email subject: "Біблія для дзяцей!"
-      email body: "Выдатная навіна — зьявіўся Bible App для дзяцей! Ён цалкам бясплатны і дасяжны для iPhone, iPad, iPod touch і Android. У дадатку вы знойдзеце анімаваную калекцыю біблейскіх гісторыяў, якая ўвесь час папаўняецца, заданьняў, якія выдатна дапамагаюць дзецям вучыць доўгія гісторыі зь Бібліі. Заходзьце на bible.com/kids на вашай мабільнай прыладзе і пампуйце яго сёньня."
+      email body: "Выдатная навіна — з'явілася Біблія для дзяцей! Яна цалкам бясплатная і даступная для iPhone, iPad, iPod touch і Android. Там вы знойдзеце анімаваную калекцыю біблейскіх гісторыяў, якая ўвесь час папаўняецца, і гульняў, якія выдатна дапамагаюць дзецям вучыць доўгія гісторыі з Бібліі. Біблію для дзяцей можна спампаваць прама зазар на bible.com/kids з вашай мабільнай прылады."
     partner:
-      youversion: "YouVersion: The world’s most popular Bible App"
-      in partnership: "in partnership with"
-      one hope: "One Hope: Extraordinary Bible content for Kids"
+      youversion: "YouVersion: Самая папулярная ў свеце Біблійная праграма"
+      in partnership: "ў супрацоўніцтве з"
+      one hope: "One Hope: Займальны Біблійны кантэнт для дзяцей"
     links:
       apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
       google: "http://play.google.com/store/apps/details?id=com.bible.kids"
       amazon: "http://www.amazon.com/gp/product/B00GURLC40"
   meta:
-    best kids app: "Найлепшы дзіцячы дадатак!"
+    best kids app: "Найлепшая дзіцячая праграма!"
     kids_app:
       title: "Біблія для дзяцей"
-      description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+      description: "Біблія для дзяцей — гэта выдатная магчымасць пазнаёміцца з Біблейскімі гісторыямі пра Ісуса, пра дар вечнага жыцця і шмат іншых рэчаў, якім Бог вучыць нас. У гэтый інтэрактыўнай праграме дзеці непасрэдна ўзаемадзейнічаюць са Словам Божым пры дапамозе прыгожых ілюстрацый, займальных гульняў і калекцыяніравання."
