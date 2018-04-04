@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Dropzone from 'react-dropzone'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
-import { Link } from 'react-router'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
-import Select from '../../../../../../app/components/Select'
 import Textarea from '../../../../../../app/components/Textarea'
 import Img from '../../../../../../app/components/Image'
 import ErrorMessage from '../../../../../../app/components/ErrorMessage'
-import Dropzone from 'react-dropzone'
 import ActionCreators from '../actions/creators'
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 const PREFERRED_IMAGE_WIDTH = 1440
 const PREFERRED_IMAGE_HEIGHT = 810
 const PREFERRED_IMAGE_RATIO = PREFERRED_IMAGE_HEIGHT / PREFERRED_IMAGE_WIDTH
 const MIN_IMAGE_WIDTH = 960
+const MAX_IMAGE_WIDTH = 1920
 
 class DetailsEdit extends Component {
 
@@ -35,10 +34,10 @@ class DetailsEdit extends Component {
 				formData.append('file', files[0])
 
 				const reader = new FileReader()
-				reader.onload = function (loadEvent) {
+				reader.onload = (loadEvent) => {
 					const image = new Image()
 					const handleLoad = () => {
-						if ((PREFERRED_IMAGE_RATIO !== (image.height / image.width)) || (image.width < MIN_IMAGE_WIDTH)) {
+						if ((PREFERRED_IMAGE_RATIO !== (image.height / image.width)) || (image.width < MIN_IMAGE_WIDTH) || (image.width > MAX_IMAGE_WIDTH)) {
 							const errorMessage = intl.formatMessage({ id: 'features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize' }, { requiredWidth: PREFERRED_IMAGE_WIDTH.toString(), requiredHeight: PREFERRED_IMAGE_HEIGHT.toString(), yourWidth: image.width.toString(), yourHeight: image.height.toString() })
 							dispatch(ActionCreators.imgUploadFailure({ errors: [ errorMessage ] }))
 
@@ -48,9 +47,9 @@ class DetailsEdit extends Component {
 							xhr.open('POST', response_init.url)
 							xhr.send(formData)
 
-							xhr.onload = function (e) {
+							xhr.onload = () => {
 								if (xhr.readyState === 4) {
-									if (xhr.status >= 200 < 300) {
+									if (xhr.status >= 200 && xhr.status < 300) {
 										handleChange({ target: { name: 'image_id', value: response_init.image_id } })
 										handleChange({ target: {
 											name: 'images',
@@ -64,8 +63,8 @@ class DetailsEdit extends Component {
 									}
 								}
 							}
-							xhr.onerror = function (e) {
-										// network error // console.error(xhr.statusText);
+							xhr.onerror = () => {
+                // network error // console.error(xhr.statusText);
 							}
 						}
 					}
@@ -80,7 +79,7 @@ class DetailsEdit extends Component {
 				reader.readAsDataURL(files[0])
 			})
 		} else {
-						// invalid file type
+			// invalid file type
 			const fileTypeError = intl.formatMessage({ id: 'features.EventEdit.features.details.components.DetailsEdit.errors.wrongType' })
 			dispatch(ActionCreators.imgUploadFailure({ errors: [fileTypeError] }))
 		}
@@ -96,13 +95,14 @@ class DetailsEdit extends Component {
 	}
 
 	render() {
-		const { handleChange, handleNext, event, params, intl } = this.props
+		const { handleChange, handleNext, event, intl } = this.props
 
 		let image
-		const image_error = (typeof event.errors.fields.image !== 'undefined'
-								 && Array.isArray(event.errors.fields.image)
-								 && event.errors.fields.image.length > 0
-								 ) ? <small className="error">{event.errors.fields.image[0]}</small> : null
+		const image_error = (
+      typeof event.errors.fields.image !== 'undefined'
+        && Array.isArray(event.errors.fields.image)
+        && event.errors.fields.image.length > 0
+    ) ? <small className="error">{event.errors.fields.image[0]}</small> : null
 		if (event.item.images) {
 			image = (<Row>
 				<div className="columns medium-10 large-8 medium-offset-1 large-offset-2 event-image">
@@ -111,7 +111,7 @@ class DetailsEdit extends Component {
 				<div className="columns medium-1 large-2">
 					<Dropzone className='hollow-button green' onDrop={::this.onDrop} multiple={false}><FormattedMessage id="features.EventEdit.features.details.components.DetailsEdit.changeImage" /></Dropzone>
 					<p className='image-drop-manual-reqs' />
-					<a className='remove' onClick={::this.removeImage}>
+					<a tabIndex={0} className='remove' onClick={::this.removeImage}>
 						<FormattedMessage id="features.EventEdit.features.details.components.DetailsEdit.removeImage" />
 					</a>
 				</div>
@@ -164,7 +164,7 @@ class DetailsEdit extends Component {
 
 				<Row>
 					<Column s='medium-12' a='right'>
-						<a disabled={event.errors.hasError} onClick={handleNext}><FormattedHTMLMessage id="features.EventEdit.features.details.components.DetailsEdit.next" /></a>
+						<a tabIndex={0} disabled={event.errors.hasError} onClick={handleNext}><FormattedHTMLMessage id="features.EventEdit.features.details.components.DetailsEdit.next" /></a>
 					</Column>
 				</Row>
 			</form>
@@ -176,8 +176,9 @@ class DetailsEdit extends Component {
 DetailsEdit.propTypes = {
 	handleChange: PropTypes.func.isRequired,
 	handleNext: PropTypes.func.isRequired,
-	handleLeave: PropTypes.func.isRequired,
-	event: PropTypes.object.isRequired
+	event: PropTypes.object.isRequired,
+	intl: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired
 }
 
 export default DetailsEdit
