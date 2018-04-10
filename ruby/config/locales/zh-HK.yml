@@ -22,17 +22,17 @@ zh-HK:
       x_days:
         other: "%{count}天前"
       x_minutes:
-        other: "%{count} minutes ago"
+        other: "%{count}分鐘前"
       x_months:
-        other: "%{count} months ago"
+        other: "%{count}個月前"
       x_seconds:
-        other: "%{count} seconds ago"
+        other: "%{count}秒前"
   counter:
     format: "999,999,999"
   social:
     intro page:
-      main heading: "Conversation & Discovery"
-      main description: "A new way to explore the Bible with trusted friends"
+      main heading: "對話與發現"
+      main description: "與你信賴的朋友一起探索聖經的全新方式"
       moment:
         user aaron: "Aaron Steele"
         user andy: "Andy Knight"
