@@ -34,10 +34,10 @@ zh-HK:
       main heading: "對話與發現"
       main description: "與你信賴的朋友一起探索聖經的全新方式"
       moment:
-        user aaron: "Aaron Steele"
-        user andy: "Andy Knight"
-        timestamp: "5 days ago"
-        title: "bookmarked Psalm 31:7"
+        user aaron: "亞倫"
+        user andy: "安迪"
+        timestamp: "5 天前"
+        title: "書籤標記了詩篇 31:7"
         verse: "I will be glad and rejoice in your unfailing love, for you have seen my troubles, and you care about the anguish of my soul."
         reference: "Psalm 31:7"
         discover:
