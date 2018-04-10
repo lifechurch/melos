@@ -64,7 +64,7 @@ zh-HK:
       read less: "收起"
     share: "分享"
     add comment: "添加評論"
-    my connections: "Connected Accounts"
+    my connections: "連接的賬戶"
     connected as: "You are connected to %{connection} as %{username}."
     remove connection: "Remove this connection"
     connection friends: "Here are some YouVersion users you're connected to on %{connection}:"
@@ -135,7 +135,7 @@ zh-HK:
       description: "Bring the beauty and truth of the Bible into everyday life. With the YouVersion Bible App, you can read, watch, listen, and share on your smartphone or tablet, and online at Bible.com."
     connections:
       index:
-        title: "Connected Accounts"
+        title: "連接的賬戶"
   now: "Now"
   select dropdown: "--Select--"
   celebrating 50MM: "Celebrating 50 Million App Installs!"
@@ -606,7 +606,7 @@ zh-HK:
     picture: "Picture"
     edit picture: "Change Picture"
     edit notifications: "Manage Notifications"
-    edit connections: "Connected Accounts"
+    edit connections: "連接的賬戶"
     edit devices: "Connected Devices"
     vod_subscriptions: "Verse of the Day Subscriptions"
     vod_subscription success: "You have successfully updated your Verse of the Day subscription!"
