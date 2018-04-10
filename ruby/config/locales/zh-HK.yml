@@ -44,17 +44,17 @@ zh-HK:
           copy: "與你的朋友一起從彼此的醒目標示、書籤和筆記中發掘和學習。"
           button: "我從哪裡開始？"
         share:
-          copy: "Share honest conversations about Scripture."
-          button: "Get started by finding some friends."
+          copy: "共享有關聖經的真誠交流。"
+          button: "從尋找朋友開始。"
         likes:
-          info: "and 4 more like this"
+          info: "有4個人點讚"
         comments:
           first:
-            text: "Really needed to hear that today, thanks. Let‘s catch up soon!"
-            time: "about 3 hours ago"
+            text: "這正是我今天所需要聽到的，謝謝！讓我們找機會再聊！"
+            time: "大約3小時前"
           second:
-            text: "Amen, me too. Sending you an email now."
-            time: "about 27 minutes ago"
+            text: "阿們，我也是。現在正給你發郵件。"
+            time: "大約27分鐘前"
           field placeholder: "Write a comment..."
     widget:
       timeline: "Timeline"
