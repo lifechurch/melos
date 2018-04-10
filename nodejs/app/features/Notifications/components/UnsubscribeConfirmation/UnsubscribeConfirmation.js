@@ -111,6 +111,8 @@ UnsubscribeConfirmation.propTypes = {
 		'likes',
 		'moments',
 		'newsletter',
+		'pwf_accepts',
+		'pwf_comments',
 		'reading_plans',
 		'rp_daily',
 		'votd',
