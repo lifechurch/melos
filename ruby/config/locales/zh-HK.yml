@@ -1,26 +1,26 @@
 zh-HK:
   time:
     formats:
-      votd: "%B %-d, %Y"
+      votd: "%Y/%B/%-d"
   datetime:
     time_ago_in_words:
       about_x_hours:
-        other: "about %{count} hours ago"
+        other: "大約%{count}小時前"
       about_x_months:
-        other: "about %{count} months ago"
+        other: "大約%{count}個月前"
       about_x_years:
-        other: "about %{count} years ago"
+        other: "大約%{count}年前"
       almost_x_years:
-        other: "almost %{count} years ago"
-      half_a_minute: "half a minute ago"
+        other: "將近%{count}年前"
+      half_a_minute: "半分鐘前"
       less_than_x_minutes:
-        other: "less than %{count} minutes ago"
+        other: "不到%{count}分鐘前"
       less_than_x_seconds:
-        other: "less than %{count} seconds ago"
+        other: "不到%{count}秒前"
       over_x_years:
-        other: "over %{count} years ago"
+        other: "超過%{count}年前"
       x_days:
-        other: "%{count} days ago"
+        other: "%{count}天前"
       x_minutes:
         other: "%{count} minutes ago"
       x_months:
