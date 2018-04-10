@@ -442,7 +442,7 @@ en:
     destroy success:                            "Like deleted"
     destroy failure:                            "Your like could not be deleted"
   comments:
-    view all N:                                 
+    view all N:
         one: "View %{count} comment"
         other: "View all %{count} comments"
     post comment:                               "Post a comment"
@@ -453,7 +453,7 @@ en:
     form:
       save button:                              "Post"
   friends:
-    you have N friends:                         
+    you have N friends:
         one: "You have %{count} friend"
         other: "You have %{count} friends"
     none me:                                    "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
@@ -816,7 +816,7 @@ en:
       friends completed:
         one:                                    "%{count} friend has completed this plan"
         other:                                  "%{count} friends have completed this plan"
-      total completions:                        
+      total completions:
         one: "Over %{count} completion"
         other: "Over %{count} completions"
       view all:                                 "View All"
@@ -1399,6 +1399,8 @@ en:
         likes:                                   "You successfully unsubscribed from <b>Likes</b> emails."
         moments:                                 "You successfully unsubscribed from <b>Moments</b> emails."
         newsletter:                              "You successfully unsubscribed from <b>Newsletter</b> emails."
+        pwf_comments:                            "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts:                             "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans:                           "You successfully unsubscribed from <b>Reading Plans</b> emails."
         rp_daily:                                "You successfully unsubscribed from <b>Reading Plans Daily emails</b> from %{plan_title}."
         votd:                                    "You successfully unsubscribed from <b>Verse of the Day</b> emails."
