@@ -55,7 +55,7 @@ zh-HK:
           second:
             text: "阿們，我也是。現在正給你發郵件。"
             time: "大約27分鐘前"
-          field placeholder: "Write a comment..."
+          field placeholder: "寫評論……"
     widget:
       timeline: "Timeline"
       no activity yet: "There hasn't been any activity yet."
