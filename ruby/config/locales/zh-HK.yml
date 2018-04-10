@@ -57,7 +57,7 @@ zh-HK:
             time: "大約27分鐘前"
           field placeholder: "寫評論……"
     widget:
-      timeline: "Timeline"
+      timeline: "時間線"
       no activity yet: "還沒有任何活動。"
     moment:
       read all: "閱讀全部"
