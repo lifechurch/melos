@@ -38,11 +38,11 @@ zh-HK:
         user andy: "安迪"
         timestamp: "5 天前"
         title: "書籤標記了詩篇 31:7"
-        verse: "I will be glad and rejoice in your unfailing love, for you have seen my troubles, and you care about the anguish of my soul."
-        reference: "Psalm 31:7"
+        verse: "我要為你的慈愛高興歡喜；因為你見過我的困苦，知道我心中的艱難。"
+        reference: "詩篇 31:7"
         discover:
-          copy: "Discover and learn with your friends as they add highlights, bookmarks, and notes."
-          button: "Where can I start?"
+          copy: "與你的朋友一起從彼此的醒目標示、書籤和筆記中發掘和學習。"
+          button: "我從哪裡開始？"
         share:
           copy: "Share honest conversations about Scripture."
           button: "Get started by finding some friends."
