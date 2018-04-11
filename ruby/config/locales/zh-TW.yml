@@ -64,7 +64,7 @@ zh-TW:
       read less: "精簡閱讀"
     share: "分享"
     add comment: "添加評論"
-    my connections: "已連接的帳戶"
+    my connections: "已關聯的帳戶"
     connected as: "您已與 %{connection} 上的 %{username} 帳戶連接。"
     remove connection: "移除這個連接"
     connection friends: "這是一些在 %{connection} 服務上與您有連接的 YouVersion 用戶："
@@ -135,7 +135,7 @@ zh-TW:
       description: "將聖經的真理和美善帶入每天的生活!  藉著 YouVersion 聖經軟體，您可以在智慧型手機、平板電腦或者 Bible.com 網站閱讀、觀看、聆聽並分享聖經。"
     connections:
       index:
-        title: "已連接的帳戶"
+        title: "已關聯的帳戶"
   now: "現在"
   select dropdown: "--選擇--"
   celebrating 50MM: "慶祝5000萬次的安裝！"
@@ -606,7 +606,7 @@ zh-TW:
     picture: "相片"
     edit picture: "更換相片"
     edit notifications: "管理訊息通知"
-    edit connections: "已連接的帳戶"
+    edit connections: "已關聯的帳戶"
     edit devices: "已連接的設備"
     vod_subscriptions: "今日經文訂閱"
     vod_subscription success: "您已成功更新您的今日經文訂閱！"
