@@ -35,7 +35,7 @@ npm install @youversion/melos
 2. Import the component you want to use...
 
 ```
-import Card from '@youversion/melos'
+import Card from '@youversion/melos/components/containers/Card'
 ```
 
 3. Use the Component somewhere!
