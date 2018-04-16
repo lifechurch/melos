@@ -1389,6 +1389,8 @@ sw:
         likes: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> kupenda."
         moments: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> nyakati."
         newsletter: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> jarida."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> Mipango ya Kusoma."
         rp_daily: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za Mipango ya Kusoma ya Kila Siku</b> Kutoka kwa %{plan_title}."
         votd: "Umejitoa kwa mafanikio kutoka kwa <b>Barua pepe za</b> Mistari ya Biblia."
