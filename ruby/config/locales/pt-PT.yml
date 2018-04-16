@@ -1389,6 +1389,8 @@ pt-PT:
         likes: "Você cancelou com sucesso a sua subscrição de e-mails de gosto."
         moments: "Você cancelou com sucesso a sua subscrição de e-mails de momentos."
         newsletter: "Você cancelou com sucesso a sua subscrição de e-mails de Boletim de Notícias."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Você cancelou com sucesso a sua subscrição de e-mails de Planos de Leitura."
         rp_daily: "Você cancelou com sucesso a sua subscrição de e-mails de Planos de Leitura Diários de %{plano_título}"
         votd: "Você cancelou com sucesso a sua subscrição de e-mails de Versículo do Dia."
