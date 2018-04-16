@@ -1389,6 +1389,8 @@ mr:
         likes: "You successfully unsubscribed from <b>Likes</b> emails."
         moments: "You successfully unsubscribed from <b>Moments</b> emails."
         newsletter: "You successfully unsubscribed from <b>Newsletter</b> emails."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "You successfully unsubscribed from <b>Reading Plans</b> emails."
         rp_daily: "You successfully unsubscribed from <b>Reading Plans Daily emails</b> from %{plan_title}."
         votd: "You successfully unsubscribed from <b>Verse of the Day</b> emails."
