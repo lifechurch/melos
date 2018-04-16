@@ -1389,6 +1389,8 @@ es-ES:
         likes: "Te has dado de baja correctamente de los mensaje sobre <b>&quot;me gusta&quot;</b>."
         moments: "Te has dado de baja correctamente de los mensaje sobre <b>momentos</b>."
         newsletter: "Te has dado de baja correctamente de los mensaje sobre <b>boletines de noticias</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Te has dado de baja correctamente de los mensaje sobre <b>planes de lectura</b>."
         rp_daily: "Te has dado de baja correctamente de <b>los mensajes diarios</b> sobre el plan de lectura %{plan_title}."
         votd: "Te has dado de baja correctamente de los mensaje sobre <b>el versículo del día</b>."
