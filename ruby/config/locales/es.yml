@@ -1389,6 +1389,8 @@ es:
         likes: "Ha cancelado todos los correos de <b>Me Gusta</b>."
         moments: "Ha cancelado todos los correos de <b>Momentos</b>."
         newsletter: "Ha cancelado los correos de <b>Noticias</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Ha cancelado los correos de <b>Planes de Lectura</b>."
         rp_daily: "Ha cancelado los correos del Plan %{plan_title}<b>de Planes de Lectura Diaria</b>."
         votd: "Ha cancelado la suscripción a los correos de <b>El Versículo del Día</b>."
