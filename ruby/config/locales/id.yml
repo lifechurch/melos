@@ -1371,6 +1371,8 @@ id:
         likes: "Anda berhasil berhenti berlangganan dari email <b>Suka</b>."
         moments: "Anda berhasil berhenti berlangganan dari email <b>Momen</b>."
         newsletter: "Anda berhasil berhenti berlangganan dari email <b>Berita</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Anda berhasil berhenti berlangganan dari email <b>Rencana Bacaan</b>."
         rp_daily: "Anda berhasil berhenti berlangganan dari <b>Email Harian Rencana Bacaan</b> dari %{plan_title}."
         votd: "Anda berhasil berhenti berlangganan dari email <b>Ayat Hari Ini</b>."
