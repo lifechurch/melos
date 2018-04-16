@@ -1389,6 +1389,8 @@ fr:
         likes: "Vous vous êtes désinscrit avec succès des emails <b>J'aime</b>."
         moments: "Vous vous êtes désinscrit avec succès des emails<b>Moments</b>."
         newsletter: "Vous vous êtes désinscrit avec succès des emails <b>Bulletin</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Vous vous êtes désinscrit avec succès des emails <b>Plans de lecture</b>."
         rp_daily: "Vous vous êtes désinscrit avec succès des <b>emails quotidiens Plan de lecture</b> de %{plan_title}."
         votd: "Vous vous êtes désinscrit avec succès des emails <b>Verset du jour</b>."
