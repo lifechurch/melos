@@ -1371,6 +1371,8 @@ ms:
         likes: "Anda telah berjaya menghentikan langganan emel <b>Suka</b>."
         moments: "Anda telah berjaya menghentikan langganan emel <b>Moments</b>."
         newsletter: "Anda telah berjaya menghentikan langganan emel <b>Surat Berita</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Anda telah berjaya menghentikan langganan emel <b>Pelan Bacaan</b>."
         rp_daily: "Anda telah berjaya menghentikan langganan <b> emel Pelan Bacaan Harian</b> daripada %{plan_title}."
         votd: "Anda telah berjaya menghentikan langganan emel <b>Firman Hari Ini</b>."
