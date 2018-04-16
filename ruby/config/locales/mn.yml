@@ -1389,6 +1389,8 @@ mn:
         likes: "<b>Таалагдсан</b>и-мэйлүүдээс та амжилттай бүртгэлээ цуцласан."
         moments: "<b>Цаг үеүүд</b>и-мэйлүүдээс та амжилттай бүртгэлээ цуцласан."
         newsletter: "<b>Мэдээлэл</b>и-мэйлүүдээс та амжилттай бүртгэлээ цуцласан."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "<b>Уншлагийн төлөвлөгөөнүүд</b>и-мэйлүүдээс та амжилттай бүртгэлээ цуцласан."
         rp_daily: "%{plan_title}-с илгээдэг <b>Уншлагын төлөвлөгөөний өдөр бүрийн и-мэйлүүдээс</b>та амжилттай бүртгэлээ цуцласан."
         votd: "<b>Өнөөдрийн эшлэл</b>и-мэйлүүдээс та амжилттай бүртгэлээ цуцласан."
