@@ -1371,6 +1371,8 @@ th:
         likes: "คุณได้ยกเลิกการรับอีเมลที่แสดง<b></b>ยอดกดไลค์"
         moments: "คุณได้ยกเลิกการรับอีเมลที่แสดง<b></b>ช่วงเวลา"
         newsletter: "คุณได้ยกเลิกการรับอีเมลที่มี<b></b>แจ้งข่าวสาร"
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "คุณได้ยกเลิกการรับอีเมลที่มี<b></b>แผนการอ่าน"
         rp_daily: "คุณได้ยกเลิกการรับอีเมลที่มี<b></b>แผนการอ่านประจำวันจาก %{plan_title}"
         votd: "คุณได้ยกเลิกการรับอีเมลที่มี<b></b>พระวจนะประจำวัน"
