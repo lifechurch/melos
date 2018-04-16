@@ -1389,6 +1389,8 @@ el:
         likes: "Επιτυχία διαγραφής από τις ειδοποιήσεις <b>&quot;Μου αρέσει&quot;</b>."
         moments: "Επιτυχία διαγραφής από τις ειδοποιήσεις <b>Στιγμών</b>."
         newsletter: "Επιτυχία διαγραφής από τις ειδοποιήσεις <b>Ενημερωτικών Δελτίων</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Επιτυχία διαγραφής από τις ειδοποιήσεις <b>Σχεδίων μελέτης</b>."
         rp_daily: "Επιτυχία διαγραφής από τις <b>Καθημερινές ειδοποιήσεις σχεδίων μελέτης</b> από %{plan_title}."
         votd: "Επιτυχία διαγραφής από τις ειδοποιήσεις <b>Εδάφιο της ημέρας</b>."
