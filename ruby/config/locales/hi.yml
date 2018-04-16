@@ -1389,6 +1389,8 @@ hi:
         likes: "आपने <b>पसंद आने वाले</b> ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         moments: "आपने <b>समय/पल</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है.\n"
         newsletter: "आपने <b>संवाद पत्र</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "आपने <b>पाठ योजना</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         rp_daily: "आपने %{plan_title} द्वारा जारी  <b>पाठ योजना के दैनिक</b> ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         votd: "आपने <b>आज का वचन</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
