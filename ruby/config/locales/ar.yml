@@ -1461,6 +1461,8 @@ ar:
         likes: "لقد الغيت التسجيل بنجاح من البريد الالكترونى الخاص ب <b>الاعجاب</b>"
         moments: "لقد الغيت التسجيل بنجاح من البريد الالكترونى الخاص ب <b>لحظات</b>"
         newsletter: "لقد الغيت التسجيل بنجاح من البريد الالكترونى الخاص ب <b>الاخبار</b>"
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "لقد الغيت التسجيل بنجاح من البريد الالكترونى الخاص ب <b>خطط القراءه</b>"
         rp_daily: "لقد الغيت التسجيل بنجاح من البريد الالكترونى الخاص ب <b>البريد اليومى لخطط القراءه</b> من الخطه %{plan_title}"
         votd: "لقد الغيت التسجيل بنجاح من البريد الالكترونى الخاص ب <b> عدد اليوم</b>"
