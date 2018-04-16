@@ -1389,6 +1389,8 @@ bg:
         likes: "Вие успешно се отписахте от имейли за <b>харесвания</b>."
         moments: "Вие успешно се отписахте от имейли за <b>моменти</b>."
         newsletter: "Вие успешно се отписахте от имейли за <b>новини</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Вие успешно се отписахте от имейли за <b>планове за прочит</b>."
         rp_daily: "Вие успешно се отписахте от <b>ежедневни имейли</b> от плана за прочит %{plan_title}."
         votd: "Вие успешно се отписахте от имейли за <b>стиха за деня</b>."
