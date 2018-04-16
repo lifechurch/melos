@@ -1389,6 +1389,8 @@ da:
         likes: "Du har med succes afmeldt alle e-mails om Synes om,"
         moments: "Du har succesfuldt afmeldt alle e-mails vedr. Øjeblikke."
         newsletter: "Du har med succes afmeldt alle e-mails med Nyhedsbreve."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Du har med succes afmeldt alle e-mails vedr. Læse Planer."
         rp_daily: "Du har med succes afmeldt alle Læse Plans e-mails fra %{plan_title}."
         votd: "Du har med succes afmeldt alle e-mails vedr. Dagens Vers."
