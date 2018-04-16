@@ -373,7 +373,7 @@ sw:
   languages:
     title: " lugha za biblia na tafasili"
     most popular: "Lugha nyingi maarufu"
-    additional: "lugha ya ziada"
+    additional: "Lugha za ziada"
     download language: "Pakua programu ya bure ya Biblia"
     bible in: "Biblia katika %{language_name}"
   or:
@@ -552,16 +552,16 @@ sw:
     clear verses: "Ondoa mistari iliyochaguliwa"
     choose book and chapter: "chagua kitabu + kurasa"
     choose version: "chagua toleo"
-    choose second version: "Chagua Tolea ya pili"
+    choose second version: "Chagua Tolea la pili"
     share: "husisha wengine/jumuisha"
     share now: "husisha wengine sasa"
     selected: "imechaguliwa"
     preferences: "upendeleo"
     listen: "sikiliza"
     parallel: "sambamba na"
-    full screen: "screen mzima"
+    full screen: "Skrini Nzima"
     about the version: "Kuhusu %{version}"
-    settings: "mpangilio wa msomaji"
+    settings: "Mipangilio ya Msomaji"
     invalid chapter title: "kuhusu toleo hili"
     invalid chapter text: "huu ukurasa haupo katika toleo hili"
     invalid secondary chapter text: "Sura hii haipo kwa toleo ya pili uliyopendelea"
@@ -1185,7 +1185,7 @@ sw:
       headline: "Mistari maarufu ya Biblia inayoenea sasa katika Apu ya Biblia ya YouVersion na Bible.com"
   shared:
     menu_settings:
-      title: "mpangilio wa msomaji"
+      title: "Mipangilio ya Msomaji"
       close: "Funga"
       font: "Fonti"
       font1: "Helvetica"
