@@ -1389,6 +1389,8 @@ sq:
         likes: "Ju jeni çregjistruar me sukses nga e-postat e <b>Pëlqimeve</b>."
         moments: "Ju jeni çregjistruar me sukses nga e-postat e <b>Momenteve</b>."
         newsletter: "Ju jeni çregjistruar me sukses nga e-postat e <b>Buletinit.</b>"
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Ju jeni çregjistruar me sukses nga e-postat e <b>Planeve të Leximit</b>."
         rp_daily: "Ju jeni çregjistruar me sukses nga <b>e-postat e Planeve të Përditshme të Leximit</b> nga %{plan_title}."
         votd: "Ju jeni çregjistruar me sukses nga e-postat e <b>Vargut të Ditës</b>."
