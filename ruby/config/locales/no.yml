@@ -1389,6 +1389,8 @@
         likes: "Du har meldt deg av <b>Liker</b> e-postene."
         moments: "Du har meldt deg av <b>Øyeblikk</b> e-postene."
         newsletter: "Du har meldt deg av <b>Nyhetsbrev</b> e-postene."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Du har meldt deg av <b>Leseplaner</b> e-postene."
         rp_daily: "Du har meldt deg av <b>daglige Leseplan-eposter </b> fra %{plan_title}."
         votd: "Du har meldt deg av <b>Dagens bibelvers</b> e-postene."
