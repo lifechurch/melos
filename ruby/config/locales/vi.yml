@@ -1371,6 +1371,8 @@ vi:
         likes: "Bạn đã hủy thành công các đăng ký từ <b>yêu thích</b>email."
         moments: "Bạn đã hủy thành công các đăng ký từ <b>khoảnh khắc</b>email."
         newsletter: "Bạn đã hủy thành công các đăng ký từ <b>bản tin</b>email."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Bạn đã hủy thành công các đăng ký từ <b>Kế hoạch đọc</b>email."
         rp_daily: "Bạn đã hủy thành công các đăng ký từ<b>Email kế hoạch đọc mỗi ngày</b>từ %{plan_title}."
         votd: "Bạn đã hủy thành công các đăng ký từ<b>Câu Kinh Thánh của ngày</b>email."

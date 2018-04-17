@@ -1389,6 +1389,8 @@ fi:
         likes: "Peruit onnistuneesti <b> Tykkää </b> -sähköpostien tilauksen."
         moments: "Peruit onnistuneesti <b> Hetket </b> -sähköpostien tilauksen."
         newsletter: "Peruit onnistuneesti <b> Uutiskirje </b> -sähköpostien tilauksen."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Peruit onnistuneesti <b> Lukusuunnitelmat </b> -sähköpostien tilauksen."
         rp_daily: "Peruit onnistuneesti <b> Lukusuunnitelman päivittäiset sähköpostit </b> suunnitelmasta %{plan_title}."
         votd: "Peruit onnistuneesti <b> Päivän jae </b> -sähköpostien tilauksen."

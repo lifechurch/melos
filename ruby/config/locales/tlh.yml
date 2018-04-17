@@ -1389,6 +1389,8 @@ tlh:
         likes: "crwdns116077:0crwdne116077:0"
         moments: "crwdns116078:0crwdne116078:0"
         newsletter: "crwdns116079:0crwdne116079:0"
+        pwf_comments: "crwdns165336:0crwdne165336:0"
+        pwf_accepts: "crwdns165337:0crwdne165337:0"
         reading_plans: "crwdns116080:0crwdne116080:0"
         rp_daily: "crwdns116081:0%{plan_title}crwdne116081:0"
         votd: "crwdns116082:0crwdne116082:0"

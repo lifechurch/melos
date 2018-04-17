@@ -1425,6 +1425,8 @@ ru:
         likes: "Вы успешно отписались от е-мейл - уведомлений о получении <b>лайков</b>."
         moments: "Вы успешно отписались от е-мейл - уведомлений о <b>моментах</b>."
         newsletter: "Вы успешно отписались от е-мейл - уведомлений о <b>новостях</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Вы успешно отписались от е-мейл - уведомлений о <b>планах чтения</b>."
         rp_daily: "Вы успешно отписались от <b>ежедневных е-мейлов плана чтения</b> %{plan_title}."
         votd: "Вы успешно отписались от е-мейл - уведомлений <b>стиха дня</b>."

@@ -1389,6 +1389,8 @@ af:
         likes: "Jou intekening op <b>Hou Daarvan</b> e-posse is suksesvol gekanselleer."
         moments: "Jou intekening op <b>Oomblikke</b> e-posse is suksesvol gekanselleer."
         newsletter: "Jou intekening op <b>Nuusbrief</b> e-posse is suksesvol gekanselleer."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Jou intekening op <b>Leesplan</b> e-posse is suksesvol gekanselleer."
         rp_daily: "Jou intekening op <b>Daaglike Leesplan e-posse</b> vir %{plan_title} is suksesvol gekanselleer."
         votd: "Jou intekening op <b>Vers van die Dag</b> e-posse is suksesvol gekanselleer."

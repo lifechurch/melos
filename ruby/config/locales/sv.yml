@@ -1389,6 +1389,8 @@ sv:
         likes: "Du har avslutat din prenumeration på e-post angående <b>Gillningar</b>."
         moments: "Du har avslutat din prenumeration på e-post angående <b>Stunder</b>."
         newsletter: "Du har avslutat din prenumeration på e-post angående <b>Nyhetsbrev</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Du har avslutat din prenumeration på e-post angående <b>Läsplaner</b>."
         rp_daily: "Du har avslutat din prenumeration på <b>daglig e-post angående Läsplaner</b> från %{plan_title}."
         votd: "Du har avslutat din prenumeration på e-post angående <b>Dagens Vers</b>."

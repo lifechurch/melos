@@ -1389,6 +1389,8 @@ nl:
         likes: "Je bent succesvol afgemeld van <b>vind-ik-leuk emails</b>."
         moments: "Je bent succesvol afgemeld voor emails van <b>Momenten</b>"
         newsletter: "Je bent succesvol afgemeld voor emails van <b>Nieuwsbrief</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Je bent succesvol afgemeld voor emails van <b>Leesplannen</b>."
         rp_daily: "Je bent succesvol afgemeld voor emails van <b>Leesplan dagelijkse emails</b> van %{plan_title}."
         votd: "Je bent succesvol afgemeld voor emails van <b>Vers van de dag</b>."

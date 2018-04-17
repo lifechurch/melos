@@ -1389,6 +1389,8 @@ de:
         likes: "Du hast erfolgreich alle E-Mails zu <b>&quot;Gefällt mir&quot;</b> abbestellt."
         moments: "Du hast erfolgreich alle E-Mails zu <b>Momenten</b> abbestellt."
         newsletter: "Du hast erfolgreich alle E-Mail-<b>Rundbriefe</b> von YouVersion abbestellt."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Du hast erfolgreich alle E-Mails zu <b>Leseplänen</b> abbestellt."
         rp_daily: "Du hast erfolgreich alle <b>E-Mails für tägliche Lesepläne</b> von %{plan_title} abbestellt."
         votd: "Du hast erfolgreich alle E-Mails zum <b>Vers des Tages</b> abbestellt."

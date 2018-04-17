@@ -1389,6 +1389,8 @@ fa:
         likes: "لغو عضویت از دریافت ای‌میل‌های مرتبت با <b>پسندیدن‌ها</b> با موفقیت انجام شد."
         moments: "لغو عضویت از دریافت ای‌میل‌های مرتبت با <b>فعالیت‌ها</b> با موفقیت انجام شد."
         newsletter: "لغو عضویت از دریافت ای‌میل‌های مرتبت با <b>خبرنامه‌ها</b> با موفقیت انجام شد."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "لغو عضویت از دریافت ای‌میل‌های مرتبت با <b>برنامه‌های مطالعه</b> با موفقیت انجام شد."
         rp_daily: "لغو عضویت از دریافت <b>ای‌میل روزانه</b> از برنامۀ مطالعۀ %{plan_title}با موفقیت انجام شد."
         votd: "لغو عضویت از دریافت ای‌میل مرتبت با <b>آیۀ روز</b> با موفقیت انجام شد."

@@ -1371,6 +1371,8 @@ ko:
         likes: "<b>좋아요 이메일 알림</b>이 해제되었습니다."
         moments: "<b>Moments 이메일 알림</b>이 해제되었습니다."
         newsletter: "<b>뉴스레터</b>가 수신 거부 되었습니다."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "<b>묵상 계획 이메일 알림</b>이 해제되었습니다."
         rp_daily: "%{plan_title}<b>묵상 계획 이메일 알림</b>이 해제되었습니다."
         votd: "<b>오늘의 말씀 이메일 알림</b>이 해제되었습니다."

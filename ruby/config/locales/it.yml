@@ -1389,6 +1389,8 @@ it:
         likes: "Hai annullato l'iscrizione a <b>email Mi Piace</b>"
         moments: "Hai annullato l'iscrizione a <b> email Momenti</b>"
         newsletter: "Hai annullato l'iscrizione a <b>email Newsletter</b>"
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Hai annullato l'iscrizione a <b>email Piani di Lettura</b>"
         rp_daily: "Hai annullato l'iscrizione a <b>email Quotidiane Piani di Lettura</b> da %{plan_title}."
         votd: "Hai annullato l'iscrizione a <b>email Versetto del Giorno</b>"

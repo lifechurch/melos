@@ -1407,6 +1407,8 @@ hr:
         likes: "Uspješna odjava s email liste <b>Sviđanja</b>."
         moments: "Uspješna odjava s email liste <b>Trenuci</b>."
         newsletter: "Uspješna odjava s email liste<b>Novosti</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Uspješna odjava s email liste<b>Planova čitanja</b>."
         rp_daily: "Uspješna odjava s email liste <b>Dnevni mailovi planova čitanja</b>iz %{plan_title}."
         votd: "Uspješna odjava s email liste <b>Stihova dana</b>."

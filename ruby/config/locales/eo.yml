@@ -1,4 +1,4 @@
-ne:
+eo:
   time:
     formats:
       votd: "%B %-d, %Y"
@@ -99,7 +99,7 @@ ne:
     hindi: "Hindi"
     japanese: "Japanese"
     khmer: "Khmer"
-    korean: "कोरियन"
+    korean: "Korean"
     macedonian: "Macedonian"
     mongolian: "Mongolian"
     burmese: "Myanmar Burmese"
@@ -400,7 +400,7 @@ ne:
       subscribe: "Subscribe"
       update: "Update"
       unsubscribe: "Unsubscribe"
-      version: "भर्जन"
+      version: "Version"
       view more: "View More"
       time: "Time"
       blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
@@ -525,7 +525,7 @@ ne:
     creation form errors: "The following error(s) prevented creation of your note:"
     status field: "Note Status:"
     reference field: "Reference(s):"
-    version field: "भर्जन:"
+    version field: "Version:"
     title field: "Title:"
     content field: "Content:"
     save: "Save"
@@ -759,7 +759,7 @@ ne:
     labels comma separated: "Labels (comma-separated):"
     update: "Update"
     color: "Color:"
-    version field: "भर्जन:"
+    version field: "Version:"
     none user: "%{username} has no bookmarks"
     blank slate:
       heading: "Bookmark meaningful verses"
@@ -1315,7 +1315,7 @@ ne:
       italian: "Italian"
       japanese: "Japanese"
       khmer: "Khmer"
-      korean: "कोरियन"
+      korean: "Korean"
       latvian: "Latvian"
       macedonian: "Macedonian"
       malay: "Malay"
@@ -1756,7 +1756,7 @@ ne:
                 search: "Search for a Reading Plan"
               ContentTypeReference:
                 language: "Language"
-                version: "भर्जन"
+                version: "Version"
                 book: "Book"
                 chapterVerse: "Chapter:Verse"
               ContentTypeText:

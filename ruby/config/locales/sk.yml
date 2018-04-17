@@ -1425,6 +1425,8 @@ sk:
         likes: "Úspešne ste sa odhlásili z emailov s <b> obľúbenými položkami</b>."
         moments: "Úspešne ste sa odhlásili z emailov s<b>momentmi</b> ."
         newsletter: "Úspešne ste sa odhlásili z emailov s <b>informačnými letákmi</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Úspešne ste sa odhlásili z emailov s <b>plánmi čítania</b>."
         rp_daily: "Úspešne ste sa odhlásili z denných emailov s <b>plánmi čítania</b>z %{plan_title}."
         votd: "Úspešne ste sa odhlásili z emailov s <b>veršom dňa</b>."

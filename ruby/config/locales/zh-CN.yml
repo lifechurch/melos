@@ -1371,6 +1371,8 @@ zh-CN:
         likes: "你已成功退订<b>朋友点赞提醒</b>的电邮。"
         moments: "你已成功退订<b>动态提醒</b>的电邮。"
         newsletter: "你已成功退订<b>新闻信</b>电邮。"
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "你已成功退订<b>读经计划提醒</b>的电邮。"
         rp_daily: "你已成功退订“%{plan_title}”的<b>读经计划每日电邮</b>。"
         votd: "你已成功退订<b>今日经文</b>的电邮。"

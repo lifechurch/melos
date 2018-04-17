@@ -1461,6 +1461,8 @@ cy:
         likes: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Hoffi</b>"
         moments: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Gweithgarwch</b>"
         newsletter: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Cylchlythyr</b>"
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Cynlluniau Darllen</b>"
         rp_daily: "Rwyt wedi llwyddo i ddad-danysgrifio o <b>e-byst dyddiol Cynlluniau Darllen</b> o %{plan_title}"
         votd: "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Adnod y Dydd</b>"

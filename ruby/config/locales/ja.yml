@@ -1371,6 +1371,8 @@ ja:
         likes: "<b>いいね！</b>に関する通知メールからの登録解除が完了しました。"
         moments: "<b>モーメント</b>に関する通知メールからの登録解除が完了しました。"
         newsletter: "<b>ニュースレター</b>からの登録解除が完了しました。"
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "<b>読書プラン</b>に関する通知メールからの登録解除が完了しました。"
         rp_daily: "「%{plan_title}」の<b>読書プラン</b>に関するメールからの登録解除が完了しました。"
         votd: "<b>今日の聖句</b>に関するメールからの登録解除が完了しました。"

@@ -1425,6 +1425,8 @@ pl:
         likes: "Pomyślnie Anulowano subskrypcję <b>lubi</b> wiadomości e-mail."
         moments: "Możesz pomyślnie Anulowano subskrypcję <b>wiadomości</b> chwile."
         newsletter: "Można pomyślnie Anulowano subskrypcję <b>biuletynu</b> e-maili."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Pomyślnie wypisałeś się z subskrypcji <b>Planów czytania</b> e-maili."
         rp_daily: "Pomyślnie wypisałeś się subskrypcji <b> Codziennych planów czytania </b> %{plan_title}."
         votd: "Pomyślnie wypisałeś się z subskrypcji <b>Wersetu dnia </b> e-maili."

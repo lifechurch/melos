@@ -1425,6 +1425,8 @@ cs:
         likes: "Úspěšně jste odhlásili odběr emailů<b>&quot;Líbí se mi&quot;</b>."
         moments: "Úspěšně jste odhlásili odběr emailů<b>historie vaší práce</b>."
         newsletter: "Úspěšně jste odhlásili odběr emailů<b>novinek</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Úspěšně jste odhlásili odběr emailů<b>plánů čtení Bible</b>."
         rp_daily: "Úspěšně jste odhlásili odběr emailů <b>plánu čtení Bible:</b> %{plan_title}."
         votd: "Úspěšně jste odhlásili odběr emailů <b>veršů dne</b>."

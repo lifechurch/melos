@@ -1389,6 +1389,8 @@ hu:
         likes: "Sikeresen leiratkoztál a <b>Kedvelések</b> levelekről."
         moments: "Sikeresen leiratkoztál a <b>Momentumok</b> levelekről."
         newsletter: "Sikeresen leiratkoztál a <b>Hírlevél</b> levelekről."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Sikeresen leiratkoztál az <b>Olvasási tervek</b> levelekről."
         rp_daily: "Sikeresen leiratkoztál a <b>Napi olvasási terv levelekről</b> a %{plan_title} tervnél."
         votd: "Sikeresen leiratkoztál a <b>Nap igeverse</b> levelekről."

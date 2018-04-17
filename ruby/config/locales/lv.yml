@@ -1407,6 +1407,8 @@ lv:
         likes: "Esi veiksmīgi atteicies no <b>&quot;Patīk&quot;</b> e-pastiem."
         moments: "Esi veiksmīgi atteicies no <b>&quot;Mirkļi&quot;</b> e-pastiem."
         newsletter: "Esi veiksmīgi atteicies no <b>Apkārtraksta</b> e-pastiem."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Esi veiksmīgi atteicies no <b>Lasīšanas plānu</b> e-pastiem."
         rp_daily: "Esi veiksmīgi atteicies no %{plan_title}<b>Lasīšanas plānu ikdienas epastiem</b>."
         votd: "Esi veiksmīgi atteicies no <b>Dienas Rakstu vietas</b> e-pastiem."

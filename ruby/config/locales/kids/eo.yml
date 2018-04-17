@@ -1,6 +1,6 @@
-ml:
+eo:
   kids:
-    bible app: "ബൈബിൾ ആപ്പ്"
+    bible app: "The Bible App"
     for: "for"
     kids: "kids"
     by youversion: "by YouVersion"
@@ -30,7 +30,7 @@ ml:
       facebook redirect: "http://www.bible.com/kids"
       twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
       twitter hashtags: "kidsbible"
-      email: "ഇമെയിൽ"
+      email: "Email"
       email subject: "The Bible App for Kids is here!"
       email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
     partner:

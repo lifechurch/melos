@@ -1371,6 +1371,8 @@ km:
         likes: "អ្នកលែងជាវដោយជោគជ័យពី<b>ចូលចិត្ត</b> អ៊ីម៉ែល"
         moments: "អ្នកលែងជាវដោយជោគជ័យពី<b>គ្រានេះ</b> អ៊ីម៉ែល"
         newsletter: "អ្នកលែងជាវដោយជោគជ័យពី <b>សំបុត្រព័ត៌មាន</b>អ៊ីម៉ែល"
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "អ្នកលែងជាវដោយជោគជ័យពី <b>គំរោងអាន</b> អ៊ីម៉ែល"
         rp_daily: "អ្នកលែងជាវដោយជោគជ័យពី <b>គំរោងអានប្រចាំថ្ងៃអ៊ីម៉ែល</b> មកពី %{plan_title}"
         votd: "អ្នកលែងជាវដោយជោគជ័យពី <b>ខប្រចាំថ្ងៃ</b> អ៊ីម៉ែល"

@@ -1407,6 +1407,8 @@ ro:
         likes: "Te-ai dezabonat cu succes de la email-urile legate de <b>Aprecieri</b>."
         moments: "Te-ai dezabonat cu succes de la email-urile legate de <b>Momente</b>."
         newsletter: "Te-ai dezabonat cu succes de la email-urile cu <b>Noutăți</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Te-ai dezabonat cu succes de la email-urile cu <b>Planuri de citire</b>."
         rp_daily: "Te-ai dezabonat cu succes de la <b>email-urile cu planul de citire zilnică</b> de la %{plan_title}."
         votd: "Te-ai dezabonat cu succes de la email-urile cu <b>Versetul zilei</b>."

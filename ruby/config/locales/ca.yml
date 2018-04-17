@@ -1389,6 +1389,8 @@ ca:
         likes: "T'has donat de baixa correctament dels correus electrònics de <b>&quot;M'ha agradat&quot;</b>."
         moments: "T'has donat de baixa correctament dels correus electrònics de <b>Moments</b>."
         newsletter: "T'has donat de baixa correctament dels correus electrònics de <b>Butlletí</b>."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "T'has donat de baixa correctament dels correus electrònics de <b>Plans de lectura</b>."
         rp_daily: "T'has donat de baixa correctament dels <b>correus electrònics del pla de lectura</b> %{plan_title}."
         votd: "T'has donat de baixa correctament dels correus electrònics del <b>Verset del dia</b>."

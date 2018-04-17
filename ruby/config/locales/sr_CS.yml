@@ -1,4 +1,4 @@
-ne:
+sr:
   time:
     formats:
       votd: "%B %-d, %Y"
@@ -6,37 +6,48 @@ ne:
     time_ago_in_words:
       about_x_hours:
         one: "about %{count} hour ago"
+        few: "about %{count} hours ago"
         other: "about %{count} hours ago"
       about_x_months:
         one: "about %{count} month ago"
+        few: "about %{count} months ago"
         other: "about %{count} months ago"
       about_x_years:
         one: "about %{count} year ago"
+        few: "about %{count} years ago"
         other: "about %{count} years ago"
       almost_x_years:
         one: "almost %{count} year ago"
+        few: "almost %{count} years ago"
         other: "almost %{count} years ago"
       half_a_minute: "half a minute ago"
       less_than_x_minutes:
         one: "less than %{count} minute ago"
+        few: "less than %{count} minutes ago"
         other: "less than %{count} minutes ago"
       less_than_x_seconds:
         one: "less than %{count} second ago"
+        few: "less than %{count} seconds ago"
         other: "less than %{count} seconds ago"
       over_x_years:
         one: "over %{count} year ago"
+        few: "over %{count} years ago"
         other: "over %{count} years ago"
       x_days:
         one: "%{count} day ago"
+        few: "%{count} days ago"
         other: "%{count} days ago"
       x_minutes:
         one: "%{count} minute ago"
+        few: "%{count} minutes ago"
         other: "%{count} minutes ago"
       x_months:
         one: "%{count} month ago"
+        few: "%{count} months ago"
         other: "%{count} months ago"
       x_seconds:
         one: "%{count} second ago"
+        few: "%{count} seconds ago"
         other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
@@ -99,7 +110,7 @@ ne:
     hindi: "Hindi"
     japanese: "Japanese"
     khmer: "Khmer"
-    korean: "कोरियन"
+    korean: "Korean"
     macedonian: "Macedonian"
     mongolian: "Mongolian"
     burmese: "Myanmar Burmese"
@@ -264,6 +275,7 @@ ne:
   friends:
     you have N friends:
       one: "You have %{count} friend"
+      few: "You have %{count} friends"
       other: "You have %{count} friends"
     none me: "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
     find friends: "Find friends"
@@ -400,7 +412,7 @@ ne:
       subscribe: "Subscribe"
       update: "Update"
       unsubscribe: "Unsubscribe"
-      version: "भर्जन"
+      version: "Version"
       view more: "View More"
       time: "Time"
       blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
@@ -449,6 +461,7 @@ ne:
   comments:
     view all N:
       one: "View %{count} comment"
+      few: "View all %{count} comments"
       other: "View all %{count} comments"
     post comment: "Post a comment"
     create success: "Success! Your comment was posted."
@@ -525,7 +538,7 @@ ne:
     creation form errors: "The following error(s) prevented creation of your note:"
     status field: "Note Status:"
     reference field: "Reference(s):"
-    version field: "भर्जन:"
+    version field: "Version:"
     title field: "Title:"
     content field: "Content:"
     save: "Save"
@@ -759,7 +772,7 @@ ne:
     labels comma separated: "Labels (comma-separated):"
     update: "Update"
     color: "Color:"
-    version field: "भर्जन:"
+    version field: "Version:"
     none user: "%{username} has no bookmarks"
     blank slate:
       heading: "Bookmark meaningful verses"
@@ -785,9 +798,11 @@ ne:
       on track: "On Track!"
       days ahead:
         one: "%{count} Day Ahead!"
+        few: "%{count} Days Ahead!"
         other: "%{count} Days Ahead!"
       missed days:
         one: "%{count} Missed Day"
+        few: "%{count} Missed Days"
         other: "%{count} Missed Days"
     bible plan language: "Bible Plan Language"
     share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
@@ -803,12 +818,15 @@ ne:
     stats:
       friends reading:
         one: "%{count} friend subscribed to this plan"
+        few: "%{count} friends subscribed to this plan"
         other: "%{count} friends subscribed to this plan"
       friends completed:
         one: "%{count} friend has completed this plan"
+        few: "%{count} friends have completed this plan"
         other: "%{count} friends have completed this plan"
       total completions:
         one: "Over %{count} completion"
+        few: "Over %{count} completions"
         other: "Over %{count} completions"
       view all: "View All"
       close: "Close"
@@ -1315,7 +1333,7 @@ ne:
       italian: "Italian"
       japanese: "Japanese"
       khmer: "Khmer"
-      korean: "कोरियन"
+      korean: "Korean"
       latvian: "Latvian"
       macedonian: "Macedonian"
       malay: "Malay"
@@ -1427,9 +1445,11 @@ ne:
         on track: "On Track!"
         days ahead:
           one: "%{count} Day Ahead!"
+          few: "%{count} Days Ahead!"
           other: "%{count} Days Ahead!"
         missed days:
           one: "%{count} Missed Day"
+          few: "%{count} Missed Days"
           other: "%{count} Missed Days"
       bible plan language: "Bible Plan Language"
       share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
@@ -1445,9 +1465,11 @@ ne:
       stats:
         friends reading:
           one: "%{count} friend subscribed to this plan"
+          few: "%{count} friends subscribed to this plan"
           other: "%{count} friends subscribed to this plan"
         friends completed:
           one: "%{count} friend has completed this plan"
+          few: "%{count} friends have completed this plan"
           other: "%{count} friends have completed this plan"
         total completions: "Over %{count} completions"
         view all: "View All"
@@ -1756,7 +1778,7 @@ ne:
                 search: "Search for a Reading Plan"
               ContentTypeReference:
                 language: "Language"
-                version: "भर्जन"
+                version: "Version"
                 book: "Book"
                 chapterVerse: "Chapter:Verse"
               ContentTypeText:
@@ -2000,6 +2022,7 @@ ne:
     post: "Post"
     x likes:
       one: "%{number} like"
+      few: "%{number} likes"
       other: "%{number} likes"
     selected: "Selected"
     currently subscribed: "Currently Subscribed"
@@ -2009,10 +2032,12 @@ ne:
     pending: "Pending"
     x pending:
       one: "%{number} Pending"
+      few: "%{number} Pending"
       other: "%{number} Pending"
     accepted: "Accepted"
     x accepted:
       one: "%{number} Accepted"
+      few: "%{number} Accepted"
       other: "%{number} Accepted"
     invitation: "Invitation"
     accept invitation: "Accept Invitation"
@@ -2029,6 +2054,7 @@ ne:
     host: "Host"
     x participants:
       one: "%{number} Participant"
+      few: "%{number} Participants"
       other: "%{number} Participants"
     participant limit: "Participant Limit: %{number}"
     + x more: "+ %{number} more"

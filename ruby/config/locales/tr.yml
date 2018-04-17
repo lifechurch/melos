@@ -1389,6 +1389,8 @@ tr:
         likes: "Beğenme e-postalarından başarıyla kaydın silindi."
         moments: "Anlar e-postalardan başarıyla kaydın silindi."
         newsletter: "Bülten e-postalardan başarıyla kaydın silindi."
+        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
+        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
         reading_plans: "Okuma planları e-postalarından başarılı bir şekilde kaydın silindi."
         rp_daily: "Başarılı bir şekilde okuma planlar günlük e-posta üzerinden kayıt silindi %{plan_title}."
         votd: "Günün Ayeti e-postalarından başarıyla kaydın silindi."
