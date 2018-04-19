@@ -1,4 +1,6 @@
-import nr from 'newrelic'
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable no-console */
 import 'babel-polyfill'
 import express from 'express'
 import React from 'react'
@@ -16,12 +18,11 @@ import Raven from 'raven'
 import { renderStatic } from 'glamor/server'
 import { getToken, refreshToken } from './oauth'
 import { getLocale } from './app/lib/langUtils'
-import planLocales from './locales/config/planLocales.json'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
 
-const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
+const getAssetPath = (path) => {
 	if (process.env.DEBUG) {
 		return path
 	} else {
@@ -36,7 +37,7 @@ const getAssetPath = nr.createTracer('fnGetAssetPath', (path) => {
 			return path
 		}
 	}
-})
+}
 
 function massageSessionToOauth(sessionData) {
 	const { tp_token, username, password } = sessionData
@@ -72,7 +73,7 @@ function oauthIsValid(response) {
 	} else return true
 }
 
-const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
+const checkAuth = (auth) => {
 	return new Promise((resolve, reject) => {
 
 		let authData = {
@@ -181,20 +182,20 @@ const checkAuth = nr.createTracer('fnCheckAuth', (auth) => {
 			resolve(authData)
 		}
 	})
-})
+}
 
 
-const getAssetPrefix = nr.createTracer('fnGetAssetPrefix', (req) => {
+const getAssetPrefix = (req) => {
 	const ssl = !!process.env.SECURE_TRAFFIC || false
 	const hostName = process.env.SECURE_HOSTNAME || req.get('Host')
 	return `${ssl ? 'https' : 'http'}://${hostName}`
-})
+}
 
-const getNodeHost = nr.createTracer('fnGetNodeHost', (req) => {
+const getNodeHost = (req) => {
 	return [req.protocol, '://', req.get('Host')].join('')
-})
+}
 
-const getDefaultState = nr.createTracer('fnGetDefaultState', (feature) => {
+const getDefaultState = (feature) => {
 	let defaultState = {}
 	try {
 		defaultState = require(`./app/standalone/${feature}/defaultState`).default
@@ -202,9 +203,9 @@ const getDefaultState = nr.createTracer('fnGetDefaultState', (feature) => {
 		defaultState = require('./app/defaultState').default
 	}
 	return defaultState
-})
+}
 
-const getStore = nr.createTracer('fnGetStore', (feature, startingState, history, logger) => {
+const getStore = (feature, startingState, history, logger) => {
 	let configureStore = {}
 	try {
 		configureStore = require(`./app/standalone/${feature}/store`).default
@@ -212,9 +213,9 @@ const getStore = nr.createTracer('fnGetStore', (feature, startingState, history,
 		configureStore = require('./app/store/configureStore').default
 	}
 	return configureStore(startingState, history, logger)
-})
+}
 
-const getRootComponent = nr.createTracer('fnGetRootComponent', (feature) => {
+const getRootComponent = (feature) => {
 	let rootComponent = null
 	try {
 		rootComponent = require(`./app/standalone/${feature}/rootComponent`).default
@@ -222,28 +223,28 @@ const getRootComponent = nr.createTracer('fnGetRootComponent', (feature) => {
 		Raven.captureException(ex)
 	}
 	return rootComponent
-})
+}
 
-const mapStateToParams = nr.createTracer('fnMapStateToParams', (feature, state, params) => {
+const mapStateToParams = (feature, state, params) => {
 	try {
 		const fn = require(`./app/standalone/${feature}/mapParamsToState`).default
 		return fn(state, params)
 	} catch (ex) {
 		return state
 	}
-})
+}
 
-const getConfig = nr.createTracer('fnGetConfig', (feature) => {
+const getConfig = (feature) => {
 	const defaultConfig = { linkCss: true }
 	let config = {}
 	try {
 		config = require(`./app/standalone/${feature}/config`).default
 	} catch (ex) { }
 	return Object.assign({}, defaultConfig, config)
-})
+}
 
-const loadData = nr.createTracer('fnLoadData', (feature, params, startingState, sessionData, store, Locale) => {
-	return new Promise(nr.createTracer('fnLoadData::promise', (resolve) => {
+const loadData = (feature, params, startingState, sessionData, store, Locale) => {
+	return new Promise((resolve) => {
 		let fn = null
 		try {
 			fn = require(`./app/standalone/${feature}/loadData`).default
@@ -251,11 +252,11 @@ const loadData = nr.createTracer('fnLoadData', (feature, params, startingState, 
 		} catch (ex) {
 			resolve()
 		}
-	}))
-})
+	})
+}
 
-const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
-	return new Promise(nr.createTracer('fnGetRenderProps::promsie', (resolve, reject) => {
+const getRenderProps = (feature, url) => {
+	return new Promise((resolve, reject) => {
 		if (url !== null && typeof url === 'string' && url.length > 0) {
 			let getRoutes = null
 			try {
@@ -278,21 +279,20 @@ const getRenderProps = nr.createTracer('fnGetRenderProps', (feature, url) => {
 			}
 		}
 		return resolve({})
-	}))
-})
+	})
+}
 
 router.post('/featureImport/*', urlencodedParser, (req, res) => {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	// const Locale = getLocale(params.languageTag)
-	nr.setTransactionName(`featureImport/${feature}`)
 
 	Raven.setContext({ user: auth, tags: { feature, url: params.url }, extra: { params } })
 
 	reactCookie.plugToRequest(req, res)
 
 	let verifiedAuth = null
-	checkAuth(auth).then(nr.createTracer('checkingAuth', (authResult) => {
+	checkAuth(auth).then((authResult) => {
 		const sessionData = Object.assign({}, authResult.userData)
 		authResult.userData.password = null
 		verifiedAuth = authResult
@@ -313,17 +313,16 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 			const history = createMemoryHistory()
 			const initialState = Object.assign({}, startingState, { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
 			const store = getStore(feature, initialState, history, null)
-			loadData(feature, params, startingState, sessionData, store, Locale).then(nr.createTracer('loadData', (action) => {
-				const finish = nr.createTracer('finish', () => {
+			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
+				const finish = () => {
 					// console.log('FEATURE DATA', action)
 					const RootComponent = getRootComponent(feature)
 
 					if (RootComponent === null) {
-						nr.endTransaction()
 						return res.status(500).send({ error: 4, message: `No root component defined for this feature: ${feature}` })
 					}
 
-					getRenderProps(feature, params.url).then(nr.createTracer('getRenderProps', (renderProps) => {
+					getRenderProps(feature, params.url).then((renderProps) => {
 						let html, css = null
 						try {
 							({ html, css } = renderStatic(() => {
@@ -332,7 +331,6 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 						} catch (ex) {
 								// throw new Error(`Error: 3 - Could Not Render ${feature} view`, ex)
 							Raven.captureException(ex)
-							nr.endTransaction()
 							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 
@@ -365,8 +363,7 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 							railsHost: params.railsHost,
 							referrer,
 							appContainerSuffix: feature
-						}, nr.createTracer('render', (err, renderedHtml) => {
-							nr.endTransaction()
+						}, (err, renderedHtml) => {
 							res.send({
 								html: renderedHtml,
 								head,
@@ -384,39 +381,36 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 								],
 								css_inline: css
 							})
-						}))
+						})
 						return null
-					}), (err) => {
+					}, (err) => {
 						console.log('Render props error', err)
 					})
-				})
+				}
 				if (typeof action === 'function') {
-					store.dispatch(action).then(nr.createTracer('actionIsFn::success', () => {
+					store.dispatch(action).then(() => {
 						finish()
-					}), nr.createTracer('actionIsFn::failure', () => {
+					}, () => {
 						finish()
-					}))
+					})
 				} else if (typeof action === 'object') {
 					store.dispatch(action);
 					finish();
 				} else {
 					finish()
 				}
-			}), nr.createTracer('loadDataFailed', (errorDetail) => {
+			}, (errorDetail) => {
 				Raven.mergeContext({ extra: { errorDetail, params } })
 				Raven.captureException(new Error(`LoadData Error - Could Not Render ${feature} view`))
-				nr.endTransaction()
 				res.status(404).send(errorDetail)
-			}))
+			})
 		} catch (ex) {
 			Raven.captureException(ex)
-			nr.endTransaction()
 			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
 		}
-	}), nr.createTracer('authFailed', (authError) => {
-		nr.endTransaction()
+	}, (authError) => {
 		res.status(403).send(authError)
-	}))
+	})
 })
 
 module.exports = router;

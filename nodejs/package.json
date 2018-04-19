@@ -52,6 +52,7 @@
     "gulp-sourcemaps": "^1.9.1",
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
+    "heapdump": "^0.3.9",
     "history": "^3.3.0",
     "immutable": "^3.8.1",
     "intl": "^1.1.0",
