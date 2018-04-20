@@ -16,8 +16,8 @@ spec:
       space: $KUBE_NAMESPACE
   strategy:
     rollingUpdate:
-      maxSurge: 10%
-      maxUnavailable: 0
+      maxSurge: 30%
+      maxUnavailable: 25%
   template:
     metadata:
       labels:
@@ -27,7 +27,7 @@ spec:
       annotations:
         build_id: "$CI_JOB_ID"
     spec:
-      terminationGracePeriodSeconds: 60
+      terminationGracePeriodSeconds: 20
       containers:
       - name: $KUBE_NAMESPACE-$CI_ENVIRONMENT_SLUG
         image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
