@@ -198,7 +198,7 @@ router.get('/*', cookieParser(), (req, res) => {
 			}
 
 			try {
-				const logger = createNodeLogger()
+				const logger = (process.env.NODE_ENV === 'production') ? null : createNodeLogger()
 				const memoryHistory = createMemoryHistory()
 				const store = configureStore(startingState, memoryHistory, logger)
 				const history = syncHistoryWithStore(memoryHistory, store)
