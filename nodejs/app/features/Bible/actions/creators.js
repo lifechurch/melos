@@ -20,7 +20,7 @@ const ActionCreators = {
 		// chapter from the new version and set the bible up that way
 		return dispatch => {
 			return new Promise((resolve) => {
-				dispatch(bibleAction({ id: version })).then((newVersion) => {
+				dispatch(bibleAction({ method: 'version', params: { id: version } })).then((newVersion) => {
 					let newRef, newReaderVersion
 					// if this version call fails, then it's probably just a bad version, so don't
 					// try to make the new reader call with the same version

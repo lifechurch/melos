@@ -60,3 +60,5 @@ EXTERNAL_YOUVERSION_IMPORT/src/endpoints/plans/typeName.js
 EXTERNAL_YOUVERSION_IMPORT/src/generators/action.js
 EXTERNAL_YOUVERSION_IMPORT/src/generators/reducer.js
 EXTERNAL_YOUVERSION_IMPORT/src/generators/type.js
+
+*.heapsnapshot
