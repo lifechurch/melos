@@ -1,4 +1,4 @@
-FROM in.thewardro.be:4567/docker/passenger-full:2017.09.27
+FROM in.thewardro.be:4567/docker/passenger-full:2018.04.20
 
 ARG NPM_TOKEN
 ENV NPM_TOKEN: $NPM_TOKEN
