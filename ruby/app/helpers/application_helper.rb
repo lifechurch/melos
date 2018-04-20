@@ -125,7 +125,12 @@ module ApplicationHelper
   end
 
   def localized_bible_icon( size = 48, locale=I18n.locale )
-    "icons/bible/#{size.to_s}/#{locale}.png"
+    asset_path = "icons/bible/#{size.to_s}/#{locale}.png"
+    if Rails.application.assets.find_asset(asset_path).nil?
+      return "icons/bible/#{size.to_s}/en.png"
+    else
+      return asset_path
+    end
   end
 
   def bible_icon_for_version(opts={})
