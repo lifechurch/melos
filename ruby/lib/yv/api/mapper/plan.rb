@@ -13,7 +13,7 @@ module YV
 
           def from_all(results)
             unless results == []
-              puts results
+              # puts results
               if results.errors? or results.reading_plans.nil?
                 return []
               else

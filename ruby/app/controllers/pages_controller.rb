@@ -161,9 +161,9 @@ class PagesController < ApplicationController
 		fromNode = YV::Nodestack::Fetcher.get('VOTD', p, cookies, current_auth, current_user, request)
 
 		if (fromNode['error'].present?)
-      puts "****"*100
-      puts fromNode["stack"]
-      puts "****"*100
+      # puts "****"*100
+      # puts fromNode["stack"]
+      # puts "****"*100
 			return render_404
 		end
 
