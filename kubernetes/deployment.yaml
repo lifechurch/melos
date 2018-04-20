@@ -60,6 +60,11 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: TREADSTONE_SECRET
+          - name: SENTRY_DSN
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: SENTRY_DSN
           - name: NEW_RELIC_LICENSE_KEY
             valueFrom:
               secretKeyRef:
