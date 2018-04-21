@@ -65,6 +65,11 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: SENTRY_DSN
+          - name: STACK_IMPACT_AGENT_KEY
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: STACK_IMPACT_AGENT_KEY
           - name: NEW_RELIC_LICENSE_KEY
             valueFrom:
               secretKeyRef:
