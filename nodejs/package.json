@@ -14,7 +14,6 @@
     "bootstrap:packages": "lerna bootstrap --hoist"
   },
   "dependencies": {
-    "@newrelic/native-metrics": "^2.1.0",
     "@youversion/api-redux": "^0.4.49",
     "@youversion/js-api": "^1.0.28",
     "@youversion/melos": "^0.0.17",
@@ -66,7 +65,7 @@
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
     "morgan": "~1.6.1",
-    "newrelic": "^1.40.0",
+    "newrelic": "^4.0.0",
     "po2json": "^0.4.5",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",

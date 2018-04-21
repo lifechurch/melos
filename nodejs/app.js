@@ -1,5 +1,3 @@
-require('newrelic');
-
 const Raven = require('raven');
 const express = require('express');
 const path = require('path');
