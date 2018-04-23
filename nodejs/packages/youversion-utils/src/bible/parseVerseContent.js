@@ -1,3 +1,6 @@
+import ServerXPath from 'xpath'
+import { DOMParser as ServerDOMParser } from 'xmldom'
+
 export default function parseVerseFromContent({ usfms, fullContent }) {
 	if (usfms && fullContent) {
 		const textOutput = []
@@ -7,9 +10,8 @@ export default function parseVerseFromContent({ usfms, fullContent }) {
 		let doc, xpath
 		if (isServerRendering) {
       // parsing on the server
-			xpath = require('xpath')
-			const Parser = require('xmldom').DOMParser
-			doc = new Parser({
+			xpath = ServerXPath
+			doc = new ServerDOMParser({
 				locator: {},
 				errorHandler: {
 					warning() {},
