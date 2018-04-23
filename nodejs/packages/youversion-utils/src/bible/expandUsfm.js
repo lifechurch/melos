@@ -7,9 +7,10 @@
  * @return {Array}      	[expanded usfms]
  */
 export default function (usfm, delimiter = '+') {
+	if (typeof usfm === 'undefined' || (Array.isArray(usfm) && typeof usfm[0] === 'undefined')) return []
 	const refArray = Array.isArray(usfm)
-		? usfm[0].split('.')
-		: usfm.split('.')
+    ? usfm[0].split('.')
+    : usfm.split('.')
 	const chapUsfm = refArray.slice(0, 2).join('.')
 	const verseORVerseRange = refArray.pop()
 	// break up the verses into single verse, or verse range

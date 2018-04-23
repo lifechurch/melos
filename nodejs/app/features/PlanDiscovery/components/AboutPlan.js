@@ -3,15 +3,22 @@ import PropTypes from 'prop-types'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
-
+import Routes from '@youversion/utils/lib/routes/routes'
 import CarouselStandard from '../../../components/Carousel/CarouselStandard'
 import Image from '../../../components/Carousel/Image'
 import PlanActionButtons from './PlanActionButtons'
 import AvatarList from '../../../widgets/AvatarList'
 import ShareWidget from './ShareWidget'
 import imageUtil from '../../../lib/imageUtil'
-import Routes from '@youversion/utils/lib/routes/routes'
 
+function isPlanValid(planResponse) {
+	if (
+    (typeof planResponse !== 'object') ||
+    ('errors' in planResponse && Array.isArray(planResponse.errors) && planResponse.errors.length > 0) ||
+    !('name' in planResponse)
+  ) return false
+	return true
+}
 
 class AboutPlan extends Component {
 	constructor(props) {
@@ -37,7 +44,7 @@ class AboutPlan extends Component {
 			params
 		} = this.props
 
-		if (!readingPlan || (typeof readingPlan === 'object' && readingPlan.__validation && !readingPlan.__validation.isValid)) {
+		if (!readingPlan || !isPlanValid(readingPlan) || (typeof readingPlan === 'object' && readingPlan.__validation && !readingPlan.__validation.isValid)) {
 			return (
 				<div />
 			)

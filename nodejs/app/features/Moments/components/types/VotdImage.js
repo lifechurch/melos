@@ -86,24 +86,25 @@ class VotdImage extends Component {
 				</div>
 			)
 		} else {
-			content = (
-				<VerseImagesSlider
-          alt={alt}
-					usfm={expandUsfm(usfmForImgs, false)}
-					category='prerendered'
-					linkBuilder={({ id }) => {
-						return Routes.votdImage({
-							usfm: referenceStrings && referenceStrings.usfm,
-							id,
-							serverLanguageTag,
-							query: {
-								version: versionId
-							}
-						})
-					}}
-					version_id={versionId}
-				/>
-			)
+			content = ((Array.isArray(usfmForImgs) && usfmForImgs.length > 0) || (typeof usfmForImgs === 'string' && usfmForImgs.length > 0))
+        ? (
+	<VerseImagesSlider
+		alt={alt}
+		usfm={expandUsfm(usfmForImgs, false)}
+		category='prerendered'
+		linkBuilder={({ id }) => {
+			return Routes.votdImage({
+				usfm: referenceStrings && referenceStrings.usfm,
+				id,
+				serverLanguageTag,
+				query: {
+					version: versionId
+				}
+			})
+		}}
+		version_id={versionId}
+ />
+        ) : null
 		}
 
 		return (
@@ -118,7 +119,7 @@ class VotdImage extends Component {
 											{ title }
 										</Heading3>
 									)}
-								/>
+        />
 							}
 							footer={
 								<MomentFooter
@@ -129,7 +130,7 @@ class VotdImage extends Component {
 											tabIndex={0}
 											className='vertical-center'
 											onClick={this.handleShare.bind(this, title)}
-										>
+          >
 											<ShareIcon fill='gray' />
 										</a>,
 										<OverflowMenu
@@ -167,7 +168,7 @@ VotdImage.propTypes = {
 	image_id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	dispatch: PropTypes.func.isRequired,
 	onShare: PropTypes.func,
-  alt: PropTypes.string
+	alt: PropTypes.string
 }
 
 VotdImage.defaultProps = {
@@ -178,7 +179,7 @@ VotdImage.defaultProps = {
 	className: '',
 	image_id: null,
 	onShare: null,
-  alt: null
+	alt: null
 }
 
 function mapStateToProps(state) {
