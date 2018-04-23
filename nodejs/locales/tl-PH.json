@@ -93,6 +93,8 @@
 	"unsubscribe.success.likes": "Nakapag-unsubscribe ka sa <b>Likes</b> na mga email.",
 	"unsubscribe.success.moments": "Nakapag-unsubscribe ka sa <b>Moments</b> na mga email.",
 	"unsubscribe.success.newsletter": "Nakapag-unsubscribe ka sa <b>Newsletter</b> na mga email.",
+	"unsubscribe.success.pwf_comments": "You successfully unsubscribed from <b>Comments</b> emails for this Plan.",
+	"unsubscribe.success.pwf_accepts": "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan.",
 	"unsubscribe.success.reading_plans": "Nakapag-unsubscribe ka sa <b>Reading Plans</b> na mga email.",
 	"unsubscribe.success.rp_daily": "Nakapag-unsubscribe ka sa <b>Reading Plans Daily na mga email</b> mula sa {plan_title}.",
 	"unsubscribe.success.votd": "Nakapag-unsubscribe ka sa <b>Verse of the Day</b> na mga email.",

@@ -93,6 +93,8 @@
 	"unsubscribe.success.likes": "ukuphuma kwakho kwi <b> Likes </b> emails, kube yimpumelelo.",
 	"unsubscribe.success.moments": "Ukuphuma kwakho kwi <b>Moments </b> emails kube yimpumelelo.",
 	"unsubscribe.success.newsletter": "ukuphuma kwakho kwi <b> Newsletter </b> emails, kube yimpumelelo.",
+	"unsubscribe.success.pwf_comments": "You successfully unsubscribed from <b>Comments</b> emails for this Plan.",
+	"unsubscribe.success.pwf_accepts": "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan.",
 	"unsubscribe.success.reading_plans": "ukuphuma kwakho kuhla lwe <b> Reading Plans </b> emails, kube yimpumelelo.",
 	"unsubscribe.success.rp_daily": "Ukuphuma kwakho kwi <b> Reading Plans Daily emails </b> isuka kwi {plan_title} kuphumelele.",
 	"unsubscribe.success.votd": "Ukuphuma kwakho kwi <b> Verse of the Day </b> Emails, kube yimpumelelo.",

@@ -93,6 +93,8 @@
 	"unsubscribe.success.likes": "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Hoffi</b>",
 	"unsubscribe.success.moments": "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Gweithgarwch</b>",
 	"unsubscribe.success.newsletter": "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Cylchlythyr</b>",
+	"unsubscribe.success.pwf_comments": "You successfully unsubscribed from <b>Comments</b> emails for this Plan.",
+	"unsubscribe.success.pwf_accepts": "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan.",
 	"unsubscribe.success.reading_plans": "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Cynlluniau Darllen</b>",
 	"unsubscribe.success.rp_daily": "Rwyt wedi llwyddo i ddad-danysgrifio o <b>e-byst dyddiol Cynlluniau Darllen</b> o {plan_title}",
 	"unsubscribe.success.votd": "Rwyt wedi llwyddo i ddad-danysgrifio o e-byst <b>Adnod y Dydd</b>",

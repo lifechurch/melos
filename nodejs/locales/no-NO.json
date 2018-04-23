@@ -93,6 +93,8 @@
 	"unsubscribe.success.likes": "Du har meldt deg av <b>Liker</b> e-postene.",
 	"unsubscribe.success.moments": "Du har meldt deg av <b>Øyeblikk</b> e-postene.",
 	"unsubscribe.success.newsletter": "Du har meldt deg av <b>Nyhetsbrev</b> e-postene.",
+	"unsubscribe.success.pwf_comments": "You successfully unsubscribed from <b>Comments</b> emails for this Plan.",
+	"unsubscribe.success.pwf_accepts": "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan.",
 	"unsubscribe.success.reading_plans": "Du har meldt deg av <b>Leseplaner</b> e-postene.",
 	"unsubscribe.success.rp_daily": "Du har meldt deg av <b>daglige Leseplan-eposter </b> fra {plan_title}.",
 	"unsubscribe.success.votd": "Du har meldt deg av <b>Dagens bibelvers</b> e-postene.",
@@ -826,6 +828,6 @@
 	"share.invite_facebook_direct": "Har du Bibel-appen? Jeg liker den, og tenkte at du også ville like den. Her er lenke om du ikke har den:",
 	"share.invite_sms": "Jeg elsker bibelappen til YouVersion. Jeg tror du også vil elske den:",
 	"share.invite_sms_prefix": "Fra {name}:",
-	"share.invite_twitter": "Bibel-appen fra @YouVersion er plassert på førstesiden p�� skjermen min. Les, se, lytt og del - alt i en gratis app:",
+	"share.invite_twitter": "Bibel-appen fra @YouVersion er plassert på førstesiden på skjermen min. Les, se, lytt og del - alt i en gratis app:",
 	"share.invite_twitter_direct": "Har du Bibel-appen fra @YouVersion? Jeg liker den, og tenkte at du også ville like den. Her er lenke om du ikke har den:"
 }
