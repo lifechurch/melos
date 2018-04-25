@@ -8,7 +8,7 @@ const agentKey = process.env.STACK_IMPACT_AGENT_KEY
 const appName = process.env.NEW_RELIC_APP_NAME
 
 if (agentKey && appName) {
-	stackimpact.start({
+	global.siAgent = stackimpact.start({
 		agentKey,
 		appName
 	});
