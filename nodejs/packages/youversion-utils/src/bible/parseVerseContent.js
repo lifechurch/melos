@@ -1,12 +1,21 @@
 import ServerXPath from 'xpath'
 import { DOMParser as ServerDOMParser } from 'xmldom'
 
+const isServerRendering = typeof window === 'undefined'
+
 export default function parseVerseFromContent({ usfms, fullContent }) {
+  /* global siAgent */
+	let siSpan
+	if (isServerRendering && typeof siAgent !== 'undefined') {
+		siSpan = siAgent.profile('parseVerseFromContent');
+	}
+
+	let returnValue
+
 	if (usfms && fullContent) {
 		const textOutput = []
 		const htmlOutput = []
 
-		const isServerRendering = typeof window === 'undefined'
 		let doc, xpath
 		if (isServerRendering) {
       // parsing on the server
@@ -56,6 +65,7 @@ export default function parseVerseFromContent({ usfms, fullContent }) {
 				textOutput.push(nextText.textContent)
 				nextText = text.iterateNext()
 			}
+
 			// html
 			let nextHtml = html.iterateNext()
 			while (nextHtml) {
@@ -65,15 +75,24 @@ export default function parseVerseFromContent({ usfms, fullContent }) {
 				htmlOutput.push(htmlContent)
 				nextHtml = html.iterateNext()
 			}
+
 		})
-		return {
+
+		returnValue = {
 			text: textOutput.join(' ').replace(/\s\s+/g, ' '),
 			html: htmlOutput.join(' ')
 		}
+
 	} else {
-		return {
+		returnValue = {
 			text: '',
 			html: ''
 		}
 	}
+
+	if (isServerRendering && typeof siSpan !== 'undefined') {
+		siSpan.stop()
+	}
+
+	return returnValue
 }
