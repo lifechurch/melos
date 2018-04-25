@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// require('newrelic')
+require('newrelic')
 require('heapdump')
 const stackimpact = require('stackimpact')
 const server = require('./server.compiled')
