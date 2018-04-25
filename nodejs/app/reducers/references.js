@@ -1,12 +1,12 @@
 import contentType from '../features/EventEdit/features/content/actions/constants'
 
 export default function references(state = {}, action) {
-	switch(action.type) {
+	switch (action.type) {
 
 		case contentType('versionsSuccess'):
 			var versions = action.response.versions
 			var new_state = Object.assign({}, state, {
-				order:  {
+				order: {
 					...state.order,
 					[action.params.language_tag]: versions.map((v) => { return v.id })
 				}

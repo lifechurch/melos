@@ -13,7 +13,7 @@ class DeletableLabel extends Component {
 
 	onDelete() {
 		const { onDelete, label } = this.props
-		if (typeof onDelete == 'function') {
+		if (typeof onDelete === 'function') {
 			onDelete(label)
 		}
 	}

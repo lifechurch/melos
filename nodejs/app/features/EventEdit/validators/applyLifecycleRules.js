@@ -3,8 +3,8 @@ import EventStatus from '../eventStatus'
 
 const defaultRules = Object.assign({}, defaultState.event.rules)
 
-export default function(event) {
-	let rules = Object.assign({}, defaultRules)
+export default function (event) {
+	const rules = Object.assign({}, defaultRules)
 	const { item } = event
 	if (typeof item === 'object') {
 		checkStatus(event, rules)
@@ -20,7 +20,7 @@ function checkStatus(event, rules) {
 	const { status } = event.item
 
 	if (typeof status === 'string') {
-		switch(status) {
+		switch (status) {
 			case EventStatus('draft'):
 				rules.details.canView 					= true
 				rules.details.canEdit 					= true
@@ -127,7 +127,7 @@ function checkId(event, rules) {
 function checkVirtualLocations(event, rules) {
 	const { locations } = event.item
 	if (typeof locations === 'object') {
-		for (let key of Object.keys(locations)) {
+		for (const key of Object.keys(locations)) {
 			const location = locations[key]
 			if (location.type === 'virtual' && (location.isSelected === true || typeof location.isSelected === 'undefined')) {
 				rules.locations.canAddVirtual = false
@@ -140,11 +140,11 @@ function checkVirtualLocations(event, rules) {
 function checkLocationTimes(event, rules) {
 	const { locations } = event.item
 	if (typeof locations === 'object') {
-		for (let key of Object.keys(locations)) {
+		for (const key of Object.keys(locations)) {
 			const location = locations[key]
 			if (location.isSelected === true && (!Array.isArray(location.times) || location.times.length === 0)) {
 				rules.preview.canPublish = false
-				event.publishMessage = "features.EventEdit.errors.locationMustHaveTime"
+				event.publishMessage = 'features.EventEdit.errors.locationMustHaveTime'
 				break
 			}
 		}
@@ -154,7 +154,7 @@ function checkLocationTimes(event, rules) {
 		}
 	} else {
 		rules.preview.canPublish = false
-		event.publishMessage = "features.EventEdit.errors.locationRequired"
+		event.publishMessage = 'features.EventEdit.errors.locationRequired'
 	}
 }
 
@@ -162,13 +162,13 @@ function checkContent(event, rules) {
 	const { content } = event.item
 	if (!Array.isArray(content) || content.length === 0) {
 		rules.preview.canPublish = false
-		event.publishMessage = "features.EventEdit.errors.contentRequired"
+		event.publishMessage = 'features.EventEdit.errors.contentRequired'
 	} else if (rules.preview.canPublish) {
 		event.publishMessage = null
 	}
 
-	for (var c of content) {
-		if (typeof c.content_id == 'undefined') {
+	for (const c of content) {
+		if (typeof c.content_id === 'undefined') {
 			rules.content.canReorder = false
 		}
 	}

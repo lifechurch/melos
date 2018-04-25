@@ -3,7 +3,7 @@ import { validateSetContentFieldParams, validateRemoveContentParams, validateAdd
 import { toApiFormat } from '../transformers/content'
 
 const ActionCreators = {
-	new (params) {
+	new(params) {
 		return {
 			type: contentType('new'),
 			params
@@ -17,7 +17,7 @@ const ActionCreators = {
 			return {
 				type: contentType('addFailure'),
 				params: { ...params },
-				api_errors: [{key: err.message}]
+				api_errors: [{ key: err.message }]
 			}
 		}
 
@@ -61,7 +61,7 @@ const ActionCreators = {
 				endpoint: 'search',
 				method: 'reading_plans',
 				version: '3.1',
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ contentType('searchPlansRequest'), contentType('searchPlansSuccess'), contentType('searchPlansFailure') ]
 			}
@@ -97,7 +97,7 @@ const ActionCreators = {
 				endpoint: 'bible',
 				method: 'chapter',
 				version: '3.1',
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ contentType('chapterRequest'), contentType('chapterSuccess'), contentType('chapterFailure') ]
 			}
@@ -131,7 +131,7 @@ const ActionCreators = {
 				endpoint: 'bible',
 				method: 'versions',
 				version: '3.1',
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ contentType('versionsRequest'), contentType('versionsSuccess'), contentType('versionsFailure') ]
 			}
@@ -155,7 +155,7 @@ const ActionCreators = {
 				endpoint: 'bible',
 				method: 'version',
 				version: '3.1',
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ contentType('versionRequest'), contentType('versionSuccess'), contentType('versionFailure') ]
 			}
@@ -183,7 +183,7 @@ const ActionCreators = {
 			return {
 				type: contentType('updateFailure'),
 				params: { ...params },
-				api_errors: [{key: err.message}]
+				api_errors: [{ key: err.message }]
 			}
 		}
 
@@ -204,7 +204,7 @@ const ActionCreators = {
 	},
 
 	remove(params) {
-		if (typeof params.content_id == 'undefined') {
+		if (typeof params.content_id === 'undefined') {
 			return {
 				type: contentType('removeRequest'),
 				params
@@ -220,7 +220,7 @@ const ActionCreators = {
 				method: 'remove_content',
 				version: '3.2',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'post',
 				types: [ contentType('removeRequest'), contentType('removeSuccess'), contentType('removeFailure') ]
 			}
@@ -251,7 +251,7 @@ const ActionCreators = {
 				method: 'reorder_content',
 				version: '3.2',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'post',
 				types: [ contentType('reorderRequest'), contentType('reorderSuccess'), contentType('reorderFailure') ]
 			}
@@ -268,7 +268,7 @@ const ActionCreators = {
 				method: 'image_upload',
 				version: '3.2',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ contentType('initUpload'), contentType('initUploadSuccess'), contentType('initUploadFailure') ]
 			}

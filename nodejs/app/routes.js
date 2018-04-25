@@ -18,7 +18,7 @@ import AboutPlanView from './containers/AboutPlanView'
 import Bible from './containers/Bible'
 import BibleAudio from './containers/BibleAudio'
 
-export default function(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData) {
+export default function (requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData) {
 	return (
 		<Route path="/(:locale(:/))" component={App} onEnter={requireAuth}>
 			<IndexRoute component={EventFeedMine} />

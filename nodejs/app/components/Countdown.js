@@ -11,7 +11,7 @@ class Countdown extends Component {
 	}
 
 	componentDidMount() {
-			if (typeof window !== 'undefined') {
+		if (typeof window !== 'undefined') {
   			this.interval = setInterval(::this.tick, 1000);
   		}
 	}
@@ -19,10 +19,10 @@ class Countdown extends Component {
 	tick() {
 		const { dispatch, index } = this.props
 		const { secondsRemaining } = this.state
-		this.setState({secondsRemaining: secondsRemaining - 1});
+		this.setState({ secondsRemaining: secondsRemaining - 1 });
 		if (secondsRemaining <= 0) {
 			clearInterval(this.interval);
-			this.setState({live: true})
+			this.setState({ live: true })
 		}
 	}
 
@@ -35,10 +35,10 @@ class Countdown extends Component {
 
 		const minutes = parseInt(secondsRemaining / 60)
 		const seconds = parseInt(secondsRemaining % 60)
-		const remainingTime =  (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds)
-		return <span className="red-label">
+		const remainingTime = `${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`
+		return (<span className="red-label">
 			{remainingTime}
-		</span>
+		</span>)
 	}
 
 }

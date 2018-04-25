@@ -17,9 +17,9 @@ class SaveForLaterView extends Component {
 						<Image width={320} height={180} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
 					</a>
 
-					<br/>
+					<br />
 
-					<div style={ {"marginTop": '15px'} }>
+					<div style={ { marginTop: '15px' } }>
 						<h3>
 							<a href={readingPlan.short_url}>{ readingPlan.name[auth.userData.language_tag] || readingPlan.name.default }</a>
 						</h3>

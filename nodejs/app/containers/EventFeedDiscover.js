@@ -15,7 +15,7 @@ class EventFeedDiscover extends Component {
 	render() {
 		const { hasError, errors, isFetching, items, intl, params } = this.props
 
-		var itemList = items.map((item) => {
+		const itemList = items.map((item) => {
 			return (
 				<li><Link to={`/${params.locale}/event/edit/${item.id}`}>{item.title}</Link></li>
 			)
@@ -23,7 +23,7 @@ class EventFeedDiscover extends Component {
 
 		return (
 			<div className="medium-10 large-7 columns small-centered">
-				<Helmet title={intl.formatMessage({id:"containers.EventFeedDiscover.title"})} />
+				<Helmet title={intl.formatMessage({ id: 'containers.EventFeedDiscover.title' })} />
 				<h1 className="eventPageTitle"><FormattedMessage id="containers.EventFeedDiscover.discover" /></h1>
 				<ul>
 					{itemList}

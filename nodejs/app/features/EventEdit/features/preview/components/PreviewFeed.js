@@ -17,7 +17,7 @@ class PreviewFeed extends Component {
 		const { dispatch, event, reference } = this.props
 		const { content, images } = event.item
 
-		const contentList = content.map((c,i) => {
+		const contentList = content.map((c, i) => {
 			const props = {
 				...this.props,
 				key: c.content_id,
@@ -55,12 +55,12 @@ class PreviewFeed extends Component {
 			}
 		})
 
-		var eventMeta
+		let eventMeta
 		if (event.item) {
-			eventMeta = <div className='actions'>
-							<p>&bull; <FormattedMessage id="features.EventEdit.features.preview.components.PreviewFeed.share" /></p>
-							<p>&bull; <FormattedMessage id="features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes" /></p>
-						</div>
+			eventMeta = (<div className='actions'>
+				<p>&bull; <FormattedMessage id="features.EventEdit.features.preview.components.PreviewFeed.share" /></p>
+				<p>&bull; <FormattedMessage id="features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes" /></p>
+			</div>)
 		}
 
 		return (

@@ -5,7 +5,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 		if (typeof store !== 'undefined') {
 			store.dispatch(userAction({
 				method: 'view',
-				params: {id: startingState.userId}
+				params: { id: startingState.userId }
 			})).then(() => {
 				resolve()
 			})

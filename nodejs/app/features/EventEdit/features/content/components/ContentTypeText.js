@@ -11,10 +11,11 @@ class ContentTypeText extends Component {
 			<FormField
 				InputType={HtmlEditor}
 				name="body"
-				placeholder={intl.formatMessage({id:"features.EventEdit.features.content.components.ContentTypeText.prompt"})}
+				placeholder={intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeText.prompt' })}
 				onChange={handleChange}
 				value={contentData.body}
-				errors={contentData.errors} />
+				errors={contentData.errors}
+			/>
 		)
 	}
 }

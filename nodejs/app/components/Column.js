@@ -17,7 +17,7 @@ Column.defaultProps = {
 }
 
 Column.propTypes = {
-	s: function(props, propName, componentName) {
+	s(props, propName, componentName) {
 		if (!/(small|medium|large)-(1[0-2]|[1-9]{1})/.test(props[propName])) {
 			return new Error('Validation failed!');
 		}

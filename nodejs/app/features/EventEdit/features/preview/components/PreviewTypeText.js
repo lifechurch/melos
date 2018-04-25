@@ -11,7 +11,7 @@ class PreviewTypeText extends Component {
 
 		return (
 			<div className='type text'>
-				<div className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
+				<div className='caption' dangerouslySetInnerHTML={{ __html: contentData.body }} />
 				<div className='meta'>
 					<div className='notes'><FormattedMessage id="features.EventEdit.features.preview.notes.prompt" /></div>
 					<div className='actions'>&bull; &bull; &bull;</div>

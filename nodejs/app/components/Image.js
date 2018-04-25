@@ -5,10 +5,10 @@ class Image extends Component {
 	render() {
 		const { images, height, width, className } = this.props
 
-		var image = []
+		let image = []
 
 		if (images) {
-			image = images.filter((i) => { if (i.width==width && i.height==height) { return true } })
+			image = images.filter((i) => { if (i.width == width && i.height == height) { return true } })
 		}
 
 		image = image.length ? <img src={image[0].url} className={className} /> : null

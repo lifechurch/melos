@@ -15,13 +15,13 @@ class EventFeedSaved extends Component {
 
 		const { intl } = this.props
 
-		var errors = this.props.errors.map((error) => {
+		const errors = this.props.errors.map((error) => {
 			return (<li>{error.key}</li>)
 		})
 
 		return (
 			<div className="medium-10 large-7 columns small-centered">
-				<Helmet title={intl.formatMessage({id: "containers.EventFeedSaved.title"})} />
+				<Helmet title={intl.formatMessage({ id: 'containers.EventFeedSaved.title' })} />
 				<h1 className="eventPageTitle"><FormattedMessage id="containers.EventFeedSaved.title" /></h1>
 			</div>
 		)

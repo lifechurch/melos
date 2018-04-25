@@ -30,7 +30,7 @@ export default {
 				db.stores[storeName] = Object.assign({}, db.stores[storeName], { searchIndex: {}, searchKeys: [] })
 			}
 		}
-		return
+
 	},
 
 	/**
@@ -50,7 +50,7 @@ export default {
 					}
 				}
 				store.searchKeys = Object.keys(store.searchIndex)
-			} catch(ex) { }
+			} catch (ex) { }
 		}
 	},
 
@@ -64,7 +64,7 @@ export default {
 			return []
 		} else {
 			filter = filter.toLocaleUpperCase()
-			let results = []
+			const results = []
 			try {
 				const store = window.yvIndex.databases[DB_NAME].stores[storeName]
 				for (let x = 0; x < store.searchKeys.length; x++) {

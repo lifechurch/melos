@@ -98,7 +98,7 @@ class VOTDView extends Component {
 							{ name: 'twitter:title', content: title },
 							{ name: 'twitter:description', content: verse },
 							{ name: 'twitter:site', content: '@YouVersion' },
-              ].concat(imgMeta)}
+						].concat(imgMeta)}
      />
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
 						<VotdText dayOfYear={day} version_id={version_id} />

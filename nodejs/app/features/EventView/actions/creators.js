@@ -18,7 +18,7 @@ const ActionCreators = {
 				method: 'save',
 				version: '3.2',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'post',
 				types: [ type('saveNoteRequest'), type('saveNoteSuccess'), type('saveNoteFailure') ]
 			}

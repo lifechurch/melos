@@ -37,9 +37,9 @@ export function validateReorderContentParams(params) {
 	if (!Array.isArray(content_ids) || content_ids.length === 0) {
 		throw new Error('Reorder: Invalid Content IDs')
 	} else {
-		for (var content_id of content_ids) {
+		for (const content_id of content_ids) {
 			if (typeof content_id !== 'number') {
-				throw new Error('Reorder: Invalid Content ID: ' +  content_id)
+				throw new Error(`Reorder: Invalid Content ID: ${content_id}`)
 			}
 		}
 	}
@@ -54,22 +54,22 @@ export function validateAddContentParams(params) {
 	}
 
 	if (['text', 'announcement', 'reference', 'plan', 'url', 'image'].indexOf(type) === -1) {
-		throw new Error('Invalid content type: ' + type)
+		throw new Error(`Invalid content type: ${type}`)
 	}
 
 	if (typeof sort !== 'number') {
-		throw new Error('Invalid sort value: ' + sort)
+		throw new Error(`Invalid sort value: ${sort}`)
 	}
 
 	if (typeof id !== 'number') {
-		throw new Error('Invalid Event ID: ' + id)
+		throw new Error(`Invalid Event ID: ${id}`)
 	}
 
 	if (typeof data !== 'object') {
-		throw new Error('Invalid Content data: ' + data)
+		throw new Error(`Invalid Content data: ${data}`)
 	}
 
-	switch(type) {
+	switch (type) {
 		case 'text':
 			validateTextType(data)
 			break
@@ -151,8 +151,8 @@ function validateUrlType(params) {
 		throw new Error('Content Type URL requires `url` to be a string')
 	}
 
-	var re = /^[\.\-\w]{2,32}:\/\/(([\.\-\w~_@'()*+,!#&;=\$\?\[\]\:])|%[0-9a-fA-F]{2})+(\/){0,1}(([\.\-\w~_@'()*+,!#&;=\$\?\[\]\:]|%[0-9a-fA-F]{2})+(\/){0,1})*$/
-	if (!re.test(url)){
+	const re = /^[\.\-\w]{2,32}:\/\/(([\.\-\w~_@'()*+,!#&;=\$\?\[\]\:])|%[0-9a-fA-F]{2})+(\/){0,1}(([\.\-\w~_@'()*+,!#&;=\$\?\[\]\:]|%[0-9a-fA-F]{2})+(\/){0,1})*$/
+	if (!re.test(url)) {
 		throw new Error('Not a valid URL.')
 	}
 }

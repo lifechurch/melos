@@ -10,11 +10,11 @@ class FormField extends Component {
 	render() {
 		const { InputType, errors, intl } = this.props
 
-		var labelClass = ''
-		var fieldError = null
+		let labelClass = ''
+		let fieldError = null
 		if (Array.isArray(errors) && errors.length > 0) {
 			labelClass = 'error'
-			let label = ""
+			let label = ''
 			for (const e of errors) {
 				if (typeof e === 'string') {
 					label += e

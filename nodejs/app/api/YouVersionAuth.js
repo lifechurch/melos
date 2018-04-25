@@ -3,8 +3,8 @@ import https from 'https'
 import { fetchToken } from '@youversion/token-storage'
 
 function handleRequest(path, method, postBody) {
-	return new Promise(function(resolve, reject) {
-		let headers = {
+	return new Promise((resolve, reject) => {
+		const headers = {
 			'Content-Type': 'application/json'
 		}
 
@@ -14,10 +14,10 @@ function handleRequest(path, method, postBody) {
 
 		const token = fetchToken()
 		if (typeof token === 'string' && token.length > 0) {
-			headers['authorization'] = 'Bearer ' + token
+			headers.authorization = `Bearer ${token}`
 		}
 
-		var req = https.request({
+		const req = https.request({
 			path,
 			method,
 			headers
@@ -27,18 +27,18 @@ function handleRequest(path, method, postBody) {
 			req.write(postBody)
 		}
 
-		req.on("response", function(response) {
-			let body = ""
+		req.on('response', (response) => {
+			let body = ''
 
-			response.on('data', function(chunk) {
+			response.on('data', (chunk) => {
 				body += chunk
 			})
 
-			response.on("end", function() {
+			response.on('end', () => {
 				try {
 					if (response.statusCode < 400) {
 						if (body.length === 0) {
-							resolve({status: response.statusCode, message:response.statusMessage})
+							resolve({ status: response.statusCode, message: response.statusMessage })
 						} else {
 							resolve(JSON.parse(body))
 						}
@@ -46,13 +46,13 @@ function handleRequest(path, method, postBody) {
 						reject(new Error(response.statusMessage))
 					}
 
-				} catch(ex) {
+				} catch (ex) {
 					reject(ex)
 				}
 			})
 		})
 
-		req.on('error', function(e) {
+		req.on('error', (e) => {
 			reject(e)
 		})
 
@@ -64,7 +64,7 @@ function handleRequest(path, method, postBody) {
 
 export default {
 	authenticate(user, password) {
-		var postBody = JSON.stringify({
+		const postBody = JSON.stringify({
 			user,
 			password
 		})

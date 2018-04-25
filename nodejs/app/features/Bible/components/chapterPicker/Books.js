@@ -6,7 +6,7 @@ class Books extends Component {
 
 	bookSelect(book, filtering) {
 		const { onSelect } = this.props
-		if (typeof onSelect == 'function') {
+		if (typeof onSelect === 'function') {
 			onSelect(book, filtering)
 		}
 	}
@@ -14,18 +14,18 @@ class Books extends Component {
 	render() {
 		const { list, onSelect, listSelectionIndex, onMouseOver, focus, initialSelection } = this.props
 
-		var books = null
+		let books = null
 		if (Array.isArray(list) && list.length > 0) {
-			books = list.map((book, index) =>  {
+			books = list.map((book, index) => {
 				if (book && book.usfm) {
-					let active = (book.usfm == initialSelection) ? 'active' : ''
+					const active = (book.usfm == initialSelection) ? 'active' : ''
 					if (focus) {
-						let focusClass = (index == listSelectionIndex) ? 'focus' : ''
-						return(
-							(<li key={book.usfm} className={`${active} ${focusClass}`} onClick={this.bookSelect.bind(this, book, true)} onMouseOver={onMouseOver.bind(this, "books", index)} >{ book.human }</li>)
+						const focusClass = (index == listSelectionIndex) ? 'focus' : ''
+						return (
+							(<li key={book.usfm} className={`${active} ${focusClass}`} onClick={this.bookSelect.bind(this, book, true)} onMouseOver={onMouseOver.bind(this, 'books', index)} >{ book.human }</li>)
 						)
 					} else {
-						return(
+						return (
 							(<li key={book.usfm} className={`${active}`} onClick={this.bookSelect.bind(this, book, false)} >{ book.human }</li>)
 						)
 					}

@@ -32,7 +32,7 @@ class EventEditDetails extends Component {
 		const { event, dispatch, handleDetailsNext, params, intl } = this.props
 		return (
 			<div>
-				<Helmet title={intl.formatMessage({ id: "containers.EventEditDetails.title" })} />
+				<Helmet title={intl.formatMessage({ id: 'containers.EventEditDetails.title' })} />
 				<DetailsEdit intl={intl} event={event} params={params} dispatch={dispatch} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} />
 			</div>
 		)

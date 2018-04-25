@@ -12,7 +12,7 @@ class SelectableLabel extends Component {
 
 	onSelect() {
 		const { onSelect, label } = this.props
-		if (typeof onSelect == 'function') {
+		if (typeof onSelect === 'function') {
 			onSelect(label)
 		}
 	}

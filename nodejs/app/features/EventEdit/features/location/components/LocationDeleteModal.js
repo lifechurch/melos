@@ -13,14 +13,14 @@ class LocationDeleteModal extends Component {
 
 	render() {
 		const customStyles = {
-			content : {
-				top                   : '50%',
-				left                  : '50%',
-				right                 : 'auto',
-				bottom                : 'auto',
-				marginRight           : '-50%',
-				width                 : '500px',
-				transform             : 'translate(-50%, -50%)'
+			content: {
+				top: '50%',
+				left: '50%',
+				right: 'auto',
+				bottom: 'auto',
+				marginRight: '-50%',
+				width: '500px',
+				transform: 'translate(-50%, -50%)'
 			}
 		};
 
@@ -36,9 +36,9 @@ class LocationDeleteModal extends Component {
 		return (
 			<Modal isOpen={isOpen} style={customStyles}>
 				<FormattedMessage tagName="h3" id="features.EventEdit.features.location.components.LocationDeleteModal.sure" />
-				<FormattedMessage tagName="p"  id="features.EventEdit.features.location.components.LocationDeleteModal.selected" />
+				<FormattedMessage tagName="p" id="features.EventEdit.features.location.components.LocationDeleteModal.selected" />
 				<p><b>{loc.name}</b></p>
-				<FormattedMessage tagName="p"  id="features.EventEdit.features.location.components.LocationDeleteModal.warn" />
+				<FormattedMessage tagName="p" id="features.EventEdit.features.location.components.LocationDeleteModal.warn" />
 				<div className='modal-actions'>
 					<a onClick={handleClose}><FormattedMessage id="features.EventEdit.features.location.components.LocationDeleteModal.cancel" /></a>
 					<a className='solid-button red' onClick={::this.handleConfirm}><FormattedMessage id="features.EventEdit.features.location.components.LocationDeleteModal.delete" /></a>

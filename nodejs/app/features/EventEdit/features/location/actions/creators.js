@@ -93,14 +93,14 @@ const ActionCreators = {
 						dispatch(ActionCreators.getPlace(google_place_id, fetchedLoc, true)).then((fetchedPlace) => {
 							dispatch({
 								type: type('editSuccess'),
-								originalLoc: originalLoc,
+								originalLoc,
 								loc: fetchedLoc,
 								place: fetchedPlace
 							})
 						}, (error) => {
 							dispatch({
 								type: type('editFailure'),
-								originalLoc: originalLoc,
+								originalLoc,
 								loc: fetchedLoc,
 								place: false,
 								error
@@ -109,7 +109,7 @@ const ActionCreators = {
 					} else {
 						dispatch({
 							type: type('editSuccess'),
-							originalLoc: originalLoc,
+							originalLoc,
 							loc: fetchedLoc,
 							place: false
 						})
@@ -117,7 +117,7 @@ const ActionCreators = {
 				}, (error) => {
 					dispatch({
 						type: type('editFailure'),
-						originalLoc: originalLoc,
+						originalLoc,
 						loc: false,
 						place: false,
 						error
