@@ -5,7 +5,7 @@ export const EVENT_UPDATE_REQUEST = 'EVENT_UPDATE_REQUEST'
 export const EVENT_UPDATE_SUCCESS = 'EVENT_UPDATE_SUCCESS'
 export const EVENT_UPDATE_FAILURE = 'EVENT_UPDATE_FAILURE'
 
-var EventsApi = getClient('events')
+const EventsApi = getClient('events')
 
 function eventUpdateRequest() {
 	return {
@@ -16,14 +16,14 @@ function eventUpdateRequest() {
 function eventUpdateSuccess(data) {
 	return {
 		type: EVENT_UPDATE_SUCCESS,
-		data: data
+		data
 	}
 }
 
 function eventUpdateFailure(error) {
 	return {
 		type: EVENT_UPDATE_FAILURE,
-		error: error
+		error
 	}
 }
 
@@ -40,18 +40,18 @@ export function updateEvent(event) {
 	return dispatch => {
 		dispatch(eventUpdateRequest())
 		return EventsApi
-			.call("update")
-			.setVersion("3.2")
+			.call('update')
+			.setVersion('3.2')
 			.auth()
-			.params({title, org_name, description, image_id})
+			.params({ title, org_name, description, image_id })
 			.post()
-			.then(function(data) {
+			.then((data) => {
 				handleResponse(data).then((data) => {
 					dispatch(eventUpdateSuccess(data))
 				}, (error) => {
 					dispatch(eventUpdateFailure(error))
 				})
-			}, function(error) {
+			}, (error) => {
 				dispatch(eventUpdateFailure(error))
 			})
 	}

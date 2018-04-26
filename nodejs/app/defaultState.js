@@ -32,7 +32,7 @@ export default {
 		isDirty: false,
 		item: {
 			org_name: null,
-			status: "draft",
+			status: 'draft',
 			updated_dt: null,
 			description: null,
 			title: null,
@@ -100,7 +100,7 @@ export default {
 		query: '',
 		language_tag: 'en',
 		items: [],
-        focus_id: 0,
+		focus_id: 0,
 		isFetching: false,
 	},
 	plansDiscovery: {

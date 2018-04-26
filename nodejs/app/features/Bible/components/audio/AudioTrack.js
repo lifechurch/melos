@@ -27,7 +27,8 @@ class AudioTrack extends Component {
 			<div className="audio-track" onMouseUp={this.onMouseUp} ref={this.initialize}>
 				<div
 					className="audio-track-progress"
-					style={{ transform: `translate(${-1* (100 - percentComplete)}%, 0)`}} >
+					style={{ transform: `translate(${-1 * (100 - percentComplete)}%, 0)` }}
+				>
 					&nbsp;
 				</div>
 			</div>

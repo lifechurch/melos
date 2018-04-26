@@ -13,22 +13,24 @@ class ContentTypeAnnouncement extends Component {
 				<div className='form-body-block no-pad white'>
 					<FormField
 						InputType={Input}
-						placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeAnnouncement.title" })}
+						placeholder={intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeAnnouncement.title' })}
 						name="title"
 						onChange={handleChange}
 						value={contentData.title}
-						errors={contentData.errors} />
+						errors={contentData.errors}
+					/>
 				</div>
 				<p className='field-caption'>
 					<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeAnnouncement.caption" />
 				</p>
 				<FormField
 					InputType={HtmlEditor}
-					placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt" })}
+					placeholder={intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt' })}
 					name="body"
 					onChange={handleChange}
 					value={contentData.body}
-					errors={contentData.errors} />
+					errors={contentData.errors}
+				/>
 			</div>
 		)
 	}

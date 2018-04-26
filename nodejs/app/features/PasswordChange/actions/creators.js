@@ -9,7 +9,7 @@ const ActionCreators = {
 				method: 'update_password',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'post',
 				types: [ type('passwordChangeRequest'), type('passwordChangeSuccess'), type('passwordChangeFailure') ]
 			},

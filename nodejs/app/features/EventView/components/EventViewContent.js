@@ -26,7 +26,7 @@ class EventViewContent extends Component {
 
 	handleEditNote(e) {
 		const { dispatch, index } = this.props
-		dispatch( ActionCreators.editNote(index, e.target.value) )
+		dispatch(ActionCreators.editNote(index, e.target.value))
 
 		if (typeof this.cancelSave === 'number') {
 			clearTimeout(this.cancelSave)
@@ -38,91 +38,91 @@ class EventViewContent extends Component {
 
 	save() {
 		const { dispatch, id, content } = this.props
-		var comments = {[content.content_id]: content.comment}
-		dispatch( ActionCreators.saveNote({id, comments}) )
+		const comments = { [content.content_id]: content.comment }
+		dispatch(ActionCreators.saveNote({ id, comments }))
 	}
 
 	render() {
 		const { dispatch, auth, reference, content, index, intl } = this.props
-		var contentItem, meta_links, notes
+		let contentItem, meta_links, notes
 
 
 
 
 		switch (content.type) {
-				case 'text':
+			case 'text':
 					 if (typeof document !== 'undefined') {
-					   var output = document.createElement("DIV");
+					   var output = document.createElement('DIV');
 					   output.innerHTML = content.data.body;
-					   var output = output.textContent || output.innerText || "";
+					   var output = output.textContent || output.innerText || '';
 					} else {
 						output = ''
 					}
-					contentItem = <EventViewContentText intl={intl} contentData={content.data} meta_links={meta_links} />
-					meta_links = [
-						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.copy"}), payload: output},
-						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}), payload: {url: '', title: output}}
-					]
-					notes = true
-					break
+				contentItem = <EventViewContentText intl={intl} contentData={content.data} meta_links={meta_links} />
+				meta_links = [
+						{ label: intl.formatMessage({ id: 'features.EventView.components.EventViewContent.copy' }), payload: output },
+						{ label: intl.formatMessage({ id: 'features.EventView.components.EventViewContent.share' }), payload: { url: '', title: output } }
+				]
+				notes = true
+				break
 
-				case 'url':
-					contentItem = <EventViewContentLink intl={intl} contentData={content.data} />
-					break
+			case 'url':
+				contentItem = <EventViewContentLink intl={intl} contentData={content.data} />
+				break
 
-				case 'announcement':
-					contentItem = <EventViewContentAnnouncement intl={intl} contentData={content.data} />
-					break
+			case 'announcement':
+				contentItem = <EventViewContentAnnouncement intl={intl} contentData={content.data} />
+				break
 
-				case 'image':
-					var urls = []
-					if (content.data.urls) {
-						urls = content.data.urls.filter((i) => { if (i.width==640 && i.height==640) { return true } })
-					}
-					contentItem = <EventViewContentImage intl={intl} contentData={content.data} />
+			case 'image':
+				var urls = []
+				if (content.data.urls) {
+					urls = content.data.urls.filter((i) => { if (i.width == 640 && i.height == 640) { return true } })
+				}
+				contentItem = <EventViewContentImage intl={intl} contentData={content.data} />
 					// meta_links = [{label: 'Share', payload: {url: urls.length ? urls[0].url : null, title: ''}}]
-					notes = true
-					break
+				notes = true
+				break
 
-				case 'reference':
-					var human = content.data.human.split(':')[0] + ":" +
-									content.data.human.split(', ').map((v)=>{return v.split(':')[1]}).join()
-					var url = 'https://bible.com/' + content.data.version_id + '/' +
-								    content.data.usfm[0].split('.').slice(0,2).join('.') + '.' +
-								    content.data.human.split(', ').map((v)=>{return v.split(':')[1]}).join()
+			case 'reference':
+				var human = `${content.data.human.split(':')[0]}:${
+									content.data.human.split(', ').map((v) => { return v.split(':')[1] }).join()}`
+				var url = `https://bible.com/${content.data.version_id}/${
+								    content.data.usfm[0].split('.').slice(0, 2).join('.')}.${
+								    content.data.human.split(', ').map((v) => { return v.split(':')[1] }).join()}`
 
-					contentItem = <EventViewContentReference intl={intl} contentData={content.data} contentIndex={index} dispatch={dispatch} reference={reference} />
-					meta_links = [
-						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.read"}), payload: url},
+				contentItem = <EventViewContentReference intl={intl} contentData={content.data} contentIndex={index} dispatch={dispatch} reference={reference} />
+				meta_links = [
+						{ label: intl.formatMessage({ id: 'features.EventView.components.EventViewContent.read' }), payload: url },
 						// {label: 'Copy', payload: human + " " + url},
-						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}), payload: {url: url, title: human}}
-					]
-					notes = true
-					break
+						{ label: intl.formatMessage({ id: 'features.EventView.components.EventViewContent.share' }), payload: { url, title: human } }
+				]
+				notes = true
+				break
 
-				case 'plan':
-					contentItem = <EventViewContentPlan intl={intl} contentData={content.data} />
-					meta_links = [
-						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.readPlan"}), payload: content.data.short_url},
-						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}), payload: {url: content.data.short_url, title: content.data.title}}
-					]
-					break
+			case 'plan':
+				contentItem = <EventViewContentPlan intl={intl} contentData={content.data} />
+				meta_links = [
+						{ label: intl.formatMessage({ id: 'features.EventView.components.EventViewContent.readPlan' }), payload: content.data.short_url },
+						{ label: intl.formatMessage({ id: 'features.EventView.components.EventViewContent.share' }), payload: { url: content.data.short_url, title: content.data.title } }
+				]
+				break
 
-				default:
-					contentItem = <div className="content">{content.type}</div>
+			default:
+				contentItem = <div className="content">{content.type}</div>
 		}
 
 		if (notes) {
 			if (auth.isLoggedIn) {
 				notes = (
 					<div className="notes">
-						<Textarea name='notes' onChange={::this.handleEditNote} placeholder={intl.formatMessage({id:"features.EventEdit.features.preview.notes.prompt"})} value={content.comment} />
+						<Textarea name='notes' onChange={::this.handleEditNote} placeholder={intl.formatMessage({ id: 'features.EventEdit.features.preview.notes.prompt' })} value={content.comment} />
 					</div>
 				)
 			} else {
 				notes = (
 					<div className="notes unauthed">
-						<FormattedHTMLMessage id="features.EventEdit.features.preview.notes.noAuthPrompt" values={{url:"https://www.bible.com/sign-in"}} />
+						<FormattedHTMLMessage id="features.EventEdit.features.preview.notes.noAuthPrompt" values={{ url: 'https://www.bible.com/sign-in' }} />
 					</div>
 				)
 			}
@@ -130,7 +130,7 @@ class EventViewContent extends Component {
 
 
 		return (
-			<div className={"type" + (meta_links ? "" : " no-meta")}>
+			<div className={`type${meta_links ? '' : ' no-meta'}`}>
 				{contentItem}
 				{meta_links ? <EventViewContentMeta intl={intl} meta_links={meta_links.reverse()} /> : null}
 				{notes}

@@ -217,26 +217,26 @@ class Unsubscribe extends Component {
 					children
           && (children.length > 0 || !Array.isArray(children))
           && React.cloneElement(children, {
-            status,
-            loggedIn,
-            token,
-            type,
-            data,
-            localizedLink,
-            errors,
-            hosts,
-            tokenIdentity,
-            notificationSettings,
-            votdSubscription,
-            myPlans,
-            plan,
-            intl,
-            getNotificationSettings: this.getNotificationSettings,
-            getVOTDSubscription: this.getVOTDSubscription,
-            unsubscribe: this.unsubscribe,
-            updateNotificationSettings: this.updateNotificationSettings,
-            updateVOTDSubscription: this.updateVOTDSubscription
-          })
+	status,
+	loggedIn,
+	token,
+	type,
+	data,
+	localizedLink,
+	errors,
+	hosts,
+	tokenIdentity,
+	notificationSettings,
+	votdSubscription,
+	myPlans,
+	plan,
+	intl,
+	getNotificationSettings: this.getNotificationSettings,
+	getVOTDSubscription: this.getVOTDSubscription,
+	unsubscribe: this.unsubscribe,
+	updateNotificationSettings: this.updateNotificationSettings,
+	updateVOTDSubscription: this.updateVOTDSubscription
+})
 				}
 			</div>
 		)

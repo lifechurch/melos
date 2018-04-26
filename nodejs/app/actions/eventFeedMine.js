@@ -5,7 +5,7 @@ export const EVENT_FEED_MINE_REQUEST = 'EVENT_FEED_MINE_REQUEST'
 export const EVENT_FEED_MINE_SUCCESS = 'EVENT_FEED_MINE_SUCCESS'
 export const EVENT_FEED_MINE_FAILURE = 'EVENT_FEED_MINE_FAILURE'
 
-var EventsApi = getClient('events')
+const EventsApi = getClient('events')
 
 function eventFeedMineRequest() {
 	return {
@@ -16,14 +16,14 @@ function eventFeedMineRequest() {
 function eventFeedMineSuccess(data) {
 	return {
 		type: EVENT_FEED_MINE_SUCCESS,
-		data: data
+		data
 	}
 }
 
 function eventFeedMineFailure(error) {
 	return {
 		type: EVENT_FEED_MINE_FAILURE,
-		error: error
+		error
 	}
 }
 
@@ -37,7 +37,7 @@ export function fetchEventFeedMine(params) {
 			method: 'items',
 			version: '3.2',
 			auth: true,
-			params: params,
+			params,
 			http_method: 'get',
 			types: [ EVENT_FEED_MINE_REQUEST, EVENT_FEED_MINE_SUCCESS, EVENT_FEED_MINE_FAILURE ]
 		}

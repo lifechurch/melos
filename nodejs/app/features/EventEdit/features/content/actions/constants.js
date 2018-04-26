@@ -45,6 +45,6 @@ export default function (key) {
 	if (typeof key === 'string' && constants.hasOwnProperty(key)) {
 		return constants[key];
 	} else {
-		throw new Error('Invalid Content Action: ' + key)
+		throw new Error(`Invalid Content Action: ${key}`)
 	}
 }

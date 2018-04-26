@@ -22,14 +22,14 @@ class EventView extends Component {
 		const { dispatch, auth, reference, event, intl } = this.props
 		const { id, content } = event.item
 
-		const contentList = content.map((c,i) => {
+		const contentList = content.map((c, i) => {
 			return <EventViewContent intl={intl} key={i} id={id} content={c} index={i} dispatch={dispatch} auth={auth} reference={reference} />
 		})
 
 		return (
 			<Row>
 				<div id="ev-view" className="medium-10 large-7 columns small-centered">
-					<Helmet title={this.props.event.item.title + " :: " + intl.formatMessage({id:"containers.EventView.title"})} />
+					<Helmet title={`${this.props.event.item.title} :: ${intl.formatMessage({ id: 'containers.EventView.title' })}`} />
 					<EventViewDetails intl={intl} {...this.props} />
 					<div className="feed">
 						{contentList}
@@ -52,7 +52,7 @@ EventView.defaultProps = {
 		isSaved: false,
 		item: {
 			org_name: null,
-			status: "new",
+			status: 'new',
 			updated_dt: null,
 			description: null,
 			title: null,

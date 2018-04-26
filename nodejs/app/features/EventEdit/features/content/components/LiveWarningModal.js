@@ -7,14 +7,14 @@ import { FormattedMessage } from 'react-intl'
 class LiveWarningModal extends Component {
 	render() {
 		const customStyles = {
-			content : {
-				top                   : '50%',
-				left                  : '50%',
-				right                 : 'auto',
-				bottom                : 'auto',
-				marginRight           : '-50%',
-				width                 : '500px',
-				transform             : 'translate(-50%, -50%)'
+			content: {
+				top: '50%',
+				left: '50%',
+				right: 'auto',
+				bottom: 'auto',
+				marginRight: '-50%',
+				width: '500px',
+				transform: 'translate(-50%, -50%)'
 			}
 		};
 
@@ -35,7 +35,7 @@ class LiveWarningModal extends Component {
 					<a className='solid-button gray' onClick={handleClose}><FormattedMessage id="features.EventEdit.features.content.components.LiveWarningModal.ok" /></a>
 				</div>
 			</Modal>
-			)
+		)
 	}
 }
 

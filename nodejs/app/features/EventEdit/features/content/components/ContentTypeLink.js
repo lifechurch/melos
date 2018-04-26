@@ -10,13 +10,12 @@ class ContentTypeLink extends Component {
 		const { content, handleChange, intl } = this.props
 
 		// For the "giving" type links.
-		var kindrid_paragraph;
-		if ( content.hasOwnProperty('iamagivinglink') && content.iamagivinglink )
-		{
+		let kindrid_paragraph;
+		if (content.hasOwnProperty('iamagivinglink') && content.iamagivinglink)		{
 			// JSX voodoo:
 			kindrid_paragraph = (<p className="giving--kindred-para">
-					<FormattedHTMLMessage id="features.EventEdit.features.content.components.ContentTypeLink.kindrid" values={{url: "https://kindrid.com/"}} />
-				</p>)
+				<FormattedHTMLMessage id="features.EventEdit.features.content.components.ContentTypeLink.kindrid" values={{ url: 'https://kindrid.com/' }} />
+			</p>)
 		}
 
 		return (
@@ -24,27 +23,30 @@ class ContentTypeLink extends Component {
 				<div className="form-body-block no-pad white">
 					<FormField
 						InputType={Input}
-						placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeLink.label" })}
+						placeholder={intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeLink.label' })}
 						name="title"
 						onChange={handleChange}
 						value={content.data.title}
-						errors={content.data.errors} />
+						errors={content.data.errors}
+					/>
 				</div>
 				<FormField
 					InputType={HtmlEditor}
-					placeholder={intl.formatMessage({id: "features.EventEdit.features.content.components.ContentTypeLink.prompt" })}
+					placeholder={intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeLink.prompt' })}
 					name="body"
 					onChange={handleChange}
 					value={content.data.body}
-					errors={content.data.errors} />
+					errors={content.data.errors}
+				/>
 				<div className="form-body-block no-pad white">
 					<FormField
 						InputType={Input}
-						placeholder={intl.formatMessage({id:"features.EventEdit.features.content.components.ContentTypeLink.url"})}
+						placeholder={intl.formatMessage({ id: 'features.EventEdit.features.content.components.ContentTypeLink.url' })}
 						name="url"
 						onChange={handleChange}
 						value={content.data.url}
-						errors={content.data.errors} />
+						errors={content.data.errors}
+					/>
 
 				</div>
 				{kindrid_paragraph}

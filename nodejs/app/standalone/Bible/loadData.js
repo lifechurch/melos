@@ -99,15 +99,15 @@ export default function loadData(params, startingState, sessionData, store, Loca
 											usfm: usfms,
 										}
 									})),
-									dispatch(bibleAction({
-										method: 'versions',
-										params: {
-											language_tag: versionData
-												&& versionData.language
-												&& versionData.language.iso_639_3,
-											type: 'all'
-										}
-									}))
+									// dispatch(bibleAction({
+									// 	method: 'versions',
+									// 	params: {
+									// 		language_tag: versionData
+									// 			&& versionData.language
+									// 			&& versionData.language.iso_639_3,
+									// 		type: 'all'
+									// 	}
+									// }))
 								]
 								Promise.all(versionProms)
 									.then(() => { resolve2() })

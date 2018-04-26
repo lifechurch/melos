@@ -1,17 +1,17 @@
 function validateOutput(output, keys, scope) {
-	var newOutput
+	let newOutput
 	if (typeof output !== 'object') {
 		newOutput = {}
 	} else {
 		newOutput = Object.assign({}, output)
 	}
 
-	let { summary } = newOutput
+	const { summary } = newOutput
 	if (typeof summary !== 'string') {
 		newOutput.summary = ''
 	}
 
-	let { fields } = newOutput
+	const { fields } = newOutput
 	if (typeof fields !== 'object') {
 		newOutput.fields = {}
 	}
@@ -28,7 +28,7 @@ function validateOutput(output, keys, scope) {
 		newOutput.scope[scope] = false
 	}
 
-	for (var key in keys) {
+	for (const key in keys) {
 		newOutput.fields[key] = []
 	}
 
@@ -36,7 +36,7 @@ function validateOutput(output, keys, scope) {
 }
 
 export function isBlank(target, output, keys, scope) {
-	let newOutput = validateOutput(output, keys, scope)
+	const newOutput = validateOutput(output, keys, scope)
 
 	if (typeof target !== 'object') {
 		return newOutput
@@ -45,10 +45,10 @@ export function isBlank(target, output, keys, scope) {
 	const originalHasError = newOutput.hasError
 	const originalScopeHasError = newOutput.scope[scope]
 	newOutput.hasError = false
-	for (var key in keys) {
+	for (const key in keys) {
 		const prop = target[key]
 		const isBlank = (typeof prop !== 'string' || prop.length === 0)
-		const error = isBlank ? { string: "features.EventEdit.features.details.components.DetailsEdit.blank", field: keys[key] } : false
+		const error = isBlank ? { string: 'features.EventEdit.features.details.components.DetailsEdit.blank', field: keys[key] } : false
 		if (error !== false) {
 			newOutput.fields[key].push(error)
 			newOutput.summary = [newOutput.summary, error].join(' ')
@@ -61,7 +61,7 @@ export function isBlank(target, output, keys, scope) {
 }
 
 export function mergeApiErrors(target, output, keys, scope) {
-	let newOutput = validateOutput(output, keys, scope)
+	const newOutput = validateOutput(output, keys, scope)
 
 	const errors = target.api_errors
 	if (Array.isArray(errors) && errors.length > 0) {

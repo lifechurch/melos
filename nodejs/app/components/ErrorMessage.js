@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { injectIntl } from 'react-intl'
 
-function getError(e, scope='default', formatMessage, genericError) {
+function getError(e, scope = 'default', formatMessage, genericError) {
 	if (typeof e === 'object') {
 		const key = e.key
 		return typeof key === 'string' ? getErrorFromKey(key, scope, formatMessage, genericError) : genericError
@@ -15,25 +15,25 @@ function getError(e, scope='default', formatMessage, genericError) {
 
 function getErrorFromKey(key, scope, formatMessage, genericError) {
 	const errors = {
-		'default': {
-			'events.latitude.required': formatMessage({ id: "components.ErrorMessage.deafult.events.latitude.required" }),
-			'events.google_place_id.required': formatMessage({ id: "components.ErrorMessage.default.events.google_place_id.required" }),
-			'events.timezone.required': formatMessage({ id: "components.ErrorMessage.default.events.timezone.required"}),
-			'events.times.0.start_dt.must_be_a_future_date': formatMessage({ id: "components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date"}),
-			'bible.reference.not_found': formatMessage({ id: "components.ErrorMessage.default.bible.reference.not_found"})
+		default: {
+			'events.latitude.required': formatMessage({ id: 'components.ErrorMessage.deafult.events.latitude.required' }),
+			'events.google_place_id.required': formatMessage({ id: 'components.ErrorMessage.default.events.google_place_id.required' }),
+			'events.timezone.required': formatMessage({ id: 'components.ErrorMessage.default.events.timezone.required' }),
+			'events.times.0.start_dt.must_be_a_future_date': formatMessage({ id: 'components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date' }),
+			'bible.reference.not_found': formatMessage({ id: 'components.ErrorMessage.default.bible.reference.not_found' })
 		},
-		'reference': {
-			'events.usfm.invalid': formatMessage({ id: "components.ErrorMessage.reference.events.usfm.invalid"})
+		reference: {
+			'events.usfm.invalid': formatMessage({ id: 'components.ErrorMessage.reference.events.usfm.invalid' })
 		},
-		'announcement': {
-			'events.title.required': formatMessage({ id: "components.ErrorMessage.announcement.events.title.required"})
+		announcement: {
+			'events.title.required': formatMessage({ id: 'components.ErrorMessage.announcement.events.title.required' })
 		},
-		'url': {
-			'events.url.required': formatMessage({ id: "components.ErrorMessage.url.events.url.required"}),
-			'events.title.required': formatMessage({ id: "components.ErrorMessage.url.events.title.required"})
+		url: {
+			'events.url.required': formatMessage({ id: 'components.ErrorMessage.url.events.url.required' }),
+			'events.title.required': formatMessage({ id: 'components.ErrorMessage.url.events.title.required' })
 		}
 	}
-	var message
+	let message
 	if (errors[scope] && errors[scope][key]) {
 		message = errors[scope][key]
 	}
@@ -45,9 +45,9 @@ class ErrorMessage extends Component {
 		const { hasError, errors, scope, intl } = this.props
 		const genericError = intl.formatMessage({ id: 'components.ErrorMessage.genericError' })
 
-		var errorList
-		var errorListItems
-		var className
+		let errorList
+		let errorListItems
+		let className
 
 		if (hasError) {
 			className = 'error-message alert-box alert radius'
@@ -55,10 +55,10 @@ class ErrorMessage extends Component {
 				errorListItems = errors.map((e, i) => {
 					return (<li key={i}>{getError(e, scope, intl.formatMessage, genericError)}</li>)
 				})
-			} else if (typeof errors == 'object' && Object.keys(errors).length > 0) {
+			} else if (typeof errors === 'object' && Object.keys(errors).length > 0) {
 				errorListItems = []
-				for (var k in errors) {
-					errorListItems.push.apply(errorListItems, errors[k].map((e, i) => { return (<li key={i}>{getError(e, scope, intl.formatMessage, genericError)}</li>) }))
+				for (const k in errors) {
+					errorListItems.push(...errors[k].map((e, i) => { return (<li key={i}>{getError(e, scope, intl.formatMessage, genericError)}</li>) }))
 				}
 			} else {
 				errorListItems = (<li>{genericError}</li>)

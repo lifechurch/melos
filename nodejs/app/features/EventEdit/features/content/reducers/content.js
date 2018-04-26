@@ -2,7 +2,7 @@ import type from '../actions/constants'
 
 
 export default function content(state = {}, action) {
-	switch(action.type) {
+	switch (action.type) {
 
 		case type('addRequest'):
 			return Object.assign({}, state, action.params)

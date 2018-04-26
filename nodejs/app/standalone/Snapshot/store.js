@@ -6,17 +6,17 @@ import youversionApi from '../../middleware/youversionApi'
 import youversionAuth from '../../middleware/youversionAuth'
 
 export default function configureStore(initialState, history, logger) {
-  const reduxRouterMiddleware = routerMiddleware(history)
-  let finalCreateStore = null
-  if (logger !== null) {
-    finalCreateStore = compose(
+	const reduxRouterMiddleware = routerMiddleware(history)
+	let finalCreateStore = null
+	if (logger !== null) {
+		finalCreateStore = compose(
       applyMiddleware(thunk, youversionApi, youversionAuth, reduxRouterMiddleware, logger)
     )(createStore)
-  } else {
-    finalCreateStore = compose(
+	} else {
+		finalCreateStore = compose(
       applyMiddleware(thunk, youversionApi, youversionAuth, reduxRouterMiddleware)
     )(createStore)
-  }
+	}
 
-  return finalCreateStore(rootReducer, initialState)
+	return finalCreateStore(rootReducer, initialState)
 }

@@ -5,7 +5,7 @@ class Languages extends Component {
 
 	languageSelect(language, filtering) {
 		const { onSelect } = this.props
-		if (typeof onSelect == 'function') {
+		if (typeof onSelect === 'function') {
 			onSelect(language, filtering)
 		}
 	}
@@ -30,11 +30,11 @@ class Languages extends Component {
 
 
 		if (Array.isArray(list)) {
-			let languageList = list.map((language, index) =>  {
-				let name = (language.name == language.local_name) ? language.local_name : <span>{language.local_name}<small>{language.name}</small></span>
-				let active = (language.language_tag == initialSelection) ? 'active' : ''
+			const languageList = list.map((language, index) => {
+				const name = (language.name == language.local_name) ? language.local_name : <span>{language.local_name}<small>{language.name}</small></span>
+				const active = (language.language_tag == initialSelection) ? 'active' : ''
 
-				return( (<li key={`${language.id}_${index}`} className={`${active}`} onClick={this.languageSelect.bind(this, language)}>{ name }</li>) )
+				return ((<li key={`${language.id}_${index}`} className={`${active}`} onClick={this.languageSelect.bind(this, language)}>{ name }</li>))
 			})
 			/* the header would either be the all or recently used */
 			return (
@@ -45,7 +45,7 @@ class Languages extends Component {
 			)
 		} else {
 			return (
-				<div></div>
+				<div />
 			)
 		}
 	}

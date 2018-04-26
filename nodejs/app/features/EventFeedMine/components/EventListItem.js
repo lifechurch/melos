@@ -19,7 +19,7 @@ class EventListItem extends Component {
 		const { dispatch, startOffset, item, index, handleDuplicate, params } = this.props
 		const START_OFFSET_SECONDS = startOffset * 60;
 		const start = moment(item.min_time);
-		const secondsLeft = start.diff(moment(), "seconds");
+		const secondsLeft = start.diff(moment(), 'seconds');
 
 		return (
 			<div className="events-details">
@@ -27,7 +27,8 @@ class EventListItem extends Component {
 					initialCountdownSeconds={secondsLeft}
 					dispatch={dispatch}
 					item={item}
-					index={index} />
+					index={index}
+				/>
 				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.duplicate" /></a>
 ƒ				<Link className="small-link" to={`/${params.locale}/event/edit/${item.id}/share`}><FormattedMessage id="features.EventFeedMine.components.EventListItem.share" /></Link>
 			</div>
@@ -42,7 +43,7 @@ class EventListItem extends Component {
 		return (
 			<div className="events-details">
 				<span className="details-text">
-					{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
+					{`${start.format('MMMM DD, YYYY')} - ${end.format('MMMM DD, YYYY')}`}
 				</span>
 				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.duplicate" /></a>
 			</div>
@@ -62,14 +63,14 @@ class EventListItem extends Component {
 
 	getArchivedDetails() {
 		const { item, handleDuplicate } = this.props
-		var start = moment(item.min_time)
-		var end = moment(item.max_time)
+		const start = moment(item.min_time)
+		const end = moment(item.max_time)
 		return (
 			<div className="events-details">
 				<span className="details-text">
-					{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
+					{`${start.format('MMMM DD, YYYY')} - ${end.format('MMMM DD, YYYY')}`}
 				</span>
-                <a className="small-link" onClick={handleDuplicate.bind(this, item.id)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.duplicate" /></a>
+				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.duplicate" /></a>
 			</div>
 		)
 	}
@@ -107,7 +108,7 @@ class EventListItem extends Component {
 
 	render() {
 		const { item, params } = this.props
-		var action
+		let action
 		if (item.status < 3) {
 			action = <Link className="hollow-button gray action" to={`/${params.locale}/event/edit/${item.id}`}><FormattedMessage id="features.EventFeedMine.components.EventListItem.edit" /></Link>
 		} else { // archived+

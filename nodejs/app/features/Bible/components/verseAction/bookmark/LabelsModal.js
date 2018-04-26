@@ -26,7 +26,7 @@ class LabelsModal extends Component {
 			cancelDropDown,
 			onSelect
 		} = this.props
-		const { filterBy  } = this.state
+		const { filterBy } = this.state
 
 		let labels = null
 
@@ -53,8 +53,8 @@ class LabelsModal extends Component {
 					{ labels }
 				</CustomScroll>
 				<div className='footer'>
-					<div className={`filter-button vertical-center ${filterBy == 'alphabetical' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'alphabetical' })}><FormattedMessage id='Reader.verse action.alphabetical' /></div>
-					<div className={`filter-button vertical-center ${filterBy == 'count' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'count' })}><FormattedMessage id="Reader.verse action.count" /></div>
+					<div className={`filter-button vertical-center ${filterBy == 'alphabetical' ? 'active-button' : ''}`} onClick={() => { return this.setState({ filterBy: 'alphabetical' }) }}><FormattedMessage id='Reader.verse action.alphabetical' /></div>
+					<div className={`filter-button vertical-center ${filterBy == 'count' ? 'active-button' : ''}`} onClick={() => { return this.setState({ filterBy: 'count' }) }}><FormattedMessage id="Reader.verse action.count" /></div>
 					<div className='labels-privacy vertical-center'><FormattedMessage id='Reader.verse action.labels private' /></div>
 				</div>
 			</div>

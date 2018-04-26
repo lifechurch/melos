@@ -7,7 +7,7 @@ import ContentHelpModal from '../../../../../../app/features/EventEdit/features/
 import localeFeatures from '../../../../../../locales/config/localeFeatures.json'
 import { FormattedMessage } from 'react-intl'
 
-const KINDRID_ENABLED = typeof window !== 'undefined' ? localeFeatures['kindrid'].indexOf(window.__LOCALE__.locale) !== -1 : true
+const KINDRID_ENABLED = typeof window !== 'undefined' ? localeFeatures.kindrid.indexOf(window.__LOCALE__.locale) !== -1 : true
 
 class ContentHeader extends Component {
 

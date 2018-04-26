@@ -13,14 +13,13 @@ class EventEditPreview extends Component {
 		const { dispatch, event, intl, params } = this.props
 		return (
 			<div>
-				<Helmet title={intl.formatMessage({id: "containers.EventEditPreview.title" })} />
+				<Helmet title={intl.formatMessage({ id: 'containers.EventEditPreview.title' })} />
 				<PreviewContainer {...this.props} />
 				<Row>
 					<Column s='medium-6'>
 						<Link disabled={!event.rules.content.canView} to={`/${params.locale}/event/edit/${event.item.id}/content`}><FormattedHTMLMessage id="containers.EventEditPreview.previous" /></Link>
 					</Column>
-					<Column s='medium-6' a='right'>
-					</Column>
+					<Column s='medium-6' a='right' />
 				</Row>
 			</div>
 		)
@@ -38,7 +37,7 @@ EventEditPreview.defaultProps = {
 		isSaving: false,
 		item: {
 			org_name: null,
-			status: "new",
+			status: 'new',
 			updated_dt: null,
 			description: null,
 			title: null,

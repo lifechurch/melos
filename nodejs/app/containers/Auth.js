@@ -42,38 +42,40 @@ class Auth extends Component {
 		if (typeof auth.errors.api === 'string') {
 			error = (
 				<div className='alert-box secondary'>
-					{intl.formatMessage({id:auth.errors.api})}
+					{intl.formatMessage({ id: auth.errors.api })}
 				</div>
 			)
 		}
 
 		return (
 			<div className="medium-6 large-5 columns small-centered auth">
-				<Helmet title={intl.formatMessage({id: "containers.Auth.title" })} />
+				<Helmet title={intl.formatMessage({ id: 'containers.Auth.title' })} />
 				<EventHeader {...this.props} />
 				<div className='form-body'>
 					<FormattedMessage tagName="h1" id="containers.Auth.signIn" />
-					<FormattedHTMLMessage tagName="p" className="auth__subhead" id="containers.Auth.subHead1" values={{ url: "https://www.bible.com/sign-up?redirect=events-admin" }} />
+					<FormattedHTMLMessage tagName="p" className="auth__subhead" id="containers.Auth.subHead1" values={{ url: 'https://www.bible.com/sign-up?redirect=events-admin' }} />
 					<div className="form-body-block white">
 						{error}
 						<FormField
 							InputType={Input}
-							placeholder={intl.formatMessage({id: "containers.Auth.email"})}
+							placeholder={intl.formatMessage({ id: 'containers.Auth.email' })}
 							name="user"
 							onChange={::this.handleChange}
 							value={auth.user}
 							errors={auth.errors.fields.user}
-							onKeyPress={::this.handleKeyPress} />
+							onKeyPress={::this.handleKeyPress}
+						/>
 
 						<FormField
 							InputType={Input}
-							placeholder={intl.formatMessage({id: "containers.Auth.password"})}
+							placeholder={intl.formatMessage({ id: 'containers.Auth.password' })}
 							name="password"
 							type="password"
 							onChange={::this.handleChange}
 							value={auth.password}
 							errors={auth.errors.fields.password}
-							onKeyPress={::this.handleKeyPress} />
+							onKeyPress={::this.handleKeyPress}
+						/>
 
 						<a className='solid-button green' onClick={::this.handleLogin}><FormattedMessage id="containers.Auth.signIn" /></a>
 						<a className='forgot-password' href="https://www.bible.com/settings/forgot_password"><FormattedMessage id="containers.Auth.forgotPassword" /></a>

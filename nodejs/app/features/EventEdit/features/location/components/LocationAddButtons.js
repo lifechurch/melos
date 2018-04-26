@@ -4,7 +4,7 @@ import { ActionCreators } from '../../../../../actions/modals'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import localeFeatures from '../../../../../../locales/config/localeFeatures.json'
 
-const CHOP_ENABLED = typeof window !== 'undefined' ? localeFeatures['churchOnline'].indexOf(window.__LOCALE__.locale) !== -1 : true
+const CHOP_ENABLED = typeof window !== 'undefined' ? localeFeatures.churchOnline.indexOf(window.__LOCALE__.locale) !== -1 : true
 
 class LocationAddButtons extends Component {
 
@@ -40,7 +40,7 @@ class LocationAddButtons extends Component {
 				<a disabled={!event.rules.locations.canAddPhysical} className='hollow-button green' onClick={::this.handleAddPhysicalLocationClick}><FormattedMessage id="features.EventEdit.features.location.components.LocationAddButtons.addPhysical" /></a>
 				<p className='button-caption'><FormattedMessage id="features.EventEdit.features.location.components.LocationAddButtons.promptPhysical" /></p>
 				<a disabled={!event.rules.locations.canAddVirtual} className='hollow-button green' onClick={::this.handleAddVirtualLocationClick}><FormattedMessage id="features.EventEdit.features.location.components.LocationAddButtons.addVirtual" /></a>
-				{ CHOP_ENABLED ? <p className='button-caption'><FormattedHTMLMessage id="features.EventEdit.features.location.components.LocationAddButtons.churchOnline" values={{url:"http://churchonlineplatform.com"}} /></p> : null }
+				{ CHOP_ENABLED ? <p className='button-caption'><FormattedHTMLMessage id="features.EventEdit.features.location.components.LocationAddButtons.churchOnline" values={{ url: 'http://churchonlineplatform.com' }} /></p> : null }
 			</div>
 		)
 	}

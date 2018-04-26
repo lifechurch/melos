@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
 const VALID_COLUMN_COUNTS = [1, 2, 3, 4]
 
 /**

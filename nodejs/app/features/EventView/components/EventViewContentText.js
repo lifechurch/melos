@@ -10,7 +10,7 @@ class EventViewContentText extends Component {
 
 		return (
 			<div className='content text'>
-				<div className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
+				<div className='caption' dangerouslySetInnerHTML={{ __html: contentData.body }} />
 			</div>
 		)
 	}

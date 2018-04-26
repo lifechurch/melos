@@ -1,4 +1,5 @@
 import planLocales from '../../locales/config/planLocales.json'
+
 const availableLocales = require('../../locales/config/availableLocales.json')
 const localeList = require('../../locales/config/localeList.json')
 

@@ -14,14 +14,14 @@ class UnpublishModal extends Component {
 
 	render() {
 		const customStyles = {
-			content : {
-				top                   : '50%',
-				left                  : '50%',
-				right                 : 'auto',
-				bottom                : 'auto',
-				marginRight           : '-50%',
-				width                 : '500px',
-				transform             : 'translate(-50%, -50%)'
+			content: {
+				top: '50%',
+				left: '50%',
+				right: 'auto',
+				bottom: 'auto',
+				marginRight: '-50%',
+				width: '500px',
+				transform: 'translate(-50%, -50%)'
 			}
 		};
 
@@ -43,7 +43,7 @@ class UnpublishModal extends Component {
 					<a className='solid-button gray' onClick={::this.unpublishEvent}><FormattedMessage id="features.EventEdit.features.location.components.UnpublishModal.unpublish" /></a>
 				</div>
 			</Modal>
-			)
+		)
 	}
 
 }

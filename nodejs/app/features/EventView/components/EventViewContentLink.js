@@ -11,7 +11,7 @@ class EventViewContentLink extends Component {
 		return (
 			<div className='content url'>
 				<p className='title'>{contentData.title}</p>
-				{contentData.body ? <p className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} /> : null}
+				{contentData.body ? <p className='caption' dangerouslySetInnerHTML={{ __html: contentData.body }} /> : null}
 				<a className='url' target="_blank" href={contentData.url}>{contentData.url}</a>
 			</div>
 		)
