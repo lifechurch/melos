@@ -19,7 +19,6 @@ import { getDefaultVersion } from '../../lib/readingPlanUtils'
 import '../../less/style.less'
 
 require('moment/min/locales')
-require('preact/devtools')
 
 if (typeof window !== 'undefined') {
 	ga.initialize('UA-3571547-76', { language: window.__LOCALE__.locale });
