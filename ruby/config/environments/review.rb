@@ -24,7 +24,7 @@ YouversionWeb::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   #config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://#{Cfg.review_host}"
-  puts "ENV['SECURE_TRAFFIC'] => #{ENV['SECURE_TRAFFIC']}"
+  # puts "ENV['SECURE_TRAFFIC'] => #{ENV['SECURE_TRAFFIC']}"
 
   # Compress JavaScripts and CSS into one file for each
   config.assets.compress = true

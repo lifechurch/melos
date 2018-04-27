@@ -1,6 +1,6 @@
 
 :ruby
-  puts case I18n.locale.to_s
+  case I18n.locale.to_s
   when "fr", "ru", "zh-TW", "ko", "de", "nl"
     image_dir = I18n.locale
   when "pt", "pt-BR"
