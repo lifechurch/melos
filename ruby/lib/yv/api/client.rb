@@ -1,7 +1,7 @@
 module YV
   module API
     class Client
-      
+
       JSON_500 = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "MultiJson::DecodeError"}]}}}')
       JSON_500_General = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "General API Error"}]}}}')
       JSON_408 = JSON.parse('{"response": {"code": 408, "data": {"errors": [{"json": "API Timeout Error"}]}}}')
@@ -19,7 +19,7 @@ module YV
 
           curb_get = lambda do
             begin
-              
+
             curl = Curl::Easy.new
             curl.url = "#{resource_url}?#{opts[:query].to_query}"
             curl.headers = opts[:headers]
@@ -85,7 +85,7 @@ module YV
             puts
             puts "ACTUAL Response"
             puts response
-            puts 
+            puts
             puts resource_url
             puts "GET END  ---- \n"
           end
@@ -118,13 +118,13 @@ module YV
               if opts[:auth][:tp_token].present?
                 c.headers["Authorization"] = opts[:auth][:tp_token]
               else
-                puts 'auth'
+                # puts 'auth'
                 c.http_auth_types = :basic
                 c.username = opts[:auth][:username]
                 c.password = opts[:auth][:password]
               end
             end
-          end    
+          end
           response = JSON.parse curl.body_str
 
           if curl.response_code >= 400 && response["response"].present? && !response["response"]["data"].present?
@@ -136,7 +136,7 @@ module YV
 
           rescue Timeout::Error => e
             raise APITimeoutError, log_api_timeout(resource_url,started_at)
-          
+
           rescue Exception => e
             raise APIError, log_api_error(resource_url,e)
           end
@@ -152,7 +152,7 @@ module YV
         end
 
         def default_headers
-          { 
+          {
             "Referer"                   => "http://" + Cfg.api_referer,
             "User-Agent"                => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize} GZIP",  # API 3.1 requires a user agent to be set
             "X-YouVersion-Client"       => "youversion",                                           # API 3.1 requires a youversion client header to be set: http://developers.youversion.com/api/docs/3.1/intro.html#headers

@@ -6,7 +6,7 @@
   youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
   dir = "ltr"
 
-  puts case loc = I18n.locale.to_s
+  case loc = I18n.locale.to_s
   when "fr", "ru", "zh-TW", "ko", "de", "nl", "pt", "pt-BR", "es", "es-ES", "zh", "zh-CN"
     meta_url = "#{request.protocol}#{request.host_with_port}/#{loc}/events"
     facebook_locale = loc

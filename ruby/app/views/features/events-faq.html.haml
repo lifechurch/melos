@@ -1,6 +1,6 @@
 
 :ruby
-  puts case I18n.locale.to_s
+  case I18n.locale.to_s
   when "fr", "ru", "zh-TW", "ko", "de", "nl"
     image_dir = I18n.locale
   when "pt", "pt-BR"
@@ -97,20 +97,20 @@
 / //wrap
 :javascript
   jQuery(function($){
-  	
+
   	if($('.accordion-title').length) {
-  		$('.accordion-title').click(function(){	
+  		$('.accordion-title').click(function(){
   		  var sibs = $(this).next('.accordion-content');
-  		  $(".accordion-content").not(sibs).slideUp(300);	
+  		  $(".accordion-content").not(sibs).slideUp(300);
   		  sibs.slideToggle(300)		;
-  		  $(this).parent('.accordion-panel').siblings('.accordion-panel').removeClass('active');		
-  
+  		  $(this).parent('.accordion-panel').siblings('.accordion-panel').removeClass('active');
+
   		  $(this).parent('.accordion-panel').toggleClass('active');
-  		  $('.accordion-title').not(this).removeClass('active');	
-  		  $(this).toggleClass('active');	
+  		  $('.accordion-title').not(this).removeClass('active');
+  		  $(this).toggleClass('active');
   		});
   	  }
-  
+
   });
 %script{:src => "/assets/features/events/classie.js", :type => "text/javascript"}
 :javascript
