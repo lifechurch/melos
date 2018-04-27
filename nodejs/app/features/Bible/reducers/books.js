@@ -8,7 +8,10 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersionRequest'): {
 			const { isParallel } = action.extras
 			if (!isParallel) {
-				return Immutable.fromJS(state).set('loading', true).toJS()
+				return {
+					...state,
+					loading: true
+				}
 			}
 			return state
 		}
@@ -16,7 +19,10 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersionFailure'): {
 			const { isParallel } = action.extras
 			if (!isParallel) {
-				return Immutable.fromJS(state).set('loading', false).toJS()
+				return {
+					...state,
+					loading: false
+				}
 			}
 			return state
 		}
@@ -27,7 +33,7 @@ export default function reducer(state = {}, action) {
 			if (!isParallel) {
 				if (typeof action.response.books !== 'undefined') {
 					// ordered array of books from api
-					const all = Immutable.fromJS(action.response.books).toJS()
+					const all = action.response.books
 
 					// map of book usfm to its index in the books array
 					const map = all.reduce((newBooks, book, idx) => {
@@ -43,7 +49,10 @@ export default function reducer(state = {}, action) {
 
 					return { all, map }
 				} else {
-					return Immutable.fromJS(state).set('loading', false).toJS()
+					return {
+						...state,
+						loading: false
+					}
 				}
 			}
 			return state
