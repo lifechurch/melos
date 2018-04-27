@@ -18,7 +18,7 @@ const serverConfig = {
 	},
 
 	/* Create Source Maps */
-	devtool: 'source-map',
+	/* devtool: 'source-map',*/
 
 	/* Main Entry Point for Server */
 	entry: {

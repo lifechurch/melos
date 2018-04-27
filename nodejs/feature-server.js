@@ -381,12 +381,17 @@ router.post('/featureImport/*', urlencodedParser, (req, res) => {
 								],
 								css_inline: css
 							})
+
+							html = null
+							css = null
+							renderedHtml = null
 						})
 						return null
 					}, (err) => {
-						console.log('Render props error', err)
+						Raven.captureException(err)
 					})
 				}
+
 				if (typeof action === 'function') {
 					store.dispatch(action).then(() => {
 						finish()
