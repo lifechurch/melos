@@ -10,7 +10,12 @@
 		window.__ENV__ = "<%- environment %>";
 		window.__RAILS_HOST__ = "<%- railsHost %>";
 		window.__NODE_HOST__ = "<%- nodeHost %>";
-		window.__LOCALE__ = <%- JSON.stringify(locale) %>;
+    window.__LOCALE__ = <%- JSON.stringify(locale, function(key, val) {
+			if (typeof val === 'function') {
+				return val + '';
+			}
+			return val;
+		}, 4) %>;
 	}
 
 	window.<%=appContainerSuffix%> = {}
