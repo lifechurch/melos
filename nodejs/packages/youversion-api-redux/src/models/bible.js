@@ -13,28 +13,16 @@ const getBibleModel = createSelector(
 		}
 
 		if (chapter) {
-			bibleModel.references = Immutable
-				.fromJS(bibleModel.references)
-				.merge(chapter)
-				.toJS()
+			bibleModel.references = chapter
 		}
 		if (verses) {
-			bibleModel.references = Immutable
-				.fromJS(bibleModel.references)
-				.merge(verses)
-				.toJS()
+			bibleModel.references = verses
 		}
 		if (version) {
-			bibleModel.versions = Immutable
-				.fromJS(bibleModel.versions)
-				.mergeDeepIn(['byId'], version)
-				.toJS()
+			bibleModel.versions.byId = version
 		}
 		if (versions) {
-			bibleModel.versions = Immutable
-				.fromJS(bibleModel.versions)
-				.mergeDeepIn(['byLang'], versions.byLang)
-				.toJS()
+			bibleModel.versions.byLang = versions.byLang
 		}
 		if (config) {
 			if (config && config.response && config.response.default_versions) {
@@ -47,10 +35,9 @@ const getBibleModel = createSelector(
 						map[v.language_tag] = i
 					})
 				}
-				bibleModel.languages = Immutable
-					.fromJS(bibleModel.languages)
-					.merge({ all, map })
-					.toJS()
+
+				bibleModel.languages.all = all
+				bibleModel.languages.map = map
 			}
 		}
 
@@ -58,14 +45,12 @@ const getBibleModel = createSelector(
 		// utility functions on model
 		bibleModel.pullRef = (usfm, id = null) => {
 			const usfmKey = usfm && usfm.toUpperCase()
-			if (!Immutable.fromJS(bibleModel).hasIn(['references', usfmKey])) {
+
+			if (!('references' in bibleModel && usfmKey in bibleModel.references)) {
 				return null
 			}
 
-			const refsObj = Immutable
-				.fromJS(bibleModel.references)
-				.get(usfmKey)
-				.toJS()
+			const refsObj = bibleModel.references[usfmKey]
 
 			return refsObj[id || Object.keys(refsObj)[0]]
 		}

@@ -1,4 +1,3 @@
-import Immutable from 'immutable'
 import type from '../actions/constants'
 
 export default function reducer(state = {}, action) {
@@ -14,14 +13,17 @@ export default function reducer(state = {}, action) {
 			}
 
 		case type('bibleConfigurationFailure'):
-			return Immutable.fromJS(state).set('loading', false).toJS()
+			return {
+				...state,
+				loading: false
+			}
 
 		case 'BIBLE__CONFIGURATION__SUCCESS':
 		case type('bibleConfigurationSuccess'):
 			if (typeof action.response.default_versions !== 'undefined') {
 
 				// ordered array of languages from api
-				const all = Immutable.fromJS(action.response.default_versions).toJS()
+				const all = action.response.default_versions
 
 				// map of language_tag to its index in the languages array
 				const map = all.reduce((map, lang, idx) => {
@@ -31,7 +33,10 @@ export default function reducer(state = {}, action) {
 				return { all, map }
 
 			} else {
-				return Immutable.fromJS(state).set('loading', false).toJS()
+				return {
+					...state,
+					loading: false
+				}
 			}
 
 		default:
