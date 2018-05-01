@@ -9,7 +9,6 @@ import {
 	EVENT_FEED_MINE_REQUEST,
 	EVENT_FEED_MINE_FAILURE
 } from '../actions'
-import type from '../features/EventFeedMine/actions/constants'
 import detailsType from '../features/EventFeedMine/actions/constants'
 
 export function eventFeeds(state = {}, action) {
@@ -32,9 +31,10 @@ export function eventFeeds(state = {}, action) {
 		case EVENT_FEED_SAVED_REQUEST:
 			return Object.assign({}, state, { saved: { isFetching: true } })
 
-		case EVENT_FEED_MINE_SUCCESS:
-			var newMine = Object.assign({}, state.mine, { items: action.response.events, page: action.params.page, next_page: action.response.next_page, hasError: false, errors: [], isFetching: false })
+		case EVENT_FEED_MINE_SUCCESS: {
+			const newMine = Object.assign({}, state.mine, { items: action.response.events, page: action.params.page, next_page: action.response.next_page, hasError: false, errors: [], isFetching: false })
 			return Object.assign({}, state, { mine: newMine })
+		}
 
 		case EVENT_FEED_MINE_FAILURE:
 			return Object.assign({}, state, { mine: { hasError: true, errors: action.api_errors, isFetching: false } })
@@ -42,8 +42,8 @@ export function eventFeeds(state = {}, action) {
 		case EVENT_FEED_MINE_REQUEST:
 			return Object.assign({}, state, { mine: { isFetching: true } })
 
-		case detailsType('deleteRequest'):
-			var original = Object.assign({}, state.mine.items[action.index])
+		case detailsType('deleteRequest'): {
+			const original = Object.assign({}, state.mine.items[action.index])
 			return Object.assign({}, state, {
 				mine: {
 					...state.mine,
@@ -56,9 +56,10 @@ export function eventFeeds(state = {}, action) {
 					}
 				}
 			})
+		}
 
-		case detailsType('deleteSuccess'):
-			var deleted = Object.assign({}, state.mine.deleted)
+		case detailsType('deleteSuccess'): {
+			const deleted = Object.assign({}, state.mine.deleted)
 			if (typeof deleted === 'object') {
 				delete deleted[action.id]
 			}
@@ -68,10 +69,11 @@ export function eventFeeds(state = {}, action) {
 					deleted
 				}
 			})
+		}
 
-		case detailsType('deleteFailure'):
-			var deleted = Object.assign({}, state.mine.deleted)
-			var original = {}
+		case detailsType('deleteFailure'): {
+			const deleted = Object.assign({}, state.mine.deleted)
+			let original = {}
 			if (typeof deleted === 'object') {
 				original = Object.assign({}, deleted[action.id], { hasError: true, error: action.api_errors })
 				delete deleted[action.id]
@@ -87,6 +89,7 @@ export function eventFeeds(state = {}, action) {
 					deleted
 				}
 			})
+		}
 
 		default:
 			return state;

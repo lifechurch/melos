@@ -78,6 +78,15 @@ const serverConfig = {
 	/* Exclude external dependencies from bundle */
 	externals: [nodeExternals()],
 
+	resolve: {
+		alias: {
+			react: 'preact-compat',
+			'react-dom': 'preact-compat',
+			'react-addons-test-utils': 'preact-test-utils',
+			'react-addons-css-transition-group': 'preact-css-transition-group',
+			'create-react-class': 'preact-compat/lib/create-react-class'
+		}
+	}
 	// resolve: {
 	// 	/* redirect imports to preact */
 	// 	alias: {
