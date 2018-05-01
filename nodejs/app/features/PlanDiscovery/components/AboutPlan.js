@@ -154,7 +154,7 @@ class AboutPlan extends Component {
 								<p className='plan_length'>{ readingPlan.formatted_length[languageTag] || readingPlan.formatted_length.default}</p>
 								<p className='plan_about'>{ readingPlan.about.text[languageTag] || readingPlan.about.text.default }</p>
 								<h3 className='publisher'><FormattedMessage id='plans.publisher' /></h3>
-								<p className='publisher'>{ readingPlan.copyright.text[languageTag] || readingPlan.copyright.text.default }</p>
+								<p className='publisher' dangerouslySetInnerHTML={{ __html: readingPlan.copyright.html[languageTag] || readingPlan.copyright.html.default }} />
 								{ publisherLink }
 							</div>
 							<div className='columns large-4 medium-4'>
