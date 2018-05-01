@@ -18,7 +18,7 @@ const serverConfig = {
 	},
 
 	/* Create Source Maps */
-	/* devtool: 'source-map',*/
+	/* devtool: 'source-map', */
 
 	/* Main Entry Point for Server */
 	entry: {
@@ -76,7 +76,7 @@ const serverConfig = {
 			}
 		]
 	},
-  resolve: {
+	resolve: {
 		alias: {
 			react: 'preact-compat',
 			'react-dom': 'preact-compat',
@@ -84,7 +84,7 @@ const serverConfig = {
 			'react-addons-css-transition-group': 'preact-css-transition-group',
 			'create-react-class': 'preact-compat/lib/create-react-class'
 		}
-	}
+	},
 	// resolve: {
 	// 	/* redirect imports to preact */
 	// 	alias: {
@@ -228,7 +228,7 @@ const clientConfig = {
 			}
 		]
 	},
-  resolve: {
+	resolve: {
 		alias: {
 			react: 'preact-compat',
 			'react-dom': 'preact-compat',

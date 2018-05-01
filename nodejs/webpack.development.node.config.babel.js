@@ -78,7 +78,7 @@ const serverConfig = {
 	/* Exclude external dependencies from bundle */
 	externals: [nodeExternals()],
 
-  resolve: {
+	resolve: {
 		alias: {
 			react: 'preact-compat',
 			'react-dom': 'preact-compat',
