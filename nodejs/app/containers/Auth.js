@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
+import { Link } from 'react-router'
+import Row from '../components/Row'
+import Column from '../components/Column'
 import FormField from '../components/FormField'
 import Input from '../components/Input'
 import ActionCreators from '../features/Auth/actions/creators'
 import EventHeader from '../components/EventHeader'
+import { IntlProvider, injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 class Auth extends Component {
 
@@ -18,7 +21,7 @@ class Auth extends Component {
 		}))
 	}
 
-	handleLogin() {
+	handleLogin(clickEvent) {
 		const { dispatch, auth, params } = this.props
 		dispatch(ActionCreators.authenticate({
 			user: auth.user,
@@ -34,7 +37,7 @@ class Auth extends Component {
 	}
 
 	render() {
-		const { auth, intl } = this.props
+		const { hasError, errors, isFetching, auth, intl } = this.props
 		let error = null
 		if (typeof auth.errors.api === 'string') {
 			error = (
@@ -74,7 +77,7 @@ class Auth extends Component {
 							onKeyPress={::this.handleKeyPress}
 						/>
 
-						<a tabIndex={0} className='solid-button green' onClick={::this.handleLogin}><FormattedMessage id="containers.Auth.signIn" /></a>
+						<a className='solid-button green' onClick={::this.handleLogin}><FormattedMessage id="containers.Auth.signIn" /></a>
 						<a className='forgot-password' href="https://www.bible.com/settings/forgot_password"><FormattedMessage id="containers.Auth.forgotPassword" /></a>
 
 					</div>
