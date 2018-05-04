@@ -215,6 +215,18 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/ta/kids"
     facebook_locale = "ta"
     youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("sw")) then
+    i18n_css_class = "sw"
+    i18n_image_dir = "/sw"
+    meta_url = "#{request.protocol}#{request.host_with_port}/sw/kids"
+    facebook_locale = "sw"
+    youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("ms")) then
+    i18n_css_class = "ms"
+    i18n_image_dir = "/ms"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ms/kids"
+    facebook_locale = "ms"
+    youtube_url = ""
   end
 
 
@@ -268,6 +280,8 @@
     %meta{property: "og:locale:alternate", content: "mn_MN"}
     %meta{property: "og:locale:alternate", content: "zu"}
     %meta{property: "og:locale:alternate", content: "ta"}
+    %meta{property: "og:locale:alternate", content: "sw"}
+    %meta{property: "og:locale:alternate", content: "ms"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -313,6 +327,8 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/no/kids",:rel=>"alternate",:hreflang=>"no"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/zu/kids",:rel=>"alternate",:hreflang=>"zu"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ta/kids",:rel=>"alternate",:hreflang=>"ta"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ta/kids",:rel=>"alternate",:hreflang=>"sw"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ta/kids",:rel=>"alternate",:hreflang=>"ms"}
 
     - if I18n.locale.to_s.eql?("vi") then
       %link{:href=> "https://fonts.googleapis.com/css?family=Open+Sans", :rel=>"stylesheet"}
@@ -333,7 +349,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro") or I18n.locale.to_s.eql?("fi") or I18n.locale.to_s.eql?("zh-HK") or I18n.locale.to_s.eql?("sv") or I18n.locale.to_s.eql?("uk")  or I18n.locale.to_s.eql?("el") or I18n.locale.to_s.eql?("bn") or I18n.locale.to_s.eql?("no") or I18n.locale.to_s.eql?("mn") or I18n.locale.to_s.eql?("zu") or I18n.locale.to_s.eql?("ta"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro") or I18n.locale.to_s.eql?("fi") or I18n.locale.to_s.eql?("zh-HK") or I18n.locale.to_s.eql?("sv") or I18n.locale.to_s.eql?("uk")  or I18n.locale.to_s.eql?("el") or I18n.locale.to_s.eql?("bn") or I18n.locale.to_s.eql?("no") or I18n.locale.to_s.eql?("mn") or I18n.locale.to_s.eql?("zu") or I18n.locale.to_s.eql?("ta") or I18n.locale.to_s.eql?("sw") or I18n.locale.to_s.eql?("ms"))
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
@@ -366,9 +382,9 @@
       -# !App store buttons
       - if not prelaunch
         .download
-          %a.download-ios{href: t.call('kids.links.apple'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center; background-size: contain"}
+          %a.download-ios{href: t.call('kids.links.apple'), style: "background: url('/assets/campaigns/kids/ios-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.app store')
-          %a.download-play{href: t.call('kids.links.google'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center; background-size: contain"}
+          %a.download-play{href: t.call('kids.links.google'), style: "background: url('/assets/campaigns/kids/play-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.google play')
           -if I18n.locale.to_s.eql?("zh-CN")
             %br.desktop-only
@@ -379,7 +395,7 @@
             %a.download-apk{href: "https://store.yandex.ru/", style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px; background-size: contain"}
               = t.call('kids.free download')
 
-          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center; background-size: contain"}
+          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: url('/assets/campaigns/kids/amazon-appstore-badge.png') no-repeat center center; background-size: contain"}
             = t.call('kids.amazon')
 
 
