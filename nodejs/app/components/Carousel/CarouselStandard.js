@@ -59,12 +59,22 @@ function CarouselStandard(props) {
 					</div>
 				)
 			} else {
-				const src = imageConfig
-					&& slide.image_id
-					&& imageConfig.reading_plans.url
-						.replace('{image_id}', slide.image_id)
-						.replace('{0}', 320)
-						.replace('{1}', 180)
+				let src
+				if (slide.type === 'collection') {
+					src = imageConfig
+            && slide.image_id
+            && imageConfig.collections.url
+              .replace('{image_id}', slide.image_id)
+              .replace('{0}', 320)
+              .replace('{1}', 180)
+				} else {
+					src = imageConfig
+            && slide.image_id
+            && imageConfig.reading_plans.url
+              .replace('{image_id}', slide.image_id)
+              .replace('{0}', 320)
+              .replace('{1}', 180)
+				}
 				return (
 					<div className='radius-5' key={slide.id} style={slideStyle}>
 						<Link to={slideLink}>
