@@ -40,6 +40,7 @@
 
       = render partial: 'shared/facebook_signin', locals: { form_id: "user_create_form", form_action: sign_up_path(source: params[:source], redirect: params[:redirect]), is_continue: false }
       = render partial: 'shared/google_signin', locals: { form_id: "user_create_form", form_action: sign_up_path(source: params[:source], redirect: params[:redirect]), is_continue: false }
+      = render partial: 'shared/gdpr_signup'
 
 
       %hr{ width: "75%" }

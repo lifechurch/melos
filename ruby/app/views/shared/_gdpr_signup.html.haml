@@ -1,0 +1,63 @@
+:ruby
+  facebook_signin_button_id = "facebookSigninButton"
+  google_signin_button_id = "googleSigninButton"
+  default_signup_button_id = "default-signup-button"
+
+-content_for :javascripts do
+  %script{:type => "text/javascript", :src  => "https://cdn.polyfill.io/v2/polyfill.js?features=fetch"}
+  :javascript
+    function check_gdpr_required() {
+      fetch('https://geoip.youversionapi.com/', { headers: { 'Authorization': 'Basic eW91dmVyc2lvbjpacWtSWDhhd0NraGZBSHcwbFY4aDQ3ZUZFRVhuYkVHaUE=' }})
+        .then(function(response) {
+          if (!response.ok) {
+            throw new Error('Not-OK Response: ' + response.statusText);
+          } else {
+            return response.json();
+          }
+        })
+        .then(function(myJson) {
+          if (typeof myJson === 'object' && !myJson.gdpr) {
+            override_signup_buttons()
+          }
+        })
+        .catch(function(error) {
+          console.error(error);
+        })
+    }
+
+    function override_signup_buttons() {
+      var target_ids = [
+        "#{facebook_signin_button_id}",
+        "#{google_signin_button_id}",
+        "#{default_signup_button_id}"
+      ]
+
+      var facebook_signin_button = document.getElementById("#{facebook_signin_button_id}");
+      var google_signin_button = document.getElementById("#{google_signin_button_id}");
+      var default_signup_button = document.getElementById("#{default_signup_button_id}");
+
+
+      default_signup_button.onclick = gdpr_form_handler;
+      google_signin_button.onclick = gdpr_form_handler;
+      facebook_signin_button.onclick = gdpr_form_handler;
+
+      // document.addEventListener('click', function(e) {
+      //   if (target_ids.indexOf(e.target.id) !== -1) {
+      //     e.stopPropagation();
+      //     e.preventDefault();
+      //     console.log('gotcha');
+      //   } else {
+      //     console.log('nope');
+      //   }
+      // }, true);
+    }
+
+    function gdpr_form_handler(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log(e);
+    }
+
+    document.addEventListener('DOMContentLoaded', function documentReady() {
+      check_gdpr_required()
+    })
