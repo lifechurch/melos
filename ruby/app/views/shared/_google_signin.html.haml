@@ -20,10 +20,15 @@
       }
 
       function gapiAttachSignin(element) {
-        auth2.attachClickHandler(element, {},
-          gapiOnSignInSuccess,
-          gapiOnSignInError
-        );
+        check_gdpr_required().then(function(gdpr_required) {
+          console.log('GDPR GL', gdpr_required);
+          auth2.attachClickHandler(element, {},
+            gapiOnSignInSuccess,
+            gapiOnSignInError
+          );
+        }, function(e) {
+          console.log(e);
+        });
       }
 
       function gapiOnSignInSuccess(googleUser) {
