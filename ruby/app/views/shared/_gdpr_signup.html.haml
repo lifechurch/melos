@@ -13,12 +13,12 @@
           var interval = setInterval(function() {
             console.log('interval', interval, window.GDPR_REQUIRED, resolve);
             if (typeof window.GDPR_REQUIRED === 'boolean') {
-              resolve(window.GDPR_REQUIRED);
+              resolve(true /*window.GDPR_REQUIRED*/);
             }
           }, 100);
           return;
         } else if (typeof window.GDPR_REQUIRED !== 'undefined') {
-          resolve(window.GDPR_REQUIRED);
+          resolve(true /*window.GDPR_REQUIRED*/);
           return;
         }
 
@@ -34,7 +34,7 @@
           .then(function(myJson) {
             if (typeof myJson === 'object' && typeof myJson.gdpr !== 'undefined') {
               window.GDPR_REQUIRED = myJson.gdpr;
-              resolve(myJson.gdpr);
+              resolve(true /*myJson.gdpr*/);
             } else {
               throw new Error('No `gdpr` attribute in respone. ' + JSON.stringify(myJson));
             }

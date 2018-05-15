@@ -4,15 +4,26 @@
 :javascript
 
   function fbapiStatusChangeCallback(response) {
+  console.log('fbapiStatusChangeCallback');
     fbapiDisableDefaultForm()
     if (response.status === 'connected') {
       document.getElementById('facebook-sign-in-token').value = response.authResponse.accessToken;
       document.getElementById('facebook-sign-in-id').value = response.authResponse.userID;
-      document.getElementById('facebook-sign-in-form').submit();
+      check_gdpr_required().then(function(gdpr_required) {
+        console.log("GDPR FB-1: ", gdpr_required);
+        if (!gdpr_required) {
+          document.getElementById('facebook-sign-in-form').submit();
+        } else {
+          console.warn('BLOCKED by GDPR');
+        }
+      }, function(e) {
+        console.error(e);
+      });
     }
   }
 
   function fbapiDisableDefaultForm() {
+  console.log('fbapiDisableDefaultForm');
     var userCreateForm = document.getElementById("#{form_id}")
     if (userCreateForm !== null) {
       var inputs = userCreateForm.getElementsByTagName('input')
@@ -23,21 +34,26 @@
   }
 
   function fbapiStartApp() {
+    console.log('fbapiStartApp');
     var loginButton = document.getElementById("#{facebook_signin_button_id}");
     FB.getLoginStatus(function(response) {
       loginButton.classList.remove('disabled');
       if (response.status === 'connected') {
         document.getElementById('facebook-sign-in-token').value = response.authResponse.accessToken;
         document.getElementById('facebook-sign-in-id').value = response.authResponse.userID;
-        check_gdpr_required().then(function(gdpr_required) {
-          console.log("GDPR FB: ", gdpr_required);
-          loginButton.onclick = function() {
-            fbapiDisableDefaultForm();
-            document.getElementById('facebook-sign-in-form').submit();
-          }
-        }, function(e) {
-          console.log(e)
-        });
+        loginButton.onclick = function() {
+          fbapiDisableDefaultForm();
+          check_gdpr_required().then(function(gdpr_required) {
+            console.log("GDPR FB-1: ", gdpr_required);
+            if (!gdpr_required) {
+              document.getElementById('facebook-sign-in-form').submit();
+            } else {
+              console.warn("BLOCKED by GDPR");
+            }
+          }, function(e) {
+            console.error(e);
+          });
+        }
         FB.api('/me', function(response) {
           document.getElementById('fbName').innerHTML = response.name;
           FB.api('/' + response.id + '/picture?height=96&width=96', function(response) {
@@ -47,20 +63,15 @@
         })
 
       } else if (response.status === 'not_authorized') {
-        check_gdpr_required().then(function(gdpr_required) {
-          console.log("GDPR FB: ", gdpr_required);
-          loginButton.onclick = function() {
-            FB.login(fbapiStatusChangeCallback, { scope: "#{Cfg.facebook_signin_scope}" })
-          }
-          });
+        loginButton.onclick = function() {
+          FB.login(fbapiStatusChangeCallback, { scope: "#{Cfg.facebook_signin_scope}" })
+        }
+
 
       } else {
-        check_gdpr_required().then(function(gdpr_required) {
-          console.log("GDPR FB: ", gdpr_required);
-          loginButton.onclick = function() {
-            FB.login(fbapiStatusChangeCallback, { scope: "#{Cfg.facebook_signin_scope}" })
-          }
-        });
+        loginButton.onclick = function() {
+          FB.login(fbapiStatusChangeCallback, { scope: "#{Cfg.facebook_signin_scope}" })
+        }
 
       }
     });

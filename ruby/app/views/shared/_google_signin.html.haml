@@ -20,15 +20,10 @@
       }
 
       function gapiAttachSignin(element) {
-        check_gdpr_required().then(function(gdpr_required) {
-          console.log('GDPR GL', gdpr_required);
-          auth2.attachClickHandler(element, {},
-            gapiOnSignInSuccess,
-            gapiOnSignInError
-          );
-        }, function(e) {
-          console.log(e);
-        });
+        auth2.attachClickHandler(element, {},
+          gapiOnSignInSuccess,
+          gapiOnSignInError
+        );
       }
 
       function gapiOnSignInSuccess(googleUser) {
@@ -46,7 +41,16 @@
           document.getElementById("google-sign-in-id").value = profile.getId();
           //document.getElementById("google-sign-in-given-name").value = profile.getGivenName();
           //document.getElementById("google-sign-in-family-name").value = profile.getFamilyName();
-          document.getElementById("google-sign-in-form").submit();
+          check_gdpr_required().then(function(gdpr_required) {
+            console.log('GDPR GL', gdpr_required);
+            if (!gdpr_required) {
+              document.getElementById("google-sign-in-form").submit();
+            } else {
+              console.warn("BLOCKED by GDPR");
+            }
+          }, function(e) {
+            console.error(e);
+          });
         }
       }
 
