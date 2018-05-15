@@ -1,3 +1,25 @@
+-content_for :lower_javascript do
+  :javascript
+    var userCreateForm = document.getElementById('user_create_form')
+    userCreateForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      check_gdpr_required().then(function(gdpr_required) {
+        if (gdpr_required) {
+          allowSubmit = false
+          console.warn("BLOCKED by GDPR");
+          window.addEventListener('gdprConfirmed', function() {
+            userCreateForm.submit();
+          });
+        } else {
+          userCreateForm.submit();
+        }
+      }, function(e) {
+        console.error(e);
+        userCreateForm.submit();
+      });
+      return false;
+    });
+
 = form_for :user, url: sign_up_path(source: params[:source], redirect: params[:redirect]), html: { id: 'user_create_form' } do |f|
   = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.creation form errors")}
   = f.hidden_field :agree, {value: true}

@@ -9,20 +9,11 @@
     window.GDPR_REQUIRED;
     function check_gdpr_required() {
       return new Promise(function(resolve, reject) {
-        if (window.GDPR_REQUIRED === -1) {
-          var interval = setInterval(function() {
-            console.log('interval', interval, window.GDPR_REQUIRED, resolve);
-            if (typeof window.GDPR_REQUIRED === 'boolean') {
-              resolve(true /*window.GDPR_REQUIRED*/);
-            }
-          }, 100);
-          return;
-        } else if (typeof window.GDPR_REQUIRED !== 'undefined') {
+        if (typeof window.GDPR_REQUIRED !== 'undefined') {
           resolve(true /*window.GDPR_REQUIRED*/);
           return;
         }
 
-        window.GDPR_REQUIRED = -1;
         fetch('https://geoip.youversionapi.com/', { headers: { 'Authorization': 'Basic eW91dmVyc2lvbjpacWtSWDhhd0NraGZBSHcwbFY4aDQ3ZUZFRVhuYkVHaUE=' }})
           .then(function(response) {
             if (!response.ok) {
@@ -45,39 +36,25 @@
       })
     }
 
-    function override_signup_buttons() {
-      var target_ids = [
-        "#{facebook_signin_button_id}",
-        "#{google_signin_button_id}",
-        "#{default_signup_button_id}"
-      ]
-
-      var facebook_signin_button = document.getElementById("#{facebook_signin_button_id}");
-      var google_signin_button = document.getElementById("#{google_signin_button_id}");
-      var default_signup_button = document.getElementById("#{default_signup_button_id}");
-
-
-      default_signup_button.onclick = gdpr_form_handler;
-      google_signin_button.onclick = gdpr_form_handler;
-      facebook_signin_button.onclick = gdpr_form_handler;
-
-      // document.addEventListener('click', function(e) {
-      //   if (target_ids.indexOf(e.target.id) !== -1) {
-      //     e.stopPropagation();
-      //     e.preventDefault();
-      //     console.log('gotcha');
-      //   } else {
-      //     console.log('nope');
-      //   }
-      // }, true);
-    }
-
-    function gdpr_form_handler(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      console.log(e);
-    }
-
-    document.addEventListener('DOMContentLoaded', function documentReady() {
-      check_gdpr_required()
-    })
+.fixed.w-100.h-100.left-0.top-0.flex.items-center.justify-center.bg-light-gray
+  .w-30.h-100.pv5
+    .h-100.w-100.relative
+      .h-50.w-100.bg-white.pa4.br2.shadow-2.relative.overflow-scroll
+        %p Here's a summary of what you can expect to find in our Privacy Policy and Terms of Use, which cover all YouVersion-branded products and services
+        %h5.b.mt3 Making your experience personal
+        %p.mt3 When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience.
+        %h5.b.mt3 Making your experience personal
+        %p.mt3 When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience.
+        %h5.b.mt3 Making your experience personal
+        %p.mt3 When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience.
+      .pa4.w-100.relative
+        .cf
+          .w-80.fl
+            .p I agree to let YouVersion send me emails to deepen my Bible engagement
+          .w-20.fl
+            .input{:type => 'checkbox'}
+        .cf
+          .w-80.fl
+            .p I agree to let YouVersion send me emails to deepen my Bible engagement
+          .w-20.fl
+            .input{:type => 'checkbox'}            

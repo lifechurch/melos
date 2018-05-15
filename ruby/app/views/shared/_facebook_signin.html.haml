@@ -3,27 +3,31 @@
 
 :javascript
 
+  function handleGDPR(gdpr_required) {
+    if (!gdpr_required) {
+      document.getElementById('facebook-sign-in-form').submit();
+    } else {
+      window.addEventListener('gdprConfirmed', function() {
+        document.getElementById('facebook-sign-in-form').submit();
+      })
+      console.warn('BLOCKED by GDPR');
+    }
+  }
+
+  function handleGDPRError(error) {
+    console.error(e);
+  }
+
   function fbapiStatusChangeCallback(response) {
-  console.log('fbapiStatusChangeCallback');
     fbapiDisableDefaultForm()
     if (response.status === 'connected') {
       document.getElementById('facebook-sign-in-token').value = response.authResponse.accessToken;
       document.getElementById('facebook-sign-in-id').value = response.authResponse.userID;
-      check_gdpr_required().then(function(gdpr_required) {
-        console.log("GDPR FB-1: ", gdpr_required);
-        if (!gdpr_required) {
-          document.getElementById('facebook-sign-in-form').submit();
-        } else {
-          console.warn('BLOCKED by GDPR');
-        }
-      }, function(e) {
-        console.error(e);
-      });
+      check_gdpr_required().then(handleGDPR, handleGDPRError);
     }
   }
 
   function fbapiDisableDefaultForm() {
-  console.log('fbapiDisableDefaultForm');
     var userCreateForm = document.getElementById("#{form_id}")
     if (userCreateForm !== null) {
       var inputs = userCreateForm.getElementsByTagName('input')
@@ -34,7 +38,6 @@
   }
 
   function fbapiStartApp() {
-    console.log('fbapiStartApp');
     var loginButton = document.getElementById("#{facebook_signin_button_id}");
     FB.getLoginStatus(function(response) {
       loginButton.classList.remove('disabled');
@@ -43,16 +46,7 @@
         document.getElementById('facebook-sign-in-id').value = response.authResponse.userID;
         loginButton.onclick = function() {
           fbapiDisableDefaultForm();
-          check_gdpr_required().then(function(gdpr_required) {
-            console.log("GDPR FB-1: ", gdpr_required);
-            if (!gdpr_required) {
-              document.getElementById('facebook-sign-in-form').submit();
-            } else {
-              console.warn("BLOCKED by GDPR");
-            }
-          }, function(e) {
-            console.error(e);
-          });
+          check_gdpr_required().then(handleGDPR, handleGDPRError);
         }
         FB.api('/me', function(response) {
           document.getElementById('fbName').innerHTML = response.name;
