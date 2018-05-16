@@ -37,7 +37,7 @@
     }
 
 .fixed.w-100.h-100.left-0.top-0.flex.items-center.justify-center.bg-light-gray
-  .w-30.h-100.pv5
+  .w-50-l.w-70-m.w-100.h-100.pa3.pv5-ns.overflow-scroll
     .h-100.w-100.relative
       .h-50.w-100.bg-white.pa4.br2.shadow-2.relative.overflow-scroll
         %p Here's a summary of what you can expect to find in our Privacy Policy and Terms of Use, which cover all YouVersion-branded products and services
@@ -48,13 +48,22 @@
         %h5.b.mt3 Making your experience personal
         %p.mt3 When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience.
       .pa4.w-100.relative
-        .cf
-          .w-80.fl
-            .p I agree to let YouVersion send me emails to deepen my Bible engagement
-          .w-20.fl
-            .input{:type => 'checkbox'}
-        .cf
-          .w-80.fl
-            .p I agree to let YouVersion send me emails to deepen my Bible engagement
-          .w-20.fl
-            .input{:type => 'checkbox'}            
+        %form
+          .cf.mt3
+            .w-80.fl
+              %p I agree to let YouVersion send me emails to deepen my Bible engagement
+            .w-20.fl.tr
+              %input{:type => 'checkbox'}
+          %hr
+          .cf.mt3
+            .w-80.fl
+              %p
+                I agree to YouVersion's
+                %a{ :href => "/terms", :target => "_blank" } Terms
+                and
+                %a{ :href => "/privacy", :target => "_blank" } Privacy Policy
+            .w-20.fl.tr
+              %input{:type => 'checkbox'}
+          .cf.mt4
+            .w-80.center
+              %button#gdpr-signup-button.solid-button.green.expand Continue
