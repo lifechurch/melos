@@ -124,3 +124,11 @@ a {
 		pointer-events: none;
 	}
 }
+
+#gdpr_overlay {
+  transform: translateY(100%);
+  transition: transform 0.25s ease-in-out;
+  &.show-me {
+    transform: translateY(0);
+  }
+}

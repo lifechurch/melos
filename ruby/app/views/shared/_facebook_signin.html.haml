@@ -5,17 +5,27 @@
 
   function handleGDPR(gdpr_required) {
     if (!gdpr_required) {
+      // GDPR not required, submit form
       document.getElementById('facebook-sign-in-form').submit();
     } else {
-      window.addEventListener('gdprConfirmed', function() {
-        document.getElementById('facebook-sign-in-form').submit();
-      })
-      console.warn('BLOCKED by GDPR');
+      // Listen for GDPR confirmed event, and then submit
+      window.addEventListener('gdprConfirmed', function(e) {
+        if (e.detail.signupMethod === 'Facebook') {
+          document.getElementById('facebook-sign-in-form').submit();
+        }
+      });
+
+      // Dispatch event to open GDPR overlay
+      window.dispatchEvent(new CustomEvent('gdprRequired', {
+        detail: {
+          signupMethod: 'Facebook'
+        }
+      }));
     }
   }
 
   function handleGDPRError(error) {
-    console.error(e);
+    console.error('GDPR API Error', e);
   }
 
   function fbapiStatusChangeCallback(response) {

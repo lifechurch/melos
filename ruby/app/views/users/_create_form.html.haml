@@ -1,29 +1,46 @@
 -content_for :lower_javascript do
   :javascript
-    var userCreateForm = document.getElementById('user_create_form')
+    var userCreateForm = document.getElementById('user_create_form');
     userCreateForm.addEventListener('submit', function(e) {
       e.preventDefault();
       check_gdpr_required().then(function(gdpr_required) {
         if (gdpr_required) {
-          allowSubmit = false
-          console.warn("BLOCKED by GDPR");
-          window.addEventListener('gdprConfirmed', function() {
-            userCreateForm.submit();
+
+          // Setup an Event Listener for when user agrees to terms
+          window.addEventListener('gdprConfirmed', function(e) {
+            if (e.detail.signupMethod === 'YouVersion') {
+              document.getElementById('user.agree').value = e.detail.agreeTerms;
+              document.getElementById('user.email_opt_in').value = e.detail.agreeEmails
+              userCreateForm.submit();
+            }
           });
+
+          // Dispatch an Event to open GDPR Overlay
+          window.dispatchEvent(new CustomEvent('gdprRequired', {
+            detail: {
+              signupMethod: 'YouVersion'
+            }
+          }));
+
         } else {
+          // GDPR not required, just submit form
           userCreateForm.submit();
         }
       }, function(e) {
-        console.error(e);
+        // Error getting GDPR status from API, submit anyway
+        console.error('GDPR API Error', e);
         userCreateForm.submit();
       });
+
+      // Cancel default submit action and wait on async call above
       return false;
     });
 
 = form_for :user, url: sign_up_path(source: params[:source], redirect: params[:redirect]), html: { id: 'user_create_form' } do |f|
   = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.creation form errors")}
-  = f.hidden_field :agree, {value: true}
+  = f.hidden_field :agree, { :id => "user.agree", value: true }
   = f.hidden_field :timezone, {"detect-tz" => ""}
+  = f.hidden_field :email_opt_in, { :id => "user.email_opt_in", :value => true }
 
   %p
     = f.label :first_name, t("users.first name")

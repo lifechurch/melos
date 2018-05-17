@@ -7,10 +7,11 @@
   %script{:type => "text/javascript", :src  => "https://cdn.polyfill.io/v2/polyfill.js?features=fetch"}
   :javascript
     window.GDPR_REQUIRED;
+    window.GDPR_SIGNUP_METHOD;
     function check_gdpr_required() {
       return new Promise(function(resolve, reject) {
         if (typeof window.GDPR_REQUIRED !== 'undefined') {
-          resolve(true /*window.GDPR_REQUIRED*/);
+          resolve(window.GDPR_REQUIRED || #{params[:gdpr].present?});
           return;
         }
 
@@ -25,7 +26,7 @@
           .then(function(myJson) {
             if (typeof myJson === 'object' && typeof myJson.gdpr !== 'undefined') {
               window.GDPR_REQUIRED = myJson.gdpr;
-              resolve(true /*myJson.gdpr*/);
+              resolve(myJson.gdpr || #{params[:gdpr].present?});
             } else {
               throw new Error('No `gdpr` attribute in respone. ' + JSON.stringify(myJson));
             }
@@ -36,34 +37,63 @@
       })
     }
 
-.fixed.w-100.h-100.left-0.top-0.flex.items-center.justify-center.bg-light-gray
-  .w-50-l.w-70-m.w-100.h-100.pa3.pv5-ns.overflow-scroll
+    function checkContinueStatus() {
+      var gdprButton = document.getElementById("gdpr-signup-button");
+      var agreeTermsChk = document.getElementById("chk-agree-terms");
+      gdprButton.disabled = !(agreeTermsChk.checked)
+    }
+
+    function handleCancelGDPR() {
+      var gdprOverlay = document.getElementById("gdpr_overlay").classList.remove("show-me");
+    }
+
+    function handleConfirmGDPR() {
+      var agreeEmailChk = document.getElementById("chk-agree-emails");
+      var agreeTermsChk = document.getElementById("chk-agree-terms");
+
+      window.dispatchEvent(new CustomEvent('gdprConfirmed', {
+        detail: {
+          agreeTerms: agreeTermsChk.checked,
+          agreeEmails: agreeEmailChk.checked,
+          signupMethod: window.GDPR_SIGNUP_METHOD
+        }
+      }));
+    }
+
+    window.addEventListener('gdprRequired', function(e) {
+      window.GDPR_SIGNUP_METHOD = e.detail.signupMethod;
+      var gdprOverlay = document.getElementById("gdpr_overlay").classList.add("show-me");
+    });
+
+#gdpr_overlay.fixed.w-100.h-100.left-0.top-0.flex.items-center.justify-center.bg-light-gray
+  .w-100.measure.h-100.pa3.pv5-ns.overflow-scroll
     .h-100.w-100.relative
       .h-50.w-100.bg-white.pa4.br2.shadow-2.relative.overflow-scroll
-        %p Here's a summary of what you can expect to find in our Privacy Policy and Terms of Use, which cover all YouVersion-branded products and services
-        %h5.b.mt3 Making your experience personal
-        %p.mt3 When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience.
-        %h5.b.mt3 Making your experience personal
-        %p.mt3 When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience.
-        %h5.b.mt3 Making your experience personal
-        %p.mt3 When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience.
+        %p= t("gdpr.terms summary.p1")
+        %h5.b.mt3= t("gdpr.terms summary.h1")
+        %p.mt3= t("gdpr.terms summary.p2")
+        %h5.b.mt3= t("gdpr.terms summary.h2")
+        %p.mt3= t("gdpr.terms summary.p3")
+        %p.mt3= t("gdpr.terms summary.p4")
+        %h5.b.mt3= t("gdpr.terms summary.h3")
+        %p.mt3= t("gdpr.terms summary.p5")
+        %p.mt3= t("gdpr.terms summary.p6")
+        %h5.b.mt3= t("gdpr.terms summary.h4")
+        %p.mt3= t("gdpr.terms summary.p7")
       .pa4.w-100.relative
-        %form
-          .cf.mt3
-            .w-80.fl
-              %p I agree to let YouVersion send me emails to deepen my Bible engagement
-            .w-20.fl.tr
-              %input{:type => 'checkbox'}
-          %hr
-          .cf.mt3
-            .w-80.fl
-              %p
-                I agree to YouVersion's
-                %a{ :href => "/terms", :target => "_blank" } Terms
-                and
-                %a{ :href => "/privacy", :target => "_blank" } Privacy Policy
-            .w-20.fl.tr
-              %input{:type => 'checkbox'}
-          .cf.mt4
-            .w-80.center
-              %button#gdpr-signup-button.solid-button.green.expand Continue
+        .cf.mt3
+          .w-80.fl
+            %p= t("gdpr.agree to emails")
+          .w-20.fl.tr
+            %input#chk-agree-emails{:type => 'checkbox' }
+        %hr
+        .cf.mt3
+          .w-80.fl
+            %p!= t("gdpr.agree to terms")
+          .w-20.fl.tr
+            %input#chk-agree-terms{:type => 'checkbox', :onchange => 'checkContinueStatus()'}
+        .cf.mt4
+          .w-80.center.tc
+            %button#gdpr-signup-button.solid-button.green.expand{ :disabled => true, :onclick => 'handleConfirmGDPR()' }= t("gdpr.continue")
+            %br
+            %a.button-reset.pa0.ma0.bg-transparent.near-black.dim.link.hover-bg-transparent.hover-gray{ :onclick => 'handleCancelGDPR()' }= t("ui.cancel")
