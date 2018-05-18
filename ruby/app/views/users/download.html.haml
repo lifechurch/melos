@@ -1,0 +1,9 @@
+:ruby
+  @title = t('users.edit profile')
+  @setting_selected = :download #for settings layout
+
+%h3{ :style => "font-weight: normal" }= t("gdpr.data")
+
+%p{ :style => "max-width: 35em" }= t("gdpr.download blurb")
+%br
+%button.solid-button.green= t("download")
