@@ -6,12 +6,6 @@
   version "15.6.12"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.6.12.tgz#5bfaf54b48bbb40f332f0583348acee5d3f6c032"
 
-"@youversion/token-storage@^0.0.53":
-  version "0.0.53"
-  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.53.tgz#d72626bcfd2b8b23c290d9129b0be85cb02b658e"
-  dependencies:
-    react-cookie "^0.4.5"
-    
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
