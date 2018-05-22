@@ -5,8 +5,8 @@ fr:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        other: "il y a environ %{count} heures"
+        one: "il y a environ %{count} heure(s)"
+        other: "il y a environ %{count} heure(s)"
       about_x_months:
         one: "il y a environ %{count} mois"
         other: "il y a environ %{count} mois"
@@ -393,7 +393,7 @@ fr:
     users like this: "%{last_liker_link} et %{more_link} aiment ça"
     like: "J'aime"
     likes: "J'aime"
-    more than one like: ""
+    more than one like:
     vod:
       title: "Verset du jour"
       get daily email: "Recevoir les emails quotidiens"
@@ -808,7 +808,7 @@ fr:
         one: "%{count} ami a terminé ce plan"
         other: "%{count} amis ont terminé ce plan"
       total completions:
-        one: "Over %{count} completion"
+        one: "Plus de %{count} terminé"
         other: "Plus de %{count} terminés"
       view all: "Tout Voir"
       close: "Fermer"
@@ -1389,8 +1389,8 @@ fr:
         likes: "Vous vous êtes désinscrit avec succès des emails <b>J'aime</b>."
         moments: "Vous vous êtes désinscrit avec succès des emails<b>Moments</b>."
         newsletter: "Vous vous êtes désinscrit avec succès des emails <b>Bulletin</b>."
-        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
-        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
+        pwf_comments: "Vous vous êtes désinscrit avec succès des <b>Commentaires</b> par emails pour ce Plan."
+        pwf_accepts: "Vous vous êtes désinscrit avec succès des <b>Invitations au Plans de Lecture</b> par emails pour ce Plan."
         reading_plans: "Vous vous êtes désinscrit avec succès des emails <b>Plans de lecture</b>."
         rp_daily: "Vous vous êtes désinscrit avec succès des <b>emails quotidiens Plan de lecture</b> de %{plan_title}."
         votd: "Vous vous êtes désinscrit avec succès des emails <b>Verset du jour</b>."
@@ -2134,3 +2134,21 @@ fr:
     sad: "Triste"
     sick: "Malade"
     tired: "Fatigué"
+  gdpr:
+    agree to emails: "Je suis d'accord pour que YouVersion m'envoie des emails pour approfondir mon engagement biblique."
+    agree to terms: "J'accepte les<a href='/terms'>Conditions d'Utilisation</a>et la<a href='/privacy'>Politique de Confidentialité</a> de YouVersion."
+    continue: "Continuer"
+    terms summary:
+      p1: "Voici un résumé des informations que vous pourrez trouver dans notre Politique de Confidentialité et nos Conditions d'Utilisation, qui couvrent l'ensemble des produits et services de la marque YouVersion :"
+      h1: "Rendre votre expérience personnelle."
+      p2: "Lorsque vous créez un compte YouVersion ou utilisez l'une de nos applications ou l'un de nos sites, les données collectées sont utilisées en vue de vous offrir une expérience sur mesure avec la Bible."
+      h2: "Comment nous utilisons vos données."
+      p3: "Nos politiques précisent clairement le type de données que nous collectons à partir de votre activité, et la manière dont nous utilisons ces informations afin d'améliorer votre expérience sur YouVersion."
+      p4: "Nous ne partageons vos données personnelles susceptibles de vous identifier avec aucun publicitaire ou annonceur en ligne. En effet, saviez-vous que YouVersion est une organisation à but non lucratif? Parce que notre objectif est missionnaire, nous ne monnayons ni ne vendons vos données, de plus, nous n'insérons pas de publicités dans nos produits."
+      h3: "Votre confidentialité est protégée."
+      p5: "Lorsque vous voyez des statistiques que nous partageons pour célébrer l'adhésion autour de la Bible dans le monde, nous nous assurons d'exploiter les données tout en garantissant votre confidentialité."
+      p6: "Lorsque ces informations sont publiées, c'est uniquement en format agrégé afin de ne pas divulguer pas les données personnelles susceptibles de vous identifier. De plus, nous mettons en place des mesures de sécurités avec des standards adaptés aux entreprises et conçues pour protéger vos données."
+      h4: "C’est votre expérience."
+      p7: "Nos règles définissent clairement quels sont vos droits en utilisant YouVersion, y compris l'accès, le partage, la modification et la suppression de vos données personnelles. Nous abordons également les méthodes de collecte de données et la manière dont ces outils aident la communauté YouVersion à s'engager pleinement avec la Bible."
+    data: "Données"
+    download blurb: "Vous pouvez télécharger une copie des données personnelles que vous nous avez fournies comme vos noms, âge, lieu de résidence et adresse mail ainsi que des informations basiques sur vos amis utilisateurs de YouVersion. Ce téléchargement de données n'inclura pas les informations relatives à votre lecture de la Bible, vos versets surlignés, notes, et versets illustrés auxquels vous pouvez accéder directement sur l'application. YouVersion est un ministère à but non lucratif. Notre but est missionnaire et donc nous ne monnayons ni ne vendons les sonnées ni ne plaçons de publicités dans les produits que nous vous proposons."

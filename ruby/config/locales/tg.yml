@@ -393,7 +393,7 @@ tg:
     users like this: "%{last_liker_link} and %{more_link} like this"
     like: "like"
     likes: "likes"
-    more than one like: ""
+    more than one like:
     vod:
       title: "Verse of the day"
       get daily email: "Get daily email"
@@ -2134,3 +2134,21 @@ tg:
     sad: "Sad"
     sick: "Sick"
     tired: "Tired"
+  gdpr:
+    agree to emails: "I agree to let YouVersion send me emails to deepen my Bible engagement."
+    agree to terms: "I agree to YouVersion’s <a href='/terms'>Terms</a> and <a href='/privacy'>Privacy Policy</a>."
+    continue: "Continue"
+    terms summary:
+      p1: "Here’s a summary of what you can expect to find in our Privacy Policy and Terms of Use, which cover all YouVersion-branded products and services:"
+      h1: "Making your experience personal."
+      p2: "When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience."
+      h2: "How we use your data."
+      p3: "The policies clearly outline the types of data we collect from your activity, and how we use that information to enhance your YouVersion experience."
+      p4: "We do not share your personally identifiable data with any third-party advertisers or ad networks. In fact, did you know that YouVersion is a non-profit ministry? Because our focus is missional, we don’t monetize, sell data, or place ads inside of YouVersion products."
+      h3: "Your privacy protected."
+      p5: "When you see stats we share and celebrate about Bible engagement around the world, we make sure to analyze the data in a way that protects your privacy."
+      p6: "When this information is published, it is only in an aggregated form that does not disclose your personally identifiable information. In addition, we implement industry standard security safeguards designed to protect your data."
+      h4: "It’s your experience."
+      p7: "Our policies make it clear what rights you have when using YouVersion, including accessing, sharing, changing and deleting your personal data.  We also address data collection technologies and how those processes help the YouVersion Community fully engage with the Bible."
+    data: "Data"
+    download blurb: "You may download a copy of the personal data that you have provided to us, such as your name, bio, location, and website address as well as basic information regarding your YouVersion Friends. This data download will not include Bible activity information such as your Highlights, Notes, Verse Images, etc., which you can view directly within the app. YouVersion is a non-profit ministry. Because our focus is missional, we do not monetize, sell data, or place third-party advertising inside of YouVersion products. Please refer to our Privacy Policy and Terms of Use for more details as to the data we collect and why, and how we use and protect that data.  Please note that downloading data does not delete it from YouVersion servers. If you would like to request that your information be deleted, please visit help.youversion.com. Please be aware, however, that deleting certain data will prohibit and/or eliminate certain YouVersion functionality as further described in our Privacy Policy."

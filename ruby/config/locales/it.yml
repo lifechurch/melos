@@ -5,39 +5,39 @@ it:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        other: "about %{count} hours ago"
+        one: "circa %{count} ora fa"
+        other: "circa %{count} ore fa"
       about_x_months:
-        one: "about %{count} month ago"
-        other: "about %{count} months ago"
+        one: "circa %{count} mese fa"
+        other: "circa %{count} mesi fa"
       about_x_years:
-        one: "about %{count} year ago"
-        other: "about %{count} years ago"
+        one: "circa %{count} anno fa"
+        other: "circa %{count} anni fa"
       almost_x_years:
-        one: "almost %{count} year ago"
-        other: "almost %{count} years ago"
+        one: "quasi %{count} anno fa"
+        other: "quasi %{count} anni fa"
       half_a_minute: "mezzo minuto fa"
       less_than_x_minutes:
-        one: "less than %{count} minute ago"
-        other: "less than %{count} minutes ago"
+        one: "meno di %{count} minuto fa"
+        other: "meno di %{count} minuti fa"
       less_than_x_seconds:
-        one: "less than %{count} second ago"
-        other: "less than %{count} seconds ago"
+        one: "meno di %{count} secondo fa"
+        other: "meno di %{count} secondi fa"
       over_x_years:
-        one: "over %{count} year ago"
-        other: "over %{count} years ago"
+        one: "più di %{count} anno fa"
+        other: "più di %{count} anni fa"
       x_days:
-        one: "%{count} day ago"
-        other: "%{count} days ago"
+        one: "%{count} giorno fa"
+        other: "%{count} giorni fa"
       x_minutes:
-        one: "%{count} minute ago"
-        other: "%{count} minutes ago"
+        one: "%{count} minuto fa"
+        other: "%{count} minuti fa"
       x_months:
-        one: "%{count} month ago"
-        other: "%{count} months ago"
+        one: "%{count} mese fa"
+        other: "%{count} mesi fa"
       x_seconds:
-        one: "%{count} second ago"
-        other: "%{count} seconds ago"
+        one: "%{count} secondo fa"
+        other: "%{count} secondi fa"
   counter:
     format: "999.999.999"
   social:
@@ -393,7 +393,7 @@ it:
     users like this: "A %{last_liker_link} e %{more_link} piace questo"
     like: "Mi Piace"
     likes: "Mi Piace"
-    more than one like: ""
+    more than one like:
     vod:
       title: "Versetto del giorno"
       get daily email: "Ricevi e-mail quotidiano"
@@ -448,8 +448,8 @@ it:
     destroy failure: "Non è stato possibile cancellare il tuo \"mi piace\""
   comments:
     view all N:
-      one: "View %{count} comment"
-      other: "View all %{count} comments"
+      one: "Vedi %{count} commento"
+      other: "Vedi tutti i %{count} commenti"
     post comment: "Pubblica un commento"
     create success: "Successo! Il tuo commento è stato pubblicato"
     create failure: "Commento non poteva essere pubblicato"
@@ -808,8 +808,8 @@ it:
         one: "%{count} amico ha completato questo piano"
         other: "%{count}amici hanno completato questo piano"
       total completions:
-        one: "Over %{count} completion"
-        other: "Over %{count} completions"
+        one: "Completato più di %{count} volta"
+        other: "Completato più di %{count} volte"
       view all: "Vedi Tutti"
       close: "Chiudere"
     settings: "Opzioni"
@@ -1389,8 +1389,8 @@ it:
         likes: "Hai annullato l'iscrizione a <b>email Mi Piace</b>"
         moments: "Hai annullato l'iscrizione a <b> email Momenti</b>"
         newsletter: "Hai annullato l'iscrizione a <b>email Newsletter</b>"
-        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
-        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
+        pwf_comments: "Hai annullato l'iscrizione a <b>email Commenti</b> per questo Piano."
+        pwf_accepts: "Hai annullato l'iscrizione a <b>email inviti a Piani di Lettura</b> per questo Piano."
         reading_plans: "Hai annullato l'iscrizione a <b>email Piani di Lettura</b>"
         rp_daily: "Hai annullato l'iscrizione a <b>email Quotidiane Piani di Lettura</b> da %{plan_title}."
         votd: "Hai annullato l'iscrizione a <b>email Versetto del Giorno</b>"
@@ -2134,3 +2134,21 @@ it:
     sad: "Triste"
     sick: "Malatia"
     tired: "Stanco"
+  gdpr:
+    agree to emails: "Accetto di consentire a YouVersion di inviarmi e-mail per approfondire il mio impegno con la Bibbia."
+    agree to terms: "Sono d'accordo con i <a href='/terms'>Termini</a> e <a href='/privacy'>Politica sulla Privacy</a> di YouVersion."
+    continue: "Continuare"
+    terms summary:
+      p1: "Ecco un riepilogo di ciò che puoi aspettarti di trovare nella nostra Informativa sulla Privacy e Termini d'Uso, che coprono tutti i prodotti e i servizi a marchio YouVersion:"
+      h1: "Rendere personale la tua esperienza."
+      p2: "Quando crei un account YouVersion o usi una qualsiasi delle nostre applicazioni o siti, le informazioni che raccogliamo hanno lo scopo di offrire un'esperienza biblica più personalizzata."
+      h2: "Come utilizziamo i tuoi dati."
+      p3: "Le politiche descrivono chiaramente i tipi di dati che raccogliamo dalla tua attività e il modo in cui utilizziamo tali informazioni per migliorare la tua esperienza su YouVersion."
+      p4: "Non condividiamo i tuoi dati personali con eventuali inserzionisti o reti pubblicitarie di terze parti. In effetti, lo sapevi che YouVersion è un ministero senza scopo di lucro? Poiché il nostro obiettivo è missionario, non monetizziamo, vendiamo dati o pubblichiamo annunci all'interno dei prodotti YouVersion."
+      h3: "La tua privacy protetta."
+      p5: "Quando vedi le statistiche che condividiamo e celebriamo sull'impegno con la Bibbia in tutto il mondo, ci assicuriamo di analizzare i dati in un modo che protegga la tua privacy."
+      p6: "Quando queste informazioni sono pubblicate, è solo in forma aggregata che non divulga le informazioni personali identificabili. Inoltre, implementiamo misure di sicurezza standard per il settore progettate per proteggere i tuoi dati."
+      h4: "È la tua esperienza."
+      p7: "Le nostre politiche chiariscono quali sono i tuoi diritti quando utilizzi YouVersion, incluso l'accesso, la condivisione, la modifica e l'eliminazione dei tuoi dati personali. Ci occupiamo anche delle tecnologie di raccolta dei dati e di come tali processi aiutino la comunità di YouVersion a impegnarsi pienamente con la Bibbia."
+    data: "Dati"
+    download blurb: "Puoi scaricare una copia dei dati personali che ci hai fornito, come il tuo nome, la biografia, la posizione e l'indirizzo del sito web, nonché le informazioni di base relative ai tuoi amici YouVersion. Questo download di dati non includerà informazioni sull'attività della Bibbia come le tue evidenziazioni, note, immagini versetto, ecc. Che puoi visualizzare direttamente all'interno dell'app. YouVersion è un ministero senza scopo di lucro. Poiché il nostro obiettivo è missionario, non monetizziamo, vendiamo dati o pubblichiamo pubblicità di terze parti all'interno dei prodotti YouVersion. Si prega di fare riferimento alla nostra politica sulla privacy e ai termini di utilizzo per maggiori dettagli sui dati che raccogliamo e sul perché e su come utilizziamo e proteggiamo tali dati. Si noti che il download dei dati non lo elimina dai server di YouVersion. Se desideri richiedere che le tue informazioni vengano eliminate, visita help.youversion.com. Si prega di essere consapevoli, tuttavia, che l'eliminazione di determinati dati impedirà e/o eliminerà determinate funzionalità di YouVersion come ulteriormente descritto nella nostra Informativa sulla privacy."

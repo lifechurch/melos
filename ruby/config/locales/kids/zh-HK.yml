@@ -1,6 +1,6 @@
 zh-HK:
   kids:
-    bible app: "The Bible App"
+    bible app: "聖經軟件"
     for: "for"
     kids: "兒童"
     by youversion: "YouVersion 提供"
@@ -30,13 +30,13 @@ zh-HK:
       facebook redirect: "http://www.bible.com/hk/kids"
       twitter description: "由 @YouVersion 開發的兒童聖經軟件隆重登場了 ! 有趣又好玩，而且完全免費。快來下載： bible.com/hk/kids"
       twitter hashtags: "kidsbible"
-      email: "Email"
+      email: "電子郵件"
       email subject: "兒童聖經軟件隆重登場了！"
       email body: "好消息——兒童聖經軟件隆重登場了！完全免費，可安裝在 iPhone、iPod touch 和 Android 設備上。這個軟件所提供的聖經故事附帶觸動式動畫和遊戲，而且故事數量還在不斷增加中，能幫助兒童學習聖經裡的重要故事，提供兒童最完美的聖經體驗。今天就前往 bible.com/hk/kids 下載此件到你的行動設備上。"
     partner:
       youversion: "YouVersion：全世界最受歡迎的聖經軟件"
       in partnership: "偕同合作夥伴"
-      one hope: "One Hope: Extraordinary Bible content for Kids"
+      one hope: "OneHope：為小朋友們提供絕佳的聖經內容"
     links:
       apple: "https://itunes.apple.com/hk/app/bible-for-kids/id668692393?ls=1&l=zh"
       google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=zh_hk"

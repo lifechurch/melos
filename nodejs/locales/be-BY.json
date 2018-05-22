@@ -358,7 +358,7 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.types": "Тыпы апісаньня",
 	"features.EventEdit.features.content.components.ContentHelpModal.learn": "Learn how to make <br>a great Event",
 	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "Тэкст",
-	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Кароткі зьмест, ключавыя моманты, пытаньні для абмеркаваньня… Дадайце любы тэкст, які дапаможа наведвальнікам сачыць за ходам падзеі. Тэкставыя модулі могуць быць любой даўжыні, а таксама любога фармату.",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Кароткі зьмест, ключавыя моманты, пытаньні для абмеркаваньня… Дадайце любы тэкст, які дапаможа наведвальнікам сачыць за ходам падзеі. Тэкставыя модулі могуць быць любой ��аўжыні, а таксама любога фармату.",
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "Спасылка на Біблію",
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
 	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "Плян чытаньня",

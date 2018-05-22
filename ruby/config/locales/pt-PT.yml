@@ -5,39 +5,39 @@ pt-PT:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        other: "about %{count} hours ago"
+        one: "à cerca de %{count} hora atrás"
+        other: "à cerca de %{count} horas atrás"
       about_x_months:
-        one: "about %{count} month ago"
-        other: "about %{count} months ago"
+        one: "à cerca de %{count} mês atrás"
+        other: "à cerca de %{count} meses atrás"
       about_x_years:
-        one: "about %{count} year ago"
-        other: "about %{count} years ago"
+        one: "à cerca de %{count} ano atrás"
+        other: "à cerca de %{count} anos atrás"
       almost_x_years:
-        one: "almost %{count} year ago"
-        other: "almost %{count} years ago"
+        one: "há quase %{count} ano atrás"
+        other: "há quase %{count} anos atrás"
       half_a_minute: "há meio minuto atrás"
       less_than_x_minutes:
-        one: "less than %{count} minute ago"
-        other: "less than %{count} minutes ago"
+        one: "há menos de %{count} minuto atrás"
+        other: "há menos de %{count} minutos atrás"
       less_than_x_seconds:
-        one: "less than %{count} second ago"
-        other: "less than %{count} seconds ago"
+        one: "há menos de %{count} segundo atrás"
+        other: "há menos de %{count} segundos atrás"
       over_x_years:
-        one: "over %{count} year ago"
-        other: "over %{count} years ago"
+        one: "há mais %{count} ano atrás"
+        other: "há mais de %{count} anos atrás"
       x_days:
-        one: "%{count} day ago"
-        other: "%{count} days ago"
+        one: "%{count} dia atrás"
+        other: "há %{count} dias atrás"
       x_minutes:
-        one: "%{count} minute ago"
-        other: "%{count} minutes ago"
+        one: "%{count} minuto atrás"
+        other: "há %{count} minutos atrás"
       x_months:
-        one: "%{count} month ago"
-        other: "%{count} months ago"
+        one: "%{count} mês atrás"
+        other: "há %{count} meses atrás"
       x_seconds:
-        one: "%{count} second ago"
-        other: "%{count} seconds ago"
+        one: "%{count} segundo atrás"
+        other: "%{count} segundos atrás"
   counter:
     format: "999 999 999"
   social:
@@ -263,8 +263,8 @@ pt-PT:
   notes title: "Notas"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
-      other: "You have %{count} friends"
+      one: "Tem %{count} amigo"
+      other: "Tem %{count} amigos"
     none me: "Partilhe os seus momentos na Bíblia tais como os marcadores, os destaques e notas com os seus amigos mais próximos e a sua família."
     find friends: "Encontre amigos"
     blank slate:
@@ -393,7 +393,7 @@ pt-PT:
     users like this: "%{last_liker_link} e %{more_link} gostam disto"
     like: "Gosto"
     likes: "Gostos"
-    more than one like: ""
+    more than one like:
     vod:
       title: "Versículo do dia"
       get daily email: "Receber e-mail diário"
@@ -448,8 +448,8 @@ pt-PT:
     destroy failure: "Não foi possível eliminar o seu \"gosto\""
   comments:
     view all N:
-      one: "View %{count} comment"
-      other: "View all %{count} comments"
+      one: "Ver %{count} comentário"
+      other: "Ver todos os %{count} comentários"
     post comment: "Adicionar comentário"
     create success: "O seu comentário foi publicado com sucesso."
     create failure: "O comentário não pôde ser publicado"
@@ -808,8 +808,8 @@ pt-PT:
         one: "%{count} amigo concluiu este plano"
         other: "%{count} amigos concluíram este plano"
       total completions:
-        one: "Over %{count} completion"
-        other: "Over %{count} completions"
+        one: "Mais de %{count} concluído"
+        other: "Mais de %{count} concluídos"
       view all: "Ver todos os planos"
       close: "Fechar"
     settings: "Definições"
@@ -1389,8 +1389,8 @@ pt-PT:
         likes: "Você cancelou com sucesso a sua subscrição de e-mails de gosto."
         moments: "Você cancelou com sucesso a sua subscrição de e-mails de momentos."
         newsletter: "Você cancelou com sucesso a sua subscrição de e-mails de Boletim de Notícias."
-        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
-        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
+        pwf_comments: "Cancelou com sucesso a subscrição de <b>Comentários</b>e-mails neste plano."
+        pwf_accepts: "Cancelou com sucesso a subscrição de <b>Convite de Leitura de Planos</b>e-mails neste plano."
         reading_plans: "Você cancelou com sucesso a sua subscrição de e-mails de Planos de Leitura."
         rp_daily: "Você cancelou com sucesso a sua subscrição de e-mails de Planos de Leitura Diários de %{plano_título}"
         votd: "Você cancelou com sucesso a sua subscrição de e-mails de Versículo do Dia."
@@ -2134,3 +2134,21 @@ pt-PT:
     sad: "Triste"
     sick: "Doente"
     tired: "Cansado"
+  gdpr:
+    agree to emails: "Eu dou permissão para que a YouVersion me envie emails para aprofundar o meu compromisso com a leitura bíblica."
+    agree to terms: "Eu concordo com <a href='/terms'>os Termos</a> e <a href='/privacy'>a Política de Privacidade da YouVersion</a>."
+    continue: "Continuar"
+    terms summary:
+      p1: "Aqui está um resumo do que pode esperar encontrar em nossa Política de Privacidade e Termos de Utilização, que abrangem todos os produtos e serviços da marca YouVersion:"
+      h1: "Tornando a sua experiência pessoal."
+      p2: "Quando cria uma conta da YouVersion ou utiliza as nossas aplicações ou sites, a informação que recolhemos tem o propósito de oferecer uma experiência Bíblica mais personalizada."
+      h2: "Como utilizamos os seus dados."
+      p3: "As políticas descrevem claramente os tipos de dados que recolhemos sobre a sua atividade e como usamos essas informações para melhorar a sua experiência com o YouVersion."
+      p4: "Não compartilhamos os seus dados pessoais identificáveis ​​com anunciantes de terceiros ou redes de anúncios. Na verdade, sabia que a YouVersion é um ministério sem fins lucrativos? Como nosso foco é de missão, não lucramos, vendemos dados ou colocamos anúncios dentro dos produtos YouVersion."
+      h3: "A sua privacidade protegida."
+      p5: "Quando vê estatísticas que partilhamos e celebramos sobre o envolvimento da Bíblia ao redor de todo mundo, nós procuramos analisar os dados com cuidado de forma a proteger a sua privacidade."
+      p6: "Quando esta informação é publicada, é somente numa forma agregada, que não divulga a sua informação pessoal. Para além disso, nós temos implementado padrões de segurança profissionais de forma a proteger os seus dados."
+      h4: "É a sua experiência."
+      p7: "As nossas políticas deixam bem claros os direitos que tem ao usar a YouVersion, incluindo o acesso, a partilha, a mudança ou eliminação dos seus dados pessoais. Nós também abordamos as tecnologias de recolha de dados e como esses processos ajudam a Comunidade YouVersion a envolver-se plenamente com a Bíblia."
+    data: "Dados"
+    download blurb: "Pode descarregar uma cópia dos seus dados pessoais que nos providenciou, tal como nome, biografia, localização, e o endereço do website bem como a informação básica sobre os seus amigos na YouVersion. Este descarregar de dados não irá incluir informações sobre atividade Bíblica, tais como destaques, notas, imagens de versículos, etc., os quais pode ver diretamente dentro da app. A YouVersion é um ministério sem fins lucrativos. Como nosso foco é de missão, não lucramos, vendemos dados ou colocamos anúncios dentro dos produtos YouVersion. Por favor consulte a nossa Política de Privacidade e Termos de Uso para mais detalhes acerca dos dados que recolhemos e o porquê, e como os usamos e protegemos. Por favor considere que o fato de descarregar os dados isso não faz com que sejam apagados dos servidores da YouVersion. Se desejar que essa informação seja apagada, por favor visite help.youversion.com. Tenha em atenção por favor, que ao apagar alguns dados proibirá e/ou eliminará certas funcionalidades da YouVersion conforme está descrito na nossa Política de Privacidade."
