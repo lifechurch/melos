@@ -15,7 +15,7 @@
           return;
         }
 
-        fetch('https://geoip.youversionapi.com/', { headers: { 'Authorization': 'Basic eW91dmVyc2lvbjpacWtSWDhhd0NraGZBSHcwbFY4aDQ3ZUZFRVhuYkVHaUE=' }})
+        fetch('https://geoip.youversionapi.com/gdpr')
           .then(function(response) {
             if (!response.ok) {
               throw new Error('Not-OK Response: ' + response.statusText);
@@ -23,12 +23,12 @@
               return response.json();
             }
           })
-          .then(function(myJson) {
-            if (typeof myJson === 'object' && typeof myJson.gdpr !== 'undefined') {
-              window.GDPR_REQUIRED = myJson.gdpr;
-              resolve(myJson.gdpr || #{params[:gdpr].present?});
+          .then(function(json) {
+            if (typeof json === 'object' && typeof json.gdpr !== 'undefined') {
+              window.GDPR_REQUIRED = json.gdpr;
+              resolve(json.gdpr || #{params[:gdpr].present?});
             } else {
-              throw new Error('No `gdpr` attribute in respone. ' + JSON.stringify(myJson));
+              throw new Error('No `gdpr` attribute in respone. ' + JSON.stringify(json));
             }
           })
           .catch(function(error) {
