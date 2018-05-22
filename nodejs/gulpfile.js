@@ -32,6 +32,7 @@ const localeNameException = {
 	hi: 'hi-IN',
 	hr: 'hr-HR',
 	hu: 'hu-HU',
+	hy: 'hy-AM',
 	id: 'id-ID',
 	it: 'it-IT',
 	ja: 'ja-JP',
@@ -55,6 +56,7 @@ const localeNameException = {
 	ru: 'ru-RU',
 	sk: 'sk-SK',
 	sq: 'sq-AL',
+	sr: 'sr-CS',
 	sv: 'sv-SE',
 	ta: 'ta-IN',
 	th: 'th-TH',
@@ -276,6 +278,8 @@ gulp.task('crowdin', () => {
 					'ur-PK': 'ur',
 					fil: 'tl',
 					'pt-BR': 'pt',
+					'sr-CS': 'sr',
+					'hy-AM': 'hy'
 					// 'pt-PT': 'pt',
 					// ckb: 'ckb-IR'
 				}
