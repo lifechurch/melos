@@ -5,51 +5,51 @@ hi:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        other: "about %{count} hours ago"
+        one: "लगभग %{count} घंटा पहले"
+        other: "लगभग %{count} घंटे पहले"
       about_x_months:
-        one: "about %{count} month ago"
-        other: "about %{count} months ago"
+        one: "लगभग %{count} महीना पहले"
+        other: "लगभग %{count} महीने पहले"
       about_x_years:
-        one: "about %{count} year ago"
-        other: "about %{count} years ago"
+        one: "लगभग %{count} वर्ष पहले"
+        other: "लगभग %{count} वर्ष पहले"
       almost_x_years:
-        one: "almost %{count} year ago"
-        other: "almost %{count} years ago"
-      half_a_minute: "आधे मिनट पहले"
+        one: "करीब-करीब %{count} वर्ष पहले"
+        other: "करीब-करीब %{count} वर्ष पहले"
+      half_a_minute: "आधा मिनट पहले"
       less_than_x_minutes:
-        one: "less than %{count} minute ago"
-        other: "less than %{count} minutes ago"
+        one: "%{count} मिनट से कम समय पहले"
+        other: "%{count} मिनट से कम समय पहले"
       less_than_x_seconds:
-        one: "less than %{count} second ago"
-        other: "less than %{count} seconds ago"
+        one: "%{count} सैकण्ड से कम समय पहले"
+        other: "%{count} सैकण्ड से कम समय पहले"
       over_x_years:
-        one: "over %{count} year ago"
-        other: "over %{count} years ago"
+        one: "%{count} वर्ष से ज़्यादा समय पहले"
+        other: "%{count} वर्षों से ज़्यादा समय पहले"
       x_days:
-        one: "%{count} day ago"
-        other: "%{count} days ago"
+        one: "%{count} दिन पहले"
+        other: "%{count} दिन पहले"
       x_minutes:
-        one: "%{count} minute ago"
-        other: "%{count} minutes ago"
+        one: "%{count} मिनट पहले"
+        other: "%{count} मिनट पहले"
       x_months:
-        one: "%{count} month ago"
-        other: "%{count} months ago"
+        one: "%{count} माह पहले"
+        other: "%{count} माह पहले"
       x_seconds:
-        one: "%{count} second ago"
-        other: "%{count} seconds ago"
+        one: "%{count} सैकण्ड पहले"
+        other: "%{count} सैकण्ड पहले"
   counter:
     format: "999,999,999"
   social:
     intro page:
       main heading: "वार्तालाप और खोज"
-      main description: "अपने भरोसे के मित्रों संग बाइबिल नए तरीके से अध्ययन करे"
+      main description: "अपने भरोसे के दोस्तों के साथ एक नए तरीके से बाइबिल अध्ययन करें"
       moment:
         user aaron: "आरोन स्टील"
         user andy: "एंडी नाइट"
         timestamp: "5 दिवस पहले"
         title: "भजन संहिता 31:7 बुकमार्क हुआ"
-        verse: "आपने मेरी परेशानियों और अंतरात्मा की मनोवेदना को नज़र अंदाज़ नहीं किया। में आपके इस अद्भुत और निस्वार्थ प्यार के लिए जीवन भर आभारी रहूँगा।"
+        verse: "मैं तेरी करुणा से मगन और आनन्दित हूँ, क्योंकि तू ने मेरे दुःख पर दृष्टि की है, मेरे कष्ट के समय तू ने मेरी सुधि ली है|"
         reference: "भजन संहिता 31:7"
         discover:
           copy: "मित्रों के साथ बाइबिल अध्ययन करे जब वह हाईलाइट,बुकमार्क और नोट जोड़ रहे हैं।"
@@ -263,8 +263,8 @@ hi:
   notes title: "टिप्पणियाँ"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
-      other: "You have %{count} friends"
+      one: "आपका %{count} मित्र है"
+      other: "आपके %{count} मित्र हैं"
     none me: "अपने करीबी मित्रों और परिवार सदस्यों के साथ बाइबिल अध्ययन के दौरान अनुभव किया गया अद्भुत एहसास को बुकमार्क,हाईलाइट और नोट के रूप में शेयर करे।"
     find friends: "मित्रों को खोजे"
     blank slate:
@@ -296,65 +296,65 @@ hi:
     slide demo title: "सामर्थी होने का अर्थ जटिल होना बिलकुल भी नहीं है।"
     slide demo text: "किसी भी वैब से जुड़े मैक या पी सी से आसानी से इवेंट्स/कार्यक्रम की रचना करें। अपने प्रत्येक इवेंट क्षणों को उनके निर्धारित जगहों पर ड्रैग-एन्ड-ड्रॉप करें, अपने अनुसार पुनः व्यवस्थित करें, उनमें बदलाव करें, और फ़ेरबदल करें।"
     building blocks title: "सभी मूलभूत ब्लॉक्स की आपको आवश्यकता है.... ठीक वैसा इवेंट्स बनाने के लिए जैसा आप चाहते हों।"
-    building blocks text: "Flexible modules save you time and effort. Combine elements to create new Events from scratch. Or reuse your existing Events and modify them as necessary. Even copy existing Events and modify them to suit completely different types of gatherings. All along the way, Preview lets you see your Event content exactly as your attenders will."
+    building blocks text: "लचीले अनुखंड आपके समय और कोशिश, दोनों की बचत करतें हैं। नई घटनाओँ को शुरुआत से बनाने के लिए अवयवों को मिलाएँ, या अभी की मौजूदा घटनाओँ को पुनः उपयोग करें या आवश्यकतानुसार उनमें बदलाव करें। यहाँ तक कि मौजूदा घटनाओँ को कॉपी करके, भिन्न-भिन्न तरह के जनसमूहों के अनुसार बदलाव कर सकतें हैं। और इस दौरान, पूर्वावलोकन की सहायता से आप अपनी घटनाओँ की सामग्री को ठीक वैसे देख सकते हो जैसा आपके दर्शक/श्रोता चाहतें हैं।"
     module 1 title: "पाठ भाग"
-    module 1 text: "Outlines, key points, discussion questions… Share any text content that will help your attenders follow along with your message as it’s happening."
+    module 1 text: "रूपरेखा, महत्वपूर्ण बिंदु, चर्चागत प्रश्न... पाठ-आधारित सामग्री को अपने भाग लेने वाले साथियों के साथ साझा करें, यह उनको मदद करेंगा संदेश को बेहतर समझने में जैसे आप इसे दे रहे हैं."
     module 2 title: "बाइबिल सन्दर्भ"
-    module 2 text: "Display passages right where your message refers to them, linked to any of the Bible App’s %{version_count}+ versions, in %{language_count}+ languages — no copying or pasting required."
+    module 2 text: "जहाँ आपके सन्देश उनसे सम्बन्ध रखतें हैं ठीक उसी जगह अपने अंशों को दिखाएँ, बाइबिल ऐप के किसी भी %{version_count} से, %{language_count} में + भाषाओं से जुड़ें - कोई कॉपी करके चिपकाने की आवश्यकता नहीं है।"
     module 3 title: "पाठन योजना इकाई/भाग"
     module 3 text: "बाइबल योजनाओं और धार्मिक सामग्री के लिंक दीजिए जो आपके शिक्षण विचार से संबंधित है, ताकि पूरे हफ्ते आपके साथियों भगवान के वचन के साथ व्यस्त रहे सकते हैं."
     module 4 title: "वेब लिंक इकाई"
-    module 4 text: "Put your audience just one tap away from online giving, volunteer signup, or church home pages. Drop a link to any external site directly inside your Event."
+    module 4 text: "अपने दर्शकों/श्रोताओं को, ऑनलाइन दान देने में, स्वेच्छा से साइन अप करने, या कलीसिया के मेन पेज पर जाने के लिए, बस एक कदम की दूरी रखिये। अपने कार्यक्रम के अंदर ही बाहर की किसी और जगह/साइट का लिंक छोड़ दें।"
     module 5 title: "छवि भाग"
-    module 5 text: "Bring your Event to life with series art, photos, Verse Images, and more. Attenders can easily share Event images to their social media, taking your message viral."
+    module 5 text: "कला की श्रृंखला, वचन छवि तथा और भी बहुत कुछ चीज़ें जोड़कर अपने कार्यक्रम में जान डालें। कार्यक्रम में हिस्सा लेने वाले बहुत आसानी से कार्यक्रम की तस्वीरों को अपने सामजिक मीडिया में साझा कर सकतें हैं, आपके संदेशों को शीघ्रता से सब जगह फैला सकतें हैं।"
     module 6 title: "घोषणा भाग"
-    module 6 text: "Easily distribute all your timely, important information: church news, calendar events, programs, classes, volunteer and missions opportunities, and more."
+    module 6 text: "अपनी समस्त आवश्यक जानकारी को आसानी से समय पर वितरित करें: कलीसिया की ख़बर, कैलेंडर की घटनाएँ, कार्यक्रम, कक्षाएँ, स्वैच्छिक कार्य और मिशन के अवसर, तथा और भी बहुत कुछ।"
     module 7 title: "समय एवं स्थान "
-    module 7 text: "Let people know where and when your Event is taking place — even for Events happening at multiple times and locations."
-    module 8 title: "Duplicate Events"
-    module 8 text: "Save time and effort. Rapidly create new Events by copying existing ones and modifying them with updated information."
-    module 9 title: "Cost Savings"
-    module 9 text: "Save money on printing and use less paper… even as you’re reaching out to people on a platform with more than 200 million installs."
-    cost savings: "The average church spends <b>$10,000 a year</b><br>on printing bulletins. Events helps you cut or <br>even eliminate those costs."
-    testimonials: "Testimonials"
-    testimonial 1 text: "“We were excited to implement YouVersion in our ministry, especially the Events section, where we insert each week’s teaching notes and comments. Our people appreciate having the notes at their fingertips, sharing them, and saving them. We’ve redirected thousands of dollars to other ministry needs by replacing printed programs!”"
-    testimonial 2 text: "“YouVersion Events is a valuable resource for our church family. The ability for our people to follow along with sermon notes and Scriptures during our messages creates powerful engagement and impact.”"
-    testimonial 3 text: "“We use Events for all of our sessions, allowing our attendees to have the notes and Scriptures from the speakers right in front of them. Events has saved us printing thousands of pages! Setting up an Event is incredibly easy, and it’s always published at the exact time we need it.”"
-    all new title: "Events is all-new, entirely free, and only in the Bible App."
+    module 7 text: "आप कहाँ हैं और आपके कार्यक्रम कब होनेवाले हैं, लोगों को इन सब की जानकारी लेने दें - यहाँ तक की ऐसे कार्यक्रमों की भी जो अलग-अलग समय पर भिन्न-भिन्न स्थानों पर होने वाले हैं, जानकारी दें।"
+    module 8 title: "कार्यक्रम की प्रतिलिपि"
+    module 8 text: "समय और प्रयास बचाएँ. मौजूदा कार्यक्रमों की प्रतिलिपि बनाकर और अद्यतन जानकारी के साथ उन्हें संशोधित करके नए कार्यक्रम तेजी से बनाएं।"
+    module 9 title: "लागत बचत"
+    module 9 text: "प्रिंटिंग पर पैसे बचाएं और कम कागज़ का उपयोग करें... भले ही आप 200 मिलियन से अधिक इंस्टॉल वाले मंच पर लोगों तक पहुंच रहे हों।"
+    cost savings: "औसतन चर्च बुलेटिन प्रिंटिंग पर <b>$ 10,000 सालाना</b><br>खर्च करता है। कार्यक्रम आपको कटौती करने में मदद करता है या <br>उन लागतों को भी खत्म करता है।"
+    testimonials: "गवाही"
+    testimonial 1 text: "\"हम अपनी सेवकाई में यूवर्शन को लागू करने के लिए उत्साहित थे, विशेष रूप से कार्यक्रम वाला अनुभाग, जहां हम हरेक सप्ताह शिक्षण नोट और टिप्पणियां संमिलित करते थे. हमारे लोग नोट्स तक उनकी पहुँच, उन्हें साझा करने, सहेज कर रखने जैसी सुविधाओं की सराहना करते हैं. हमने मुद्रण कार्यक्रमों में उपयोग होने वाले हजारों डॉलर सेवकाई की अन्य ज़रूरतों के लिए पुनर्निर्देशित कर दिए.\""
+    testimonial 2 text: "यूवर्शन कार्यक्रम हमारे चर्च परिवार के लिए एक मूल्यवान संसाधन है। संदेशों के दौरान हमारे लोगों द्वारा उपदेश टिप्पणी और पवित्र शास्त्र के वचनों के साथ अनुकरण करने की क्षमता बहुत प्रभावशाली है\""
+    testimonial 3 text: "\"हम अपने सभी सत्रों के लिए कार्यक्रमों का उपयोग करते हैं, जिससे हमारे श्रोता सीधे वक्ता के साथ साथ नोट्स और वचन पाते हैं। कार्यक्रम ने हमें हजारों पृष्ठों को प्रिंट करने से बचाया है! एक कार्यक्रम स्थापित करना अविश्वसनीय रूप से आसान है, और यह हमेशा सटीक समय पर प्रकाशित होता है जब हमें इसकी आवश्यकता होती है। \""
+    all new title: "कार्यक्रम पूरी तरह से नि: शुल्क, और केवल बाइबल ऐप में हैं।"
     all new text: "A revolution in Bible engagement is taking place within our lifetimes. Installed on more than %{install_count} million unique devices so far (and counting), the Bible App is helping people in every country on earth connect more with God’s Word. And now, through Events, we’re happy to offer the reach of that platform to you."
-    get started title: "Let’s get you started."
-    get started text: "Get your first Event ready to share in the Bible App in less than ten minutes. All you need is a Mac or PC and a free YouVersion account."
-    create an event: "Create an Event"
+    get started title: "चलिए शुरू करते हैं."
+    get started text: "दस मिनट से भी कम समय में बाइबल ऐप में साझा करने के लिए अपना पहला कार्यक्रम तैयार करें। आपको बस एक मैक या पीसी और एक मुफ्त यूवर्शन खाता चाहिए।"
+    create an event: "नया कार्यक्रम बनाएँ"
     resources: "संसाधन"
-    resources text: "Learn how to best use Events with free resources."
-    frequently asked questions: "Frequently Asked<br>Questions"
-    frequently asked questions text: "Find answers to everything you need to know about getting started with YouVersion Events."
+    resources text: "जानें कि निशुल्क उपलब्ध संसाधनों के साथ कार्यक्रमों का सर्वोत्तम उपयोग कैसे करें।"
+    frequently asked questions: "अक्सर पूछे जाने वाले<br>प्रश्न"
+    frequently asked questions text: "यूवर्शन के कार्यक्रम के साथ शुरुआत करने के बारे में आवश्यक प्रश्नों का उत्तर पाएं।"
     share: "शेयर"
-    tweet text: "Have you seen Events in @YouVersion’s Bible App? Message outlines, announcements, links to online giving, & more! http://bible.com/features/events"
+    tweet text: "क्या आपने @यूवर्शन की बाइबल एप्प में कार्यक्रम देखे हैं? संदेश रूपरेखा, घोषणाएं, ऑनलाइन देने के लिंक, और भी बहुत कुछ! http://bible.com/features/events"
     email: "इमेल"
-    faq question 1: "What is Events?"
-    faq answer 1: "Events is a completely free feature inside the YouVersion Bible App that helps users easily connect with church events they’re attending. Churches are welcome to sign in at events.bible.com with a free YouVersion account to create their own Events to appear in the Bible App. The free administrative tools for Events make it easy for your church to share key message points, Bible references, artwork, external links, important church news, and more. And, once you save your Event in the system, Bible App users looking for events near them will be able to find yours."
-    faq question 2: "Why would our church want to use Events?"
-    faq answer 2: "Events empowers you to offer services to your attenders that directly support your ministry objectives. The notes, Bible references, and other supporting information that you include in your Events helps your attenders connect more with your message. Events helps your audiences retain your messages for personal reflection, while at the same time equipping them to share the special things happening at your church. Events helps seekers find you, and it saves you money by helping you cut communication printing costs. And Events is completely free."
-    faq question 3: "Why would Bible App users want to use Events?"
-    faq answer 3: "Events helps users discover church events happening near them using the geo-location features of their device. When users attend one of your Events, they’ll be able to easily follow along with your service by viewing the information that you’ve provided. Bible App users can add their own notes to an Event on their device, and even save a copy for future reference, both of which will encourage them to engage more with the Bible."
-    faq question 4: "How can I create a poll?"
-    faq answer 4: "Use a third party tool or service (such as <a href='https://www.surveymonkey.com/'>SurveyMonkey®</a>, <a href='http://www.pollsnack.com/'>PollSnack</a>, or <a href='http://www.poll-maker.com/'>Poll Maker</a>) to create your poll. When you save your poll, the service will provide you with a shareable link for it. In the Events admin tool, drag-and-drop a Web Links Module into your Event where you want your poll to appear, and include the poll link there."
-    faq question 5: "Will events that we created on YouVersion Live automatically transition to the new Events platform?"
-    faq answer 5: "Sorry, but no. To create the best Events experience possible — both for you and for your attenders — we had to build Events from the ground up. Consequently, data from Live is not transferable to Events."
-    faq question 6: "What if our attenders don’t update their Bible App? Will they be able to see the new Events we create?"
-    faq answer 6: "Because Events is an all-new app feature, users must update their Bible App to get it. (Fortunately, many Bible App users already have their devices set to auto-update.) When a user taps on the Live tab, a single Live event displays a message recommending that they update so that they can take advantage of Events. Until your regular attenders become accustomed to Events, we suggest that you explain briefly during your announcement time how your church is using it. Help your audience understand how it benefits them, and let them know how they can get it."
-    faq question 7: "Live has always been free. Will Events cost anything?"
-    faq answer 7: "No. The Bible App has always been free, and it always will be. Although Events is an all-new service, it’s an integral part of the Bible App. At YouVersion, we consider it our honor and privilege to be able to help you fulfill your ministry objectives."
-    faq question 8: "Does Events require a special Administrator account to use?"
-    faq answer 8: "While technically you can use your personal YouVersion account to create Events, we recommend instead that you maintain a separate account for your organization, one set aside specifically for administrative purposes. This approach serves two purposes: (1) it lets you keep your personal Bible App use separate from your ministry tasks, and (2) it allows you to empower others to manage Events for your ministry, such as other staff members or trusted volunteers. (If your ministry already has a YouVersion account designated for administrative tasks — such as for the older YouVersion Live — you’ll be able to use that same account to sign in to the new Events administrative site.)"
-    spread the word: "Spread the word about your Event, easily."
-    resources intro: "Once you have your Event scheduled and ready to share, Events gives you a link you can use on all your social networks, in your email communications, and even on screen during your service or event. When someone with the Bible App visits your link, your Event opens directly inside the app. If they don’t have the Bible App, they’ll see your Event at Bible.com, with options to get the app if they want it."
-    free resources title: "Free resources for helping you with Events"
-    resources video: "Watch a video about transitioning to Events"
-    resources social: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Download</a> these assets to market your Events on Facebook, Twitter, and Instagram"
-    resources slides: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Download</a> these slides and handouts to market your Events within your church or organization"
-    resources more: "Looking for more free resources? Explore more than 30,000 sermons, children’s materials, creative resources and more at <a class='text2' href='https://open.church'>open.church</a>"
+    faq question 1: "कार्यक्रम क्या है?"
+    faq answer 1: "कार्यक्रम, यूवर्शन बाइबिल एप्प के अंदर एक पूरी तरह से नि: शुल्क सुविधा है जो उपयोगकर्ताओं को चर्च के कार्यक्रमों से आसानी से जुड़ने में मदद करता है। चर्च आमंत्रित हैं की वे events.bible.com पर साइन करें, एक निःशुल्क यूवर्शन खाते के साथ बाइबल ऐप में अपने कार्यक्रम बनाएं! कार्यक्रम के लिए नि:शुल्क प्रशासनिक उपकरण आपके चर्च के लिए महत्वपूर्ण संदेश बिंदु, बाइबल संदर्भ, कलाकृति, बाहरी लिंक, महत्वपूर्ण चर्च समाचार, आदि साझा करना आसान बनाता है। और, एक बार जब आप सिस्टम में अपना कार्यक्रम सहेज लेंगे, तो ऐसे बाइबिल एप्प उपयोगकर्ता जो उनके आस-पास की घटनाओं की तलाश में होंगे, आपको ढूंढ पाएंगे।"
+    faq question 2: "हमारे चर्च कार्यक्रमों का उपयोग क्यों करना चाहते हैं?"
+    faq answer 2: "आपके श्रोताओं को, जो आपकी सेवकाई और उसके उद्देश्य को प्रत्यक्ष रूप से समर्थन देतें हैं, उनको अच्छी सेवाएँ प्रदान करने में यह कार्यक्रम आपको और अधिक सामर्थ देतें हैं। नोट्स, बाइबिल संदर्भ, और अन्य सहायक जानकारी जो आप अपने कार्यक्रमों में शामिल करतें हैं, उन सब से आपके श्रोताओं को आपके संदेशों के साथ और अधिक जुड़ने में सहायता मिल सकेगी। आपके कार्यक्रमों के द्वारा, आपके श्रोताओं को आपके संदेशों के साथ बने रहने में सहायता मिलेगी जिससे वो अपने व्यक्तिगत जीवन पर विचार कर सकतें हैं, तथा साथ ही साथ में उसी दौरान, आपकी कलीसिया में होनेवाली विशेष घटनाओं के बारे जानकारी साझा करने के लिए उनको तैयार भी कर सकतें हैं। आपको ढूंढनें में कार्यक्रम, जिज्ञासुओं की सहायता करतें हैं, तथा जानकारी बांटनें में छपाई के खर्चे को कम करके यह आपके पैसे को भी बचाते है। और कार्यक्रम बिलकुल मुफ्त हैं।"
+    faq question 3: "बाइबल एप्प उपयोगकर्ता कार्यक्रमों का उपयोग क्यों करना चाहते हैं?"
+    faq answer 3: "अपने उपकरण में भूगो-लोकेशन सुविधा की मदद से, उपभोगताओं के आस-पास की कलीसियाओं में होनेवाले कार्यक्रमों को खोजने में यह कार्यक्रम बहुत सहायक हैं। जब उपभोगता आपकी कलीसिया के किसी भी एक कार्यक्रम में उपस्थित होतें हैं, तो वे आपके द्वारा उपलब्ध कराई गई जानकारी की सहायता से, सेवकाई के दौरान आसानी से उन सबको देख सकेंगें। बाइबिल ऐप उपभोगता अपने उपकरण में, स्वयं के नोट्स भी उस कार्यक्रम में बना सकतें हैं, और यहां तक की भविष्य में उसका उल्लेख करने के लिए उसे संचय भी कर सकतें हैं, और यह दोनों ही उन्हें ज़्यादा से ज़्यादा बाइबिल से जुड़े रहने में उत्साहित करेगा।"
+    faq question 4: "मैं एक जनमत सर्वेक्षण कैसे बना सकता हूं?"
+    faq answer 4: "किसी तीसरे पक्ष के उपकरण या सेवा का उपयोग करके(जैसे कि <a href='https://www.surveymonkey.com/'>सर्वे मंकी®</a>,<a href='http://www.pollsnack.com/'>पोलस्नैक</a>, या <a href='http://www.poll-maker.com/'>पोलमेकर</a>) अपना पोल बनाएं। जब आप अपने पोल को संचय करते हैं, तो यह सेवा आपको कुछ लिंक्स उपलब्ध कराते हैं जिन्हे आप साझा कर सकतें हैं। कार्यक्रम एडमिन टूल में, वैब लिंक मॉड्यूल को अपने कार्यक्रम में, जहाँ आप उसे दिखाना चाहतें हैं, वहाँ ड्रैग-एन्ड-ड्रॉप करें, और पोल लिंक को उसमें शामिल करें।"
+    faq question 5: "क्या हमारे द्वारा यूवर्शन लाइव पर बनाए गए कार्यक्रम स्वचालित रूप से नए कार्यक्रम प्लेटफ़ॉर्म में परिवर्तित हो जाएंगे?"
+    faq answer 5: "क्षमा करें, पर नहीं । आप और आपके श्रोताओं के लिए - कार्यक्रम के सर्वोत्तम अनुभव को संभव बनाने के लिए- हमें इसे शुरुआत से बनाना पड़ा! नतीजतन, लाइव से सूचनाएं कार्यक्रमों के लिए हस्तांतरणीय नहीं है।"
+    faq question 6: "क्या होगा यदि हमारे उपयोगकर्ता अपनी बाइबल एप्प अपडेट न करें? क्या वे हमारे द्वारा बनाये नए नए कार्यक्रमों को देख पाएंगे?"
+    faq answer 6: "चूंकि कार्यक्रम एक नई ऐप सुविधा है, इसलिए उपयोगकर्ताओं को इसे प्राप्त करने के लिए अपनी बाइबिल एप्प का अद्यतन करना होगा। (सौभाग्य से, कई बाइबिल एप्प उपयोगकर्ताओं के पास पहले से ही उनके डिवाइस स्वतः अद्यतन यानि ऑटो-अपडेट पर सेट हैं।) जब कोई उपयोगकर्ता लाइव टैब का बटन दबाता है, तो लाइव कार्यक्रम एक संदेश प्रदर्शित करता है जिसमें सुझाव के रूप में अद्यतन करने को कहा जाता है ताकि वे कार्यक्रम का ज्यादा से ज्यादा लाभ उठा सकें। हम सुझाव देते हैं कि आप अपने घोषणा समय के दौरान संक्षेप में समझाएं कि आपका चर्च इसका उपयोग कैसे कर रहा है तबतक जब तक की आपके नियमित श्रोता कार्यक्रमों के आदी न हो जायें. अपने दर्शकों को यह समझने में सहायता करें कि इससे उन्हें कैसे फायदा होता है, और उन्हें बताएं कि वे इसे कैसे प्राप्त कर सकते हैं।"
+    faq question 7: "लाइव हमेशा मुफ्त रहा है। क्या कार्यक्रमों की कुछ कीमत होगी?"
+    faq answer 7: "नहीं। बाइबिल एप्प हमेशा नि: शुल्क रहा है, और हमेशा रहेगा. हालांकि कार्यक्रम एक नई सेवा है, यह बाइबल एप्प का एक अभिन्न अंग है। यूवर्शन में, हम इसे हमारा सम्मान और विशेषाधिकार मानते हैं कि आपकी सेवकाई के उद्देश्यों को पूरा करने में हम आपकी सहायता कर सकें।"
+    faq question 8: "क्या कार्यक्रम का उपयोग करने के लिए किसी विशेष व्यवस्थापक खाते की आवश्यकता है?"
+    faq answer 8: "जबकि तकनीकी रूप से, आप अपने व्यक्तिगत यूवर्शन खाते को कार्यक्रम बनाने के लिए उपयोग में ला सकते हैं, पर हम आपको यह सलाह देतें हैं कि अपनी संस्था के लिए आप अलग से एक खाते को बनाएं, विशेषतया प्रशासनिक उद्देश्यों के लिए एक अलग खाता। यह दृष्टिकोण दो उद्देश्यों को पूरा करता है: (1) इससे आप अपनी व्यक्तिगत बाइबिल ऐप को आपकी सेवकाई के कार्यों से अलग उपयोग कर सकतें हैं, और (2) इससे आप आपकी सेवकाई के कार्यक्रमों को व्यवस्थित करने में अन्य लोगों को, जैसे कि कोई कर्मचारी या भरोसे के स्वयंसेवक को सशक्त बनाते हैं। (यदि आपकी सेवकाई का पहले से ही यूवर्शन खाता है जो प्रशासनिक कार्यों के लिए रखा गया हो—जैसे कि पुराने यूवर्शन के सीधे प्रसारण के लिए— तो आप उसी खाते को नए कार्यक्रम प्रशासनिक साइट पर साइन इन करके उपयोग कर सकते हैं) ।"
+    spread the word: "आसानी से अपने कार्यक्रम के बारे में सबको बताएं."
+    resources intro: "एक बार जब आपके कार्यक्रम की अनुसूचि बन जाए और सबके साथ साझा करने के लिए तैयार हो जाये, कार्यक्रम में आपको लिंक मिलता है, जिसे आप अपने सारे सोशल मिडिया नेटवर्क, अपने ईमेल संवादों, और यहां तक कि आपके कार्यक्रम या सेवा के समय परदे पर भी दिखा कर में उपयोग में ला सकते हैं। जब कोई भी बाइबिल ऐप के साथ आपके लिंक पर जाता है, तो आपका कार्यक्रम सीधे-सीधे ऐप में ही खुल जाता है। यदि उनके पास बाइबिल ऐप नहीं है, तो वो, इस विकल्प के साथ कि क्या वो ऐप चाहतें हैं, कार्यक्रम बाइबिल.कॉम पर देख सकतें हैं।"
+    free resources title: "घटनाओं के साथ आपकी मदद करने के लिए नि:शुल्क संसाधन."
+    resources video: "घटनाओं में रूपांतरित करने के बारे में एक वीडियो देखें."
+    resources social: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>फेसबुक, ट्विटर और इंस्टाग्राम पर अपने कार्यक्रम का विपणन करने के लिए</a> इन संसाधनों को डाउनलोड करें"
+    resources slides: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'> </a> इन स्लाइड्स और विवरणपत्रों को डाऊनलोड करें जिससे आपके कार्यक्रमों का, आपकी कलीसिया या संस्था में, प्रचार हो सके।"
+    resources more: "क्या आप और अधिक मुफ्त साधनों को ढूंढ रहें हैं? 30,000 से भी अधिक उपदेशों, बच्चों के लिए सामग्रियाँ, रचनात्मक संसाधनों तथा और भी बहुत सारी सामग्री यहाँ <a class='text2' href='https://open.church'>ओपन.चर्च</a> ढूंढें"
   first page: "प्रथम पृष्ट"
   last page: "आखरी पृष्ट"
   invalid username or password: "अनधिकृत username या पासवर्ड"
@@ -393,7 +393,7 @@ hi:
     users like this: "%{last_liker_link} और %{more_link} इसे पसंद करिए"
     like: "पसंद करे"
     likes: "पसंद"
-    more than one like: ""
+    more than one like:
     vod:
       title: "आज का पद्य"
       get daily email: "प्रतिदिन ईमेल प्राप्त करे "
@@ -448,8 +448,8 @@ hi:
     destroy failure: "आपकी पसंद डिलीट नहीं हो सका"
   comments:
     view all N:
-      one: "View %{count} comment"
-      other: "View all %{count} comments"
+      one: "%{count} टिप्पणी को देखें"
+      other: "पूरी %{count} टिप्पणियों को देखें"
     post comment: "कमेंट पोस्ट करे"
     create success: "आपकी टिप्पणी सफलतापूर्वक पोस्ट किया गया"
     create failure: "कमेंट पोस्ट नहीं हो सका"
@@ -808,8 +808,8 @@ hi:
         one: "%{count}के मित्रों द्वारा यह पाठक योजना सम्पूर्ण किया गया"
         other: "%{count}के मित्रों द्वारा यह पाठक योजना सम्पूर्ण किया गया"
       total completions:
-        one: "Over %{count} completion"
-        other: "Over %{count} completions"
+        one: "%{count} से अधिक पूरा हो गया"
+        other: "%{count} से अधिक पूरे हो गए"
       view all: "पूरा देखे "
       close: "बंद "
     settings: "सेटिंग्स"
@@ -1389,8 +1389,8 @@ hi:
         likes: "आपने <b>पसंद आने वाले</b> ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         moments: "आपने <b>समय/पल</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है.\n"
         newsletter: "आपने <b>संवाद पत्र</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
-        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
-        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
+        pwf_comments: "आपने इस योजना के लिए <b>टिप्पणी</b> ईमेल से सफलतापूर्वक सदस्यता समाप्त कर ली है।"
+        pwf_accepts: "आपने <b>पाठ योजना आमंत्रण</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         reading_plans: "आपने <b>पाठ योजना</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         rp_daily: "आपने %{plan_title} द्वारा जारी  <b>पाठ योजना के दैनिक</b> ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         votd: "आपने <b>आज का वचन</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
@@ -1590,7 +1590,7 @@ hi:
               required: "नक्शे में अपने स्थान को चुनें."
             times:
               start_dt:
-                must_be_a_future_date: "Start Time cannot be in the past."
+                must_be_a_future_date: "प्रारंभ का समय अतीत में नहीं हो सकता है।"
             timezone:
               required: "समय क्षेत्र की आवश्यकता है"
         reference:
@@ -1624,7 +1624,7 @@ hi:
       Auth:
         title: "कार्यक्रम साइन इन"
         signIn: "साइन इन"
-        subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+        subHead1: "यदि आप बाइबिल ऐप उपभोगता हैं और आपका पहले से ही यूवर्शन खाता है, अपना वही परिचय उपयोग करते हुए आप साइन इन कर सकतें हैं। <br/><br/>अभी तक यूवर्शन खाता नहीं है? <br/>कार्यक्रमों को बनाने के लिए <a href='%{url}'>बाइबिल.कॉम पर अभी साइन अप करें। </a>"
         email: "इमेल"
         password: "पासवर्ड"
         forgotPassword: "पासवर्ड भूल गए"
@@ -1652,10 +1652,10 @@ hi:
         go: "मेरे कार्यक्रमों पर जाएँ"
         share: "अपना कार्यक्रम बांटे "
         copy: "कॉपी"
-        copied: "The shortlink was copied to your clipboard"
+        copied: "शॉर्टलिंक को आपके क्लिपबोर्ड पर कॉपी किया गया था"
         previous: "←पिछला: पूर्वदर्शन"
       EventFeedDiscover:
-        title: "Discover Events"
+        title: "कार्यक्रम खोजें"
         discover: "खोजें"
       EventFeedMine:
         title: "मेरे कार्यक्रम "
@@ -1663,7 +1663,7 @@ hi:
         next: "अगला →"
         my: "मेरे कार्यक्रम "
         new: "नया कार्यक्रम बनाएँ"
-        subTitle: "EVENTS CREATED BY ME"
+        subTitle: "मेरे द्वारा बनाये गए कार्यक्रम"
         newFirst: "अपना पहला कार्यक्रम बनाएं"
         learn: "जानें कैसे एक बहुत बढ़िया कार्यक्रम बनाया जाएँ"
       EventFeedSaved:
@@ -1675,13 +1675,13 @@ hi:
     features:
       Auth:
         errors:
-          sessionExpired: "Your session expired. Please login again."
+          sessionExpired: "आपका सत्र समाप्त हो गया कृपया फिर से लॉग इन करें."
           invalidEmail: "ईमेल या पासवर्ड गलत हे।"
       EventEdit:
         errors:
-          locationMustHaveTime: "All locations must have at least one time."
-          locationRequired: "You cannot publish an Event with no locations."
-          contentRequired: "You cannot publish an Event with no content."
+          locationMustHaveTime: "सभी स्थानों पर कम से एक समय होना चाहिए."
+          locationRequired: "आप बिना किसी स्थान के कोई कार्यक्रम प्रकाशित नहीं कर सकते हैं।"
+          contentRequired: "आप बिना किसी सामग्री के कोई कार्यक्रम प्रकाशित नहीं कर सकते हैं।"
           planSearchFailed: "खोज किसी भी दस्तावेज़ से मेल नहीं करता"
           noMatchingPlans: "योजने नहीं मेल खाते हैं।"
         components:
@@ -1695,7 +1695,7 @@ hi:
           content:
             components:
               ContentFeed:
-                reorder: "Reorder Content"
+                reorder: "सामग्री पुन: व्यवस्थित करें"
                 doneReordering: "पुनर्व्यवस्था समाप्त"
               ContentHeader:
                 text: "पाठ "
@@ -1707,31 +1707,31 @@ hi:
                 announcement: "घोषणा"
               ContentHelpModal:
                 types: "विषय/सामग्री के प्रकार"
-                learn: "Learn how to make <br>a great Event"
+                learn: "जानें कैसे बनाया जा सकता है <br>एक बहुत बढ़िया कार्यक्रम."
                 text:
                   title: "पाठ भाग"
                   desc: "रूपरेखा, महत्वपूर्ण विचार, चर्चागत प्रश्न... पाठ-आधारित सामग्री को अपने भाग लेने वाले साथियों के साथ साझा करें, यह उनको मदद करेंगा संदेश को बेहतर समझने में जैसे आप इसे दे रहे हैं. आपका पाठ भाग किसी भी लम्बाई के हो सकते है और इसमें रिच टेक्स्ट फॉरमॅटिंग भी शामिल किया जा सकता है."
                 reference:
-                  title: "Bible Reference Module"
+                  title: "बाइबल संदर्भ ईकाई"
                   desc: "बाइबिल का कोई भी पद या वचन को चुनें, और यूवर्ज़न के १२००+संस्करणों, जो कि ९००+भाषाओं में हैं, किसी से भी जोड़े/लिंक करें. जो लोग आपके कार्यक्रम/घटना को देख रहें हैं, वो आपके संदर्भों पर क्लीक करके अपने बाइबिल एप पाठ्यपुस्तक/रीडर में देख सकतें हैं, जहाँ वे बुकमार्क/ निशानी लगा सकते हैं, उभार/स्पष्ट कर सकते हैं, तथा और भी बहुत कुछ."
                 plan:
-                  title: "Plan Module"
+                  title: "योजना ईकाई"
                   desc: "बाइबल योजनाओं और धार्मिक सामग्री के लिंक दीजिए जो आपके शिक्षण विचार से संबंधित है, ताकि पूरे हफ्ते आपके साथियों भगवान के वचन के साथ व्यस्त रहे सकते हैं."
                 image:
                   title: "छवि भाग"
-                  desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                  desc: "सहायक चित्रलेख, वचन छवि तथा और भी बहुत कुछ चीज़ें जोड़कर अपने कार्यक्रम में जान डालें। कार्यक्रम में हिस्सा लेने वाले बहुत आसानी से कार्यक्रम की तस्वीरों को अपने सोशल मीडिया पर साझा कर सकतें हैं, अपने संदेशों को शीघ्रता से सब जगह फैला सकतें हैं।"
                 link:
-                  title: "External Link Module"
+                  title: "बाहरी लिंक ईकाई."
                   desc: "अपने कार्यक्रम में एक बटन बनायें जो कोई भी बाहरी वेबसाइट से जुड़ जाए. अपने दर्शकों को ऑनलाइन दान देने, स्वेच्छा से जुड़ने, या चर्च होम पेज पर जाने के लिए केवल एक क्लिक दूर रखिये.\n"
                 announcement:
                   title: "घोषणा भाग"
                   desc: "चर्च/कलीसिया संबंधित समाचार, घटना कैलेंडर, कार्यक्रम, कक्षाएं, स्वयंसेवक, तथा मिशन से संबंधित अवसर.... घोषणा अनुखंड, जानकारियों को, जो यथा समय आतीं हैं और महत्वपूर्ण होतीं हैं, साझा करने का एक बहुत ही बेहतरीन ज़रिया है, और वह आपका ध्यान, आपके कार्यक्रम/घटना के मुख्य संदेश से भंग नहीं होने देता. प्रत्येक घोषणा अनुखंड आपके कार्यक्रम के पृष्ठ पर ही दिखाई देता है, और उसमें लिखावट/टेक्स्ट की बढ़िया सामग्री (जैसे कि बोल्ड, इटालिक्स) को शामिल किया जा सकता है."
               ContentInsertionPoint:
-                title: "Insert next module here"
+                title: "अगली ईकाई यहां सम्मिलित करें."
               ContentTypeAnnouncement:
                 title: "उपाधि"
-                prompt: "Write something here..."
-                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                prompt: "यहां कुछ लिखें..."
+                caption: "आपके ईवेंट में, केवल आपका शीर्षक (उपरोक्त) दिखाई देगा। जब कोई उपयोगकर्ता आपके शीर्षक पर टैप करता है, तो बॉडी (नीचे) एक अलग स्क्रीन पर प्रदर्शित होती है।"
               ContentTypeContainer:
                 dirty: "आपके लिखना बंद करते ही आपकी लिखी हुयी सामग्री स्वतः सुरक्षित कर ली जाएगी !"
                 failed: "सुरक्षित रखने में असमर्थ"
@@ -1742,14 +1742,14 @@ hi:
                   wrongSize: "ज़रूरी है कि चित्र की परिमाण%{requiredWidth} x %{requiredHeight} हैं। आप की परिमाण%{yourWidth} x %{yourHeight} हैं।"
                   wrongType: "अमान्य फाइल प्रकार   - JPG होना अनिवार्य "
                 caption: "शीर्षक/टाइटल जोड़ें"
-                prompt: "Drag and Drop an Image"
+                prompt: "चित्र को खींच कर यहाँ छोड़ दें।"
                 onlyJpg: "[सिर्फ JPG]"
-                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
+                sizePrompt: "%{requiredWidth} px चौड़ाईx %{requiredHeight} px ऊँचाई"
                 select: "इमेज को चुनें"
               ContentTypeLink:
-                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
+                kindrid: "यदि आप एक स्मार्ट प्लेटफ़ॉर्म की तलाश में हैं, जहाँ आप सरलता से दान दे सकें तो <a href='%{url}'>किंड्रिड आज़माएं</a>."
                 label: "लिन्क की चिप्पी"
-                prompt: "Write something here..."
+                prompt: "यहां कुछ लिखें..."
                 url: "URL"
               ContentTypePlan:
                 replace: "बदलें"
@@ -1760,14 +1760,14 @@ hi:
                 book: "ग्रन्थ"
                 chapterVerse: "अध्याय : पद "
               ContentTypeText:
-                prompt: "Write something here..."
+                prompt: "यहां कुछ लिखें..."
               LiveWarningModal:
-                title: "Cannot Delete While Event is Live"
+                title: "कार्यक्रम लाइव होने के दौरान हटाया नहीं जा सकता है."
                 desc: "यदि एक बार कार्यक्रम का सीधा प्रसारण शुरू हो गया तो, आप पाठ/विषय को, बाइबिल संदर्भों को, और छवि/चित्र के भाग को उसमें से हटा नहीं सकते, क्योंकि हो सकता है उपयोगकर्ताओं ने उसमें अपनी व्यक्तिगत टिप्पणियां दे दीं हों. तौभी, आप इन हिस्सों/भागों में बदलाव कर सकते हैं."
                 ok: "ठीक"
           details:
             errors:
-              generic: "There was a problem while publishing your Event."
+              generic: "आपके कार्यक्रम को प्रकाशित करने के दौरान एक समस्या थी।"
               invalidTimes: "एक अकेला सर्विस 12 घंटे से अधिक नहीं हो सकता है, और एक कार्यक्रम के लिए शुरुआती समय और समाप्ति समय के बीच का अंतर 8 दिनों से अधिक नहीं हो सकता है. कृपया अपने कार्यक्रम के समय को समायोजित करें और फिर प्रयास करें."
             components:
               DetailsEdit:
@@ -1776,10 +1776,10 @@ hi:
                   wrongType: "अमान्य फाइल प्रकार   - JPG होना अनिवार्य "
                 changeImage: "चित्र बदलें"
                 removeImage: "चित्र हटाये"
-                prompt: "Drag and Drop an Image"
+                prompt: "चित्र को खींच कर यहाँ छोड़ दें।"
                 onlyJpg: "[सिर्फ JPG]"
-                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
+                sizePrompt: "%{requiredWidth} px चौड़ाईx %{requiredHeight} px ऊँचाई"
+                sizePrompt2: "आपकी छवि का आयाम %{requiredWidth} x %{requiredHeight} पिक्सेल होना चाहिए।"
                 eventName: "कार्यक्रम का नाम "
                 org: "चर्च या संस्था का नाम "
                 desc: "कार्यक्रम का विवरण "
@@ -1796,19 +1796,19 @@ hi:
                 addPhysical: "एक प्राकृतिक स्थान जोडें !"
                 promptPhysical: "आप एक से अधिक स्थान जोड़ सकते हैं ! "
                 addVirtual: "आभासी स्थान जोडें !"
-                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                churchOnline: "क्या आप जानते हैं? आप यहाँ से एक नि: शुल्क ऑनलाइन सेवकाई शुरू कर सकते है <a className='button-caption' href='%{url}'> चर्च ऑनलाइन मंच </a>."
               LocationAddTime:
                 minutes: "मिनट"
                 hours: "घंटे"
                 days: "दिवस"
               LocationDeleteModal:
                 sure: "क्या आप सुनिश्चित हैं?"
-                selected: "You have selected the following location to be deleted:"
-                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                selected: "आपने हटाए जाने के लिए निम्न स्थान चुना है:"
+                warn: "यह सभी अतीत और वर्तमान घटनाओं से स्थान हटा देगा। आप भविष्य की घटनाओं के लिए इस स्थान का पुनः उपयोग नहीं कर पाएंगे।"
                 cancel: "रद्द करें"
                 delete: "डिलीट"
               LocationEdit:
-                prompt: "Enter the Location address..."
+                prompt: "स्थान पता दर्ज करें..."
                 country: "देश"
                 timezone: "समय क्षेत्र"
                 namePrompt: "पहला बैप्टिस्ट पूर्वी परिसर "
@@ -1836,16 +1836,16 @@ hi:
               UnpublishModal:
                 cancel: "रद्द करें"
                 title: "बदलाव करने के लिए अप्रकाशित करें."
-                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
+                desc: "स्थान और समय को जोड़ने, संपादित करने या हटाने के लिए, अस्थायी रूप से कार्यक्रम को अप्रकाशित करें। इस दौरान, आपका कार्यक्रम खोज परिणामों में दिखाई नहीं देगा। अपने कार्यक्रम को फिर से प्रकाशित करना न भूलें।"
                 unpublish: "अप्रकाशित"
           preview:
             notes:
               prompt: "अपनी निजी टिप्पणियाँ जोड़ें..."
-              noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+              noAuthPrompt: "<a href='%{url}'><span className='highlight'>अपने निजी नोट्स जोड़ने के लिए...</span>साइन इन करें</a>"
             components:
               PreviewFeed:
-                review: "Review Your Event Before Publishing"
-                previewUrl: "Preview URL:"
+                review: "प्रकाशन से पहले अपने कार्यक्रम की समीक्षा करें"
+                previewUrl: "URL का पूर्वावलोकन करें:"
                 share: "कार्यक्रम साझा करें"
                 locationsAndTimes: "स्थान और समय "
                 publish: "प्रकाशित"
@@ -1874,7 +1874,7 @@ hi:
             draft: "ड्राफ्ट"
             edit: "संपादन"
             view: "देखे"
-            fail: "Unable to delete Event"
+            fail: "कार्यक्रम को हटाने में असमर्थ"
       EventView:
         components:
           EventViewContent:
@@ -1891,7 +1891,7 @@ hi:
             collapse: "सिकोड़ो"
             save: "कार्यक्रम सेव करे "
             signIn: "कार्यक्रम को सेव करने के लिए साइन इन करें."
-            saved: "Event Saved"
+            saved: "कार्यक्रम सहेजा गया"
     Auth:
       sign up: "साइन अप"
       sign in: "साइन इन"
@@ -1913,7 +1913,7 @@ hi:
       read chapter: "पूरा अध्याय पढ़े "
       plan title: "निःशुल्क रीडिंग प्लान और भक्ति संगीत"
       plan title ref: "निःशुल्क रीडिंग प्लान और मनन %{reference} के बारे मे"
-      plan subtitle: "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life."
+      plan subtitle: "बाइबिल योजनाएँ आपके वचन पढ़ने की आदत को व्यवस्थित करके प्रतिदिन के भागों में बदल देतें हैं। योजनाओं में ज़्यादातर भक्ति का समर्थन, ऑडियो, या वीडिओ चुनाव शामिल होता है। आप चाहे उन्हें बाइबिल योजनाएं कहें, या भक्ति-अध्ययन, बाइबिल को आपके प्रतिदिन के जीवन का एक स्वाभाविक हिस्सा बनाने में, योजनाएं एक प्रमाणित तरीका है।"
       meta:
         mobile:
           title: "बाइबिल App"
@@ -2005,7 +2005,7 @@ hi:
     currently subscribed: "वर्तमान में सदस्यता।"
     invite friends: "दोस्तों को आमंत्रित करें"
     invite others: "दूसरों को आमंत्रित करें"
-    invited: "Invited"
+    invited: "आमंत्रित किया है"
     pending: "स्वीकार नहीं किया"
     x pending:
       one: "%{number} विचाराधीन"
@@ -2090,10 +2090,10 @@ hi:
     STORIES.SERMONMOUNT: "पहाड़ी उपदेश"
     STORIES.TRIUMPHALENTRY: "विजयी प्रवेश"
     explore: "खोजें"
-    what does the bible say: "What does the Bible say about..."
+    what does the bible say: "इसके बारे में बाइबिल क्या कहती है..."
     how are you feeling: "आप कैसा महसूस कर रहे हैं?"
     bible stories: "बाइबिल की कहानियां"
-    what the bible says about: "Here's what the Bible says about: %{topic}"
+    what the bible says about: "जानें बाइबिल %{topic} के बारे में क्या बताती है."
     amazed: "विस्मित "
     content: "विषय "
     faithful: "भरोसेमंद "
@@ -2134,3 +2134,21 @@ hi:
     sad: "दुखी"
     sick: "अस्वस्थ"
     tired: "थका हुआ"
+  gdpr:
+    agree to emails: "मैं बाइबिल के साथ वचनबद्धता को और गहरा बनाने के लिए यू वर्शन द्वारा ईमेल पाने के लिए सहमत हूं।"
+    agree to terms: "मैं यूवर्शन की <a href='/terms'>शर्तों</a> और <a href='/privacy'>गोपनीयता नीति</a> से सहमत हूं"
+    continue: "जारी रखें"
+    terms summary:
+      p1: "यहां एक सारांश दिया गया है कि आप हमारी उपयोग की शर्तों और गोपनीयता नीति में क्या पा सकते हैं, जो की सभी यूवर्शन ब्रांड उत्पादों और सेवाओं को समाविष्ट करता है:"
+      h1: "अपना अनुभव व्यक्तिगत बनाने के लिये।"
+      p2: "जब आप YouVersion खाता बनाते हैं या हमारे किसी भी एप्लिकेशन या साइट का उपयोग करते हैं, तो हम जो जानकारी एकत्र करते हैं वह अधिक व्यक्तिगत बाइबल अनुभव प्रदान करने के उद्देश्य से होती है।"
+      h2: "हम आपके डेटा का उपयोग कैसे करते हैं।"
+      p3: "ये नीतियां आपकी गतिविधि से एकत्रित डेटा के प्रकारों को स्पष्ट रूप से रेखांकित करती हैं, और यह भी निर्धारित करती है की हम आपके यूवर्शन के अनुभव को सर्वश्रेष्ठ बनाने के लिए उस जानकारी का उपयोग कैसे करते हैं।"
+      p4: "हम आपके व्यक्तिगत पहचान योग्य डेटा को किसी भी तृतीय-पक्ष विज्ञापनदाता या विज्ञापन नेटवर्क के साथ साझा नहीं करते हैं। असल में, क्या आप जानते थे कि YouVersion एक गैर-लाभकारी मंत्रालय है? चूंकि हमारा ध्यान धर्म-सेवा है, इसलिए हम कमाई नहीं करते हैं, डेटा बेचते हैं, YouVersion उत्पादों के अंदर विज्ञापन नहीं डालते हैं।"
+      h3: "आपकी गोपनीयता सुरक्षित है।"
+      p5: "जब हम विश्व में बाइबिल एप्प द्वारा लोगों की संलग्नता से सम्बंधित आंकड़े साझा करते हैं और उसका उत्सव मनाते हैं तो हम ये सुनिश्चित करते हैं की हम आपकी गोपनीयता को बचाए रखते हुए उन आंकड़ों का विश्लेषण करें."
+      p6: "जब यह जानकारी प्रकाशित होती है, तो यह केवल एक समेकित रूप में होती है जो आपकी व्यक्तिगत पहचान योग्य जानकारी का खुलासा नहीं करती है। इसके अतिरिक्त, हम आपके डेटा की सुरक्षा के लिए डिज़ाइन किए गए उद्योग मानक सुरक्षा सुरक्षा उपाय लागू करते हैं।"
+      h4: "यह आपका अनुभव है।"
+      p7: "हमारी नीतियां यह स्पष्ट करती हैं कि यूवर्शन का उपयोग करते समय आपके पास कौन से अधिकार हैं, जिसमें आपके व्यक्तिगत आंकड़ों तक पहुँच बनाना, साझा करना, बदलना और हटाना शामिल है। हम डेटा संग्रह प्रौद्योगिकियों को भी संबोधित करते हैं और ये प्रक्रियाएं यूवर्शन समुदाय को पूरी तरह से बाइबिल से जुड़ने में कैसे मदद करती हैं।"
+    data: "आंकड़े"
+    download blurb: "आप अपने द्वारा हमें प्रदान किये हुए उन व्यक्तिगत जानकारियों की एक प्रतिलिपि डाउनलोड कर सकते हैं जैसे आपका नाम, विवरण, स्थान, वेबसाइट का पता और आपके यूवर्शन मित्रों की कुछ बुनियादी जानकारियां. इस डेटा डाउनलोड में आपकी बाइबिल की गतिविधियाँ शामिल नहीं होंगी जैसे आपके द्वारा बनाये गए नोट्स, हाइलाइट्स, पद्यचित्र इत्यादि, जो की आप सीधे तौर पर एप्प में देख सकते हैं. यूवर्शन एक लाभनिर्पेक्ष सेवकाई है. क्यूंकि हमारा उद्देश्य सेवकाई है इसीलिए हम व्यवसायीकरण नहीं करते, डेटा नहीं बेचते या यूवर्शन के उत्पादों में किसी तीसरे पक्ष द्वारा प्रायोजित विज्ञापन नहीं देते!  हम डेटा में क्या क्या और क्यों संग्रह करते हैं, और हम उस डेटा का उपयोग और सुरक्षा कैसे करते हैं, इसके बारे में अधिक जानकारी के लिए कृपया हमारी गोपनीयता नीति और उपयोग की शर्तों का संदर्भ लें। कृपया ध्यान दें कि डेटा डाउनलोड करना इसे यूवर्शन के सर्वर से नहीं हटाता है। अगर आप यह अनुरोध करना चाहते हैं कि आपकी जानकारी हटा दी जाए, तो कृपया help.youversion.com पर जाएं। कृपया ध्यान रखें, हालांकि, कुछ डेटा हटाने से हमारी गोपनीयता नीति में आगे वर्णित कुछ यूवर्शन कार्यक्षमता को प्रतिबंधित और / या समाप्त कर दिया जाएगा।"

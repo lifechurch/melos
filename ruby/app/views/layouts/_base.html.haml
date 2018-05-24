@@ -7,7 +7,7 @@
   container_classes << "no_primary_nav" if @main_nav == false
   container_class_str = container_classes.join(" ")
 
-%html{class: (@html_classes.join(' ') if @html_classes), "data-locale" => I18n.locale, "data-default-locale" => I18n.default_locale,id: @html_id, "data-logged-in" => logged_in?.to_s, "data-user-id" => logged_in? ? current_auth.user_id : nil, "data-user-name" => logged_in? ? current_auth.username : nil, "data-user-avatar" => logged_in? ? current_user.user_avatar_url["px_48x48"] : nil,  "dir" => is_rtl? ? 'rtl' : 'ltr', "lang" => I18n.locale }
+%html{class: (@html_classes.join(' ') if @html_classes), "data-locale" => I18n.locale, "data-default-locale" => I18n.default_locale,id: @html_id, "data-logged-in" => logged_in?.to_s, "data-user-id" => logged_in? ? current_auth.user_id : nil, "data-user-name" => logged_in? ? current_auth.username : nil, "data-user-avatar" => logged_in? ? current_user.user_avatar_url["px_48x48"] : nil, "data-app-icon" => asset_path(localized_bible_icon(200)), "dir" => is_rtl? ? 'rtl' : 'ltr', "lang" => I18n.locale }
 
   %head{lang: 'en-us'}
     %meta{name: "fragment", content: "!"}

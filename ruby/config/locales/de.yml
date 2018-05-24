@@ -61,7 +61,7 @@ de:
           info: "und 4 anderen Leuten gefällt das"
         comments:
           first:
-            text: "Das habe ich heute gebracht! Danke dir. Lass uns bald mal telefonieren!"
+            text: "Das habe ich heute gebraucht! Danke dir. Lass uns bald mal telefonieren!"
             time: "vor etwa 3 Stunden"
           second:
             text: "Amen, ich auch! Habe dir gerade eine E-Mail geschickt!"
@@ -393,7 +393,7 @@ de:
     users like this: "%{last_liker_link} und %{more_link} gefällt das"
     like: "Person gefällt dies"
     likes: "Freunden gefällt dies"
-    more than one like: ""
+    more than one like:
     vod:
       title: "Vers des Tages"
       get daily email: "Tägliche E-Mail erhalten"
@@ -1389,8 +1389,8 @@ de:
         likes: "Du hast erfolgreich alle E-Mails zu <b>&quot;Gefällt mir&quot;</b> abbestellt."
         moments: "Du hast erfolgreich alle E-Mails zu <b>Momenten</b> abbestellt."
         newsletter: "Du hast erfolgreich alle E-Mail-<b>Rundbriefe</b> von YouVersion abbestellt."
-        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
-        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
+        pwf_comments: "Du hast dich erfolgreich von <b>Kommentaren</b> für diesen Leseplan abgemeldet."
+        pwf_accepts: "Du hast dich erfolgreich von <b>Einladungen zu Leseplänen</b> für diesen Plan abgemeldet."
         reading_plans: "Du hast erfolgreich alle E-Mails zu <b>Leseplänen</b> abbestellt."
         rp_daily: "Du hast erfolgreich alle <b>E-Mails für tägliche Lesepläne</b> von %{plan_title} abbestellt."
         votd: "Du hast erfolgreich alle E-Mails zum <b>Vers des Tages</b> abbestellt."
@@ -2134,3 +2134,21 @@ de:
     sad: "Traurig"
     sick: "Krank"
     tired: "Müde"
+  gdpr:
+    agree to emails: "Ich stimme zu, dass YouVersion mir E-Mails sendet, um meine Bibelarbeit zu vertiefen."
+    agree to terms: "Ich stimme den <a href='/terms'>Nutzungsbedingungen</a> und den <a href='/privacy'>Datenschutzbestimmungen</a> von YouVersion zu."
+    continue: "Weiter"
+    terms summary:
+      p1: "Hier findest du eine Zusammenfassung dessen, was in unseren Datenschutzrichtlinien und Nutzungsbedingungen steht, die alle Produkte und Dienstleistungen von YouVersion umfassen: "
+      h1: "Passe die Bibel App für dich persönlich an."
+      p2: "Wenn du ein YouVersion-Konto erstellst oder eine unserer Apps oder Webseiten verwendest, sollen die von uns erfassten Informationen dazu dienen, dass die App noch besser auf dich maßgeschneidert wird."
+      h2: "So verwenden wir deine Daten:"
+      p3: "In den Richtlinien findest du, welche Arten von Daten wir erfassen, wenn du die App nutzt, und wie wir diese Daten verwenden, damit du YouVersion noch mehr genießen kannst. "
+      p4: "Wir geben deine personenbezogenen Daten nicht an Dritte, Werbetreibende oder Werbenetzwerke weiter. Wusstest du, dass YouVersion ein gemeinnütziger Dienst ist? Da unser Fokus missionarisch ist, verkaufen keine Daten und platzieren auch keine Anzeigen in YouVersion-Produkten. "
+      h3: "Deine Privatsphäre bleibt geschützt."
+      p5: "Wenn wir Statistiken bekannt geben, um zu feiern, wie sich Menschen weltweit mit der Bibel beschäftigen, stellen wir sicher, dass die Daten so analysiert werden, dass deine Privatsphäre geschützt bleibt. "
+      p6: "Wenn diese Informationen veröffentlicht werden, sind sie nur in einer zusammengefassten Form verfügbar, ohne dass man damit auf deine persönlichen Informationen Rückschlüsse ziehen könnte. Darüber hinaus setzen wir branchenübliche Sicherheitsmaßnahmen zum Schutz deiner Daten ein.\n"
+      h4: "Deine persönliche Nutzung der App "
+      p7: "Unsere Richtlinien zeigen deutlich, welche Rechte du bei der Verwendung von YouVersion hast, einschließlich des Zugriffs, der Freigabe, Änderung und Löschung deiner persönlichen Daten. Wir beschreiben darin auch die verwendeten Datenerfassungstechnologien und wie diese Prozesse der YouVersion-Gemeinschaft dabei helfen, sich intensiv mit der Bibel zu beschäftigen."
+    data: "Daten"
+    download blurb: "Du kannst eine Kopie der persönlichen Daten, die du uns zur Verfügung gestellt hast, wie Name, Biografie, Standort und Webadresse sowie einfache Informationen über deine YouVersion-Freunde herunterladen. Dieser Datendownload enthält keine Einzelheiten darüber, wie du die Bibel App nutzt, also keine Markierungen, Notizen oder Versbilder usw., da du diese direkt in der App findest. YouVersion ist ein gemeinnütziger Dienst. Da unser Fokus missionarisch ist, verkaufen wir keine Daten und platzieren auch keine Anzeigen von Dritten in YouVersion-Produkten. Weitere Informationen über die Daten, die wir erfassen und warum wir dies tun, sowie darüber, wie wir Daten verwenden und schützen, findest du in unseren Datenschutzbestimmungen und Nutzungsbedingungen. Hinweis: Durch das Herunterladen von Daten werden diese nicht von den YouVersion-Servern gelöscht. Wenn du möchtest, dass deine Daten gelöscht werden, besuche bitte help.youversion.com. Beachte jedoch, dass durch das Löschen bestimmter Daten gewisse YouVersion-Features - wie in unserer Datenschutzerklärung beschrieben - nicht funktionieren und/oder nicht verfügbar sind."

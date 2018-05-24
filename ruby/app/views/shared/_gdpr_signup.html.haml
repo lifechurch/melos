@@ -1,0 +1,105 @@
+:ruby
+  facebook_signin_button_id = "facebookSigninButton"
+  google_signin_button_id = "googleSigninButton"
+  default_signup_button_id = "default-signup-button"
+
+-content_for :javascripts do
+  %script{:type => "text/javascript", :src  => "https://cdn.polyfill.io/v2/polyfill.js?features=fetch"}
+  :javascript
+    window.GDPR_REQUIRED;
+    window.GDPR_SIGNUP_METHOD;
+    function check_gdpr_required() {
+      return new Promise(function(resolve, reject) {
+        // Only run this code for Sign Up (not Sign In)
+        if (window.location.pathname.indexOf('sign-up') === -1) {
+          resolve(false);
+          return;
+        }
+        
+        if (typeof window.GDPR_REQUIRED !== 'undefined') {
+          resolve(window.GDPR_REQUIRED || #{params[:gdpr].present?});
+          return;
+        }
+
+        fetch('https://geoip.youversionapi.com/gdpr')
+          .then(function(response) {
+            if (!response.ok) {
+              throw new Error('Not-OK Response: ' + response.statusText);
+            } else {
+              return response.json();
+            }
+          })
+          .then(function(json) {
+            if (typeof json === 'object' && typeof json.gdpr !== 'undefined') {
+              window.GDPR_REQUIRED = json.gdpr;
+              resolve(json.gdpr || #{params[:gdpr].present?});
+            } else {
+              throw new Error('No `gdpr` attribute in respone. ' + JSON.stringify(json));
+            }
+          })
+          .catch(function(error) {
+            reject(error);
+          })
+      })
+    }
+
+    function checkContinueStatus() {
+      var gdprButton = document.getElementById("gdpr-signup-button");
+      var agreeTermsChk = document.getElementById("chk-agree-terms");
+      gdprButton.disabled = !(agreeTermsChk.checked)
+    }
+
+    function handleCancelGDPR() {
+      var gdprOverlay = document.getElementById("gdpr_overlay").classList.remove("show-me");
+    }
+
+    function handleConfirmGDPR() {
+      var agreeEmailChk = document.getElementById("chk-agree-emails");
+      var agreeTermsChk = document.getElementById("chk-agree-terms");
+
+      window.dispatchEvent(new CustomEvent('gdprConfirmed', {
+        detail: {
+          agreeTerms: agreeTermsChk.checked,
+          agreeEmails: agreeEmailChk.checked,
+          signupMethod: window.GDPR_SIGNUP_METHOD
+        }
+      }));
+    }
+
+    window.addEventListener('gdprRequired', function(e) {
+      window.GDPR_SIGNUP_METHOD = e.detail.signupMethod;
+      var gdprOverlay = document.getElementById("gdpr_overlay").classList.add("show-me");
+    });
+
+#gdpr_overlay.fixed.w-100.h-100.left-0.top-0.flex.items-center.justify-center.bg-light-gray
+  .w-100.measure.h-100.pa3.pv5-ns.overflow-scroll
+    .h-100.w-100.relative
+      .h-50.w-100.bg-white.pa4.br2.shadow-2.relative.overflow-scroll
+        %p= t("gdpr.terms summary.p1")
+        %h5.b.mt3= t("gdpr.terms summary.h1")
+        %p.mt3= t("gdpr.terms summary.p2")
+        %h5.b.mt3= t("gdpr.terms summary.h2")
+        %p.mt3= t("gdpr.terms summary.p3")
+        %p.mt3= t("gdpr.terms summary.p4")
+        %h5.b.mt3= t("gdpr.terms summary.h3")
+        %p.mt3= t("gdpr.terms summary.p5")
+        %p.mt3= t("gdpr.terms summary.p6")
+        %h5.b.mt3= t("gdpr.terms summary.h4")
+        %p.mt3= t("gdpr.terms summary.p7")
+      .pa4.w-100.relative
+        .cf.mt3
+          .w-80.fl
+            %p= t("gdpr.agree to emails")
+          .w-20.fl.tr
+            %input#chk-agree-emails{:type => 'checkbox' }
+        %hr
+        .cf.mt3
+          .w-80.fl
+            %p!= t("gdpr.agree to terms")
+          .w-20.fl.tr
+            %input#chk-agree-terms{:type => 'checkbox', :onchange => 'checkContinueStatus()'}
+        .cf.mt4
+          .w-80.center.tc
+            %button#gdpr-signup-button.solid-button.green.expand{ :disabled => true, :onclick => 'handleConfirmGDPR()' }= t("gdpr.continue")
+            %br
+            %a.button-reset.pa0.ma0.bg-transparent.near-black.dim.link.hover-bg-transparent.hover-gray{ :onclick => 'handleCancelGDPR()' }= t("ui.cancel")

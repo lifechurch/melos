@@ -143,7 +143,9 @@ function init() {
       isNotifications ||
       isVOTD ||
       isSnapshot ||
-      isExplore
+      isExplore ||
+      isTerms ||
+      isPrivacy
     ) {
         // angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
@@ -233,30 +235,32 @@ function init() {
 
 
 var isEvents            = isFirst("events");
+var isTerms             = isFirst("terms");
+var isPrivacy           = isFirst("privacy");
 var isResetPassword     = isFirst("resetPassword");
 var isReadingPlanSample = isFirst("reading-plans") && inPathNotFirst("day");
-var isReader 			= isFirst("bible");
-var isTIORedirect				= isFirst("subscription");
-var isReader 						= isFirst("bible");
-var isHomeFeed 			= isFirst("moments") || isFirst("notes");
+var isReader            = isFirst("bible");
+var isTIORedirect       = isFirst("subscription");
+var isReader            = isFirst("bible");
+var isHomeFeed          = isFirst("moments") || isFirst("notes");
 var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
 var isSignUp            = isFirst("sign-up");
 var isSignIn            = isFirst("sign-in");
-var isVOTD            	= isFirst("verse-of-the-day");
+var isVOTD              = isFirst("verse-of-the-day");
 var isPassage           = isFirst("passage");
 var isExplore           = isFirst("explore");
 var isSnapshot          = isFirst("snapshot");
 
 var isLookInside        = isFirst("lookinside");
-var isNotifications			= isFirst("notifications")
+var isNotifications     = isFirst("notifications")
 
-var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
-var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");
-var isBookmarksFeed		= isFirst("users") && inPathNotFirst("bookmarks");
-var isHighlightsFeed	= isFirst("users") && inPathNotFirst("highlights");
-var isImagesFeed		= isFirst("users") && inPathNotFirst("images");
-var isBadgesFeed		= isFirst("users") && inPathNotFirst("badges");
+var isFriendsFeed       = isFirst("users") && inPathNotFirst("friends");
+var isNotesFeed         = isFirst("users") && inPathNotFirst("notes");
+var isBookmarksFeed     = isFirst("users") && inPathNotFirst("bookmarks");
+var isHighlightsFeed    = isFirst("users") && inPathNotFirst("highlights");
+var isImagesFeed        = isFirst("users") && inPathNotFirst("images");
+var isBadgesFeed        = isFirst("users") && inPathNotFirst("badges");
 
 var isUserReadingPlan   = isFirst("users") && (inPathNotFirst("reading-plans") || inPathNotFirst("saved-reading-plans") || inPathNotFirst("completed-reading-plans"));
-var isUserProfile 		= isFirst("users") && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;
+var isUserProfile       = isFirst("users") && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;

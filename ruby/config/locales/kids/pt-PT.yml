@@ -15,12 +15,12 @@ pt-PT:
     story text 1: "O jardim do Éden"
     story text 2: "O primeiro Natal"
     story text 3: "José, Maria e o menino Jesus na manjedoura"
-    story text 4: "Os anjos aparecerem aos pastores para anunciar o nascimento de Cristo"
+    story text 4: "Anjos aparecem aos pastores para anunciar-lhes o nascimento de Cristo"
     story text 5: "Jesus cura o paralítico"
     feature 1: "Uma experiência Bíblica gratuita para as suas crianças"
     feature 2: "App com histórias em desenho animado para smartphones e tablets"
     feature 3: "Ilustrações coloridas com desenhos animados ativados pelo toque"
-    feature 4: "Jogos e atividades que ajudam a relembrar o que aprenderam"
+    feature 4: "Jogos e atividades ajudam as crianças a relembrar o que aprenderam"
     feature 5: "Navegação criada a pensar nas crianças"
     share:
       tell friends: "Fale aos seus amigos a respeito da App da Bíblia para Crianças."
@@ -38,7 +38,7 @@ pt-PT:
       in partnership: "em parceria com"
       one hope: "One Hope: Conteúdo Bíblico Extraordinário para as Crianças"
     links:
-      apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+      apple: "https://itunes.apple.com/pt/app/bible-for-kids/id668692393?ls=1&mt=8"
       google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=pt_pt"
       amazon: "http://www.amazon.com/gp/product/B00GURLC40"
   meta:

@@ -5,39 +5,39 @@ fi:
   datetime:
     time_ago_in_words:
       about_x_hours:
-        one: "about %{count} hour ago"
-        other: "about %{count} hours ago"
+        one: "noin %{count} tunti sitten"
+        other: "noin %{count} tuntia sitten"
       about_x_months:
-        one: "about %{count} month ago"
-        other: "about %{count} months ago"
+        one: "noin %{count} kuukausi sitten"
+        other: "noin %{count} kuukautta sitten"
       about_x_years:
-        one: "about %{count} year ago"
-        other: "about %{count} years ago"
+        one: "noin %{count} vuosi sitten"
+        other: "noin %{count} vuotta sitten"
       almost_x_years:
-        one: "almost %{count} year ago"
-        other: "almost %{count} years ago"
+        one: "melkein %{count} vuosi sitten"
+        other: "melkein %{count} vuotta sitten"
       half_a_minute: "puoli minuuttia sitten"
       less_than_x_minutes:
-        one: "less than %{count} minute ago"
-        other: "less than %{count} minutes ago"
+        one: "alle %{count} minuutti sitten"
+        other: "alle %{count} minuuttia sitten"
       less_than_x_seconds:
-        one: "less than %{count} second ago"
-        other: "less than %{count} seconds ago"
+        one: "alle %{count} sekunti sitten"
+        other: "alle %{count} sekuntia sitten"
       over_x_years:
-        one: "over %{count} year ago"
-        other: "over %{count} years ago"
+        one: "yli %{count} vuosi sitten"
+        other: "yli %{count} vuotta sitten"
       x_days:
-        one: "%{count} day ago"
-        other: "%{count} days ago"
+        one: "%{count} päivä sitten"
+        other: "%{count} päivää sitten"
       x_minutes:
-        one: "%{count} minute ago"
-        other: "%{count} minutes ago"
+        one: "%{count} minuutti sitten"
+        other: "%{count} minuuttia sitten"
       x_months:
-        one: "%{count} month ago"
-        other: "%{count} months ago"
+        one: "%{count} kuukausi sitten"
+        other: "%{count} kuukautta sitten"
       x_seconds:
-        one: "%{count} second ago"
-        other: "%{count} seconds ago"
+        one: "%{count} sekunti sitten"
+        other: "%{count} sekuntia sitten"
   counter:
     format: "999 999 999"
   social:
@@ -45,8 +45,8 @@ fi:
       main heading: "Keskustelut ja oivallukset"
       main description: "Uusi tapa tutkia Raamattua luotettujen ystävien kanssa"
       moment:
-        user aaron: "Aaron Steele"
-        user andy: "Andy Knight"
+        user aaron: "Kalle Virtanen"
+        user andy: "Ville Järvinen"
         timestamp: "5 päivää sitten"
         title: "loi kirjanmerkin Psalmista 31:8"
         verse: "Iloitsen ja riemuitsen sinun hyvyydestäsi. Sinä näet minun hätäni, tiedät kaiken tuskani."
@@ -263,8 +263,8 @@ fi:
   notes title: "Muistiinpanot"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
-      other: "You have %{count} friends"
+      one: "Sinulla on %{count} ystävä"
+      other: "Sinulla on %{count}  ystävää"
     none me: "Jaa merkintäsi Raamatussa, kuten kirjanmerkit, korostukset ja muistiinpanot lähimpien ystäviesi ja perheenjäsentesi kanssa."
     find friends: "Etsi ystäviä"
     blank slate:
@@ -393,7 +393,7 @@ fi:
     users like this: "%{last_liker_link} ja %{more_link} tykkää tästä"
     like: "Tykkää"
     likes: "Tykkää"
-    more than one like: ""
+    more than one like:
     vod:
       title: "Päivän jae"
       get daily email: "Tilaa päivittäinen sähköposti"
@@ -448,8 +448,8 @@ fi:
     destroy failure: "Tykkäystäsi ei voitu poistaa"
   comments:
     view all N:
-      one: "View %{count} comment"
-      other: "View all %{count} comments"
+      one: "Näytä %{count} kommentti"
+      other: "Näytä %{count} kommenttia"
     post comment: "Lähetä kommentti"
     create success: "OK! Kommenttisi lähetettiin."
     create failure: "Kommenttia ei voitu lähettää"
@@ -808,8 +808,8 @@ fi:
         one: "%{count} ystävä on suorittanut tämän suunnitelman"
         other: "%{count} ystävää on suorittanut tämän suunnitelman"
       total completions:
-        one: "Over %{count} completion"
-        other: "Over %{count} completions"
+        one: "Yli %{count} suoritus"
+        other: "Yli %{count} suoritusta"
       view all: "Näytä kaikki"
       close: "Sulje"
     settings: "Asetukset"
@@ -1389,8 +1389,8 @@ fi:
         likes: "Peruit onnistuneesti <b> Tykkää </b> -sähköpostien tilauksen."
         moments: "Peruit onnistuneesti <b> Hetket </b> -sähköpostien tilauksen."
         newsletter: "Peruit onnistuneesti <b> Uutiskirje </b> -sähköpostien tilauksen."
-        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
-        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
+        pwf_comments: "Olet nyt peruuttanut sähköposti-ilmoitukset tämän suunnitelman <b>Kommenteista</b>."
+        pwf_accepts: "Olet nyt peruuttanut sähköposti-ilmoitukset tämän suunnitelman <b>kutsuista</b>."
         reading_plans: "Peruit onnistuneesti <b> Lukusuunnitelmat </b> -sähköpostien tilauksen."
         rp_daily: "Peruit onnistuneesti <b> Lukusuunnitelman päivittäiset sähköpostit </b> suunnitelmasta %{plan_title}."
         votd: "Peruit onnistuneesti <b> Päivän jae </b> -sähköpostien tilauksen."
@@ -2134,3 +2134,21 @@ fi:
     sad: "Surullinen"
     sick: "Sairas"
     tired: "Väsynyt"
+  gdpr:
+    agree to emails: "Annan YouVersionille luvan lähettää minulle sähköposteja, jotka liittyvät siihen, miten voin syventää suhdettani Raamattuun."
+    agree to terms: "Hyväksyn YouVersionin <a href='/terms'>Käyttöehdot</a> ja <a href='/privacy'>Tietosuojakäytännön</a>."
+    continue: "Jatka"
+    terms summary:
+      p1: "Tässä yhteenveto tietosuojakäytännöstämme ja käyttöehdoistamme, jotka kattavat kaikki YouVersion-tuotteet ja palvelut:"
+      h1: "Yksilöllinen käyttökokemus."
+      p2: "Kun luot YouVersion-tilin tai käytät sovelluksiamme tai sivustojamme, keräämme tietoa sitä varten, että voimme tarjota sinulle yksilöllisemmän raamattukokemuksen."
+      h2: "Miten käytämme tietojasi."
+      p3: "Tietosuojakäytännössä kerrotaan selvästi, minkätyyppisiä tietoja keräämme toiminnastasi ja miten käytämme tietoja YouVersion-kokemuksesi parantamiseen."
+      p4: "Emme jaa tietojasi mainostajille tai mainosverkostoille. Tiesitkö, että YouVersion on voittoa tavoittelematon organisaatio? Painopisteemme on lähetystyössä, joten emme tavoittele voittoa, myy tietoja tai näytä mainoksia YouVersion-tuotteissa."
+      h3: "Yksityisyytesi on turvattu."
+      p5: "Kun julkaisemme tilastoja esim. Raamattusovelluksen käytöstä, voit olla varma, että analysoimme dataa tavalla, joka turvaa yksityisyytesi."
+      p6: "Kun tätä tietoa julkaistaan, se on aina kokonaisuus, josta ei voi tunnistaa sinua. Lisäksi käytämme yleisesti hyväksyttyjä suojauskeinoja tietoturvasi varmistamiseen."
+      h4: "Oma kokemuksesi."
+      p7: "Uudesta käytännöstämme käy selväksi, mitä oikeuksia sinulla on, kun käytät YouVersionia, mukaan lukien oikeus nähdä, jakaa, muuttaa ja poistaa henkilökohtaisia tietojasi. Käsittelemme myös tiedonkeruutekniikoita ja sitä, miten ne auttavat YouVersion-yhteisöä saamaan Raamatusta enemmän irti."
+    data: "Tiedot"
+    download blurb: "Voit ladata kopion antamistasi henkilökohtaisista tiedoista, joihin kuuluu esim. nimesi, esittelysi, sijaintisi, kotisivujesi osoite sekä perustietoa YouVersion-ystävistäsi. Tähän lataukseen ei kuulu henkilökohtainen toimintasi YouVersionissa, kuten korostuksesi, muistiinpanosi ja huoneentaulusi, jotka voit nähdä suoraan sovelluksessa. YouVersion on voittoa tavoittelematon organisaatio. Koska painopisteemme on lähetystyössä, emme tavoittele voittoa, myy tietoja tai näytä kolmannen osapuolen mainoksia YouVersion-tuotteissa. Tietosuojakäytännöstämme ja käyttöehdoistamme löydät lisää tietoa siitä, mitä tietoa keräämme ja miksi sekä miten käytämme tietoja ja miten turvaamme ne. Ota huomioon, että tietojen lataus ei poista niitä YouVersionin palvelimilta. Jos haluat pyytää tietojesi poistamista, mene osoitteeseen help.youversion.com. Huomioi kuitenkin se, että tiettyjen tietojen poistaminen rajoittaa/estää tiettyjä toimintoja YouVersionissa. Tästä kerrotaan lisää tietosuojakäytännössämme."
