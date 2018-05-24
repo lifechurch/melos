@@ -1,6 +1,6 @@
 - t = Proc.new do |key, options={}|
   - I18n.t(key, options.merge(:locale => @locale))
-- @title = t.call("users.privacy.policy", youversion: t.call("youversion"))
+- @title = t.call("legal.privacy.policy", youversion: t.call("youversion"))
 - @sidebar = false
 - @policy_effective_date = "2018-05-25".to_date
 - @today = Date.today
@@ -9,11 +9,11 @@
   = stylesheet_link_tag "https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"
 
 - content_for :title do
-  = t("users.privacy.policy", youversion: t("youversion"))
+  = t("legal.privacy.policy", youversion: t("youversion"))
 
 .mw7-ns.center-ns.pb6.pt3.pl3.pr3.pt0-l.pl0-l.pr0-l.near-black
   %article
-    %h1.f3.f2-ns.b= t.call("users.privacy.policy", youversion: t.call("youversion"))
+    %h1.f3.f2-ns.b= t.call("legal.privacy.policy", youversion: t.call("youversion"))
     %hr
     %h2.f2-ns.b.mt4 Brief Overview
     %p.mt3 Here’s a summary of what you can expect to find in our Privacy Policy, which cover all YouVersion-branded products and services:

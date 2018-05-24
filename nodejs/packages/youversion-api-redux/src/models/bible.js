@@ -13,10 +13,10 @@ const getBibleModel = createSelector(
 		}
 
 		if (chapter) {
-			bibleModel.references = chapter
+			bibleModel.references = Object.assign({}, bibleModel.references, chapter)
 		}
 		if (verses) {
-			bibleModel.references = verses
+			bibleModel.references = Object.assign({}, bibleModel.references, verses)
 		}
 		if (version) {
 			bibleModel.versions.byId = version
