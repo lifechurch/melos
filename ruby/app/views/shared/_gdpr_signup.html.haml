@@ -10,6 +10,12 @@
     window.GDPR_SIGNUP_METHOD;
     function check_gdpr_required() {
       return new Promise(function(resolve, reject) {
+        // Only run this code for Sign Up (not Sign In)
+        if (window.location.pathname.indexOf('sign-up') === -1) {
+          resolve(false);
+          return;
+        }
+        
         if (typeof window.GDPR_REQUIRED !== 'undefined') {
           resolve(window.GDPR_REQUIRED || #{params[:gdpr].present?});
           return;
