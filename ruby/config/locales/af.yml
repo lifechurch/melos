@@ -6,38 +6,38 @@ af:
     time_ago_in_words:
       about_x_hours:
         one: "omtrent %{count} uur gelede"
-        other: "about %{count} hours ago"
+        other: "omtrent %{count} ure gelede"
       about_x_months:
-        one: "about %{count} month ago"
-        other: "about %{count} months ago"
+        one: "omtrent %{count} maand gelede"
+        other: "omtrent %{count} maande gelede"
       about_x_years:
-        one: "about %{count} year ago"
-        other: "about %{count} years ago"
+        one: "omtrent %{count} jaar gelede"
+        other: "omtrent %{count} jaar gelede"
       almost_x_years:
-        one: "almost %{count} year ago"
-        other: "almost %{count} years ago"
+        one: "amper %{count} jaar gelede"
+        other: "amper %{count} jaar gelede"
       half_a_minute: "'n halwe minuut terug"
       less_than_x_minutes:
-        one: "less than %{count} minute ago"
-        other: "less than %{count} minutes ago"
+        one: "minder as %{count} minuut gelede"
+        other: "minder as %{count} minute gelede"
       less_than_x_seconds:
-        one: "less than %{count} second ago"
-        other: "less than %{count} seconds ago"
+        one: "minder as %{count} sekonde gelede"
+        other: "minder as %{count} sekondes gelede"
       over_x_years:
-        one: "over %{count} year ago"
-        other: "over %{count} years ago"
+        one: "meer as %{count} jaar gelede"
+        other: "meer as %{count} jaar gelede"
       x_days:
-        one: "%{count} day ago"
-        other: "%{count} days ago"
+        one: "%{count} dag gelede"
+        other: "%{count} dae gelede"
       x_minutes:
-        one: "%{count} minute ago"
-        other: "%{count} minutes ago"
+        one: "%{count} minuut gelede"
+        other: "%{count} minute gelede"
       x_months:
-        one: "%{count} month ago"
-        other: "%{count} months ago"
+        one: "%{count} maand gelede"
+        other: "%{count} maande gelede"
       x_seconds:
-        one: "%{count} second ago"
-        other: "%{count} seconds ago"
+        one: "%{count} sekonde gelede"
+        other: "%{count} sekondes gelede"
   counter:
     format: "999,999,999"
   social:
@@ -263,8 +263,8 @@ af:
   notes title: "Notas"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
-      other: "You have %{count} friends"
+      one: "Jy het %{count} vriend"
+      other: "Jy het %{count} vriende"
     none me: "Deel jou oomblikke in die Bybel soos boekmerke, hoogtepunte en notas met jou naaste vriende en familie."
     find friends: "Soek vriende"
     blank slate:
@@ -448,8 +448,8 @@ af:
     destroy failure: "Jou 'Hou Van' kon nie verwyder word nie"
   comments:
     view all N:
-      one: "View %{count} comment"
-      other: "View all %{count} comments"
+      one: "Wys %{count} opmerking"
+      other: "Wys al %{count} opmerkings"
     post comment: "Plaas 'n opmerking"
     create success: "Sukses! Jou opmerking is gepos"
     create failure: "Opmerking kon nie geplaas word nie"
@@ -808,8 +808,8 @@ af:
         one: "%{count} vriend het hierdie plan voltooi"
         other: "%{count} vriende het hierdie plan voltooi"
       total completions:
-        one: "Over %{count} completion"
-        other: "Over %{count} completions"
+        one: "Meer as %{count} keer voltooi"
+        other: "Meer as %{count} keer voltooi"
       view all: "Kyk na almal"
       close: "Maak toe"
     settings: "Opstellings"
@@ -1389,8 +1389,8 @@ af:
         likes: "Jou intekening op <b>Hou Daarvan</b> e-posse is suksesvol gekanselleer."
         moments: "Jou intekening op <b>Oomblikke</b> e-posse is suksesvol gekanselleer."
         newsletter: "Jou intekening op <b>Nuusbrief</b> e-posse is suksesvol gekanselleer."
-        pwf_comments: "You successfully unsubscribed from <b>Comments</b> emails for this Plan."
-        pwf_accepts: "You successfully unsubscribed from <b>Reading Plans Invite</b> emails for this Plan."
+        pwf_comments: "U het suksesvol afgeteken van <b>Opmerkings</b> e-posse vir hierdie Plan."
+        pwf_accepts: "Jou intekening op <b>Leesplan uitnodigings</b> e-posse vir hierdie Plan is suksesvol gekanselleer."
         reading_plans: "Jou intekening op <b>Leesplan</b> e-posse is suksesvol gekanselleer."
         rp_daily: "Jou intekening op <b>Daaglike Leesplan e-posse</b> vir %{plan_title} is suksesvol gekanselleer."
         votd: "Jou intekening op <b>Vers van die Dag</b> e-posse is suksesvol gekanselleer."
@@ -2135,20 +2135,20 @@ af:
     sick: "Siek"
     tired: "Moeg"
   gdpr:
-    agree to emails: "I agree to let YouVersion send me emails to deepen my Bible engagement."
-    agree to terms: "I agree to YouVersion’s <a href='/terms'>Terms</a> and <a href='/privacy'>Privacy Policy</a>."
-    continue: "Continue"
+    agree to emails: "Ek gee toestemming om YouVersion toe te laat om vir my e-posse te stuur om my Bybelverband te verdiep."
+    agree to terms: "Ek aanvaar YouVersion's <a href='/terms'>Terme</a> en <a href='/privacy'>Privaatheidsbeleid</a>."
+    continue: "Gaan voort"
     terms summary:
-      p1: "Here’s a summary of what you can expect to find in our Privacy Policy and Terms of Use, which cover all YouVersion-branded products and services:"
-      h1: "Making your experience personal."
-      p2: "When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience."
-      h2: "How we use your data."
-      p3: "The policies clearly outline the types of data we collect from your activity, and how we use that information to enhance your YouVersion experience."
-      p4: "We do not share your personally identifiable data with any third-party advertisers or ad networks. In fact, did you know that YouVersion is a non-profit ministry? Because our focus is missional, we don’t monetize, sell data, or place ads inside of YouVersion products."
-      h3: "Your privacy protected."
-      p5: "When you see stats we share and celebrate about Bible engagement around the world, we make sure to analyze the data in a way that protects your privacy."
-      p6: "When this information is published, it is only in an aggregated form that does not disclose your personally identifiable information. In addition, we implement industry standard security safeguards designed to protect your data."
-      h4: "It’s your experience."
-      p7: "Our policies make it clear what rights you have when using YouVersion, including accessing, sharing, changing and deleting your personal data.  We also address data collection technologies and how those processes help the YouVersion Community fully engage with the Bible."
+      p1: "Hier is 'n opsomming van wat jy kan verwag in ons Privaatheidsbeleid en Gebruiksvoorwaardes, wat alle produkte en dienste van YouVersion-handelsmerke dek:"
+      h1: "Maak jou ervaring persoonlik."
+      p2: "Wanneer U 'n YouVersion-rekening skep of enige een van ons programme of webwerwe gebruik, is die inligting wat ons versamel, ten doel om 'n meer persoonlike Bybel ervaring te bied."
+      h2: "Hoe ons U data gebruik."
+      p3: "Die beleide gee 'n duidelike uiteensetting van die tipes data wat ons versamel uit U aktiwiteit, en hoe ons hierdie inligting gebruik om U YouVersion-ervaring te verbeter."
+      p4: "Ons deel nie U persoonlike identifiseerbare data met enige derde party adverteerders of advertensie netwerke nie. Trouens, het jy geweet dat YouVersion 'n nie-winsgewende bediening is? Omdat ons fokus missionêr is, verkoop ons nie data nie en plaas ons nie advertensies binne YouVersion-produkte nie."
+      h3: "Jou privaatheid beskerm."
+      p5: "Wanneer U statistieke sien wat ons deel en vier rakende Bybelbetrokkenheid regoor die wêreld, maak ons ​​seker dat die data geanaliseer word om U privaatheid te beskerm."
+      p6: "Wanneer hierdie inligting gepubliseer word, is dit slegs in 'n geaggregeerde vorm wat nie jou persoonlike identifiseerbare inligting openbaar nie. Daarbenewens implementeer ons standaard veiligheidsmaatreëls wat ontwerp is om U data te beskerm."
+      h4: "Dis jou ervaring."
+      p7: "Ons beleid maak dit duidelik watter regte U het by die gebruik van YouVersion, insluitend toegang tot, om te deel, verander en uitvee van U persoonlike data. Ons adresseer ook data-insamelingstegnologieë en hoe hierdie prosesse die YouVersion-gemeenskap help om ten volle betrokke te raak by die Bybel."
     data: "Data"
-    download blurb: "You may download a copy of the personal data that you have provided to us, such as your name, bio, location, and website address as well as basic information regarding your YouVersion Friends. This data download will not include Bible activity information such as your Highlights, Notes, Verse Images, etc., which you can view directly within the app. YouVersion is a non-profit ministry. Because our focus is missional, we do not monetize, sell data, or place third-party advertising inside of YouVersion products. Please refer to our Privacy Policy and Terms of Use for more details as to the data we collect and why, and how we use and protect that data.  Please note that downloading data does not delete it from YouVersion servers. If you would like to request that your information be deleted, please visit help.youversion.com. Please be aware, however, that deleting certain data will prohibit and/or eliminate certain YouVersion functionality as further described in our Privacy Policy."
+    download blurb: "U kan 'n kopie van die persoonlike data wat U aan ons verskaf, aflaai, soos U naam, bio, lokasie en webadres sowel as basiese inligting rakende YouVersion Vriende. Hierdie afgelaaide data sal nie Bybelaktiwiteite insluit soos U Hoogtepunte, Notas, Vers-prente, ens, wat U direk binne die program kan sien. YouVersion is 'n nie-winsgewende organisasie. Omdat ons fokus op gemeenskaplikse ontwikkeling gerig is, kapitaliseer ons nie, verkoop nie data nie of plaas geen derde party advertensies binne die YouVersion programme nie. Raadpleeg asb ons Privaatheidsbeleid en Gebruikersvoorwaardes vir meer inligting oor die data wat ons versamel en hoekom, en hoe ons daardie data gebruik en beskerm. Let daarop dat die aflaai van data dit nie uit YouVersion webbedieners verwyder word nie. As jy wil versoek dat jou inligting verwyder word, besoek asb help.youversion.com.  Hou egter in gedagte dat die verwydering van sekere data YouVersion se funksies verbied en/of uitskakel, soos verder beskryf in ons Privaatheidsbeleid."

@@ -2161,7 +2161,7 @@ sr:
     sick: "Sick"
     tired: "Tired"
   gdpr:
-    agree to emails: "I agree to let YouVersion send me emails to deepen my Bible engagement."
+    agree to emails: "Slažem se da mi YouVersion šalje imejlove kako bi produbio/la svoje biblijsko angažovanje."
     agree to terms: "I agree to YouVersion’s <a href='/terms'>Terms</a> and <a href='/privacy'>Privacy Policy</a>."
     continue: "Continue"
     terms summary:

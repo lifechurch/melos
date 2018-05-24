@@ -263,7 +263,7 @@ ur:
   notes title: "Notes"
   friends:
     you have N friends:
-      one: "You have %{count} friend"
+      one: "آپ کے پاس %{count} دوست ہيں"
       other: "You have %{count} friends"
     none me: "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
     find friends: "Find friends"
