@@ -3,12 +3,37 @@
 
 :javascript
 
+  function handleGDPR(gdpr_required) {
+    if (!gdpr_required) {
+      // GDPR not required, submit form
+      document.getElementById('facebook-sign-in-form').submit();
+    } else {
+      // Listen for GDPR confirmed event, and then submit
+      window.addEventListener('gdprConfirmed', function(e) {
+        if (e.detail.signupMethod === 'Facebook') {
+          document.getElementById('facebook-sign-in-form').submit();
+        }
+      });
+
+      // Dispatch event to open GDPR overlay
+      window.dispatchEvent(new CustomEvent('gdprRequired', {
+        detail: {
+          signupMethod: 'Facebook'
+        }
+      }));
+    }
+  }
+
+  function handleGDPRError(error) {
+    console.error('GDPR API Error', error);
+  }
+
   function fbapiStatusChangeCallback(response) {
     fbapiDisableDefaultForm()
     if (response.status === 'connected') {
       document.getElementById('facebook-sign-in-token').value = response.authResponse.accessToken;
       document.getElementById('facebook-sign-in-id').value = response.authResponse.userID;
-      document.getElementById('facebook-sign-in-form').submit();
+      check_gdpr_required().then(handleGDPR, handleGDPRError);
     }
   }
 
@@ -31,7 +56,7 @@
         document.getElementById('facebook-sign-in-id').value = response.authResponse.userID;
         loginButton.onclick = function() {
           fbapiDisableDefaultForm();
-          document.getElementById('facebook-sign-in-form').submit();
+          check_gdpr_required().then(handleGDPR, handleGDPRError);
         }
         FB.api('/me', function(response) {
           document.getElementById('fbName').innerHTML = response.name;
@@ -45,6 +70,7 @@
         loginButton.onclick = function() {
           FB.login(fbapiStatusChangeCallback, { scope: "#{Cfg.facebook_signin_scope}" })
         }
+
 
       } else {
         loginButton.onclick = function() {

@@ -15,6 +15,7 @@ class User < YV::Resource
                :password_confirmation,
                :email,
                :agree,
+               :email_opt_in,
                :verified,
                :location,
                :im_type,
@@ -245,7 +246,7 @@ class User < YV::Resource
     elsif uploaded_file.size > 1.megabyte
       error["key"]   = "picture_too_large"
       error["error"] = I18n.t("users.profile.picture_too_large")
-    end    
+    end
 
     unless error.has_key?("error")
       begin
@@ -271,7 +272,7 @@ class User < YV::Resource
 
   def destroy
     return false unless auth_present?
-    
+
     response = true
     before_destroy
 
@@ -330,9 +331,9 @@ class User < YV::Resource
         end
       end
     end
-    
+
     opts.merge!({auth: self.auth}) if opts[:auth].blank?
-    if opts[:connections].match(/facebook/) 
+    if opts[:connections].match(/facebook/)
       fb_data,fb_errs = self.class.post("share/send_facebook", opts)
       fb_results = YV::API::Results.new(fb_data,fb_errs)
       if fb_results.invalid?
@@ -441,7 +442,7 @@ class User < YV::Resource
   # Params:
   # - id: required (id of User)
   # returns: boolean
-  
+
   def friends_with?(id)
     friend_ids.include? id.to_i
   end

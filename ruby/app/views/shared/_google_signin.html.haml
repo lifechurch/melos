@@ -41,13 +41,37 @@
           document.getElementById("google-sign-in-id").value = profile.getId();
           //document.getElementById("google-sign-in-given-name").value = profile.getGivenName();
           //document.getElementById("google-sign-in-family-name").value = profile.getFamilyName();
-          document.getElementById("google-sign-in-form").submit();
+
+          check_gdpr_required().then(function(gdpr_required) {
+            if (!gdpr_required) {
+              // GDPR not required, just submit form
+              document.getElementById("google-sign-in-form").submit();
+            } else {
+              // Listen for GDPR confirmed event, and then submit
+              window.addEventListener('gdprConfirmed', function(e) {
+                if (e.detail.signupMethod === 'Google') {
+                  document.getElementById("google-sign-in-form").submit();
+                }
+              });
+
+              // Dispatch event to open GDPR overlay
+              window.dispatchEvent(new CustomEvent('gdprRequired', {
+                detail: {
+                  signupMethod: 'Google'
+                }
+              }));
+            }
+          }, function(e) {
+            // Error getting GDPR status from API, submit anway
+            console.error('GDPR API Error', e);
+            document.getElementById("google-sign-in-form").submit();
+          });
         }
       }
 
       function gapiOnSignInError(error) {
         try {
-          console.error("error", error);
+          console.error("Google Sign-in Error", error);
         } catch(ex) {}
       }
 
