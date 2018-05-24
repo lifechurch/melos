@@ -1,10 +1,11 @@
-
 :ruby
   hillsong_campaign = (params[:campaign] == "2") || (params[:redirect].present? and params[:redirect].downcase.include? "campaign=2")
   hillsong_london_campaign = (params[:campaign] == "4") || (params[:redirect].present? and params[:redirect].downcase.include? "campaign=4")
 
 - if @user and @user.invalid?
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
+
+= javascript_include_tag "tupos/OAuth.bundle", 'data-turbolinks-track' => false
 
 .medium-centered
   .columns.medium-centered.large-11

@@ -2,8 +2,18 @@
   @title = t('users.edit profile')
   @setting_selected = :download #for settings layout
 
+-content_for :lower_javascript do
+  %script{:type => "text/javascript", :src  => "https://cdn.polyfill.io/v2/polyfill.js?features=fetch"}
+  :javascript
+    console.error('initing', document.getElementById("download-user-button"));
+    document.getElementById("download-user-button")
+      .addEventListener("click", function(e) {
+        console.error("Downloading... not really.");
+      });
+
+
 %h3{ :style => "font-weight: normal" }= t("gdpr.data")
 
 %p{ :style => "max-width: 35em" }= t("gdpr.download blurb")
 %br
-%button.solid-button.green= t("download")
+%button#download-user-button.solid-button.green= t("download")
