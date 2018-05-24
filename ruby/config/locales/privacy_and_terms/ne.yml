@@ -1,8 +1,8 @@
 ne:
   legal:
     privacy:
-      policy: "%{youversion} Privacy Policy"
-      h1: "Brief Overview"
+      policy: "%{youversion} गोपनीयता नीति"
+      h1: "संक्षिप्त रुपरेखा"
       p1: "Here’s a summary of what you can expect to find in our Privacy Policy, which cover all YouVersion-branded products and services:"
       h2: "Making your experience personal."
       p2: "When you create a YouVersion account or use any one of our applications or sites, the information we collect is for the purpose of offering a more personalized Bible experience."
