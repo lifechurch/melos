@@ -1,3 +1,12 @@
+-content_for :lower_javascript do
+  :javascript
+    var userCreateForm = document.getElementById('signin_form');
+    userCreateForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      console.log('Trying to sign in, eh?')
+      return true;
+    });
+
 :ruby
   hillsong_campaign = (params[:campaign] == "2") || (params[:redirect].present? and params[:redirect].downcase.include? "campaign=2")
   hillsong_london_campaign = (params[:campaign] == "4") || (params[:redirect].present? and params[:redirect].downcase.include? "campaign=4")
