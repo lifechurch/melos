@@ -6,6 +6,26 @@
   :javascript
       var googleUser = {};
 
+      function submitGoogleLogin() {
+        function googleSubmit() {
+          document.getElementById("google-sign-in-form").submit();
+        }
+
+        // If this isn't Sign In, don't try to get OAuth Token
+        if (window.location.pathname.indexOf('sign-in') === -1) {
+          googleSubmit();
+        } else {
+          var googleToken = document.getElementById("google-sign-in-token").value;
+          var googleId = document.getElementById("google-sign-in-id").value
+          var response = OAuth.getToken({ googlejwt: googleToken, googleId: googleId }).then(function(response) {
+            googleSubmit();
+          }, function(err) {
+            console.error(err);
+            googleSubmit();
+          });
+        }
+      }
+
       function gapiStartApp() {
         gapi.load('auth2', gapiInitAuth2);
       }
@@ -45,12 +65,12 @@
           check_gdpr_required().then(function(gdpr_required) {
             if (!gdpr_required) {
               // GDPR not required, just submit form
-              document.getElementById("google-sign-in-form").submit();
+              submitGoogleLogin();
             } else {
               // Listen for GDPR confirmed event, and then submit
               window.addEventListener('gdprConfirmed', function(e) {
                 if (e.detail.signupMethod === 'Google') {
-                  document.getElementById("google-sign-in-form").submit();
+                  submitGoogleLogin();
                 }
               });
 
@@ -64,7 +84,7 @@
           }, function(e) {
             // Error getting GDPR status from API, submit anway
             console.error('GDPR API Error', e);
-            document.getElementById("google-sign-in-form").submit();
+            submitGoogleLogin();
           });
         }
       }

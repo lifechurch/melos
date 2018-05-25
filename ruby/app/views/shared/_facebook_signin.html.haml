@@ -3,15 +3,35 @@
 
 :javascript
 
+  function submitFBLogin() {
+    function fbSubmit() {
+      document.getElementById('facebook-sign-in-form').submit();
+    }
+
+    // If this isn't Sign In, don't try to get OAuth Token
+    if (window.location.pathname.indexOf('sign-in') === -1) {
+      fbSubmit();
+    } else {
+      var fbToken = document.getElementById('facebook-sign-in-token').value
+      var fbId = document.getElementById('facebook-sign-in-id').value
+      var response = OAuth.getToken({ facebook: fbToken, facebookId: fbId }).then(function(response) {
+        fbSubmit();
+      }, function(err) {
+        console.error(err);
+        fbSubmit();
+      });
+    }
+  }
+
   function handleGDPR(gdpr_required) {
     if (!gdpr_required) {
       // GDPR not required, submit form
-      document.getElementById('facebook-sign-in-form').submit();
+      submitFBLogin();
     } else {
       // Listen for GDPR confirmed event, and then submit
       window.addEventListener('gdprConfirmed', function(e) {
         if (e.detail.signupMethod === 'Facebook') {
-          document.getElementById('facebook-sign-in-form').submit();
+          submitFBLogin();
         }
       });
 

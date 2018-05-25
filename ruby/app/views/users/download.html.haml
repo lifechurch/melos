@@ -3,12 +3,27 @@
   @setting_selected = :download #for settings layout
 
 -content_for :lower_javascript do
+  %script{type:'text/javascript'}
+    !='window.YV_API_HOST = "' + ENV['SECURE_HOSTNAME'] + '"'
+    = if Cfg.nodejs_api_port.present?
+      != 'window.YV_API_PORT = "' + Cfg.nodejs_api_port + '"'
   %script{:type => "text/javascript", :src  => "https://cdn.polyfill.io/v2/polyfill.js?features=fetch"}
+  = javascript_include_tag "tupos/babel-polyfill.min", 'data-turbolinks-track' => false
+  = javascript_include_tag "tupos/OAuth.bundle", 'data-turbolinks-track' => false
+  = javascript_include_tag "tupos/User.bundle", 'data-turbolinks-track' => false
+
   :javascript
-    console.error('initing', document.getElementById("download-user-button"));
     document.getElementById("download-user-button")
       .addEventListener("click", function(e) {
-        console.error("Downloading... not really.");
+        OAuth.getToken().then(function(response) {
+          if (response && response.access_token) {
+            User.download(response.access_token)
+          } else {
+            console.error('Bad token: ', response)
+          }
+        }, function(error) {
+          console.error('E', error)
+        });
       });
 
 

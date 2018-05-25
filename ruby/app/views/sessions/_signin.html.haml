@@ -1,11 +1,26 @@
 -content_for :lower_javascript do
+  %script{type:'text/javascript'}
+    !='window.YV_API_HOST = "' + ENV['SECURE_HOSTNAME'] + '"'
+    = if Cfg.nodejs_api_port.present?
+      != 'window.YV_API_PORT = "' + Cfg.nodejs_api_port + '"'
   :javascript
-    var userCreateForm = document.getElementById('signin_form');
-    userCreateForm.addEventListener('submit', function(e) {
+    var signInForm = document.getElementById('signin_form');
+    signInForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      console.log('Trying to sign in, eh?')
-      return true;
+      var username = document.getElementById('signin-username').value;
+      var password = document.getElementById('signin-password').value;
+      var response = OAuth.getToken({ username: username, password: password }).then(function(response) {
+        signInForm.submit();
+      }, function(err) {
+        console.error(err);
+        signInForm.submit();
+      });
+
+      return false;
     });
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"
 
 :ruby
   hillsong_campaign = (params[:campaign] == "2") || (params[:redirect].present? and params[:redirect].downcase.include? "campaign=2")
@@ -14,7 +29,9 @@
 - if @user and @user.invalid?
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
-= javascript_include_tag "tupos/OAuth.bundle", 'data-turbolinks-track' => false
+- content_for :lower_javascript do
+  = javascript_include_tag "tupos/babel-polyfill.min", 'data-turbolinks-track' => false
+  = javascript_include_tag "tupos/OAuth.bundle", 'data-turbolinks-track' => false
 
 .medium-centered
   .columns.medium-centered.large-11
@@ -40,10 +57,10 @@
         .alt-path.terms= t('users.sign in alternate', sign_up_path: sign_up_path).html_safe
       %p
         = label_tag :username, t("users.email address")
-        = text_field_tag :username, params[:username] || cookies.signed[:b], {class: "autofocus"}
+        = text_field_tag :username, params[:username] || cookies.signed[:b], :id => "signin-username", :class => "autofocus"
       %p
         = label_tag :password, t("password prompt")
-        = password_field_tag :password, params[:password], :maxlength=>"32"
+        = password_field_tag :password, params[:password], :maxlength=>"32", :id => "signin-password"
         %span.terms= link_to t('users.forgot password'), forgot_password_path, { target: "_self" }
       %br
       %p
