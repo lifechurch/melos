@@ -1,7 +1,7 @@
 sq:
   legal:
     privacy:
-      policy: "Politika e privatësisë të %{youversion}"
+      policy: "Politika e Privatësisë %{youversion}"
       h1: "Brief Overview"
       p1: "Here’s a summary of what you can expect to find in our Privacy Policy, which cover all YouVersion-branded products and services:"
       h2: "Një përvojë personale."
@@ -12,7 +12,7 @@ sq:
       p4: "When you see stats we share and celebrate about Bible engagement around the world, we make sure to analyze the data in a way that protects your privacy. When this information is published, it is only in an aggregated form that does not disclose your personally identifiable information. In addition, we implement industry standard security safeguards designed to protect your data."
       h5: "Kjo është përvoja juaj."
       p5: "Our Privacy Policy makes it clear what rights you have when using YouVersion, including accessing, sharing, changing and deleting your personal data. We also address how data collection technologies help provide functionality and insight to help you fully engage with YouVersion and the Bible."
-      h6: "Politika e privatësisë"
+      h6: "Politika e Privatësisë"
       p6: "Last modified on May 25, 2018"
       p7: "Where YouVersion has provided you with a translation of the English language version of the Privacy Policy, then you agree that the translation is provided for your convenience only and that the English language versions of the Privacy Policy will govern your relationship with YouVersion. If there is any contradiction between what the English language version of the Privacy Policy says and what a translation says, then the English language version shall take precedence."
       h7: "Definitions"
@@ -120,7 +120,7 @@ sq:
       h39: "Contact Information"
       p60: "To ask questions or comment about this Privacy Policy and our privacy practices, you may contact us at: Life Covenant Church, Inc., attn.: YouVersion Support, 4600 E. 2nd St., Edmond, Oklahoma 73034, <a href=\"mailto:help@youversion.com?Subject=Privacy%20Policy\">help@youversion.com</a>."
     terms:
-      title: "Kushtet e përdorimit"
+      title: "Kushtet e Përdorimit"
       s1: "Last modified: May 25, 2018"
       s2: "Where YouVersion has provided you with a translation of the English language version of the Terms, then you agree that the translation is provided for your convenience only and that the English language versions of the Terms will govern your relationship with YouVersion. If there is any contradiction between what the English language version of the Terms says and what a translation says, then the English language version shall take precedence."
       s3: "Acceptance of these Terms"
