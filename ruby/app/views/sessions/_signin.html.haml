@@ -30,8 +30,8 @@
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
 - content_for :lower_javascript do
-  = javascript_include_tag "tupos/babel-polyfill.min", 'data-turbolinks-track' => false
-  = javascript_include_tag "tupos/OAuth.bundle", 'data-turbolinks-track' => false
+  %script{:src => "//#{ENV['SECURE_HOSTNAME']}/tupos/babel-polyfill.min.js", :type => "text/javascript"}
+  %script{:src => "//#{ENV['SECURE_HOSTNAME']}/tupos/OAuth.bundle.js", :type => "text/javascript"}
 
 .medium-centered
   .columns.medium-centered.large-11
