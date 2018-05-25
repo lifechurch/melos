@@ -5,7 +5,8 @@
            {path: user_password_path(current_user.username), string: t('users.edit password')},
            {path: user_avatar_path(current_user.username), string: t('users.edit picture')},
            {path: vod_subscriptions_path(token: params[:token]), string: t('users.vod_subscriptions')},
-           {path: delete_account_user_path(current_user.username), string: t('users.edit account_existence')}] if current_user.present?
+           {path: delete_account_user_path(current_user.username), string: t('users.edit account_existence')},
+           {path: user_download_path(current_user.username), string: t('gdpr.data')}] if current_user.present?
 
 #widget-user-settings.widget
   %h3.hd

@@ -125,6 +125,10 @@ class UsersController < ApplicationController
     render layout: "application"
   end
 
+  def download
+    @selected = :download
+    render action: "download", layout: "settings"
+  end
 
   def new_facebook
     facebook_auth = JSON.parse cookies.signed[:facebook_auth]
