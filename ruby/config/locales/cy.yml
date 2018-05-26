@@ -48,10 +48,10 @@ cy:
         many: "llai na %{count} eiliad yn ôl"
         other: "llai na %{count} eiliad yn ôl"
       over_x_years:
-        zero: "dros %{count} mlynedd yn ôl"
-        one: "over %{count} year ago"
+        zero: "over %{count} years ago"
+        one: "dros %{count} mlynedd yn ôl"
         two: "dros %{count} mlynedd yn ôl"
-        few: "dros %{count} mlynedd yn ôl"
+        few: "over %{count} years ago"
         many: "dros %{count} mlynedd yn ôl"
         other: "dros %{count} mlynedd yn ôl"
       x_days:
