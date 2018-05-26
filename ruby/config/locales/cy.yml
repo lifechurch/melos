@@ -55,14 +55,14 @@ cy:
         many: "dros %{count} mlynedd yn ôl"
         other: "dros %{count} mlynedd yn ôl"
       x_days:
-        zero: "%{count} diwrnod yn ôl"
+        zero: "%{count} days ago"
         one: "%{count} day ago"
-        two: "%{count} days ago"
+        two: "%{count} diwrnod yn ôl"
         few: "%{count} days ago"
         many: "%{count} days ago"
         other: "%{count} days ago"
       x_minutes:
-        zero: "%{count} munud yn ôl"
+        zero: "%{count} minutes ago"
         one: "%{count} minute ago"
         two: "%{count} minutes ago"
         few: "%{count} minutes ago"
