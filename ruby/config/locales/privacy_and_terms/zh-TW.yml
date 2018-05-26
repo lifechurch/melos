@@ -2,8 +2,8 @@ zh-TW:
   legal:
     privacy:
       policy: "%{youversion} 隱私政策"
-      h1: "Brief Overview"
-      p1: "Here’s a summary of what you can expect to find in our Privacy Policy, which cover all YouVersion-branded products and services:"
+      h1: "簡要概述"
+      p1: "以下是節錄自我們隱私政策內容的摘要，其中涵蓋了所有 YouVersion 的產品和服務："
       h2: "締造個人化的聖經體驗。"
       p2: "當你創建 YouVersion 帳戶或使用任何一個 YouVersion 的應用軟體或網站時，我們會收集資訊，以便提供你更獨特的個人化聖經體驗。"
       h3: "How we use your data."
