@@ -773,7 +773,7 @@
 	"notifications.comments.moments.friend.friendship.ours": "{commenter_name} also commented on your new Friendship with {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.highlight": "{commenter_name} also commented on {moment_owner_name}'s highlight: “{comment}”",
 	"notifications.comments.moments.friend.note": "{commenter_name} also commented on {moment_owner_name}'s note: “{comment}”",
-	"notifications.comments.moments.friend.owner.bookmark": "{moment_owner_name} also commented on their bookmark: ��{comment}”",
+	"notifications.comments.moments.friend.owner.bookmark": "{moment_owner_name} also commented on their bookmark: “{comment}”",
 	"notifications.comments.moments.friend.owner.friendship": "{moment_owner_name} also commented on their new friendship with {friend_name}: “{comment}”",
 	"notifications.comments.moments.friend.owner.friendship.ours": "{moment_owner_name} also commented on their new Friendship with you: “{comment}”",
 	"notifications.comments.moments.friend.owner.highlight": "{moment_owner_name} also commented on their highlight: “{comment}”",

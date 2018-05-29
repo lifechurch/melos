@@ -779,7 +779,7 @@
 	"notifications.comments.moments.friend.owner.highlight": "{moment_owner_name} também comentou este destaque: “{comment}”",
 	"notifications.comments.moments.friend.owner.note": "{moment_owner_name} também comentou esta anotação: “{comment}”",
 	"notifications.comments.moments.friend.owner.plan_activity": "{moment_owner_name} também comentou este Plano: “{comment}”",
-	"notifications.comments.moments.friend.owner.plan_activity.push": "{moment_owner_name} também comentou este Plano Bíblico: ���{comment}”",
+	"notifications.comments.moments.friend.owner.plan_activity.push": "{moment_owner_name} também comentou este Plano Bíblico: “{comment}”",
 	"notifications.comments.moments.friend.plan_activity": "{commenter_name} também comentou no Plano de {moment_owner_name}: “{comment}”",
 	"notifications.comments.moments.friend.plan_activity.push": "{commenter_name} também comentou no Plano Bíblico de {moment_owner_name}: “{comment}”",
 	"notifications.friendships.accept": "{name} aceitou seu pedido de amizade",
