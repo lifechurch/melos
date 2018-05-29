@@ -810,16 +810,16 @@
 	"notifications.plans_with_friends_update_start_date": "{name} 已將「{title}」這個計畫的開始日期改為 {date}。",
 	"notifications.comments.moment.mine.badge": "{name} 評論了你的徽章：「{comment}」",
 	"notifications.comments.moments.friend.badge": "{commenter_name} 也評論了 {moment_owner_name} 的徽章：「{comment}」",
-	"notifications.comments.moments.friend.owner.badge": "{moment_owner_name} 也評論了自己���徽章：「{comment}」",
+	"notifications.comments.moments.friend.owner.badge": "{moment_owner_name} 也評論了自己的徽章：「{comment}」",
 	"notifications.likes.moment.mine.badge": " {name} 讚了你的 {title} 徽章。",
 	"notifications.moments.create.badge": "{name} 獲得了 {title} 徽章。",
 	"share.find_friends.invite_email_html": "<p>嗨！</p><p>我想跟你分享我目前在使用著的 YouVersion 聖經軟體。如果你沒試過這個應用程序，它是將聖經的內涵與真理納入日常生活的一種簡單方法。 </p><p><strong>下載聖經軟體：</strong> 在你的智慧型手機或平板電腦上閱讀、觀賞、聆聽，以及分享。你也可以在 Bible.com 線上使用同樣的功能。</p><p><strong>設立你的帳戶：</strong> 訂閱聖經計畫，並在不同的設備上存取你的書籤、醒目標示，以及筆記。</p><p><strong>添加朋友 （我就是人選之一！）：</strong> 與你關注的人一起探索與討論聖經。</p><p>一切都在聖經軟體裡— 就從這裡開始吧： </p>",
-	"share.invite_email_body": "嗨！\n\n我想跟你分享我目前在使用著的 YouVersion 聖經軟體。如果你沒試過這個應用程序，它是將聖經的內涵與真理納入日常生活的一種簡單方法。\n\n下載聖經軟體：在你的智慧型手機或平板電腦上閱讀、觀賞、聆聽，以及分享。你也可以在 Bible.com 線���使用同樣的功能。\n\n設立你的帳戶：訂閱聖經計畫，並在不同的設備上存取你的書籤、醒目標示，以及筆記。\n\n添加朋友（我就是人選之一！）：與你關注的人一起探索與討論聖經。\n\n一切都在聖經軟體裡——就從這裡開始吧： ",
+	"share.invite_email_body": "嗨！\n\n我想跟你分享我目前在使用著的 YouVersion 聖經軟體。如果你沒試過這個應用程序，它是將聖經的內涵與真理納入日常生活的一種簡單方法。\n\n下載聖經軟體：在你的智慧型手機或平板電腦上閱讀、觀賞、聆聽，以及分享。你也可以在 Bible.com 線上使用同樣的功能。\n\n設立你的帳戶：訂閱聖經計畫，並在不同的設備上存取你的書籤、醒目標示，以及筆記。\n\n添加朋友（我就是人選之一！）：與你關注的人一起探索與討論聖經。\n\n一切都在聖經軟體裡——就從這裡開始吧： ",
 	"share.invite_email_subject": "你有使用聖經軟體嗎？",
 	"share.invite_facebook": "我喜歡聖經軟體！它真的使聖經成為我日常生活的一部分。聖經軟體能讓我醒目顯示經文、聆聽語音聖經、創建筆記、跟進靈修計畫......甚至觀賞視訊！請現在就去下載（完全免費的）：",
 	"share.invite_facebook_direct": "你有使用聖經軟體嗎？我很喜歡用，猜想你也會喜歡。這是聖經軟體的鏈結:",
 	"share.invite_sms": "我非常喜愛 YouVersion 推出的聖經軟體。我想你也會喜愛它的：",
 	"share.invite_sms_prefix": "來自 {name}:",
 	"share.invite_twitter": "我將 @YouVersion 的聖經軟體長駐在我的主熒幕上。無論是閱讀、觀看視訊、聆聽音訊或分享經文... 全都在一個免費的程序裡:",
-	"share.invite_twitter_direct": "你有 @YouVersion 的聖經軟體嗎？我很喜歡用���猜想你也會喜歡。這是聖經軟體的鏈結:"
+	"share.invite_twitter_direct": "你有 @YouVersion 的聖經軟體嗎？我很喜歡用，猜想你也會喜歡。這是聖經軟體的鏈結:"
 }
