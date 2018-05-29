@@ -140,7 +140,7 @@
 -# Note Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-note.tpl.html'}
-  %p.moment-no-note-text {{data.object.content}}
+  %p.moment-no-note-text{"ng-bind-html" => "data.object.content"}
 
 -#
 -# Plan Complete Moment
