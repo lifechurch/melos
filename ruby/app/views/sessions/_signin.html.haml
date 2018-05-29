@@ -1,3 +1,26 @@
+-content_for :lower_javascript do
+  %script{type:'text/javascript'}
+    !='window.YV_API_HOST = "' + ENV['SECURE_HOSTNAME'] + '"'
+    = if Cfg.nodejs_api_port.present?
+      != 'window.YV_API_PORT = "' + Cfg.nodejs_api_port + '"'
+  :javascript
+    var signInForm = document.getElementById('signin_form');
+    signInForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var username = document.getElementById('signin-username').value;
+      var password = document.getElementById('signin-password').value;
+      var response = OAuth.getToken({ username: username, password: password }).then(function(response) {
+        signInForm.submit();
+      }, function(err) {
+        console.error(err);
+        signInForm.submit();
+      });
+
+      return false;
+    });
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"
 
 :ruby
   hillsong_campaign = (params[:campaign] == "2") || (params[:redirect].present? and params[:redirect].downcase.include? "campaign=2")
@@ -5,6 +28,10 @@
 
 - if @user and @user.invalid?
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
+
+- content_for :lower_javascript do
+  %script{:src => "//#{ENV['SECURE_HOSTNAME']}:#{Cfg.nodejs_api_port}/tupos/babel-polyfill.min.js", :type => "text/javascript"}
+  %script{:src => "//#{ENV['SECURE_HOSTNAME']}:#{Cfg.nodejs_api_port}/tupos/OAuth.bundle.js", :type => "text/javascript"}
 
 .medium-centered
   .columns.medium-centered.large-11
@@ -20,18 +47,20 @@
       %p= "Thank you for partnering with Hillsong Conference, SPHERES and YouVersion to help ensure that EVERYONE can experience the transforming power of the Bible in their own heart language."
       %br
 
+    = render partial: 'shared/gdpr_signup'
     = render partial: 'shared/facebook_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
     = render partial: 'shared/google_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
+
     %hr
     = form_tag sign_in_path(source: params[:source], redirect: params[:redirect]), id: "signin_form" do
       %p
         .alt-path.terms= t('users.sign in alternate', sign_up_path: sign_up_path).html_safe
       %p
         = label_tag :username, t("users.email address")
-        = text_field_tag :username, params[:username] || cookies.signed[:b], {class: "autofocus"}
+        = text_field_tag :username, params[:username] || cookies.signed[:b], :id => "signin-username", :class => "autofocus"
       %p
         = label_tag :password, t("password prompt")
-        = password_field_tag :password, params[:password], :maxlength=>"32"
+        = password_field_tag :password, params[:password], :maxlength=>"32", :id => "signin-password"
         %span.terms= link_to t('users.forgot password'), forgot_password_path, { target: "_self" }
       %br
       %p

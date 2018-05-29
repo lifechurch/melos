@@ -266,6 +266,8 @@ YouversionWeb::Application.routes.draw do
   post "/users/:user_id/reading-plans/save-for-later", to: "subscriptions#saveForLater"
   post "/users/:user_id/reading-plans/remove-saved", to: "subscriptions#removeSaved"
 
+  match "/users/:user_id/download" =>  "users#download", :as => "user_download"
+
   # featuredplans.youversion.com use this link.
   # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
   match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
