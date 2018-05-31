@@ -227,6 +227,12 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/ms/kids"
     facebook_locale = "ms"
     youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("pt-PT")) then
+    i18n_css_class = "pt-PT"
+    i18n_image_dir = "/pt-PT"
+    meta_url = "#{request.protocol}#{request.host_with_port}/pt-PT/kids"
+    facebook_locale = "pt-PT"
+    youtube_url = ""
   end
 
 
@@ -252,6 +258,7 @@
     %meta{property: "og:locale:alternate", content: "zh_CN"}
     %meta{property: "og:locale:alternate", content: "zh_TW"}
     %meta{property: "og:locale:alternate", content: "pt_BR"}
+    %meta{property: "og:locale:alternate", content: "pt_PT"}
     %meta{property: "og:locale:alternate", content: "ru_RU"}
     %meta{property: "og:locale:alternate", content: "nl_NL"}
     %meta{property: "og:locale:alternate", content: "de_DE"}
@@ -300,6 +307,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-TW/kids",:rel=>"alternate",:hreflang=>"zh-tw"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/kids",:rel=>"alternate",:hreflang=>"pt-br"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/kids",:rel=>"alternate",:hreflang=>"pt-pt"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ru/kids",:rel=>"alternate",:hreflang=>"ru"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/nl/kids",:rel=>"alternate",:hreflang=>"nl"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/de/kids",:rel=>"alternate",:hreflang=>"de"}
@@ -349,7 +357,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro") or I18n.locale.to_s.eql?("fi") or I18n.locale.to_s.eql?("zh-HK") or I18n.locale.to_s.eql?("sv") or I18n.locale.to_s.eql?("uk")  or I18n.locale.to_s.eql?("el") or I18n.locale.to_s.eql?("bn") or I18n.locale.to_s.eql?("no") or I18n.locale.to_s.eql?("mn") or I18n.locale.to_s.eql?("zu") or I18n.locale.to_s.eql?("ta") or I18n.locale.to_s.eql?("sw") or I18n.locale.to_s.eql?("ms"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("pt-PT") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro") or I18n.locale.to_s.eql?("fi") or I18n.locale.to_s.eql?("zh-HK") or I18n.locale.to_s.eql?("sv") or I18n.locale.to_s.eql?("uk")  or I18n.locale.to_s.eql?("el") or I18n.locale.to_s.eql?("bn") or I18n.locale.to_s.eql?("no") or I18n.locale.to_s.eql?("mn") or I18n.locale.to_s.eql?("zu") or I18n.locale.to_s.eql?("ta") or I18n.locale.to_s.eql?("sw") or I18n.locale.to_s.eql?("ms"))
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
