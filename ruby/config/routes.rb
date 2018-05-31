@@ -76,6 +76,7 @@ YouversionWeb::Application.routes.draw do
   get "/ben/kids",		to: "redirects#ben_kids"
   get "/watoto",		to: "redirects#watoto"
   get "/hvvhdvvd",       to: "redirects#hvvhdvvd"
+  get "/hvvdvvd",       to: "redirects#hvvdvvd"
 
 	get "/unsubscribe", to: "notifications#unsubscribe"
 	get "/unsubscribe/manage", to: "notifications#manage_notifications"
