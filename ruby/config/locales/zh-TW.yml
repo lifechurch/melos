@@ -783,8 +783,8 @@ zh-TW:
       featured plans: "精選計畫"
       view all plans: "查看全部計畫"
       reading: "個閱讀內容"
-      readings: "個閱讀內容"
-      readings 5 or more: "個閱讀內容"
+      readings: "閱讀內容"
+      readings 5 or more: "閱讀內容"
     stats:
       friends reading:
         other: "%{count} 位朋友訂閱了此計畫"
@@ -1420,8 +1420,8 @@ zh-TW:
         featured plans: "精選計畫"
         view all plans: "查看全部計畫"
         reading: "個閱讀內容"
-        readings: "個閱讀內容"
-        readings 5 or more: "個閱讀內容"
+        readings: "閱讀內容"
+        readings 5 or more: "閱讀內容"
       stats:
         friends reading:
           other: "%{count} 位朋友訂閱了此計畫"
