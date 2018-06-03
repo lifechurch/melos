@@ -506,7 +506,7 @@ zh-TW:
     no community notes: "未找到任何有參考經文的社群筆記。要建立筆記，請在聖經閱讀器裡選擇一個經節，然後在頂部點選【選定】按鈕。"
     public: "公開"
     private: "保密"
-    is private: "你想要訪問的筆記已被保護。"
+    is private: "你想要訪問的筆記是保密的。"
     draft: "草稿"
     friends: "朋友"
     creation form errors: "以下錯誤使你無法建立筆記："
