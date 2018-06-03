@@ -262,7 +262,7 @@ zh-CN:
     limit description: "将圣经软件上的朋友关系限定在熟悉的人之间，这有助于创造一个坦诚对话和彼此信任的氛围。"
   groups: "群组"
   mobile: "移动应用"
-  live: "互动"
+  live: "现场"
   events:
     events: "互动"
     menu:
@@ -1585,7 +1585,7 @@ zh-CN:
         status:
           published: "已经发布"
           draft: "草稿"
-          live: "互动"
+          live: "现场"
           archived: "已归档"
         unpublish: "解除发布"
         saving: "正在保存……"
