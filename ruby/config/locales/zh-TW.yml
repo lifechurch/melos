@@ -431,9 +431,9 @@ zh-TW:
       start plan: "開始計畫"
   likes:
     create success: "成了！你的點讚已經儲存。"
-    create failure: "你的讚不能被保存"
+    create failure: "你的點讚不能被保存"
     destroy success: "讚已被刪除"
-    destroy failure: "你的讚不能被刪除"
+    destroy failure: "你的點讚不能被刪除"
   comments:
     view all N:
       other: "查看所有%{count}條評語"
