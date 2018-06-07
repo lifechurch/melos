@@ -538,7 +538,7 @@ tl:
     delete: "Burahin ang Talang Ito"
     confirm delete: "Oo, sigurado ako."
     write new: "Gumawa ng Bagong Tala"
-    not found: "Sa Youversion, maaari mong dagdagan ng mga video, audio, larawan, tala, at mga link sa ibang mga website ang mga talata o kabanata ng Biblia. Ito ang iyong paraan upang maging bahagi ng komunidad ng Youversion, sa pamamagitan ng pagbabahagi ng iyong natututunan at saloobin mula sa pagbabasa ng Kasulatan. Magsimula na sa pamamagitan nang pagpili ng (mga) talata mula sa Bible reader at pagdagdag ng iyong tala. Ganyan lang kadali."
+    not found: "Sa Youversion, maaari mong dagdagan ng mga video, audio, larawan, tala, at mga link sa ibang mga website ang mga bersikulo o serye ng Biblia. Ito ay isang paraan upang makibahagi sa komunidad ng Youversion sa pamamagitan ng pagbabahagi ng iyong mga natututunan at saloobin mula sa pakikilahok sa Kasulatan. Magsimula ngayon sa pamamagitan ng pagpili ng (mga) talata mula sa Bible reader at pagdagdag ng iyong tala. Ganyan lamang kadali."
     cancel: "Itigil"
     pop out: "Pop out"
     none found: "Walang makitang mga tala..."
