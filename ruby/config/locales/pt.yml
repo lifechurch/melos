@@ -170,8 +170,8 @@ pt:
   share error: "Desculpe, houve um erro ao compartilhar a sua mensagem. Por favor, tente novamente."
   share:
     request:
-      no_twitter_connection: "Voce não tem conta ativa de Facebook. Favor conectar através da pagina de configurações."
-      no_facebook_connection: "Voce não tem conta ativa de Facebook. Favor conectar através da página de configurações."
+      no_twitter_connection: "Voce não tem uma conta ativa de Facebook. Favor conectar através da pagina de configurações."
+      no_facebook_connection: "Voce não tem uma conta ativa de Facebook. Favor conectar através da página de configurações."
   google plus: "Google+"
   connect to: "Conectar à sua %{connection} conta"
   deleted connection: "Sua conexão foi removida com sucesso %{connection}."
