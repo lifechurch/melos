@@ -306,7 +306,7 @@ tl:
     module 4 title: "Module ng Web Links"
     module 4 text: "Ilapit ang iyong mga tagapakinig sa isang tapik upang magbigay online, mag-boluntaryo o makita ang home page ng inyong simbahan. Maglagay ng link sa anumang panlabas na website sa loob mismo ng iyong Kaganapan."
     module 5 title: "Module ng larawan"
-    module 5 text: "Bigyang-buhay ang iyong Kaganapan sa pamamagitan ng mga larawan, litrato, Verse images at iba pa. Madaling maibabahagi ng mga manlalahok ang mga larawan mula sa iyong Kaganapan sa kani-kanilang mga social media, at magiging viral ang iyong mensahe."
+    module 5 text: "Bigyang-buhay ang iyong Kaganapan sa pamamagitan ng mga larawan, litrato, mga Bersikulong Larawan at iba pa. Madaling maibabahagi ng mga manlalahok ang mga images mula sa iyong Kaganapan sa kanilang mga social media accounts, nang lalong maikalat sa maraming iba pa."
     module 6 title: "Module para sa Patalastas"
     module 6 text: "Ipamahagi ang lahat ng iyong mga napapanahon at mahalagang kaganapan: balita sa simbahan, mga nalalapit na kaganapan, programa, klase, mga gawaing boluntaryo at misyon, at iba pa, sa madaling paraan."
     module 7 title: "Lokasyon at Oras"
@@ -496,12 +496,12 @@ tl:
     none user: "%{username} ay wala pang nagawang mga larawan."
     blank slate:
       heading: "Wala ka pang mga larawan"
-      description: "Gamitin ang YouVersion mobile app para gumawa ng verse images."
+      description: "Gamitin ang YouVersion mobile app para gumawa ng larawang bersikulo."
   notes:
     none user: "Si %{username} ay wala pang mga tala."
     blank slate:
       heading: "Wala ka pang mga tala"
-      description: "Sa pagbabasa mo ng Biblia, kapag naramdaman mong nangungusap sa iyo ang Diyos, maari mong isulat ang iyong mga saloobin dito. Ang iyong mga tala ay mamarkahan bilang <em>pribado</em>. Kung nais mong magbahagi ng tala sa iyong mga kaibigan, maaari mo itong buksan at gawing <em>pampubliko</em>."
+      description: "Sa pagbabasa mo ng Biblia, kapag naramdaman mong nangungusap sa iyo ang Diyos, maaari mong isulat ang iyong mga saloobin dito. Ang iyong mga tala ay mamarkahan bilang <em>pribado</em> by default. Kung nais mong magbahagi ng tala sa iyong mga kaibigan, maaari mo itong buksan at gawing <em>pampubliko</em>."
     form:
       title field: "Pamagat:"
       content field: "Nilalaman:"
@@ -968,7 +968,7 @@ tl:
     benefits blurb: "Sa paggawa ng YouVersion account, magkakaroon ka ng access sa ibang tampok tulad ng mga bookmark at mga tala. Makikita mo ang mga ito sa anumang aparato kung naka-sign in. Madali ding magbahagi ng Biblia sa iyong mga kaibigan, kaya sign up na!"
     plan blurb: "Mukhang gusto mong mag-umpisa ng Reading Plan. Matutulungan ka nitong gawin ang Biblia bilang bahagi ng iyong pang araw-araw na buhay. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
     bookmark blurb: "Mukhang gusto mong gumamit ng bookmark. Magaling! Matutulungan ka nitong makita ang mga talata na nais mong tandaan, ibahagi o kaya ay markahan bilang paborito. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
-    friends blurb: "Mukhang gusto mong makipag-ugnayan sa mga Kaibigan. Magandang ideya! Magagawa mong maibahagi ang iyong napag-aaralan at makipagtulungan sa bawat isa para manatili sa iyong plano. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
+    friends blurb: "Mukhang gusto mong makipag-ugnayan sa mga Kaibigan. Magandang ideya! Magagawa mong maibahagi ang iyong napag-aaralan at matulungan ang bawat isa na makasunod sa mga layunin sa pagbabasa. Magsign-in o gumawa ng account sa ibaba nang makapagsimula ka na!"
     share blurb: "Mukhang nais mong ibahagi ang Salita ng Diyos. Magaling! Maari mo itong gawin sa pamamagitan ng Facebook o Twitter. Mag-sign in lamang o gumawa ng account sa ibaba upang makapagsimula!"
     highlight blurb: "Mukhang nais mong i-highlight ang kasulatan. Mabuti! Ang mga ito ay makakatulong mag-organisa at magtanda ng mga paboritong berso. Sign in o gumawa ng account sa ibaba at simulan!"
     note blurb: "Mukhang nais mong magtala tungkol sa kasulatan. Mabuti! Ang mga tala ay maaring makatulong sa pag-alala o pag-organisa ng katotohanang iyong madidiskubre sa Salita ng Diyos. Sign in o gumawa ng account sa ibaba at simulan!"
@@ -1143,14 +1143,14 @@ tl:
         action: "Tingnan ang mga Salin ng Biblia"
       make_yours:
         title: "Gawing iyo ang Biblia"
-        body: "I-highlight o Tandaan ang mga paboritong taludtod, gumawa ng verse images na maibabahagi, at maipapadala sa publiko o bilang pribadong Tala sa mga sipi ng Biblia."
+        body: "I-highlight o lagyan ng Pananda ang iyong mga paboritong bersikulo, gumawa ng Bersikulong Larawang maibabahagi, at magdagdag ng pampubliko o pampribadong mga Tala sa mga sipi ng Biblia."
         action: "Gumawa ng Libreng Account"
       install_now:
         title: "I-install ang App"
         body: "Ang Bible App ay libre, walang patalastas at in-app purchases. Na-install na ito sa iba't-ibang aparato (sa kasalukuyan):"
         action: "I-download ang Libreng Bible App"
       free_plans:
-        title: "Libreng Babasahin at Devotionals"
+        title: "Mga Libreng Babasahing Gabay at Debosyonal"
         body: "Ang mga Babasahin ay makatutulong sa iyong makilahok sa Salita ng Diyos araw-araw, paunti-unti."
       browse_plans: "Tingnan ang mga Babasahin"
       read_listen: "Magbasa, Makinig, Manuod, Magbahagi"
@@ -1719,7 +1719,7 @@ tl:
                   desc: "Ang mga link sa mga Babasahing Gabay at Debosyonal na may kaugnayan sa iyong mga punto ng pagtuturo, na tumutulong sa iyong mga tagapakinig na patuloy na makilahok sa Salita ng Diyos sa buong linggo."
                 image:
                   title: "Module ng larawan"
-                  desc: "Bigyan ng buhay ang iyong Kaganapan gamit ang kahit na anong imaheng magbibigay linaw dito: mga serye ng larawan, mga larawang may bersikulo, at iba pa. Madaling maipapamahagi ng iyong mga manlalahok ang mga larawang ito sa mga social media, at sa gayon ito ay maikalat sa maraming iba pa."
+                  desc: "Bigyan ng buhay ang iyong Kaganapan gamit ang kahit na anong imaheng magbibigay linaw rito: mga serye ng larawan, mga Bersikulong Larawan, at iba pa. Madaling maipapamahagi ng iyong mga manlalahok ang mga larawang ito sa social media, nang sa gayon ay maikakalat ito sa maraming pang iba."
                 link:
                   title: "External Link Module"
                   desc: "Maglagay ng pindutan na magkokonekta sa kahit na anong Eksternal na website. Sa isang klik lang ang iyong mga manlalahok ay may pagkakataon na magbigay, mag-boluntaryo o puntahan ang website ng inyong iglesya."
@@ -1903,7 +1903,7 @@ tl:
       sign up alternate: "May account na? <a href='%{sign_in_path}' target='_self'>Mag-sign In</a>"
       plan blurb: "Mukhang gusto mong mag-umpisa ng Reading Plan. Matutulungan ka nitong gawin ang Biblia bilang bahagi ng iyong pang araw-araw na buhay. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
       bookmark blurb: "Mukhang gusto mong gumamit ng bookmark. Magaling! Matutulungan ka nitong makita ang mga talata na nais mong tandaan, ibahagi o kaya ay markahan bilang paborito. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
-      friends blurb: "Mukhang gusto mong makipag-ugnayan sa mga Kaibigan. Magandang ideya! Magagawa mong maibahagi ang iyong napag-aaralan at makipagtulungan sa bawat isa para manatili sa iyong plano. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
+      friends blurb: "Mukhang gusto mong makipag-ugnayan sa mga Kaibigan. Magandang ideya! Magagawa mong maibahagi ang iyong napag-aaralan at matulungan ang bawat isa na makasunod sa mga layunin sa pagbabasa. Magsign-in o gumawa ng account sa ibaba nang makapagsimula ka na!"
       share blurb: "Mukhang nais mong ibahagi ang Salita ng Diyos. Magaling! Maari mo itong gawin sa pamamagitan ng Facebook o Twitter. Mag-sign in lamang o gumawa ng account sa ibaba upang makapagsimula!"
       highlight blurb: "Mukhang nais mong i-highlight ang kasulatan. Mabuti! Ang mga ito ay makakatulong mag-organisa at magtanda ng mga paboritong berso. Sign in o gumawa ng account sa ibaba at simulan!"
       note blurb: "Mukhang nais mong magtala tungkol sa kasulatan. Mabuti! Ang mga tala ay maaring makatulong sa pag-alala o pag-organisa ng katotohanang iyong madidiskubre sa Salita ng Diyos. Sign in o gumawa ng account sa ibaba at simulan!"
@@ -1912,7 +1912,7 @@ tl:
       read reference: "Basahin %{reference}"
       read chapter: "Basahin ang buong kabanata"
       plan title: "Mga Libreng Babasahing Gabay at Debosyonal"
-      plan title ref: "Libreng mga Babasahin at Debosyonal na may kaugnayan sa %{reference}"
+      plan title ref: "Mga Libreng Babasahing Gabay at Debosyonal na may kaugnayan sa %{reference}"
       plan subtitle: "Pinadadali ng mga Bible Plan ang pagbabasa mo ng Banal na Kasulatan sa pamamagitan ng paghahati-hati nito sa maliliit na bahagi. Ang mga babasahin ay kalimitang may kasamang  debosyonal, audio, o piling video. Tawagin mo man itong Bible Plans, mga Babasahing Gabay, o Debosyonal, ang mga Babasahin ay subok na mabisang paraan upang maging bahagi ng iyong pang-araw-araw na buhay ang Biblia."
       meta:
         mobile:
