@@ -1043,8 +1043,8 @@ sq:
     banner action: "Shkarko"
     banner open: "Hap"
   download bafk ad:
-    title: "Shkarko Programin e Biblës për Fëmijë"
-    description copy: "Programi i Biblës për Fëmijë është një mënyrë e mrekullueshme që fëmijët tuaj të mësojnë historitë biblike rreth Jezusit."
+    title: "Shkarko Bible App for Kids"
+    description copy: "Bible App for Kids është një mënyrë e mrekullueshme që fëmijët tuaj të mësojnë historitë biblike rreth Jezusit."
     download: "Shkarko tani"
   about page:
     relevancy: "Përshtatshmëri"
