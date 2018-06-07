@@ -9,7 +9,7 @@ hu:
     app store: "Elérhető az App store-on"
     google play: "Szerezd meg a Google Play-en"
     amazon: "Elérhető az androidos Amazon Appstore-on"
-    app icon: "App icon for The Bible App for Kids"
+    app icon: "Biblia gyerekeknek ikonja"
     jesus and friends: "Jézus és barátok"
     interact text: "Kapcsolódj interaktívan a Bibliához és meglátod, hogy életre kel."
     story text 1: "Az Éden kertje"
@@ -28,7 +28,7 @@ hu:
       facebook description: "A Biblia gyerekeknek megérkezett! Töltsd le az ingyenes applikációt iOS-re és Android-ra még ma: interaktív bibliai történetek segítenek gyermekednek tanulni, játszani és nőni Isten Igéjében. www.bible.com/kids"
       facebook link: "http://www.bible.com/kids"
       facebook redirect: "http://www.bible.com/kids"
-      twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
+      twitter description: "A Biblia gyerekeknek a @YouVersion-től megérkezett! Szórakoztató és teljesen ingyenes. Letöltés: bible.com/kids"
       twitter hashtags: "gyermekbiblia"
       email: "E-mail"
       email subject: "A Gyermekbiblia alkalmazás megérkezett!"
@@ -45,4 +45,4 @@ hu:
     best kids app: "Legjobb app gyerekeknek!"
     kids_app:
       title: "Gyermekbiblia alkalmazás"
-      description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+      description: "A Biblia gyerekeknek használata nagyszerű lehetőség arra, hogy gyermekeid bibliai történeteket ismerjenek meg Jézusról, az örök élet ajándékáról és számos más tanításról, melyeket Isten ad nekünk. Ebben az interaktív élményben a gyermekek elragadó képek segítségével, közvetlenül léphetnek kapcsolatba Isten Igéjével, miközben az olvasással és kincsek gyűjtésével pontokat szerezhetnek."
