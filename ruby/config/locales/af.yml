@@ -1031,9 +1031,9 @@ af:
     zip: "Poskode"
     creation form errors: "Die volgende fout(e) het verhoed dat jy 'n donasie kon maak:"
   download ad:
-    title: "Laai die Gratis Bible App af"
+    title: "Laai die Gratis Bybel Toep af"
     description copy: "Honderde vertalings in %{language_count} + verskillende tale - die Bybel wat oral saam met jou gaan."
-    meta copy title: "Laai die Gratis Bible App af"
+    meta copy title: "Laai die Gratis Bybel Toep af"
     meta copy versions: "Honderde weergawes in %{language_count}+ ander tale"
     line 1: "Honderde weergawes in 100+"
     line 2: "verskillende tale - die Bybel wat"
@@ -1043,8 +1043,8 @@ af:
     banner action: "Aflaai"
     banner open: "Maak oop"
   download bafk ad:
-    title: "Laai die Bible App vir Kinders af"
-    description copy: "Die Bible App vir Kinders is 'n goeie manier vir jou kinders om Bybelse stories oor Jesus te leer ken."
+    title: "Laai die Bybel App vir Kinders af"
+    description copy: "Die Bybel Toep vir Kinders is 'n goeie manier vir jou kinders om Bybelse stories oor Jesus te leer ken."
     download: "Laai Nou Af"
   about page:
     relevancy: "Toepaslikheid"
@@ -1072,14 +1072,14 @@ af:
     now title: "Vandag in die YouVersion Gemeenskap"
     resources:
       now: "'n Lewendige kykie na betrokkenheid en die laaste data"
-      about: "Oor YouVersion en The Bible App"
+      about: "Oor YouVersion en Die Bybel Toep"
       history: "YouVersion Geskiedenis en Statistieke"
       manual: "YouVersion Produk Handleiding"
     images title: "YouVersion Etikette en Beelde"
     images:
       logos: "YouVersion Etikette Pak"
-      icons: "Bible App Ikone"
-      infographic: "Infografies: Bible App Statistieke  en Gebruik"
+      icons: "Die Bybel Toep Ikone"
+      infographic: "Infografies: Die Bybel Toep Statistieke en Gebruik"
       devices: "Beeldversameling: toestelle"
       lifestyle: "Prentjie Versameling: Lifestyle"
       screencast: "YouVersion Skerm-opname"
@@ -1148,7 +1148,7 @@ af:
       install_now:
         title: "Installeer die Toep Nou"
         body: "Die Bybel Toep is heeltemal gratis, met geen advertensie of aankoop opsies nie. Huidiglik is dit al op so baie toestelle geïnstalleer:"
-        action: "Laai die Gratis Bible App af"
+        action: "Laai die Gratis Bybel Toep af"
       free_plans:
         title: "Gratis Leesplanne en Oordenkings"
         body: "Bybelplanne help jou om elke dag in God se Woord te delf, 'n kort stukkie op 'n keer."
