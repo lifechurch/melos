@@ -139,11 +139,11 @@ af:
       description: "Die Bybel Toep is amper 'n 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal. Maar ons begin nou eers. Laai die gratis Bybel Toep vandag af - en deel dan die toep met jou vriende. Help ons om saam geskiedenis te maak."
     mobile:
       title: "Die Bybel Toep"
-      description: "Lees God se Woord enige tyd, enige plek met behulp van die YouVersion Bybel App. Deel die Skrif met vriende, belig en boekmerk die gedeeltes, en skep `n daglikse gewoonte met Bybel Planne, Beskikbaar vir iOS, Android, Blackberry, Windows Foon en meer."
+      description: "Lees God se Woord enige tyd, enige plek met behulp van die YouVersion Bybel Toep. Deel die Skrif met vriende, belig en boekmerk gedeeltes, en skep`n daaglikse gewoonte met Bybelplanne. Beskikbaar vir iOS, Android, Blackberry, Windows Foon en meer."
       download or read: "Laai nou af of lees aanlyn"
     site:
       title: "Bible.com"
-      description: "Bring die skoonheid van die waarheid van die Bybel in die alledagse lewe. Met die YouVersion Bybel App, kan jy lees, kyk, en deel op jou slimfoon of tablet, en aanlyn op Bybel.com."
+      description: "Bring die skoonheid van die waarheid van die Bybel in die alledaagse lewe. Met die YouVersion Bybel Toep, kan jy lees, kyk, en deel op jou slimfoon of tablet, en aanlyn op Bybel.com."
     connections:
       index:
         title: "Gekoppelde Rekeninge"
@@ -271,7 +271,7 @@ af:
       heading: "Nie huidiglik vriende nie"
       description: "Jy moet bevriend wees met hierdie persoon om sy vriende te kan sien."
     limit notice: "Jy het soveel as 150 vriende"
-    limit description: "Die beperking van jou Bybel Toep vriendskappe tot slegs mense wat jy goed ken, skep 'n omgewing vir eerlike gesprekke en gedeeldee ontdekkings met betroubare vriende."
+    limit description: "Die beperking van jou Bybel Toep vriendskappe tot slegs mense wat jy goed ken, skep 'n omgewing vir eerlike gesprekke en gedeelde ontdekkings met betroubare vriende."
   groups: "Groepe"
   mobile: "Mobiele Apps"
   live: "Lewendig"
@@ -1097,7 +1097,7 @@ af:
     t2: "Hoog Aanbeveel"
     t2 copy: "Ek is lief vir die manier waarop jy met vriende kan konnekteer en die lees planne is uitstekend. Die toepassing help my ook om konstant te bly in my lees want dit het herrineringe vir die planne. Dit gee my altyd 'n ander manier om nader te kom aan God. Laai die af en lees elke dag!"
     t3: "Wonderlike app."
-    t3 copy: "Fantastiese app met 'n wye verskeidenheid van Bybels om van te kies... Die klank Bybels is ook wonderlik en maklik om te verstaan."
+    t3 copy: "Fantastiese toep met 'n wye verskeidenheid van Bybels om van te kies... Die oudio-Bybels is ook wonderlik en maklik om te verstaan."
     t4: "Briljant. Verbeter altyd!"
     t4 copy: "Baie vertalings en tale beskikbaar en baie wat afgelaai kan word om aflyn te lees. Baie nuttige funksies, soos die vermoë om notas en boekmerke te skep."
     t5: "Die beste Bybel toepassing ooit!"
@@ -1108,7 +1108,7 @@ af:
     t7 copy: "Helps me to read the bible more. Verlief op die soek en deel funksies en die verskeidenheid maniere om te deel. Hou ook van die klank weergawes."
     t8: "Great app"
     t8 copy: "Hierdie is 'n briljante hulpmiddel om verskillende weergawes te bestudeer. Dit is ook gerieflik wanneer jy in die kar na die bybel wil luister terwyl jy bestuur."
-    t9: "Beste Bybel app!"
+    t9: "Beste Bybel toep!"
     t9 copy: "Die is die beste bybel toepassing wat bestaan. Dit het die Woord in verskillende tale en weergawes vir aflyn en aanlyn gebruik. Dit het dagstukkies vir alles waaraan jy kan dink. Jy kan met ander koppel en eindelik meer leer oor God en Sy Woord."
     version list: "Oor 1000 Bybel weergawes insluitend:"
     audio version list: "Luister na Bybel klank weergawes insluitend:"
@@ -1147,7 +1147,7 @@ af:
         action: "Skep Jou Gratis Rekening"
       install_now:
         title: "Installeer die Toep Nou"
-        body: "Die Bybel Toep is heeltemal gratis, met geen advertensie of aankoop opsies nie. Huidiglik is dit al op so baie toestelle geïnstalleer:"
+        body: "Die Bybel Toep is heeltemal gratis, met geen advertensie of aankoop opsies nie. Tans is dit al op baie toestelle geïnstalleer:"
         action: "Laai die Gratis Bybel Toep af"
       free_plans:
         title: "Gratis Leesplanne en Oordenkings"
