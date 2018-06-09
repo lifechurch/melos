@@ -880,7 +880,7 @@ pt:
     do you want to reset: "Deseja refazer?"
     catch up text: "Reverta a leitura de hoje para a última leitura concluída (dia %{last_completed_day} do plano)."
     catch up description only: "Se você se atrasar nas suas leituras, não se preocupe! Você sempre pode voltar para a sua última leitura concluída."
-    catch me up: "Manter-me em Dia"
+    catch me up: "Ficar em Dia"
     restart description: "Você pode reiniciar o seu plano. Todo o seu histórico e progresso de leitura será redefinido e reiniciado do começo."
     restart: "Reiniciar o Plano"
     privacy description:
@@ -1519,7 +1519,7 @@ pt:
       do you want to reset: "Deseja refazer?"
       catch up text: "Reverta a leitura de hoje para a última leitura concluída (dia %{last_completed_day} do plano)."
       catch up description only: "Se você se atrasar nas suas leituras, não se preocupe! Você sempre pode voltar para a sua última leitura concluída."
-      catch me up: "Manter-me em Dia"
+      catch me up: "Ficar em Dia"
       restart description: "Você pode reiniciar o seu plano. Todo o seu histórico e progresso de leitura será redefinido e reiniciado do começo."
       restart: "Reiniciar o Plano"
       privacy description:
