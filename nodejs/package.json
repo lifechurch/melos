@@ -1,6 +1,6 @@
 {
   "name": "youversion-events",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "private": true,
   "license": "ISC",
   "scripts": {
@@ -14,8 +14,8 @@
     "bootstrap:packages": "lerna bootstrap --hoist"
   },
   "dependencies": {
-    "@youversion/api-redux": "^0.4.54",
-    "@youversion/js-api": "^1.0.28",
+    "@youversion/api-redux": "^0.4.55",
+    "@youversion/js-api": "^1.0.29",
     "@youversion/melos": "^0.0.20",
     "@youversion/stringer-things": "0.0.1",
     "@youversion/token-storage": "^0.0.58",
