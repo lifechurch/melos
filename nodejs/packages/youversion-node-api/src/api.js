@@ -23,8 +23,10 @@ const MEMCACHE_SERVERS = (typeof process.env.MEMCACHE_SERVERS === 'string')
 	: [ '127.0.0.1:11211' ]
 
 const memcached = new Memcached(MEMCACHE_SERVERS, {
-	retries: 3,
+	retries: 1,
 	timeout: 1000,
+	retry: 30000,
+	factor: 1,
 	failures: 3,
 	poolSize: 25
 });
