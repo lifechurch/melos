@@ -1902,7 +1902,7 @@ tl:
       have an account: "May Account Ka na Ba?"
       sign up alternate: "May account na? <a href='%{sign_in_path}' target='_self'>Mag-sign In</a>"
       plan blurb: "Mukhang gusto mong mag-umpisa ng Reading Plan. Matutulungan ka nitong gawin ang Biblia bilang bahagi ng iyong pang araw-araw na buhay. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
-      bookmark blurb: "Mukhang gusto mong gumamit ng bookmark. Magaling! Matutulungan ka nitong makita ang mga talata na nais mong tandaan, ibahagi o kaya ay markahan bilang paborito. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
+      bookmark blurb: "It looks like you want to use a bookmark. Great! Bookmarks help you keep track of verses you want to memorize, share, or mark as favorites. Sign in or create an account below, and get started!"
       friends blurb: "Mukhang gusto mong makipag-ugnayan sa mga Kaibigan. Magandang ideya! Magagawa mong maibahagi ang iyong napag-aaralan at matulungan ang bawat isa na makasunod sa mga layunin sa pagbabasa. Magsign-in o gumawa ng account sa ibaba nang makapagsimula ka na!"
       share blurb: "Mukhang nais mong ibahagi ang Salita ng Diyos. Magaling! Maari mo itong gawin sa pamamagitan ng Facebook o Twitter. Mag-sign in lamang o gumawa ng account sa ibaba upang makapagsimula!"
       highlight blurb: "Mukhang nais mong i-highlight ang kasulatan. Mabuti! Ang mga ito ay makakatulong mag-organisa at magtanda ng mga paboritong berso. Sign in o gumawa ng account sa ibaba at simulan!"
