@@ -935,7 +935,7 @@ id:
     vendor_transaction_id:
       duplicate: "ID transaksi: ID Transaksi ini telah didaftarkan"
     auth:
-      login notice: "Untuk mensahkan konten yang Anda beli, silakan masuk ke akun YouVersion Anda di bawah atau <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
+      login notice: "Untuk mengesahkan konten yang Anda beli, silakan masuk ke akun YouVersion Anda di bawah atau <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
       signup notice: "Untuk mensahkan konten yang Anda beli, daftar untuk akun gratis YouVersion di bawah atau <a href='/sign-in?source=licenses' target='_self'>%{login}</a> jika Anda sudah punya akun."
       signup link text: "daftar untuk akun gratis"
       login link text: "masuk"
