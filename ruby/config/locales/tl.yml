@@ -538,7 +538,7 @@ tl:
     delete: "Burahin ang Talang Ito"
     confirm delete: "Oo, sigurado ako."
     write new: "Gumawa ng Bagong Tala"
-    not found: "Sa Youversion, maaari mong dagdagan ng mga video, audio, larawan, tala, at mga link sa ibang mga website ang mga bersikulo o serye ng Biblia. Ito ay isang paraan upang makibahagi sa komunidad ng Youversion sa pamamagitan ng pagbabahagi ng iyong mga natututunan at saloobin mula sa pakikilahok sa Kasulatan. Magsimula ngayon sa pamamagitan ng pagpili ng (mga) talata mula sa Bible reader at pagdagdag ng iyong tala. Ganyan lamang kadali."
+    not found: "Sa Youversion, maaari mong dagdagan ng mga video, audio, larawan, tala, at mga link sa ibang mga website ang mga bersikulo o serye ng Biblia. Ito ay isang paraan upang makibahagi sa komunidad ng Youversion sa pamamagitan ng pagbabahagi ng iyong mga natututunan at saloobin mula sa pakikilahok sa Kasulatan. Magsimula ngayon sa pamamagitan ng pagpili ng (mga) bersikulo mula sa Bible reader at pagdagdag ng iyong tala. Ganyan lamang kadali."
     cancel: "Itigil"
     pop out: "Pop out"
     none found: "Walang makitang mga tala..."
@@ -970,7 +970,7 @@ tl:
     bookmark blurb: "Mukhang gusto mong gumamit ng bookmark. Magaling! Matutulungan ka nitong makita ang mga talata na nais mong tandaan, ibahagi o kaya ay markahan bilang paborito. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
     friends blurb: "Mukhang gusto mong makipag-ugnayan sa mga Kaibigan. Magandang ideya! Magagawa mong maibahagi ang iyong napag-aaralan at matulungan ang bawat isa na makasunod sa mga layunin sa pagbabasa. Magsign-in o gumawa ng account sa ibaba nang makapagsimula ka na!"
     share blurb: "Mukhang nais mong ibahagi ang Salita ng Diyos. Magaling! Maari mo itong gawin sa pamamagitan ng Facebook o Twitter. Mag-sign in lamang o gumawa ng account sa ibaba upang makapagsimula!"
-    highlight blurb: "Mukhang nais mong i-highlight ang kasulatan. Mabuti! Ang mga ito ay makakatulong mag-organisa at magtanda ng mga paboritong berso. Sign in o gumawa ng account sa ibaba at simulan!"
+    highlight blurb: "Mukhang nais mong i-haylayt ang kasulatan. Maganda yan! Makakatulong sa iyo ang mga haylayt na mag-organisa at magtanda ng mga paborito mong mga berso. Mag-sign in o gumawa ng account sa ibaba upang makapagsimula ka!"
     note blurb: "Mukhang nais mong magtala tungkol sa kasulatan. Mabuti! Ang mga tala ay maaring makatulong sa pag-alala o pag-organisa ng katotohanang iyong madidiskubre sa Salita ng Diyos. Sign in o gumawa ng account sa ibaba at simulan!"
   audio:
     none: "Paumanhin, walang audio ang bersyon na ito."
@@ -1143,7 +1143,7 @@ tl:
         action: "Tingnan ang mga Salin ng Biblia"
       make_yours:
         title: "Gawing iyo ang Biblia"
-        body: "I-highlight o lagyan ng Pananda ang iyong mga paboritong bersikulo, gumawa ng Bersikulong Larawang maibabahagi, at magdagdag ng pampubliko o pampribadong mga Tala sa mga sipi ng Biblia."
+        body: "I-haylayt o i-boomark ang iyong mga paboritong bersikulo, gumawa ng mga Bersikulong Larawan na maibabahagi, at magdagdag ng pampubliko o pampribadong mga Tala sa mga sipi ng Biblia."
         action: "Gumawa ng Libreng Account"
       install_now:
         title: "I-install ang App"
@@ -1719,7 +1719,7 @@ tl:
                   desc: "Ang mga link sa mga Babasahing Gabay at Debosyonal na may kaugnayan sa iyong mga punto ng pagtuturo, na tumutulong sa iyong mga tagapakinig na patuloy na makilahok sa Salita ng Diyos sa buong linggo."
                 image:
                   title: "Module ng larawan"
-                  desc: "Bigyan ng buhay ang iyong Kaganapan gamit ang kahit na anong imaheng magbibigay linaw rito: mga serye ng larawan, mga Bersikulong Larawan, at iba pa. Madaling maipapamahagi ng iyong mga manlalahok ang mga larawang ito sa social media, nang sa gayon ay maikakalat ito sa maraming pang iba."
+                  desc: "Bigyan ng buhay ang iyong Kaganapan gamit ang kahit na anong imaheng magbibigay linaw rito: mga serye ng larawan, mga Bersikulong Larawan, at iba pa. Madaling maipapamahagi ng iyong mga manlalahok ang mga larawan mula sa iyong Kaganapan sa social media, nang sa gayon ay maikakalat ito sa maraming pang iba."
                 link:
                   title: "External Link Module"
                   desc: "Maglagay ng pindutan na magkokonekta sa kahit na anong Eksternal na website. Sa isang klik lang ang iyong mga manlalahok ay may pagkakataon na magbigay, mag-boluntaryo o puntahan ang website ng inyong iglesya."
@@ -1905,7 +1905,7 @@ tl:
       bookmark blurb: "It looks like you want to use a bookmark. Great! Bookmarks help you keep track of verses you want to memorize, share, or mark as favorites. Sign in or create an account below, and get started!"
       friends blurb: "Mukhang gusto mong makipag-ugnayan sa mga Kaibigan. Magandang ideya! Magagawa mong maibahagi ang iyong napag-aaralan at matulungan ang bawat isa na makasunod sa mga layunin sa pagbabasa. Magsign-in o gumawa ng account sa ibaba nang makapagsimula ka na!"
       share blurb: "Mukhang nais mong ibahagi ang Salita ng Diyos. Magaling! Maari mo itong gawin sa pamamagitan ng Facebook o Twitter. Mag-sign in lamang o gumawa ng account sa ibaba upang makapagsimula!"
-      highlight blurb: "Mukhang nais mong i-highlight ang kasulatan. Mabuti! Ang mga ito ay makakatulong mag-organisa at magtanda ng mga paboritong berso. Sign in o gumawa ng account sa ibaba at simulan!"
+      highlight blurb: "Mukhang nais mong i-haylayt ang kasulatan. Maganda yan! Makakatulong sa iyo ang mga haylayt na mag-organisa at magtanda ng mga paborito mong mga berso. Mag-sign in o gumawa ng account sa ibaba upang makapagsimula ka!"
       note blurb: "Mukhang nais mong magtala tungkol sa kasulatan. Mabuti! Ang mga tala ay maaring makatulong sa pag-alala o pag-organisa ng katotohanang iyong madidiskubre sa Salita ng Diyos. Sign in o gumawa ng account sa ibaba at simulan!"
     Reader:
       chapter: "Kabanata"
