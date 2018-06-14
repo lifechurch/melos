@@ -914,7 +914,7 @@ id:
     congratulations: "Selamat!"
     completed notice: "Selamat! Anda telah menyelesaikan rencana bacaan Anda"
     exit: "Keluar"
-    loading sidebar content: "Memuat konten  bilah samping..."
+    loading sidebar content: "Memuat konten bilah samping..."
   videos:
     title: "Video"
     watch videos: "Tonton video tentang Alkitab"
@@ -1354,7 +1354,7 @@ id:
       terms: "Persyaratan"
       volunteer: "Sukarelawan"
     unsubscribe:
-      about: "Kontrol email yang Anda terima dari YouVersion. Anda dapat mengedit notifikasi seluler dari aplikasi seluler Anda."
+      about: "Atur email yang Anda terima dari YouVersion. Anda dapat mengedit notifikasi seluler dari aplikasi seluler Anda."
       email: "Email"
       not me: "Ini bukan saya"
       saved: "Tersimpan!"
@@ -1549,7 +1549,7 @@ id:
       congratulations: "Selamat!"
       completed notice: "Selamat! Anda telah menyelesaikan rencana bacaan Anda"
       exit: "Keluar"
-      loading sidebar content: "Memuat konten  bilah samping..."
+      loading sidebar content: "Memuat konten bilah samping..."
     components:
       ErrorMessage:
         genericError: "Terjadi Kesalahan"
