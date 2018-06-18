@@ -1,6 +1,6 @@
 {
   "name": "youversion-events",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "private": true,
   "license": "ISC",
   "scripts": {
@@ -14,12 +14,12 @@
     "bootstrap:packages": "lerna bootstrap --hoist"
   },
   "dependencies": {
-    "@youversion/api-redux": "^0.4.55",
+    "@youversion/api-redux": "^0.4.56",
     "@youversion/js-api": "^1.0.29",
-    "@youversion/melos": "^0.0.20",
+    "@youversion/melos": "^0.0.21",
     "@youversion/stringer-things": "0.0.1",
     "@youversion/token-storage": "^0.0.58",
-    "@youversion/utils": "^1.0.46",
+    "@youversion/utils": "^1.0.47",
     "async": "^2.0.0-rc.3",
     "babel-register": "^6.24.1",
     "babelify": "^7.3.0",
