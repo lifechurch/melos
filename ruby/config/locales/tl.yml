@@ -1391,7 +1391,7 @@ tl:
         newsletter: "Nakapag-unsubscribe ka sa <b>Newsletter</b> na mga email."
         pwf_comments: "Matagumpay ang iyong pag-unsubscribe mula sa mga email ng mga<b>Komento</b>para sa Gabay na ito."
         pwf_accepts: "Matagumpay ang iyong pag-unsubscribe mula sa mga email ng mga<b>Imbitasyon ng Babasahing Gabay</b>para sa Gabay na ito."
-        reading_plans: "Nakapag-unsubscribe ka sa <b>Reading Plans</b> na mga email."
+        reading_plans: "Nakapag-unsubscribe ka sa <b>Babasahing Gabay</b> na mga email."
         rp_daily: "Nakapag-unsubscribe ka sa <b>Reading Plans Daily na mga email</b> mula sa %{plan_title}."
         votd: "Nakapag-unsubscribe ka sa <b>Bersikulo ng Araw</b> na mga email."
         votd_image: "Matagumpay kang nakapag-unsubscribe sa mga email ng <b>Bersikulong Larawan ng Araw</b>."
