@@ -1,7 +1,7 @@
 hu:
   time:
     formats:
-      votd: "%Y. %B %-d"
+      votd: "%Y. %B %-d."
   datetime:
     time_ago_in_words:
       about_x_hours:
