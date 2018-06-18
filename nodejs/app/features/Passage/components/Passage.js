@@ -89,9 +89,9 @@ function Passage(props) {
 					{ name: 'twitter:title', content: title },
 					{ name: 'twitter:description', content: text },
 					{ name: 'twitter:site', content: '@YouVersion' },
-				].concat(imgMeta)}
+          ].concat(imgMeta)}
 				link={metaLink}
-			/>
+   />
 			<div style={{ width: '100%', marginBottom: '25px', marginTop: '-40px' }}>
 				<Heading1>{ titleWithAbbr }</Heading1>
 			</div>
@@ -99,7 +99,7 @@ function Passage(props) {
 				<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
 					<ReferenceMoment usfm={usfm} version_id={version_id} leftFooter={[versionDropdown]} />
 					<ImagesMoment usfm={usfms} version_id={version_id} />
-					<PlansRelatedToReference usfm={usfms.slice(0, 4).join('+')} version_id={version_id} />
+					<PlansRelatedToReference serverLanguageTag={serverLanguageTag} usfm={usfms.slice(0, 4).join('+')} version_id={version_id} />
 				</div>
 				<ShareSheet />
 			</div>
