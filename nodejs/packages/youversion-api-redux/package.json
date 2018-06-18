@@ -1,6 +1,6 @@
 {
 	"name": "@youversion/api-redux",
-	"version": "0.4.56",
+	"version": "0.4.57",
 	"description": "YouVersion API Redux Middleware",
 	"main": "./lib",
 	"author": "YouVersion",
