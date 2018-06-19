@@ -914,7 +914,7 @@ id:
     congratulations: "Selamat!"
     completed notice: "Selamat! Anda telah menyelesaikan rencana bacaan Anda"
     exit: "Keluar"
-    loading sidebar content: "Memuat konten  bilah samping..."
+    loading sidebar content: "Memuat konten bilah samping..."
   videos:
     title: "Video"
     watch videos: "Tonton video tentang Alkitab"
@@ -935,7 +935,7 @@ id:
     vendor_transaction_id:
       duplicate: "ID transaksi: ID Transaksi ini telah didaftarkan"
     auth:
-      login notice: "Untuk mensahkan konten yang Anda beli, silakan masuk ke akun YouVersion Anda di bawah atau <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
+      login notice: "Untuk mengesahkan konten yang Anda beli, silakan masuk ke akun YouVersion Anda di bawah atau <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
       signup notice: "Untuk mensahkan konten yang Anda beli, daftar untuk akun gratis YouVersion di bawah atau <a href='/sign-in?source=licenses' target='_self'>%{login}</a> jika Anda sudah punya akun."
       signup link text: "daftar untuk akun gratis"
       login link text: "masuk"
@@ -1070,7 +1070,7 @@ id:
     h2: "Firman Tuhan beserta Anda."
     h3: "YouVersion Mendunia"
     h3 sub: "Tersedia dalam lebih dari %{language_count} bahasa di seluruh dunia."
-    main: "Puluhan juta orang menggunakan Aplikasi Alkitab™ untuk membuat Firman Tuhan bagian keseharian hidup mereka. Unduh aplikasi gratis ini dan akses ke markah, catatan, dan rencana bacaan Anda dari mana pun. Nikmati ratusan versi, termasuk audio, semua di peranti seluler Anda."
+    main: "Puluhan juta orang menggunakan Aplikasi Alkitab untuk menjadikan Firman Tuhan bagian keseharian hidup mereka. Unduh aplikasi gratis ini dan akses ke markah, catatan, dan rencana bacaan Anda kapan pun. Nikmati ratusan versi Alkitab, termasuk audio, semua di ponsel Anda."
     button h4: "Kunjungi Bible.com/app<br>di Peranti Seluler Anda"
     download now: "Unduh Aplikasi Alkitab Sekarang Juga"
     what people: "Apa kata orang tentang Aplikasi Alkitab gratis..."
@@ -1354,7 +1354,7 @@ id:
       terms: "Persyaratan"
       volunteer: "Sukarelawan"
     unsubscribe:
-      about: "Kontrol email yang Anda terima dari YouVersion. Anda dapat mengedit notifikasi seluler dari aplikasi seluler Anda."
+      about: "Atur email yang Anda terima dari YouVersion. Anda dapat mengedit notifikasi seluler dari aplikasi seluler Anda."
       email: "Email"
       not me: "Ini bukan saya"
       saved: "Tersimpan!"
@@ -1549,7 +1549,7 @@ id:
       congratulations: "Selamat!"
       completed notice: "Selamat! Anda telah menyelesaikan rencana bacaan Anda"
       exit: "Keluar"
-      loading sidebar content: "Memuat konten  bilah samping..."
+      loading sidebar content: "Memuat konten bilah samping..."
     components:
       ErrorMessage:
         genericError: "Terjadi Kesalahan"

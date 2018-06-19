@@ -1043,8 +1043,8 @@ ca:
     banner action: "Descarrega"
     banner open: "Obrir"
   download bafk ad:
-    title: "Descarrega l'App de la Bíblia per a nens."
-    description copy: "L'App de la Bíblia per a Nens és una bona manera per a que els teus fills aprenguin històries bíbliques sobre Jesús."
+    title: "Descarrega Bible App for Kids"
+    description copy: "Bible App for Kids és una bona manera per a que els teus fills aprenguin històries bíbliques sobre Jesús."
     download: "Descarrega-la ara"
   about page:
     relevancy: "Rellevància"
