@@ -1,6 +1,6 @@
 {
   "name": "@youversion/melos",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Open source library of React components from the YouVersion Bible.com team",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@youversion/utils": "^1.0.46",
+    "@youversion/utils": "^1.0.47",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
     "immutable": "^3.8.1",

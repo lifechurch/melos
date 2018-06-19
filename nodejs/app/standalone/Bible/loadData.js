@@ -121,7 +121,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 							method: 'plans_by_reference',
 							params: {
 								usfm: usfms.slice(0, 4).join('+'),
-								language_tag: params.language_tag || 'en',
+								language_tag: params.languageTag || 'en',
 							}
 						}))
 					]

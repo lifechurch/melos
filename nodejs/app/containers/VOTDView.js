@@ -103,7 +103,7 @@ class VOTDView extends Component {
 					<div className='yv-large-5 yv-medium-7 yv-small-11 votd-view'>
 						<VotdText dayOfYear={day} version_id={version_id} />
 						<VotdImage dayOfYear={day} version_id={version_id} alt={verse} />
-						<PlansRelatedToReference usfm={usfm} version_id={version_id} />
+						<PlansRelatedToReference serverLanguageTag={serverLanguageTag} usfm={usfm} version_id={version_id} />
 						<Card customClass='horizontal-center flex-wrap'>
 							<img
 								className="bible-icon"
