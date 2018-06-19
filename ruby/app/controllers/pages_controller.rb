@@ -208,14 +208,40 @@ class PagesController < ApplicationController
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
     [
+      :af,
       :ar,
+      :bg,
+      :ca,
+      :cs,
       :da,
+      :de,
       :en,
       :"en-GB",
+      :es,
+      :fi,
+      :fr,
+      :he,
+      :hu,
+      :id,
       :it,
+      :km,
+      :ko,
+      :lv,
+      :mk,
+      :mn,
+      :ms,
       :nl,
+      :pl,
       :pt,
-      :"zh-TW",
+      :"pt-PT",
+      :ro,
+      :ru,
+      :sk,
+      :tl,
+      :uk,
+      :vi,
+      :"zh-CN",
+      :"zh-TW"
     ]
   end
 
