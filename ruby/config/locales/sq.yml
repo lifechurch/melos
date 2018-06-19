@@ -1043,8 +1043,8 @@ sq:
     banner action: "Shkarko"
     banner open: "Hap"
   download bafk ad:
-    title: "Shkarko Programin e Biblës për Fëmijë"
-    description copy: "Programi i Biblës për Fëmijë është një mënyrë e mrekullueshme që fëmijët tuaj të mësojnë historitë biblike rreth Jezusit."
+    title: "Shkarko Bible App for Kids"
+    description copy: "Bible App for Kids është një mënyrë e mrekullueshme që fëmijët tuaj të mësojnë historitë biblike rreth Jezusit."
     download: "Shkarko tani"
   about page:
     relevancy: "Përshtatshmëri"
@@ -1088,7 +1088,7 @@ sq:
     h2: "Fjala e Zotit është me ty."
     h3: "YouVersion është Global"
     h3 sub: "E disponueshme në më shumë se %{language_count} gjuhë në mbarë botën."
-    main: "Dhjetëra miliona njerëz po përdorin Programin e Biblës™ për ta bërë Fjalën e Perëndisë pjesë të jetës së tyre të përditshme. Shkarko programin falas dhe përdor shenjuesit e tu, shënimet dhe planet e leximit kudo. Shijo qindra versione, duke përfshirë ato audio, në pajisjen tuaj të lëvizshme."
+    main: "Dhjetëra miliona njerëz po përdorin Programin e Biblës për ta bërë Fjalën e Perëndisë pjesë të jetës së tyre të përditshme. Shkarko programin falas dhe përdor shenjuesit e tu, shënimet dhe planet e leximit kudo. Shijo qindra versione, duke përfshirë ato audio, në pajisjen tuaj të lëvizshme."
     button h4: "Shko te Bible.com/app<br/>nga pajisja tënde e lëvizshme."
     download now: "Shkarko Programin e Biblës tani"
     what people: "Çfarë njerëzit janë duke thënë rreth programit falas të Biblës..."
@@ -2151,4 +2151,4 @@ sq:
       h4: "Kjo është përvoja juaj."
       p7: "Politikat tona të reja e bëjnë të qartë se çfarë të drejtash keni kur përdorni shërbimin YouVersion, duke përfshirë hyrjen, ndarjen, ndryshimin dhe fshirjen e të dhënave tuaja personale. Ne trajtojmë edhe teknologjinë e mbledhjes së të dhënave dhe se si këto procese e ndihmojnë Komunitetin YouVersion që të angazhohet tërësisht me Biblën."
     data: "Të dhëna"
-    download blurb: "Ju mund të shkarkoni një kopje të të dhënave personale që na keni dhënë, të tilla si emri juaj, biografia, vendndodhja dhe adresa e internetit, si dhe informacione themelore në lidhje me Miqtë tuaj në Youversion. Ky shkarkim i të dhënave nuk do të përfshijë informacionin e aktivitetit të Biblës, si pikat kryesore, shënimet, vargjet, etj., të cilat mund t'i shikoni direkt në aplikacion. YouVersion është një shërbesë jo-fitimprurëse. Për shkak se fokusi ynë është misionar, ne nuk fitojmë, shesim të dhëna, ose vendosim reklama të palëve të treta brenda produkteve të YouVersion. Ju lutemi referojuni Rregullores sonë të Privatësisë dhe Kushteve të Përdorimit për më shumë detaje për sa i përket të dhënave që mbledhim dhe përse, si i përdorim dhe mbrojmë ato të dhëna. Ju lutem vini re se shkarkimi i të dhënave nuk e fshin atë nga serverat YouVersion. Nëse dëshironi që informacioni juaj të fshihet, ju lutemi vizitoni help.youversion.com. Sidoqoftë, të jeni të vetëdijshëm se fshirja e të dhënave të caktuara do të ndalojë dhe / ose eliminojë funksionalitetin e caktuar YouVersion siç përshkruhet më tej në Rregulloren tonë të Privatësisë."
+    download blurb: "Ju mund të shkarkoni një kopje të të dhënave personale që na keni dhënë, të tilla si emri juaj, biografia, vendndodhja dhe adresa e internetit, si dhe informacione themelore në lidhje me Miqtë tuaj në YouVersion. Ky shkarkim i të dhënave nuk do të përfshijë informacionin e aktivitetit të Biblës, si Theksimet, Shënimet, Vargjet me Figura etj., të cilat mund t'i shikoni direkt brenda aplikacionit. YouVersion është një shërbesë jo-fitimprurëse. Për shkak se fokusi ynë është misionar, ne nuk fitojmë, shesim të dhëna, ose vendosim reklama të palëve të treta brenda produkteve të YouVersion. Ju lutemi referojuni Rregullores sonë të Privatësisë dhe Kushteve të Përdorimit për më shumë detaje për sa i përket të dhënave që mbledhim dhe përse, si i përdorim dhe mbrojmë ato të dhëna. Ju lutem vini re se shkarkimi i të dhënave nuk e fshin atë nga serverat YouVersion. Nëse dëshironi që informacioni juaj të fshihet, ju lutemi vizitoni help.youversion.com. Sidoqoftë, të jeni të vetëdijshëm se fshirja e të dhënave të caktuara do të ndalojë dhe / ose eliminojë funksionalitetin e caktuar YouVersion siç përshkruhet më tej në Rregulloren tonë të Privatësisë."
