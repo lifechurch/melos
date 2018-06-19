@@ -399,7 +399,7 @@
 	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Якщо подія вже у стадії наживо, ви не можете видаляти текст, посилання, та зображення через те, що інші користувачі могли вже додати свої приватні нотатки до неї. Ви можете редагувати модулі.",
 	"features.EventEdit.features.content.components.LiveWarningModal.ok": "Добре",
 	"features.EventEdit.features.details.errors.generic": "Виникла проблема із публікацією вашої події.",
-	"features.EventEdit.features.details.errors.invalidTimes": "Одинична подія не може тривати більше, ніж 12 годин, і різниця між початком і кінцем у Події не може тривати більше 8 днів. Будь ласка, налаштуйте ваш час Події і спробуйте знову.",
+	"features.EventEdit.features.details.errors.invalidTimes": "Одинична подія не може тривати більше, ніж 12 годин, і різниця між початком і кінцем у Події не може трива��и більше 8 днів. Будь ласка, налаштуйте ваш час Події і спробуйте знову.",
 	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "Розмір зображення повинен бути {requiredWidth}х{requiredHeight}. Ваше зображення {yourWidth}х{yourHeight}.",
 	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "Невірний тип файлу. Повинен бути JPG. ",
 	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "Змінити зображення",

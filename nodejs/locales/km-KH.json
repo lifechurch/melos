@@ -395,7 +395,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.prompt": "សូមទាញនិង​ព្រលែងរូប​ភាព​ ១",
 	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[មាន​តែរូបភាព​ប្រភេទ JPG មួយគត់]",
 	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "ទទឹង​ទំហំ{requiredWidth} ភិកសែល x កំពស់ {requiredHeight} ភិកសែល",
-	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "រូប​ភាព​របស់​លោក​អ្នក���ត្រូវ​មាន​ទំហំ {requiredWidth} x {requiredHeight} ភិកសែល។",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "រូប​ភាព​របស់​លោក​អ្នក​ត្រូវ​មាន​ទំហំ {requiredWidth} x {requiredHeight} ភិកសែល។",
 	"features.EventEdit.features.details.components.DetailsEdit.eventName": "ឈ្មោះ​ព្រឹត្តិការណ៍",
 	"features.EventEdit.features.details.components.DetailsEdit.org": "ឈ្មោះ​ក្រុម​ជំនុំ ឬ ស្ថាប័ន",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "ពិពណ៌នា​ព្រឹត្តិការណ៍",

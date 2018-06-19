@@ -399,7 +399,7 @@
 	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Pokud je událost ve statusu ŽIVĚ, nelze mazat moduly Text, Biblické odkazy a Obrázky z důvodu přidaných soukromých poznámek ostatních uživatelů. Nicméně je možné tyto moduly editovat.",
 	"features.EventEdit.features.content.components.LiveWarningModal.ok": "OK",
 	"features.EventEdit.features.details.errors.generic": "Došlo k potížím při nahrávání události.",
-	"features.EventEdit.features.details.errors.invalidTimes": "Samotný bohoslužba nem��že být delší než 12 hodin. Maximální časové rozpětí v události nemůže být více než 8 dnů. Prosím upravte časy a zkuste znovu.",
+	"features.EventEdit.features.details.errors.invalidTimes": "Samotný bohoslužba nemůže být delší než 12 hodin. Maximální časové rozpětí v události nemůže být více než 8 dnů. Prosím upravte časy a zkuste znovu.",
 	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "Velikost obrázku musí být {requiredWidth}x{requiredHeight}. Váš obrázek je {yourWidth}x{yourHeight}.",
 	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "Neplatný typ souboru. Soubor musí být JPG.",
 	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "Změnit obrázek",

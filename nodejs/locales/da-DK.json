@@ -260,7 +260,7 @@
 	"plans.invalid reference": "Beklager, et af de ​​skriftsteder referencer til denne læsning ikke findes i den valgte version. Prøv at vælge en anden version, ovenfor. Hvis du fortsat ser denne besked, så lad vores <a href='{support_url}' target='_self'>supportteam</a> ved om problemet.",
 	"plans.sidebar notice": "Du ser en Bibellæseplan",
 	"plans.congratulations": "Godt klaret!",
-	"plans.completed notice": "Tillykke! Du har fuldført en Bibellæseplan.",
+	"plans.completed notice": "Tillykke! Du har fuldført en Bibell��seplan.",
 	"plans.exit": "Ud",
 	"plans.loading sidebar content": "Indlæser sidemenu indhold...",
 	"components.ErrorMessage.genericError": "Der skete en fejl",

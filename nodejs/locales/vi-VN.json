@@ -361,7 +361,7 @@
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Tựa đề",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Viết thử ở đây...",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "Trong sự kiện của bạn, chỉ có tiêu đề như trên mới hiển thị. Khi người xem nhấp vào tiêu đề, nội dung dưới đây sẽ hiển thị trên một màn hình khác.",
-	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "Mỗi khi bạn ngừng đánh m��y, nội dung sẽ tự động lưu sau vài giây.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "Mỗi khi bạn ngừng đánh máy, nội dung sẽ tự động lưu sau vài giây.",
 	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "Không lưu được",
 	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "Thử lại",
 	"features.EventEdit.features.content.components.ContentTypeContainer.lastSaved": "Lưu lần cuối vào {when}",
