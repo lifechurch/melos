@@ -14,7 +14,7 @@ files:
         sv-SE: sv
         fil: tl
         ckb-IR: ckb
-        qz-MM: myz 
+        myz: my-MM 
   - source: /ruby/config/locales/kids/en.yml
     translation: /ruby/config/locales/kids/%osx_locale%.yml
     languages_mapping:
@@ -30,7 +30,7 @@ files:
         sv-SE: sv
         fil: tl
         ckb-IR: ckb
-        qz-MM: myz
+        myz: my-MM
   - source: /ruby/config/locales/privacy_and_terms/en.yml
     translation: /ruby/config/locales/privacy_and_terms/%osx_locale%.yml
     languages_mapping:
@@ -46,4 +46,4 @@ files:
         sv-SE: sv
         fil: tl
         ckb-IR: ckb
-        qz-MM: myz
+        myz: my-MM
