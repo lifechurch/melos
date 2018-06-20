@@ -1043,8 +1043,8 @@ bg:
     banner action: "Изтегляне"
     banner open: "Отваряне"
   download bafk ad:
-    title: "Изтеглете приложение Библията за деца"
-    description copy: "Библейското приложение за деца е чудесен начин децата ви да научат библейски истории за Исус."
+    title: "Изтеглете Bible App for Kids"
+    description copy: "Bible App for Kids е чудесен начин децата ви да научат библейски истории за Исус."
     download: "Изтегляне"
   about page:
     relevancy: "Приложимост"
