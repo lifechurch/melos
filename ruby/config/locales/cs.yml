@@ -1079,8 +1079,8 @@ cs:
     banner action: "Stáhnout"
     banner open: "Otevřít"
   download bafk ad:
-    title: "Stáhnout aplikaci Bible pro děti"
-    description copy: "Aplikace Bible pro děti je skvělý způsob, jak se vaše děti naučí biblické příběhy o Ježíši."
+    title: "Stáhnout Bible App for Kids"
+    description copy: "Bible App for Kids je skvělý způsob, jak se vaše děti naučí biblické příběhy o Ježíši."
     download: "Stahujte nyní"
   about page:
     relevancy: "Význam"
