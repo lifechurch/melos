@@ -1,0 +1,446 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-26 16:51-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Malayalam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ml\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ml-IN\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-27 11:48-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Malayalam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ml\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ml-IN\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Malayalam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ml\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ml-IN\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "നിങ്ങൾ <b>{title}</b> ബാഡ്ജ് നേടി\n"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} <b>{title}</b> ബാഡ്ജ് നേടി"
+
+msgid "moment.bible.download.self.title"
+msgstr "നിങ്ങൾ പതിപ്പ് ഡൗൺലോഡ് ചെയ്തു, <b>{version}</b>\n"
+
+msgid "moment.bible.download.title"
+msgstr "{name} പതിപ്പ് ഡൗൺലോഡ് ചെയ്തു, <b>{version}</b>\n"
+
+msgid "moment.bookmark.self.title"
+msgstr "നിങ്ങൾ <b>{reference_human} {version_abbreviation}</b> ബുക്ക്മാർക്ക് ചെയ്തു"
+
+msgid "moment.bookmark.title"
+msgstr "{name} , <b>{reference_human} {version_abbreviation}</b> ബുക്ക്മാർക്ക് ചെയ്തു"
+
+msgid "moment.friendship.self.title"
+msgstr "നിങ്ങ ളും <b>{friend_name}</b> യും ഇപ്പോൾ സുഹൃത്തുക്കളാണ്\n"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} ളും <b>{friend_name}</b> യും ഇപ്പോൾ സുഹൃത്തുക്കളാണ്"
+
+msgid "moment.highlight.self.title"
+msgstr "നിങ്ങൾ <b>{reference_human} {version_abbreviation}</b> ഹൈലൈറ്റ് ചെയ്തു"
+
+msgid "moment.highlight.title"
+msgstr "{name} <b>{reference_human} {version_abbreviation}</b> ഹൈലൈറ്റ് ചെയ്തു"
+
+msgid "moment.note.self.title"
+msgstr "താങ്കൾ ഒരു കുറിപ്പ് ചേർത്തു, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} ഒരു കുറിപ്പ് ചേർത്തു, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} ഒരു കുറിപ്പ് ചേർത്തു"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "നിങ്ങൾ ഒരു കുറിപ്പ് ചേർത്തു"
+
+msgid "moment.note.reference.title"
+msgstr "{name} , <b>{reference_human}</b> എന്നതിൽ ഒരു കുറിപ്പ് ചേർത്തു"
+
+msgid "moment.note.reference.self.title"
+msgstr "<b>{reference_human}</b>ലേക്ക് താങ്കൾ ഒരു കുറിപ്പ് ചേർത്തു"
+
+msgid "moment.plan_completion.self.title"
+msgstr "നിങ്ങൾ നിങ്ങളുടെ പ്ലാൻ പൂർത്തിയാക്കി"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} ഒരു പ്ലാൻ പൂര്‍ത്തീകരിച്ചു"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "നിങ്ങൾ നിങ്ങളുടെ പ്ലാൻ പൂർത്തിയാക്കി, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} പ്ലാൻ പൂര്‍ത്തീകരിച്ചു, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "ദിവസം {segment} അതിൽ {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "നിങ്ങൾ <b>{title}</b> എന്ന പ്ലാനിന്റെ <b>{segment}</b> ദിവസം പൂർത്തിയാക്കി\n"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "നിങ്ങൾ <b>{title}</b> എന്ന പ്ലാനിന്റെ, <b>{segment}</b> ദിവസം പൂർത്തിയാക്കി"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "നിങ്ങൾ ഒരു പുതിയ പ്ലാൻ ആരംഭിച്ചു\n"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} ഒരു പുതിയ പദ്ധതി ആരംഭിച്ചു"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "നിങ്ങൾ ഒരു പുതിയ പദ്ധതി ആരംഭിച്ചു, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} ഒരു പുതിയ പദ്ധതി ആരംഭിച്ചു, <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "<i>ബൈബിൾ പരമ്പര</i> ഇന്നു രാത്രി കാണുക!\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>ബൈബിൾ പരമ്പര</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr ""
+"സുഹൃത്തുക്കളുമൊത്ത് ബൈബിൾ ആപ്പ് നല്ലതാണ്.\n"
+" സുഹൃത്തുക്കളെ കണ്ടെത്താൻ നിങ്ങളുടെ കോൺടാക്റ്റുകൾ തിരയുക.\n"
+
+msgid "moment.video.watched.self.title"
+msgstr "നിങ്ങൾ <b>{title}</b> കണ്ടു"
+
+msgid "moment.video.watched.title"
+msgstr "{name} <b>{title}</b> കണ്ടു"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr ""
+"ക്രിസ്തുവിന്റെ വരവിനെ ആസ്പദമാക്കി\n"
+"ക്രിസ്മസിനു ഒരു ബൈബിൾ പ്ലാൻ തയ്യാറാക്കുക"
+
+msgid "moment.system.bafk.title"
+msgstr "നിങ്ങളുടെ കുട്ടികളെ ദൈവവചനത്തെ സ്നേഹിക്കാൻ സഹായിക്കുക.\n"
+
+msgid "moment.system.christmas.title"
+msgstr "സുവിശേഷം പങ്കു വയ്ക്കുക: രക്ഷകൻ ജനിച്ചിരിക്കുന്നു!\n"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "നിങ്ങളുടെ മികച്ച വർഷം ഇപ്പോൾ തുടങ്ങും.\n"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "അവന്റെ വചനത്തിൽ ദൈവസ്നേഹം കണ്ടെത്തുക.\n"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "ദൈവവചനത്തിൽ പ്രത്യാശയും പുതുക്കവും കണ്ടെത്തുക.\n"
+
+msgid "moment.image.self.title"
+msgstr "<b>{reference_human} {version_abbreviation}</b> എന്നതിനായ് ഒരു വാക്യത്തിന്റെ ചിത്രം സൃഷ്ടിച്ചു"
+
+msgid "moment.image.title"
+msgstr "{name} , <b>{reference_human} {version_abbreviation}</b> എന്നതിനായ് ഒരു വാക്യത്തിന്റെ ചിത്രം സൃഷ്ടിച്ചു"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "പുതിയ പദ്ധതികളിലൂടെ നിങ്ങളുടെ വിശ്വാസം പുതുക്കുക.\n"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "ദിനവും അവന്റെ വചനം ശ്രദ്ധിക്കുക.\n"
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "ദൈവത്തെ അവന്റെ വചനത്തിൽ അന്വേഷിക്കുക.\n"
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "ക്രിസ്തുവിൽ സ്വാതന്ത്ര്യത്തെ ആഘോഷിക്കൂ.\n"
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "ദൈവത്തെ നിത്യം അവന്റെ വചനത്തിൽ അന്വേഷിക്കുക.\n"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "ദൈവവചനം എല്ലാം പുതിയതാക്കി മാറ്റുന്നു.\n"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "ദൈവികജ്ഞാനം ദൈവവചനത്തിൽ തുടങ്ങുന്നു.\n"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "ദൈവത്തിൻറെ വാഗ്ദാനങ്ങളിൽ നന്ദിയുള്ളവരായിരിക്കുക.\n"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "ഈ സീസണിൽ നിങ്ങളുടെ ഹൃദയം തയ്യാറാക്കുക.\n"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} നിങ്ങളുടെ ബുക്ക്മാർക്കിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{friend_name} യുടെ ഒപ്പമുള്ള നിങ്ങളുടെ പുതിയ സൗഹൃദത്തെക്കുറിച്ച് {name} അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} നിങ്ങളുടെ പുതിയ സൗഹൃദത്തെക്കുറിച്ച് അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} നിങ്ങളുടെ ഹൈലൈറ്റിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} നിങ്ങളുടെ കുറിപ്പിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} നിങ്ങളുടെ പദ്ധതിയിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} നിങ്ങളുടെ ബൈബിൾ പദ്ധതിയിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name}, {moment_owner_name} എന്ന ബുക്ക്മാർക്കിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{friend_name} യുടെ ഒപ്പമുള്ള {moment_owner_name}ന്റെ പുതിയ സൗഹൃദത്തെക്കുറിച്ചും {commenter_name} അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}, {moment_owner_name} യുടെ ഒപ്പമുള്ള അവരുടെ പുതിയ സൗഹൃദത്തെക്കുറിച്ച് അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} , {moment_owner_name}യുടെ ഒപ്പമുള്ള നിങ്ങളുടെ പുതിയ സൗഹൃദത്തെക്കുറിച്ച് അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name}, {moment_owner_name} ന്റെ ഹൈലൈറ്റിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name}, {moment_owner_name} ന്റെ കുറിപ്പിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} അവരുടെ ബുക്ക്മാർക്കിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name}, {friend_name} യുടെ ഒപ്പമുള്ള അവരുടെ പുതിയ സൗഹൃദത്തെക്കുറിച്ച് അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} നിങ്ങളുമായുള്ള പുതിയ സൗഹൃദത്തെക്കുറിച്ചും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} അവരുടെ ഹൈലൈറ്റിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} അവരുടെ കുറിപ്പിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} അവരുടെ പദ്ധതിയിൽ അഭിപ്രായമിടുകയും ചെയ്തു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} അവരുടെ ബൈബിൾ പദ്ധതിയിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} {moment_owner_name} എന്ന പദ്ധതിയിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{moment_owner_name} എന്ന ബൈബിൾ പദ്ധതിയിലും {commenter_name} അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.friendships.accept"
+msgstr "{name} നിങ്ങളുടെ ചങ്ങാതി അഭ്യർത്ഥന സ്വീകരിച്ചു"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} ഇപ്പോൾ നിങ്ങളുടെ ചങ്ങാതിയാണ്"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} യൂവേർഷനിൽ നിങ്ങളുടെ ചങ്ങാതിയാകാൻ ആഗ്രഹിക്കുന്നു\n"
+
+msgid "notifications.friendships.suggestion"
+msgstr "യൂവേർഷനിൽ നിങ്ങൾ {name} മായി സുഹൃത്തുക്കളാകാൻ ആഗ്രഹിക്കുന്നുണ്ടോ?\n"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} നിങ്ങളുടെ ബുക്ക്മാർക്ക് ഇഷ്ടപ്പെടുന്നു, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name}, {friend_name}യുടെ ഒപ്പമുള്ള നിങ്ങളുടെ പുതിയ സൗഹൃദം ഇഷ്ടപ്പെടുന്നു\n"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} നിങ്ങളുടെ ഹൈലൈറ്റ് ഇഷ്ടപ്പെടുന്നു, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} നിങ്ങളുടെ കുറിപ്പ് ഇഷ്ടപ്പെടുന്നു\n"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{reference_human} എന്നതിൽ നിങ്ങളുടെ കുറിപ്പ് {name} ഇഷ്ടപ്പെടുന്നു"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} നിങ്ങളുടെ കുറിപ്പ് ഇഷ്ടപ്പെടുന്നു, \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} നിങ്ങളുടെ പദ്ധതിയുടെ പ്രവർത്തനം ഇഷ്ടപ്പെടുന്നു"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} നിങ്ങളുടെ ബൈബിൾ പദ്ധതിയുടെ പ്രവർത്തനം ഇഷ്ടപ്പെടുന്നു"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name}, {reference_human} ബുക്ക്മാർക്ക് ചെയ്തു"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} {reference_human} ഹൈലൈറ്റ് ചെയ്തു"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} ഒരു കുറിപ്പ് ചേർത്തു"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name}, {reference_human} എന്നതിൽ ഒരു കുറിപ്പ് ചേർത്തു"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} ഒരു കുറിപ്പ് ചേർത്തു, \"{title}\""
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} പ്ലാൻ പൂര്‍ത്തീകരിച്ചു, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} അവരുടെ ബൈബിൾ പ്ലാൻ പൂർത്തിയാക്കി, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} ഒരു പുതിയ പദ്ധതി ആരംഭിച്ചു, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} ഒരു പുതിയ ബൈബിൾ പ്ലാൻ ആരംഭിച്ചു, {title}\n"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} യൂവേർഷനിൽ ഇപ്പോൾ ചേർന്നിട്ടുണ്ട്. അവരെ ഒരു സുഹൃത്തായി ചേർക്കാൻ ടാപ്പുചെയ്യുക.\n"
+
+msgid "notifications.system.test"
+msgstr "ഞങ്ങളുടെ കിഡ്സ് ബൈബിൾ ആപ്പ് ഇപ്പോൾ തന്നെ ഡൌൺലോഡ് ചെയ്യൂ !!!\n"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} നിങ്ങളുടെ വാക്യ ചിത്രത്തിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}, {moment_owner_name} ന്റെ വാക്യത്തിന്റെ ചിത്രത്തിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} അവരുടെ വാക്യത്തിന്റെ ചിത്രത്തിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}, {reference_human} എന്നതിൽ നിങ്ങളുടെ വാക്യത്തിന്റെ ചിത്രം ഇഷ്ടപ്പെടുന്നു"
+
+msgid "notifications.moments.create.image"
+msgstr "{name}, {reference_human} എന്നതിനായ് ഒരു വാക്യത്തിന്റെ ചിത്രം സൃഷ്ടിച്ചു"
+
+msgid "notifications.friendships.pending"
+msgstr "നിങ്ങൾക്ക് ബൈബിൾ ആപ്പിൽ സുഹൃദ്ബന്ധം കാത്തിരിക്കുന്നു\n"
+
+msgid "notifications.votd_image"
+msgstr "ദിവസേനയുള്ള വാക്യത്തിന്റെ ചിത്രം"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} നിങ്ങളോടൊപ്പം പ്ലാൻ, \"{title}\" വായിക്കാൻ ആഗ്രഹിക്കുന്നു.\n"
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name}, \"{title}\"എന്ന പ്ലാനിന്റെ, {day} ദിവസത്തിൽ അഭിപ്രായമിട്ടു."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} നിങ്ങളോടൊപ്പം പ്ലാൻ, \"{title}\" വായിക്കാനുള്ള നിങ്ങളുടെ ക്ഷണം സ്വീകരിച്ചു.\n"
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} \"{title}\" എന്ന പദ്ധതിയുടെ ആരംഭ തീയതി {date} ലേക്ക് മാറ്റി.\n"
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} നിങ്ങളുടെ കുറിപ്പിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name}, {moment_owner_name} ന്റെ കുറിപ്പിലും അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} അവരുടെ കുറിപ്പിൽ അഭിപ്രായമിട്ടു: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} നിങ്ങളുടെ ബാഡ്ജ് {title} ഇഷ്ടപ്പെടുന്നു"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} ന് {title} ബാഡ്ജ് ലഭിച്ചു"
+
+msgid "share.find_friends.invite_email_html"
+msgstr ""
+"<p>ഹായ്!</p><p>ഞാൻ യൂവേർഷനിൽ നിന്നുള്ള ബൈബിൾ ആപ്പാണ് ഉപയോഗിക്കുന്നത്,അത് നിങ്ങളുമായി പങ്കുവെക്കാൻ ആഗ്രഹിക്കുന്നു.നിങ്ങൾ പുതിയ ആപ്ലിക്കേഷനാണെങ്കിൽ, ദൈനംദിന ജീവിതത്തിലേയ്ക്ക് ബൈബിളിൻറെ സൗന്ദര്യവും സത്യവും കൊണ്ടുവരുന്നതിനുള്ള ലളിതമായ ഒരു മാർഗമാണിത്.</p><p><strong>ബൈബിൾ ആപ്പ് നേടുക:</strong>നിങ്ങളുടെ സ്മാർട്ട് ഫോണിലോ ടാബ്ലെറ്റിലോ വായിക്കുകയും, കാണുകയും, കേൾക്കുകയും, പങ്കിടുകയും ചെയ്യുക, bible.com ൽ ഓൺലൈനിലും ചെയ്യുക</p><p><strong>നിങ്ങളുടെ അക്കൗണ്ട് സജ്ജമാക്കുക\n"
+"</strong> ബൈബിൾ പദ്ധതികളിലേക്ക് സബ്സ്ക്രൈബ് ചെയ്യുക, ബുക്ക്മാർക്കുകൾ, ഹൈലൈറ്റുകൾ, കുറിപ്പുകൾ എന്നിവ ആക്സസ് ചെയ്യുക</p><p><strong>സുഹൃത്തുക്കളെ ചേർക്കുക (എന്നെ പോലെ!):</strong> നിങ്ങൾക്ക് താത്പര്യമുള്ള ആളുകളുമായി ബൈബിൾ പര്യവേക്ഷണം നടത്തുക </p><p>ബൈബിൾ ആപ്പിലാണ് ഇത്—ഇവിടെ ആരംഭിക്കാം:</p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"ഹലോ!\n"
+"\n"
+"ഞാൻ യൂവേർഷനിൽ നിന്നുള്ള ബൈബിൾ ആപ്പാണ് ഉപയോഗിക്കുന്നത്,അത് നിങ്ങളുമായി പങ്കുവെക്കാൻ ആഗ്രഹിക്കുന്നു. നിങ്ങൾ ഈ ആപ്പിൽ പുതിയതാണെങ്കിൽ,ദൈനംദിന ജീവിതത്തിലേയ്ക്ക് ബൈബിളിൻറെ സൗന്ദര്യവും സത്യവും കൊണ്ടുവരുന്നതിനുള്ള ലളിതമായ ഒരു മാർഗമാണിത്.\n"
+"\n"
+"ബൈബിൾ ആപ്പ് നേടുക:നിങ്ങളുടെ സ്മാർട്ട് ഫോണിലോ ടാബ്ലെറ്റിലോ വായിക്കുകയും, കാണുകയും, കേൾക്കുകയും, പങ്കിടുകയും ചെയ്യുക, bible.com ൽ ഓൺലൈനിലും ചെയ്യുക.\n"
+"\n"
+"നിങ്ങളുടെ അക്കൗണ്ട് സജ്ജമാക്കുക: ബൈബിൾ പദ്ധതികളിലേക്ക് സബ്സ്ക്രൈബ് ചെയ്യുക, ബുക്ക്മാർക്കുകൾ, ഹൈലൈറ്റുകൾ, കുറിപ്പുകൾ എന്നിവ ആക്സസ് ചെയ്യുക.\n"
+"\n"
+"സുഹൃത്തുക്കളെ ചേർക്കുക (എന്നെ പോലെ!):8 നിങ്ങൾക്ക് താത്പര്യമുള്ള ആളുകളുമായി ബൈബിൾ പര്യവേക്ഷണം നടത്തുക.\n"
+"\n"
+"ബൈബിൾ ആപ്പിലാണ് ഇത്—ഇവിടെ ആരംഭിക്കാം: "
+
+msgid "share.invite_email_subject"
+msgstr "ബൈബിൾ ആപ്പിൽ എന്നോട് ഒപ്പം ചേരൂ!\n"
+
+msgid "share.invite_facebook"
+msgstr ""
+"ബൈബിൾ ആപ്പിനെ ഞാൻ സ്നേഹിക്കുന്നു! ബൈബിളിനെ എന്റെ അനുദിന ജീവിതത്തിന്റെ ഭാഗം ആക്കി മാറ്റുവാ൯ ഇത് വളരെയധികം സഹായിച്ചു.\n"
+" ഇത് ഹൈലൈറ്റ് ചെയ്യുവാ൯, ഓഡിയോ ബൈബിളുകൾ കേൾക്കവാ൯, കുറിപ്പുകൾ ഉണ്ടാക്കുവാ൯, ഭക്തിപദ്ധതികൾ പിന്തുടരുവാ൯ ... വീഡിയോകൾ കാണുവാ൯ വരെ എന്നെ സഹായിക്കുന്നു!\n"
+" ഇത് ഇപ്പോൾ ഡൌൺലോഡ് ചെയ്യുക (ഇത് സൌജന്യമാണ്):\n"
+
+msgid "share.invite_facebook_direct"
+msgstr "നിങ്ങളുടെ പക്കൽ ബൈബിൾ ആപ്പ് ഉണ്ടോ? ഞാൻ അത് ഇഷ്ടപ്പെടുന്നു,എനിക്ക് തോന്നുന്നു നിങ്ങൾക്കും അത് ഇഷ്ടമാകും. ഇതാണ് ലിങ്ക്:"
+
+msgid "share.invite_sms"
+msgstr "ഞാൻ യൂവേർഷൻ ബൈബിൾ ആപ്പ് ഇഷ്ടപ്പെടുന്നു,. എനിക്ക് തോന്നുന്നു നിങ്ങൾക്കും അത് ഇഷ്ടമാകും"
+
+msgid "share.invite_sms_prefix"
+msgstr "{name}ൽ നിന്ന്:"
+
+msgid "share.invite_twitter"
+msgstr ""
+"@യൂവേർഷ൯ ബൈബിൾ ആപ്പിന് എന്റെ ഹോം സ്ക്രീനിൽ ഒരു സ്ഥിരം സ്ഥലമുണ്ട്.\n"
+" വായിക്കുക, കാണുക, ശ്രവിക്കുക, പങ്കിടുക ...എല്ലാം ഒരു സൗജന്യ അപ്പിൽ:\n"
+
+msgid "share.invite_twitter_direct"
+msgstr "നിങ്ങളുടെ പക്കൽ @യൂവേർഷനിൽ നിന്നുള്ള ബൈബിൾ ആപ്പ് ഉണ്ടോ? ഞാൻ അത് ഇഷ്ടപ്പെടുന്നു,എനിക്ക് തോന്നുന്നു നിങ്ങൾക്കും അത് ഇഷ്ടമാകും. ഇതാണ് ലിങ്ക്:"

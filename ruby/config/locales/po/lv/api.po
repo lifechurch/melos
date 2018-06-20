@@ -1,49 +1,70 @@
-# Latvian translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: lv\n"
-"Language-Team: lv <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-02-06 13:16-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Latvian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: lv\n"
-"Language-Team: lv <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n==0 ? 0 : n%10==1 && n%100!=11 ? 1 : 2);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: lv\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Latvian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: lv\n"
-"Language-Team: lv <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n==0 ? 0 : n%10==1 && n%100!=11 ? 1 : 2);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: lv\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Latvian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: lv\n"
+"Plural-Forms: nplurals=3; plural=(n==0 ? 0 : n%10==1 && n%100!=11 ? 1 : 2);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: lv\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Tu nopelnīji <b>{title}</b> nozīmīti"
@@ -63,42 +84,6 @@ msgstr "Tu izveidoji grāmatzīmi <b>{reference_human} {version_abbreviation}</b
 msgid "moment.bookmark.title"
 msgstr "{name} izveidoja grāmatzīmi <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Atsvaidzini savu ticību ar jauniem lasīšanas plāniem."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Meklē Dievu Viņā Vārdā katru dienu."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Sagatavo savu sirdi šai sezonai."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Rodi Dieva mīlestību Viņa Vārdā."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Tavs visu laiku labākais gads sākas tagad."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Svini brīvību Kristū."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Meklē Dievu Viņa Vārdā."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Rodi cerību un atjaunotni Dieva Vārdā."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Velti sevi Viņa Vārdam katru dienu."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Atrodi pateicību Dieva apsolījumos."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Dievišķā gudrība iesākas Dieva Vārdā."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Dieva Vārds visu dara jaunu."
-
 msgid "moment.friendship.self.title"
 msgstr "Tu tagad esi draugos ar <b>{friend_name}</b>"
 
@@ -111,29 +96,23 @@ msgstr "Tu izcēli <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} izcēla <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Tu izveidoji Bībeles panta attēlu <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} izveidoja Bībeles panta attēlu <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Tu pievienoji piezīmi"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} pievienoja piezīmi"
-
-msgid "moment.note.reference.self.title"
-msgstr "Tu pievienoji piezīmi pie <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} pievienoja piezīmi pie <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Tu pievienoji piezīmi, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} pievienoja piezīmi, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} pievienoja piezīmi"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Tu pievienoji piezīmi"
+
+msgid "moment.note.reference.title"
+msgstr "{name} pievienoja piezīmi pie <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Tu pievienoji piezīmi pie <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Tu pabeidzi savu lasīšanas plānu"
@@ -174,9 +153,6 @@ msgstr "Skaties <i>Bībeles sērijas</i> šovakar!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bībeles sērijas</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Dalies ar labo vēsti: Glābējs ir dzimis!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Bībeles aplikācija ir daudz jautrāka, ja to lieto kopā ar draugiem. Pārskati kontaktus, lai atrastu savus draugus."
 
@@ -185,6 +161,57 @@ msgstr "Tu apskatīji <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} apskatīja <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Sagatavojies Ziemassvētkiem ar Adventes Bībeles plānu"
+
+msgid "moment.system.bafk.title"
+msgstr "Palīdzi saviem bērniem iemīlēt Dieva Vārdu."
+
+msgid "moment.system.christmas.title"
+msgstr "Dalies ar labo vēsti: Glābējs ir dzimis!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Tavs visu laiku labākais gads sākas tagad."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Rodi Dieva mīlestību Viņa Vārdā."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Rodi cerību un atjaunotni Dieva Vārdā."
+
+msgid "moment.image.self.title"
+msgstr "Tu izveidoji Bībeles panta attēlu <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} izveidoja Bībeles panta attēlu <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Atsvaidzini savu ticību ar jauniem lasīšanas plāniem."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Velti sevi Viņa Vārdam katru dienu."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Meklē Dievu Viņa Vārdā."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Svini brīvību Kristū."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Meklē Dievu Viņā Vārdā katru dienu."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Dieva Vārds visu dara jaunu."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Dievišķā gudrība iesākas Dieva Vārdā."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Atrodi pateicību Dieva apsolījumos."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Sagatavo savu sirdi šai sezonai."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} komentēja Tavu grāmatzīmi: “{comment}”"
@@ -197,9 +224,6 @@ msgstr "{name} komentēja Tavu jauno draudzību: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}komentēja tevis izcelto \"{comment}\""
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name}komentēja tavu Bībeles panta attēlu: \"{comment}\""
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} komentēja Tavu piezīmi: “{comment}”"
@@ -216,17 +240,14 @@ msgstr "{commenter_name}arī komentēja {moment_owner_name}grāmatzīmi \"{comme
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} jauno draudzību ar {friend_name}: \"{comment}\""
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} arī komentēja Tavu jauno draudzību ar {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} arī komentēja jauno draudzību ar {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} arī komentēja Tavu jauno draudzību ar {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} izcelto \"{comment}\""
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name}arī komentēja {moment_owner_name} Bībeles panta attēlu: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} piezīmi: \"{comment}\""
@@ -242,9 +263,6 @@ msgstr "{moment_owner_name} arī komentēja viņu jauno draudzību ar Tevi: “{
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} arī komentēja paša izcelto: \"{comment}\""
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} arī komentēja savu Bībeles panta attēlu: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}arī komentēja savu piezīmi: \"{comment}\""
@@ -270,9 +288,6 @@ msgstr "{name} nu ir tavs draugs"
 msgid "notifications.friendships.offer"
 msgstr "{name} grib kļūt par tavu draugu YouVersion aplikācijā"
 
-msgid "notifications.friendships.pending"
-msgstr "Bībeles aplikācijā Tevi gaida draudzības uzaicinājumi"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Vai vēlies YouVersion aplikācijā būt draugos ar {name}?"
 
@@ -284,9 +299,6 @@ msgstr "{name} patīk tava jaunā draudzība ar {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} patīk tevis izceltais, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} atzīmēja \"patīk\" tavam Bībeles panta attēlam {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name}cilvēkiem patīk tava piezīme"
@@ -308,9 +320,6 @@ msgstr "{name}ielika grāmatzīmi pie {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name}izcēla {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} izveidoja Bībeles panta attēlu {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} pievienoja piezīmi"
@@ -338,6 +347,54 @@ msgstr "{name} tikko pievienojās YouVersion. Uzspied, lai pievienotu kā draugu
 
 msgid "notifications.system.test"
 msgstr "Lejupielādē mūsu Bērnu Bībeles aplikāciju jau tagad!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}komentēja tavu Bībeles panta attēlu: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}arī komentēja {moment_owner_name} Bībeles panta attēlu: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} arī komentēja savu Bībeles panta attēlu: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} atzīmēja \"patīk\" tavam Bībeles panta attēlam {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} izveidoja Bībeles panta attēlu {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Bībeles aplikācijā Tevi gaida draudzības uzaicinājumi"
+
+msgid "notifications.votd_image"
+msgstr "Dienas panta attēls"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} vēlas lasīt Plānu \"{title}\" reizē ar tevi."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} komentēja Plāna \"{title}\" {day}. dienā."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} pieņēma tavu uzaicinājumu reizē ar tevi lasīt Plānu \"{title}\"."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} mainīja Plāna \"{title}\" sākuma datumu uz {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} komentēja tavu nozīmīti: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} arī komentēja {moment_owner_name} nozīmīti: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} arī komentēja savu nozīmīti: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} patīk tava nozīmīte {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} saņēma nozīmīti {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Sveiki!</p><p>Es gribēju padalīties ar Tevi, ka lietoju YouVersion Bībeles aplikāciju. Ja par aplikāciju neesi zinājis, tas ir vienkāršs veids kā savā ikdienā ieviest Bībeles skaistumu un patiesību. </p><p><strong>Iegūsti Bībeles Aplikāciju:</strong> lasi. skaties, klausies un dalies ar to caur savu viedtālruni vai planšetdatoru, un arī internetā Bible.com</p><p><strong>Uzstādi savu kontu:</strong> pieraksties Bībeles lasīšanas plāniem un piekļūsti grāmatzīmēm, izceltajam un piezīmēm visās ierīcēs</p><p><strong>Pievieno draugus (piemēram mani!):</strong> izpētiet un apspriediet Bībeli ar sev tuviem cilvēkiem</p><p>Tas viss Bībeles aplikācijā - sāc šeit: </p>"

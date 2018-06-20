@@ -1,49 +1,70 @@
-# Arabic translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ar\n"
-"Language-Team: ar <LL@li.org>\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Arabic\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ar\n"
-"Language-Team: ar <LL@li.org>\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ar\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Arabic\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ar\n"
-"Language-Team: ar <LL@li.org>\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ar\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Arabic\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ar\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "لقد حصلت على <b>{title}</b> شارة"
@@ -63,45 +84,6 @@ msgstr "وضعت إشارة مرجعيّة على <b>{reference_human} {version_
 msgid "moment.bookmark.title"
 msgstr "وضع {name} إشارة مرجعيّة على <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "استعد لعيد الميلاد المجيد مع خطة قراءة الكتاب المقدس خاصة لمجيء المسيح"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "جدد إيمانك مع قراءة خطط جديدة."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "ابحث عن الله فى كلمته يوميا."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "جهز قلبك في هذا الفصل."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "ابحث عن محبه الله فى كلمته."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "افضل سنه لك على الاطلاق تبدا الان."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "احتفل بالحريه فى المسيح"
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "فتش عن الله فى كلمته."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "ابحث عن الرجاء والتجديد فى كلمه الله."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "خصص نفسك يوميا لكلمته."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "إكتشف الشكر و الإمتنان في وعود الله."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "الحكمه الالهيه تبدأ فى كلمه الله."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "تجعل كلمة الله كل شئٍ جديدٍ."
-
 msgid "moment.friendship.self.title"
 msgstr "لقد أصبحت صديق مع <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "أبرزت <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "أبرز {name} <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "أنشـأت صورة لآية <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "أنشأ {name} صورة لآية <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "لقد أضفت ملحوظه "
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} أضاف ملاحظة"
-
-msgid "moment.note.reference.self.title"
-msgstr "لقد أضفت ملحوظه على <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name}أضاف ملحوظه علي <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "لقد أضفت ملاحظة, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} أضاف ملاحظة, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} أضاف ملاحظة"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "لقد أضفت ملحوظه "
+
+msgid "moment.note.reference.title"
+msgstr "{name}أضاف ملحوظه علي <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "لقد أضفت ملحوظه على <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "لقد أنهيت خطة قراءة"
@@ -177,9 +153,6 @@ msgstr "شاهد <i>سلسلة الكتاب المقدس</i>الليلة!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>سلسلة الكتاب المقدس</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "شارك الأخبار السارة: ولد لنا مخلص!"
-
 msgid "moment.system.find_friends.title"
 msgstr "تطبيق الكتاب المقدس اكثر متعة بوجود الاصدقاء. ابحث في جهات الاتصال الخاصة بك لتجد اصدقاء"
 
@@ -188,6 +161,57 @@ msgstr "لقد شاهدت <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} شاهد <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "استعد لعيد الميلاد المجيد مع خطة قراءة الكتاب المقدس خاصة لمجيء المسيح"
+
+msgid "moment.system.bafk.title"
+msgstr "ساعد أطفالك لكي يحبوا كلمة الله."
+
+msgid "moment.system.christmas.title"
+msgstr "شارك الأخبار السارة: ولد لنا مخلص!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "افضل سنه لك على الاطلاق تبدا الان."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "ابحث عن محبه الله فى كلمته."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "ابحث عن الرجاء والتجديد فى كلمه الله."
+
+msgid "moment.image.self.title"
+msgstr "أنشـأت صورة لآية <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "أنشأ {name} صورة لآية <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "جدد إيمانك مع قراءة خطط جديدة."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "خصص نفسك يوميا لكلمته."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "فتش عن الله فى كلمته."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "احتفل بالحريه فى المسيح"
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "ابحث عن الله فى كلمته يوميا."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "تجعل كلمة الله كل شئٍ جديدٍ."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "الحكمه الالهيه تبدأ فى كلمه الله."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "إكتشف الشكر و الإمتنان في وعود الله."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "جهز قلبك في هذا الفصل."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} علّق على الإشارة المرجعية الخاصة بك: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name}قام بالتعليق على صداقتك الجديدة: “{co
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} علّق على نصك المميز: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "علق {name} على صورتك للآية: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} علّق على ملاحظتك: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name} أيضاً علّق على إشارة {moment_owner_nam
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} ايضا علق على الصداقة  {moment_owner_name} الجديدة مع {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr " {commenter_name} أيضاً قام بالتعليق على صداقتك الجديدة مع {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} أيضاً قام بالتعليق على صداقته الجديدة مع {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr " {commenter_name} أيضاً قام بالتعليق على صداقتك الجديدة مع {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} علّق أيضاً على نص {moment_owner_name} المميز: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "علق {commenter_name} أيضاً على صورة {moment_owner_name} للآية: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} أيضاً علّق على ملاحظة {moment_owner_name} الخاصة: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name} أيضاً قام بالتعليق على صداقت
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}أيضاً علق على احد أبرز الأيات : ”{comment}“"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "علق {moment_owner_name} أيضاً على صورته للآية: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} علّق أيضاً على ملاحظتهم : “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} أصبح الآن صديقك"
 msgid "notifications.friendships.offer"
 msgstr "{name} يريد أن يصبح صديقك في YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "لديك طلبات صداقة تنتظرك في تطبيق الكتاب المقدس"
-
 msgid "notifications.friendships.suggestion"
 msgstr "هل تريد أن تصبح صديقاً مع {name} في YouVersion؟"
 
@@ -287,9 +299,6 @@ msgstr "{name} معجب بصداقتك الجديدية مع {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} معجب بنصك المميز {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "أعجب {name} صورتك للآية {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} معجب  بملاحظتك"
@@ -311,9 +320,6 @@ msgstr "{name} أضاف إشارة مرجعية {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ميّز {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "أنشأ {name} صورة للآية {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} أضاف ملاحظة"
@@ -341,6 +347,54 @@ msgstr "{name}  إنضم للتو لYouVersion. انقرلإضافتهم ك�
 
 msgid "notifications.system.test"
 msgstr "حمّل تطبيق الإنجيل المقدس الخاص بالأطفال الآن!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "علق {name} على صورتك للآية: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "علق {commenter_name} أيضاً على صورة {moment_owner_name} للآية: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "علق {moment_owner_name} أيضاً على صورته للآية: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "أعجب {name} صورتك للآية {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "أنشأ {name} صورة للآية {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "لديك طلبات صداقة تنتظرك في تطبيق الكتاب المقدس"
+
+msgid "notifications.votd_image"
+msgstr "صوره عدد اليوم"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} يريد قراءه الخطه, \"{title}\" معك."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} علّق على اليوم {day} من الخطه \"{title}\"."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} قبل دعوتك لقراءه الخطه \"{title}\" معك."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} غيّر تاريخ بدء الخطه, \"{title}\" الى {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} علّق على شارتك: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} أيضا علّق على الشاره الخاصه ب{moment_owner_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} علّق ايضا على شاراتهم: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} أعجب بشارتك {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} حصل على شاره {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>مرحبا </p><p>انا استخدم تطبيق الكتاب المقدس من YouVersion و اردت ان اشاركك اياه. اذا كانت المرة الاولى لاستخدام التطبيق، اريدك ان تعرف ان التطبيق هو طريقة بسيطة لجلب حق و جمال الكتاب المقدس لحياتك اليومية.</p><p><strong> احصل على التطبيق: </strong> اقرأ، شاهد، استمع و شارك على هاتفك الذكي او التابلت، احتى على الانترنت من موقع Bible.com </p><p><strong> و اصنع حسابك: </strong> لتتمكن من الوصول الى خطط القراءة، الاشارات المرجعية، العلامات الضوئية و الملاحظات من اي جهاز ما دمت اتصلت بحسابك. </p><p><strong> اضف اصدقاء(مثلي)، </strong> اكتشف و ناقش النصوص الكتابية مع أناس تهتم بهم. </p><p> كل هذا في تطبيق الكتاب المقدس—ابدأ من هنا: </p>"

@@ -1,49 +1,70 @@
-# Japanese translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:19-0609\n"
-"PO-Revision-Date: 2017-01-03 11:19-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ja\n"
-"Language-Team: ja <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
-"Language-Team: ja <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
-"Language-Team: ja <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "「<b>{title}</b>」バッジを獲得しました"
@@ -63,45 +84,6 @@ msgstr "<b>{reference_human} ({version_abbreviation})</b>にブックマーク�
 msgid "moment.bookmark.title"
 msgstr "{name}さんがブックマークしました。<b>{reference_human} ({version_abbreviation})</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "クリスマスに向けて、待降節の読書プランをどうぞ。"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "新しい読書プランで信仰を新たにしよう。"
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "毎日、御言葉を通して神様を求めましょう。"
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "この季節、心を整えましょう。"
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "御言葉に神様の愛を見つけましょう。"
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "今から最高の一年が始まります。"
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "キリストによる自由を喜びましょう。"
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "御言葉を通して神様を求めましょう。"
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "神様の言葉に希望を見出し、新しく始めることができます。"
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "毎日、神様の言葉で満たされましょう。"
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "神様の約束から感謝の気持ち得ましょう。"
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "神聖な知恵は神様の言葉からです。"
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "神様の御言葉は全てを新しくします。"
-
 msgid "moment.friendship.self.title"
 msgstr "お友達になりました：<b>{friend_name}</b>さん"
 
@@ -114,29 +96,23 @@ msgstr "<b>{reference_human} ({version_abbreviation})</b>にハイライトし�
 msgid "moment.highlight.title"
 msgstr "{name}さんがハイライトしました。<b>{reference_human} ({version_abbreviation})</b>"
 
-msgid "moment.image.self.title"
-msgstr "<b>{reference_human} ({version_abbreviation})</b>の聖句画像を作成しました。"
-
-msgid "moment.image.title"
-msgstr "{name}さんが聖句画像を作成しました。<b>{reference_human} ({version_abbreviation})</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "ノートを追加しました"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name}さんがノートを追加しました"
-
-msgid "moment.note.reference.self.title"
-msgstr "<b>{reference_human}さん</b>に関するノートを追加しました"
-
-msgid "moment.note.reference.title"
-msgstr "<b>{reference_human}さんに関するノートを</b>{name}さんが追加しました。"
-
 msgid "moment.note.self.title"
 msgstr "「<b>{title}</b>」というノートを追加しました"
 
 msgid "moment.note.title"
 msgstr "{name}さんが「<b>{title}</b>」というノートを追加しました"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name}さんがノートを追加しました"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "ノートを追加しました"
+
+msgid "moment.note.reference.title"
+msgstr "<b>{reference_human}</b>に関するノートを{name}さんが追加しました。"
+
+msgid "moment.note.reference.self.title"
+msgstr "<b>{reference_human}</b>に関するノートを追加しました"
 
 msgid "moment.plan_completion.self.title"
 msgstr "読書プランを完了しました"
@@ -177,9 +153,6 @@ msgstr "今夜、<i>聖書シリーズ</i>を観る"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>聖書シリーズ</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "福音を告げよう: 救い主が生まれた！"
-
 msgid "moment.system.find_friends.title"
 msgstr "お友達と一緒なら、聖書アプリをさらに活用できます。連絡先から、お友達を検索しましょう。"
 
@@ -188,6 +161,57 @@ msgstr "「<b>{title}</b>」を観ました"
 
 msgid "moment.video.watched.title"
 msgstr "{name}さんが「<b>{title}</b>」を観ました"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "クリスマスに向けて、待降節の読書プランをどうぞ。"
+
+msgid "moment.system.bafk.title"
+msgstr "こどもたちが神様のみ言葉を大好きになるように支援します。"
+
+msgid "moment.system.christmas.title"
+msgstr "福音を告げよう: 救い主が生まれた！"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "今から最高の一年が始まります。"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "御言葉に神様の愛を見つけましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "神様の言葉に希望を見出し、新しく始めることができます。"
+
+msgid "moment.image.self.title"
+msgstr "<b>{reference_human} ({version_abbreviation})</b>の聖句画像を作成しました。"
+
+msgid "moment.image.title"
+msgstr "{name}さんが聖句画像を作成しました。<b>{reference_human} ({version_abbreviation})</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "新しい読書プランで信仰を新たにしよう。"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "毎日、神様の言葉で満たされましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "御言葉を通して神様を求めましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "キリストによる自由を喜びましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "毎日、御言葉を通して神様を求めましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "神様の御言葉は全てを新しくします。"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "神聖な知恵は神様の言葉からです。"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "神様の約束から感謝の気持ち得ましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "この季節、心を整えましょう。"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name}さんがあなたのブックマークにコメントしました： “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name}さんが、あなたに新しい友だちができたことにコ
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}さんがあなたのハイライトにコメントしました： “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name}さんがあなたの聖書画像に次のコメントをしました:「{comment}」"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}さんがあなたのノートにコメントしました： “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name}さんが{moment_owner_name}さんのブックマーク�
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{moment_owner_name}さんが{friend_name}さんとお友達になったことにも、{commenter_name}さんがコメントしました: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name}さんが、あなたと{moment_owner_name}さんが友だちになったことにコメントしました「{comment}」"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name}さんが、{moment_owner_name}さんと友だちになったことにコメントしました「{comment}」"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}さんが、あなたと{moment_owner_name}さんが友だちになったことにコメントしました「{comment}」"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}さんが{moment_owner_name}さんのハイライトにコメントしました： “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name}さんが{moment_owner_name}さんの聖書画像に次のコメントをしました: 「{comment}」"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name}さんが{moment_owner_name}さんのノートにコメントしました： “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name}さんが、あなたと友だちになったこと�
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}さんがハイライトにコメントしました： “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name}さんが自分の聖書画像にも次のコメントをしました: 「{comment}」"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}さんがノートにコメントしました： “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name}さんと友達になりました。"
 msgid "notifications.friendships.offer"
 msgstr "{name}さんがYouVersionで友達申請しています。"
 
-msgid "notifications.friendships.pending"
-msgstr "聖書アプリで未確認の友達申請があります"
-
 msgid "notifications.friendships.suggestion"
 msgstr "{name}さんとYouVersionで友達になりますか？"
 
@@ -287,9 +299,6 @@ msgstr "{friend_name}さんとお友達になったことに、{name}さんが�
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name}さんがあなたのハイライト、{reference_human}をいいね！しました"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name}さんがあなたの{reference_human}の聖書画像にいいね！しました。"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} があなたのノートをいいね！しました"
@@ -311,9 +320,6 @@ msgstr "{name}さんが{reference_human}にブックマークしました"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name}さんが{reference_human}にハイライトしました"
-
-msgid "notifications.moments.create.image"
-msgstr "{name}さんが{reference_human}の聖書画像を作成しました。"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name}さんがノートを追加しました"
@@ -341,6 +347,54 @@ msgstr "{name}さんがYouVersionに登録しました。タップして友だ�
 
 msgid "notifications.system.test"
 msgstr "キッズ聖書アプリを今すぐダウンロード!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}さんがあなたの聖書画像に次のコメントをしました:「{comment}」"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}さんが{moment_owner_name}さんの聖書画像に次のコメントをしました: 「{comment}」"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name}さんが自分の聖書画像にも次のコメントをしました: 「{comment}」"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}さんがあなたの{reference_human}の聖書画像にいいね！しました。"
+
+msgid "notifications.moments.create.image"
+msgstr "{name}さんが{reference_human}の聖書画像を作成しました。"
+
+msgid "notifications.friendships.pending"
+msgstr "聖書アプリで未確認の友達申請があります"
+
+msgid "notifications.votd_image"
+msgstr "今日の聖句　イメージ"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name}さんが読書プラン「{title}」を一緒に読むことを希望しています。"
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name}さんが読書プラン「{title}」の{day}日目についてコメントしました。"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name}さんが読書プラン「{title}」への招待を承認しました。"
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name}さんが読書プランの「{title}」開始日を{date}に変更しました。"
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name}さんがあなたのバッジについてコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name}さんが{moment_owner_name}さんのバッジについてコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name}さんがバッジについてコメントしました： “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name}さんがあなたのバッジ、{title}をいいね！しました"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} さんが、{title}というバッジを獲得しました"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>こんにちは！</p><p>わたしの使っているYouVersion聖書アプリについてシェアさせてください。聖書の素晴らしい真実を日々の生活に簡単に取り入れることができる便利なアプリですよ。</p><p><strong>聖書アプリをゲット</strong>すれば、スマホやタブレット、Bible.comから、コンテンツを読んだり、見たり、聞いたり、シェアできます。</p><p><strong>アカウント登録</strong>することで、読書プランが利用でき、ご利用のデバイス全機から、ブックマーク、ハイライト、ノートにアクセスできるようになります。</p><p><strong>友だちを追加</strong>することで (私もお願い！)、仲間と一緒に聖書を探求し、話し合うことができます。</p><p>これらすべてが可能な聖書アプリ — こちらからどうぞ: </p>"

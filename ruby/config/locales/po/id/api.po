@@ -1,49 +1,70 @@
-# Indonesian translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: id\n"
-"Language-Team: id <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: id\n"
-"Language-Team: id <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: id\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: id\n"
-"Language-Team: id <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: id\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: id\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Anda memperoleh lencana <b>{title}</b>"
@@ -63,45 +84,6 @@ msgstr "Anda memarkahi <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} memarkahi <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Bersiap untuk Natal dengan Rencana Alkitab Adven"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Perbarui iman Anda dengan Rencana baru."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Carilah Tuhan dalam Firman-Nya setiap hari."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Siapkan hati Anda musim ini."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Temukan kasih Allah dalam Firman-Nya."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Tahun terbaik Anda dimulai sekarang."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Rayakan Kebebasan dalam Kristus."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Carilah Tuhan dalam Firman-Nya."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Temukan harapan dan pembaruan dalam Firman Tuhan."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Dedikasikan diri Anda setiap hari pada Firman-Nya."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Temukan rasa syukur dalam janji-janji Tuhan."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Hikmat ilahi dimulai dalam Firman Tuhan."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Firman Tuhan membuat segalanya baru."
-
 msgid "moment.friendship.self.title"
 msgstr "Anda sekarang berteman dengan <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "Anda menyoroti <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} menyoroti <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Anda membuat gambar ayat untuk <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} membuat gambar ayat untuk <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Anda menambahkan catatan"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} menambahkan catatan"
-
-msgid "moment.note.reference.self.title"
-msgstr "Anda menambahkan catatan pada <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} menambahkan catatan pada <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Anda menambahkan catatan, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} menambahkan catatan, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} telah menambahkan sebuah catatan"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Anda menambahkan catatan"
+
+msgid "moment.note.reference.title"
+msgstr "{name} menambahkan catatan pada <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Anda menambahkan catatan pada <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Anda telah menyelesaikan Rencana Anda"
@@ -145,7 +121,7 @@ msgid "moment.plan_completion.title"
 msgstr "{name} telah menyelesaikan sebuah Rencana"
 
 msgid "moment.plan_completion.v2.self.title"
-msgstr "Anda telah menyelesaikan Rencana Anda, <b>{title}</b>"
+msgstr "Anda telah menyelesaikan Rencana, <b>{title}</b>"
 
 msgid "moment.plan_completion.v2.title"
 msgstr "{name} telah menyelesaikan Rencana, <b>{title}</b>"
@@ -154,10 +130,10 @@ msgid "moment.plan_segment_completion.body"
 msgstr "Hari {segment} dari {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Anda menyelesaikan hari ke <b>{segment}</b> dari Rencana tersebut, <b>{title}</b>"
+msgstr "Anda menyelesaikan hari ke-<b>{segment}</b> dari Rencana, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} menyelesaikan hari ke <b>{segment}</b> dari Rencana tersebut, <b>{title}</b>"
+msgstr "{name} menyelesaikan hari ke-<b>{segment}</b> dari Rencana, <b>{title}</b>"
 
 msgid "moment.plan_subscription.self.title"
 msgstr "Anda memulai Rencana baru"
@@ -177,9 +153,6 @@ msgstr "Saksikan <i>Seri Alkitab</i> malam ini!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Seri Alkitab</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Bagikan kabar baik: Juruselamat lahir!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Aplikasi Alkitab malah semakin baik bersama Teman. Telusuri Kontak Anda untuk menemukan Teman."
 
@@ -188,6 +161,57 @@ msgstr "Anda telah menyaksikan <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} telah menyaksikan <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Bersiap untuk Natal dengan Rencana Alkitab Adven"
+
+msgid "moment.system.bafk.title"
+msgstr "Bantulah anak-anak Anda menyukai Firman Tuhan."
+
+msgid "moment.system.christmas.title"
+msgstr "Bagikan kabar baik: Juruselamat lahir!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Tahun terbaik Anda dimulai sekarang."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Temukan kasih Allah dalam Firman-Nya."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Temukan harapan dan pembaruan dalam Firman Tuhan."
+
+msgid "moment.image.self.title"
+msgstr "Anda membuat gambar ayat untuk <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} membuat gambar ayat untuk <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Perbarui iman Anda dengan Rencana baru."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Dedikasikan diri Anda setiap hari pada Firman-Nya."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Carilah Tuhan dalam Firman-Nya."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Rayakan Kebebasan dalam Kristus."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Carilah Tuhan dalam Firman-Nya setiap hari."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Firman Tuhan membuat segalanya baru."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Hikmat ilahi dimulai dalam Firman Tuhan."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Temukan rasa syukur dalam janji-janji Tuhan."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Siapkan hati Anda musim ini."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} mengomentari markah Anda: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name} mengomentari pertemanan baru Anda: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} mengomentari sorotan Anda: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} mengomentari gambar ayat Anda: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} mengomentari catatan Anda: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name} juga mengomentari markah {moment_owner_name}: “{comme
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} juga mengomentari pertemanan baru {moment_owner_name} dengan {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} juga mengomentari pertemanan baru Anda dengan {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} juga mengomentari pertemanan baru mereka dengan {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} juga mengomentari pertemanan baru Anda dengan {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} juga mengomentari sorotan {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} juga mengomentari gambar ayat {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} juga mengomentari catatan {moment_owner_name}: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name} juga mengomentari pertemanan baru mereka dengan Anda
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} juga mengomentari sorotan mereka: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} juga mengomentari gambar ayatnya: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} juga mengomentari catatan mereka: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} sekarang menjadi teman Anda"
 msgid "notifications.friendships.offer"
 msgstr "{name} ingin berteman dengan Anda di YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "Anda memiliki permintaan Teman menunggu di Ap Alkitab"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Apakah Anda ingin berteman dengan {name} di YouVersion?"
 
@@ -288,9 +300,6 @@ msgstr "{name} menyukai pertemanan baru Anda dengan {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} suka sorotan Anda, {reference_human}"
 
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} menyukai gambar ayat Anda untuk {reference_human}"
-
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} suka catatan Anda"
 
@@ -301,19 +310,16 @@ msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} suka catatan Anda, “{title}”"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} suka aktifitas Rencana Anda"
+msgstr "{name} suka aktivitas Rencana Anda"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} suka aktifitas Rencana Alkitab Anda"
+msgstr "{name} suka aktivitas Rencana Alkitab Anda"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} telah memarkahi {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} telah menyoroti {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} membuat gambar ayat untuk {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} telah menambahkan sebuah catatan"
@@ -325,7 +331,7 @@ msgid "notifications.moments.create.note.title"
 msgstr "{name} telah menambahi catatan, “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} telah menyelesaikan Rencana mereka, {title}"
+msgstr "{name} telah menyelesaikan Rencana, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} telah menyelesaikan Rencana Alkitab mereka, {title}"
@@ -341,6 +347,54 @@ msgstr "{name} baru saja bergabung di YouVersion. Tekan untuk menambah mereka se
 
 msgid "notifications.system.test"
 msgstr "Unduhlah Aplikasi Alkitab Anak kami sekarang!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} mengomentari gambar ayat Anda: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} juga mengomentari gambar ayat {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} juga mengomentari gambar ayatnya: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} menyukai gambar ayat Anda untuk {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} membuat gambar ayat untuk {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Anda memiliki permintaan Teman menunggu di Aplikasi Alkitab"
+
+msgid "notifications.votd_image"
+msgstr "Gambar Ayat Hari Ini"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} ingin membaca rencana {title} bersama Anda."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} berkomentar pada hari ke-{day} dari rencana “{title}“."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} menerima undangan Anda untuk membaca rencana “{title}“ bersama Anda."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} mengubah tanggal mulai rencana “{title}“ ke {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} mengomentari lencana Anda: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} juga mengomentari lencana {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} juga mengomentari lencana mereka: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} suka lencana {title} Anda"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} mendapat lencana {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hai!</p><p>Saya menggunakan Aplikasi Alkitab dari YouVersion dan ingin membagikannya dengan Anda. Jika Anda baru pertama kali dengar, ini adalah cara mudah untuk membawa keindahan dan kebenaran Alkitab ke dalam hidup keseharian. </p><p><strong>Dapatkan Aplikasi Alkitab:</strong> baca, tonton, dengar, dan bagikan di smartphone atau tablet Anda, dan daring di Bible.com</p><p><strong>Daftarkan Akun Anda:</strong> berlangganan Rencana Alkitab dan akses markah, sorotan, dan catatan di berbagai perangkat</p><p><strong>Tambahkan Teman (Seperti Saya!):</strong> jelajahi dan diskusikan Alkitab dengan orang-orang yang Anda pedulikan</p><p>Semuanya ada di Aplikasi Alkitab—mulaillah di sini: </p>"

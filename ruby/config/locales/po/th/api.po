@@ -1,49 +1,70 @@
-# Thai translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: th\n"
-"Language-Team: th <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:20-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: th\n"
-"Language-Team: th <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: th\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:29-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: th\n"
-"Language-Team: th <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: th\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: th\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "คุณได้รับเหรียญตรา <b>{title}</b>"
@@ -63,45 +84,6 @@ msgstr "คุณได้คั่นหน้า <b>{reference_human} {version
 msgid "moment.bookmark.title"
 msgstr "{name} ได้คั่นหน้า <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "เตรียมพร้อมสำหรับช่วงเวลาคริสมาสต์กับแผนการอ่านเกี่ยวกับการประสูติ"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "ฟื้นฟูความเชื่อของคุณด้วยแผนการอ่านใหม่ๆ"
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "แสวงหาพระเจ้าในพระวจนะของพระองค์ทุกวัน"
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "เตรียมหัวใจของคุณสำหรับฤดูกาลนี้"
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "พบกับความรักของพระเจ้าในพระวจนะของพระองค์"
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "ปีที่ดีที่สุดของคุณกำลังจะเริ่มต้นตอนนี้"
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "ฉลองเสรีภาพในพระคริสต์"
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "แสวงหาพระเจ้าในพระวจนะของพระองค์"
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "พบความหวังและการรื้อฟื้นในพระวจนะของพระเจ้า"
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "ถวายตัวในทุกๆ วันต่อพระคำของพระองค์"
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "ค้นพบความขอบคุณในพระสัญญาของพระเจ้า"
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "พระปัญญาพระเจ้าจะเริ่มต้นจากพระวจนะของพระเจ้า"
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "พระวจนะคำของพระเจ้าทำให้ทุกอย่างเป็นสิ่งใหม่"
-
 msgid "moment.friendship.self.title"
 msgstr "ตอนนี้คุณเป็นเพื่อนกับ <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "คุณได้เน้นพระคำ <b>{reference_human} {vers
 msgid "moment.highlight.title"
 msgstr "{name} เน้นข้อพระคำ <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "คุณได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} ได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "คุณได้เพิ่มบันทึกใหม่"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} ได้เพิ่มบันทึกใหม่"
-
-msgid "moment.note.reference.self.title"
-msgstr "<b>คุณได้เพิ่มบันทึกใหม่ใน {reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} ได้เพิ่มบันทึกใหม่ใน <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "คุณได้เพิ่มโน้ต <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} เพิ่มการโน้ต <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} ได้เพิ่มโน้ต"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "คุณได้เพิ่มบันทึกใหม่"
+
+msgid "moment.note.reference.title"
+msgstr "{name} ได้เพิ่มบันทึกใหม่ใน <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "<b>คุณได้เพิ่มบันทึกใหม่ใน {reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "อ่านแผนการอ่านสำเร็จ"
@@ -177,9 +153,6 @@ msgstr "รับชม <i>เรื่องราวจากพระคั�
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>เรื่องราวจากพระคัมภีร์</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "ร่วมแบ่งปันข่าวประเสริฐ: พระผู้ช่วยได้บังเกิดแล้ว!"
-
 msgid "moment.system.find_friends.title"
 msgstr "คุณจะได้รับประสบการณ์ที่ดียิ่งขึ้นในแอพพระคัมภีร์เมื่อใช้ร่วมกับเพื่อน ลองค้นหาจากรายชื่อเพื่อดูเพื่อนของคุณ"
 
@@ -188,6 +161,57 @@ msgstr "คุณกำลังรับชม <b>{title}}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} ได้รับชม <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "เตรียมพร้อมสำหรับช่วงเวลาคริสมาสต์กับแผนการอ่านเกี่ยวกับการประสูติ"
+
+msgid "moment.system.bafk.title"
+msgstr "ช่วยให้บุตรหลานของคุณให้ตกหลุมรักพระคำของพระเจ้า"
+
+msgid "moment.system.christmas.title"
+msgstr "ร่วมแบ่งปันข่าวประเสริฐ: พระผู้ช่วยได้บังเกิดแล้ว!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "ปีที่ดีที่สุดของคุณกำลังจะเริ่มต้นตอนนี้"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "พบกับความรักของพระเจ้าในพระวจนะของพระองค์"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "พบความหวังและการรื้อฟื้นในพระวจนะของพระเจ้า"
+
+msgid "moment.image.self.title"
+msgstr "คุณได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} ได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "ฟื้นฟูความเชื่อของคุณด้วยแผนการอ่านใหม่ๆ"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "ถวายตัวในทุกๆ วันต่อพระคำของพระองค์"
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "แสวงหาพระเจ้าในพระวจนะของพระองค์"
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "ฉลองเสรีภาพในพระคริสต์"
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "แสวงหาพระเจ้าในพระวจนะของพระองค์ทุกวัน"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "พระวจนะคำของพระเจ้าทำให้ทุกอย่างเป็นสิ่งใหม่"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "พระปัญญาพระเจ้าจะเริ่มต้นจากพระวจนะของพระเจ้า"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "ค้นพบความขอบคุณในพระสัญญาของพระเจ้า"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "เตรียมหัวใจของคุณสำหรับฤดูกาลนี้"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} ได้แสดงความคิดเห็นบนที่คั่นหน้าของคุณ: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name} แสดงความคิดเห็นบนความ�
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของคุณ: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} แสดงความเห็นบนรูปข้อพระคัมภีร์ของคุณ: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}  ได้แสดงความคิดเห็นบนโน้ตของคุณ: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name} ได้แสดงความคิดเห็น�
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่ของ {moment_owner_name}'s กับ {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่กับ {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่กับ{moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่กับ {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของ {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} ได้แสดงความเห็นบนรูปข้อพระคัมภีร์ของ {moment_owner_name} : “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนโน้ตของ {moment_owner_name}: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name} ได้แสดงความคิดเห็�
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของเขา: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} ได้แสดงความเห็นบนรูปข้อพระคัมภีร์ของเขา: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนโน้ตของเขา: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} เป็นเพื่อนของคุณแล้ว"
 msgid "notifications.friendships.offer"
 msgstr "{name} ต้องการเป็นเพื่อนกับคุณบน YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "คุณมีคำขอเป็นเพื่อนที่รออยู่ในแอพพระคัมภีร์"
-
 msgid "notifications.friendships.suggestion"
 msgstr "คุณต้องการจะเป็นเพื่่อนกับ {name} บน YouVersion หรือไม่?"
 
@@ -287,9 +299,6 @@ msgstr "{name} ถูกใจในความสัมพันธ์ให�
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} ถูกใจการเน้นข้อพระคำของคุณ {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} ถูกใจรูปข้อพระคัมภีร์สำหรับ {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} ถูกใจโน้ตของคุณ"
@@ -311,9 +320,6 @@ msgstr "{name} ได้คั่นหน้า {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ได้เน้นข้อพระคำ {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} ได้เพิ่มรูปข้อพระคัมภีร์สำหรับ {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ได้เพิ่มโน้ต"
@@ -341,6 +347,54 @@ msgstr "{name} ได้เข้าร่วมใน YouVersion แตะเ�
 
 msgid "notifications.system.test"
 msgstr "ดาวน์โหลดแอพพระคัมภีร์สำหรับเด็กได้แล้วตอนนี้ !!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} แสดงความเห็นบนรูปข้อพระคัมภีร์ของคุณ: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} ได้แสดงความเห็นบนรูปข้อพระคัมภีร์ของ {moment_owner_name} : “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} ได้แสดงความเห็นบนรูปข้อพระคัมภีร์ของเขา: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} ถูกใจรูปข้อพระคัมภีร์สำหรับ {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} ได้เพิ่มรูปข้อพระคัมภีร์สำหรับ {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "คุณมีคำขอเป็นเพื่อนที่รออยู่ในแอพพระคัมภีร์"
+
+msgid "notifications.votd_image"
+msgstr "ภาพข้อพระคัมภีร์ประจำวัน"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} ต้องการอ่านพระคัมภีร์แผน \"{title}\" เหมือนกับคุณ"
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} แสดงความเห็นเมื่อวันที่ {day} ของแผน,\"{title}.\""
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} ได้ยอมรับคำเชิญของคุณให้อ่านแผนการอ่านพระคัมภีร์,\"{title}\"ร่วมกับคุณ"
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} เปลี่ยนวันเริ่มต้นของแผน \"{title}\" เป็น {date}"
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr ""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr ""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr ""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr ""
+
+msgid "notifications.moments.create.badge"
+msgstr ""
 
 msgid "share.find_friends.invite_email_html"
 msgstr ""

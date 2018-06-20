@@ -1,49 +1,70 @@
-# Finnish translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:19-0609\n"
-"PO-Revision-Date: 2017-01-03 11:19-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: fi\n"
-"Language-Team: fi <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fi\n"
-"Language-Team: fi <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: fi\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fi\n"
-"Language-Team: fi <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: fi\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: fi\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Sait ansiomerkin <b>{title}</b>"
@@ -63,45 +84,6 @@ msgstr "Teit kirjanmerkin <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} teki kirjanmerkin <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Valmistaudu jouluun adventin ajan lukusuunnitelmalla"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Virkistä uskoasi uusien lukusuunnitelmien avulla."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Etsi Jumalaa Sanasta päivittäin."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Valmistele sydäntäsi tämän kauden aikana."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Löydä Jumalan rakkautta Sanasta."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Paras vuotesi ikinä alkaa nyt."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Juhli vapautta Kristuksessa."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Etsi Jumalaa hänen Sanastaan."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Löydä toivoa ja uudistumista Jumalan Sanasta."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Omistaudu Hänen Sanalleen päivittäin."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Löydä kiitollisuutta Jumalan lupauksista."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Jumalallinen viisaus alkaa Jumalan Sanasta."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Jumalan Sana uudistaa kaiken."
-
 msgid "moment.friendship.self.title"
 msgstr "Olet nyt käyttäjän <b>{friend_name}</b> ystävä"
 
@@ -114,29 +96,23 @@ msgstr "Korostit <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} korosti <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Loit huoneentaulun jakeesta <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} loi huoneentaulun jakeesta <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Lisäsit muistiinpanon"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} lisäsi muistiinpanon"
-
-msgid "moment.note.reference.self.title"
-msgstr "Lisäsit muistiinpanon kappaleeseen <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} lisäsi muistiinpanon kappaleeseen <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Lisäsit muistiinpanon, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} lisäsi muistiinpanon, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} lisäsi muistiinpanon"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Lisäsit muistiinpanon"
+
+msgid "moment.note.reference.title"
+msgstr "{name} lisäsi muistiinpanon kappaleeseen <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Lisäsit muistiinpanon kappaleeseen <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Suunnitelma suoritettu"
@@ -177,9 +153,6 @@ msgstr "Katso <i>Raamattu-sarjaa</i> tänään!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Raamattu-sarja</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Jaa ilosanoma: Meille on syntynyt vapahtaja!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Raamattusovellus on jopa parempi ystävien kanssa. Etsi ystäviä yhteystiedoistasi."
 
@@ -188,6 +161,57 @@ msgstr "Katsoit <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} katsoi <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Valmistaudu jouluun adventin ajan lukusuunnitelmalla"
+
+msgid "moment.system.bafk.title"
+msgstr "Auta lapsiasi rakastumaan Jumalan sanaan."
+
+msgid "moment.system.christmas.title"
+msgstr "Jaa ilosanoma: Meille on syntynyt vapahtaja!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Paras vuotesi ikinä alkaa nyt."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Löydä Jumalan rakkautta Sanasta."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Löydä toivoa ja uudistumista Jumalan Sanasta."
+
+msgid "moment.image.self.title"
+msgstr "Loit huoneentaulun jakeesta <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} loi huoneentaulun jakeesta <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Virkistä uskoasi uusien lukusuunnitelmien avulla."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Omistaudu Hänen Sanalleen päivittäin."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Etsi Jumalaa hänen Sanastaan."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Juhli vapautta Kristuksessa."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Etsi Jumalaa Sanasta päivittäin."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Jumalan Sana uudistaa kaiken."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Jumalallinen viisaus alkaa Jumalan Sanasta."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Löydä kiitollisuutta Jumalan lupauksista."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Valmistele sydäntäsi tämän kauden aikana."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} kommentoi kirjanmerkkiäsi: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name} kommentoi uutta Ystävyyttäsi: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} kommentoi korostustasi: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} kommentoi huoneentauluasi: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} kommentoi muistiinpanoasi: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} kirjan
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} uutta ystävyyttä käyttäjän {friend_name} kanssa: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "Myös {commenter_name} kommentoi sinun uutta Ystävyyttäsi {moment_owner_name} kanssa: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "Myös {commenter_name} kommentoi uutta Ystävyyttään henkilön{moment_owner_name} kanssa: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "Myös {commenter_name} kommentoi sinun uutta Ystävyyttäsi {moment_owner_name} kanssa: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} korostusta: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} huoneentaulua: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} muistiinpanoa: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "Myös {moment_owner_name} kommentoi uutta Ystävyyttään sinun kanssasi
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommentoi myös korostustaan: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} kommentoi myös huoneentauluaan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} kommentoi myös muistiinpanoaan: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} on nyt ystäväsi"
 msgid "notifications.friendships.offer"
 msgstr "{name} haluaa olla ystäväsi YouVersionissa"
 
-msgid "notifications.friendships.pending"
-msgstr "Sinulla on ystäväpyyntöjä odottamassa Raamattusovelluksessa"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Haluatko olla käyttäjän {name} ystävä YouVersionissa?"
 
@@ -287,9 +299,6 @@ msgstr "{name} tykkää ystävyydestäsi käyttäjän {friend_name} kanssa"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} tykkää korostuksestasi, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} tykkää huoneentaulustasi kohdasta {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} tykkää muistiinpanostasi"
@@ -311,9 +320,6 @@ msgstr "{name} lisäsi kirjanmerkin {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} lisäsi korostuksen {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} loi huoneentaulun kohdasta {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} lisäsi muistiinpanon"
@@ -341,6 +347,54 @@ msgstr "{name} liittyi juuri YouVersioniin. Napauta lisätäksesi hänet ystävi
 
 msgid "notifications.system.test"
 msgstr "Lataa Lasten Raamattusovellus nyt!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} kommentoi huoneentauluasi: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} huoneentaulua: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} kommentoi myös huoneentauluaan: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} tykkää huoneentaulustasi kohdasta {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} loi huoneentaulun kohdasta {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Sinulla on ystäväpyyntöjä odottamassa Raamattusovelluksessa"
+
+msgid "notifications.votd_image"
+msgstr "Päivän raamatunkohta"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} haluaa lukea suunnitelman \"{title}\" sinun kanssasi."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} kommentoi suunnitelman \"{title}\" päivää {day}."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} hyväksyi kutsusi lukea suunnitelma \"{title}\" sinun kanssasi."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} vaihtoi suunnitelman \"{title}\" aloituspäiväksi {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} kommentoi ansiomerkkiäsi: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} amsiomerkkiä: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} kommentoi myös ansiomerkkiään: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} tykkää ansiomerkistäsi: {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} sai ansiomerkin {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hei!</p><p>Käytän YouVersionin Raamattusovellusta ja halusin jakaa sen kanssasi. Jos et ole vielä tutustunut sovellukseen, se on helppo tapa tuoda Raamatun totuudet jokapäiväiseen elämääsi. </p><p><strong>Ota Raamattusovellus käyttöösi:</strong> lue, katsele, kuuntele ja jaa älypuhelimella tai tabletilla sekä netissä: Bible.com</p><p><strong>Luo tili:</strong> aloita raamattusuunnitelmia ja lisää kirjanmerkkejä, korostuksia sekä muistiinpanoja eri laitteilla</p><p><strong>Lisää ystäviä (kuten minä!):</strong> tutki ja keskustele Raamatusta sinulle tärkeiden ihmisten kanssa</p><p>Tämä kaikki on saatavilla Raamattusovelluksen kautta — pääset alkuun täällä: </p>"

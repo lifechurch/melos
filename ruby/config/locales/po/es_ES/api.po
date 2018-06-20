@@ -1,49 +1,70 @@
-# Spanish (Spain) translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es_ES\n"
-"Language-Team: es_ES <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:20-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es_ES\n"
-"Language-Team: es_ES <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:29-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es_ES\n"
-"Language-Team: es_ES <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:20-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Ganaste una insignia <b>{title}</b>"
@@ -63,45 +84,6 @@ msgstr "Has marcado <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} ha marcado <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Prepárate para la Navidad con un Plan de la Biblia sobre el Adviento"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Refresca tu fe con los nuevos Planes de lectura Bíblica."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Busca a Dios en Su Palabra cada día."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Prepara tu corazón para esta nueva estación"
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Encuentra el amor de Dios en Su Palabra."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "El mejor año de tu vida comienza ahora."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Celebra la Libertad en Cristo."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Busca a Dios en Su Palabra."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Encuentra esperanza y renovación en la Palabra de Dios."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Comprométete a diario con Su Palabra."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Descubre la acción de gracias en las promesas de Dios."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "La sabiduría divina comienza en la Palabra de Dios."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "La Palabra de Dios hace que todo sea nuevo."
-
 msgid "moment.friendship.self.title"
 msgstr "Ahora eres amigo de <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "Has destacado <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} ha destacado <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Has creado un versículo con imagen de <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} ha creado un versículo con imagen de <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Has añadido una nota"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} añadió una nota"
-
-msgid "moment.note.reference.self.title"
-msgstr "Has añadido una nota en <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} añadió una nota en <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Añadiste una nota, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} añadió una nota, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} añadió una nota"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Has añadido una nota"
+
+msgid "moment.note.reference.title"
+msgstr "{name} añadió una nota en <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Has añadido una nota en <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Has completado tu plan de lectura"
@@ -171,26 +147,71 @@ msgstr "Has comenzado un nuevo plan de lectura, <b>{title}</b>"
 msgid "moment.plan_subscription.v2.title"
 msgstr "{name} ha comenzado un plan, <b>{title}</b>"
 
-msgid "moment.system.bafk.title"
-msgstr "Ayude a sus hijos a enamorarse de la Palabra de Dios."
-
 msgid "moment.system.bible_series_promo.body"
 msgstr "¡Mira las <i>Series bíblicas</i> esta noche!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Series bíblicas</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Comparte las buenas nuevas: ¡el Salvador ha nacido!"
-
 msgid "moment.system.find_friends.title"
-msgstr "La Biblia App es mejor con amigos. Busca en tus contactos para encontrar amigos."
+msgstr "la aplicación de la Biblia es mejor con amigos. Busca en tus contactos para encontrar amigos."
 
 msgid "moment.video.watched.self.title"
 msgstr "Viste <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} vió <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Prepárate para la Navidad con un Plan de la Biblia sobre el Adviento"
+
+msgid "moment.system.bafk.title"
+msgstr "Ayude a sus hijos a enamorarse de la Palabra de Dios."
+
+msgid "moment.system.christmas.title"
+msgstr "Comparte las buenas nuevas: ¡el Salvador ha nacido!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "El mejor año de tu vida comienza ahora."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Encuentra el amor de Dios en Su Palabra."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Encuentra esperanza y renovación en la Palabra de Dios."
+
+msgid "moment.image.self.title"
+msgstr "Has creado un versículo con imagen de <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} ha creado un versículo con imagen de <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Refresca tu fe con los nuevos Planes de lectura Bíblica."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Comprométete a diario con Su Palabra."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Busca a Dios en Su Palabra."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Celebra la Libertad en Cristo."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Busca a Dios en Su Palabra cada día."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "La Palabra de Dios hace que todo sea nuevo."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "La sabiduría divina comienza en la Palabra de Dios."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Descubre la acción de gracias en las promesas de Dios."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Prepara tu corazón para esta nueva estación"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} comentó sobre tu marcador: “{comment}”"
@@ -203,9 +224,6 @@ msgstr "{name} comentó sobre su nueva amistad: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} comentó sobre lo destacado: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} ha comentado en tu imagen de versículo “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} comentó sobre tu nota: “{comment}”"
@@ -222,17 +240,14 @@ msgstr "{commenter_name} también comentó sobre el marcador de {moment_owner_na
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} también comentó sobre la nueva amistad de {moment_owner_name} con {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} también ha comentado sobre su nueva amistad con {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} también comentó sobre su nueva amistad con {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} también ha comentado sobre su nueva amistad con {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} también comentó sobre el destacado de {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} también ha comentado en {moment_owner_name} imagen de versículo: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} también comentó sobre la nota de {moment_owner_name}: “{comment}”"
@@ -248,9 +263,6 @@ msgstr "{moment_owner_name} también ha comentado sobre su nueva amistad contigo
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} también comentó sobre su destacado: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} también ha comentado en su imagen de versículo: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} también comentó sobre su nota: “{comment}”"
@@ -276,9 +288,6 @@ msgstr "{name} es ahora tu amigo"
 msgid "notifications.friendships.offer"
 msgstr "{name}  quiere ser tu amigo en YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "Tienes solicitudes de amistad pendientes en la Biblia App"
-
 msgid "notifications.friendships.suggestion"
 msgstr "¿Quieres ser amigo de {name} en YouVersion?"
 
@@ -290,9 +299,6 @@ msgstr "{name} le gusta tu nueva amistad con {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} le gusta tu destacado, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "A {name} le gusta tu imagen del versículo para {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} le gusta tu nota"
@@ -314,9 +320,6 @@ msgstr "{name} marcó {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} destacó {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} creó una imagen del versículo para {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} añadió una nota"
@@ -345,32 +348,80 @@ msgstr "{name} acaban de unirse a YouVersion. Pulsa para añadirles como Amigos.
 msgid "notifications.system.test"
 msgstr "¡Descarga nuestra Biblia App para niños!"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} ha comentado en tu imagen de versículo “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} también ha comentado en {moment_owner_name} imagen de versículo: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} también ha comentado en su imagen de versículo: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "A {name} le gusta tu imagen del versículo para {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} creó una imagen del versículo para {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Tienes solicitudes de amistad pendientes en la Biblia App"
+
+msgid "notifications.votd_image"
+msgstr "Imagen del versículo del día"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} quiere leer contigo el plan «{title}»."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} ha comentado en el día {day} del plan «{title}»"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} ha aceptado tu invitación para leer el plan «{title}» contigo."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} ha cambiado la fecha de inicio del plan «{title}» al día {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr ""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr ""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr ""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr ""
+
+msgid "notifications.moments.create.badge"
+msgstr ""
+
 msgid "share.find_friends.invite_email_html"
-msgstr "<p>¡Hola!!</p><p>Estoy usando la Biblia App de YouVersion y quiero compartila contigo. Si eres nuevo con la aplicación, ésta es un forma sencilla de acercar la belleza y la verdad de la Biblia a tu vida cotidiana. </p><p><strong>Consigue la Biblia App:</strong> lee, observa, escucha, y comparte online en tu móvil o tableta en Biblia.com</p><p><strong>Configura tu cuenta:</strong> suscríbete a los planes de lectura bíblica y accede a marcadores, destacados y notas en diferentes dispositivos</p><p><strong>Añade amigos (¡Me gusta!):</strong> explora y comenta sobre la Biblia con la gente que te importa</p><p>Todo en la Biblia App, comienza aquí: </p>"
+msgstr "<p>¡Hola!!</p><p>Estoy usando la aplicación de la Biblia de YouVersion y quiero compartila contigo. Si eres nuevo con la aplicación, ésta es un forma sencilla de acercar la belleza y la verdad de la Biblia a tu vida cotidiana. </p><p><strong>Consigue la aplicación de la Biblia:</strong> lee, observa, escucha, y comparte online en tu móvil o tableta en Biblia.com</p><p><strong>Configura tu cuenta:</strong> suscríbete a los planes de lectura bíblica y accede a marcadores, destacados y notas en diferentes dispositivos</p><p><strong>Añade amigos (¡Me gusta!):</strong> explora y comenta sobre la Biblia con la gente que te importa</p><p>Todo en la aplicación de la Biblia, comienza aquí: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Estoy disfrutando con la Biblia App de YouVersion y pienso que también te gustará. Abro la Biblia mucho más ultimamente porque es muy fácil de leer, visualizar, escuchar y compartir. Incluso tiene Planes de lectura, y una selección de la Biblia lista esperándome cada día.\n"
+"Estoy disfrutando con la aplicación de la Biblia de YouVersion y pienso que también te gustará. Abro la Biblia mucho más ultimamente porque es muy fácil de leer, visualizar, escuchar y compartir. Incluso tiene Planes de lectura, y una selección de la Biblia lista esperándome cada día.\n"
 "\n"
 "Puedes obtenerla (gratis) para cualquier dispositivo móvil aquí: "
 
 msgid "share.invite_email_subject"
-msgstr "¿Tienes la Biblia App?"
+msgstr "¿Tienes la aplicación de la Biblia?"
 
 msgid "share.invite_facebook"
-msgstr "¡Me encanta la Biblia App! Me ha ayudado mucho para hacer de la Biblia parte de mi vida diaria. Me permite subrayar, escuchar la Biblia en audio, crear notas, seguir planes de lectura devocional... incluso ver videos. Bajátela ahora (es gratis)"
+msgstr "¡Me encanta la aplicación de la Biblia! Me ha ayudado mucho para hacer de la Biblia parte de mi vida diaria. Me permite subrayar, escuchar la Biblia en audio, crear notas, seguir planes de lectura devocional... incluso ver videos. Bajátela ahora (es gratis)"
 
 msgid "share.invite_facebook_direct"
-msgstr "¿Tienes la Biblia App? Me encanta, y pienso que a ti también te gustará. Este es el link por si no la tienes:"
+msgstr "¿Tienes la aplicación de la Biblia? Me encanta, y pienso que a ti también te gustará. Este es el link por si no la tienes:"
 
 msgid "share.invite_sms"
-msgstr "Creo que la Biblia App de YouVersion te gustará tanto como a mí:"
+msgstr "Creo que la aplicación de la Biblia de YouVersion te gustará tanto como a mí:"
 
 msgid "share.invite_sms_prefix"
 msgstr "De {name}:"
 
 msgid "share.invite_twitter"
-msgstr "La Biblia App de @YouVersion tiene un lugar destacado en mi pantalla principal. Leer, observar, escuchar y compartir... todo en una app gratuita:"
+msgstr "la aplicación de la Biblia de @YouVersion tiene un lugar destacado en mi pantalla principal. Leer, observar, escuchar y compartir... todo en una app gratuita:"
 
 msgid "share.invite_twitter_direct"
-msgstr "¿Tienes la Biblia App de @YouVersion? Me encanta, y pienso que también te gustará. Aquí tienes un link por si no la tienes:"
+msgstr "¿Tienes la aplicación de la Biblia de @YouVersion? Me encanta, y pienso que también te gustará. Aquí tienes un link por si no la tienes:"

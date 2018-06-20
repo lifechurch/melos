@@ -1,0 +1,435 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-27 11:48-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Sorani (Kurdish)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ckb_IR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ckb\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-27 11:48-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Sorani (Kurdish)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ckb_IR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ckb\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-27 11:48-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Sorani (Kurdish)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ckb_IR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ckb\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "نیشانەیەکی شانازی <b>{title}</b> بەدەستهێنا"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} نیشانەیەکی شانازی <b></b> {title} بەدەستهێنا"
+
+msgid "moment.bible.download.self.title"
+msgstr "تۆ وەشانی <b>{version}</b> داگرت"
+
+msgid "moment.bible.download.title"
+msgstr "{name} وەشانی <b>{version}</b> داگرت"
+
+msgid "moment.bookmark.self.title"
+msgstr "<b>{reference_human}{version_abbreviation}</b> نیشان کرد"
+
+msgid "moment.bookmark.title"
+msgstr "{name} <b>{reference_human}{version_abbreviation}</b> نیشانکرد."
+
+msgid "moment.friendship.self.title"
+msgstr "ئێستا لەگەڵ {friend_name} <b></b>هاوڕێی"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} ئێستا هاوڕێیە لەگەڵ <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "{reference_human}{version_abbreviation} بەرچاو کرد"
+
+msgid "moment.highlight.title"
+msgstr "{name} <b>{reference_human}</b>{version_abbreviation} بەرچاو کرد"
+
+msgid "moment.note.self.title"
+msgstr "{title} تێبینییەکت نووسی <b></b>"
+
+msgid "moment.note.title"
+msgstr "{name} تێبینییەکی نووسی، <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} سەرنجێکی نووسی"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "تێبینییەکت نووسی"
+
+msgid "moment.note.reference.title"
+msgstr "{name} تێبینییەکی لەسەر <b>{reference_human}</b> نووسی"
+
+msgid "moment.note.reference.self.title"
+msgstr "لەسەر {reference_human} تێبینییەکت نووسی <b></b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "پلانەکەت تەواو کرد."
+
+msgid "moment.plan_completion.title"
+msgstr "{name} پلانێکی تەواوکرد"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "{title} پلانەکەت تەواو کرد <b></b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} پلانی {title} تەواو کرد <b>{name</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "ڕۆژی {segment} لە ({total_segments}) {percent_complete}"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "ڕۆژی <b>{segment}</b> لەپلانی <b>{title}</b>تەواو کرد"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} رۆژی <b></b>{segment} لە پلانی <b>{title} </b> تەواوکرد"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "پلانێکی نوێت دەستپێکرد."
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} پلانێکی نوێی دەستپێکرد."
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "{title} پلانێکی نوێت دەتپێکرد <b>{title} پلانێکی نوێت دەستپێکرد</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} پلانێکی نوێی دەستپێکرد، <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "ئەمشەو سەیری<i>زنجیرەی کتێبی پیرۆز</i> بکە."
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>زنجیرەکانی کتێبی پیرۆز</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "بەرنامەی کتێبی پیرۆز لەگەڵ هاوڕێدا باشترە. لیستی پەیوەندییەکانت بگەڕێ، بۆ ئەوەی هاوڕێی نوێ پەیدا بکەیت."
+
+msgid "moment.video.watched.self.title"
+msgstr "تەماشای <b>{title} </b> کرد"
+
+msgid "moment.video.watched.title"
+msgstr "{name} تماشای کرد <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "لە ڕێگەی پلانێکی کتێبی پیرۆزی تایبەت بە ئامادەکاری هاتنی عیسای مەسیح، خۆت بۆ کریسمەس ئامادە بکە"
+
+msgid "moment.system.bafk.title"
+msgstr "هاوکاری منداڵەکانت بکە کە بکەونە داوی خۆشەویستی وشەی یەزدانەوە."
+
+msgid "moment.system.christmas.title"
+msgstr "هەواڵەکە خۆشەکە بڵاو بکەرەوە: ڕزگارکار لەدایکبوو!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "باشترین ساڵت ئێستا دەستپێدەکات."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "لەنێو وشەکانی یەزداندا خۆشەویستی بدۆزەرەوە."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "ئومێد و نوێبوونەوە لە وشەی یەزداندا پەیدا بکە."
+
+msgid "moment.image.self.title"
+msgstr "ئایەتێکی وێنەییت بۆ<b>{reference_human}{version_abbreviation}</b> دروستکرد"
+
+msgid "moment.image.title"
+msgstr "{name} ئایەتێکی وێنەیی بۆ <b>{reference_human}{version_abbreviation}</b> زیادکرد."
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "لەڕێگەی پلانە نوێیەکانەوە، باوەڕت ببووژێنەوە."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "ڕۆژانە خۆت بۆ وشەی یەزدان تەرخان بکە."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "لە کتێبی پیرۆزدا، بەدوای یەزداندا بگەڕێ."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "لە کڵێسادا ئاهەنگی ئازادی بگێڕە."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "هەموو ڕۆژێک لە کتێبی پیرۆزدا دوای یەزدان بکەوە."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "وشەی خودا هەموو شتێک نوێ دەکاتەوە."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "دانایی خودایی لە وشەی یەزداندا دەستپێدەکات. "
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "لەڕێگەی بەڵێنەکانی خوداوە، سوپاسگوزاری بدۆزەوە."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "ئەم وەرزە دڵت ئامادە بکە."
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} تێبینییەکی لەسەر دەستنیشانکردنەکەی تۆ نووسی: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} تێبینی لەسەر پەیوەندی هاوڕێیەتیی نوێت لەگەڵ {friend_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} تێبینی لەسەر هاوڕێیەتییە نوێیەکەتان نووسی: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} تێبینی لەسەر بەرچاوکردنەکەت نووسی: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} تێبینی لەسەر سەرنجەکەی تۆ نووسی: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} تێبینی لەسەر پلانەکەی تۆ نووسی: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} تێبینی لەسەر پلانی کتیبی پیرۆزت نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "هەروەها {commenter_name} تێبینی لەسەر {moment_owner_name} دەستنیشانکردنە نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "هەروەها {commenter_name} تێبینی لەسەر پەیوەندی هاوڕێیەتی نوێی {moment_owner_name} لەگەڵ {friend_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "هەروەها {commenter_name} تێبنینییان لەسەر هاوڕێیەتییە نوێکەیان لەگەڵ {moment_owner_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "هەروەها {commenter_name} تێبینی لەسەر پەیوەندی هاوڕێیەتی نوێت لەگەڵ {moment_owner_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "هەروەها {commenter_name} تێبینی لەسەر بەرچاوکردنەکەی {moment_owner_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "هەوەها {commenter_name} تێبینی لەسەر سەرنجەکەی {moment_owner_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "هەروەها {moment_owner_name} تێبینی لەسەر دەستنیشانکردنەکەیان نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "هەروەها {moment_owner_name} تێبینی لەسەر هاوڕێیەتییە نوێکەیان لەگەڵ {friend_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "هەروەها {moment_owner_name} تێبینی لەسەر پەیوەندییە هاوڕێیەیتییە نوێکەیان نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "هەروەها {moment_owner_name} تێبینی لەسەر بەرچاوکردنەکەیان نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "هەروەها {moment_owner_name} تێبینییان لەسەر سەرنجەکەی خۆیان هەیە: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "هەروەها {moment_owner_name} تێبینی لەسەر پلانەکەی خۆیان نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "هەروەها {moment_owner_name} تێبینی لەسەر پلانی کتێبی پیرۆز نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "هەروەها {commenter_name} تێبینی لەسەر پلانی {moment_owner_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "هەروەها {commenter_name} تێبینی لەسەر پلانی کتێبی پیرۆزی {moment_owner_name} نووسی: \"{comment}\""
+
+msgid "notifications.friendships.accept"
+msgstr "{name} داواکاری هاوڕێیەتییەکەتی قبوڵ کرد."
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} ئێستا هاوڕێتە."
+
+msgid "notifications.friendships.offer"
+msgstr "{name} دەیەوێت لە یووڤێرژن ببێتە هاوڕێت. "
+
+msgid "notifications.friendships.suggestion"
+msgstr "دەتەوێت لە یووڤێرژن ببیتە هاوڕێی {name}؟"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} دەستنیشانکردنەکەی تۆی بەدڵە، {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} پەیوەندی نوێی هاوڕێیەتیت لەگەڵ {friend_name} بەدڵە. "
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} بەرچاوکردنەکەی تۆی بەڵبوو، {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} تێبینییەکەی تۆی بەدڵبوو."
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} تێبینییەکەتی لەسەر {reference_human} بەدڵبوو"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} سەرنجەکەی تۆی بەدڵە، \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} چالاکی پلانەکەی تۆی بەدڵبوو."
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} حەزی لە چالاکی پلانی کتیبی پیرۆزە. "
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} {reference_human} دەستنیشانکرد."
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} {reference_human} بەرچاو کرد."
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} سەرنجێکی نووسی"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} لەسەر {reference_human} سەرنجێکی زیادکرد."
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} تێبینییەکی زیاد کرد، {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} پلانەکانیان تەواو کرد، {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} پلانی کتێبی پیرۆزیان تەواوکرد، {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} پلانێکی نوێی دەستپێکرد، {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} پلانێکی نوێی کتێبی پیرۆزی دەستپێکرد، {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} هەر ئێستا هاتە نێو یووڤێرژنەوە. بیانکە بە هاوڕێ. "
+
+msgid "notifications.system.test"
+msgstr "هەر ئێستا بەرنامەی کتێبی پیرۆزی تایبەت بە منداڵان دابگرە. "
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} تێبینییەکی لەسەر ئایەتە وێنەییەکەت نووسی: {comment}"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "هەروەها {commenter_name} تێبینی لەسەر ئایەتە وێنەی {moment_owner_name} هەیە: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "هەروەها {moment_owner_name} تێبینی لەسەر ئایەتە وێنەییەکەیان نووسی: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} ئایەتی وێنەیی {reference_human} بەدڵبوو."
+
+msgid "notifications.moments.create.image"
+msgstr "{name} وێنە ئایەتێكی دروست کرد بۆ {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "لە بەرنامەی کتێبی پیرۆزدا داواکاری هاوڕێیەتیت هەیە. "
+
+msgid "notifications.votd_image"
+msgstr "وێنەی ئایەتی ڕۆژانە"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name}دەیەوێت لەگەڵ تۆدا پلانی \"{title}\" بخوێنێتەوە."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} لە ڕۆژی {day} پلانی \"{title}\" سەرنجی نووسی."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} بانگهێشتی تۆی قبوڵ كرد بۆ بۆ ئه‌وه‌ی پێكه‌وه‌ پلانی \"{title}\" بخوێننەوە."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} ڕۆژی دەستپکی پلانی \"{title}\" گۆڕی بۆ {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} تێبینی لەسەر نیشانە شانازییەکەی تۆ نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "هەوەها {commenter_name} تێبینی لەسەر نیشانە شانازییەکەی {moment_owner_name} نووسی: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "هەروەها {moment_owner_name} تێبینی لەسەر نیشانە شانازییەکەی خۆیان نووسی: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} نیشانە شانازییەکەی تۆی بەدڵە، {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} نیشانە شانازی بەدەست هێنا {title}"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>سڵاو!</p><p>من ئاپی کتێبی پیرۆزی یوڤێرژن بەکاردێنم و حەزدەکەم لەگەڵ تۆدا هاوبەشی بکەم. ئەگەر یەکەم جارە ئەم ئاپە بەکاردەهێنیت، ئەوا زۆر ئاسانە کە جوانی و ڕاستی کتێبی پیرۆز بهێنیتە نێو ژیانی ڕۆژانەتەوە. </p><p><strong>ئاپی کتێبی پیرۆز دابگرە:</strong> لەسەر تایبلێت یان مۆبایلەکەت یان لە ڕێگەی ماڵپەڕی Bible.com، کتێبی پیرۆز بخوێنەوە و تماشای فیلم بکە و گوێ لە وشەی خودا بگرە و بڵاوی بکەوە.</p><p><strong>لەم ئاپەدا هەژمارێک بکەوە:</strong> بەشداری بکە لە پلانەکانی کتێبی پیرۆز، هەروەها لەسەر هەموو ئامێرەکانت ئیش لەسەر نیشانکراوەکان و بەرچاوکراوەکان و سەرنجەکانت بکە. </p><p><strong>هاوڕێ زیاد بکە (وەکو من!):</strong> لەگەڵ خۆشەوسیتان و ئازیزانت لێکۆڵینەوە لە کتیبی پیرۆز بکەن و گفتۆگۆی لەسەر بکەن. </p><p>هەمووی لەنێو ئاپی کتێبی پیرۆزدایە—لێرەوە دەستپێبکە: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"سڵاو!\n"
+"\n"
+"من ئاپی کتێبی پیرۆزی یوڤێرژن بەکاردێنم و حەزدەکەم لەگەڵ تۆدا هاوبەشی بکەم. ئەگەر یەکەم جارە ئەم ئاپە بەکاریدەهێنیت، ئەوا زۆر ئاسانە کە جوانی و ڕاستی کتێبی پیرۆز بهێنیتە نێو ژیانی ڕۆژانەتەوە.\n"
+"\n"
+"ئاپی کتێبی پیرۆز دابگرە: لەسەر تایبلێت یان مۆبایلەکەت یان لە ڕێگەی ماڵپەڕی Bible.com، کتێبی پیرۆز بخوێنەوە و تماشای فیلم بکە و گوێ لە وشەی خودا بگرە و بڵاوی بکەوە.\n"
+"\n"
+"لەم ئاپەدا هەژمارێک بکەوە: بەشداری بکە لە پلانەکانی کتێبی پیرۆز، هەروەها لەسەر هەموو ئامێرەکانت ئیش لەسەر نیشانکراوەکان و بەرچاوکراوەکان و سەرنجەکانت بکە.\n"
+"\n"
+"هاوڕێ زیاد بکە (وەکو من!): لەگەڵ خۆشەوسیتان و ئازیزانت لێکۆڵینەوە لە کتیبی پیرۆز بکەن و گفتۆگۆی لەسەر بکەن.\n"
+"\n"
+"هەمووی لەنێو ئاپی کتێبی پیرۆزدایە—لێرەوە دەستپێبکە: "
+
+msgid "share.invite_email_subject"
+msgstr "لەگەڵ مندا بەشداری لە ئاپی کتێبی پیرۆزدا بکە!"
+
+msgid "share.invite_facebook"
+msgstr "ئاپی کتێبی پیرۆزم بەدڵە! ئەم ئاپە هاوکاری کردم کە کتێبی پیرۆز بکەمە بەشێکی دانەبڕاو لە ژیانی ڕۆژانەم. ڕێگەم دەدات کە دەق دەستنیشان بکەم، گوێ لە کتێبی پیرۆز بگرم، سەرنج بنووسم و شوێن پلانی تیڕامانی ڕۆحی بکەوم... تەنانەت دەتوانم تماشای ڤیدیۆش بکەم. هەر ئێستا ئاپەکە دابگرە (بە خۆڕاییە):"
+
+msgid "share.invite_facebook_direct"
+msgstr "ئاپی کتێبی پیرۆزت هەیە؟ زۆرم بەدڵە، باوەڕم وایە تۆش بەدڵت دەبێت: فەرموون، ئەمەش بەستەرەکەی:"
+
+msgid "share.invite_sms"
+msgstr "ئاپی کتێبی پیرۆزی یوڤێرژنم بەدڵە. پێم وایە تۆش بەدڵت دەبێت:"
+
+msgid "share.invite_sms_prefix"
+msgstr "لە لایەن {name}: "
+
+msgid "share.invite_twitter"
+msgstr "ئاپی کتێبی پیرۆزی یوڤێرژن شوێنێکی هەمیشەیی لەسەر شاشەی مۆبایلەکەم هەیە. وشەی خودا بخوێنەوە و گوێی لێ بگرە و بڵاوی بکەوە... هەموو ئەمانە لە ڕێگەی ئەم ئاپە بیبەرامبەرەوە ئەنجام بدە:"
+
+msgid "share.invite_twitter_direct"
+msgstr "ئایا ئاپی کتێبی پیرۆزی یوڤێرژنت هەیە؟ زۆرم بەدڵە، باوەڕم وایە تۆش بەدڵت دەبێت: فەرمووش ئەمەش بەستەرەکەی:"
