@@ -746,7 +746,7 @@
 	"moment.client_side.reading_plan_carousel.advent.title": "Búðu þig undir jólin með aðventulestraráætlun",
 	"moment.system.bafk.title": "Hjálpaðu börnunum þínum að verða hugfangin af Orði Guðs.",
 	"moment.system.christmas.title": "Deildu góðu fréttunum: Frelsarinn er fæddur!",
-	"moment.client_side.reading_plan_carousel.january.title": "Besta ár þitt til þessa hefst núna.",
+	"moment.client_side.reading_plan_carousel.january.title": "Besta ár ��itt til þessa hefst núna.",
 	"moment.client_side.reading_plan_carousel.february.title": "Finndu kærleika Guðs í Orði hans.",
 	"moment.client_side.reading_plan_carousel.march.title": "Finndu von og endurnýjun í Guðs Orði.",
 	"moment.image.self.title": "Þú bjóst til mynd af versi fyrir <b>{reference_human} {version_abbreviation}</b>",
@@ -758,7 +758,7 @@
 	"moment.client_side.reading_plan_carousel.august.title": "Leitaðu Guðs í Orði hans sérhvern dag.",
 	"moment.client_side.reading_plan_carousel.september.title": "Orð Guðs gerir alla hluti nýja.",
 	"moment.client_side.reading_plan_carousel.october.title": "Guðleg viska byrjar í Orði Guðs.",
-	"moment.client_side.reading_plan_carousel.november.title": "Uppgötvaðu þakklæti í loforðum Guðs.",
+	"moment.client_side.reading_plan_carousel.november.title": "Uppgötvaðu þakklæti �� loforðum Guðs.",
 	"moment.client_side.reading_plan_carousel.december.title": "Undirbúðu hjarta þitt á þessu misseri.",
 	"notifications.comments.moment.mine.bookmark": "{name} skrifaði ummæli við bókamerkið þitt: \"{comment}\"",
 	"notifications.comments.moment.mine.friendship": "{name} skrifaði ummæli um nýja vináttu milli þín og {friend_name}: \"{comment}\"",
@@ -768,7 +768,7 @@
 	"notifications.comments.moment.mine.plan_activity": "{name} skrifaði ummæli við áætlun þína: \"{comment}\"",
 	"notifications.comments.moment.mine.plan_activity.push": "{name} skrifaði ummæli við biblíulestraráætlun þína: \"{comment}\"",
 	"notifications.comments.moments.friend.bookmark": "{commenter_name} skrifaði einnig ummæli við bókamerkið sem {moment_owner_name} færði inn: \"{comment}\"",
-	"notifications.comments.moments.friend.friendship": "{commenter_name} skrifaði einnig ummæli við nýja vináttu milli {moment_owner_name} og {friend_name}: \"{comment}\"",
+	"notifications.comments.moments.friend.friendship": "{commenter_name} skrifaði einnig ummæli við n��ja vináttu milli {moment_owner_name} og {friend_name}: \"{comment}\"",
 	"notifications.comments.moments.friend.friendship.their": "{commenter_name} skrifaði einnig ummæli við nýja vináttu sína við {moment_owner_name}: \"{comment}\"",
 	"notifications.comments.moments.friend.friendship.ours": "{commenter_name} skrifaði einnig ummæli um nýja vináttu þína við {moment_owner_name}: \"{comment}\"",
 	"notifications.comments.moments.friend.highlight": "{commenter_name} skrifaði einnig ummæli við áherslumerkingu {moment_owner_name}: \"{comment}\"",
@@ -829,5 +829,5 @@
 	"share.invite_sms": "Ég elska YouVersion Biblíuappið. Ég held að þú myndir gera það líka:",
 	"share.invite_sms_prefix": "{name} sendi þér:",
 	"share.invite_twitter": "@YouVersion Biblíuappið er alltaf til staðar í mínu snjalltæki. Lestu, horfðu á, hlustaðu og deildu... allt í ókeypis appi:",
-	"share.invite_twitter_direct": "Ertu með Biblíuforritið frá @YouVersion? Ég elska það og held að þú myndir líka gera það. Hér er tengillinn:"
+	"share.invite_twitter_direct": "Ertu með Biblíuforritið frá @YouVersion? Ég elska það og held að þú myndir l��ka gera það. Hér er tengillinn:"
 }

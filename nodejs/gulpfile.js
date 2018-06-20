@@ -51,7 +51,6 @@ const localeNameException = {
 	no: 'no-NO',
 	pl: 'pl-PL',
 	pt: 'pt-BR',
-	myz: 'qz-MM',
 	ro: 'ro-RO',
 	ru: 'ru-RU',
 	sk: 'sk-SK',
