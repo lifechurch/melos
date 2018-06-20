@@ -51,6 +51,7 @@ const localeNameException = {
 	no: 'no-NO',
 	pl: 'pl-PL',
 	pt: 'pt-BR',
+	myz: 'my-MM',
 	ro: 'ro-RO',
 	ru: 'ru-RU',
 	sk: 'sk-SK',
@@ -82,6 +83,7 @@ const prefixedLocales = [
 	'zh-TW',
 	'es-ES',
 	'pt-PT',
+	'my-MM'
 ]
 
 function crowdinFetchAvailableLocales(token) {

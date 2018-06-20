@@ -402,7 +402,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Resim boyutlarınız {requiredWidth} x {requiredHeight} pixel olmalıdır.",
 	"features.EventEdit.features.details.components.DetailsEdit.eventName": "Etkinlik Adı",
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Kilise Adı ya da Organizasyon",
-	"features.EventEdit.features.details.components.DetailsEdit.desc": "Etkinlik Tan��mı",
+	"features.EventEdit.features.details.components.DetailsEdit.desc": "Etkinlik Tanımı",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Sonraki: Yer & Zaman Ekle →",
 	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} boş bırakılamaz.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "En azından bir zaman ekleyin.",

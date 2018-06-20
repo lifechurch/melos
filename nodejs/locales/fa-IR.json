@@ -291,7 +291,7 @@
 	"containers.Auth.signIn": "ورود",
 	"containers.Auth.subHead1": "اگر کاربر «برنامۀ کتاب‌مقدس» هستید و حساب کاربری یوورژن دارید، می‌توانید با استفاده از همان نام کاربری و رمز عبور حساب وارد شوید.<br/><br/>هنوز حساب کاربری یوورژن ندارید؟ <br/><a href='{url}'><br/>به‌ منظور ایجاد رویداد،</a> همین حالا در Bible.com ثبت‌نام کنید.",
 	"containers.Auth.email": "پست الکترونیکی",
-	"containers.Auth.password": "رمز ��رود",
+	"containers.Auth.password": "رمز ورود",
 	"containers.Auth.forgotPassword": "رمز عبور خود را فراموش کرده‌اید؟",
 	"containers.EventEdit.event": "رویداد",
 	"containers.EventEditContentContainer.choose": "برای شروع، متنی را انتخاب کنید.",
