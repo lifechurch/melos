@@ -1,6 +1,6 @@
 {
 	"name": "@youversion/api-redux",
-	"version": "0.4.57",
+	"version": "0.4.58",
 	"description": "YouVersion API Redux Middleware",
 	"main": "./lib",
 	"author": "YouVersion",
@@ -15,9 +15,9 @@
 	},
 	"dependencies": {
 		"@youversion/js-api": "^1.0.29",
-		"@youversion/melos": "^0.0.21",
+		"@youversion/melos": "^0.0.22",
 		"@youversion/token-storage": "^0.0.58",
-		"@youversion/utils": "^1.0.47",
+		"@youversion/utils": "^1.0.48",
 		"babelify": "^7.3.0",
 		"idb": "^2.0.4",
 		"immutable": "^3.8.1",
