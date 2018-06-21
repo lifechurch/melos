@@ -2110,7 +2110,7 @@ ms:
     tired: "Penat"
   gdpr:
     agree to emails: "Saya bersetuju untuk membenarkan YouVersion menghantar e-mel kepada saya untuk memperdalam penglibatan saya dalam Alkitab."
-    agree to terms: "Saya bersetuju dengan <a href='/terms'>Syarat</a> dan<a href='/privacy'>Polisi Privasi</a> YouVersion."
+    agree to terms: "I agree to YouVersion’s <a href='/terms'>Terms</a> and <a href='/privacy'>Privacy Policy</a>."
     continue: "Teruskan"
     terms summary:
       p1: "Berikut adalah ringkasan Polisi Privasi dan Syarat Penggunaan kami, yang meliputi semua produk dan perkhidmatan YouVersion:"
