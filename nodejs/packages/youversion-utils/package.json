@@ -14,7 +14,7 @@
   "author": "YouVersion",
   "license": "ISC",
   "dependencies": {
-    "@youversion/stringer-things": "0.0.1",
+    "@youversion/stringer-things": "0.0.3",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
     "jest-enzyme": "^3.0.0",

@@ -1,6 +1,6 @@
 # Utility module to perform miscellaneous conversions
 # USFM <-> OSIS format conversions
-# 
+#
 
 module YV
 	module Conversions
@@ -8,7 +8,7 @@ module YV
 		class << self
 
 			# Convert a language code to a properly formatted language code for API calls
-			# ex: pt-BR -> pt_BR 
+			# ex: pt-BR -> pt_BR
 			# Web facing language codes are formatted with a hyphen, API expects to see underscored lang codes
 		  def to_api_lang_code(lang_code)
 		    code = lang_code.to_s.gsub("-", "_")
@@ -74,6 +74,7 @@ module YV
 		      'zh-CN' => 'zho',
 		      'zh-TW' => 'zho_tw',
 		      'es-ES' => 'spa_es',
+          'my-MM' => 'mya',
           'no' => 'nob',
           'sw' => 'swh',
           'sq' => 'alb',
@@ -102,7 +103,7 @@ module YV
       # Get a OSIS book from a usfm_book string passed as param
       #def osis_book(usfm_book)
       # raise "USFM book must be a string" unless usfm_book.is_a? String
-      
+
       # book = usfm_book.upcase
       # raise "Invalid USFM book" unless Cfg.osis_usfm_hash[:books].has_value? book
       # return Cfg.osis_usfm_hash[:books].key(book)

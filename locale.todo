@@ -2,7 +2,10 @@
 ✔ Deploy latest and check completion status of JIRA tickets @done(2018-06-19 10:46)
 ✔ Update Terms/Privacy source strings per John @done(2018-06-19 11:07)
 ✔ Add translated privacy/terms strings for all whitelisted locales @done(2018-06-19 11:32)
-☐ Add Zawgyi
-☐ Add Hebrew
+✔ Add Zawgyi @done(2018-06-21 11:01)
+✔ Add Hebrew @done(2018-06-21 11:01)
 ☐ Follow up on Jeff's email
-☐ Inform crowdin of bad language mapping
+✔ Inform crowdin of bad language mapping @done(2018-06-21 11:01)
+
+
+✔ Hebrew isn't loading home page @done(2018-06-21 11:01)

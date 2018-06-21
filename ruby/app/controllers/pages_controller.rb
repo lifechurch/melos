@@ -72,11 +72,24 @@ class PagesController < ApplicationController
 
     @vodRef = Reference.new(@vodImage.usfm, version: version_id)
 
+    # First Attempt
     begin
       @vodContent = @vodRef.content(as: :plaintext)
     rescue NotAChapterError
-      @vodRef = Reference.new(VOD.alternate_votd(Date.today.mday), version: version_id)
-      @vodContent = @vodRef.content(as: :plaintext)
+      # Second Attempt
+      begin
+        @vodRef = Reference.new(VOD.alternate_votd(Date.today.mday), version: version_id)
+        @vodContent = @vodRef.content(as: :plaintext)
+      rescue NotAChapterError
+        # Third Attempt
+        begin
+          @vodRef = Reference.new(VOD.third_alternate_votd(Date.today.mday), version: version_id)
+          @vodContent = @vodRef.content(as: :plaintext)
+        rescue NotAChapterError
+          @vodRef = nil
+          @vodContent = nil
+        end
+      end
     end
   end
 

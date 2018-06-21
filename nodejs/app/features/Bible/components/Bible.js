@@ -479,8 +479,8 @@ class Bible extends Component {
 						showVerseNumbers={showVerseNumbers}
 						ref={(chapter) => { this.chapter = chapter }}
 						className="primary-chapter"
-					/>
-					<ChapterCopyright {...buildCopyright(intl.formatMessage, bible.version)} />
+     />
+					<ChapterCopyright {...buildCopyright(intl.formatMessage, bible.version, bible.chapter.reference)} />
 					<ResponsiveContainer>
 						<NavArrows
 							{...this.props}
@@ -530,8 +530,8 @@ class Bible extends Component {
 						showVerseNumbers={showVerseNumbers}
 						ref={(chapter) => { this.parallelChapter = chapter }}
 						className="parallel-chapter"
-					/>
-					<ChapterCopyright {...buildCopyright(intl.formatMessage, bible.parallelVersion)} />
+     />
+					<ChapterCopyright {...buildCopyright(intl.formatMessage, bible.parallelVersion, bible.parallelChapter.reference)} />
 				</div>
 			)
 		}

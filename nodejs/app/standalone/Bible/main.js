@@ -8,6 +8,7 @@ import { createHistory } from 'history'
 import createLogger from 'redux-logger'
 import { syncHistoryWithStore } from 'react-router-redux'
 import cookie from 'react-cookie'
+import getDefaultChapter from '@youversion/utils/lib/bible/getDefaultChapter'
 import isVerseOrChapter from '@youversion/utils/lib/bible/isVerseOrChapter'
 import configureStore from './store'
 import getRoutes from './routes'
@@ -92,7 +93,7 @@ function requireChapterData(nextState, replace, callback, force = false) {
 	let nextUsfm = `${nextBook}.${nextChapter}`
 	if (!nextVersion) { nextVersion = currentVersion || cookie.load('version') || '1' }
 	if (!nextChapter) {
-		nextUsfm = (cookie.load('last_read') || 'JHN.1').split('.').slice(0, 2).join('.')
+		nextUsfm = (cookie.load('last_read') || getDefaultChapter(nextVersion)).split('.').slice(0, 2).join('.')
 	}
 
 	let parallelVersion

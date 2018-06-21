@@ -7,6 +7,7 @@ import imagesAction from '@youversion/api-redux/lib/endpoints/images/action'
 import readingPlansAction from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import chapterifyUsfm from '@youversion/utils/lib/bible/chapterifyUsfm'
 import expandUsfm from '@youversion/utils/lib/bible/expandUsfm'
+import getDefaultChapter from '@youversion/utils/lib/bible/getDefaultChapter'
 import BibleActionCreator from '../../features/Bible/actions/creators'
 
 
@@ -42,7 +43,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				|| ((Array.isArray(localeVersionList)) ? localeVersionList[0] : false)
 				|| '1'
 
-			let reference = params.ref || cookie.load('last_read') || 'JHN.1'
+			let reference = params.ref || cookie.load('last_read') || getDefaultChapter(version)
 			reference = reference.toUpperCase()
 
 			let auth = false
@@ -146,7 +147,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				// last_read cookie or JHN.1 prior to making API
 				// call.
 				} else {
-					reference = cookie.load('last_read') || 'JHN.1'
+					reference = cookie.load('last_read') || getDefaultChapter(version)
 					reference = reference.split('.').slice(0, 2).join('.')
 					loadChapter({
 						isInitialLoad: true,
