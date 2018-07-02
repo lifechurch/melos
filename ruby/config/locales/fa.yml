@@ -39,7 +39,7 @@ fa:
         one: "%{count} ثانیه پیش"
         other: "%{count} ثانیه پیش"
   counter:
-    format: "۹۹۹،۹۹۹،۹۹۹"
+    format: "999,999,999"
   social:
     intro page:
       main heading: "گفتگوها و یافته‌ها"
