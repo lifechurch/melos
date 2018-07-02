@@ -218,6 +218,19 @@ html[dir="rtl"] {
   }
 }
 
+html[lang="my-MM"], html[lang="my"] {
+  @media #{$medium-only}, #{$small-only} {
+    h1 {
+      font-size: 1.7em;
+    }
+
+    h2.heading {
+      letter-spacing: inherit;
+    }
+  }
+
+}
+
 h1.heading {
   a {
     font-size: 45.71px;
