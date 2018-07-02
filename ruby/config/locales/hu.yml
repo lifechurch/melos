@@ -1043,8 +1043,8 @@ hu:
     banner action: "Letöltés"
     banner open: "Megnyitás"
   download bafk ad:
-    title: "A Biblia gyerekeknek letöltése"
-    description copy: "A Biblia gyerekeknek egy nagyszerű mód gyermekeid számára, hogy bibliai történeteket tanuljanak Jézusról."
+    title: "A Bible App for Kids letöltése"
+    description copy: "A Bible App for Kids egy nagyszerű mód gyermekeid számára, hogy bibliai történeteket tanuljanak Jézusról."
     download: "Letöltés most"
   about page:
     relevancy: "Fontosság"

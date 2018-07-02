@@ -428,7 +428,7 @@ id:
       read in bible: "Baca di Alkitab"
       read plan: "Baca"
       about plan: "Perihal rencana"
-      start plan: "Mulai rencana"
+      start plan: "Mulai Rencana"
   likes:
     create success: "Berhasil! Pilihan suka Anda telah disimpan"
     create failure: "Pilihan suka Anda tidak dapat disimpan"

@@ -1025,8 +1025,8 @@ my:
     banner action: "ဒေါင်းလုပ်"
     banner open: "ဖွင့်ရန်"
   download bafk ad:
-    title: "ကလေးများအတွက် Bible App ကို ဒေါင်းလုပ်ဆွဲရန်"
-    description copy: "ကလေးများအတွက် Bible App သည် ယေရှုအကြောင်း ကျမ်းစာပုံပြင်များကို သင့်ကလေးများ သင်ယူရန် ကြီးမားသည့်နည်းလမ်းတစ်ခု ဖြစ်ပါသည်။."
+    title: "Bible App for Kids ကို ဒေါင်းလုပ်ဆွဲရန်"
+    description copy: "Bible App for Kids သည် ယေရှုအကြောင်း ကျမ်းစာပုံပြင်များကို သင့်ကလေးများ သင်ယူရန် ကြီးမားသည့်နည်းလမ်းတစ်ခု ဖြစ်ပါသည်။."
     download: "ယခုဒေါင်းလုပ်ဆွဲမည်။"
   about page:
     relevancy: "ဆီလျော်မှု"

@@ -504,7 +504,7 @@ ro:
       accept button: "Accept"
       accept request button: "Acceptă cererea"
       ignore button: "Refuză"
-      ignore request button: "Refuză solicitarea"
+      ignore request button: "Refuză cererea"
   images:
     none user: "%{username} nu a creat încă imagini."
     blank slate:
