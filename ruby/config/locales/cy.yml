@@ -419,7 +419,7 @@ cy:
   alphabetic: "Trefn yr Wyddor"
   versions title: "Fersiynau"
   languages:
-    title: "Iaith y Beibl a chyfieithiadau"
+    title: "Ieithoedd Beibl a chyfieithiadau"
     most popular: "Ieithoedd mwyaf poblogaidd. "
     additional: "Ieithoedd ychwanegol"
     download language: "Lawrlwytha'r Beibl yn %{language_name}"
