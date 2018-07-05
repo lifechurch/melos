@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl'
 import FormattedText from '../../../../components/FormattedText'
 
 function PlanDevo(props) {
-	const { devoContent } = props
+	const { devoContent, hasDevotionalAudio } = props
 
 	if (!devoContent) {
 		return (
@@ -17,6 +17,11 @@ function PlanDevo(props) {
 			<div className='devo-header'>
 				<FormattedMessage id='plans.devotional' />
 			</div>
+			{hasDevotionalAudio && (
+			<div className="devo-audio-disclaimer">
+          Bible.com doesn't support playing this audio plan content. To listen, download the Bible App
+        </div>
+      )}
 			<FormattedText
 				text={devoContent}
 				customClass='devotional'
@@ -27,6 +32,11 @@ function PlanDevo(props) {
 
 PlanDevo.propTypes = {
 	devoContent: PropTypes.string.isRequired,
+	hasDevotionalAudio: PropTypes.bool
+}
+
+PlanDevo.defaultProps = {
+	hasDevotionalAudio: false
 }
 
 export default PlanDevo

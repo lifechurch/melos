@@ -193,7 +193,7 @@ class PlanReaderView extends Component {
 			switch (this.segment.kind) {
 				case 'devotional':
 					readerContent = (
-						<PlanDevo devoContent={this.segment.content} />
+						<PlanDevo devoContent={this.segment.content} hasDevotionalAudio={plan.has_devotional_audio} />
 					)
 					break
 
