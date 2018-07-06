@@ -11,7 +11,7 @@ class VideosController < ApplicationController
 
   def index
     video_locale = I18n.locale.to_s if Video.available_locales.include? I18n.locale
-    video_locale = I18n.locale.to_s.split('-')[0] if Video.available_locales.include? I18n.locale.to_s.split('-')[0].to_sym
+    video_locale = I18n.locale.to_s.split('-')[0] if video_locale.nil? and Video.available_locales.include? I18n.locale.to_s.split('-')[0].to_sym
     @videos = Video.search("*",language_tag: video_locale)
     respond_with(@videos)
   end
