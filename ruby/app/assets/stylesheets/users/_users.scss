@@ -345,11 +345,19 @@ li.profile-hdr-info-link {
   font-size: 13px;
 }
 
-.friend-card-status a {
+.friend-card-status button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+
+.friend-card-status a, .friend-card-status button {
   color: #888;
 }
 
-.friend-card-status:hover a {
+.friend-card-status:hover a, .friend-card-status:hover button {
   display: inline-block;
   color: #ff0000;
 }
