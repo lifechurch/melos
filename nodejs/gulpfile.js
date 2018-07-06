@@ -45,7 +45,6 @@ const localeNameException = {
 	ml: 'ml-IN',
 	mr: 'mr-IN',
 	ms: 'ms-MY',
-	mn: 'xc-MN',
 	ne: 'ne-NP',
 	nl: 'nl-NL',
 	no: 'no-NO',
