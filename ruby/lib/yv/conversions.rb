@@ -74,7 +74,7 @@ module YV
 		      'zh-CN' => 'zho',
 		      'zh-TW' => 'zho_tw',
 		      'es-ES' => 'spa_es',
-          'my-MM' => 'mya',
+          'my-MM' => 'mya_zaw',
           'no' => 'nob',
           'sw' => 'swh',
           'sq' => 'alb',
