@@ -297,8 +297,8 @@
 	{
 		"nativeName": "Монгол",
 		"englishName": "Mongolian",
-		"locale": "xc-MN",
-		"momentLocale": "xc-MN",
+		"locale": "mn",
+		"momentLocale": "mn",
 		"locale2": "mn",
 		"locale3": "mon",
 		"displayName": "Монгол"

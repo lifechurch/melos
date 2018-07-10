@@ -257,7 +257,7 @@
 	"plans.day number": "Ден {day}",
 	"plans.which day in plan": "Ден {day} от {total}",
 	"plans.must start to complete": "Започнете този план, за да запазите завършени дни за четене!",
-	"plans.invalid reference": "Няма такава препратк�� в посочената версия. Опитай друга версия или се свържи с нашия <a href='{support_url}' target='_self'>екип</a>.",
+	"plans.invalid reference": "Няма такава препратка в посочената версия. Опитай друга версия или се свържи с нашия <a href='{support_url}' target='_self'>екип</a>.",
 	"plans.sidebar notice": "Разглеждате план за четене.",
 	"plans.congratulations": "Поздравления!",
 	"plans.completed notice": "Поздравления! Вие завършихте Вашия план за прочит.",

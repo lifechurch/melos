@@ -299,7 +299,7 @@
 	"containers.Auth.signIn": "Zaloguj się",
 	"containers.Auth.subHead1": "Jeżeli jesteś użytkownikiem Aplikacji Biblii i masz już konto YouVersion, możesz się zalogować używając tych samych danych.<br/><br/>Nie masz jeszcze konta YouVersion? <br/><a href='{url}'>Zarejestruj się teraz na Bible.com, </a> aby rozpocząć tworzenie wydarzeń.",
 	"containers.Auth.email": "Email",
-	"containers.Auth.password": "Has��o:",
+	"containers.Auth.password": "Hasło:",
 	"containers.Auth.forgotPassword": "Nie pamiętam hasła",
 	"containers.EventEdit.event": "Wydarzenie",
 	"containers.EventEditContentContainer.choose": "Wybierz jakąś treść, aby rozpocząć.",

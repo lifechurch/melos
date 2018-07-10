@@ -419,7 +419,7 @@ cy:
   alphabetic: "Trefn yr Wyddor"
   versions title: "Fersiynau"
   languages:
-    title: "Iaith y Beibl a chyfieithiadau"
+    title: "Ieithoedd Beibl a chyfieithiadau"
     most popular: "Ieithoedd mwyaf poblogaidd. "
     additional: "Ieithoedd ychwanegol"
     download language: "Lawrlwytha'r Beibl yn %{language_name}"
@@ -2255,4 +2255,4 @@ cy:
       h4: "Dy brofiad di yw e."
       p7: "Mae ein polisïau yn ei gwneud yn glir pa hawliau sydd gennyt wrth ddefnyddio YouVersion, gan gynnwys mynediad, rhannu, newid a dileu eich data personol. Rydym hefyd yn mynd i'r afael â thechnolegau casglu data a sut mae'r prosesau hynny yn helpu'r Gymuned YouVersion i ymgysylltu'n llawn â'r Beibl."
     data: "Data"
-    download blurb: "Gallwch lawrlwytho copi o'r data personol yr ydych wedi'i ddarparu i ni, fel eich enw, eich lleoliad, eich cyfeiriad a'ch gwefan yn ogystal â gwybodaeth sylfaenol am eich Ffrindiau YouVersion. Ni fydd y dadlwytho data hwn yn cynnwys gwybodaeth am weithgareddau'r Beibl fel eich Uchafbwyntiau, Nodiadau, Delweddau Adnod, ac ati, y gallwch chi eu gweld yn uniongyrchol o fewn yr app. Mae YouVersion yn weinidogaeth di-elw. Gan fod ein ffocws yn gamesiynol, nid ydym yn gwneud arian, yn gwerthu data, nac yn hysbysebu trydydd parti y tu mewn i gynhyrchion YouVersion. Cyfeiriwch at ein Polisi Preifatrwydd a'r Telerau Defnyddio am ragor o fanylion ynghylch y data a gasglwn a pham, a sut yr ydym yn defnyddio ac yn gwarchod y data hwnnw. Sylwch nad yw data lawrlwytho yn ei ddileu o weinyddion YouVersion. Os hoffech ofyn i'ch dileu eich gwybodaeth, ewch i help.youversion.com. Cofiwch, fodd bynnag, y bydd dileu data penodol yn gwahardd a / neu ddileu ymarferoldeb YouVersion penodol fel y disgrifir ymhellach yn ein Polisi Preifatrwydd."
+    download blurb: "Gelli  lawrlwytho copi o'r data personol yr wyt wedi'i ddarparu i ni, fel dy enw, dy leoliad, dy gyfeiriad a'th gyfeiriad gwefan yn ogystal â gwybodaeth sylfaenol am dy Ffrindiau YouVersion. Ni fydd y lawrlwytho data hwn yn cynnwys gwybodaeth am weithgareddau'r Beibl fel dy Uchafbwyntiau, Nodiadau, Delweddau Adnod, ac ati, y gelli di eu gweld yn uniongyrchol o fewn yr ap. Mae YouVersion yn weinidogaeth di-elw. Gan fod ein ffocws yn genhadol, nid ydym yn gwneud arian, yn gwerthu data, nac yn hysbysebu trydydd parti y tu mewn i gynhyrchion YouVersion. Gelli gymryd golwg ar ein Polisi Preifatrwydd a'r Telerau Defnyddio am ragor o fanylion ynghylch y data a gasglwn a pham, a sut yr ydym yn defnyddio ac yn gwarchod y data hwnnw. Sylwa nad yw lawrlwytho data yn ei ddileu o weinyddion YouVersion. Os hoffet ofyn i'th wybodaeth gael ei ddileu dos i help.youversion.com. Cofia, fodd bynnag, y bydd dileu data penodol yn gwahardd a / neu ddileu defnydd penodol o YouVersion fel y disgrifir ymhellach yn ein Polisi Preifatrwydd."

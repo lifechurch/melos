@@ -41,7 +41,9 @@
           = link_to(friend.name, user_path(friend.to_param), target: "_self", class: "friend-card-name", title: t("users.profile.visit friend", friend: friend.name))
           .friend-card-status
             - if current_user_is? user # This is a list of my friends, show a delete friend link
-              = link_to(t("friendships.status.friends"), friend_path(friend.id), method: :delete, confirm: "Are you sure?", class: "friend-card-delete", title: t("friendships.form.remove friend button title"), target: "_self", "hover-link" => true, "link-text" => "#{t("friendships.status.friends")}", "hover-text" => "#{t("friendships.form.remove friend button")}")
+              = form_tag friend_path(friend.id), method: "DELETE" do
+                = button_tag t("friendships.status.friends"), class: 'friend-card-delete', confirm: "Are you sure?", title: t("friendships.form.remove friend button title"), target: "_self", "hover-link" => true, "link-text" => "#{t("friendships.status.friends")}", "hover-text" => "#{t("friendships.form.remove friend button")}"
+
 
             - else # This is a list of another users friends, show friendship status and/or display a link to friend them
               - if current_user.friends_with? friend.id
