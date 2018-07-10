@@ -219,16 +219,31 @@ html[dir="rtl"] {
 }
 
 html[lang="my-MM"], html[lang="my"] {
-  @media #{$medium-only}, #{$small-only} {
-    h1 {
-      font-size: 1.7em;
-    }
-
-    h2.heading {
-      letter-spacing: inherit;
-    }
+  .carousel-standard .slide-title {
+    line-height: 20px;
+    padding-bottom: 2px;
   }
 
+  h1 {
+    font-size: 1.7em;
+  }
+
+  h2.heading {
+    letter-spacing: inherit;
+  }
+
+  .about_content {
+    padding-bottom: 120px
+  }
+
+  article.press p {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+  }
+
+  .yv-button {
+    line-height: 18px;
+  }
 }
 
 h1.heading {
