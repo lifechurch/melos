@@ -350,7 +350,7 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.types": "Indholdstyper",
 	"features.EventEdit.features.content.components.ContentHelpModal.learn": "Lær hvordan du laver<br>en stor Event",
 	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "Tekst moduler",
-	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Forklaringer, nøgle punkter, diskussions spørgsmål… Del alt tekstbaseret generelt indhold som vil hjælpe dine deltagere med at forstå dine beskeder når det sker. Dine tekst moduler kan være af enhver længde og inkludere rich tekst formatering.",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Forklaringer, nøgle punkter, diskussions spørgsmål… Del alt tekstbaseret generelt indhold som vil hj��lpe dine deltagere med at forstå dine beskeder når det sker. Dine tekst moduler kan være af enhver længde og inkludere rich tekst formatering.",
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "Bibel Reference Modul",
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Vælg et Bibel vers eller passage, linket direkte til enhver af YouVerion´s 1.200+ versioner på mere end 900+ sprog. Folk som ser din Event, kan klikke på din reference, for at se den i deres Bibel App læser, hvor de kan Bogmærke, Markere den eller mere.",
 	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "Plan Modul",

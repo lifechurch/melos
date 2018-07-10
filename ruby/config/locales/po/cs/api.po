@@ -1,49 +1,70 @@
-# Czech translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Czech\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: cs\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Czech\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: cs\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Czech\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: cs\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Získali jste odznak <b>{title}</b>"
@@ -63,45 +84,6 @@ msgstr "Založení <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} založil/a <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Připravte se na vánoce s naším Adventním plánem čtení Bible"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Oživte svojí víru pomocí nových plánů čtení Bible."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Denně nacházejte Boha v Jeho slově."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Připravte své srdce na toto období."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Objevte Boží lásku v Jeho slově."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Právě začíná váš nejlepší rok."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Radujte se ze svobody v Kristu."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Objevujte Boha v Jeho slově."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Nalezněte naději a obnovu v Božím slově."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Ponořte se denně do Jeho slova."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Objevte vaše díky v tom, co pro vás Bůh naplnil."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Pravá moudrost pramení z Božího slova."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Bůh tvoří vše zcela nové."
-
 msgid "moment.friendship.self.title"
 msgstr "Stali jste se přáteli s <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "Zvýraznění <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} zvýraznil/a <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Vytvořil jste obrázkový verš pro <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} vytvořil/a obrázkový verš pro <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Poznámka vložena"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} přidal poznámku"
-
-msgid "moment.note.reference.self.title"
-msgstr "Přidána poznámka k <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} přidal poznámku na odkaz <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Přidali jste poznámku, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} přidal poznámku, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} přidal poznámku"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Poznámka vložena"
+
+msgid "moment.note.reference.title"
+msgstr "{name} přidal poznámku na odkaz <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Přidána poznámka k <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Dokončili jste plán"
@@ -177,9 +153,6 @@ msgstr "Sledujte <i>Seriál Bible</i> dnes!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Seriál Bible</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Sdílejte dobrou zprávu: Narodil se Spasitel!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Aplikace Bible je s přáteli ještě lepší. Prohledejte vaše kontakty a přidejte si své přátele."
 
@@ -189,8 +162,59 @@ msgstr "Shlédli jste <b>{title}</b>"
 msgid "moment.video.watched.title"
 msgstr "{name} shlédl <b>{title}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Připravte se na vánoce s naším Adventním plánem čtení Bible"
+
+msgid "moment.system.bafk.title"
+msgstr "Pomozte vašim dětem zamilovat si Boží slovo."
+
+msgid "moment.system.christmas.title"
+msgstr "Sdílejte dobrou zprávu: Narodil se Spasitel!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Právě začíná váš nejlepší rok."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Objevte Boží lásku v Jeho slově."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Nalezněte naději a obnovu v Božím slově."
+
+msgid "moment.image.self.title"
+msgstr "Vytvořil jste obrázkový verš pro <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} vytvořil/a obrázkový verš pro <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Oživte svojí víru pomocí nových plánů čtení Bible."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Ponořte se denně do Jeho slova."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Objevujte Boha v Jeho slově."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Radujte se ze svobody v Kristu."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Denně nacházejte Boha v Jeho slově."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Bůh tvoří vše zcela nové."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Pravá moudrost pramení z Božího slova."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Objevte vaše díky v tom, co pro vás Bůh naplnil."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Připravte své srdce na toto období."
+
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name} přidal komentář k vaší záložce: “{comment}”"
+msgstr "{name} přidal/a komentář k vaší záložce: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} přidal/a komentář k vašemu novému přátelství s {friend_name}: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name} přidal komentář nového přátelství: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} přidal komentář k vašemu zvýraznění: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} přidal/a komentář k vašemu obrázkovému verši: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} přidal komentář k vaší poznámce: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name} také okomentoval záložku uživatele {moment_owner_na
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} přidal/a komentář k novému přátelství uživ. {moment_owner_name} s uživ. {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} také přídal komentář nové přátelství s {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} přidal komentář k novému přátelství s {moment_owner_name}:“{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} také přídal komentář nové přátelství s {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} také okomentoval zvýraznění uživatele {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} také přidal/a komentář k {moment_owner_name} obrázkovému verši: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} také okomentoval poznámku uživatele {moment_owner_name}: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name} také přidal komentář k novému přátelství s: 
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} také okomentoval svoje zvýraznění: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} také přidal/a komentář ke svému obrázkovému verši: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} také okomentoval svoji poznámku: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} je nyní vaším přítelem"
 msgid "notifications.friendships.offer"
 msgstr "{name} se chce stát vaším přítelem na YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "V aplikaci Bible na vás čekají nové žádosti od přátel"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Chcete přidat uživatele {name} jako přítele na YouVersion?"
 
@@ -287,9 +299,6 @@ msgstr "uživ. {name} se líbí vaše nové přátelství s {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Uživateli {name} se líbí vaše označení, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} se libí váš obrázkový verš {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "Uživateli {name} se líbí vaše poznámka"
@@ -311,9 +320,6 @@ msgstr "{name} vytvořil záložku {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} zvýraznil {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} vytvořil/a obrázkový verš {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} přidal poznámku"
@@ -341,6 +347,54 @@ msgstr "{name} právě začal(a) používat Youversion. Přidejte si jej(jí) ja
 
 msgid "notifications.system.test"
 msgstr "Stáhněte si aplikaci Kids Bible App právě teď!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} přidal/a komentář k vašemu obrázkovému verši: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} také přidal/a komentář k {moment_owner_name} obrázkovému verši: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} také přidal/a komentář ke svému obrázkovému verši: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} se libí váš obrázkový verš {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} vytvořil/a obrázkový verš {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "V aplikaci Bible na vás čekají nové žádosti od přátel"
+
+msgid "notifications.votd_image"
+msgstr "Obrázkový verš dne"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} chce číst plán \"{title}\" s tebou."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} přidal/a komentář k {day} dni plánu \"{title}\"."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} přijal/a tvé pozvání k četbě plánu \"{title}\" s tebou."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} změnil datum zahájení plánu \"{title}\" na {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} okomentoval/a váš odznak: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} také okomentoval odznak uživatele {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} také okomentoval svůj odznak: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "Uživateli {name} se líbí váš odznak {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} dostal odznak {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Ahoj!</p><p>Používám aplikaci YouVersion Bible a chci ji s tebou sdílet. Pokud ještě aplikaci neznáš, pak ti můžu říct, jak je s ní snadné každý den objevovat krásy a pravdy z Bible. </p><p><strong>Stáhni si aplikaci Bible:</strong> čti, sleduj, poslouchej a sdílej ze svého chytrého telefonu či tabletu, nebo vše používej online na adrese Bible.com</p><p><strong>Nastav si účet:</strong> přihlaš se k odběru plánu čtení Bible a měj tak přístup k záložkám, zvýrazněním a poznámkám na všech svých zařízeních</p><p><strong>Přidávej si přátele (například mě!):</strong> objevuj a komentuj různé věci z Bible s lidmi, na kterých ti záleží</p><p>Vše máš k dispozici v aplikaci Bible - začni tady: </p>"

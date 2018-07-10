@@ -133,6 +133,15 @@
 		"locale3": "fra",
 		"displayName": "Français (France)"
 	},
+  {
+		"nativeName": "עִברִית",
+		"englishName": "Hebrew",
+		"locale": "he",
+		"momentLocale": "he",
+		"locale2": "he",
+		"locale3": "heb",
+		"displayName": "עִברִית"
+	},
 	{
 		"nativeName": "Hrvatski",
 		"englishName": "Croatian",
@@ -384,14 +393,23 @@
 		"displayName": "ภาษาไทย (ประเทศไทย)"
 	},
 	{
-		"nativeName": "မြန်မာ",
-		"englishName": "Myanmar (Burmese)",
+		"nativeName": "မြန်မာယူနီကုတ်",
+    "englishName": "Myanmar Burmese (Unicode)",
 		"locale": "my",
 		"momentLocale": "my",
 		"locale2": "my",
 		"locale3": "mya",
-		"displayName": "မြန်မာ"
+		"displayName": "မြန်မာယူနီကုတ်"
 	},
+  {
+    "nativeName": "ျမန္မာေဇာ္ဂ်ီာ",
+    "englishName": "Myanmar Burmese (Zawgyi)",
+    "locale": "my-MM",
+    "momentLocale": "my-MM",
+    "locale2": "my",
+    "locale3": "myz",
+    "displayName": "ျမန္မာေဇာ္ဂ်ီာ"
+  },
 	{
 		"nativeName": "한국어",
 		"englishName": "Korean",

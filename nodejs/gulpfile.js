@@ -50,7 +50,6 @@ const localeNameException = {
 	no: 'no-NO',
 	pl: 'pl-PL',
 	pt: 'pt-BR',
-	myz: 'qz-MM',
 	ro: 'ro-RO',
 	ru: 'ru-RU',
 	sk: 'sk-SK',
@@ -82,6 +81,7 @@ const prefixedLocales = [
 	'zh-TW',
 	'es-ES',
 	'pt-PT',
+	'my-MM'
 ]
 
 function crowdinFetchAvailableLocales(token) {
@@ -267,7 +267,7 @@ gulp.task('crowdin', () => {
 				// key, it means we have an error. if we actually get the strings, they
 				// are at the top level
 				const localeExceptions = {
-					// myz: 'qz-MM',
+					myz: 'my-MM',
 					'ml-IN': 'ml',
 					'ne-NP': 'ne',
 					'es-la': 'es',

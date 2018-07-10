@@ -53,6 +53,43 @@ class VOD < YV::Resource
       return altVerse[dayOfMonth - 1]
     end
 
+    def third_alternate_votd(dayOfMonth, opts={})
+      altVerse = [
+        "MAT.18_1.4",
+        "LUK.11_1.13",
+        "JHN.10_1.11",
+        "MAT.24_1.14",
+        "MRK.2_1.17",
+        "JHN.3_1.3",
+        "MAT.16_1.24",
+        "JHN.13_1.34",
+        "MAT.5_1.44",
+        "MAT.5_1.3",
+        "MRK.3_1.35",
+        "MAT.12_1.50",
+        "JHN.8_1.12",
+        "MAT.11_1.28",
+        "LUK.15_1.7",
+        "JHN.11_1.25",
+        "MAT.7_1.7",
+        "LUK.6_1.35",
+        "MRK.16_1.15",
+        "MAT.22_1.37",
+        "LUK.12_1.28",
+        "MAT.13_1.44",
+        "MAT.10_1.39",
+        "MAT.6_1.21",
+        "LUK.19_1.10",
+        "JHN.1_1.14",
+        "MAT.9_1.38",
+        "JHN.6_1.35",
+        "MAT.6_1.33",
+        "MRK.10_1.45",
+        "MAT.24_1.35"
+      ]
+      return altVerse[dayOfMonth - 1]
+    end
+
     def editable?; false; end
     def deletable?; false; end
 

@@ -6,7 +6,7 @@ import ActionCreators from '../../../features/SelectLanguage/actions/creators'
 import LocaleList from '../../../../locales/config/localeList.json'
 import Card from '../../../components/Card'
 
-const fourLetterLocales = [ 'en-GB', 'es-ES', 'pt-PT', 'zh-CN', 'zh-HK', 'zh-TW' ]
+const fourLetterLocales = [ 'en-GB', 'es-ES', 'pt-PT', 'zh-CN', 'zh-HK', 'zh-TW', 'my-MM' ]
 
 function getAPILocale(localeObject) {
 	const { locale, locale2 } = localeObject

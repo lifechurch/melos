@@ -1,49 +1,70 @@
-# Catalan translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ca\n"
-"Language-Team: ca <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-05-10 18:16-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ca\n"
-"Language-Team: ca <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ca\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ca\n"
-"Language-Team: ca <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ca\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ca\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Has aconseguit la insígnia <b>{title}</b>"
@@ -63,45 +84,6 @@ msgstr "Has marcat <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} ha marcat <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Prepara't pel Nadal amb un Pla d'Advent de lectura de la Bíblia"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Renova la teva fe amb nous Plans de Lectura."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Cerca Déu en la seva Paraula cada dia."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Prepara el teu cor aquesta temporada."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Troba l'amor de Déu en la seva Paraula."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "El teu millor any comença ara mateix."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Celebra la llibertat en Crist."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Cerca Déu en la seva Paraula."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Troba esperança i renovació en la Paraula de Déu."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Dedica't diàriament a la seva Paraula."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Descobreix la gratitud per les promeses de Déu."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "La saviesa divina comença en la Paraula de Déu."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "La Paraula de Déu fa noves totes les coses."
-
 msgid "moment.friendship.self.title"
 msgstr "Ara ets amic de <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "Has subratllat <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} ha subratllat <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Has creat una imatge per a <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} ha creat una imatge per a <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Has afegit una nota"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} ha afegit una nota"
-
-msgid "moment.note.reference.self.title"
-msgstr "Has afegit una nota a <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} ha afegit a <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Has afegit una nota, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} ha afegit una nota, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} ha afegit una nota"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Has afegit una nota"
+
+msgid "moment.note.reference.title"
+msgstr "{name} ha afegit a <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Has afegit una nota a <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Pla de lectura finalitzat"
@@ -177,9 +153,6 @@ msgstr "Mira la <i>Sèrie Bíblica</i> aquest vespre!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Sèrie Bíblica</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Comparteix la bona nova: el Salvador ha nascut!"
-
 msgid "moment.system.find_friends.title"
 msgstr "L'App de la Bíblia és encara millor amb Amics. Cerca en els teus Contactes per trobar-hi Amics."
 
@@ -188,6 +161,57 @@ msgstr "Has mirat <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} ha mirat <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Prepara't pel Nadal amb un Pla d'Advent de lectura de la Bíblia"
+
+msgid "moment.system.bafk.title"
+msgstr "Ajudeu els vostres fills a enamorar-se de la Paraula de Déu."
+
+msgid "moment.system.christmas.title"
+msgstr "Comparteix la bona nova: el Salvador ha nascut!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "El teu millor any comença ara mateix."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Troba l'amor de Déu en la seva Paraula."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Troba esperança i renovació en la Paraula de Déu."
+
+msgid "moment.image.self.title"
+msgstr "Has creat una imatge per a <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} ha creat una imatge per a <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Renova la teva fe amb nous Plans de Lectura."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Dedica't diàriament a la seva Paraula."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Cerca Déu en la seva Paraula."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Celebra la llibertat en Crist."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Cerca Déu en la seva Paraula cada dia."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "La Paraula de Déu fa noves totes les coses."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "La saviesa divina comença en la Paraula de Déu."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Descobreix la gratitud per les promeses de Déu."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Prepara el teu cor aquesta temporada."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} ha comentat el teu marcador: {comment}"
@@ -200,9 +224,6 @@ msgstr "{name} comenta sobre la teva nova amistat: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ha comentat la teva marca: \"{comment}\""
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} ha fet un comentari sobre la teva Imatge amb Verset: “{comment}” "
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} ha comentat la teva nota: \"{comment}\""
@@ -219,17 +240,14 @@ msgstr "{commenter_name} també ha comentat el marcador de {moment_owner_name}: 
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} també ha comentat la nova amistat de {moment_owner_name} amb {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} també ha comentat sobre la seva nova amistat amb {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} també ha comentat sobre la teva nova amistat amb {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} també ha comentat sobre la seva nova amistat amb {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} també ha comentat la marca de {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} també ha comentat la Imatge amb Verset de {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} també ha comentat la nota de {moment_owner_name}: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name} també ha comentat sobre la nova amistat amb tu: “
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} també ha comentat la seva marca: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} també ha comentat la seva Imatge amb Verset: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} també ha comentat la seva nota: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} és ara el teu amic"
 msgid "notifications.friendships.offer"
 msgstr "{name} vol ser el teu amic a YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "Tens sol·licituds d'amistat esperant a l'Aplicació de la Bíblia"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Vols ser amic de {name} a YouVersion?"
 
@@ -287,9 +299,6 @@ msgstr "A {name} li agrada la teva nova amistat amb {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "A {name} li agrada el que has ressaltat, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "A {name} li agrada la teva Imatge amb Verset per a {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "A {name} li agrada la teva nota"
@@ -311,9 +320,6 @@ msgstr "{name} ha posat un marcador a {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ha ressaltat {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} ha creat una Imatge amb Verset per a {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ha afegit una nota"
@@ -341,6 +347,54 @@ msgstr "{name} acaba d'unir-se a YouVersion. Prem aquí per afegir-lo com a Amic
 
 msgid "notifications.system.test"
 msgstr "Descarrega ara la nostra App de la Bíblia per Nens!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} ha fet un comentari sobre la teva Imatge amb Verset: “{comment}” "
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} també ha comentat la Imatge amb Verset de {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} també ha comentat la seva Imatge amb Verset: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "A {name} li agrada la teva Imatge amb Verset per a {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} ha creat una Imatge amb Verset per a {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Tens sol·licituds d'amistad a l'Aplicació de la Bíblia"
+
+msgid "notifications.votd_image"
+msgstr "Imatge del verset del dia"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} vol llegir el pla, “{title}” amb tu."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} ha comentat al dia {day} del pla, “{title}.”"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} ha acceptat la invitació a llegir el pla, “{title}” amb tu."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} ha canviat la data d'inici del pla, “{title}” a {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} ha comentat la teva nota: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} també ha comentat el marcador de {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} també han comentat els seus marcadors: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "A {name} li agrada el teu marcador, {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "A {name} li agrada el teu marcador, {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hola!</p><p>Estic utilitzant l'Aplicació de la Bíblia i volia compartir-ho amb tu. Si acabes d'entrar-hi en contacte, veuràs que com és de senzill portar la bellesa i veritat de la Bíblia al teu dia a dia. </p><p><strong>Aconsegueix l'Aplicació de la Bíblia:</strong> llegeix, mira, escolta i comparteix al teu smartphone o tablet, i a la versió en línia a Bible.com</p><p><strong>Configura el teu compte:</strong> subscriu-te als Plans de la Bíblia i accedeix a marcadors, subratllats i notes mitjançant els diferents dispositius</p><p><strong>Agrega amics (Com jo!):</strong> explora i parlar de la Bíblia amb les persones que t'importen</p><p>Tot a l'Aplicació de la Bíblia —comença aquí: </p>"

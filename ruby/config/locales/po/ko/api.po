@@ -1,49 +1,70 @@
-# Korean translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ko\n"
-"Language-Team: ko <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ko\n"
-"Language-Team: ko <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ko\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ko\n"
-"Language-Team: ko <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ko\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ko\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "<b>{title}</b> 배지를 획득하셨습니다."
@@ -63,45 +84,6 @@ msgstr "<b> {reference_human} {version_abbreviation} </b>에 책갈피를 표시
 msgid "moment.bookmark.title"
 msgstr "{name}님이 <b>{reference_human}{version_abbreviation} </b>에 책갈피를 표시했습니다."
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "대강절 묵상 계획을 시작으로 성탄절을 준비해보세요,"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "새로운 묵상 계획을 통해서 믿음을 새롭게 해보세요."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "매일 말씀에서 하나님을 만나세요."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "이 계절을 맞을 마음의 준비를 하세요."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "말씀에서 하나님의 사랑을 찾아보세요."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "멋진 한해를 시작하세요."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "그리스도 안에서의 자유함을 기뻐하세요."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "말씀에서 하나님을 만나세요."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "말씀에서 희망을 찾고 새롭게 하세요."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "매일 말씀에 삶을 헌신하세요."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "하나님의 약속에 감사하세요."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "거룩한 지혜는 말씀에서 시작됩니다."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "하나님의 말씀은 모든 것을 새롭게 합니다."
-
 msgid "moment.friendship.self.title"
 msgstr "이제 <b>{friend_name}</b>님과 친구입니다"
 
@@ -114,29 +96,23 @@ msgstr "<b>{reference_human} {version_abbreviation}</b> 에 하이라이트했�
 msgid "moment.highlight.title"
 msgstr "{name} 님이 <b>{reference_human} {version_abbreviation} </b>에 하이라이트를 했습니다."
 
-msgid "moment.image.self.title"
-msgstr "<b>{reference_human} {version_abbreviation}</b> 말씀 이미지를 만들었습니다."
-
-msgid "moment.image.title"
-msgstr "{name}님이 <b>{reference_human} {version_abbreviation} </b> 말씀 이미지를 만들었습니다."
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "회원님이 노트를 추가 하였습니다."
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name}님이 노트를 추가했습니다."
-
-msgid "moment.note.reference.self.title"
-msgstr "{reference_human}에 노트를 추가 하셨습니다. <b>{reference_human}에 노트를 추가 하셨습니다.</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name}님이 <b>{reference_human}에</b>노트를 추가했습니다."
-
 msgid "moment.note.self.title"
 msgstr "<b>{title}</b> 노트를 추가 하셨습니다."
 
 msgid "moment.note.title"
 msgstr "{name}님이 <b>{title}</b> 노트를 추가했습니다."
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name}님이 노트를 추가했습니다."
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "회원님이 노트를 추가 하였습니다."
+
+msgid "moment.note.reference.title"
+msgstr "{name}님이 <b>{reference_human}에</b>노트를 추가했습니다."
+
+msgid "moment.note.reference.self.title"
+msgstr "{reference_human}에 노트를 추가 하셨습니다. <b>{reference_human}에 노트를 추가 하셨습니다.</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "묵상 계획을 완료하셨습니다"
@@ -154,7 +130,7 @@ msgid "moment.plan_segment_completion.body"
 msgstr "{total_segments}  중  {segment}일 분량 ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "<b>{title}</b> 묵상 계획 중 <b>{segment}</b>일째 읽기를 마치셨습니다."
+msgstr "<b>{title}</b> 묵상 계획 <b>{segment}</b>일째 읽기를 마치셨습니다."
 
 msgid "moment.plan_segment_completion.title"
 msgstr "{name}님이 <b>{title}</b> 묵상 계획 <b>{segment}</b>일째 읽기를 마치셨습니다."
@@ -171,17 +147,11 @@ msgstr "새로 <b>{title}</b> 묵상 계획을 시작하셨습니다."
 msgid "moment.plan_subscription.v2.title"
 msgstr "{name}님이 <b>{title}</b> 묵상 계획을 시작했습니다."
 
-msgid "moment.system.bafk.title"
-msgstr "댁의 자녀들이 하나님의 말씀을 사랑할 수있도록 도와주세요."
-
 msgid "moment.system.bible_series_promo.body"
 msgstr "오늘밤 <i>성경 시리즈</i>를 시청해 보세요!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>성경 시리즈</i>"
-
-msgid "moment.system.christmas.title"
-msgstr "기쁜 소식을 전하세요: 구주가 나셨습니다!"
 
 msgid "moment.system.find_friends.title"
 msgstr "친구기능을 추가함으로 성경 앱이 더 좋아졌습니다.  연락처를 통해서 친구들을 찾아보세요."
@@ -191,6 +161,57 @@ msgstr "<b>{title}</b> 동영상을 보셨습니다."
 
 msgid "moment.video.watched.title"
 msgstr "{name}님이<b>{title}</b> 동영상을 보았습니다."
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "대강절 묵상 계획을 시작으로 성탄절을 준비해보세요,"
+
+msgid "moment.system.bafk.title"
+msgstr "댁의 자녀들이 하나님의 말씀을 사랑할 수있도록 도와주세요."
+
+msgid "moment.system.christmas.title"
+msgstr "기쁜 소식을 전하세요: 구주가 나셨습니다!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "멋진 한해를 시작하세요."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "말씀에서 하나님의 사랑을 찾아보세요."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "말씀에서 희망을 찾고 새롭게 하세요."
+
+msgid "moment.image.self.title"
+msgstr "<b>{reference_human} {version_abbreviation}</b> 말씀 이미지를 만들었습니다."
+
+msgid "moment.image.title"
+msgstr "{name}님이 <b>{reference_human} {version_abbreviation} </b> 말씀 이미지를 만들었습니다."
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "새로운 묵상 계획을 통해서 믿음을 새롭게 해보세요."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "매일 말씀에 삶을 헌신하세요."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "말씀에서 하나님을 만나세요."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "그리스도 안에서의 자유함을 기뻐하세요."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "매일 말씀에서 하나님을 만나세요."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "하나님의 말씀은 모든 것을 새롭게 합니다."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "거룩한 지혜는 말씀에서 시작됩니다."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "하나님의 약속에 감사하세요."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "이 계절을 맞을 마음의 준비를 하세요."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name}님이 회원님의 책갈피에 댓글을 남겼습니다. :\"{comment}\""
@@ -203,9 +224,6 @@ msgstr "{name} 님이 회원님이 새로 친구를 맺은 것에 대해 글을 
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}님이 회원님의 하이라이트에 댓글을 남겼습니다: \"{comment}\""
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name}님이 회원님의 말씀 이미지에 댓글을 달았습니다.:{comment}"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}님이 회원님의 노트에 댓글을 남겼습니다: \"{comment}\""
@@ -222,17 +240,14 @@ msgstr "{commenter_name}님도 {moment_owner_name}님의 책갈피에 댓글을 
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name}도 {moment_owner_name}이 {friend_name}과 새로 친구 맺은 것에 대하여 글을 남겼습니다: \"{comment}\""
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name}님도 회원님이 {moment_owner_name}님과 새로 친구 맺은 것에 대해서 글을 남겼습니다: \"{comment}\""
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name}님도 {moment_owner_name}님과 새로 친구 맺은 것에 대해 글을 남겼습니다: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}님도 회원님이 {moment_owner_name}님과 새로 친구 맺은 것에 대해서 글을 남겼습니다: \"{comment}\""
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}님도 {moment_owner_name}님의 하이라이트에 댓글을 남겼습니다: \"{comment}\""
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name}님도 {moment_owner_name}님의 말씀 이미지에 댓글을 남겼습니다.:{comment}"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name}님도 {moment_owner_name}님의 노트에 댓글을 남겼습니다: \"{comment}\""
@@ -248,9 +263,6 @@ msgstr "{moment_owner_name}님도 회원님과 새로 친구를 맺은 것에 �
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}님도 하이라이트에 댓글을 남겼습니다: \"{comment}\""
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name}님도 말씀 이미지에 댓글을 남겼습니다.:{comment}"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}님도 노트에 댓글을 남겼습니다: \"{comment}\""
@@ -276,9 +288,6 @@ msgstr "{name}님은 이제 회원님의 친구입니다."
 msgid "notifications.friendships.offer"
 msgstr "{name}님이 회원님과 YouVersion 친구가 되고 싶어합니다."
 
-msgid "notifications.friendships.pending"
-msgstr "성경 앱에 친구 요청이 기다리고 있습니다."
-
 msgid "notifications.friendships.suggestion"
 msgstr "{name}님과 YouVersion 친구가 되시겠습니까?"
 
@@ -290,9 +299,6 @@ msgstr "{name}님이 {friend_name}님과 새로 친구 맺은 것을 좋아합�
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name}님이 회원님의 {reference_human} 하이라이트를 좋아합니다."
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name}님이 회원님의 {reference_human} 말씀 이미지를 좋아합니다."
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name}님이 회원님의 노트를 좋아합니다."
@@ -314,9 +320,6 @@ msgstr "{name}님이 {reference_human} 책갈피를 만들었습니다."
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name}님이 {reference_human} 하이라이트를 했습니다."
-
-msgid "notifications.moments.create.image"
-msgstr "{name}님이 {reference_human} 말씀 이미지를 만들었습니다."
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name}님이 노트를 추가했습니다."
@@ -344,6 +347,54 @@ msgstr "{name}님이 YouVersion에 가입하셨습니다. 탭하셔서 친구 �
 
 msgid "notifications.system.test"
 msgstr "지금 어린이 성경 앱을  다운로드하세요!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}님이 회원님의 말씀 이미지에 댓글을 달았습니다.:{comment}"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}님도 {moment_owner_name}님의 말씀 이미지에 댓글을 남겼습니다.:{comment}"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name}님도 말씀 이미지에 댓글을 남겼습니다.:{comment}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}님이 회원님의 {reference_human} 말씀 이미지를 좋아합니다."
+
+msgid "notifications.moments.create.image"
+msgstr "{name}님이 {reference_human} 말씀 이미지를 만들었습니다."
+
+msgid "notifications.friendships.pending"
+msgstr "성경 앱에 친구 요청이 기다리고 있습니다."
+
+msgid "notifications.votd_image"
+msgstr "오늘의 말씀 이미지"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name}님이 \"{title}\" 묵상 계획을 함께 읽고 싶어 합니다."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name}님이 \"{title}\" 묵상 계획 {day} 째날에 댓글을 달았습니다."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name}님이 묵상계획 \"{title}\"을 함께 하기위한 초대를 수락하였습니다."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name}님이 \"{title}\" 묵상 계획 시작날을 {date}로 바꾸었습니다."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name}님이 회원님의 배지에 댓글을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name}님도 {moment_owner_name}님의 배지에 댓글을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name}님도 배지에 댓글을 남겼습니다: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name}님이 회원님의 {title} 배지를 좋아합니다."
+
+msgid "notifications.moments.create.badge"
+msgstr "{name}님이 {title} 배지를 얻었습니다."
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>안녕하세요?</p><p>YouVersion 에서 제공하는 성경앱을 사용하고 있는데, 사용 소감을 같이 나누고 싶습니다. 진리와 사랑의 성경 말씀을 매일의 삶속으로 가져다주는 앱입니다. </p><p><strong>성경앱 설치</strong>스마트폰이나 태블렛, 또는 Bible,com 온라인 상에서 성경을 읽고 보고 들을 수있습니다.</p><p><strong>계정 설정</strong>묵상 계획을 구독하거나, 책갈피, 하이라이트, 그리고 노트등을 모든 기기를 통해서 설정할 수있습니다. </p><p><strong>친구 신청(내게도요!)</strong>회원님이 소중히 여기시는 분들과 성경을 같이 연구하고 의논해보세요.</p><p>이 모든 것들이 성경 앱안에 있습니다.  바로 시작해보세요. </p>"

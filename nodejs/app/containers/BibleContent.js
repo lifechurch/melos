@@ -180,14 +180,14 @@ class BibleContent extends Component {
 			<div className='bible-content'>
 				{
 					this.ref && this.ref.content
-						? (
-							<Chapter
-								content={this.ref.content}
-								verseColors={moments ? moments.verseColors : null}
-								onSelect={this.handleVerseSelect}
+            ? (
+              <Chapter
+                content={this.ref.content}
+                verseColors={moments ? moments.verseColors : null}
+                onSelect={this.handleVerseSelect}
 								// textDirection={textDirection}
-								ref={(chapter) => { this.chapterInstance = chapter }}
-							/>
+                ref={(chapter) => { this.chapterInstance = chapter }}
+              />
 						)
 						: (
 							<Placeholder height={isVerse ? '200px' : '600px'}>
@@ -196,7 +196,7 @@ class BibleContent extends Component {
 									lineSpacing='15px'
 									textHeight='16px'
 									widthRange={[0, 100]}
-								/>
+        />
 							</Placeholder>
 						)
 				}
@@ -204,7 +204,7 @@ class BibleContent extends Component {
 					showCopyright &&
 					this.version &&
 					'id' in this.version &&
-					<ChapterCopyright {...buildCopyright(intl.formatMessage, this.version)} />
+					<ChapterCopyright {...buildCopyright(intl.formatMessage, this.version, this.ref.reference)} />
 				}
 				{
 					showGetChapter &&

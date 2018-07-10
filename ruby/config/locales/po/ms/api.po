@@ -1,49 +1,70 @@
-# Malay translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ms\n"
-"Language-Team: ms <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Malay\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ms\n"
-"Language-Team: ms <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ms\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Malay\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ms\n"
-"Language-Team: ms <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ms\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-09 16:43-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Malay\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: ms\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ms\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Anda telah memperoleh lencana <b>{title}</b>"
@@ -61,46 +82,7 @@ msgid "moment.bookmark.self.title"
 msgstr "Anda telah bookmark <b> {reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name}   bookmark<b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Bersiap untuk Krismas dengan Pelan Alkitab Adven"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Segarkan iman anda dengan Pelan-Pelan yang baru."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Cari Allah dalam FirmanNya setiap hari."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Persiapkan hati anda musim perayaan ini."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Cari kasih Allah dalam FirmanNya."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Tahun terbaik anda bermula sekarang."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Meraikan Kebebasan dalam Kristus."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Cari Allah dalam FirmanNya."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Cari harapan dan pembaharuan dalam Firman Allah."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Tumpukan diri anda pada FirmanNya setiap hari."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Temui kesyukuran di dalam janji-janji Tuhan."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Kebijaksanaan rohani bermula dalam Firman Allah."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Firman Tuhan membuat segalanya baru."
+msgstr "{name} bookmark <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.friendship.self.title"
 msgstr "Anda kini bersahabat dengan <b>{friend_name}</b>"
@@ -114,29 +96,23 @@ msgstr "Anda telah highlight <b> {reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name}  highlight<b> {reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Anda telah membuat imej ayat untuk <b> {reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} telah membuat imej ayat untuk<b>{reference_human}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Anda telah menambah nota"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} telah menambah nota"
-
-msgid "moment.note.reference.self.title"
-msgstr "Anda telah menambah nota pada <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} telah menambah nota pada <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Anda telah menambah nota, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} telah menambah nota, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} menambah nota"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Anda telah menambah nota"
+
+msgid "moment.note.reference.title"
+msgstr "{name} telah menambah nota pada <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Anda telah menambah nota pada <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Telah melengkapkan pelan"
@@ -177,9 +153,6 @@ msgstr "Lihat <i>Siri Alkitab</i>malam ini!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Siri Alkitab</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Sebarkan berita baik: Penyelamat kita telah lahir!"
-
 msgid "moment.system.find_friends.title"
 msgstr "App Alkitab adalah lebih baik bersama Sahabat. Cari Contact anda untuk menemukan Sahabat."
 
@@ -188,6 +161,57 @@ msgstr "Anda telah menonton <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} telah menonton <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Bersiap untuk Krismas dengan Pelan Alkitab Adven"
+
+msgid "moment.system.bafk.title"
+msgstr "Bantu anak-anak anda jatuh cinta dengan Firman Allah."
+
+msgid "moment.system.christmas.title"
+msgstr "Sebarkan berita baik: Penyelamat kita telah lahir!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Tahun terbaik anda bermula sekarang."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Cari kasih Allah dalam FirmanNya."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Cari harapan dan pembaharuan dalam Firman Allah."
+
+msgid "moment.image.self.title"
+msgstr "Anda telah membuat imej ayat untuk <b> {reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} telah membuat imej ayat untuk <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Segarkan iman anda dengan Pelan-Pelan yang baru."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Tumpukan diri anda pada FirmanNya setiap hari."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Cari Allah dalam FirmanNya."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Meraikan Kebebasan dalam Kristus."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Cari Allah dalam FirmanNya setiap hari."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Firman Tuhan membuat segalanya baru."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Kebijaksanaan rohani bermula dalam Firman Allah."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Temui kesyukuran di dalam janji-janji Tuhan."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Persiapkan hati anda musim perayaan ini."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} komen pada bookmark anda: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name} meninggalkan komen tentang Persahabatan baru anda: “{comment}�
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} komen pada highlight anda: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} komen pada imej ayat anda: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} komen pada nota anda: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name} juga komen pada bookmark {moment_owner_name}: “{comme
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} juga komen pada persahabatan baru {moment_owner_name} dengan {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} juga meninggalkan komen terhadap Persabahatan baru dengan {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} juga meninggalkan komen tentang Persahabatan barunya dengan {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} juga meninggalkan komen terhadap Persabahatan baru dengan {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} juga komen pada highlight {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} juga komen pada imej ayat{moment_owner_name}:“{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} juga komen pada nota {moment_owner_name}: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name} juga meninggalkan komen terhadap Persahabatan baru d
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} juga komen pada highlight mereka: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} juga komen pada ayat imej mereka: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} juga komen pada nota mereka: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} kini ialah sahabat anda"
 msgid "notifications.friendships.offer"
 msgstr "{name} ingin menjadi sahabat anda di YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "Anda mempunyai permintaan menjadi Sahabat sedang menunggu dalam App Alkitab"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Adakah anda ingin bersahabat dengan {name} di YouVersion?"
 
@@ -287,9 +299,6 @@ msgstr "{name} suka persahabatan baru anda dengan {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} suka highlight anda, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name}suka pada imej ayat anda iaitu {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} suka nota anda"
@@ -311,9 +320,6 @@ msgstr "{name} bookmark {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} highlight {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} telah membuat imej ayat untuk {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} menambah nota"
@@ -341,6 +347,54 @@ msgstr "{name} baru sahaja menyertai YouVersion. Tap untuk menambah mereka sebag
 
 msgid "notifications.system.test"
 msgstr "Muat turun App Alkitab Kanak-kanak kita sekarang!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} komen pada imej ayat anda: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} juga komen pada imej ayat{moment_owner_name}:“{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} juga komen pada ayat imej mereka: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}suka pada imej ayat anda iaitu {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} telah membuat imej ayat untuk {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Anda mempunyai permintaan menjadi Sahabat sedang menunggu dalam App Alkitab"
+
+msgid "notifications.votd_image"
+msgstr "Imej Ayat Hari Ini"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} ingin membaca Pelan, \"{title}\" bersama anda."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} telah memberikan komen pada Hari {day} Pelan, \"{title}.\""
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} telah menerima jemputan anda untuk membaca Pelan, \"{title}\" bersama-sama."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} telah mengubah tarikh mula untuk Pelan, \"{title}\" kepada {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} membuat komen tentang lencana anda: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} juga membuat komen tentang lencana {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} juga membuat komen tentang lencananya: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} suka lencana anda {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} memperoleh lencana {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hi!</p><p>Saya sedang menggunakan App Alkitab daripada YouVersion dan ingin berkongsinya dengan anda. Jika anda baru kepada app ini, ianya merupakan cara yang mudah untuk membawa keindahan dan kebenaran Alkitab ke dalam kehidupan seharian. </p><p><strong>Dapatkan App Alkitab:</strong>baca, tonton, dengar dan kongsi melalui telefon mudah alih atau tablet anda, dan secara online di Bible.com</p><p><strong>Daftar Akaun Anda:</strong>langgan ke Pelan Alkitab dan akses bookmark. highlight, dan nota dalam alat peranti </p><p><strong>Tambah Sahabat (Seperti Saya!):</strong>terokai dan bincangkan Alkitab bersama orang yang anda peduli</p><p>Semuanya ada di dalam App Alkitab-bermulalah di sini: </p>"

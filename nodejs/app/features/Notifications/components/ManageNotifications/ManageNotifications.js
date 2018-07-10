@@ -132,7 +132,7 @@ class ManageNotifications extends Component {
 								: <p className="user error">
 									<FormattedMessage id="unsubscribe.error.token" />
 									<br /><br />
-									<a className="centered-link" href={localizedLink('/sign-in?redirect=/unsubscribe/manage', languageTag)}><FormattedMessage id="Auth.sign in" /></a>
+									<a className="centered-link" href={localizedLink('/sign-in?redirect=/unsubscribe/manage', languageTag)}><FormattedHTMLMessage id="Auth.sign in" /></a>
 								</p>
 							}
 							<hr />

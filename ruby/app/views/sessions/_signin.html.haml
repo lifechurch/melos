@@ -64,4 +64,5 @@
         %span.terms= link_to t('users.forgot password'), forgot_password_path, { target: "_self" }
       %br
       %p
-        = button_tag t("sign in"), class: "solid-button green expand"
+        %button.solid-button.green.expand{ name: "button", type: "submit" }
+          !=t("sign in")

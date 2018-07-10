@@ -2176,6 +2176,7 @@ ul.language-selector li {
 			right: -40px;
 			opacity: 0.8;
 		}
+
 		.slick-arrow-left-container {
 			height: 120px;
 			left: -40px;
@@ -2241,6 +2242,15 @@ ul.language-selector li {
 	}
 
 }
+
+html[dir="rtl"] {
+  .carousel-standard {
+    .slide-title {
+      text-align: right;
+    }
+  }
+}
+
 
 .collections-view {
 	width: 100%;
@@ -2358,6 +2368,18 @@ html[dir="rtl"] {
 			opacity: 0 !important;
 		}
 	}
+
+  .slick-arrow-right-container {
+    right: inherit;
+  }
+
+  svg.slick-arrow-right {
+    transform: rotate(180deg);
+  }
+
+  .carousel-standard .see-all {
+    text-align: left;
+  }
 }
 
 @media @small-only {

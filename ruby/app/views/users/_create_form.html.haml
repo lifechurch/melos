@@ -63,7 +63,8 @@
   %p.terms
     = t("users.agree", terms_link: terms_url(), privacy_link: privacy_path).html_safe
   %p
-    = f.button t("users.sign up"), {id: "default-signup-button", class: "solid-button green expand"}
+    %button#default-signup-button.solid-button.green.expand{ name: 'submit', type: 'submit' }
+      != t("users.sign up")
 
   %p
     .alt-path.terms= t('users.sign up alternate', sign_in_path: sign_in_path).html_safe
