@@ -234,7 +234,7 @@ lv:
   languages link: "Valodas"
   jobs: "Vakances"
   volunteer: "Brīvprātīgais"
-  privacy policy: "Konfidencionalitātes politika"
+  privacy policy: "Privātuma politika"
   terms: "Nosacījumi"
   press: "Prese"
   get support: "Palīdzība"
@@ -1386,7 +1386,7 @@ lv:
       jobs: "Vakances"
       blog: "Blogs"
       press: "Prese"
-      privacy: "Privacy Policy"
+      privacy: "Privātuma politika"
       terms: "Nosacījumi"
       volunteer: "Brīvprātīgais"
     unsubscribe:
