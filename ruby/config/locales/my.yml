@@ -938,7 +938,7 @@ my:
       login notice: "သင်ဝယ်ယူရသောအကြောင်းအရာကို ခိုင်လုံစေဖို့ရန် ကျေးဇူးပြု၍ အောက်ပါ သင်၏YouVersion အကောင့်သို့ဝင်ပါ သို့မဟုတ် %{signup} <a href='/sign-up?source=licenses' target='_self'></a>"
       signup notice: "သင်ဝယ်ယူထားပြီးသောအချက်အလက်များကို တရားဝင်အတည်ဖြစ်စေရန် အောက်တွင် အခမဲ့ YouVersion အကောင့်ကိုဖွင့်ပါ။ သို့မဟုတ်  အကောင့်ရှိထားပြီးဖြစ်ပါက<a href='/sign-in?source=licenses' target='_self'>%{login} သို့ဝင်ပါ</a>"
       signup link text: "အခမဲ့အကောင့်ဖွင့်ရန်"
-      login link text: "အကောင့်ထဲဝင်ရန်"
+      login link text: "အကောင့်<br />ဝင်ရန်"
   registration:
     placeholder:
       email: "သင်၏အီးမေးလ်လိပ်စာကိုထည့်ပါ"
@@ -1329,7 +1329,7 @@ my:
       friend requests: "မိတ်ဆွေဖြစ်ခွင့်တောင်းခံထားခြင်း"
       settings: "ချိန်ညှိချက်"
       search placeholder: "ရှာဖွေဆဲ..."
-      sign in: "အကောင့်သို့ဝင်ရန်"
+      sign in: "အကောင့်<br />ဝင်ရန်"
       sign up: "အကောင့်<br />ဖွင့်ရန်"
     profile menu:
       bookmarks: "မှတ်သားချက်"
@@ -1601,7 +1601,7 @@ my:
     containers:
       Auth:
         title: "လှုပ်ရှားမှုအစီအစဉ်သို့ အကောင့်ဖြင့်ဝင်ရန်"
-        signIn: "အကောင့်သို့ဝင်ရန်"
+        signIn: "အကောင့်<br />ဝင်ရန်"
         subHead1: "သင်သည် ကျမ်းစာအက်ပ်ကိုအသုံးပြုသူဖြစ်ပြီး သင့်မှာ YouVersion အကောင့်ရှိပြီးသားဖြစ်လျှင် ၎င်းကိုအသုံးပြုပြီး အကောင့်သို့ဝင်ပါ။<br/><br/>YouVersion အကောင့်မရှိသေးသလား။<br/><a href='%{url}'>လှုပ်ရှားမှုအစီအစဉ်ကိုဖန်တီးနိုင်ရန် Bible.com တွင် ယခုပင် အကောင့်ဖွင့်ပါ။</a>"
         email: "အီးမေးလ် "
         password: "စကားဝှက်"
@@ -1872,7 +1872,7 @@ my:
             saved: "အစီအစဉ်ကိုသိမ်းဆည်းပြီ"
     Auth:
       sign up: "အကောင့်<br />ဖွင့်ရန်"
-      sign in: "အကောင့်သို့ဝင်ရန်"
+      sign in: "အကောင့်<br />ဝင်ရန်"
       sign up google: "ဂူဂယ်ဖြင့် အကောင်းဖွင့်ရန်"
       continue google: "Google ဖြင့်ဆက်ဖွင့်မည်"
       sign up facebook: "ဖေ့စ်ဘွတ်ဖြင့်အကောင့်ဖွင့်ရန်"
