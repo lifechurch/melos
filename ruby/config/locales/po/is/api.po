@@ -1,0 +1,435 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Icelandic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: is\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: is\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Icelandic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: is\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: is\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-30 12:09-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Icelandic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: is\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: is\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Þú hefur unnið þér inn afreksmerkið <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} vann sér inn afreksmerkið <b>{title}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Þú hefur hlaðið niður útgáfunni: <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} hlóð niður útgáfunni: <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Þú hefur sett bókamerki við <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} setti bókamerki við <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Þú og <b>{friend_name}</b> eruð núna vinir"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} og <b>{friend_name}</b> eru núna vinir"
+
+msgid "moment.highlight.self.title"
+msgstr "Þú hefur áherslumerkt <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} hefur áherslumerkt <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Þú skrifaðir minnispunkt, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} skrifaði minnispunkt, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} bætti við minnispunkti"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Þú skrifaðir minnispunkt"
+
+msgid "moment.note.reference.title"
+msgstr "{name} skrifaði minnispunkt við <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Þú skrifaðir minnispunkt við <b>{reference_human}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Þú hefur lokið lestraráætluninni"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} lauk við lestraráætlun"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Þú hefur lokið lestraráætluninni: <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} lauk við lestraráætlunina: <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Dagur {segment} af {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Þú hefur lokið degi <b>{segment}</b> af lestraráætluninni: <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} hefur lokið degi <b>{segment}</b> af lestraráætluninni: <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Þú hefur byrjað á nýrri lestraráætlun"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} hefur byrjað á nýrri lestraráætlun"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Þú hefur byrjað á nýrri lestraráætlun: <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} hefur byrjað á nýrri lestraráætlun: <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Horfðu á <i>Bible Series</i> í kvöld!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bible Series</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Biblíuforritið er jafnvel betra með vinum. Leitaðu í tengiliðum til að finna vini."
+
+msgid "moment.video.watched.self.title"
+msgstr "Þú horfðir á <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} horfði á <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Búðu þig undir jólin með aðventulestraráætlun"
+
+msgid "moment.system.bafk.title"
+msgstr "Hjálpaðu börnunum þínum að verða hugfangin af Orði Guðs."
+
+msgid "moment.system.christmas.title"
+msgstr "Deildu góðu fréttunum: Frelsarinn er fæddur!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Besta ár þitt til þessa hefst núna."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Finndu kærleika Guðs í Orði hans."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Finndu von og endurnýjun í Guðs Orði."
+
+msgid "moment.image.self.title"
+msgstr "Þú bjóst til mynd af versi fyrir <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} bjó til mynd af versi fyrir <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Endurnýjaðu trú þína með nýjum lestraráætlunum."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Gefðu þig daglega að Orði Guðs."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Leitaðu Guðs í Orði hans."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Fagnaðu frelsinu í Kristi."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Leitaðu Guðs í Orði hans sérhvern dag."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Orð Guðs gerir alla hluti nýja."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Guðleg viska byrjar í Orði Guðs."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Uppgötvaðu þakklæti í loforðum Guðs."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Undirbúðu hjarta þitt á þessu misseri."
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} skrifaði ummæli við bókamerkið þitt: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} skrifaði ummæli um nýja vináttu milli þín og {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} skrifaði ummæli um nýja vináttu ykkar: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} skrifaði ummæli við áherslumerkingu þína: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} skrifaði ummæli við minnispunkt þinn: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} skrifaði ummæli við áætlun þína: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} skrifaði ummæli við biblíulestraráætlun þína: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} skrifaði einnig ummæli við bókamerkið sem {moment_owner_name} færði inn: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} skrifaði einnig ummæli við nýja vináttu milli {moment_owner_name} og {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} skrifaði einnig ummæli við nýja vináttu sína við {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} skrifaði einnig ummæli um nýja vináttu þína við {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} skrifaði einnig ummæli við áherslumerkingu {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} skrifaði einnig ummæli við minnispunkt {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} skrifaði einnig ummæli við bókamerki sitt: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} skrifaði einnig ummæli um nýja vináttu sína við {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} skrifaði einnig ummæli um nýja vináttu sína við þig: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} skrifaði einnig ummæli við áherslumerkingu sína: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} skrifaði einnig ummæli við minnispunkt sinn: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} skrifaði einnig ummæli við áætlun sína: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} skrifaði einnig ummæli við Biblíulestraráætlun sína: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} skrifaði einnig ummæli við áætlun {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} skrifaði einnig athugasemd við Biblíulestraráætlun sem {moment_owner_name} gerði: \"{comment}\""
+
+msgid "notifications.friendships.accept"
+msgstr "{name} samþykkti vinabeiðni þína"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} er núna vinur þinn"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} vill vera vinur þinn á YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Viltu vera vinur {name} á Youversion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} líkar við bókamerkið þitt, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} líkar við nýja vináttu þína við {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} líkar við áherslumerkinguna þína, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} líkar við minnispunktinn þinn"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} líkar við minnispunktinn þinn um {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} líkar við minnispunktinn þinn, \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} líkar við virkni áætlunar þinnar"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} líkar við virkni Biblíulestraráætlunar þinnar"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} setti bókamerki við {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} hefur áherslumerkt {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} bætti við minnispunkti"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} bætti við minnispunkti um {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} bætti minnispunkti við {title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} lauk við lestraráætlunina, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} lauk við Biblíulestraráætlunina, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} byrjaði á nýrri lestraráætlun, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} byrjaði á nýrri Biblíulestraráætlun, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} var að byrja að nota YouVersion. Smelltu til að bæta þeim við sem vin."
+
+msgid "notifications.system.test"
+msgstr "Sæktu Barnabiblíu-appið okkar núna!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} skrifaði ummæli um ritningarversið þitt: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} skrifaði einnig ummæli við myndina af ritningarversinu sem {moment_owner_name} gerði: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} skrifaði einnig ummæli við mynd sína af ritningarversinu: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} líkar við myndina þína af ritningarversinu {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} bjó til mynd með ritningarversinu {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Þú átt vinabbeiðnir sem bíða í Biblíu appinu"
+
+msgid "notifications.votd_image"
+msgstr "Mynd af versi dagsins"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} vill lesa áætlunina \"{title}\" með þér."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} skrifaði ummæli um daginn {day} í áætluninni \"{title}.\""
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} þáði boð þitt um að lesa áætlunina \"{title}\" með þér."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} breytti upphafsdegi áætlunarinnar \"{title}\" í {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} skrifaði ummæli við afreksmerkið þitt: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} skrifaði einnig ummæli hjá {moment_owner_name} um afreksmerkið: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} skrifaði einnig ummæli við afreksmerkið sitt: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} líkar við afreksmerkið þitt {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} vann sér inn afreksmerkið {title}"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Hæ!</p><p>Ég er að nota Biblíuappið frá YouVersion og vildi deila því með þér. Ef þú þekkir ekki til appsins, þá býður það upp á einfalda leið til að færa fegurð og sannleika Biblíunnar inn í hversdagslífið. </p><p><strong>Fáðu þér Biblíuappið:</strong> lestu, horfðu á, hlustaðu, og deildu með snjallsímanum þínum eða spjaldtölvu, og á netinu í gegnum Bible.com</p><p><strong>Búðu til reikninginn þinn:</strong> vertu áskrifandi að Biblíulestraráætlunum og fáðu aðgang að bókamerkjum, áherslumerkingum og minnispunktum í hvaða tæki sem er</p><p><strong>Bættu við vinum (eins og mér!):</strong>íhugaðu og ræddu um Biblíuna með fólki sem þér þykir vænt um</p><p>Þetta er allt í Biblíuappið - byrjaðu hér: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Halló!\n"
+"\n"
+"Ég er að nota Biblíuforritið frá YouVersion og vildi deila því með þér. Ef þú þekkir ekki til appsins, þá býður það upp á einfalda leið til að færa fegurð og sannleika Biblíunnar inn í hversdagslífið. \n"
+"\n"
+"Fáðu þér Biblíuforritið: lestu, horfðu á, hlustaðu, og deildu með snjallsímanum þínum eða spjaldtölvu, og á netinu í gegnum Bible.com.\n"
+"\n"
+"Búðu til reikninginn þinn: vertu áskrifandi að Biblíulestraráætlunum og fáðu aðgang að bókamerkjum, áherslumerkingum og minnispunktum í hvaða tæki sem er.\n"
+"\n"
+"Bættu við vinum (eins og mér!): íhugaðu og ræddu um Biblíuna með fólki sem þér þykir vænt um.\n"
+"\n"
+"Þetta er allt í Biblíuappinu - byrjaðu hér: "
+
+msgid "share.invite_email_subject"
+msgstr "Vertu með mér í Biblíuappinu!"
+
+msgid "share.invite_facebook"
+msgstr "Biblíuappið er frábært! Með aðstoð þess er Biblían orðin ríkari hluti af mínu daglega lífi. Það gerir mér kleift að búa til áherslumerkingar, hlusta á Biblíuna sem hljóðbók, skrifa minnispunkta, fylgja eftir lestraráætlunum... jafnvel horfa á myndbönd! Ég mæli með að þú hlaðir því niður núna (það er ókeypis):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Ert þú með Biblíuappið? Ég elska þetta app og held að þú myndir gera það líka. Hér er tengillinn:"
+
+msgid "share.invite_sms"
+msgstr "Ég elska YouVersion Biblíuappið. Ég held að þú myndir gera það líka:"
+
+msgid "share.invite_sms_prefix"
+msgstr "{name} sendi þér:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion Biblíuappið er alltaf til staðar í mínu snjalltæki. Lestu, horfðu á, hlustaðu og deildu... allt í ókeypis appi:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Ertu með Biblíuforritið frá @YouVersion? Ég elska það og held að þú myndir líka gera það. Hér er tengillinn:"

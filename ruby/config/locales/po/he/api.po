@@ -1,0 +1,435 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-02-14 10:54-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Hebrew\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: he\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Hebrew\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: he\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-26 16:51-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Hebrew\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: he\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "אתה הרווחת תג <b>{title} </b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} הרוויח את התג <b>{title} </b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "הורדת גרסה הבאה, <b>{version} </b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} הוריד גרסה הבאה, <b>{version} </b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "אתה סימנת את <b>{reference_human} {version_abbreviation} </b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} סימן<b>{reference_human} {version_abbreviation} </b>"
+
+msgid "moment.friendship.self.title"
+msgstr "אתה כעת חבר עם <b>{friend_name} </b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} כעת חבר עם <b>{friend_name} </b>"
+
+msgid "moment.highlight.self.title"
+msgstr "אתה הדגשת <b>{reference_human} {version_abbreviation} </b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} הדגיש<b>{reference_human} {version_abbreviation} </b>"
+
+msgid "moment.note.self.title"
+msgstr "הוספת הערה <b>{title} </b>"
+
+msgid "moment.note.title"
+msgstr "{name} הוסיף הערה, <b>{title} </b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} הוסיף הערה"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "הוספת הערה"
+
+msgid "moment.note.reference.title"
+msgstr "{name} הוסיף הערה ל <b>{reference_human} </b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "הוספת הערה על <b>{reference_human}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "השלמת את התכנית שלך"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} השלים את התוכנית"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "השלמת את התוכנית שלך, <b>{title} </b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} השלים את התוכנית, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "יום {segment} מתוך-{total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "השלמת את היום ה <b>{segment}</b> של התוכנית, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} השלים את היום ה <b>{segment}</b> של התוכנית, <b>{title} </b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "התחלת תכנית חדשה"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} התחיל תכנית חדשה"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "התחלת תוכנית חדשה, <b>{title} </b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} התחיל תכנית בשם, <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "צפה ב<i>סדרת כתבי הקודש</i> הערב!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>סדרות הכתובים</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "טוב יותר להשתמש ביישומון עם החברים. חפש באנשי הקשר שלך כדי למצוא חברים."
+
+msgid "moment.video.watched.self.title"
+msgstr "צפית ב <b>{title} </b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} צפה ב <b>{title} </b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "תתכונן לחג המולד עם תכנית קריאה על תקופת הציפייה"
+
+msgid "moment.system.bafk.title"
+msgstr "תעזור לילדים שלך להתאהב בדברו של אלוהים."
+
+msgid "moment.system.christmas.title"
+msgstr "שתפו את הבשורה: המשיח נולד!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "השנה הכי טובה שלך מתחילה עכשיו."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "תמצא את אהבת האל בדברו."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "למצוא תקווה והתחדשות בדבר אלוהים."
+
+msgid "moment.image.self.title"
+msgstr "יצרת תמונת פסוק עבור <b>{reference_human} {version_abbreviation} </b>"
+
+msgid "moment.image.title"
+msgstr "{name} יצר תמונת פסוק עבור <b>{reference_human} {version_abbreviation} </b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "רענן את האמונה שלך עם תוכניות חדשות."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "תקדיש את עצמך באופן יומי לדבר אלוהים."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "תבקש לחוות את אלוהים בדברו."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "לחגוג את החופש במשיח."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "לבקש את אלוהים בדברו כל יום."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "דבר אדוני מחדש את הכול."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "חוכמה אלוהית מתחילה בדבר האלוהים."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "לגלות אסירות תודה בהבטחות אלוהים."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "תכין את לבבך לעונה זו."
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} הגיב על הסימניה שלך: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} הגיב על החברות החדשה שלך עם {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} הגיב על החברות החדשה שלך: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} הוסיף תגובה על ההדגשה שלך: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} הוסיף תגובה על ההערה שלך: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} הגיב על התכנית שלך: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} הגיב על תכנית הקריאה שלך: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} גם הגיב על הסימניה של {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} גם הגיב על החברות החדשה של {moment_owner_name} עם {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} גם הגיב על החברות עם {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} גם הגיב על החברות החדשה שלך עם {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} גם הגיב על הדגשתו של {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} גם הגיב על הערתו של {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} גם הגיב על הסימניה: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} גם הגיב על החברות עם {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} גם הגיב על החברות החדשה איתך: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} גם הגיב על ההדגשה: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} גם הגיב על ההערה שלהם: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} גם הגיב על התוכנית שלהם: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} גם הגיב על התכנית שלו: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} גם הגיב על התוכנית של {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} גם הגיב על התוכנית של {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.friendships.accept"
+msgstr "{name} אישר את בקשת החברות"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} אישר את בקשת החברות שלך"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} רוצה להיות חבר שלך ב-YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "האם תרצה לאשר את בקשת החברות של {name} ב-YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} אהב את הסימניה שלך, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} אוהב את החברות החדשה שלך עם {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} אהב את ההדגשה שלך, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} אהב את ההערה שלך."
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} אהב את ההערה שלך על {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} אהב את ההערה, \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} אוהב את הפעילות שלך בתוכנית."
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} אוהב את הפעילות שלך בתוכנית"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} סימן {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} הדגיש את {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} הוסיף הערה"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} הוסיף הערה על {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} הוסיף הערה, \"{title}\""
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} השלים את התוכנית, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} השלים את תוכנית הקריאה, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} התחיל תוכנית חדשה בשם, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} התחיל תוכנית חדשה של קריאת הכתובים בשם, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} הצטרף כעת לYouVersion. לחץ כדי להוסיף אותם כחברים"
+
+msgid "notifications.system.test"
+msgstr "הורידו עכשיו את ישומון הכתובים לילדים!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} הגיב על תמונה עם פסוק עבור “{comment}”."
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} גם הגיב על תמונה עם פסוק של {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} גם הגיב על התמונה עם הפסוק: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} אהב את התמונה עם פסוק עבור {reference_human}."
+
+msgid "notifications.moments.create.image"
+msgstr "{name} יצר תמונה עם פסוק עבור {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "ממתינה לך בקשת חברות ביישומון הכתובים"
+
+msgid "notifications.votd_image"
+msgstr "תמונת פסוק יומי"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} מועניין לקרוא את התוכנית, \"{title}\" יחד איתך."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} הגיב על יום {day} של התוכנית, \"{title}\"."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} אישר את הזמנתך לקרוא את התוכנית, \"{title}\" יחד איתך."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} שינה את מועד תחילת התוכנית, \"{title}\" ל {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} הוסיף הערה לגבי התג שלך: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} גם הגיב לגבי התג: \"{comment}\" של {moment_owner_name}"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} גם הוסיף הערה לגבי התג שלהם: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} אוהב את התג שלך {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} קיבל את התג {title}"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>היי!</p><p>אני משתמש ביישומון הכתובים של YouVersion ורציתי לחלוק זאת איתך. אם היישומון הזה חדש לך, תדע שזוהי הדרך הפשוטה להביא את היופי והאמת של הכתובים לחיי היום יום שלך </p><p><strong>הורד את היישומון:</strong> ניתן לקרוא, לצפות, להאזין ולשתף דרך הנייד, הטאבלט או דרך האתר Bible.com</p><p><strong>תפתח לך מנוי:</strong> כדי להירשם לתוכניות הקריאה ולקבל גישה לסימניות, להדגשות ולהערות מכל המכשירים שברשותך</p><p><strong>הוסף חברים (למשל אותי!):</strong> תחקור ותשוחח על הכתובים עם החברים שלך</p><p>כל זה ביישומון הכתובים—ניתן להתחיל כאן: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"שלום!\n"
+"\n"
+"אני משתמש ביישומון התכובים של YouVersion ורוצה לשתף זאת איתך. אם היישומון הזה חדש לך, תדע שזוהי הדרך הפשוטה להביא את היופי והאמת של הכתובים לחיי היום יום שלך.\n"
+"\n"
+"הורד את יישומון הכתובים: כאן ניתן לקרוא, לצפות, להאזין, לחלוק דרך הנייד ,הטאבלט וגם דרך האתר Bible.com.\n"
+"\n"
+"תפתח לך מנוי כדי להירשם לתוכניות קריאה, לגישה לסימניות, להדגשות ולהערות אשר יהיו זמינות בכל מכשיר.\n"
+"\n"
+"הוסף חברים (למשל אותי!): תחקור ותשוחח על הכתובים עם החברים שלך.\n"
+"\n"
+"כל זה ביישומון הכתובים—ניתן להתחיל כאן: "
+
+msgid "share.invite_email_subject"
+msgstr "תצטרף אליי ליישומון הכתובים!"
+
+msgid "share.invite_facebook"
+msgstr "אני אוהב את יישומון הכתובים! זה עוזר לי להפוך את הכתובים לחלק בלתי נפרד מחיי היום יום שלי. יש לי אפשרות להדגיש, להאזין לכתובים באודיו, לרשום הערות, לעקוב אחרי תוכניות הגות יומיות...ואף לצפות בוידאו! הורד עכשיו(זה בחינם):"
+
+msgid "share.invite_facebook_direct"
+msgstr "יש לך יישומון הכתובים? אני מאוד אהבתי, אולי גם לך שווה לנסות. הנה הקישור:"
+
+msgid "share.invite_sms"
+msgstr "אני אוהב את ישומון הכתובים של YouVersion. אני חושב שגם אתה תאוהב:"
+
+msgid "share.invite_sms_prefix"
+msgstr "מאת {name}:"
+
+msgid "share.invite_twitter"
+msgstr "ליישומון של @YouVersion יש מיקום קבוע על המסך שלי. תקרא, צפה, תאזין ושתף...כל זה ביישומון חינמי:"
+
+msgid "share.invite_twitter_direct"
+msgstr "האם יש לך יישומון הכתובים מאת YouVersion? אהבתי את זה, מקווה שגם אתה תאהב. הנה הקישור:"

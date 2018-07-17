@@ -1,49 +1,70 @@
-# Filipino (Philippines) translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: fil_PH\n"
-"Language-Team: fil_PH <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Filipino\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: fil_PH\n"
-"Language-Team: fil_PH <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: fil\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: fil\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Filipino\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: fil_PH\n"
-"Language-Team: fil_PH <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: fil\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: fil\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Filipino\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: fil\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: fil\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Iyong nakamit ang <b>{title}</b> na badge"
@@ -63,45 +84,6 @@ msgstr "Ibinookmark mo ang <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "Ibinookmark ni {name} ang <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Maghanda para sa Pasko gamit ang Advent Bible Plan"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Sariwain ang pananampalataya gamit ang mga bagong Babasahin."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Hanapin ang Diyos sa Kanyang Banal na Salita araw-araw."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Ihanda ang puso mo sa panahong ito."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Tuklasin ang pag-ibig ng Diyos sa Kanyang Banal na Salita."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Ngayon na ang simula ng iyong pinakamakabuluhang taon."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Ipagdiwang ang Kalayaan kay Kristo."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Tuklasin ang Diyos sa Kanyang Banal na Salita."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Tuklasin ang pag-asa at pagbabago sa Salita ng Diyos."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Ilaan ang sarili sa araw-araw na pagbabasa ng Banal na Salita."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Tuklasin ang pasasalamat sa mga pangako ng Diyos."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Ang Salita ng Diyos ang pinagmumulan ng maka-Diyos na karunungan."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Ang Salita ng Diyos ay binabago ang lahat ng bagay."
-
 msgid "moment.friendship.self.title"
 msgstr "Kayo ay magkaibigan na ni <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "Hinaylayt mo ang <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "Hinaylayt ni {name} ang <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Ikaw ay gumawa ng verse image para sa <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "Si {name} ay gumawa ng verse image para sa <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Ikaw ay nagdagdag ng tala"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "Si {name} ay nagdagdag ng tala"
-
-msgid "moment.note.reference.self.title"
-msgstr "May idinagdag kang tala ukol sa <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "Nagdagdag si {name} ng tala sa <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Ikaw ay nagdagdag ng tala, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "Si {name} ay nagdagdag ng tala, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "Si {name} ay nagdagdag ng tala"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Ikaw ay nagdagdag ng tala"
+
+msgid "moment.note.reference.title"
+msgstr "Nagdagdag si {name} ng tala sa <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "May idinagdag kang tala ukol sa <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Natapos mo ang iyong Plano"
@@ -177,9 +153,6 @@ msgstr "Panoorin ang <i>Mga Serye ng Biblia</i> mamayang gabi!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Mga Serye ng Biblia</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Ibahagi ang balita: isinilang si Jesus!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Ang Bible App ay mas magandang gamitin kasama ng mga Kaibigan. Tignan ang iyong mga Kontak at hanapin Sila."
 
@@ -188,6 +161,57 @@ msgstr "Pinanood mo ang <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "Pinanood ni {name} ang <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Maghanda para sa Pasko gamit ang Advent Bible Plan"
+
+msgid "moment.system.bafk.title"
+msgstr "Tulungan natin ang ating mga anak na mahalin ang Salita ng Dios."
+
+msgid "moment.system.christmas.title"
+msgstr "Ibahagi ang balita: isinilang si Jesus!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Ngayon na ang simula ng iyong pinakamakabuluhang taon."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Tuklasin ang pag-ibig ng Diyos sa Kanyang Banal na Salita."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Tuklasin ang pag-asa at pagbabago sa Salita ng Diyos."
+
+msgid "moment.image.self.title"
+msgstr "Ikaw ay gumawa ng verse image para sa <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "Si {name} ay gumawa ng verse image para sa <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Sariwain ang pananampalataya gamit ang mga bagong Babasahin."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Ilaan ang sarili sa araw-araw na pagbabasa ng Banal na Salita."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Tuklasin ang Diyos sa Kanyang Banal na Salita."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Ipagdiwang ang Kalayaan kay Kristo."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Hanapin ang Diyos sa Kanyang Banal na Salita araw-araw."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Ang Salita ng Diyos ay binabago ang lahat ng bagay."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Ang Salita ng Diyos ang pinagmumulan ng maka-Diyos na karunungan."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Tuklasin ang pasasalamat sa mga pangako ng Diyos."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Ihanda ang puso mo sa panahong ito."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "Nagkomento si {name} sa iyong bookmark: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name} ay nagkomento sa iyong bagong Pakikipagkaibigan: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Nagkomento si {name} sa iyong inihaylayt: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "Si {name} ay nagkomento sa iyong verse image: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "Nagkomento si {name} sa iyong tala: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "Si {commenter_name} ay nagkomento rin sa bookmark ni {moment_owner_name}
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "Si {commenter_name} ay nagkomento rin sa pakikipagkaibigan ni {moment_owner_name} kay {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} ay nagkomento rin sa iyong bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} ay nagkomento rin sa kanilang bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} ay nagkomento rin sa iyong bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Si {commenter_name} ay nagkomento rin sa haylayt ni {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "Si {commenter_name} ay nagkomento rin sa verse image ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "Nagkomento rin si {commenter_name} sa tala ni {moment_owner_name}: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name} ay nagkomento rin sa kanilang bagong Pakikipagkaibig
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang haylayt: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang verse image: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang tala: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "Ngayon ay kaibigan mo na si {name}"
 msgid "notifications.friendships.offer"
 msgstr "Nais kang maging kaibigan ni {name} sa YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "May mga hiling sa iyo ng Pakikipagkaibigan na naghihintay sa Bible App"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Nais mo bang kaibiganin si {name} sa YouVersion?"
 
@@ -287,9 +299,6 @@ msgstr "Nagustuhan at ni-like ni {name} ang iyong pakikipagkaibigan kay {friend_
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Nagustuhan ni {name} ang iyong haylayt, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "Nagustuhan ni {name} ang iyong verse image para sa {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "Nagustuhan ni {name} ang iyong tala"
@@ -311,9 +320,6 @@ msgstr "Ibinookmark ni {name} ang {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "Hinaylayt ni {name} ang {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "Si {name} ay gumawa ng verse image para sa {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "Si {name} ay nagdagdag ng tala"
@@ -341,6 +347,54 @@ msgstr "Si {name} ay sumali na rin sa YouVersion. Tapikin upang idagdag sila bil
 
 msgid "notifications.system.test"
 msgstr "I-download ang Pambatang App ng Biblia ngayon!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "Si {name} ay nagkomento sa iyong verse image: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "Si {commenter_name} ay nagkomento rin sa verse image ni {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang verse image: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "Nagustuhan ni {name} ang iyong verse image para sa {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "Si {name} ay gumawa ng verse image para sa {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "May mga hiling sa iyo ng Pakikipagkaibigan na naghihintay sa Bible App"
+
+msgid "notifications.votd_image"
+msgstr "Imahe para sa Bersikulo sa Araw na Ito"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "Nais ni {name} na basahin ang Babasahing, \"{title}\" na kasama ka."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "May komento si {name} sa ika- {day} na araw ng Babasahing \"{title}\"."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "Tinanggap ni {name} ang iyong alok na basahin ang Babasahing, \"{title}\" na kasama niya."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "Pinalitan ni {name} ang petsa ng pagsisimula ng Babasahing, \"{title}\" na maging {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "Nagkomento si {name} sa iyong badge: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "Nagkomento rin si {commenter_name} sa badge ni {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "Nagkomento rin si {moment_owner_name} sa kanilang badge: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "Nagustuhan ni {name} ang iyong badge, {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "Nakuha ni {name} ang badge na, {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Kamusta!</p><p>Ipinagmamalaking ko sabihin na ako ay gumagamit ng Bible App ng YouVersion at naisip kong ibahagi rin ito sa iyo. Kung ikaw ay baguhan dito sa app, ito'y isang simpleng paraan upang isabuhay ang kagandahan at katotohanang hatid ng Biblia sa ating pangaraw-araw na buhay. </p><p><strong>I-install ang Bible App:</strong> magbasa, makinig, at magbahagi gamit ang iyong smartphone o tablet, at online sa Bible.com.</p><p><strong>I-set up ang Iyong Account:</strong> mag-subscribe sa mga Bible Plan at i-access ang mga pananda, haylayt, at mga tala sa alinmang aparato.</p><p><strong>Magdagdag ng mga kaibigan (katulad ko!):</strong> tuklasin at talakayin ang Biblia kasama ng mga taong iyong pinahahalagahan.</p><p>Lahat ng ito'y nasa Bible App—magsimula rito: </p>"

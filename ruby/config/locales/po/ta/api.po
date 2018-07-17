@@ -1,49 +1,70 @@
-# Tamil translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:20-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Tamil\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ta\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Tamil\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ta\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Tamil\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ta\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "நீங்கள் அடையாள வில்லை <b>{title}</b> சம்பாதித்துள்ளீர்கள்"
@@ -63,42 +84,6 @@ msgstr "நீங்கள் புத்தக அடையாளக்கு�
 msgid "moment.bookmark.title"
 msgstr "{name} புத்தக அடையாளக்குறியாக்கியுள்ள <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "புதிய திட்டங்கள் மூலம் உங்கள் விசுவாசத்தை புதுப்பிக்கவும்."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "தேவனை அவர் வார்த்தையில் தினமும் தேடுங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "இந்த காலங்களில் உங்கள் இருதயத்தை ஆயத்தப்படுத்துங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "தேவனின் அன்பை அவர் வார்த்தையில் கண்டடையுங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "உங்கள் தலைசிறந்த ஆண்டு இப்போது துவங்குகிறது."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "கிறிஸ்துவில் விடுதலை கொண்டாடுங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "தேவனை அவர் வார்த்தையில் தேடுங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "தேவ வார்த்தையில் நம்பிக்கையும் புதுமையும் கண்டடையுங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "தினமும் அவர் வார்த்தைக்கு அர்பணியுங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "கர்த்தருடைய வாக்குத்தத்தங்களில் நன்றி நிறைவை கண்டடையுங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "தேவ ஞானம் தேவ வார்த்தையில் துவங்குகிறது."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "கர்த்தருடைய வார்த்தை எல்லாவற்றையும் புதிதாக்குகிறது."
-
 msgid "moment.friendship.self.title"
 msgstr "நீங்கள் இப்போது <b>{friend_name}</b>-னோடு நண்பராகியுள்ளீர்கள்"
 
@@ -106,34 +91,28 @@ msgid "moment.friendship.title"
 msgstr "{user_name} இப்போது <b>{friend_name}</b>-னோடு நண்பராகியுள்ளார்"
 
 msgid "moment.highlight.self.title"
-msgstr "நீங்கள் சிறப்புக்குறியிட்டுள்ளீர்கள் <b>{reference_human} {version_abbreviation}</b>"
+msgstr "நீங்கள் <b>{reference_human} {version_abbreviation}</b> ஐ சிறப்புக்குறியிட்டுள்ளீர்கள்"
 
 msgid "moment.highlight.title"
-msgstr "{name} <b>{reference_human} {version_abbreviation} </b>ஐ சிறப்புக்குறியிட்டுள்ளார்."
-
-msgid "moment.image.self.title"
-msgstr "நீங்கள் வசன படம் இதற்கு உருவாக்கியுள்ளீர்கள் <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} வசன படம் இதற்கு உருவாக்கியுள்ளீர்கள் <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள்"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார்"
-
-msgid "moment.note.reference.self.title"
-msgstr "<b>{reference_human} இல்</b>நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள்"
-
-msgid "moment.note.reference.title"
-msgstr "<b>{reference_human} இல்</b>{name} ஒரு குறிப்பை சேர்த்துள்ளார்"
+msgstr "{name} <b>{reference_human} {version_abbreviation}</b> ஐ சிறப்புக்குறியிட்டுள்ளார்"
 
 msgid "moment.note.self.title"
 msgstr "நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள், <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார், <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார்"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள்"
+
+msgid "moment.note.reference.title"
+msgstr "<b>{reference_human} இல்</b>{name} ஒரு குறிப்பை சேர்த்துள்ளார்"
+
+msgid "moment.note.reference.self.title"
+msgstr "<b>{reference_human} இல்</b>நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள்"
 
 msgid "moment.plan_completion.self.title"
 msgstr "உங்கள் திட்டத்தை நீங்கள் முடித்து விட்டீர்கள்."
@@ -142,19 +121,19 @@ msgid "moment.plan_completion.title"
 msgstr "{name} ஒரு திட்டத்தை பூர்த்தி செய்துள்ளார்"
 
 msgid "moment.plan_completion.v2.self.title"
-msgstr "உங்கள் பாடத்திட்டத்தை முடித்து விட்டீர்கள், <b>{title}</b>"
+msgstr "உங்கள் <b>{title}</b> திட்டத்தை நிறைவு செய்துவிட்டீர்கள்"
 
 msgid "moment.plan_completion.v2.title"
-msgstr "{name} பாட திட்டம் நிறைவு பெற்றது, <b>{title}</b>"
+msgstr "{name} <b>{title}</b>திட்டத்தை நிறைவு செய்தார்"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "{total_segments}-ல் {segment}-வது நாள் ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "நீங்கள் திட்டத்தில் <b>{segment}</b> நாளை பூர்த்தி செய்துள்ளீர்கள், <b>{title}</b>"
+msgstr "நீங்கள் <b>{title}</b> திட்டத்தில்<b>{segment}</b> ஆம் நாளை முடித்துவிட்டீர்கள்"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} திட்டத்தில் <b>{segment}</b> நாளை பூர்த்தி செய்துள்ளார், <b>{title}</b>"
+msgstr "{name} <b>{title}</b>திட்டத்தில் <b>{segment}</b> ஆம் நாளை முடித்துள்ளார்"
 
 msgid "moment.plan_subscription.self.title"
 msgstr "நீங்கள் ஒரு புதிய திட்டத்தை தொடங்கியிருக்கிறீர்கள்."
@@ -166,16 +145,13 @@ msgid "moment.plan_subscription.v2.self.title"
 msgstr "நீங்கள் ஒரு புதிய வேத பாடத்திட்டத்தை ஆரம்பித்திருக்கிறீர்கள், <b>{title}</b>"
 
 msgid "moment.plan_subscription.v2.title"
-msgstr "{name} ஒரு புதிய பாட திட்டம் தொடங்கப்பட்டது, <b>{title}</b>"
+msgstr "{name} ஒரு புதிய திட்டத்தை துவங்கியுள்ளார், <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "இன்றிரவு<i>வேதாகம தொடர்</i> காணவும்!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>வேதாகம தொடர்</i>"
-
-msgid "moment.system.christmas.title"
-msgstr "நற்செய்தியை பகிருங்கள். மீட்பர் பிறந்தார்!"
 
 msgid "moment.system.find_friends.title"
 msgstr "பைபிள் பயன்பாடு 'நண்பர்கள்' மூலம் மேலும் சிறப்படைந்திருக்கிறது. நண்பர்களை கண்டுபிடிக்க  உங்கள் தொடர்புகளை தேடவும்."
@@ -185,6 +161,57 @@ msgstr "நீங்கள் <b>{title}</b>--ஐ பார்த்துள்
 
 msgid "moment.video.watched.title"
 msgstr "{name}, <b>{title}</b>--ஐ பார்த்துள்ளார்"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "ஒரு அட்வெந்து வேதாகம திட்டத்துடன் கிறிஸ்துமஸ்க்கு தயாராகுங்கள்"
+
+msgid "moment.system.bafk.title"
+msgstr "உங்கள் பிள்ளைகள் ஆண்டவருடைய வார்த்தையை நேசிக்க அவர்களுக்கு உதவுங்கள்."
+
+msgid "moment.system.christmas.title"
+msgstr "நற்செய்தியை பகிருங்கள். மீட்பர் பிறந்தார்!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "உங்கள் தலைசிறந்த ஆண்டு இப்போது துவங்குகிறது."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "தேவனின் அன்பை அவர் வார்த்தையில் கண்டடையுங்கள்."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "தேவ வார்த்தையில் நம்பிக்கையும் புதுமையும் கண்டடையுங்கள்."
+
+msgid "moment.image.self.title"
+msgstr "நீங்கள் <b>{reference_human} {version_abbreviation}</b>க்கு வசனப்படம் உருவாக்கியுள்ளீர்கள்"
+
+msgid "moment.image.title"
+msgstr "{name} <b>{reference_human} {version_abbreviation}</b> க்கு வசனப்படம் உருவாக்கியுள்ளார்."
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "புதிய திட்டங்கள் மூலம் உங்கள் விசுவாசத்தை புதுப்பிக்கவும்."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "தினமும் அவர் வார்த்தைக்கு அர்பணியுங்கள்."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "தேவனை அவர் வார்த்தையில் தேடுங்கள்."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "கிறிஸ்துவில் விடுதலை கொண்டாடுங்கள்."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "தேவனை அவர் வார்த்தையில் தினமும் தேடுங்கள்."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "கர்த்தருடைய வார்த்தை எல்லாவற்றையும் புதிதாக்குகிறது."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "தேவ ஞானம் தேவ வார்த்தையில் துவங்குகிறது."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "கர்த்தருடைய வாக்குத்தத்தங்களில் நன்றி நிறைவை கண்டடையுங்கள்."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "இந்த காலங்களில் உங்கள் இருதயத்தை ஆயத்தப்படுத்துங்கள்."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} உங்கள் புத்தகக்குறியில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
@@ -197,9 +224,6 @@ msgstr "உங்கள் புதிய நட்பை பற்றி {name
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} உங்கள் சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name}, உங்கள் வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} உங்கள் குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
@@ -216,17 +240,14 @@ msgstr "{commenter_name}-ம் {moment_owner_name}-ன் புத்தகக
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} கூட {moment_owner_name}-க்கு {friend_name} -னோடுள்ள புதிய நட்பை குறித்து கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{moment_owner_name} உடன் உங்கள் புதிய நட்பை பற்றி {commenter_name} ம் கருத்து தெரிவித்துள்ளார்: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{moment_owner_name} உடன் அவர்களின் புதிய நட்பை பற்றி {commenter_name} ம் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{moment_owner_name} உடன் உங்கள் புதிய நட்பை பற்றி {commenter_name} ம் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}-ம் {moment_owner_name}-ன் சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name}-ம் {moment_owner_name}-ன் வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name}-ம் {moment_owner_name}-ன் குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
@@ -242,9 +263,6 @@ msgstr "அவர்களுடன் உள்ள உங்கள் புத
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}-ம் அவர்களது சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name}-ம் அவர்களது வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}-ம் அவர்களது குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
@@ -270,9 +288,6 @@ msgstr "{name} இப்போது உங்கள் நண்பர்"
 msgid "notifications.friendships.offer"
 msgstr "{name} YouVersion-ல் உங்கள் நண்பராக விரும்புகிறார்"
 
-msgid "notifications.friendships.pending"
-msgstr "பைபிள் பயன்பாட்டில் உங்களுக்கு நட்பு கோரிக்கைகள் காத்துக்கொண்டிருக்கின்றன."
-
 msgid "notifications.friendships.suggestion"
 msgstr "நீங்கள் YouVersion-ல்  {name}-டு நண்பராக விரும்புகிறீர்களா?"
 
@@ -284,9 +299,6 @@ msgstr "{name} உங்களின் {friend_name} -னோடு உள்ள
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name}, உங்கள் {reference_human} சிறப்புக்கூறை விரும்பியிருக்கிறார்"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name}, {reference_human} பற்றிய வசனப் படத்தை விரும்பியுள்ளார்"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} உங்கள் குறிப்பை விரும்பியிருக்கிறார்"
@@ -308,9 +320,6 @@ msgstr "{name} {reference_human}-ஐ புத்தகக்குறியி�
 
 msgid "notifications.moments.create.highlight"
 msgstr "{reference_human}-ஐ {name} சிறப்புக்கூறிட்டுள்ளார்"
-
-msgid "notifications.moments.create.image"
-msgstr "{name}, {reference_human} பற்றிய வசனப் படத்தை உருவாக்கி இருக்கிறார்"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார்"
@@ -338,6 +347,54 @@ msgstr "{name} YouVersion-இல் தற்போது இணைந்து�
 
 msgid "notifications.system.test"
 msgstr "எங்களது குழந்தைகள் வேதாகம பயன்பாட்டை இப்போது பதிவிறக்கம் செய்யுங்கள்!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}, உங்கள் வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}-ம் {moment_owner_name}-ன் வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name}-ம் அவர்களது வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}, {reference_human} பற்றிய வசனப் படத்தை விரும்பியுள்ளார்"
+
+msgid "notifications.moments.create.image"
+msgstr "{name}, {reference_human} பற்றிய வசனப் படத்தை உருவாக்கி இருக்கிறார்"
+
+msgid "notifications.friendships.pending"
+msgstr "வேதாகம பயன்பாட்டில் உங்களுக்கு நட்பு கோரிக்கைகள் காத்துக்கொண்டிருக்கின்றன."
+
+msgid "notifications.votd_image"
+msgstr "தின வேத வசன படம்"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{title}திட்டத்தை உங்களுடன் இணைந்து வாசிக்க {name} விரும்புகிறார்."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{title}திட்டத்தின் {day} ம் நாளைக் குறித்து {name} கருத்து தெரிவித்துள்ளார்."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{title}திட்டத்தை உங்களுடன் இணைந்து வாசிக்க {name} உங்கள் அழைப்பை ஏற்றுக்கொண்டுள்ளார்."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{title}திட்டத்தின் துவக்க நாளை {date}க்கு {name} மாற்றியுள்ளார்."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} உங்கள் அடையாள வில்லையில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name}-ம் {moment_owner_name}-ன் அடையாள வில்லையில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name}-ம் அவர்களது அடையாள வில்லையில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} உங்கள் அடையாள வில்லையை {title} விரும்பியிருக்கிறார்"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} அடையாள வில்லையை பெற்றிருக்கிறார் {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>வணக்கம்!</p><p>நான் பயன்படுத்திக்கொண்டிருக்கும் YouVersion வேதாகம பயன்பாட்டை உங்களோடு பகிர்ந்து கொள்ள விரும்பிறேன். நீங்கள் இந்த பயன்பாட்டிற்கு புதியவர்களென்றால், இது அன்றாட வாழ்க்கையில் வேதத்தின் சத்தியம் மற்றும் அழகை கொண்டு வரும் ஒரு எளிய வழியாய் இருக்கிறது.</p><p><strong>வேதாகம பயன்பாட்டை பெறுங்கள்:</strong> படியுங்கள், காணுங்கள், கேளுங்கள், நுண்ணறிபேசி அல்லது சுருள்பாசி மற்றும் நிகழ் நிலையில் bible.com மூலம் பகிருங்கள்</p><p><strong>உங்கள் கணக்கை அமையுங்கள்:</strong> வேதாகம திட்டங்களில் சேருங்கள். மேலும் புத்தககுறிகள், சிறப்புக்கூறுகள் மற்றும் குறிப்புகளை வெவ்வேறு சாதனங்களில் அணுகலாம்</p><p><strong>(என்னை போன்ற!) நண்பர்கள் சேர்க்கவும்:</strong> நீங்கள் அக்கறை கொண்ட மக்களோடு வேதத்தைப்பற்றி கலந்துரையாடுங்கள்</p><p>இது எல்லாம் வேதாகம பயன்பாட்டில் உள்ளது - இங்கே தொடங்குங்கள்: </p>"

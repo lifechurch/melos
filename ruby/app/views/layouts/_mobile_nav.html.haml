@@ -57,7 +57,7 @@
       - else
         %li#nav_mobile_sign_in
           %a{href: sign_in_path(redirect: params[:redirect])}
-            =t("sign in")
+            !=t("sign in")
         %li#nav_mobile_sign_up
           %a{href: sign_up_path(redirect: params[:redirect])}
-            =t("sign up")
+            !=t("sign up")

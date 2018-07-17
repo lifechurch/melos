@@ -1,0 +1,435 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-05-10 18:16-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Telugu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: te\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: te\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-05-10 18:16-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Telugu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: te\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: te\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-05-10 18:16-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Telugu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: te\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: te\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "మీరు <b>{title}</b> బ్యాడ్జిని సంపాదించారు"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} <b>{title}</b> బ్యాడ్జిని సంపాదించారు"
+
+msgid "moment.bible.download.self.title"
+msgstr "మీరు డౌన్లోడ్ చేసిన వెర్షన్, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} ఈ వెర్షన్ ని డౌన్లోడ్ చేసారు, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "మీరు దీనిని బుక్మార్క్ చేసారు<b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} <b>{reference_human} {version_abbreviation}</b> ని బుక్మార్క్ చేసారు"
+
+msgid "moment.friendship.self.title"
+msgstr "మీరు ఇపుడు <b>{friend_name}</b> తో స్నేహితులు"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} ఇపుడు <b>{friend_name}</b> తో స్నేహితులు"
+
+msgid "moment.highlight.self.title"
+msgstr "మీరు హైలైట్ చేసారు{reference_human}{version_abbreviation}"
+
+msgid "moment.highlight.title"
+msgstr "{name} <b>{reference_human} {version_abbreviation}</b> ని హైలైట్ చేసారు"
+
+msgid "moment.note.self.title"
+msgstr "మీరు ఒక గమనికను సృష్టించారు"
+
+msgid "moment.note.title"
+msgstr "{name} ఒక గమనికను చేర్చారు, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name}ఒక గమనికను జోడించారు"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "మీరు ఒక గమనికను జోడించారు"
+
+msgid "moment.note.reference.title"
+msgstr "{name} <b>{reference_human}<b> అను గమనికను జోడించారు"
+
+msgid "moment.note.reference.self.title"
+msgstr "మీరు <b>{reference_human}</b> పై ఒక గమనికను జోడించారు"
+
+msgid "moment.plan_completion.self.title"
+msgstr "మీరు మీ ప్రణాళికను పూర్తి చేసారు"
+
+msgid "moment.plan_completion.title"
+msgstr "{name}వారి ప్రణాళికను పూర్తి చేసారు"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "మీరు మీ యొక్క ప్రణాళికను సంపూర్తి చేసారు, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} ఒక ప్రణాళికను సంపూర్తి చేసారు, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "{total_segments} రోజుల్లో {segment} వ రోజు ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "<b>{title}</b> అను ప్రణాళికలో <b>{segment}</b>వ రోజు పూర్తి చేసారు"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} <b>{title}</b> ప్రణాళికలో <b>{segment}</b>రోజు పూర్తి చేసారు"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "మీరు కొత్త ప్రణాళికను ప్రారంభించారు"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} కొత్త ప్రణాళికను ప్రారంభించారు"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "మీరు కొత్త ప్రణాళికను ప్రారంభించారు, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} ఒక కొత్త ప్రణాళిక ప్రారంభించారు,<b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "ఈ రొజు రాత్రి <i>Bible Series</i> వీక్షించండి!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>బైబిల్ శ్రేణి</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "స్నేహితులతులతో బైబిలు App ఇంకా బాగుంటుంది స్నేహితులను కనుగొనడానికి మీ contacts లో వెదకండి."
+
+msgid "moment.video.watched.self.title"
+msgstr "మీరు <b>{title}</b> ని వీక్షించారు"
+
+msgid "moment.video.watched.title"
+msgstr "{name} <b>{title}</b> ని వీక్షించారు"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "ఆగమన బైబిల్ ప్రణాళిక తో క్రిస్మస్ కొరకు సిద్దంకండి"
+
+msgid "moment.system.bafk.title"
+msgstr "మీ పిల్లలు దేవుని వాక్యాన్ని ప్రేమించటానికి వారికి సహాయపడండి."
+
+msgid "moment.system.christmas.title"
+msgstr "శుభవార్త పంచుకొండి: రక్షకుడు జన్మించెను!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "మీ జీవితంలో అత్యుత్తమ సంవత్సరం యిప్పుడు మొదలు అవుతుంది."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "దేవుని వాక్యంలో ఆయన ప్రేమను కనుగొనుము."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "దేవుని వాక్యములో నిరీక్షణ, పునరుద్ధరణను కనుగొనుము."
+
+msgid "moment.image.self.title"
+msgstr "<b>{reference_human} {version_abbreviation}</b> కొరకై వచన చిత్రము సృష్టించారు"
+
+msgid "moment.image.title"
+msgstr "{name} <b>{reference_human} {version_abbreviation}</b> కొరకై వచన చిత్రము సృష్టించారు"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "క్రొత్త ప్రణాళికలతో మీ విశ్వాసాన్ని తాజా పరచుకోండి."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "ప్రతి దినం అయన వాక్యానందు శ్రద్ధ ఉండండి."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "వాక్యములో దేవుడిని అన్వేషించండి."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "క్రీస్తులో స్వేచ్ఛను ఉత్సహించండి."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "అనుదినము దైవవాక్యమందు దేవుడిని అన్వేషించండి."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "దేవుని వాక్యము సమస్తమును నూతనపరచును."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "దైవిక జ్ఞానము దేవుని వాక్యములో మొదలవుతుంది."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "దేవుని యొక్క వాగ్దానములలోగల కృతజ్ఞతను కనుగొనండి."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "ఈ ప్రత్యేక కాలంలో మీ హృదయాన్ని సిద్ధం చేసుకోండి."
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} మీ బుక్ మార్క్ పై వ్యాఖ్యానించారు {comment}"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} మీకు {friend_name}తో ఏర్పడిన నూతన స్నేహం పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} మీ కొత్త స్నేహం గురించి వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} మీ హైలైట్పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} మీ గమనికపై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} మీ ప్రణాళిక వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} మీ బైబిల్ ప్లాన్పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} కూడా వ్యాఖ్యానించారు {moment_owner_name}యొక్క bookmark: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} కూడా మీ కొత్త స్నేహం {moment_owner_name} పై వ్యాఖ్యానించారు: {friend_name}:{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} కూడా {moment_owner_name}తొ వారి కొత్త స్నేహం గురించి వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} కూడా మీ కొత్త స్నేహం {moment_owner_name}పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} కూడా {moment_owner_name} యొక్క హైలైట్పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} కూడా {moment_owner_name} యొక్క బైబిల్ ప్రణాళికపై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} కూడా వారి బుక్మార్క్ పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} కూడా {friend_name}తొ వారి కొత్త స్నేహం గురించి వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "మీతో వారి కొత్త స్నేహంలో {moment_owner_name} కూడా వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} వారి హైలైట్పై కూడా వ్యాఖ్యానించారు:{comment}"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} కూడా వారి గమనిక పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} వారి ప్రణాళికపై కూడా వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} వారి ప్రణాళికపై కూడా వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} కూడా {moment_owner_name} యొక్క బైబిల్ ప్రణాళికపై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} కూడా {moment_owner_name}యొక్క బైబిల్ ప్రణాళికపై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.friendships.accept"
+msgstr "{name} మీ స్నేహ అభ్యర్థనను అంగీకరించారు"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} ఇప్పుడు మీ స్నేహితుడు"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} యువర్షన్ నందు మీ యొక్క స్నేహం కోరుతున్నారు"
+
+msgid "notifications.friendships.suggestion"
+msgstr "మీరు {name} తో మీ స్నేహితులుగా YouVersion ఉండాలనుకుంటున్నారా?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} మీ బుక్ మార్క్ ఇష్టపడ్డారు, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} మీ క్రొత్త స్నేహాన్ని {friend_name} ఇష్టపడ్డారు"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} మీ హైలైట్ను ఇష్టపడ్డారు, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} మీ గమనికలు ఇష్టపడ్డారు."
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} మీ గమనికను ఇష్టపడ్డారు {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} మీ గమనికను ఇష్టపడ్డారు \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} మీ యొక్క బైబిలు ప్రణాళిక చర్యను లైక్ చేసారు"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} మీ యొక్క బైబిలు ప్రణాళిక చర్యను లైక్ చేసారు"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} బుక్మార్క్ చేసారు {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} హైలైట్ చేసారు {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name}ఒక గమనికను జోడించారు"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} ఒక గమనికను జోడించారు {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} ఒక గమనికను జోడించారు \"{title}\""
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name}వారి ప్రణాళికను పూర్తి చేసారు.{title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} వారి బైబిలు ప్రణాళిక, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} ఒక కొత్త ప్రణాళిక ప్రారంభించారు, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name}ఒక కొత్త బైబిల్ ప్రణాళికను ప్రారంభించారు,{title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} ఇప్పుడే YouVersionలో చేరారు. వారిని స్నేహితుడిగా చేర్చడానికి ఇక్కడ నొక్కండి."
+
+msgid "notifications.system.test"
+msgstr "చిన్న పిల్లల బైబిలు ఆప్ డౌన్లోడ్ చేసుకోండి. ఇప్పుడే!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} మీ వచన చిత్రంపై వ్యాఖ్యానించారు {comment}"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} కూడా వ్యాఖ్యానించారు {moment_owner_name}యొక్క verse imageపై: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} కూడా వారి చిత్ర వచనం పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} మీ వచన చిత్రం ఇష్టపడ్డారు{reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} ఒక వచన చిత్రం సృష్టించాడు {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "మీ కొరకు స్నేహ అభ్యర్థనలు బైబిల్ App నందు వేచిఉన్నాయి"
+
+msgid "notifications.votd_image"
+msgstr "ప్రతి రోజటి మూల వాక్యభాగపు చిత్రం "
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} మీతో కలిసి \"{title}\" ప్రణాళికను చదవగోరుచున్నారు."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} \"{title}\" యొక్క {day} వ రోజున వ్యక్యనించెను."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{0} మీ ఆహ్వానాన్ని స్వీకరించి మీతో పాటు \"{1}\" అను ప్రణాలికను చదువగోరుచున్నారు."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{0} “{1}” అను ప్రణాలిక ప్రారంభపు తేదీని {2} కు మార్చుకున్నారు."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} మీ బ్యాడ్జ్ పై వ్యాఖ్యానించారు: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} కూడా {moment_owner_name} బ్యాడ్జ్ పై వ్యాఖ్యానించారు: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} కూడా వారి బ్యాడ్జ్ పై వ్యాఖ్యానించారు: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} మీ బ్యాడ్జ్ని ఇష్టపడ్డారు {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} బ్యాడ్జ్ని పొందారు {title}"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Hi !</p><p> నేను మీ నుండి బైబిలు ఉపయోగాన్ని ఉపయోగిస్తున్నాను, ఇది మీతో భాగస్వామ్యం చేసుకోవటానికి ఇష్టపడింది. మీరు అనువర్తనం కొత్త ఉంటే, ఇది రోజువారీ జీవితంలో బైబిల్ యొక్క అందం మరియు నిజం తీసుకుని ఒక సాధారణ మార్గం</p>.<p></p><strong> బైబిల్ అనువర్తనాన్ని పొందండి:</strong> మీ స్మార్ట్ఫోన్ లేదా టాబ్లెట్లో చదువు, చూడండి, వినండి మరియు భాగస్వామ్యం చేయండి మరియు ఆన్లైన్లో బైబ్యాక్లో ఆన్లైన్లో చేయండి. : <strong></strong>బైబిల్ ప్లాన్స్కు చందా మరియు బుక్మార్క్లు, ముఖ్యాంశాలు మరియు గమనికల ప్రాప్యత పరికరాల్లో చొప్పించండి <p><p><strong></strong></p></p> ఫ్రెండ్స్ ను జోడించు (నా లాగా!): మీరు శ్రద్ధ వహించే వ్యక్తులతో బైబిలును అన్వేషించండి మరియు చర్చించండి <p></p> ఇది బైబిల్ యాప్లోనే ఉంది- ఇక్కడ ప్రారంభించండి:"
+
+msgid "share.invite_email_body"
+msgstr ""
+"హలో! \n"
+"\n"
+"నేను బైబిలు అనువర్తనాన్ని YouVersion నుండి ఉపయోగిస్తున్నాను నేను మీతో భాగస్వామ్యం చేయాలనుకుంటున్నాను. మీరు అనువర్తనం కొత్త ఉంటే, అది రోజువారీ జీవితంలో బైబిల్ యొక్క అందం మరియు నిజం తీసుకుని ఒక సాధారణ మార్గం.\n"
+"\n"
+"బైబిల్ అనువర్తనాన్ని పొందండి: మీ స్మార్ట్ఫోన్ మరియు ఆన్లైన్లో బైబిల మరియు టాబ్లెట్లో చదవడం, చూడండి, వినండి మరియు భాగస్వామ్యం చేయండి .\n"
+"\n"
+"మీ ఖాతాను సెటప్ చెయ్యండి: బైబిల్ ప్లాన్స్కు చందా మరియు బుక్మార్క్లు, ముఖ్యాంశాలు మరియు నోట్లను యాక్సెస్ చేయగల పరికరాల్లో ప్రాప్యత చేయండి\n"
+"\n"
+"స్నేహితులను జోడించు (నా లాగే!): మీరు శ్రద్ధ వహించే వ్యక్తులతో బైబిలును అన్వేషించండి మరియు చర్చించండి\n"
+"\n"
+"ఇది బైబిల్ యాప్లోనే ఉంది - ఇక్కడ ప్రారంభించండి: "
+
+msgid "share.invite_email_subject"
+msgstr "బైబిల్ App లో నాతోపాటు చేరండి!"
+
+msgid "share.invite_facebook"
+msgstr "నేను బైబిలు Appను ఇష్టపడుతున్నాను! ఇది నిజంగా నాకు నా దైనందిన జీవితంలో బైబిల్ భాగం చేయడానికి సహాయపడ్డాయి. ఇది నాకు హైలైట్ చేయడానికి, ఆడియో బైబిళ్ళను వినడానికి, నోట్లను తయారు చేయడానికి, భక్తి ప్రణాళికలను అనుసరించడానికి ... వీడియోలను కూడా చూడవచ్చు! ఇప్పుడే డౌన్లోడ్ చేసుకోండి (ఇది ఉచితం):"
+
+msgid "share.invite_facebook_direct"
+msgstr "మీ వద్ద బైబిలు App ఉందా? నేను దీనిని ఇష్టపడుతున్నాను,మీరు కూడా ఇష్టపడతారని అనుకుంటున్నాను. ఇక్కడ లింక్ ఉంది:"
+
+msgid "share.invite_sms"
+msgstr "నాకు YouVesion బైబిల్ App చాలా ఇష్టం.YouVersion నేను అనుకుంటున్నాను, మీకు కూడా:"
+
+msgid "share.invite_sms_prefix"
+msgstr "నుండి {name}:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion బైబిలు app కు నా హోం స్క్రీన్ పై శాశ్వతమైన స్థానము కలదు. చదవండి, వీక్షించండి, వినండి మరియు ఉచిత యాప్ తో... ఇవన్నీ పంచుకొండి:"
+
+msgid "share.invite_twitter_direct"
+msgstr "మీ దగ్గర Youversion బైబిల్ App ఉన్నదా? నేను దీనిని ఇష్టపడుతున్నాను,మీరు కూడా ఇష్టపడతారని అనుకుంటున్నాను. ఏ లింక్ ని విచ్చేయండి:"

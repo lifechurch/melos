@@ -32,6 +32,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
 "#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
@@ -44,6 +45,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
 "#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
@@ -56,6 +58,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "You earned the <b>{title}</b> badge"
@@ -356,6 +359,36 @@ msgstr "{name} created a verse image for {reference_human}"
 
 msgid "notifications.friendships.pending"
 msgstr "You have Friend requests waiting in the Bible App"
+
+msgid "notifications.votd_image"
+msgstr "Verse of the Day Image"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} wants to read the Plan, “{title}” with you."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} commented on Day {day} of the Plan, “{title}.”"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} accepted your invitation to read the Plan, “{title}” with you."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} changed the start date of the Plan, “{title}” to {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} commented on your badge: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s badge: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} also commented on their badge: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} likes your badge {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} got the badge {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hi!</p><p>I'm using the Bible App from YouVersion and wanted to share it with you. If you're new to the app, it's a simple way to bring the beauty and truth of the Bible into everyday life. </p><p><strong>Get the Bible App:</strong> read, watch, listen, and share on your smartphone or tablet, and online at Bible.com</p><p><strong>Set up Your Account:</strong> subscribe to Bible Plans and access bookmarks, highlights, and notes across devices</p><p><strong>Add Friends (Like Me!):</strong> explore and discuss the Bible with people you care about</p><p>It's all in the Bible App—get started here: </p>"

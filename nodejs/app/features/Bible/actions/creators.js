@@ -1,4 +1,6 @@
 import bibleAction from '@youversion/api-redux/lib/endpoints/bible/action'
+import getDefaultChapter from '@youversion/utils/lib/bible/getDefaultChapter'
+
 import type from './constants'
 
 const ActionCreators = {
@@ -12,7 +14,7 @@ const ActionCreators = {
 			hasChapterChanged: true,
 			language_tag: 'en',
 			version: '1',
-			reference: 'JHN.1',
+			reference: getDefaultChapter('1'),
 			showError: true,
 		}
 
@@ -24,8 +26,8 @@ const ActionCreators = {
 					let newRef, newReaderVersion
 					// if this version call fails, then it's probably just a bad version, so don't
 					// try to make the new reader call with the same version
-					if (newVersion && newVersion.books && newVersion.books[0] && newVersion.books[0].chapters && newVersion.books[0].chapters[0]) {
-						newRef = newVersion.books[0].chapters[0].usfm
+					if (newVersion && newVersion.books && newVersion.books[0] && newVersion.books[0].chapters && Object.keys(newVersion.books[0].chapters)[0]) {
+						newRef = Object.keys(newVersion.books[0].chapters)[0]
 						newReaderVersion = version
 					} else {
 						newRef = fallbackParams.reference

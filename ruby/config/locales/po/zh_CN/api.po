@@ -1,49 +1,70 @@
-# Chinese (Simplified, China) translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_Hans_CN\n"
-"Language-Team: zh_Hans_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-15 16:06-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_Hans_CN\n"
-"Language-Team: zh_Hans_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Language: zh\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_Hans_CN\n"
-"Language-Team: zh_Hans_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Language: zh\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "你获得了 <b>{title}</b> 勋章"
@@ -63,45 +84,6 @@ msgstr "你书签标记了 <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name}书签标记了 <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "以基督降临为主题的读经计划来准备迎接圣诞"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "让新的读经计划更新你的信心。"
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "每天在神的话语里寻求祂。"
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "趁此节日预备你的心。"
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "在神的话语里找到祂的爱。"
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "你最好的一年从此开始。"
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "欢庆在基督里的自由。"
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "在神的话语里寻求祂。"
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "在神的话语里找到希望与更新。"
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "每天潜心阅读神的话语。"
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "从神的应许里学习感恩。"
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "属天的智慧始于神的话语。"
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "神的话语使万物更新。"
-
 msgid "moment.friendship.self.title"
 msgstr "你现在和 <b>{friend_name}</b> 已成为朋友"
 
@@ -114,29 +96,23 @@ msgstr "你高亮显示了 <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name}高亮显示了 <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "你制作了<b>{reference_human} {version_abbreviation}的经句图</b>"
-
-msgid "moment.image.title"
-msgstr "{name}制作了 <b>{reference_human} {version_abbreviation}的经句图</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "你添加了一条笔记"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} 添加了一条笔记"
-
-msgid "moment.note.reference.self.title"
-msgstr "你为<b>{reference_human}</b>添加了一条笔记"
-
-msgid "moment.note.reference.title"
-msgstr "{name}为<b>{reference_human}</b>添加了一条笔记"
-
 msgid "moment.note.self.title"
 msgstr "你加了一条笔记，<b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} 加了一条笔记，<b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} 添加了一条笔记"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "你添加了一条笔记"
+
+msgid "moment.note.reference.title"
+msgstr "{name}为<b>{reference_human}</b>添加了一条笔记"
+
+msgid "moment.note.reference.self.title"
+msgstr "你为<b>{reference_human}</b>添加了一条笔记"
 
 msgid "moment.plan_completion.self.title"
 msgstr "你完成了一个读经计划"
@@ -171,17 +147,11 @@ msgstr "你开始了新计划，<b>{title}</b>"
 msgid "moment.plan_subscription.v2.title"
 msgstr "{name} 开始了新计划，<b>{title}</b>"
 
-msgid "moment.system.bafk.title"
-msgstr "帮助你的孩子爱上神的话语。"
-
 msgid "moment.system.bible_series_promo.body"
 msgstr "今晚观看<i>圣经系列</i> ！"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>圣经系列</i>"
-
-msgid "moment.system.christmas.title"
-msgstr "分享佳音：救主已降生！"
 
 msgid "moment.system.find_friends.title"
 msgstr "与朋友一起使用圣经软件会给你更佳体验。请在你的联系人中搜索朋友。"
@@ -191,6 +161,57 @@ msgstr "你观看了 <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} 看了 <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "以基督降临为主题的读经计划来准备迎接圣诞"
+
+msgid "moment.system.bafk.title"
+msgstr "帮助你的孩子爱上神的话语。"
+
+msgid "moment.system.christmas.title"
+msgstr "分享佳音：救主已降生！"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "你最好的一年从此开始。"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "在神的话语里找到祂的爱。"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "在神的话语里找到希望与更新。"
+
+msgid "moment.image.self.title"
+msgstr "你制作了<b>{reference_human} {version_abbreviation}的经文图</b>"
+
+msgid "moment.image.title"
+msgstr "{name}制作了 <b>{reference_human} {version_abbreviation}的经文图</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "让新的读经计划更新你的信心。"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "每天潜心阅读神的话语。"
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "在神的话语里寻求祂。"
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "欢庆在基督里的自由。"
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "每天在神的话语里寻求祂。"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "神的话语使万物更新。"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "属天的智慧始于神的话语。"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "从神的应许里学习感恩。"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "趁此节日预备你的心。"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} 评论了你的书签: “{comment}”"
@@ -203,9 +224,6 @@ msgstr "{name} 评论了你的新联系：“{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} 评论了你的高亮经文: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name}评论了你的经句图：“{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} 评论了笔记: “{comment}”"
@@ -222,17 +240,14 @@ msgstr "{commenter_name} 也评论了 {moment_owner_name} 的书签标记: “{c
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} 也评论了 {moment_owner_name} 的新联系 {friend_name} : “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} 也评论了和{moment_owner_name}的新联系：“{comment}”"
+
 msgid "notifications.comments.moments.friend.friendship.ours"
 msgstr "{commenter_name}也评论了你与{moment_owner_name}的新联系：“{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.their"
-msgstr "{commenter_name} 也评论了他/她与{moment_owner_name}的新联系：“{comment}”"
-
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} 也评论了 {moment_owner_name} 的高亮标记: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name}也评论了{moment_owner_name}的经句图：“{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} 也评论了 {moment_owner_name} 的笔记: “{comment}”"
@@ -241,22 +256,19 @@ msgid "notifications.comments.moments.friend.owner.bookmark"
 msgstr "{moment_owner_name} 也评论了他们的书签标记: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} 也评论了他的新联系 {friend_name} : “{comment}”"
+msgstr "{moment_owner_name} 也评论了和 {friend_name} 的新联系 : “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
-msgstr "{moment_owner_name} 也评论了他/她与你的新联系：“{comment}”"
+msgstr "{moment_owner_name} 也评论了和你的新联系：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} 也评论了他们的高亮标记: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name}也评论了他的经句图：“{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的高亮标记：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} 也评论了他们的笔记: “{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的笔记： “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} 也评论了他的计划: “{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的读经计划： “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
 msgstr "{moment_owner_name} 也评论了他的读经计划: “{comment}”"
@@ -276,9 +288,6 @@ msgstr "{name} 现已成为你的好友"
 msgid "notifications.friendships.offer"
 msgstr "{name} 希望成为你在 YouVersion 的好友"
 
-msgid "notifications.friendships.pending"
-msgstr "圣经软件里有发自朋友的请求"
-
 msgid "notifications.friendships.suggestion"
 msgstr "你希望和 {name} 成为在 YouVersion 上的好友吗?"
 
@@ -290,9 +299,6 @@ msgstr "{name} 赞了你的新联系 {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} 赞了你的高亮显示， {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name}点赞了你用{reference_human}制作的经句图"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} 赞了你的笔记"
@@ -315,9 +321,6 @@ msgstr "{name} 标记了书签 {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} 高亮标记了 {reference_human}"
 
-msgid "notifications.moments.create.image"
-msgstr "{name}制作了{reference_human}的经句图"
-
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} 添加了一条笔记"
 
@@ -328,10 +331,10 @@ msgid "notifications.moments.create.note.title"
 msgstr "{name} 加了一条笔记, “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} 结束了他的计划, {title}"
+msgstr "{name} 结束了读经计划，{title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} 结束了他的读经计划, {title}"
+msgstr "{name} 结束了读经计划，{title}"
 
 msgid "notifications.moments.create.plan_subscription"
 msgstr "{name} 开始了一个新计划, {title}"
@@ -345,38 +348,86 @@ msgstr "{name} 刚加入 YouVersion。点击以添加他为你的朋友。"
 msgid "notifications.system.test"
 msgstr "现在就下载我们的儿童圣经软件!!!"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} 评论了你的经文图：“{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的经文图：“{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} 也评论了自己的经文图：“{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} 点赞了你用 {reference_human} 制作的经文图"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} 制作了 {reference_human} 的经文图"
+
+msgid "notifications.friendships.pending"
+msgstr "圣经软件里有朋友请求"
+
+msgid "notifications.votd_image"
+msgstr "今日经文图"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name}想和你一起阅读《{title}》这个计划。"
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name}对读经计划《{title}》的第{day}天发布了评论。"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name}接受了你的邀请，和你一起阅读《{title}》这个计划。"
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name}把读经计划《{title}》的开始日期改为{date}。"
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} 评论了你的徽章: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的徽章: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} 也评论了自己的徽章： “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} 赞了你的徽章 {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} 获得了徽章 {title}"
+
 msgid "share.find_friends.invite_email_html"
-msgstr "<p>嗨！</p><p>我想跟您分享我目前在使用着的 YouVersion 圣经软件。如果您没试过这个应用程序，它是将圣经的内涵与真理纳入日常生活的一种简单方法。 </p><p><strong>下载圣经软件：</strong> 在您的智慧型手机或平板电脑上阅读、观赏、聆听，以及分享。您也可以在 Bible.com 在线使用同样的功能。</p><p><strong>设立您的帐户：</strong> 订阅读经计划并在不同的设备上存取您的书签、高亮显示，以及笔记。</p><p><strong>添加朋友 (我就是人选之一！)：</strong> 与您关注的人一起探索与讨论圣经。</p><p>一切都在圣经软件里— 就从这里开始吧： </p>"
+msgstr "<p>你好！</p><p>我想跟你分享我目前在使用着的 YouVersion 圣经软件。如果你没试过这个应用程序，它是将圣经的内涵与真理纳入日常生活的一种简单方法。 </p><p><strong>下载圣经软件：</strong> 在你的智慧型手机或平板电脑上阅读、观赏、聆听，以及分享。您也可以在 Bible.com 在线使用同样的功能。</p><p><strong>设立你的账户：</strong> 订阅读经计划并在不同的设备上存取你的书签、高亮显示，以及笔记。</p><p><strong>添加朋友 (我就是人选之一！)：</strong> 与你关注的人一起探索与讨论圣经。</p><p>一切都在圣经软件里— 就从这里开始吧： </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
-"嗨，我在使用 YouVersion 的圣经软件，我想跟你分享。如果您没试过圣经软件，这实在是将圣经的美善和真理带入日常生活的简单方式。\n"
+"你好！我想跟你分享我目前在使用着的 YouVersion 圣经软件。如果你没试过这个应用程序，它是将圣经的内涵与真理纳入日常生活的一种简单方法。\n"
 "\n"
-"下载圣经软件：在智能手机或平板电脑或Bible.com网站上读经，看视频，听录音，分享经文。\n"
+"下载圣经软件： 在你的智慧型手机或平板电脑上阅读、观赏、聆听，以及分享。你也可以在 Bible.com 在线使用同样的功能。\n"
 "\n"
-"设置您的账户：订阅读经计划，在各种设备上访问您的书签、高亮显示和笔记。\n"
+"设立你的账户： 订阅读经计划并在不同的设备上存取你的书签、高亮显示，以及笔记。\n"
 "\n"
-"添加朋友 (比如我！)：与您关心的人一起讨论和探索圣经。\n"
+"添加朋友 （我就是人选之一！)：与你关注的人一起探索与讨论圣经。\n"
 "\n"
-"一切都在圣经软件里——就从这里开始吧： "
+"一切都在圣经软件里— 就从这里开始吧： "
 
 msgid "share.invite_email_subject"
 msgstr "与我一起使用圣经软件吧！"
 
 msgid "share.invite_facebook"
-msgstr "我喜爱圣经软件！它真的帮助我使圣经成为我日常生活的一部分。圣经软件能帮我做经文高亮记号，听音频圣经，记录笔记，跟踪灵修计划... 甚至观看视频！快去下载吧（还是免费的）："
+msgstr "我喜爱圣经软件！它真的帮助我使圣经成为我日常生活的一部分。圣经软件能帮我做经文高亮显示、听音频圣经、建立笔记、跟进灵修计划…… 甚至观看视频！快去下载吧（完全免费的）："
 
 msgid "share.invite_facebook_direct"
 msgstr "你有 YouVersion 的圣经软件吗？我很喜欢用，猜想你也会喜欢。这是圣经软件的链接："
 
 msgid "share.invite_sms"
-msgstr "我爱YouVersion圣经软件。我想你也会爱它: "
+msgstr "我喜欢 YouVersion 的圣经软件。我想你也会喜欢："
 
 msgid "share.invite_sms_prefix"
 msgstr "来自 {name}："
 
 msgid "share.invite_twitter"
-msgstr "我将 @YouVersion 的圣经软件常驻在主屏幕上。无论阅读圣经，观看视频，收听录音或分享经文... 都可在这个免费软件中完成："
+msgstr "我将 @YouVersion 的圣经软件常驻在主屏幕上。无论是阅读、观赏、聆听或分享…… 都可在这个免费软件中完成："
 
 msgid "share.invite_twitter_direct"
 msgstr "你有 @YouVersion 的圣经软件吗？我很喜欢用，猜想你也会喜欢，这是圣经软件的链接："

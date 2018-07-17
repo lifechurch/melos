@@ -1,28 +1,76 @@
-# Ukrainian translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: uk\n"
-"Language-Team: uk <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:20-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Ukrainian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Ukrainian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:20-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Ukrainian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Ви здобули значок <b>{title}</b>"
 
 msgid "moment.badge.earned.title"
-msgstr "{name} здобув значок <b>{title}</b>"
+msgstr "{name} здобув(ла) значок <b>{title}</b>"
 
 msgid "moment.bible.download.self.title"
 msgstr "Ви завантажили версію <b>{version}</b>"
@@ -36,45 +84,6 @@ msgstr "Ви заклали <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} заклав(ла) <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Підготуйтесь до Різдва з біблійним планом про пилипівський піст"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Освіжіть свою віру із новими планами."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Шукайте Бога в Його Слові щодня."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Підготуйте своє серце в цьому сезоні."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Знайдіть Божу любов у Його Слові."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Ваш найкращий рік починається зараз."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Святкуйте свободу в Христі."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Шукайте Бога в Його Слові."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Знайдіть надію і оновлення у Божому Слові."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Присвятіть себе щодня Його Слову."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Виявляйте вдячність у Божих обітницях."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Божествення мудрість починається у Божому Слові."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Боже Слово робить все новим."
-
 msgid "moment.friendship.self.title"
 msgstr "Ви вже дружите з <b>{friend_name}</b>"
 
@@ -87,35 +96,29 @@ msgstr "Ви виділили <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} виокремив(ла) <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Ви створили малюнок із віршем для <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} створив(ла) малюнок із віршем для <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Ви додали нотатку"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} створив нотатку"
-
-msgid "moment.note.reference.self.title"
-msgstr "Ви створили нотаток про <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} додав нотатку про <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Ви додали нотатку з назвою <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} додав нотатку з назвою <b>{title}</b>"
 
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} додав(ла) нотатку"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Ви додали нотатку"
+
+msgid "moment.note.reference.title"
+msgstr "{name} додав нотатку про <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Ви створили нотаток про <b>{reference_human}</b>"
+
 msgid "moment.plan_completion.self.title"
 msgstr "Ви завершили свій план"
 
 msgid "moment.plan_completion.title"
-msgstr "{name} завершив план"
+msgstr "{name} завершив(ла) план"
 
 msgid "moment.plan_completion.v2.self.title"
 msgstr "Ви завершили свій план <b>{title}</b>"
@@ -127,10 +130,10 @@ msgid "moment.plan_segment_completion.body"
 msgstr "День {segment} із {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Ви завершили день <b>{segment}</b> плану, <b>{title}</b>"
+msgstr "Ви завершили день <b>{segment}</b> плану <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} завершив день <b>{segment}</b> плану, <b>{title}</b>"
+msgstr "{name} завершив(ла) день <b>{segment}</b> плану <b>{title}</b>"
 
 msgid "moment.plan_subscription.self.title"
 msgstr "Ви розпочали новий план"
@@ -150,9 +153,6 @@ msgstr "Перегляньте <i>Біблійні серії</i> сьогодн
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Біблійні серії</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Поділіться новиною: Спаситель народився!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Програма Біблія є ще зручнішою з друзями. Пошукайте ваші зв'язки, щоб віднайти друзів."
 
@@ -162,23 +162,71 @@ msgstr "Ви переглянули <b>{title}</b>"
 msgid "moment.video.watched.title"
 msgstr "{name} переглянув <b>{title}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Підготуйтесь до Різдва з біблійним планом про пилипівський піст"
+
+msgid "moment.system.bafk.title"
+msgstr "Допоможіть своїм діткам полюбити Боже Слово."
+
+msgid "moment.system.christmas.title"
+msgstr "Поділіться новиною: Спаситель народився!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Ваш найкращий рік починається зараз."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Знайдіть Божу любов у Його Слові."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Знайдіть надію і оновлення у Божому Слові."
+
+msgid "moment.image.self.title"
+msgstr "Ви створили малюнок із віршем для <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} створив(ла) малюнок із віршем для <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Освіжіть свою віру із новими планами."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Присвячуйте себе Його Слову щодня."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Шукайте Бога в Його Слові."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Святкуйте свободу в Христі."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Шукайте Бога в Його Слові щодня."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Боже Слово робить все новим."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Божествення мудрість починається у Божому Слові."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Виявляйте вдячність у Божих обітницях."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Підготуйте своє серце в цьому сезоні."
+
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name} прокоментував вашу закладку: “{comment}”"
+msgstr "{name} прокоментував(ла) Вашу закладку: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} прокоментував вашу нову дружбу із {friend_name}: “{comment}”"
+msgstr "{name} прокоментував(ла) вашу нову дружбу із {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship.friend"
-msgstr "{name} прокоментував(ла) вашу нову дружбу: “{comment}”"
+msgstr "{name} прокоментував(ла) Вашу нову дружбу: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "{name} прокоментував ваше виділення: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} прокоментував(ла) ваш малюнок із віршем: “{comment}”"
+msgstr "{name} прокоментував(ла) ваше виділення: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
-msgstr "{name} прокоментував вашу нотатку: “{comment}”"
+msgstr "{name} прокоментував(ла) вашу нотатку: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} прокоментував у вашому плані: “{comment}”"
@@ -187,67 +235,58 @@ msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} прокоментував у вашому біблійному плані: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} також прокоментував закладку {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} також прокоментував(ла) закладку {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} також прокоментував нову дружбу  {moment_owner_name} із {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} також прокоментував(ла) вашу нову дружбу із {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} також прокоментував(ла) їхню дружбу із {moment_owner_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} також прокоментував виділення {moment_owner_name}: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} також прокоментував(ла) вашу нову дружбу із {moment_owner_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} також прокоментував(ла) малюнок {moment_owner_name} із віршем: “{comment}”"
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} також прокоментував(ла) підкреслення {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} також прокоментував нотатку {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} також прокоментував(ла) нотатку {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} також прокоментував їхню закладку: “{comment}”"
+msgstr "{moment_owner_name} також прокоментував(ла) їхню закладку: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} також прокоментував свою нову дружбу із {friend_name}: “{comment}”"
+msgstr "{moment_owner_name} також прокоментував(ла) свою нову дружбу із {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
-msgstr "{moment_owner_name} також прокоментував(ла) їхню нову дружбу з вами: “{comment}”"
+msgstr "{moment_owner_name} також прокоментував(ла) свою нову дружбу з вами: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} також прокоментував їхнє виділення: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} також прокоментував(ла) їхній малюнок із віршем: “{comment}”"
+msgstr "{moment_owner_name} також прокоментував своє підкреслення: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} також прокоментував їхню нотатку: “{comment}”"
+msgstr "{moment_owner_name} також прокоментував(ла) свою нотатку: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} також прокоментували у їхньому плані: “{comment}”"
+msgstr "{moment_owner_name} також прокоментував(ла) свій план: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} також прокоментували у їхньому біблійному плані: “{comment}”"
+msgstr "{moment_owner_name} також прокоментував(ла) свій Біблійний план: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} також прокоментував у плані {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} також прокоментував(ла) план {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} також прокоментував у біблійному плані {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} також прокоментував(ла) Біблійний план {moment_owner_name}: “{comment}”"
 
 msgid "notifications.friendships.accept"
-msgstr "{name} прийняв ваш запит дружби"
+msgstr "{name} прийняв(ла) ваш запит дружби"
 
 msgid "notifications.friendships.nowfriends"
-msgstr "Ви та {name} вже друзі"
+msgstr "{name} тепер ваш друг"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} хоче бути вашим другом на YouVersion"
-
-msgid "notifications.friendships.pending"
-msgstr "У вас на наявні запити на дружбу, які очікують підтвердження у програмі Біблія"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Ви хочете товаришувати з {name} на YouVersion?"
@@ -259,10 +298,7 @@ msgid "notifications.likes.moment.mine.friendship"
 msgstr "{name} уподобав вашу нову дружбу із {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "Користувачу {name} подобається ваше виділення, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} вподобав(ла) ваш малюнок із віршем {reference_human}"
+msgstr "Користувачу {name} подобається ваше підкреслення, {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "Користувачу {name} подобається ваша нотатка"
@@ -271,7 +307,7 @@ msgid "notifications.likes.moment.mine.note.reference"
 msgstr "Користувачу {name} подобається ваша нотатка на {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "Користувача {name} подобається ваша нотатка, “{title}”"
+msgstr "Користувачу {name} подобається ваша нотатка, “{title}”"
 
 msgid "notifications.likes.moment.mine.plan_activity"
 msgstr "Користувачу {name} подобається ваша діяльність з планом"
@@ -285,35 +321,80 @@ msgstr "{name} додав у закладки {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} виділив {reference_human}"
 
-msgid "notifications.moments.create.image"
-msgstr "{name} створив(ла) малюнок із віршем {reference_human}"
-
 msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} додав нотатку"
+msgstr "{name} додав(ла) нотатку"
 
 msgid "notifications.moments.create.note.reference"
-msgstr "{name} додав нотатку про {reference_human}"
+msgstr "{name} додав(ла) нотатку про {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} додав нотатку з назвою “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} завершив їхній план, {title}"
+msgstr "{name} завершив(ла) свій план, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} завершив їхній біблійний план, {title}"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "Користувач {name} розпочав план, {title}"
+msgstr "{name} розпочав(ла) новий план, {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "Користувач {name} розпочав біблійний план, {title}"
+msgstr "{name} розпочав(ла) новий Біблійний план, {title}"
 
 msgid "notifications.people.contact.joined"
-msgstr "{name} вже приєднався(лась) до YouVersion. Натисніть, щоб додати його/її як друга."
+msgstr "{name} щойно приєднався(лась) до YouVersion. Натисніть тут, щоб додати в друзі."
 
 msgid "notifications.system.test"
 msgstr "Завантажуйте вже нашу програму Біблія для дітей!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} прокоментував(ла) ваш малюнок із віршем: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} також прокоментував(ла) малюнок {moment_owner_name} із віршем: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} також прокоментував(ла) свій малюнок із віршем: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} вподобав(ла) ваш малюнок із віршем {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} створив(ла) малюнок із віршем {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "У вас наявні запити на дружбу, які очікують підтвердження у програмі Біблія"
+
+msgid "notifications.votd_image"
+msgstr "Зображення вірша дня"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} хоче читати план, “{title}” разом з вами."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} прокоментував(ла) {day} день плану \"{title}\"."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} прийняв(ла) ваше запрошення долучитися до читання плану \"{title}\" разом з вами."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} змінив(ла) дату початку плану \"{title}\" на {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} прокоментував(ла) ваш значок: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} також прокоментував(ла) значок у {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} також прокоментував(ла) їхній значок: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} вподобав(ла) ваш значок {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} отримав значок {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Вітаю!</p><p>Я використовую програму Біблія від YouVersion і хочу з Вами нею поділитися. Якщо Ви ще не чули про цю програму, то - це простий спосіб внести красу та правду Біблії до Вашого повсякденного життя. </p><p><strong>Отримайте програму Біблія:</strong> читайте, дивіться, слухайте та діліться за допомогою смартфона, планшета чи на сайті Bible.com</p><p><strong>Налаштуйте Ваш обліковий запис:</strong> підписуйтеся на плани читання Біблії, отримайте доступ до закладок, виділень та нотаток із різних пристроїв </p><p><strong>Додавайте друзів (не забудьте про мене!):</strong> досліджуйте та дискутуйте про Біблію з Вам небайдужими людьми</p><p>Це все є в програмі Біблія — розпочніть тут: </p>"
@@ -322,13 +403,13 @@ msgid "share.invite_email_body"
 msgstr ""
 "Привіт!\n"
 "\n"
-"Я використовую програму Біблія від YouVersion та хочу з Вами нею поділитись. Якщо Ви ще не чули про цю програму, то - це простий спосіб внести красу та правду Біблії до Вашого повсякденного життя.\n"
+"Я використовую програму Біблія від YouVersion та хочу нею з вами поділитися. Якщо ви ще не чули про цю програму, то - це простий спосіб внести красу та правду Біблії до Вашого повсякдення.\n"
 "\n"
 "Отримайте програму Біблія: читайте, дивіться, слухайте та діліться за допомогою смартфона, планшета чи на сайті Bible.com.\n"
 "\n"
-"Налаштуйте Ваш акаунт: підписуйтеся на плани читання Біблії, отримайте доступ до закладок, підсвіток та нотаток із різних пристоїв.\n"
+"Налаштуйте ваш обліковий запис: підписуйтесь на плани читання Біблії, отримайте доступ до закладок, позначок та нотаток із різних пристроїв.\n"
 "\n"
-"Додавайте друзів (не забудьте про мене!): досліджуйте та дискутуйте про Біблію з Вам небайдужими людьми.\n"
+"Додавайте друзів (не забудьте про мене!): досліджуйте та дискутуйте про Біблію з вам небайдужими людьми.\n"
 "\n"
 "Це все є в програмі Біблія - розпочніть тут: "
 
@@ -336,13 +417,13 @@ msgid "share.invite_email_subject"
 msgstr "Приєднайтесь до мене у використанні програми Біблія!"
 
 msgid "share.invite_facebook"
-msgstr "Я люблю програму Біблія! Вона дійсно допомогла мені зробити Біблію частиною мого повсякденного життя. Програма дозволяє мені виділяти, слухати аудіо Біблії, робити нотатки, дотримуватися тематичних планів... навіть дивитися відео! Перейдіть до її завантаження прямо зараз (це безкоштовно):"
+msgstr "Я люблю програму Біблія! Вона дійсно допомогла мені зробити Біблію частиною мого повсякдення. Програма дозволяє мені виділяти, слухати аудіо, робити нотатки, дотримуватися тематичних планів, та навіть дивитися відео! Перейдіть до її завантаження прямо зараз (безкоштовно):"
 
 msgid "share.invite_facebook_direct"
 msgstr "У вас є програма Біблія? Я люблю її, і я думаю, що ви також полюбите. Ось посилання:"
 
 msgid "share.invite_sms"
-msgstr "Я люблю додаток \"Біблія\". Думаю, що ви також:"
+msgstr "Я люблю програму Біблія Думаю, що ви також полюбите її:"
 
 msgid "share.invite_sms_prefix"
 msgstr "Від {name}:"
