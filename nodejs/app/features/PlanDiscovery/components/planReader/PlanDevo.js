@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import FormattedText from '../../../../components/FormattedText'
+import AudioIcon from '../../../../components/icons/Audio'
 
 function PlanDevo(props) {
 	const { devoContent, hasDevotionalAudio } = props
@@ -14,18 +15,21 @@ function PlanDevo(props) {
 
 	return (
 		<div className='devo-content'>
-			<div className='devo-header'>
-				<FormattedMessage id='plans.devotional' />
+			<div className='devo-header' style={{ display: 'flex' }}>
+				<div style={{ width: '100%' }}><FormattedMessage id='plans.devotional' /></div>
+				{hasDevotionalAudio && (<AudioIcon />)}
+				{hasDevotionalAudio && (
+          <div className="devo-audio-disclaimer" style={{ width: 'auto' }}>
+            <a style={{ fontSize: 12, lineHeight: '16px', display: 'inline-block', paddingLeft: 10 }} href="/app">
+              Listen to this audio devotional now in the Bible App.
+            </a>
+				</div>
+        )}
 			</div>
-			{hasDevotionalAudio && (
-			<div className="devo-audio-disclaimer">
-          Bible.com doesn't support playing this audio plan content. To listen, download the Bible App
-        </div>
-      )}
 			<FormattedText
 				text={devoContent}
 				customClass='devotional'
-			/>
+   />
 		</div>
 	)
 }

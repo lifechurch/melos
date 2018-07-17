@@ -119,7 +119,7 @@ export function subscriptionDayUpdate({
  * @param  {[type]} day             [description]
  * @return {[type]}                 [description]
  */
-function subscriptionData({ subscription_id, auth, day }) {
+function subscriptionData({ subscription_id, auth, day, serverLanguageTag }) {
 	return (dispatch) => {
 		return new Promise((resolve, reject) => {
 			return dispatch(plansAPI.actions.subscription.get({ id: subscription_id }, { auth: true }))
@@ -163,7 +163,8 @@ function subscriptionData({ subscription_id, auth, day }) {
 							dispatch(planView({
 								plan_id,
 								together_id,
-								auth
+								auth,
+								serverLanguageTag
 							}))
 						)
 

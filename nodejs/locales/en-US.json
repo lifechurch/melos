@@ -829,5 +829,6 @@
 	"share.invite_sms": "I love the YouVersion Bible App. I think you would, too:",
 	"share.invite_sms_prefix": "From {name}:",
 	"share.invite_twitter": "The @YouVersion Bible App has a permanent spot on my home screen. Read, watch, listen, and share…all in a free app:",
-	"share.invite_twitter_direct": "Do you have the Bible App from @YouVersion? I love it, and I think you would too. Here's the link:"
+	"share.invite_twitter_direct": "Do you have the Bible App from @YouVersion? I love it, and I think you would too. Here's the link:",
+  "plan audio disclaimer": "Listen to this audio devotional now in the Bible App."
 }
