@@ -19,6 +19,7 @@ const dbPromise = idb.open(DB_NAME, VERSION, (upgradeDB) => {
 	createStore(upgradeDB, 'plans', { keyPath: 'id' })
 })
 
+
 const database = {
 	get({ storeName, key }) {
 		return dbPromise.then((db) => {
