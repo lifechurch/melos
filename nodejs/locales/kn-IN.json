@@ -466,7 +466,7 @@
 	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links.",
 	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Expand",
 	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "ಓದಿ",
-	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "ಯೋಜನೆಯ ಮಾಹಿತಿ",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "ಯೋಜನೆ��� ಮಾಹಿತಿ",
 	"features.EventFeedMine.components.EventListItem.duplicate": "Duplicate",
 	"features.EventFeedMine.components.EventListItem.share": "ಶೇರ್",
 	"features.EventFeedMine.components.EventListItem.delete": "ಅಳಿಸು",
