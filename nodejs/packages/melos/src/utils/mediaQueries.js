@@ -24,7 +24,6 @@ export const xxlarge = {
   max: 99999999
 }
 
-
 export const screen = 'only screen'
 
 export const landscape = `@media ${screen} and (orientation: landscape)`

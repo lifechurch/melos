@@ -7,7 +7,6 @@ const VERSION = 1
 
 
 
-
 // database functions
 const createStore = (upgradeDB, storeName, options) => {
 	if (!upgradeDB.objectStoreNames.contains(storeName)) {
