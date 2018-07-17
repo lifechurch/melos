@@ -67,4 +67,5 @@ const getBibleModel = createSelector(
 	}
 )
 
+
 export default getBibleModel
