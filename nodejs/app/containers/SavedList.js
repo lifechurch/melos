@@ -15,7 +15,7 @@ import PlanListItem from '../features/PlanDiscovery/components/PlanListItem'
 class SavedList extends Component {
 
 	componentDidMount() {
-		const { auth, dispatch, saved } = this.props
+		const { auth, dispatch, saved, serverLanguageTag } = this.props
 		this.username = (auth && auth.userData && auth.userData.username) ? auth.userData.username : null
 		if (!saved) {
 			dispatch(plansAction({
@@ -29,6 +29,7 @@ class SavedList extends Component {
 							dispatch(planView({
 								plan_id: id,
 								auth,
+								serverLanguageTag
 							}))
 						})
 					}
@@ -109,6 +110,7 @@ function mapStateToProps(state) {
 		readingPlans: getPlansModel(state),
 		saved: getAllQueueItems(state),
 		auth: state.auth,
+		serverLanguageTag: state.serverLanguageTag
 	}
 }
 
@@ -119,6 +121,7 @@ SavedList.propTypes = {
 	language_tag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	localizedLink: PropTypes.func.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired
 }
 
 export default connect(mapStateToProps, null)(SavedList)

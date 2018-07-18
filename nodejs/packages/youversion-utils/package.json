@@ -1,6 +1,6 @@
 {
   "name": "@youversion/utils",
-  "version": "1.0.48",
+  "version": "1.0.53",
   "description": "A library of utility javascript functions used in YouVersion projects such as bible and youversion-api-redux.",
   "main": "./lib",
   "scripts": {

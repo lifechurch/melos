@@ -7,7 +7,6 @@ const VERSION = 1
 
 
 
-
 // database functions
 const createStore = (upgradeDB, storeName, options) => {
 	if (!upgradeDB.objectStoreNames.contains(storeName)) {
@@ -19,6 +18,7 @@ const dbPromise = idb.open(DB_NAME, VERSION, (upgradeDB) => {
 	// upgradeCallback is called if version is greater than the version last opened
 	createStore(upgradeDB, 'plans', { keyPath: 'id' })
 })
+
 
 const database = {
 	get({ storeName, key }) {

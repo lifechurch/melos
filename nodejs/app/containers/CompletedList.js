@@ -23,7 +23,7 @@ class CompletedList extends Component {
 	}
 
 	getCompletedSubs = (page = 1) => {
-		const { auth, dispatch } = this.props
+		const { auth, dispatch, serverLanguageTag } = this.props
 		if (page) {
 			dispatch(plansAPI.actions.subscriptions.get({
 				status: 'completed',
@@ -39,6 +39,7 @@ class CompletedList extends Component {
 								plan_id: sub.plan_id,
 								together_id: sub.together_id,
 								auth,
+								serverLanguageTag
 							}))
 						})
 					}
@@ -155,6 +156,7 @@ function mapStateToProps(state) {
 		subscriptions: getSubscriptionsModel(state),
 		readingPlans: getPlansModel(state),
 		auth: state.auth,
+		serverLanguageTag: state.serverLanguageTag
 	}
 }
 
@@ -165,6 +167,7 @@ CompletedList.propTypes = {
 	language_tag: PropTypes.string.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	localizedLink: PropTypes.func.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired
 }
 
 export default connect(mapStateToProps, null)(CompletedList)

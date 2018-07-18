@@ -42,11 +42,12 @@ class Plan extends Component {
 					&& Immutable.fromJS(subscription).getIn(['days'], false)
 				)
 			) {
-				dispatch(subscriptionData({ subscription_id, auth, day }))
+				dispatch(subscriptionData({ subscription_id, auth, day, serverLanguageTag }))
 			}
 		} else if (!plan) {
 			dispatch(planView({
 				plan_id: id.split('-')[0],
+				serverLanguageTag
 			}))
 		}
 		// get bible version for building reference strings
