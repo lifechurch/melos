@@ -17,7 +17,7 @@ import Routes from '@youversion/utils/lib/routes/routes'
 
 class TalkItOverRedirect extends Component {
 	componentDidMount() {
-		const { dispatch, params: { subscription_id, day }, auth } = this.props
+		const { dispatch, params: { subscription_id, day }, auth, serverLanguageTag } = this.props
 		const signin = Routes.signIn({
 			query: {
 				redirect: window.location.pathname
@@ -26,7 +26,7 @@ class TalkItOverRedirect extends Component {
 		if (!auth.isLoggedIn) {
 			window.location.replace(signin)
 		} else if (subscription_id) {
-			dispatch(subscriptionData({ subscription_id, auth, day }))
+			dispatch(subscriptionData({ subscription_id, auth, day, serverLanguageTag }))
 				.catch(() => {
 					// if we don't get any successful promises back from the call, then
 					// we most likely are the wrong authed user for the link
@@ -109,6 +109,7 @@ TalkItOverRedirect.propTypes = {
 	auth: PropTypes.object.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	params: PropTypes.object.isRequired,
+	serverLanguageTag: PropTypes.string.isRequired
 }
 
 TalkItOverRedirect.defaultProps = {

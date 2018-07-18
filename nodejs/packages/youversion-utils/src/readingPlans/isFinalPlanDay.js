@@ -11,7 +11,7 @@ export default function isFinalPlanDay(day, progressDays) {
 		const dayObj = progressDays[i]
 			// if we find a day that is not complete, and it's not the day that we're currently
 			// on, then we have more days to go
-		if (dayObj.day !== dayNum && !dayObj.complete) {
+		if (dayObj && dayObj.day !== dayNum && !dayObj.complete) {
 			return false
 		}
 	}

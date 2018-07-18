@@ -19,7 +19,7 @@ const getPlansModel = createSelector(
 		if (plans) {
 			const planIds = Object.keys(plans)
 			planIds.forEach((id) => {
-				if ('response' in plans[id] && 'id' in plans[id].response) {
+				if (typeof plans[id] === 'object' && 'response' in plans[id] && 'id' in plans[id].response) {
 					plansModel.byId = Immutable
 						.fromJS(plansModel.byId)
 						.mergeDeepIn([id], plans[id].response)

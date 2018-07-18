@@ -23,7 +23,7 @@ class MarkCompleteRedirect extends Component {
 		if (!auth.isLoggedIn) {
 			window.location.replace(signin)
 		} else if (subscription_id) {
-			dispatch(subscriptionData({ subscription_id, auth, day }))
+			dispatch(subscriptionData({ subscription_id, auth, day, serverLanguageTag }))
 			dispatch(plansAction.actions.progressDay.put({
 				id: subscription_id,
 				day

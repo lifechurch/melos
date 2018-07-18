@@ -392,7 +392,7 @@
 	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "Capitol: verset",
 	"features.EventEdit.features.content.components.ContentTypeText.prompt": "Scrie ceva aici...",
 	"features.EventEdit.features.content.components.LiveWarningModal.title": "Nu se poate șterge în timpul derulării evenimentului",
-	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Odată ce evenimentul a început să se deruleze, nu poți ��terge text, referințe biblice și module de imagine din cadrul acestuia pentru că utilizatorii e posibil să fi adăugat notițe private. Totuși, poți edita aceste module.",
+	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Odată ce evenimentul a început să se deruleze, nu poți șterge text, referințe biblice și module de imagine din cadrul acestuia pentru că utilizatorii e posibil să fi adăugat notițe private. Totuși, poți edita aceste module.",
 	"features.EventEdit.features.content.components.LiveWarningModal.ok": "OK",
 	"features.EventEdit.features.details.errors.generic": "A apărut o problemă în timpul publicării evenimentului tău.",
 	"features.EventEdit.features.details.errors.invalidTimes": "Un singur serviciu nu poate dura mai mult de 12 ore și diferența dintre timpul de început cel mai devreme respectiv cel mai târziu dintr-un eveniment nu poate fi mai mare de 8 zile. Te rugăm corectează orele evenimentului și încearcă din nou.",
