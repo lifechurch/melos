@@ -1,106 +1,88 @@
-# Dutch translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: nl\n"
-"Language-Team: nl <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: nl\n"
-"Language-Team: nl <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: nl\n"
-"Language-Team: nl <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-02-06 13:15-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
-msgstr "Je hebt de medaille <b>{title}</b> verdiend"
+msgstr "Je hebt de <b>{title}</b> medaille verdiend"
 
 msgid "moment.badge.earned.title"
-msgstr "{name} heeft de medaille <b>{title}</b> verdiend"
+msgstr "{name} heeft de <b>{title}</b> medaille verdiend"
 
 msgid "moment.bible.download.self.title"
-msgstr "Je hebt de <b>{version}</b> versie gedownload."
+msgstr "Je hebt versie <b>{version}</b> gedownload"
 
 msgid "moment.bible.download.title"
-msgstr "{name} heeft de  <b>{version}</b> versie gedownload."
+msgstr "{name} heeft versie <b>{version}</b> gedownload"
 
 msgid "moment.bookmark.self.title"
-msgstr "Je hebt een Bladwijzer aangemaakt <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Je hebt een bladwijzer aangemaakt <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} heeft een bladwijzer aangemaakt <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Bereid je voor op Kerst met een Advent Bijbelplan"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Vernieuw je geloof met nieuwe Plannen."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Zoek God in Zijn Woord, elke dag."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Bereid je voor op Kerst tijdens Advent."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Vind Gods liefde in Zijn Woord."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Je beste jaar ooit start nu."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Vier de vrijheid in Christus."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Zoek God in Zijn Woord."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Vind hoop en vernieuwing in Gods Woord."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Wijd je dagelijks toe aan Zijn Woord."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Ontdek dankbaarheid in Gods beloften."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Goddelijke wijsheid begint in Gods Woord."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Gods Woord maakt alles nieuw."
 
 msgid "moment.friendship.self.title"
 msgstr "Je bent nu bevriend met <b>{friend_name}</b>"
@@ -112,31 +94,25 @@ msgid "moment.highlight.self.title"
 msgstr "Jij markeerde <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} markeerde <b>{reference_human} {version_abbreviation}</b>"
+msgstr "{name} markeerde <b>{reference_human}{version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Je hebt een Versafbeelding gemaakt voor <b>{reference_human} {version_abbreviation}</b>"
+msgid "moment.note.self.title"
+msgstr "Je maakte een notitie bij <b>{title}</b>"
 
-msgid "moment.image.title"
-msgstr "{name} heeft een Versafbeelding gemaakt voor <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Je maakte een notitie"
+msgid "moment.note.title"
+msgstr "{name} maakte een notitie bij <b>{title}</b>"
 
 msgid "moment.note.no_title_no_reference.title"
 msgstr "{name} heeft een notitie toegevoegd"
 
-msgid "moment.note.reference.self.title"
-msgstr "Je maakte een notitie bij <b>{reference_human}</b>"
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Je maakte een notitie"
 
 msgid "moment.note.reference.title"
 msgstr "{name} maakte een notitie bij <b>{reference_human}</b>"
 
-msgid "moment.note.self.title"
-msgstr "Je hebt een notitie toegevoegd, <b>{title}</b>"
-
-msgid "moment.note.title"
-msgstr "{name} heeft een notitie toegevoegd, <b>{title}</b>"
+msgid "moment.note.reference.self.title"
+msgstr "Je maakte een notitie bij <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Jij voltooide jouw Leesplan"
@@ -160,10 +136,10 @@ msgid "moment.plan_segment_completion.title"
 msgstr "{name} voltooide dag <b>{segment}</b> van Leesplan <b>{title}</b>"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Jij bent een Leesplan begonnen"
+msgstr "Jij bent een nieuw Leesplan begonnen"
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} is een Leesplan begonnen"
+msgstr "{name} is een nieuw Leesplan begonnen"
 
 msgid "moment.plan_subscription.v2.self.title"
 msgstr "Jij begon een nieuw Leesplan <b>{title}</b>"
@@ -177,17 +153,65 @@ msgstr "Kijk vanavond naar de <i>Bijbel Serie</i>!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bijbel Serie</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Deel het goede nieuws: de Redder is geboren!"
-
 msgid "moment.system.find_friends.title"
-msgstr "De Bijbel App is nog mooier met vrienden. Doorzoek jouw contacten om vrienden te vinden."
+msgstr "De Bijbel App is nog beter met vrienden. Doorzoek jouw contacten om vrienden te vinden."
 
 msgid "moment.video.watched.self.title"
-msgstr "Je hebt <b>{title}</b> bekeken"
+msgstr "Jij bekeek <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} heeft <b>{title}</b> bekeken"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Bereid je voor op Kerst met een Advent Leesplan"
+
+msgid "moment.system.bafk.title"
+msgstr "Help je kinderen om van Gods Woord te gaan houden."
+
+msgid "moment.system.christmas.title"
+msgstr "Deel het goede nieuws: de Redder is geboren!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Je beste jaar ooit start nu."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Ontdek Gods liefde in Zijn Woord."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Vind hoop en vernieuwing in Gods Woord."
+
+msgid "moment.image.self.title"
+msgstr "Je hebt een Versafbeelding gemaakt voor <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} heeft een Versafbeelding gemaakt voor <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Vernieuw je geloof met nieuwe Leesplannen."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Wijd je dagelijks toe aan Zijn Woord."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Zoek God in Zijn Woord."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Vier de vrijheid in Christus."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Zoek God in Zijn Woord, elke dag."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Gods Woord maakt alles nieuw."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Goddelijke wijsheid begint in Gods Woord."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Ontdek dankbaarheid in Gods beloften."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Bereid je voor op Kerst tijdens Advent."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} heeft gereageerd op jouw bladwijzer: “{comment}”"
@@ -196,22 +220,19 @@ msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} heeft gereageerd op jouw nieuwe vriendschap met {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship.friend"
-msgstr "{name} heeft gereageerd op je nieuwe Vriendschap: “{comment}”"
+msgstr "{name} heeft gereageerd op je nieuwe vriendschap: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} heeft gereageerd op jouw markering: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} heeft gereageerd op jouw Versafbeelding: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} heeft gereageerd op jouw notitie: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name} heeft gereageerd op jouw Leesplan “{comment}”"
+msgstr "{name} heeft gereageerd op jouw leesplan “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name} heeft gereageerd op jouw Bijbel-leesplan: “{comment}”"
+msgstr "{name} heeft gereageerd op jouw leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} heeft ook gereageerd op de bladwijzer van {moment_owner_name}: “{comment}”"
@@ -219,50 +240,44 @@ msgstr "{commenter_name} heeft ook gereageerd op de bladwijzer van {moment_owner
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} heeft ook gereageerd op de nieuwe vriendschap van {moment_owner_name} met {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} heeft ook gereageerd op de nieuwe vriendschap met {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.friendship.ours"
 msgstr "{commenter_name} heeft ook gereageerd op je nieuwe vriendschap met {moment_owner_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.their"
-msgstr "{commenter_name} heeft ook gereageerd op hun nieuwe vriendschap met {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} heeft ook gereageerd op de markering van {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} heeft ook gereageerd op {moment_owner_name}'s Versafbeelding: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} heeft ook gereageerd op de notitie van {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} heeft ook gereageerd op hun bladwijzer: “{comment}”"
+msgstr "{moment_owner_name} heeft ook gereageerd op de bladwijzer: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} heeft ook gereageerd op zijn/haar nieuwe vriendschap met  {friend_name}: “{comment}”"
+msgstr "{moment_owner_name} heeft ook gereageerd op de nieuwe vriendschap met {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
 msgstr "{moment_owner_name} heeft ook gereageerd op de nieuwe vriendschap met jou: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} heeft ook gereageerd op hun markering: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} heeft ook gereageerd op hun Versafbeelding: “{comment}”"
+msgstr "{moment_owner_name} heeft ook gereageerd op de markering: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} heeft ook gereageerd op hun notitie: “{comment}”"
+msgstr "{moment_owner_name} heeft ook gereageerd op de notitie: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} heeft ook gereageerd op het Leesplan: “{comment}”"
+msgstr "{moment_owner_name} heeft ook gereageerd op het leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} heeft ook gereageerd op het Leesplan: “{comment}”"
+msgstr "{moment_owner_name} heeft ook gereageerd op het leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} heeft ook gereageerd op het Leesplan van {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} heeft ook gereageerd op het leesplan van {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} heeft ook gereageerd op het Bijbel-leesplan van {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} heeft ook gereageerd op het leesplan van {moment_owner_name}: “{comment}”"
 
 msgid "notifications.friendships.accept"
 msgstr "{name} aanvaardt jouw vriendschapsverzoek"
@@ -273,47 +288,38 @@ msgstr "{name} is nu jouw vriend"
 msgid "notifications.friendships.offer"
 msgstr "{name} wil je vriend worden op YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "Je hebt openstaande Vriendverzoeken in de Bijbel App"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Wil je vrienden zijn met {name} op YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name} vindt jouw Bladwijzer leuk, {reference_human}"
+msgstr "{name} vindt jouw bladwijzer leuk, {reference_human}"
 
 msgid "notifications.likes.moment.mine.friendship"
 msgstr "{name} vindt jouw nieuwe vriendschap met {friend_name} leuk"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} vindt jouw Markering leuk, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} vindt je Versafbeelding leuk voor {reference_human}"
+msgstr "{name} vindt jouw markering leuk, {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} vindt jouw Notitie leuk"
+msgstr "{name} vindt jouw notitie leuk"
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} vindt jouw Notitie leuk bij {reference_human}"
+msgstr "{name} vindt jouw notitie leuk bij {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name} vindt jouw “{title}” Notitie leuk"
+msgstr "{name} vindt jouw “{title}” notitie leuk"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} vindt jouw Leesplanvoortgang leuk"
+msgstr "{name} vindt jouw leesplanvoortgang leuk"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} vindt jouw Leesplanvoortgang leuk"
+msgstr "{name} vindt jouw leesplanvoortgang leuk"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} heeft een bladwijzer aangemaakt {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} heeft een markering aangemaakt {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} heeft een Versafbeelding gecreëerd voor {reference_human} "
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} heeft een notitie toegevoegd"
@@ -325,25 +331,73 @@ msgid "notifications.moments.create.note.title"
 msgstr "{name} heeft een notitie toegevoegd, “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} heeft een Leesplan afgerond: {title}"
+msgstr "{name} heeft een leesplan afgerond: {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} heeft een Leesplan afgerond: {title}"
+msgstr "{name} heeft een leesplan afgerond: {title}"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} is een nieuw Leesplan begonnen: {title}"
+msgstr "{name} is een nieuw leesplan begonnen: {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} is een nieuw Bijbel-leesplan begonnen: {title}"
+msgstr "{name} is een nieuw leesplan begonnen: {title}"
 
 msgid "notifications.people.contact.joined"
-msgstr "{name} heeft zich aangemeld bij YouVersion. Tik om hem/haar toe te voegen als Vriend."
+msgstr "{name} heeft zich aangemeld bij YouVersion. Tik om hem/haar toe te voegen als vriend."
 
 msgid "notifications.system.test"
-msgstr "Download nu onze Kinder Bijbel App!!!"
+msgstr "Download nu onze Kinderbijbel App!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} heeft gereageerd op jouw versafbeelding: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} heeft ook gereageerd op {moment_owner_name}'s versafbeelding: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} heeft ook gereageerd op de versafbeelding: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} vindt je versafbeelding leuk voor {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} heeft een Versafbeelding gecreëerd voor {reference_human} "
+
+msgid "notifications.friendships.pending"
+msgstr "Je hebt openstaande Vriendverzoeken in de Bijbel App"
+
+msgid "notifications.votd_image"
+msgstr "Tekst van de Dag Afbeelding"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} wil samen met jou het leesplan \"{title}\" lezen."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} heeft gereageerd op dag {day} van het leesplan \"{title}.\""
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} heeft jouw uitnodiging geaccepteerd om samen het leesplan \"{title}\" te lezen."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} heeft de startdatum van het leesplan \"{title}\" veranderd naar {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} heeft gereageerd op je Medaille: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} heeft ook gereageerd op {moment_owner_name}'s Medaille: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} heeft ook gereageerd op de Medaille: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} vindt jouw {title} medaille leuk"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} ontving de {title} medaille"
 
 msgid "share.find_friends.invite_email_html"
-msgstr "<p>Hoi!</p><p>Ik gebruik de Bijbel App van YouVersion en ik wil dat met jou delen. Wanneer je niet bekend bent met de app, deze app is een eenvoudig middel om de schoonheid en de waarheid van de Bijbel elke dag te beleven. </p><p><strong>Gebruik de Bijbel App:</strong> lees, kijk, luister en deel op jouw smartfoon of tablet en online op Bible.com</p><p><strong>Maak jouw account aan:</strong> volg een Leesplan en verkrijg toegang tot jouw bladwijzers, notities en markeringen op verschillende apparaten</p><p><strong>Voeg vrienden toe (mij bijvoorbeeld!):</strong> ontdek en bespreek de Bijbel met mensen die jij goed kent</p><p>Het kan allemaal in met de Bijbel App—begin hier: </p>"
+msgstr "<p>Hoi!</p><p>Ik gebruik de Bijbel App van YouVersion en ik wil dat met jou delen. Wanneer je niet bekend bent met de app, deze app is een eenvoudig middel om de schoonheid en de waarheid van de Bijbel elke dag te beleven. </p><p><strong>Gebruik de Bijbel App:</strong> lees, kijk, luister en deel op jouw smartphone of tablet en online op Bible.com</p><p><strong>Maak jouw account aan:</strong> volg een Leesplan en verkrijg toegang tot jouw bladwijzers, notities en markeringen op verschillende apparaten</p><p><strong>Voeg vrienden toe (mij bijvoorbeeld!):</strong> ontdek en bespreek de Bijbel met mensen die jij goed kent</p><p>Het kan allemaal in met de Bijbel App—begin hier: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
@@ -351,7 +405,7 @@ msgstr ""
 "\n"
 "Ik gebruik de Bijbel App van YouVersion en ik wil dat met jou delen. Wanneer je niet bekend bent met de app, deze app is een eenvoudig middel om de schoonheid en de waarheid van de Bijbel elke dag te beleven. \n"
 "\n"
-"Gebruik de Bijbel App: lees, kijk, luister en deel op jouw smartfoon of tablet en online op Bible.com.\n"
+"Gebruik de Bijbel App: lees, kijk, luister en deel op jouw smartphone of tablet en online op Bible.com.\n"
 "\n"
 "Maak jouw account aan: volg een Leesplan en verkrijg toegang tot jouw bladwijzers, notities en markeringen op verschillende apparaten.\n"
 "\n"

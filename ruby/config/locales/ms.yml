@@ -1070,7 +1070,7 @@ ms:
     h2: "Firman Allah ada bersama anda."
     h3: "YouVersion kini Global"
     h3 sub: "Boleh didapati dalam lebih daripada %{language_count} bahasa di seluruh dunia."
-    main: "Berpuluh juta orang kini mengguna App Alkitab™ untuk  menjadikan Firman Allah sebahagian daripada kehidupan setiap hari. Muat turun app percuma dan akses bookmark, nota, dan pelan bacaan dari mana pun. Nikmati beratus versi Alkitab, termasuk audio, pada peranti mobil anda."
+    main: "Berpuluh juta orang kini mengguna App Alkitab untuk  menjadikan Firman Allah sebahagian daripada kehidupan setiap hari. Muat turun app percuma dan akses bookmark, nota, dan pelan bacaan dari mana pun. Nikmati beratus versi Alkitab, termasuk audio, pada peranti mobil anda."
     button h4: "Layari Bible.com/aplikasi <br> pada Peranti Mudah Alih anda"
     download now: "Muat turun App Alkitab Sekarang"
     what people: "Pendapat orang lain tentang app Alkitab percuma ini..."
@@ -2110,7 +2110,7 @@ ms:
     tired: "Penat"
   gdpr:
     agree to emails: "Saya bersetuju untuk membenarkan YouVersion menghantar e-mel kepada saya untuk memperdalam penglibatan saya dalam Alkitab."
-    agree to terms: "Saya bersetuju dengan <a href='/terms'>Syarat</a> dan<a href='/privacy'>Polisi Privasi</a> YouVersion."
+    agree to terms: "I agree to YouVersion’s <a href='/terms'>Terms</a> and <a href='/privacy'>Privacy Policy</a>."
     continue: "Teruskan"
     terms summary:
       p1: "Berikut adalah ringkasan Polisi Privasi dan Syarat Penggunaan kami, yang meliputi semua produk dan perkhidmatan YouVersion:"
@@ -2125,4 +2125,4 @@ ms:
       h4: "Ia adalah pengalaman anda."
       p7: "Polisi kami menjelaskan hak anda semasa menggunakan YouVersion, termasuk mengakses, berkongsi, mengubah, dan menghapuskan data peribadi anda. Kami juga menerangkan teknologi pengumpulan data dan cara proses ini membantu Komuniti YouVersion untuk berhubungan sepenuhnya dengan Alkitab."
     data: "Data"
-    download blurb: "Anda boleh memuat turun salinan data peribadi yang telah anda berikan kepada kami, seperti nama, bio, lokasi, dan alamat laman web anda serta maklumat asas berkenaan Kawan YouVersion anda. Muat turun data ini tidak termasuk maklumat aktiviti Alkitab anda seperti Highlight, Nota, Imej Ayat anda, dsb., yang dapat anda lihat secara langsung dalam aplikasi. YouVersion ialah pelayanan bukan untung. Ini kerana tumpuan kami bersifat misi, kami tidak menjana duit, menjual data, atau meletakkan iklan dalam produk YouVersion. Sila rujuk Polisi Privasi dan Syarat Penggunaan kami untuk maklumat lanjut tentang data yang kami kumpul dan sebabnya, dan cara kami menggunakan serta melindungi data tersebut. Sila ambil perhatian bahawa memuat turun data ini tidak menghapuskannya daripada pelayan YouVersion. Sekiranya anda ingin memohon agar maklumat anda dihapuskan, sila layari help.youversion.com. Akan tetapi, ingatlah bahawa penghapusan data tertentu akan menghalang dan/atau mengeluarkan kefungsian YouVersion tertentu sebagaimana yang diterangkan lebih lanjut lagi dalam Polisi Privasi kami."
+    download blurb: "You may download a copy of the personal data that you have provided to us, such as your name, bio, location, and website address as well as basic information regarding your YouVersion Friends. This data download will not include Bible activity information such as your Highlights, Notes, Verse Images, etc., which you can view directly within the app. YouVersion is a non-profit ministry. Because our focus is missional, we do not monetize, sell data, or place third-party advertising inside of YouVersion products. Please refer to our Privacy Policy and Terms of Use for more details as to the data we collect and why, and how we use and protect that data.  Please note that downloading data does not delete it from YouVersion servers. If you would like to request that your information be deleted, please visit help.youversion.com. Please be aware, however, that deleting certain data will prohibit and/or eliminate certain YouVersion functionality as further described in our Privacy Policy."

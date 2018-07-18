@@ -4,7 +4,7 @@
 - related = presenter.related
 
 .widget-button
-  = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: version)), class: 'action_button_blue'
+  = link_to t("versions.read title"), bible_path((@returnTo || last_read || default_reference).merge(version: version)), class: 'action_button_blue'
 
 - if version.publisher.name.present? || version.publisher.id.blank?
   - pub_name = version.publisher.name || t('versions.public domain')

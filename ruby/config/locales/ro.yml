@@ -504,7 +504,7 @@ ro:
       accept button: "Accept"
       accept request button: "Acceptă cererea"
       ignore button: "Refuză"
-      ignore request button: "Refuză solicitarea"
+      ignore request button: "Refuză cererea"
   images:
     none user: "%{username} nu a creat încă imagini."
     blank slate:
@@ -1106,7 +1106,7 @@ ro:
     h2: "Ai Scriptura mereu la tine."
     h3: "YouVersion este global"
     h3 sub: "Disponibilă în peste %{language_count} limbi la nivel mondial."
-    main: "Zeci de milioane de oameni folosesc Aplicația Biblia™ pentru a petrece timp cu Cuvântul Lui Dumnezeu. Descarcă aplicațiile gratuite și accesează-ți marcajele, notițele și planurile de citire oriunde te afli. Bucură-te de sute de versiuni, inclusiv audio, pe toate dispozitivele tale mobile."
+    main: "Zeci de milioane de oameni folosesc Aplicația Biblia pentru a petrece zilnic timp în Cuvântul lui Dumnezeu. Descarcă aplicațiile gratuite și accesează-ți marcajele, notițele și planurile de citire oriunde te afli. Bucură-te de sute de versiuni, inclusiv audio, pe toate dispozitivele tale mobile."
     button h4: "Accesează Bible.com/app<br>pe dispozitivul tău mobil"
     download now: "Descarcă Aplicația Biblia acum"
     what people: "Ce spun oamenii despre Aplicația Biblia gratuită..."

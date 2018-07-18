@@ -185,8 +185,8 @@ my:
   my notifications: "အသိပေးချက်ပြင်ဆင်ရန်"
   my devices: "ချိတ်ဆက်ထားသောကိရိယာ"
   language name: "မြန်မာ"
-  sign in: "အကောင့်ထဲဝင်ရန်"
-  sign up: "အကောင့်ဖွင့်ရန်"
+  sign in: "အကောင့်<br />ဝင်ရန်"
+  sign up: "အကောင့်<br />ဖွင့်ရန်"
   have an account: "အကောင့်ရှိထားပြီလား။"
   no account: "အကောင့်မရှိသေးသလား။"
   successful sign-in: "%{user} ဖြင့်အကောင့်ထဲဝင်ပါ။"
@@ -573,7 +573,7 @@ my:
     mobile: "မိုဘိုင်း"
     facebook sign up success: "ကောင်းလေစွ၊ သင်သည် ဖေ့စ်ဘွတ်မှတစ်ဆင့်ချိတ်ဆက်ခွင့်ရပြီ။ ဆက်လက်၍ YouVersion တွင် အသုံးပြုသူအမည်နှင့်စကားဝှက်ကိုရွေချယ်ပါ။"
     register: "မှတ်ပုံတင်ရန်"
-    sign up: "အကောင့်ဖွင့်ရန်"
+    sign up: "အကောင့်<br />ဖွင့်ရန်"
     sign up google: "ဂူဂယ်ဖြင့် အကောင်းဖွင့်ရန်"
     continue google: "Google ဖြင့်ဆက်ဖွင့်မည်"
     sign up facebook: "ဖေ့စ်ဘွတ်ဖြင့်အကောင့်ဖွင့်ရန်"
@@ -1025,8 +1025,8 @@ my:
     banner action: "ဒေါင်းလုပ်"
     banner open: "ဖွင့်ရန်"
   download bafk ad:
-    title: "ကလေးများအတွက် Bible App ကို ဒေါင်းလုပ်ဆွဲရန်"
-    description copy: "ကလေးများအတွက် Bible App သည် ယေရှုအကြောင်း ကျမ်းစာပုံပြင်များကို သင့်ကလေးများ သင်ယူရန် ကြီးမားသည့်နည်းလမ်းတစ်ခု ဖြစ်ပါသည်။."
+    title: "Bible App for Kids ကို ဒေါင်းလုပ်ဆွဲရန်"
+    description copy: "Bible App for Kids သည် ယေရှုအကြောင်း ကျမ်းစာပုံပြင်များကို သင့်ကလေးများ သင်ယူရန် ကြီးမားသည့်နည်းလမ်းတစ်ခု ဖြစ်ပါသည်။."
     download: "ယခုဒေါင်းလုပ်ဆွဲမည်။"
   about page:
     relevancy: "ဆီလျော်မှု"
@@ -1330,7 +1330,7 @@ my:
       settings: "ချိန်ညှိချက်"
       search placeholder: "ရှာဖွေဆဲ..."
       sign in: "အကောင့်သို့ဝင်ရန်"
-      sign up: "အကောင့်ဖွင့်ရန်"
+      sign up: "အကောင့်<br />ဖွင့်ရန်"
     profile menu:
       bookmarks: "မှတ်သားချက်"
       highlights: "အရောင်မှတ်ချက်"
@@ -1871,7 +1871,7 @@ my:
             signIn: "အစီအစဉ်ကိုသိမ်းဆည်းနိုင်ရန် အကောင့်သို့ဝင်ပါ"
             saved: "အစီအစဉ်ကိုသိမ်းဆည်းပြီ"
     Auth:
-      sign up: "အကောင့်ဖွင့်ရန်"
+      sign up: "အကောင့်<br />ဖွင့်ရန်"
       sign in: "အကောင့်သို့ဝင်ရန်"
       sign up google: "ဂူဂယ်ဖြင့် အကောင်းဖွင့်ရန်"
       continue google: "Google ဖြင့်ဆက်ဖွင့်မည်"

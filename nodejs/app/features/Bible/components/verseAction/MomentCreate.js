@@ -150,10 +150,10 @@ class MomentCreate extends Component {
 			contentDiv = (
 				<div className='sign-in-required'>
 					<Card>
-						<div className='heading'><FormattedMessage id='Auth.sign in' /></div>
+						<div className='heading'><FormattedHTMLMessage id='Auth.sign in' /></div>
 						<div className='body'>{ message }</div>
 						<div className='buttons'>
-							<a href='/sign-up' className='solid-button green full'><FormattedMessage id='Auth.sign up' /></a>
+							<a href='/sign-up' className='solid-button green full'><FormattedHTMLMessage id='Auth.sign up' /></a>
 							<div className='alt-path terms'><FormattedHTMLMessage id='Auth.sign up alternate' values={{ sign_in_path: '/sign-in' }} /></div>
 						</div>
 					</Card>

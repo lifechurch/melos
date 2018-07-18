@@ -72,11 +72,24 @@ class PagesController < ApplicationController
 
     @vodRef = Reference.new(@vodImage.usfm, version: version_id)
 
+    # First Attempt
     begin
       @vodContent = @vodRef.content(as: :plaintext)
     rescue NotAChapterError
-      @vodRef = Reference.new(VOD.alternate_votd(Date.today.mday), version: version_id)
-      @vodContent = @vodRef.content(as: :plaintext)
+      # Second Attempt
+      begin
+        @vodRef = Reference.new(VOD.alternate_votd(Date.today.mday), version: version_id)
+        @vodContent = @vodRef.content(as: :plaintext)
+      rescue NotAChapterError
+        # Third Attempt
+        begin
+          @vodRef = Reference.new(VOD.third_alternate_votd(Date.today.mday), version: version_id)
+          @vodContent = @vodRef.content(as: :plaintext)
+        rescue NotAChapterError
+          @vodRef = nil
+          @vodContent = nil
+        end
+      end
     end
   end
 
@@ -207,7 +220,46 @@ class PagesController < ApplicationController
   def i18n_terms_whitelist
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
-    [ :da, :en, :"en-GB", :it ]
+    [
+      :af,
+      :ar,
+      :bg,
+      :ca,
+      :cs,
+      :da,
+      :de,
+      :el,
+      :en,
+      :"en-GB",
+      :es,
+      :"es-ES",
+      :fi,
+      :fr,
+      :he,
+      :hu,
+      :id,
+      :it,
+      :km,
+      :ko,
+      :lv,
+      :mk,
+      :mn,
+      :ms,
+      :nl,
+      :pl,
+      :pt,
+      :"pt-PT",
+      :ro,
+      :ru,
+      :sk,
+      :sv,
+      :tl,
+      :tr,
+      :uk,
+      :vi,
+      :"zh-CN",
+      :"zh-TW"
+    ]
   end
 
   def donate

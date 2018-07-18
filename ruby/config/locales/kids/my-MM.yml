@@ -23,7 +23,7 @@ myz:
     feature 4: "ေဆာ့ကစားျခင္းႏွင့္ ပါဝင္လႈပ္ရွားမႈမ်ားက ကေလးမ်ားသည္ သူတို႔သင္ထားေသာ သင္ခန္းစာကို မွတ္မိေစသည္။"
     feature 5: "ကေလးမ်ားအတြက္ လုံျခဳံေသာအစီအစဥ္"
     share:
-      tell friends: "ကေလးမ်ားအတြက္ Bible App အေၾကာင္းကို သင့္မိတ္ေဆြမ်ားအား ေျပာျပပါ။"
+      tell friends: "Bible App for Kids အေၾကာင္းကို သင့္မိတ္ေဆြမ်ားအား ေျပာျပပါ။"
       facebook name: "ကေလးမ်ားအတြက္ က်မ္းစာ App"
       facebook description: "Bible App for Kids ဒီမွာရွိတယ္။ iOS ႏွင့္ Android တို႔အတြက္ ယခု အခမဲ့ ရယူပါ။ က်မ္းစာပုံျပင္မ်ားႏွင့္ အျပန္အလွန္ တုန႔္ျပန္ျခင္းျဖင့္ သင့္ကေလးငယ္မ်ားအား ေပ်ာ္ေပ်ာ္ေဆာ့ရင္း ႏႈတ္ကပတ္ေတာ္ သင္ယူေစ၍ ႀကီးထြားေစပါ။ www.bible.com/kids"
       facebook link: "http://www.bible.com/kids"
@@ -44,5 +44,5 @@ myz:
   meta:
     best kids app: "ကေလးအတြက္ အေကာင္းဆုံးအက္ပ္"
     kids_app:
-      title: "ကေလးမ်ားအတြက္ က်မ္းစာ App"
-      description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+      title: "The Bible App for Kids"
+      description: "Bible App for Kids သည္သင္၏ကေလးမ်ားသခင္ေယရွုႏွင့္ပတ္သက္သည့္ပုံျပင္မ်ား၊ ထာဝရအသက္ဆုေက်းဇူးႏွင့္အျခားမ်ားစြာေသာဘုရားသခင္သြန္သင္သည့္က်မ္းစာပုံျပင္မ်ားကိုသင္ယူနိုင္ဖို႔ရန္အတြက္အေကာင္းဆုံးအရာျဖစ္ပါသည္။ ဤအျပန္အလွည္အေတြ႕အၾကဳံအားျဖင့္ကေလးမ်ားသည္စိတ္ၾကည္ႏွုးဖြယ္ရာ႐ုပ္ျပမ်ားအားျဖင့္ဘုရားသခင္၏ႏွုတ္ကပတ္ေတာ္ႏွင့္တိုက္ရိုက္ထိေတြ႕နိုင္မည္ျဖစ္ၿပီး တစ္ခ်ိန္တည္းတြင္ဖတ္ရွုျခင္းႏွင့္ရတနာမ်ားရွာေဖြစုေဆာင္းျခင္းတို႔အားျဖင့္လည္းအမွတ္မ်ားရယူျခင္းတို႔လုပ္ေဆာင္နိုင္ပါမည္။"

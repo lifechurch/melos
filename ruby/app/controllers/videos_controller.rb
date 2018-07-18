@@ -2,7 +2,7 @@ class VideosController < ApplicationController
 
   include YV::Concerns::Exceptions
   respond_to :html
-  prepend_before_filter :mobile_redirect, only: [:index, :show, :series] 
+  prepend_before_filter :mobile_redirect, only: [:index, :show, :series]
   before_filter :check_locale
   before_filter -> { set_cache_headers 'short' }, only: [:index, :series]
   before_filter -> { set_cache_headers 'long' }, only: [:show, :publisher]
@@ -10,7 +10,9 @@ class VideosController < ApplicationController
   rescue_from YV::ResourceError, with: :resource_error
 
   def index
-    @videos = Video.search("*",language_tag: I18n.locale.to_s)
+    video_locale = I18n.locale.to_s if Video.available_locales.include? I18n.locale
+    video_locale = I18n.locale.to_s.split('-')[0] if video_locale.nil? and Video.available_locales.include? I18n.locale.to_s.split('-')[0].to_sym
+    @videos = Video.search("*",language_tag: video_locale)
     respond_with(@videos)
   end
 
@@ -39,7 +41,7 @@ class VideosController < ApplicationController
   private
 
   def check_locale
-    unless Video.available_locales.include? I18n.locale or Video.available_locales.include? I18n.locale.split('_')[0]
+    unless Video.available_locales.include? I18n.locale or Video.available_locales.include? I18n.locale.to_s.split('-')[0].to_sym
       render_404
     end
   end

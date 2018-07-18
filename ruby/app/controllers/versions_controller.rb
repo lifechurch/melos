@@ -44,6 +44,12 @@ class VersionsController < ApplicationController
         @version = Version.find(params[:id])
         @related = Version.all_by_publisher[@version.publisher_id].find_all{|v| v.language.tag == @version.language.tag}
         @related = @related - [@version] if @related
+
+        if params[:returnTo].present?
+          reference_parts = params[:returnTo].split(".")
+          @returnTo = Reference.new(book: reference_parts[0], chapter: reference_parts[1], version: params[:id])
+        end
+
         self.sidebar_presenter = Presenter::Sidebar::Version.new(@version,params,self)
         return
       }

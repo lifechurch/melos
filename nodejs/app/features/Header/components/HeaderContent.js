@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import friendshipsAction from '@youversion/api-redux/lib/endpoints/friendships/action'
 import notificationsAction from '@youversion/api-redux/lib/endpoints/notifications/action'
 import usersAction from '@youversion/api-redux/lib/endpoints/users/action'
@@ -196,8 +196,8 @@ class HeaderContent extends Component {
 
 		const signUpButtons = !isLoggedIn && (
 			<ButtonGroup buttonWidth={100}>
-				<Button to={localizedLink('/sign-in')} useClientRouting={false}><FormattedMessage id="header.sign in" /></Button>
-				<Button to={localizedLink('/sign-up')} useClientRouting={false}><FormattedMessage id="header.sign up" /></Button>
+				<Button to={localizedLink('/sign-in')} useClientRouting={false}><FormattedHTMLMessage id="header.sign in" /></Button>
+				<Button to={localizedLink('/sign-up')} useClientRouting={false}><FormattedHTMLMessage id="header.sign up" /></Button>
 			</ButtonGroup>
 		)
 

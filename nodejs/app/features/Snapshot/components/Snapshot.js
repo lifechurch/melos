@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { getUserById } from '@youversion/api-redux/lib/endpoints/users/reducer'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 import ShareSheet from '../../../widgets/ShareSheet/ShareSheet'
 import shareAction from '../../../widgets/ShareSheet/action'
@@ -50,12 +50,12 @@ class Snapshot extends Component {
 					<ul>
 						<li>
 							<a href={localizedLink('/sign-in?redirect=/snapshot')}>
-								<FormattedMessage id="header.sign in" />
+								<FormattedHTMLMessage id="header.sign in" />
 							</a>
 						</li>
 						<li>
 							<a href={localizedLink('/sign-up')}>
-								<FormattedMessage id="header.sign up" />
+								<FormattedHTMLMessage id="header.sign up" />
 							</a>
 						</li>
 					</ul>

@@ -9,7 +9,7 @@ my:
     app store: "App store ၌ ရရှိနိုင်သည်။"
     google play: "Google Play တွင် ယူနိုင်သည်။"
     amazon: "Android အတွက် Amazon Appstore တွင် ရှိနိုင်သည်။"
-    app icon: "ကလေးများအတွက် Bible App သင်္ကေတ"
+    app icon: "Bible App for Kids သင်္ကေတ"
     jesus and friends: "ယေရှုနှင့် သူ့မိတ်ဆွေများ"
     interact text: "ကျမ်းစာနှင့် အပြန်အလှန်တုန့်ပြန်ပါ။ ပြီးနောက် သင့်အသက်တာအတွက် အကျိုးကို မြော်လင့်ပါ။"
     story text 1: "အေဒင် ဥယျာဉ်"
@@ -44,5 +44,5 @@ my:
   meta:
     best kids app: "ကလေးအတွက် အကောင်းဆုံးအက်ပ်"
     kids_app:
-      title: "ကလေးများအတွက် ကျမ်းစာ App"
-      description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+      title: "The Bible App for Kids"
+      description: "Bible App for Kids သည်သင်၏ကလေးများသခင်ယေရှုနှင့်ပတ်သက်သည့်ပုံပြင်များ၊ ထာဝရအသက်ဆုကျေးဇူးနှင့်အခြားများစွာသောဘုရားသခင်သွန်သင်သည့်ကျမ်းစာပုံပြင်များကိုသင်ယူနိုင်ဖို့ရန်အတွက်အကောင်းဆုံးအရာဖြစ်ပါသည်။ ဤအပြန်အလှည်အတွေ့အကြုံအားဖြင့်ကလေးများသည်စိတ်ကြည်နှုးဖွယ်ရာရုပ်ပြများအားဖြင့်ဘုရားသခင်၏နှုတ်ကပတ်တော်နှင့်တိုက်ရိုက်ထိတွေ့နိုင်မည်ဖြစ်ပြီး တစ်ချိန်တည်းတွင်ဖတ်ရှုခြင်းနှင့်ရတနာများရှာဖွေစုဆောင်းခြင်းတို့အားဖြင့်လည်းအမှတ်များရယူခြင်းတို့လုပ်ဆောင်နိုင်ပါမည်။"

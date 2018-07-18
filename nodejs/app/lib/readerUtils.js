@@ -147,7 +147,7 @@ export function buildMeta(props) {
 	return { link, meta }
 }
 
-export function buildCopyright(formatMessage, version) {
+export function buildCopyright(formatMessage, version, reference) {
 	let content = ''
 	const {
 		reader_footer,
@@ -167,7 +167,7 @@ export function buildCopyright(formatMessage, version) {
 	/* eslint-disable react/no-danger */
 	return {
 		content: (<div dangerouslySetInnerHTML={{ __html: content }} />),
-		link: (reader_footer_url) || `/versions/${version.id}`,
+		link: (reader_footer_url) || `/versions/${version.id}?returnTo=${(reference && reference.usfm && reference.usfm) || 'JHN.1'}`,
 		openInNewTab: !!reader_footer_url
 	}
 	/* eslint-enable react/no-danger */

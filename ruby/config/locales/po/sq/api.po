@@ -1,49 +1,70 @@
-# Albanian translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:19-0609\n"
-"PO-Revision-Date: 2017-01-03 11:19-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: sq\n"
-"Language-Team: sq <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Albanian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: sq\n"
-"Language-Team: sq <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: sq\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Albanian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: sq\n"
-"Language-Team: sq <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: sq\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Albanian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: sq\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: sq\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Ju fituat emblemën <b>{title}</b>"
@@ -63,45 +84,6 @@ msgstr "Ju shënuat <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} shënoi <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Bëhu gati për Krishtlindjen me një plan leximi për Ardhjen"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Fresko besimin tënd me plane të reja."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Kërko Perëndinë në Fjalën e Tij çdo ditë."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Përgatit zemrën tënde këtë stinë."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Gjej dashurinë e Perëndisë në Fjalën e Tij."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Viti yt më i mirë fillon tani."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Festo Liri në Krishtin."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Kërko Perëndinë në Fjalën e Tij."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Gjej shpresë dhe përtëritje në Fjalën e Perëndisë."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Përkushtoju çdo ditë Fjalës së Tij."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Zbulo mirënjohjen në premtimet e Perëndisë."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Urtësia e perëndishme fillon në Fjalën e Perëndisë."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Fjala e Perëndisë e bën çdo gjë të re."
-
 msgid "moment.friendship.self.title"
 msgstr "Ju jeni tani mik me <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "Ju theksuat <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} theksoi <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Ju krijuat një figurë me varg për <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} krijoi një figurë me varg për <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Ju shtuat një shënim"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} shtoi një shënim"
-
-msgid "moment.note.reference.self.title"
-msgstr "Ju shtuat një shënim për <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} shtoi një shënim për <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Ju shtuat një shënim, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} shtoi një shënim, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} shtoi një shënim"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Ju shtuat një shënim"
+
+msgid "moment.note.reference.title"
+msgstr "{name} shtoi një shënim për <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Ju shtuat një shënim për <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Ju e përfunduat planin tuaj"
@@ -177,9 +153,6 @@ msgstr "Shikoni sonte <i>Serinë e Biblës</i>!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Seria e Biblës</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Shpërndaje lajmin e mirë: Shpëtimtari ka lindur!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Programi i Biblës është akoma më i mirë bashkë me miq. Kërkoni kontaktet tuaja për të gjetur miq."
 
@@ -188,6 +161,57 @@ msgstr "Ju shikuat <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} shikoi <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Bëhu gati për Krishtlindjen me një plan leximi për Ardhjen"
+
+msgid "moment.system.bafk.title"
+msgstr "Ndihmoji fëmijët e tu të bien në dashuri me Fjalën e Perëndisë."
+
+msgid "moment.system.christmas.title"
+msgstr "Shpërndaje lajmin e mirë: Shpëtimtari ka lindur!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Viti yt më i mirë fillon tani."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Gjej dashurinë e Perëndisë në Fjalën e Tij."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Gjej shpresë dhe përtëritje në Fjalën e Perëndisë."
+
+msgid "moment.image.self.title"
+msgstr "Ju krijuat një figurë me varg për <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} krijoi një figurë me varg për <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Fresko besimin tënd me plane të reja."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Përkushtoju çdo ditë Fjalës së Tij."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Kërko Perëndinë në Fjalën e Tij."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Festo Liri në Krishtin."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Kërko Perëndinë në Fjalën e Tij çdo ditë."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Fjala e Perëndisë e bën çdo gjë të re."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Urtësia e perëndishme fillon në Fjalën e Perëndisë."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Zbulo mirënjohjen në premtimet e Perëndisë."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Përgatit zemrën tënde këtë stinë."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} komentoi te shenjuesi juaj: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name} komentoi për miqësinë tuaj të re: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} komentoi te theksimi juaj: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} komentoi te figura tënde me varg: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} komentoi te shënimi juaj: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name} komentoi gjithashtu te shenjuesi i {moment_owner_name}:
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} komentoi gjithashtu rreth miqësisë së re të {moment_owner_name} me {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
+msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "Edhe {commenter_name} komentoi për miqësinë tuaj të re me {moment_owner_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.their"
+msgid "notifications.comments.moments.friend.friendship.ours"
 msgstr "Edhe {commenter_name} komentoi për miqësinë tuaj të re me {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} komentoi gjithashtu te theksimi i {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "Edhe {commenter_name} komentoi te figura me varg nga {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} komentoi gjithashtu te shënimi i {moment_owner_name}: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "Edhe {moment_owner_name} komentoi për miqësinë tuaj të re me ty: “
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} komentoi gjithashtu te theksimi i tij/saj: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "Edhe {moment_owner_name} komentoi te figura me varg: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} komentoi gjithashtu te shënimi i tij/saj: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} është tani miku juaj"
 msgid "notifications.friendships.offer"
 msgstr "{name} dëshiron të jetë miku juaj në YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "Ju keni kërkesa miqësie në pritje në Programi i Biblës"
-
 msgid "notifications.friendships.suggestion"
 msgstr "A dëshironi të jeni mik me {name} në YouVersion?"
 
@@ -287,9 +299,6 @@ msgstr "{name} e pëlqeu miqësinë tuaj të re me {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} e pëlqen theksimin tuaj, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} e pëlqen figurën tënde me varg për {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} e pëlqen shënimin tuaj"
@@ -311,9 +320,6 @@ msgstr "{name} shënoi {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} theksoi {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} krijoi një figurë me varg për {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} shtoi një shënim"
@@ -341,6 +347,54 @@ msgstr "{name} sapo u regjistrua në YouVersion. Kliko për ta shtuar si mik."
 
 msgid "notifications.system.test"
 msgstr "Shkarko Programin e Biblës për Fëmijë tani!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} komentoi te figura tënde me varg: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "Edhe {commenter_name} komentoi te figura me varg nga {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "Edhe {moment_owner_name} komentoi te figura me varg: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} e pëlqen figurën tënde me varg për {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} krijoi një figurë me varg për {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Ju keni kërkesa miqësie në pritje në Programi i Biblës"
+
+msgid "notifications.votd_image"
+msgstr "Figura e Vargut të Ditës"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} dëshiron të lexojë me ty Planin, “{title}”."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} komentoi te Dita {day} e Planit, “{title}.”"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} e pranoi ftesën tuaj për të lexuar me ty Planin, “{title}”."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} ndryshoi ditën e fillimit të Planit, “{title}” në {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} komentoi tek emblema tënde: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} komentoi gjithashtu tek emblema nga {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} komentoi gjithashtu tek emblema e vet: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} e pëlqen emblemën tuaj {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} mori emblemën {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Përshëndetje!</p><p>Jam duke përdorur Programin e Biblës nag YouVersion dhe doja ta ndaja atë me ty. Nëse nuk ke dëgjuar për këtë program, është një mënyrë e thjeshtë për të sjellë bukurinë dhe të vërtetën e Biblës ne jetën e përditshme. </p><p><strong>Zotëro Programin e biblës:</strong> lexo, shiko, dëgjo dhe ndaj në telefonin dhe tabletin tuaj si dhe në internet në Bible.com</p><p><strong>Cakto llogarinë tënde:</strong> pajtohu në planet e Biblës dhe mundëso shenjues, theksime dhe shënime në çdo pajisje</p><p><strong>Shto miq (si mua!):</strong> eksploro dhe diskuto rreth Biblës me njerëz për të cilët kujdesesh</p><p>Është e gjithë kjo në Programi i Biblës—fillo këtu: </p>"

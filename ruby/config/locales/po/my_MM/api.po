@@ -1,0 +1,429 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-05-10 18:17-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Burmese (Zawgyi)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: qz_MM\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: myz\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-05-10 18:17-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Burmese (Zawgyi)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: qz_MM\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: myz\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-05-10 18:17-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Burmese (Zawgyi)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: qz_MM\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: myz\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "သင္သည္ <b>{title}</b> ဆုတံဆိပ္ကိုရခဲ့သည္။"
+
+msgid "moment.badge.earned.title"
+msgstr "{name}သည္ <b>{title}</b> ဆုတံဆိပ္ကိုရခဲ့သည္။"
+
+msgid "moment.bible.download.self.title"
+msgstr "<b>{version}</b>ဗားရွင္းကို သင္ေဒါင္းလုပ္လုပ္ခဲ့သည္။"
+
+msgid "moment.bible.download.title"
+msgstr "{name}သည္ <b>{version}</b>ဗားရွင္းကို ေဒါင္းလုပ္လုပ္ခဲ့သည္။"
+
+msgid "moment.bookmark.self.title"
+msgstr "သင္သည္ <b>{reference_human}{version_abbreviation}</b> ကို မွတ္သားထားခဲ့သည္။"
+
+msgid "moment.bookmark.title"
+msgstr "{name} သည္ <b>{reference_human}{version_abbreviation}</b> ကို မွတ္သားထားခဲ့သည္။"
+
+msgid "moment.friendship.self.title"
+msgstr "<b>ယခု သင္သည္</b>{friend_name} ႏွင့္မိတ္ေဆြျဖစ္ပါၿပီ။"
+
+msgid "moment.friendship.title"
+msgstr "ယခု{user_name}သည္ <b>{friend_name}</b>ႏွင့္မိတ္ေဆြျဖစ္ပါၿပီ။"
+
+msgid "moment.highlight.self.title"
+msgstr "သင္သည္ <b>{reference_human}{version_abbreviation}</b> ကို အေရာင္မွတ္ထားခဲ့သည္။"
+
+msgid "moment.highlight.title"
+msgstr "{name} သည္ <b>{reference_human}{version_abbreviation}</b> ကို အေရာင္မွတ္ထားခဲ့သည္။"
+
+msgid "moment.note.self.title"
+msgstr "<b>{title}</b>ဟူေသာမွတ္စုကို သင္ေရးခဲ့သည္။"
+
+msgid "moment.note.title"
+msgstr "{name} သည္ <b>{title}</b> တြင္ မွတ္စုေရးခဲ့သည္။"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} သည္ မွတ္စုကို ေရးခဲ့သည္။"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "မွတ္စုကို သင္ေရးခဲ့သည္"
+
+msgid "moment.note.reference.title"
+msgstr "{name} သည္ <b>{reference_human}</b> ႏွင့္ပတ္သက္သည့္မွတ္စုကို ေရးခဲ့သည္။"
+
+msgid "moment.note.reference.self.title"
+msgstr "<b>{reference_human}</b> ႏွင့္ပတ္သက္သည့္ မွတ္စုကို သင္ေရးခဲ့သည္။"
+
+msgid "moment.plan_completion.self.title"
+msgstr "သင့္အစီအစဥ္ကို ဖတ္ၿပီးပါၿပီ။"
+
+msgid "moment.plan_completion.title"
+msgstr "{name}သည္ အစီအစဥ္ကို ဖတ္ၿပီးပါၿပီ။"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "သင္သည္ <b>{title}</b> အစီအစဥ္ကို ဖတ္ၿပီးပါၿပီ။"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} သည္ <b>{title}</b> အစီအစဥ္ကို ဖတ္ၿပီးပါၿပီ။"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "{total_segments}ထဲမွ{segment}ေျမာက္ေသာေန႔။ ({percent_complete}ရာႏႈန္း)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "<b>သင္သည္ {title}</b> အစီအစဥ္တြင္ <b>{segment}</b> ရက္စာကို ဖတ္ၿပီးပါၿပီ။"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} သည္ <b>{title}</b> အစီအစဥ္တြင္ <b>{segment}</b> ရက္စာကို ဖတ္ၿပီးပါၿပီ။"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "သင္သည္ အစီအစဥ္အသက္ကိုစတင္ၿပီ။"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name}သည္ အစီအစဥ္အသစ္ကိုစတင္ခဲ့သည္။"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "သင္သည္ <b>{title}</b>အစီအစဥ္အသက္ကိုစတင္ခဲ့ၿပီ။"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}သည္ <b>{title}</b>အစီအစဥ္အသစ္ကိုစတင္ခဲ့ၿပီ။"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr " ယေန႔ည<i>က်မ္းစာဇာတ္လမ္းတြဲ</i>ကိုၾကည့္ရႈပါ။ "
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>က်မ္းစာစာစဥ္မ်ား</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "က်မ္းစာအက္ပ္ကို မိတ္ေဆြတို႔ႏွင့္ဆင္ႏႊဲမွ ပို၍ေကာင္းသည္။ သင္၏အဆက္အသြယ္ကိုၾကည့္ၿပီး သင့္မိတ္ေဆြကိုရွာပါ။"
+
+msgid "moment.video.watched.self.title"
+msgstr "သင္သည္ <b>{title}</b>ကို ၾကည့္ရႈခဲ့သည္။"
+
+msgid "moment.video.watched.title"
+msgstr "{name}သည္ <b>{title}</b>ကိုၾကည့္ရႈခဲ့သည္။"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "ခရစၥမတ္မတိုင္မီ ၄ ပတ္ကာလ၏က်မ္းစာအစီအစဥ္ျဖင့္ ခရစၥမတ္အတြက္ျပင္ဆင္ပါ။"
+
+msgid "moment.system.bafk.title"
+msgstr "သင္၏သားသမီးတို႔သည္ ဘုရားသခင္၏ႏႈတ္ကပတ္ေတာ္ကိုခုံမင္ႏွစ္သက္ၾကရန္ ကူညီပါ။"
+
+msgid "moment.system.christmas.title"
+msgstr "ဝမ္းေျမာက္ဖြယ္သတင္းကိုမၽွေဝပါ - ကယ္တင္ရွင္သည္ဖြားျမင္ေတာ္မူၿပီ။"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "သင့္အတြက္အေကာင္းဆုံးႏွစ္သည္ ယခုပင္စတင္ေတာ့မည္။"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "ဘုရားသခင္၏ႏႈတ္ကပတ္ေတာ္၌ ကိုယ္ေတာ္၏ခ်စ္ျခင္းေမတၱာကိုရွာပါ။"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "ဘုရားသခင္၏ႏႈတ္ကပတ္ေတာ္၌ ေမၽွာ္လင့္ျခင္းႏွင့္အားသစ္ေလာင္းျခင္းတို႔ကိုေတြ႕ရွိခံစားပါ။"
+
+msgid "moment.image.self.title"
+msgstr "သင္သည္ <b>{reference_human}{version_abbreviation}</b> ၏က်မ္းပိုဒ္ပါဓာတ္ပုံကို ဖန္တီးခဲ့သည္"
+
+msgid "moment.image.title"
+msgstr "{name} သည္ <b>{reference_human}{version_abbreviation}</b> ၏က်မ္းပိုဒ္ပါဓာတ္ပုံကို ဖန္တီးခဲ့သည္။"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "အစီအစဥ္အသစ္ျဖင့္ သင္၏ယုံၾကည္ျခင္းကိုသစ္လြင္လန္းဆန္းေစပါ။"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "ကိုယ္ေတာ္၏ႏႈတ္ကပတ္ေတာ္တြင္ သင့္ကိုယ္သင္ေန႔စဥ္ျမႇုပ္ႏွံပါ။"
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "ဘုရားသခင္ကို ကိုယ္ေတာ္၏ႏႈတ္ကပတ္ေတာ္၌ရွာပါ။"
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "ခရစ္ေတာ္၌ရွိေသာလႊတ္လပ္မႈကိုက်င္းပပါ။"
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "ဘုရားသခင္၏ႏႈတ္ကပတ္ေတာ္၌ ကိုယ္ေတာ္ကိုေန႔စဥ္ရွာပါ။"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "ဘုရားသခင္၏ႏႈတ္ကပတ္ေတာ္သည္ ခပ္သိမ္းေသာအရာတို႔ကိုအသစ္ျဖစ္ေစသည္။"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "ဘုရားသခင္ႏွင့္ဆက္စပ္သည့္ဉာဏ္ပညာသည္ ဘုရားသခင္၏ႏႈတ္ကပတ္ေတာ္မွစတင္သည္။"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "ဘုရားသခင္၏ကတိေတာ္၌ ေက်းဇူေတာ္ခ်ီးမြမ္းျခင္းကိုရွာေဖြေတြ႕ရွိပါ။"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "ဤရာသီအတြက္ သင္၏စိတ္ႏွလုံးကိုျပင္ဆင္ထားပါ။"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} သည္ သင္၏မွတ္သားခ်က္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name}သည္ {friend_name}ႏွင့္သင္မိတ္ေဆြျဖစ္ျခင္းႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name}သည္ သင္မိတ္ေဆြအသစ္ဖြဲ႕ျခင္းႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} သည္ သင္၏အေရာင္မွတ္ခ်က္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} သည္ သင္၏မွတ္စုႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေပးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name}သည္ သင္၏အစီအစဥ္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name}သည္ သင္၏က်မ္းစာအစီအစဥ္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} သည္လည္း {moment_owner_name} ၏မွတ္သားခ်က္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name}သည္လည္း {friend_name}ႏွင့္{moment_owner_name}တို႔မိတ္ေဆြအသစ္ဖြဲ႕ျခင္းႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}သည္လည္း {moment_owner_name}ႏွင့္သူတို႔မိတ္ေဆြအသစ္ဖြဲ႕ျခင္းႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}သည္လည္း {moment_owner_name}ႏွင့္သင္မိတ္ေဆြျဖစ္ျခင္းႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} သည္လည္း {moment_owner_name} ၏အေရာင္မွတ္ခ်က္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} သည္လည္း {moment_owner_name} ၏မွတ္စုႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} သည္လည္း သူတို႔၏မွတ္သားခ်က္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name}သည္လည္း {friend_name}ႏွင့္ သူတို႔မိတ္ေဆြအသစ္ဖြဲ႕ျခင္းႏွင့္ပတ္သက္၍ ေဖာ္ျပပါထင္ျမင္ကိုခ်က္ေပးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}သည္လည္း သင္ႏွင့္ သူတို႔မိတ္ေဆြအသစ္ဖြဲ႕ျခင္းႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} သည္လည္း သူတို႔၏အေရာင္မွတ္ခ်က္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} သည္လည္း သူတို႔၏မွတ္စုႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name}သည္လည္း သူတို႔၏အစီစဥ္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name}သည္လည္း သူတို႔၏က်မ္းစာအစီအစဥ္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name}သည္လည္း {moment_owner_name}၏အစီအစဥ္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name}သည္လည္း {moment_owner_name}၏သမၼာက်မ္းစာဖတ္ျခင္းအစီစဥ္ႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.friendships.accept"
+msgstr "{name}သည္ မိတ္ေဆြျဖစ္ခြင့္သင္ေတာင္းခံသည္ကိုလက္ခံခဲ့ၿပီ။"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name}သည္ ယခုသင့္မိတ္ေဆြျဖစ္ပါၿပီ။"
+
+msgid "notifications.friendships.offer"
+msgstr "{name}သည္ YouVersionေပၚတြင္ သင္၏မိတ္ေဆြျဖစ္ခ်င္သည္။"
+
+msgid "notifications.friendships.suggestion"
+msgstr "{name}ႏွင့္ YouVersionေပၚတြင္ မိတ္ေဆြျဖစ္လိုသလား။"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} သည္ သင္၏ {reference_human} မွတ္သားခ်က္ကို ႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} သည္ သင္ႏွင့္ {friend_name} တို႔က မိတ္ေဆြအသစ္ျဖစ္သည္ကို ႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} သည္ {reference_human} အေပၚ သင္အေရာင္မွတ္ထားသည္ကို ႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} သည္ သင္၏မွတ္စုကို ႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} သည္ {reference_human} ႏွင့္ပသက္၍ သင္မွတ္စုေရးခဲ့သည္ကို ႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} သည္ သင္၏ {title} မွတ္စုကို ႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} သည္ သင္၏အစီအစဥ္လုပ္ေဆာင္မႈကိုႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} သည္ သင္၏က်မ္းစာအစီအစဥ္လုပ္ေဆာင္မႈကိုႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} သည္ {reference_human} ကို မွတ္သားထားသည္။"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} သည္ {reference_human} ကို အေရာင္မွတ္ထားသည္။"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} သည္ မွတ္စုကို ေရးခဲ့သည္။"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} သည္ {reference_human} ႏွင့္ပတ္သက္၍ မွတ္စုေရးခဲ့သည္။"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} သည္ ေဖာ္ျပပါမွတ္စုကိုထည့္ခဲ့သည္။ - {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name}သည္ သူတို႔၏ {title} အစီစဥ္ကို ဖတ္ၿပီးပါၿပီ။"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name}သည္ ေဖာ္ျပပါက်မ္းစာအစီအစဥ္ကို ဖတ္ၿပီးပါၿပီ။ - {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name}သည္ ေဖာ္ျပပါအစီအစဥ္အသက္ကိုစတင္ခဲ့သည္။ - {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name}သည္ {title}က်မ္းစာအစီအစဥ္အသစ္ကိုစတင္ခဲ့ၿပီ။"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name}သည္ ခုေလးတြင္ YouVersionတြင္ပါဝင္ခဲ့သည္။ သူ႔ကို မိတ္ေဆြအျဖစ္ထည့္ရန္ ဤေနရာကိုႏွိပ္ပါ။"
+
+msgid "notifications.system.test"
+msgstr "ကၽြန္ုပ္တို႔၏ ကေလးက်မ္းစာအက္ပ္ကို ယခုေဒါင္းလုပ္လုပ္ပါ။"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} သည္ သင္၏က်မ္းပိုဒ္ပါဓာတ္ပုံႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} သည္လည္း {moment_owner_name} ၏က်မ္းပိုဒ္ပါဓာတ္ပုံႏွင့္ပတ္သက္၍ ေဖာ္ျပပါေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment} "
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} သည္လည္း သူတို႔၏က်မ္းပိုဒ္ပါဓာတ္ပုံႏွင့္ပတ္သက္၍ ေဝဖန္မွတ္ခ်က္ေရးခဲ့သည္။ - {comment}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} သည္ သင္၏ {reference_human} က်မ္းပိုဒ္ပါဓာတ္ပုံကို ႀကိဳက္ႏွစ္သက္သည္။"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} သည္ {reference_human} ၏က်မ္းပိုဒ္ပါဓာတ္ပုံကို ဖန္တီးခဲ့သည္။"
+
+msgid "notifications.friendships.pending"
+msgstr "က်မ္းစာအက္ပ္တြင္ မိတ္ေဆြျဖစ္ခြင့္ေတာင္းခံျခင္းရွိသည္"
+
+msgid "notifications.votd_image"
+msgstr "ေန႔စဥ္က်မ္းပိုဒ္ပုံ"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} ကလည္း “{title}”ကို သင္ႏွင့္အတူဖတ္ရႈလိုသည္။"
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} သည္ {title} အစီအစဥ္တြင္ {day} ရက္စာကို သုံးသပ္ထားသည္။"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} က“{title}” ကို သင္ႏွင့္အတူဖတ္ရႈရန္ေတာင္းဆိုမႈအား လက္ခံသည္။"
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} က “{title}” ကိုစဖတ္ရႈရန္ရက္ကို {date} သို႔ေရြ႕လိုက္သည္။"
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} သည္ သင္၏အမွတ္အသားတြင္ မွတ္ခ်က္ျပဳသည္။ {comment}"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} သည္လည္း {moment_owner_name}၏အမွတ္အသားတြင္ မွတ္ခ်က္ျပဳသည္။ “{comment}“"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} သည္လည္း သူတို႔၏အမွတ္အသားတြင္ မွတ္ခ်က္ျပဳသည္။ “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} သည္ သင္၏အမွတ္အသား {title} ကို ႏွစ္သက္သည္။"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} သည္ အမွတ္အသား {title} ကို ရရွိသည္။"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>မဂၤလာပါ။</p><p>YouVersionမွက်မ္းစာအက္ပ္ကိုကၽြန္ုပ္သုံးေနသည့္အတြက္ သင္ႏွင့္လည္းမၽွေဝလိုပါသည္။ ဤအက္ပ္သည္ သင့္အတြက္အသစ္အဆန္းျဖစ္ေနသည္ဆိုလၽွင္ ၎မွာက်မ္းစာ၏အလွတားႏွင့္ အမွတ္တရားကို ေန႔စဥ္အသက္တာတ္ငင္ယူေဆာင္လာေပးသည့္ လြယ္ကူေသာနည္းလမ္းတစ္ခုျဖစ္သည္။ </p><p><strong>က်မ္းစာအက္ပ္ကိုရယူပါ။ - </strong> သင္၏စမတ္ဖုန္း၊ တက္ဘလက္တြင္ (သို႔) အြန္လိုင္းျဖင့္Bible.comတြင္ က်မ္းစာကို ဖတ္ရႈ၊ ၾကည့္ရႈ၊ နားေထာင္၊ မၽွေဝနိုင္ပါသည္။</p><p><strong>သင္၏အေကာင့္ကိုဖန္တီးပါ။ -</strong> က်မ္းစာအစီအစဥ္ကိုမွာယူၿပီး မွတ္သားခ်က္၊ အေရာင္မွတ္ခ်က္ႏွင့္မွတ္စုတို႔ကို သင့္ကိရိယာအသီးသီးတို႔ျဖင့္ခ်ိတ္ဆက္အသုံးျပဳပါ။ </p><p><strong>(ကၽြန္ပ္ကဲ့သို႔ေသာ) မိတ္ေဆြကိုထပ္ထည့္ပါ။ - </strong> သင္ဂ႐ုစိုက္ေနေသာသူတို႔ႏွင့္ က်မ္းစာကိုေလ့လာေဆြးေႏြးပါ။</p><p>က်မ္းစာအက္ပ္တြင္အားလုံးပါရွိသည္။ - ဤေနရာတြင္စတင္ပါ။ </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"မဂၤလာပါ။\n"
+"\n"
+"YouVersion မွက်မ္းစာအက္ပ္ကို ကၽြန္ုပ္သုံးေနသည့္အတြက္ သင္ႏွင့္လည္းမၽွေဝလိုပါသည္။ ဤအက္ပ္သည္ သင့္အတြက္အသစ္အဆန္းျဖစ္ေနပါသလား။ ၎သည္ က်မ္းစာ၏အလွတရားႏွင့္ အမွန္တရားကို ေန႔စဥ္အသက္တာတ္ငင္ယူေဆာင္လာေပးသည့္ လြယ္ကူေသာနည္းလမ္းတစ္ခုျဖစ္သည္။က်မ္းစာအက္ပ္ကိုရယူပါ။ - သင္၏စမတ္ဖုန္း၊ တက္ဘလက္တြင္ (သို႔) အြန္လိုင္းျဖင့္Bible.comတြင္ က်မ္းစာကို ဖတ္ရႈ၊ ၾကည့္ရႈ၊ နားေထာင္၊ မၽွေဝနိုင္ပါသည္။သင္၏အေကာင့္ကိုဖန္တီးပါ။ - က်မ္းစာအစီအစဥ္ကိုမွာယူၿပီး မွတ္သားခ်က္၊ အေရာင္မွတ္ခ်က္ႏွင့္မွတ္စုတို႔ကို သင့္ကိရိယာအသီးသီးတို႔ျဖင့္ခ်ိတ္ဆက္အသုံးျပဳပါ။\n"
+"\n"
+"(ကၽြန္ပ္ကဲ့သို႔ေသာ) မိတ္ေဆြကိုထပ္ထည့္ပါ။ - သင္ဂ႐ုစိုက္ေနေသာသူတို႔ႏွင့္ က်မ္းစာကိုေလ့လာေဆြးေႏြးပါ။က်မ္းစာအက္ပ္တြင္အားလုံးရွိသည္။ - ဤေနရာတြင္စတင္ပါ။ "
+
+msgid "share.invite_email_subject"
+msgstr "က်မ္းစာအက္ပ္တြင္ ကၽြန္ုပ္ႏွင့္အတူပါဝင္ပါ။"
+
+msgid "share.invite_facebook"
+msgstr "က်မ္းစာအက္ပ္ကိုကၽြန္ေတာ္အရမ္းႀကိဳက္တယ္။ သမၼာက်မ္းစာကို ကၽြန္ေတာ့္ေန႔စဥ္အသက္တာရဲ့တစ္ခန္းတစ္ကဏၬျဖစ္ေစဖို႔ အမွန္ပင္အေထာက္အကူေပးခဲ့တယ္။ က်မ္းပိုဒ္ကိုအေရာင္မွတ္ထားျခင္း၊ က်မ္းစာအသံဖိုင္ကိုနားေထာင္ျခင္း၊ မွတ္စုကိုမွတ္ျခင္း၊ ဝိညာဥ္ေရးရာအစီအစဥ္မ်ားကိုလိုက္ဖတ္ျခင္းတို႔ကို လုပ္နိုင္တယ္။ ဗီဒီယိုေတာင္ၾကည့္နိုင္တယ္။ ယခုပင္ ေဒါင္းလုပ္ဆြဲပါ။ (အခမဲ့ျဖစ္သည္)"
+
+msgid "share.invite_facebook_direct"
+msgstr "သင့္မွာ က်မ္းစာအက္ပ္ရွိပါသလား ကၽြန္ုပ္အလြန္ႏွစ္သက္သည္။ သင့္အတြက္လည္းထိုနည္းတူျဖစ္မည္ထင္ပါသည္။ သည္မွာ လင့္ရွိသည္။ - "
+
+msgid "share.invite_sms"
+msgstr "YouVersion က်မ္းစာအက္ပ္ကိုကၽြန္ုပ္အရမ္းႀကိဳက္တယ္။ သင္လည္းႀကိဳက္မွာပါ။"
+
+msgid "share.invite_sms_prefix"
+msgstr "{name}ထံမွ"
+
+msgid "share.invite_twitter"
+msgstr "YouVersionမွက်မ္းစာအက္ပ္သည္ ကၽြန္ုပ္၏ပင္မဖန္သားျပင္ေပၚမွာ အျမဲတမ္းရွိေနသည္။ ဖတ္ရႈ၊ ၾကည့္ရႈ၊ နားေထာင္၊ မၽွေဝပါ။ ဤအခမဲ့အက္ပ္ျဖင့္ အားလုံးလုပ္နိုင္သည္။"
+
+msgid "share.invite_twitter_direct"
+msgstr "သင့္မွာ @YouVersionမွက်မ္းစာအက္ပ္ရွိပါသလား။ ကၽြန္ုပ္အလြန္ႏွစ္သက္သည္။ သင့္အတြက္လည္းထိုနည္းတူျဖစ္မည္ထင္ပါသည္။ သည္မွာ လင့္ ရွိသည္။ - "

@@ -30,12 +30,12 @@
 
       .copyright= @version.info.try :html_safe
       %br
-      = link_to t("versions.read title"), bible_version_path((default_reference).merge(version: @version)), { class: 'solid-button mobile-full blue', target: '_self' }
+      = link_to t("versions.read title"), bible_version_path((@returnTo || default_reference).merge(version: @version)), { class: 'solid-button mobile-full blue', target: '_self' }
       = link_to t("mobile page.download now"), app_page_path, { class: 'show-for-small-only version_download solid-button mobile-full green', target: '_self' }
 
   .medium-4.columns.show-for-medium-up.l-border
     .widget-button
-      = link_to t("versions.read title"), bible_version_path((default_reference).merge(version: @version)), { class: 'solid-button blue full', target: '_self' }
+      = link_to t("versions.read title"), bible_version_path((@returnTo || default_reference).merge(version: @version)), { class: 'solid-button blue full', target: '_self' }
 
     - if @version.audio
       .widget-button
@@ -68,7 +68,7 @@
     = @version
 
   - content_for :mobile_right_nav do
-    = link_to t("versions.read title"), bible_version_path((default_reference).merge(version: @version)), { class: 'save_btn', target: '_self' }
+    = link_to t("versions.read title"), bible_version_path((@returnTo || default_reference).merge(version: @version)), { class: 'save_btn', target: '_self' }
 
 - @branch_deeplink = "version?id=#{@version.id}"
 = render '/shared/app_banner'

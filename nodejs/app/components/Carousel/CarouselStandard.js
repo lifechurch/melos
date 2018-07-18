@@ -99,7 +99,8 @@ function CarouselStandard(props) {
 			}
 
 			const innerStyle = {
-				width: 10000
+				width: 10000,
+				display: 'flex'
 			}
 
 			slider = (

@@ -1,6 +1,6 @@
 {
   "name": "@youversion/utils",
-  "version": "1.0.46",
+  "version": "1.0.48",
   "description": "A library of utility javascript functions used in YouVersion projects such as bible and youversion-api-redux.",
   "main": "./lib",
   "scripts": {
@@ -14,7 +14,7 @@
   "author": "YouVersion",
   "license": "ISC",
   "dependencies": {
-    "@youversion/stringer-things": "0.0.1",
+    "@youversion/stringer-things": "0.0.3",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
     "jest-enzyme": "^3.0.0",

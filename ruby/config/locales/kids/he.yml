@@ -1,6 +1,6 @@
 he:
   kids:
-    bible app: "The Bible App"
+    bible app: "יישומון הכתובים"
     for: "for"
     kids: "kids"
     by youversion: "by YouVersion"
@@ -28,9 +28,9 @@ he:
       facebook description: "ישומון הכתובים לילדים הגיע! הורד את האפליקציה החינמית לiOS ו-Android היום: סיפורי הכתובים באופן אינטראקטיבי העוזרות לילדך ללמוד, לשחק ולגדול בדבר האלוהים. www.bible.com/he/kids"
       facebook link: "http://www.bible.com/kids"
       facebook redirect: "http://www.bible.com/kids"
-      twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
+      twitter description: "אפליקציית הכתובים לילדים מבית @YouVersion הוא כאן! חוויה כיפית וחינמית לגמרי. הורדה: bible.com/kids"
       twitter hashtags: "kidsbible"
-      email: "Email"
+      email: "דוא\"ל"
       email subject: "ישומון הכתובים עבור ילדים הגיע!"
       email body: "חדשות טובות - ישומון הכתובים עבור ילדים הגיע! הישומון חינמי לגמרי וזמין כעת לiPhone, iPad, iPad touch ומכשירי ה-Android. הישומון מהווה אוסף גדל של סיפורי הכתובים עם אנימציות פעילות ופעילויות לימודיות. ישומון מושלם העוזר לילדים ללמוד את הסיפורים הגדולים של הכתובים. בקר באתר bible.com/kids במכשיר הנייד שלך על מנת להוריד אותו היום."
     partner:
@@ -39,10 +39,10 @@ he:
       one hope: "One Hope: תוכן יחודי מתוך הכתובים עבור ילים"
     links:
       apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-      google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+      google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=iw-IL"
       amazon: "http://www.amazon.com/gp/product/B00GURLC40"
   meta:
     best kids app: "הישומון הטוב ביותר לילדים!"
     kids_app:
       title: "The Bible App for Kids"
-      description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+      description: "אפליקציית הכתובים לילדים מהווה דרך נהדרת לילדים שלך ללמוד סיפורים על ישוע, המתנה שלנו לחיי הנצח, וכן השיעורים הרבים שאלוהים מלמד אותנו. בחוויה אינטראקטיבית זו, הילדים עוסקים ישירות עם דבר האלוהים באופן חזויתי ומהנה, תוך כדי שהם מרוויחים נקודות על קריאה ואוספים אוצרות."

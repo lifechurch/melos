@@ -22,6 +22,7 @@ import ShareIcon from '../../../../components/icons/ShareIcon'
 import { Item } from '../../../../components/OverflowMenu'
 import OverflowMenu from '../../../../widgets/OverflowMenu'
 import VerseImagesSlider from '../../../../widgets/VerseImagesSlider'
+import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 
 
 class VotdImage extends Component {
@@ -115,9 +116,14 @@ class VotdImage extends Component {
 							header={
 								<MomentHeader
 									title={(
-										<Heading3>
-											{ title }
-										</Heading3>
+										<a
+											href={localizedLink(`/bible/${versionId}/${referenceStrings && referenceStrings.usfm}`, serverLanguageTag)}
+											title={title}
+          >
+											<Heading3>
+												{ title }
+											</Heading3>
+										</a>
 									)}
         />
 							}

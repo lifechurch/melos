@@ -155,8 +155,8 @@ module YouversionWeb
       :is, :it, :ja, :ka, :km, :kn, :ko, :lt, :lv, :mk, :ml, :mn,
       :mr, :ms, :my, :ne, :nl, :no, :pl, :pt, :ro, :ru, :sk, :sn,
       :sq, :sv, :sw, :ta, :tg, :th, :tl, :tr, :uk, :ur, :uz, :vi,
-      :ckb, :myz,
-      "en-GB", "es-ES", "pt-PT", "zh-CN", "zh-HK", "zh-TW", :zu
+      :ckb,
+      "en-GB", "es-ES", "my-MM", "pt-PT", "zh-CN", "zh-HK", "zh-TW", :zu
     ]
 
     # Configure sensitive parameters which will be filtered from the log file.

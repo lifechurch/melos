@@ -1,49 +1,70 @@
-# Welsh translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: cy\n"
-"Language-Team: cy <LL@li.org>\n"
-"Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Welsh\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
-"Language-Team: cy <LL@li.org>\n"
-"Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
+"Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ((n == 1) ? 1 : ((n == 2) ? 2 : ((n == 3) ? 3 : ((n == 6) ? 4 : 5))));\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: cy\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:29-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Welsh\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:17-0609\n"
-"PO-Revision-Date: 2017-01-03 11:17-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
-"Language-Team: cy <LL@li.org>\n"
-"Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
+"Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ((n == 1) ? 1 : ((n == 2) ? 2 : ((n == 3) ? 3 : ((n == 6) ? 4 : 5))));\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: cy\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Welsh\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: cy\n"
+"Plural-Forms: nplurals=6; plural=(n == 0) ? 0 : ((n == 1) ? 1 : ((n == 2) ? 2 : ((n == 3) ? 3 : ((n == 6) ? 4 : 5))));\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: cy\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Rwyt wedi ennill y bathodyn <b>{title}</b>"
@@ -63,45 +84,6 @@ msgstr "Gosodaist Nod Tudalen ar <b>{reference_human} {version_abbreviation}</b>
 msgid "moment.bookmark.title"
 msgstr "Rhoddodd {name} nod llyfr ar  <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Bydd barod am y Nadolig gyda Cynllun Beibl yr Adfent"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Adnewydda dy ffydd gyda Chylluniau newydd."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Ceisiwch Dduw yn Ei Air bob dydd."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Paratoa dy galon ar gyfer yr Ŵyl."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Canfyddwch gariad Duw yn Ei Air."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "Mae'ch blwyddyn orau yn cychwyn nawr."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Dathlwch Ryddid yng Nghrist."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Ceisiwch Dduw yn Ei Air."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Canfyddwch obaith ac adnewyddiad yng Ngair Duw. "
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Ymrowch eich hun i'w Air yn ddyddiol."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Mae addewidion Duw yn arwain i ddiolchgarwch."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Mae doethineb duwiol yn dechrau yng Ngair Duw."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Mae Gair Duw yn gwneud popeth yn newydd."
-
 msgid "moment.friendship.self.title"
 msgstr "Rwyt nawr yn ffrindiau gyda <b>{friend_name}</b>"
 
@@ -114,29 +96,23 @@ msgstr "Rwyt wedi aroleuo <b>{reference_human} {version_abbreviation}</b>"
 msgid "moment.highlight.title"
 msgstr "Aroleuodd {name} <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Creaist ddelwedd adnod o <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "Creodd {name} ddelwedd adnod o <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Ychwanegaist nodyn"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "Ychwanegodd {name} nodyn"
-
-msgid "moment.note.reference.self.title"
-msgstr "Ychwanegaist nodyn ar {reference_human} <b></b>"
-
-msgid "moment.note.reference.title"
-msgstr "Ychwanegodd{name}nodyn ar {reference_human} <b></b>"
-
 msgid "moment.note.self.title"
 msgstr "Rwyt wedi ychwanegu nodyn, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "Ychwanegodd {name} nodyn, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "Ychwanegodd {name} nodyn"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Ychwanegaist nodyn"
+
+msgid "moment.note.reference.title"
+msgstr "Ychwanegodd{name}nodyn ar {reference_human} <b></b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Ychwanegaist nodyn ar {reference_human} <b></b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Rwyt wedi cwblhau dy Gynllun"
@@ -177,9 +153,6 @@ msgstr "Gwylia'r <i>Gyfres Beibl</i> heno!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Cyfres Beibl</i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Rhanna'r newyddion da: mae'r Gwaredwr wedi ei eni!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Mae'r Ap Beibl yn well fyth gyda Ffrindiau. Chwilio Cysylltiadau am Ffrindiau"
 
@@ -188,6 +161,57 @@ msgstr "Gwyliaist <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "Edrychodd {name} ar <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Bydd barod am y Nadolig gyda Cynllun Beibl yr Adfent"
+
+msgid "moment.system.bafk.title"
+msgstr ""
+
+msgid "moment.system.christmas.title"
+msgstr "Rhanna'r newyddion da: mae'r Gwaredwr wedi ei eni!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Mae'ch blwyddyn orau yn cychwyn nawr."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Canfyddwch gariad Duw yn Ei Air."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Canfyddwch obaith ac adnewyddiad yng Ngair Duw. "
+
+msgid "moment.image.self.title"
+msgstr "Creaist ddelwedd adnod o <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "Creodd {name} ddelwedd adnod o <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Adnewydda dy ffydd gyda Chylluniau newydd."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Ymrowch eich hun i'w Air yn ddyddiol."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Ceisiwch Dduw yn Ei Air."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Dathlwch Ryddid yng Nghrist."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Ceisiwch Dduw yn Ei Air bob dydd."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Mae Gair Duw yn gwneud popeth yn newydd."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Mae doethineb duwiol yn dechrau yng Ngair Duw."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Mae addewidion Duw yn arwain i ddiolchgarwch."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Paratoa dy galon ar gyfer yr Ŵyl."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "Gwnaeth {name} sylw ar dy Nod Tudalen: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "Gwnaeth {name}sylw ar eich cyfeillgarwch: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Gwnaeth {name} sylw ar dy aroleuad: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "Gwnaeth {name} sylw ar dy ddelwedd adnod: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "Gwnaeth {name} sylw ar dy nodyn: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "Gwnaeth {commenter_name} hefyd sylw ar Nod Llyfr {moment_owner_name}: �
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "Gwnaeth {commenter_name} hefyd sylw ar gyfeillgarwch newydd {moment_owner_name} gyda {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "Gwnaeth {commenter_name}sylw ar dy gyfeillgarwch gyda {moment_owner_name}: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "Gwnaeth {commenter_name}hefyd sylw ar ei gyfeillgarwch gyda {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "Gwnaeth {commenter_name}sylw ar dy gyfeillgarwch gyda {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Gwnaeth {commenter_name} hefyd sylw ar aroleuad {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "Gwnaeth {commenter_name} hefyd sylw ar ddelwedd adnod {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "Gwnaeth {commenter_name} hefyd sylw ar nodyn {moment_owner_name}: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar eu cyfeillgarwch gyda ti: “{
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar yr aroleuad: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar ei ddelwedd adnod: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar ei nodyn: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "Mae {name} bellach yn ffrindiau gyda ti"
 msgid "notifications.friendships.offer"
 msgstr "Mae {name} eisiau bod yn ffrind i ti ar YouVersion"
 
-msgid "notifications.friendships.pending"
-msgstr "Mae gen ti Geisiadau Ffrind yn disgwyl yn yr Ap"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Wyt ti eisiau bod yn ffrindiau gyda {name} ar YouVersion?"
 
@@ -287,9 +299,6 @@ msgstr "Mae {name} yn hoffi dy gyfeillgarwch newydd gyda {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Mae {name} yn hoffi dy aroleuad, {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "Mae {name} yn hoffi dy ddelwedd adnod i {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "Mae {name} yn hoffi dy nodyn"
@@ -311,9 +320,6 @@ msgstr "Rhoddodd {name} nod llyfr ar {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "Aroleuodd {name} {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "Creodd {name} ddelwedd adnod i {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "Ychwanegodd {name} nodyn"
@@ -341,6 +347,54 @@ msgstr "Ymunodd {name} ag YouVersion. Cyffwrdd yma i'w ychwanegu fel ffrind."
 
 msgid "notifications.system.test"
 msgstr "Lawrlwytha ein Ap Beibl Plant nawr!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "Gwnaeth {name} sylw ar dy ddelwedd adnod: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "Gwnaeth {commenter_name} hefyd sylw ar ddelwedd adnod {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar ei ddelwedd adnod: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "Mae {name} yn hoffi dy ddelwedd adnod i {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "Creodd {name} ddelwedd adnod i {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Mae gen ti Geisiadau Ffrind yn disgwyl yn yr Ap"
+
+msgid "notifications.votd_image"
+msgstr "Darlun adnod y dydd"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "Mae {name} eisiau darllen y cynllun \"{title}\" gyda ti."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "Gwnaeth {name} sylw ar Ddydd {day} o gynllun \"{title}.\""
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "Derbyniodd {name} dy wahoddiad i ddarllen y cynllun \"{title}\" gyda ti."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "Newidiodd {name} ddyddiad dechrau cynllun \"{title}\" i {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr ""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr ""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr ""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr ""
+
+msgid "notifications.moments.create.badge"
+msgstr ""
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Helo!</p><p>Dw i'n defnyddio Ap Beibl YouVersion ac eisiau ei rannu gyda ti. Os nad wyt ti'n gyfarwydd â'r ap, mae'n ffordd syml o ddod a gwirionedd y Beibl i fywyd bob dydd. </p><p><strong>Cymer yr Ap Beibl:</strong>darllen, gwylio, gwrando a rhannu ar dy ffôn symudol neu dablet, ac ar-lein yn Bible.com.</p><p><strong>Gosod dy gyfrif:</strong> tanysgrifia i Gynlluniau Beibl a defnyddio nodau tudalen, aroleuadau, a nodiadau ar draws dyfeisiadau.</p><p><strong>Ychwanegu Ffrindiau (Fel fi!):</strong> archwilio a thrafod y Beibl gyda ffrindiau.</p><p>Mae'r cwbl yn yr Ap Beibl—dechrau yma:</p>"

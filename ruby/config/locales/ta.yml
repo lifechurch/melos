@@ -39,7 +39,7 @@ ta:
         one: "%{count} வினாடிக்கு முன்"
         other: "%{count} வினாடிகளுக்கு முன்"
   counter:
-    format: "99,99,99,999"
+    format: "999,999,999"
   social:
     intro page:
       main heading: "உரையாடல் & கண்டறிதல்"

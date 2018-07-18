@@ -9,7 +9,14 @@ import moment from 'moment'
  */
 export default function calcCurrentPlanDay({ total_days, start_dt }) {
 	const calculatedDay = Math.abs(
-		parseInt(moment().diff(moment(start_dt, 'YYYY-MM-DD'), 'days'), 10)
+		parseInt(
+      moment().startOf('day')
+        .diff(
+          moment(start_dt, 'YYYY-MM-DD').startOf('day'),
+          'days'
+        )
+      , 10
+    )
 	) + 1
 	let currentDay
 	if (calculatedDay > total_days) {

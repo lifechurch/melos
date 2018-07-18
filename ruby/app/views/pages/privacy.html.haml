@@ -2,8 +2,6 @@
   - I18n.t(key, options.merge(:locale => @locale))
 - @title = t.call("legal.privacy.policy", youversion: t.call("youversion"))
 - @sidebar = false
-- @policy_effective_date = "2018-05-25".to_date
-- @today = Date.today
 
 - content_for :stylesheets do
   = stylesheet_link_tag "https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"
@@ -28,14 +26,6 @@
     %hr
     %h2.f2-ns.b.mt4= t.call('legal.privacy.h6')
     %p.mt3.mute= t.call('legal.privacy.p6')
-
-    / Only show the following paragraph before May 25, 2018
-    - if @policy_effective_date >= @today
-      %p.mt3
-        %em
-          This updated version of our Privacy Policy takes effect on May 25, 2018. See the
-          %a{:href => "https://www.youversion.com/policies-2012/"} current version
-          of the policy.
 
     - if I18n.locale != :en
       %p.mt3

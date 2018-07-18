@@ -9,6 +9,7 @@ function planView({ plan_id, together_id, token = null, auth, serverLanguageTag 
 				params: {
 					id: plan_id,
 				},
+				auth: !!auth
 			})).then((data) => { resolve(data) })
 			if (together_id) {
 				dispatch(participantsView({

@@ -1,49 +1,70 @@
-# Hungarian translations for Backend (YouVersion).
-# Copyright (C) 2017 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:19-0609\n"
-"PO-Revision-Date: 2017-01-03 11:19-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: hu\n"
-"Language-Team: hu <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-03-26 12:19-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hu\n"
-"Language-Team: hu <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: hu\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion) 1.0\n"
-"Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2017-01-03 11:18-0609\n"
-"PO-Revision-Date: 2017-01-03 11:18-0609\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hu\n"
-"Language-Team: hu <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: hu\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: hu\n"
+"X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Megszerezted a <b>{title}</b> jelvényt"
@@ -63,45 +84,6 @@ msgstr "Hozzáadtad a könyvjelzőidhez a következő igeszakaszt: <b>{reference
 msgid "moment.bookmark.title"
 msgstr "{name} hozzáadta a könyvjelzőihez a következő igeszakaszt: <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Készülj fel a karácsonyra egy adventi olvasási tervvel"
-
-msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Újítsd meg hitedet új tervekkel."
-
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Mindennap keresd Istent az Igében."
-
-msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Készítsd fel a szíved erre az időszakra."
-
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Találd meg Isten szeretetét az Ő Igéjében."
-
-msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "A legjobb éved most kezdődik."
-
-msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Ünnepeld a szabadságot Krisztusban."
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Keresd Istent az Ő Igéjében."
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Találj reményt és megújulást Isten Igéjében."
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Mindennap szánd oda magad az Ő igéjének."
-
-msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "Fedezd fel a hálaadást Isten ígéreteiben."
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Az isteni bölcsesség Isten Igéjében kezdődik."
-
-msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "Isten Igéje mindent megújít."
-
 msgid "moment.friendship.self.title"
 msgstr "<b>{friend_name}</b> mostantól a barátod lett"
 
@@ -114,29 +96,23 @@ msgstr "Kiemelted a következő igeszakaszt: <b>{reference_human} {version_abbre
 msgid "moment.highlight.title"
 msgstr "{name} kiemelte a következő igeszakaszt: <b>{reference_human} {version_abbreviation}</b>"
 
-msgid "moment.image.self.title"
-msgstr "Készítettél egy igeképet a következő igeszakaszról: <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.image.title"
-msgstr "{name} készített egy igeképet a következő igeszakaszról: <b>{reference_human} {version_abbreviation}</b>"
-
-msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Készítettél egy jegyzetet"
-
-msgid "moment.note.no_title_no_reference.title"
-msgstr "{name} készített egy jegyzetet"
-
-msgid "moment.note.reference.self.title"
-msgstr "Készítettél egy jegyzetet a következő igeversről: <b>{reference_human}</b>"
-
-msgid "moment.note.reference.title"
-msgstr "{name} készített egy jegyzetet a következő igevershez: <b>{reference_human}</b>"
-
 msgid "moment.note.self.title"
 msgstr "Készítettél egy jegyzetet, <b>{title}</b> címmel"
 
 msgid "moment.note.title"
 msgstr "{name} készített egy jegyzetet, <b>{title}</b> címmel"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} jegyzetelt"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Készítettél egy jegyzetet"
+
+msgid "moment.note.reference.title"
+msgstr "{name} készített egy jegyzetet a következő igevershez: <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Készítettél egy jegyzetet a következő igeversről: <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Befejeztél egy tervet"
@@ -177,9 +153,6 @@ msgstr "Nézd meg ma este a  <i>Biblia sorozatot</i>!"
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Biblia sorozat<i>"
 
-msgid "moment.system.christmas.title"
-msgstr "Oszd meg az örömhírt: a Megváltó megszületett!"
-
 msgid "moment.system.find_friends.title"
 msgstr "Barátokkal a Biblia alkalmazás is jobb. Keress barátokat a címjegyzékben."
 
@@ -188,6 +161,57 @@ msgstr "Megnézted a <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} megnézte <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Készülj fel a karácsonyra egy adventi olvasási tervvel"
+
+msgid "moment.system.bafk.title"
+msgstr "Segíts gyermekeidnek beleszeretni Isten Igéjébe."
+
+msgid "moment.system.christmas.title"
+msgstr "Oszd meg az örömhírt: a Megváltó megszületett!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "A legjobb éved most kezdődik."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Találd meg Isten szeretetét az Ő Igéjében."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Találj reményt és megújulást Isten Igéjében."
+
+msgid "moment.image.self.title"
+msgstr "Készítettél egy igeképet a következő igeszakaszról: <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} készített egy igeképet a következő igeszakaszról: <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Újítsd meg hitedet új tervekkel."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Mindennap szánd oda magad az Ő igéjének."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Keresd Istent az Ő Igéjében."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Ünnepeld a szabadságot Krisztusban."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Mindennap keresd Istent az Igében."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Isten Igéje mindent megújít."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Az isteni bölcsesség Isten Igéjében kezdődik."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Fedezd fel a hálaadást Isten ígéreteiben."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Készítsd fel a szíved erre az időszakra."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} hozzászólt a könyvjelződhöz: “{comment}”"
@@ -200,9 +224,6 @@ msgstr "{name} hozzászólt az új barátságodhoz: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} hozzászólt a kiemelésedhez: “{comment}”"
-
-msgid "notifications.comments.moment.mine.image"
-msgstr "{name} hozzászólt az igeképedhez: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} hozzászólt a jegyzetedhez: “{comment}”"
@@ -219,17 +240,14 @@ msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} könyvjelzőj
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} is fűzött megjegyzést a {moment_owner_name} új barátságához a következővel {friend_name}: “{comment}”"
 
-msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} szintén hozzászólt a(z){moment_owner_name} személlyel létrejött új barátságodhoz: “{comment}”"
-
 msgid "notifications.comments.moments.friend.friendship.their"
 msgstr "{commenter_name} szintén hozzászólt a(z){moment_owner_name} személlyel létrejött új barátságához: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} szintén hozzászólt a(z){moment_owner_name} személlyel létrejött új barátságodhoz: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} kiemeléséhez: “{comment}”"
-
-msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} igeképéhez: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} jegyzetéhez: “{comment}”"
@@ -245,9 +263,6 @@ msgstr "{moment_owner_name} szintén hozzászólt a veled létrejött új barát
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} szintén hozzászólt a kiemeléséhez: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} szintén hozzászólt az igeképéhez: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} szintén hozzászólt a jegyzetéhez: “{comment}”"
@@ -273,9 +288,6 @@ msgstr "{name} mostantól a barátod"
 msgid "notifications.friendships.offer"
 msgstr "{name} szeretne barátod lenni a YouVersion-ön."
 
-msgid "notifications.friendships.pending"
-msgstr "Függőben lévő kapcsolatok várnak rád a Biblia alkalmazásban"
-
 msgid "notifications.friendships.suggestion"
 msgstr "Szeretnél {name} barátja lenni a YouVersionön?"
 
@@ -287,9 +299,6 @@ msgstr "{name} kedveli a barátságodat a következővel {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} kedveli a kiemelésed: {reference_human}"
-
-msgid "notifications.likes.moment.mine.image"
-msgstr "{name} kedveli a következő igeszakaszról szóló igeképedet: {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} kedveli a jegyzeted"
@@ -311,9 +320,6 @@ msgstr "{name} könyvjelzőzte {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} kiemelte a következő igeszakaszt: {reference_human}"
-
-msgid "notifications.moments.create.image"
-msgstr "{name} készített egy igeképet a következő igeszakaszról: {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} jegyzetelt"
@@ -341,6 +347,54 @@ msgstr "{name} éppen most csatlakozott a YouVersion-höz. Koppints, ha ismerős
 
 msgid "notifications.system.test"
 msgstr "Töltsd le a gyerekeknek szóló Biblia Appet!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} hozzászólt az igeképedhez: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} igeképéhez: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} szintén hozzászólt az igeképéhez: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} kedveli a következő igeszakaszról szóló igeképedet: {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} készített egy igeképet a következő igeszakaszról: {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Függőben lévő kapcsolatok várnak rád a Biblia alkalmazásban"
+
+msgid "notifications.votd_image"
+msgstr "Napi igevers kép"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} szeretné veled olvasni a következő tervet: \"{title}\""
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} hozzászólt a következő terv: \"{title}\" {day}. napjához."
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} elfogadta a következő terv olvasására irányuló meghívásodat: \"{title}\""
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} megváltoztatta a \"{title}\" terv kezdődátumát a következőre: {date}"
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} hozzászólt a jelvényedhez: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} jelvényéhez: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} szintén hozzászólt a jelvényéhez: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} kedveli a {title} jelvényedet"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} {title} jelvényt szerzett"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Szia!</p><p>Szeretném, ha tudnád, hogy a YouVersion Biblia alkalmazást használom. Ha az alkalmazás új számodra, ez egyszerűen elhozza a Biblia szépségét és igazságát a mindennapokba.</p><p><strong>Töltsd le a Biblia alkalmazást:</strong> Olvasd, nézd, hallgasd és oszd meg az okostelefonodon vagy táblagépeden és online a Bible.com-on keresztül</p><p><strong>Nyiss egy fiókot:</strong> iratkozz fel Biblia Tervekre, így hozzáférhetsz könyvjelzőkhöz, kiemelésekhez és jegyzetekhez az eszközeiden</p><p><strong>Adj hozzá barátokat (például engem!):</strong> fedezd fel és beszélgess a Bibliáról azokkal, akik fontosak számodra</p><p>Mindezt megtalálod a Biblia alkalmazásban—indulj el itt: </p>"
