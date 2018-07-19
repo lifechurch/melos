@@ -207,7 +207,7 @@ af:
   sign out: "Teken uit"
   sign back in: "Vir jou eie veiligheid, sal inteken besonderhede verval na twee weke. Teken asseblief weer in."
   youversion: "YouVersion"
-  username or email prompt: "Epos (of Gebruikersnaam)"
+  username or email prompt: "E-pos (of Gebruikersnaam)"
   password prompt: "Wagwoord:"
   sign in to youversion: "Teken in op YouVersion"
   remove: "Verwyder"
@@ -2001,7 +2001,7 @@ af:
     x likes:
       one: "%{number} hou van"
       other: "%{number} hou van"
-    selected: "Gekies"
+    selected: "Selected"
     currently subscribed: "Tans Ingeteken"
     invite friends: "Nooi Vriende Uit"
     invite others: "Nooi Ander uit"
