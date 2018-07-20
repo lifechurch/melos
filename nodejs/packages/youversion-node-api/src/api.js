@@ -31,6 +31,7 @@ const memcached = new Memcached(MEMCACHE_SERVERS, {
 	poolSize: 25
 });
 
+
 function IsCacheable(method, auth, query) {
 	return method.toUpperCase() === 'GET' &&
 		!('token' in query) &&
