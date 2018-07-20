@@ -284,7 +284,7 @@ ne:
       tell your church: "मण्डलीलाई भन्नुहोस्"
       create an event: "कार्यक्रम सिर्जना गर्नुहोस्"
     mail subject: "YouVersion बाट यो नयाँ सुविधाले वास्तवमा हाम्रो मण्डलीलाई मद्दत गर्न सक्दछ!"
-    mail body: "Have you seen YouVersion’s new Events feature yet? I believe it would really help our church engage people more with our services. It lets people add their own notes during a service, then even save the event so they can come back later and study it with the Bible references. I think it could probably save us money on printing costs, too. Here’s YouVersion’s Events website: http://www.bible.com/features/events."
+    mail body: "के तपाईंले YouVersion को नयाँ कार्यक्रमहरू को सुविधा हेर्नुभएको छ? हाम्रो मण्डलीले मानिसहरूलाई हाम्रा सेवाहरूसँग धेरै सहभागिता गर्न वास्तवमै मद्दत गर्नेछ भनेर म विश्वास गर्छु। यसले सेवामा रहेको बेला मानिसहरुलाई आफ्नो टिप्पणीहरू थप्न दिन्छ, त्यसपछि त्यस कार्यक्रमलाई पनि सुरक्षित राख्छ ताकि उनीहरू पछि फिर्ता आएर बाइबिल सन्दर्भहरूसँग अध्ययन गर्न सक्दछन्। मलाई लाग्छ कि यसले हामीलाई मुद्रण लागतमा पनि पैसा बचत गर्न सक्छ। यहाँ YouVersionको कार्यक्रम वेबसाइट छ: http://www.bible.com/features/events।"
     section 1 title: "बाइबल एपको  शक्ति तपाईंको चर्च सेवामा ल्याउनुहोस्।"
     section 1 text: "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices."
     section 2 title: "तपाईंको वचनबाट अझ धेरै आशिस पाउन बिश्वासीहरुलाई साहयता गर्नुहोस।"
