@@ -1,8 +1,8 @@
 import Promise from 'bluebird'
-import https from 'https'
+import base64 from 'base-64'
+import 'isomorphic-fetch'
 import querystring from 'qs'
 import { fetchToken } from '@youversion/token-storage'
-import util from 'util'
 import Memcached from 'memcached'
 import hash from 'object-hash'
 
@@ -132,11 +132,10 @@ function httpReq(section, noun, query, auth, _extension, _method, _version, _env
 		const environment = _environment || 'production'
 		const envDomain = (environment.toLowerCase() !== 'production') ? 'youversionapistaging.com' : 'youversionapi.com';
 
+		const fetchUrl = `https://${section}.${envDomain}${version ? `/${version}` : ''}/${noun}${extension ? `.${extension}` : ''}${method === 'GET' ? `?${querystring.stringify(query, { sort: sortQueryParams, arrayFormat: 'brackets' })}` : ''}`
+
 		const options = {
-			hostname: `${section}.${envDomain}`,
-			path: `${version ? `/${version}` : ''}/${noun}${extension ? `.${extension}` : ''}${method === 'GET' ? `?${querystring.stringify(query, { sort: sortQueryParams, arrayFormat: 'brackets' })}` : ''}`,
 			method,
-			timeout: HTTP_TIMEOUT,
 			headers: {
 				Referer: `https://web.${envDomain}`,
 				'User-Agent': 'Web App: Production',
@@ -153,55 +152,45 @@ function httpReq(section, noun, query, auth, _extension, _method, _version, _env
 			postbody = extension
 				? JSON.stringify(query)
 				: query;
+
+			options.body = postbody;
+
 			// headers
 			options.headers['Content-Type'] = _contentType || 'application/json';
-			options.headers['Content-Length'] = Buffer.byteLength(postbody, 'utf8');
 		}
 
-		options.port = 443;
 
 		if (auth === true) {
 			const token = decodeToken(fetchToken());
 			const sessionData = decryptToken(token.token);
 			if (typeof sessionData === 'object') {
 				if (typeof sessionData.email === 'string' && typeof sessionData.password === 'string') {
-					options.auth = `${sessionData.email}:${sessionData.password}`;
+					options.headers.Authorization = `Basic ${base64.encode(`${sessionData.email}:${sessionData.password}`)}`
 				} else if (typeof sessionData.tp_token === 'string') {
 					options.headers.Authorization = sessionData.tp_token;
 				}
 			}
 		} else if (typeof auth === 'object') {
 			if (typeof auth.username === 'string' && typeof auth.password === 'string') {
-				options.auth = `${auth.username}:${auth.password}`;
+				options.headers.Authorization = `Basic ${base64.encode(`${auth.username}:${auth.password}`)}`
 			} else if (typeof auth.tp_token === 'string') {
 				options.headers.Authorization = auth.tp_token;
 			}
 		}
 
-		const req = https.request(options);
+		fetch(fetchUrl, options).then((response) => {
+			try {
+				const lifetime = OVERRIDE_CACHE_LIFETIME || getCacheExpirationFromHeaders(response.headers) || DEFAULT_CACHE_LIFETIME
 
-		req.setTimeout(HTTP_TIMEOUT);
+				if (extension === 'json' || extension === null) {
+					response.json().then((jsonBody) => {
 
-		if (method === 'POST') {
-			req.write(postbody);
-		}
-
-		req.on('response', (response) => {
-			const lifetime = OVERRIDE_CACHE_LIFETIME || getCacheExpirationFromHeaders(response.headers) || DEFAULT_CACHE_LIFETIME
-			let body = '';
-
-			response.on('data', (chunk) => {
-				body += chunk;
-			});
-
-			response.on('end', () => {
-				try {
-					if (extension === 'json' || extension === null) {
 						// oauth doesn't have response in body
 						const data = extension === null
-							? JSON.parse(body) || {}
-							: JSON.parse(body).response.data || {};
-						if (util.isArray(data)) {
+							? jsonBody || {}
+							: jsonBody.response.data || {};
+
+						if (Array.isArray(data)) {
 							const dataAsObj = {};
 							dataAsObj[noun] = data;
 							dataAsObj.cacheLifetime = lifetime
@@ -210,24 +199,18 @@ function httpReq(section, noun, query, auth, _extension, _method, _version, _env
 							data.cacheLifetime = lifetime
 							resolve(data);
 						}
-					} else if (extension === 'po') {
-						resolve(body);
-					}
-				} catch (ex) {
-					reject(ex);
+					})
+				} else if (extension === 'po') {
+					response.text().then((textBody) => {
+						resolve(textBody);
+					})
 				}
-			});
-		});
-
-		req.on('timeout', () => {
-			req.abort();
-		});
-
-		req.on('error', (e) => {
+			} catch (ex) {
+				reject(ex);
+			}
+		}).catch((e) => {
 			reject(e);
 		});
-
-		req.end();
 	})
 }
 

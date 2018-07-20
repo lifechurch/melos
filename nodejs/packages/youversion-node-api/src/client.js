@@ -1,53 +1,49 @@
-var api = require('./api').api;
-
-module.exports = {
-	getClient: getClient
-};
+const api = require('./api').api;
 
 function ApiCall() {
 	this.config = {
 		auth: false,
 		params: {},
-		extension: "json",
-		verb: "GET",
+		extension: 'json',
+		verb: 'GET',
 		secure: false,
-		version: "3.1",
-		environment: "production",
+		version: '3.1',
+		environment: 'production',
 		contentType: null,
 	};
 }
 
-ApiCall.prototype.params = function(params) {
+ApiCall.prototype.params = function clientParams(params) {
 	this.config.params = params;
 	return this;
 };
 
-ApiCall.prototype.secure = function() {
+ApiCall.prototype.secure = function clientSecure() {
 	this.config.secure = true;
 	return this;
 };
 
-ApiCall.prototype.setVersion = function(version) {
+ApiCall.prototype.setVersion = function clientSetVersion(version) {
 	this.config.version = version;
 	return this;
 };
 
-ApiCall.prototype.setExtension = function(extension) {
+ApiCall.prototype.setExtension = function clientSetExtension(extension) {
 	this.config.extension = extension;
 	return this;
 };
 
-ApiCall.prototype.setEnvironment = function(environment) {
+ApiCall.prototype.setEnvironment = function clientSetEnvironment(environment) {
 	this.config.environment = environment;
 	return this;
 };
 
-ApiCall.prototype.setContentType = function(contentType) {
+ApiCall.prototype.setContentType = function clientSetContentType(contentType) {
 	this.config.contentType = contentType;
 	return this;
 };
 
-ApiCall.prototype.auth = function(username, password) {
+ApiCall.prototype.auth = function clientAuth(username, password) {
 	if (typeof username === 'undefined') {
 		this.config.auth = true
 	} else if (typeof password === 'undefined') {
@@ -56,15 +52,15 @@ ApiCall.prototype.auth = function(username, password) {
 		};
 	} else {
 		this.config.auth = {
-			username: username,
-			password: password
+			username,
+			password
 		};
 	}
 	return this;
 };
 
-ApiCall.prototype.get = function() {
-	this.config.verb = "GET";
+ApiCall.prototype.get = function clientGet() {
+	this.config.verb = 'GET';
 	return api(
 		this.client.section,
 		this.noun,
@@ -77,8 +73,8 @@ ApiCall.prototype.get = function() {
 	);
 };
 
-ApiCall.prototype.post = function() {
-	this.config.verb = "POST";
+ApiCall.prototype.post = function clientPost() {
+	this.config.verb = 'POST';
 	return api(
 		this.client.section,
 		this.noun,
@@ -94,15 +90,19 @@ ApiCall.prototype.post = function() {
 
 function Client() {}
 
-Client.prototype.call = function(noun) {
-	var call = new ApiCall;
+Client.prototype.call = function clientCall(noun) {
+	const call = new ApiCall();
 	call.client = this;
 	call.noun = noun;
 	return call;
 };
 
 function getClient(section) {
-	var client = new Client;
+	const client = new Client();
 	client.section = section;
 	return client;
 }
+
+module.exports = {
+	getClient
+};
