@@ -37,7 +37,7 @@ function api(section, noun, query, auth, extension, method, version) {
 		const fetchUrl = [
 			secure ? 'https://' : 'http://',
 			(typeof YV_API_HOST !== 'undefined') ? YV_API_HOST : window.location.host.split(':')[0],
-			(typeof YV_API_PORT !== 'undefined') ? `:${YV_API_PORT}` : `:${window.location.host.split(':')[1]}` || '',
+			(typeof YV_API_PORT !== 'undefined') ? `:${YV_API_PORT}` : typeof window.location.host.split(':')[1] !== 'undefined' ? `:${window.location.host.split(':')[1]}` : '',
 			path
 		].join('')
 
