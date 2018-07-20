@@ -1,6 +1,6 @@
 {
 	"name": "@youversion/api-redux",
-	"version": "0.4.66",
+	"version": "0.4.67",
 	"description": "YouVersion API Redux Middleware",
 	"main": "./lib",
 	"author": "YouVersion",
@@ -14,7 +14,7 @@
 		"prepublish": "npm run compile"
 	},
 	"dependencies": {
-		"@youversion/js-api": "^1.0.32",
+		"@youversion/js-api": "^1.0.33",
 		"@youversion/melos": "^0.0.27",
 		"@youversion/token-storage": "^0.0.58",
 		"@youversion/utils": "^1.0.53",
