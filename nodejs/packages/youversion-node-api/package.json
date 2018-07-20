@@ -1,7 +1,7 @@
 {
   "name": "@youversion/js-api",
   "description": "YouVersion API Wrapper for Javascript",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "main": "./lib/index.js",
   "license": "ISC",
   "dependencies": {
