@@ -19,7 +19,7 @@ function api(section, noun, query, auth, extension, method, version) {
 			version = '3.1';
 		}
 
-		const secure = window.location.protocol.toUpperCase() === 'https:';
+		const secure = window.location.protocol.toUpperCase() === 'HTTPS:';
 		let path = '';
 
 		if (auth) {
