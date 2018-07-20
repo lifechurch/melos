@@ -9,7 +9,6 @@ import {
 	EVENT_FEED_MINE_REQUEST,
 	EVENT_FEED_MINE_FAILURE
 } from '../actions'
-import type from '../features/EventFeedMine/actions/constants'
 import detailsType from '../features/EventFeedMine/actions/constants'
 
 export function eventFeeds(state = {}, action) {

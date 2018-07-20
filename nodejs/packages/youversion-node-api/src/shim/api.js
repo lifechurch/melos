@@ -1,7 +1,7 @@
-// var Promise = require('bluebird'),
+import base64 from 'base-64'
+import 'isomorphic-fetch'
+
 const querystring = require('qs');
-const	https = require('https');
-const http = require('http');
 const fetchToken = require('@youversion/token-storage').fetchToken;
 
 function api(section, noun, query, auth, extension, method, version) {
@@ -19,9 +19,8 @@ function api(section, noun, query, auth, extension, method, version) {
 			version = '3.1';
 		}
 
-		const secure = window.location.protocol.toUpperCase() === 'https:';
+		const secure = window.location.protocol.toUpperCase() === 'HTTPS:';
 		let path = '';
-		let postbody = '';
 
 		if (auth) {
 			path += '/api_auth';
@@ -35,10 +34,14 @@ function api(section, noun, query, auth, extension, method, version) {
 			path += `?${querystring.stringify(query)}`;
 		}
 
+		const fetchUrl = [
+			secure ? 'https://' : 'http://',
+			(typeof YV_API_HOST !== 'undefined') ? YV_API_HOST : window.location.host.split(':')[0],
+			(typeof YV_API_PORT !== 'undefined') ? `:${YV_API_PORT}` : typeof window.location.host.split(':')[1] !== 'undefined' ? `:${window.location.host.split(':')[1]}` : '',
+			path
+		].join('')
+
 		const options = {
-			hostname: (typeof YV_API_HOST !== 'undefined') ? YV_API_HOST : window.location.host.split(':')[0],
-			port: (typeof YV_API_PORT !== 'undefined') ? YV_API_PORT : window.location.host.split(':')[1] || null,
-			path,
 			method,
 			headers: {
 				'Content-Type': 'application/json',
@@ -48,13 +51,14 @@ function api(section, noun, query, auth, extension, method, version) {
 				'X-YouVersion-Client': 'youversion',
 			}
 		}
+
 		// we can't rely on authorization header to check for an authed call to the
 		// api because we always send auth to the server from the client
 		// so we want to let the service worker know wether this call is cacheable
 		if (!auth) { options.headers['X-ServiceWorker-Cacheable'] = 'true' }
 
 		if (typeof auth === 'object' && typeof auth.username === 'string' && typeof auth.password === 'string') {
-			options.auth = `${auth.username}:${auth.password}`;
+			options.headers.authorization = `Basic ${base64.encode(`${auth.username}:${auth.password}`)}`
 		} else if (typeof auth === 'object' && typeof auth.token === 'string') {
 			options.headers.authorization = auth.token
 		} else {
@@ -64,55 +68,38 @@ function api(section, noun, query, auth, extension, method, version) {
 			}
 		}
 
-		if (method == 'POST') {
-			postbody = JSON.stringify(query);
+		if (method === 'POST') {
+			options.body = JSON.stringify(query);
 			options.headers['Content-Type'] = 'application/json';
-			options.headers['Content-Length'] = Buffer.byteLength(postbody, 'utf8');
 		}
 
-		const req = (secure ? https.request(options) : http.request(options));
-
-		if (method.toUpperCase() === 'POST') {
-			req.write(postbody);
-		}
-
-		req.on('response', (response) => {
-			let body = '';
-
-			response.on('data', (chunk) => {
-				body += chunk;
-			});
-
-			response.on('end', () => {
-				try {
-					if (response.statusCode < 400) {
-						if (extension === 'json') {
-							// resolve(JSON.parse(body));
-							const data = JSON.parse(body) || {};
-							if (Array.isArray(data)) {
+		fetch(fetchUrl, options).then((response) => {
+			try {
+				if (response.ok && response.status < 400) {
+					if (extension === 'json') {
+						response.json().then((jsonBody) => {
+							if (Array.isArray(jsonBody)) {
 								const dataAsObj = {};
-								dataAsObj[noun] = data;
+								dataAsObj[noun] = jsonBody;
 								resolve(dataAsObj);
 							} else {
-								resolve(data);
+								resolve(jsonBody);
 							}
-						} else if (extension == 'po') {
-							resolve(body);
-						}
-					} else {
-						reject({ status: response.statusCode, message: response.statusMessage });
+						})
+					} else if (extension === 'po') {
+						response.text().then((textBody) => {
+							resolve(textBody);
+						})
 					}
-				} catch (ex) {
-					reject(ex);
+				} else {
+					reject({ status: response.status, message: response.statusMessage });
 				}
-			});
+			} catch (ex) {
+				reject(ex);
+			}
+		}).catch((error) => {
+			reject(error);
 		});
-
-		req.on('error', (e) => {
-			reject(e);
-		});
-
-		req.end();
 	});
 }
 
