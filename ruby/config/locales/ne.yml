@@ -651,7 +651,7 @@ ne:
     update email copy: "एक नयाँ ईमेल ठेगाना पेश गर्नुहोस् र इमेल अपडेट क्लिक गर्नुहोस्। हामी तपाईंलाई नयाँ इमेल ठेगाना पुष्टि गर्न लिङ्क पठाउनेछौं।"
     edit email: "ईमेल ठेगाना परिवर्तन गर्नुहोस्"
     update email check: "कृपया आफ्नो ईमेल जाँच गर्नुहोस् र तपाईंको दर्ता पुष्टि गर्नका लागि लिङ्क क्लिक गर्नुहोस्।"
-    confirm update email success: "Thanks! You've updated your email address."
+    confirm update email success: "धन्यवाद! तपाईंले आफ्नो इमेल ठेगाना अपडेट गर्नुभयो।"
     confirm update email error: "Sorry, there was a problem completing your email address change."
     account confirmed: "Your account has been confirmed!"
     account already confirmed: "Your account has already been confirmed! Sign in to continue."
@@ -734,7 +734,7 @@ ne:
     new: "New Bookmark"
     edit: "एडिट गर्नुहोस्"
     delete: "Delete this Bookmark"
-    title field: "Title"
+    title field: "शीर्षक"
     title field field: "शीर्षक:"
     labels: "Labels"
     all: "All"
@@ -1056,7 +1056,7 @@ ne:
     partners title: "Bible Publishing Partners"
     partners text: "Without our generous Bible publishing partners, YouVersion simply would not be able to provide our worldwide community with so many Bibles. Many of you have asked how you can thank these vital supporters of YouVersion's mission. You can learn more about them, their ministries, and ways you can support them through the links below."
     translation title: "Our Translation Teams"
-    learn more: "Learn More"
+    learn more: "धेरै जानकारीहरू हाँसिल गर्नुहोस"
   press page:
     title: "Press Area"
     contact header: "Press Contact Information"
@@ -1154,7 +1154,7 @@ ne:
         body: "Bible Plans help you engage with God's Word every day, a little at a time."
       browse_plans: "Browse All Plans"
       read_listen: "Read, Listen, Watch, Share"
-      start_now: "Start Now"
+      start_now: "अब शुरूगर्नुहोस "
       votd:
         title: "Verse of the Day"
         highlight_bookmark: "Highlight, Bookmark, or share this verse"
@@ -1216,7 +1216,7 @@ ne:
     filter: "Start typing Version name (or Language)..."
     see all: "See All Versions..."
     courtesy of: "%{abbreviation} brought to you by %{publisher}"
-    learn more: "Learn More"
+    learn more: "धेरै जानकारीहरू हाँसिल गर्नुहोस"
     index title: "Available Versions"
     publisher widget title: "Publisher"
     visit publisher: "Visit Publisher's Website"
@@ -1729,7 +1729,7 @@ ne:
               ContentInsertionPoint:
                 title: "Insert next module here"
               ContentTypeAnnouncement:
-                title: "Title"
+                title: "शीर्षक"
                 prompt: "यहाँ केहि लेख्नुहोस् ..."
                 caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
               ContentTypeContainer:
@@ -1958,7 +1958,7 @@ ne:
         users: "Users"
         plans: "Plans"
       version:
-        learn more: "Learn More"
+        learn more: "धेरै जानकारीहरू हाँसिल गर्नुहोस"
         courtesy of: "%{abbreviation} brought to you by %{publisher}"
       verse action:
         copy: "कपी गर्नुहोस्"
