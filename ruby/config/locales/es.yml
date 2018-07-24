@@ -271,7 +271,7 @@ es:
       heading: "Actualmente no son amigos"
       description: "Debe tener amistad con esta persona para poder ver sus amigos."
     limit notice: "Puede tener hasta 150 amigos"
-    limit description: "Definir su grupo de amistades en la Biblia App a las personas que conoce bien, propicia un ambiente de conversaciones francas, compartiendo descubrimientos con amigos de confianza."
+    limit description: "Limitar sus amistades de la Biblia App con personas que conoce bien creará un entorno que facilitará mantener conversaciones francas y también compartir descubrimientos con amigos de confianza."
   groups: "Grupos"
   mobile: "Aplicaciones Móviles"
   live: "En Vivo"
@@ -411,7 +411,7 @@ es:
       profile update button: "Actualiza su perfil"
       sharing text: "Comparta versículos en las redes sociales"
       sharing button: "Habilitar compartir"
-      friends text: "Observe los momentos en la Biblia de sus amigos."
+      friends text: "Vea momentos de sus amigos en la Biblia."
       friends button: "Encontrar amigos"
     action:
       go to scripture: "Ir a las Escrituras"
