@@ -11,9 +11,7 @@ module YV
       INVALID_TOKEN_ERROR = 1
 
       class << self
-        def get(feature, params, cookies, current_auth, current_user, request)
-
-          cookieDomain = (request.host == 'localhost') ? 'localhost' : request.host.split('.').last(2).unshift('').join('.')
+        def get(feature, params, cookies, current_auth, current_user, request, cookie_domain)
 
           started_at = Time.now.to_f
           can_cache  = true
@@ -62,16 +60,17 @@ module YV
               end
 
               if (response['error'] == INVALID_TOKEN_ERROR)
-                cookies.delete CookieName, domain: cookieDomain
+                cookies.delete CookieName
+                cookies.delete CookieName, domain: cookie_domain
                 return get(feature, params, cookies, current_auth, current_user, request)
               end
 
               if (!cookies.has_key?(CookieName) || cookies[CookieName] != response['token']) && response['token']
-                cookies[CookieName] = { domain: cookieDomain, value: response['token'], expires: 24.hour.from_now }
+                cookies[CookieName] = { domain: cookie_domain, value: response['token'], expires: 24.hour.from_now }
               end
 
 							if (!cookies.has_key?('OAUTH') || cookies['OAUTH'] != response['oauth']) && response['oauth']
-								cookies[:OAUTH] = { value: JSON.generate(response['oauth']), expires: 24.hour.from_now }
+								cookies[:OAUTH] = { value: JSON.generate(response['oauth']), expires: 24.hour.from_now, domain: cookie_domain }
 							end
 
               return response

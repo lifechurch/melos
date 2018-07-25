@@ -75,8 +75,8 @@ class UsersController < ApplicationController
       @user = User.register(params[:user].merge!(language_tag: I18n.locale))
       if @user.persisted?
         # save username so we can populate sign in form
-        cookies.signed[:a] = @user.id
-        cookies.signed[:b] = @user.email
+        cookies.signed[:a] = { value: @user.id, domain: cookie_domain }
+        cookies.signed[:b] = { value: @user.email, domain: cookie_domain }
 
         # maybe something like this, but we have to globally rescue UnverifiedAccountError
         # set_auth(@user.id, params[:user][:password])
@@ -84,7 +84,7 @@ class UsersController < ApplicationController
         if next_redirect?(authorize_licenses_path)
           return redirect_to(authorize_licenses_path(confirm: true))
         else
-          cookies[:tempemail] = @user.email
+          cookies[:tempemail] = { value: @user.email, domain: cookie_domain }
           return redirect_to confirm_email_path(@confirm_email, redirect: params[:redirect])
           # maybe we can sign them in and redirect them. but maybe not.
           # return follow_redirect(notice: "#{t("users.thanks for registering")} #{t("users.confirm email")}")
@@ -153,9 +153,9 @@ class UsersController < ApplicationController
       connection = FacebookConnection.new(info)
       result = connection.save
 
-      cookies.permanent.signed[:a] = user.id
-      cookies.permanent.signed[:b] = user.username
-      cookies.permanent.signed[:c] = params[:user][:password]
+      cookies.permanent.signed[:a] = { value: user.id, domain: cookie_domain }
+      cookies.permanent.signed[:b] = { value: user.username, domain: cookie_domain }
+      cookies.permanent.signed[:c] = { value: params[:user][:password], domain: cookie_domain }
 
       redirect_to sign_up_success_path(show: "facebook")
     else
@@ -287,7 +287,7 @@ class UsersController < ApplicationController
       }
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PasswordChange', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PasswordChange', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404

@@ -1,5 +1,5 @@
 class PasswordsController < ApplicationController
-  
+
   layout "settings"
 
   before_filter :force_login
@@ -15,7 +15,7 @@ class PasswordsController < ApplicationController
 
       if @results.valid?
         flash[:notice]=t('users.password.updated')
-        cookies.signed.permanent[:c] = params[:user][:password]
+        cookies.signed.permanent[:c] = { value: params[:user][:password], domain: cookie_domain }
       else
         flash[:error]= @results.errors[:base].first || t('users.password.error')
       end
