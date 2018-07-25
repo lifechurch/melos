@@ -165,7 +165,7 @@ es:
   created ago: "Creado hace %{time_ago}"
   copy: "Copiar"
   copy confirmed: "¡Copiado!"
-  new note: "Crear Nueva Nota"
+  new note: "Crear una Nota"
   share success: "Su mensaje ha sido compartido."
   share error: "Lo sentimos. Hubo un error al compartir su mensaje. Por favor, inténtelo de nuevo."
   share:
