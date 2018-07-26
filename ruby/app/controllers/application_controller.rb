@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
   before_filter :skip_home
   before_filter :check_facebook_cookie   # from YV::Concerns::SocialNetworks
   before_filter :set_default_sidebar     # from YV::Concerns::Presenters
+  before_filter :force_redirect_no_auth  # from YV::Concerns::UserAuth
 
   protected
 

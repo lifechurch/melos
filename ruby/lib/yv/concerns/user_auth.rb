@@ -3,18 +3,10 @@ module YV
     module UserAuth
 
       def self.included(base)
-        base.helper_method :logged_in?, :logged_out?, :force_login, :current_auth, :sign_in, :sign_out, :current_user
+        base.helper_method :logged_in?, :logged_out?, :force_login, :current_auth, :sign_in, :sign_out, :current_user, :cookie_domain
       end
 
       private
-
-      def logged_in?
-        current_auth.present?
-      end
-
-      def logged_out?
-        current_auth.nil?
-      end
 
       def cookie_domain
         domain = '.bible.com'
@@ -26,6 +18,14 @@ module YV
         return domain
       end
 
+      def logged_in?
+        current_auth.present?
+      end
+
+      def logged_out?
+        current_auth.nil?
+      end
+
       def force_login(opts = {})
         if current_auth.nil?
           opts[:redirect] = request.fullpath
@@ -34,6 +34,27 @@ module YV
         if current_user.invalid?
           sign_out
           return redirect_to (params[:redirect] || bible_path)
+        end
+      end
+
+      def force_redirect_no_auth
+        if request.host == 'localhost' or request.host == '127.0.0.1'
+          return
+        end
+
+        www_subdomain = ENV['WWW_SUBDOMAIN'].nil? ? 'www.' : ENV['WWW_SUBDOMAIN']
+        my_subdomain = ENV['MY_SUBDOMAIN'].nil? ? 'my.' : ENV['MY_SUBDOMAIN']
+
+        logged_in = !current_auth.nil? && !current_auth.invalid?
+        is_my_subdomain = "#{request.subdomain}." == my_subdomain
+        is_www_subdomain = "#{request.subdomain}." == www_subdomain
+
+        if logged_in && is_www_subdomain
+          redirect_to "//#{request.host_with_port.sub!(www_subdomain, my_subdomain)}#{request.fullpath}"
+        end
+
+        if !logged_in && is_my_subdomain
+          redirect_to "//#{request.host_with_port.sub!(my_subdomain, www_subdomain)}#{request.fullpath}"
         end
       end
 
@@ -60,26 +81,29 @@ module YV
       end
 
       def set_auth(user, password, tp_token, tp_id)
-        cookies.permanent.signed[:a] = user.id
-        cookies.permanent.signed[:b] = user.username
+        cookies.permanent.signed[:a] = { value: user.id, domain: cookie_domain }
+        cookies.permanent.signed[:b] = { value: user.username, domain: cookie_domain }
+
         if password.present?
-          cookies.permanent.signed[:c] = password
+          cookies.permanent.signed[:c] = { value: password, domain: cookie_domain }
         end
 
         if tp_token.present?
-          cookies.permanent.signed[:t] = tp_token
+          cookies.permanent.signed[:t] = { value: tp_token, domain: cookie_domain }
         else
           # set auth type to email
           # google and facebook are set in tp_sign_in
-          cookies[:auth_type] = 'email'
+          cookies[:auth_type] = { value: 'email', domain: cookie_domain }
         end
 
         if tp_id.present?
-          cookies.permanent.signed[:ti] = tp_id
+          cookies.permanent.signed[:ti] = { value: tp_id, domain: cookie_domain }
         end
 
+        cookies.delete 'YouVersionToken'
         cookies.delete 'YouVersionToken', domain: cookie_domain
-				cookies.delete 'OAUTH'
+        cookies.delete 'OAUTH'
+				cookies.delete 'OAUTH', domain: cookie_domain
         @current_auth = Hashie::Mash.new( { 'user_id' => user.id, 'username' => user.username, 'password' => password, 'tp_token' => tp_token, 'tp_id' => tp_id } )
       end
 
@@ -94,8 +118,17 @@ module YV
         cookies.delete :f
         cookies.delete :t
         cookies.delete :ti
+        cookies.delete 'YouVersionToken'
+        cookies.delete 'OAUTH'
+        cookies.delete :a, domain: cookie_domain
+        cookies.delete :b, domain: cookie_domain
+        cookies.delete :c, domain: cookie_domain
+        cookies.delete :f, domain: cookie_domain
+        cookies.delete :t, domain: cookie_domain
+        cookies.delete :ti, domain: cookie_domain
         cookies.delete 'YouVersionToken', domain: cookie_domain
-				cookies.delete 'OAUTH'
+        cookies.delete 'OAUTH', domain: cookie_domain
+        puts cookies[:a]
         clear_redirect
       end
 
