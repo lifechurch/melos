@@ -325,6 +325,10 @@ YouversionWeb::Application.routes.draw do
 # Redirect to a.youversion.com/groups/lifechurchtv
   get "/lifechurchtv",  to: "redirects#lifechurchtv"
 
+  # Redirect for Myanmar Zawgyi
+  get "/myz", to: "redirects#myz"
+  get "/zawgyi", to: "redirects#zawgyi"
+
   get "pages/feed", to: "pages#feed"
   get "pages/detail", to: "pages#detail"
   get "pages/requests", to: "pages#requests"
