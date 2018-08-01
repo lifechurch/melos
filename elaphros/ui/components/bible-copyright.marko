@@ -1,0 +1,5 @@
+<div class="f6 lh-copy mid-gray mt4">
+  <span if(input.version.copyright_short && input.version.copyright_short.html)>$!{input.version.copyright_short.html}</span>
+  <span if(input.version.copyright_short && !input.version.copyright_short.html && input.version.copyright_short.text)>${input.version.copyright_short.text}</span>
+  <a class="link yv-green underline" title="Learn More about ${input.version.local_name}" href="/versions/${input.version.id}?returnTo=${input.usfm}">Learn More about the ${input.version.local_title}</a>
+</div>

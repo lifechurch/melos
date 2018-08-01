@@ -1,0 +1,104 @@
+<site-layout
+  fullRequestURL=data.fullRequestURL
+  requestHost=data.requestHost
+  getLocalizedLink=data.getLocalizedLink
+  getPathWithoutLocale=data.getPathWithoutLocale
+  pathWithoutLocale=data.pathWithoutLocale>
+  <@head>
+  $ const ampComponents = [
+      { name: 'amp-mustache', type: 'template' },
+      { name: 'amp-bind', type: 'element' },
+      { name: 'amp-list', type: 'element' },
+      { name: 'amp-selector', type: 'element' },
+      { name: 'amp-audio', type: 'element' },
+      { name: 'amp-sidebar', type: 'element' },
+      { name: 'amp-form', type: 'element' },
+      { name: 'amp-carousel', type: 'element' },
+      { name: 'amp-social-share', type: 'element' },
+      { name: 'amp-analytics', type: 'element' },
+      { name: 'amp-install-serviceworker', type: 'element' }
+    ]
+
+    <amp-components
+      ampComponents=ampComponents>
+    </amp-components>
+
+    <await(promiseData from data.allPromises)>
+      $ const chapter = promiseData[0]
+      $ const version = promiseData[1]
+      $ const title = `${chapter.reference.human}, ${version.local_title} (${version.local_abbreviation.toUpperCase()}) | The Bible App`
+      $ const description = chapter.content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0,200)
+
+      <hreflang-tags
+        locales=data.appLocales
+        host=data.requestHost
+        path=data.pathWithoutLocale
+        locale="en">
+      </hreflang-tags>
+
+      <header-tags
+        title=title
+        description=description
+        deepLink=data.deepLink
+        metaImages=data.metaImages
+        twitterCard="summary"
+        canonicalUrl=data.fullRequestURL>
+      </header-tags>
+    </await>
+  </@head>
+  <@body>
+
+    <await(promiseData from data.allPromises)>
+      $ const chapter = promiseData[0]
+      $ const version = promiseData[1]
+
+      <reader-header chapter=chapter version=version></reader-header>
+
+      <app-default-state></app-default-state>
+
+      <bible-default-state
+        language="${version.language.language_tag}"
+        book="${chapter.reference.usfm[0].split('.')[0]}">
+      </bible-default-state>
+
+      <div class="mw6 center pa3 pt4 pb6 mt6">
+       <a if(chapter.previous)
+        class="bible-nav-button nav-left fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white left-1"
+        href="/bible/${data.versionId}/${chapter.previous.usfm[0]}"
+        title="${chapter.previous.human}"
+       >
+          <div class="flex" >
+            <reader-arrow-left />
+          </div>
+       </a>
+
+       <a if(chapter.next)
+        class="bible-nav-button nav-right fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white right-1"
+        href="/bible/${data.versionId}/${chapter.next.usfm[0]}"
+        title="${chapter.next.human}"
+       >
+          <div class="flex" >
+            <reader-arrow-right />
+          </div>
+       </a>
+
+        <div class="yv-bible-text">
+          <div class="reader">$!{chapter.content}</div>
+        </div>
+        <bible-copyright version=version usfm=chapter.reference.usfm[0]></bible-copyright>
+        <nav class="mt5 mb3 bg-black-10 br3 ml1 mr1">
+          <h4 class="tc f6 normal pa3 ba b--black-20 br2 outline-0 mid-gray bg-white ma0" role="button" tabIndex="0" on="tap: verse-links.toggleVisibility">Explore ${chapter.reference.human} by Verse</h4>
+          <ul hidden class="list ma0 pa3" id="verse-links">
+            <for(vl in data.verseLinks)>
+              <li class="pb3 tc">
+                <a title="${chapter.reference.human}:${vl.split('.').splice(-1)} | ${version.local_title}" class="link silver" href="/bible/${data.versionId}/${vl}">
+                  ${chapter.reference.human}:${vl.split('.').splice(-1)}
+                </a>
+              </li>
+            </for>
+          </ul>
+        </nav>
+      </div>
+    </await>
+  </@body>
+</site-layout>

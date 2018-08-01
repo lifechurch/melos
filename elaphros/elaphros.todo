@@ -1,0 +1,75 @@
+✔ Prev/Next buttons when there isn't a prev/next chapter @done(2018-06-11 11:23)
+✔ Choose Version by Langugage @done(2018-06-11 13:24)
+✔ Audio Bible: Player, Icon in version list @done(2018-06-11 14:44)
+✔ Learn More link under copyright @done(2018-06-12 09:12)
+✔ Cancel & Back Buttons on full screen modals @done(2018-06-12 09:15)
+✔ Bigger click area in lists (add padding to a element instead of li) @done(2018-06-12 11:11)
+✔ Reference validation: handle invalid references with frienldy "Not Found" page @done(2018-06-12 11:52)
+✔ Filter Version List by typing @done(2018-06-12 13:34)
+✔ Filter Book List by typing @done(2018-06-12 13:34)
+✔ Loading dots when waiting on JSON payloads needs better UX @done(2018-06-12 13:38)
+✔ Sign Up / Sign In buttons under hamburger menu @done(2018-06-12 15:36)
+✔ Expandable Search @done(2018-06-12 16:02)
+✔ Meta & Title info: social data @done(2018-06-13 13:27)
+✔ Single Verse Page @done(2018-06-14 14:43)
+✔ Verse Ranges for Single Verse Page @done(2018-06-14 16:50)
+✔ Better scrolling performance on Book, Version and Language Lists @done(2018-06-14 14:55)
+✔ Social Shares use verse images when available @done(2018-06-15 12:38)
+✔ Share panel @done(2018-06-15 14:46)
+✔ Move footer content to tray @done(2018-06-15 15:47)
+✔ Locale/Language Picker @done(2018-06-18 15:41)
+✔ Google Analytics Integration @done(2018-06-18 16:30)
+✔ All drop-down fullscreen modals need white background @done(2018-06-22 10:07)
+✔ Make card headers into links for SEO @done(2018-06-22 12:04)
+✔ href-lang tags (language alternatives) @done(2018-06-22 13:41)
+✔ Verse links inside chapter view for SEO @done(2018-07-02 15:37)
+✔ Make Desktop version (80% complete --- still need header hamburger + search) @done(2018-07-03 13:25)
+✔ Fix overflowing header on iPhone5 screen size @done(2018-07-03 13:29)
+✔ Caching (Local, Server+Memcache, HTTP Cache Headers for Browser) @done(2018-07-12 11:40)
+✔ Remove 404 redirect handler before going to prod @done(2018-07-12 11:43)
+✔ Recover server process after crash @done(2018-07-12 11:43)
+✔ New Relic perf monitoring @done(2018-07-12 13:47)
+✔ Handle URLs with version abbr at the end (/bible/1/ROM.3.KJV) @done(2018-07-12 16:00)
+✔ Copy behavior of Learn More link at bottom of chapter @done(2018-07-12 16:07)
+✔ z-index on the verse image arrow is conflicting with the versions selector popup @done(2018-07-12 16:26)
+✔ max width on share panel too wide on large screens @done(2018-07-13 15:28)
+☐ Social footer is missing on desktop!
+☐ After switching langs, going back to versions and switching langs again and back to versions... the lang label is incorrect
+☐ Final AMP Validation Check
+☐ Determine best way to redirect auth'd users
+☐ Change cache-control header for sw.js
+
+QUESTIONS
+☐ Make sure Bible Copyright is correct (check with Chris, Andy)
+☐ Make sure Bible CSS is correct (check with Chris, Andy)
+☐ Do we need links to sibling chapters for SEO crawling?
+☐ Should we use AMP specific analytics id or the primary id?
+
+NOT MVP
+☐ Secure JSON endpoints to prevent easy scraping / stealing
+☐ a little bit of weirdness with scrolling the page when the versions list is open
+☐ Make VOTD Subscription dismissible and save state with cookie (is it possible?)
+☐ Need AMP Validation step prior to commit or deploy
+☐ Need better way to scrape text data for meta
+☐ Localization
+☐ Verse validation pre-check before making calls to improve TTFB
+☐ Move static assets to CDN host (S3, Google Bucket, etc.)
+☐ Check accepts-lang header and suggest localization or automatically use
+☐ More granular analytics tracking (opening dialogs, filtering lists, social shares, etc.)
+☐ Clean up code by organizing into reusuable modules (where appropriate) and removing anything unused
+☐ Parallel Reader (for un-auth'd)
+☐ Create a better 404 page that gives the user more options for deeper interaction
+
+OPTIONAL
+☐ Setup linting
+☐ Sticky / Disappearing Header & Footer (optional)
+☐ Subtle animations for modals and menus (optional)
+☐ Reader Settings Panel (optional)
+☐ Verse Action (mocked and prompt for sign in/up) (optional)
+
+NEXT UP
+☐ Verse of the Day
+☐ Version Detail /version/{versionId}
+☐ Explore
+☐ Bible Plans (discover, collections, plan details, samples)
+☐ Topical Explorer (via Brad's Lens Index)

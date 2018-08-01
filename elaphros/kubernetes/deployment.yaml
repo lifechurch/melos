@@ -1,0 +1,95 @@
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: elaphros-$CI_ENVIRONMENT_SLUG
+  namespace: $KUBE_NAMESPACE
+  labels:
+    app: elaphros-$CI_ENVIRONMENT_SLUG
+    pipeline_id: "$CI_PIPELINE_ID"
+    build_id: "$CI_JOB_ID"
+    track: stable
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 10%
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: elaphros-$CI_ENVIRONMENT_SLUG
+      name: elaphros-$CI_ENVIRONMENT_SLUG
+      track: stable
+  template:
+    metadata:
+      labels:
+        name: elaphros-$CI_ENVIRONMENT_SLUG
+        app: elaphros-$CI_ENVIRONMENT_SLUG
+        track: stable
+      annotations:
+        security.alpha.kubernetes.io/unsafe-sysctls: net.core.somaxconn=4096
+        build_id: "$CI_JOB_ID"
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+      - name: $KUBE_NAMESPACE-elaphros-$CI_ENVIRONMENT_SLUG
+        image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 80
+        lifecycle:
+          preStop:
+            exec:
+              command: ["bash", "-c", "sleep 20"]
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1500Mi"
+        readinessProbe:
+          httpGet:
+            path: /ping
+            port: 80
+            scheme: HTTP
+            httpHeaders:
+              - name: Host
+                value: 127.0.0.1
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 5
+        env:
+          - name: YOUVERSION_TOKEN_PHRASE
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: YOUVERSION_TOKEN_PHRASE
+          - name: NODE_ENV
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: NODE_ENV
+          - name: PORT
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: PORT
+          - name: NEW_RELIC_LICENSE_KEY
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: NEW_RELIC_LICENSE_KEY
+          - name: APP_NAME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: APP_NAME
+          - name: WWW_SUBDOMAIN
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: WWW_SUBDOMAIN
+          - name: MY_SUBDOMAIN
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: MY_SUBDOMAIN                                                
+      imagePullSecrets:
+        - name: gitlab-registry

@@ -1,0 +1,114 @@
+<div
+  role="button"
+  tabindex="0"
+  class="w-100 flex items-center bb b--black-20 mr3 outline-0"
+  on="tap: bible-version-list.show, bible-language-list.hide, bible-chapter-list.hide, bible-book-list.hide, bible-audio-player.hide">
+  <span class="f7 f6-m mid-gray w-100 truncate">${input.version.local_abbreviation.toUpperCase()}${input.showFullVersion ? `: ${input.version.local_title}` : ''}</span>
+  <div class="tc pa2" ><dropdown-arrow /></div>
+</div>
+
+<amp-layout id="bible-version-list" hidden layout="fill">
+  <div class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-999 overflow-scroll smooth-scroll bottom-0 bottom-2-m" >
+    <div class="bg-light-gray pa2 flex justify-center items-center w-100">
+      <div class="w-20 truncate f7 f6-m black-30">
+        &nbsp;
+      </div>
+      <div class="w-100 tracked tc mid-gray f6 truncate">
+        VERSION
+      </div>
+      <div class="w-20 tr">
+        <button class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0" on="tap: bible-version-list.hide, bible-language-list.hide">CANCEL</button>
+      </div>
+    </div>
+    <div class="bg-light-gray pa2 flex justify-center items-center w-100">
+      <input
+        [value]="bible.versionFilter"
+        value=""
+        autofocus="true"
+        class="w-100"
+        on="input-throttled: AMP.setState({ bible: { versionFilter: event.value }})"
+      >
+    </div>
+    <div class="relative w-100 h-100 bg-white">
+      <amp-list
+        layout="fill"
+        [src]="'/json/bible/versions/' + bible.language + '?filter=' + bible.versionFilter"
+        src="/json/bible/versions/${input.version.language.iso_639_3}?filter="
+        single-item
+        items=".">
+        <template type="amp-mustache">
+          <amp-selector layout="container">
+            <div class="bg-white pb5 min-vh-100">
+              <div class="pa3 bb b--black-20">
+                <div class="flex items-center">
+                  <div class="w-100 flex flex-column">
+                    <span class="f7 f6-m black-30 mb1">Bible Language</span>
+                    <span class="f6 black-80">${input.version.language.local_name}</span>
+                  </div>
+                  <div class="w-auto">
+                    <button class="ma0 pa0 f7 f6-m yv-green bn bg-transparent outline-0" on="tap: bible-version-list.hide, bible-language-list.show">Change Language</button>
+                  </div>
+                </div>
+              </div>
+              <ul class="list ma0 pa0">
+              {{#items}}
+                <li class="">
+                  <div class="flex w-100 items-center">
+                    <a class="pa2 pl3 w-100 dib mid-gray link f7 f6-m" href="/bible/{{id}}/${input.usfm}">{{local_title}}</a>
+                    <div class="w-auto" hidden="{{audio}}">
+                      <audio-icon></audio-icon>
+                    </div>
+                  </div>
+                </li>
+              {{/items}}
+              </ul>
+            </div>
+          </amp-selector>
+        </template>
+      </amp-list>
+    </div>
+  </div>
+</amp-layout>
+
+<amp-layout id="bible-language-list" hidden layout="fill">
+  <div class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-2 overflow-scroll smooth-scroll bottom-0 bottom-2-m" >
+    <div class="bg-light-gray pa2 flex justify-center items-center w-100">
+      <div class="w-20 truncate f7 f6-m black-30">
+        <button class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0" on="tap: bible-version-list.show, bible-language-list.hide">&larr;</button>
+      </div>
+      <div class="w-100 tracked tc mid-gray f6 truncate">
+        LANGUAGE
+      </div>
+      <div class="w-20 tr">
+        <button class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0" on="tap: bible-version-list.hide, bible-language-list.hide">CANCEL</button>
+      </div>
+    </div>
+    <div class="bg-light-gray pa2 flex justify-center items-center w-100">
+      <input
+        [value]="bible.languageFilter"
+        value=""
+        autofocus="true"
+        class="w-100"
+        on="input-throttled: AMP.setState({ bible: { languageFilter: event.value }})"
+      >
+    </div>
+    <div class="relative w-100 h-100 bg-white">
+      <amp-list
+        layout="fill"
+        [src]="'/json/bible/languages?filter=' + bible.languageFilter"
+        src="/json/bible/languages?filter="
+        single-item
+        items=".">
+        <template type="amp-mustache">
+          <amp-selector layout="container" on="select: AMP.setState({ bible: { language: event.targetOption, versionFilter: '' }} ), bible-version-list.show, bible-language-list.hide">
+            <ul class="list ma0 pa0 bg-white pb5 min-vh-100">
+            {{#items}}
+              <li class="pa2 pl3 mid-gray f7 f6-m" option="{{tag}}">{{local_name}}</li>
+            {{/items}}
+            </ul>
+          </amp-selector>
+        </template>
+      </amp-list>
+    </div>
+  </div>
+</amp-layout>

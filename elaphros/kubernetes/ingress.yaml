@@ -1,0 +1,23 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-elaphros-$CI_ENVIRONMENT_SLUG
+  namespace: $KUBE_NAMESPACE
+  labels:
+    app: elaphros-$CI_ENVIRONMENT_SLUG
+    pipeline_id: "$CI_PIPELINE_ID"
+    build_id: "$CI_JOB_ID"
+spec:
+  tls:
+  - hosts:
+    - $CI_ENVIRONMENT_HOSTNAME
+    secretName: tls
+  rules:
+  - host: $CI_ENVIRONMENT_HOSTNAME
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: 80

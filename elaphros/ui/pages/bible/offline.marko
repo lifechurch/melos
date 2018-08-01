@@ -1,0 +1,27 @@
+<site-layout>
+  <@head>
+  $ const ampComponents = [
+      { name: 'amp-mustache', type: 'template' },
+      { name: 'amp-bind', type: 'element' },
+      { name: 'amp-list', type: 'element' },
+      { name: 'amp-selector', type: 'element' },
+      { name: 'amp-audio', type: 'element' },
+      { name: 'amp-sidebar', type: 'element' },
+      { name: 'amp-form', type: 'element' },
+      { name: 'amp-carousel', type: 'element' },
+      { name: 'amp-social-share', type: 'element' },
+      { name: 'amp-analytics', type: 'element' },
+      { name: 'amp-install-serviceworker', type: 'element' }
+    ]
+
+    <amp-components
+      ampComponents=ampComponents>
+    </amp-components>
+  </@head>
+  <@body>
+    <div class="measure center mt5 tc pa3 min-vh-100">
+      <h3>Offline</h3>
+      <p class="lh-copy">Ooops. Looks like you're offline right now. Try again when your connection has been restored.</p>
+    </div>
+  </@body>
+</site-layout>
