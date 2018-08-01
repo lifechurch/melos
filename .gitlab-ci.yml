@@ -65,6 +65,7 @@ stop_review:
     GIT_STRATEGY: none
   script:
     - command destroy
+    - command destroy elaphros
     - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
     - helm delete $SHORT
   environment:

@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - $CI_ENVIRONMENT_HOSTNAME
+    - elaphros-$CI_ENVIRONMENT_HOSTNAME
     secretName: tls
   rules:
-  - host: $CI_ENVIRONMENT_HOSTNAME
+  - host: elaphros-$CI_ENVIRONMENT_HOSTNAME
     http:
       paths:
       - path: /
