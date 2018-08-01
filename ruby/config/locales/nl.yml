@@ -89,7 +89,7 @@ nl:
     facebook:
       name: "Facebook"
       errors:
-        expired access: "Jouw toegang token voor Facebook is verlopen. Gelieve jouw connectie te verbreken en de verbinding met Facebook te herstellen."
+        expired access: "Je toegang tot Facebook is verlopen. Gelieve je verbinding te verbreken en de verbinding met Facebook te herstellen."
   language names:
     arabic: "Arabisch"
     bulgarian: "Bulgaars"
@@ -143,7 +143,7 @@ nl:
       download or read: "Download nu of lees online."
     site:
       title: "Bible.com"
-      description: "Breng de schoonheid en waarheid van de Bijbel in je dagelijkse leven. Met de YouVersion Bijbel App kun jij lezen, kijken, luisteren en delen via jouw smartfoon, tablet en online op Bible.com."
+      description: "Breng de schoonheid en waarheid van de Bijbel in je dagelijkse leven. Met de YouVersion Bijbel App kun jij lezen, kijken, luisteren en delen via jouw smartphone, tablet en online op Bible.com."
     connections:
       index:
         title: "Verbonden Accounts"
@@ -207,7 +207,7 @@ nl:
   sign out: "Uitloggen"
   sign back in: "On beveiligingsredenen moet je iedere twee weken opnieuw inloggen. Log opnieuw in."
   youversion: "YouVersion"
-  username or email prompt: "Email (of Gebruikersnaam)"
+  username or email prompt: "E-mail (of Gebruikersnaam)"
   password prompt: "Wachtwoord"
   sign in to youversion: "Inloggen bij YouVersion"
   remove: "Verwijderen"
@@ -219,7 +219,7 @@ nl:
   lifechurch short url: "Life.Church"
   about: "Over"
   blog: "Blog"
-  versions link: "Versies"
+  versions link: "Vertalingen"
   languages link: "Talen"
   jobs: "Vacatures"
   volunteer: "Vrijwilliger"
@@ -369,7 +369,7 @@ nl:
   recent versions: "Recent gebruikt"
   traditional: "Traditioneel"
   alphabetic: "Alfabetisch"
-  versions title: "Versies"
+  versions title: "Vertalingen"
   languages:
     title: "Bijbelvertalingen"
     most popular: "Populairste talen"
