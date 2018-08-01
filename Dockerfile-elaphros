@@ -6,7 +6,7 @@ WORKDIR /app
 COPY elaphros/package.json elaphros/yarn.lock /app/
 RUN yarn install --production
 
-COPY elaphros/* /app
+COPY elaphros/ /app
 
 EXPOSE 80
 
