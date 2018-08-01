@@ -1360,7 +1360,7 @@ zh-HK:
       saved: "已儲存！"
       plan delivery: "傳送計劃"
       sign-in: "要編輯其他設定，請<a href='%{sign_in_path}'>登入你的帳戶</a>。"
-      other: "Other Notifications"
+      other: "其他通知"
       pwf: "【和朋友共讀計劃】"
       links:
         manage: "管理電郵通知。"
@@ -1388,7 +1388,7 @@ zh-HK:
         friendships: "朋友請求"
         likes: "我的活動點讚"
         moments: "朋友的活動"
-        newsletter: "News from Bible App"
+        newsletter: "聖經軟件最新消息"
         lens_newsletter: "Bible Lens 最新消息"
         reading_plans: "有關我的聖經計劃"
         votd: "今日經文文本"
