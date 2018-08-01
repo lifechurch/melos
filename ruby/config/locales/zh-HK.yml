@@ -1361,7 +1361,7 @@ zh-HK:
       plan delivery: "傳送計劃"
       sign-in: "要編輯其他設定，請<a href='%{sign_in_path}'>登入你的帳戶</a>。"
       other: "Other Notifications"
-      pwf: "Plans with Friends"
+      pwf: "【和朋友共讀計劃】"
       links:
         manage: "管理電郵通知。"
         unsub all: "取消訂閱所有電郵。"
@@ -1394,10 +1394,10 @@ zh-HK:
         votd: "今日經文文本"
         votd_image: "今日經文圖"
         contact_joins: "有聯絡人參加的時候"
-        pwf_comments: "When Participants Post a Comment"
+        pwf_comments: "參與者發布評論時"
         pwf_accepts: "參與者接受邀請時"
-        pwf_invites: "When Invited to Join a Plan"
-        pwf_reminders: "Plan Start Reminder"
+        pwf_invites: "受邀共讀計劃時"
+        pwf_reminders: "計劃開始的提醒"
       error:
         token: "很抱歉，你需要登錄才可以更改通知設定。"
         other_type: "很抱歉，出現了錯誤。你想更新你的通知設定嗎？"
