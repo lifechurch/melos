@@ -1,23 +1,21 @@
 {
-  "short_name": "Bible",
+  "short_name": "Bible.com",
   "name": "Bible.com | YouVersion, the Bible App",
   "icons": [
     {
-      "src": "apple-touch-icon.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    }, {
-      "src": "icon_96.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    }, {
-      "src": "icon_192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src":"/static-assets/icons/bible/200/en.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    },
+    {
+      "src":"/static-assets/icons/bible/512/en.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "start_url": "/bible?utm_source=homescreen",
-  "background_color": "white",
-  "display": "standalone",
+  "start_url": "/bible/111/JHN.3",
+  "background_color": "#FFF",
+  "theme_color": "#555",
+  "display": "fullscreen",
   "gcm_sender_id": "103953800507"
 }
