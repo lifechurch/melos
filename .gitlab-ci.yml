@@ -15,7 +15,7 @@ stages:
   - production
   - taglatest
 
-build:
+build legacy:
   stage: build
   script:
     - command build
@@ -26,35 +26,14 @@ build:
   tags:
     - web
 
-production:
-  stage: production
-  variables:
-    CI_ENVIRONMENT_URL: http://$KUBE_DOMAIN
-    PRODUCTION_SECURE_HOSTNAME: nodejs.$KUBE_DOMAIN
+build elaphros:
+  stage: build
   script:
-    - command deploy
-  environment:
-    name: production
-    url: http://$KUBE_DOMAIN
-  when: manual
-  allow_failure: false
+    - command build Dockerfile-elaphros
   only:
-    - master
-  tags:
-    - web    
-
-staging:
-  stage: staging
-  variables:
-    CI_ENVIRONMENT_URL: http://staging.$KUBE_DOMAIN
-    STAGING_SECURE_HOSTNAME: nodejs-staging.$KUBE_DOMAIN
-  script:
-    - command deploy
-  environment:
-    name: staging
-    url: http://staging.$KUBE_DOMAIN
-  only:
-    - master
+    - branches
+  except:
+    - l10n_master  
   tags:
     - web
 
@@ -99,6 +78,38 @@ stop_review:
     - l10n_master
   tags:
     - web
+
+staging:
+  stage: staging
+  variables:
+    CI_ENVIRONMENT_URL: http://staging.$KUBE_DOMAIN
+    STAGING_SECURE_HOSTNAME: nodejs-staging.$KUBE_DOMAIN
+  script:
+    - command deploy
+  environment:
+    name: staging
+    url: http://staging.$KUBE_DOMAIN
+  only:
+    - master
+  tags:
+    - web
+
+production:
+  stage: production
+  variables:
+    CI_ENVIRONMENT_URL: http://$KUBE_DOMAIN
+    PRODUCTION_SECURE_HOSTNAME: nodejs.$KUBE_DOMAIN
+  script:
+    - command deploy
+  environment:
+    name: production
+    url: http://$KUBE_DOMAIN
+  when: manual
+  allow_failure: false
+  only:
+    - master
+  tags:
+    - web    
 
 taglatest:
   stage: taglatest

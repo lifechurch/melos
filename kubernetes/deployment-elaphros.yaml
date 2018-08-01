@@ -32,7 +32,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: $KUBE_NAMESPACE-elaphros-$CI_ENVIRONMENT_SLUG
-        image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        image: $CI_REGISTRY_IMAGE:elaphros-$CI_COMMIT_SHA
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 80
