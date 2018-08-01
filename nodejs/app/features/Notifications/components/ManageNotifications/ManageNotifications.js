@@ -74,7 +74,11 @@ class ManageNotifications extends Component {
 				newsletter: newsletterStatus,
 				badges: badgesStatus,
 				reading_plans: readingPlansStatus,
-				contact_joins: contactJoinsStatus
+				contact_joins: contactJoinsStatus,
+        pwf_comments: pwfCommentsStatus,
+        pwf_accepts: pwfAcceptsStatus,
+        pwf_invites: pwfInvitesStatus,
+        pwf_reminders: pwfRemindersStatus
 			},
 			tokenIdentity: {
 				email,
@@ -136,6 +140,7 @@ class ManageNotifications extends Component {
 								</p>
 							}
 							<hr />
+							<h3 className="tracked ttu f6 silver mb3"><FormattedMessage id="votd" /></h3>
 							<AsyncCheck
 								initialValue={votdStatus}
 								data={{ type: 'votd' }}
@@ -143,7 +148,7 @@ class ManageNotifications extends Component {
 								enabled={!!email && votdStatus}
 								offOnly={true}
 								label={<FormattedMessage id="unsubscribe.labels.votd" />}
-							/>
+       />
 							<AsyncCheck
 								initialValue={votdImageStatus}
 								data={{ type: 'votd_image' }}
@@ -151,67 +156,99 @@ class ManageNotifications extends Component {
 								enabled={!!email && votdImageStatus}
 								offOnly={true}
 								label={<FormattedMessage id="unsubscribe.labels.votd_image" />}
-							/>
+       />
 							<hr />
+							<h3 className="tracked ttu f6 silver mb3"><FormattedMessage id="unsubscribe.labels.moments" /></h3>
 							<AsyncCheck
 								initialValue={getTypeStatus(friendshipsStatus)}
 								data={{ type: 'friendships' }}
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.friendships" />}
-							/>
+       />
 							<AsyncCheck
 								initialValue={getTypeStatus(momentsStatus)}
 								data={{ type: 'moments' }}
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.moments" />}
-							/>
+       />
 							<AsyncCheck
 								initialValue={getTypeStatus(commentsStatus)}
 								data={{ type: 'comments' }}
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.comments" />}
-							/>
+       />
 							<AsyncCheck
 								initialValue={getTypeStatus(likesStatus)}
 								data={{ type: 'likes' }}
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.likes" />}
-							/>
+       />
 							<AsyncCheck
 								initialValue={getTypeStatus(contactJoinsStatus)}
-								data={{ type: 'likes' }}
+								data={{ type: 'contact_joins' }}
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.contact_joins" />}
-							/>
+       />
+							<hr />
+							<h3 className="tracked ttu f6 silver mb3"><FormattedMessage id="unsubscribe.other" /></h3>
 							<AsyncCheck
 								initialValue={getTypeStatus(newsletterStatus)}
 								data={{ type: 'newsletter' }}
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.newsletter" />}
-							/>
+       />
 							<AsyncCheck
 								initialValue={getTypeStatus(badgesStatus)}
 								data={{ type: 'badges' }}
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.badges" />}
-							/>
+       />
 							<AsyncCheck
 								initialValue={getTypeStatus(readingPlansStatus)}
 								data={{ type: 'reading_plans' }}
 								onChange={this.handleChange}
 								enabled={!!email}
 								label={<FormattedMessage id="unsubscribe.labels.reading_plans" />}
+       />
+							<hr />
+							<h3 className="tracked ttu f6 silver mb3"><FormattedMessage id="unsubscribe.pwf" /></h3>
+							<AsyncCheck
+								initialValue={getTypeStatus(pwfCommentsStatus)}
+								data={{ type: 'pwf_comments' }}
+								onChange={this.handleChange}
+								enabled={!!email}
+								label={<FormattedMessage id="unsubscribe.labels.pwf_comments" />}
+       />
+							<AsyncCheck
+								initialValue={getTypeStatus(pwfAcceptsStatus)}
+								data={{ type: 'pwf_accepts' }}
+								onChange={this.handleChange}
+								enabled={!!email}
+								label={<FormattedMessage id="unsubscribe.labels.pwf_accepts" />}
+       />
+							<AsyncCheck
+								initialValue={getTypeStatus(pwfInvitesStatus)}
+								data={{ type: 'pwf_invites' }}
+								onChange={this.handleChange}
+								enabled={!!email}
+								label={<FormattedMessage id="unsubscribe.labels.pwf_invites" />}
+       />
+							<AsyncCheck
+								initialValue={getTypeStatus(pwfRemindersStatus)}
+								data={{ type: 'pwf_reminders' }}
+								onChange={this.handleChange}
+								enabled={!!email}
+								label={<FormattedMessage id="unsubscribe.labels.pwf_reminders" />}
 							/>
-
 							{hasEmailPlans ? <hr /> : null }
-							{hasEmailPlans ? <h2><FormattedMessage id="unsubscribe.plan delivery" /></h2> : null }
+							{hasEmailPlans ? <h3 className="tracked ttu f6 silver mb3"><FormattedMessage id="unsubscribe.plan delivery" /></h3> : null }
 							{hasEmailPlans ? <span>{ emailDeliveryPlans }</span> : null }
 
 						</div>
