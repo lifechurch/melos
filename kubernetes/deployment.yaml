@@ -130,5 +130,15 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: YIR_SHA1_SECRET_KEY
+          - name: WWW_SUBDOMAIN
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: WWW_SUBDOMAIN
+          - name: MY_SUBDOMAIN
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: MY_SUBDOMAIN                                
       imagePullSecrets:
         - name: gitlab-registry
