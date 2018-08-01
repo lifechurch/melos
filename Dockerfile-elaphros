@@ -3,7 +3,7 @@ FROM in.thewardro.be:4567/docker/nodejs:8.11.3
 RUN mkdir -p /app && chown node:node /app
 WORKDIR /app
 
-COPY elaphros/package.json yarn.lock /app/
+COPY elaphros/package.json elaphros/yarn.lock /app/
 RUN yarn install --production
 
 COPY elaphros/* /app
