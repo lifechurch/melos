@@ -24,6 +24,26 @@ spec:
         backend:
           serviceName: $CI_ENVIRONMENT_SLUG
           servicePort: $PORT
+      - path: /bible
+        backend:
+          serviceName: elaphros-staging
+          servicePort: $PORT
+      - path: /sw.js
+        backend:
+          serviceName: elaphros-staging
+          servicePort: $PORT
+      - path: /bible-offline
+        backend:
+          serviceName: elaphros-staging
+          servicePort: $PORT
+      - path: /json
+        backend:
+          serviceName: elaphros-staging
+          servicePort: $PORT
+      - path: /static-assets
+        backend:
+          serviceName: elaphros-staging
+          servicePort: $PORT
   - host: events-$CI_ENVIRONMENT_HOSTNAME
     http:
       paths:
