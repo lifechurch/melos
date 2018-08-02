@@ -1412,7 +1412,7 @@ hu:
         votd: "Napi igevers"
         votd_image: "Napi igevers kép"
         contact_joins: "Amikor egy ismerősöd csatlakozik"
-        pwf_comments: "When Participants Post a Comment"
+        pwf_comments: "Ha a résztvevők hozzászólnak"
         pwf_accepts: "Amikor a résztvevők elfogadnak egy meghívást"
         pwf_invites: "Ha meghívnak hogy csatlakozz egy tervhez"
         pwf_reminders: "Olvasási terv emlékeztető"
