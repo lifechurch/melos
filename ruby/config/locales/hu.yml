@@ -1378,8 +1378,8 @@ hu:
       saved: "Mentve!"
       plan delivery: "TERV KÉZBESÍTÉS"
       sign-in: "Egyéb beállítások módosításához <a href='%{sign_in_path}'>jelentkezz be a fiókodba</a>."
-      other: "Other Notifications"
-      pwf: "Plans with Friends"
+      other: "Egyéb értesítések"
+      pwf: "Közös olvasási tervek barátokkal"
       links:
         manage: "Email értesítések kezelése"
         unsub all: "Leiratkozás minden emailről"
