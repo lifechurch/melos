@@ -1398,8 +1398,8 @@ pt:
         votd: "Você cancelou o recebimento de e-mails do <b>Versículo do Dia</b> com sucesso."
         votd_image: "Você cancelou o recebimento de e-mails de <b>Imagem do Versículo do Dia</b> com sucesso."
         contact_joins: "Você cancelou o recebimento de notificações de e-mails de <b>Contatos</b> com sucesso."
-        pwf_invites: "You have successfully unsubscribed from seeing when you’re invited to a Plan."
-        pwf_reminders: "You have successfully unsubscribed from seeing Plan Start Reminders."
+        pwf_invites: "Você cancelou com sucesso a inscrição para visualizar quando é convidado para um Plano."
+        pwf_reminders: "Você cancelou com sucesso a inscrição para visualizar os Lembretes de Início de Plano."
       labels:
         badges: "Quando eu ganho uma medalha"
         comments: "Comentários sobre minhas atividades"
