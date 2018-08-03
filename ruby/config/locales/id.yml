@@ -1378,8 +1378,8 @@ id:
         reading_plans: "Anda berhasil berhenti berlangganan email <b>Rencana Bacaan</b>."
         rp_daily: "Anda berhasil berhenti berlangganan <b>Email Harian Rencana Bacaan</b> untuk %{plan_title}."
         votd: "Anda berhasil berhenti berlangganan email <b>Ayat Hari Ini</b>."
-        votd_image: "Anda berhasil berhenti berlangganan dari email <b>Gambar Ayat Hari Ini</b>."
-        contact_joins: "Anda berhasil berhenti berlangganan dari email <b>Kontak</b>."
+        votd_image: "Anda berhasil berhenti berlangganan email <b>Gambar Ayat Hari Ini</b>."
+        contact_joins: "Anda berhasil berhenti berlangganan email <b>Kontak</b>."
         pwf_invites: "Anda telah berhasil berhenti berlangganan notifikasi saat Anda diundang mengikuti Rencana."
         pwf_reminders: "Anda telah berhasil berhenti berlangganan Pengingat Rencana Dimulai."
       labels:
