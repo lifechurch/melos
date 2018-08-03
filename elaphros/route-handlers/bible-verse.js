@@ -10,9 +10,9 @@ const getAppLocale = require('../utils/localization/get-app-locale')
 const getLocalizedLink = require('../utils/localization/get-localized-link')
 const getPathWithoutLocale = require('../utils/localization/get-path-without-locale')
 const localeList = require('../localization/locale-list.json')
-const Bible = api.getClient('bible')
-const Image = api.getClient('images')
-const ReadingPlans = api.getClient('reading-plans')
+const Bible = api.getClient('bible').setEnvironment(process.env.NODE_ENV)
+const Image = api.getClient('images').setEnvironment(process.env.NODE_ENV)
+const ReadingPlans = api.getClient('reading-plans').setEnvironment(process.env.NODE_ENV)
 
 module.exports = function bibleVerse(req, reply) {
   const { versionId, usfm: rawUsfm } = req.params

@@ -1,6 +1,6 @@
 const api = require('@youversion/js-api')
 const sanitizeString = require('../utils/sanitize-string')
-const Bible = api.getClient('bible')
+const Bible = api.getClient('bible').setEnvironment(process.env.NODE_ENV)
 
 module.exports = async function bibleBooks(req, reply) {
   const { versionId } = req.params

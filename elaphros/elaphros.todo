@@ -33,10 +33,10 @@
 ✔ Copy behavior of Learn More link at bottom of chapter @done(2018-07-12 16:07)
 ✔ z-index on the verse image arrow is conflicting with the versions selector popup @done(2018-07-12 16:26)
 ✔ max width on share panel too wide on large screens @done(2018-07-13 15:28)
+✔ Determine best way to redirect auth'd users @done(2018-08-01 15:21)
 ☐ Social footer is missing on desktop!
 ☐ After switching langs, going back to versions and switching langs again and back to versions... the lang label is incorrect
 ☐ Final AMP Validation Check
-☐ Determine best way to redirect auth'd users
 ☐ Change cache-control header for sw.js
 
 QUESTIONS

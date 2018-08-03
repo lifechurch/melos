@@ -1,5 +1,5 @@
 const api = require('@youversion/js-api')
-const Bible = api.getClient('bible')
+const Bible = api.getClient('bible').setEnvironment(process.env.NODE_ENV)
 
 module.exports = async function bibleChapters(req, reply) {
   const { versionId, book } = req.params
