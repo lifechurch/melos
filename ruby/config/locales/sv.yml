@@ -1378,7 +1378,7 @@ sv:
       saved: "Sparat!"
       plan delivery: "LEVERANS AV LÄSPLAN"
       sign-in: "För att ändra andra inställningar, <a href='%{sign_in_path}'>logga in på ditt konto</a>."
-      other: "Andra meddelanden"
+      other: "Ytterligare aviseringar"
       pwf: "Planer tillsammans med vänner"
       links:
         manage: "Hantera notifikationer via e-post"
