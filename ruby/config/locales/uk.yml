@@ -1414,7 +1414,7 @@ uk:
       saved: "Збережено!"
       plan delivery: "Отримання планів"
       sign-in: "Щоб змінити інші налаштування,<a href='%{sign_in_path}'>увійдіть у ваш обліковий запис</a>."
-      other: "Other Notifications"
+      other: "Інші сповіщення"
       pwf: "Plans with Friends"
       links:
         manage: "Керувати сповіщеннями через електронну пошту"
