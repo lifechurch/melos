@@ -84,12 +84,21 @@
     <script type="application/json">
     {
       "vars": {
-        "account": "UA-3571547-121"
+        "account": "UA-3571547-76"
       },
       "triggers": {
         "trackPageview": {
           "on": "visible",
           "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "[role="button"],a,button",
+          "request": "event",
+          "vars": {
+            "eventCategory": "amp-ui",
+            "eventAction": "anchor-click"
+          }
         }
       }
     }
