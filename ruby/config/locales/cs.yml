@@ -1415,7 +1415,7 @@ cs:
       plan delivery: "Odběr plánů"
       sign-in: "Pro změnu nastavení, <a href='%{sign_in_path}'>se prosím přihlaste k účtu</a>."
       other: "Další notifikace"
-      pwf: "Plans with Friends"
+      pwf: "Plány s přáteli"
       links:
         manage: "Správa emailová oznámení"
         unsub all: "Odhlásit odběr všech oznámení"
@@ -1443,7 +1443,7 @@ cs:
         likes: "\"To se mi líbí\" u mé aktivity"
         moments: "Aktivita přítele"
         newsletter: "Novinky z aplikace Bible"
-        lens_newsletter: "News from Bible Lens"
+        lens_newsletter: "Novinky z Bible Lens"
         reading_plans: "O mých plánech čtení"
         votd: "Textový verš dne"
         votd_image: "Obrázkový verš dne"
