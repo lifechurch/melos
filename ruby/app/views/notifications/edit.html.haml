@@ -7,7 +7,11 @@
     "friendships"   => t('users.notifications.friendships'),
     "reading_plans" => t('users.notifications.reading_plans'),
     "badges"        => t('users.notifications.badges'),
-    "newsletter"    => t('users.notifications.newsletter')
+    "newsletter"    => t('users.notifications.newsletter'),
+    "pwf_comments"  => t('EventsAdmin.unsubscribe.labels.pwf_comments'),
+    "pwf_reminders" => t('EventsAdmin.unsubscribe.labels.pwf_reminders'),
+    "pwf_invites"   => t('EventsAdmin.unsubscribe.labels.pwf_invites'),
+    "pwf_accepts"   => t('EventsAdmin.unsubscribe.labels.pwf_accepts')
   }
 
   @title = t('users.edit notifications')
@@ -26,7 +30,7 @@
         - if @settings.errors.respond_to?(:full_messages)
           - @settings.errors.full_messages.each do |err|
             %li= err
-        - else 
+        - else
           - @settings.errors.each do |err|
             %li= t(err.error)
   - else
