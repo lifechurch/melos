@@ -1396,7 +1396,7 @@ hr:
       saved: "Spremljeno!"
       plan delivery: "ISPORUKA PLANOVA"
       sign-in: "Za izmjenu ostalih postavki, <a href='%{sign_in_path}'>prijavi se sa svojim korisničkim računom</a>."
-      other: "Other Notifications"
+      other: "Ostale obavijesti"
       pwf: "Plans with Friends"
       links:
         manage: "Upravljaj e-mail obavijestima"
