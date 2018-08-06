@@ -59,7 +59,7 @@ class AsyncCheck extends Component {
 		return (
 			<div className={`yv-async-check ${checked ? 'checked' : 'not-checked'} ${enabled && !offOnlyDisabled ? '' : 'disabled'}`}>
 				<a className="check-box" tabIndex={0} onClick={enabled && !offOnlyDisabled ? this.handleChange : null}>
-					{checked && <CheckMark fill="#FFFFFF" />}
+					{checked && <CheckMark width={15} height={15} fill="#FFFFFF" />}
 				</a>
 				{image && <img alt="" className="check-thumbnail" src={image.url} />}
 				{label}
