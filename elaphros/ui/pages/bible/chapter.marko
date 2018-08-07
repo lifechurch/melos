@@ -16,7 +16,8 @@
       { name: 'amp-carousel', type: 'element' },
       { name: 'amp-social-share', type: 'element' },
       { name: 'amp-analytics', type: 'element' },
-      { name: 'amp-install-serviceworker', type: 'element' }
+      { name: 'amp-install-serviceworker', type: 'element' },
+      { name: 'amp-app-banner', type: 'element' }
     ]
 
     <amp-components
@@ -66,6 +67,9 @@
         class="bible-nav-button nav-left fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white left-1"
         href="/bible/${data.versionId}/${chapter.previous.usfm[0]}"
         title="${chapter.previous.human}"
+        data-vars-event-category="Bible Chapter"
+        data-vars-event-action="Previous"
+        data-vars-event-label="${chapter.previous.usfm[0]}"
        >
           <div class="flex" >
             <reader-arrow-left />
@@ -76,6 +80,9 @@
         class="bible-nav-button nav-right fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white right-1"
         href="/bible/${data.versionId}/${chapter.next.usfm[0]}"
         title="${chapter.next.human}"
+        data-vars-event-category="Bible Chapter"
+        data-vars-event-action="Next"
+        data-vars-event-label="${chapter.next.usfm[0]}"
        >
           <div class="flex" >
             <reader-arrow-right />
@@ -87,11 +94,28 @@
         </div>
         <bible-copyright version=version usfm=chapter.reference.usfm[0]></bible-copyright>
         <nav class="mt5 mb3 bg-black-10 br3 ml1 mr1">
-          <h4 class="tc f6 normal pa3 ba b--black-20 br2 outline-0 mid-gray bg-white ma0" role="button" tabIndex="0" on="tap: verse-links.toggleVisibility">Explore ${chapter.reference.human} by Verse</h4>
+          <h4
+            class="tc f6 normal pa3 ba b--black-20 br2 outline-0 mid-gray bg-white ma0"
+            role="button"
+            tabIndex="0"
+            on="tap: verse-links.toggleVisibility"
+            data-vars-event-category="Bible Chapter"
+            data-vars-event-action="EBV Expand"
+            data-vars-event-label="${chapter.reference.usfm[0]}"
+          >
+            Explore ${chapter.reference.human} by Verse
+          </h4>
           <ul hidden class="list ma0 pa3" id="verse-links">
             <for(vl in data.verseLinks)>
               <li class="pb3 tc">
-                <a title="${chapter.reference.human}:${vl.split('.').splice(-1)} | ${version.local_title}" class="link silver" href="/bible/${data.versionId}/${vl}">
+                <a
+                  title="${chapter.reference.human}:${vl.split('.').splice(-1)} | ${version.local_title}"
+                  class="link silver"
+                  href="/bible/${data.versionId}/${vl}"
+                  data-vars-event-category="Bible Chapter"
+                  data-vars-event-action="EBV Click"
+                  data-vars-event-label="${data.versionId}/${vl}"
+                >
                   ${chapter.reference.human}:${vl.split('.').splice(-1)}
                 </a>
               </li>

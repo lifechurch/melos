@@ -1,6 +1,8 @@
 <div
   role="button"
   tabindex="0"
+  data-vars-event-category="Version Picker"
+  data-vars-event-action="Open"
   class="w-100 flex items-center bb b--black-20 mr3 outline-0"
   on="tap: bible-version-list.show, bible-language-list.hide, bible-chapter-list.hide, bible-book-list.hide, bible-audio-player.hide">
   <span class="f7 f6-m mid-gray w-100 truncate">${input.version.local_abbreviation.toUpperCase()}${input.showFullVersion ? `: ${input.version.local_title}` : ''}</span>
@@ -8,7 +10,9 @@
 </div>
 
 <amp-layout id="bible-version-list" hidden layout="fill">
-  <div class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-999 overflow-scroll smooth-scroll bottom-0 bottom-2-m" >
+  <div
+    class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-999 overflow-scroll smooth-scroll bottom-0 bottom-2-m"
+  >
     <div class="bg-light-gray pa2 flex justify-center items-center w-100">
       <div class="w-20 truncate f7 f6-m black-30">
         &nbsp;
@@ -17,7 +21,14 @@
         VERSION
       </div>
       <div class="w-20 tr">
-        <button class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0" on="tap: bible-version-list.hide, bible-language-list.hide">CANCEL</button>
+        <button
+          class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0"
+          on="tap: bible-version-list.hide, bible-language-list.hide"
+          data-vars-event-category="Version Picker"
+          data-vars-event-action="Cancel"
+        >
+          CANCEL
+        </button>
       </div>
     </div>
     <div class="bg-light-gray pa2 flex justify-center items-center w-100">
@@ -46,7 +57,14 @@
                     <span class="f6 black-80">${input.version.language.local_name}</span>
                   </div>
                   <div class="w-auto">
-                    <button class="ma0 pa0 f7 f6-m yv-green bn bg-transparent outline-0" on="tap: bible-version-list.hide, bible-language-list.show">Change Language</button>
+                    <button
+                      class="ma0 pa0 f7 f6-m yv-green bn bg-transparent outline-0"
+                      on="tap: bible-version-list.hide, bible-language-list.show"
+                      data-vars-event-category="Version Picker"
+                      data-vars-event-action="Change Language"
+                    >
+                      Change Language
+                    </button>
                   </div>
                 </div>
               </div>
@@ -54,7 +72,15 @@
               {{#items}}
                 <li class="">
                   <div class="flex w-100 items-center">
-                    <a class="pa2 pl3 w-100 dib mid-gray link f7 f6-m" href="/bible/{{id}}/${input.usfm}">{{local_title}}</a>
+                    <a
+                      class="pa2 pl3 w-100 dib mid-gray link f7 f6-m"
+                      href="/bible/{{id}}/${input.usfm}"
+                      data-vars-event-category="Version Picker"
+                      data-vars-event-action="Select Version"
+                      data-vars-event-label="{{id}}:{{local_title}}"
+                    >
+                        {{local_title}}
+                    </a>
                     <div class="w-auto" hidden="{{audio}}">
                       <audio-icon></audio-icon>
                     </div>
@@ -74,13 +100,27 @@
   <div class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-2 overflow-scroll smooth-scroll bottom-0 bottom-2-m" >
     <div class="bg-light-gray pa2 flex justify-center items-center w-100">
       <div class="w-20 truncate f7 f6-m black-30">
-        <button class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0" on="tap: bible-version-list.show, bible-language-list.hide">&larr;</button>
+        <button
+          class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0"
+          on="tap: bible-version-list.show, bible-language-list.hide"
+          data-vars-event-category="Version Picker"
+          data-vars-event-action="Back Language List"
+        >
+            &larr;
+        </button>
       </div>
       <div class="w-100 tracked tc mid-gray f6 truncate">
         LANGUAGE
       </div>
       <div class="w-20 tr">
-        <button class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0" on="tap: bible-version-list.hide, bible-language-list.hide">CANCEL</button>
+        <button
+          class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0"
+          on="tap: bible-version-list.hide, bible-language-list.hide"
+          data-vars-event-category="Version Picker"
+          data-vars-event-action="Cancel"
+        >
+          CANCEL
+        </button>
       </div>
     </div>
     <div class="bg-light-gray pa2 flex justify-center items-center w-100">
@@ -103,7 +143,17 @@
           <amp-selector layout="container" on="select: AMP.setState({ bible: { language: event.targetOption, versionFilter: '' }} ), bible-version-list.show, bible-language-list.hide">
             <ul class="list ma0 pa0 bg-white pb5 min-vh-100">
             {{#items}}
-              <li class="pa2 pl3 mid-gray f7 f6-m" option="{{tag}}">{{local_name}}</li>
+              <li
+                role="button"
+                tabIndex="0"
+                class="pa2 pl3 mid-gray f7 f6-m"
+                option="{{tag}}"
+                data-vars-event-category="Version Picker"
+                data-vars-event-action="Select Language"
+                data-vars-event-label="{{tag}}:{{local_name}}"
+              >
+                {{local_name}}
+              </li>
             {{/items}}
             </ul>
           </amp-selector>

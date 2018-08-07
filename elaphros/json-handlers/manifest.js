@@ -17,6 +17,13 @@ module.exports = function manifest(req, reply) {
     "start_url": "/bible/111/JHN.3",
     "background_color": "#FFF",
     "theme_color": "#555",
-    "display": "fullscreen"
+    "display": "fullscreen",
+    "prefer_related_applications": true,
+    "related_applications": [
+      {
+        "platform": "play",
+        "id": "com.sirma.mobile.bible.android"
+      }
+    ]    
   })
 }

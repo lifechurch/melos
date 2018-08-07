@@ -10,5 +10,6 @@
   "<amp-social-share>": { /* empty */ },
   "<amp-analytics>": { /* empty */ },
   "<amp-fit-text>": { /* empty */ },
-  "<amp-install-serviceworker>": { /* empty */ }
+  "<amp-install-serviceworker>": { /* empty */ },
+  "<amp-app-banner>": { /* empty */ }
 }

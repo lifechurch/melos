@@ -17,5 +17,12 @@
   "background_color": "#FFF",
   "theme_color": "#555",
   "display": "fullscreen",
-  "gcm_sender_id": "103953800507"
+  "gcm_sender_id": "103953800507",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.sirma.mobile.bible.android"
+    }
+  ]
 }
