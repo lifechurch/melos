@@ -1379,7 +1379,7 @@ sw:
       plan delivery: "Utoaji wa Mipangilio"
       sign-in: "Kuhariri mipangilio mingine, <a href='%{sign_in_path}'></a>ingia kwenye akaunti yako &lt;/a&gt;."
       other: "Maelezo mengine"
-      pwf: "Plans with Friends"
+      pwf: "Mipango na Marafiki"
       links:
         manage: "Simamia Taarifa zako za Barua Pepe"
         unsub all: "kujitoa kutoka barua pepe zote"
