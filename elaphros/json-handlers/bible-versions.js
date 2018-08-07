@@ -1,6 +1,6 @@
 const api = require('@youversion/js-api')
 const sanitizeString = require('../utils/sanitize-string')
-const Bible = api.getClient('bible').setEnvironment(process.env.NODE_ENV)
+const Bible = api.getClient('bible')
 
 module.exports = async function bibleVersions(req, reply) {
   const languageTag = sanitizeString(req.params.languageTag, 'eng')
@@ -10,7 +10,7 @@ module.exports = async function bibleVersions(req, reply) {
     const response = await Bible.call("versions").params({
       type: 'all',
       language_tag: languageTag
-    }).get()
+    }).setEnvironment(process.env.NODE_ENV).get()
 
     if (!Array.isArray(response.versions)) {
       req.log.warn(`No versions for: ${languageTag}`)

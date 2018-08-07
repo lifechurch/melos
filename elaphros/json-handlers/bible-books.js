@@ -1,13 +1,13 @@
 const api = require('@youversion/js-api')
 const sanitizeString = require('../utils/sanitize-string')
-const Bible = api.getClient('bible').setEnvironment(process.env.NODE_ENV)
+const Bible = api.getClient('bible')
 
 module.exports = async function bibleBooks(req, reply) {
   const { versionId } = req.params
   const filter = sanitizeString(req.query.filter, false)
 
   try {
-    const version = await Bible.call("version").params({ id: versionId }).get()
+    const version = await Bible.call("version").params({ id: versionId }).setEnvironment(process.env.NODE_ENV).get()
     const items = version.books
       .filter((book) => {
         if (!!filter) {

@@ -7,7 +7,7 @@ const getPathWithoutLocale = require('../utils/localization/get-path-without-loc
 const localeList = require('../localization/locale-list.json')
 const getAppLocale = require('../utils/localization/get-app-locale')
 
-const Bible = api.getClient('bible').setEnvironment(process.env.NODE_ENV)
+const Bible = api.getClient('bible')
 const DEFAULT_VERSION = process.env.BIBLE_DEFAULT_VERSION || 1
 const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1'
 
@@ -27,11 +27,11 @@ module.exports = function bibleChapter(req, reply) {
   const chapterPromise = Bible.call("chapter").params({
     id: versionId,
     reference: usfm
-  }).get()
+  }).setEnvironment(process.env.NODE_ENV).get()
 
   const versionPromise = Bible.call("version").params({
     id: versionId
-  }).get()
+  }).setEnvironment(process.env.NODE_ENV).get()
 
   const allPromises = Promise.all([ chapterPromise, versionPromise ])
 

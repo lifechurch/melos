@@ -1,5 +1,5 @@
 const api = require('@youversion/js-api')
-const Bible = api.getClient('bible').setEnvironment(process.env.NODE_ENV)
+const Bible = api.getClient('bible')
 
 module.exports = async function bibleChapters(req, reply) {
   const { versionId, book } = req.params
@@ -7,7 +7,7 @@ module.exports = async function bibleChapters(req, reply) {
   try {
     const version = await Bible.call("version").params({
       id: versionId
-    }).get()
+    }).setEnvironment(process.env.NODE_ENV).get()
 
     const selectedBook = version.books.filter((b) => {
       return b.usfm === book

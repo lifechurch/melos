@@ -104,16 +104,16 @@ BiblePage.getInitialProps = async ({ req }) => {
   const versionId = 1
   const usfm = "JHN.1"
 
-  const Bible = api.getClient('bible').setEnvironment(process.env.NODE_ENV)
+  const Bible = api.getClient('bible')
 
   const chapterPromise = Bible.call("chapter").params({
     id: versionId,
     reference: usfm
-  }).get()
+  }).setEnvironment(process.env.NODE_ENV).get()
 
   const versionPromise = Bible.call("version").params({
     id: versionId
-  }).get()
+  }).setEnvironment(process.env.NODE_ENV).get()
 
   const [ chapter, version ] = await Promise.all([ chapterPromise, versionPromise ])
   return { chapter, version, data: { versionId, usfm } }
