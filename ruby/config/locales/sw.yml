@@ -1396,10 +1396,10 @@ sw:
         votd: "Umejitoa kwa mafanikio kutoka kwa <b>Barua pepe za</b> Mistari ya Biblia."
         votd_image: "Umejitoa kwa mafanikio kutoka kwa <b>barua pepe za</b> picha ya mstari wa siku wa Biblia ."
         contact_joins: "Umefaulu kujiondoa <b></b>Majina &lt;/ b&gt; barua pepe"
-        pwf_accepts: "You have successfully unsubscribed from seeing when a Friend accepts your Plan invitation."
-        pwf_invites: "You have successfully unsubscribed from seeing when you’re invited to a Plan."
-        pwf_comments: "You have successfully unsubscribed from Comments on Plans with Friends."
-        pwf_reminders: "You have successfully unsubscribed from seeing Plan Start Reminders."
+        pwf_accepts: "Umeweza kujitoa kutoka kuona Rafiki anapokubali mwaliko wako wa Mpango wowote."
+        pwf_invites: "Umeweza kujitoa kutoka kuona unapoalikwa kwenye Mpango."
+        pwf_comments: "Umeweza kujitoa kutoka Maoni ya Mipango na Marafiki."
+        pwf_reminders: "Umeweza kujitoa kutoka kuona vikumbusho vya kuanza Mipango."
       labels:
         badges: "Nitakapo pata beji"
         comments: "Maoni ya shughuli zangu"
@@ -1413,7 +1413,7 @@ sw:
         votd_image: "Picha ya Neno la Siku"
         contact_joins: "Mtu mnayewasiliana nae atakapo jiunga"
         pwf_comments: "Wakati Wahusika wanapo andika maoni"
-        pwf_accepts: "When Participants Accept an Invitation"
+        pwf_accepts: "Wakati Wahusika wanapokubali mwaliko"
         pwf_invites: "Unapoalikwa Kujiunga na Mpango"
         pwf_reminders: "Ukumbusho wa Kuanza Mpango"
       error:
