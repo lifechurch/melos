@@ -161,7 +161,7 @@ fastify.get('/bible/:versionId/:usfm', (req, reply) => {
   } else if (isVerse) {
     return bibleVerse(req, reply)
   } else {
-    req.log.warn(`Invalid Bible reference: ${usfm}. Neither Chapter nor Verse.`)
+    req.log.warn(`Invalid Bible reference: ${req.params.usfm}. Neither Chapter nor Verse.`)
   }
 })
 
