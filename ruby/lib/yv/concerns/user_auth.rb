@@ -50,11 +50,18 @@ module YV
         is_www_subdomain = "#{request.subdomain}." == www_subdomain
 
         if logged_in && is_www_subdomain
-          set_auth(cookies.signed[:b], cookies.signed[:c] ? cookies.signed[:c] : nil, cookies.signed[:t] ? cookies.signed[:t] : nil, cookies.signed[:ti] ? cookies.signed[:ti] : nil, false)
           redirect_to "//#{request.host_with_port.sub!(www_subdomain, my_subdomain)}#{request.fullpath}"
         end
 
         if !logged_in && is_my_subdomain
+          # Reset Cookie Domains
+          cookies.signed[:a] = { value: cookies.signed[:a], domain: cookie_domain } if cookies.signed[:a].present?
+          cookies.signed[:b] = { value: cookies.signed[:b], domain: cookie_domain } if cookies.signed[:b].present?
+          cookies.signed[:c] = { value: cookies.signed[:c], domain: cookie_domain } if cookies.signed[:c].present?
+          cookies.signed[:t] = { value: cookies.signed[:t], domain: cookie_domain } if cookies.signed[:t].present?
+          cookies[:auth_type] = { value: cookies[:auth_type], domain: cookie_domain } if cookies[:auth_type].present?
+          cookies.signed[:ti] = { value: cookies.signed[:ti], domain: cookie_domain } if cookies.signed[:ti].present?
+
           redirect_to "//#{request.host_with_port.sub!(my_subdomain, www_subdomain)}#{request.fullpath}"
         end
       end
@@ -81,7 +88,7 @@ module YV
         end
       end
 
-      def set_auth(user, password, tp_token, tp_id, first_time = true)
+      def set_auth(user, password, tp_token, tp_id)
         cookies.permanent.signed[:a] = { value: user.id, domain: cookie_domain }
         cookies.permanent.signed[:b] = { value: user.username, domain: cookie_domain }
 
@@ -101,12 +108,10 @@ module YV
           cookies.permanent.signed[:ti] = { value: tp_id, domain: cookie_domain }
         end
 
-        if first_time
-          cookies.delete 'YouVersionToken'
-          cookies.delete 'YouVersionToken', domain: cookie_domain
-          cookies.delete 'OAUTH'
-          cookies.delete 'OAUTH', domain: cookie_domain
-        end
+        cookies.delete 'YouVersionToken'
+        cookies.delete 'YouVersionToken', domain: cookie_domain
+        cookies.delete 'OAUTH'
+        cookies.delete 'OAUTH', domain: cookie_domain
 
         @current_auth = Hashie::Mash.new( { 'user_id' => user.id, 'username' => user.username, 'password' => password, 'tp_token' => tp_token, 'tp_id' => tp_id } )
       end
