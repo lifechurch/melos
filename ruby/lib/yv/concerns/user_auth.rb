@@ -54,14 +54,6 @@ module YV
         end
 
         if !logged_in && is_my_subdomain
-          # Reset Cookie Domains
-          cookies.signed[:a] = { value: cookies.signed[:a], domain: cookie_domain } if cookies.signed[:a].present?
-          cookies.signed[:b] = { value: cookies.signed[:b], domain: cookie_domain } if cookies.signed[:b].present?
-          cookies.signed[:c] = { value: cookies.signed[:c], domain: cookie_domain } if cookies.signed[:c].present?
-          cookies.signed[:t] = { value: cookies.signed[:t], domain: cookie_domain } if cookies.signed[:t].present?
-          cookies[:auth_type] = { value: cookies[:auth_type], domain: cookie_domain } if cookies[:auth_type].present?
-          cookies.signed[:ti] = { value: cookies.signed[:ti], domain: cookie_domain } if cookies.signed[:ti].present?
-
           redirect_to "//#{request.host_with_port.sub!(my_subdomain, www_subdomain)}#{request.fullpath}"
         end
       end
@@ -83,21 +75,21 @@ module YV
 
       def current_auth
         return @current_auth if @current_auth
-        if cookies.signed[:a] && cookies.signed[:b] && (cookies.signed[:c] || (cookies.signed[:t] && cookies.signed[:ti]))
-          @current_auth ||= Hashie::Mash.new( { 'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c] ? cookies.signed[:c] : nil, 'tp_token' => cookies.signed[:t] ? cookies.signed[:t] : nil, 'tp_id' => cookies.signed[:ti] ? cookies.signed[:ti] : nil } )
+        if cookies.signed[:aa] && cookies.signed[:bb] && (cookies.signed[:cc] || (cookies.signed[:tt] && cookies.signed[:tti]))
+          @current_auth ||= Hashie::Mash.new( { 'user_id' => cookies.signed[:aa], 'username' => cookies.signed[:bb], 'password' => cookies.signed[:cc] ? cookies.signed[:cc] : nil, 'tp_token' => cookies.signed[:tt] ? cookies.signed[:tt] : nil, 'tp_id' => cookies.signed[:tti] ? cookies.signed[:tti] : nil } )
         end
       end
 
       def set_auth(user, password, tp_token, tp_id)
-        cookies.permanent.signed[:a] = { value: user.id, domain: cookie_domain }
-        cookies.permanent.signed[:b] = { value: user.username, domain: cookie_domain }
+        cookies.permanent.signed[:aa] = { value: user.id, domain: cookie_domain }
+        cookies.permanent.signed[:bb] = { value: user.username, domain: cookie_domain }
 
         if password.present?
-          cookies.permanent.signed[:c] = { value: password, domain: cookie_domain }
+          cookies.permanent.signed[:cc] = { value: password, domain: cookie_domain }
         end
 
         if tp_token.present?
-          cookies.permanent.signed[:t] = { value: tp_token, domain: cookie_domain }
+          cookies.permanent.signed[:tt] = { value: tp_token, domain: cookie_domain }
         else
           # set auth type to email
           # google and facebook are set in tp_sign_in
@@ -105,7 +97,7 @@ module YV
         end
 
         if tp_id.present?
-          cookies.permanent.signed[:ti] = { value: tp_id, domain: cookie_domain }
+          cookies.permanent.signed[:tti] = { value: tp_id, domain: cookie_domain }
         end
 
         cookies.delete 'YouVersionToken'
@@ -121,23 +113,23 @@ module YV
       end
 
       def sign_out
-        cookies.delete :a
-        cookies.delete :b
-        cookies.delete :c
-        cookies.delete :f
-        cookies.delete :t
-        cookies.delete :ti
+        cookies.delete :aa
+        cookies.delete :bb
+        cookies.delete :cc
+        cookies.delete :ff
+        cookies.delete :tt
+        cookies.delete :tti
         cookies.delete 'YouVersionToken'
         cookies.delete 'OAUTH'
-        cookies.delete :a, domain: cookie_domain
-        cookies.delete :b, domain: cookie_domain
-        cookies.delete :c, domain: cookie_domain
-        cookies.delete :f, domain: cookie_domain
-        cookies.delete :t, domain: cookie_domain
-        cookies.delete :ti, domain: cookie_domain
+        cookies.delete :aa, domain: cookie_domain
+        cookies.delete :bb, domain: cookie_domain
+        cookies.delete :cc, domain: cookie_domain
+        cookies.delete :ff, domain: cookie_domain
+        cookies.delete :tt, domain: cookie_domain
+        cookies.delete :tti, domain: cookie_domain
         cookies.delete 'YouVersionToken', domain: cookie_domain
         cookies.delete 'OAUTH', domain: cookie_domain
-        puts cookies[:a]
+        puts cookies[:aa]
         clear_redirect
       end
 

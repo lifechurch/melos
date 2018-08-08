@@ -109,8 +109,8 @@ fastify.addHook('preHandler', (req, reply, next) => {
 
   const WWW_SUBDOMAIN = process.env.WWW_SUBDOMAIN || 'www.'
   const MY_SUBDOMAIN = process.env.MY_SUBDOMAIN || 'my.'
-  const signedInWithEmail = !!(req.cookies && req.cookies.a && req.cookies.b && req.cookies.c)
-  const signedInWithTP = !!(req.cookies && req.cookies.t && req.cookies.ti)
+  const signedInWithEmail = !!(req.cookies && req.cookies.aa && req.cookies.bb && req.cookies.cc)
+  const signedInWithTP = !!(req.cookies && req.cookies.tt && req.cookies.tti)
   const isSignedIn = signedInWithEmail || signedInWithTP
   const isWwwSubdomain =  urlData.host.startsWith(WWW_SUBDOMAIN)
   const isMySubdomain = urlData.host.startsWith(MY_SUBDOMAIN)
