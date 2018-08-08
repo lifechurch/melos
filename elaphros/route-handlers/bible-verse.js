@@ -17,7 +17,7 @@ const ReadingPlans = api.getClient('reading-plans')
 
 module.exports = function bibleVerse(req, reply) {
   const { versionId, usfm: rawUsfm } = req.params
-  const usfm = rawUsfm.split('.').slice(0, 3).join('.')
+  const usfm = rawUsfm.split('.').slice(0, 3).join('.').toUpperCase()
   const { host, query, path } = req.urlData()
   const fullRequestURL = `https://${host ? host : ''}${path ? path : ''}${query ? query : ''}`
   const requestHost = `https://${host ? host : ''}`
@@ -134,7 +134,7 @@ module.exports = function bibleVerse(req, reply) {
       appLocales
     })
   }, (e) => {
-    Raven.captureException(e)        
+    Raven.captureException(e)
     req.log.error(`Error getting Bible reference ${e.toString()}`)
     return reply.redirect(307, `/bible/${DEFAULT_VERSION}/${DEFAULT_USFM}`)
   })

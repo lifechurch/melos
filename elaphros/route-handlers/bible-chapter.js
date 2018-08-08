@@ -14,7 +14,7 @@ const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1'
 
 module.exports = function bibleChapter(req, reply) {
   const { versionId, usfm: rawUsfm } = req.params
-  const usfm = rawUsfm.split('.').slice(0, 2).join('.')
+  const usfm = rawUsfm.split('.').slice(0, 2).join('.').toUpperCase()
   const { host, query, path } = req.urlData()
   const fullRequestURL = `https://${host ? host : ''}${path ? path : ''}${query ? query : ''}`
   const pathWithoutLocale = getPathWithoutLocale(path)
