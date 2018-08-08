@@ -156,7 +156,7 @@ router.get('/*', cookieParser(), (req, res) => {
 			reactCookie.plugToRequest(req, res)
 			let startingState = defaultState
 			try {
-				startingState = getStateFromToken(req.cookies.YouVersionToken)
+				startingState = getStateFromToken(req.cookies.YouVersionToken2)
 			} catch (err) {
 
 			}

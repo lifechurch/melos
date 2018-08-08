@@ -100,8 +100,8 @@ module YV
           cookies.permanent.signed[:tti] = { value: tp_id, domain: cookie_domain }
         end
 
-        cookies.delete 'YouVersionToken'
-        cookies.delete 'YouVersionToken', domain: cookie_domain
+        cookies.delete 'YouVersionToken2'
+        cookies.delete 'YouVersionToken2', domain: cookie_domain
         cookies.delete 'OAUTH'
         cookies.delete 'OAUTH', domain: cookie_domain
 
@@ -119,7 +119,7 @@ module YV
         cookies.delete :ff
         cookies.delete :tt
         cookies.delete :tti
-        cookies.delete 'YouVersionToken'
+        cookies.delete 'YouVersionToken2'
         cookies.delete 'OAUTH'
         cookies.delete :aa, domain: cookie_domain
         cookies.delete :bb, domain: cookie_domain
@@ -127,7 +127,7 @@ module YV
         cookies.delete :ff, domain: cookie_domain
         cookies.delete :tt, domain: cookie_domain
         cookies.delete :tti, domain: cookie_domain
-        cookies.delete 'YouVersionToken', domain: cookie_domain
+        cookies.delete 'YouVersionToken2', domain: cookie_domain
         cookies.delete 'OAUTH', domain: cookie_domain
         puts cookies[:aa]
         clear_redirect

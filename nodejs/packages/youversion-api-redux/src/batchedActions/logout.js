@@ -3,7 +3,7 @@ import cookie from 'react-cookie'
 
 function logout(locale) {
 	return (dispatch) => {
-		cookie.remove('YouVersionToken', { path: '/' })
+		cookie.remove('YouVersionToken2', { path: '/' })
 		cookie.remove('OAUTH', { path: '/' })
 		dispatch({ type: 'LOGOUT' })
 		if (window && typeof window !== 'undefined') {

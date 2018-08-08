@@ -6,7 +6,7 @@ module YV
       JSON_500_General = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "General Node Stack Error"}]}}}')
       JSON_408 = JSON.parse('{"response": {"code": 408, "data": {"errors": [{"json": "Node Stack Timeout Error"}]}}}')
 
-      CookieName = 'YouVersionToken'
+      CookieName = 'YouVersionToken2'
 
       INVALID_TOKEN_ERROR = 1
 
