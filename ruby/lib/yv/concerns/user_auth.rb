@@ -50,6 +50,7 @@ module YV
         is_www_subdomain = "#{request.subdomain}." == www_subdomain
 
         if logged_in && is_www_subdomain
+          set_auth(cookies.signed[:b], cookies.signed[:c] ? cookies.signed[:c] : nil, cookies.signed[:t] ? cookies.signed[:t] : nil, cookies.signed[:ti] ? cookies.signed[:ti] : nil, false)
           redirect_to "//#{request.host_with_port.sub!(www_subdomain, my_subdomain)}#{request.fullpath}"
         end
 
@@ -80,7 +81,7 @@ module YV
         end
       end
 
-      def set_auth(user, password, tp_token, tp_id)
+      def set_auth(user, password, tp_token, tp_id, first_time = true)
         cookies.permanent.signed[:a] = { value: user.id, domain: cookie_domain }
         cookies.permanent.signed[:b] = { value: user.username, domain: cookie_domain }
 
@@ -100,10 +101,13 @@ module YV
           cookies.permanent.signed[:ti] = { value: tp_id, domain: cookie_domain }
         end
 
-        cookies.delete 'YouVersionToken'
-        cookies.delete 'YouVersionToken', domain: cookie_domain
-        cookies.delete 'OAUTH'
-				cookies.delete 'OAUTH', domain: cookie_domain
+        if first_time
+          cookies.delete 'YouVersionToken'
+          cookies.delete 'YouVersionToken', domain: cookie_domain
+          cookies.delete 'OAUTH'
+          cookies.delete 'OAUTH', domain: cookie_domain
+        end
+
         @current_auth = Hashie::Mash.new( { 'user_id' => user.id, 'username' => user.username, 'password' => password, 'tp_token' => tp_token, 'tp_id' => tp_id } )
       end
 
