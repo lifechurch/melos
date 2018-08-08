@@ -1,0 +1,33 @@
+{
+  "name": "elaphros",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -e marko ./server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@youversion/js-api": "1.1.0",
+    "@youversion/utils": "1.0.53",
+    "fastify": "^1.4.0",
+    "fastify-caching": "^3.0.0",
+    "fastify-compress": "^0.6.0",
+    "fastify-cookie": "^2.0.1",
+    "fastify-favicon": "^0.2.4",
+    "fastify-static": "^0.12.0",
+    "fastify-url-data": "^2.0.1",
+    "marko": "^4.10.0",
+    "newrelic": "^4.3.0",
+    "point-of-view": "^1.1.0",
+    "raven": "^2.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "engines": {
+    "node": "8.11.3"
+  }
+}

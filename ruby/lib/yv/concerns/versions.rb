@@ -15,7 +15,8 @@ module YV
         @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v) rescue nil}.compact.uniq
         # Handle conversion from API2 (osis) to API3 (version_ids)
         # But not a bad idea in general to validate/curate user's recent versions
-        cookies[:recent_versions] = @recent_versions.map{|v| v.to_id}.join('/') rescue nil
+        cookie_value = @recent_versions.map{|v| v.to_id}.join('/') rescue nil
+        cookies[:recent_versions] = { value: cookie_value, domain: cookie_domain }
         @recent_versions
       end
 
@@ -37,7 +38,7 @@ module YV
       # TODO: Refactor alt version functionality
       def alt_version(ref)
         #Cookie may have empty string for some reason -- possibly previous error case
-        cookies[:alt_version] = nil if cookies[:alt_version].blank?
+        cookies[:alt_version] = { value: nil, domain: cookie_domain } if cookies[:alt_version].blank?
 
         if cookies[:alt_version].present?
 
@@ -46,11 +47,11 @@ module YV
             Version.find(cookies[:alt_version]).include?(ref)
           # Catch versions that don't exist and raise proper error
           rescue NotAVersionError
-            cookies[:alt_version] = nil # nuke the bad cookie. BAD COOKIE!
+            cookies[:alt_version] = { value: nil, domain: cookie_domain } # nuke the bad cookie. BAD COOKIE!
             raise NoSecondaryVersionError
           # rescue anything else, nuke cookie
           rescue
-            cookies[:alt_version] = nil # nuke the bad cookie. BAD COOKIE!
+            cookies[:alt_version] = { value: nil, domain: cookie_domain } # nuke the bad cookie. BAD COOKIE!
           end
         end
         # if we have an alt_version at this point, let's return it.
@@ -59,12 +60,16 @@ module YV
         # new user or bad version was in cookie
         # Find recent version that is not the current version and includes ref.
         recent = recent_versions.find{|v| v.to_id != current_version && v.include?(ref)}
-        cookies[:alt_version] = recent.to_id if recent
+        cookies[:alt_version] = { value: recent.to_id, domain: cookie_domain } if recent
 
         # Nothing? Okay let's call sample_for with locale, version and validating ref
-        cookies[:alt_version] ||= Version.sample_for((params[:locale] || "en"), except: current_version, has_ref: ref)
+        cookie_value = Version.sample_for((params[:locale] || "en"), except: current_version, has_ref: ref)
+        cookies[:alt_version] ||= { value: cookie_value, domain: cookie_domain }
+
         # Still nothing? Let's fall back to KJV.  This is secondary version that they can switch at any time.
-        cookies[:alt_version] ||= Version.find(1).id
+        cookie_value = Version.find(1).id
+        cookies[:alt_version] ||= { value: cookie_value, domain: cookie_domain }
+
         # If were still blank, we've got problems
         raise NoSecondaryVersionError if cookies[:alt_version].blank?
 

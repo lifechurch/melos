@@ -1,7 +1,7 @@
 module YV
   module Concerns
     module Redirection
-    
+
       def self.included(base)
         base.helper_method :redirect_path, :clear_redirect,:follow_redirect
       end
@@ -12,8 +12,8 @@ module YV
       # otherwise set redirect location to a redirect param if available
       def set_redirect(to = nil)
         clear_redirect if cookies[:auth_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
-        cookies[:auth_redirect] = to if to.present?
-        cookies[:auth_redirect] = params[:redirect] if params[:redirect].present?
+        cookies[:auth_redirect] = { value: to, domain: cookie_domain } if to.present?
+        cookies[:auth_redirect] = { value: params[:redirect], domain: cookie_domain } if params[:redirect].present?
         cookies[:auth_redirect]
       end
 
@@ -22,7 +22,7 @@ module YV
       end
 
       def clear_redirect
-        cookies[:auth_redirect] = nil
+        cookies[:auth_redirect] = { value: nil, domain: cookie_domain }
       end
 
       def next_redirect?( to )
@@ -46,15 +46,15 @@ module YV
       end
 
       def mobile_redirect
-        
+
         # todo: model
         # for now use a dictionary here
 
         dict = Hashie::Mash.new(
           {
-            moments: 
+            moments:
               {
-               index:     "moments", 
+               index:     "moments",
                show:      "moments/#{params[:id]}"
               },
             highlights:

@@ -1,0 +1,60 @@
+<amp-layout id="app-language-list" hidden layout="fixed" width="48" height="48">
+  <div class="fixed w-100 measure-wide-m bl-m br-m bt-m shadow-2 b--black-20 center-m left-0 top-0 top-2-m right-0 z-2 overflow-scroll smooth-scroll bottom-0 bg-light-gray">
+    <div class="pa3">
+      <div class="w-100 flex">
+        <div class="w-100 pl0 pt2 pb2 pr0">
+          <youversion-logo width=150 height=21></youversion-logo>
+        </div>
+        <div class="pl3 pr0 pt2 pb2 w-auto outline-0" tabindex="0" role="button" on="tap: app-language-list.hide">
+          <close-icon></close-icon>
+        </div>
+      </div>
+    </div>
+    <div class="bg-light-gray pa2 flex justify-center items-center w-100">
+      <div class="w-20 truncate f7 f6-m black-30">
+        &nbsp;
+      </div>
+      <div class="w-100 tracked tc black-50 f6 truncate">
+        LANGUAGE
+      </div>
+      <div class="w-20 tr">
+        <button class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0" on="tap: app-language-list.hide">CANCEL</button>
+      </div>
+    </div>
+    <div class="bg-light-gray pa2 flex justify-center items-center w-100">
+      <input
+        [value]="app.localeFilter"
+        value=""
+        autofocus="true"
+        class="w-100"
+        on="input-throttled: AMP.setState({ app: { localeFilter: event.value }})"
+      >
+    </div>
+    <div class="relative w-100 h-100 bg-white">
+      <amp-list
+        layout="fill"
+        [src]="'/json/app/locales?filter=' + app.localeFilter"
+        src="/json/app/locales?filter="
+        single-item
+        items=".">
+        <template type="amp-mustache">
+          <amp-selector layout="container">
+            <div class="bg-white pb5 min-vh-100">
+              <ul class="list ma0 pa0">
+              {{#items}}
+                <li class="">
+                  <div class="flex w-100 items-center">
+                    <a class="pa2 pl3 w-100 dib black-50 link f7 f6-m" href="/{{appLocale}}${input.pathWithoutLocale}">
+                      {{nativeName}}
+                    </a>
+                  </div>
+                </li>
+              {{/items}}
+              </ul>
+            </div>
+          </amp-selector>
+        </template>
+      </amp-list>
+    </div>
+  </div>
+</amp-layout>

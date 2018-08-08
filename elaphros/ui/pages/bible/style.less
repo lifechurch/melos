@@ -1,0 +1,543 @@
+/*
+Copyright 2017 Life Covenant Church, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+
+@base-font-family: ArialMT,"Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
+@base-font-size: 16px;
+@font-size-smaller: 12px;
+
+@green: #6ab750;
+@red: #CC0000;
+@blue: #0099CC;
+@light-grey: #F4F4F4;
+@color-muted: #979797;
+@font-grey: #888888;
+@background-grey: #D4D4D4;
+@dark_grey: #616161;
+@error-grey: #444444;
+@brown: #824F2B;
+
+@default-radius: 5px;
+@default-padding: 5px;
+@thin-grey-border: 1px solid @background-grey;
+@list-font-size: 15px;
+
+@reader_line_height: 2em;
+
+.yv-bible-text {
+
+  font-family: @base-font-family;
+  font-size: @base-font-size;
+  color: @dark_grey;
+  line-height: 1.7em;
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  text-align: left;
+
+
+  .label {
+  	padding: inherit;
+  	font-size: 14px;
+  	background-color: transparent;
+  	color: inherit;
+  	display: inherit;
+  	margin-right: 5px;
+  	color: $darkGray;
+  }
+
+  // Giving top margins to body text that follows headers
+  // and to headers that follow body text
+  .p + .s,
+  .p + .s1,
+  .p + .s2,
+  .p + .ms,
+  .p + .ms1,
+  .p + .ms2,
+  .p + .q,
+  .p + .q1,
+  .p + .li,
+  .p + .li1,
+  .li + .li2,
+  .li1 + .li2,
+  .li2 + .li,
+  .li2 + .li1,
+  .li + .s,
+  .li1 + .s,
+  .li2 + .s,
+  .li + .s1,
+  .li1 + .s1,
+  .li2 + .s1,
+  .li + .s2,
+  .li1 + .s2,
+  .li2 + .s2,
+  .m + .s,
+  .m + .s1,
+  .m + .s2,
+  .m + .ms,
+  .m + .ms1,
+  .m + .ms2,
+  .m + .q,
+  .m + .q1,
+  .m + .p,
+  .q + .p,
+  .q1 + .p,
+  .q1 + p,
+  .q2 + .p,
+  .q + .p,
+  .q + .s,
+  .q + .s1,
+  .q + .s2,
+  .q + .ms,
+  .q + .ms1,
+  .q + .ms2,
+  .q1 + .s,
+  .q1 + .s1,
+  .q1 + .s2,
+  .q1 + .m,
+  .q1 + .ms,
+  .q1 + .ms1,
+  .q1 + .ms2,
+  .q2 + .p,
+  .q2 + .s,
+  .q2 + .s1,
+  .q2 + .s2,
+  .q2 + .m,
+  .q2 + .ms,
+  .q2 + .ms1,
+  .q2 + .ms2,
+  .q3 + .s,
+  .q3 + .s1,
+  .q3 + .s2,
+  .q3 + .m,
+  .q3 + .ms,
+  .q3 + .ms1,
+  .q3 + .ms2,
+  .imt + .is,
+  .imt + .is1,
+  .imt1 + .is,
+  .imt1 + .is1,
+  .ip + .is1,
+  .io + .is,
+  .io + .is1,
+  .io1 + .is,
+  .io1 + .is1,
+  .io2 + .is,
+  .io2 + .is1,
+  .io3 + .is,
+  .io3 + .is1,
+  .ip + .io,
+  .ip + .io1,
+  .ip + .io2,
+  .ip + .io3,
+  .pi + .s,
+  .pi + .s1,
+  .pi1 + .s,
+  .pi1 + .s1,
+  .mr + .s1 {
+    margin-top: 1em;
+  }
+
+  .chapter {
+    >.label {
+       display: none !important;
+    }
+    div:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .p, .ip {
+    margin-bottom: 0;
+    text-indent: 1em;
+  }
+
+  .imt, .imt1,.mt, .mt1, .ms, .ms1 {
+    font-size: 1.3em;
+    line-height: @reader_line_height;
+    margin: 1em 0 0 0;
+    font-weight: bold;
+  }
+
+  .ms + .mr {
+    margin-top: -0.5em;
+  }
+
+  .iot, .imt, .imt1 {
+    font-size: 1.3em;
+    line-height: @reader_line_height;
+    margin: 0.5em 0;
+    font-weight: bold;
+  }
+
+  .io, .io1 {
+    list-style-type: disc;
+    margin-left: 1em;
+    display: list-item;
+  }
+
+  .io2, .io3 {
+    list-style-type: disc;
+    margin-left: 2em;
+    display: list-item;
+  }
+
+  .ipi {
+    text-indent: 1em;
+  }
+
+  .imt2, .imt3, .imt4 {
+    font-size: 1em;
+    line-height: @reader_line_height;
+    margin: 0.5em 0;
+    font-weight: bold;
+  }
+
+  .is, .is1, .s, .s1, .ms, .ms1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: @reader_line_height;
+    margin: 0 0 1em 0;
+  }
+
+  // Font size should be set in the parent element: (for example .s)
+  .heading {
+    font-size: 1.03em;
+    font-weight: bold;
+    line-height: 1.2em;
+    display: inline-block;
+    margin: 0;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  .s2, .s3, .s4, .ms2, .ms3, .ms4 {
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: @reader_line_height;
+    margin: 0 0 1em 0;
+  }
+
+  .ip, .im, .iex, .p, .m, .nb, .cls {
+    font-size: 1em;
+    line-height: @reader_line_height;
+    margin: 0;
+  }
+
+  // BEGIN:  moved from main_reader.sass to fix style cascade/specificity issues
+  .book .p {
+    margin-left: 5px;
+  }
+  // END
+  .ipi, .imi, .pm, .pmc, .pi, .pi1, .mi {
+    margin: 0 1em;
+    line-height: @reader_line_height;
+  }
+  .imi {
+    margin-left: 1em;
+    text-indent: 0;
+  }
+  .ipr, .pr, .qr, .cls {
+    text-align: right;
+  }
+  // hanging indents for quotes
+  .iq, .iq1, .q, .q1, .qm, .qm1 {
+    padding-left: 2.5em;
+    text-indent: -1em;
+    //line-height: 1.5em
+    line-height: @reader_line_height;
+  }
+  .iqt {
+    margin-left: 1em;
+  }
+  .iq2, .q2, .qm2, .iq3, .q3, .qm3 {
+    padding-left: 3.5em;
+    text-indent: -1em;
+    //line-height: 1.5em
+    line-height: @reader_line_height;
+  }
+  .lb, .b {
+    line-height: @reader_line_height;
+    height: 1em;
+  }
+  .ili, .ili1, .io1, .li1 {
+    margin-left: 2em;
+    padding-left: 0;
+    line-height: @reader_line_height;
+  }
+  .ili2, .io2, .li2 {
+    margin-left: 4em;
+    padding-left: 0;
+    line-height: @reader_line_height;
+  }
+  .iot, .d, .qa {
+    font-size: 1em;
+    line-height: @reader_line_height;
+  }
+  .ior, .iqt, .bk, .sls, .tl, .r, .sp {
+    font-style: italic;
+  }
+  .mr {
+    font-style: italic;
+    font-weight: bold;
+  }
+  .sr, .r, .sr .heading, .r .heading, .rq {
+    font-style: italic;
+    font-size: 0.8em;
+  }
+  .pmr {
+    text-align: right;
+    margin-right: 0.3em;
+  }
+  .pc, .qc {
+    text-align: center;
+  }
+  .ph, .ph1 {
+    text-indent: -2em;
+    padding-left: 2em;
+  }
+  .ph2 {
+    text-indent: -2em;
+    padding-left: 4em;
+  }
+  .qs, .lit {
+    float: right;
+    font-style: italic;
+  }
+  .q, .q1 {
+    text-indent: 1em;
+  }
+  .q2, .q3 {
+    text-indent: 2em;
+  }
+  //Footnote additional paragraph
+  .fp {
+    margin-top: 1em;
+    display: inline-block;
+    text-indent: 1em;
+  }
+  span.fk {
+    font-weight: bold;
+    font-style: italic;
+  }
+  span.fqa {
+    font-style: italic;
+  }
+  .table {
+    border-bottom: 1em;
+  }
+  .table th, .th1 {
+    background: #444444;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+  }
+  .thr, .thr1 {
+    text-align: right;
+    font-weight: bold;
+    padding: 5px;
+  }
+  .table td, .tc {
+    border: 1px solid #eeeeee;
+    padding: 5px;
+  }
+  .tcr, .tcr1 {
+    border: 1px solid #eeeeee;
+    padding: 5px;
+    text-align: right;
+  }
+  .add, .dc, .k, .qt, .sig {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    line-height: @reader_line_height;
+    text-indent: 0;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+  }
+  .nd {
+    font-variant: small-caps;
+  }
+  .ord {
+    font-size: 0.75em;
+    line-height: @reader_line_height;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+  }
+  // `Reader span/text sub styles
+  //----------------------------------------------------------------------------------------------------
+  .wordsofchrist,
+  .wj .content {
+    color: @red;
+  }
+  .pn {
+    text-decoration: underline;
+  }
+  .em, .bd {
+    font-weight: bold;
+  }
+  .it, .cd, .add, .qt, .fq, .tl, .qt {
+    font-style: italic;
+  }
+  .bdit {
+    font-weight: bold;
+    font-style: italic;
+  }
+  .d {
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+  .no {
+    font-weight: normal;
+    font-style: normal;
+  }
+  .sc {
+    font-variant: small-caps;
+  }
+  // processor instruction intended to give the typesetter
+  // the printable chapter name
+  .cl {
+    display: none;
+  }
+  // `Custom overrides
+  //----------------------------------------------------------------------------------------------------
+  // for versions that have no space in front of the verse label
+  .vid8 .content:after,
+  .vid58 .content:after,
+  .vid111 .content:after {
+    content: " ";
+  }
+  // Chinese versions have proper nouns underlined
+  .iso6393zho .pn {
+    text-decoration: underline;
+  }
+  /*Hide verse labels on BOOKS version*/
+  .vid31 .verse .label {
+    display: none;
+  }
+  /* Hide section titles */
+  .vid31 .s1 {
+    display: none;
+  }
+  /* add spacing where a section heading would be and don’t indent the para*/
+  .vid31 .s1 + .p {
+    text-indent: 0;
+    margin-top: 1.5em;
+  }
+  /* add a little spacing between q2 & q1 */
+  .vid31 .q2 + .q1  {
+    margin-top: 0.25em;
+  }
+  /* hide all notes in BOOKS */
+  .vid31 .note {
+    display: none;
+  }
+  .vid31 .wj .content {
+    color: inherit;
+  }
+  // For Psalms headings in NIV
+  .vid111 .bkPSA .it {
+    display: block;
+    margin-bottom: 1em;
+  }
+  // For Psalms headings in NIV
+  // don't display block for notes italics
+  .vid111 .bkPSA .note .it {
+    display: inline;
+    margin-bottom: 0;
+  }
+  /* hide introdcution titles */
+  .vid111 .imt1, .vid111 .imt {
+    display: none;
+  }
+
+
+  //Certain headlines should be centered in NABRE
+  .vid463 div.s2 {
+    text-align: center;
+  }
+  /* Increased word-spacing for Moose Cree version and Eastern Arctic Inuktitut Bible  */
+  .vid483, .vid455 {
+    word-spacing: 0.4em;
+  }
+
+  /* Bulgarian Protestant Bible */
+  .vid1443 .k {
+    font-weight: bold;
+  }
+
+  /* Bulgarian Orthodox Bible 2006 */
+  .vid1558 .sls {
+    font-style: normal;
+  }
+
+  // hide cross references in
+  .vid191 .note.x {
+    display: none !important;
+  }
+	// why does microsoft make phones?
+	-ms-user-select: none;
+
+	.note {
+		display: inherit;
+		position: relative;
+
+		.body {
+			pointer-events: none;
+			display: inline-block;
+			position: absolute;
+			padding: 5px 10px 5px 10px;
+			font-size: 14px;
+			border: solid 1px #ddd;
+			border-radius: 5px;
+			background-color: #eee;
+			transform: scale(1, 0.85);
+    	box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
+			color: #777;
+			opacity: 0;
+			left: 5px;
+			top: 17px;
+			width: 200px;
+			line-height: 22px;
+			text-indent: 0px;
+			-webkit-transition: transform 0.5s cubic-bezier(0.42,1,.16,.93), opacity 0.5s cubic-bezier(0.42,1,.16,.93);
+			-moz-transition: 		transform 0.5s cubic-bezier(0.42,1,.16,.93), opacity 0.5s cubic-bezier(0.42,1,.16,.93);
+			-ms-transition: 		transform 0.5s cubic-bezier(0.42,1,.16,.93), opacity 0.5s cubic-bezier(0.42,1,.16,.93);
+			transition: 				transform 0.5s cubic-bezier(0.42,1,.16,.93), opacity 0.5s cubic-bezier(0.42,1,.16,.93);
+		}
+
+		.label {
+			display: none;
+		}
+
+		&.show {
+			.body {
+				transform: scale(1, 1);
+				opacity: 1;
+			}
+		}
+	}
+
+	.verse {
+		-webkit-transition: background-color 0.75s cubic-bezier(0.42,1,.16,.93);
+		-moz-transition: 		background-color 0.75s cubic-bezier(0.42,1,.16,.93);
+		-ms-transition: 		background-color 0.75s cubic-bezier(0.42,1,.16,.93);
+		transition: 				background-color 0.75s cubic-bezier(0.42,1,.16,.93);
+	}
+}
