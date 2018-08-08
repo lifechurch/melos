@@ -1,3 +1,4 @@
+const Raven = require('raven')
 const api = require('@youversion/js-api')
 const deepLinkPath = require('@youversion/utils/lib/bible/deepLinkPath').default
 const validateApiResponse = require('../utils/validate-api-response')
@@ -85,6 +86,7 @@ module.exports = function bibleChapter(req, reply) {
       metaImages: defaultImages.bible
     })
   }, (e) => {
+    Raven.captureException(e)
     req.log.error(`Error getting Bible reference ${e.toString()}`)
     return reply.redirect(307, `/bible/${DEFAULT_VERSION}/${DEFAULT_USFM}`)
   })

@@ -1,4 +1,5 @@
 const api = require('@youversion/js-api')
+const Raven = require('raven')
 const sanitizeString = require('../utils/sanitize-string')
 const Bible = api.getClient('bible')
 
@@ -23,7 +24,8 @@ module.exports = async function bibleBooks(req, reply) {
       })
     return { items }
   } catch (e) {
-    req.log.error(`Error getting list of Bible book: ${e.toString()}`)
+    Raven.captureException(err)
+    req.log.error(`Error getting list of Bible books: ${e.toString()}`)
     return e
   }
 }

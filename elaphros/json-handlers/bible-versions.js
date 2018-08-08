@@ -1,4 +1,5 @@
 const api = require('@youversion/js-api')
+const Raven = require('raven')
 const sanitizeString = require('../utils/sanitize-string')
 const Bible = api.getClient('bible')
 
@@ -35,6 +36,7 @@ module.exports = async function bibleVersions(req, reply) {
       })
     return { items }
   } catch (e) {
+    Raven.captureException(e)
     req.log.error(`Error fetching versions for: ${languageTag}. ${e.toString()}`)
     return reply.redirect(307, '/json/bible/versions/eng')
   }

@@ -21,7 +21,8 @@
     "fastify-url-data": "^2.0.1",
     "marko": "^4.10.0",
     "newrelic": "^4.3.0",
-    "point-of-view": "^1.1.0"
+    "point-of-view": "^1.1.0",
+    "raven": "^2.6.3"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"

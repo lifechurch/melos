@@ -1,3 +1,4 @@
+const Raven = require('raven')
 const api = require('@youversion/js-api')
 const validateApiResponse = require('../utils/validate-api-response')
 const getFirstUsfmForVersion = require('../utils/bible/get-first-usfm-for-version')
@@ -20,6 +21,7 @@ module.exports = function bibleVersionWithDefaultReference(req, reply) {
     const firstUsfm = getFirstUsfmForVersion(version)
     return reply.redirect(301, `/bible/${versionId}/${firstUsfm}`)
   }, (e) => {
+    Raven.captureException(e)
     req.log.error(`Error getting Bible version ${e.toString}`)
     return reply.redirect(307, `/bible/${DEFAULT_VERSION}/${DEFAULT_USFM}`)
   })

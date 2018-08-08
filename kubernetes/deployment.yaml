@@ -139,6 +139,11 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: MY_SUBDOMAIN                                
+                key: MY_SUBDOMAIN
+          - name: ELAPHROS_SENTRY_DSN
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: ELAPHROS_SENTRY_DSN
       imagePullSecrets:
         - name: gitlab-registry

@@ -1,3 +1,8 @@
+if (process.env.ELAPHROS_SENTRY_DSN) {
+  var Raven = require('raven');
+  Raven.config(process.env.ELAPHROS_SENTRY_DSN).install();
+}
+
 if (process.env.NEW_RELIC_LICENSE_KEY) {
   require('newrelic');
 }
@@ -41,6 +46,7 @@ fastify.register(require('fastify-compress'))
 
 /* Register Cookie Middleware */
 fastify.register(require('fastify-cookie'), (err) => {
+  Raven.captureException(err)
   if (err) throw err
 })
 
@@ -61,7 +67,10 @@ fastify.register(
     expiresIn: 604800,
     cache: false
   },
-  (err) => { if (err) throw err }
+  (err) => {
+    Raven.captureException(err)
+    if (err) throw err
+  }
 )
 
 /* Register Marko middleware */
@@ -73,6 +82,7 @@ fastify.register(require('point-of-view'), {
 
 /* Register URL Data Middleware */
 fastify.register(require('fastify-url-data'), (err) => {
+  Raven.captureException(err)
   if (err) fastify.log.error(`Error loading URL Data middleware: ${err.toString()}`)
 })
 
@@ -174,6 +184,7 @@ fastify.setNotFoundHandler((req, reply) => {
 /* Start Listening on PORT */
 fastify.listen(PORT, '0.0.0.0', function (err) {
   if (err) {
+    Raven.captureException(err)
     fastify.log.error(`Error starting Fastify server: ${err.toString()}`)
     process.exit(1)
   }

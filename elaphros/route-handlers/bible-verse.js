@@ -1,3 +1,4 @@
+const Raven = require('raven')
 const api = require('@youversion/js-api')
 const selectImageFromList = require('@youversion/utils/lib/images/selectImageFromList').default
 const chapterifyUsfm = require('@youversion/utils/lib/bible/chapterifyUsfm').default
@@ -133,6 +134,7 @@ module.exports = function bibleVerse(req, reply) {
       appLocales
     })
   }, (e) => {
+    Raven.captureException(e)        
     req.log.error(`Error getting Bible reference ${e.toString()}`)
     return reply.redirect(307, `/bible/${DEFAULT_VERSION}/${DEFAULT_USFM}`)
   })
