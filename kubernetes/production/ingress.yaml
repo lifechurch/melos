@@ -15,6 +15,7 @@ spec:
     - www.$CI_ENVIRONMENT_HOSTNAME
     - nodejs.$CI_ENVIRONMENT_HOSTNAME
     - events.$CI_ENVIRONMENT_HOSTNAME
+    - my.$CI_ENVIRONMENT_HOSTNAME
     secretName: ssl
   rules:
   - host: $CI_ENVIRONMENT_HOSTNAME
@@ -23,6 +24,26 @@ spec:
       - path: /
         backend:
           serviceName: $CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sw.js
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /json
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /static-assets
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
   - host: www.$CI_ENVIRONMENT_HOSTNAME
     http:
@@ -39,6 +60,13 @@ spec:
           serviceName: $CI_ENVIRONMENT_SLUG
           servicePort: $PORT
   - host: events.$CI_ENVIRONMENT_HOSTNAME
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: $CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+  - host: my.$CI_ENVIRONMENT_HOSTNAME
     http:
       paths:
       - path: /
