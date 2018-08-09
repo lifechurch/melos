@@ -200,6 +200,8 @@ function httpReq(section, noun, query, auth, _extension, _method, _version, _env
 							data.cacheLifetime = lifetime
 							resolve(data);
 						}
+					}, (e) => {
+						reject(e);
 					})
 				} else if (extension === 'po') {
 					response.text().then((textBody) => {

@@ -19,6 +19,7 @@
     "fastify-favicon": "^0.2.4",
     "fastify-static": "^0.12.0",
     "fastify-url-data": "^2.0.1",
+    "http-errors": "^1.7.0",
     "marko": "^4.10.0",
     "newrelic": "^4.3.0",
     "point-of-view": "^1.1.0",

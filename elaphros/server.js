@@ -17,6 +17,7 @@ const path = require('path')
 const fastify = require('fastify')({ logger: true })
 const marko = require('marko')
 const fastifyCaching = require('fastify-caching')
+const httpErrors = require('http-errors')
 
 /* Liveness / Readiness Probe Routes */
 const ping = require('./route-handlers/ping')
@@ -154,14 +155,17 @@ fastify.get('/loaderio-41e1b70fc18e0a45b5d52827b90fded3/', loaderio)
 fastify.get('/bible-offline', bibleOffline)
 fastify.get('/bible', bibleReferenceWithDefaultVersion)
 fastify.get('/bible/:versionId', bibleVersionWithDefaultReference)
-fastify.get('/bible/:versionId/:usfm', (req, reply) => {
+fastify.get('/bible/:versionId/:usfm', (req, reply, next) => {
   const { isVerse, isChapter } = isVerseOrChapter(req.params.usfm)
   if (isChapter) {
     return bibleChapter(req, reply)
   } else if (isVerse) {
     return bibleVerse(req, reply)
   } else {
-    req.log.warn(`Invalid Bible reference: ${req.params.usfm}. Neither Chapter nor Verse.`)
+    const message = `Invalid Bible reference: ${req.params.usfm}. Neither Chapter nor Verse.`
+    Raven.captureException(new Error(message))
+    req.log.warn(message)
+    reply.send(new httpErrors.NotFound())
   }
 })
 

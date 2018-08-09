@@ -14,6 +14,8 @@ const localeList = require('../localization/locale-list.json')
 const Bible = api.getClient('bible')
 const Image = api.getClient('images')
 const ReadingPlans = api.getClient('reading-plans')
+const DEFAULT_VERSION = process.env.BIBLE_DEFAULT_VERSION || 1
+const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1'
 
 module.exports = function bibleVerse(req, reply) {
   const { versionId, usfm: rawUsfm } = req.params
@@ -47,6 +49,10 @@ module.exports = function bibleVerse(req, reply) {
     usfm: imagesUsfm,
     language_tag: 'en'
   }).setEnvironment(process.env.NODE_ENV).get()
+
+  imagesPromise.catch((err) => {
+    Raven.captureException(err)
+  })
 
   const plansPromise = ReadingPlans.call("plans_by_reference").params({
     usfm: imagesUsfm[0],
