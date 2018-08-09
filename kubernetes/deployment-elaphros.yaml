@@ -96,5 +96,10 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: ELAPHROS_SENTRY_DSN
+          - name: MEMCACHE_SERVERS
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: MEMCACHE_SERVERS                
       imagePullSecrets:
         - name: gitlab-registry
