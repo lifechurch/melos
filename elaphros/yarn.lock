@@ -37,11 +37,11 @@
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@tyriar/fibonacci-heap/-/fibonacci-heap-2.0.7.tgz#73a441ca0e5108d2621c72e9b34dcf566387f078"
 
-"@youversion/js-api@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@youversion/js-api/-/js-api-1.1.0.tgz#9a37584e056eee74d5aed17be8ead4e0b241aabe"
+"@youversion/js-api@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@youversion/js-api/-/js-api-1.1.2.tgz#3774bf4043ddfe944b8c432415f38614b28741c9"
   dependencies:
-    "@youversion/token-storage" "^0.0.58"
+    "@youversion/token-storage" "^0.0.59"
     base-64 "^0.1.0"
     bluebird "^3.5.1"
     body-parser "^1.13.3"
@@ -57,9 +57,9 @@
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@youversion/stringer-things/-/stringer-things-0.0.3.tgz#c21fb839e88a4ab62763a5c46e4001945d4ffcbf"
 
-"@youversion/token-storage@^0.0.58":
-  version "0.0.58"
-  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.58.tgz#9e13d3dc8e5b2d082090774000bb50ec0919c98f"
+"@youversion/token-storage@^0.0.59":
+  version "0.0.59"
+  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.59.tgz#b0beb5d57e6bed821c48c836a88c3d91f80ae039"
   dependencies:
     react-cookie "^0.4.5"
 
@@ -3030,9 +3030,9 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-newrelic@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-4.3.0.tgz#6af5bbf6189d0e332105aeeaa833052713ce34c3"
+newrelic@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-4.7.0.tgz#9044848e1fc3c137aecb7497bf16923683773eff"
   dependencies:
     "@newrelic/koa" "^1.0.0"
     "@tyriar/fibonacci-heap" "^2.0.7"

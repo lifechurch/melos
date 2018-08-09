@@ -21,7 +21,7 @@
     "fastify-url-data": "^2.0.1",
     "http-errors": "^1.7.0",
     "marko": "^4.10.0",
-    "newrelic": "^4.3.0",
+    "newrelic": "^4.7.0",
     "point-of-view": "^1.1.0",
     "raven": "^2.6.3"
   },
