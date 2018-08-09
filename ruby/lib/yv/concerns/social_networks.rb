@@ -12,9 +12,9 @@ module YV
             # to be safe
             current_user.connections["facebook"].update_token unless cookies.signed[:f].present?
             facebook_data[:valid_date] = Time.zone.now
-            cookies.permanent.signed[:f] = facebook_data.to_json
+            cookies.permanent.signed[:f] = { value: facebook_data.to_json, domain: cookie_domain }
           else
-            cookies.permanent.signed[:f] = "none"
+            cookies.permanent.signed[:f] = { value: "none", domain: cookie_domain }
           end
         rescue
           # if an error occurs with FB weirness, we don't want

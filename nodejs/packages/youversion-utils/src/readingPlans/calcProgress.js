@@ -3,7 +3,7 @@ import moment from 'moment'
 import { FormattedMessage } from 'react-intl'
 import calcTodayVsStartDt from './calcTodayVsStartDt'
 
-function calcProgress({ progressDays, start_dt = null }) {
+function calcProgress({ progressDays = {}, start_dt = null }) {
 	const overall = {
 		completion_percentage: 0,
 		progress_string: ''

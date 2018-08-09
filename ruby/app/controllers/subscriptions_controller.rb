@@ -20,7 +20,7 @@ class SubscriptionsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404
@@ -44,7 +44,7 @@ class SubscriptionsController < ApplicationController
 				"token" => params[:token]
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404
@@ -64,7 +64,7 @@ class SubscriptionsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404
@@ -84,7 +84,7 @@ class SubscriptionsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404
@@ -107,7 +107,7 @@ class SubscriptionsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404
@@ -130,7 +130,7 @@ class SubscriptionsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404
@@ -153,7 +153,7 @@ class SubscriptionsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404
@@ -297,7 +297,7 @@ class SubscriptionsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404
@@ -318,7 +318,7 @@ class SubscriptionsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404

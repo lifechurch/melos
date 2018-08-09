@@ -30,9 +30,9 @@ class PlanReaderView extends Component {
 	}
 
 	componentDidMount() {
-		const { plan, params: { subscription_id, day }, dispatch, auth } = this.props
+		const { plan, params: { subscription_id, day }, dispatch, auth, serverLanguageTag } = this.props
 		if (!plan) {
-			dispatch(subscriptionData({ subscription_id, auth, day }))
+			dispatch(subscriptionData({ subscription_id, auth, day, serverLanguageTag }))
 		}
 		this.buildData()
 	}
@@ -193,7 +193,7 @@ class PlanReaderView extends Component {
 			switch (this.segment.kind) {
 				case 'devotional':
 					readerContent = (
-						<PlanDevo devoContent={this.segment.content} />
+						<PlanDevo devoContent={this.segment.content} hasDevotionalAudio={plan.has_devotional_audio} />
 					)
 					break
 
@@ -269,6 +269,7 @@ function mapStateToProps(state, props) {
 			: null,
 		auth: state.auth,
 		hosts: state.hosts,
+		serverLanguageTag: state.serverLanguageTag
 	}
 }
 

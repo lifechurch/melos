@@ -1,0 +1,107 @@
+# This file is a template, and might need editing before it works on your project.
+# Explaination on the scripts:
+# https://gitlab.com/gitlab-examples/kubernetes-deploy/blob/master/README.md
+image: quay.io/lifechurch/k8s-deploy-helper:2.0.3
+
+variables:
+  # Application deployment domain
+  KUBE_DOMAIN: bible.com
+
+stages:
+  - build
+  - test
+  - review
+  - staging
+  - production
+  - taglatest
+
+build:
+  stage: build
+  script:
+    - command build
+  only:
+    - branches
+  tags:
+    - web
+
+review:
+  stage: review
+  variables:
+    CI_ENVIRONMENT_URL: https://$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
+  script:
+    - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
+    - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211 
+    - command deploy
+    - helm list | grep $SHORT || helm install --name $SHORT --set memcached.verbosity=v --set memcached.maxItemMemory=100 stable/memcached --version 0.4.1 --namespace $KUBE_NAMESPACE --replace
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
+    on_stop: stop_review
+  only:
+    - branches
+  except:
+    - master  
+  tags:
+    - web
+
+stop_review:
+  stage: review
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - command destroy app=elaphros-$CI_ENVIRONMENT_SLUG
+    - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
+    - helm delete $SHORT
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
+  when: manual
+  only:
+    - branches
+  except:
+    - master
+  tags:
+    - web
+
+staging:
+  stage: staging
+  variables:
+    CI_ENVIRONMENT_URL: https://staging-elaphros.$KUBE_DOMAIN
+  script:
+    - command deploy
+  environment:
+    name: staging
+    url: https://staging-elaphros.$KUBE_DOMAIN
+  only:
+    - master
+  tags:
+    - web
+
+production:
+  stage: production
+  variables:
+    CI_ENVIRONMENT_URL: https://elaphros.$KUBE_DOMAIN
+  script:
+    - command deploy
+  environment:
+    name: production
+    url: https://elaphros.$KUBE_DOMAIN
+  when: manual
+  allow_failure: false
+  only:
+    - master
+  tags:
+    - web
+
+taglatest:
+  stage: taglatest
+  dependencies: []
+  allow_failure: false
+  script:
+    - command push
+  only:
+    - master
+  tags:
+    - web
+
+

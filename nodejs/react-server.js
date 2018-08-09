@@ -7,7 +7,6 @@ import createNodeLogger from 'redux-node-logger'
 import { Provider } from 'react-redux'
 import cookieParser from 'cookie-parser'
 import reactCookie from 'react-cookie'
-import { fetchToken } from '@youversion/token-storage'
 import { tokenAuth } from '@youversion/js-api'
 import { IntlProvider } from 'react-intl'
 import rtlDetect from 'rtl-detect'
@@ -118,9 +117,8 @@ function getAssetPath(path) {
  * that's plugged into react-cookie
  * @return
  */
-function getStateFromToken() {
+function getStateFromToken(token) {
 	let sessionData = {}
-	const token = fetchToken()
 	const tokenData = tokenAuth.decodeToken(token)
 	sessionData = tokenAuth.decryptToken(tokenData.token)
 	delete sessionData.password
@@ -158,7 +156,7 @@ router.get('/*', cookieParser(), (req, res) => {
 			reactCookie.plugToRequest(req, res)
 			let startingState = defaultState
 			try {
-				startingState = getStateFromToken()
+				startingState = getStateFromToken(req.cookies.YouVersionToken2)
 			} catch (err) {
 
 			}

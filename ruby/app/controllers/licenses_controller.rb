@@ -60,13 +60,13 @@ private
   # we may have to ask the user to sign up or login.
   def store_params
     required_params.each do |key|
-      cookies[key] = params[key]
+      cookies[key] = { value: params[key], domain: cookie_domain }
     end
   end
 
   def cleanup_params
     required_params.each do |key|
-      cookies[key] = nil
+      cookies[key] = { value: nil, domain: cookie_domain }
     end
   end
 

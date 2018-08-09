@@ -10,7 +10,7 @@ class NotificationSettings < YV::Resource
   attribute :user_id
   attribute :notification_settings
   attribute :language_tag
-  
+
   attr_accessor :badges
   attr_accessor :newsletter
   attr_accessor :reading_plans
@@ -20,6 +20,10 @@ class NotificationSettings < YV::Resource
   attr_accessor :friendships
   attr_accessor :likes
   attr_accessor :contact_joins
+  attr_accessor :pwf_accepts
+  attr_accessor :pwf_invites
+  attr_accessor :pwf_comments
+  attr_accessor :pwf_reminders
 
   class << self
 
@@ -74,16 +78,16 @@ class NotificationSettings < YV::Resource
   def auth_present?
     !(auth || token).nil?
   end
-  
+
   def persist_token
     nil
   end
 
-  # resource#update requires instance to already be persisted so that 
+  # resource#update requires instance to already be persisted so that
   # 'update' action is called instead of create
-  # 
+  #
   # TODO: refactor this assumption :[
-  # 
+  #
   # Overriding instance level persisted? call to not trigger a create, rather an update.
   def persisted?
     true
@@ -91,7 +95,7 @@ class NotificationSettings < YV::Resource
 
   def before_save
     hash = {}
-    settings = ["badges","newsletter","contact_joins","reading_plans","partners","moments","comments","likes","friendships"]
+    settings = ["badges","newsletter","contact_joins","reading_plans","moments","comments","likes","friendships", "pwf_accepts", "pwf_invites", "pwf_comments", "pwf_reminders"]
 
     settings.each do |n|
       setting = self.send(n.to_sym)

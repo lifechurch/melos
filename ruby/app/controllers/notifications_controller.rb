@@ -25,7 +25,7 @@ class NotificationsController < ApplicationController
 				"cache_for" => YV::Caching::a_very_long_time
 		}
 
-		fromNode = YV::Nodestack::Fetcher.get('Notifications', p, cookies, current_auth, current_user, request)
+		fromNode = YV::Nodestack::Fetcher.get('Notifications', p, cookies, current_auth, current_user, request, cookie_domain)
 
 		if (fromNode['error'].present?)
 			return render_404
@@ -68,7 +68,7 @@ class NotificationsController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('Unsubscribe', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('Unsubscribe', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       return render_404

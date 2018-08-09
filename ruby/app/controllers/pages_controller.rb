@@ -99,7 +99,7 @@ class PagesController < ApplicationController
 
     # /snapshot and attempted to be logged in but
     # invalid auth (gwt expires, etc)
-    if ((user_id.nil? && user_id_hash.nil?) && ((!current_user && cookies['YouVersionToken']) || (current_user && current_user.invalid?)))
+    if ((user_id.nil? && user_id_hash.nil?) && ((!current_user && cookies['YouVersionToken2']) || (current_user && current_user.invalid?)))
       redirect_to sign_in_path(redirect: snapshot_path) and return
     end
 
@@ -134,7 +134,7 @@ class PagesController < ApplicationController
 
     end
 
-    results = YV::Nodestack::Fetcher.get('Snapshot', p, cookies, current_auth, current_user, request)
+    results = YV::Nodestack::Fetcher.get('Snapshot', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if results['error'].present?
       return render_404
@@ -171,7 +171,7 @@ class PagesController < ApplicationController
       return render_404
     end
 
-		fromNode = YV::Nodestack::Fetcher.get('VOTD', p, cookies, current_auth, current_user, request)
+		fromNode = YV::Nodestack::Fetcher.get('VOTD', p, cookies, current_auth, current_user, request, cookie_domain)
 
 		if (fromNode['error'].present?)
       # puts "****"*100

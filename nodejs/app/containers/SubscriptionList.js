@@ -61,7 +61,7 @@ class SubscriptionList extends Component {
 	}
 
 	getSubs = ({ page = null }) => {
-		const { dispatch, auth, subscriptions, readingPlans, participants } = this.props
+		const { dispatch, auth, subscriptions, readingPlans, participants, serverLanguageTag } = this.props
 		return dispatch(plansAPI.actions.subscriptions.get({ order: 'desc', page }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = Object.keys(subs.data)
@@ -79,6 +79,7 @@ class SubscriptionList extends Component {
 								plan_id: sub.plan_id,
 								together_id: sub.together_id,
 								auth,
+								serverLanguageTag
 							}))
 						}
 						// get share link for a plan that starts in the future
@@ -120,7 +121,7 @@ class SubscriptionList extends Component {
 	}
 
 	getInvitations = () => {
-		const { dispatch, auth, readingPlans, participants } = this.props
+		const { dispatch, auth, readingPlans, participants, serverLanguageTag } = this.props
 		return dispatch(plansAPI.actions.togethers.get({ status: 'invited' }, { auth: true })).then((subs) => {
 			if (subs && subs.data) {
 				const ids = subs.map
@@ -132,6 +133,7 @@ class SubscriptionList extends Component {
 								plan_id: sub.plan_id,
 								together_id: id,
 								auth,
+								serverLanguageTag
 							}))
 						}
 					})

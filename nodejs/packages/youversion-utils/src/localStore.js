@@ -30,6 +30,7 @@ function getKeysAndValue(key) {
 	}
 }
 
+
 function getMergedOptions(opts) {
 	const defaultOpts = {
 		path: '/',

@@ -1,0 +1,14 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: elaphros-$CI_ENVIRONMENT_SLUG
+  namespace: $KUBE_NAMESPACE
+  labels:
+    app: elaphros-$CI_ENVIRONMENT_SLUG
+    pipeline_id: "$CI_PIPELINE_ID"
+    build_id: "$CI_JOB_ID"
+spec:
+  minAvailable: 50%
+  selector:
+    matchLabels:
+      app: elaphros-$CI_ENVIRONMENT_SLUG
