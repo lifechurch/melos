@@ -45,6 +45,8 @@ review:
   script:
     - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
     - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211 
+    - export REVIEW_MY_SUBDOMAIN=my-$CI_ENVIRONMENT_SLUG.
+    - export REVIEW_WWW_SUBDOMAIN=$CI_ENVIRONMENT_SLUG.
     - command deploy
     - helm list | grep $SHORT || helm install --name $SHORT --set memcached.verbosity=v --set memcached.maxItemMemory=100 stable/memcached --version 0.4.1 --namespace $KUBE_NAMESPACE --replace
   environment:
@@ -65,7 +67,7 @@ stop_review:
     GIT_STRATEGY: none
   script:
     - command destroy
-    - command destroy elaphros
+    - command destroy app=elaphros-$CI_ENVIRONMENT_SLUG
     - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
     - helm delete $SHORT
   environment:
