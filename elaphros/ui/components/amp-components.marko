@@ -1,0 +1,8 @@
+<for(ampComponent in input.ampComponents)>
+  $ const attrs = {
+    async: true,
+    [`custom-${ampComponent.type}`]: ampComponent.name,
+    src: `https://cdn.ampproject.org/v0/${ampComponent.name}-${ampComponent.version}.js`
+  }
+  <script ...attrs ></script>
+</for>

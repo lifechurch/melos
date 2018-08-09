@@ -132,7 +132,7 @@ class ReferencesController < ApplicationController
         "parallelVersion" => params["parallel"]
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request)
+    fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request, cookie_domain)
 
     if (fromNode['error'].present?)
       # puts "----"*100
@@ -169,7 +169,7 @@ class ReferencesController < ApplicationController
   #       "ref" => params[:reference]
   #   }
   #
-  #   fromNode = YV::Nodestack::Fetcher.get('Passage', p, cookies, current_auth, current_user, request)
+  #   fromNode = YV::Nodestack::Fetcher.get('Passage', p, cookies, current_auth, current_user, request, cookie_domain)
   #
   #   if (fromNode['error'].present?)
   #     return render_404

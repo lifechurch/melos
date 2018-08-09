@@ -38,7 +38,7 @@ class InvitationView extends Component {
 				together_id,
 				token: query && query.token,
 				auth,
-				serverLanguageTag,
+				serverLanguageTag
 			}))
 			dispatch(plansAPI.actions.together.get({
 				id: together_id,

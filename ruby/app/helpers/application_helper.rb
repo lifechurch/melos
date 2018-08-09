@@ -401,9 +401,9 @@ module ApplicationHelper
         end
         if params['tp_source'] == "Facebook"
           # write cookie for auth type
-          cookies[:auth_type] = 'facebook'
+          cookies[:auth_type] = { value: 'facebook', domain: cookie_domain }
         else
-          cookies[:auth_type] = 'google'
+          cookies[:auth_type] = { value: 'google', domain: cookie_domain }
         end
         sign_in(@user, nil, tp_token, tp_id)
         I18n.locale = @user.language_tag.gsub('_', '-') unless @user.language_tag.nil?
@@ -460,9 +460,9 @@ module ApplicationHelper
         end
 
         if @user.valid?
-          cookies.signed[:a] = @user.id
-          cookies.signed[:b] = @user.email
-          cookies[:tempemail] = @user.email
+          cookies.signed[:a] = { value: @user.id, domain: cookie_domain }
+          cookies.signed[:b] = { value: @user.email, domain: cookie_domain }
+          cookies[:tempemail] = { value: @user.email, domain: cookie_domain }
 
           # If this is an unverified email, then send them
           #  to the verify notice, otherwise log them in

@@ -8,6 +8,7 @@ function planView({ plan_id, together_id, token = null, auth, serverLanguageTag 
 				method: 'view',
 				params: {
 					id: plan_id,
+					language_tag: serverLanguageTag
 				},
 				auth: !!auth
 			})).then((data) => { resolve(data) })

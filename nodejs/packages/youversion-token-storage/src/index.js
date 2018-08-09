@@ -1,6 +1,6 @@
 import cookie from 'react-cookie'
 
-const TOKEN_STORAGE_KEY = 'YouVersionToken'
+const TOKEN_STORAGE_KEY = 'YouVersionToken2'
 const TOKEN_MAX_AGE = 60 * 60 * 24
 
 export function fetchToken() {

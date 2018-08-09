@@ -37,6 +37,7 @@ class ParticipantsView extends Component {
 			plan,
 			participants,
 			together,
+      serverLanguageTag
 		} = this.props
 
 		// join token will allow us to see the participants and together unauthed
@@ -47,6 +48,7 @@ class ParticipantsView extends Component {
 				together_id,
 				token,
 				auth,
+				serverLanguageTag
 			}))
 		}
 		if (!(together && 'id' in together)) {

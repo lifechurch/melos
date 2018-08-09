@@ -23,5 +23,5 @@ Cypress.on('uncaught:exception', () => {
 
 Cypress.Cookies.defaults({
 	// don't wipe the auth token between tests
-	whitelist: 'YouVersionToken'
+	whitelist: 'YouVersionToken2'
 })

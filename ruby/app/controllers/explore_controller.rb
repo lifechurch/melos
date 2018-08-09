@@ -10,7 +10,7 @@ class ExploreController < ApplicationController
   #       "version_id" => params && params[:version]
   #   }
   #
-  #   fromNode = YV::Nodestack::Fetcher.get('Explore', p, cookies, current_auth, current_user, request)
+  #   fromNode = YV::Nodestack::Fetcher.get('Explore', p, cookies, current_auth, current_user, request, cookie_domain)
   #
   #   if (fromNode['error'].present?)
   #     puts "-"*100

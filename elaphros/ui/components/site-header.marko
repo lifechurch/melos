@@ -1,0 +1,67 @@
+<header class="site-header bg-white pa3 fixed top-0 left-0 w-100 bb b--black-20 z-1 flex items-center">
+  <nav id="site-header-nav" class="flex items-center w-100">
+    <div class="flex w-100 w-third-l items-center">
+      <a href="/" class="link dim">
+        <div class="flex flex-column items-center mr4-m mr3">
+          <home-icon />
+          <p class="pa0 ma0 f7 mid-gray mt1">Home</p>
+        </div>
+      </a>
+      <a href="/bible/111/JHN.1" class="link dim">
+        <div class="flex flex-column items-center mr4-m mr3">
+          <reader-icon />
+          <p class="pa0 ma0 f7 mid-gray mt1">Read</p>
+        </div>
+      </a>
+      <a href="/reading-plans/11467-how-sweet-the-sound" class="link dim">
+        <div class="flex flex-column items-center mr4-m mr3">
+          <plans-icon />
+          <p class="pa0 ma0 f7 mid-gray mt1">Plans</p>
+        </div>
+      </a>
+      <a href="/videos" class="link dim">
+        <div class="flex flex-column items-center mr4-m mr3">
+          <videos-icon />
+          <p class="pa0 ma0 f7 mid-gray mt1">Videos</p>
+        </div>
+      </a>
+    </div>
+    <div on="tap: site-header-search.show, site-header-nav.hide"
+      role="button"
+      tabindex="0"
+      aria-label="Open Search Bar"
+      class="w-auto flex items-center justify-center ma0 outline-0 pa2 dn-l">
+      <search-icon></search-icon>
+    </div>
+    <div class="dn flex-l w-third-l">
+      <site-header-search></site-header-search>
+    </div>
+    <div class="dn flex-l w-third-l items-center justify-end">
+      <div id="header-auth-buttons" class="h-100-l flex-no-wrap"></div>
+    </div>
+  </nav>
+
+  <nav hidden id="site-header-search" class="flex items-center w-100">
+    <site-header-search></site-header-search>
+  </nav>
+
+  <div on="tap: header-more-menu.toggle"
+    role="button"
+    tabindex="0"
+    aria-label="Open Sidebar Menu"
+    class="w-auto flex items-center justify-center ma0 pl2 pt2 pb2 outline-0 dn-l">
+    <hamburger-icon></hamburger-icon>
+  </div>
+</header>
+
+<amp-sidebar id="header-more-menu" layout="nodisplay" side="right" class="w5 dn-l pa2">
+  <nav class="fixed right-0 top-0">
+    <ul class="pa2 list ma0 outline-0" tabindex="0" role="button" on="tap: header-more-menu.close">
+      <li><close-icon></close-icon></li>
+    </ul>
+  </nav>
+  <footer-logo></footer-logo>
+  <header-auth-buttons></header-auth-buttons>
+  <footer-links></footer-links>
+  <footer-icons></footer-icons>
+</amp-sidebar>

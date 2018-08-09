@@ -7,7 +7,7 @@
     "cache_for" => YV::Caching::a_very_long_time
   }
 
-  @footer_from_node = YV::Nodestack::Fetcher.get('Footer', footer_params, cookies, current_auth, current_user, request)
+  @footer_from_node = YV::Nodestack::Fetcher.get('Footer', footer_params, cookies, current_auth, current_user, request, cookie_domain)
 
 - content_for :lower_javascript do
   %script{type:'text/javascript'}

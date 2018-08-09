@@ -1,0 +1,13 @@
+$ function getLinkUrl(host, locale, path) {
+  return `${host}${locale === 'en' ? '' : `/${locale}`}${path}`
+}
+<link rel="canonical" href="${getLinkUrl(input.host, input.locale, input.path)}">
+<link rel="amphtml" href="${getLinkUrl(input.host, input.locale, input.path)}">
+<for(locale in input.locales)>
+  <link
+    if(locale !== input.locale)
+    rel="alternate"
+    hreflang="${locale}"
+    href="${getLinkUrl(input.host, locale, input.path)}"
+  />
+</for>
