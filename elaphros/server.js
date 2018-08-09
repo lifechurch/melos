@@ -1,10 +1,12 @@
-if (process.env.ELAPHROS_SENTRY_DSN) {
-  var Raven = require('raven');
-  Raven.config(process.env.ELAPHROS_SENTRY_DSN).install();
+let newrelic
+if (process.env.NEW_RELIC_LICENSE_KEY) {
+  newrelic = require('newrelic')
 }
 
-if (process.env.NEW_RELIC_LICENSE_KEY) {
-  require('newrelic');
+let Raven
+if (process.env.ELAPHROS_SENTRY_DSN) {
+  Raven = require('raven')
+  Raven.config(process.env.ELAPHROS_SENTRY_DSN).install()
 }
 
 /* Set App Defaults */
