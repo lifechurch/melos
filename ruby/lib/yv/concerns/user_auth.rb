@@ -48,12 +48,13 @@ module YV
         logged_in = !current_auth.nil? && !current_auth.invalid?
         is_my_subdomain = "#{request.subdomain}." == my_subdomain
         is_www_subdomain = "#{request.subdomain}." == www_subdomain
+        is_sign_in = request.path == "/sign-in"
 
-        if (request.path == "/sign-in" or logged_in) && is_www_subdomain
+        if (is_sign_in or logged_in) && is_www_subdomain
           redirect_to "//#{request.host_with_port.sub!(www_subdomain, my_subdomain)}#{request.fullpath}"
         end
 
-        if !logged_in && is_my_subdomain
+        if !is_sign_in && !logged_in && is_my_subdomain
           redirect_to "//#{request.host_with_port.sub!(my_subdomain, www_subdomain)}#{request.fullpath}"
         end
       end
