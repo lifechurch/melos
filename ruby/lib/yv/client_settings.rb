@@ -11,7 +11,7 @@ module YV
     end
 
     def viewed_social_intro!
-      @cookies["viewed-social-intro"] = { value: true, domain: cookie_domain }
+      @cookies["viewed-social-intro"] = { value: true }
     end
 
     def time_zone
@@ -31,7 +31,7 @@ module YV
     end
 
     def reader_full_screen=( value )
-      @cookies[:full_screen] = { value: value, domain: cookie_domain }
+      @cookies[:full_screen] = { value: value }
     end
 
     def reader_parallel_mode
@@ -39,7 +39,7 @@ module YV
     end
 
     def reader_parallel_mode=( value )
-      @cookies[:parallel_mode] = { value: value, domain: cookie_domain }
+      @cookies[:parallel_mode] = { value: value }
     end
 
     def reader_trans_notes
@@ -79,7 +79,7 @@ module YV
     end
 
     def video_series=( id )
-      @cookies[:video_series_id] = { value: id, domain: cookie_domain }
+      @cookies[:video_series_id] = { value: id }
     end
   end
 end
