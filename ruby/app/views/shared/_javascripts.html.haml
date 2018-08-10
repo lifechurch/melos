@@ -7,8 +7,8 @@
 
 -# Facebook Sign In
 :javascript
-  self.origin = window.location.hostname.split('.').splice(-2)
-  
+  self.origin = '.' + window.location.hostname.split('.').splice(-2).join('.')
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : "#{Cfg.facebook_signin_app_id}",
