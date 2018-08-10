@@ -49,7 +49,7 @@ module YV
         is_my_subdomain = "#{request.subdomain}." == my_subdomain
         is_www_subdomain = "#{request.subdomain}." == www_subdomain
 
-        if logged_in && is_www_subdomain
+        if (request.path == "/sign-in" or logged_in) && is_www_subdomain
           redirect_to "//#{request.host_with_port.sub!(www_subdomain, my_subdomain)}#{request.fullpath}"
         end
 
