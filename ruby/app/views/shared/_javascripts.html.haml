@@ -7,7 +7,9 @@
 
 -# Facebook Sign In
 :javascript
-  self.origin = '.' + window.location.hostname.split('.').splice(-2).join('.')
+  var newOrigin = '.' + window.location.hostname.split('.').splice(-2).join('.')
+  self.origin = newOrigin
+  document.origin = newOrigin
 
   window.fbAsyncInit = function() {
     FB.init({
