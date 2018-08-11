@@ -1,6 +1,6 @@
 zh-TW:
   about: "關於"
-  audio: "Audio"
+  audio: "音訊"
   book: "書卷"
   bible language: "譯本語言"
   blog: "部落格"
@@ -12,7 +12,7 @@ zh-TW:
   events: "互動"
   explore by verse: "Explore %{chapter_name} by Verse"
   help: "幫助"
-  hide: "Hide"
+  hide: "隱藏"
   home: "首頁"
   jobs: "工作機會"
   language: "語言"
