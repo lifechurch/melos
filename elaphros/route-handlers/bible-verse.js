@@ -66,8 +66,6 @@ module.exports = function bibleVerse(req, reply) {
 
   allPromises.then(([ verses, version, images, plans, config ]) => {
     const referenceTitle = getReferencesTitle({ bookList: version.books, usfmList: versesUsfm })
-    const pathWithoutLocale = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, usfm)
-    const canonicalUrl = `https://${host ? host : ''}${pathWithoutLocale}`
 
     const deepLink = deepLinkPath(chapterifyUsfm(usfm), versionId, version.abbreviation, usfm.split('.').splice(-1))
     let twitterCard = 'summary'
@@ -88,6 +86,9 @@ module.exports = function bibleVerse(req, reply) {
       return reply.redirect(303, `/bible/${DEFAULT_VERSION}/${usfm}`)
     }
 
+    const pathWithoutLocale = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, usfm)
+    const canonicalUrl = `https://${host ? host : ''}${pathWithoutLocale}`
+    
     const prerenderedImages = (validateApiResponse(images) && ('images' in images) && images.images.length > 0)
       ? images.images.filter((image) => !image.editable)
       : []
