@@ -1396,9 +1396,9 @@ hi:
         votd: "आपने <b>आज का वचन</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         votd_image: "आपने <b>आज का वचन के लिए चित्र</b> वाले ई -मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
         contact_joins: "आपने <b> संपर्क </b> ई-मेल से सफलतापूर्वक सदस्यता समाप्त कर ली है."
-        pwf_accepts: "You have successfully unsubscribed from seeing when a Friend accepts your Plan invitation."
-        pwf_invites: "You have successfully unsubscribed from seeing when you’re invited to a Plan."
-        pwf_comments: "You have successfully unsubscribed from Comments on Plans with Friends."
+        pwf_accepts: "आपके मित्र, जब आपके पठन-योजना का निमंत्रण स्वीकार करतें हैं, तो उसे देखने की अपनी सदस्यता को, आपने सफ़लतापूर्वक वापिस ले लिया है।"
+        pwf_invites: "जब कोई आपको पठन-योजना के लिए निमंत्रण देता है, तो उसे देखने की अपनी सदस्यता को, आपने सफ़लतापूर्वक वापिस ले लिया है।"
+        pwf_comments: "मित्रों के साथ योजनाओं में टिप्पणी करने की अपनी सदस्यता को आपने सफ़लतापूर्वक वापिस ले लिया है।"
         pwf_reminders: "You have successfully unsubscribed from seeing Plan Start Reminders."
       labels:
         badges: "में जब badge अर्जित करू"
