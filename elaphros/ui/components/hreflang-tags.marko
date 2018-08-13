@@ -1,8 +1,9 @@
+$ const getCanonicalUrl = require('../../utils/seo').getCanonicalUrl
 $ function getLinkUrl(host, locale, path) {
-  return `${host}${locale === 'en' ? '' : `/${locale}`}${path}`
+  return `${host}${getCanonicalUrl(input.pageType, input.versionId, input.versionAbbr, input.usfm, locale)}`
 }
-<link rel="canonical" href="${getLinkUrl(input.host, input.locale, input.path)}">
-<link rel="amphtml" href="${getLinkUrl(input.host, input.locale, input.path)}">
+<link rel="canonical" href="${input.canonicalUrl}">
+<link rel="amphtml" href="${input.canonicalUrl}">
 <for(locale in input.locales)>
   <link
     rel="alternate"

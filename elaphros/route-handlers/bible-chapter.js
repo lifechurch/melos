@@ -7,17 +7,16 @@ const getLocalizedLink = require('../utils/localization/get-localized-link')
 const getPathWithoutLocale = require('../utils/localization/get-path-without-locale')
 const localeList = require('../localization/locale-list.json')
 const getAppLocale = require('../utils/localization/get-app-locale')
-
+const seoUtils = require('../utils/seo')
 const Bible = api.getClient('bible')
 const DEFAULT_VERSION = process.env.BIBLE_DEFAULT_VERSION || 1
-const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1'
+const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1.KJV'
 
 module.exports = function bibleChapter(req, reply) {
   const { versionId, usfm: rawUsfm } = req.params
   const usfm = rawUsfm.split('.').slice(0, 2).join('.').toUpperCase()
   const { host, query, path } = req.urlData()
   const fullRequestURL = `https://${host ? host : ''}${path ? path : ''}${query ? query : ''}`
-  const pathWithoutLocale = getPathWithoutLocale(path)
   const requestHost = `https://${host ? host : ''}`
   const defaultImages = getDefaultImages(requestHost)
 
@@ -38,6 +37,8 @@ module.exports = function bibleChapter(req, reply) {
 
   allPromises.then(([ chapter, version ]) => {
     const deepLink = deepLinkPath(usfm, versionId, version.abbreviation)
+    const pathWithoutLocale = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, usfm)
+    const canonicalUrl = `https://${host ? host : ''}${pathWithoutLocale}`
 
     if (!validateApiResponse(chapter)) {
       req.log.warn(`Invalid Bible reference ${usfm} in version ${versionId}`)
@@ -76,6 +77,7 @@ module.exports = function bibleChapter(req, reply) {
       allPromises,
       versionId,
       fullRequestURL,
+      canonicalUrl,
       requestHost,
       deepLink,
       getLocalizedLink,
