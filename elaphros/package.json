@@ -12,6 +12,7 @@
   "dependencies": {
     "@youversion/js-api": "1.1.2",
     "@youversion/utils": "1.0.53",
+    "cors": "^2.8.4",
     "fastify": "^1.4.0",
     "fastify-caching": "^3.0.0",
     "fastify-compress": "^0.6.0",

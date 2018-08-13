@@ -20,6 +20,7 @@ const fastify = require('fastify')({ logger: true })
 const marko = require('marko')
 const fastifyCaching = require('fastify-caching')
 const httpErrors = require('http-errors')
+const cors = require('cors')
 
 /* Liveness / Readiness Probe Routes */
 const ping = require('./route-handlers/ping')
@@ -43,6 +44,16 @@ const manifest = require('./json-handlers/manifest')
 /* Require Util Functions */
 const isVerseOrChapter = require('@youversion/utils/lib/bible/isVerseOrChapter').default
 const sanitizeString = require('./utils/sanitize-string')
+
+/* CORS */
+fastify.use(cors({
+  origin: [
+    /\.bible\.com$/,
+    'cdn.ampproject.org',
+    /\.cdn.ampproject\.org$/
+  ],
+  methods: [ 'GET', 'POST' ]
+}))
 
 /* Register Compression Middleware */
 fastify.register(require('fastify-compress'))
@@ -138,6 +149,9 @@ fastify.addHook('preHandler', (req, reply, next) => {
 
   next()
 })
+
+/* CORS OPTIONS Requests: 200 All */
+fastify.options('*', (req, reply) => { reply.send() })
 
 /* Liveness / Readiness Probe Routes */
 fastify.get('/ping', ping)
