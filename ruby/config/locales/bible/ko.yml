@@ -1,6 +1,6 @@
 ko:
   about: "소개"
-  audio: "Audio"
+  audio: "오디오"
   book: "성경"
   bible language: "성경 언어"
   blog: "블로그"
@@ -12,7 +12,7 @@ ko:
   events: "이벤트"
   explore by verse: "Explore %{chapter_name} by Verse"
   help: "도움말"
-  hide: "Hide"
+  hide: "숨기기"
   home: "홈"
   jobs: "채용정보"
   language: "언어"
