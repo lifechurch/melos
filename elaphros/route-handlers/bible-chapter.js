@@ -37,8 +37,6 @@ module.exports = function bibleChapter(req, reply) {
 
   allPromises.then(([ chapter, version ]) => {
     const deepLink = deepLinkPath(usfm, versionId, version.abbreviation)
-    const pathWithoutLocale = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, usfm)
-    const canonicalUrl = `https://${host ? host : ''}${pathWithoutLocale}`
 
     if (!validateApiResponse(chapter)) {
       req.log.warn(`Invalid Bible reference ${usfm} in version ${versionId}`)
@@ -49,6 +47,9 @@ module.exports = function bibleChapter(req, reply) {
       req.log.warn(`Invalid Bible version ${versionId}`)
       return reply.redirect(303, `/bible/${DEFAULT_VERSION}/${usfm}`)
     }
+
+    const pathWithoutLocale = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, usfm)
+    const canonicalUrl = `https://${host ? host : ''}${pathWithoutLocale}`
 
     const verseLinks = () => {
       const regex = /data-usfm=\"(\S*\.\S*\.\S*)\"/g
