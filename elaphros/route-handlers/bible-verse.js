@@ -10,6 +10,7 @@ const getDefaultImages = require('../utils/get-default-images')
 const getAppLocale = require('../utils/localization/get-app-locale')
 const getLocalizedLink = require('../utils/localization/get-localized-link')
 const getPathWithoutLocale = require('../utils/localization/get-path-without-locale')
+const seoUtils = require('../utils/seo')
 const localeList = require('../localization/locale-list.json')
 const Bible = api.getClient('bible')
 const Image = api.getClient('images')
@@ -65,6 +66,9 @@ module.exports = function bibleVerse(req, reply) {
 
   allPromises.then(([ verses, version, images, plans, config ]) => {
     const referenceTitle = getReferencesTitle({ bookList: version.books, usfmList: versesUsfm })
+    const pathWithoutLocale = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, usfm)
+    const canonicalUrl = `https://${host ? host : ''}${pathWithoutLocale}`
+
     const deepLink = deepLinkPath(chapterifyUsfm(usfm), versionId, version.abbreviation, usfm.split('.').splice(-1))
     let twitterCard = 'summary'
 
@@ -122,6 +126,7 @@ module.exports = function bibleVerse(req, reply) {
       allPromises,
       versionId,
       fullRequestURL,
+      canonicalUrl,
       requestHost,
       images: prerenderedImages,
       selectImageFromList,

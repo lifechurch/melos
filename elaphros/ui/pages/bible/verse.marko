@@ -1,5 +1,5 @@
 <site-layout
-  fullRequestURL=data.fullRequestURL
+  fullRequestURL=data.canonicalUrl
   requestHost=data.requestHost
   getLocalizedLink=data.getLocalizedLink
   getPathWithoutLocale=data.getPathWithoutLocale
@@ -33,6 +33,11 @@
         locales=data.appLocales
         host=data.requestHost
         path=data.pathWithoutLocale
+        canonicalUrl=data.canonicalUrl
+        usfm=data.referenceTitle.usfm
+        versionId=version.id
+        versionAbbr=version.local_abbreviation
+        pageType="bible"
         locale="en">
       </hreflang-tags>
 
@@ -42,7 +47,7 @@
         description=data.description
         metaImages=data.metaImages
         twitterCard=data.twitterCard
-        canonicalUrl=data.fullRequestURL>
+        canonicalUrl=data.canonicalUrl>
       </header-tags>
     </await>
   </@head>
@@ -75,7 +80,7 @@
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@id": "${data.fullRequestURL}",
+            "@id": "${data.canonicalUrl}",
             "name": "${data.referenceTitle.title}"
           }
         }]
@@ -114,7 +119,7 @@
                       title=pageTitle
                       description=data.description
                       metaImages=data.metaImages
-                      fullRequestURL=data.fullRequestURL>
+                      fullRequestURL=data.canonicalUrl>
                       <@button>
                         <span
                           class="w-100 tc dib pt2 pb2 pl2 pr2 link bg-yv-green white br2">
@@ -168,7 +173,7 @@
                     title=pageTitle
                     description=data.description
                     metaImages=data.metaImages
-                    fullRequestURL=data.fullRequestURL>
+                    fullRequestURL=data.canonicalUrl>
                     <@button>
                       <span
                         class="w-100 tc dib pt2 pb2 pl2 pr2 link bg-yv-green white br2">

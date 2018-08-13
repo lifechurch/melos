@@ -1,5 +1,5 @@
 <site-layout
-  fullRequestURL=data.fullRequestURL
+  fullRequestURL=data.canonicalUrl
   requestHost=data.requestHost
   getLocalizedLink=data.getLocalizedLink
   getPathWithoutLocale=data.getPathWithoutLocale
@@ -34,6 +34,11 @@
         locales=data.appLocales
         host=data.requestHost
         path=data.pathWithoutLocale
+        canonicalUrl=data.canonicalUrl
+        usfm=chapter.reference.usfm[0]
+        versionId=version.id
+        versionAbbr=version.local_abbreviation
+        pageType="bible"
         locale="en">
       </hreflang-tags>
 
@@ -43,7 +48,7 @@
         deepLink=data.deepLink
         metaImages=data.metaImages
         twitterCard="summary"
-        canonicalUrl=data.fullRequestURL>
+        canonicalUrl=data.canonicalUrl>
       </header-tags>
     </await>
   </@head>
@@ -75,7 +80,7 @@
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@id": "${data.fullRequestURL}",
+            "@id": "${data.canonicalUrl}",
             "name": "${chapter.reference.human}"
           }
         }]
@@ -94,7 +99,7 @@
       <div class="mw6 center pa3 pt4 pb6 mt6">
        <a if(chapter.previous)
         class="bible-nav-button nav-left fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white left-1"
-        href="/bible/${data.versionId}/${chapter.previous.usfm[0]}"
+        href="/bible/${data.versionId}/${chapter.previous.usfm[0]}.${version.local_abbreviation.toUpperCase()}"
         title="${chapter.previous.human}"
         data-vars-event-category="Bible Chapter"
         data-vars-event-action="Previous"
@@ -107,7 +112,7 @@
 
        <a if(chapter.next)
         class="bible-nav-button nav-right fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white right-1"
-        href="/bible/${data.versionId}/${chapter.next.usfm[0]}"
+        href="/bible/${data.versionId}/${chapter.next.usfm[0]}.${version.local_abbreviation.toUpperCase()}"
         title="${chapter.next.human}"
         data-vars-event-category="Bible Chapter"
         data-vars-event-action="Next"
@@ -140,7 +145,7 @@
                 <a
                   title="${chapter.reference.human}:${vl.split('.').splice(-1)} | ${version.local_title}"
                   class="link silver"
-                  href="/bible/${data.versionId}/${vl}"
+                  href="/bible/${data.versionId}/${vl}.${version.local_abbreviation.toUpperCase()}"
                   data-vars-event-category="Bible Chapter"
                   data-vars-event-action="EBV Click"
                   data-vars-event-label="${data.versionId}/${vl}"

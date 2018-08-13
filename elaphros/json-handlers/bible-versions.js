@@ -31,7 +31,8 @@ module.exports = async function bibleVersions(req, reply) {
         return {
           id: version.id,
           local_title: version.local_title,
-          audio: version.audio
+          audio: version.audio,
+          local_abbreviation: version.local_abbreviation.toUpperCase()
         }
       })
     return { items }
