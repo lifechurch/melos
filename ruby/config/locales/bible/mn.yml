@@ -2,7 +2,7 @@ mn:
   features:
     bible:
       about: "Тухай"
-      audio: "Audio"
+      audio: "Аудио"
       book: "Ном"
       bible language: "Библийн хэл"
       blog: "Блог"
@@ -12,9 +12,9 @@ mn:
       cta: "Хүүхэд зориулсан Библийн Аппыг татан ав"
       donate: "Хандивлах"
       events: "Арга Хэмжээ"
-      explore by verse: "Explore %{chapter_name} by Verse"
+      explore by verse: "%{chapter_name} Эшлэл тус бүрээр судлах"
       help: "Тусламж"
-      hide: "Hide"
+      hide: "Нуух"
       home: "Нүүр хуудас"
       jobs: "Aжлын байр"
       language: "Хэл"
