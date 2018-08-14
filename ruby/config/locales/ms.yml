@@ -1378,7 +1378,7 @@ ms:
         votd: "Anda telah berjaya menghentikan langganan emel <b>Firman Hari Ini</b>."
         votd_image: "Anda telah berjaya menghentikan langganan emel <b>Gambar Firman Hari Ini</b>."
         contact_joins: "Anda telah membatalkan langganan emel <b>Hubungan</b>"
-        pwf_accepts: "Anda telah membatalkan langganan kemas kini penerimaan jemputan Pelan oleh Kawan."
+        pwf_accepts: "You have successfully unsubscribed from seeing when a Friend accepts your Plan invitation."
         pwf_invites: "Anda telah membatalkan langganan kemas kini jemputan Pelan."
         pwf_comments: "Anda telah membatalkan langganan Komen pada Pelan Bersama Kawan."
         pwf_reminders: "Anda telah membatalkan langganan Peringatan Permulaan Pelan."
