@@ -6,7 +6,7 @@ if (process.env.NEW_RELIC_LICENSE_KEY) {
 let Raven
 if (process.env.ELAPHROS_SENTRY_DSN) {
   Raven = require('raven')
-  Raven.config(process.env.ELAPHROS_SENTRY_DSN).install()
+  Raven.config(process.env.ELAPHROS_SENTRY_DSN, { sampleRate: 0.5 }).install()
 }
 
 /* Set App Defaults */
@@ -161,6 +161,9 @@ fastify.get('/manifest.json', manifest)
 
 /* Service Worker */
 fastify.get('/sw.js', (req, reply) => {
+  if (newrelic) {
+    newrelic.setTransactionName('js-service-worker')
+  }
   reply.sendFile('sw.js')
 })
 
@@ -204,6 +207,12 @@ fastify.setNotFoundHandler((req, reply) => {
     newrelic.setTransactionName('not-found-generic')
   }
   reply.code(404).type('text/html').send('Not Found')
+})
+
+/* Global Error Handler */
+fastify.setErrorHandler((err, req, reply) => {
+  Raven.captureException(err)
+  reply.send(new httpErrors.InternalServerError())
 })
 
 

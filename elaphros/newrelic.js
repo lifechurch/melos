@@ -56,42 +56,6 @@ exports.config = {
   rules: {
     name: [
       {
-        pattern: "/bible-offline",
-        name: "bible-offline"
-      },
-      {
-        pattern: "\/bible\/[0-9]+\/[^\.]+\.[0-9]+\.[0-9]+.*$",
-        name: "bible-verse"
-      },
-      {
-        pattern: "\/bible\/[0-9]+\/[^\.]+\.[0-9]+$",
-        name: "bible-chapter"
-      },
-      {
-        pattern: "\/json\/bible\/books\/.+\/chapters$",
-        name: "json-bible-chapters"
-      },
-      {
-        pattern: "\/json\/bible\/books\/[^\/]+$",
-        name: "json-bible-books"
-      },
-      {
-        pattern: "\/json\/bible\/versions\/[^\/]+$",
-        name: "json-bible-versions"
-      },
-      {
-        pattern: "\/json\/bible\/languages$",
-        name: "json-bible-languages"
-      },
-      {
-        pattern: "\/json\/app\/locales$",
-        name: "json-app-locales"
-      },
-      {
-        pattern: "\/ping$",
-        name: "k8s-liveness-probe"
-      },
-      {
         pattern: "\/static-assets\/.+$",
         name: "static-assets"
       }
