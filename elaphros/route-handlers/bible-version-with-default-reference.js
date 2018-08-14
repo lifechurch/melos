@@ -1,3 +1,8 @@
+let newrelic
+if (process.env.NEW_RELIC_LICENSE_KEY) {
+  newrelic = require('newrelic')
+}
+
 const Raven = require('raven')
 const api = require('@youversion/js-api')
 const validateApiResponse = require('../utils/validate-api-response')
@@ -7,6 +12,10 @@ const DEFAULT_VERSION = process.env.BIBLE_DEFAULT_VERSION || 1
 const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1'
 
 module.exports = function bibleVersionWithDefaultReference(req, reply) {
+  if (newrelic) {
+    newrelic.setTransactionName('bible-version-with-default-reference')
+  }
+
   const { versionId } = req.params
 
   const versionPromise = Bible.call("version").params({

@@ -1,9 +1,18 @@
+let newrelic
+if (process.env.NEW_RELIC_LICENSE_KEY) {
+  newrelic = require('newrelic')
+}
+
 const api = require('@youversion/js-api')
 const Raven = require('raven')
 const sanitizeString = require('../utils/sanitize-string')
 const Bible = api.getClient('bible')
 
 module.exports = async function bibleBooks(req, reply) {
+  if (newrelic) {
+    newrelic.setTransactionName('json-bible-books')
+  }
+
   const { versionId } = req.params
   const filter = sanitizeString(req.query.filter, false)
 

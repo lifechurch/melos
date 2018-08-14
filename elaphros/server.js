@@ -6,7 +6,7 @@ if (process.env.NEW_RELIC_LICENSE_KEY) {
 let Raven
 if (process.env.ELAPHROS_SENTRY_DSN) {
   Raven = require('raven')
-  Raven.config(process.env.ELAPHROS_SENTRY_DSN).install()
+  Raven.config(process.env.ELAPHROS_SENTRY_DSN, { sampleRate: 0.5 }).install()
 }
 
 /* Set App Defaults */
@@ -161,6 +161,9 @@ fastify.get('/manifest.json', manifest)
 
 /* Service Worker */
 fastify.get('/sw.js', (req, reply) => {
+  if (newrelic) {
+    newrelic.setTransactionName('js-service-worker')
+  }
   reply.sendFile('sw.js')
 })
 
@@ -178,6 +181,9 @@ fastify.get('/bible/:versionId/:usfm', (req, reply, next) => {
   } else if (isVerse) {
     return bibleVerse(req, reply)
   } else {
+    if (newrelic) {
+      newrelic.setTransactionName('not-found-bible')
+    }
     const message = `Invalid Bible reference: ${req.params.usfm}. Neither Chapter nor Verse.`
     Raven.captureException(new Error(message))
     req.log.warn(message)
@@ -197,7 +203,16 @@ fastify.get('/json/app/locales', appLocales)
 
 /* Fallthrough 404 Handler */
 fastify.setNotFoundHandler((req, reply) => {
+  if (newrelic) {
+    newrelic.setTransactionName('not-found-generic')
+  }
   reply.code(404).type('text/html').send('Not Found')
+})
+
+/* Global Error Handler */
+fastify.setErrorHandler((err, req, reply) => {
+  Raven.captureException(err)
+  reply.send(new httpErrors.InternalServerError())
 })
 
 

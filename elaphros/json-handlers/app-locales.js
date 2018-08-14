@@ -1,8 +1,17 @@
+let newrelic
+if (process.env.NEW_RELIC_LICENSE_KEY) {
+  newrelic = require('newrelic')
+}
+
 const getAppLocale = require('../utils/localization/get-app-locale')
 const localeList = require('../localization/locale-list.json')
 const sanitizeString = require('../utils/sanitize-string')
 
 module.exports = function appLocales(req, reply) {
+  if (newrelic) {
+    newrelic.setTransactionName('json-app-locales')
+  }
+
   const filter = sanitizeString(req.query.filter, false)
   const items = localeList
   .filter((locale) => {
