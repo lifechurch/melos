@@ -1,3 +1,8 @@
+let newrelic
+if (process.env.NEW_RELIC_LICENSE_KEY) {
+  newrelic = require('newrelic')
+}
+
 const Raven = require('raven')
 const api = require('@youversion/js-api')
 const deepLinkPath = require('@youversion/utils/lib/bible/deepLinkPath').default
@@ -13,6 +18,10 @@ const DEFAULT_VERSION = process.env.BIBLE_DEFAULT_VERSION || 1
 const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1.KJV'
 
 module.exports = function bibleChapter(req, reply) {
+  if (newrelic) {
+    newrelic.setTransactionName('bible-chapter')
+  }
+
   const { versionId, usfm: rawUsfm } = req.params
   const usfm = rawUsfm.split('.').slice(0, 2).join('.').toUpperCase()
   const { host, query, path } = req.urlData()

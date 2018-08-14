@@ -178,6 +178,9 @@ fastify.get('/bible/:versionId/:usfm', (req, reply, next) => {
   } else if (isVerse) {
     return bibleVerse(req, reply)
   } else {
+    if (newrelic) {
+      newrelic.setTransactionName('not-found-bible')
+    }
     const message = `Invalid Bible reference: ${req.params.usfm}. Neither Chapter nor Verse.`
     Raven.captureException(new Error(message))
     req.log.warn(message)
@@ -197,6 +200,9 @@ fastify.get('/json/app/locales', appLocales)
 
 /* Fallthrough 404 Handler */
 fastify.setNotFoundHandler((req, reply) => {
+  if (newrelic) {
+    newrelic.setTransactionName('not-found-generic')
+  }
   reply.code(404).type('text/html').send('Not Found')
 })
 

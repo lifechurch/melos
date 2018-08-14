@@ -1,3 +1,8 @@
+let newrelic
+if (process.env.NEW_RELIC_LICENSE_KEY) {
+  newrelic = require('newrelic')
+}
+
 const Raven = require('raven')
 const api = require('@youversion/js-api')
 const selectImageFromList = require('@youversion/utils/lib/images/selectImageFromList').default
@@ -19,6 +24,10 @@ const DEFAULT_VERSION = process.env.BIBLE_DEFAULT_VERSION || 1
 const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1'
 
 module.exports = function bibleVerse(req, reply) {
+  if (newrelic) {
+    newrelic.setTransactionName('bible-verse')
+  }
+
   const { versionId, usfm: rawUsfm } = req.params
   const usfm = rawUsfm.split('.').slice(0, 3).join('.').toUpperCase()
   const { host, query, path } = req.urlData()
@@ -88,7 +97,7 @@ module.exports = function bibleVerse(req, reply) {
 
     const pathWithoutLocale = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, usfm)
     const canonicalUrl = `https://${host ? host : ''}${pathWithoutLocale}`
-    
+
     const prerenderedImages = (validateApiResponse(images) && ('images' in images) && images.images.length > 0)
       ? images.images.filter((image) => !image.editable)
       : []

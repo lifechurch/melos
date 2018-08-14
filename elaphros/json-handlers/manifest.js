@@ -1,4 +1,13 @@
+let newrelic
+if (process.env.NEW_RELIC_LICENSE_KEY) {
+  newrelic = require('newrelic')
+}
+
 module.exports = function manifest(req, reply) {
+  if (newrelic) {
+    newrelic.setTransactionName('json-manifest')
+  }
+
   reply.send({
     "short_name": "Bible.com",
     "name": "Bible.com",
@@ -24,6 +33,6 @@ module.exports = function manifest(req, reply) {
         "platform": "play",
         "id": "com.sirma.mobile.bible.android"
       }
-    ]    
+    ]
   })
 }

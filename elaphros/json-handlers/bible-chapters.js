@@ -1,8 +1,17 @@
+let newrelic
+if (process.env.NEW_RELIC_LICENSE_KEY) {
+  newrelic = require('newrelic')
+}
+
 const api = require('@youversion/js-api')
 const Raven = require('raven')
 const Bible = api.getClient('bible')
 
 module.exports = async function bibleChapters(req, reply) {
+  if (newrelic) {
+    newrelic.setTransactionName('json-bible-chapters')
+  }
+
   const { versionId, book } = req.params
 
   try {
@@ -23,7 +32,7 @@ module.exports = async function bibleChapters(req, reply) {
       })
     }
   } catch (e) {
-    Raven.captureException(e)    
+    Raven.captureException(e)
     req.log.error(`Error getting list of Bible book: ${e.toString()}`)
     return e
   }
