@@ -4,6 +4,7 @@ $ function getLinkUrl(host, locale, path) {
 }
 <link rel="canonical" href="${input.canonicalUrl}">
 <link rel="amphtml" href="${input.canonicalUrl}">
+<!--
 <for(locale in input.locales)>
   <link
     rel="alternate"
@@ -11,3 +12,4 @@ $ function getLinkUrl(host, locale, path) {
     href="${getLinkUrl(input.host, locale, input.path)}"
   />
 </for>
+-->
