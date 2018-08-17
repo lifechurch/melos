@@ -1951,7 +1951,7 @@ sq:
         choose chapter: "Zgjidh kapitullin"
       versionpicker:
         language label: "GJUHËT E BIBLËS"
-        language sub-label: "Gjuhët e Biblës"
+        language sub-label: "Bible Language"
         change language: "Ndrysho gjuhën"
         filter languages: "Filtro gjuhët..."
         version label: "VERSIONET"
