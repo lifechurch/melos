@@ -244,6 +244,12 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/ne/kids"
     facebook_locale = "ne"
     youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("ka")) then
+    i18n_css_class = "ka"
+    i18n_image_dir = "/ka"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ka/kids"
+    facebook_locale = "ka"
+    youtube_url = ""
   end
 
 
@@ -302,6 +308,7 @@
     %meta{property: "og:locale:alternate", content: "ms"}
     %meta{property: "og:locale:alternate", content: "be"}
     %meta{property: "og:locale:alternate", content: "ne"}
+    %meta{property: "og:locale:alternate", content: "ka"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -352,6 +359,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ms/kids",:rel=>"alternate",:hreflang=>"ms"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/be/kids",:rel=>"alternate",:hreflang=>"be"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ne/kids",:rel=>"alternate",:hreflang=>"ne"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ka/kids",:rel=>"alternate",:hreflang=>"ka"}
 
     - if I18n.locale.to_s.eql?("vi") then
       %link{:href=> "https://fonts.googleapis.com/css?family=Open+Sans", :rel=>"stylesheet"}
