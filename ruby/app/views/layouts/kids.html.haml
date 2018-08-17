@@ -371,8 +371,48 @@
     .kids
 
       -# !Logo and intro copy
-      -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("pt-PT") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro") or I18n.locale.to_s.eql?("fi") or I18n.locale.to_s.eql?("zh-HK") or I18n.locale.to_s.eql?("sv") or I18n.locale.to_s.eql?("uk")  or I18n.locale.to_s.eql?("el") or I18n.locale.to_s.eql?("bn") or I18n.locale.to_s.eql?("no") or I18n.locale.to_s.eql?("mn") or I18n.locale.to_s.eql?("zu") or I18n.locale.to_s.eql?("ta") or I18n.locale.to_s.eql?("sw") or I18n.locale.to_s.eql?("ms") or I18n.locale.to_s.eql?("be") or I18n.locale.to_s.eql?("ne"))
+      -# This multi-line statement formatting described at https://github.com/haml/haml/issues/845#issuecomment-100639335
+      - if (I18n.locale.to_s.eql?("ko") or |
+            I18n.locale.to_s.eql?("ko-KR") or |
+            I18n.locale.to_s.eql?("zh") or |
+            I18n.locale.to_s.eql?("zh-CN") or |
+            I18n.locale.to_s.eql?("zh-TW") or |
+            I18n.locale.to_s.eql?("pt") or |
+            I18n.locale.to_s.eql?("pt-BR") or |
+            I18n.locale.to_s.eql?("pt-PT") or |
+            I18n.locale.to_s.eql?("ru") or |
+            I18n.locale.to_s.eql?("nl") or |
+            I18n.locale.to_s.eql?("de") or |
+            I18n.locale.to_s.eql?("fr") or |
+            I18n.locale.to_s.eql?("ar") or |
+            I18n.locale.to_s.eql?("id") or |
+            I18n.locale.to_s.eql?("tr") or |
+            I18n.locale.to_s.eql?("fa") or |
+            I18n.locale.to_s.eql?("ur") or |
+            I18n.locale.to_s.eql?("ja") or |
+            I18n.locale.to_s.eql?("af") or |
+            I18n.locale.to_s.eql?("tl") or |
+            I18n.locale.to_s.eql?("th") or |
+            I18n.locale.to_s.eql?("vi") or |
+            I18n.locale.to_s.eql?("it") or |
+            I18n.locale.to_s.eql?("hi") or |
+            I18n.locale.to_s.eql?("pl") or |
+            I18n.locale.to_s.eql?("ro") or |
+            I18n.locale.to_s.eql?("fi") or |
+            I18n.locale.to_s.eql?("zh-HK") or |
+            I18n.locale.to_s.eql?("sv") or |
+            I18n.locale.to_s.eql?("uk")  or |
+            I18n.locale.to_s.eql?("el") or |
+            I18n.locale.to_s.eql?("bn") or |
+            I18n.locale.to_s.eql?("no") or |
+            I18n.locale.to_s.eql?("mn") or |
+            I18n.locale.to_s.eql?("zu") or |
+            I18n.locale.to_s.eql?("ta") or |
+            I18n.locale.to_s.eql?("sw") or |
+            I18n.locale.to_s.eql?("ms") or |
+            I18n.locale.to_s.eql?("ka") or |
+            I18n.locale.to_s.eql?("be") |
+            I18n.locale.to_s.eql?("ne")) |
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
