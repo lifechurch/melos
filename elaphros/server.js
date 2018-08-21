@@ -30,6 +30,7 @@ const bibleChapter = require('./route-handlers/bible-chapter')
 const bibleVersionWithDefaultReference = require('./route-handlers/bible-version-with-default-reference')
 const bibleReferenceWithDefaultVersion = require('./route-handlers/bible-reference-with-default-version')
 const bibleVerse = require('./route-handlers/bible-verse')
+const bibleCompare = require('./route-handlers/bible-compare')
 const loaderio = require('./route-handlers/loaderio')
 const bibleOffline = require('./route-handlers/bible-offline')
 
@@ -173,6 +174,17 @@ fastify.get('/loaderio-41e1b70fc18e0a45b5d52827b90fded3/', loaderio)
 /* Bible Routes */
 fastify.get('/bible-offline', bibleOffline)
 fastify.get('/bible', bibleReferenceWithDefaultVersion)
+fastify.get('/bible/compare/:usfm', (req, reply, next) => {
+  const { isVerse } = isVerseOrChapter(req.params.usfm)
+  if (isVerse) {
+    return bibleCompare(req, reply)
+  } else {
+    if (newrelic) {
+      newrelic.setTransactionName('not-found-bible-compare')
+    }
+    reply.send(new httpErrors.NotFound())
+  }
+})
 fastify.get('/bible/:versionId', bibleVersionWithDefaultReference)
 fastify.get('/bible/:versionId/:usfm', (req, reply, next) => {
   const { isVerse, isChapter } = isVerseOrChapter(req.params.usfm)
