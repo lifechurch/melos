@@ -806,7 +806,7 @@ ja:
     browse plans: "%{category}プランを閲覧"
     swap list localization: "(<a href='%{swap_link}' target='_self'>%{swap_locale}で表示</a>)"
     showing language filtered: "%{lang_name}で利用可能なプランのみを表示しています"
-    all: "ブックマーク一覧"
+    all: "読書プラン一覧"
     all plans: "プラン一覧"
     all category plans: "%{category} に関する読書プラン全て"
     my plans: "マイ・プラン"

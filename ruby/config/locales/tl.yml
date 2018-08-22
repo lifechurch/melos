@@ -418,7 +418,7 @@ tl:
       add friend button: "Magdagdag ng Kaibigan"
       load more: "Magpakita ng higit pa"
       like: "I-like"
-      liked: "Ni-like"
+      liked: "Nagustuhan"
       like title: "I-like ito"
       last comment: "Huling komento"
       share: "Ibahagi"
@@ -449,7 +449,7 @@ tl:
   comments:
     view all N:
       one: "Tingnan ang %{count} komento"
-      other: "Tingnan ang %{count} komento"
+      other: "Tingnan ang lahat ng %{count} na komento"
     post comment: "Mag-post ng komento"
     create success: "Tagumpay! Ang iyong komento ay naipost na."
     create failure: "Ang komento ay hindi mai-post"
