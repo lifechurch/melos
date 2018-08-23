@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Изтеглете Bible App for Kids",
+			"book": "Книга",
+			"blog": "Блог",
+			"read": "Прочетете",
+			"jobs": "Работни позиции",
+			"help": "Помощ",
+			"hide": "Скрий",
+			"home": "Начало",
+			"plans": "Планове",
+			"press": "Преса",
+			"audio": "Аудио",
+			"terms": "Условия за ползване",
+			"share": "Споделяне",
+			"title": "Изтеглете приложение БИБЛИЯТА сега",
+			"about": "За нас",
+			"search": "Търсене...",
+			"donate": "Направете дарение",
+			"videos": "Видеа",
+			"events": "Събития",
+			"cancel": "Отказ",
+			"version": "Версия",
+			"privacy": "Декларация за поверителност",
+			"chapter": "Глава",
+			"sign up": "Регистрация",
+			"sign in": "Вход",
+			"versions": "Версии",
+			"language": "Език",
+			"send votd": "Изпрати ми стиха за деня",
+			"read full": "Прочит на цялата глава",
+			"volunteer": "Доброволец",
+			"languages": "Езици",
+			"related devos": "Безплатни планове за прочит и посвещения, свързани с {reference}",
+			"bible language": "Език за текста на Библията",
+			"change language": "Сменете езика",
+			"explore by verse": "Изследвайте {chapter_name} стих по стих",
+			"version learn more": "Научете повече за {version_name}"
+		}
+	}
+}

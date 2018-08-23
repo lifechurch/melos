@@ -1,9 +1,8 @@
 <site-layout
-  fullRequestURL=data.canonicalUrl
+  fullRequestURL=out.global.canonicalUrl
   requestHost=data.requestHost
   getLocalizedLink=data.getLocalizedLink
-  getPathWithoutLocale=data.getPathWithoutLocale
-  pathWithoutLocale=data.pathWithoutLocale>
+  getPathWithoutLocale=data.getPathWithoutLocale>
   <@head>
   $ const ampComponents = [
       { name: 'amp-mustache', type: 'template', version: '0.2' },
@@ -33,13 +32,12 @@
       <hreflang-tags
         locales=data.appLocales
         host=data.requestHost
-        path=data.pathWithoutLocale
-        canonicalUrl=data.canonicalUrl
+        canonicalUrl="${out.global.canonicalUrl}"
         usfm=chapter.reference.usfm[0]
         versionId=version.id
         versionAbbr=version.local_abbreviation
         pageType="bible"
-        locale="en">
+        locale="${out.global.locale}">
       </hreflang-tags>
 
       <header-tags
@@ -48,7 +46,7 @@
         deepLink=data.deepLink
         metaImages=data.metaImages
         twitterCard="summary"
-        canonicalUrl=data.canonicalUrl>
+        canonicalUrl="${out.global.canonicalUrl}">
       </header-tags>
     </await>
   </@head>
@@ -80,7 +78,7 @@
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@id": "${data.canonicalUrl}",
+            "@id": "${out.global.canonicalUrl}",
             "name": "${chapter.reference.human}"
           }
         }]
@@ -99,7 +97,7 @@
       <div class="mw6 center pa3 pt4 pb6 mt6">
        <a if(chapter.previous)
         class="bible-nav-button nav-left fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white left-1"
-        href="/bible/${data.versionId}/${chapter.previous.usfm[0]}.${version.local_abbreviation.toUpperCase()}"
+        href="${out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, chapter.previous.usfm[0], out.global.locale)}"
         title="${chapter.previous.human}"
         data-vars-event-category="Bible Chapter"
         data-vars-event-action="Previous"
@@ -112,7 +110,7 @@
 
        <a if(chapter.next)
         class="bible-nav-button nav-right fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white right-1"
-        href="/bible/${data.versionId}/${chapter.next.usfm[0]}.${version.local_abbreviation.toUpperCase()}"
+        href="${out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, chapter.next.usfm[0], out.global.locale)}"
         title="${chapter.next.human}"
         data-vars-event-category="Bible Chapter"
         data-vars-event-action="Next"
@@ -123,7 +121,7 @@
           </div>
        </a>
 
-        <div class="yv-bible-text">
+        <div class="yv-bible-text ${version.language.text_direction === 'rtl' ? 'tr' : ''}" dir="${version.language.text_direction}">
           <div class="reader">$!{chapter.content}</div>
         </div>
         <bible-copyright version=version usfm=chapter.reference.usfm[0]></bible-copyright>
@@ -137,7 +135,7 @@
             data-vars-event-action="EBV Expand"
             data-vars-event-label="${chapter.reference.usfm[0]}"
           >
-            Explore ${chapter.reference.human} by Verse
+            ${out.global.__mf("features.bible.explore by verse", { chapter_name: chapter.reference.human })}
           </h4>
           <ul hidden class="list ma0 pa3" id="verse-links">
             <for(vl in data.verseLinks)>
@@ -145,7 +143,7 @@
                 <a
                   title="${chapter.reference.human}:${vl.split('.').splice(-1)} | ${version.local_title}"
                   class="link silver"
-                  href="/bible/${data.versionId}/${vl}.${version.local_abbreviation.toUpperCase()}"
+                  href="${out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, vl, out.global.locale)}"
                   data-vars-event-category="Bible Chapter"
                   data-vars-event-action="EBV Click"
                   data-vars-event-label="${data.versionId}/${vl}"

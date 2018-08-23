@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "حمل تطبيق الكتاب المقدس للأطفال",
+			"book": "سفر",
+			"blog": "المفكّرة",
+			"read": "قراءة",
+			"jobs": "فرص عمل",
+			"help": "مساعدة",
+			"hide": "اخفاء",
+			"home": "الصفحة الرئيسية",
+			"plans": "خطط",
+			"press": "صحافة",
+			"audio": "صوت",
+			"terms": "الشروط",
+			"share": "مشاركة",
+			"title": "حمل تطبيق الكتاب المقدس الآن...",
+			"about": "حول‌",
+			"search": "ابحث...",
+			"donate": "تبرع",
+			"videos": "فيديو",
+			"events": "أحداث",
+			"cancel": "إلغاء",
+			"version": "إصدار",
+			"privacy": "سياسة الخصوصية",
+			"chapter": "إصحاح",
+			"sign up": "إنشاء حساب دخول.",
+			"sign in": "تسجيل دخول",
+			"versions": "نسخات",
+			"language": "اللغة",
+			"send votd": "أرسل لي آية اليوم",
+			"read full": "قراءة الإصحاح بالكامل",
+			"volunteer": "التطوع",
+			"languages": "لغات",
+			"related devos": "خطط قرأة مجانية و مواضيع تعبدية ذات صلة{reference}",
+			"bible language": "لغات الكتاب المقدس",
+			"change language": "غير اللغه",
+			"explore by verse": "استكشاف {chapter_name} بالآية",
+			"version learn more": "تعرف على المزيد حول {version_name}"
+		}
+	}
+}

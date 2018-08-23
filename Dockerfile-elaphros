@@ -10,4 +10,4 @@ COPY elaphros/ /app
 
 EXPOSE 80
 
-CMD ["/sbin/my_init", "--", "node", "./server.js"]
+CMD ["/sbin/my_init", "--", "node", "./server/index.js"]

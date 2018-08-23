@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Preuzmi aplikaciju Biblija za djecu",
+			"book": "Knjiga",
+			"blog": "Blog",
+			"read": "Čitaj",
+			"jobs": "Poslovi",
+			"help": "Pomoć",
+			"hide": "Sakrij",
+			"home": "Početna",
+			"plans": "Planovi",
+			"press": "Tisak",
+			"audio": "Zvuk",
+			"terms": "Uvjeti",
+			"share": "Podijeli",
+			"title": "Preuzmi aplikaciju Biblija",
+			"about": "O",
+			"search": "Pretraživanje...",
+			"donate": "Doniraj",
+			"videos": "Videozapisi",
+			"events": "Događaji",
+			"cancel": "Otkaži",
+			"version": "Verzija",
+			"privacy": "Pravila o privatnosti",
+			"chapter": "Poglavlje",
+			"sign up": "Registriraj se",
+			"sign in": "Prijavi se",
+			"versions": "Inačice",
+			"language": "Jezik",
+			"send votd": "Pošaljite mi Stih dana",
+			"read full": "Čitaj cijelo poglavlje",
+			"volunteer": "Volontiraj",
+			"languages": "Jezici",
+			"related devos": "Besplatni planovi za čitanje i nadahnuti sadržaji povezani s temom {reference}",
+			"bible language": "Prijevod Biblije",
+			"change language": "Promijeni jezik",
+			"explore by verse": "Istraži {chapter_name} po Stihu",
+			"version learn more": "Saznaj više o {version_name}"
+		}
+	}
+}

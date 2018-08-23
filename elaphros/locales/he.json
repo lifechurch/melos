@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "הורד את אפליקציית הכתובים לילדים",
+			"book": "ספר",
+			"blog": "בלוג",
+			"read": "קרא",
+			"jobs": "איוב",
+			"help": "עזרה",
+			"hide": "Hide",
+			"home": "בית",
+			"plans": "תוכניות",
+			"press": "לחץ",
+			"audio": "Audio",
+			"terms": "תנאים",
+			"share": "שתף",
+			"title": "הורד את ישומון הכתובים עכשיו",
+			"about": "אודות",
+			"search": "חפש...",
+			"donate": "תרום",
+			"videos": "קטעי וידאו",
+			"events": "אירועים",
+			"cancel": "בטל",
+			"version": "גרסה",
+			"privacy": "מדיניות פרטיות",
+			"chapter": "פרק",
+			"sign up": "הירשם",
+			"sign in": "התחבר",
+			"versions": "גרסאות",
+			"language": "שפה",
+			"send votd": "Send me the Verse of the Day",
+			"read full": "קרא את הפרק מלא",
+			"volunteer": "התנדב",
+			"languages": "שפות",
+			"related devos": "תכניות קריאה חינמיות ודברי הגות הקשורים ל{reference}",
+			"bible language": "שפת התנ\"ך",
+			"change language": "שינוי שפה",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Learn More About {version_name}"
+		}
+	}
+}

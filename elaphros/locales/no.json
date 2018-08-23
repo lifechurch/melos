@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Last ned Bible App for Kids",
+			"book": "Bok",
+			"blog": " Blogg",
+			"read": "Les",
+			"jobs": "Jobber",
+			"help": "Hjelp",
+			"hide": "Skjul",
+			"home": "Hjem",
+			"plans": "Leseplaner",
+			"press": "Presse",
+			"audio": "Lyd",
+			"terms": "Vilkår",
+			"share": "Del",
+			"title": "Last ned Bibel-appen nå",
+			"about": "Om",
+			"search": "Søk...",
+			"donate": "Gi",
+			"videos": "Videoer",
+			"events": "Eventer",
+			"cancel": "Avbryt",
+			"version": "Bibelutgave",
+			"privacy": "Personvernserklæring",
+			"chapter": "Kapittel",
+			"sign up": "Registrer deg",
+			"sign in": "Logg inn",
+			"versions": "Versjoner",
+			"language": "Språk",
+			"send votd": "Send meg dagens bibelvers",
+			"read full": "Les hele kapittelet",
+			"volunteer": "Frivillig",
+			"languages": "Språk",
+			"related devos": "Gratis leseplaner og andakter relatert til {reference}",
+			"bible language": "Bibelspråk",
+			"change language": "Endre språk",
+			"explore by verse": "Utforsk {chapter_name} vers for vers",
+			"version learn more": "Lær mer om {version_name}"
+		}
+	}
+}

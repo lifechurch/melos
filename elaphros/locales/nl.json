@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Download de Bijbel App voor Kinderen",
+			"book": "Boek",
+			"blog": "Blog",
+			"read": "Lezen",
+			"jobs": "Vacatures",
+			"help": "Help",
+			"hide": "Verberg",
+			"home": "Thuisscherm",
+			"plans": "Leesplannen",
+			"press": "Pers",
+			"audio": "Audio",
+			"terms": "Voorwaarden",
+			"share": "Deel",
+			"title": "De Bijbel App nu downloaden",
+			"about": "Over",
+			"search": "Zoek…",
+			"donate": "Bijdragen",
+			"videos": "Video's",
+			"events": "Bijeenkomsten",
+			"cancel": "Annuleren",
+			"version": "Versies",
+			"privacy": "Privacybeleid",
+			"chapter": "Hoofdstuk",
+			"sign up": "Aanmelden",
+			"sign in": "Inloggen",
+			"versions": "Vertalingen",
+			"language": "Taal",
+			"send votd": "Stuur me de Tekst van de Dag",
+			"read full": "Lees het hele hoofdstuk",
+			"volunteer": "Vrijwilliger",
+			"languages": "Talen",
+			"related devos": "Gratis leesplannen en overdenkingen die te maken hebben met {reference}",
+			"bible language": "Bijbeltaal",
+			"change language": "Wijzig Taal",
+			"explore by verse": "Verken {chapter_name} per tekst",
+			"version learn more": "Meer informatie over {version_name}"
+		}
+	}
+}

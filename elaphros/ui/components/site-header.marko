@@ -4,32 +4,32 @@
       <a href="/" class="link dim">
         <div class="flex flex-column items-center mr4-m mr3">
           <home-icon />
-          <p class="pa0 ma0 f7 mid-gray mt1">Home</p>
+          <p class="pa0 ma0 f7 mid-gray mt1">${out.global.__('features.bible.home')}</p>
         </div>
       </a>
-      <a href="/bible/111/JHN.1" class="link dim">
+      <a href="${out.global.seoUtils.getCanonicalUrl('bible', '111', 'NIV', 'JHN.1', out.global.locale)}" class="link dim">
         <div class="flex flex-column items-center mr4-m mr3">
           <reader-icon />
-          <p class="pa0 ma0 f7 mid-gray mt1">Read</p>
+          <p class="pa0 ma0 f7 mid-gray mt1">${out.global.__('features.bible.read')}</p>
         </div>
       </a>
       <a href="/reading-plans/11467-how-sweet-the-sound" class="link dim">
         <div class="flex flex-column items-center mr4-m mr3">
           <plans-icon />
-          <p class="pa0 ma0 f7 mid-gray mt1">Plans</p>
+          <p class="pa0 ma0 f7 mid-gray mt1">${out.global.__('features.bible.plans')}</p>
         </div>
       </a>
       <a href="/videos" class="link dim">
         <div class="flex flex-column items-center mr4-m mr3">
           <videos-icon />
-          <p class="pa0 ma0 f7 mid-gray mt1">Videos</p>
+          <p class="pa0 ma0 f7 mid-gray mt1">${out.global.__('features.bible.videos')}</p>
         </div>
       </a>
     </div>
     <div on="tap: site-header-search.show, site-header-nav.hide"
       role="button"
       tabindex="0"
-      aria-label="Open Search Bar"
+      aria-label="${out.global.__('features.bible.open search')}"
       class="w-auto flex items-center justify-center ma0 outline-0 pa2 dn-l">
       <search-icon></search-icon>
     </div>
@@ -37,7 +37,7 @@
       <site-header-search></site-header-search>
     </div>
     <div class="dn flex-l w-third-l items-center justify-end">
-      <div id="header-auth-buttons" class="h-100-l flex-no-wrap"></div>
+      <div id="header-auth-buttons" class="h-100-l flex-no-wrap w5-l"></div>
     </div>
   </nav>
 
@@ -48,7 +48,7 @@
   <div on="tap: header-more-menu.toggle"
     role="button"
     tabindex="0"
-    aria-label="Open Sidebar Menu"
+    aria-label="${out.global.__('features.bible.open sidebar')}"
     class="w-auto flex items-center justify-center ma0 pl2 pt2 pb2 outline-0 dn-l">
     <hamburger-icon></hamburger-icon>
   </div>

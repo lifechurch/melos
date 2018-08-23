@@ -3,6 +3,7 @@ en:
     bible:
       about: "About"
       audio: "Audio"
+      audio open: "Open Audio Player"
       book: "Book"
       bible language: "Bible Language"
       blog: "Blog"
@@ -19,6 +20,9 @@ en:
       jobs: "Jobs"
       language: "Language"
       languages: "Languages"
+      no audio support: "Your browser doesn't support audio."
+      open search: "Open Search Bar"
+      open sidebar: "Open Menu"
       plans: "Plans"
       press: "Press"
       privacy: "Privacy Policy"

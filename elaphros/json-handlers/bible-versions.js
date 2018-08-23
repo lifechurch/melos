@@ -1,11 +1,8 @@
-let newrelic
-if (process.env.NEW_RELIC_LICENSE_KEY) {
-  newrelic = require('newrelic')
-}
-
 const api = require('@youversion/js-api')
 const Raven = require('raven')
+const newrelic = require('../server/get-new-relic')()
 const sanitizeString = require('../utils/sanitize-string')
+
 const Bible = api.getClient('bible')
 
 module.exports = async function bibleVersions(req, reply) {
@@ -17,7 +14,7 @@ module.exports = async function bibleVersions(req, reply) {
   const filter = sanitizeString(req.query.filter, false)
 
   try {
-    const response = await Bible.call("versions").params({
+    const response = await Bible.call('versions').params({
       type: 'all',
       language_tag: languageTag
     }).setEnvironment(process.env.NODE_ENV).get()
@@ -29,7 +26,7 @@ module.exports = async function bibleVersions(req, reply) {
 
     const items = response.versions
       .filter((version) => {
-        if (!!filter) {
+        if (filter) {
           return version.local_title.toLowerCase().indexOf(filter.toLowerCase()) > -1 ||
             version.title.toLowerCase().indexOf(filter.toLowerCase()) > -1 ||
             version.abbreviation.toLowerCase().startsWith(filter.toLowerCase()) ||

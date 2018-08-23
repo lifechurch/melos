@@ -1,12 +1,5 @@
-let newrelic
-if (process.env.NEW_RELIC_LICENSE_KEY) {
-  newrelic = require('newrelic')
-}
+const newrelic = require('../server/get-new-relic')()
 
-const api = require('@youversion/js-api')
-const validateApiResponse = require('../utils/validate-api-response')
-const getFirstUsfmForVersion = require('../utils/bible/get-first-usfm-for-version')
-const Bible = api.getClient('bible')
 const DEFAULT_VERSION = process.env.BIBLE_DEFAULT_VERSION || 1
 const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1'
 

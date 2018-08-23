@@ -1,5 +1,10 @@
 const getPathWithoutLocale = require('./get-path-without-locale')
 
 module.exports = function getLocalizedLink(path, locale) {
-  return parts.join(`/${locale}/${getPathWithoutLocale(path)}`)
+  let targetPath = getPathWithoutLocale(path)
+  if (!targetPath.startsWith('/')) {
+    targetPath = `/${targetPath}`
+  }
+  console.log('TARGET', targetPath)
+  return `/${locale}${targetPath}`
 }

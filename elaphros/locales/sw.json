@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Pakua Apu ya Biblia ya Watoto",
+			"book": "kitabu",
+			"blog": "Blogu",
+			"read": "Soma",
+			"jobs": "kazi",
+			"help": "Msaada",
+			"hide": "Ficha",
+			"home": "nyumbani\n",
+			"plans": "Mipango",
+			"press": "vyombo vya habari/bonyeza",
+			"audio": "Sauti",
+			"terms": "Masharti",
+			"share": "husisha wengine/jumuisha",
+			"title": "Pata programu ya bure ya Bibilia sasa hivi.",
+			"about": "kuhusu",
+			"search": "tafuta....",
+			"donate": "mchango",
+			"videos": "Video",
+			"events": "Matukio",
+			"cancel": "Ondoa",
+			"version": "Tolea",
+			"privacy": "Sera za usiri",
+			"chapter": "Sura",
+			"sign up": "Jiandikishe",
+			"sign in": "Ingia",
+			"versions": "Matoleo",
+			"language": "lugha",
+			"send votd": "Nitumie Mstari wa Siku wa Biblia",
+			"read full": "Soma Sura Nzima",
+			"volunteer": "Kujitolea",
+			"languages": "lugha",
+			"related devos": "Mipango ya Masomo na ibada za bure zinazohusiana na {reference}",
+			"bible language": "Luhga za biblia",
+			"change language": "lugha",
+			"explore by verse": "Chunguza {chapter_name} kwa Mstari wa Biblia",
+			"version learn more": "Jifunze Mengi Kuhusu {version_name}"
+		}
+	}
+}

@@ -1,12 +1,14 @@
 module.exports = function getPathWithoutLocale(path) {
   const parts = path.split('/')
 
-  const twoLetterPattern = /[a-z]{2}/
-  const threeLetterPattern = /[a-z]{3}/
-  const fourLetterPattern = /[a-z]{2}\-[A-Z]{2}/
+  const startIndex = path.startsWith('/') ? 1 : 0
+  const twoLetterPattern = /^[a-z]{2}$/
+  const threeLetterPattern = /^[a-z]{3}$/
+  const fourLetterPattern = /^[a-z]{2}\-[A-Z]{2}$/
 
-  if (twoLetterPattern.test(parts[0]) || threeLetterPattern.test(parts[0]) || fourLetterPattern.test(parts[0])) {
-    parts.shift()
+  console.log('TESTS', twoLetterPattern.test(parts[startIndex]), threeLetterPattern.test(parts[startIndex]), fourLetterPattern.test(parts[startIndex]))
+  if (twoLetterPattern.test(parts[startIndex]) || threeLetterPattern.test(parts[startIndex]) || fourLetterPattern.test(parts[startIndex])) {
+    parts.splice(startIndex, 1)
   }
 
   return parts.join('/')

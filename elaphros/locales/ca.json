@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Descarrega Bible App for Kids",
+			"book": "Llibre",
+			"blog": "Bloc",
+			"read": "Llegeix",
+			"jobs": "Treballa",
+			"help": "Ajuda",
+			"hide": "Amaga",
+			"home": "Inici",
+			"plans": "Plans",
+			"press": "Premsa",
+			"audio": "Àudio",
+			"terms": "Termes",
+			"share": "Comparteix",
+			"title": "Descarrega l'aplicació de la Bíblia ara",
+			"about": "Sobre",
+			"search": "Cerca...",
+			"donate": "Fer un donatiu",
+			"videos": "Vídeos",
+			"events": "Esdeveniments",
+			"cancel": "Cancel·la",
+			"version": "Versió",
+			"privacy": "Política de privacitat",
+			"chapter": "Capítol",
+			"sign up": "Registra't",
+			"sign in": "Inicia la sessió",
+			"versions": "Versions",
+			"language": "Idioma",
+			"send votd": "Envia'm el verset del dia",
+			"read full": "Llegeix el capítol sencer",
+			"volunteer": "Voluntaris",
+			"languages": "Llengües",
+			"related devos": "Plans de lectura i devocionals gratuïts relacionats amb {reference}",
+			"bible language": "Llengua de la Bíblia",
+			"change language": "Canvia de llengua",
+			"explore by verse": "Explora {chapter_name} per verset",
+			"version learn more": "Més informació sobre {version_name}"
+		}
+	}
+}

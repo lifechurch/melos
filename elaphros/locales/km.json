@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "ទាញយកកម្មវិធីព្រះគម្ពីរសម្រាប់កុមារ",
+			"book": "សៀវភៅ",
+			"blog": "កំណត់ហេតុបណ្ដាញ",
+			"read": "អាន",
+			"jobs": "ការងារ",
+			"help": "ជំនួយ",
+			"hide": "Hide",
+			"home": "ទំព័រ​ដើម",
+			"plans": "គំរោង​ច្រើន",
+			"press": "ដំណឹង",
+			"audio": "Audio",
+			"terms": "លក្ខខណ្ឌ័",
+			"share": "ចែក​រំលែក",
+			"title": "ដោន​ឡូដ​យក​ Bible App ឥឡូវនេះ",
+			"about": "អំពីរ",
+			"search": "ស្វែង​រក...",
+			"donate": "បរិច្ចាក",
+			"videos": "វីដេអូច្រើន",
+			"events": "ព្រឹត្តិការណ៍នានា",
+			"cancel": "បោះ​បង់",
+			"version": "ជំនាន់",
+			"privacy": "ច្បាប់​ជាឯកជន",
+			"chapter": "ជំពូក",
+			"sign up": "ចុះ​ឈ្មោះ",
+			"sign in": "ចុះ​ឈ្មោះ​ចូល",
+			"versions": "ជំនាន់",
+			"language": "ភាសា",
+			"send votd": "Send me the Verse of the Day",
+			"read full": "អានជំពូក​ទាំង​មូល",
+			"volunteer": "អ្នកស្ម័គ្រចិត្ត",
+			"languages": "ភាសារ",
+			"related devos": "គំរោង​អាន​ដោយ​ឥត​គិត​ថ្លៃ និង​ការ​ចំនាយ​ពេល​ជាមួយ​ព្រះ​ដែល​ទាក់​ទង​ទៅ​នឹង{reference}",
+			"bible language": "ភាសា​ព្រះគម្ពីរ",
+			"change language": "ប្ដូរភាសា",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Learn More About {version_name}"
+		}
+	}
+}

@@ -1,4 +1,4 @@
-
+/* eslint-disable global-require, import/no-dynamic-require */
 function getCanonicalUrl(type, ...args) {
   let typeFn
   try {

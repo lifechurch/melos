@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Ladda ned Bibelappen för barn",
+			"book": "Bok",
+			"blog": "Blogg",
+			"read": "Läs",
+			"jobs": "Jobb",
+			"help": "Hjälp",
+			"hide": "Göm",
+			"home": "Hem",
+			"plans": "Planer",
+			"press": "Press",
+			"audio": "Ljud",
+			"terms": "Villkor",
+			"share": "Dela",
+			"title": "Ladda ner Bibelappen nu",
+			"about": "Om",
+			"search": "Sök...",
+			"donate": "Donera",
+			"videos": "Videor",
+			"events": "Evenemang",
+			"cancel": "Avbryt",
+			"version": "Översättning",
+			"privacy": "Integritetspolicy",
+			"chapter": "Kapitel",
+			"sign up": "Skapa ett konto",
+			"sign in": "Logga in",
+			"versions": "Översättningar",
+			"language": "Språk",
+			"send votd": "Skicka mig dagens vers",
+			"read full": "Läs helt kapitel",
+			"volunteer": "Volontär",
+			"languages": "Språk",
+			"related devos": "Gratis Läsplaner och Andakter relaterade till {reference}",
+			"bible language": "Bibelspråk",
+			"change language": "Byt språk",
+			"explore by verse": "Utforska {chapter_name} vers för vers",
+			"version learn more": "Lär dig mer om {version_name}"
+		}
+	}
+}
