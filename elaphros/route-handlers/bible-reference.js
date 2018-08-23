@@ -15,9 +15,9 @@ module.exports = function bibleReference(req, reply) {
     if (newrelic) {
       newrelic.setTransactionName('not-found-bible')
     }
-    const message = `Invalid Bible reference: ${req.params.usfm}. Neither Chapter nor Verse.`
-    Raven.captureException(new Error(message))
-    req.log.warn(message)
+    const message = 'Invalid Bible reference: Neither Chapter nor Verse.'
+    Raven.captureException(new Error(message), { tags: { usfm: req.params.usfm } })
+    req.log.warn(`${message} [ ${req.params.usfm} ]`)
     return reply.send(new httpErrors.NotFound())
   }
 }
