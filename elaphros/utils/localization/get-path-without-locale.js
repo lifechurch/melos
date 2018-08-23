@@ -6,7 +6,6 @@ module.exports = function getPathWithoutLocale(path) {
   const threeLetterPattern = /^[a-z]{3}$/
   const fourLetterPattern = /^[a-z]{2}\-[A-Z]{2}$/
 
-  console.log('TESTS', twoLetterPattern.test(parts[startIndex]), threeLetterPattern.test(parts[startIndex]), fourLetterPattern.test(parts[startIndex]))
   if (twoLetterPattern.test(parts[startIndex]) || threeLetterPattern.test(parts[startIndex]) || fourLetterPattern.test(parts[startIndex])) {
     parts.splice(startIndex, 1)
   }

@@ -35,7 +35,6 @@ module.exports = function configureI18n(fastify) {
 
     if ('lng' in req.params && req.detectedLng === 'en') {
       const newUrl = getUrl(urlData.host, urlData.port, getPathWithoutLocale(urlData.path), urlData.query)
-      console.log('redirecting', urlData, newUrl)
       reply.redirect(newUrl)
     }
 
