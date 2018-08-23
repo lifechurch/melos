@@ -29,11 +29,27 @@ spec:
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
+      - path: /pt/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /es/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
       - path: /sw.js
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
       - path: /bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /pt/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /es/bible-offline
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
@@ -56,11 +72,27 @@ spec:
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
+      - path: /pt/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /es/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
       - path: /sw.js
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
       - path: /bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /pt/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /es/bible-offline
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
