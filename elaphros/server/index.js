@@ -41,9 +41,18 @@ fastify.get('/sw.js', require('../route-handlers/service-worker'))
 
 /* Bible Routes */
 const bibleReference = require('../route-handlers/bible-reference')
-fastify.get('/bible-offline', require('../route-handlers/bible-offline'))
-fastify.get('/bible', require('../route-handlers/bible-reference-with-default-version'))
-fastify.get('/bible/:versionId', require('../route-handlers/bible-version-with-default-reference'))
+const bibleVersionWithDefaultReference = require('../route-handlers/bible-version-with-default-reference')
+const bibleReferenceWithDefaultVersion = require('../route-handlers/bible-reference-with-default-version')
+const bibleOffline = require('../route-handlers/bible-offline')
+
+fastify.get('/bible-offline', bibleOffline)
+fastify.get('/:lng/bible-offline', bibleOffline)
+
+fastify.get('/bible', bibleReferenceWithDefaultVersion)
+fastify.get('/:lng/bible', bibleReferenceWithDefaultVersion)
+
+fastify.get('/bible/:versionId', bibleVersionWithDefaultReference)
+fastify.get('/:lng/bible/:versionId', bibleVersionWithDefaultReference)
 
 fastify.get('/bible/:versionId/:usfm', bibleReference)
 fastify.get('/:lng/bible/:versionId/:usfm', bibleReference)
