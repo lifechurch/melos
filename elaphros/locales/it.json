@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Scarica l'App Bibbia per Ragazzi",
+			"book": "Libro",
+			"blog": "Blog",
+			"read": "Leggi",
+			"jobs": "Lavori",
+			"help": "Aiuto",
+			"hide": "Nascondi",
+			"home": "Home",
+			"plans": "Piani",
+			"press": "Notizie",
+			"audio": "Audio",
+			"terms": "Condizioni",
+			"share": "Condividi",
+			"title": "Scarica l'App Bibbia Adesso",
+			"about": "Informazione",
+			"search": "Ricerca...",
+			"donate": "Dona",
+			"videos": "Video",
+			"events": "Eventi",
+			"cancel": "Annulla",
+			"version": "Versione",
+			"privacy": "Privacy",
+			"chapter": "Capitolo",
+			"sign up": "Iscriviti",
+			"sign in": "Accedi",
+			"versions": "Versioni",
+			"language": "Lingua",
+			"send votd": "Inviami il Versetto del Giorno",
+			"read full": "Leggi l'Intero Capitolo",
+			"volunteer": "Volontari",
+			"languages": "Lingue",
+			"related devos": "Piani di Lettura e Devozionali Gratuiti relativi a {reference}",
+			"bible language": "Lingua Bibbia",
+			"change language": "Cambia Lingua",
+			"explore by verse": "Esplora {chapter_name} per Versetti",
+			"version learn more": "Ulteriori Informazioni Su {version_name}"
+		}
+	}
+}

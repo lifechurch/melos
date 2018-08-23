@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Download the Bible App for Kids",
+			"book": "Book",
+			"blog": "Blog",
+			"read": "Read",
+			"jobs": "Jobs",
+			"help": "Help",
+			"hide": "Hide",
+			"home": "Home",
+			"plans": "Plans",
+			"press": "Press",
+			"audio": "Audio",
+			"terms": "Terms",
+			"share": "Share",
+			"title": "Download The Bible App Now",
+			"about": "About",
+			"search": "Search...",
+			"donate": "Donate",
+			"videos": "Videos",
+			"events": "Events",
+			"cancel": "Cancel",
+			"version": "Version",
+			"privacy": "Privacy Policy",
+			"chapter": "Chapter",
+			"sign up": "Sign Up",
+			"sign in": "Sign In",
+			"versions": "Versions",
+			"language": "Language",
+			"send votd": "Send me the Verse of the Day",
+			"read full": "Read Full Chapter",
+			"volunteer": "Volunteer",
+			"languages": "Languages",
+			"related devos": "Free Reading Plans and Devotionals related to {reference}",
+			"bible language": "Bible Language",
+			"change language": "Change Language",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Learn More About {version_name}"
+		}
+	}
+}

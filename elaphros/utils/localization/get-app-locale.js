@@ -14,13 +14,9 @@ const threeLetterLocales = [
 ]
 
 module.exports = function getAppLocale({
-  nativeName,
-  englishName,
   locale,
-  momentLocale,
   locale2,
   locale3,
-  displayName
 }) {
   if (fourLetterLocales.indexOf(locale.toLowerCase()) !== -1) return locale
   if (threeLetterLocales.indexOf(locale3.toLowerCase()) !== -1) return locale3

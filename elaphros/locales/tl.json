@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "I-download ang Pambatang Bible App",
+			"book": "Aklat",
+			"blog": "Blog",
+			"read": "Basahin",
+			"jobs": "Mga Trabaho",
+			"help": "Tulong",
+			"hide": "Itago",
+			"home": "Home",
+			"plans": "Mga Plano",
+			"press": "Pahayagan",
+			"audio": "Audio",
+			"terms": "Mga Tuntunin",
+			"share": "Ibahagi",
+			"title": "I-download ang The Bible App Ngayon",
+			"about": "Tungkol",
+			"search": "Maghanap...",
+			"donate": "Magbigay",
+			"videos": "Mga Palabas",
+			"events": "Mga Event o Kaganapan",
+			"cancel": "Itigil",
+			"version": "Salin",
+			"privacy": "Patakaran sa Privacy",
+			"chapter": "Kabanata",
+			"sign up": "Mag-sign up",
+			"sign in": "Mag-sign In",
+			"versions": "Mga Salin",
+			"language": "Wika",
+			"send votd": "Padalhan ako ng Bersikulo ng Araw",
+			"read full": "Basahin ang Buong Kabanata",
+			"volunteer": "Boluntaryo",
+			"languages": "Mga Wika",
+			"related devos": "Mga Libreng Babasahing Gabay at Debosyonal na may kaugnayan sa {reference}",
+			"bible language": "Wika ng Biblia",
+			"change language": "Baguhin",
+			"explore by verse": "Tuklasin ang {chapter_name} ayon sa Bersikulo",
+			"version learn more": "Matuto nang Higit Pa Tungkol sa {version_name}"
+		}
+	}
+}

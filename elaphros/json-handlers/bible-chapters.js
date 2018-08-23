@@ -1,13 +1,10 @@
-let newrelic
-if (process.env.NEW_RELIC_LICENSE_KEY) {
-  newrelic = require('newrelic')
-}
-
 const api = require('@youversion/js-api')
 const Raven = require('raven')
+const newrelic = require('../server/get-new-relic')()
+
 const Bible = api.getClient('bible')
 
-module.exports = async function bibleChapters(req, reply) {
+module.exports = async function bibleChapters(req) {
   if (newrelic) {
     newrelic.setTransactionName('json-bible-chapters')
   }
@@ -15,7 +12,7 @@ module.exports = async function bibleChapters(req, reply) {
   const { versionId, book } = req.params
 
   try {
-    const version = await Bible.call("version").params({
+    const version = await Bible.call('version').params({
       id: versionId
     }).setEnvironment(process.env.NODE_ENV).get()
 

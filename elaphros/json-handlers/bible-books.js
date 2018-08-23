@@ -1,14 +1,11 @@
-let newrelic
-if (process.env.NEW_RELIC_LICENSE_KEY) {
-  newrelic = require('newrelic')
-}
-
-const api = require('@youversion/js-api')
 const Raven = require('raven')
+const api = require('@youversion/js-api')
+const newrelic = require('../server/get-new-relic')()
 const sanitizeString = require('../utils/sanitize-string')
+
 const Bible = api.getClient('bible')
 
-module.exports = async function bibleBooks(req, reply) {
+module.exports = async function bibleBooks(req) {
   if (newrelic) {
     newrelic.setTransactionName('json-bible-books')
   }
@@ -17,10 +14,10 @@ module.exports = async function bibleBooks(req, reply) {
   const filter = sanitizeString(req.query.filter, false)
 
   try {
-    const version = await Bible.call("version").params({ id: versionId }).setEnvironment(process.env.NODE_ENV).get()
+    const version = await Bible.call('version').params({ id: versionId }).setEnvironment(process.env.NODE_ENV).get()
     const items = version.books
       .filter((book) => {
-        if (!!filter) {
+        if (filter) {
           return book.human.toLowerCase().startsWith(filter.toLowerCase())
         }
         return true
@@ -33,7 +30,7 @@ module.exports = async function bibleBooks(req, reply) {
       })
     return { items }
   } catch (e) {
-    Raven.captureException(err)
+    Raven.captureException(e)
     req.log.error(`Error getting list of Bible books: ${e.toString()}`)
     return e
   }

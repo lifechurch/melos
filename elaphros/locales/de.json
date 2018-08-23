@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Lade dir die Bibel App für Kinder herunter",
+			"book": "Buch",
+			"blog": "Blog",
+			"read": "Lesen",
+			"jobs": "Stellen",
+			"help": "Hilfe",
+			"hide": "Ausblenden",
+			"home": "Home",
+			"plans": "Lesepläne",
+			"press": "Presse",
+			"audio": "Audio",
+			"terms": "AGB",
+			"share": "Teilen",
+			"title": "Lade die Bibel App jetzt herunter.",
+			"about": "Über",
+			"search": "Suche...",
+			"donate": "Spenden",
+			"videos": "Videos",
+			"events": "Veranstaltungen",
+			"cancel": "Abbrechen",
+			"version": "Übersetzung",
+			"privacy": "Datenschutzrichtlinie",
+			"chapter": "Kapitel",
+			"sign up": "Registrieren",
+			"sign in": "Anmelden",
+			"versions": "Übersetzungen",
+			"language": "Sprache",
+			"send votd": "Sende mir den Tagesvers",
+			"read full": "Das ganze Kapitel lesen",
+			"volunteer": "Freiwillig helfen",
+			"languages": "Sprachen",
+			"related devos": "Kostenlose Lesepläne und Andachten zum Thema {reference}",
+			"bible language": "Bibelsprache",
+			"change language": "Sprache ändern",
+			"explore by verse": "Erforsche {chapter_name} mit Vers",
+			"version learn more": "Mehr mehr über die {version_name} erfahren"
+		}
+	}
+}

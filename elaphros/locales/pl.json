@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Pobierz Aplikację Biblii dla Dzieci",
+			"book": "Księga",
+			"blog": "Blog",
+			"read": "Czytaj",
+			"jobs": "Praca",
+			"help": "Pomoc",
+			"hide": "Ukryj",
+			"home": "Strona główna",
+			"plans": "Plany",
+			"press": "Prasa",
+			"audio": "Dźwięk",
+			"terms": "Regulamin",
+			"share": "Podziel się",
+			"title": "Pobierz teraz Aplikację Biblii",
+			"about": "O YouVersion",
+			"search": "Wyszukaj...",
+			"donate": "Dotacja",
+			"videos": "Nagrania wideo",
+			"events": "Wydarzenia",
+			"cancel": "Anuluj",
+			"version": "Przekład",
+			"privacy": "Polityka prywatności",
+			"chapter": "Rozdział",
+			"sign up": "Rejestracja",
+			"sign in": "Zaloguj się",
+			"versions": "Wersje",
+			"language": "Język",
+			"send votd": "Prześlij mi Werset Dnia",
+			"read full": "Czytaj cały rozdział",
+			"volunteer": "Wolontariusz",
+			"languages": "Języki",
+			"related devos": "Darmowe Plany Czytania i Rozważania",
+			"bible language": "Język Biblii",
+			"change language": "Zmień język",
+			"explore by verse": "Odkryj {chapter_name} werset po wersecie",
+			"version learn more": "Dowiedz się więcej o {version_name}"
+		}
+	}
+}

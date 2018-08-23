@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "শিশুদের বাইবেল অ্যাপ্ ডাউনলোড করুন।",
+			"book": "Book",
+			"blog": "ব্লগ",
+			"read": "পড়ুন",
+			"jobs": "Jobs",
+			"help": "Help",
+			"hide": "Hide",
+			"home": "Home",
+			"plans": "Plans",
+			"press": "Press",
+			"audio": "Audio",
+			"terms": "Terms",
+			"share": "Share",
+			"title": "Download The Bible App Now",
+			"about": "সম্বন্ধে",
+			"search": "Search...",
+			"donate": "অনুদান দিন",
+			"videos": "Videos",
+			"events": "Events",
+			"cancel": "বাতিল",
+			"version": "Version",
+			"privacy": "গোপনীয়তার নীতিমালা",
+			"chapter": "Chapter",
+			"sign up": "সাইন আপ",
+			"sign in": "সাইন ইন",
+			"versions": "Versions",
+			"language": "ভাষা",
+			"send votd": "Send me the Verse of the Day",
+			"read full": "Read Full Chapter",
+			"volunteer": "Volunteer",
+			"languages": "Languages",
+			"related devos": "Free Reading Plans and Devotionals related to {reference}",
+			"bible language": "Bible Language",
+			"change language": "Change Language",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Learn More About {version_name}"
+		}
+	}
+}

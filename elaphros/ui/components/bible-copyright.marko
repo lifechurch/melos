@@ -3,12 +3,12 @@
   <span if(input.version.copyright_short && !input.version.copyright_short.html && input.version.copyright_short.text)>${input.version.copyright_short.text}</span>
   <a
     class="link yv-green underline"
-    title="Learn More about ${input.version.local_title}"
+    title="${out.global.__mf('features.bible.version learn more', { version_name: input.version.local_title })}"
     href="/versions/${input.version.id}?returnTo=${input.usfm}"
     data-vars-event-category="Bible Chapter"
     data-vars-event-action="Version Learn More"
     data-vars-event-label="${input.version.id}"
   >
-    Learn More about the ${input.version.local_title}
+    ${out.global.__mf('features.bible.version learn more', { version_name: input.version.local_title })}
   </a>
 </div>

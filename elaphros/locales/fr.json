@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Téléchargez la Bible App pour les Enfants",
+			"book": "Livre",
+			"blog": "Blog",
+			"read": "Lire",
+			"jobs": "Postes à pourvoir",
+			"help": "Aide",
+			"hide": "Cacher",
+			"home": "Accueil",
+			"plans": "Plans",
+			"press": "Presse",
+			"audio": "Audio",
+			"terms": "Conditions",
+			"share": "Partager",
+			"title": "Télécharger la Bible App maintenant",
+			"about": "À propos de",
+			"search": "Recherche...",
+			"donate": "Faire un don",
+			"videos": "Vidéos",
+			"events": "Evénements ",
+			"cancel": "Annuler",
+			"version": "Version",
+			"privacy": "Politique de confidentialité",
+			"chapter": "Chapitre",
+			"sign up": "S'inscrire",
+			"sign in": "Se connecter",
+			"versions": "Versions",
+			"language": "Langue",
+			"send votd": "Envoyez-moi le verset du jour",
+			"read full": "Lire le chapitre entier",
+			"volunteer": "Devenir bénévole.",
+			"languages": "Langues",
+			"related devos": "Plans de lecture et de méditation gratuits en rapport avec {reference}",
+			"bible language": "Langue pour la Bible",
+			"change language": "Changer la langue",
+			"explore by verse": "Explorer les versets de {chapter_name}",
+			"version learn more": "En savoir plus sur {version_name}"
+		}
+	}
+}

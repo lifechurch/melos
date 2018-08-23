@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Lawrlwytha'r Ap Beibl i Blant",
+			"book": "Llyfr",
+			"blog": "Blog",
+			"read": "Darllen",
+			"jobs": "Swyddi",
+			"help": "Help",
+			"hide": "Cuddio",
+			"home": "Gartref",
+			"plans": "Cynlluniau",
+			"press": "Y Wasg",
+			"audio": "Sain",
+			"terms": "Termau",
+			"share": "Rhannwch",
+			"title": "Lawrlwythwch y Bible App nawr",
+			"about": "Am",
+			"search": "Chwilio...",
+			"donate": "Cyfrannwch",
+			"videos": "Fideos",
+			"events": "Digwyddiadau",
+			"cancel": "Canslo",
+			"version": "Fersiwn",
+			"privacy": "Polisi Preifatrwydd",
+			"chapter": "Pennod",
+			"sign up": "Cofrestru",
+			"sign in": "Mewngofnodi",
+			"versions": "Fersiynau",
+			"language": "Iaith",
+			"send votd": "Anfonwch Adnod y Dydd i mi",
+			"read full": "Darllen y bennod gyfan",
+			"volunteer": "Gwirfoddolwr",
+			"languages": "Ieithoedd",
+			"related devos": "Cynlluniau Darllen am ddim a Defosiynau yn ymwneud â {reference}",
+			"bible language": "Iaith y Beibl",
+			"change language": "Newid Iaith",
+			"explore by verse": "Pori drwy {chapter_name} bob yn Adnod",
+			"version learn more": "Dysgu mwy am {version_name}"
+		}
+	}
+}
