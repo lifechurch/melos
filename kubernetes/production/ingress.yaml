@@ -25,42 +25,6 @@ spec:
         backend:
           serviceName: $CI_ENVIRONMENT_SLUG
           servicePort: $PORT
-      - path: /bible
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /pt/bible
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /es/bible
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /sw.js
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /bible-offline
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /pt/bible-offline
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /es/bible-offline
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /json
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /static-assets
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
   - host: www.$CI_ENVIRONMENT_HOSTNAME
     http:
       paths:
@@ -68,19 +32,71 @@ spec:
         backend:
           serviceName: $CI_ENVIRONMENT_SLUG
           servicePort: $PORT
+      - path: /af/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /af/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /bg/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /bg/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ca/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ca/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /cs/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /cs/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /cy/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /cy/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /da/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /da/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /de/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /de/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /el/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /el/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
       - path: /bible
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /pt/bible
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /es/bible
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: $PORT
-      - path: /sw.js
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
@@ -88,11 +104,303 @@ spec:
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
-      - path: /pt/bible-offline
+      - path: /es/bible
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
       - path: /es/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /es-ES/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /es-ES/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /fi/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /fi/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /fr/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /fr/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /hi/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /hi/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /hr/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /hr/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /hu/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /hu/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /id/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /id/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /it/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /it/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ja/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ja/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /km/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /km/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ko/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ko/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /lv/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /lv/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /mk/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /mk/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /mn/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /mn/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ms/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ms/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /my/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /my/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /my-MM/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /my-MM/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /nl/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /nl/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /no/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /no/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /pl/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /pl/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /pt/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /pt/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /pt-PT/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /pt-PT/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ro/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ro/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ru/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ru/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sk/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sk/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sq/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sq/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sv/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sv/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sw/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sw/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ta/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /ta/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /th/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /th/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /tl/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /tl/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /tr/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /tr/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /uk/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /uk/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /vi/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /vi/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /zh-CN/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /zh-CN/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /zh-TW/bible
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /zh-TW/bible-offline
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /sw.js
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT

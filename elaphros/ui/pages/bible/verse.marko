@@ -145,7 +145,7 @@
 
             <div class="bg-white pa3 pa4-m shadow-2 br2 mt4">
               <a role="button"
-                href="/notifications/edit"
+                href="${data.getLocalizedLink('/notifications/edit', out.global.locale)}"
                 class="w-100 tc dib pt2 pb2 pl3 pr3 link yv-green br2 truncate f5 f4-m bold">
                 ${out.global.__('features.bible.send votd')}
               </a>
@@ -163,7 +163,7 @@
                 type="carousel">
                 <for(image in data.images)>
                   $ const imageSource = data.selectImageFromList({ images: image.renditions, width: 320, height: 320 })
-                  <a if(imageSource.url) href="/verse-of-the-day/${data.usfm}/${image.id}?version=${version.id}">
+                  <a if(imageSource.url) href="${data.getLocalizedLink('/verse-of-the-day/${data.usfm}/${image.id}?version=${version.id}', out.global.locale)}">
                     <amp-img
                       src=imageSource.url
                       width=imageSource.width
@@ -209,7 +209,7 @@
                     <div class="pa2">
                       <a
                         class="link dim near-black"
-                        href="/reading-plans/${plan.id}-${plan.slug}" title="${plan.name}"
+                        href="${data.getLocalizedLink('/reading-plans/${plan.id}-${plan.slug}', out.global.locale)}" title="${plan.name}"
                       >
                         <amp-img
                           class="br2"

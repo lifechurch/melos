@@ -5,5 +5,5 @@ module.exports = function getLocalizedLink(path, locale) {
   if (!targetPath.startsWith('/')) {
     targetPath = `/${targetPath}`
   }
-  return `/${locale}${targetPath}`
+  return `${locale === 'en' ? '' : `/${locale}`}${targetPath}`
 }
