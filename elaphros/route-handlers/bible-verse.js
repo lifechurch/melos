@@ -34,7 +34,9 @@ module.exports = function bibleVerse(req, reply) {
   const fullRequestURL = `https://${host || ''}${path || ''}${query || ''}`
   const requestHost = `https://${host || ''}`
   const defaultImages = getDefaultImages(requestHost)
-  const versesUsfm = expandUsfm(usfm)
+  const versesUsfm = expandUsfm(usfm).map((v) => {
+    return v.split('+').slice(0, 25).join('+')
+  })
 
   const imagesUsfm = versesUsfm.reduce((accumulator = [], imageUsfm) => {
     return accumulator.concat(imageUsfm.split('+'))
