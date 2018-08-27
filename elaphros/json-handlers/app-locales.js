@@ -1,8 +1,4 @@
-let newrelic
-if (process.env.NEW_RELIC_LICENSE_KEY) {
-  newrelic = require('newrelic')
-}
-
+const newrelic = require('../server/get-new-relic')()
 const getAppLocale = require('../utils/localization/get-app-locale')
 const localeList = require('../localization/locale-list.json')
 const sanitizeString = require('../utils/sanitize-string')
@@ -14,20 +10,20 @@ module.exports = function appLocales(req, reply) {
 
   const filter = sanitizeString(req.query.filter, false)
   const items = localeList
-  .filter((locale) => {
-    if (!!filter) {
-      return locale.nativeName.toLowerCase().startsWith(filter.toLowerCase()) ||
+    .filter((locale) => {
+      if (filter) {
+        return locale.nativeName.toLowerCase().startsWith(filter.toLowerCase()) ||
         locale.englishName.toLowerCase().startsWith(filter.toLowerCase()) ||
         locale.locale.toLowerCase().startsWith(filter.toLowerCase())
-    }
-    return true
-  })
-  .map((locale) => {
-    return {
-      nativeName: locale.nativeName,
-      englishName: locale.englishName,
-      appLocale: getAppLocale(locale)
-    }
-  })
+      }
+      return true
+    })
+    .map((locale) => {
+      return {
+        nativeName: locale.nativeName,
+        englishName: locale.englishName,
+        appLocale: getAppLocale(locale)
+      }
+    })
   reply.send({ items })
 }

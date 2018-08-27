@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Shkarko Bible App for Kids",
+			"book": "Libri",
+			"blog": "Blogu",
+			"read": "Lexo",
+			"jobs": "Vende pune",
+			"help": "Ndihmë",
+			"hide": "Fshihe",
+			"home": "Kreu",
+			"plans": "Plane",
+			"press": "Shtypi",
+			"audio": "Audio",
+			"terms": "Kushtet",
+			"share": "Ndaje",
+			"title": "Shkarko Programin e Biblës tani",
+			"about": "Rreth nesh",
+			"search": "Kërko...",
+			"donate": "Dhuro",
+			"videos": "Video",
+			"events": "Ngjarje",
+			"cancel": "Anulo",
+			"version": "Versioni",
+			"privacy": "Politika e privatësisë",
+			"chapter": "Kapitulli",
+			"sign up": "Regjistrohu",
+			"sign in": "Hyr",
+			"versions": "Versionet",
+			"language": "Gjuha",
+			"send votd": "Më dërgoni Vargun e Ditës",
+			"read full": "Lexo të gjithë kapitullin",
+			"volunteer": "Dil vullnetar",
+			"languages": "Gjuhët",
+			"related devos": "Devocione dhe Plane Leximi falas për {reference}",
+			"bible language": "Gjuha e Biblës",
+			"change language": "Ndrysho gjuhën",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Mësoni më shumë rreth {version_name}"
+		}
+	}
+}

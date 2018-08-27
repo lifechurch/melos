@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Tải Ứng Dụng Kinh Thánh Thiếu Nhi",
+			"book": "Sách",
+			"blog": "Blog",
+			"read": "Kinh Thánh",
+			"jobs": "Việc làm",
+			"help": "Trợ Giúp",
+			"hide": "Ẩn",
+			"home": "Trang nhà",
+			"plans": "Kế hoạch",
+			"press": "Thông tấn",
+			"audio": "Âm thanh",
+			"terms": "Điều khoản",
+			"share": "Chia sẻ",
+			"title": "Tải App Kinh Thánh bây giờ",
+			"about": "Thông tin chung",
+			"search": "Tìm kiếm...",
+			"donate": "Dâng hiến",
+			"videos": "Video",
+			"events": "Sự kiện",
+			"cancel": "Hủy",
+			"version": "Bản dịch",
+			"privacy": "Quy định riêng tư",
+			"chapter": "Đoạn",
+			"sign up": "Đăng ký",
+			"sign in": "Đăng nhập",
+			"versions": "Bản dịch",
+			"language": "Ngôn ngữ",
+			"send votd": "Gửi cho tôi câu Kinh Thánh trong ngày",
+			"read full": "Đọc cả đoạn",
+			"volunteer": "Tình nguyện",
+			"languages": "Ngôn ngữ",
+			"related devos": "Các kế hoạch đọc và tĩnh nguyện miễn phí liên quan đến{reference}",
+			"bible language": "Ngôn ngữ Kinh Thánh",
+			"change language": "Thay đổi ngôn ngữ",
+			"explore by verse": "Khám phá {chapter_name} bằng câu Kinh Thánh",
+			"version learn more": "Tìm hiểu thêm về {version_name}"
+		}
+	}
+}

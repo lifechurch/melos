@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Laai die Bybel App vir Kinders af",
+			"book": "Boek",
+			"blog": "Webjoernaal",
+			"read": "Lees",
+			"jobs": "Werk",
+			"help": "Hulp",
+			"hide": "Steek weg",
+			"home": "Tuisblad",
+			"plans": "Planne",
+			"press": "Media",
+			"audio": "Klank",
+			"terms": "Terme",
+			"share": "Deel",
+			"title": "Laai Die Bybel Toep Nou Af",
+			"about": "Omtrent Ons",
+			"search": "Soek...",
+			"donate": "Skenk",
+			"videos": "Videos",
+			"events": "Geleenthede",
+			"cancel": "Kanselleer",
+			"version": "Weergawe",
+			"privacy": "Privaatheidsbeleid",
+			"chapter": "Hoofstuk",
+			"sign up": "Sluit aan",
+			"sign in": "Teken In",
+			"versions": "Vertalings",
+			"language": "Taal",
+			"send votd": "Stuur vir my die Vers-van-die-dag",
+			"read full": "Lees die Hele Hoofstuk",
+			"volunteer": "Vrywilliger",
+			"languages": "Tale",
+			"biblelanguage": "Bybel Tale",
+			"related devos": "Gratis Leesplanne en Oordenkings oor {reference}",
+			"change language": "Verander Taal",
+			"explore by verse": "Verken {chapter_name} se verse",
+			"version learn more": "Vind meer uit oor{version_name}"
+		}
+	}
+}

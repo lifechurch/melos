@@ -43,7 +43,6 @@ const appLocales = require('./json-handlers/app-locales')
 const manifest = require('./json-handlers/manifest')
 
 /* Require Util Functions */
-const isVerseOrChapter = require('@youversion/utils/lib/bible/isVerseOrChapter').default
 const sanitizeString = require('./utils/sanitize-string')
 
 /* CORS */

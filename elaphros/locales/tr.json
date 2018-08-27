@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Çocuklar için Kutsal Kitap Uygulaması'nı İndirin",
+			"book": "Kitap",
+			"blog": "Blog",
+			"read": "Oku",
+			"jobs": "Çalışma İmkânları",
+			"help": "Yardım",
+			"hide": "Gizle",
+			"home": "Ana Sayfa",
+			"plans": "Okuma Planları",
+			"press": "Basın",
+			"audio": "Ses",
+			"terms": "Koşullar",
+			"share": "Paylaş",
+			"title": "Kutsal Kitap Uygulamasını Hemen İndirin",
+			"about": "Hakkında",
+			"search": "Ara...",
+			"donate": "Bağışta bulun",
+			"videos": "Videolar",
+			"events": "Olaylar",
+			"cancel": "İptal",
+			"version": "Çeviri",
+			"privacy": "Gizlilik Politikası",
+			"chapter": "Bölüm",
+			"sign up": "Kaydol",
+			"sign in": "Giriş Yap",
+			"versions": "Tercümeler",
+			"language": "Dil",
+			"send votd": "Bana Günün Ayetini gönder",
+			"read full": "Tüm bölümü okuyun",
+			"volunteer": "Gönüllü Ol",
+			"languages": "Diller",
+			"related devos": "Ücretsiz Okuma Planları {reference}",
+			"bible language": "Kutsal Kitap Dili",
+			"change language": "Dili Değiştir",
+			"explore by verse": "{chapter_name} kısmını Ayet olarak keşfedin",
+			"version learn more": "{version_name} Hakkında Daha Fazlasını Öğrenin"
+		}
+	}
+}

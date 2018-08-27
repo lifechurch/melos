@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Muat turun App Alkitab untuk Kanak-Kanak",
+			"book": "Kitab",
+			"blog": "Blog",
+			"read": "Baca",
+			"jobs": "Pekerjaan",
+			"help": "Bantuan",
+			"hide": "Sembunyikan",
+			"home": "Halaman Utama",
+			"plans": "Pelan",
+			"press": "Media",
+			"audio": "Audio",
+			"terms": "Terma",
+			"share": "Beritakan",
+			"title": "Muat turun App Alkitab Sekarang",
+			"about": "Perihal",
+			"search": "Kini Mencari...",
+			"donate": "Menderma",
+			"videos": "Video",
+			"events": "Acara",
+			"cancel": "Batalkan",
+			"version": "Versi",
+			"privacy": "Polisi Privasi",
+			"chapter": "Bab",
+			"sign up": "Daftar",
+			"sign in": "Log Masuk",
+			"versions": "Versi",
+			"language": "Bahasa",
+			"send votd": "Hantarkan Ayat Hari Ini kepada saya",
+			"read full": "Baca seluruh bab",
+			"volunteer": "Jadi Sukarelawan",
+			"languages": "Bahasa",
+			"related devos": "Pelan Bacaan dan Renungan yang percuma berkaitan dengan {reference}",
+			"bible language": "Bahasa Alkitab",
+			"change language": "Tukar Bahasa",
+			"explore by verse": "Meneliti {chapter_name} mengikut Ayat",
+			"version learn more": "Ketahui Lebih Lanjut tentang {version_name}"
+		}
+	}
+}

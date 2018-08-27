@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Lejupielādē Bībeli Bērniem",
+			"book": "Grāmata",
+			"blog": "Blogs",
+			"read": "Lasīt",
+			"jobs": "Vakances",
+			"help": "Palīdzība",
+			"hide": "Slēpt",
+			"home": "Mājas",
+			"plans": "Plāni",
+			"press": "Prese",
+			"audio": "Audio",
+			"terms": "Nosacījumi",
+			"share": "Dalīties",
+			"title": "Lejuplādējiet Bībeles aplikāciju tagad",
+			"about": "Par",
+			"search": "Meklēšana...",
+			"donate": "Ziedot",
+			"videos": "Video",
+			"events": "Notikumi",
+			"cancel": "Atcelt",
+			"version": "Versija",
+			"privacy": "Privātuma politika",
+			"chapter": "Nodaļa",
+			"sign up": "Reģistrēties",
+			"sign in": "Ielogoties",
+			"versions": "Tulkojumu veidi",
+			"language": "Valoda",
+			"send votd": "Sūtīt man dienas pantu",
+			"read full": "Lasīt visu nodaļu",
+			"volunteer": "Brīvprātīgais",
+			"languages": "Valodas",
+			"related devos": "Bezmaksas lasīšanas plāni un pārdomas par tēmu {reference}",
+			"bible language": "Bībeles valoda",
+			"change language": "Mainīt valodu",
+			"explore by verse": "Izpētīt {chapter_name} pantu pa pantam",
+			"version learn more": "Uzzināt vairāk par {version_name}"
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Hent Bibel App til Børn",
+			"book": "Bog",
+			"blog": "Blog",
+			"read": "Læs",
+			"jobs": "Job",
+			"help": "Hjælp",
+			"hide": "Gem",
+			"home": "Hjem",
+			"plans": "Planer",
+			"press": "Presse område",
+			"audio": "Lyd",
+			"terms": "Udtryk",
+			"share": "Del",
+			"title": "Hent Bibel App'en nu",
+			"about": "Om",
+			"search": "Søg...",
+			"donate": "Donér",
+			"videos": "Videoer",
+			"events": "Begivenheder",
+			"cancel": "Fortryd",
+			"version": "Version",
+			"privacy": "Privatlivs politik",
+			"chapter": "Kapitel",
+			"sign up": "Tilmeld",
+			"sign in": "Log ind",
+			"versions": "Versioner",
+			"language": "Sprog",
+			"send votd": "Send mig dagens vers",
+			"read full": "Læs hele kapitlet",
+			"volunteer": "Frivillig",
+			"languages": "Sprog",
+			"related devos": "Gratis Læseplaner og andagter relateret til {reference}",
+			"bible language": "Bibel sprog",
+			"change language": "Ret sprog",
+			"explore by verse": "Udforsk {chapter_name} ved Vers",
+			"version learn more": "Læs mere om {version_name}"
+		}
+	}
+}

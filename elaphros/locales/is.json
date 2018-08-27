@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Download the Bible App for Kids",
+			"book": "Bók",
+			"blog": "Blog",
+			"read": "Lesa",
+			"jobs": "Jobs",
+			"help": "Hjálp",
+			"hide": "Hide",
+			"home": "Heim",
+			"plans": "Áætlanir",
+			"press": "Press",
+			"audio": "Audio",
+			"terms": "Terms",
+			"share": "Deildu",
+			"title": "Download The Bible App Now",
+			"about": "Um YouVersion",
+			"search": "Search...",
+			"donate": "Gefa",
+			"videos": "Myndbönd",
+			"events": "Viðburðir",
+			"cancel": "Hætta við",
+			"version": "Útgáfa",
+			"privacy": "Friðhelgisstefna",
+			"chapter": "Kafli",
+			"sign up": "Stofna nýjan reikning",
+			"sign in": "Innskráning",
+			"versions": "Útgáfur",
+			"language": "Tungumál",
+			"send votd": "Send me the Verse of the Day",
+			"read full": "Read Full Chapter",
+			"volunteer": "Sjálfboðaliði",
+			"languages": "tungumál",
+			"related devos": "Free Reading Plans and Devotionals related to {reference}",
+			"bible language": "Tungumál Biblíutextans",
+			"change language": "Change Language",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Learn More About {version_name}"
+		}
+	}
+}

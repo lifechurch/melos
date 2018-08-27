@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Descargar la Biblia App para Niños",
+			"book": "Libro",
+			"blog": "Blog",
+			"read": "Leer",
+			"jobs": "Trabajos",
+			"help": "Ayuda",
+			"hide": "Oculto",
+			"home": "Inicio",
+			"plans": "Planes",
+			"press": "Pulsar",
+			"audio": "Audio",
+			"terms": "Términos",
+			"share": "Compartir",
+			"title": "Descargar la Biblia App ahora",
+			"about": "Acerca de",
+			"search": "Buscar...",
+			"donate": "Donar (EEUU)",
+			"videos": "Videos",
+			"events": "Eventos",
+			"cancel": "Cancelar",
+			"version": "Versión",
+			"privacy": "Políticas de Privacidad",
+			"chapter": "Capítulo",
+			"sign up": "Registrarse",
+			"sign in": "Iniciar sesión",
+			"versions": "Versiones",
+			"language": "Idioma",
+			"send votd": "Enviarme el Versículo del Día",
+			"read full": "Leer el capítulo completo",
+			"volunteer": "Voluntario",
+			"languages": "Idiomas",
+			"related devos": "Planes de Lectura y Devocionales Gratis relacionados con {reference}",
+			"bible language": "Idiomas de la Biblia",
+			"change language": "Cambiar idioma",
+			"explore by verse": "Explore{chapter_name} por versículo",
+			"version learn more": "Conocer más acerca de {version_name}"
+		}
+	}
+}

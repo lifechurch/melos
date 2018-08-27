@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Stiahnuť aplikáciu Biblia pre deti",
+			"book": "Kniha",
+			"blog": "Blog",
+			"read": "Čítať",
+			"jobs": "Kariéra",
+			"help": "Pomoc",
+			"hide": "Skryť",
+			"home": "Domov",
+			"plans": "Plány",
+			"press": "Tlač",
+			"audio": "Audio",
+			"terms": "Podmienky",
+			"share": "Zdieľať",
+			"title": "Stiahnite si aplikáciu Biblia teraz",
+			"about": "O nás",
+			"search": "Hľadať...",
+			"donate": "Prispejte",
+			"videos": "Videá",
+			"events": "Udalosti",
+			"cancel": "Zrušiť",
+			"version": "Preklad",
+			"privacy": "Ochrana údajov",
+			"chapter": "Kapitola",
+			"sign up": "Zaregistrovať",
+			"sign in": "Prihlásiť sa",
+			"versions": "Preklady",
+			"language": "Jazyk",
+			"send votd": "Pošlite mi verš dňa",
+			"read full": "Prečítajte si celú kapitolu",
+			"volunteer": "Dobrovoľníci",
+			"languages": "Jazyky",
+			"related devos": "Bezplatné Plány čítania a Stíšenia týkajúce sa {reference}",
+			"bible language": "Jazyk Biblie",
+			"change language": "Zmeniť jazyk",
+			"explore by verse": "Preskúmajte {chapter_name} podľa verša",
+			"version learn more": "Zistite viac o {version_name}"
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Download the Bible App for Kids",
+			"book": "Knyga",
+			"blog": "Blog",
+			"read": "Paruošta",
+			"jobs": "Darbai",
+			"help": "Pagalba",
+			"hide": "Hide",
+			"home": "Pagrindinis",
+			"plans": "Planai",
+			"press": "Spauda",
+			"audio": "Audio",
+			"terms": "Terminai",
+			"share": "Pasidalinti",
+			"title": "Download The Bible App Now",
+			"about": "Apie",
+			"search": "Ieškoti...",
+			"donate": "Paaukoti",
+			"videos": "Videos",
+			"events": "Events",
+			"cancel": "Atšaukti",
+			"version": "Version",
+			"privacy": "Privatumo Politika",
+			"chapter": "Skyrius",
+			"sign up": "Prisiregistruoti",
+			"sign in": "Prisijungti",
+			"versions": "Versions",
+			"language": "Kalba",
+			"send votd": "Send me the Verse of the Day",
+			"read full": "Read Full Chapter",
+			"volunteer": "Savanoriauk",
+			"languages": "Languages",
+			"related devos": "Free Reading Plans and Devotionals related to {reference}",
+			"bible language": "Bible Language",
+			"change language": "Change Language",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Learn More About {version_name}"
+		}
+	}
+}

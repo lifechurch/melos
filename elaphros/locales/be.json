@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Спампаваць Біблію для дзяцей",
+			"book": "Кніга",
+			"blog": "Блёг",
+			"read": "Чытаць",
+			"jobs": "Вакансіі",
+			"help": "Дапамога",
+			"hide": "Hide",
+			"home": "Стужка",
+			"plans": "Пляны чытаньня",
+			"press": "Прэсе",
+			"audio": "Audio",
+			"terms": "Умовы",
+			"share": "Падзяліцца",
+			"title": "Спампуйце Bible App зараз",
+			"about": "Пра дадатак",
+			"search": "Пошук…",
+			"donate": "Ахвяраваць",
+			"videos": "Відэа",
+			"events": "Падзеі",
+			"cancel": "Адмяніць",
+			"version": "Пераклад",
+			"privacy": "Канфідэнцыйнасьць",
+			"chapter": "Разьдзел",
+			"sign up": "Рэгістрацыя",
+			"sign in": "Увайсьці",
+			"versions": "Пераклады",
+			"language": "Мова",
+			"send votd": "Send me the Verse of the Day",
+			"read full": "Чытаць увесь разьдзел",
+			"volunteer": "Валянтэрства",
+			"languages": "Мовы",
+			"related devos": "Free Reading Plans and Devotionals related to {reference}",
+			"bible language": "Мова Бібліі",
+			"change language": "Памяняць мову",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Learn More About {version_name}"
+		}
+	}
+}

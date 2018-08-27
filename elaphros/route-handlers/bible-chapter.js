@@ -1,11 +1,7 @@
-let newrelic
-if (process.env.NEW_RELIC_LICENSE_KEY) {
-  newrelic = require('newrelic')
-}
-
 const Raven = require('raven')
 const api = require('@youversion/js-api')
 const deepLinkPath = require('@youversion/utils/lib/bible/deepLinkPath').default
+const newrelic = require('../server/get-new-relic')()
 const validateApiResponse = require('../utils/validate-api-response')
 const getDefaultImages = require('../utils/get-default-images')
 const getLocalizedLink = require('../utils/localization/get-localized-link')
@@ -13,9 +9,13 @@ const getPathWithoutLocale = require('../utils/localization/get-path-without-loc
 const localeList = require('../localization/locale-list.json')
 const getAppLocale = require('../utils/localization/get-app-locale')
 const seoUtils = require('../utils/seo')
+const bibleToAppLocale = require('../utils/localization/bible-to-app-locale')
+const getAppLocaleDetails = require('../utils/localization/get-app-locale-details')
+
 const Bible = api.getClient('bible')
 const DEFAULT_VERSION = process.env.BIBLE_DEFAULT_VERSION || 1
 const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.1.KJV'
+const DEFAULT_VERSION_ABBR = process.env.BIBLE_DEFAULT_VERSION_ABBR || 'KJV'
 
 module.exports = function bibleChapter(req, reply) {
   if (newrelic) {
@@ -25,20 +25,20 @@ module.exports = function bibleChapter(req, reply) {
   const { versionId, usfm: rawUsfm } = req.params
   const usfm = rawUsfm.split('.').slice(0, 2).join('.').toUpperCase()
   const { host, query, path } = req.urlData()
-  const fullRequestURL = `https://${host ? host : ''}${path ? path : ''}${query ? query : ''}`
-  const requestHost = `https://${host ? host : ''}`
+  const fullRequestURL = `https://${host || ''}${path || ''}${query || ''}`
+  const requestHost = `https://${host || ''}`
   const defaultImages = getDefaultImages(requestHost)
 
   const appLocales = localeList.map((locale) => {
     return getAppLocale(locale)
   })
 
-  const chapterPromise = Bible.call("chapter").params({
+  const chapterPromise = Bible.call('chapter').params({
     id: versionId,
     reference: usfm
   }).setEnvironment(process.env.NODE_ENV).get()
 
-  const versionPromise = Bible.call("version").params({
+  const versionPromise = Bible.call('version').params({
     id: versionId
   }).setEnvironment(process.env.NODE_ENV).get()
 
@@ -56,14 +56,14 @@ module.exports = function bibleChapter(req, reply) {
       req.log.warn(`Invalid Bible version ${versionId}`)
       return reply.redirect(303, `/bible/${DEFAULT_VERSION}/${usfm}`)
     }
-
-    const pathWithoutLocale = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, usfm)
-    const canonicalUrl = `https://${host ? host : ''}${pathWithoutLocale}`
+    const canonicalPath = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, chapter.reference.usfm[0], bibleToAppLocale(version.language))
+    const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
 
     const verseLinks = () => {
+      /* eslint-disable no-cond-assign */
       const regex = /data-usfm=\"(\S*\.\S*\.\S*)\"/g
       let m
-      let matches = new Set()
+      const matches = new Set()
       while ((m = regex.exec(chapter.content)) !== null) {
 
         // This is necessary to avoid infinite loops with zero-width matches
@@ -87,19 +87,28 @@ module.exports = function bibleChapter(req, reply) {
       allPromises,
       versionId,
       fullRequestURL,
-      canonicalUrl,
       requestHost,
       deepLink,
       getLocalizedLink,
       getPathWithoutLocale,
-      pathWithoutLocale,
       appLocales,
       verseLinks: verseLinks(),
-      metaImages: defaultImages.bible
+      metaImages: defaultImages.bible,
+      $global: {
+        __: reply.res.__,
+        __mf: reply.res.__mf,
+        locale: req.detectedLng,
+        seoUtils,
+        bibleToAppLocale,
+        textDirection: 'ltr',
+        localeDetails: getAppLocaleDetails(req.detectedLng),
+        canonicalUrl,
+        canonicalPath
+      }
     })
   }, (e) => {
     Raven.captureException(e)
     req.log.error(`Error getting Bible reference ${e.toString()}`)
-    return reply.redirect(307, `/bible/${DEFAULT_VERSION}/${DEFAULT_USFM}`)
+    return reply.redirect(307, seoUtils.getCanonicalUrl('bible', `${DEFAULT_VERSION}`, `${DEFAULT_VERSION_ABBR}`, `${DEFAULT_USFM}`, req.detectedLng))
   })
 }

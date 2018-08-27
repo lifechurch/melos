@@ -36,22 +36,23 @@
 ✔ Determine best way to redirect auth'd users @done(2018-08-01 15:21)
 ☐ Social footer is missing on desktop!
 ☐ After switching langs, going back to versions and switching langs again and back to versions... the lang label is incorrect
-☐ Final AMP Validation Check
+✔ Final AMP Validation Check @done(2018-08-23 11:19)
 ☐ Change cache-control header for sw.js
 
 QUESTIONS
+✔ Should we use AMP specific analytics id or the primary id? @done(2018-08-23 11:20)
 ☐ Make sure Bible Copyright is correct (check with Chris, Andy)
 ☐ Make sure Bible CSS is correct (check with Chris, Andy)
 ☐ Do we need links to sibling chapters for SEO crawling?
-☐ Should we use AMP specific analytics id or the primary id?
 
 NOT MVP
+✔ Localization @done(2018-08-23 11:20)
 ☐ Secure JSON endpoints to prevent easy scraping / stealing
+☐ RTL Support
 ☐ a little bit of weirdness with scrolling the page when the versions list is open
 ☐ Make VOTD Subscription dismissible and save state with cookie (is it possible?)
 ☐ Need AMP Validation step prior to commit or deploy
 ☐ Need better way to scrape text data for meta
-☐ Localization
 ☐ Verse validation pre-check before making calls to improve TTFB
 ☐ Move static assets to CDN host (S3, Google Bucket, etc.)
 ☐ Check accepts-lang header and suggest localization or automatically use
@@ -61,7 +62,7 @@ NOT MVP
 ☐ Create a better 404 page that gives the user more options for deeper interaction
 
 OPTIONAL
-☐ Setup linting
+✔ Setup linting @done(2018-08-23 11:21)
 ☐ Sticky / Disappearing Header & Footer (optional)
 ☐ Subtle animations for modals and menus (optional)
 ☐ Reader Settings Panel (optional)

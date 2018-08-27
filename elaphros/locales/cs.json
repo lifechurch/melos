@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Stáhnout Bible App for Kids",
+			"book": "Kniha",
+			"blog": "Blog",
+			"read": "Číst",
+			"jobs": "Zaměstnání",
+			"help": "Pomoc",
+			"hide": "Skrýt",
+			"home": "Domů",
+			"plans": "Plány",
+			"press": "Tisk",
+			"audio": "Audio",
+			"terms": "Podmínky",
+			"share": "Sdílet",
+			"title": "Stáhněte si aplikaci Bible",
+			"about": "O aplikaci",
+			"search": "Vyhledat...",
+			"donate": "Přispět",
+			"videos": "Videa",
+			"events": "Akce",
+			"cancel": "Zrušit",
+			"version": "Překlad",
+			"privacy": "Ochrana soukromí",
+			"chapter": "Kapitola",
+			"sign up": "Zaregistrovat se",
+			"sign in": "Přihlásit se",
+			"versions": "Překlady",
+			"language": "Jazyk",
+			"send votd": "Pošlete mi Veršík Dne",
+			"read full": "Číst celou kapitolu",
+			"volunteer": "Dobrovolníci",
+			"languages": "Jazyky",
+			"related devos": "Bezplatné plány čtení Bible a zamyšlení souvísející s {reference}",
+			"bible language": "Jazyk Bible",
+			"change language": "Zvolit jazyk",
+			"explore by verse": "Prozkoumej {chapter_name} podle Verše",
+			"version learn more": "Zjisti více o {version_name}"
+		}
+	}
+}

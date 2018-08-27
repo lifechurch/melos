@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Завантажити додаток Біблія для діточок",
+			"book": "Книга",
+			"blog": "Блоґ",
+			"read": "Читати",
+			"jobs": "Вакансії",
+			"help": "Допомога",
+			"hide": "Приховати",
+			"home": "Головна",
+			"plans": "Плани",
+			"press": "Преса",
+			"audio": "Аудіо",
+			"terms": "Умови",
+			"share": "Поділитись",
+			"title": "Завантажити програму Біблія зараз",
+			"about": "Про YouVersion",
+			"search": "Пошук...",
+			"donate": "Пожертвувати",
+			"videos": "Відео",
+			"events": "Події",
+			"cancel": "Скасувати",
+			"version": "Видавництво",
+			"privacy": "Політика приватності",
+			"chapter": "Розділ",
+			"sign up": "Зареєструватися",
+			"sign in": "Увійти",
+			"versions": "Видання",
+			"language": "Мова",
+			"send votd": "Надсилайте мені вірш дня",
+			"read full": "Читати весь розділ",
+			"volunteer": "Доброволець",
+			"languages": "Мови",
+			"related devos": "Безкоштовні плани читання ти молитовні роздуми до{reference}",
+			"bible language": "Мова Біблії",
+			"change language": "Змінити мову",
+			"explore by verse": "Пізнавайте {chapter_name} вірш за віршем",
+			"version learn more": "Дізнатися більше про {version_name}"
+		}
+	}
+}

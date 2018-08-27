@@ -1,0 +1,42 @@
+{
+	"features": {
+		"bible": {
+			"cta": "Download the Bible App for Kids",
+			"book": "किताब",
+			"blog": "ब्लग",
+			"read": "पढ्नुहोस्",
+			"jobs": "कामहरू",
+			"help": "सहयोग गर्नुहोस",
+			"hide": "Hide",
+			"home": "होम",
+			"plans": "Plans",
+			"press": "प्रेस",
+			"audio": "Audio",
+			"terms": "सर्तहरू",
+			"share": "शेयर गर्नुहोस्",
+			"title": "बाइबल एप अहिले डाउनलोड गर्नुहोस्",
+			"about": "बारेमा",
+			"search": "खोज्नुहोस् ...",
+			"donate": "आर्थिक सहयोग गर्नुहोस",
+			"videos": "Videos",
+			"events": "घटनाक्रमहरू",
+			"cancel": "क्यान्सिल गर्नुहोस्",
+			"version": "भर्जन",
+			"privacy": "गोपनीयता नीति",
+			"chapter": "अध्याय",
+			"sign up": "Sign Up",
+			"sign in": "Sign In",
+			"versions": "संस्करणहरू",
+			"language": "भाषा",
+			"send votd": "Send me the Verse of the Day",
+			"read full": "Read Full Chapter",
+			"volunteer": "स्वयंसेवक",
+			"languages": "भाषाहरु",
+			"related devos": "Free Reading Plans and Devotionals related to {reference}",
+			"bible language": "Bible Language",
+			"change language": "Change Language",
+			"explore by verse": "Explore {chapter_name} by Verse",
+			"version learn more": "Learn More About {version_name}"
+		}
+	}
+}

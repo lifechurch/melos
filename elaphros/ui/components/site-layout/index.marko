@@ -1,5 +1,5 @@
 <!doctype html>
-<html amp lang="en">
+<html amp lang="${out.global.locale}">
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -50,7 +50,7 @@
     <link rel="manifest" href="/manifest.json">
   </head>
 
-  <body class="sans-serif mv6">
+  <body class="sans-serif mv6" dir="${out.global.textDirection}">
     <site-header />
     <div class="body mt5">
       <include(input.body) />
@@ -78,7 +78,9 @@
       </div>
     </div>
 
-    <app-language-picker-modal pathWithoutLocale=input.pathWithoutLocale></app-language-picker-modal>
+    <app-language-picker-modal
+      path=input.path>
+    </app-language-picker-modal>
 
     <amp-analytics type="googleanalytics">
     <script type="application/json">
@@ -122,14 +124,14 @@
       <div class="flex items-center ml2 mr2">
         <div id="banner-logo" class="w-auto pa2">
           <amp-img
-            alt="The Bible App from YouVersion"
+            alt="${out.global.__('features.bible.title')}"
             src="/static-assets/icons/bible/58/en.png"
             height="45"
             width="45"
             layout="fixed">
           </amp-img>
         </div>
-        <strong id="banner-text" class="w-100 pa2 f6">The Bible App</strong>
+        <strong id="banner-text" class="w-100 pa2 f6">${out.global.__('features.bible.title')}</strong>
         <div id="banner-action" class="w-100 pa2 tr">
           <button
             class="bg-yv-green pa2 f6 white br2 bn"

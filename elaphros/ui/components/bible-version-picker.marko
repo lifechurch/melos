@@ -17,17 +17,17 @@
       <div class="w-20 truncate f7 f6-m black-30">
         &nbsp;
       </div>
-      <div class="w-100 tracked tc mid-gray f6 truncate">
-        VERSION
+      <div class="w-100 tracked tc mid-gray f6 truncate ttu">
+        ${out.global.__('features.bible.version')}
       </div>
       <div class="w-20 tr">
         <button
-          class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0"
+          class="ma0 pa0 truncate f7 f6-m black-30 bn bg-transparent outline-0 tracked ttu"
           on="tap: bible-version-list.hide, bible-language-list.hide"
           data-vars-event-category="Version Picker"
           data-vars-event-action="Cancel"
         >
-          CANCEL
+          ${out.global.__('features.bible.cancel')}
         </button>
       </div>
     </div>
@@ -53,7 +53,7 @@
               <div class="pa3 bb b--black-20">
                 <div class="flex items-center">
                   <div class="w-100 flex flex-column">
-                    <span class="f7 f6-m black-30 mb1">Bible Language</span>
+                    <span class="f7 f6-m black-30 mb1">${out.global.__('features.bible.bible language')}</span>
                     <span class="f6 black-80">${input.version.language.local_name}</span>
                   </div>
                   <div class="w-auto">
@@ -63,7 +63,7 @@
                       data-vars-event-category="Version Picker"
                       data-vars-event-action="Change Language"
                     >
-                      Change Language
+                      ${out.global.__('features.bible.change language')}
                     </button>
                   </div>
                 </div>
@@ -75,7 +75,7 @@
                     <a
                       target="_self"
                       class="pa2 pl3 w-100 dib mid-gray link f7 f6-m"
-                      href="/bible/{{id}}/${input.usfm}.{{local_abbreviation}}"
+                      href="${out.global.seoUtils.getCanonicalUrl('bible', '{{id}}', '{{local_abbreviation}}', input.usfm, out.global.locale, false).replace('LOCAL_ABBREVIATION', 'local_abbreviation')}"
                       data-vars-event-category="Version Picker"
                       data-vars-event-action="Select Version"
                       data-vars-event-label="{{id}}:{{local_title}}"
@@ -110,8 +110,8 @@
             &larr;
         </button>
       </div>
-      <div class="w-100 tracked tc mid-gray f6 truncate">
-        LANGUAGE
+      <div class="w-100 tracked tc mid-gray f6 truncate ttu">
+        ${out.global.__('features.bible.language')}
       </div>
       <div class="w-20 tr">
         <button
@@ -120,7 +120,7 @@
           data-vars-event-category="Version Picker"
           data-vars-event-action="Cancel"
         >
-          CANCEL
+          ${out.global.__('features.bible.cancel')}
         </button>
       </div>
     </div>
