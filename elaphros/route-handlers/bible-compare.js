@@ -19,7 +19,6 @@ const getAppLocaleDetails = require('../utils/localization/get-app-locale-detail
 
 const Bible = api.getClient('bible')
 const Image = api.getClient('images')
-const ReadingPlans = api.getClient('reading-plans')
 const DEFAULT_USFM = process.env.BIBLE_DEFAULT_USFM || 'JHN.3.16'
 
 const versionIds = [ 105, 100, 97, 12, 1588, 59, 1849, 1, 116, 111 ]
@@ -77,16 +76,9 @@ module.exports = function bibleCompare(req, reply) {
     Raven.captureException(err)
   })
 
-  const plansPromise = ReadingPlans.call('plans_by_reference').params({
-    usfm: imagesUsfm[0],
-    language_tag: req.detectedLng
-  }).setEnvironment(process.env.NODE_ENV).get()
+  const allPromises = Promise.all([ versePromise, versionPromise, imagesPromise ])
 
-  const configPromise = ReadingPlans.call('configuration').setEnvironment(process.env.NODE_ENV).get()
-
-  const allPromises = Promise.all([ versePromise, versionPromise, imagesPromise, plansPromise, configPromise ])
-
-  allPromises.then(([ verses, version, images, plans, config ]) => {
+  allPromises.then(([ verses, version, images ]) => {
     const referenceTitle = getReferencesTitle({ bookList: version.books, usfmList: versesUsfm })
 
     const deepLink = ''
@@ -109,24 +101,9 @@ module.exports = function bibleCompare(req, reply) {
       ? images.images.filter((image) => { return !image.editable })
       : []
 
-    const relatedPlans = (validateApiResponse(plans) && ('reading_plans' in plans) && plans.reading_plans.length > 0)
-      ? plans.reading_plans
-      : []
-
-    // const description = verses.verses.map((verse) => { return verse.content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0, 200) }).join(' ')
-
     const description = verses.verses.map((verse) => {
       return verse.verses.map((innerVerse) => { return innerVerse.content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0, 200) })
     }).join(' ')
-
-    function getReadingPlanImage(id, width = 320, height = 180) {
-      if (!validateApiResponse(config)) return {}
-      const url = config.images.reading_plans.url
-        .replace('{image_id}', id)
-        .replace('{0}', width)
-        .replace('{1}', height)
-      return { url, width, height }
-    }
 
     function getMetaImages() {
       if (prerenderedImages.length === 0) return defaultImages.bible
@@ -148,8 +125,6 @@ module.exports = function bibleCompare(req, reply) {
       requestHost,
       images: prerenderedImages,
       selectImageFromList,
-      plans: relatedPlans,
-      getReadingPlanImage,
       chapterifyUsfm,
       deepLink,
       referenceTitle,
