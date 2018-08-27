@@ -37,7 +37,7 @@ module.exports = function bibleCompare(req, reply) {
   }
 
   if (newrelic) {
-    newrelic.setTransactionName('bible-verse')
+    newrelic.setTransactionName('bible-compare')
   }
 
   const usfm = rawUsfm.split('.').slice(0, 3).join('.').toUpperCase()
