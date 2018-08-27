@@ -200,6 +200,14 @@
               </div>
             </div>
 
+            <div if(out.global.bibleToAppLocale(version.language) === 'en') class="bg-white pa3 pa4-m shadow-2 br2 mt4">
+              <a role="button"
+                href="${out.global.seoUtils.getCanonicalUrl('bible-compare', data.referenceTitle.usfm)}"
+                class="w-100 tc dib pt2 pb2 pl3 pr3 link yv-green br2 truncate f5 f4-m bold">
+                Compare Different Versions of this Verse
+              </a>
+            </div>
+
             <div if(data.plans.length) class="bg-white pa3 pa4-m shadow-2 br2 mt4">
               <h2 class="f6 f5-m mb3 lh-copy">${out.global.__mf('features.bible.related devos', { reference: data.referenceTitle.title })}</h2>
               <div class="flex flex-wrap">
