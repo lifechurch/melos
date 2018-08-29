@@ -237,7 +237,6 @@ class RedirectsController < ApplicationController
     redirect_to('/mn/kids')
   end
 
-<<<<<<< HEAD
   def hvvdvvd
     redirect_to('/mn/kids')
   end
@@ -253,10 +252,8 @@ class RedirectsController < ApplicationController
   def hvvdvvd
     redirect_to('/mn/kids')
   end
-=======
+  
   def nep_kids
     redirect_to('/ne/kids')
   end
-
->>>>>>> Adds Nepali BAFK page
 end
