@@ -100,15 +100,23 @@ class NotificationSettings < YV::Resource
     settings.each do |n|
       setting = self.send(n.to_sym)
 
-      hash[n] = if setting.present?
-        email = (setting["email"]) ? setting["email"].to_bool : false
-        push  = (setting["push"])  ? setting["push"].to_bool : false
-        {"email" => email,"push" => push }
+      if n != "pwf_reminders"
+        hash[n] = if setting.present?
+          email = (setting["email"]) ? setting["email"].to_bool : false
+          push  = (setting["push"])  ? setting["push"].to_bool : false
+          { "email" => email,"push" => push }
+        else
+          { "email" => false,"push" => false }
+        end
       else
-        {"email" => false,"push" => false }
+        hash[n] = if setting.present?
+          email = (setting["email"]) ? setting["email"].to_bool : false
+          { "email" => email  }
+        else
+          { "email" => false }
+        end
       end
     end
-
     @attributes['notification_settings'] = hash
   end
 
