@@ -47,6 +47,11 @@
       %p= "Thank you for partnering with Hillsong Conference, SPHERES and YouVersion to help ensure that EVERYONE can experience the transforming power of the Bible in their own heart language."
       %br
 
+    - flash.each do |key, msg|
+      .row.pad-row
+        .columns.medium-12
+          %div{class: 'alert-box success radius', id: "flash_#{key}"}= msg
+
     = render partial: 'shared/gdpr_signup'
     = render partial: 'shared/facebook_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
     = render partial: 'shared/google_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
