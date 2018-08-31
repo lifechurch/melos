@@ -1,8 +1,8 @@
 class EmailsController < ApplicationController
-  
+
   layout "settings"
 
-  before_filter :force_login
+  before_filter :force_notification_token_or_login
 
   def show
     @user = current_user
