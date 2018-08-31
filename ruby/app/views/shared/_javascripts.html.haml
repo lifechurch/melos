@@ -14,9 +14,12 @@
   window.fbAsyncInit = function() {
     FB.init({
       appId      : "#{Cfg.facebook_signin_app_id}",
+      cookie     : true,
       xfbml      : true,
       version    : 'v3.1'
     });
+
+    FB.AppEvents.logPageView();
 
     setTimeout(function() {
       if (typeof fbapiStartApp === 'function') {

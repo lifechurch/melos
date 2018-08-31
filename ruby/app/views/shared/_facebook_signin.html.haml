@@ -81,8 +81,10 @@
         FB.api('/me', function(response) {
           document.getElementById('fbName').innerHTML = response.name;
           FB.api('/' + response.id + '/picture?height=96&width=96', function(response) {
-            document.getElementById('fbAvatar').src = response.data.url;
-            document.getElementById('fbAuthProfile').classList.remove('empty');
+            if (response.data) {
+              document.getElementById('fbAvatar').src = response.data.url;
+              document.getElementById('fbAuthProfile').classList.remove('empty');
+            }
           })
         })
 
