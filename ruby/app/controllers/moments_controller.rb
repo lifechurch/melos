@@ -7,7 +7,7 @@ class MomentsController < BaseMomentsController
     moment_comments_display true
 
   prepend_before_filter :mobile_redirect, only: [:index, :show]
-  before_filter :force_login, only: [:index, :related, :_cards, :introduction]
+  before_filter :force_login
   before_filter :find_moment, :resourceful_redirect, only: [:show]
 
   # TODO - optimize before filterage, especially for the #show redirect

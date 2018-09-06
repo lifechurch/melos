@@ -1,10 +1,13 @@
-- @title = @moment.moment_title
+= render partial: "moments/js_templates"
+-#
+  - @title = @moment.moment_title
 
-- content_for :sidebar do
-  = render partial: "moments/activity_sidebar", locals: {moment: @moment}
-#spinner
-%article.social-detail{"data-moment-id" => @moment.id}
-  :javascript
-    $(document).ready(function(){
-      var feed = new Moments.DetailView();
-    });
+  - content_for :sidebar do
+    = render partial: "moments/activity_sidebar", locals: {moment: @moment}
+
+  #spinner
+  %article.social-detail{"data-moment-id" => @moment.id}
+    :javascript
+      $(document).ready(function(){
+        var feed = new Moments.DetailView();
+      });
