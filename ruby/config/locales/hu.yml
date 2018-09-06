@@ -74,7 +74,7 @@ hu:
       read all: "Olvasd el az egészet"
       read less: "Olvass kevesebbet"
     share: "Megosztás"
-    add comment: "Megjegyzés hozzáfűzése"
+    add comment: "Megjegyzés hozzáadása"
     my connections: "Csatlakoztatott fiókok"
     connected as: "Kapcsolódtál a %{connection} hálózathoz mint %{username}."
     remove connection: "Távolítsd el ezt a kapcsolatot"
@@ -415,7 +415,7 @@ hu:
       friends button: "Barátok keresése"
     action:
       go to scripture: "Menj a Szentíráshoz"
-      add friend button: "Addj hozzá barátot"
+      add friend button: "Ismerősnek jelölöm"
       load more: "Több betöltése"
       like: "Tetszik"
       liked: "Kedvelte"
@@ -485,7 +485,7 @@ hu:
     form:
       remove friend button: "Barát eltávolítása"
       remove friend button title: "Távolítsa el ezt a személyt a barátaid listájáról"
-      add friend button: "Addj hozzá barátot"
+      add friend button: "Ismerősnek jelölöm"
       add friend button short: "Hozzáadás"
       add friend button title: "Bejelölöm barátnak őt: %{user}"
       accept button: "Elfogad"
