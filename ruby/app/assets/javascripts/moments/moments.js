@@ -45,6 +45,18 @@ angular.module('yv.moments', [
     templateUrl: '/single-moment-feed.tpl.html'
   })
 
+  .state('moments-highlights', {
+    url: '/highlights/:momentId',
+    controller: 'MomentCtrl',
+    templateUrl: '/single-moment-feed.tpl.html'
+  })
+
+  .state('moments-highlights-locale', {
+    url: '/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/highlights/:momentId',
+    controller: 'MomentCtrl',
+    templateUrl: '/single-moment-feed.tpl.html'
+  })
+
   .state('comment', {
     url: '/moments/:momentId/comments/:commentId',
     controller: 'MomentCtrl',
