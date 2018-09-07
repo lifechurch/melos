@@ -15,7 +15,6 @@ import audioAction from '@youversion/api-redux/lib/endpoints/audio/action'
 import bibleReference from '@youversion/api-redux/lib/batchedActions/bibleReference'
 // models
 import getBibleModel from '@youversion/api-redux/lib/models/bible'
-import getMomentsModel from '@youversion/api-redux/lib/models/moments'
 import getAudioModel from '@youversion/api-redux/lib/models/audio'
 // components
 import Header from '../features/Bible/components/header/Header'
@@ -42,25 +41,21 @@ class BibleHeader extends Component {
 	}
 
 	componentDidMount() {
-		const { usfm, version_id, language_tag } = this.state
+		const { usfm, version_id } = this.state
 		this.getBibleData(usfm, version_id)
-		// this.getVersions(language_tag)
-
 		this.recentVersions = new RecentVersions()
 		this.updateRecentVersions()
-		// this.recentVersions.syncVersions(bible.settings)
-		// this.recentVersions.onUpdate((settings) => {
-		// 	dispatch(ActionCreators.usersUpdateSettings(auth.isLoggedIn, settings))
-		// })
 		this.viewportUtils.registerListener('resize', this.updateMobileStyling)
 	}
 
 	componentWillReceiveProps(nextProps) {
 		const { usfm, version_id } = this.state
+
 		// if we're updating the usfm from props then let's get it
 		if (usfm && nextProps.usfm && this.props.usfm !== nextProps.usfm && usfm !== nextProps.usfm) {
 			this.getBibleData(nextProps.usfm, version_id)
 		}
+
 		// if we're updating the version from props then let's get it
 		if (version_id && nextProps.version_id && this.props.version_id !== nextProps.version_id && version_id !== nextProps.version_id) {
 			this.getBibleData(usfm, nextProps.version_id)
@@ -99,44 +94,9 @@ class BibleHeader extends Component {
 		}
 	}
 
-	// getVersions = (language_tag) => {
-	// 	const { dispatch } = this.props
-	// 	if (language_tag && typeof language_tag === 'string') {
-	// 		this.setState({ language_tag })
-	// 		dispatch(bibleAction({
-	// 			method: 'versions',
-	// 			params: {
-	// 				language_tag,
-	// 				type: 'all'
-	// 			}
-	// 		})).then((versions) => {
-	// 			Filter.clear('VersionStore')
-	// 			Filter.add('VersionStore', versions.versions)
-	// 		})
-	// 	}
-	// }
-
 	getBibleData = (usfm, version_id) => {
-		const { bible, dispatch, audio } = this.props
-
+		const { dispatch, audio } = this.props
 		this.getReference(usfm, version_id)
-
-		// if (!(bible && Immutable.fromJS(bible).hasIn(['languages', 'all']))) {
-		// 	dispatch(bibleAction({
-		// 		method: 'configuration',
-		// 		params: {
-		// 			type: 'all',
-		// 		}
-		// 	}))
-		// }
-		// if (version_id && !(bible && Immutable.fromJS(bible).hasIn(['versions', 'byId', version_id]))) {
-		// 	dispatch(bibleAction({
-		// 		method: 'version',
-		// 		params: {
-		// 			id: version_id,
-		// 		}
-		// 	}))
-		// }
 		if (version_id && usfm && !(audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm), version_id]))) {
 			dispatch(audioAction({
 				method: 'chapter',
@@ -157,9 +117,11 @@ class BibleHeader extends Component {
 			Filter.add('BooksStore', newVersion.books)
 			LocalStore.set('version', newVersion.id)
 		}
+
 		const versionList = Object.keys(bible.versions.byLang).reduce((acc, curr) => {
 			return Object.assign(acc, bible.versions.byLang[curr].versions)
 		}, {})
+
 		this.setState({
 			recentVersions: this.recentVersions.getVersions(versionList),
 		})
@@ -181,6 +143,7 @@ class BibleHeader extends Component {
 		if (parseInt(viewport.width, 10) <= 599) {
 			// the modal is the absolute positioned element that shows the dropdowns
 			const modalPos = this.viewportUtils && this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
+
 			// the header on mobile becomes fixed at the bottom, so we need the mobile to fill until that
 			const headerModal = this.viewportUtils && this.viewportUtils.getElement(document.getElementById('react-app-Header'))
 
@@ -231,13 +194,18 @@ class BibleHeader extends Component {
 			showChapterPicker,
 			showVersionPicker,
 			showAudio,
-			showSettings,
-			showParallel,
 			onVersionClick,
-			localizedLink,
 			dispatch,
+			onAudioComplete,
+			audioPlaying
 		} = this.props
-		const { usfm, version_id, audioPlaying, recentVersions, mobileStyle } = this.state
+
+		const {
+			usfm,
+			version_id,
+			recentVersions,
+			mobileStyle
+		} = this.state
 
 		const hasAudio = audio && Immutable.fromJS(audio).hasIn(['chapter', chapterifyUsfm(usfm), `${version_id}`])
 		const isChapter = usfm && isVerseOrChapter(usfm).isChapter
@@ -256,6 +224,7 @@ class BibleHeader extends Component {
 		this.ref = bible && bible.pullRef(usfm, version_id)
 			? bible.pullRef(usfm, version_id)
 			: null
+
 		this.version = bible && Immutable.fromJS(bible).hasIn(['versions', 'byId', `${version_id}`, 'response'])
 			? Immutable.fromJS(bible).getIn(['versions', 'byId', `${version_id}`, 'response']).toJS()
 			: null
@@ -267,162 +236,50 @@ class BibleHeader extends Component {
 			>
 				{
 					!showChapterPicker
-						&& this.version
-						&& this.version.books
-						&& (
-							<div className='ref-heading'>
-								{
-									getReferencesTitle({
-										bookList: this.version.books,
-										usfmList: usfm.split('+')
-									}).title
-								}
-							</div>
-						)
+					&& this.version
+					&& this.version.books
+					&& (
+						<div className='ref-heading'>
+							{
+								getReferencesTitle({
+									bookList: this.version.books,
+									usfmList: usfm.split('+')
+								}).title
+							}
+						</div>
+					)
 				}
-				{/* {
-					showChapterPicker &&
-					<ChapterPicker
-						{...this.props}
-						chapter={bible.chapter}
-						books={bible.books.all}
-						bookMap={bible.books.map}
-						selectedLanguage={this.state.selectedLanguage}
-						initialBook={this.state.selectedBook}
-						initialChapter={this.state.selectedChapter}
-						versionID={this.state.selectedVersion}
-						versionAbbr={bible.version.local_abbreviation}
-						initialInput={bible.chapter.reference.human}
-						initialChapters={this.chapters}
-						cancelDropDown={this.state.chapDropDownCancel}
-						onRefSelect={onRefSelect}
-						ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
-						linkBuilder={(version, usfm, abbr) => {
-							return `${buildBibleLink(version, usfm, abbr)}${hasParallel ? `?parallel=${bible.parallelVersion.id}` : ''}`
-						}}
-					/>
-				} */}
 				{
 					showVersionPicker &&
-						<VersionPicker
-							extraClassNames='main-version-picker-container'
-							version_id={this.version && this.version.id}
-							recentVersions={recentVersions}
-							selectedChapter={usfm}
-							// getVersions={this.getVersions}
-							onClick={
+					<VersionPicker
+						extraClassNames='main-version-picker-container'
+						version_id={this.version && this.version.id}
+						recentVersions={recentVersions}
+						selectedChapter={usfm}
+						// getVersions={this.getVersions}
+						onClick={
 								onVersionClick
 									? ({ id }) => {
 										onVersionClick(id)
 									}
 									: null
-							}
-							ref={(v) => { this.versionPickerInstance = v }}
-							dispatch={dispatch}
-						/>
-				}
-				{/* {
-					!hasParallel &&
-						<Link
-							to={buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation)}
-							query={{ parallel: LocalStore.get('parallelVersion') || bible.version.id }}
-							className='hide-for-small'
-							style={{
-								display: 'flex',
-								flexDirection: 'row',
-								alignItems: 'center',
-								marginRight: 8,
-								lineHeight: 1
-							}}
-						>
-							<Parallel
-								height={13}
-								width={13}
-							/>
-							<span
-								style={{
-									fontSize: 12,
-									color: '#979797',
-									paddingLeft: 5,
-									paddingTop: 2
-								}}
-							>
-								<FormattedMessage id='Reader.header.parallel' />
-							</span>
-						</Link>
-				}
-				{
-					hasParallel &&
-						<VersionPicker
-							{...this.props}
-							version={bible.parallelVersion}
-							languages={bible.languages.all}
-							versions={bible.versions}
-							recentVersions={this.state.recentVersions}
-							languageMap={bible.languages.map}
-							selectedChapter={this.state.selectedChapter}
-							alert={this.state.chapterError}
-							getVersions={this.getVersions}
-							cancelDropDown={this.state.parallelDropDownCancel}
-							extraClassNames='hide-for-small parallel-version-picker-container'
-							ref={(vpicker) => { this.parallelVersionPickerInstance = vpicker }}
-							linkBuilder={(version, usfm, abbr) => {
-								return `${buildBibleLink(bible.version.id, usfm, abbr)}?parallel=${version}`
-							}}
-						/>
-				} */}
-				{
-					showAudio &&
-						<AudioPopup
-							audio={currentAudio}
-							enabled={hasAudio}
-							// onAudioComplete={onAudioComplete}
-							startTime={!isChapter && hasAudio ? timing.startTime : 0}
-							stopTime={!isChapter && hasAudio ? timing.endTime : null}
-							playing={audioPlaying}
-							hosts={hosts}
-						/>
-				}
-				{/* {
-					showSettings &&
-					<Settings
-						onChange={this.handleSettingsChange}
-						initialFontSize={fontSize}
-						initialFontFamily={fontFamily}
-						initialShowFootnotes={showFootnotes}
-						initialShowVerseNumbers={showVerseNumbers}
+						}
+						ref={(v) => { this.versionPickerInstance = v }}
+						dispatch={dispatch}
 					/>
 				}
 				{
-					hasParallel &&
-						<Link
-							to={buildBibleLink(this.state.selectedVersion, bible.chapter.reference.usfm, bible.version.local_abbreviation)}
-							className='hide-for-small'
-							style={{
-								display: 'flex',
-								flexDirection: 'row',
-								alignItems: 'center',
-								marginLeft: 15,
-								lineHeight: 1
-							}}
-						>
-							<XMark
-								className='circle-border'
-								height={13}
-								width={13}
-							/>
-							<span
-								style={{
-									fontSize: 12,
-									color: '#979797',
-									paddingLeft: 5,
-									paddingTop: 2
-								}}
-							>
-								<FormattedMessage id='Reader.header.parallel exit' />
-							</span>
-						</Link>
-				} */}
+					showAudio &&
+					<AudioPopup
+						audio={currentAudio}
+						enabled={hasAudio}
+						onAudioComplete={onAudioComplete}
+						startTime={!isChapter && hasAudio ? timing.startTime : 0}
+						stopTime={!isChapter && hasAudio ? timing.endTime : null}
+						playing={audioPlaying}
+						hosts={hosts}
+					/>
+				}
 				<style>
 					{ mobileStyle }
 				</style>
@@ -443,11 +300,10 @@ BibleHeader.propTypes = {
 	showVersionPicker: PropTypes.bool,
 	customHeaderClass: PropTypes.string,
 	language_tag: PropTypes.string,
-	showSettings: PropTypes.bool,
-	showParallel: PropTypes.bool,
 	onVersionClick: PropTypes.func,
 	dispatch: PropTypes.func.isRequired,
-	localizedLink: PropTypes.func.isRequired,
+	onAudioComplete: PropTypes.func,
+	audioPlaying: PropTypes.bool
 }
 
 BibleHeader.defaultProps = {
@@ -461,9 +317,9 @@ BibleHeader.defaultProps = {
 	version_id: null,
 	customHeaderClass: null,
 	language_tag: null,
-	showSettings: true,
-	showParallel: true,
 	onVersionClick: null,
+	onAudioComplete: () => {},
+	audioPlaying: false
 }
 
 function mapStateToProps(state) {

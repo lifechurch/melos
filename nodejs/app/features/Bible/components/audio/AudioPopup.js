@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-handler-names */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
@@ -46,7 +47,7 @@ class AudioPopup extends Component {
 
 
 	render() {
-		const { enabled, audio, hosts, startTime, stopTime } = this.props
+		const { enabled, audio, hosts, startTime, stopTime, onAudioComplete, playing } = this.props
 		const { percentComplete, hasStandalone, isOpen } = this.state
 		// <a onClick={this.openInNewWindow}><FormattedMessage id="Reader.header.audio label" /></a>
 		return (
@@ -59,16 +60,16 @@ class AudioPopup extends Component {
 							percentComplete={percentComplete}
 							width={35}
 							height={35}
-						/>
+      />
 					}
 					onClick={this.triggerClick}
-				/>
+    />
 				<DropdownTransition
 					classes='audio-popup-modal'
 					exemptClass='audio-popup'
 					show={isOpen}
 					onOutsideClick={this.closeDropdown}
-				>
+    >
 					<div className='header'>
 						<a tabIndex={0} className='cancel' onClick={this.closeDropdown}>
 							<FormattedMessage id='Reader.header.cancel' />
@@ -77,6 +78,8 @@ class AudioPopup extends Component {
 					</div>
 					<div className='body'>
 						<AudioPlayer
+							onAudioComplete={onAudioComplete}
+							playing={playing}
 							audio={audio}
 							hosts={hosts}
 							startTime={startTime}
@@ -98,6 +101,8 @@ AudioPopup.propTypes = {
 	enabled: PropTypes.bool.isRequired,
 	startTime: PropTypes.number,
 	stopTime: PropTypes.number,
+	onAudioComplete: PropTypes.func,
+	playing: PropTypes.bool
 }
 
 AudioPopup.defaultProps = {
@@ -105,6 +110,8 @@ AudioPopup.defaultProps = {
 	hosts: {},
 	startTime: 0,
 	stopTime: null,
+	onAudioComplete: () => {},
+	playing: false
 }
 
 export default AudioPopup
