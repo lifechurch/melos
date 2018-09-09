@@ -87,7 +87,7 @@ mn:
     twitter:
       name: "Twitter"
     facebook:
-      name: "Facebook"
+      name: "Фэйсбүүк"
       errors:
         expired access: "Facebook-ээр нэвтрэх эрх дууссан. Холболтоо шилжүүлэх эсвэл Facebook-ээр дахин холбогд."
   language names:
