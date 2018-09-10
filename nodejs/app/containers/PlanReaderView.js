@@ -6,18 +6,22 @@ import { push } from 'react-router-redux'
 import isFinalSegmentToComplete from '@youversion/utils/lib/readingPlans/isFinalSegmentToComplete'
 import isFinalPlanDay from '@youversion/utils/lib/readingPlans/isFinalPlanDay'
 import mapTioIndices from '@youversion/utils/lib/readingPlans/mapTIOIndices'
+
+// utils
+import Routes from '@youversion/utils/lib/routes/routes'
+
 // actions
 import subscriptionData, { subscriptionDayUpdate } from '@youversion/api-redux/lib/batchedActions/subscriptionData'
+
 // models
 import getPlansModel from '@youversion/api-redux/lib/models/readingPlans'
 import getSubscriptionModel from '@youversion/api-redux/lib/models/subscriptions'
+
 // components
 import BibleWidget from './BibleWidget'
 import TalkItOver from './TalkItOver'
 import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
 import PlanDevo from '../features/PlanDiscovery/components/planReader/PlanDevo'
-// utils
-import Routes from '@youversion/utils/lib/routes/routes'
 
 
 class PlanReaderView extends Component {
@@ -49,15 +53,6 @@ class PlanReaderView extends Component {
 		}
 	}
 
-	onAudioComplete = () => {
-		const { dispatch } = this.props
-
-		this.onComplete()
-		dispatch(push())
-			// if audio has completed a ref then keep it playing for the next one
-		this.setState({ audioPlaying: true })
-	}
-
 	onComplete = () => {
 		const { params: { day, subscription_id }, dispatch } = this.props
 
@@ -72,6 +67,15 @@ class PlanReaderView extends Component {
 			day,
 			isPlanComplete,
 		}))
+	}
+
+	handleAudioComplete = () => {
+		const { dispatch } = this.props
+		const { next } = this.buildNavLinks()
+		this.onComplete()
+		this.setState({ audioPlaying: true }, () => {
+			dispatch(push(next))
+		})
 	}
 
 	localizedLink = (link) => {
@@ -183,6 +187,7 @@ class PlanReaderView extends Component {
 
 	render() {
 		const { params: { day }, dispatch, plan, subscription } = this.props
+		const { audioPlaying } = this.state
 
 		this.buildData()
 		const { previous, next, subLink } = this.buildNavLinks()
@@ -200,6 +205,8 @@ class PlanReaderView extends Component {
 				case 'reference':
 					readerContent = (
 						<BibleWidget
+							audioPlaying={audioPlaying}
+							onAudioComplete={this.handleAudioComplete}
 							customHeaderClass='plan-reader-heading'
 							usfm={this.segment.content}
 							showChapterPicker={false}

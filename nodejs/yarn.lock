@@ -98,13 +98,13 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-4.0.0.tgz#9a93ffa4ee1329e85166278a5ed99f81dc4c8362"
 
-"@youversion/api-redux@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@youversion/api-redux/-/api-redux-0.5.0.tgz#50bea912d895f8e6f156febfd211950648517037"
+"@youversion/api-redux@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@youversion/api-redux/-/api-redux-0.5.2.tgz#7498415330918412660ab191bd2a3a205d12fa71"
   dependencies:
-    "@youversion/js-api" "^1.1.0"
+    "@youversion/js-api" "^1.1.2"
     "@youversion/melos" "^0.0.27"
-    "@youversion/token-storage" "^0.0.58"
+    "@youversion/token-storage" "^0.0.59"
     "@youversion/utils" "^1.0.53"
     babelify "^7.3.0"
     idb "^2.0.4"
@@ -127,11 +127,11 @@
     reselect "^3.0.0"
     universal-cookie "^2.0.8"
 
-"@youversion/js-api@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@youversion/js-api/-/js-api-1.1.0.tgz#9a37584e056eee74d5aed17be8ead4e0b241aabe"
+"@youversion/js-api@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@youversion/js-api/-/js-api-1.1.2.tgz#3774bf4043ddfe944b8c432415f38614b28741c9"
   dependencies:
-    "@youversion/token-storage" "^0.0.58"
+    "@youversion/token-storage" "^0.0.59"
     base-64 "^0.1.0"
     bluebird "^3.5.1"
     body-parser "^1.13.3"
@@ -163,9 +163,9 @@
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@youversion/stringer-things/-/stringer-things-0.0.3.tgz#c21fb839e88a4ab62763a5c46e4001945d4ffcbf"
 
-"@youversion/token-storage@^0.0.58":
-  version "0.0.58"
-  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.58.tgz#9e13d3dc8e5b2d082090774000bb50ec0919c98f"
+"@youversion/token-storage@^0.0.59":
+  version "0.0.59"
+  resolved "https://registry.yarnpkg.com/@youversion/token-storage/-/token-storage-0.0.59.tgz#b0beb5d57e6bed821c48c836a88c3d91f80ae039"
   dependencies:
     react-cookie "^0.4.5"
 

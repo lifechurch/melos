@@ -35,6 +35,8 @@ class AudioPlayer extends Component {
 			{ value: 2, label: '2x' }
 		]
 
+		const playbackRate = LocalStore.getIn('audio.player.playbackRate') || 1
+
 		if (IS_STANDALONE) {
 			this.state = Object.assign({}, LocalStore.get('standaloneAudioPlayerState'), {
 				initialized: false,
@@ -53,7 +55,7 @@ class AudioPlayer extends Component {
 				stopTime: stopTime || null,
 				duration: 0,
 				percentComplete: 0,
-				playbackRate: LocalStore.getIn('audio.player.playbackRate') || 1,
+				playbackRate,
 				hasStandalone: hasStandalone || false
 			}
 		}
@@ -89,7 +91,7 @@ class AudioPlayer extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		const { audio, startTime, stopTime } = this.props
+		const { audio, startTime, stopTime, playing: playingProp } = this.props
 		const { playing } = this.state
 		const prevaudioRef = 	prevProps.audio && 'download_urls' in prevProps.audio ?
 													prevProps.audio.download_urls[Object.keys(prevProps.audio.download_urls)[0]]
@@ -99,7 +101,7 @@ class AudioPlayer extends Component {
 											: null
 
 		if (audioRef !== prevaudioRef && audioRef !== null && typeof audioRef !== 'undefined') {
-			this.handlePlayerSrcLoad(audioRef, playing)
+			this.handlePlayerSrcLoad(audioRef, playing || playingProp)
 		}
 		if (startTime !== prevProps.startTime) {
 			this.player.currentTime = startTime
@@ -107,6 +109,27 @@ class AudioPlayer extends Component {
 				currentTime: startTime,
 				stopTime,
 			})
+		}
+	}
+
+	componentWillUnmount() {
+		if (this.player) {
+			this.player.pause()
+
+			this.player.oncanplaythrough = null
+			this.player.onerror = null
+			this.player.onplay = null
+			this.player.onpause = null
+			this.player.ontimeupdate = null
+			this.player.ondurationchange = null
+
+			const srcs = this.player.querySelectorAll('source')
+			for (let i = 0; i < srcs.length; i++) {
+				srcs[i].src = null
+			}
+
+			this.player.load()
+			this.player = null
 		}
 	}
 
@@ -134,12 +157,11 @@ class AudioPlayer extends Component {
 	handlePlayerLoaded(player) {
 		if (typeof player !== 'undefined' && player !== null) {
 			const { currentTime, playing } = this.state
-
 			this.player = player
 			this.player.onerror = this.handlePlayerError
 			this.player.onplay = this.handlePlayerPlaying
 			this.player.onpause = this.handlePlayerPause
-			this.player.playbackRate = this.state.playbackRate || 1
+			this.player.playbackRate = this.state.playbackRate
 			this.player.ontimeupdate = this.handlePlayerTimeUpdate
 			this.player.ondurationchange = this.handlePlayerDurationChange
 			this.player.currentTime = currentTime || 0
@@ -188,36 +210,43 @@ class AudioPlayer extends Component {
 		const { stopTime } = this.state
 		let percentComplete = 0
 
+		if (this.player) {
+			this.player.playbackRate = this.state.playbackRate
+		}
+
 		// if we have a stop time, let's stop when we reach it!
-		if (stopTime && this.player.currentTime >= stopTime) {
+		if (stopTime && this.player && this.player.currentTime >= stopTime) {
 			this.handlePlayerPauseRequest()
 			this.handleAudioCompleted()
 		}
 
-		if (this.player.duration) {
+		if (this.player && this.player.duration) {
 			percentComplete = (this.player.currentTime / this.player.duration) * 100
 		}
 
-		if (typeof onTimeChange === 'function') {
+		if (this.player && typeof onTimeChange === 'function') {
 			onTimeChange({
 				currentTime: this.player.currentTime,
 				percentComplete
 			})
 		}
 
-		if (IS_STANDALONE) {
+		if (this.player && IS_STANDALONE) {
 			window.opener.postMessage({ name: POST_MESSAGE_EVENTS.STANDALONE_TIME_UPDATE, value: this.player.currentTime }, this.POST_MESSAGE_URL_STANDALONE)
 		}
 
-		this.setState({
-			currentTime: Math.floor(this.player.currentTime),
-			percentComplete
-		})
+		if (this.player) {
+			this.setState({
+				currentTime: Math.floor(this.player.currentTime),
+				percentComplete
+			})
+		}
+
 	}
 
 	handlePlayerDurationChange() {
 		let percentComplete = 0
-		if (this.player.duration) {
+		if (this.player && this.player.duration) {
 			percentComplete = (this.player.currentTime / this.player.duration) * 100
 		}
 		this.setState({
@@ -227,7 +256,7 @@ class AudioPlayer extends Component {
 	}
 
 	handlePlayerSeekToRequest(s) {
-		if (this.player.duration > s) {
+		if (this.player && this.player.duration > s) {
 			this.player.currentTime = s
 		}
 	}
@@ -304,7 +333,8 @@ class AudioPlayer extends Component {
 
 	render() {
 		const { audio } = this.props
-		const { playing, playbackRate, currentTime, duration, percentComplete, hasStandalone } = this.state
+		const { playing } = this.state
+		const { playbackRate, currentTime, duration, percentComplete, hasStandalone } = this.state
 
 		if (audio === null || typeof audio === 'undefined' || typeof audio.download_urls !== 'object') {
 			return null
@@ -316,7 +346,7 @@ class AudioPlayer extends Component {
 				return null
 			})
 
-			const button = playing ? (<PauseButton onClick={this.handlePlayerPauseRequest} />) : (<PlayButton onClick={this.handlePlayerPlayRequest} />)
+			const button = (playing) ? (<PauseButton onClick={this.handlePlayerPauseRequest} />) : (<PlayButton onClick={this.handlePlayerPlayRequest} />)
 
 			const overlay = hasStandalone ? (
 				<div className='audio-player-overlay'>
@@ -356,13 +386,21 @@ AudioPlayer.propTypes = {
 	onTimeChange: PropTypes.func,
 	hasStandalone: PropTypes.bool,
 	onResumeFromStandalone: PropTypes.func,
-	hosts: PropTypes.object
+	hosts: PropTypes.object,
+	playing: PropTypes.bool,
+	onAudioComplete: PropTypes.func
 }
 
 AudioPlayer.defaultProps = {
 	audio: {},
 	hasStandalone: false,
-	hosts: {}
+	hosts: {},
+	startTime: 0,
+	stopTime: 0,
+	onTimeChange: () => {},
+	onResumeFromStandalone: () => {},
+	playing: false,
+	onAudioComplete: () => {}
 }
 
 export default AudioPlayer

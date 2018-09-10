@@ -67,12 +67,16 @@ class BibleWidget extends Component {
 			showChapterPicker,
 			showVersionPicker,
 			customHeaderClass,
+			onAudioComplete,
+			audioPlaying
 		} = this.props
 		const { usfm, version_id } = this.state
 
 		return (
 			<div className='bible'>
 				<BibleHeader
+					audioPlaying={audioPlaying}
+					onAudioComplete={onAudioComplete}
 					customHeaderClass={customHeaderClass}
 					showAudio={showAudio}
 					showVersionPicker={showVersionPicker}
@@ -116,6 +120,8 @@ BibleWidget.propTypes = {
 	customHeaderClass: PropTypes.string,
 	language_tag: PropTypes.string,
 	serverLanguageTag: PropTypes.string.isRequired,
+	onAudioComplete: PropTypes.func,
+	audioPlaying: PropTypes.bool
 }
 
 BibleWidget.defaultProps = {
@@ -130,6 +136,8 @@ BibleWidget.defaultProps = {
 	version_id: null,
 	customHeaderClass: null,
 	language_tag: null,
+	onAudioComplete: () => {},
+	audioPlaying: false
 }
 
 function mapStateToProps(state) {
