@@ -437,8 +437,8 @@ id:
   comments:
     view all N:
       other: "Lihat semua %{count} komentar"
-    post comment: "Poskan komentar"
-    create success: "Berhasil! Komentar Anda telah ditampilkan."
+    post comment: "Kirim Komentar"
+    create success: "Berhasil! Komentar Anda sudah terkirim."
     create failure: "Komentar tidak dapat diposkan"
     destroy success: "Komentar sudah dihapus"
     destroy failure: "Komentar tidak dapat dihapus"
