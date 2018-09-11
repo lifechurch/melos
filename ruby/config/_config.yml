@@ -44,7 +44,7 @@ common:
   nodejs_ping_port: "3000"
   google_signin_client_id: "201895780642-ln00r1cev5fp6u3eqpq07olmi2dabmkl.apps.googleusercontent.com"
   google_signin_scope: "profile email"
-  facebook_signin_scope: "public_profile,email,publish_to_groups,manage_pages"
+  facebook_signin_scope: "public_profile,email,publish_to_groups,manage_pages,groups_access_member_info"
   facebook_signin_app_id: "117344358296665"
   facebook_signin_app_secret: "8cc85686e4ff71fe0ee8de801dd5d7f3"
   # Sentry/Raven DSN defaults to "YouVersion Web / Production" (historically):
