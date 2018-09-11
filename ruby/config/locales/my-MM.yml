@@ -76,7 +76,7 @@ my-MM:
     twitter:
       name: "တြီတာ"
     facebook:
-      name: "Facebook"
+      name: "ေဖ့စ္ဘြတ္"
       errors:
         expired access: "ေဖ့စ္ဘြတ္သို႔ခ်ိတ္ဆက္ထားသည့္သင္၏တိုကင္သက္တမ္းကုန္ပါၿပီ။  သင္၏ကြန္ရက္ကိုဖယ္ရွားၿပီးမွ ေဖ့စ္ဘြတ္ထဲသို႔ျပန္ဝင္ပါ။"
   language names:
