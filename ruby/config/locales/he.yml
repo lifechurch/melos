@@ -109,7 +109,7 @@ he:
     twitter:
       name: "טוויטר"
     facebook:
-      name: "Facebook"
+      name: "פייסבוק"
       errors:
         expired access: "הגישה שלך לפייסבוק אינה בתוקף. אנא הסר את החיבור והתחבר מחדש לפייסבוק."
   language names:
