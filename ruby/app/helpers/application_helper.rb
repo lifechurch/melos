@@ -175,9 +175,49 @@ module ApplicationHelper
   def i18n_kids_whitelist
     # the following localizations will allow translation for the kids page
     # the others will default to en
-    [ :en, :"en-GB", :es, :"zh-CN", :"zh-TW", :ko, :pt, :ru, :nl, :de, :fr, :ar,
-      :id, :tr, :fa, :ja, :af, :tl, :ur, :th, :it, :vi, :hi, :pl, :ro, :fi,
-      :"zh-HK", :sv, :uk, :el, :bn, :no, :mn, :zu, :ta, :sw, :ms, :"pt-PT", :be, :ne]
+    [
+      :af,
+      :ar,
+      :be,
+      :bn,
+      :de,
+      :el,
+      :en,
+      :"en-GB",
+      :es,
+      :fa,
+      :fi,
+      :fr,
+      :hi,
+      :id,
+      :it,
+      :ja,
+      :ka,
+      :ko,
+      :mn,
+      :ms,
+      :ne,
+      :nl,
+      :no,
+      :pl,
+      :pt,
+      :"pt-PT",
+      :ro,
+      :ru,
+      :sv,
+      :sw,
+      :ta,
+      :th,
+      :tl,
+      :tr,
+      :uk,
+      :ur,
+      :vi,
+      :"zh-CN",
+      :"zh-HK",
+      :"zh-TW",
+      :zu
+    ]
   end
 
   def i18n_events_whitelist
