@@ -76,7 +76,7 @@ th:
     twitter:
       name: "ทวีตเตอร์"
     facebook:
-      name: "Facebook"
+      name: "เฟซบุ๊ค"
       errors:
         expired access: "การเข้าถึงของคุณถูกระงับโดยเฟสบุ๊ค. โปรดนำการเชื่อมต่อของคุณออกและลองเชื่อมต่อไปยังเฟสบุ๊คใหม่"
   language names:
