@@ -1,10 +1,10 @@
 it:
   features:
     bible:
-      about: "Informazione"
+      about: "Informazioni"
       audio: "Audio"
       book: "Libro"
-      bible language: "Lingua Bibbia"
+      bible language: "Lingua della Bibbia"
       blog: "Blog"
       cancel: "Annulla"
       change language: "Cambia Lingua"
@@ -36,4 +36,4 @@ it:
       version learn more: "Ulteriori Informazioni Su %{version_name}"
       versions: "Versioni"
       videos: "Video"
-      volunteer: "Volontari"
+      volunteer: "Iscriviti come Volontario"

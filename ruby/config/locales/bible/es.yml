@@ -12,7 +12,7 @@ es:
       cta: "Descargar la Biblia App para Niños"
       donate: "Donar (EEUU)"
       events: "Eventos"
-      explore by verse: "Explore%{chapter_name} por versículo"
+      explore by verse: "Buscar en%{chapter_name} por versículo"
       help: "Ayuda"
       hide: "Oculto"
       home: "Inicio"
