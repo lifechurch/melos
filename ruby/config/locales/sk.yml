@@ -65,28 +65,28 @@ sk:
   social:
     intro page:
       main heading: "Rozhovory a objavy"
-      main description: "Nový spôsob objavovania Biblie s dôvernými priateľmi"
+      main description: "Nový spôsob objavovania Biblie s dôveryhodnými priateľmi"
       moment:
-        user aaron: "Adam Sekera"
-        user andy: "Andrej Riška"
+        user aaron: "Michal Kováč"
+        user andy: "Ján Horváth"
         timestamp: "pred 5 dňami"
-        title: "si pridal Žalm 31:8 medzi záložky"
-        verse: "Plesám a teším sa, že si milosrdný, lebo si zhliadol na moju poníženosť. Spoznal si tieseň mojej duše."
-        reference: "Žalm 31:8"
+        title: "si pridal Žalm 31,8 medzi svoje záložky"
+        verse: "Smiem jasať a radovať sa z tvojej milosti. Zhliadol si na moju biedu, vedel si o mne, keď som bol v duševnej tiesni."
+        reference: "Žalm 31,8"
         discover:
-          copy: "Objavujte a učte sa s vašimi priateľmi pridávaním zvyýraznení, záložiek, či poznámok."
+          copy: "Objavujte a študujte s vašimi priateľmi cez zvýraznenia, záložky či poznámky."
           button: "Kde môžem začať?"
         share:
           copy: "Zdieľajte úprimné rozhovory o Písme."
           button: "Začnite tým, že si nájdete zopár priateľov."
         likes:
-          info: "a 4 ďalší označili, že sa im to páči"
+          info: "a 4 ďalším sa to páči"
         comments:
           first:
-            text: "To som dnes naozaj potreboval počuť, vďaka. Stretnime sa niekedy!"
+            text: "Toto som dnes naozaj potreboval počuť; vďaka. Stretnime sa niekedy!"
             time: "asi pred 3 hodinami"
           second:
-            text: "Amen, ja tiež. Posielam ti email."
+            text: "Amen, aj ja. Posielam ti email."
             time: "asi pred 27 minútami"
           field placeholder: "Napísať komentár..."
     widget:
@@ -94,12 +94,12 @@ sk:
       no activity yet: "Zatiaľ nebola žiadna aktivita."
     moment:
       read all: "Čítať všetko"
-      read less: "Skryť"
+      read less: "Čítať menej"
     share: "Zdieľať"
     add comment: "Pridať komentár"
-    my connections: "Prepojené účty"
+    my connections: "Pripojené účty"
     connected as: "Ste pripojený k službe %{connection} ako %{username}."
-    remove connection: "Odstrániť toto prepojenie"
+    remove connection: "Odstrániť toto pripojenie"
     connection friends: "Tu sú niektorí používatelia YouVersion, ktorých máte pridaných v službe %{connection}:"
     errors:
       no friends: "Žiadny z vašich %{connection} priateľov ešte nie je zaregistrovaný na YouVersion."
@@ -168,7 +168,7 @@ sk:
       description: "Prineste si krásu a pravdu Biblie do každodenného života. S aplikáciou Biblia od YouVersion môžete čítať, pozerať, počúvať a zdieľať Božie Slovo na vašom smartfóne či tablete a online na Bible.com."
     connections:
       index:
-        title: "Prepojené účty"
+        title: "Pripojené účty"
   now: "Teraz"
   select dropdown: "--Zvoľte si--"
   celebrating 50MM: "Oslavujeme 50 miliónov inštalacií našej aplikácie!"
@@ -645,7 +645,7 @@ sk:
     picture: "Obrázok"
     edit picture: "Zmeniť obrázok"
     edit notifications: "Spravovať notifikácie"
-    edit connections: "Prepojené účty"
+    edit connections: "Pripojené účty"
     edit devices: "Pripojené zariadenia"
     vod_subscriptions: "Odoberanie Verša dňa"
     vod_subscription success: "Úspešne ste aktualizovali vaše odoberanie Verša dňa!"
