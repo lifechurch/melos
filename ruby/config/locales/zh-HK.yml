@@ -1621,8 +1621,8 @@ zh-HK:
         choose: "選擇內容，開始創建。"
         needHelp: "需要協助嗎？"
         title: "互動活動內容"
-        previous: "← Previous: Locations & Times"
-        next: "Next: Preview →"
+        previous: "← 上一頁：地點與時間"
+        next: "下一頁：預覽 →"
       EventEditDetails:
         title: "互動活動細節"
       EventEditLocationContainer:
