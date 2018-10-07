@@ -10,7 +10,7 @@ sk:
         many: "asi pred %{count} hodinami"
         other: "asi pred %{count} hodinami"
       about_x_months:
-        one: "asi pre %{count} mesiacom"
+        one: "asi pred %{count} mesiacom"
         few: "asi pred %{count} mesiacmi"
         many: "asi pred %{count} mesiacmi"
         other: "asi pred %{count} mesiacmi"
@@ -24,7 +24,7 @@ sk:
         few: "takmer pred %{count} rokmi"
         many: "takmer pred %{count} rokmi"
         other: "takmer pred %{count} rokmi"
-      half_a_minute: "pred polminútou"
+      half_a_minute: "pred pol minútou"
       less_than_x_minutes:
         one: "pred menej ako %{count} minútou"
         few: "pred menej ako %{count} minútami"
