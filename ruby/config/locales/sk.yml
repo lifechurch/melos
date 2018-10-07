@@ -102,16 +102,16 @@ sk:
     remove connection: "Odstrániť toto pripojenie"
     connection friends: "Tu sú niektorí používatelia YouVersion, ktorých máte pridaných v službe %{connection}:"
     errors:
-      no friends: "Žiadny z vašich %{connection} priateľov ešte nie je zaregistrovaný na YouVersion."
-      reset connection: "Prepáčte, vyskytla sa chyba. Prosím odstráňte toto pripojenie a znova ho pridajte."
+      no friends: "Žiadny z vašich %{connection} priateľov nie je doposiaľ zaregistrovaný na YouVersion."
+      reset connection: "Prepáčte, vyskytla sa chyba. Prosím, odstráňte toto pripojenie a skúste ho pridať nanovo."
     email:
-      name: "E-mail"
+      name: "Email"
     twitter:
       name: "Twitter"
     facebook:
       name: "Facebook"
       errors:
-        expired access: "Zapamätané prihlásenie k Facebooku vypršalo. Odstráňte prosím prepojenie a prihláste sa k Facebooku znova."
+        expired access: "Zapamätané prihlásenie k Facebooku vypršalo. Odstráňte, prosím, pripojenie a prihláste sa k Facebooku znova."
   language names:
     arabic: "Arabčina"
     bulgarian: "Bulharčina"
@@ -144,18 +144,18 @@ sk:
     users password length: "Vaše heslo musí mať aspoň 6 znakov."
     users password less than minimum value 6: "Vaše heslo musí mať aspoň 6 znakov."
     users password required: "Musíte zadať heslo."
-    user id users not found: "Meno používateľa je neplatné"
+    user id users not found: "Meno používateľa je neplatné."
     users username alpha numeric extra: "Prihlasovacie meno môže obsahovať písmená, čísla a pomlčky."
     users username not available: "Vami zvolené prihlasovacie meno nie je dostupné."
     users username or password invalid: "Zadané prihlasovacie meno alebo heslo je neplatné."
     users username required: "Musíte zadať prihlasovacie meno."
-    users xor username email token xor required: "Musíte zadať meno používateľa alebo emailovú adresu."
+    users xor username email token xor required: "Musíte zadať prihlasovacie meno alebo emailovú adresu."
     users first name required: "Musíte zadať meno."
     users last name required: "Musíte zadať priezvisko."
     moments content required: "Obsah nemôže byť prázdny."
     users auth password required: "Musíte zadať heslo."
   meta:
-    best educational app: "Najlepšia vzdelávacia apka"
+    best educational app: "Najlepšia vzdelávacia aplikácia"
     100million:
       title: "Začína to 100 miliónmi"
       description: "Aplikácia Biblia bola nainštalovaná už takmer 100 miliónov krát, čo je významná udalosť! Ale my iba začíname. Stiahnite si bezplatnú aplikáciu Biblia ešte dnes - a potom ju zdieľajte s priateľmi. Poďme spolu tvoriť dejiny."
@@ -355,7 +355,7 @@ sk:
     frequently asked questions text: "Nájdite odpovede na všetko, čo potrebujete vedieť o tom, ako začať s YouVersion udalosťami."
     share: "Zdieľať"
     tweet text: "Videli ste už udalosti v aplikácii Biblia od @YouVersion? Osnovy kázní, oznamy, odkazy na online darovanie a oveľa viac! http://bible.com/features/events"
-    email: "E-mail"
+    email: "Email"
     faq question 1: "Čo sú udalosti?"
     faq answer 1: "Udalosti sú bezplatnou funkciou v rámci aplikácie Biblia od YouVersion, ktorá umožňuje užívateľom pridať sa k zborovým udalostiam, ktoré chcú navštíviť. Cirkevné zbory sa môžu prihlásiť na events.bible.com prostredníctvom bezplatného YouVersion účtu a vytvoriť vlastné udalosti, ktoré sa zobrazia v aplikácii Biblia. Bezplatné administratívne nástroje udalostí umožňujú cirkevnému zboru jednoducho zdieľať kľúčové body kázní, odkazy na Bibliu, umenie, externé odkazy, dôležité zborové správy a mnoho iného. A keď už svoju udalosť uložíte v systéme, užívatelia aplikácie Biblia, ktorí vyhľadávajú v udalostiach vo vašej blízkosti, budú môcť nájsť aj tú vašu."
     faq question 2: "Prečo by v našom zbore chceli používať funkcionalitu udalostí?"
@@ -608,7 +608,7 @@ sk:
     agreement: "Súhlasím s %{terms_link} YouVersion."
     agree: "Zaregistrovaním sa, súhlasíte s <a href='%{terms_link}' target='_self'>podmienkami</a> a <a href='%{privacy_link}' target='_self'>zásadami na ochranu osobných údajov</a>."
     terms and conditions: "podmienkami používania"
-    email: "E-mail"
+    email: "Email"
     mobile: "Mobil"
     facebook sign up success: "Výborne! Autorizovali ste prístup Facebookom. Teraz si zvoľte prihlasovacie meno a heslo na YouVersion."
     register: "Zaregistrovať"
@@ -1098,7 +1098,7 @@ sk:
     contact header: "Kontaktné informácie pre tlač"
     contact header 2: "Na webe"
     phone: "Telefón"
-    email: "E-mail"
+    email: "Email"
     blog: "YouVersion blog"
     facebook: "YouVersion na Facebooku"
     twitter: "YouVersion na Twitteri"
@@ -1409,7 +1409,7 @@ sk:
       volunteer: "Dobrovoľníci"
     unsubscribe:
       about: "Maj pod kontrolou e-maily, ktoré dostávaš od YouVersion. Mobilné upozornenia môžeš upraviť z mobilnej aplikácie."
-      email: "E-mail"
+      email: "Email"
       not me: "Toto nie som ja"
       saved: "Uložené!"
       plan delivery: "Doručenie plánu"
@@ -1678,7 +1678,7 @@ sk:
         title: "Udalosť Prihlásiť sa"
         signIn: "Prihlásiť sa"
         subHead1: "Ak ste používateľom Aplikácie Biblie a už máte YouVersion účet, môžete sa prihlásiť použitím tých istých povolení.<br><br>Nemáte ešte YouVersion účet?<br><a href='%{url}'>Prihláste sa na Bible.com</a> aby ste mohli začať vytvárať udalosti."
-        email: "E-mail"
+        email: "Email"
         password: "Heslo"
         forgotPassword: "Zabudnuté heslo"
       EventEdit:
