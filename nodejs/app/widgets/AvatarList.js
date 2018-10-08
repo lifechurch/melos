@@ -52,11 +52,11 @@ class AvatarList extends Component {
 							key={userID}
 							// set the margin as a ratio of the width
 							style={{
-								marginRight: `${avatarWidth * 0.35}px`,
+								paddingRight: `${avatarWidth * 0.35}px`,
 								display: 'flex',
-								alignItems: 'flex-start'
-							}}
-						>
+								alignItems: 'flex-start',
+								paddingBottom: `${avatarWidth * 0.35}px`,
+							}}>
 							<User
 								avatarLetter={user && user.first_name ? user.first_name.charAt(0) : null}
 								src={user && user.has_avatar ? avatarSrc : null}
@@ -70,7 +70,12 @@ class AvatarList extends Component {
 		}
 
 		return (
-			<div className={`participants-list vertical-center ${customClass}`}>
+			<div className={`participants-list vertical-center ${customClass}`}
+					style={{
+						display: 'flex,', 
+						flexWrap: 'wrap',
+						justifyContent: 'center',
+					}}>
 				{ avatarList }
 			</div>
 		)
