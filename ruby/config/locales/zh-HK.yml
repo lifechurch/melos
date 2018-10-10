@@ -2004,7 +2004,7 @@ zh-HK:
     start date: "開始日期"
     plan archived: "計劃已封存"
     starts: "開始"
-    started: "開始"
+    started: "已開始"
     join link: "任何有連結的人都可以參與"
     join together share: "你願意和我一起讀 %{plan} 這個計劃嗎？"
     join together: "%{host} 想和你一起讀這個計劃。"
