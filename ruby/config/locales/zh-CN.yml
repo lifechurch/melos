@@ -1807,8 +1807,8 @@ zh-CN:
                 virtualPrompt: "输入城市名来设置时区......"
               LocationTimeShifter:
                 shift: "修改开始日期"
-                forward: "延后"
-                backward: "提前"
+                forward: "提前"
+                backward: "延后"
                 by: "  "
                 week: "周"
                 weeks: "周"
