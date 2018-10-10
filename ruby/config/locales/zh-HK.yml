@@ -1807,8 +1807,8 @@ zh-HK:
                 virtualPrompt: "輸入城市名來設定時區⋯⋯"
               LocationTimeShifter:
                 shift: "移動開始日期"
-                forward: "推遲"
-                backward: "提前"
+                forward: "提前"
+                backward: "延後"
                 by: " "
                 week: "週"
                 weeks: "週"
