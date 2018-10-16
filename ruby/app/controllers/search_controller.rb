@@ -3,7 +3,7 @@ class SearchController < ApplicationController
   respond_to :html
 
   def category
-    @search = get_search_class.new(params[:q],search_params)
+    @search = get_search_class.new(params[:q].slice(0, 400),search_params)
     @results = @search.results
     respond_with @results
   end
