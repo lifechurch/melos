@@ -222,6 +222,10 @@ class AudioPlayer extends Component {
 
 		if (this.player && this.player.duration) {
 			percentComplete = (this.player.currentTime / this.player.duration) * 100
+
+			if (this.player.currentTime >= this.player.duration) {
+				this.handleAudioCompleted()
+			}
 		}
 
 		if (this.player && typeof onTimeChange === 'function') {
