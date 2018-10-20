@@ -1666,7 +1666,7 @@ sk:
         saving: "Ukladanie..."
         saveAsDraft: "Uložiť ako Návrh"
         myEvents: "Moje podujatia"
-        eventBuilder: "VYTVÁRANIE UDALOSTÍ"
+        eventBuilder: "VYTVÁRANIE PODUJATÍ"
         signOut: "Odhlásiť"
         createAccount: "Vytvorte účet"
       HtmlEditor:
@@ -1675,18 +1675,18 @@ sk:
         italic: "Kurzíva"
     containers:
       Auth:
-        title: "Udalosť Prihlásiť sa"
+        title: "Prihlásiť sa do udalostí"
         signIn: "Prihlásiť sa"
-        subHead1: "Ak ste používateľom Aplikácie Biblie a už máte YouVersion účet, môžete sa prihlásiť použitím tých istých povolení.<br><br>Nemáte ešte YouVersion účet?<br><a href='%{url}'>Prihláste sa na Bible.com</a> aby ste mohli začať vytvárať udalosti."
+        subHead1: "Ak ste už používateľom aplikácie Biblie a vlastníte YouVersion účet, môžete sa prihlásiť s tým istým menom a heslom.<br/><br/>Ešte YouVersion účet nemáte?<br/><a href='%{url}'>Prihláste sa na Bible.com</a>, aby ste mohli začať vytvárať podujatia."
         email: "Email"
         password: "Heslo"
         forgotPassword: "Zabudnuté heslo"
       EventEdit:
-        event: "Udalosť"
+        event: "Podujatie"
       EventEditContentContainer:
         choose: "Začnite zvolením nejakého obsahu."
         needHelp: "Potrebujete pomoc?"
-        title: "Obsah udalosti"
+        title: "Obsah podujatia"
         previous: "←Predchádzajúci: Miesta a časy"
         next: "Nasledujúci: Náhľad →"
       EventEditDetails:
