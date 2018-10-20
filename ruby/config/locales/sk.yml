@@ -326,9 +326,9 @@ sk:
     module 2 title: "Biblické odkazy"
     module 2 text: "Zobrazte pasáže presne tam, kde na ne odkazuje kázeň. Táto funkcionalita je prepojená s ľubovoľným prekladom Biblie (%{version_count}+ prekladov), v %{language_count}+ jazykoch — nie je potrebné žiadne kopírovanie ani vkladanie."
     module 3 title: "Modul plánov čítania"
-    module 3 text: "Pripojte sa k Plánom Biblie a Stíšeniam, ktoré súvisia s bodmi Vášho učenia, aby ste pomohli Vášmu publiku pokračovať v spájaní sa s Božím Slovom počas týždňa."
+    module 3 text: "Odkazujte sa na plány Biblie a zamyslenia, ktoré súvisia s vaším vyučovaním, aby ste pomohli vášmu publiku zapájať sa do Božieho Slova aj počas týždňa."
     module 4 title: "Modul webových odkazov"
-    module 4 text: "Vaše publikum môže byť jedno ťuknutie od online darovania, náboru dobrovoľníkov alebo od domovských stránok zboru. Priložte odkaz na ľubovoľnú externú stránku priamo vnútri udalostí."
+    module 4 text: "Vaše publikum môže byť od online zbierky vzdialené len na jedno ťuknutie. To isté platí o nábore dobrovoľníkov alebo o zborovej web stránke. Vložte odkaz na ľubovoľnú externú stránku priamo do vnútra udalostí."
     module 5 title: "Obrazový modul"
     module 5 text: "Oživte Vašu udalosť akýmikoľvek pomocnými grafikami: umením, fotografiami, obrázkami veršov atď. Umožníte tak účastníkom jednoduché zdieľanie obrázkov vašej udalosti na ich sociálnych médiách a šíriť tak vaše slovo."
     module 6 title: "Prvky oznámení"
@@ -1769,7 +1769,7 @@ sk:
                   desc: "Zvoľte akýkoľvek verš alebo pasáž z Biblie, odkazujúce priamo na ktorúkoľvek z 1200+ YouVersion verzií, v 900+ jazykoch. Ľudia vidiac Vašu udalosť môžu kliknúť na odkaz, aby sa im verš alebo pasáž zobrazila v ich prehliadači Aplikácii Biblie, kde ich budú môcť označiť ako záložku, zvýrazniť ich a viac."
                 plan:
                   title: "Prvky Plánu"
-                  desc: "Pripojte sa k Plánom Biblie a Stíšeniam, ktoré súvisia s bodmi Vášho učenia, aby ste pomohli Vášmu publiku pokračovať v spájaní sa s Božím Slovom počas týždňa."
+                  desc: "Odkazujte sa na plány Biblie a zamyslenia, ktoré súvisia s vaším vyučovaním, aby ste pomohli vášmu publiku zapájať sa do Božieho Slova aj počas týždňa."
                 image:
                   title: "Obrazový modul"
                   desc: "Oživte Vašu udalosť s akýmikoľvek pomocnými grafikami: skupinou umení, fotografiami, obrázkami veršov atď. Umožníte účastníkom jednoduché zdieľanie obrázkov vašej udalosti na ich sociálnych médiách, šíriac tak vašu správu."
