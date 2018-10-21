@@ -335,7 +335,7 @@ sk:
     module 6 text: "Ľahko a načas rozposielajte všetky dôležité informácie: zborové novinky, udalosti z kalendára, programy, vyučovacie hodiny, príležitosti pre dobrovoľníkov, misie a iné."
     module 7 title: "Miesta a čas"
     module 7 text: "Dajte ľuďom na známosť, kde a kedy sa podujatie uskutoční; dokonca aj v prípade podujatí, ktoré sa konajú na viacerých miestach v rôznom čase."
-    module 8 title: "Duplikovať udalosti"
+    module 8 title: "Duplicitné podujatia"
     module 8 text: "Šetrite svoj čas a úsilie. Zrýchlene vytvorte nové podujatie skopírovaním už existujúceho podujatia a upravte ho aktualizovanými informáciami."
     module 9 title: "Úspora nákladov"
     module 9 text: "Ušetrite peniaze na tlač a spotrebujte menej papiera… dokonca oslovíte ľudí na platforme s viac ako 200 milión inštaláciami."
@@ -1690,39 +1690,39 @@ sk:
         previous: "←Predchádzajúci: Miesta a časy"
         next: "Nasledujúci: Náhľad →"
       EventEditDetails:
-        title: "Podrobnosti udalosti"
+        title: "Podrobnosti podujatia"
       EventEditLocationContainer:
-        title: "Miesto udalosti"
+        title: "Miesto podujatia"
         previous: "← Predchádzajúci: Podrobnosti"
         next: "Nasledujúci: Pridajte obsah →"
       EventEditPreview:
-        title: "Náhľad udalosti"
+        title: "Náhľad na podujatie"
         previous: "←Predchádzajúci: Obsah"
       EventEditShare:
-        title: "Zdieľanie udalosti"
-        subTitle: "Vaša udalosť je teraz zverejnená:"
-        edit: "Upraviť udalosť"
-        go: "Choď k mojim udalostiam"
-        share: "Zdieľajte svoju udalosť:"
+        title: "Zdieľanie podujatia"
+        subTitle: "Vaše podujatie bolo zverejnené:"
+        edit: "Upraviť podujatie"
+        go: "Choď k mojim podujatiam"
+        share: "Zdieľať vaše podujatie:"
         copy: "Kopírovať"
         copied: "Skrátený odkaz bol skopírovaný do Vašej schránky "
         previous: "←Predchádzajúci: Náhľad"
       EventFeedDiscover:
-        title: "Objavte udalosti"
+        title: "Objaviť podujatia"
         discover: "Objaviť"
       EventFeedMine:
         title: "Moje podujatia"
         previous: "← Predchádzajúci"
         next: "Nasledujúci →"
         my: "Moje podujatia"
-        new: "Vytvorte novú udalosť"
-        subTitle: "MNOU VYTVORENÉ UDALOSTI"
-        newFirst: "Vytvorte Vašu prvú udalosť"
-        learn: "Naučte sa ako vytvoriť skvelú udalosť"
+        new: "Vytvoriť nové podujatia"
+        subTitle: "MNOU VYTVORENÉ PODUJATIA"
+        newFirst: "Vytvorte vaše prvé podujatie"
+        learn: "Naučte sa, ako vytvoriť skvelé podujatie"
       EventFeedSaved:
-        title: "Uložené Udalosti"
+        title: "Uložené podujatia"
       EventView:
-        title: "YouVersion udalosť"
+        title: "YouVersion podujatie"
       SelectLanguage:
         choose: "Zvoľte si jazyk"
     features:
@@ -1733,8 +1733,8 @@ sk:
       EventEdit:
         errors:
           locationMustHaveTime: "Všetky miesta musia mať aspoň jeden čas."
-          locationRequired: "Nomôžete uverejniť udalosť bez miesta."
-          contentRequired: "Nemôžete uverejniť udalosť bez obsahu."
+          locationRequired: "Nemôžete uverejniť podujatie bez miesta konania."
+          contentRequired: "Nemôžete uverejniť podujatie bez obsahu."
           planSearchFailed: "Vyhľadávaniu nezodpovedajú žiadne doklady."
           noMatchingPlans: "Žiadny zhodujúci sa plán"
         components:
