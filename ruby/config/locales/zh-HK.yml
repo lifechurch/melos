@@ -1621,8 +1621,8 @@ zh-HK:
         choose: "選擇內容，開始創建。"
         needHelp: "需要協助嗎？"
         title: "互動活動內容"
-        previous: "← Previous: Locations & Times"
-        next: "Next: Preview →"
+        previous: "← 上一頁：地點與時間"
+        next: "下一頁：預覽 →"
       EventEditDetails:
         title: "互動活動細節"
       EventEditLocationContainer:
@@ -1807,8 +1807,8 @@ zh-HK:
                 virtualPrompt: "輸入城市名來設定時區⋯⋯"
               LocationTimeShifter:
                 shift: "移動開始日期"
-                forward: "推遲"
-                backward: "提前"
+                forward: "提前"
+                backward: "延後"
                 by: " "
                 week: "週"
                 weeks: "週"
@@ -2004,7 +2004,7 @@ zh-HK:
     start date: "開始日期"
     plan archived: "計劃已封存"
     starts: "開始"
-    started: "開始"
+    started: "已開始"
     join link: "任何有連結的人都可以參與"
     join together share: "你願意和我一起讀 %{plan} 這個計劃嗎？"
     join together: "%{host} 想和你一起讀這個計劃。"

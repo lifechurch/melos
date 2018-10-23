@@ -1049,9 +1049,9 @@ ro:
     zip: "Cod"
     creation form errors: "Următoarele erori au împiedicat donația:"
   download ad:
-    title: "Descarcă gratuit aplicația Biblia"
+    title: "Descarcă gratuit Aplicația Biblia"
     description copy: "Sute de versiuni în peste %{language_count} de limbi diferite - Biblia care te însoțește pretutindeni."
-    meta copy title: "Descarcă gratuit aplicația Biblia"
+    meta copy title: "Descarcă gratuit Aplicația Biblia"
     meta copy versions: "Sute de versiuni în %{language_count}+limbi diferite"
     line 1: "Sute de versiuni în 100+"
     line 2: "limbi diferite - Biblia care"
@@ -1162,11 +1162,11 @@ ro:
       make_yours:
         title: "Transform-o în Biblia ta"
         body: "Evidențiază sau marchează versetele tale preferate, creează versete ilustrate pe care le poți partaja și atașează notițe publice sau private pasajelor Bibliei."
-        action: "Creează Contul Tău Gratuit"
+        action: "Creează Contul tău gratuit"
       install_now:
         title: "Instalează aplicația acum"
         body: "Aplicația Biblia este complet gratuită, fără reclame și fără achiziții în interiorul aplicației. A fost instalată pe atâtea dispozitive unice (până acum):"
-        action: "Descarcă gratuit aplicația Biblia"
+        action: "Descarcă gratuit Aplicația Biblia"
       free_plans:
         title: "Planuri de citire și Devoționale Gratuite"
         body: "Planurile de citire te ajută să te angajezi în citirea zilnică a Cuvântului lui Dumnezeu, puțin câte puțin."
