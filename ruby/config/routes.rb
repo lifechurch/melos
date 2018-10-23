@@ -81,6 +81,10 @@ YouversionWeb::Application.routes.draw do
   get "/kidsbel",       to: "redirects#kidsbel"
   get "/bel",       to: "redirects#bel"
   get "/nep/kids",       to: "redirects#nep_kids"
+  get "/he/yeladim",       to: "redirects#he_kids"
+  get "/%D7%99%D7%9C%D7%93%D7%99%D7%9D",       to: "redirects#he_kids"
+  get "/he/%D7%99%D7%9C%D7%93%D7%99%D7%9D",       to: "redirects#he_kids"
+
 
 	get "/unsubscribe", to: "notifications#unsubscribe"
 	get "/unsubscribe/manage", to: "notifications#manage_notifications"
