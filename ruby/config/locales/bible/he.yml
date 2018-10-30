@@ -2,7 +2,7 @@ he:
   features:
     bible:
       about: "About"
-      audio: "שמע"
+      audio: "קטעי אודיו"
       audio open: "Open Audio Player"
       book: "Book"
       bible language: "Bible Language"
@@ -13,7 +13,7 @@ he:
       cta: "Download the Bible App for Kids"
       donate: "Donate"
       events: "Events"
-      explore by verse: "חקור את %{chapter_name} פסוק אחר פסוק"
+      explore by verse: "גלו את %{chapter_name} פסוק אחרי פסוק"
       help: "Help"
       hide: "הסתר"
       home: "Home"
