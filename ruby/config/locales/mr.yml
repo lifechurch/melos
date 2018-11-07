@@ -237,7 +237,7 @@ mr:
   settings: "Settings"
   profile: "Profile"
   find friends: "Find Friends"
-  search placeholder: "Search..."
+  search placeholder: "शोध..."
   search: "Search"
   more: "More"
   book: "Book"
@@ -1346,7 +1346,7 @@ mr:
       notifications: "Notifications"
       friend requests: "Friend Requests"
       settings: "Settings"
-      search placeholder: "Search..."
+      search placeholder: "शोध..."
       sign in: "Sign In"
       sign up: "Sign Up"
     profile menu:
