@@ -1,13 +1,13 @@
 tl:
   features:
     bible:
-      about: "Patungkol"
+      about: "Tungkol"
       audio: "Audio"
       audio open: "Buksan ang Audio Player"
       book: "Aklat"
       bible language: "Wika ng Biblia"
       blog: "Blog"
-      cancel: "I-cancel"
+      cancel: "Itigil"
       change language: "Baguhin ang Wika"
       chapter: "Kabanata"
       cta: "I-download ang Pambatang Bible App"
@@ -32,7 +32,7 @@ tl:
       search: "Maghanap..."
       send votd: "Padalhan ako ng Bersikulo ng Araw"
       share: "Ibahagi"
-      sign in: "Mag-sign in"
+      sign in: "Mag-sign In"
       sign up: "Mag-sign up"
       terms: "Mga Tuntunin"
       title: "I-download Ang Bible App Ngayon"
