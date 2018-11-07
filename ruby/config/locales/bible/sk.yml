@@ -1,7 +1,7 @@
 sk:
   features:
     bible:
-      about: "O aplikácii"
+      about: "O nás"
       audio: "Audio"
       audio open: "Otvoriť audio prehrávač"
       book: "Kniha"
@@ -11,7 +11,7 @@ sk:
       change language: "Zmeniť jazyk"
       chapter: "Kapitola"
       cta: "Stiahnuť aplikáciu Biblia pre deti"
-      donate: "Prispieť"
+      donate: "Prispejte"
       events: "Podujatia"
       explore by verse: "Preskúmajte %{chapter_name} podľa verša"
       help: "Pomoc"
@@ -32,7 +32,7 @@ sk:
       search: "Hľadať..."
       send votd: "Pošlite mi verš dňa"
       share: "Zdieľať"
-      sign in: "Prihlásiť"
+      sign in: "Sign In"
       sign up: "Zaregistrovať"
       terms: "Podmienky"
       title: "Stiahnite si aplikáciu Biblia"
