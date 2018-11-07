@@ -29,7 +29,7 @@ pt:
       read: "Ler"
       read full: "Ler o Capítulo Inteiro"
       related devos: "Planos de Leitura e Devocionais Gratuitos relacionados com %{reference}"
-      search: "Procurar..."
+      search: "Pesquisar..."
       send votd: "Me envie o Versículo do Dia"
       share: "Compartilhar"
       sign in: "Entrar"
