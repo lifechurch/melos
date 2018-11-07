@@ -1,7 +1,7 @@
 vi:
   features:
     bible:
-      about: "Về YouVersion"
+      about: "Thông tin chung"
       audio: "Âm thanh"
       audio open: "Mở trình phát âm thanh"
       book: "Sách"
@@ -26,7 +26,7 @@ vi:
       plans: "Kế hoạch"
       press: "Thông tấn"
       privacy: "Quy định riêng tư"
-      read: "Kinh Thánh"
+      read: "Đọc"
       read full: "Đọc cả đoạn"
       related devos: "Các kế hoạch đọc và tĩnh nguyện miễn phí liên quan đến%{reference}"
       search: "Tìm kiếm..."
