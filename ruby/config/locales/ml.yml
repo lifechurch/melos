@@ -1043,7 +1043,7 @@ ml:
     banner action: "ഡൌൺലോഡ് ചെയ്യുക"
     banner open: "Open"
   download bafk ad:
-    title: "Download the Bible App for Kids"
+    title: "കുട്ടികൾക്കായുള്ള ബൈബിൾ ആപ്പ് ഡൗൺലോഡ് ചെയ്യുക"
     description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
     download: "ഇപ്പോൾ ഡൗൺലോഡ് ചെയ്യുക"
   about page:
@@ -1952,7 +1952,7 @@ ml:
       versionpicker:
         language label: "ബൈബിൾ ഭാഷകൾ"
         language sub-label: "ബൈബിൾ ഭാഷ"
-        change language: "Change Language"
+        change language: "ഭാഷ മാറ്റുക"
         filter languages: "Filter Languages..."
         version label: "പതിപ്പുകൾ"
         choose version: "പതിപ്പ് തിരഞ്ഞെടുക്കുക"
