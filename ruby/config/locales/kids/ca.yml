@@ -24,7 +24,7 @@ ca:
     feature 5: "Kid-friendly navigation"
     share:
       tell friends: "Tell your friends about the Bible App for Kids."
-      facebook name: "The Bible App for Kids"
+      facebook name: "L'Aplicació de la Bíblia per a nens"
       facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
       facebook link: "http://www.bible.com/kids"
       facebook redirect: "http://www.bible.com/kids"
@@ -44,5 +44,5 @@ ca:
   meta:
     best kids app: "La millor aplicació per a nens!"
     kids_app:
-      title: "The Bible App for Kids"
-      description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+      title: "L'Aplicació de la Bíblia per a nens"
+      description: "L'aplicació de la Bíblia per a nens es una bona manera de que els teus nens aprenguin les histories de la Bíblia sobre Jesus, el nostre regal de vida eterna, i totes les lliçons que Déu ens ensenya. Mitjançant aquesta experiència interactiva, els nens participan directament de la paraula de Déu amb sorprenents efectes visuals mentres que guanyan punts per les seves lectures i podan acumular tresors."
