@@ -73,7 +73,7 @@ et:
     moment:
       read all: "Read all"
       read less: "Read less"
-    share: "Share"
+    share: "Jaga"
     add comment: "Add a comment"
     my connections: "Connected Accounts"
     connected as: "You are connected to %{connection} as %{username}."
@@ -224,8 +224,8 @@ et:
   jobs: "Jobs"
   volunteer: "Volunteer"
   privacy policy: "Privacy Policy"
-  terms: "Terms"
-  press: "Press"
+  terms: "Tingimused"
+  press: "Vajuta"
   get support: "Help"
   donate title: "Annetage"
   notifications:
@@ -237,7 +237,7 @@ et:
   settings: "Settings"
   profile: "Profile"
   find friends: "Find Friends"
-  search placeholder: "Search..."
+  search placeholder: "Otsi..."
   search: "Search"
   more: "More"
   book: "Book"
@@ -329,7 +329,7 @@ et:
     resources text: "Learn how to best use Events with free resources."
     frequently asked questions: "Frequently Asked<br>Questions"
     frequently asked questions text: "Find answers to everything you need to know about getting started with YouVersion Events."
-    share: "Share"
+    share: "Jaga"
     tweet text: "Have you seen Events in @YouVersion’s Bible App? Message outlines, announcements, links to online giving, & more! http://bible.com/features/events"
     email: "Email"
     faq question 1: "What is Events?"
@@ -421,7 +421,7 @@ et:
       liked: "Liked"
       like title: "Like this"
       last comment: "Last comment"
-      share: "Share"
+      share: "Jaga"
       share title: "Share this with friends or family"
       comment: "Comment"
       comment title: "See all comments"
@@ -553,7 +553,7 @@ et:
     choose book and chapter: "Choose Book + Chapter"
     choose version: "Choose Version"
     choose second version: "Choose Secondary Version"
-    share: "Share"
+    share: "Jaga"
     share now: "Share Now"
     selected: "Selected"
     preferences: "Preferences"
@@ -586,7 +586,7 @@ et:
     mobile: "Mobile"
     facebook sign up success: "Great! You've authorized with Facebook. Pick a YouVersion username and password to continue."
     register: "Register"
-    sign up: "Sign Up"
+    sign up: "Registreeri"
     sign up google: "Sign up with Google"
     continue google: "Continue with Google"
     sign up facebook: "Sign up with Facebook"
@@ -934,7 +934,7 @@ et:
     exit: "Exit"
     loading sidebar content: "Loading sidebar content..."
   videos:
-    title: "Videos"
+    title: "Videod"
     watch videos: "Watch videos about the Bible"
     all: "All videos"
     related scripture: "Related Scripture"
@@ -994,7 +994,7 @@ et:
       save button: "Save Highlight"
   searching:
     bible: "Bible"
-    plans: "Plans"
+    plans: "Plaanid"
     users: "Users"
     notes: "Notes"
     total results: "About %{total} Results"
@@ -1090,7 +1090,7 @@ et:
     h3 sub: "Available in more than %{language_count} languages worldwide."
     main: "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
     button h4: "Go to Bible.com/app<br>on your Mobile Device"
-    download now: "Download The Bible App Now"
+    download now: "Lae Piibli äpp alla"
     what people: "What people are saying about the free Bible app..."
     t1: "I always have the Word."
     t1 copy: "I've bookmarked passages that are important to me. I've even read the whole thing through in a year thanks to the reading plans."
@@ -1341,14 +1341,14 @@ et:
     header:
       home: "Home"
       read: "Read"
-      plans: "Plans"
-      videos: "Videos"
+      plans: "Plaanid"
+      videos: "Videod"
       notifications: "Notifications"
       friend requests: "Friend Requests"
       settings: "Settings"
-      search placeholder: "Search..."
-      sign in: "Sign In"
-      sign up: "Sign Up"
+      search placeholder: "Otsi..."
+      sign in: "Logi sisse"
+      sign up: "Registreeri"
     profile menu:
       bookmarks: "Bookmarks"
       highlights: "Highlights"
@@ -1367,9 +1367,9 @@ et:
       about: "About"
       jobs: "Jobs"
       blog: "Blog"
-      press: "Press"
+      press: "Vajuta"
       privacy: "Privacy Policy"
-      terms: "Terms"
+      terms: "Tingimused"
       volunteer: "Volunteer"
     unsubscribe:
       about: "Control what emails you receive from YouVersion. You can edit your mobile notifications from your mobile app."
@@ -1424,7 +1424,7 @@ et:
       yes button: "Yes"
       no button: "No"
     plans:
-      plans: "Plans"
+      plans: "Plaanid"
       plans back: "&larr; Plans"
       related plans: "Related Plans"
       see all: "See All"
@@ -1632,7 +1632,7 @@ et:
     containers:
       Auth:
         title: "Events Sign In"
-        signIn: "Sign In"
+        signIn: "Logi sisse"
         subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
         email: "Email"
         password: "Password"
@@ -1699,7 +1699,7 @@ et:
             locations: "Locations & Times"
             content: "Content"
             preview: "Preview & Publish"
-            share: "Share"
+            share: "Jaga"
         features:
           content:
             components:
@@ -1878,7 +1878,7 @@ et:
         components:
           EventListItem:
             duplicate: "Duplicate"
-            share: "Share"
+            share: "Jaga"
             delete: "Delete"
             draft: "DRAFT"
             edit: "Edit"
@@ -1889,7 +1889,7 @@ et:
           EventViewContent:
             copy: "Copy"
             copied: "Copied"
-            share: "Share"
+            share: "Jaga"
             read: "Read"
             readPlan: "Read Plan"
           EventViewContentAnnouncement:
@@ -1902,8 +1902,8 @@ et:
             signIn: "Sign In to Save Event"
             saved: "Event Saved"
     Auth:
-      sign up: "Sign Up"
-      sign in: "Sign In"
+      sign up: "Registreeri"
+      sign in: "Logi sisse"
       sign up google: "Sign up with Google"
       continue google: "Continue with Google"
       sign up facebook: "Sign up with Facebook"
@@ -1940,8 +1940,8 @@ et:
         search input: "Reference or Keyword..."
         home: "Home"
         bible: "Bible"
-        plans: "Plans"
-        videos: "Videos"
+        plans: "Plaanid"
+        videos: "Videod"
         me: "Me"
         recent versions: "Recently Used"
       chapterpicker:
@@ -1965,7 +1965,7 @@ et:
       search:
         bible: "Bible"
         users: "Users"
-        plans: "Plans"
+        plans: "Plaanid"
       version:
         learn more: "Learn More"
         courtesy of: "%{abbreviation} brought to you by %{publisher}"
@@ -2043,10 +2043,10 @@ et:
     + x more: "+ %{number} more"
     when participant comments: "When Participants post a comment"
     when participant accepts: "When Participants accept an invite"
-    share: "Share"
+    share: "Jaga"
     votd: "Verse of the Day"
     read: "Read"
-    read full chapter: "Read Full Chapter"
+    read full chapter: "Loe terve peatükk"
     copy: "Copy"
     notification settings: "Notification Settings"
     get a free bible: "Get a free Bible for your phone, tablet, and computer."

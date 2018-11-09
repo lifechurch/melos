@@ -1156,7 +1156,7 @@ eo:
       read_listen: "Read, Listen, Watch, Share"
       start_now: "Start Now"
       votd:
-        title: "Verse of the Day"
+        title: "Verso de la tago"
         highlight_bookmark: "Highlight, Bookmark, or share this verse"
         subscribe: "Subscribe to the Verse of the Day"
       hero:
@@ -2044,7 +2044,7 @@ eo:
     when participant comments: "When Participants post a comment"
     when participant accepts: "When Participants accept an invite"
     share: "Share"
-    votd: "Verse of the Day"
+    votd: "Verso de la tago"
     read: "Read"
     read full chapter: "Read Full Chapter"
     copy: "Copy"

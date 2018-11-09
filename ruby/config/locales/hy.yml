@@ -1279,8 +1279,8 @@ hy:
     cancel: "Cancel"
     plans:
       privacy: "Would you like your activity with this plan to be visible to your friends?"
-    loading indicator text: "Loading ..."
-    loading: "Loading"
+    loading indicator text: "Ներբեռնում ..."
+    loading: "Ներբեռնում"
     pagination:
       next page: "Next Page"
       previous page: "Previous Page"

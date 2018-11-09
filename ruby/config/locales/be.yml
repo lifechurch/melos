@@ -1965,7 +1965,7 @@ be:
       read reference: "Чытаць %{reference}"
       read chapter: "Чытаць увесь разьдзел"
       plan title: "Бясплатныя пляны чытаньня й разважаньні"
-      plan title ref: "Free Reading Plans and Devotionals related to %{reference}"
+      plan title ref: "Бясплатныя пляны чытаньня і настаўленьні адносяцца да %{reference}"
       plan subtitle: "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life."
       meta:
         mobile:

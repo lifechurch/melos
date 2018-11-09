@@ -1619,7 +1619,7 @@ ur:
           live: "Live"
           archived: "Archived"
         unpublish: "Unpublish"
-        saving: "Saving..."
+        saving: "بچانا..."
         saveAsDraft: "Save as Draft"
         myEvents: "My Events"
         eventBuilder: "EVENT BUILDER"

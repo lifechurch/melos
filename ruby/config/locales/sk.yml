@@ -1760,31 +1760,31 @@ sk:
                 announcement: "Oznámenie"
               ContentHelpModal:
                 types: "Štýl obsahu"
-                learn: "Naučte sa ako vytvoriť<br> skvelú udalosť"
+                learn: "Zistite, ako usporiadať <br>skvelé podujatie"
                 text:
                   title: "Textový modul"
                   desc: "Osnovy, kľúčové body, diskusné otázky...Zdieľajte akýkoľvek textovo založený hlavný obsah, ktorý pomôže Vašim účastníkom sledovanie popri Vašej správe, počas diania. Prvky Vášho textu môžu byť akokoľvek dlhé a môžu obsahovať bohatú textovú formáciu."
                 reference:
                   title: "Prvky Biblický odkazov"
-                  desc: "Zvoľte akýkoľvek verš alebo pasáž z Biblie, odkazujúce priamo na ktorúkoľvek z 1200+ YouVersion verzií, v 900+ jazykoch. Ľudia vidiac Vašu udalosť môžu kliknúť na odkaz, aby sa im verš alebo pasáž zobrazila v ich prehliadači Aplikácii Biblie, kde ich budú môcť označiť ako záložku, zvýrazniť ich a viac."
+                  desc: "Zvoľte akýkoľvek verš, alebo pasáž z Biblie, ktorý priamo odkazuje na ľubovoľný z 1200+ YouVersion prekladov, v 900+ jazykoch. Ľudia, ktorí si vaše podujatie prezerajú, môžu ťuknúť na odkaz, aby si verš alebo pasáž mohli prečítať v aplikácii Biblia. Tam si verš budú môcť pridať medzi záložky, zvýrazniť si ho a mnohé iné."
                 plan:
                   title: "Prvky Plánu"
                   desc: "Odkazujte sa na plány Biblie a zamyslenia, ktoré súvisia s vaším vyučovaním, aby ste pomohli vášmu publiku zapájať sa do Božieho Slova aj počas týždňa."
                 image:
                   title: "Obrazový modul"
-                  desc: "Oživte Vašu udalosť s akýmikoľvek pomocnými grafikami: skupinou umení, fotografiami, obrázkami veršov atď. Umožníte účastníkom jednoduché zdieľanie obrázkov vašej udalosti na ich sociálnych médiách, šíriac tak vašu správu."
+                  desc: "Oživte vaše podujatie umením: fotografiami, obrázkami veršov atď. Tým umožníte účastníkom poľahky zdieľať fotografie z vášho podujatia na sociálnych sieťach a šíriť tak vašu kázeň."
                 link:
                   title: "Prvky vonkajšieho odkazu"
-                  desc: "Vytvorí vo vašej udalosti tlačidlo, ktoré bude spojené s akoukoľvek vonkajšou internetovou stránkou. Umožnite Vašemu publiku jedným kliknutím online darovanie, prihlásenie sa za dobrovoľníka alebo navštívenie domovskej stránky cirkvi."
+                  desc: "Vytvorí vo vašom podujatí tlačidlo, ktoré odkazuje na akúkoľvek externú webovú stránku. Umožnite svojmu publiku prispievať online, prihlásiť sa za dobrovoľníka, prípadne navštíviť webovú stránku zboru."
                 announcement:
                   title: "Modul oznamov"
-                  desc: "Novinky cirkvi, udalosti v kalendári, programy, hodiny, dobrovoľníctvo a možnosti misionárstva...prvky oznámení sú skvelým zdrojom pre zdieľanie informácií, ktoré sú aktuálne a dôležité, ale bez toho, aby ste odviedli pozornosť od základného odkazu Vašej udalosti. Každý prvok oznámenia sa objaví na svojej vlastnej stránke vo Vašej udalosti a môže dokonca obsahovať bohatý textový obsah (ako tučné a kurzíva)."
+                  desc: "Zborové novinky, udalosti v kalendári, programy, vyučovanie, dobrovoľníctvo a misijné príležitosti... Moduly oznámení sú skvelou platformou pre zdieľanie informácií, ktoré sú aktuálne a dôležité bez toho, aby ste odvádzali pozornosť od kľúčového odkazu vášho podujatia. Každý modul oznámenia sa objaví na samostatnej stránke vášho podujatia a môže dokonca obsahovať obsah vo formáte rich text (napríklad tučné písmo či kurzíva)."
               ContentInsertionPoint:
                 title: "Vložte ďalší prvok sem"
               ContentTypeAnnouncement:
                 title: "Názov"
                 prompt: "Napíšte sem niečo..."
-                caption: "Vo vašej udalosti bude viditeľný iba Váš názov (uvedený vyššie). Ak užívateľ klikne na Váš názov, obsah (uvedený nižšie) sa zobrazí na odlišnej obrazovke."
+                caption: "Vo vašom podujatí bude viditeľný iba názov (uvedený vyššie). Ak používateľ na názov ťukne, obsah (uvedený nižšie) sa zobrazí na samostatnej obrazovke."
               ContentTypeContainer:
                 dirty: "Obsah sa automaticky uloží pár sekúnd po tom, ako prestanete písať."
                 failed: "Uloženie nie je možné"
@@ -1815,7 +1815,7 @@ sk:
               ContentTypeText:
                 prompt: "Napíšte sem niečo..."
               LiveWarningModal:
-                title: "Kým je udalosť živá, nie je možné vymazanie"
+                title: "Kým je udalosť živá, nemožno ju vymazať"
                 desc: "Ak je už udalosť živá, nemôžete vymazať text, Biblické odkazy a prvky obrázkov, pretože užívatelia medzitým už mohli k nim pridať svoje súkromné poznámky. Napriek tomu, tieto moduly môžete upraviť."
                 ok: "OK"
           details:
