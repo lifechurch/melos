@@ -1641,7 +1641,7 @@ sr:
           live: "Live"
           archived: "Archived"
         unpublish: "Unpublish"
-        saving: "Saving..."
+        saving: "Čuvam..."
         saveAsDraft: "Save as Draft"
         myEvents: "My Events"
         eventBuilder: "EVENT BUILDER"

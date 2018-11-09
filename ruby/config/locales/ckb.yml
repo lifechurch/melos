@@ -1043,7 +1043,7 @@ ckb:
     banner action: "داگرتن"
     banner open: "Open"
   download bafk ad:
-    title: "Download the Bible App for Kids"
+    title: "ئاپی کتێبی پیرۆزی تایبەت بە منداڵان دابگرە"
     description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
     download: "Download Now"
   about page:
@@ -1090,7 +1090,7 @@ ckb:
     h3 sub: "Available in more than %{language_count} languages worldwide."
     main: "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
     button h4: "Go to Bible.com/app<br>on your Mobile Device"
-    download now: "Download The Bible App Now"
+    download now: "هەر ئێستا ئاپی کتێبی پیرۆز دابگرە"
     what people: "What people are saying about the free Bible app..."
     t1: "I always have the Word."
     t1 copy: "I've bookmarked passages that are important to me. I've even read the whole thing through in a year thanks to the reading plans."
@@ -1279,8 +1279,8 @@ ckb:
     cancel: "هەڵوەشانەوە"
     plans:
       privacy: "Would you like your activity with this plan to be visible to your friends?"
-    loading indicator text: "Loading ..."
-    loading: "Loading"
+    loading indicator text: "بارکردن ..."
+    loading: "بارکردن"
     pagination:
       next page: "Next Page"
       previous page: "Previous Page"
@@ -1379,7 +1379,7 @@ ckb:
       plan delivery: "PLAN DELIVERY"
       sign-in: "To edit other settings, <a href='%{sign_in_path}'>sign in to your account</a>."
       other: "Other Notifications"
-      pwf: "Plans with Friends"
+      pwf: "پلانەکانی خوێندنەوە لەگەڵ هاوڕێیان"
       links:
         manage: "Manage Your Email Notifications"
         unsub all: "Unsubscribe from all emails"
@@ -1921,7 +1921,7 @@ ckb:
       read reference: "%{reference} بخوێنەوە"
       read chapter: "تەواوی بەشەکە بخوێنەوە"
       plan title: "Free Reading Plans and Devotionals"
-      plan title ref: "Free Reading Plans and Devotionals related to %{reference}"
+      plan title ref: "پلانی خوێندنەوەی بێبەرامبەر و بابەتی پەرستشی پەیوەست بە %{reference}"
       plan subtitle: "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life."
       meta:
         mobile:
@@ -2046,7 +2046,7 @@ ckb:
     share: "هاوبەشی بکە"
     votd: "ئایەتی ڕۆژانە"
     read: "بیخوێنەوە"
-    read full chapter: "Read Full Chapter"
+    read full chapter: "تەواوی بەشەکە بخوێنەوە"
     copy: "لەبەرگرتنەوە"
     notification settings: "ڕێکخستنەکانی ئاگادارکردنەوە"
     get a free bible: "Get a free Bible for your phone, tablet, and computer."
