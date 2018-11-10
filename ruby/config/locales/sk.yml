@@ -1889,7 +1889,7 @@ sk:
               UnpublishModal:
                 cancel: "Zrušiť"
                 title: "Zrušte zverejnenie pre vykonanie zmien."
-                desc: "Pre pridanie alebo vymazanie miesta a času, zrušte dočasne zverejnenie udalosti. V priebehu tohto času, nebude Vaša udalosť vo výsledkoch vyhľadávania viditeľná. Nezabudnite udalosť opäť zverejniť."
+                desc: "Ak chcete pridať, alebo vymazať miesta a čas, dočasne zrušte zverejnenie podujatia. Počas toho nebude vaše podujatie viditeľné vo výsledkoch vyhľadávania. Nezabudnite však potom udalosť opäť zverejniť."
                 unpublish: "Zrušte zverejnenie"
           preview:
             notes:
@@ -1897,16 +1897,16 @@ sk:
               noAuthPrompt: "<a href='%{url}'><span className='highlight'>Prihláste sa</span> pre pridanie súkromných poznámok...</a>"
             components:
               PreviewFeed:
-                review: "Skontrolovať udalosť pred zverejnením"
+                review: "Skontrolovať podujatie pred zverejnením"
                 previewUrl: "Náhľad URL:"
-                share: "Zdieľať udalosť"
+                share: "Zdieľať podujatie"
                 locationsAndTimes: "Miesta a časy"
                 publish: "Zverejniť"
                 unpublish: "Zrušte zverejnenie"
                 locations: "Miesta:"
                 discoverable:
                   title: "Identifikovateľný:"
-                  desc: "Vaša udalosť bude viditeľná v miestach udalostí v Aplikácii Biblie a vo výsledkoch vyhľadávania 5 dní pred Vašim najskorším časom."
+                  desc: "Vaše podujatie bude viditeľné v sekcii podujatí aplikácie Biblia a vo výsledkoch vyhľadávania 5 dní pred najskorším časom začiatku podujatia."
                 status:
                   title: "Stav:"
                   desc: "Červený znak NAŽIVO bude zobrazený pri začiatku Vášho najskoršieho času."
