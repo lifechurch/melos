@@ -1816,7 +1816,7 @@ sk:
                 prompt: "Napíšte sem niečo..."
               LiveWarningModal:
                 title: "Kým je udalosť živá, nemožno ju vymazať"
-                desc: "Ak je už udalosť živá, nemôžete vymazať text, Biblické odkazy a prvky obrázkov, pretože užívatelia medzitým už mohli k nim pridať svoje súkromné poznámky. Napriek tomu, tieto moduly môžete upraviť."
+                desc: "Ak sa už podujatie koná, nemôžete vymazať text, biblické odkazy ani moduly obrázkov, pretože používatelia k nim medzitým mohli pridať svoje súkromné poznámky. Napriek tomu môžete tieto moduly upravovať."
                 ok: "OK"
           details:
             errors:
