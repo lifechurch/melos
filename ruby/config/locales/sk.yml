@@ -713,7 +713,7 @@ sk:
       first name: "Meno"
       last name: "Priezvisko"
       email: "Emailová adresa"
-      location: "Bydlisko"
+      location: "Miesto"
       postal code: "PSČ"
       website: "Webstránka"
       country: "Krajina alebo región"
@@ -1820,8 +1820,8 @@ sk:
                 ok: "OK"
           details:
             errors:
-              generic: "Počas publikovania Vašej udalosti nastal problém."
-              invalidTimes: "Jedna bohoslužba nemôže mať viac ako 12 hodín a rozdiel medzi najskorším začiatkom času a najpozdejším začiatkom času udalosti nemôže byť viac ako 8 dní. Prosím upravte časy udalosti a skúste znova."
+              generic: "Nastal problém so zverejnením vášho podujatia."
+              invalidTimes: "Jedna bohoslužba nemôže trvať viac ako 12 hodín a rozdiel medzi najskorším začiatkom a najneskorším koncom podujatia nemôže byť viac ako 8 dní. Prosím, upravte čas podujatia a skúste znova."
             components:
               DetailsEdit:
                 errors:
@@ -1833,9 +1833,9 @@ sk:
                 onlyJpg: "[len JPG]"
                 sizePrompt: "%{requiredWidth}px šírka x %{requiredHeight}px výška"
                 sizePrompt2: "Rozmer Vášho obrázka by mal byť %{requiredWidth} x%{requiredHeight} pixlov."
-                eventName: "Názov udalosti"
+                eventName: "Názov podujatia"
                 org: "Názov kostola alebo organizácie"
-                desc: "Opis udalosti"
+                desc: "Popis podujatia"
                 next: "Nasledujúci: Pridajte miesto a časy →"
                 blank: "%{field} nemôže byť prázdne."
           location:
@@ -1857,7 +1857,7 @@ sk:
               LocationDeleteModal:
                 sure: "Ste si istý?"
                 selected: "Pre vymazanie ste zvolili nasledovné miesto:"
-                warn: "Týmto bude miesto vymazané zo všetkých predchádzajúcich a súčasných udalostí. Toto miesto nebudete môcť znova použiť pre budúce udalosti."
+                warn: "Týmto vymažete toto miesto zo všetkých predchádzajúcich a súčasných podujatí. Miesto nebude možné opätovne použiť pre budúce podujatia."
                 cancel: "Zrušiť"
                 delete: "Odstrániť"
               LocationEdit:
