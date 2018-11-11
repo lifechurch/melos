@@ -496,7 +496,7 @@ tl:
     none user: "%{username} ay wala pang nagawang mga larawan."
     blank slate:
       heading: "Wala ka pang mga larawan"
-      description: "Gamitin ang YouVersion mobile app para gumawa ng larawang bersikulo."
+      description: "Gamitin ang YouVersion mobile app para gumawa ng bersikulong larawan."
   notes:
     none user: "Si %{username} ay wala pang mga tala."
     blank slate:
@@ -1394,7 +1394,7 @@ tl:
         reading_plans: "Nakapag-unsubscribe ka sa <b>Babasahing Gabay</b> na mga email."
         rp_daily: "Nakapag-unsubscribe ka sa mga </b>pang-araw-araw na email para sa Babsahing Gabay</b> na %{plan_title}."
         votd: "Nakapag-unsubscribe ka sa <b>Bersikulo ng Araw</b> na mga email."
-        votd_image: "Matagumpay kang nakapag-unsubscribe sa mga email ng <b>Bersikulong Larawan ng Araw</b>."
+        votd_image: "Matagumpay kang nakapag-unsubscribe sa mga<b>Larawang Bersikulo ng Araw</b> na email."
         contact_joins: "Matagumpay ang iyong pag-unsubscribe sa 1 Contacts 1 email."
         pwf_accepts: "Matagumpay kang nakapag-unsubscribe na makita kapag tinanggap ng isang Kaibigan ang iyong imbitasyon sa isang Gabay."
         pwf_invites: "Matagumpay kang nakapag-unsubscribe na makita kapag naimbitahan ka sa isang Gabay."
