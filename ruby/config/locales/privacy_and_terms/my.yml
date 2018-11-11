@@ -3,7 +3,7 @@ my:
     privacy:
       policy: "%{youversion} ၏ ကိုယ်ရေးသီးသန့်ပေါ်လစီ"
       h1: "အကျဉ်းချုပ်ခြုံငုံသုံးသပ်ချက်"
-      p1: "Here’s a summary of what you can expect to find in our Privacy Policy, which cover all YouVersion-branded products and services:"
+      p1: "YouVersion အမှတ်တံဆိပ်ပါ ထုတ်ကုန်များနှင့်ဝန်ဆောင်မှုများအားလုံးအတွက် မွမ်းမံထားသည့်ပေါ်လစီများတွင် သင်တွေ့ရှိသွားရမည့်အရာများအကျဉ်းချုပ်မှာ -"
       h2: "သင့်ရဲ့အတွေ့အကြုံကိုကိုယ်ရေးကိုယ်တာဖြစ်စေခြင်း။"
       p2: "သင် YouVersion အကောင့်တစ်ခုဖန်တီးသည့်အခါ (သို့) ကျွန်ုပ်တို့၏အက်ပ်(သို့)ဝက်ဘ်ဆိုက်များ တစ်ခုခုအသုံးပြုသည့်အခါ၊ ကျွန်ုပ်တို့စုဆောင်းသည့်သတင်းအချက်အလက်များသည် ပိုပြီးကိုယ်ရေးကိုယ်တာဆန်သည့် ကျမ်းစာအတွေ့အကြုံများပေးစွမ်းနိုင်ရန် ဆိုသည့်ရည်ရွယ်ချက်ကြောင့်သာဖြစ်ပါသည်။"
       h3: "How we use your data."
@@ -44,7 +44,7 @@ my:
       p15: "YouVersion will allow you to communicate and connect with other YouVersion users to share Bible verses, messages and other content. We also enable communications between you and others through YouVersion, including, for example, messages between Members. It is your choice whether to communicate or connect with another Member. We will use data about you to help you connect and communicate and share content with other YouVersion users. This includes personal information you provide to us and individuals with which you communicate. We may also use contact information from your mobile device should you grant permission to YouVersion to access the same."
       h12: "လှုပ်ရှားမှုအစီအစဉ်"
       p16: "YouVersion Events allows you to locate nearby church services that are using Events, enabling you to follow along with the provided content, engage with Scripture, take notes, and save your own copy for future reference. Should you choose to use our Events feature and opt to share your location data, YouVersion will use your location data to provide a listing of Events you may be interested in attending."
-      h13: "Recommendations"
+      h13: "အကြံပြုထောက်ခံချက်"
       p17: "We use the data we have about you and inferences we make from that data to recommend certain content and functionality as well as additional products and services offered through YouVersion. For example, based upon a Bible Plan you complete, we may suggest additional Bible Plans to you. We may contact you through push notification, email, or in-app messages to discuss these recommendations, how to use YouVersion, and other YouVersion news messages. You may unsubscribe to these messages via the unsubscribe link in emails providing these messages. You can also tailor your notification settings in YouVersion applications or by visiting <a href=\"https://www.bible.com/notification-settings\">bible.com/notification-settings</a>."
       h14: "Service-Related Messages"
       p18: "We may use your information to contact you about account, security, legal and other service-related issues. We will do this through in-app messages, push notifications and/or email. Please be aware that you cannot opt-out of receiving service messages from us, including security and legal notices."
