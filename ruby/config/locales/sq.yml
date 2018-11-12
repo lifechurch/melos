@@ -653,8 +653,6 @@ sq:
     update email check: "Ju lutem kontrolloni e-postën tuaj dhe klikoni hallkën lidhëse për të konfirmuar adresën tuaj të re elektronike."
     confirm update email success: "Faleminderit! Ju e keni përditësuar adresën tuaj elektronike."
     confirm update email error: "Më vjen keq, pati një problem në plotësimin e ndryshimit të adresës suaj elektronike."
-    account confirmed: "Llogaria juaj është konfirmuar!"
-    account already confirmed: "Llogaria juaj tashmë është konfirmuar. Hyr për të vazhduar."
     errors confirming account: "Më vjen keq, diçka shkoi keq në anën tonë. Ju mund të freskoni shfletuesin tuaj për ta provuar sërish ose nëse kjo ndodh sërish, klikoni më poshtë për të kërkuar një konfirmim të ri përmes e-postës."
     invalid confirm hash: "Më vjen keq, ky kod konfirmimi duket se është i pasaktë. Ju mund të freskoni shfletuesin tuaj për të provuar sërish ose nëse kjo vazhdon të ndodhë, klikoni më poshtë për të kërkuar një kod të ri konfirmimi."
     confirm password to continue: "Ju lutem vendosni fjalëkalimin për të hyrë dhe për të filluar."
