@@ -653,8 +653,6 @@ fi:
     update email check: "Ole hyvä ja tarkista sähköpostisi, klikkaa linkkiä vahvistaaksesi uuden sähköpostiosoitteesi."
     confirm update email success: "Kiitos! Olet päivittänyt sähköpostiosoitteesi."
     confirm update email error: "Valitettavasti sähköpostiosoitteen vaihtamisessa tapahtui virhe."
-    account confirmed: "Tilisi on vahvistettu!"
-    account already confirmed: "Tilisi on jo vahvistettu! Kirjaudu sisään jatkaaksesi."
     errors confirming account: "Jokin meni vikaan meidän puolellamme. Voit yrittää uudelleen päivittämällä sivun, jos ongelma toistuu, klikkaa linkkiä alla ja lähetämme uuden vahvistusviestin."
     invalid confirm hash: "Tämä vahvistuskoodi näyttää olevan virheellinen. Voit yrittää uudelleen päivittämällä sivun, jos ongelma toistuu, klikkaa linkkiä alla ja lähetämme uuden vahvistuskoodin."
     confirm password to continue: "Syötä salasanasi kirjautuaksesi sisään ja pääset alkuun."
