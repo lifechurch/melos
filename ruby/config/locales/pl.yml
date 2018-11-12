@@ -683,7 +683,6 @@ pl:
     invalid confirm hash: "Przepraszamy, ten kod potwierdzający jest nieważny.  Możesz odświeżyć przeglądarkę, żeby spróbować ponowie. Jeżeli błąd się będzie powtarzał, kliknij niżej aby otrzymać nowy kod potwierdzający."
     confirm password to continue: "Proszę wpisać swoje hasło, żeby się zalogować i rozpocząć."
     invalid email forgot: "Niestety, nie mogliśmy znaleźć konta z podanym adresem e-mail. Spróbuj ponownie."
-    error deleting account: "Przepraszam, pojawił się problem po naszej stronie. Proszę spróbować ponownie lub skontaktować się ze wsparciem technicznym."
     send new password button: "Wyślij nowe hasło"
     forgot password copy: "Wpisz swój e-mail lub nazwę użytkownika a my wyślemy odnośnik do restartu hasła."
     forgot password check: "Spróbujemy wysłać e-mail restartu hasła do<br><br>%{email}<br><br>Kliknij odnośnik w mailu, aby kontynuować."
