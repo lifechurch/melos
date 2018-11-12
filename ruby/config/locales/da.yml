@@ -657,7 +657,6 @@ da:
     invalid confirm hash: "Beklager, at bekræftelseskoden synes at være ugyldig. Du kan opdatere din browser for at prøve igen, eller hvis det sker igen, skal du klikke nedenfor for at anmode om en ny bekræftelseskode."
     confirm password to continue: "Indtast venligst dit password for at logge ind og komme i gang."
     invalid email forgot: "Beklager, vi kunne ikke finde en konto med den email adresse. Prøv venligst igen."
-    error deleting account: "Beklager, der var en fejl i vores del. Prøv venligst igen eller kontakt supporten."
     send new password button: "Send et nyt password"
     forgot password copy: "Indtast din email adresse eller brugernavn og vi sender dig et link til at nulstille dit password."
     forgot password check: "Vi vil forsøge at sende en nulsttil password email til <br><br>%{email}<br><br>Klik på linket i emailen for at fortsætte."
