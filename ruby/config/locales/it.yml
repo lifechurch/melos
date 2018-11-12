@@ -657,7 +657,6 @@ it:
     invalid confirm hash: "Ci dispiace - sembra che quel codice di conferma non sia valido. Puoi ricaricare la pagina del browser per riprovare, o se questo succede ancora, clicca sotto per richiedere un nuovo codice di conferma."
     confirm password to continue: "Inserisci la tua password per accedere e iniziare."
     invalid email forgot: "Scusa, non abbiamo trovato un account con questo indirizzo e-mail. Per favore riprova."
-    error deleting account: "Scusa, c'è stato un problema. Per favore prova di nuovo o contatta l'assistenza."
     send new password button: "Invia Nuova Password"
     forgot password copy: "Inserisci il tuo indirizzo e-mail o nome utente, e ti invieremo un link per reimpostare la password."
     forgot password check: "Cercheremo di inviare un e-mail di reimpostazione della password a<br><br>%{email}<br><br> Fai clic sul link nell'e-mail per continuare."
