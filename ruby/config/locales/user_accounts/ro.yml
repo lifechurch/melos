@@ -1,0 +1,4 @@
+ro:
+  users:
+    account confirmed: "Contul tău a fost confirmat!"
+    account already confirmed: "Contul tău a fost deja confirmat! Autentifică-te pentru a continua."
