@@ -657,7 +657,6 @@ de:
     invalid confirm hash: "Sorry, der Code für die Bestägigung scheint ungültig zu sein. Aktualisiere bitte deinen Browser, um es erneut zu versuchen. Falls es wieder passieren sollte, klicke bitte unten, um einen neuen Code anzufordern."
     confirm password to continue: "Bitte gib dein Passwort ein, um dich anzumelden, und fange gleich an."
     invalid email forgot: "Sorry, wir haben kein Konto mit dieser E-Mail-Ad­res­se gefunden. Bitte versuch es noch einmal."
-    error deleting account: "Entschuldige, es gab ein Problem auf unserer Seite. Bitte versuche es erneut oder kontaktiere den Support."
     send new password button: "Sende neues Passwort"
     forgot password copy: "Trage deine E-Mail-Adresse oder deinen Benutzernamen ein und wir senden dir einen Link zum Zurücksetzen deines Passwortes."
     forgot password check: "Wir werden versuchen, eine E-Mail zum zurücksetzen des Passworts an <br><br>%{email}<br><br> zu senden. Bitte klicke auf den Link in der E-Mail um fortzufahren. "
