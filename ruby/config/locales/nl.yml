@@ -653,8 +653,6 @@ nl:
     update email check: "Controleer je e-mail en klik op de link om je nieuwe e-mailadres te bevestigen."
     confirm update email success: "Bedankt! Je e-mailadres is bijgewerkt."
     confirm update email error: "Sorry, er ging iets verkeerd tijdens het afronden van de verandering van je e-mailadres."
-    account confirmed: "Je account is bevestigd!"
-    account already confirmed: "Je account is bevestigd! Log in om verder te gaan."
     errors confirming account: "Sorry, er ging iets mis aan onze kant. Je kan je browser herladen om het opnieuw te proberen of, als dit blijft gebeuren, klik hieronder voor een nieuwe bevestigingse-mail."
     invalid confirm hash: "Sorry, deze bevestigingscode is niet geldig. Je kunt je browser herladen om het opnieuw te proberen of, als dit blijft gebeuren, klik hieronder voor een nieuwe bevestigingse-mail."
     confirm password to continue: "Voer je wachtwoord in om in te loggen en aan de slag te gaan."
