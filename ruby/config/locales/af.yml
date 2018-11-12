@@ -657,7 +657,6 @@ af:
     invalid confirm hash: "Jammer, daardie bevestingings kode blyk ongeldig te wees. Jy kan jou browser herlaai en weer probeer, of as dit bly gebeur, kliek hieronder om 'n nuwe bevestigings kode aan te vra."
     confirm password to continue: "Vul asseblief jou wagwoord in om in te teken en te begin."
     invalid email forgot: "Jammer, ons kon nie 'n rekening opspoor met daardie e-pos adres nie. Probeer asb. weer."
-    error deleting account: "Jammer, daar was 'n probleem aan ons kant. Probeer asseblief weer of kontak ons vir ondersteuning."
     send new password button: "Stuur Nuwe Wagwoord"
     forgot password copy: "Vul jou epos adres of gebruikersnaam in dan stuur ons vir jou 'n skakel om jou wagwoord te verander."
     forgot password check: "Ons sal probeer om 'n epos met 'n nuwe wagwoord te stuur na<br><br>%{email}<br><br> Klik op die skakel in die epos om voort te gaan. "
