@@ -1,0 +1,4 @@
+fi:
+  users:
+    account confirmed: "Tilisi on vahvistettu!"
+    account already confirmed: "Tilisi on jo vahvistettu! Kirjaudu sisään jatkaaksesi."
