@@ -653,8 +653,6 @@ tr:
     update email check: "e-Posta'nıza, yeni adresiniz doğrulamak için bir mesaj yollanmıştır. O mesajdaki linki tıklayarak e-Posta adresinizi doğrulayın."
     confirm update email success: "e-Posta adresiniz güncellenmiştir. Teşekkür ederiz!"
     confirm update email error: "e-Posta adres değişikliğiniz yapılırken bir hata oluştu. Özür dileriz."
-    account confirmed: "Hesabınız doğrulandı!"
-    account already confirmed: "Hesabınız zaten doğrulanmıştır. Devam etmek için giriş yapınız."
     errors confirming account: "Özür dileriz. Bizim ucumuzda bir hata oldu. Sayfayı yeniden yüklemeyi deneyebilirsiniz. Eğer bu hata yine çıkarsa, aşağıdan yeni bir doğrulama şifresini talep edebilirsiniz."
     invalid confirm hash: "Özür dileriz. Girdiğiniz doğrulama şifresi geçersizdir. Sayfayı yeniden yüklemeyi deneyebilirsiniz. Eğer bu mesajı bir daha görürseniz, aşağıdan yeni bir doğrulama şifresini talep edebilirsiniz."
     confirm password to continue: "Başlamak için parolanızı giriniz."
