@@ -1,0 +1,4 @@
+da:
+  users:
+    account confirmed: "Din konto er blevet bekræftet!"
+    account already confirmed: "Din konto er allerede bekræftet! Log ind for at fortsætte."
