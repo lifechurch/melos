@@ -1,0 +1,4 @@
+cy:
+  users:
+    account confirmed: "Mae’ch cyfrif wedi'i gadarnhau!"
+    account already confirmed: "Mae’ch cyfrif wedi ei gadarnhau! Rhaid mewngofnodi i barhau."
