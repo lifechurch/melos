@@ -1,0 +1,4 @@
+ca:
+  users:
+    account confirmed: "El teu compte s'ha confirmat!"
+    account already confirmed: "Ja s'ha confirmat el teu compte! Inicia la sessió per continuar."
