@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -e marko ./server/index.js",
     "getLocaleStrings": "node ./scripts/get-locale-strings.js ../ruby/config/locales/bible ./locales",
+    "getUserLocaleStrings": "node ./scripts/get-locale-strings.js ../ruby/config/locales/user_accounts ./locales/user-accounts",
     "generateIngressBlocks": "node ./scripts/generate-ingress-blocks.js"
   },
   "author": "",
