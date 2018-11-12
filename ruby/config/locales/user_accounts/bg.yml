@@ -1,0 +1,4 @@
+bg:
+  users:
+    account confirmed: "Профилът Ви е потвърден!"
+    account already confirmed: "Профилът Ви вече е потвърден! Влезте, за да продължите."
