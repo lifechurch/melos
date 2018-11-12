@@ -1,0 +1,4 @@
+sk:
+  users:
+    account confirmed: "Váš účet bol aktivovaný!"
+    account already confirmed: "Váš účet bol už potvrdený! Pokračujte prihlásením."
