@@ -644,7 +644,6 @@ id:
     invalid confirm hash: "Maaf, kode konfirmasi itu tidak valid. Anda dapat memuat ulang penjelajah untuk mencoba lagi, atau jika tetap terjadi, klik di bawah untuk meminta kode konfirmasi baru."
     confirm password to continue: "Masukkan kata sandi Anda untuk masuk dan memulai."
     invalid email forgot: "Maaf, kami tidak bisa menemukan akun dengan alamat email itu. Silakan coba lagi."
-    error deleting account: "Maaf, ada masalah di pihak kami. Silakan coba lagi atau hubungi layanan kami."
     send new password button: "Kirim Kata Sandi Baru"
     forgot password copy: "Masukkan Alamat Email atau Nama Pengguna Anda, dan kami akan mengirimkan tautan untuk mengatur ulang Kata Sandi Anda."
     forgot password check: "Kami akan mengirimkan email untuk mengatur ulang kata sandi ke<br><br>%{email}<br><br>Klik tautan dalam email tersebut untuk melanjutkan."
