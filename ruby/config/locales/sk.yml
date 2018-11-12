@@ -679,8 +679,6 @@ sk:
     update email check: "Prosím skontrolujte si email a kliknite na zaslaný odkaz, čím potvrdíte vašu novú emailovú adresu."
     confirm update email success: "Vďaka! Zmenili ste svoju emailovú adresu."
     confirm update email error: "Prepáčte, nepodarilo sa zmeniť vašu emailovú adresu."
-    account confirmed: "Váš účet bol aktivovaný!"
-    account already confirmed: "Váš účet bol už potvrdený! Pokračujte prihlásením."
     errors confirming account: "Prepáčte, niečo sa nám nepodarilo. Môžete znova načítať stránku a vyskúšať to opäť, alebo ak sa problém opakuje, môžete kliknutím nižšie požiadať o nový potvrdzujúci email."
     invalid confirm hash: "Prepáčte, potvrdzujúci kód je podľa všetkého neplatný. Môžete znova načítať stránku a vyskúšať to opäť, alebo ak sa tento problém opakuje, môžete kliknutím nižšie požiadať o nový potvrdzujúci kód."
     confirm password to continue: "Prosím zadajte vaše heslo a prihláste sa."
