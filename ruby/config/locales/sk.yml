@@ -683,7 +683,6 @@ sk:
     invalid confirm hash: "Prepáčte, potvrdzujúci kód je podľa všetkého neplatný. Môžete znova načítať stránku a vyskúšať to opäť, alebo ak sa tento problém opakuje, môžete kliknutím nižšie požiadať o nový potvrdzujúci kód."
     confirm password to continue: "Prosím zadajte vaše heslo a prihláste sa."
     invalid email forgot: "Prepáčte, nenašli sme účet so zadanou emailovou adresou. Prosím, skúste znova."
-    error deleting account: "Prepáčte, vyskytla sa chyba. Skúste to znova, alebo kontaktujte podporu prosím."
     send new password button: "Zaslať nové heslo"
     forgot password copy: "Zadajte Vašu e-mailovú adresu alebo uživateľské meno a my pošleme odkaz pre zmenu hesla."
     forgot password check: "Pokúsime sa zaslať e-mail o zmene hesla na<br><br>%{email}<br><br>Pre pokračovanie kliknite na odkaz v uvedenom e-maili."
