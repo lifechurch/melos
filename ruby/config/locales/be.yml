@@ -679,8 +679,6 @@ be:
     update email check: "Please check your email and click the link to confirm your new email address."
     confirm update email success: "Thanks! You've updated your email address."
     confirm update email error: "Прабачце, узьнікла праблема пры зьмяненьні вашай электроннай пошты."
-    account confirmed: "Ваш рахунак быў пацьверджаны!"
-    account already confirmed: "Ваш рахунак ужо быў пацьверджаны! Увайдзіце дзеля працягу."
     errors confirming account: "Выбачайце, нейкая памылка з нашага боку. Паспрабуйце абнавіць старонку ў браўзэры, а калі гэта працягвае здарацца, націсьніце ніжэй, каб запытаць новы ліст пацьверджаньня."
     invalid confirm hash: "Sorry, that confirmation code seems to be invalid. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation code."
     confirm password to continue: "Калі ласка, дзеля ўваходу і карыстаньня ўвядзіце пароль."
