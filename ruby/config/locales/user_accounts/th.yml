@@ -1,4 +1,6 @@
 th:
-  users:
-    account confirmed: "บัญชีสมาชิกของคุณได้รับการยืนยันแล้ว!"
-    account already confirmed: "บัญชีสมาชิกของคุณได้รับการยืนยัน! เข้าสู่ระบบเพื่อดำเนินการต่อ"
+  features:
+    users:
+      account confirmed: "Your account has been confirmed!"
+      account already confirmed: "Your account has already been confirmed! Sign in to continue."
+      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
