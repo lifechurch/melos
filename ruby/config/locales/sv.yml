@@ -657,7 +657,6 @@ sv:
     invalid confirm hash: "Ledsen, men bekräftningskoden verkar ogiltig. Du kan pröva att ladda om sidan för att försöka igen. Om problemet kvarstår kan du klicka nedan för att få en ny bekräftningskod."
     confirm password to continue: "Vänligen ange ditt lösenord för att logga in och komma igång."
     invalid email forgot: "Vi kunde inte hitta ett konto med denna e-postadress. Försök igen."
-    error deleting account: "Det uppstod ett problem hos oss. Försök igen eller kontakta supporten."
     send new password button: "Skicka nytt lösenord"
     forgot password copy: "Ange din e-postadress eller ditt användarnamn så kommer vi skicka dig en länk för att återställer ditt lösenord."
     forgot password check: "Vi kommer att försöka skicka ett e-brev för återställning av lösenordet till<br><br>%{email}<br><br>Klicka på länken i e-brevet för att fortsätta."
