@@ -683,7 +683,6 @@ be:
     invalid confirm hash: "Sorry, that confirmation code seems to be invalid. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation code."
     confirm password to continue: "Калі ласка, дзеля ўваходу і карыстаньня ўвядзіце пароль."
     invalid email forgot: "Выбачайце, уліковы запіс з такім эмэйлам ня знойдзены. Калі ласка, паспрабуйце яшчэ раз."
-    error deleting account: "Выбачайце, у нас здарылася памылка. Калі ласка, паспрабуйце яшчэ раз ці скантактуйцеся з падтрымкай."
     send new password button: "Адаслаць новы пароль"
     forgot password copy: "Напішыце ваш эмэйл ці імя карыстальніка, і мы вышлем вам спасылку для аднаўленьня пароля."
     forgot password check: "Мы паспрабуем адаслаць ліст са скіданьнем паролю на <br><br>%{email}<br><br>Каб працягнуць, націсьніце на спасылку ў гэтым лісьце."
