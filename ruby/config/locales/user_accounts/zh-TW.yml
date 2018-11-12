@@ -1,4 +1,6 @@
 zh-TW:
-  users:
-    account confirmed: "這個帳戶已經被確認了。"
-    account already confirmed: "你的帳戶已經確認了！請登入再繼續。"
+  features:
+    users:
+      account confirmed: "Your account has been confirmed!"
+      account already confirmed: "Your account has already been confirmed! Sign in to continue."
+      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
