@@ -1,0 +1,4 @@
+zh-CN:
+  users:
+    account confirmed: "你的账户已经验证成功！"
+    account already confirmed: "你的账户已被确认！请登录。"
