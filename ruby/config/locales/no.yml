@@ -653,8 +653,6 @@
     update email check: "Sjekk eposten din og klikk på lenken for å bekrefte din nye epost-adresse."
     confirm update email success: "Takk! Vi har oppdatert epost-adressen din."
     confirm update email error: "Beklager, det oppsto et problem og epost-adressen din ble ikke endret."
-    account confirmed: "Din konto er bekreftet!"
-    account already confirmed: "Din konto er allerede bekreftet! Logg in for å fortsette."
     errors confirming account: "Beklager, noe gikk galt hos deg. Du kan oppdatere nettleseren din for å prøve igjen. Eller, om dette skjer mange ganger så kan du klikke nedenfor for å be om en ny bekreftelses-epost."
     invalid confirm hash: "Beklager, den bekreftelseskoden ser ut til å være ugyldig. Du kan oppdatere nettleseren din for å prøve igjen. Eller, dersom dette skjer mange ganger så kan du klikke nedenfor for å be om en ny bekreftelseskode."
     confirm password to continue: "Skriv inn passordet ditt for å logge inn og komme i gang"
