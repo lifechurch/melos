@@ -657,7 +657,6 @@ ca:
     invalid confirm hash: "Lamentem informar-te que el codi de confirmació no sembla vàlid. Pots actualitzar el teu navegador per tornar a intentar-ho, o, si continua passant, fes clic a sota per sol·licitar un codi de confirmació."
     confirm password to continue: "Si us plau, introdueix la teva contrasenya per iniciar sessió i començar."
     invalid email forgot: "Ens sap greu, però no podem trobar cap compte amb aquesta adreça de correu electrònic. Si us plau, prova-ho una altra vegada."
-    error deleting account: "Ho sentim, hem tingut un problema. Prova-ho de nou o contacta amb el suport tècnic."
     send new password button: "Envia una nova contrasenya"
     forgot password copy: "Introdueix el teu correu electrònic o el teu nom d'usuari i t'enviarem un enllaç per restablir la teva contrasenya."
     forgot password check: "Intentarem enviar un email de restabliment de contrasenya a<br><br>%{email}<br><br>Fes clic a l'enllaç que hi ha al correu per continuar."
