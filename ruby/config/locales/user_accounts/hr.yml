@@ -1,0 +1,4 @@
+hr:
+  users:
+    account confirmed: "Tvoj korisnički račun je potvrđen!"
+    account already confirmed: "Korisnički račun je već potvrđen! Prijavi se za nastavak."
