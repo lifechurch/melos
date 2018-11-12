@@ -653,8 +653,6 @@ ca:
     update email check: "Si us plau, revisa el teu correu electrònic i clica a l'enllaç per confirmar la teva nova adreça de correu electrònic."
     confirm update email success: "Gràcies! Has actualitzat la teva adreça de correu electrònic."
     confirm update email error: "Ens sap greu, però hi ha hagut un problema fent el canvi de l'adreça de correu electrònic."
-    account confirmed: "El teu compte s'ha confirmat!"
-    account already confirmed: "Ja s'ha confirmat el teu compte! Inicia la sessió per continuar."
     errors confirming account: "Ens sap greu, però alguna cosa ha sortit malament. Pots actualitzar el teu navegador per tornar a intentar-ho, o si continua passant, fes clic a sota per sol·licitar una nova confirmació per correu electrònic."
     invalid confirm hash: "Lamentem informar-te que el codi de confirmació no sembla vàlid. Pots actualitzar el teu navegador per tornar a intentar-ho, o, si continua passant, fes clic a sota per sol·licitar un codi de confirmació."
     confirm password to continue: "Si us plau, introdueix la teva contrasenya per iniciar sessió i començar."
