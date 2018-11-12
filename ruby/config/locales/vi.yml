@@ -640,8 +640,6 @@ vi:
     update email check: "Xin hãy kiểm tra email và bấm vào đường dẫn xác nhận địa chỉ email mới."
     confirm update email success: "Cảm ơn bạn đã cập nhật địa chỉ email!"
     confirm update email error: "Xin lỗi, có vấn đề khi thay đổi địa chỉ email của bạn!"
-    account confirmed: "Tài khoản của bạn đã được xác nhận!"
-    account already confirmed: "Tài khoản của bạn đã được xác nhận! Hãy đăng nhập để tiếp tục:"
     errors confirming account: "Xin lỗi bạn, có lỗi kỹ thuật từ phía chúng tôi. Bạn có thể làm mới (refresh) trình duyệt để thử lại. Nếu việc này tiếp diễn, hãy bấm vào dưới đây để yêu cầu email xác nhận mới."
     invalid confirm hash: "Xin lỗi bạn, mã xác nhận đó không có giá trị. Bạn có thể làm mới (refresh) trình duyệt để thử lại. Nếu việc này tiếp diễn, hãy bấm vào dưới đây để yêu cầu mã xác nhận mới."
     confirm password to continue: "Hãy điền mật khẩu của bạn để đăng nhập và bắt đầu."
