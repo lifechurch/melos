@@ -1,0 +1,4 @@
+sv:
+  users:
+    account confirmed: "Ditt konto har verifierats!"
+    account already confirmed: "Ditt konto har redan bekräftats! Logga in för att fortsätta."
