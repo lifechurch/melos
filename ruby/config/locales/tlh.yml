@@ -657,7 +657,6 @@ tlh:
     invalid confirm hash: "crwdns115430:0crwdne115430:0"
     confirm password to continue: "crwdns115431:0crwdne115431:0"
     invalid email forgot: "crwdns115432:0crwdne115432:0"
-    error deleting account: "crwdns115433:0crwdne115433:0"
     send new password button: "crwdns115434:0crwdne115434:0"
     forgot password copy: "crwdns115435:0crwdne115435:0"
     forgot password check: "crwdns115436:0%{email}crwdne115436:0"
