@@ -640,8 +640,6 @@ id:
     update email check: "Silakan periksa email Anda dan klik tautan untuk mengonfirmasi alamat email baru Anda."
     confirm update email success: "Terima kasih! Anda telah memperbarui alamat email."
     confirm update email error: "Maaf, ada masalah dalam menyelesaikan perubahan alamat email Anda."
-    account confirmed: "Akun Anda sudah dikonfirmasi!"
-    account already confirmed: "Akun Anda telah dikonfirmasi! Masuk untuk melanjutkan."
     errors confirming account: "Maaf, ada kesalahan di pihak kami. Anda dapat memuat ulang penjelajah Anda untuk mencoba lagi, atau jika tetap terjadi, klik di bawah untuk meminta email konfirmasi baru."
     invalid confirm hash: "Maaf, kode konfirmasi itu tidak valid. Anda dapat memuat ulang penjelajah untuk mencoba lagi, atau jika tetap terjadi, klik di bawah untuk meminta kode konfirmasi baru."
     confirm password to continue: "Masukkan kata sandi Anda untuk masuk dan memulai."
