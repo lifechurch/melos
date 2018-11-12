@@ -1,0 +1,4 @@
+tr:
+  users:
+    account confirmed: "Hesabınız doğrulandı!"
+    account already confirmed: "Hesabınız zaten doğrulanmıştır. Devam etmek için giriş yapınız."
