@@ -1,4 +1,6 @@
 my-MM:
-  users:
-    account confirmed: "သင့္အေကာင့္ကို စိစစ္အတည္ျပဳပါၿပီ။"
-    account already confirmed: "သင့္အေကာင့္ကို စိစစ္​အတည္ျပဳ​ၿပီးသားျဖစ္သည္။ ဆက္လုပ္ရန္ အေကာင့္သို႔ဝင္ပါ။"
+  features:
+    users:
+      account confirmed: "Your account has been confirmed!"
+      account already confirmed: "Your account has already been confirmed! Sign in to continue."
+      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
