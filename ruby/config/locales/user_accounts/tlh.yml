@@ -1,4 +1,6 @@
 tlh:
-  users:
-    account confirmed: "crwdns224454:0crwdne224454:0"
-    account already confirmed: "crwdns224456:0crwdne224456:0"
+  features:
+    users:
+      account confirmed: "crwdns224570:0crwdne224570:0"
+      account already confirmed: "crwdns224572:0crwdne224572:0"
+      error deleting account: "crwdns224574:0crwdne224574:0"
