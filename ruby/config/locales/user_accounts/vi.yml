@@ -1,0 +1,4 @@
+vi:
+  users:
+    account confirmed: "Tài khoản của bạn đã được xác nhận!"
+    account already confirmed: "Tài khoản của bạn đã được xác nhận! Hãy đăng nhập để tiếp tục:"
