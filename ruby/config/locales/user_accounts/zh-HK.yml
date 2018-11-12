@@ -4,3 +4,6 @@ zh-HK:
       account confirmed: "Your account has been confirmed!"
       account already confirmed: "Your account has already been confirmed! Sign in to continue."
       error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      friendship success: "成了！你們現在是朋友了。"
+      friendship failure: "建立友情連接時出錯誤"
+      friends: "朋友"
