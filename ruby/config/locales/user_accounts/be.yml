@@ -1,0 +1,4 @@
+be:
+  users:
+    account confirmed: "Ваш рахунак быў пацьверджаны!"
+    account already confirmed: "Ваш рахунак ужо быў пацьверджаны! Увайдзіце дзеля працягу."
