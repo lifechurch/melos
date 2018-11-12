@@ -657,7 +657,6 @@ tl:
     invalid confirm hash: "Paumanhin, mukhang di valid ang kodigong pang-kumpirmasyon.  Maaari mong i-refresh ang iyong browser para subukan uli, o kung patuloy itong nangyayari, i-click sa ibaba para humingi ng bagong kodigong pang-kumpirmasyon."
     confirm password to continue: "Maaaring ipasok ang iyong password para mag-sign-in at magsimula."
     invalid email forgot: "Paumanhin, wala kaming mahanap na ganyang email address. Pakiulit po."
-    error deleting account: "Paumanhin, may problema sa aming koneksyon. Pakiulit po o kaya ay kontakin ang aming support."
     send new password button: "Magpadala ng Bagong Password"
     forgot password copy: "Ilagay ang iyong email address o username, at kami'y magpapadala ng link upang mabago ang iyong password."
     forgot password check: "Sisikapin naming magpadala ng reset password email sa<br><br>%{email}<br><br>Pindutin ang link sa email upang magpatuloy."
