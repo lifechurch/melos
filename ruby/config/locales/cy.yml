@@ -709,7 +709,6 @@ cy:
     invalid confirm hash: "Mae’n flin gennym, dydy’r cod cadarnhau ddim yn ddilys. Medrwch adnewyddu’ch porwr i roi cais arall arni, ond os digwydd hyn eto, cliciwch isod i ofyn am god cadarnhau newydd."
     confirm password to continue: "Rhowch eich cyfrinair i fewngofnodi a chychwyn arni."
     invalid email forgot: "Sori, ond allwn ni ddim canfod cyfrif i'r cyfeiriad ebost yna. Rhowch gynnig arall arni."
-    error deleting account: "Mae’n ddrwg gennym, digwyddodd gwall. Ceisiwch eto neu cysylltwch â’r adran gymorth."
     send new password button: "Danfon Cyfrinair Newydd"
     forgot password copy: "Rho dy gyfeiriad ebost neu enw defnyddiwr, ac anfonwn ddolen atat i ailosod dy gyfrinair."
     forgot password check: "Byddwn yn ceisio anfon ebost ailosod cyfrinair i<br><br>%{email}<br><br>Clicia'r ddolen yn yr ebost i barhau."
