@@ -657,7 +657,6 @@ sq:
     invalid confirm hash: "Më vjen keq, ky kod konfirmimi duket se është i pasaktë. Ju mund të freskoni shfletuesin tuaj për të provuar sërish ose nëse kjo vazhdon të ndodhë, klikoni më poshtë për të kërkuar një kod të ri konfirmimi."
     confirm password to continue: "Ju lutem vendosni fjalëkalimin për të hyrë dhe për të filluar."
     invalid email forgot: "Më vjen keq, ne nuk mundëm të gjenim një llogari me atë adresë elektronike. Ju lutemi provojeni sërish."
-    error deleting account: "Më vjen keq, pati një problem në anën tonë. Ju lutemi provojeni sërish ose kontaktoni ndihmën."
     send new password button: "Dërgo fjalëkalim të ri"
     forgot password copy: "Shkruani e-postën tuaj ose emrin e përdoruesit dhe ne do t'ju dërgojmë një lidhje për të rivendosur fjalëkalimin tuaj."
     forgot password check: "Ne do të provojmë të dërgojmë një e-postë për rivendosjen e fjalëkalimit te<br><br>%{email}<br><br>Klikoni lidhjen në atë e-postë për të vazhduar."
