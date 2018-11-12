@@ -705,8 +705,6 @@ cy:
     update email check: "Ewch i’ch cyfrif ebost, cliciwch y ddolen i gadarnhau'ch cyfeiriad ebost newydd."
     confirm update email success: "Diolch! Diweddarwyd eich cyfeiriad ebost."
     confirm update email error: "Mae’n flin gennym, cawsom drafferth i gwblhau newid manylion  eich ebost."
-    account confirmed: "Mae’ch cyfrif wedi'i gadarnhau!"
-    account already confirmed: "Mae’ch cyfrif wedi ei gadarnhau! Rhaid mewngofnodi i barhau."
     errors confirming account: "Mae’n flin gennym ond digwyddodd gwall. Gallwch adnewyddu’ch porwr i geisio eto, os digwydd hyn eto, cliciwch isod i ofyn am gadarnhad ebost newydd."
     invalid confirm hash: "Mae’n flin gennym, dydy’r cod cadarnhau ddim yn ddilys. Medrwch adnewyddu’ch porwr i roi cais arall arni, ond os digwydd hyn eto, cliciwch isod i ofyn am god cadarnhau newydd."
     confirm password to continue: "Rhowch eich cyfrinair i fewngofnodi a chychwyn arni."
