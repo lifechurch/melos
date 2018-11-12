@@ -653,8 +653,6 @@ tlh:
     update email check: "crwdns115424:0crwdne115424:0"
     confirm update email success: "crwdns115425:0crwdne115425:0"
     confirm update email error: "crwdns115426:0crwdne115426:0"
-    account confirmed: "crwdns115427:0crwdne115427:0"
-    account already confirmed: "crwdns115428:0crwdne115428:0"
     errors confirming account: "crwdns115429:0crwdne115429:0"
     invalid confirm hash: "crwdns115430:0crwdne115430:0"
     confirm password to continue: "crwdns115431:0crwdne115431:0"
