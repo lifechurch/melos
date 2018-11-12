@@ -653,8 +653,6 @@ tl:
     update email check: "Pakitingnan ang iyong email address at pindutin ang link para kumpirmahin ang iyong bagong email address."
     confirm update email success: "Salamat! Na-update mo na ang iyong email address."
     confirm update email error: "Paumanhin, may mga problema sa  planong pagbabago sa email address."
-    account confirmed: "Nakonfirm na ang iyong account!"
-    account already confirmed: "Ang iyong account ay napatunayan na! Magsign-in para magpatuloy."
     errors confirming account: "Paumanhin, nagkaroon ng problema sa aming dulo. Maaari mong i-refresh ang iyong browser para subukan uli, o kung patuloy itong nangyayari, i-click sa ibaba para humingi ng bagong email na kumpirmasyon."
     invalid confirm hash: "Paumanhin, mukhang di valid ang kodigong pang-kumpirmasyon.  Maaari mong i-refresh ang iyong browser para subukan uli, o kung patuloy itong nangyayari, i-click sa ibaba para humingi ng bagong kodigong pang-kumpirmasyon."
     confirm password to continue: "Maaaring ipasok ang iyong password para mag-sign-in at magsimula."
