@@ -670,7 +670,6 @@ hr:
     invalid confirm hash: "Nažalost, izgleda da je šifra za potvrdu pogrešna. Možeš pokušati ponovo osvježivanjem pretraživača, ili, ako se ovo ponovi, kliknuti ispod i zatražiti novu šifru za potvrdu."
     confirm password to continue: "Molimo unesi lozinku da se prijaviš i započneš."
     invalid email forgot: "Nažalost, nije moguće pronaći korisnički račun s tom mail adresom. Molimo pokušaj ponovo."
-    error deleting account: "Nažalost pojavio se problem s naše strane. Molimo probaj ponovo ili kontaktiraj podršku."
     send new password button: "Pošalji novu lozinku"
     forgot password copy: "Unesi mail adresu ili korisničko ime i poslat ćemo ti link za reset lozinke."
     forgot password check: "Pokušat ćemo poslati mail za reset lozinke na<br><br>%{email}<br><br>Za nastavak klikni na link u tom mailu."
