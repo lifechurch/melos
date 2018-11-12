@@ -653,8 +653,6 @@ af:
     update email check: "Kyk asb. deur jou e-pos en kliek die skakel om jou nuwe e-pos adres te bevestig."
     confirm update email success: "Dankie! Jou e-pos adres is verander."
     confirm update email error: "Jammer, daar het 'n probleem ingesluip met die voltooiing van die e-pos adres verandering."
-    account confirmed: "Jou rekening is bevestig!"
-    account already confirmed: "Jou rekening is alreeds bevestig! Teken in om voort te gaan."
     errors confirming account: "Jammer, iets het verkeerd gegaan aan ons kant. Jy kan jou browser herlaai en weer probeer, of as dit bly gebeur, kliek hieronder om 'n nuwe bevestigings e-pos aan te vra."
     invalid confirm hash: "Jammer, daardie bevestingings kode blyk ongeldig te wees. Jy kan jou browser herlaai en weer probeer, of as dit bly gebeur, kliek hieronder om 'n nuwe bevestigings kode aan te vra."
     confirm password to continue: "Vul asseblief jou wagwoord in om in te teken en te begin."
