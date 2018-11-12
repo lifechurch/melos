@@ -670,7 +670,6 @@ ro:
     invalid confirm hash: "Ne pare rău, codul de confirmare este incorect. Reîncarcă pagina web pentru a încerca din nou sau, dacă se repetă, fă click mai jos pentru a cere un cod nou de confirmare."
     confirm password to continue: "Introdu parola pentru a te autentifica și a începe."
     invalid email forgot: "Ne pare rău, nu am găsit nici un cont cu această adresă de e-mail. Încearcă din nou."
-    error deleting account: "Ne pare rău, avem o problemă. Încearcă din nou sau solicită suport."
     send new password button: "Trimite parola nouă"
     forgot password copy: "Introdu adresa de email sau contul de utilizator și îți vom trimite o adresă unde poți reseta parola."
     forgot password check: "Vom trimite un email de resetare a parolei pe adresa<br><br>%{email}<br><br>Trebuie să faci clic pe legătura din email-ul primit."
