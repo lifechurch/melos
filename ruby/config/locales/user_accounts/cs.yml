@@ -1,0 +1,4 @@
+cs:
+  users:
+    account confirmed: "Váš účet byl potvrzen!"
+    account already confirmed: "Váš účet již byl potvrzen! Přihlašte se pro pokračování."
