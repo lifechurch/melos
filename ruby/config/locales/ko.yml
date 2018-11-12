@@ -644,7 +644,6 @@ ko:
     invalid confirm hash: "죄송합니다. 확인 코드가 맞지않습니다.   브라우저에서 새로고침을 선택하시거나 계속해서 같은 문제가 발생하면, 아래를 누르신 후  다른 확인 코드로 다시 시도해보세요."
     confirm password to continue: "비밀번호를 먼저 입력하시고 로그인 하시면 시작하실 수있습니다."
     invalid email forgot: "죄송합니다. 해당 이메일 주소로된 계정을 찾지 못했습니다. 다시 시도하세요."
-    error deleting account: "죄송합니다. 서버에 문제가 있었습니다. 다시 한 번 시도하거나 지원 요청을 해 주세요."
     send new password button: "새 비밀번호 보내기"
     forgot password copy: "이메일 주소를 입력하시거나 사용자 이름을 입력하세요, 비밀번호 재입력 하실 수 있는 링크를 보내드리겠습니다."
     forgot password check: "비밀번호 재설정을 위한 이메일을 <br><br>%{email}로 보내드리겠습니다.<br><br>계속 진행하기 위하여 받으신 이메일안에 있는 링크를 클릭하여 주십시오."
