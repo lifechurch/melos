@@ -653,8 +653,6 @@ sv:
     update email check: "Kontrollera din e-post och klicka på länken för att bekräfta din nya e-postadress."
     confirm update email success: "Tack! Du har uppdaterat din e-postadress."
     confirm update email error: "Det uppstod ett problem vid försök att fullfölja din ändring av e-postadress."
-    account confirmed: "Ditt konto har verifierats!"
-    account already confirmed: "Ditt konto har redan bekräftats! Logga in för att fortsätta."
     errors confirming account: "Ledsen, men något fel uppstod hos oss. Du kan pröva att ladda om sidan för att försöka igen. Om problemet kvarstår kan du klicka nedan för att få ett nytt bekräftningsepost."
     invalid confirm hash: "Ledsen, men bekräftningskoden verkar ogiltig. Du kan pröva att ladda om sidan för att försöka igen. Om problemet kvarstår kan du klicka nedan för att få en ny bekräftningskod."
     confirm password to continue: "Vänligen ange ditt lösenord för att logga in och komma igång."
