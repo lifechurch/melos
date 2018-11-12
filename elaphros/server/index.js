@@ -48,9 +48,13 @@ const bibleCompare = require('../route-handlers/bible-compare')
 
 /* User Account Routes */
 const userAccountConfirmation = require('../route-handlers/user-account-confirmation')
+const friendshipAccept = require('../route-handlers/friendship-accept')
 
 fastify.get('/confirmation', userAccountConfirmation)
 fastify.get('/:lng/confirmation', userAccountConfirmation)
+
+fastify.get('/friendships/accept/:acceptStatus', friendshipAccept)
+fastify.get('/:lng/friendships/accept/:acceptStatus', friendshipAccept)
 
 fastify.get('/bible-offline', bibleOffline)
 fastify.get('/:lng/bible-offline', bibleOffline)
