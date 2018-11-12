@@ -4,3 +4,6 @@ my:
       account confirmed: "Your account has been confirmed!"
       account already confirmed: "Your account has already been confirmed! Sign in to continue."
       error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      friendship success: "ပြီးပါပြီ။ သင်တို့သည် မိတ်ဆွေဖြစ်ပါပြီ။"
+      friendship failure: "မိတ်ဆွေဖြစ်မှုဖန်တီးရာတွင် ချို့ယွင်းမှုဖြစ်ပေါ်ခဲ့သည်။"
+      friends: "မိတ်ဆွေ"
