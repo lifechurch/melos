@@ -653,8 +653,6 @@ sn:
     update email check: "Tarira tsamba dzko dze email wodudzira nekubvuma kana uriwe wachinja pane chiratidzo nezvinyorwa zvata tumira."
     confirm update email success: "Waiata basa wakwanisa kushandura email yako"
     confirm update email error: "Ruregerero paita dambudziko pakupedzisa kuchinja email."
-    account confirmed: "Account yako yagamuchirwa."
-    account already confirmed: "Account yako yatotsinhirwa! Pinda apa kuti unendere mberi"
     errors confirming account: "Tine urombo, pane zvashaishika kwedu Gwangunhudza kuti uyedze futi. Zvikaramba zvichiitika bata pasi apa kuti tikutumire imwe tsamba."
     invalid confirm hash: "Tine urombo, izwi rawaisa handiro. Gwangunudza peji uyedzezve. Zvikaramba, bata pasi apa kuti tikutumire rimwe izwi."
     confirm password to continue: "Isa izwi rekupinda kuti upinde wotanga."
