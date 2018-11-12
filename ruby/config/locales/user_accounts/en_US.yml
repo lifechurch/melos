@@ -1,4 +1,6 @@
 en-US:
-  users:
-    account confirmed: "Your account has been confirmed!"
-    account already confirmed: "Your account has already been confirmed! Sign in to continue."
+  features:
+    users:
+      account confirmed: "Your account has been confirmed!"
+      account already confirmed: "Your account has already been confirmed! Sign in to continue."
+      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
