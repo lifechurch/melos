@@ -670,7 +670,6 @@ lv:
     invalid confirm hash: "Atvainojamies, bet ievadītais apstiprinājuma kods ir nederīgs. Varat atjaunot savu pārlūku, lai mēģinātu vēlreiz, vai ja tas turpina atkārtoties, piespiediet zemāk \"Pieprasīt jaunu apstiprinājuma kodu\"."
     confirm password to continue: "Lūdzu ievadiet savu paroli, lai pierakstītos un sāktu."
     invalid email forgot: "Piedodiet, mēs nespējām atrast kontu ar tādu e-pasta adresi. Lūdzu mēģiniet vēlreiz."
-    error deleting account: "Atvainojamies, bet pie mums radās kļūme. Lūdzu pamēģiniet vēlreiz vai sazinieties ar atbalsta daļu."
     send new password button: "Nosūtīt jauno paroli"
     forgot password copy: "Ievadi savu e-pasta adresi vai lietotājvārdu un mēs nosūtīsim Tev saiti paroles atiestatīšanai."
     forgot password check: "Mēs mēģināsim nosūtīt paroles atiestatīšanas e-pastu uz<br><br>%{email}<br><br>Lai turpinātu, klikšķini uz saites saņemtajā e-pastā."
