@@ -666,8 +666,6 @@ lv:
     update email check: "Lūdzu pārbaudiet savu e-pastu un uzspiediet uz saites lai apstiprinātu jūsu jauno e-pastu."
     confirm update email success: "Paldies. Jūs esat atjaunojis savu e-pasta adresi."
     confirm update email error: "Piedodiet, radās kļūme atjaunojot jūsu e-pasta adresi."
-    account confirmed: "Jūs konts ir ticis apstiprināts!"
-    account already confirmed: "Tavs konts jau ir apstiprināts! Pieraksties lai turpinātu."
     errors confirming account: "Atvainojamies, kaut kas nogāja greizi. Jūs varat atjaunot savu pārlūku, lai mēģinātu vēlreiz, vai ja tas turpina atkārtoties, piespiediet zemāk \"Pieprasīt jaunu apstiprinājuma e-pastu\"."
     invalid confirm hash: "Atvainojamies, bet ievadītais apstiprinājuma kods ir nederīgs. Varat atjaunot savu pārlūku, lai mēģinātu vēlreiz, vai ja tas turpina atkārtoties, piespiediet zemāk \"Pieprasīt jaunu apstiprinājuma kodu\"."
     confirm password to continue: "Lūdzu ievadiet savu paroli, lai pierakstītos un sāktu."
