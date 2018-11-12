@@ -683,7 +683,6 @@ cs:
     invalid confirm hash: "Omlouváme se, potvrzující kód je neplatný. Můžete obnovit váš prohlížeč, pokud se toto bude dít opakovaně, klikněte níže pro odeslání nového potvrzujícího e-mailu."
     confirm password to continue: "Prosím zadejte vaše heslo pro přihlášení a můžete začít."
     invalid email forgot: "Omlouváme se, ale nejsme schopni najít účet vedený s touto e-mailovou adresou. Zkuste to, prosím, ještě jednou."
-    error deleting account: "Omlouváme se, vyskytla se chyba na naší straně. Prosím, zkuste to znovu nebo kontaktujte podporu."
     send new password button: "Zaslat nové heslo"
     forgot password copy: "Zadejte vaši emailovou adresu nebo uživatelské jméno, zašleme vám odkaz na obnovení hesla."
     forgot password check: "Pokusíme se vám poslat email s obnovením hesla<br><br>%{email}<br><br>Klikněte na odkaz v mailu."
