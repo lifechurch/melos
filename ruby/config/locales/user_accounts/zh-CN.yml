@@ -4,3 +4,6 @@ zh-CN:
       account confirmed: "Your account has been confirmed!"
       account already confirmed: "Your account has already been confirmed! Sign in to continue."
       error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      friendship success: "成了！你们现在是朋友了。"
+      friendship failure: "建立友情连接时出错"
+      friends: "朋友"
