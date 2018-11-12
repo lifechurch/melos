@@ -1,0 +1,4 @@
+pt:
+  users:
+    account confirmed: "Sua conta foi confirmada!"
+    account already confirmed: "Sua conta foi confirmada! Entrar para continuar."
