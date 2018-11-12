@@ -1,7 +1,7 @@
 el:
   features:
     bible:
-      about: "About"
+      about: "Σχετικά με"
       audio: "Ήχος"
       audio open: "Άνοιγμα αναπαραγωγής ήχου"
       book: "Βιβλίο"
