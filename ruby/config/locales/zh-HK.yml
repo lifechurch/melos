@@ -644,7 +644,6 @@ zh-HK:
     invalid confirm hash: "抱歉，那個確認代碼似乎是無效的。請刷新你的瀏覽器重試，如果情況沒有改變，請在下方點選要求獲取新的確認代碼。"
     confirm password to continue: "請輸入你的密碼來登入以便繼續。"
     invalid email forgot: "抱歉，沒有找到與該電郵地址相關聯的帳戶，請再試一次。"
-    error deleting account: "抱歉，我們這方面出了個問題。請重試或者聯絡我們的技術支援。"
     send new password button: "發送新的密碼"
     forgot password copy: "請輸入你的電郵地址或用戶名，我們會發給你一個鏈接，以重設你的密碼。"
     forgot password check: "我們會試著發送一封重設密碼的電郵給<br><br> %{email} <br><br>請點擊郵件中的鏈接以繼續下一步。"
