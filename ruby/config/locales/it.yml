@@ -653,8 +653,6 @@ it:
     update email check: "Per favore, controlla la tua e-mail e clicca il link per confermare il tuo nuovo indirizzo e-mail."
     confirm update email success: "Grazie! Hai aggiornato il tuo indirizzo e-mail."
     confirm update email error: "Scusa, c'è stato un problema ad aggiornare il tuo indirizzo e-mail."
-    account confirmed: "Il tuo account è stato confermato!"
-    account already confirmed: "Il tuo account è già stato confermato! Accedi per continuare."
     errors confirming account: "Scusa, abbiamo avuto un problema. Puoi ricaricare la pagina per riprovare, o se questo succede ancora, clicca sotto per richiedere una nuova e-mail di conferma."
     invalid confirm hash: "Ci dispiace - sembra che quel codice di conferma non sia valido. Puoi ricaricare la pagina del browser per riprovare, o se questo succede ancora, clicca sotto per richiedere un nuovo codice di conferma."
     confirm password to continue: "Inserisci la tua password per accedere e iniziare."
