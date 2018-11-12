@@ -653,8 +653,6 @@ ne:
     update email check: "कृपया आफ्नो ईमेल जाँच गर्नुहोस् र तपाईंको दर्ता पुष्टि गर्नका लागि लिङ्क क्लिक गर्नुहोस्।"
     confirm update email success: "धन्यवाद! तपाईंले आफ्नो इमेल ठेगाना अपडेट गर्नुभयो।"
     confirm update email error: "Sorry, there was a problem completing your email address change."
-    account confirmed: "Your account has been confirmed!"
-    account already confirmed: "Your account has already been confirmed! Sign in to continue."
     errors confirming account: "Sorry, something went wrong on our end. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation email."
     invalid confirm hash: "Sorry, that confirmation code seems to be invalid. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation code."
     confirm password to continue: "Please enter your password to sign in and get started."
