@@ -1,4 +1,6 @@
 ko:
-  users:
-    account confirmed: "계정이 확인되었습니다"
-    account already confirmed: "계정이 확인되었습니다.  이제 로그인 하시면 됩니다."
+  features:
+    users:
+      account confirmed: "Your account has been confirmed!"
+      account already confirmed: "Your account has already been confirmed! Sign in to continue."
+      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
