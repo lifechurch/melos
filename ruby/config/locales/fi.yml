@@ -657,7 +657,6 @@ fi:
     invalid confirm hash: "Tämä vahvistuskoodi näyttää olevan virheellinen. Voit yrittää uudelleen päivittämällä sivun, jos ongelma toistuu, klikkaa linkkiä alla ja lähetämme uuden vahvistuskoodin."
     confirm password to continue: "Syötä salasanasi kirjautuaksesi sisään ja pääset alkuun."
     invalid email forgot: "Valitettavasti emme löytäneet tiliä tällä sähköpostiosoitteella.\nOle hyvä ja yritä uudelleen."
-    error deleting account: "Meidän puolellamme oli ongelma. Yritä uudestaan tai ota yhteyttä tukeen."
     send new password button: "Lähetä uusi salasana"
     forgot password copy: "Syötä sähköpostiosoite tai käyttäjätunnus, niin lähetämme linkin, jonka avulla voit vaihtaa salasanan."
     forgot password check: "Yritämme lähettää linkin salasanan vaihtamiseksi osoitteeseen<br><br>%{email}<br><br>Klikkaa linkkiä sähköpostissa jatkaaksesi."
