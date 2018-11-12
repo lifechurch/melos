@@ -1,0 +1,4 @@
+ht:
+  users:
+    account confirmed: "Your account has been confirmed!"
+    account already confirmed: "Your account has already been confirmed! Sign in to continue."
