@@ -657,7 +657,6 @@ en-US:
     invalid confirm hash: "Sorry, that confirmation code seems to be invalid. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation code."
     confirm password to continue: "Please enter your password to sign in and get started."
     invalid email forgot: "Sorry, we weren't able to find an account with that email address. Please try again."
-    error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
     send new password button: "Send New Password"
     forgot password copy: "Enter your email address or username, and we’ll send a link to reset your password."
     forgot password check: "We will attempt to send a reset password email to<br><br>%{email}<br><br>Click the link in that email to continue."
