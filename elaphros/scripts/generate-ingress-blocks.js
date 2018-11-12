@@ -21,6 +21,14 @@ const output = locales.map((locale) => {
     - path: ${appLocale === 'en' ? '' : `/${appLocale}`}/bible-offline
       backend:
         serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+        servicePort: $PORT
+    - path: ${appLocale === 'en' ? '' : `/${appLocale}`}/confirmation
+      backend:
+        serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+        servicePort: $PORT
+    - path: ${appLocale === 'en' ? '' : `/${appLocale}`}/friendships/accept
+      backend:
+        serviceName: elaphros-$CI_ENVIRONMENT_SLUG
         servicePort: $PORT`
   }
   return ''
