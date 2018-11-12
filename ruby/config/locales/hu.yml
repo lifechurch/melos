@@ -657,7 +657,6 @@ hu:
     invalid confirm hash: "Sajnáljuk, úgy tűnik, hogy a megerősítő kód érvénytelen. Frissítsd a böngésződet és próbálkozz újra, vagy ha ez ismét megtörténik, kérj egy új megerősítő e-mailt az alábbi gombra kattintva."
     confirm password to continue: "Kérlek, add meg a jelszavad a bejelentkezéshez, és már kezdheted is!"
     invalid email forgot: "Sajnáljuk, nem találtunk fiókot azzal az email címmel. Kérlek, próbálkozz újra."
-    error deleting account: "Sajnáljuk, nálunk történt hiba. Kérlek, próbálkozz újra vagy lépj kapcsolatba az ügyfélszolgálattal."
     send new password button: "Új jelszó küldése"
     forgot password copy: "Add meg e-mail címedet vagy felhasználóneved, és küldünk egy linket a jelszó visszaállításához."
     forgot password check: "Megpróbálunk küldeni egy jelszó-visszaállító e-mailt a következő címre:<br><br>%{email}<br><br>A folytatáshoz kövesd az e-mailben található linket."
