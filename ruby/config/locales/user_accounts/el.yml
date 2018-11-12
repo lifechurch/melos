@@ -1,6 +1,9 @@
 el:
   features:
     users:
-      account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account confirmed: "Ο λογαριασμός σας έχει επιβεβαιωθεί!"
+      account already confirmed: "Ο λογαριασμός σας έχει ήδη επιβεβαιωθεί! Συνδεθείτε για να συνεχίσετε."
+      error deleting account: "Λυπούμαστε, υπήρξε ένα πρόβλημα από τη δική μας πλευρά. Δοκιμάστε ξανά ή επικοινωνήστε με την υποστήριξη."
+      friendship success: "Επιτυχία! Τώρα είστε φίλοι."
+      friendship failure: "Σφάλμα κατά τη δημιουργία φιλίας"
+      friends: "Φίλοι"
