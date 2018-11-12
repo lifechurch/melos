@@ -1,4 +1,6 @@
 tl:
-  users:
-    account confirmed: "Nakonfirm na ang iyong account!"
-    account already confirmed: "Ang iyong account ay napatunayan na! Magsign-in para magpatuloy."
+  features:
+    users:
+      account confirmed: "Your account has been confirmed!"
+      account already confirmed: "Your account has already been confirmed! Sign in to continue."
+      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
