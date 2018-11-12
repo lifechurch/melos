@@ -644,7 +644,6 @@ zh-CN:
     invalid confirm hash: "很抱歉，这个确认代码无效。你可以刷新浏览器重试，如果问题一直出现，请点击下面要求获取新的确认代码。"
     confirm password to continue: "请输入你的密码登录以便继续。"
     invalid email forgot: "抱歉，没有找到与该电邮地址关联的账户。请重试。"
-    error deleting account: "很抱歉，我们这边出了点问题，请重试，或者联系我们的技术支持。"
     send new password button: "发送新密码"
     forgot password copy: "请输入你的电邮地址或用户名，我们会发给你一个链接，以重设你的密码。"
     forgot password check: "我们会尝试发送一份重设密码的邮件至<br><br>%{email}<br><br>请点击邮件中的链接以继续。"
