@@ -4,3 +4,6 @@ ko:
       account confirmed: "Your account has been confirmed!"
       account already confirmed: "Your account has already been confirmed! Sign in to continue."
       error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      friendship success: "회원님은 이제 친구입니다"
+      friendship failure: "친구 맺기 오류"
+      friends: "내 친구"
