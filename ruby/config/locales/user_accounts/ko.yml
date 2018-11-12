@@ -1,0 +1,4 @@
+ko:
+  users:
+    account confirmed: "계정이 확인되었습니다"
+    account already confirmed: "계정이 확인되었습니다.  이제 로그인 하시면 됩니다."
