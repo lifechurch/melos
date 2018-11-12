@@ -640,8 +640,6 @@ ms:
     update email check: "Sila klik link dalam e-mel anda untuk mengesahkan alamat e-mel baru."
     confirm update email success: "Terima kasih! Alamat e-mel anda sudah di-update."
     confirm update email error: "Maaf, ada kesulitan semasa menyelesaikan penukaran alamat e-mel."
-    account confirmed: "Akaun anda sudah disahkan!"
-    account already confirmed: "Akaun anda sudah disahkan! Sila log masuk."
     errors confirming account: "Maaf, ada masalah pada pihak kami. Anda boleh refresh browser untuk mencuba lagi. Jika ini terus berlaku, klik di bawah untuk meminta e-mel pengesahan baru."
     invalid confirm hash: "Maaf, kod konfirmasi itu mungkin tidak sah. Anda boleh refresh browser untuk mencuba lagi. Jika ini terus berlaku, klik di bawah untuk meminta kod konfirmasi baru."
     confirm password to continue: "Sila masukkan kata laluan anda untuk log masuk dan bermula."
