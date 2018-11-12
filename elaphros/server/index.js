@@ -46,6 +46,12 @@ const bibleReferenceWithDefaultVersion = require('../route-handlers/bible-refere
 const bibleOffline = require('../route-handlers/bible-offline')
 const bibleCompare = require('../route-handlers/bible-compare')
 
+/* User Account Routes */
+const userAccountConfirmation = require('../route-handlers/user-account-confirmation')
+
+fastify.get('/confirmation', userAccountConfirmation)
+fastify.get('/:lng/confirmation', userAccountConfirmation)
+
 fastify.get('/bible-offline', bibleOffline)
 fastify.get('/:lng/bible-offline', bibleOffline)
 

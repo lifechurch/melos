@@ -1,0 +1,46 @@
+<site-layout
+  fullRequestURL=out.global.canonicalUrl
+  requestHost=data.requestHost
+  getLocalizedLink=data.getLocalizedLink
+  getPathWithoutLocale=data.getPathWithoutLocale>
+  <@head>
+  $ const ampComponents = [
+      { name: 'amp-mustache', type: 'template', version: '0.2' },
+      { name: 'amp-bind', type: 'element', version: '0.1' },
+      { name: 'amp-list', type: 'element', version: '0.1' },
+      { name: 'amp-selector', type: 'element', version: '0.1' },
+      { name: 'amp-sidebar', type: 'element', version: '0.1' },
+      { name: 'amp-form', type: 'element', version: '0.1' },
+      { name: 'amp-analytics', type: 'element', version: '0.1' },
+      { name: 'amp-app-banner', type: 'element', version: '0.1' }
+    ]
+
+    <amp-components
+      ampComponents=ampComponents>
+    </amp-components>
+
+  </@head>
+  <@body>
+    <div class="measure center tc pa5">
+      <div class="${data.getLocalizedLink('/sign-in', out.global.locale)}" if(data.verified && !data.alreadyVerified)>
+        ${out.global.__mf("features.users.account confirmed")}
+        <a href="${data.getLocalizedLink('/sign-in', out.global.locale)}"  class="db w-50 center mt4 tc bg-white pl3 pr3 pt2 pb2 br2 ba yv-green b--black-20 f7 f6-l link nowrap dim">
+          ${out.global.__mf("features.bible.sign in")}
+        </a>
+      </div>
+      <div class="" if(data.alreadyVerified)>
+        ${out.global.__mf("features.users.account already confirmed")}
+        <a href="${data.getLocalizedLink('/sign-in', out.global.locale)}"  class="db w-50 center mt4 tc bg-white pl3 pr3 pt2 pb2 br2 ba yv-green b--black-20 f7 f6-l link nowrap dim">
+          ${out.global.__mf("features.bible.sign in")}
+        </a>
+      </div>
+      <div class="" if(!data.verified && !data.alreadyVerified)>
+        ${out.global.__mf("features.users.error deleting account")}
+        <a href="https://help.youversion.com" target="_blank" class="db w-50 center mt4 tc bg-white pl3 pr3 pt2 pb2 br2 ba yv-green b--black-20 f7 f6-l link nowrap dim">
+          ${out.global.__mf("features.bible.help")}
+        </a>
+      </div>
+    </div>
+
+  </@body>
+</site-layout>
