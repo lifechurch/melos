@@ -1,0 +1,4 @@
+hi:
+  users:
+    account confirmed: "आपके अकाउंट की पुष्टि हुई!"
+    account already confirmed: "आपका अकाउंट पहले से दर्ज हैं। जारी रखने के लिए साइन इन करे।"
