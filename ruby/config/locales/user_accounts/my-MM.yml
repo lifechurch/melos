@@ -4,3 +4,6 @@ my-MM:
       account confirmed: "Your account has been confirmed!"
       account already confirmed: "Your account has already been confirmed! Sign in to continue."
       error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      friendship success: "ၿပီးပါၿပီ။ သင္တို႔သည္ မိတ္ေဆြျဖစ္ပါၿပီ။"
+      friendship failure: "မိတ္ေဆြျဖစ္မႈဖန္တီးရာတြင္ ခ်ိဳ႕ယြင္းမႈျဖစ္ေပၚခဲ့သည္။"
+      friends: "မိတ္ေဆြ"
