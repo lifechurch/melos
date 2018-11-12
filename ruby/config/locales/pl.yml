@@ -679,8 +679,6 @@ pl:
     update email check: "Prosimy sprawdź swoją skrzynkę i kliknij odnośnik potwierdzenia twojego nowego adresu."
     confirm update email success: "Dziękujemy! Uaktualniłeś swój adres e-mail."
     confirm update email error: "Niestety, pojawił się problem przy zmianie twojego adresu e-mail."
-    account confirmed: "Twoje konto zostało potwierdzone!"
-    account already confirmed: "Twoje konto zostało już zweryfikowane! Zaloguj się, aby kontynuować."
     errors confirming account: "Przepraszam, wystąpił błąd po naszej stronie. Możesz odświeżyć przeglądarkę, żeby spróbować ponowie. Jeżeli błąd się będzie powtarzał, kliknij niżej aby otrzymać nowy email potwierdzający."
     invalid confirm hash: "Przepraszamy, ten kod potwierdzający jest nieważny.  Możesz odświeżyć przeglądarkę, żeby spróbować ponowie. Jeżeli błąd się będzie powtarzał, kliknij niżej aby otrzymać nowy kod potwierdzający."
     confirm password to continue: "Proszę wpisać swoje hasło, żeby się zalogować i rozpocząć."
