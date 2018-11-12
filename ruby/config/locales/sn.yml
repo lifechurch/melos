@@ -657,7 +657,6 @@ sn:
     invalid confirm hash: "Tine urombo, izwi rawaisa handiro. Gwangunudza peji uyedzezve. Zvikaramba, bata pasi apa kuti tikutumire rimwe izwi."
     confirm password to continue: "Isa izwi rekupinda kuti upinde wotanga."
     invalid email forgot: "Ruregerero tashaya account ine zita remushandisi kana email yakadaro. Zama zvakare"
-    error deleting account: "Tineurombo, panga paita dambudziko kuno kwatiri. Edza zvakare kana kuti nyorera kuTsigiro."
     send new password button: "Nditumireiwo izwi idzva rekupinda muaccount mangu"
     forgot password copy: "Isai email kana zita ramunoshandisa tobva tatumira link yekuti muise password itsva"
     forgot password check: "Tichaedza kutumira tsamba inota kuti mugadzirise password yenyu<br> <br>ku%{email}<br><br> Bayai palink yacho kuti muenderere mberi. "
