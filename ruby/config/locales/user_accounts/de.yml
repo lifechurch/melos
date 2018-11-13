@@ -1,9 +1,9 @@
 de:
   features:
     users:
-      account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account confirmed: "Dein Konto ist nun aktiviert."
+      account already confirmed: "Dein Konto ist bereits bestätigt worden. Bitte melde dich an, um weiter zu machen."
+      error deleting account: "Entschuldige, es gab ein Problem auf unserer Seite. Bitte versuche es erneut oder kontaktiere den Support."
       friendship success: "Super! Ihr seid jetzt befreundet."
       friendship failure: "Fehler bei Freundschaftsanfrage"
       friends: "Freunde"

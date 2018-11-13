@@ -1,9 +1,9 @@
 th:
   features:
     users:
-      account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account confirmed: "บัญชีสมาชิกของคุณได้รับการยืนยันแล้ว!"
+      account already confirmed: "บัญชีสมาชิกของคุณได้รับการยืนยัน! เข้าสู่ระบบเพื่อดำเนินการต่อ"
+      error deleting account: "ขออภัย เนื่องจากพบปัญหาบางอย่างที่ปลายทางของเรา โปรดลองใหม่อีกครั้ง หรือติดต่อฝ่ายสนับสนุน"
       friendship success: "สำเร็จแล้ว! ตอนนี้คุณเป็นเพื่อนกันแล้ว"
       friendship failure: "เกิดความผิดพลาดในการขอเป็นเพื่อน"
       friends: "เพื่อนๆ"

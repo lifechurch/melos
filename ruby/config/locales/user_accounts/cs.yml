@@ -1,9 +1,9 @@
 cs:
   features:
     users:
-      account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account confirmed: "Váš účet byl potvrzen!"
+      account already confirmed: "Váš účet již byl potvrzen! Přihlašte se pro pokračování."
+      error deleting account: "Omlouváme se, vyskytla se chyba na naší straně. Prosím, zkuste to znovu nebo kontaktujte podporu."
       friendship success: "Povedlo se! Nyní jste přátelé."
       friendship failure: "Chyba při vytváření přátelství"
       friends: "Přátelé"

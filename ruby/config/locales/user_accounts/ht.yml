@@ -1,9 +1,9 @@
 ht:
   features:
     users:
-      account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account confirmed: "Kont ou an konfime!"
+      account already confirmed: "Kont ou an déjà konfime! Konekte pou kontinye."
+      error deleting account: "Dezole, te gen yon pwoblèm nan fen nou an. Tanpri eseye ankò oubyen kontakte sipò."
       friendship success: "Success! You're now friends."
       friendship failure: "Error creating friendship"
       friends: "Friends"

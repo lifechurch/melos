@@ -136,7 +136,7 @@ tl:
     best educational app: "Pinakamahusay na Pang-Edukasyong App"
     100million:
       title: "Ito ay Nagsisimula sa <em>100 milyon</em>"
-      description: "Ang Bible App ay na-download nang mahigit 100 milyong beses - kahanga-hangang tagumpay! Ngunit ito ay simula pa lamang. I-download ang libreng Bible App ngayon - at ibahagi ang app sa iyong mga kaibigan. Sama-sama nating gawin ang kasaysayan."
+      description: "Ang Bible App ay na-download nang halos 100 milyong beses - kahanga-hangang milestone! Ngunit ito ay simula pa lamang. I-download ang libreng Bible App ngayon - at ibahagi ang app sa iyong mga kaibigan. Sama-sama tayong gumawa kasaysayan."
     mobile:
       title: "Ang Bible App"
       description: "Basahin ang Salita ng Diyos anumang oras, kahit saan gamit ang YouVersion Bible App. Ibahagi ang Banal na Kasulatan sa mga kaibigan, i-highlight at lagyan ng pananda ang mga sipi, at gawing kaugalian ang araw-araw na pagbabasa sa tulong ng Babasahing Gabay. Ito ay maaaring makuha sa iOS, Android, Blackberry, Windows Phone at marami pang iba."
@@ -538,7 +538,7 @@ tl:
     delete: "Burahin ang Talang Ito"
     confirm delete: "Oo, sigurado ako."
     write new: "Gumawa ng Bagong Tala"
-    not found: "Sa Youversion, maaari mong dagdagan ng mga video, audio, larawan, tala, at mga link sa ibang mga website ang mga bersikulo o serye ng Biblia. Ito ay isang paraan upang makibahagi sa komunidad ng Youversion sa pamamagitan ng pagbabahagi ng iyong mga natututunan at saloobin mula sa pakikilahok sa Kasulatan. Magsimula ngayon sa pamamagitan ng pagpili ng (mga) bersikulo mula sa Bible reader at pagdagdag ng iyong tala. Ganyan lamang kadali."
+    not found: "Sa Youversion, maaari mong iugnay ang mga video, audio, larawan, teksto at mga link sa ibang mga website sa mga bersikulo ng Biblia. Ito ay paraan upang makibahagi sa komunidad ng Youversion, sa pamamagitan ng pagbabahagi ng iyong natututunan at naiisip mula sa pagbabasa ng Banal na Kasulatan. Magsimula na sa pamamagitan nang pagpili ng (mga) bersikulo mula sa Bible reader at pagdadagdag ng iyong tala. Ganyan lang kadali."
     cancel: "Itigil"
     pop out: "Pop out"
     none found: "Walang makitang mga tala..."
@@ -1102,7 +1102,7 @@ tl:
     t6: "Maraming salin at maaring magbasa kahit walang Internet!"
     t6 copy: "Kahanga-hanga dahil maraming salin at pwede kong ma-download ang iba't-ibang salin para sa pagbabasa ng offline.Nakakapakinig ako gamit ang app na ito."
     t7: "Pambihirang app!"
-    t7 copy: "Natutulungan akong magbasa ng Biblia. Gustung-gusto ko ang search at share features at ang maraming paraan kung paano ako pwedeng magbahagi. Gusto ko din ang mga audio versions."
+    t7 copy: "Natutulungan akong mas magbasa ng Biblia. Gustung-gusto ko ang mga tampok na hanapin at Ibahagi at ang marami pang paraan kung paano ako maaaring magbahagi. Gusto ko din ang mga salin na may audio."
     t8: "Napakabuting app"
     t8 copy: "Ito'y isang pambihirang tool para maaral ang maraming salin. Maari ding gamitin para mapakinggan ang Biblia kapag nagmamaneho."
     t9: "Ang pinakamagandang Bible app!"
@@ -1250,7 +1250,7 @@ tl:
         with friends: "Ibahagi sa iyong mga kaibigan"
         fb:
           dialog name: "Mayroon ka na bang Bible App?"
-          dialog desc: "Gustung-gusto ko Filipino Bible App! Talagang natulungan ako nitong maging bahagi ang Biblia ng aking pangaraw-araw na buhay. Hinahayaan ako nitong mag-marka, makinig sa mga awdyo na Biblia, sumulat ng tala, sumunod sa babasahing gabay...kahit manood ng mga palabas! Sige na, i-download mo na (libre ito): http://www.bible.com/app"
+          dialog desc: "Gustung-gusto ko Filipino Bible App! Talagang natulungan ako nitong maging bahagi ang Biblia ng aking pang-araw-araw na buhay. Hinahayaan ako nitong mag-haylayt, makinig sa mga audio na Biblia, lumikha ng mga tala, sumunod sa mga babasahing gabay...kahit manood ng mga video! Sige na, i-download mo na (libre ito): http://www.bible.com/app"
         tw:
           tweet: "Ginagamit ko ang @YouVersion Bible App. Magbasa, manuod, makinig, at magbahagi... libre!: bible.com/app"
         em:
@@ -1414,7 +1414,7 @@ tl:
         pwf_invites: "Kapag Inimbitahan na Sumali sa isang Gabay"
         pwf_reminders: "Paalala sa Pagsisimula ng Gabay"
       error:
-        token: "Paumanhin, kailangan mong mag Sign In para baguhin ang iyong Notification settings:"
+        token: "Paumanhin, kailangan mong mag-sign in para baguhin ang iyong mga Setting tungkol sa Abiso:"
         other_type: "Paumanhin, hindi nito ginawa ang aming inaasahan. Nais mo bang i-update ang iyong Notifications?"
     change: "Baguhin"
     ui:
@@ -1437,7 +1437,7 @@ tl:
         missed days:
           one: "%{count} Araw na Nakaligtaan"
           other: "%{count} Mga Araw na Nakaligtaan"
-      bible plan language: "Wikang Gamit sa Babasahing Gabay"
+      bible plan language: "Wikang Gamit sa Gabay sa Biblia"
       share plan: "Tingnan mo itong %{plan_title} ng @YouVersion #BiblePlan"
       widget:
         my plans: "Ang aking mga Babasahing Gabay"
@@ -1919,7 +1919,7 @@ tl:
       read chapter: "Basahin ang buong kabanata"
       plan title: "Mga Libreng Babasahing Gabay at Debosyonal"
       plan title ref: "Mga Libreng Babasahing Gabay at Debosyonal na may kaugnayan sa %{reference}"
-      plan subtitle: "Hinahati ng mga Biblikal na Gabay ang pagbabasa mo ng Banal na Kasulatan sa mga maliliit na bahagi. Ang mga gabay ay kalimitang may kasamang debosyonal, audio, o piling video. Tawagin mo man itong Biblikal na Gabay, mga Babasahing Gabay, o Debosyonal, ang mga ito ay subok na mabisang paraan upang maging bahagi ng iyong pang-araw-araw na buhay ang Biblia."
+      plan subtitle: "Hinahati ng mga Gabay sa Biblia ang pagbabasa mo ng Banal na Kasulatan sa mga makakayanang-basahing mga bahagi. Ang mga gabay ay kalimitang may kasamang debosyonal, audio, o piling video. Tawagin mo man itong Gabay sa Biblia, mga Babasahing Gabay, o Debosyonal, ang mga ito ay subok na mabibisang paraan upang maging bahagi ng iyong pang-araw-araw na buhay ang Biblia."
       meta:
         mobile:
           title: "Ang Bible App"
