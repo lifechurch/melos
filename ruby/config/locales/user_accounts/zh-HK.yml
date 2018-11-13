@@ -2,8 +2,8 @@ zh-HK:
   features:
     users:
       account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account already confirmed: "你的帳戶已經確認了！請登入再繼續。"
+      error deleting account: "抱歉，我們這方面出了個問題。請重試或者聯絡我們的技術支援。"
       friendship success: "成了！你們現在是朋友了。"
       friendship failure: "建立友情連接時出錯誤"
       friends: "朋友"
