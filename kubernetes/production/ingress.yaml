@@ -760,11 +760,11 @@ spec:
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
-      - path: /confirmation
+      - path: /en/confirmation
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
-      - path: /friendships/accept
+      - path: /en/friendships/accept
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
