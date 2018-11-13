@@ -1,0 +1,9 @@
+ro:
+  features:
+    users:
+      account confirmed: "Your account has been confirmed!"
+      account already confirmed: "Your account has already been confirmed! Sign in to continue."
+      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      friendship success: "Succes! Acum sunteți prieteni."
+      friendship failure: "S-a produs o eroare la crearea prieteniei"
+      friends: "Prieteni"
