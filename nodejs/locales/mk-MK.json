@@ -373,7 +373,7 @@
 	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Тука внеси го следниот модул",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Наслов",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Напиши нешто тука...",
-	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "Во твојот настан, само насловот (горе) ќе биде видлив. Кога корисник ќе допре на твојот наслов, телото на текстот (долу) ќе се покаже на посебе�� екран.",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "Во твојот настан, само насловот (горе) ќе биде видлив. Кога корисник ќе допре на твојот наслов, телото на текстот (долу) ќе се покаже на посебен екран.",
 	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "Содржината автоматски ќе се зачува за неколку секунди откако ќе престанеш да пишуваш.",
 	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "Не може да се зачува.",
 	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "Обиди се повторно.",
