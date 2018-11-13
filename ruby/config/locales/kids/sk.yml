@@ -1,12 +1,12 @@
 sk:
   kids:
-    bible app: "Aplikácia Biblia"
+    bible app: "The Bible App"
     for: "for"
     kids: "kids"
     by youversion: "by YouVersion"
     help your kids: "Pomôžte svojim deťom zamilovať sa do Božieho Slova."
     free download: "Stiahnite si zadarmo!"
-    app store: "Available on the App store"
+    app store: "K dispozícii v obchode s aplikáciami"
     google play: "Získajte ju cez Google Play"
     amazon: "Dostupné cez Amazon Appstore pre Android"
     app icon: "Ikona pre aplikáciu Biblia pre deti"
@@ -25,18 +25,18 @@ sk:
     share:
       tell friends: "Povedzte svojim priateľom o aplikácii Biblia pre deti."
       facebook name: "Aplikácia Biblia pre deti"
-      facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
+      facebook description: "Aplikácia Biblia pre deti je tu! Stiahnite si bezplatnú aplikáciu pre iOS a Android už dnes: interaktívne príbehy z Biblie, ktoré pomáhajú vášmu dietaťu učiť sa, hrať a rásť v Božom Slove. www.bible.com/kids"
       facebook link: "http://www.bible.com/kids"
       facebook redirect: "http://www.bible.com/kids"
-      twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
+      twitter description: "Aplikácia Biblia pre deti od @YouVersion je tu! Je zábavná a úplne zdarma. Stiahnite ju na webovej stránke bible.com/kids"
       twitter hashtags: "bibliapredeti"
       email: "Email"
       email subject: "Aplikácia Biblia pre deti je tu!"
-      email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
+      email body: "Skvelé správy - aplikácia Biblia pre deti je tu! Je úplne zdarma a dostupná pre iPhone, iPad, iPod touch a zariadenia Android. Aplikácia je rastúcou zbierkou biblických príbehov s animáciami aktivovanými dotykom a vzdelávacími aktivitami ideálnymi na pomoc pri učení detí o veľkých príbehoch Biblie. Navštívte bible.com/kids na Vašom mobilnom zariadení a stiahnite si ju ešte dnes."
     partner:
       youversion: "YouVersion: Najpopulárnejšia aplikácia Biblia na svete"
       in partnership: "v spolupráci s"
-      one hope: "One Hope: Extraordinary Bible content for Kids"
+      one hope: "One Hope: výnimočný biblický obsah pre deti"
     links:
       apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
       google: "http://play.google.com/store/apps/details?id=com.bible.kids"
@@ -44,5 +44,5 @@ sk:
   meta:
     best kids app: "Najlepšia aplikácia pre deti!"
     kids_app:
-      title: "Aplikácia Biblia pre deti"
+      title: "The Bible App for Kids"
       description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
