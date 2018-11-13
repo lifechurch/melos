@@ -3,7 +3,7 @@ tl:
     users:
       account confirmed: "Nakonfirm na ang iyong account!"
       account already confirmed: "Ang iyong account ay napatunayan na! Magsign-in para magpatuloy."
-      error deleting account: "Paumanhin, may problema sa aming koneksyon. Pakiulit po o kaya ay kontakin ang aming support."
+      error deleting account: "Paumanhin, may problema sa aming koneksyon. Mangyaring subukan muli o kaya ay makipag-ugnay sa suporta."
       friendship success: "Tagumpay! Kayo ay magkaibigan na."
       friendship failure: "May naging pagkakamali sa paggiging magkaibigan"
       friends: "Mga Kaibigan"
