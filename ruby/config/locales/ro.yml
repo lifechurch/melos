@@ -503,7 +503,7 @@ ro:
       add friend button title: "Trimite lui %{user} o cerere de prietenie"
       accept button: "Accept"
       accept request button: "Acceptă cererea"
-      ignore button: "Refuză"
+      ignore button: "Refuz"
       ignore request button: "Refuză cererea"
   images:
     none user: "%{username} nu a creat încă imagini."
@@ -2047,7 +2047,7 @@ ro:
       other: "%{number} au acceptat"
     invitation: "Invitație"
     accept invitation: "Acceptă invitația"
-    decline: "Refuză"
+    decline: "Refuz"
     start date: "Data începerii"
     plan archived: "Plan arhivat"
     starts: "Începe"
