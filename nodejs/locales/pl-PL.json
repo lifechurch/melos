@@ -510,7 +510,7 @@
 	"Auth.sign up facebook": "Zarejestruj się przez Facebook",
 	"Auth.continue facebook": "Kontynuuj poprzez Facebook",
 	"Auth.have an account": "Czy masz już konto?",
-	"Auth.sign up alternate": "Masz już konto? <a href='{sign_in_path}' target='_self'>Zaloguj si��</a>",
+	"Auth.sign up alternate": "Masz już konto? <a href='{sign_in_path}' target='_self'>Zaloguj się</a>",
 	"Auth.plan blurb": "Hej, próbujesz rozpocząć plan czytania. Mądrze! Plany mogą pomóc ci uczynić z Biblii część twojego codziennego życia. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!",
 	"Auth.bookmark blurb": "Hej, próbujesz skorzystać z zakładki. Świetnie! Zakładki pomogą ci zaznaczyć wersety, które chcesz zapamiętać, udostępnić lub oznaczyć jako ulubione. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!",
 	"Auth.friends blurb": "Hej, próbujesz skontaktować się z przyjaciółmi! Dobry pomysł! Będziesz mógł podzielić się tym czego się uczysz i pomóc innym w regularnym czytaniu. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!",

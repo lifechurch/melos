@@ -597,7 +597,7 @@
 	"invited": "Поканен(а)",
 	"pending": "Неотговорили",
 	"x pending.one": "{number} неотговорил",
-	"x pending.other": "{number} неотговорили",
+	"x pending.other": "{number} н��отговорили",
 	"accepted": "Приели",
 	"x accepted.one": "{number} приел",
 	"x accepted.other": "{number} приели",

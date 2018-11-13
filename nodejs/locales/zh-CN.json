@@ -251,7 +251,7 @@
 	"plans.make private successful": "你的计划状态已设置为保密。",
 	"plans.reminder on successful": "成了！每日提醒邮件会被发送给你。",
 	"plans.reminder off successful": "将不再发送每日提醒邮件。",
-	"plans.email delivery on successful": "成了！每日阅读内容将会通过电邮发送到你的邮箱。",
+	"plans.email delivery on successful": "成了！每日阅读内容将会通���电邮发送到你的邮箱。",
 	"plans.email delivery off successful": "将不再发送每日读经内容的电邮。",
 	"plans.email delivery updated successful": "成了！电邮投递设置已被更新。",
 	"plans.report on successful": "成了！每周督促报告将会被发送。",
