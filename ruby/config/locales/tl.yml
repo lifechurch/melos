@@ -1414,7 +1414,7 @@ tl:
         pwf_invites: "Kapag Inimbitahan na Sumali sa isang Gabay"
         pwf_reminders: "Paalala sa Pagsisimula ng Gabay"
       error:
-        token: "Paumanhin, kailangan mong mag Sign In para baguhin ang iyong Notification settings:"
+        token: "Paumanhin, kailangan mong mag Sign In para baguhin ang iyong mga Setting tungkol sa Abiso:"
         other_type: "Paumanhin, hindi nito ginawa ang aming inaasahan. Nais mo bang i-update ang iyong Notifications?"
     change: "Baguhin"
     ui:
