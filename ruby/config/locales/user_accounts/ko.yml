@@ -1,9 +1,9 @@
 ko:
   features:
     users:
-      account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account confirmed: "계정이 확인되었습니다"
+      account already confirmed: "계정이 확인되었습니다.  이제 로그인 하시면 됩니다."
+      error deleting account: "죄송합니다. 서버에 문제가 있었습니다. 다시 한 번 시도하거나 지원 요청을 해 주세요."
       friendship success: "회원님은 이제 친구입니다"
       friendship failure: "친구 맺기 오류"
       friends: "내 친구"
