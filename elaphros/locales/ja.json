@@ -44,6 +44,14 @@
 			"sign up": "アカウント登録",
 			"home": "ホーム",
 			"share": "シェアする"
+		},
+		"users": {
+			"friends": "友達",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "成功！友達になりました。",
+			"friendship failure": "友達登録中にエラーが発生しました",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

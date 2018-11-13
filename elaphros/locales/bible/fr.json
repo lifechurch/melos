@@ -35,13 +35,13 @@
 			"send votd": "Envoyez-moi le verset du jour",
 			"read full": "Lire le chapitre entier",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Ouvrir le lecteur audio",
+			"open search": "Ouvrir la barre de recherche",
 			"open sidebar": "Ouvrir le menu",
 			"related devos": "Plans de lecture et de méditation gratuits en rapport avec {reference}",
 			"bible language": "Langue pour la Bible",
 			"change language": "Changer la langue",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Votre navigateur ne supporte pas l'audio.",
 			"explore by verse": "Explorer les versets de {chapter_name}",
 			"version learn more": "En savoir plus sur {version_name}"
 		}

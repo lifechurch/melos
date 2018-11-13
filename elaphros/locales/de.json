@@ -44,6 +44,14 @@
 			"sign up": "Registrieren",
 			"home": "Home",
 			"share": "Teilen"
+		},
+		"users": {
+			"friends": "Freunde",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Super! Ihr seid jetzt befreundet.",
+			"friendship failure": "Fehler bei Freundschaftsanfrage",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

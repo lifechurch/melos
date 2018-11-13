@@ -44,6 +44,14 @@
 			"sign up": "Registrer deg",
 			"home": "Hjem",
 			"share": "Del"
+		},
+		"users": {
+			"friends": "Venner",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Suksess! Dere er nå venner.",
+			"friendship failure": "Det oppstod en feil under oppretting av vennskap",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

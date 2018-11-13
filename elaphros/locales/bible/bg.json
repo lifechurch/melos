@@ -35,13 +35,13 @@
 			"send votd": "Изпрати ми стиха за деня",
 			"read full": "Прочит на цялата глава",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Отворете аудиоплейъра",
+			"open search": "Отворете лентата за търсене",
 			"open sidebar": "Отвори менюто",
 			"related devos": "Безплатни планове за прочит и посвещения, свързани с {reference}",
 			"bible language": "Език за текста на Библията",
 			"change language": "Сменете езика",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Вашият браузър не поддържа аудио.",
 			"explore by verse": "Изследвайте {chapter_name} стих по стих",
 			"version learn more": "Научете повече за {version_name}"
 		}

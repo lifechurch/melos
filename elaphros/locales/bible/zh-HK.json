@@ -35,13 +35,13 @@
 			"send votd": "給我發送今日經文",
 			"read full": "閱讀整章",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "打開音頻播放器",
+			"open search": "打開搜尋欄",
 			"open sidebar": "開啟選單",
 			"related devos": "與 {reference} 相關的免費讀經計劃和靈修短文",
 			"bible language": "譯本語言",
 			"change language": "變換語言",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "你的瀏覽器不支援音頻播放",
 			"explore by verse": "探尋{chapter_name}個別經節",
 			"version learn more": "了解更多{version_name}的詳情"
 		}

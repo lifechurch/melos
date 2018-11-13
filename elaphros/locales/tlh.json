@@ -44,6 +44,14 @@
 			"sign up": "crwdns187264:0crwdne187264:0",
 			"home": "crwdns187250:0crwdne187250:0",
 			"share": "crwdns187262:0crwdne187262:0"
+		},
+		"users": {
+			"friends": "crwdns224580:0crwdne224580:0",
+			"account confirmed": "crwdns224570:0crwdne224570:0",
+			"friendship success": "crwdns224576:0crwdne224576:0",
+			"friendship failure": "crwdns224578:0crwdne224578:0",
+			"error deleting account": "crwdns224574:0crwdne224574:0",
+			"account already confirmed": "crwdns224572:0crwdne224572:0"
 		}
 	}
 }

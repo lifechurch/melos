@@ -44,6 +44,14 @@
 			"sign up": "साइन अप",
 			"home": "होम ",
 			"share": "शेयर"
+		},
+		"users": {
+			"friends": "मित्र",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "मुबारक हो अभी आप मित्र हुए।",
+			"friendship failure": "मित्रता बनाने में त्रुटि",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

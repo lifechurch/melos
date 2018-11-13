@@ -9,7 +9,7 @@
 			"related devos": "Plans de lectura i devocionals gratuïts relacionats amb {reference}",
 			"bafk": "Bible App for Kids",
 			"bible language": "Idioma de la Bíblia",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "El teu navegador no admet àudio.",
 			"open sidebar": "Obre el menú",
 			"terms": "Condicions d'ús",
 			"search": "Cerca...",
@@ -24,7 +24,7 @@
 			"about": "Sobre",
 			"donate": "Fer una donació",
 			"cta": "Descarrega Bible App for Kids",
-			"audio open": "Open Audio Player",
+			"audio open": "Obre el reproductor d'àudio",
 			"bible app": "Aplicació de la Bíblia",
 			"jobs": "Treballa",
 			"read": "Llegir",
@@ -40,10 +40,18 @@
 			"cancel": "Cancel·la",
 			"languages": "Idiomes",
 			"versions": "Versions",
-			"open search": "Open Search Bar",
+			"open search": "Obre la barra de cerca",
 			"sign up": "Registra't",
 			"home": "Inici",
 			"share": "Comparteix"
+		},
+		"users": {
+			"friends": "Amics",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Perfecte! Ara sou amics.",
+			"friendship failure": "Error en crear l'amistat",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

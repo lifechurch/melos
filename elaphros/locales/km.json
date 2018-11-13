@@ -44,6 +44,14 @@
 			"sign up": "ចុះ​ឈ្មោះ",
 			"home": "ទំព័រ​ដើម",
 			"share": "ចែក​រំលែក"
+		},
+		"users": {
+			"friends": "មិត្ត​ភក្តិ",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "ជោគ​ជ័យ! អ្នក​ជា​មិត្ត​ភក្តិ​នឹង​គ្នា​ហើយ",
+			"friendship failure": "បញ្ហា បង្កើត​មិត្ត​ភាព",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

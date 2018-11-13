@@ -44,6 +44,14 @@
 			"sign up": "Cadastrar-se",
 			"home": "Início",
 			"share": "Compartilhar"
+		},
+		"users": {
+			"friends": "Amigos",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Sucesso! Vocês agora são amigos.",
+			"friendship failure": "Erro ao começar amizade",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

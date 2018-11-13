@@ -14,7 +14,7 @@
 			"terms": "Podmienky",
 			"search": "Hľadať...",
 			"change language": "Zmeniť jazyk",
-			"sign in": "Sign In",
+			"sign in": "Prihlásiť sa",
 			"privacy": "Zásady ochrany osobných údajov",
 			"book": "Kniha",
 			"bible lens": "Bible Lens",
@@ -44,6 +44,14 @@
 			"sign up": "Zaregistrovať",
 			"home": "Domov",
 			"share": "Zdieľať"
+		},
+		"users": {
+			"friends": "Priatelia",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Podarilo sa! Odteraz ste priatelia.",
+			"friendship failure": "Nepodarilo sa vytvoriť priateľstvo",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

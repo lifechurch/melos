@@ -9,7 +9,7 @@
 			"related devos": "Plans de lecture et de méditation gratuits en rapport avec {reference}",
 			"bafk": "La Bible App pour les Enfants",
 			"bible language": "Langue pour la Bible",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Votre navigateur ne supporte pas l'audio.",
 			"open sidebar": "Ouvrir le menu",
 			"terms": "Conditions",
 			"search": "Recherche...",
@@ -24,7 +24,7 @@
 			"about": "À propos de",
 			"donate": "Faire un don",
 			"cta": "Téléchargez la Bible App pour les Enfants",
-			"audio open": "Open Audio Player",
+			"audio open": "Ouvrir le lecteur audio",
 			"bible app": "Bible App",
 			"jobs": "Postes à pourvoir",
 			"read": "Lire",
@@ -40,10 +40,18 @@
 			"cancel": "Annuler",
 			"languages": "Langues",
 			"versions": "Versions",
-			"open search": "Open Search Bar",
+			"open search": "Ouvrir la barre de recherche",
 			"sign up": "S'inscrire",
 			"home": "Accueil",
 			"share": "Partager"
+		},
+		"users": {
+			"friends": "Amis",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Succès ! Vous êtes maintenant amis.",
+			"friendship failure": "Erreur à l'ajout de la relation",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

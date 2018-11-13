@@ -44,6 +44,14 @@
 			"sign up": "Aanmelden",
 			"home": "Home",
 			"share": "Delen"
+		},
+		"users": {
+			"friends": "Vrienden",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Gelukt! Jullie zijn nu vrienden.",
+			"friendship failure": "Fout bij het maken van een vriendschap",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

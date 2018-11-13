@@ -44,6 +44,14 @@
 			"sign up": "\nಸೈನ್ ಅಪ್ ಮಾಡಿ",
 			"home": "Home",
 			"share": "ಶೇರ್"
+		},
+		"users": {
+			"friends": "Friends",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Success! You're now friends.",
+			"friendship failure": "Error creating friendship",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

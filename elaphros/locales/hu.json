@@ -44,6 +44,14 @@
 			"sign up": "Regisztráció",
 			"home": "Kezdőoldal",
 			"share": "Megosztás"
+		},
+		"users": {
+			"friends": "Barátok",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Sikerült! Most már barátok vagytok.",
+			"friendship failure": "Hiba törtét a barátság létrehozásában",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

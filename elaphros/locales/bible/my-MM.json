@@ -35,13 +35,13 @@
 			"send votd": "ေန႔စဥ္က်မ္းပိုဒ္ကို ေပးပို႔ပါ။",
 			"read full": "အခန်းကြီးတစ်ခုလုံးဖတ်ရန်",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "အသံဖြင့္စက္ကိုဖြင့္ပါ။",
+			"open search": "ရွာေဖြရန္ဘားဖြင့္ပါ",
 			"open sidebar": "မီႏူးဖြင့္ရန္",
 			"related devos": "​{reference} နှင့်ပတ်သက်သည့် အခမဲ့ ဖတ်ရှုခြင်းအစီအစဉ်နှင့် ဝိညာဉ်ရေးရာအချက်အလက်များ။",
 			"bible language": "က်မ္းစာအတြက္ဘာသာစကား",
 			"change language": "ဘာသာစကားပြောင်းရန်",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "သင္၏ဘေရာက္ဆာသည္ အသံစက္ကုုိမေထာက္ပံ့ပါ။",
 			"explore by verse": "{chapter_name} ကို အခန္းငယ္အလိုက္ စူးစမ္းရွာေဖြပါ။",
 			"version learn more": "{version_name} အေၾကာင္းကို ပို၍ သင္ယူပါ။"
 		}

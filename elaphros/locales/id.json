@@ -44,6 +44,14 @@
 			"sign up": "Daftar",
 			"home": "Beranda",
 			"share": "Bagikan"
+		},
+		"users": {
+			"friends": "Teman",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Berhasil! Sekarang Anda berteman.",
+			"friendship failure": "Kesalahan dalam menjalin persahabatan",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

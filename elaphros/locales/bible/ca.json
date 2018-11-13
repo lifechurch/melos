@@ -35,13 +35,13 @@
 			"send votd": "Envia'm el verset del dia",
 			"read full": "Llegeix el capítol sencer",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Obre el reproductor d'àudio",
+			"open search": "Obre la barra de cerca",
 			"open sidebar": "Obre el menú",
 			"related devos": "Plans de lectura i devocionals gratuïts relacionats amb {reference}",
 			"bible language": "Idioma de la Bíblia",
 			"change language": "Canvia d'idioma",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "El teu navegador no admet àudio.",
 			"explore by verse": "Explora {chapter_name} per verset",
 			"version learn more": "Més informació sobre {version_name}"
 		}

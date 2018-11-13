@@ -9,7 +9,7 @@
 			"related devos": "與 {reference} 相關的免費讀經計劃和靈修短文",
 			"bafk": "兒童聖經軟件",
 			"bible language": "譯本語言",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "你的瀏覽器不支援音頻播放",
 			"open sidebar": "開啟選單",
 			"terms": "條款",
 			"search": "搜尋......",
@@ -24,7 +24,7 @@
 			"about": "關於",
 			"donate": "捐獻",
 			"cta": "下載兒童聖經軟件",
-			"audio open": "Open Audio Player",
+			"audio open": "打開音頻播放器",
 			"bible app": "聖經軟件",
 			"jobs": "工作機會",
 			"read": "閱讀",
@@ -40,10 +40,18 @@
 			"cancel": "取消",
 			"languages": "語言選擇",
 			"versions": "譯本",
-			"open search": "Open Search Bar",
+			"open search": "打開搜尋欄",
 			"sign up": "註冊帳戶",
 			"home": "首頁",
 			"share": "分享"
+		},
+		"users": {
+			"friends": "朋友",
+			"account confirmed": "你的帳戶已經驗證成功！",
+			"friendship success": "成了！你們現在是朋友了。",
+			"friendship failure": "建立友情連接時出錯誤",
+			"error deleting account": "抱歉，我們這方面出了個問題。請重試或者聯絡我們的技術支援。",
+			"account already confirmed": "你的帳戶已經確認了！請登入再繼續。"
 		}
 	}
 }

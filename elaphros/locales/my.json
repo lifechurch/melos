@@ -9,7 +9,7 @@
 			"related devos": "​{reference} နှင့်ပတ်သက်သည့် အခမဲ့ ဖတ်ရှုခြင်းအစီအစဉ်နှင့် ဝိညာဉ်ရေးရာအချက်အလက်များ။",
 			"bafk": "Bible App for Kids",
 			"bible language": "ကျမ်းစာအတွက်ဘာသာစကား",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "သင်၏ဘရောက်ဆာသည် အသံစက်ကိုမထောက်ပံ့ပါ။",
 			"open sidebar": "မီနူးဖွင့်ရန်",
 			"terms": "စည်းကမ်းချက်",
 			"search": "ရှာဖွေဆဲ...",
@@ -24,7 +24,7 @@
 			"about": "အကြောင်း",
 			"donate": "လှူဒါန်းရန်",
 			"cta": "Bible App for Kids ကို ဒေါင်းလုပ်ဆွဲရန်",
-			"audio open": "Open Audio Player",
+			"audio open": " အသံဖွင့်စက်ကိုဖွင့်ပါ။",
 			"bible app": "Bible App",
 			"jobs": "အလုပ်အကိုင်",
 			"read": "ဖတ်ရှုရန်",
@@ -40,10 +40,18 @@
 			"cancel": "ပယ်ဖျက်ပါ",
 			"languages": "ဘာသာစကား",
 			"versions": "ဗားရှင်း",
-			"open search": "Open Search Bar",
+			"open search": "ရှာဖွေရန်ဘားဖွင့်ပါ",
 			"sign up": "အကောင့်<br />ဖွင့်ရန်",
 			"home": "ပင်မစာမျက်နှာ",
 			"share": "မျှဝေရန်"
+		},
+		"users": {
+			"friends": "မိတ်ဆွေ",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "ပြီးပါပြီ။ သင်တို့သည် မိတ်ဆွေဖြစ်ပါပြီ။",
+			"friendship failure": "မိတ်ဆွေဖြစ်မှုဖန်တီးရာတွင် ချို့ယွင်းမှုဖြစ်ပေါ်ခဲ့သည်။",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

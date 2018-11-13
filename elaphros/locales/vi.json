@@ -44,6 +44,14 @@
 			"sign up": "Đăng ký",
 			"home": "Trang chủ",
 			"share": "Chia sẻ"
+		},
+		"users": {
+			"friends": "Bạn bè",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Các bạn đã kết bạn!",
+			"friendship failure": "Lỗi khi kết bạn",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

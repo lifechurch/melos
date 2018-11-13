@@ -9,7 +9,7 @@
 			"related devos": "Безплатни планове за прочит и посвещения, свързани с {reference}",
 			"bafk": "Bible App for Kids",
 			"bible language": "Език за текста на Библията",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Вашият браузър не поддържа аудио.",
 			"open sidebar": "Отвори менюто",
 			"terms": "Условия за ползване",
 			"search": "Търсене...",
@@ -24,7 +24,7 @@
 			"about": "За нас",
 			"donate": "Направете дарение",
 			"cta": "Изтеглете Bible App for Kids",
-			"audio open": "Open Audio Player",
+			"audio open": "Отворете аудиоплейъра",
 			"bible app": "Приложение Библията",
 			"jobs": "Работни позиции",
 			"read": "Прочети",
@@ -40,10 +40,18 @@
 			"cancel": "Отказ",
 			"languages": "Езици",
 			"versions": "Версии",
-			"open search": "Open Search Bar",
+			"open search": "Отворете лентата за търсене",
 			"sign up": "Регистрация",
 			"home": "Начало",
 			"share": "Споделяне"
+		},
+		"users": {
+			"friends": "Приятели",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Успех! Вече сте приятели.",
+			"friendship failure": "Грешка при създаването на приятелство",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }

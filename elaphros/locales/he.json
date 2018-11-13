@@ -19,7 +19,7 @@
 			"book": "ספר",
 			"bible lens": "Bible Lens",
 			"plans": "תוכניות קריאה",
-			"volunteer": "Volunteer",
+			"volunteer": "התנדבו",
 			"chapter": "פרק",
 			"about": "אודות",
 			"donate": "תרום",
@@ -30,7 +30,7 @@
 			"read": "Read",
 			"audio": "קטעי אודיו",
 			"version": "גירסה",
-			"title": "Download The Bible App Now",
+			"title": "הורידו את אפליקציית הכתובים עכשיו",
 			"language": "שפה",
 			"videos": "קטעי וידאו",
 			"events": "אירועים",
@@ -41,9 +41,17 @@
 			"languages": "שפות",
 			"versions": "גרסאות",
 			"open search": "Open Search Bar",
-			"sign up": "Sign Up",
+			"sign up": "הירשמו",
 			"home": "למסך הראשי",
-			"share": "Share"
+			"share": "שתפו"
+		},
+		"users": {
+			"friends": "חברים",
+			"account confirmed": "החשבון שלך אושר!",
+			"friendship success": "הצלחה! אתם עכשיו חברים.",
+			"friendship failure": "אירעה שגיאה ביצירת החברות",
+			"error deleting account": "מצטערים, משהו השתבש אצלנו. אנא נסה שוב או צור קשר עם התמיכה שלנו.",
+			"account already confirmed": "החשבון שלך כבר אושר! היכנס כדי להמשיך."
 		}
 	}
 }

@@ -44,6 +44,14 @@
 			"sign up": "Mag-sign up",
 			"home": "Home",
 			"share": "Ibahagi"
+		},
+		"users": {
+			"friends": "Mga Kaibigan",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "Tagumpay! Kayo ay magkaibigan na.",
+			"friendship failure": "May naging pagkakamali sa paggiging magkaibigan",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
 		}
 	}
 }
