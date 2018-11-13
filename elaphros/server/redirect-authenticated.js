@@ -1,6 +1,8 @@
+const getPathWithoutLocale = require('../utils/localization/get-path-without-locale')
+
 const skipRedirectsFor = [
   '/confirmation',
-  '/friendships/accept/sucess',
+  '/friendships/accept/success',
   '/friendships/accept/failure'
 ]
 
@@ -25,7 +27,7 @@ module.exports = function redirectAuthenticated(fastify) {
       return
     }
 
-    if (skipRedirectsFor.indexOf(urlData.path) !== -1) {
+    if (skipRedirectsFor.indexOf(getPathWithoutLocale(urlData.path)) !== -1) {
       fastify.log.info(`Request made to '${urlData.path}'. Skipping redirect behavior.`)
       next()
       return
