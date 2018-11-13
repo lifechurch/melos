@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Prijatelji",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Tvoj korisnički račun je potvrđen!",
 			"friendship success": "Bravo! Sad ste prijatelji.",
 			"friendship failure": "Greška kod povezivanja s prijateljem",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Nažalost pojavio se problem s naše strane. Molimo probaj ponovo ili kontaktiraj podršku.",
+			"account already confirmed": "Korisnički račun je već potvrđen! Prijavi se za nastavak."
 		}
 	}
 }

@@ -2,11 +2,11 @@
 	"features": {
 		"users": {
 			"friends": "Marafiki",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Akaunti yako imethibitishwa!",
 			"friendship success": "Umefanikiwa! Sasa ni marafiki.",
 			"friendship failure": "Hitilafu kujenga urafiki",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Samahani, kulikuwa na shida upande wetu. Jaribu tena ama uwasiliane nasi",
+			"account already confirmed": "Akaunti yako imesha thibitishwa! Ingia ili uendelee"
 		}
 	}
 }

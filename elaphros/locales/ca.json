@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Amics",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "El teu compte s'ha confirmat!",
 			"friendship success": "Perfecte! Ara sou amics.",
 			"friendship failure": "Error en crear l'amistat",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Ho sentim, hem tingut un problema. Prova-ho de nou o contacta amb el suport tècnic.",
+			"account already confirmed": "Ja s'ha confirmat el teu compte! Inicia la sessió per continuar."
 		}
 	}
 }

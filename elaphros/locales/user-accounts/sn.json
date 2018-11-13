@@ -2,11 +2,11 @@
 	"features": {
 		"users": {
 			"friends": "Shamwari",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Account yako yagamuchirwa.",
 			"friendship success": "Zvaita! Mave shamwari.",
 			"friendship failure": "Ushamwari hwaramba kugadzirika",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Tineurombo, panga paita dambudziko kuno kwatiri. Edza zvakare kana kuti nyorera kuTsigiro.",
+			"account already confirmed": "Account yako yatotsinhirwa! Pinda apa kuti unendere mberi"
 		}
 	}
 }

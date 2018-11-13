@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Amigos",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "¡Su cuenta ha sido confirmada!",
 			"friendship success": "¡Hecho! Ahora son amigos.",
 			"friendship failure": "Error al crear amistad",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Lo sentimos. Hubo un problema en nuestra ubicación. Por favor intente de nuevo o comuníquese con Soporte Técnico.",
+			"account already confirmed": "¡Su cuenta ha sido confirmada! Ingrese para continuar."
 		}
 	}
 }

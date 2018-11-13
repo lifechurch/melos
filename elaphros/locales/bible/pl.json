@@ -35,13 +35,13 @@
 			"send votd": "Prześlij mi Werset Dnia",
 			"read full": "Czytaj cały rozdział",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Otwórz odtwarzacz Audio",
+			"open search": "Otwórz pasek wyszukiwania",
 			"open sidebar": "Otwórz menu",
 			"related devos": "Darmowe Plany Czytania i Rozważania",
 			"bible language": "Język Biblii",
 			"change language": "Zmień język",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Twoja przeglądarka nie obsługuje dźwięku.",
 			"explore by verse": "Odkryj {chapter_name} werset po wersecie",
 			"version learn more": "Dowiedz się więcej o {version_name}"
 		}

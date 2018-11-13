@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Draugi",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Jūs konts ir ticis apstiprināts!",
 			"friendship success": "Izdevās! Jūs tagad esat draugi.",
 			"friendship failure": "Notika kļūme veidojot draudzību",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Atvainojamies, bet pie mums radās kļūme. Lūdzu pamēģiniet vēlreiz vai sazinieties ar atbalsta daļu.",
+			"account already confirmed": "Tavs konts jau ir apstiprināts! Pieraksties lai turpinātu."
 		}
 	}
 }

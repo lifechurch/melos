@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Mga Kaibigan",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Nakumpirma na ang iyong account!",
 			"friendship success": "Tagumpay! Kayo ay magkaibigan na.",
 			"friendship failure": "May naging pagkakamali sa paggiging magkaibigan",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Paumanhin, may problema sa aming koneksyon. Mangyaring subukan muli o kaya ay makipag-ugnay sa suporta.",
+			"account already confirmed": "Nakumpirma na ang iyong account! Mag-sign in upang magpatuloy."
 		}
 	}
 }

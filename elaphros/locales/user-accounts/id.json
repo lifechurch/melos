@@ -2,11 +2,11 @@
 	"features": {
 		"users": {
 			"friends": "Teman",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Akun Anda sudah dikonfirmasi!",
 			"friendship success": "Berhasil! Sekarang Anda berteman.",
 			"friendship failure": "Kesalahan dalam menjalin persahabatan",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Maaf, ada masalah di pihak kami. Silakan coba lagi atau hubungi layanan kami.",
+			"account already confirmed": "Akun Anda telah dikonfirmasi! Masuk untuk melanjutkan."
 		}
 	}
 }

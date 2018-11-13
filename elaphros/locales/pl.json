@@ -9,7 +9,7 @@
 			"related devos": "Darmowe Plany Czytania i Rozważania",
 			"bafk": "Aplikacja Biblii dla Dzieci",
 			"bible language": "Język Biblii",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Twoja przeglądarka nie obsługuje dźwięku.",
 			"open sidebar": "Otwórz menu",
 			"terms": "Regulamin",
 			"search": "Wyszukaj...",
@@ -24,7 +24,7 @@
 			"about": "O YouVersion",
 			"donate": "Ofiaruj",
 			"cta": "Pobierz Aplikację Biblii dla Dzieci",
-			"audio open": "Open Audio Player",
+			"audio open": "Otwórz odtwarzacz Audio",
 			"bible app": "Aplikacja Biblii",
 			"jobs": "Praca",
 			"read": "Czytaj",
@@ -40,18 +40,18 @@
 			"cancel": "Zrezygnuj",
 			"languages": "Języki",
 			"versions": "Wersje",
-			"open search": "Open Search Bar",
+			"open search": "Otwórz pasek wyszukiwania",
 			"sign up": "Rejestracja",
 			"home": "Strona główna",
 			"share": "Podziel się"
 		},
 		"users": {
 			"friends": "Przyjaciele",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Twoje konto zostało potwierdzone!",
 			"friendship success": "Jesteście teraz znajomymi!",
 			"friendship failure": "Błąd, nie utworzono znajomości",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Przepraszam, pojawił się problem po naszej stronie. Proszę spróbować ponownie lub skontaktować się ze wsparciem technicznym.",
+			"account already confirmed": "Twoje konto zostało już zweryfikowane! Zaloguj się, aby kontynuować."
 		}
 	}
 }

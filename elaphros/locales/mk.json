@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Пријатели",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Твојот профил е потврден!",
 			"friendship success": "Успех! Сега сте пријатели.",
 			"friendship failure": "Грешка во креирањето пријателство",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Проблемот е кај нас. Обиди се повторно или контактирај го одделот за подршка.",
+			"account already confirmed": "Твојот профил е веќе потврден! Логирај се за да продолжиш."
 		}
 	}
 }

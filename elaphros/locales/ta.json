@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "நண்பர்கள்",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "உங்கள் கணக்கு உறுதி செய்யப்பட்டிருக்கிறது!",
 			"friendship success": "வெற்றி! நீங்கள் இப்போது நண்பர்கள்",
 			"friendship failure": "நட்பு உருவாக்கத்தில் பிழை",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "மன்னிக்கவும், எங்கள் தரப்பில் ஒரு சிக்கல் ஏற்பட்டுள்ளது. மீண்டும் முயற்சிக்கவும் அல்லது உதவியை தொடர்பு கொள்ளவும்.",
+			"account already confirmed": "உங்கள் account ஏற்கனவே உறுதிப்படுத்தப்பட்டுவிட்டது! தொடர்வதற்கு உள்நுழைக."
 		}
 	}
 }

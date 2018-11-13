@@ -2,11 +2,11 @@
 	"features": {
 		"users": {
 			"friends": "Найз",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Таны бүртгэл баталгаажлаа!",
 			"friendship success": "Найзууд боллоо.",
 			"friendship failure": "Найзуудын хүрээ үүсгэхэд алдаа гарсан",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Уучлаарай, бидний зүгээс ямар нэгэн асуудал үүслээ. Дахин оролдох эсвэл тусламж хэсэгт хандана уу.",
+			"account already confirmed": "Таны бүртгэл аль хэдийн баталгаажуулагдсан байна! Үргэлжлүүлхийн тулд нэвтэрнэ үү."
 		}
 	}
 }

@@ -1,17 +1,17 @@
 {
 	"features": {
 		"bible": {
-			"cta": "Download the Bible App for Kids",
+			"cta": "കുട്ടികൾക്കായുള്ള ബൈബിൾ ആപ്പ് ഡൗൺലോഡ് ചെയ്യുക",
 			"bafk": "Bible App for Kids",
 			"blog": "ബ്ലോഗ്",
 			"read": "വായിക്കുക",
 			"help": "സഹായിക്കൂ",
-			"hide": "Hide",
+			"hide": "മറയ്ക്കൂ",
 			"home": "ഭവനം",
 			"jobs": "ജോലി",
 			"book": "പുസ്‌തകം",
 			"about": "കുറിച്ച്",
-			"audio": "Audio",
+			"audio": "ഓഡിയോ",
 			"share": "പങ്ക് വെക്കു",
 			"title": "ഇപ്പോൾ ബൈബിൾ ആപ്പ് ഡൗൺലോഡ് ചെയ്യുക",
 			"terms": "നിബന്ധനകൾ",
@@ -32,18 +32,18 @@
 			"bible app": "Bible App",
 			"volunteer": "സന്നദ്ധസേവകർ",
 			"languages": "ഭാഷകൾ",
-			"send votd": "Send me the Verse of the Day",
+			"send votd": "എനിക്ക് അതാതു ദിവസത്തെ വാക്യങ്ങൾ അയക്കുക",
 			"read full": "മുഴുവൻ അധ്യായം വായിക്കുക",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "ഓഡിയോ പ്ലേയർ തുറക്കുക",
+			"open search": "തിരയാനുള്ള കളം തുറക്കുക",
 			"open sidebar": "മെനു തുറക്കുക\n",
-			"related devos": "Free Reading Plans and Devotionals related to {reference}",
+			"related devos": "സ്വതന്ത്ര വായനാ പദ്ധതികളും ഭക്‌തിയുമായി ബന്ധപ്പെട്ട {reference}",
 			"bible language": "ബൈബിൾ ഭാഷ",
-			"change language": "Change Language",
-			"no audio support": "Your browser doesn't support audio.",
-			"explore by verse": "Explore {chapter_name} by Verse",
-			"version learn more": "Learn More About {version_name}"
+			"change language": "ഭാഷ മാറ്റുക",
+			"no audio support": "നിങ്ങളുടെ ബ്രൌസർ ഓഡിയോ പിന്തുണയ്ക്കുന്നില്ല.",
+			"explore by verse": "{chapter_name} വാക്യങ്ങളുപയോഗിച്ച് ആരായുക",
+			"version learn more": "{version_name} നെക്കുറിച്ച് കൂടുതലറിയുക"
 		}
 	}
 }

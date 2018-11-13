@@ -9,7 +9,7 @@
 			"related devos": "Planuri de citire și Devoționale gratuite în legătură cu {reference}",
 			"bafk": "Aplicația Biblia pentru Copii",
 			"bible language": "Limba Bibliei",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Browserul tău nu suportă fișiere audio.",
 			"open sidebar": "Deschide Meniu",
 			"terms": "Termeni",
 			"search": "Caută...",
@@ -21,10 +21,10 @@
 			"plans": "Planuri",
 			"volunteer": "Devino voluntar",
 			"chapter": "Capitolul",
-			"about": "About",
+			"about": "Despre",
 			"donate": "Donează",
 			"cta": "Descarcă Aplicația Biblia pentru copii",
-			"audio open": "Open Audio Player",
+			"audio open": "Deschide Playerul audio",
 			"bible app": "Aplicația Biblia",
 			"jobs": "Angajări",
 			"read": "Citește",
@@ -40,18 +40,18 @@
 			"cancel": "Anulează",
 			"languages": "Limbi",
 			"versions": "Versiuni",
-			"open search": "Open Search Bar",
+			"open search": "Deschide bara de căutare",
 			"sign up": "Înregistrare",
 			"home": "Acasă",
 			"share": "Împărtășește"
 		},
 		"users": {
 			"friends": "Prieteni",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Contul tău a fost confirmat!",
 			"friendship success": "Succes! Acum sunteți prieteni.",
 			"friendship failure": "S-a produs o eroare la crearea prieteniei",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Ne pare rău, avem o problemă. Încearcă din nou sau solicită suport.",
+			"account already confirmed": "Contul tău a fost deja confirmat! Autentifică-te pentru a continua."
 		}
 	}
 }

@@ -9,7 +9,7 @@
 			"related devos": "គំរោង​អាន​ដោយ​ឥត​គិត​ថ្លៃ និង​ការ​ចំនាយ​ពេល​ជាមួយ​ព្រះ​ដែល​ទាក់​ទង​ទៅ​នឹង{reference}",
 			"bafk": "កម្មវិធីព្រះគម្ពីរសម្រាប់កុមារ",
 			"bible language": "ភាសា​ព្រះគម្ពីរ",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "កម្មវិធីរុករករបស់អ្នកមិនដំណើរ​ការ​សំឡេង។",
 			"open sidebar": "បើកមីនុយ",
 			"terms": "លក្ខខណ្ឌ័",
 			"search": "ស្វែង​រក...",
@@ -24,7 +24,7 @@
 			"about": "អំពីរ",
 			"donate": "បរិច្ចាក",
 			"cta": "ទាញយកកម្មវិធីព្រះគម្ពីរសម្រាប់កុមារ",
-			"audio open": "Open Audio Player",
+			"audio open": "បើកកម្មវិធីចាក់ជា​សំឡេង",
 			"bible app": "កម្មវិធីព្រះគម្ពីរ",
 			"jobs": "ការងារ",
 			"read": "អាន",
@@ -40,18 +40,18 @@
 			"cancel": "បោះ​បង់",
 			"languages": "ភាសារ",
 			"versions": "ជំនាន់",
-			"open search": "Open Search Bar",
+			"open search": "បើករបារស្វែងរក",
 			"sign up": "ចុះ​ឈ្មោះ",
 			"home": "ទំព័រ​ដើម",
 			"share": "ចែក​រំលែក"
 		},
 		"users": {
 			"friends": "មិត្ត​ភក្តិ",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "គណនី​របស់​អ្នក​ត្រូវ​បាន​បញ្ជាក់​រួច​ហើយ!",
 			"friendship success": "ជោគ​ជ័យ! អ្នក​ជា​មិត្ត​ភក្តិ​នឹង​គ្នា​ហើយ",
 			"friendship failure": "បញ្ហា បង្កើត​មិត្ត​ភាព",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "សូម​ទោស​ មាន​កំហុស​មួយ​ចំនូន​នៅ​ផ្នែក​ខាង​យើង។ សូម​សាក​ល្បង​ម្ដង​ទៀត ឬ​ទាក់​ទង​មក​ក្រុម​ជំនួយ​របស់​យើង។",
+			"account already confirmed": "គណនី​របស់​អ្នក​បាន​បញ្ជាក់​រួច​ហើយ! សូម​ចុះ​ឈ្មោះ​ចូល​ដើម្បី​បន្ត។"
 		}
 	}
 }

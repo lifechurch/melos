@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Sahabat",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Akaun anda sudah disahkan!",
 			"friendship success": "Berjaya! Anda sekarang bersahabat.",
 			"friendship failure": "Terdapat ralat dalam mencipta persahabatan",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Maaf, ada masalah pada pihak kami. Sila cuba lagi atau hubungilah Pihak Sokongan.",
+			"account already confirmed": "Akaun anda sudah disahkan! Sila log masuk."
 		}
 	}
 }

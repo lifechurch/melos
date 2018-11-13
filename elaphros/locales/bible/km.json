@@ -35,13 +35,13 @@
 			"send votd": "សូមផ្ញើខគម្ពីរប្រចាំថ្ងៃដល់ខ្ញុំ",
 			"read full": "អានជំពូក​ទាំង​មូល",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "បើកកម្មវិធីចាក់ជា​សំឡេង",
+			"open search": "បើករបារស្វែងរក",
 			"open sidebar": "បើកមីនុយ",
 			"related devos": "គំរោង​អាន​ដោយ​ឥត​គិត​ថ្លៃ និង​ការ​ចំនាយ​ពេល​ជាមួយ​ព្រះ​ដែល​ទាក់​ទង​ទៅ​នឹង{reference}",
 			"bible language": "ភាសា​ព្រះគម្ពីរ",
 			"change language": "ប្ដូរភាសា",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "កម្មវិធីរុករករបស់អ្នកមិនដំណើរ​ការ​សំឡេង។",
 			"explore by verse": "ស្វែងយល់ {chapter_name} តាមខគម្ពីរ",
 			"version learn more": "ស្វែងយល់បន្ថែមទៀតអំពី {version_name}"
 		}

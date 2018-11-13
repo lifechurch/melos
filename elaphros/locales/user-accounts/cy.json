@@ -2,11 +2,11 @@
 	"features": {
 		"users": {
 			"friends": "Ffrindiau",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Mae’ch cyfrif wedi'i gadarnhau!",
 			"friendship success": "Llwyddiant! Rydych nawr yn ffrindiau.",
 			"friendship failure": "Gwall wrth greu cyfeillgarwch",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Mae’n ddrwg gennym, digwyddodd gwall. Ceisiwch eto neu cysylltwch â’r adran gymorth.",
+			"account already confirmed": "Mae’ch cyfrif wedi ei gadarnhau! Rhaid mewngofnodi i barhau."
 		}
 	}
 }

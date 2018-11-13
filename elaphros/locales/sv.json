@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Vänner",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Ditt konto har verifierats!",
 			"friendship success": "Ni är nu vänner.",
 			"friendship failure": "Kunde inte skapa vänskap",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Det uppstod ett problem hos oss. Försök igen eller kontakta supporten.",
+			"account already confirmed": "Ditt konto har redan bekräftats! Logga in för att fortsätta."
 		}
 	}
 }

@@ -35,13 +35,13 @@
 			"send votd": "Stuur vir my die Vers-van-die-dag",
 			"read full": "Lees die Hele Hoofstuk",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Maak Klankspeler Oop",
+			"open search": "Maak Die Soekbalk Oop",
 			"open sidebar": "Maak Inhoudsopgawe oop",
 			"related devos": "Gratis Leesplanne en Oordenkings oor {reference}",
 			"bible language": "Bybel Tale",
 			"change language": "Verander Taal",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Jou webverkenner ondersteun nie klank nie.",
 			"explore by verse": "Verken {chapter_name} se verse",
 			"version learn more": "Vind meer uit oor{version_name}"
 		}

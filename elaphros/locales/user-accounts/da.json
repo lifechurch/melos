@@ -2,11 +2,11 @@
 	"features": {
 		"users": {
 			"friends": "Venner",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Din konto er blevet bekræftet!",
 			"friendship success": "Succes! I er nu venner.",
 			"friendship failure": "Der skete en fejl i oprettelse af venskab",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Beklager, der var en fejl i vores del. Prøv venligst igen eller kontakt supporten.",
+			"account already confirmed": "Din konto er allerede bekræftet! Log ind for at fortsætte."
 		}
 	}
 }

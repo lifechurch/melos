@@ -9,7 +9,7 @@
 			"related devos": "Безкоштовні плани читання ти молитовні роздуми до{reference}",
 			"bafk": "Біблія для діточок",
 			"bible language": "Мова Біблії",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Ваш браузер не підтримує відтворення аудіофайлів.",
 			"open sidebar": "Відкрити меню",
 			"terms": "Умови",
 			"search": "Пошук...",
@@ -24,7 +24,7 @@
 			"about": "Про Біблію",
 			"donate": "Пожертвувати",
 			"cta": "Завантажити додаток Біблія для діточок",
-			"audio open": "Open Audio Player",
+			"audio open": "Відкрити аудіопрогравач",
 			"bible app": "Біблія",
 			"jobs": "Вакансії",
 			"read": "Читати",
@@ -40,18 +40,18 @@
 			"cancel": "Відмінити",
 			"languages": "Мови",
 			"versions": "Видання",
-			"open search": "Open Search Bar",
+			"open search": "Відкрити панель пошуку",
 			"sign up": "Зареєструватися",
 			"home": "Домівка",
 			"share": "Поділитися"
 		},
 		"users": {
 			"friends": "Друзі",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Ваш обліковий запис вже підтверджено!",
 			"friendship success": "Успіх! Ви - вже друзі!",
 			"friendship failure": "Помилка створення дружби",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Вибачте, на сервері сталася помилка. Будь ласка, спробуйте пізніше або зверніться до служби підтримки.",
+			"account already confirmed": "Ваш профіль вже був підтверджений! Для продовження роботи увійдіть в систему."
 		}
 	}
 }

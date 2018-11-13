@@ -9,7 +9,7 @@
 			"related devos": "Ilmaiset lukusuunnitelmat ja hartaudet jotka liittyvät {reference} ",
 			"bafk": "Lasten Raamattusovellus",
 			"bible language": "Kieli",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Selaimesi ei tue ääntä.",
 			"open sidebar": "Avaa valikko",
 			"terms": "Käyttöehdot",
 			"search": "Haku...",
@@ -24,7 +24,7 @@
 			"about": "Tietoa",
 			"donate": "Lahjoita",
 			"cta": "Lataa lasten raamattusovellus",
-			"audio open": "Open Audio Player",
+			"audio open": "Avaa soitin",
 			"bible app": "Raamattusovellus",
 			"jobs": "Töihin",
 			"read": "Lue",
@@ -40,18 +40,18 @@
 			"cancel": "Peruuta",
 			"languages": "Kielet",
 			"versions": "Käännökset",
-			"open search": "Open Search Bar",
+			"open search": "Avaa hakupalkki",
 			"sign up": "Rekisteröidy",
 			"home": "Koti",
 			"share": "Jaa"
 		},
 		"users": {
 			"friends": "Ystävät",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Tilisi on vahvistettu!",
 			"friendship success": "OK! Olette nyt ystäviä.",
 			"friendship failure": "Ystävyyden muodostaminen epäonnistui",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Meidän puolellamme oli ongelma. Yritä uudestaan tai ota yhteyttä tukeen.",
+			"account already confirmed": "Tilisi on jo vahvistettu! Kirjaudu sisään jatkaaksesi."
 		}
 	}
 }

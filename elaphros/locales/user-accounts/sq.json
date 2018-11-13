@@ -2,11 +2,11 @@
 	"features": {
 		"users": {
 			"friends": "Miqtë",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Llogaria juaj është konfirmuar!",
 			"friendship success": "Sukses! Ju jeni miq tani.",
 			"friendship failure": "Gabim në krijimin e miqësisë",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Më vjen keq, pati një problem në anën tonë. Ju lutemi provojeni sërish ose kontaktoni ndihmën.",
+			"account already confirmed": "Llogaria juaj tashmë është konfirmuar. Hyr për të vazhduar."
 		}
 	}
 }

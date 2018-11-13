@@ -47,11 +47,11 @@
 		},
 		"users": {
 			"friends": "Vrienden",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Je account is bevestigd!",
 			"friendship success": "Gelukt! Jullie zijn nu vrienden.",
 			"friendship failure": "Fout bij het maken van een vriendschap",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Sorry, er ging iets mis aan onze kant. Probeer het opnieuw of neem contact op met de ondersteuning.",
+			"account already confirmed": "Je account is bevestigd! Log in om verder te gaan."
 		}
 	}
 }

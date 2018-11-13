@@ -2,11 +2,11 @@
 	"features": {
 		"users": {
 			"friends": "Amis",
-			"account confirmed": "Your account has been confirmed!",
+			"account confirmed": "Votre compte a été confirmé!",
 			"friendship success": "Succès ! Vous êtes maintenant amis.",
 			"friendship failure": "Erreur à l'ajout de la relation",
-			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
-			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+			"error deleting account": "Désolé, il y a eu un problème de notre côté. Prière de réessayer ou de contacter notre service technique.",
+			"account already confirmed": "Votre compte a déjà été confirmé! Se connectez pour continuer."
 		}
 	}
 }
