@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -e marko ./server/index.js",
-    "getLocaleStrings": "node ./scripts/get-locale-strings.js ../ruby/config/locales/bible ./locales",
+    "getLocaleStrings": "node ./scripts/get-locale-strings.js",
     "generateIngressBlocks": "node ./scripts/generate-ingress-blocks.js"
   },
   "author": "",
@@ -28,6 +28,7 @@
     "marko": "^4.10.0",
     "newrelic": "^4.7.0",
     "point-of-view": "^1.1.0",
+    "query-string": "^6.2.0",
     "raven": "^2.6.3"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "flat": "^4.1.0",
+    "immutable": "^4.0.0-rc.12",
     "js-yaml": "^3.12.0",
     "nodemon": "^1.17.5",
     "rtl-detect": "^1.0.2"

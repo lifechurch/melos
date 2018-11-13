@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "חברים",
+			"account confirmed": "החשבון שלך אושר!",
+			"friendship success": "הצלחה! אתם עכשיו חברים.",
+			"friendship failure": "אירעה שגיאה ביצירת החברות",
+			"error deleting account": "מצטערים, משהו השתבש אצלנו. אנא נסה שוב או צור קשר עם התמיכה שלנו.",
+			"account already confirmed": "החשבון שלך כבר אושר! היכנס כדי להמשיך."
+		}
+	}
+}

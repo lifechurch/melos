@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "நண்பர்கள்",
+			"account confirmed": "Your account has been confirmed!",
+			"friendship success": "வெற்றி! நீங்கள் இப்போது நண்பர்கள்",
+			"friendship failure": "நட்பு உருவாக்கத்தில் பிழை",
+			"error deleting account": "Sorry, there was a problem on our end. Please try again or contact support.",
+			"account already confirmed": "Your account has already been confirmed! Sign in to continue."
+		}
+	}
+}
