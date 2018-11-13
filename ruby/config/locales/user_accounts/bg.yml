@@ -1,9 +1,9 @@
 bg:
   features:
     users:
-      account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account confirmed: "Профилът Ви е потвърден!"
+      account already confirmed: "Профилът Ви вече е потвърден! Влезте, за да продължите."
+      error deleting account: "За съжаление възникна проблем при нас. Моля, опитайте отново или се свържете с поддръжката."
       friendship success: "Успех! Вече сте приятели."
       friendship failure: "Грешка при създаването на приятелство"
       friends: "Приятели"
