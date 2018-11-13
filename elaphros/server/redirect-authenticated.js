@@ -1,3 +1,9 @@
+const skipRedirectsFor = [
+  '/confirmation',
+  '/friendships/accept/sucess',
+  '/friendships/accept/failure'
+]
+
 module.exports = function redirectAuthenticated(fastify) {
   fastify.addHook('preHandler', (req, reply, next) => {
     /**
@@ -15,6 +21,12 @@ module.exports = function redirectAuthenticated(fastify) {
 
     if (urlData.host === 'localhost') {
       fastify.log.info('Request made to \'localhost\'. Ignoring redirect behavior.')
+      next()
+      return
+    }
+
+    if (skipRedirectsFor.indexOf(urlData.path) !== -1) {
+      fastify.log.info(`Request made to '${urlData.path}'. Skipping redirect behavior.`)
       next()
       return
     }
