@@ -761,6 +761,15 @@ spec:
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
           servicePort: $PORT
+      - path: /confirmation
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+      - path: /friendships/accept
+        backend:
+          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+          servicePort: $PORT
+
       - path: /sw.js
         backend:
           serviceName: elaphros-$CI_ENVIRONMENT_SLUG
