@@ -90,6 +90,12 @@
   dependencies:
     nan "^2.10.0"
 
+"@newrelic/superagent@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@newrelic/superagent/-/superagent-1.0.0.tgz#d51265a9a677312d91f83ff1f99f5a5d51abf557"
+  dependencies:
+    methods "^1.1.2"
+
 "@types/events@*":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"
@@ -3601,11 +3607,12 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-newrelic@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-4.7.0.tgz#9044848e1fc3c137aecb7497bf16923683773eff"
+newrelic@4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-4.10.0.tgz#e51fdf3a59183030b2507c0d822bd41243891140"
   dependencies:
     "@newrelic/koa" "^1.0.0"
+    "@newrelic/superagent" "^1.0.0"
     "@tyriar/fibonacci-heap" "^2.0.7"
     async "^2.1.4"
     concat-stream "^1.5.0"
