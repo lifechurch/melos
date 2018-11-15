@@ -1,0 +1,9 @@
+hr:
+  features:
+    users:
+      account confirmed: "Tvoj korisnički račun je potvrđen!"
+      account already confirmed: "Korisnički račun je već potvrđen! Prijavi se za nastavak."
+      error deleting account: "Nažalost pojavio se problem s naše strane. Molimo probaj ponovo ili kontaktiraj podršku."
+      friendship success: "Bravo! Sad ste prijatelji."
+      friendship failure: "Greška kod povezivanja s prijateljem"
+      friends: "Prijatelji"

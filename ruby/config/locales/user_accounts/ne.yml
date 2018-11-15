@@ -1,0 +1,9 @@
+ne:
+  features:
+    users:
+      account confirmed: "तपाईंको एकाउन्ट पुष्टि भएको छ!"
+      account already confirmed: "तपाईंको एकाउन्ट पहिले नै पुष्टि भएको छ! जारी राख्न साइन इन गर्नुहोस्।"
+      error deleting account: "माफ गर्नुहोस्, हाम्रो तर्फ एउटा समस्या भयो। कृपया पुन: प्रयास गर्नुहोस् वा सहयोगको लागि सम्पर्क गर्नुहोस्।"
+      friendship success: "सफलभयो! तपाईंहरू अब साथी हुनुभयो"
+      friendship failure: "Error creating friendship"
+      friends: "साथिहरू"

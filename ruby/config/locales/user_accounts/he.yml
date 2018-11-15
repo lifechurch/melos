@@ -1,0 +1,9 @@
+he:
+  features:
+    users:
+      account confirmed: "החשבון שלך אושר!"
+      account already confirmed: "החשבון שלך כבר אושר! היכנס כדי להמשיך."
+      error deleting account: "מצטערים, משהו השתבש אצלנו. אנא נסה שוב או צור קשר עם התמיכה שלנו."
+      friendship success: "הצלחה! אתם עכשיו חברים."
+      friendship failure: "אירעה שגיאה ביצירת החברות"
+      friends: "חברים"

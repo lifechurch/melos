@@ -1,0 +1,9 @@
+ms:
+  features:
+    users:
+      account confirmed: "Akaun anda sudah disahkan!"
+      account already confirmed: "Akaun anda sudah disahkan! Sila log masuk."
+      error deleting account: "Maaf, ada masalah pada pihak kami. Sila cuba lagi atau hubungilah Pihak Sokongan."
+      friendship success: "Berjaya! Anda sekarang bersahabat."
+      friendship failure: "Terdapat ralat dalam mencipta persahabatan"
+      friends: "Sahabat"

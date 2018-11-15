@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Ffrindiau",
+			"account confirmed": "Mae’ch cyfrif wedi'i gadarnhau!",
+			"friendship success": "Llwyddiant! Rydych nawr yn ffrindiau.",
+			"friendship failure": "Gwall wrth greu cyfeillgarwch",
+			"error deleting account": "Mae’n ddrwg gennym, digwyddodd gwall. Ceisiwch eto neu cysylltwch â’r adran gymorth.",
+			"account already confirmed": "Mae’ch cyfrif wedi ei gadarnhau! Rhaid mewngofnodi i barhau."
+		}
+	}
+}

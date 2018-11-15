@@ -1,0 +1,9 @@
+ca:
+  features:
+    users:
+      account confirmed: "El teu compte s'ha confirmat!"
+      account already confirmed: "Ja s'ha confirmat el teu compte! Inicia la sessió per continuar."
+      error deleting account: "Ho sentim, hem tingut un problema. Prova-ho de nou o contacta amb el suport tècnic."
+      friendship success: "Perfecte! Ara sou amics."
+      friendship failure: "Error en crear l'amistat"
+      friends: "Amics"

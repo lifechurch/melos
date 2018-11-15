@@ -1,0 +1,9 @@
+be:
+  features:
+    users:
+      account confirmed: "Ваш рахунак быў пацьверджаны!"
+      account already confirmed: "Ваш рахунак ужо быў пацьверджаны! Увайдзіце дзеля працягу."
+      error deleting account: "Выбачайце, у нас здарылася памылка. Калі ласка, паспрабуйце яшчэ раз ці скантактуйцеся з падтрымкай."
+      friendship success: "Success! You're now friends."
+      friendship failure: "Не атрымалася дадаць у сябры"
+      friends: "Сябры"

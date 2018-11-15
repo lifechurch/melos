@@ -1,0 +1,9 @@
+hu:
+  features:
+    users:
+      account confirmed: "Fiókod megerősítve!"
+      account already confirmed: "A fiókod már meg lett erősítve! Jelentkezz be a folytatáshoz."
+      error deleting account: "Sajnáljuk, nálunk történt hiba. Kérlek, próbálkozz újra vagy lépj kapcsolatba az ügyfélszolgálattal."
+      friendship success: "Sikerült! Most már barátok vagytok."
+      friendship failure: "Hiba törtét a barátság létrehozásában"
+      friends: "Barátok"

@@ -1,0 +1,9 @@
+nl:
+  features:
+    users:
+      account confirmed: "Je account is bevestigd!"
+      account already confirmed: "Je account is bevestigd! Log in om verder te gaan."
+      error deleting account: "Sorry, er ging iets mis aan onze kant. Probeer het opnieuw of neem contact op met de ondersteuning."
+      friendship success: "Gelukt! Jullie zijn nu vrienden."
+      friendship failure: "Fout bij het maken van een vriendschap"
+      friends: "Vrienden"

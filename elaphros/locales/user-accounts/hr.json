@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Prijatelji",
+			"account confirmed": "Tvoj korisnički račun je potvrđen!",
+			"friendship success": "Bravo! Sad ste prijatelji.",
+			"friendship failure": "Greška kod povezivanja s prijateljem",
+			"error deleting account": "Nažalost pojavio se problem s naše strane. Molimo probaj ponovo ili kontaktiraj podršku.",
+			"account already confirmed": "Korisnički račun je već potvrđen! Prijavi se za nastavak."
+		}
+	}
+}

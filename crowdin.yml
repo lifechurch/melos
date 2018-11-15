@@ -15,6 +15,22 @@ files:
         fil: tl
         ckb-IR: ckb
         myz: my-MM
+  - source: /ruby/config/locales/user_accounts/en.yml
+    translation: /ruby/config/locales/user_accounts/%osx_locale%.yml
+    languages_mapping:
+      osx_locale:
+        es-ES: es-ES
+        es-la: es
+        zh-CN: zh-CN
+        zh-TW: zh-TW
+        zh-HK: zh-HK
+        en-GB: en-GB
+        pt-PT: pt-PT
+        pt-BR: pt
+        sv-SE: sv
+        fil: tl
+        ckb-IR: ckb
+        myz: my-MM
   - source: /ruby/config/locales/bible/en.yml
     translation: /ruby/config/locales/bible/%osx_locale%.yml
     languages_mapping:

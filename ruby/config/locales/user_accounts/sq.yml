@@ -1,0 +1,9 @@
+sq:
+  features:
+    users:
+      account confirmed: "Llogaria juaj është konfirmuar!"
+      account already confirmed: "Llogaria juaj tashmë është konfirmuar. Hyr për të vazhduar."
+      error deleting account: "Më vjen keq, pati një problem në anën tonë. Ju lutemi provojeni sërish ose kontaktoni ndihmën."
+      friendship success: "Sukses! Ju jeni miq tani."
+      friendship failure: "Gabim në krijimin e miqësisë"
+      friends: "Miqtë"

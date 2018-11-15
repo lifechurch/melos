@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Freunde",
+			"account confirmed": "Dein Konto ist nun aktiviert.",
+			"friendship success": "Super! Ihr seid jetzt befreundet.",
+			"friendship failure": "Fehler bei Freundschaftsanfrage",
+			"error deleting account": "Entschuldige, es gab ein Problem auf unserer Seite. Bitte versuche es erneut oder kontaktiere den Support.",
+			"account already confirmed": "Dein Konto ist bereits bestätigt worden. Bitte melde dich an, um weiter zu machen."
+		}
+	}
+}

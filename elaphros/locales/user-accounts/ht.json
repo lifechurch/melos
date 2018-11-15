@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Friends",
+			"account confirmed": "Kont ou an konfime!",
+			"friendship success": "Success! You're now friends.",
+			"friendship failure": "Error creating friendship",
+			"error deleting account": "Dezole, te gen yon pwoblèm nan fen nou an. Tanpri eseye ankò oubyen kontakte sipò.",
+			"account already confirmed": "Kont ou an déjà konfime! Konekte pou kontinye."
+		}
+	}
+}

@@ -1,0 +1,9 @@
+pl:
+  features:
+    users:
+      account confirmed: "Twoje konto zostało potwierdzone!"
+      account already confirmed: "Twoje konto zostało już zweryfikowane! Zaloguj się, aby kontynuować."
+      error deleting account: "Przepraszam, pojawił się problem po naszej stronie. Proszę spróbować ponownie lub skontaktować się ze wsparciem technicznym."
+      friendship success: "Jesteście teraz znajomymi!"
+      friendship failure: "Błąd, nie utworzono znajomości"
+      friends: "Przyjaciele"

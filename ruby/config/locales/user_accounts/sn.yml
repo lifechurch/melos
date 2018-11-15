@@ -1,0 +1,9 @@
+sn:
+  features:
+    users:
+      account confirmed: "Account yako yagamuchirwa."
+      account already confirmed: "Account yako yatotsinhirwa! Pinda apa kuti unendere mberi"
+      error deleting account: "Tineurombo, panga paita dambudziko kuno kwatiri. Edza zvakare kana kuti nyorera kuTsigiro."
+      friendship success: "Zvaita! Mave shamwari."
+      friendship failure: "Ushamwari hwaramba kugadzirika"
+      friends: "Shamwari"

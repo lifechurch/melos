@@ -204,7 +204,7 @@ GEM
     multipart-post (2.0.0)
     nenv (0.2.0)
     netrc (0.10.3)
-    newrelic_rpm (3.9.9.275)
+    newrelic_rpm (5.5.0.348)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     notiffany (0.0.6)
@@ -413,7 +413,7 @@ DEPENDENCIES
   language_list (~> 0.0.3)
   memcachier
   minitest
-  newrelic_rpm (~> 3.9.9.275)
+  newrelic_rpm (~> 5.5.0.348)
   nokogiri (~> 1.7.1)
   oj
   omniauth-facebook (~> 2.0.0)

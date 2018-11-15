@@ -1,0 +1,9 @@
+tl:
+  features:
+    users:
+      account confirmed: "Nakumpirma na ang iyong account!"
+      account already confirmed: "Nakumpirma na ang iyong account! Mag-sign in upang magpatuloy."
+      error deleting account: "Paumanhin, may problema sa aming koneksyon. Mangyaring subukan muli o kaya ay makipag-ugnay sa suporta."
+      friendship success: "Tagumpay! Kayo ay magkaibigan na."
+      friendship failure: "May naging pagkakamali sa paggiging magkaibigan"
+      friends: "Mga Kaibigan"

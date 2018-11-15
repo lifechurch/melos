@@ -1,0 +1,9 @@
+lv:
+  features:
+    users:
+      account confirmed: "Jūs konts ir ticis apstiprināts!"
+      account already confirmed: "Tavs konts jau ir apstiprināts! Pieraksties lai turpinātu."
+      error deleting account: "Atvainojamies, bet pie mums radās kļūme. Lūdzu pamēģiniet vēlreiz vai sazinieties ar atbalsta daļu."
+      friendship success: "Izdevās! Jūs tagad esat draugi."
+      friendship failure: "Notika kļūme veidojot draudzību"
+      friends: "Draugi"

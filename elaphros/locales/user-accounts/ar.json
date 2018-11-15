@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "اصدقاء",
+			"account confirmed": "تم تأكيد حسابك!",
+			"friendship success": "انتم الآن اصدقاء!",
+			"friendship failure": "خطأ في انشاء الصداقة",
+			"error deleting account": "عفوا، هناك خطأ من طرفنا. من فضلك حاول مرة أخرى أو اتصل بالدعم",
+			"account already confirmed": "لقد تم تأكيد حساكب من قبل! قم بتسجيل الدخول للاستمرار."
+		}
+	}
+}

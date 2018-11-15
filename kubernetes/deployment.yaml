@@ -8,12 +8,14 @@ metadata:
     app: $CI_ENVIRONMENT_SLUG
     pipeline_id: "$CI_PIPELINE_ID"
     build_id: "$CI_JOB_ID"
+    space: $KUBE_NAMESPACE
+    track: stable
 spec:
   selector:
     matchLabels:
       app: $CI_ENVIRONMENT_SLUG
       name: $CI_ENVIRONMENT_SLUG
-      space: $KUBE_NAMESPACE
+      track: stable
   strategy:
     rollingUpdate:
       maxSurge: 30%
@@ -24,6 +26,7 @@ spec:
         name: $CI_ENVIRONMENT_SLUG
         app: $CI_ENVIRONMENT_SLUG
         space: $KUBE_NAMESPACE
+        track: stable
       annotations:
         build_id: "$CI_JOB_ID"
     spec:
@@ -37,6 +40,7 @@ spec:
         resources:
           limits:
             cpu: "4"
+            memory: "4700Mi"
         readinessProbe:
           httpGet:
             path: /ping_all

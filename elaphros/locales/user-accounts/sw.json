@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Marafiki",
+			"account confirmed": "Akaunti yako imethibitishwa!",
+			"friendship success": "Umefanikiwa! Sasa ni marafiki.",
+			"friendship failure": "Hitilafu kujenga urafiki",
+			"error deleting account": "Samahani, kulikuwa na shida upande wetu. Jaribu tena ama uwasiliane nasi",
+			"account already confirmed": "Akaunti yako imesha thibitishwa! Ingia ili uendelee"
+		}
+	}
+}

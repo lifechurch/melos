@@ -1,3 +1,11 @@
+const getPathWithoutLocale = require('../utils/localization/get-path-without-locale')
+
+const skipRedirectsFor = [
+  '/confirmation',
+  '/friendships/accept/success',
+  '/friendships/accept/failure'
+]
+
 module.exports = function redirectAuthenticated(fastify) {
   fastify.addHook('preHandler', (req, reply, next) => {
     /**
@@ -15,6 +23,12 @@ module.exports = function redirectAuthenticated(fastify) {
 
     if (urlData.host === 'localhost') {
       fastify.log.info('Request made to \'localhost\'. Ignoring redirect behavior.')
+      next()
+      return
+    }
+
+    if (skipRedirectsFor.indexOf(getPathWithoutLocale(urlData.path)) !== -1) {
+      fastify.log.info(`Request made to '${urlData.path}'. Skipping redirect behavior.`)
       next()
       return
     }

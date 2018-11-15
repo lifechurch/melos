@@ -8,6 +8,7 @@ metadata:
     app: elaphros-$CI_ENVIRONMENT_SLUG
     pipeline_id: "$CI_PIPELINE_ID"
     build_id: "$CI_JOB_ID"
+    space: $KUBE_NAMESPACE
     track: stable
 spec:
   strategy:
@@ -43,7 +44,7 @@ spec:
         resources:
           limits:
             cpu: "1"
-            memory: "400Mi"
+            memory: "700Mi"
         readinessProbe:
           httpGet:
             path: /ping

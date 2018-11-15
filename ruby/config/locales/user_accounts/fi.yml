@@ -1,0 +1,9 @@
+fi:
+  features:
+    users:
+      account confirmed: "Tilisi on vahvistettu!"
+      account already confirmed: "Tilisi on jo vahvistettu! Kirjaudu sisään jatkaaksesi."
+      error deleting account: "Meidän puolellamme oli ongelma. Yritä uudestaan tai ota yhteyttä tukeen."
+      friendship success: "OK! Olette nyt ystäviä."
+      friendship failure: "Ystävyyden muodostaminen epäonnistui"
+      friends: "Ystävät"

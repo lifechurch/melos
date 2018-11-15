@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Arkadaşlar",
+			"account confirmed": "Hesabınız doğrulandı!",
+			"friendship success": "Artık arkadaş oldunuz!",
+			"friendship failure": "Arkadaşlığı yaratırken hata oluştu",
+			"error deleting account": "Özür dileriz. Bizim tarafımızda bir hata oldu. Lütfen tekrar deneyin veya destek ile irtibata geçiniz.",
+			"account already confirmed": "Hesabınız zaten doğrulanmıştır. Devam etmek için giriş yapınız."
+		}
+	}
+}

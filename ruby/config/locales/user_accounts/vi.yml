@@ -1,0 +1,9 @@
+vi:
+  features:
+    users:
+      account confirmed: "Tài khoản của bạn đã được xác nhận!"
+      account already confirmed: "Tài khoản của bạn đã được xác nhận! Hãy đăng nhập để tiếp tục:"
+      error deleting account: "Xin lỗi bạn, có lỗi kỹ thuật từ phía chúng tôi. Hãy thử lại hoặc liên hệ hỗ trợ."
+      friendship success: "Các bạn đã kết bạn!"
+      friendship failure: "Lỗi khi kết bạn"
+      friends: "Bạn bè"

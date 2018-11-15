@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Ystävät",
+			"account confirmed": "Tilisi on vahvistettu!",
+			"friendship success": "OK! Olette nyt ystäviä.",
+			"friendship failure": "Ystävyyden muodostaminen epäonnistui",
+			"error deleting account": "Meidän puolellamme oli ongelma. Yritä uudestaan tai ota yhteyttä tukeen.",
+			"account already confirmed": "Tilisi on jo vahvistettu! Kirjaudu sisään jatkaaksesi."
+		}
+	}
+}

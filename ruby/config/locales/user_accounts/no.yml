@@ -1,0 +1,9 @@
+"no":
+  features:
+    users:
+      account confirmed: "Din konto er bekreftet!"
+      account already confirmed: "Din konto er allerede bekreftet! Logg in for å fortsette."
+      error deleting account: "Beklager, noe gikk galt hos oss. Vennligst prøv igjen eller kontakt support."
+      friendship success: "Suksess! Dere er nå venner."
+      friendship failure: "Det oppstod en feil under oppretting av vennskap"
+      friends: "Venner"

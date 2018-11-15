@@ -1,0 +1,9 @@
+ar:
+  features:
+    users:
+      account confirmed: "تم تأكيد حسابك!"
+      account already confirmed: "لقد تم تأكيد حساكب من قبل! قم بتسجيل الدخول للاستمرار."
+      error deleting account: "عفوا، هناك خطأ من طرفنا. من فضلك حاول مرة أخرى أو اتصل بالدعم"
+      friendship success: "انتم الآن اصدقاء!"
+      friendship failure: "خطأ في انشاء الصداقة"
+      friends: "اصدقاء"
