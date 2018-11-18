@@ -307,7 +307,7 @@ sk:
       resources: "Zdroje"
       tell your church: "Povedzte svojmu cirkevnému zboru"
       create an event: "Vytvoriť podujatie"
-    mail subject: "Táto nová funkcia od YouVersion by skutočne mohla pomôcť nášmu cirkevnému zboru!"
+    mail subject: "Táto nová funkcia od YouVersion by skutočne mohla nášmu cirkevnému zboru pomôcť!"
     mail body: "Videli ste už novú funkcionalitu YouVersion - podujatia? Verím, že táto funkcionalita môže zborom skutočne pomôcť viac zapájať ľudí do bohoslužieb. Počas bohoslužieb im umožňuje zapisovať si vlastné poznámky a následne si dokonca uložiť podujatie, aby sa k nemu mohli neskôr vrátiť a študovať ho aj s odkazmi v Biblii. Myslím, že by nám taktiež mohla ušetriť náklady na tlač. Tu je webstránka YouVersion podujatí: http://www.bible.com/features/events."
     section 1 title: "Prineste moc aplikácie Biblia na bohoslužby vášho spoločenstva."
     section 1 text: "Všetko, čo vaše spoločenstvo potrebuje, aby boli ľudia v kázni angažovaní a zdieľali ju s ostatnými. Bezplatná, bez papierovačiek a nainštalovaná na miliónoch zariadení."
@@ -387,24 +387,24 @@ sk:
   recent bookmarks: "Nedávne záložky"
   percentage display: "%{number}%"
   myself: "Ja"
-  none found: "Zadaným kritériám hľadania nevyhovujú žiadne výsledky. Skúste zovšeobecniť hľadaný pojem."
-  paginated items shown: "%{first_shown}–%{last_shown} z %{total_available}"
+  none found: "Zadaným kritériám hľadania nevyhovujú žiadne výsledky. Skúste vaše vyhľadávanie rozšíriť."
+  paginated items shown: "%{first_shown}&ndash;%{last_shown} z %{total_available}"
   160 character limit: "160 znakov alebo menej"
   recent versions: "Nedávno použité"
-  traditional: "Tradične"
-  alphabetic: "Abecedne"
+  traditional: "Tradičné"
+  alphabetic: "Abecedné"
   versions title: "Preklady"
   languages:
     title: "Jazyky a preklady Biblie"
     most popular: "Najpopulárnejšie jazyky"
     additional: "Ďalšie jazyky"
-    download language: "Stiahnite si Bibliu v %{language_name}"
-    bible in: "Biblia v %{language_name}"
+    download language: "Stiahnite si Bibliu v jazyku %{language_name}"
+    bible in: "Biblia v jazyku %{language_name}"
   or:
     lower: "alebo"
     upper: "ALEBO"
   moments:
-    scripture unavailable: "Text nedostupný."
+    scripture unavailable: "Písmo nie je k dispozícii."
     could not load: "Nepodarilo sa načítať"
     could not load verse: "Nepodarilo sa načítať verš"
     showing related: "Zobrazujú sa súvisiace momenty"
@@ -1392,8 +1392,8 @@ sk:
       sign out: "Odhlásiť"
     footer:
       events: "Podujatia"
-      versions: "Verzie (%{count})"
-      languages: "Jazyky (%{count})"
+      versions: "Prekladov (%{count})"
+      languages: "Jazykov (%{count})"
       help: "Pomoc"
       social: "Sociálne"
       donate: "Prispejte"
@@ -1409,7 +1409,7 @@ sk:
       email: "Email"
       not me: "Toto nie som ja"
       saved: "Uložené!"
-      plan delivery: "Doručenie plánu"
+      plan delivery: "DORUČENIE PLÁNU"
       sign-in: "Pre upravenie iných nastavení sa <a href='%{sign_in_path}'>prihláste do svojho účtu</a>."
       other: "Iné oznámenia"
       pwf: "Plány s priateľmi"
@@ -1463,7 +1463,7 @@ sk:
       see all: "Zobraziť všetky"
       discover: "Objaviť"
       my_plans: "Moje plány"
-      day_completed: "<b>%{username}</b> ukončený <b>Deň%{day}</b> Plánu Biblie: <b>%{plan_title}</b>"
+      day_completed: "Používateľ <b>%{username}</b> dokončil <b>%{day}. deň</b> plánu Biblie: <b>%{plan_title}</b>"
       which reading: "%{current} z %{total}"
       status:
         on track: "Na dobrej ceste!"
@@ -1797,7 +1797,7 @@ sk:
                 sizePrompt: "%{requiredWidth}px šírka x %{requiredHeight}px výška"
                 select: "Zvoľte obrázok"
               ContentTypeLink:
-                kindrid: "Ak hľadáte šikovnú a jednoduchú poskytovateľskú platformu <a href='%{url}'>skúste Kindrid</a>."
+                kindrid: "Ak hľadáte šikovnú a jednoduchú platformu pre darovanie, <a href='%{url}'>skúste Kindrid</a>."
                 label: "Označenie odkazu"
                 prompt: "Napíšte sem niečo..."
                 url: "URL"
@@ -1808,7 +1808,7 @@ sk:
                 language: "Jazyk"
                 version: "Preklad"
                 book: "Kniha"
-                chapterVerse: "Kapitola: Verš"
+                chapterVerse: "Kapitola:Verš"
               ContentTypeText:
                 prompt: "Napíšte sem niečo..."
               LiveWarningModal:
@@ -1909,7 +1909,7 @@ sk:
                   desc: "Červený znak NAŽIVO bude zobrazený pri začiatku Vášho najskoršieho času."
                 remove:
                   title: "Odstrániť:"
-                  desc: "Vaša udalosť po jej ukončení už nebude identifikovateľná. Účastníci, ktorí klikli na \"Uložiť udalosť\", kým táto ešte bola identifikovateľná, budú mať i naďalej prístup k jej archívnej verzii, táto udalosť bude tiež naďalej prístupná cez priamy prichádzajúci odkaz."
+                  desc: "Vaše podujatie nebude možné po jeho ukončení nájsť. Účastníci, ktorí klikli na \"Uložiť podujatie\", kým bolo ešte dostupné, budú mať i naďalej prístup k jeho archivovanej verzii. Toto podujatie bude tiež naďalej prístupné cez priamy prichádzajúci odkaz."
               PreviewTypeAnnouncement:
                 expand: "Rozšíriť"
               PreviewTypePlan:
@@ -1924,7 +1924,7 @@ sk:
             draft: "Návrh"
             edit: "Upraviť"
             view: "Zobraziť"
-            fail: "Vymazanie udalosti nie je možné"
+            fail: "Nemožno odstrániť podujatie"
       EventView:
         components:
           EventViewContent:
@@ -1939,9 +1939,9 @@ sk:
           EventViewDetails:
             expand: "Rozšíriť"
             collapse: "Stroskotanie"
-            save: "Uložiť udalosť"
-            signIn: "Prihláste sa pre uloženie udalosti"
-            saved: "Udalosť uložená"
+            save: "Uložiť podujatie"
+            signIn: "Pre uloženie podujatia sa prihláste"
+            saved: "Podujatie uložené"
     Auth:
       sign up: "Zaregistrovať"
       sign in: "Prihlásiť sa"
