@@ -3,7 +3,7 @@ da:
     bible:
       about: "Om"
       audio: "Lyd"
-      audio open: "Åbn lyd afspiller"
+      audio open: "Open Audio Player"
       book: "Bog"
       bible language: "Bibelsprog"
       blog: "Blog"
