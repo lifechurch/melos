@@ -2054,7 +2054,7 @@ hu:
     hi name: "Szia %{name}!"
     your snapshot: "Itt egy pillanatkép az évedről a Biblia Alkalmazásban"
     user snapshot: "%{user} %{year} évi pillanatképe"
-    days in app: "Days in the App"
+    days in app: "nap az alkalmazásban"
     perfect weeks: "Tökéletes hét"
     plan days: "Bibliaterv napok"
     new friends: "Új barátok"
