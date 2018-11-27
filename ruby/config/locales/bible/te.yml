@@ -2,11 +2,11 @@ te:
   features:
     bible:
       about: "గురించి"
-      audio: "Audio"
-      audio open: "Open Audio Player"
+      audio: "ఆడియో"
+      audio open: "శబ్ద పరికరాన్ని తెరవండి"
       book: "పుస్తకం"
       bible language: "పరిశుద్ధ గ్రంథము భాష"
-      blog: "Blog"
+      blog: "బ్లాగ్"
       cancel: "రద్దు"
       change language: "భాషను మార్చండి"
       chapter: "అధ్యాయం"
