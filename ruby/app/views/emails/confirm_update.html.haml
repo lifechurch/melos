@@ -1,10 +1,15 @@
 %article
   - if @user.errors.blank?
-    %p
-      = t('confirm update email success')
+    .row.pad-row
+      .columns.medium-12
+        %div{ :style => "margin: 100px", class: 'alert-box success radius' }= t('users.confirm update email success')
   - else
-    .form_errors
+    .form_errors{ :style => "margin: 100px" }
       =t("users.profile form errors")
       %ul
         - @user.errors.full_messages.each do |e|
-          %li= e.first
+          %li= e
+
+
+/ When user is logged out and clicks email link. Renders "thanks. you've updated". Email is updated.
+/ When user is logged in and click email link. Redirects to login page. No email update.
