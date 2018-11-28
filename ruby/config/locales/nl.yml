@@ -1825,7 +1825,7 @@ nl:
                 save: "Sla deze Locatie op"
                 virtualPrompt: "Geef een plaatsnaam op voor het bepalen van de tijdzone..."
               LocationTimeShifter:
-                shift: "Verschuif de begindata"
+                shift: "Verschuif de startdata"
                 forward: "Doorsturen"
                 backward: "terug"
                 by: "door"
@@ -1919,7 +1919,7 @@ nl:
       read chapter: "Lees het hele hoofdstuk"
       plan title: "Gratis leesplannen en overdenkingen"
       plan title ref: "Gratis leesplannen en overdenkingen die te maken hebben met %{reference}"
-      plan subtitle: "Leesplannen verdelen je bijbellezingen in beheersbare dagelijkse porties. De plannen bevatten vaak ondersteunende toelichting, geluidsbestanden of video's. Hoe je ze ook noemt, leesplannen zijn een beproefde methode om de Bijbel een vanzelfsprekend onderdeel van je dagelijks leven te maken."
+      plan subtitle: "Leesplannen verdelen je Bijbellezingen in beheersbare dagelijkse porties. De leesplannen bevatten vaak ondersteunende toelichting, geluidsbestanden of video's. Hoe je ze ook noemt, leesplannen zijn een beproefde methode om de Bijbel een vanzelfsprekend onderdeel van je dagelijks leven te maken."
       meta:
         mobile:
           title: "De Bijbel App"
