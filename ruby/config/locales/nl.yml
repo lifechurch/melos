@@ -81,7 +81,7 @@ nl:
     connection friends: "Dit zijn enkele YouVersion gebruikers waarmee je verbonden bent op %{connection}:"
     errors:
       no friends: "Geen van je %{connection} vrienden lijken YouVersion te gebruiken."
-      reset connection: "Sorry, er is een fout opgetreden. Gelieve de verbinding verbreken en te herstellen."
+      reset connection: "Sorry, er is een fout opgetreden. Gelieve de verbinding te verbreken en te herstellen."
     email:
       name: "E-mail"
     twitter:
@@ -118,7 +118,7 @@ nl:
     users email not found: "Er is geen account met dit e-mailadres."
     users email required: "Je moet een e-mailadres invoeren."
     users hash verified: "Dit account is al bevestigd."
-    users password change: "jouw nieuwe wachtwoord moet verschillen van je oude wachtwoord."
+    users password change: "Je nieuwe wachtwoord moet verschillen van je oude wachtwoord."
     users password length: "Je wachtwoord moet uit minimaal 6 tekens bestaan."
     users password less than minimum value 6: "Je wachtwoord moet uit minimaal 6 tekens bestaan."
     users password required: "Je moet een wachtwoord invoeren."
@@ -161,7 +161,7 @@ nl:
   make a donation: "Een bijdrage geven"
   thanks for your donation: "Bedankt voor je bijdrage!"
   thanks authorization: "Als je een bon hebt gevraagd, wordt deze binnenkort in je inbox afgeleverd."
-  donation error: "Het spijt ons maar er is iets fout gegaan met je bijdrage. De fout was: %{error_text}"
+  donation error: "Het spijt ons, er is iets fout gegaan met je bijdrage. De fout was: %{error_text}"
   created ago: "%{time_ago} geleden aangemaakt"
   copy: "Kopiëren"
   copy confirmed: "Gekopieerd!"
@@ -1104,7 +1104,7 @@ nl:
     t7: "Geweldige app!"
     t7 copy: "Helpt me om de Bijbel meer te lezen. De zoek en deel functies en de verschillende manieren om te delen zijn fantastisch. Waardeer ook de audio versies."
     t8: "Geweldige app"
-    t8 copy: "Dit is een geweldig hulpmiddel voor het bestuderen van meerdere vertalingen. Het is ook handig voor het luisteren naar de bijbel als je rijdt."
+    t8 copy: "Dit is een geweldig hulpmiddel voor het bestuderen van meerdere vertalingen. Het is ook handig om naar de Bijbel te luisteren tijdens het rijden."
     t9: "Beste Bijbel app!"
     t9 copy: "Dit is de beste Bijbel app die er is. Het heeft het woord in verschillende talen en versies voor online en offline gebruik. Er zijn overdenkingen voor alles wat je kan bedenken. Je kan met anderen verbinden en uiteindelijk leren over God en zijn Woord,"
     version list: "Meer dan 1000 Bijbel vertalingen, inclusief:"
@@ -1123,7 +1123,7 @@ nl:
     sms button: "Stuur me een link"
     sms error: "Sorry, er is iets fout gegaan. Probeer het alstublieft opnieuw"
     sms success: "Fantastisch! Controleer of je de link hebt ontvangen op je mobiel."
-    sms info: "U zal eenmalig een SMS ontvangen om de app te downloaden"
+    sms info: "Je ontvangt eenmalig een SMS om de app te downloaden"
     sms download: "Klik om de Bijbel app te downloaden"
     sms default country: "NL"
   pages:
