@@ -2082,7 +2082,7 @@ ro:
     user snapshot: "%{year} Instantaneul lui %{user}"
     days in app: "Numărul de zile in aplicație"
     perfect weeks: "Săptămâni perfecte"
-    plan days: "Plan Days"
+    plan days: "Zile de lectură"
     new friends: "Prieteni noi"
     STORIESEXAMPLES: "Adam și Eva, Noe, Moise, Estera, Isus, Pavel și mulți alții"
     STORIES.ABRAHAMCALLED: "Avraam este chemat de Dumnezeu"
