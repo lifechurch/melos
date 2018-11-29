@@ -25,13 +25,13 @@ hu:
     share:
       tell friends: "Mesélj barátaidnak a Gyermekbiblia alkalmazásról"
       facebook name: "Gyermekbiblia"
-      facebook description: "A Biblia gyerekeknek megérkezett! Töltsd le az ingyenes applikációt iOS-re és Android-ra még ma: interaktív bibliai történetek segítenek gyermekednek tanulni, játszani és nőni Isten Igéjében. www.bible.com/kids"
+      facebook description: "Megérkezett a Gyermekbiblia alkalmazás! Töltsd le ingyen iOS-re és Android-ra még ma: interaktív bibliai történetek segítenek gyermekednek tanulni, játszani és növekedni Isten Igéjében. www.bible.com/kids"
       facebook link: "http://www.bible.com/kids"
       facebook redirect: "http://www.bible.com/kids"
-      twitter description: "A Biblia gyerekeknek a @YouVersiontől megérkezett! Szórakoztató és teljesen ingyenes. Letöltés: bible.com/kids"
+      twitter description: "Megérkezett a @YouVersion által készített Gyermekbiblia alkalmazás! Szórakoztató és teljesen ingyenes. Letöltés: bible.com/kids"
       twitter hashtags: "gyermekbiblia"
       email: "E-mail"
-      email subject: "A Biblia gyerekeknek megérkezett!"
+      email subject: "Megérkezett a Gyermekbiblia alkalmazás!"
       email body: "Nagyszerű hír - megérkezett a Gyermekbiblia alkalmazás! Teljesen ingyenes, elérhető iPhone, iPad, iPod touch és Android eszközökön. Az alkalmazás bibliai történetek növekvő gyüjteménye, érintésre indítható animációkkal és játékos feladatokkal, amelyek segítenek a gyermekeknek megismerni a Biblia fő történeteit. Látogass el a bible.com/kids oldalra a mobiloddal, és töltsd le még ma!"
     partner:
       youversion: "YouVersion: A világ legnépszerűbb Biblia alkalmazása"
