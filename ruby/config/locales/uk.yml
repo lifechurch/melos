@@ -2106,7 +2106,7 @@ uk:
     hi name: "Привіт, %{name}"
     your snapshot: "Ось огляд вашого року із програмою Біблія!"
     user snapshot: "%{year} з %{user}"
-    days in app: "Days in the App"
+    days in app: "Дні у додатку"
     perfect weeks: "Perfect Weeks"
     plan days: "Plan Days"
     new friends: "New Friends"
