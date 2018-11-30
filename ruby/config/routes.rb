@@ -27,6 +27,7 @@ YouversionWeb::Application.routes.draw do
   get "/250million",    to: redirect("http://installs.youversion.com/250million/index.html")
   get "/300million",    to: redirect("http://installs.youversion.com/2017-year-in-review/index.html")
   get "/2017",          to: redirect("http://installs.youversion.com/2017-year-in-review/index.html")
+  get "/2018",          to: redirect("http://blog.youversion.com/?p=25762")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/blog-events",      to: redirect("http://blog.youversion.com/2016/03/introducing-events-the-newest-feature-in-the-bible-app")
   get "volunteer-form", to: redirect("https://www.youversion.com/volunteer")
