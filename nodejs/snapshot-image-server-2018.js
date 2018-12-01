@@ -72,7 +72,7 @@ class Icon {
 }
 
 class Snapshot {
-	constructor(size) {
+	constructor(size, localeData) {
 		this.size = size;
 		this.width = size;
 		this.height = size;
@@ -82,6 +82,8 @@ class Snapshot {
 		this.fontSize = this.relativeFontSize();
 		this._canvas = new Canvas(size, size);
 		this.ctx = this._canvas.getContext('2d');
+
+		this.localeData = localeData;
 
 		this.colors = {
 			red: '#ec4e48',
@@ -117,8 +119,8 @@ class Snapshot {
 			friendships: 0,
 			days_in_app: 0,
 			perfect_weeks: 1,
-			plan_segment_completions: 0, 	// don't think we're using this
-			plan_subscriptions: 0,				// and this.
+			plan_segment_completions: 0,
+			plan_subscriptions: 0
 		}
 
 		this.translationStrings = {
@@ -130,11 +132,10 @@ class Snapshot {
 			bookmarks: this.translate('profile menu.bookmarks'),
 			friendships: this.translate('profile menu.friends'),
 			my_year: this.translate('my year'),
-
 			days_in_app: 'Days in the App',
 			perfect_weeks: 'Perfect Weeks',
-			plan_segment_completions: 0, 	// don't think we're using this
-			plan_subscriptions: 0,				// and this.
+			plan_segment_completions: 0,
+			plan_subscriptions: 0
 		}
 
 
@@ -762,13 +763,13 @@ class Snapshot {
 		ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
 		ctx.lineTo(x + width, (y + height) - radius);
 		ctx.quadraticCurveTo(x + width, y + height, (x + width) - radius, y + height);
-    ctx.lineTo(x + radius, y + height);
-    ctx.quadraticCurveTo(x, y + height, x, (y + height) - radius);
-    ctx.lineTo(x, y + radius);
-    ctx.quadraticCurveTo(x, y, x + radius, y);
-    ctx.closePath();
-    ctx.fillStyle = fill;
-    ctx.fill();
+		ctx.lineTo(x + radius, y + height);
+		ctx.quadraticCurveTo(x, y + height, x, (y + height) - radius);
+		ctx.lineTo(x, y + radius);
+		ctx.quadraticCurveTo(x, y, x + radius, y);
+		ctx.closePath();
+		ctx.fillStyle = fill;
+		ctx.fill();
 };
 
 
@@ -952,6 +953,7 @@ router.get('/snapshot/default/:size', (req, res) => {
 
 // https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
 router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
+
 	const fromDate = '2017-01-01';
 	const toDate = '2017-12-31';
 	const userId = req.params.user_id;
@@ -968,13 +970,16 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 		res.status(404).send('Not found');
 	}
 
-	const graphic = new Snapshot(imageSize);
+	const graphic = new Snapshot(imageSize, getLocale({
+		localeFromUrl: locale,
+		localeFromCookie: null,
+		localeFromUser: null,
+		acceptLangHeader: null
+	}));
+
 
 	graphic.appLogo = logo;
 	graphic.locale = locale;
-	graphic.localeData = getLocale({
-		localeFromUrl: locale, localeFromCookie: null, localeFromUser: null, acceptLangHeader: null
-	})
 
 	const userPromise = Users.call('view')
 	.setEnvironment(process.env.NODE_ENV)
