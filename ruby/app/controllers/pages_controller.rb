@@ -120,7 +120,8 @@ class PagesController < ApplicationController
         "user_id" => user_id,
         "user_id_hash" => user_id_hash,
         "languageTag" => I18n.locale.to_s,
-        "strings" => {}
+        "strings" => {},
+        "year" => request.query_parameters["year"] || "2018"
       }
 
     else
@@ -129,7 +130,8 @@ class PagesController < ApplicationController
         "viewing_mine" => false,
         "user_id" => nil,
         "languageTag" => I18n.locale.to_s,
-        "strings" => {}
+        "strings" => {},
+        "year" => request.query_parameters["year"] || "2018"
       }
 
     end
