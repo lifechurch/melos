@@ -17,6 +17,7 @@ const displayFont = 'Futura';
 const lengthyStringLocales = ['ar', 'vi', 'el']
 
 global.Intl = require('intl');
+const StackBlur = require('stackblur-canvas');
 
 // Optimization for readFile
 // Load logos upon server startup and apply them as needed at request time
@@ -30,6 +31,16 @@ appLogoSizes.forEach((size) => {
 		appLogos[size] = logo;
 	})
 });
+
+const orderedStatNames = [
+	'plan_completions',
+	'highlights',
+	'bookmarks',
+	'images',
+	'badges',
+	'friendships',
+	'notes',
+]
 
 function getLogo(graphicSize) {
 	switch (true) {
@@ -99,7 +110,6 @@ class Snapshot {
 		this.icons = {
 			plan_completions: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11"><path fill="#FFF" fill-rule="evenodd" d="M4.544 6.685l-2.24-1.777a.731.731 0 0 0-.968.053l-.466.46a.731.731 0 0 0-.053.98l3.188 3.935a.731.731 0 0 0 1.112.03l7.53-8.36a.731.731 0 0 0-.03-1.01l-.28-.277A.731.731 0 0 0 11.34.69L4.544 6.685z"/></svg>',
 			highlights: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13"><path fill="#FFF" fill-rule="evenodd" d="M3.332 8.768l2.172 2.171-1.702 1.702a.366.366 0 0 1-.26.107l-1.245-.002a.366.366 0 0 1-.257-.107l-1.032-1.03a.366.366 0 0 1 0-.516l2.324-2.325zm.455-1.41l6.31-6.309a.731.731 0 0 1 1.034 0l2.068 2.068a.731.731 0 0 1 0 1.035l-6.31 6.31a.731.731 0 0 1-1.034 0l-2.068-2.07a.731.731 0 0 1 0-1.033z"/></svg>',
-			//streak: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 14"><path fill="#FFF" fill-rule="nonzero" d="M6.597 4.882l-1.527.41a.21.21 0 0 1-.263-.177L4.17.158a.21.21 0 0 0-.406-.044l-3.17 8.93a.21.21 0 0 0 .252.274l1.381-.37a.21.21 0 0 1 .264.18l.499 4.66a.21.21 0 0 0 .404.056l3.453-8.68a.21.21 0 0 0-.25-.282z"/></svg>',
 			notes: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 10"><path fill="#FFF" fill-rule="evenodd" d="M6.262 9.233V7.017H8.48v-.554H5.986a.278.278 0 0 0-.278.277v2.493H1.277a.556.556 0 0 1-.556-.555V.922c0-.307.249-.555.556-.555h6.646c.307 0 .556.248.556.555v6.095L6.265 9.233h-.003zM7.371 3.97a.277.277 0 0 0-.277-.277H2.106a.277.277 0 1 0 0 .554h4.988a.277.277 0 0 0 .277-.277zm0-1.663a.277.277 0 0 0-.277-.277H2.106a.277.277 0 1 0 0 .554h4.988a.277.277 0 0 0 .277-.277z"/></svg>',
 			images: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15"><path fill="#FFF" fill-rule="evenodd" d="M8.546 8.793L6.668 5.337a.417.417 0 0 0-.733 0l-3.634 6.686a.417.417 0 0 0 .366.615h9.3a.417.417 0 0 0 .356-.634L9.806 7.896a.417.417 0 0 0-.71 0l-.55.897zM1.41.925H13.04c.46 0 .834.373.834.834V13.39c0 .46-.373.834-.834.834H1.41a.834.834 0 0 1-.834-.834V1.76c0-.46.373-.834.834-.834zm9.557 4.156a1.247 1.247 0 1 0 0-2.494 1.247 1.247 0 0 0 0 2.494z"/></svg>',
 			badges: '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.55 16.57"><defs><style>.cls-1{fill:none;}.cls-2{fill:#fff;}</style></defs><title>badge</title><path class="cls-1" d="M5.24,7.2H5.12a4,4,0,1,0,.12,0Zm.06,6.93a2.95,2.95,0,1,1,2.95-2.95A2.95,2.95,0,0,1,5.3,14.13Z"/><path class="cls-2" d="M6.6,6.41,9.83,4.53a1,1,0,0,0,.48-.94c0-.63,0-1.83,0-2.47S9.76.18,9.19.18h-8c-.55,0-.87.64-.87,1s0,2.47,0,2.47a1,1,0,0,0,.45.87l3.1,1.82.1.07a5,5,0,1,0,2.63,0ZM5.24,15.23a4,4,0,0,1-.12-8h.12a4,4,0,1,1,0,8Z"/><circle class="cls-2" cx="5.3" cy="11.19" r="2.95"/></svg>',
@@ -108,19 +118,16 @@ class Snapshot {
 			perfect_weeks: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 30"><path fill="#FFF" fill-rule="evenodd" d="M16.128 24.692L9.96 29.737a.966.966 0 0 1-1.576-.788l.322-7.637-7.875-1.39a.966.966 0 0 1-.383-1.744l6.425-4.46-3.756-6.682a.966.966 0 0 1 1.081-1.408l7.811 1.999L15.25.554a.966.966 0 0 1 1.756 0l3.24 7.073 7.812-2a.966.966 0 0 1 1.081 1.41l-3.756 6.68 6.425 4.461a.966.966 0 0 1-.383 1.744l-7.875 1.39.322 7.637a.966.966 0 0 1-1.576.788l-6.168-5.045z"/></svg>'
 		}
 
-
 		this.defaultMomentData = {
-			plan_completions: 0,
-			highlights: 0,
-			notes: 0,
-			images: 0,
-			badges: 0,
-			bookmarks: 15,
+			plan_completions: 4,
+			highlights: 8,
+			notes: 4,
+			images: 1,
+			badges: 12,
+			bookmarks: 4,
 			friendships: 0,
-			days_in_app: 0,
-			perfect_weeks: 1,
-			plan_segment_completions: 0,
-			plan_subscriptions: 0
+			days_in_app: 6,
+			perfect_weeks: 12
 		}
 
 		this.translationStrings = {
@@ -134,10 +141,7 @@ class Snapshot {
 			my_year: this.translate('my year'),
 			days_in_app: 'Days in the App',
 			perfect_weeks: 'Perfect Weeks',
-			plan_segment_completions: 0,
-			plan_subscriptions: 0
 		}
-
 
 		this.momentData = {}; //todo remove this and reinstate api call
 	}
@@ -164,15 +168,7 @@ class Snapshot {
 
 	get hasPerfectWeeks() { return this.momentData.perfect_weeks > 0; }
 	get usableStats() {
-		return [
-			'badges',
-			'bookmarks',
-			'friendships',
-			'highlights',
-			'images',
-			'notes',
-			'plan_completions'
-		].filter(stat => this.momentData[stat] !== 0);
+		return orderedStatNames.filter(stat => this.momentData[stat] !== 0);
 	}
 
 	fontStyle({ bold = false, sizeModifier = 1.0, font = displayFont }) {
@@ -186,19 +182,29 @@ class Snapshot {
 		ctx.filter = 'bilinear';
 	}
 
-	drawBackground() {
+	drawLeftPane() {
 		const ctx = this.ctx;
 		ctx.fillStyle = this.colors.lightGrey;
-		ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+		ctx.fillRect(0, 0, this.canvas.width - this.widthRightPane, this.canvas.height);
 	}
 
 	drawRightPane() {
 		const ctx = this.ctx;
 		const rightGradient = ctx.createLinearGradient(this.widthLeftPane, 0, this.widthLeftPane, this.height);
-			rightGradient.addColorStop(0, '#17dad6');
-			rightGradient.addColorStop(0.5, '#2188b3');
-			rightGradient.addColorStop(1, '#2b3890');
+			rightGradient.addColorStop(0, 'rgba(23, 218, 214, 0.75)');
+			rightGradient.addColorStop(0.5, 'rgba(33, 136, 179, 0.75)');
+			rightGradient.addColorStop(1, 'rgba(43, 56, 144, 0.75)');
 
+		const picture = new Image(this.width, this.height);
+					picture.src = this.avatarData;
+
+		const imageCanvas = new Canvas(this.width, this.height);
+		const ictx = imageCanvas.getContext('2d');
+
+		ictx.drawImage(picture, this.width * 0.3, 0, this.width, this.height);
+
+		StackBlur.canvasRGB(imageCanvas, 0, 0, this.width, this.height, 20);
+		ctx.drawImage(imageCanvas, 0, 0, this.width, this.height);
 
 		ctx.fillStyle = rightGradient;
 		ctx.fillRect(this.widthLeftPane, 0, this.widthRightPane, this.canvas.height)
@@ -331,12 +337,12 @@ class Snapshot {
 		// Dependent on perfect weeks, if there is perfect week data, we draw smaller, otherwise bigger
 
 		const ctx = this.ctx;
-		const dayNumString = '264';
+		const dayNumString = this.momentData.days_in_app;
 		const dayNumStringY = this.hasPerfectWeeks ? this.relativeY(0.57) : this.relativeY(0.65);
 
 		ctx.font = this.fontStyle({
 			bold: true,
-			sizeModifier: this.hasPerfectWeeks? 3.85 : 5.5
+			sizeModifier: this.hasPerfectWeeks? 3.85 : 5.25
 		});
 
 		const dayNumStringW = ctx.measureText(dayNumString).width;
@@ -382,190 +388,116 @@ class Snapshot {
 				this.relativeW(0.15),
 				this.relativeH(0.15)
 			),
-			15,
+			this.momentData[stat],
 			this.relativeY(0.40),
 			2.5
 		)
 	}
 
-	drawMultipleStats(stats) {
-		switch(stats.length) {
+	drawVerticalStats(statNames) {
+		let yPositions = [];
+		let sizeModifier = 0;
+		let iconSize = 0;
+
+		switch (statNames.length) {
+			case 1:
+				yPositions = [this.relativeY(0.40)];
+				iconSize = this.relativeW(0.15);
+				sizeModifier = 2.5
 			case 2:
-
-				this.drawVerticalStat(
-					this.translate('profile menu.images'),
-					new Icon(
-						this.icons.images,
-						this.relativeW(0.08),
-						this.relativeH(0.08)
-					),
-					15,
-					this.relativeY(0.25),
-					1.5
-				)
-
-				this.drawVerticalStat(
-					this.translate('profile menu.images'),
-					new Icon(
-						this.icons.images,
-						this.relativeW(0.08),
-						this.relativeH(0.08)
-					),
-					15,
-					this.relativeY(0.65),
-					1.5
-				)
-
-
+				yPositions = [this.relativeY(0.25), this.relativeY(0.65)];
+				sizeModifier = 1.5
+				iconSize = this.relativeW(0.08);
 				break;
-
 			case 3:
-
-				this.drawVerticalStat(
-					this.translate('profile menu.images'),
-					new Icon(
-						this.icons.images,
-						this.relativeW(0.08),
-						this.relativeH(0.08)
-					),
-					15,
-					this.relativeY(0.15),
-					1.5
-				)
-
-				this.drawVerticalStat(
-					this.translate('profile menu.images'),
-					new Icon(
-						this.icons.images,
-						this.relativeW(0.08),
-						this.relativeH(0.08)
-					),
-					15,
-					this.relativeY(0.45),
-					1.5
-				)
-
-				this.drawVerticalStat(
-					this.translate('profile menu.images'),
-					new Icon(
-						this.icons.images,
-						this.relativeW(0.08),
-						this.relativeH(0.08)
-					),
-					15,
-					this.relativeY(0.75),
-					1.5
-				)
-
+				yPositions = [this.relativeY(0.15), this.relativeY(0.45), this.relativeY(0.75)]
+				sizeModifier = 1.5
+				iconSize = this.relativeW(0.08);
+				break;
+			case 4:
+				yPositions = [this.relativeY(0.125), this.relativeY(0.36), this.relativeY(0.59), this.relativeY(0.82)]
+				sizeModifier = 1.2
+				iconSize = this.relativeW(0.065);
+				break;
+			default:
 				break;
 		}
+
+		statNames.forEach((statName, index) => {
+			this.drawVerticalStat(
+				this.translationStrings[statName],
+				new Icon(
+					this.icons[statName],
+					iconSize,
+					iconSize
+				),
+				this.momentData[statName],
+				yPositions[index],
+				sizeModifier
+			)
+		})
 	}
 
 	drawAllStats() {
-				// Drawing Stats
-		const beginStatY = 0.30;
+		let beginStatY = 0;
+		let totalStats = this.usableStats.length;
 		const statH = 0.08
+		const iconSizes = {
+			badges: this.relativeW(0.030),
+			bookmarks: this.relativeW(0.027),
+			friendships: this.relativeW(0.030),
+			highlights: this.relativeH(0.030),
+			images: this.relativeW(0.028),
+			notes: this.relativeH(0.028),
+			plan_completions: this.relativeW(0.030)
+		}
 
-		this.drawStat(
-			this.translationStrings.plan_completions,
-			new Icon(
-				this.icons.plan_completions,
-				this.relativeW(0.030),
-				this.relativeH(0.030)
-			),
-			this.momentData.plan_completions,
-			this.relativeY(beginStatY)
-		)
+		switch (totalStats) {
+			case 5:
+				beginStatY = 0.345
+				break;
 
-		// Draw Highlight Stat
-		this.drawStat(
-			this.translationStrings.highlights,
-			new Icon(
-				this.icons.highlights,
-				this.relativeW(0.030),
-				this.relativeH(0.030)
-			),
-			this.momentData.highlights,
-			this.relativeY(beginStatY + (statH * 1))
-		)
+			case 6:
+				beginStatY = 0.32
+				break;
 
+			case 7:
+				beginStatY = 0.27;
+				break;
 
-		// Draw Bookmark Stat
-		this.drawStat(
-			this.translationStrings.bookmarks,
-			new Icon(
-				this.icons.bookmarks,
-				this.relativeW(0.027),
-				this.relativeH(0.027)
-			),
-			this.momentData.bookmarks,
-			this.relativeY(beginStatY + (statH * 2))
-		)
-
-		// Draw Verse Images state
-		this.drawStat(
-			this.translationStrings.images,
-			new Icon(
-				this.icons.images,
-				this.relativeW(0.028),
-				this.relativeH(0.028)
-			),
-			this.momentData.images,
-			this.relativeY(beginStatY + (statH * 3))
-		)
+			default:
+				break;
+		}
 
 
-		// Draw Badges
-		this.drawStat(
-			this.translationStrings.badges,
-			new Icon(
-				this.icons.badges,
-				this.relativeW(0.030),
-				this.relativeH(0.030)
-			),
-			this.momentData.badges,
-			this.relativeY(beginStatY + (statH * 4))
-		)
 
-
-		// Draw Friendships
-		this.drawStat(
-			this.translationStrings.friendships,
-			new Icon(
-				this.icons.friendships,
-				this.relativeW(0.030),
-				this.relativeH(0.030)
-			),
-			this.momentData.friendships,
-			this.relativeY(beginStatY + (statH * 5))
-		)
-
-		// Draw Notes
-		this.drawStat(
-			this.translationStrings.notes,
-			new Icon(
-				this.icons.notes,
-				this.relativeW(0.028),
-				this.relativeH(0.028)
-			),
-			this.momentData.notes,
-			this.relativeY(beginStatY + (statH * 6)),
-			false
-		)
+		this.usableStats.forEach((statName, index) => {
+			const statY = (index === 0) ? beginStatY : (beginStatY + (statH * index))
+			const drawSeparator = (index === totalStats - 1) ? false : true;
+			this.drawStat(
+				this.translationStrings[statName],
+				new Icon(
+					this.icons[statName],
+					iconSizes[statName],
+					iconSizes[statName]
+				),
+				this.momentData[statName],
+				this.relativeY(statY),
+				drawSeparator
+			)
+		})
 	}
 
 	drawStats() {
 		switch (this.usableStats.length) {
 			case 0:
-				return;  // do nothing
+				return;
 
 			case 1:
-				this.drawSingleStat(this.usableStats);
-				break;
-
 			case 2:
 			case 3:
-				this.drawMultipleStats(this.usableStats)
+			case 4:
+				this.drawVerticalStats(this.usableStats);
 				break;
 
 			default:
@@ -575,8 +507,9 @@ class Snapshot {
 
 	render() {
 		this.setupContext();
-		this.drawBackground();
+
 		this.drawRightPane();
+		this.drawLeftPane();
 		this.drawHeadingText();
 		this.drawPerfectWeeks(); // sets up the horizontal gradient, should come before others using gradient
 		this.drawDaysInApp();
