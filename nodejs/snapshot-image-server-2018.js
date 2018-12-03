@@ -19,6 +19,50 @@ const lengthyStringLocales = ['ar', 'vi', 'el']
 global.Intl = require('intl');
 const StackBlur = require('stackblur-canvas');
 
+const OrderedStatNames = [
+	'plan_completions',
+	'highlights',
+	'bookmarks',
+	'images',
+	'badges',
+	'friendships',
+	'notes',
+]
+
+const Colors = {
+	red: '#ec4e48',
+	aqua: '#37a5ac',
+	grey: '#868686',
+	green: '#066261',
+	yellow: '#eccf2d',
+	lightGrey: '#f2f2f2',
+	medGrey: '#424242',
+	white: '#ffffff'
+}
+
+const Svgs = {
+	plan_completions: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11"><path fill="#FFF" fill-rule="evenodd" d="M4.544 6.685l-2.24-1.777a.731.731 0 0 0-.968.053l-.466.46a.731.731 0 0 0-.053.98l3.188 3.935a.731.731 0 0 0 1.112.03l7.53-8.36a.731.731 0 0 0-.03-1.01l-.28-.277A.731.731 0 0 0 11.34.69L4.544 6.685z"/></svg>',
+	highlights: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13"><path fill="#FFF" fill-rule="evenodd" d="M3.332 8.768l2.172 2.171-1.702 1.702a.366.366 0 0 1-.26.107l-1.245-.002a.366.366 0 0 1-.257-.107l-1.032-1.03a.366.366 0 0 1 0-.516l2.324-2.325zm.455-1.41l6.31-6.309a.731.731 0 0 1 1.034 0l2.068 2.068a.731.731 0 0 1 0 1.035l-6.31 6.31a.731.731 0 0 1-1.034 0l-2.068-2.07a.731.731 0 0 1 0-1.033z"/></svg>',
+	notes: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 10"><path fill="#FFF" fill-rule="evenodd" d="M6.262 9.233V7.017H8.48v-.554H5.986a.278.278 0 0 0-.278.277v2.493H1.277a.556.556 0 0 1-.556-.555V.922c0-.307.249-.555.556-.555h6.646c.307 0 .556.248.556.555v6.095L6.265 9.233h-.003zM7.371 3.97a.277.277 0 0 0-.277-.277H2.106a.277.277 0 1 0 0 .554h4.988a.277.277 0 0 0 .277-.277zm0-1.663a.277.277 0 0 0-.277-.277H2.106a.277.277 0 1 0 0 .554h4.988a.277.277 0 0 0 .277-.277z"/></svg>',
+	images: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15"><path fill="#FFF" fill-rule="evenodd" d="M8.546 8.793L6.668 5.337a.417.417 0 0 0-.733 0l-3.634 6.686a.417.417 0 0 0 .366.615h9.3a.417.417 0 0 0 .356-.634L9.806 7.896a.417.417 0 0 0-.71 0l-.55.897zM1.41.925H13.04c.46 0 .834.373.834.834V13.39c0 .46-.373.834-.834.834H1.41a.834.834 0 0 1-.834-.834V1.76c0-.46.373-.834.834-.834zm9.557 4.156a1.247 1.247 0 1 0 0-2.494 1.247 1.247 0 0 0 0 2.494z"/></svg>',
+	badges: '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.55 16.57"><defs><style>.cls-1{fill:none;}.cls-2{fill:#fff;}</style></defs><title>badge</title><path class="cls-1" d="M5.24,7.2H5.12a4,4,0,1,0,.12,0Zm.06,6.93a2.95,2.95,0,1,1,2.95-2.95A2.95,2.95,0,0,1,5.3,14.13Z"/><path class="cls-2" d="M6.6,6.41,9.83,4.53a1,1,0,0,0,.48-.94c0-.63,0-1.83,0-2.47S9.76.18,9.19.18h-8c-.55,0-.87.64-.87,1s0,2.47,0,2.47a1,1,0,0,0,.45.87l3.1,1.82.1.07a5,5,0,1,0,2.63,0ZM5.24,15.23a4,4,0,0,1-.12-8h.12a4,4,0,1,1,0,8Z"/><circle class="cls-2" cx="5.3" cy="11.19" r="2.95"/></svg>',
+	bookmarks: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9"><path fill="#FFF" fill-rule="evenodd" d="M1.335.283h6.53c.345 0 .625.28.625.626v7.726a.313.313 0 0 1-.468.271L4.929 7.13a.625.625 0 0 0-.62-.001l-3.132 1.78a.313.313 0 0 1-.467-.271V.908c0-.345.28-.625.625-.625z"/></svg>',
+	friendships: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 9"><path fill="#FFF" fill-rule="evenodd" d="M8.642 4.014S8.405 5.44 6.829 5.42a1.733 1.733 0 0 1-1.782-1.415l-.155-1.048S4.707 1.135 6.386.891c0 0 .35-.051.762 0 .462.057 1.37.152 1.617 1.414 0 0 .052.326.031.62-.052.758-.154 1.09-.154 1.09zm-4.534.983s-.16 1.035-1.223 1.02C1.823 6.002 1.684 4.99 1.684 4.99l-.104-.762s-.125-1.323 1.007-1.5c0 0 .236-.038.514 0 .31.04.924.11 1.09 1.027 0 0 .035.237.021.451-.036.55-.104.792-.104.792zm2.671.884c2.182 0 3.48.682 3.894 2.046a.556.556 0 0 1-.531.718l-6.626.003a.556.556 0 0 1-.54-.687c.338-1.387 1.606-2.08 3.803-2.08zM2.705 8.65H.88a.556.556 0 0 1-.52-.753C.664 7.099 1.56 6.7 3.054 6.7c-.59.598-.902 1.473-.348 1.949z"/></svg>',
+	perfect_weeks: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 30"><path fill="#FFF" fill-rule="evenodd" d="M16.128 24.692L9.96 29.737a.966.966 0 0 1-1.576-.788l.322-7.637-7.875-1.39a.966.966 0 0 1-.383-1.744l6.425-4.46-3.756-6.682a.966.966 0 0 1 1.081-1.408l7.811 1.999L15.25.554a.966.966 0 0 1 1.756 0l3.24 7.073 7.812-2a.966.966 0 0 1 1.081 1.41l-3.756 6.68 6.425 4.461a.966.966 0 0 1-.383 1.744l-7.875 1.39.322 7.637a.966.966 0 0 1-1.576.788l-6.168-5.045z"/></svg>'
+}
+
+const DefaultMomentData = {
+	plan_completions: 4,
+	highlights: 8,
+	notes: 4,
+	images: 1,
+	badges: 12,
+	bookmarks: 4,
+	friendships: 0,
+	days_in_app: 6,
+	perfect_weeks: 12
+}
+
 // Optimization for readFile
 // Load logos upon server startup and apply them as needed at request time
 // instead of reading the file on each request
@@ -31,16 +75,6 @@ appLogoSizes.forEach((size) => {
 		appLogos[size] = logo;
 	})
 });
-
-const orderedStatNames = [
-	'plan_completions',
-	'highlights',
-	'bookmarks',
-	'images',
-	'badges',
-	'friendships',
-	'notes',
-]
 
 function getLogo(graphicSize) {
 	switch (true) {
@@ -96,40 +130,6 @@ class Snapshot {
 
 		this.localeData = localeData;
 
-		this.colors = {
-			red: '#ec4e48',
-			aqua: '#37a5ac',
-			grey: '#868686',
-			green: '#066261',
-			yellow: '#eccf2d',
-			lightGrey: '#f2f2f2',
-			medGrey: '#424242',
-			white: '#ffffff'
-		}
-
-		this.icons = {
-			plan_completions: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11"><path fill="#FFF" fill-rule="evenodd" d="M4.544 6.685l-2.24-1.777a.731.731 0 0 0-.968.053l-.466.46a.731.731 0 0 0-.053.98l3.188 3.935a.731.731 0 0 0 1.112.03l7.53-8.36a.731.731 0 0 0-.03-1.01l-.28-.277A.731.731 0 0 0 11.34.69L4.544 6.685z"/></svg>',
-			highlights: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13"><path fill="#FFF" fill-rule="evenodd" d="M3.332 8.768l2.172 2.171-1.702 1.702a.366.366 0 0 1-.26.107l-1.245-.002a.366.366 0 0 1-.257-.107l-1.032-1.03a.366.366 0 0 1 0-.516l2.324-2.325zm.455-1.41l6.31-6.309a.731.731 0 0 1 1.034 0l2.068 2.068a.731.731 0 0 1 0 1.035l-6.31 6.31a.731.731 0 0 1-1.034 0l-2.068-2.07a.731.731 0 0 1 0-1.033z"/></svg>',
-			notes: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 10"><path fill="#FFF" fill-rule="evenodd" d="M6.262 9.233V7.017H8.48v-.554H5.986a.278.278 0 0 0-.278.277v2.493H1.277a.556.556 0 0 1-.556-.555V.922c0-.307.249-.555.556-.555h6.646c.307 0 .556.248.556.555v6.095L6.265 9.233h-.003zM7.371 3.97a.277.277 0 0 0-.277-.277H2.106a.277.277 0 1 0 0 .554h4.988a.277.277 0 0 0 .277-.277zm0-1.663a.277.277 0 0 0-.277-.277H2.106a.277.277 0 1 0 0 .554h4.988a.277.277 0 0 0 .277-.277z"/></svg>',
-			images: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15"><path fill="#FFF" fill-rule="evenodd" d="M8.546 8.793L6.668 5.337a.417.417 0 0 0-.733 0l-3.634 6.686a.417.417 0 0 0 .366.615h9.3a.417.417 0 0 0 .356-.634L9.806 7.896a.417.417 0 0 0-.71 0l-.55.897zM1.41.925H13.04c.46 0 .834.373.834.834V13.39c0 .46-.373.834-.834.834H1.41a.834.834 0 0 1-.834-.834V1.76c0-.46.373-.834.834-.834zm9.557 4.156a1.247 1.247 0 1 0 0-2.494 1.247 1.247 0 0 0 0 2.494z"/></svg>',
-			badges: '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.55 16.57"><defs><style>.cls-1{fill:none;}.cls-2{fill:#fff;}</style></defs><title>badge</title><path class="cls-1" d="M5.24,7.2H5.12a4,4,0,1,0,.12,0Zm.06,6.93a2.95,2.95,0,1,1,2.95-2.95A2.95,2.95,0,0,1,5.3,14.13Z"/><path class="cls-2" d="M6.6,6.41,9.83,4.53a1,1,0,0,0,.48-.94c0-.63,0-1.83,0-2.47S9.76.18,9.19.18h-8c-.55,0-.87.64-.87,1s0,2.47,0,2.47a1,1,0,0,0,.45.87l3.1,1.82.1.07a5,5,0,1,0,2.63,0ZM5.24,15.23a4,4,0,0,1-.12-8h.12a4,4,0,1,1,0,8Z"/><circle class="cls-2" cx="5.3" cy="11.19" r="2.95"/></svg>',
-			bookmarks: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9"><path fill="#FFF" fill-rule="evenodd" d="M1.335.283h6.53c.345 0 .625.28.625.626v7.726a.313.313 0 0 1-.468.271L4.929 7.13a.625.625 0 0 0-.62-.001l-3.132 1.78a.313.313 0 0 1-.467-.271V.908c0-.345.28-.625.625-.625z"/></svg>',
-			friendships: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 9"><path fill="#FFF" fill-rule="evenodd" d="M8.642 4.014S8.405 5.44 6.829 5.42a1.733 1.733 0 0 1-1.782-1.415l-.155-1.048S4.707 1.135 6.386.891c0 0 .35-.051.762 0 .462.057 1.37.152 1.617 1.414 0 0 .052.326.031.62-.052.758-.154 1.09-.154 1.09zm-4.534.983s-.16 1.035-1.223 1.02C1.823 6.002 1.684 4.99 1.684 4.99l-.104-.762s-.125-1.323 1.007-1.5c0 0 .236-.038.514 0 .31.04.924.11 1.09 1.027 0 0 .035.237.021.451-.036.55-.104.792-.104.792zm2.671.884c2.182 0 3.48.682 3.894 2.046a.556.556 0 0 1-.531.718l-6.626.003a.556.556 0 0 1-.54-.687c.338-1.387 1.606-2.08 3.803-2.08zM2.705 8.65H.88a.556.556 0 0 1-.52-.753C.664 7.099 1.56 6.7 3.054 6.7c-.59.598-.902 1.473-.348 1.949z"/></svg>',
-			perfect_weeks: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 30"><path fill="#FFF" fill-rule="evenodd" d="M16.128 24.692L9.96 29.737a.966.966 0 0 1-1.576-.788l.322-7.637-7.875-1.39a.966.966 0 0 1-.383-1.744l6.425-4.46-3.756-6.682a.966.966 0 0 1 1.081-1.408l7.811 1.999L15.25.554a.966.966 0 0 1 1.756 0l3.24 7.073 7.812-2a.966.966 0 0 1 1.081 1.41l-3.756 6.68 6.425 4.461a.966.966 0 0 1-.383 1.744l-7.875 1.39.322 7.637a.966.966 0 0 1-1.576.788l-6.168-5.045z"/></svg>'
-		}
-
-		this.defaultMomentData = {
-			plan_completions: 4,
-			highlights: 8,
-			notes: 4,
-			images: 1,
-			badges: 12,
-			bookmarks: 4,
-			friendships: 0,
-			days_in_app: 6,
-			perfect_weeks: 12
-		}
-
 		this.translationStrings = {
 			plan_completions: this.translate('plans.plans'),
 			highlights: this.translate('profile menu.highlights'),
@@ -164,11 +164,11 @@ class Snapshot {
 	get horizontalGradient() { return this._horizontalGradient; }
 
 	get momentData() { return this._momentData; }
-	set momentData(data = {}) { this._momentData = Object.assign({}, this.defaultMomentData, data); }
+	set momentData(data = {}) { this._momentData = Object.assign({}, DefaultMomentData, data); }
 
 	get hasPerfectWeeks() { return this.momentData.perfect_weeks > 0; }
 	get usableStats() {
-		return orderedStatNames.filter(stat => this.momentData[stat] !== 0);
+		return OrderedStatNames.filter(stat => this.momentData[stat] !== 0);
 	}
 
 	fontStyle({ bold = false, sizeModifier = 1.0, font = displayFont }) {
@@ -184,19 +184,19 @@ class Snapshot {
 
 	drawLeftPane() {
 		const ctx = this.ctx;
-		ctx.fillStyle = this.colors.lightGrey;
+		ctx.fillStyle = Colors.lightGrey;
 		ctx.fillRect(0, 0, this.canvas.width - this.widthRightPane, this.canvas.height);
 	}
 
 	drawRightPane() {
 		const ctx = this.ctx;
 		const rightGradient = ctx.createLinearGradient(this.widthLeftPane, 0, this.widthLeftPane, this.height);
-			rightGradient.addColorStop(0, 'rgba(23, 218, 214, 0.75)');
-			rightGradient.addColorStop(0.5, 'rgba(33, 136, 179, 0.75)');
-			rightGradient.addColorStop(1, 'rgba(43, 56, 144, 0.75)');
+		rightGradient.addColorStop(0, 'rgba(23, 218, 214, 0.75)');
+		rightGradient.addColorStop(0.5, 'rgba(33, 136, 179, 0.75)');
+		rightGradient.addColorStop(1, 'rgba(43, 56, 144, 0.75)');
 
 		const picture = new Image(this.width, this.height);
-					picture.src = this.avatarData;
+		picture.src = this.avatarData;
 
 		const imageCanvas = new Canvas(this.width, this.height);
 		const ictx = imageCanvas.getContext('2d');
@@ -217,7 +217,7 @@ class Snapshot {
 		const headerSizeMod = lengthyStringLocales.includes(this.locale) ? 0.42 : 0.55;
 
 		ctx.font = this.fontStyle({ sizeModifier: headerSizeMod });
-		ctx.fillStyle = this.colors.medGrey;
+		ctx.fillStyle = Colors.medGrey;
 
 		const headerTextW = ctx.measureText(headerString).width;
 		const headerX = this.relativeX(0.5, this.widthLeftPane) - (headerTextW / 2);
@@ -234,9 +234,9 @@ class Snapshot {
 		const pillH = this.relativeH(0.085);
 		const pillRadius = this.relativeH(0.55, pillH);
 		const gradient = ctx.createLinearGradient(pillX, pillY, pillX + pillW, pillY + pillH);
-			gradient.addColorStop(0, '#2b3890');
-			gradient.addColorStop(0.5, '#2188b3');
-			gradient.addColorStop(1, '#17dad6');
+		gradient.addColorStop(0, '#2b3890');
+		gradient.addColorStop(0.5, '#2188b3');
+		gradient.addColorStop(1, '#17dad6');
 
 		this.horizontalGradient = gradient
 
@@ -258,6 +258,7 @@ class Snapshot {
 		const statString = this.momentData.perfect_weeks;
 		const iconW = this.relativeW(0.04);
 		const iconH = this.relativeW(0.04);
+
 		let iconX = 0;
 		let iconY = 0;
 		let textX = 0;
@@ -274,7 +275,7 @@ class Snapshot {
 		let pillPadding = 0;
 
 		ctx.font = this.fontStyle({ sizeModifier: 0.50 });
-		ctx.fillStyle = this.colors.white;
+		ctx.fillStyle = Colors.white;
 
 		textW = ctx.measureText(pillString).width;
 		statW = ctx.measureText(statString).width;
@@ -286,7 +287,6 @@ class Snapshot {
 		outerW = (pillW + (pillRadius * 2));
 		pillPadding = (outerW - innerW) / 2;  // this is where we start drawing text inside pill on X axis
 
-
 		// Start text rendering at pillPadding value
 		// Build all other X locations for icon and stat values upon the previously drawn item
 		textX = pillPadding;
@@ -297,7 +297,7 @@ class Snapshot {
 		iconX = textX + textW + iconW;
 		iconY = textY - (iconH / 4);
 		this.drawIcon(
-			new Icon(this.icons.perfect_weeks, iconW, iconH),
+			new Icon(Svgs.perfect_weeks, iconW, iconH),
 			iconX,
 			iconY
 		);
@@ -384,7 +384,7 @@ class Snapshot {
 		this.drawVerticalStat(
 			this.translationStrings[stat],
 			new Icon(
-				this.icons[stat],
+				Svgs[stat],
 				this.relativeW(0.15),
 				this.relativeH(0.15)
 			),
@@ -427,7 +427,7 @@ class Snapshot {
 			this.drawVerticalStat(
 				this.translationStrings[statName],
 				new Icon(
-					this.icons[statName],
+					Svgs[statName],
 					iconSize,
 					iconSize
 				),
@@ -440,7 +440,7 @@ class Snapshot {
 
 	drawAllStats() {
 		let beginStatY = 0;
-		let totalStats = this.usableStats.length;
+		const totalStats = this.usableStats.length;
 		const statH = 0.08
 		const iconSizes = {
 			badges: this.relativeW(0.030),
@@ -477,7 +477,7 @@ class Snapshot {
 			this.drawStat(
 				this.translationStrings[statName],
 				new Icon(
-					this.icons[statName],
+					Svgs[statName],
 					iconSizes[statName],
 					iconSizes[statName]
 				),
@@ -528,7 +528,7 @@ class Snapshot {
 
 		// String to left (Plan, Highlight, etc)
 		ctx.font = `${this.relativeFontSize() * 0.35}px ${displayFont}`;
-		ctx.fillStyle = this.colors.white;
+		ctx.fillStyle = Colors.white;
 		ctx.fillText(
 			statString.toUpperCase(),
 			stringX,
@@ -552,10 +552,15 @@ class Snapshot {
 
 		if (drawSeparator) {
 			const lineY = statY + statIcon.height;
+			const grd=ctx.createLinearGradient(separatorX, lineY, this.width, lineY);
+			grd.addColorStop(0, 'rgba(255,255,255,0.35)');
+			grd.addColorStop(1, 'rgba(255,255,255,0.35)');
+
+
 			ctx.beginPath();
 			ctx.moveTo(separatorX, lineY);
 			ctx.lineTo(this.width, lineY);
-			ctx.strokeStyle = this.colors.lightGrey;
+			ctx.strokeStyle = grd;
 			ctx.lineWidth = 1;
 			ctx.stroke();
 		}
@@ -572,7 +577,7 @@ class Snapshot {
 
 		// String to left (Plan, Highlight, etc)
 		ctx.font = `${(this.relativeFontSize() * textSizeModifier) / 4}px ${displayFont}`;
-		ctx.fillStyle = this.colors.white;
+		ctx.fillStyle = Colors.white;
 		stringW = ctx.measureText(statString).width;
 		stringH = ctx.measureText(statString).height;
 		stringX = xPos - (stringW * 0.60);
@@ -591,7 +596,7 @@ class Snapshot {
 		);
 
 		ctx.font = `${this.relativeFontSize() * textSizeModifier}px ${displayFont}`;
-		ctx.fillStyle = this.colors.white;
+		ctx.fillStyle = Colors.white;
 		numW = ctx.measureText(statNum).width;
 
 		ctx.fillText(
@@ -628,11 +633,11 @@ class Snapshot {
 		const halfImageSize = imageSize / 2
 		const x = this.relativeX(0.50, this.widthLeftPane);
 		const y = this.relativeY(0.28);
-		const textY = this.relativeY (0.29);
+		const textY = this.relativeY(0.29);
 		const ctx = this.ctx;
 
 		const img = new Image();
-			img.src = this.avatarData;
+		img.src = this.avatarData;
 
 		ctx.save();
 		ctx.beginPath();
@@ -703,7 +708,7 @@ class Snapshot {
 		ctx.closePath();
 		ctx.fillStyle = fill;
 		ctx.fill();
-};
+	}
 
 
 	relativeFontSize() {
