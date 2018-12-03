@@ -2,7 +2,7 @@ sn:
   features:
     bible:
       about: "Zviri maererano"
-      audio: "Audio"
+      audio: "Mazwi"
       audio open: "Open Audio Player"
       book: "Bhuku"
       bible language: "Mutauro webhaibheri"
@@ -15,7 +15,7 @@ sn:
       events: "Zviitiko"
       explore by verse: "Explore %{chapter_name} by Verse"
       help: "Rubatsiro"
-      hide: "Hide"
+      hide: "Viga"
       home: "Pekutangira"
       jobs: "Mabasa"
       language: "Rudzi /rurimi rwako"
@@ -37,7 +37,7 @@ sn:
       terms: "Mirau"
       title: "Tora Bible App iyi ikozvino"
       version: "Vhezheni"
-      version learn more: "Learn More About %{version_name}"
+      version learn more: "Dzidza Zvakawanda Pamusoro Pe%{version_name}"
       versions: "Mavhezheni"
       videos: "Mavideo"
       volunteer: "Kutibatsira"

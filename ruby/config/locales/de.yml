@@ -668,7 +668,7 @@ de:
     resend error: "Sorry, es gab ein Problem beim erneuten Versenden deiner Bestätigungs-E-Mail. Überprüfe bitte, ob du eine gültige und registrierte E-Mail-Adresse eingegeben hast, die noch nicht bestätigt wurde."
     resend confirmation title: "Hast du deine Bestätigungs-E-Mail nicht erhalten?"
     resend confirmation copy: "Trage bitte die E-Mail-Adresse, mit der du dich registriert hast, in das nachfolgende Feld ein. Dann senden wir dir die Bestätigungs-E-Mail noch einmal."
-    resend confirmation button: "Bestätigung erneut versenen."
+    resend confirmation button: "Bestätigung erneut versenden."
     profile:
       blank slate:
         heading: "Hier gibt's im Moment (noch) nichts zu sehen."
@@ -2054,6 +2054,10 @@ de:
     hi name: "Hallo %{name},"
     your snapshot: "Hier ist ein Schnappschuss deines Jahres in der Bibel App!"
     user snapshot: "%{year} Schnappschuss für %{user}"
+    days in app: "Tage in der App"
+    perfect weeks: "Perfekte Wochen"
+    plan days: "Leseplan-Tage"
+    new friends: "Neue Freunde"
     STORIESEXAMPLES: "Adam und Eva, Noah, Mose, Esther, Jesus, Paulus u.a.m."
     STORIES.ABRAHAMCALLED: "Gott erwählt Abraham"
     STORIES.ABRAHAMISAAC: "Abraham und Isaak"
