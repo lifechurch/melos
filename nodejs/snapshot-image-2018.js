@@ -1,18 +1,7 @@
 const fs = require('fs');
-const crypto = require('crypto');
-const express = require('express');
 const Canvas = require('canvas');
-const canvg = require('canvg');
-const Promise = require('bluebird');
-const request = require('request');
-const api = require('@youversion/js-api');
-const getLocale = require('./app/lib/langUtils').getLocale;
-
 const Image = Canvas.Image;
-const Users = api.getClient('users');
-const Moments = api.getClient('moments');
-const router = express.Router();
-//const displayFont = 'Arial Unicode MS';
+const canvg = require('canvg');
 const displayFont = 'Futura';
 const lengthyStringLocales = ['ar', 'vi', 'el']
 
@@ -52,51 +41,15 @@ const Svgs = {
 }
 
 const DefaultMomentData = {
-	plan_completions: 4,
-	highlights: 8,
-	notes: 4,
-	images: 1,
-	badges: 12,
-	bookmarks: 4,
+	plan_completions: 0,
+	highlights: 0,
+	notes: 0,
+	images: 0,
+	badges: 0,
+	bookmarks: 0,
 	friendships: 0,
-	days_in_app: 6,
-	perfect_weeks: 12
-}
-
-// Optimization for readFile
-// Load logos upon server startup and apply them as needed at request time
-// instead of reading the file on each request
-
-const appLogos = {};
-const appLogoSizes = [48, 120, 200, 512];
-
-appLogoSizes.forEach((size) => {
-	fs.readFile(`${__dirname}/images/BibleAppLogo-${size}.png`, (err, logo) => {
-		appLogos[size] = logo;
-	})
-});
-
-function getLogo(graphicSize) {
-	switch (true) {
-		case graphicSize <= 500:
-			return appLogos[48]
-
-		case graphicSize <= 1500:
-			return appLogos[120]
-
-		case graphicSize <= 2500:
-			return appLogos[200]
-
-		case graphicSize <= 4000:
-			return appLogos[512]
-
-		default:
-			return appLogos[512]
-	}
-}
-
-function cleanLocale(locale) {
-	return locale.split(/[\-_]+/).slice(0, 2).join('-')
+	days_in_app: 0,
+	perfect_weeks: 0
 }
 
 class Icon {
@@ -139,8 +92,8 @@ class Snapshot {
 			bookmarks: this.translate('profile menu.bookmarks'),
 			friendships: this.translate('profile menu.friends'),
 			my_year: this.translate('my year'),
-			days_in_app: 'Days in the App',
-			perfect_weeks: 'Perfect Weeks',
+			days_in_app: this.translate('days in app'),
+			perfect_weeks: this.translate('perfect weeks'),
 		}
 
 		this.momentData = {}; //todo remove this and reinstate api call
@@ -840,111 +793,8 @@ class AvatarImage {
 
 		return canvas;
 	}
-
 }
 
-function isHashValid(hashToVerify, userId) {
-	const secret = process.env.YIR_SHA1_SECRET_KEY || 'SECRET';
-	const algo = 'sha1';
-	const hmac = crypto.createHmac(algo, secret);
-	hmac.update(userId);
-	return hashToVerify === hmac.digest('hex');
-}
+export { Snapshot, AvatarImage };
 
-function isSizeValid(size) {
-	if (size < 100) return false;
-	if (size > 4000) return false;
-	if (size % 100 !== 0) return false;
-
-	return true;
-}
-
-router.get('/snapshot/default/:size', (req, res) => {
-	const imageSize = parseInt(req.params.size, 10);
-	const logo = getLogo(imageSize);
-	const locale = cleanLocale(req.query.locale || 'en-US');
-	const avatar = new AvatarImage({ default: true });
-
-	if (!isSizeValid(imageSize)) {
-		res.status(404).send('Not found');
-	}
-
-	const graphic = new Snapshot(imageSize);
-
-	graphic.appLogo = logo;
-	graphic.locale = locale;
-	graphic.localeData = getLocale({
-		localeFromUrl: locale, localeFromCookie: null, localeFromUser: null, acceptLangHeader: null
-	})
-
-	graphic.momentData = {}; // blank data
-	avatar.graphicSize = imageSize;
-	avatar.load((data) => {
-		graphic.avatarData = data;
-		graphic.render();
-		res.setHeader('Content-Type', 'image/png');
-		graphic.canvas.pngStream().pipe(res);
-	})
-
-})
-
-
-// https://nodejs.bible.com/{language-tag}/year-in-review/{user-id-hash}/{size}
-router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
-
-	const fromDate = '2017-01-01';
-	const toDate = '2017-12-31';
-	const userId = req.params.user_id;
-	const imageSize = parseInt(req.params.size, 10);
-	const logo = getLogo(imageSize);
-	const locale = cleanLocale(req.query.locale || 'en-US');
-	let avatar;
-
-	if (!isHashValid(req.params.user_id_hash, req.params.user_id)) {
-		res.status(404).send('Not found');
-	}
-
-	if (!isSizeValid(imageSize)) {
-		res.status(404).send('Not found');
-	}
-
-	const graphic = new Snapshot(imageSize, getLocale({
-		localeFromUrl: locale,
-		localeFromCookie: null,
-		localeFromUser: null,
-		acceptLangHeader: null
-	}));
-
-
-	graphic.appLogo = logo;
-	graphic.locale = locale;
-
-	const userPromise = Users.call('view')
-	.setEnvironment(process.env.NODE_ENV)
-	.params({ id: userId })
-	.get()
-
-	const momentPromise = Moments.call('summary')
-	.setEnvironment(process.env.NODE_ENV)
-	.params({ user_id: userId, from_date: fromDate, to_date: toDate })
-	.get()
-
-	Promise.all([userPromise, momentPromise])
-	.then((results) => {
-		const userData = results[0];
-		const momentData = results[1];
-
-		//graphic.momentData = momentData;
-		avatar = new AvatarImage(userData);
-		avatar.graphicSize = imageSize;
-		avatar.load((data) => {
-			graphic.avatarData = data;
-
-			graphic.render();
-			res.setHeader('Content-Type', 'image/png');
-			graphic.canvas.pngStream().pipe(res);
-		})
-	})
-})
-
-module.exports = router;
+//module.exports = Snapshot;
