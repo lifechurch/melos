@@ -4,19 +4,22 @@ angular.module('yv.moments.planCarousel', [])
         return {
             restrict: 'AC',
             controller: ["$element", "$scope", "$timeout", function($element, $scope, $timeout) {
-                var plans = [];
+                
+              $scope.data.object.avatar = "/assets/plans.svg";
+
+              var plans = [];
                 $element.addClass('featured-rp-box');
                 $element.slick({
                     centerMode: true,
                     centerPadding: "0px",
-                    slidesToShow: 1,
-                    infinite: false,
+                    slidesToShow: 3,
+                    infinite: true,
                     variableWidth: true,
                     responsive: [
                         {
                             breakpoint: 768,
                             settings: {
-                                arrows: false,
+                                arrows: true,
                                 centerPadding: "10px",
                                 slidesToShow: 1
                             }

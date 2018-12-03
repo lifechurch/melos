@@ -25,7 +25,7 @@
 -# Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment.tpl.html'}
-  .moment.moment-vod{"ng-hide" => "deleted"}
+  .moment.moment-vod{"ng-hide" => "deleted", "ng-class"=> "data.kind"}
     .moment-top{"ng-click" => "goSingle()", "ng-class" => "{ hasLink: !single && data.object.id }"}
       .moment-top-avatar
         %img.avatar{"ng-src" => "{{data.object.avatar}}"}

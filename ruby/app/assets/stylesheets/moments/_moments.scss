@@ -549,11 +549,25 @@ article.error {
 
 .moment-vod {
   .moment-top-avatar {
-    img[src="/assets/votd.svg"] {
+    img[src="/assets/votd.svg"], img[src="/assets/plans.svg"] {
       width: 33px;
       height: 33px;
-      margin: 0 0 0 15px;
+      margin: 0 0 0 0;
     }
+  }
+}
+
+/* !Plan carousel moment */
+
+.moment.reading_plan_carousel {
+  .moment-content {
+    padding: 0 0 15px 0;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #ddd;
+  }
+  .moment-actions {
+    height: 0;
+    border: none
   }
 }
 
