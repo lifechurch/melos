@@ -65,10 +65,12 @@ class Snapshot extends Component {
 	}
 
 	renderDetail() {
+		const urlParams = new URLSearchParams(window.location.search);
+		const year = urlParams.get('year');
 		const { user, userIdHash, locale, nodeHost, railsHost, viewingMine, intl } = this.props
-		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${locale}&year=2017`
-		const imgSrc2x = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/1000?locale=${locale}&year=2017`
-		const snapshotUrl = `${railsHost}/snapshot/${userIdHash}/${user.response.id}?year=2017`
+		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${locale}&year=${year}`
+		const imgSrc2x = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/1000?locale=${locale}&year=${year}`
+		const snapshotUrl = `${railsHost}/snapshot/${userIdHash}/${user.response.id}?year=${year}`
 		let bottomLinks
 		let topCopy
 
