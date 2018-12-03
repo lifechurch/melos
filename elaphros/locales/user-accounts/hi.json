@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "मित्र",
+			"account confirmed": "आपके अकाउंट की पुष्टि हुई!",
+			"friendship success": "मुबारक हो अभी आप मित्र हुए।",
+			"friendship failure": "मित्रता बनाने में त्रुटि",
+			"error deleting account": "हमारी तरफ से तकलीफ के लिए क्षमा चाहते हैं। फिर कोशिश कीजिए या सहायता से संपर्क करें।",
+			"account already confirmed": "आपका अकाउंट पहले से दर्ज हैं। जारी रखने के लिए साइन इन करे।"
+		}
+	}
+}

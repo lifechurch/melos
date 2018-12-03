@@ -12,7 +12,8 @@ i18n.configure({
   locales: activeLocales,
   directory: path.join(__dirname, '../locales'),
   defaultLocale: 'en',
-  objectNotation: true
+  objectNotation: true,
+  updateFiles: false
 })
 
 module.exports = function configureI18n(fastify) {

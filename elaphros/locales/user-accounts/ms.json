@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Sahabat",
+			"account confirmed": "Akaun anda sudah disahkan!",
+			"friendship success": "Berjaya! Anda sekarang bersahabat.",
+			"friendship failure": "Terdapat ralat dalam mencipta persahabatan",
+			"error deleting account": "Maaf, ada masalah pada pihak kami. Sila cuba lagi atau hubungilah Pihak Sokongan.",
+			"account already confirmed": "Akaun anda sudah disahkan! Sila log masuk."
+		}
+	}
+}

@@ -1,9 +1,9 @@
 id:
   features:
     users:
-      account confirmed: "Your account has been confirmed!"
-      account already confirmed: "Your account has already been confirmed! Sign in to continue."
-      error deleting account: "Sorry, there was a problem on our end. Please try again or contact support."
+      account confirmed: "Akun Anda sudah dikonfirmasi!"
+      account already confirmed: "Akun Anda telah dikonfirmasi! Masuk untuk melanjutkan."
+      error deleting account: "Maaf, ada masalah di pihak kami. Silakan coba lagi atau hubungi layanan kami."
       friendship success: "Berhasil! Sekarang Anda berteman."
       friendship failure: "Kesalahan dalam menjalin persahabatan"
       friends: "Teman"

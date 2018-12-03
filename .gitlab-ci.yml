@@ -1,7 +1,7 @@
 # This file is a template, and might need editing before it works on your project.
 # Explaination on the scripts:
 # https://gitlab.com/gitlab-examples/kubernetes-deploy/blob/master/README.md
-image: quay.io/lifechurch/k8s-deploy-helper:2.0.3
+image: quay.io/lifechurch/k8s-deploy-helper:3.1.1
 
 variables:
   # Application deployment domain
@@ -12,6 +12,8 @@ stages:
   - test
   - review
   - staging
+  - canary
+  - destroy-canary
   - production
   - taglatest
 
@@ -96,6 +98,31 @@ staging:
     - master
   tags:
     - web
+
+canary:
+  stage: canary
+  dependencies: []
+  script:
+    - command deploy
+  when: manual
+  only:
+    - master
+  allow_failure: true
+  environment:
+    name: production
+    url: https://$KUBE_DOMAIN
+
+destroy-canary:
+  stage: destroy-canary
+  dependencies: []
+  allow_failure: true
+  environment:
+    name: production  
+  script:
+    - command destroy-canary
+  when: manual
+  only:
+    - master
 
 production:
   stage: production

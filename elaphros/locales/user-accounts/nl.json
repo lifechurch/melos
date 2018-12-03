@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Vrienden",
+			"account confirmed": "Je account is bevestigd!",
+			"friendship success": "Gelukt! Jullie zijn nu vrienden.",
+			"friendship failure": "Fout bij het maken van een vriendschap",
+			"error deleting account": "Sorry, er ging iets mis aan onze kant. Probeer het opnieuw of neem contact op met de ondersteuning.",
+			"account already confirmed": "Je account is bevestigd! Log in om verder te gaan."
+		}
+	}
+}

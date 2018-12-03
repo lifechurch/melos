@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Priatelia",
+			"account confirmed": "Váš účet bol aktivovaný!",
+			"friendship success": "Podarilo sa! Odteraz ste priatelia.",
+			"friendship failure": "Nepodarilo sa vytvoriť priateľstvo",
+			"error deleting account": "Prepáčte, vyskytla sa chyba. Skúste to znova, alebo kontaktujte podporu prosím.",
+			"account already confirmed": "Váš účet bol už potvrdený! Pokračujte prihlásením."
+		}
+	}
+}

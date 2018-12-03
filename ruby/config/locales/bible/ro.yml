@@ -1,9 +1,9 @@
 ro:
   features:
     bible:
-      about: "About"
+      about: "Despre"
       audio: "Audio"
-      audio open: "Open Audio Player"
+      audio open: "Deschide Playerul audio"
       book: "Cartea"
       bible language: "Limba Bibliei"
       blog: "Blog"
@@ -20,8 +20,8 @@ ro:
       jobs: "Angajări"
       language: "Limbă"
       languages: "Limbi"
-      no audio support: "Your browser doesn't support audio."
-      open search: "Open Search Bar"
+      no audio support: "Browserul tău nu suportă fișiere audio."
+      open search: "Deschide bara de căutare"
       open sidebar: "Deschide Meniu"
       plans: "Planuri"
       press: "Presă"

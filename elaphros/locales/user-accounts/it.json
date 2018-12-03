@@ -1,0 +1,12 @@
+{
+	"features": {
+		"users": {
+			"friends": "Amici",
+			"account confirmed": "Il tuo account è stato confermato!",
+			"friendship success": "Successo! Adesso avete stretto amicizia.",
+			"friendship failure": "Errore nella creazione dell'amicizia",
+			"error deleting account": "Scusa, c'è stato un problema. Per favore prova di nuovo o contatta l'assistenza.",
+			"account already confirmed": "Il tuo account è già stato confermato! Accedi per continuare."
+		}
+	}
+}

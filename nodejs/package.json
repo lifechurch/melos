@@ -65,7 +65,7 @@
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
     "morgan": "~1.6.1",
-    "newrelic": "^4.0.0",
+    "newrelic": "^4.10.0",
     "po2json": "^0.4.5",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
