@@ -40,7 +40,7 @@ spec:
         resources:
           limits:
             cpu: "4"
-            memory: "5000Mi"
+            memory: "4700Mi"
         readinessProbe:
           httpGet:
             path: /ping_all
