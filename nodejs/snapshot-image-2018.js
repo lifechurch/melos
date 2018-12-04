@@ -88,13 +88,13 @@ class Snapshot {
 		this.localeData = localeData;
 
 		this.translationStrings = {
-			plan_completions: this.translate('plans.plan days'),
+			plan_completions: this.translate('plan days'),
 			highlights: this.translate('profile menu.highlights'),
 			notes: this.translate('profile menu.notes'),
 			images: this.translate('profile menu.images'),
 			badges: this.translate('profile menu.badges'),
 			bookmarks: this.translate('profile menu.bookmarks'),
-			friendships: this.translate('profile menu.new friends'),
+			friendships: this.translate('new friends'),
 			my_year: this.translate('my year'),
 			days_in_app: this.translate('days in app'),
 			perfect_weeks: this.translate('perfect weeks'),
