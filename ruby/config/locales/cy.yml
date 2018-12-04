@@ -730,7 +730,7 @@ cy:
       tab friends: "Ffrindiau"
       tab notes: "Nodiadau"
       tab bookmarks: "Nodau tudalen"
-      tab highlights: "Aroleuo:"
+      tab highlights: "Aroleuo"
       tab images: "Lluniau"
       tab badges: "Bathodynnau"
       first name: "Enw Cyntaf"
@@ -1047,7 +1047,7 @@ cy:
     close player menu: "Cau"
     publisher website: "Gwefan Cyhoeddwr"
   highlights:
-    title: "Aroleuo:"
+    title: "Aroleuo"
     blank slate:
       heading: "Amlygwch penillion ystyrlon"
       description: "Tra'n darllen y Beibl, dewis adnod a'i haroleuo. Dod yn ôl yma i weld, golygu neu ddileu dy aroleuad"
@@ -1265,7 +1265,7 @@ cy:
       small: "Bach"
       medium: "Canolig"
       large: "Mawr"
-      highlights: "Aroleuo:"
+      highlights: "Aroleuo"
       contrast: "Cyferbynnedd"
       on: "Ymlaen"
       off: "Diffodd"
@@ -1420,7 +1420,7 @@ cy:
       sign up: "Cofrestru"
     profile menu:
       bookmarks: "Nodau tudalen"
-      highlights: "Aroleuo:"
+      highlights: "Aroleuo"
       notes: "Nodiadau"
       images: "Lluniau"
       friends: "Ffrindiau"
