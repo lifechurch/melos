@@ -12,13 +12,13 @@ const Image = Canvas.Image;
 const Users = api.getClient('users');
 const Moments = api.getClient('moments');
 const router = express.Router();
-const displayFont = 'Arial Unicode MS';
-const lengthyStringLocales = ['ar', 'vi', 'el']
 
 global.Intl = require('intl');
 
 const Snapshot2018 = require('./snapshot-image-2018').Snapshot
 const Snapshot2017 = require('./snapshot-image-2017').Snapshot
+
+const displayFont = 'Futura PT Cond';
 
 // Optimization for readFile
 // Load logos upon server startup and apply them as needed at request time
@@ -32,19 +32,6 @@ appLogoSizes.forEach((size) => {
 		appLogos[size] = logo;
 	})
 });
-
-const DefaultMomentData = {
-	plan_completions: 32,
-	highlights: 1,
-	notes: 4,
-	images: 7,
-	badges: 12,
-	bookmarks: 7,
-	friendships: 9,
-	days_in_app: 115,
-	perfect_weeks: 7
-}
-
 
 function getLogo(graphicSize) {
 	switch (true) {
@@ -66,7 +53,7 @@ function getLogo(graphicSize) {
 }
 
 function cleanLocale(locale) {
-	return locale.split(/[\-_]+/).slice(0, 2).join('-')
+	return locale.split(/[\-_]+/).slice(0, 2).join('-');
 }
 
 class AvatarImage {
@@ -119,7 +106,7 @@ class AvatarImage {
 	load(cb) {
 		const data = [];
 		if (this.hasAvatar()) {
-			const url = `http:${this.userData.user_avatar_url.px_512x512}`
+			const url = `http:${this.userData.user_avatar_url.px_512x512}`;
 
 			request.get(url)
 			.on('response', (response) => {
@@ -188,7 +175,7 @@ function isSizeValid(size) {
 }
 
 function isYearValid(year) {
-	return year === '2017' || year === '2018'
+	return year === '2017' || year === '2018';
 }
 
 router.get('/snapshot/default/:size', (req, res) => {
@@ -224,6 +211,7 @@ router.get('/snapshot/default/:size', (req, res) => {
 router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 
 	let graphic;
+	let avatar;
 	let fromDate = '2017-01-01';
 	let toDate = '2017-12-31';
 	const year = req.query.year;
@@ -231,7 +219,6 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 	const imageSize = parseInt(req.params.size, 10);
 	const logo = getLogo(imageSize);
 	const locale = cleanLocale(req.query.locale || 'en-US');
-	let avatar;
 
 	if (!isHashValid(req.params.user_id_hash, req.params.user_id)) {
 		res.status(404).send('Not found');
@@ -285,7 +272,7 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 		const userData = results[0];
 		const momentData = results[1];
 
-		graphic.momentData = DefaultMomentData// momentData;
+		graphic.momentData = momentData;
 		avatar = new AvatarImage(userData);
 		avatar.graphicSize = imageSize;
 		avatar.load((data) => {

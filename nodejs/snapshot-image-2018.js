@@ -1,17 +1,16 @@
 const fs = require('fs');
 const { createCanvas, registerFont, Canvas, Image } = require('canvas');
 const canvg = require('canvg');
-const displayFont = 'Futura PT Cond';
-const lengthyStringLocales = ['ar', 'vi', 'el', 'fa', 'ta', 'ja']
-
-global.Intl = require('intl');
 const StackBlur = require('stackblur-canvas');
 
-registerFont('./fonts/FuturaPTCondBold.ttf', { family: 'Futura PT Cond' })
-registerFont('./fonts/FuturaPTCondExtraBold.ttf', { family: 'Futura PT Cond Extra Bold' })
-registerFont('./fonts/FuturaPTLight.ttf', { family: 'Futura PT Light' })
-registerFont('./fonts/FuturaPTCondMedium.ttf', { family: 'Futura PT Cond Medium' })
+global.Intl = require('intl');
+const displayFont = 'Futura PT Cond';
+const lengthyStringLocales = ['ar', 'vi', 'el', 'fa', 'ta', 'ja'];
 
+registerFont('./fonts/FuturaPTCondBold.ttf', { family: 'Futura PT Cond' });
+registerFont('./fonts/FuturaPTCondExtraBold.ttf', { family: 'Futura PT Cond Extra Bold' });
+registerFont('./fonts/FuturaPTLight.ttf', { family: 'Futura PT Light' });
+registerFont('./fonts/FuturaPTCondMedium.ttf', { family: 'Futura PT Cond Medium' });
 
 const OrderedStatNames = [
 	'plan_completions',
@@ -54,7 +53,7 @@ const DefaultMomentData = {
 	bookmarks: 0,
 	friendships: 0,
 	days_in_app: 0,
-	perfect_weeks: 15
+	perfect_weeks: 0,
 }
 
 class Icon {
@@ -100,8 +99,6 @@ class Snapshot {
 			days_in_app: this.translate('days in app'),
 			perfect_weeks: this.translate('perfect weeks'),
 		}
-
-		this.momentData = {}; //todo remove this and reinstate api call
 	}
 
 	get canvas() { return this._canvas; }
@@ -165,7 +162,7 @@ class Snapshot {
 		ctx.drawImage(imageCanvas, 0, 0, this.width, this.height);
 
 		ctx.fillStyle = rightGradient;
-		ctx.fillRect(this.widthLeftPane, 0, this.widthRightPane, this.canvas.height)
+		ctx.fillRect(this.widthLeftPane, 0, this.widthRightPane, this.canvas.height);
 	}
 
 	drawHeadingText() {
@@ -196,12 +193,9 @@ class Snapshot {
 		gradient.addColorStop(0.5, '#2188b3');
 		gradient.addColorStop(1, '#17dad6');
 
-		this.horizontalGradient = gradient
+		this.horizontalGradient = gradient;
 
-		// Don't draw
 		if (!this.hasPerfectWeeks) return;
-
-		this.horizontalGradient = gradient
 
 		this.drawRoundRect(
 			pillX,
@@ -266,7 +260,7 @@ class Snapshot {
 
 		statX = iconX + (iconW);
 		statY = textY;
-		ctx.font = this.fontStyle({bold: true, sizeModifier: 0.50 });
+		ctx.font = this.fontStyle({ bold: true, sizeModifier: 0.50 });
 		ctx.fillText(statString, statX, statY);
 	}
 
@@ -283,7 +277,7 @@ class Snapshot {
 		ctx.font = this.fontStyle({
 			bold: true,
 			sizeModifier: overallModifier
-		})
+		});
 
 		const daysStringW = ctx.measureText(daysString).width
 		const daysStringX = this.relativeX(0.5, this.widthLeftPane) - (daysStringW / 2);
@@ -340,23 +334,9 @@ class Snapshot {
 		);
 	}
 
-	drawSingleStat(statsArray) {
-		const stat = statsArray[0]
+	drawVerticalStats() {
 
-		this.drawVerticalStat(
-			this.translationStrings[stat],
-			new Icon(
-				Svgs[stat],
-				this.relativeW(0.15),
-				this.relativeH(0.15)
-			),
-			this.momentData[stat],
-			this.relativeY(0.40),
-			2.5
-		)
-	}
-
-	drawVerticalStats(statNames) {
+		const statNames = this.usableStats;
 		let yPositions = [];
 		let sizeModifier = 0;
 		let iconSize = 0;
@@ -404,7 +384,7 @@ class Snapshot {
 	drawAllStats() {
 		let beginStatY = 0;
 		const totalStats = this.usableStats.length;
-		const statH = 0.08
+		const statH = 0.08;
 		const iconSizes = {
 			badges: this.relativeW(0.030),
 			bookmarks: this.relativeW(0.027),
@@ -417,11 +397,11 @@ class Snapshot {
 
 		switch (totalStats) {
 			case 5:
-				beginStatY = 0.345
+				beginStatY = 0.345;
 				break;
 
 			case 6:
-				beginStatY = 0.32
+				beginStatY = 0.32;
 				break;
 
 			case 7:
@@ -432,10 +412,8 @@ class Snapshot {
 				break;
 		}
 
-
-
 		this.usableStats.forEach((statName, index) => {
-			const statY = (index === 0) ? beginStatY : (beginStatY + (statH * index))
+			const statY = (index === 0) ? beginStatY : (beginStatY + (statH * index));
 			const drawSeparator = (index === totalStats - 1) ? false : true;
 			this.drawStat(
 				this.translationStrings[statName],
@@ -460,7 +438,7 @@ class Snapshot {
 			case 2:
 			case 3:
 			case 4:
-				this.drawVerticalStats(this.usableStats);
+				this.drawVerticalStats();
 				break;
 
 			default:
@@ -470,14 +448,12 @@ class Snapshot {
 
 	render() {
 		this.setupContext();
-
 		this.drawRightPane();
 		this.drawLeftPane();
 		this.drawHeadingText();
 		this.drawPerfectWeeks(); // sets up the horizontal gradient, should come before others using gradient
 		this.drawDaysInApp();
 		this.drawProfileImage();
-
 		this.drawDays();
 		this.drawAppLink();
 		this.drawStats();
@@ -491,7 +467,7 @@ class Snapshot {
 
 		// String to left (Plan, Highlight, etc)
 
-		ctx.font = this.fontStyle({sizeModifier: 0.35, font: 'Futura PT Cond Medium' })
+		ctx.font = this.fontStyle({sizeModifier: 0.35, font: 'Futura PT Cond Medium' });
 		ctx.fillStyle = Colors.white;
 		ctx.fillText(
 			statString.toUpperCase(),
@@ -500,13 +476,13 @@ class Snapshot {
 		);
 
 		// Stat number to the right
-		ctx.font = this.fontStyle({sizeModifier: 0.45, font: 'Futura PT Cond Medium' })
+		ctx.font = this.fontStyle({sizeModifier: 0.45, font: 'Futura PT Cond Medium' });
 
 		ctx.fillText(
 			statNum,
 			numX,
 			statY,
-		)
+		);
 
 		this.drawIcon(
 			statIcon,
@@ -540,7 +516,7 @@ class Snapshot {
 		let stringH = 0;
 
 
-		ctx.font = this.fontStyle({font: 'Futura PT Cond Medium', sizeModifier: (textSizeModifier / 3.5)});
+		ctx.font = this.fontStyle({ font: 'Futura PT Cond Medium', sizeModifier: (textSizeModifier / 3.5) });
 		ctx.fillStyle = Colors.white;
 		stringW = ctx.measureText(statString).width;
 		stringH = ctx.measureText(statString).height;
@@ -559,7 +535,7 @@ class Snapshot {
 			statY
 		);
 
-		ctx.font = this.fontStyle({font: 'Futura PT Cond Medium', sizeModifier: textSizeModifier / 1.2});
+		ctx.font = this.fontStyle({ font: 'Futura PT Cond Medium', sizeModifier: textSizeModifier / 1.2 });
 		ctx.fillStyle = Colors.white;
 		numW = ctx.measureText(statNum).width;
 
@@ -590,16 +566,20 @@ class Snapshot {
 	}
 
 	drawProfileImage() {
+		const text20 = '20';
+		const text18 = '18';
 		const startAngle = 0;
 		const endAngle = Math.PI * 2;
 		const circleRadius = this.relativeCircleSize(0.17);
 		const imageSize = circleRadius * 2;
-		const halfImageSize = imageSize / 2
+		const halfImageSize = imageSize / 2;
 		const x = this.relativeX(0.50, this.widthLeftPane);
 		const y = this.relativeY(0.28);
 		const textY = this.relativeY(0.295);
 		const ctx = this.ctx;
 
+
+		// Draw avatar inside circle
 		const img = new Image();
 		img.src = this.avatarData;
 
@@ -623,11 +603,11 @@ class Snapshot {
 		);
 		ctx.restore();
 
-		ctx.font = this.fontStyle({sizeModifier: 0.9, font: 'Futura PT Cond Medium'});
-		ctx.fillStyle = this.horizontalGradient;
 
-		const text20 = '20'
-		const text18 = '18'
+		// 20 (     ) 18
+		// 2018 Text around the profile pic
+		ctx.font = this.fontStyle({ sizeModifier: 0.9, font: 'Futura PT Cond Medium' });
+		ctx.fillStyle = this.horizontalGradient;
 
 		ctx.fillText(
 			text20,
@@ -704,108 +684,4 @@ class Snapshot {
 	}
 }
 
-class AvatarImage {
-
-	// Ex user data:
-	// { website: null,
-	//  username: 'MichaelMartin@Awesome',
-	//  first_name: 'Michael',
-	//  last_name: 'Martin@Awesome',
-	//  name: 'Michael Martin@Awesome',
-	//  has_avatar: false,
-	//  bio: null,
-	//  user_avatar_url:
-	//   { px_128x128: '//s3.amazonaws.com/static-youversionapidev-com/users/images/54a395cc0a002c10577dea1c28a004cb_128x128.png',
-	//     px_24x24: '//s3.amazonaws.com/static-youversionapidev-com/users/images/54a395cc0a002c10577dea1c28a004cb_24x24.png',
-	//     px_48x48: '//s3.amazonaws.com/static-youversionapidev-com/users/images/54a395cc0a002c10577dea1c28a004cb_48x48.png',
-	//     px_512x512: '//s3.amazonaws.com/static-youversionapidev-com/users/images/54a395cc0a002c10577dea1c28a004cb_512x512.png' },
-	//  created_dt: '2017-06-27T14:28:43.284699+00:00',
-	// ...
-	//  cacheLifetime: 604800 }
-
-	constructor(userData) {
-		this.userData = userData;
-	}
-
-	get graphicSize() { return this._graphicSize; }
-	set graphicSize(s) { this._graphicSize = s; }
-
-
-	hasAvatar() {
-		return this.userData.has_avatar;
-	}
-
-	isDefault() {
-		return this.userData.default === true;
-	}
-
-	initials() {
-		let firstInitial, lastInitial;
-		if (this.userData.first_name) {
-			firstInitial = this.userData.first_name.charAt(0);
-		}
-		if (this.userData.last_name) {
-			lastInitial = this.userData.last_name.charAt(0);
-		}
-
-		return `${firstInitial}${lastInitial}`;
-	}
-
-	// Pass image buffer data via callback
-	load(cb) {
-		const data = [];
-		if (this.hasAvatar()) {
-			const url = `http:${this.userData.user_avatar_url.px_512x512}`
-
-			request.get(url)
-			.on('response', (response) => {
-				response.on('data', (chunk) => {
-					data.push(chunk);
-				});
-				response.on('end', () => {
-					cb(Buffer.concat(data));
-				});
-			});
-
-		} else if (this.isDefault()) {
-			const svgString = '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.09 50.03"><defs><style>.cls-1{fill:#f2f2f2;}</style></defs><title>me</title><path class="cls-1" d="M24.87,48.86a24,24,0,1,1,24-24A24,24,0,0,1,24.87,48.86Z"/><path d="M24.83,14.91a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM16.05,31.57q1.14-3.71,9.32-3.71t9.32,3.71a1,1,0,0,1-1,1.29H17a1,1,0,0,1-1-1.29Z"/><path class="cls-1" d="M24.87.86a24,24,0,1,0,24,24A24,24,0,0,0,24.87.86Zm0,14a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM34,32.82a1,1,0,0,1-.29,0H17a1,1,0,0,1-1-1.29q1.14-3.71,9.32-3.71t9.32,3.71A1,1,0,0,1,34,32.82Z"/><path d="M21.41,22.44a4.13,4.13,0,0,0,8.14,0l.38-2.56a4.48,4.48,0,1,0-8.91,0Z"/><path d="M25.37,27.86q-8.18,0-9.32,3.71a1,1,0,0,0,1,1.29H33.73a1,1,0,0,0,1-1.29Q33.55,27.86,25.37,27.86Z"/></svg>';
-			const w = this.graphicSize * 0.30;
-			const h = this.graphicSize * 0.30;
-			const canvas = createCanvas(w, h);
-
-			canvg(canvas, svgString, { ignoreMouse: true, ignoreAnimation: true, ImageClass: Image });
-			cb(canvas.toBuffer());
-
-		} else {
-			cb(this.renderInitials().toBuffer());
-		}
-	}
-
-	renderInitials() {
-		const canvas = createCanvas(512, 512); // same size as large avatar
-		const ctx = canvas.getContext('2d');
-
-		const bgColor = '#f2f2f2';
-		const fontColor = '#1e7170';
-		const fontSize = 250;
-		const startAngle = 0;
-		const endAngle = Math.PI * 2;
-
-		ctx.fillStyle = bgColor;
-		ctx.beginPath();
-		ctx.arc(256, 256, 256, startAngle, endAngle, true);
-		ctx.closePath();
-		ctx.fill();
-
-		ctx.textAlign = 'center';
-		ctx.fillStyle = fontColor;
-		ctx.font = `${fontSize}px ${displayFont}`;
-		ctx.fillText(this.initials(), 250, (256 + (fontSize / 2.5)));
-
-		return canvas;
-	}
-}
-
-export { Snapshot, AvatarImage };
-
-//module.exports = Snapshot;
+export { Snapshot };
