@@ -65,10 +65,10 @@ class Snapshot extends Component {
 	}
 
 	renderDetail() {
-		const { user, userIdHash, locale, nodeHost, railsHost, viewingMine, intl } = this.props
-		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${locale}&year=2017`
-		const imgSrc2x = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/1000?locale=${locale}&year=2017`
-		const snapshotUrl = `${railsHost}/snapshot/${userIdHash}/${user.response.id}?year=2017`
+		const { user, userIdHash, locale, nodeHost, railsHost, viewingMine, year, intl } = this.props
+		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${locale}&year=${year}`
+		const imgSrc2x = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/1000?locale=${locale}&year=${year}`
+		const snapshotUrl = `${railsHost}/snapshot/${userIdHash}/${user.response.id}?year=${year}`
 		let bottomLinks
 		let topCopy
 
@@ -116,7 +116,7 @@ class Snapshot extends Component {
 		return (
 			<div>
 				<Helmet
-					title={intl.formatMessage({ id: 'user snapshot' }, { year: '2017', user: user.response.first_name })}
+					title={intl.formatMessage({ id: 'user snapshot' }, { year: year, user: user.response.first_name })}
 					meta={[
             { property: 'og:image', content: `https:${imgSrc2x}` },
             { property: 'og:url', content: `${snapshotUrl}` },
@@ -165,7 +165,8 @@ Snapshot.propTypes = {
 	nodeHost: PropTypes.string.isRequired,
 	railsHost: PropTypes.string.isRequired,
 	locale: PropTypes.string.isRequired,
-	viewingMine: PropTypes.bool.isRequired
+	viewingMine: PropTypes.bool.isRequired,
+	year: PropTypes.number.isRequired
 }
 
 Snapshot.defaultProps = {
@@ -180,7 +181,8 @@ function mapStateToProps(state) {
 		railsHost: state.hosts.railsHost,
 		userIdHash: state.userIdHash,
 		locale: state.serverLanguageTag,
-		viewingMine: state.viewingMine
+		viewingMine: state.viewingMine,
+		year: state.year,
 	}
 }
 

@@ -106,7 +106,7 @@ class PagesController < ApplicationController
     if current_user && (user_id.nil? && user_id_hash.nil?)
       # on /snapshot and logged in, redirect to proper snapshot url
       current_user_hash = build_snapshot_sha1_hash(current_user.id)
-      return redirect_to("/snapshot/#{current_user_hash}/#{current_user.id}?year=2017")
+      return redirect_to("/snapshot/#{current_user_hash}/#{current_user.id}?year=2018")
     end
 
     if user_id && user_id_hash
@@ -120,7 +120,8 @@ class PagesController < ApplicationController
         "user_id" => user_id,
         "user_id_hash" => user_id_hash,
         "languageTag" => I18n.locale.to_s,
-        "strings" => {}
+        "strings" => {},
+        "year" => request.query_parameters["year"] || "2018"
       }
 
     else
@@ -129,7 +130,8 @@ class PagesController < ApplicationController
         "viewing_mine" => false,
         "user_id" => nil,
         "languageTag" => I18n.locale.to_s,
-        "strings" => {}
+        "strings" => {},
+        "year" => request.query_parameters["year"] || "2018"
       }
 
     end

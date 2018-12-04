@@ -22,7 +22,7 @@ require('babel-register')({ presets: [ 'env', 'react' ], plugins: [ 'transform-o
 
 const reactServer = require('./react-server');
 const featureServer = require('./feature-server');
-const yearInReviewServer = require('./snapshot-image-server');
+const yearInReviewServer = require('./snapshot-server');
 
 const app = express();
 app.use(Raven.requestHandler());

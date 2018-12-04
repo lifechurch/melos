@@ -1,1 +1,1 @@
-rvm use ruby-2.2.5 --create
+rvm use ruby-2.2.5@bible --create
