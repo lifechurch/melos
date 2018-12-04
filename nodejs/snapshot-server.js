@@ -135,8 +135,8 @@ class AvatarImage {
 		const canvas = createCanvas(512, 512); // same size as large avatar
 		const ctx = canvas.getContext('2d');
 
-		const bgColor = '#f2f2f2';
-		const fontColor = '#1e7170';
+		const bgColor = '#ffffff';
+		const fontColor = '#727272';
 		const fontSize = 250;
 		const startAngle = 0;
 		const endAngle = Math.PI * 2;
@@ -150,7 +150,7 @@ class AvatarImage {
 		ctx.textAlign = 'center';
 		ctx.fillStyle = fontColor;
 		ctx.font = `${fontSize}px ${displayFont}`;
-		ctx.fillText(this.initials(), 250, (256 + (fontSize / 2.5)));
+		ctx.fillText(this.initials(), 256, (256 + (fontSize / 3.0)));
 
 		return canvas;
 	}
