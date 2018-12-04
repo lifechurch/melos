@@ -2,7 +2,7 @@ const fs = require('fs');
 const { createCanvas, registerFont, Canvas, Image } = require('canvas');
 const canvg = require('canvg');
 const displayFont = 'Futura PT Cond';
-const lengthyStringLocales = ['ar', 'vi', 'el']
+const lengthyStringLocales = ['ar', 'vi', 'el', 'fa', 'ta', 'ja']
 
 global.Intl = require('intl');
 const StackBlur = require('stackblur-canvas');
@@ -11,6 +11,7 @@ registerFont('./fonts/FuturaPTCondBold.ttf', { family: 'Futura PT Cond' })
 registerFont('./fonts/FuturaPTCondExtraBold.ttf', { family: 'Futura PT Cond Extra Bold' })
 registerFont('./fonts/FuturaPTLight.ttf', { family: 'Futura PT Light' })
 registerFont('./fonts/FuturaPTCondMedium.ttf', { family: 'Futura PT Cond Medium' })
+
 
 const OrderedStatNames = [
 	'plan_completions',
@@ -231,7 +232,10 @@ class Snapshot {
 		let outerW = 0;
 		let pillPadding = 0;
 
-		ctx.font = this.fontStyle({ sizeModifier: 0.45, font: 'Futura PT Cond Medium' });
+		ctx.font = this.fontStyle({
+			sizeModifier: lengthyStringLocales.includes(this.locale) ? 0.35 : 0.45,
+			font: 'Futura PT Cond Medium'
+		});
 		ctx.fillStyle = Colors.white;
 
 		textW = ctx.measureText(pillString).width;

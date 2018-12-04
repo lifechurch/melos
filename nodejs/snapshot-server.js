@@ -34,15 +34,15 @@ appLogoSizes.forEach((size) => {
 });
 
 const DefaultMomentData = {
-	plan_completions: 0,
-	highlights: 0,
-	notes: 0,
-	images: 19,
-	badges: 0,
-	bookmarks: 0,
-	friendships: 0,
-	days_in_app: 111,
-	perfect_weeks: 2
+	plan_completions: 32,
+	highlights: 1,
+	notes: 4,
+	images: 7,
+	badges: 12,
+	bookmarks: 7,
+	friendships: 9,
+	days_in_app: 115,
+	perfect_weeks: 7
 }
 
 
@@ -285,7 +285,7 @@ router.get('/snapshot/:user_id_hash/:user_id/:size', (req, res) => {
 		const userData = results[0];
 		const momentData = results[1];
 
-		graphic.momentData = DefaultMomentData //momentData;
+		graphic.momentData = DefaultMomentData// momentData;
 		avatar = new AvatarImage(userData);
 		avatar.graphicSize = imageSize;
 		avatar.load((data) => {
