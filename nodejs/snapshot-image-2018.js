@@ -1,12 +1,16 @@
 const fs = require('fs');
-const Canvas = require('canvas');
-const Image = Canvas.Image;
+const { createCanvas, registerFont, Canvas, Image } = require('canvas');
 const canvg = require('canvg');
-const displayFont = 'Futura';
+const displayFont = 'Futura PT Cond';
 const lengthyStringLocales = ['ar', 'vi', 'el']
 
 global.Intl = require('intl');
 const StackBlur = require('stackblur-canvas');
+
+registerFont('./fonts/FuturaPTCondBold.ttf', { family: 'Futura PT Cond' })
+registerFont('./fonts/FuturaPTCondExtraBold.ttf', { family: 'Futura PT Cond Extra Bold' })
+registerFont('./fonts/FuturaPTLight.ttf', { family: 'Futura PT Light' })
+registerFont('./fonts/FuturaPTCondMedium.ttf', { family: 'Futura PT Cond Medium' })
 
 const OrderedStatNames = [
 	'plan_completions',
@@ -49,7 +53,7 @@ const DefaultMomentData = {
 	bookmarks: 0,
 	friendships: 0,
 	days_in_app: 0,
-	perfect_weeks: 0
+	perfect_weeks: 15
 }
 
 class Icon {
@@ -57,7 +61,7 @@ class Icon {
 		this.svgString = svgString;
 		this.width = w;
 		this.height = h;
-		this.canvas = new Canvas(w, h);
+		this.canvas = createCanvas(w, h);
 		this.image = new Image();
 		this.data = data;
 		this.render();
@@ -78,7 +82,7 @@ class Snapshot {
 		this.widthLeftPane = this.width * 0.625;
 
 		this.fontSize = this.relativeFontSize();
-		this._canvas = new Canvas(size, size);
+		this._canvas = createCanvas(size, size);
 		this.ctx = this._canvas.getContext('2d');
 
 		this.localeData = localeData;
@@ -151,7 +155,7 @@ class Snapshot {
 		const picture = new Image(this.width, this.height);
 		picture.src = this.avatarData;
 
-		const imageCanvas = new Canvas(this.width, this.height);
+		const imageCanvas = createCanvas(this.width, this.height);
 		const ictx = imageCanvas.getContext('2d');
 
 		ictx.drawImage(picture, this.width * 0.3, 0, this.width, this.height);
@@ -169,7 +173,7 @@ class Snapshot {
 		const headerString = this.translationStrings.my_year.toUpperCase(); // upcase here to make sure text measurements are correct later
 		const headerSizeMod = lengthyStringLocales.includes(this.locale) ? 0.42 : 0.55;
 
-		ctx.font = this.fontStyle({ sizeModifier: headerSizeMod });
+		ctx.font = this.fontStyle({ sizeModifier: headerSizeMod, font: 'Futura PT Cond Medium' });
 		ctx.fillStyle = Colors.medGrey;
 
 		const headerTextW = ctx.measureText(headerString).width;
@@ -182,9 +186,9 @@ class Snapshot {
 		// setup gradient based off pill size first.
 		const ctx = this.ctx;
 		const pillX = this.relativeX(0.15, this.widthLeftPane);
-		const pillY = this.relativeY(0.7);
+		const pillY = this.relativeY(0.72);
 		const pillW = this.relativeW(0.70, this.widthLeftPane);
-		const pillH = this.relativeH(0.085);
+		const pillH = this.relativeH(0.070);
 		const pillRadius = this.relativeH(0.55, pillH);
 		const gradient = ctx.createLinearGradient(pillX, pillY, pillX + pillW, pillY + pillH);
 		gradient.addColorStop(0, '#2b3890');
@@ -227,7 +231,7 @@ class Snapshot {
 		let outerW = 0;
 		let pillPadding = 0;
 
-		ctx.font = this.fontStyle({ sizeModifier: 0.50 });
+		ctx.font = this.fontStyle({ sizeModifier: 0.45, font: 'Futura PT Cond Medium' });
 		ctx.fillStyle = Colors.white;
 
 		textW = ctx.measureText(pillString).width;
@@ -243,12 +247,12 @@ class Snapshot {
 		// Start text rendering at pillPadding value
 		// Build all other X locations for icon and stat values upon the previously drawn item
 		textX = pillPadding;
-		textY = pillY + (pillH / 1.65);
+		textY = pillY + (pillH / 1.5);
 		ctx.fillText(pillString, textX, textY);
 
 
 		iconX = textX + textW + iconW;
-		iconY = textY - (iconH / 4);
+		iconY = textY - (iconH / 3);
 		this.drawIcon(
 			new Icon(Svgs.perfect_weeks, iconW, iconH),
 			iconX,
@@ -266,9 +270,9 @@ class Snapshot {
 	drawDaysInApp() {
 		const ctx = this.ctx;
 		const daysString = this.translationStrings.days_in_app.toUpperCase(); // upcase here to make sure text measurements are correct later
-		const daysStringY = this.hasPerfectWeeks ? this.relativeY(0.65) : this.relativeY(0.75);
+		const daysStringY = this.hasPerfectWeeks ? this.relativeY(0.67) : this.relativeY(0.8);
 		const localeSizeModifier = lengthyStringLocales.includes(this.locale) ? 0.52 : 0.65;
-		const overallModifier = localeSizeModifier * (this.hasPerfectWeeks ? 1 : 1.25);
+		const overallModifier = localeSizeModifier * (this.hasPerfectWeeks ? 1 : 1.15);
 
 
 		ctx.fillStyle = this.horizontalGradient;
@@ -291,11 +295,12 @@ class Snapshot {
 
 		const ctx = this.ctx;
 		const dayNumString = this.momentData.days_in_app;
-		const dayNumStringY = this.hasPerfectWeeks ? this.relativeY(0.57) : this.relativeY(0.65);
+		const dayNumStringY = this.hasPerfectWeeks ? this.relativeY(0.6) : this.relativeY(0.7);
 
 		ctx.font = this.fontStyle({
 			bold: true,
-			sizeModifier: this.hasPerfectWeeks? 3.85 : 5.25
+			sizeModifier: this.hasPerfectWeeks? 3.5 : 5.15,
+			font: 'Futura PT Cond Extra Bold'
 		});
 
 		const dayNumStringW = ctx.measureText(dayNumString).width;
@@ -312,11 +317,11 @@ class Snapshot {
 		const fontColor = '#616161';
 		const text = 'Bible.com/app';
 
-		ctx.font = this.fontStyle({ sizeModifier: 0.45 });
+		ctx.font = this.fontStyle({ sizeModifier: 0.35, font: 'Futura PT Light' });
 		ctx.fillStyle = fontColor;
 		ctx.fillText(
 			text,
-			this.relativeX(0.48, this.widthLeftPane),
+			this.relativeX(0.46, this.widthLeftPane),
 			this.relativeY(0.91)
 		);
 
@@ -324,7 +329,7 @@ class Snapshot {
 		img.src = this.appLogo;
 		ctx.drawImage(
 			img,
-			Math.round(this.relativeX(0.33, this.widthLeftPane)),
+			Math.round(this.relativeX(0.31, this.widthLeftPane)),
 			Math.round(this.relativeY(0.865)),
 			Math.round(this.relativeW(0.07)),
 			Math.round(this.relativeH(0.07))
@@ -354,23 +359,24 @@ class Snapshot {
 
 		switch (statNames.length) {
 			case 1:
-				yPositions = [this.relativeY(0.40)];
+				yPositions = [this.relativeY(0.42)];
 				iconSize = this.relativeW(0.15);
 				sizeModifier = 2.5
+				break;
 			case 2:
-				yPositions = [this.relativeY(0.25), this.relativeY(0.65)];
+				yPositions = [this.relativeY(0.28), this.relativeY(0.65)];
 				sizeModifier = 1.5
 				iconSize = this.relativeW(0.08);
 				break;
 			case 3:
-				yPositions = [this.relativeY(0.15), this.relativeY(0.45), this.relativeY(0.75)]
-				sizeModifier = 1.5
+				yPositions = [this.relativeY(0.15), this.relativeY(0.45), this.relativeY(0.77)]
+				sizeModifier = 1.4
 				iconSize = this.relativeW(0.08);
 				break;
 			case 4:
-				yPositions = [this.relativeY(0.125), this.relativeY(0.36), this.relativeY(0.59), this.relativeY(0.82)]
+				yPositions = [this.relativeY(0.125), this.relativeY(0.35), this.relativeY(0.59), this.relativeY(0.82)]
 				sizeModifier = 1.2
-				iconSize = this.relativeW(0.065);
+				iconSize = this.relativeW(0.060);
 				break;
 			default:
 				break;
@@ -477,10 +483,11 @@ class Snapshot {
 		const ctx = this.ctx;
 		const stringX = this.relativeX(1.05, this.widthLeftPane);
 		const separatorX = this.relativeX(1.035, this.widthLeftPane);
-		const numX = this.relativeX(0.94, this.width);
+		const numX = this.relativeX(0.93, this.width);
 
 		// String to left (Plan, Highlight, etc)
-		ctx.font = `${this.relativeFontSize() * 0.35}px ${displayFont}`;
+
+		ctx.font = this.fontStyle({sizeModifier: 0.35, font: 'Futura PT Cond Medium' })
 		ctx.fillStyle = Colors.white;
 		ctx.fillText(
 			statString.toUpperCase(),
@@ -489,7 +496,7 @@ class Snapshot {
 		);
 
 		// Stat number to the right
-		ctx.font = `${this.relativeFontSize() * 0.45}px ${displayFont}`;
+		ctx.font = this.fontStyle({sizeModifier: 0.45, font: 'Futura PT Cond Medium' })
 
 		ctx.fillText(
 			statNum,
@@ -499,8 +506,8 @@ class Snapshot {
 
 		this.drawIcon(
 			statIcon,
-			this.relativeX(0.9),
-			statY - (statIcon.height / 3),
+			this.relativeX(0.89),
+			statY - (statIcon.height / 3.1),
 		);
 
 		if (drawSeparator) {
@@ -528,13 +535,13 @@ class Snapshot {
 		let stringW = 0;
 		let stringH = 0;
 
-		// String to left (Plan, Highlight, etc)
-		ctx.font = `${(this.relativeFontSize() * textSizeModifier) / 4}px ${displayFont}`;
+
+		ctx.font = this.fontStyle({font: 'Futura PT Cond Medium', sizeModifier: (textSizeModifier / 3.5)});
 		ctx.fillStyle = Colors.white;
 		stringW = ctx.measureText(statString).width;
 		stringH = ctx.measureText(statString).height;
-		stringX = xPos - (stringW * 0.60);
-		stringY = statY - (statIcon.height / 1.5);
+		stringX = xPos - (stringW * 0.50);
+		stringY = statY - (statIcon.height / 1.50);
 
 		ctx.fillText(
 			statString.toUpperCase(),
@@ -548,14 +555,14 @@ class Snapshot {
 			statY
 		);
 
-		ctx.font = `${this.relativeFontSize() * textSizeModifier}px ${displayFont}`;
+		ctx.font = this.fontStyle({font: 'Futura PT Cond Medium', sizeModifier: textSizeModifier / 1.2});
 		ctx.fillStyle = Colors.white;
 		numW = ctx.measureText(statNum).width;
 
 		ctx.fillText(
 			statNum,
 			xPos - (numW * 0.5),
-			statY + (statIcon.height * 1.5),
+			statY + (statIcon.height * 1.6),
 		)
 	}
 
@@ -586,7 +593,7 @@ class Snapshot {
 		const halfImageSize = imageSize / 2
 		const x = this.relativeX(0.50, this.widthLeftPane);
 		const y = this.relativeY(0.28);
-		const textY = this.relativeY(0.29);
+		const textY = this.relativeY(0.295);
 		const ctx = this.ctx;
 
 		const img = new Image();
@@ -612,7 +619,7 @@ class Snapshot {
 		);
 		ctx.restore();
 
-		ctx.font = this.fontStyle({});
+		ctx.font = this.fontStyle({sizeModifier: 0.9, font: 'Futura PT Cond Medium'});
 		ctx.fillStyle = this.horizontalGradient;
 
 		const text20 = '20'
@@ -620,13 +627,13 @@ class Snapshot {
 
 		ctx.fillText(
 			text20,
-			x - halfImageSize - ctx.measureText(text20).width - this.relativeW(0.015),// - halfImageSize,// - (ctx.measureText(text20).width * 1.5),
+			x - halfImageSize - ctx.measureText(text20).width - this.relativeW(0.027),
 			textY
 		);
 
 		ctx.fillText(
 			text18,
-			x + halfImageSize + this.relativeW(0.015),// + (ctx.measureText(text18).width * 1.5),
+			x + halfImageSize + this.relativeW(0.025),
 			textY
 		);
 	}
@@ -665,7 +672,7 @@ class Snapshot {
 
 
 	relativeFontSize() {
-		return this.size * 0.05;
+		return this.size * 0.08;
 	}
 
 	relativeCircleSize(pct) {
@@ -760,7 +767,7 @@ class AvatarImage {
 			const svgString = '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.09 50.03"><defs><style>.cls-1{fill:#f2f2f2;}</style></defs><title>me</title><path class="cls-1" d="M24.87,48.86a24,24,0,1,1,24-24A24,24,0,0,1,24.87,48.86Z"/><path d="M24.83,14.91a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM16.05,31.57q1.14-3.71,9.32-3.71t9.32,3.71a1,1,0,0,1-1,1.29H17a1,1,0,0,1-1-1.29Z"/><path class="cls-1" d="M24.87.86a24,24,0,1,0,24,24A24,24,0,0,0,24.87.86Zm0,14a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM34,32.82a1,1,0,0,1-.29,0H17a1,1,0,0,1-1-1.29q1.14-3.71,9.32-3.71t9.32,3.71A1,1,0,0,1,34,32.82Z"/><path d="M21.41,22.44a4.13,4.13,0,0,0,8.14,0l.38-2.56a4.48,4.48,0,1,0-8.91,0Z"/><path d="M25.37,27.86q-8.18,0-9.32,3.71a1,1,0,0,0,1,1.29H33.73a1,1,0,0,0,1-1.29Q33.55,27.86,25.37,27.86Z"/></svg>';
 			const w = this.graphicSize * 0.30;
 			const h = this.graphicSize * 0.30;
-			const canvas = new Canvas(w, h);
+			const canvas = createCanvas(w, h);
 
 			canvg(canvas, svgString, { ignoreMouse: true, ignoreAnimation: true, ImageClass: Image });
 			cb(canvas.toBuffer());
@@ -771,7 +778,7 @@ class AvatarImage {
 	}
 
 	renderInitials() {
-		const canvas = new Canvas(512, 512); // same size as large avatar
+		const canvas = createCanvas(512, 512); // same size as large avatar
 		const ctx = canvas.getContext('2d');
 
 		const bgColor = '#f2f2f2';

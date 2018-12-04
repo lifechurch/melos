@@ -1,6 +1,5 @@
 const fs = require('fs');
-const Canvas = require('canvas');
-const Image = Canvas.Image;
+const { createCanvas, Canvas, Image } = require('canvas');
 const canvg = require('canvg');
 const displayFont = 'Arial Unicode MS';
 const lengthyStringLocales = ['ar', 'vi', 'el']
@@ -12,7 +11,7 @@ class Icon {
 		this.svgString = svgString;
 		this.width = w;
 		this.height = h;
-		this.canvas = new Canvas(w, h);
+		this.canvas = createCanvas(w, h);
 		this.image = new Image();
 		this.data = data;
 		this.render();
@@ -32,7 +31,7 @@ class Snapshot {
 		this.fontSize = this.relativeFontSize();
 		this.fontStyle = `${this.fontSize}px ${displayFont}`;
 
-		this._canvas = new Canvas(size, size);
+		this._canvas = createCanvas(size, size);
 		this.ctx = this._canvas.getContext('2d');
 
 		this.colors = {
@@ -491,7 +490,7 @@ class AvatarImage {
 			const svgString = '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.09 50.03"><defs><style>.cls-1{fill:#f2f2f2;}</style></defs><title>me</title><path class="cls-1" d="M24.87,48.86a24,24,0,1,1,24-24A24,24,0,0,1,24.87,48.86Z"/><path d="M24.83,14.91a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM16.05,31.57q1.14-3.71,9.32-3.71t9.32,3.71a1,1,0,0,1-1,1.29H17a1,1,0,0,1-1-1.29Z"/><path class="cls-1" d="M24.87.86a24,24,0,1,0,24,24A24,24,0,0,0,24.87.86Zm0,14a4.4,4.4,0,0,1,5.1,5l-.38,2.56a4.13,4.13,0,0,1-8.14,0L21,19.88A4.4,4.4,0,0,1,24.83,14.91ZM34,32.82a1,1,0,0,1-.29,0H17a1,1,0,0,1-1-1.29q1.14-3.71,9.32-3.71t9.32,3.71A1,1,0,0,1,34,32.82Z"/><path d="M21.41,22.44a4.13,4.13,0,0,0,8.14,0l.38-2.56a4.48,4.48,0,1,0-8.91,0Z"/><path d="M25.37,27.86q-8.18,0-9.32,3.71a1,1,0,0,0,1,1.29H33.73a1,1,0,0,0,1-1.29Q33.55,27.86,25.37,27.86Z"/></svg>';
 			const w = this.graphicSize * 0.30;
 			const h = this.graphicSize * 0.30;
-			const canvas = new Canvas(w, h);
+			const canvas = createCanvas(w, h);
 
 			canvg(canvas, svgString, { ignoreMouse: true, ignoreAnimation: true, ImageClass: Image });
 			cb(canvas.toBuffer());
@@ -502,7 +501,7 @@ class AvatarImage {
 	}
 
 	renderInitials() {
-		const canvas = new Canvas(512, 512); // same size as large avatar
+		const canvas = createCanvas(512, 512); // same size as large avatar
 		const ctx = canvas.getContext('2d');
 
 		const bgColor = '#f2f2f2';

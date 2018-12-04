@@ -26,7 +26,7 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.13.3",
     "browserify": "^13.3.0",
-    "canvas": "^1.6.7",
+    "canvas": "^2.2.0",
     "canvg": "https://github.com/fuzhenn/canvg",
     "compression": "^1.6.0",
     "cookie-parser": "^1.4.1",
