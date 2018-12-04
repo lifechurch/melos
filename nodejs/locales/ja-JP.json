@@ -417,7 +417,7 @@
 	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "ロケーションを入力",
 	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "ロケーションは複数入力できます",
 	"features.EventEdit.features.location.components.LocationAddButtons.addVirtual": "仮のロケーションを入力",
-	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "ご存知でしたか?<a className='button-caption' href='{url}'>Church Online Platform</a>を使うと、無料でオンラインのミニストリーを開始することができます。",
+	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "ご存知でしたか?<a className='button-caption' href='{url}'>Church Online Platform</a>を使うと、無料でオ���ラインのミニストリーを開始することができます。",
 	"features.EventEdit.features.location.components.LocationAddTime.minutes": "分",
 	"features.EventEdit.features.location.components.LocationAddTime.hours": "時間",
 	"features.EventEdit.features.location.components.LocationAddTime.days": "日",

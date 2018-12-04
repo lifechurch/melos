@@ -415,7 +415,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Напред: Добавете място и време →",
 	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} не може да е непопълнено.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Добавете поне един начален час.",
-	"features.EventEdit.features.location.components.Location.use": "ИЗПОЛЗВА�� ТОВА МЕСТОПОЛОЖЕНИЕ",
+	"features.EventEdit.features.location.components.Location.use": "ИЗПОЛЗВАЙ ТОВА МЕСТОПОЛОЖЕНИЕ",
 	"features.EventEdit.features.location.components.Location.edit": "Редактиране на местоположение",
 	"features.EventEdit.features.location.components.Location.delete": "Изтриване на местоположение",
 	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "Добавете физическо местоположение",

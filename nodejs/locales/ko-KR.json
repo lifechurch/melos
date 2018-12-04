@@ -300,7 +300,7 @@
 	"containers.Auth.forgotPassword": "비밀번호 찾기",
 	"containers.EventEdit.event": "이벤트",
 	"containers.EventEditContentContainer.choose": "내용을 선택하시고 시작하세요",
-	"containers.EventEditContentContainer.needHelp": "도움이 필요하신가요?",
+	"containers.EventEditContentContainer.needHelp": "도움이 필요하신가��?",
 	"containers.EventEditContentContainer.title": "이벤트 내용",
 	"containers.EventEditContentContainer.previous": "←이전: 장소와 시간",
 	"containers.EventEditContentContainer.next": "다음: 미리보기→",
