@@ -268,7 +268,7 @@ class Snapshot {
 	drawDaysInApp() {
 		const ctx = this.ctx;
 		const daysString = this.translationStrings.days_in_app.toUpperCase(); // upcase here to make sure text measurements are correct later
-		const daysStringY = this.hasPerfectWeeks ? this.relativeY(0.67) : this.relativeY(0.8);
+		const daysStringY = this.hasPerfectWeeks ? this.relativeY(0.67) : this.relativeY(0.787);
 		const localeSizeModifier = lengthyStringLocales.includes(this.locale) ? 0.52 : 0.65;
 		const overallModifier = localeSizeModifier * (this.hasPerfectWeeks ? 1 : 1.15);
 
@@ -293,16 +293,16 @@ class Snapshot {
 
 		const ctx = this.ctx;
 		const dayNumString = this.momentData.days_in_app;
-		const dayNumStringY = this.hasPerfectWeeks ? this.relativeY(0.6) : this.relativeY(0.7);
+		const dayNumStringY = this.hasPerfectWeeks ? this.relativeY(0.6) : this.relativeY(0.678);
 
 		ctx.font = this.fontStyle({
 			bold: true,
-			sizeModifier: this.hasPerfectWeeks? 3.5 : 5.15,
+			sizeModifier: this.hasPerfectWeeks? 3.5 : 4.5,
 			font: 'Futura PT Cond Extra Bold'
 		});
 
 		const dayNumStringW = ctx.measureText(dayNumString).width;
-		const dayNumStringX = this.relativeX(0.5, this.widthLeftPane) - (dayNumStringW / 2);
+		const dayNumStringX = this.relativeX(0.5, this.widthLeftPane) - (dayNumStringW / 1.9);
 		ctx.fillText(
 			dayNumString,
 			dayNumStringX,
