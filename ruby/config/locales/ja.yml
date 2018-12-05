@@ -2028,7 +2028,7 @@ ja:
     hi name: "%{name} さん、こんにちわ。"
     your snapshot: "この1年間の聖書アプリの利用を振り返ったスナップショットです。"
     user snapshot: "%{user}さんの%{year}年のスナップショット"
-    days in app: "日アプリを使っています。"
+    days in app: "日アプリを使っています"
     perfect weeks: "欠かさず読んだ週"
     plan days: "プラン日数"
     new friends: "新しい友達"
