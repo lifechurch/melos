@@ -10,12 +10,15 @@ registerFont('./fonts/FuturaPTCondMedium.ttf', { family: 'Futura PT Cond Medium'
 registerFont('./fonts/NotoSansCJKsc-Regular.otf', { family: 'Noto Sans CJK SC Regular' });
 
 const localeSizes = {
+	ar: {
+		my_year: 0.4,
+	},
+
 	el: {
 		my_year: 0.25,
 		perfect_weeks: 0.30,
 		days_in_app: 0.45,
 		badges: 0.26,
-		plan_completions: 0.3,
 		bookmarks: 0.3
 	},
 
@@ -23,7 +26,6 @@ const localeSizes = {
 		my_year: 0.24,
 		perfect_weeks: 0.35,
 		days_in_app: 0.47,
-		plan_completions: 0.20,
 	},
 
 	fa: {
