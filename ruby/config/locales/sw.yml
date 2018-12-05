@@ -678,7 +678,7 @@ sw:
       tab friends: "Marafiki"
       tab notes: "maelezo"
       tab bookmarks: "Malamisho"
-      tab highlights: "Mambo muhimu:"
+      tab highlights: "Mambo muhimu"
       tab images: "Picha"
       tab badges: "Mabaji"
       first name: "jina la kwanza"
@@ -975,7 +975,7 @@ sw:
     close player menu: "Funga"
     publisher website: "Mtandao wa mchapishaji"
   highlights:
-    title: "Mambo muhimu:"
+    title: "Mambo muhimu"
     blank slate:
       heading: "Onyesha mafungu yenye maana"
       description: "Wakati wa kusoma Biblia, kuchagua fungu na lionyeshe kwa rangi. Rudi hapa kuona, hariri, au kufuta onyesha lako."
@@ -1193,7 +1193,7 @@ sw:
       small: "ndogo"
       medium: "Kati"
       large: "Kubwa"
-      highlights: "Mambo muhimu:"
+      highlights: "Mambo muhimu"
       contrast: "Linganisha"
       on: "washa"
       off: "zima"
@@ -1348,7 +1348,7 @@ sw:
       sign up: "Jiandikishe"
     profile menu:
       bookmarks: "Malamisho"
-      highlights: "Mambo muhimu:"
+      highlights: "Highlights"
       notes: "maelezo"
       images: "Picha"
       friends: "Marafiki"

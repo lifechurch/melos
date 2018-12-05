@@ -665,7 +665,7 @@ km:
       tab friends: "មិត្ត​ភក្តិ"
       tab notes: "កំណត់​ត្រា"
       tab bookmarks: "កំណត់​ចំណាំ​ច្រើន"
-      tab highlights: "គូស​ចំណាំៈ"
+      tab highlights: "គូស​ចំណាំ"
       tab images: "រូប​ភាព"
       tab badges: "ផ្លាក​សញ្ញា"
       first name: "នាម"
@@ -957,7 +957,7 @@ km:
     close player menu: "បិទ"
     publisher website: "គេហទំព័រ​របស់​អ្នក​បោះពុម្ភ​ផ្សាយ"
   highlights:
-    title: "គូស​ចំណាំៈ"
+    title: "គូស​ចំណាំ"
     blank slate:
       heading: "គូស​លើ​ខគម្ពីរ​ដែល​មានន័យ"
       description: "ពេល​អាន​ព្រះ​គម្ពីរ ជ្រើស​រើស​យក​ខគម្ពីរ​ហើយ​គួស​ពណ៌វា។ ត្រប់​មក​ទីនេះ ដើម្បី មើល កែសម្រួល ឬ​លុប​កំណត់​ចំណាំ​របស់​អ្នក"
@@ -1175,7 +1175,7 @@ km:
       small: "តូច"
       medium: "​មធ្យម"
       large: "ធំ"
-      highlights: "គូស​ចំណាំៈ"
+      highlights: "គូស​ចំណាំ"
       contrast: "ភាព​ផ្ទុយ​គ្នា"
       on: "បើ"
       off: "បិទ"
@@ -1330,7 +1330,7 @@ km:
       sign up: "ចុះ​ឈ្មោះ"
     profile menu:
       bookmarks: "កំណត់​ចំណាំ​ច្រើន"
-      highlights: "គូស​ចំណាំៈ"
+      highlights: "គូស​ចំណាំ"
       notes: "កំណត់​ត្រា"
       images: "រូប​ភាព"
       friends: "មិត្ត​ភក្តិ"
