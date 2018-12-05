@@ -408,7 +408,7 @@
 	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Po rozpoczęciu wydarzenia, nie możesz usuwać Tekstu, Odniesień do Biblii i modułów graficznych, ponieważ użytkownicy mogli już dodać do nich swoje prywatne notatki. Możesz, jednak, edytować te moduły.",
 	"features.EventEdit.features.content.components.LiveWarningModal.ok": "OK",
 	"features.EventEdit.features.details.errors.generic": "Wystąpił problem w trakcie publikowania twojego wydarzenia.",
-	"features.EventEdit.features.details.errors.invalidTimes": "Pojedyncze nabożeństwo nie może trwać dłużej niż 12 godzin, różnica pomiędzy najwcześniejszą godziną wydarzenia a ostatnią godziną zakończenia wydarzenia nie może być dłuższa niż 8 dni. Prosimy dostosuj godziny twojego wydarzenia i spróbuj ponownie.",
+	"features.EventEdit.features.details.errors.invalidTimes": "Pojedyncze nabożeństwo nie może trwać dłużej niż 12 godzin, różnica pomiędzy najwcześniejszą godziną wydarzenia a ostatnią godziną zakończenia wydarzenia nie może być dłuższa ni�� 8 dni. Prosimy dostosuj godziny twojego wydarzenia i spróbuj ponownie.",
 	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "Wielkość obrazka musi wynosić {requiredWidth}na{requiredHeight}. Twój obrazek ma {yourWidth}na{yourHeight}.",
 	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "Nieprawidłowy typ pliku. Musi być JPG.",
 	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "Zmień obrazek",
