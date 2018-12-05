@@ -92,7 +92,7 @@ class Snapshot extends Component {
 		} else {
 			topCopy = (
 				<div className="snapshot-top-copy">
-					<FormattedMessage tagName="h1" id="user snapshot" values={{ year: '2017', user: user.response.first_name }} />
+					<FormattedMessage tagName="h1" id="user snapshot" values={{ year: year, user: user.response.first_name }} />
 				</div>
 			)
 
@@ -124,7 +124,7 @@ class Snapshot extends Component {
             { property: 'fb:app_id', content: '105030176203924' },
             { property: 'og:image:height', content: '1000' },
             { property: 'og:image:width', content: '1000' },
-            { property: 'og:title', content: intl.formatMessage({ id: 'user snapshot' }, { year: '2017', user: user.response.first_name }) },
+            { property: 'og:title', content: intl.formatMessage({ id: 'user snapshot' }, { year: year, user: user.response.first_name }) },
             { property: 'og:description', content: intl.formatMessage({ id: 'your snapshot' }) },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@youversion' },
