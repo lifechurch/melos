@@ -1,27 +1,36 @@
 const { createCanvas, registerFont, Canvas, Image } = require('canvas');
 const canvg = require('canvg');
 const StackBlur = require('stackblur-canvas');
-
 global.Intl = require('intl');
-const displayFont = 'Futura PT Cond';
+
+registerFont('./fonts/FuturaPTCondBold.ttf', { family: 'Futura PT Cond' });
+registerFont('./fonts/FuturaPTCondExtraBold.ttf', { family: 'Futura PT Cond Extra Bold' });
+registerFont('./fonts/FuturaPTLight.ttf', { family: 'Futura PT Light' });
+registerFont('./fonts/FuturaPTCondMedium.ttf', { family: 'Futura PT Cond Medium' });
+registerFont('./fonts/NotoSansCJKsc-Regular.otf', { family: 'Noto Sans CJK SC Regular' });
 
 const localeSizes = {
 	el: {
 		my_year: 0.25,
 		perfect_weeks: 0.30,
-		days_in_app: 0.45
+		days_in_app: 0.45,
+		badges: 0.26,
+		plan_completions: 0.3,
+		bookmarks: 0.3
 	},
 
 	vi: {
-		my_year: 0.35,
+		my_year: 0.24,
 		perfect_weeks: 0.35,
-		days_in_app: 0.52
+		days_in_app: 0.47,
+		plan_completions: 0.20,
 	},
 
 	fa: {
 		my_year: 0.35,
 		perfect_weeks: 0.35,
 		days_in_app: 0.52,
+		plan_completions: 0.3,
 	},
 
 	'my-MM': {
@@ -82,14 +91,19 @@ function getLocaleSize(locale, key) {
 	} else {
 		return localeSizes.all[key]
 	}
+}
 
+function getLocaleFont(locale) {
+	switch (locale) {
+		case 'vi':
+			return 'Noto Sans CJK SC Regular';
+		default:
+			return 'Futura PT Cond';
+	}
 }
 
 
-registerFont('./fonts/FuturaPTCondBold.ttf', { family: 'Futura PT Cond' });
-registerFont('./fonts/FuturaPTCondExtraBold.ttf', { family: 'Futura PT Cond Extra Bold' });
-registerFont('./fonts/FuturaPTLight.ttf', { family: 'Futura PT Light' });
-registerFont('./fonts/FuturaPTCondMedium.ttf', { family: 'Futura PT Cond Medium' });
+
 
 const OrderedStatNames = [
 	'plan_completions',
@@ -183,7 +197,7 @@ class Snapshot {
 	get canvas() { return this._canvas; }
 
 	get locale() { return this._locale; }
-	set locale(l) { this._locale = l; }
+	set locale(l) { this._locale = l; this.displayFont = getLocaleFont(l); }
 
 	get localeData() { return this._localeData; }
 	set localeData(d) { this._localeData = d; }
@@ -205,7 +219,15 @@ class Snapshot {
 		return OrderedStatNames.filter(stat => this.momentData[stat] !== 0);
 	}
 
-	fontStyle({ bold = false, sizeModifier = 1.0, font = displayFont }) {
+	fontStyle({ bold = false, sizeModifier = 1.0, fontOverride = null }) {
+		let font;
+
+		if (this.locale === 'vi') { // don't use any overrides for VI
+			font = this.displayFont
+		} else {
+			font = fontOverride || this.displayFont;
+		}
+
 		return `${bold ? 'bold' : ''} ${this.relativeFontSize() * sizeModifier}px ${font}`;
 	}
 
@@ -248,9 +270,9 @@ class Snapshot {
 		// My Year in the Bible App
 		const ctx = this.ctx;
 		const headerString = this.translationStrings.my_year.toUpperCase(); // upcase here to make sure text measurements are correct later
-		let headerSizeMod = getLocaleSize(this.locale, 'my_year');
+		const headerSizeMod = getLocaleSize(this.locale, 'my_year');
 
-		ctx.font = this.fontStyle({ sizeModifier: headerSizeMod, font: 'Futura PT Cond Medium' });
+		ctx.font = this.fontStyle({ sizeModifier: headerSizeMod, fontOverride: 'Futura PT Cond Medium' });
 		ctx.fillStyle = Colors.medGrey;
 
 		const headerTextW = ctx.measureText(headerString).width;
@@ -307,7 +329,7 @@ class Snapshot {
 
 		ctx.font = this.fontStyle({
 			sizeModifier: getLocaleSize(this.locale, 'perfect_weeks'),
-			font: 'Futura PT Cond Medium'
+			fontOverride: 'Futura PT Cond Medium'
 		});
 		ctx.fillStyle = Colors.white;
 
@@ -377,7 +399,7 @@ class Snapshot {
 		ctx.font = this.fontStyle({
 			bold: true,
 			sizeModifier: this.hasPerfectWeeks ? 3.5 : 4.5,
-			font: 'Futura PT Cond Extra Bold'
+			fontOverride: 'Futura PT Cond Extra Bold'
 		});
 
 		const dayNumStringW = ctx.measureText(dayNumString).width;
@@ -394,7 +416,7 @@ class Snapshot {
 		const fontColor = '#616161';
 		const text = 'Bible.com/app';
 
-		ctx.font = this.fontStyle({ sizeModifier: 0.35, font: 'Futura PT Light' });
+		ctx.font = this.fontStyle({ sizeModifier: 0.35, fontOverride: 'Futura PT Light' });
 		ctx.fillStyle = fontColor;
 		ctx.fillText(
 			text,
@@ -548,7 +570,7 @@ class Snapshot {
 
 		// String to left (Plan, Highlight, etc)
 
-		ctx.font = this.fontStyle({ sizeModifier: labelSizeMod, font: 'Futura PT Cond Medium' });
+		ctx.font = this.fontStyle({ sizeModifier: labelSizeMod, fontOverride: 'Futura PT Cond Medium' });
 		ctx.fillStyle = Colors.white;
 		ctx.fillText(
 			statString.toUpperCase(),
@@ -557,7 +579,7 @@ class Snapshot {
 		);
 
 		// Stat number to the right
-		ctx.font = this.fontStyle({ sizeModifier: 0.45, font: 'Futura PT Cond Medium' });
+		ctx.font = this.fontStyle({ sizeModifier: 0.45, fontOverride: 'Futura PT Cond Medium' });
 
 		ctx.fillText(
 			statNum,
@@ -596,7 +618,7 @@ class Snapshot {
 		let stringW = 0;
 
 
-		ctx.font = this.fontStyle({ font: 'Futura PT Cond Medium', sizeModifier: (textSizeModifier / 3.5) });
+		ctx.font = this.fontStyle({ fontOverride: 'Futura PT Cond Medium', sizeModifier: (textSizeModifier / 3.5) });
 		ctx.fillStyle = Colors.white;
 		stringW = ctx.measureText(statString).width;
 		stringX = xPos - (stringW * 0.50);
@@ -614,7 +636,7 @@ class Snapshot {
 			statY
 		);
 
-		ctx.font = this.fontStyle({ font: 'Futura PT Cond Medium', sizeModifier: textSizeModifier / 1.2 });
+		ctx.font = this.fontStyle({ fontOverride: 'Futura PT Cond Medium', sizeModifier: textSizeModifier / 1.2 });
 		ctx.fillStyle = Colors.white;
 		numW = ctx.measureText(statNum).width;
 
@@ -685,7 +707,7 @@ class Snapshot {
 
 		// 20 (     ) 18
 		// 2018 Text around the profile pic
-		ctx.font = this.fontStyle({ sizeModifier: 0.9, font: 'Futura PT Cond Medium' });
+		ctx.font = this.fontStyle({ sizeModifier: 0.9, fontOverride: 'Futura PT Cond Medium' });
 		ctx.fillStyle = this.horizontalGradient;
 
 		ctx.fillText(
