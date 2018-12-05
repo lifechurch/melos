@@ -1,11 +1,90 @@
-const fs = require('fs');
 const { createCanvas, registerFont, Canvas, Image } = require('canvas');
 const canvg = require('canvg');
 const StackBlur = require('stackblur-canvas');
 
 global.Intl = require('intl');
 const displayFont = 'Futura PT Cond';
-const lengthyStringLocales = ['ar', 'vi', 'el', 'fa', 'ta', 'ja'];
+
+const localeSizes = {
+	el: {
+		my_year: 0.25,
+		perfect_weeks: 0.30,
+		days_in_app: 0.45
+	},
+
+	vi: {
+		my_year: 0.35,
+		perfect_weeks: 0.35,
+		days_in_app: 0.52
+	},
+
+	fa: {
+		my_year: 0.35,
+		perfect_weeks: 0.35,
+		days_in_app: 0.52,
+	},
+
+	'my-MM': {
+		my_year: 0.35,
+		perfect_weeks: 0.25,
+		days_in_app: 0.45
+	},
+
+	th: {
+		perfect_weeks: 0.30
+	},
+
+	my: {
+		perfect_weeks: 0.25,
+		days_in_app: 0.45
+	},
+
+	ta: {
+		my_year: 0.3,
+		perfect_weeks: 0.30,
+		days_in_app: 0.52,
+		badges: 0.26,
+	},
+
+	mk: {
+		plan_completions: 0.3,
+	},
+
+	'zh-CN': {
+		plan_completions: 0.3,
+	},
+
+	ro: {
+		days_in_app: 0.55
+	},
+
+	all: {
+		my_year: 0.55,
+		perfect_weeks: 0.45,
+		days_in_app: 0.65,
+		plan_completions: 0.35,
+		highlights: 0.35,
+		bookmarks: 0.35,
+		images: 0.35,
+		badges: 0.35,
+		friendships: 0.35,
+		notes: 0.35,
+	}
+}
+
+function getLocaleSize(locale, key) {
+	if (locale in localeSizes) {
+		if (key in localeSizes[locale]) {
+			return localeSizes[locale][key];
+		} else {
+			return localeSizes.all[key]
+		}
+	} else {
+		return localeSizes.all[key]
+	}
+
+}
+
 
 registerFont('./fonts/FuturaPTCondBold.ttf', { family: 'Futura PT Cond' });
 registerFont('./fonts/FuturaPTCondExtraBold.ttf', { family: 'Futura PT Cond Extra Bold' });
@@ -169,7 +248,7 @@ class Snapshot {
 		// My Year in the Bible App
 		const ctx = this.ctx;
 		const headerString = this.translationStrings.my_year.toUpperCase(); // upcase here to make sure text measurements are correct later
-		const headerSizeMod = lengthyStringLocales.includes(this.locale) ? 0.42 : 0.55;
+		let headerSizeMod = getLocaleSize(this.locale, 'my_year');
 
 		ctx.font = this.fontStyle({ sizeModifier: headerSizeMod, font: 'Futura PT Cond Medium' });
 		ctx.fillStyle = Colors.medGrey;
@@ -227,7 +306,7 @@ class Snapshot {
 		let pillPadding = 0;
 
 		ctx.font = this.fontStyle({
-			sizeModifier: lengthyStringLocales.includes(this.locale) ? 0.35 : 0.45,
+			sizeModifier: getLocaleSize(this.locale, 'perfect_weeks'),
 			font: 'Futura PT Cond Medium'
 		});
 		ctx.fillStyle = Colors.white;
@@ -269,7 +348,7 @@ class Snapshot {
 		const ctx = this.ctx;
 		const daysString = this.translationStrings.days_in_app.toUpperCase(); // upcase here to make sure text measurements are correct later
 		const daysStringY = this.hasPerfectWeeks ? this.relativeY(0.67) : this.relativeY(0.787);
-		const localeSizeModifier = lengthyStringLocales.includes(this.locale) ? 0.52 : 0.65;
+		const localeSizeModifier = getLocaleSize(this.locale, 'days_in_app');
 		const overallModifier = localeSizeModifier * (this.hasPerfectWeeks ? 1 : 1.15);
 
 
@@ -297,7 +376,7 @@ class Snapshot {
 
 		ctx.font = this.fontStyle({
 			bold: true,
-			sizeModifier: this.hasPerfectWeeks? 3.5 : 4.5,
+			sizeModifier: this.hasPerfectWeeks ? 3.5 : 4.5,
 			font: 'Futura PT Cond Extra Bold'
 		});
 
@@ -416,6 +495,7 @@ class Snapshot {
 			const statY = (index === 0) ? beginStatY : (beginStatY + (statH * index));
 			const drawSeparator = (index === totalStats - 1) ? false : true;
 			this.drawStat(
+				statName,
 				this.translationStrings[statName],
 				new Icon(
 					Svgs[statName],
@@ -459,15 +539,16 @@ class Snapshot {
 		this.drawStats();
 	}
 
-	drawStat(statString, statIcon, statNum, statY, drawSeparator = true) {
+	drawStat(statKey, statString, statIcon, statNum, statY, drawSeparator = true) {
 		const ctx = this.ctx;
 		const stringX = this.relativeX(1.05, this.widthLeftPane);
 		const separatorX = this.relativeX(1.035, this.widthLeftPane);
 		const numX = this.relativeX(0.93, this.width);
+		const labelSizeMod = getLocaleSize(this.locale, statKey);
 
 		// String to left (Plan, Highlight, etc)
 
-		ctx.font = this.fontStyle({sizeModifier: 0.35, font: 'Futura PT Cond Medium' });
+		ctx.font = this.fontStyle({ sizeModifier: labelSizeMod, font: 'Futura PT Cond Medium' });
 		ctx.fillStyle = Colors.white;
 		ctx.fillText(
 			statString.toUpperCase(),
@@ -476,7 +557,7 @@ class Snapshot {
 		);
 
 		// Stat number to the right
-		ctx.font = this.fontStyle({sizeModifier: 0.45, font: 'Futura PT Cond Medium' });
+		ctx.font = this.fontStyle({ sizeModifier: 0.45, font: 'Futura PT Cond Medium' });
 
 		ctx.fillText(
 			statNum,
@@ -492,7 +573,7 @@ class Snapshot {
 
 		if (drawSeparator) {
 			const lineY = statY + statIcon.height;
-			const grd=ctx.createLinearGradient(separatorX, lineY, this.width, lineY);
+			const grd = ctx.createLinearGradient(separatorX, lineY, this.width, lineY);
 			grd.addColorStop(0, 'rgba(255,255,255,0.35)');
 			grd.addColorStop(1, 'rgba(255,255,255,0.35)');
 
@@ -513,13 +594,11 @@ class Snapshot {
 		let stringX = 0;
 		let stringY = 0;
 		let stringW = 0;
-		let stringH = 0;
 
 
 		ctx.font = this.fontStyle({ font: 'Futura PT Cond Medium', sizeModifier: (textSizeModifier / 3.5) });
 		ctx.fillStyle = Colors.white;
 		stringW = ctx.measureText(statString).width;
-		stringH = ctx.measureText(statString).height;
 		stringX = xPos - (stringW * 0.50);
 		stringY = statY - (statIcon.height / 1.50);
 
