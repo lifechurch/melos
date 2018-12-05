@@ -7,6 +7,8 @@ import { FormattedMessage, FormattedHTMLMessage, injectIntl } from 'react-intl'
 import localizedLink from '@youversion/utils/lib/routes/localizedLink'
 import ShareSheet from '../../../widgets/ShareSheet/ShareSheet'
 import shareAction from '../../../widgets/ShareSheet/action'
+import Snapshot500 from '../../../../images/Snapshot500.jpg'
+import Snapshot1000 from '../../../../images/Snapshot1000.jpg'
 
 class Snapshot extends Component {
 	handleShare = () => {
@@ -20,8 +22,8 @@ class Snapshot extends Component {
 
 	renderGeneric() {
 		const { locale, nodeHost, railsHost, intl } = this.props
-		const imgSrc = `${nodeHost}/snapshot/default/500?locale=${locale}`
-		const imgSrc2x = `${nodeHost}/snapshot/default/1000?locale=${locale}`
+		const imgSrc = `${nodeHost}${Snapshot500}`
+		const imgSrc2x = `${nodeHost}${Snapshot1000}`
 		const snapshotUrl = `${railsHost}/snapshot`
 
 		return (
