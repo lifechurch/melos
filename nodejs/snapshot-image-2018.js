@@ -181,7 +181,7 @@ class Snapshot {
 		this.localeData = localeData;
 
 		this.translationStrings = {
-			plan_completions: this.translate('plan days'),
+			plan_completions: this.translate('plans.plans'),
 			highlights: this.translate('profile menu.highlights'),
 			notes: this.translate('profile menu.notes'),
 			images: this.translate('profile menu.images'),
