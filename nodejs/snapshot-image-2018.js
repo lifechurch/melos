@@ -9,7 +9,7 @@ const localeSizes = {
 	el: {
 		my_year: 0.25,
 		perfect_weeks: 0.30,
-		days_in_app: 0.52
+		days_in_app: 0.45
 	},
 
 	vi: {
@@ -52,6 +52,10 @@ const localeSizes = {
 
 	'zh-CN': {
 		plan_completions: 0.3,
+	},
+
+	ro: {
+		days_in_app: 0.55
 	},
 
 	all: {
