@@ -28,10 +28,15 @@ export function getLocalesFromHeader(acceptLangHeader) {
 
 export function getCurrentUserLocale({ localeFromUrl, localeFromCookie, localeFromUser, localesFromHeader }) {
 	let final = { locale: availableLocales['en-US'], source: 'default' }
+  let languageWithoutCountry = localeFromUrl.split(/[\-_]+/)[0]
 
 	// 1: Try URL First
 	if (typeof availableLocales[localeFromUrl] !== 'undefined') {
 		final = { locale: availableLocales[localeFromUrl], source: 'url' };
+
+  // 1.1: Try URL without Country Code
+  } else if (typeof availableLocales[languageWithoutCountry] !== 'undefined') {
+    final = { locale: availableLocales[languageWithoutCountry], source: 'url' };
 
 	// 2: Try Cookie Second
 	} else if (typeof localeFromCookie !== 'undefined' && typeof availableLocales[localeFromCookie] !== 'undefined') {
