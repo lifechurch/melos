@@ -135,8 +135,7 @@ class PagesController < ApplicationController
         "user_id" => nil,
         "languageTag" => I18n.locale.to_s,
         "strings" => {},
-        "year" => year,
-        "imageLocale" => q_params["locale"] || I18n.locale.to_s
+        "year" => year
       }
 
     end
