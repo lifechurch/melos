@@ -21,7 +21,7 @@ class Snapshot extends Component {
 	}
 
 	renderGeneric() {
-		const { locale, nodeHost, railsHost, intl } = this.props
+		const { nodeHost, railsHost, intl } = this.props
 		const imgSrc = `${nodeHost}${Snapshot500}`
 		const imgSrc2x = `${nodeHost}${Snapshot1000}`
 		const snapshotUrl = `${railsHost}/snapshot`
@@ -67,9 +67,9 @@ class Snapshot extends Component {
 	}
 
 	renderDetail() {
-		const { user, userIdHash, locale, nodeHost, railsHost, viewingMine, year, intl } = this.props
-		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${locale}&year=${year}`
-		const imgSrc2x = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/1000?locale=${locale}&year=${year}`
+		const { user, userIdHash, locale, imageLocale, nodeHost, railsHost, viewingMine, year, intl } = this.props
+		const imgSrc = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/500?locale=${imageLocale}&year=${year}`
+		const imgSrc2x = `${nodeHost}/snapshot/${userIdHash}/${user.response.id}/1000?locale=${imageLocale}&year=${year}`
 		const snapshotUrl = `${railsHost}/snapshot/${userIdHash}/${user.response.id}?year=${year}`
 		let bottomLinks
 		let topCopy
@@ -168,7 +168,7 @@ Snapshot.propTypes = {
 	railsHost: PropTypes.string.isRequired,
 	locale: PropTypes.string.isRequired,
 	viewingMine: PropTypes.bool.isRequired,
-	year: PropTypes.number.isRequired
+	year: PropTypes.string.isRequired
 }
 
 Snapshot.defaultProps = {
@@ -183,6 +183,7 @@ function mapStateToProps(state) {
 		railsHost: state.hosts.railsHost,
 		userIdHash: state.userIdHash,
 		locale: state.serverLanguageTag,
+		imageLocale: state.imageLocale,
 		viewingMine: state.viewingMine,
 		year: state.year,
 	}
