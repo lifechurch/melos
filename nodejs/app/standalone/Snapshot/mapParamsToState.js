@@ -4,7 +4,8 @@ export default function mapParamsToState(state, params) {
 		userIdHash: params.user_id_hash,
 		serverLanguageTag: params.languageTag,
 		viewingMine: params.viewing_mine,
-    year: params.year,
+		year: params.year,
+		imageLocale: params.imageLocale,
 		nodeHost: process.env.SECURE_HOSTNAME ? `//${process.env.SECURE_HOSTNAME}` : 'http://localhost:3000'
 	})
 }

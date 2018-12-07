@@ -110,10 +110,13 @@ class PagesController < ApplicationController
     end
 
     if user_id && user_id_hash
-      # we're on /snapshot/:user_id_hash/:user_id?year=2017
+      # we're on /snapshot/:user_id_hash/:user_id?year=2017|2018
       unless validate_snapshot_sha1_hash(user_id,user_id_hash)
         return render_404
       end
+
+      q_params = request.query_parameters
+      year = ["2017","2018"].include?(q_params["year"]) ? q_params["year"] : "2018"
 
       p = {
         "viewing_mine" => (current_user && current_user.id.to_s == user_id) ? true : false,
@@ -121,7 +124,8 @@ class PagesController < ApplicationController
         "user_id_hash" => user_id_hash,
         "languageTag" => I18n.locale.to_s,
         "strings" => {},
-        "year" => request.query_parameters["year"] || "2018"
+        "year" => year,
+        "imageLocale" => q_params["locale"] || I18n.locale.to_s
       }
 
     else
@@ -131,7 +135,8 @@ class PagesController < ApplicationController
         "user_id" => nil,
         "languageTag" => I18n.locale.to_s,
         "strings" => {},
-        "year" => request.query_parameters["year"] || "2018"
+        "year" => year,
+        "imageLocale" => q_params["locale"] || I18n.locale.to_s
       }
 
     end

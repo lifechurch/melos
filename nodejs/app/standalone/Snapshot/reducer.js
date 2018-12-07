@@ -28,6 +28,7 @@ const rootReducer = combineReducers({
 	userIdHash: emptyReducer,
 	viewingMine: emptyReducer,
 	year: emptyReducer,
+	imageLocale: emptyReducer,
 	nodeHost: emptyReducer,
 	api: combineReducers({
 		users,
