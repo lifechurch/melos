@@ -222,7 +222,7 @@ pt:
   versions link: "Versões"
   languages link: "Idiomas"
   jobs: "Empregos"
-  volunteer: "Voluntário"
+  volunteer: "Seja Voluntário"
   privacy policy: "Política de Privacidade"
   terms: "Termos"
   press: "Imprensa"
@@ -1083,8 +1083,8 @@ pt:
     links title: "Links de Cobertura de Mídia"
   mobile page:
     h2: "A Palavra de Deus está com você."
-    h3: "YouVersion é Global"
-    h3 sub: "Disponível em mais de %{language_count}idiomas em todo mundo."
+    h3: "A YouVersion é Global"
+    h3 sub: "Disponível em mais de %{language_count} idiomas em todo mundo."
     main: "Dezenas de milhões de pessoas estão usando o App da Bíblia para tornar a Palavra de Deus parte de suas vidas. Baixe o aplicativo gratuito e acesse os marcadores, anotações e planos de leitura de qualquer lugar. Desfrute de centenas de versões, incluindo áudio, tudo em seu dispositivo móvel."
     button h4: "Vá para Bible.com/app no dispositivo móvel"
     download now: "Baixar o App da Bíblia agora"
@@ -1367,7 +1367,7 @@ pt:
       press: "Imprensa"
       privacy: "Política de Privacidade"
       terms: "Termos"
-      volunteer: "Voluntário"
+      volunteer: "Seja Voluntário"
     unsubscribe:
       about: "Controle quais e-mails você recebe da YouVersion. Você pode editar as notificações móveis do seu aplicativo móvel."
       email: "E-mail"
