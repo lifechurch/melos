@@ -188,6 +188,7 @@ module ApplicationHelper
       :fa,
       :fi,
       :fr,
+      :he,
       :hi,
       :id,
       :it,

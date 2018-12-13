@@ -252,8 +252,12 @@ class RedirectsController < ApplicationController
   def hvvdvvd
     redirect_to('/mn/kids')
   end
-  
+
   def nep_kids
     redirect_to('/ne/kids')
+  end
+
+  def he_kids
+    redirect_to('/he/kids')
   end
 end
