@@ -39,7 +39,7 @@ spec:
           - containerPort: $PORT
         resources:
           limits:
-            cpu: "4"
+            cpu: "2"
             memory: "4700Mi"
         readinessProbe:
           httpGet:
