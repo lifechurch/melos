@@ -47,15 +47,27 @@ spec:
             memory: "700Mi"
         readinessProbe:
           httpGet:
-            path: /ping
-            port: 80
+            path: /ready
+            port: 9000
             scheme: HTTP
             httpHeaders:
               - name: Host
                 value: 127.0.0.1
-          initialDelaySeconds: 10
+          initialDelaySeconds: 5
           periodSeconds: 5
           timeoutSeconds: 5
+          failureThreshold: 1
+          successThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /live
+            port: 9000
+          initialDelaySeconds: 10
+          # Allow sufficient amount of time (180 seconds = periodSeconds * failureThreshold)
+          # for the registered shutdown handlers to run to completion.
+          periodSeconds: 30
+          failureThreshold: 3
+          successThreshold: 1
         env:
           - name: YOUVERSION_TOKEN_PHRASE
             valueFrom:
@@ -101,6 +113,6 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: MEMCACHE_SERVERS                
+                key: MEMCACHE_SERVERS
       imagePullSecrets:
         - name: gitlab-registry

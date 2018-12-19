@@ -4,6 +4,15 @@ const fastify = require('fastify')({ logger: true })
 const Raven = require('./configure-sentry')()
 const newrelic = require('./get-new-relic')()
 const registerMiddleware = require('./register-middleware')
+const { createLightship } = require('lightship')
+
+const lightship = createLightship()
+
+fastify.log.info('Registering shutdown handler via Lightship')
+lightship.registerShutdownHandler(() => {
+  fastify.log.info('Shutting down Fastify server via registered Lightship handler.')
+  fastify.close()
+})
 
 registerMiddleware(fastify, [
   'fastify-compress',
@@ -92,5 +101,6 @@ fastify.listen(PORT, '0.0.0.0', (err) => {
     fastify.log.error(`Error starting Fastify server: ${err.toString()}`)
     process.exit(1)
   }
+  lightship.signalReady()
   fastify.log.info(`Server started listening on ${fastify.server.address().port}`)
 })
