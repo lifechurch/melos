@@ -161,13 +161,13 @@ pt:
   make a donation: "Faça uma Doação"
   thanks for your donation: "Obrigado por sua doação!"
   thanks authorization: "Se você solicitou um recibo, ele estará em sua caixa de entrada em breve."
-  donation error: "Desculpe, mas algo deu errado durante a sua doação. O erro foi: %{error_text}"
-  created ago: "Criado há %{time_ago} atrás"
+  donation error: "Desculpe, mas algo deu errado durante a doação. O erro foi: %{error_text}"
+  created ago: "Criado há %{time_ago}"
   copy: "Copiar"
   copy confirmed: "Copiado!"
-  new note: "Nova Anotação"
+  new note: "Criar uma Anotação"
   share success: "Sua mensagem foi compartilhada."
-  share error: "Desculpe, houve um erro ao compartilhar a sua mensagem. Por favor, tente novamente."
+  share error: "Desculpe, houve um erro ao compartilhar a mensagem. Tente novamente."
   share:
     request:
       no_twitter_connection: "Voce não tem uma conta ativa de Facebook. Favor conectar através da pagina de configurações."
@@ -185,7 +185,7 @@ pt:
   see users badges: "Ver todas as medalhas de %{username}"
   highlight: "Destacar Versículo"
   bookmark: "Marcador"
-  earned badge date: "Ganha por %{username} há %{ago} atrás"
+  earned badge date: "Ganha por %{username} há %{ago}"
   badges title: "Medalhas"
   currently selected: "Atualmente Selecionado:"
   read reference: "Ler %{reference}"
@@ -772,7 +772,7 @@ pt:
   badges:
     earned a badge: "Ganhou uma Medalha"
     user badges: "Medalhas de %{user}"
-    earned date: "Ganha por %{username} há %{ago} atrás"
+    earned date: "Ganha por %{username} há %{ago}"
     none me: "Você ainda não ganhou nenhuma medalha."
     none user: "%{username} ainda não ganhou nenhuma medalha."
   plans:
