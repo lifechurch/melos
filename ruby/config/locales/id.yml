@@ -679,7 +679,7 @@ id:
       language: "Bahasa"
       updated: "Berhasil! Anda telah memperbarui profil Anda."
       error: "Maaf, ada kesalahan saat memperbarui profil Anda."
-      current password: "Kata Sandi Sekarang"
+      current password: "Kata Sandi Saat Ini"
       new password: "Kata Sandi Baru"
       confirm password: "Konfirmasikan Kata Sandi"
       avatar file: "Pilih file untuk gambar Anda"
