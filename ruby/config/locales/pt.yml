@@ -48,7 +48,7 @@ pt:
         user aaron: "Aaron Machado"
         user andy: "André Rodrigues"
         timestamp: "Há 5 dias"
-        title: "Salmo 31:7 marcado"
+        title: "marcou Salmos 31:7"
         verse: "Ficarei contente e me alegrarei por causa do teu amor. Tu vês que estou sofrendo e conheces as minhas aflições."
         reference: "Salmos 31:7"
         discover:
@@ -89,7 +89,7 @@ pt:
     facebook:
       name: "Facebook"
       errors:
-        expired access: "Seu acesso pelo Facebook venceu. Por favor, remova a sua conexão e reconecte-se ao Facebook."
+        expired access: "Seu acesso pelo Facebook expirou. Remova a conexão e reconecte-se ao Facebook."
   language names:
     arabic: "Árabe"
     bulgarian: "Búlgaro"
@@ -118,9 +118,9 @@ pt:
     users email not found: "Não existe nenhuma conta com esse endereço de e-mail."
     users email required: "Você deve inserir um endereço de e-mail."
     users hash verified: "Essa conta já foi verificada."
-    users password change: "Sua nova senha deve ser diferente da sua antiga senha."
-    users password length: "Sua senha deve conter pelo menos 6 caracteres."
-    users password less than minimum value 6: "Sua senha deve conter pelo menos 6 caracteres."
+    users password change: "A nova senha deve ser diferente da antiga senha."
+    users password length: "A senha deve conter pelo menos 6 caracteres."
+    users password less than minimum value 6: "A senha deve conter pelo menos 6 caracteres."
     users password required: "Você deve inserir uma senha."
     user id users not found: "O usuário é inválido."
     users username alpha numeric extra: "O nome de usuário deve conter apenas letras, números ou traços."
@@ -157,7 +157,7 @@ pt:
   mobile apps: "Aplicativos para aparelhos de telefonia móvel"
   follow us: "Siga-nos"
   visit link: "Visitar Link"
-  about title: "Sobre o YouVersion"
+  about title: "Sobre a YouVersion"
   make a donation: "Faça uma Doação"
   thanks for your donation: "Obrigado por sua doação!"
   thanks authorization: "Se você solicitou um recibo, ele estará em sua caixa de entrada em breve."
