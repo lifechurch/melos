@@ -81,7 +81,7 @@ module.exports = function () {
 	*/
 	server.on('error', onError);
 	server.on('listening', onListening);
-	const httpServer = server.listen(port);
+	const httpServer = server.listen('passenger');
 
 	lightship.registerShutdownHandler(async () => {
     // Allow sufficient time for existing HTTP requests to finish
