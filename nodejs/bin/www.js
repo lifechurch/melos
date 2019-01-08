@@ -8,7 +8,11 @@ const delay = require('delay');
 * Get port from environment and store in Express.
 */
 module.exports = function () {
-	/**
+	if (typeof (PhusionPassenger) !== 'undefined') {
+		PhusionPassenger.configure({ autoInstall: false });
+	}
+
+  /**
 	* Normalize a port into a number, string, or false.
 	*/
 	const normalizePort = (val) => {
