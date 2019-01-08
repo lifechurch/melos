@@ -16,19 +16,23 @@ module.exports = function () {
 	* Normalize a port into a number, string, or false.
 	*/
 	const normalizePort = (val) => {
-		const port = parseInt(val, 10);
+		if (typeof (PhusionPassenger) !== 'undefined') {
+			return 'passenger'
+		} else {
+			const port = parseInt(val, 10);
 
-		if (isNaN(port)) {
+			if (isNaN(port)) {
 				// named pipe
-			return val;
-		}
+				return val;
+			}
 
-		if (port >= 0) {
+			if (port >= 0) {
 				// port number
-			return port;
-		}
+				return port;
+			}
 
-		return false;
+			return false;
+		}
 	}
 
 
@@ -85,7 +89,7 @@ module.exports = function () {
 	*/
 	server.on('error', onError);
 	server.on('listening', onListening);
-	const httpServer = server.listen('passenger');
+	const httpServer = server.listen(port);
 
 	lightship.registerShutdownHandler(async () => {
     // Allow sufficient time for existing HTTP requests to finish
