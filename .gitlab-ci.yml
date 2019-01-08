@@ -91,6 +91,8 @@ staging:
     STAGING_SECURE_HOSTNAME: nodejs-staging.$KUBE_DOMAIN
   script:
     - command deploy
+    - export POD=$(kubectl get pods -n=bible | grep bible-staging-memcach | awk '{print $1}')
+    - kubectl exec $POD -n=bible -- bash -c "echo flush_all > /dev/tcp/127.0.0.1/11211 && echo stats reset > /dev/tcp/127.0.0.1/11211"  
   environment:
     name: staging
     url: http://staging.$KUBE_DOMAIN
@@ -131,6 +133,9 @@ production:
     PRODUCTION_SECURE_HOSTNAME: nodejs.$KUBE_DOMAIN
   script:
     - command deploy
+    - export POD=$(kubectl get pods -n=bible | grep bible-production-memcach | awk '{print $1}')
+    - kubectl exec $POD -n=bible -- bash -c "echo flush_all > /dev/tcp/127.0.0.1/11211 && echo stats reset > /dev/tcp/127.0.0.1/11211"
+    - "curl -X POST \"https://api.cloudflare.com/client/v4/zones/7e7e37b9128054e59b31bd42a9ef887c/purge_cache\" -H \"X-Auth-Email: will.platnick@lifechurch.tv\" -H \"X-Auth-Key: $CLOUDFLARE\" -H \"Content-Type: application/json\" --data '{\"purge_everything\":true}'"
   environment:
     name: production
     url: http://$KUBE_DOMAIN
