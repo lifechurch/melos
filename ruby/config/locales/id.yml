@@ -2119,7 +2119,7 @@ id:
     sick: "Muak"
     tired: "Lelah"
   gdpr:
-    agree to emails: "Saya mengizinkan YouVersion untuk mengirimi saya email demi memperdalam pengenalan Alkitab saya."
+    agree to emails: "Saya mengizinkan YouVersion mengirimi saya email untuk memperdalam pengenalan Alkitab saya."
     agree to terms: "Saya setuju dengan <a href='/terms'>Syarat</a> dan <a href='/privacy'>Kebijakan Privasi</a> YouVersion."
     continue: "Lanjutkan"
     terms summary:
