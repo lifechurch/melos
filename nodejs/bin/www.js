@@ -38,7 +38,7 @@ module.exports = function () {
 	const port = normalizePort(process.env.PORT || '3000');
 	app.set('port', port);
 	const server = http.createServer(app);
-	const lightship = createLightship({ port: 9001 })
+	const lightship = createLightship({ port: 8081 })
 
 	/**
 	* Event listener for HTTP server "error" event.
