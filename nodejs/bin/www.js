@@ -1,6 +1,8 @@
 const app = require('../app');
 const debug = require('debug')('youversion-events:server');
 const http = require('http');
+const { createLightship } = require('lightship')
+const delay = require('delay');
 
 /**
 * Get port from environment and store in Express.
@@ -32,6 +34,7 @@ module.exports = function () {
 	const port = normalizePort(process.env.PORT || '3000');
 	app.set('port', port);
 	const server = http.createServer(app);
+	const lightship = createLightship({ port: 9001 })
 
 	/**
 	* Event listener for HTTP server "error" event.
@@ -49,11 +52,11 @@ module.exports = function () {
 		switch (error.code) {
 			case 'EACCES':
 				console.error(`${bind} requires elevated privileges`);
-				process.exit(1);
+				lightship.shutdown();
 				break;
 			case 'EADDRINUSE':
 				console.error(`${bind} is already in use`);
-				process.exit(1);
+				lightship.shutdown();
 				break;
 			default:
 				throw error;
@@ -64,6 +67,7 @@ module.exports = function () {
 	* Event listener for HTTP server "listening" event.
 	*/
 	const onListening = () => {
+		lightship.signalReady();
 		debug('listening')
 		const addr = server.address();
 		const bind = typeof addr === 'string'
@@ -77,5 +81,13 @@ module.exports = function () {
 	*/
 	server.on('error', onError);
 	server.on('listening', onListening);
-	server.listen(port);
+	const httpServer = server.listen(port);
+
+	lightship.registerShutdownHandler(async () => {
+    // Allow sufficient time for existing HTTP requests to finish
+		console.log('Express server received shutdown signal. Waiting before closing down...');
+		await delay(30 * 1000); // 30 seconds
+		console.log('Shutting down Express server via registered Lightship handler.');
+		httpServer.close();
+	});
 }

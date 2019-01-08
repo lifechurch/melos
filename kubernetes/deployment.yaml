@@ -43,8 +43,8 @@ spec:
             memory: "4700Mi"
         readinessProbe:
           httpGet:
-            path: /ping_all
-            port: 80
+            path: /ready
+            port: 9001
             scheme: HTTP
             httpHeaders:
               - name: Host
@@ -53,6 +53,15 @@ spec:
           timeoutSeconds: 2
           periodSeconds: 3
           failureThreshold: 10
+          successThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /live
+            port: 9001
+          initialDelaySeconds: 10
+          periodSeconds: 30
+          failureThreshold: 3
+          successThreshold: 1
         env:
           - name: YOUVERSION_TOKEN_PHRASE
             valueFrom:
