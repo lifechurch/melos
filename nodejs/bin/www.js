@@ -4,6 +4,27 @@ const http = require('http');
 const { createLightship } = require('lightship')
 const delay = require('delay');
 
+
+function startLightship(port) {
+	let lightship
+	try {
+		lightship = createLightship({ port })
+		console.log(`Started Lightship for Passenger + Node instance on port ${port}`)
+		return lightship
+	} catch (e) {
+
+		if (port >= 9000) {
+			throw new Error('Unable to find available port for Lightship on Passenger + Node instance')
+		}
+
+		if (e.code === 'EADDRINUSE') {
+			return startLightship(port + 1)
+		}
+
+		throw new Error(`Unable to start Lightship for Passenger + Node instance on port ${port}`)
+	}
+}
+
 /**
 * Get port from environment and store in Express.
 */
@@ -42,7 +63,8 @@ module.exports = function () {
 	const port = normalizePort(process.env.PORT || '3000');
 	app.set('port', port);
 	const server = http.createServer(app);
-	const lightship = createLightship({ port: 8081 })
+
+	const lightship = startLightship(8081)
 
 	/**
 	* Event listener for HTTP server "error" event.
