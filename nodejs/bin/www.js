@@ -2,27 +2,35 @@ const app = require('../app');
 const debug = require('debug')('youversion-events:server');
 const http = require('http');
 const { createLightship } = require('lightship')
-const delay = require('delay');
+const net = require('net');
 
+const LIGHTSHIP_PORT_RANGE = [ 9001, 9099 ]
 
-function startLightship(port) {
-	let lightship
-	try {
-		lightship = createLightship({ port })
-		console.log(`Started Lightship for Passenger + Node instance on port ${port}`)
-		return lightship
-	} catch (e) {
+function getPort() {
+	let port = LIGHTSHIP_PORT_RANGE[0]
+	return new Promise((resolve, reject) => {
+		const server = net.createServer()
+		server.on('error', (err) => {
+			if (err.code !== 'EADDRINUSE') return reject(port)
+			if (port > LIGHTSHIP_PORT_RANGE[1]) {
+				throw new Error('Unable to find available port for Lightship on Passenger + Node instance')
+			}
+			return server.listen(++port)
+		})
+		server.on('listening', () => { return server.close(() => { return resolve(port) }) })
+		server.listen(port)
+	})
+}
 
-		if (port >= 9000) {
-			throw new Error('Unable to find available port for Lightship on Passenger + Node instance')
-		}
-
-		if (e.code === 'EADDRINUSE') {
-			return startLightship(port + 1)
-		}
-
-		throw new Error(`Unable to start Lightship for Passenger + Node instance on port ${port}`)
-	}
+function startLightship() {
+	return new Promise((resolve, reject) => {
+		getPort().then((port) => {
+			console.log(`Starting Lightship for Passenger + Node instance on port ${port}`)
+			resolve(createLightship({ port }))
+		}, (port) => {
+			reject(new Error(`Unable to start Lightship for Passenger + Node instance on port ${port}`))
+		})
+	})
 }
 
 /**
@@ -63,61 +71,60 @@ module.exports = function () {
 	const port = normalizePort(process.env.PORT || '3000');
 	app.set('port', port);
 	const server = http.createServer(app);
+	startLightship().then((lightship) => {
 
-	const lightship = startLightship(8081)
-
-	/**
-	* Event listener for HTTP server "error" event.
-	*/
-	const onError = (error) => {
-		if (error.syscall !== 'listen') {
-			throw error;
-		}
-
-		const bind = typeof port === 'string'
-			? `Pipe ${port}`
-			: `Port ${port}`;
-
-			// handle specific listen errors with friendly messages
-		switch (error.code) {
-			case 'EACCES':
-				console.error(`${bind} requires elevated privileges`);
-				lightship.shutdown();
-				break;
-			case 'EADDRINUSE':
-				console.error(`${bind} is already in use`);
-				lightship.shutdown();
-				break;
-			default:
+    /**
+		* Event listener for HTTP server "error" event.
+		*/
+		const onError = (error) => {
+			if (error.syscall !== 'listen') {
 				throw error;
+			}
+
+			const bind = typeof port === 'string'
+				? `Pipe ${port}`
+				: `Port ${port}`;
+
+				// handle specific listen errors with friendly messages
+			switch (error.code) {
+				case 'EACCES':
+					console.error(`${bind} requires elevated privileges`);
+					lightship.shutdown();
+					break;
+				case 'EADDRINUSE':
+					console.error(`${bind} is already in use`);
+					lightship.shutdown();
+					break;
+				default:
+					throw error;
+			}
 		}
-	}
 
-	/**
-	* Event listener for HTTP server "listening" event.
-	*/
-	const onListening = () => {
-		lightship.signalReady();
-		debug('listening')
-		const addr = server.address();
-		const bind = typeof addr === 'string'
-			? `pipe ${addr}`
-			: `port ${addr.port}`;
-		debug(`Listening on ${bind}`);
-	}
+		/**
+		* Event listener for HTTP server "listening" event.
+		*/
+		const onListening = () => {
+			lightship.signalReady();
+			debug('listening')
+			const addr = server.address();
+			const bind = typeof addr === 'string'
+				? `pipe ${addr}`
+				: `port ${addr.port}`;
+			debug(`Listening on ${bind}`);
+		}
 
-	/**
-	* Listen on provided port, on all network interfaces.
-	*/
-	server.on('error', onError);
-	server.on('listening', onListening);
-	const httpServer = server.listen(port);
+		/**
+		* Listen on provided port, on all network interfaces.
+		*/
+		server.on('error', onError);
+		server.on('listening', onListening);
+		const httpServer = server.listen(port);
 
-	lightship.registerShutdownHandler(async () => {
-    // Allow sufficient time for existing HTTP requests to finish
-		console.log('Express server received shutdown signal. Waiting before closing down...');
-		await delay(30 * 1000); // 30 seconds
-		console.log('Shutting down Express server via registered Lightship handler.');
-		httpServer.close();
-	});
+		lightship.registerShutdownHandler(async () => {
+			console.log('Shutting down Express server via registered Lightship handler.');
+			httpServer.close();
+		});
+	}, (lightshipError) => {
+		throw lightshipError
+	})
 }
