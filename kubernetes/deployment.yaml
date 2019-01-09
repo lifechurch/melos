@@ -44,7 +44,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /ready
-            port: 8081
+            port: 9001
             scheme: HTTP
             httpHeaders:
               - name: Host
@@ -57,7 +57,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /live
-            port: 8081
+            port: 9001
           initialDelaySeconds: 10
           periodSeconds: 30
           failureThreshold: 3
