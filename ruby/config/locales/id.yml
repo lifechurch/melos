@@ -389,7 +389,7 @@ id:
       update: "Perbarui"
       unsubscribe: "Berhenti berlangganan"
       version: "Versi"
-      view more: "Lihat Lebih Banyak"
+      view more: "Lihat Selebihnya"
       time: "Waktu"
       blurb: "Berlangganan Ayat Hari Ini. Dapatkan email harian atau push notifikasi di perangkat seluler Anda."
     friendship:
@@ -404,7 +404,7 @@ id:
     action:
       go to scripture: "Pergi ke Alkitab"
       add friend button: "Tambah teman"
-      load more: "Muat lebih banyak"
+      load more: "Muat selebihnya"
       like: "Suka"
       liked: "Disukai"
       like title: "Sukai ini"
