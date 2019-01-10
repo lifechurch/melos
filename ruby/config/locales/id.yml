@@ -544,7 +544,7 @@ id:
     share now: "Bagi Sekarang"
     selected: "Dipilih"
     preferences: "Preferensi"
-    listen: "Simak"
+    listen: "Dengar"
     parallel: "Paralel"
     full screen: "Layar Penuh"
     about the version: "Tentang %{version}"
@@ -1132,7 +1132,7 @@ id:
         title: "Rencana Bacaan dan Renungan Gratis"
         body: "Rencana Alkitab menolong Anda terlibat dengan Firman Tuhan setiap hari, sedikit demi sedikit."
       browse_plans: "Jelajahi Semua Rencana"
-      read_listen: "Baca, Simak, Tonton, Berbagi"
+      read_listen: "Baca, Dengar, Tonton, Berbagi"
       start_now: "Mulai Sekarang"
       votd:
         title: "Ayat Hari Ini"
