@@ -1181,7 +1181,7 @@ id:
       off: "Mati"
       extras: "Tambahan:"
       translation notes: "Catatan kaki"
-      cross references: "Referensi silang"
+      cross references: "Referensi Silang"
       numbers and titles: "Nomor dan Judul"
   app errors:
     404 plans explanation: "Apakah Anda mencari <a href='%{plan_path}' target='_self'>rencana</a>%{title}?"
