@@ -114,7 +114,7 @@ pt:
     users confirm password matches: "As novas senhas não são iguais."
     users email email: "O endereço de e-mail é inválido."
     users email email rfc: "O endereço de e-mail que você forneceu é inválido."
-    users email not available: "Uma conta já está registrada com esse endereço de e-mail."
+    users email not available: "Já existe uma conta registada com esse endereço de e-mail."
     users email not found: "Não existe nenhuma conta com esse endereço de e-mail."
     users email required: "Você deve inserir um endereço de e-mail."
     users hash verified: "Essa conta já foi verificada."
@@ -1633,7 +1633,7 @@ pt:
         subHead1: "Caso seja um usuário do App da Bíblia e já te uma conta YouVersion, você pode entrar usando as mesmas credenciais.<br><br>Você ainda não possui uma conta YouVersion?<br><a href='%{url}'>Registre-se agora em Bible.com</a> para começar a criar Eventos."
         email: "E-mail"
         password: "Senha"
-        forgotPassword: "Esqueci a Senha"
+        forgotPassword: "Esqueceu a Senha"
       EventEdit:
         event: "Evento"
       EventEditContentContainer:
