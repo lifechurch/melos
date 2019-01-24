@@ -179,6 +179,7 @@ module ApplicationHelper
       :af,
       :ar,
       :be,
+      :bg,
       :bn,
       :de,
       :el,
