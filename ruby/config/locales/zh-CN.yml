@@ -166,7 +166,7 @@ zh-CN:
   deleted connection: "已成功移除与 %{connection} 的关联。"
   deleted connection error: "抱歉，在移除你与 %{connection} 的关联时发生错误。"
   connection marketing: "与朋友分享 YouVersion 将非常精彩！将你的 YouVersion 账户与其他社交网络关联，以便在 YouVersion 即时寻找和关注你的朋友们。关联账户后，仅需轻轻一触，便可分享内容。没有你的许可，我们将绝不发布任何信息。"
-  next step connections: "下一步：关联你的账户，找到你的好友。"
+  next step connections: "下一步：关联你的账户，找到你的朋友。"
   no notes found: "%{username} 没有任何笔记。"
   no recent activity: "%{username} 没有任何近期活动。"
   no badges found yourself: "你还没有获得任何徽章。"
@@ -467,8 +467,8 @@ zh-CN:
     status:
       pending: "请求待决"
       friends: "朋友"
-    user wants friendship: "%{user} 想加你为好友"
-    user wants friendship partial: "要加你为好友"
+    user wants friendship: "%{user} 想加你为朋友"
+    user wants friendship partial: "要加你为朋友"
     form:
       remove friend button: "删除朋友"
       remove friend button title: "从你的朋友列表中删除此人"
@@ -630,7 +630,7 @@ zh-CN:
     my friends: "朋友"
     my images: "图像"
     user images: "%{user}的图像"
-    user friends: "%{user}的好友"
+    user friends: "%{user}的朋友"
     my bookmarks: "我的书签"
     user bookmarks: "%{user}的书签"
     my badges: "我的徽章"

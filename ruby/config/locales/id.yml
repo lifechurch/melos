@@ -1670,7 +1670,7 @@ id:
           noMatchingPlans: "Tidak ada Rencana yang sesuai"
         components:
           EventEditNav:
-            details: "Rincian"
+            details: "Detail"
             locations: "Lokasi & Waktu"
             content: "Isi"
             preview: "Pratinjau & Publikasi"
