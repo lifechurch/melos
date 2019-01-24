@@ -257,6 +257,12 @@
     facebook_locale = "he"
     youtube_url = ""
     dir = "rtl"
+  elsif (I18n.locale.to_s.eql?("bg")) then
+    i18n_css_class = "bg"
+    i18n_image_dir = "/bg"
+    meta_url = "#{request.protocol}#{request.host_with_port}/bg/kids"
+    facebook_locale = "bg"
+    youtube_url = ""
   end
 
 
@@ -317,6 +323,7 @@
     %meta{property: "og:locale:alternate", content: "ne"}
     %meta{property: "og:locale:alternate", content: "ka"}
     %meta{property: "og:locale:alternate", content: "he"}
+    %meta{property: "og:locale:alternate", content: "bg"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -368,6 +375,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/be/kids",:rel=>"alternate",:hreflang=>"be"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ne/kids",:rel=>"alternate",:hreflang=>"ne"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ka/kids",:rel=>"alternate",:hreflang=>"ka"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/bg/kids",:rel=>"alternate",:hreflang=>"bg"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/he/kids",:rel=>"alternate",:hreflang=>"if (I18n.locale.to_s.eql?"}
 
     - if I18n.locale.to_s.eql?("vi") then
@@ -430,6 +438,7 @@
             I18n.locale.to_s.eql?("ka") or |
             I18n.locale.to_s.eql?("be") or |
             I18n.locale.to_s.eql?("he") or |
+            I18n.locale.to_s.eql?("bg") or |
             I18n.locale.to_s.eql?("ne")) |
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
