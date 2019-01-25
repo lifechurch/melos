@@ -240,7 +240,6 @@ class PagesController < ApplicationController
       :"en-GB",
       :es,
       :"es-ES",
-      :fa,
       :fi,
       :fr,
       :he,
