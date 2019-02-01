@@ -2,7 +2,7 @@
 const	https = require('https');
 const querystring = require('querystring');
 
-const key = 'AIzaSyBMA0n8NXq9Z-84At4-cIOAseleESrfRGE'
+const key = 'AIzaSyAZY4XvuPmG_XKvYCeYyEufzGq0N0wpVI4'
 
 export default {
 	getTimezone(lat, lng) {
