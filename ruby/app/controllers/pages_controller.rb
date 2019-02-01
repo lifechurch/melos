@@ -264,6 +264,7 @@ class PagesController < ApplicationController
       :sk,
       :sq,
       :sv,
+      :th,
       :tl,
       :tr,
       :uk,
