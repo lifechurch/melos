@@ -180,7 +180,7 @@ sv:
   next step connections: "Nästa: Länka ditt konto och hitta dina vänner."
   no notes found: "%{username} har inga anteckningar."
   no recent activity: "%{username} har inga nyliga aktiviteter."
-  no badges found yourself: "Du har inte fått några medaljer än."
+  no badges found yourself: "Du har inte fått några emblem än."
   no badges found other: "%{username} har inte fått några medaljer än."
   see users badges: "Se alla %{username}s medaljer"
   highlight: "Markera vers"
@@ -773,7 +773,7 @@ sv:
     earned a badge: "Fick en medalj"
     user badges: "%{user}s medaljer"
     earned date: "Förtjänad av %{username} för %{ago} sedan"
-    none me: "Du har inte fått några medaljer än."
+    none me: "Du har inte fått några emblem än."
     none user: "%{username} har inte fått några medaljer än."
   plans:
     see all: "Se alla"
