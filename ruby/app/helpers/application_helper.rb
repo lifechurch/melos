@@ -191,6 +191,7 @@ module ApplicationHelper
       :fr,
       :he,
       :hi,
+      :hu,
       :id,
       :it,
       :ja,

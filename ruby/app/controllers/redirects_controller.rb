@@ -260,4 +260,9 @@ class RedirectsController < ApplicationController
   def he_kids
     redirect_to('/he/kids')
   end
+
+  def gyerek
+    redirect_to('/hu/kids')
+  end
+
 end

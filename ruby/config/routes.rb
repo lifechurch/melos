@@ -85,6 +85,8 @@ YouversionWeb::Application.routes.draw do
   get "/%D7%99%D7%9C%D7%93%D7%99%D7%9D",       to: "redirects#he_kids"
   get "/he/%D7%99%D7%9C%D7%93%D7%99%D7%9D",       to: "redirects#he_kids"
 
+  get "/hu/gyerek",       to: "redirects#gyerek"
+  get "/gyerek",       to: "redirects#gyerek"
 
 	get "/unsubscribe", to: "notifications#unsubscribe"
 	get "/unsubscribe/manage", to: "notifications#manage_notifications"
