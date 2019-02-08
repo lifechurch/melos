@@ -1422,7 +1422,7 @@ sv:
       no button: "Nej"
     plans:
       plans: "Planer"
-      plans back: "planererar"
+      plans back: "&larr; Planer"
       related plans: "Relaterade Planer"
       see all: "Se alla"
       discover: "Upptäck"
