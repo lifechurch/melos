@@ -3,7 +3,7 @@ import apiEndpoint from '../../generators/apiEndpoint'
 const endpoint = 'lens'
 
 const methods = {
-	topics: {
+	unsubscribe: {
 		url: '/4.0/settings:unsubscribe_all',
 	}
 }
