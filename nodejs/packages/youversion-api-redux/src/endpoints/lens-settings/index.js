@@ -21,7 +21,7 @@ export const unsubscribeStatus = (state) => {
 		return 'success'
 	}
 
-	return state
+	return 'loading'
 }
 
 export const unsubscribeErrors = (state) => {
