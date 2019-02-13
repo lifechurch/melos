@@ -45,23 +45,20 @@ class Unsubscribe extends Component {
   getUser = (token) => {
     const { dispatch } = this.props
 
-    if (token) {
-      const promise = dispatch(Users({
-        method: 'token_identity',
-        params: { token },
-        extras: {},
-        auth: !token
-      }))
+    const promise = dispatch(Users({
+      method: 'token_identity',
+      params: { token },
+      extras: {},
+      auth: !token
+    }))
 
-      promise.then((d) => {
-        if (hasError(d)) {
-          reportError(d.errors[0].key)
-        }
-      })
+    promise.then((d) => {
+      if (hasError(d)) {
+        reportError(d.errors[0].key)
+      }
+    })
 
-      return promise
-    }
-    return null
+    return promise
   }
 
   getPlans = (user_id) => {
