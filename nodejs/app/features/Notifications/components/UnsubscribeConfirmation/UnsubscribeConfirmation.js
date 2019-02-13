@@ -69,6 +69,7 @@ class UnsubscribeConfirmation extends Component {
   render() {
     const {
       token,
+      loggedIn,
       type,
       localizedLink,
       intl,
@@ -115,13 +116,36 @@ class UnsubscribeConfirmation extends Component {
         <div className="card-wrapper">
           <a href="/"><YouVersion height={21} width={150} /></a>
           <Card>
-            <div className={status === 'loading' ? 'ghost' : ''}>
-              {statusMark}
-              <p>{statusText}</p>
+            {(loggedIn || token) && (
+              <div className={status === 'loading' ? 'ghost' : ''}>
+                {statusMark}
+                <p>{statusText}</p>
 
-              { product !== 'lens' && <Link to={localizedLink(`/unsubscribe/manage${ready && tokenValid ? `?token=${token}` : ''}`, languageTag)} className="solid-button"><FormattedMessage id="unsubscribe.links.manage" /></Link>}
-              { (type !== 'all' && product !== 'lens') && <Link to={localizedLink(`/unsubscribe?type=all${ready && tokenValid ? `&token=${token}` : ''}`, languageTag)}><FormattedMessage id="unsubscribe.links.unsub all" /></Link>}
-            </div>
+                { product !== 'lens' && (
+                  <Link to={localizedLink(`/unsubscribe/manage${ready && tokenValid ? `?token=${token}` : ''}`, languageTag)} className="solid-button">
+                    <FormattedMessage id="unsubscribe.links.manage" />
+                  </Link>
+                )}
+
+                { (type !== 'all' && product !== 'lens') && (
+                  <Link to={localizedLink(`/unsubscribe?type=all${ready && tokenValid ? `&token=${token}` : ''}`, languageTag)}>
+                    <FormattedMessage id="unsubscribe.links.unsub all" />
+                  </Link>
+                )}
+
+              </div>
+            )}
+
+            {(!loggedIn && !token) && (
+              <div>
+                <FormattedMessage id="unsubscribe.error.token" />
+                <p className="yv-unsubscribe-manage-footer">
+                  <a href={localizedLink(`/sign-in?redirect=${encodeURIComponent(`/unsubscribe?type=${type}&product=${product}`)}`, languageTag) }>
+                    <FormattedMessage id="Auth.sign in" />
+                  </a>
+                </p>
+              </div>
+            )}
           </Card>
         </div>
       </div>
