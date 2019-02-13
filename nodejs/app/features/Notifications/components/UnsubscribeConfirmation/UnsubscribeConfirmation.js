@@ -35,10 +35,12 @@ class UnsubscribeConfirmation extends Component {
     const {
       status,
       lensStatus,
+      bafkStatus,
       product
     } = this.props
 
     if (product === 'lens') return lensStatus
+    else if (product === 'bafk') return bafkStatus
     else return status
   }
 
@@ -46,10 +48,12 @@ class UnsubscribeConfirmation extends Component {
     const {
       errors,
       lensErrors,
+      bafkErrors,
       product
     } = this.props
 
     if (product === 'lens') return lensErrors
+    else if (product === 'bafk') return bafkErrors
     else return errors
   }
 
@@ -121,13 +125,13 @@ class UnsubscribeConfirmation extends Component {
                 {statusMark}
                 <p>{statusText}</p>
 
-                { product !== 'lens' && (
+                { (product !== 'lens' && product !== 'bafk') && (
                   <Link to={localizedLink(`/unsubscribe/manage${ready && tokenValid ? `?token=${token}` : ''}`, languageTag)} className="solid-button">
                     <FormattedMessage id="unsubscribe.links.manage" />
                   </Link>
                 )}
 
-                { (type !== 'all' && product !== 'lens') && (
+                { (type !== 'all' && product !== 'lens' && product !== 'bafk') && (
                   <Link to={localizedLink(`/unsubscribe?type=all${ready && tokenValid ? `&token=${token}` : ''}`, languageTag)}>
                     <FormattedMessage id="unsubscribe.links.unsub all" />
                   </Link>
@@ -176,6 +180,8 @@ UnsubscribeConfirmation.propTypes = {
   errors: PropTypes.array,
   lensStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
   lensErrors: PropTypes.array,
+  bafkStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
+  bafkErrors: PropTypes.array,
   loggedIn: PropTypes.bool,
   localizedLink: PropTypes.func.isRequired,
   unsubscribe: PropTypes.func.isRequired,
@@ -191,9 +197,11 @@ UnsubscribeConfirmation.defaultProps = {
   data: null,
   status: 'loading',
   lensStatus: 'loading',
+  bafkStatus: 'loading',
   loggedIn: false,
   errors: [],
   lensErrors: [],
+  bafkErrors: [],
   tokenIdentity: {},
   plan: null,
   product: null

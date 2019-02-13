@@ -4,6 +4,7 @@ import notifications from '@youversion/api-redux/lib/endpoints/notifications/red
 import users from '@youversion/api-redux/lib/endpoints/users/reducer'
 import readingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 import lensSettings from '@youversion/api-redux/lib/endpoints/lens-settings'
+import bafk from '@youversion/api-redux/lib/endpoints/bafk'
 
 const emptyReducer = (state = {}) => { return state }
 
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   passage: emptyReducer,
   locale: emptyReducer,
   lensSettings: combineReducers(lensSettings.reducers),
+  bafk: combineReducers(bafk.reducers),
   api: combineReducers({
     notifications,
     users,

@@ -8,6 +8,7 @@ import Users from '@youversion/api-redux/lib/endpoints/users/action'
 import ReadingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import { unsubscribeStatus, unsubscribeErrors, isLoggedIn, getNotificationSettings, getVOTDSubscription } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import LensSettings, { unsubscribeStatus as lensUnsubscribeStatus, unsubscribeErrors as lensUnsubscribeErrors } from '@youversion/api-redux/lib/endpoints/lens-settings'
+import Bafk, { unsubscribeStatus as bafkUnsubscribeStatus, unsubscribeErrors as bafkUnsubscribeErrors } from '@youversion/api-redux/lib/endpoints/bafk'
 import { getTokenIdentity, getLoggedInUser } from '@youversion/api-redux/lib/endpoints/users/reducer'
 import { getMyPlans, getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 import moment from 'moment'
@@ -133,6 +134,7 @@ class Unsubscribe extends Component {
     } = this.props
 
     if (product === 'lens') return this.unsubscribeLens({ token })
+    if (product === 'bafk') return this.unsubscribeBafk({ token })
 
     return new Promise((resolve, reject) => {
       const { dispatch } = this.props
@@ -162,6 +164,29 @@ class Unsubscribe extends Component {
     return new Promise((resolve, reject) => {
       const { dispatch } = this.props
       dispatch(LensSettings.actions.unsubscribe.put({
+        token
+      }, {
+        body: {
+          updated_dt: moment().utc().format()
+        },
+        auth: !token,
+      })).then((d) => {
+        if (hasError(d)) {
+          reportError(d.errors[0].key)
+          reject()
+        } else {
+          resolve()
+        }
+      }, () => {
+        reject()
+      })
+    })
+  }
+
+  unsubscribeBafk = ({ token }) => {
+    return new Promise((resolve, reject) => {
+      const { dispatch } = this.props
+      dispatch(Bafk.actions.unsubscribe.put({
         token
       }, {
         body: {
@@ -228,9 +253,11 @@ class Unsubscribe extends Component {
       children,
       status,
       lensStatus,
+      bafkStatus,
       loggedIn,
       errors,
       lensErrors,
+      bafkErrors,
       hosts,
       tokenIdentity,
       notificationSettings,
@@ -256,6 +283,7 @@ class Unsubscribe extends Component {
           && React.cloneElement(children, {
             status,
             lensStatus,
+            bafkStatus,
             loggedIn,
             token,
             type,
@@ -264,6 +292,7 @@ class Unsubscribe extends Component {
             localizedLink,
             errors,
             lensErrors,
+            bafkErrors,
             hosts,
             tokenIdentity,
             notificationSettings,
@@ -290,8 +319,10 @@ Unsubscribe.propTypes = {
   hosts: PropTypes.object,
   status: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
   lensStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
+  bafkStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
   errors: PropTypes.array,
   lensErrors: PropTypes.array,
+  bafkErrors: PropTypes.array,
   loggedIn: PropTypes.bool,
   tokenIdentity: PropTypes.object,
   loggedInUser: PropTypes.object,
@@ -305,10 +336,12 @@ Unsubscribe.propTypes = {
 Unsubscribe.defaultProps = {
   status: 'loading',
   lensStatus: 'loading',
+  bafkStatus: 'loading',
   loggedIn: false,
   hosts: {},
   errors: [],
   lensErrors: [],
+  bafkErrors: [],
   tokenIdentity: {},
   loggedInUser: null,
   myPlans: {},
@@ -331,6 +364,8 @@ function mapStateToProps(state, props) {
     errors: unsubscribeErrors(state),
     lensStatus: lensUnsubscribeStatus(state),
     lensErrors: lensUnsubscribeErrors(state),
+    bafkStatus: bafkUnsubscribeStatus(state),
+    bafkErrors: bafkUnsubscribeErrors(state),
     loggedIn: isLoggedIn(state),
     hosts: state.hosts,
     tokenIdentity: getTokenIdentity(state),
