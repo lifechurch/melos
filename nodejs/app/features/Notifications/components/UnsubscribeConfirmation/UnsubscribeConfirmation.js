@@ -114,11 +114,28 @@ class UnsubscribeConfirmation extends Component {
       statusText = <FormattedMessage id={`unsubscribe.error.${errorType}`} />
     }
 
+    let logoSrc
+    let productTitle
+    if (product === 'lens') {
+      logoSrc = '/assets/BibleLens-icon-48x48.png'
+      productTitle = 'Bible Lens'
+    } else if (product === 'bafk') {
+      logoSrc = '/assets/BibleAppForKids-icon-48x48.png'
+      productTitle = 'Bible App for Kids'
+    } else {
+      logoSrc = '/assets/icons/bible/48/en.png'
+      productTitle = 'Bible App'
+    }
+
     return (
       <div className="yv-unsubscribe-confirmation">
         <Helmet title={intl.formatMessage({ id: 'unsubscribe.links.manage' })} />
         <div className="card-wrapper">
           <a href="/"><YouVersion height={21} width={150} /></a>
+          <h1 className="product-title">
+            <img alt="Bible Lens Icon" className="product-icon" src={logoSrc} />
+            <div>{productTitle}</div>
+          </h1>
           <Card>
             {(loggedIn || token) && (
               <div className={status === 'loading' ? 'ghost' : ''}>
