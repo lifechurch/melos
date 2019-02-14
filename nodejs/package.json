@@ -14,7 +14,7 @@
     "bootstrap:packages": "lerna bootstrap --hoist"
   },
   "dependencies": {
-    "@youversion/api-redux": "^0.5.2",
+    "@youversion/api-redux": "^0.5.9",
     "@youversion/js-api": "^1.1.2",
     "@youversion/melos": "^0.0.27",
     "@youversion/stringer-things": "0.0.3",
