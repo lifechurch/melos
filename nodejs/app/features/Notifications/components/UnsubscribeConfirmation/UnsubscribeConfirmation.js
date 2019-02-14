@@ -115,16 +115,12 @@ class UnsubscribeConfirmation extends Component {
     }
 
     let logoSrc
-    let productTitle
     if (product === 'lens') {
       logoSrc = '/assets/BibleLens-icon-48x48.png'
-      productTitle = 'Bible Lens'
     } else if (product === 'bafk') {
       logoSrc = '/assets/BibleAppForKids-icon-48x48.png'
-      productTitle = 'Bible App for Kids'
     } else {
       logoSrc = '/assets/icons/bible/48/en.png'
-      productTitle = 'Bible App'
     }
 
     return (
@@ -132,10 +128,9 @@ class UnsubscribeConfirmation extends Component {
         <Helmet title={intl.formatMessage({ id: 'unsubscribe.links.manage' })} />
         <div className="card-wrapper">
           <a href="/"><YouVersion height={21} width={150} /></a>
-          <h1 className="product-title">
+          <div className="product-container">
             <img alt="Bible Lens Icon" className="product-icon" src={logoSrc} />
-            <div>{productTitle}</div>
-          </h1>
+          </div>
           <Card>
             {(loggedIn || token) && (
               <div className={status === 'loading' ? 'ghost' : ''}>
