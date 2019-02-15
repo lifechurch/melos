@@ -2,9 +2,29 @@ const app = require('../app');
 const debug = require('debug')('youversion-events:server');
 const http = require('http');
 const { createLightship } = require('lightship')
-const net = require('net');
+const net = require('net')
+const fetch = require('node-fetch')
 
+const RAILS_POLL_INTERVAL_SECONDS = process.env.RAILS_POLL_INTERVAL_SECONDS || 30
 const LIGHTSHIP_PORT_RANGE = [ 9001, 9099 ]
+
+function pingRails(lightship) {
+	const railsPort = (typeof (PhusionPassenger) !== 'undefined') ? 80 : 8001
+	console.log(`LIGHTSHIP: Checking Rails Status... (Interval ${RAILS_POLL_INTERVAL_SECONDS}s)`)
+	fetch(`http://127.0.0.1:${railsPort}`).then((res) => {
+		console.log(`LIGHTSHIP: Rails Status = ${res.ok}`)
+
+		if (!res.ok) {
+			lightship.signalNotReady()
+		} else {
+			lightship.signalReady()
+		}
+	}).catch((e) => {
+		console.log('LIGHTSHIP: Rails Status = Error')
+		console.log(e)
+		lightship.signalNotReady()
+	})
+}
 
 function getPort() {
 	let port = LIGHTSHIP_PORT_RANGE[0]
@@ -13,7 +33,7 @@ function getPort() {
 		server.on('error', (err) => {
 			if (err.code !== 'EADDRINUSE') return reject(port)
 			if (port > LIGHTSHIP_PORT_RANGE[1]) {
-				throw new Error('Unable to find available port for Lightship on Passenger + Node instance')
+				throw new Error('LIGHTSHIP: Unable to find available port for Lightship on Passenger + Node instance')
 			}
 			return server.listen(++port)
 		})
@@ -25,10 +45,10 @@ function getPort() {
 function startLightship() {
 	return new Promise((resolve, reject) => {
 		getPort().then((port) => {
-			console.log(`Starting Lightship for Passenger + Node instance on port ${port}`)
+			console.log(`LIGHTSHIP: Starting Lightship for Passenger + Node instance on port ${port}`)
 			resolve(createLightship({ port }))
 		}, (port) => {
-			reject(new Error(`Unable to start Lightship for Passenger + Node instance on port ${port}`))
+			reject(new Error(`LIGHTSHIP: Unable to start Lightship for Passenger + Node instance on port ${port}`))
 		})
 	})
 }
@@ -69,9 +89,14 @@ module.exports = function () {
 	* Create HTTP server.
 	*/
 	const port = normalizePort(process.env.PORT || '3000');
+
 	app.set('port', port);
 	const server = http.createServer(app);
 	startLightship().then((lightship) => {
+
+		const cancelRailsPing = setInterval(() => {
+			pingRails(lightship)
+		}, RAILS_POLL_INTERVAL_SECONDS * 1000)
 
     /**
 		* Event listener for HTTP server "error" event.
@@ -121,7 +146,8 @@ module.exports = function () {
 		const httpServer = server.listen(port);
 
 		lightship.registerShutdownHandler(async () => {
-			console.log('Shutting down Express server via registered Lightship handler.');
+			console.log('LIGHTSHIP: Shutting down Express server via registered Lightship handler.');
+			if (cancelRailsPing) clearInterval(cancelRailsPing)
 			httpServer.close();
 		});
 	}, (lightshipError) => {
