@@ -49,47 +49,47 @@ da:
         user andy: "Lars Pedersen"
         timestamp: "5 dage siden"
         title: "bogmærkede Salme 31:8"
-        verse: "Jeg vil være glad og glæde mig over din ufejlbarlige kærlighed, for du har set mine problemer og vil hjælpe med ængstelsen for min sjæl."
-        reference: "Salme 31:7"
+        verse: "Jeg vil fryde mig og være glad ved din Miskundhed; thi du har seet min Elendighed, du har kjendt min Sjæleangest."
+        reference: "Salme 31:8"
         discover:
-          copy: "Opdag og lær med dine venner når de tilføjer markeringer, bogmærker og noter."
+          copy: "Opdag og lær med dine venner, idet de tilføjer markeringer, bogmærker og noter."
           button: "Hvor kan jeg starte?"
         share:
-          copy: "Del ærlig snak om Skrifterne."
-          button: "Kom i gang med at finde nogle venner."
+          copy: "Del ærlige samtaler om Skriften."
+          button: "Kom i gang ved at finde nogle venner."
         likes:
-          info: "og 4 mere synes om dette"
+          info: "og 4 mere synes godt om dette"
         comments:
           first:
-            text: "Det var nødvendigt at høre det i dag, tak. Lad os indhente det snart!"
-            time: "for 3 timer siden"
+            text: "Havde virkelig brug for at høre det i dag, tak. La' os mødes igen snart!"
+            time: "omkring 3 timer siden"
           second:
-            text: "Amen, også fra mig. Sender en ene-mail nu."
-            time: "for 27 minutter siden"
+            text: "Amen, også jeg. Sender dig et e-brev nu."
+            time: "omkring 27 minutter siden"
           field placeholder: "Skriv en kommentar..."
     widget:
       timeline: "Tidslinje"
-      no activity yet: "Der har ikke været nogen aktivitet endnu."
+      no activity yet: "Der har ikk' været nogen aktivitet endnu."
     moment:
       read all: "Læs alt"
       read less: "Læs mindre"
     share: "Del"
     add comment: "Tilføj en kommentar"
-    my connections: "Forbundne konti"
+    my connections: "Forbundne Konti"
     connected as: "Du er forbundet til  %{connection} som %{username}."
     remove connection: "Fjern denne forbindelse"
-    connection friends: "Her er nogle YouVersion brugere som du er forbundet til på %{connection}:"
+    connection friends: "Her er nogle YouVersion brugere, du' forbundet til på %{connection}:"
     errors:
       no friends: "Ingen af dine %{connection} venner ser ud til at være på YouVersion endnu."
-      reset connection: "Beklager, der skete en fejl. Afbryd venligst forbindelsen, for derefter at genetablere forbindelsen."
+      reset connection: "Beklager, der skete en fejl. Fjern venligst, og genopret så denne forbindelse."
     email:
-      name: "Email"
+      name: "E-post"
     twitter:
       name: "Twitter"
     facebook:
       name: "Facebook"
       errors:
-        expired access: "Din adgangskode er udløbet fra Facebook. Afbryd venligst din forbindelse og gendan herefter forbindelsen til Facebook."
+        expired access: "Dit adgangstoken fra Facebook er udløbet.  Fjern venligst, og genopret så forbindelsen til Facebook."
   language names:
     arabic: "arabisk"
     bulgarian: "bulgarsk"
@@ -146,7 +146,7 @@ da:
       description: "Bring skønheden og sandheden fra Bibelen ind i din dagligdag. Med YouVersion´s Bibel App, kan du læse, se og høre og dele på din smartphone eller tablet og online på Bible.com"
     connections:
       index:
-        title: "Forbundne konti"
+        title: "Forbundne Konti"
   now: "Nu"
   select dropdown: "--Vælg--"
   celebrating 50MM: "Fejrer 50 millioner App installationer!"
@@ -331,7 +331,7 @@ da:
     frequently asked questions text: "Find svar på alt hvad du behøver at vide om at komme i gang med YouVersion Events."
     share: "Del"
     tweet text: "Har du set Events i @ YouVersion's Bible App? Meddelelsesoversigt, meddelelser, links til online giver, og mere! http://bible.com/features/events"
-    email: "Email"
+    email: "E-post"
     faq question 1: "Hvad er Events?"
     faq answer 1: "Begivenheder er en helt gratis funktion inde i YouVersion Bible App, der hjælper brugerne med at forbinde med kirkens begivenheder, de deltager i. Kirker er velkommen til at logge ind på events.bible.com med en gratis YouVersion-konto for at oprette deres egne arrangementer, der vises i Bibelen App. De gratis administrative værktøjer til arrangementer gør det let for din kirke at dele vigtige beskedpunkter, bibelhenvisninger, illustrationer, eksterne links, vigtige kirkens nyheder og meget mere. Og når du gemmer din begivenhed i systemet, vil Bible App-brugere, der leder efter begivenheder i nærheden af ​​dem, kunne finde dine."
     faq question 2: "Hvorfor vil vores kirke bruge Events?"
@@ -582,7 +582,7 @@ da:
     agreement: "Jeg er enig i YouVersion %{terms_link}."
     agree: "Ved oprettelsen, accepterer du vores <a href='%{terms_link}' target='_self'>Betingelser</a> og <a href='%{privacy_link}' target='_self'>Privatlivs Politik</a>."
     terms and conditions: "aftaler og betingelser"
-    email: "Email"
+    email: "E-post"
     mobile: "Mobil"
     facebook sign up success: "Godt! Du har autoriseret via Facebook. Vælg et YouVersion brugernavn og password for at fortsætte."
     register: "Tilmeld"
@@ -619,7 +619,7 @@ da:
     picture: "Billed"
     edit picture: "Skift billede"
     edit notifications: "Notifikations styring"
-    edit connections: "Forbundne konti"
+    edit connections: "Forbundne Konti"
     edit devices: "Forbundne apparater"
     vod_subscriptions: "Dagens vers abonnement"
     vod_subscription success: "Det lykkedes at opdatere dit dagens vers abonnement!"
@@ -1059,7 +1059,7 @@ da:
     contact header: "Presse kontakt oplysninger"
     contact header 2: "Omkring web"
     phone: "Telefon"
-    email: "Email"
+    email: "E-post"
     blog: "YouVersion blog"
     facebook: "YouVersion på Facebook"
     twitter: "YouVersion på Twitter"
@@ -1370,7 +1370,7 @@ da:
       volunteer: "Frivillig"
     unsubscribe:
       about: "Kontroller hvilke emails du modtager fra YouVersion. Du kan redigere dine notifikationer på mobilen, fra din mobil app."
-      email: "Email"
+      email: "E-post"
       not me: "Det er ikke mig"
       saved: "Frelst!"
       plan delivery: "AFLEVERING AF PLAN"
@@ -1631,7 +1631,7 @@ da:
         title: "Events Log ind"
         signIn: "Log ind"
         subHead1: "Hvis du er en Bibel App bruger og allerede har en YouVersion konto kan du logge ind med de samme rettigheder.<br><br>Har du ikke en YouVersion konto endnu? <br><a href='%{url}'>Log ind for på Bible.com</a> for at starte med at skabe Events."
-        email: "Email"
+        email: "E-post"
         password: "Kodeord"
         forgotPassword: "Glemt kodeord"
       EventEdit:
