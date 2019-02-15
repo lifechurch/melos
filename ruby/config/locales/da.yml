@@ -42,13 +42,13 @@ da:
     format: "999.999.999"
   social:
     intro page:
-      main heading: "Konversation & Opdagelse"
-      main description: "En ny måde at opdage Bibelen med gode venner"
+      main heading: "Samtale & Opdagelse"
+      main description: "En ny måde at udforske Bibelen, med betroede venner"
       moment:
-        user aaron: "Jens Christensen"
-        user andy: "Poul Rasmussen"
+        user aaron: "Michael Nielsen"
+        user andy: "Lars Pedersen"
         timestamp: "5 dage siden"
-        title: "lavede bogmærke til Salme 31:7"
+        title: "bookmarked Psalm 31:7"
         verse: "Jeg vil være glad og glæde mig over din ufejlbarlige kærlighed, for du har set mine problemer og vil hjælpe med ængstelsen for min sjæl."
         reference: "Salme 31:7"
         discover:
