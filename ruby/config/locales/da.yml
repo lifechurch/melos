@@ -1129,25 +1129,25 @@ da:
   pages:
     generic_error:
       title: "Oops!"
-      explanation: "Noget gik galt bag kulisserne! Du kan prøve igen ved at genindlæse siden,  vi beklager ulejligheden!"
-      our action: "Vi er blevet underrettet om dette, og vil gå i gang med det så hurtigt som muligt."
+      explanation: "Something went wrong behind the scenes! You can try again by reloading the page, we're very sorry for the inconvenience!"
+      our action: "We've been notified about this and will jump on it as soon as possible."
     home:
-      heading: "Få en gratis bibel til din smartphone, tablet og computer."
-      cta: "Læs i Bibelen nu"
+      heading: "Get a free Bible for your phone, tablet, and computer."
+      cta: "Read the Bible Now"
       experience:
         title: "Oplev den hvor som helst"
-        body: "Vælg mellem mere end 1.200 bibeludgaver på over 900 sprog på din computer, smartphone eller tablet - mange af dem tilgængelige som lydbøger."
-        action: "Se bibeludgaver"
+        body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+        action: "View Bible Versions"
       make_yours:
-        title: "Gør det til din egen Bibel"
-        body: "Marker eller bogmærk dine favoritbibelvers, lav billeder med versene som du kan dele og tilføj offentlige eller private noter til bibeluddrag."
-        action: "Start din egen gratis konto"
+        title: "Make it your Bible"
+        body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+        action: "Create Your Free Account"
       install_now:
-        title: "Installer app'en nu"
-        body: "Bibel app'en er fuldstændig gratis og uden reklamer og in-app køb. Så mange unikke enheder er den er blevet installeret på (indtil nu):"
+        title: "Install the App Now"
+        body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
         action: "Download the Free Bible App"
       free_plans:
-        title: "Gratis bibellæseplaner og andagter"
+        title: "Free Reading Plans and Devotionals"
         body: "Bibellæseplaner hjælper dig med at engagere dig i Guds ord hver dag, en lille smule ad gangen."
       browse_plans: "Gennemse alle planer"
       read_listen: "Læs, lyt, se, del"
@@ -1917,7 +1917,7 @@ da:
       chapter: "Kapitel"
       read reference: "Læs %{reference}"
       read chapter: "Læs hele kapitlet"
-      plan title: "Gratis bibellæseplaner og andagter"
+      plan title: "Free Reading Plans and Devotionals"
       plan title ref: "Gratis Læseplaner og andagter relateret til %{reference}"
       plan subtitle: "Bibel Læseplaner bryder din Skrifts læsning ned i mindre daglige portioner. Planer indeholder ofte støttende lyd andagter eller video afsnit. Hvad enten du kalder Bibel Planer, Læseplaner eller Andagter, Planer er bevist måde som du kan gøre Bibelen til en naturlig del af dit hverdagsliv."
       meta:
@@ -2046,7 +2046,7 @@ da:
     read full chapter: "Læs hele kapitlet"
     copy: "Kopiér"
     notification settings: "Notifikationsindstillinger"
-    get a free bible: "Få en gratis bibel til din smartphone, tablet og computer."
+    get a free bible: "Get a free Bible for your phone, tablet, and computer."
     download the bible: "Hent Bibel App´en"
     my year: "Mit år i Bibel App'en"
     view snapshot: "For at se dine snapshot."
