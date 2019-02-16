@@ -143,7 +143,7 @@ da:
       download or read: "Hent nu, eller læs online."
     site:
       title: "Bible.com"
-      description: "Bring skønheden og sandheden fra Bibelen ind i din dagligdag. Med YouVersion's Bibel App, kan du læse, se, lytte og dele på din smartphone, eller tablet og online på Bible.com."
+      description: "Bring Bibelens skønhed og sandhed ind i din dagligdag. Med YouVersion's Bibel App, kan du læse, se, lytte og dele på din smartphone, eller tablet og online på Bible.com."
     connections:
       index:
         title: "Forbundne Konti"
@@ -161,26 +161,26 @@ da:
   make a donation: "Foretag en Donation"
   thanks for your donation: "Tak for din donation!"
   thanks authorization: "Hvis du anmodede om en kvittering, vil den snart være i din indbakke."
-  donation error: "Vi beklager, men der gik noget galt med dit bidrag. Fejlen var: %{error_text}"
+  donation error: "Vi beklager, men noget gik galt med din donation. Fejlen var: %{error_text}"
   created ago: "Oprettet for %{time_ago} siden"
-  copy: "Kopi"
+  copy: "Kopiér"
   copy confirmed: "Kopieret!"
-  new note: "Skriv en note"
-  share success: "Din besked er blevet delt"
-  share error: "Beklager, der var en fejl i delingen af din besked. Prøv venligst igen."
+  new note: "Opret en Note"
+  share success: "Dit budskab er blevet delt."
+  share error: "Beklager, der var en fejl i delingen af dit budskab. Prøv venligst igen."
   share:
     request:
-      no_twitter_connection: "Du har ikke en tilknyttet Twitter konto. Etablér venligst forbindelse til din konto på indstillingssiden."
-      no_facebook_connection: "Du har ikke en tilknyttet Facebook konto. Etablér venligst forbindelse til din konto på indstillingssiden."
+      no_twitter_connection: "Du har ikk' en forbundet Twitter konto. Opret venligst forbindelse til din konto på indstillingssiden."
+      no_facebook_connection: "Du har ikk' en forbundet Facebook konto. Opret venligst forbindelse til din konto på indstillingssiden."
   google plus: "Google+"
-  connect to: "Forbind til din %{connection} konto"
-  deleted connection: "Fjernede med succes din forbindelse til %{connection}."
+  connect to: "Opret forbindelse til din %{connection} konto"
+  deleted connection: "Det lykkedes at fjerne din forbindelse til %{connection}."
   deleted connection error: "Beklager, der var en fejl i fjernelsen af din forbindelse til %{connection}."
-  connection marketing: "YouVersion er sjovere med venner! Link din YouVersion konto til dine andre sociale netværk og øjeblikkeligt finde dine venner på YouVersion. Sammenkædning dine konti giver dig også mulighed for at dele indhold med blot et par klik. Vi vil aldrig sende noget uden din godkendelse."
-  next step connections: "Næste: Forbind din konto og find dine venner"
-  no notes found: "%{username} har ingen noter."
+  connection marketing: "YouVersion er sjovere med venner! Tilslut din YouVersion konto til dine andre sociale netværk og find øjeblikkeligt dine venner på YouVersion. Tilslutning af dine konti gør dig også i stand til at dele indhold med blot et par klik. Vi vil aldrig indsende noget uden din bekræftelse."
+  next step connections: "Næste: Tilslut dine konti og find dine venner"
+  no notes found: "%{username} har ikk' nogen noter."
   no recent activity: "%{username} har ingen nylig aktivitet."
-  no badges found yourself: "Du har ikke optjent nogen mærker endnu."
+  no badges found yourself: "Du har ikk' optjent nogen mærker endnu."
   no badges found other: "%{username} har ikke optjent nogen mærker endnu."
   see users badges: "Se alle %{username}s mærker"
   highlight: "Marker vers"
@@ -773,7 +773,7 @@ da:
     earned a badge: "Tjente et mærke"
     user badges: "%{user}'s badges"
     earned date: "Optjent af %{username} for %{ago} siden"
-    none me: "Du har ikke optjent nogen mærker endnu."
+    none me: "Du har ikk' optjent nogen mærker endnu."
     none user: "%{username} har ikke optjent nogen mærker endnu."
   plans:
     see all: "Se alle"
@@ -1657,7 +1657,7 @@ da:
         edit: "Rediger Event"
         go: "Gå til Mine Events"
         share: "Del din event:"
-        copy: "Kopi"
+        copy: "Kopiér"
         copied: "Linket blev kopieret til dit udklipsholder"
         previous: "← Tidligere: Forhåndsvisning"
       EventFeedDiscover:
@@ -1884,7 +1884,7 @@ da:
       EventView:
         components:
           EventViewContent:
-            copy: "Kopi"
+            copy: "Kopiér"
             copied: "Kopieret"
             share: "Del"
             read: "Læs"
@@ -1967,7 +1967,7 @@ da:
         learn more: "Se mere"
         courtesy of: "%{abbreviation} givet til dig af %{publisher}"
       verse action:
-        copy: "Kopi"
+        copy: "Kopiér"
         bookmark: "Bogmærke"
         note: "Note"
         private: "Privat"
@@ -2044,7 +2044,7 @@ da:
     votd: "Dagens vers"
     read: "Læs"
     read full chapter: "Læs hele kapitlet"
-    copy: "Kopi"
+    copy: "Kopiér"
     notification settings: "Notifikationsindstillinger"
     get a free bible: "Få en gratis bibel til din smartphone, tablet og computer."
     download the bible: "Hent Bibel App´en"
