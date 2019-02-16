@@ -800,14 +800,14 @@ da:
     stats:
       friends reading:
         one: "%{count} friend subscribed to this plan"
-        other: "%{count} venner abonnerer på denne plan"
+        other: "%{count} friends subscribed to this plan"
       friends completed:
-        one: "%{count} ven har gennemført denne plan"
-        other: "%{count} venner har gennemført denne plan"
+        one: "%{count} friend has completed this plan"
+        other: "%{count} friends have completed this plan"
       total completions:
-        one: "Mere end %{count} færdig"
-        other: "Mere end %{count} færdige"
-      view all: "Se alle"
+        one: "Over %{count} completion"
+        other: "Over %{count} completions"
+      view all: "View All"
       close: "Luk"
     settings: "Indstillinger"
     privacy:
@@ -1451,12 +1451,12 @@ da:
       stats:
         friends reading:
           one: "%{count} friend subscribed to this plan"
-          other: "%{count} venner abonnerer på denne plan"
+          other: "%{count} friends subscribed to this plan"
         friends completed:
-          one: "%{count} ven har gennemført denne plan"
-          other: "%{count} venner har gennemført denne plan"
+          one: "%{count} friend has completed this plan"
+          other: "%{count} friends have completed this plan"
         total completions: "Over %{count} gennemførte"
-        view all: "Se alle"
+        view all: "View All"
         close: "Luk"
       settings: "Indstillinger"
       privacy:
