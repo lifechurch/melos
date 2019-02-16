@@ -571,7 +571,7 @@ da:
     view in reader: "View %{reference} in Reader"
   users:
     unverified heading: "Almost Done!"
-    unverified message: "Det ser ud som du forsøger at logge ind på en konto, som ikke er sat helt op. Du har kun ét trin tilbage: skal du blot klikke i den bekræftelses linket i bekræftelses e-mail du modtog fra YouVersion. Kan du ikke finde det? Kontrollér din spam folder eller <a href='%{resend_path}' target='_self'>send bekræftelses email</a>."
+    unverified message: "It looks like you're trying to sign in to an account that hasn't been set up completely. You only have one more step: simply click on the verification link in the confirmation email you received from YouVersion. Can't find it? Check your spam folder or <a href='%{resend_path}' target='_self'>resend the confirmation email</a>."
     settings: "Indstillinger"
     creation form errors: "Følgende fejl forhindrede dannelse af din konto:"
     profile form errors: "Følgende fejl forhindrede opdatering af din profil:"
