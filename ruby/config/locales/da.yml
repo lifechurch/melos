@@ -950,19 +950,19 @@ da:
     vendor_transaction_id:
       duplicate: "Transaction id: This transaction id has already been registered"
     auth:
-      login notice: "For at validere dit købte indhold, skal du logge ind på din YouVersion konto nedenfor eller <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
-      signup notice: "At validere dit købte indhold, skal du tilmelde dig en gratis YouVersion konto nedenfor eller <a href='/sign-in?source=licenses' target='_self'>%{login}</a>, hvis du allerede har en konto."
-      signup link text: "log ind for en gratis konto"
+      login notice: "To validate your purchased content, please login to your YouVersion account below or <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
+      signup notice: "To validate your purchased content, sign up for a free YouVersion account below or <a href='/sign-in?source=licenses' target='_self'>%{login}</a> if you already have an account."
+      signup link text: "sign up for a free account"
       login link text: "log ind"
   registration:
     placeholder:
-      email: "Indtast din email adresse"
+      email: "Enter your email address"
       username: "Indtast dit brugernavn"
-      password: "Indtast dit password"
-    with email: "Tilmeld dig via din emailadresse"
+      password: "Enter your password"
+    with email: "Sign up using your email address"
     with facebook: "Sign up with Facebook"
-    benefits title: "Få den fulde oplevelse"
-    benefits blurb: "Oprettelse af en YouVersion konto giver dig adgang til flere funktioner som bogmærker og noter. De vil dukke op på enhver enhed, hvor du er logget ind En konto gør det også nemmere at dele Bibelen med dine venner, så tage et minut eller to, og tilmeld dig!"
+    benefits title: "Get the Full Experience"
+    benefits blurb: "Creating a YouVersion account gives you access to more features like bookmarks and notes. They'll show up on any device where you're signed in. An account also makes it easier to share the Bible with your friends, so take a minute or two and sign up!"
     plan blurb: "Det ser ud som du ønsker at starte en Bibellæseplan. Smart! Planer kan hjælpe dig med at få Bibelen en del af dit daglige liv. Log ind eller opret en konto nedenfor og kom i gang!"
     bookmark blurb: "Det ser ud som du ønsker at bruge et bogmærke. Godt! Bogmærker hjælper dig med at holde styr på vers, du ønsker at huske, dele eller markere som favoritter. Log ind eller oprette en konto nedenfor og komme i gang!"
     friends blurb: "Det ser ud som du ønsker at dele med dine venner. God idé! Du vil være i stand til at dele, hvad du lærer og hjælpe hinanden ophold på sporet med læsning mål. Log ind eller oprette en konto nedenfor og komme i gang!"
