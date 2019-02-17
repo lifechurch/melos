@@ -1786,22 +1786,22 @@ da:
                 onlyJpg: "[kun JPG]"
                 sizePrompt: "%{requiredWidth}px bredde x %{requiredHeight}px højde"
                 sizePrompt2: "Dit billeds dimensioner skal være %{requiredWidth} x %{requiredHeight} pixels."
-                eventName: "Event Navn"
-                org: "Navn på Kirke eller Organisation"
-                desc: "Event Beskrivelse"
-                next: "Næste: Tilføj Lokation & Tidspunkt →"
-                blank: "%{field} må ikke være blank."
+                eventName: "Event Name"
+                org: "Church Name or Organization"
+                desc: "Event Description"
+                next: "Next: Add Location & Times &rarr;"
+                blank: "%{field} cannot be blank."
           location:
             components:
               Location:
                 oneRequired: "Tilføj mindst et tidspunkt."
-                use: "BRUG DENNE LOKATION"
-                edit: "Redigér Lokation"
-                delete: "Slet Lokation"
+                use: "USE THIS LOCATION"
+                edit: "Edit Location"
+                delete: "Delete Location"
               LocationAddButtons:
-                addPhysical: "Tilføj en fysisk Lokation"
-                promptPhysical: "Do kan tilføje flere lokationer"
-                addVirtual: "Tilføj virtuel Lokation"
+                addPhysical: "Add a Physical Location"
+                promptPhysical: "You can add multiple locations."
+                addVirtual: "Add Virtual Location"
                 churchOnline: "Vidste du? Du kan starte en online kirke gratis ved at bruge <a className='button-caption' href='%{url}'>Church Online Platform</a>."
               LocationAddTime:
                 minutes: "minutter"
