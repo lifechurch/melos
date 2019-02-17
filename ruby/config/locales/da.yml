@@ -1670,65 +1670,65 @@ da:
         my: "My Events"
         new: "Create New Event"
         subTitle: "EVENTS CREATED BY ME"
-        newFirst: "Skab Din Første Event"
-        learn: "Lær hvordan du skaber en stor Event"
+        newFirst: "Create Your First Event"
+        learn: "Learn how to make a great Event"
       EventFeedSaved:
-        title: "Gemte begivenheder"
+        title: "Saved Events"
       EventView:
         title: "YouVersion Event"
       SelectLanguage:
-        choose: "Vælg dit sprog"
+        choose: "Choose Your Language"
     features:
       Auth:
         errors:
           sessionExpired: "Din session udløb. Log venligst ind igen."
-          invalidEmail: "Ugyldig email eller password. "
+          invalidEmail: "Invalid email or password."
       EventEdit:
         errors:
-          locationMustHaveTime: "Alle lokationer skal have mindst et tidspunkt."
-          locationRequired: "Du ikke Vise en Event uden lokationer."
-          contentRequired: "Du kan ikke publicere et Event uden indhold."
-          planSearchFailed: "Søgning matchede ikke nogen af dine dokumenter."
-          noMatchingPlans: "Ingen match på Planer"
+          locationMustHaveTime: "All locations must have at least one time."
+          locationRequired: "You cannot publish an Event with no locations."
+          contentRequired: "You cannot publish an Event with no content."
+          planSearchFailed: "Search did not match any documents"
+          noMatchingPlans: "No matching Plans"
         components:
           EventEditNav:
             details: "Detaljer"
             locations: "Locations & Times"
             content: "Indhold"
-            preview: "Preview & Publicer"
+            preview: "Preview & Publish"
             share: "Del"
         features:
           content:
             components:
               ContentFeed:
                 reorder: "Omsortér Indhold"
-                doneReordering: "Lavet sortering"
+                doneReordering: "Done Reordering"
               ContentHeader:
                 text: "Tekst"
-                reference: "Bibel reference"
+                reference: "Bible Reference"
                 plan: "Plan"
                 image: "Billede"
-                link: "Eksternt link"
-                giving: "Giv link"
-                announcement: "Annoncering"
+                link: "External Link"
+                giving: "Giving Link"
+                announcement: "Announcement"
               ContentHelpModal:
                 types: "Indholdstyper"
-                learn: "Lær hvordan du laver<br>en stor Event"
+                learn: "Learn how to make <br>a great Event"
                 text:
                   title: "Tekstmoduler"
-                  desc: "Forklaringer, nøgle punkter, diskussions spørgsmål… Del alt tekstbaseret generelt indhold som vil hjælpe dine deltagere med at forstå dine beskeder når det sker. Dine tekst moduler kan være af enhver længde og inkludere rich tekst formatering."
+                  desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
                 reference:
-                  title: "Bibel Reference Modul"
-                  desc: "Vælg et Bibel vers eller passage, linket direkte til enhver af YouVerion´s 1.200+ versioner på mere end 900+ sprog. Folk som ser din Event, kan klikke på din reference, for at se den i deres Bibel App læser, hvor de kan Bogmærke, Markere den eller mere."
+                  title: "Bible Reference Module"
+                  desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                 plan:
-                  title: "Plan Modul"
+                  title: "Plan Module"
                   desc: "Link til Bibel-Læseplaner og Andagter, der relaterer til dine læresætninger, og hjælp dit publikum med at fortsætte engagementet med Gud´s ord, hele ugen igennem."
                 image:
                   title: "Billede-Modul"
-                  desc: "Sæt liv i din Event med enhver slags støtte grafik: kunst serie, billeder, Bibel Versbilleder osv. Deltagere vil nemt være i stand til at dele dine Event billeder til deres sociale medier, og dermed gøre dit budskab viralt. "
+                  desc: "Få liv i din Begivenhed, med enhver form for underbyggende grafik: kunstserier, fotografier, Vers Billeder, etc. Deltagere vil være i stand til nemt at dele dine Begivenheds-billeder, til deres sociale medier, og gøre dit budskab viralt."
                 link:
-                  title: "Eksternt Link Modul"
-                  desc: "Opret en knap i din Event der linker til alle eksterne websites. Sæt dit publikum kun en knap væk fra donation, frivillig tilmelding eller kirke hjemmesider."
+                  title: "External Link Module"
+                  desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                 announcement:
                   title: "Announcement Module"
                   desc: "Kirke nyheder, kalender begivenheder, programmer, klasser, frivillige og missions muligheder... Annonceringsmoduler er den perfekte beholder til at dele information der er relevant og vigtig, men at du ikke distraherer fra din Events primære budskab. Alle annonceringsmoduler vises på deres egen side i din event og kan endda indeholde rich text indhold (såsom fed og kursiv)."
