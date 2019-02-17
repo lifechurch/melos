@@ -1918,8 +1918,8 @@ da:
       read reference: "Læs %{reference}"
       read chapter: "Læs hele kapitlet"
       plan title: "Free Reading Plans and Devotionals"
-      plan title ref: "Gratis Læseplaner og andagter relateret til %{reference}"
-      plan subtitle: "Bibel Læseplaner bryder din Skrifts læsning ned i mindre daglige portioner. Planer indeholder ofte støttende lyd andagter eller video afsnit. Hvad enten du kalder Bibel Planer, Læseplaner eller Andagter, Planer er bevist måde som du kan gøre Bibelen til en naturlig del af dit hverdagsliv."
+      plan title ref: "Free Reading Plans and Devotionals related to %{reference}"
+      plan subtitle: "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life."
       meta:
         mobile:
           title: "Bibel App'en"
@@ -1927,14 +1927,14 @@ da:
           title: "Bible.com"
       header:
         parallel: "Parallel"
-        parallel exit: "Stop parallel visning"
+        parallel exit: "Exit Parallel Mode"
         cancel: "Fortryd"
         audio label: "LYD"
-        audio window: "Åben i nyt vindue"
-        font label: "LÆSE INDSTILLINGER"
+        audio window: "Open in new window"
+        font label: "READER SETTINGS"
         notifications label: "NOTIFIKATIONER"
         more label: "Mere"
-        search input: "Reference eller Nøgleord..."
+        search input: "Reference or Keyword..."
         home: "Hjem"
         bible: "Bibel"
         plans: "Plans"
@@ -1944,7 +1944,7 @@ da:
       chapterpicker:
         book label: "BOG"
         chapter label: "KAPITEL"
-        chapter unavailable: "Dette kapitel er ikke tilgængeligt i denne version. Vælg venligst et andet kapitel eller version."
+        chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
         choose chapter: "Vælg kapitel"
       versionpicker:
         language label: "BIBEL SPROG"
