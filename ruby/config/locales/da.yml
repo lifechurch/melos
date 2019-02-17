@@ -1399,7 +1399,7 @@ da:
         pwf_reminders: "You have successfully unsubscribed from seeing Plan Start Reminders."
       labels:
         badges: "When I earn a badge"
-        comments: "Kommentarer til min aktivitet"
+        comments: "Comments on my activity"
         friendships: "Friend requests"
         likes: "Synes om til min aktivitet"
         moments: "Venners aktivitet"
