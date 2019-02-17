@@ -1401,29 +1401,29 @@ da:
         badges: "When I earn a badge"
         comments: "Comments on my activity"
         friendships: "Friend requests"
-        likes: "Synes om til min aktivitet"
+        likes: "Likes on my activity"
         moments: "Venners aktivitet"
-        newsletter: "Nyheder fra Bibel App´ en"
+        newsletter: "News from Bible App"
         lens_newsletter: "Nyheder fra Bible Lens"
-        reading_plans: "Om mine Bibellæseplaner"
-        votd: "Teksten fra Dagens vers."
-        votd_image: "Dagens vers billede"
-        contact_joins: "Når en kontakt kommer med"
-        pwf_comments: "Når deltager indsender en kommentar"
-        pwf_accepts: "Når Deltagere accepterer en Invitation"
-        pwf_invites: "Når du er inviteret til at deltage i en Plan"
-        pwf_reminders: "Planlæg Start påmindelse"
+        reading_plans: "About my Bible Plans"
+        votd: "Verse of the Day Text"
+        votd_image: "Verse of the Day Image"
+        contact_joins: "When a Contact joins"
+        pwf_comments: "When Participants Post a Comment"
+        pwf_accepts: "When Participants Accept an Invitation"
+        pwf_invites: "When Invited to Join a Plan"
+        pwf_reminders: "Plan Start Reminder"
       error:
-        token: "Beklager, du skal logge ind før du kan ændre Notifikations indstillinger:"
-        other_type: "Beklager, der skete ikke det vi forventede. Vil du opdatere dine Notifikationer?"
-    change: "Ret"
+        token: "Sorry, you need to Sign In before you can change your Notification settings:"
+        other_type: "Sorry, that didn’t do what we expected. Would you like to update your Notifications?"
+    change: "Change"
     ui:
       yes button: "Ja"
       no button: "Nej"
     plans:
       plans: "Plans"
-      plans back: "← Planer"
-      related plans: "Lignende Planer"
+      plans back: "&larr; Plans"
+      related plans: "Related Plans"
       see all: "See All"
       discover: "Opdag"
       my_plans: "My Plans"
@@ -1455,7 +1455,7 @@ da:
         friends completed:
           one: "%{count} friend has completed this plan"
           other: "%{count} friends have completed this plan"
-        total completions: "Over %{count} gennemførte"
+        total completions: "Over %{count} completions"
         view all: "View All"
         close: "Luk"
       settings: "Indstillinger"
@@ -1584,34 +1584,34 @@ da:
         announcement:
           events:
             title:
-              required: "Annoncerings titel er krævet."
+              required: "Announcement title is required."
         default:
           bible:
             reference:
-              not_found: "Bibel reference ikke gyldig."
+              not_found: "Bible reference not valid."
           events:
             google_place_id:
-              required: "Du skal vælge en lokation fra kortet."
+              required: "You must choose a location from the map."
             latitude:
-              required: "Du skal vælge en lokation fra kortet."
+              required: "You must choose a location from the map."
             times:
               start_dt:
-                must_be_a_future_date: "Start Tidspunkt kan ikke være i fortiden."
+                must_be_a_future_date: "Start Time cannot be in the past."
             timezone:
-              required: "Tidszone er krævet."
+              required: "Timezone is required."
         reference:
           events:
             usfm:
-              invalid: "Bibel reference ikke gyldig."
+              invalid: "Bible reference not valid."
         url:
           events:
             url:
-              required: "URL er nødvendig."
+              required: "URL is required."
             title:
-              required: "URL Etiket er krævet."
+              required: "URL Label is required."
       EventHeader:
         status:
-          published: "Vist"
+          published: "Published"
           draft: "Kladde"
           live: "Direkte"
           archived: "Arkiveret"
