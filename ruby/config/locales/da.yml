@@ -1731,7 +1731,7 @@ da:
                   desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                 announcement:
                   title: "Announcement Module"
-                  desc: "Kirke nyheder, kalender begivenheder, programmer, klasser, frivillige og missions muligheder... Annonceringsmoduler er den perfekte beholder til at dele information der er relevant og vigtig, men at du ikke distraherer fra din Events primære budskab. Alle annonceringsmoduler vises på deres egen side i din event og kan endda indeholde rich text indhold (såsom fed og kursiv)."
+                  desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
               ContentInsertionPoint:
                 title: "Indsæt næste modul her"
               ContentTypeAnnouncement:
