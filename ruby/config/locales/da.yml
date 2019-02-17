@@ -1737,51 +1737,51 @@ da:
               ContentTypeAnnouncement:
                 title: "Titel"
                 prompt: "Skriv noget her..."
-                caption: "I din Event vil kun din Titel (her over) være synlig. Når du bruger tabs på din Titel vil Indholdet (under) vises på en separat skærm."
+                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
               ContentTypeContainer:
-                dirty: "Indhold vil automatisk blive gemt et par sekunder efter at du stopper med at skrive."
-                failed: "Kan ikke gemme."
+                dirty: "Content will automatically save a few seconds after you stop typing."
+                failed: "Unable to save."
                 tryAgain: "Prøv igen."
                 lastSaved: "Sidst gemt %{when}"
               ContentTypeImage:
                 errors:
-                  wrongSize: "Billed størrelsen skal være %{requiredWidth}x%{requiredHeight}. Dit billede er %{yourWidth}x%{yourHeight}."
+                  wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
                   wrongType: "Ugyldig filtype. Skal være JPG."
                 caption: "Tilføj overskrift"
                 prompt: "Træk og Slip et Billede"
                 onlyJpg: "[kun JPG]"
                 sizePrompt: "%{requiredWidth}px bredde x %{requiredHeight}px højde"
-                select: "Vælg billede"
+                select: "Select Image"
               ContentTypeLink:
-                kindrid: "Hvis du leder efter en smart, simpel donations platform, <a href='%{url}'>prøv Kindrid</a>."
-                label: "Link Etiket"
+                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
+                label: "Link Label"
                 prompt: "Skriv noget her..."
                 url: "URL"
               ContentTypePlan:
                 replace: "Erstat"
-                search: "Søg efter en Læse Plan"
+                search: "Search for a Reading Plan"
               ContentTypeReference:
                 language: "Sprog"
                 version: "Version"
                 book: "Bog"
-                chapterVerse: "Kapitel: Vers"
+                chapterVerse: "Chapter:Verse"
               ContentTypeText:
                 prompt: "Skriv noget her..."
               LiveWarningModal:
-                title: "Kan ikke slette mens Eventen er live"
-                desc: "Når en Event er live så kan du ikke slette Tekst, Bibel Referencer og Billed moduler fra den. Fordi brugere kan have tilføjet deres private noter til dem. Du kan stadig redigere disse moduler."
+                title: "Cannot Delete While Event is Live"
+                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
                 ok: "OK"
           details:
             errors:
-              generic: "Der var et problem mens du ville Vise din Event. "
-              invalidTimes: "En enkelt gudstjeneste kan ikke vare længere end 12 timer og forskellen mellem tidligste start tidspunkt og det sidste slut tid på en Event kan ikke være mere end 8 dage Juster venligst dine Events tidspunkter og prøv igen."
+              generic: "There was a problem while publishing your Event."
+              invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
             components:
               DetailsEdit:
                 errors:
-                  wrongSize: "Billed størrelsen skal være %{requiredWidth}x%{requiredHeight}. Dit billede er %{yourWidth}x%{yourHeight}."
+                  wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
                   wrongType: "Ugyldig filtype. Skal være JPG."
-                changeImage: "Skift billede"
-                removeImage: "Fjern billede"
+                changeImage: "Change Image"
+                removeImage: "Remove Image"
                 prompt: "Træk og Slip et Billede"
                 onlyJpg: "[kun JPG]"
                 sizePrompt: "%{requiredWidth}px bredde x %{requiredHeight}px højde"
