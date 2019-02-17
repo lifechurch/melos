@@ -1842,7 +1842,7 @@ da:
               UnpublishModal:
                 cancel: "Fortryd"
                 title: "Unpublish to Make Changes"
-                desc: "For at tilføje, redigere eller slette Lokationen og Tidspunkter skal du midlertidigt slå Vist fra på Eventen. Mens du redigerer vil din event ikke være synlige i søgeresultater. Glem ikke at få vist din event igen."
+                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
                 unpublish: "Unpublish"
           preview:
             notes:
@@ -1850,22 +1850,22 @@ da:
               noAuthPrompt: "<a href='%{url}'><span className='highlight'>Log ind</span> for at tilføje dine private noter…</a>"
             components:
               PreviewFeed:
-                review: "Gennemse din Event før publicering"
-                previewUrl: "Eksempel URL:"
-                share: "Del Event"
-                locationsAndTimes: "Lokationer og Tider"
+                review: "Review Your Event Before Publishing"
+                previewUrl: "Preview URL:"
+                share: "Share Event"
+                locationsAndTimes: "Locations and Times"
                 publish: "Udgiv"
                 unpublish: "Unpublish"
-                locations: "Lokationer:"
+                locations: "Locations:"
                 discoverable:
-                  title: "Søgbar:"
-                  desc: "Din event vil være synlig i Bibel App´en Event Lokation og i søge resultater 5 dage før tidligste start tidspunkt."
+                  title: "Discoverable:"
+                  desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
                 status:
                   title: "Status:"
-                  desc: "Det røde LIVE badge vil vises når det tidligste start tidspunkt starter."
+                  desc: "The red LIVE badge will display when your earliest start time begins."
                 remove:
                   title: "Fjern:"
-                  desc: "Din Event vil ikke længere kunne findes efter det sidste slut tidspunkt. Deltagere som klikkede på \"Gem Event\" da din Event var søgbar vil stadig have adgang til en arkiv version af den, dette Event vil også fortsætte med at være tilgængeligt via direkte links."
+                  desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
               PreviewTypeAnnouncement:
                 expand: "Udvid"
               PreviewTypePlan:
@@ -1874,13 +1874,13 @@ da:
       EventFeedMine:
         components:
           EventListItem:
-            duplicate: "Dupliker"
+            duplicate: "Duplicate"
             share: "Del"
             delete: "Slet"
-            draft: "Udkast"
+            draft: "DRAFT"
             edit: "Redigér"
-            view: "Se"
-            fail: "Kan ikke slette Eventen"
+            view: "View"
+            fail: "Unable to delete Event"
       EventView:
         components:
           EventViewContent:
@@ -1888,16 +1888,16 @@ da:
             copied: "Kopieret"
             share: "Del"
             read: "Læs"
-            readPlan: "Læse Plan"
+            readPlan: "Read Plan"
           EventViewContentAnnouncement:
             expand: "Udvid"
-            collapse: "Slå sammen"
+            collapse: "Collapse"
           EventViewDetails:
             expand: "Udvid"
-            collapse: "Slå sammen"
-            save: "Gem begivenhed"
-            signIn: "Log ind for at gemme Event"
-            saved: "Event gemt"
+            collapse: "Collapse"
+            save: "Save Event"
+            signIn: "Sign In to Save Event"
+            saved: "Event Saved"
     Auth:
       sign up: "Sign Up"
       sign in: "Sign In"
