@@ -25,7 +25,7 @@
     "fastify-url-data": "^2.0.1",
     "http-errors": "^1.7.0",
     "i18n": "^0.8.3",
-    "lightship": "^2.0.0",
+    "lightship": "2.1.0",
     "marko": "^4.10.0",
     "newrelic": "^4.10.0",
     "point-of-view": "^1.1.0",

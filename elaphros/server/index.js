@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars, global-require */
 const path = require('path')
 const fastify = require('fastify')({ logger: true })
+const { createLightship } = require('lightship')
 const Raven = require('./configure-sentry')()
 const newrelic = require('./get-new-relic')()
 const registerMiddleware = require('./register-middleware')
-const { createLightship } = require('lightship')
 
 const lightship = createLightship()
 
@@ -38,9 +38,6 @@ registerMiddleware(fastify, [
 require('./cors')(fastify)
 require('./i18n')(fastify)
 require('./redirect-authenticated')(fastify)
-
-/* Liveness / Readiness Probe Routes */
-fastify.get('/ping', require('../route-handlers/ping'))
 
 /* Web App Manifest */
 fastify.get('/manifest.json', require('../json-handlers/manifest'))

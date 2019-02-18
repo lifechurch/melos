@@ -3253,9 +3253,10 @@ light-my-request@^2.0.2:
     readable-stream "^2.3.3"
     safe-buffer "^5.1.1"
 
-lightship@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/lightship/-/lightship-2.0.0.tgz#fb52f700de86b5ace9d36bba2f970bf05958165b"
+lightship@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/lightship/-/lightship-2.1.0.tgz#8d4d139f988387f6a094158d223e3a97f3155cc2"
+  integrity sha512-EpOdHh3metLYjuXWY5kjrH+KjxXUSp7UlW88Vu2KD6mdxcer4iiBzBP9/WJaM/HRX9TVYApS7keQPA7ZIZyjmA==
   dependencies:
     express "^5.0.0-alpha.6"
     roarr "^2.11.9"
