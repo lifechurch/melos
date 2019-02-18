@@ -53,7 +53,7 @@ spec:
             httpHeaders:
               - name: Host
                 value: 127.0.0.1
-          initialDelaySeconds: 5
+          initialDelaySeconds: 10
           periodSeconds: 5
           timeoutSeconds: 5
           failureThreshold: 1
@@ -63,8 +63,6 @@ spec:
             path: /health
             port: 9000
           initialDelaySeconds: 10
-          # Allow sufficient amount of time (180 seconds = periodSeconds * failureThreshold)
-          # for the registered shutdown handlers to run to completion.
           periodSeconds: 30
           failureThreshold: 3
           successThreshold: 1
@@ -114,5 +112,15 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: MEMCACHE_SERVERS
+          - name: DEFAULT_CACHE_LIFETIME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: DEFAULT_CACHE_LIFETIME
+          - name: OVERRIDE_CACHE_LIFETIME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: OVERRIDE_CACHE_LIFETIME                                
       imagePullSecrets:
         - name: gitlab-registry

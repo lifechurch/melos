@@ -158,5 +158,20 @@ spec:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
                 key: ELAPHROS_SENTRY_DSN
+          - name: RAILS_POLL_INTERVAL_SECONDS
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: RAILS_POLL_INTERVAL_SECONDS
+          - name: DEFAULT_CACHE_LIFETIME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: DEFAULT_CACHE_LIFETIME                
+          - name: OVERRIDE_CACHE_LIFETIME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: OVERRIDE_CACHE_LIFETIME                                
       imagePullSecrets:
         - name: gitlab-registry

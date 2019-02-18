@@ -61,7 +61,7 @@
     "keymirror": "^0.1.1",
     "langmap": "0.0.12",
     "langs": "^1.0.1",
-    "lightship": "^2.0.0",
+    "lightship": "^2.1.0",
     "locale-string": "^1.0.0",
     "loose-envify": "^1.1.0",
     "moment": "^2.18.1",
