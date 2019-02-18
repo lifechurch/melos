@@ -109,9 +109,10 @@
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/@tyriar/fibonacci-heap/-/fibonacci-heap-2.0.8.tgz#819fdff85fb559790539ff8a347c246777b4011c"
 
-"@youversion/api-redux@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@youversion/api-redux/-/api-redux-0.5.2.tgz#7498415330918412660ab191bd2a3a205d12fa71"
+"@youversion/api-redux@^0.5.9":
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/@youversion/api-redux/-/api-redux-0.5.9.tgz#90991b12fd71ffefdf9102437939ded9ce0e86de"
+  integrity sha512-ZQ7qvCua/Qa64B8cks/7Gf1YX1CWkRBoLUObOfJpiu4Oz1DptENjvzE+gT3H/mNfLtH+pQ82Yd9wvoDjR83Aww==
   dependencies:
     "@youversion/js-api" "^1.1.2"
     "@youversion/melos" "^0.0.27"

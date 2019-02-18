@@ -5,10 +5,10 @@ import UnsubscribeConfirmation from '../../features/Notifications/components/Uns
 import ManageNotifications from '../../features/Notifications/components/ManageNotifications/ManageNotifications'
 
 export default function () {
-	return (
-		<Route path="/(:lang/)unsubscribe" component={Unsubscribe}>
-			<IndexRoute component={UnsubscribeConfirmation} />
-			<Route path="manage" component={ManageNotifications} />
-		</Route>
-	)
+  return (
+    <Route path="/(:lang/)unsubscribe" component={Unsubscribe}>
+      <IndexRoute component={UnsubscribeConfirmation} />
+      <Route path="manage" component={ManageNotifications} />
+    </Route>
+  )
 }

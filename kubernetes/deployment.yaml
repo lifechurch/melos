@@ -40,7 +40,7 @@ spec:
         resources:
           limits:
             cpu: "4"
-            memory: "4700Mi"
+            memory: "5400Mi"
         readinessProbe:
           httpGet:
             path: /health
@@ -50,9 +50,9 @@ spec:
               - name: Host
                 value: 127.0.0.1
           initialDelaySeconds: 30
-          timeoutSeconds: 2
-          periodSeconds: 3
-          failureThreshold: 10
+          timeoutSeconds: 5
+          periodSeconds: 10
+          failureThreshold: 3
           successThreshold: 1
         livenessProbe:
           httpGet:

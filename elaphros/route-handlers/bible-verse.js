@@ -56,15 +56,6 @@ module.exports = function bibleVerse(req, reply) {
     id: versionId
   }).setEnvironment(process.env.NODE_ENV).get()
 
-  const imagesPromise = Image.call('items').params({
-    usfm: imagesUsfm,
-    language_tag: req.detectedLng
-  }).setEnvironment(process.env.NODE_ENV).get()
-
-  imagesPromise.catch((err) => {
-    Raven.captureException(err)
-  })
-
   const plansPromise = ReadingPlans.call('plans_by_reference').params({
     usfm: imagesUsfm[0],
     language_tag: req.detectedLng
@@ -72,88 +63,101 @@ module.exports = function bibleVerse(req, reply) {
 
   const configPromise = ReadingPlans.call('configuration').setEnvironment(process.env.NODE_ENV).get()
 
-  const allPromises = Promise.all([ versePromise, versionPromise, imagesPromise, plansPromise, configPromise ])
+  const allPromises = Promise.all([ versePromise, versionPromise, plansPromise, configPromise ])
 
-  allPromises.then(([ verses, version, images, plans, config ]) => {
-    const referenceTitle = getReferencesTitle({ bookList: version.books, usfmList: versesUsfm })
+  allPromises.then(([ verses, version, plans, config ]) => {
+    const appLocaleFromBible = bibleToAppLocale(version.language)
 
-    const deepLink = deepLinkPath(chapterifyUsfm(usfm), versionId, version.abbreviation, usfm.split('.').splice(-1))
-    let twitterCard = 'summary'
+    const imagesPromise = Image.call('items').params({
+      usfm: imagesUsfm,
+      language_tag: appLocaleFromBible
+    }).setEnvironment(process.env.NODE_ENV).get()
 
-    if (!validateApiResponse(verses)) {
-      req.log.warn(`Invalid Bible Verse reference ${usfm} in version ${versionId}`)
-      return reply.redirect(303, `/bible/${versionId}`)
-    }
+    imagesPromise.catch((err) => {
+      Raven.captureException(err)
+    })
 
-    if (!validateApiResponse(version)) {
-      req.log.warn(`Invalid Bible version ${versionId}`)
-      return reply.redirect(303, `/bible/${DEFAULT_VERSION}/${usfm}`)
-    }
-    const canonicalPath = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, referenceTitle.usfm, bibleToAppLocale(version.language))
-    const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
+    imagesPromise.then((images) => {
+      const referenceTitle = getReferencesTitle({ bookList: version.books, usfmList: versesUsfm })
 
-    const prerenderedImages = (validateApiResponse(images) && ('images' in images) && images.images.length > 0)
-      ? images.images.filter((image) => { return !image.editable })
-      : []
+      const deepLink = deepLinkPath(chapterifyUsfm(usfm), versionId, version.abbreviation, usfm.split('.').splice(-1))
+      let twitterCard = 'summary'
 
-    const relatedPlans = (validateApiResponse(plans) && ('reading_plans' in plans) && plans.reading_plans.length > 0)
-      ? plans.reading_plans
-      : []
-
-    const description = verses.verses.map((verse) => { return verse.content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0, 200) }).join(' ')
-
-    function getReadingPlanImage(id, width = 320, height = 180) {
-      if (!validateApiResponse(config)) return {}
-      const url = config.images.reading_plans.url
-        .replace('{image_id}', id)
-        .replace('{0}', width)
-        .replace('{1}', height)
-      return { url, width, height }
-    }
-
-    function getMetaImages() {
-      if (prerenderedImages.length === 0) return defaultImages.bible
-      twitterCard = 'summary_large_image'
-      const imageUrl = `https:${selectImageFromList({ images: prerenderedImages[0].renditions, width: 1280, height: 1280 }).url}`
-      return {
-        twitter: imageUrl,
-        facebook: imageUrl,
-        other: imageUrl
+      if (!validateApiResponse(verses)) {
+        req.log.warn(`Invalid Bible Verse reference ${usfm} in version ${versionId}`)
+        return reply.redirect(303, `/bible/${versionId}`)
       }
-    }
 
-    return reply.view('/ui/pages/bible/verse.marko', {
-      versePromise,
-      versionPromise,
-      allPromises,
-      versionId,
-      fullRequestURL,
-      requestHost,
-      images: prerenderedImages,
-      selectImageFromList,
-      plans: relatedPlans,
-      getReadingPlanImage,
-      chapterifyUsfm,
-      deepLink,
-      referenceTitle,
-      usfm,
-      metaImages: getMetaImages(),
-      twitterCard,
-      getLocalizedLink,
-      getPathWithoutLocale,
-      description,
-      appLocales,
-      $global: {
-        __: reply.res.__,
-        __mf: reply.res.__mf,
-        locale: req.detectedLng,
-        seoUtils,
-        bibleToAppLocale,
-        textDirection: 'ltr',
-        localeDetails: getAppLocaleDetails(req.detectedLng),
-        canonicalUrl,
-        canonicalPath
+      if (!validateApiResponse(version)) {
+        req.log.warn(`Invalid Bible version ${versionId}`)
+        return reply.redirect(303, `/bible/${DEFAULT_VERSION}/${usfm}`)
       }
+      const canonicalPath = seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, referenceTitle.usfm, appLocaleFromBible)
+      const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
+
+      const prerenderedImages = (validateApiResponse(images) && ('images' in images) && images.images.length > 0)
+        ? images.images.filter((image) => { return !image.editable })
+        : []
+
+      const relatedPlans = (validateApiResponse(plans) && ('reading_plans' in plans) && plans.reading_plans.length > 0)
+        ? plans.reading_plans
+        : []
+
+      const description = verses.verses.map((verse) => { return verse.content.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0, 200) }).join(' ')
+
+      function getReadingPlanImage(id, width = 320, height = 180) {
+        if (!validateApiResponse(config)) return {}
+        const url = config.images.reading_plans.url
+          .replace('{image_id}', id)
+          .replace('{0}', width)
+          .replace('{1}', height)
+        return { url, width, height }
+      }
+
+      function getMetaImages() {
+        if (prerenderedImages.length === 0) return defaultImages.bible
+        twitterCard = 'summary_large_image'
+        const imageUrl = `https:${selectImageFromList({ images: prerenderedImages[0].renditions, width: 1280, height: 1280 }).url}`
+        return {
+          twitter: imageUrl,
+          facebook: imageUrl,
+          other: imageUrl
+        }
+      }
+
+      return reply.view('/ui/pages/bible/verse.marko', {
+        versePromise,
+        versionPromise,
+        allPromises,
+        versionId,
+        fullRequestURL,
+        requestHost,
+        images: prerenderedImages,
+        selectImageFromList,
+        plans: relatedPlans,
+        getReadingPlanImage,
+        chapterifyUsfm,
+        deepLink,
+        referenceTitle,
+        usfm,
+        metaImages: getMetaImages(),
+        twitterCard,
+        getLocalizedLink,
+        getPathWithoutLocale,
+        description,
+        appLocales,
+        $global: {
+          __: reply.res.__,
+          __mf: reply.res.__mf,
+          locale: req.detectedLng,
+          seoUtils,
+          bibleToAppLocale,
+          textDirection: 'ltr',
+          localeDetails: getAppLocaleDetails(req.detectedLng),
+          canonicalUrl,
+          canonicalPath
+        }
+      })
     })
   }, (e) => {
     Raven.captureException(e)
