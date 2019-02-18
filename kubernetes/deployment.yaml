@@ -43,7 +43,7 @@ spec:
             memory: "4700Mi"
         readinessProbe:
           httpGet:
-            path: /ready
+            path: /health
             port: 9001
             scheme: HTTP
             httpHeaders:
@@ -56,7 +56,7 @@ spec:
           successThreshold: 1
         livenessProbe:
           httpGet:
-            path: /live
+            path: /health
             port: 9001
           initialDelaySeconds: 10
           periodSeconds: 30

@@ -47,7 +47,7 @@ spec:
             memory: "700Mi"
         readinessProbe:
           httpGet:
-            path: /ready
+            path: /health
             port: 9000
             scheme: HTTP
             httpHeaders:
@@ -60,7 +60,7 @@ spec:
           successThreshold: 1
         livenessProbe:
           httpGet:
-            path: /live
+            path: /health
             port: 9000
           initialDelaySeconds: 10
           # Allow sufficient amount of time (180 seconds = periodSeconds * failureThreshold)

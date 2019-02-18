@@ -1,3 +1,6 @@
+/* global PhusionPassenger */
+/* eslint-disable no-console */
+
 const app = require('../app');
 const debug = require('debug')('youversion-events:server');
 const http = require('http');
@@ -10,9 +13,8 @@ const LIGHTSHIP_PORT_RANGE = [ 9001, 9099 ]
 
 function pingRails(lightship) {
 	const railsPort = (typeof (PhusionPassenger) !== 'undefined') ? 80 : 8001
-	console.log(`LIGHTSHIP: Checking Rails Status... (Interval ${RAILS_POLL_INTERVAL_SECONDS}s)`)
 	fetch(`http://127.0.0.1:${railsPort}`).then((res) => {
-		console.log(`LIGHTSHIP: Rails Status = ${res.ok}`)
+		console.log(`LIGHTSHIP: Rails Status = ${res.ok} : ${res.ok ? 'Ready' : 'Not Ready'}`)
 
 		if (!res.ok) {
 			lightship.signalNotReady()
@@ -20,8 +22,7 @@ function pingRails(lightship) {
 			lightship.signalReady()
 		}
 	}).catch((e) => {
-		console.log('LIGHTSHIP: Rails Status = Error')
-		console.log(e)
+		console.log('LIGHTSHIP: Rails Status = Error : Not Ready')
 		lightship.signalNotReady()
 	})
 }
@@ -56,7 +57,7 @@ function startLightship() {
 /**
 * Get port from environment and store in Express.
 */
-module.exports = function () {
+module.exports = function startNodeWWW() {
 	if (typeof (PhusionPassenger) !== 'undefined') {
 		PhusionPassenger.configure({ autoInstall: false });
 	}
