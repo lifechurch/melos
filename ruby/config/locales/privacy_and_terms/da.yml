@@ -1,12 +1,12 @@
 da:
   legal:
     privacy:
-      policy: "%{youversion} Privatlivs politik"
-      h1: "Kort overblik"
-      p1: "Her er et resumé af, hvad du kan forvente at finde i vores opdaterede politik, der dækker alle YouVersion-brandede produkter og tjenester:"
+      policy: "%{youversion} Privacy Policy"
+      h1: "Brief Overview"
+      p1: "Here’s a summary of what you can expect to find in our Privacy Policy, which cover all YouVersion-branded products and services:"
       h2: "Gør din oplevelse personlig."
       p2: "Når du opretter en YouVersion konto, eller bruger nogen af vores applikationer, eller hjemmesider, er den information vi indsamler, med det formål, at tilbyde en mere brugertilpasset Bibel-oplevelse."
-      h3: "Hvordan bruger vi dine data."
+      h3: "How we use your data."
       p3: "Privatlivspolitikken beskriver tydeligt de typer data, vi indsamler fra din aktivitet, og hvordan vi bruger disse oplysninger til at forbedre din YouVersion-oplevelse. Vi deler ikke dine personligt identificerbare data med tredjepartsannoncer eller annoncenetværk."
       h4: "Dit privatliv beskyttet."
       p4: "Når du ser statistik, vi deler og fejrer om bibel engagement i hele verden, så sørger vi for at analysere dataene på en måde, der beskytter dit privatliv. Når disse oplysninger offentliggøres, er det kun i en aggregeret form, der ikke indeholder dine personlige identificerbare oplysninger. Derudover implementerer vi branchens standard sikkerhedsforanstaltninger til beskyttelse af dine data."
