@@ -1,0 +1,435 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2019-01-17 19:35\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Shona\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: sn\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2019-02-04 05:22\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Shona\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: sn\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-11-01 21:13\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Shona\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: sn\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Wawana bheji ye <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} awana bheji ye <b>{title}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Watutunura mhando iyi, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} atutunura vhezheni iyi, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Waita bookmark <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} aita bookmark <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Wava shamwari na <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} ave shamwari na <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Waita highlight <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} aita highlight <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Wawedzera noti, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} awedzera noti, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} awedzera chinyorwa"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Wawedzera noti"
+
+msgid "moment.note.reference.title"
+msgstr "{name} awedzera noti pamusoro pe <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Wawedzera noti pamusoro pa <b>{reference_human}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Wapedza hurongwa hwako"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} apedza hurongwa"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Wapedza hurongwa hwako, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} apedza hurongwa, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Zuva {segment} re {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Wapedza zuva re <b>{segment}</b> rehurongwa, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} apedza zuva <b>{segment}</b> rehurongwa, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Watanga hurongwa hutsva"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} atanga hurongwa hutsva"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Watanga hurongwa hutsva, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} atanga hurongwa hutsva, <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Wona <i>Bhaibheri Series</i> manheru!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bhaibheri Sirisi</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Bible App inoita zviri nani neshamwari. Tsvaka pamaContacts ako kuti uwane shamwari."
+
+msgid "moment.video.watched.self.title"
+msgstr "Watarisa <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} akatarisa <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Gadzirira kisimusi nehurongwa hwebhaibheri hweAdvent"
+
+msgid "moment.system.bafk.title"
+msgstr "Batsira vana vako kuti vapinde murudo neshoko raMwari."
+
+msgid "moment.system.christmas.title"
+msgstr "Taurira vamwe nhau yakanaka: Muponesi vabarwa!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Gore nane rako rinotanga izvezvi."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Wona rudo rwaMwari muShoko rawo."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Wona kuvimba nekuita munhu mutsva muShoko raMwari."
+
+msgid "moment.image.self.title"
+msgstr "Wakagadzira mufananidzo wevhesi we <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} akagadzira mufananidzo wevhesi we <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Gwangunudza rutendo rwako muna Jesu nezvirongwa zvekuverenga zvinowani."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Zvipire mazuva ose muShoko raMwari."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Tsvaga Mwari muShoko raMwari."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Pembera rusununguko muna Jesu Kristu."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Tsvaga Mwari muShoko rawo zuva nezuva."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Shoko raMwari rinoita kuti zvinhu zvose zvive zvitsva."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Hungwaru wehumwari hwunotanga muShoko raMwari."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Wana kutenda muvimbiso dzaMwari."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Gadzirira moyo wako mwaka uno."
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} akava nechekutaura pabookmark yako: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} Akava nechekutaura pahushamwari hwako hutsva na {friend_name}: {comment}"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} Akava nechekutaura pahushamwari hwako hutsva: {comment}"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} Akava nechekutaura pachiratidzo chako: {comment}"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} Akava nechekutaura panote yako: {comment}"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} akava nechekutaura pahurongwa hwako: {comment}"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} akava nechekutaura pahurongwa hwako hwebhaibheri: {comment}"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} akavawo nechekutaura pamusoro pechibatwa cha{moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} akavawo nechekutaura pahushamwari hutsva hwa{moment_owner_name} na {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} akavawo nechekutaura pahushamwari hwavo na {moment_owner_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} akavawo nechekutaura pahushamwari hwako hutsva na{moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} akavawo nechekutaura pamusoro pehighlight ya {moment_owner_name} akati: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} akavawo nechekutaura pamusoro pechinyorwa cha{moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} akavawo nechekutaura pachibatwa chake: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} akavawo nechekutaura pahushamwari hwake hutsva na {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} akavawo nechekutaura pahushamwari hwake hutsva newe: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} akavawo nechekutaura pamucherechedzo wake: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} akavawo nechekutaura pamusoro pechinyorwa chake: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} akavawo nechekutaura pahurongwa hwake: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} akavawo nechekutaura pahurongwa hwake hwebhaibheri: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} akavawo nechekutaura pahurongwa hwa{moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} akavawo nechekutaura pahurongwa hwebhaibheri hwa{moment_owner_name}: \"{comment}\""
+
+msgid "notifications.friendships.accept"
+msgstr "{name} akatambira kumukoka kwaukaita kuti muve shamwari"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} ezvino ave shamwari yako"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} anoda kuva shamwari yako paYouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Unoda here kuva shamwari na {name} paYouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} anofarira chibatwa chako, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} anofarira hushamwari hwako hutsva na {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} anofarira mucherechedzo wako, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} anofarira chinyorwa chako"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} anofarira chinyorwa chako pamusoro pa {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} anofarira chinyorwa chako, \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} anofarira zvaurikuita pahurongwa hwako"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} anofarira zvauri kuita pahurongwa hwako hwebhaibheri"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} akaita bookmark {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} aita highlight {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} awedzera chinyorwa"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} awedzera noti pamusoro pe{reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} awedzera noti, \"{title}\""
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} akapedza hurongwa hwake, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} akapedza hurongwa hwake hweBhaibheri, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} akatanga hurongwa hutsva, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} akatanga hurongwahutsva hweBhaibheri, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "Shamwari yako {name} ave paYouVersion Bata kuti umushamwaridze"
+
+msgid "notifications.system.test"
+msgstr "Tutunura Bhaibheri App yevana izvezvi!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} akava nechekutsura pamufananidzo wevhesi yako: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} akavawo nechekutaura pamufananidzo wevhesi ya {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} akavawo nechekutaura pamufananidzo wevhesi yake: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} akafarira mufanadzidzo wevhesi yako ye {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} akagadzira mufananidzo wevhesi wa {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Une chikumbiro chekuita shamwari newe chakakumirira muBhaibheri App"
+
+msgid "notifications.votd_image"
+msgstr "Mufananidzo we vhesi yanhasi"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} anoda kuverenga hurongwa, “{title}” newe."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} akava nechekutaura nemusi we {day} hwehurongwa, \"{title}\""
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} akatambira kumukoka kwawakaita pakuverenga hurongwa, \"{title}\" newe."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} akachinja zuva rekutanga rehurongwa, \"{title}\" kusvika musi wa{date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} akavawo nechekutaura pamusoro pebheji rako: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} akavawo nechekutaura pamusoro pebheji ra {moment_owner_name}, akati: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} akavawo nechekutaura pamusoro pebheji rake, akati: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} anofarira bheji rako {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} awana bheji {title}"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Hesi!</p><p>Ndirikushandisa Bible App yeYouVersion uye ndirikuda kusheyawo newe.Kana usati wamborishandisa,rinorerutsa kubudisa kanaka nechokwadi chebhaibheri muhupenyu hwako mazuva ose.</p><p><strong>Tora Bible App;</strong>verenga,ona,inzwa uye sheya pamafoni kana tabuleti,nepaindaneti pa Bible.com</p><p><strong>Gadzira akaundi yako:</strong>shandisa mazano ebhaibheri uye unowana kuzomaka,kutara mavhesi nekunyorawo manotsi pamafoni kana matabuleti</p><p><strong>Isa shamwari (kufanana neni!):</strong> tsvagiridza uye taurirana nezve Bhaibheri nevamwe vanhu vaunodisa</p><p>Zvese zviri muBible App - tangira pano: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Hesi!\n"
+"\n"
+"Ndirikushandisa Bible App yeYouVersion uye ndirikuda kusheyawo newe.Kana usati wamborishandisa,rinorerutsa kubudisa kanaka nechokwadi chebhaibheri muhupenyu hawoko mazuva ose.\n"
+"\n"
+"Tora Bible App;verenga,ona,inzwa uye sheya pamafoni kana tabuleti,nepaindaneti pa Bible.com\n"
+"\n"
+"Gadzira akaundi yako:shandisa mazano ebhaibheri uye unowana kuzomaka,kutara mavhesi nekunyorawo manotsi pamafoni kana matabuleti.\n"
+"\n"
+"Isa shamwari (kufanana neni!): tsvagiridza uye taurirana nezve Bhaibheri nevamwe vanhu vaunodisa.\n"
+"\n"
+"Zvese zviri muBible App - tangira pano: "
+
+msgid "share.invite_email_subject"
+msgstr "Batana neni paBhaibheri App!"
+
+msgid "share.invite_facebook"
+msgstr "Ndinoda Bible App! Yanyatondibatsira kuti ndiite kuti Bhaibheri rive muhupenyu hwangu zuva nezuva. Inondibatsira kumaka, kunzwa Bhaibheri richiverengwa, kunyorawo manotsi, kutevera zvirongwa zvezvikamu zvemuBhaibheri zvakarongwa uye kuonawo mavhidhiyo! Enda unotora iyezvino Bible App (mahara):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Une Bible App here? Ndinorida, ndofunga newewo ungaridawozve. Unoiwana apa:"
+
+msgid "share.invite_sms"
+msgstr "Ndinoda Youversion Bhaibheri App. Ndinofunga kuti newewo uchaidawo:"
+
+msgid "share.invite_sms_prefix"
+msgstr "Kubva kuna {name}:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion Bible App ine nzvimbo yayo yainogara iri pafoni pangu. Verenga, ona, inzwa kana kugoverawo vamwe, zvese zviri muapp yemahara:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Une Bible App kubva ku @YouVersion here? Ndinoida and ndinofunga kuti newe uchaidawo. Unokwanisa kuiwana apa:"

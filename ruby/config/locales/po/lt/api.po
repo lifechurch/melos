@@ -1,0 +1,435 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2019-01-18 01:18\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Lithuanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && (n%100>19 || n%100<11) ? 0 : (n%10>=2 && n%10<=9) && (n%100>19 || n%100<11) ? 1 : n%1!=0 ? 2: 3);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: lt\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2019-01-18 01:18\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Lithuanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && (n%100>19 || n%100<11) ? 0 : (n%10>=2 && n%10<=9) && (n%100>19 || n%100<11) ? 1 : n%1!=0 ? 2: 3);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: lt\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-11-01 21:12\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Lithuanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && (n%100>19 || n%100<11) ? 0 : (n%10>=2 && n%10<=9) && (n%100>19 || n%100<11) ? 1 : n%1!=0 ? 2: 3);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: lt\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Jūs pelnėte <b>{title}</b> ženklelį"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} pelnė <b>{title}</b> ženklelį"
+
+msgid "moment.bible.download.self.title"
+msgstr "Atsisiuntėte versiją, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} atsisiuntė versiją, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Pažymėjote <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} pažymėjo <b> {reference_human} {version_abbreviation}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Dabar Jūs esate draugai su <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} dabar yra draugai su <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Jūs paryškinote <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} paryškino <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Jūs pridėjote pastabą, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} pridėjo pastabą, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} pridėjo pastabą"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Pridėjote pastabą"
+
+msgid "moment.note.reference.title"
+msgstr "{name} pridėjo pastabą prie <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Jūs pridėjote pastabą prie <b>{reference_human}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Jūs pabaigėte planą"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} pabaigė planą"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Jūs pabaigėte planą, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} pabaigė planą, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "{segment} diena iš {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Pabaigėte <b>{segment}</b> plano <b>{title}</b> dieną"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} pabaigė <b>{segment}</b> plano dieną, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Pradėjote naują planą"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} pradėjo naują planą"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Pradėjote naują planą, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} pradėjo naują planą, <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Žiūrėkite <i>Biblijos serialą</i> jau šįvakar!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Biblijos serialas</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Biblijos programėlė yra dar geresnė su draugais. Naršykite kontaktus ir susiraskite draugus."
+
+msgid "moment.video.watched.self.title"
+msgstr "Jūs žiūrėjote <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} žiūrėjo <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Pasiruoškite Kalėdoms su Adventiniu Biblijos planu"
+
+msgid "moment.system.bafk.title"
+msgstr "Padėkite savo vaikams pamilti Dievo Žodį."
+
+msgid "moment.system.christmas.title"
+msgstr "Dalinkitės gerosiomis naujienomis: gimė Išganytojas!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Geriausi Jūsų metai prasideda dabar."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Raskite Dievo meilę Jo Žodyje."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Atraskite viltį ir atsinaujinimą Dievo Žodyje."
+
+msgid "moment.image.self.title"
+msgstr "Sukūrėte eilutės vaizdą iš <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} sukūrė eilutės vaizdą iš <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Atnaujinkite savo tikėjimą naujais planais."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Kasdien atsiduokite Jo Žodžiui."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Ieškokite Dievo Jo Žodyje."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Švęskite laisvę Kristuje."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Kasdien ieškokite Dievo Jo Žodyje."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Dievo Žodis viską paverčia nauju."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Dieviškoji išmintis prasideda Dievo Žodyje."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Atraskite dėkingumą Dievo pažaduose."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Paruoškite savo širdį šiam sezonui."
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} pakomentavo Jūsų žymą: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} pakomentavo tavo naują draugystę su {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} pakomentavo tavo naują draugystę: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} pakomentavo Jūsų paryškinimą: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} pakomentavo Jūsų pastabą: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} pakomentavo Jūsų planą: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} pakomentavo Jūsų Biblijos planą: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} taip pat pakomentavo {moment_owner_name} žymą: \"{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} taip pat pakomentavo {moment_owner_name} naują draugystę su {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} taip pat pakomentavo savo naują draugystę su {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} taip pat pakomentavo tavo naują draugystę su {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} taip pat pakomentavo {moment_owner_name} paryškinimą: \"{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} taip pat pakomentavo {moment_owner_name} pastabą: \"{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} taip pat pakomentavo žymą: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} taip pat pakomentavo savo naują draugystę su {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} taip pat pakomentavo savo naują draugystę su jumis: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} taip pat pakomentavo paryškinimą: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} taip pat pakomentavo pastabą: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} taip pat pakomentavo planą: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} taip pat pakomentavo Biblijos planą: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} taip pat pakomentavo {moment_owner_name} planą: \"{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} taip pat pakomentavo {moment_owner_name} Biblijos planą: \"{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} priėmė Jūsų kvietimą draugauti"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} dabar yra Jūsų draugas"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} nori tapti su Jumis draugais per YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Ar norite būti draugais su {name} per YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} mėgsta Jūsų žymą, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} mėgsta Jūsų naują draugystę su {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} mėgsta Jūsų paryškinimą, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} mėgsta Jūsų pastabą"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} mėgsta Jūsų pastabą iš {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} mėgsta Jūsų pastabą, \"{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} mėgsta Jūsų plano aktyvumą"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} mėgsta Jūsų Biblijos plano aktyvumą"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} pažymėjo {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} paryškino {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} pridėjo pastabą"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} pridėjo pastabą prie {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} pridėjo pastabą, {title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} pabaigė savo planą, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} pabaigė savo Biblijos planą, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} pradėjo naują planą, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} pradėjo naują Biblijos planą, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} ką tik prisijungė prie YouVersion. Spustelėkite, norėdami pridėti prie draugų."
+
+msgid "notifications.system.test"
+msgstr "Atsisiųskite mūsų Biblijos programėlę vaikams jau dabar!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} pakomentavo Jūsų eilutės vaizdą: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} taip pat pakomentavo {moment_owner_name} eilutės vaizdą: \"{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} taip pat pakomentavo eilutės vaizdą: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} mėgsta Jūsų eilutės vaizdą, skirtą {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} sukūrė eilutės vaizdą iš {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr ""
+
+msgid "notifications.votd_image"
+msgstr "Dienos eilutės vaizdas"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} nori skaityti planą \"{title}\" kartu su jumis."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} pakomentavo plano \"{title}\", {day} dieną"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} priėmė Jūsų kvietimą skaityti planą \"{title}\" kartu su jumis."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} pakeitė plano \"{title}\" pradžios datą į {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} pakomentavo Jūsų ženkliuką: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} taip pat pakomentavo {moment_owner_name} ženkliuką: \"{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} taip pat pakomentavo ženkliuką: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} mėgsta Jūsų ženkliuką {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} gavo ženklelį {title}"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Labas!</p><p>Naudojuosi YouVersion Biblijos programėle ir norėjau pasidalinti ja su jumis. Jei vis dar nesate gerai susipažinę su programėle, tai ji yra paprastas būdas į kasdienį gyvenimą atsivesti Biblijos grožį ir tiesą.</p><p><strong>Gaukite Biblijos programėlę:</strong> skaitykite, žiūrėkite, klausykitės ir dalinkintės savo išmaniąjame telefone ar planšetiniame kompiuteryje bei internete, Bible.com svetainėje.</p><p><strong>Susikurkite paskyrą:</strong> prenumeruokite Biblijos planus ir gaukite prieigą prie žymių, paryškinimų ir pastabų per įvairius įrenginius.</p><p><strong>Pridėkite draugus (pavyzdžiui mane!):</strong> gilinkitės ir aptarkite Bibliją su žmonėmis, kurie Jums rūpi.</p><p>Visą tai Biblijos programėlėje - pradėkite čia: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Labas!\n"
+"\n"
+"Naudoju YouVersion Biblijos programėlę ir norėjau pasidalinti ja su jumis. Jei vis dar nesate gerai susipažinę su programėle, tai ji yra paprastas būdas į kasdienį gyvenimą atsivesti Biblijos grožį ir tiesą.\n"
+"\n"
+"Gaukite Biblijos programėlę: skaitykite, žiūrėkite, klausykitės ir dalinkintės savo išmaniąjame telefone ar planšetiniame kompiuteryje bei internete, Bible.com svetainėje.\n"
+"\n"
+"Susikurkite paskyrą: prenumeruokite Biblijos planus ir gaukite prieigą prie žymių, paryškinimų ir pastabų per įvairius įrenginius.\n"
+"\n"
+"Pridėkite draugus (pavyzdžiui mane!): gilinkitės ir aptarkite Bibliją su žmonėmis, kurie Jums rūpi.\n"
+"\n"
+"Visą tai Biblijos programėlėje - pradėkite čia: "
+
+msgid "share.invite_email_subject"
+msgstr "Prisijunkite prie Biblijos programėlės!"
+
+msgid "share.invite_facebook"
+msgstr "Man labai patinka Biblijos programėlė! Ji tikrai padėjo paversti Bibliją mano kasdienio gyvenimo dalimi. Joje galima pasižymėti, klausytis audio Biblijos, kurti pastabas, sekti religinius planus…ir netgi žiūrėti vaizdo įrašus! Atsisiųskite jau dabar (tai nieko nekainuoja):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Ar turi Biblijos programėlę? Man ji labai patinka, manau patiks ir tau. Štai nuoroda:"
+
+msgid "share.invite_sms"
+msgstr "Man labai patinka YouVersion Biblijos programėlė. Manau, kad patiks ir tau:"
+
+msgid "share.invite_sms_prefix"
+msgstr "Nuo {name}:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion Biblijos programėlė mano pagrindiniame ekrane turi nuolatinę vietą. Skaityk, žiūrėk, klausykis bei dalinkis…visą tai nemokamoje programėlėje:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Ar turi @YouVersion Biblijos programėlę? Man ji labai patinka, manau patiks ir tau. Štai nuoroda:"

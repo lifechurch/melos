@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"PO-Revision-Date: 2018-12-03 17:16\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Filipino\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"PO-Revision-Date: 2019-01-17 19:35\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Filipino\n"
 "MIME-Version: 1.0\n"
@@ -67,16 +67,16 @@ msgstr ""
 "X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
-msgstr "Iyong nakamit ang <b>{title}</b> na badge"
+msgstr "Nakamit mo ang <b>{title}</b> na badge"
 
 msgid "moment.badge.earned.title"
 msgstr "Nakamit ni {name} ang <b>{title}</b> na badge"
 
 msgid "moment.bible.download.self.title"
-msgstr "Iyong idinawnload ang salin na pinamagatang, <b>{version}</b>"
+msgstr "Nag-download ka ng salin na, <b>{version}</b>"
 
 msgid "moment.bible.download.title"
-msgstr "Idinawnload ni {name} ang salin na pinamagatang, <b>{version}</b>"
+msgstr "Nag-download si {name} ng salin na, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
 msgstr "Ibinookmark mo ang <b>{reference_human} {version_abbreviation}</b>"
@@ -85,10 +85,10 @@ msgid "moment.bookmark.title"
 msgstr "Ibinookmark ni {name} ang <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.friendship.self.title"
-msgstr "Kayo ay magkaibigan na ni <b>{friend_name}</b>"
+msgstr "Magkaibigan na kayo ni <b>{friend_name}</b>"
 
 msgid "moment.friendship.title"
-msgstr "Si {user_name} ay kaibigan na si <b>{friend_name}</b>"
+msgstr "Kaibigan na ni {user_name} si <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
 msgstr "Hinaylayt mo ang <b>{reference_human} {version_abbreviation}</b>"
@@ -97,55 +97,55 @@ msgid "moment.highlight.title"
 msgstr "Hinaylayt ni {name} ang <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
-msgstr "Ikaw ay nagdagdag ng tala, <b>{title}</b>"
+msgstr "Nagdagdag ka ng talang pinamagatang, <b>{title}</b>"
 
 msgid "moment.note.title"
-msgstr "Si {name} ay nagdagdag ng tala, <b>{title}</b>"
+msgstr "Nagdagdag ng tala si {name} na pinamagatang, <b>{title}</b>"
 
 msgid "moment.note.no_title_no_reference.title"
-msgstr "Si {name} ay nagdagdag ng tala"
+msgstr "Nagdagdag ng tala si {name}"
 
 msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Ikaw ay nagdagdag ng tala"
+msgstr "Nagdagdag ka ng tala"
 
 msgid "moment.note.reference.title"
 msgstr "Nagdagdag si {name} ng tala sa <b>{reference_human}</b>"
 
 msgid "moment.note.reference.self.title"
-msgstr "May idinagdag kang tala ukol sa <b>{reference_human}</b>"
+msgstr "May idinagdag kang tala tungkol sa <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Natapos mo ang iyong Plano"
+msgstr "Natapos mo ang iyong Gabay"
 
 msgid "moment.plan_completion.title"
 msgstr "Natapos ni {name} ang Plano"
 
 msgid "moment.plan_completion.v2.self.title"
-msgstr "Natapos mo na ang Planong, <b>{title}</b>"
+msgstr "Natapos mo na ang Gabay na pinamagatang, <b>{title}</b>"
 
 msgid "moment.plan_completion.v2.title"
-msgstr "Natapos ni {name} ang Planong, <b>{title}</b>"
+msgstr "Natapos ni {name} ang Gabay na pinamagatang, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Araw {segment} ng {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Natapos mo ang ika- <b>{segment}</b> araw ng Planong, <b>{title}</b>"
+msgstr "Natapos mo ang ika- <b>{segment}</b> araw ng Gabay na pinamagatang, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "Natapos ni {name} ang ika- <b>{segment}</b> araw ng Planong, <b>{title}</b>"
+msgstr "Natapos ni {name} ang ika- <b>{segment}</b> araw ng Gabay na pinamagatang, <b>{title}</b>"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Ikaw ay nagsimula ng bagong Plano"
+msgstr "Nagsimula ka ng bagong Gabay"
 
 msgid "moment.plan_subscription.title"
-msgstr "Nagsimula ng bagong Plano si {name}"
+msgstr "Nagsimula ng bagong Gabay si {name}"
 
 msgid "moment.plan_subscription.v2.self.title"
-msgstr "Sinumulan mo ang Planong, <b>{title}</b>"
+msgstr "Sinumulan mo ang Gabay na pinamagatang, <b>{title}</b>"
 
 msgid "moment.plan_subscription.v2.title"
-msgstr "Sinimulan ni {name} ang Planong, <b>{title}</b>"
+msgstr "Sinimulan ni {name} ang Gabay na pinamagatang, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Panoorin ang <i>Mga Serye ng Biblia</i> mamayang gabi!"
@@ -154,7 +154,7 @@ msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Mga Serye ng Biblia</i>"
 
 msgid "moment.system.find_friends.title"
-msgstr "Ang Bible App ay mas magandang gamitin kasama ng mga Kaibigan. Tignan ang iyong mga Kontak at hanapin Sila."
+msgstr "Ang Bible App ay mas magandang gamitin kasama ng mga Kaibigan. Tingnan ang iyong mga Kaugnayan upang maghanap ng mga Kaibiga."
 
 msgid "moment.video.watched.self.title"
 msgstr "Pinanood mo ang <b>{title}</b>"
@@ -166,25 +166,25 @@ msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Maghanda para sa Pasko gamit ang Advent Bible Plan"
 
 msgid "moment.system.bafk.title"
-msgstr "Tulungan natin ang ating mga anak na mahalin ang Salita ng Dios."
+msgstr "Tulungan natin ang ating mga anak na mahalin ang Salita ng Diyos."
 
 msgid "moment.system.christmas.title"
-msgstr "Ibahagi ang balita: isinilang si Jesus!"
+msgstr "Ibahagi ang mabuting balita: isinilang na ang Tagapagligtas!"
 
 msgid "moment.client_side.reading_plan_carousel.january.title"
 msgstr "Ngayon na ang simula ng iyong pinakamakabuluhang taon."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Tuklasin ang pag-ibig ng Diyos sa Kanyang Banal na Salita."
+msgstr "Hanapin ang pag-ibig ng Diyos sa Kanyang Banal na Salita."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Tuklasin ang pag-asa at pagbabago sa Salita ng Diyos."
+msgstr "Hanapin ang pag-asa at pagbabago sa Salita ng Diyos."
 
 msgid "moment.image.self.title"
-msgstr "Ikaw ay gumawa ng verse image para sa <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Lumikha ka ng bersikulong larawan para sa <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "Si {name} ay gumawa ng verse image para sa <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Lumikha ng bersikulong larawan si {name} para sa <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Sariwain ang pananampalataya gamit ang mga bagong Babasahin."
@@ -193,10 +193,10 @@ msgid "moment.client_side.reading_plan_carousel.may.title"
 msgstr "Ilaan ang sarili sa araw-araw na pagbabasa ng Banal na Salita."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Tuklasin ang Diyos sa Kanyang Banal na Salita."
+msgstr "Hanapin ang Diyos sa Kanyang Banal na Salita."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Ipagdiwang ang Kalayaan kay Kristo."
+msgstr "Ipagdiwang ang Kalayaan kay Cristo."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
 msgstr "Hanapin ang Diyos sa Kanyang Banal na Salita araw-araw."
@@ -211,55 +211,55 @@ msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Tuklasin ang pasasalamat sa mga pangako ng Diyos."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Ihanda ang puso mo sa panahong ito."
+msgstr "Ihanda ang iyong puso sa panahong ito."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "Nagkomento si {name} sa iyong bookmark: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
-msgstr "Si {name} ay nagkomento sa iyong pakikipagkaibigan kay {friend_name}: “{comment}”"
+msgstr "Nagkomento si {name} sa iyong pakikipagkaibigan kay {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship.friend"
-msgstr "{name} ay nagkomento sa iyong bagong Pakikipagkaibigan: “{comment}”"
+msgstr "Nagkomento si {name} sa iyong bagong Pakikipagkaibigan: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "Nagkomento si {name} sa iyong inihaylayt: “{comment}”"
+msgstr "Nagkomento si {name} sa iyong haylayt: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "Nagkomento si {name} sa iyong tala: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "Si {name} ay nagkomento sa iyong Plano: “{comment}”"
+msgstr "Nagkomento si {name} sa iyong Gabay: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "Si {name} ay nagkomento sa iyong Biblikal na Plano: “{comment}”"
+msgstr "Nagkomento si {name} sa iyong Gabay sa Biblia: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
-msgstr "Si {commenter_name} ay nagkomento rin sa bookmark ni {moment_owner_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa bookmark ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship"
-msgstr "Si {commenter_name} ay nagkomento rin sa pakikipagkaibigan ni {moment_owner_name} kay {friend_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa pakikipagkaibigan ni {moment_owner_name} kay {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship.their"
-msgstr "{commenter_name} ay nagkomento rin sa kanilang bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa kanilang bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} ay nagkomento rin sa iyong bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa iyong bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
-msgstr "Si {commenter_name} ay nagkomento rin sa haylayt ni {moment_owner_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa haylayt ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "Nagkomento rin si {commenter_name} sa tala ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang bookmark: “{comment}”"
+msgstr "Nagkomento rin si {moment_owner_name} sa kanilang bookmark: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "Si {moment_owner_name} ay nagkomento rin sa kanyang pakikipagkaibigan kay {friend_name}: “{comment}”"
+msgstr "Nagkomento rin si {moment_owner_name} sa kanyang pakikipagkaibigan kay {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
-msgstr "{moment_owner_name} ay nagkomento rin sa kanilang bagong Pakikipagkaibigan sa iyo: “{comment}”"
+msgstr "Nagkomento rin si {moment_owner_name} sa kanilang bagong Pakikipagkaibigan sa iyo: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang haylayt: “{comment}”"
@@ -268,19 +268,19 @@ msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang tala: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang Plano: “{comment}”"
+msgstr "Nagkomento rin si {moment_owner_name} sa kanilang Gabay: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang Biblikal na Plano: “{comment}”"
+msgstr "Nagkomento rin si {moment_owner_name} sa kanilang Biblikal na Plano: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "Si {commenter_name} ay nagkomento rin sa Plano ni {moment_owner_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa Gabay ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "Si {commenter_name} ay nagkomento rin sa Biblikal na Plano ni {moment_owner_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa Gabay sa Biblia ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.friendships.accept"
-msgstr "Tinanggap ni {name} ang iyong friend request"
+msgstr "Tinanggap ni {name} ang iyong Kahilingan na Maging Magkaibigan"
 
 msgid "notifications.friendships.nowfriends"
 msgstr "Ngayon ay kaibigan mo na si {name}"
@@ -292,10 +292,10 @@ msgid "notifications.friendships.suggestion"
 msgstr "Nais mo bang kaibiganin si {name} sa YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "Nagustuhan ni {name} ang iyong pananda, {reference_human}"
+msgstr "Nagustuhan ni {name} ang iyong bookmark, {reference_human}"
 
 msgid "notifications.likes.moment.mine.friendship"
-msgstr "Nagustuhan at ni-like ni {name} ang iyong pakikipagkaibigan kay {friend_name}"
+msgstr "Nagustuhan ni {name} ang iyong pakikipagkaibigan kay {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Nagustuhan ni {name} ang iyong haylayt, {reference_human}"
@@ -310,10 +310,10 @@ msgid "notifications.likes.moment.mine.note.title"
 msgstr "Nagustuhan ni {name} ang iyong talang pinamagatang, \"{title}\""
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "Ni-like ni {name} ang iyong gawain sa iyong Plano"
+msgstr "Nagustuhan ni {name} ang iyong gawain sa Gabay"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "Ni-like ni {name} ang iyong gawain sa iyong Biblikal na Plano"
+msgstr "Nagustuhan ni {name} ang iyong gawain sa Gabay sa Biblia"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "Ibinookmark ni {name} ang {reference_human}"
@@ -322,7 +322,7 @@ msgid "notifications.moments.create.highlight"
 msgstr "Hinaylayt ni {name} ang {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "Si {name} ay nagdagdag ng tala"
+msgstr "Nagdagdag ng tala si {name}"
 
 msgid "notifications.moments.create.note.reference"
 msgstr "Nagdagdag si {name} ng tala sa {reference_human}"
@@ -331,55 +331,55 @@ msgid "notifications.moments.create.note.title"
 msgstr "Nagdagdag si {name} ng tala na pinamagatang, “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "Natapos ni {name} ang kanilang Plano, {title}"
+msgstr "Nakumpleto ni {name} ang kanilang Gabay na {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "Natapos ni {name} ang kanilang Biblikal na Plano, {title}"
+msgstr "Nakumpleto ni {name} ang kanilang Gabay sa Biblia na {title}"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "Si {name} ay nagsimula ng bagong Plano, {title}"
+msgstr "Nagsimula si {name} ng bagong Gabay, {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "Si {name} ay nagsimula ng bagong Biblikal na Plano, {title}"
+msgstr "Nagsimula si {name} ng bagong Gabay sa Biblia, {title}"
 
 msgid "notifications.people.contact.joined"
-msgstr "Si {name} ay sumali na rin sa YouVersion. Tapikin upang idagdag sila bilang Kaibigan."
+msgstr "Sumali na rin si {name} sa YouVersion. I-tap upang idagdag sila bilang Kaibigan."
 
 msgid "notifications.system.test"
 msgstr "I-download ang Pambatang App ng Biblia ngayon!!!"
 
 msgid "notifications.comments.moment.mine.image"
-msgstr "Si {name} ay nagkomento sa iyong verse image: “{comment}”"
+msgstr "Nagkomento si {name} sa iyong bersikulong larawan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.image"
-msgstr "Si {commenter_name} ay nagkomento rin sa verse image ni {moment_owner_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa bersikulong larawan ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.image"
-msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang verse image: “{comment}”"
+msgstr "Nagkomento rin si {moment_owner_name} sa kanilang bersikulong larawan: “{comment}”"
 
 msgid "notifications.likes.moment.mine.image"
-msgstr "Nagustuhan ni {name} ang iyong verse image para sa {reference_human}"
+msgstr "Nagustuhan ni {name} ang iyong bersikulong larawan para sa {reference_human}"
 
 msgid "notifications.moments.create.image"
-msgstr "Si {name} ay gumawa ng verse image para sa {reference_human}"
+msgstr "Gumawa si {name} ng bersikulong larawan para sa {reference_human}"
 
 msgid "notifications.friendships.pending"
-msgstr "May mga hiling sa iyo ng Pakikipagkaibigan na naghihintay sa Bible App"
+msgstr "May mga Kahilingan na Maging Magkaibigan ang naghihintay sa iyo sa Bible App"
 
 msgid "notifications.votd_image"
-msgstr "Imahe para sa Bersikulo sa Araw na Ito"
+msgstr "Bersikulong Larawan ng Araw"
 
 msgid "notifications.plans_with_friends_invite"
-msgstr "Nais ni {name} na basahin ang Babasahing, \"{title}\" na kasama ka."
+msgstr "Nais ni {name} na basahin ang Gabay na \"{title}\" na kasama ka."
 
 msgid "notifications.plans_with_friends_comment"
-msgstr "May komento si {name} sa ika- {day} na araw ng Babasahing \"{title}\"."
+msgstr "Nagkomento si {name} sa ika- {day} araw ng Gabay na \"{title}.\""
 
 msgid "notifications.plans_with_friends_accept"
-msgstr "Tinanggap ni {name} ang iyong alok na basahin ang Babasahing, \"{title}\" na kasama niya."
+msgstr "Tinanggap ni {name} ang iyong imbitasyon na basahin ang Gabay na \"{title}\" kasama niya."
 
 msgid "notifications.plans_with_friends_update_start_date"
-msgstr "Pinalitan ni {name} ang petsa ng pagsisimula ng Babasahing, \"{title}\" na maging {date}."
+msgstr "Pinalitan ni {name} ang petsa ng pagsisimula ng Gabay na \"{title}\" na maging {date}."
 
 msgid "notifications.comments.moment.mine.badge"
 msgstr "Nagkomento si {name} sa iyong badge: “{comment}”"

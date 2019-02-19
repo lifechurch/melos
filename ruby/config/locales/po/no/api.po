@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-03-26 12:29-0400\n"
+"PO-Revision-Date: 2018-07-20 20:03\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Norwegian\n"
 "MIME-Version: 1.0\n"
@@ -382,19 +382,19 @@ msgid "notifications.plans_with_friends_update_start_date"
 msgstr "{name} endret startdatoen for planen \"{title}\" til {date}."
 
 msgid "notifications.comments.moment.mine.badge"
-msgstr ""
+msgstr "{name} kommenterte merket ditt: “{comment}”"
 
 msgid "notifications.comments.moments.friend.badge"
-msgstr ""
+msgstr "{commenter_name} kommenterte også {moment_owner_name} sitt merke: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.badge"
-msgstr ""
+msgstr "{moment_owner_name} kommenterte også merket sitt: “{comment}”"
 
 msgid "notifications.likes.moment.mine.badge"
-msgstr ""
+msgstr "{name} liker merket ditt, {title}"
 
 msgid "notifications.moments.create.badge"
-msgstr ""
+msgstr "{name} fikk merket {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hei!</p><p>Jeg bruker Bibel-appen fra YouVersion og ønsker å dele denne med deg. Dersom du ikke kjenner denne fra før, er det en enkel måte å bringe skjønnheten og sannheten fra Bibelen inn i hverdagen din. </p><p><strong>Last ned Bibel-appen:</strong> les, se, hør og del på smarttelefonen eller nettbrettet ditt, og på www.bible.com/no</p><p><strong>Opprett din egen konto:</strong> abonner på bibelleseplaner og ha tilgang til bokmerker, markeringer og notater på alle plattformer.</p><p><strong>Legg til venner (Lik meg!):</strong> utforsk og diskuter Bibelen med personer du bryr deg om</p><p>Alt dette får du i Bibel-appen - kom i gang her: </p>"

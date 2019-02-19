@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-04-27 11:47-0400\n"
+"PO-Revision-Date: 2018-12-04 21:57\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Afrikaans\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"PO-Revision-Date: 2018-08-20 09:21\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Afrikaans\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"PO-Revision-Date: 2018-07-20 20:02\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Afrikaans\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgid "moment.bookmark.self.title"
 msgstr "Jy het <b>{reference_human} {version_abbreviation} </b> geboekmerk "
 
 msgid "moment.bookmark.title"
-msgstr "{name}   geboekmerk <b>{reference_human} {version_abbreviation}</b>"
+msgstr "{name} het <b>{reference_human} {version_abbreviation}</b> geboekmerk"
 
 msgid "moment.friendship.self.title"
 msgstr "Jy is nou vriende met <b>{friend_name}</b>"
@@ -91,10 +91,10 @@ msgid "moment.friendship.title"
 msgstr "{user_name}    is nou vriende met  <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "You het <b>{reference_human} {version_abbreviation}</b> gekies"
+msgstr "Jy het <b>{reference_human} {version_abbreviation}</b> gekies"
 
 msgid "moment.highlight.title"
-msgstr "{name} gekies <b>{reference_human} {version_abbreviation}</b>"
+msgstr "{name} het <b>{reference_human} {version_abbreviation}</b> gekies"
 
 msgid "moment.note.self.title"
 msgstr "Jy het 'n nota, <b>{title}</b> bygevoeg"
@@ -148,19 +148,19 @@ msgid "moment.plan_subscription.v2.title"
 msgstr "{name} het 'n nuwe plan, <b>{title}</b>, begin."
 
 msgid "moment.system.bible_series_promo.body"
-msgstr "Kyk die <i>Bybel Reeks</i> vanaand!"
+msgstr "Kyk vanaand na die <i>Bybel Reeks</i>!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bybel Reeks</i>"
 
 msgid "moment.system.find_friends.title"
-msgstr "Die Bybel Toep is nog beter met Vriende. Deursoek jou Kontakte om vriende te vind"
+msgstr "Die Bybel Toep is nog beter met Vriende. Deursoek jou Kontakte om vriende te vind."
 
 msgid "moment.video.watched.self.title"
-msgstr "Jy het <b>{title}</b> gekyk"
+msgstr "Jy het na <b>{title}</b> gekyk"
 
 msgid "moment.video.watched.title"
-msgstr "{name} het <b>{title}</b> gekyk"
+msgstr "{name} het na <b>{title}</b> gekyk"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Wees gereed vir Kersfees met 'n Advent Bybelplan."
@@ -199,7 +199,7 @@ msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Vier Vryheid in Christus."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Soek God in Sy Woord elke dag."
+msgstr "Soek God elke dag in Sy Woord."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "God se Woord maak alles nuut."
@@ -220,16 +220,16 @@ msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} het kommentaar gelewer op jou nuwe vriendskap met {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship.friend"
-msgstr "{name} het kommentaar gelewer oor u nuwe vriendskap: “{comment}”"
+msgstr "{name} het kommentaar gelewer op jou nuwe vriendskap: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "{name} het op jou gemerkte nota kommentaar gelewer: “{comment}”"
+msgstr "{name} het kommentaar gelewer op jou kleurmerk: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
-msgstr "{name} het op jou nota kommentaar gelewer: “{comment}”"
+msgstr "{name} het kommentaar gelewer op jou nota: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name} het op jou Plan kommentaar gelewer: “{comment}”"
+msgstr "{name} het kommentaar gelewer op jou Plan: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} het kommentaar gelewer op jou Bybelplan: “{comment}”"
@@ -241,13 +241,13 @@ msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} het ook kommentaar gelewer op {moment_owner_name} se nuwe vriendskap met {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship.their"
-msgstr "{commenter_name} het ook kommentaar gelewer oor hulle nuwe vriendskap met{moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} het ook kommentaar gelewer oor hulle nuwe Vriendskap met{moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} het ook kommentaar gelewer oor jou nuwe vriendskap met {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} het ook kommentaar gelewer op jou nuwe Vriendskap met {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} het ook op {moment_owner_name} se gemerkte nota kommentaar gelewer: “{comment}”"
+msgstr "{commenter_name} het ook op {moment_owner_name} se kleurmerk kommentaar gelewer: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} het ook op {moment_owner_name} se nota kommentaar gelewer: “{comment}”"
@@ -259,10 +259,10 @@ msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle nuwe vriendskap met  {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
-msgstr "{moment_owner_name} het ook gereageer op hulle nuwe Vriendskap met jou: “{comment}”"
+msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle nuwe Vriendskap met jou: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} het ook op hulle gemerkte nota kommentaar gelewer: “{comment}”"
+msgstr "{moment_owner_name} het ook op hulle kleurmerk kommentaar gelewer: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} het ook op hulle eie nota kommentaar gelewer: “{comment}”"
@@ -343,10 +343,10 @@ msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} het 'n nuwe Bybelplan begin, {title}"
 
 msgid "notifications.people.contact.joined"
-msgstr "{name} het nou-net by YouVersion aangesluit. Druk om hulle as 'n Vriend by te voeg."
+msgstr "{name} het nou net by YouVersion aangesluit. Kies om hulle as 'n Vriend by te voeg."
 
 msgid "notifications.system.test"
-msgstr "Laai nou die Bybel Toep vir Kinders af!!!"
+msgstr "Laai nou die Bybel App vir Kinders af!!!"
 
 msgid "notifications.comments.moment.mine.image"
 msgstr "{name} het kommentaar gelewer op jou FotoVers: “{comment}”"
@@ -358,7 +358,7 @@ msgid "notifications.comments.moments.friend.owner.image"
 msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle FotoVers: “{comment}”"
 
 msgid "notifications.likes.moment.mine.image"
-msgstr "{name} hou van joy FotVers vir {reference_human}"
+msgstr "{name} hou van jou FotoVers vir {reference_human}"
 
 msgid "notifications.moments.create.image"
 msgstr "{name} het 'n FotoVers geskep vir {reference_human}"
@@ -367,7 +367,7 @@ msgid "notifications.friendships.pending"
 msgstr "Jy het Vriendskap versoeke wat wag in die Bybel Toep"
 
 msgid "notifications.votd_image"
-msgstr "Vers van die Dag Prent"
+msgstr ""
 
 msgid "notifications.plans_with_friends_invite"
 msgstr "{name} wil die Leesplan \"{title}\" saam met jou lees."
@@ -394,10 +394,10 @@ msgid "notifications.likes.moment.mine.badge"
 msgstr "{name} hou van jou kenteken {title}"
 
 msgid "notifications.moments.create.badge"
-msgstr "{name} het die kenteken verwerf {title}"
+msgstr "{name} het die kenteken ontvang {title}"
 
 msgid "share.find_friends.invite_email_html"
-msgstr "<p>Hi!</p><p>Ek gebruik die Bybel Toep van YouVersion en ek wou dit met jou deel. As jy nuut met die Toep is, dis `n eenvoudige manier om die skoonheid en die waarheid van die Bybel in die alledaagse lewe te bring. </p><p><strong>Kry die Bybel Toep:</strong>  lees, kyk, luister, en deel op jou smartphone of tablet, en aanlyn op Bible.com</p><p><strong>Stel Jou Rekening op:</strong> skryf in by Bybel Planne en verkry toegang by boekmerke, hoogtepunte, en notas regoor toestelle</p><p><strong>Voeg Vriende (Hou van My!):</strong> verken en bespreek die Bybel met mense vir wie jy omgee</p><p> dis al in die Bybel Toep—begin hier: </p>"
+msgstr "<p>Hallo!</p><p>Ek gebruik die Bybel Toep van YouVersion en ek wou dit met jou deel. As jy nog nie weet nie, dis 'n eenvoudige manier om die skoonheid en die waarheid van die Bybel na die alledaagse lewe te bring. </p><p><strong>Kry die Bybel Toep:</strong> lees, kyk, luister, en deel op jou slimfoon of tablet, en aanlyn op Bible.com</p><p><strong>Stel Jou Rekening op:</strong> teken in op Bybelplanne en verkry toegang tot Boekmerke, Kleurmerke en Notas, gesinkroniseer oor toestelle.</p><p><strong>Voeg Vriende by (soos ek!),</strong> verken en bespreek die Bybel met mense vir wie jy omgee.</p><p> Dis alles in die Bybel Toep—begin hier: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
@@ -414,7 +414,7 @@ msgstr ""
 "Dit is alles in die Bybel Toep - begin hier: "
 
 msgid "share.invite_email_subject"
-msgstr "Sluit saam met my aan by die Bybel Toep?"
+msgstr "Sluit saam met my aan by die Bybel Toep!"
 
 msgid "share.invite_facebook"
 msgstr "Ek is mal oor die Bybel Toep! Dit het my regtig gehelp om die Bybel deel van my alledaagse lewe te maak. Dit laat my kleurmerk, luister na klankbybels, notas maak, dagstukkies volg...selfs videos kyk! Laai dit nou af (dis gratis):"
@@ -432,4 +432,4 @@ msgid "share.invite_twitter"
 msgstr "Die Bybel Toep van @YouVersion het 'n permanente plekkie op my tuisskerm. Lees, kyk, luister en deel...alles in 'n gratis toepassing:"
 
 msgid "share.invite_twitter_direct"
-msgstr "Het jy die Bybel Toep van @YouVersion? Ek is mal daaroor en dink jy sal ook wees. Hier is die skake:"
+msgstr "Het jy die Bybel Toep van @YouVersion? Ek is mal daaroor en dink jy sal ook wees. Hier is die skakel:"

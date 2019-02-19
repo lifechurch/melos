@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-01-15 16:06-0500\n"
+"PO-Revision-Date: 2019-01-02 17:24\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"PO-Revision-Date: 2019-01-28 18:27\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -67,10 +67,10 @@ msgstr ""
 "X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
-msgstr "你获得了 <b>{title}</b> 勋章"
+msgstr "你获得了 <b>{title}</b> 徽章"
 
 msgid "moment.badge.earned.title"
-msgstr "{name} 获得了 <b>{title}</b> 勋章"
+msgstr "{name} 获得了 <b>{title}</b> 徽章"
 
 msgid "moment.bible.download.self.title"
 msgstr "你下载了 <b>{version}</b> 译本"
@@ -172,7 +172,7 @@ msgid "moment.system.christmas.title"
 msgstr "分享佳音：救主已降生！"
 
 msgid "moment.client_side.reading_plan_carousel.january.title"
-msgstr "你最好的一年从此开始。"
+msgstr "从此开始你最好的一年。"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "在神的话语里找到祂的爱。"
@@ -214,139 +214,139 @@ msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "趁此节日预备你的心。"
 
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name} 评论了你的书签: “{comment}”"
+msgstr "{name} 评论了你的书签：“{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} 评论了你的新联系 {friend_name} : “{comment}”"
+msgstr "{name} 评论了你和 {friend_name} 的新联系：“{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship.friend"
-msgstr "{name} 评论了你的新联系：“{comment}”"
+msgstr "{name} 评论了你的友情：“{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "{name} 评论了你的高亮经文: “{comment}”"
+msgstr "{name} 评论了你的高亮经文：“{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
-msgstr "{name} 评论了笔记: “{comment}”"
+msgstr "{name} 评论了你的笔记：“{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name} 评论了你的计划: “{comment}”"
+msgstr "{name} 评论了你的计划：“{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name} 评论了你的读经计划: “{comment}”"
+msgstr "{name} 评论了你的读经计划：“{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的书签标记: “{comment}”"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的书签：“{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的新联系 {friend_name} : “{comment}”"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的新朋友 {friend_name}：“{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship.their"
-msgstr "{commenter_name} 也评论了和{moment_owner_name}的新联系：“{comment}”"
+msgstr "{commenter_name} 也评论了和 {moment_owner_name} 的友情：“{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name}也评论了你与{moment_owner_name}的新联系：“{comment}”"
+msgstr "{commenter_name} 也评论了你与 {moment_owner_name} 的友情：“{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的高亮标记: “{comment}”"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的高亮显示：“{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的笔记: “{comment}”"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的笔记：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} 也评论了他们的书签标记: “{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的书签：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} 也评论了和 {friend_name} 的新联系 : “{comment}”"
+msgstr "{moment_owner_name} 也评论了和 {friend_name} 的友情：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
-msgstr "{moment_owner_name} 也评论了和你的新联系：“{comment}”"
+msgstr "{moment_owner_name} 也评论了和你的友情：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} 也评论了自己的高亮标记：“{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的高亮显示：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} 也评论了自己的笔记： “{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的笔记：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} 也评论了自己的读经计划： “{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的读经计划：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} 也评论了他的读经计划: “{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的读经计划：“{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的计划: “{comment}”"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的读经计划：“{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的读经计划: “{comment}”"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的读经计划：“{comment}”"
 
 msgid "notifications.friendships.accept"
-msgstr "{name} 接受了你加好友的邀请"
+msgstr "{name} 接受了你添加朋友的邀请"
 
 msgid "notifications.friendships.nowfriends"
-msgstr "{name} 现已成为你的好友"
+msgstr "{name} 现已成为你的朋友"
 
 msgid "notifications.friendships.offer"
-msgstr "{name} 希望成为你在 YouVersion 的好友"
+msgstr "{name} 希望和你在 YouVersion 成为朋友"
 
 msgid "notifications.friendships.suggestion"
-msgstr "你希望和 {name} 成为在 YouVersion 上的好友吗?"
+msgstr "你希望和 {name} 在 YouVersion 成为朋友吗？"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} 赞了你的书签 {reference_human}"
 
 msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} 赞了你的新联系 {friend_name}"
+msgstr "{name} 赞了你和 {friend_name} 的友情"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} 赞了你的高亮显示， {reference_human}"
+msgstr "{name} 赞了你的高亮显示 {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} 赞了你的笔记"
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} 赞了你有关 {reference_human} 的笔记"
+msgstr "{name} 赞了你对 {reference_human} 的笔记"
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name} 赞了你的笔记, “{title}”"
+msgstr "{name} 赞了你的笔记《{title}》"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} 赞了你读经计划的活动"
+msgstr "{name} 赞了你的计划活动"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} 赞了你读经计划的活动"
+msgstr "{name} 赞了你的计划活动"
 
 msgid "notifications.moments.create.bookmark"
-msgstr "{name} 标记了书签 {reference_human}"
+msgstr "{name} 为 {reference_human} 添加了书签"
 
 msgid "notifications.moments.create.highlight"
-msgstr "{name} 高亮标记了 {reference_human}"
+msgstr "{name} 高亮显示了 {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} 添加了一条笔记"
 
 msgid "notifications.moments.create.note.reference"
-msgstr "{name} 在 {reference_human} 上加了一条笔记"
+msgstr "{name} 为 {reference_human} 添加了笔记"
 
 msgid "notifications.moments.create.note.title"
-msgstr "{name} 加了一条笔记, “{title}”"
+msgstr "{name} 添加了笔记《{title}》"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} 结束了读经计划，{title}"
+msgstr "{name} 结束了读经计划《{title}》"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} 结束了读经计划，{title}"
+msgstr "{name} 结束了读经计划《{title}》"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} 开始了一个新计划, {title}"
+msgstr "{name} 开始了一个新计划《{title}》"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} 开始了一个新的读经计划, {title}"
+msgstr "{name} 开始了一个新的读经计划《 {title}》"
 
 msgid "notifications.people.contact.joined"
-msgstr "{name} 刚加入 YouVersion。点击以添加他为你的朋友。"
+msgstr "{name} 刚加入 YouVersion。点击以将其加为朋友。"
 
 msgid "notifications.system.test"
-msgstr "现在就下载我们的儿童圣经软件!!!"
+msgstr "现在就下载我们的儿童圣经软件！！！"
 
 msgid "notifications.comments.moment.mine.image"
 msgstr "{name} 评论了你的经文图：“{comment}”"
@@ -358,7 +358,7 @@ msgid "notifications.comments.moments.friend.owner.image"
 msgstr "{moment_owner_name} 也评论了自己的经文图：“{comment}”"
 
 msgid "notifications.likes.moment.mine.image"
-msgstr "{name} 点赞了你用 {reference_human} 制作的经文图"
+msgstr "{name} 赞了你用 {reference_human} 制作的经文图"
 
 msgid "notifications.moments.create.image"
 msgstr "{name} 制作了 {reference_human} 的经文图"
@@ -373,7 +373,7 @@ msgid "notifications.plans_with_friends_invite"
 msgstr "{name}想和你一起阅读《{title}》这个计划。"
 
 msgid "notifications.plans_with_friends_comment"
-msgstr "{name}对读经计划《{title}》的第{day}天发布了评论。"
+msgstr "{name} 对读经计划《{title}》的第 {day} 天发布了评论。"
 
 msgid "notifications.plans_with_friends_accept"
 msgstr "{name}接受了你的邀请，和你一起阅读《{title}》这个计划。"
@@ -382,13 +382,13 @@ msgid "notifications.plans_with_friends_update_start_date"
 msgstr "{name}把读经计划《{title}》的开始日期改为{date}。"
 
 msgid "notifications.comments.moment.mine.badge"
-msgstr "{name} 评论了你的徽章: “{comment}”"
+msgstr "{name} 评论了你的徽章：“{comment}”"
 
 msgid "notifications.comments.moments.friend.badge"
 msgstr "{commenter_name} 也评论了 {moment_owner_name} 的徽章: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.badge"
-msgstr "{moment_owner_name} 也评论了自己的徽章： “{comment}”"
+msgstr "{moment_owner_name} 也评论了自己的徽章：“{comment}”"
 
 msgid "notifications.likes.moment.mine.badge"
 msgstr "{name} 赞了你的徽章 {title}"

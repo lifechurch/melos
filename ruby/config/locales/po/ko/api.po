@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"PO-Revision-Date: 2019-02-04 05:22\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"PO-Revision-Date: 2019-02-04 05:22\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2018-01-08 14:41-0500\n"
+"PO-Revision-Date: 2019-02-04 05:22\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -103,7 +103,7 @@ msgid "moment.note.title"
 msgstr "{name}님이 <b>{title}</b> 노트를 추가했습니다."
 
 msgid "moment.note.no_title_no_reference.title"
-msgstr "{name}님이 노트를 추가했습니다."
+msgstr "{name} 님이 노트를 추가했습니다."
 
 msgid "moment.note.no_title_no_reference.self.title"
 msgstr "회원님이 노트를 추가 하였습니다."
@@ -214,196 +214,204 @@ msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "이 계절을 맞을 마음의 준비를 하세요."
 
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name}님이 회원님의 책갈피에 댓글을 남겼습니다. :\"{comment}\""
+msgstr "{name} 님이 회원님의 책갈피에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} 님이  {friend_name}님과 친구맺은 것에 대해서 글을 남겼습니다:   {comment}"
+msgstr "{name} 님이 {friend_name} 님과 친구맺기에 대해서 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moment.mine.friendship.friend"
-msgstr "{name} 님이 회원님이 새로 친구를 맺은 것에 대해 글을 남겼습니다: “{comment}”"
+msgstr "{name} 님이 회원님의 새로운 친구를 맺기에 대해 글을 남겼습니다: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "{name}님이 회원님의 하이라이트에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{name} 님이 회원님의 하이라이트에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moment.mine.note"
-msgstr "{name}님이 회원님의 노트에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{name} 님이 회원님의 노트에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name}님이 묵상 계획에 글을 남겼습니다: \"{comment}\""
+msgstr "{name} 님이 회원님의 묵상에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name}님이 회원님의 묵상 계획에 댓글을 남겼습니다: {comment}"
+msgstr "{name} 님이 회원님의 묵상에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name}님도 {moment_owner_name}님의 책갈피에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 {moment_owner_name} 님의 책갈피에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name}도 {moment_owner_name}이 {friend_name}과 새로 친구 맺은 것에 대하여 글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 {moment_owner_name} 님이 {friend_name} 과 새로 친구 맺은 것에 대하여 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.friendship.their"
-msgstr "{commenter_name}님도 {moment_owner_name}님과 새로 친구 맺은 것에 대해 글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 {moment_owner_name} 님과 새로 친구 맺은 것에 대해 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name}님도 회원님이 {moment_owner_name}님과 새로 친구 맺은 것에 대해서 글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 회원님이 {moment_owner_name} 님과 새로 친구 맺은 것에 대해서 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name}님도 {moment_owner_name}님의 하이라이트에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 {moment_owner_name} 님의 하이라이트에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name}님도 {moment_owner_name}님의 노트에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 {moment_owner_name} 님의 노트에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name}님도  책갈피에 댓글을 남겼습니다:  \"{comment}\""
+msgstr "{moment_owner_name} 님도 책갈피에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name}님도 {friend_name}님과 새로 친구 맺은 것에 대해서 글을 남겼습니다: \"{comment}\""
+msgstr "{moment_owner_name} 님도 {friend_name} 님과 새로 친구 맺은 것에 대해서 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
-msgstr "{moment_owner_name}님도 회원님과 새로 친구를 맺은 것에 대해 글을 남겼습니다: “{comment}”"
+msgstr "{moment_owner_name} 님도 회원님과 새로 친구를 맺은 것에 대해 글을 남겼습니다: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name}님도 하이라이트에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{moment_owner_name} 님도 하이라이트에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name}님도 노트에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{moment_owner_name} 님도 노트에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name}님도 자신의 묵상 계획에 글을 남겼습니다: \"{comment}\""
+msgstr "{moment_owner_name} 님도 묵상 계획에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
 msgstr "{moment_owner_name}님도 자신의 묵상 계획에 댓글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name}님도 {moment_owner_name}님의 묵상 계획에 글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 {moment_owner_name} 님의 묵상에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name}님도 {moment_owner_name}님의 묵상 계획에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 {moment_owner_name} 님의 묵상에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.friendships.accept"
-msgstr "{name}님이 친구 요청을 수락했습니다."
+msgstr "{name} 님이 친구 요청을 수락했습니다."
 
 msgid "notifications.friendships.nowfriends"
-msgstr "{name}님은 이제 회원님의 친구입니다."
+msgstr "{name} 님은 이제 회원님의 친구입니다."
 
 msgid "notifications.friendships.offer"
-msgstr "{name}님이 회원님과 YouVersion 친구가 되고 싶어합니다."
+msgstr "{name} 님이 회원님과 YouVersion 친구가 되고 싶어합니다."
 
 msgid "notifications.friendships.suggestion"
-msgstr "{name}님과 YouVersion 친구가 되시겠습니까?"
+msgstr "{name} 님과 YouVersion 친구가 되시겠습니까?"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name}님이 회원님의 {reference_human} 책갈피를 좋아합니다."
+msgstr "{name} 님이 회원님의 {reference_human} 책갈피를 좋아합니다."
 
 msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name}님이 {friend_name}님과 새로 친구 맺은 것을 좋아합니다."
+msgstr "{name} 님이 {friend_name} 님과 새로 친구 맺은 것을 좋아합니다."
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name}님이 회원님의 {reference_human} 하이라이트를 좋아합니다."
+msgstr "{name} 님이 회원님의 {reference_human} 하이라이트를 좋아합니다."
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name}님이 회원님의 노트를 좋아합니다."
+msgstr "{name} 님이 회원님의 노트를 좋아합니다."
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name}님이 회원님의 {reference_human} 노트를 좋아합니다."
+msgstr "{name} 님이 회원님의 {reference_human} 노트를 좋아합니다."
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name}님이 회원님의 “{title}” 노트를 좋아합니다."
+msgstr "{name} 님이 회원님의 “{title}” 노트를 좋아합니다."
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name}님이 회원님의 묵상 계획 활동을 좋아합니다."
+msgstr "{name} 님이 회원님의 묵상 활동을 좋아합니다."
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name}님이 회원님의 묵상 계획 활동을 좋아합니다."
+msgstr "{name} 님이 회원님의 묵상 활동을 좋아합니다."
 
 msgid "notifications.moments.create.bookmark"
-msgstr "{name}님이 {reference_human} 책갈피를 만들었습니다."
+msgstr "{name} 님이 {reference_human} 책갈피를 만들었습니다."
 
 msgid "notifications.moments.create.highlight"
-msgstr "{name}님이 {reference_human} 하이라이트를 했습니다."
+msgstr "{name} 님이 {reference_human} 하이라이트를 했습니다."
 
 msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name}님이 노트를 추가했습니다."
+msgstr "{name} 님이 노트를 추가했습니다."
 
 msgid "notifications.moments.create.note.reference"
-msgstr "{name}님이 {reference_human} 노트를 추가했습니다."
+msgstr "{name} 님이 {reference_human} 노트를 추가했습니다."
 
 msgid "notifications.moments.create.note.title"
-msgstr "{name}님이 \"{title}\" 노트를 추가했습니다."
+msgstr "{name} 님이 \"{title}\" 노트를 추가했습니다."
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name}님이 {title} 묵상 계획을 완료하였습니다."
+msgstr "{name} 님이 {title} 묵상을 완료하였습니다."
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name}님이 {title} 묵상 계획을 완료하였습니다."
+msgstr "{name} 님이 {title} 묵상을 완료하였습니다."
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "{name}님이 {title} 새 묵상 계획을 시작하였습니다."
+msgstr "{name} 님이 {title} 묵상을 시작하였습니다."
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name}님이 {title}이라는 새 성경 읽기계획을 시작하였습니다."
+msgstr "{name} 님이 {title} 묵상을 시작하였습니다."
 
 msgid "notifications.people.contact.joined"
-msgstr "{name}님이 YouVersion에 가입하셨습니다. 탭하셔서 친구 신청하세요."
+msgstr "{name} 님이 YouVersion에 가입하셨습니다. 탭하셔서 친구 신청하세요."
 
 msgid "notifications.system.test"
-msgstr "지금 어린이 성경 앱을  다운로드하세요!!!"
+msgstr "지금 어린이 성경 앱을 다운로드하세요!!!"
 
 msgid "notifications.comments.moment.mine.image"
-msgstr "{name}님이 회원님의 말씀 이미지에 댓글을 달았습니다.:{comment}"
+msgstr "{name} 님이 회원님의 말씀 이미지에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name}님도 {moment_owner_name}님의 말씀 이미지에 댓글을 남겼습니다.:{comment}"
+msgstr "{commenter_name} 님도 {moment_owner_name} 님의 말씀 이미지에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name}님도 말씀 이미지에 댓글을 남겼습니다.:{comment}"
+msgstr "{moment_owner_name} 님도 말씀 이미지에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.likes.moment.mine.image"
-msgstr "{name}님이 회원님의 {reference_human} 말씀 이미지를 좋아합니다."
+msgstr "{name} 님이 회원님의 {reference_human} 말씀 이미지를 좋아합니다."
 
 msgid "notifications.moments.create.image"
-msgstr "{name}님이 {reference_human} 말씀 이미지를 만들었습니다."
+msgstr "{name} 님이 {reference_human} 말씀 이미지를 만들었습니다."
 
 msgid "notifications.friendships.pending"
-msgstr "성경 앱에 친구 요청이 기다리고 있습니다."
+msgstr ""
 
 msgid "notifications.votd_image"
 msgstr "오늘의 말씀 이미지"
 
 msgid "notifications.plans_with_friends_invite"
-msgstr "{name}님이 \"{title}\" 묵상 계획을 함께 읽고 싶어 합니다."
+msgstr "{name} 님이 \"{title}\" 묵상을 함께 하고 싶어 합니다."
 
 msgid "notifications.plans_with_friends_comment"
-msgstr "{name}님이 \"{title}\" 묵상 계획 {day} 째날에 댓글을 달았습니다."
+msgstr "{name} 님이 \"{title}\" 묵상 {day} 째날에 글을 남겼습니다."
 
 msgid "notifications.plans_with_friends_accept"
-msgstr "{name}님이 묵상계획 \"{title}\"을 함께 하기위한 초대를 수락하였습니다."
+msgstr "{name} 님이 \"{title}\" 묵상 초대를 수락하였습니다."
 
 msgid "notifications.plans_with_friends_update_start_date"
-msgstr "{name}님이 \"{title}\" 묵상 계획 시작날을 {date}로 바꾸었습니다."
+msgstr "{name} 님이 \"{title}\" 묵상 시작일을 {date}로 바꾸었습니다."
 
 msgid "notifications.comments.moment.mine.badge"
-msgstr "{name}님이 회원님의 배지에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{name} 님이 회원님의 배지에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.badge"
-msgstr "{commenter_name}님도 {moment_owner_name}님의 배지에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{commenter_name} 님도 {moment_owner_name} 님의 배지에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.badge"
-msgstr "{moment_owner_name}님도 배지에 댓글을 남겼습니다: \"{comment}\""
+msgstr "{moment_owner_name} 님도 배지에 글을 남겼습니다: \"{comment}\""
 
 msgid "notifications.likes.moment.mine.badge"
-msgstr "{name}님이 회원님의 {title} 배지를 좋아합니다."
+msgstr "{name} 님이 회원님의 {title} 배지를 좋아합니다."
 
 msgid "notifications.moments.create.badge"
-msgstr "{name}님이 {title} 배지를 얻었습니다."
+msgstr "{name} 님이 {title} 배지를 얻었습니다."
 
 msgid "share.find_friends.invite_email_html"
-msgstr "<p>안녕하세요?</p><p>YouVersion 에서 제공하는 성경앱을 사용하고 있는데, 사용 소감을 같이 나누고 싶습니다. 진리와 사랑의 성경 말씀을 매일의 삶속으로 가져다주는 앱입니다. </p><p><strong>성경앱 설치</strong>스마트폰이나 태블렛, 또는 Bible,com 온라인 상에서 성경을 읽고 보고 들을 수있습니다.</p><p><strong>계정 설정</strong>묵상 계획을 구독하거나, 책갈피, 하이라이트, 그리고 노트등을 모든 기기를 통해서 설정할 수있습니다. </p><p><strong>친구 신청(내게도요!)</strong>회원님이 소중히 여기시는 분들과 성경을 같이 연구하고 의논해보세요.</p><p>이 모든 것들이 성경 앱안에 있습니다.  바로 시작해보세요. </p>"
+msgstr "<p>안녕하세요?</p><p>YouVersion 에서 제공하는 성경 앱을 사용하고 있는데, 사용 소감을 같이 나누고 싶습니다. 진리와 사랑의 성경 말씀을 매일의 삶속으로 가져다주는 앱입니다. </p><p><strong>성경 앱 설치</strong>스마트폰이나 태블렛, 또는 Bible,com 온라인 상에서 성경을 읽고 보고 들을 수있습니다.</p><p><strong>계정 설정</strong>묵상 계획을 구독하거나, 책갈피, 하이라이트, 그리고 노트등을 모든 기기를 통해서 설정할 수있습니다. </p><p><strong>친구 신청(내게도요!)</strong>소중한 분들과 성경을 같이 연구하고 의논해보세요.</p><p>이 모든 것들이 성경 앱안에 있습니다. 바로 시작해보세요. </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
-"YouVersion 에서 나온 성경 앱을 사용해보니 참 좋아요.  사용하시면 좋아하실거예요.  성경 앱은 사용하기가 쉬워서,  말씀을 읽고, 듣고, 보고, 나누는데 아주 많은 도움이 됩니다.  묵상(성경 읽기계획)은 매일 읽을 성경 구절을 자동으로 선택해줍니다. \n"
+"안녕하세요?\n"
 "\n"
-"대부분의 이동 기기에 지원되며 아래 링크에서 무료로 받을 수 있습니다: "
+"YouVersion 에서 제공하는 성경 앱을 사용하고 있는데, 사용 소감을 같이 나누고 싶습니다. 진리와 사랑의 성경 말씀을 매일의 삶속으로 가져다주는 앱입니다. \n"
+"\n"
+"성경 앱 설치: 스마트폰이나 태블렛, 또는 Bible,com 온라인 상에서 성경을 읽고 보고 들을 수있습니다.\n"
+"\n"
+"계정 설정: 묵상 계획을 구독하거나, 책갈피, 하이라이트, 그리고 노트등을 모든 기기를 통해서 설정할 수있습니다.\n"
+"\n"
+"친구 신청(내게도요!): 소중한 분들과 성경을 같이 연구하고 의논해보세요.\n"
+"\n"
+"이 모든 것들이 성경 앱안에 있습니다. 바로 시작해보세요. "
 
 msgid "share.invite_email_subject"
 msgstr "성경 앱 설치하셨나요?"
@@ -418,7 +426,7 @@ msgid "share.invite_sms"
 msgstr "제가 좋아하는 YouVersion의 성경 앱입니다. 당신도 좋아할 것이라고 생각합니다."
 
 msgid "share.invite_sms_prefix"
-msgstr "{name}님으로 부터:"
+msgstr "{name} 님으로 부터:"
 
 msgid "share.invite_twitter"
 msgstr "저는 @YouVersion의 성경 앱을 홈 스크린에 올려놓았습니다.  말씀을 읽고, 보고, 듣고, 공유할 수 있는 무료 앱:"
