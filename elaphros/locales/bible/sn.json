@@ -6,12 +6,12 @@
 			"blog": "Blog",
 			"read": "Verenga",
 			"help": "Rubatsiro",
-			"hide": "Hide",
+			"hide": "Viga",
 			"home": "Pekutangira",
 			"jobs": "Mabasa",
 			"book": "Bhuku",
 			"about": "Zviri maererano",
-			"audio": "Audio",
+			"audio": "Mazwi",
 			"share": "Pakurirana nevamwe",
 			"title": "Tora Bible App iyi ikozvino",
 			"terms": "Mirau",
@@ -43,7 +43,7 @@
 			"change language": "Chinja mutauro",
 			"no audio support": "Your browser doesn't support audio.",
 			"explore by verse": "Explore {chapter_name} by Verse",
-			"version learn more": "Learn More About {version_name}"
+			"version learn more": "Dzidza Zvakawanda Pamusoro Pe{version_name}"
 		}
 	}
 }

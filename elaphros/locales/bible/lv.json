@@ -35,13 +35,13 @@
 			"send votd": "Sūtīt man dienas pantu",
 			"read full": "Lasīt visu nodaļu",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Atvērt audio atskaņotāju",
+			"open search": "Atvērt meklēšanas joslu",
 			"open sidebar": "Atvērt izvēlni",
 			"related devos": "Bezmaksas lasīšanas plāni un pārdomas par tēmu {reference}",
 			"bible language": "Bībeles valoda",
 			"change language": "Mainīt valodu",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Tava pārlūkprogramma neatbalsta audioatskaņošanu.",
 			"explore by verse": "Izpētīt {chapter_name} pantu pa pantam",
 			"version learn more": "Uzzināt vairāk par {version_name}"
 		}

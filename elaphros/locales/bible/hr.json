@@ -35,13 +35,13 @@
 			"send votd": "Pošaljite mi Stih dana",
 			"read full": "Čitaj cijelo poglavlje",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Otvori Audio Player",
+			"open search": "Otvori pretraživač",
 			"open sidebar": "Otvori izbornik",
 			"related devos": "Besplatni planovi za čitanje i nadahnuti sadržaji povezani s temom {reference}",
 			"bible language": "Prijevod Biblije",
 			"change language": "Promijeni jezik",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Tvoj preglednik ne podržava zvuk.",
 			"explore by verse": "Istraži {chapter_name} po Stihu",
 			"version learn more": "Saznaj više o {version_name}"
 		}

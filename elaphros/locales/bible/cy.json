@@ -35,13 +35,13 @@
 			"send votd": "Anfonwch Adnod y Dydd i mi",
 			"read full": "Darllen y bennod gyfan",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Agorwch Chwaraewr Sain",
+			"open search": "Agorwch Bar Chwilio",
 			"open sidebar": "Dewislen Agored",
 			"related devos": "Cynlluniau Darllen am ddim a Defosiynau yn ymwneud â {reference}",
 			"bible language": "Iaith y Beibl",
 			"change language": "Newid Iaith",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Nid yw eich porwr yn cefnogi sain.",
 			"explore by verse": "Pori drwy {chapter_name} bob yn Adnod",
 			"version learn more": "Dysgu mwy am {version_name}"
 		}

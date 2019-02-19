@@ -35,13 +35,13 @@
 			"send votd": "Испрати ми го Стихот на денот",
 			"read full": "Прочитај ја целата глава",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Отвори ги аудио контролите",
+			"open search": "Отвори ја лентата за Пребарување",
 			"open sidebar": "Отвори мени",
 			"related devos": "Бесплатни планови за читање и побожни текстови поврзани со {reference}",
 			"bible language": "Јазик на Библискиот текст",
 			"change language": "Промени јазик",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Твојот прелистувач не поддржува аудио.",
 			"explore by verse": "Истражувај {chapter_name} по стих",
 			"version learn more": "Дознај повеќе за {version_name}"
 		}

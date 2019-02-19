@@ -35,13 +35,13 @@
 			"send votd": "Kirimkan saya Ayat Hari Ini",
 			"read full": "Baca Seluruh Pasal",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Buka Pemutar Audio",
+			"open search": "Buka Bilah Pencarian",
 			"open sidebar": "Buka Menu",
 			"related devos": "Rencana Bacaan dan Renungan gratis terkait dengan {reference}",
 			"bible language": "Bahasa Alkitab",
 			"change language": "Ubah Bahasa",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Penjelajah web Anda tidak mendukung audio.",
 			"explore by verse": "Jelajahi {chapter_name} berdasarkan Ayat",
 			"version learn more": "Pelajari Lebih Lanjut Tentang {version_name}"
 		}

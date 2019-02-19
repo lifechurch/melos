@@ -35,13 +35,13 @@
 			"send votd": "Send meg dagens bibelvers",
 			"read full": "Les hele kapittelet",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Åpne lydspiller",
+			"open search": "Åpne søkefeltet",
 			"open sidebar": "Åpne meny",
 			"related devos": "Gratis leseplaner og andakter relatert til {reference}",
 			"bible language": "Bibelspråk",
 			"change language": "Endre språk",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Nettleseren din støtter ikke lyd.",
 			"explore by verse": "Utforsk {chapter_name} vers for vers",
 			"version learn more": "Lær mer om {version_name}"
 		}
