@@ -469,7 +469,7 @@ da:
       search button: "Kør"
     offer success: "Venneanmodning sendt"
     offer failure: "Fejl ved afsendelse af venneanmodning"
-    create success: "Vellykket! I' nu venner."
+    create success: "Success! You're now friends."
     create failure: "Fejl ved oprettelse af venskab"
     destroy success: "Anmodning afslået"
     destroy failure: "Fejl ved afslag på anmodning"
