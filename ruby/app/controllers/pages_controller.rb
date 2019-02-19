@@ -270,7 +270,8 @@ class PagesController < ApplicationController
       :uk,
       :vi,
       :"zh-CN",
-      :"zh-TW"
+      :"zh-TW",
+      :"zh-HK"
     ]
   end
 
