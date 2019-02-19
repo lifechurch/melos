@@ -813,7 +813,7 @@
 	"notifications.moments.create.note.reference": "{name} jegyzetet fűzött ehhez: {reference_human}",
 	"notifications.moments.create.note.title": "{name} jegyzetelt, “{title}”",
 	"notifications.moments.create.plan_completion": "{name} befejezte ezt a tervet: {title}",
-	"notifications.moments.create.plan_completion.push": "{name} befejezték a bibliaolvasási tervüket: {title}",
+	"notifications.moments.create.plan_completion.push": "{name} befejezte ezt a bibliaolvasási tervet: {title}",
 	"notifications.moments.create.plan_subscription": "{name} elkezdte a(z) \"{title}\" című tervet",
 	"notifications.moments.create.plan_subscription.push": "{name} elkezdte a(z) \"{title}\" című bibliaolvasási tervet",
 	"notifications.people.contact.joined": "{name} éppen most csatlakozott a YouVersion-höz. Koppints, ha ismerősnek szeretnéd jelölni.",
