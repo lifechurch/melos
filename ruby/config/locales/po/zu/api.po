@@ -1,0 +1,435 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2019-01-17 19:35\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Zulu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: zu\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2019-01-17 19:35\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Zulu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: zu\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2019-01-17 19:35\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Zulu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: zu\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Usuthole ibheji le <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "u {name} usethole ibheji le <b>{title}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Udawunlode isibuyekezo, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "U {name} udawunlode lesi sibuyekezo <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Ugqamise <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} ubhukumakhe <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Usungumngani no <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} usungumngani no <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Ugqamise <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} ugqamise <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Ufake iNothi, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "U {name} ufake iNothi, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr ""
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Ufake inothi"
+
+msgid "moment.note.reference.title"
+msgstr "U {name} ufake inothi kwi <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Ufake iNothi ngo <b>{reference_human}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Uphothulile uhlelo lwakho"
+
+msgid "moment.plan_completion.title"
+msgstr "u {name} uphothule uhlelo"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Uphothule uhlelo lwakho, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "U{name} uphothule uhlelo, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Usuku {segment} lwezingu {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Uphothule usuku <b>{segment}</b> lohlelo, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "U {name} uphothule usuku <b>{segment}</b> yalo Hlelo <b>{title} </b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Uqale uhlelo olusha"
+
+msgid "moment.plan_subscription.title"
+msgstr "U {name} uqale u Hlelo olusha"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Uqale uHlelo olusha lweBhayibheli, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "U{name} uqale uhlelo olusha, <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Bukela <i>isiqephu seBhayibheli</i> namhlanje kusihlwa!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Iziqephu zeBhayibheli</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "I-App yeBhayibheli igcono kakhulu nabangani. Funa koxhumene nabo ukuze uthole abangani."
+
+msgid "moment.video.watched.self.title"
+msgstr "Ubukele<b> {title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "U{name} ubukele i <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Lungiselela uKhisimuzi ngoHlelo lweBhayibheli Ukulangaza"
+
+msgid "moment.system.bafk.title"
+msgstr "Siza izingane zakho zilithande iZwi likaNkulunkulu."
+
+msgid "moment.system.christmas.title"
+msgstr "Yabelana izindaba ezinhle: uMsindisi uzelwe!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Unyaka wakho omuhle kakhulu uqala manje."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Thola uthando lukaNkulunkulu eZwini lakhe."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Thola ithemba nokuvuselelwa kwiZwi likaNkulunkulu."
+
+msgid "moment.image.self.title"
+msgstr "Wakhe isithombe se vesi se <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "U {name} wakhe isithombe se vesi se <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Vuselela ukholo lwakho ngezinhlelo ezintsha."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Zinikele nsuku zonke eZwini lakhe."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Funa uNkulunkulu kwiZwi Lakhe."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Thokozela inkululeko kuKristu."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Funa uNkulunkulu eZwini lakhe ngezinsuku zonke."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "IZwi likaNkulunkulu lenza zonke izinto zibe zintsha."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Ukuhlanipha ngokuka Nkulunkulu kuqala eZwini likaNkulunkulu."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Thola ukuzibongela kwizethembiso zikaNkulunkulu."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Lungisa inhliziyo yakho kulesikhathi."
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "U{name} uphawule nge bhukhumaka yakho: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "u {name} uphawule ngobungane bakho no {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "U {name} uphawule ngobungane bakho obusha \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "U-{name} uphawule ngezigqamiso sakho: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "u {name} uphawule ngenothi lakho: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "U{name} uphawule ngoHlelo lwakho {comment}"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "U{name} uphawule ngoHlelo lwakho lwe Bhayibheli {comment}"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "u {commenter_name} naye uPhawulile ngebhukhumaka ya{moment_owner_name} ethi: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "U{commenter_name} naye uphawulile ngobudlelwane obusha buka {moment_owner_name} {friend_name} {comment}"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "U{commenter_name} naye uphawulile ngobungane babo obusha no {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "U{commenter_name} naye uphawulile ngobungani bakho obusha no{moment_owner_name} no {comment}"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} naye uphawule ngoku gqamisa kwa {moment_owner_name}"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr " No{commenter_name} uphawulele ngombono wa {moment_owner_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "u{moment_owner_name} naye uphawulile nge Bhukhumaka: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "U{moment_owner_name} naye uphawulile ngobungane babo obusha no {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "U{moment_owner_name} naye uphawulile ngobungani benu obusha: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "U{moment_owner_name} naye uphawulile ngebhukhumaka yabo“{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "U{moment_owner_name} naye uphawulile ngamanothi abo: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "U{moment_owner_name} naye uphawulile ngoHlelo lwabo: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "No {moment_owner_name} naye uphawulile ngo Hlelo lwabo lwe Bhayibheli: \"{comment}"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "U{commenter_name} naye uphawulile ngo Hlelo lwa{moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "U{commenter_name} naye uphawulile ngoHlelo lwe Bhayibheli lwa {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.friendships.accept"
+msgstr "u {name} wamukele isicelo sakho sobungane"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "U{name} usengumngani wakho"
+
+msgid "notifications.friendships.offer"
+msgstr "U-{name} ufuna ukuba umngane wakho ku-YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Uyafuana ukuba umngani no {name} ku-YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "U{name} uyasithanda ibhukhumaka yakho {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "U-{name} uthanda ubungane bakho obusha no- {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "u {name} uthanda isigqamiso sakho, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "U{name} uyawathanda amanithi akho"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "U-{name} ulithandile inothi lakho nge {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "u {name} ulithandile inothi yakho, \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "u {name} ukuthandile okwenza ku Hlelo lwakho"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "U {name} uthanda umsebenzi wakho ku Hlelo lwe Bhayibheli"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "U{name} ubhukhumake {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "U{name} Ugqamise {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "U{name} ufake iNothi"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "U{name} ufake inothi kwi {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "U{name} ufake inothi kwi {title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "U{name} Uphothule uhlelo lwakhe, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "U{name} uphothule uhlelo lwakhe lwe Bhayibheli, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "U{name} uqale uHlelo olusha {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "U{name} uqale uHlelo olusha lweBhayibheli, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "u {name} usanda kungena ku YouVersion. Cofa ukumfaka njengoMngani."
+
+msgid "notifications.system.test"
+msgstr "Dawuniloda i-App yeBhayibheli lezingane!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "U{name} uphawule ngeSithombe sevesi lakho: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "u {commenter_name} naye uPhawule ngesithombe seVesi sika {moment_owner_name} wathi: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "U{moment_owner_name} naye uphawulile ngesithombe sakhe sevesi {comment}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "U{name} uyasithanda isithombe sakho sevesi se {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} wenze isithombe sevesi la{reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr ""
+
+msgid "notifications.votd_image"
+msgstr ""
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "u {name} ufuna ukufunda uhlelo \"{title}\" kanye nawe."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "u {name} uphawule ngosuku {day} lohlelo,\"{title}.\""
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "U{name} wamukele isimemo sakho sokufunda uHlelo, \"{title}\" kanye nawe."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{Igame} washintshela usuku lokuqala Kohlelo {ishloko} Ku {usuku} "
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "U {name} uphawule nge bheji lakho: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "No{commenter_name} uphawulile ngebheji la {moment_owner_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "No{moment_owner_name} naye uphawulile nge bheji: {comment}"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "U{name} uyalithanda ibheji lakho{title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "U{name} uthole ibheji{title}"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Sawubona</p><p> Ngisebenzisa i-App yeBhayibheli ephuma kwi YouVersion manje bengifisa ukuyabelana nawe. Uma umusha kule- App, kuyindlela elula yokuletha ubuhle kanye neqiniso leBhayibheli empilweni yakho nsuku zonke. </p><p><strong>Thola i-App yeBhayibheli:</strong> funda, bukela, lalela bese wabelane nabanye kwifoni noma isileti sakho, nakwi intanethi kwi Bible.com </p><p><strong> Akha i-akhawunti yakho: </strong> Ngenela izinhlelo zeBhayibheli bese ufinyelela ama bhukhumaka, izigqamisi, kanye namanothi kuwo wonke ama divayisi </p><p><strong>Engeza abangani (abanjengami!):</strong>Hlola futhi uxoxisane nge Bhayibheli nabanye abantu obakhonzile </p><p>konke kutholakala kwi-App yeBhayibheli—qala lapha: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Sawubona! \n"
+"\n"
+"Ngisebenzisa i-App yeBhayibheli yakwa-YouVersion manje bengifisa ukuyabelana nawe. Uma umusha kule-App, iyindlela elula yokuletha ubuhle neqiniso leBhayibheli empilweni yansuku zonke.\n"
+"\n"
+"Thola i-App yeBhayibheli: funda, ubuke, ulalele, futhi wabelane nge-smartphone noma nge-tablet yakho, nakwi-internet kwi-Bible.com.\n"
+"\n"
+"Vula i-akhawunti yakho: Bhalisa kwizinhlelo zeBhayibheli bese ufinyelela kuma bhukhumaka, izigqamisi, namanothi kuma divayisi wonke.\n"
+"\n"
+"Engeza abangani (njengami!): hlola futhi uxoxe ngeBhayibheli nabantu obakhonzile.\n"
+"\n"
+"Konke kutholaka kwi-App yeBhayibheli - qala lapha: "
+
+msgid "share.invite_email_subject"
+msgstr "Hlanganyela nami kwi-App yeBhayibheli!"
+
+msgid "share.invite_facebook"
+msgstr "Ngiyayithanda i-App yeBhayibheli! Ingisizekakhulu ukwenza iBhayibheli libe yingxenye yempilo yami yansuku zonke. Ingivumela ukuthi ngigqamise, ngilalele iBhayibheli eliqoshiwe, ngenze amanothi, ngilandele izinhlelo zokuzinekela... ngisho nokubuka amavidiyo! Hamba uyoli dawunloda manje (limahhala):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Unayo i-App yeBhayibheli? Ngiyayithanda, futhi ngicabanga ukuthi uzoyithanda nawe. Nasi isixhumanisi:"
+
+msgid "share.invite_sms"
+msgstr "Ngiyayithanda i-App ye-YouVersion Bible App. Ngicabanga ukuthi uzoyithanda, nawe:"
+
+msgid "share.invite_sms_prefix"
+msgstr "Isuka ku {name}:"
+
+msgid "share.invite_twitter"
+msgstr "I-App yeBhayibheli ye @YouVersion inendawo yaphakadei kwi sikrini sami. Funda, ubukele, ulalele, futhi wabelane... konke kwi-app yamahhala:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Unayo i-App yeBhayibhel yakwa @YouVersioni? Ngiyayithanda, futhi ngicabanga ukuthi ungayithanda nawe. Nasi isixhumanisi:"

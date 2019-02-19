@@ -132,12 +132,13 @@
 	"vi": "vi",
 	"vi_VN": "vi",
 	"xc-MN": "mn",
-	"mn": "mn",
 	"xc_MN": "mn",
 	"mn": "mn",
 	"zh-CN": "zh_CN",
 	"zh": "zh_CN",
 	"zh_CN": "zh_CN",
 	"zh-TW": "zh_TW",
-	"zh_TW": "zh_TW"
+  "zh_TW": "zh_TW",
+  "zh-HK": "zh_HK",
+  "zh_HK": "zh_HK"
 }

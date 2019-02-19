@@ -729,7 +729,7 @@
 	"moment.bible.download.self.title": "Jy het die weergawe, <b>{version}</b> afgelaai",
 	"moment.bible.download.title": "{name} het die weergawe, <b>{version}</b> afgelaai",
 	"moment.bookmark.self.title": "Jy het <b>{reference_human} {version_abbreviation} </b> geboekmerk ",
-	"moment.bookmark.title": "{name}   geboekmerk <b>{reference_human} {version_abbreviation}</b>",
+	"moment.bookmark.title": "{name} het <b>{reference_human} {version_abbreviation}</b> geboekmerk",
 	"moment.friendship.self.title": "Jy is nou vriende met <b>{friend_name}</b>",
 	"moment.friendship.title": "{user_name}    is nou vriende met  <b>{friend_name}</b>",
 	"moment.highlight.self.title": "Jy het <b>{reference_human} {version_abbreviation}</b> gekies",

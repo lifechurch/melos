@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-03-28 09:22-0400\n"
+"PO-Revision-Date: 2018-07-20 20:02\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Macedonian\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"PO-Revision-Date: 2018-07-20 20:02\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Macedonian\n"
 "MIME-Version: 1.0\n"
@@ -67,16 +67,16 @@ msgstr ""
 "X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
-msgstr "Вие го заработивте беџот <b>{title}</b>"
+msgstr "Ти го заработи беџот <b>{title}</b>"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} го заработи беџот <b>{title}</b>"
 
 msgid "moment.bible.download.self.title"
-msgstr "Вие ја преземавте верзијата, <b>{version}</b>"
+msgstr "Ти ја презема верзијата <b>{version}</b>"
 
 msgid "moment.bible.download.title"
-msgstr "{name} ја презема верзијата, <b>{version}</b>"
+msgstr "{name} ја презема верзијата <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
 msgstr "Ти го нагласи <b>{reference_human} {version_abbreviation}</b>"
@@ -85,7 +85,7 @@ msgid "moment.bookmark.title"
 msgstr "{name} го нагласи <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.friendship.self.title"
-msgstr "Сега вие сте пријатели со <b>{friend_name}</b>"
+msgstr "Сега сте пријатели со <b>{friend_name}</b>"
 
 msgid "moment.friendship.title"
 msgstr "{user_name} сега е пријател со <b>{friend_name}</b>"
@@ -97,7 +97,7 @@ msgid "moment.highlight.title"
 msgstr "{name} го обележа <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
-msgstr "Вие додадовте белешка, <b>{title}</b>"
+msgstr "Ти додаде белешка, <b>{title}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} додаде белешка, <b>{title}</b>"
@@ -130,10 +130,10 @@ msgid "moment.plan_segment_completion.body"
 msgstr "Ден {segment} од вкупно {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Го заврши ден <b>{segment}</b> од планот, <b>{title}</b>"
+msgstr "Го заврши ден <b>{segment}</b> од планот <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} го заврши ден <b>{segment}</b> од планот, <b>{title}</b>"
+msgstr "{name} го заврши ден <b>{segment}</b> од планот <b>{title}</b>"
 
 msgid "moment.plan_subscription.self.title"
 msgstr "Ти започна нов план"
@@ -142,7 +142,7 @@ msgid "moment.plan_subscription.title"
 msgstr "{name} започна нов план"
 
 msgid "moment.plan_subscription.v2.self.title"
-msgstr "Започна нов план <b>{title}</b>"
+msgstr "Ти започна нов план <b>{title}</b>"
 
 msgid "moment.plan_subscription.v2.title"
 msgstr "{name} започна нов план за читање <b>{title}</b>"
@@ -157,7 +157,7 @@ msgid "moment.system.find_friends.title"
 msgstr "Апликацијата „Библија“ е подобра кога се користи со пријатели. Пребарај ги твоите контакти за да најдеш пријатели."
 
 msgid "moment.video.watched.self.title"
-msgstr "Вие гледавте <b>{title}</b>"
+msgstr "Ти гледаше <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} гледаше <b>{title}</b>"
@@ -181,10 +181,10 @@ msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Најди надеж и обнова во Божјото Слово"
 
 msgid "moment.image.self.title"
-msgstr "Ти создаде слика со стих за <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Ти направи слика со стих за <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} создаде слика со стих за <b>{reference_human} {version_abbreviation}</b>"
+msgstr "{name} направи слика со стих за <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Освежи ја вераta во Бога со нови планови за читање."
@@ -328,19 +328,19 @@ msgid "notifications.moments.create.note.reference"
 msgstr "{name} додаде белешка за {reference_human}"
 
 msgid "notifications.moments.create.note.title"
-msgstr "{name} ја додаде белешката, “{title}”"
+msgstr "{name} ја додаде белешката „{title}“"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} го заврши својот план за читање, {title}"
+msgstr "{name} го заврши својот план за читање {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} го заврши својот план за читање на Библијата, {title}"
+msgstr "{name} го заврши својот план за читање на Библијата {title}"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} започна нов план за читање, {title}"
+msgstr "{name} започна нов план за читање {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} започна нов план за читање на Библијата, {title}"
+msgstr "{name} започна нов план за читање на Библијата {title}"
 
 msgid "notifications.people.contact.joined"
 msgstr "{name} само што се приклучи на YouVersion. Допри за да го додадеш како пријател"
@@ -364,22 +364,22 @@ msgid "notifications.moments.create.image"
 msgstr "{name} создаде слика со стих за {reference_human}"
 
 msgid "notifications.friendships.pending"
-msgstr "Те чекаат нови покани за пријателство во Библиската Апликација"
+msgstr ""
 
 msgid "notifications.votd_image"
 msgstr "Слика со Стих на денот"
 
 msgid "notifications.plans_with_friends_invite"
-msgstr "{name} би сакал да го чита планот \"{title}\" со тебе."
+msgstr "{name} сака со тебе да го чита планот „{title}“."
 
 msgid "notifications.plans_with_friends_comment"
-msgstr "{name} коментираше на ден {day} од планот \"{title}\""
+msgstr "{name} коментираше на ден {day} од планот „{title}“"
 
 msgid "notifications.plans_with_friends_accept"
-msgstr "{name} ја прифати твојата покана за заедничко читање на планот \"{title}\""
+msgstr "{name} ја прифати твојата покана за заедничко читање на планот „{title}“."
 
 msgid "notifications.plans_with_friends_update_start_date"
-msgstr "{name} го смени почетниот датум на планот \"{title}\" во {date}."
+msgstr "{name} го смени почетниот датум на планот „{title}“ во {date}."
 
 msgid "notifications.comments.moment.mine.badge"
 msgstr "{name} коментираше на твојата значка: „{comment}“"
@@ -391,10 +391,10 @@ msgid "notifications.comments.moments.friend.owner.badge"
 msgstr "{moment_owner_name} исто така коментираше на својата значка: „{comment}“"
 
 msgid "notifications.likes.moment.mine.badge"
-msgstr "На {name} му/ѝ се допаѓа твојата значка, {title}"
+msgstr "На {name} му/ѝ се допаѓа твојата значка {title}"
 
 msgid "notifications.moments.create.badge"
-msgstr "{name} доби значка, {title}"
+msgstr "{name} доби значка {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hi!</p><p>Јас ја користам Апликацијата Библија, и сакав да ја споделам со тебе. Ако сега започна да ја користиш оваа апликација, знај дека таа претставува едноставен начин да се внесе убавината и вистината на Библијата во секојдневниот живот. </p><p><strong>Превземи ја Апликацијата Библија:</strong> читај, гледај, слушај и сподели ја на твојот паметен телефон или таблет, и читај ја на Bible.com</p><p><strong>Постави ја твојата сметка:</strong> претплати се на Библиски план и имај пристап кон обележувачи, нагласувачи и белешки од сите уреди</p><p><strong>Додај пријатели (Како мене!):</strong> истражи ја и дискутирај за Библијата со луѓе кои ти се драги</p><p>Сѐ е во Апликацијата Библија—започни тука: </p>"

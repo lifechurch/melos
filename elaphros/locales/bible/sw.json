@@ -2,7 +2,7 @@
 	"features": {
 		"bible": {
 			"cta": "Pakua Apu ya Biblia ya Watoto",
-			"bafk": "Bible App for Kids",
+			"bafk": "Apu ya Biblia ya Watoto",
 			"blog": "Blogu",
 			"read": "Soma",
 			"help": "Msaada",
@@ -29,19 +29,19 @@
 			"sign up": "Jiandikishe",
 			"versions": "Matoleo",
 			"language": "lugha",
-			"bible app": "Bible App",
+			"bible app": "Apu ya Biblia",
 			"volunteer": "Kujitolea",
 			"languages": "lugha",
 			"send votd": "Nitumie Mstari wa Siku wa Biblia",
 			"read full": "Soma Sura Nzima",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Fungua Mchezaji wa Sauti",
+			"open search": "Upau wa utafutaji wa wazi",
 			"open sidebar": "Fungua Orodha",
 			"related devos": "Mipango ya Masomo na ibada za bure zinazohusiana na {reference}",
 			"bible language": "Luhga za biblia",
 			"change language": "lugha",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Kivinjari chako hachiunga mkono sauti.",
 			"explore by verse": "Chunguza {chapter_name} kwa Mstari wa Biblia",
 			"version learn more": "Jifunze Mengi Kuhusu {version_name}"
 		}

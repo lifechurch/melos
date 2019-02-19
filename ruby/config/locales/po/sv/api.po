@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-03-26 12:29-0400\n"
+"PO-Revision-Date: 2019-01-07 20:55\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -334,7 +334,7 @@ msgid "notifications.moments.create.plan_completion"
 msgstr "{name} har kommenterat sin plan, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} har kommenterat sin bibelplan, {title}"
+msgstr "{name} har avslutat sin bibelplan, {title}"
 
 msgid "notifications.moments.create.plan_subscription"
 msgstr "{name} har påbörjat en ny plan, {title}"
@@ -382,19 +382,19 @@ msgid "notifications.plans_with_friends_update_start_date"
 msgstr "{name} ändrade startdatum för Läsplanen \"{title}\" till {date}."
 
 msgid "notifications.comments.moment.mine.badge"
-msgstr ""
+msgstr "{name} har kommenterat ditt Emblem: ”{comment}”"
 
 msgid "notifications.comments.moments.friend.badge"
-msgstr ""
+msgstr "{commenter_name} kommenterade också på {moment_owner_name}s Emblem: ”{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.badge"
-msgstr ""
+msgstr "{moment_owner_name} kommenterade också på deras Emblem: ”{comment}”"
 
 msgid "notifications.likes.moment.mine.badge"
-msgstr ""
+msgstr "{name} gillar ditt Emblem {title}"
 
 msgid "notifications.moments.create.badge"
-msgstr ""
+msgstr "{name} fick Emblemet {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hej!</p><p>Jag använder Bibelappen från YouVersion och vill dela med mig till dig. Om du inte känner till appen, den gör det enkelt för dig att få Bibelns underbara sanningar in i din vardag.</p><p><strong>Hämta Bibelappen:</strong> läs, titta, lyssna och dela från din telefon, pekplatta och online via Bible.com</p><p><strong>Skapa ett konto:</strong> prenumerera på bibelplaner och kom åt dina bokmärken, markeringar och anteckningar från alla dina enheter</p><p><strong>Lägg till vänner (som mig!):</strong> utforska och diskutera Bibeln med vänner du bryr dig om</p><p>Allt detta finns i Bibelappen—börja här: </p>"

@@ -3,10 +3,10 @@
 		"users": {
 			"friends": "Venner",
 			"account confirmed": "Din konto er blevet bekræftet!",
-			"friendship success": "Succes! I er nu venner.",
-			"friendship failure": "Der skete en fejl i oprettelse af venskab",
-			"error deleting account": "Beklager, der var en fejl i vores del. Prøv venligst igen eller kontakt supporten.",
-			"account already confirmed": "Din konto er allerede bekræftet! Log ind for at fortsætte."
+			"friendship success": "Vellykket! I er nu venner.",
+			"friendship failure": "Fejl ved oprettelse af venskab",
+			"error deleting account": "Beklager, der var et problem i vores ende. Prøv venligst igen, eller kontakt support.",
+			"account already confirmed": "Din konto er allerede blevet bekræftet! Log ind, for at fortsætte."
 		}
 	}
 }

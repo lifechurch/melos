@@ -35,13 +35,13 @@
 			"send votd": "இன்றைய வசனத்தை எனக்கு அனுப்பவும் ",
 			"read full": "முழு அத்தியாயம் படிக்க",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "ஆடியோ பிளேயரைத் திற",
+			"open search": "தேடல் பட்டையைத் திற",
 			"open sidebar": "திறந்த பட்டியல்",
 			"related devos": "இலவச வாசிப்பு திட்டங்கள் மற்றும் தியானங்கள் சார்ந்த {reference}",
 			"bible language": "வேதாகம மொழி",
 			"change language": "மொழியை மாற்று",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "உங்களது உலாவி ஒலியை இசைக்க ஆதரிக்கவில்லை.",
 			"explore by verse": "வசன வாரியாக {chapter_name} ஐ ஆராயவும்",
 			"version learn more": "{version_name} பற்றி மேலும் அறிக"
 		}

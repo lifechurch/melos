@@ -774,7 +774,7 @@
 	"moment.client_side.reading_plan_carousel.november.title": "Descubre la acción de gracias en las promesas de Dios.",
 	"moment.client_side.reading_plan_carousel.december.title": "Prepara tu corazón para esta nueva estación",
 	"notifications.comments.moment.mine.bookmark": "{name} comentó sobre tu marcador: “{comment}”",
-	"notifications.comments.moment.mine.friendship": "{name} comentó sobre vuestra nueva amistad con {friend_name}: “{comment}”",
+	"notifications.comments.moment.mine.friendship": "{name} comentó sobre tu nueva amistad con {friend_name}: “{comment}”",
 	"notifications.comments.moment.mine.friendship.friend": "{name} comentó sobre su nueva amistad: “{comment}”",
 	"notifications.comments.moment.mine.highlight": "{name} comentó sobre lo destacado: “{comment}”",
 	"notifications.comments.moment.mine.note": "{name} comentó sobre tu nota: “{comment}”",

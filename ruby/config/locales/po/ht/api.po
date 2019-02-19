@@ -1,0 +1,435 @@
+# #-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# #-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Translators:
+# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# #-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#
+# Translators:
+# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2018-11-01 21:13\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Haitian Creole\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ht\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ht\n"
+"X-Crowdin-File: moments.po\n"
+"#-#-#-#-#  notifications.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2019-02-04 05:22\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Haitian Creole\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ht\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ht\n"
+"X-Crowdin-File: notifications.po\n"
+"#-#-#-#-#  share.po (bible-app-api)  #-#-#-#-#\n"
+"Project-Id-Version: bible-app-api\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2018-11-01 21:13\n"
+"Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
+"Language-Team: Haitian Creole\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ht\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-SourceKey: msgstr\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: bible-app-api\n"
+"X-Crowdin-Language: ht\n"
+"X-Crowdin-File: share.po\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Ou genyen badj<b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} genyen badj<b>{title}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Ou telechaje vèsyon, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} telechaje vèsyon, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Ou make paj <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} pajmake <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Kounye a ou zanmi ak <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} zanmi ak <b>{friend_name}</b> kounye a"
+
+msgid "moment.highlight.self.title"
+msgstr "Ou souliye <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} make <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Ou ajoute yon nòt, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} ajoute yon nòt, <b>{title}</b>"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} nòt la ajoute"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Ou ajoute yon nòt"
+
+msgid "moment.note.reference.title"
+msgstr "{name} ajoute yon nòt, <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "Ou ajoute yon nòt, <b>{reference_human}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Ou konplete Plan w lan"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} fini ak yon Plan"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Ou fini ak yon Plan, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} fini ak yon Plan, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "{segment} jou nan {total_segments} ({percent_complete} %)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Ou konplete jou <b>{segment}</b> nan plan an, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} konplete jou <b>{segment}</b> nan Plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Ou kòmanse yon nouvo Plan"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} te kòmanse yon nouvo Plan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Ou kòmanse yon nouvo Plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} kòmanse yon nouvo Plan, <b>{title}</b>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Gade <i>Seri Bib la</i> aswè a!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Seri biblik</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "App Bib la pibon ak Zanmi. Fouye nan kontak ou pou jwenn zanmi."
+
+msgid "moment.video.watched.self.title"
+msgstr "Ou te gade <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} gade <b>{title}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Prepare pou Nwèl ak yon Plan Biblik Lavan"
+
+msgid "moment.system.bafk.title"
+msgstr "Ede timoun ou yo tonbe damou pou Pawòl Bondye."
+
+msgid "moment.system.christmas.title"
+msgstr "Pataje bon nouvèl la: Sovè a fèt!"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Pi bon ane wap janm genyen kòmanse kounye a."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Jwenn lanmou Bondye na Pawòl li. "
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Jwenn espwa ak renouvèlman nan Pawòl Bondye."
+
+msgid "moment.image.self.title"
+msgstr "Ou kreye yon imaj vèsè pou <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} kreye yon imaj vèsè pou <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Renouvle lafwa w ak nouvo plan yo."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Konsakre tèt ou chak jou nan Pawòl li a."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Chache Bondye nan Pawòl li."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Selebre Libète nan Kris la."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Chache Bondye nan Pawòl li chak jou."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Pwomès Bondye fè tout bagay tounèf."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Sajès Bondye kòmanse nan Pawòl Bondye."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Dekouvri gratitid nan pwomès Bondye yo."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Prepare kè ou sezon sa a."
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} kòmante makpaj ou a: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} kòmante sou nouvo zanmitay ou ak {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} kòmante sou nouvo Zanmitay ou a: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} kòmante pati w souliye a: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} kòmante nòt ou a: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} kòmante Plan w lan: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} kòmante sou Plan Etid Biblik ou a: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} kòmante sou makpaj {moment_owner_name} la tou: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} kòmante tou sou nouvo zanmitay {moment_owner_name} ak {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} kòmante tou sou nouvo Zanmitay yo ak {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} kòmante tou sou nouvo zanmitay ou ak {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} kòmante tou sou pati {moment_owner_name} souliye a: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} kòmante tou sou nòt {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} kòmante sou makpaj yo a tou: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} kòmante tou sou nouvo zanmitay yo ak {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} kòmante tou sou nouvo Zanmitay yo ak ou: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} kòmante tou sou pati yo souliye a: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} kòmante tou sou nòt yo a: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} kòmante sou Plan yo a tou: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} kòmante tou sou Plan Etid Biblik yo a: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{moment_owner_name} kòmante tou sou Plan Etid Biblik yo a: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} kòmante tou sou Plan Etid Biblik {moment_owner_name} la: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} aksepte demann zanmi w voye a"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} se zanmi w kounye a"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} vle zanmi ou sou YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Èske ou vle zanmi ak {name} sou YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} renmen makpaj ou a, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} renmen nouvo Zanmitay ou ak {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} renmen pati w souliye a, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} renmen nòt ou a"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} renmen nòt ou ekri sou {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} renmen nòt ou a, “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} renmen aktivite Plan w lan"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} renmen Plan aktivite biblik ou a"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} make {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} souliye {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} nòt la ajoute"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} ajoute yon nòt sou {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} ajoute yon nòt, “{title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} fini ak Plan yo a, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} fini ak Plan Etid Biblik yo a, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} kòmanse yon nouvo Plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} kòmanse yon nouvo Plan Etid Biblik, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} fèk monte sou Youversion. Tape pou ajoute yo kòm zanmi. "
+
+msgid "notifications.system.test"
+msgstr "Telechaje Aplikasyon Bib Timoun yo kounye a!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} kòmante sou imaj vèsè ou: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} kòmante sou vèsè foto {moment_owner_name} la tou: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} kòmante tou sou vèsè foto yo a: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} renmen imaj vèsè ou pou {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} yon imaj vèsè kreye {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "Ou gen demann zanmi kap tann ou nan App Bib la"
+
+msgid "notifications.votd_image"
+msgstr "Vèsè-Foto Jodi a"
+
+msgid "notifications.plans_with_friends_invite"
+msgstr "{name} bezwen li Plan “{title}” ak ou."
+
+msgid "notifications.plans_with_friends_comment"
+msgstr "{name} kòmante sou Jou {day} nan Plan, “{title}.”"
+
+msgid "notifications.plans_with_friends_accept"
+msgstr "{name} aksepte envitasyon pou li Plan “{title}” ak ou."
+
+msgid "notifications.plans_with_friends_update_start_date"
+msgstr "{name} chanje dat kòmansman Plan “{title}” pou {date}."
+
+msgid "notifications.comments.moment.mine.badge"
+msgstr "{name} te kòmante sou badj ou a: “{comment}”"
+
+msgid "notifications.comments.moments.friend.badge"
+msgstr "{commenter_name} te kòmante sou badj {moment_owner_name} a: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.badge"
+msgstr "{moment_owner_name} te kòmante sou badj yo a tou: “{comment}”"
+
+msgid "notifications.likes.moment.mine.badge"
+msgstr "{name} Brennen badj ou a {title}"
+
+msgid "notifications.moments.create.badge"
+msgstr "{name} jwen badj lan {title}"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Bonjou</p><p>Map itilize Ap Bib YouVersion nan e m ta renmen pataje l ak ou. Si w fèk dekouvri ap la, se yon fason ki byen senp pou pote bèl verite Bib la nan lavi w chak jou.</p><p><strong> Telechaje Ap Bib la: </strong>li, gade, koute epi pataje l sou smatfòn ou, tablèt ou, oubyen sou Entènèt sou Bible.com.</p><p><strong> Kreye yon kont:</strong>enskri pou Plan Etid Biblik yo epi wap jwenn makpaj, leson enpòtan ak nòt sou tout aparèy ou yo</p><p><strong>Ajoute zanmi (tankou m!):</strong>eksplore epi diskite Bib la ak moun ou renmen</p><p>tousa ak Ap Bib la—kòmanse la a: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Bonjou!\n"
+"\n"
+"Map itilize Ap Bib YouVersion nan e m ta renmen pataje l ak ou Si w fèk dekouvri ap la, se yon fason ki byen senp pou pote bèl verite Bib la nan lavi w chak jou. \n"
+"\n"
+"Telechaje Ap Bib la: li, gade, koute epi pataje l sou smatfòn ou, tablèt ou, oubyen sou Entènèt sou Bible.com. \n"
+"\n"
+"Kreye yon kont: enskri pou Plan Etid Biblik yo epi wap jwenn makpaj, leson enpòtan ak nòt sou tout aparèy ou yo. \n"
+"\n"
+"Ajoute zanmi (tankou m!): eksplore epi diskite Bib la ak moun ou renmen. \n"
+"\n"
+"Tout sa nan Ap Bib la— kòmanse la a: "
+
+msgid "share.invite_email_subject"
+msgstr "Vin jwenn mwen sou Ap Bib la"
+
+msgid "share.invite_facebook"
+msgstr "M renmen Ap Bib la! Li vrèman ede m pratike Bib la chak jou nan lavi m Li pèmèt mwen souliye, koute Pawòl Bib la, ekri nòt, suiv plan devosyon e menm gade videyo! Al telechaje l kounye a! (li gratis!):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Eske w gen Ap Bib la M renmen l, m panse wap renmen l tou Men lyen an:"
+
+msgid "share.invite_sms"
+msgstr "M renmen Ap Bib YouVersion nan M panse m ta fè sa tou:"
+
+msgid "share.invite_sms_prefix"
+msgstr "Mesaj {name}:"
+
+msgid "share.invite_twitter"
+msgstr "Ap Bib Youversion nan toujou byen vizib sou ekran mwen aparèy mwen yo Li, gade, koute epi pataje... tousa ak yon sèl ap ki gratis"
+
+msgid "share.invite_twitter_direct"
+msgstr "Eske w genyen Ap Bib YouVersion nan M renmen l, m panse wap renmen l tou Men lyen an:"

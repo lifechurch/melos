@@ -35,13 +35,13 @@
 			"send votd": "Pošlete mi Veršík Dne",
 			"read full": "Číst celou kapitolu",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "Otevřít zvukový přehrávač",
+			"open search": "Otevřít panel pro vyhledávání",
 			"open sidebar": "Otevřít menu",
 			"related devos": "Bezplatné plány čtení Bible a zamyšlení souvísející s {reference}",
 			"bible language": "Jazyk Bible",
 			"change language": "Zvolit jazyk",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "Prohlížeč nepodporuje audio.",
 			"explore by verse": "Prozkoumej {chapter_name} podle Verše",
 			"version learn more": "Zjisti více o {version_name}"
 		}

@@ -35,13 +35,13 @@
 			"send votd": "मुझे आज के दिन का वचन भेजें",
 			"read full": "पूरा अध्याय पढ़े ",
 			"bible lens": "Bible Lens",
-			"audio open": "Open Audio Player",
-			"open search": "Open Search Bar",
+			"audio open": "ऑडियो प्लेयर खोलें",
+			"open search": "सर्च बार खोलें",
 			"open sidebar": "मेनू खोले ",
 			"related devos": "निःशुल्क रीडिंग प्लान और मनन {reference} के बारे मे",
 			"bible language": "बाइबिल भाषाएँ ",
 			"change language": "भाषा बदले",
-			"no audio support": "Your browser doesn't support audio.",
+			"no audio support": "आपका ब्राउज़र ऑडियो का समर्थन नहीं करता है।",
 			"explore by verse": "वचन द्वारा {chapter_name} ढूँढें",
 			"version learn more": "{version_name} के बारे में और अधिक जानें"
 		}
