@@ -30,8 +30,10 @@
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
 - content_for :lower_javascript do
-  %script{:src => "//#{ENV['SECURE_HOSTNAME']}:#{Cfg.nodejs_api_port}/tupos/babel-polyfill.min.js", :type => "text/javascript"}
-  %script{:src => "//#{ENV['SECURE_HOSTNAME']}:#{Cfg.nodejs_api_port}/tupos/OAuth.bundle.js", :type => "text/javascript"}
+  - port = Cfg.nodejs_api_port.present? ? ":#{Cfg.nodejs_api_port}" : ""
+  - proto = Cfg.nodejs_api_port.present? ? "http" : "https"
+  %script{:src => "#{proto}://#{ENV['SECURE_HOSTNAME']}#{port}/tupos/babel-polyfill.min.js", :type => "text/javascript"}
+  %script{:src => "#{proto}://#{ENV['SECURE_HOSTNAME']}#{port}/tupos/OAuth.bundle.js", :type => "text/javascript"}
 
 .medium-centered
   .columns.medium-centered.large-11
