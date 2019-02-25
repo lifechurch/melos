@@ -1667,7 +1667,7 @@ he:
         signOut: "התנתק"
         createAccount: "צור חשבון"
       HtmlEditor:
-        text: "טֶקסט"
+        text: "טקסט"
         bold: "חזק"
         italic: "כתב נטוי"
     containers:
@@ -1748,7 +1748,7 @@ he:
                 reorder: "סדר מחדש את התוכן"
                 doneReordering: "סידור מחדש בוצע"
               ContentHeader:
-                text: "טֶקסט"
+                text: "טקסט"
                 reference: "הפניות בכתובים"
                 plan: "תוכנית"
                 image: "תמונה"
