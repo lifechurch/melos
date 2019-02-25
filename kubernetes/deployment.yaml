@@ -54,14 +54,6 @@ spec:
           periodSeconds: 10
           failureThreshold: 3
           successThreshold: 1
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 9001
-          initialDelaySeconds: 10
-          periodSeconds: 30
-          failureThreshold: 3
-          successThreshold: 1
         env:
           - name: YOUVERSION_TOKEN_PHRASE
             valueFrom:

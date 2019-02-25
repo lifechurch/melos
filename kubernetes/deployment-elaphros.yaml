@@ -55,15 +55,7 @@ spec:
                 value: 127.0.0.1
           initialDelaySeconds: 10
           periodSeconds: 5
-          timeoutSeconds: 5
-          failureThreshold: 1
-          successThreshold: 1
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 9000
-          initialDelaySeconds: 10
-          periodSeconds: 30
+          timeoutSeconds: 4
           failureThreshold: 3
           successThreshold: 1
         env:
