@@ -446,5 +446,14 @@
 		"locale2": "ja",
 		"locale3": "jpn",
 		"displayName": "日本語"
-	}
+  },
+  {
+		"nativeName": "繁體中文（香港）",
+		"englishName": "Chinese Hong Kong",
+		"locale": "zh-HK",
+		"momentLocale": "zh-HK",
+		"locale2": "zh",
+		"locale3": "zho_hk",
+		"displayName": "繁體中文（香港）"
+	}  
 ]
