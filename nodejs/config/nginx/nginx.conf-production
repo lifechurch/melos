@@ -5,6 +5,9 @@ pid /run/nginx.pid;
 env JUSTATEST;
 env NEW_RELIC_LICENSE_KEY;
 env YOUVERSION_TOKEN_PHRASE;
+env RAILS_POLL_INTERVAL_SECONDS;
+env DEFAULT_CACHE_LIFETIME;
+env OVERRIDE_CACHE_LIFETIME;
 
 events {
 	worker_connections 768;

@@ -4,7 +4,7 @@ const bibleToAppLocale = require('../utils/localization/bible-to-app-locale')
 const getAppLocaleDetails = require('../utils/localization/get-app-locale-details')
 const getLocalizedLink = require('../utils/localization/get-localized-link')
 
-module.exports = function ping(req, reply) {
+module.exports = function bibleOffline(req, reply) {
   if (newrelic) {
     newrelic.setTransactionName('bible-offline')
   }

@@ -47,15 +47,17 @@ spec:
             memory: "700Mi"
         readinessProbe:
           httpGet:
-            path: /ping
-            port: 80
+            path: /health
+            port: 9000
             scheme: HTTP
             httpHeaders:
               - name: Host
                 value: 127.0.0.1
           initialDelaySeconds: 10
           periodSeconds: 5
-          timeoutSeconds: 5
+          timeoutSeconds: 4
+          failureThreshold: 3
+          successThreshold: 1
         env:
           - name: YOUVERSION_TOKEN_PHRASE
             valueFrom:
@@ -101,6 +103,16 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: MEMCACHE_SERVERS                
+                key: MEMCACHE_SERVERS
+          - name: DEFAULT_CACHE_LIFETIME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: DEFAULT_CACHE_LIFETIME
+          - name: OVERRIDE_CACHE_LIFETIME
+            valueFrom:
+              secretKeyRef:
+                name: $KUBE_NAMESPACE-secrets-$STAGE
+                key: OVERRIDE_CACHE_LIFETIME                                
       imagePullSecrets:
         - name: gitlab-registry
