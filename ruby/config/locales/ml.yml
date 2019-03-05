@@ -37,7 +37,7 @@ ml:
         other: "%{count} മാസങ്ങൾ മുമ്പ്"
       x_seconds:
         one: "%{count} നിമിഷം മുമ്പ്"
-        other: "%{count} seconds ago"
+        other: "%{count} സെക്കൻ്റുകൾ മുമ്പ്"
   counter:
     format: "999,999,999"
   social:
@@ -45,7 +45,7 @@ ml:
       main heading: "സംഭാഷണം & കണ്ടെത്തൽ\n"
       main description: "വിശ്വസ്തരായ സുഹൃത്തുക്കളുമായി ബൈബിൾ പര്യവേക്ഷണം ചെയ്യാൻ ഒരു പുതിയ മാർഗം\n"
       moment:
-        user aaron: "Aaron Steele"
+        user aaron: "ആരോൺ സ്റ്റീൽ"
         user andy: "ആൻഡി നൈറ്റ്"
         timestamp: "5 ദിവസം മുമ്പ്\n"
         title: "സങ്കീർത്തനം 31: 7 ബുക്ക്മാർക്ക് ചെയ്തു\n"
@@ -72,7 +72,7 @@ ml:
       no activity yet: "ഇതുവരെ ഒരു പ്രവർത്തനവും ഉണ്ടായിട്ടില്ല."
     moment:
       read all: "എല്ലാം വായിക്കുക"
-      read less: "Read less"
+      read less: "കുറച്ച് വായിക്കുക"
     share: "പങ്ക് വെക്കു"
     add comment: "ഒരു അഭിപ്രായം ചേർക്കുക"
     my connections: "ബന്ധിപ്പിച്ച അക്കൗണ്ടുകൾ"
@@ -111,14 +111,14 @@ ml:
     traditional chinese: "പരമ്പരാഗത ചൈനീസ്"
   api:
     users agree bool: "ഒരു അക്കൗണ്ട് സൃഷ്ടിക്കുന്നതിന് നിങ്ങൾ നിബന്ധനകളും വ്യവസ്ഥകളും അംഗീകരിക്കണം."
-    users confirm password matches: "The new passwords do not match."
+    users confirm password matches: "പുതിയ പാസ്വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല."
     users email email: "ഇമെയിൽ വിലാസം അസാധുവാണ്.\n"
     users email email rfc: "നിങ്ങൾ നൽകിയ ഇമെയിൽ വിലാസം അസാധുവാണ്.\n"
     users email not available: "ഈ ഇമെയിൽ വിലാസത്തിൽ ഒരു അക്കൌണ്ട് ഇതിനകം രജിസ്റ്റർ ചെയ്തിട്ടുണ്ട്"
     users email not found: "ആ ഇമെയിൽ വിലാസത്തിൽ അക്കൗണ്ട് ഒന്നുമില്ല.\n"
     users email required: "നിങ്ങൾ ഒരു ഇമെയിൽ വിലാസം നൽകണം."
     users hash verified: "ഈ അക്കൌണ്ട് ഇതിനകം പരിശോധിച്ചു.\n"
-    users password change: "Your new password must be different than your old password."
+    users password change: "നിങ്ങളുടെ പുതിയ രഹസ്യവാക്ക് നിങ്ങളുടെ പഴയ പാസ്വേഡിനെ അപേക്ഷിച്ച് വ്യത്യസ്തമായിരിക്കണം."
     users password length: "നിങ്ങളുടെ രഹസ്യവാക്കിന് 6 പ്രതീകങ്ങളെങ്കിലും ഉണ്ടായിരിക്കണം.\n"
     users password less than minimum value 6: "നിങ്ങളുടെ രഹസ്യവാക്കിന് 6 പ്രതീകങ്ങളെങ്കിലും ഉണ്ടായിരിക്കണം.\n"
     users password required: "നിങ്ങൾ ഒരു പാസ്വേഡ് നൽകണം."
