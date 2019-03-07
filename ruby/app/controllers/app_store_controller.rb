@@ -150,9 +150,6 @@ class AppStoreController < ActionController::Base
   end
 
   def track_app_download
-    tracker = Gabba::Gabba.new(@site.ga_code, @site.ga_domain)
-    tracker.identify_user(cookies[:__utma], cookies[:__utmz])
-    tracker.event("App Download", "#{request.host_with_port}#{request.fullpath}")
   end
 
 end

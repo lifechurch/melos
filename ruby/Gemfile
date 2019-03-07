@@ -18,7 +18,6 @@ gem 'sentry-raven',           '~> 2.6.3'
 #gem 'i18n-js',                '~> 3.0.0.rc6'
 #gem 'rack-mini-profiler'
 
-gem 'gabba'
 gem 'memcachier'
 gem 'fast_gettext'
 gem 'smartling'

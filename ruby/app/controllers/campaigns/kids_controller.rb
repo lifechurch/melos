@@ -35,9 +35,6 @@ class Campaigns::KidsController < ApplicationController
   private
 
   def track_event
-    tracker = Gabba::Gabba.new(@site.ga_code, @site.ga_domain)
-    tracker.identify_user(cookies[:__utma], cookies[:__utmz])
-    tracker.event("Kids App", "#{request.host_with_port}#{request.fullpath}")
   end
 
   def kids_store_redirect
