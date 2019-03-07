@@ -36,6 +36,7 @@
     %meta{name: "twitter:description",      content: t("campaigns.christmas.twitter text")}
     %meta{name: "twitter:image",            content: "#{url_for(asset_path('/assets/campaigns/christmas/christmas-tracker2.png'))}"}
     %meta{name: "twitter:site",             content: "@YouVersion"}
+    = render partial: "shared/google_tag_manager"
 
     = stylesheet_link_tag "campaigns/christmas"
     = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
@@ -44,6 +45,6 @@
       try{Typekit.load();}catch(e){}
 
   %body{:class => "body-" + i18n_css_class}
-    = render '/shared/google_analytics'
+    = render partial: '/shared/google_tag_manager_body'
 
     = yield

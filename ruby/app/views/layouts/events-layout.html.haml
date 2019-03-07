@@ -36,6 +36,9 @@
     %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
 
+    %script{ type: "javascript" }
+    = render partial: "shared/google_tag_manager"
+
     / Open Graph Markup for Facebook
     / (Refer to https://developers.facebook.com/docs/sharing/webmasters)
     %meta{:content => "105030176203924", :property => "fb:app_id"}/
@@ -234,5 +237,5 @@
 
 
   %body{class: "c_#{params[:controller]} a_#{params[:action]} body-#{i18n_css_class}"}
-    = render '/shared/google_analytics'
+    = render partial: '/shared/google_tag_manager_body'
     = content_for?(:main) ? yield(:main) : yield
