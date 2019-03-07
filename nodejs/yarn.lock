@@ -11058,12 +11058,6 @@ react-event-names@^1.0.0:
   dependencies:
     has-touch "^1.0.0"
 
-react-ga@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-1.5.0.tgz#6bf8011950b024095305d49e170d447d3bc76aaf"
-  dependencies:
-    object-assign "^4.0.1"
-
 react-google-maps@^4.7.2:
   version "4.11.0"
   resolved "https://registry.yarnpkg.com/react-google-maps/-/react-google-maps-4.11.0.tgz#077a7d937685b5ff359d0b6ebb54505adec68712"
