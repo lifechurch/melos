@@ -12,6 +12,8 @@
     %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %base{href: "/"}
+    = render partial: "shared/google_tag_manager"
+    
     -#%script{src:"https://cdn.ravenjs.com/3.11.0/raven.min.js", crossorigin: "anonymous"}
     = csrf_meta_tags
     = render '/shared/footer_head'
@@ -19,7 +21,7 @@
     = render '/shared/javascripts'
 
   %body{class: "c_#{params[:controller]} a_#{params[:action]}", onload: "init()"}
-    = render '/shared/google_analytics'
+    = render partial: '/shared/google_tag_manager_body'
 
     %a#top-of-page
 

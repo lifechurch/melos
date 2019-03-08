@@ -90,6 +90,9 @@
   </head>
 
   <body class="sans-serif mv6" dir="${out.global.textDirection}">
+    <!-- Google Tag Manager -->
+    <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-5SNSFC2&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+    
     <site-header />
     <div class="body mt5">
       <include(input.body) />
@@ -120,43 +123,6 @@
     <app-language-picker-modal
       path=input.path>
     </app-language-picker-modal>
-
-    <amp-analytics type="googleanalytics">
-    <script type="application/json">
-    {
-      "vars": {
-        "account": "UA-3571547-76"
-      },
-      "triggers": {
-        "trackPageview": {
-          "on": "visible",
-          "request": "pageview"
-        },
-        "trackAnchorClicks": {
-          "on": "click",
-          "selector": "[role='button'],a,button",
-          "request": "event",
-          "vars": {
-            "eventCategory": "amp-ui",
-            "eventAction": "anchor-click"
-          }
-        },
-        "trackScrollPos": {
-          "on": "scroll",
-          "request": "event",
-          "scrollSpec": {
-            "verticalBoundaries": [25, 50, 90]
-          },
-          "vars": {
-            "eventCategory": "amp-ui",
-            "eventAction": "scroll-content",
-            "eventLabel": "\${verticalScrollBoundary}"
-          }
-        }
-      }
-    }
-    </script>
-    </amp-analytics>
 
     <amp-app-banner layout="nodisplay"
       id="banner">

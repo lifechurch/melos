@@ -14,13 +14,14 @@
     %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %base{href: "/"}
+    = render partial: "shared/google_tag_manager"
     = csrf_meta_tags
     = render '/shared/footer_head'
     = render '/shared/head'
     = render '/shared/javascripts'
 
   %body{onload: "init()", class: "c_#{params[:controller]} a_#{params[:action]}"}
-    = render '/shared/google_analytics'
+    = render partial: '/shared/google_tag_manager_body'
     = content_for?(:header) ? yield(:header) : render("/shared/header/default")
 
     #wrapper
