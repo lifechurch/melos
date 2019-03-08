@@ -41,6 +41,13 @@ class Footer extends Component {
       localOnceDaily(`DailyStreakCheckin-${userId}`, (handleSuccess) => {
         const today = moment()
 
+        // Google Tag Manager Event
+        if (window && window.dataLayer && [ 'www.bible.com', 'my.bible.com', 'events.bible.com', 'nodejs.bible.com' ].indexOf(window.location.hostname) !== -1) {
+          window.dataLayer.push({
+            event: 'once_daily_authenticated_user_session'
+          })
+        }
+
         // Streaks Checkin
         dispatch(streaksAction({
           method: 'checkin',
@@ -52,16 +59,6 @@ class Footer extends Component {
         })).then((response) => {
           if ('current_streak' in response && typeof handleSuccess === 'function') {
             handleSuccess()
-
-            // Google Analytics Event
-            // if (window.location.hostname === 'www.bible.com') {
-            //   ga.event({
-            //     category: 'User',
-            //     action: 'StreaksCheckin',
-            //     value: parseInt(response.current_streak.toString(), 10)
-            //   })
-            // }
-
           }
         })
       })
