@@ -61,6 +61,7 @@ class Footer extends Component {
             //     value: parseInt(response.current_streak.toString(), 10)
             //   })
             // }
+
           }
         })
       })
