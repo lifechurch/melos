@@ -2,28 +2,12 @@
   :javascript
     var userCreateForm = document.getElementById('user_create_form');
 
-    function getQueryValue(key, defaultValue) {
-      var value
-      try {
-        var query = window.location.search.substring(1).split("&")
-        query.forEach(function(q) {
-          var qa = q.split('=');
-          if (qa.length === 2 && decodeURIComponent(qa[0]) === key) {
-            value = decodeURIComponent(qa[1])
-          }
-        })
-      } catch(e) {}
-      return (value || defaultValue)
-    }
-
     function userCreateFormSubmit() {
       try {
         // Google Tag Manager Event
         if (window && window.dataLayer && [ 'www.bible.com', 'my.bible.com', 'events.bible.com', 'nodejs.bible.com' ].indexOf(window.location.hostname) !== -1) {
           window.dataLayer.push({
-            event: 'user_sign_up',
-            source: getQueryValue('source', 'web'),
-            product: getQueryValue('product', 'bible.com')
+            event: 'user_sign_up'
           })
         }
       } catch(e) {}
