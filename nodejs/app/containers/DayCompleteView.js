@@ -36,7 +36,7 @@ class DayCompleteView extends Component {
     localOnceDaily(`PlanDayComplete-${userId}-${planId}-${day}`, (handleSuccess) => {
       try {
         // Google Tag Manager Event
-        if (window && window.dataLayer && [ 'www.bible.com', 'my.bible.com', 'events.bible.com', 'nodejs.bible.com', 'localhost' ].indexOf(window.location.hostname) !== -1) {
+        if (window && window.dataLayer && [ 'www.bible.com', 'my.bible.com', 'events.bible.com', 'nodejs.bible.com' ].indexOf(window.location.hostname) !== -1) {
           window.dataLayer.push({
             event: 'plan_day_complete'
           })
