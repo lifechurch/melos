@@ -1132,7 +1132,7 @@ it:
       explanation: "Qualcosa non ha funzionato dietro le quinte! Puoi provare a ricaricare la pagina. Ci scusiamo per l'inconveniente!"
       our action: "Siamo stati informati di questo e lo risolveremo al più presto."
     home:
-      heading: "Ottieni una Bibbia gratuita per il tuo smartphone, tablet e computer."
+      heading: "Una Bibbia gratuita per il tuo smartphone, tablet e computer."
       cta: "Leggi la Bibbia Adesso"
       experience:
         title: "Provala ovunque"
@@ -2046,7 +2046,7 @@ it:
     read full chapter: "Leggi l'Intero Capitolo"
     copy: "Copia"
     notification settings: "Opzioni di Notifica"
-    get a free bible: "Ottieni una Bibbia gratuita per il tuo smartphone, tablet e computer."
+    get a free bible: "Una Bibbia gratuita per il tuo smartphone, tablet e computer."
     download the bible: "Scarica l'App Bibbia"
     my year: "Il Mio Anno con l'App Bibbia"
     view snapshot: "Visualizzare la Tua Panoramica"

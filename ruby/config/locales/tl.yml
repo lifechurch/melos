@@ -440,7 +440,7 @@ tl:
       read in bible: "Basahin sa Biblia"
       read plan: "Basahin"
       about plan: "Patungkol sa Plano"
-      start plan: "Simulan ang Plano"
+      start plan: "Simulan ang gabay"
   likes:
     create success: "Tagumpay! Ang iyong ini-like ay naisave na."
     create failure: "Hindi maisave ang iyong pag-like"
@@ -832,7 +832,7 @@ tl:
     overview: "Overview ng Plan"
     complete: "Nakumpletong Babasahin"
     day complete: "Natapos na Araw"
-    start: "Umpisahan ang Planong Ito"
+    start: "Umpisahan ang Gabay na Ito"
     save for later: "I-save para sa ibang Pagkakataon"
     saved for later: "Na-save para sa Ibang Pagkakataon"
     sample: "Halimbawa"
@@ -856,7 +856,7 @@ tl:
     plan settings: "Mga Setting ng Plano"
     search: "Hanapin"
     search placeholder: "Maghanap ng Plans sa %{category}"
-    subscribe to plan: "Umpisahan ang Planong Ito"
+    subscribe to plan: "Umpisahan ang Gabay na Ito"
     previous day: "NAKARAANG ARAW"
     next day: "SUSUNOD NA ARAW"
     previous: "Bumalik"
@@ -871,7 +871,7 @@ tl:
     devotional: "Debosyonal"
     completion status _ below percentage: "Kumpleto"
     current progress html: "Araw<b>%{day}</b> ng <b>%{total_days}</b>"
-    start date _ before date string: "Petsa ng pag-umpisa"
+    start date _ before date string: "Petsa ng Pagsisimula:"
     end date _ before date string: "Petsa ng pagtapos"
     are you behind: "Nahuhuli ka ba sa iyong pagbabasa?"
     do you want to reset: "Gusto mo bang makahabol?"
@@ -879,7 +879,7 @@ tl:
     catch up description only: "Kung sakali mang nahuli ka sa iyong pagbabasa, huwag mag-alala! Pwede mong i-shift ang iyong kasalukuyan binabasa sa huli mong nakumpletong babasahin."
     catch me up: "Ihabol Ako"
     restart description: "Maaari mong umpisahan ulit ang iyong gabay. Lahat ng iyong nabasa ay maire-reset sa simula."
-    restart: "I-restart ang Plan"
+    restart: "Simulang Muli ang Gabay"
     privacy description:
       private: "Ang iyong Plano ay Pribado. Gawing Mga Kaibigan Lamang ang iyong setting para makapagbahagi ng mga kaganapan sa mga kaibigan."
       public: "Ang Plano mo ay nakikita ng mga kaibigan. Gawing Pribado upang maging ekslusibong para sa iyo lamang ang mga kaganapan sa iyong Plano."
@@ -919,11 +919,11 @@ tl:
     report on successful: "Tagumpay! Ang mga lingguhang accountability report ay maipadadala."
     report off successful: "Ang mga lingguhang accountability report ay hindi na maipadadala."
     catch up successful: "Tagumpay! Nakahabol ka na sa iyong babasahing gabay."
-    restart successful: "Ang iyong Plano ay bumalik ulit mula sa simula."
+    restart successful: "Ang iyong Gabay ay bumalik ulit sa simula."
     subscribe successful: "Magaling! Naka-subscribe ka sa plano na ito."
     day number: "Araw %{day}"
     which day in plan: "Araw %{day} ng %{total}"
-    must start to complete: "Simulan itong gabay para ma-save ang mga natapos na mga babasahin!"
+    must start to complete: "Simulan ang gabay na ito para ma-save ang mga natapos na babasahin!"
     invalid reference: "Paumanhin, isa sa mga sangguniang sipi ng Biblia para sa babasahing ito ay maaaring hindi kasama sa napiling salin. Maaaring pumili ng ibang salin, sa itaas. Kung patuloy na nakikita ang mensahe tungkol sa pagkakamaling ito, mangyaring ipaalam sa aming <a href='%{support_url}' target='_self'>support team</a> ang isyu."
     sidebar notice: "Tinitingnan mo ngayon ang isang babasahing gabay."
     congratulations: "Binabati Kita!"
@@ -1210,7 +1210,7 @@ tl:
     408 explanation: "Inalertuhan kami na at tutugunan namin ang mga hindi matapos tapos na mga isyu sa lalong madaling panahon. Tingnan natin kung maibabalik ka namin sa iyong pagbasa ng Biblia!"
     try again: "Subukang Muli"
   versions:
-    filter: "Magsimulang mag-type ng pangalan Salin (o Wika)..."
+    filter: "Magsimulang mag-type ng pangalan ng Salin (o Wika)..."
     see all: "Tingnan ang Lahat ng Salin..."
     courtesy of: "%{abbreviation} mula sa %{publisher}"
     learn more: "Higit na Impormasyon"
@@ -1527,7 +1527,7 @@ tl:
       catch up description only: "If you ever fall behind on your readings, don't worry! You can always shift the current reading back to your last completed reading."
       catch me up: "Ihabol Ako"
       restart description: "Maaari mong umpisahan ulit ang iyong plan. Lahat ng iyong nabasa ay maire-reset sa simula."
-      restart: "I-restart ang Plan"
+      restart: "Simulang Muli ang Gabay"
       privacy description:
         private: "Ang iyong Plano ay Pribado. Gawing Mga Kaibigan Lamang ang iyong setting para makapagbahagi ng mga kaganapan sa mga kaibigan."
         public: "Ang Plano mo ay nakikita ng mga kaibigan. Gawing Pribado upang maging ekslusibong para sa iyo lamang ang mga kaganapan sa iyong Plano."
@@ -1596,7 +1596,7 @@ tl:
               required: "Kailangang pumili ng lokasyon mula sa mapa."
             times:
               start_dt:
-                must_be_a_future_date: "Oras ng Simula ay hindi maaaring lumipas na."
+                must_be_a_future_date: "Ang Oras ng Simula ay hindi maaaring sa nakaraan."
             timezone:
               required: "Oras na sumasaklaw sa iyong bahagi ng mundo ay kailangang ilagay."
         reference:
