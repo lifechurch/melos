@@ -53,7 +53,7 @@ export function getToken({ username = null, password = null, facebook = null, go
   }
 
   if (scopes) {
-    params = Object.assign({}, params, { scopes })
+    params = Object.assign({}, params, { scope: scopes })
   }
 
   // encode the values to be passed to oauth
