@@ -50,6 +50,7 @@ review:
     - export REVIEW_MY_SUBDOMAIN=my-$CI_ENVIRONMENT_SLUG.
     - export REVIEW_WWW_SUBDOMAIN=$CI_ENVIRONMENT_SLUG.
     - command deploy
+    - sleep 99999999999
     - helm list | grep $SHORT || helm install --name $SHORT --set memcached.verbosity=v --set memcached.maxItemMemory=100 stable/memcached --version 0.4.1 --namespace $KUBE_NAMESPACE --replace
   environment:
     name: review/$CI_COMMIT_REF_NAME
