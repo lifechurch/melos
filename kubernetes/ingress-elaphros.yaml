@@ -4,20 +4,22 @@ kind: Ingress
 metadata:
   name: ingress-elaphros-$CI_ENVIRONMENT_SLUG
   namespace: $KUBE_NAMESPACE
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
   labels:
     app: elaphros-$CI_ENVIRONMENT_SLUG
     pipeline_id: "$CI_PIPELINE_ID"
     build_id: "$CI_JOB_ID"
 spec:
   tls:
-  - hosts:
-    - elaphros-$CI_ENVIRONMENT_HOSTNAME
-    secretName: tls
+    - hosts:
+        - elaphros-$CI_ENVIRONMENT_HOSTNAME
+      secretName: tls
   rules:
-  - host: elaphros-$CI_ENVIRONMENT_HOSTNAME
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-          servicePort: 80
+    - host: elaphros-$CI_ENVIRONMENT_HOSTNAME
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: 80

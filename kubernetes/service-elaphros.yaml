@@ -10,9 +10,9 @@ metadata:
     build_id: "$CI_JOB_ID"
 spec:
   ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-    name: http
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
   selector:
     app: elaphros-$CI_ENVIRONMENT_SLUG

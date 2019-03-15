@@ -32,87 +32,87 @@ spec:
     spec:
       terminationGracePeriodSeconds: 30
       containers:
-      - name: $KUBE_NAMESPACE-elaphros-$CI_ENVIRONMENT_SLUG
-        image: $CI_REGISTRY_IMAGE:elaphros-$CI_COMMIT_SHA
-        imagePullPolicy: IfNotPresent
-        ports:
-          - containerPort: 80
-        lifecycle:
-          preStop:
-            exec:
-              command: ["bash", "-c", "sleep 20"]
-        resources:
-          limits:
-            cpu: "1"
-            memory: "700Mi"
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 9000
-            scheme: HTTP
-            httpHeaders:
-              - name: Host
-                value: 127.0.0.1
-          initialDelaySeconds: 10
-          periodSeconds: 5
-          timeoutSeconds: 4
-          failureThreshold: 3
-          successThreshold: 1
-        env:
-          - name: YOUVERSION_TOKEN_PHRASE
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: YOUVERSION_TOKEN_PHRASE
-          - name: NODE_ENV
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: NODE_ENV
-          - name: PORT
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: PORT
-          - name: NEW_RELIC_LICENSE_KEY
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: NEW_RELIC_LICENSE_KEY
-          - name: APP_NAME
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: APP_NAME
-          - name: WWW_SUBDOMAIN
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: WWW_SUBDOMAIN
-          - name: MY_SUBDOMAIN
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: MY_SUBDOMAIN
-          - name: ELAPHROS_SENTRY_DSN
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: ELAPHROS_SENTRY_DSN
-          - name: MEMCACHE_SERVERS
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: MEMCACHE_SERVERS
-          - name: DEFAULT_CACHE_LIFETIME
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: DEFAULT_CACHE_LIFETIME
-          - name: OVERRIDE_CACHE_LIFETIME
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: OVERRIDE_CACHE_LIFETIME                                
+        - name: $KUBE_NAMESPACE-elaphros-$CI_ENVIRONMENT_SLUG
+          image: $CI_REGISTRY_IMAGE:elaphros-$CI_COMMIT_SHA
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          lifecycle:
+            preStop:
+              exec:
+                command: ["bash", "-c", "sleep 20"]
+          resources:
+            limits:
+              cpu: "1"
+              memory: "700Mi"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 9000
+              scheme: HTTP
+              httpHeaders:
+                - name: Host
+                  value: 127.0.0.1
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 4
+            failureThreshold: 3
+            successThreshold: 1
+          env:
+            - name: YOUVERSION_TOKEN_PHRASE
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: YOUVERSION_TOKEN_PHRASE
+            - name: NODE_ENV
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: NODE_ENV
+            - name: PORT
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: PORT
+            - name: NEW_RELIC_LICENSE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: NEW_RELIC_LICENSE_KEY
+            - name: APP_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: APP_NAME
+            - name: WWW_SUBDOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: WWW_SUBDOMAIN
+            - name: MY_SUBDOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: MY_SUBDOMAIN
+            - name: ELAPHROS_SENTRY_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: ELAPHROS_SENTRY_DSN
+            - name: MEMCACHE_SERVERS
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: MEMCACHE_SERVERS
+            - name: DEFAULT_CACHE_LIFETIME
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: DEFAULT_CACHE_LIFETIME
+            - name: OVERRIDE_CACHE_LIFETIME
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: OVERRIDE_CACHE_LIFETIME
       imagePullSecrets:
         - name: gitlab-registry
