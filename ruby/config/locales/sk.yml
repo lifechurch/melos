@@ -2080,7 +2080,7 @@ sk:
     join link: "Ktokoľvek s odkazom sa môže pridať"
     join together share: "Čítali by ste so mnou plán %{plan}?"
     join together: "%{host} chce čítať tento plán s vami."
-    talk it over: "Prediskutujte to."
+    talk it over: "Diskutujte"
     participants: "Účastníci."
     host: "Hostiteľ."
     x participants:
