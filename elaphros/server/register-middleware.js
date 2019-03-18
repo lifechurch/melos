@@ -5,7 +5,8 @@ module.exports = function registerMiddleware(fastify, middlewares) {
   function moduleRegisterErrorHanlder(err) {
     Raven.captureException(err)
     if (err) {
-      fastify.log.error(`Error loading URL Data middleware: ${err.toString()}`)
+      console.log(err)
+      fastify.log.error(`Error loading middleware: ${err.toString()}`)
       throw err
     }
   }
@@ -20,7 +21,7 @@ module.exports = function registerMiddleware(fastify, middlewares) {
       fnArgs = [ require(module) ]
     }
 
-    fnArgs.push(moduleRegisterErrorHanlder)
+    // fnArgs.push(moduleRegisterErrorHanlder)
 
     fastify.register.apply(this, fnArgs)
   })

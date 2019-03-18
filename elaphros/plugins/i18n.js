@@ -1,8 +1,10 @@
+/* eslint-disable prefer-arrow-callback */
+const fp = require('fastify-plugin')
 const path = require('path')
 const i18n = require('i18n')
+const fastifyLanguageParser = require('fastify-language-parser')
 const getAppLocale = require('../utils/localization/get-app-locale')
 const localeList = require('../localization/locale-list.json')
-const registerMiddleware = require('./register-middleware')
 const getPathWithoutLocale = require('../utils/localization/get-path-without-locale')
 
 /* i18n Configuration */
@@ -16,18 +18,16 @@ i18n.configure({
   updateFiles: false
 })
 
-module.exports = function configureI18n(fastify) {
-  registerMiddleware(fastify, [
-    [ 'fastify-language-parser', {
-      order: [ 'path' ],
-      fallbackLng: 'en',
-      supportedLngs: activeLocales
-    }]
-  ])
+module.exports = fp(function configureI18n(fastify, opts, next) {
+  fastify.register(fastifyLanguageParser, {
+    order: [ 'path' ],
+    fallbackLng: 'en',
+    supportedLngs: activeLocales
+  })
 
   fastify.use(i18n.init)
 
-  fastify.addHook('preHandler', (req, reply, next) => {
+  fastify.addHook('preHandler', (req, reply, hookNext) => {
     const urlData = req.urlData()
 
     function getUrl(hostName, port, urlPath, query) {
@@ -40,6 +40,10 @@ module.exports = function configureI18n(fastify) {
     }
 
     reply.res.setLocale(req.detectedLng)
-    next()
+    hookNext()
   })
-}
+
+  next()
+}, {
+  name: 'i18n'
+})
