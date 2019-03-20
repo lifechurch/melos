@@ -11,9 +11,9 @@ That's the motivation behind this prototype.
 ### Get Started
 You know the drill...
 - Clone this repo
-- Install deps: `yarn install`
+- Install deps: `npm install`
 - Set ENV var: `export YOUVERSION_TOKEN_PHRASE=XXXX`
-- Start server: `yarn start`
+- Start server: `npm start`
 - Open your browser to http://localhost:3030/bible/1/GEN.2
 
 
