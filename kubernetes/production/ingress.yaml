@@ -4,18 +4,20 @@ kind: Ingress
 metadata:
   name: $CI_ENVIRONMENT_SLUG
   namespace: $KUBE_NAMESPACE
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
   labels:
     app: $CI_ENVIRONMENT_SLUG
     pipeline_id: "$CI_PIPELINE_ID"
     build_id: "$CI_JOB_ID"
 spec:
   tls:
-  - hosts:
-    - www.$CI_ENVIRONMENT_HOSTNAME
-    - nodejs.$CI_ENVIRONMENT_HOSTNAME
-    - events.$CI_ENVIRONMENT_HOSTNAME
-    - my.$CI_ENVIRONMENT_HOSTNAME
-    secretName: ssl
+    - hosts:
+        - www.$CI_ENVIRONMENT_HOSTNAME
+        - nodejs.$CI_ENVIRONMENT_HOSTNAME
+        - events.$CI_ENVIRONMENT_HOSTNAME
+        - my.$CI_ENVIRONMENT_HOSTNAME
+      secretName: ssl
   rules:
   - host: www.$CI_ENVIRONMENT_HOSTNAME
     http:

@@ -31,123 +31,151 @@ spec:
         build_id: "$CI_JOB_ID"
     spec:
       terminationGracePeriodSeconds: 20
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - $CI_ENVIRONMENT_SLUG
+                topologyKey: "kubernetes.io/hostname"
       containers:
-      - name: $KUBE_NAMESPACE-$CI_ENVIRONMENT_SLUG
-        image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-        imagePullPolicy: IfNotPresent
-        ports:
-          - containerPort: $PORT
-        resources:
-          limits:
-            cpu: "4"
-            memory: "5400Mi"
-        readinessProbe:
-          httpGet:
-            path: /ping_all
-            port: 80
-            scheme: HTTP
-            httpHeaders:
-              - name: Host
-                value: 127.0.0.1
-          initialDelaySeconds: 30
-          timeoutSeconds: 5
-          periodSeconds: 10
-          failureThreshold: 3
-        env:
-          - name: YOUVERSION_TOKEN_PHRASE
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: YOUVERSION_TOKEN_PHRASE
-          - name: TREADSTONE_SECRET
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: TREADSTONE_SECRET
-          - name: SENTRY_DSN
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: SENTRY_DSN
-          - name: STACK_IMPACT_AGENT_KEY
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: STACK_IMPACT_AGENT_KEY
-          - name: NEW_RELIC_LICENSE_KEY
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: NEW_RELIC_LICENSE_KEY
-          - name: NEW_RELIC_APP_NAME
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: NEW_RELIC_APP_NAME
-          - name: NEW_RELIC_LOG_LEVEL
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: NEW_RELIC_LOG_LEVEL
-          - name: PASSENGER_APP_ENV
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: PASSENGER_APP_ENV
-          - name: MEMCACHE_SERVERS
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: MEMCACHE_SERVERS
-          - name: HTTP_TIMEOUT
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: HTTP_TIMEOUT
-          - name: LOG_LEVEL
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: LOG_LEVEL
-          - name: SECURE_TRAFFIC
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: SECURE_TRAFFIC
-          - name: OAUTH_CLIENT_ID
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: OAUTH_CLIENT_ID
-          - name: OAUTH_CLIENT_SECRET
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: OAUTH_CLIENT_SECRET
-          - name: SECURE_HOSTNAME
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: SECURE_HOSTNAME
-          - name: YIR_SHA1_SECRET_KEY
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: YIR_SHA1_SECRET_KEY
-          - name: WWW_SUBDOMAIN
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: WWW_SUBDOMAIN
-          - name: MY_SUBDOMAIN
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: MY_SUBDOMAIN
-          - name: ELAPHROS_SENTRY_DSN
-            valueFrom:
-              secretKeyRef:
-                name: $KUBE_NAMESPACE-secrets-$STAGE
-                key: ELAPHROS_SENTRY_DSN
+        - name: $KUBE_NAMESPACE-$CI_ENVIRONMENT_SLUG
+          image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: $PORT
+          resources:
+            limits:
+              cpu: "4"
+              memory: "5400Mi"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 9001
+              scheme: HTTP
+              httpHeaders:
+                - name: Host
+                  value: 127.0.0.1
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+          env:
+            - name: YOUVERSION_TOKEN_PHRASE
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: YOUVERSION_TOKEN_PHRASE
+            - name: TREADSTONE_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: TREADSTONE_SECRET
+            - name: SENTRY_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: SENTRY_DSN
+            - name: STACK_IMPACT_AGENT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: STACK_IMPACT_AGENT_KEY
+            - name: NEW_RELIC_LICENSE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: NEW_RELIC_LICENSE_KEY
+            - name: NEW_RELIC_APP_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: NEW_RELIC_APP_NAME
+            - name: NEW_RELIC_LOG_LEVEL
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: NEW_RELIC_LOG_LEVEL
+            - name: PASSENGER_APP_ENV
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: PASSENGER_APP_ENV
+            - name: MEMCACHE_SERVERS
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: MEMCACHE_SERVERS
+            - name: HTTP_TIMEOUT
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: HTTP_TIMEOUT
+            - name: LOG_LEVEL
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: LOG_LEVEL
+            - name: SECURE_TRAFFIC
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: SECURE_TRAFFIC
+            - name: OAUTH_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: OAUTH_CLIENT_ID
+            - name: OAUTH_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: OAUTH_CLIENT_SECRET
+            - name: SECURE_HOSTNAME
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: SECURE_HOSTNAME
+            - name: YIR_SHA1_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: YIR_SHA1_SECRET_KEY
+            - name: WWW_SUBDOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: WWW_SUBDOMAIN
+            - name: MY_SUBDOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: MY_SUBDOMAIN
+            - name: ELAPHROS_SENTRY_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: ELAPHROS_SENTRY_DSN
+            - name: RAILS_POLL_INTERVAL_SECONDS
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: RAILS_POLL_INTERVAL_SECONDS
+            - name: DEFAULT_CACHE_LIFETIME
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: DEFAULT_CACHE_LIFETIME
+            - name: OVERRIDE_CACHE_LIFETIME
+              valueFrom:
+                secretKeyRef:
+                  name: $KUBE_NAMESPACE-secrets-$STAGE
+                  key: OVERRIDE_CACHE_LIFETIME
       imagePullSecrets:
         - name: gitlab-registry

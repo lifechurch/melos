@@ -1,7 +1,7 @@
 # This file is a template, and might need editing before it works on your project.
 # Explaination on the scripts:
 # https://gitlab.com/gitlab-examples/kubernetes-deploy/blob/master/README.md
-image: quay.io/lifechurch/k8s-deploy-helper:3.1.1
+image: quay.io/lifechurch/k8s-deploy-helper:4.0.3
 
 variables:
   # Application deployment domain
@@ -24,7 +24,7 @@ build legacy:
   only:
     - branches
   except:
-    - l10n_master  
+    - l10n_master
   tags:
     - web
 
@@ -35,7 +35,7 @@ build elaphros:
   only:
     - branches
   except:
-    - l10n_master  
+    - l10n_master
   tags:
     - web
 
@@ -46,10 +46,12 @@ review:
     REVIEW_SECURE_HOSTNAME: nodejs-$CI_ENVIRONMENT_SLUG.$KUBE_DOMAIN
   script:
     - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
-    - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211 
+    - export REVIEW_MEMCACHE_SERVERS=$SHORT-memcached.bible.svc.cluster.local:11211
     - export REVIEW_MY_SUBDOMAIN=my-$CI_ENVIRONMENT_SLUG.
     - export REVIEW_WWW_SUBDOMAIN=$CI_ENVIRONMENT_SLUG.
     - command deploy
+    - helm init --client-only
+    - helm repo update
     - helm list | grep $SHORT || helm install --name $SHORT --set memcached.verbosity=v --set memcached.maxItemMemory=100 stable/memcached --version 0.4.1 --namespace $KUBE_NAMESPACE --replace
   environment:
     name: review/$CI_COMMIT_REF_NAME
@@ -59,7 +61,7 @@ review:
     - branches
   except:
     - master
-    - l10n_master    
+    - l10n_master
   tags:
     - web
 
@@ -92,7 +94,7 @@ staging:
   script:
     - command deploy
     - export POD=$(kubectl get pods -n=bible | grep bible-staging-memcach | awk '{print $1}')
-    - kubectl exec $POD -n=bible -- bash -c "echo flush_all > /dev/tcp/127.0.0.1/11211 && echo stats reset > /dev/tcp/127.0.0.1/11211"  
+    - kubectl exec $POD -n=bible -- bash -c "echo flush_all > /dev/tcp/127.0.0.1/11211 && echo stats reset > /dev/tcp/127.0.0.1/11211"
   environment:
     name: staging
     url: http://staging.$KUBE_DOMAIN
@@ -119,7 +121,7 @@ destroy-canary:
   dependencies: []
   allow_failure: true
   environment:
-    name: production  
+    name: production
   script:
     - command destroy-canary
   when: manual
@@ -135,7 +137,7 @@ production:
     - command deploy
     - export POD=$(kubectl get pods -n=bible | grep bible-production-memcach | awk '{print $1}')
     - kubectl exec $POD -n=bible -- bash -c "echo flush_all > /dev/tcp/127.0.0.1/11211 && echo stats reset > /dev/tcp/127.0.0.1/11211"
-    - "curl -X POST \"https://api.cloudflare.com/client/v4/zones/7e7e37b9128054e59b31bd42a9ef887c/purge_cache\" -H \"X-Auth-Email: will.platnick@lifechurch.tv\" -H \"X-Auth-Key: $CLOUDFLARE\" -H \"Content-Type: application/json\" --data '{\"purge_everything\":true}'"
+    - 'curl -X POST "https://api.cloudflare.com/client/v4/zones/7e7e37b9128054e59b31bd42a9ef887c/purge_cache" -H "X-Auth-Email: will.platnick@lifechurch.tv" -H "X-Auth-Key: $CLOUDFLARE" -H "Content-Type: application/json" --data ''{"purge_everything":true}'''
   environment:
     name: production
     url: http://$KUBE_DOMAIN
@@ -144,7 +146,7 @@ production:
   only:
     - master
   tags:
-    - web    
+    - web
 
 taglatest:
   stage: taglatest

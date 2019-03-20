@@ -13,6 +13,7 @@
     - if @node_meta_tags.present?
       != @node_meta_tags
     %base{href: "/"}
+    = render partial: "shared/google_tag_manager"
     = content_for?(:stylesheets) ? yield(:stylesheets) : nil
     - if is_rtl?
       = stylesheet_link_tag "application-rtl"
@@ -22,7 +23,7 @@
     -# = render '/shared/javascripts'
 
   %body{class: "c_#{params[:controller]} a_#{params[:action]}"}
-    = render '/shared/google_analytics'
+    = render partial: '/shared/google_tag_manager_body'
     -# = content_for?(:header) ? yield(:header) : render("/shared/header/default")
 
     #current-ui-view{'ui-view' => ""}
@@ -42,7 +43,7 @@
 
       var addthis_config = {
       	ui_language: "#{I18n.locale[0..1]}",
-      	services_exclude : 'print,email,google,favorites',
+      	services_exclude : 'print,google,favorites',
       	services_expanded : '2tag,a97abi,adifni,amenme,aim,aolmail,azadegi,baidu,blogger,buffer,delicious,digg,evernote,fabulously40,facebook,gg,gmail,govn,googleplus,hootsuite,hotmail,iwiw,ketnooi,linkedin,mymailru,live,myspace,nujij,oyyla,pinterest_share,qzone,reddit,sinaweibo,stumbleupon,tumblr,twitter,viadeo,vk,werkenntwen,whatsapp,wordpress,yahoomail'
       }
       addthis_config.data_track_clickback = false;

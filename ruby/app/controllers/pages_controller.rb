@@ -195,9 +195,6 @@ class PagesController < ApplicationController
   # /app url - redirects to an store for mobile device if found
   # tracks requests to /app to GA custom event.
   def app
-    tracker = Gabba::Gabba.new(@site.ga_code, @site.ga_domain)
-    tracker.identify_user(cookies[:__utma], cookies[:__utmz])
-    tracker.event("App Download", "#{request.host_with_port}#{request.fullpath}")
     return redirect_store! unless request.env["X_MOBILE_DEVICE"].nil?
   end
 

@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 const path = require('path')
 const fastify = require('fastify')({ logger: true })
+const { createLightship } = require('lightship')
 
 // Third-Party
 fastify.register(require('fastify-cookie'))
@@ -27,6 +28,14 @@ fastify.register(require('./plugins/bible'))
 fastify.register(require('./plugins/confirmations'))
 fastify.register(require('./plugins/main'))
 
+const lightship = createLightship()
+
+fastify.log.info('Registering shutdown handler via Lightship')
+lightship.registerShutdownHandler(() => {
+  fastify.log.info('Shutting down Fastify server via registered Lightship handler.')
+  fastify.close()
+})
+
 /* Start Listening on PORT */
 const PORT = process.env.PORT || 3030
 fastify.listen(PORT, '0.0.0.0', (err) => {
@@ -35,5 +44,6 @@ fastify.listen(PORT, '0.0.0.0', (err) => {
     console.log(err)
     process.exit(1)
   }
+  lightship.signalReady()
   fastify.log.info(`Server started listening on ${fastify.server.address().port}`)
 })

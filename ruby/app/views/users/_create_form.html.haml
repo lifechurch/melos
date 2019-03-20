@@ -1,6 +1,19 @@
 -content_for :lower_javascript do
   :javascript
     var userCreateForm = document.getElementById('user_create_form');
+
+    function userCreateFormSubmit() {
+      try {
+        // Google Tag Manager Event
+        if (window && window.dataLayer && [ 'www.bible.com', 'my.bible.com', 'events.bible.com', 'nodejs.bible.com' ].indexOf(window.location.hostname) !== -1) {
+          window.dataLayer.push({
+            event: 'user_sign_up'
+          })
+        }
+      } catch(e) {}
+      userCreateForm.submit();
+    }
+    
     userCreateForm.addEventListener('submit', function(e) {
       e.preventDefault();
       check_gdpr_required().then(function(gdpr_required) {
@@ -11,7 +24,7 @@
             if (e.detail.signupMethod === 'YouVersion') {
               document.getElementById('user.agree').value = e.detail.agreeTerms;
               document.getElementById('user.email_opt_in').value = e.detail.agreeEmails
-              userCreateForm.submit();
+              userCreateFormSubmit();
             }
           });
 
@@ -24,12 +37,12 @@
 
         } else {
           // GDPR not required, just submit form
-          userCreateForm.submit();
+          userCreateFormSubmit();
         }
       }, function(e) {
         // Error getting GDPR status from API, submit anyway
         console.error('GDPR API Error', e);
-        userCreateForm.submit();
+        userCreateFormSubmit();
       });
 
       // Cancel default submit action and wait on async call above

@@ -236,7 +236,14 @@ module ApplicationHelper
 
   def votd_path
     locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
-    "#{locale_dir}/bible-verse-of-the-day"
+    # Tommy's gross hack to prevent the VOTD 404 on the home page
+    # for users that aren't logged in.
+    # TODO: Remove this + the `else` version of this URL.
+    if request.host_with_port.to_s.include?('my.bible') or request.host_with_port.to_s.include?('my-staging.bible')
+      "#{locale_dir}/bible-verse-of-the-day"
+    else
+      "#{locale_dir}/verse-of-the-day"
+    end
   end
 
   def blog_url(locale)

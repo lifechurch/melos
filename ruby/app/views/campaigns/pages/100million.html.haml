@@ -16,6 +16,8 @@
     %meta{name: "og:title",       content: meta_title }
     %meta{name: "og:url",         content: meta_url }
     %meta{name: "og:description", content: meta_description }
+    %script{ type: "javascript" }
+    = render partial: "shared/google_tag_manager"
     = stylesheet_link_tag "campaigns/100m"
     = javascript_include_tag "application"
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
@@ -26,7 +28,7 @@
       try{Typekit.load();}catch(e){}
 
   %body
-    = render '/shared/google_analytics'
+    = render partial: '/shared/google_tag_manager_body'
     %article
       -# BA headline and logo
       .intro

@@ -10,9 +10,9 @@ metadata:
     build_id: "$CI_JOB_ID"
 spec:
   ports:
-  - port: $PORT
-    targetPort: $PORT
-    protocol: TCP
-    name: http
+    - port: $PORT
+      targetPort: $PORT
+      protocol: TCP
+      name: http
   selector:
     app: $CI_ENVIRONMENT_SLUG
