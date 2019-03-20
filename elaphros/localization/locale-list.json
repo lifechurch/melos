@@ -6,7 +6,8 @@
 		"momentLocale": "af-ZA",
 		"locale2": "af",
 		"locale3": "afr",
-		"displayName": "Afrikaans (South Africa)"
+    "displayName": "Afrikaans (South Africa)",
+    "bibleLocale": "afr"
 	},
 	{
 		"nativeName": "Bahasa Indonesia",
@@ -15,7 +16,8 @@
 		"momentLocale": "id-ID",
 		"locale2": "id",
 		"locale3": "ind",
-		"displayName": "Bahasa Indonesia"
+    "displayName": "Bahasa Indonesia",
+    "bibleLocale": "ind"    
 	},
 	{
 		"nativeName": "Bahasa Melayu",
@@ -24,7 +26,8 @@
 		"momentLocale": "ms-MY",
 		"locale2": "ms",
 		"locale3": "msa",
-		"displayName": "Bahasa Melayu"
+		"displayName": "Bahasa Melayu",
+    "bibleLocale": "msa"
 	},
 	{
 		"nativeName": "Català",
@@ -33,7 +36,8 @@
 		"momentLocale": "ca-ES",
 		"locale2": "ca",
 		"locale3": "cat",
-		"displayName": "Català"
+		"displayName": "Català",
+    "bibleLocale": "cat"
 	},
 	{
 		"nativeName": "Čeština",
@@ -42,7 +46,8 @@
 		"momentLocale": "cs-CZ",
 		"locale2": "cs",
 		"locale3": "ces",
-		"displayName": "Čeština"
+		"displayName": "Čeština",
+    "bibleLocale": "ces"
 	},
 	{
 		"nativeName": "Cymraeg",
@@ -51,7 +56,8 @@
 		"momentLocale": "cy-GB",
 		"locale2": "cy",
 		"locale3": "cym",
-		"displayName": "Cymraeg"
+		"displayName": "Cymraeg",
+    "bibleLocale": "cym"
 	},
 	{
 		"nativeName": "Dansk",
@@ -60,7 +66,8 @@
 		"momentLocale": "da-DK",
 		"locale2": "da",
 		"locale3": "dan",
-		"displayName": "Dansk"
+		"displayName": "Dansk",
+    "bibleLocale": "dan"
 	},
 	{
 		"nativeName": "Deutsch (Deutschland)",
@@ -69,7 +76,8 @@
 		"momentLocale": "de-DE",
 		"locale2": "de",
 		"locale3": "deu",
-		"displayName": "Deutsch (Deutschland)"
+		"displayName": "Deutsch (Deutschland)",
+    "bibleLocale": "deu"
 	},
   {
 		"nativeName": "English (US)",
@@ -78,7 +86,8 @@
 		"momentLocale": "en-US",
 		"locale2": "en",
 		"locale3": "eng",
-		"displayName": "English (US)"
+		"displayName": "English (US)",
+    "bibleLocale": "eng"
 	},  
 	{
 		"nativeName": "English (UK)",
@@ -87,7 +96,8 @@
 		"momentLocale": "en-GB",
 		"locale2": "en",
 		"locale3": "eng",
-		"displayName": "English (UK)"
+		"displayName": "English (UK)",
+    "bibleLocale": "eng"
 	},
 	{
 		"nativeName": "Español (Latinoamérica)",
@@ -96,7 +106,8 @@
 		"momentLocale": "es-LA",
 		"locale2": "es",
 		"locale3": "spa",
-		"displayName": "Español (Latinoamérica)"
+		"displayName": "Español (Latinoamérica)",
+    "bibleLocale": "spa"
 	},
 	{
 		"nativeName": "Español (España)",
@@ -105,7 +116,8 @@
 		"momentLocale": "es-ES",
 		"locale2": "es",
 		"locale3": "spa",
-		"displayName": "Español (España)"
+		"displayName": "Español (España)",
+    "bibleLocale": "spa_es"
 	},
 	{
 		"nativeName": "Filipino",
@@ -114,7 +126,8 @@
 		"momentLocale": "tl-PH",
 		"locale2": "tl",
 		"locale3": "tgl",
-		"displayName": "Filipino"
+		"displayName": "Filipino",
+    "bibleLocale": "tgl"
 	},
 	{
 		"nativeName": "Français (France)",
@@ -123,7 +136,8 @@
 		"momentLocale": "fr-FR",
 		"locale2": "fr",
 		"locale3": "fra",
-		"displayName": "Français (France)"
+		"displayName": "Français (France)",
+    "bibleLocale": "fra"
 	},
   {
 		"nativeName": "עִברִית",
@@ -132,7 +146,8 @@
 		"momentLocale": "he",
 		"locale2": "he",
 		"locale3": "heb",
-		"displayName": "עִברִית"
+		"displayName": "עִברִית",
+    "bibleLocale": "heb"
 	},
 	{
 		"nativeName": "Hrvatski",
@@ -141,7 +156,8 @@
 		"momentLocale": "hr-HR",
 		"locale2": "hr",
 		"locale3": "hrv",
-		"displayName": "Hrvatski"
+		"displayName": "Hrvatski",
+    "bibleLocale": "hrv"
 	},
 	{
 		"nativeName": "Italiano",
@@ -150,15 +166,17 @@
 		"momentLocale": "it-IT",
 		"locale2": "it",
 		"locale3": "ita",
-		"displayName": "Italiano"
+		"displayName": "Italiano",
+    "bibleLocale": "ita"
 	},
-		{
+	{
 		"nativeName": "ភាសាខ្មែរ",
 		"englishName": "Khmer",
 		"locale": "km-KH",
 		"locale2": "km",
 		"locale3": "khm",
-		"displayName": "ភាសាខ្មែរ"
+    "displayName": "ភាសាខ្មែរ",
+    "bibleLocale": "khm"
 	},
 	{
 		"nativeName": "Kiswahili",
@@ -167,7 +185,8 @@
 		"momentLocale": "sw",
 		"locale2": "sw",
 		"locale3": "swa",
-		"displayName": "Kiswahili"
+		"displayName": "Kiswahili",
+    "bibleLocale": "swh"
 	},
 	{
 		"nativeName": "Latviešu",
@@ -176,7 +195,8 @@
 		"momentLocale": "lv-LV",
 		"locale2": "lv",
 		"locale3": "lav",
-		"displayName": "Latviešu"
+		"displayName": "Latviešu",
+    "bibleLocale": "lav"
 	},
 	{
 		"nativeName": "Magyar",
@@ -185,7 +205,8 @@
 		"momentLocale": "hu-HU",
 		"locale2": "hu",
 		"locale3": "hun",
-		"displayName": "Magyar"
+		"displayName": "Magyar",
+    "bibleLocale": "hun"
 	},
 	{
 		"nativeName": "Nederlands (Nederland)",
@@ -194,7 +215,8 @@
 		"momentLocale": "nl-NL",
 		"locale2": "nl",
 		"locale3": "nld",
-		"displayName": "Nederlands (Nederland)"
+		"displayName": "Nederlands (Nederland)",
+    "bibleLocale": "nld"
 	},
 	{
 		"englishName": "Norweigan",
@@ -203,7 +225,8 @@
 		"momentLocale": "nb",
 		"locale2": "no",
 		"locale3": "nob",
-		"displayName": "Norsk"
+		"displayName": "Norsk",
+    "bibleLocale": "nob"
 	},
 	{
 		"nativeName": "Polski",
@@ -212,8 +235,18 @@
 		"momentLocale": "pl-PL",
 		"locale2": "pl",
 		"locale3": "pol",
-		"displayName": "Polski"
+		"displayName": "Polski",
+    "bibleLocale": "pol"
 	},
+  {
+    "nativeName": "Português (Portugal)",
+    "englishName": "Portuguese (Portugal)",
+    "locale": "pt-PT",
+    "locale2": "pt",
+    "locale3": "por",
+    "displayName": "Português (Portugal)",
+    "bibleLocale": "por_pt"
+  },
 	{
 		"nativeName": "Português (Brasil)",
 		"englishName": "Portuguese (Brazil)",
@@ -221,15 +254,8 @@
 		"momentLocale": "pt-BR",
 		"locale2": "pt",
 		"locale3": "por",
-		"displayName": "Português (Brasil)"
-	},
-  {
-		"nativeName": "Português (Portugal)",
-		"englishName": "Portuguese (Portugal)",
-		"locale": "pt-PT",
-		"locale2": "pt",
-		"locale3": "por",
-		"displayName": "Português (Portugal)"
+		"displayName": "Português (Brasil)",
+    "bibleLocale": "por"
 	},
 	{
 		"nativeName": "Română",
@@ -238,7 +264,8 @@
 		"momentLocale": "ro-RO",
 		"locale2": "ro",
 		"locale3": "ron",
-		"displayName": "Română"
+		"displayName": "Română",
+    "bibleLocale": "ron"
 	},
 	{
 		"nativeName": "Shqip",
@@ -247,7 +274,8 @@
 		"momentLocale": "sq-AL",
 		"locale2": "sq",
 		"locale3": "sqi",
-		"displayName": "Shqip"
+		"displayName": "Shqip",
+    "bibleLocale": "sqi"
 	},
 	{
 		"nativeName": "Slovenčina (Slovakia)",
@@ -256,7 +284,8 @@
 		"momentLocale": "sk-SK",
 		"locale2": "sk",
 		"locale3": "slk",
-		"displayName": "Slovenčina (Slovakia)"
+		"displayName": "Slovenčina (Slovakia)",
+    "bibleLocale": "slk"
 	},
 	{
 		"nativeName": "Suomi",
@@ -265,7 +294,8 @@
 		"momentLocale": "fi-FI",
 		"locale2": "fi",
 		"locale3": "fin",
-		"displayName": "Suomi"
+		"displayName": "Suomi",
+    "bibleLocale": "fin"
 	},
 	{
 		"nativeName": "Svenska",
@@ -274,7 +304,8 @@
 		"momentLocale": "sv-SE",
 		"locale2": "sv",
 		"locale3": "swe",
-		"displayName": "Svenska"
+		"displayName": "Svenska",
+    "bibleLocale": "swe"
 	},
 	{
 		"nativeName": "Tiếng Việt",
@@ -283,7 +314,8 @@
 		"momentLocale": "vi-VN",
 		"locale2": "vi",
 		"locale3": "vie",
-		"displayName": "Tiếng Việt"
+		"displayName": "Tiếng Việt",
+    "bibleLocale": "vie"
 	},
 	{
 		"nativeName": "Türkçe",
@@ -292,7 +324,8 @@
 		"momentLocale": "tr-TR",
 		"locale2": "tr",
 		"locale3": "tur",
-		"displayName": "Türkçe"
+		"displayName": "Türkçe",
+    "bibleLocale": "tur"
 	},
 	{
 		"nativeName": "Монгол",
@@ -301,7 +334,8 @@
 		"momentLocale": "xc-MN",
 		"locale2": "mn",
 		"locale3": "mon",
-		"displayName": "Монгол"
+		"displayName": "Монгол",
+    "bibleLocale": "khk"
 	},
 	{
 		"nativeName": "Ελληνικά",
@@ -310,7 +344,8 @@
 		"momentLocale": "el-GR",
 		"locale2": "el",
 		"locale3": "ell",
-		"displayName": "Ελληνικά"
+		"displayName": "Ελληνικά",
+    "bibleLocale": "ell"
 	},
 		{
 		"nativeName": "हिन्दी",
@@ -318,7 +353,8 @@
 		"locale": "hi-IN",
 		"locale2": "hi",
 		"locale3": "hin",
-		"displayName": "हिन्दी"
+		"displayName": "हिन्दी",
+    "bibleLocale": "hin"
 	},
 	{
 		"nativeName": "Български",
@@ -327,7 +363,8 @@
 		"momentLocale": "bg-BG",
 		"locale2": "bg",
 		"locale3": "bul",
-		"displayName": "Български"
+		"displayName": "Български",
+    "bibleLocale": "bul"
 	},
 	{
 		"nativeName": "Македонски",
@@ -336,7 +373,8 @@
 		"momentLocale": "mk-MK",
 		"locale2": "mk",
 		"locale3": "mkd",
-		"displayName": "Македонски"
+		"displayName": "Македонски",
+    "bibleLocale": "mkd"
 	},
 	{
 		"nativeName": "Русский",
@@ -345,7 +383,8 @@
 		"momentLocale": "ru-RU",
 		"locale2": "ru",
 		"locale3": "rus",
-		"displayName": "Русский"
+		"displayName": "Русский",
+    "bibleLocale": "rus"
 	},
 	{
 		"nativeName": "Українська",
@@ -354,7 +393,8 @@
 		"momentLocale": "uk-UA",
 		"locale2": "uk",
 		"locale3": "ukr",
-		"displayName": "Українська"
+		"displayName": "Українська",
+    "bibleLocale": "ukr"
 	},
 	{
 		"nativeName": "العربية",
@@ -363,7 +403,8 @@
 		"momentLocale": "ar",
 		"locale2": "ar",
 		"locale3": "ara",
-		"displayName": "العربية"
+		"displayName": "العربية",
+    "bibleLocale": "arb"
 	},
 	{
 		"nativeName": "فارسی",
@@ -372,7 +413,8 @@
 		"momentLocale": "fa-IR",
 		"locale2": "fa",
 		"locale3": "fas",
-		"displayName": "فارسی"
+		"displayName": "فارسی",
+    "bibleLocale": "pes"
 	},
 	{
 		"nativeName": "தமிழ்",
@@ -381,7 +423,8 @@
 		"momentLocale": "ta-IN",
 		"locale2": "ta",
 		"locale3": "tam",
-		"displayName": "தமிழ்"
+		"displayName": "தமிழ்",
+    "bibleLocale": "tam"
 	},
 	{
 		"nativeName": "ภาษาไทย (ประเทศไทย)",
@@ -390,7 +433,8 @@
 		"momentLocale": "th-TH",
 		"locale2": "th",
 		"locale3": "tha",
-		"displayName": "ภาษาไทย (ประเทศไทย)"
+		"displayName": "ภาษาไทย (ประเทศไทย)",
+    "bibleLocale": "tha"
 	},
 	{
 		"nativeName": "မြန်မာယူနီကုတ်",
@@ -399,7 +443,8 @@
 		"momentLocale": "my",
 		"locale2": "my",
 		"locale3": "mya",
-		"displayName": "မြန်မာယူနီကုတ်"
+		"displayName": "မြန်မာယူနီကုတ်",
+    "bibleLocale": "mya"
 	},
   {
     "nativeName": "ျမန္မာေဇာ္ဂ်ီာ",
@@ -408,7 +453,8 @@
     "momentLocale": "my-MM",
     "locale2": "my",
     "locale3": "myz",
-    "displayName": "ျမန္မာေဇာ္ဂ်ီာ"
+    "displayName": "ျမန္မာေဇာ္ဂ်ီာ",
+    "bibleLocale": "mya_zaw"
   },
 	{
 		"nativeName": "한국어",
@@ -417,7 +463,8 @@
 		"momentLocale": "ko-KR",
 		"locale2": "ko",
 		"locale3": "kor",
-		"displayName": "한국어"
+		"displayName": "한국어",
+    "bibleLocale": "kor"
 	},
 	{
 		"nativeName": "简体中文",
@@ -426,7 +473,8 @@
 		"momentLocale": "zh-CN",
 		"locale2": "zh",
 		"locale3": "zho",
-		"displayName": "简体中文"
+		"displayName": "简体中文",
+    "bibleLocale": "zho"
 	},
 	{
 		"nativeName": "繁體中文",
@@ -436,7 +484,8 @@
 		"locale2": "zh",
 		"locale3": "zho_tw",
 		"displayName": "繁體中文",
-    "other": "lzh"
+    "other": "lzh",
+    "bibleLocale": "zho_tw"
 	},
 	{
 		"nativeName": "日本語",
@@ -445,7 +494,8 @@
 		"momentLocale": "ja-JP",
 		"locale2": "ja",
 		"locale3": "jpn",
-		"displayName": "日本語"
+		"displayName": "日本語",
+    "bibleLocale": "jpn"
   },
   {
 		"nativeName": "繁體中文（香港）",
@@ -454,6 +504,7 @@
 		"momentLocale": "zh-HK",
 		"locale2": "zh",
 		"locale3": "zho_hk",
-		"displayName": "繁體中文（香港）"
+		"displayName": "繁體中文（香港）",
+    "bibleLocale": "zho_tw"
 	}  
 ]

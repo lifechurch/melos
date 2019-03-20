@@ -4,25 +4,12 @@ const getAppLocale = require('./get-app-locale')
 module.exports = function bibleToAppLocale(params) {
   try {
     const {
-      name,
       language_tag,
-      iso_639_1,
-      iso_639_3
     } = params
     const matchingLocales = localeList.filter(({
-      englishName,
-      locale,
-      locale3,
-      other
+      bibleLocale,
     }) => {
-      if (
-        language_tag === locale3 ||
-        iso_639_3 === locale3 ||
-        iso_639_1 === locale.replace('-', '_') ||
-        iso_639_3 === locale3.split('_')[0] ||
-        language_tag === other ||
-        name === englishName
-      ) {
+      if (bibleLocale === language_tag) {
         return true
       }
       return false
