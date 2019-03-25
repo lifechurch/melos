@@ -971,7 +971,7 @@ tl:
     note blurb: "Mukhang nais mong magtala tungkol sa kasulatan. Mabuti! Ang mga tala ay maaring makatulong sa pag-alala o pag-organisa ng katotohanang iyong madidiskubre sa Salita ng Diyos. Sign in o gumawa ng account sa ibaba at simulan!"
   audio:
     none: "Paumanhin, walang audio ang bersyon na ito."
-    chapter only: "Paumanhin, di available ang audio sa berso. Tumingin sa reader para sa audio sa kapitulo."
+    chapter only: "Paumanhin, hindi available ang audio sa mga bersikulo. Tingnan sa reader para sa audio ng kabanata."
     close player menu: "Isara"
     publisher website: "Website ng Tagalathala"
   highlights:
@@ -1064,7 +1064,7 @@ tl:
     facebook: "YouVersion sa Facebook"
     twitter: "YouVersion sa Twitter"
     support: "Kailangan mo ba ng tulong sa YouVersion?"
-    lead copy: "Batay sa online na Biblia, Bible.com, Filipino Bible App ay isang libreng mobile na Biblia na maaring i-install sa kahit anong telepono. Ang Bible App ay tutulungan ang mga gagamit nito na magbasa ng Biblia, magbahagi ng taludtod sa mga social network, gumawa ng pananda sa mga paboritong sipi, at marami pang iba—lahat sa paraang sumasabay sa kanilang makabagong mobile na pamumuhay."
+    lead copy: "Batay sa online na Biblia, Bible.com, ang Bible App ay isang libreng mobile na Biblia na maaaring i-install sa halos lahat ng klase ng telepono. Tinutulungan ng Bible App ang mga user nito na magbasa ng Biblia, magbahagi ng taludtod sa mga social network, gumawa ng pananda sa mga paboritong sipi, at marami pang iba&mdash;lahat sa paraang sumasabay sa kanilang makabagong mobile na pamumuhay."
     resources title: "Mga Mapagkukunan ng Press"
     now title: "Ngayon sa Komunidad ng YouVersion"
     resources:
@@ -1140,7 +1140,7 @@ tl:
         action: "Tingnan ang mga Salin ng Biblia"
       make_yours:
         title: "Gawing iyo ang Biblia"
-        body: "I-haylayt o i-boomark ang iyong mga paboritong bersikulo, gumawa ng mga Bersikulong Larawan na maibabahagi, at magdagdag ng pampubliko o pampribadong mga Tala sa mga sipi ng Biblia."
+        body: "I-haylayt o i-bookmark ang iyong mga paboritong bersikulo, gumawa ng mga Bersikulong Larawang maibabahagi, at magdagdag ng pampubliko o pampribadong mga Tala sa mga sipi ng Biblia."
         action: "Gumawa ng Libreng Account"
       install_now:
         title: "I-install ang App"
@@ -1154,7 +1154,7 @@ tl:
       start_now: "Magsimula Na"
       votd:
         title: "Bersikulo ng Araw"
-        highlight_bookmark: "I-highlight, Tandaan, o ibahagi ang taludtod na ito"
+        highlight_bookmark: "I-haylayt, i-bookmark, o ibahagi ang bersikulong ito"
         subscribe: "Mag-subscribe sa Bersikulo Ng Araw"
       hero:
         heading: "Libreng Biblia sa iyong telepono, tablet, at computer."
@@ -1167,7 +1167,7 @@ tl:
         read heading: "Basahin ang Biblia."
         read description: "Mamili mula sa <a href='%{versions_path}' target='_self'>daan-daang salin ng Biblia at wika</a>. Paghambingin ang dalawang salin. Maari ka ring pumili ng istilo ng titik at sukat nito. Iayon ang iyong online Bible experience sa iyong kagustuhan."
         study heading: "Aralin ang Biblia."
-        study description: "<strong>Mag-highlight</strong>gamit ang iyong gustong kulay,<strong>maglagay ng palatandaan</strong>sa mga paboritong bersikulo, at gumawa ng sariling tala sa mga aral na natututunan. Di ka lamang nagbibigay ng oras sa Salita ng Diyos, nakalilikha ka rin ng kasaysayan ng iyong pakikipag-ugnayan sa Biblia."
+        study description: "<strong>Mag-haylayt</strong>gamit ang iyong paboritong kulay,<strong>I-bookmark</strong>ang mga paboritong mong bersikulo, at gumawa ng mga tala tungkol sa mga iyong mga natututunan. Hindi ka lamang nagbibigay ng oras sa Salita ng Diyos, nakalilikha ka rin ng kasaysayan ng iyong pakikipag-ugnayan sa Biblia."
         subscribe heading: "Mag-subscribe sa mga Babasahing Gabay."
         subscribe description: "Basahin ang buong Biblia, pagtuunan ang isang paksa, o magbasa ng isang devotional mula sa isang natatanging guro. Pumili ng gabay at araw-araw ay may matutunghayan kang sipi ng Biblia na nakalaan sa iyo."
         download heading: "Dalhin ang Biblia kasama mo."
@@ -1283,7 +1283,7 @@ tl:
       previous page: "Nakaraang Pahina"
     datetime:
       just now: "ngayon lamang"
-    verses selected: "mga napiling taludtod"
+    verses selected: "mga napiling bersikulo"
   EventsAdmin:
     language names:
       afrikaans: "Afrikaans"
@@ -1390,8 +1390,8 @@ tl:
         newsletter: "Nakapag-unsubscribe ka sa <b>Newsletter</b> na mga email."
         reading_plans: "Nakapag-unsubscribe ka sa <b>Babasahing Gabay</b> na mga email."
         rp_daily: "Nakapag-unsubscribe ka sa mga </b>pang-araw-araw na email para sa Babsahing Gabay</b> na %{plan_title}."
-        votd: "Nakapag-unsubscribe ka sa <b>Bersikulo ng Araw</b> na mga email."
-        votd_image: "Matagumpay kang nakapag-unsubscribe sa mga<b>Larawang Bersikulo ng Araw</b> na email."
+        votd: "Matagumpay kang nakapag-unsubscribe sa mga <b>Bersikulo ng Araw</b> na email."
+        votd_image: "Matagumpay kang nakapag-unsubscribe sa mga<b>Bersikulong Larawan ng Araw</b> na email."
         contact_joins: "Matagumpay ang iyong pag-unsubscribe sa 1 Contacts 1 email."
         pwf_accepts: "Matagumpay kang nakapag-unsubscribe na makita kapag tinanggap ng isang Kaibigan ang iyong imbitasyon sa isang Gabay."
         pwf_invites: "Matagumpay kang nakapag-unsubscribe na makita kapag naimbitahan ka sa isang Gabay."
