@@ -66,6 +66,19 @@ spec:
             periodSeconds: 10
             failureThreshold: 3
             successThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 9001
+              scheme: HTTP
+              httpHeaders:
+                - name: Host
+                  value: 127.0.0.1
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1            
           env:
             - name: YOUVERSION_TOKEN_PHRASE
               valueFrom:
