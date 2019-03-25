@@ -16,8 +16,9 @@ RUN mkdir -p /home/app/nodejs
 COPY ruby/Gemfile ruby/Gemfile.lock /home/app/ruby/
 RUN cd /home/app/ruby && bundle install --without development test
 
-COPY nodejs/package.json nodejs/.npmrc /home/app/nodejs/
-RUN cd /home/app/nodejs && npm install
+COPY nodejs/package.json nodejs/package-lock.json nodejs/.npmrc /home/app/nodejs/
+RUN npm i -g npm
+RUN cd /home/app/nodejs && npm ci
 
 COPY ruby/ /home/app/ruby/
 RUN cd /home/app/ruby && bundle exec rake assets:precompile
