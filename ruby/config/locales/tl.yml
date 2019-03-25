@@ -549,7 +549,7 @@ tl:
     update success: "Nabago ang tala"
   ref:
     loading secondary: "Ikinakarga ang Sanggunian sa Ikalawang Salin..."
-    clear verses: "Burahin ang Napiling Talata"
+    clear verses: "Burahin ang Napiling Bersikulo"
     choose book and chapter: "Pumili ng Aklat + Kabanata"
     choose version: "Pumili ng Salin"
     choose second version: "Pumili ng Ikalawang Bersyon"
@@ -1719,7 +1719,7 @@ tl:
                   desc: "Mga balangkas, pangunahing kaisipan, mga tanong para sa pagtatalakay...Ibahagi ang kahit na anong nilalaman na teksto para mas masundan ang iyong mensahe ng mga nakikilahok. Ang patlang para sa teksto ay walang limitasyon sa haba, at maaring gamitan ng iba't-ibang estilo, kulay at sukat ng teksto."
                 reference:
                   title: "Module para sa Sanggunian sa Biblia"
-                  desc: "Pumili ng kahit anong Bible verse o taludtod, na nakadugtong sa anuman sa 1,200+ YouVersion na mga bersyon, sa 900+ na mga wika. Ang mga taong tumitingin sa iyong Kaganapan ay puwedeng pindutin ang iyong sanggunian para makita nila ito sa kanilang Bible App reader, at mula doon, maari nilang lagyan ito ng Palatandaan, Highlight, at iba pa."
+                  desc: "Pumili ng kahit anong bersikulo o sipi mula sa Biblia, na direktang nakaugnay sa alinmang 1,200+ YouVersion na mga salin, sa 900+ na mga wika. Ang mga taong nanonood ng iyong Kaganapan ay maaring pumunta sa iyong sanggunian para makita nila ito sa kanilang Bible App reader, kung saan maari nila itong i-bookmark, i-haylayt, at iba pa."
                 plan:
                   title: "Plan Module"
                   desc: "Ang mga link sa mga Babasahing Gabay at Debosyonal na may kaugnayan sa iyong mga punto ng pagtuturo, na tumutulong sa iyong mga tagapakinig na patuloy na makilahok sa Salita ng Diyos sa buong linggo."
