@@ -1,0 +1,33 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nodejs-$CI_ENVIRONMENT_SLUG
+  namespace: $KUBE_NAMESPACE
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+  labels:
+    app: nodejs-$CI_ENVIRONMENT_SLUG
+    pipeline_id: "$CI_PIPELINE_ID"
+    build_id: "$CI_JOB_ID"
+spec:
+  tls:
+    - hosts:
+        - nodejs-$CI_ENVIRONMENT_HOSTNAME
+        - events.$CI_ENVIRONMENT_HOSTNAME
+      secretName: ssl
+  rules:
+    - host: events-$CI_ENVIRONMENT_HOSTNAME
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: $CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+    - host: nodejs-$CI_ENVIRONMENT_HOSTNAME
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: $CI_ENVIRONMENT_SLUG
+              servicePort: $PORT

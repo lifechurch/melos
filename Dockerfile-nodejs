@@ -1,0 +1,31 @@
+FROM in.thewardro.be:4567/docker/nodejs:8.11.3
+
+ARG NPM_TOKEN
+ENV NPM_TOKEN: $NPM_TOKEN
+ENV NODE_ENV production
+
+RUN mkdir -p /app && chown node:node /app
+WORKDIR /app
+
+# Install dependencies for TT fonts
+RUN apt-get update && apt-get install -y -o Dpkg::Options::="--force-confold" \
+  build-essential g++ libcairo2-dev libpango1.0-dev libjpeg-dev \
+  libgif-dev
+
+# Year in Review Fonts
+RUN [ -d /usr/share/fonts/truetype ] || mkdir /usr/share/fonts/truetype
+COPY nodejs/fonts /usr/share/fonts/truetype
+RUN fc-cache -f -v
+
+COPY nodejs/package.json nodejs/package-lock.json nodejs/.npmrc /app/
+RUN npm i -g npm
+RUN cd /app && npm ci -ddd --timing
+
+COPY nodejs/ /app
+
+# What does this do?
+RUN cd /app && npm run build:production
+
+EXPOSE 80
+
+CMD ["/sbin/my_init", "--", "node", "./start-server.js"]

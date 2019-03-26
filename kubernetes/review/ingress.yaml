@@ -14,12 +14,26 @@ spec:
   tls:
     - hosts:
         - $CI_ENVIRONMENT_HOSTNAME
-        - events-$CI_ENVIRONMENT_HOSTNAME
-        - nodejs-$CI_ENVIRONMENT_HOSTNAME
         - eoy-images-staging.bible.com
         - my-$CI_ENVIRONMENT_HOSTNAME
+        - events-$CI_ENVIRONMENT_HOSTNAME
+        - nodejs-$CI_ENVIRONMENT_HOSTNAME
       secretName: ssl
   rules:
+    - host: nodejs-$CI_ENVIRONMENT_HOSTNAME
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nodejs-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT  
+    - host: events-$CI_ENVIRONMENT_HOSTNAME
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nodejs-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
     - host: $CI_ENVIRONMENT_HOSTNAME
       http:
         paths:
@@ -787,7 +801,6 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
-
           - path: /sw.js
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -799,20 +812,6 @@ spec:
           - path: /static-assets
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
-              servicePort: $PORT
-    - host: events-$CI_ENVIRONMENT_HOSTNAME
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: $CI_ENVIRONMENT_SLUG
-              servicePort: $PORT
-    - host: nodejs-$CI_ENVIRONMENT_HOSTNAME
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: $CI_ENVIRONMENT_SLUG
               servicePort: $PORT
     - host: my-$CI_ENVIRONMENT_HOSTNAME
       http:
