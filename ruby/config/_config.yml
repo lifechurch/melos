@@ -38,7 +38,6 @@ common:
   treadstone_base_url: 'https://yv-giving-staging.life.church/'
   vod_image_api_url: 'https://s3.amazonaws.com/votd-images-youversionapi-com/items.json'
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-  nodejs_import_url: "http://localhost:3000/featureImport"
   nodejs_api_host: "nodejs-staging.bible.com"
   nodejs_ping_host: "localhost"
   nodejs_ping_port: "3000"
@@ -62,12 +61,10 @@ development:
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-  nodejs_import_url: "http://localhost:3000/featureImport"
   nodejs_api_host: "localhost"
   nodejs_api_port: "3000"
   # Use alternate Sentry DSN ("YouVersion Web / Dev") in development environments:
   sentry_dsn: "https://fd471bea250d42a6981047c9656bf735:a3292ab70935413c9e8b386d84b19f39@sentry.io/305258"
-
 
 staging:
   api_root: youversionapistaging.com
