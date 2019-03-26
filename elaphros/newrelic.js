@@ -1,7 +1,6 @@
-'use strict'
-
 const licenseKey = process.env.NEW_RELIC_LICENSE_KEY
-const appName = process.env.APP_NAME || 'Bible.com: Elaphros: Unspecified'
+const nodeEnv = process.env.NODE_ENV || 'Unspecified'
+
 /**
  * New Relic agent configuration.
  *
@@ -12,7 +11,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: [ appName ],
+  app_name: [ `Bible.com Elaphros ${nodeEnv}`, `Bible.com ${nodeEnv}` ],
   /**
    * Your New Relic license key.
    */
@@ -56,8 +55,8 @@ exports.config = {
   rules: {
     name: [
       {
-        pattern: "\/static-assets\/.+$",
-        name: "static-assets"
+        pattern: '\/static-assets\/.+$',
+        name: 'static-assets'
       }
     ]
   }

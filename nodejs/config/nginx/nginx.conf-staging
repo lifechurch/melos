@@ -52,7 +52,6 @@ http {
       passenger_min_instances 8;
       passenger_max_instances 8;
       passenger_env_var MEMCACHE_SERVERS memcache.yv.local:11211;
-      passenger_env_var NEW_RELIC_APP_NAME nodejs-staging.bible.com;
 			large_client_header_buffers 4 10k;
 			
       location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
