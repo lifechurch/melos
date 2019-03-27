@@ -42,7 +42,7 @@ is:
     format: "999.999.999"
   social:
     intro page:
-      main heading: "Conversation & Discovery"
+      main heading: "Samtal og uppgötvun"
       main description: "Ný leið til að kanna Biblíuna með traustum vinum"
       moment:
         user aaron: "Aaron Steele"
@@ -1200,7 +1200,7 @@ is:
       extras: "Extras:"
       translation notes: "Neðanmálsgreinar"
       cross references: "Tilvísanir"
-      numbers and titles: "Numbers and Titles"
+      numbers and titles: "Tölur og titlar"
   app errors:
     404 plans explanation: "Are you looking for the <a href='%{plan_path}' target='_self'>%{title}</a> plan?"
     404 contact support: "Having trouble? Contact our <a href='%{support_url}' target='_self'>support team</a>."
@@ -1214,7 +1214,7 @@ is:
     see all: "Sjáðu allar útgáfur..."
     courtesy of: "%{abbreviation} er stutt af %{publisher}"
     learn more: "Meira um það"
-    index title: "Available Versions"
+    index title: "Fáanlegar biblíuútgáfur"
     publisher widget title: "Útgefandi"
     visit publisher: "Skoðaðu vefsíðu útgefanda"
     read title: "Lestu biblíuútgáfu"
@@ -1955,7 +1955,7 @@ is:
         choose version: "Velja útgáfu"
       reader settings:
         footnotes: "Neðanmálsgreinar"
-        numbers: "Numbers and Titles"
+        numbers: "Tölur og titlar"
       more:
         events: "Viðburðir"
         settings: "Stillingar"
@@ -2052,8 +2052,8 @@ is:
     view snapshot: "Til að skoða myndskotið þitt"
     view my snapshot: "Skoðaðu myndskotið mitt"
     hi name: "Sæl(l), %{name}"
-    your snapshot: "Here's a snapshot of your year in the Bible App"
-    user snapshot: "%{year} Snapshot for %{user}"
+    your snapshot: "Hér er myndskot af notkun þinni á Biblíuappinu í ár"
+    user snapshot: "%{year} Myndskot fyrir %{user}"
     days in app: "Days in the App"
     perfect weeks: "Órofnar vikur"
     plan days: "Plan Days"
