@@ -58,7 +58,7 @@ af:
           copy: "Deel eerlike gesprekke oor die Woord."
           button: "Begin deur vriende op te spoor."
         likes:
-          info: "en 4 ander 'Hou Van' dit"
+          info: "en 4 ander hou hiervan"
         comments:
           first:
             text: "Dankie, het vandag regtig nodig gehad om dit te hoor.  Ons moet gou weer praat!"
@@ -390,7 +390,7 @@ af:
     likes count more: "%{likes_count} meer"
     likes count 2 more: "%{likes_count} meer"
     likes count 3 or more: "%{likes_count} meer"
-    users like this: "%{last_liker_link} en %{more_link} hou van dit"
+    users like this: "%{last_liker_link} en %{more_link} hou hiervan"
     like: "Hou Van"
     likes: "Gunstelinge"
     more than one like:
@@ -442,7 +442,7 @@ af:
       about plan: "Oor die leesplan"
       start plan: "Begin die leesplan"
   likes:
-    create success: "Sukses! Jou 'Hou Van' is gestoor"
+    create success: "Sukses! Jou \"Hou Van\" is gestoor"
     create failure: "Jou 'Hou Van' kon nie gestoor word nie"
     destroy success: "\"Hou Van\" is uitgewis"
     destroy failure: "Jou \"Hou Van\" kon nie uitgewis word nie"
@@ -907,7 +907,7 @@ af:
     email edit: "Wysig"
     unsubscribe successful: "Jy het uitgeteken uit hierdie leesplan."
     already subscribed: "Jy is alreeds ingeteken op hierdie leesplan!"
-    partner added successful: "Sukses! %{username} is by plan aanspreeklikheid gevoeg."
+    partner added successful: "Sukses! %{username} is by planaanspreeklikheid bygevoeg."
     partner removed successful: "%{username} is van plan aanspreeklikheid verwyder."
     make public successful: "Sukses! Jou plan is publiek."
     make private successful: "Jou plan is nou privaat."
@@ -1555,7 +1555,7 @@ af:
       email edit: "Wysig"
       unsubscribe successful: "Jy het uitgeteken uit hierdie leesplan."
       already subscribed: "Jy is alreeds ingeteken op hierdie leesplan!"
-      partner added successful: "Sukses! %{username} is by plan aanspreeklikheid gevoeg."
+      partner added successful: "Sukses! %{username} is by planaanspreeklikheid bygevoeg."
       partner removed successful: "%{username} is van plan aanspreeklikheid verwyder."
       make public successful: "Sukses! Jou plan is publiek."
       make private successful: "Jou plan is nou privaat."
