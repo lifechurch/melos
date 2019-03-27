@@ -667,7 +667,7 @@ af:
     resend success: "Jou bevestigings e-pos is weer gestuur. Gaan asb. deur jou e-pos."
     resend error: "Jammer, daar was 'n fout met die herstuur van jou bevestigings e-pos.  Maak seker dat jy 'n geldige, geregistreerde e-pos adres in tik wat nog nie bevestig is nie."
     resend confirmation title: "Nie jou bevestigings e-pos gekry nie?"
-    resend confirmation copy: "Tik die e-pos adres in wat jy tydens registrasie gebruik het en dan sal ons vir jou 'n ander bevestigings e-pos stuur."
+    resend confirmation copy: "Tik die e-posadres in wat jy tydens registrasie gebruik het en dan sal ons vir jou 'n ander bevestigings e-pos stuur."
     resend confirmation button: "Herstuur Bevestiging"
     profile:
       blank slate:
@@ -1658,7 +1658,7 @@ af:
         go: "Gaan na My Gebeurtenisse"
         share: "Deel jou gebeurtenis:"
         copy: "Kopieer"
-        copied: "Die skakel is na jou knipbord gekopieër "
+        copied: "Die skakel is na jou knipbord gekopieer"
         previous: "← Vorige: Voorskou"
       EventFeedDiscover:
         title: "Ontdek Gebeurtenisse"
@@ -1885,7 +1885,7 @@ af:
         components:
           EventViewContent:
             copy: "Kopieer"
-            copied: "Gekopieër"
+            copied: "Gekopieer"
             share: "Deel"
             read: "Lees"
             readPlan: "Lees die Plan"
