@@ -391,8 +391,8 @@ af:
     likes count 2 more: "%{likes_count} meer"
     likes count 3 or more: "%{likes_count} meer"
     users like this: "%{last_liker_link} en %{more_link} hou hiervan"
-    like: "Hou Van"
-    likes: "Gunstelinge"
+    like: "hou hiervan"
+    likes: "waarvan mense hou"
     more than one like:
     vod:
       title: "Vers van die dag"
@@ -417,9 +417,9 @@ af:
       go to scripture: "Gaan na skrifgedeelte"
       add friend button: "Voeg vriend by"
       load more: "Laai meer"
-      like: "Hou Van"
-      liked: "Gehou Van"
-      like title: "Hou van dit"
+      like: "Hou Hiervan"
+      liked: "Het Hiervan Gehou"
+      like title: "Hou hiervan"
       last comment: "Laaste opmerking"
       share: "Deel"
       share title: "Deel hierdie met vriende en familie."
@@ -442,8 +442,8 @@ af:
       about plan: "Oor die leesplan"
       start plan: "Begin die leesplan"
   likes:
-    create success: "Sukses! Jou \"Hou Van\" is gestoor"
-    create failure: "Jou 'Hou Van' kon nie gestoor word nie"
+    create success: "Sukses! Jou \"Hou Hiervan\" is gestoor"
+    create failure: "Jou \"Hou Hiervan\" kon nie gestoor word nie"
     destroy success: "\"Hou Van\" is uitgewis"
     destroy failure: "Jou \"Hou Van\" kon nie uitgewis word nie"
   comments:
@@ -501,7 +501,7 @@ af:
     none user: "%{username} het nog nie enige notas gemaak nie."
     blank slate:
       heading: "Jy het nog nie enige notas nie"
-      description: "Terwyl jy die Bybel lees, wanneer jy God se klein, sagte stem hoor praat, kan jy vinnig daardie gedagtes hier vaspen. Jou aantekeninge sal as <em>privaat</em> gemerk word by verstek.  As jy 'n nota met jou vriende wil deel, kan jy dit eenvoudig net oopmaak en dit verander na <em>publiek</em>."
+      description: "Terwyl jy die Bybel lees, wanneer jy God se stem hoor, kan jy vinnig daardie gedagtes hier vaspen. Jou aantekeninge sal by verstek as <em>privaat</em> gemerk word. As jy 'n nota met jou vriende wil deel, kan jy dit eenvoudig net oopmaak en dit verander na <em>publiek</em>."
     form:
       title field: "Titel:"
       content field: "Inhoud:"
@@ -726,7 +726,7 @@ af:
       friendships: "Stel my in kennis van vriend versoeke"
       moments: "Stel my in kennis van vriende se aktiwiteite"
       comments: "Stel my in kennis van opmerking op my aktiwiteite"
-      likes: "Stel my in kennis van 'Hou Van' aksies op my aktiwiteite"
+      likes: "Stel my in kennis van \"Hou Hiervan\" aksies op my aktiwiteite"
   bookmarks:
     new: "Nuwe Boekmerk"
     edit: "Wysig"
@@ -968,7 +968,7 @@ af:
     friends blurb: "Dit lyk of jy interaktief met vriende wil verkeer. Goeie idee! Jy sal in staat wees om te deel wat jy leer en om mekaar te help om op datum te bly met lees doelwitte. Teken in of skep 'n rekening hieronder om te begin!"
     share blurb: "Dit wil voorkom asof jy 'n Skrif wil deel. Wonderlik! Jy kan Skrif deel via Facebook of Twitter.  Teken in of skep hier onder 'n rekening en begin!"
     highlight blurb: "Dit wil voorkom of jy Skrif wil kleurmerk. Fantasties! Kleurmerke help jou om verse te organiseer en om tred te hou met jou gunsteling verse. Teken in of skep 'n rekening hieronder en begin sommer dadelik!"
-    note blurb: "Dit lyk of jy 'n skriftuurlike nota wil maak. Mooi gedink! Notas kan jou help om die waarhede wat jy ontdek het in God se Woord te onthou en organiseer. Teken in of skep 'n rekening hieronder en begin sommer dadelik!"
+    note blurb: "Dit lyk of jy 'n nota oor 'n skrifgedeelte wil maak. Mooi gedink! Notas kan jou help om die waarhede wat jy in God se Woord ontdek het, te onthou en te organiseer. Teken aan of skep 'n rekening hier onder en begin sommer dadelik!"
   audio:
     none: "Jammer, klank is nie beskikbaar vir hierdie weergawe nie."
     chapter only: "Jammer, klank is nie beskikbaar vir verse nie. Besigtig in die leser vir hoofstuk klank."
@@ -1385,7 +1385,7 @@ af:
         badges: "Jou intekening op <b>Kentekens</b> e-posse is suksesvol gekanselleer."
         comments: "Jou intekening op <b>Opmerkings</b> e-posse is suksesvol gekanselleer."
         friendships: "Jou intekening op <b>Vriendskap</b> e-posse is suksesvol gekanselleer."
-        likes: "Jou intekening op <b>Hou Daarvan</b> e-posse is suksesvol gekanselleer."
+        likes: "Jou intekening op <b>Hou Hiervan</b> e-posse is suksesvol gekanselleer."
         moments: "Jou intekening op <b>Oomblikke</b> e-posse is suksesvol gekanselleer."
         newsletter: "Jou intekening op <b>Nuusbrief</b> e-posse is suksesvol gekanselleer."
         reading_plans: "Jou intekening op <b>Leesplan</b> e-posse is suksesvol gekanselleer."
@@ -1401,7 +1401,7 @@ af:
         badges: "As ek 'n kenteken verdien"
         comments: "Opmerkings oor my aktiwiteite"
         friendships: "Vriendskap versoeke"
-        likes: "'Hou van' aksies op my aktiwiteit"
+        likes: "\"Hou Hiervan\" aksies op my aktiwiteit"
         moments: "Vriende se aktiwiteite"
         newsletter: "Nuus vanaf Bybel App"
         lens_newsletter: "Nuus vanaf 'Bible Lens'"
@@ -1912,7 +1912,7 @@ af:
       friends blurb: "Dit lyk of jy interaktief met vriende wil verkeer. Goeie idee! Jy sal in staat wees om te deel wat jy leer en om mekaar te help om op datum te bly met lees doelwitte. Teken in of skep 'n rekening hieronder om te begin!"
       share blurb: "Dit wil voorkom asof jy 'n Skrif wil deel. Wonderlik! Jy kan Skrif deel via Facebook of Twitter.  Teken in of skep hier onder 'n rekening en begin!"
       highlight blurb: "Dit wil voorkom of jy Skrif wil kleurmerk. Fantasties! Kleurmerke help jou om verse te organiseer en om tred te hou met jou gunsteling verse. Teken in of skep 'n rekening hieronder en begin sommer dadelik!"
-      note blurb: "Dit lyk of jy 'n skriftuurlike nota wil maak. Mooi gedink! Notas kan jou help om die waarhede wat jy ontdek het in God se Woord te onthou en organiseer. Teken in of skep 'n rekening hieronder en begin sommer dadelik!"
+      note blurb: "Dit lyk of jy 'n nota oor 'n skrifgedeelte wil maak. Mooi gedink! Notas kan jou help om die waarhede wat jy in God se Woord ontdek het, te onthou en te organiseer. Teken aan of skep 'n rekening hier onder en begin sommer dadelik!"
     Reader:
       chapter: "Hoofstuk"
       read reference: "Lees %{reference}"
@@ -2005,8 +2005,8 @@ af:
     delete: "Wis Uit"
     post: "Plaas"
     x likes:
-      one: "%{number} hou van"
-      other: "%{number} hou van"
+      one: "%{number} hou hiervan"
+      other: "%{number} hou hiervan"
     selected: "Selected"
     currently subscribed: "Tans Ingeteken"
     invite friends: "Nooi Vriende Uit"
