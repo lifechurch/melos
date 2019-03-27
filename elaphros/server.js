@@ -41,7 +41,6 @@ const PORT = process.env.PORT || 3030
 fastify.listen(PORT, '0.0.0.0', (err) => {
   if (err) {
     fastify.captureException(err, 'Error starting Fastify server: ')
-    console.log(err)
     process.exit(1)
   }
   lightship.signalReady()

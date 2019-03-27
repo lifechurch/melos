@@ -77,7 +77,6 @@ module.exports = function bibleChapter(req, reply) {
       }
       return [ ...matches ]
     }
-    console.log('XXXX', reply.res.__('features.bible.title'))
     return reply.view('/ui/pages/bible/chapter.marko', {
       chapterPromise,
       versionPromise,

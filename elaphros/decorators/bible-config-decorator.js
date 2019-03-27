@@ -78,7 +78,6 @@ module.exports = fp(async function bibleConfigDecorator(fastify, opts, next) {
   }
 
   fastify.decorateRequest('getDefaultBibleVersion', function getDefaultBibleVersion() {
-    console.log('DL', this.detectedLng)
     const appLocale = this.detectedLng || 'en'
     return bibleLocaleMap[appLocale]
   })
