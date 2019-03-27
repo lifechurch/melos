@@ -538,7 +538,7 @@ af:
     delete: "Wis Hierdie Nota Uit"
     confirm delete: "Ja, ek is seker"
     write new: "Skryf Nuwe Nota"
-    not found: "YouVersion laat jou toe om video, klank, prentjies, teks, en skakels van ander webwerwe te assosieer met 'n vers of 'n reeks van verse in die Bybel. Dit is 'n manier om deel te neem in die YouVersion gemeenskap deur dit wat jy leer en oordink met ander te deel soos wat jy besig raak met die Skrif. Begin nou deur 'n ​​vers(e) in die Bybel-leser te kies en jou notas by te voeg. Dit is so maklik soos dit."
+    not found: "YouVersion laat jou toe om video's, klank, beelde, teks, en skakels van ander webwerwe te assosieer met 'n vers of 'n reeks verse in die Bybel. Dit is 'n manier om deel te neem in die YouVersion gemeenskap, deur dit wat jy leer en oordink, met ander te deel soos wat jy besig raak met die Skrif. Begin nou deur 'n ​​vers(e) in die Bybelleser te kies en jou notas by te voeg. Dit is so maklik soos dit."
     cancel: "Kanselleer"
     pop out: "Spring uit"
     none found: "Geen notas gevind..."
@@ -696,7 +696,7 @@ af:
       new password: "Nuwe Wagwoord"
       confirm password: "Bevestig Wagwoord"
       avatar file: "Kies 'n lêer vir jou foto"
-      avatar help: "Fotos word aanvaar in in JPG, PNG, of GIF formaat. Jou foto sal aangepas word tot 'n voorskou foto van 48x48 pixels. Die maksimum lêer grote is 1MB."
+      avatar help: "Beelde word aanvaar in JPG, PNG, of GIF formaat. Jou beeld sal aangepas word tot 'n voorskou beeld van 48x48 beeldpunte. Die maksimum lêer grote is 1MB."
       picture error: "Jammer, daar was 'n probleem met die opdatering van jou foto."
       picture_empty: "Kies asseblief 'n foto wat gelaai moet word"
       picture_too_large: "Foto moet kleiner as 1 megagreep wees"
@@ -1140,7 +1140,7 @@ af:
         action: "Bekyk die Bybelweergawes"
       make_yours:
         title: "Maak hierdie Bybelweergawe jou keuse"
-        body: "Onderstreep of Merk jou gunsteling verse, maak Versbeelde wat jy kan deel, en maak notas by Bybelgedeeltes, wat jy as aanhegsel kan gebruik vir privaat of openbare gebruik."
+        body: "Kleurmerk of Boekmerk jou gunsteling verse, maak Versbeelde wat jy kan deel, en maak notas by Bybelgedeeltes, wat jy as aanhegsel kan gebruik vir privaat of openbare gebruik."
         action: "Skep Jou Gratis Rekening"
       install_now:
         title: "Installeer die Toep Nou"
@@ -2161,5 +2161,5 @@ af:
       h4: "Dis jou ervaring."
       p7: "Ons beleid maak dit duidelik watter regte U het by die gebruik van YouVersion, insluitend toegang tot, om te deel, verander en uitvee van U persoonlike data. Ons adresseer ook data-insamelingstegnologieë en hoe hierdie prosesse die YouVersion-gemeenskap help om ten volle betrokke te raak by die Bybel."
     data: "Data"
-    download blurb: "Jy kan 'n kopie van die persoonlike data wat jy aan ons verskaf, aflaai, soos jou naam, bio, ligging en webadres, sowel as basiese inligting rakende YouVersion Vriende. Hierdie afgelaaide data sal nie Bybelaktiwiteite insluit soos jou Hoogtepunte, Notas, Versbeelde, ens, wat jy direk binne die program kan sien nie. YouVersion is 'n nie-winsgewende organisasie. Omdat ons fokus op gemeenskapsontwikkeling gerig is, kapitaliseer ons nie, verkoop nie data nie of plaas geen derdeparty advertensies binne die YouVersion programme nie. Raadpleeg asb. ons Privaatheidsbeleid en Gebruikersvoorwaardes vir meer inligting oor die data wat ons versamel en hoekom, en hoe ons daardie data gebruik en beskerm. Let daarop dat die aflaai van data dit nie uit YouVersion webbedieners verwyder nie. As jy wil versoek dat jou inligting uitgewis word, besoek asb. help.youversion.com.  Hou egter in gedagte dat die uitwissing van sekere data YouVersion se funksionaliteit verbied en/of uitskakel, soos verder beskryf in ons Privaatheidsbeleid."
+    download blurb: "Jy kan 'n kopie van die persoonlike data wat jy aan ons verskaf, aflaai, soos jou naam, bio, ligging en webadres, sowel as basiese inligting rakende YouVersion Vriende. Hierdie afgelaaide data sal nie Bybelaktiwiteite insluit soos jou Kleurmerke, Notas, Versbeelde, ens, wat jy direk binne die program kan sien nie. YouVersion is 'n nie-winsgewende organisasie. Omdat ons fokus op gemeenskapsontwikkeling gerig is, kapitaliseer ons nie, verkoop nie data nie of plaas geen derdeparty advertensies binne die YouVersion programme nie. Raadpleeg asb. ons Privaatheidsbeleid en Gebruikersvoorwaardes vir meer inligting oor die data wat ons versamel en hoekom, en hoe ons daardie data gebruik en beskerm. Let daarop dat die aflaai van data dit nie uit YouVersion webbedieners verwyder nie. As jy wil versoek dat jou inligting uitgewis word, besoek asb. help.youversion.com.  Hou egter in gedagte dat die uitwissing van sekere data YouVersion se funksionaliteit verbied en/of uitskakel, soos verder beskryf in ons Privaatheidsbeleid."
   plan audio disclaimer: "Luister na die klank oordenking wat nou in die Bybel Toep beskikbaar is."
