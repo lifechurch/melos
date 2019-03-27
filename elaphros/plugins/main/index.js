@@ -19,7 +19,6 @@ module.exports = fp(function main(fastify, opts, next) {
     'cors',
     'i18n',
     'redirect-authenticated',
-    'health-checks',
     'manifest',
     'service-worker',
     'bible',
