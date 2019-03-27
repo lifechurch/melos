@@ -174,8 +174,8 @@ af:
       no_facebook_connection: "Jy het nie 'n geskakelde Facebook rekening nie. Konnekteer asseblief jou rekening op die Verstellings bladsy."
   google plus: "Google+"
   connect to: "Koppel met jou %{connection} rekening"
-  deleted connection: "Koppeling met %{connection} suksesvol verwyder."
-  deleted connection error: "Jammer, daar was 'n fout met die ontkoppeling van jou konneksie met %{connection}."
+  deleted connection: "Koppeling met %{connection} is suksesvol uitgewis."
+  deleted connection error: "Jammer, daar was 'n fout met die ontkoppeling van jou vrbinding met %{connection}."
   connection marketing: "YouVersion is baie meer pret saam met vriende! Verbind jou YouVersion rekening met jou ander sosiale netwerk rekeninge en kry jou vriende onmiddelik op YouVersion .  Deur jou rekeninge met mekaar te verbind, maak jy dit moontlik om inhoud te deel deur net 'n paar knoppies te druk.  Ons sal nooit iets van jou plaas sonder jou toestemming nie."
   next step connections: "Volgende: Koppel jou rekeninge en vind jou vriende"
   no notes found: "%{username} het geen notas nie."
@@ -340,8 +340,8 @@ af:
     faq answer 3: "Geleenthede help gebruikers om kerkgebeure naby hulle te vind deur van die geografiese pleksoeker op hul toestelle gebruik te maak. Wanneer gebruikers een van jou aktiwiteite bywoon, sal hulle die preek makliker volg deur die aantekeninge te gebruik. Bybel Toep gebruikers kan dan hulle eie aantekeninge byvoeg. Hulle kan ook 'n kopie stoor om later te gebruik. Dit sal hulle help om meer Bybelstudie te doen."
     faq question 4: "Hoe kan ek mense laat stem?"
     faq answer 4: "Gebruik 'n diens soos bv. <a href='https://www.surveymonkey.com/'>SurveyMonkey®</a>, <a href='http://www.pollsnack.com/'>PollSnack</a>, or <a href='http://www.poll-maker.com/'>Poll Maker</a>) om gebruikers te laat stem. Die diens sal jou toelaat om die uitslag d.m.v 'n skakel te deel. In Gebeurtenisse se admin afdeling kan jy die webskakel intrek na die plek waar jy wil."
-    faq question 5: "Sal gebeurtenisse wat ons op YouVersion Live skep outomaties oorgedra word na die nuwe Gebeurtenisse platform?"
-    faq answer 5: "Ongelukkig nie. Om vir jou en jou gebruikers die beste Gebeurtenisse ervaring moontlik te skep, moes ons Gebeurtenisse van nuuts af skep. As gevolg daarvan kan inligting van Live nie oorgedra word nie."
+    faq question 5: "Sal gebeurtenisse wat ons op \"YouVersion Live\" skep outomaties oorgedra word na die nuwe Gebeurtenisse platform?"
+    faq answer 5: "Ongelukkig nie. Om vir jou en jou gebruikers die beste Gebeurtenisse ervaring moontlik te skep, moes ons Gebeurtenisse van nuuts af skep. As gevolg daarvan kan inligting van \"Live\" nie oorgedra word nie."
     faq question 6: "Wat gebeur as jou gebruikers nie hulle Bybel Toep opdateer nie? Sal hulle die nuwe Gebeurtenisse kan sien?"
     faq answer 6: "Aangesien Gebeurtenisse 'n splinternuwe toepfunksie is, moet gebruikers hul Bybel Toep opdateer om dit te kry. (Gelukkig het baie Bybel Toep gebruikers reeds hul toestelle ingestel om outomaties op te dateer.) Wanneer 'n gebruiker op die \"Live\" oor klik, vertoon 'n enkele \"Live\" Gebeurtenis 'n boodskap wat aanbeveel dat hulle die toep opdateer, sodat hulle voordeel kan trek uit Gebeurtenisse. Totdat u gereelde besoekers gewoond raak aan Gebeurtenisse, stel ons voor dat u tydens u afkondigings kortliks verduidelik hoe u kerk dit gebruik. Help jou gehoor om te verstaan ​​hoe dit hulle bevoordeel, en lig hulle in hoe om dit te kry."
     faq question 7: "Live was nog altyd gratis. Sal Gebeurtenisse iets kos?"
@@ -430,11 +430,11 @@ af:
       edit bookmark title: "Wysig hierdie boekmerk"
       edit note title: "Wysig hierdie nota"
       edit subscription: "Wysig intekening"
-      delete: "Vee uit"
+      delete: "Wis Uit"
       delete confirm: "Is jy seker?"
-      delete highlight title: "Verwyder hierdie keurmerker"
-      delete bookmark title: "Vee hierdie boekmerk uit"
-      delete note title: "Verwyder Hierdie Nota"
+      delete highlight title: "Wis hierdie kleurmerker uit"
+      delete bookmark title: "Wis hierdie boekmerk uit"
+      delete note title: "Wis hierdie nota uit"
       more: "Meer"
       cancel: "Kanselleer"
       read in bible: "Lees in die Bybel"
@@ -444,8 +444,8 @@ af:
   likes:
     create success: "Sukses! Jou 'Hou Van' is gestoor"
     create failure: "Jou 'Hou Van' kon nie gestoor word nie"
-    destroy success: "'Hou Van' verwyder"
-    destroy failure: "Jou 'Hou Van' kon nie verwyder word nie"
+    destroy success: "\"Hou Van\" is uitgewis"
+    destroy failure: "Jou \"Hou Van\" kon nie uitgewis word nie"
   comments:
     view all N:
       one: "Wys %{count} opmerking"
@@ -453,8 +453,8 @@ af:
     post comment: "Plaas 'n opmerking"
     create success: "Sukses! Jou opmerking is gepos"
     create failure: "Opmerking kon nie geplaas word nie"
-    destroy success: "Kommentaar verwyder"
-    destroy failure: "Kommentaar kon nie verwyder word nie"
+    destroy success: "Kommentaar is uitgewis"
+    destroy failure: "Kommentaar kon nie uitgewis word nie"
     form:
       save button: "Plaas"
   friendships:
@@ -535,7 +535,7 @@ af:
     community notes: "Gemeenskapsnotas"
     new note: "Nuwe Nota"
     edit: "Wysig"
-    delete: "Verwyder Hierdie Nota"
+    delete: "Wis Hierdie Nota Uit"
     confirm delete: "Ja, ek is seker"
     write new: "Skryf Nuwe Nota"
     not found: "YouVersion laat jou toe om video, klank, prentjies, teks, en skakels van ander webwerwe te assosieer met 'n vers of 'n reeks van verse in die Bybel. Dit is 'n manier om deel te neem in die YouVersion gemeenskap deur dit wat jy leer en oordink met ander te deel soos wat jy besig raak met die Skrif. Begin nou deur 'n ​​vers(e) in die Bybel-leser te kies en jou notas by te voeg. Dit is so maklik soos dit."
@@ -544,7 +544,7 @@ af:
     none found: "Geen notas gevind..."
     create success: "Sukses! Jou nota is gestoor."
     create failure: "Daar was 'n fout met die stoor van die nota"
-    destroy success: "Nota verwyder"
+    destroy success: "Nota is uitgewis"
     destroy failure: "Daar was 'n fout met die verwyder van die nota"
     update success: "Nota opgedateer"
   ref:
@@ -635,8 +635,8 @@ af:
     no devices: "Geen toestelle gekoppel aan jou YouVersion Rekening nie"
     no devices download copy: "Gebaseer op die aanlyn Bybel, YouVersion, die Bybel Toep is 'n gratis mobiele Bybel wat op bykans enige toestel geïnstalleer kan word. Die Bybel Toep laat gebruikers toe om die Bybel te lees, verse te deel met sosiale netwerke, gunsteling gedeeltes te boekmerk en vele meer&amp;mdash:all in 'n formaat wat tred hou met die snelgroeiende mobiele leefstyl. Besoek <a href='https://www.bible.com/app' target='_self'>bible.com/app</a>  van jou mobiele toestel om die Bybel Toep af te laai en te koppel jou rekening!"
     yes delete: "Ja, Sluit My Rekening"
-    account delete success: "Ons het jou YouVersion rekening geskrap, soos versoek. Dit spyt ons dat jy ons verlaat. Dit is ons hartswens dat jy sal aanhou om sinvolle maniere te soek om met God se Woord om te gaan."
-    delete account description: "Wanneer jy jou rekening uitvee, verwyder jy al jou informasie, geskiedenis en verpersoonliking (soos notas, boekmerke, kleurkodering, ens.) binne die Bible.com en BibleApp sfeer vir altyd. Hierdie aksie kan nie deur uself of deur ons span ongedaan gemaak word nie. As u seker is u wil voortgaan, doen so hieronder."
+    account delete success: "Ons het jou YouVersion rekening uitgewis, soos jy versoek het. Dit spyt ons dat jy ons verlaat. Dit is ons hartswens dat jy sal aanhou om sinvolle maniere te soek om betrokke te raak by God se Woord."
+    delete account description: "Wanneer jy jou rekening uitwis, verwyder jy al jou inligting, geskiedenis en verpersoonliking (soos notas, boekmerke, kleurmerke, ens.) binne die Bible.com en Bible Toep sfeer, vir altyd. Hierdie aksie kan nie deur jouself of ons span ongedaan gemaak word nie. As jy seker is jy wil voortgaan, doen so hier onder."
     user recent activity: "%{user} se Onlangse Aktiwiteite"
     my notes: "Notas"
     user notes: "%{user} se Notas"
@@ -730,7 +730,7 @@ af:
   bookmarks:
     new: "Nuwe Boekmerk"
     edit: "Wysig"
-    delete: "Vee hierdie Boekmerk uit"
+    delete: "Wis hierdie Boekmerk uit"
     title field: "Titel"
     title field field: "Titel:"
     labels: "Etikette"
@@ -760,7 +760,7 @@ af:
     none user: "%{username} het geen boekmerke nie"
     blank slate:
       heading: "Boekmerk betekenisvolle verse"
-      description: "Terwyl jy Bybel lees, kies 'n vers en boekmerk dit. Keer dan terug om die boekmerk te sien, te wysig of te verwyder."
+      description: "Terwyl jy Bybel lees, kies 'n vers en boekmerk dit. Keer dan terug om die boekmerk te sien, te wysig of uit te wis."
     form:
       title field: "Titel:"
       reference field: "Verwysing:"
@@ -978,15 +978,15 @@ af:
     title: "Kleurmerke"
     blank slate:
       heading: "Kleurmerk betekenisvolle verse"
-      description: "Terwyl jy Bybel lees, kies 'n vers en kleurmerk dit. Keer dan terug hierheen om die kleurmerker te sien, te wysig of te verwyder."
+      description: "Terwyl jy Bybel lees, kies 'n vers en kleurmerk dit. Keer dan terug hierheen om die kleurmerker te sien, te wysig of uit te wis."
     none user: "%{username} het geen kleurmerkers"
     choose color: "Kies Kleur"
     create success: "Sukses! Jou kleurmerk is gestoor"
     create failure: "Daar was 'n fout met die stoor van die kleurmerk"
-    destroy success: "Kleurmerk verwyder"
+    destroy success: "Kleurmerk is uitgewis"
     destroy failure: "Daar was 'n fout met die kleurmerk verwydering"
     creation error: "Jammer, kon nie kleurmerk nie."
-    delete error: "Jammer, kon nie kleurmerk verwyder nie."
+    delete error: "Jammer, kon nie die kleurmerk uitwis nie."
     form:
       save button: "Stoor Kleurmerk"
   searching:
@@ -1768,8 +1768,8 @@ af:
               ContentTypeText:
                 prompt: "Skryf iets hier..."
               LiveWarningModal:
-                title: "Kan nie verwyder word terwyl die Gebeurtenis nog aan die gang is nie"
-                desc: "As die Gebeurtenis lewendig is, kan Teks, Bybelverwysing en Prentmodules nie verwyder word nie, want gebruikers kon alreeds hul privaatnotas bygevoeg het. Jy kan die modules nog redigeer."
+                title: "Kan nie uitgewis word terwyl die Gebeurtenis nog aan die gang is nie"
+                desc: "As die Gebeurtenis aan die gang is is, kan Teks, Bybelverwysing en Beeldmodules nie uitgewis word nie, want gebruikers kon alreeds hul privaatnotas bygevoeg het. Jy kan die modules nog redigeer."
                 ok: "OK"
           details:
             errors:
@@ -1797,7 +1797,7 @@ af:
                 oneRequired: "Voeg ten minste een tyd by."
                 use: "GEBRUIK HIERDIE PLEK"
                 edit: "Redigeer Plek"
-                delete: "Verwyder Area"
+                delete: "Verwyder Ligging"
               LocationAddButtons:
                 addPhysical: "Voeg 'n Fisiese Adres by"
                 promptPhysical: "Jy kan verskeie adresse byvoeg."
@@ -1809,10 +1809,10 @@ af:
                 days: "dae"
               LocationDeleteModal:
                 sure: "Is jy seker?"
-                selected: "Jy het die volgende plek gekies om te verwyder:"
+                selected: "Jy het gekies om hierdie ligging uit te wis:"
                 warn: "Die plek sal van alle vorige en huidige gebeurtenisse verwyder word. Jy sal nie weer hierdie plek vir toekomstige gebeurtenisse kan gebruik nie."
                 cancel: "Kanselleer"
-                delete: "Vee uit"
+                delete: "Wis Uit"
               LocationEdit:
                 prompt: "Voeg die Plek se adres in..."
                 country: "Land"
@@ -1842,7 +1842,7 @@ af:
               UnpublishModal:
                 cancel: "Kanselleer"
                 title: "Onttrek sodat jy Veranderinge kan aanbring"
-                desc: "Om Plekke en Tye by te voeg, te redigeer of te verwyder moet jy die gebeurtenis tydelik onttrek. Gedurende hierdie tyd sal jou gebeurtenis nie in soekresultate verskyn nie. Moenie vergeet om jou gebeurtenis weer te plaas nie."
+                desc: "Om Plekke en Tye by te voeg, te redigeer of uit te wis, moet jy die gebeurtenis tydelik onttrek. Gedurende hierdie tyd sal jou gebeurtenis nie in soekresultate verskyn nie. Moenie vergeet om jou gebeurtenis weer te plaas nie."
                 unpublish: "Onttrek"
           preview:
             notes:
@@ -1876,11 +1876,11 @@ af:
           EventListItem:
             duplicate: "Dupliseer"
             share: "Deel"
-            delete: "Vee uit"
+            delete: "Wis Uit"
             draft: "Konsep"
             edit: "Wysig"
             view: "Besigtig"
-            fail: "Kan nie Gebeurtenis verwyder nie"
+            fail: "Kon nie die Gebeurtenis uitwis nie"
       EventView:
         components:
           EventViewContent:
@@ -2002,7 +2002,7 @@ af:
     done: "Gedoen"
     next: "Volgende"
     edit: "Wysig"
-    delete: "Vee uit"
+    delete: "Wis Uit"
     post: "Plaas"
     x likes:
       one: "%{number} hou van"
@@ -2161,5 +2161,5 @@ af:
       h4: "Dis jou ervaring."
       p7: "Ons beleid maak dit duidelik watter regte U het by die gebruik van YouVersion, insluitend toegang tot, om te deel, verander en uitvee van U persoonlike data. Ons adresseer ook data-insamelingstegnologieë en hoe hierdie prosesse die YouVersion-gemeenskap help om ten volle betrokke te raak by die Bybel."
     data: "Data"
-    download blurb: "U kan 'n kopie van die persoonlike data wat U aan ons verskaf, aflaai, soos U naam, bio, lokasie en webadres sowel as basiese inligting rakende YouVersion Vriende. Hierdie afgelaaide data sal nie Bybelaktiwiteite insluit soos U Hoogtepunte, Notas, Vers-prente, ens, wat U direk binne die program kan sien. YouVersion is 'n nie-winsgewende organisasie. Omdat ons fokus op gemeenskaplikse ontwikkeling gerig is, kapitaliseer ons nie, verkoop nie data nie of plaas geen derde party advertensies binne die YouVersion programme nie. Raadpleeg asb ons Privaatheidsbeleid en Gebruikersvoorwaardes vir meer inligting oor die data wat ons versamel en hoekom, en hoe ons daardie data gebruik en beskerm. Let daarop dat die aflaai van data dit nie uit YouVersion webbedieners verwyder word nie. As jy wil versoek dat jou inligting verwyder word, besoek asb help.youversion.com.  Hou egter in gedagte dat die verwydering van sekere data YouVersion se funksies verbied en/of uitskakel, soos verder beskryf in ons Privaatheidsbeleid."
+    download blurb: "Jy kan 'n kopie van die persoonlike data wat jy aan ons verskaf, aflaai, soos jou naam, bio, ligging en webadres, sowel as basiese inligting rakende YouVersion Vriende. Hierdie afgelaaide data sal nie Bybelaktiwiteite insluit soos jou Hoogtepunte, Notas, Versbeelde, ens, wat jy direk binne die program kan sien nie. YouVersion is 'n nie-winsgewende organisasie. Omdat ons fokus op gemeenskapsontwikkeling gerig is, kapitaliseer ons nie, verkoop nie data nie of plaas geen derdeparty advertensies binne die YouVersion programme nie. Raadpleeg asb. ons Privaatheidsbeleid en Gebruikersvoorwaardes vir meer inligting oor die data wat ons versamel en hoekom, en hoe ons daardie data gebruik en beskerm. Let daarop dat die aflaai van data dit nie uit YouVersion webbedieners verwyder nie. As jy wil versoek dat jou inligting uitgewis word, besoek asb. help.youversion.com.  Hou egter in gedagte dat die uitwissing van sekere data YouVersion se funksionaliteit verbied en/of uitskakel, soos verder beskryf in ons Privaatheidsbeleid."
   plan audio disclaimer: "Luister na die klank oordenking wat nou in die Bybel Toep beskikbaar is."
