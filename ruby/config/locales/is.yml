@@ -55,16 +55,16 @@ is:
           copy: "Discover and learn with your friends as they add highlights, bookmarks, and notes."
           button: "Hvar á ég að byrja?"
         share:
-          copy: "Share honest conversations about Scripture."
-          button: "Get started by finding some friends."
+          copy: "Deildu hreinskilnum samræðum um Ritninguna."
+          button: "Byrjaðu á því að finna nokkra vini."
         likes:
-          info: "and 4 more like this"
+          info: "og 4 fleiri svipuð þessu"
         comments:
           first:
-            text: "Really needed to hear that today, thanks. Let‘s catch up soon!"
+            text: "Þurfti virkilega að heyra þetta í dag, takk. Verum í sambandi!"
             time: "fyrir um 3 klukkustundum"
           second:
-            text: "Amen, me too. Sending you an email now."
+            text: "Amen, líka ég. Er að senda þér tölvupóst."
             time: "fyrir um það bil 27 mínútum síðan"
           field placeholder: "Skrifaðu ummæli..."
     widget:
@@ -78,9 +78,9 @@ is:
     my connections: "Tengdir reikningar"
     connected as: "Þú ert tengdur við %{connection} sem %{username}."
     remove connection: "Fjarlægja þessa tengingu"
-    connection friends: "Here are some YouVersion users you're connected to on %{connection}:"
+    connection friends: "Hér eru nokkrir YouVersion notendur sem þú tengist á %{connection}:"
     errors:
-      no friends: "None of your %{connection} friends appear to be on YouVersion yet."
+      no friends: "Engin af %{connection} vinum þínum virðist vera á YouVersion ennþá."
       reset connection: "Sorry, an error has occurred. Please remove and then reconnect this connection."
     email:
       name: "Netfang"
