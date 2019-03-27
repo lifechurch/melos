@@ -2,10 +2,10 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: elaphros-$CI_ENVIRONMENT_SLUG
+  name: nodejs-$CI_ENVIRONMENT_SLUG
   namespace: $KUBE_NAMESPACE
   labels:
-    app: elaphros-$CI_ENVIRONMENT_SLUG
+    app: nodejs-$CI_ENVIRONMENT_SLUG
     pipeline_id: "$CI_PIPELINE_ID"
     build_id: "$CI_JOB_ID"
     space: $KUBE_NAMESPACE
@@ -17,14 +17,14 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      app: elaphros-$CI_ENVIRONMENT_SLUG
-      name: elaphros-$CI_ENVIRONMENT_SLUG
+      app: nodejs-$CI_ENVIRONMENT_SLUG
+      name: nodejs-$CI_ENVIRONMENT_SLUG
       track: stable
   template:
     metadata:
       labels:
-        name: elaphros-$CI_ENVIRONMENT_SLUG
-        app: elaphros-$CI_ENVIRONMENT_SLUG
+        name: nodejs-$CI_ENVIRONMENT_SLUG
+        app: nodejs-$CI_ENVIRONMENT_SLUG
         track: stable
       annotations:
         security.alpha.kubernetes.io/unsafe-sysctls: net.core.somaxconn=4096
@@ -32,8 +32,8 @@ spec:
     spec:
       terminationGracePeriodSeconds: 30
       containers:
-        - name: $KUBE_NAMESPACE-elaphros-$CI_ENVIRONMENT_SLUG
-          image: $CI_REGISTRY_IMAGE:elaphros-$CI_COMMIT_SHA
+        - name: $KUBE_NAMESPACE-nodejs-$CI_ENVIRONMENT_SLUG
+          image: $CI_REGISTRY_IMAGE:nodejs-$CI_COMMIT_SHA
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -44,7 +44,7 @@ spec:
           resources:
             limits:
               cpu: "1"
-              memory: "700Mi"
+              memory: "2000Mi"
           readinessProbe:
             httpGet:
               path: /health

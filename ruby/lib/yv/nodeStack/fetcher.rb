@@ -33,8 +33,10 @@ module YV
 
           params['languageTag'] = I18n.locale
           params['railsHost'] = "#{request.protocol}#{request.host_with_port}"
-					params['acceptLangHeader'] = request.env['HTTP_ACCEPT_LANGUAGE']
-          resource_url = "#{Cfg.nodejs_import_url}/#{feature}"
+          params['acceptLangHeader'] = request.env['HTTP_ACCEPT_LANGUAGE']
+          port = Cfg.nodejs_api_port.present? ? ":#{Cfg.nodejs_api_port}" : ""
+          proto = Cfg.nodejs_api_port.present? ? "http" : "https"
+          resource_url = "#{proto}://#{ENV['SECURE_HOSTNAME']}#{port}/featureImport/#{feature}"
           curb_get = lambda do
             begin
               post_body = { feature: feature, params: params, auth: auth }

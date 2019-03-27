@@ -14,7 +14,7 @@ spec:
   tls:
     - hosts:
         - elaphros-$CI_ENVIRONMENT_HOSTNAME
-      secretName: tls
+      secretName: ssl
   rules:
     - host: elaphros-$CI_ENVIRONMENT_HOSTNAME
       http:

@@ -35,7 +35,6 @@ http {
       passenger_resist_deployment_errors on;
       passenger_env_var SECURE_TRAFFIC true;
       passenger_env_var NEW_RELIC_LICENSE_KEY 148b7b0a47e0219bd1117c19b692c94c779cdf33;
-      passenger_env_var NEW_RELIC_APP_NAME bible.com;
       passenger_env_var NEW_RELIC_LOG_LEVEL info;
       passenger_env_var MEMCACHE_SERVERS 10.36.123.121:11211,10.36.123.80:11211;
       passenger_env_var LOG_LEVEL warn;

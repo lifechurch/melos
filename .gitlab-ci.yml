@@ -28,6 +28,17 @@ build legacy:
   tags:
     - web
 
+build nodejs:
+  stage: build
+  script:
+    - command build Dockerfile-nodejs
+  only:
+    - branches
+  except:
+    - l10n_master
+  tags:
+    - web
+
 build elaphros:
   stage: build
   script:
@@ -72,6 +83,7 @@ stop_review:
   script:
     - command destroy
     - command destroy app=elaphros-$CI_ENVIRONMENT_SLUG
+    - command destroy app=nodejs-$CI_ENVIRONMENT_SLUG
     - export SHORT=$(echo "${CI_COMMIT_REF_SLUG//-}" | cut -c-14)
     - helm delete $SHORT
   environment:

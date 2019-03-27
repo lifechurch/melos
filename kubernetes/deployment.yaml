@@ -51,12 +51,12 @@ spec:
             - containerPort: $PORT
           resources:
             limits:
-              cpu: "4"
-              memory: "5400Mi"
+              cpu: "2"
+              memory: "3000Mi"
           readinessProbe:
             httpGet:
-              path: /health
-              port: 9001
+              path: /ping
+              port: 80
               scheme: HTTP
               httpHeaders:
                 - name: Host
@@ -66,116 +66,24 @@ spec:
             periodSeconds: 10
             failureThreshold: 3
             successThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 80
+              scheme: HTTP
+              httpHeaders:
+                - name: Host
+                  value: 127.0.0.1
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
           env:
-            - name: YOUVERSION_TOKEN_PHRASE
+            - name: DOGSTATSD_HOST_IP
               valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: YOUVERSION_TOKEN_PHRASE
-            - name: TREADSTONE_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: TREADSTONE_SECRET
-            - name: SENTRY_DSN
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: SENTRY_DSN
-            - name: STACK_IMPACT_AGENT_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: STACK_IMPACT_AGENT_KEY
-            - name: NEW_RELIC_LICENSE_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: NEW_RELIC_LICENSE_KEY
-            - name: NEW_RELIC_APP_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: NEW_RELIC_APP_NAME
-            - name: NEW_RELIC_LOG_LEVEL
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: NEW_RELIC_LOG_LEVEL
-            - name: PASSENGER_APP_ENV
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: PASSENGER_APP_ENV
-            - name: MEMCACHE_SERVERS
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: MEMCACHE_SERVERS
-            - name: HTTP_TIMEOUT
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: HTTP_TIMEOUT
-            - name: LOG_LEVEL
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: LOG_LEVEL
-            - name: SECURE_TRAFFIC
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: SECURE_TRAFFIC
-            - name: OAUTH_CLIENT_ID
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: OAUTH_CLIENT_ID
-            - name: OAUTH_CLIENT_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: OAUTH_CLIENT_SECRET
-            - name: SECURE_HOSTNAME
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: SECURE_HOSTNAME
-            - name: YIR_SHA1_SECRET_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: YIR_SHA1_SECRET_KEY
-            - name: WWW_SUBDOMAIN
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: WWW_SUBDOMAIN
-            - name: MY_SUBDOMAIN
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: MY_SUBDOMAIN
-            - name: ELAPHROS_SENTRY_DSN
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: ELAPHROS_SENTRY_DSN
-            - name: RAILS_POLL_INTERVAL_SECONDS
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: RAILS_POLL_INTERVAL_SECONDS
-            - name: DEFAULT_CACHE_LIFETIME
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: DEFAULT_CACHE_LIFETIME
-            - name: OVERRIDE_CACHE_LIFETIME
-              valueFrom:
-                secretKeyRef:
-                  name: $KUBE_NAMESPACE-secrets-$STAGE
-                  key: OVERRIDE_CACHE_LIFETIME
+                fieldRef:
+                  fieldPath: status.hostIP
+            {{SECRETS}}
       imagePullSecrets:
         - name: gitlab-registry

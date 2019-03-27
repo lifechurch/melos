@@ -230,12 +230,7 @@ module YV
         # bible and audio-bible resources require HTTP
         # all other resources require HTTPS.
         def get_protocol(path)
-          case path
-          when /^(bible|audio-bible)/ #bible / audio-bible apis http
-            'http'
-          else
-            'https'
-          end
+          'https'
         end
 
         # Creates a host string for a particular resource given an API path string
