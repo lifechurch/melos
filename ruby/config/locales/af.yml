@@ -571,7 +571,7 @@ af:
     view in reader: "Besigtig %{reference} in Leser"
   users:
     unverified heading: "Amper klaar!"
-    unverified message: "Dit lyk asof jy probeer inteken op 'n rekening wat nie volledig opgestel is nie. Jy het nog net een stap oor: Klik op die verifikasie link in die epos wat YouVersion vir jou gestuur het. Indien jy dit nie kry nie, kyk in jou spam leêr of  <a href='%{resend_path}' target='_self'>herstuur die verifikasie epos</a>."
+    unverified message: "Dit lyk asof jy probeer aanteken op 'n rekening wat nie volledig opgestel is nie. Jy het nog net een stap oor: Klik op die bevestigings skakel in die e-pos wat YouVersion vir jou gestuur het. Indien jy dit nie kry nie, kyk in jou strooipos lêer of <a href='%{resend_path}' target='_self'>herstuur die bevestigings e-pos</a>."
     settings: "Opstellings"
     creation form errors: "Die volgende probleem/probleme het die skepping van jou rekening verhoed:"
     profile form errors: "Die volgende probleem/probleme het die opdatering van jou profiel verhoed:"
@@ -625,7 +625,7 @@ af:
     vod_subscription success: "Jy het jou \"Vers vir die Dag\" intekening suksesvol opgedateer!"
     vod_subscription failure: "Jammer, daar was 'n probleem met die opdatering van jou Verse van die Dag intekening."
     daily email delivery: "Daaglikse epos aflewering"
-    vod_not_subscribed: "Jy is nie ingeskryf op enige vers van die dag eposse nie. Teken asseblief in as jy wil inskryf."
+    vod_not_subscribed: "Jy is nie ingeskryf op enige vers-van-die-dag e-posse nie. Teken asseblief aan as jy wil inskryf."
     time: "Tyd"
     daily push notifications: "Daaglikse kennisgewings vir mobiele toeps."
     subscribe: "Teken In"
