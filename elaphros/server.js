@@ -20,7 +20,6 @@ fastify.register(require('./decorators/bible-config-decorator'), { timeout: 0 })
 // Plugins
 fastify.register(require('./plugins/cors'))
 fastify.register(require('./plugins/redirect-authenticated'))
-fastify.register(require('./plugins/health-checks'))
 fastify.register(require('./plugins/manifest'))
 fastify.register(require('./plugins/service-worker'))
 fastify.register(require('./plugins/i18n'))
