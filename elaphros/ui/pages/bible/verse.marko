@@ -23,7 +23,8 @@
       ampComponents=ampComponents>
     </amp-components>
 
-    <await(promiseData from data.allPromises)>
+    <await(data.allPromises)>
+      <@then|promiseData|>
       $ const verses = promiseData[0]
       $ const version = promiseData[1]
       $ const title = `${data.referenceTitle.title} ${data.description} | ${version.local_title} (${version.local_abbreviation.toUpperCase()}) | ${out.global.__('features.bible.title')}`
@@ -47,11 +48,13 @@
         twitterCard=data.twitterCard
         canonicalUrl=out.global.canonicalUrl>
       </header-tags>
+      </@then>
     </await>
   </@head>
   <@body>
 
-    <await(promiseData from data.allPromises)>
+    <await(data.allPromises)>
+      <@then|promiseData|>
       $ const verses = promiseData[0]
       $ const version = promiseData[1]
       $ const pageTitle = `${data.referenceTitle.title} ${version.local_abbreviation.toUpperCase()}`
@@ -95,7 +98,7 @@
         <h2 class="tc f3 f2-m">${data.referenceTitle.title}</h2>
         <div class="bg-black-05 min-vh-100 pl3 pr3 pt2 pb6">
           <div class="measure-wide-m center">
-            <for (verse in verses.verses)>
+            <for|verse| of=verses.verses>
               <div class="bg-white pa3 pa4-m shadow-2 br2 mt4">
                 <a
                   class="link"
@@ -195,8 +198,8 @@
                 </div>
               </div>
             </div>
-
-            <div if(data.images.length) class="bg-white pa3 pa4-m shadow-2 br2 mt4">
+            <if(data.images.length)>
+            <div class="bg-white pa3 pa4-m shadow-2 br2 mt4">
               <a
                 class="link"
                 href="${out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.referenceTitle.usfm, out.global.locale)}"
@@ -206,9 +209,10 @@
               <amp-carousel height="300"
                 layout="fixed-height"
                 type="carousel">
-                <for(image in data.images)>
+                <for|image| of=data.images>
                   $ const imageSource = data.selectImageFromList({ images: image.renditions, width: 320, height: 320 })
-                  <a if(imageSource.url) href="${data.getLocalizedLink('/verse-of-the-day/${data.usfm}/${image.id}?version=${version.id}', out.global.locale)}">
+                  <if(imageSource.url)>
+                  <a href="${data.getLocalizedLink('/verse-of-the-day/${data.usfm}/${image.id}?version=${version.id}', out.global.locale)}">
                     <amp-img
                       src=imageSource.url
                       width=imageSource.width
@@ -216,6 +220,7 @@
                       alt="${pageTitle} ${version.local_title}">
                     </amp-img>
                   </a>
+                  </if>
                 </for>
               </amp-carousel>
               <div class="flex justify-center items-center w-100 mt3">
@@ -244,21 +249,25 @@
                 </div>
               </div>
             </div>
+            </if>
 
-            <div if(out.global.bibleToAppLocale(version.language) === 'en') class="bg-white pa3 pa4-m shadow-2 br2 mt4">
+            <if(out.global.bibleToAppLocale(version.language) === 'en')>
+            <div class="bg-white pa3 pa4-m shadow-2 br2 mt4">
               <a role="button"
                 href="${out.global.seoUtils.getCanonicalUrl('bible-compare', data.referenceTitle.usfm)}"
                 class="w-100 tc dib pt2 pb2 pl3 pr3 link yv-green br2 truncate f5 f4-m bold">
                 Compare Different Versions of this Verse
               </a>
             </div>
-
-            <div if(data.plans.length) class="bg-white pa3 pa4-m shadow-2 br2 mt4">
+            </if>
+            <if(data.plans.length)>
+            <div class="bg-white pa3 pa4-m shadow-2 br2 mt4">
               <h2 class="f6 f5-m mb3 lh-copy">${out.global.__mf('features.bible.related devos', { reference: data.referenceTitle.title })}</h2>
               <div class="flex flex-wrap">
-                <for (plan in data.plans)>
+                <for|plan| of=data.plans>
                   $ const imageSource = data.getReadingPlanImage(plan.id, 320, 180)
-                  <div if(imageSource.url) class="w-50">
+                  <if(imageSource.url)>
+                  <div class="w-50">
                     <div class="pa2">
                       <a
                         class="link dim near-black"
@@ -276,12 +285,15 @@
                       </a>
                     </div>
                   </div>
+                  </if>
                 </for>
               </div>
             </div>
+            </if>
           </div>
         </div>
       </div>
+      </@then>
     </await>
   </@body>
 </site-layout>

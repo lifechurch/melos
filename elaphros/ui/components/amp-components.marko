@@ -1,4 +1,4 @@
-<for(ampComponent in input.ampComponents)>
+<for|ampComponent| of=input.ampComponents>
   $ const attrs = {
     async: true,
     [`custom-${ampComponent.type}`]: ampComponent.name,

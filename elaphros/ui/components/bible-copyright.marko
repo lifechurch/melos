@@ -1,6 +1,10 @@
 <div class="f6 lh-copy mid-gray mt4">
-  <span if(input.version.copyright_short && input.version.copyright_short.html)>$!{input.version.copyright_short.html}</span>
-  <span if(input.version.copyright_short && !input.version.copyright_short.html && input.version.copyright_short.text)>${input.version.copyright_short.text}</span>
+  <if(input.version.copyright_short && input.version.copyright_short.html)>
+    <span>$!{input.version.copyright_short.html}</span>
+  </if>
+  <if(input.version.copyright_short && !input.version.copyright_short.html && input.version.copyright_short.text)>
+    <span>${input.version.copyright_short.text}</span>
+  </if>
   <a
     class="link yv-green underline"
     title="${out.global.__mf('features.bible.version learn more', { version_name: input.version.local_title })}"

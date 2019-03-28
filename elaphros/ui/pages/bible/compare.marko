@@ -24,7 +24,8 @@
       ampComponents=ampComponents>
     </amp-components>
 
-    <await(promiseData from data.allPromises)>
+    <await(data.allPromises)>
+      <@then|promiseData|>
       $ const verses = promiseData[0]
       $ const version = promiseData[1]
       $ const title = `${data.referenceTitle.title} ${data.description}`
@@ -39,11 +40,13 @@
         twitterCard=data.twitterCard
         canonicalUrl=data.canonicalUrl>
       </header-tags>
+      </@then>
     </await>
   </@head>
   <@body>
 
-    <await(promiseData from data.allPromises)>
+    <await(data.allPromises)>
+      <@then|promiseData|>
       $ const verses = promiseData[0]
       $ const version = promiseData[1]
       $ const pageTitle = `${data.referenceTitle.title} ${version.local_abbreviation.toUpperCase()}`
@@ -167,6 +170,7 @@
           </div>
         </div>
       </div>
+      </@then>
     </await>
   </@body>
 </site-layout>

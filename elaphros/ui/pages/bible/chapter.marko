@@ -23,7 +23,8 @@
       ampComponents=ampComponents>
     </amp-components>
 
-    <await(promiseData from data.allPromises)>
+    <await(data.allPromises)>
+      <@then|promiseData|>
       $ const chapter = promiseData[0]
       $ const version = promiseData[1]
       $ const title = `${chapter.reference.human}, ${version.local_title} (${version.local_abbreviation.toUpperCase()}) | The Bible App`
@@ -48,11 +49,13 @@
         twitterCard="summary"
         canonicalUrl="${out.global.canonicalUrl}">
       </header-tags>
+      </@then>
     </await>
   </@head>
   <@body>
 
-    <await(promiseData from data.allPromises)>
+    <await(data.allPromises)>
+      <@then|promiseData|>
       $ const chapter = promiseData[0]
       $ const version = promiseData[1]
 
@@ -95,7 +98,8 @@
       </bible-default-state>
 
       <div class="mw6 center pa3 pt4 pb7 mt6">
-       <a if(chapter.previous)
+      <if(chapter.previous)>
+       <a 
         class="bible-nav-button nav-left fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white left-1"
         href="${out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, chapter.previous.usfm[0], out.global.locale)}"
         title="${chapter.previous.human}"
@@ -107,8 +111,9 @@
             <reader-arrow-left />
           </div>
        </a>
-
-       <a if(chapter.next)
+       </if>
+       <if(chapter.next)>
+       <a 
         class="bible-nav-button nav-right fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white right-1"
         href="${out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, chapter.next.usfm[0], out.global.locale)}"
         title="${chapter.next.human}"
@@ -120,6 +125,7 @@
             <reader-arrow-right />
           </div>
        </a>
+       </if>
 
         <div class="yv-bible-text ${version.language.text_direction === 'rtl' ? 'tr' : ''}" dir="${version.language.text_direction}">
           <div class="reader">$!{chapter.content}</div>
@@ -138,7 +144,7 @@
             ${out.global.__mf("features.bible.explore by verse", { chapter_name: chapter.reference.human })}
           </h4>
           <ul hidden class="list ma0 pa3" id="verse-links">
-            <for(vl in data.verseLinks)>
+            <for|vl| of=data.verseLinks>
               <li class="pb3 tc">
                 <a
                   title="${chapter.reference.human}:${vl.split('.').splice(-1)} | ${version.local_title}"
@@ -155,6 +161,7 @@
           </ul>
         </nav>
       </div>
+      </@then>
     </await>
   </@body>
 </site-layout>

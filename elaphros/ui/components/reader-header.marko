@@ -16,7 +16,8 @@
         usfm=input.chapter.reference.usfm[0]
         version=input.version>
       </bible-version-picker>
-      <div if(input.chapter.audio) class="w-auto flex items-center">
+      <if(input.chapter.audio) >
+      <div class="w-auto flex items-center">
         <button
           class="ma0 pa0 bn bg-transparent outline-0"
           aria-label="${out.global.__('features.bible.audio open')}"
@@ -26,6 +27,7 @@
             <audio-icon></audio-icon>
         </button>
       </div>
+      </if>
     </div>
   </header>
 
@@ -150,7 +152,8 @@
   </amp-layout>
 
   <amp-layout id="bible-audio-player" hidden layout="fill">
-    <div if(input.chapter.audio) class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-2 overflow-hidden bottom-0">
+    <if(input.chapter.audio)>
+    <div class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-2 overflow-hidden bottom-0">
       <div class="bg-light-gray pa2 flex justify-center items-center w-100">
         <div class="w-20 truncate f7 f6-m black-30">
           &nbsp;
@@ -177,9 +180,12 @@
           <div fallback>
             <p>${out.global.__('features.bible.no audio support')}</p>
           </div>
-          <source for(src in Object.entries(input.chapter.audio[0].download_urls)) src=src[1]>
+          <for|src| of=Object.entries(input.chapter.audio[0].download_urls)>
+            <source src=src[1]>
+          </for>
         </amp-audio>
       </div>
     </div>
+    </if>
   </amp-layout>
 </div>

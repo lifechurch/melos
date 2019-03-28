@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#555555"/>
     <link rel="preconnect" href="https://cdn.ampproject.org" />
     <link rel="dns-prefetch" href="https://cdn.ampproject.org" />
-    <include(input.head) />
+    <${input.head}/>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -95,7 +95,7 @@
     
     <site-header />
     <div class="body mt5">
-      <include(input.body) />
+      <${input.body}/>
       <div class="pa3 self-center flex items-center justify-center dn-l">
         <div class="w-50 w-auto-m">
           <app-language-picker-trigger></app-language-picker-trigger>
