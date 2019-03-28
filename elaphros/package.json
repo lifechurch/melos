@@ -31,9 +31,7 @@
     "newrelic": "^4.10.0",
     "point-of-view": "^3.1.1",
     "query-string": "^6.2.0",
-    "raven": "^2.6.3"
-  },
-  "devDependencies": {
+    "raven": "^2.6.3",
     "babel-eslint": "^8.2.6",
     "eslint": "^5.2.0",
     "eslint-config-airbnb-base": "^13.0.0",

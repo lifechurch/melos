@@ -4,7 +4,8 @@ RUN mkdir -p /app && chown node:node /app
 WORKDIR /app
 
 COPY elaphros/package.json elaphros/package-lock.json /app/
-RUN npm install ci --production
+RUN npm i -g npm
+RUN npm ci --production
 
 COPY elaphros/ /app
 
