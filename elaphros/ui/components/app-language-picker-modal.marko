@@ -46,7 +46,7 @@ $ const getLocalizedLink = require('../../utils/localization/get-localized-link'
               {{#items}}
                 <li class="">
                   <div class="flex w-100 items-center">
-                    <a class="pa2 pl3 w-100 dib black-50 link f7 f6-m" href="${getLocalizedLink(out.global.canonicalPath, '{{appLocale}}')}">
+                    <a class="pa2 pl3 w-100 dib black-50 link f7 f6-m" href=getLocalizedLink(out.global.canonicalPath, '{{appLocale}}')>
                       {{nativeName}}
                     </a>
                   </div>

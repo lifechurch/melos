@@ -59,22 +59,22 @@
           "@type": "ListItem",
           "position": 1,
           "item": {
-            "@id": "${data.requestHost}",
+            "@id": `${data.requestHost}`,
             "name": "Bible"
           }
         },{
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@id": "${data.requestHost}/en/versions",
+            "@id": `${data.requestHost}/en/versions`,
             "name": "Compare Versions"
           }
         },{
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@id": "${out.global.canonicalUrl}",
-            "name": "${data.referenceTitle.title}"
+            "@id": `${out.global.canonicalUrl}`,
+            "name": `${data.referenceTitle.title}`
           }
         }]
       }
@@ -86,13 +86,13 @@
         <h2 class="tc f3 f2-m">${data.referenceTitle.title}</h2>
         <div class="bg-black-05 min-vh-100 pl3 pr3 pt2 pb6">
           <div class="measure-wide-m center">
-            <for (verse in verses.verses)>
-              <for (innerVerse in verse.verses)>
+            <for|verse| of=verses.verses>
+              <for|innerVerse| of=verse.verses>
                 <div class="bg-white pa3 pa4-m shadow-2 br2 mt4">
-                  <a class="link" href="${out.global.seoUtils.getCanonicalUrl('bible', verse.id, verse.local_abbreviation, innerVerse.reference.usfm[0])}">
+                  <a class="link" href=out.global.seoUtils.getCanonicalUrl('bible', verse.id, verse.local_abbreviation, innerVerse.reference.usfm[0])>
                     <h1 class="f6 f5-m mb3 near-black">${innerVerse.reference.human} ${verse.local_title} (${verse.local_abbreviation.toUpperCase()})</h1>
                   </a>
-                  <a class="link" href="${out.global.seoUtils.getCanonicalUrl('bible', verse.id, verse.local_abbreviation, innerVerse.reference.usfm[0])}">
+                  <a class="link" href=out.global.seoUtils.getCanonicalUrl('bible', verse.id, verse.local_abbreviation, innerVerse.reference.usfm[0])>
                     <div class="near-black lh-copy f4-m">$!{innerVerse.content}</div>
                   </a>
                   <div class="flex justify-end items-center w-100 mt3">
@@ -113,7 +113,7 @@
                     </div>
                     <div class="truncate ml1">
                       <a role="button"
-                        href="${out.global.seoUtils.getCanonicalUrl('bible', verse.id, verse.local_abbreviation, data.chapterifyUsfm(innerVerse.reference.usfm[0]))}"
+                        href=out.global.seoUtils.getCanonicalUrl('bible', verse.id, verse.local_abbreviation, data.chapterifyUsfm(innerVerse.reference.usfm[0]))
                         class="tr dib pt2 pb2 pl2 pr2 link yv-green br2">
                         Read Full Chapter
                       </a>
@@ -123,50 +123,54 @@
               </for>
             </for>
 
-            <div if(data.images.length) class="bg-white pa3 pa4-m shadow-2 br2 mt4">
-              <a class="link" href="${out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.referenceTitle.usfm)}">
-                <h2 class="near-black f6 f5-m mb3">${data.referenceTitle.title}</h2>
-              </a>
-              <amp-carousel height="300"
-                layout="fixed-height"
-                type="carousel">
-                <for(image in data.images)>
-                  $ const imageSource = data.selectImageFromList({ images: image.renditions, width: 320, height: 320 })
-                  <a if(imageSource.url) href="/verse-of-the-day/${data.usfm}/${image.id}?version=${version.id}">
-                    <amp-img
-                      src=imageSource.url
-                      width=imageSource.width
-                      height=imageSource.height
-                      alt="${pageTitle}">
-                    </amp-img>
-                  </a>
-                </for>
-              </amp-carousel>
-              <div class="flex justify-end items-center w-100 mt3">
-                <div class="truncate">
-                  <social-share
-                    uniqueKey="verse-image"
-                    title=pageTitle
-                    description=data.description
-                    metaImages=data.metaImages
-                    fullRequestURL=data.canonicalUrl>
-                    <@button>
-                      <span
-                        class="tr dib pt2 pb2 pl2 pr2 link yv-green br2">
-                        Share
-                      </span>
-                    </@button>
-                  </social-share>
-                </div>
-                <div class="truncate ml1">
-                  <a role="button"
-                    href="${out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.chapterifyUsfm(data.usfm))}"
-                    class="tr dib pt2 pb2 pl2 pr2 link yv-green br2">
-                    Read Full Chapter
-                  </a>
+            <if(data.images.length)>
+              <div class="bg-white pa3 pa4-m shadow-2 br2 mt4">
+                <a class="link" href=out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.referenceTitle.usfm)>
+                  <h2 class="near-black f6 f5-m mb3">${data.referenceTitle.title}</h2>
+                </a>
+                <amp-carousel height="300"
+                  layout="fixed-height"
+                  type="carousel">
+                  <for|image| of=data.images>
+                    $ const imageSource = data.selectImageFromList({ images: image.renditions, width: 320, height: 320 })
+                    <if(imageSource.url)>
+                      <a href=`/verse-of-the-day/${data.usfm}/${image.id}?version=${version.id}`>
+                        <amp-img
+                          src=imageSource.url
+                          width=imageSource.width
+                          height=imageSource.height
+                          alt=pageTitle>
+                        </amp-img>
+                      </a>
+                    </if>
+                  </for>
+                </amp-carousel>
+                <div class="flex justify-end items-center w-100 mt3">
+                  <div class="truncate">
+                    <social-share
+                      uniqueKey="verse-image"
+                      title=pageTitle
+                      description=data.description
+                      metaImages=data.metaImages
+                      fullRequestURL=data.canonicalUrl>
+                      <@button>
+                        <span
+                          class="tr dib pt2 pb2 pl2 pr2 link yv-green br2">
+                          Share
+                        </span>
+                      </@button>
+                    </social-share>
+                  </div>
+                  <div class="truncate ml1">
+                    <a role="button"
+                      href=out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.chapterifyUsfm(data.usfm))
+                      class="tr dib pt2 pb2 pl2 pr2 link yv-green br2">
+                      Read Full Chapter
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </if>
           </div>
         </div>
       </div>
