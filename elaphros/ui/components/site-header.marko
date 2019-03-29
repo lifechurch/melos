@@ -7,7 +7,7 @@
           <p class="pa0 ma0 f7 mid-gray mt1">${out.global.__('features.bible.home')}</p>
         </div>
       </a>
-      <a href="${out.global.seoUtils.getCanonicalUrl('bible', '111', 'NIV', 'JHN.1', out.global.locale)}" class="link dim">
+      <a href=out.global.seoUtils.getCanonicalUrl('bible', '111', 'NIV', 'JHN.1', out.global.locale) class="link dim">
         <div class="flex flex-column items-center mr4-m mr3">
           <reader-icon />
           <p class="pa0 ma0 f7 mid-gray mt1">${out.global.__('features.bible.read')}</p>
@@ -29,7 +29,7 @@
     <div on="tap: site-header-search.show, site-header-nav.hide"
       role="button"
       tabindex="0"
-      aria-label="${out.global.__('features.bible.open search')}"
+      aria-label=out.global.__('features.bible.open search')
       class="w-auto flex items-center justify-center ma0 outline-0 pa2 dn-l">
       <search-icon></search-icon>
     </div>
@@ -48,7 +48,7 @@
   <div on="tap: header-more-menu.toggle"
     role="button"
     tabindex="0"
-    aria-label="${out.global.__('features.bible.open sidebar')}"
+    aria-label=out.global.__('features.bible.open sidebar')
     class="w-auto flex items-center justify-center ma0 pl2 pt2 pb2 outline-0 dn-l">
     <hamburger-icon></hamburger-icon>
   </div>

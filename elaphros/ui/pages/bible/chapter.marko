@@ -23,7 +23,8 @@
       ampComponents=ampComponents>
     </amp-components>
 
-    <await(promiseData from data.allPromises)>
+    <await(data.allPromises)>
+      <@then|promiseData|>
       $ const chapter = promiseData[0]
       $ const version = promiseData[1]
       $ const title = `${chapter.reference.human}, ${version.local_title} (${version.local_abbreviation.toUpperCase()}) | The Bible App`
@@ -32,12 +33,12 @@
       <hreflang-tags
         locales=data.appLocales
         host=data.requestHost
-        canonicalUrl="${out.global.canonicalUrl}"
+        canonicalUrl=out.global.canonicalUrl
         usfm=chapter.reference.usfm[0]
         versionId=version.id
         versionAbbr=version.local_abbreviation
         pageType="bible"
-        locale="${out.global.locale}">
+        locale=out.global.locale>
       </hreflang-tags>
 
       <header-tags
@@ -46,13 +47,15 @@
         deepLink=data.deepLink
         metaImages=data.metaImages
         twitterCard="summary"
-        canonicalUrl="${out.global.canonicalUrl}">
+        canonicalUrl=out.global.canonicalUrl>
       </header-tags>
+      </@then>
     </await>
   </@head>
   <@body>
 
-    <await(promiseData from data.allPromises)>
+    <await(data.allPromises)>
+      <@then|promiseData|>
       $ const chapter = promiseData[0]
       $ const version = promiseData[1]
 
@@ -64,22 +67,22 @@
           "@type": "ListItem",
           "position": 1,
           "item": {
-            "@id": "${data.requestHost}",
+            "@id": `${data.requestHost}`,
             "name": "Bible"
           }
         },{
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@id": "${data.requestHost}/versions/${data.versionId}",
-            "name": "${version.local_abbreviation.toUpperCase()}"
+            "@id": `${data.requestHost}/versions/${data.versionId}`,
+            "name": `${version.local_abbreviation.toUpperCase()}`
           }
         },{
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@id": "${out.global.canonicalUrl}",
-            "name": "${chapter.reference.human}"
+            "@id": `${out.global.canonicalUrl}`,
+            "name": `${chapter.reference.human}`
           }
         }]
       }
@@ -90,38 +93,41 @@
       <app-default-state></app-default-state>
 
       <bible-default-state
-        language="${version.language.language_tag}"
-        book="${chapter.reference.usfm[0].split('.')[0]}">
+        language=version.language.language_tag
+        book=chapter.reference.usfm[0].split('.')[0]>
       </bible-default-state>
 
       <div class="mw6 center pa3 pt4 pb7 mt6">
-       <a if(chapter.previous)
+      <if(chapter.previous)>
+       <a 
         class="bible-nav-button nav-left fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white left-1"
-        href="${out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, chapter.previous.usfm[0], out.global.locale)}"
-        title="${chapter.previous.human}"
+        href=out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, chapter.previous.usfm[0], out.global.locale)
+        title=chapter.previous.human
         data-vars-event-category="Bible Chapter"
         data-vars-event-action="Previous"
-        data-vars-event-label="${chapter.previous.usfm[0]}"
+        data-vars-event-label=chapter.previous.usfm[0]
        >
           <div class="flex" >
             <reader-arrow-left />
           </div>
        </a>
-
-       <a if(chapter.next)
+       </if>
+       <if(chapter.next)>
+       <a 
         class="bible-nav-button nav-right fixed dim br-100 ba b--black-20 pa2 pa3-m flex items-center justify-center bg-white right-1"
-        href="${out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, chapter.next.usfm[0], out.global.locale)}"
-        title="${chapter.next.human}"
+        href=out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, chapter.next.usfm[0], out.global.locale)
+        title=chapter.next.human
         data-vars-event-category="Bible Chapter"
         data-vars-event-action="Next"
-        data-vars-event-label="${chapter.next.usfm[0]}"
+        data-vars-event-label=chapter.next.usfm[0]
        >
           <div class="flex" >
             <reader-arrow-right />
           </div>
        </a>
+       </if>
 
-        <div class="yv-bible-text ${version.language.text_direction === 'rtl' ? 'tr' : ''}" dir="${version.language.text_direction}">
+        <div class=`yv-bible-text ${version.language.text_direction === 'rtl' ? 'tr' : ''}` dir=version.language.text_direction>
           <div class="reader">$!{chapter.content}</div>
         </div>
         <bible-copyright version=version usfm=chapter.reference.usfm[0]></bible-copyright>
@@ -133,20 +139,20 @@
             on="tap: verse-links.toggleVisibility"
             data-vars-event-category="Bible Chapter"
             data-vars-event-action="EBV Expand"
-            data-vars-event-label="${chapter.reference.usfm[0]}"
+            data-vars-event-label=chapter.reference.usfm[0]
           >
             ${out.global.__mf("features.bible.explore by verse", { chapter_name: chapter.reference.human })}
           </h4>
           <ul hidden class="list ma0 pa3" id="verse-links">
-            <for(vl in data.verseLinks)>
+            <for|vl| of=data.verseLinks>
               <li class="pb3 tc">
                 <a
-                  title="${chapter.reference.human}:${vl.split('.').splice(-1)} | ${version.local_title}"
+                  title=`${chapter.reference.human}:${vl.split('.').splice(-1)} | ${version.local_title}`
                   class="link silver"
-                  href="${out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, vl, out.global.locale)}"
+                  href=out.global.seoUtils.getCanonicalUrl('bible', data.versionId, version.local_abbreviation, vl, out.global.locale)
                   data-vars-event-category="Bible Chapter"
                   data-vars-event-action="EBV Click"
-                  data-vars-event-label="${data.versionId}/${vl}"
+                  data-vars-event-label=`${data.versionId}/${vl}`
                 >
                   ${chapter.reference.human}:${vl.split('.').splice(-1)}
                 </a>
@@ -155,6 +161,7 @@
           </ul>
         </nav>
       </div>
+      </@then>
     </await>
   </@body>
 </site-layout>

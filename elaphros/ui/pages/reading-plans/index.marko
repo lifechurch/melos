@@ -2,7 +2,8 @@ import selectImageFromList from '@youversion/utils/lib/images/selectImageFromLis
 
 <site-layout>
   <@head>
-    <await(plan from data.planPromise)>
+    <await(data.planPromise)>
+      <@then|plan|>
       $ const title = "Title"
       $ const description = "Plan"
       <title> ${title} | The Bible App | Bible.com</title>
@@ -11,6 +12,7 @@ import selectImageFromList from '@youversion/utils/lib/images/selectImageFromLis
       <meta name="og:description" content="${description}" />
       <meta name="twitter:title" content="${title}" />
       <meta name="twitter:description" content="${description}" />
+      </@then>
     </await>
   </@head>
   <@body>
@@ -20,42 +22,46 @@ import selectImageFromList from '@youversion/utils/lib/images/selectImageFromLis
         <a href="#" class="dib link dim bg-yv-green white b--yv-green ba f6 pv2 ph4 br2 br--right">Discover</a>
       </div>
 
-      <await(plan from data.planPromise)>
-        <div>
-          <img class="w-100 br3" src="${selectImageFromList({ images: plan.images, width: 1280 }).url}" alt="${plan.name.en}" />
-          <div class="cf bb b--black-20 pv4">
-            <div class="fl w-two-thirds">
-              <h1 class="f4 mt0">${plan.name.en}</h1>
-              <p class="f6 gray">${plan.formatted_length.en}</p>
-              <p class="f6 near-black lh-copy mt3 mb4">${plan.about.text.en}</p>
-              <p class="f6 gray ttu tracked">Publisher</p>
-              <p class="f6 near-black lh-copy">${plan.copyright.text.en}</p>
-              <a class="f6 link yv-green underline-hover" href="${plan.publisher_url}" alt="${plan.name.en}">About the Publisher</a>
-            </div>
-            <div class="fl w-third pl4">
-              <button class="bn bg-yv-green white f6 pv2 ph4 br2 w-100">Start this Plan</button>
-              <div class="gray f6 tc mt3 bb b--black-20 pb3">
-                <a class="f6 link yv-green underline-hover" href="${plan.publisher_url}" alt="${plan.name.en}">Save for Later</a> •
-                <a class="f6 link yv-green underline-hover" href="${plan.publisher_url}" alt="${plan.name.en}">Sample</a>
+      <await(data.planPromise)>
+        <@then|plan|>
+          <div>
+            <img class="w-100 br3" src="${selectImageFromList({ images: plan.images, width: 1280 }).url}" alt="${plan.name.en}" />
+            <div class="cf bb b--black-20 pv4">
+              <div class="fl w-two-thirds">
+                <h1 class="f4 mt0">${plan.name.en}</h1>
+                <p class="f6 gray">${plan.formatted_length.en}</p>
+                <p class="f6 near-black lh-copy mt3 mb4">${plan.about.text.en}</p>
+                <p class="f6 gray ttu tracked">Publisher</p>
+                <p class="f6 near-black lh-copy">${plan.copyright.text.en}</p>
+                <a class="f6 link yv-green underline-hover" href="${plan.publisher_url}" alt="${plan.name.en}">About the Publisher</a>
+              </div>
+              <div class="fl w-third pl4">
+                <button class="bn bg-yv-green white f6 pv2 ph4 br2 w-100">Start this Plan</button>
+                <div class="gray f6 tc mt3 bb b--black-20 pb3">
+                  <a class="f6 link yv-green underline-hover" href="${plan.publisher_url}" alt="${plan.name.en}">Save for Later</a> •
+                  <a class="f6 link yv-green underline-hover" href="${plan.publisher_url}" alt="${plan.name.en}">Sample</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </@then>
       </await>
-      <await (readingPlans from data.recommendedPromise)>
-        <div class="pv3">
-          <h3 class="near-black mb4">Related Plans</h3>
-          <div class="cf ph0 center">
-            <for(plan in readingPlans.reading_plans)>
-              <div class="fl w-third ph2 pb3">
-                <a href="/reading-plans/${plan.id}-${plan.slug}" class="link block">
-                  <img class="w-100 br2" src="${selectImageFromList({ images: plan.images, width: 640, height: 360 }).url}" alt="${plan.name.default}" />
-                  <h2 class="h3 f6 gray normal mb0">${plan.name.default}</h2>
-                </a>
-              </div>
-            </for>
+      <await(data.recommendedPromise)>
+        <@then|readingPlans|>
+          <div class="pv3">
+            <h3 class="near-black mb4">Related Plans</h3>
+            <div class="cf ph0 center">
+              <for(plan in readingPlans.reading_plans)>
+                <div class="fl w-third ph2 pb3">
+                  <a href="/reading-plans/${plan.id}-${plan.slug}" class="link block">
+                    <img class="w-100 br2" src="${selectImageFromList({ images: plan.images, width: 640, height: 360 }).url}" alt="${plan.name.default}" />
+                    <h2 class="h3 f6 gray normal mb0">${plan.name.default}</h2>
+                  </a>
+                </div>
+              </for>
+            </div>
           </div>
-        </div>
+        </@then>
       </await>
     </div>
   </@body>

@@ -64,6 +64,7 @@ module.exports = {
     'no-control-regex': 0,
     'no-else-return': 0,
     'no-plusplus': 0,
-    'no-console': 0
+    'no-console': 0,
+    'prefer-arrow-callback': 0
   }
 }

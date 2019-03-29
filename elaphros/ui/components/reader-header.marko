@@ -16,16 +16,18 @@
         usfm=input.chapter.reference.usfm[0]
         version=input.version>
       </bible-version-picker>
-      <div if(input.chapter.audio) class="w-auto flex items-center">
+      <if(input.chapter.audio) >
+      <div class="w-auto flex items-center">
         <button
           class="ma0 pa0 bn bg-transparent outline-0"
-          aria-label="${out.global.__('features.bible.audio open')}"
+          aria-label=out.global.__('features.bible.audio open')
           data-vars-event-category="Bible Chapter"
           data-vars-event-action="Open Audio"
           on="tap: bible-audio-player.show, bible-version-list.hide, bible-language-list.hide, bible-chapter-list.hide, bible-book-list.hide">
             <audio-icon></audio-icon>
         </button>
       </div>
+      </if>
     </div>
   </header>
 
@@ -61,8 +63,8 @@
       <div class="relative w-100 h-100 bg-white">
         <amp-list
           layout="fill"
-          [src]="'/json/bible/books/${input.version.id}?filter=' + bible.bookFilter"
-          src="/json/bible/books/${input.version.id}?filter="
+          [src]=`'/json/bible/books/${input.version.id}?filter=' + bible.bookFilter`
+          src=`/json/bible/books/${input.version.id}?filter=`
           single-item
           items=".">
           <template type="amp-mustache">
@@ -94,8 +96,8 @@
     <div class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-2 overflow-scroll smooth-scroll bottom-0 bottom-2-m bg-white" >
       <amp-list
         layout="fill"
-        [src]="'/json/bible/books/${input.version.id}/' + bible.book + '/chapters'"
-        src="/json/bible/books/${input.version.id}/${input.chapter.reference.usfm[0].split('.')[0]}/chapters"
+        [src]=`'/json/bible/books/${input.version.id}/' + bible.book + '/chapters'`
+        src=`/json/bible/books/${input.version.id}/${input.chapter.reference.usfm[0].split('.')[0]}/chapters`
         single-item
         items=".">
         <template type="amp-mustache">
@@ -131,7 +133,7 @@
                   <div class="w-20 tc br bb b--black-20 truncate">
                     <a
                       target="_self"
-                      href="${out.global.seoUtils.getCanonicalUrl('bible', input.version.id, input.version.local_abbreviation, '{{usfm}}', out.global.locale, false).replace('USFM', 'usfm')}"
+                      href=out.global.seoUtils.getCanonicalUrl('bible', input.version.id, input.version.local_abbreviation, '{{usfm}}', out.global.locale, false).replace('USFM', 'usfm')
                       class="black-50 link f7 f6-m pa3 dib w-100"
                       data-vars-event-category="Chapter Picker"
                       data-vars-event-action="Select Chapter"
@@ -150,7 +152,8 @@
   </amp-layout>
 
   <amp-layout id="bible-audio-player" hidden layout="fill">
-    <div if(input.chapter.audio) class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-2 overflow-hidden bottom-0">
+    <if(input.chapter.audio)>
+    <div class="fixed w-100 measure-wide-m bl-m br-m bb-m shadow-2 b--black-20 center-m left-0 bible-pick-list right-0 z-2 overflow-hidden bottom-0">
       <div class="bg-light-gray pa2 flex justify-center items-center w-100">
         <div class="w-20 truncate f7 f6-m black-30">
           &nbsp;
@@ -177,9 +180,12 @@
           <div fallback>
             <p>${out.global.__('features.bible.no audio support')}</p>
           </div>
-          <source for(src in Object.entries(input.chapter.audio[0].download_urls)) src=src[1]>
+          <for|src| of=Object.entries(input.chapter.audio[0].download_urls)>
+            <source src=src[1]>
+          </for>
         </amp-audio>
       </div>
     </div>
+    </if>
   </amp-layout>
 </div>

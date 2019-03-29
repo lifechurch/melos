@@ -1,15 +1,15 @@
-<span role="button" tabindex="0" on="tap: social-share-${input.uniqueKey}.show">
-  <include(input.button) />
+<span role="button" tabindex="0" on=`tap: social-share-${input.uniqueKey}.show`>
+  <${input.button}/>
 </span>
 
-<amp-layout id="social-share-${input.uniqueKey}" hidden layout="fixed" width="48" height="48">
+<amp-layout id=`social-share-${input.uniqueKey}` hidden layout="fixed" width="48" height="48">
   <div class="fixed w-100 left-0 top-0 right-0 z-2 overflow-scroll smooth-scroll bottom-0 bottom-2-m bg-light-gray">
     <div class="pa3">
       <div class="w-100 flex">
         <div class="w-100 pl0 pt2 pb2 pr0">
           <youversion-logo width=150 height=21></youversion-logo>
         </div>
-        <div class="pl3 pr0 pt2 pb2 w-auto" tabindex="0" role="button" on="tap: social-share-${input.uniqueKey}.hide">
+        <div class="pl3 pr0 pt2 pb2 w-auto" tabindex="0" role="button" on=`tap: social-share-${input.uniqueKey}.hide`>
           <close-icon></close-icon>
         </div>
       </div>
@@ -20,14 +20,14 @@
           <div class="flex flex-wrap items-center justify-center">
             <amp-social-share class="br2 mr3 mb3"
               type="email"
-              data-param-text="${input.title}"
-              data-param-body="${input.description}\n\n${input.fullRequestURL}"
+              data-param-text=input.title
+              data-param-body=`${input.description}\n\n${input.fullRequestURL}`
               layout="fixed" width="48" height="48">
             </amp-social-share>
             <amp-social-share class="br2 mr3 mb3"
               type="facebook"
               data-param-app_id="105030176203924"
-              data-param-quote="${input.title}: ${input.description}"
+              data-param-quote=`${input.title}: ${input.description}`
               layout="fixed" width="48" height="48">
             </amp-social-share>
             <amp-social-share class="br2 mr3 mb3"
@@ -40,32 +40,32 @@
             </amp-social-share>
             <amp-social-share class="br2 mr3 mb3"
               type="pinterest"
-              data-param-media="${input.metaImages.other}"
+              data-param-media=input.metaImages.other
               layout="fixed" width="48" height="48">
             </amp-social-share>
             <amp-social-share class="br2 mr3 mb3"
               type="tumblr"
-              data-param-text="${input.title}: ${input.description}"
+              data-param-text=`${input.title}: ${input.description}`
               layout="fixed" width="48" height="48">
             </amp-social-share>
             <amp-social-share class="br2 mr3 mb3"
               type="twitter"
-              data-param-text="${input.title}: ${input.description}"
+              data-param-text=`${input.title}: ${input.description}`
               layout="fixed" width="48" height="48">
             </amp-social-share>
             <amp-social-share class="br2 mr3 mb3"
               type="whatsapp"
-              data-param-text="${input.title}: ${input.description}"
+              data-param-text=`${input.title}: ${input.description}`
               layout="fixed" width="48" height="48">
             </amp-social-share>
             <amp-social-share class="br2 mr3 mb3"
               type="line"
-              data-param-text="${input.title}: ${input.description}"
+              data-param-text=`${input.title}: ${input.description}`
               layout="fixed" width="48" height="48">
             </amp-social-share>
             <amp-social-share class="br2 mr3 mb3"
               type="sms"
-              data-param-body="${input.title}: ${input.description} \n\n ${input.fullRequestURL}"
+              data-param-body=`${input.title}: ${input.description} \n\n ${input.fullRequestURL}`
               layout="fixed" width="48" height="48">
             </amp-social-share>
           </div>
