@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 const path = require('path')
-const fastify = require('fastify')({ logger: true })
+const fastify = require('fastify')({ logger: true, ignoreTrailingSlash: true })
 const { createLightship } = require('lightship')
 
 // Third-Party
