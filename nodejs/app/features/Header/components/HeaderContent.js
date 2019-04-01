@@ -194,8 +194,8 @@ class HeaderContent extends Component {
 
     const signUpButtons = !isLoggedIn && (
     <ButtonGroup buttonWidth={100}>
-      <Button to={localizedLink('/sign-in')} useClientRouting={false}><FormattedHTMLMessage id="header.sign in" /></Button>
-      <Button to={localizedLink('/sign-up')} useClientRouting={false}><FormattedHTMLMessage id="header.sign up" /></Button>
+      <Button to={localizedLink('/sign-in', serverLanguageTag)} useClientRouting={false}><FormattedHTMLMessage id="header.sign in" /></Button>
+      <Button to={localizedLink('/sign-up', serverLanguageTag)} useClientRouting={false}><FormattedHTMLMessage id="header.sign up" /></Button>
     </ButtonGroup>
     )
 
