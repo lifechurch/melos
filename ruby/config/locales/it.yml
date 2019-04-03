@@ -1385,6 +1385,7 @@ it:
         badges: "Hai annullato l'iscrizione a <b>email Distintivi</b>"
         comments: "Hai annullato l'iscrizione a <b>email Commenti</b>"
         friendships: "Hai annullato l'iscrizione a <b>email Amicizie</b>"
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "Hai annullato l'iscrizione a <b>email Mi Piace</b>"
         moments: "Hai annullato l'iscrizione a <b> email Momenti</b>"
         newsletter: "Hai annullato l'iscrizione a <b>email Newsletter</b>"
