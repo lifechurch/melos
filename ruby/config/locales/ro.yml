@@ -1403,6 +1403,7 @@ ro:
         badges: "Te-ai dezabonat cu succes de la email-urile legate de <b>Insigne</b>."
         comments: "Te-ai dezabonat cu succes de la email-urile legate de <b>Comentarii</b>."
         friendships: "Te-ai dezabonat cu succes de la email-urile legate de <b>Prietenii</b>."
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "Te-ai dezabonat cu succes de la email-urile legate de <b>Aprecieri</b>."
         moments: "Te-ai dezabonat cu succes de la email-urile legate de <b>Momente</b>."
         newsletter: "Te-ai dezabonat cu succes de la email-urile cu <b>Noutăți</b>."
