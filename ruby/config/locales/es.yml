@@ -1385,7 +1385,7 @@ es:
         badges: "Ha cancelado todos los correos de<b>Insignias</b>."
         comments: "Ha cancelado todos los correos de <b>Comentarios</b>."
         friendships: "Ha cancelado todos los correos de <b>Amigos</b>."
-        digest: "You successfully unsubscribed from <b>Digest</b> emails."
+        digest: "Canceló la suscripción a los correos <b>Recopilación</b>."
         likes: "Ha cancelado todos los correos de <b>Me Gusta</b>."
         moments: "Ha cancelado todos los correos de <b>Momentos</b>."
         newsletter: "Ha cancelado los correos de <b>Noticias</b>."
