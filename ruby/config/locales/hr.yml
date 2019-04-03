@@ -1403,6 +1403,7 @@ hr:
         badges: "Uspješna odjava s email liste<b>Značke</b>."
         comments: "Uspješna odjava s email liste <b>Komentari</b>."
         friendships: "Uspješna odjava s email liste<b>Prijateljstva</b>."
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "Uspješna odjava s email liste <b>Sviđanja</b>."
         moments: "Uspješna odjava s email liste <b>Trenuci</b>."
         newsletter: "Uspješna odjava s email liste<b>Novosti</b>."
