@@ -1,5 +1,4 @@
 {
-  "lerna": "2.8.0",
   "npmClient": "npm",
   "npmClientArgs": [
     "--ignore-engines"

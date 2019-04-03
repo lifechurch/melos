@@ -35,12 +35,12 @@ class UnsubscribeConfirmation extends Component {
     const {
       status,
       lensStatus,
-      bafkStatus,
-      product
+      bafkAllStatus,
+      product,
     } = this.props
 
     if (product === 'lens') return lensStatus
-    else if (product === 'bafk') return bafkStatus
+    else if (product === 'bafk') return bafkAllStatus
     else return status
   }
 
@@ -48,12 +48,12 @@ class UnsubscribeConfirmation extends Component {
     const {
       errors,
       lensErrors,
-      bafkErrors,
-      product
+      bafkAllErrors,
+      product,
     } = this.props
 
     if (product === 'lens') return lensErrors
-    else if (product === 'bafk') return bafkErrors
+    else if (product === 'bafk') return bafkAllErrors
     else return errors
   }
 
@@ -102,7 +102,7 @@ class UnsubscribeConfirmation extends Component {
     let tokenValid = !!token
     if (['success', 'loading'].indexOf(status) > -1) {
       const plan_title = (plan && typeof plan === 'object') ? (plan.name[languageTag] || plan.name.default) : ''
-      statusText = <FormattedHTMLMessage id={`unsubscribe.success.${type}`} values={{ plan_title }} />
+      statusText = <FormattedHTMLMessage id={`unsubscribe.success.${type || 'all'}`} values={{ plan_title }} />
     } else {
       let errorType = 'other_type'
       errors.forEach((e) => {
@@ -177,6 +177,7 @@ UnsubscribeConfirmation.propTypes = {
     'likes',
     'moments',
     'newsletter',
+    'digest',
     'pwf_accepts',
     'pwf_comments',
     'reading_plans',
@@ -192,8 +193,8 @@ UnsubscribeConfirmation.propTypes = {
   errors: PropTypes.array,
   lensStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
   lensErrors: PropTypes.array,
-  bafkStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
-  bafkErrors: PropTypes.array,
+  bafkAllStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
+  bafkAllErrors: PropTypes.array,
   loggedIn: PropTypes.bool,
   localizedLink: PropTypes.func.isRequired,
   unsubscribe: PropTypes.func.isRequired,
@@ -204,16 +205,18 @@ UnsubscribeConfirmation.propTypes = {
 }
 
 UnsubscribeConfirmation.defaultProps = {
-  type: null,
+  type: 'all',
   token: null,
   data: null,
   status: 'loading',
   lensStatus: 'loading',
   bafkStatus: 'loading',
+  bafkAllStatus: 'loading',
   loggedIn: false,
   errors: [],
   lensErrors: [],
   bafkErrors: [],
+  bafkAllErrors: [],
   tokenIdentity: {},
   plan: null,
   product: null
