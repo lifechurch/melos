@@ -1385,6 +1385,7 @@ tr:
         badges: "<b>Rozetler</b> e-postalarından başarıyla kaydın silindi."
         comments: "Yorum e-postalardan başarıyla kaydın silindi."
         friendships: "Dostluklar e-postalardan başarıyla kaydın silindi."
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "Beğenme e-postalarından başarıyla kaydın silindi."
         moments: "Anlar e-postalardan başarıyla kaydın silindi."
         newsletter: "Bülten e-postalardan başarıyla kaydın silindi."
