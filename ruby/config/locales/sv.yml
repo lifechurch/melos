@@ -1385,6 +1385,7 @@ sv:
         badges: "Du har avslutat din prenumeration på e-post angående <b>Emblem</b>."
         comments: "Du har avslutat din prenumeration på e-post angående <b>Kommentarer</b>."
         friendships: "Du har avslutat din prenumeration på e-post angående <b>Vänskap</b>."
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "Du har avslutat din prenumeration på e-post angående <b>Gillningar</b>."
         moments: "Du har avslutat din prenumeration på e-post angående <b>Stunder</b>."
         newsletter: "Du har avslutat din prenumeration på e-post angående <b>Nyhetsbrev</b>."
