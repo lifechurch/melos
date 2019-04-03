@@ -1367,6 +1367,7 @@ ja:
         badges: "<b>バッジ</b>に関する通知メールからの登録解除が完了しました。"
         comments: "<b>コメント</b>に関する通知メールからの登録解除が完了しました。"
         friendships: "<b>フレンドシップ</b>に関する通知メールからの登録解除が完了しました。"
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "<b>いいね！</b>に関する通知メールからの登録解除が完了しました。"
         moments: "<b>モーメント</b>に関する通知メールからの登録解除が完了しました。"
         newsletter: "<b>ニュースレター</b>からの登録解除が完了しました。"
