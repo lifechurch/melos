@@ -1385,6 +1385,7 @@ ca:
         badges: "T'has donat de baixa correctament dels correus electrònics d'<b>Insígnies</b>."
         comments: "T'has donat de baixa correctament dels correus electrònics de <b>Comentaris</b>."
         friendships: "T'has donat de baixa correctament dels correus electrònics d'<b>Amics</b>."
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "T'has donat de baixa correctament dels correus electrònics de <b>&quot;M'ha agradat&quot;</b>."
         moments: "T'has donat de baixa correctament dels correus electrònics de <b>Moments</b>."
         newsletter: "T'has donat de baixa correctament dels correus electrònics de <b>Butlletí</b>."
