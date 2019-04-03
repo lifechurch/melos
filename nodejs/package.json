@@ -1,6 +1,6 @@
 {
   "name": "youversion-events",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "private": true,
   "license": "ISC",
   "scripts": {
@@ -14,12 +14,12 @@
     "bootstrap:packages": "lerna bootstrap --hoist"
   },
   "dependencies": {
-    "@youversion/api-redux": "^0.5.9",
-    "@youversion/js-api": "^1.1.2",
+    "@youversion/api-redux": "^0.5.10",
+    "@youversion/js-api": "^1.1.3",
     "@youversion/melos": "^0.0.27",
     "@youversion/stringer-things": "0.0.3",
     "@youversion/token-storage": "^0.0.59",
-    "@youversion/utils": "^1.0.53",
+    "@youversion/utils": "^1.0.54",
     "async": "^2.0.0-rc.3",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.1.1",
@@ -86,7 +86,7 @@
     "keymirror": "^0.1.1",
     "langmap": "0.0.12",
     "langs": "^1.0.1",
-    "lerna": "^2.8.0",
+    "lerna": "^3.13.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "lightship": "^2.1.0",
@@ -155,7 +155,6 @@
     "xmldom": "^0.1.27",
     "xpath": "0.0.24"
   },
-  "devDependencies": {},
   "browser": {
     "stream-browserify": false,
     "raven": false

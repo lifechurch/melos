@@ -8,7 +8,12 @@ import Users from '@youversion/api-redux/lib/endpoints/users/action'
 import ReadingPlans from '@youversion/api-redux/lib/endpoints/readingPlans/action'
 import { unsubscribeStatus, unsubscribeErrors, isLoggedIn, getNotificationSettings, getVOTDSubscription } from '@youversion/api-redux/lib/endpoints/notifications/reducer'
 import LensSettings, { unsubscribeStatus as lensUnsubscribeStatus, unsubscribeErrors as lensUnsubscribeErrors } from '@youversion/api-redux/lib/endpoints/lens-settings'
-import Bafk, { unsubscribeStatus as bafkUnsubscribeStatus, unsubscribeErrors as bafkUnsubscribeErrors } from '@youversion/api-redux/lib/endpoints/bafk'
+import Bafk, {
+  unsubscribeStatus as bafkUnsubscribeStatus,
+  unsubscribeAllStatus as bafkUnsubscribeAllStatus,
+  unsubscribeErrors as bafkUnsubscribeErrors,
+  unsubscribeAllErrors as bafkUnsubscribeAllErrors
+} from '@youversion/api-redux/lib/endpoints/bafk'
 import { getTokenIdentity, getLoggedInUser } from '@youversion/api-redux/lib/endpoints/users/reducer'
 import { getMyPlans, getPlanById } from '@youversion/api-redux/lib/endpoints/readingPlans/reducer'
 import moment from 'moment'
@@ -134,7 +139,7 @@ class Unsubscribe extends Component {
     } = this.props
 
     if (product === 'lens') return this.unsubscribeLens({ token })
-    if (product === 'bafk') return this.unsubscribeBafk({ token })
+    if (product === 'bafk') return this.unsubscribeAllBafk({ token, type })
 
     return new Promise((resolve, reject) => {
       const { dispatch } = this.props
@@ -183,11 +188,12 @@ class Unsubscribe extends Component {
     })
   }
 
-  unsubscribeBafk = ({ token }) => {
+  unsubscribeAllBafk = ({ token, type }) => {
     return new Promise((resolve, reject) => {
       const { dispatch } = this.props
-      dispatch(Bafk.actions.unsubscribe.put({
-        token
+      dispatch(Bafk.actions.unsubscribeAll.put({
+        token,
+        type: type || ''
       }, {
         body: {
           updated_dt: moment().utc().format()
@@ -254,9 +260,11 @@ class Unsubscribe extends Component {
       status,
       lensStatus,
       bafkStatus,
+      bafkAllStatus,
       loggedIn,
       errors,
       lensErrors,
+      bafkAllErrors,
       bafkErrors,
       hosts,
       tokenIdentity,
@@ -284,6 +292,7 @@ class Unsubscribe extends Component {
             status,
             lensStatus,
             bafkStatus,
+            bafkAllStatus,
             loggedIn,
             token,
             type,
@@ -293,6 +302,7 @@ class Unsubscribe extends Component {
             errors,
             lensErrors,
             bafkErrors,
+            bafkAllErrors,
             hosts,
             tokenIdentity,
             notificationSettings,
@@ -320,9 +330,11 @@ Unsubscribe.propTypes = {
   status: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
   lensStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
   bafkStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
+  bafkAllStatus: PropTypes.oneOf([ 'loading', 'success', 'other', 'error' ]),
   errors: PropTypes.array,
   lensErrors: PropTypes.array,
   bafkErrors: PropTypes.array,
+  bafkAllErrors: PropTypes.array,
   loggedIn: PropTypes.bool,
   tokenIdentity: PropTypes.object,
   loggedInUser: PropTypes.object,
@@ -337,11 +349,13 @@ Unsubscribe.defaultProps = {
   status: 'loading',
   lensStatus: 'loading',
   bafkStatus: 'loading',
+  bafkAllStatus: 'loading',
   loggedIn: false,
   hosts: {},
   errors: [],
   lensErrors: [],
   bafkErrors: [],
+  bafkAllErrors: [],
   tokenIdentity: {},
   loggedInUser: null,
   myPlans: {},
@@ -365,7 +379,9 @@ function mapStateToProps(state, props) {
     lensStatus: lensUnsubscribeStatus(state),
     lensErrors: lensUnsubscribeErrors(state),
     bafkStatus: bafkUnsubscribeStatus(state),
+    bafkAllStatus: bafkUnsubscribeAllStatus(state),
     bafkErrors: bafkUnsubscribeErrors(state),
+    bafkAllErrors: bafkUnsubscribeAllErrors(state),
     loggedIn: isLoggedIn(state),
     hosts: state.hosts,
     tokenIdentity: getTokenIdentity(state),
