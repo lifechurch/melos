@@ -1385,6 +1385,7 @@ fi:
         badges: "Peruit onnistuneesti <b> Suoritusmerkki </b> -sähköpostien tilauksen."
         comments: "Peruit onnistuneesti <b> Kommentit </b> -sähköpostien tilauksen."
         friendships: "Peruit onnistuneesti <b> Ystävyys </b> -sähköpostien tilauksen."
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "Peruit onnistuneesti <b> Tykkää </b> -sähköpostien tilauksen."
         moments: "Peruit onnistuneesti <b> Hetket </b> -sähköpostien tilauksen."
         newsletter: "Peruit onnistuneesti <b> Uutiskirje </b> -sähköpostien tilauksen."
