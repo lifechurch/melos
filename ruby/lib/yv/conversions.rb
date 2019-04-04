@@ -73,7 +73,7 @@ module YV
 		      'pt-BR' => 'por',
 		      'zh-CN' => 'zho',
           'zh-TW' => 'zho_tw',
-          'zh-HK' => 'zho',
+          'zh-HK' => 'zho_tw',
 		      'es-ES' => 'spa_es',
           'my-MM' => 'mya_zaw',
           'no' => 'nob',
