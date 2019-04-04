@@ -93,7 +93,7 @@ YouversionWeb::Application.routes.draw do
 	get "/popular-bible-verses", to: "pages#trending", :as => 'popular'
   get "/trending-bible-verses", to: "redirects#trending"
   get "/verse-of-the-day(/:usfm/:image_id)", to: "pages#votd", as: "votd", :constraints => {:usfm => /[^\/]*/}
-  get "/bible-verse-of-the-day", to: "redirects#votd"
+  get "/bible-verse-of-the-day", to: redirect("/verse-of-the-day")
   # get "/wmf",           to: "redirects#wmf"
   # get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"
