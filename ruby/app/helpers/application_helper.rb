@@ -240,7 +240,7 @@ module ApplicationHelper
     # for users that aren't logged in.
     # TODO: Remove this + the `else` version of this URL.
     if request.host_with_port.to_s.include?('my.bible') or request.host_with_port.to_s.include?('my-staging.bible')
-      "#{locale_dir}/bible-verse-of-the-day"
+      "#{locale_dir}/verse-of-the-day"
     else
       "#{locale_dir}/verse-of-the-day"
     end
