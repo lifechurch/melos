@@ -1385,7 +1385,7 @@ pt:
         badges: "Você cancelou o recebimento de notificações de e-mails de <b>Medalhas</b> com sucesso."
         comments: "Você cancelou o recebimento de notificações de e-mails de <b>Comentários</b> com sucesso."
         friendships: "Você cancelou o recebimento de notificações de e-mails de <b>Amizades</b> com sucesso."
-        digest: "You successfully unsubscribed from <b>Digest</b> emails."
+        digest: "Você cancelou os e-mails sobre <b>Resumos Diários</b> com sucesso."
         likes: "Você cancelou o recebimento de notificações de e-mails de <b>Curtidas</b> com sucesso."
         moments: "Você cancelou o recebimento de notificações de e-mails de <b>Momentos</b> com sucesso."
         newsletter: "Você cancelou o recebimento de e-mails de <b>Informativo</b> com sucesso."
