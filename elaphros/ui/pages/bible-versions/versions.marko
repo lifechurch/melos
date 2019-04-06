@@ -1,0 +1,62 @@
+<site-layout
+  fullRequestURL=out.global.canonicalUrl
+  requestHost=data.requestHost
+  getLocalizedLink=data.getLocalizedLink
+  getPathWithoutLocale=data.getPathWithoutLocale>
+  <@head>
+  $ const ampComponents = [
+      { name: 'amp-mustache', type: 'template', version: '0.2' },
+      { name: 'amp-bind', type: 'element', version: '0.1' },
+      { name: 'amp-list', type: 'element', version: '0.1' },
+      { name: 'amp-selector', type: 'element', version: '0.1' },
+      { name: 'amp-audio', type: 'element', version: '0.1' },
+      { name: 'amp-sidebar', type: 'element', version: '0.1' },
+      { name: 'amp-form', type: 'element', version: '0.1' },
+      { name: 'amp-carousel', type: 'element', version: '0.1' },
+      { name: 'amp-social-share', type: 'element', version: '0.1' },
+      { name: 'amp-analytics', type: 'element', version: '0.1' },
+      { name: 'amp-install-serviceworker', type: 'element', version: '0.1' },
+      { name: 'amp-app-banner', type: 'element', version: '0.1' }
+    ]
+
+    <amp-components
+      ampComponents=ampComponents>
+    </amp-components>
+
+    $ const title = `Versions | The Bible App`
+    $ const description = 'Versions'.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0,200)
+
+    <hreflang-tags
+      locales=data.appLocales
+      host=data.requestHost
+      canonicalUrl=out.global.canonicalUrl
+      usfm="TODO Chaper USFM"
+      versionId="TODO VERSIONID"
+      versionAbbr="TODO LOCALABBR"
+      pageType="bible"
+      locale=out.global.locale>
+    </hreflang-tags>
+
+    <header-tags
+      title=title
+      description=description
+      deepLink=data.deepLink
+      twitterCard="summary"
+      canonicalUrl=out.global.canonicalUrl>
+    </header-tags>
+  </@head>
+  <@body>
+    <app-default-state></app-default-state>
+    <div class="mw6 center pt3 pb7 pl4 pr4">
+      <h1 class="pt3 near-black">Bible Versions</h1>
+      <for|language| of=data.req.getVersionLanguages()>
+        <a href=`/languages/${language.language_tag}` class="link">
+          <h4 class="mt4 mb1 near-black normal">${language.local_name}${language.name === language.local_name ? '' : ` [${language.name}]`}</h4>
+        </a>
+        <for|version| of=data.req.getVersionsForLanguage(language.language_tag)>
+          <a class="db pb2 lh-copy yv-green link" href=out.global.seoUtils.getCanonicalUrl('bible-version', version.id, version.title, out.global.locale)>${version.local_title}</a>
+        </for>
+      </for>
+    </div>
+  </@body>
+</site-layout>

@@ -1,0 +1,98 @@
+<site-layout
+  fullRequestURL=out.global.canonicalUrl
+  requestHost=data.requestHost
+  getLocalizedLink=data.getLocalizedLink
+  getPathWithoutLocale=data.getPathWithoutLocale>
+  <@head>
+  $ const ampComponents = [
+      { name: 'amp-mustache', type: 'template', version: '0.2' },
+      { name: 'amp-bind', type: 'element', version: '0.1' },
+      { name: 'amp-list', type: 'element', version: '0.1' },
+      { name: 'amp-selector', type: 'element', version: '0.1' },
+      { name: 'amp-audio', type: 'element', version: '0.1' },
+      { name: 'amp-sidebar', type: 'element', version: '0.1' },
+      { name: 'amp-form', type: 'element', version: '0.1' },
+      { name: 'amp-carousel', type: 'element', version: '0.1' },
+      { name: 'amp-social-share', type: 'element', version: '0.1' },
+      { name: 'amp-analytics', type: 'element', version: '0.1' },
+      { name: 'amp-install-serviceworker', type: 'element', version: '0.1' },
+      { name: 'amp-app-banner', type: 'element', version: '0.1' }
+    ]
+
+    <amp-components
+      ampComponents=ampComponents>
+    </amp-components>
+
+    <await(data.allPromises)>
+      <@then|promiseData|>
+      $ const version = promiseData[1]
+      $ const title = `${version.local_title} (${version.local_abbreviation.toUpperCase()}) | The Bible App`
+      $ const description = version.local_title.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0,200)
+
+      <hreflang-tags
+        locales=data.appLocales
+        host=data.requestHost
+        canonicalUrl=out.global.canonicalUrl
+        usfm="TODO Chaper USFM"
+        versionId=version.id
+        versionAbbr=version.local_abbreviation
+        pageType="bible"
+        locale=out.global.locale>
+      </hreflang-tags>
+
+      <header-tags
+        title=title
+        description=description
+        deepLink=data.deepLink
+        metaImages=data.metaImages
+        twitterCard="summary"
+        canonicalUrl=out.global.canonicalUrl>
+      </header-tags>
+      </@then>
+    </await>
+  </@head>
+  <@body>
+
+    <await(data.allPromises)>
+      <@then|promiseData|>
+      $ const version = promiseData[1]
+
+      <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": `${data.requestHost}`,
+            "name": "Bible"
+          }
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": `${data.requestHost}/versions/${data.versionId}`,
+            "name": `${version.local_abbreviation.toUpperCase()}`
+          }
+        },{
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": `${out.global.canonicalUrl}`,
+            "name": `TODO Chaper USFM`
+          }
+        }]
+      }
+      </script>
+
+      <app-default-state></app-default-state>
+
+
+      <div class="mw6 center pa3 pt4 pb7 mt6">
+        <h1>${version.local_title}</h1>
+      </div>
+      </@then>
+    </await>
+  </@body>
+</site-layout>

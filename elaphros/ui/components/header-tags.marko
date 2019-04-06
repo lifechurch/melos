@@ -11,23 +11,30 @@
 <meta property="og:url" content=out.global.canonicalUrl />
 <meta property="og:type" content="book" />
 <meta name="description" content=input.description />
-<meta name="twitter:image" content=input.metaImages.twitter />
-<meta property="og:image" content=input.metaImages.facebook />
+
+<if (input.metaImages)>
+  <meta name="twitter:image" content=input.metaImages.twitter />
+  <meta property="og:image" content=input.metaImages.facebook />
+</if>
+
 <meta property="og:title" content=input.title />
 <meta property="og:description" content=input.description />
 <meta name="twitter:title" content=input.title />
 <meta name="twitter:description" content=input.description />
 <meta name="twitter:card" content=input.twitterCard />
-<meta name="twitter:app:url:iphone" content=`youversion://${data.deepLink.ios}` />
-<meta name="twitter:app:url:ipad" content=`youversion://${data.deepLink.ios}` />
-<meta name="twitter:app:url:googleplay" content=`youversion://${data.deepLink.android}` />
-<meta name="apple-itunes-app" content=`app-id=282935706, app-argument=youversion://${data.deepLink.ios}` />
+
+<if (data.deeplink)>
+  <meta name="twitter:app:url:iphone" content=`youversion://${data.deepLink.ios}` />
+  <meta name="twitter:app:url:ipad" content=`youversion://${data.deepLink.ios}` />
+  <meta name="twitter:app:url:googleplay" content=`youversion://${data.deepLink.android}` />
+  <meta name="apple-itunes-app" content=`app-id=282935706, app-argument=youversion://${data.deepLink.ios}` />
+</if>
 
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "CreativeWork",
     "headline": input.title,
-    "image": input.metaImages.otherrs
+    "image": input.metaImages ? input.metaImages.other : ''
   }
 </script>
