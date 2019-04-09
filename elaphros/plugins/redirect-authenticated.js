@@ -4,7 +4,12 @@ const getPathWithoutLocale = require('../utils/localization/get-path-without-loc
 const skipRedirectsFor = [
   '/confirmation',
   '/friendships/accept/success',
-  '/friendships/accept/failure'
+  '/friendships/accept/failure',
+  '/versions'
+]
+
+const skipRedirectsForPatterns = [
+  '/versions'
 ]
 
 module.exports = fp(function redirectAuthenticated(fastify, opts, next) {
@@ -32,6 +37,13 @@ module.exports = fp(function redirectAuthenticated(fastify, opts, next) {
       fastify.log.info(`Request made to '${urlData.path}'. Skipping redirect behavior.`)
       hookNext()
       return
+    }
+
+    for (let patternIndex = 0; patternIndex < skipRedirectsForPatterns.length; patternIndex++) {
+      if (getPathWithoutLocale(urlData.path).startsWith(skipRedirectsForPatterns[patternIndex])) {
+        hookNext()
+        return
+      }
     }
 
     const WWW_SUBDOMAIN = process.env.WWW_SUBDOMAIN || 'www.'
