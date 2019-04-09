@@ -41,6 +41,7 @@ module.exports = fp(function redirectAuthenticated(fastify, opts, next) {
 
     for (let patternIndex = 0; patternIndex < skipRedirectsForPatterns.length; patternIndex++) {
       if (getPathWithoutLocale(urlData.path).startsWith(skipRedirectsForPatterns[patternIndex])) {
+        fastify.log.info(`Request made to '${urlData.path}'. Skipping redirect behavior. Matching pattern '${skipRedirectsForPatterns[patternIndex]}'`)
         hookNext()
         return
       }
