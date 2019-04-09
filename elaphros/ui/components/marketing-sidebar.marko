@@ -1,0 +1,106 @@
+<h4 class="lh-title ma0 pa0 tracked mid-gray pt4 mt4 mt0-m ttu bt bn-m b--black-10">
+  ${out.global.__('features.bible versions.available')}
+</h4>
+<table class="lh-copy mid-gray pt3 w-100 w-auto-m">
+  <tbody>
+    <tr>
+      <td>${out.global.__('features.bible versions.number of versions')}</td>
+      <td class="pl2 b tr">
+        <a class="link yv-green" href=input.getLocalizedLink('/versions', out.global.locale)>
+          ${input.req.bibleVersionCount.toLocaleString()}
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td class="pt2">${out.global.__('features.bible versions.number of languages')}</td>
+      <td class="pt2 pl2 b tr">
+        <a class="link yv-green" href=input.getLocalizedLink('/languages', out.global.locale)>
+          ${input.req.bibleLanguageCount.toLocaleString()}
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 class="lh-title ma0 pa0 tracked mid-gray pt4 mt4 bt b--black-10 ttu">
+  ${out.global.__('features.marketing.make it yours')}
+</h4>
+<p class="gray lh-copy">
+  ${out.global.__('features.marketing.verse action copy')}
+</p>
+<a 
+  class="center mt2 tc dib pt3 pb3 pl4 pr4 link bg-yv-green white br2 w-auto-m w-100" 
+  role="button" href=input.getLocalizedLink("/sign-up", out.global.locale)
+>
+  ${out.global.__('features.marketing.create free account')}
+</a>
+
+<h4 class="lh-title ma0 pa0 tracked mid-gray pt4 mt4 bt b--black-10 ttu">
+  ${out.global.__('features.marketing.free plans')}
+</h4>
+<p class="gray lh-copy">
+  ${out.global.__('features.marketing.plans copy')}
+</p>
+<a 
+  class="center mt2 tc dib pt3 pb3 pl4 pr4 link bg-yv-green white br2  w-auto-m w-100" 
+  role="button" 
+  href=input.getLocalizedLink('/reading-plans', out.global.locale)>
+  ${out.global.__('features.marketing.browse plans')}
+</a>
+
+<h4 class="lh-title ma0 pa0 tracked mid-gray pt4 mt4 bt b--black-10 ttu">
+  ${out.global.__('features.marketing.download free app')}
+</h4>
+<p class="gray lh-copy">
+  $!{out.global.__('features.marketing.download app copy')}
+</p>
+<div class="flex flex-wrap justify-center items-center w-100 mt4">
+  <div class="w-third">
+    <a role="button"
+      href="https://app.bible.com/bible-app-from-reader"
+      class="w-100 tl dib pt2 pb2 link yv-green br2 truncate f7 f6-m bold"
+      title=out.global.__('features.bible.title')>
+      <amp-img
+        alt=out.global.__('features.bible.title')
+        src="/static-assets/icons/bible/58/en.png"
+        class="br3 shadow-2 mb3"
+        height="45"
+        width="45"
+        layout="fixed">
+      </amp-img>
+      <br />${out.global.__('features.bible.bible app')}
+    </a>
+  </div>
+  <div class="w-third">
+    <a role="button"
+      href="https://app.biblelens.com/bible-lens-from-reader"
+      class="w-100 tl dib pt2 pb2 link yv-green br2 truncate f7 f6-m bold"
+      title=out.global.__('features.bible.bible app')>
+      <amp-img
+        alt=out.global.__('features.bible.bible app')
+        src="/static-assets/icons/lens/48/icon.png"
+        class="br3 shadow-2 mb3"
+        height="45"
+        width="45"
+        layout="fixed">
+      </amp-img>
+      <br/>${out.global.__('features.bible.bible lens')}
+    </a>
+  </div>
+  <div class="w-third">
+    <a role="button"
+      href=input.getLocalizedLink('/kids', out.global.locale)
+      class="w-100 tl dib pt2 pb2 link yv-green br2 truncate f7 f6-m bold"
+      title=out.global.__('features.bible.cta')>
+      <amp-img
+        alt=out.global.__('features.bible.cta')
+        src="/static-assets/icons/bafk/48/icon.png"
+        class="br3 shadow-2 mb3"
+        height="45"
+        width="45"
+        layout="fixed">
+      </amp-img>
+      <br/>${out.global.__('features.bible.bafk')}
+    </a>
+  </div>
+</div>

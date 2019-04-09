@@ -23,17 +23,23 @@
       ampComponents=ampComponents>
     </amp-components>
 
-    $ const title = `Versions | The Bible App`
-    $ const description = 'Versions'.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0,200)
+    $ const title = [
+        out.global.__mf('features.bible versions.description with count', { 
+          language_count: input.req.bibleLanguageCount.toLocaleString(),
+          version_count: input.req.bibleVersionCount.toLocaleString(),
+        }),
+        out.global.__('features.marketing.tagline'),
+        out.global.__('features.marketing.download or read'),
+        out.global.__('features.marketing.android'),
+        out.global.__('features.marketing.iphone ipad')
+      ].join(' - ')
+    $ const description = out.global.__('features.marketing.versions copy')
 
     <hreflang-tags
       locales=data.appLocales
       host=data.requestHost
       canonicalUrl=out.global.canonicalUrl
-      usfm="TODO Chaper USFM"
-      versionId="TODO VERSIONID"
-      versionAbbr="TODO LOCALABBR"
-      pageType="bible"
+      pageType="versions"
       locale=out.global.locale>
     </hreflang-tags>
 
@@ -47,16 +53,24 @@
   </@head>
   <@body>
     <app-default-state></app-default-state>
-    <div class="mw6 center pt3 pb7 pl4 pr4">
-      <h1 class="pt3 near-black">Bible Versions</h1>
-      <for|language| of=data.req.getVersionLanguages()>
-        <a href=`/languages/${language.language_tag}` class="link">
-          <h4 class="mt4 mb1 near-black normal">${language.local_name}${language.name === language.local_name ? '' : ` [${language.name}]`}</h4>
-        </a>
-        <for|version| of=data.req.getVersionsForLanguage(language.language_tag)>
-          <a class="db pb2 lh-copy yv-green link" href=out.global.seoUtils.getCanonicalUrl('bible-version', version.id, version.title, out.global.locale)>${version.local_title}</a>
+    <div class="mw8 center pt3 pb7 pl4 pr4 cf">
+      <div class="fl w-60-m">
+        <h1 class="pt3 near-black">${out.global.__('features.bible versions.title')}</h1>
+        <for|language| of=data.req.getVersionLanguages()>
+          <a href=data.getLocalizedLink(`/languages/${language.language_tag}`, out.global.locale) class="link">
+            <h4 class="mt4 mb2 near-black normal">${language.local_name}${language.name === language.local_name ? '' : ` [${language.name}]`}</h4>
+          </a>
+          <for|version| of=data.req.getVersionsForLanguage(language.language_tag)>
+            <a class="db pb2 lh-copy yv-green link" href=out.global.seoUtils.getCanonicalUrl('bible-version', version.id, version.title, out.global.locale)>${version.local_title}</a>
+          </for>
         </for>
-      </for>
+      </div>
+      <div class="fl w-40-m bl-m bw1 b--black-10 pl4-m pb3">
+        <marketing-sidebar 
+          req=data.req 
+          getLocalizedLink=data.getLocalizedLink>
+        </marketing-sidebar>
+      </div>
     </div>
   </@body>
 </site-layout>

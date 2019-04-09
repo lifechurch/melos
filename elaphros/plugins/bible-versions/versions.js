@@ -9,16 +9,16 @@ module.exports = function BibleVersions(req, reply) {
   }
 
   const { host } = req.urlData()
-  const locale = bibleToAppLocale(req.detectedLng)
-  const canonicalPath = getLocalizedLink('/versions', locale)
+  const canonicalPath = getLocalizedLink('/versions', req.detectedLng)
   const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
 
   return reply.view('/ui/pages/bible-versions/versions.marko', {
     req,
+    getLocalizedLink,
     $global: {
       __: reply.res.__,
       __mf: reply.res.__mf,
-      locale,
+      locale: req.detectedLng,
       seoUtils,
       bibleToAppLocale,
       textDirection: 'ltr',

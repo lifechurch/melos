@@ -52,6 +52,33 @@
 			"friendship success": "Success! You're now friends.",
 			"friendship failure": "Error creating friendship",
 			"friends": "Friends"
+		},
+		"bible versions": {
+			"number of languages": "Total Languages:",
+			"available": "Available Versions",
+			"audio bible": "Audio Bible",
+			"other versions": "Other Versions from This Publisher",
+			"number of versions": "Total Versions:",
+			"read version": "Read Version",
+			"title": "Bible Versions",
+			"description with count": "Over {version_count} versions in {language_count} languages",
+			"audio bible meta": "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App.",
+			"publisher": "Publisher"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Download the Free Bible App",
+			"plans copy": "Bible Plans help you engage with God's Word every day, a little at a time.",
+			"download app copy": "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device.",
+			"tagline": "the Bible that goes with you anywhere",
+			"android": "Android",
+			"verse action copy": "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages.",
+			"browse plans": "Browse All Plans",
+			"free plans": "Free Reading Plans and Devotionals",
+			"versions copy": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
+			"download or read": "Download now or read online.",
+			"create free account": "Create Your Free Account",
+			"make it yours": "Make it your Bible"
 		}
 	}
 }

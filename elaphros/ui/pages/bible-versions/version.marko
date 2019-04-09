@@ -23,75 +23,114 @@
       ampComponents=ampComponents>
     </amp-components>
 
+
+    <hreflang-tags
+      locales=data.appLocales
+      host=data.requestHost
+      canonicalUrl=out.global.canonicalUrl
+      pageType="version"
+      locale=out.global.locale>
+    </hreflang-tags>
+
     <await(data.allPromises)>
       <@then|promiseData|>
-      $ const version = promiseData[1]
-      $ const title = `${version.local_title} (${version.local_abbreviation.toUpperCase()}) | The Bible App`
-      $ const description = version.local_title.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0,200)
+        $ const version = promiseData[0]
+    
+        $ const title = [
+          `${version.local_title} (${version.local_abbreviation})`,
+          out.global.__('features.marketing.download free app'),
+          out.global.__('features.marketing.download or read'),
+          out.global.__('features.marketing.android'),
+          out.global.__('features.marketing.iphone ipad')
+        ].join(' - ')
+        $ const description = 'Versions'.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0,200)
 
-      <hreflang-tags
-        locales=data.appLocales
-        host=data.requestHost
-        canonicalUrl=out.global.canonicalUrl
-        usfm="TODO Chaper USFM"
-        versionId=version.id
-        versionAbbr=version.local_abbreviation
-        pageType="bible"
-        locale=out.global.locale>
-      </hreflang-tags>
-
-      <header-tags
-        title=title
-        description=description
-        deepLink=data.deepLink
-        metaImages=data.metaImages
-        twitterCard="summary"
-        canonicalUrl=out.global.canonicalUrl>
-      </header-tags>
+        <header-tags
+          title=title
+          description=description
+          deepLink=data.deepLink
+          twitterCard="summary"
+          canonicalUrl=out.global.canonicalUrl>
+        </header-tags>
       </@then>
     </await>
   </@head>
   <@body>
-
+    <app-default-state></app-default-state>
     <await(data.allPromises)>
-      <@then|promiseData|>
-      $ const version = promiseData[1]
+      <@then|promiseData|>    
 
-      <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@id": `${data.requestHost}`,
-            "name": "Bible"
-          }
-        },{
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@id": `${data.requestHost}/versions/${data.versionId}`,
-            "name": `${version.local_abbreviation.toUpperCase()}`
-          }
-        },{
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@id": `${out.global.canonicalUrl}`,
-            "name": `TODO Chaper USFM`
-          }
-        }]
-      }
-      </script>
+        $ const version = promiseData[0]
 
-      <app-default-state></app-default-state>
+        <div class="mw8 center pt3 pb7 pl4 pr4 cf">
+          <div class="fl w-60-m">
+            <h1 class="f3 pt3 pb0 mb0 near-black lh-title">${version.local_title} <span class="ttu fw4 gray">(${version.local_abbreviation})</span></h1>
+            <h3 class="f5 fw4 mb4 mt2 pt0 normal lh-title gray">${version.language.local_name}${version.language.name === version.language.local_name ? '' : ` [${version.language.name}]`}</h3>
+            <a 
+              class="db pb3 link yv-green lh-copy" 
+              role="button" 
+              href=out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.getFirstUsfmForVersion(version, data.req.log), out.global.locale) 
+            >
+              ${out.global.__('features.bible versions.read version')}: ${version.local_title}
+            </a>
+            <if(version.audio)>
+              <a 
+                class="db pb3 link yv-green lh-copy" 
+                role="button" 
+                title=out.global.__('features.bible versions.audio bible meta')
+                href=out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.getFirstUsfmForVersion(version, data.req.log), out.global.locale) 
+              >
+                ${out.global.__('features.bible versions.audio bible')}: ${version.local_title}
+              </a>
+            </if>
+            <div class="lh-copy gray pr4 shrink-headings">
+              $!{version.copyright_long.html || version.copyright_long.text || version.copyright_short.html || version.copyright_short.text}
+            </div>
 
+            <if(version.publisher)>
+              <h4 class="lh-title ma0 pa0 tracked mid-gray pt4 mt4 mt0-m ttu bt bn-m b--black-10">
+                ${out.global.__('features.bible versions.publisher')}
+              </h4>  
+              <p class="lh-copy">
+                <if(version.publisher.url)>
+                  <a 
+                    class="dib link yv-green" 
+                    role="button" 
+                    href=version.publisher.url
+                  >
+                    ${version.publisher.name}
+                  </a>
+                </if>
+                <else-if(version.publisher.name)>
+                  ${version.publisher.name}
+                </else-if>
+              </p>
+            </if>
 
-      <div class="mw6 center pa3 pt4 pb7 mt6">
-        <h1>${version.local_title}</h1>
-      </div>
+            <if(version.publisher && version.publisher.id)>
+              <h4 class="lh-title ma0 pa0 tracked mid-gray pt4 mt4 mt0-m ttu bt bn-m b--black-10">
+                ${out.global.__('features.bible versions.other versions')}
+              </h4>  
+              <p class="lh-copy">
+                <for|relatedVersion| of=data.req.getVersionsForPublisher(version.publisher.id)>
+                    <a 
+                      class="db pb2 lh-copy yv-green link"
+                      role="button" 
+                      href=out.global.seoUtils.getCanonicalUrl('bible-version', relatedVersion.id, relatedVersion.title, out.global.locale)
+                    >
+                      ${relatedVersion.local_title}
+                    </a>
+                </for>
+              </p>
+            </if>            
+          </div>
+          <div class="fl w-40-m bl-m bw1 b--black-10 pl4-m pb3">
+            <marketing-sidebar 
+              req=data.req 
+              getLocalizedLink=data.getLocalizedLink>
+            </marketing-sidebar>
+          </div>
+        </div>
       </@then>
     </await>
   </@body>

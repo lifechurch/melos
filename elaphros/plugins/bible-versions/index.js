@@ -22,7 +22,10 @@ module.exports = fp(function BibleVersions(fastify, opts, next) {
     ],
     request: [
       'getVersionLanguages',
-      'getVersionsForLanguage'
+      'getVersionsForLanguage',
+      'getVersionsForPublisher',
+      'bibleVersionCount',
+      'bibleLanguageCount'
     ]
   }
 })

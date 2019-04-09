@@ -7,8 +7,10 @@ const Bible = api.getClient('bible')
 function createVersionMap(versionList) {
   const versionMap = {}
   const versionLanguageMap = {}
+  const versionPublisherMap = {}
   const versionLanguages = []
-
+  const versionPublishers = []
+  const bibleVersionCount = versionList.length
   versionList.forEach((v) => {
     versionMap[v.id] = v
     if (!Array.isArray(versionLanguageMap[v.language.language_tag])) {
@@ -16,7 +18,18 @@ function createVersionMap(versionList) {
       versionLanguages.push(v.language)
     }
     versionLanguageMap[v.language.language_tag].push(v.id)
+
+    if (v.publisher_id) {
+      if (!Array.isArray(versionPublisherMap[v.publisher_id])) {
+        versionPublisherMap[v.publisher_id] = []
+        versionPublishers.push(v.publisher_id)
+      }
+      versionPublisherMap[v.publisher_id].push(v.id)
+    }
   })
+
+  const bibleLanguageCount = versionLanguages.length
+  const biblePublisherCount = versionPublishers.length
 
   function getVersionLanguages(bibleLanguage) {
     versionLanguages.sort((l1, l2) => {
@@ -43,9 +56,27 @@ function createVersionMap(versionList) {
     return languageVersions
   }
 
+  function getVersionsForPublisher(publisherId) {
+    const publisherVersions = versionPublisherMap[publisherId].map((versionId) => {
+      return versionMap[versionId]
+    })
+
+    publisherVersions.sort((v1, v2) => {
+      if (v1.local_title > v2.local_title) return 1
+      if (v1.local_title < v2.local_title) return -1
+      return 0
+    })
+
+    return publisherVersions
+  }
+
   return {
     getVersionsForLanguage,
-    getVersionLanguages
+    getVersionLanguages,
+    bibleVersionCount,
+    bibleLanguageCount,
+    biblePublisherCount,
+    getVersionsForPublisher
   }
 }
 
@@ -64,7 +95,10 @@ module.exports = fp(async function BibleVersionsDecorator(fastify, opts, next) {
 
   const {
     getVersionsForLanguage,
-    getVersionLanguages
+    getVersionLanguages,
+    getVersionsForPublisher,
+    bibleLanguageCount,
+    bibleVersionCount,
   } = createVersionMap(versionList)
 
 
@@ -74,6 +108,10 @@ module.exports = fp(async function BibleVersionsDecorator(fastify, opts, next) {
   })
 
   fastify.decorateRequest('getVersionsForLanguage', getVersionsForLanguage)
+  fastify.decorateRequest('getVersionsForPublisher', getVersionsForPublisher)
+  fastify.decorateRequest('bibleLanguageCount', bibleLanguageCount)
+  fastify.decorateRequest('bibleVersionCount', bibleVersionCount)
+
   fastify.log.info('Setup Bible version decorators')
 
   next()
