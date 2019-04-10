@@ -1,0 +1,15 @@
+nl:
+  features:
+    bible versions:
+      title: "Bijbelvertalingen"
+      available: "Beschikbare vertalingen"
+      number of versions: "Totaal aantal vertalingen:"
+      number of languages: "Totaal aantal talen:"
+      description with count: "Meer dan %{version_count} vertalingen in %{language_count} talen"
+      read version: "Deze vertaling lezen"
+      audio bible: "Luisterbijbel"
+      audio bible meta: "Luister gratis online, of download de YouVersion Bijbel App, en luister naar Luisterbijbels op je telefoon met de best beoordeelde Bijbel App."
+      publisher: "Uitgever"
+      other versions: "Andere vertalingen van deze uitgever"
+
+
