@@ -1,0 +1,15 @@
+en-GB:
+  features:
+    bible versions:
+      title: "Bible versions"
+      available: "Available translations"
+      number of versions: "Total translations:"
+      number of languages: "Total languages:"
+      description with count: "Over %{version_count} versions in %{language_count} languages"
+      read version: "Read this translation"
+      audio bible: "Audio Bible"
+      audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the number1 rated Bible App."
+      publisher: "Publisher"
+      other versions: "Other translations from this publisher"
+
+

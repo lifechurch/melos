@@ -1,0 +1,15 @@
+uk:
+  features:
+    bible versions:
+      title: "Біблійні видання"
+      available: "Доступні версії"
+      number of versions: "Всього версій:"
+      number of languages: "Всього мов:"
+      description with count: "Більше %{version_count} видань на %{language_count} мовах"
+      read version: "Читати"
+      audio bible: "Аудіо Біблія"
+      audio bible meta: "Слухайте онлайн або завантажуйте безкоштовну аудіо Біблію через додаток #1 Біблія від YouVersion з вашого телефону."
+      publisher: "Видавець"
+      other versions: "Інші видання "
+
+

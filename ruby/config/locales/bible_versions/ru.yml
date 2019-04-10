@@ -1,0 +1,15 @@
+ru:
+  features:
+    bible versions:
+      title: "Переводы Библии"
+      available: "Доступные переводы"
+      number of versions: "Всего переводов:"
+      number of languages: "Всего языков:"
+      description with count: "Более %{version_count} переводов на %{language_count} языках"
+      read version: "Читать этот перевод"
+      audio bible: "Аудио Библия"
+      audio bible meta: "Слушайте бесплатно онлайн или загрузите приложение Библия от YouVersion и слушайте аудио Библии на вашем телефоне, используя приложение Библия, являющееся приложением №1!"
+      publisher: "Издатель"
+      other versions: "Другие переводы, предоставленные издателем"
+
+

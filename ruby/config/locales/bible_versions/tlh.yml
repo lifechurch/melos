@@ -1,0 +1,15 @@
+tlh:
+  features:
+    bible versions:
+      title: "crwdns251694:0crwdne251694:0"
+      available: "crwdns251696:0crwdne251696:0"
+      number of versions: "crwdns251698:0crwdne251698:0"
+      number of languages: "crwdns251700:0crwdne251700:0"
+      description with count: "crwdns251702:0%{version_count}crwdnd251702:0%{language_count}crwdne251702:0"
+      read version: "crwdns251704:0crwdne251704:0"
+      audio bible: "crwdns251706:0crwdne251706:0"
+      audio bible meta: "crwdns251708:0crwdne251708:0"
+      publisher: "crwdns251710:0crwdne251710:0"
+      other versions: "crwdns251712:0crwdne251712:0"
+
+
