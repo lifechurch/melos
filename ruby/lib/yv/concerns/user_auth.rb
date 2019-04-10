@@ -49,6 +49,7 @@ module YV
         is_my_subdomain = "#{request.subdomain}." == my_subdomain
         is_www_subdomain = "#{request.subdomain}." == www_subdomain
         is_sign_in = request.path == "/sign-in"
+        is_bible_version = request.path.start_with?("/versions")
 
         if (is_sign_in or logged_in) && is_www_subdomain
           redirect_to "//#{request.host_with_port.sub!(www_subdomain, my_subdomain)}#{request.fullpath}"
@@ -57,6 +58,10 @@ module YV
         if !is_sign_in && !logged_in && is_my_subdomain
           redirect_to "//#{request.host_with_port.sub!(my_subdomain, www_subdomain)}#{request.fullpath}"
         end
+
+        if (is_bible_version && is_my_subdomain) {
+          redirect_to "//#{request.host_with_port.sub!(my_subdomain, www_subdomain)}#{request.fullpath}"
+        }
       end
 
       def force_notification_token_or_login
