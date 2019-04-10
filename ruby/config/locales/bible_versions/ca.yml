@@ -1,0 +1,15 @@
+ca:
+  features:
+    bible versions:
+      title: "Versions de la Bíblia"
+      available: "Versions disponibles"
+      number of versions: "Versions totals:"
+      number of languages: "Idiomes totals:"
+      description with count: "Més de %{version_count} versions en %{language_count} idiomes"
+      read version: "Llegeix aquesta versió"
+      audio bible: "Bíblia en àudio"
+      audio bible meta: "Escolta gratuïtament en línia o descarrega l'Aplicació de la Bíblia i escolta la Bíblia en àudio al teu telèfon amb l'aplicació de la Bíblia més ben valorada."
+      publisher: "Editor"
+      other versions: "Altres versions d'aquesta editorial"
+
+
