@@ -79,3 +79,35 @@ files:
         fil: tl
         ckb-IR: ckb
         myz: my-MM
+  - source: /ruby/config/locales/kids/en.yml
+    translation: /ruby/config/locales/marketing/%osx_locale%.yml
+    languages_mapping:
+      osx_locale:
+        es-ES: es-ES
+        es-la: es
+        zh-CN: zh-CN
+        zh-TW: zh-TW
+        zh-HK: zh-HK
+        en-GB: en-GB
+        pt-PT: pt-PT
+        pt-BR: pt
+        sv-SE: sv
+        fil: tl
+        ckb-IR: ckb
+        myz: my-MM
+  - source: /ruby/config/locales/privacy_and_terms/en.yml
+    translation: /ruby/config/locales/bible_versions/%osx_locale%.yml
+    languages_mapping:
+      osx_locale:
+        es-ES: es-ES
+        es-la: es
+        zh-CN: zh-CN
+        zh-TW: zh-TW
+        zh-HK: zh-HK
+        en-GB: en-GB
+        pt-PT: pt-PT
+        pt-BR: pt
+        sv-SE: sv
+        fil: tl
+        ckb-IR: ckb
+        myz: my-MM        
