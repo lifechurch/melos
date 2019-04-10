@@ -1,0 +1,15 @@
+ne:
+  features:
+    bible versions:
+      title: "बाइबल संस्करणहरू"
+      available: "Available Versions"
+      number of versions: "Total Versions:"
+      number of languages: "Total Languages:"
+      description with count: "Over %{version_count} versions in %{language_count} languages"
+      read version: "Read Version"
+      audio bible: "अडियो बाइबल"
+      audio bible meta: "अनलाइनमा निशुल्क सुन्नुहोस् वा YouVersion बाइबल एप डाउनलोड गर्नुहोस् र तपाईंको फोनमा # 1 रेटेड बाइबल एप  अडियो बाइबलहरू सुन्नुहोस्।"
+      publisher: "Publisher"
+      other versions: "Other Versions from This Publisher"
+
+
