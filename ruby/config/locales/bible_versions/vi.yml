@@ -1,0 +1,15 @@
+vi:
+  features:
+    bible versions:
+      title: "Bản Kinh Thánh"
+      available: "Các bản dịch hiện có"
+      number of versions: "Tổng số bản dịch:"
+      number of languages: "Tổng số ngôn ngữ:"
+      description with count: "Hơn %{version_count} bản dịch thuộc %{language_count} ngôn ngữ"
+      read version: "Đọc bản này"
+      audio bible: "Kinh Thánh âm thanh"
+      audio bible meta: "Nghe Kinh Thánh miễn phí trực tuyến hoặc tải App Kinh Thánh hàng đầu của YouVersion để nghe trên thiết bị di động của bạn!"
+      publisher: "Nhà phát hành"
+      other versions: "Các bản dịch khác từ nhà phát hành này"
+
+
