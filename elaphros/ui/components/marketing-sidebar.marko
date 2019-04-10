@@ -30,7 +30,7 @@
 </p>
 <a 
   class="center mt2 tc dib pt3 pb3 pl4 pr4 link bg-yv-green white br2 w-auto-m w-100" 
-  role="button" href=input.getLocalizedLink("/sign-up", out.global.locale)
+  role="button" href=input.getLocalizedLink(`/sign-up${input.source ? '?source=bible.com-${input.source}' : ''}`, out.global.locale)
 >
   ${out.global.__('features.marketing.create free account')}
 </a>
