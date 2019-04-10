@@ -59,9 +59,9 @@ module YV
           redirect_to "//#{request.host_with_port.sub!(my_subdomain, www_subdomain)}#{request.fullpath}"
         end
 
-        if (is_bible_version && is_my_subdomain) {
+        if is_bible_version && is_my_subdomain
           redirect_to "//#{request.host_with_port.sub!(my_subdomain, www_subdomain)}#{request.fullpath}"
-        }
+        end
       end
 
       def force_notification_token_or_login
