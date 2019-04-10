@@ -1,0 +1,15 @@
+cs:
+  features:
+    bible versions:
+      title: "Překlady Bible"
+      available: "Dostupné překlady"
+      number of versions: "Celkem překladů:"
+      number of languages: "Celkem jazyků:"
+      description with count: "Přes %{version_count} překladů v %{language_count} jazicích"
+      read version: "Číst tento překlad"
+      audio bible: "Audio Bible"
+      audio bible meta: "Poslechněte si zdarma online nebo si stáhněte aplikaci Bible a můžete poslouchat Bible na vašem telefonu díky nejlépe hodnocené aplikace Bible."
+      publisher: "Autor"
+      other versions: "Další překlady tohoto vydavatele"
+
+
