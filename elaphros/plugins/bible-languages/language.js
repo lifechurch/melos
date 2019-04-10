@@ -7,9 +7,9 @@ const getFirstUsfmForVersion = require('../../utils/bible/get-first-usfm-for-ver
 
 const Bible = api.getClient('Bible')
 
-module.exports = function BibleVersions(req, reply) {
+module.exports = function BibleLanguage(req, reply) {
   if (reply.newrelic) {
-    reply.newrelic.setTransactionName('bible-version')
+    reply.newrelic.setTransactionName('bible-language')
   }
 
   const { host } = req.urlData()
@@ -23,10 +23,10 @@ module.exports = function BibleVersions(req, reply) {
 
   const allPromises = Promise.all([ versionPromise ])
 
-  const canonicalPath = getLocalizedLink('/versions', req.detectedLng)
+  const canonicalPath = getLocalizedLink('/languages', req.detectedLng)
   const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
 
-  return reply.view('/ui/pages/bible-versions/version.marko', {
+  return reply.view('/ui/pages/bible-languages/language.marko', {
     req,
     getLocalizedLink,
     allPromises,
