@@ -5,11 +5,13 @@ const skipRedirectsFor = [
   '/confirmation',
   '/friendships/accept/success',
   '/friendships/accept/failure',
-  '/versions'
+  '/sw.js'
 ]
 
 const skipRedirectsForPatterns = [
-  '/versions'
+  '/versions',
+  '/static-assets',
+  '/'
 ]
 
 module.exports = fp(function redirectAuthenticated(fastify, opts, next) {
