@@ -1,0 +1,15 @@
+pl:
+  features:
+    bible versions:
+      title: "Wersje Biblii"
+      available: "Dostępne przekłady"
+      number of versions: "Łącznie przekładów:"
+      number of languages: "Łącznie języków:"
+      description with count: "Pond %{version_count} wersji w %{language_count} językach"
+      read version: "Czytaj ten przekład"
+      audio bible: "Biblia audio"
+      audio bible meta: "Słuchaj on-line za darmo lub pobierz Aplikację Biblii YouVersion i słuchaj Biblii audio na swoim telefonie z najlepszą Aplikacją Biblii."
+      publisher: "Wydawca"
+      other versions: "Inne przekłady tego wydawcy"
+
+

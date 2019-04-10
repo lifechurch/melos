@@ -1,0 +1,15 @@
+el:
+  features:
+    bible versions:
+      title: "Εκδόσεις Αγίας Γραφής"
+      available: "Διαθέσιμες εκδόσεις"
+      number of versions: "Πλήθος εκδόσεων:"
+      number of languages: "Πλήθος γλωσσών:"
+      description with count: "Πάνω από %{version_count} εκδόσεις σε %{language_count} γλώσσες"
+      read version: "Ανάγνωση της έκδοσης"
+      audio bible: "Ηχογραφημένη Αγία Γραφή"
+      audio bible meta: "Ακούστε σε σύνδεση δωρεάν ή κατεβάσετε την εφαρμογή Αγία Γραφή της YouVersion και ακούστε την Αγία Γραφή στο τηλέφωνό σας με την κορυφαία εφαρμογή Αγία Γραφή."
+      publisher: "Εκδότης"
+      other versions: "Άλλες εκδόσις από αυτόν τον εκδότη"
+
+

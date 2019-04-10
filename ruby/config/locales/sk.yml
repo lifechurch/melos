@@ -1421,6 +1421,7 @@ sk:
         badges: "Úspešne ste sa odhlásili z emailov s <b>odznakmi</b> ."
         comments: "Úspešne ste sa odhlásili z emailov s <b>komentármi</b>."
         friendships: "Úspešne ste sa odhlásili z emailov od <b>priateľov</b>."
+        digest: "Úspešne ste sa odhlásili z emailov s <b>prehľadmi</b>."
         likes: "Úspešne ste sa odhlásili z emailov s <b> obľúbenými položkami</b>."
         moments: "Úspešne ste sa odhlásili z emailov s<b>momentmi</b> ."
         newsletter: "Úspešne ste sa odhlásili z emailov s <b>informačnými letákmi</b>."
@@ -2080,7 +2081,7 @@ sk:
     join link: "Ktokoľvek s odkazom sa môže pridať"
     join together share: "Čítali by ste so mnou plán %{plan}?"
     join together: "%{host} chce čítať tento plán s vami."
-    talk it over: "Prediskutujte to."
+    talk it over: "Diskutujte"
     participants: "Účastníci."
     host: "Hostiteľ."
     x participants:

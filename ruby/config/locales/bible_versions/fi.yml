@@ -1,0 +1,15 @@
+fi:
+  features:
+    bible versions:
+      title: "Raamatun käännökset"
+      available: "Saatavilla olevat käännökset"
+      number of versions: "Käännöksiä yhteensä:"
+      number of languages: "Kieliä yhteensä:"
+      description with count: "Yli %{version_count} käännöstä %{language_count} kielellä"
+      read version: "Lue tätä käännöstä"
+      audio bible: "Ääniraamattu"
+      audio bible meta: "Kuuntele verkossa ilmaiseksi tai lataa YouVersionin Raamattusovellus ja kuuntele ääniraamattuja puhelimellasi, parhaaksi arvioidulla Raamattusovelluksella."
+      publisher: "Julkaisija"
+      other versions: "Muita käännöksiä tältä julkaisijalta"
+
+

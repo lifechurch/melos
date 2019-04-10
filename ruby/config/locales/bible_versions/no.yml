@@ -1,0 +1,15 @@
+"no":
+  features:
+    bible versions:
+      title: "Bibeloversettelser"
+      available: "Tilgjengelige bibelutgaver"
+      number of versions: "Totalt antall oversettelser:"
+      number of languages: "Totalt antall språk:"
+      description with count: "Over %{version_count} oversettelser på %{language_count} språk"
+      read version: "Les denne oversettelsen"
+      audio bible: "Lydbibel"
+      audio bible meta: "Lytt på nett eller last ned Bibel-appen YouVersion og lytt til lydbibler på din telefon med den ledende Bibel-appen."
+      publisher: "Utgiver"
+      other versions: "Andre bibeloversettelser fra dette forlaget"
+
+

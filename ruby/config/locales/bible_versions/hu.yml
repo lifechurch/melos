@@ -1,0 +1,15 @@
+hu:
+  features:
+    bible versions:
+      title: "Biblia-fordítások"
+      available: "Elérhető fordítások"
+      number of versions: "Fordítások száma:"
+      number of languages: "Nyelvek száma:"
+      description with count: "Több mint %{version_count} fordítás %{language_count} nyelven"
+      read version: "Fordítás olvasása"
+      audio bible: "Hangos Biblia"
+      audio bible meta: "Hallgasd online ingyen, vagy töltsd le a YouVersion Biblia alkalmazást és hallgasd a telefonodon a hangos Bibliát az első számú Biblia alkalmazással."
+      publisher: "Kiadó"
+      other versions: "Más fordítások ettől a kiadótól"
+
+

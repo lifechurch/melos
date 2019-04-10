@@ -1,0 +1,15 @@
+ar:
+  features:
+    bible versions:
+      title: "اصدارات الكتاب المقدس"
+      available: "الإصدارات المتاحة"
+      number of versions: "مجموع الإصدارات:"
+      number of languages: "مجموع اللغات:"
+      description with count: "أكثر من %{version_count} إصدار في %{language_count} لغة"
+      read version: "إقرأ هذا الاصدار"
+      audio bible: "الكتاب المقدس المسموع"
+      audio bible meta: "استمع مجانا متصلا بالانترنت او حمّل تطبيق الكتاب المقدس من YouVersion و استمع الى الكتاب المقدس المسموع على هاتفك المحمول مع التطبيق الحائز على التقييم الاول بين تطبيقات الكتاب المقدس"
+      publisher: "الناشر"
+      other versions: "إصدارات اخرى من هذا الناشر"
+
+

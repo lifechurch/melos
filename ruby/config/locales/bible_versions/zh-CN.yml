@@ -1,0 +1,15 @@
+zh-CN:
+  features:
+    bible versions:
+      title: "圣经译本"
+      available: "可用的译本"
+      number of versions: "译本总数："
+      number of languages: "语言总数："
+      description with count: "超过%{version_count}个以%{language_count}种语言呈现的译本"
+      read version: "阅读此译本"
+      audio bible: "音频圣经"
+      audio bible meta: "免费在线聆听或下载 YouVersion 首屈一指的圣经软件到你的手机来聆听音频圣经。"
+      publisher: "出版者"
+      other versions: "此出版社发行的其他译本"
+
+

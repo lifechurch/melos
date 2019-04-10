@@ -1,0 +1,15 @@
+ro:
+  features:
+    bible versions:
+      title: "Versiuni ale Bibliei"
+      available: "Versiuni disponibile"
+      number of versions: "Total versiuni:"
+      number of languages: "Total limbi;"
+      description with count: "Peste %{version_count} versiuni în %{language_count} limbi"
+      read version: "Citește această versiune"
+      audio bible: "Biblie audio"
+      audio bible meta: "Ascultă online gratuit sau descarcă Aplicația Biblia de la YouVersion și ascultă Biblia audio pe telefonul tău cu ajutorul celei mai bine cotate aplicații: Aplicației Biblia."
+      publisher: "Editor"
+      other versions: "Alte versiuni de la același editor"
+
+

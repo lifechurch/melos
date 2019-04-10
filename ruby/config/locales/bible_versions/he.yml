@@ -1,0 +1,15 @@
+he:
+  features:
+    bible versions:
+      title: "גרסאות הכתובים"
+      available: "גרסאות זמינות"
+      number of versions: "סה\"כ גרסאות:"
+      number of languages: "סה\"כ שפות:"
+      description with count: "יותר מ-%{version_count} גרסאות ב-%{language_count} שפות"
+      read version: "קרא גרסה"
+      audio bible: "אודיו הכתובים"
+      audio bible meta: "האזן במצב מקוון או הורד את אפליקציית הכתובים מעת YouVersion, והאזן לקטעי אודיו במכשיר הנייד שלך עם אפליקציית הכתובים הפופולרית ביותר."
+      publisher: "מוציא לאור"
+      other versions: "גרסאות נוספות ממו\"ל הזה"
+
+
