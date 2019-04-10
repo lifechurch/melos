@@ -52,6 +52,33 @@
 			"friendship failure": "Gwall wrth greu cyfeillgarwch",
 			"error deleting account": "Mae’n ddrwg gennym, digwyddodd gwall. Ceisiwch eto neu cysylltwch â’r adran gymorth.",
 			"account already confirmed": "Mae’ch cyfrif wedi ei gadarnhau! Rhaid mewngofnodi i barhau."
+		},
+		"bible versions": {
+			"number of languages": "Pob iaith",
+			"available": "Fersiynau sydd ar gael",
+			"audio bible": "Beibl Clywedol",
+			"other versions": "Fersiynau eraill gan y Cyhoeddwr yma",
+			"number of versions": "Fersiynau: ",
+			"read version": "Darllen Fersiwn",
+			"title": "Fersiynau’r  Beibl",
+			"description with count": "Dros {version_count}fersiwn mewn{language_count}iaith",
+			"audio bible meta": "Gwrando ar-lein am ddim neu lawrlwytha Ap Beibl YouVersion a gwrando ar Feiblau clywedol ar dy ffôn gyda'r Ap Beibl mwya poblogaidd.",
+			"publisher": "Cyhoeddwr"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Lawrlwythwch y Bible App am ddim",
+			"plans copy": "Mae Cynlluniau Beibl yn dy helpu i ymwneud â Gair Duw bob dydd, o dipyn i beth.",
+			"download app copy": "Mae miliynau o bobl yn defnyddio'r Ap Beibl er mwyn gwneud Gair Duw yn rhan o’u bywydau bob dydd. Lawrlwythwch yr Ap am ddim i gael gafael ar eich llyfrnodau, nodiadau a chynlluniau darllen yn unrhyw le. Mwynhewch gannoedd o fersiynau, gan gynnwys fersiynau sain, ar unrhyw ddyfais symudol.",
+			"tagline": "y Beibl sy'n mynd gyda ti i bobman",
+			"android": "Android",
+			"verse action copy": "Aroleuo neu osod Nod Tudalen ar dy hoff adnodau, gwneud Delweddau o Adnodau i'w rhannu, a chlymu Nodiadau cyhoeddus neu breifat i adrannau.",
+			"browse plans": "Pori Pob Cynllun",
+			"free plans": "Cynlluniau Darllen a Defosiynol am Ddim",
+			"versions copy": "Dewisa unrhyw adnod neu ran o'r Beibl sydd wedi lincio i unrhyw un o'r 1,200 o fersiynau. mewn 900+ o ieithoedd. Gall pobl sy'n edrych ar dy Ddigwyddiad ddewis dy gyfeirnod a'i weld yn eu darllenydd ApBeibl eu hunain, ble mae modd iddynt osod nod Llyfr, ei aroleuo, a mwy.",
+			"download or read": "Lawlwytha nawr a'i ddarllen oddiar lein.",
+			"create free account": "Creu dy Gyfrif am ddim",
+			"make it yours": "Gwna fe'n Feibl i ti"
 		}
 	}
 }

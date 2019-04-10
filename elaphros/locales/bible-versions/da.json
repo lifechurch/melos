@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Bibel-Oversættelser",
+			"available": "Tilgængelige Oversættelser",
+			"publisher": "Forlag",
+			"audio bible": "Lyd Bibel",
+			"read version": "Læs Oversættelse",
+			"other versions": "Andre Oversættelser fra Dette Forlag",
+			"audio bible meta": "Lyt gratis online eller hent YouVersion Bibel App og lyt til lyd Bibler på din telefon med den vurderede Bibel App #1.",
+			"number of versions": "Oversættelser Ialt:",
+			"number of languages": "Sprog Ialt:",
+			"description with count": "Over {version_count} oversættelser, på {language_count} sprog"
+		}
+	}
+}

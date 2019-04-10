@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Kutsal Kitap Çevirileri",
+			"available": "Mevcut Çeviriler",
+			"publisher": "Yayıncı",
+			"audio bible": "Sesli Kutsal Kitap",
+			"read version": "Çeviriyi Oku",
+			"other versions": "Yayıncının Sunduğu Diğer Çeviriler",
+			"audio bible meta": "1 Numara Kutsal Kitap uygulaması aracılığıyla telefonunuzdan YouVersion Kutsal Kitap Uygulamasını indirerek sesli Kutsal Kitaplar dinleyin ya da online olarak ücretsiz dinleyin.",
+			"number of versions": "Toplam Çeviri:",
+			"number of languages": "Toplam Dil:",
+			"description with count": "{language_count} dilden fazla, {version_count}kadarını aşkın tercümeyle"
+		}
+	}
+}

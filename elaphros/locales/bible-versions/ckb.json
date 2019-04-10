@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "وەشانەکانی کتێبی پیرۆز",
+			"available": "Available Versions",
+			"publisher": "بڵاوکار",
+			"audio bible": "کتێبی پیرۆزی دەنگی",
+			"read version": "Read Version",
+			"other versions": "Other Versions from This Publisher",
+			"audio bible meta": "بەبێ بەرامبەر لەسەر هێڵ گوێ لە وشەی خودا بگرە یان ئاپی یوڤێرژنی کتێبی پیرۆز دابگرە و لە ڕێگەی بەناوبانگترین ئاپی کتێبی پیرۆزەوە لەنێو مۆبایلەکەتدا گوێ لە کتێبی پیرۆز بگرە.",
+			"number of versions": "Total Versions:",
+			"number of languages": "Total Languages:",
+			"description with count": "Over {version_count} versions in {language_count} languages"
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "聖書訳",
+			"available": "ご利用いただける聖書訳",
+			"publisher": "出版元",
+			"audio bible": "音読聖書",
+			"read version": "この聖書訳を読む",
+			"other versions": "この出版元から出ているその他の聖書訳",
+			"audio bible meta": "無料でオンラインから聴いたり、もしくはYouVersion聖書アプリをダウンロードして、ランキング１位の聖書アプリでお手持ちのスマホから聴きましょう。",
+			"number of versions": "聖書訳の数:",
+			"number of languages": "翻訳言語の数",
+			"description with count": "{version_count} 種類以上の聖書訳が{language_count} ヵ国語の言語で"
+		}
+	}
+}

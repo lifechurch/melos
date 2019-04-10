@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Mga Bersyon nang Biblia",
+			"available": "Mga Maaaring Gamiting Salin",
+			"publisher": "Naglathala",
+			"audio bible": "Audio Na Biblia",
+			"read version": "Basahin Itong Salin",
+			"other versions": "Mga Ibang Salin Mula sa Tagapaglathala",
+			"audio bible meta": "Makinig nang libre online o i-download ang YouVersion Bible App at makinig sa mga awdyo ns Biblia sa inyong cellphone gamit ang nangungunang Bible App.",
+			"number of versions": "Kabuuang Mga Salin:",
+			"number of languages": "Kabuuang Mga Wika:",
+			"description with count": "Mahigit {version_count} na salin sa {language_count} na wika"
+		}
+	}
+}

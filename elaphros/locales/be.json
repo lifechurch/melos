@@ -52,6 +52,33 @@
 			"friendship failure": "Не атрымалася дадаць у сябры",
 			"error deleting account": "Выбачайце, у нас здарылася памылка. Калі ласка, паспрабуйце яшчэ раз ці скантактуйцеся з падтрымкай.",
 			"account already confirmed": "Ваш рахунак ужо быў пацьверджаны! Увайдзіце дзеля працягу."
+		},
+		"bible versions": {
+			"number of languages": "Усяго моваў:",
+			"available": "Даступныя вэрсіі",
+			"audio bible": "Аўдыёбіблія",
+			"other versions": "Other Versions from This Publisher",
+			"number of versions": "Усяго вэрсіяў:",
+			"read version": "Read Version",
+			"title": "Пераклады",
+			"description with count": "Больш за {version_count} перакладаў на {language_count} моваў",
+			"audio bible meta": "Слухайце анлайн бясплатна ці спампуйце YouVersion Bible App і слухайце аўдыё Бібліі на сваім тэлефоне праз найлепшы біблійны дадатак.",
+			"publisher": "Адказны за публікацыю"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Download the Free Bible App",
+			"plans copy": "Пляны дапамогуць вам чытаць Божае Слова штодня, крок за крокам.",
+			"download app copy": "Праз the Bible App™ Божае Слова робіцца часткай штодзённага жыцьця дзясяткаў мільёнаў людзей. Спампуйце бясплатны дадатак, каб мець доступ да вашых закладак, нататак і плянаў чытаньня паўсюль. Карыстайцеся сотнямі перакладаў, нават аўдыёвэрсіямі, на вашай мабільнай прыладзе. ",
+			"tagline": "Біблія, якая паўсюль будзе з вамі",
+			"android": "Android",
+			"verse action copy": "Пазначайце свае ўлюбёныя вершы, стварайце закладкі, выявы зь вершамі, якімі можна дзяліцца, і асабістыя ці публічныя нататкі да ўрыўкаў зь Пісаньня.",
+			"browse plans": "Глядзець усе пляны",
+			"free plans": "Бясплатныя пляны чытаньня й разважаньні",
+			"versions copy": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
+			"download or read": "Download now or read online.",
+			"create free account": "Стварыць бясплатны акаўнт",
+			"make it yours": "Зрабіце Біблію асабістай"
 		}
 	}
 }

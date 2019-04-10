@@ -52,6 +52,33 @@
 			"friendship failure": "crwdns224578:0crwdne224578:0",
 			"error deleting account": "crwdns224574:0crwdne224574:0",
 			"account already confirmed": "crwdns224572:0crwdne224572:0"
+		},
+		"bible versions": {
+			"number of languages": "crwdns251700:0crwdne251700:0",
+			"available": "crwdns251696:0crwdne251696:0",
+			"audio bible": "crwdns251706:0crwdne251706:0",
+			"other versions": "crwdns251712:0crwdne251712:0",
+			"number of versions": "crwdns251698:0crwdne251698:0",
+			"read version": "crwdns251704:0crwdne251704:0",
+			"title": "crwdns251694:0crwdne251694:0",
+			"description with count": "crwdns251702:0{version_count}crwdnd251702:0{language_count}crwdne251702:0",
+			"audio bible meta": "crwdns251708:0crwdne251708:0",
+			"publisher": "crwdns251710:0crwdne251710:0"
+		},
+		"marketing": {
+			"iphone ipad": "crwdns251690:0crwdne251690:0",
+			"download free app": "crwdns251672:0crwdne251672:0",
+			"plans copy": "crwdns251676:0crwdne251676:0",
+			"download app copy": "crwdns251678:0crwdne251678:0",
+			"tagline": "crwdns251688:0crwdne251688:0",
+			"android": "crwdns251692:0crwdne251692:0",
+			"verse action copy": "crwdns251674:0crwdne251674:0",
+			"browse plans": "crwdns251682:0crwdne251682:0",
+			"free plans": "crwdns251670:0crwdne251670:0",
+			"versions copy": "crwdns251684:0crwdne251684:0",
+			"download or read": "crwdns251686:0crwdne251686:0",
+			"create free account": "crwdns251680:0crwdne251680:0",
+			"make it yours": "crwdns251668:0crwdne251668:0"
 		}
 	}
 }

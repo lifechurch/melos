@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "성경 번역본",
+			"available": "사용 가능한 번역본",
+			"publisher": "출판자",
+			"audio bible": "오디오 성경",
+			"read version": "이 번역본 읽기",
+			"other versions": "제공자의 다른 번역본들",
+			"audio bible meta": "무료로 온라인에서 들으시거나 YouVersion 성경 앱을 다운로드 하셔서 최고의 평가를 받은 성경 앱과 함께 오디오 성경을 들으세요.",
+			"number of versions": "전체 번역본수:",
+			"number of languages": "전체 언어수:",
+			"description with count": "{language_count} 언어로 된 {version_count} 이상의 번역본"
+		}
+	}
+}

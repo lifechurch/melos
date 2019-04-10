@@ -52,6 +52,33 @@
 			"friendship failure": "Greška kod povezivanja s prijateljem",
 			"error deleting account": "Nažalost pojavio se problem s naše strane. Molimo probaj ponovo ili kontaktiraj podršku.",
 			"account already confirmed": "Korisnički račun je već potvrđen! Prijavi se za nastavak."
+		},
+		"bible versions": {
+			"number of languages": "Ukupno jezika:",
+			"available": "Dostupni prijevodi",
+			"audio bible": "Audio Biblija",
+			"other versions": "Ostali prijevodi tog izdavača",
+			"number of versions": "Ukupno prijevoda:",
+			"read version": "Čitaj prijevod",
+			"title": "Verzije Biblije",
+			"description with count": "Više od {version_count} prijevoda Biblije na {language_count} jezika",
+			"audio bible meta": "Slušaj online besplatno ili preuzmi YouVersion aplikaciju Biblija i slušaj audio Biblije na svom mobitelu preko najbolje ocjenjene biblijske aplikacije.",
+			"publisher": "Izdavač"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Preuzmi besplatnu aplikaciju Biblija",
+			"plans copy": "Planovi čitanja pomažu ti da se povežeš s Božjom Riječi svakoga dana, malo po malo.",
+			"download app copy": "Deseci milijuna ljudi koriste aplikaciju Biblija kako bi Božju Riječ učinili dijelom svakodnevnog života. Preuzmi besplatnu aplikaciju i pristupi svojim oznakama, bilješkama i planovima čitanja bilo gdje. Uživaj u stotinama prijevoda Biblije, uključujući i audio Bibliju, sve na svom mobilnom uređaju.",
+			"tagline": "Biblija koja s tobom ide bilo kuda",
+			"android": "Android",
+			"verse action copy": "Istakni ili Označi svoje omiljene stihove, napravi Sliku sa Stihom koju možeš podijeliti, i prikači javne ili privatne Bilješke na Biblijskom odlomku.",
+			"browse plans": "Pregledaj sve planove",
+			"free plans": "Besplatni planovi čitanja i nadahnuti sadržaji",
+			"versions copy": "Odaberi bilo koji stih ili redak iz Biblije koji je izravno povezan s nekom od više od 1,200 inačica na više od 900 jezika. Ljudi koji gledaju tvoj događaj mogu dodirnuti referencu da bi je vidjeli u njihovom čitaču u aplikaciji Biblija. Tamo je mogu označiti, istaknuti i dr.",
+			"download or read": "Preuzmi odmah ili čitaj na mreži.",
+			"create free account": "Stvori besplatni račun",
+			"make it yours": "Stvori Bibliju za sebe."
 		}
 	}
 }
