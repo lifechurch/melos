@@ -1,0 +1,15 @@
+my-MM:
+  features:
+    bible versions:
+      title: "က်မ္းစာဗားရွင္း"
+      available: "ရရွိနိုင္ေသာVersions"
+      number of versions: "Versions အားလုံးေပါင္း"
+      number of languages: "ဘာသာစကားအားလုံးေပါင္း"
+      description with count: "ဘာသာစကားေပါင္း %{language_count} ႏွင့္ %{version_count}ထက္မ်ားေသာဗားရွင္းပါဝင္သည္။"
+      read version: "ဗားရွင္းကိုဖတ္ရန္"
+      audio bible: "က်မ္းစာအသံဖိုင္"
+      audio bible meta: "က်မ္းစာႏွင့္ပတ္သက္သည့္အေကာင္းဆုံးအက္ပ္ကိုသုံးၿပီး အြန္လိုင္းတြင္ က်မ္းစာကိုအခမဲ့နားေထာင္နိုင္သည္။ သို႔မဟုတ္ YouVersion က်မ္းစာအက္ပ္ကိုေဒါင္းလုပ္ဆြဲၿပီး သင့္မိုဘိုင္းဖုန္းတြင္ က်မ္းစာအသံဖိုင္ကိုနားေထာင္နိုင္သည္။"
+      publisher: "ထုတ္ေဝသူ"
+      other versions: "ဤထုတ္ေဝသူထုတ္ထားသည့္\nအျခားဗားရွင္း"
+
+
