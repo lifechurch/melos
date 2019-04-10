@@ -1,0 +1,15 @@
+sn:
+  features:
+    bible versions:
+      title: "Mhando yeBhaibheri"
+      available: "Mhando dzinogona kuwanikwa"
+      number of versions: "Mavhezheni ose:"
+      number of languages: "Zvirimi zvose zvaunganidzwa"
+      description with count: "Mavhezhenu anopfuura %{version_count} muzvirimi %{language_count} "
+      read version: "Verenga mhando iyoyi"
+      audio bible: "Bhaibheri rekuteerera"
+      audio bible meta: "Teerera Bhaibheri richiverengwa mahara kana tora App yeBhaibheri woteerera pafoni yako ne App yeBhaibheri yemandorokwati."
+      publisher: "Munyori kana vanyori"
+      other versions: "Mamwe mavhezheni akanyora neunyori mumwechete"
+
+
