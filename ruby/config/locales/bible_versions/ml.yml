@@ -1,0 +1,15 @@
+ml:
+  features:
+    bible versions:
+      title: "ബൈബിൾ പതിപ്പുകൾ\n"
+      available: "Available Versions"
+      number of versions: "Total Versions:"
+      number of languages: "Total Languages:"
+      description with count: "Over %{version_count} versions in %{language_count} languages"
+      read version: "പതിപ്പ് വായിക്കുക"
+      audio bible: "ഓഡിയോ ബൈബിൾ"
+      audio bible meta: "സൗജന്യമായി ഓൺലൈനിൽ കേൾക്കുക, അല്ലെങ്കിൽ നിങ്ങൾ ബൈബിൾ ആപ്ലിക്കേഷൻ ഉപയോഗിച്ച് നിങ്ങളുടെ ഫോണിൽ ഓഡിയോ ബൈബിളുകൾ കേൾക്കുക."
+      publisher: "പ്രസാധകൻ"
+      other versions: "ഈ പ്രസാധകനിൽ നിന്നുള്ള മറ്റു പതിപ്പുകൾ"
+
+
