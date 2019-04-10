@@ -24,7 +24,7 @@ module.exports = function BibleVersion(req, reply) {
   const allPromises = Promise.all([ versionPromise ])
 
   allPromises.then(([ version ]) => {
-    const canonicalPath = seoUtils.getCanonicalUrl('bible-version', version.id, version.title, version.abbreviation, req.detectedLng)
+    const canonicalPath = seoUtils.getCanonicalUrl('bible-version', version, req.detectedLng)
     const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
 
     return reply.view('/ui/pages/bible-versions/version.marko', {
