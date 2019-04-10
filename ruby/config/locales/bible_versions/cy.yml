@@ -1,0 +1,15 @@
+cy:
+  features:
+    bible versions:
+      title: "Fersiynau’r  Beibl"
+      available: "Fersiynau sydd ar gael"
+      number of versions: "Fersiynau: "
+      number of languages: "Pob iaith"
+      description with count: "Dros %{version_count}fersiwn mewn%{language_count}iaith"
+      read version: "Darllen Fersiwn"
+      audio bible: "Beibl Clywedol"
+      audio bible meta: "Gwrando ar-lein am ddim neu lawrlwytha Ap Beibl YouVersion a gwrando ar Feiblau clywedol ar dy ffôn gyda'r Ap Beibl mwya poblogaidd."
+      publisher: "Cyhoeddwr"
+      other versions: "Fersiynau eraill gan y Cyhoeddwr yma"
+
+
