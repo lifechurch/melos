@@ -1,9 +1,11 @@
 const api = require('@youversion/js-api')
+const httpErrors = require('http-errors')
 const seoUtils = require('../../utils/seo')
 const bibleToAppLocale = require('../../utils/localization/bible-to-app-locale')
 const getAppLocaleDetails = require('../../utils/localization/get-app-locale-details')
 const getLocalizedLink = require('../../utils/localization/get-localized-link')
 const getFirstUsfmForVersion = require('../../utils/bible/get-first-usfm-for-version')
+const validateApiResponse = require('../../utils/validate-api-response')
 
 const Bible = api.getClient('Bible')
 
@@ -14,7 +16,12 @@ module.exports = function BibleVersion(req, reply) {
 
   const { host } = req.urlData()
   const { slug } = req.params
-  const versionId = slug.split('-').shift()
+  const versionId = Number.parseInt(slug.split('-').shift(), 10)
+
+  if (Number.isNaN(versionId)) {
+    reply.captureException(new Error('Invalid Bible version. Must be a number.'), 'Invalid Bible version id. Must be a number.')
+    return reply.send(new httpErrors.NotFound())
+  }
 
   const versionPromise = Bible.call('version')
     .params({ id: versionId })
@@ -24,6 +31,11 @@ module.exports = function BibleVersion(req, reply) {
   const allPromises = Promise.all([ versionPromise ])
 
   allPromises.then(([ version ]) => {
+    if (!validateApiResponse(version)) {
+      reply.captureException(new Error('Invalid Bible version'), 'Invalid Bible version')
+      return reply.send(new httpErrors.NotFound())
+    }
+
     const canonicalPath = seoUtils.getCanonicalUrl('bible-version', version, req.detectedLng)
     const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
 
@@ -46,5 +58,6 @@ module.exports = function BibleVersion(req, reply) {
     })
   }, (e) => {
     reply.captureException(e, 'Error getting Bible Version')
+    return reply.send(new httpErrors.NotFound())
   })
 }

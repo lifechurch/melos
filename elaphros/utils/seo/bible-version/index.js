@@ -6,7 +6,7 @@ function getCanonicalUrl(version, locale = 'en', encode = true) {
   const abbr = version.local_abbreviation || version.abbreviation
   const slug = parameterize([
     version.id,
-    abbr.toUpperCase(),
+    abbr ? abbr.toUpperCase() : '',
     stringex.toUrl(title)
   ].join(' '))
 
