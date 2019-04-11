@@ -75,9 +75,9 @@
                 ${out.global.__('features.bible versions.read version')}: ${version.local_title}
               </a>
               <if(version.audio)>
-                <a 
+                <a role="button"  
+                  target="_self"
                   class="db link yv-green lh-copy" 
-                  role="button" 
                   title=out.global.__('features.bible versions.audio bible meta')
                   href=out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.getFirstUsfmForVersion(version, data.req.log), out.global.locale) 
                 >
@@ -125,9 +125,9 @@
                 </h4>  
                 <p class="lh-copy">
                   <for|relatedVersion| of=data.req.getVersionsForPublisher(version.publisher.id)>
-                      <a 
+                      <a  role="button" 
+                        target="_self"
                         class="db pb2 lh-copy yv-green link"
-                        role="button" 
                         href=out.global.seoUtils.getCanonicalUrl('bible-version', relatedVersion, out.global.locale)
                       >
                         ${relatedVersion.local_title}

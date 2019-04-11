@@ -6,7 +6,10 @@
     <tr>
       <td>${out.global.__('features.bible versions.number of versions')}</td>
       <td class="pl2 b tr">
-        <a class="link yv-green" href=input.getLocalizedLink('/versions', out.global.locale)>
+        <a role="button"
+          target="_self"
+          class="link yv-green" 
+          href=input.getLocalizedLink('/versions', out.global.locale)>
           ${input.req.bibleVersionCount.toLocaleString()}
         </a>
       </td>
@@ -14,7 +17,10 @@
     <tr>
       <td class="pt2">${out.global.__('features.bible versions.number of languages')}</td>
       <td class="pt2 pl2 b tr">
-        <a class="link yv-green" href=input.getLocalizedLink('/languages', out.global.locale)>
+        <a role="button"
+          target="_self"
+          class="link yv-green" 
+          href=input.getLocalizedLink('/languages', out.global.locale)>
           ${input.req.bibleLanguageCount.toLocaleString()}
         </a>
       </td>
@@ -28,9 +34,10 @@
 <p class="gray lh-copy">
   ${out.global.__('features.marketing.verse action copy')}
 </p>
-<a 
+<a role="button"  
+  target="_self"
   class="center mt2 tc dib pt3 pb3 pl4 pr4 link bg-yv-green white br2 w-auto-m w-100" 
-  role="button" href=input.getLocalizedLink(`/sign-up${input.source ? '?source=bible.com-${input.source}' : ''}`, out.global.locale)
+  href=input.getLocalizedLink(`/sign-up${input.source ? '?source=bible.com-${input.source}' : ''}`, out.global.locale)
 >
   ${out.global.__('features.marketing.create free account')}
 </a>
@@ -41,9 +48,9 @@
 <p class="gray lh-copy">
   ${out.global.__('features.marketing.plans copy')}
 </p>
-<a 
+<a role="button" 
+  target="_self"
   class="center mt2 tc dib pt3 pb3 pl4 pr4 link bg-yv-green white br2  w-auto-m w-100" 
-  role="button" 
   href=input.getLocalizedLink('/reading-plans', out.global.locale)>
   ${out.global.__('features.marketing.browse plans')}
 </a>
@@ -89,6 +96,7 @@
   </div>
   <div class="w-third">
     <a role="button"
+      target="_self"
       href=input.getLocalizedLink('/kids', out.global.locale)
       class="w-100 tl dib pt2 pb2 link yv-green br2 truncate f7 f6-m bold"
       title=out.global.__('features.bible.cta')>
