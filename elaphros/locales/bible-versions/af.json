@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Bybelweergawes",
+			"available": "Beskikbare Weergawes",
+			"publisher": "Uitgewer",
+			"audio bible": "Klank Bybel",
+			"read version": "Lees Hierdie Weergawe",
+			"other versions": "Ander Weergawes van Die Publiseerder",
+			"audio bible meta": "Luister gratis aanlyn of laai die YouVersion Bybel Toepassing af en luister na die klank Bybels op jou foon met die #1 gestemde Bybel Toepassing.",
+			"number of versions": "Totale Weergawes:",
+			"number of languages": "Totale Tale:",
+			"description with count": "Meer as {version_count} vertalings in {language_count} tale"
+		}
+	}
+}

@@ -22,6 +22,7 @@ module.exports = fp(function main(fastify, opts, next) {
     'manifest',
     'service-worker',
     'bible',
+    'bible-versions',
     'confirmations'
   ],
   decorators: {

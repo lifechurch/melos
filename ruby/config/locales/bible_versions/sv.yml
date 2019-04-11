@@ -1,0 +1,15 @@
+sv:
+  features:
+    bible versions:
+      title: "Bibelöversättning"
+      available: "Tillgängliga översättningar"
+      number of versions: "Totalt antal översättningar:"
+      number of languages: "Totalt antal språk:"
+      description with count: "Över %{version_count} översättningar på %{language_count} språk"
+      read version: "Läs den här översättningen"
+      audio bible: "Ljudbibel"
+      audio bible meta: "Lyssna gratis online eller ladda ner YouVersions Bibelapp och lyssna på ljudbiblar i din mobil med den topprankade Bibelappen."
+      publisher: "Utgivare"
+      other versions: "Andra översättningar från denna utgivare"
+
+

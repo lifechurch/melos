@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Bībeles tulkojumi",
+			"available": "Pieejamie tulkojumi",
+			"publisher": "Publicētājs",
+			"audio bible": "Audio Bībele",
+			"read version": "Lasīt šo tulkojumu",
+			"other versions": "Citi tulkojumi no šī izdevēja",
+			"audio bible meta": "Klausies tiešsaistē bez maksas vai arī lejuplādē YouVersion lietotni un klausies audio Bībeles savā telefonā, izmantojot visaugstāk novērtēto Bībeles lietotni.",
+			"number of versions": "Tulkojumi kopumā:",
+			"number of languages": "Valodas kopumā:",
+			"description with count": "Vairāk nekā {version_count} versijas {language_count} valodās."
+		}
+	}
+}

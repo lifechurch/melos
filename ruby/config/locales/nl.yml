@@ -1385,6 +1385,7 @@ nl:
         badges: "Je bent succesvol uitgeschreven van emails van <b>badges</b>."
         comments: "Je bent succesvol afgemeld van<b>reactie</b>emails."
         friendships: "Je bent succesvol afgemeld voor emails van <b>vriendschapsverzoeken </b>."
+        digest: "Je bent succesvol afgemeld voor <b>samenvattende</b> e-mails."
         likes: "Je bent succesvol afgemeld van <b>vind-ik-leuk emails</b>."
         moments: "Je bent succesvol afgemeld voor emails van <b>Momenten</b>"
         newsletter: "Je bent succesvol afgemeld voor emails van <b>Nieuwsbrief</b>."

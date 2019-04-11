@@ -52,6 +52,33 @@
 			"friendship failure": "Error en crear l'amistat",
 			"error deleting account": "Ho sentim, hem tingut un problema. Prova-ho de nou o contacta amb el suport tècnic.",
 			"account already confirmed": "Ja s'ha confirmat el teu compte! Inicia la sessió per continuar."
+		},
+		"bible versions": {
+			"number of languages": "Idiomes totals:",
+			"available": "Versions disponibles",
+			"audio bible": "Bíblia en àudio",
+			"other versions": "Altres versions d'aquesta editorial",
+			"number of versions": "Versions totals:",
+			"read version": "Llegeix aquesta versió",
+			"title": "Versions de la Bíblia",
+			"description with count": "Més de {version_count} versions en {language_count} idiomes",
+			"audio bible meta": "Escolta gratuïtament en línia o descarrega l'Aplicació de la Bíblia i escolta la Bíblia en àudio al teu telèfon amb l'aplicació de la Bíblia més ben valorada.",
+			"publisher": "Editor"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Descarrega l'aplicació gratuïta de la Bíblia.",
+			"plans copy": "Els Plans bíblics t'ajudaran a connectar diàriament i de mica en mica amb la Paraula de Déu.",
+			"download app copy": "Desenes de milions de persones estan fent servir l'aplicació de la Bíblia™ per fer que la Paraula de Déu una part de les seves vides diàries. Descarrega l'aplicació gratuïta i accedeix als seus marcadors, notes, i els plans de lectura des de qualsevol lloc. Gaudeix de centenars de versions, incloent àudio, tot en el seu dispositiu mòbil.",
+			"tagline": "la Bíblia que va amb tu a tot arreu",
+			"android": "Android",
+			"verse action copy": "Subratlla o marca els teus versets preferits, crea imatges amb versets i comparteix-les i afegeix notes privades o públiques a passatges bíblics.",
+			"browse plans": "Fer una ullada a tots els Plans",
+			"free plans": "Plans de lectura i devocionals gratuïts",
+			"versions copy": "Selecciona qualsevol verset o passatge de la Bíblia, vinculat directament a qualsevol de les més de 1.200 traduccions, en més de 900 llenguatges, de YouVersion. La gent que vegi el teu esdeveniment podrà clicar en la teva referència per a veure-la en el seu lector de l'app YouVersion, per poder-hi posar un punt de lectura, subratllar-la, i més.",
+			"download or read": "Descarrega ara o llegeix en línia.",
+			"create free account": "Crea el teu compte gratuït",
+			"make it yours": "Converteix-la en la teva Bíblia"
 		}
 	}
 }

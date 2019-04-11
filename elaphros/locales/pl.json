@@ -6,7 +6,7 @@
 			"hide": "Ukryj",
 			"blog": "Blog",
 			"press": "Prasa",
-			"related devos": "Darmowe Plany Czytania i Rozważania",
+			"related devos": "Free Reading Plans and Devotionals related to {reference}",
 			"bafk": "Aplikacja Biblii dla Dzieci",
 			"bible language": "Język Biblii",
 			"no audio support": "Twoja przeglądarka nie obsługuje dźwięku.",
@@ -52,6 +52,33 @@
 			"friendship failure": "Błąd, nie utworzono znajomości",
 			"error deleting account": "Przepraszam, pojawił się problem po naszej stronie. Proszę spróbować ponownie lub skontaktować się ze wsparciem technicznym.",
 			"account already confirmed": "Twoje konto zostało już zweryfikowane! Zaloguj się, aby kontynuować."
+		},
+		"bible versions": {
+			"number of languages": "Łącznie języków:",
+			"available": "Dostępne przekłady",
+			"audio bible": "Biblia audio",
+			"other versions": "Inne przekłady tego wydawcy",
+			"number of versions": "Łącznie przekładów:",
+			"read version": "Czytaj ten przekład",
+			"title": "Wersje Biblii",
+			"description with count": "Pond {version_count} wersji w {language_count} językach",
+			"audio bible meta": "Słuchaj on-line za darmo lub pobierz Aplikację Biblii YouVersion i słuchaj Biblii audio na swoim telefonie z najlepszą Aplikacją Biblii.",
+			"publisher": "Wydawca"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Pobierz bezpłatną Aplikację Biblii",
+			"plans copy": "Plany Biblii pomagają ci w zaangażowaniu się w Słowo Boże każdego dnia, po trochu.",
+			"download app copy": "Dziesiątki milionów ludzi używają Aplikacji Biblia&trade;, aby uczynić Słowo Boże częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania gdziekolwiek jesteś. Ciesz się setkami wersji, także audio, dostępnymi na twoim urządzeniu moblinym.",
+			"tagline": "Biblia, która idzie z tobą wszędzie",
+			"android": "Android",
+			"verse action copy": "Zakreśl lub zaznacz twoje ulubione wersety, utwórz swoje obrazki z wersetami do udostępnienia i dołącz publiczne lub prywatne notatki do fragmentόw Biblii.",
+			"browse plans": "Przeglądaj wszystkie plany",
+			"free plans": "Darmowe Plany Czytania i Rozważania",
+			"versions copy": "Wybierz dowolny werset lub fragment Biblii, połączony bezpośrednio z dowolną z 1200 wersji YouVersion w ponad 900 językach. Ludzie oglądający twoje wydarzenie mogą wybrać odnośnik i zobaczyć go w czytniku Aplikacji Biblii, gdzie mogą dodać zakładkę, zakreślenie i inne.",
+			"download or read": "Pobierz teraz lub czytaj on-line.",
+			"create free account": "Utwόrz swoje darmowe konto",
+			"make it yours": "Uczyń ją twoją Biblią"
 		}
 	}
 }

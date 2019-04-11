@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Verzije Biblije",
+			"available": "Dostupni prijevodi",
+			"publisher": "Izdavač",
+			"audio bible": "Audio Biblija",
+			"read version": "Čitaj prijevod",
+			"other versions": "Ostali prijevodi tog izdavača",
+			"audio bible meta": "Slušaj online besplatno ili preuzmi YouVersion aplikaciju Biblija i slušaj audio Biblije na svom mobitelu preko najbolje ocjenjene biblijske aplikacije.",
+			"number of versions": "Ukupno prijevoda:",
+			"number of languages": "Ukupno jezika:",
+			"description with count": "Više od {version_count} prijevoda Biblije na {language_count} jezika"
+		}
+	}
+}

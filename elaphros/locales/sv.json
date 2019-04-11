@@ -52,6 +52,33 @@
 			"friendship failure": "Kunde inte skapa vänskap",
 			"error deleting account": "Det uppstod ett problem hos oss. Försök igen eller kontakta supporten.",
 			"account already confirmed": "Ditt konto har redan bekräftats! Logga in för att fortsätta."
+		},
+		"bible versions": {
+			"number of languages": "Totalt antal språk:",
+			"available": "Tillgängliga översättningar",
+			"audio bible": "Ljudbibel",
+			"other versions": "Andra översättningar från denna utgivare",
+			"number of versions": "Totalt antal översättningar:",
+			"read version": "Läs den här översättningen",
+			"title": "Bibelöversättning",
+			"description with count": "Över {version_count} översättningar på {language_count} språk",
+			"audio bible meta": "Lyssna gratis online eller ladda ner YouVersions Bibelapp och lyssna på ljudbiblar i din mobil med den topprankade Bibelappen.",
+			"publisher": "Utgivare"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Ladda ner den fria Bibelappen",
+			"plans copy": "Läsplaner hjälper dig att engagera dig med Guds Ord varje dag - lite i taget.",
+			"download app copy": "Tiotals miljoner människor använder Bibelappen för att göra Guds ord till en del av sin vardag. Ladda ner gratisappen för att komma åt dina bokmärken, anteckningar och läsplaner överallt. Få glädje av hundratals översättningar, inklusive ljuduppläsningar, på alla dina mobila enheter.",
+			"tagline": "Bibeln som följer med dig överallt",
+			"android": "Android",
+			"verse action copy": "Markera eller Bokmärk dina favoritverser, gör Bibelkort som du kan dela och lägg till publika eller privata Anteckningar till Bibeltexter.",
+			"browse plans": "Bläddra igenom alla läsplaner",
+			"free plans": "Gratis läsplaner och andakter",
+			"versions copy": "Välja valfri bibelvers eller -passage länkad direkt till någon av YouVersions över 1 200 bibelöversättningar på mer än 900 språk. Människor som tittar på din händelse kan trycka på dina referenser för att se dem i Bibelappen och därifrån bl.a. skapa bokmärken och göra markerar.",
+			"download or read": "Ladda ner nu eller läs online.",
+			"create free account": "Skapa ett gratis konto",
+			"make it yours": "Gör det till din Bibel"
 		}
 	}
 }

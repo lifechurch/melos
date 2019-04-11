@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Εκδόσεις Αγίας Γραφής",
+			"available": "Διαθέσιμες εκδόσεις",
+			"publisher": "Εκδότης",
+			"audio bible": "Ηχογραφημένη Αγία Γραφή",
+			"read version": "Ανάγνωση της έκδοσης",
+			"other versions": "Άλλες εκδόσις από αυτόν τον εκδότη",
+			"audio bible meta": "Ακούστε σε σύνδεση δωρεάν ή κατεβάσετε την εφαρμογή Αγία Γραφή της YouVersion και ακούστε την Αγία Γραφή στο τηλέφωνό σας με την κορυφαία εφαρμογή Αγία Γραφή.",
+			"number of versions": "Πλήθος εκδόσεων:",
+			"number of languages": "Πλήθος γλωσσών:",
+			"description with count": "Πάνω από {version_count} εκδόσεις σε {language_count} γλώσσες"
+		}
+	}
+}

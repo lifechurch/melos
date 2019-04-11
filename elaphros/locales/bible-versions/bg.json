@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Версии на Библията",
+			"available": "Достъпни версии",
+			"publisher": "Издател",
+			"audio bible": "Аудио Библия",
+			"read version": "Четене на тази версия",
+			"other versions": "Други версии от този издател",
+			"audio bible meta": "Слушайте онлайн безплатно или изтеглете приложение Библията на YouVersion и слушайте аудио Библии на Вашия телефон с приложение Библията, №1 приложение за четене на Библията.",
+			"number of versions": "Общ брой врсии:",
+			"number of languages": "Общ брой езици:",
+			"description with count": "Над {version_count} версии на {language_count} езици"
+		}
+	}
+}

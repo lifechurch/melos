@@ -52,6 +52,33 @@
 			"friendship failure": "Ushamwari hwaramba kugadzirika",
 			"error deleting account": "Tineurombo, panga paita dambudziko kuno kwatiri. Edza zvakare kana kuti nyorera kuTsigiro.",
 			"account already confirmed": "Account yako yatotsinhirwa! Pinda apa kuti unendere mberi"
+		},
+		"bible versions": {
+			"number of languages": "Zvirimi zvose zvaunganidzwa",
+			"available": "Mhando dzinogona kuwanikwa",
+			"audio bible": "Bhaibheri rekuteerera",
+			"other versions": "Mamwe mavhezheni akanyora neunyori mumwechete",
+			"number of versions": "Mavhezheni ose:",
+			"read version": "Verenga mhando iyoyi",
+			"title": "Mhando yeBhaibheri",
+			"description with count": "Mavhezhenu anopfuura {version_count} muzvirimi {language_count} ",
+			"audio bible meta": "Teerera Bhaibheri richiverengwa mahara kana tora App yeBhaibheri woteerera pafoni yako ne App yeBhaibheri yemandorokwati.",
+			"publisher": "Munyori kana vanyori"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Tora Bible App iyi pachena",
+			"plans copy": "Zvirongwa zveBhaibheri zvinokubatsira iwe kubatana neShoko raMwari mazuva ose, zvishoma nezvishoma.",
+			"download app copy": "Makumi emamiriyoni evanhu arikushandisa Bhaiberi App kuti vaverenge nekushandisa Shoko raMwari mazuva ose. Tora mahara kuti uone pawakabata, zvawakanyora nezvirongwa zvekuverenga zvaka. Unokwanisa kuona zvese izvi kwese kwese. Pane mavhezheni mazana nemazana uye kuverengerwa. Zvese izvi unokwanisa kuzviwana pamuchina wako.",
+			"tagline": "Bhaibheri rinoenda newe kwese kwese",
+			"android": "Android",
+			"verse action copy": "Chinyorwa kana Kubata vesi yaunofarira,unokwanisa kugadzira mapikicha emavesi auno kwanisa kupavame, nekubatanidza neZvinyorwa zvemuBhaiberi",
+			"browse plans": "wona zvirongwa zvose",
+			"free plans": "Free Reading Plans and Devotionals",
+			"versions copy": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
+			"download or read": "Tutunura izvezvi kana kuti verenga uri padandemutande.",
+			"create free account": "Gadzira account yako pachena",
+			"make it yours": "Unoriita bhaibheri rako"
 		}
 	}
 }

@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Пераклады",
+			"available": "Даступныя вэрсіі",
+			"publisher": "Адказны за публікацыю",
+			"audio bible": "Аўдыёбіблія",
+			"read version": "Read Version",
+			"other versions": "Other Versions from This Publisher",
+			"audio bible meta": "Слухайце анлайн бясплатна ці спампуйце YouVersion Bible App і слухайце аўдыё Бібліі на сваім тэлефоне праз найлепшы біблійны дадатак.",
+			"number of versions": "Усяго вэрсіяў:",
+			"number of languages": "Усяго моваў:",
+			"description with count": "Больш за {version_count} перакладаў на {language_count} моваў"
+		}
+	}
+}

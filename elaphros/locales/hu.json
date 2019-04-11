@@ -52,6 +52,33 @@
 			"friendship failure": "Hiba törtét a barátság létrehozásában",
 			"error deleting account": "Sajnáljuk, nálunk történt hiba. Kérlek, próbálkozz újra vagy lépj kapcsolatba az ügyfélszolgálattal.",
 			"account already confirmed": "A fiókod már meg lett erősítve! Jelentkezz be a folytatáshoz."
+		},
+		"bible versions": {
+			"number of languages": "Nyelvek száma:",
+			"available": "Elérhető fordítások",
+			"audio bible": "Hangos Biblia",
+			"other versions": "Más fordítások ettől a kiadótól",
+			"number of versions": "Fordítások száma:",
+			"read version": "Fordítás olvasása",
+			"title": "Biblia-fordítások",
+			"description with count": "Több mint {version_count} fordítás {language_count} nyelven",
+			"audio bible meta": "Hallgasd online ingyen, vagy töltsd le a YouVersion Biblia alkalmazást és hallgasd a telefonodon a hangos Bibliát az első számú Biblia alkalmazással.",
+			"publisher": "Kiadó"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Töltsd le az ingyenes Biblia alkalmazást",
+			"plans copy": "Az olvasási tervek segítenek neked foglalkozni Isten Igéjével nap mint nap egy keveset.",
+			"download app copy": "Emberek tízezrei használják a Biblia alkalmazást (Bible App™), hogy Isten Igéjét életük részévé tegyék. Töltsd le az ingyenes alkalmazást, és bárhol hozzáférhetsz könyvjelzőidhez, jegyzeteidhez és olvasási terveidhez. Élvezd a több száz fordítást - beleértve a hangos verziókat is - az okostelefonodon.",
+			"tagline": "a Biblia, ami mindenhová elkísér.",
+			"android": "Android",
+			"verse action copy": "Emeld ki, vagy tégy könyvjelzőt kedvenc igeverseidhez, készíts megosztható igeképeket, és írj publikus vagy privát jegyzeteket különböző igeszakaszokhoz.",
+			"browse plans": "Böngéssz a tervek között",
+			"free plans": "Ingyenes olvasási tervek és áhítatok",
+			"versions copy": "Válaszd ki bármelyik bibliai verset vagy szakaszt, mely közvetlenül kapcsolódik a YouVersion több mint 1200 féle fordításához, több mint 900 nyelven. Az eseményedet látogató emberek a Biblia alkalmazásukon keresztül tudják elolvasni a hivatkozott idézetet, illetve ugyanitt tudnak könyvjelzőt, kiemelést és egyebeket létrehozni.",
+			"download or read": "Töltsd le most vagy olvasd online.",
+			"create free account": "Regisztrálj ingyenes fiókot",
+			"make it yours": "Formáld a saját Bibliádra"
 		}
 	}
 }

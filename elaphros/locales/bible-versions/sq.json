@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Versionet e Biblës",
+			"available": "Versione të disponueshme",
+			"publisher": "Publikuesi",
+			"audio bible": "Bibla Audio",
+			"read version": "Lexo këtë version",
+			"other versions": "Versione të tjera nga ky publikues",
+			"audio bible meta": "Dëgjoni falas në internet ose shkarkoni Programin e Biblës YouVersion dhe dëgjoni Bibla audio në telefonin tuaj me Programin e Biblës #1.",
+			"number of versions": "Versione në total:",
+			"number of languages": "Gjuhët në total:",
+			"description with count": "Mbi {version_count}versione në {language_count}gjuhë"
+		}
+	}
+}

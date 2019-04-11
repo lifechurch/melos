@@ -28,7 +28,7 @@ pl:
       privacy: "Polityka prywatności"
       read: "Czytaj"
       read full: "Czytaj cały rozdział"
-      related devos: "Darmowe Plany Czytania i Rozważania"
+      related devos: "Free Reading Plans and Devotionals related to %{reference}"
       search: "Wyszukaj..."
       send votd: "Prześlij mi Werset Dnia"
       share: "Podziel się"

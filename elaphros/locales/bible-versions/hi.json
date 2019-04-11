@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "बाईबिल की अन्य संस्करणे",
+			"available": "उपलब्ध संस्करण",
+			"publisher": "प्रकाशक",
+			"audio bible": "सुनने वाली बाइबिल",
+			"read version": "इस संस्करण को पढ़िए",
+			"other versions": "इस प्रकाशक के अन्य संस्करण",
+			"audio bible meta": "ऑनलाइन सुने या यू वर्ज़न बाइबिल एप्प को डाउनलोड करें और अपने फ़ोन पर १ नंबर बाइबिल एप्प से बाइबिल सुने",
+			"number of versions": "कुल संस्करण:",
+			"number of languages": "कुल भाषाएँ",
+			"description with count": "{version_count} से अधिक संस्करण{language_count} भाषाओँ में"
+		}
+	}
+}

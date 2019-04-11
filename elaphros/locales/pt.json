@@ -52,6 +52,33 @@
 			"friendship failure": "Erro ao começar amizade",
 			"error deleting account": "Desculpe, houve um problema. Por favor, tente novamente ou entre em contato com o suporte.",
 			"account already confirmed": "Sua conta foi confirmada! Entrar para continuar."
+		},
+		"bible versions": {
+			"number of languages": "Total de Idiomas:",
+			"available": "Versões Disponíveis",
+			"audio bible": "Áudio da Bíblia",
+			"other versions": "Outras Versões Deste Editor",
+			"number of versions": "Total de Versões:",
+			"read version": "Ler Esta Versão",
+			"title": "Versões da Bíblia",
+			"description with count": "Mais de {version_count} versões em {language_count}idiomas",
+			"audio bible meta": "Ouça on-line gratuitamente ou baixe o App da Bíblia YouVersion e ouça aos áudios bíblicos em seu telefone com o App número 1 da Bíblia.",
+			"publisher": "Editor"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Download  do App gratuito da Bíblia",
+			"plans copy": "Os Planos bíblicos ajudam você a se engajar com a Palavra de Deus todos os dias, um pouco de cada vez.",
+			"download app copy": "Dezenas de milhões de pessoas estão usando o App da Bíblia para tornar a Palavra de Deus parte de suas vidas. Baixe o aplicativo gratuito e acesse os marcadores, anotações e planos de leitura de qualquer lugar. Desfrute de centenas de versões, incluindo áudio, tudo em seu dispositivo móvel.",
+			"tagline": "A Bíblia que vai com você a qualquer lugar",
+			"android": "Android",
+			"verse action copy": "Destaque ou adicione Marcadores aos seus versículos favoritos, faça Imagem do Versículo que você poderá compartilhar e adicione Anotações públicas ou privadas à passagens da Bíblia.",
+			"browse plans": "Procurar todos os Planos",
+			"free plans": "Planos de Leitura e Devocionais Gratuitos",
+			"versions copy": "Selecione qualquer versículo ou passagem da Bíblia, conectadas diretamente com qualquer das mais de 1.200 versões da YouVersion, em mais de 900 idiomas. As pessoas que estiverem vendo o seu Evento podem tocar em sua referência bíblica para vê-la no painel de leitura do App da Bíblia, onde poderá marcar, destacar e muito mais.",
+			"download or read": "Baixe agora ou leia on-line.",
+			"create free account": "Crie sua conta gratuita",
+			"make it yours": "Faça dela a sua Bíblia"
 		}
 	}
 }

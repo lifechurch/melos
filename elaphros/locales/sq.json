@@ -52,6 +52,33 @@
 			"friendship failure": "Gabim në krijimin e miqësisë",
 			"error deleting account": "Më vjen keq, pati një problem në anën tonë. Ju lutemi provojeni sërish ose kontaktoni ndihmën.",
 			"account already confirmed": "Llogaria juaj tashmë është konfirmuar. Hyr për të vazhduar."
+		},
+		"bible versions": {
+			"number of languages": "Gjuhët në total:",
+			"available": "Versione të disponueshme",
+			"audio bible": "Bibla Audio",
+			"other versions": "Versione të tjera nga ky publikues",
+			"number of versions": "Versione në total:",
+			"read version": "Lexo këtë version",
+			"title": "Versionet e Biblës",
+			"description with count": "Mbi {version_count}versione në {language_count}gjuhë",
+			"audio bible meta": "Dëgjoni falas në internet ose shkarkoni Programin e Biblës YouVersion dhe dëgjoni Bibla audio në telefonin tuaj me Programin e Biblës #1.",
+			"publisher": "Publikuesi"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Shkarko Programin e Biblës Falas.",
+			"plans copy": "Planet e Biblës ju ndihmojnë të angazhoheni çdo ditë me Fjalën e Perëndisë, pak nga pak.",
+			"download app copy": "Dhjetëra miliona njerëz po përdorin Programin e Biblës për ta bërë Fjalën e Perëndisë pjesë të jetës së tyre të përditshme. Shkarko programin falas dhe përdor shenjuesit e tu, shënimet dhe planet e leximit kudo. Shijo qindra versione, duke përfshirë ato audio, në pajisjen tuaj të lëvizshme.",
+			"tagline": "Bibla që vjen kudo me ty",
+			"android": "Android",
+			"verse action copy": "Thekso ose Shëno vargjet e tua të preferuara, krijo Figura me Vargje të cilat mund t'i shpërndash dhe pjesëve të Biblës shtoju Shënime publike ose private.",
+			"browse plans": "Shfleto të gjitha planet",
+			"free plans": "Devocione dhe Plane Leximi falas",
+			"versions copy": "Zgjdhni cfarëdo varg ose pjesë të Biblës, të lidhur direkt te secili prej 1200 e ca versioneve në 900 e ca gjuhë të YouVersion. Njerëzit që po shohin ngjarjen tënde mund të klikojnë referencën tuaj për ta parë në lexuesin e tyre të aplikacionit të Biblës, ku ata mund ta shenjojnë, ta nënvizojnë etj.",
+			"download or read": "Shkarko tani ose lexo në internet.",
+			"create free account": "Krijo falas llogarinë tënde",
+			"make it yours": "Bëje atë Biblën tënde"
 		}
 	}
 }

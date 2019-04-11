@@ -52,6 +52,33 @@
 			"friendship failure": "Kesalahan dalam menjalin persahabatan",
 			"error deleting account": "Maaf, ada masalah di pihak kami. Silakan coba lagi atau hubungi layanan kami.",
 			"account already confirmed": "Akun Anda telah dikonfirmasi! Masuk untuk melanjutkan."
+		},
+		"bible versions": {
+			"number of languages": "Jumlah Bahasa:",
+			"available": "Versi Tersedia",
+			"audio bible": "Alkitab Suara",
+			"other versions": "Versi lain dari Penerbit Ini",
+			"number of versions": "Jumlah Versi:",
+			"read version": "Baca Versi Ini",
+			"title": "Versi Alkitab",
+			"description with count": "Lebih dari {version_count} versi di {language_count} bahasa",
+			"audio bible meta": "Dengarkan daring secara gratis atau unduh Aplikasi Alkitab YouVersion dan dengarkan Alkitab suara di ponsel Anda dengan Aplikasi Alkitab #1.",
+			"publisher": "Penerbit"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Unduh Aplikasi Alkitab Gratis",
+			"plans copy": "Rencana Alkitab menolong Anda terlibat dengan Firman Tuhan setiap hari, sedikit demi sedikit.",
+			"download app copy": "Puluhan juta orang menggunakan Aplikasi Alkitab untuk menjadikan Firman Tuhan bagian keseharian hidup mereka. Unduh aplikasi gratis ini dan akses ke markah, catatan, dan rencana bacaan Anda kapan pun. Nikmati ratusan versi Alkitab, termasuk audio, semua di ponsel Anda.",
+			"tagline": "Alkitab yang bersama Anda di mana pun juga",
+			"android": "Android",
+			"verse action copy": "Soroti atau markahi ayat favorit Anda, buat Gambar Ayat yang dapat Anda bagikan, dan lampirkan Catatan pribadi atau publik pada perikop Alkitab.",
+			"browse plans": "Jelajahi Semua Rencana",
+			"free plans": "Rencana Bacaan dan Renungan Gratis",
+			"versions copy": "Pilih ayat atau pasal Alkitab mana pun, tautkan langsung pada 1,200+ versi YouVersion apa pun, dalam 900+ bahasa. Orang-orang yang melihat Acara Anda dapat mengklik referensi Anda untuk melihatnya di Aplikasi Alkitab mereka, di mana mereka bisa memarkahi, menyorot, dsb.",
+			"download or read": "Unduh sekarang dan baca daring.",
+			"create free account": "Buat Akun Gratis Anda",
+			"make it yours": "Jadikan sebagai Alkitab Anda"
 		}
 	}
 }
