@@ -19,7 +19,7 @@ RUN fc-cache -f -v
 
 COPY nodejs/package.json nodejs/package-lock.json nodejs/.npmrc /app/
 RUN npm i -g npm
-RUN cd /app && npm ci -ddd --timing
+RUN cd /app && npm ci --production
 
 COPY nodejs/ /app
 
