@@ -68,11 +68,19 @@
             </a>
           </div>
           <for|language| of=data.req.getVersionLanguages()>
-            <a href=data.getLocalizedLink(`/languages/${language.language_tag}`, out.global.locale) class="link">
+            <a  role="button" 
+              target="_self"
+              href=data.getLocalizedLink(`/languages/${language.language_tag}`, out.global.locale) 
+              class="link">
               <h4 class="mt4 mb2 near-black normal">${language.local_name}${language.name === language.local_name ? '' : ` [${language.name}]`}</h4>
             </a>
             <for|version| of=data.req.getVersionsForLanguage(language.language_tag)>
-              <a class="db pb2 lh-copy yv-green link" href=out.global.seoUtils.getCanonicalUrl('bible-version', version, out.global.locale)>${version.local_title}</a>
+              <a role="button"
+                target="_self"
+                class="db pb2 lh-copy yv-green link" 
+                href=out.global.seoUtils.getCanonicalUrl('bible-version', version, out.global.locale)>
+                ${version.local_title}
+              </a>
             </for>
           </for>
         </div>
