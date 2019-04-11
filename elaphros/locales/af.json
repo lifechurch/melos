@@ -49,9 +49,36 @@
 			"friends": "Vriende",
 			"account confirmed": "Jou rekening is bevestig!",
 			"friendship success": "Sukses!  Julle is nou vriende.",
-			"friendship failure": "Daar was 'n fout met die vriendskap skep aksie",
+			"friendship failure": "Daar was 'n fout met die skep van die vriendskap",
 			"error deleting account": "Jammer, daar was 'n probleem aan ons kant. Probeer asseblief weer of kontak ons vir ondersteuning.",
-			"account already confirmed": "Jou rekening is alreeds bevestig! Teken in om voort te gaan."
+			"account already confirmed": "Jou rekening is alreeds bevestig! Teken aan om voort te gaan."
+		},
+		"bible versions": {
+			"number of languages": "Totale Tale:",
+			"available": "Beskikbare Weergawes",
+			"audio bible": "Klank Bybel",
+			"other versions": "Ander Weergawes van Die Publiseerder",
+			"number of versions": "Totale Weergawes:",
+			"read version": "Lees Hierdie Weergawe",
+			"title": "Bybelweergawes",
+			"description with count": "Meer as {version_count} vertalings in {language_count} tale",
+			"audio bible meta": "Luister gratis aanlyn of laai die YouVersion Bybel Toepassing af en luister na die klank Bybels op jou foon met die #1 gestemde Bybel Toepassing.",
+			"publisher": "Uitgewer"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Laai die Gratis Bybel Toep af",
+			"plans copy": "Bybelplanne help jou om elke dag in God se Woord te delf, 'n kort stukkie op 'n keer.",
+			"download app copy": "Mense by die miljoene gebruik die Bible App™ om God se Woord deel van hul daaglikse lewens te maak. Laai die gratis toep af om toegang tot jou boekmerke, notas en leesplanne van enige plek af te verkry. Geniet honderde weergawes, insluitende klank, alles op jou mobiele toestel.",
+			"tagline": "die Bybel wat oral saam met jou gaan",
+			"android": "Android",
+			"verse action copy": "Kleurmerk of Boekmerk jou gunsteling verse, maak Versbeelde wat jy kan deel, en maak notas by Bybelgedeeltes, wat jy as aanhegsel kan gebruik vir privaat of openbare gebruik.",
+			"browse plans": "Deursoek Al die Leesplanne",
+			"free plans": "Gratis Leesplanne en Oordenkings",
+			"versions copy": "Enige Bybelvers of -gedeelte wat jy kies is direk gekoppel aan YouVersion se 1 200+ Bybelweergawes, in 900+ tale. Mense wat jou Gebeurtenis sien kan op enige verwysing druk om dit in hulle Bybel Toep Leser te sien. Daar kan hulle dit Boekmerk, Kleurmerk en nog baie meer daarmee doen.",
+			"download or read": "Laai nou af of lees aanlyn",
+			"create free account": "Skep Jou Gratis Rekening",
+			"make it yours": "Maak hierdie Bybelweergawe jou keuse"
 		}
 	}
 }

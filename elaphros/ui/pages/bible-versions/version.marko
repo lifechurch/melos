@@ -43,7 +43,7 @@
           out.global.__('features.marketing.android'),
           out.global.__('features.marketing.iphone ipad')
         ].join(' - ')
-        $ const description = 'Versions'.replace(/(<([^>]+)>[0-9]{0,3})/ig, '').trim().substring(0,200)
+        $ const description = out.global.__('features.marketing.versions copy')
 
         <header-tags
           title=title
@@ -116,7 +116,7 @@
                     <a 
                       class="db pb2 lh-copy yv-green link"
                       role="button" 
-                      href=out.global.seoUtils.getCanonicalUrl('bible-version', relatedVersion.id, relatedVersion.title, relatedVersion.abbreviation, out.global.locale)
+                      href=out.global.seoUtils.getCanonicalUrl('bible-version', relatedVersion, out.global.locale)
                     >
                       ${relatedVersion.local_title}
                     </a>

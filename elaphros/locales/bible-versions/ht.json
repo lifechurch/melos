@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Vèsyon Bib yo",
+			"available": "Vèsyon ki valab yo",
+			"publisher": "Editè",
+			"audio bible": "Bib odyo",
+			"read version": "Vèsyon lekti",
+			"other versions": "Other Versions from This Publisher",
+			"audio bible meta": "Koute sou nèt la pou gratis oswa telechaje aplikasyon Bib YouVersion lan ki vote#1 pou ka tande Bib odyo yo sou telefòn ou.",
+			"number of versions": "Total Versions:",
+			"number of languages": "Total Languages:",
+			"description with count": "Over {version_count} versions in {language_count} languages"
+		}
+	}
+}

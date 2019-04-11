@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "พระคัมภีร์ฉบับ",
+			"available": "ฉบับที่ใช้งานได้",
+			"publisher": "ผู้เผยแพร่",
+			"audio bible": "พระคัมภีร์ฉบับเสียง",
+			"read version": "อ่านฉบับนี้",
+			"other versions": "พระคัมภีร์ฉบับอื่นๆ จากผู้ตีพิมพ์รายนี้",
+			"audio bible meta": "ฟังออนไลน์ฟรีหรือดาวน์โหลดแอพพระคัมภีร์ และฟังเสียงอ่านพระคัมภีร์จากโทรศัพท์ของคุณผ่านแอพพระคัมภีร์อันดับ 1",
+			"number of versions": "ฉบับทั้งหมด:",
+			"number of languages": "ภาษาที่มีทั้งหมด:",
+			"description with count": "มากกว่า {version_count} เวอร์ชั่น ใน {language_count} ภาษา"
+		}
+	}
+}

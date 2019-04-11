@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "גרסאות הכתובים",
+			"available": "גרסאות זמינות",
+			"publisher": "מוציא לאור",
+			"audio bible": "אודיו הכתובים",
+			"read version": "קרא גרסה",
+			"other versions": "גרסאות נוספות ממו\"ל הזה",
+			"audio bible meta": "האזן במצב מקוון או הורד את אפליקציית הכתובים מעת YouVersion, והאזן לקטעי אודיו במכשיר הנייד שלך עם אפליקציית הכתובים הפופולרית ביותר.",
+			"number of versions": "סה\"כ גרסאות:",
+			"number of languages": "סה\"כ שפות:",
+			"description with count": "יותר מ-{version_count} גרסאות ב-{language_count} שפות"
+		}
+	}
+}

@@ -52,6 +52,33 @@
 			"friendship failure": "Fout bij het maken van een vriendschap",
 			"error deleting account": "Sorry, er ging iets mis aan onze kant. Probeer het opnieuw of neem contact op met de ondersteuning.",
 			"account already confirmed": "Je account is bevestigd! Log in om verder te gaan."
+		},
+		"bible versions": {
+			"number of languages": "Totaal aantal talen:",
+			"available": "Beschikbare vertalingen",
+			"audio bible": "Luisterbijbel",
+			"other versions": "Andere vertalingen van deze uitgever",
+			"number of versions": "Totaal aantal vertalingen:",
+			"read version": "Deze vertaling lezen",
+			"title": "Bijbelvertalingen",
+			"description with count": "Meer dan {version_count} vertalingen in {language_count} talen",
+			"audio bible meta": "Luister gratis online, of download de YouVersion Bijbel App, en luister naar Luisterbijbels op je telefoon met de best beoordeelde Bijbel App.",
+			"publisher": "Uitgever"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Download de gratis Bijbel App",
+			"plans copy": "Leesplannen helpen je om elke dag een moment met Gods Woord bezig te zijn.",
+			"download app copy": "Tientallen millioenen mensen gebruiken de Bijbel App om Gods Woord een deel van hun leven te maken. Download de gratis app en krijg toegang op je bladwijzers, notitities en leesplannen vanaf elke plek. Geniet van honderden vertalingen, inclusief audio, alles op je mobiele apparaat.",
+			"tagline": "De Bijbel die overal met je mee gaat",
+			"android": "Android",
+			"verse action copy": "Markeer je favoriete gedeelten, maak Bladwijzers en Versafbeeldingen aan die je kunt delen en voeg openbare of privé Notities toe aan Bijbelverzen.",
+			"browse plans": "Blader door alle Leesplannen",
+			"free plans": "Gratis leesplannen en overdenkingen",
+			"versions copy": "Kies een Bijbelvers of -gedeelte uit een van de ruim 1200 YouVersion vertalingen in ruim 900 talen. Mensen die je Bijeenkomst bekijken kunnen je verwijzing aantikken om deze in hun Bijbel App venster te bekijken, waar ze hem kunnen voorzien van een Bladwijzer, Markering en meer.",
+			"download or read": "Download nu of lees online.",
+			"create free account": "Maak je gratis account aan",
+			"make it yours": "Maak het jouw Bijbel"
 		}
 	}
 }

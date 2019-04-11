@@ -1,0 +1,15 @@
+ms:
+  features:
+    bible versions:
+      title: "Versi Alkitab"
+      available: "Versi yang Tersedia"
+      number of versions: "Jumlah Versi:"
+      number of languages: "Jumlah Bahasa"
+      description with count: "Lebih daripada %{version_count}versi dalam %{language_count}bahasa"
+      read version: "Baca Versi Ini"
+      audio bible: "Alkitab Audio"
+      audio bible meta: "Dengar secara online dengan percuma atau muat turun App Alkitab YouVersion dan dengarkan Alkitab audio dalam telefon bimbit anda melalui App Alkitab #1."
+      publisher: "Penerbit"
+      other versions: "Versi Lain dari Penerbit Ini"
+
+

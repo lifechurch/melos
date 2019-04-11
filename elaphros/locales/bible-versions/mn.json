@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Библийн Орчуулгууд",
+			"available": "Унших Боломжтой Орчуулагууд",
+			"publisher": "Нийтлэгч",
+			"audio bible": "Аудио Библи",
+			"read version": "Энэ Хувилбарыг Унших",
+			"other versions": "Энэ Хэвлэгчийн бусад Орчуулгууд",
+			"audio bible meta": "Онлайн байхдаа эсвэл гарийн утасаар хамгийн олон татаж авсан YouVersion Библи Аппыгээр үнэгүй сонсох уу.",
+			"number of versions": "Нийт Орчуулгууд:",
+			"number of languages": "Нийт Хэл:",
+			"description with count": "{language_count}хэл дээрхи {version_count}гаруй орчуулгууд"
+		}
+	}
+}

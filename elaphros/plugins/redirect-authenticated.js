@@ -10,8 +10,7 @@ const skipRedirectsFor = [
 
 const skipRedirectsForPatterns = [
   '/versions',
-  '/static-assets',
-  '/'
+  '/static-assets'
 ]
 
 module.exports = fp(function redirectAuthenticated(fastify, opts, next) {

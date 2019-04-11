@@ -52,6 +52,33 @@
 			"friendship failure": "친구 맺기 오류",
 			"error deleting account": "죄송합니다. 서버에 문제가 있었습니다. 다시 한 번 시도하거나 지원 요청을 해 주세요.",
 			"account already confirmed": "계정이 확인되었습니다.  이제 로그인 하시면 됩니다."
+		},
+		"bible versions": {
+			"number of languages": "전체 언어수:",
+			"available": "사용 가능한 번역본",
+			"audio bible": "오디오 성경",
+			"other versions": "제공자의 다른 번역본들",
+			"number of versions": "전체 번역본수:",
+			"read version": "이 번역본 읽기",
+			"title": "성경 번역본",
+			"description with count": "{language_count} 언어로 된 {version_count} 이상의 번역본",
+			"audio bible meta": "무료로 온라인에서 들으시거나 YouVersion 성경 앱을 다운로드 하셔서 최고의 평가를 받은 성경 앱과 함께 오디오 성경을 들으세요.",
+			"publisher": "출판자"
+		},
+		"marketing": {
+			"iphone ipad": "아이폰/아이패드",
+			"download free app": "무료 성경 앱을 다운로드하세요",
+			"plans copy": "묵상 계획은 여러분을 매일 하나님의 말씀에 한 걸음씩 가깝게 인도합니다.",
+			"download app copy": "수천만의 사람들이 성경앱™을 통해서 하나님의 말씀이 그들의 일상 생활의 한 부분이 되도록 사용하고 있습니다. 이 무료 앱을 다운로드하여 책갈피, 노트및 성경읽기계획 등을 어디에서나 사용하세요. 수백 종의 번역본을 비롯한 오디오 성경을 여러분의 모바일 기기에서 사용하세요.",
+			"tagline": "어느 곳에서나 여러분과 함께 하는 성경",
+			"android": "안드로이드",
+			"verse action copy": "좋아하는 말씀들을 하이라이트 또는 책갈피 하세요. 공유하고 싶은 말씀 이미지를 만드세요. 성경 구절에 공개적 또는 비공개 노트를 만드세요. ",
+			"browse plans": "모든 묵상 계획 검색",
+			"free plans": "무료 읽기 계획과 묵상",
+			"versions copy": "성경 구절을 선택하여 YouVersion의 900개 이상의 언어의 1,200개 이상의 번역본 중 하나로 링크하십시오 이벤트 참가자들은 참조를 탭해서 성경 앱을 통해 말씀을 읽고, 책갈피나 하이라이트 등을 추가할 수 있습니다.",
+			"download or read": "다운로드 하시거나 온라인에서 읽으세요",
+			"create free account": "무료 계정 만들기",
+			"make it yours": "당신만의 성경을 만드세요"
 		}
 	}
 }

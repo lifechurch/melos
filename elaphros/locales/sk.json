@@ -52,6 +52,33 @@
 			"friendship failure": "Nepodarilo sa vytvoriť priateľstvo",
 			"error deleting account": "Prepáčte, vyskytla sa chyba. Skúste to znova, alebo kontaktujte podporu prosím.",
 			"account already confirmed": "Váš účet bol už potvrdený! Pokračujte prihlásením."
+		},
+		"bible versions": {
+			"number of languages": "Počet jazykov:",
+			"available": "Dostupné preklady",
+			"audio bible": "Audio Biblia",
+			"other versions": "Ďalšie preklady od tohto vydavateľa",
+			"number of versions": "Počet prekladov:",
+			"read version": "Čítať tento preklad",
+			"title": "Preklady Biblie",
+			"description with count": "Vyše {version_count} prekladov v {language_count} jazykoch",
+			"audio bible meta": "Počúvajte zadarmo online, alebo si stiahnite aplikáciu YouVersion Biblia a počúvajte audio Bibliu na svojom telefóne cez najvyššie hodnotenú aplikáciu Biblia.",
+			"publisher": "Vydavateľ"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Stiahnite si bezplatnú aplikáciu Biblia",
+			"plans copy": "Biblické plány vám pomáhajú venovať sa božiemu slovu každý deň kúsok po kúsku.",
+			"download app copy": "Desiatky miliónov ľudí používajú aplikáciu Biblia s úmyslom, aby sa Božie Slovo stalo súčasťou ich každodenného života. Stiahnite si túto bezplatnú aplikáciu a získajte prístup k vašim záložkám a plánom čítania odvšadiaľ. Využite stovky prekladov vrátane audio nahrávok priamo na vašom mobilnom zariadení.",
+			"tagline": "Biblia, ktorá ide všade s vami",
+			"android": "Android",
+			"verse action copy": "Zvýrazňujte, vkladajte záložky na obľúbené verše, vytvárajte obrázky z veršov, ktoré môžete zdieľať a pripájajte poznámky k biblickým pasážam.",
+			"browse plans": "Pozrieť všetky plány",
+			"free plans": "Plány čítania a texty zadarmo",
+			"versions copy": "Zvoľte akýkoľvek verš, alebo pasáž z Biblie, ktorý priamo odkazuje na ľubovoľný z 1200+ YouVersion prekladov, v 900+ jazykoch. Ľudia, ktorí si vaše podujatie prezerajú, môžu ťuknúť na odkaz, aby si verš alebo pasáž mohli prečítať v aplikácii Biblia. Tam si verš budú môcť pridať medzi záložky, zvýrazniť si ho a mnohé iné.",
+			"download or read": "Stiahnite teraz alebo čítajte online.",
+			"create free account": "Vytvorte si účet zdarma",
+			"make it yours": "Spravte ju vašou Bibliou"
 		}
 	}
 }

@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Bibelübersetzungen",
+			"available": "Verfügbare Übersetzung",
+			"publisher": "Autor",
+			"audio bible": "Hörbibel",
+			"read version": "Lies diese Version",
+			"other versions": "Andere Versionen von diesem Herausgeber",
+			"audio bible meta": "Höre gratis online oder lade die YouVersion Bibel App herunter und höre dir mit der beliebtesten Bibel App die Bibel auf deinem Telefon an.",
+			"number of versions": "Anzahl der Übersetzungen:",
+			"number of languages": "Anzahl der Sprachen:",
+			"description with count": "Mit der Bibel hast du über {version_count} Übersetzungen in {language_count} Sprachen"
+		}
+	}
+}

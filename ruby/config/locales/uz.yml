@@ -1385,6 +1385,7 @@ uz:
         badges: "You successfully unsubscribed from <b>Badges</b> emails."
         comments: "You successfully unsubscribed from <b>Comments</b> emails."
         friendships: "You successfully unsubscribed from <b>Friendships</b> emails."
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "You successfully unsubscribed from <b>Likes</b> emails."
         moments: "You successfully unsubscribed from <b>Moments</b> emails."
         newsletter: "You successfully unsubscribed from <b>Newsletter</b> emails."

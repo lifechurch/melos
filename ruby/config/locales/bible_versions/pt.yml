@@ -1,0 +1,15 @@
+pt:
+  features:
+    bible versions:
+      title: "Versões da Bíblia"
+      available: "Versões Disponíveis"
+      number of versions: "Total de Versões:"
+      number of languages: "Total de Idiomas:"
+      description with count: "Mais de %{version_count} versões em %{language_count}idiomas"
+      read version: "Ler Esta Versão"
+      audio bible: "Áudio da Bíblia"
+      audio bible meta: "Ouça on-line gratuitamente ou baixe o App da Bíblia YouVersion e ouça aos áudios bíblicos em seu telefone com o App número 1 da Bíblia."
+      publisher: "Editor"
+      other versions: "Outras Versões Deste Editor"
+
+

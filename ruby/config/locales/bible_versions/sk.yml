@@ -1,0 +1,15 @@
+sk:
+  features:
+    bible versions:
+      title: "Preklady Biblie"
+      available: "Dostupné preklady"
+      number of versions: "Počet prekladov:"
+      number of languages: "Počet jazykov:"
+      description with count: "Vyše %{version_count} prekladov v %{language_count} jazykoch"
+      read version: "Čítať tento preklad"
+      audio bible: "Audio Biblia"
+      audio bible meta: "Počúvajte zadarmo online, alebo si stiahnite aplikáciu YouVersion Biblia a počúvajte audio Bibliu na svojom telefóne cez najvyššie hodnotenú aplikáciu Biblia."
+      publisher: "Vydavateľ"
+      other versions: "Ďalšie preklady od tohto vydavateľa"
+
+

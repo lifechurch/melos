@@ -52,6 +52,33 @@
 			"friendship failure": "Ystävyyden muodostaminen epäonnistui",
 			"error deleting account": "Meidän puolellamme oli ongelma. Yritä uudestaan tai ota yhteyttä tukeen.",
 			"account already confirmed": "Tilisi on jo vahvistettu! Kirjaudu sisään jatkaaksesi."
+		},
+		"bible versions": {
+			"number of languages": "Kieliä yhteensä:",
+			"available": "Saatavilla olevat käännökset",
+			"audio bible": "Ääniraamattu",
+			"other versions": "Muita käännöksiä tältä julkaisijalta",
+			"number of versions": "Käännöksiä yhteensä:",
+			"read version": "Lue tätä käännöstä",
+			"title": "Raamatun käännökset",
+			"description with count": "Yli {version_count} käännöstä {language_count} kielellä",
+			"audio bible meta": "Kuuntele verkossa ilmaiseksi tai lataa YouVersionin Raamattusovellus ja kuuntele ääniraamattuja puhelimellasi, parhaaksi arvioidulla Raamattusovelluksella.",
+			"publisher": "Julkaisija"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Lataa ilmainen Raamattusovellus",
+			"plans copy": "Lukusuunnitelmat auttavat sinua pureutumaan Jumalan Sanaan päivittäin, vähän kerrallaan.",
+			"download app copy": "Kymmenet miljoonat ihmiset käyttävät Raamattusovellusta tehdäkseen Jumalan sanasta osan jokapäiväistä elämäänsä. Lataa ilmainen sovellus ja pääset kirjanmerkkeihin, muistiinpanoihin ja lukusuunnitelmiin missä tahansa. Voit nauttia sadoista versioista, äänen kera, kaikilla mobiililaitteillasi.",
+			"tagline": "Raamattu kulkee mukanasi minne menetkin",
+			"android": "Android",
+			"verse action copy": "Korosta tai tee kirjanmerkkejä lempijakeistasi, tee jaettavia huoneentauluja ja liitä julkisia tai yksityisiä muistiinpanoja raamatunkohtiin.",
+			"browse plans": "Selaa kaikkia suunnitelmia",
+			"free plans": "Ilmaisia lukusuunnitelmia ja hartauksia",
+			"versions copy": "Valitse mikä tahansa raamatun jae tai teksti, joka on sidoksissa suoraan mihin tahansa YouVersionin 1200+ versioon, yli 900 kielellä. Ihmiset jotka näkevät Tapahtumasi voivat näpäyttää viitettäsi nähdäkseen sen Raamattusovelluksessa, missä he voivat mm. kirjanmerkitä sen tai korostaa sitä. ",
+			"download or read": "Lataa nyt tai lue verkossa.",
+			"create free account": "Luo ilmainen tili",
+			"make it yours": "Tee siitä oma Raamattusi"
 		}
 	}
 }

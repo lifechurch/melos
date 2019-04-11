@@ -52,6 +52,33 @@
 			"friendship failure": "Fehler bei Freundschaftsanfrage",
 			"error deleting account": "Entschuldige, es gab ein Problem auf unserer Seite. Bitte versuche es erneut oder kontaktiere den Support.",
 			"account already confirmed": "Dein Konto ist bereits bestätigt worden. Bitte melde dich an, um weiter zu machen."
+		},
+		"bible versions": {
+			"number of languages": "Anzahl der Sprachen:",
+			"available": "Verfügbare Übersetzung",
+			"audio bible": "Hörbibel",
+			"other versions": "Andere Versionen von diesem Herausgeber",
+			"number of versions": "Anzahl der Übersetzungen:",
+			"read version": "Lies diese Version",
+			"title": "Bibelübersetzungen",
+			"description with count": "Mit der Bibel hast du über {version_count} Übersetzungen in {language_count} Sprachen",
+			"audio bible meta": "Höre gratis online oder lade die YouVersion Bibel App herunter und höre dir mit der beliebtesten Bibel App die Bibel auf deinem Telefon an.",
+			"publisher": "Autor"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Lade dir die Bibel App gratis herunter.",
+			"plans copy": "Lesepläne helfen dir dabei, dich jeden Tag mit Gottes Wort zu beschäftigen.",
+			"download app copy": "Zig Millionen Menschen nutzen die Bibel App, um Gottes Wort zu einem Teil ihres täglichen Lebens zu machen. Lade die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Leseplänen zu. Genieße hunderte Bibelübersetzungen, darunter auch Hörbibeln, auf deinem mobilen Gerät.",
+			"tagline": "immer dabei - egal wo du bist!",
+			"android": "Android",
+			"verse action copy": "Markiere deine Lieblingsverse, erstelle Lesezeichen oder Versbilder, die du teilen kannst und füge bestimmten Abschnitten in der Bibel öffentliche oder private Notizen hinzu.",
+			"browse plans": "Durchstöbere alle Lesepläne",
+			"free plans": "Kostenlose Lesepläne und Andachten",
+			"versions copy": "Wähle einen Bibelvers oder -abschnitt direkt aus einer der über 1.200 Bibelübersetzungen in mehr als 900 Sprachen aus, die YouVersion anbietet.  Personen, die die Einladung zu deiner Veranstaltung sehen, können deine Verweise antippen, um sie in ihrer Bibel App zu sehen, wo sie Lesezeichen anlegen, Verse markieren und v.a.m. machen können.",
+			"download or read": "Jetzt herunterladen oder online lesen.",
+			"create free account": "Erstelle dein kostenloses Konto",
+			"make it yours": "Mache sie zu deiner Bibel!"
 		}
 	}
 }

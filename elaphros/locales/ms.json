@@ -52,6 +52,33 @@
 			"friendship failure": "Terdapat ralat dalam mencipta persahabatan",
 			"error deleting account": "Maaf, ada masalah pada pihak kami. Sila cuba lagi atau hubungilah Pihak Sokongan.",
 			"account already confirmed": "Akaun anda sudah disahkan! Sila log masuk."
+		},
+		"bible versions": {
+			"number of languages": "Jumlah Bahasa",
+			"available": "Versi yang Tersedia",
+			"audio bible": "Alkitab Audio",
+			"other versions": "Versi Lain dari Penerbit Ini",
+			"number of versions": "Jumlah Versi:",
+			"read version": "Baca Versi Ini",
+			"title": "Versi Alkitab",
+			"description with count": "Lebih daripada {version_count}versi dalam {language_count}bahasa",
+			"audio bible meta": "Dengar secara online dengan percuma atau muat turun App Alkitab YouVersion dan dengarkan Alkitab audio dalam telefon bimbit anda melalui App Alkitab #1.",
+			"publisher": "Penerbit"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Muat turun App Alkitab secara Percuma",
+			"plans copy": "Pelan Alkitab membantu anda melibatkan diri dalam Firman Allah pada setiap hari, sedikit demi sedikit.",
+			"download app copy": "Berpuluh juta orang kini mengguna App Alkitab untuk  menjadikan Firman Allah sebahagian daripada kehidupan setiap hari. Muat turun app percuma dan akses bookmark, nota, dan pelan bacaan dari mana pun. Nikmati beratus versi Alkitab, termasuk audio, pada peranti mobil anda.",
+			"tagline": "Alkitab yang menyertai anda ke mana-mana sahaja",
+			"android": "Android",
+			"verse action copy": "Tandakan atau letakkan Penanda pada ayat-ayat kegemaran anda, hasilkan Imej Ayat yang boleh dikongsikan, dan lampirkan Nota awam atau persendirian untuk petikan Alkitab.",
+			"browse plans": "Layari Semua Pelan",
+			"free plans": "Pelan Bacaan dan Bahan Renungan Percuma",
+			"versions copy": "Pilih mana-mana ayat atau petikan Alkitab, dari antara 1,200+ versi, dalam 900+ bahasa dalam YouVersion. Orang yang lihat Acara anda boleh tap rujukan anda untuk melihatnya dalam App Alkitab mereka, dan mereka boleh Bookmark, Highlight, dan lain-lain lagi.",
+			"download or read": "Muat turun sekarang atau baca online.",
+			"create free account": "Cipta Akaun Percuma Anda",
+			"make it yours": "Jadikannya Alkitab anda"
 		}
 	}
 }

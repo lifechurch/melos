@@ -52,6 +52,33 @@
 			"friendship failure": "友達登録中にエラーが発生しました",
 			"error deleting account": "当方側に問題が生じました。恐れ入りますが、後ほど改めてお試しいただくか、サポート宛にご連絡ください。",
 			"account already confirmed": "あなたのアカウントは確認済みです。サインインをして次のステップにお進み下さい。"
+		},
+		"bible versions": {
+			"number of languages": "翻訳言語の数",
+			"available": "ご利用いただける聖書訳",
+			"audio bible": "音読聖書",
+			"other versions": "この出版元から出ているその他の聖書訳",
+			"number of versions": "聖書訳の数:",
+			"read version": "この聖書訳を読む",
+			"title": "聖書訳",
+			"description with count": "{version_count} 種類以上の聖書訳が{language_count} ヵ国語の言語で",
+			"audio bible meta": "無料でオンラインから聴いたり、もしくはYouVersion聖書アプリをダウンロードして、ランキング１位の聖書アプリでお手持ちのスマホから聴きましょう。",
+			"publisher": "出版元"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "無料聖書アプリをダウンロード",
+			"plans copy": "読書プランは毎日、少ずつ神様の言葉に触れるのに便利です。",
+			"download app copy": "何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。",
+			"tagline": "どこに行く時も聖書と共に",
+			"android": "Android",
+			"verse action copy": "お気に入りの聖句に色をつけたり、印をつけたり、聖句に画像をつけて大衆や個人的にシェアできます。聖書のなかにメモを書き込むこともできます。",
+			"browse plans": "すべての読書プランを見てみる",
+			"free plans": "無料の読書プランおよびデボーション",
+			"versions copy": "YouVersionにリンクした、900の言語による1200の聖書訳から、お好きな聖句や節を選んでください。あなたのイベントをみている人は、聖書アプリ内であなたからの参照をタップしてお気に入り登録、ハイライトなどが可能となります。",
+			"download or read": "今すぐダウンロード、またはオンラインで読む",
+			"create free account": "無料アカウントを作成する",
+			"make it yours": "あなたの聖書にする"
 		}
 	}
 }

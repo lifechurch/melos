@@ -1,0 +1,15 @@
+lt:
+  features:
+    bible versions:
+      title: "Biblijos Versijos"
+      available: "Available Versions"
+      number of versions: "Total Versions:"
+      number of languages: "Total Languages:"
+      description with count: "Over %{version_count} versions in %{language_count} languages"
+      read version: "Read Version"
+      audio bible: "Audio Biblija"
+      audio bible meta: "Klausykitės internete nemokamai arba atsisiųskite YouVersion #1 Biblijos programą ir klausykitės savo telefone audio Bibliją."
+      publisher: "Leidėjas"
+      other versions: "Other Versions from This Publisher"
+
+

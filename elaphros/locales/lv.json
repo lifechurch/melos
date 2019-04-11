@@ -52,6 +52,33 @@
 			"friendship failure": "Notika kļūme veidojot draudzību",
 			"error deleting account": "Atvainojamies, bet pie mums radās kļūme. Lūdzu pamēģiniet vēlreiz vai sazinieties ar atbalsta daļu.",
 			"account already confirmed": "Tavs konts jau ir apstiprināts! Pieraksties lai turpinātu."
+		},
+		"bible versions": {
+			"number of languages": "Valodas kopumā:",
+			"available": "Pieejamie tulkojumi",
+			"audio bible": "Audio Bībele",
+			"other versions": "Citi tulkojumi no šī izdevēja",
+			"number of versions": "Tulkojumi kopumā:",
+			"read version": "Lasīt šo tulkojumu",
+			"title": "Bībeles tulkojumi",
+			"description with count": "Vairāk nekā {version_count} versijas {language_count} valodās.",
+			"audio bible meta": "Klausies tiešsaistē bez maksas vai arī lejuplādē YouVersion lietotni un klausies audio Bībeles savā telefonā, izmantojot visaugstāk novērtēto Bībeles lietotni.",
+			"publisher": "Publicētājs"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Lejuplādē bezmaksas Bībeles aplikāciju",
+			"plans copy": "Bībeles Lasīšanas plāni dod iespēju saskarties ar Dieva vārdu katru dienu, kaut vai tikai uz īsu mirkli.",
+			"download app copy": "Desmitiem miljonu cilvēku lieto Bībeles aplikāciju, lai padarītu Dieva Vārdu par daļu no viņu ikdienas dzīves. Lejupielādē bezmaksas aplikāciju un piekļūsti savām grāmatzīmēm, piezīmēm un lasīšanas plāniem no jebkuras vietas. Izbaudi simtiem tulkojumu, ieskaitot audio, viss uz tavas mobilās ierīces.",
+			"tagline": "Bībele, kas ir pie rokas vienmēr.",
+			"android": "Android",
+			"verse action copy": "Izcel un atzīmē savas iemīļotās rakstuvietas, veido rakstuvietu attēlus, ar kuriem vari dalīties, un pievieno Bībeles pantiem visiem redzamus vai privātus komentārus.",
+			"browse plans": "Pārlūkot visus plānus",
+			"free plans": "Bezmaksas Lasīšanas plāni un Garīgas pārdomas",
+			"versions copy": "Izvēlies jebkuru Bībeles pantu vai rakstvietu, kas tieši piesaistīta kādai no vairāk nekā 1200 YouVersion versijām vairāk nekā 900 valodās. Cilvēki, kas aplūko Tavu pasākumu, var uzklikšķināt uz atsauces, lai apskatītu to savā Bībeles aplikācijas lasītājā, pievienotu to grāmatzīmēm, izceltu un veiktu citas darbības.",
+			"download or read": "Lejupielādē tagad vai lasi tiešsaistē.",
+			"create free account": "Izveido savu bezmaksas kontu",
+			"make it yours": "Padari to par savu Bībeli"
 		}
 	}
 }

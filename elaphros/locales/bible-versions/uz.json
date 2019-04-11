@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Bible Versions",
+			"available": "Available Versions",
+			"publisher": "Publisher",
+			"audio bible": "Audio Bible",
+			"read version": "Read Version",
+			"other versions": "Other Versions from This Publisher",
+			"audio bible meta": "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App.",
+			"number of versions": "Total Versions:",
+			"number of languages": "Total Languages:",
+			"description with count": "Over {version_count} versions in {language_count} languages"
+		}
+	}
+}

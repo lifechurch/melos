@@ -52,6 +52,33 @@
 			"friendship failure": "Arkadaşlığı yaratırken hata oluştu",
 			"error deleting account": "Özür dileriz. Bizim tarafımızda bir hata oldu. Lütfen tekrar deneyin veya destek ile irtibata geçiniz.",
 			"account already confirmed": "Hesabınız zaten doğrulanmıştır. Devam etmek için giriş yapınız."
+		},
+		"bible versions": {
+			"number of languages": "Toplam Dil:",
+			"available": "Mevcut Çeviriler",
+			"audio bible": "Sesli Kutsal Kitap",
+			"other versions": "Yayıncının Sunduğu Diğer Çeviriler",
+			"number of versions": "Toplam Çeviri:",
+			"read version": "Çeviriyi Oku",
+			"title": "Kutsal Kitap Çevirileri",
+			"description with count": "{language_count} dilden fazla, {version_count}kadarını aşkın tercümeyle",
+			"audio bible meta": "1 Numara Kutsal Kitap uygulaması aracılığıyla telefonunuzdan YouVersion Kutsal Kitap Uygulamasını indirerek sesli Kutsal Kitaplar dinleyin ya da online olarak ücretsiz dinleyin.",
+			"publisher": "Yayıncı"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Kutsal Kitap Uygulamasını ücretsiz indirin",
+			"plans copy": "Kutsal Kitap Okuma Planları, sizi hergün Tanrı'nın Sözü'ne kısa süreliğine çeker.",
+			"download app copy": "On milyonlarca insan Kutsal Kitap Uygulaması'nı kullanıyor ve Tanrı'nın Sözü'nü hayatlarının bir parçası haline getiriyor. Uygulamayı bedavaya indirip her yerden yer imlerinize, notlarınıza ve okuma planlarınıza ulaşın. Mobil cihazınızı kullanarak Kutsal Kitap'ın yüzlerce çevirisini okuyun ve dinleyin.",
+			"tagline": "Kutsal Kitap her yerde elinizin altında",
+			"android": "Android",
+			"verse action copy": "En sevdiğiniz ayeti işaretleyin ya da vurgulayın, paylaşabileceğiniz ayet görseli oluşturun, Kutsal Kitap parçalarına genel ya da özel notlar ekleyin.",
+			"browse plans": "Bütün planları tara",
+			"free plans": "Ücretsiz Okuma Planları ",
+			"versions copy": "YouVersion'ın 900 dil ve 1.200'den fazla versiyona direk bağlı olan herhangi bir Kutsal Kitap ayeti veya bölümü seçin. Etkinliğinizi görüntüleyen kişiler referansınıza tıklayarak onu kendi Kutsal Kitap Uygulaması okuyucusundan işaretleyebilir, vurgulayabilir, ve daha birçok şey yapabilir.",
+			"download or read": "Şimdi indirin ya da çevrimiçi okuyun.",
+			"create free account": "Ücretsiz hesabınızı oluşturun",
+			"make it yours": "Kutsal Kitabınızı yapın."
 		}
 	}
 }

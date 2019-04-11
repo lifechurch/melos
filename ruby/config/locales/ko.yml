@@ -1367,6 +1367,7 @@ ko:
         badges: "<b>배지 이메일 알림</b> 이 해제되었습니다."
         comments: "<b>댓글 이메일 알림</b> 이 해제되었습니다."
         friendships: "<b>친구 활동 이메일 알림</b>이 해제되었습니다."
+        digest: "You successfully unsubscribed from <b>Digest</b> emails."
         likes: "<b>좋아요 이메일 알림</b>이 해제되었습니다."
         moments: "<b>Moments 이메일 알림</b>이 해제되었습니다."
         newsletter: "<b>뉴스레터</b>가 수신 거부 되었습니다."

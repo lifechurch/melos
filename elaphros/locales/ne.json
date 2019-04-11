@@ -52,6 +52,33 @@
 			"friendship failure": "Error creating friendship",
 			"error deleting account": "माफ गर्नुहोस्, हाम्रो तर्फ एउटा समस्या भयो। कृपया पुन: प्रयास गर्नुहोस् वा सहयोगको लागि सम्पर्क गर्नुहोस्।",
 			"account already confirmed": "तपाईंको एकाउन्ट पहिले नै पुष्टि भएको छ! जारी राख्न साइन इन गर्नुहोस्।"
+		},
+		"bible versions": {
+			"number of languages": "Total Languages:",
+			"available": "Available Versions",
+			"audio bible": "अडियो बाइबल",
+			"other versions": "Other Versions from This Publisher",
+			"number of versions": "Total Versions:",
+			"read version": "Read Version",
+			"title": "बाइबल संस्करणहरू",
+			"description with count": "Over {version_count} versions in {language_count} languages",
+			"audio bible meta": "अनलाइनमा निशुल्क सुन्नुहोस् वा YouVersion बाइबल एप डाउनलोड गर्नुहोस् र तपाईंको फोनमा # 1 रेटेड बाइबल एप  अडियो बाइबलहरू सुन्नुहोस्।",
+			"publisher": "Publisher"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Download the Free Bible App",
+			"plans copy": "Bible Plans help you engage with God's Word every day, a little at a time.",
+			"download app copy": "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device.",
+			"tagline": "the Bible that goes with you anywhere",
+			"android": "Android",
+			"verse action copy": "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages.",
+			"browse plans": "Browse All Plans",
+			"free plans": "Free Reading Plans and Devotionals",
+			"versions copy": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
+			"download or read": "अहिले डाउनलोड गर्नुहोस् वा अनलाइन पढ्नुहोस्।",
+			"create free account": "Create Your Free Account",
+			"make it yours": "Make it your Bible"
 		}
 	}
 }

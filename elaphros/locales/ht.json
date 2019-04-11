@@ -46,12 +46,39 @@
 			"share": "Pataje"
 		},
 		"users": {
-			"friends": "Friends",
+			"friends": "Zanmi",
 			"account confirmed": "Kont ou an konfime!",
-			"friendship success": "Success! You're now friends.",
-			"friendship failure": "Error creating friendship",
+			"friendship success": "Siksè! Nou zanmi kounye a.",
+			"friendship failure": "Erè nan kreye amitye",
 			"error deleting account": "Dezole, te gen yon pwoblèm nan fen nou an. Tanpri eseye ankò oubyen kontakte sipò.",
 			"account already confirmed": "Kont ou an déjà konfime! Konekte pou kontinye."
+		},
+		"bible versions": {
+			"number of languages": "Total Languages:",
+			"available": "Vèsyon ki valab yo",
+			"audio bible": "Bib odyo",
+			"other versions": "Other Versions from This Publisher",
+			"number of versions": "Total Versions:",
+			"read version": "Vèsyon lekti",
+			"title": "Vèsyon Bib yo",
+			"description with count": "Over {version_count} versions in {language_count} languages",
+			"audio bible meta": "Koute sou nèt la pou gratis oswa telechaje aplikasyon Bib YouVersion lan ki vote#1 pou ka tande Bib odyo yo sou telefòn ou.",
+			"publisher": "Editè"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Telechaje Ap Bib gratis la",
+			"plans copy": "Bible Plans help you engage with God's Word every day, a little at a time.",
+			"download app copy": "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device.",
+			"tagline": "the Bible that goes with you anywhere",
+			"android": "Android",
+			"verse action copy": "Pati Souliye oubyen fè makpaj vèsè prefere yo, fè Vèsè Imaj ke ou ka pataje, e atache Nòt piblik oubyen prive a pasaj Bib yo.",
+			"browse plans": "Chache tout plan yo",
+			"free plans": "Free Reading Plans and Devotionals",
+			"versions copy": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
+			"download or read": "Telechaje kounya oswa li sou entènèt.",
+			"create free account": "Kreye kont gratis ou",
+			"make it yours": "Fè li Bib ou"
 		}
 	}
 }

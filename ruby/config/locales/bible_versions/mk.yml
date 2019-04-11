@@ -1,0 +1,15 @@
+mk:
+  features:
+    bible versions:
+      title: "Верзии на Библијата"
+      available: "Достапни верзии"
+      number of versions: "Вкупно верзии:"
+      number of languages: "Вкупно јазици:"
+      description with count: "Преку %{version_count} верзии на %{language_count} јазици"
+      read version: "Прочитај ја верзијата"
+      audio bible: "Аудио Библија"
+      audio bible meta: "Бесплатно слушај ја Библијата на интернет или преземи ја апликацијата „Библија“ од YouVersion и слушај аудио верзии на Библијата на твојот телефон со број 1 рангираната апликација за Библија."
+      publisher: "Издавач"
+      other versions: "Други верзии од овој издавач"
+
+

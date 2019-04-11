@@ -52,6 +52,33 @@
 			"friendship failure": "Errore nella creazione dell'amicizia",
 			"error deleting account": "Scusa, c'è stato un problema. Per favore prova di nuovo o contatta l'assistenza.",
 			"account already confirmed": "Il tuo account è già stato confermato! Accedi per continuare."
+		},
+		"bible versions": {
+			"number of languages": "Lingue complessive:",
+			"available": "Versioni disponibili",
+			"audio bible": "Bibbia Audio",
+			"other versions": "Altre versioni di Questo Editore",
+			"number of versions": "Versioni complessive:",
+			"read version": "Leggi questa versione",
+			"title": "Versioni Bibbia",
+			"description with count": "Più di {version_count} versioni in {language_count} lingue",
+			"audio bible meta": "Ascolta online gratuitamente o scarica l'App Bibbia YouVersion e ascolta le Bibbie Audio sul tuo telefonino con l'App Bibbia più apprezzata.",
+			"publisher": "Editore"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Scarica l'App Bibbia gratuita.",
+			"plans copy": "I Piani di Lettura ti aiutano a coinvolgerti con la Parola di Dio ogni giorno, un po' alla volta.",
+			"download app copy": "Decine di milioni di persone stanno usando l'App Bibbia per rendere la Parola di Dio parte della loro vita quotidiana. Scarica l'app gratuita e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile.",
+			"tagline": "la Bibbia che ti accompagna ovunque",
+			"android": "Android",
+			"verse action copy": "Evidenzia o creare un Segnalibro per i tuoi versetti preferiti, crea Immagini Versetto da condividere, e allega Note pubbliche o private ai passi della Bibbia.",
+			"browse plans": "Visualizzare tutti i Piani",
+			"free plans": "Piani di Lettura e Devozionali Gratuiti",
+			"versions copy": "Seleziona qualsiasi versetto o passo biblico, linkato direttamente a qualsiasi delle più di 1.200 versioni YouVersion in più di 900 lingue. Le persone che vedono il tuo Evento possono cliccare sul tuo riferimento per leggerlo nel lettore della loro App Bibbia, dove possono creare un Segnalibro, Evidenziazione e altro.",
+			"download or read": "Scarica adesso o leggi online.",
+			"create free account": "Crea il Tuo Account Gratuito",
+			"make it yours": "Rendila la tua Bibbia"
 		}
 	}
 }

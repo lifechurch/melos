@@ -52,6 +52,33 @@
 			"friendship failure": "Det oppstod en feil under oppretting av vennskap",
 			"error deleting account": "Beklager, noe gikk galt hos oss. Vennligst prøv igjen eller kontakt support.",
 			"account already confirmed": "Din konto er allerede bekreftet! Logg in for å fortsette."
+		},
+		"bible versions": {
+			"number of languages": "Totalt antall språk:",
+			"available": "Tilgjengelige bibelutgaver",
+			"audio bible": "Lydbibel",
+			"other versions": "Andre bibeloversettelser fra dette forlaget",
+			"number of versions": "Totalt antall oversettelser:",
+			"read version": "Les denne oversettelsen",
+			"title": "Bibeloversettelser",
+			"description with count": "Over {version_count} oversettelser på {language_count} språk",
+			"audio bible meta": "Lytt på nett eller last ned Bibel-appen YouVersion og lytt til lydbibler på din telefon med den ledende Bibel-appen.",
+			"publisher": "Utgiver"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Last ned gratis Bibel-app.",
+			"plans copy": "Bibelplaner hjelper deg til å lese i Guds Ord hver dag, litt om gangen.",
+			"download app copy": "Et titalls millioner mennesker bruker 'the Bible App™' for å gjøre Guds ord til en del av sine daglige liv. Last ned denne gratis appen og få tilgang til dine bokmerker, notater og leseplaner overalt. Du tilbys hundrevis av ulike bibelutgaver, inkludert lydbibler - alt på din mobiltelefon eller ipad.",
+			"tagline": "Bibelen du kan ta med deg over alt",
+			"android": "Android",
+			"verse action copy": "Marker eller lag bokmerke til favorittversene dine, lag bilder til vers som du kan dele, og legg til offentlige eller private notater til skriftsted i Bibelen.",
+			"browse plans": "Utforsk alle leseplaner",
+			"free plans": "Gratis leseplaner og andakter",
+			"versions copy": "Velg et bibelvers eller avsnitt, med lenke til en av YouVersions over 1 200 versjoner på over 900 språk. Folk som ser din Event kan trykke på lenken for å se bibelverset i sin Bibel-app, og de kan legge til et bokmerke, utheve det osv.",
+			"download or read": "Last ned nå eller les på nett.",
+			"create free account": "Opprett din gratis brukerkonto",
+			"make it yours": "Gjør det til din bibel"
 		}
 	}
 }
