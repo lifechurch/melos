@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "ترجمه‌های کتاب‌مقدس",
+			"available": "ترجمه‌های موجود",
+			"publisher": "ناشر",
+			"audio bible": "«کتاب‌مقدس» صوتی",
+			"read version": "خواندن ترجمه",
+			"other versions": "سایر ترجمه‌ها از این ناشر",
+			"audio bible meta": "کتاب‌مقدس را به‌طور آنلاین و رایگان بشنوید یا اینکه برنامه پیشرفتۀ یوورژن را دانلود کنید و از طریق گوشی تلفن خود به فایلهای صوتی کتاب‌مقدس گوش دهید.",
+			"number of versions": "مجموع ترجمه‌ها",
+			"number of languages": "مجموع زبان‌ها",
+			"description with count": "بیش از {version_count} ترجمه به {language_count} زبان"
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "matoleo ya bibilia",
+			"available": "Toleo zilizopo",
+			"publisher": "Mchapishaji",
+			"audio bible": "Biblia ya Sauti",
+			"read version": "Soma toleo hili",
+			"other versions": "Toleo zingine kutoka mchapishi huyu",
+			"audio bible meta": "Sikiliza bure mtandaoni au pakua Programu ya Biblia ya YouVersion na usikilize Biblia za sauti kwenye simu yako ukiwa na programu ya Biblia iliyoshika nambari 1.",
+			"number of versions": "Toleo zote",
+			"number of languages": "Lugha zote",
+			"description with count": "Juu {version_count}matoleo katika lugha {language_count}"
+		}
+	}
+}

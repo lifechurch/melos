@@ -1,0 +1,77 @@
+<site-layout
+  fullRequestURL=out.global.canonicalUrl
+  requestHost=data.requestHost
+  getLocalizedLink=data.getLocalizedLink
+  getPathWithoutLocale=data.getPathWithoutLocale>
+  <@head>
+  $ const ampComponents = [
+      { name: 'amp-mustache', type: 'template', version: '0.2' },
+      { name: 'amp-bind', type: 'element', version: '0.1' },
+      { name: 'amp-list', type: 'element', version: '0.1' },
+      { name: 'amp-selector', type: 'element', version: '0.1' },
+      { name: 'amp-audio', type: 'element', version: '0.1' },
+      { name: 'amp-sidebar', type: 'element', version: '0.1' },
+      { name: 'amp-form', type: 'element', version: '0.1' },
+      { name: 'amp-carousel', type: 'element', version: '0.1' },
+      { name: 'amp-social-share', type: 'element', version: '0.1' },
+      { name: 'amp-analytics', type: 'element', version: '0.1' },
+      { name: 'amp-install-serviceworker', type: 'element', version: '0.1' },
+      { name: 'amp-app-banner', type: 'element', version: '0.1' }
+    ]
+
+    <amp-components
+      ampComponents=ampComponents>
+    </amp-components>
+
+    $ const title = [
+        out.global.__mf('features.bible versions.description with count', { 
+          language_count: input.req.bibleLanguageCount.toLocaleString(),
+          version_count: input.req.bibleVersionCount.toLocaleString(),
+        }),
+        out.global.__('features.marketing.tagline'),
+        out.global.__('features.marketing.download or read'),
+        out.global.__('features.marketing.android'),
+        out.global.__('features.marketing.iphone ipad')
+      ].join(' - ')
+    $ const description = out.global.__('features.marketing.versions copy')
+
+    <hreflang-tags
+      locales=data.appLocales
+      host=data.requestHost
+      canonicalUrl=out.global.canonicalUrl
+      pageType="versions"
+      locale=out.global.locale>
+    </hreflang-tags>
+
+    <header-tags
+      title=title
+      description=description
+      deepLink=data.deepLink
+      twitterCard="summary"
+      canonicalUrl=out.global.canonicalUrl>
+    </header-tags>
+  </@head>
+  <@body>
+    <app-default-state></app-default-state>
+    <div class="mw8 center pt3 pb7 pl4 pr4 cf">
+      <div class="fl w-60-m">
+        <h1 class="pt3 near-black">${out.global.__('features.bible versions.title')}</h1>
+        <for|language| of=data.req.getVersionLanguages()>
+          <a href=data.getLocalizedLink(`/languages/${language.language_tag}`, out.global.locale) class="link">
+            <h4 class="mt4 mb2 near-black normal">${language.local_name}${language.name === language.local_name ? '' : ` [${language.name}]`}</h4>
+          </a>
+          <for|version| of=data.req.getVersionsForLanguage(language.language_tag)>
+            <a class="db pb2 lh-copy yv-green link" href=out.global.seoUtils.getCanonicalUrl('bible-version', version, out.global.locale)>${version.local_title}</a>
+          </for>
+        </for>
+      </div>
+      <div class="fl w-40-m bl-m bw1 b--black-10 pl4-m pb3">
+        <marketing-sidebar 
+          req=data.req 
+          getLocalizedLink=data.getLocalizedLink
+          source="versions">
+        </marketing-sidebar>
+      </div>
+    </div>
+  </@body>
+</site-layout>

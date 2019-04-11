@@ -52,6 +52,33 @@
 			"friendship failure": "Hitilafu kujenga urafiki",
 			"error deleting account": "Samahani, kulikuwa na shida upande wetu. Jaribu tena ama uwasiliane nasi",
 			"account already confirmed": "Akaunti yako imesha thibitishwa! Ingia ili uendelee"
+		},
+		"bible versions": {
+			"number of languages": "Lugha zote",
+			"available": "Toleo zilizopo",
+			"audio bible": "Biblia ya Sauti",
+			"other versions": "Toleo zingine kutoka mchapishi huyu",
+			"number of versions": "Toleo zote",
+			"read version": "Soma toleo hili",
+			"title": "matoleo ya bibilia",
+			"description with count": "Juu {version_count}matoleo katika lugha {language_count}",
+			"audio bible meta": "Sikiliza bure mtandaoni au pakua Programu ya Biblia ya YouVersion na usikilize Biblia za sauti kwenye simu yako ukiwa na programu ya Biblia iliyoshika nambari 1.",
+			"publisher": "Mchapishaji"
+		},
+		"marketing": {
+			"iphone ipad": "iPhone/iPad",
+			"download free app": "Pata programu ya bure ya Bibilia",
+			"plans copy": "Mipango ya biblia hukusaidia kujihushisha na neno la Mungu kila siku,kidogo kidogo.",
+			"download app copy": "Mamilioni ya watu wanatumia App ya Bibilia ™ kufanya Neno la Mungu iwe sehemu ya maisha yao ya kila siku. Pakua programu ya bure na upate maelezo ya maalamisho yako, na mipango ya kusoma kutoka mahali popote. Furahia mamia ya matoleo, ikiwa pamoja na audio yote kwa rununu yako.",
+			"tagline": "Biblia inayoenda nawe kokote",
+			"android": "Android",
+			"verse action copy": "Kuonyesha au Kwanza mistari yako favorite, kufanya Fungu Picha uweze kushiriki na masharti Notes umma au binafsi kwa vifungu vya Biblia.",
+			"browse plans": "Angalia mipango yote",
+			"free plans": "Mipango ya usomaji bure na Ibada",
+			"versions copy": "Kuchagua aya yoyote Biblia au kifungu, wanaohusishwa moja kwa moja na yoyote ya YouVersion ya 1,200+ matoleo, katika lugha 900 +. Watu kuangalia Tukio yako unaweza bomba kumbukumbu yako kuona hivyo katika Biblia yao App msomaji, ambapo wanaweza Kwanza hilo, Highlight, na zaidi.",
+			"download or read": "Download sasa au kusoma online.",
+			"create free account": "Fungua akaunti bure",
+			"make it yours": "Ifanye iwe Yako"
 		}
 	}
 }

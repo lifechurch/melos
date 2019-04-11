@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "ជំនាន់​ព្រះ​គម្ពីរ",
+			"available": "មាន​ជំនាន់​នេះ",
+			"publisher": "អ្នក​បោះ​ផ្សាយ",
+			"audio bible": "ព្រះគម្ពីរជាសំលេង",
+			"read version": "អាន​ជំនាន់​នេះ",
+			"other versions": "ជំនាន់​ផ្សេង​ទៀត​ពី​អ្នក​បោះ​ផ្សាយ​នេះ",
+			"audio bible meta": "ស្ដាប់លើ​បណ្ដាញ​ដោយ​ឥត​គិត​ថ្លៃ ឬ​ទាញ​យក​កម្មវិធីព្រះគម្ពីរYouVersion និង​ស្ដាប់ព្រះគម្ពីរជាសំលេង​លើ​ទូរស័ព្ទ​របស់​អ្នក​ជា​មួយ​កម្មវិធីព្រះគម្ពីរលំដាប់​លេខ​#1",
+			"number of versions": "សរុប​ជំនាន់",
+			"number of languages": "សរុប​ភាសា",
+			"description with count": "លើស​ពី {version_count} ជំនាក់​ក្នុង​ {language_count} ភាសា"
+		}
+	}
+}

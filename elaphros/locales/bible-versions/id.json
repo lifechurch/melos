@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Versi Alkitab",
+			"available": "Versi Tersedia",
+			"publisher": "Penerbit",
+			"audio bible": "Alkitab Suara",
+			"read version": "Baca Versi Ini",
+			"other versions": "Versi lain dari Penerbit Ini",
+			"audio bible meta": "Dengarkan daring secara gratis atau unduh Aplikasi Alkitab YouVersion dan dengarkan Alkitab suara di ponsel Anda dengan Aplikasi Alkitab #1.",
+			"number of versions": "Jumlah Versi:",
+			"number of languages": "Jumlah Bahasa:",
+			"description with count": "Lebih dari {version_count} versi di {language_count} bahasa"
+		}
+	}
+}

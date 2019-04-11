@@ -1,0 +1,138 @@
+<site-layout
+  fullRequestURL=out.global.canonicalUrl
+  requestHost=data.requestHost
+  getLocalizedLink=data.getLocalizedLink
+  getPathWithoutLocale=data.getPathWithoutLocale>
+  <@head>
+  $ const ampComponents = [
+      { name: 'amp-mustache', type: 'template', version: '0.2' },
+      { name: 'amp-bind', type: 'element', version: '0.1' },
+      { name: 'amp-list', type: 'element', version: '0.1' },
+      { name: 'amp-selector', type: 'element', version: '0.1' },
+      { name: 'amp-audio', type: 'element', version: '0.1' },
+      { name: 'amp-sidebar', type: 'element', version: '0.1' },
+      { name: 'amp-form', type: 'element', version: '0.1' },
+      { name: 'amp-carousel', type: 'element', version: '0.1' },
+      { name: 'amp-social-share', type: 'element', version: '0.1' },
+      { name: 'amp-analytics', type: 'element', version: '0.1' },
+      { name: 'amp-install-serviceworker', type: 'element', version: '0.1' },
+      { name: 'amp-app-banner', type: 'element', version: '0.1' }
+    ]
+
+    <amp-components
+      ampComponents=ampComponents>
+    </amp-components>
+
+
+    <hreflang-tags
+      locales=data.appLocales
+      host=data.requestHost
+      canonicalUrl=out.global.canonicalUrl
+      pageType="version"
+      locale=out.global.locale>
+    </hreflang-tags>
+
+    <await(data.allPromises)>
+      <@then|promiseData|>
+        $ const version = promiseData[0]
+    
+        $ const title = [
+          `${version.local_title} (${version.local_abbreviation})`,
+          out.global.__('features.marketing.download free app'),
+          out.global.__('features.marketing.download or read'),
+          out.global.__('features.marketing.android'),
+          out.global.__('features.marketing.iphone ipad')
+        ].join(' - ')
+        $ const description = out.global.__('features.marketing.versions copy')
+
+        <header-tags
+          title=title
+          description=description
+          deepLink=data.deepLink
+          twitterCard="summary"
+          canonicalUrl=out.global.canonicalUrl>
+        </header-tags>
+      </@then>
+    </await>
+  </@head>
+  <@body>
+    <app-default-state></app-default-state>
+    <await(data.allPromises)>
+      <@then|promiseData|>    
+
+        $ const version = promiseData[0]
+
+        <div class="mw8 center pt3 pb7 pl4 pr4 cf">
+          <div class="fl w-60-m">
+            <h1 class="f3 pt3 pb0 mb0 near-black lh-title">${version.local_title} <span class="ttu fw4 gray">(${version.local_abbreviation})</span></h1>
+            <h3 class="f5 fw4 mb4 mt2 pt0 normal lh-title gray">${version.language.local_name}${version.language.name === version.language.local_name ? '' : ` [${version.language.name}]`}</h3>
+            <a 
+              class="db pb3 link yv-green lh-copy" 
+              role="button" 
+              href=out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.getFirstUsfmForVersion(version, data.req.log), out.global.locale) 
+            >
+              ${out.global.__('features.bible versions.read version')}: ${version.local_title}
+            </a>
+            <if(version.audio)>
+              <a 
+                class="db pb3 link yv-green lh-copy" 
+                role="button" 
+                title=out.global.__('features.bible versions.audio bible meta')
+                href=out.global.seoUtils.getCanonicalUrl('bible', version.id, version.local_abbreviation, data.getFirstUsfmForVersion(version, data.req.log), out.global.locale) 
+              >
+                ${out.global.__('features.bible versions.audio bible')}: ${version.local_title}
+              </a>
+            </if>
+            <div class="lh-copy gray pr4 shrink-headings">
+              $!{version.copyright_long.html || version.copyright_long.text || version.copyright_short.html || version.copyright_short.text}
+            </div>
+
+            <if(version.publisher)>
+              <h4 class="lh-title ma0 pa0 tracked mid-gray pt4 mt4 mt0-m ttu bt bn-m b--black-10">
+                ${out.global.__('features.bible versions.publisher')}
+              </h4>  
+              <p class="lh-copy">
+                <if(version.publisher.url)>
+                  <a 
+                    class="dib link yv-green" 
+                    role="button" 
+                    href=version.publisher.url
+                  >
+                    ${version.publisher.name}
+                  </a>
+                </if>
+                <else-if(version.publisher.name)>
+                  ${version.publisher.name}
+                </else-if>
+              </p>
+            </if>
+
+            <if(version.publisher && version.publisher.id)>
+              <h4 class="lh-title ma0 pa0 tracked mid-gray pt4 mt4 mt0-m ttu bt bn-m b--black-10">
+                ${out.global.__('features.bible versions.other versions')}
+              </h4>  
+              <p class="lh-copy">
+                <for|relatedVersion| of=data.req.getVersionsForPublisher(version.publisher.id)>
+                    <a 
+                      class="db pb2 lh-copy yv-green link"
+                      role="button" 
+                      href=out.global.seoUtils.getCanonicalUrl('bible-version', relatedVersion, out.global.locale)
+                    >
+                      ${relatedVersion.local_title}
+                    </a>
+                </for>
+              </p>
+            </if>            
+          </div>
+          <div class="fl w-40-m bl-m bw1 b--black-10 pl4-m pb3">
+            <marketing-sidebar 
+              req=data.req 
+              getLocalizedLink=data.getLocalizedLink
+              source="versions">
+            </marketing-sidebar>
+          </div>
+        </div>
+      </@then>
+    </await>
+  </@body>
+</site-layout>

@@ -15,6 +15,7 @@ fastify.register(require('point-of-view'), { engine: { marko: require('marko') }
 // Decorators
 fastify.register(require('./decorators/newrelic-decorator'))
 fastify.register(require('./decorators/raven-decorator'))
+fastify.register(require('./decorators/bible-versions-decorator'), { timeout: 0 })
 fastify.register(require('./decorators/bible-config-decorator'), { timeout: 0 })
 
 // Plugins
@@ -23,6 +24,7 @@ fastify.register(require('./plugins/redirect-authenticated'))
 fastify.register(require('./plugins/manifest'))
 fastify.register(require('./plugins/service-worker'))
 fastify.register(require('./plugins/i18n'))
+fastify.register(require('./plugins/bible-versions'))
 fastify.register(require('./plugins/bible'))
 fastify.register(require('./plugins/confirmations'))
 fastify.register(require('./plugins/main'))

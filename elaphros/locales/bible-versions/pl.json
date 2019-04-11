@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Wersje Biblii",
+			"available": "Dostępne przekłady",
+			"publisher": "Wydawca",
+			"audio bible": "Biblia audio",
+			"read version": "Czytaj ten przekład",
+			"other versions": "Inne przekłady tego wydawcy",
+			"audio bible meta": "Słuchaj on-line za darmo lub pobierz Aplikację Biblii YouVersion i słuchaj Biblii audio na swoim telefonie z najlepszą Aplikacją Biblii.",
+			"number of versions": "Łącznie przekładów:",
+			"number of languages": "Łącznie języków:",
+			"description with count": "Pond {version_count} wersji w {language_count} językach"
+		}
+	}
+}

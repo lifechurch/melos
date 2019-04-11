@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "聖經譯本",
+			"available": "可用的譯本",
+			"publisher": "出版商",
+			"audio bible": "有聲聖經",
+			"read version": "閱讀此譯本",
+			"other versions": "此出版社發行的其他譯本",
+			"audio bible meta": "免費線上聆聽或下載YouVersion首屈一指的聖經軟體到你的手機來聆聽有聲聖經。",
+			"number of versions": "譯本總數：",
+			"number of languages": "語言總數：",
+			"description with count": "超過{version_count}個以{language_count}種語言呈現的譯本"
+		}
+	}
+}

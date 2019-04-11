@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Mhando yeBhaibheri",
+			"available": "Mhando dzinogona kuwanikwa",
+			"publisher": "Munyori kana vanyori",
+			"audio bible": "Bhaibheri rekuteerera",
+			"read version": "Verenga mhando iyoyi",
+			"other versions": "Mamwe mavhezheni akanyora neunyori mumwechete",
+			"audio bible meta": "Teerera Bhaibheri richiverengwa mahara kana tora App yeBhaibheri woteerera pafoni yako ne App yeBhaibheri yemandorokwati.",
+			"number of versions": "Mavhezheni ose:",
+			"number of languages": "Zvirimi zvose zvaunganidzwa",
+			"description with count": "Mavhezhenu anopfuura {version_count} muzvirimi {language_count} "
+		}
+	}
+}

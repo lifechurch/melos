@@ -1,0 +1,16 @@
+{
+	"features": {
+		"bible versions": {
+			"title": "Bíblíuútgáfa",
+			"available": "Fáanlegar biblíuútgáfur",
+			"publisher": "Útgefandi",
+			"audio bible": "Hljóðbiblía",
+			"read version": "Lestu biblíuútgáfu",
+			"other versions": "Aðrar biblíuútgáfur frá þessum útgefanda",
+			"audio bible meta": "Hlustaðu ókeypis á netinu eða sæktu YouVersion Biblíuappið og hlustaðu á hljóðbiblíur í símanum með appinu.",
+			"number of versions": "Heildarfjöldi útgáfa:",
+			"number of languages": "Heildarfjöldi tungumála:",
+			"description with count": "Over {version_count} versions in {language_count} languages"
+		}
+	}
+}
