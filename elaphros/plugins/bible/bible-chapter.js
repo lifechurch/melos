@@ -1,4 +1,5 @@
 const api = require('@youversion/js-api')
+const httpErrors = require('http-errors')
 const deepLinkPath = require('@youversion/utils/lib/bible/deepLinkPath').default
 const validateApiResponse = require('../../utils/validate-api-response')
 const getDefaultImages = require('../../utils/get-default-images')
@@ -104,5 +105,6 @@ module.exports = function bibleChapter(req, reply) {
     })
   }, (e) => {
     reply.captureException(e, 'Error getting Bible reference')
+    return reply.send(new httpErrors.NotFound())
   })
 }
