@@ -1,0 +1,8 @@
+pl:
+  features:
+    bible languages:
+      title: "Języki i przekłady Biblii"
+      most popular: "Najpopularniejsze języki"
+      additional: "Dodatkowe języki"
+      bible in: "Biblia w języku %{language_name}"
+
