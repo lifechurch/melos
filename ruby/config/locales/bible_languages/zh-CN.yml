@@ -1,0 +1,8 @@
+zh-CN:
+  features:
+    bible languages:
+      title: "圣经语言和译本"
+      most popular: "最常用的语言"
+      additional: "其他语言"
+      bible in: "%{language_name}圣经"
+
