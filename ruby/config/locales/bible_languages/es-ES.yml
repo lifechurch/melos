@@ -1,0 +1,8 @@
+es-ES:
+  features:
+    bible languages:
+      title: "Idiomas de la Biblia y traducciones"
+      most popular: "Idiomas más populares"
+      additional: "Idiomas adicionales"
+      bible in: "La Biblia en %{language_name}"
+
