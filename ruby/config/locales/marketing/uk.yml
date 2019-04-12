@@ -14,4 +14,4 @@ uk:
       tagline: "Біблія, яка поряд з вами усюди"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Завантажити Біблію на мові %{language_name}"
