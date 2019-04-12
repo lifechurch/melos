@@ -1,0 +1,8 @@
+uk:
+  features:
+    bible languages:
+      title: "Мови і переклади Біблії"
+      most popular: "Найпопулярніші мови"
+      additional: "Додаткові мови"
+      bible in: "Біблія на мові %{language_name}"
+
