@@ -1,0 +1,8 @@
+fr:
+  features:
+    bible languages:
+      title: "Les langues et traductions de la Bible"
+      most popular: "Langues courantes"
+      additional: "Autres langues"
+      bible in: "La Bible en %{language_name}"
+
