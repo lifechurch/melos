@@ -14,4 +14,4 @@ id:
       tagline: "Alkitab yang bersama Anda di mana pun juga"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Unduh Alkitab dalam bahasa %{language_name}"
