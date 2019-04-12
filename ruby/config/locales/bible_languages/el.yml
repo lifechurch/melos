@@ -1,0 +1,8 @@
+el:
+  features:
+    bible languages:
+      title: "Γλώσσες και μεταφράσεις"
+      most popular: "Δημοφιλέστερες γλώσσες"
+      additional: "Πρόσθετες γλώσσες"
+      bible in: "Η Αγία Γραφή στα %{language_name}"
+
