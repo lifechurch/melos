@@ -14,4 +14,4 @@ he:
       tagline: "כתבי הקודש אשר הולכים איתך לכל מקום"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "הורד את הכתובים בשפה ה-%{language_name}"
