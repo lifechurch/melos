@@ -14,4 +14,4 @@ hi:
       tagline: "बाइबिल जहाँ जाए वहाँ आपके साथ "
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "%{language_name} भाषा मे, बाइबिल डाउनलोड करो"
