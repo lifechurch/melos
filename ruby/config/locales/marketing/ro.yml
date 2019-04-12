@@ -14,4 +14,4 @@ ro:
       tagline: "Biblia care merge cu tine oriunde"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Descarcă Biblia în limba %{language_name}"
