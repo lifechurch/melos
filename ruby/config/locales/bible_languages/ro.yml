@@ -1,0 +1,8 @@
+ro:
+  features:
+    bible languages:
+      title: "Limbi și traduceri ale Bibliei"
+      most popular: "Cele mai populare limbi"
+      additional: "Limbi suplimentare"
+      bible in: "Biblia în limba %{language_name}"
+
