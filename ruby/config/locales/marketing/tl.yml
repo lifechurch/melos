@@ -14,4 +14,4 @@ tl:
       tagline: "ang Biblia na kasa-kasama mo kahit saan"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "I-download ang Biblia sa %{language_name}"

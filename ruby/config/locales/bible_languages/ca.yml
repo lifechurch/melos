@@ -1,0 +1,8 @@
+ca:
+  features:
+    bible languages:
+      title: "Llengües de la Bíblia i traduccions"
+      most popular: "Llengües més populars"
+      additional: "Llengües addicionals"
+      bible in: "La Bíblia en %{language_name}"
+

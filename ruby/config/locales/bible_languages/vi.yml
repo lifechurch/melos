@@ -1,0 +1,8 @@
+vi:
+  features:
+    bible languages:
+      title: "Ngôn ngữ và bản dịch Kinh Thánh"
+      most popular: "Các ngôn ngữ phổ biến nhất"
+      additional: "Các ngôn ngữ khác"
+      bible in: "Kinh Thánh %{language_name}"
+

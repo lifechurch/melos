@@ -14,4 +14,4 @@ ru:
       tagline: "Библия, которая всегда с вами"
       iphone ipad: "iPhone/iPad"
       android: "Андроид"
-
+      download language: "Скачать Библию на языке: %{language_name}"

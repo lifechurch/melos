@@ -1,0 +1,8 @@
+sn:
+  features:
+    bible languages:
+      title: "Mitauro yebhaibheri nekuturukirwa"
+      most popular: "Mitauro inonyanyo zivikanwa"
+      additional: "Mimwe mitauro"
+      bible in: "Bhaibheri mu%{language_name}"
+

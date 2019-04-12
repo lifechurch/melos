@@ -1,0 +1,8 @@
+cs:
+  features:
+    bible languages:
+      title: "Jazyky Bible a překlady"
+      most popular: "Nejoblíbenější jazyky"
+      additional: "Další jazyky"
+      bible in: "Bible v %{language_name}"
+

@@ -14,4 +14,4 @@ zh-CN:
       tagline: "随时随地陪伴着你的圣经"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "下载%{language_name}圣经"

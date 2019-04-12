@@ -1,0 +1,8 @@
+ar:
+  features:
+    bible languages:
+      title: "لغات الإنجيل المقدس و الترجمات"
+      most popular: "اللغات الأكثر شعبيّة"
+      additional: "لغات إضافية"
+      bible in: "الإنجيل المقدس ب%{language_name}"
+

@@ -1,0 +1,8 @@
+lv:
+  features:
+    bible languages:
+      title: "Bībeles valodas un tulkojumi"
+      most popular: "Populārākās valodas"
+      additional: "Pārējās valodas"
+      bible in: "Bībele %{language_name}"
+

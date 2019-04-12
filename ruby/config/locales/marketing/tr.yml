@@ -14,4 +14,4 @@ tr:
       tagline: "Kutsal Kitap her yerde elinizin altında"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Kutsal Kitap'ı indirin %{language_name}"

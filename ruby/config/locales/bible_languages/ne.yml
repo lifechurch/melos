@@ -1,0 +1,8 @@
+ne:
+  features:
+    bible languages:
+      title: "बाइबल भाषाहरू तथा अनुवादहरू "
+      most popular: "लोकप्रिय भाषाहरू"
+      additional: "थप भाषाहरू"
+      bible in: "%{language_name}मा बाइबल"
+

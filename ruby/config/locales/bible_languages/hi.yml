@@ -1,0 +1,8 @@
+hi:
+  features:
+    bible languages:
+      title: "बाइबिल भाषा और अनुवाद"
+      most popular: "सबसे प्रचलित भाषा"
+      additional: "कुछ और भाषा"
+      bible in: "बाइबिल %{language_name} भाषा मे"
+

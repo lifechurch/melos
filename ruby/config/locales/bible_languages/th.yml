@@ -1,0 +1,8 @@
+th:
+  features:
+    bible languages:
+      title: "ภาษาและฉบับแปล"
+      most popular: "ภาษาที่นิยมมากที่สุด"
+      additional: "ภาษาอื่นๆ "
+      bible in: "พระคัมภีร์ในภาษา %{language_name}"
+

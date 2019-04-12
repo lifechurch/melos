@@ -1,0 +1,8 @@
+ms:
+  features:
+    bible languages:
+      title: "Bahasa dan terjemahan Alkitab"
+      most popular: "Bahasa-bahasa yang paling terkenal"
+      additional: "Bahasa-bahasa tambahan"
+      bible in: "Alkitab dalam %{language_name}"
+

@@ -14,4 +14,4 @@ et:
       tagline: "the Bible that goes with you anywhere"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Download the Bible in %{language_name}"

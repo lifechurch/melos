@@ -14,4 +14,4 @@ bg:
       tagline: "Библията, която е навсякъде с Вас"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Изтеглете Библията на %{language_name}"

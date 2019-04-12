@@ -1,0 +1,8 @@
+sw:
+  features:
+    bible languages:
+      title: " lugha za biblia na tafasili"
+      most popular: "Lugha nyingi maarufu"
+      additional: "Lugha za ziada"
+      bible in: "Biblia katika %{language_name}"
+

@@ -14,4 +14,4 @@ hr:
       tagline: "Biblija koja s tobom ide bilo kuda"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Preuzmi Bibliju na sljedećem jeziku: %{language_name}"

@@ -1,0 +1,8 @@
+he:
+  features:
+    bible languages:
+      title: "שפות הכתובים ותרגומים"
+      most popular: "השפות הפופולריות ביותר"
+      additional: "שפות נוספות"
+      bible in: "דברי הקודש ב-%{language_name}"
+

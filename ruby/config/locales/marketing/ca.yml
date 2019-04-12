@@ -14,4 +14,4 @@ ca:
       tagline: "la Bíblia que va amb tu a tot arreu"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Descarrega la Bíblia en %{language_name}"

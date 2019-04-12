@@ -1,0 +1,8 @@
+ta:
+  features:
+    bible languages:
+      title: "வேதாகம மொழிகள் மற்றும் மொழிபெயர்ப்புகள்"
+      most popular: "மிகவும் பிரபலமான மொழிகள்"
+      additional: "கூடுதல் மொழிகள்"
+      bible in: "%{language_name}ல் வேதாகமம்"
+

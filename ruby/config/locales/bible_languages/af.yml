@@ -1,0 +1,8 @@
+af:
+  features:
+    bible languages:
+      title: "Bybel tale en vertalings"
+      most popular: "Mees gewilde tale"
+      additional: "Bykomende tale"
+      bible in: "Die Bybel in %{language_name}"
+

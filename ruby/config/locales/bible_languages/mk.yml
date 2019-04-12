@@ -1,0 +1,8 @@
+mk:
+  features:
+    bible languages:
+      title: "Библиски преводи и јазици"
+      most popular: "Најпопуларни јазици"
+      additional: "Останати јазици"
+      bible in: "Библијата на %{language_name}"
+

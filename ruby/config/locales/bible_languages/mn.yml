@@ -1,0 +1,8 @@
+mn:
+  features:
+    bible languages:
+      title: "Библийн хэл ба орчуулгууд"
+      most popular: "Хамгийн түгээмэл хэлүүд"
+      additional: "Нэмэлт хэлүүд"
+      bible in: "%{language_name} дээрхи Библи"
+

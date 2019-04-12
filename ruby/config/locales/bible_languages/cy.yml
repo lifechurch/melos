@@ -1,0 +1,8 @@
+cy:
+  features:
+    bible languages:
+      title: "Ieithoedd Beibl a chyfieithiadau"
+      most popular: "Ieithoedd mwyaf poblogaidd. "
+      additional: "Ieithoedd ychwanegol"
+      bible in: "Y Beibl mewn %{language_name}"
+

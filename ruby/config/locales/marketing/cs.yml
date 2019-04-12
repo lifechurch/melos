@@ -14,4 +14,4 @@ cs:
       tagline: "Bible, která je stále s vámi"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Stáhnout Bibli v %{language_name}"
