@@ -1,0 +1,8 @@
+zh-HK:
+  features:
+    bible languages:
+      title: "聖經語言和譯本"
+      most popular: "最常用的語言"
+      additional: "其他語言"
+      bible in: "%{language_name} 聖經"
+
