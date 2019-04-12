@@ -14,4 +14,4 @@ ckb:
       tagline: "the Bible that goes with you anywhere"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "کتێبی پیرۆز بە زمانی %{language_name} دابگرە"
