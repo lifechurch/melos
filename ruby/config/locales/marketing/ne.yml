@@ -14,4 +14,4 @@ ne:
       tagline: "the Bible that goes with you anywhere"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "%{language_name} भाषामा बाइबल डाउनलोड गर्नुहोस्"
