@@ -1,6 +1,6 @@
 {
 	"language names.afrikaans": "アフリカーンス{語;ご}",
-	"language names.albanian": "アルバニア語",
+	"language names.albanian": "ア��バニア語",
 	"language names.arabic": "アラビア語",
 	"language names.bulgarian": "ブルガリア語",
 	"language names.burmese": "ミャンマー・ビルマ語",
@@ -92,6 +92,7 @@
 	"unsubscribe.success.badges": "<b>バッジ</b>に関する通知メールからの登録解除が完了しました。",
 	"unsubscribe.success.comments": "<b>コメント</b>に関する通知メールからの登録解除が完了しました。",
 	"unsubscribe.success.friendships": "<b>フレンドシップ</b>に関する通知メールからの登録解除が完了しました。",
+	"unsubscribe.success.digest": "<b>ダイジェスト</b>メールの登録解除が完了しました。",
 	"unsubscribe.success.likes": "<b>いいね！</b>に関する通知メールからの登録解除が完了しました。",
 	"unsubscribe.success.moments": "<b>モーメント</b>に関する通知メールからの登録解除が完了しました。",
 	"unsubscribe.success.newsletter": "<b>ニュースレター</b>からの登録解除が完了しました。",
