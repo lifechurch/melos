@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"PO-Revision-Date: 2019-02-25 05:23\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Danish\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-04-02 15:40-0400\n"
+"PO-Revision-Date: 2019-02-25 05:23\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Danish\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2018-01-08 14:40-0500\n"
+"PO-Revision-Date: 2019-02-25 05:23\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Danish\n"
 "MIME-Version: 1.0\n"
@@ -67,22 +67,22 @@ msgstr ""
 "X-Crowdin-File: share.po\n"
 
 msgid "moment.badge.earned.self.title"
-msgstr "Du har tjent til <b>{title}</b> mærket"
+msgstr "Du optjente <b>{title}</b>-mærket"
 
 msgid "moment.badge.earned.title"
-msgstr "{name} fortjente <b>{title}</b> mærket"
+msgstr "{name} optjente <b>{title}</b>-mærket"
 
 msgid "moment.bible.download.self.title"
-msgstr "Du hentede versionen, <b>{version}</b>"
+msgstr "Du hentede oversættelsen, <b>{version}</b>"
 
 msgid "moment.bible.download.title"
-msgstr "{name} hentede versionen, <b>{version}</b>"
+msgstr "{name} hentede oversættelsen, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Du satte et bogmærke ved <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Du bogmærkede <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} satte et bogmærke ved <b>{reference_human} {version_abbreviation}</b>"
+msgstr "{name} bogmærkede <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.friendship.self.title"
 msgstr "Du er nu venner med <b>{friend_name}</b>"
@@ -97,16 +97,16 @@ msgid "moment.highlight.title"
 msgstr "{name} markerede <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
-msgstr "Du tilføjede en note, <b>{title}</b>"
+msgstr "Du tilføjede noten, <b>{title}</b>"
 
 msgid "moment.note.title"
-msgstr "{name} tilføjede en note, <b>{title}</b>"
+msgstr "{name} tilføjede noten, <b>{title}</b>"
 
 msgid "moment.note.no_title_no_reference.title"
 msgstr "{name} tilføjede en note"
 
 msgid "moment.note.no_title_no_reference.self.title"
-msgstr "Du tilføjede en note"
+msgstr "Du tilføjede noten"
 
 msgid "moment.note.reference.title"
 msgstr "{name} tilføjede en note til <b>{reference_human}</b>"
@@ -115,46 +115,46 @@ msgid "moment.note.reference.self.title"
 msgstr "Du tilføjede en note til <b>{reference_human}</b>"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Du færdiggjorde en plan"
+msgstr "Du gennemførte din Læseplan"
 
 msgid "moment.plan_completion.title"
-msgstr "{name} færdiggjorde en plan"
+msgstr "{name} gennemførte en Læseplan"
 
 msgid "moment.plan_completion.v2.self.title"
-msgstr "Du færdiggjorde din Plan, <b>{title}</b>"
+msgstr "Du gennemførte din Læseplan, <b>{title}</b>"
 
 msgid "moment.plan_completion.v2.title"
-msgstr "{name} færdiggjorde en Plan, <b>{title}</b>"
+msgstr "{name} gennemførte en Læseplan, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Dag {segment} af {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Du færdiggjorde dag <b>{segment}</b> af planen, <b>{title}</b>"
+msgstr "Du gennemførte dag <b>{segment}</b> af Læseplanen, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} færdiggjorde dag  <b>{segment}</b> af planen, <b>{title}</b>"
+msgstr "{name} gennemførte dag <b>{segment}</b> af Læseplanen, <b>{title}</b>"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Du startede en ny plan"
+msgstr "Du påbegyndte en ny Læseplan"
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} startede en ny plan"
+msgstr "{name} påbegyndte en ny Læseplan"
 
 msgid "moment.plan_subscription.v2.self.title"
-msgstr "Du startede en ny Plan, <b>{title}</b>"
+msgstr "Du påbegyndte en ny Læseplan, <b>{title}</b>"
 
 msgid "moment.plan_subscription.v2.title"
-msgstr "{name} startede en ny Plan, <b>{title}</b>"
+msgstr "{name} påbegyndte en ny Læseplan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
-msgstr "Se <i>Bibel Serien</i> i aften!"
+msgstr "Se <i>The Bible</i>-serien i aften!"
 
 msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Bibel Serier</i>"
+msgstr "<i>The Bible</i>-serien"
 
 msgid "moment.system.find_friends.title"
-msgstr "Bibel App'en er endnu bedre med venner. Søg i dine kontakter for at finde venner."
+msgstr "Bibel App'en er endnu bedre med Venner. Søg i dine Kontakter, for at finde Venner."
 
 msgid "moment.video.watched.self.title"
 msgstr "Du så <b>{title}</b>"
@@ -163,10 +163,10 @@ msgid "moment.video.watched.title"
 msgstr "{name} så <b>{title}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Bliv klar til Jul med en Advent-bibellæseplan"
+msgstr "Bliv Juleklar, med en Advents Bibel-Læseplan"
 
 msgid "moment.system.bafk.title"
-msgstr "Hjælp dine børn med at blive forelskede i Gud's ord."
+msgstr "Hjælp dine børn med at forelske sig i Guds ord."
 
 msgid "moment.system.christmas.title"
 msgstr "Del de gode nyheder: Frelseren er født!"
@@ -175,76 +175,76 @@ msgid "moment.client_side.reading_plan_carousel.january.title"
 msgstr "Dit bedste år nogensinde begynder nu."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Find Guds kærlighed i hans Ord."
+msgstr "Find Guds kærlighed i hans ord."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Find håb og fornyelse i Guds Ord."
+msgstr "Find håb og fornyelse i Guds ord."
 
 msgid "moment.image.self.title"
-msgstr "Du lavede et versbillede til <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Du oprettede et vers billede, til <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} lavede et versbillede til <b>{reference_human} {version_abbreviation}</b>"
+msgstr "{name} oprettede et vers billede, til <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
-msgstr "Opfrisk din tro med nye Planer."
+msgstr "Forny din tro med nye Læseplaner."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Hengiv dig dagligt til Guds Ord."
+msgstr "Hengiv dig dagligt til hans ord."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Søg Gud i hans Ord."
+msgstr "Søg Gud i hans ord."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Fejr frihed i Kristus."
+msgstr "Fejr Frihed i Kristus."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Søg Gud i hans Ord hver dag."
+msgstr "Søg Gud i hans ord hver dag."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Guds ord gør alting nyt."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Guddommelig visdom begynder i Guds Ord."
+msgstr "Gudfrygtig visdom begynder i Guds ord."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Opdag taknemlighed i Guds løfter."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "Forbered dit hjerte i denne tid."
+msgstr "Forbered dit hjerte i denne juletid."
 
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name} kommenterede dit bogmærke: “{comment}”"
+msgstr "{name} kommenterede på dit bogmærke: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} kommenterede på dit nye venskab med  {friend_name}: “{comment}”"
+msgstr "{name} kommenterede på dit nye venskab, med {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship.friend"
-msgstr "{name} kommenterede på dit nye venskab: “{comment}”"
+msgstr "{name} kommenterede på dit nye Venskab: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "{name} kommenterede din markering: “{comment}”"
+msgstr "{name} kommenterede på din markering: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} kommenterede på din note: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name} kommenterede på din plan: “{comment}”"
+msgstr "{name} kommenterede på din Læseplan: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name} kommenterede på din Bibellæseplan: “{comment}”"
+msgstr "{name} kommenterede på din Bibel-Læseplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s bogmærke: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s nye venskab med {friend_name}: “{comment}”"
+msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s nye venskab, med {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship.their"
-msgstr "{commenter_name} kommenterede også deres nye venskab med {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} kommenterede også på deres nye Venskab, med {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship.ours"
-msgstr "{commenter_name} kommenterede også dit nye venskab med {moment_owner_name}: “{comment}”"
+msgstr "{commenter_name} kommenterede også på dit nye Venskab, med {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s markering: “{comment}”"
@@ -256,10 +256,10 @@ msgid "notifications.comments.moments.friend.owner.bookmark"
 msgstr "{moment_owner_name} kommenterede også på deres bogmærke: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} kommenterede også på deres nye venskab med {friend_name}: “{comment}”"
+msgstr "{moment_owner_name} kommenterede også på deres nye venskab, med {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
-msgstr "{moment_owner_name} kommenterede også på deres nye venskab med dig: “{comment}”"
+msgstr "{moment_owner_name} kommenterede også på deres nye Venskab, med dig: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommenterede også på deres markering: “{comment}”"
@@ -268,52 +268,52 @@ msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} kommenterede også på deres note: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} kommenterede også på deres Plan: “{comment}”"
+msgstr "{moment_owner_name} kommenterede også på deres Læseplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} kommenterede også på deres Bibellæseplan: “{comment}”"
+msgstr "{moment_owner_name} kommenterede også på deres Bibel-Læseplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s Plan: “{comment}”"
+msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s Læseplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s Bibellæseplan: “{comment}”"
+msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s Bibel-Læseplan: “{comment}”"
 
 msgid "notifications.friendships.accept"
-msgstr "{name} accepterede din venneforespørgsel"
+msgstr "{name} accepterede din venneanmodning"
 
 msgid "notifications.friendships.nowfriends"
 msgstr "{name} er nu din ven"
 
 msgid "notifications.friendships.offer"
-msgstr "{name} vil være din ven på YouVersion"
+msgstr "{name} ønsker at være din ven på YouVersion"
 
 msgid "notifications.friendships.suggestion"
-msgstr "Vil du være venner med {name} på YouVersion?"
+msgstr "Ønsker du at være venner med {name} på YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name} synes om dit bogmærke, {reference_human}"
+msgstr "{name} synes godt om dit bogmærke, {reference_human}"
 
 msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} synes om dit nye venskab med {friend_name}"
+msgstr "{name} synes godt om dit nye venskab, med {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} synes om din markering, {reference_human}"
+msgstr "{name} synes godt om din markering, {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} synes om din note"
+msgstr "{name} synes godt om din note"
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} synes om din note om {reference_human}"
+msgstr "{name} synes godt om din note, på {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name} synes om din note, “{title}”"
+msgstr "{name} synes godt om din note, “{title}”"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} synes om din Plan-aktivitet"
+msgstr "{name} synes godt om din Læseplan-aktivitet"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} synes om din Bibellæseplan-aktivitet"
+msgstr "{name} synes godt om din Bibel-Læseplan-aktivitet"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} bogmærkede {reference_human}"
@@ -325,61 +325,61 @@ msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} tilføjede en note"
 
 msgid "notifications.moments.create.note.reference"
-msgstr "{name} tilføjede en note på {reference_human}"
+msgstr "{name} tilføjede en note, på {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} tilføjede en note, “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} færdiggjorde deres Plan, {title}"
+msgstr "{name} gennemførte deres Læseplan, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} færdiggjorde deres Bibellæseplan, {title}"
+msgstr "{name} gennemførte deres Bibel-Læseplan, {title}"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} startede en ny Plan, {title}"
+msgstr "{name} påbegyndte en ny Læseplan, {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} startede en ny Bibellæseplan, {title}"
+msgstr "{name} påbegyndte en ny Bibel-Læseplan, {title}"
 
 msgid "notifications.people.contact.joined"
-msgstr "{name} er lige tilmeldt YouVersion. Marker for at tilføje dem som Ven."
+msgstr "{name} er lige tilmeldt YouVersion. Tryk for at tilføje dem som Ven."
 
 msgid "notifications.system.test"
-msgstr "Hent vores Kids Bibel App nu!!!"
+msgstr "Hent vores Bibel App for Børn nu!!!"
 
 msgid "notifications.comments.moment.mine.image"
-msgstr "{name} kommenterede på dit versbillede: “{comment}”"
+msgstr "{name} kommenterede på dit vers billede: “{comment}”"
 
 msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} kommenterede også på{moment_owner_name}'s versbillede: “{comment}”"
+msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s vers billede: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} kommenterede også deres versbillede: “{comment}”"
+msgstr "{moment_owner_name} kommenterede også på deres vers billede: “{comment}”"
 
 msgid "notifications.likes.moment.mine.image"
-msgstr "{name} synes om dit versbillede til {reference_human}"
+msgstr "{name} synes godt om dit vers billede, til {reference_human}"
 
 msgid "notifications.moments.create.image"
-msgstr "{name} oprettede et billede til verset {reference_human}"
+msgstr "{name} oprettede et vers billede, til {reference_human}"
 
 msgid "notifications.friendships.pending"
-msgstr "Du har Venne Anmodninger der venter i Bibel App´en"
+msgstr "Du har ubesvarede Venneanmodninger i Bibel App'en"
 
 msgid "notifications.votd_image"
-msgstr "Dagens vers billede"
+msgstr "Dagens Vers Billede"
 
 msgid "notifications.plans_with_friends_invite"
-msgstr "{name} ønsker at læse planen, \"{title}\" med dig."
+msgstr "{name} ønsker at læse Læseplanen, \"{title}\" med dig."
 
 msgid "notifications.plans_with_friends_comment"
-msgstr "{name} kommenterede dag {day} af planen, \"{title}.\""
+msgstr "{name} kommenterede på Dag {day} af Læseplanen, \"{title}.\""
 
 msgid "notifications.plans_with_friends_accept"
-msgstr "{name} har accepteret din invitation til at læse planen, \"{title}\" med dig."
+msgstr "{name} accepterede din invitation til at læse Læseplanen, \"{title}\" med dig."
 
 msgid "notifications.plans_with_friends_update_start_date"
-msgstr "{name} ændret start datoen for planen, \"{title}\" til {date}."
+msgstr "{name} ændrede Læseplanens begyndelsesdato, \"{title}\" til {date}."
 
 msgid "notifications.comments.moment.mine.badge"
 msgstr "{name} kommenterede på dit mærke: “{comment}”"
@@ -391,45 +391,45 @@ msgid "notifications.comments.moments.friend.owner.badge"
 msgstr "{moment_owner_name} kommenterede også på deres mærke: “{comment}”"
 
 msgid "notifications.likes.moment.mine.badge"
-msgstr "{name} synes om dit mærke, {title}"
+msgstr "{name} synes godt om dit mærke, {title}"
 
 msgid "notifications.moments.create.badge"
-msgstr "{name} fik mærket {title}"
+msgstr "{name} fik mærket, {title}"
 
 msgid "share.find_friends.invite_email_html"
-msgstr "<p> Hej! </p><p>Jeg bruger Bibel App'en fra YouVersion og ønsker at dele det med dig. Hvis du er ny i forhold til denne app, er det en enkel måde at bringe skønheden og sandheden fra Bibelen ind i hverdagen. </p><p> <strong> Få Bibel App'en: </strong> Læs, se, lyt og del på din smartphone eller tablet, og online på Bible.com </p><p> <strong> Opsæt din konto: </strong> abonner på Bibellæseplaner og få adgang til bogmærker, fremhævelser og noter på tværs af enheder </p><p> <strong>Tilføj venner (som mig!): </strong> udforsk og diskuter Bibelen med mennesker, du holder af </p><p>det er alt sammen i Bibel App'en - kom i gang her: </p>"
+msgstr "<p>Hej!</p><p>Jeg bruger Bibel App'en fra YouVersion, og ønskede at dele den med dig. Hvis app'en er ny for dig, så' det en enkel måde at bringe Bibelens skønhed og sandhed ind i hverdagslivet. </p><p><strong>Få Bibel App'en:</strong> Læs, se, lyt og del, på din smartphone, eller tablet-computer, og online på Bible.com</p><p><strong>Konfigurér Din Konto:</strong> Abonnér på Bibel-Læseplaner og tilgå bogmærker, markeringer, og noter, på tværs af enheder</p><p><strong>Tilføj Venner (Som Mig!):</strong> Udforsk og diskutér Bibelen, med folk du holder af</p><p>det' altsammen i Bibel App'en—kom i gang her: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Hej! \n"
+"Hej!\n"
 "\n"
-"Jeg bruger Bibel App'en fra YouVersion og ønsker at dele det med dig. Hvis du er ny i forhold til Bibel app'en, er det en enkel måde at bringe skønheden og sandheden fra Bibelen ind i hverdagen.\n"
+"Jeg bruger Bibel App'en fra YouVersion, og ønskede at dele den med dig. Hvis app'en er ny for dig, så' det en enkel måde at bringe Bibelens skønhed og sandhed ind i hverdagslivet.\n"
 "\n"
-"Få Bibel App'en: Læs, se, lyt og del på din smartphone eller tablet, og online på Bible.com. \n"
-" \n"
-"Opsæt din konto: abonner på Bibellæseplaner og få adgang til bogmærker, fremhævelser og noter på tværs af enheder. \n"
+"Få Bibel App'en: Læs, se, lyt og del, på din smartphone, eller tablet-computer, og online på Bible.com.\n"
 "\n"
-"Tilføj venner (som mig!): Udforsk og diskuter Bibelen med mennesker, du holder af. \n"
+"Konfigurér Din Konto: Abonnér på Bibel-Læseplaner og tilgå bogmærker, markeringer, og noter, på tværs af enheder.\n"
 "\n"
-"Alt er i Bibel App'en - kom i gang her: "
+"Tilføj Venner (Som Mig!): Udforsk og diskutér Bibelen, med folk du holder af.\n"
+"\n"
+"det' altsammen i Bibel App'en—kom i gang her: "
 
 msgid "share.invite_email_subject"
-msgstr "Brug Bibel App'en ligesom mig!"
+msgstr "Slut dig til mig på Bibel App'en!"
 
 msgid "share.invite_facebook"
-msgstr "Jeg elsker Bibel App'en! Den hjælper mig med at gøre Bibelen til en del af min hverdag. Den lader mig markere, høre lydbibler, skrive noter, følge Bibellæseplaner... endda med tilhørende videoer! Hent den nu (det er gratis):"
+msgstr "Jeg elsker Bibel App'en! Den har virkelig hjulpet mig, med at gøre Bibelen til en del af mit hverdagsliv. Den lader mig markere, lytte til lydbibler, oprette noter, følge andagtsplaner…endda se videoer! Hent den nu (det' gratis):"
 
 msgid "share.invite_facebook_direct"
-msgstr "Har du Bibel App'en? Jeg elsker den, og det tror jeg også, du vil gøre. Her er et link:"
+msgstr "Har du Bibel App'en? Jeg elsker den, og det tror jeg også du ville. Her' et link:"
 
 msgid "share.invite_sms"
-msgstr "Jeg elsker YouVerison Bibel App´en. Det tror jeg også du vil."
+msgstr "Jeg elsker YouVersion Bibel App'en. Det tror jeg også du ville:"
 
 msgid "share.invite_sms_prefix"
 msgstr "Fra {name}:"
 
 msgid "share.invite_twitter"
-msgstr "@YouVersion's Bible App har et permanent ikon på min startskærm. Læs, se, lyt og del … alt i en gratis app:"
+msgstr "@YouVersion Bibel App'en har en permanent plads på min hjem-skærm. Læs, se, lyt og del…altsammen i en gratis app:"
 
 msgid "share.invite_twitter_direct"
-msgstr "Har du Bibel App'en fra @YouVersion? Jeg elsker den, og det tror jeg også, du vil gøre. Her er et link:"
+msgstr "Har du Bibel App'en fra @YouVersion? Jeg elsker den, og det tror jeg også du ville. Her' et link:"

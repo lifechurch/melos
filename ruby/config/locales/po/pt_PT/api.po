@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-03-28 09:22-0400\n"
+"PO-Revision-Date: 2019-03-18 04:23\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -319,16 +319,16 @@ msgid "notifications.moments.create.bookmark"
 msgstr "{name} criou o marcador {reference_human}"
 
 msgid "notifications.moments.create.highlight"
-msgstr "{name} criou o destaque {reference_human}"
+msgstr "{name} destacou {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} adicionou uma nota"
 
 msgid "notifications.moments.create.note.reference"
-msgstr "{name} adicionou uma nota sobre {reference_human}"
+msgstr "{name} anotou {reference_human}"
 
 msgid "notifications.moments.create.note.title"
-msgstr "{name} adicionou uma nota, “{title}”"
+msgstr "{name} anotou: “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} completou o seu plano: {title}"
@@ -361,7 +361,7 @@ msgid "notifications.likes.moment.mine.image"
 msgstr "{name} gosta da sua imagem de versículo para {reference_human}"
 
 msgid "notifications.moments.create.image"
-msgstr "{name} criou uma imagem de versículo para {reference_human}"
+msgstr "{name} ilustrou o versículo {reference_human}"
 
 msgid "notifications.friendships.pending"
 msgstr "Tem pedidos de Amizade à espera na App da Bíblia"
