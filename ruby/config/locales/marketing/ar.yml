@@ -14,4 +14,4 @@ ar:
       tagline: "الكتاب المقدس معك في أي مكان"
       iphone ipad: "اي فون/اي باد"
       android: "اندرويد"
-
+      download language: "قم بتحميل الإنجيل المقدس ب%{language_name}"
