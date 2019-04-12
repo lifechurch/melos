@@ -1,11 +1,9 @@
-const api = require('@youversion/js-api')
+const httpErrors = require('http-errors')
 const seoUtils = require('../../utils/seo')
 const bibleToAppLocale = require('../../utils/localization/bible-to-app-locale')
 const getAppLocaleDetails = require('../../utils/localization/get-app-locale-details')
 const getLocalizedLink = require('../../utils/localization/get-localized-link')
 const getFirstUsfmForVersion = require('../../utils/bible/get-first-usfm-for-version')
-
-const Bible = api.getClient('Bible')
 
 module.exports = function BibleLanguage(req, reply) {
   if (reply.newrelic) {
@@ -13,15 +11,14 @@ module.exports = function BibleLanguage(req, reply) {
   }
 
   const { host } = req.urlData()
-  const { slug } = req.params
-  const versionId = slug.split('-').shift()
+  const { language } = req.params
+  const versionLanguage = req.getVersionLanguage(language)
 
-  const versionPromise = Bible.call('version')
-    .params({ id: versionId })
-    .setEnvironment(process.env.NODE_ENV)
-    .get()
-
-  const allPromises = Promise.all([ versionPromise ])
+  if (typeof versionLanguage === 'undefined') {
+    const message = `Invalid Bible language: ${language}`
+    reply.captureException(new Error(message), message)
+    return reply.send(new httpErrors.NotFound())
+  }
 
   const canonicalPath = getLocalizedLink('/languages', req.detectedLng)
   const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
@@ -29,8 +26,8 @@ module.exports = function BibleLanguage(req, reply) {
   return reply.view('/ui/pages/bible-languages/language.marko', {
     req,
     getLocalizedLink,
-    allPromises,
     getFirstUsfmForVersion,
+    language: req.getVersionLanguage(language),
     $global: {
       __: reply.res.__,
       __mf: reply.res.__mf,

@@ -9,7 +9,7 @@ module.exports = function BibleLanguages(req, reply) {
   }
 
   const { host } = req.urlData()
-  const canonicalPath = getLocalizedLink('/versions', req.detectedLng)
+  const canonicalPath = getLocalizedLink('/languages', req.detectedLng)
   const canonicalUrl = `${host ? `https://${host}` : ''}${canonicalPath}`
 
   return reply.view('/ui/pages/bible-languages/languages.marko', {

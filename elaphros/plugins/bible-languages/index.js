@@ -5,9 +5,9 @@ const languages = require('./languages')
 module.exports = fp(function BibleVersions(fastify, opts, next) {
 
   fastify.get('/languages', languages)
-  fastify.get('/languages/:slug', language)
+  fastify.get('/languages/:language', language)
   fastify.get('/:lng/languages', languages)
-  fastify.get('/:lng/languages/:slug', language)
+  fastify.get('/:lng/languages/:language', language)
 
   next()
 }, {
@@ -22,6 +22,9 @@ module.exports = fp(function BibleVersions(fastify, opts, next) {
     ],
     request: [
       'getVersionLanguages',
+      'getVersionLanguage',
+      'getPopularVersionLanguages',
+      'getUnpopularVersionLanguages',
       'getVersionsForLanguage',
       'getVersionsForPublisher',
       'bibleVersionCount',

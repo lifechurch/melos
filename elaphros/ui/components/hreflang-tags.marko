@@ -1,2 +1,8 @@
 <link rel="canonical" href=out.global.canonicalUrl>
 <link rel="amphtml" href=out.global.canonicalUrl>
+
+<if(input.includeHrefLangs)>
+  <for|lang| of=out.global.appLocales>
+    <link rel="alternate" hreflang=lang.toLowerCase() href=`${out.global.host ? `https://${out.global.host}` : ''}${out.global.getLocalizedLink(out.global.canonicalPath, lang)}`>
+  </for>
+</if>

@@ -1,6 +1,7 @@
 const fp = require('fastify-plugin')
 const api = require('@youversion/js-api')
 const getAppLocaleDetails = require('../utils/localization/get-app-locale-details')
+const bibleToAppLocale = require('../utils/localization/bible-to-app-locale')
 
 const Bible = api.getClient('bible')
 
@@ -11,6 +12,7 @@ function createVersionMap(versionList) {
   const versionLanguages = []
   const versionPublishers = []
   const bibleVersionCount = versionList.length
+
   versionList.forEach((v) => {
     versionMap[v.id] = v
     if (!Array.isArray(versionLanguageMap[v.language.language_tag])) {
@@ -35,11 +37,30 @@ function createVersionMap(versionList) {
     versionLanguages.sort((l1, l2) => {
       if (l1.language_tag === bibleLanguage && l2.language_tag !== bibleLanguage) return -1
       if (l1.language_tag !== bibleLanguage && l2.language_tag === bibleLanguage) return 1
+
       if (l1.local_name > l2.local_name) return 1
       if (l1.local_name < l2.local_name) return -1
       return 0
     })
     return versionLanguages
+  }
+
+  function getVersionLanguage(bibleLanguage) {
+    return versionLanguages.filter(lang => {
+      return lang.language_tag === bibleLanguage
+    }).pop()
+  }
+
+  function getPopularVersionLanguages(bibleLanguage) {
+    return getVersionLanguages(bibleLanguage).filter(lang => {
+      return Boolean(bibleToAppLocale(lang) !== 'en' || lang.language_tag === 'eng')
+    })
+  }
+
+  function getUnpopularVersionLanguages(bibleLanguage) {
+    return getVersionLanguages(bibleLanguage).filter(lang => {
+      return Boolean(bibleToAppLocale(lang) === 'en' && lang.language_tag !== 'eng')
+    })
   }
 
   function getVersionsForLanguage(bibleLanguage) {
@@ -73,6 +94,9 @@ function createVersionMap(versionList) {
   return {
     getVersionsForLanguage,
     getVersionLanguages,
+    getVersionLanguage,
+    getPopularVersionLanguages,
+    getUnpopularVersionLanguages,
     bibleVersionCount,
     bibleLanguageCount,
     biblePublisherCount,
@@ -96,6 +120,9 @@ module.exports = fp(async function BibleVersionsDecorator(fastify, opts, next) {
   const {
     getVersionsForLanguage,
     getVersionLanguages,
+    getVersionLanguage,
+    getPopularVersionLanguages,
+    getUnpopularVersionLanguages,
     getVersionsForPublisher,
     bibleLanguageCount,
     bibleVersionCount,
@@ -107,6 +134,17 @@ module.exports = fp(async function BibleVersionsDecorator(fastify, opts, next) {
     return getVersionLanguages(localeDetails.bibleLocale)
   })
 
+  fastify.decorateRequest('getPopularVersionLanguages', function handleGetPopularVersionLanguages() {
+    const localeDetails = getAppLocaleDetails(this.detectedLng || 'en')
+    return getPopularVersionLanguages(localeDetails.bibleLocale)
+  })
+
+  fastify.decorateRequest('getUnpopularVersionLanguages', function handleGetUnpopularVersionLanguages() {
+    const localeDetails = getAppLocaleDetails(this.detectedLng || 'en')
+    return getUnpopularVersionLanguages(localeDetails.bibleLocale)
+  })
+
+  fastify.decorateRequest('getVersionLanguage', getVersionLanguage)
   fastify.decorateRequest('getVersionsForLanguage', getVersionsForLanguage)
   fastify.decorateRequest('getVersionsForPublisher', getVersionsForPublisher)
   fastify.decorateRequest('bibleLanguageCount', bibleLanguageCount)

@@ -1,7 +1,7 @@
 <site-layout
   fullRequestURL=out.global.canonicalUrl
   requestHost=data.requestHost
-  getLocalizedLink=out.global.getLocalizedLink
+  getLocalizedLink=data.getLocalizedLink
   getPathWithoutLocale=data.getPathWithoutLocale>
   <@head>
   $ const ampComponents = [
@@ -24,19 +24,15 @@
     </amp-components>
 
     $ const title = [
-        out.global.__mf('features.bible versions.description with count', { 
-          language_count: input.req.bibleLanguageCount.toLocaleString(),
-          version_count: input.req.bibleVersionCount.toLocaleString(),
-        }),
-        out.global.__('features.marketing.tagline'),
+        out.global.__mf('features.marketing.download language', { language_name: `${data.language.local_name}${data.language.name === data.language.local_name ? '' : ` [${data.language.name}]`}` }),
         out.global.__('features.marketing.download or read'),
+        out.global.__('features.bible.bible app'),
         out.global.__('features.marketing.android'),
         out.global.__('features.marketing.iphone ipad')
       ].join(' - ')
     $ const description = out.global.__('features.marketing.versions copy')
 
     <hreflang-tags
-      includeHrefLangs=true
       locales=data.appLocales
       host=data.requestHost
       canonicalUrl=out.global.canonicalUrl
@@ -57,7 +53,7 @@
     <div class="mw8 center pt3 pb7 pl4 pr4 cf">
       <div class="fl w-60-m">
         <div class="pr4-m">
-          <h1 class="pt3 near-black">${out.global.__('features.bible versions.title')}</h1>
+          <h1 class="pt3 near-black">${out.global.__mf('features.bible languages.bible in', { language_name: `${data.language.local_name}${data.language.name === data.language.local_name ? '' : ` [${data.language.name}]`}`})}</h1>
           <div class="mb4 mt4 dn-m">
             <a role="button"
               href="https://app.bible.com/bible-app-from-reader"
@@ -68,29 +64,21 @@
               </p>
             </a>
           </div>
-          <for|language| of=data.req.getVersionLanguages()>
-            <a  role="button" 
-              target="_self"
-              href=out.global.getLocalizedLink(`/languages/${language.language_tag}`, out.global.locale) 
-              class="link">
-              <h4 class="mt4 mb2 near-black normal">${language.local_name}${language.name === language.local_name ? '' : ` [${language.name}]`}</h4>
-            </a>
-            <for|version| of=data.req.getVersionsForLanguage(language.language_tag)>
+          <h4 class="mb2 near-black normal">${out.global.__('features.bible languages.most popular')}</h4>
+            <for|version| of=data.req.getVersionsForLanguage(data.language.language_tag)>
               <a role="button"
                 target="_self"
-                class="db pb2 lh-copy yv-green link"
-                title=`${out.global.__('features.bible versions.read version')}: ${version.local_title}`
+                class="db pb2 lh-copy yv-green link" 
                 href=out.global.seoUtils.getCanonicalUrl('bible-version', version, out.global.locale)>
                 ${version.local_title}
               </a>
             </for>
-          </for>
         </div>
       </div>
       <div class="fl w-40-m bl-m bw1 b--black-10 pl4-m pb3">
         <marketing-sidebar 
           req=data.req 
-          getLocalizedLink=out.global.getLocalizedLink
+          getLocalizedLink=data.getLocalizedLink
           source="versions">
         </marketing-sidebar>
       </div>

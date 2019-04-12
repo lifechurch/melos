@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Bible languages and translations",
+			"bible in": "The Bible in {language_name}",
+			"additional": "Additional languages",
+			"most popular": "Most popular languages"
+		}
+	}
+}

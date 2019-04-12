@@ -14,7 +14,6 @@ module.exports = function BibleVersions(req, reply) {
 
   return reply.view('/ui/pages/bible-versions/versions.marko', {
     req,
-    getLocalizedLink,
     $global: {
       __: reply.res.__,
       __mf: reply.res.__mf,
@@ -25,6 +24,9 @@ module.exports = function BibleVersions(req, reply) {
       localeDetails: getAppLocaleDetails(req.detectedLng),
       canonicalUrl,
       canonicalPath,
+      getLocalizedLink,
+      appLocales: req.appLocales,
+      host
     }
   })
 }
