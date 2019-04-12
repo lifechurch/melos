@@ -14,4 +14,4 @@ zh-HK:
       tagline: "隨時隨地陪伴著你的聖經"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "下載 %{language_name} 聖經"
