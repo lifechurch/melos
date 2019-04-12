@@ -14,4 +14,4 @@
       tagline: "Bibelen du kan ta med deg over alt"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Last ned Bibelen på %{language_name}"
