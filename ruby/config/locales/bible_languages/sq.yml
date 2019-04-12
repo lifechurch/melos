@@ -1,0 +1,8 @@
+sq:
+  features:
+    bible languages:
+      title: "Përkthimet dhe gjuhët e Biblës"
+      most popular: "Gjuhët më të përdorura"
+      additional: "Gjuhë shtesë"
+      bible in: "Bibla në %{language_name}"
+
