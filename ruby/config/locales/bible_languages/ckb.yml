@@ -1,0 +1,8 @@
+ckb:
+  features:
+    bible languages:
+      title: "زمان و وەرگێڕانەکانی کتێبی پیرۆز"
+      most popular: "زمانە بەناوبانگەکان"
+      additional: "زمانە زیادەکان"
+      bible in: "کتێبی پیرۆز بە %{language_name}"
+
