@@ -1,0 +1,8 @@
+hu:
+  features:
+    bible languages:
+      title: "Biblia nyelvek és fordítások"
+      most popular: "Legnépszerűbb nyelvek"
+      additional: "További nyelvek"
+      bible in: "A Biblia %{language_name} nyelven"
+
