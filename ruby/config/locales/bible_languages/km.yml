@@ -1,0 +1,8 @@
+km:
+  features:
+    bible languages:
+      title: "ភាសាសំរាប់​​គម្ពីរ និង​ការ​បក​ប្រែ"
+      most popular: "ភាសា​ដែល​ពេញ​និយម​ជាង​គេ"
+      additional: "ភាសាបន្ថែម​ផ្សេងៗ"
+      bible in: "ព្រះគម្ពីរជា %{language_name}"
+
