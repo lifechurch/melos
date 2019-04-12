@@ -14,4 +14,4 @@ af:
       tagline: "die Bybel wat oral saam met jou gaan"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Laai Die Bybel af in %{language_name}"
