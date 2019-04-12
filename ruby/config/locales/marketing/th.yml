@@ -14,4 +14,4 @@ th:
       tagline: "และพระคัมภีร์จะติดตัวคุณไปในทุกที่"
       iphone ipad: "ไอโฟน/ไอแพด"
       android: "แอนดรอยด์"
-
+      download language: "ดาวน์โหลดพระคัมภีร์ในภาษา %{language_name}"
