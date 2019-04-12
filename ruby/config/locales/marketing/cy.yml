@@ -14,4 +14,4 @@ cy:
       tagline: "y Beibl sy'n mynd gyda ti i bobman"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Lawrlwytha'r Beibl yn %{language_name}"
