@@ -1,6 +1,7 @@
 class RedirectsController < ApplicationController
 
   before_filter :force_login, except: [
+    # Non-BAFK items:
     :settings_notifications,
     :trending,
     :settings_vod_subscriptions,
@@ -8,6 +9,7 @@ class RedirectsController < ApplicationController
     :wmf,
     :votd,
     :amp_versions,
+    # BAFK-related items go below here!
     :aideul,
     :anak,
     :ar_kids,
@@ -19,6 +21,7 @@ class RedirectsController < ApplicationController
     :cocuk,
     :copii,
     :criancas,
+    :da_kids,
     :deti,
     :dzieci,
     :enfants,
@@ -321,6 +324,10 @@ class RedirectsController < ApplicationController
 
   def bg_kids
     redirect_to('/bg/kids')
+  end
+
+  def da_kids
+    redirect_to('/da/kids')
   end
 
   def amp_versions

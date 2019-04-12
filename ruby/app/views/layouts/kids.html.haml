@@ -50,6 +50,12 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/nl/kids"
     facebook_locale = "nl"
     youtube_url = ""
+  elsif I18n.locale.to_s.eql?("da") then
+    i18n_css_class = "da"
+    i18n_image_dir = "/da"
+    meta_url = "#{request.protocol}#{request.host_with_port}/da/kids"
+    facebook_locale = "da"
+    youtube_url = ""
   elsif I18n.locale.to_s.eql?("de") then
     i18n_css_class = "de"
     i18n_image_dir = "/de"
@@ -238,6 +244,7 @@
     i18n_image_dir = "/be"
     meta_url = "#{request.protocol}#{request.host_with_port}/be/kids"
     facebook_locale = "be"
+    youtube_url = ""
   elsif (I18n.locale.to_s.eql?("ne")) then
     i18n_css_class = "ne"
     i18n_image_dir = "/ne"
@@ -296,6 +303,7 @@
     %meta{property: "og:locale:alternate", content: "pt_PT"}
     %meta{property: "og:locale:alternate", content: "ru_RU"}
     %meta{property: "og:locale:alternate", content: "nl_NL"}
+    %meta{property: "og:locale:alternate", content: "da"}
     %meta{property: "og:locale:alternate", content: "de_DE"}
     %meta{property: "og:locale:alternate", content: "af_ZA"}
     %meta{property: "og:locale:alternate", content: "tl_PH"}
@@ -342,7 +350,7 @@
     %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     = render partial: "shared/google_tag_manager"
-    
+
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en-gb"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
@@ -353,6 +361,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/kids",:rel=>"alternate",:hreflang=>"pt-pt"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ru/kids",:rel=>"alternate",:hreflang=>"ru"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/nl/kids",:rel=>"alternate",:hreflang=>"nl"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/da/kids",:rel=>"alternate",:hreflang=>"da"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/de/kids",:rel=>"alternate",:hreflang=>"de"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/af/kids",:rel=>"alternate",:hreflang=>"af"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/th/kids",:rel=>"alternate",:hreflang=>"th"}
@@ -416,6 +425,7 @@
             I18n.locale.to_s.eql?("pt-PT") or |
             I18n.locale.to_s.eql?("ru") or |
             I18n.locale.to_s.eql?("nl") or |
+            I18n.locale.to_s.eql?("da") or |
             I18n.locale.to_s.eql?("de") or |
             I18n.locale.to_s.eql?("fr") or |
             I18n.locale.to_s.eql?("ar") or |
