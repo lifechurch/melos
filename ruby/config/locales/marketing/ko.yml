@@ -14,4 +14,4 @@ ko:
       tagline: "어느 곳에서나 여러분과 함께 하는 성경"
       iphone ipad: "아이폰/아이패드"
       android: "안드로이드"
-
+      download language: "%{language_name} 성경 다운로드"
