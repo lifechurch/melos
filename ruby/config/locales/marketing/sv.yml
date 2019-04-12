@@ -14,4 +14,4 @@ sv:
       tagline: "Bibeln som följer med dig överallt"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Ladda ner Bibeln på %{language_name}"
