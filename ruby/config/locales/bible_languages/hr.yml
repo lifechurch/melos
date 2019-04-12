@@ -1,0 +1,8 @@
+hr:
+  features:
+    bible languages:
+      title: "Jezici i prijevodi Biblije"
+      most popular: "Najpopularniji jezici"
+      additional: "Dodatni jezici"
+      bible in: "Biblija na sljedećem jeziku: %{language_name}"
+
