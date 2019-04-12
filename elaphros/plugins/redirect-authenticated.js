@@ -10,6 +10,7 @@ const skipRedirectsFor = [
 
 const skipRedirectsForPatterns = [
   '/versions',
+  '/languages',
   '/static-assets'
 ]
 
