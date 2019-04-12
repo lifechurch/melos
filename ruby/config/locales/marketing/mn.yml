@@ -14,4 +14,4 @@ mn:
       tagline: "Хаана ч таньтай хамт явах Библи"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "%{language_name} дээрхи Библийг Татаж авах"
