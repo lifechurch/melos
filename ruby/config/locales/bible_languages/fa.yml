@@ -1,0 +1,8 @@
+fa:
+  features:
+    bible languages:
+      title: "ترجمه‌های کتاب‌مقدس و زبان‌های مختلف"
+      most popular: "معروف‌ترین زبان‌ها"
+      additional: "زبان‌های دیگر"
+      bible in: "کتاب‌مقدس به زبان %{language_name}"
+
