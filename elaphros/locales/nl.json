@@ -72,6 +72,7 @@
 			"download app copy": "Tientallen millioenen mensen gebruiken de Bijbel App om Gods Woord een deel van hun leven te maken. Download de gratis app en krijg toegang op je bladwijzers, notitities en leesplannen vanaf elke plek. Geniet van honderden vertalingen, inclusief audio, alles op je mobiele apparaat.",
 			"tagline": "De Bijbel die overal met je mee gaat",
 			"android": "Android",
+			"download language": "Download de Bijbel in het {language_name}",
 			"verse action copy": "Markeer je favoriete gedeelten, maak Bladwijzers en Versafbeeldingen aan die je kunt delen en voeg openbare of privé Notities toe aan Bijbelverzen.",
 			"browse plans": "Blader door alle Leesplannen",
 			"free plans": "Gratis leesplannen en overdenkingen",
@@ -79,6 +80,12 @@
 			"download or read": "Download nu of lees online.",
 			"create free account": "Maak je gratis account aan",
 			"make it yours": "Maak het jouw Bijbel"
+		},
+		"bible languages": {
+			"title": "Bijbelvertalingen",
+			"bible in": "De Bijbel in het {language_name}",
+			"additional": "Overige talen",
+			"most popular": "Populairste talen"
 		}
 	}
 }

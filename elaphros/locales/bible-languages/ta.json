@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "வேதாகம மொழிகள் மற்றும் மொழிபெயர்ப்புகள்",
+			"bible in": "{language_name}ல் வேதாகமம்",
+			"additional": "கூடுதல் மொழிகள்",
+			"most popular": "மிகவும் பிரபலமான மொழிகள்"
+		}
+	}
+}

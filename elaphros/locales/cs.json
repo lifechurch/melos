@@ -72,6 +72,7 @@
 			"download app copy": "Desítky milionů lidí používají aplikaci Bible™, aby z Bible udělali součást svého každodenního života. Stáhněte si bezplatnou aplikaci a získejte přístup k vašim záložkám, poznámkám a plánům čtení odkudkoli. Užívejte si stovky překladů včetně audio verzí, a to vše na vašem mobilním zařízení.",
 			"tagline": "Bible, která je stále s vámi",
 			"android": "Android",
+			"download language": "Stáhnout Bibli v {language_name}",
 			"verse action copy": "Oblíbené verše si můžete zvýraznit, uložit, nebo z nich vytvářet obrázky ke sdílení. K jednotlivým pasážím lze také přidávat veřejné či soukromé poznámky.",
 			"browse plans": "Prohlédnout si všechny plány čtení",
 			"free plans": "Bezplatné plány čtení a výkladové poznámky",
@@ -79,6 +80,12 @@
 			"download or read": "Stáhnout teď nebo číst online",
 			"create free account": "Vytvořit si bezplatný účet",
 			"make it yours": "Osobní"
+		},
+		"bible languages": {
+			"title": "Jazyky Bible a překlady",
+			"bible in": "Bible v {language_name}",
+			"additional": "Další jazyky",
+			"most popular": "Nejoblíbenější jazyky"
 		}
 	}
 }

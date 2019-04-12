@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Библиски преводи и јазици",
+			"bible in": "Библијата на {language_name}",
+			"additional": "Останати јазици",
+			"most popular": "Најпопуларни јазици"
+		}
+	}
+}

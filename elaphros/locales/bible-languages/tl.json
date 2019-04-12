@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Mga wika ng Biblia at pagkakasalin nito",
+			"bible in": "Ang Biblia sa Wikang {language_name}",
+			"additional": "Mga karagdagang wika",
+			"most popular": "Pinakakilalang mga wika"
+		}
+	}
+}

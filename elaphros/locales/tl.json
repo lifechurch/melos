@@ -72,6 +72,7 @@
 			"download app copy": "Ginagamit ng milyun-milyong tao Ang Biblia&trade; upang ang Salita ng Diyos ay maging bahagi ng kanilang pang-araw-araw na buhay. I-download ang libreng app at i-access ang iyong mga pananda, mga tala, at mga babasahing gabay kahit saan. Tamasahin ang daan-daang bersyon, kasama ang audio, sa lahat ng mobile na aparato.",
 			"tagline": "ang Biblia na kasa-kasama mo kahit saan",
 			"android": "Android",
+			"download language": "I-download ang Biblia sa {language_name}",
 			"verse action copy": "I-haylayt o i-bookmark ang iyong mga paboritong bersikulo, gumawa ng mga Bersikulong Larawang maibabahagi, at magdagdag ng pampubliko o pampribadong mga Tala sa mga sipi ng Biblia.",
 			"browse plans": "Tingnan ang mga Babasahin",
 			"free plans": "Mga Libreng Babasahing Gabay at Debosyonal",
@@ -79,6 +80,12 @@
 			"download or read": "I-download ngayon o basahin online",
 			"create free account": "Gumawa ng Libreng Account",
 			"make it yours": "Gawing iyo ang Biblia"
+		},
+		"bible languages": {
+			"title": "Mga wika ng Biblia at pagkakasalin nito",
+			"bible in": "Ang Biblia sa Wikang {language_name}",
+			"additional": "Mga karagdagang wika",
+			"most popular": "Pinakakilalang mga wika"
 		}
 	}
 }

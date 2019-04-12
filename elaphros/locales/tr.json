@@ -72,6 +72,7 @@
 			"download app copy": "On milyonlarca insan Kutsal Kitap Uygulaması'nı kullanıyor ve Tanrı'nın Sözü'nü hayatlarının bir parçası haline getiriyor. Uygulamayı bedavaya indirip her yerden yer imlerinize, notlarınıza ve okuma planlarınıza ulaşın. Mobil cihazınızı kullanarak Kutsal Kitap'ın yüzlerce çevirisini okuyun ve dinleyin.",
 			"tagline": "Kutsal Kitap her yerde elinizin altında",
 			"android": "Android",
+			"download language": "Kutsal Kitap'ı indirin {language_name}",
 			"verse action copy": "En sevdiğiniz ayeti işaretleyin ya da vurgulayın, paylaşabileceğiniz ayet görseli oluşturun, Kutsal Kitap parçalarına genel ya da özel notlar ekleyin.",
 			"browse plans": "Bütün planları tara",
 			"free plans": "Ücretsiz Okuma Planları ",
@@ -79,6 +80,12 @@
 			"download or read": "Şimdi indirin ya da çevrimiçi okuyun.",
 			"create free account": "Ücretsiz hesabınızı oluşturun",
 			"make it yours": "Kutsal Kitabınızı yapın."
+		},
+		"bible languages": {
+			"title": "Kutsal Kitap dil ve çevirileri",
+			"bible in": "Kutsa Kitap {language_name}",
+			"additional": "Ek olarak diller",
+			"most popular": "En popüler diller"
 		}
 	}
 }

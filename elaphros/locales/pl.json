@@ -6,7 +6,7 @@
 			"hide": "Ukryj",
 			"blog": "Blog",
 			"press": "Prasa",
-			"related devos": "Free Reading Plans and Devotionals related to {reference}",
+			"related devos": "Bezpłatne plany czytania i rozważania związane z: {reference}",
 			"bafk": "Aplikacja Biblii dla Dzieci",
 			"bible language": "Język Biblii",
 			"no audio support": "Twoja przeglądarka nie obsługuje dźwięku.",
@@ -72,6 +72,7 @@
 			"download app copy": "Dziesiątki milionów ludzi używają Aplikacji Biblia&trade;, aby uczynić Słowo Boże częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania gdziekolwiek jesteś. Ciesz się setkami wersji, także audio, dostępnymi na twoim urządzeniu moblinym.",
 			"tagline": "Biblia, która idzie z tobą wszędzie",
 			"android": "Android",
+			"download language": "Pobierz tę Biblię w {language_name}",
 			"verse action copy": "Zakreśl lub zaznacz twoje ulubione wersety, utwórz swoje obrazki z wersetami do udostępnienia i dołącz publiczne lub prywatne notatki do fragmentόw Biblii.",
 			"browse plans": "Przeglądaj wszystkie plany",
 			"free plans": "Darmowe Plany Czytania i Rozważania",
@@ -79,6 +80,12 @@
 			"download or read": "Pobierz teraz lub czytaj on-line.",
 			"create free account": "Utwόrz swoje darmowe konto",
 			"make it yours": "Uczyń ją twoją Biblią"
+		},
+		"bible languages": {
+			"title": "Języki i przekłady Biblii",
+			"bible in": "Biblia w języku {language_name}",
+			"additional": "Dodatkowe języki",
+			"most popular": "Najpopularniejsze języki"
 		}
 	}
 }

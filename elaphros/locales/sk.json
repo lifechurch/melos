@@ -72,6 +72,7 @@
 			"download app copy": "Desiatky miliónov ľudí používajú aplikáciu Biblia s úmyslom, aby sa Božie Slovo stalo súčasťou ich každodenného života. Stiahnite si túto bezplatnú aplikáciu a získajte prístup k vašim záložkám a plánom čítania odvšadiaľ. Využite stovky prekladov vrátane audio nahrávok priamo na vašom mobilnom zariadení.",
 			"tagline": "Biblia, ktorá ide všade s vami",
 			"android": "Android",
+			"download language": "Stiahnite si Bibliu v jazyku {language_name}",
 			"verse action copy": "Zvýrazňujte, vkladajte záložky na obľúbené verše, vytvárajte obrázky z veršov, ktoré môžete zdieľať a pripájajte poznámky k biblickým pasážam.",
 			"browse plans": "Pozrieť všetky plány",
 			"free plans": "Plány čítania a texty zadarmo",
@@ -79,6 +80,12 @@
 			"download or read": "Stiahnite teraz alebo čítajte online.",
 			"create free account": "Vytvorte si účet zdarma",
 			"make it yours": "Spravte ju vašou Bibliou"
+		},
+		"bible languages": {
+			"title": "Jazyky a preklady Biblie",
+			"bible in": "Biblia v jazyku {language_name}",
+			"additional": "Ďalšie jazyky",
+			"most popular": "Najpopulárnejšie jazyky"
 		}
 	}
 }

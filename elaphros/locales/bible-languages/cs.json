@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Jazyky Bible a překlady",
+			"bible in": "Bible v {language_name}",
+			"additional": "Další jazyky",
+			"most popular": "Nejoblíbenější jazyky"
+		}
+	}
+}

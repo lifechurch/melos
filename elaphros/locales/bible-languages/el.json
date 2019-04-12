@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Γλώσσες και μεταφράσεις",
+			"bible in": "Η Αγία Γραφή στα {language_name}",
+			"additional": "Πρόσθετες γλώσσες",
+			"most popular": "Δημοφιλέστερες γλώσσες"
+		}
+	}
+}

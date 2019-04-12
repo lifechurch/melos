@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Lang Bib yo e tradiksyon yo",
+			"bible in": "Bib la nan {language_name}",
+			"additional": "Lòt lang",
+			"most popular": "Lang ki pi popilè yo"
+		}
+	}
+}

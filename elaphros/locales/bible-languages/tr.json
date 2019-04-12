@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Kutsal Kitap dil ve çevirileri",
+			"bible in": "Kutsa Kitap {language_name}",
+			"additional": "Ek olarak diller",
+			"most popular": "En popüler diller"
+		}
+	}
+}

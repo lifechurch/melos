@@ -72,6 +72,7 @@
 			"download app copy": "crwdns251678:0crwdne251678:0",
 			"tagline": "crwdns251688:0crwdne251688:0",
 			"android": "crwdns251692:0crwdne251692:0",
+			"download language": "crwdns251980:0{language_name}crwdne251980:0",
 			"verse action copy": "crwdns251674:0crwdne251674:0",
 			"browse plans": "crwdns251682:0crwdne251682:0",
 			"free plans": "crwdns251670:0crwdne251670:0",
@@ -79,6 +80,12 @@
 			"download or read": "crwdns251686:0crwdne251686:0",
 			"create free account": "crwdns251680:0crwdne251680:0",
 			"make it yours": "crwdns251668:0crwdne251668:0"
+		},
+		"bible languages": {
+			"title": "crwdns251982:0crwdne251982:0",
+			"bible in": "crwdns251988:0{language_name}crwdne251988:0",
+			"additional": "crwdns251986:0crwdne251986:0",
+			"most popular": "crwdns251984:0crwdne251984:0"
 		}
 	}
 }

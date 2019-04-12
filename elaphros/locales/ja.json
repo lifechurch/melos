@@ -72,6 +72,7 @@
 			"download app copy": "何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。",
 			"tagline": "どこに行く時も聖書と共に",
 			"android": "Android",
+			"download language": "{language_name}の聖書をダウンロードする",
 			"verse action copy": "お気に入りの聖句に色をつけたり、印をつけたり、聖句に画像をつけて大衆や個人的にシェアできます。聖書のなかにメモを書き込むこともできます。",
 			"browse plans": "すべての読書プランを見てみる",
 			"free plans": "無料の読書プランおよびデボーション",
@@ -79,6 +80,12 @@
 			"download or read": "今すぐダウンロード、またはオンラインで読む",
 			"create free account": "無料アカウントを作成する",
 			"make it yours": "あなたの聖書にする"
+		},
+		"bible languages": {
+			"title": "聖書の言語と種類",
+			"bible in": "{language_name}で聖書を読む",
+			"additional": "その他の言語",
+			"most popular": "よく利用される言語"
 		}
 	}
 }

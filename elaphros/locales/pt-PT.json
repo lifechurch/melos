@@ -72,6 +72,7 @@
 			"download app copy": "Dezenas de milhões de pessoas estão a usar a App da Bíblia™ para fazerem da Palavra de Deus uma parte da sua vida. Transfira a app gratuita e aceda aos seus marcadores, notas, e planos de leitura em qualquer lugar. Desfrute de centenas de versões, incluindo áudio, tudo no seu dispositivo móvel.",
 			"tagline": "a Bíblia que vai consigo para todo lado",
 			"android": "Android",
+			"download language": "Faça download da Bíblia em {language_name}",
 			"verse action copy": "Destaque ou crie marcadores dos seus versículos preferidos, crie Images de Versículos que pode partilhar, e adicione Notas públicas ou privadas às passagens Bíblicas.",
 			"browse plans": "Procurar Planos",
 			"free plans": "Planos e Devocionais Gratuitos de Leitura da Bíblia",
@@ -79,6 +80,12 @@
 			"download or read": "Faça download ou leia online.",
 			"create free account": "Criar a sua Conta Gratuita",
 			"make it yours": "Faça dela a sua Bíblia"
+		},
+		"bible languages": {
+			"title": "Traduções e Idiomas da Bíblia",
+			"bible in": "A Bíblia em {language_name}",
+			"additional": "Idiomas adicionais",
+			"most popular": "Idiomas mais utilizados"
 		}
 	}
 }

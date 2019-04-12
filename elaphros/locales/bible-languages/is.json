@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Biblíutungumál og þýðingar",
+			"bible in": "Biblían á {language_name}",
+			"additional": "Önnur tungumál",
+			"most popular": "Vinsælustu tungumálin"
+		}
+	}
+}

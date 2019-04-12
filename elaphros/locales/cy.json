@@ -72,6 +72,7 @@
 			"download app copy": "Mae miliynau o bobl yn defnyddio'r Ap Beibl er mwyn gwneud Gair Duw yn rhan o’u bywydau bob dydd. Lawrlwythwch yr Ap am ddim i gael gafael ar eich llyfrnodau, nodiadau a chynlluniau darllen yn unrhyw le. Mwynhewch gannoedd o fersiynau, gan gynnwys fersiynau sain, ar unrhyw ddyfais symudol.",
 			"tagline": "y Beibl sy'n mynd gyda ti i bobman",
 			"android": "Android",
+			"download language": "Lawrlwytha'r Beibl yn {language_name}",
 			"verse action copy": "Aroleuo neu osod Nod Tudalen ar dy hoff adnodau, gwneud Delweddau o Adnodau i'w rhannu, a chlymu Nodiadau cyhoeddus neu breifat i adrannau.",
 			"browse plans": "Pori Pob Cynllun",
 			"free plans": "Cynlluniau Darllen a Defosiynol am Ddim",
@@ -79,6 +80,12 @@
 			"download or read": "Lawlwytha nawr a'i ddarllen oddiar lein.",
 			"create free account": "Creu dy Gyfrif am ddim",
 			"make it yours": "Gwna fe'n Feibl i ti"
+		},
+		"bible languages": {
+			"title": "Ieithoedd Beibl a chyfieithiadau",
+			"bible in": "Y Beibl mewn {language_name}",
+			"additional": "Ieithoedd ychwanegol",
+			"most popular": "Ieithoedd mwyaf poblogaidd. "
 		}
 	}
 }

@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Përkthimet dhe gjuhët e Biblës",
+			"bible in": "Bibla në {language_name}",
+			"additional": "Gjuhë shtesë",
+			"most popular": "Gjuhët më të përdorura"
+		}
+	}
+}

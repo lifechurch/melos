@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "ترجمه‌های کتاب‌مقدس و زبان‌های مختلف",
+			"bible in": "کتاب‌مقدس به زبان {language_name}",
+			"additional": "زبان‌های دیگر",
+			"most popular": "معروف‌ترین زبان‌ها"
+		}
+	}
+}

@@ -72,6 +72,7 @@
 			"download app copy": "Decenas de millones de personas están usando la Biblia App para hacer que la Palabra de Dios sea una parte de su vida diaria. Descargue la aplicación gratuita y acceda a sus Marcadores, Notas y Planes de Lectura desde cualquier lugar. Disfrute de cientos de versiones, incluyendo audio Biblia, todo en su dispositivo móvil.",
 			"tagline": "la Biblia que va consigo dondequiera que vaya",
 			"android": "Android",
+			"download language": "Descargar la Biblia en {language_name}",
 			"verse action copy": "Resalte o Marque sus versículos favoritos, haga Imágenes de Versículo que puede compartir, y agregue pasajes bíblicos a Notas públicas o privadas.",
 			"browse plans": "Buscar Todos los Planes",
 			"free plans": "Planes de Lectura y Devocionales Gratis",
@@ -79,6 +80,12 @@
 			"download or read": "Descargar ahora o leer en línea.",
 			"create free account": "Crear Su Cuenta Gratis",
 			"make it yours": "Haga de ella su Biblia"
+		},
+		"bible languages": {
+			"title": "Idiomas de la Biblia y traducciones",
+			"bible in": "La Biblia en {language_name}",
+			"additional": "Idiomas adicionales",
+			"most popular": "Idiomas más populares"
 		}
 	}
 }

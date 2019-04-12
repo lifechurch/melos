@@ -72,6 +72,7 @@
 			"download app copy": "Tiotals miljoner människor använder Bibelappen för att göra Guds ord till en del av sin vardag. Ladda ner gratisappen för att komma åt dina bokmärken, anteckningar och läsplaner överallt. Få glädje av hundratals översättningar, inklusive ljuduppläsningar, på alla dina mobila enheter.",
 			"tagline": "Bibeln som följer med dig överallt",
 			"android": "Android",
+			"download language": "Ladda ner Bibeln på {language_name}",
 			"verse action copy": "Markera eller Bokmärk dina favoritverser, gör Bibelkort som du kan dela och lägg till publika eller privata Anteckningar till Bibeltexter.",
 			"browse plans": "Bläddra igenom alla läsplaner",
 			"free plans": "Gratis läsplaner och andakter",
@@ -79,6 +80,12 @@
 			"download or read": "Ladda ner nu eller läs online.",
 			"create free account": "Skapa ett gratis konto",
 			"make it yours": "Gör det till din Bibel"
+		},
+		"bible languages": {
+			"title": "Bibelspråk och översättningar",
+			"bible in": "Bibeln på {language_name}",
+			"additional": "Fler språk",
+			"most popular": "Mest populära språk"
 		}
 	}
 }

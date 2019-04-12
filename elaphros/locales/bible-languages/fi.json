@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Raamatun kielet ja käännökset",
+			"bible in": "Raamattu kielellä {language_name}",
+			"additional": "Muut kielet",
+			"most popular": "Suosituimmat kielet"
+		}
+	}
+}

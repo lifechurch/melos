@@ -72,6 +72,7 @@
 			"download app copy": "Decine di milioni di persone stanno usando l'App Bibbia per rendere la Parola di Dio parte della loro vita quotidiana. Scarica l'app gratuita e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile.",
 			"tagline": "la Bibbia che ti accompagna ovunque",
 			"android": "Android",
+			"download language": "Scarica la Bibbia in {language_name}",
 			"verse action copy": "Evidenzia o creare un Segnalibro per i tuoi versetti preferiti, crea Immagini Versetto da condividere, e allega Note pubbliche o private ai passi della Bibbia.",
 			"browse plans": "Visualizzare tutti i Piani",
 			"free plans": "Piani di Lettura e Devozionali Gratuiti",
@@ -79,6 +80,12 @@
 			"download or read": "Scarica adesso o leggi online.",
 			"create free account": "Crea il Tuo Account Gratuito",
 			"make it yours": "Rendila la tua Bibbia"
+		},
+		"bible languages": {
+			"title": "Lingue e traduzioni della Bibbia",
+			"bible in": "La Bibbia in {language_name}",
+			"additional": "Altre lingue",
+			"most popular": "Lingue più comuni"
 		}
 	}
 }

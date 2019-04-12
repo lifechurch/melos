@@ -72,6 +72,7 @@
 			"download app copy": "Kymmenet miljoonat ihmiset käyttävät Raamattusovellusta tehdäkseen Jumalan sanasta osan jokapäiväistä elämäänsä. Lataa ilmainen sovellus ja pääset kirjanmerkkeihin, muistiinpanoihin ja lukusuunnitelmiin missä tahansa. Voit nauttia sadoista versioista, äänen kera, kaikilla mobiililaitteillasi.",
 			"tagline": "Raamattu kulkee mukanasi minne menetkin",
 			"android": "Android",
+			"download language": "Lataa Raamattu kielellä {language_name}",
 			"verse action copy": "Korosta tai tee kirjanmerkkejä lempijakeistasi, tee jaettavia huoneentauluja ja liitä julkisia tai yksityisiä muistiinpanoja raamatunkohtiin.",
 			"browse plans": "Selaa kaikkia suunnitelmia",
 			"free plans": "Ilmaisia lukusuunnitelmia ja hartauksia",
@@ -79,6 +80,12 @@
 			"download or read": "Lataa nyt tai lue verkossa.",
 			"create free account": "Luo ilmainen tili",
 			"make it yours": "Tee siitä oma Raamattusi"
+		},
+		"bible languages": {
+			"title": "Raamatun kielet ja käännökset",
+			"bible in": "Raamattu kielellä {language_name}",
+			"additional": "Muut kielet",
+			"most popular": "Suosituimmat kielet"
 		}
 	}
 }

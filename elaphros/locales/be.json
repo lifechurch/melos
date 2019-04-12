@@ -72,6 +72,7 @@
 			"download app copy": "Праз the Bible App™ Божае Слова робіцца часткай штодзённага жыцьця дзясяткаў мільёнаў людзей. Спампуйце бясплатны дадатак, каб мець доступ да вашых закладак, нататак і плянаў чытаньня паўсюль. Карыстайцеся сотнямі перакладаў, нават аўдыёвэрсіямі, на вашай мабільнай прыладзе. ",
 			"tagline": "Біблія, якая паўсюль будзе з вамі",
 			"android": "Android",
+			"download language": "Спампаваць Біблію на {language_name}",
 			"verse action copy": "Пазначайце свае ўлюбёныя вершы, стварайце закладкі, выявы зь вершамі, якімі можна дзяліцца, і асабістыя ці публічныя нататкі да ўрыўкаў зь Пісаньня.",
 			"browse plans": "Глядзець усе пляны",
 			"free plans": "Бясплатныя пляны чытаньня й разважаньні",
@@ -79,6 +80,12 @@
 			"download or read": "Download now or read online.",
 			"create free account": "Стварыць бясплатны акаўнт",
 			"make it yours": "Зрабіце Біблію асабістай"
+		},
+		"bible languages": {
+			"title": "Bible languages and translations",
+			"bible in": "The Bible in {language_name}",
+			"additional": "Additional languages",
+			"most popular": "Most popular languages"
 		}
 	}
 }

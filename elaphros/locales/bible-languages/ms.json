@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Bahasa dan terjemahan Alkitab",
+			"bible in": "Alkitab dalam {language_name}",
+			"additional": "Bahasa-bahasa tambahan",
+			"most popular": "Bahasa-bahasa yang paling terkenal"
+		}
+	}
+}

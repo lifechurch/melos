@@ -72,6 +72,7 @@
 			"download app copy": "Puluhan juta orang menggunakan Aplikasi Alkitab untuk menjadikan Firman Tuhan bagian keseharian hidup mereka. Unduh aplikasi gratis ini dan akses ke markah, catatan, dan rencana bacaan Anda kapan pun. Nikmati ratusan versi Alkitab, termasuk audio, semua di ponsel Anda.",
 			"tagline": "Alkitab yang bersama Anda di mana pun juga",
 			"android": "Android",
+			"download language": "Unduh Alkitab dalam bahasa {language_name}",
 			"verse action copy": "Soroti atau markahi ayat favorit Anda, buat Gambar Ayat yang dapat Anda bagikan, dan lampirkan Catatan pribadi atau publik pada perikop Alkitab.",
 			"browse plans": "Jelajahi Semua Rencana",
 			"free plans": "Rencana Bacaan dan Renungan Gratis",
@@ -79,6 +80,12 @@
 			"download or read": "Unduh sekarang dan baca daring.",
 			"create free account": "Buat Akun Gratis Anda",
 			"make it yours": "Jadikan sebagai Alkitab Anda"
+		},
+		"bible languages": {
+			"title": "Bahasa dan Terjemahan Alkitab",
+			"bible in": "Alkitab dalam bahasa {language_name}",
+			"additional": "Bahasa tambahan",
+			"most popular": "Bahasa paling populer"
 		}
 	}
 }

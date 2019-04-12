@@ -72,6 +72,7 @@
 			"download app copy": "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device.",
 			"tagline": "the Bible that goes with you anywhere",
 			"android": "Android",
+			"download language": "Download the Bible in {language_name}",
 			"verse action copy": "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages.",
 			"browse plans": "Browse All Plans",
 			"free plans": "Free Reading Plans and Devotionals",
@@ -79,6 +80,12 @@
 			"download or read": "Download now or read online.",
 			"create free account": "Create Your Free Account",
 			"make it yours": "Make it your Bible"
+		},
+		"bible languages": {
+			"title": "Bible languages and translations",
+			"bible in": "The Bible in {language_name}",
+			"additional": "Additional languages",
+			"most popular": "Most popular languages"
 		}
 	}
 }

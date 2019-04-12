@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Библийн хэл ба орчуулгууд",
+			"bible in": "{language_name} дээрхи Библи",
+			"additional": "Нэмэлт хэлүүд",
+			"most popular": "Хамгийн түгээмэл хэлүүд"
+		}
+	}
+}

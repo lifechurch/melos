@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "ബൈബിൾ ഭാഷകളും വിവർത്തനവും",
+			"bible in": "{language_name} ബൈബിളിൽ",
+			"additional": "കൂടുതൽ ഭാഷകൾ",
+			"most popular": "ഏറ്റവും പ്രചാരമുള്ള ഭാഷകൾ"
+		}
+	}
+}

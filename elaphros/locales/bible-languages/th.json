@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "ภาษาและฉบับแปล",
+			"bible in": "พระคัมภีร์ในภาษา {language_name}",
+			"additional": "ภาษาอื่นๆ ",
+			"most popular": "ภาษาที่นิยมมากที่สุด"
+		}
+	}
+}

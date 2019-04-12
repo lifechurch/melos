@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Språk og oversettelser",
+			"bible in": "Bibelen på {language_name}",
+			"additional": "Andre språk",
+			"most popular": "Mest populære språk"
+		}
+	}
+}

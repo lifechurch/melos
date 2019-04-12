@@ -72,6 +72,7 @@
 			"download app copy": "Dhjetëra miliona njerëz po përdorin Programin e Biblës për ta bërë Fjalën e Perëndisë pjesë të jetës së tyre të përditshme. Shkarko programin falas dhe përdor shenjuesit e tu, shënimet dhe planet e leximit kudo. Shijo qindra versione, duke përfshirë ato audio, në pajisjen tuaj të lëvizshme.",
 			"tagline": "Bibla që vjen kudo me ty",
 			"android": "Android",
+			"download language": "Shkarko Biblën në {language_name}",
 			"verse action copy": "Thekso ose Shëno vargjet e tua të preferuara, krijo Figura me Vargje të cilat mund t'i shpërndash dhe pjesëve të Biblës shtoju Shënime publike ose private.",
 			"browse plans": "Shfleto të gjitha planet",
 			"free plans": "Devocione dhe Plane Leximi falas",
@@ -79,6 +80,12 @@
 			"download or read": "Shkarko tani ose lexo në internet.",
 			"create free account": "Krijo falas llogarinë tënde",
 			"make it yours": "Bëje atë Biblën tënde"
+		},
+		"bible languages": {
+			"title": "Përkthimet dhe gjuhët e Biblës",
+			"bible in": "Bibla në {language_name}",
+			"additional": "Gjuhë shtesë",
+			"most popular": "Gjuhët më të përdorura"
 		}
 	}
 }

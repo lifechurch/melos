@@ -72,6 +72,7 @@
 			"download app copy": "Deseci milijuna ljudi koriste aplikaciju Biblija kako bi Božju Riječ učinili dijelom svakodnevnog života. Preuzmi besplatnu aplikaciju i pristupi svojim oznakama, bilješkama i planovima čitanja bilo gdje. Uživaj u stotinama prijevoda Biblije, uključujući i audio Bibliju, sve na svom mobilnom uređaju.",
 			"tagline": "Biblija koja s tobom ide bilo kuda",
 			"android": "Android",
+			"download language": "Preuzmi Bibliju na sljedećem jeziku: {language_name}",
 			"verse action copy": "Istakni ili Označi svoje omiljene stihove, napravi Sliku sa Stihom koju možeš podijeliti, i prikači javne ili privatne Bilješke na Biblijskom odlomku.",
 			"browse plans": "Pregledaj sve planove",
 			"free plans": "Besplatni planovi čitanja i nadahnuti sadržaji",
@@ -79,6 +80,12 @@
 			"download or read": "Preuzmi odmah ili čitaj na mreži.",
 			"create free account": "Stvori besplatni račun",
 			"make it yours": "Stvori Bibliju za sebe."
+		},
+		"bible languages": {
+			"title": "Jezici i prijevodi Biblije",
+			"bible in": "Biblija na sljedećem jeziku: {language_name}",
+			"additional": "Dodatni jezici",
+			"most popular": "Najpopularniji jezici"
 		}
 	}
 }

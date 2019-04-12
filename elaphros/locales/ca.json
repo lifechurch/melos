@@ -72,6 +72,7 @@
 			"download app copy": "Desenes de milions de persones estan fent servir l'aplicació de la Bíblia™ per fer que la Paraula de Déu una part de les seves vides diàries. Descarrega l'aplicació gratuïta i accedeix als seus marcadors, notes, i els plans de lectura des de qualsevol lloc. Gaudeix de centenars de versions, incloent àudio, tot en el seu dispositiu mòbil.",
 			"tagline": "la Bíblia que va amb tu a tot arreu",
 			"android": "Android",
+			"download language": "Descarrega la Bíblia en {language_name}",
 			"verse action copy": "Subratlla o marca els teus versets preferits, crea imatges amb versets i comparteix-les i afegeix notes privades o públiques a passatges bíblics.",
 			"browse plans": "Fer una ullada a tots els Plans",
 			"free plans": "Plans de lectura i devocionals gratuïts",
@@ -79,6 +80,12 @@
 			"download or read": "Descarrega ara o llegeix en línia.",
 			"create free account": "Crea el teu compte gratuït",
 			"make it yours": "Converteix-la en la teva Bíblia"
+		},
+		"bible languages": {
+			"title": "Llengües de la Bíblia i traduccions",
+			"bible in": "La Bíblia en {language_name}",
+			"additional": "Llengües addicionals",
+			"most popular": "Llengües més populars"
 		}
 	}
 }

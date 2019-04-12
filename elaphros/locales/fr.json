@@ -72,6 +72,7 @@
 			"download app copy": "Des dizaines de millions de personnes utilisent l'application Bible App pour appliquer la Parole de Dieu dans leur quotidien. Téléchargez l'application gratuite et accédez à vos favoris, notes et plans de lecture où que vous vous trouviez. Profitez des centaines de versions disponibles, y compris des versions audio, tout cela à partir de votre appareil mobile.",
 			"tagline": "la Bible qui vous accompagne partout",
 			"android": "Android",
+			"download language": "Téléchargez la Bible en {language_name}",
 			"verse action copy": "Soulignez ou référencez vos versets préférés, créez des versets illustrés que vous pouvez partager, et attachez des notes publiques ou privées à des passages bibliques.",
 			"browse plans": "Parcourir tous les plans",
 			"free plans": "Plans de lecture et dévotions gratuits",
@@ -79,6 +80,12 @@
 			"download or read": "Télécharger maintenant ou lire en ligne.",
 			"create free account": "Créez votre compte gratuit",
 			"make it yours": "Faites-en votre Bible"
+		},
+		"bible languages": {
+			"title": "Les langues et traductions de la Bible",
+			"bible in": "La Bible en {language_name}",
+			"additional": "Autres langues",
+			"most popular": "Langues courantes"
 		}
 	}
 }
