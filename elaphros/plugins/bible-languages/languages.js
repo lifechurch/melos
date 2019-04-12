@@ -25,6 +25,7 @@ module.exports = function BibleLanguages(req, reply) {
       localeDetails: getAppLocaleDetails(req.detectedLng),
       canonicalUrl,
       canonicalPath,
+      getLocalizedLink
     }
   })
 }

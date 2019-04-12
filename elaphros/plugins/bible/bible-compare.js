@@ -142,7 +142,8 @@ module.exports = function bibleCompare(req, reply) {
         textDirection: 'ltr',
         localeDetails: getAppLocaleDetails(req.detectedLng),
         canonicalUrl,
-        canonicalPath
+        canonicalPath,
+        getLocalizedLink
       }
     })
   }, (e) => {
