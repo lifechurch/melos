@@ -14,4 +14,4 @@ nl:
       tagline: "De Bijbel die overal met je mee gaat"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Download de Bijbel in het %{language_name}"
