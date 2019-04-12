@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Bybel tale en vertalings",
+			"bible in": "Die Bybel in {language_name}",
+			"additional": "Bykomende tale",
+			"most popular": "Mees gewilde tale"
+		}
+	}
+}

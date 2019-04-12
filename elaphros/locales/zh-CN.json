@@ -72,6 +72,7 @@
 			"download app copy": "亿万用户正在使用这款圣经软件，把上帝的话语融入他们的日常生活。下载这款免费应用，你就可以随时随地使用你的书签、笔记以及读经计划等等。上千种圣经译本，包括音频圣经，尽在你的移动设备里。好好享用吧！",
 			"tagline": "随时随地陪伴着你的圣经",
 			"android": "Android",
+			"download language": "下载{language_name}圣经",
 			"verse action copy": "给你喜爱的经文加高亮显示或书签标记，制作可供你分享的经文图，为圣经段落添加公开或非公开的笔记。",
 			"browse plans": "发掘全部读经计划",
 			"free plans": "免费的【读经计划】与灵修短文",
@@ -79,6 +80,12 @@
 			"download or read": "现在下载或在线阅读",
 			"create free account": "创建免费账户",
 			"make it yours": "使之成为你的圣经"
+		},
+		"bible languages": {
+			"title": "圣经语言和译本",
+			"bible in": "{language_name}圣经",
+			"additional": "其他语言",
+			"most popular": "最常用的语言"
 		}
 	}
 }

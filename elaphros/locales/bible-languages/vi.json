@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Ngôn ngữ và bản dịch Kinh Thánh",
+			"bible in": "Kinh Thánh {language_name}",
+			"additional": "Các ngôn ngữ khác",
+			"most popular": "Các ngôn ngữ phổ biến nhất"
+		}
+	}
+}

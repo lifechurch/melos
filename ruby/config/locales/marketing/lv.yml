@@ -14,4 +14,4 @@ lv:
       tagline: "Bībele, kas ir pie rokas vienmēr."
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Lejupielādē Bībeli %{language_name}"

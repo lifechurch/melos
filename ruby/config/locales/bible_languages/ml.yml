@@ -1,0 +1,8 @@
+ml:
+  features:
+    bible languages:
+      title: "ബൈബിൾ ഭാഷകളും വിവർത്തനവും"
+      most popular: "ഏറ്റവും പ്രചാരമുള്ള ഭാഷകൾ"
+      additional: "കൂടുതൽ ഭാഷകൾ"
+      bible in: "%{language_name} ബൈബിളിൽ"
+

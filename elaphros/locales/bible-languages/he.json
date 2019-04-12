@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "שפות הכתובים ותרגומים",
+			"bible in": "דברי הקודש ב-{language_name}",
+			"additional": "שפות נוספות",
+			"most popular": "השפות הפופולריות ביותר"
+		}
+	}
+}

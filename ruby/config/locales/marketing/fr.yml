@@ -14,4 +14,4 @@ fr:
       tagline: "la Bible qui vous accompagne partout"
       iphone ipad: "Iphone/Ipad"
       android: "Android"
-
+      download language: "Téléchargez la Bible en %{language_name}"

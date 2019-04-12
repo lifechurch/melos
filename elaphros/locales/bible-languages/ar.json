@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "لغات الإنجيل المقدس و الترجمات",
+			"bible in": "الإنجيل المقدس ب{language_name}",
+			"additional": "لغات إضافية",
+			"most popular": "اللغات الأكثر شعبيّة"
+		}
+	}
+}

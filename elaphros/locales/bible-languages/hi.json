@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "बाइबिल भाषा और अनुवाद",
+			"bible in": "बाइबिल {language_name} भाषा मे",
+			"additional": "कुछ और भाषा",
+			"most popular": "सबसे प्रचलित भाषा"
+		}
+	}
+}

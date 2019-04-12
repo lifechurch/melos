@@ -14,4 +14,4 @@ sk:
       tagline: "Biblia, ktorá ide všade s vami"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Stiahnite si Bibliu v jazyku %{language_name}"

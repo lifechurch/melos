@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "성경 언어 및 번역본",
+			"bible in": "{language_name} 성경",
+			"additional": "추가 언어",
+			"most popular": "가장 인기있는 언어"
+		}
+	}
+}

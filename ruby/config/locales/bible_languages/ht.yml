@@ -1,0 +1,8 @@
+ht:
+  features:
+    bible languages:
+      title: "Lang Bib yo e tradiksyon yo"
+      most popular: "Lang ki pi popilè yo"
+      additional: "Lòt lang"
+      bible in: "Bib la nan %{language_name}"
+

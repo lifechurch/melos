@@ -72,6 +72,7 @@
 			"download app copy": "Makumi emamiriyoni evanhu arikushandisa Bhaiberi App kuti vaverenge nekushandisa Shoko raMwari mazuva ose. Tora mahara kuti uone pawakabata, zvawakanyora nezvirongwa zvekuverenga zvaka. Unokwanisa kuona zvese izvi kwese kwese. Pane mavhezheni mazana nemazana uye kuverengerwa. Zvese izvi unokwanisa kuzviwana pamuchina wako.",
 			"tagline": "Bhaibheri rinoenda newe kwese kwese",
 			"android": "Android",
+			"download language": "turura bhaibheri mu",
 			"verse action copy": "Chinyorwa kana Kubata vesi yaunofarira,unokwanisa kugadzira mapikicha emavesi auno kwanisa kupavame, nekubatanidza neZvinyorwa zvemuBhaiberi",
 			"browse plans": "wona zvirongwa zvose",
 			"free plans": "Free Reading Plans and Devotionals",
@@ -79,6 +80,12 @@
 			"download or read": "Tutunura izvezvi kana kuti verenga uri padandemutande.",
 			"create free account": "Gadzira account yako pachena",
 			"make it yours": "Unoriita bhaibheri rako"
+		},
+		"bible languages": {
+			"title": "Mitauro yebhaibheri nekuturukirwa",
+			"bible in": "Bhaibheri mu{language_name}",
+			"additional": "Mimwe mitauro",
+			"most popular": "Mitauro inonyanyo zivikanwa"
 		}
 	}
 }

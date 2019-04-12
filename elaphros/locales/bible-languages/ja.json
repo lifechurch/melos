@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "聖書の言語と種類",
+			"bible in": "{language_name}で聖書を読む",
+			"additional": "その他の言語",
+			"most popular": "よく利用される言語"
+		}
+	}
+}

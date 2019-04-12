@@ -92,6 +92,7 @@
 	"unsubscribe.success.badges": "You successfully unsubscribed from <b>Badges</b> emails.",
 	"unsubscribe.success.comments": "You successfully unsubscribed from <b>Comments</b> emails.",
 	"unsubscribe.success.friendships": "You successfully unsubscribed from <b>Friendships</b> emails.",
+	"unsubscribe.success.digest": "You successfully unsubscribed from <b>Digest</b> emails.",
 	"unsubscribe.success.likes": "You successfully unsubscribed from <b>Likes</b> emails.",
 	"unsubscribe.success.moments": "You successfully unsubscribed from <b>Moments</b> emails.",
 	"unsubscribe.success.newsletter": "You successfully unsubscribed from <b>Newsletter</b> emails.",

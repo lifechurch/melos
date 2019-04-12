@@ -72,6 +72,7 @@
 			"download app copy": "Mamilioni ya watu wanatumia App ya Bibilia ™ kufanya Neno la Mungu iwe sehemu ya maisha yao ya kila siku. Pakua programu ya bure na upate maelezo ya maalamisho yako, na mipango ya kusoma kutoka mahali popote. Furahia mamia ya matoleo, ikiwa pamoja na audio yote kwa rununu yako.",
 			"tagline": "Biblia inayoenda nawe kokote",
 			"android": "Android",
+			"download language": "Pakua programu ya bure ya Biblia",
 			"verse action copy": "Kuonyesha au Kwanza mistari yako favorite, kufanya Fungu Picha uweze kushiriki na masharti Notes umma au binafsi kwa vifungu vya Biblia.",
 			"browse plans": "Angalia mipango yote",
 			"free plans": "Mipango ya usomaji bure na Ibada",
@@ -79,6 +80,12 @@
 			"download or read": "Download sasa au kusoma online.",
 			"create free account": "Fungua akaunti bure",
 			"make it yours": "Ifanye iwe Yako"
+		},
+		"bible languages": {
+			"title": " lugha za biblia na tafasili",
+			"bible in": "Biblia katika {language_name}",
+			"additional": "Lugha za ziada",
+			"most popular": "Lugha nyingi maarufu"
 		}
 	}
 }

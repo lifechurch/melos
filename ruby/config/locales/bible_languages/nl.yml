@@ -1,0 +1,8 @@
+nl:
+  features:
+    bible languages:
+      title: "Bijbelvertalingen"
+      most popular: "Populairste talen"
+      additional: "Overige talen"
+      bible in: "De Bijbel in het %{language_name}"
+

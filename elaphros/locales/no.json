@@ -72,6 +72,7 @@
 			"download app copy": "Et titalls millioner mennesker bruker 'the Bible App™' for å gjøre Guds ord til en del av sine daglige liv. Last ned denne gratis appen og få tilgang til dine bokmerker, notater og leseplaner overalt. Du tilbys hundrevis av ulike bibelutgaver, inkludert lydbibler - alt på din mobiltelefon eller ipad.",
 			"tagline": "Bibelen du kan ta med deg over alt",
 			"android": "Android",
+			"download language": "Last ned Bibelen på {language_name}",
 			"verse action copy": "Marker eller lag bokmerke til favorittversene dine, lag bilder til vers som du kan dele, og legg til offentlige eller private notater til skriftsted i Bibelen.",
 			"browse plans": "Utforsk alle leseplaner",
 			"free plans": "Gratis leseplaner og andakter",
@@ -79,6 +80,12 @@
 			"download or read": "Last ned nå eller les på nett.",
 			"create free account": "Opprett din gratis brukerkonto",
 			"make it yours": "Gjør det til din bibel"
+		},
+		"bible languages": {
+			"title": "Språk og oversettelser",
+			"bible in": "Bibelen på {language_name}",
+			"additional": "Andre språk",
+			"most popular": "Mest populære språk"
 		}
 	}
 }

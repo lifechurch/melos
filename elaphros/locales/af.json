@@ -72,6 +72,7 @@
 			"download app copy": "Mense by die miljoene gebruik die Bible App™ om God se Woord deel van hul daaglikse lewens te maak. Laai die gratis toep af om toegang tot jou boekmerke, notas en leesplanne van enige plek af te verkry. Geniet honderde weergawes, insluitende klank, alles op jou mobiele toestel.",
 			"tagline": "die Bybel wat oral saam met jou gaan",
 			"android": "Android",
+			"download language": "Laai Die Bybel af in {language_name}",
 			"verse action copy": "Kleurmerk of Boekmerk jou gunsteling verse, maak Versbeelde wat jy kan deel, en maak notas by Bybelgedeeltes, wat jy as aanhegsel kan gebruik vir privaat of openbare gebruik.",
 			"browse plans": "Deursoek Al die Leesplanne",
 			"free plans": "Gratis Leesplanne en Oordenkings",
@@ -79,6 +80,12 @@
 			"download or read": "Laai nou af of lees aanlyn",
 			"create free account": "Skep Jou Gratis Rekening",
 			"make it yours": "Maak hierdie Bybelweergawe jou keuse"
+		},
+		"bible languages": {
+			"title": "Bybel tale en vertalings",
+			"bible in": "Die Bybel in {language_name}",
+			"additional": "Bykomende tale",
+			"most popular": "Mees gewilde tale"
 		}
 	}
 }

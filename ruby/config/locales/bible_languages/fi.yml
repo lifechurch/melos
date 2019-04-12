@@ -1,0 +1,8 @@
+fi:
+  features:
+    bible languages:
+      title: "Raamatun kielet ja käännökset"
+      most popular: "Suosituimmat kielet"
+      additional: "Muut kielet"
+      bible in: "Raamattu kielellä %{language_name}"
+

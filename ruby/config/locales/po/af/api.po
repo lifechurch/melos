@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-12-04 21:57\n"
+"PO-Revision-Date: 2019-04-08 04:22\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Afrikaans\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-08-20 09:21\n"
+"PO-Revision-Date: 2019-04-01 04:22\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Afrikaans\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgid "moment.friendship.self.title"
 msgstr "Jy is nou vriende met <b>{friend_name}</b>"
 
 msgid "moment.friendship.title"
-msgstr "{user_name}    is nou vriende met  <b>{friend_name}</b>"
+msgstr "{user_name} is nou vriende met <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
 msgstr "Jy het <b>{reference_human} {version_abbreviation}</b> gekies"
@@ -130,10 +130,10 @@ msgid "moment.plan_segment_completion.body"
 msgstr "Dag {segment} van {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Jy het dag <b>{segment}</b> voltooi van die plan, <b>{title}</b>"
+msgstr "Jy het dag <b>{segment}</b> voltooi van die leesplan, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} het dag <b>{segment}</b> voltooi van die plan, <b> {title}</b>"
+msgstr "{name} het dag <b>{segment}</b> voltooi van die leesplan, <b> {title}</b>"
 
 msgid "moment.plan_subscription.self.title"
 msgstr "Jy het 'n nuwe Plan het begin"
@@ -181,7 +181,7 @@ msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Vind hoop en vernuwing in God se Woord."
 
 msgid "moment.image.self.title"
-msgstr "Jy het 'n versprent vir <b>{reference_human} {version_abbreviation} </b>  geskep "
+msgstr "Jy het 'n versbeeld vir <b>{reference_human} {version_abbreviation} </b> geskep"
 
 msgid "moment.image.title"
 msgstr "{name} het 'n versbeeld vir <b>{reference_human} {version_abbreviation} </b> geskep "
@@ -220,7 +220,7 @@ msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} het kommentaar gelewer op jou nuwe vriendskap met {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship.friend"
-msgstr "{name} het kommentaar gelewer op jou nuwe vriendskap: “{comment}”"
+msgstr "{name} het kommentaar gelewer op jou nuwe Vriendskap: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} het kommentaar gelewer op jou kleurmerk: “{comment}”"
@@ -229,10 +229,10 @@ msgid "notifications.comments.moment.mine.note"
 msgstr "{name} het kommentaar gelewer op jou nota: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name} het kommentaar gelewer op jou Plan: “{comment}”"
+msgstr "{name} het kommentaar gelewer op jou Leesplan: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name} het kommentaar gelewer op jou Bybelplan: “{comment}”"
+msgstr "{name} het kommentaar gelewer op jou Bybel Leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} het ook op {moment_owner_name} se boekmerk kommentaar gelewer: “{comment}”"
@@ -256,7 +256,7 @@ msgid "notifications.comments.moments.friend.owner.bookmark"
 msgstr "{moment_owner_name} het ook op hulle eie boekmerk kommentaar gelewer: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle nuwe vriendskap met  {friend_name}: “{comment}”"
+msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle nuwe vriendskap met {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship.ours"
 msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle nuwe Vriendskap met jou: “{comment}”"
@@ -268,16 +268,16 @@ msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} het ook op hulle eie nota kommentaar gelewer: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle Plan: “{comment}”"
+msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle Leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle Bybelplan: “{comment}”"
+msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle Bybel Leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} het ook kommentaar gelewer op {moment_owner_name} se Plan: “{comment}”"
+msgstr "{commenter_name} het ook kommentaar gelewer op {moment_owner_name} se Leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} het ook kommentaar gelewer op {moment_owner_name} se Bybelplan: “{comment}”"
+msgstr "{commenter_name} het ook kommentaar gelewer op {moment_owner_name} se Bybel Leesplan: “{comment}”"
 
 msgid "notifications.friendships.accept"
 msgstr "{name} het jou vriendskapsversoek aanvaar"
@@ -310,10 +310,10 @@ msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} hou van jou nota, “{title}”"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} hou van jou Plan aktiwiteit"
+msgstr "{name} hou van jou Leesplan aktiwiteit"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} hou van jou Bybelplan aktiwiteit"
+msgstr "{name} hou van jou Bybel Leesplan aktiwiteit"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} het {reference_human} geboekmerk"
@@ -334,13 +334,13 @@ msgid "notifications.moments.create.plan_completion"
 msgstr "{name} het hulle Plan voltooi, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} het hulle Bybelplan voltooi, {title}"
+msgstr "{name} het hulle Bybel Leesplan voltooi, {title}"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} het 'n nuwe Plan begin, {title}"
+msgstr "{name} het 'n nuwe Leesplan begin, {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} het 'n nuwe Bybelplan begin, {title}"
+msgstr "{name} het 'n nuwe Bybel Leesplan begin, {title}"
 
 msgid "notifications.people.contact.joined"
 msgstr "{name} het nou net by YouVersion aangesluit. Kies om hulle as 'n Vriend by te voeg."
@@ -349,37 +349,37 @@ msgid "notifications.system.test"
 msgstr "Laai nou die Bybel App vir Kinders af!!!"
 
 msgid "notifications.comments.moment.mine.image"
-msgstr "{name} het kommentaar gelewer op jou FotoVers: “{comment}”"
+msgstr "{name} het kommentaar gelewer op jou Versbeeld: “{comment}”"
 
 msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} het ook kommentaar gelewer op {moment_owner_name} se FotoVers: “{comment}”"
+msgstr "{commenter_name} het ook kommentaar gelewer op {moment_owner_name} se Versbeeld: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle FotoVers: “{comment}”"
+msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle Versbeeld: “{comment}”"
 
 msgid "notifications.likes.moment.mine.image"
-msgstr "{name} hou van jou FotoVers vir {reference_human}"
+msgstr "{name} hou van jou Versbeeld vir {reference_human}"
 
 msgid "notifications.moments.create.image"
-msgstr "{name} het 'n FotoVers geskep vir {reference_human}"
+msgstr "{name} het 'n Versbeeld geskep vir {reference_human}"
 
 msgid "notifications.friendships.pending"
-msgstr "Jy het Vriendskap versoeke wat wag in die Bybel Toep"
+msgstr "Jy het Vriendskapversoeke in die Bybel Toep wat wag"
 
 msgid "notifications.votd_image"
-msgstr ""
+msgstr "Vers-van-die-dag Beeld"
 
 msgid "notifications.plans_with_friends_invite"
-msgstr "{name} wil die Leesplan \"{title}\" saam met jou lees."
+msgstr "{name} wil die Leesplan “{title}” saam met jou lees."
 
 msgid "notifications.plans_with_friends_comment"
-msgstr "{name} het kommentaar gelewer op Dag {day} van die Leesplan, \"{title}.\""
+msgstr "{name} het kommentaar gelewer op Dag {day} van die Leesplan, “{title}.”"
 
 msgid "notifications.plans_with_friends_accept"
-msgstr "{name} het jou uitnodiging aanvaar om die Leesplan, \"{title}\", saam met jou te lees."
+msgstr "{name} het jou uitnodiging aanvaar om die Leesplan, “{title}”, saam met jou te lees."
 
 msgid "notifications.plans_with_friends_update_start_date"
-msgstr "{name} het die begin datum van die Leesplan \"{title}\" na {date} verander."
+msgstr "{name} het die begin datum van die Leesplan “{title}” na {date} verander."
 
 msgid "notifications.comments.moment.mine.badge"
 msgstr "{name} het kommentaar gelewer op jou kenteken: “{comment}”"

@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "圣经语言和译本",
+			"bible in": "{language_name}圣经",
+			"additional": "其他语言",
+			"most popular": "最常用的语言"
+		}
+	}
+}

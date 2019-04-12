@@ -14,4 +14,4 @@ pt-PT:
       tagline: "a Bíblia que vai consigo para todo lado"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Faça download da Bíblia em %{language_name}"

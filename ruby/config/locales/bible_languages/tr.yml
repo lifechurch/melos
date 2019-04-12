@@ -1,0 +1,8 @@
+tr:
+  features:
+    bible languages:
+      title: "Kutsal Kitap dil ve çevirileri"
+      most popular: "En popüler diller"
+      additional: "Ek olarak diller"
+      bible in: "Kutsa Kitap %{language_name}"
+

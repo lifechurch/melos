@@ -72,6 +72,7 @@
 			"download app copy": "Emberek tízezrei használják a Biblia alkalmazást (Bible App™), hogy Isten Igéjét életük részévé tegyék. Töltsd le az ingyenes alkalmazást, és bárhol hozzáférhetsz könyvjelzőidhez, jegyzeteidhez és olvasási terveidhez. Élvezd a több száz fordítást - beleértve a hangos verziókat is - az okostelefonodon.",
 			"tagline": "a Biblia, ami mindenhová elkísér.",
 			"android": "Android",
+			"download language": "Töltsd le a Bibliát {language_name} nyelven",
 			"verse action copy": "Emeld ki, vagy tégy könyvjelzőt kedvenc igeverseidhez, készíts megosztható igeképeket, és írj publikus vagy privát jegyzeteket különböző igeszakaszokhoz.",
 			"browse plans": "Böngéssz a tervek között",
 			"free plans": "Ingyenes olvasási tervek és áhítatok",
@@ -79,6 +80,12 @@
 			"download or read": "Töltsd le most vagy olvasd online.",
 			"create free account": "Regisztrálj ingyenes fiókot",
 			"make it yours": "Formáld a saját Bibliádra"
+		},
+		"bible languages": {
+			"title": "Biblia nyelvek és fordítások",
+			"bible in": "A Biblia {language_name} nyelven",
+			"additional": "További nyelvek",
+			"most popular": "Legnépszerűbb nyelvek"
 		}
 	}
 }

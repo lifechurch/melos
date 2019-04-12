@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "زمان و وەرگێڕانەکانی کتێبی پیرۆز",
+			"bible in": "کتێبی پیرۆز بە {language_name}",
+			"additional": "زمانە زیادەکان",
+			"most popular": "زمانە بەناوبانگەکان"
+		}
+	}
+}

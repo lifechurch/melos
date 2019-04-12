@@ -72,6 +72,7 @@
 			"download app copy": "Tens of millions of people are using the Bible App™ to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device.",
 			"tagline": "隨時隨地陪伴著你的聖經",
 			"android": "Android",
+			"download language": "下載 {language_name} 聖經",
 			"verse action copy": "為你喜愛的經文標示醒目或書籤；創作經文圖與人分享；並在聖經章節上記錄公開或私密的筆記。",
 			"browse plans": "瀏覽所有計劃",
 			"free plans": "免費的讀經計劃及靈修內容",
@@ -79,6 +80,12 @@
 			"download or read": "現在就下載或線上閱讀。",
 			"create free account": "建立你的免費帳戶",
 			"make it yours": "讓它成為你的專屬聖經"
+		},
+		"bible languages": {
+			"title": "聖經語言和譯本",
+			"bible in": "{language_name} 聖經",
+			"additional": "其他語言",
+			"most popular": "最常用的語言"
 		}
 	}
 }

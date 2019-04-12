@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": " lugha za biblia na tafasili",
+			"bible in": "Biblia katika {language_name}",
+			"additional": "Lugha za ziada",
+			"most popular": "Lugha nyingi maarufu"
+		}
+	}
+}

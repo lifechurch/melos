@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2018-03-26 12:29-0400\n"
+"PO-Revision-Date: 2019-03-11 04:22\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Belarusian\n"
 "MIME-Version: 1.0\n"
@@ -382,19 +382,19 @@ msgid "notifications.plans_with_friends_update_start_date"
 msgstr "{name} зьмяніў дату пачатку пляну \"{title}\" на {date}."
 
 msgid "notifications.comments.moment.mine.badge"
-msgstr ""
+msgstr "Карыстальнік {name} пракаментаваў ваш значок: \"{comment}”"
 
 msgid "notifications.comments.moments.friend.badge"
-msgstr ""
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў {moment_owner_name} значок: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.badge"
-msgstr ""
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў значок: \"{comment}”"
 
 msgid "notifications.likes.moment.mine.badge"
-msgstr ""
+msgstr "Карыстальнік {name} упадабаў(ла) ваш значок, “{title}"
 
 msgid "notifications.moments.create.badge"
-msgstr ""
+msgstr "{name} атрымаў значок {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Вітаю!</p><p>Я карыстаюся Bible App ад YouVersion і хачу падзяліццЯ карыстаюся Bible App ад YouVersion і хачу падзяліцца з табой. Прыкладаньне напоўніць тваё штодзённае жыцьцё праўдай і прыгажосьцю Бібліі. </p><p><strong>Усталюй Bible App:</strong> чытай, глядзі, слухай і дзяліся на сваім смартфоне ці плашэце, і анлайн на Bible.com.</p><p><strong>Завядзі свай акаўнт</strong> каб мець доступ да плянаў чытаньня Бібліі, закладак, пазнак і нататак на ўсіх прыладах.</p><p><strong>Дадавай сяброў (як я):</strong> дасьледуй Біблію і разважай разам з блізкімі людзьмі.</p><p>Усё гэта ў Bible App - усталюй тут: </p>"

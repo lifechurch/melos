@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Ieithoedd Beibl a chyfieithiadau",
+			"bible in": "Y Beibl mewn {language_name}",
+			"additional": "Ieithoedd ychwanegol",
+			"most popular": "Ieithoedd mwyaf poblogaidd. "
+		}
+	}
+}

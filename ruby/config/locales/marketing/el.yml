@@ -14,4 +14,4 @@ el:
       tagline: "η Αγία Γραφή που πάει μαζί σας παντού"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Λήψη της Αγίας Γραφής στα %{language_name}"

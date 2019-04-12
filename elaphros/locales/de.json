@@ -72,6 +72,7 @@
 			"download app copy": "Zig Millionen Menschen nutzen die Bibel App, um Gottes Wort zu einem Teil ihres täglichen Lebens zu machen. Lade die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Leseplänen zu. Genieße hunderte Bibelübersetzungen, darunter auch Hörbibeln, auf deinem mobilen Gerät.",
 			"tagline": "immer dabei - egal wo du bist!",
 			"android": "Android",
+			"download language": "Lade die Bibel auf {language_name} herunter",
 			"verse action copy": "Markiere deine Lieblingsverse, erstelle Lesezeichen oder Versbilder, die du teilen kannst und füge bestimmten Abschnitten in der Bibel öffentliche oder private Notizen hinzu.",
 			"browse plans": "Durchstöbere alle Lesepläne",
 			"free plans": "Kostenlose Lesepläne und Andachten",
@@ -79,6 +80,12 @@
 			"download or read": "Jetzt herunterladen oder online lesen.",
 			"create free account": "Erstelle dein kostenloses Konto",
 			"make it yours": "Mache sie zu deiner Bibel!"
+		},
+		"bible languages": {
+			"title": "Sprachen und Übersetzungen",
+			"bible in": "Die Bibel auf {language_name}",
+			"additional": "Zusätzliche Sprachen",
+			"most popular": "Beliebte Sprachen"
 		}
 	}
 }

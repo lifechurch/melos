@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "聖經語言和譯本",
+			"bible in": "{language_name} 聖經",
+			"additional": "其他語言",
+			"most popular": "最常用的語言"
+		}
+	}
+}

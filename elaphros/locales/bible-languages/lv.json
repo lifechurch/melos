@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Bībeles valodas un tulkojumi",
+			"bible in": "Bībele {language_name}",
+			"additional": "Pārējās valodas",
+			"most popular": "Populārākās valodas"
+		}
+	}
+}

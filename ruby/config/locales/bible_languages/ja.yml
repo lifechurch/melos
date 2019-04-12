@@ -1,0 +1,8 @@
+ja:
+  features:
+    bible languages:
+      title: "聖書の言語と種類"
+      most popular: "よく利用される言語"
+      additional: "その他の言語"
+      bible in: "%{language_name}で聖書を読む"
+

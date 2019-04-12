@@ -14,4 +14,4 @@ be:
       tagline: "Біблія, якая паўсюль будзе з вамі"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Спампаваць Біблію на %{language_name}"

@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Biblia nyelvek és fordítások",
+			"bible in": "A Biblia {language_name} nyelven",
+			"additional": "További nyelvek",
+			"most popular": "Legnépszerűbb nyelvek"
+		}
+	}
+}

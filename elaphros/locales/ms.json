@@ -72,6 +72,7 @@
 			"download app copy": "Berpuluh juta orang kini mengguna App Alkitab untuk  menjadikan Firman Allah sebahagian daripada kehidupan setiap hari. Muat turun app percuma dan akses bookmark, nota, dan pelan bacaan dari mana pun. Nikmati beratus versi Alkitab, termasuk audio, pada peranti mobil anda.",
 			"tagline": "Alkitab yang menyertai anda ke mana-mana sahaja",
 			"android": "Android",
+			"download language": "Muat turun Alkitab dalam {language_name}",
 			"verse action copy": "Tandakan atau letakkan Penanda pada ayat-ayat kegemaran anda, hasilkan Imej Ayat yang boleh dikongsikan, dan lampirkan Nota awam atau persendirian untuk petikan Alkitab.",
 			"browse plans": "Layari Semua Pelan",
 			"free plans": "Pelan Bacaan dan Bahan Renungan Percuma",
@@ -79,6 +80,12 @@
 			"download or read": "Muat turun sekarang atau baca online.",
 			"create free account": "Cipta Akaun Percuma Anda",
 			"make it yours": "Jadikannya Alkitab anda"
+		},
+		"bible languages": {
+			"title": "Bahasa dan terjemahan Alkitab",
+			"bible in": "Alkitab dalam {language_name}",
+			"additional": "Bahasa-bahasa tambahan",
+			"most popular": "Bahasa-bahasa yang paling terkenal"
 		}
 	}
 }

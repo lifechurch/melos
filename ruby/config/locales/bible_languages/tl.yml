@@ -1,0 +1,8 @@
+tl:
+  features:
+    bible languages:
+      title: "Mga wika ng Biblia at pagkakasalin nito"
+      most popular: "Pinakakilalang mga wika"
+      additional: "Mga karagdagang wika"
+      bible in: "Ang Biblia sa Wikang %{language_name}"
+

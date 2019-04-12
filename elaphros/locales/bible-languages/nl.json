@@ -1,0 +1,10 @@
+{
+	"features": {
+		"bible languages": {
+			"title": "Bijbelvertalingen",
+			"bible in": "De Bijbel in het {language_name}",
+			"additional": "Overige talen",
+			"most popular": "Populairste talen"
+		}
+	}
+}

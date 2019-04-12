@@ -92,6 +92,7 @@
 	"unsubscribe.success.badges": "Peruit onnistuneesti <b> Suoritusmerkki </b> -sähköpostien tilauksen.",
 	"unsubscribe.success.comments": "Peruit onnistuneesti <b> Kommentit </b> -sähköpostien tilauksen.",
 	"unsubscribe.success.friendships": "Peruit onnistuneesti <b> Ystävyys </b> -sähköpostien tilauksen.",
+	"unsubscribe.success.digest": "Peruutit onnistuneesti <b>Päivän kooste</b>-sähköpostit.",
 	"unsubscribe.success.likes": "Peruit onnistuneesti <b> Tykkää </b> -sähköpostien tilauksen.",
 	"unsubscribe.success.moments": "Peruit onnistuneesti <b> Hetket </b> -sähköpostien tilauksen.",
 	"unsubscribe.success.newsletter": "Peruit onnistuneesti <b> Uutiskirje </b> -sähköpostien tilauksen.",

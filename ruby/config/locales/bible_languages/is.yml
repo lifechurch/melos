@@ -1,0 +1,8 @@
+is:
+  features:
+    bible languages:
+      title: "Biblíutungumál og þýðingar"
+      most popular: "Vinsælustu tungumálin"
+      additional: "Önnur tungumál"
+      bible in: "Biblían á %{language_name}"
+

@@ -1,0 +1,8 @@
+bg:
+  features:
+    bible languages:
+      title: "Език на Библията и преводи"
+      most popular: "Най-популярните езици"
+      additional: "Допълнителни езици"
+      bible in: "Библията на %{language_name}"
+

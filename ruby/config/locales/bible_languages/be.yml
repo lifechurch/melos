@@ -1,0 +1,8 @@
+be:
+  features:
+    bible languages:
+      title: "Bible languages and translations"
+      most popular: "Most popular languages"
+      additional: "Additional languages"
+      bible in: "The Bible in %{language_name}"
+

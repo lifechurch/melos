@@ -1,0 +1,8 @@
+"no":
+  features:
+    bible languages:
+      title: "Språk og oversettelser"
+      most popular: "Mest populære språk"
+      additional: "Andre språk"
+      bible in: "Bibelen på %{language_name}"
+

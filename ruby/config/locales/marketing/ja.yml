@@ -14,4 +14,4 @@ ja:
       tagline: "どこに行く時も聖書と共に"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "%{language_name}の聖書をダウンロードする"

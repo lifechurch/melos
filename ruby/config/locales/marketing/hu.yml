@@ -14,4 +14,4 @@ hu:
       tagline: "a Biblia, ami mindenhová elkísér."
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Töltsd le a Bibliát %{language_name} nyelven"

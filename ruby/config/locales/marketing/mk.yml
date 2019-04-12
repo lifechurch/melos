@@ -14,4 +14,4 @@ mk:
       tagline: "Библија која е постојано со тебе"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Преземи ја Библијата на %{language_name}"

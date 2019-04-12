@@ -72,6 +72,7 @@
 			"download app copy": "Zeci de milioane de oameni folosesc Aplicația Biblia pentru a petrece zilnic timp în Cuvântul lui Dumnezeu. Descarcă aplicațiile gratuite și accesează-ți marcajele, notițele și planurile de citire oriunde te afli. Bucură-te de sute de versiuni, inclusiv audio, pe toate dispozitivele tale mobile.",
 			"tagline": "Biblia care merge cu tine oriunde",
 			"android": "Android",
+			"download language": "Descarcă Biblia în limba {language_name}",
 			"verse action copy": "Evidențiază sau marchează versetele tale preferate, creează versete ilustrate pe care le poți partaja și atașează notițe publice sau private pasajelor Bibliei.",
 			"browse plans": "Răsfoiește toate Planurile",
 			"free plans": "Planuri de citire și Devoționale Gratuite",
@@ -79,6 +80,12 @@
 			"download or read": "Descarcă acum sau citește online.",
 			"create free account": "Creează Contul tău gratuit",
 			"make it yours": "Transform-o în Biblia ta"
+		},
+		"bible languages": {
+			"title": "Limbi și traduceri ale Bibliei",
+			"bible in": "Biblia în limba {language_name}",
+			"additional": "Limbi suplimentare",
+			"most popular": "Cele mai populare limbi"
 		}
 	}
 }

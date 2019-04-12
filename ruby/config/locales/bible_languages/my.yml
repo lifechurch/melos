@@ -1,0 +1,8 @@
+my:
+  features:
+    bible languages:
+      title: "ကျမ်းစာဘာသာစကားနှင့်ဘာသာပြန်ဆိုမှုများ"
+      most popular: "လူသုံးများသောဘာသာစကားများ"
+      additional: "အခြားဘာသာစကားများ"
+      bible in: "%{language_name} ကျမ်းစာ"
+

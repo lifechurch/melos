@@ -1,0 +1,8 @@
+da:
+  features:
+    bible languages:
+      title: "Bibel-sprog og -oversættelser"
+      most popular: "Mest populære sprog"
+      additional: "Yderligere sprog"
+      bible in: "Bibelen på %{language_name}"
+

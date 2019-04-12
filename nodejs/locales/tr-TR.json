@@ -92,6 +92,7 @@
 	"unsubscribe.success.badges": "<b>Rozetler</b> e-postalarından başarıyla kaydın silindi.",
 	"unsubscribe.success.comments": "Yorum e-postalardan başarıyla kaydın silindi.",
 	"unsubscribe.success.friendships": "Dostluklar e-postalardan başarıyla kaydın silindi.",
+	"unsubscribe.success.digest": "You successfully unsubscribed from <b>Digest</b> emails.",
 	"unsubscribe.success.likes": "Beğenme e-postalarından başarıyla kaydın silindi.",
 	"unsubscribe.success.moments": "Anlar e-postalardan başarıyla kaydın silindi.",
 	"unsubscribe.success.newsletter": "Bülten e-postalardan başarıyla kaydın silindi.",

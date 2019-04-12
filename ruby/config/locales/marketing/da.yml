@@ -14,4 +14,4 @@ da:
       tagline: "Bibelen, der følger med dig overalt"
       iphone ipad: "iPhone/iPad"
       android: "Android"
-
+      download language: "Hent Bibelen på %{language_name}"

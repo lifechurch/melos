@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: bible-app-api\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2019-01-17 19:35\n"
+"PO-Revision-Date: 2019-03-11 04:22\n"
 "Last-Translator: YouVersion <lisa.gray@youversion.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -382,19 +382,19 @@ msgid "notifications.plans_with_friends_update_start_date"
 msgstr "{name} ha cambiado la fecha de inicio del plan «{title}» al día {date}."
 
 msgid "notifications.comments.moment.mine.badge"
-msgstr ""
+msgstr "{nombre} comentó tu insignia: \"{comentario}\""
 
 msgid "notifications.comments.moments.friend.badge"
-msgstr ""
+msgstr "{commenter_name} también comentó en la insignia de {moment_owner_name}:{comment}"
 
 msgid "notifications.comments.moments.friend.owner.badge"
-msgstr ""
+msgstr "{moment_owner_name} también comentó su insignia: {comment}"
 
 msgid "notifications.likes.moment.mine.badge"
-msgstr ""
+msgstr "A {name} le gusta su insignia {title}"
 
 msgid "notifications.moments.create.badge"
-msgstr ""
+msgstr "{name} obtuvo la insignia {title}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>¡Hola!!</p><p>Estoy usando la aplicación de la Biblia de YouVersion y quiero compartila contigo. Si eres nuevo con la aplicación, ésta es un forma sencilla de acercar la belleza y la verdad de la Biblia a tu vida cotidiana. </p><p><strong>Consigue la aplicación de la Biblia:</strong> lee, observa, escucha, y comparte online en tu móvil o tableta en Biblia.com</p><p><strong>Configura tu cuenta:</strong> suscríbete a los planes de lectura bíblica y accede a marcadores, destacados y notas en diferentes dispositivos</p><p><strong>Añade amigos (¡Me gusta!):</strong> explora y comenta sobre la Biblia con la gente que te importa</p><p>Todo en la aplicación de la Biblia, comienza aquí: </p>"
