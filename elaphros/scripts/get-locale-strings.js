@@ -11,6 +11,7 @@ const mergedFolder = path.join(process.cwd(), './locales')
 const folders = [
   [ '../ruby/config/locales/bible', './locales/bible' ],
   [ '../ruby/config/locales/bible_versions', './locales/bible-versions' ],
+  [ '../ruby/config/locales/bible_languages', './locales/bible-languages' ],
   [ '../ruby/config/locales/marketing', './locales/marketing' ],
   [ '../ruby/config/locales/user_accounts', './locales/user-accounts' ]
 ]

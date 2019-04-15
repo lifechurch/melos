@@ -153,7 +153,8 @@ module.exports = function bibleVerse(req, reply) {
           textDirection: 'ltr',
           localeDetails: getAppLocaleDetails(req.detectedLng),
           canonicalUrl,
-          canonicalPath
+          canonicalPath,
+          getLocalizedLink
         }
       })
     })

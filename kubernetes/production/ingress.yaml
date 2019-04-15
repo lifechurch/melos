@@ -60,6 +60,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /af/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /bg/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -77,6 +81,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /bg/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /bg/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -100,6 +108,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /ca/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /cs/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -117,6 +129,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /cs/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /cs/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -140,6 +156,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /cy/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /da/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -157,6 +177,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /da/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /da/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -180,6 +204,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /de/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /el/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -197,6 +225,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /el/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /el/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -220,6 +252,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /es/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -237,6 +273,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /es/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /es/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -260,6 +300,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /es-ES/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /fi/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -277,6 +321,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /fi/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /fi/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -300,6 +348,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /fr/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /hi/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -317,6 +369,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /hi/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /hi/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -340,6 +396,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /hr/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /hu/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -357,6 +417,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /hu/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /hu/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -380,6 +444,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /id/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /it/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -397,6 +465,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /it/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /it/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -420,6 +492,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /ja/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /km/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -437,6 +513,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /km/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /km/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -460,6 +540,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /ko/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /lv/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -477,6 +561,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /lv/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /lv/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -500,6 +588,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /mk/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /mn/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -517,6 +609,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /mn/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /mn/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -540,6 +636,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /ms/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /my/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -557,6 +657,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /my/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /my/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -580,6 +684,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /my-MM/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /nl/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -597,6 +705,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /nl/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /nl/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -620,6 +732,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /no/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /pl/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -637,6 +753,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /pl/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /pl/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -660,6 +780,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /pt/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /pt-PT/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -677,6 +801,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /pt-PT/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /pt-PT/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -700,6 +828,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /ro/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /ru/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -717,6 +849,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /ru/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /ru/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -740,6 +876,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /sk/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /sq/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -757,6 +897,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /sq/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /sq/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -780,6 +924,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /sv/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /sw/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -797,6 +945,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /sw/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /sw/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -820,6 +972,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /ta/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /th/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -837,6 +993,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /th/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /th/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -860,6 +1020,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /tl/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /tr/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -877,6 +1041,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /tr/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /tr/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -900,6 +1068,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /uk/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /vi/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -917,6 +1089,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /vi/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /vi/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
@@ -940,6 +1116,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /zh-CN/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /zh-HK/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -960,6 +1140,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /zh-HK/languages
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
           - path: /zh-TW/bible
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
@@ -977,6 +1161,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /zh-TW/versions
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /zh-TW/languages
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT

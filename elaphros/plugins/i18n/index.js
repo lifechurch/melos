@@ -45,6 +45,7 @@ module.exports = fp(function configureI18n(fastify, opts, next) {
     hookNext()
   })
 
+  fastify.decorateRequest('appLocales', activeLocales)
 
   fastify.get('/json/app/locales', jsonAppLocale)
 

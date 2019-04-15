@@ -44,7 +44,8 @@ module.exports = function friendshipAccept(req, reply) {
       textDirection: 'ltr',
       localeDetails: getAppLocaleDetails(req.detectedLng),
       canonicalUrl: fullRequestURL,
-      canonicalPath: fullRequestPath
+      canonicalPath: fullRequestPath,
+      getLocalizedLink
     }
   })
 }

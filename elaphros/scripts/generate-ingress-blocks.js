@@ -33,6 +33,10 @@ const output = locales.map((locale) => {
     - path: ${appLocale === 'en' ? '' : `/${appLocale}`}/versions
       backend:
         serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+        servicePort: $PORT
+    - path: ${appLocale === 'en' ? '' : `/${appLocale}`}/languages
+      backend:
+        serviceName: elaphros-$CI_ENVIRONMENT_SLUG
         servicePort: $PORT`
   }
   return ''

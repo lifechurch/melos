@@ -54,6 +54,7 @@ module.exports = function BibleVersion(req, reply) {
         localeDetails: getAppLocaleDetails(req.detectedLng),
         canonicalUrl,
         canonicalPath,
+        getLocalizedLink
       }
     })
   }, (e) => {

@@ -100,7 +100,8 @@ module.exports = function bibleChapter(req, reply) {
         textDirection: 'ltr',
         localeDetails: getAppLocaleDetails(req.detectedLng),
         canonicalUrl,
-        canonicalPath
+        canonicalPath,
+        getLocalizedLink
       }
     })
   }, (e) => {
