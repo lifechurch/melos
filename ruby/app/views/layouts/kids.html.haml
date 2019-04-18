@@ -238,6 +238,7 @@
     i18n_image_dir = "/be"
     meta_url = "#{request.protocol}#{request.host_with_port}/be/kids"
     facebook_locale = "be"
+    youtube_url = "//www.youtube.com/watch?v=O38BRmcAdus&feature=youtu.be"
   elsif (I18n.locale.to_s.eql?("ne")) then
     i18n_css_class = "ne"
     i18n_image_dir = "/ne"
@@ -342,7 +343,7 @@
     %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
     %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     = render partial: "shared/google_tag_manager"
-    
+
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en-gb"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
