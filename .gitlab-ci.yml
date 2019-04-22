@@ -147,7 +147,6 @@ production:
     PRODUCTION_SECURE_HOSTNAME: nodejs.$KUBE_DOMAIN
   script:
     - command deploy
-    - apt-get update && apt-get install netcat -y
     - echo "flush_all" | nc $PRODUCTION_MEMCACHE_SERVERS 11211
     - 'curl -X POST "https://api.cloudflare.com/client/v4/zones/7e7e37b9128054e59b31bd42a9ef887c/purge_cache" -H "X-Auth-Email: will.platnick@lifechurch.tv" -H "X-Auth-Key: $CLOUDFLARE" -H "Content-Type: application/json" --data ''{"purge_everything":true}'''
   environment:
@@ -158,7 +157,7 @@ production:
   only:
     - master
   tags:
-    - web
+    - yv-gke
 
 taglatest:
   stage: taglatest
