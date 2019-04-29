@@ -44,6 +44,10 @@ spec:
                         - $CI_ENVIRONMENT_SLUG
                 topologyKey: "kubernetes.io/hostname"
       hostAliases:
+        - ip: 172.22.0.29
+          hostnames:
+            - nodejs.bible.com
+            - events.bible.com
         - ip: 35.226.43.81
           hostnames:
             - localization.youversionapi.com
