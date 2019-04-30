@@ -7,6 +7,7 @@ const getAppLocale = require('../../utils/localization/get-app-locale')
 const localeList = require('../../localization/locale-list.json')
 const getPathWithoutLocale = require('../../utils/localization/get-path-without-locale')
 const jsonAppLocale = require('./json-app-locales')
+const getCookieDomainFromRequest = require('../../utils/get-cookie-domain-from-request')
 
 /* i18n Configuration */
 const activeLocales = localeList.map((locale) => { return getAppLocale(locale) })
@@ -41,6 +42,16 @@ module.exports = fp(function configureI18n(fastify, opts, next) {
     }
 
     reply.res.setLocale(req.detectedLng)
+
+    if (req.detectedLng !== 'en') {
+      const cookieDomain = getCookieDomainFromRequest(req)
+      reply.setCookie('locale', req.detectedLng, {
+        domain: cookieDomain,
+        path: '/',
+        secure: cookieDomain !== 'localhost',
+        hostOnly: true
+      })
+    }
 
     hookNext()
   })

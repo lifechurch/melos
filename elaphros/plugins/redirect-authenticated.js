@@ -5,7 +5,8 @@ const skipRedirectsFor = [
   '/confirmation',
   '/friendships/accept/success',
   '/friendships/accept/failure',
-  '/sw.js'
+  '/sw.js',
+  '/logged-in-user'
 ]
 
 const skipRedirectsForPatterns = [

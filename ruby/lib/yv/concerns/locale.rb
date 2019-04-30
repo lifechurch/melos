@@ -46,7 +46,8 @@ module YV
       end
 
       def set_locale(loc)
-        I18n.locale = cookies.permanent[:locale] = loc
+        I18n.locale = loc
+        cookies.permanent[:locale] = { value: loc, domain: cookie_domain }
         if loc.is_a? Symbol
           FastGettext.locale = loc.to_s.gsub("-", "_")
         elsif loc.is_a? String
