@@ -1212,6 +1212,10 @@ spec:
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
+          - path: /logged-in-user
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
     - host: my-$CI_ENVIRONMENT_HOSTNAME
       http:
         paths:

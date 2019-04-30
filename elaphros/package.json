@@ -35,6 +35,7 @@
     "js-yaml": "^3.13.1",
     "lightship": "^3.0.1",
     "marko": "^4.10.0",
+    "marshal": "^0.4.0",
     "newrelic": "^4.10.0",
     "nodemon": "^1.17.5",
     "parameterize": "^0.1.0",
