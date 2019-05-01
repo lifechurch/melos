@@ -77,6 +77,7 @@ YouversionWeb::Application.routes.draw do
   get "/hvvdvvd",       to: "redirects#hvvdvvd"
   get "/kidsbel",       to: "redirects#kidsbel"
   get "/bel",       to: "redirects#bel"
+  get "/born-bibel", to: "redirects#da_kids"
   get "/nep/kids",       to: "redirects#nep_kids"
   get "/yeladim",       to: "redirects#he_kids"
   get "/%D7%99%D7%9C%D7%93%D7%99%D7%9D",       to: "redirects#he_kids"
