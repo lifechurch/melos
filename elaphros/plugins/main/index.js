@@ -25,7 +25,8 @@ module.exports = fp(function main(fastify, opts, next) {
     'bible-versions',
     'bible-languages',
     'confirmations',
-    'logged-in-user'
+    'logged-in-user',
+    'home-page'
   ],
   decorators: {
     fastify: [

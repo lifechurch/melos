@@ -1,4 +1,10 @@
 module.exports = function getPathWithoutLocale(path) {
+  const exceptions = [
+    '/app'
+  ]
+
+  if (exceptions.indexOf(path) !== -1) return path
+
   const parts = path.split('/')
 
   const startIndex = path.startsWith('/') ? 1 : 0

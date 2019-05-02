@@ -1,0 +1,166 @@
+<site-layout
+  fullRequestURL=out.global.canonicalUrl
+  requestHost=data.requestHost
+  getLocalizedLink=data.getLocalizedLink
+  getPathWithoutLocale=data.getPathWithoutLocale>
+  <@head>
+  $ const ampComponents = [
+      { name: 'amp-mustache', type: 'template', version: '0.2' },
+      { name: 'amp-bind', type: 'element', version: '0.1' },
+      { name: 'amp-list', type: 'element', version: '0.1' },
+      { name: 'amp-selector', type: 'element', version: '0.1' },
+      { name: 'amp-audio', type: 'element', version: '0.1' },
+      { name: 'amp-sidebar', type: 'element', version: '0.1' },
+      { name: 'amp-form', type: 'element', version: '0.1' },
+      { name: 'amp-carousel', type: 'element', version: '0.1' },
+      { name: 'amp-social-share', type: 'element', version: '0.1' },
+      { name: 'amp-analytics', type: 'element', version: '0.1' },
+      { name: 'amp-install-serviceworker', type: 'element', version: '0.1' },
+      { name: 'amp-app-banner', type: 'element', version: '0.1' }
+    ]
+
+    <amp-components
+      ampComponents=ampComponents>
+    </amp-components>
+
+    <hreflang-tags
+      locales=data.appLocales
+      host=data.requestHost
+      canonicalUrl=out.global.canonicalUrl
+      pageType="version"
+      locale=out.global.locale>
+    </hreflang-tags>
+
+    $ const title = [
+      out.global.__('features.marketing.download free app'),
+      out.global.__('features.marketing.download or read'),
+      out.global.__('features.marketing.android'),
+      out.global.__('features.marketing.iphone ipad')
+    ].join(' - ')
+
+    $ const description = out.global.__('features.marketing.versions copy')
+
+    <header-tags
+      title=title
+      description=description
+      deepLink=data.deepLink
+      twitterCard="summary"
+      canonicalUrl=out.global.canonicalUrl>
+    </header-tags>
+
+  </@head>
+  <@body>
+    <app-default-state></app-default-state>
+    <div class="mw8 center pt3 pl4-m pr4-m pl3 pr3 cf">
+      <div class="tc mt4 mw6 center">
+        <amp-img
+          alt=out.global.__('features.bible.title')
+          src="/static-assets/icons/bible/120/en.png"
+          height="90"
+          width="90"
+          layout="fixed">
+        </amp-img>
+        <a role="button"
+          class="link"
+          alt=out.global.__('features.marketing.bible cta')
+          href=out.global.getLocalizedLink('/app', out.global.locale)
+        >
+          <h1 class="f2 fw5 near-black lh-title">${out.global.__('features.marketing.bible heading')}</h1>
+        </a>
+        <a role="button"  
+          class="center mt2 tc dib pt3 pb3 pl4 pr4 dim link bg-yv-green white br2 w-auto-m w-100" 
+          href=out.global.getLocalizedLink('/bible', out.global.locale)
+        >
+          ${out.global.__('features.marketing.bible cta')}
+        </a>
+      </div>
+      <div class="flex flex-row mt5">
+        <div class="w-third tc">
+          <div class="pr4">
+            <amp-img
+              alt=out.global.__('features.bible.title')
+              src="/static-assets/read-stroked.png"
+              height="50"
+              width="40"
+              layout="fixed">
+            </amp-img>
+            <h2 class="near-black f6 tracked-mega ttu mt4 mb3">
+              ${out.global.__('features.marketing.experience.title')}
+            </h2>
+            <p class="lh-copy near-black tc f6 mb3 mt0">
+              ${out.global.__('features.marketing.experience.body')}
+            </p>
+            <a role="button" 
+              class="link yv-green" 
+              href="#"
+            >
+              ${out.global.__('features.marketing.experience.action')}
+            </a>
+          </div>
+        </div>
+        <div class="w-third tc">
+          <div class="pl4 pr4">
+            <amp-img
+              alt=out.global.__('features.bible.title')
+              src="/static-assets/highlight-stroked.png"
+              height="50"
+              width="55"
+              layout="fixed">
+            </amp-img>
+            <h2 class="near-black f6 tracked-mega ttu mt4 mb3">
+              ${out.global.__('features.marketing.make yours.title')}
+            </h2>
+            <p class="lh-copy near-black tc f6 mb3 mt0">
+              ${out.global.__('features.marketing.make yours.body')}
+            </p>
+            <a role="button" 
+              class="link yv-green" 
+              href="#"
+            >
+              ${out.global.__('features.marketing.make yours.action')}
+            </a>
+          </div>
+        </div>
+        <div class="w-third tc">
+          <div class="pl4">
+            <amp-img
+              alt=out.global.__('features.bible.title')
+              src="/static-assets/smartphone-stroked.png"
+              height="50"
+              width="34"
+              layout="fixed">
+            </amp-img>
+            <h2 class="near-black f6 tracked-mega ttu mt4 mb3">
+              ${out.global.__('features.marketing.install now.title')}
+            </h2>
+            <p class="lh-copy near-black tc f6 mb3 mt0">
+              ${out.global.__('features.marketing.install now.body')}
+            </p>
+            <a role="button" 
+              class="link yv-green" 
+              href="#"
+            >
+              ${out.global.__('features.marketing.install now.action')}
+            </a>
+          </div>
+        </div>                    
+      </div>
+    </div>
+    <div class="votd-row pa5 pb5 mt3 tc">
+      <div class="mw8 center bg-white-80 pl5 pr5">
+        <amp-img
+          alt=out.global.__('features.bible.title')
+          src="//imageproxy-cdn.youversionapi.com/640x640/https://s3.amazonaws.com/static-youversionapi-com/images/base/32869/1280x1280.jpg"
+          height="420"
+          width="420"
+          layout="fixed">
+        </amp-img>
+      </div>
+    </div>      
+    <div class="mt6 mb6 tc">
+      <plans-icon height="50" fill="#444" />
+      <h2 class="near-black f6 tracked-mega ttu mt4 mb3">${out.global.__('features.marketing.free plans')}</h2>
+      <p class="lh-copy near-black f6">${out.global.__('features.marketing.plans copy')}</p>
+    </div>
+  </@body>
+</site-layout>
