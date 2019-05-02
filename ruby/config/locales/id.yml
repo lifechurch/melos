@@ -1360,7 +1360,7 @@ id:
       other: "Notifikasi Lain"
       pwf: "Rencana bersama Teman"
       links:
-        manage: "Mengatur Notifikasi Email Anda"
+        manage: "Atur Notifikasi Email Anda"
         unsub all: "Berhenti berlangganan dari semua email"
       success:
         all: "Anda berhasil berhenti berlangganan <b>semua email YouVersion</b>."
