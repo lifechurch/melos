@@ -244,7 +244,7 @@
     i18n_image_dir = "/be"
     meta_url = "#{request.protocol}#{request.host_with_port}/be/kids"
     facebook_locale = "be"
-    youtube_url = ""
+    youtube_url = "//www.youtube.com/watch?v=O38BRmcAdus&feature=youtu.be"
   elsif (I18n.locale.to_s.eql?("ne")) then
     i18n_css_class = "ne"
     i18n_image_dir = "/ne"
@@ -274,6 +274,12 @@
     i18n_image_dir = "/hu"
     meta_url = "#{request.protocol}#{request.host_with_port}/hu/kids"
     facebook_locale = "hu"
+    youtube_url = ""
+  elsif (I18n.locale.to_s.eql?("et")) then
+    i18n_css_class = "et"
+    i18n_image_dir = "/et"
+    meta_url = "#{request.protocol}#{request.host_with_port}/et/kids"
+    facebook_locale = "et"
     youtube_url = ""
   end
 
@@ -338,6 +344,7 @@
     %meta{property: "og:locale:alternate", content: "he"}
     %meta{property: "og:locale:alternate", content: "bg"}
     %meta{property: "og:locale:alternate", content: "hu"}
+    %meta{property: "og:locale:alternate", content: "et"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -395,6 +402,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/bg/kids",:rel=>"alternate",:hreflang=>"bg"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/he/kids",:rel=>"alternate",:hreflang=>"he"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/hu/kids",:rel=>"alternate",:hreflang=>"hu"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/et/kids",:rel=>"alternate",:hreflang=>"et"}
 
     - if I18n.locale.to_s.eql?("vi") then
       %link{:href=> "https://fonts.googleapis.com/css?family=Open+Sans", :rel=>"stylesheet"}
@@ -459,6 +467,7 @@
             I18n.locale.to_s.eql?("he") or |
             I18n.locale.to_s.eql?("bg") or |
             I18n.locale.to_s.eql?("hu") or |
+            I18n.locale.to_s.eql?("et") or |
             I18n.locale.to_s.eql?("ne")) |
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title

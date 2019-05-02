@@ -187,6 +187,7 @@ module ApplicationHelper
       :en,
       :"en-GB",
       :es,
+      :et,
       :fa,
       :fi,
       :fr,
