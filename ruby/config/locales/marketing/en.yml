@@ -15,17 +15,3 @@ en:
       iphone ipad: "iPhone/iPad"
       android: "Android"
       download language: "Download the Bible in %{language_name}"
-      bible cta: "Read the Bible Now"
-      bible heading: "Get a free Bible for your phone, tablet, and computer."
-      experience:
-        title: "Experience it anywhere"
-        body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
-        action: "View Bible Versions"
-      make yours:
-        title: "Make it your Bible"
-        body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
-        action: "Create Your Free Account"
-      install now:
-        title: "Install the App Now"
-        body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
-        action: "Download the Free Bible App"
