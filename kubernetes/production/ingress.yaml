@@ -6,6 +6,10 @@ metadata:
   namespace: $KUBE_NAMESPACE
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      set ${DOLLAR}msecstart "${DOLLAR}{msec}000";
+      if (${DOLLAR}msecstart ~ "^(.*)\.(.*)") {set ${DOLLAR}msecout "t=${DOLLAR}1${DOLLAR}2";}
+      proxy_set_header X-Request-Start ${DOLLAR}msecout;
   labels:
     app: $CI_ENVIRONMENT_SLUG
     pipeline_id: "$CI_PIPELINE_ID"
@@ -25,7 +29,7 @@ spec:
           - path: /
             backend:
               serviceName: nodejs-$CI_ENVIRONMENT_SLUG
-              servicePort: $PORT  
+              servicePort: $PORT
     - host: events.$CI_ENVIRONMENT_HOSTNAME
       http:
         paths:
@@ -1185,6 +1189,10 @@ spec:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT
           - path: /static-assets
+            backend:
+              serviceName: elaphros-$CI_ENVIRONMENT_SLUG
+              servicePort: $PORT
+          - path: /logged-in-user
             backend:
               serviceName: elaphros-$CI_ENVIRONMENT_SLUG
               servicePort: $PORT

@@ -6,8 +6,10 @@ module.exports = fp(function configureCORS(fastify, opts, next) {
     origin: [
       /\.bible\.com$/,
       'cdn.ampproject.org',
-      /\.cdn.ampproject\.org$/
+      /\.cdn.ampproject\.org$/,
+      /localhost:3000$/
     ],
+    credentials: true,
     methods: [ 'GET', 'POST' ]
   }))
 

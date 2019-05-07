@@ -5,7 +5,7 @@ YouversionWeb::Application.routes.draw do
   get "*path",          to: redirect("http://american.bible/?utm_source=com"), constraints: { subdomain: 'american' }
   get "/",          to: redirect("http://www.nic.bible/?utm_source=com"),  constraints: { subdomain: 'nic' }
   get "/",          to: redirect("http://american.bible/?utm_source=com"), constraints: { subdomain: 'american' }
-  
+
   get "/ping",          to: "ping#ping"
   get "/terms",         to: "pages#terms"
   get "/privacy",       to: "pages#privacy"
@@ -65,7 +65,6 @@ YouversionWeb::Application.routes.draw do
   get "/bibliadzieci",        to: "redirects#dzieci"
   get "/copii",        to: "redirects#copii"
   get "/lapset",    to: "redirects#lasten"
-  get "/fi/lapset", to: "redirects#lasten"
   get "/barn",        to: "redirects#barn"
   get "/huuhduud",        to: "redirects#huuhduud"
   get "/yezingane",        to: "redirects#yezingane"
@@ -78,14 +77,13 @@ YouversionWeb::Application.routes.draw do
   get "/hvvdvvd",       to: "redirects#hvvdvvd"
   get "/kidsbel",       to: "redirects#kidsbel"
   get "/bel",       to: "redirects#bel"
+  get "/barn-bibel-app", to: "redirects#da_kids"
   get "/nep/kids",       to: "redirects#nep_kids"
-  get "/he/yeladim",       to: "redirects#he_kids"
+  get "/yeladim",       to: "redirects#he_kids"
   get "/%D7%99%D7%9C%D7%93%D7%99%D7%9D",       to: "redirects#he_kids"
-  get "/he/%D7%99%D7%9C%D7%93%D7%99%D7%9D",       to: "redirects#he_kids"
   get "/deca",      to: "redirects#bg_kids"
   get "/-amp/versions/:version", to: "redirects#amp_versions"
 
-  get "/hu/gyerek",       to: "redirects#gyerek"
   get "/gyerek",       to: "redirects#gyerek"
 
 	get "/unsubscribe", to: "notifications#unsubscribe"

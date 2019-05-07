@@ -43,6 +43,44 @@ spec:
                       values:
                         - $CI_ENVIRONMENT_SLUG
                 topologyKey: "kubernetes.io/hostname"
+      hostAliases:
+        - ip: 172.22.0.29
+          hostnames:
+            - nodejs.bible.com
+            - events.bible.com
+        - ip: 35.226.43.81
+          hostnames:
+            - localization.youversionapi.com
+            - share.youversionapi.com
+            - badges.youversionapi.com
+            - commq.youversionapi.com
+            - jobs.youversionapi.com
+            - events.youversionapi.com
+            - friends.youversionapi.com
+            - friendships.youversionapi.com
+            - images.youversionapi.com
+            - notifications.youversionapi.com
+            - reading-plans.youversionapi.com
+            - search.youversionapi.com
+            - streaks.youversionapi.com
+            - themes.youversionapi.com
+            - users.youversionapi.com
+            - videos.youversionapi.com
+            - licenses.youversionapi.com
+            - plans.youversionapi.com
+            - movies.youversionapi.com
+            - home.youversionapi.com
+            - users-service.youversionapi.com
+            - app-themes.youversionapi.com
+            - developers.youversionapi.com
+            - bafk.youversionapi.com
+            - lens.youversionapi.com
+            - socialmedia.youversionapi.com
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "2"
+          - name: single-request-reopen
       containers:
         - name: $KUBE_NAMESPACE-$CI_ENVIRONMENT_SLUG
           image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA

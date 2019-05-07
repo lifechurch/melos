@@ -1,10 +1,59 @@
 <nav toolbar="(min-width: 60em)" toolbar-target="header-auth-buttons">
-  <ul class="flex flex-column flex-row-l items-center list pl0">
-    <li class="mr2-l w-100  w-50-l mb2 mb0-l">
-      <a href="/sign-in" class="dib w-100 tc bg-white pl3 pr3 pt2 pb2 br2 ba yv-green b--black-20 f7 f6-l link nowrap dim">${out.global.__('features.bible.sign in')}</a>
-    </li>
-    <li class="w-100 w-50-l">
-      <a href="/sign-up" class="dib w-100 tc bg-white pl3 pr3 pt2 pb2 br2 ba yv-green b--black-20 f7 f6-l link nowrap dim">${out.global.__('features.bible.sign up')}</a>
+  <ul class="list ma0 pa0">
+    <li class="w-100">
+      <amp-list
+        single-item
+        noloading
+        height=41
+        layout="fixed-height"
+        src="/logged-in-user"
+        credentials="include"
+        items="."
+      >
+        <template type="amp-mustache">
+            <div class="h-100-l flex flex-column justify-center">
+              {{#signedIn}}
+                <ul class="flex flex-row-l items-center justify-end-l justify-center flex-row-reverse list pl0 ma0">
+                  <li class="mr4-l mr0 w-auto">
+                    <a href=out.global.getLocalizedLink('/notifications', out.global.locale) class="dib w-100 link  dim">
+                      <notifications-icon />
+                    </a>
+                  </li>
+                  <li class="mr4 w-auto">
+                    <a href=out.global.getLocalizedLink('/friends', out.global.locale) class="dib w-100 link  dim">
+                      <friends-icon />
+                    </a>
+                  </li>
+                  <li class="mr4 w-auto">
+                    <a href=out.global.getLocalizedLink('/settings', out.global.locale) class="dib w-100 link  dim">
+                      <settings-icon />
+                    </a>
+                  </li>
+                  <li class="mr0-l mr4 w-auto mb2 mb0-l flex-first">
+                    <a href=out.global.getLocalizedLink('/profile', out.global.locale) class="dib w-100 tc link dim">
+                      <amp-img
+                        src="{{user.user_avatar_url.px_48x48}}"
+                        height=36
+                        width=36
+                        class="br-100"
+                      />
+                    </a>
+                  </li>
+                </ul>
+              {{/signedIn}}
+              {{^signedIn}}
+                <ul class="flex flex-row items-center list pl0 ma0">
+                  <li class="mr2 w-50 mb0">
+                    <a href=out.global.getLocalizedLink('/sign-in', out.global.locale) class="dib w-100 tc bg-white pl3 pr3 pt2 pb2 br2 ba yv-green b--black-20 f7 f6-l link nowrap dim">${out.global.__('features.bible.sign in')}</a>
+                  </li>
+                  <li class="w-50 mb0">
+                    <a href=out.global.getLocalizedLink('/sign-up', out.global.locale) class="dib w-100 tc bg-white pl3 pr3 pt2 pb2 br2 ba yv-green b--black-20 f7 f6-l link nowrap dim">${out.global.__('features.bible.sign up')}</a>
+                  </li>
+                </ul>
+              {{/signedIn}}
+            </div>
+        </template>
+      </amp-list>
     </li>
   </ul>
 </nav>

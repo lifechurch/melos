@@ -1,8 +1,69 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :trending, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder, :enfants, :ar_kids, :wmf, :anak, :cocuk, :kodomo, :er_tong, :kinderbybel, :pambatang, :thaibafk, :thieunhi, :ragazzi, :dzieci, :copii, :votd, :barn, :hk_kids, :lasten, :ua_kids, :paidia, :ben_kids, :barnebibelen, :huuhduud, :yezingane, :watoto, :hvvdvvd, :hvvhdvvd, :bel, :kidsbel, :zawgyi, :myz, :nep_kids, :bg_kids, :gyerek, :amp_versions ]
+  before_filter :force_login, except: [
+    # Non-BAFK items:
+    :settings_notifications,
+    :trending,
+    :settings_vod_subscriptions,
+    :lifechurchtv,
+    :wmf,
+    :votd,
+    :amp_versions,
+    # BAFK-related items go below here!
+    :aideul,
+    :anak,
+    :ar_kids,
+    :barn,
+    :barnebibelen,
+    :bel,
+    :ben_kids,
+    :bg_kids,
+    :cocuk,
+    :copii,
+    :criancas,
+    :da_kids,
+    :deti,
+    :dzieci,
+    :enfants,
+    :ertong,
+    :er_tong,
+    :gyerek,
+    :he_kids,
+    :hk_kids,
+    :huuhduud,
+    :hvvdvvd,
+    :hvvhdvvd,
+    :kidsbel,
+    :kinder,
+    :kinderbybel,
+    :kinderen,
+    :kodomo,
+    :lasten,
+    :myz,
+    :nep_kids,
+    :ninos,
+    :paidia,
+    :pambatang,
+    :ragazzi,
+    :ta_kids,
+    :thaibafk,
+    :thieunhi,
+    :ua_kids,
+    :watoto,
+    :yezingane,
+    :zawgyi,
+  ]
 
-  prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
+  prepend_before_filter :mobile_redirect, only: [
+    :bookmarks,
+    :profile,
+    :friends,
+    :notes,
+    :badges,
+    :highlights,
+    :connections,
+  ]
+
   # skip_filter :set_page,
   #             :set_locale,
   #             :skip_home,
@@ -249,10 +310,6 @@ class RedirectsController < ApplicationController
     redirect_to('/be/kids')
   end
 
-  def hvvdvvd
-    redirect_to('/mn/kids')
-  end
-
   def nep_kids
     redirect_to('/ne/kids')
   end
@@ -267,6 +324,10 @@ class RedirectsController < ApplicationController
 
   def bg_kids
     redirect_to('/bg/kids')
+  end
+
+  def da_kids
+    redirect_to('/da/kids')
   end
 
   def amp_versions

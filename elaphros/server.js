@@ -28,6 +28,7 @@ fastify.register(require('./plugins/bible-versions'))
 fastify.register(require('./plugins/bible-languages'))
 fastify.register(require('./plugins/bible'))
 fastify.register(require('./plugins/confirmations'))
+fastify.register(require('./plugins/logged-in-user'))
 fastify.register(require('./plugins/main'))
 
 const lightship = createLightship()
