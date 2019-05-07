@@ -1,0 +1,13 @@
+it:
+  features:
+    reading plans:
+      about publisher: "Informazioni Editore"
+      discover: "Scopri"
+      my plans: "I Miei Piani"
+      plans: "Piani"
+      publisher: "Editore"
+      related plans: "Piani Collegati"
+      sample: "Campione"
+      save for later: "Salva per Dopo"
+      start: "Comincia questo Piano"
+      title: "Piani di Lettura"
