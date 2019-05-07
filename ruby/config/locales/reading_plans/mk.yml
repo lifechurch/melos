@@ -1,0 +1,13 @@
+mk:
+  features:
+    reading plans:
+      about publisher: "За издавачот"
+      discover: "Откриј"
+      my plans: "Мои планови"
+      plans: "Планови"
+      publisher: "Издавач"
+      related plans: "Слични Планови"
+      sample: "Примерок"
+      save for later: "Зачувај за подоцна"
+      start: "Почни со овој план"
+      title: "Планови за читање"
