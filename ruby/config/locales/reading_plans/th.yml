@@ -1,0 +1,13 @@
+th:
+  features:
+    reading plans:
+      about publisher: "เกี่ยวกับผู้เผยแพร่"
+      discover: "ค้นหา"
+      my plans: "แผนฯ ของฉัน"
+      plans: "แผนการอ่านต่างๆ"
+      publisher: "ผู้เผยแพร่"
+      related plans: "แผนการอ่านที่เกี่ยวข้อง"
+      sample: "ตัวอย่าง"
+      save for later: "บันทึกสำหรับดูภายหลัง"
+      start: "เริ่มแผนนี้"
+      title: "แผนการอ่าน"

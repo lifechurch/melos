@@ -1,0 +1,13 @@
+es-ES:
+  features:
+    reading plans:
+      about publisher: "Acerca del Editor"
+      discover: "Descubre"
+      my plans: "Mis Planes de lectura"
+      plans: "Planes"
+      publisher: "Editor"
+      related plans: "Planes relacionados"
+      sample: "Ejemplo"
+      save for later: "Guardar para después"
+      start: "Iniciar Plan"
+      title: "Planes de lectura"

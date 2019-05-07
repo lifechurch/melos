@@ -1,0 +1,13 @@
+fi:
+  features:
+    reading plans:
+      about publisher: "Tietoa julkaisijasta"
+      discover: "Löydä"
+      my plans: "Omat suunnitelmat"
+      plans: "Suunnitelmat"
+      publisher: "Julkaisija"
+      related plans: "Samankaltaiset suunnitelmat"
+      sample: "Esimerkki"
+      save for later: "Laita muistiin"
+      start: "Aloita tämä suunnitelma"
+      title: "Lukusuunnitelmat"

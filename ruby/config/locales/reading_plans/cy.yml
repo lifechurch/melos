@@ -1,0 +1,13 @@
+cy:
+  features:
+    reading plans:
+      about publisher: "Am y Cyhoeddwr"
+      discover: "Darganfod"
+      my plans: "Fy Nghynlluniau"
+      plans: "Cynlluniau"
+      publisher: "Cyhoeddwr"
+      related plans: "Cynlluniau Tebyg"
+      sample: "Sampl"
+      save for later: "Cadw at eto"
+      start: "Cychwyn y Cynllun"
+      title: "Cynlluniau Darllen"
