@@ -1,0 +1,13 @@
+be:
+  features:
+    reading plans:
+      about publisher: "Пра выдаўца"
+      discover: "Пошук"
+      my plans: "Мае пляны чытаньня"
+      plans: "Пляны чытаньня"
+      publisher: "Адказны за публікацыю"
+      related plans: "Падобныя пляны"
+      sample: "Прыклад"
+      save for later: "Захаваць на потым"
+      start: "Start this Plan"
+      title: "Reading Plans"
