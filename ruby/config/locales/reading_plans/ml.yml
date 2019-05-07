@@ -1,0 +1,13 @@
+ml:
+  features:
+    reading plans:
+      about publisher: "പ്രസാധകരെക്കുറിച്ച്"
+      discover: "കണ്ടെത്തുക"
+      my plans: "എൻ്റെ പ്ലാനുകൾ"
+      plans: "പദ്ധതികൾ"
+      publisher: "പ്രസാധകൻ"
+      related plans: "ബന്ധപ്പെട്ട പദ്ധതികൾ"
+      sample: "സാംപിൾ"
+      save for later: "ഭാവിയിലേക്ക് കരുതി വയ്ക്കുക"
+      start: "ഈ പ്ലാൻ ആരംഭിക്കുക\n"
+      title: "വായന പ്ലാനുകൾ"
