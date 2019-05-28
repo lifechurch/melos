@@ -83,6 +83,7 @@ YouversionWeb::Application.routes.draw do
   get "/%D7%99%D7%9C%D7%93%D7%99%D7%9D",       to: "redirects#he_kids"
   get "/deca",      to: "redirects#bg_kids"
   get "/-amp/versions/:version", to: "redirects#amp_versions"
+  get "/users/:username/badges/:badge_id/award", to: "redirects#badge_award"
 
   get "/gyerek",       to: "redirects#gyerek"
 
