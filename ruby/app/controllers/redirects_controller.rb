@@ -334,4 +334,8 @@ class RedirectsController < ApplicationController
     v = Version.find(params["version"])
     redirect_to version_path(v), :status => :moved_permanently
   end
+
+  def badge_award
+    redirect_to(badges_user_url(params[:username]))
+  end
 end
