@@ -84,6 +84,7 @@ YouversionWeb::Application.routes.draw do
   get "/deca",      to: "redirects#bg_kids"
   get "/-amp/versions/:version", to: "redirects#amp_versions"
   get "/users/:username/badges/:badge_id/award", to: "redirects#badge_award"
+  get "/lastepiibel", to: "redirects#lastepiibel"
 
   get "/gyerek",       to: "redirects#gyerek"
 

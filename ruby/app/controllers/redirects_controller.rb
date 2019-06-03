@@ -39,6 +39,7 @@ class RedirectsController < ApplicationController
     :kinderen,
     :kodomo,
     :lasten,
+    :lastepiibel,
     :myz,
     :nep_kids,
     :ninos,
@@ -328,6 +329,10 @@ class RedirectsController < ApplicationController
 
   def da_kids
     redirect_to('/da/kids')
+  end
+
+  def lastepiibel
+    redirect_to('/et/kids')
   end
 
   def amp_versions
