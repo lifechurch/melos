@@ -40,7 +40,7 @@ We don't typically accept pull requests for anything that isn't in our list of i
 git clone git@in.thewardro.be:web/youversion-react-components.git
 ```
 
-2. Install / Setup *(More install details in the [README](./README))*
+2. Install / Setup *(More install details in the [README](./README.md))*
 
 ```
 npm install
